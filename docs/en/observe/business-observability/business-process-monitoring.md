@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:34:25.213792
 
 # Business process monitoring
 
-# Business process monitoring
 
 * Latest Dynatrace
 * Tutorial

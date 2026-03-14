@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:06.876707
 
 # Dynatrace Intelligence Problems use cases
 
-# Dynatrace Intelligence Problems use cases
 
 * Latest Dynatrace
 * Tutorial

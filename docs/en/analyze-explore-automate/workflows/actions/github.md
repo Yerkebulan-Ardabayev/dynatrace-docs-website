@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:32:31.513544
 
 # GitHub Connector
 
-# GitHub Connector
 
 * Latest Dynatrace
 * Overview

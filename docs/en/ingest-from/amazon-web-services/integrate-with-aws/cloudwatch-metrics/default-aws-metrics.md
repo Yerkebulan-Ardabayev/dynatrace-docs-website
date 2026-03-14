@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:29:09.114692
 
 # Classic (formerly 'built-in') AWS metrics
 
-# Classic (formerly 'built-in') AWS metrics
 
 * Classic
 * Reference

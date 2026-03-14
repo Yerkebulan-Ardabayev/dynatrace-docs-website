@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:31.236151
 
 # Define user action and user session properties for custom applications
 
-# Define user action and user session properties for custom applications
 
 * Classic
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-01T21:14:57.566228
 
 # Справочник по источнику данных SQL
 
-# Справочник по источнику данных SQL
 
 * Latest Dynatrace
 * Справочник
@@ -43,161 +42,121 @@ scraped: 2026-03-01T21:14:57.566228
 name: com.dynatrace.extension.sql-oracle
 
 
-
 version: 1.0
-
 
 
 minDynatraceVersion: '1.239'
 
 
-
 author:
-
 
 
 name: Dynatrace
 
 
-
 sqlOracle:
-
 
 
 - group: Number of CPU cores
 
 
-
 featureSet: cpu
 
 
-
 query: >
-
 
 
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
 
 
-
 type: gauge
-
 
 
 - group: Background CPU Usage Per CPU Per Sec
 
 
-
 featureSet: cpu
-
 
 
 query: >
 
 
-
 SELECT
-
 
 
 DECODE(metric_name, 'Background CPU Usage Per Sec',
 
 
-
 v$metric.value) AS background_cpu_usage,
-
 
 
 DECODE(metric_name, 'CPU Usage Per Sec',
 
 
-
 v$metric.value) AS foreground_cpu_usage,
-
 
 
 DECODE(metric_name, 'Host CPU Usage Per Sec',
 
 
-
 v$metric.value) AS host_cpu_usage
-
 
 
 FROM v$metric,
 
 
-
 v$metricgroup
-
 
 
 WHERE v$metric.group_id = v$metricgroup.group_id
 
 
-
 AND v$metric.metric_name IN ('Background CPU Usage Per Sec',
-
 
 
 'CPU Usage Per Sec', 'Host CPU Usage Per Sec')
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.backgroundTotal
 
 
-
 value: col:background_cpu_usage
 
 
-
 type: gauge
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.foregroundTotal
 
 
-
 value: col:foreground_cpu_usage
-
 
 
 type: gauge
 
 
-
 - key: com.dynatrace.extension.sql-oracle.cpu.hostTotal
 
 
-
 value: col:host_cpu_usage
-
 
 
 type: gauge
@@ -220,17 +179,13 @@ type: gauge
 jdbc:
 
 
-
 driverClassName: "org.mariadb.jdbc.Driver"
-
 
 
 connectionStringPattern: "jdbc:mariadb:(. |\\s)+$"
 
 
-
 connectionStringPatternErrorMessage: "This isn't a correct connection string, please start with jdbc:mariadb."
-
 
 
 validationQuery: "SELECT 1"
@@ -248,9 +203,7 @@ SQL-расширения основаны на SQL-запросах. Запро�
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
@@ -262,41 +215,31 @@ WHERE name = 'cpu_count'
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 featureSet: cpu
 
 
-
 query:
-
 
 
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
@@ -320,49 +263,37 @@ ActiveGate версии 1.253+
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 featureSet: cpu
 
 
-
 interval:
-
 
 
 minutes: 10
 
 
-
 query:
-
 
 
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
@@ -380,25 +311,19 @@ ActiveGate версии 1.301+
 # * * * * *
 
 
-
 # | | | | |
-
 
 
 # | | | | day of the week (1-7) (Sunday to Saturday)
 
 
-
 # | | | month (1-12)
-
 
 
 # | | day of the month (1-31)
 
 
-
 # | hour (0-23)
-
 
 
 # minute (0-59)
@@ -414,45 +339,34 @@ ActiveGate версии 1.301+
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 featureSet: cpu
 
 
-
 schedule: "0 12 ? * 2-6"
-
 
 
 query:
 
 
-
 SELECT value AS cpu_count
-
 
 
 FROM v$parameter
 
 
-
 WHERE name = 'cpu_count'
-
 
 
 metrics:
 
 
-
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
@@ -474,25 +388,19 @@ ActiveGate версии 1.303+
    vars:
 
 
-
    - id: myInterval
-
 
 
    displayName: Interval
 
 
-
    description: Interval at which your database provider is queried in minutes. 10 minutes by default.
-
 
 
    defaultValue: "10"
 
 
-
    pattern: ^[0-9]+$
-
 
 
    type: text
@@ -503,49 +411,37 @@ ActiveGate версии 1.303+
    sqlOracle:
 
 
-
    - group: Number of CPU cores
-
 
 
    interval:
 
 
-
    minutes: var:myInterval
-
 
 
    featureSet: cpu
 
 
-
    query:
-
 
 
    SELECT value AS cpu_count
 
 
-
    FROM v$parameter
-
 
 
    WHERE name = 'cpu_count'
 
 
-
    metrics:
-
 
 
    - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
    value: col:cpu_count
-
 
 
    type: gauge
@@ -563,45 +459,34 @@ ActiveGate версии 1.303+
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 timeout: "20"
 
 
-
 featureSet: cpu
-
 
 
 query: |
 
 
-
 SELECT value AS cpu_count
-
 
 
 FROM v$parameter
 
 
-
 WHERE name = 'cpu_count'
-
 
 
 metrics:
 
 
-
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
@@ -629,37 +514,28 @@ type: gauge
 query: >
 
 
-
 SELECT event, wait_class
-
 
 
 FROM v$system_event
 
 
-
 dimensions:
-
 
 
 - key: event
 
 
-
 value: col:event
-
 
 
 - key: wait_class
 
 
-
 value: col:wait_class
 
 
-
 - key: stage
-
 
 
 value: const:dev
@@ -678,33 +554,25 @@ ActiveGate версии 1.311+
 dimensions:
 
 
-
 - key: event
-
 
 
 value: col:event
 
 
-
 filter: var:event_filter
-
 
 
 - key: wait_class
 
 
-
 value: col:wait_class
-
 
 
 filter: const:$not(0)
 
 
-
 - key: stage
-
 
 
 value: const:dev
@@ -761,41 +629,31 @@ value: const:dev
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 featureSet: cpu
 
 
-
 query:
-
 
 
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
@@ -829,37 +687,28 @@ type: gauge
 name: custom:example-extension-name
 
 
-
 version: 1.0.0
-
 
 
 minDynatraceVersion: "1.236"
 
 
-
 author:
-
 
 
 name: Dynatrace
 
 
-
 metrics:
-
 
 
 - key: your.metric.name
 
 
-
 metadata:
 
 
-
 displayName: Display name of the metric visible in Metrics browser
-
 
 
 unit: Count
@@ -873,101 +722,76 @@ unit: Count
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 featureSet: cpu
 
 
-
 query:
-
 
 
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
 
 
-
 - group: Physical read bytes
-
 
 
 featureSet: io
 
 
-
 query: >
-
 
 
 SELECT
 
 
-
 DECODE(name, 'physical read total bytes', value) AS bytes_written,
-
 
 
 DECODE(name, 'physical write total bytes', value) AS bytes_read
 
 
-
 FROM v$sysstat
-
 
 
 WHERE name IN ('physical read total bytes', 'physical write total bytes')
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.io.bytesRead
 
 
-
 value: col:bytes_read
-
 
 
 type: count
 
 
-
 - key: com.dynatrace.extension.sql-oracle.io.bytesWritten
 
 
-
 value: col:bytes_written
-
 
 
 type: count

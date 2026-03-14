@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:27.419257
 
 # HTTP request action for Workflows
 
-# HTTP request action for Workflows
 
 * Latest Dynatrace
 * Reference

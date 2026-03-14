@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:22.400501
 
 # Операторы DQL
 
-# Операторы DQL
 
 * Latest Dynatrace
 * Справочник
@@ -168,7 +167,6 @@ scraped: 2026-03-06T21:20:22.400501
 fetch logs
 
 
-
 | filter log.source != "logsourcename"  // does not provide the records where `log.source` is null or missing
 ```
 
@@ -176,7 +174,6 @@ fetch logs
 
 ```
 fetch logs
-
 
 
 | filter isTrueOrNull(log.source != "logsourcename") // also provides the records where `log.source` is null or missing
@@ -245,9 +242,7 @@ fetch logs
 fetch logs
 
 
-
 | fieldsAdd a = array(1, 2, 3)
-
 
 
 | filter iAny(a[] > 2)
@@ -261,9 +256,7 @@ fetch logs
 fetch logs
 
 
-
 | fieldsAdd a = array(1, 2, 3), b = array(10, 11, 12)
-
 
 
 | fieldsAdd iCollectArray(a[] + b[])
@@ -277,13 +270,10 @@ fetch logs
 data record(a = array(2, 3, 7, 7, 1))
 
 
-
 | fields a = record(value = a[], index = iIndex())
 
 
-
 | expand a
-
 
 
 | fields value = a[value], index = a[index]
@@ -311,13 +301,10 @@ iIndex работает только в выражениях, где прису�
 timeseries avg(dt.host.cpu.usage), filter:dt.entity.host in [fetch dt.entity.host
 
 
-
 | fieldsAdd tags
 
 
-
 | expand tags
-
 
 
 | filter tags == "ServiceNow" | fields id]

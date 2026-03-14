@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:25.987547
 
 # Configure key user actions for mobile applications
 
-# Configure key user actions for mobile applications
 
 * Classic
 * How-to guide

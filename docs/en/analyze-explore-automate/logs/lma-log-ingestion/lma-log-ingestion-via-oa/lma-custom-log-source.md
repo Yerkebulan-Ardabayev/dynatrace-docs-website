@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:04.360187
 
 # Custom log source
 
-# Custom log source
 
 * Latest Dynatrace
 * Tutorial

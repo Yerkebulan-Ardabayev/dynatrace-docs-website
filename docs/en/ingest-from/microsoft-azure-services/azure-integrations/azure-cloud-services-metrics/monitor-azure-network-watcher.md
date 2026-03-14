@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:28.724701
 
 # Azure Network Watcher (Connection Monitor, Connection Monitor Preview) monitoring
 
-# Azure Network Watcher (Connection Monitor, Connection Monitor Preview) monitoring
 
 * Latest Dynatrace
 * How-to guide

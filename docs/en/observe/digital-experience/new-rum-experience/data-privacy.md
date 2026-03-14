@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:27:31.792647
 
 # Data privacy in the New RUM Experience
 
-# Data privacy in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide

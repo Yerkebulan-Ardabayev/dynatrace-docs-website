@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # List Cluster token metadata with id
 
-# List Cluster token metadata with id
 
 * Published Feb 12, 2020
 
@@ -84,113 +83,86 @@ A list of constraint violations
 {
 
 
-
 "created": 1554076800000,
-
 
 
 "expires": 1585976400000,
 
 
-
 "id": "acbed0c4-4ef1-4303-991f-102510a69322",
-
 
 
 "lastUse": 1554354000000,
 
 
-
 "name": "myToken",
-
 
 
 "personalAccessToken": true,
 
 
-
 "revoked": true,
-
 
 
 "scopes": [
 
 
-
 "DataExport",
-
 
 
 "ReadConfig",
 
 
-
 "WriteConfig"
 
 
-
 ],
-
 
 
 "userId": "john.smith"
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -204,7 +176,6 @@ In this example, the request queries the metadata of the token, which has the ID
 
 ```
 curl -X GET "https://myManaged.cluster.com/api/cluster/v2/tokens/4e9f128e-04f9-4795-pj319-8b7c-3c14a5e885e4"
-
 
 
 -H  "accept: application/json; charset=utf-8"
@@ -222,53 +193,40 @@ https://myManaged.cluster.com/api/cluster/v2/tokens/4e9f128e-04f9-4795-pj319-8b7
 {
 
 
-
 "id": "4e9f128e-04f9-4795-pj319-8b7c-3c14a5e885e4",
-
 
 
 "name": "myToken",
 
 
-
 "userId": "john.smith",
-
 
 
 "revoked": true,
 
 
-
 "created": 1554076800000,
-
 
 
 "expires": 1585976400000,
 
 
-
 "lastUse": 1554354000000,
-
 
 
 "scopes": [
 
 
-
 "DataExport",
-
 
 
 "ReadConfig",
 
 
-
 "WriteConfig"
 
 
-
 ]
-
 
 
 }

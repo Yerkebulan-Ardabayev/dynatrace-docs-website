@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:35:36.655664
 
 # Vulnarabilities API - POST mute remediation items
 
-# Vulnarabilities API - POST mute remediation items
 
 * Reference
 * Updated on Sep 25, 2024
@@ -53,25 +52,19 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "comment": "string",
-
 
 
 "reason": "CONFIGURATION_NOT_AFFECTED",
 
 
-
 "remediationItemIds": [
-
 
 
 "string"
 
 
-
 ]
-
 
 
 }
@@ -138,89 +131,68 @@ A list of constraint violations
 {
 
 
-
 "summary": [
 
 
-
 {
-
 
 
 "muteStateChangeTriggered": true,
 
 
-
 "reason": "ALREADY_MUTED",
-
 
 
 "remediationItemId": "string"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -236,33 +208,25 @@ Mute two remediation items, `PROCESS_GROUP-46C0E12D9B0EF2D9` and `PROCESS_GROUP-
 curl -X 'POST' 'https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/2919200225913269102/remediationItems/mute' \
 
 
-
 -H 'accept: application/json; charset=utf-8' \
-
 
 
 -H 'Authorization: Api-Token [your_token]' \
 
 
-
 -H 'Content-Type: application/json; charset=utf-8' \
-
 
 
 -d '{
 
 
-
 "comment": "Example muting multiple entities",
-
 
 
 "reason": "CONFIGURATION_NOT_AFFECTED",
 
 
-
 "remediationItemIds": ["PROCESS_GROUP-46C0E12D9B0EF2D9", "PROCESS_GROUP-549E6AD75BD598EC"]
-
 
 
 }'
@@ -280,17 +244,13 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 {
 
 
-
 "comment": "Example muting multiple entities",
-
 
 
 "reason": "CONFIGURATION_NOT_AFFECTED",
 
 
-
 "remediationItemIds": ["PROCESS_GROUP-46C0E12D9B0EF2D9", "PROCESS_GROUP-549E6AD75BD598EC"]
-
 
 
 }
@@ -302,45 +262,34 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 {
 
 
-
 "summary": [
 
 
-
 {
-
 
 
 "remediationItemId": "PROCESS_GROUP-549E6AD75BD598EC",
 
 
-
 "muteStateChangeTriggered": true
-
 
 
 },
 
 
-
 {
-
 
 
 "remediationItemId": "PROCESS_GROUP-46C0E12D9B0EF2D9",
 
 
-
 "muteStateChangeTriggered": true
-
 
 
 }
 
 
-
 ]
-
 
 
 }

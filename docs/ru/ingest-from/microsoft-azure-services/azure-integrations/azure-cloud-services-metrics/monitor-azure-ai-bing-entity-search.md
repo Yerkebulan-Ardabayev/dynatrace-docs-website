@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:26:29.550619
 
 # Мониторинг Azure AI - Bing Entity Search
 
-# Мониторинг Azure AI - Bing Entity Search
 
 * Последняя версия Dynatrace
 * Практическое руководство

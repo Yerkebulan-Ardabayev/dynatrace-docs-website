@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:02.173566
 
 # Анализ логов доступа Amazon API Gateway с помощью Investigations
 
-# Анализ логов доступа Amazon API Gateway с помощью Investigations
 
 * Latest Dynatrace
 * Руководство
@@ -54,61 +53,46 @@ scraped: 2026-03-06T21:29:02.173566
    {
 
 
-
    "requestId": "$context.requestId",
-
 
 
    "ip": "$context.identity.sourceIp",
 
 
-
    "requestTime": "$context.requestTime",
-
 
 
    "httpMethod": "$context.httpMethod",
 
 
-
    "routeKey": "$context.routeKey",
-
 
 
    "path": "$context.path",
 
 
-
    "status": "$context.status",
-
 
 
    "protocol": "$context.protocol",
 
 
-
    "responseLength": "$context.responseLength",
-
 
 
    "responseLatency": "$context.responseLatency",
 
 
-
    "integrationLatency": "$context.integrationLatency",
-
 
 
    "integrationStatus": "$context.integrationStatus",
 
 
-
    "errorMessage": "$context.error.message",
 
 
-
    "integrationErrorMessage": "$context.integrationErrorMessage"
-
 
 
    }
@@ -121,7 +105,6 @@ scraped: 2026-03-06T21:29:02.173566
 
    ```
    fetch logs
-
 
 
    | filter aws.log_group == "/aws/apigateway/my-gateway-demo"
@@ -156,7 +139,6 @@ scraped: 2026-03-06T21:29:02.173566
    fetch logs
 
 
-
    | filter aws.log_group == "/aws/apigateway/my-gateway-demo"
    ```
 2. В таблице результатов запроса щёлкните правой кнопкой мыши по полю и выберите **View field details**, чтобы [просмотреть запись лога в исходном формате](../investigations/enhance-results.md#view-details "Организация и интерпретация результатов запросов в расследованиях — от анализа производительности до обнаружения угроз.").
@@ -167,61 +149,46 @@ scraped: 2026-03-06T21:29:02.173566
    {
 
 
-
    "requestId": "Dzfa6gNrrks42Tw=",
-
 
 
    "ip": "14.21.74.45",
 
 
-
    "requestTime": "03/Jan/2025:09:22:13 +0000",
-
 
 
    "httpMethod": "GET",
 
 
-
    "routeKey": "ANY /",
-
 
 
    "path": "/getStuff",
 
 
-
    "status": "200",
-
 
 
    "protocol": "HTTP/1.1",
 
 
-
    "responseLength": "33",
-
 
 
    "responseLatency": "1671",
 
 
-
    "integrationLatency": "1665",
-
 
 
    "integrationStatus": "200",
 
 
-
    "errorMessage": "-",
 
 
-
    "integrationErrorMessage": "-"
-
 
 
    }
@@ -240,13 +207,10 @@ scraped: 2026-03-06T21:29:02.173566
    JSON{
 
 
-
    STRING:path,
 
 
-
    INT:integrationLatency
-
 
 
    }(flat=true)
@@ -259,17 +223,13 @@ scraped: 2026-03-06T21:29:02.173566
    | makeTimeseries {
 
 
-
    latency = avg(integrationLatency, default:0)
-
 
 
    },
 
 
-
    by: { path },
-
 
 
    interval:1m
@@ -281,21 +241,16 @@ scraped: 2026-03-06T21:29:02.173566
    fetch logs
 
 
-
    | filter aws.log_group == "/aws/apigateway/my-gateway-demo"
-
 
 
    | parse content, "JSON{ STRING:path, INT:integrationLatency }(flat=true)"
 
 
-
    | makeTimeseries {
 
 
-
    latency = avg(integrationLatency, default:0)
-
 
 
    }, by: { path }, interval:1m
@@ -326,17 +281,13 @@ scraped: 2026-03-06T21:29:02.173566
    | makeTimeseries {
 
 
-
    latency = avg(integrationLatency, default:0)
-
 
 
    },
 
 
-
    by: { path, status },
-
 
 
    interval:1m
@@ -348,21 +299,16 @@ scraped: 2026-03-06T21:29:02.173566
    fetch logs
 
 
-
    | filter aws.log_group == "/aws/apigateway/my-gateway-demo"
-
 
 
    | parse content, "JSON{ STRING:path, INT:status INT:integrationLatency }(flat=true)"
 
 
-
    | makeTimeseries {
 
 
-
    latency = avg(integrationLatency, default:0)
-
 
 
    }, by: { path, status }, interval:1m
@@ -386,21 +332,16 @@ scraped: 2026-03-06T21:29:02.173566
    JSON{
 
 
-
    STRING:path,
-
 
 
    INT:status,
 
 
-
    INT:integrationLatency,
 
 
-
    STRING:integrationErrorMessage
-
 
 
    }(flat=true)
@@ -409,7 +350,6 @@ scraped: 2026-03-06T21:29:02.173566
 
    ```
    | summarize count(), by: { integrationErrorMessage }
-
 
 
    | sort `count()` desc
@@ -421,17 +361,13 @@ scraped: 2026-03-06T21:29:02.173566
    fetch logs
 
 
-
    | filter aws.log_group == "/aws/apigateway/my-gateway-demo"
-
 
 
    | parse content, "JSON{ STRING:path, INT:status, INT:integrationLatency, STRING:integrationErrorMessage }(flat=true)"
 
 
-
    | summarize count(), by: { integrationErrorMessage }
-
 
 
    | sort `count()` desc
@@ -453,7 +389,6 @@ scraped: 2026-03-06T21:29:02.173566
    | fields error = if(isnull(error), integrationErrorMessage, else: error)
 
 
-
    | summarize count(), by: { error }
    ```
 
@@ -463,21 +398,16 @@ scraped: 2026-03-06T21:29:02.173566
    fetch logs
 
 
-
    | filter aws.log_group == "/aws/apigateway/my-gateway-demo"
-
 
 
    | parse content, "JSON{ STRING:path, INT:status, INT:integrationLatency, STRING:integrationErrorMessage }(flat=true)"
 
 
-
    | parse integrationErrorMessage, "LD ': RequestId: ' UUIDSTRING ' Error: ' LD:error"
 
 
-
    | fields error = if(isnull(error), integrationErrorMessage, else: error)
-
 
 
    | summarize count(), by: { error }
@@ -500,25 +430,19 @@ scraped: 2026-03-06T21:29:02.173566
   fetch logs
 
 
-
   | filter aws.log_group == "/aws/apigateway/my-gateway-demo"
-
 
 
   | parse content, "JSON{ STRING:path, INT:status, INT:integrationLatency, STRING:integrationErrorMessage }(flat=true)"
 
 
-
   | parse integrationErrorMessage, "LD ': RequestId: ' UUIDSTRING ' Error: ' LD:error"
-
 
 
   | fields timestamp, error = if(isnull(error), integrationErrorMessage, else: error)
 
 
-
   | filterOut error == "-"
-
 
 
   | makeTimeseries count(default: 0), by: { error }, interval: 1m

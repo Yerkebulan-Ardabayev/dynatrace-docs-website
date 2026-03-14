@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:16.280330
 
 # Add Markdown to dashboard
 
-# Add Markdown to dashboard
 
 * Latest Dynatrace
 * How-to guide
@@ -80,7 +79,6 @@ Each line of an unordered (bulleted) list starts with an asterisk (`*`):
 * Line 1
 
 
-
 * Line 2
 ```
 
@@ -88,7 +86,6 @@ Alternatively, you can use a dash (`-`):
 
 ```
 - Line 1
-
 
 
 - Line 2
@@ -100,9 +97,7 @@ An ordered (numbered) list starts with a number and a period (`1.`) followed by 
 1. The first line of my procedure.
 
 
-
 2. The second line of my procedure.
-
 
 
 3. The third line of my procedure.
@@ -118,9 +113,7 @@ To add a table, define the headers, the column formatting row, and then the rows
 | Header 1 | Header2
 
 
-
 --- | ---
-
 
 
 content2 | content2
@@ -151,7 +144,6 @@ To link to a picture, use this format:
 
 ```
 Here are some of the people who started [Dynatrace](https://www.dynatrace.com).
-
 
 
 ![Dynatrace founders](https://dt-cdn.net/images/original-dynatrace-team-1500-7334dbe9a8.jpg)

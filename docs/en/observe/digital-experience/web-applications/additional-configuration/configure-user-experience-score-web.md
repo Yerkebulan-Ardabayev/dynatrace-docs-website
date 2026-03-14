@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:23:52.409334
 
 # Change user experience score thresholds for web applications
 
-# Change user experience score thresholds for web applications
 
 * How-to guide
 * 1-min read

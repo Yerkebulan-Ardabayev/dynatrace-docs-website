@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:31:19.072781
 
 # Log events (Logs Classic)
 
-# Log events (Logs Classic)
 
 * Classic
 * Tutorial

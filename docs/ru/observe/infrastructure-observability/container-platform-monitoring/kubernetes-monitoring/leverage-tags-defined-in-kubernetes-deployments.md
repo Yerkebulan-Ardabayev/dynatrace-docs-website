@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:53.164758
 
 # Организация развёртываний Kubernetes/OpenShift с помощью тегов
 
-# Организация развёртываний Kubernetes/OpenShift с помощью тегов
 
 * Classic
 * Практическое руководство
@@ -78,93 +77,70 @@ OpenShift
 # dynatrace-oneagent-metadata-viewer.yaml
 
 
-
 kind: Role
-
 
 
 apiVersion: rbac.authorization.k8s.io/v1
 
 
-
 metadata:
-
 
 
 namespace: namespace1
 
 
-
 name: dynatrace-oneagent-metadata-viewer
-
 
 
 rules:
 
 
-
 - apiGroups: [""]
-
 
 
 resources: ["pods"]
 
 
-
 verbs: ["get"]
-
 
 
 ---
 
 
-
 kind: RoleBinding
-
 
 
 apiVersion: rbac.authorization.k8s.io/v1
 
 
-
 metadata:
-
 
 
 name: dynatrace-oneagent-metadata-viewer-binding
 
 
-
 namespace: namespace1
-
 
 
 subjects:
 
 
-
 - kind: ServiceAccount
-
 
 
 name: default
 
 
-
 apiGroup: ""
-
 
 
 roleRef:
 
 
-
 kind: Role
 
 
-
 name: dynatrace-oneagent-metadata-viewer
-
 
 
 apiGroup: ""
@@ -186,37 +162,28 @@ kubectl -n namespace1 create -f dynatrace-oneagent-metadata-viewer.yaml
 # dynatrace-oneagent-metadata-viewer.yaml
 
 
-
 kind: Role
-
 
 
 apiVersion: rbac.authorization.k8s.io/v1
 
 
-
 metadata:
-
 
 
 namespace: project1
 
 
-
 name: dynatrace-oneagent-metadata-viewer
-
 
 
 rules:
 
 
-
 - apiGroups: [""]
 
 
-
 resources: ["pods"]
-
 
 
 verbs: ["get"]

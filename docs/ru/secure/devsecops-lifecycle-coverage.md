@@ -6,7 +6,6 @@ scraped: 2026-02-18T05:48:18.936133
 
 # Покрытие жизненного цикла DevSecOps с Snyk
 
-# Покрытие жизненного цикла DevSecOps с Snyk
 
 * Latest Dynatrace
 * Приложение

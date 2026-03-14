@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:26.299483
 
 # Instrument mobile apps with Dynatrace Xamarin NuGet package
 
-# Instrument mobile apps with Dynatrace Xamarin NuGet package
 
 * Classic
 * How-to guide
@@ -116,13 +115,11 @@ iOS
 using Dynatrace.Xamarin;
 
 
-
 Agent.Instance.Start();
 ```
 
 ```
 using Dynatrace.Xamarin;
-
 
 
 Agent.Instance.Start();
@@ -142,17 +139,13 @@ The following example is for an Android Forms application:
 using Dynatrace.Xamarin;
 
 
-
 Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-
 
 
 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
 
-
 Xamarin.Forms.DependencyService.RegisterSingleton<IDynatrace>(Agent.Instance);
-
 
 
 LoadApplication(new App());
@@ -162,7 +155,6 @@ The following code in your Xamarin.Forms application allows you to access OneAge
 
 ```
 using Dynatrace.Xamarin;
-
 
 
 IDynatrace dynatrace = DependencyService.Get<IDynatrace>();
@@ -180,61 +172,46 @@ The `App.xaml.cs` file in the Xamarin.Forms part:
 public partial class App : Application
 
 
-
 {
-
 
 
 static readonly Dictionary<Type, Func<object, object>> factories = new Dictionary<Type, Func<object, object>>();
 
 
-
 public App()
 
 
-
 {
-
 
 
 InitializeComponent();
 
 
-
 DependencyResolver.ResolveUsing((type, args) => factories.ContainsKey(type) ? factories[type].Invoke(args) : null);
-
 
 
 IDynatrace Dynatrace = DependencyService.Resolve<IDynatrace>();
 
 
-
 Dynatrace.Start(null);
 
 
-
 }
-
 
 
 public static void Register(Type type, Func<object, object> factory)
 
 
-
 {
-
 
 
 factories[type] = factory;
 
 
-
 }
 
 
-
 ...
-
 
 
 }
@@ -246,45 +223,34 @@ The Android part, where you have to call `RegisterSingleton`, should look like t
 public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 
 
-
 {
-
 
 
 protected override void OnCreate(Bundle savedInstanceState)
 
 
-
 {
 
 
-
 ...
-
 
 
 Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
 
-
 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-
 
 
 App.Register(typeof(IDynatrace), (o) => Agent.Instance);
 
 
-
 LoadApplication(new App());
-
 
 
 }
 
 
-
 ...
-
 
 
 }
@@ -298,9 +264,7 @@ You can optionally use the following method to enable the auto-instrumentation o
 using Dynatrace.Xamarin;
 
 
-
 var httpHandler = Agent.Instance.GetHttpMessageHandler();
-
 
 
 var httpClient = new HttpClient(httpHandler);
@@ -312,13 +276,10 @@ Moreover, you can also have your own HTTP handler:
 using Dynatrace.Xamarin;
 
 
-
 var defaultHttpHandler = new HttpClientHandler();
 
 
-
 var httpHandler = Agent.Instance.GetHttpMessageHandler(defaultHttpHandler);
-
 
 
 var httpClient = new HttpClient(httpHandler);
@@ -342,25 +303,19 @@ You can use the manual startup with a configuration builder (Android) or a confi
    {
 
 
-
    "android": {
-
 
 
    "autoStart": {
 
 
-
    "enabled": false
 
 
-
    }
 
 
-
    }
-
 
 
    }
@@ -370,17 +325,13 @@ You can use the manual startup with a configuration builder (Android) or a confi
    {
 
 
-
    "ios": {
-
 
 
    "DTXAutoStart": false
 
 
-
    }
-
 
 
    }
@@ -397,7 +348,6 @@ You can use the manual startup with a configuration builder (Android) or a confi
    using Dynatrace.Xamarin;
 
 
-
    Agent.Instance.Start(new ConfigurationBuilder("<insertBeaconURL>","<insertApplicationID>") .BuildConfiguration());
    ```
 
@@ -405,17 +355,13 @@ You can use the manual startup with a configuration builder (Android) or a confi
    using Dynatrace.Xamarin;
 
 
-
    var configDict = new Dictionary<string, object>();
-
 
 
    configDict.Add("DTXApplicationID", "<insertApplicationID>");
 
 
-
    configDict.Add("DTXBeaconURL", "<insertBeaconURL");
-
 
 
    Agent.Instance.Start(configDict);
@@ -431,13 +377,10 @@ Call `EnterAction` to start a custom action and `LeaveAction` to close a custom 
 using Dynatrace.Xamarin;
 
 
-
 var myAction = Agent.Instance.EnterAction("Tap on Confirm");
 
 
-
 //Perform the action and whatever else is needed.
-
 
 
 myAction.LeaveAction();
@@ -459,21 +402,16 @@ Child actions are similar to parent custom actions. When a parent action is clos
 using Dynatrace.Xamarin;
 
 
-
 var myAction = Agent.Instance.EnterAction("Tap on Confirm");
-
 
 
 var mySubAction = myAction.EnterAction("Tap on Confirm again");
 
 
-
 //Perform the action and whatever else is needed.
 
 
-
 mySubAction.LeaveAction();
-
 
 
 myAction.LeaveAction();
@@ -493,13 +431,10 @@ If you need to cancel an already created but not yet closed custom action, call 
 using Dynatrace.Xamarin;
 
 
-
 var myAction = Agent.Instance.EnterAction("Tap on Confirm");
 
 
-
 // Action is canceled
-
 
 
 myAction.Cancel();
@@ -515,109 +450,82 @@ Use the following code snippet to instrument web requests:
 using Dynatrace.Xamarin;
 
 
-
 // Create an action
-
 
 
 var webAction = Agent.Instance.EnterAction(actionName: "WebRequest Action");
 
 
-
 // Generate a new unique tag associated with the web request action
-
 
 
 string requestTag = webAction.GetRequestTag(url);
 
 
-
 string requestTagHeader = webAction.GetRequestTagHeader();
-
 
 
 // Place the Dynatrace HTTP header on your web request
 
 
-
 httpClient.DefaultRequestHeaders.Add(requestTagHeader, requestTag);
-
 
 
 // Generate a WebRequestTiming object based on the unique tag
 
 
-
 WebRequestTiming timing = (WebRequestTiming)Agent.Instance.GetWebRequestTiming(requestTag, url);
-
 
 
 // Start web request timing before the HTTP request is sent
 
 
-
 timing.StartWebRequestTiming();
-
 
 
 try
 
 
-
 {
-
 
 
 var response = await httpClient.GetAsync(url);
 
 
-
 // Stop web request timing when the HTTP response is received and the response body is obtained
-
 
 
 timing.StopWebRequestTiming(url, (int)response.StatusCode, response.ReasonPhrase);
 
 
-
 }
-
 
 
 catch (HttpRequestException exception)
 
 
-
 {
-
 
 
 // Stop web request timing when a connection exception occurs
 
 
-
 timing.StopWebRequestTiming(url, -1, exception.ToString());
-
 
 
 }
 
 
-
 finally
-
 
 
 {
 
 
-
 // Leave an action
 
 
-
 webAction.LeaveAction();
-
 
 
 }
@@ -637,9 +545,7 @@ You can report values of the following data types:
 ReportValue(valueName: string, value: int);
 
 
-
 ReportValue(valueName: string, value: double);
-
 
 
 ReportValue(valueName: string, value: string);
@@ -651,13 +557,10 @@ For instance, to report a `string` value within the `Tap on Confirm` action, use
 using Dynatrace.Xamarin;
 
 
-
 var myAction = Agent.Instance.EnterAction("Tap on Confirm");
 
 
-
 myAction.ReportValue("Customer type", "Gold");
-
 
 
 myAction.LeaveAction();
@@ -701,7 +604,6 @@ To report an error stack trace, use the following API call:
 using Dynatrace.Xamarin;
 
 
-
 Agent.Instance.ReportErrorStacktrace("Error_Class", "Error_Value", "Error_Reason", "Error_Stacktrace");
 ```
 
@@ -713,7 +615,6 @@ To report a [crash](../../rum-concepts/user-and-error-events.md#crash "Learn abo
 using Dynatrace.Xamarin;
 
 
-
 Agent.Instance.ReportCrash("CrashWithoutException", "Crash_Reason", "Crash_Stacktrace");
 ```
 
@@ -721,7 +622,6 @@ You can also use an exception object:
 
 ```
 using Dynatrace.Xamarin;
-
 
 
 Agent.Instance.ReportCrashWithException("CrashWithExceptionObj", exception);
@@ -754,53 +654,40 @@ For additional details on business events, refer to [Business Observability](../
 using Dynatrace.Xamarin;
 
 
-
 var attributes = new Dictionary<string, JsonValue>();
-
 
 
 attributes.Add("event.name", "Confirmed Booking");
 
 
-
 attributes.Add("screen", "booking-confirmation");
-
 
 
 attributes.Add("product", "Danube Anna Hotel");
 
 
-
 attributes.Add("amount", 358.35);
-
 
 
 attributes.Add("currency", "USD");
 
 
-
 attributes.Add("reviewScore", 4.8);
-
 
 
 attributes.Add("arrivalDate", "2022-11-05");
 
 
-
 attributes.Add("departureDate", "2022-11-15");
-
 
 
 attributes.Add("journeyDuration", 10);
 
 
-
 attributes.Add("adultTravelers", 2);
 
 
-
 attributes.Add("childrenTravelers", 0);
-
 
 
 Agent.Instance.SendBizEvent("com.easytravel.funnel.booking-finished", attributes);
@@ -814,7 +701,6 @@ Make the following API call to tag the current session with a particular name:
 
 ```
 using Dynatrace.Xamarin;
-
 
 
 Agent.Instance.IdentifyUser("John Smith");
@@ -842,7 +728,6 @@ You can force a session to end via the API call. This also closes all open actio
 using Dynatrace.Xamarin;
 
 
-
 Agent.Instance.EndVisit();
 ```
 
@@ -864,21 +749,16 @@ To get the current `UserPrivacyOptions` configuration, use the following API cal
 using Dynatrace.Xamarin;
 
 
-
 // Get the UserPrivacyOptions object
-
 
 
 UserPrivacyOptions currentOptions = Agent.Instance.GetUserPrivacyOptions();
 
 
-
 // Get the individual settings for DataCollectionLevel and crash reporting
 
 
-
 bool crashOptedIn = Agent.Instance.GetUserPrivacyOptions().CrashReportingOptedIn;
-
 
 
 DataCollectionLevel dataCollectionLevel = Agent.Instance.GetUserPrivacyOptions().DataCollectionLevel;
@@ -894,49 +774,37 @@ To set new options on a `UserPrivacyOptions` object, use the following code:
 using Dynatrace.Xamarin;
 
 
-
 // Creating a new UserPrivacyOptions object requires setting the two parameters of DataCollectionLevel and crash reporting
-
 
 
 UserPrivacyOptions options = new UserPrivacyOptions(DataCollectionLevel.Performance, false);
 
 
-
 // Update the options with the setter
-
 
 
 // Set a data collection level (user allowed you to capture performance and personal data)
 
 
-
 options.DataCollectionLevel = DataCollectionLevel.UserBehavior;
-
 
 
 // Allow crash reporting (user allowed you to collect information on crashes)
 
 
-
 options.CrashReportingOptedIn = true;
-
 
 
 // Get the values of the configuration with the getter
 
 
-
 options.DataCollectionLevel;
-
 
 
 options.CrashReportingOptedIn;
 
 
-
 // Get the UserPrivacyOptions object
-
 
 
 UserPrivacyOptions currentOptions = Agent.Instance.GetUserPrivacyOptions();
@@ -948,9 +816,7 @@ To apply the new `UserPrivacyOptions` configuration, use this code:
 using Dynatrace.Xamarin;
 
 
-
 UserPrivacyOptions options = new UserPrivacyOptions(DataCollectionLevel.UserBehavior, true);
-
 
 
 Agent.Instance.ApplyUserPrivacyOptions(options);
@@ -985,17 +851,13 @@ The `dynatrace.config.json` configuration file contains your application ID, bea
   <Project>
 
 
-
   <PropertyGroup>
-
 
 
   <DynatraceConfigurationFile>CUSTOM_PATH/dynatrace.config.json</DynatraceConfigurationFile>
 
 
-
   </PropertyGroup>
-
 
 
   </Project>
@@ -1017,45 +879,34 @@ iOS
 {
 
 
-
 "android": {
-
 
 
 "autoStart": {
 
 
-
 "applicationId": "<insertApplicationID>",
-
 
 
 "beaconUrl": "<insertBeaconURL>"
 
 
-
 },
-
 
 
 "userOptIn": true,
 
 
-
 "agentBehavior": {
-
 
 
 "startupLoadBalancing": true
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -1065,29 +916,22 @@ iOS
 {
 
 
-
 "ios": {
-
 
 
 "DTXApplicationId": "<insertApplicationID>",
 
 
-
 "DTXBeaconUrl": "<insertBeaconURL>",
-
 
 
 "DTXUserOptIn": true,
 
 
-
 "DTXStartupLoadBalancing": true
 
 
-
 }
-
 
 
 }
@@ -1109,45 +953,34 @@ Update your [`dynatrace.config.json` file](#config-file) to enable OneAgent debu
 {
 
 
-
 "android": {
-
 
 
 "autoStart": {
 
 
-
 "applicationId": "<insertApplicationID>",
-
 
 
 "beaconUrl": "<insertBeaconURL>"
 
 
-
 },
-
 
 
 "userOptIn": true,
 
 
-
 "debug": {
-
 
 
 "agentLogging": true
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -1159,29 +992,22 @@ Add the following configuration snippet to the [`dynatrace.config.json` file](#c
 {
 
 
-
 "ios": {
-
 
 
 "DTXApplicationId": "<insertApplicationID>",
 
 
-
 "DTXBeaconUrl": "<insertBeaconURL>",
-
 
 
 "DTXUserOptIn": true,
 
 
-
 "DTXLogLevel": "ALL"
 
 
-
 }
-
 
 
 }
@@ -1201,17 +1027,13 @@ If the Android instrumentation fails, you most likely need to open a support tic
    <Project>
 
 
-
    <PropertyGroup>
-
 
 
    <DynatraceInstrumentationLogging>true</DynatraceInstrumentationLogging>
 
 
-
    </PropertyGroup>
-
 
 
    </Project>

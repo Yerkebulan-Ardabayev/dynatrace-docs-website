@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:27.489539
 
 # Organize your environment using host groups
 
-# Organize your environment using host groups
 
 * Classic
 * How-to guide

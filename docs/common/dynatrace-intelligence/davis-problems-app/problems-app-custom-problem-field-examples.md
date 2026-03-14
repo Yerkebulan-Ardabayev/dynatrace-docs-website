@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace Intelligence causal AI use cases
 
-# Dynatrace Intelligence causal AI use cases
 
 * Latest Dynatrace
 * Tutorial

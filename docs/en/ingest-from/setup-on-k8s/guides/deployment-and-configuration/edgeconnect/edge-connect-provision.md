@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:40:06.355493
 
 # Provision EdgeConnect for Dynatrace environment
 
-# Provision EdgeConnect for Dynatrace environment
 
 * Latest Dynatrace
 * 1-min read
@@ -34,29 +33,22 @@ EdgeConnect facilitates secure interactions between applications, workflows, and
    apiVersion: v1
 
 
-
    kind: Secret
-
 
 
    metadata:
 
 
-
    name: edgeconnect-oauth
-
 
 
    namespace: dynatrace
 
 
-
    data:
 
 
-
    oauth-client-id: <base64 encoded client id>
-
 
 
    oauth-client-secret: <base64 encoded client secret>
@@ -75,53 +67,40 @@ EdgeConnect facilitates secure interactions between applications, workflows, and
    apiVersion: dynatrace.com/v1alpha2
 
 
-
    kind: EdgeConnect
-
 
 
    metadata:
 
 
-
    name: sample-edge-connect-name
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    apiServer: "<environment-id>.apps.dynatrace.com"
 
 
-
    hostPatterns:
-
 
 
    - '*.mycompany.org'
 
 
-
    oauth:
-
 
 
    provisioner: true
 
 
-
    clientSecret: edgeconnect-oauth
 
 
-
    endpoint: https://sso.dynatrace.com/sso/oauth2/token
-
 
 
    resource: urn:dtaccount:<your-account-uuid>

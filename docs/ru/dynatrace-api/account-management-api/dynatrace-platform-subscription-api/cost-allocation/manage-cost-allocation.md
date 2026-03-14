@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:07.452068
 
 # Dynatrace Platform Subscription API — управление распределением затрат
 
-# Dynatrace Platform Subscription API — управление распределением затрат
 
 * Latest Dynatrace
 * Справочник
@@ -67,29 +66,22 @@ scraped: 2026-03-06T21:27:07.452068
 {
 
 
-
 "records": [
-
 
 
 {
 
 
-
 "key": "string"
-
 
 
 }
 
 
-
 ],
 
 
-
 "hasNextPage": true
-
 
 
 }
@@ -134,25 +126,19 @@ scraped: 2026-03-06T21:27:07.452068
 {
 
 
-
 "values": [
-
 
 
 {
 
 
-
 "key": "string"
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -209,25 +195,19 @@ scraped: 2026-03-06T21:27:07.452068
 {
 
 
-
 "values": [
-
 
 
 {
 
 
-
 "key": "string"
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -325,29 +305,22 @@ scraped: 2026-03-06T21:27:07.452068
 {
 
 
-
 "records": [
-
 
 
 {
 
 
-
 "key": "string"
-
 
 
 }
 
 
-
 ],
 
 
-
 "hasNextPage": true
-
 
 
 }
@@ -392,25 +365,19 @@ scraped: 2026-03-06T21:27:07.452068
 {
 
 
-
 "values": [
-
 
 
 {
 
 
-
 "key": "string"
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -467,25 +434,19 @@ scraped: 2026-03-06T21:27:07.452068
 {
 
 
-
 "values": [
-
 
 
 {
 
 
-
 "key": "string"
-
 
 
 }
 
 
-
 ]
-
 
 
 }

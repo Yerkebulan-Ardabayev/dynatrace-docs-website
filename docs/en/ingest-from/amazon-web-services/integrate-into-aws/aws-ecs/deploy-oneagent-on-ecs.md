@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:35:27.635545
 
 # Monitor Elastic Container Service (ECS) with EC2 launch type
 
-# Monitor Elastic Container Service (ECS) with EC2 launch type
 
 * Classic
 * How-to guide
@@ -69,7 +68,6 @@ This approach describes the installation of OneAgent as a daemon service in its 
 
     ```
     "ipcMode": "host",
-
 
 
     "pidMode": "host",

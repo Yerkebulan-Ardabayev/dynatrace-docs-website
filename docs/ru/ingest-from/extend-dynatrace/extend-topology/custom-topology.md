@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:40.825058
 
 # Определение пользовательской топологии
 
-# Определение пользовательской топологии
 
 * Последняя версия Dynatrace
 * 5 мин. чтения
@@ -20,37 +19,28 @@ scraped: 2026-03-06T21:36:40.825058
 truck.fuel.total,trucknr=99,model=mac-granite 10234
 
 
-
 truck.fuel.usage,trucknr=99,model=mac-granite 17
-
 
 
 truck.operation.hours,trucknr=99,model=mac-granite 23766
 
 
-
 truck.fuel.total,trucknr=12,model=mac-anthem 234
-
 
 
 truck.fuel.usage,trucknr=12,model=mac-anthem 10
 
 
-
 truck.operation.hours,trucknr=12,model=mac-anthem 13766
-
 
 
 container.temperature,containernr=234321,trucknr=99 40
 
 
-
 container.temperature.dev,containernr=234321,trucknr=99 0
 
 
-
 container.temperature,containernr=111111,trucknr=12 39
-
 
 
 container.temperature.dev,containernr=111111,trucknr=12 2.5

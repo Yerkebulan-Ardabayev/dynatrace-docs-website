@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:39:09.965555
 
 # Vulnerabilities API - GET vulnerable functions
 
-# Vulnerabilities API - GET vulnerable functions
 
 * Reference
 * Updated on Sep 25, 2024
@@ -120,193 +119,146 @@ A list of constraint violations
 {
 
 
-
 "vulnerableFunctions": [
 
 
-
 {
-
 
 
 "function": {
 
 
-
 "className": "string",
-
 
 
 "filePath": "string",
 
 
-
 "functionName": "string"
-
 
 
 },
 
 
-
 "processGroupsInUse": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "processGroupsNotAvailable": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "processGroupsNotInUse": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "usage": "IN_USE"
 
 
-
 }
 
 
-
 ],
-
 
 
 "vulnerableFunctionsByProcessGroup": [
 
 
-
 {
-
 
 
 "functionsInUse": [
 
 
-
 {}
 
 
-
 ],
-
 
 
 "functionsNotAvailable": [
 
 
-
 {}
 
 
-
 ],
-
 
 
 "functionsNotInUse": [
 
 
-
 {}
 
 
-
 ],
-
 
 
 "processGroup": "string"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -324,9 +276,7 @@ Required filter: `groupBy=PROCESS_GROUP`.
 curl -X 'GET' 'https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/2919200225913269102/vulnerableFunctions?groupBy=PROCESS_GROUP' \
 
 
-
 -H 'accept: application/json; charset=utf-8' \
-
 
 
 -H 'Authorization: Api-Token [your_token]'
@@ -344,121 +294,91 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 {
 
 
-
 "vulnerableFunctions": [
 
 
-
 {
-
 
 
 "function": {
 
 
-
 "className": "org.apache.coyote.http11.Http11InputBuffer",
-
 
 
 "filePath": null,
 
 
-
 "functionName": "parseHeader"
-
 
 
 },
 
 
-
 "usage": "IN_USE",
-
 
 
 "processGroupsInUse": [
 
 
-
 "PROCESS_GROUP-285FF9C91448BC8B"
 
 
-
 ],
-
 
 
 "processGroupsNotInUse": [],
 
 
-
 "processGroupsNotAvailable": []
-
 
 
 }
 
 
-
 ],
-
 
 
 "vulnerableFunctionsByProcessGroup": [
 
 
-
 {
-
 
 
 "processGroup": "PROCESS_GROUP-285FF9C91448BC8B",
 
 
-
 "functionsInUse": [
-
 
 
 {
 
 
-
 "className": "org.apache.coyote.http11.Http11InputBuffer",
-
 
 
 "filePath": null,
 
 
-
 "functionName": "parseHeader"
 
 
-
 }
-
 
 
 ],
 
 
-
 "functionsNotInUse": [],
-
 
 
 "functionsNotAvailable": []
 
 
-
 }
 
 
-
 ]
-
 
 
 }

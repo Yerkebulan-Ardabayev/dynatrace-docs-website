@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:41.171559
 
 # Enrich ingested data with Dynatrace-specific fields
 
-# Enrich ingested data with Dynatrace-specific fields
 
 * Latest Dynatrace
 * 4-min read
@@ -90,49 +89,37 @@ The following example shows how to load the enrichment information as JSON in Py
 # Initialize dictionary variable
 
 
-
 enrich_attrs = dict()
-
 
 
 # Iterate over the potential data files and try reading them
 
 
-
 for name in ["dt_metadata_e617c525669e072eebe3d0f08212e8f2.json", "/var/lib/dynatrace/enrichment/dt_metadata.json", "/var/lib/dynatrace/enrichment/dt_host_metadata.json"]:
-
 
 
 try:
 
 
-
 data = ''
-
 
 
 with open(name) as f:
 
 
-
 data = json.load(f if name.startswith("/var") else open(f.read()))
-
 
 
 enrich_attrs.update(data)
 
 
-
 except:
-
 
 
 pass # An exception indicates the file was not available
 
 
-
 # Use enrich_attrs here to enrich your requests to Dynatrace.
-
 
 
 # For example, when instrumenting with OpenTelemetry, add the data as resource attributes.

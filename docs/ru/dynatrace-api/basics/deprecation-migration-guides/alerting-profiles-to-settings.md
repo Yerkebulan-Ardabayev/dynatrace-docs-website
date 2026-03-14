@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:32.542628
 
 # Миграция с Alerting profiles API на Settings API
 
-# Миграция с Alerting profiles API на Settings API
 
 * Справочник
 * Опубликовано 20 декабря 2022 г.
@@ -57,257 +56,193 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects?schemaIds=bui
 {
 
 
-
 "items": [
 
 
-
 {
-
 
 
 "objectId": "vu9U3hXa3q0AAAABABhidWlsdGluOmFsZXJ0aW5nLnByb2ZpbGUABnRlbmFudAAGdGVuYW50ACQ4M2Q3NDk5YS1mZDY2LTQ1OGYtOGIxNy1iYjNkMzgwN2RmMTa-71TeFdrerQ",
 
 
-
 "value": {
-
 
 
 "name": "Synthetic Emergencies",
 
 
-
 "severityRules": [
-
 
 
 {
 
 
-
 "severityLevel": "AVAILABILITY",
-
 
 
 "delayInMinutes": 0,
 
 
-
 "tagFilterIncludeMode": "INCLUDE_ANY",
 
 
-
 "tagFilter": [
-
 
 
 "SYN_API",
 
 
-
 "SYN_DB",
-
 
 
 "SYN_SCH"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "severityLevel": "ERRORS",
 
 
-
 "delayInMinutes": 5,
-
 
 
 "tagFilterIncludeMode": "INCLUDE_ANY",
 
 
-
 "tagFilter": [
-
 
 
 "SYN_PLUGIN"
 
 
-
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "eventFilters": []
-
 
 
 }
 
 
-
 },
 
 
-
 {
-
 
 
 "objectId": "vu9U3hXa3q0AAAABABhidWlsdGluOmFsZXJ0aW5nLnByb2ZpbGUABnRlbmFudAAGdGVuYW50ACQ1ODdkNzk5Yi1mNDI2LTQyNGYtYmY5NS1iZTQ4NzFiYWFlMmO-71TeFdrerQ",
 
 
-
 "value": {
-
 
 
 "name": "CPU high",
 
 
-
 "severityRules": [
 
 
-
 {
-
 
 
 "severityLevel": "PERFORMANCE",
 
 
-
 "delayInMinutes": 30,
-
 
 
 "tagFilterIncludeMode": "NONE"
 
 
-
 },
 
 
-
 {
-
 
 
 "severityLevel": "RESOURCE_CONTENTION",
 
 
-
 "delayInMinutes": 30,
-
 
 
 "tagFilterIncludeMode": "INCLUDE_ANY",
 
 
-
 "tagFilter": [
-
 
 
 "Holox Cluster"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "severityLevel": "MONITORING_UNAVAILABLE",
 
 
-
 "delayInMinutes": 0,
 
 
-
 "tagFilterIncludeMode": "NONE"
-
 
 
 },
 
 
-
 {
-
 
 
 "severityLevel": "AVAILABILITY",
 
 
-
 "delayInMinutes": 0,
-
 
 
 "tagFilterIncludeMode": "NONE"
 
 
-
 }
 
 
-
 ],
-
 
 
 "eventFilters": []
 
 
-
 }
 
 
-
 }
-
 
 
 ],
 
 
-
 "totalCount": 2,
 
 
-
 "pageSize": 100
-
 
 
 }
@@ -325,45 +260,34 @@ GET https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles
 {
 
 
-
 "values": [
 
 
-
 {
-
 
 
 "id": "b33b45da-a14a-4478-97d3-23fce29fd767",
 
 
-
 "name": "Synthetic Emergencies"
-
 
 
 },
 
 
-
 {
-
 
 
 "id": "39115830-1852-3f0c-a73a-f355a19d338b",
 
 
-
 "name": "CPU high"
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -391,65 +315,49 @@ POST https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects
 [
 
 
-
 {
-
 
 
 "schemaId": "builtin:alerting.profile",
 
 
-
 "scope": "environment",
-
 
 
 "value": {
 
 
-
 "name": "Sample alerting profile",
-
 
 
 "severityRules": [
 
 
-
 {
-
 
 
 "severityLevel": "AVAILABILITY",
 
 
-
 "delayInMinutes": 0,
-
 
 
 "tagFilterIncludeMode": "NONE"
 
 
-
 }
-
 
 
 ],
 
 
-
 "eventFilters": []
 
 
-
 }
 
 
-
 }
-
 
 
 ]
@@ -461,21 +369,16 @@ POST https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects
 [
 
 
-
 {
-
 
 
 "code": 200,
 
 
-
 "objectId": "vu9U3hXa3q0AAAABABhidWlsdGluOmFsZXJ0aW5nLnByb2ZpbGUABnRlbmFudAAGdGVuYW50ACQzYjAwNDMwOC01ZTZjLTNkNGMtOTNjMS01ZTBiOWRhZTlhZjW-71TeFdrerQ"
 
 
-
 }
-
 
 
 ]
@@ -495,41 +398,31 @@ POST https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles
 {
 
 
-
 "displayName": "Sample alerting profile",
-
 
 
 "severityRules": [
 
 
-
 {
-
 
 
 "severityLevel": "AVAILABILITY",
 
 
-
 "delayInMinutes": 0,
-
 
 
 "tagFilterIncludeMode": "NONE"
 
 
-
 }
-
 
 
 ],
 
 
-
 "eventFilters": []
-
 
 
 }
@@ -541,13 +434,10 @@ POST https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles
 {
 
 
-
 "id": "2640173c-e9a8-31dc-9584-696969c716f5",
 
 
-
 "name": "Sample alerting profile"
-
 
 
 }
@@ -573,77 +463,58 @@ PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AA
 {
 
 
-
 "schemaId": "builtin:alerting.profile",
-
 
 
 "scope": "environment",
 
 
-
 "value": {
-
 
 
 "name": "Sample alerting profile",
 
 
-
 "managementZone": "1291856336337388063",
-
 
 
 "severityRules": [
 
 
-
 {
-
 
 
 "severityLevel": "AVAILABILITY",
 
 
-
 "delayInMinutes": 0,
-
 
 
 "tagFilterIncludeMode": "INCLUDE_ALL",
 
 
-
 "tagFilter": [
-
 
 
 "InfraLinux",
 
 
-
 "InraWin"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "eventFilters": []
 
 
-
 }
-
 
 
 }
@@ -655,21 +526,16 @@ PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AA
 [
 
 
-
 {
-
 
 
 "code": 200,
 
 
-
 "objectId": "vu9U3hXa3q0AAAABABhidWlsdGluOmFsZXJ0aW5nLnByb2ZpbGUABnRlbmFudAAGdGVuYW50ACQzYjAwNDMwOC01ZTZjLTNkNGMtOTNjMS01ZTBiOWRhZTlhZjW-71TeFdrerQ"
 
 
-
 }
-
 
 
 ]
@@ -687,61 +553,46 @@ PUT https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles/2640173c-e
 {
 
 
-
 "name": "Sample alerting profile",
-
 
 
 "managementZone": "1291856336337388063",
 
 
-
 "severityRules": [
-
 
 
 {
 
 
-
 "severityLevel": "AVAILABILITY",
-
 
 
 "delayInMinutes": 0,
 
 
-
 "tagFilterIncludeMode": "INCLUDE_ALL",
-
 
 
 "tagFilter": [
 
 
-
 "InfraLinux",
-
 
 
 "InraWin"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "eventFilters": []
-
 
 
 }

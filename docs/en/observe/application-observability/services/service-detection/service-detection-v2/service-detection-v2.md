@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:34.058448
 
 # Customize service detection in Service Detection v2
 
-# Customize service detection in Service Detection v2
 
 * Classic
 * How-to guide

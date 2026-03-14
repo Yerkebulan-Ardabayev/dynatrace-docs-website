@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:16.527467
 
 # Сценарии использования Log Management and Analytics
 
-# Сценарии использования Log Management and Analytics
 
 * Последняя версия Dynatrace
 * Обзор

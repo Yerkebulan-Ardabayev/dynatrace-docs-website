@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:02.173566
 
 # Analyze Amazon API Gateway access logs with Investigations
 
-# Analyze Amazon API Gateway access logs with Investigations
 
 * Latest Dynatrace
 * Tutorial
@@ -54,61 +53,46 @@ Enable logging and ensure that the logs are saved to the CloudWatch log group (i
    {
 
 
-
    "requestId": "$context.requestId",
-
 
 
    "ip": "$context.identity.sourceIp",
 
 
-
    "requestTime": "$context.requestTime",
-
 
 
    "httpMethod": "$context.httpMethod",
 
 
-
    "routeKey": "$context.routeKey",
-
 
 
    "path": "$context.path",
 
 
-
    "status": "$context.status",
-
 
 
    "protocol": "$context.protocol",
 
 
-
    "responseLength": "$context.responseLength",
-
 
 
    "responseLatency": "$context.responseLatency",
 
 
-
    "integrationLatency": "$context.integrationLatency",
-
 
 
    "integrationStatus": "$context.integrationStatus",
 
 
-
    "errorMessage": "$context.error.message",
 
 
-
    "integrationErrorMessage": "$context.integrationErrorMessage"
-
 
 
    }
@@ -121,7 +105,6 @@ Enable logging and ensure that the logs are saved to the CloudWatch log group (i
 
    ```
    fetch logs
-
 
 
    | filter aws.log_group == "/aws/apigateway/my-gateway-demo"
@@ -156,7 +139,6 @@ Follow the steps below to analyze and discover the services with the highest lat
    fetch logs
 
 
-
    | filter aws.log_group == "/aws/apigateway/my-gateway-demo"
    ```
 2. In the query results table, right-click on a field and select **View field details** to [view the log record in the original format](../investigations/enhance-results.md#view-details "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
@@ -167,61 +149,46 @@ Follow the steps below to analyze and discover the services with the highest lat
    {
 
 
-
    "requestId": "Dzfa6gNrrks42Tw=",
-
 
 
    "ip": "14.21.74.45",
 
 
-
    "requestTime": "03/Jan/2025:09:22:13 +0000",
-
 
 
    "httpMethod": "GET",
 
 
-
    "routeKey": "ANY /",
-
 
 
    "path": "/getStuff",
 
 
-
    "status": "200",
-
 
 
    "protocol": "HTTP/1.1",
 
 
-
    "responseLength": "33",
-
 
 
    "responseLatency": "1671",
 
 
-
    "integrationLatency": "1665",
-
 
 
    "integrationStatus": "200",
 
 
-
    "errorMessage": "-",
 
 
-
    "integrationErrorMessage": "-"
-
 
 
    }
@@ -240,13 +207,10 @@ Follow the steps below to analyze and discover the services with the highest lat
    JSON{
 
 
-
    STRING:path,
 
 
-
    INT:integrationLatency
-
 
 
    }(flat=true)
@@ -259,17 +223,13 @@ Follow the steps below to analyze and discover the services with the highest lat
    | makeTimeseries {
 
 
-
    latency = avg(integrationLatency, default:0)
-
 
 
    },
 
 
-
    by: { path },
-
 
 
    interval:1m
@@ -281,21 +241,16 @@ Follow the steps below to analyze and discover the services with the highest lat
    fetch logs
 
 
-
    | filter aws.log_group == "/aws/apigateway/my-gateway-demo"
-
 
 
    | parse content, "JSON{ STRING:path, INT:integrationLatency }(flat=true)"
 
 
-
    | makeTimeseries {
 
 
-
    latency = avg(integrationLatency, default:0)
-
 
 
    }, by: { path }, interval:1m
@@ -326,17 +281,13 @@ Follow the steps below to dig deeper into the response codes.
    | makeTimeseries {
 
 
-
    latency = avg(integrationLatency, default:0)
-
 
 
    },
 
 
-
    by: { path, status },
-
 
 
    interval:1m
@@ -348,21 +299,16 @@ Follow the steps below to dig deeper into the response codes.
    fetch logs
 
 
-
    | filter aws.log_group == "/aws/apigateway/my-gateway-demo"
-
 
 
    | parse content, "JSON{ STRING:path, INT:status INT:integrationLatency }(flat=true)"
 
 
-
    | makeTimeseries {
 
 
-
    latency = avg(integrationLatency, default:0)
-
 
 
    }, by: { path, status }, interval:1m
@@ -386,21 +332,16 @@ Follow the steps below to continue debugging integration errors.
    JSON{
 
 
-
    STRING:path,
-
 
 
    INT:status,
 
 
-
    INT:integrationLatency,
 
 
-
    STRING:integrationErrorMessage
-
 
 
    }(flat=true)
@@ -409,7 +350,6 @@ Follow the steps below to continue debugging integration errors.
 
    ```
    | summarize count(), by: { integrationErrorMessage }
-
 
 
    | sort `count()` desc
@@ -421,17 +361,13 @@ Follow the steps below to continue debugging integration errors.
    fetch logs
 
 
-
    | filter aws.log_group == "/aws/apigateway/my-gateway-demo"
-
 
 
    | parse content, "JSON{ STRING:path, INT:status, INT:integrationLatency, STRING:integrationErrorMessage }(flat=true)"
 
 
-
    | summarize count(), by: { integrationErrorMessage }
-
 
 
    | sort `count()` desc
@@ -453,7 +389,6 @@ Follow the steps below to continue debugging integration errors.
    | fields error = if(isnull(error), integrationErrorMessage, else: error)
 
 
-
    | summarize count(), by: { error }
    ```
 
@@ -463,21 +398,16 @@ Follow the steps below to continue debugging integration errors.
    fetch logs
 
 
-
    | filter aws.log_group == "/aws/apigateway/my-gateway-demo"
-
 
 
    | parse content, "JSON{ STRING:path, INT:status, INT:integrationLatency, STRING:integrationErrorMessage }(flat=true)"
 
 
-
    | parse integrationErrorMessage, "LD ': RequestId: ' UUIDSTRING ' Error: ' LD:error"
 
 
-
    | fields error = if(isnull(error), integrationErrorMessage, else: error)
-
 
 
    | summarize count(), by: { error }
@@ -500,25 +430,19 @@ Follow the steps below to continue debugging integration errors.
   fetch logs
 
 
-
   | filter aws.log_group == "/aws/apigateway/my-gateway-demo"
-
 
 
   | parse content, "JSON{ STRING:path, INT:status, INT:integrationLatency, STRING:integrationErrorMessage }(flat=true)"
 
 
-
   | parse integrationErrorMessage, "LD ': RequestId: ' UUIDSTRING ' Error: ' LD:error"
-
 
 
   | fields timestamp, error = if(isnull(error), integrationErrorMessage, else: error)
 
 
-
   | filterOut error == "-"
-
 
 
   | makeTimeseries count(default: 0), by: { error }, interval: 1m

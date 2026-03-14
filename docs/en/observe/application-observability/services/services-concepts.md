@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:34.460722
 
 # Service-related concepts
 
-# Service-related concepts
 
 * Latest Dynatrace
 * Explanation

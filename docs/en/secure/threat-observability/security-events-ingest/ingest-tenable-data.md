@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:59.180814
 
 # Ingest Tenable vulnerability findings, scan events, and audit logs
 
-# Ingest Tenable vulnerability findings, scan events, and audit logs
 
 * Latest Dynatrace
 * Extension
@@ -74,9 +73,7 @@ With the ingested data, you can accomplish various use cases, such as
      fetch security.events
 
 
-
      | filter dt.system.bucket=="default_securityevents"
-
 
 
      | filter event.provider == "Tenable"
@@ -85,7 +82,6 @@ With the ingested data, you can accomplish various use cases, such as
 
      ```
      fetch logs
-
 
 
      | filter log.source == "Tenable"
@@ -149,9 +145,7 @@ For examples of how you can build your queries, see below.
 fetch logs
 
 
-
 | filter log.source == "Tenable"
-
 
 
 | makeTimeseries logs=countDistinctExact(id), by:{audit.action}, time:{toTimestamp(received)}, interval:{3h}
@@ -167,41 +161,31 @@ Example result:
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents"
-
 
 
 | filter event.type == "VULNERABILITY_FINDING"
 
 
-
 | filter event.provider == "Tenable"
-
 
 
 | dedup {object.id, vulnerability.id}, sort:{timestamp}
 
 
-
 | summarize Vulnerabilities=countDistinctExact(vulnerability.id), by:{dt.security.risk.level}
-
 
 
 | fieldsAdd order=if(dt.security.risk.level=="CRITICAL", 1, else:
 
 
-
 if(dt.security.risk.level=="HIGH", 2, else:
-
 
 
 if(dt.security.risk.level=="MEDIUM", 3, else:
 
 
-
 if(dt.security.risk.level=="LOW", 4, else:5))))
-
 
 
 | sort order asc
@@ -217,29 +201,22 @@ Example result:
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents"
-
 
 
 | filter event.type == "VULNERABILITY_SCAN"
 
 
-
 | filter event.provider == "Tenable"
-
 
 
 | dedup {object.id, scan.id}
 
 
-
 | summarize Hosts=countDistinctExact(object.id), by:{scan.name}
 
 
-
 | sort Hosts desc
-
 
 
 | limit 10
@@ -292,17 +269,13 @@ Example:
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents"
-
 
 
 | filter event.type == "VULNERABILITY_FINDING"
 
 
-
 | filter event.provider == "Tenable"
-
 
 
 | dedup {object.id, finding.id}, sort:{timestamp}

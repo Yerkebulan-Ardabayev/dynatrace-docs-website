@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:23.534272
 
 # Использование трассировок, DQL и логов для выявления закономерностей
 
-# Использование трассировок, DQL и логов для выявления закономерностей
 
 * Последняя версия Dynatrace
 * Руководство
@@ -133,13 +132,10 @@ scraped: 2026-03-06T21:12:23.534272
 fetch spans
 
 
-
 | filter isNotNull(db.query.text)
 
 
-
 | parse db.query.text, "string:type"
-
 
 
 | makeTimeseries count(), by:{upper(type)}
@@ -165,9 +161,7 @@ fetch spans
 fetch spans
 
 
-
 | filter isNotNull(db.query.text)
-
 
 
 | makeTimeseries sum(duration), by:{db.query.text}
@@ -193,9 +187,7 @@ fetch spans
 fetch spans
 
 
-
 | filter isNotNull(db.query.text)
-
 
 
 | makeTimeseries sum(db.affected_item_count), by:{db.query.text}
@@ -227,17 +219,13 @@ fetch spans
 fetch spans
 
 
-
 | filter iAny(span.events[][span_event.name] == "exception")
-
 
 
 | expand span.events
 
 
-
 | fieldsFlatten span.events, fields: {exception.type}
-
 
 
 | makeTimeseries count(), by: {exception.type}, time:start_time
@@ -269,17 +257,13 @@ fetch spans
 fetch spans
 
 
-
 | filter iAny(span.events[][span_event.name] == "exception")
-
 
 
 | expand span.events
 
 
-
 | fieldsFlatten span.events, fields: {exception.type, exception.message}
-
 
 
 | summarize count(), by: {service.name, exception.message}
@@ -325,17 +309,13 @@ fetch spans
 fetch spans
 
 
-
 | filter matchesValue(`span.kind`, "internal")
-
 
 
 | summarize {durationSum = sum(duration), callCount = count(), avgDuration = avg(duration)}, by: {service.name, span.name}
 
 
-
 | sort avgDuration desc
-
 
 
 | limit 10
@@ -361,17 +341,13 @@ fetch spans
 fetch logs
 
 
-
 | filter isNotNull(trace_id)
-
 
 
 | summarize count = count(), by: {service.name}
 
 
-
 | sort count desc
-
 
 
 | limit 20
@@ -405,37 +381,28 @@ fetch logs
 fetch spans
 
 
-
 | join [
-
 
 
 fetch logs
 
 
-
 | fieldsAdd trace.id = toUid(trace_id)
-
 
 
 | summarize logCount = count(), by: {trace.id}
 
 
-
 ], on: {trace.id}
-
 
 
 | filter isNotNull(http.url)
 
 
-
 | summarize {requestCount = count(), logCount = sum(right.logCount)}, by: {http.url}
 
 
-
 | fieldsAdd logPerRequest = logCount / requestCount
-
 
 
 | sort logPerRequest desc

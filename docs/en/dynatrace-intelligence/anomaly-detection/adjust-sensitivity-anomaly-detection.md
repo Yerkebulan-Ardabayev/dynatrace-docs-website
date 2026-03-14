@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:54.757825
 
 # Adjust the sensitivity of anomaly detection
 
-# Adjust the sensitivity of anomaly detection
 
 * Latest Dynatrace
 * Explanation

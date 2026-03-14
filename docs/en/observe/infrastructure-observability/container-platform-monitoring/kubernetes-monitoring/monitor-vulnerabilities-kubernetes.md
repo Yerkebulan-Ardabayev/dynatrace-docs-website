@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:01.751523
 
 # Monitor vulnerabilities in Kubernetes/OpenShift
 
-# Monitor vulnerabilities in Kubernetes/OpenShift
 
 * Classic
 * 1-min read

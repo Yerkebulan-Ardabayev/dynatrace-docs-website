@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:36.060105
 
 # Service-Level Objectives
 
-# Service-Level Objectives
 
 * Latest Dynatrace
 * App
@@ -184,17 +183,13 @@ Dynatrace SLOs are defined using DQL, allowing you to determine the SLI based on
    | fieldsAdd sli = "YOUR SLI"
 
 
-
    | fieldsAdd target= "YOUR SLO-target" in percentage
-
 
 
    // Add the next line to calculate the error budget burn rate
 
 
-
    | fieldsAdd burnRate = ((100 - sli[]) / (100 - target))
-
 
 
    | fieldsRemove sli
@@ -210,17 +205,13 @@ Dynatrace SLOs are defined using DQL, allowing you to determine the SLI based on
    | fieldsAdd sli = "YOUR SLI"
 
 
-
    | fieldsAdd target= "YOUR SLO-target" in percentage
-
 
 
    // Add the next line to calculate the error budget burn rate
 
 
-
    | fieldsAdd burnRate = ((100 - sli[]) / (100 - target))
-
 
 
    | summarize sloBurnRate = avg(burnRate[]), timeframe = takeFirst(timeframe), interval = takeFirst(interval)

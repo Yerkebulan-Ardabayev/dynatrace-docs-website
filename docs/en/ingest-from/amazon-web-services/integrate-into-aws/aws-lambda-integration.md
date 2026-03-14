@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:18.856655
 
 # Monitor AWS Lambda
 
-# Monitor AWS Lambda
 
 * Classic
 * Explanation

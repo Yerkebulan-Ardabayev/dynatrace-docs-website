@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:38.490851
 
 # Log ingest rules (Logs Classic)
 
-# Log ingest rules (Logs Classic)
 
 * Classic
 * Tutorial
@@ -199,113 +198,85 @@ To create a log ingest rule using the API:
    [
 
 
-
    {
-
 
 
    "insertAfter":"uAAZ0ZW5hbnQABnRlbmFudAAkMGUzYmY2ZmYtMDc2ZC0zNzFmLhXaq0",
 
 
-
    "schemaId": "builtin:logmonitoring.log-storage-settings",
-
 
 
    "schemaVersion": "0.1.0",
 
 
-
    "scope": "tenant",
-
 
 
    "value": {
 
 
-
    "config-item-title": "Added from REST API",
-
 
 
    "send-to-storage": true,
 
 
-
    "matchers": [
 
 
-
    {
-
 
 
    "attribute": "dt.entity.process_group",
 
 
-
    "operator": "MATCHES",
 
 
-
    "values": [
-
 
 
    "PROCESS_GROUP-05F00CBACF39EBD1"
 
 
-
    ]
-
 
 
    },
 
 
-
    {
-
 
 
    "attribute": "log.source",
 
 
-
    "operator": "MATCHES",
-
 
 
    "values": [
 
 
-
    "Windows System Log",
-
 
 
    "Windows Security Log"
 
 
+   ]
+
+
+   }
+
 
    ]
 
 
-
    }
 
 
-
-   ]
-
-
-
    }
-
-
-
-   }
-
 
 
    ]
@@ -334,117 +305,88 @@ Results: `access.log` is not sent, `error.log` (of Apache) is sent, and `error.l
 {
 
 
-
 "send-to-storage": false,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "/path/to/access.log"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
-
 
 
 "enabled": true
 
 
-
 },
 
 
-
 {
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
-
 
 
 "values": [
 
 
-
 "PROCESS_GROUP-APACHEID"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -458,69 +400,52 @@ This task requires setting one rule with two matchers.
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "values": [
-
 
 
 "*ERROR*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -534,93 +459,70 @@ This task requires setting two rules with one matcher each.
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "values": [
-
 
 
 "*ERROR*"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 },
 
 
-
 {
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
-
 
 
 "values": [
 
 
-
 "PROCESS_GROUP-APACHEID"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -634,93 +536,70 @@ This task requires setting one rule with three matchers, with one value each.
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "values": [
-
 
 
 "*ERROR*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "values": [
-
 
 
 "*Customer*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -734,93 +613,70 @@ This task requires setting one rule with two matchers: a matcher with the proces
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "values": [
-
 
 
 "*ERROR*", "*Customer*"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 },
 
 
-
 {
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
-
 
 
 "values": [
 
 
-
 "PROCESS_GROUP-APACHEID"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -837,93 +693,70 @@ Setting two rules:
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-MYSQL"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 },
 
 
-
 {
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
-
 
 
 "values": [
 
 
-
 "PROCESS_GROUP-APACHEID"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -935,45 +768,34 @@ Setting one rule with one matcher having two values:
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID", "PROCESS_GROUP-MYSQL"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -987,21 +809,16 @@ This task requires setting a rule without any matchers.
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -1020,69 +837,52 @@ The rules have to be executed in the order indicated below.
 {
 
 
-
 "send-to-storage": false,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID", "PROCESS_GROUP-MYSQL"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 },
 
 
-
 {
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }

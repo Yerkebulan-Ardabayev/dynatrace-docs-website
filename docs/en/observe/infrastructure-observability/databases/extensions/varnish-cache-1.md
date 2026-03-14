@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:45.341800
 
 # Varnish Cache extension
 
-# Varnish Cache extension
 
 * Latest Dynatrace
 * Extension

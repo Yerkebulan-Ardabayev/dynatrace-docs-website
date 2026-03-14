@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:42.123501
 
 # Predict and autoscale Kubernetes workloads
 
-# Predict and autoscale Kubernetes workloads
 
 * Latest Dynatrace
 * Tutorial
@@ -90,21 +89,16 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
       fetch dt.entity.cloud_application, from:now() - 5m, to:now()
 
 
-
       | filter kubernetesAnnotations[`predictive-kubernetes-scaling.observability-labs.dynatrace.com/enabled`] == "true"
-
 
 
       | fields clusterId = clustered_by[`dt.entity.kubernetes_cluster`], namespace = namespaceName, name = entity.name, type = arrayFirst(cloudApplicationDeploymentTypes), annotations = kubernetesAnnotations
 
 
-
       | join [ fetch dt.entity.kubernetes_cluster ],
 
 
-
       on: { left[clusterId] == right[id] },
-
 
 
       fields: { clusterName = entity.name }
@@ -132,81 +126,61 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
       timeseries {
 
 
-
       memoryUsage = avg(dt.kubernetes.container.memory_working_set),
-
 
 
       memoryLimits = max(dt.kubernetes.container.limits_memory),
 
 
-
       cpuUsage = avg(dt.kubernetes.container.cpu_usage),
-
 
 
       cpuLimits = max(dt.kubernetes.container.limits_cpu)
 
 
-
       },
-
 
 
       by:{k8s.cluster.name, k8s.namespace.name, k8s.workload.kind, k8s.workload.name}
 
 
-
       | filter k8s.cluster.name == "{{ _.workload.clusterName }}" and k8s.namespace.name == "{{ _.workload.namespace }}" and k8s.workload.name == "{{ _.workload.name }}"
-
 
 
       | fields
 
 
-
       cluster = k8s.cluster.name,
-
 
 
       clusterId = "{{ _.workload.clusterId }}",
 
 
-
       namespace = k8s.namespace.name,
-
 
 
       kind = k8s.workload.kind,
 
 
-
       name = k8s.workload.name,
-
 
 
       annotations = "{{ _.workload.annotations }}",
 
 
-
       memoryLimit = arrayLast(memoryLimits),
-
 
 
       cpuLimit = arrayLast(cpuLimits),
 
 
-
       timeframe,
-
 
 
       interval,
 
 
-
       memoryUsage,
-
 
 
       cpuUsage
@@ -235,329 +209,247 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
       import {execution} from '@dynatrace-sdk/automation-utils';
 
 
-
       export default async function () {
-
 
 
       const ex = await execution();
 
 
-
       const predictions = await ex.result('predict\_resource\_usage');
-
 
 
       let workloads = \[];
 
 
-
       predictions.forEach(prediction => {
-
 
 
       prediction.result.output
 
 
-
       .filter(output => output.analysisStatus == 'OK' && output.forecastQualityAssessment == 'VALID')
-
 
 
       .forEach(output => {
 
 
-
       const query = JSON.parse(output.analyzedTimeSeriesQuery.expression);
-
 
 
       const result = output.timeSeriesDataWithPredictions.records\[0];
 
 
-
       let resource = query.timeSeriesData.records\[0].cpuUsage ? 'cpu' : 'memory';
-
 
 
       const highestPrediction = getHighestPrediction(result.timeframe, result.interval, resource, result\['dt.davis.forecast:upper'])
 
 
-
       workloads = addOrUpdateWorkload(workloads, result, highestPrediction);
 
 
-
       })
-
 
 
       });
 
 
-
       return workloads;
 
 
-
       }
-
 
 
       const getHighestPrediction = (timeframe, interval, resource, values) => {
 
 
-
       const highestValue = Math.max(...values);
-
 
 
       const index = values.indexOf(highestValue);
 
 
-
       const startTime = new Date(timeframe.start).getTime();
-
 
 
       const intervalInMs = interval / 1000000;
 
 
-
       return {
-
 
 
       resource,
 
 
-
       value: highestValue,
-
 
 
       date: new Date(startTime + (index \* intervalInMs)),
 
 
-
       predictedUntil: new Date(timeframe.end)
 
 
-
       }
 
 
-
       }
-
 
 
       const addOrUpdateWorkload = (workloads, result, prediction) => {
 
 
-
       const existingWorkload = workloads.find(p =>
-
 
 
       p.cluster === result.cluster
 
 
-
       && p.namespace === result.namespace
-
 
 
       && p.kind === result.kind
 
 
-
       && p.name === result.name
-
 
 
       );
 
 
-
       if (existingWorkload) {
-
 
 
       existingWorkload.predictions.push(prediction);
 
 
-
       return workloads;
 
 
-
       }
-
 
 
       const annotations = JSON.parse(result.annotations.replaceAll(`'`, `"`));
 
 
-
       const hpa = annotations\['predictive-kubernetes-scaling.observability-labs.dynatrace.com/managed-by-hpa'];
-
 
 
       workloads.push({
 
 
-
       cluster: result.cluster,
-
 
 
       clusterId: result.clusterId,
 
 
-
       namespace: result.namespace,
-
 
 
       kind: result.kind,
 
 
-
       name: result.name,
-
 
 
       repository: annotations\['predictive-kubernetes-scaling.observability-labs.dynatrace.com/managed-by-repo'],
 
 
-
       uuid: annotations\['predictive-kubernetes-scaling.observability-labs.dynatrace.com/uuid'],
-
 
 
       predictions: \[prediction],
 
 
-
       scalingConfig: {
-
 
 
       horizontalScaling: {
 
 
-
       enabled: hpa ? true : false,
-
 
 
       hpa: {
 
 
-
       name: hpa
-
 
 
       }
 
 
-
       },
-
 
 
       limits: {
 
 
-
       memory: result.memoryLimit,
-
 
 
       cpu: result.cpuLimit,
 
 
-
       },
-
 
 
       targetUtilization: getTargetUtilization(annotations),
 
 
-
       scaleDown: annotations\['predictive-kubernetes-scaling.observability-labs.dynatrace.com/scale-down'] ?? 'true' === 'true',
 
 
-
       }
-
 
 
       })
 
 
-
       return workloads;
 
 
-
       }
-
 
 
       const getTargetUtilization = (annotations) => {
 
 
-
       const defaultRange = annotations\['predictive-kubernetes-scaling.observability-labs.dynatrace.com/target-utilization'] ?? '80-90';
-
 
 
       const targetUtilization = {};
 
 
-
       const cpuRange = annotations\['predictive-kubernetes-scaling.observability-labs.dynatrace.com/target-cpu-utilization'] ?? defaultRange;
-
 
 
       targetUtilization.cpu = getTargetUtilizationFromRange(cpuRange);
 
 
-
       const memoryRange = annotations\['predictive-kubernetes-scaling.observability-labs.dynatrace.com/target-memory-utilization'] ?? defaultRange;
-
 
 
       targetUtilization.memory = getTargetUtilizationFromRange(memoryRange);
 
 
-
       return targetUtilization;
-
 
 
       }
 
 
-
       const getTargetUtilizationFromRange = (range) => {
-
 
 
       const \[min, max] = range.split('-').map(s => parseInt(s) / 100);
 
 
-
       const point = (min + max) / 2;
 
 
-
       return {min, max, point};
-
 
 
       }
@@ -584,285 +476,214 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
       import {actionExecution} from "@dynatrace-sdk/automation-utils";
 
 
-
       import {convert, units} from "@dynatrace-sdk/units";
-
 
 
       export default async function ({action\_execution\_id}) {
 
 
-
       const actionEx = await actionExecution(action\_execution\_id);
-
 
 
       const workload = actionEx.loopItem.workload;
 
 
-
       const targetUtilization = calculateTargetUtilization(workload.scalingConfig);
-
 
 
       const prompts = \[];
 
 
-
       const descriptions = \[`Dynatrace Intelligence has detected that the ${workload.kind} \`${workload.name}\` can be scaled based on predictive AI analysis. Therefore, this PR applies the following actions:\n\`];
-
 
 
       workload.predictions.forEach(prediction => {
 
 
-
       let resourceName;
-
 
 
       let newLimit;
 
 
-
       let range;
-
 
 
       let type;
 
 
-
       let exceedsLimit;
-
 
 
       if (prediction.resource === 'cpu') {
 
 
-
       resourceName = 'CPU';
-
 
 
       newLimit = `${Math.ceil(prediction.value / workload.scalingConfig.targetUtilization.cpu.point)}m`;
 
 
-
       range = `${workload.scalingConfig.targetUtilization.cpu.min * 100}-${workload.scalingConfig.targetUtilization.cpu.max * 100}%`;
-
 
 
       if (prediction.value > targetUtilization.cpu.max) {
 
 
-
       type = 'up';
-
 
 
       } else if (workload.scalingConfig.scaleDown && prediction.value < targetUtilization.cpu.min) {
 
 
-
       type = 'down';
 
 
-
       }
-
 
 
       exceedsLimit = type === 'up' && prediction.value > workload.scalingConfig.limits.cpu;
 
 
-
       } else if (prediction.resource === "memory") {
-
 
 
       resourceName = 'Memory';
 
 
-
       newLimit = `${Math.ceil(convert(
-
 
 
       Math.ceil(prediction.value / workload.scalingConfig.targetUtilization.memory.point),
 
 
-
       units.data.byte,
-
 
 
       units.data.mebibyte
 
 
-
       ))}Mi`;
-
 
 
       range = `${workload.scalingConfig.targetUtilization.memory.min * 100}-${workload.scalingConfig.targetUtilization.memory.max * 100}%`;
 
 
-
       if (prediction.value > targetUtilization.memory.max) {
-
 
 
       type = 'up';
 
 
-
       } else if (workload.scalingConfig.scaleDown && prediction.value < targetUtilization.memory.min) {
-
 
 
       type = 'down';
 
 
-
       }
-
 
 
       exceedsLimit = type === 'up' && prediction.value > workload.scalingConfig.limits.memory;
 
 
-
       }
-
 
 
       const prompt = `Scale the ${resourceName} request & limit of the ${workload.kind} named "${workload.name}" in this manifest to \`${newLimit}\`.\`;
 
 
-
       let description = type === 'up'
-
 
 
       ? `- â¬ï¸ **${resourceName}**: Scale up to \`${newLimit}\` (predicted to exceed its target range of ${range} at \`${prediction.date.toString()}\`)`
 
 
-
       : `- â¬ï¸ **${resourceName}**: Scale down to \`${newLimit}\` (predicted to stay below its target range of ${range} until \`${prediction.predictedUntil.toString()}\`)`
-
 
 
       if (exceedsLimit) {
 
 
-
       description = `- â ï¸ **${resourceName}**: Scale up to \`${newLimit}\` (predicted to exceed its ${resourceName} limit at \`${prediction.date.toString()}\`)`
 
 
-
       }
-
 
 
       descriptions.push(description);
 
 
-
       prompts.push({type, prompt, predictions: [prediction]});
-
 
 
       });
 
 
-
       if (prompts.length > 0) {
-
 
 
       descriptions.push(`\n_This Pull Request was automatically created by Dynatrace Assist._`)
 
 
-
       workload.scalingSuggestions = {
-
 
 
       description: descriptions.join('\n'),
 
 
-
       prompts
-
 
 
       };
 
 
-
       }
-
 
 
       return workload;
 
 
-
       }
-
 
 
       const calculateTargetUtilization = (scalingConfig) => {
 
 
-
       return {
-
 
 
       cpu: {
 
 
-
       max: scalingConfig.limits.cpu \* scalingConfig.targetUtilization.cpu.max,
-
 
 
       min: scalingConfig.limits.cpu \* scalingConfig.targetUtilization.cpu.min,
 
 
-
       point: scalingConfig.limits.cpu \* scalingConfig.targetUtilization.cpu.point
-
 
 
       },
 
 
-
       memory: {
-
 
 
       max: scalingConfig.limits.memory \* scalingConfig.targetUtilization.memory.max,
 
 
-
       min: scalingConfig.limits.memory \* scalingConfig.targetUtilization.memory.min,
-
 
 
       point: scalingConfig.limits.memory \* scalingConfig.targetUtilization.memory.point
 
 
-
       }
 
 
-
       };
-
 
 
       }
@@ -874,17 +695,13 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
       [{% for workload in result("parse_predictions") %}
 
 
-
       {% if workload.scalingConfig.horizontalScaling.enabled == false %}
-
 
 
       {{ workload }},
 
 
-
       {% endif %}
-
 
 
       {% endfor %}]
@@ -915,17 +732,13 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
          [{% for workload in result("parse_predictions") %}
 
 
-
          {% if workload.scalingConfig.horizontalScaling.enabled %}
-
 
 
          {{ workload }},
 
 
-
          {% endif %}
-
 
 
          {% endfor %}]
@@ -946,97 +759,73 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
       import {execution, actionExecution} from "@dynatrace-sdk/automation-utils";
 
 
-
       export default async function ({execution\_id, action\_execution\_id}) {
-
 
 
       const actionEx = await actionExecution(action\_execution\_id);
 
 
-
       const workload = actionEx.loopItem.workload;
-
 
 
       // Get matching HPA manifest
 
 
-
       const ex = await execution(execution\_id);
-
 
 
       const allHpaManifests = await ex.result('get\_hpa\_manifests');
 
 
-
       const hpaManifest = allHpaManifests.find(manifest =>
-
 
 
       manifest.metadata.name === workload.scalingConfig.horizontalScaling.hpa.name
 
 
-
       && manifest.metadata.namespace === workload.namespace
-
 
 
       && manifest.spec.scaleTargetRef.name === workload.name
 
 
-
       );
-
 
 
       // Adjust limits
 
 
-
       const maxReplicas = hpaManifest.spec.maxReplicas;
-
 
 
       workload.scalingConfig.horizontalScaling.hpa = {
 
 
-
       ...workload.scalingConfig.horizontalScaling.hpa,
-
 
 
       maxReplicas,
 
 
-
       uuid: hpaManifest.metadata.annotations\['predictive-kubernetes-scaling.observability-labs.dynatrace.com/uuid'],
-
 
 
       limits: {
 
 
-
       cpu: maxReplicas \* workload.scalingConfig.limits.cpu,
-
 
 
       memory: maxReplicas \* workload.scalingConfig.limits.memory
 
 
-
       }
-
 
 
       };
 
 
-
       return workload;
-
 
 
       }
@@ -1048,17 +837,13 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
       [{% for workload in result("parse_predictions") %}
 
 
-
       {% if workload.scalingConfig.horizontalScaling.enabled %}
-
 
 
       {{ workload }},
 
 
-
       {% endif %}
-
 
 
       {% endfor %}]
@@ -1081,341 +866,256 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
        import {actionExecution} from "@dynatrace-sdk/automation-utils";
 
 
-
        import {convert, units} from "@dynatrace-sdk/units";
-
 
 
        export default async function ({action_execution_id}) {
 
 
-
        const actionEx = await actionExecution(action_execution_id);
-
 
 
        const workload = actionEx.loopItem.workload;
 
 
-
        const targetUtilization = calculateTargetUtilization(workload.scalingConfig);
-
 
 
        let newMaxReplicas = 0;
 
 
-
        const predictionsToApply = [];
-
 
 
        const descriptions = [];
 
 
-
        let exceedsLimits = false;
-
 
 
        workload.predictions.forEach(prediction => {
 
 
-
        let replicas = 0;
-
 
 
        if (prediction.resource === 'cpu' && prediction.value > targetUtilization.cpu.max) {
 
 
-
        predictionsToApply.push(prediction);
 
 
-
        // Calculate new max replicas
-
 
 
        const newLimit = Math.ceil(prediction.value / workload.scalingConfig.targetUtilization.cpu.point);
 
 
-
        replicas = Math.ceil(newLimit / workload.scalingConfig.limits.cpu);
 
 
-
        // Get description
-
 
 
        if (prediction.value > workload.scalingConfig.horizontalScaling.hpa.limits.cpu) {
 
 
-
        exceedsLimits = true;
 
 
-
        descriptions.push(
-
 
 
        `  - â ï¸ **CPU**: Predicted to exceed its CPU limit of \`${workload.scalingConfig.horizontalScaling.hpa.limits.cpu}m\` ` +
 
 
-
        `(\`${workload.scalingConfig.limits.cpu}m * ${workload.scalingConfig.horizontalScaling.hpa.maxReplicas}\`) at \`${prediction.date.toString()}\`)`
-
 
 
        )
 
 
-
        } else {
-
 
 
        const range = `${workload.scalingConfig.targetUtilization.cpu.min * 100}-${workload.scalingConfig.targetUtilization.cpu.max * 100}%`;
 
 
-
        descriptions.push(`  - â¬ï¸ **CPU**: Predicted to exceed its target range of ${range} at \`${prediction.date.toString()}\`)`)
 
 
-
        }
-
 
 
        } else if (prediction.resource === 'memory' && prediction.value > targetUtilization.memory.max) {
 
 
-
        predictionsToApply.push(prediction);
-
 
 
        // Calculate new max replicas
 
 
-
        const newLimit = Math.ceil(prediction.value / workload.scalingConfig.targetUtilization.memory.point);
-
 
 
        replicas = Math.ceil(newLimit / workload.scalingConfig.limits.memory);
 
 
-
        // Get description
-
 
 
        if (prediction.value > workload.scalingConfig.horizontalScaling.hpa.limits.memory) {
 
 
-
        exceedsLimits = true;
-
 
 
        const limit = `${convert(
 
 
-
        workload.scalingConfig.limits.memory,
-
 
 
        units.data.byte,
 
 
-
        units.data.mebibyte
-
 
 
        )}`;
 
 
-
        descriptions.push(
-
 
 
        `  - â ï¸ **Memory**: Predicted to exceed its Memory limit of \`${limit * workload.scalingConfig.horizontalScaling.hpa.maxReplicas}Mi\` ` +
 
 
-
        `(\`${limit}Mi * ${workload.scalingConfig.horizontalScaling.hpa.maxReplicas}\`) at \`${prediction.date.toString()}\`)`
-
 
 
        )
 
 
-
        } else {
-
 
 
        const range = `${workload.scalingConfig.targetUtilization.memory.min * 100}-${workload.scalingConfig.targetUtilization.memory.max * 100}%`;
 
 
-
        descriptions.push(`  - â¬ï¸ **Memory**: Predicted to exceed its target range of ${range} at \`${prediction.date.toString()}\`)`)
 
 
-
        }
 
 
-
        }
-
 
 
        if (replicas > newMaxReplicas) {
 
 
-
        newMaxReplicas = replicas;
 
 
-
        }
-
 
 
        });
 
 
-
        if (newMaxReplicas > 0) {
-
 
 
        const fullDescription = [
 
 
-
        `Dynatrace Intelligence has detected that the deployment anomaly-simulation can be scaled based on predictive AI analysis. Therefore, this PR applies the following actions:\n`,
-
 
 
        `- ${exceedsLimits ? 'â ï¸' : 'â¬ï¸'} **HorizontalPodAutoscaler**: Scale the maximum number of replicas to \`${newMaxReplicas}\`:`,
 
 
-
        ...descriptions,
-
 
 
        `\n\_This Pull Request was automatically created by Dynatrace Assist.\_`    ];
 
 
-
        workload.scalingSuggestions = {
-
 
 
        description: fullDescription.join('\n'),
 
 
-
        prompts: [{
-
 
 
        type: 'up',
 
 
-
        prompt: `Scale the maxReplicas of the HorizontalPodAutoscaler named "${workload.scalingConfig.horizontalScaling.hpa.name}" in this manifest to ${newMaxReplicas}.`,
-
 
 
        predictions: predictionsToApply
 
 
-
        }]
-
 
 
        };
 
 
-
        }
-
 
 
        return workload;
 
 
-
        }
-
 
 
        const calculateTargetUtilization = (scalingConfig) => {
 
 
-
        const limits = scalingConfig.horizontalScaling.hpa.limits;
-
 
 
        return {
 
 
-
        cpu: {
-
 
 
        max: limits.cpu * scalingConfig.targetUtilization.cpu.max,
 
 
-
        min: limits.cpu * scalingConfig.targetUtilization.cpu.min,
-
 
 
        point: limits.cpu * scalingConfig.targetUtilization.cpu.point
 
 
-
        },
-
 
 
        memory: {
 
 
-
        max: limits.memory * scalingConfig.targetUtilization.memory.max,
-
 
 
        min: limits.memory * scalingConfig.targetUtilization.memory.min,
 
 
-
        point: limits.memory * scalingConfig.targetUtilization.memory.point
-
 
 
        }
 
 
-
        };
-
 
 
        }
@@ -1444,253 +1144,190 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
        import {actionExecution} from "@dynatrace-sdk/automation-utils";
 
 
-
        import {eventsClient, EventIngestEventType} from "@dynatrace-sdk/client-classic-environment-v2";
-
 
 
        export default async function ({action_execution_id}) {
 
 
-
        const actionEx = await actionExecution(action_execution_id);
-
 
 
        const workload = actionEx.loopItem.workload;
 
 
-
        if (!workload.scalingSuggestions) {
-
 
 
        return;
 
 
-
        }
-
 
 
        const prompts = [];
 
 
-
        const types = new Set([]);
-
 
 
        workload.scalingSuggestions.prompts.forEach(prompt => {
 
 
-
        prompts.push(prompt.prompt);
-
 
 
        types.add(prompt.type);
 
 
-
        });
-
 
 
        const horizontalScalingConfig = workload.scalingConfig.horizontalScaling;
 
 
-
        let limits;
-
 
 
        if (horizontalScalingConfig.enabled) {
 
 
-
        limits = {
-
 
 
        cpu: horizontalScalingConfig.hpa.limits.cpu,
 
 
-
        memory: horizontalScalingConfig.hpa.limits.memory,
 
 
-
        }
-
 
 
        } else {
 
 
-
        limits = {
-
 
 
        cpu: workload.scalingConfig.limits.cpu,
 
 
-
        memory: workload.scalingConfig.limits.memory,
 
 
-
        }
 
 
-
        }
-
 
 
        const targetUtilization = workload.scalingConfig.targetUtilization;
 
 
-
        const event = {
-
 
 
        eventType: EventIngestEventType.CustomInfo,
 
 
-
        title: 'Suggesting to Scale Because of Dynatrace Intelligence Predictions',
-
 
 
        entitySelector: `type(CLOUD_APPLICATION),entityName.equals("${workload.name}"),namespaceName("${workload.namespace}"),` +
 
 
-
        `toRelationships.isClusterOfCa(type(KUBERNETES_CLUSTER),entityId("${workload.clusterId}"))`,
-
 
 
        properties: {
 
 
-
        'kubernetes.predictivescaling.type': 'DETECT_SCALING',
-
 
 
        // Workload
 
 
-
        'kubernetes.predictivescaling.workload.cluster.name': workload.cluster,
-
 
 
        'kubernetes.predictivescaling.workload.cluster.id': workload.clusterId,
 
 
-
        'kubernetes.predictivescaling.workload.kind': workload.kind,
-
 
 
        'kubernetes.predictivescaling.workload.namespace': workload.namespace,
 
 
-
        'kubernetes.predictivescaling.workload.name': workload.name,
-
 
 
        'kubernetes.predictivescaling.workload.uuid': workload.uuid,
 
 
-
        'kubernetes.predictivescaling.workload.limits.cpu': limits.cpu,
-
 
 
        'kubernetes.predictivescaling.workload.limits.memory': limits.memory,
 
 
-
        // Prediction
-
 
 
        'kubernetes.predictivescaling.prediction.type': [...types].join(','),
 
 
-
        'kubernetes.predictivescaling.prediction.prompt': prompts.join(' '),
-
 
 
        'kubernetes.predictivescaling.prediction.description': workload.scalingSuggestions.description,
 
 
-
        'kubernetes.predictivescaling.prediction.suggestions': JSON.stringify(workload.scalingSuggestions),
-
 
 
        // Target Utilization
 
 
-
        'kubernetes.predictivescaling.targetutilization.cpu.min': targetUtilization.cpu.min,
-
 
 
        'kubernetes.predictivescaling.targetutilization.cpu.max': targetUtilization.cpu.max,
 
 
-
        'kubernetes.predictivescaling.targetutilization.cpu.point': targetUtilization.cpu.point,
-
 
 
        'kubernetes.predictivescaling.targetutilization.memory.min': targetUtilization.memory.min,
 
 
-
        'kubernetes.predictivescaling.targetutilization.memory.max': targetUtilization.memory.max,
-
 
 
        'kubernetes.predictivescaling.targetutilization.memory.point': targetUtilization.memory.point,
 
 
-
        // Target
-
 
 
        'kubernetes.predictivescaling.target.uuid': horizontalScalingConfig.enabled ? horizontalScalingConfig.hpa.uuid : workload.uuid,
 
 
-
        'kubernetes.predictivescaling.target.repository': workload.repository,
-
 
 
        },
 
 
-
        }
-
 
 
        await eventsClient.createEvent({body: event});
 
 
-
        return event;
-
 
 
        }
@@ -1750,133 +1387,100 @@ To create the second workflow
       import {execution} from '@dynatrace-sdk/automation-utils';
 
 
-
       import {credentialVaultClient} from "@dynatrace-sdk/client-classic-environment-v2";
-
 
 
       export default async function () {
 
 
-
       const ex = await execution();
-
 
 
       const event = ex.params.event;
 
 
-
       const apiToken = await credentialVaultClient.getCredentialsDetails({
-
 
 
       id: "CREDENTIALS_VAULT-ID_FOR_GITLAB_PAT_TOKEN",
 
 
-
       }).then((credentials) => credentials.token);
-
 
 
       // Search for file
 
 
-
       const url = 'https://api.github.com/search/code?q=' +
-
 
 
       `"predictive-kubernetes-scaling.observability-labs.dynatrace.com/uuid:%20'${event['kubernetes.predictivescaling.target.uuid']}'"` +
 
 
-
       `+repo:${event['kubernetes.predictivescaling.target.repository']}` +
-
 
 
       `+language:YAML`
 
 
-
       const response = await fetch(url, {
-
 
 
       method: 'GET',
 
 
-
       headers: {
-
 
 
       'Authorization': `Bearer ${apiToken}`
 
 
-
       }
 
 
-
       }).then(response => response.json());
-
 
 
       const searchResult = response.items[0];
 
 
-
       // Get default branch
-
 
 
       const repository = await fetch(searchResult.repository.url, {
 
 
-
       method: 'GET',
-
 
 
       headers: {
 
 
-
       'Authorization': `Bearer ${apiToken}`
 
 
-
       }
-
 
 
       }).then(response => response.json());
 
 
-
       return {
-
 
 
       owner: searchResult.repository.owner.login,
 
 
-
       repository: searchResult.repository.name,
-
 
 
       filePath: searchResult.path,
 
 
-
       defaultBranch: repository.default_branch
 
 
-
       }
-
 
 
       }
@@ -1915,105 +1519,79 @@ To create the second workflow
       import {execution} from '@dynatrace-sdk/automation-utils';
 
 
-
       import {credentialVaultClient} from '@dynatrace-sdk/client-classic-environment-v2';
-
 
 
       import {getEnvironmentUrl} from '@dynatrace-sdk/app-environment'
 
 
-
       export default async function () {
-
 
 
       const ex = await execution();
 
 
-
       var manifest = (await ex.result('fetch_manifest')).content;
-
 
 
       const event = ex.params.event;
 
 
-
       const apiToken = await credentialVaultClient.getCredentialsDetails({
-
 
 
       id: "CREDENTIALS_VAULT-ID_FOR_DYNATRACE_COPILOT_TOKEN",
 
 
-
       }).then((credentials) => credentials.token);
-
 
 
       const url = `${getEnvironmentUrl()}/platform/davis/copilot/v0.2/skills/conversations:message`;
 
 
-
       const response = await fetch(url, {
-
 
 
       method: 'POST',
 
 
-
       headers: {
-
 
 
       'Authorization': `Bearer ${apiToken}`,
 
 
-
       'Content-Type': 'application/json'
-
 
 
       },
 
 
-
       body: JSON.stringify({
-
 
 
       text: `${event['kubernetes.predictivescaling.prediction.prompt']}\n\n${manifest}`
 
 
-
       })
-
 
 
       }).then(response => response.json());
 
 
-
       return {
-
 
 
       manifest: response.text.match(/(?<=^```(yaml|yml).*\n)([^`])*(?=^```$)/gm)[0],
 
 
-
       time: new Date(event.timestamp).getTime(),
-
 
 
       description: event['kubernetes.predictivescaling.prediction.description']
 
 
-
       };
-
 
 
       }
@@ -2069,181 +1647,136 @@ To create the second workflow
       import {execution} from '@dynatrace-sdk/automation-utils';
 
 
-
       import {eventsClient, EventIngestEventType} from "@dynatrace-sdk/client-classic-environment-v2";
-
 
 
       export default async function () {
 
 
-
       const ex = await execution();
-
 
 
       const pullRequest = (await ex.result('create_pull_request')).pullRequest;
 
 
-
       const event = ex.params.event;
-
 
 
       const eventBody = {
 
 
-
       eventType: EventIngestEventType.CustomInfo,
-
 
 
       title: 'Applied Scaling Suggestion Because of Dynatrace Intelligence Prediction',
 
 
-
       entitySelector: `type(CLOUD_APPLICATION),entityName.equals("${event['kubernetes.predictivescaling.workload.name']}"),` +
-
 
 
       `namespaceName("${event['kubernetes.predictivescaling.workload.namespace']}"),` +
 
 
-
       `toRelationships.isClusterOfCa(type(KUBERNETES_CLUSTER),entityId("${event['kubernetes.predictivescaling.workload.cluster.id']}"))`,
-
 
 
       properties: {
 
 
-
       'kubernetes.predictivescaling.type': 'SUGGEST_SCALING',
-
 
 
       // Workload
 
 
-
       'kubernetes.predictivescaling.workload.cluster.name': event['kubernetes.predictivescaling.workload.cluster.name'],
-
 
 
       'kubernetes.predictivescaling.workload.cluster.id': event['kubernetes.predictivescaling.workload.cluster.id'],
 
 
-
       'kubernetes.predictivescaling.workload.kind': event['kubernetes.predictivescaling.workload.kind'],
-
 
 
       'kubernetes.predictivescaling.workload.namespace': event['kubernetes.predictivescaling.workload.namespace'],
 
 
-
       'kubernetes.predictivescaling.workload.name': event['kubernetes.predictivescaling.workload.name'],
-
 
 
       'kubernetes.predictivescaling.workload.uuid': event['kubernetes.predictivescaling.workload.uuid'],
 
 
-
       'kubernetes.predictivescaling.workload.limits.cpu': event['kubernetes.predictivescaling.workload.limits.cpu'],
-
 
 
       'kubernetes.predictivescaling.workload.limits.memory': event['kubernetes.predictivescaling.workload.limits.memory'],
 
 
-
       // Prediction
-
 
 
       'kubernetes.predictivescaling.prediction.type': event['kubernetes.predictivescaling.prediction.type'],
 
 
-
       'kubernetes.predictivescaling.prediction.prompt': event['kubernetes.predictivescaling.prediction.prompt'],
-
 
 
       'kubernetes.predictivescaling.prediction.description': event['kubernetes.predictivescaling.prediction.description'],
 
 
-
       'kubernetes.predictivescaling.prediction.suggestions': event['kubernetes.predictivescaling.prediction.suggestions'],
-
 
 
       // Target Utilization
 
 
-
       'kubernetes.predictivescaling.targetutilization.cpu.min': event['kubernetes.predictivescaling.targetutilization.cpu.min'],
-
 
 
       'kubernetes.predictivescaling.targetutilization.cpu.max': event['kubernetes.predictivescaling.targetutilization.cpu.max'],
 
 
-
       'kubernetes.predictivescaling.targetutilization.cpu.point': event['kubernetes.predictivescaling.targetutilization.cpu.point'],
-
 
 
       'kubernetes.predictivescaling.targetutilization.memory.min': event['kubernetes.predictivescaling.targetutilization.memory.min'],
 
 
-
       'kubernetes.predictivescaling.targetutilization.memory.max': event['kubernetes.predictivescaling.targetutilization.memory.max'],
-
 
 
       'kubernetes.predictivescaling.targetutilization.memory.point': event['kubernetes.predictivescaling.targetutilization.memory.point'],
 
 
-
       // Target
-
 
 
       'kubernetes.predictivescaling.target.uuid': event['kubernetes.predictivescaling.target.uuid'],
 
 
-
       'kubernetes.predictivescaling.target.repository': event['kubernetes.predictivescaling.target.repository'],
-
 
 
       // Pull Request
 
 
-
       'kubernetes.predictivescaling.pullrequest.id': `${pullRequest.id}`,
-
 
 
       'kubernetes.predictivescaling.pullrequest.url': pullRequest.url,
 
 
-
       },
-
 
 
       };
 
 
-
       await eventsClient.createEvent({body: eventBody});
 
 
-
       return eventBody;
-
 
 
       }

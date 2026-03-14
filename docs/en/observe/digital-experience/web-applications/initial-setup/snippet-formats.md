@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:21:35.206723
 
 # Select a snippet format
 
-# Select a snippet format
 
 * How-to guide
 * Published Jul 01, 2025

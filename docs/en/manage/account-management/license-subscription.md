@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:23:51.134431
 
 # Subscription or license overview
 
-# Subscription or license overview
 
 * Latest Dynatrace
 * Explanation

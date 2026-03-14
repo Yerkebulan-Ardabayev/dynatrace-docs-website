@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:47.952622
 
 # Ownership
 
-# Ownership
 
 * Latest Dynatrace
 * App

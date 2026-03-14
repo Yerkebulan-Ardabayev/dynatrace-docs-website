@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:29:14.207839
 
 # Мониторинг Google Cloud Storage
 
-# Мониторинг Google Cloud Storage
 
 * Последняя версия Dynatrace
 * Практическое руководство

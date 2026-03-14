@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:19.498721
 
 # Обратный прокси или балансировщик нагрузки для OneAgent
 
-# Обратный прокси или балансировщик нагрузки для OneAgent
 
 * Latest Dynatrace
 * 1-min read
@@ -37,7 +36,6 @@ scraped: 2026-03-06T21:29:19.498721
    [connectivity]
 
 
-
    dnsEntryPoint = https://address.of.my.lb.com:9999
    ```
 
@@ -45,7 +43,6 @@ scraped: 2026-03-06T21:29:19.498721
 
    ```
    [connectivity]
-
 
 
    dnsEntryPoint = https://address.of.my.lb-1.com:9999,https://address.of.my.lb-2.com:9999

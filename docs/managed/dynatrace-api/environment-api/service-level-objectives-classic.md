@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Service-level Objectives API
 
-# Service-level Objectives API
 
 * Reference
 * Updated on Jan 07, 2025

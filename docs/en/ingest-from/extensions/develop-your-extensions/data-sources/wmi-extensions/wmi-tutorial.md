@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:28:59.832907
 
 # WMI data source tutorial
 
-# WMI data source tutorial
 
 * Latest Dynatrace
 * How-to guide
@@ -45,7 +44,6 @@ To successfully develop an Extensions extension and be able to complete this tut
 
 ```
 dt extension genca
-
 
 
 dt extension generate-developer-pem -o developer.pem --ca-crt ca.pem --ca-key ca.key --name 'JDoe'

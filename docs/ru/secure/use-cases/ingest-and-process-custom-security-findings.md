@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:06.393399
 
 # Загрузка и обработка пользовательских данных о безопасности
 
-# Загрузка и обработка пользовательских данных о безопасности
 
 * Последняя версия Dynatrace
 * Руководство
@@ -36,421 +35,316 @@ scraped: 2026-03-06T21:15:06.393399
 {
 
 
-
 "SchemaVersion": 2,
-
 
 
 "CreatedAt": "2021-08-25T12:20:30.000000005Z",
 
 
-
 "ArtifactName": "testdata/fixtures/images/alpine-39.tar.gz",
-
 
 
 "ArtifactType": "container_image",
 
 
-
 "Metadata": {
-
 
 
 "OS": {
 
 
-
 "Family": "alpine",
-
 
 
 "Name": "3.9.4",
 
 
-
 "EOSL": true
 
 
-
 },
-
 
 
 "ImageID": "sha256:055936d3920576da37aa9bc460d70c5f212028bda1c08c0879aedf03d7a66ea1",
 
 
-
 "DiffIDs": [
-
 
 
 "sha256:f1b5933fe4b5f49bbe8258745cf396afe07e625bdab3168e364daf7c956b6b81"
 
 
-
 ],
-
 
 
 "ImageConfig": {
 
 
-
 "architecture": "amd64",
-
 
 
 "container": "c10d36fa368a7ea673683682666758adf35efe98e10989505f4f566b5b18538f",
 
 
-
 "created": "2019-05-11T00:07:03.510395965Z",
-
 
 
 "docker_version": "18.06.1-ce",
 
 
-
 "history": [
 
 
-
 {
-
 
 
 "created": "2019-05-11T00:07:03.358250803Z",
 
 
-
 "created_by": "/bin/sh -c #(nop) ADD file:a86aea1f3a7d68f6ae03397b99ea77f2e9ee901c5c59e59f76f93adbb4035913 in / "
-
 
 
 },
 
 
-
 {
-
 
 
 "created": "2019-05-11T00:07:03.510395965Z",
 
 
-
 "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/sh\"]",
-
 
 
 "empty_layer": true
 
 
-
 }
 
 
-
 ],
-
 
 
 "os": "linux",
 
 
-
 "rootfs": {
-
 
 
 "type": "layers",
 
 
-
 "diff_ids": [
-
 
 
 "sha256:f1b5933fe4b5f49bbe8258745cf396afe07e625bdab3168e364daf7c956b6b81"
 
 
-
 ]
 
 
-
 },
-
 
 
 "config": {
 
 
-
 "Cmd": [
-
 
 
 "/bin/sh"
 
 
-
 ],
-
 
 
 "Env": [
 
 
-
 "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 
-
 ],
-
 
 
 "Image": "sha256:09f2bbe58e774849d74dc1391c2e01731896c745c4aba1ecf69a283bdb4b537a",
 
 
-
 "ArgsEscaped": true
 
 
-
 }
 
 
-
 }
-
 
 
 },
-
 
 
 "Results": [
 
 
-
 {
-
 
 
 "Target": "testdata/fixtures/images/alpine-39.tar.gz (alpine 3.9.4)",
 
 
-
 "Class": "os-pkgs",
-
 
 
 "Type": "alpine",
 
 
-
 "Vulnerabilities": [
-
 
 
 {
 
 
-
 "VulnerabilityID": "CVE-2019-14697",
-
 
 
 "PkgID": "musl@1.1.20-r4",
 
 
-
 "PkgName": "musl",
-
 
 
 "PkgIdentifier": {
 
 
-
 "PURL": "pkg:apk/alpine/musl@1.1.20-r4?arch=x86_64\u0026distro=3.9.4",
-
 
 
 "UID": "d6abd271e71d3ce2"
 
 
-
 },
-
 
 
 "InstalledVersion": "1.1.20-r4",
 
 
-
 "FixedVersion": "1.1.20-r5",
-
 
 
 "Status": "fixed",
 
 
-
 "Layer": {
-
 
 
 "Digest": "sha256:e7c96db7181be991f19a9fb6975cdbbd73c65f4a2681348e63a141a2192a5f10",
 
 
-
 "DiffID": "sha256:f1b5933fe4b5f49bbe8258745cf396afe07e625bdab3168e364daf7c956b6b81"
 
 
-
 },
-
 
 
 "SeveritySource": "nvd",
 
 
-
 "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-14697",
-
 
 
 "DataSource": {
 
 
-
 "ID": "alpine",
-
 
 
 "Name": "Alpine Secdb",
 
 
-
 "URL": "https://secdb.alpinelinux.org/"
 
 
-
 },
-
 
 
 "Description": "musl libc through 1.1.23 has an x87 floating-point stack adjustment imbalance, related to the math/i386/ directory. In some cases, use of this library could introduce out-of-bounds writes that are not present in an application's source code.",
 
 
-
 "Severity": "CRITICAL",
-
 
 
 "CweIDs": [
 
 
-
 "CWE-787"
 
 
-
 ],
-
 
 
 "VendorSeverity": {
 
 
-
 "nvd": 4
 
 
-
 },
-
 
 
 "CVSS": {
 
 
-
 "nvd": {
-
 
 
 "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
 
 
-
 "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-
 
 
 "V2Score": 7.5,
 
 
-
 "V3Score": 9.8
 
 
-
 }
-
 
 
 },
 
 
-
 "References": [
-
 
 
 "http://www.openwall.com/lists/oss-security/2019/08/06/4",
 
 
-
 "https://security.gentoo.org/glsa/202003-13",
-
 
 
 "https://www.openwall.com/lists/musl/2019/08/06/1"
 
 
-
 ],
-
 
 
 "PublishedDate": "2019-08-06T16:15:00Z",
 
 
-
 "LastModifiedDate": "2020-03-14T19:15:00Z"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -504,421 +398,316 @@ scraped: 2026-03-06T21:15:06.393399
 {
 
 
-
 "SchemaVersion": 2,
-
 
 
 "CreatedAt": "2021-08-25T12:20:30.000000005Z",
 
 
-
 "ArtifactName": "testdata/fixtures/images/alpine-39.tar.gz",
-
 
 
 "ArtifactType": "container_image",
 
 
-
 "Metadata": {
-
 
 
 "OS": {
 
 
-
 "Family": "alpine",
-
 
 
 "Name": "3.9.4",
 
 
-
 "EOSL": true
 
 
-
 },
-
 
 
 "ImageID": "sha256:055936d3920576da37aa9bc460d70c5f212028bda1c08c0879aedf03d7a66ea1",
 
 
-
 "DiffIDs": [
-
 
 
 "sha256:f1b5933fe4b5f49bbe8258745cf396afe07e625bdab3168e364daf7c956b6b81"
 
 
-
 ],
-
 
 
 "ImageConfig": {
 
 
-
 "architecture": "amd64",
-
 
 
 "container": "c10d36fa368a7ea673683682666758adf35efe98e10989505f4f566b5b18538f",
 
 
-
 "created": "2019-05-11T00:07:03.510395965Z",
-
 
 
 "docker_version": "18.06.1-ce",
 
 
-
 "history": [
 
 
-
 {
-
 
 
 "created": "2019-05-11T00:07:03.358250803Z",
 
 
-
 "created_by": "/bin/sh -c #(nop) ADD file:a86aea1f3a7d68f6ae03397b99ea77f2e9ee901c5c59e59f76f93adbb4035913 in / "
-
 
 
 },
 
 
-
 {
-
 
 
 "created": "2019-05-11T00:07:03.510395965Z",
 
 
-
 "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/sh\"]",
-
 
 
 "empty_layer": true
 
 
-
 }
 
 
-
 ],
-
 
 
 "os": "linux",
 
 
-
 "rootfs": {
-
 
 
 "type": "layers",
 
 
-
 "diff_ids": [
-
 
 
 "sha256:f1b5933fe4b5f49bbe8258745cf396afe07e625bdab3168e364daf7c956b6b81"
 
 
-
 ]
 
 
-
 },
-
 
 
 "config": {
 
 
-
 "Cmd": [
-
 
 
 "/bin/sh"
 
 
-
 ],
-
 
 
 "Env": [
 
 
-
 "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 
-
 ],
-
 
 
 "Image": "sha256:09f2bbe58e774849d74dc1391c2e01731896c745c4aba1ecf69a283bdb4b537a",
 
 
-
 "ArgsEscaped": true
 
 
-
 }
 
 
-
 }
-
 
 
 },
-
 
 
 "Results": [
 
 
-
 {
-
 
 
 "Target": "testdata/fixtures/images/alpine-39.tar.gz (alpine 3.9.4)",
 
 
-
 "Class": "os-pkgs",
-
 
 
 "Type": "alpine",
 
 
-
 "Vulnerabilities": [
-
 
 
 {
 
 
-
 "VulnerabilityID": "CVE-2019-14697",
-
 
 
 "PkgID": "musl@1.1.20-r4",
 
 
-
 "PkgName": "musl",
-
 
 
 "PkgIdentifier": {
 
 
-
 "PURL": "pkg:apk/alpine/musl@1.1.20-r4?arch=x86_64\u0026distro=3.9.4",
-
 
 
 "UID": "d6abd271e71d3ce2"
 
 
-
 },
-
 
 
 "InstalledVersion": "1.1.20-r4",
 
 
-
 "FixedVersion": "1.1.20-r5",
-
 
 
 "Status": "fixed",
 
 
-
 "Layer": {
-
 
 
 "Digest": "sha256:e7c96db7181be991f19a9fb6975cdbbd73c65f4a2681348e63a141a2192a5f10",
 
 
-
 "DiffID": "sha256:f1b5933fe4b5f49bbe8258745cf396afe07e625bdab3168e364daf7c956b6b81"
 
 
-
 },
-
 
 
 "SeveritySource": "nvd",
 
 
-
 "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-14697",
-
 
 
 "DataSource": {
 
 
-
 "ID": "alpine",
-
 
 
 "Name": "Alpine Secdb",
 
 
-
 "URL": "https://secdb.alpinelinux.org/"
 
 
-
 },
-
 
 
 "Description": "musl libc through 1.1.23 has an x87 floating-point stack adjustment imbalance, related to the math/i386/ directory. In some cases, use of this library could introduce out-of-bounds writes that are not present in an application's source code.",
 
 
-
 "Severity": "CRITICAL",
-
 
 
 "CweIDs": [
 
 
-
 "CWE-787"
 
 
-
 ],
-
 
 
 "VendorSeverity": {
 
 
-
 "nvd": 4
 
 
-
 },
-
 
 
 "CVSS": {
 
 
-
 "nvd": {
-
 
 
 "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
 
 
-
 "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-
 
 
 "V2Score": 7.5,
 
 
-
 "V3Score": 9.8
 
 
-
 }
-
 
 
 },
 
 
-
 "References": [
-
 
 
 "http://www.openwall.com/lists/oss-security/2019/08/06/4",
 
 
-
 "https://security.gentoo.org/glsa/202003-13",
-
 
 
 "https://www.openwall.com/lists/musl/2019/08/06/1"
 
 
-
 ],
-
 
 
 "PublishedDate": "2019-08-06T16:15:00Z",
 
 
-
 "LastModifiedDate": "2020-03-14T19:15:00Z"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -936,9 +725,7 @@ scraped: 2026-03-06T21:15:06.393399
 fetch security.events
 
 
-
 | filter dt.system.bucket == "default_securityevents"
-
 
 
 | sort timestamp desc
@@ -960,53 +747,40 @@ fetch security.events
 {
 
 
-
 // обогащённые поля
-
 
 
 "timestamp": "2024-08-02T14:38:53.854000000Z",
 
 
-
 "event.kind": "SECURITY_EVENT",
-
 
 
 // исходные поля
 
 
-
 "SchemaVersion": 2,
-
 
 
 "Results": [
 
 
-
 "{\"Target\":\"testdata/fixtures/images/alpine-39.tar.gz (alpine 3.9.4)\",\"Class\":\"os-pkgs\",\"Type\":\"alpine\",\"Vulnerabilities\":[{\"VulnerabilityID\":\"CVE-2019-14697\",\"PkgID\":\"musl@1.1.20-r4\",\"PkgName\":\"musl\",\"PkgIdentifier\":{\"PURL\":\"pkg:apk/alpine/musl@1.1.20-r4?arch=x86_64&distro=3.9.4\",\"UID\":\"d6abd271e71d3ce2\"},\"InstalledVersion\":\"1.1.20-r4\",\"FixedVersion\":\"1.1.20-r5\",\"Status\":\"fixed\",\"Layer\":{\"Digest\":\"sha256:e7c96db7181be991f19a9fb6975cdbbd73c65f4a2681348e63a141a2192a5f10\",\"DiffID\":\"sha256:f1b5933fe4b5f49bbe8258745cf396afe07e625bdab3168e364daf7c956b6b81\"},\"SeveritySource\":\"nvd\",\"PrimaryURL\":\"https://avd.aquasec.com/nvd/cve-2019-14697\",\"DataSource\":{\"ID\":\"alpine\",\"Name\":\"Alpine Secdb\",\"URL\":\"https://secdb.alpinelinux.org/\"},\"Description\":\"musl libc through 1.1.23 has an x87 floating-point stack adjustment imbalance, related to the math/i386/ directory. In some cases, use of this library could introduce out-of-bounds writes that are not present in an application's source code.\",\"Severity\":\"CRITICAL\",\"CweIDs\":[\"CWE-787\"],\"VendorSeverity\":{\"nvd\":4},\"CVSS\":{\"nvd\":{\"V2Vector\":\"AV:N/AC:L/Au:N/C:P/I:P/A:P\",\"V3Vector\":\"CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H\",\"V2Score\":7.5,\"V3Score\":9.8}},\"References\":[\"http://www.openwall.com/lists/oss-security/2019/08/06/4\",\"https://security.gentoo.org/glsa/202003-13\",\"https://www.openwall.com/lists/musl/2019/08/06/1\"],\"PublishedDate\":\"2019-08-06T16:15:00Z\",\"LastModifiedDate\":\"2020-03-14T19:15:00Z\"}]}"
-
 
 
 ],
 
 
-
 "ArtifactType": "container_image",
-
 
 
 "CreatedAt": "2021-08-25T12:20:30.000000005Z",
 
 
-
 "Metadata": "{\"OS\":{\"Family\":\"alpine\",\"Name\":\"3.9.4\",\"EOSL\":true},\"ImageID\":\"sha256:055936d3920576da37aa9bc460d70c5f212028bda1c08c0879aedf03d7a66ea1\",\"DiffIDs\":[\"sha256:f1b5933fe4b5f49bbe8258745cf396afe07e625bdab3168e364daf7c956b6b81\"],\"ImageConfig\":{\"architecture\":\"amd64\",\"container\":\"c10d36fa368a7ea673683682666758adf35efe98e10989505f4f566b5b18538f\",\"created\":\"2019-05-11T00:07:03.510395965Z\",\"docker_version\":\"18.06.1-ce\",\"history\":[{\"created\":\"2019-05-11T00:07:03.358250803Z\",\"created_by\":\"/bin/sh -c #(nop) ADD file:a86aea1f3a7d68f6ae03397b99ea77f2e9ee901c5c59e59f76f93adbb4035913 in / \"},{\"created\":\"2019-05-11T00:07:03.510395965Z\",\"created_by\":\"/bin/sh -c #(nop)  CMD [\\\"/bin/sh\\\"]\",\"empty_layer\":true}],\"os\":\"linux\",\"rootfs\":{\"type\":\"layers\",\"diff_ids\":[\"sha256:f1b5933fe4b5f49bbe8258745cf396afe07e625bdab3168e364daf7c956b6b81\"]},\"config\":{\"Cmd\":[\"/bin/sh\"],\"Env\":[\"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\"],\"Image\":\"sha256:09f2bbe58e774849d74dc1391c2e01731896c745c4aba1ecf69a283bdb4b537a\",\"ArgsEscaped\":true}}}",
 
 
-
 "ArtifactName": "testdata/fixtures/images/alpine-39.tar.gz"
-
 
 
 }
@@ -1037,129 +811,97 @@ fetch security.events
    fieldsAdd event.type="VULNERABILITY_FINDING",
 
 
-
    event.provider="Trivy"
-
 
 
    | parse Results[0], """json:result"""
 
 
-
    | fieldsAdd vulnerability=result[Vulnerabilities][0]
-
 
 
    | parse vulnerability, """json:vulnerability"""
 
 
-
    | parse Metadata, """json:metadata"""
 
 
-
    | fieldsAdd
-
 
 
    finding.id=concat(ArtifactName,"/",metadata[ImageID],"/",vulnerability[PkgID]),
 
 
-
    finding.time.created=toTimestamp(CreatedAt),
-
 
 
    finding.severity=vulnerability[Severity]
 
 
-
    | fieldsAdd
-
 
 
    dt.security.risk.level=if(vulnerability[Severity]=="UNKNOWN","NOT_AVAILABLE",else:vulnerability[Severity]),
 
 
-
    dt.security.risk.score=if(vulnerability[Severity]=="CRITICAL",10,else:
-
 
 
    if(vulnerability[Severity]=="HIGH",8,else:
 
 
-
    if(vulnerability[Severity]=="MEDIUM",6,else:
-
 
 
    if(vulnerability[Severity]=="LOW",3,else:0))))
 
 
-
    | fieldsAdd
-
 
 
    object.id=concat(ArtifactName,"/",metadata[ImageID]),
 
 
-
    object.type="CONTAINER_IMAGE",
-
 
 
    object.name=ArtifactName
 
 
-
    | fieldsAdd
-
 
 
    vulnerability.id=vulnerability[VulnerabilityID],
 
 
-
    vulnerability.description=coalesce(vulnerability[Description],vulnerability[VulnerabilityID]),
-
 
 
    vulnerability.title=coalesce(vulnerability[Title],vulnerability[VulnerabilityID])
 
 
-
    | fieldsAdd
-
 
 
    component.name=vulnerability[PkgName],
 
 
-
    component.version=vulnerability[InstalledVersion]
-
 
 
    | fieldsAdd
 
 
-
    container_image.digest=vulnerability[Layer][Digest]
-
 
 
    | fieldsAdd artifact=splitString(ArtifactName,":")
 
 
-
    | fieldsAdd container_image.repository=artifact[0],
 
 
-
    container_image.tags=artifact[1]
-
 
 
    | fieldsRemove vulnerability, Metadata, artifact
@@ -1173,77 +915,58 @@ fetch security.events
    "timestamp": "2024-10-31T09:58:21.141000000Z",
 
 
-
    "event.provider": "Trivy",
-
 
 
    "event.type": "VULNERABILITY_FINDING",
 
 
-
    "dt.security.risk.score": 10,
-
 
 
    "dt.security.risk.level": "CRITICAL",
 
 
-
    "finding.id": "testdata/fixtures/images/alpine-39.tar.gz/sha256:055936d3920576da37aa9bc460d70c5f212028bda1c08c0879aedf03d7a66ea1/musl@1.1.20-r4",
-
 
 
    "finding.time.created": "2021-08-25T12:20:30.000000005Z",
 
 
-
    "finding.severity": "CRITICAL",
-
 
 
    "object.id": "testdata/fixtures/images/alpine-39.tar.gz/sha256:055936d3920576da37aa9bc460d70c5f212028bda1c08c0879aedf03d7a66ea1",
 
 
-
    "object.type": "CONTAINER_IMAGE",
-
 
 
    "object.name": "testdata/fixtures/images/alpine-39.tar.gz",
 
 
-
    "vulnerability.id": "CVE-2019-14697",
-
 
 
    "vulnerability.title": "CVE-2019-14697",
 
 
-
    "vulnerability.description": "musl libc through 1.1.23 has an x87 floating-point stack adjustment imbalance, related to the math/i386/ directory. In some cases, use of this library could introduce out-of-bounds writes that are not present in an application's source code."
-
 
 
    "component.name": "musl",
 
 
-
    "component.version": "1.1.20-r4",
-
 
 
    "container_image.digest": "sha256:e7c96db7181be991f19a9fb6975cdbbd73c65f4a2681348e63a141a2192a5f10",
 
 
-
    "container_image.tags": null,
 
 
-
    "container_image.repository": "testdata/fixtures/images/alpine-39.tar.gz",
-
 
 
    "ArtifactType": "container_image"

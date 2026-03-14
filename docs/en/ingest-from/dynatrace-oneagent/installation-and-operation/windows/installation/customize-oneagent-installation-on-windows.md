@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:22.490308
 
 # Customize OneAgent installation on Windows
 
-# Customize OneAgent installation on Windows
 
 * Latest Dynatrace
 * 9-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:02.358716
 
 # Automatic log enrichment
 
-# Automatic log enrichment
 
 * Latest Dynatrace
 * Tutorial

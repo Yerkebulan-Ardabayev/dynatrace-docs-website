@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:37.289101
 
 # Install OneAgent on a server
 
-# Install OneAgent on a server
 
 * Latest Dynatrace
 * 3-min read

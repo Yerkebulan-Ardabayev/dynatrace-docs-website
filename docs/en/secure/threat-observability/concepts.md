@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:38:10.774019
 
 # Threat Observability concepts
 
-# Threat Observability concepts
 
 * Latest Dynatrace
 * Explanation
@@ -76,13 +75,10 @@ Security events are a type of [security-related data](#security-data) consisting
   fetch security.events
 
 
-
   | parse dt.raw_data, """JSON:dt.raw_data"""
 
 
-
   | filter isNotNull(dt.raw_data[vulnerability.title])
-
 
 
   | fields dt.raw_data[vulnerability.title]
@@ -170,13 +166,10 @@ To retrieve detection finding events, use a query such as the following:
 fetch security.events
 
 
-
 | filter event.kind == "SECURITY_EVENT" AND event.type == "DETECTION_FINDING"
 
 
-
 | filter product.name == "Runtime Application Protection"
-
 
 
 | makeTimeseries count()

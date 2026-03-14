@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:41.795195
 
 # Application & Infrastructure Observability overview (DPS)
 
-# Application & Infrastructure Observability overview (DPS)
 
 * Latest Dynatrace
 * Overview

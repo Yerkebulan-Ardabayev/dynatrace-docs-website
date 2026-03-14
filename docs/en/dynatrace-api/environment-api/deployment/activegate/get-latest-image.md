@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:29:58.784822
 
 # Deployment API - GET the latest available ActiveGate image version
 
-# Deployment API - GET the latest available ActiveGate image version
 
 * Reference
 * Published Nov 22, 2023
@@ -56,13 +55,10 @@ The request doesn't provide any configurable parameters.
 {
 
 
-
 "source": "string",
 
 
-
 "tag": "string"
-
 
 
 }

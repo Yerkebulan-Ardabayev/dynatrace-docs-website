@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:53.790650
 
 # Customize OneAgent installation on Linux
 
-# Customize OneAgent installation on Linux
 
 * Latest Dynatrace
 * 7-min read

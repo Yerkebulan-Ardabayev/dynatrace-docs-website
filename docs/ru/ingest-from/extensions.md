@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:40.260899
 
 # Extensions
 
-# Extensions
 
 * Последняя версия Dynatrace
 * Обзор

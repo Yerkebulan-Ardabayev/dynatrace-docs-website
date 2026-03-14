@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:35.037946
 
 # Microsoft Azure Arc-enabled servers
 
-# Microsoft Azure Arc-enabled servers
 
 * Latest Dynatrace
 * How-to guide
@@ -58,29 +57,22 @@ ARM template
 az connectedmachine extension create
 
 
-
 --publisher "Dynatrace.Ruxit"
-
 
 
 --type "<Extension-Type>"
 
 
-
 --name â<Extension-Type>â
-
 
 
 --resource-group "<Resource-Group>"
 
 
-
 --machine-name "<Azure Arc Server Name>"
 
 
-
 --location <Azure Region>
-
 
 
 --settings "{\"tenantId\":\"<Environment-ID>\",\"token\":\"<API-Token>\", \"server\":\"<Server-Url>\", \"enableLogAnalytics\":\"yes\", \"hostGroup\":\"<Host-Group>\"}"
@@ -111,165 +103,124 @@ The following example assumes the OneAgent extension is nested inside the virtua
 {
 
 
-
 â¯ â¯ "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-
 
 
 â¯ â¯ "contentVersion": "1.0.0.0",
 
 
-
 â¯ â¯ "parameters": {
-
 
 
 â¯ â¯ â¯ â¯ "vmName": {
 
 
-
 â¯ â¯ â¯ â¯ â¯ â¯ "type": "string"
 
 
-
 â¯ â¯ â¯ â¯ },
-
 
 
 â¯ â¯ â¯ â¯ "location": {
 
 
-
 â¯ â¯ â¯ â¯ â¯ â¯ "type": "string"
 
 
-
 â¯ â¯ â¯ â¯ },
-
 
 
 â¯ â¯ â¯ â¯ "tenant": {
 
 
-
 â¯ â¯ â¯ â¯ â¯ â¯ "type": "string"
 
 
-
 â¯ â¯ â¯ â¯ },
-
 
 
 â¯ â¯ â¯ â¯ "token": {
 
 
-
 â¯ â¯ â¯ â¯ â¯ â¯ "type": "securestring"
-
 
 
 â¯ â¯ â¯ â¯ },
 
 
-
 â¯ â¯ â¯ â¯ "server": {
-
 
 
 â¯ â¯ â¯ â¯ â¯ â¯ "type": "string",
 
 
-
 â¯ â¯ â¯ â¯ â¯ â¯ "defaultValue": ""
 
 
-
 â¯ â¯ â¯ â¯ }
-
 
 
 â¯ â¯ },
 
 
-
 â¯ â¯ "resources": [
-
 
 
 â¯ â¯ â¯ â¯ {
 
 
-
 â¯ â¯ â¯ â¯ â¯ â¯ "name": "[concat(parameters('vmName'),'/<Extension-Type>')]",
-
 
 
 â¯ â¯ â¯ â¯ â¯ â¯ "type": "Microsoft.HybridCompute/machines/extensions",
 
 
-
 â¯ â¯ â¯ â¯ â¯ â¯ "location": "[parameters('location')]",
-
 
 
 â¯ â¯ â¯ â¯ â¯ â¯ "apiVersion": "2022-03-10",
 
 
-
 â¯ â¯ â¯ â¯ â¯ â¯ "properties": {
-
 
 
 â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "publisher": "dynatrace.ruxit",
 
 
-
 â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "type": " <Extension-Type>",
-
 
 
 â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "autoUpgradeMinorVersion": true,
 
 
-
 â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "settings": {
-
 
 
 â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "tenantId": "[parameters('tenant')]",
 
 
-
 â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "server": "[parameters('server')]"
-
 
 
 â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ },
 
 
-
 â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "protectedSettings": {
-
 
 
 â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "token": "[parameters('token')]"
 
 
-
 â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ }
-
 
 
 â¯ â¯ â¯ â¯ â¯ â¯ }
 
 
-
 â¯ â¯ â¯ â¯ }
 
 
-
 â¯ â¯ ]
-
 
 
 }

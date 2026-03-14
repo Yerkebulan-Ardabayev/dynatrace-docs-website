@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:08.954506
 
 # Uninstall OneAgent on Linux
 
-# Uninstall OneAgent on Linux
 
 * Latest Dynatrace
 * 1-min read

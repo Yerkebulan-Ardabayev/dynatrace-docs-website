@@ -14,7 +14,6 @@ scraped: 2026-03-06T21:35:59.966349
 
 # Embedded conversation starters
 
-# Embedded conversation starters
 
 * Latest Dynatrace
 * Reference
@@ -147,7 +146,6 @@ To explain multiple problems with Generative AI
 ## Dynatrace Assist in Dashboards
 
 
-
 You can use the power of DQL to integrate  **Dynatrace Assist** into your [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") tiles.
 
 By adding `| fieldsAdd prompt` and `| fieldsAdd execute` commands, you can predefine and auto-execute prompts in  **Dynatrace Assist**, allowing you to quickly get an explanation about the query results, or receive suggestions on how to improve the query or resolve a problem.
@@ -158,7 +156,6 @@ You can also provide additional information to  **Dynatrace Assist** via the sup
 | parse "{\"result\":[{\"type\":\"supplementary\", \"value\":\"The character`*` often represents sensitive data that has been masked\"}]}", "LD JSON_ARRAY:contexts"
 
 
-
 // or for a dynamic context
 ```
 
@@ -166,7 +163,6 @@ While the supplementary context is hidden in the chat UI, it can help Generative
 
 ```
 | fieldsAdd supplementaryContext = concat("{\"result\":[{\"type\":\"supplementary\", \"value\":\"Use the following info to answer the question: ", record.summary, "\"}]}")
-
 
 
 | parse supplementaryContext , "LD JSON_ARRAY:contexts"
@@ -181,7 +177,6 @@ To integrate  **Dynatrace Assist** into your [![Dashboards](https://dt-cdn.net/i
 
    ```
    | fieldsAdd prompt = concat("{your question}",  your.field.name)
-
 
 
    | fieldsAdd execute = true
@@ -209,7 +204,6 @@ You can also provide additional information to  **Dynatrace Assist** via the sup
 | parse "{\"result\":[{\"type\":\"supplementary\", \"value\":\"The character`*` often represents sensitive data that has been masked\"}]}", "LD JSON_ARRAY:contexts"
 
 
-
 // or for a dynamic context
 ```
 
@@ -217,7 +211,6 @@ While the supplementary context is hidden in the chat UI, it can help Generative
 
 ```
 | fieldsAdd supplementaryContext = concat("{\"result\":[{\"type\":\"supplementary\", \"value\":\"Use the following info to answer the question: ", record.summary, "\"}]}")
-
 
 
 | parse supplementaryContext , "LD JSON_ARRAY:contexts"
@@ -231,7 +224,6 @@ To integrate  **Dynatrace Assist** into your [![Notebooks](https://dt-cdn.net/im
 
    ```
    | fieldsAdd prompt = concat("{your question}",  your.field.name)
-
 
 
    | fieldsAdd execute = true
@@ -268,7 +260,6 @@ scraped: 2026-03-06T21:33:52.070519
 
 # Dynatrace Assist
 
-# Dynatrace Assist
 
 * Latest Dynatrace
 * App
@@ -426,7 +417,6 @@ scraped: 2026-03-04T21:31:24.088421
 
 # Dynatrace Intelligence agentic and generative AI data privacy and security
 
-# Dynatrace Intelligence agentic and generative AI data privacy and security
 
 * Latest Dynatrace
 * Explanation
@@ -488,7 +478,6 @@ scraped: 2026-03-06T21:09:55.153167
 
 # Discover relevant troubleshooting guides with Dynatrace Intelligence agentic and generative AI
 
-# Discover relevant troubleshooting guides with Dynatrace Intelligence agentic and generative AI
 
 * Latest Dynatrace
 * Tutorial
@@ -578,177 +567,133 @@ By using a JavaScript workflow action, you can automatically create and attach a
    import { documentsClient } from "@dynatrace-sdk/client-document";
 
 
-
    import { credentialVaultClient } from '@dynatrace-sdk/client-classic-environment-v2';
-
 
 
    import { execution } from '@dynatrace-sdk/automation-utils';
 
 
-
    function generateGUID() {
-
 
 
    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
 
 
-
    const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
-
 
 
    return v.toString(16);
 
 
-
    });
 
 
-
    }
-
 
 
    export default async function () {
 
 
-
    const ex = await execution();
-
 
 
    const problem_event = ex.params.event;
 
 
-
    var problem_id = problem_event['event.id'];
-
 
 
    problem_id = problem_id.replace('_', '-'); // Replace the unsupported character
 
 
-
    // Create a new Notebook and pin it to the triggering problem
-
 
 
    try {
 
 
-
    const notebookContent = {
-
 
 
    defaultTimeframe: { from: "now()-2h", to: "now()" },
 
 
-
    defaultSegments: [],
-
 
 
    sections: [
 
 
-
    {"id":"19ebed94-69a9-4a6e-b392-7bb7b0deb330","type":"markdown","markdown":"# Domain Analysis Results\n\nHere goes the external, domain-specific analysis results"}
-
 
 
    ],
 
 
-
    };
-
 
 
    const generatedNotebook = await documentsClient.createDocument({
 
 
-
    body: {
-
 
 
    name: "[TSG] Domain Analysis Results",
 
 
-
    type: "notebook",
-
 
 
    description: "A notebook containing domain specific analysis results",
 
 
-
    id: "problem-TSG-" + problem_id + "-" + generateGUID(),
-
 
 
    content: new Blob([JSON.stringify(notebookContent)], { type: "application/json" }),
 
 
-
    },
-
 
 
    });
 
 
-
    // Make the document public
-
 
 
    const updated = await documentsClient.updateDocument({
 
 
-
    id: generatedNotebook.id,
-
 
 
    optimisticLockingVersion: generatedNotebook.version,
 
 
-
    body: {
-
 
 
    isPrivate: false,
 
 
-
    }
-
 
 
    })
 
 
-
    } catch (error) {
-
 
 
    console.error("Error creating notebook:", error);
 
 
-
    }
 
 
-
    return { };
-
 
 
    }
@@ -759,7 +704,6 @@ Once the newly created notebook is attached to the AI-detected problem, you'll b
 ![An example of analysis results in the Problems app.](https://dt-cdn.net/images/problems-analysis-results-2147-303c6e5b9b.png)
 
 ## Related topics
-
 
 
 * [Dynatrace Intelligence agentic and generative AI overview](../ru/dynatrace-intelligence/copilot/copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
@@ -778,7 +722,6 @@ scraped: 2026-03-06T21:13:25.807648
 
 # Get started with Dynatrace Intelligence agentic and generative AI
 
-# Get started with Dynatrace Intelligence agentic and generative AI
 
 * Latest Dynatrace
 * How-to guide
@@ -868,7 +811,6 @@ This process relies on vector representations of both the problem description an
 ## Enable environment-aware queries
 
 
-
 Environment-aware queries can enrich Dynatrace Intelligence agentic and generative AI with your environment's data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment.
 
 If you want Dynatrace Intelligence agentic and generative AI to be aware of the details and structures of your environment's data, you'll need to allow access to Grail. To ensure you have full control over the security of your data, this functionality is opt-in, and admin users can specify which data tables and buckets Dynatrace Intelligence agentic and generative AI is not allowed to access.
@@ -912,7 +854,6 @@ scraped: 2026-03-06T21:13:22.200079
 
 # Dynatrace Intelligence agentic and generative AI overview
 
-# Dynatrace Intelligence agentic and generative AI overview
 
 * Latest Dynatrace
 * Explanation
@@ -978,7 +919,6 @@ scraped: 2026-03-06T21:35:08.681078
 
 # Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts
 
-# Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts
 
 * Latest Dynatrace
 * Reference
@@ -1093,7 +1033,6 @@ scraped: 2026-03-04T21:30:33.891937
 
 # Query with natural language
 
-# Query with natural language
 
 * Latest Dynatrace
 * Overview
@@ -1191,9 +1130,7 @@ If you have environment-aware queries enabled, the following DQL will be generat
 fetch bizevents , from:now() â 30d
 
 
-
 | filter event.type ==  "new trip"
-
 
 
 | makeTimeseries interval:1h, {profit= avg(profit), discount= avg(discount)}
@@ -1207,9 +1144,7 @@ If you don't have environment-aware queries enabled, Dynatrace Intelligence gene
 fetch bizevents, from:now() â 30d
 
 
-
 | filter event.type ==  "new trip"
-
 
 
 | makeTimeseries interval:1h, {avg_money_made = avg(money_made), avg_price_reduction = avg(price_reduction)}
@@ -1230,7 +1165,6 @@ If you don't have environment-aware queries enabled, you'll likely get an error 
 Since Dynatrace Intelligence generative AI respects user privileges, it may provide different responses to different users based on their access rights.
 
 ## How are NL2DQL responses generated?
-
 
 
 ![Dynatrace Intelligence generative AI diagram explaining how NL2QL responses are generated](https://dt-cdn.net/images/davis-copilot-nl2dql-responses-1920-1a15aa1055.png)
@@ -1273,7 +1207,6 @@ scraped: 2026-03-06T21:14:58.711515
 
 # Агентное и генеративное ИИ
 
-# Агентное и генеративное ИИ
 
 * Последнее Dynatrace
 * Приложение

@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:34:32.031795
 
 # Azure Data Lake Storage Gen1 monitoring
 
-# Azure Data Lake Storage Gen1 monitoring
 
 * Latest Dynatrace
 * How-to guide

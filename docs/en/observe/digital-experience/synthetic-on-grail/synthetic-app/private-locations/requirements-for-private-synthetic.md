@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:05.107957
 
 # Requirements for private Synthetic locations
 
-# Requirements for private Synthetic locations
 
 * Latest Dynatrace
 * How-to guide

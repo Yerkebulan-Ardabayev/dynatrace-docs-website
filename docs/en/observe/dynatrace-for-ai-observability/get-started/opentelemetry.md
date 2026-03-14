@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:35.685729
 
 # Get started with OpenTelemetry and AI Observability
 
-# Get started with OpenTelemetry and AI Observability
 
 * Latest Dynatrace
 * Getting started guide
@@ -82,7 +81,6 @@ Node.js
    pip install opentelemetry-distro opentelemetry-exporter-otlp
 
 
-
    opentelemetry-bootstrap -a install
    ```
 3. Initialize the OpenTelemetry SDK.
@@ -92,53 +90,40 @@ Node.js
    from opentelemetry import trace
 
 
-
    from opentelemetry.sdk.resources import Resource
-
 
 
    from opentelemetry.sdk.trace import TracerProvider
 
 
-
    from opentelemetry.sdk.trace.export import BatchSpanProcessor
-
 
 
    from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
 
 
-
    resource = Resource.create({"service.name": "<your-service>"})
-
 
 
    provider = TracerProvider(resource=resource)
 
 
-
    trace.set_tracer_provider(provider)
-
 
 
    exporter = OTLPSpanExporter(
 
 
-
    endpoint="https://<YOUR_ENV>.live.dynatrace.com/api/v2/otlp/v1/traces",
-
 
 
    headers={"Authorization": "Api-Token <YOUR_DT_API_TOKEN>"},
 
 
-
    )
 
 
-
    provider.add_span_processor(BatchSpanProcessor(exporter))
-
 
 
    tracer = trace.get_tracer(__name__)
@@ -157,49 +142,37 @@ Node.js
    import { NodeSDK } from '@opentelemetry/sdk-node';
 
 
-
    import { Resource } from '@opentelemetry/resources';
-
 
 
    import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
 
 
-
    import { trace } from '@opentelemetry/api';
-
 
 
    const sdk = new NodeSDK({
 
 
-
    resource: new Resource({ 'service.name': '<your-service>' }),
-
 
 
    traceExporter: new OTLPTraceExporter({
 
 
-
    url: 'https://<YOUR_ENV>.live.dynatrace.com/api/v2/otlp/v1/traces',
-
 
 
    headers: { Authorization: 'Api-Token <YOUR_DT_API_TOKEN>' },
 
 
-
    }),
-
 
 
    });
 
 
-
    sdk.start();
-
 
 
    const tracer = trace.getTracer('my-tracer');
@@ -220,57 +193,43 @@ Node.js
 from opentelemetry.trace import SpanKind
 
 
-
 with tracer.start_as_current_span("chat gpt-5", kind=SpanKind.CLIENT) as span:
-
 
 
 span.set_attribute("gen_ai.operation.name", "chat")
 
 
-
 span.set_attribute("gen_ai.provider.name", "openai")
-
 
 
 span.set_attribute("gen_ai.request.model", "gpt-5.2")
 
 
-
 span.set_attribute("gen_ai.request.temperature", 0.7)
-
 
 
 response = openai_client.chat.completions.create(
 
 
-
 model="gpt-4",
-
 
 
 messages=messages,
 
 
-
 temperature=0.7,
-
 
 
 )
 
 
-
 span.set_attribute("gen_ai.response.model", response.model)
-
 
 
 span.set_attribute("gen_ai.response.id", response.id)
 
 
-
 span.set_attribute("gen_ai.usage.input_tokens", response.usage.prompt_tokens)
-
 
 
 span.set_attribute("gen_ai.usage.output_tokens", response.usage.completion_tokens)
@@ -280,65 +239,49 @@ span.set_attribute("gen_ai.usage.output_tokens", response.usage.completion_token
 import { SpanKind } from '@opentelemetry/api';
 
 
-
 tracer.startActiveSpan('chat gpt-4', { kind: SpanKind.CLIENT }, async (span) => {
-
 
 
 span.setAttribute('gen_ai.operation.name', 'chat');
 
 
-
 span.setAttribute('gen_ai.provider.name', 'openai');
-
 
 
 span.setAttribute('gen_ai.request.model', 'gpt-5.2');
 
 
-
 span.setAttribute('gen_ai.request.temperature', 0.7);
-
 
 
 const response = await openai.chat.completions.create({
 
 
-
 model: 'gpt-4',
-
 
 
 messages: messages,
 
 
-
 temperature: 0.7,
-
 
 
 });
 
 
-
 span.setAttribute('gen_ai.response.model', response.model);
-
 
 
 span.setAttribute('gen_ai.response.id', response.id);
 
 
-
 span.setAttribute('gen_ai.usage.input_tokens', response.usage.prompt_tokens);
-
 
 
 span.setAttribute('gen_ai.usage.output_tokens', response.usage.completion_tokens);
 
 
-
 span.end();
-
 
 
 });

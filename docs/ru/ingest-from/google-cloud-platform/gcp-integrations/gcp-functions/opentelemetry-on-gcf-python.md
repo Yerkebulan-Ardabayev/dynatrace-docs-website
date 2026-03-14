@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:29:32.606351
 
 # Интеграция с Google Cloud Functions на Python
 
-# Интеграция с Google Cloud Functions на Python
 
 * Latest Dynatrace
 * How-to guide
@@ -48,21 +47,16 @@ dynatrace-opentelemetry-gcf
   from opentelemetry.sdk.resources import Resource
 
 
-
   from opentelemetry.semconv.resource import ResourceAttributes
-
 
 
   from dynatrace.opentelemetry.tracing.api import configure_dynatrace
 
 
-
   tracer_provider = configure_dynatrace(
 
 
-
   resource=Resource.create({"my.resource.attribute": "My Resource"})
-
 
 
   )
@@ -75,69 +69,52 @@ dynatrace-opentelemetry-gcf
   from opentelemetry.propagate import set_global_textmap
 
 
-
   from opentelemetry.sdk.resources import Resource
-
 
 
   from opentelemetry.sdk.trace import TracerProvider
 
 
-
   from opentelemetry.semconv.resource import ResourceAttributes
-
 
 
   from opentelemetry.trace import set_tracer_provider
 
 
-
   from dynatrace.opentelemetry.tracing.api import (
-
 
 
   DtSampler,
 
 
-
   DtSpanProcessor,
-
 
 
   DtTextMapPropagator,
 
 
-
   )
-
 
 
   span_processor = DtSpanProcessor()
 
 
-
   tracer_provider = TracerProvider(
-
 
 
   sampler=DtSampler(),
 
 
-
   resource=Resource.create({"my.resource.attribute": "My Resource"}),
-
 
 
   )
 
 
-
   tracer_provider.add_span_processor(span_processor)
 
 
-
   set_global_textmap(DtTextMapPropagator())
-
 
 
   set_tracer_provider(tracer_provider)
@@ -149,13 +126,10 @@ dynatrace-opentelemetry-gcf
 # isort: off
 
 
-
 import setup_tracing  # импортируйте модуль, содержащий ваш код настройки
 
 
-
 # isort: on
-
 
 
 # импортируйте другие модули
@@ -169,25 +143,19 @@ import setup_tracing  # импортируйте модуль, содержащ�
 import flask
 
 
-
 from dynatrace.opentelemetry.gcf import wrap_handler
-
 
 
 @wrap_handler
 
 
-
 def handler(request: flask.Request) -> flask.Response:
-
 
 
 # Здесь созданный спан доступен в контексте OpenTelemetry как текущий спан.
 
 
-
 # выполните какие-либо действия ...
-
 
 
 return flask.Response("Hello World", 200)

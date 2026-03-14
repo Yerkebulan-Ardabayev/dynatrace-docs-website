@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:04.307374
 
 # Applications API - POST tags
 
-# Applications API - POST tags
 
 * Reference
 * Updated on Mar 22, 2023
@@ -54,21 +53,16 @@ scraped: 2026-03-05T21:27:04.307374
 {
 
 
-
 "tags": [
-
 
 
 "office-linz",
 
 
-
 "office-klagenfurt"
 
 
-
 ]
-
 
 
 }
@@ -118,53 +112,40 @@ scraped: 2026-03-05T21:27:04.307374
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -182,37 +163,28 @@ API-токен передаётся в заголовке **Authorization**.
 curl -X POST \
 
 
-
 https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications/MOBILE_APPLICATION-752C288D59734C79 \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
 
 
-
 -H 'Content-Type: application/json' \
-
 
 
 -d '{
 
 
-
 "tags": [
-
 
 
 "iOS app",
 
 
-
 "Android app"
 
 
-
 ]
-
 
 
 }'
@@ -230,21 +202,16 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications/MOBILE_APPLICA
 {
 
 
-
 "tags": [
-
 
 
 "iOS app",
 
 
-
 "Android app"
 
 
-
 ]
-
 
 
 }

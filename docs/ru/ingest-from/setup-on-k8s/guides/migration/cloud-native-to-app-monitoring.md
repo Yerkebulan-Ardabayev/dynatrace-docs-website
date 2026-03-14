@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:59.753270
 
 # Миграция с cloud-native full-stack на режим мониторинга приложений
 
-# Миграция с cloud-native full-stack на режим мониторинга приложений
 
 * Latest Dynatrace
 * 2-min read
@@ -45,65 +44,49 @@ Dynatrace Operator версии 1.0.0 и выше
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    apiUrl: https://<environment-id>.live.dynatrace.com/api
 
 
-
    networkZone: <network-zone>
-
 
 
    oneAgent:
 
 
-
    cloudNativeFullStack:
-
 
 
    args:
 
 
-
    - "--set-host-group=<host-group>"
-
 
 
    activeGate:
 
 
-
    capabilities:
-
 
 
    - routing
 
 
-
    - kubernetes-monitoring
-
 
 
    - dynatrace-api
@@ -113,61 +96,46 @@ Dynatrace Operator версии 1.0.0 и выше
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    apiUrl: https://<environment-id>.live.dynatrace.com/api
 
 
-
    networkZone: <network-zone>
-
 
 
    oneAgent:
 
 
-
    hostGroup: <host-group>
-
 
 
    applicationMonitoring: {}
 
 
-
    activeGate:
-
 
 
    capabilities:
 
 
-
    - routing
 
 
-
    - kubernetes-monitoring
-
 
 
    - dynatrace-api

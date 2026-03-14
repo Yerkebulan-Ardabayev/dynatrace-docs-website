@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:56.714019
 
 # Приложение Dynatrace Intelligence (Preview)
 
-# Приложение Dynatrace Intelligence (Preview)
 
 * Последняя версия Dynatrace
 * Практическое руководство

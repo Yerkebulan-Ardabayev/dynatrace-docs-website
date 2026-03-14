@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:12.390171
 
 # Install OneAgent on PPC BE Linux
 
-# Install OneAgent on PPC BE Linux
 
 * Latest Dynatrace
 * 3-min read
@@ -68,13 +67,10 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    DT_HOME=<installation directory>
 
 
-
    export DT_HOME
 
 
-
    LD_PRELOAD=$DT_HOME/agent/<system library>/liboneagentproc.so
-
 
 
    export LD_PRELOAD

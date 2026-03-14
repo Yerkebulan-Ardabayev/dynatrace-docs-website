@@ -14,7 +14,6 @@ scraped: 2026-03-04T21:34:00.535138
 
 # Issue-tracking integration
 
-# Issue-tracking integration
 
 * Classic
 * How-to guide
@@ -105,7 +104,6 @@ scraped: 2026-03-06T21:33:50.318161
 
 # Monitor releases with Dynatrace
 
-# Monitor releases with Dynatrace
 
 * Classic
 * How-to guide
@@ -210,7 +208,6 @@ scraped: 2026-03-06T21:32:40.181980
 
 # Version detection strategies for deep-monitored processes
 
-# Version detection strategies for deep-monitored processes
 
 * Classic
 * How-to guide
@@ -311,69 +308,52 @@ For a release to be discovered, the following requirements must be fulfilled:
 {
 
 
-
 "eventType": "CUSTOM_DEPLOYMENT",
-
 
 
 "title": "Easytravel 1.1",
 
 
-
 "entitySelector": "type(PROCESS_GROUP_INSTANCE),tag(easytravel)",
-
 
 
 "properties": {
 
 
-
 "dt.event.deployment.name":"Easytravel 1.1",
-
 
 
 "dt.event.deployment.version": "1.1",
 
 
-
 "dt.event.deployment.release_stage": "production" ,
-
 
 
 "dt.event.deployment.release_product": "frontend",
 
 
-
 "dt.event.deployment.release_build_version": "123",
-
 
 
 "approver": "Jason Miller",
 
 
-
 "dt.event.deployment.ci_back_link": "https://pipelines/easytravel/123",
-
 
 
 "gitcommit": "e5a6baac7eb",
 
 
-
 "change-request": "CR-42",
-
 
 
 "dt.event.deployment.remediation_action_link": "https://url.com",
 
 
-
 "dt.event.is_rootcause_relevant": true
 
 
-
 }
-
 
 
 }
@@ -413,7 +393,6 @@ scraped: 2026-03-05T21:30:30.226479
 
 # Release monitoring Classic
 
-# Release monitoring Classic
 
 * Classic
 * Overview

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:30.748153
 
 # Use cases
 
-# Use cases
 
 * Latest Dynatrace
 * Overview

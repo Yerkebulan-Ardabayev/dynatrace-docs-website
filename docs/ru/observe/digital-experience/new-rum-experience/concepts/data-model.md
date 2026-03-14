@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:35:37.839352
 
 # Модель данных New RUM Experience
 
-# Модель данных New RUM Experience
 
 * Latest Dynatrace
 * Описание

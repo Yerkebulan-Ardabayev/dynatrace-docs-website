@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Delete specific environment
 
-# Delete specific environment
 
 * Published Mar 09, 2021
 

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:14.538129
 
 # Segment requests to improve response time degradation
 
-# Segment requests to improve response time degradation
 
 * Classic
 * Tutorial

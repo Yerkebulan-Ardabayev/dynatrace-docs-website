@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:58.424568
 
 # Мониторинг Kubernetes API
 
-# Мониторинг Kubernetes API
 
 * Latest Dynatrace
 * Чтение: 8 мин
@@ -38,21 +37,16 @@ Dynatrace Operator управляет жизненным циклом всех �
 ...
 
 
-
 activeGate:
-
 
 
 capabilities:
 
 
-
 - routing
 
 
-
 - kubernetes-monitoring
-
 
 
 ...
@@ -94,45 +88,34 @@ capabilities:
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    annotations:
-
 
 
    feature.dynatrace.com/automatic-kubernetes-api-monitoring: "true"
 
 
-
    spec:
-
 
 
    ...
 
 
-
    activeGate:
 
 
-
    capabilities:
-
 
 
    - kubernetes-monitoring
@@ -146,49 +129,37 @@ capabilities:
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    annotations:
-
 
 
    feature.dynatrace.com/automatic-kubernetes-api-monitoring: "true"
 
 
-
    feature.dynatrace.com/automatic-kubernetes-api-monitoring-cluster-name: "custom-cluster-name"
-
 
 
    spec:
 
 
-
    ...
-
 
 
    activeGate:
 
 
-
    capabilities:
-
 
 
    - kubernetes-monitoring
@@ -267,25 +238,19 @@ oc get namespace kube-system -o jsonpath='{.metadata.uid}'
    apiVersion: v1
 
 
-
    kind: Secret
-
 
 
    metadata:
 
 
-
    name: dynatrace-activegate
-
 
 
    annotations:
 
 
-
    kubernetes.io/service-account.name: "dynatrace-activegate"
-
 
 
    type: kubernetes.io/service-account-token

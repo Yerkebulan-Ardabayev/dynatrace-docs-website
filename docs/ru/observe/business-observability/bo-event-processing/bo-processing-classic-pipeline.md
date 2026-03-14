@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:37.436435
 
 # Обработка бизнес-событий через классический конвейер
 
-# Обработка бизнес-событий через классический конвейер
 
 * Latest Dynatrace
 * Tutorial
@@ -57,25 +56,19 @@ scraped: 2026-03-06T21:14:37.436435
   {
 
 
-
   "action":"buy",
-
 
 
   "accountId":6,
 
 
-
   "amount":10,
-
 
 
   "instrumentId":1,
 
 
-
   "price":157.025
-
 
 
   }
@@ -93,21 +86,16 @@ scraped: 2026-03-06T21:14:37.436435
   {
 
 
-
   "action": "payment",
-
 
 
   "creditCardNumber":"5570001112223344",
 
 
-
   "valid":"12/27",
 
 
-
   "cvv":"001"
-
 
 
   }
@@ -125,21 +113,16 @@ scraped: 2026-03-06T21:14:37.436435
   {
 
 
-
   "action": "newUser",
-
 
 
   "firstName":"Frank",
 
 
-
   "lastName": "Underwud",
 
 
-
   "birthDate": "10.01.1967"
-
 
 
   }
@@ -157,33 +140,25 @@ scraped: 2026-03-06T21:14:37.436435
   {
 
 
-
   "action":"sell",
-
 
 
   "details":{
 
 
-
   "accountId":6,
-
 
 
   "amount":10,
 
 
-
   "instrumentId":1,
-
 
 
   "price":157.025
 
 
-
   }
-
 
 
   }
@@ -202,21 +177,16 @@ scraped: 2026-03-06T21:14:37.436435
   {
 
 
-
   "timestamp":"2023-01-18T10:50:23.777000000Z",
-
 
 
   "cartId":"58583939",
 
 
-
   "error.message":"The voucher [XY-892940] is not valid!",
 
 
-
   "error.messageKey":"error.voucher "
-
 
 
   }

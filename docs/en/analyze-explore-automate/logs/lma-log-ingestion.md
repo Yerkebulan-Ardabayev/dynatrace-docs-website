@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:18.200005
 
 # Log ingestion
 
-# Log ingestion
 
 * Latest Dynatrace
 * Overview

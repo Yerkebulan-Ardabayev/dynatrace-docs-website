@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:12.811038
 
 # Расширенная аналитика трассировки на базе Grail
 
-# Расширенная аналитика трассировки на базе Grail
 
 * Последняя версия Dynatrace
 * Руководство
@@ -42,13 +41,10 @@ scraped: 2026-03-06T21:12:12.811038
 fetch spans
 
 
-
 | filter isNotNull( http.request.header.host)
 
 
-
 | fields endpoint.name, http.request.header.host, http.request.method, trace.id
-
 
 
 | limit 5
@@ -64,17 +60,13 @@ fetch spans
 fetch spans
 
 
-
 | filter span.kind == "server" and isNotNull(http.route)
-
 
 
 | fieldsAdd http.request.method = coalesce(http.request.method, http.method)
 
 
-
 | summarize { count(), avg(duration), p50=percentile(duration, 50)}, by: { http.request.method, http.route }
-
 
 
 | limit 3
@@ -90,13 +82,10 @@ fetch spans
 fetch spans
 
 
-
 | filterOut isNull(http.route)
 
 
-
 | filter contains(http.route, "v1/") and not endsWith(http.route, "/sell")
-
 
 
 | summarize count(), by: { http.request.method, http.route }
@@ -123,29 +112,22 @@ fetch spans
 fetch spans
 
 
-
 // filter for specific HTTP route
-
 
 
 | filter contains(http.route, "services")
 
 
-
 | summarize {
-
 
 
 spans=count(),
 
 
-
 trace=takeAny(record(start_time, trace.id)) // pick random trace from aggregation bucket
 
 
-
 }, by: { bin(duration, 100ms) }
-
 
 
 | fields `bin(duration, 100ms)`, spans, trace.id=trace[trace.id], start_time=trace[start_time]
@@ -163,21 +145,16 @@ trace=takeAny(record(start_time, trace.id)) // pick random trace from aggregatio
 fetch spans
 
 
-
 // filter for specific http route
-
 
 
 | filter contains(http.route, "services") and http.request.method == "GET"
 
 
-
 // extract timeseries
 
 
-
 | makeTimeseries { avg=avg(duration) }
-
 
 
 , by: { http.route }, bins:250
@@ -195,21 +172,16 @@ fetch spans
 fetch spans
 
 
-
 // filter only for request root spans
-
 
 
 | filter request.is_root_span == true
 
 
-
 | filter request.is_failed == true
 
 
-
 | fields trace.id, span.id, start_time, response_time = duration, endpoint.name
-
 
 
 | limit 100
@@ -223,93 +195,70 @@ fetch spans
 fetch spans
 
 
-
 // request.id is pre-requisite for this query. not always present
-
 
 
 | filter isNotNull(request.id)
 
 
-
 | summarize {
-
 
 
 spans = count(),
 
 
-
 client_spans = countIf(span.kind == "client"),
-
 
 
 span_events = sum(arraySize(span.events)),
 
 
-
 // from all spans in the summarized group, select the one that is the request root
-
 
 
 request_root = takeMin(record(
 
 
-
 root_detection_helper = coalesce(if(request.is_root_span, 1), 2 /* INVALID */),
-
 
 
 start_time, endpoint.name, duration
 
 
-
 ))
-
 
 
 }, by: { trace.id, request.id }
 
 
-
 // reset request_root to NULL if root_detection_helper is invalid
-
 
 
 | fieldsAdd request_root=if(request_root[root_detection_helper] < 2, request_root)
 
 
-
 | fieldsFlatten request_root | fieldsRemove request_root.root_detection_helper, request_root
-
 
 
 | fields
 
 
-
 start_time = request_root.start_time,
-
 
 
 endpoint = request_root.endpoint.name,
 
 
-
 response_time = request_root.duration,
-
 
 
 spans,
 
 
-
 client_spans, span_events,
 
 
-
 trace.id
-
 
 
 | limit 100
@@ -325,101 +274,76 @@ trace.id
 fetch spans
 
 
-
 | summarize {
-
 
 
 spans = count(),
 
 
-
 client_spans = countIf(span.kind == "client"),
-
 
 
 span_events = sum(arraySize(span.events)),
 
 
-
 // endpoints involved in the trace
-
 
 
 endpoints = toString(arrayRemoveNulls(collectDistinct(endpoint.name))),
 
 
-
 // hosts involved in the trace
-
 
 
 hosts = arrayRemoveNulls(collectDistinct(host.name)),
 
 
-
 // from all spans in the summarized group, select the one that is the first request root in the trace
-
 
 
 trace_root = takeMin(record(
 
 
-
 root_detection_helper = coalesce(if(request.is_root_span, 1), if(isNull(span.parent_id), 2), 3),
-
 
 
 start_time, endpoint.name, duration
 
 
-
 ))
-
 
 
 }, by: { trace.id }
 
 
-
 | fieldsFlatten trace_root | fieldsRemove trace_root.root_detection_helper, trace_root
-
 
 
 | fields
 
 
-
 start_time = trace_root.start_time,
-
 
 
 endpoint = trace_root.endpoint.name,
 
 
-
 response_time = trace_root.duration,
-
 
 
 spans,
 
 
-
 client_spans, span_events,
-
 
 
 endpoints, hosts,
 
 
-
 trace.id
 
 
-
 | sort start_time
-
 
 
 | limit 100
@@ -435,17 +359,13 @@ trace.id
 fetch spans
 
 
-
 // no backticks required
-
 
 
 | filter isNotNull(request_attribute.my_customer_id)
 
 
-
 // backticks required
-
 
 
 | filter isNotNull(`request_attribute.My Customer ID`)
@@ -469,17 +389,13 @@ fetch spans
 fetch spans
 
 
-
 | filter isNotNull(db.namespace) AND span.kind == "client"
-
 
 
 | summarize by:{db.system, db.operation.name, db.query.text}, count = count()
 
 
-
 | sort count desc
-
 
 
 | limit 10
@@ -493,57 +409,43 @@ fetch spans
 fetch spans
 
 
-
 // filter for database spans
-
 
 
 | filter span.kind == "client" and isNotNull(db.namespace)
 
 
-
 // add service name
-
 
 
 | fieldsAdd entityName = dt.entity.service
 
 
-
 // calculate multiplicity factor for every span, to for extrapolations
-
 
 
 | fieldsAdd sampling.probability = (power(2, 56) - coalesce(sampling.threshold, 0)) * power(2, -56)
 
 
-
 | fieldsAdd sampling.multiplicity = 1/sampling.probability
-
 
 
 | fieldsAdd multiplicity = coalesce(sampling.multiplicity, 1)
 
 
-
 * coalesce(aggregation.count, 1)
-
 
 
 * dt.system.sampling_ratio
 
 
-
 | summarize { db_calls = sum(multiplicity) }, by: { dt.entity.service.name, code.function, db.system, db.namespace, db.query.text }
-
 
 
 // top 100
 
 
-
 | sort db_calls desc
-
 
 
 | limit 10
@@ -557,109 +459,82 @@ fetch spans
 fetch spans
 
 
-
 // calculate multiplicity factor for every span, to for extrapolations
-
 
 
 | fieldsAdd sampling.probability = (power(2, 56) - coalesce(sampling.threshold, 0)) * power(2, -56)
 
 
-
 | fieldsAdd sampling.multiplicity = 1/sampling.probability
-
 
 
 | fieldsAdd multiplicity = coalesce(sampling.multiplicity, 1)
 
 
-
 * coalesce(aggregation.count, 1)
-
 
 
 * dt.system.sampling_ratio
 
 
-
 | summarize {
-
 
 
 spans = count(),
 
 
-
 db_spans = countIf(span.kind == "client" and isNotNull(db.namespace)),
-
 
 
 db_calls = sum(if(span.kind == "client" and isNotNull(db.namespace),   multiplicity, else: 0) ),
 
 
-
 // from all spans in the summarized group, select the one that is the request root
-
 
 
 request_root = takeMin(record(
 
 
-
 root_detection_helper = coalesce(if(isNotNull(endpoint.name), 1), 2),
-
 
 
 start_time, endpoint.name, duration
 
 
-
 ))
-
 
 
 }, by: { trace.id, request.id }
 
 
-
 | fields
-
 
 
 start_time = request_root[start_time],
 
 
-
 endpoint = request_root[endpoint.name],
-
 
 
 respopnse_time = request_root[duration],
 
 
-
 spans,
-
 
 
 db_spans, db_calls,
 
 
-
 trace.id
-
 
 
 | makeTimeseries { avg(db_calls) }, by: { endpoint }
 
 
-
 // only show top 10 timeseries
 
 
-
 | sort arraySum(`avg(db_calls)`) desc
-
 
 
 | limit 10
@@ -673,73 +548,55 @@ trace.id
 fetch spans
 
 
-
 // filter for database spans
-
 
 
 | filter span.kind == "client"
 
 
-
 | filter isNotNull(span.events)
-
 
 
 | filter db.namespace != ""
 
 
-
 | filter isNotNull(db.query.text)
-
 
 
 | filter eventname == "exception"
 
 
-
 // adds service name
-
 
 
 | fieldsAdd entityName(dt.entity.service)
 
 
-
 // adds the error message
-
 
 
 | fieldsAdd exception = span.events[0][exception.message]
 
 
-
 // adds span name
-
 
 
 | fieldsAdd eventname = span.events[0][span_event.name]
 
 
-
 | summarize {ExceptionMessage = collectDistinct(exception),
-
 
 
 Errors = count()},
 
 
-
 by:{Database = db.namespace, Query = db.query.text}
-
 
 
 // only show top 10 errors
 
 
-
 | sort Errors desc
-
 
 
 | limit 10
@@ -763,41 +620,31 @@ by:{Database = db.namespace, Query = db.query.text}
 fetch spans
 
 
-
 // only spans which contain a span event of type "exception"
-
 
 
 | filter iAny(span.events[][span_event.name] == "error")
 
 
-
 // exclude specific exception
-
 
 
 | filter iAny(contains(span.events[][span_event.name], "http"))
 
 
-
 // make exception attributes top level attributes
-
 
 
 | expand span.events
 
 
-
 | fields span.events
-
 
 
 | fieldsFlatten span.events
 
 
-
 | fieldsRemove span.events
-
 
 
 | limit 1000
@@ -811,29 +658,22 @@ fetch spans
 fetch spans
 
 
-
 // full text search on stacktrace
-
 
 
 | filter iAny(contains(span.events[][exception.stack_trace], "hang up"))
 
 
-
 // make exception attributes top level attributes
-
 
 
 | expand span.events
 
 
-
 | fields span.events
 
 
-
 | fieldsFlatten span.events
-
 
 
 | limit 1000
@@ -847,25 +687,19 @@ fetch spans
 fetch spans
 
 
-
 // only spans which contain a span event of type "exception"
-
 
 
 | filter iAny(span.events[][span_event.name] == "exception")
 
 
-
 // make exception type top level attribute
-
 
 
 | expand span.events
 
 
-
 | fieldsFlatten span.events, fields: { exception.type }
-
 
 
 | summarize count(), by: { exception.type }
@@ -881,25 +715,19 @@ fetch spans
 fetch spans
 
 
-
 // only spans which contain a span event of type "exception"
-
 
 
 | filter iAny(span.events[][span_event.name] == "exception")
 
 
-
 // make exception type top level attribute
-
 
 
 | expand span.events
 
 
-
 | fieldsFlatten span.events, fields: { exception.type }
-
 
 
 | makeTimeseries count(), by: { exception.type }
@@ -917,53 +745,40 @@ fetch spans
 fetch spans
 
 
-
 | filter iAny(contains(span.events[][exception.message], "Bio for user with id"))
-
 
 
 // make exception attributes top level attributes
 
 
-
 | expand span.events
-
 
 
 | fields span.events
 
 
-
 | fieldsFlatten span.events
-
 
 
 | fieldsRemove span.events
 
 
-
 // parse "user_id" number from the exception message
-
 
 
 // Example message: "Bio for user with id '9146' not found"
 
 
-
 | parse `span.events.exception.message`, "Bio for user with id \'INT:user_id\' not found"
-
 
 
 | summarize count(), by: { user_id }
 
 
-
 // show top 5
 
 
-
 | sort `count()` desc
-
 
 
 | limit 5
@@ -985,13 +800,10 @@ fetch spans
 fetch logs
 
 
-
 // only logs that have a trace context
 
 
-
 | filterOut isNull(trace_id)
-
 
 
 | limit 10
@@ -1005,41 +817,31 @@ fetch logs
 fetch spans
 
 
-
 | filter trace.id in [
-
 
 
 fetch logs
 
 
-
 // only logs that have a trace context
-
 
 
 | filter isNotNull(trace_id)
 
 
-
 // search for a particular string in logs content
-
 
 
 | filter contains(content, "No carts for user")
 
 
-
 // convert from string to UID type
-
 
 
 | fields toUid(trace_id)
 
 
-
 ]
-
 
 
 | limit 5
@@ -1053,45 +855,34 @@ fetch logs
 fetch spans
 
 
-
 | filter span.id in [
-
 
 
 fetch logs
 
 
-
 // only logs that have a trace context
-
 
 
 | filter isNotNull(span_id)
 
 
-
 | filter contains(content, "No carts for user")
-
 
 
 // convert from string to UID type
 
 
-
 | fields toUid(span_id)
-
 
 
 ]
 
 
-
 // pick either the span name or code namespace and function, depending on what's available
 
 
-
 | fieldsAdd name = coalesce(span.name, concat(code.namespace, ".", code.function))
-
 
 
 | summarize { count(), avg(duration), p99=percentile(duration, 99), trace.id=takeAny(trace.id) } , by: { k8s.pod.name, name }
@@ -1105,25 +896,19 @@ fetch logs
 fetch spans
 
 
-
 | fieldsAdd trace_id = toString(trace.id)
-
 
 
 | join [ fetch logs ]
 
 
-
 , on:{ left[trace_id] == right[trace_id] }
-
 
 
 , fields: { content, loglevel }
 
 
-
 | fields start_time, trace.id, span.id, code=concat(code.namespace, ".", code.function), loglevel, content
-
 
 
 | limit 100
@@ -1153,21 +938,16 @@ fetch spans
     // calculate multiplicity factor for every span, to for extrapolations
 
 
-
     | fieldsAdd sampling.probability = (power(2, 56) - coalesce(sampling.threshold, 0)) * power(2, -56)
-
 
 
     | fieldsAdd sampling.multiplicity = 1/sampling.probability
 
 
-
     | fieldsAdd multiplicity = coalesce(sampling.multiplicity, 1)
 
 
-
     * coalesce(aggregation.count, 1)
-
 
 
     * dt.system.sampling_ratio
@@ -1187,45 +967,34 @@ fetch spans
 fetch spans
 
 
-
 // read only 1% of data for better read performance
-
 
 
 , samplingRatio:100
 
 
-
 // only request roots
-
 
 
 | filter request.is_root_span == true
 
 
-
 // calculate multiplicity factor for every span, to for extrapolations
-
 
 
 | fieldsAdd sampling.probability = (power(2, 56) - coalesce(sampling.threshold, 0)) * power(2, -56)
 
 
-
 | fieldsAdd sampling.multiplicity = 1/sampling.probability
-
 
 
 | fieldsAdd multiplicity = coalesce(sampling.multiplicity, 1)
 
 
-
 * coalesce(aggregation.count, 1)
 
 
-
 * dt.system.sampling_ratio
-
 
 
 | summarize span_count=count(), request_count_extrapolated = sum(multiplicity)
@@ -1241,61 +1010,46 @@ fetch spans
 fetch spans
 
 
-
 // read only 1% of data for better read performance
-
 
 
 , samplingRatio:100
 
 
-
 // only database spans
-
 
 
 | filter isNotNull(db.statement)
 
 
-
 // calculate multiplicity factor for every span, to for extrapolations
-
 
 
 | fieldsAdd sampling.probability = (power(2, 56) - coalesce(sampling.threshold, 0)) * power(2, -56)
 
 
-
 | fieldsAdd sampling.multiplicity = 1/sampling.probability
-
 
 
 | fieldsAdd multiplicity = coalesce(sampling.multiplicity, 1)
 
 
-
 * coalesce(aggregation.count, 1)
-
 
 
 * dt.system.sampling_ratio
 
 
-
 | fieldsAdd aggregation.duration_avg = coalesce(aggregation.duration_sum / aggregation.count, duration)
-
 
 
 | summarize {
 
 
-
 operation_count_extrapolated = sum(multiplicity),
 
 
-
 operation_duration_extrapolated = sum(aggregation.duration_avg * multiplicity) / sum(multiplicity)
-
 
 
 }
@@ -1317,153 +1071,115 @@ operation_duration_extrapolated = sum(aggregation.duration_avg * multiplicity) /
 fetch dt.system.events
 
 
-
 | filter event.kind == "BILLING_USAGE_EVENT"
-
 
 
 | filter event.type == "Traces - Query"
 
 
-
 | dedup event.id
 
 
-
 | summarize {
-
 
 
 data_read_GiB = sum(billed_bytes / 1024 / 1024 / 1024.0),
 
 
-
 Query_count = count()
-
 
 
 }, by: {
 
 
-
 App_context = client.application_context, application_detail = client.source, User = user.email
 
 
-
 }
-
 
 
 | fieldsAdd split_by_user = record(data_read_GiB, App_context, application_detail, User, Query_count)
 
 
-
 | summarize {
-
 
 
 split_by_user = arraySort(collectArray(split_by_user), direction: "descending"),
 
 
-
 data_read_GiB = sum(data_read_GiB),
-
 
 
 Query_count = sum(Query_count)
 
 
-
 }, by:{
-
 
 
 App_context, application_detail
 
 
-
 }
-
 
 
 | fieldsAdd split_by_user = record(App_context = split_by_user[][App_context], application_detail = split_by_user[][application_detail], User = split_by_user[][User], data_read_GiB = split_by_user[][data_read_GiB], data_read_pct = (split_by_user[][data_read_GiB] / data_read_GiB * 100), Query_count = split_by_user[][Query_count])
 
 
-
 | fieldsAdd split_by_user = if(arraySize(split_by_user) == 1, arrayFirst(split_by_user)[User], else: split_by_user)
-
 
 
 | fieldsAdd application_details = record(data_read_GiB, App_context, application_detail, split_by_user, Query_count)
 
 
-
 | summarize {
-
 
 
 application_details = arraySort(collectArray(application_details), direction: "descending"),
 
 
-
 data_read_GiB = sum(data_read_GiB),
-
 
 
 Query_count = toLong(sum(Query_count))
 
 
-
 }, by:{
-
 
 
 App_context
 
 
-
 }
-
 
 
 | fieldsAdd application_details = record(App_context = application_details[][App_context], application_detail = application_details[][application_detail], split_by_user = application_details[][split_by_user], data_read_GiB = application_details[][data_read_GiB], data_read_pct = application_details[][data_read_GiB] / data_read_GiB * 100, Query_count = application_details[][Query_count])
 
 
-
 | fieldsAdd key = 1
-
 
 
 | fieldsAdd total = lookup([
 
 
-
 fetch dt.system.events
-
 
 
 | filter event.kind == "BILLING_USAGE_EVENT" and event.type == "Traces - Query"
 
 
-
 | dedup event.id
-
 
 
 | summarize total = sum(billed_bytes / 1024 / 1024 / 1024.0)
 
 
-
 | fieldsAdd key = 1
-
 
 
 ], sourceField: key, lookupField:key)[total]
 
 
-
 | fields App_context, application_details, data_read_GiB, data_read_pct = data_read_GiB / total * 100, Query_count
-
 
 
 | sort data_read_GiB desc
@@ -1477,153 +1193,115 @@ fetch dt.system.events
 fetch dt.system.events
 
 
-
 | filter event.kind == "BILLING_USAGE_EVENT"
-
 
 
 | filter event.type == "Traces - Query"
 
 
-
 | dedup event.id
 
 
-
 | summarize {
-
 
 
 data_read_GiB = sum(billed_bytes / 1024 / 1024 / 1024.0),
 
 
-
 Query_count = count()
-
 
 
 }, by: {
 
 
-
 App_context = client.application_context, application_detail = client.source, User = user.email
 
 
-
 }
-
 
 
 | fieldsAdd split_by_application_detail = record(data_read_GiB, App_context, application_detail, User, Query_count)
 
 
-
 | summarize {
-
 
 
 split_by_application_detail = arraySort(collectArray(split_by_application_detail), direction: "descending"),
 
 
-
 data_read_GiB = sum(data_read_GiB),
-
 
 
 Query_count = sum(Query_count)
 
 
-
 }, by:{
-
 
 
 User, App_context
 
 
-
 }
-
 
 
 | fieldsAdd split_by_application_detail = record(User = split_by_application_detail[][User], App_context = split_by_application_detail[][App_context], application_detail = split_by_application_detail[][application_detail], data_read_GiB = split_by_application_detail[][data_read_GiB], data_read_pct = (split_by_application_detail[][data_read_GiB] / data_read_GiB * 100), Query_count = split_by_application_detail[][Query_count])
 
 
-
 | fieldsAdd split_by_application_detail = if(arraySize(split_by_application_detail) == 1, arrayFirst(split_by_application_detail)[application_detail], else: split_by_application_detail)
-
 
 
 | fieldsAdd App_contexts = record(data_read_GiB, User, App_context, split_by_application_detail, Query_count)
 
 
-
 | summarize {
-
 
 
 App_contexts = arraySort(collectArray(App_contexts), direction: "descending"),
 
 
-
 data_read_GiB = sum(data_read_GiB),
-
 
 
 Query_count = toLong(sum(Query_count))
 
 
-
 }, by:{
-
 
 
 User
 
 
-
 }
-
 
 
 | fieldsAdd App_contexts = record(User = App_contexts[][User], App_context = App_contexts[][App_context], split_by_application_detail = App_contexts[][split_by_application_detail], data_read_GiB = App_contexts[][data_read_GiB], data_read_pct = App_contexts[][data_read_GiB] / data_read_GiB * 100, Query_count = App_contexts[][Query_count])
 
 
-
 | fieldsAdd key = 1
-
 
 
 | fieldsAdd total = lookup([
 
 
-
 fetch dt.system.events
-
 
 
 | filter event.kind == "BILLING_USAGE_EVENT" and event.type == "Traces - Query"
 
 
-
 | dedup event.id
-
 
 
 | summarize total = sum(billed_bytes / 1024 / 1024 / 1024.0)
 
 
-
 | fieldsAdd key = 1
-
 
 
 ], sourceField: key, lookupField:key)[total]
 
 
-
 | fields User, App_contexts, data_read_GiB, data_read_pct = data_read_GiB / total * 100, Query_count
-
 
 
 | sort data_read_GiB desc
@@ -1637,17 +1315,13 @@ fetch dt.system.events
 timeseries percent = avg(dt.host.disk.used.percent), by:{dt.entity.host, dt.entity.disk}
 
 
-
 | fieldsAdd percent = arrayAvg(percent)
-
 
 
 | fieldsAdd display = concat(entityName(dt.entity.host), " | ",  entityName(dt.entity.disk), " | " , round(percent, decimals:2), "%", if(percent>80, "⚠️"))
 
 
-
 | sort percent desc
-
 
 
 | limit 10

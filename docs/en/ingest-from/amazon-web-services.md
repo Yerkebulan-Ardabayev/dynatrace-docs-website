@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:47.416400
 
 # Set up Dynatrace on Amazon Web Services
 
-# Set up Dynatrace on Amazon Web Services
 
 * Latest Dynatrace
 * How-to guide

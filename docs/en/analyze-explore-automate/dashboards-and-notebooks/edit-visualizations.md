@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:17.997326
 
 # Edit visualizations for Notebooks and Dashboards
 
-# Edit visualizations for Notebooks and Dashboards
 
 * Latest Dynatrace
 * Reference

@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:29:33.982053
 
 # Как масштабировать OpenTelemetry Collector
 
-# Как масштабировать OpenTelemetry Collector
 
 * Latest Dynatrace
 * Руководство
@@ -95,249 +94,187 @@ Load Balancing Exporter поставляется с параметрами от�
 extensions:
 
 
-
 health_check:
-
 
 
 endpoint: 0.0.0.0:13133
 
 
-
 receivers:
 
 
-
 otlp:
-
 
 
 protocols:
 
 
-
 grpc:
-
 
 
 endpoint: 0.0.0.0:4317
 
 
-
 http:
-
 
 
 endpoint: 0.0.0.0:4318
 
 
-
 exporters:
-
 
 
 loadbalancing/traces:
 
 
-
 protocol:
-
 
 
 otlp:
 
 
-
 resolver:
 
 
-
 k8s:
-
 
 
 service: traces-receiver.default
 
 
-
 ports:
 
 
-
 - 4317
-
 
 
 loadbalancing/logs:
 
 
-
 protocol:
-
 
 
 otlp:
 
 
-
 resolver:
 
 
-
 k8s:
-
 
 
 service: logs-receiver.default
 
 
-
 ports:
 
 
-
 - 4317
-
 
 
 loadbalancing/metrics:
 
 
-
 retry_on_failure:
 
 
-
 enabled: true
-
 
 
 initial_interval: 5s
 
 
-
 max_interval: 30s
-
 
 
 max_elapsed_time: 300s
 
 
-
 sending_queue:
-
 
 
 enabled: true
 
 
-
 num_consumers: 10
-
 
 
 queue_size: 1000
 
 
-
 sizer: requests
-
 
 
 protocol:
 
 
-
 otlp:
-
 
 
 resolver:
 
 
-
 k8s:
-
 
 
 service: metrics-receiver.default
 
 
-
 ports:
-
 
 
 - 4317
 
 
-
 service:
-
 
 
 extensions: [health_check]
 
 
-
 pipelines:
-
 
 
 metrics:
 
 
-
 receivers: [otlp]
-
 
 
 processors: []
 
 
-
 exporters:
-
 
 
 - loadbalancing/metrics
 
 
-
 traces:
-
 
 
 receivers: [otlp]
 
 
-
 processors: []
 
 
-
 exporters:
-
 
 
 - loadbalancing/traces
 
 
-
 logs:
-
 
 
 receivers: [otlp]
 
 
-
 processors: []
 
 
-
 exporters:
-
 
 
 - loadbalancing/logs

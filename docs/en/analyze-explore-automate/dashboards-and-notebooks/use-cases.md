@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:45.177285
 
 # Notebooks and Dashboards use cases
 
-# Notebooks and Dashboards use cases
 
 * Latest Dynatrace
 * How-to guide

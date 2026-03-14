@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:37.885258
 
 # Маршрутизация данных
 
-# Маршрутизация данных
 
 * Актуальная версия Dynatrace
 * Практическое руководство
@@ -37,9 +36,7 @@ scraped: 2026-03-06T21:13:37.885258
    fetch logs
 
 
-
    | filter k8s.namespace.name == "prod"
-
 
 
    | summarize by:{k8s.deployment.name}, count()

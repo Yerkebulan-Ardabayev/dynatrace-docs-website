@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:59.052662
 
 # Speed up incident response with Dynatrace Investigations reference time
 
-# Speed up incident response with Dynatrace Investigations reference time
 
 * Latest Dynatrace
 * Tutorial
@@ -87,21 +86,16 @@ Using the reference time, let's look for the request that led to our service bei
    fetch logs, timeframe: "05:00:00Z/06:00:00Z"
 
 
-
    | filter k8s.cluster.name == "prod.cupid.cluster"
-
 
 
    | filter k8s.container.name == "istio-proxy"
 
 
-
    | parse content, "json{JSONTIMESTAMP:start_time, INT:response_code}(flat=true)"
 
 
-
    | filter start_time < toTimestamp("2025-05-12T05:32:01.000Z")
-
 
 
    | sort timestamp desc

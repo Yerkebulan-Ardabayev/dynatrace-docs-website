@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:17.344467
 
 # DPL Positional Matchers
 
-# DPL Positional Matchers
 
 * Latest Dynatrace
 * Reference
@@ -26,9 +25,7 @@ Extracting the first line in the string:
 "name";"age"
 
 
-
 Homer Simpson;40
-
 
 
 Charles Montgomery Burns;104
@@ -59,9 +56,7 @@ Extracting records after the first row in the string
 "name";"age"
 
 
-
 Homer Simpson;40
-
 
 
 Charles Montgomery Burns;104
@@ -93,13 +88,10 @@ Extracting the last line of the string:
 "name";"age"
 
 
-
 Homer Simpson;40
 
 
-
 Charles Montgomery Burns;104
-
 
 
 total:2 persons, average age: 72 years

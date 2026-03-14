@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:27:21.119513
 
 # Anomaly Detection DQL writing guide
 
-# Anomaly Detection DQL writing guide
 
 * Latest Dynatrace
 * How-to guide
@@ -39,17 +38,13 @@ Most of the fields in a `timeseries` record are treated as dimensions. This mean
 timeseries cpu_usage = avg(dt.host.cpu.usage), by:{dt.entity.host}
 
 
-
 | fieldsAdd tags = entityAttr(dt.entity.host, "tags")
-
 
 
 | filter iAny(tags[] ==  "Windows")
 
 
-
 | fieldsAdd entityName(dt.entity.host)
-
 
 
 | fieldsAdd average_usage = arrayAvg(cpu_usage)
@@ -80,13 +75,10 @@ If any of the volatile dimensions changes value, the custom alert considers it a
 timeseries cpu_usage = avg(dt.host.cpu.usage), by:{dt.entity.host}
 
 
-
 | fieldsAdd tags = entityAttr(dt.entity.host, "tags")
 
 
-
 | filter iAny(tags[] ==  "Windows")
-
 
 
 | fieldsKeep cpu_usage, dt.entity.host, timeframe, interval
@@ -110,9 +102,7 @@ When creating a custom alert:
   timeseries sum(dt.service.request.failure_count),
 
 
-
   by:{http.response.status_code},
-
 
 
   from:now()-1h, to:now() // remove these parameters
@@ -123,9 +113,7 @@ When creating a custom alert:
   fetch bizevents
 
 
-
   | makeTimeseries count(), time:timestamp
-
 
 
   | fieldsAdd timeframe = timeframe(duration(5, "min")) // assigns new value to the timeframe
@@ -139,9 +127,7 @@ When creating a custom alert:
   timeseries avg(dt.host.cpu.usage), by: { dt.entity.host }
 
 
-
   | sort `avg(dt.host.cpu.usage)` desc // remove this
-
 
 
   | filter dt.entity.host == "HOST-1234"
@@ -150,7 +136,6 @@ When creating a custom alert:
 
   ```
   timeseries avg(dt.host.cpu.usage), by: { dt.entity.host }
-
 
 
   | limit 10 // remove this; to choose specific hosts, we recommend using filter instead

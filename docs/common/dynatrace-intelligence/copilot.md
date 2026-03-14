@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace Intelligence agentic and generative AI
 
-# Dynatrace Intelligence agentic and generative AI
 
 * Latest Dynatrace
 * App

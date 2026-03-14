@@ -6,7 +6,6 @@ scraped: 2026-02-19T21:23:14.729413
 
 # Security Posture Management
 
-# Security Posture Management
 
 * Latest Dynatrace
 * How-to guide

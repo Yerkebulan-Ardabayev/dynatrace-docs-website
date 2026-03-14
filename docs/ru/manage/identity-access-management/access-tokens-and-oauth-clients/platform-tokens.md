@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:28:10.336000
 
 # Токены платформы
 
-# Токены платформы
 
 * Latest Dynatrace
 * Справочник
@@ -147,7 +146,6 @@ scraped: 2026-03-04T21:28:10.336000
 
 ```
 ALLOW iam:service-users:use
-
 
 
 WHERE iam:service-user-email IN ("abc@service.sso.dynatrace.com", "def@service.sso.dynatrace.com");

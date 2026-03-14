@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:33.699476
 
 # Instrument mobile apps with Dynatrace Cordova plugin
 
-# Instrument mobile apps with Dynatrace Cordova plugin
 
 * Classic
 * How-to guide

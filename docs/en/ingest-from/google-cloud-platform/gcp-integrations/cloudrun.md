@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:15.453486
 
 # Monitor Google Cloud Run managed
 
-# Monitor Google Cloud Run managed
 
 * Latest Dynatrace
 * How-to guide
@@ -70,57 +69,43 @@ Open your Dockerfile and add the following lines to the application image **afte
 # FROM ...
 
 
-
 ARG DT_API_URL="<DT_ENV_FQDN>/api"
-
 
 
 ARG DT_API_TOKEN="<DT_TOKEN>"
 
 
-
 ARG DT_ONEAGENT_OPTIONS="flavor=<DT_FLAVOR&include=<DT_TECHNOLOGY>"
-
 
 
 ENV DT_HOME="/opt/dynatrace/oneagent"
 
 
-
 RUN apt-get update && \
-
 
 
 apt-get install -y wget && \
 
 
-
 apt-get install unzip && \
-
 
 
 mkdir -p "$DT_HOME" && \
 
 
-
 wget -O "$DT_HOME/oneagent.zip" "$DT_API_URL/v1/deployment/installer/agent/unix/paas/latest?Api-Token=$DT_API_TOKEN&$DT_ONEAGENT_OPTIONS" && \
-
 
 
 unzip -d "$DT_HOME" "$DT_HOME/oneagent.zip" && \
 
 
-
 rm "$DT_HOME/oneagent.zip"
-
 
 
 ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
 
 
-
 # Run the web service on container startup.
-
 
 
 # ENTRYPOINT ...
@@ -143,125 +128,94 @@ A sample Dockerfile as provided by Google via the Getting Started guide on Googl
 # Use the official maven/Java 11 image to create a build artifact.
 
 
-
 # https://hub.docker.com/_/maven
-
 
 
 FROM maven:3-jdk-11-slim AS build-env
 
 
-
 # Set the working directory to /app
-
 
 
 WORKDIR /app
 
 
-
 # Copy the pom.xml file to download dependencies
-
 
 
 COPY pom.xml .
 
 
-
 # Copy local code to the container image.
-
 
 
 COPY src ./src
 
 
-
 # Download dependencies and build a release artifact.
-
 
 
 RUN mvn package -DskipTests
 
 
-
 # Use OpenJDK for base image.
-
 
 
 # https://hub.docker.com/_/openjdk
 
 
-
 # https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds
-
 
 
 FROM openjdk:11-jre-slim
 
 
-
 # Copy the jar to the production image from the builder stage.
-
 
 
 COPY --from=build-env /app/target/hello-world-*.jar /hello-world.jar
 
 
-
 # Get and enable Dynatrace
-
 
 
 ARG DT_API_URL="<DT_ENV_FQDN>/api"
 
 
-
 ARG DT_API_TOKEN="<DT_TOKEN>"
-
 
 
 ARG DT_ONEAGENT_OPTIONS="flavor=default&include=java"
 
 
-
 ENV DT_HOME="/opt/dynatrace/oneagent"
-
 
 
 RUN apt-get update && \
 
 
-
 apt-get install -y wget && \
-
 
 
 apt-get install unzip && \
 
 
-
 mkdir -p "$DT_HOME" && \
-
 
 
 wget -O "$DT_HOME/oneagent.zip" "$DT_API_URL/v1/deployment/installer/agent/unix/paas/latest?Api-Token=$DT_API_TOKEN&$DT_ONEAGENT_OPTIONS" && \
 
 
-
 unzip -d "$DT_HOME" "$DT_HOME/oneagent.zip" && \
-
 
 
 rm "$DT_HOME/oneagent.zip"
 
 
-
 ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
 
 
-
 # Run the web service on container startup.
-
 
 
 ENTRYPOINT ["java", "-jar", "/hello-world.jar"]
@@ -275,21 +229,16 @@ Open your [cloudbuild.yamlï»¿](https://cloud.google.com/build/docs/deploying-
 # Build the container image
 
 
-
 - name: 'gcr.io/cloud-builders/docker'
-
 
 
 args: ['build', '-t', 'gcr.io/<GCP_PROJECT_ID>/<YOUR_IMAGE_NAME_AND_TAG>', '.']
 
 
-
 # Push the container image to Container Registry
 
 
-
 - name: 'gcr.io/cloud-builders/docker'
-
 
 
 args: ['push', 'gcr.io/<GCP_PROJECT_ID>/<YOUR_IMAGE_NAME_AND_TAG>']
@@ -301,61 +250,46 @@ Add the following lines to your args in your deploy step:
 # Deploy container image to Cloud Run
 
 
-
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-
 
 
 entrypoint: gcloud
 
 
-
 args:
-
 
 
 - beta
 
 
-
 - run
-
 
 
 - deploy
 
 
-
 - $_SERVICE_NAME
-
 
 
 - --allow-unauthenticated
 
 
-
 - --image=gcr.io/<GCP_PROJECT_ID>/<YOUR_IMAGE_NAME_AND_TAG>
-
 
 
 - --region=$_GCP_REGION
 
 
-
 - --execution-environment=<ENVIRONMENT>
-
 
 
 - --project=$_PROJECT
 
 
-
 - --set-env-vars=
 
 
-
 DT_TAGS=$_SERVICE_NAME,
-
 
 
 DT_LOGLEVELCON=INFO
@@ -377,45 +311,34 @@ Edit and run this command:
 gcloud builds submit \
 
 
-
 <SAMPLE_NAME> \
-
 
 
 --project <GCP_PROJECT_ID> \
 
 
-
 --substitutions \
-
 
 
 "_API_KEY=<DT_TOKEN>,\
 
 
-
 _TENANT_NAME=<DT_ENV_ID>,\
-
 
 
 _TENANT_FQDN=<DT_ENV_FQDN>,\
 
 
-
 _IMAGE_NAME_AND_TAG=<YOUR_IMAGE_NAME_AND_TAG>,\
-
 
 
 _SERVICE_NAME=<YOUR_SERVICE_NAME>,\
 
 
-
 _PROJECT=<GCP_PROJECT_ID>,\
 
 
-
 _GCP_REGION=<GCP_REGION>,\" \
-
 
 
 --config cloudbuild.yaml
@@ -445,53 +368,40 @@ Open your Dockerfile and add the following sample to the application image **aft
 ARG DT_API_URL="<DT_ENV_FQDN>/api"
 
 
-
 ARG DT_API_TOKEN="<DT_TOKEN>"
-
 
 
 ARG DT_ONEAGENT_OPTIONS="flavor=default&include=java"
 
 
-
 ENV DT_HOME="/opt/dynatrace/oneagent"
-
 
 
 RUN apt-get update && \
 
 
-
 apt-get install -y wget && \
-
 
 
 apt-get install unzip && \
 
 
-
 mkdir -p "$DT_HOME" && \
-
 
 
 wget -O "$DT_HOME/oneagent.zip" "$DT_API_URL/v1/deployment/installer/agent/unix/paas/latest?Api-Token=$DT_API_TOKEN&$DT_ONEAGENT_OPTIONS" && \
 
 
-
 unzip -d "$DT_HOME" "$DT_HOME/oneagent.zip" && \
-
 
 
 rm "$DT_HOME/oneagent.zip"
 
 
-
 ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
 
 
-
 # Run the web service on container startup.
-
 
 
 ENTRYPOINT ["java", "-jar", "/hello-world.jar"]
@@ -513,125 +423,94 @@ This is a sample Dockerfile as provided by Google via the Getting Started guide 
 # Use the official maven/Java 11 image to create a build artifact.
 
 
-
 # https://hub.docker.com/_/maven
-
 
 
 FROM maven:3-jdk-11-slim AS build-env
 
 
-
 # Set the working directory to /app
-
 
 
 WORKDIR /app
 
 
-
 # Copy the pom.xml file to download dependencies
-
 
 
 COPY pom.xml .
 
 
-
 # Copy local code to the container image.
-
 
 
 COPY src ./src
 
 
-
 # Download dependencies and build a release artifact.
-
 
 
 RUN mvn package -DskipTests
 
 
-
 # Use OpenJDK for base image.
-
 
 
 # https://hub.docker.com/_/openjdk
 
 
-
 # https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds
-
 
 
 FROM openjdk:11-jre-slim
 
 
-
 # Copy the jar to the production image from the builder stage.
-
 
 
 COPY --from=build-env /app/target/hello-world-*.jar /hello-world.jar
 
 
-
 # Get and enable Dynatrace
-
 
 
 ARG DT_API_URL="<DT_ENV_FQDN>/api"
 
 
-
 ARG DT_API_TOKEN="<DT_TOKEN>"
-
 
 
 ARG DT_ONEAGENT_OPTIONS="flavor=default&include=java"
 
 
-
 ENV DT_HOME="/opt/dynatrace/oneagent"
-
 
 
 RUN apt-get update && \
 
 
-
 apt-get install -y wget && \
-
 
 
 apt-get install unzip && \
 
 
-
 mkdir -p "$DT_HOME" && \
-
 
 
 wget -O "$DT_HOME/oneagent.zip" "$DT_API_URL/v1/deployment/installer/agent/unix/paas/latest?Api-Token=$DT_API_TOKEN&$DT_ONEAGENT_OPTIONS" && \
 
 
-
 unzip -d "$DT_HOME" "$DT_HOME/oneagent.zip" && \
-
 
 
 rm "$DT_HOME/oneagent.zip"
 
 
-
 ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
 
 
-
 # Run the web service on container startup.
-
 
 
 ENTRYPOINT ["java", "-jar", "/hello-world.jar"]

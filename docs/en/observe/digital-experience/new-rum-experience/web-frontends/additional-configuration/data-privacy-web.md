@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:29:27.363043
 
 # Configure data privacy settings for web frontends
 
-# Configure data privacy settings for web frontends
 
 * Latest Dynatrace
 * How-to guide

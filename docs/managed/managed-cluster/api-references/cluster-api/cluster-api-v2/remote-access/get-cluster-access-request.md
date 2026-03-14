@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Get cluster access request
 
-# Get cluster access request
 
 * Published Apr 02, 2020
 
@@ -66,41 +65,31 @@ Access Request data
 {
 
 
-
 "createdTimestamp": 1,
-
 
 
 "expirationTimestamp": 1,
 
 
-
 "reason": "string",
-
 
 
 "requestId": "string",
 
 
-
 "requestedDays": 1,
-
 
 
 "role": "devops-admin",
 
 
-
 "state": "ACCEPTED",
-
 
 
 "stateModifiedByUser": "string",
 
 
-
 "userId": "string"
-
 
 
 }
@@ -114,7 +103,6 @@ In this example, you request to list remote access permission for a specific req
 
 ```
 curl -X GET "https://myManaged.cluster.com/api/cluster/v2/remoteaccess/requests/7a397770-86b7-473b-b23e-4a07d79f2eff"
-
 
 
 -H  "accept: application/json"
@@ -132,41 +120,31 @@ https://myManaged.cluster.com/api/cluster/v2/remoteaccess/requests/7a397770-86b7
 {
 
 
-
 "requestId": "7a397770-86b7-473b-b23e-4a07d79f2eff",
-
 
 
 "userId": "john.smith@dynatrace.com",
 
 
-
 "reason": "SUP-123456 Verifying cluster state after upgrade",
-
 
 
 "requestedDays": 7,
 
 
-
 "role": "devops-admin",
-
 
 
 "createdTimestamp": 1586452866661,
 
 
-
 "expirationTimestamp": 1587081600000,
-
 
 
 "state": "ACCEPTED",
 
 
-
 "stateModifiedByUser": "katie.novak"
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:28.278196
 
 # Donut visualization
 
-# Donut visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -28,7 +27,6 @@ The above donut chart is based on the following query.
 
 ```
 fetch logs
-
 
 
 | summarize count(), by:{loglevel}
@@ -204,7 +202,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000

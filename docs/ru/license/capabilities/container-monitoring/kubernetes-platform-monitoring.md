@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:26:50.506651
 
 # Расчёт потребления Kubernetes Platform Monitoring (DPS)
 
-# Расчёт потребления Kubernetes Platform Monitoring (DPS)
 
 * Последняя версия Dynatrace
 * Пояснение

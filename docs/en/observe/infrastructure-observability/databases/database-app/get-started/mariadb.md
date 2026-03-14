@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:29.356055
 
 # Monitor MariaDB database
 
-# Monitor MariaDB database
 
 * Latest Dynatrace
 * How-to guide

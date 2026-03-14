@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:47.590220
 
 # End-of-support announcements
 
-# End-of-support announcements
 
 * Latest Dynatrace
 * Updated on Jun 11, 2025

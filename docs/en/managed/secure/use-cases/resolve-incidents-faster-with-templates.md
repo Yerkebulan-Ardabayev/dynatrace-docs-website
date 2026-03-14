@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:29:09.345024
 
 # Resolve incidents faster with Investigations templates
 
-# Resolve incidents faster with Investigations templates
 
 * Latest Dynatrace
 * Tutorial

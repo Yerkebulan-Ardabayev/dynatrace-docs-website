@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:14.824079
 
 # Configure data storage and retention for logs
 
-# Configure data storage and retention for logs
 
 * Latest Dynatrace
 * Tutorial

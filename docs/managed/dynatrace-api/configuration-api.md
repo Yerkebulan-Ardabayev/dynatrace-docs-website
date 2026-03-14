@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Configuration API
 
-# Configuration API
 
 * Reference
 * Published Oct 18, 2018

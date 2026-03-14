@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:01.482673
 
 # Google Cloud Memorystore monitoring
 
-# Google Cloud Memorystore monitoring
 
 * Latest Dynatrace
 * How-to guide

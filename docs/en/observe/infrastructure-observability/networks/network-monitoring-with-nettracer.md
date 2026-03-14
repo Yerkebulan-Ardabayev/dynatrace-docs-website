@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:24:43.347828
 
 # Extended network monitoring
 
-# Extended network monitoring
 
 * How-to guide
 * 5-min read

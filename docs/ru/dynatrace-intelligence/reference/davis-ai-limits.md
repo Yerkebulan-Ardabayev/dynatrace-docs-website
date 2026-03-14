@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:19.411859
 
 # Ограничения Dynatrace Intelligence
 
-# Ограничения Dynatrace Intelligence
 
 * Последняя версия Dynatrace
 * Справочник

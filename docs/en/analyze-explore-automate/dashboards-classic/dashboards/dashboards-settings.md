@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:00.886805
 
 # Global Dynatrace dashboard settings
 
-# Global Dynatrace dashboard settings
 
 * Classic
 * How-to guide

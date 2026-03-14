@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:38:54.851437
 
 # Synthetic alerting overview
 
-# Synthetic alerting overview
 
 * Latest Dynatrace
 * Reference

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:52.597060
 
 # Обновление Log Monitoring Classic до Log Management and Analytics
 
-# Обновление Log Monitoring Classic до Log Management and Analytics
 
 * Classic
 * Чтение: 5 мин
@@ -126,21 +125,16 @@ Log Management and Analytics — это новейшее решение Dynatrac
      {
 
 
-
      "scope": "iam:policies:read iam:policies:write",
-
 
 
      "token_type": "Bearer",
 
 
-
      "expires_in": 300,
 
 
-
      "access_token": "123(...)ABC"
-
 
 
      }
@@ -154,21 +148,16 @@ Log Management and Analytics — это новейшее решение Dynatrac
      {
 
 
-
      "name": "Storage Events Read",
-
 
 
      "description": "Storage Events Read",
 
 
-
      "tags": [
 
 
-
      ],
-
 
 
      "statementQuery": "ALLOW storage:events:read;"
@@ -182,25 +171,19 @@ Log Management and Analytics — это новейшее решение Dynatrac
      {
 
 
-
      "name": "Storage Logs Read",
-
 
 
      "description": "Storage Logs Read",
 
 
-
      "tags": [
-
 
 
      ]  ,
 
 
-
      "statementQuery": "ALLOW storage:logs:read;"
-
 
 
      }

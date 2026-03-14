@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:48.202555
 
 # Extension Execution Controller custom configuration
 
-# Extension Execution Controller custom configuration
 
 * Latest Dynatrace
 * How-to guide
@@ -44,14 +43,12 @@ To restart the EEC service on a Linux system, run the following commands:
   service extensionsmodule stop
 
 
-
   service extensionsmodule start
   ```
 * For systems with systemd:
 
   ```
   systemctl stop extensionsmodule
-
 
 
   systemctl start extensionsmodule
@@ -61,7 +58,6 @@ To restart the EEC service on a Windows system, either start **Task Manager** an
 
 ```
 net stop "Dynatrace Extensions Controller"
-
 
 
 net start "Dynatrace Extensions Controller"

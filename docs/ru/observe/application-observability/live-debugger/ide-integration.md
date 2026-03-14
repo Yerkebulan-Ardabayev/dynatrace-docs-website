@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:28.128008
 
 # Использование Live Debugger с вашей IDE
 
-# Использование Live Debugger с вашей IDE
 
 * Latest Dynatrace
 * How-to guide

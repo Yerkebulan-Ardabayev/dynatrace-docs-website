@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:37.469462
 
 # Семантическое сопоставление OpenTelemetry и Dynatrace
 
-# Семантическое сопоставление OpenTelemetry и Dynatrace
 
 * Последняя версия Dynatrace
 * Справочник

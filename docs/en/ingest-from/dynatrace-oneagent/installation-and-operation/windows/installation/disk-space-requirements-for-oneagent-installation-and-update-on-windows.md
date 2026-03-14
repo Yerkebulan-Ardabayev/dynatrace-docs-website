@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:31.029614
 
 # OneAgent files and disk space requirements on Windows
 
-# OneAgent files and disk space requirements on Windows
 
 * Latest Dynatrace
 * 4-min read

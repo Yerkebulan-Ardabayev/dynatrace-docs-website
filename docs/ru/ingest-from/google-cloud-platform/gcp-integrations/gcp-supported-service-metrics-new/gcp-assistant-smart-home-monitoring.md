@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:53.858292
 
 # Мониторинг Google Cloud Assistant Smart Home
 
-# Мониторинг Google Cloud Assistant Smart Home
 
 * Latest Dynatrace
 * How-to guide

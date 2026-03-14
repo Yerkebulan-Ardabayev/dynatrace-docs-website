@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:26:45.029733
 
 # Суммирование открытых проблем с помощью Workflows
 
-# Суммирование открытых проблем с помощью Workflows
 
 * Latest Dynatrace
 * Руководство
@@ -77,37 +76,28 @@ scraped: 2026-03-03T21:26:45.029733
    import { execution } from '@dynatrace-sdk/automation-utils';
 
 
-
    export default async function () {
-
 
 
    const ex = await execution();
 
 
-
    let rawEvent = ex.params.event;
-
 
 
    let problemDescription = rawEvent["event.description"];
 
 
-
    return {
-
 
 
    description : rawEvent["event.description"],
 
 
-
    problem_id : rawEvent["display_id"]
 
 
-
    };
-
 
 
    }
@@ -134,13 +124,10 @@ scraped: 2026-03-03T21:26:45.029733
      Use the following information about the Davis Problem with Id {{result("extract_problem_details")["problem_id"]}}:
 
 
-
      """
 
 
-
      {{result("extract_problem_details")["description"]}}
-
 
 
      """
@@ -171,9 +158,7 @@ scraped: 2026-03-03T21:26:45.029733
      A Davis Problem with ID {{ result("extract_problem_details")["problem_id"] }} has been opened.
 
 
-
      Dynatrace Intelligence generative AI has analyzed it and provided the following information:
-
 
 
      {{ result("analyze_problem_with_davis_copilot")["text"] }}

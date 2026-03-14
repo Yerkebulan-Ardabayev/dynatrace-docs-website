@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:29:54.594551
 
 # Install the z/OS Java module
 
-# Install the z/OS Java module
 
 * Latest Dynatrace
 * 15-min read
@@ -70,17 +69,13 @@ Activate the [OneAgent feature](../../../../../../ingest-from/dynatrace-oneagent
    {
 
 
-
    "Tenant": "myTenant",
-
 
 
    "ClusterID": myCluster,
 
 
-
    "ZdcName": "DEFAULT"
-
 
 
    }
@@ -96,9 +91,7 @@ Activate the [OneAgent feature](../../../../../../ingest-from/dynatrace-oneagent
    //SYSIN DD DISP=SHR,DSN=<hlq>.SZDTSAMP(ZDCSYSIN)
 
 
-
    SUBSYSTEM_ID(MEPC)
-
 
 
    DEFAULT(YES)
@@ -155,17 +148,13 @@ WebSphere Liberty inside a CICS region
    <server>
 
 
-
    <featureManager>
-
 
 
    <feature>monitor-1.0</feature>
 
 
-
    </featureManager>
-
 
 
    </server>
@@ -190,17 +179,13 @@ WebSphere Liberty inside a CICS region
    <server>
 
 
-
    <featureManager>
-
 
 
    <feature>monitor-1.0</feature>
 
 
-
    </featureManager>
-
 
 
    </server>
@@ -236,17 +221,13 @@ IMS SOAP Gateway
    <server>
 
 
-
    <featureManager>
-
 
 
    <feature>monitor-1.0</feature>
 
 
-
    </featureManager>
-
 
 
    </server>
@@ -331,7 +312,6 @@ If, after starting the application server in z/OS, you may see **Not Marked Prog
 BPXP015I HFS PROGRAM /tmp/libdynatrace-oneagent-odin-java5848811742465559217.so
 
 
-
 IS NOT MARKED PROGRAM CONTROLLED.
 ```
 
@@ -366,69 +346,52 @@ By default, all sensors of the z/OS Java module are enabled. In case of problems
 {
 
 
-
 "Sensors": {
-
 
 
 "Enable": {
 
 
-
 "CTG": {
-
 
 
 "Server": "false",
 
 
-
 "Client": "false"
 
 
-
 },
-
 
 
 "HttpClient": {
 
 
-
 "Apache": "false"
-
 
 
 },
 
 
-
 "JDBC": "false",
-
 
 
 "JMS": "false",
 
 
-
 "IbmMQ": "false",
-
 
 
 "Servlet": "false",
 
 
-
 "ZosConnect": "false"
 
 
-
 }
 
 
-
 }
-
 
 
 }

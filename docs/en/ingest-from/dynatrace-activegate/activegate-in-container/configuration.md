@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:38:19.412641
 
 # Containerized ActiveGate configuration
 
-# Containerized ActiveGate configuration
 
 * Latest Dynatrace
 * 6-min read
@@ -131,33 +130,25 @@ In addition to the configuration settings passed via environment variables or fi
    kind: ConfigMap
 
 
-
    apiVersion: v1
-
 
 
    data:
 
 
-
    custom.properties: |-
-
 
 
    [vmware_monitoring]
 
 
-
    vmware_monitoring_enabled = true
-
 
 
    metadata:
 
 
-
    name: vmware-config
-
 
 
    namespace: dynatrace
@@ -168,53 +159,40 @@ In addition to the configuration settings passed via environment variables or fi
    [...]
 
 
-
    volumeMounts:
-
 
 
    [...]
 
 
-
    - name: ag-conf
-
 
 
    mountPath: /var/lib/dynatrace/gateway/config_template/custom.properties
 
 
-
    subPath: custom.properties
-
 
 
    [...]
 
 
-
    volumes:
-
 
 
    - name: ag-conf
 
 
-
    configMap:
-
 
 
    name: vmware-config
 
 
-
    items:
 
 
-
    - key: custom.properties
-
 
 
    path: custom.properties

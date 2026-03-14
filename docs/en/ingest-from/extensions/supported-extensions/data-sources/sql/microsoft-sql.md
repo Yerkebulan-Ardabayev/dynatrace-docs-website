@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:10.453218
 
 # Manage Microsoft SQL Server extensions
 
-# Manage Microsoft SQL Server extensions
 
 * Latest Dynatrace
 * How-to guide

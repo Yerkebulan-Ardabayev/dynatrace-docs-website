@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:27:41.938129
 
 # Digital Experience Monitoring (DEM) overview (DPS)
 
-# Digital Experience Monitoring (DEM) overview (DPS)
 
 * Latest Dynatrace
 * Overview

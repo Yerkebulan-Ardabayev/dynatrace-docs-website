@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Synthetic locations API v2 - PUT a location (Dynatrace Managed)
 
-# Synthetic locations API v2 - PUT a location (Dynatrace Managed)
 
 * Published Jul 26, 2019
 
@@ -52,9 +51,7 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "type": "PRIVATE"
-
 
 
 }
@@ -103,53 +100,40 @@ A list of constraint violations
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -171,81 +155,61 @@ You can download or copy the example request body to try it out on your own. Be 
 curl -L -X PUT 'https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations/SYNTHETIC_LOCATION-493122BFA29674DC' \
 
 
-
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
-
 
 
 -H 'Content-Type: application/json' \
 
 
-
 --data-raw '{
-
 
 
 "type": "PRIVATE",
 
 
-
 "name": "Linz",
-
 
 
 "countryCode": "AT",
 
 
-
 "regionCode": "04",
-
 
 
 "city": "Linz",
 
 
-
 "status": "ENABLED",
-
 
 
 "latitude": 48.306351,
 
 
-
 "longitude": 14.287399,
-
 
 
 "nodes": [
 
 
-
 "290433380",
-
 
 
 "353074222"
 
 
-
 ],
-
 
 
 "availabilityLocationOutage": false,
 
 
-
 "availabilityNodeOutage": false,
-
 
 
 "locationNodeOutageDelayInMillis": 5000
 
 
-
 }
-
 
 
 '
@@ -263,49 +227,37 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations/SYNTHETIC_LOCA
 {
 
 
-
 "type": "PRIVATE",
-
 
 
 "name": "Linz",
 
 
-
 "countryCode": "AT",
-
 
 
 "city": "Linz",
 
 
-
 "status": "ENABLED",
-
 
 
 "latitude": 48.306351,
 
 
-
 "longitude": 14.287399,
-
 
 
 "nodes": ["290433380", "353074222"],
 
 
-
 "availabilityLocationOutage": false,
-
 
 
 "availabilityNodeOutage": false,
 
 
-
 "locationNodeOutageDelayInMillis": 5000
-
 
 
 }
@@ -329,29 +281,22 @@ The response code of **204** indicates that the update was successful.
 curl -L -X PUT 'https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations/SYNTHETIC_LOCATION-0000000000000273' \
 
 
-
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
-
 
 
 -H 'Content-Type: application/json' \
 
 
-
 --data-raw '{
-
 
 
 "type": "PUBLIC",
 
 
-
 "status": "DISABLED"
 
 
-
 }
-
 
 
 '
@@ -369,13 +314,10 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations/SYNTHETIC_LOCA
 {
 
 
-
 "type": "PUBLIC",
 
 
-
 "status": "DISABLED"
-
 
 
 }

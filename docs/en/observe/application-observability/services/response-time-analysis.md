@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:37.879847
 
 # Response time analysis
 
-# Response time analysis
 
 * Latest Dynatrace
 * Tutorial

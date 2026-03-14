@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:51.504563
 
 # Events powered by Grail overview (DPS)
 
-# Events powered by Grail overview (DPS)
 
 * Latest Dynatrace
 * Overview

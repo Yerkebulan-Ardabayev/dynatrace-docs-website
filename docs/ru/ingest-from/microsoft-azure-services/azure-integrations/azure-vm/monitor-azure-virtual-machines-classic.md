@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:27:32.027669
 
 # Мониторинг Azure Virtual Machines (классические)
 
-# Мониторинг Azure Virtual Machines (классические)
 
 * Последняя версия Dynatrace
 * Практическое руководство

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:27.563916
 
 # Get started with Dynatrace
 
-# Get started with Dynatrace
 
 * Latest Dynatrace
 * How-to guide

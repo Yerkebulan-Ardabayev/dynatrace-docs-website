@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Synthetic locations API v1
 
-# Synthetic locations API v1
 
 * Reference
 * Published Sep 25, 2018

@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:29:10.593343
 
 # Metrics API v2 — Рекомендации
 
-# Metrics API v2 — Рекомендации
 
 * Справочник
 * Обновлено 28 октября 2025 г.
@@ -31,9 +30,7 @@ scraped: 2026-03-03T21:29:10.593343
 cpu.temperature, host.name="Alice's PC",           owner="Alice"  gauge,50 1699625420
 
 
-
 cpu.temperature, host.name="Alice's Raspberry Pi", owner="Alice"  gauge,40 1699625420
-
 
 
 cpu.temperature, host.name="Bob's PC",             owner="Bob"    gauge,60 1699625420
@@ -45,9 +42,7 @@ cpu.temperature, host.name="Bob's PC",             owner="Bob"    gauge,60 16996
 (host.name="Alice's PC",           owner="Alice")
 
 
-
 (host.name="Alice's Raspberry Pi", owner="Alice")
-
 
 
 (host.name="Bob's PC",             owner="Bob")
@@ -69,13 +64,10 @@ cpu.temperature, host.name="Bob's PC",             owner="Bob"    gauge,60 16996
 cpu.temperature, host.name="Alice's PC", measured_at="1699625420"  gauge,50 1699625420
 
 
-
 cpu.temperature, host.name="Alice's PC", measured_at="1699625421"  gauge,50 1699625421
 
 
-
 cpu.temperature, host.name="Alice's PC", measured_at="1699625422"  gauge,49 1699625422
-
 
 
 cpu.temperature, host.name="Alice's PC", measured_at="1699625423"  gauge,49 1699625423

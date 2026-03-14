@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:27.529086
 
 # Мониторинг Azure Application Gateway
 
-# Мониторинг Azure Application Gateway
 
 * Latest Dynatrace
 * Руководство

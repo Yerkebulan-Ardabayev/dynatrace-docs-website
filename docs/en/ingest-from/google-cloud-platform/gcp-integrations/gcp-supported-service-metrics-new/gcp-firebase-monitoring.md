@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:39.481282
 
 # Google Cloud Firebase monitoring
 
-# Google Cloud Firebase monitoring
 
 * Latest Dynatrace
 * How-to guide

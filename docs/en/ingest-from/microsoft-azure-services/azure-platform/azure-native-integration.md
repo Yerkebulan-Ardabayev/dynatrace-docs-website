@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:35:50.024995
 
 # Azure Native Dynatrace Service
 
-# Azure Native Dynatrace Service
 
 * Latest Dynatrace
 * Explanation

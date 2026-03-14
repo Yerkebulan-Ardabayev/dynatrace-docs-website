@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:01.116811
 
 # Event analysis and correlation
 
-# Event analysis and correlation
 
 * Latest Dynatrace
 * Explanation

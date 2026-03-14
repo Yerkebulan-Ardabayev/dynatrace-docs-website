@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:28:44.483728
 
 # Загрузка наборов данных продукта z/OS
 
-# Загрузка наборов данных продукта z/OS
 
 * Latest Dynatrace
 * 5-min read
@@ -105,393 +104,295 @@ scraped: 2026-03-04T21:28:44.483728
    //EXTRACT JOB ('ACCTINFO'),'User name or comment',NOTIFY=&SYSUID,
 
 
-
    //             MSGLEVEL=(1,1),CLASS=A,MSGCLASS=X,REGION=0M,
-
 
 
    //             COND=(0,NE)
 
 
-
    //*
-
 
 
    //* !!!!!!!! IMPORTANT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-
    //*
-
 
 
    //* When upgrading the zDC to version 1.213+ while
 
 
-
    //* the CICS code module is enabled, it is important to follow
-
 
 
    //* the below steps in the given sequence.
 
 
-
    //*
-
 
 
    //* 1. Stop the zDC
 
 
-
    //* 2. Wait for 15 minutes for the CICS code module to
-
 
 
    //*    reset/cleanup the control blocks
 
 
-
    //* 3. Upgrade the zDC to newer version
-
 
 
    //* 4. Start the zDC
 
 
-
    //*
-
 
 
    //* !!!!!!!! IMPORTANT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-
    //*
-
 
 
    //* This job extracts the product installation datasets from
 
 
-
    //* the installation files at <MYUSS>/GIMZIP to
-
 
 
    //* <hlq>.<rel>.SZDT* libraries.
 
 
-
    //*
-
 
 
    //* Change the JOB card and the SET statements below to meet
 
 
-
    //* site standards.
 
 
-
    //*
-
 
 
    //* Verify if the SMPCPATH and SMPJHOME DD below points to the
 
 
-
    //* correct PATH to meet site standards.
 
 
-
    //*
-
 
 
    //* WARNING!
 
 
-
    //* This JCL must be in mixed case and sequence numbers are not allowed
 
 
-
    //*
-
 
 
    // EXPORT SYMLIST=*
 
 
-
    // SET HLQ='DT'             <== HLQ of the target PDS datasets
-
 
 
    // SET REL='R12770'         <== Release number
 
 
-
    // SET VOLSER='NSM001'      <== Volume of the target PDS datasets
-
 
 
    // SET MYUSS='/u/dt'        <== USS work directory
 
 
-
    //*
 
 
-
    //*
-
 
 
    //STEP1   EXEC PGM=IKJEFT01,DYNAMNBR=10
 
 
-
    //SYSPRINT DD SYSOUT=*
-
 
 
    //SYSTSPRT DD SYSOUT=*
 
 
-
    //STDOUT   DD SYSOUT=*
-
 
 
    //STDERR   DD SYSOUT=*
 
 
-
    //SYSIN    DD DUMMY
-
 
 
    //SYSTSIN  DD *,SYMBOLS=EXECSYS
 
 
-
    BPXBATCH SH rm -Rf &MYUSS/GIMZIP
-
 
 
    BPXBATCH SH cd &MYUSS &&  +
 
 
-
    pax -rvf dynatrace-zos.pax GIMZIP
 
 
-
    //*
 
 
-
    //*
-
 
 
    //STEP2    EXEC PGM=GIMUNZIP,PARM='HASH=YES'
 
 
-
    //SMPDIR   DD PATH='&MYUSS/GIMZIP/',PATHDISP=KEEP
-
 
 
    //SMPCPATH DD PATH='/usr/lpp/smp/classes/',PATHDISP=KEEP
 
 
-
    //SMPJHOME DD PATH='/usr/lpp/java/J8.0/',PATHDISP=KEEP
-
 
 
    //SMPOUT   DD SYSOUT=*
 
 
-
    //SYSPRINT DD SYSOUT=*
-
 
 
    //SYSUT3   DD UNIT=SYSALLDA,SPACE=(CYL,(25,5))
 
 
-
    //SYSUT4   DD UNIT=SYSALLDA,SPACE=(CYL,(25,5))
-
 
 
    //SYSIN    DD *,SYMBOLS=EXECSYS
 
 
-
    <GIMUNZIP>
-
 
 
    <ARCHDEF archid="AUTHLIB"
 
 
-
    replace="YES"
 
 
-
    volume="&VOLSER"
-
 
 
    newname="&HLQ..&REL..SZDTAUTH">
 
 
-
    </ARCHDEF>
-
 
 
    <ARCHDEF archid="LOAD"
 
 
-
    replace="YES"
 
 
-
    volume="&VOLSER"
-
 
 
    newname="&HLQ..&REL..SZDTLOAD">
 
 
-
    </ARCHDEF>
-
 
 
    <ARCHDEF archid="SAMPLE"
 
 
-
    replace="YES"
-
 
 
    volume="&VOLSER"
 
 
-
    newname="&HLQ..&REL..SZDTSAMP">
-
 
 
    </ARCHDEF>
 
 
-
    </GIMUNZIP>
-
 
 
    /*
 
 
-
    //*
-
 
 
    //STEP3   EXEC PGM=IKJEFT01,DYNAMNBR=10
 
 
-
    //SYSPRINT DD SYSOUT=*
-
 
 
    //SYSTSPRT DD SYSOUT=*
 
 
-
    //STDOUT   DD SYSOUT=*
-
 
 
    //STDERR   DD SYSOUT=*
 
 
-
    //SYSIN    DD DUMMY
 
 
-
    //SYSTSIN  DD *,SYMBOLS=EXECSYS
-
 
 
    BPXBATCH SH export ussdir=&MYUSS &&+
 
 
-
    cp ${ussdir}/GIMZIP/dynatrace-oneagent-zos-java.jar +
-
 
 
    ${ussdir}/dynatrace-oneagent-zos-java.jar
 
 
-
    //*
 
 
-
    //*
-
 
 
    //STEP4   EXEC PGM=IKJEFT01,DYNAMNBR=55
 
 
-
    //SYSPRINT DD SYSOUT=*
-
 
 
    //SYSTSPRT DD SYSOUT=*
 
 
-
    //STDOUT   DD SYSOUT=*
-
 
 
    //STDERR   DD SYSOUT=*
 
 
-
    //SYSIN    DD DUMMY
-
 
 
    //SYSTSIN  DD *,SYMBOLS=EXECSYS
 
 
-
    BPXBATCH SH rm -Rf &MYUSS/GIMZIP
-
 
 
    //
@@ -517,17 +418,13 @@ scraped: 2026-03-04T21:28:44.483728
 Dsname                Tracks(3390) %Used
 
 
-
 ---------------------------------------
-
 
 
 DT.R1nnnm.SZDTAUTH      893          5
 
 
-
 DT.R1nnnm.SZDTLOAD       61         27
-
 
 
 DT.R1nnnm.SZDTSAMP     1221         24
@@ -535,7 +432,6 @@ DT.R1nnnm.SZDTSAMP     1221         24
 
 ```
 ./GIMZIP/                      8K
-
 
 
 ./dynatrace-zos-1.nnn.m.pax    5M
@@ -549,7 +445,6 @@ DT.R1nnnm.SZDTSAMP     1221         24
 
 ```
 DEFINE ALIAS(NAME('DT.DYNTRC.SZDTAUTH') RELATE('DT.R12770.SZDTAUTH'))
-
 
 
 DEFINE ALIAS(NAME('DT.DYNTRC.SZDTLOAD') RELATE('DT.R12770.SZDTLOAD'))

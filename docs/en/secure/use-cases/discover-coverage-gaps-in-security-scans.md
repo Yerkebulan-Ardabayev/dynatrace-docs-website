@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:11.474257
 
 # Discover coverage gaps in security findings
 
-# Discover coverage gaps in security findings
 
 * Latest Dynatrace
 * Tutorial

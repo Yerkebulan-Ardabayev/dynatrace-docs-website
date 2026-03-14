@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:36.484418
 
 # DQL language reference
 
-# DQL language reference
 
 * Latest Dynatrace
 * Reference
@@ -135,13 +134,10 @@ The following DQL query uses seven pipeline steps to get from raw log data to an
   | summarize total_payload = sum(payload),
 
 
-
   failedRequests = countIf(http_status >= 400),
 
 
-
   successfulRequests = countIf(http_status < 400),
-
 
 
   by:{ip, host.name}

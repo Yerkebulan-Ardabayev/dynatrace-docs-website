@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:41.068826
 
 # GraalVM Native Image
 
-# GraalVM Native Image
 
 * Latest Dynatrace
 * 8-min read
@@ -48,105 +47,79 @@ To integrate Dynatrace in a Maven project
    <profile>
 
 
-
    <id>dynatrace-native</id>
-
 
 
    <build>
 
 
-
    <plugins>
-
 
 
    <plugin>
 
 
-
    <groupId>com.dynatrace.buildtools.graalnative</groupId>
-
 
 
    <artifactId>dynatrace-native-maven-plugin</artifactId>
 
 
-
    <version>2.1.0</version>
-
 
 
    <executions>
 
 
-
    <execution>
-
 
 
    <goals>
 
 
-
    <goal>setup-build-agent</goal>
-
 
 
    <goal>copy-runtime-agent</goal>
 
 
-
    </goals>
-
 
 
    <configuration>
 
 
-
    <agentDownload>
-
 
 
    <environmentUrl>ENVIRONMENT_URL</environmentUrl>
 
 
-
    <apiToken>API_TOKEN</apiToken>
-
 
 
    </agentDownload>
 
 
-
    </configuration>
-
 
 
    </execution>
 
 
-
    </executions>
-
 
 
    <extensions>true</extensions>
 
 
-
    </plugin>
-
 
 
    </plugins>
 
 
-
    </build>
-
 
 
    </profile>
@@ -165,9 +138,7 @@ To integrate Dynatrace in a Maven project
    <configuration>
 
 
-
    <agentZip>PATH_TO_DOWNLOADED_ZIP</agentZip>
-
 
 
    </configuration>
@@ -193,17 +164,13 @@ To integrate Dynatrace in a Gradle project
    pluginManagement {
 
 
-
    repositories {
-
 
 
    mavenCentral()
 
 
-
    }
-
 
 
    }
@@ -214,33 +181,25 @@ To integrate Dynatrace in a Gradle project
    plugins {
 
 
-
    id 'com.dynatrace.buildtools.graalnative' version '2.1.0'
 
 
-
    }
-
 
 
    dynatrace {
 
 
-
    agentDownload {
-
 
 
    environmentUrl = "ENVIRONMENT_URL"
 
 
-
    apiToken = "API_TOKEN"
 
 
-
    }
-
 
 
    }
@@ -259,9 +218,7 @@ To integrate Dynatrace in a Gradle project
    dynatrace {
 
 
-
    agentZip = "PATH_TO_DOWNLOADED_ZIP"
-
 
 
    }
@@ -299,13 +256,10 @@ To activate Dynatrace observability at runtime, define your Dynatrace connection
 export DT_TENANT=$DT_TENANT_ID
 
 
-
 export DT_TENANTTOKEN=$DT_TENANTTOKEN
 
 
-
 export DT_CONNECTION_POINT=$DT_CONNECTION_POINT
-
 
 
 ./$YOUR_APP_NAME
@@ -329,25 +283,19 @@ The Maven plugin is configured via the `dynatrace-native` profile in the `pom.xm
 <configuration>
 
 
-
 <agentDownload>
-
 
 
 <environmentUrl>${env.DT_TENANT_URL}</environmentUrl>
 
 
-
 <apiToken>${env.DT_API_TOKEN}</apiToken>
-
 
 
 </agentDownload>
 
 
-
 <agentOptions>loglevelcon=info</agentOptions>
-
 
 
 </configuration>
@@ -376,25 +324,19 @@ The Gradle plugin is configured via a `dynatrace` block in `build.gradle`. For e
 dynatrace {
 
 
-
 agentDownload {
-
 
 
 environmentUrl = System.getenv("DT_TENANT_URL")
 
 
-
 apiToken = System.getenv("DT_API_TOKEN")
-
 
 
 }
 
 
-
 agentOptions="loglevelcon=info"
-
 
 
 }
@@ -425,17 +367,13 @@ The Dynatrace build-time module is preconfigured with recommended settings. If n
 {
 
 
-
 "enabledSensors": [
-
 
 
 "servlet"
 
 
-
 ]
-
 
 
 }
@@ -486,17 +424,13 @@ Configure in your `pom.xml` file:
 <jvmArgs>
 
 
-
 <arg>--add-opens=java.base/sun.net.www.protocol.http=ALL-UNNAMED</arg>
-
 
 
 <arg>--add-opens=java.base/java.net=ALL-UNNAMED</arg>
 
 
-
 <arg>--add-exports=java.base/sun.net.www=ALL-UNNAMED</arg>
-
 
 
 </jvmArgs>
@@ -512,41 +446,31 @@ Configure in your `build.gradle` file:
 graalvmNative {
 
 
-
 binaries {
-
 
 
 main {
 
 
-
 jvmArgs.addAll(
-
 
 
 '--add-opens', 'java.base/sun.net.www.protocol.http=ALL-UNNAMED',
 
 
-
 '--add-opens', 'java.base/java.net=ALL-UNNAMED',
-
 
 
 '--add-exports', 'java.base/sun.net.www=ALL-UNNAMED'
 
 
-
 )
 
 
-
 }
 
 
-
 }
-
 
 
 }

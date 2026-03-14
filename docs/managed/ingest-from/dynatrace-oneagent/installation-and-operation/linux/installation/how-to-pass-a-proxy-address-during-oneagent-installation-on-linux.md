@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # How to pass a proxy address during OneAgent installation on Linux
 
-# How to pass a proxy address during OneAgent installation on Linux
 
 * 1-min read
 * Published Sep 19, 2018
@@ -23,9 +22,7 @@ Let's say you're running an openSUSE server, you've downloaded your OneAgent ins
 cd /tmp
 
 
-
 chmod +x Dynatrace-OneAgent-Linux-0.5.0-20140217-175809.sh
-
 
 
 su -c 'Dynatrace-OneAgent-Linux-0.5.0-20140217-175809.sh --set-proxy=10.1.1.5'

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:50.318161
 
 # Monitor releases with Dynatrace
 
-# Monitor releases with Dynatrace
 
 * Classic
 * How-to guide

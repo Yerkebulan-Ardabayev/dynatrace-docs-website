@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:35:22.745317
 
 # Log Monitoring default limits (Logs Classic)
 
-# Log Monitoring default limits (Logs Classic)
 
 * Classic
 * 1-min read

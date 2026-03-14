@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Get started with Dynatrace Managed
 
-# Get started with Dynatrace Managed
 
 * How-to guide
 * 3-min read

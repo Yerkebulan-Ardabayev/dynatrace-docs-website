@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:57.009301
 
 # Ingest JSON and TXT logs
 
-# Ingest JSON and TXT logs
 
 * Latest Dynatrace
 * Explanation

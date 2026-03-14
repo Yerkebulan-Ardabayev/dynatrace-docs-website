@@ -72,125 +72,94 @@ scraped: 2026-03-04T21:36:56.983118
       {
 
 
-
       "blocks": [
 
 
-
       {
-
 
 
       "type": "header",
 
 
-
       "text":).
-
 
 
       "type": "plain_text",
 
 
-
       "text": "{{ ':white_check_mark:' if event()['event.status'] == 'CLOSED' else ':warning:' }} {{ 'RESOLVED' if event()['event.status'] == 'CLOSED' else 'OPEN' }} - {{ event()['event.name']}}",
-
 
 
       "emoji": true
 
 
-
       },
-
 
 
       {
 
 
-
       "type": "section",
-
 
 
       "text":.
 
 
-
       "type": "mrkdwn",
-
 
 
       "text": "- *Ссылка на проблему*: <{{ environment().url }}/ui/intent/dynatrace.davis.problems/view-problem#%7B%22event.id%22%3A%22{{ event()['event.id'] }}%22,%22event.kind%22%3A%22{{event()['event.kind']}}%22%7D|{{ event()['display_id'] }}> \n- *Пострадавшие сущности:* `{{ event()['affected_entity_ids'] }}`\n- *Продолжительность проблемы:* `{{ (event().get('resolved_problem_duration', 0) | int) / 1000000 / 1000 / 60 }} минуты"
 
 
-
       },
-
 
 
       {
 
 
-
       "type": "section",
-
 
 
       "text":.
 
 
-
       "type": "mrkdwn",
-
 
 
       "text": {{ ('>' ~ event()['event.description']) | replace('\n', '\n>') | to_json }}
 
 
-
       },
 
 
-
       {
-
 
 
       "type": "divider"
 
 
-
       },
-
 
 
       {
 
 
-
       "type": "section",
-
 
 
       "text":.
 
 
-
       "type": "mrkdwn",
-
 
 
       "text": "*Ссылка на рабочий процесс*: <{{ environment().url }}/ui/apps/dynatrace.automations/workflows/{{ execution().workflow.id }}|Рабочий процесс>"
 
 
-
       },
 
 
-
       ]
-
 
 
       }

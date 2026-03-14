@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:56.612300
 
 # Monitor Kubernetes/OpenShift events
 
-# Monitor Kubernetes/OpenShift events
 
 * Classic
 * 8-min read
@@ -67,7 +66,6 @@ If the environment is platform enabled the events are stored in Grail. The follo
 
 ```
 fetch events
-
 
 
 | filter event.provider == "KUBERNETES_EVENT"

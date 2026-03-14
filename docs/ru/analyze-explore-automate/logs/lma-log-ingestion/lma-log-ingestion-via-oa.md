@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:33.082076
 
 # Приём логов через OneAgent
 
-# Приём логов через OneAgent
 
 * Latest Dynatrace
 * Обзор
@@ -56,53 +55,40 @@ OneAgent упрощает управление логами, автоматич�
 "timestamp": "2024-05-23T15:46:23.000000000+02:00",
 
 
-
 "content": "2024-05-23 15:46:23 WebLaunche ERROR [HeadlessVisitRunnable] DriverEntry shutDown. [com.dynatrace.diagnostics.uemload.headless.DriverEntry@647129f3  useCnt: [4] drv: [ChromeDriver: chrome on LINUX (01b4aedd5176375e9712d60df153d6a2) http://localhost:17828] proxy: [org.littleshoot.proxy.impl.DefaultHttpProxyServer@4598e617 /127.0.0.1:45875] chrome_driver: [http://localhost:17828] debug port: [33787] ip: [91.172.93.134] healthy: [true]]",
-
 
 
 "dt.entity.host": "HOST-9A17CDBA8FF4FCBB",
 
 
-
 "dt.source_entity": "HOST-9A17CDBA8FF4FCBB",
-
 
 
 "event.type": "LOG",
 
 
-
 "host.name": "demodev-master",
-
 
 
 "log.source": "/home/labuser/.dynaTrace/easyTravel 2.0.0/easyTravel/log/WebLauncher.log",
 
 
-
 "loglevel": "ERROR",
-
 
 
 "process.technology": [
 
 
-
 "Apache Tomcat",
-
 
 
 "Java"
 
 
-
 ],
 
 
-
 "status": "ERROR",
-
 
 
 "date_ingested": "2024-05-22T22:14:42.079000000Z"
@@ -118,165 +104,124 @@ OneAgent упрощает управление логами, автоматич�
 {
 
 
-
 "timestamp": "2024-05-23T15:55:23.000000000+02:00",
-
 
 
 "content": "2024/05/23 13:55:23 Failed to export to Stackdriver: rpc error: code = PermissionDenied desc = The caller does not have permission",
 
 
-
 "dt.entity.cloud_application": "CLOUD_APPLICATION-63AACD91ADBAB15F",
-
 
 
 "dt.entity.cloud_application_instance": "CLOUD_APPLICATION_INSTANCE-F731124830922265",
 
 
-
 "dt.entity.cloud_application_namespace": "CLOUD_APPLICATION_NAMESPACE-0A4EA744229201C9",
-
 
 
 "dt.entity.container_group": "CONTAINER_GROUP-4F1B012F9B098D9F",
 
 
-
 "dt.entity.container_group_instance": "CONTAINER_GROUP_INSTANCE-D8EF90CDA84B35F2",
-
 
 
 "dt.entity.gcp_zone": "GCP_ZONE-4E0474C4AFCCC79A",
 
 
-
 "dt.entity.host": "HOST-C4E8984646B39EBE",
-
 
 
 "dt.entity.kubernetes_cluster": "KUBERNETES_CLUSTER-324E5954D86018E3",
 
 
-
 "dt.entity.kubernetes_node": "KUBERNETES_NODE-4B5BC37280D9BFD6",
-
 
 
 "dt.entity.process_group": "PROCESS_GROUP-B6AA568F4AD316D7",
 
 
-
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-8E2A55B6CF37CF42",
-
 
 
 "dt.kubernetes.cluster.name": "gke",
 
 
-
 "dt.kubernetes.node.system_uuid": "592f7b67-a340-e136-a9a2-488969f9fe34",
-
 
 
 "dt.process.name": "server frontend-*",
 
 
-
 "dt.source_entity": "PROCESS_GROUP_INSTANCE-8E2A55B6CF37CF42",
-
 
 
 "event.type": "LOG",
 
 
-
 "gcp.instance.id": "7994835647533846587",
-
 
 
 "gcp.project.id": "dynatrace-demoability",
 
 
-
 "gcp.region": "us-central1",
-
 
 
 "host.name": "gke-keptn-demo1-e2-custom-4-8192-08f6a08a-1xvo.c.dynatrace-demoability.internal",
 
 
-
 "k8s.container.name": "server",
-
 
 
 "k8s.deployment.name": "frontend-*",
 
 
-
 "k8s.namespace.name": "online-boutique",
-
 
 
 "k8s.pod.name": "frontend-7cc5676659-j2n5l",
 
 
-
 "k8s.pod.uid": "776226ff-4a33-4ea5-807e-2c930759d6eb",
-
 
 
 "log.source": "Container Output",
 
 
-
 "loglevel": "ERROR",
-
 
 
 "process.technology": [
 
 
-
 "C-Library",
-
 
 
 "Containerd",
 
 
-
 "Go"
-
 
 
 ],
 
 
-
 "status": "ERROR",
-
 
 
 "OperatorVersion": "v1.1.0",
 
 
-
 "gcp.zone": "us-central1-c",
-
 
 
 "k8s.cluster.uid": "74d7702f-11bf-445f-8fbc-2998804007ab",
 
 
-
 "k8s.node.name": "gke-keptn-demo1-e2-custom-4-8192-08f6a08a-1xvo",
 
 
-
 "log.iostream": "stderr"
-
 
 
 },

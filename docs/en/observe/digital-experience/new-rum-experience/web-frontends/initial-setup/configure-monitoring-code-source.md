@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:08.867039
 
 # Configure the Real User Monitoring code source in the New RUM Experience
 
-# Configure the Real User Monitoring code source in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide

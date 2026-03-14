@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:31.901700
 
 # Set up Grail permissions for Distributed Tracing
 
-# Set up Grail permissions for Distributed Tracing
 
 * Latest Dynatrace
 * How-to guide
@@ -46,7 +45,6 @@ Alternatively, you can define a security context based on existing resource attr
 
 ```
 fetch spans
-
 
 
 | filter matchesPhrase(deployment.release_stage, "prod-")

@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:30:15.566087
 
 # Tags and management zones for AWS integration
 
-# Tags and management zones for AWS integration
 
 * How-to guide
 * 4-min read

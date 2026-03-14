@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:32:05.233768
 
 # Миграция с API окон обслуживания на Settings API
 
-# Миграция с API окон обслуживания на Settings API
 
 * Справочник
 * Опубликовано 21 декабря 2022
@@ -57,289 +56,217 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects?schemaIds=bui
 {
 
 
-
 "items": [
 
 
-
 {
-
 
 
 "objectId":
 
 
-
 "vu9U3hXa3q0AAAABACNidWlsdGluOmFsZXJ0aW5nLm1haW50ZW5hbmNlLXdpbmRvdwAGdGVuYW50AAZ0ZW5hbnQAJDgwMzdjNWM3LTdkNTgtNGQyYy04YzJkLWViMTYxMTBkZTE2Mr7vVN4V2t6t",
-
 
 
 "value": {
 
 
-
 "enabled": true,
 
 
-
 "generalProperties": {
-
 
 
 "name": "Synthetic scaling",
 
 
-
 "description": "Maintenance window for adaptations of Synthetic monitors",
-
 
 
 "maintenanceType": "PLANNED",
 
 
-
 "suppression": "DETECT_PROBLEMS_DONT_ALERT",
-
 
 
 "disableSyntheticMonitorExecution": false
 
 
-
 },
-
 
 
 "schedule": {
 
 
-
 "scheduleType": "ONCE",
 
 
-
 "onceRecurrence": {
-
 
 
 "startTime": "2022-12-22T09:00:00",
 
 
-
 "endTime": "2022-12-22T12:00:00",
-
 
 
 "timeZone": "UTC"
 
 
-
 }
-
 
 
 },
 
 
-
 "filters": [
 
 
-
 {
-
 
 
 "entityType": "HOST",
 
 
-
 "entityTags": [
-
 
 
 "[AWS]Usage:Synthetic"
 
 
-
 ],
-
 
 
 "managementZones": []
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "objectId": "vu9U3hXa3q0AAAABACNidWlsdGluOmFsZXJ0aW5nLm1haW50ZW5hbmNlLXdpbmRvdwAGdGVuYW50AAZ0ZW5hbnQAJDE3NDgxMWYxLWQ2NjYtNGJhNy1iZmU3LTk5ZGYzMjIyNjY3Mr7vVN4V2t6t",
 
 
-
 "value": {
-
 
 
 "enabled": true,
 
 
-
 "generalProperties": {
-
 
 
 "name": "Issue with pre-production environment",
 
 
-
 "maintenanceType": "UNPLANNED",
-
 
 
 "suppression": "DONT_DETECT_PROBLEMS",
 
 
-
 "disableSyntheticMonitorExecution": false
 
 
-
 },
-
 
 
 "schedule": {
 
 
-
 "scheduleType": "ONCE",
-
 
 
 "onceRecurrence": {
 
 
-
 "startTime": "2022-12-10T10:00:00",
-
 
 
 "endTime": "2022-12-10T14:00:00",
 
 
-
 "timeZone": "Europe/Vienna"
-
 
 
 }
 
 
-
 },
-
 
 
 "filters": [
 
 
-
 {
-
 
 
 "entityType": "SERVICE",
 
 
-
 "entityTags": [
-
 
 
 "Env-pre-prod"
 
 
-
 ],
 
 
-
 "managementZones": []
-
 
 
 },
 
 
-
 {
-
 
 
 "entityType": "PROCESS_GROUP",
 
 
-
 "entityTags": [
-
 
 
 "Env-pre-prod"
 
 
-
 ],
-
 
 
 "managementZones": []
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 }
-
 
 
 ],
 
 
-
 "totalCount": 2,
 
 
-
 "pageSize": 100,
-
 
 
 }
@@ -357,49 +284,37 @@ GET https://mySampleEnv.live.dynatrace.com/config/v1/maintenanceWindows
 {
 
 
-
 "values": [
 
 
-
 {
-
 
 
 "id": "00564256-a294-4ed5-9de6-ecba61500ed2",
 
 
-
 "name": "Synthetic scaling",
-
 
 
 "description": "Maintenance window for adaptations of Synthetic monitors"
 
 
-
 },
-
 
 
 {
 
 
-
 "id": "01ba0f45-7abe-46a3-94b9-ce377f684973",
-
 
 
 "name": "Issue with pre-production environment"
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -427,153 +342,115 @@ POST https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects
 [
 
 
-
 {
-
 
 
 "schemaId": "builtin:alerting.maintenance-window",
 
 
-
 "scope": "environment",
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "generalProperties": {
 
 
-
 "name": "Sample maintenance window",
-
 
 
 "maintenanceType": "PLANNED",
 
 
-
 "suppression": "DETECT_PROBLEMS_AND_ALERT",
-
 
 
 "disableSyntheticMonitorExecution": false
 
 
-
 },
-
 
 
 "schedule": {
 
 
-
 "scheduleType": "MONTHLY",
-
 
 
 "monthlyRecurrence": {
 
 
-
 "dayOfMonth": 1,
-
 
 
 "timeWindow": {
 
 
-
 "startTime": "06:00:00",
-
 
 
 "endTime": "06:30:00",
 
 
-
 "timeZone": "Europe/Vienna"
 
 
-
 },
-
 
 
 "recurrenceRange": {
 
 
-
 "scheduleStartDate": "2022-01-01",
-
 
 
 "scheduleEndDate": "2022-12-31"
 
 
-
 }
 
 
-
 }
-
 
 
 },
 
 
-
 "filters": [
-
 
 
 {
 
 
-
 "entityType": "SERVICE",
-
 
 
 "entityTags": [
 
 
-
 "stage:pre-production"
-
 
 
 ],
 
 
-
 "managementZones": []
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 }
-
 
 
 ]
@@ -585,21 +462,16 @@ POST https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects
 [
 
 
-
 {
-
 
 
 "code": 200,
 
 
-
 "objectId": "vu9U3hXa3q0AAAABACNidWlsdGluOmFsZXJ0aW5nLm1haW50ZW5hbmNlLXdpbmRvdwAGdGVuYW50AAZ0ZW5hbnQAJDVhMjg2NmE5LTJjZjQtMzIwZC1hNjMxLTI0NTAwYTQ4NmU5Zr7vVN4V2t6t"
 
 
-
 }
-
 
 
 ]
@@ -619,137 +491,103 @@ POST https://mySampleEnv.live.dynatrace.com/config/v1/maintenanceWindows
 {
 
 
-
 "name": "Sample maintenance window",
-
 
 
 "description": "",
 
 
-
 "type": "PLANNED",
-
 
 
 "enabled": true,
 
 
-
 "suppression": "DETECT_PROBLEMS_AND_ALERT",
-
 
 
 "suppressSyntheticMonitorsExecution": false,
 
 
-
 "scope": {
-
 
 
 "entities": [],
 
 
-
 "matches": [
 
 
-
 {
-
 
 
 "type": "SERVICE",
 
 
-
 "tags": [
-
 
 
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "stage",
 
 
-
 "value": "pre-production"
 
 
-
 }
-
 
 
 ],
 
 
-
 "tagCombination": "AND"
 
 
-
 }
-
 
 
 ]
 
 
-
 },
-
 
 
 "schedule": {
 
 
-
 "recurrenceType": "MONTHLY",
-
 
 
 "recurrence": {
 
 
-
 "dayOfMonth": 1,
-
 
 
 "startTime": "06:00",
 
 
-
 "durationMinutes": 30
-
 
 
 },
 
 
-
 "start": "2022-01-01 00:00",
-
 
 
 "end": "2022-12-31 23:59",
 
 
-
 "zoneId": "Europe/Vienna"
 
 
-
 }
-
 
 
 }
@@ -761,13 +599,10 @@ POST https://mySampleEnv.live.dynatrace.com/config/v1/maintenanceWindows
 {
 
 
-
 "id": "07f476c6-f1ed-4519-848d-61e52f7e2f24",
 
 
-
 "name": "Sample maintenance window"
-
 
 
 }
@@ -793,153 +628,115 @@ PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AA
 {
 
 
-
 "schemaId": "builtin:alerting.maintenance-window",
-
 
 
 "scope": "environment",
 
 
-
 "value": {
-
 
 
 "enabled": true,
 
 
-
 "generalProperties": {
-
 
 
 "name": "Sample maintenance window",
 
 
-
 "maintenanceType": "PLANNED",
-
 
 
 "suppression": "DETECT_PROBLEMS_AND_ALERT",
 
 
-
 "disableSyntheticMonitorExecution": false
 
 
-
 },
-
 
 
 "schedule": {
 
 
-
 "scheduleType": "MONTHLY",
-
 
 
 "monthlyRecurrence": {
 
 
-
 "dayOfMonth": 5,
-
 
 
 "timeWindow": {
 
 
-
 "startTime": "01:00:00",
-
 
 
 "endTime": "01:30:00",
 
 
-
 "timeZone": "Europe/Vienna"
 
 
-
 },
-
 
 
 "recurrenceRange": {
 
 
-
 "scheduleStartDate": "2022-01-01",
-
 
 
 "scheduleEndDate": "2022-12-31"
 
 
-
 }
 
 
-
 }
-
 
 
 },
 
 
-
 "filters": [
-
 
 
 {
 
 
-
 "entityType": "SERVICE",
-
 
 
 "entityTags": [
 
 
-
 "stage:pre-production"
-
 
 
 ],
 
 
-
 "managementZones": [
-
 
 
 "5561909168316319665"
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
 
 
-
 }
-
 
 
 }
@@ -951,21 +748,16 @@ PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AA
 [
 
 
-
 {
-
 
 
 "code": 200,
 
 
-
 "objectId": "vu9U3hXa3q0AAAABABhidWlsdGluOmFsZXJ0aW5nLnByb2ZpbGUABnRlbmFudAAGdGVuYW50ACQzYjAwNDMwOC01ZTZjLTNkNGMtOTNjMS01ZTBiOWRhZTlhZjW-71TeFdrerQ"
 
 
-
 }
-
 
 
 ]
@@ -983,145 +775,109 @@ PUT https://mySampleEnv.live.dynatrace.com/config/v1/maintenanceWindows/07f476c6
 {
 
 
-
 "id": "07f476c6-f1ed-4519-848d-61e52f7e2f24",
-
 
 
 "name": "Sample MW - old",
 
 
-
 "description": "",
-
 
 
 "type": "PLANNED",
 
 
-
 "enabled": true,
-
 
 
 "suppression": "DETECT_PROBLEMS_AND_ALERT",
 
 
-
 "suppressSyntheticMonitorsExecution": false,
-
 
 
 "scope": {
 
 
-
 "entities": [],
-
 
 
 "matches": [
 
 
-
 {
-
 
 
 "mzId": "5561909168316319665",
 
 
-
 "type": "SERVICE",
-
 
 
 "tags": [
 
 
-
 {
-
 
 
 "context": "CONTEXTLESS",
 
 
-
 "key": "stage",
-
 
 
 "value": "pre-production"
 
 
-
 }
-
 
 
 ],
 
 
-
 "tagCombination": "AND"
 
 
-
 }
-
 
 
 ]
 
 
-
 },
-
 
 
 "schedule": {
 
 
-
 "recurrenceType": "MONTHLY",
-
 
 
 "recurrence": {
 
 
-
 "dayOfMonth": 5,
-
 
 
 "startTime": "01:00",
 
 
-
 "durationMinutes": 30
-
 
 
 },
 
 
-
 "start": "2022-01-01 00:00",
-
 
 
 "end": "2022-12-31 23:59",
 
 
-
 "zoneId": "Europe/Vienna"
 
 
-
 }
-
 
 
 }

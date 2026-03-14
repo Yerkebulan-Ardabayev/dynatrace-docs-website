@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:05.384648
 
 # Session segmentation
 
-# Session segmentation
 
 * Classic
 * Overview

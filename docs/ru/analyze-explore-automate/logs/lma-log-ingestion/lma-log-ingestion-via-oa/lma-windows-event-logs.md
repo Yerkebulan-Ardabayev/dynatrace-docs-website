@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:36:40.493360
 
 # Журналы событий Windows
 
-# Журналы событий Windows
 
 * Latest Dynatrace
 * Tutorial
@@ -104,17 +103,13 @@ scraped: 2026-03-04T21:36:40.493360
 - <EventData>
 
 
-
 <Data Name="CallerProcessId">16548</Data>
-
 
 
 <Data Name="CallerProcessImageName">vctip</Data>
 
 
-
 <Data Name="Type">client</Data>
-
 
 
 </EventData>
@@ -126,9 +121,7 @@ scraped: 2026-03-04T21:36:40.493360
 AttributeKey: winlog.data.CallerProcessId, AttributeValue: 16548
 
 
-
 AttributeKey: winlog.data.CallerProcessImageName, AttributeValue: vctip
-
 
 
 AttributeKey: winlog.data.Type, AttributeValue: client
@@ -142,25 +135,19 @@ AttributeKey: winlog.data.Type, AttributeValue: client
 - <UserData>
 
 
-
 -   <CbsPackageChangeState xmlns="http://manifests.microsoft.com/win/2004/08/windows/setup_provider">
-
 
 
 <PackageIdentifier>KB5058405</PackageIdentifier>
 
 
-
 <IntendedPackageState>5112</IntendedPackageState>
-
 
 
 <IntendedPackageStateTextized></IntendedPackageStateTextized>
 
 
-
 </CbsPackageChangeState>
-
 
 
 </UserData>
@@ -172,9 +159,7 @@ AttributeKey: winlog.data.Type, AttributeValue: client
 AttributeKey: winlog.data.CbsPackageChangeState.<xmlattr>.xmlns, AttributeValue: http://manifests.microsoft.com/win/2004/08/windows/setup_provider
 
 
-
 AttributeKey: winlog.data.CbsPackageChangeState.PackageIdentifier, AttributeValue: KB5058405
-
 
 
 AttributeKey: winlog.data.CbsPackageChangeState.IntendedPackageState, AttributeValue: 5112
@@ -188,29 +173,22 @@ AttributeKey: winlog.data.CbsPackageChangeState.IntendedPackageState, AttributeV
 - <EventData>
 
 
-
 <Data>WinRT Intellisense PPI - en-us</Data>
-
 
 
 <Data>10.1.19041.685</Data>
 
 
-
 <Data>(NULL)</Data>
-
 
 
 <Data />
 
 
-
 <Binary>7B31354532394146462D434231392D413230422D394138312D4230373635413633313135467D3030303063306133616532343933363166643732376335306533653966623534363139633030303030393034</Binary>
 
 
-
 <Data>Test</Data>
-
 
 
 </EventData>
@@ -222,13 +200,10 @@ AttributeKey: winlog.data.CbsPackageChangeState.IntendedPackageState, AttributeV
 AttributeKey: winlog.data.Data1, AttributeValue: WinRT Intellisense PPI - en-us
 
 
-
 AttributeKey: winlog.data.Data2, AttributeValue: 10.1.19041.685
 
 
-
 AttributeKey: winlog.data.Data3, AttributeValue: (NULL)
-
 
 
 AttributeKey: winlog.data.Data5, AttributeValue: Test

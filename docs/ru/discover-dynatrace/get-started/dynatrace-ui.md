@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:57.477430
 
 # Навигация по платформе Dynatrace
 
-# Навигация по платформе Dynatrace
 
 * Latest Dynatrace
 * Справочник

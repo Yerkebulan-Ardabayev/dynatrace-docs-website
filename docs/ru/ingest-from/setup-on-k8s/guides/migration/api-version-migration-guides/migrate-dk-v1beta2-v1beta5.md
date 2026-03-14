@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:59.327256
 
 # Миграция DynaKube с v1beta2 на v1beta5
 
-# Миграция DynaKube с v1beta2 на v1beta5
 
 * Latest Dynatrace
 * Reference
@@ -65,17 +64,13 @@ kubectl get customresourcedefinitions dynakubes.dynatrace.com -o jsonpath='{.sta
 for item in $(kubectl get dynakubes.dynatrace.com -A -o jsonpath='{range .items[*]}{.metadata.namespace}{"/"}{.metadata.name}{"\n"}{end}'); do
 
 
-
 namespace=${item%/*}
-
 
 
 name=${item#*/}
 
 
-
 kubectl get dynakubes.dynatrace.com -n $namespace $name -o yaml | kubectl replace -f -
-
 
 
 done
@@ -113,33 +108,25 @@ feature.dynatrace.com/max-csi-mount-timeout: "8m" # заменяет feature.dyn
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack: {} # аналогично autoUpdate: true
-
 
 
   # ...
@@ -150,85 +137,64 @@ feature.dynatrace.com/max-csi-mount-timeout: "8m" # заменяет feature.dyn
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack:
-
 
 
   image: ... # аналогичный эффект как autoUpdate: false
 
 
-
   codeModulesImage: # аналогичный эффект как autoUpdate: false
-
 
 
   # ...
 
 
-
   ---
-
 
 
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack:
 
 
-
   version: ... # заменяет autoUpdate: false
-
 
 
   # ...

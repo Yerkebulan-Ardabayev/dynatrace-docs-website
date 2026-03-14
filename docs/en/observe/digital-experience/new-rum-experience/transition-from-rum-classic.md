@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:59.818788
 
 # Transition from RUM Classic to the New RUM Experience
 
-# Transition from RUM Classic to the New RUM Experience
 
 * Latest Dynatrace
 * Explanation

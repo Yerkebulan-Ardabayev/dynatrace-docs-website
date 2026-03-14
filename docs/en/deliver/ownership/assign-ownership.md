@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:31:36.084206
 
 # Assign ownership teams to monitored entities
 
-# Assign ownership teams to monitored entities
 
 * Classic
 * How-to guide
@@ -79,29 +78,22 @@ We recommend defining ownership for the Deployment and all other objects for whi
   apiVersion: apps/v1
 
 
-
   kind: Deployment
-
 
 
   metadata:
 
 
-
   name: demo
-
 
 
   labels:
 
 
-
   dt.owner-1: my-team-1 # Dual team ownership defined for the Deployment
 
 
-
   dt.owner-2: my-team-2
-
 
 
   spec:
@@ -113,21 +105,16 @@ We recommend defining ownership for the Deployment and all other objects for whi
   apiVersion: apps/v1
 
 
-
   kind: Deployment
-
 
 
   metadata:
 
 
-
   name: demo
 
 
-
   annotations:
-
 
 
   dt.owner: my-team # Ownership defined for the Deployment
@@ -138,57 +125,43 @@ We recommend defining ownership for the Deployment and all other objects for whi
   apiVersion: apps/v1
 
 
-
   kind: Deployment
 
 
-
   metadata:
-
 
 
   name: demo
 
 
-
   spec:
-
 
 
   replicas: 3
 
 
-
   selector:
-
 
 
   matchLabels:
 
 
-
   app: demo
-
 
 
   template:
 
 
-
   metadata:
-
 
 
   labels:
 
 
-
   app: demo
 
 
-
   dt.owner: my-team # Ownership defined for the Pod
-
 
 
   spec:
@@ -200,49 +173,37 @@ We recommend defining ownership for the Deployment and all other objects for whi
   apiVersion: v1
 
 
-
   kind: Pod
-
 
 
   metadata:
 
 
-
   name: annotations-demo
-
 
 
   annotations:
 
 
-
   imageregistry: "https://hub.docker.com/"
-
 
 
   dt.owner: my-team
 
 
-
   spec:
-
 
 
   containers:
 
 
-
   - name: nginx
-
 
 
   image: nginx:1.14.2
 
 
-
   ports:
-
 
 
   - containerPort: 80
@@ -255,65 +216,49 @@ We recommend defining ownership for the Deployment and all other objects for whi
   apiVersion: apps/v1
 
 
-
   kind: Deployment
-
 
 
   metadata:
 
 
-
   name: demo
 
 
-
   spec:
-
 
 
   replicas: 3
 
 
-
   selector:
-
 
 
   matchLabels:
 
 
-
   app: demo
-
 
 
   template:
 
 
-
   spec:
-
 
 
   containers:
 
 
-
   - name: demo
-
 
 
   image: demo:1.0.0
 
 
-
   env:
 
 
-
   - name: DT_CUSTOM_PROP ## Environment variable
-
 
 
   value: "owner=team-automation owner=team-dev" # Dual ownership for the process; team IDs are team-automation and team-dev.
@@ -324,49 +269,37 @@ We recommend defining ownership for the Deployment and all other objects for whi
   apiVersion: v1
 
 
-
   kind: Service
-
 
 
   metadata:
 
 
-
   name: my-service
-
 
 
   labels:
 
 
-
   dt.owner: team-a # Ownership defined for the Service
-
 
 
   spec:
 
 
-
   selector:
-
 
 
   app.kubernetes.io/name: MyApp
 
 
-
   ports:
-
 
 
   - protocol: TCP
 
 
-
   port: 80
-
 
 
   targetPort: 9376
@@ -377,21 +310,16 @@ We recommend defining ownership for the Deployment and all other objects for whi
   apiVersion: v1
 
 
-
   kind: Namespace
-
 
 
   metadata:
 
 
-
   name: my-namespace
 
 
-
   labels:
-
 
 
   dt.owner: team-a # Ownership defined for the namespace

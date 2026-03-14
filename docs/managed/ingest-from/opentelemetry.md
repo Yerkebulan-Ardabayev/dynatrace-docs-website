@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # OpenTelemetry and Dynatrace
 
-# OpenTelemetry and Dynatrace
 
 * Overview
 * 2-min read

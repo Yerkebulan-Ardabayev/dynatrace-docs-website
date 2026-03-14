@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:30:56.317085
 
 # Customize endpoint detection in Service Detection v2
 
-# Customize endpoint detection in Service Detection v2
 
 * How-to guide
 * 2-min read

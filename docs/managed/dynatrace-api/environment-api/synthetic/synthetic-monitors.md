@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Synthetic Monitors API
 
-# Synthetic Monitors API
 
 * Reference
 * Published Jul 26, 2019

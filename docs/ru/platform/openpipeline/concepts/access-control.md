@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:28.083609
 
 # Управление доступом на основе владельца в OpenPipeline
 
-# Управление доступом на основе владельца в OpenPipeline
 
 * Latest Dynatrace
 * Explanation

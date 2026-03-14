@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:47.727029
 
 # Configure user interaction capturing for mobile frontends
 
-# Configure user interaction capturing for mobile frontends
 
 * Latest Dynatrace
 * How-to guide

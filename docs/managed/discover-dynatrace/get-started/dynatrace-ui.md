@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Navigate the Dynatrace Managed platform
 
-# Navigate the Dynatrace Managed platform
 
 * Explanation
 * 8-min read

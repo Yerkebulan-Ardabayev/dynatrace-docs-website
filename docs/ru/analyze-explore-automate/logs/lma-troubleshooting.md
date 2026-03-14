@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:36:06.993002
 
 # Устранение неполадок в Log Management and Analytics
 
-# Устранение неполадок в Log Management and Analytics
 
 * Latest Dynatrace
 * Troubleshooting

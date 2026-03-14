@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Global field reference
 
-# Global field reference
 
 * Latest Dynatrace
 * Overview
@@ -1572,9 +1571,7 @@ Example query:
 // display the bucket for each log record
 
 
-
 fetch logs
-
 
 
 | fieldsAdd dt.system.bucket

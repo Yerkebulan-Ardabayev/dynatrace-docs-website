@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:42.340112
 
 # OneAgent monitoring capabilities
 
-# OneAgent monitoring capabilities
 
 * Latest Dynatrace
 * 3-min read

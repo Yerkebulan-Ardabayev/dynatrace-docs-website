@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:45.299016
 
 # Troubleshooting Log Monitoring (Logs Classic)
 
-# Troubleshooting Log Monitoring (Logs Classic)
 
 * Classic
 * Troubleshooting

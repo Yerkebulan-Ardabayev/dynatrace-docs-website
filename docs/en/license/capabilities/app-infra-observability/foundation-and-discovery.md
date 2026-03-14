@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:13.819056
 
 # Calculate your consumption of Foundation & Discovery (DPS)
 
-# Calculate your consumption of Foundation & Discovery (DPS)
 
 * Latest Dynatrace
 * Explanation

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:28.596172
 
 # Начало работы с OpenTelemetry и Dynatrace
 
-# Начало работы с OpenTelemetry и Dynatrace
 
 * Latest Dynatrace
 * Overview

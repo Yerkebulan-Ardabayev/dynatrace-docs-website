@@ -6,7 +6,6 @@ scraped: 2026-02-18T05:43:54.663089
 
 # Наблюдаемость OpenAI
 
-# Наблюдаемость OpenAI
 
 * Последняя версия Dynatrace
 * Руководство
@@ -31,41 +30,31 @@ Dynatrace OneAgent автоматически обнаруживает, набл
 const { Configuration, OpenAIApi } = require("openai");
 
 
-
 const configuration = new Configuration({
-
 
 
 apiKey: process.env.OPENAI_API_KEY
 
 
-
 });
-
 
 
 const openai = new OpenAIApi(configuration);
 
 
-
 const response = await openai.createCompletion({
-
 
 
 model: "text-davinci-003",
 
 
-
 prompt: "Say hello!",
-
 
 
 temperature: 0,
 
 
-
 max_tokens: 10,
-
 
 
 });
@@ -153,73 +142,55 @@ logger.log('info', `OpenAI response promt_tokens:${response.data.usage.prompt_to
 function report_metric(openai_response) {
 
 
-
 var post_data = "openai.promt_token_count,model=" + openai_response.model + " " + openai_response.usage.prompt_tokens + "\n";
-
 
 
 post_data += "openai.completion_token_count,model=" + openai_response.model + " " + openai_response.usage.completion_tokens + "\n";
 
 
-
 post_data += "openai.total_token_count,model=" + openai_response.model + " " + openai_response.usage.total_tokens + "\n";
-
 
 
 console.log(post_data);
 
 
-
 var post_options = {
-
 
 
 host: 'localhost',
 
 
-
 port: '14499',
-
 
 
 path: '/metrics/ingest',
 
 
-
 method: 'POST',
-
 
 
 headers: {
 
 
-
 'Content-Type': 'text/plain',
-
 
 
 'Content-Length': Buffer.byteLength(post_data)
 
 
-
 }
-
 
 
 };
 
 
-
 var metric_req = http.request(post_options, (resp) => {}).on("error", (err) => { console.log(err); });
-
 
 
 metric_req.write(post_data);
 
 
-
 metric_req.end();
-
 
 
 }

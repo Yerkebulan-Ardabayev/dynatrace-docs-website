@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:15.505928
 
 # Honeycomb visualization
 
-# Honeycomb visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -27,7 +26,6 @@ The honeycomb visualization above is based on the following query.
 
 ```
 timeseries avg(dt.host.cpu.usage), by:{dt.entity.host}
-
 
 
 | fieldsAdd cpu = arrayAvg(`avg(dt.host.cpu.usage)`)
@@ -60,9 +58,7 @@ The query below has been updated to align with the new Grail security events tab
 fetch security.events
 
 
-
 | filter event.status == "OPEN"
-
 
 
 | summarize takeLast(vulnerability.davis_assessment.score), by:{vulnerability.display_id}
@@ -200,7 +196,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000

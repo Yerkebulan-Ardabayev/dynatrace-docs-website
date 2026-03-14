@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:41.461060
 
 # Processing in OpenPipeline
 
-# Processing in OpenPipeline
 
 * Latest Dynatrace
 * Explanation

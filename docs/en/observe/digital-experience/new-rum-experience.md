@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:03.737862
 
 # New Real User Monitoring Experience
 
-# New Real User Monitoring Experience
 
 * Latest Dynatrace
 * Explanation

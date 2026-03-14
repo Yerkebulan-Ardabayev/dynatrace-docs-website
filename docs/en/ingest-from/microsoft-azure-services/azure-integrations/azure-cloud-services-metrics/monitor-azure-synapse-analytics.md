@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:29.714702
 
 # Azure Synapse Analytics (Synapse Workspace, Apache Spark pool, SQL pool) monitoring
 
-# Azure Synapse Analytics (Synapse Workspace, Apache Spark pool, SQL pool) monitoring
 
 * Latest Dynatrace
 * How-to guide

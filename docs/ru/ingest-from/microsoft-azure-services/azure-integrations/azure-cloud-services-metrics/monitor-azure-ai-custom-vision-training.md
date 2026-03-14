@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:46.087116
 
 # Мониторинг Azure AI - Custom Vision
 
-# Мониторинг Azure AI - Custom Vision
 
 * Последняя версия Dynatrace
 * Практическое руководство

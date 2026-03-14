@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:31.516583
 
 # OneAgent log ingest API
 
-# OneAgent log ingest API
 
 * Latest Dynatrace
 * 2-min read
@@ -73,13 +72,10 @@ Successful response returns the `204` code.
 HTTP/1.1 204 No Content
 
 
-
 Content-Type: application/json
 
 
-
 Server: EEC
-
 
 
 Content-Length: 116

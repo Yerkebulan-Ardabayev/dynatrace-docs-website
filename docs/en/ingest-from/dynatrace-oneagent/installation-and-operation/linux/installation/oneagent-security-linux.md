@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:07.272209
 
 # OneAgent security on Linux
 
-# OneAgent security on Linux
 
 * Latest Dynatrace
 * 5-min read

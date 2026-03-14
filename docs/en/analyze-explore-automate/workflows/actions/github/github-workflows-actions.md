@@ -6,7 +6,6 @@ scraped: 2026-03-01T21:25:46.175084
 
 # Actions for GitHub Connector
 
-# Actions for GitHub Connector
 
 * Latest Dynatrace
 * Reference

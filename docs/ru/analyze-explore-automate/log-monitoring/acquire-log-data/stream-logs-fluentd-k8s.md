@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:03.242201
 
 # Потоковая передача логов в Dynatrace с помощью Fluentd в Kubernetes (Logs Classic)
 
-# Потоковая передача логов в Dynatrace с помощью Fluentd в Kubernetes (Logs Classic)
 
 * Classic
 * Explanation

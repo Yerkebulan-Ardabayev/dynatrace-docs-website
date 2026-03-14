@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:22:30.551812
 
 # Built-in Metrics on Grail
 
-# Built-in Metrics on Grail
 
 * Latest Dynatrace
 * Reference
@@ -43,13 +42,11 @@ Consequently, the following two metric selectors return equivalent results with 
 // queries pre-aggregated host-level data
 
 
-
 builtin:host.net.bytesRx:splitBy("dt.entity.host"):avg
 ```
 
 ```
 // queries host- and network interface-level data
-
 
 
 builtin:host.net.nic.bytesRx:splitBy("dt.entity.host"):avg

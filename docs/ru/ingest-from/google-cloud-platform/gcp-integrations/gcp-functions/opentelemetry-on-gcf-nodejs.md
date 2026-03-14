@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:29:51.504437
 
 # Интеграция OpenTelemetry с Google Cloud Functions на Node.js
 
-# Интеграция OpenTelemetry с Google Cloud Functions на Node.js
 
 * Latest Dynatrace
 * How-to guide
@@ -58,69 +57,52 @@ npm install --save @dynatrace/opentelemetry-gcf
    const { Resource } = require('@opentelemetry/resources');
 
 
-
    const { NodeTracerProvider } = require('@opentelemetry/sdk-trace-node');
-
 
 
    const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
 
 
-
    const { DtSpanExporter, DtSpanProcessor, DtTextMapPropagator, DtSampler } = require('@dynatrace/opentelemetry-gcf');
-
 
 
    const processor = new DtSpanProcessor(new DtSpanExporter());
 
 
-
    const provider = new NodeTracerProvider({
-
 
 
    resource: new Resource({
 
 
-
    "my.resource.attribute": "My Resource",
-
 
 
    }),
 
 
-
    sampler: new DtSampler(),
-
 
 
    // for @opentelemetry/sdk-trace-node versions lower than 1.29.0 use `provider.addSpanProcessor(processor)` instead
 
 
-
    spanProcessors: [processor]
 
 
-
    // ...other configurations
-
 
 
    });
 
 
-
    provider.register({
-
 
 
    propagator: new DtTextMapPropagator(),
 
 
-
    // ...other configurations
-
 
 
    });
@@ -138,61 +120,46 @@ npm install --save @dynatrace/opentelemetry-gcf
    const { Resource } = require('@opentelemetry/resources');
 
 
-
    const { NodeSDK } = require('@opentelemetry/sdk-node');
-
 
 
    const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
 
 
-
    const { DtSpanExporter, DtSpanProcessor, DtTextMapPropagator, DtSampler } = require('@dynatrace/opentelemetry-gcf');
-
 
 
    const sdk = new NodeSDK({
 
 
-
    resource: new Resource({
-
 
 
    "my.resource.attribute": "My Resource"
 
 
-
    }),
-
 
 
    sampler: new DtSampler(),
 
 
-
    spanProcessor: new DtSpanProcessor(new DtSpanExporter()),
-
 
 
    textMapPropagator: new DtTextMapPropagator(),
 
 
-
    // ...other configurations
-
 
 
    });
 
 
-
    sdk.start().then(() => {
 
 
-
    // Resources have been detected and SDK is started
-
 
 
    });
@@ -209,81 +176,61 @@ npm install --save @dynatrace/opentelemetry-gcf
    const { startActiveHttpSpan, endHttpSpanAndFlush } = require('@dynatrace/opentelemetry-gcf');
 
 
-
    // ...tracing initialization code
-
 
 
    async function handler(req, res) {
 
 
-
    await startActiveHttpSpan(req, async (span) => {
-
 
 
    let error;
 
 
-
    try {
-
 
 
    // do something
 
 
-
    } catch (e) {
-
 
 
    error = e;
 
 
-
    }
-
 
 
    // status should be set before span ends
 
 
-
    res.status(error != null ? 500 : 200);
-
 
 
    /**
 
 
-
    * Span must be ended and flushed before handler sends response.
-
 
 
    * This limitiation comes from GCF, for details see:
 
 
-
    * https://cloud.google.com/functions/docs/concepts/nodejs-runtime#signal-termination
-
 
 
    */
 
 
-
    await endHttpSpanAndFlush(span, res, error);
-
 
 
    res.send("hello world");
 
 
-
    });
-
 
 
    }
@@ -295,89 +242,67 @@ npm install --save @dynatrace/opentelemetry-gcf
    const { context, trace, ROOT_CONTEXT } = require('@opentelemetry/api');
 
 
-
    const { startHttpSpan, endHttpSpanAndFlush } = require('@dynatrace/opentelemetry-gcf');
-
 
 
    // ...tracing initialization code
 
 
-
    async function handler(req, res) {
-
 
 
    const span = await startHttpSpan(req);
 
 
-
    let error;
-
 
 
    await context.with(trace.setSpan(ROOT_CONTEXT, span), async () => {
 
 
-
    try {
-
 
 
    // do something
 
 
-
    } catch (e) {
-
 
 
    error = e;
 
 
-
    }
-
 
 
    });
 
 
-
    // status should be set before span ends
-
 
 
    res.status(error != null ? 500 : 200);
 
 
-
    /**
-
 
 
    * Span must be ended and flushed before handler sends response.
 
 
-
    * This limitiation comes from GCF, for details see:
-
 
 
    * https://cloud.google.com/functions/docs/concepts/nodejs-runtime#signal-termination
 
 
-
    */
-
 
 
    await endHttpSpanAndFlush(span, res, error);
 
 
-
    res.send("hello world");
-
 
 
    }
@@ -417,29 +342,22 @@ Dynatrace версии 1.327+ Модуль `@dynatrace/opentelemetry-gcf` под
 {
 
 
-
 "dependencies": {
-
 
 
 "@dynatrace/opentelemetry-gcf": "1.327.0"
 
 
-
 },
-
 
 
 "overrides": {
 
 
-
 "@dynatrace/opentelemetry-core": "1.327.0"
 
 
-
 }
-
 
 
 }

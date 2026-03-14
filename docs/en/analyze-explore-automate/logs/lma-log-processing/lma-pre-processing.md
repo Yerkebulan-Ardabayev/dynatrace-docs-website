@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:23.662335
 
 # Log pre-processing with OpenPipeline with ready-made bundles
 
-# Log pre-processing with OpenPipeline with ready-made bundles
 
 * Latest Dynatrace
 * Explanation

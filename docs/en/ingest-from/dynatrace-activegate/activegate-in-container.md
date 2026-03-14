@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:00.595701
 
 # ActiveGate container image
 
-# ActiveGate container image
 
 * Latest Dynatrace
 * 2-min read
@@ -90,9 +89,7 @@ Dynatrace built-in registry
    kubectl -n dynatrace create secret generic dynatrace-tokens \
 
 
-
    --from-literal=tenant-token=<YOUR_TENANT_TOKEN> \
-
 
 
    --from-literal=auth-token=<YOUR_AUTH_TOKEN>
@@ -102,9 +99,7 @@ Dynatrace built-in registry
    oc -n dynatrace create secret generic dynatrace-tokens \
 
 
-
    --from-literal=tenant-token=<YOUR_TENANT_TOKEN> \
-
 
 
    --from-literal=auth-token=<YOUR_AUTH_TOKEN>
@@ -122,625 +117,469 @@ Dynatrace built-in registry
    apiVersion: v1
 
 
-
    kind: Service
-
 
 
    metadata:
 
 
-
    name: dynatrace-activegate
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    type: ClusterIP
 
 
-
    selector:
-
 
 
    app.kubernetes.io/component: activegate
 
 
-
    component.dynatrace.com/feature: activegate
 
 
-
    ports:
-
 
 
    - protocol: TCP
 
 
-
    port: 443
-
 
 
    targetPort: ag-https
 
 
-
    ---
-
 
 
    apiVersion: apps/v1
 
 
-
    kind: StatefulSet
 
 
-
    metadata:
-
 
 
    name: dynatrace-activegate
 
 
-
    namespace: dynatrace
-
 
 
    labels:
 
 
-
    app.kubernetes.io/component: activegate
-
 
 
    component.dynatrace.com/feature: activegate
 
 
-
    spec:
-
 
 
    podManagementPolicy: Parallel
 
 
-
    serviceName: ""
-
 
 
    selector:
 
 
-
    matchLabels:
-
 
 
    app.kubernetes.io/component: activegate
 
 
-
    component.dynatrace.com/feature: activegate
-
 
 
    template:
 
 
-
    metadata:
-
 
 
    labels:
 
 
-
    app.kubernetes.io/component: activegate
-
 
 
    component.dynatrace.com/feature: activegate
 
 
-
    spec:
-
 
 
    affinity:
 
 
-
    nodeAffinity:
-
 
 
    requiredDuringSchedulingIgnoredDuringExecution:
 
 
-
    nodeSelectorTerms:
-
 
 
    - matchExpressions:
 
 
-
    - key: kubernetes.io/arch
-
 
 
    operator: In
 
 
-
    values:
-
 
 
    - <CPU_ARCHITECTURE>
 
 
-
    - key: kubernetes.io/os
-
 
 
    operator: In
 
 
-
    values:
-
 
 
    - linux
 
 
-
    containers:
-
 
 
    - name: activegate
 
 
-
    image: <REPOSITORY_URL>/dynatrace-activegate:<IMAGE_TAG>
-
 
 
    imagePullPolicy: Always
 
 
-
    ports:
-
 
 
    - containerPort: 9999
 
 
-
    name: ag-https
-
 
 
    protocol: TCP
 
 
-
    env:
-
 
 
    - name: DT_TENANT
 
 
-
    value: <YOUR_ENVIRONMENT_ID>
-
 
 
    - name: DT_SERVER
 
 
-
    value: <YOUR_COMMUNICATION_ENDPOINTS>
-
 
 
    - name: DT_ID_SEED_NAMESPACE
 
 
-
    value: dynatrace
-
 
 
    - name: DT_ID_SEED_K8S_CLUSTER_ID
 
 
-
    value: <YOUR_KUBE-SYSTEM_NAMESPACE_UUID>
-
 
 
    - name: DT_CAPABILITIES
 
 
-
    value: restInterface,kubernetes_monitoring,MSGrouter,metrics_ingest
-
 
 
    - name: DT_DEPLOYMENT_METADATA
 
 
-
    value: orchestration_tech=handcrated-ag-sts;script_version=none;orchestrator_id=none
-
 
 
    - name: DT_DNS_ENTRY_POINT
 
 
-
    value: https://$(DYNATRACE_ACTIVEGATE_SERVICE_HOST):$(DYNATRACE_ACTIVEGATE_SERVICE_PORT)/communication
-
 
 
    volumeMounts:
 
 
-
    - name: dynatrace-tokens
-
 
 
    mountPath: /var/lib/dynatrace/secrets/tokens
 
 
-
    - name: truststore-volume
-
 
 
    mountPath: /opt/dynatrace/gateway/jre/lib/security/cacerts
 
 
-
    readOnly: true
-
 
 
    subPath: k8s-local.jks
 
 
-
    - name: server-certs-storage
-
 
 
    mountPath: /var/lib/dynatrace/gateway/ssl
 
 
-
    - name: ag-lib-gateway-config
-
 
 
    mountPath: /var/lib/dynatrace/gateway/config
 
 
-
    - name: ag-lib-gateway-temp
-
 
 
    mountPath: /var/lib/dynatrace/gateway/temp
 
 
-
    - name: ag-lib-gateway-data
-
 
 
    mountPath: /var/lib/dynatrace/gateway/data
 
 
-
    - name: ag-log-gateway
-
 
 
    mountPath: /var/log/dynatrace/gateway
 
 
-
    - name: ag-tmp-gateway
-
 
 
    mountPath: /var/tmp/dynatrace/gateway
 
 
-
    livenessProbe:
-
 
 
    failureThreshold: 2
 
 
-
    httpGet:
-
 
 
    path: /rest/state
 
 
-
    port: ag-https
-
 
 
    scheme: HTTPS
 
 
-
    initialDelaySeconds: 30
-
 
 
    periodSeconds: 30
 
 
-
    successThreshold: 1
 
 
-
    timeoutSeconds: 1
-
 
 
    readinessProbe:
 
 
-
    failureThreshold: 3
-
 
 
    httpGet:
 
 
-
    path: /rest/health
-
 
 
    port: ag-https
 
 
-
    scheme: HTTPS
-
 
 
    initialDelaySeconds: 30
 
 
-
    periodSeconds: 15
-
 
 
    successThreshold: 1
 
 
-
    timeoutSeconds: 1
-
 
 
    resources:
 
 
-
    requests:
-
 
 
    cpu: 500m
 
 
-
    memory: 512Mi
-
 
 
    limits:
 
 
-
    cpu: 1000m
-
 
 
    memory: 1.5Gi
 
 
-
    securityContext:
-
 
 
    allowPrivilegeEscalation: false
 
 
-
    capabilities:
-
 
 
    drop:
 
 
-
    - all
-
 
 
    privileged: false
 
 
-
    readOnlyRootFilesystem: true
-
 
 
    runAsNonRoot: true
 
 
-
    seccompProfile:
-
 
 
    type: RuntimeDefault
 
 
-
    initContainers:
-
 
 
    - name: certificate-loader
 
 
-
    image: <REPOSITORY_URL>/dynatrace-activegate:<IMAGE_TAG>
-
 
 
    workingDir: /var/lib/dynatrace/gateway
 
 
-
    command: ['/bin/bash']
-
 
 
    args: ['-c', '/opt/dynatrace/gateway/k8scrt2jks.sh']
 
 
-
    volumeMounts:
-
 
 
    - mountPath: /var/lib/dynatrace/gateway/ssl
 
 
-
    name: truststore-volume
-
 
 
    volumes:
 
 
-
    - name: truststore-volume
 
 
-
    emptyDir: {}
-
 
 
    - name: dynatrace-tokens
 
 
-
    secret:
-
 
 
    secretName: dynatrace-tokens
 
 
-
    - name: server-certs-storage
 
 
-
    emptyDir: {}
-
 
 
    - name: ag-lib-gateway-config
 
 
-
    emptyDir: {}
-
 
 
    - name: ag-lib-gateway-temp
 
 
-
    emptyDir: {}
-
 
 
    - name: ag-lib-gateway-data
 
 
-
    emptyDir: {}
-
 
 
    - name: ag-log-gateway
 
 
-
    emptyDir: {}
-
 
 
    - name: ag-tmp-gateway
 
 
-
    emptyDir: {}
 
 
-
    updateStrategy:
-
 
 
    type: RollingUpdate
@@ -777,17 +616,13 @@ Dynatrace built-in registry
      spec:
 
 
-
      template:
-
 
 
      metadata:
 
 
-
      annotations:
-
 
 
      container.apparmor.security.beta.kubernetes.io/activegate: runtime/default
@@ -850,13 +685,10 @@ Dynatrace built-in registry
    kubectl -n dynatrace create secret docker-registry dynatrace-docker-registry \
 
 
-
    --docker-server=<YOUR_ENVIRONMENT_URL> \
 
 
-
    --docker-username=<YOUR_ENVIRONMENT_ID> \
-
 
 
    --docker-password=<YOUR_INSTALLER_DOWNLOAD_TOKEN>
@@ -866,13 +698,10 @@ Dynatrace built-in registry
    oc -n dynatrace create secret docker-registry dynatrace-docker-registry \
 
 
-
    --docker-server=<YOUR_ENVIRONMENT_URL> \
 
 
-
    --docker-username=<YOUR_ENVIRONMENT_ID> \
-
 
 
    --docker-password=<YOUR_INSTALLER_DOWNLOAD_TOKEN> -n dynatrace
@@ -898,9 +727,7 @@ Dynatrace built-in registry
    kubectl -n dynatrace create secret generic dynatrace-tokens \
 
 
-
    --from-literal=tenant-token=<YOUR_TENANT_TOKEN> \
-
 
 
    --from-literal=auth-token=<YOUR_AUTH_TOKEN>
@@ -910,9 +737,7 @@ Dynatrace built-in registry
    oc -n dynatrace create secret generic dynatrace-tokens \
 
 
-
    --from-literal=tenant-token=<YOUR_TENANT_TOKEN> \
-
 
 
    --from-literal=auth-token=<YOUR_AUTH_TOKEN>
@@ -930,633 +755,475 @@ Dynatrace built-in registry
    apiVersion: v1
 
 
-
    kind: Service
-
 
 
    metadata:
 
 
-
    name: dynatrace-activegate
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    type: ClusterIP
 
 
-
    selector:
-
 
 
    app.kubernetes.io/component: activegate
 
 
-
    component.dynatrace.com/feature: activegate
 
 
-
    ports:
-
 
 
    - protocol: TCP
 
 
-
    port: 443
-
 
 
    targetPort: ag-https
 
 
-
    ---
-
 
 
    apiVersion: apps/v1
 
 
-
    kind: StatefulSet
 
 
-
    metadata:
-
 
 
    name: dynatrace-activegate
 
 
-
    namespace: dynatrace
-
 
 
    labels:
 
 
-
    app.kubernetes.io/component: activegate
-
 
 
    component.dynatrace.com/feature: activegate
 
 
-
    spec:
-
 
 
    podManagementPolicy: Parallel
 
 
-
    serviceName: ""
-
 
 
    selector:
 
 
-
    matchLabels:
-
 
 
    app.kubernetes.io/component: activegate
 
 
-
    component.dynatrace.com/feature: activegate
-
 
 
    template:
 
 
-
    metadata:
-
 
 
    labels:
 
 
-
    app.kubernetes.io/component: activegate
-
 
 
    component.dynatrace.com/feature: activegate
 
 
-
    spec:
-
 
 
    affinity:
 
 
-
    nodeAffinity:
-
 
 
    requiredDuringSchedulingIgnoredDuringExecution:
 
 
-
    nodeSelectorTerms:
-
 
 
    - matchExpressions:
 
 
-
    - key: kubernetes.io/arch
-
 
 
    operator: In
 
 
-
    values:
-
 
 
    - amd64
 
 
-
    - key: kubernetes.io/os
-
 
 
    operator: In
 
 
-
    values:
-
 
 
    - linux
 
 
-
    containers:
-
 
 
    - name: activegate
 
 
-
    image: <YOUR_ENVIRONMENT_URL>/linux/activegate:raw
-
 
 
    imagePullPolicy: Always
 
 
-
    ports:
-
 
 
    - containerPort: 9999
 
 
-
    name: ag-https
-
 
 
    protocol: TCP
 
 
-
    env:
-
 
 
    - name: DT_TENANT
 
 
-
    value: <YOUR_ENVIRONMENT_ID>
-
 
 
    - name: DT_SERVER
 
 
-
    value: <YOUR_COMMUNICATION_ENDPOINTS>
-
 
 
    - name: DT_ID_SEED_NAMESPACE
 
 
-
    value: dynatrace
-
 
 
    - name: DT_ID_SEED_K8S_CLUSTER_ID
 
 
-
    value: <YOUR_KUBE-SYSTEM_NAMESPACE_UUID>
-
 
 
    - name: DT_CAPABILITIES
 
 
-
    value: restInterface,kubernetes_monitoring,MSGrouter,metrics_ingest
-
 
 
    - name: DT_DEPLOYMENT_METADATA
 
 
-
    value: orchestration_tech=handcrated-ag-sts;script_version=none;orchestrator_id=none
-
 
 
    - name: DT_DNS_ENTRY_POINT
 
 
-
    value: https://$(DYNATRACE_ACTIVEGATE_SERVICE_HOST):$(DYNATRACE_ACTIVEGATE_SERVICE_PORT)/communication
-
 
 
    volumeMounts:
 
 
-
    - name: dynatrace-tokens
-
 
 
    mountPath: /var/lib/dynatrace/secrets/tokens
 
 
-
    - name: truststore-volume
-
 
 
    mountPath: /opt/dynatrace/gateway/jre/lib/security/cacerts
 
 
-
    readOnly: true
-
 
 
    subPath: k8s-local.jks
 
 
-
    - name: server-certs-storage
-
 
 
    mountPath: /var/lib/dynatrace/gateway/ssl
 
 
-
    - name: ag-lib-gateway-config
-
 
 
    mountPath: /var/lib/dynatrace/gateway/config
 
 
-
    - name: ag-lib-gateway-temp
-
 
 
    mountPath: /var/lib/dynatrace/gateway/temp
 
 
-
    - name: ag-lib-gateway-data
-
 
 
    mountPath: /var/lib/dynatrace/gateway/data
 
 
-
    - name: ag-log-gateway
-
 
 
    mountPath: /var/log/dynatrace/gateway
 
 
-
    - name: ag-tmp-gateway
-
 
 
    mountPath: /var/tmp/dynatrace/gateway
 
 
-
    livenessProbe:
-
 
 
    failureThreshold: 2
 
 
-
    httpGet:
-
 
 
    path: /rest/state
 
 
-
    port: ag-https
-
 
 
    scheme: HTTPS
 
 
-
    initialDelaySeconds: 30
-
 
 
    periodSeconds: 30
 
 
-
    successThreshold: 1
 
 
-
    timeoutSeconds: 1
-
 
 
    readinessProbe:
 
 
-
    failureThreshold: 3
-
 
 
    httpGet:
 
 
-
    path: /rest/health
-
 
 
    port: ag-https
 
 
-
    scheme: HTTPS
-
 
 
    initialDelaySeconds: 30
 
 
-
    periodSeconds: 15
-
 
 
    successThreshold: 1
 
 
-
    timeoutSeconds: 1
-
 
 
    resources:
 
 
-
    requests:
-
 
 
    cpu: 500m
 
 
-
    memory: 512Mi
-
 
 
    limits:
 
 
-
    cpu: 1000m
-
 
 
    memory: 1.5Gi
 
 
-
    securityContext:
-
 
 
    allowPrivilegeEscalation: false
 
 
-
    capabilities:
-
 
 
    drop:
 
 
-
    - all
-
 
 
    privileged: false
 
 
-
    readOnlyRootFilesystem: true
-
 
 
    runAsNonRoot: true
 
 
-
    seccompProfile:
-
 
 
    type: RuntimeDefault
 
 
-
    initContainers:
-
 
 
    - name: certificate-loader
 
 
-
    image: <YOUR_ENVIRONMENT_URL>/linux/activegate:raw
-
 
 
    workingDir: /var/lib/dynatrace/gateway
 
 
-
    command: ['/bin/bash']
-
 
 
    args: ['-c', '/opt/dynatrace/gateway/k8scrt2jks.sh']
 
 
-
    volumeMounts:
-
 
 
    - mountPath: /var/lib/dynatrace/gateway/ssl
 
 
-
    name: truststore-volume
-
 
 
    imagePullSecrets:
 
 
-
    - name: dynatrace-docker-registry
-
 
 
    volumes:
 
 
-
    - name: truststore-volume
 
 
-
    emptyDir: {}
-
 
 
    - name: dynatrace-tokens
 
 
-
    secret:
-
 
 
    secretName: dynatrace-tokens
 
 
-
    - name: server-certs-storage
 
 
-
    emptyDir: {}
-
 
 
    - name: ag-lib-gateway-config
 
 
-
    emptyDir: {}
-
 
 
    - name: ag-lib-gateway-temp
 
 
-
    emptyDir: {}
-
 
 
    - name: ag-lib-gateway-data
 
 
-
    emptyDir: {}
-
 
 
    - name: ag-log-gateway
 
 
-
    emptyDir: {}
-
 
 
    - name: ag-tmp-gateway
 
 
-
    emptyDir: {}
 
 
-
    updateStrategy:
-
 
 
    type: RollingUpdate
@@ -1595,17 +1262,13 @@ Dynatrace built-in registry
      spec:
 
 
-
      template:
-
 
 
      metadata:
 
 
-
      annotations:
-
 
 
      container.apparmor.security.beta.kubernetes.io/activegate: runtime/default
@@ -1659,9 +1322,7 @@ To finish setup of containerized ActiveGate on PPC64le architecture, two more st
      [com.compuware.apm.webserver]
 
 
-
      threadpool-max-size=30
-
 
 
      async-worker-pool-coresize=60

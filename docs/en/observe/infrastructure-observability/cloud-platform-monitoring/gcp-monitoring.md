@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:29:02.800414
 
 # Google Cloud monitoring
 
-# Google Cloud monitoring
 
 * Latest Dynatrace
 * Explanation

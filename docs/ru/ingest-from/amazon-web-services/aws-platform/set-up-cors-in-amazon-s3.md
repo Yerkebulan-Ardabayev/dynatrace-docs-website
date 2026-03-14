@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:27.772573
 
 # Настройка CORS в Amazon S3
 
-# Настройка CORS в Amazon S3
 
 * Classic
 * How-to guide
@@ -42,57 +41,43 @@ scraped: 2026-03-05T21:25:27.772573
    [
 
 
-
    {
-
 
 
    "AllowedHeaders": [
 
 
-
    "*"
 
 
-
    ],
-
 
 
    "AllowedMethods": [
 
 
-
    "GET",
-
 
 
    "HEAD"
 
 
-
    ],
-
 
 
    "AllowedOrigins": [
 
 
-
    "*"
-
 
 
    ],
 
 
-
    "ExposeHeaders": []
 
 
-
    }
-
 
 
    ]

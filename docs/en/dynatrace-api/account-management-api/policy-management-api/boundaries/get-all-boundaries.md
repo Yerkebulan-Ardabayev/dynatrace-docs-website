@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:36:14.135297
 
 # Policy management API - GET all policy boundaries
 
-# Policy management API - GET all policy boundaries
 
 * Latest Dynatrace
 * Reference
@@ -46,13 +45,10 @@ In this example, the request retrieves all the policy boundaries that apply to t
 curl --request GET \
 
 
-
 --url 'https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890' \
 
 
-
 --header 'accept: application/json' \
-
 
 
 --header 'Authorization: Bearer abcdefjhij1234567890'
@@ -70,229 +66,172 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 {
 
 
-
 "pageSize": 100,
-
 
 
 "pageNumber": 1,
 
 
-
 "totalCount": 22,
-
 
 
 "content": [
 
 
-
 {
-
 
 
 "uuid": "a13f7b92-4c8e-4d3a-a1f7-9e3b6c2d8f01",
 
 
-
 "levelType": "account",
 
 
-
 "levelId": "f1a2b3c4-d5e6-7890-ab12-34cd56ef7890",
-
 
 
 "name": "Bnd1",
 
 
-
 "boundaryQuery": "storage:dt.security_context = '${bindParam:bucket-name-param}';",
-
 
 
 "boundaryConditions": [
 
 
-
 {
-
 
 
 "name": "storage:dt.security_context",
 
 
-
 "operator": "EQ",
 
 
-
 "values": [
-
 
 
 "${bindParam:bucket-name-param}"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
-
 
 
 "metadata": {}
 
 
-
 },
 
 
-
 {
-
 
 
 "uuid": "345a2b02-678e-45ff-92c1-4b4fd5er3b0f",
 
 
-
 "levelType": "account",
 
 
-
 "levelId": "f1a2b3c4-d5e6-7890-ab12-34cd56ef7890",
-
 
 
 "name": "bnd101",
 
 
-
 "boundaryQuery": "storage:gcp.project.id = \"123\";",
-
 
 
 "boundaryConditions": [
 
 
-
 {
-
 
 
 "name": "storage:gcp.project.id",
 
 
-
 "operator": "EQ",
 
 
-
 "values": [
-
 
 
 "123"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
-
 
 
 "metadata": {}
 
 
-
 },
 
 
-
 {
-
 
 
 "uuid": "a567b345-2345-4ab5-b8d1-0e9a65ae678f",
 
 
-
 "levelType": "account",
-
 
 
 "levelId": "f1a2b3c4-d5e6-7890-ab12-34cd56ef7890",
 
 
-
 "name": "bnd101_alpha",
-
 
 
 "boundaryQuery": "storage:dt.security_context = 'alpha';\n//storage:bucket-name = 'alpha';",
 
 
-
 "boundaryConditions": [
-
 
 
 {
 
 
-
 "name": "storage:dt.security_context",
-
 
 
 "operator": "EQ",
 
 
-
 "values": [
-
 
 
 "alpha"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
-
 
 
 "metadata": {}
 
 
-
 },
 
 
-
 ]
-
 
 
 }

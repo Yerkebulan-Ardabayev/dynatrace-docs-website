@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:46.968318
 
 # Monaco configuration YAML file - list of special configuration types
 
-# Monaco configuration YAML file - list of special configuration types
 
 * Latest Dynatrace
 * Reference
@@ -78,57 +77,43 @@ We recommend the following values for the `dashboardMetadata`:
 "dashboardMetadata": {
 
 
-
 "name": "{{ .name }}",
-
 
 
 "shared": true,
 
 
-
 "sharingDetails": {
-
 
 
 "linkShared": true,
 
 
-
 "published": true
-
 
 
 },
 
 
-
 "dashboardFilter": {
-
 
 
 "timeframe": "",
 
 
-
 "managementZone": {
-
 
 
 "id": "{{ .managementZoneId }}",
 
 
-
 "name": "{{ .managementZoneName }}"
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -158,17 +143,13 @@ You need to reference at least the `metricKey` of the log metric, as `{{ .name }
 configs:
 
 
-
 - id: some-log-metric-config
-
 
 
 config:
 
 
-
 name:  "cal.log:this-is-some-metric"
-
 
 
 [...]
@@ -180,21 +161,16 @@ And in the corresponding JSON:
 {
 
 
-
 "metricKey": "{{ .name }}",
-
 
 
 "active": true,
 
 
-
 "displayName": "{{ .name }}",
 
 
-
 [...]
-
 
 
 }
@@ -211,21 +187,16 @@ The `PROCESS_GROUP` type:
 {
 
 
-
 "type": "PROCESS_GROUP",
-
 
 
 "nameFormat": "Test naming PG for {Host:DetectedName}",
 
 
-
 "displayName": "{{ .name }}",
 
 
-
 [...]
-
 
 
 }
@@ -237,21 +208,16 @@ The `HOST` type:
 {
 
 
-
 "type": "HOST",
-
 
 
 "nameFormat": "Test - {Host:DetectedName}",
 
 
-
 "displayName": "{{ .name }}",
 
 
-
 [...]
-
 
 
 }
@@ -263,21 +229,16 @@ The `SERVICE` type:
 {
 
 
-
 "type": "SERVICE",
-
 
 
 "nameFormat": "{ProcessGroup:KubernetesNamespace} - {Service:DetectedName}",
 
 
-
 "displayName": "{{ .name }}",
 
 
-
 ...
-
 
 
 }
@@ -296,285 +257,214 @@ For example, while the API response for a custom alert config (`builtin:davis.an
 {
 
 
-
 "items": [
 
 
-
 {
-
 
 
 "objectId": "XYZ",
 
 
-
 "value": {
-
 
 
 "enabled": false,
 
 
-
 "title": "Error when adding item to cart",
-
 
 
 "description": "",
 
 
-
 "source": "Anomaly Detection",
-
 
 
 "executionSettings": {
 
 
-
 "queryOffset": 3
 
 
-
 },
-
 
 
 "analyzer": {
 
 
-
 "name": "dt.statistics.ui.anomaly_detection.StaticThresholdAnomalyDetectionAnalyzer",
-
 
 
 "input": [
 
 
-
 {
-
 
 
 "key": "query",
 
 
-
 "value": "timeseries cartFailedToAddItem=sum(log.cartFailedToAddItem)"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "slidingWindow",
 
 
-
 "value": "3"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "violatingSamples",
 
 
-
 "value": "1"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "dealertingSamples",
 
 
-
 "value": "3"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "alertCondition",
 
 
-
 "value": "ABOVE"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "alertOnMissingData",
 
 
-
 "value": "false"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "threshold",
 
 
-
 "value": "0"
-
 
 
 }
 
 
-
 ]
 
 
-
 },
-
 
 
 "eventTemplate": {
 
 
-
 "properties": [
 
 
-
 {
-
 
 
 "key": "event.name",
 
 
-
 "value": "Cart Failure increase"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "event.description",
 
 
-
 "value": "The {metricname} value was {alert_condition} normal behavior."
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "event.type",
 
 
-
 "value": "ERROR_EVENT"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "dt.event.allow_davis_merge",
 
 
-
 "value": "true"
 
 
-
 }
-
 
 
 ]
 
 
+}
+
 
 }
 
 
-
 }
-
-
-
-}
-
 
 
 ]
-
 
 
 "totalCount": 89,
 
 
-
 "pageSize": 1,
 
 
-
 "nextPageKey": "XY"
-
 
 
 }
@@ -586,245 +476,184 @@ The Dynatrace Monaco JSON template only requires the `value` content:
 {
 
 
-
 "enabled": false,
-
 
 
 "title": "Error when adding item to cart",
 
 
-
 "description": "",
-
 
 
 "source": "Anomaly Detection",
 
 
-
 "executionSettings": {
-
 
 
 "queryOffset": 3
 
 
-
 },
-
 
 
 "analyzer": {
 
 
-
 "name": "dt.statistics.ui.anomaly_detection.StaticThresholdAnomalyDetectionAnalyzer",
-
 
 
 "input": [
 
 
-
 {
-
 
 
 "key": "query",
 
 
-
 "value": "timeseries cartFailedToAddItem=sum(log.cartFailedToAddItem)"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "slidingWindow",
 
 
-
 "value": "3"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "violatingSamples",
 
 
-
 "value": "1"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "dealertingSamples",
 
 
-
 "value": "3"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "alertCondition",
 
 
-
 "value": "ABOVE"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "alertOnMissingData",
 
 
-
 "value": "false"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "threshold",
 
 
-
 "value": "0"
-
 
 
 }
 
 
-
 ]
 
 
-
 },
-
 
 
 "eventTemplate": {
 
 
-
 "properties": [
 
 
-
 {
-
 
 
 "key": "event.name",
 
 
-
 "value": "Cart Failure increase"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "event.description",
 
 
-
 "value": "The {metricname} value was {alert_condition} normal behavior."
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "event.type",
 
 
-
 "value": "ERROR_EVENT"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "dt.event.allow_davis_merge",
 
 
-
 "value": "true"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 }

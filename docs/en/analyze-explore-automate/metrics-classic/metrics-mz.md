@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:31.373291
 
 # Filter classic metrics by management zone
 
-# Filter classic metrics by management zone
 
 * Classic
 * 4-min read

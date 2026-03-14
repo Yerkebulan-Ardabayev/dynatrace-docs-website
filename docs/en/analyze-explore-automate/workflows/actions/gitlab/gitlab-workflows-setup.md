@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:42.472660
 
 # Set up GitLab Connector
 
-# Set up GitLab Connector
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:08.142213
 
 # Automatic log enrichment (Logs Classic)
 
-# Automatic log enrichment (Logs Classic)
 
 * Classic
 * Explanation

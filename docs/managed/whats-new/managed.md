@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace Managed release notes
 
-# Dynatrace Managed release notes
 
 * Release notes
 * Updated on Feb 04, 2026

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:29.720687
 
 # Configure beacon endpoint for web applications
 
-# Configure beacon endpoint for web applications
 
 * Classic
 * How-to guide

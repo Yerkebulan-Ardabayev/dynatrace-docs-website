@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:52.597060
 
 # Upgrade Log Monitoring Classic to Log Management and Analytics
 
-# Upgrade Log Monitoring Classic to Log Management and Analytics
 
 * Classic
 * 5-min read
@@ -126,21 +125,16 @@ The user access granting process depends on whether you are a new or existing us
      {
 
 
-
      "scope": "iam:policies:read iam:policies:write",
-
 
 
      "token_type": "Bearer",
 
 
-
      "expires_in": 300,
 
 
-
      "access_token": "123(...)ABC"
-
 
 
      }
@@ -154,21 +148,16 @@ The user access granting process depends on whether you are a new or existing us
      {
 
 
-
      "name": "Storage Events Read",
-
 
 
      "description": "Storage Events Read",
 
 
-
      "tags": [
 
 
-
      ],
-
 
 
      "statementQuery": "ALLOW storage:events:read;"
@@ -182,25 +171,19 @@ The user access granting process depends on whether you are a new or existing us
      {
 
 
-
      "name": "Storage Logs Read",
-
 
 
      "description": "Storage Logs Read",
 
 
-
      "tags": [
-
 
 
      ]  ,
 
 
-
      "statementQuery": "ALLOW storage:logs:read;"
-
 
 
      }

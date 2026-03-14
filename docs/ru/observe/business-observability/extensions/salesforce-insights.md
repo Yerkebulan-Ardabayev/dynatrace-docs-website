@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:39.366787
 
 # Salesforce Insights
 
-# Salesforce Insights
 
 * Последняя версия Dynatrace
 * Расширение
@@ -230,7 +229,6 @@ Platform Events
 fetch bizevents
 
 
-
 | filter event.type == "salesforce.ApiEventStream"
 ```
 
@@ -247,9 +245,7 @@ fetch bizevents
 fetch bizevents
 
 
-
 | filter event.type == "salesforce.ApiEventStream"
-
 
 
 | summarize count(), by: {SourceIp}
@@ -265,9 +261,7 @@ fetch bizevents
 fetch bizevents
 
 
-
 | filter event.provider == "https://dynatrace--staging.sandbox.my.salesforce.com"
-
 
 
 | summarize count(), by: {event.type}
@@ -283,13 +277,10 @@ fetch bizevents
 fetch bizevents
 
 
-
 | filter event.type == "salesforce.LoginEventStream"
 
 
-
 | makeTimeseries logins=count(), by:{Username}, interval: 5m
-
 
 
 | sort logins desc
@@ -361,7 +352,6 @@ SELECT useraction.name, SUM(longProperties.rowsprocessed) FROM useraction WHERE 
 fetch logs
 
 
-
 | filter query.type == "EventLogFile"
 ```
 
@@ -380,9 +370,7 @@ fetch logs
 fetch logs
 
 
-
 | filter EVENT_TYPE == "ApexExecution"
-
 
 
 | fields TIMESTAMP_DERIVED, ENTRY_POINT, EXEC_TIME, CPU_TIME, DB_TOTAL_TIME, NUMBER_SOQL_QUERIES
@@ -425,7 +413,6 @@ fetch logs
 Query Name: Logins
 
 
-
 Query: SELECT UserId, COUNT(Id) from LoginHistory WHERE LoginTime > {last_execution_timestamp} GROUP BY UserId
 ```
 
@@ -435,7 +422,6 @@ Query: SELECT UserId, COUNT(Id) from LoginHistory WHERE LoginTime > {last_execut
 
 ```
 fetch logs
-
 
 
 | filter query.name == "Logins"
@@ -451,9 +437,7 @@ fetch logs
 fetch logs
 
 
-
 | filter query.name == "Logins"
-
 
 
 | makeTimeseries sum(toDouble(expr0)), by: {UserId}, interval: 5m
@@ -469,9 +453,7 @@ fetch logs
 fetch logs
 
 
-
 | filter event.provider == "https://dynatrace--staging.sandbox.my.salesforce.com"
-
 
 
 | summarize count(), by: {query.name}
@@ -517,7 +499,6 @@ Platform Events отправляются в Dynatrace как бизнес-соб
 fetch bizevents
 
 
-
 | filter event.type == "salesforce.YourCustomEvent__e"
 ```
 
@@ -527,9 +508,7 @@ fetch bizevents
 fetch bizevents
 
 
-
 | filter event.provider == "https://yourinstance.my.salesforce.com"
-
 
 
 | summarize count(), by: {event.type}

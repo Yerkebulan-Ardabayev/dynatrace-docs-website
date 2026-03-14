@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:26:56.560722
 
 # Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
 
-# Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
 
 * Latest Dynatrace
 * Reference
@@ -189,377 +188,283 @@ DynaKubes for both Kubernetes platform monitoring and OneAgent, telemetry ingest
 apiVersion: dynatrace.com/v1beta5
 
 
-
 kind: DynaKube
 
 
-
 metadata:
-
 
 
 name: k8s-monitoring
 
 
-
 namespace: dynatrace
-
 
 
 annotations:
 
 
-
 feature.dynatrace.com/k8s-app-enabled: "true"
-
 
 
 spec:
 
 
-
 apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
-
 
 
 tokens: <SECRET NAME>
 
 
-
 # Link to api reference for further information: https://docs.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
-
 
 
 activeGate:
 
 
-
 capabilities:
-
 
 
 - kubernetes-monitoring
 
 
-
 resources:
-
 
 
 requests:
 
 
-
 cpu: 1000m
-
 
 
 memory: 10Gi
 
 
-
 limits:
-
 
 
 # cpu: 2000m
 
 
-
 memory: 10Gi
-
 
 
 #kspm:
 
 
-
 #mappedHostPaths:
-
 
 
 #- /boot
 
 
-
 #- /etc
-
 
 
 #- /proc/sys/kernel
 
 
-
 #- /sys/fs
-
 
 
 #- /sys/kernel/security/apparmor
 
 
-
 #- /usr/lib/systemd/system
-
 
 
 #- /var/lib
 
 
-
 #templates:
-
 
 
 #kspmNodeConfigurationCollector:
 
 
-
 #imageRef:
-
 
 
 #repository: public.ecr.aws/dynatrace/dynatrace-k8s-node-config-collector
 
 
-
 #tag: 1.5.2
-
 
 
 ---
 
 
-
 apiVersion: dynatrace.com/v1beta5
-
 
 
 kind: DynaKube
 
 
-
 metadata:
-
 
 
 name: agents
 
 
-
 namespace: dynatrace
-
 
 
 # Link to api reference for further information: https://docs.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
 
 
-
 spec:
-
 
 
 apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
 
 
-
 tokens: <SECRET NAME>
-
 
 
 metadataEnrichment:
 
 
-
 enabled: true
-
 
 
 oneAgent:
 
 
-
 applicationMonitoring: {}
-
 
 
 activeGate:
 
 
-
 capabilities:
-
 
 
 - routing
 
 
-
 - debugging
-
 
 
 resources:
 
 
-
 requests:
-
 
 
 cpu: 1000m
 
 
-
 memory: 6Gi
-
 
 
 limits:
 
 
-
 # cpu: 4000m
-
 
 
 memory: 6Gi
 
 
-
 replicas: 6
-
 
 
 #customProperties:
 
 
-
 #value: |
-
 
 
 #[otlp_ingest]
 
 
-
 #otlp_ingest_enabled = true
-
 
 
 #logMonitoring: {}
 
 
-
 #extensions: {}
-
 
 
 #telemetryIngest:
 
 
-
 #protocols:
-
 
 
 #- jaeger
 
 
-
 #- otlp
-
 
 
 #- statsd
 
 
-
 #- zipkin
-
 
 
 #serviceName: telemetry-ingest
 
 
-
 templates:
-
 
 
 #logMonitoring:
 
 
-
 #imageRef:
-
 
 
 #repository: public.ecr.aws/dynatrace/dynatrace-logmodule
 
 
-
 #tag: <>
-
 
 
 #tolerations:
 
 
-
 #- effect: NoSchedule
-
 
 
 #  key: node-role.kubernetes.io/master
 
 
-
 #  operator: Exists
-
 
 
 #- effect: NoSchedule
 
 
-
 #  key: node-role.kubernetes.io/control-plane
-
 
 
 #  operator: Exists
 
 
-
 #extensionExecutionController:
 
 
-
 #imageRef:
-
 
 
 #repository: <ENVIRONMENTID>/dynatrace/linux/dynatrace-eec
 
 
-
 #tag: latest
-
 
 
 #otelCollector:
 
 
-
 #replicas: 1
-
 
 
 #imageRef:
 
 
-
 #repository: public.ecr.aws/dynatrace/dynatrace-otel-collector
-
 
 
 #tag: <tag>

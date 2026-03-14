@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:30:41.169377
 
 # Azure Relay monitoring
 
-# Azure Relay monitoring
 
 * Latest Dynatrace
 * How-to guide

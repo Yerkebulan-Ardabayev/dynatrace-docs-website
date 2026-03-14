@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:30.239053
 
 # Detect performance issues
 
-# Detect performance issues
 
 * Latest Dynatrace
 * Tutorial

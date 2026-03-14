@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:51.285498
 
 # Мониторинг Azure AI — Language Understanding (LUIS)
 
-# Мониторинг Azure AI — Language Understanding (LUIS)
 
 * Последняя версия Dynatrace
 * Практическое руководство

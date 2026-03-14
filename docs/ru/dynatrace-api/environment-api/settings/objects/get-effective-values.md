@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:40.987848
 
 # Settings API — GET effective values (получение эффективных значений)
 
-# Settings API — GET effective values (получение эффективных значений)
 
 * Справочник
 * Опубликовано 26 августа 2022 г.
@@ -115,129 +114,98 @@ scraped: 2026-03-06T21:34:40.987848
 {
 
 
-
 "items": [
 
 
-
 {
-
 
 
 "author": "john.doe@example.com",
 
 
-
 "created": 1,
-
 
 
 "externalId": "string",
 
 
-
 "modified": 1,
-
 
 
 "origin": "HOST-D3A3C5A146830A79",
 
 
-
 "schemaId": "builtin:container.built-in-monitoring-rule",
-
 
 
 "schemaVersion": "1.0.0",
 
 
-
 "searchSummary": "string",
-
 
 
 "summary": "string",
 
 
-
 "value": "string"
-
 
 
 }
 
 
-
 ],
-
 
 
 "nextPageKey": "AQAAABQBAAAABQ==",
 
 
-
 "pageSize": 1,
-
 
 
 "totalCount": 1
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }

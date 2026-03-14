@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:09.563425
 
 # Ingest Sonatype Lifecycle security events and audit logs
 
-# Ingest Sonatype Lifecycle security events and audit logs
 
 * Latest Dynatrace
 * Extension
@@ -77,7 +76,6 @@ To ensure successful data collection, the authenticated user must have the follo
      fetch logs
 
 
-
      | filter log.source=="Sonatype Lifecycle"
      ```
    * For finding events:
@@ -86,13 +84,10 @@ To ensure successful data collection, the authenticated user must have the follo
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Sonatype Lifecycle"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -103,13 +98,10 @@ To ensure successful data collection, the authenticated user must have the follo
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Sonatype Lifecycle"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"

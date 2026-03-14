@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:16.263242
 
 # Service analysis timings
 
-# Service analysis timings
 
 * Classic
 * Reference

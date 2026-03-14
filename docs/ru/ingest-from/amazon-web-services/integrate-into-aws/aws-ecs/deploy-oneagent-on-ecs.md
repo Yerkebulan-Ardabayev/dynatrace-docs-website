@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:35:27.635545
 
 # Мониторинг Elastic Container Service (ECS) с типом запуска EC2
 
-# Мониторинг Elastic Container Service (ECS) с типом запуска EC2
 
 * Classic
 * Практическое руководство
@@ -69,7 +68,6 @@ scraped: 2026-03-04T21:35:27.635545
 
     ```
     "ipcMode": "host",
-
 
 
     "pidMode": "host",

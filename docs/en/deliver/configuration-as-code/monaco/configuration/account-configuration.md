@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:30:29.843938
 
 # Account configuration for Monaco account management
 
-# Account configuration for Monaco account management
 
 * Latest Dynatrace
 * How-to guide
@@ -21,29 +20,22 @@ In the following example, we define a single account object containing account-r
 accounts:
 
 
-
 - name: my-account
-
 
 
 accountUUID: 12345678-1234-5678-1234-123456789012
 
 
-
 oAuth:
-
 
 
 clientId:
 
 
-
 name: OAUTH_CLIENT_ID
 
 
-
 clientSecret:
-
 
 
 name: OAUTH_CLIENT_SECRET
@@ -72,205 +64,154 @@ The following sections will describe each configuration in detail.
 users:
 
 
-
 - email: monaco@dynatrace.com
-
 
 
 groups:
 
 
-
 - Log viewer
-
 
 
 - type: reference
 
 
-
 id: my-group
-
 
 
 serviceUsers:
 
 
-
 - name: Monaco service user
-
 
 
 description: Description of service user
 
 
-
 groups:
-
 
 
 - Log viewer
 
 
-
 - type: reference
 
 
-
 id: my-group
-
 
 
 groups:
 
 
-
 - name: My Group
-
 
 
 id: my-group
 
 
-
 description: This is my group
-
 
 
 account:
 
 
-
 permissions:
-
 
 
 - account-viewer
 
 
-
 policies:
-
 
 
 - policy: Environment role - Access environment
 
 
-
 environments:
-
 
 
 - environment: abc12345
 
 
-
 permissions:
-
 
 
 - tenant-viewer
 
 
-
 policies:
-
 
 
 - policy: Environment role - Replay session data without masking
 
 
-
 - policy:
-
 
 
 type: reference
 
 
-
 id: my-policy
 
 
-
 boundaries:
-
 
 
 - type: reference
 
 
-
 id: workflow-simple-boundary
-
 
 
 - MyExistingBoundary # If you want to reference by name directly
 
 
-
 managementZones:
-
 
 
 - environment: abc12345
 
 
-
 managementZone: Management Zone 2000
-
 
 
 permissions:
 
 
-
 - tenant-viewer
-
 
 
 policies:
 
 
-
 - name: My Policy
-
 
 
 id: my-policy
 
 
-
 level:
-
 
 
 type: account
 
 
-
 description: My policy description.
-
 
 
 policy: |-
 
 
-
 ALLOW automation:workflows:read;
-
 
 
 boundaries:
 
 
-
 - id: workflow-simple-boundary
 
 
-
 name: Workflow Simple boundary
-
 
 
 query: automation:workflow-type = "SIMPLE";
@@ -284,21 +225,16 @@ While this sample shows users, service users, groups, policies, and boundaries d
 users:
 
 
-
 - email: my-user@example.com
-
 
 
 groups:
 
 
-
 - Log viewer
 
 
-
 - type: reference
-
 
 
 id: my-group
@@ -322,29 +258,22 @@ Dynatrace Monaco CLI version 2.23.0+
 serviceUsers:
 
 
-
 - name: Monaco service user
-
 
 
 description: Description of the service user.
 
 
-
 originObjectId: 123e4567-e89b-12d3-a456-426614174000
-
 
 
 groups:
 
 
-
 - Log viewer
 
 
-
 - type: reference
-
 
 
 id: my-group
@@ -365,105 +294,79 @@ In this example, we define these objects.
 groups:
 
 
-
 - name: My Group
-
 
 
 id: my-group
 
 
-
 description: This is my group
-
 
 
 account:
 
 
-
 permissions:
-
 
 
 - account-viewer
 
 
-
 policies:
-
 
 
 - policy: Environment role - Access environment
 
 
-
 environments:
-
 
 
 - environment: abc12345
 
 
-
 permissions:
-
 
 
 - tenant-viewer
 
 
-
 policies:
-
 
 
 - policy: Environment role - Replay session data without masking
 
 
-
 - policy:
-
 
 
 type: reference
 
 
-
 id: my-policy
-
 
 
 boundaries:
 
 
-
 - type: reference
-
 
 
 id: my-boundary
 
 
-
 - MyExistingBoundary # If you want to reference by name directly
-
 
 
 managementZones:
 
 
-
 - environment: abc12345
-
 
 
 managementZone: Management Zone 2000
 
 
-
 permissions:
-
 
 
 - tenant-viewer
@@ -502,61 +405,46 @@ In this example, we define these objects.
 policies:
 
 
-
 - name: My policy
-
 
 
 id: my-policy
 
 
-
 level:
-
 
 
 type: account
 
 
-
 description: My policy is defined for the account.
 
 
-
 policy: |-
-
 
 
 ALLOW automation:workflows:read;
 
 
-
 - name: My other policy.
-
 
 
 id: my-other-policy
 
 
-
 level:
-
 
 
 type: environment
 
 
-
 environment: abc12345
-
 
 
 description: My policy is defined for a specific environment.
 
 
-
 policy: |-
-
 
 
 ALLOW automation:workflows:read;
@@ -581,13 +469,10 @@ In this example, we define these objects.
 boundaries:
 
 
-
 - id: workflow-simple-boundary
 
 
-
 name: Workflow Simple boundary
-
 
 
 query: automation:workflow-type = "SIMPLE";

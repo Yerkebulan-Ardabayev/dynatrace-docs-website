@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace and load testing tools integration
 
-# Dynatrace and load testing tools integration
 
 * Published Jun 14, 2018
 

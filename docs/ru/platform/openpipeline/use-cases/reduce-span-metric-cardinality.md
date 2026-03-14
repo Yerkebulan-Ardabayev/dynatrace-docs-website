@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:39.754758
 
 # Снижение кардинальности спанов и метрик
 
-# Снижение кардинальности спанов и метрик
 
 * Latest Dynatrace
 * Руководство
@@ -48,17 +47,13 @@ scraped: 2026-03-06T21:10:39.754758
      fieldsAdd url.full.orig = url.full
 
 
-
      | fieldsAdd path_normalized = replacePattern(url.path, "UUIDSTRING", "[UUID]")
-
 
 
      | fieldsAdd path_normalized = replacePattern(path_normalized, "[/]LONG", "/[Number]")
 
 
-
      | fieldsAdd port = if(isNotNull(server.port), concat(":", server.port),   else:null)
-
 
 
      | fieldsAdd url.full = concat(url.scheme, "://", server.address, port, path_normalized)
@@ -117,13 +112,10 @@ scraped: 2026-03-06T21:10:39.754758
      fieldsAdd db.query.text = coalesce(db.query.text, db.statement)
 
 
-
      | fieldsAdd db.query.text.orig = db.query.text
 
 
-
      | fieldsAdd blankPos = indexOf(db.query.text.orig, " ")
-
 
 
      | fieldsAdd db.query.text = if (blankPos > 0, substring(db.query.text, from: 0, to: blankPos), else: "*")
@@ -191,17 +183,13 @@ scraped: 2026-03-06T21:10:39.754758
 fetch spans
 
 
-
 | filter db.system == "redis" and (isNotNull(db.statement) or isNotNull(db.query.text))
-
 
 
 | fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
 
 
-
 | summarize count(), by: { db.query.text }
-
 
 
 | sort `count()` desc
@@ -219,9 +207,7 @@ Run in Playground
 | fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
 
 
-
 | fieldsAdd db.query.text.orig = db.query.text
-
 
 
 | fieldsAdd db.query.text = concat(substring(db.query.text, from: 0, to: 15), "*")
@@ -233,25 +219,19 @@ Run in Playground
 fetch spans
 
 
-
 | filter db.system == "redis" and (isNotNull(db.statement) or isNotNull(db.query.text))
-
 
 
 | fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
 
 
-
 | fieldsAdd db.query.text.orig = db.query.text
-
 
 
 | fieldsAdd db.query.text = concat(substring(db.query.text, from: 0, to: 15), "*")
 
 
-
 | summarize count(), by: { db.query.text }
-
 
 
 | sort `count()` desc
@@ -269,13 +249,10 @@ Run in Playground
 | fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
 
 
-
 | fieldsAdd db.query.text.orig = db.query.text
 
 
-
 | fieldsAdd blankPos = indexOf(db.query.text.orig, " ")
-
 
 
 | fieldsAdd db.query.text = if(blankPos > 0, substring(db.query.text, from: 0, to: blankPos), else: "*")
@@ -287,29 +264,22 @@ Run in Playground
 fetch spans
 
 
-
 | filter db.system == "redis" and (isNotNull(db.statement) or isNotNull(db.query.text))
-
 
 
 | fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
 
 
-
 | fieldsAdd db.query.text.orig = db.query.text
-
 
 
 | fieldsAdd blankPos = indexOf(db.query.text.orig, " ")
 
 
-
 | fieldsAdd db.query.text = if(blankPos > 0, substring(db.query.text, from: 0, to: blankPos), else: "*")
 
 
-
 | summarize count(), by: { db.query.text }
-
 
 
 | sort `count()` desc
@@ -327,9 +297,7 @@ Run in Playground
 | fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
 
 
-
 | fieldsAdd db.query.text.orig = db.query.text
-
 
 
 | fieldsAdd db.query.text = if(isNotNull(db.operation.name), db.operation.name, else: "*")
@@ -341,25 +309,19 @@ Run in Playground
 fetch spans
 
 
-
 | filter db.system == "redis" and (isNotNull(db.statement) or isNotNull(db.query.text))
-
 
 
 | fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
 
 
-
 | fieldsAdd db.query.text.orig = db.query.text
-
 
 
 | fieldsAdd db.query.text = if(isNotNull(db.operation.name), db.operation.name, else: "*")
 
 
-
 | summarize count(), by: { db.query.text }
-
 
 
 | sort `count()` desc
@@ -387,13 +349,10 @@ Run in Playground
    fetch spans
 
 
-
    | filter isNotNull(messaging.system) and isNotNull(messaging.destination.name)
 
 
-
    | summarize count=count(), distinctCount=countDistinct(messaging.destination.name), by:{messaging.system, messaging.destination.temporary}
-
 
 
    | fieldsAdd cardinality_ratio = toDouble(distinctCount) / toDouble(count)
@@ -428,7 +387,6 @@ Run in Playground
 
      ```
      messaging.destination.temporary == false and
-
 
 
      matchesPhrase(messaging.destination.name, "odaRequestQueue*")

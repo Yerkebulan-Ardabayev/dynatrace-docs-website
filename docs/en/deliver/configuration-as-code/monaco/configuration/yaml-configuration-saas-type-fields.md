@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:43.612602
 
 # Monaco configuration YAML file - list of type fields
 
-# Monaco configuration YAML file - list of type fields
 
 * Latest Dynatrace
 * Reference
@@ -35,21 +34,16 @@ The `type` field `api` can be defined as follows.
 configs:
 
 
-
 id: [...]
-
 
 
 type:
 
 
-
 api: synthetic-monitor
 
 
-
 config:
-
 
 
 [...]
@@ -61,17 +55,13 @@ or
 configs:
 
 
-
 id: [...]
-
 
 
 type: synthetic-monitor
 
 
-
 config:
-
 
 
 [...]
@@ -91,81 +81,61 @@ In the example below, a mobile application and related key-user actions are conf
 configs:
 
 
-
 - id: mobile-application-id
 
 
-
 config:
-
 
 
 name: my-mobile-app
 
 
-
 template: mobile-app.json
-
 
 
 skip: false
 
 
-
 type:
-
 
 
 api: application-mobile
 
 
-
 - id: MyKua
-
 
 
 config:
 
 
-
 name: myKeyUserAction
-
 
 
 template: kua.json
 
 
-
 skip: false
-
 
 
 type:
 
 
-
 api:
-
 
 
 name: key-user-actions-mobile
 
 
-
 scope:
-
 
 
 type: reference
 
 
-
 configType: application-mobile
 
 
-
 configId: mobile-application-id
-
 
 
 property: id
@@ -181,33 +151,25 @@ The `type` field `settings` can be defined as follows.
 configs:
 
 
-
 id: [...]
-
 
 
 type:
 
 
-
 settings:
-
 
 
 schema: builtin:davis.anomaly-detectors
 
 
-
 schemaVersion: 1.0.2
-
 
 
 scope: environment
 
 
-
 config:
-
 
 
 [...]
@@ -225,81 +187,61 @@ The `rum.web.enablement` `settings` scope references the web application `MyApp`
 configs:
 
 
-
 - id: MyAppId
 
 
-
 type:
-
 
 
 api: application-web
 
 
-
 config:
-
 
 
 name: My Sample Web Application
 
 
-
 template: application.json
-
 
 
 skip: false
 
 
-
 - id: MyApp_RUMSettingsId
-
 
 
 type:
 
 
-
 settings:
-
 
 
 schema: builtin:rum.web.enablement
 
 
-
 scope:
-
 
 
 type: reference
 
 
-
 configType: application-web
-
 
 
 configId: MyAppId
 
 
-
 property: id
-
 
 
 config:
 
 
-
 name: MyApp_RUMSettings
 
 
-
 template: rum-settings.json
-
 
 
 skip: false
@@ -316,57 +258,43 @@ In the example below, if the `insertAfter` is set, Dynatrace Monaco ensures the 
   - id: mySecondAppDetectionRuleId
 
 
-
   config:
-
 
 
   parameters:
 
 
-
   [...]
-
 
 
   template: wed-detect-rule.json
 
 
-
   skip: false
-
 
 
   type:
 
 
-
   settings:
-
 
 
   schema: builtin:rum.web.app-detection
 
 
-
   schemaVersion: 2.1.1
-
 
 
   scope: environment
 
 
-
   insertAfter:
-
 
 
   configId: myFirstAppDetectionRuleId  # Monaco config id
 
 
-
   property: id                         # must be âidâ
-
 
 
   type: reference                      # must be âreferenceâ
@@ -377,29 +305,22 @@ In the example below, if the `insertAfter` is set, Dynatrace Monaco ensures the 
   type:
 
 
-
   settings:
-
 
 
   schema: builtin:rum.web.app-detection
 
 
-
   schemaVersion: 2.1.1
-
 
 
   scope: environment
 
 
-
   insertAfter:
 
 
-
   value: myFirstAppDetectionRuleId     # hardcoded config id
-
 
 
   type: value                          # must be âvalueâ
@@ -410,21 +331,16 @@ In the example below, if the `insertAfter` is set, Dynatrace Monaco ensures the 
   type:
 
 
-
   settings:
-
 
 
   schema: builtin:rum.web.app-detection
 
 
-
   schemaVersion: 2.1.1
 
 
-
   scope: environment
-
 
 
   insertAfter: front       # âfrontâ puts the config on top of the list, âbackâ puts it at the bottom
@@ -447,53 +363,40 @@ An example is shown below.
 configs:
 
 
-
 - id: security-jira-connection
-
 
 
 config:
 
 
-
 name: 'Security: Jira Connection'
-
 
 
 template: jira-connection.json
 
 
-
 skip: false
-
 
 
 parameters:
 
 
-
 [â¦]
-
 
 
 type:
 
 
-
 settings:
-
 
 
 schema: app:dynatrace.jira:connection
 
 
-
 scope: environment
 
 
-
 permissions:
-
 
 
 allUsers: read
@@ -510,9 +413,7 @@ The `type` field `automation` can be defined as follows.
 type:
 
 
-
 automation:
-
 
 
 resource: workflow # or business-calendar, or scheduling-rule
@@ -527,45 +428,34 @@ An example is shown below.
 configs:
 
 
-
 - id: myRemediationWorkflow
-
 
 
 config:
 
 
-
 name:
-
 
 
 value: âHigh Prio Incident Remediationâ
 
 
-
 parameters:
-
 
 
 [...]
 
 
-
 template: remediationWorkflow.json
-
 
 
 skip: false
 
 
-
 type:
 
 
-
 automation:
-
 
 
 resource: workflow
@@ -605,97 +495,73 @@ An example is shown below.
 configs:
 
 
-
 # this is the new custom bucket
-
 
 
 - id: my-bucket-id
 
 
-
 config:
-
 
 
 name: My awesome bucket
 
 
-
 template: bucket.json
 
 
-
 parameters:
-
 
 
 retention_days: 372
 
 
-
 type: bucket
-
 
 
 # this is a new setting to define the rule what data shall be stored in the previously defined custom Grail bucket
 
 
-
 - id: log-bucket-rule
-
 
 
 type:
 
 
-
 settings:
-
 
 
 schema: builtin:logmonitoring.log-buckets-rules
 
 
-
 scope: environment
-
 
 
 config:
 
 
-
 name: My custom rule
-
 
 
 template: log-bucket-rule.json
 
 
-
 parameters:
-
 
 
 phrase: My phrase to look for
 
 
-
 bucket:
-
 
 
 type: reference
 
 
-
 configType: bucket
 
 
-
 configId: my-bucket-id
-
 
 
 property: id
@@ -723,17 +589,13 @@ The `type` field `document` can be defined as follows.
 type:
 
 
-
 document:
-
 
 
 kind: dashboard # other possible types: ânotebookâ or âlaunchpadâ
 
 
-
 private: true # optional field specifying the visibility of the document
-
 
 
 id: custom-document-id # optional field specifying a user-defined document ID
@@ -769,9 +631,7 @@ The `type` field `openpipeline` can be defined as follows.
 type:
 
 
-
 openpipeline:
-
 
 
 kind: bizevents # id of openpipeline configuration (for example, "bizevents", "events", "logs", "spans", or "metrics")
@@ -804,73 +664,55 @@ An example is shown below.
 configs:
 
 
-
 - id: segment                # configures the desired segment
-
 
 
 type: segment
 
 
-
 config:
-
 
 
 template: segment.json
 
 
-
 - id: dashboard              # creates a dashboard that references a segment
-
 
 
 type:
 
 
-
 document:
-
 
 
 kind: dashboard
 
 
-
 private: true
-
 
 
 config:
 
 
-
 name: Log Dashboard with Dynatrace Segment
-
 
 
 parameters:
 
 
-
 segment_id:            # references the previously created segment within a dashboard
-
 
 
 configId: segment
 
 
-
 configType: segment
-
 
 
 property: id
 
 
-
 type: reference
-
 
 
 template: dashboard.json
@@ -899,41 +741,31 @@ An example is shown below.
 configs:
 
 
-
 - id: custom-sli          # An SLO based using a custom DQL query as SLI
-
 
 
 type: slo-v2
 
 
-
 config:
-
 
 
 name: custom-sli
 
 
-
 template: custom-sli.json
-
 
 
 - id: sli-reference       # another SLO using an out-of-the-box template (aka reference)
 
 
-
 type: slo-v2
-
 
 
 config:
 
 
-
 name: sli-reference
-
 
 
 template: sli-reference.json
@@ -950,29 +782,22 @@ The `name` property specifies the account name, my-account, which can be referen
 accounts:
 
 
-
 - name: my-account
-
 
 
 accountUUID: 12345678-1234-5678-1234-123456789012
 
 
-
 oAuth:
-
 
 
 clientId:
 
 
-
 name: OAUTH_CLIENT_ID
 
 
-
 clientSecret:
-
 
 
 name: OAUTH_CLIENT_SECRET
@@ -996,177 +821,133 @@ The example shows how Monaco represents account management resources locally, wi
 users: # users define one or more users bound to different groups
 
 
-
 - email: monaco@dynatrace.com
-
 
 
 groups:
 
 
-
 - Log viewer # default group
-
 
 
 - type: reference
 
 
-
 id: my-group
-
 
 
 # id: specifies a custom group. The ID must match a group defined in groups. Custom groups need to be referenced (vs. default groups)
 
 
-
 serviceUsers:     # supported with Monaco CLI v2.23.0+
-
 
 
 - name: Monaco service user # name: must be unique. Otherwise, an originObjectId is needed
 
 
-
 description: Description of service user
-
 
 
 originObjectId: 3037325d-6475-4adf-a14d-93d1c862f9e9 # (optional) only needed if the userâs name is not unique
 
 
-
 groups:
-
 
 
 - Log viewer # default group
 
 
-
 - type: reference # custom group my-group needs to be referenced
 
 
-
 id: my-group
-
 
 
 groups:
 
 
-
 - name: My Group
-
 
 
 id: my-group
 
 
-
 description: This is my group
-
 
 
 account: # specifies permissions and policies to which the group is bound on the account level.
 
 
-
 permissions:
-
 
 
 - account-viewer
 
 
-
 policies:
-
 
 
 - policy: Environment role - Access environment
 
 
-
 environments: # specify the permissions and policies to which the group is bound on the environment/tenant level.
-
 
 
 - environment: abc12345
 
 
-
 permissions:
 
 
-
 - tenant-viewer
-
 
 
 policies:
 
 
-
 - policy: Environment role - Replay session data without masking
-
 
 
 - type: reference
 
 
-
 id: my-policy
-
 
 
 managementZones: # classic Dynatrace only
 
 
-
 - environment: abc12345
-
 
 
 managementZone: Management Zone 2000
 
 
-
 permissions:
-
 
 
 - tenant-viewer
 
 
-
 policies: # defines one or more policies for the selected group
-
 
 
 - name: My Policy
 
 
-
 id: my-policy
-
 
 
 level:
 
 
-
 type: account
-
 
 
 description: abcde
 
 
-
 policy: |- # contains any policy rules of this particular policy.
-
 
 
 ALLOW automation:workflows:read;

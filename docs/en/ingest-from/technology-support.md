@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:58.632068
 
 # Technology support
 
-# Technology support
 
 * Latest Dynatrace
 * 17-min read

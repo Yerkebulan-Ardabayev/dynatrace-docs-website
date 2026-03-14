@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:25.334800
 
 # Мониторинг Google Cloud Firestore в режиме Datastore
 
-# Мониторинг Google Cloud Firestore в режиме Datastore
 
 * Последняя версия Dynatrace
 * Практическое руководство

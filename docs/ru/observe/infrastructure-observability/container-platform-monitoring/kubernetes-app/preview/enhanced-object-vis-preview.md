@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:19:47.983316
 
 # Предварительный просмотр расширенной видимости объектов Kubernetes
 
-# Предварительный просмотр расширенной видимости объектов Kubernetes
 
 * Последняя версия Dynatrace
 * Обзор
@@ -75,113 +74,85 @@ scraped: 2026-02-06T16:19:47.983316
 apiVersion: rbac.authorization.k8s.io/v1
 
 
-
 kind: ClusterRoleBinding
-
 
 
 metadata:
 
 
-
 name: dynatrace-kubernetes-monitoring-sensitive
-
 
 
 roleRef:
 
 
-
 apiGroup: rbac.authorization.k8s.io
-
 
 
 kind: ClusterRole
 
 
-
 name: dynatrace-kubernetes-monitoring-sensitive
-
 
 
 subjects:
 
 
-
 - kind: ServiceAccount
-
 
 
 name: dynatrace-kubernetes-monitoring
 
 
-
 namespace: dynatrace
-
 
 
 ---
 
 
-
 apiVersion: rbac.authorization.k8s.io/v1
-
 
 
 kind: ClusterRole
 
 
-
 metadata:
-
 
 
 name: dynatrace-kubernetes-monitoring-sensitive
 
 
-
 labels:
-
 
 
 rbac.dynatrace.com/aggregate-to-monitoring: "true"
 
 
-
 rules:
-
 
 
 - apiGroups:
 
 
-
 - ""
-
 
 
 resources:
 
 
-
 - configmaps
-
 
 
 - secrets
 
 
-
 verbs:
-
 
 
 - list
 
 
-
 - watch
-
 
 
 - get

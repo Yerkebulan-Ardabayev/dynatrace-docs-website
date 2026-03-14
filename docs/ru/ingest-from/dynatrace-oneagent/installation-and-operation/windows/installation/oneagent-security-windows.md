@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:25.957588
 
 # Безопасность OneAgent в Windows
 
-# Безопасность OneAgent в Windows
 
 * Latest Dynatrace
 * Чтение: 5 мин

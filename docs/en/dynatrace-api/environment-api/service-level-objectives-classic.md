@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:30:11.623431
 
 # Service-level Objectives API classic
 
-# Service-level Objectives API classic
 
 * Classic
 * Reference

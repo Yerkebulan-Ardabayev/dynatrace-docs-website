@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:58.872793
 
 # OneAgent non-privileged mode on Linux
 
-# OneAgent non-privileged mode on Linux
 
 * Latest Dynatrace
 * 7-min read

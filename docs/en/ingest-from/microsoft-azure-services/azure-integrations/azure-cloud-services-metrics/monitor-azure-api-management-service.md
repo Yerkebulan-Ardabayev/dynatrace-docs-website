@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:30:14.498339
 
 # Azure API Management Service monitoring
 
-# Azure API Management Service monitoring
 
 * Latest Dynatrace
 * How-to guide

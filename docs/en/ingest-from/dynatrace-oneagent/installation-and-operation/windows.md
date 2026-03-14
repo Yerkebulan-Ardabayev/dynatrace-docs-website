@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:48.224480
 
 # OneAgent on Windows
 
-# OneAgent on Windows
 
 * Latest Dynatrace
 * 1-min read

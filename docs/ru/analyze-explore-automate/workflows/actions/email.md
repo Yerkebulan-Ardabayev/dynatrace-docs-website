@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:40:37.061485
 
 # Email
 
-# Email
 
 * Latest Dynatrace
 * 3-min read
@@ -96,7 +95,6 @@ Email отправляет письма с адреса `no-reply@apps.dynatrace
 * Line 1
 
 
-
 * Line 2
 ```
 
@@ -104,7 +102,6 @@ Email отправляет письма с адреса `no-reply@apps.dynatrace
 
 ```
 - Line 1
-
 
 
 - Line 2
@@ -116,9 +113,7 @@ Email отправляет письма с адреса `no-reply@apps.dynatrace
 1. The first line of my procedure.
 
 
-
 2. The second line of my procedure.
-
 
 
 3. The third line of my procedure.
@@ -132,9 +127,7 @@ Email отправляет письма с адреса `no-reply@apps.dynatrace
 | Header 1 | Header2
 
 
-
 --- | ---
-
 
 
 content2 | content2

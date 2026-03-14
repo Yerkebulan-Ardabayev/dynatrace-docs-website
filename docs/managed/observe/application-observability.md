@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Application Observability
 
-# Application Observability
 
 * Overview
 * 1-min read

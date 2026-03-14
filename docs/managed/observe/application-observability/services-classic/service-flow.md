@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Service flow
 
-# Service flow
 
 * How-to guide
 * 2-min read

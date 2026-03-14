@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:14.955623
 
 # Differences between containerized and host-based ActiveGates
 
-# Differences between containerized and host-based ActiveGates
 
 * Latest Dynatrace
 * 1-min read

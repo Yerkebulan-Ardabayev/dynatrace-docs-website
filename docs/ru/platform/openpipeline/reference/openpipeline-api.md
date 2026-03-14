@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:08.786250
 
 # API OpenPipeline
 
-# API OpenPipeline
 
 * Последняя версия Dynatrace
 * Справочник

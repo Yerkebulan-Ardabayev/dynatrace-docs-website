@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:32:59.961251
 
 # Azure Stream Analytics monitoring
 
-# Azure Stream Analytics monitoring
 
 * Latest Dynatrace
 * How-to guide

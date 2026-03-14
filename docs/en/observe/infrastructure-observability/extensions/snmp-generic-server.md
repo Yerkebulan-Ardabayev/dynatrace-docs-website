@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:39:18.259271
 
 # SNMP generic server extension
 
-# SNMP generic server extension
 
 * Latest Dynatrace
 * Extension
@@ -63,13 +62,10 @@ To estimate the metrics ingested you can use a formula such as:
 Scalar OIDs: 1 metric per OID
 
 
-
 #metric_keys_in_fs
 
 
-
 Table OIDs: 1 metric per each table entry (e.g., sensor, disk, process, file):
-
 
 
 #metric_keys_in_fs * #entries_in_table

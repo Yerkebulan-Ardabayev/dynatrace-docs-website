@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:27:10.158831
 
 # Auto-update for Dynatrace Operator
 
-# Auto-update for Dynatrace Operator
 
 * Latest Dynatrace
 * 2-min read
@@ -40,61 +39,46 @@ ArgoCD ApplicationSet example
 # For exact syntax refer to the official ArgoCD documentation
 
 
-
 apiVersion: argoproj.io/v1alpha1
-
 
 
 kind: ApplicationSet
 
 
-
 metadata:
-
 
 
 name: dynatrace-operator
 
 
-
 spec:
-
 
 
 generators:
 
 
-
 ...
-
 
 
 template:
 
 
-
 ...
-
 
 
 spec:
 
 
-
 ...
-
 
 
 source:
 
 
-
 repoURL: https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/main/config/helm/repos/stable
 
 
-
 chart: dynatrace-operator
-
 
 
 targetRevision: <version>

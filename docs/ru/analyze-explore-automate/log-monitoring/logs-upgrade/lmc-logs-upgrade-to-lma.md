@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:27.302891
 
 # Обновление до Log Management and Analytics
 
-# Обновление до Log Management and Analytics
 
 * Classic
 * Практическое руководство
@@ -131,21 +130,16 @@ Log Management and Analytics -- это новейшее решение Dynatrace
      {
 
 
-
      "scope": "iam:policies:read iam:policies:write",
-
 
 
      "token_type": "Bearer",
 
 
-
      "expires_in": 300,
 
 
-
      "access_token": "123(...)ABC"
-
 
 
      }
@@ -159,21 +153,16 @@ Log Management and Analytics -- это новейшее решение Dynatrace
      {
 
 
-
      "name": "Storage Events Read",
-
 
 
      "description": "Storage Events Read",
 
 
-
      "tags": [
 
 
-
      ],
-
 
 
      "statementQuery": "ALLOW storage:events:read;"
@@ -187,25 +176,19 @@ Log Management and Analytics -- это новейшее решение Dynatrace
      {
 
 
-
      "name": "Storage Logs Read",
-
 
 
      "description": "Storage Logs Read",
 
 
-
      "tags": [
-
 
 
      ]  ,
 
 
-
      "statementQuery": "ALLOW storage:logs:read;"
-
 
 
      }

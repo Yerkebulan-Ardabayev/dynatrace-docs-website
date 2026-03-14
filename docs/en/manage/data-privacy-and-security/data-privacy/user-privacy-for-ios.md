@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:15.665664
 
 # User privacy for iOS
 
-# User privacy for iOS
 
 * Latest Dynatrace
 * 3-min read

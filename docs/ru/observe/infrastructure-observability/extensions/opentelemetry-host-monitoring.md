@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:13.602335
 
 # Расширение OpenTelemetry Host Monitoring
 
-# Расширение OpenTelemetry Host Monitoring
 
 * Последняя Dynatrace
 * Расширение

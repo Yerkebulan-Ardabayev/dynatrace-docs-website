@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:32.537603
 
 # Uninstall OneAgent on AIX
 
-# Uninstall OneAgent on AIX
 
 * Latest Dynatrace
 * How-to guide

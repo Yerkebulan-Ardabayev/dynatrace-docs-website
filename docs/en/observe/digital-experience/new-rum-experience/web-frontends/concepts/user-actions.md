@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:15.038712
 
 # User actions in web frontends
 
-# User actions in web frontends
 
 * Latest Dynatrace
 * Explanation

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:27.980148
 
 # Configure and deploy EdgeConnect
 
-# Configure and deploy EdgeConnect
 
 * Latest Dynatrace
 * How-to guide
@@ -145,129 +144,97 @@ Example `edgeConnect.yaml`
 name: my-corporate-network
 
 
-
 api_endpoint_host: abc12345.apps.dynatrace.com
-
 
 
 oauth:
 
 
-
 endpoint: https://sso.dynatrace.com/sso/oauth2/token
-
 
 
 client_id: <DYNATRACE_TOKEN_PLACEHOLDER>
 
 
-
 client_secret: *******
-
 
 
 resource: urn:dtenvironment:abc12345
 
 
-
 restrict_hosts_to:
-
 
 
 - "internal.example.org"
 
 
-
 - "*.example.com"
-
 
 
 certificate_paths:
 
 
-
 - "/path/to/some/certificate.cer"
-
 
 
 - "/path/to/another/certificate.pem"
 
 
-
 proxy:
-
 
 
 server: proxy.example.org
 
 
-
 port: 8037
-
 
 
 exceptions:
 
 
-
 - "*.foo.com"
-
 
 
 - "noproxy.example.org"
 
 
-
 auth:
-
 
 
 user: "proxy-user"
 
 
-
 password: "*******"
-
 
 
 secrets:
 
 
-
 - name: My secret
-
 
 
 token: <DYNATRACE_TOKEN_PLACEHOLDER>.some-token-secret
 
 
-
 from_env: MY_SECRET
 
 
-
 restrict_hosts_to:
-
 
 
 - dynatrace.com
 
 
-
 - name: My other secret
-
 
 
 token: <DYNATRACE_TOKEN_PLACEHOLDER>.another-token-secret
 
 
-
 from_file: /path/to/my/other/secret
 
 
-
 restrict_hosts_to:
-
 
 
 - internal.example.com
@@ -316,7 +283,6 @@ You'll be notified on a successful download.
 Status: Downloaded image for dynatrace/edgeconnect:latest
 
 
-
 docker.io/dynatrace/edgeconnect:latest
 ```
 
@@ -329,13 +295,10 @@ docker.io/dynatrace/edgeconnect:latest
    docker run \
 
 
-
    --mount type=bind,src=${PWD}/edgeConnect.yaml,dst=/edgeConnect.yaml \
 
 
-
    -d --restart always \
-
 
 
    dynatrace/edgeconnect \
@@ -362,7 +325,6 @@ EdgeConnect supports certificate files in the PEM (".pem", ".crt" or ".cer") and
    certificate_paths:
 
 
-
    - "/etc/edge_connect_certs/certificate.pem"
    ```
 2. Mount a custom certificate into the EdgeConnect container. You can use the `-v` parameter when running the container. For example:
@@ -371,17 +333,13 @@ EdgeConnect supports certificate files in the PEM (".pem", ".crt" or ".cer") and
    docker run \
 
 
-
    --mount type=bind,src=${PWD}/edgeConnect.yaml,dst=/edgeConnect.yaml \
-
 
 
    -d --restart always \
 
 
-
    -v /host/path/to/certificate.pem:/etc/edge_connect_certs/certificate.pem
-
 
 
    dynatrace/edgeconnect \
@@ -410,41 +368,31 @@ Follow these steps to make EdgeConnect replace secret tokens in your requests:
    secrets:
 
 
-
    - name: My secret
-
 
 
    token: <DYNATRACE_TOKEN_PLACEHOLDER>.some-token-secret
 
 
-
    from_env: MY_SECRET
 
 
-
    restrict_hosts_to:
-
 
 
    - dynatrace.com
 
 
-
    - name: My other secret
-
 
 
    token: <DYNATRACE_TOKEN_PLACEHOLDER>.another-token-secret
 
 
-
    from_file: /path/to/my/other/secret
 
 
-
    restrict_hosts_to:
-
 
 
    - internal.example.com
@@ -455,21 +403,16 @@ Follow these steps to make EdgeConnect replace secret tokens in your requests:
    docker run \
 
 
-
    --mount type=bind,src=${PWD}/edgeConnect.yaml,dst=/edgeConnect.yaml \
-
 
 
    -d --restart always \
 
 
-
    -e MY_SECRET=******* \
 
 
-
    -v /host/path/to/my/other/secret:/container/path/to/mounted/secret
-
 
 
    dynatrace/edgeconnect \
@@ -528,325 +471,244 @@ Save the example below in a file called `deployment.yaml` and replace the values
 apiVersion: v1
 
 
-
 kind: Secret
 
 
-
 metadata:
-
 
 
 name: edge-connect-oauth
 
 
-
 namespace: dynatrace
 
 
-
 stringData:
-
 
 
 oauth-client-id: <oauth.client_id from edgeConnect.yaml>
 
 
-
 oauth-client-secret: <oauth.client_secret from edgeConnect.yaml>
 
 
-
 ---
-
 
 
 apiVersion: v1
 
 
-
 kind: Secret
 
 
-
 metadata:
-
 
 
 name: edge-connect-config
 
 
-
 namespace: dynatrace
-
 
 
 stringData:
 
 
-
 edge-connect-config-file: |
-
 
 
 certificate_paths:
 
 
-
 - "/etc/edge_connect_certs/some_certificate.cer"
-
 
 
 - "/etc/edge_connect_certs/another_certificate.pem"
 
 
-
 secrets:
-
 
 
 - name: My secret
 
 
-
 token: <DYNATRACE_TOKEN_PLACEHOLDER>.some-token-secret
-
 
 
 from_env: MY_SECRET
 
 
-
 restrict_hosts_to:
-
 
 
 - dynatrace.com
 
 
-
 - name: My other secret
-
 
 
 token: <DYNATRACE_TOKEN_PLACEHOLDER>.another-token-secret
 
 
-
 from_file: /path/to/my/other/secret
-
 
 
 restrict_hosts_to:
 
 
-
 - internal.example.com
-
 
 
 ---
 
 
-
 apiVersion: apps/v1
-
 
 
 kind: Deployment
 
 
-
 metadata:
-
 
 
 name: example-edge-connect
 
 
-
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 replicas: 1
 
 
-
 selector:
-
 
 
 matchLabels:
 
 
-
 app: edge-connect
-
 
 
 template:
 
 
-
 metadata:
-
 
 
 labels:
 
 
-
 app: edge-connect
-
 
 
 spec:
 
 
-
 containers:
-
 
 
 - name: edge-connect
 
 
-
 image: dynatrace/edgeconnect:latest
-
 
 
 imagePullPolicy: IfNotPresent
 
 
-
 env:
-
 
 
 - name: EDGE_CONNECT_NAME
 
 
-
 value: <name from edgeConnect.yaml>
-
 
 
 - name: EDGE_CONNECT_API_ENDPOINT_HOST
 
 
-
 value: <api_endpoint_host from edgeConnect.yaml>
-
 
 
 - name: EDGE_CONNECT_OAUTH__ENDPOINT
 
 
-
 value: <oauth.endpoint from edgeConnect.yaml>
-
 
 
 - name: EDGE_CONNECT_OAUTH__RESOURCE
 
 
-
 value: <oauth.resource from edgeConnect.yaml>
-
 
 
 volumeMounts:
 
 
-
 - name: secrets
-
 
 
 mountPath: "/etc/edge_connect"
 
 
-
 readOnly: true
 
 
-
 - name: config
-
 
 
 mountPath: "/edgeConnect.yaml"
 
 
-
 subPath: "edgeConnect.yaml"
-
 
 
 readOnly: true
 
 
-
 volumes:
-
 
 
 - name: secrets
 
 
-
 secret:
-
 
 
 secretName: edge-connect-oauth
 
 
-
 items:
-
 
 
 - key: oauth-client-id
 
 
-
 path: oauth/client_id
-
 
 
 - key: oauth-client-secret
 
 
-
 path: oauth/client_secret
-
 
 
 - name: config
 
 
-
 secret:
-
 
 
 secretName: edge-connect-config
 
 
-
 items:
 
 
-
 - key: edge-connect-config-file
-
 
 
 path: edgeConnect.yaml

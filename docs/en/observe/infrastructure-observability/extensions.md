@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:01.611559
 
 # Extensions
 
-# Extensions
 
 * Latest Dynatrace
 * Reference
@@ -17,11 +16,6 @@ Extensions help you gain deeper insights into your environment and enhance your 
 
 Explore available extensions, narrow results using the filters (data source, category, technology, and vendor), and select an extension to view its detailed documentation, configuration steps, and use cases.
 
-Filter by
-
-Select an option
-
-Type to filter
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

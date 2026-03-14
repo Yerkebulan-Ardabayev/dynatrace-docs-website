@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:09.081125
 
 # Запрос контролируемых сущностей в Grail
 
-# Запрос контролируемых сущностей в Grail
 
 * Последняя версия Dynatrace
 * Справочник
@@ -43,7 +42,6 @@ fetch dt.entity.host
 fetch dt.entity.host
 
 
-
 | fieldsAdd runs
 ```
 
@@ -55,7 +53,6 @@ fetch dt.entity.host
 
 ```
 fetch dt.entity.host
-
 
 
 | fieldsAdd runs[dt.entity.process_group]
@@ -77,7 +74,6 @@ fetch dt.entity.host
 fetch dt.entity.service_instance
 
 
-
 | fieldsAdd runs_on[dt.entity.host]
 ```
 
@@ -87,9 +83,7 @@ fetch dt.entity.service_instance
 fetch dt.entity.service_instance
 
 
-
 | fieldsAdd runs_on[dt.entity.host]
-
 
 
 | lookup sourceField:`runs_on[dt.entity.host]`, lookupField:id, [ fetch dt.entity.host ]
@@ -103,7 +97,6 @@ fetch dt.entity.service_instance
 fetch dt.entity.host
 
 
-
 | fieldsAdd runs[dt.entity.service_instance]
 ```
 
@@ -113,9 +106,7 @@ fetch dt.entity.host
 fetch dt.entity.host
 
 
-
 | fieldsAdd runs[dt.entity.service_instance]
-
 
 
 | expand runs[dt.entity.service_instance]
@@ -127,13 +118,10 @@ fetch dt.entity.host
 fetch dt.entity.host
 
 
-
 | fieldsAdd runs[dt.entity.service_instance]
 
 
-
 | expand runs[dt.entity.service_instance]
-
 
 
 | lookup sourceField:`runs[dt.entity.service_instance]`, lookupField:id, [ fetch dt.entity.service_instance]
@@ -154,9 +142,7 @@ fetch dt.entity.host
 fetch dt.entity.host
 
 
-
 | expand tags, alias:tag
-
 
 
 | fields tag
@@ -168,9 +154,7 @@ fetch dt.entity.host
 fetch dt.entity.host
 
 
-
 | expand tags
-
 
 
 | filter contains(tags, "[Environment]Cluster.Name:prod-eu-west-6-ireland")
@@ -182,9 +166,7 @@ fetch dt.entity.host
 fetch dt.entity.host
 
 
-
 | expand tags, alias:tag_string
-
 
 
 | parse tag_string, """(('['LD:tag_context ']' LD:tag_key (!<<'\\' ':') LD:tag_value)|(LD:tag_key (!<<'\\' ':') LD:tag_value)|LD:tag_key)"""
@@ -213,7 +195,6 @@ describe dt.entity.service_instance
 describe dt.entity.service_instance
 
 
-
 | filter in(data_types, "record")
 ```
 
@@ -233,7 +214,6 @@ Grail не применяет фильтры зон управления. Пол
 fetch dt.entity.service
 
 
-
 | filter in(id, classicEntitySelector("type(service), fromRelationship.runsOnHost(type(host), tag([AWS]Category:ABC))"))
 ```
 
@@ -243,21 +223,16 @@ fetch dt.entity.service
 fetch dt.entity.service
 
 
-
 | fieldsAdd host.id = runs_on[dt.entity.host]
-
 
 
 | expand host.id
 
 
-
 | lookup sourceField:host.id, lookupField: id, fields:host.tags=tags, [ fetch dt.entity.host]
 
 
-
 | expand host.tags
-
 
 
 | filter host.tags == "[AWS]Category:ABC"
@@ -275,33 +250,25 @@ fetch dt.entity.service
 // fetch all hosts that run Java processes
 
 
-
 // using native DQL
-
 
 
 fetch dt.entity.host
 
 
-
 | expand pgi=contains[dt.entity.process_group_instance]
-
 
 
 | filter pgi in [
 
 
-
 fetch dt.entity.process_group_instance
-
 
 
 | filter matchesValue(softwareTechnologies, "*JAVA*")
 
 
-
 | fields id
-
 
 
 ]
@@ -311,13 +278,10 @@ fetch dt.entity.process_group_instance
 // fetch all hosts that run Java processes
 
 
-
 // using classicEntitySelector()
 
 
-
 fetch dt.entity.host
-
 
 
 | filter in (id, classicEntitySelector("type(host),toRelationship.isProcessOf(type(PROCESS_GROUP_INSTANCE),softwareTechnologies(JAVA))"))
@@ -331,21 +295,16 @@ fetch dt.entity.host
 // fetch all LINUX hosts that run Java processes
 
 
-
 // using a mix of classicEntitySelector and native DQL filters
-
 
 
 fetch dt.entity.host
 
 
-
 | filter in (id, classicEntitySelector("type(host),toRelationship.isProcessOf(type(PROCESS_GROUP_INSTANCE),softwareTechnologies(JAVA))"))
 
 
-
 | fieldsAdd osType
-
 
 
 | filter osType == "LINUX"
@@ -355,17 +314,13 @@ fetch dt.entity.host
 // fetch all LINUX hosts that run Java processes
 
 
-
 // using only classicEntitySelector
-
 
 
 fetch dt.entity.host
 
 
-
 | filter in (id, classicEntitySelector("type(host),osType(LINUX),toRelationship.isProcessOf(type(PROCESS_GROUP_INSTANCE),softwareTechnologies(JAVA))"))
-
 
 
 | fieldsAdd osType

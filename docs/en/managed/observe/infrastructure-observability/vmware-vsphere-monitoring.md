@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:06.043244
 
 # VMware vSphere monitoring
 
-# VMware vSphere monitoring
 
 * Classic
 * How-to guide

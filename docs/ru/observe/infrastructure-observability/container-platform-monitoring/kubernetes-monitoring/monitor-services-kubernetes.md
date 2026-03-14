@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:46.421691
 
 # Мониторинг сервисов Kubernetes/OpenShift
 
-# Мониторинг сервисов Kubernetes/OpenShift
 
 * Classic
 * 3 мин. чтения

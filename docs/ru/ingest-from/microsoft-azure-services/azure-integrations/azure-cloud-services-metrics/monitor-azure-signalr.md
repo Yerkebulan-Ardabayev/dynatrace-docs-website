@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:40.449334
 
 # Мониторинг Azure SignalR
 
-# Мониторинг Azure SignalR
 
 * Latest Dynatrace
 * How-to guide

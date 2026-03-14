@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:24.846990
 
 # Multidimensional analysis for web applications
 
-# Multidimensional analysis for web applications
 
 * Classic
 * How-to guide

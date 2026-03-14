@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:24:18.010129
 
 # Первый год использования DPS
 
-# Первый год использования DPS
 
 * Latest Dynatrace
 * Explanation

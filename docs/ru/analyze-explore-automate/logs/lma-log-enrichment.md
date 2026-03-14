@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:18.348722
 
 # Связывание данных журналов с трейсами
 
-# Связывание данных журналов с трейсами
 
 * Последняя версия Dynatrace
 * Концепция
@@ -81,41 +80,31 @@ Dynatrace может дополнять принятые данные журна
 {
 
 
-
 "severity": "error",
-
 
 
 "time": 1638957438023,
 
 
-
 "pid": 1,
-
 
 
 "hostname": "paymentservice-788946fdcd-42lgq",
 
 
-
 "name": "paymentservice-charge",
-
 
 
 "dt.trace_id": "d04b42bc9f4b6ecdbf6bc9f4b6ecdbc",
 
 
-
 "dt.span_id": "9adc716eb808d428",
-
 
 
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-27204EFED3D8466E",
 
 
-
 "message": "Unsupported card type for cardNumber=************0454"
-
 
 
 }
@@ -129,61 +118,46 @@ Dynatrace может дополнять принятые данные журна
 <?xml version="1.0" encoding="windows-1252" standalone="no"?>
 
 
-
 <record>
-
 
 
 <date>2021-08-24T14:41:36.565218700Z</date>
 
 
-
 <millis>1629816096565</millis>
-
 
 
 <nanos>218700</nanos>
 
 
-
 <sequence>0</sequence>
-
 
 
 <logger>com.apm.testapp.logging.jul.XMLLoggingSample</logger>
 
 
-
 <level>INFO</level>
-
 
 
 <class>com.apm.testapp.logging.jul.BaseLoggingSample</class>
 
 
-
 <method>info</method>
-
 
 
 <thread>1</thread>
 
 
-
 <message>Update completed successfully.</message>
-
 
 
 <dt.trace_id>513fcd4e9b08792fcd4e9b08792</dt.trace_id>
 
 
-
 <dt.span_id>125840e3125840e3</dt.span_id>
 
 
-
 <dt.entity.process_group_instance>PROCESS_GROUP_INSTANCE-27204EFED3D8466E</dt.entity.process_group_instance>
-
 
 
 </record>
@@ -227,7 +201,6 @@ OneAgent версии 1.239+
 log_format custom '$remote_addr - [$time_local] $request $status $body_bytes_sent [!dt dt.trace_id=$dt_trace_id,dt.span_id=$dt_span_id,dt.trace_sampled=$dt_trace_sampled]';
 
 
-
 access_log logs/access.log custom;
 ```
 
@@ -235,7 +208,6 @@ access_log logs/access.log custom;
 
 ```
 127.0.0.1 - [22/Mar/2022:08:50:45 +0100] GET /index.htm HTTP/1.1 200 30 [!dt dt.trace_id=b9e5c9ec08be5fab5071d76f427be7da,dt.span_id=43c5bb9432593963,dt.trace_sampled=true]
-
 
 
 127.0.0.1 - [22/Mar/2022:08:50:45 +0100] GET /index.htm HTTP/1.1 200 30 [!dt dt.trace_id=01e52950b145d97bf22345e68c5e6c58,dt.span_id=de819d856eecb236,dt.trace_sampled=true]
@@ -251,7 +223,6 @@ log_format custom '$remote_addr - [$time_local] $request $status $body_bytes_sen
 
 ```
 127.0.0.1 - [21/Oct/2021:10:33:28 +0200] GET /index.htm HTTP/1.1 404 597 [!dt dt.trace_id=e1c0afeb0b8a91d7748139aa764ee37e,dt.span_id=e5e6748fab93ede8]
-
 
 
 127.0.0.1 - [21/Oct/2021:10:33:31 +0200] GET /index.html HTTP/1.1 200 1056 [!dt dt.trace_id=81fe7816ba6c38f7aa09aef3684cd941,dt.span_id=3bdacc466ae073cd]
@@ -277,149 +248,112 @@ Logback — преемник проекта log4j. Logstash Logback — расш
 <appender name="COMPOSITEJSONENCODER" class="ch.qos.logback.core.FileAppender">
 
 
-
 <file>compositejsonencoder.log</file>
-
 
 
 <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
 
 
-
 <providers>
-
 
 
 <timestamp>
 
 
-
 <fieldName>timestamp</fieldName>
-
 
 
 <timeZone>UTC</timeZone>
 
 
-
 </timestamp>
-
 
 
 <loggerName>
 
 
-
 <fieldName>logger</fieldName>
-
 
 
 </loggerName>
 
 
-
 <logLevel>
-
 
 
 <fieldName>level</fieldName>
 
 
-
 </logLevel>
-
 
 
 <threadName>
 
 
-
 <fieldName>thread</fieldName>
-
 
 
 </threadName>
 
 
-
 <mdc>
-
 
 
 <includeMdcKeyName>dt.span_id</includeMdcKeyName>
 
 
-
 <includeMdcKeyName>dt.trace_id</includeMdcKeyName>
-
 
 
 <includeMdcKeyName>dt.entity.host</includeMdcKeyName>
 
 
-
 </mdc>
-
 
 
 <stackTrace>
 
 
-
 <fieldName>stackTrace</fieldName>
-
 
 
 <!-- maxLength - limit the length of the stack trace -->
 
 
-
 <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
-
 
 
 <maxDepthPerThrowable>200</maxDepthPerThrowable>
 
 
-
 <maxLength>14000</maxLength>
-
 
 
 <rootCauseFirst>true</rootCauseFirst>
 
 
-
 </throwableConverter>
-
 
 
 </stackTrace>
 
 
-
 <message />
-
 
 
 <throwableClassName>
 
 
-
 <fieldName>exceptionClass</fieldName>
-
 
 
 </throwableClassName>
 
 
-
 </providers>
 
 
-
 </encoder>
-
 
 
 </appender>
@@ -446,7 +380,6 @@ Logback — преемник проекта log4j. Logstash Logback — расш
 main-snippet: load_module /opt/dynatrace/oneagent/agent/bin/current/linux-musl-x86-64/liboneagentnginx.so;
 
 
-
 log-format-upstream: '$remote_addr - $remote_user [$time_local] "$request" [!dt dt.trace_id=$dt_trace_id,dt.span_id=$dt_span_id,dt.trace_sampled=$dt_trace_sampled] $status $body_bytes_sent  "$http_referer" "$http_user_agent" $request_length'
 ```
 
@@ -456,161 +389,121 @@ log-format-upstream: '$remote_addr - $remote_user [$time_local] "$request" [!dt 
 apiVersion: v1
 
 
-
 kind: Namespace
 
 
-
 metadata:
-
 
 
 name: prod-ingress-nginx
 
 
-
 labels:
-
 
 
 app.kubernetes.io/name: ingress-nginx
 
 
-
 app.kubernetes.io/instance: ingress-nginx
 
 
-
 ---
-
 
 
 # Source: ingress-nginx/templates/controller-serviceaccount.yaml
 
 
-
 apiVersion: v1
-
 
 
 kind: ServiceAccount
 
 
-
 metadata:
-
 
 
 labels:
 
 
-
 helm.sh/chart: ingress-nginx-4.0.6
-
 
 
 app.kubernetes.io/name: ingress-nginx
 
 
-
 app.kubernetes.io/instance: ingress-nginx
-
 
 
 app.kubernetes.io/version: 1.0.4
 
 
-
 app.kubernetes.io/managed-by: Helm
 
 
-
 app.kubernetes.io/component: controller
-
 
 
 name: ingress-nginx
 
 
-
 namespace: prod-ingress-nginx
-
 
 
 automountServiceAccountToken: true
 
 
-
 ---
-
 
 
 # Source: ingress-nginx/templates/controller-configmap.yaml
 
 
-
 apiVersion: v1
-
 
 
 kind: ConfigMap
 
 
-
 metadata:
-
 
 
 labels:
 
 
-
 helm.sh/chart: ingress-nginx-4.0.6
-
 
 
 app.kubernetes.io/name: ingress-nginx
 
 
-
 app.kubernetes.io/instance: ingress-nginx
-
 
 
 app.kubernetes.io/version: 1.0.4
 
 
-
 app.kubernetes.io/managed-by: Helm
-
 
 
 app.kubernetes.io/component: controller
 
 
-
 name: ingress-nginx-controller
-
 
 
 namespace: prod-ingress-nginx
 
 
-
 data:
-
 
 
 allow-snippet-annotations: 'true'
 
 
-
 main-snippet: load_module /opt/dynatrace/oneagent/agent/bin/current/linux-musl-x86-64/liboneagentnginx.so;
 
 
-
 log-format-upstream: '$remote_addr - $remote_user [$time_local] "$request" [!dt dt.trace_id=$dt_trace_id,dt.span_id=$dt_span_id,dt.trace_sampled=$dt_trace_sampled] $status $body_bytes_sent  "$http_referer" "$http_user_agent" $request_length'
-
 
 
 ...
@@ -636,69 +529,52 @@ Go с OneAgent SDK
 import logging
 
 
-
 from opentelemetry import trace
-
 
 
 def dt_log(self, record):
 
 
-
 if (not self.disabled) and self.filter(record):
-
 
 
 ctx = trace.get_current_span().get_span_context()
 
 
-
 if ctx.is_valid:
-
 
 
 trace_id = "{0:032X}".format(ctx.trace_id)
 
 
-
 span_id = "{0:016X}".format(ctx.span_id)
-
 
 
 record.msg = f"[!dt dt.trace_id={trace_id},dt.span_id={span_id}] - {record.msg}"
 
 
-
 self.callHandlers(record)
-
 
 
 logging.Logger.handle = dt_log
 
 
-
 def lambda_handler(event, context):
-
 
 
 logger = logging.getLogger()
 
 
-
 logger.warning("Hello world")
-
 
 
 return {
 
 
-
 "statusCode": 200,
 
 
-
 "body": "Hello from lambda"
-
 
 
 }
@@ -710,49 +586,37 @@ return {
 const opentelemetry = require('@opentelemetry/api');
 
 
-
 function dtLog(msg) {
-
 
 
 const spanContext = opentelemetry.trace.getSpanContext(opentelemetry.context.active()) ?? opentelemetry.INVALID_SPAN_CONTEXT;
 
 
-
 console.log(`[!dt dt.trace_id=${spanContext.traceId},dt.span_id=${spanContext.spanId}] - ${msg}`);
-
 
 
 }
 
 
-
 exports.handler = function(event, context) {
-
 
 
 const msg = "Hello World"
 
 
-
 dtLog(msg);
-
 
 
 context.succeed({
 
 
-
 statusCode: 200,
-
 
 
 body: msg
 
 
-
 });
-
 
 
 };
@@ -764,85 +628,64 @@ body: msg
 package com.amazonaws.lambda.demo;
 
 
-
 import com.amazonaws.services.lambda.runtime.Context;
-
 
 
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 
-
 import io.opentelemetry.api.trace.Span;
-
 
 
 import io.opentelemetry.api.trace.SpanContext;
 
 
-
 public class HelloJava implements RequestHandler<Object, String> {
-
 
 
 private static void dtLog(final String msg) {
 
 
-
 SpanContext spanContext = Span.current().getSpanContext();
-
 
 
 System.out.printf(
 
 
-
 "[!dt dt.trace_id=%s,dt.span_id=%s] - %s%n",
-
 
 
 spanContext.getTraceId(),
 
 
-
 spanContext.getSpanId(),
-
 
 
 msg
 
 
-
 );
 
 
-
 }
-
 
 
 @Override
 
 
-
 public String handleRequest(Object input, Context context) {
-
 
 
 String msg = "Hello World";
 
 
-
 dtLog(msg);
-
 
 
 return msg;
 
 
-
 }
-
 
 
 }
@@ -854,89 +697,67 @@ return msg;
 package main
 
 
-
 import (
-
 
 
 "fmt"
 
 
-
 "log"
-
 
 
 "net/http"
 
 
-
 "github.com/Dynatrace/OneAgent-SDK-for-Go/sdk"
-
 
 
 )
 
 
-
 func main() {
-
 
 
 // Create OneAgent SDK API instance
 
 
-
 var oneagentsdk = sdk.CreateInstance()
-
 
 
 http.HandleFunc("/", func(w http.ResponseWriter, _ *http.Request) {
 
 
-
 // Get TraceContextInfo within the incoming HTTP request
-
 
 
 // to obtain Trace ID and Span ID of the active distributed trace context
 
 
-
 traceContext := oneagentsdk.GetTraceContextInfo()
-
 
 
 msg := "Hello World"
 
 
-
 // Log to console
-
 
 
 fmt.Printf("[!dt dt.trace_id=%s,dt.span_id=%s] - %s\n", traceContext.GetTraceId(), traceContext.GetSpanId(), msg)
 
 
-
 // Write HTTP body
-
 
 
 fmt.Fprintf(w, msg)
 
 
-
 })
-
 
 
 fmt.Println("Starting HTTP server at port 8080...")
 
 
-
 log.Fatal(http.ListenAndServe(":8080", nil))
-
 
 
 }
@@ -959,117 +780,88 @@ log.Fatal(http.ListenAndServe(":8080", nil))
 import json
 
 
-
 from opentelemetry import trace as OpenTelemetry
-
 
 
 from opentelemetry.exporter.otlp.proto.http.trace_exporter import (
 
 
-
 OTLPSpanExporter,
 
 
-
 )
-
 
 
 from opentelemetry.sdk.resources import Resource
 
 
-
 from opentelemetry.sdk.trace import TracerProvider, sampling
-
 
 
 from opentelemetry.sdk.trace.export import (
 
 
-
 BatchSpanProcessor,
-
 
 
 )
 
 
-
 merged = dict()
-
 
 
 for name in ["dt_metadata_e617c525669e072eebe3d0f08212e8f2.json", "/var/lib/dynatrace/enrichment/dt_metadata.json"]:
 
 
-
 try:
-
 
 
 data = ''
 
 
-
 with open(name) as f:
-
 
 
 data = json.load(f if name.startswith("/var") else open(f.read()))
 
 
-
 merged.update(data)
-
 
 
 except:
 
 
-
 pass
-
 
 
 merged.update({
 
 
-
 "service.name": "python-quickstart", #TODO Replace with the name of your application
-
 
 
 "service.version": "1.0.1", #TODO Replace with the version of your application
 
 
-
 })
-
 
 
 resource = Resource.create(merged)
 
 
-
 tracer_provider = TracerProvider(sampler=sampling.ALWAYS_ON, resource=resource)
-
 
 
 OpenTelemetry.set_tracer_provider(tracer_provider)
 
 
-
 tracer_provider.add_span_processor(
-
 
 
 BatchSpanProcessor(OTLPSpanExporter(
 
 
-
 endpoint="http://localhost:14499/otlp/v1/traces"
-
 
 
 )))
@@ -1089,93 +881,70 @@ endpoint="http://localhost:14499/otlp/v1/traces"
 const winston = require("winston");
 
 
-
 const Transport = require("winston-transport");
-
 
 
 class CustomTransport extends Transport {
 
 
-
 log(info, next) {
-
 
 
 let myLogLine = `MyLogLine: ${info.timestamp} level=${info.level}: ${info.message}`;
 
 
-
 // this is important as above line only picks timestamp, level and message but nothing else from metadata
-
 
 
 if (info["dt.trace_id"]) {
 
 
-
 myLogLine = `[!dt dt.trace_id=${info["dt.trace_id"]},dt.span_id=${info["dt.span_id"]},dt.trace_sampled=${info["dt.trace_sampled"]}] ${myLogLine}`;
 
 
-
 }
-
 
 
 console.log(myLogLine);
 
 
-
 next();
 
 
-
 }
 
 
-
 }
-
 
 
 const logger = winston.createLogger({
 
 
-
 level: "info",
-
 
 
 format: winston.format.timestamp(),
 
 
-
 transports: [
-
 
 
 new CustomTransport(),
 
 
-
 // this transport includes all metadata (including dynatrace added traceId,..)
-
 
 
 new winston.transport.Console({
 
 
-
 format: winston.format.simple()
-
 
 
 })
 
 
-
 ]
-
 
 
 })

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Organize data
 
-# Organize data
 
 * Latest Dynatrace
 * Overview
@@ -41,7 +40,6 @@ For a full list of available built-in buckets, run this DQL query:
 
 ```
 fetch dt.system.buckets
-
 
 
 | filter startsWith(name, "default_") or startsWith(name, "dt_")

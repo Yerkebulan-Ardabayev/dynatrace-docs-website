@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:46.276233
 
 # Service dependency graph
 
-# Service dependency graph
 
 * Latest Dynatrace
 * Explanation

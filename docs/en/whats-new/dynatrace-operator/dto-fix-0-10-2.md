@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:21:50.796803
 
 # Dynatrace Operator release notes version 0.10.2
 
-# Dynatrace Operator release notes version 0.10.2
 
 * Latest Dynatrace
 * Release notes

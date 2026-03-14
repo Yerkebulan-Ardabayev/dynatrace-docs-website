@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:35:29.081764
 
 # Конфигурация мониторинга базы данных Snowflake
 
-# Конфигурация мониторинга базы данных Snowflake
 
 * Последняя версия Dynatrace
 * Справочник
@@ -26,117 +25,88 @@ scraped: 2026-03-05T21:35:29.081764
 [
 
 
-
 {
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "description": "My SnowFlake DB extension",
 
 
-
 "version": "0.1.1",
-
 
 
 "featureSets": [
 
 
-
 "io",
-
 
 
 "cpu",
 
 
-
 ],
-
 
 
 "sqlSnowflakeRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "sqlserver.org",
-
 
 
 "port": 1521,
 
 
-
 "databaseName":"SNOWFLAKE_SAMPLE_DATA",
-
 
 
 "warehouse":"yourwarehouse",
 
 
-
 "schema":"yourschema",
-
 
 
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "username": "admin",
 
 
-
 "password": "password"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "scope": "ag_group-default"
 
 
-
 }
-
 
 
 ]
@@ -164,13 +134,10 @@ scraped: 2026-03-05T21:35:29.081764
 "featureSets": [
 
 
-
 "cpu",
 
 
-
 "io"
-
 
 
 ]
@@ -184,61 +151,46 @@ scraped: 2026-03-05T21:35:29.081764
 "sqlSnowflakeRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "your-snowflake.com",
-
 
 
 "port": 1521,
 
 
-
 "databaseName":"SNOWFLAKE_SAMPLE_DATA",
-
 
 
 "warehouse":"yourwarehouse",
 
 
-
 "schema":"yourschema",
-
 
 
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "username": "admin",
 
 
-
 "password": "password"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -269,17 +221,13 @@ scraped: 2026-03-05T21:35:29.081764
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": true,
 
 
-
 "credentialVaultId": "some-credential-vault-id"
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:57.477430
 
 # Navigate the Dynatrace platform
 
-# Navigate the Dynatrace platform
 
 * Latest Dynatrace
 * Reference

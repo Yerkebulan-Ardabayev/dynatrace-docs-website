@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace API - Access limit
 
-# Dynatrace API - Access limit
 
 * Reference
 * Updated on Jan 09, 2026

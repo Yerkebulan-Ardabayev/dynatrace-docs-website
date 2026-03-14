@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:37.535392
 
 # Google Cloud Firestore monitoring
 
-# Google Cloud Firestore monitoring
 
 * Latest Dynatrace
 * How-to guide

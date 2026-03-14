@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:18:40.447424
 
 # Welcome to Dynatrace Documentation
 
-# Welcome to Dynatrace Documentation
 
 Learn about Dynatrace and explore resources to enhance your observability and security.
 
@@ -23,11 +22,6 @@ Learn about Dynatrace and explore resources to enhance your observability and se
 
 ## Tutorials
 
-Filter by
-
-Select an option
-
-Type to filter
 
 ## Documentation highlights
 

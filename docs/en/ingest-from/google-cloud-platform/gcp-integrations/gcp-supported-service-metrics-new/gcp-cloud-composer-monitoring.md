@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:01.937241
 
 # Google Cloud Composer monitoring
 
-# Google Cloud Composer monitoring
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:49.876144
 
 # OneAgent features
 
-# OneAgent features
 
 * Latest Dynatrace
 * 4-min read
@@ -84,37 +83,28 @@ To use the Settings API
    [
 
 
-
    {
-
 
 
    "schemaId":  "builtin:oneagent.features",
 
 
-
    "scope": "PROCESS_GROUP-1",
-
 
 
    "value": {
 
 
-
    "enabled": false,
-
 
 
    "key": "JAVA_LOG_ENRICHMENT_UNSTRUCTURED"
 
 
-
    }
 
 
-
    }
-
 
 
    ]
@@ -130,37 +120,28 @@ To use the Settings API
    [
 
 
-
    {
-
 
 
    "schemaId":  "builtin:oneagent.features",
 
 
-
    "scope": "Environment",
-
 
 
    "value": {
 
 
-
    "enabled": true,
-
 
 
    "key": "JAVA_KAFKA_STREAMS"
 
 
-
    }
 
 
-
    }
-
 
 
    ]

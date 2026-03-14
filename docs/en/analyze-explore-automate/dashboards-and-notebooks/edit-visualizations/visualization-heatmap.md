@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:33.800510
 
 # Heatmap visualization
 
-# Heatmap visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -32,9 +31,7 @@ The heatmap visualization above is based on the following query.
 timeseries response_time = avg(dt.service.request.response_time), by: { dt.entity.service }
 
 
-
 | fields response_time, entityName(dt.entity.service), interval, timeframe, dt.entity.service
-
 
 
 | limit 10
@@ -50,7 +47,6 @@ The query below has been updated to align with the new Grail security events tab
 
 ```
 fetch security.events
-
 
 
 | summarize count = count(), by:{range(vulnerability.risk.score, 0.5), event.status}

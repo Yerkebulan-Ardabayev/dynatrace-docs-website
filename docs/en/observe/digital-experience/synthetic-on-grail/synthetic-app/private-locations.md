@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:48.121649
 
 # Private synthetic locations
 
-# Private synthetic locations
 
 * Latest Dynatrace
 * How-to guide
@@ -212,25 +211,19 @@ Each `tgz` package archive is stored in the S3 bucket together with the `*.tgz.s
    wget https://ca.dynatrace.com/dt-root.cert.pem ; openssl cms
 
 
-
    -verify
-
 
 
    -in chromium.tgz.sig
 
 
-
    -inform PEM
-
 
 
    -content chromium.tgz
 
 
-
    -binary
-
 
 
    -CAfile dt-root.cert.pem > /dev/null
@@ -256,25 +249,19 @@ Each `zip` package archive is stored in the S3 bucket together with the `*.zip.s
    wget https://ca.dynatrace.com/dt-root.cert.pem ; openssl cms
 
 
-
    -verify
-
 
 
    -in chrome.zip.sig
 
 
-
    -inform PEM
-
 
 
    -content chrome.zip
 
 
-
    -binary
-
 
 
    -CAfile dt-root.cert.pem > /dev/null

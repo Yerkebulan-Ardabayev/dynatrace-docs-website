@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:23:22.538566
 
 # AI Observability
 
-# AI Observability
 
 * Latest Dynatrace
 * App

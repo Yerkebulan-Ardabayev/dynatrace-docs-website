@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:14.637105
 
 # Threat Observability
 
-# Threat Observability
 
 * Latest Dynatrace
 * Overview

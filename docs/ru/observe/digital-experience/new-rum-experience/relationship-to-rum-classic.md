@@ -6,7 +6,6 @@ scraped: 2026-02-23T21:26:20.516474
 
 # Взаимосвязь между новым RUM Experience и RUM Classic
 
-# Взаимосвязь между новым RUM Experience и RUM Classic
 
 * Latest Dynatrace
 * Explanation

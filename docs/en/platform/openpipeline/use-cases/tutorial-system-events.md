@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:03.051024
 
 # Extract a metric to track system events
 
-# Extract a metric to track system events
 
 * Latest Dynatrace
 * Tutorial
@@ -50,9 +49,7 @@ Prerequisites
    fetch dt.system.events
 
 
-
    | filter event.kind == "AUDIT_EVENT" AND event.provider == "APP_REGISTRY"
-
 
 
    | summarize by:{event.type}, count()

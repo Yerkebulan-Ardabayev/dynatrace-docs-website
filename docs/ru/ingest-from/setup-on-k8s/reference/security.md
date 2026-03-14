@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:18:55.414129
 
 # Безопасность Dynatrace Operator
 
-# Безопасность Dynatrace Operator
 
 * Последняя версия Dynatrace
 * Чтение: 16 мин

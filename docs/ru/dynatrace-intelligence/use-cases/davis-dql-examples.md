@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:33.076571
 
 # Примеры DQL для Dynatrace Intelligence
 
-# Примеры DQL для Dynatrace Intelligence
 
 * Latest Dynatrace
 * Reference
@@ -51,7 +50,6 @@ scraped: 2026-03-06T21:20:33.076571
 fetch dt.davis.problems, from:now()-24h, to:now()
 
 
-
 | summarize {problemCount = countDistinct(event.id)}
 ```
 
@@ -67,9 +65,7 @@ fetch dt.davis.problems, from:now()-24h, to:now()
 fetch dt.davis.problems
 
 
-
 | filter event.status == "ACTIVE"
-
 
 
 | summarize {activeProblems = countDistinct(event.id)}
@@ -86,7 +82,6 @@ fetch dt.davis.problems
 
 ```
 fetch dt.davis.problems, from:now()-7d
-
 
 
 | makeTimeseries count(default:0)
@@ -106,17 +101,13 @@ fetch dt.davis.problems, from:now()-7d
 fetch dt.davis.problems
 
 
-
 | expand affected_entity_ids
-
 
 
 | summarize count = countDistinct(display_id), by:{affected_entity_ids}
 
 
-
 | sort count, direction:"descending"
-
 
 
 | limit 3
@@ -138,13 +129,10 @@ fetch dt.davis.problems
 fetch dt.davis.problems
 
 
-
 | expand affected_entity_ids
 
 
-
 | fieldsAdd host.name = entityName(affected_entity_ids, type: "dt.entity.host")
-
 
 
 | filter host.name == "myhost"
@@ -162,7 +150,6 @@ fetch dt.davis.problems
 
 ```
 fetch dt.davis.problems
-
 
 
 | filter display_id == "P-24051200"
@@ -184,7 +171,6 @@ fetch dt.davis.problems
 fetch dt.davis.problems
 
 
-
 | filter event.status == "ACTIVE" and not dt.davis.is_duplicate == "true"
 ```
 
@@ -204,13 +190,10 @@ fetch dt.davis.problems
 fetch dt.davis.problems, from:now()-7d
 
 
-
 | filter event.status == "CLOSED"
 
 
-
 | filter dt.davis.is_frequent_event == false and dt.davis.is_duplicate == false and maintenance.is_under_maintenance == false
-
 
 
 | makeTimeseries `AVG Problem duration in hours` = avg(toLong(resolved_problem_duration)/3600000000000.0), time:event.end
@@ -228,7 +211,6 @@ fetch dt.davis.problems, from:now()-7d
 fetch dt.davis.problems
 
 
-
 | makeTimeseries count = count(), spread: timeframe(from: event.start, to: coalesce(event.end, now()))
 ```
 
@@ -241,13 +223,10 @@ fetch dt.davis.problems
 fetch dt.davis.events, from:now()-7d, to:now()
 
 
-
 | filter event.kind == "DAVIS_EVENT"
 
 
-
 | filter event.type == "OSI_HIGH_CPU" or event.type == "OSI_HIGH_MEMORY"
-
 
 
 | makeTimeseries count =  count(default: 0)

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:01.139093
 
 # Bubble map visualization
 
-# Bubble map visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -38,41 +37,31 @@ The map above is based on the following data.
 data
 
 
-
 record(geo.location.latitude = 51.509865, geo.location.longitude = -0.118092, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 48.864716, geo.location.longitude = 2.349014, revenue = toLong(random() * 10000000)),
 
 
-
 record(geo.location.latitude = 41.902782, geo.location.longitude = 12.496366, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 52.520008, geo.location.longitude = 13.404954, revenue = toLong(random() * 10000000)),
 
 
-
 record(geo.location.latitude = 40.416775, geo.location.longitude = -3.70379, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 51.9225, geo.location.longitude = 4.47917, revenue = toLong(random() * 10000000)),
 
 
-
 record(geo.location.latitude = 59.329323, geo.location.longitude = 18.068581, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 50.075538, geo.location.longitude = 14.4378, revenue = toLong(random() * 10000000)),
 
 
-
 record(geo.location.latitude = 37.98381, geo.location.longitude = 23.727539, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, revenue = toLong(random() * 10000000))
@@ -261,7 +250,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:12.501368
 
 # Set up host name determination in the New RUM Experience
 
-# Set up host name determination in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide

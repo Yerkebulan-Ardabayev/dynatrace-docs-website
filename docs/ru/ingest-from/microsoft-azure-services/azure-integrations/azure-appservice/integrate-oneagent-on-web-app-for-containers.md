@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:42.608656
 
 # Интеграция OneAgent в Azure App Service для Linux и контейнеров
 
-# Интеграция OneAgent в Azure App Service для Linux и контейнеров
 
 * Latest Dynatrace
 * Практическое руководство
@@ -65,45 +64,34 @@ az webapp config set -n <my-app> -g <my-resourcegroup> --startup-file <startup-s
 {
 
 
-
 "acrUseManagedIdentityCreds": false,
-
 
 
 "acrUserManagedIdentityId": null,
 
 
-
 "alwaysOn": false,
-
 
 
 "apiDefinition": null,
 
 
-
 "apiManagementConfig": null,
-
 
 
 "appCommandLine": "<startup-script/command>",
 
 
-
 "appSettings": null,
-
 
 
 "autoHealEnabled": false,
 
 
-
 "autoHealRules": null,
 
 
-
 "autoSwapSlotName": null,
-
 
 
 ...
@@ -143,7 +131,6 @@ az webapp config set -n <my-app> -g <my-resourcegroup> --startup-file <startup-s
    echo '/opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so' >> /etc/ld.so.preload
 
 
-
    /etc/init.d/nginx restart
    ```
 
@@ -167,17 +154,13 @@ wget -O /tmp/installer-wrapper.sh -q https://raw.githubusercontent.com/dynatrace
 #!/bin/sh
 
 
-
 readonly installerWrapperInstallationPath=/tmp/installer-wrapper.sh
-
 
 
 readonly installerWrapperURL=https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh
 
 
-
 wget -O $installerWrapperInstallationPath -q $installerWrapperURL
-
 
 
 sh $installerWrapperInstallationPath
@@ -199,17 +182,13 @@ wget -O /tmp/installer-wrapper.sh -q https://raw.githubusercontent.com/dynatrace
 #!/bin/sh
 
 
-
 readonly installerWrapperInstallationPath=/tmp/installer-wrapper.sh
-
 
 
 readonly installerWrapperURL=https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh
 
 
-
 wget -O $installerWrapperInstallationPath -q $installerWrapperURL
-
 
 
 DT_ENDPOINT=$DT_ENDPOINT DT_API_TOKEN=$DT_API_TOKEN DT_INCLUDE=$DT_INCLUDE START_APP_CMD=$START_APP_CMD sh $installerWrapperInstallationPath
@@ -229,29 +208,22 @@ DT_ENDPOINT=$DT_ENDPOINT DT_API_TOKEN=$DT_API_TOKEN DT_INCLUDE=$DT_INCLUDE START
 RESOURCE_GROUP="my-appservice-test"
 
 
-
 APPSVC="my-linux-webapp"
-
 
 
 DT_ENDPOINT="https://XXXXXX.live.dynatrace.com"
 
 
-
 DT_API_TOKEN="XXXXXX"
-
 
 
 DT_INCLUDE="nodejs"
 
 
-
 START_APP_CMD="pm2 start index.js --no-daemon"
 
 
-
 STARTUP_CMD="wget -O /tmp/installer-wrapper.sh -q https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh && DT_ENDPOINT=$DT_ENDPOINT DT_API_TOKEN=$DT_API_TOKEN DT_INCLUDE=$DT_INCLUDE START_APP_CMD=$START_APP_CMD sh /tmp/installer-wrapper.sh"
-
 
 
 az webapp config set --resource-group $RESOURCE_GROUP --name $APPSVC --startup-file "$STARTUP_CMD"

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:26.544330
 
 # Configure first-party, third-party, and CDN resource detection for web applications
 
-# Configure first-party, third-party, and CDN resource detection for web applications
 
 * Classic
 * How-to guide

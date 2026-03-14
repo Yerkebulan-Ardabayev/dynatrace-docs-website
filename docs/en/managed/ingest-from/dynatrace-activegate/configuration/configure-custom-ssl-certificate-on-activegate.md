@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:26.606529
 
 # Custom SSL certificate for ActiveGate
 
-# Custom SSL certificate for ActiveGate
 
 * Latest Dynatrace
 * 6-min read
@@ -43,13 +42,10 @@ To configure ActiveGate to use a custom certificate
    [com.compuware.apm.webserver]
 
 
-
    certificate-file = certificate-file.p12
 
 
-
    certificate-password = password
-
 
 
    certificate-alias = friendly-name
@@ -87,17 +83,13 @@ For example:
 curl https://myActiveGate:9999/e/myEnvironmentId/api/v1/certificate/cert.p12 \
 
 
-
 -H "Authorization: Api-Token 123abc" \
-
 
 
 -H "X-Password: myPassword" \
 
 
-
 -H "Content-Type: application/octet-stream" \
-
 
 
 -T cert.p12
@@ -159,73 +151,55 @@ Example response:
 [
 
 
-
 {
-
 
 
 "name":"cert_demo.p12"
 
 
-
 },
-
 
 
 {      "name":"cert.p12",
 
 
-
 "desc":[         {
-
 
 
 "alias":"local",
 
 
-
 "description":"Subject:CN=myActiveGate;Valid from:Fri Feb 15 13:16:58 CET 2019;Valid to:Sat Feb 15 13:16:58 CET 2020;Serial number:71d275dd3983c3cb9382437275dd3983c3cb93dbca"
-
 
 
 },
 
 
-
 {
-
 
 
 "alias":"dynatrace",
 
 
-
 "description":"Subject:CN=*.clients.dynatrace.org;Valid from:Thu Feb 21 10:06:03 CET 2019;Valid to:Fri Feb 21 10:06:03 CET 2020;Serial number:6dc7008ab269ecebeed03652ce08ab269ecebeeeb33"
 
 
-
 }
-
 
 
 ]
 
 
-
 },
-
 
 
 {
 
 
-
 "name":"cert_key_1.p12"
 
 
-
 }
-
 
 
 ]
@@ -259,41 +233,31 @@ Example response:
 {   "name":"cert.p12",
 
 
-
 "desc":[      {
-
 
 
 "alias":"local",
 
 
-
 "description":"Subject:CN=myActiveGate;Valid from:Fri Feb 15 13:16:58 CET 2019;Valid to:Sat Feb 15 13:16:58 CET 2020;Serial number:7137275dd398c4182437275dd3983c3cb93dbca"
-
 
 
 },
 
 
-
 {
-
 
 
 "alias":"dynatrace",
 
 
-
 "description":"Subject:CN=*.clients.dynatrace.org;Valid from:Thu Feb 21 10:06:03 CET 2019;Valid to:Fri Feb 21 10:06:03 CET 2020;Serial number:6d2ce08ab269ecebeee7f1bd03652ce08ab269ecebeeeb33"
-
 
 
 }
 
 
-
 ]
-
 
 
 }

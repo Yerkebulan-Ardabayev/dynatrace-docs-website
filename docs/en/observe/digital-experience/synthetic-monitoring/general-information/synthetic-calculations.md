@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:29:52.567205
 
 # Synthetic calculations
 
-# Synthetic calculations
 
 * Explanation
 * 4-min read

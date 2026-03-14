@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:24.885857
 
 # Выбор формата сниппета в New RUM Experience
 
-# Выбор формата сниппета в New RUM Experience
 
 * Latest Dynatrace
 * How-to guide

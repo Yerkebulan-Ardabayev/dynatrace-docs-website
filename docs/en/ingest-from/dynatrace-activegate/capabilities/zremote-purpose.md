@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:15.913103
 
 # Install the zRemote module for z/OS monitoring
 
-# Install the zRemote module for z/OS monitoring
 
 * Latest Dynatrace
 * 1-min read

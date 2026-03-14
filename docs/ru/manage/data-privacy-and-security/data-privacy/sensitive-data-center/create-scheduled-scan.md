@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:28:24.209852
 
 # Создание запланированного сканирования в Sensitive Data Center
 
-# Создание запланированного сканирования в Sensitive Data Center
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:00.758573
 
 # Azure AI - Text Analytics monitoring
 
-# Azure AI - Text Analytics monitoring
 
 * Latest Dynatrace
 * How-to guide

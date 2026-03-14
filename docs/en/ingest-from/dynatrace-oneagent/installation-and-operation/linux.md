@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:44.799206
 
 # OneAgent on Linux
 
-# OneAgent on Linux
 
 * Latest Dynatrace
 * 1-min read

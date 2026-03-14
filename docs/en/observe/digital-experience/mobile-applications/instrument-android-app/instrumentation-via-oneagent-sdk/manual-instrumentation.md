@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:03.786138
 
 # Manually instrument your application using OneAgent SDK for Android
 
-# Manually instrument your application using OneAgent SDK for Android
 
 * Classic
 * How-to guide
@@ -54,9 +53,7 @@ When you use standalone manual instrumentation, nothing is done automatically. E
    dependencies {
 
 
-
    implementation 'com.dynatrace.agent:agent-android:8.+'
-
 
 
    }
@@ -66,9 +63,7 @@ When you use standalone manual instrumentation, nothing is done automatically. E
    dependencies {
 
 
-
    implementation("com.dynatrace.agent:agent-android:8.+")
-
 
 
    }
@@ -89,37 +84,28 @@ When you use standalone manual instrumentation, nothing is done automatically. E
    public class YourApplication extends Application {
 
 
-
    @Override
-
 
 
    public void onCreate() {
 
 
-
    super.onCreate();
-
 
 
    // provide the application context as parameter
 
 
-
    Dynatrace.startup(this, new DynatraceConfigurationBuilder("<YourApplicationID>", "<ProvidedBeaconUrl>")
-
 
 
    ... // additional configuration
 
 
-
    .buildConfiguration());
 
 
-
    }
-
 
 
    }
@@ -129,33 +115,25 @@ When you use standalone manual instrumentation, nothing is done automatically. E
    class YourApplication : Application() {
 
 
-
    override fun onCreate() {
-
 
 
    super.onCreate()
 
 
-
    // provide the application context as parameter
-
 
 
    Dynatrace.startup(this, DynatraceConfigurationBuilder("<YourApplicationID>", "<ProvidedBeaconUrl>")
 
 
-
    ... // additional configuration
-
 
 
    .buildConfiguration())
 
 
-
    }
-
 
 
    }
@@ -171,9 +149,7 @@ When you use standalone manual instrumentation, nothing is done automatically. E
    Dynatrace.startup(yourActiveActivity, new DynatraceConfigurationBuilder("<YourApplicationID>", "<ProvidedBeaconUrl>")
 
 
-
    ... // additional configuration
-
 
 
    .buildConfiguration());
@@ -183,9 +159,7 @@ When you use standalone manual instrumentation, nothing is done automatically. E
    Dynatrace.startup(yourActiveActivity, DynatraceConfigurationBuilder("<YourApplicationID>", "<ProvidedBeaconUrl>")
 
 
-
    ... // additional configuration
-
 
 
    .buildConfiguration())

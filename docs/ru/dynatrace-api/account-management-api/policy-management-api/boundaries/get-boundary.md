@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:29:45.609196
 
 # API управления политиками — GET граница политики
 
-# API управления политиками — GET граница политики
 
 * Последняя версия Dynatrace
 * Справочник
@@ -74,65 +73,49 @@ scraped: 2026-03-03T21:29:45.609196
 {
 
 
-
 "uuid": "string",
-
 
 
 "levelType": "string",
 
 
-
 "levelId": "string",
 
 
-
 "name": "string",
-
 
 
 "boundaryQuery": "string",
 
 
-
 "boundaryConditions": [
 
 
-
 {
-
 
 
 "name": "string",
 
 
-
 "operator": "string",
-
 
 
 "values": [
 
 
-
 "string"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "metadata": {}
-
 
 
 }
@@ -142,17 +125,13 @@ scraped: 2026-03-03T21:29:45.609196
 {
 
 
-
 "code": 1,
-
 
 
 "message": "string",
 
 
-
 "errorsMap": {}
-
 
 
 }
@@ -168,9 +147,7 @@ scraped: 2026-03-03T21:29:45.609196
 curl --request GET \
 
 
-
 --url 'https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890/boundaries/9a7b6c54-3d2e-4f10-a8b2-7cde9012f345' \
-
 
 
 --header 'Authorization: Bearer abcdefjhij1234567890'
@@ -188,65 +165,49 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 {
 
 
-
 "uuid": "9a7b6c54-3d2e-4f10-a8b2-7cde9012f345",
-
 
 
 "levelType": "account",
 
 
-
 "levelId": "f1a2b3c4-d5e6-7890-ab12-34cd56ef7890",
-
 
 
 "name": "bndry_teamA",
 
 
-
 "boundaryQuery": "storage:dt.security_context = \"TEAM-AB\";",
-
 
 
 "boundaryConditions": [
 
 
-
 {
-
 
 
 "name": "storage:dt.security_context",
 
 
-
 "operator": "EQ",
-
 
 
 "values": [
 
 
-
 "TEAM-A"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "metadata": {}
-
 
 
 }

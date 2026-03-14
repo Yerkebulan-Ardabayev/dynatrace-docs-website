@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Metric units API - GET all units
 
-# Metric units API - GET all units
 
 * Reference
 * Published Feb 11, 2022
@@ -97,129 +96,98 @@ A list of constraint violations
 {
 
 
-
 "totalCount": 2,
-
 
 
 "units": [
 
 
-
 {
-
 
 
 "description": "byte per second",
 
 
-
 "displayName": "byte per second",
-
 
 
 "displayNamePlural": "bytes per second",
 
 
-
 "symbol": "B/s",
-
 
 
 "unitId": "BytePerSecond"
 
 
-
 },
 
 
-
 {
-
 
 
 "description": "byte per minute",
 
 
-
 "displayName": "byte per minute",
-
 
 
 "displayNamePlural": "bytes per minute",
 
 
-
 "symbol": "B/min",
-
 
 
 "unitId": "BytePerMinute"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -239,9 +207,7 @@ The result is truncated to three entries.
 curl --request GET \
 
 
-
 --url https://mySampleEnv.live.dynatrace.com/api/v2/units \
-
 
 
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -259,77 +225,58 @@ https://mySampleEnv.live.dynatrace.com/api/v2/units
 {
 
 
-
 "totalCount": 3,
-
 
 
 "activeGateTokens": [
 
 
-
 {
-
 
 
 "unitId": "Second",
 
 
-
 "displayName": "second",
-
 
 
 "symbol": "s"
 
 
-
 },
 
 
-
 {
-
 
 
 "unitId": "GigaBit",
 
 
-
 "displayName": "gigabit",
-
 
 
 "symbol": "Gbit"
 
 
-
 },
-
 
 
 {
 
 
-
 "unitId": "KiloBytePerSecond",
-
 
 
 "displayName": "kilobyte per second",
 
 
-
 "symbol": "kB/s"
-
 
 
 }
 
 
-
 ]
-
 
 
 }

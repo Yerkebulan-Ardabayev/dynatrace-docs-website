@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:28:10.336000
 
 # Platform tokens
 
-# Platform tokens
 
 * Latest Dynatrace
 * Reference
@@ -147,7 +146,6 @@ To allow users to generate platform tokens against existing service users, the a
 
 ```
 ALLOW iam:service-users:use
-
 
 
 WHERE iam:service-user-email IN ("abc@service.sso.dynatrace.com", "def@service.sso.dynatrace.com");

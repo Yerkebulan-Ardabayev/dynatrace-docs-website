@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:48.623627
 
 # Monitor container groups
 
-# Monitor container groups
 
 * Classic
 * How-to guide

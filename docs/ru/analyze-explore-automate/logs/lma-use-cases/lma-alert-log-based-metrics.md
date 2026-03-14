@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:43.409363
 
 # Настройка пользовательских оповещений на основе метрик, извлечённых из логов
 
-# Настройка пользовательских оповещений на основе метрик, извлечённых из логов
 
 * Latest Dynatrace
 * Руководство
@@ -42,9 +41,7 @@ scraped: 2026-03-06T21:33:43.409363
 fetch logs
 
 
-
 | filter matchesPhrase(content, "Dropping data because sending_queue is full")
-
 
 
 | sort timestamp desc

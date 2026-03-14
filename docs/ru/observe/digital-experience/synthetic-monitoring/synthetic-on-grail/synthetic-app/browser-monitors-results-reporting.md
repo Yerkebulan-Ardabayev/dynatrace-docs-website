@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:33:26.124355
 
 # Результаты отчётов мониторов браузера
 
-# Результаты отчётов мониторов браузера
 
 * Новейшая версия Dynatrace
 * Справочник
@@ -86,9 +85,7 @@ scraped: 2026-02-06T16:33:26.124355
 timeseries av = avg(dt.synthetic.browser.availability), by: {dt.entity.synthetic_test}
 
 
-
 | fields dt.entity.synthetic_test, avgAV=arrayAvg(av)
-
 
 
 | filter dt.entity.synthetic_test == "SYNTHETIC_TEST-2891B733D75330FA"
@@ -107,13 +104,10 @@ timeseries av = avg(dt.synthetic.browser.availability), by: {dt.entity.synthetic
 timeseries av = avg(dt.synthetic.browser.availability), by: {dt.entity.synthetic_test, dt.maintenance_window_ids}
 
 
-
 | filter dt.entity.synthetic_test == "SYNTHETIC_TEST-2891B733D75330FA"
 
 
-
 | filter isNull(dt.maintenance_window_ids)
-
 
 
 | fields avgAV=arrayAvg(av)
@@ -131,7 +125,6 @@ timeseries av = avg(dt.synthetic.browser.availability), by: {dt.entity.synthetic
 
 ```
 timeseries avg(dt.synthetic.browser.availability), by:{dt.entity.synthetic_test, interpolated}
-
 
 
 | filter dt.entity.synthetic_test == "SYNTHETIC_TEST-7E0A1CF206C4A1C5"

@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:23:24.583520
 
 # Problem graph
 
-# Problem graph
 
 * Latest Dynatrace
 * Explanation

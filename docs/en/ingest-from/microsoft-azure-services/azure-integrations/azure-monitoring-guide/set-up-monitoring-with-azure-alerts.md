@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:17.117243
 
 # Set up monitoring notifications with Azure Monitor alerts
 
-# Set up monitoring notifications with Azure Monitor alerts
 
 * Latest Dynatrace
 * How-to guide
@@ -51,7 +50,6 @@ To configure a designated ActiveGate to consume Azure Monitor alerts:
 
    ```
    [azure_monitoring]
-
 
 
    event_servlet = true

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:46.951929
 
 # Instrument ingress-nginx
 
-# Instrument ingress-nginx
 
 * Latest Dynatrace
 * 1-min read
@@ -45,7 +44,6 @@ Ensure that OneAgent is running and capable of instrumenting the ingress-nginx c
    data:
 
 
-
    main-snippet: load_module /opt/dynatrace/oneagent/agent/bin/current/linux-musl-x86-64/liboneagentnginx.so;
    ```
 
@@ -53,7 +51,6 @@ Ensure that OneAgent is running and capable of instrumenting the ingress-nginx c
 
    ```
    data:
-
 
 
    main-snippet: load_module /opt/dynatrace/oneagent-paas/agent/bin/current/linux-musl-x86-64/liboneagentnginx.so;

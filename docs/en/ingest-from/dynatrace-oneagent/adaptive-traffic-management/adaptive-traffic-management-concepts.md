@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:53.354074
 
 # Adaptive Traffic Management concepts
 
-# Adaptive Traffic Management concepts
 
 * Latest Dynatrace
 * Explanation

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:28.599096
 
 # Compliance and resilience
 
-# Compliance and resilience
 
 * Latest Dynatrace
 * Explanation

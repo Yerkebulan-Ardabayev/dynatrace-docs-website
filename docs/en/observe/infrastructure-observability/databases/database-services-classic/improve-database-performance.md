@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:36.126300
 
 # Improve database performance
 
-# Improve database performance
 
 * Classic
 * How-to guide

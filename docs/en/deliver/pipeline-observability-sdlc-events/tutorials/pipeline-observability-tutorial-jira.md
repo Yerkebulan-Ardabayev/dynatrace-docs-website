@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:30:16.892113
 
 # Optimize engineering flow metrics using Jira data
 
-# Optimize engineering flow metrics using Jira data
 
 * Latest Dynatrace
 * Tutorial
@@ -144,37 +143,28 @@ In your browser, to find the Jira fields, make a call to the Jira API on any iss
    {
 
 
-
    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
-
 
 
    "id": "10000",
 
 
-
    "self": "https://<your-endpoint>.atlassian.net/rest/api/2/issue/10000",
-
 
 
    "key": "SCRUM-1",
 
 
-
    "names": {
-
 
 
    "customfield_10001": "Team",
 
 
-
    "customfield_10019": "Rank"
 
 
-
    }
-
 
 
    }
@@ -191,153 +181,115 @@ Add the custom field IDs of the automatically created **Rank** and **Team** Jira
    {
 
 
-
    "specversion": "1.0"
-
 
 
    , "id": "{{issue.key}}"
 
 
-
    , "source": "JIRA"
-
 
 
    , "day": "{{now.jiraDate}}"
 
 
-
    , "version": "1"
-
 
 
    , "key": "{{issue.key}}"
 
 
-
    , "summary": {{issue.summary.asJsonString()}}
-
 
 
    , "type": "{{issue.issuetype.name}}"
 
 
-
    {{#exists(issue.assignee)}}
-
 
 
    , "assignee": "{{issue.assignee.displayName}}"
 
 
-
    {{/}}
-
 
 
    {{#exists(issue.customfield_<your-team-custom-field-id>)}}
 
 
-
    , "team": "{{issue.customfield_<your-team-custom-field-id>.name}}"
 
 
-
    {{/}}
-
 
 
    , "status": "{{issue.status.name}}"
 
 
-
    , "status_category": "{{issue.status.statuscategory.name}}"
-
 
 
    {{#exists(issue.resolution)}}
 
 
-
    , "resolution": "{{issue.resolution.name}}"
 
 
-
    {{/}}
-
 
 
    {{#if(not(issue.labels.isEmpty))}}
 
 
-
    , "labels": [
-
 
 
    {{#issue.labels}}
 
 
-
    "{{.}}" {{^last}},{{/}}
 
 
-
    {{/}}
-
 
 
    ]
 
 
-
    {{/}}
-
 
 
    {{#if(equals(issue.fixVersions.size, 1))}}
 
 
-
    {{#issue.fixVersions}}
-
 
 
    , "fix_version": "{{name}}"
 
 
-
    , "fix_version.release_date": "{{releaseDate.format("yyyy-MM-dd")}}"
 
 
-
    {{/}}
 
 
-
    {{/}}
-
 
 
    , "created": "{{issue.created}}"
 
 
-
    , "status_changed_on": "{{issue.statuscategorychangedate}}"
-
 
 
    , "resolved": "{{issue.resolved}}"
 
 
-
    , "rank": "{{issue.customfield_<your-rank-custom-field-id>}}"
 
 
-
    , "project": "{{issue.project.key}}"
-
 
 
    }
@@ -404,7 +356,6 @@ This step is about verifying your Jira and Dynatrace setup.
 
       ```
       fetch events
-
 
 
       | filter dt.system.bucket == "jira_events"

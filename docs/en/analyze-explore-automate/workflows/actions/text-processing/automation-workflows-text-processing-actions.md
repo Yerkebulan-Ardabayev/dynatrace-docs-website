@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:14.231788
 
 # Actions for Text Processing Connector
 
-# Actions for Text Processing Connector
 
 * Latest Dynatrace
 * Reference
@@ -45,9 +44,7 @@ Configures a JSON file.
 {
 
 
-
 "json": "<updated json content>"
-
 
 
 }
@@ -63,37 +60,28 @@ This is an example input for the **Set JSON value** action where we change the v
   {
 
 
-
   "persons": [
 
 
-
   {
-
 
 
   "name": "Max"
 
 
-
   },
-
 
 
   {
 
 
-
   "name": "John"
-
 
 
   }
 
 
-
   ]
-
 
 
   }
@@ -110,37 +98,28 @@ The first name was changed to Michael.
 {
 
 
-
 "persons": [
 
 
-
 {
-
 
 
 "name": "Michael"
 
 
-
 },
-
 
 
 {
 
 
-
 "name": "John"
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -159,9 +138,7 @@ Supports multi-document YAML files.
 {
 
 
-
 âyamlâ: â<updated yaml content>â
-
 
 
 }
@@ -177,29 +154,22 @@ This is an example input for the **Set YAML value** action where we change the v
   ---
 
 
-
   persons:
-
 
 
   - name: John
 
 
-
   - name: Sarah
-
 
 
   ---
 
 
-
   persons:
 
 
-
   - name: Max
-
 
 
   - name: Jeff
@@ -219,25 +189,19 @@ This is the result of running the **Set JSON value** action as part of a workflo
 persons:
 
 
-
 - name: John
-
 
 
 - name: Sarah
 
 
-
 ---
-
 
 
 persons:
 
 
-
 - name: Michael
-
 
 
 - name: Jeff
@@ -260,21 +224,16 @@ Retrieves a value from a JSON file.
   {
 
 
-
   "person": {
-
 
 
   "name": "John Doe"
 
 
-
   "age": 30,
 
 
-
   }
-
 
 
   }
@@ -285,21 +244,16 @@ Retrieves a value from a JSON file.
   {
 
 
-
   "json": {
-
 
 
   "name": "John Doe",
 
 
-
   "age": 30
 
 
-
   }
-
 
 
   }
@@ -324,9 +278,7 @@ Supports multi-document YAML files.
   person:
 
 
-
   name: "John doe"
-
 
 
   age: 30
@@ -337,9 +289,7 @@ Supports multi-document YAML files.
   {
 
 
-
   "yaml": "name: \"John Doe\"\nage: 30"
-
 
 
   }

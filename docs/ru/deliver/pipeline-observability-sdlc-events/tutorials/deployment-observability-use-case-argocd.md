@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:24:45.170541
 
 # Наблюдение за развёртыванием Argo CD и состоянием приложений с помощью дашбордов и событий SDLC
 
-# Наблюдение за развёртыванием Argo CD и состоянием приложений с помощью дашбордов и событий SDLC
 
 * Latest Dynatrace
 * Руководство
@@ -82,7 +81,6 @@ scraped: 2026-03-03T21:24:45.170541
    git clone https://github.com/Dynatrace/dynatrace-configuration-as-code-samples.git
 
 
-
    cd dynatrace-configuration-as-code-samples/argocd_observability
    ```
 4. Отредактируйте `manifest.yaml`, заменив плейсхолдер `<YOUR-DT-ENV-ID>` на идентификатор вашей среды Dynatrace в свойстве name и в URL свойства value.
@@ -91,61 +89,46 @@ scraped: 2026-03-03T21:24:45.170541
    manifestVersion: 1.0
 
 
-
    projects:
-
 
 
    - name: pipeline_observability
 
 
-
    environmentGroups:
-
 
 
    - name: group
 
 
-
    environments:
-
 
 
    - name: <YOUR-DT-ENV-ID>
 
 
-
    url:
-
 
 
    type: value
 
 
-
    value: https://<YOUR-DT-ENV-ID>.apps.dynatrace.com
-
 
 
    auth:
 
 
-
    oAuth:
-
 
 
    clientId:
 
 
-
    name: OAUTH_CLIENT_ID
 
 
-
    clientSecret:
-
 
 
    name: OAUTH_CLIENT_SECRET
@@ -217,25 +200,19 @@ scraped: 2026-03-03T21:24:45.170541
       apiVersion: v1
 
 
-
       kind: Secret
-
 
 
       metadata:
 
 
-
       name: argocd-notifications-secret
-
 
 
       stringData:
 
 
-
       dt-base-url: https://{your-environment-id}.live.dynatrace.com
-
 
 
       dt-access-token: <YOUR-ACCESS-TOKEN>
@@ -251,109 +228,82 @@ scraped: 2026-03-03T21:24:45.170541
       apiVersion: v1
 
 
-
       kind: ConfigMap
-
 
 
       metadata:
 
 
-
       name: argocd-notifications-cm
-
 
 
       data:
 
 
-
       service.webhook.dynatrace-webhook: |
-
 
 
       url: $dt-base-url
 
 
-
       headers:
-
 
 
       - name: "Authorization"
 
 
-
       value: Api-Token $dt-access-token
-
 
 
       - name: "Content-Type"
 
 
-
       value: "application/json; charset=utf-8"
-
 
 
       template.dynatrace-webhook-template: |
 
 
-
       webhook:
-
 
 
       dynatrace-webhook:
 
 
-
       method: POST
-
 
 
       path: /platform/ingest/custom/events.sdlc/argocd
 
 
-
       body: |
-
 
 
       {
 
 
-
       "app": {{toJson .app}}
-
 
 
       }
 
 
-
       trigger.dynatrace-webhook-trigger: |
-
 
 
       - when: app.status.operationState.phase in ['Succeeded'] and app.status.health.status in ['Healthy', 'Degraded']
 
 
-
       send: [dynatrace-webhook-template]
-
 
 
       - when: app.status.operationState.phase in ['Failed', 'Error']
 
 
-
       send: [dynatrace-webhook-template]
 
 
-
       - when: app.status.operationState.phase in ['Running']
-
 
 
       send: [dynatrace-webhook-template]
@@ -375,17 +325,13 @@ scraped: 2026-03-03T21:24:45.170541
       apiVersion: argoproj.io/v1alpha1
 
 
-
       kind: Application
-
 
 
       metadata:
 
 
-
       annotations:
-
 
 
       notifications.argoproj.io/subscribe.dynatrace-webhook-trigger.dynatrace-webhook: ""
@@ -413,7 +359,6 @@ Argo CD предоставляет различные наборы метрик 
 
    ```
    metrics.dynatrace.com/port: {METRICS_PORT}
-
 
 
    metrics.dynatrace.com/scrape: 'true'

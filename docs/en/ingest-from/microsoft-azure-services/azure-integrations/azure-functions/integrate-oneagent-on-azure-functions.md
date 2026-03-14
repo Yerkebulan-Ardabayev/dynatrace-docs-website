@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:48.203441
 
 # Monitor Azure Functions on App Service Plan for Windows
 
-# Monitor Azure Functions on App Service Plan for Windows
 
 * Latest Dynatrace
 * How-to guide
@@ -81,129 +80,97 @@ Example configuration:
 {
 
 
-
 "apiVersion": "2016-08-01",
 
 
-
 "name": "[parameters('resourceName')]",
-
 
 
 "type": "Microsoft.Web/sites",
 
 
-
 "properties": {
-
 
 
 "name": "[parameters('resourceName')]",
 
 
-
 "siteConfig": {
-
 
 
 "alwaysOn": true,
 
 
-
 "appSettings": [
-
 
 
 { "Name": "DT_TENANT", "Value": "<Environment-ID>" },
 
 
-
 { "Name": "DT_API_TOKEN", "Value": "<PaaS-Token>" },
-
 
 
 { "Name": "DT_API_URL", "Value": "<Server-Url>" },
 
 
-
 { "Name": "DT_SSL_MODE", "Value": "default" }
-
 
 
 ]
 
 
-
 },
-
 
 
 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('resourceName'))]"
 
 
-
 },
 
 
-
 "dependsOn": [
-
 
 
 "[concat('Microsoft.Web/serverfarms/', parameters('resourceName'))]"
 
 
-
 ],
-
 
 
 "location": "[parameters('location')]",
 
 
-
 "resources": [
-
 
 
 {
 
 
-
 "apiVersion": "2016-08-01",
-
 
 
 "name": "Dynatrace",
 
 
-
 "type": "siteextensions",
-
 
 
 "dependsOn": [
 
 
-
 "[resourceId('Microsoft.Web/sites', parameters('resourceName'))]"
-
 
 
 ],
 
 
-
 "properties": { }
-
 
 
 }
 
 
-
 ]
-
 
 
 }

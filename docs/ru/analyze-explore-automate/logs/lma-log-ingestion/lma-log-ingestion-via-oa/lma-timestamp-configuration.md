@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:09.868600
 
 # Настройка меток времени и разделения записей
 
-# Настройка меток времени и разделения записей
 
 * Latest Dynatrace
 * Руководство
@@ -87,9 +86,7 @@ Dynatrace позволяет определять правила, управля
 Log entry 1: Pattern 1, Pattern 2
 
 
-
 Log entry 2: Pattern 2
-
 
 
 Log entry 3: Pattern 1, Pattern 2

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:54.552227
 
 # Check your application health
 
-# Check your application health
 
 * Classic
 * How-to guide

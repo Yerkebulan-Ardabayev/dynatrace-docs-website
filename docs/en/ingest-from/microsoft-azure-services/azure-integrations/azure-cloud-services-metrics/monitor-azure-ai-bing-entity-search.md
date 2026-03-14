@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:26:29.550619
 
 # Azure AI - Bing Entity Search monitoring
 
-# Azure AI - Bing Entity Search monitoring
 
 * Latest Dynatrace
 * How-to guide

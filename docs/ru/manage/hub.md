@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:19.637942
 
 # Dynatrace Hub
 
-# Dynatrace Hub
 
 * Последняя версия Dynatrace
 * Приложение
@@ -175,7 +174,6 @@ Dynatrace может предоставить вам приложения или
 
 ```
 ALLOW settings:objects:read, settings:objects:write, settings:schemas:read
-
 
 
 WHERE settings:schemaId = "builtin:hub-channel.subscriptions";

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:26.941059
 
 # Content resources API
 
-# Content resources API
 
 * Reference
 * Published Sep 23, 2020

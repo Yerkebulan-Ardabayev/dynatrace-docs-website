@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:58.033259
 
 # Google Cloud Functions monitoring
 
-# Google Cloud Functions monitoring
 
 * Latest Dynatrace
 * Overview

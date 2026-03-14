@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:30.344451
 
 # Metadata enrichment of all telemetry originating from Kubernetes
 
-# Metadata enrichment of all telemetry originating from Kubernetes
 
 * Latest Dynatrace
 * 7-min read
@@ -92,21 +91,16 @@ You might create the following annotations at the pod level:
 metadata:
 
 
-
 annotations:
-
 
 
 metadata.dynatrace.com/dt.security_context: sre
 
 
-
 metadata.dynatrace.com/dt.cost.costcenter: it_services
 
 
-
 metadata.dynatrace.com/dt.cost.product: fin_app
-
 
 
 metadata.dynatrace.com/k8s.namespace.label.domain: finance
@@ -118,13 +112,10 @@ The following attributes will enrich the data:
 dt.security_context: sre
 
 
-
 dt.cost.costcenter: it_services
 
 
-
 dt.cost.product: fin_app
-
 
 
 k8s.namespace.label.domain: finance
@@ -179,17 +170,13 @@ DT_ENTITY_KUBERNETES_CLUSTER="$(kubectl get dynakube -o jsonpath='{.status.kuber
 kubectl create configmap dynatrace-metadata \
 
 
-
 --from-literal K8S_CLUSTER_UID=$K8S_CLUSTER_UID \
-
 
 
 --from-literal K8S_CLUSTER_NAME=$K8S_CLUSTER_NAME \
 
 
-
 --from-literal DT_ENTITY_KUBERNETES_CLUSTER=$DT_ENTITY_KUBERNETES_CLUSTER \
-
 
 
 --namespace <YOUR_NAMESPACE>
@@ -206,205 +193,154 @@ It needs to be provided as a static string.
 envFrom:
 
 
-
 - configMapRef:
-
 
 
 name: dynatrace-metadata
 
 
-
 optional: false
-
 
 
 env:
 
 
-
 - name: K8S_CONTAINER_NAME
-
 
 
 value: "" # replace with actual container name
 
 
-
 - name: K8S_POD_NAME
-
 
 
 valueFrom:
 
 
-
 fieldRef:
 
 
-
 apiVersion: v1
-
 
 
 fieldPath: metadata.name
 
 
-
 - name: K8S_POD_UID
-
 
 
 valueFrom:
 
 
-
 fieldRef:
 
 
-
 apiVersion: v1
-
 
 
 fieldPath: metadata.uid
 
 
-
 - name: K8S_POD_NAMESPACE
-
 
 
 valueFrom:
 
 
-
 fieldRef:
 
 
-
 apiVersion: v1
-
 
 
 fieldPath: metadata.namespace
 
 
-
 - name: K8S_WORKLOAD_KIND
-
 
 
 valueFrom:
 
 
-
 fieldRef:
 
 
-
 apiVersion: v1
-
 
 
 fieldPath: metadata.annotations['metadata.dynatrace.com/k8s.workload.kind'] # only works when metadata enrichment is enabled
 
 
-
 - name: K8S_WORKLOAD_NAME
-
 
 
 valueFrom:
 
 
-
 fieldRef:
 
 
-
 apiVersion: v1
-
 
 
 fieldPath: metadata.annotations['metadata.dynatrace.com/k8s.workload.name'] # only works when metadata enrichment is enabled
 
 
-
 - name: K8S_NODE_NAME
-
 
 
 valueFrom:
 
 
-
 fieldRef:
 
 
-
 apiVersion: v1
-
 
 
 fieldPath: spec.nodeName
 
 
-
 - name: DT_SECURITY_CONTEXT # only works when automatic security context enrichment is configured
-
 
 
 valueFrom:
 
 
-
 fieldRef:
 
 
-
 apiVersion: v1
-
 
 
 fieldPath: metadata.annotations['metadata.dynatrace.com/dt.security_context']
 
 
-
 - name: DT_COST_PRODUCT # only works when automatic cost product enrichment is configured
-
 
 
 valueFrom:
 
 
-
 fieldRef:
 
 
-
 apiVersion: v1
-
 
 
 fieldPath: metadata.annotations['metadata.dynatrace.com/dt.cost.product']
 
 
-
 - name: DT_COST_COSTCENTER # only works when automatic cost center enrichment is configured
-
 
 
 valueFrom:
 
 
-
 fieldRef:
 
 
-
 apiVersion: v1
-
 
 
 fieldPath: metadata.annotations['metadata.dynatrace.com/dt.cost.costcenter']
@@ -416,7 +352,6 @@ This example shows all our recommended attributes. Remove attributes that are no
 
 ```
 - name: OTEL_RESOURCE_ATTRIBUTES
-
 
 
 value: k8s.cluster.name=$(K8S_CLUSTER_NAME),k8s.cluster.uid=$(K8S_CLUSTER_UID),k8s.node.name=$(K8S_NODE_NAME),k8s.workload.name=$(K8S_WORKLOAD_NAME),k8s.workload.kind=$(K8S_WORKLOAD_KIND),k8s.pod.name=$(K8S_POD_NAME),k8s.pod.uid=$(K8S_POD_UID),k8s.namespace.name=$(K8S_POD_NAMESPACE),k8s.container.name=$(K8S_CONTAINER_NAME),dt.entity.kubernetes_cluster=$(DT_ENTITY_KUBERNETES_CLUSTER),dt.security_context=$(DT_SECURITY_CONTEXT),dt.cost.costcenter=$(DT_COST_COSTCENTER),dt.cost.product=$(DT_COST_PRODUCT)
@@ -474,105 +409,79 @@ Rules in `builtin:kubernetes.generic.metadata.enrichment`
 "rules":
 
 
-
 [
 
 
-
 {
-
 
 
 # rule #1
 
 
-
 "type": "Annotation",
-
 
 
 "source": "metadata.example.com/team",
 
 
-
 "target": "dt.security_context"
-
 
 
 },
 
 
-
 {
-
 
 
 # rule #2
 
 
-
 "type": "Label",
-
 
 
 "source": "department",
 
 
-
 "target": "dt.cost.costcenter"
-
 
 
 },
 
 
-
 {
-
 
 
 # rule #3
 
 
-
 "type": "Label",
-
 
 
 "source": "app/name",
 
 
-
 "target": "dt.cost.product"
 
 
-
 }
-
 
 
 {
 
 
-
 # rule #4
-
 
 
 "type": "Label",
 
 
-
 "source": "domain",
-
 
 
 "primaryGrailTag": "true"
 
 
-
 }
-
 
 
 ]
@@ -586,25 +495,19 @@ Your existing namespace labels and annotations:
 metadata:
 
 
-
 annotations:
-
 
 
 metadata.example.com/team: sre
 
 
-
 labels:
-
 
 
 department: it_services
 
 
-
 app/name: fin_app
-
 
 
 domain: finance
@@ -618,33 +521,25 @@ The Operator will create pod annotations:
 metadata:
 
 
-
 annotations:
-
 
 
 metadata.dynatrace.com:|
 
 
-
 {
-
 
 
 "dt.security_context": "sre",
 
 
-
 "dt.cost.costcenter": "it_services",
-
 
 
 "dt.cost.product": "fin_app",
 
 
-
 "k8s.namespace.label.domain": "finance"
-
 
 
 }
@@ -658,13 +553,10 @@ The following attributes will be enriched on the data:
 dt.security_context: sre
 
 
-
 dt.cost.costcenter: it_services
 
 
-
 dt.cost.product: fin_app
-
 
 
 k8s.namespace.label.domain: finance

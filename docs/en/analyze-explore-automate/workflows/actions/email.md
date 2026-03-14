@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:40:37.061485
 
 # Email
 
-# Email
 
 * Latest Dynatrace
 * 3-min read
@@ -96,7 +95,6 @@ Each line of an unordered (bulleted) list starts with an asterisk (`*`):
 * Line 1
 
 
-
 * Line 2
 ```
 
@@ -104,7 +102,6 @@ Alternatively, you can use a dash (`-`):
 
 ```
 - Line 1
-
 
 
 - Line 2
@@ -116,9 +113,7 @@ An ordered (numbered) list starts with a number and a period (`1.`) followed by 
 1. The first line of my procedure.
 
 
-
 2. The second line of my procedure.
-
 
 
 3. The third line of my procedure.
@@ -132,9 +127,7 @@ To add a table, define the headers, the column formatting row, and then the rows
 | Header 1 | Header2
 
 
-
 --- | ---
-
 
 
 content2 | content2

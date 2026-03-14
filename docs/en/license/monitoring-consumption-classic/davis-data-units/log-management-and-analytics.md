@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:35.434463
 
 # DDUs for Log Management and Analytics
 
-# DDUs for Log Management and Analytics
 
 * Classic
 * 12-min read

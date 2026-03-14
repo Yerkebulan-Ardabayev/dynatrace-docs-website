@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:07.008765
 
 # Инструментирование вашего приложения Erlang с помощью OpenTelemetry
 
-# Инструментирование вашего приложения Erlang с помощью OpenTelemetry
 
 * Latest Dynatrace
 * Практическое руководство
@@ -52,21 +51,16 @@ URL должен заканчиваться на `/api/v2/otlp`.
    {deps, [
 
 
-
    %TODO add any additional dependancies here
-
 
 
    opentelemetry_api,
 
 
-
    opentelemetry,
 
 
-
    opentelemetry_exporter
-
 
 
    ]}.
@@ -77,17 +71,13 @@ URL должен заканчиваться на `/api/v2/otlp`.
    {applications, [kernel,
 
 
-
    stdlib,
-
 
 
    opentelemetry_api,
 
 
-
    opentelemetry,
-
 
 
    opentelemetry_exporter]}
@@ -98,89 +88,67 @@ URL должен заканчиваться на `/api/v2/otlp`.
    [
 
 
-
    {otel_getting_started, []},
-
 
 
    {opentelemetry,
 
 
-
    [{span_processor, batch},
-
 
 
    {traces_exporter, otlp},
 
 
-
    {resource,
-
 
 
    [{service,
 
 
-
    #{name => "erlang-quickstart", version => "1.0.1"} %%TODO Replace with the name and version of your application
-
 
 
    }]
 
 
-
    },
-
 
 
    {resource_detectors, [
 
 
-
    otel_resource_env_var,
-
 
 
    otel_resource_app_env,
 
 
-
    extra_metadata
 
 
-
    ]}
-
 
 
    ]
 
 
-
    },
-
 
 
    {opentelemetry_exporter,
 
 
-
    [{otlp_protocol, http_protobuf},
-
 
 
    {otlp_traces_endpoint, "[URL]"}, %%TODO Replace [URL] to your SaaS/Managed URL as mentioned in the next step
 
 
-
    {otlp_headers, [{"Authorization", "Api-Token [TOKEN]"}]} %%TODO Replace [TOKEN] with your API Token as mentioned in the next step
 
 
-
    ]}
-
 
 
    ].
@@ -191,81 +159,61 @@ URL должен заканчиваться на `/api/v2/otlp`.
    -module(extra_metadata).
 
 
-
    -behaviour(otel_resource_detector).
-
 
 
    -export([get_resource/1]).
 
 
-
    get_resource(_) ->
-
 
 
    Metadata = otel_resource:create(otel_resource_app_env:parse(get_metadata("/var/lib/dynatrace/enrichment/dt_metadata.properties")), []),
 
 
-
    {ok, MetadataFilePath} = file:read_file("dt_metadata_e617c525669e072eebe3d0f08212e8f2.properties"),
-
 
 
    Metadata2 = otel_resource:create(otel_resource_app_env:parse(get_metadata(MetadataFilePath)), []),
 
 
-
    Metadata3 = otel_resource:create(otel_resource_app_env:parse(get_metadata("/var/lib/dynatrace/enrichment/dt_host_metadata.properties")), []),
-
 
 
    otel_resource:merge(otel_resource:merge(Metadata, Metadata2), Metadata3),
 
 
-
    otel_resource:merge(Metadata, Metadata2).
-
 
 
    get_metadata(FileName) ->
 
 
-
    try
-
 
 
    {ok, MetadataFile} = file:read_file(FileName),
 
 
-
    Lines = binary:split(MetadataFile, <<"\n">>, [trim, global]),
-
 
 
    make_tuples(Lines, [])
 
 
-
    catch _:_ -> "Metadata not found, safe to continue"
-
 
 
    end.
 
 
-
    make_tuples([Line|Lines], Acc) ->
-
 
 
    [Key, Value] = binary:split(Line, <<"=">>),
 
 
-
    make_tuples(Lines, [{Key, Value}|Acc]);
-
 
 
    make_tuples([], Acc) -> Acc.
@@ -283,49 +231,37 @@ URL должен заканчиваться на `/api/v2/otlp`.
 -export([init/2]).
 
 
-
 -include_lib("opentelemetry_api/include/otel_tracer.hrl").
-
 
 
 -include_lib("opentelemetry/include/otel_resource.hrl").
 
 
-
 init( Req, State ) ->
-
 
 
 ?with_span(<<"parent_span">>, #{attributes => [ %%TODO Add span name
 
 
-
 {<<"my-key-1">>, <<"my-value-1">>}] %%TODO Add attributes at span creation
-
 
 
 }, fun child_function/1),
 
 
-
 %% Your code goes here
-
 
 
 child_function(_SpanCtx) ->
 
 
-
 ?with_span(<<"child_span">>, #{},
-
 
 
 fun(_ChildSpanCtx) ->
 
 
-
 ?set_attributes([{<<"child-key-1">>, <<"child-value-1">>}]) %%TODO Add attributes after span creation
-
 
 
 end).
@@ -353,73 +289,55 @@ end).
 %% Get Headers from incoming request
 
 
-
 Headers = maps:get(headers, Req),
-
 
 
 otel_propagator_text_map:extract(maps:to_list(Headers)),
 
 
-
 SpanCtx = ?start_span(<<"span-name">>),
-
 
 
 %% As we used `otel_propagator_text_map` the current context is from the parent span
 
 
-
 Ctx = otel_ctx:get_current(),
-
 
 
 proc_lib:spawn_link(fun() ->
 
 
-
 %% Start span and set as current
-
 
 
 otel_ctx:attach(Ctx),
 
 
-
 ?set_current_span(SpanCtx),
-
 
 
 %% Create response
 
 
-
 Resp = cowboy_req:reply(
-
 
 
 200,
 
 
-
 #{<<"content-type">> => <<"application/json">>},
-
 
 
 <<"{\"message\": \"hello world\"}">>,
 
 
-
 Req
-
 
 
 ),
 
 
-
 {ok, Resp, State},
-
 
 
 ?end_span(SpanCtx)
@@ -433,53 +351,40 @@ Req
 ?with_span(<<"span-name">>, #{},
 
 
-
 fun(_ChildSpanCtx) ->
-
 
 
 %% A custom header example
 
 
-
 Headers = [{"content-type", "application/json"}, {"X-Custom-Header", "some-value"}],
-
 
 
 %% We convert the traceparent information and merge the 2 headers as
 
 
-
 %% Httpc:request requires tuples of strings
-
 
 
 Tmp = [],
 
 
-
 NewHeaders = headers_list(otel_propagator_text_map:inject(opentelemetry:get_text_map_injector(), Tmp)),
-
 
 
 MergedHeaders = lists:append(Headers, NewHeaders),
 
 
-
 {ok, Res} = httpc:request(get, {URL, MergedHeaders}, [], []),
-
 
 
 io:format("Response: ~p~n", [Res])
 
 
-
 end).
 
 
-
 headers_list(Headers) ->
-
 
 
 [{binary_to_list(Name), binary_to_list(Value)} || {Name, Value} <- Headers].

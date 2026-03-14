@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:29.356055
 
 # Мониторинг базы данных MariaDB
 
-# Мониторинг базы данных MariaDB
 
 * Latest Dynatrace
 * How-to guide

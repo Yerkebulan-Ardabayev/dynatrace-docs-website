@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:48.202555
 
 # Пользовательская конфигурация Extension Execution Controller
 
-# Пользовательская конфигурация Extension Execution Controller
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -44,14 +43,12 @@ Windows
   service extensionsmodule stop
 
 
-
   service extensionsmodule start
   ```
 * Для систем с systemd:
 
   ```
   systemctl stop extensionsmodule
-
 
 
   systemctl start extensionsmodule
@@ -61,7 +58,6 @@ Windows
 
 ```
 net stop "Dynatrace Extensions Controller"
-
 
 
 net start "Dynatrace Extensions Controller"

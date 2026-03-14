@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:16.527467
 
 # Log Management and Analytics use cases
 
-# Log Management and Analytics use cases
 
 * Latest Dynatrace
 * Overview

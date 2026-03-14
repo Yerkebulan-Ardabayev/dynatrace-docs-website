@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:48.414954
 
 # Отправка уведомлений Dynatrace в VictorOps
 
-# Отправка уведомлений Dynatrace в VictorOps
 
 * Classic
 * 2-min read

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # ActiveGate release notes
 
-# ActiveGate release notes
 
 * Release notes
 * Updated on Feb 03, 2026

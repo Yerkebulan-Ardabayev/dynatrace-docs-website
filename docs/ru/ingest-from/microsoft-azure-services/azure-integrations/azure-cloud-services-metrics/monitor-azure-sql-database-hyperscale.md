@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:05.677742
 
 # Мониторинг Azure SQL Database Hyperscale
 
-# Мониторинг Azure SQL Database Hyperscale
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:04.473139
 
 # Расширение Cisco UCS C-Series
 
-# Расширение Cisco UCS C-Series
 
 * Последняя Dynatrace
 * Расширение
@@ -99,65 +98,49 @@ scraped: 2026-03-06T21:36:04.473139
 ((2 * # of CPUs)
 
 
-
 + (1 * # of External Interfaces)
-
 
 
 + (5 * # of Fan Modules)
 
 
-
 + (5 * # of Fans)
-
 
 
 + (5 * # of Local Disks)
 
 
-
 + (4 * # of Memory Arrays)
-
 
 
 + (2 * # of Memory Units)
 
 
-
 + (1 * # of Network Adapters)
-
 
 
 + (5 * # of Power Supplies)
 
 
-
 + (4 * # of Raid Batteries)
-
 
 
 + (1 * # of Storage Controllers)
 
 
-
 + (1 * # of VIC Adapters)
-
 
 
 + (1 * # of VIC External Interfaces)
 
 
-
 + (1 * # of VIC vHBAs)
-
 
 
 + (1 * # of VIC vNICs)
 
 
-
 + (2 * # of Virtual Drives))
-
 
 
 * 525,600 metric data points/year

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Solaris
 
-# Solaris
 
 * 1-min read
 * Updated on Nov 18, 2025

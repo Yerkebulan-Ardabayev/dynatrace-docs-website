@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:09.934912
 
 # Пользовательские запросы, сегментация и агрегирование данных сессий
 
-# Пользовательские запросы, сегментация и агрегирование данных сессий
 
 * Classic
 * How-to guide
@@ -114,7 +113,6 @@ SELECT browserType, userId, city, AVG(userActionCount) AS "Average user action c
 columns: [DISTINCT] <column>, <column>, ... | function(<parameter>) |
 
 
-
 <column> AS <alias> | JSON
 ```
 
@@ -124,9 +122,7 @@ columns: [DISTINCT] <column>, <column>, ... | function(<parameter>) |
 SELECT country, city, browserfamily FROM usersession
 
 
-
 SELECT DISTINCT country, city, useractioncount FROM usersession
-
 
 
 SELECT country, city, avg(duration) AS average FROM usersession GROUP BY country, city
@@ -154,9 +150,7 @@ SELECT FUNNEL (<condition> AS <alias>, <condition>, ...) FROM <table> WHERE <con
 SELECT COUNT(*) FROM usersession where useraction.name = "AppStart"
 
 
-
 SELECT COUNT(*) FROM usersession where useraction.name = "AppStart" AND useraction.name = "searchJourney"
-
 
 
 SELECT COUNT(*) FROM usersession where useraction.name = "AppStart" AND useraction.name = "searchJourney"  AND useraction.name = "bookJourney"
@@ -168,7 +162,6 @@ SELECT COUNT(*) FROM usersession where useraction.name = "AppStart" AND useracti
 SELECT FUNNEL (useraction.name = "AppStart", useraction.name = "searchJourney", useraction.name = "bookJourney")
 
 
-
 FROM usersession
 ```
 
@@ -178,7 +171,6 @@ FROM usersession
 
 ```
 SELECT FUNNEL (useraction.name="login", useraction.name = "searchJourney", useraction.name = "bookJourney")
-
 
 
 FROM usersession
@@ -199,7 +191,6 @@ FROM usersession
 SELECT country, city, browserfamily FROM usersession
 
 
-
 SELECT name, starttime, endtime, duration FROM useraction ORDER BY duration DESC
 ```
 
@@ -211,9 +202,7 @@ SELECT name, starttime, endtime, duration FROM useraction ORDER BY duration DESC
 condition: (condition AND condition) | (condition OR condition) | field IN(...) |
 
 
-
 field IS <value> | field IS NULL | field = <value> | field > <value> | field < <value> |
-
 
 
 field <> <value> | field IS NOT <value> | field BETWEEN <value> AND <value> | ...
@@ -227,17 +216,13 @@ field <> <value> | field IS NOT <value> | field BETWEEN <value> AND <value> | ..
 SELECT country, city, browserfamily FROM usersession WHERE country = 'Albania' AND screenWidth > 1000
 
 
-
 SELECT TOP(country, 20), TOP(city, 20), TOP(duration, 10), AVG(duration) AS average
-
 
 
 FROM usersession
 
 
-
 WHERE duration BETWEEN 1000 AND 2000
-
 
 
 GROUP BY TOP(country, 20), TOP(city, 20), TOP(duration, 10)
@@ -257,9 +242,7 @@ grouping: <column>, ...
 SELECT city, count(*) FROM usersession GROUP BY city
 
 
-
 SELECT MONTH(starttime) as month, count (*) FROM usersession
-
 
 
 GROUP BY month
@@ -313,13 +296,10 @@ SELECT DISTINCT city, COUNT(*) FROM usersession ORDER BY COUNT(*) DESC
 SELECT avg(duration) AS average, count(*) as number, day(startTime) as startDay
 
 
-
 FROM usersession where duration < 2000
 
 
-
 GROUP BY startTime
-
 
 
 ORDER BY average
@@ -331,13 +311,10 @@ ORDER BY average
 SELECT avg(duration) AS average, count(*) as number, day(startTime) as startDay
 
 
-
 FROM usersession where duration < 2000
 
 
-
 GROUP BY startTime
-
 
 
 ORDER BY number DESC, average ASC
@@ -408,21 +385,16 @@ SELECT userId FROM usersession WHERE userId LIKE "AU\\%40KWM"
 SELECT CONDITION(COUNT(userSessionId), WHERE useraction.name LIKE '*search.html'),
 
 
-
 CONDITION(COUNT(userSessionId), WHERE useraction.name LIKE '*booking-payment1.html')
-
 
 
 FROM usersession
 
 
-
 WHERE city LIKE "%York"
 
 
-
 OR city LIKE "S*Francisco"
-
 
 
 AND city LIKE "L*inz"
@@ -442,9 +414,7 @@ SELECT FUNNEL (useraction.name LIKE "*start", useraction.name LIKE "Jou%rney", u
 SELECT COUNT(*) FROM usersession where useraction.name LIKE "*start"
 
 
-
 SELECT COUNT(*) FROM usersession where useraction.name LIKE "*start" AND useraction.name LIKE "Jou%rney"
-
 
 
 SELECT COUNT(*) FROM usersession where useraction.name LIKE "*start" AND useraction.name LIKE "Jou%rney" AND useraction.name LIKE "bookJourn*ey"
@@ -462,21 +432,16 @@ SELECT COUNT(*) FROM usersession where useraction.name LIKE "*start" AND useract
 SELECT useraction.application,
 
 
-
 AVG(usersession.doubleProperties.bookings)
-
 
 
 FILTER > 1500
 
 
-
 FROM usersession
 
 
-
 WHERE usersession.doubleProperties.bookings IS NOT NULL
-
 
 
 GROUP BY useraction.application
@@ -496,7 +461,6 @@ GROUP BY useraction.application
 SELECT MIN(duration), MAX(duration), AVG(duration), MEDIAN(duration)
 
 
-
 FROM usersession
 ```
 
@@ -508,7 +472,6 @@ FROM usersession
 
 ```
 SELECT MIN(duration), MAX(duration), AVG(duration), MEDIAN(duration)
-
 
 
 FROM usersession
@@ -524,7 +487,6 @@ FROM usersession
 SELECT MIN(duration), MAX(duration), AVG(duration), MEDIAN(duration)
 
 
-
 FROM usersession
 ```
 
@@ -538,7 +500,6 @@ FROM usersession
 SELECT MIN(duration), MAX(duration), AVG(duration), MEDIAN(duration)
 
 
-
 FROM usersession
 ```
 
@@ -550,7 +511,6 @@ FROM usersession
 
 ```
 SELECT TOP(name, 20), SUM(duration) FROM useraction
-
 
 
 GROUP BY name
@@ -570,9 +530,7 @@ GROUP BY name
 SELECT country, COUNT(*), COUNT(city), COUNT(DISTINCT city)
 
 
-
 FROM usersession
-
 
 
 GROUP BY country
@@ -605,9 +563,7 @@ Dynatrace отклоняет и не выполняет запросы с `COUNT
 SELECT country, COUNT(*), COUNT(city), COUNT(DISTINCT city)
 
 
-
 FROM usersession
-
 
 
 GROUP BY country
@@ -623,9 +579,7 @@ GROUP BY country
 SELECT TOP(name, 20), SUM(duration)
 
 
-
 FROM useraction
-
 
 
 GROUP BY name
@@ -637,9 +591,7 @@ GROUP BY name
 SELECT TOP(country, 20), TOP(city, 3), COUNT(*)
 
 
-
 FROM usersession
-
 
 
 GROUP BY country
@@ -661,13 +613,10 @@ GROUP BY country
 SELECT starttime,
 
 
-
 DATETIME(starttime), YEAR(starttime), MONTH(starttime), DAY(starttime), HOUR(starttime), MINUTE(starttime)
 
 
-
 FROM usersession
-
 
 
 ORDER BY starttime DESC
@@ -696,7 +645,6 @@ ORDER BY starttime DESC
 SELECT DATETIME(starttime, 'yyyy-MM') FROM usersession
 
 
-
 SELECT DISTINCT DATETIME(starttime, 'HH:mm', '5m'), COUNT(*) FROM usersession
 ```
 
@@ -708,13 +656,10 @@ SELECT DISTINCT DATETIME(starttime, 'HH:mm', '5m'), COUNT(*) FROM usersession
 SELECT application, DATETIME(MAX(starttime)) AS LastUsedTime FROM useraction GROUP BY application
 
 
-
 SELECT DATETIME(starttime, "HH") AS hourOfDay, COUNT(*) FROM usersession GROUP BY hourOfDay
 
 
-
 SELECT application, DATETIME(starttime, "E") AS daysOfWeek FROM useraction GROUP BY application
-
 
 
 SELECT DATETIME(CONDITION(MAX(startTime), WHERE name = "index.jsp")) FROM useraction
@@ -740,17 +685,13 @@ SELECT DATETIME(CONDITION(MAX(startTime), WHERE name = "index.jsp")) FROM userac
 CONDITION(function, condition)
 
 
-
 condition:
-
 
 
 (condition AND condition) | (condition OR condition) | field IN(...) |
 
 
-
 field IS <value> | field IS NULL | field = <value> | field > <value> | field < <value> |
-
 
 
 field <> <value> | field IS NOT <value> | field BETWEEN <value> AND <value> | ...
@@ -768,13 +709,10 @@ SELECT CONDITION(COUNT(usersessionId), WHERE userActionCount > 2 AND useraction.
 SELECT CONDITION(COUNT(usersessionId), WHERE userActionCount > 2 AND useraction.name = "search.jsp") FROM usersession
 
 
-
 SELECT CONDITION(SUM(usersession.duration), WHERE name = "index.jsp") AS c1, CONDITION(SUM(usersession.duration), WHERE name = "search.jsp") AS c2, CONDITION(SUM(usersession.duration), WHERE name IS NOT "index.jsp" AND name IS NOT "search.jsp") AS c3 FROM useraction WHERE (duration > 1000 OR usersession.userActionCount > 4)
 
 
-
 SELECT CONDITION(SUM(usersession.duration), WHERE name = "index.jsp") AS c1 FROM useraction WHERE (duration > 1000 OR usersession.userActionCount > 4) ORDER BY c1
-
 
 
 SELECT DATETIME(CONDITION(MIN(startTime ), WHERE useraction.application = "RUM Default Application" ), "yyyy-MM-dd" ) FROM usersession
@@ -790,29 +728,22 @@ SELECT DATETIME(CONDITION(MIN(startTime ), WHERE useraction.application = "RUM D
 SELECT name, usersession.country, usersession.browserFamily,
 
 
-
 AVG(duration),
-
 
 
 MEDIAN(duration),
 
 
-
 PERCENTILE(duration, 99)
-
 
 
 FROM useraction
 
 
-
 WHERE useraction.name = "easytravel/rest/login"
 
 
-
 GROUP BY usersession.country, usersession.browserFamily, name
-
 
 
 ORDER BY usersession.continent
@@ -846,9 +777,7 @@ ORDER BY usersession.continent
 SELECT KEYS(stringProperties) FROM useraction WHERE application = "easyTravel demo application"
 
 
-
 SELECT KEYS(useraction.longProperties) FROM usersession WHERE applicationType="WEB_APPLICATION" ORDER BY keys(useraction.longProperties)
-
 
 
 SELECT KEYS(usersession.stringProperties) FROM useraction WHERE usersession.city ="Berlin"
@@ -860,7 +789,6 @@ SELECT KEYS(usersession.stringProperties) FROM useraction WHERE usersession.city
 
 ```
 SELECT DISTINCT KEYS(stringProperties) FROM useraction WHERE useraction.application = "easyTravel demo application" ORDER BY keys(stringProperties)
-
 
 
 SELECT DISTINCT KEYS(doubleProperties) FROM usersession
@@ -886,7 +814,6 @@ SELECT DISTINCT KEYS(doubleProperties) FROM usersession
 
 ```
 SELECT 7 + 80 * 100, duration + startTime, MONTH(startTime) - 1
-
 
 
 FROM usersession
@@ -920,7 +847,6 @@ SELECT userId FROM usersession WHERE userActionCount > 3
 SELECT DISTINCT ip FROM usersession
 
 
-
 WHERE ip BETWEEN '192.168.0.0' AND '192.168.255.255'
 ```
 
@@ -928,7 +854,6 @@ WHERE ip BETWEEN '192.168.0.0' AND '192.168.255.255'
 
 ```
 SELECT startTime FROM useraction
-
 
 
 WHERE NOT startTime BETWEEN $NOW - DURATION("2h") AND $NOW
@@ -940,9 +865,7 @@ WHERE NOT startTime BETWEEN $NOW - DURATION("2h") AND $NOW
 SELECT ip, browserType, userId, city
 
 
-
 FROM usersession
-
 
 
 WHERE NOT ip BETWEEN '52.179.11.1' AND '52.179.11.255'
@@ -1014,21 +937,16 @@ SELECT starttime FROM usersession WHERE starttime > "8.8.2018 8:00"
 SELECT COUNT(*) FROM userevent
 
 
-
 WHERE pageReferrer = "/some/page/referrer/1"
-
 
 
 OR pageReferrer = "/some/page/referrer/2"
 
 
-
 OR pageReferrer = "/some/page/referrer/3"
 
 
-
 OR pageReferrer = "/some/page/referrer/4"
-
 
 
 OR pageReferrer = "/some/page/referrer/5"
@@ -1040,21 +958,16 @@ OR pageReferrer = "/some/page/referrer/5"
 SELECT COUNT(*) FROM userevent
 
 
-
 WHERE pageReferrer IN ("/some/page/referrer/1",
-
 
 
 "/some/page/referrer/2",
 
 
-
 "/some/page/referrer/3",
 
 
-
 "/some/page/referrer/4",
-
 
 
 "/some/page/referrer/5")
@@ -1070,29 +983,22 @@ WHERE pageReferrer IN ("/some/page/referrer/1",
 SELECT useraction.name, usersession.userId
 
 
-
 FROM useraction
-
 
 
 WHERE name = "loading of page /"
 
 
-
 AND usersession.userId IS NOT NULL
-
 
 
 AND usersession.userId <> "Speed Travel Agency"
 
 
-
 AND usersession.userId <> "some user"
 
 
-
 AND usersession.userId <> "easyTravel - One step to happiness"
-
 
 
 AND usersession.userId <> "easyTravel - Booking - Finish"
@@ -1104,29 +1010,22 @@ AND usersession.userId <> "easyTravel - Booking - Finish"
 SELECT useraction.name, usersession.userId
 
 
-
 FROM useraction
-
 
 
 WHERE name = "loading of page /"
 
 
-
 AND usersession.userId IS NOT NULL
-
 
 
 AND NOT usersession.userId IN ("Speed Travel Agency",
 
 
-
 "some user",
 
 
-
 "easyTravel - One step to happiness",
-
 
 
 "easyTravel - Booking - Finish")
@@ -1142,7 +1041,6 @@ AND NOT usersession.userId IN ("Speed Travel Agency",
 
 ```
 SELECT * FROM usersession WHERE ip > '211.44.94.0' AND ip < '212.113.5.0'
-
 
 
 SELECT * FROM usersession WHERE ip BETWEEN '211.44.94.0' AND '212.113.5.0'
@@ -1167,7 +1065,6 @@ SELECT * FROM usersession WHERE startTime >= $TIME_FRAME_START AND endTime < $TI
 
 ```
 SELECT name, duration FROM useraction
-
 
 
 WHERE startTime BETWEEN $TIME_FRAME_START and $TIME_FRAME_END
@@ -1196,9 +1093,7 @@ WHERE startTime BETWEEN $TIME_FRAME_START and $TIME_FRAME_END
 SELECT * FROM usersession WHERE startTime >= $NOW - DURATION("1q") AND endTime <= $NOW
 
 
-
 SELECT * FROM useraction WHERE startTime BETWEEN $NOW - DURATION("2h") AND $NOW
-
 
 
 SELECT * FROM useraction WHERE usersession.startTime >= $TIME_FRAME_START - DURATION("2h") AND $NOW - DURATION("1h")
@@ -1218,7 +1113,6 @@ SELECT * FROM useraction WHERE usersession.startTime >= $TIME_FRAME_START - DURA
 SELECT city, useraction.name FROM usersession
 
 
-
 SELECT usersession.city, name FROM useraction
 ```
 
@@ -1228,9 +1122,7 @@ SELECT usersession.city, name FROM useraction
 SELECT usersession.country, name, page FROM userevent
 
 
-
 SELECT usersession.country, name, type FROM usererror
-
 
 
 SELECT country, userevent.name, usererror.name FROM usersession
@@ -1244,7 +1136,6 @@ SELECT country, userevent.name, usererror.name FROM usersession
 SELECT city, useraction.name, userevent.page, usererror.type FROM usersession
 
 
-
 SELECT city, usererror.name, userevent.page, useraction.duration FROM usersession WHERE usererror.name IS NOT NULL
 ```
 
@@ -1254,7 +1145,6 @@ SELECT city, usererror.name, userevent.page, useraction.duration FROM usersessio
 
 ```
 SELECT * FROM usersession
-
 
 
 WHERE userevent.application = "a" OR useraction.application="a"
@@ -1276,7 +1166,6 @@ SELECT usersession.city, useraction.name, userevent.page, usererror.type FROM us
 SELECT usersession.userId, name, duration FROM useraction
 
 
-
 SELECT usersession.userId, name, type FROM usererror
 ```
 
@@ -1286,7 +1175,6 @@ SELECT usersession.userId, name, type FROM usererror
 
 ```
 SELECT * FROM usersession
-
 
 
 WHERE useraction.name = "a" AND useraction.name = "b"
@@ -1300,7 +1188,6 @@ WHERE useraction.name = "a" AND useraction.name = "b"
 SELECT usersession.*, * FROM useraction
 
 
-
 WHERE useraction.name = "a" AND useraction.duration > 1000
 ```
 
@@ -1312,17 +1199,13 @@ WHERE useraction.name = "a" AND useraction.duration > 1000
 SELECT COUNT(usersession.userSessionId)
 
 
-
 FROM usersession
-
 
 
 WHERE userevent.name = 'Page change'
 
 
-
 AND userevent.pageGroup = '/Booking'
-
 
 
 AND userevent.type = 'UserTag'
@@ -1336,17 +1219,13 @@ AND userevent.type = 'UserTag'
 SELECT COUNT(usersession.userSessionId)
 
 
-
 FROM userevent
-
 
 
 WHERE userevent.name = 'Page change'
 
 
-
 AND userevent.pageGroup = '/Booking'
-
 
 
 AND userevent.type = 'UserTag'
@@ -1380,13 +1259,10 @@ SELECT name FROM useraction WHERE name="abc"
 SELECT * FROM usersession
 
 
-
 SELECT useraction.* FROM usersession
 
 
-
 SELECT city, useraction.* FROM usersession
-
 
 
 SELECT *, useraction.* FROM usersession
@@ -1408,7 +1284,6 @@ SELECT *, useraction.* FROM usersession
 SELECT usersessionId, browserFamily, useraction.name, useraction.duration, JSON
 
 
-
 FROM usersession LIMIT 5
 ```
 
@@ -1420,7 +1295,6 @@ FROM usersession LIMIT 5
 
 ```
 SELECT name, duration, JSON
-
 
 
 FROM useraction LIMIT 5
@@ -1438,7 +1312,6 @@ FROM useraction LIMIT 5
 SELECT * FROM usersession WHERE userId = "some 'custom' name for ""my user"""
 
 
-
 SELECT * FROM usersession WHERE userId = 'some ''custom'' name for "my user"'
 ```
 
@@ -1452,21 +1325,16 @@ SELECT * FROM usersession WHERE userId = 'some ''custom'' name for "my user"'
 SELECT FUNNEL(
 
 
-
 useraction.name = "AppStart (easyTravel)" AS "Open easytravel",
-
 
 
 useraction.name = "searchJourney" AS "Search journey",
 
 
-
 useraction.name = "bookJourney" AS "Book journey",
 
 
-
 useraction.matchingConversionGoals = "Payment" OR useraction.matchingConversionGoals = "booking-finished" AS "Booked")
-
 
 
 FROM usersession
@@ -1480,25 +1348,19 @@ FROM usersession
 SELECT FUNNEL(
 
 
-
 useraction.name = "AppStart (easyTravel)" AS "Open easytravel",
-
 
 
 useraction.name = "searchJourney" AS "Search journey",
 
 
-
 useraction.name = "bookJourney" AS "Book journey",
-
 
 
 useraction.matchingConversionGoals = "Payment" OR useraction.matchingConversionGoals = "booking-finished" AS "Booked")
 
 
-
 FROM usersession
-
 
 
 WHERE stringProperties.memberstatus="GOLD"
@@ -1542,7 +1404,6 @@ WHERE stringProperties.memberstatus="GOLD"
 curl --location --insecure -H "Content-Type: application/json" -H "Authorization: Api-Token _token_" \
 
 
-
 -XGET "https://{your-environment-id}.live.dynatrace.com/api/v1/userSessionQueryLanguage/table?query=select%20city,count(*)%20from%20usersession%20group%20by%20city"
 ```
 
@@ -1552,29 +1413,22 @@ curl --location --insecure -H "Content-Type: application/json" -H "Authorization
 {
 
 
-
 "columnNames": ["city",    "count(*)"],
-
 
 
 "values": [
 
 
-
 ["Dublin",    23],
-
 
 
 ["N. Virginia (Amazon)",    80],
 
 
-
 ["Portland",    56]
 
 
-
 ]
-
 
 
 }
@@ -1586,7 +1440,6 @@ curl --location --insecure -H "Content-Type: application/json" -H "Authorization
 curl --location --insecure -H "Content-Type: application/json" -H "Authorization: Api-Token _token_" \
 
 
-
 -XGET "https://{your-environment-id}.live.dynatrace.com/api/v1/userSessionQueryLanguage/tree?query=select%20country,city,count(*)%20from%20usersession%20group%20by%20country,city"
 ```
 
@@ -1596,49 +1449,37 @@ curl --location --insecure -H "Content-Type: application/json" -H "Authorization
 {
 
 
-
 "branchNames": ["country",    "city"],
-
 
 
 "leafNames": ["count(*)"],
 
 
-
 "values": {
-
 
 
 "United States": {
 
 
-
 "Portland": [56],
-
 
 
 "N. Virginia (Amazon)": [83]
 
 
-
 },
-
 
 
 "Ireland": {
 
 
-
 "Dublin": [24]
 
 
-
 }
 
 
-
 }
-
 
 
 }

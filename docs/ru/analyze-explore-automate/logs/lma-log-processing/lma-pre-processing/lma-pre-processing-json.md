@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:23.371162
 
 # Обработка JSON-логов с неэкранированными вложенными строками JSON
 
-# Обработка JSON-логов с неэкранированными вложенными строками JSON
 
 * Latest Dynatrace
 * Explanation
@@ -43,29 +42,22 @@ scraped: 2026-03-06T21:28:23.371162
    {
 
 
-
    "content": {
-
 
 
    "loglevel": "ERROR",
 
 
-
    "event": "{\\\"type\\\":\\\"db_error\\\",\\\"code\\\":\\\"CONN_FAIL\\\"}"
-
 
 
    },
 
 
-
    "source": "fluentbit",
 
 
-
    "host.name": "app-server-01"
-
 
 
    }
@@ -77,41 +69,31 @@ scraped: 2026-03-06T21:28:23.371162
    {
 
 
-
    "content": {
-
 
 
    "loglevel": "ERROR",
 
 
-
    "event": {
-
 
 
    "type": "db_error",
 
 
-
    "code": "CONN_FAIL"
-
 
 
    }
 
 
-
    },
-
 
 
    "source": "fluentbit",
 
 
-
    "host.name": "app-server-01"
-
 
 
    }
@@ -129,9 +111,7 @@ scraped: 2026-03-06T21:28:23.371162
   fetch logs
 
 
-
   | fieldsAdd logLevel = jsonField(content, "loglevel")
-
 
 
   | filter logLevel == "ERROR"
@@ -144,9 +124,7 @@ scraped: 2026-03-06T21:28:23.371162
   fetch logs
 
 
-
   | fieldsAdd eventType = jsonPath(content, "$.event.type")
-
 
 
   | filter eventType == "db_error"

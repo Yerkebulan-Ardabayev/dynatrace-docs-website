@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:26.150990
 
 # Распределение затрат DPS
 
-# Распределение затрат DPS
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -76,9 +75,7 @@ scraped: 2026-03-06T21:22:26.150990
 //Grail read data
 
 
-
 ALLOW storage:buckets:read WHERE storage:table-name = "dt.system.events";
-
 
 
 ALLOW storage:system:read;

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:57.758999
 
 # Extract metrics from spans and distributed traces
 
-# Extract metrics from spans and distributed traces
 
 * Latest Dynatrace
 * Tutorial
@@ -55,13 +54,10 @@ For common splits such as namespace, cluster or cloud region, use the out-of-the
    fetch spans
 
 
-
    | filter k8s.workload.name == "my-otel-demo-frontend" and span.kind == "server" and isNotNull(endpoint.name)
 
 
-
    | fields k8s.pod.name, dt.entity.service, endpoint.name, duration
-
 
 
    | limit 200
@@ -194,17 +190,13 @@ You added a new `db.query.group` attribute to the database spans that you can no
 {
 
 
-
 "db.namespace": "books",
-
 
 
 "db.operation.name": "SELECT",
 
 
-
 "db.query.text": "select b1_0.id,b1_0.author,b1_0.title from books b1_0 where b1_0.title=?"
-
 
 
 }
@@ -216,21 +208,16 @@ You added a new `db.query.group` attribute to the database spans that you can no
 {
 
 
-
 "db.query.group": "SELECT books",
-
 
 
 "db.namespace": "books",
 
 
-
 "db.operation.name": "SELECT",
 
 
-
 "db.query.text": "select b1_0.id,b1_0.author,b1_0.title from books b1_0 where b1_0.title=?"
-
 
 
 }

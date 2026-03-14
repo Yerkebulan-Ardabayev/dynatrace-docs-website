@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:45.059247
 
 # Explore Business Events
 
-# Explore Business Events
 
 * Latest Dynatrace
 * App

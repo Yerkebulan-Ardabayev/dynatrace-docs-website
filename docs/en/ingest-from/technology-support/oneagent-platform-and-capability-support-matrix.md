@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:36.260903
 
 # OneAgent platform and capability support matrix
 
-# OneAgent platform and capability support matrix
 
 * Latest Dynatrace
 * 13-min read

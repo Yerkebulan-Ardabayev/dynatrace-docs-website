@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:30.428379
 
 # Prometheus
 
-# Prometheus
 
 * Latest Dynatrace
 * 1-min read

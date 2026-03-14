@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:30:53.933975
 
 # Red Hat Event-Driven Ansible
 
-# Red Hat Event-Driven Ansible
 
 * Latest Dynatrace
 * How-to guide
@@ -134,57 +133,43 @@ To use the [dt\_webhookï»¿](https://dt-url.net/5w23n6c) plugin, you need to c
   ---
 
 
-
   - name: Listen for events on dt_webhook
-
 
 
   hosts: all
 
 
-
   sources:
-
 
 
   - dynatrace.event_driven_ansible.dt_webhook:
 
 
-
   host: 0.0.0.0
-
 
 
   port: 5000
 
 
-
   token: '{{ dt_webhook_token }}'
-
 
 
   rules:
 
 
-
   - name: API Endpoint not available
-
 
 
   condition: event.payload.eventData["event.name"] is match ("Monitoring not available")
 
 
-
   action:
-
 
 
   run_job_template:
 
 
-
   name: "Trigger test playbook"
-
 
 
   organization: "Default"

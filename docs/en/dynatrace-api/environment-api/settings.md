@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:39.805071
 
 # Settings API
 
-# Settings API
 
 * Reference
 * Published Feb 24, 2021

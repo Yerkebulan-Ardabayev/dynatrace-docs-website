@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:46.603842
 
 # DQL matcher in OpenPipeline
 
-# DQL matcher in OpenPipeline
 
 * Latest Dynatrace
 * Reference

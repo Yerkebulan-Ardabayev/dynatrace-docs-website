@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:34:55.644738
 
 # Мониторинг Azure AI - Computer Vision
 
-# Мониторинг Azure AI - Computer Vision
 
 * Последняя версия Dynatrace
 * Практическое руководство

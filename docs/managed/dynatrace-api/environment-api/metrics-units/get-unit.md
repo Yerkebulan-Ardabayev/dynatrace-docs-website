@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Metric units API - GET a unit
 
-# Metric units API - GET a unit
 
 * Reference
 * Published Feb 11, 2022
@@ -63,25 +62,19 @@ The metadata of a unit.
 {
 
 
-
 "description": "The second is the base unit of time and defined as 1/86400 of a day.",
-
 
 
 "displayName": "second",
 
 
-
 "displayNamePlural": "seconds",
-
 
 
 "symbol": "s",
 
 
-
 "unitId": "Second"
-
 
 
 }
@@ -99,9 +92,7 @@ The API token is passed in the **Authorization** header.
 curl --request GET \
 
 
-
 --url https://mySampleEnv.live.dynatrace.com//api/v2/units/MebiByte \
-
 
 
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -119,21 +110,16 @@ https://mySampleEnv.live.dynatrace.com//api/v2/units/MebiByte
 {
 
 
-
 "unitId": "MebiByte",
-
 
 
 "displayName": "mebibyte",
 
 
-
 "symbol": "MiB",
 
 
-
 "description": "1048576.0 byte"
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:50.073712
 
 # Calculate your consumption of Full-Stack Monitoring (DPS)
 
-# Calculate your consumption of Full-Stack Monitoring (DPS)
 
 * Latest Dynatrace
 * Explanation

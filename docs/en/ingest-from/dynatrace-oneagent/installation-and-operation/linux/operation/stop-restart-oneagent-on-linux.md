@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:02.259999
 
 # Stop/restart OneAgent on Linux
 
-# Stop/restart OneAgent on Linux
 
 * Latest Dynatrace
 * 1-min read

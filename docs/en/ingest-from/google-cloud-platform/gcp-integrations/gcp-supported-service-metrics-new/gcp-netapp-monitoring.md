@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:37.406812
 
 # NetApp on Google Cloud monitoring
 
-# NetApp on Google Cloud monitoring
 
 * Latest Dynatrace
 * How-to guide

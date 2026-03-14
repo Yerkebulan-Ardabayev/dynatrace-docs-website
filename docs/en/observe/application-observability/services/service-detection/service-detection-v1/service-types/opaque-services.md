@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:00.325403
 
 # Opaque services
 
-# Opaque services
 
 * Classic
 * How-to guide

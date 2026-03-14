@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # OneAgent file aging mechanism
 
-# OneAgent file aging mechanism
 
 * 6-min read
 * Updated on Sep 08, 2022

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:44.771782
 
 # Log processing with classic pipeline
 
-# Log processing with classic pipeline
 
 * Latest Dynatrace
 * Explanation

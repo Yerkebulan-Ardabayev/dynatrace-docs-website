@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:30.633862
 
 # Включение автоматической конфигурации экспортёра OpenTelemetry OTLP
 
-# Включение автоматической конфигурации экспортёра OpenTelemetry OTLP
 
 * Latest Dynatrace
 * Опубликовано 24 ноября 2025
@@ -29,45 +28,34 @@ Dynatrace Operator может автоматически настраивать 
 apiVersion: dynatrace.com/v1beta6
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 apiUrl: https://<environment-id>.live.dynatrace.com/api
 
 
-
 otlpExporterConfiguration:
-
 
 
 signals:
 
 
-
 metrics: {}
 
 
-
 traces: {}
-
 
 
 logs: {}
@@ -89,7 +77,6 @@ otlp-exporter-configuration.dynatrace.com/injected: "true"
 
 ```
 otlp-exporter-configuration.dynatrace.com/injected: "false"
-
 
 
 otlp-exporter-configuration.dynatrace.com/reason: <reason>
@@ -177,57 +164,43 @@ Dynatrace Operator добавляет атрибуты ресурсов в `OTEL
 apiVersion: dynatrace.com/v1beta6
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 apiUrl: https://<environment-id>.live.dynatrace.com/api
 
 
-
 otlpExporterConfiguration:
-
 
 
 namespaceSelector:
 
 
-
 matchLabels:
-
 
 
 my.app.com/otel: "true"
 
 
-
 signals:
-
 
 
 metrics: {}
 
 
-
 traces: {}
-
 
 
 logs: {}
@@ -265,41 +238,31 @@ logs: {}
 apiVersion: dynatrace.com/v1beta6
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 apiUrl: https://<environment-id>.live.dynatrace.com/api
 
 
-
 otlpExporterConfiguration:
-
 
 
 signals:
 
 
-
 metrics: {}
-
 
 
 overrideEnvVars: true
@@ -321,33 +284,25 @@ overrideEnvVars: true
 spec:
 
 
-
 containers:
-
 
 
 - env:
 
 
-
 - name: OTEL_EXPORTER_OTLP_METRICS_ENDPOINT
-
 
 
 value: https://my-private-endpoint/otlp/v1/traces
 
 
-
 - name: OTEL_EXPORTER_OTLP_METRICS_PROTOCOL
-
 
 
 value: grpc
 
 
-
 - name: OTEL_EXPORTER_OTLP_METRICS_HEADERS
-
 
 
 value: authorization=Api-Token 123456
@@ -359,33 +314,25 @@ value: authorization=Api-Token 123456
 spec:
 
 
-
 containers:
-
 
 
 - env:
 
 
-
 - name: OTEL_EXPORTER_OTLP_METRICS_ENDPOINT
-
 
 
 value: https://<environment-id>.live.dynatrace.com/api/v2/otlp/v1/metrics
 
 
-
 - name: OTEL_EXPORTER_OTLP_METRICS_PROTOCOL
-
 
 
 value: http/protobuf
 
 
-
 - name: OTEL_EXPORTER_OTLP_METRICS_HEADERS
-
 
 
 value: authorization=Api-Token $(DT_API_TOKEN)
@@ -399,33 +346,25 @@ value: authorization=Api-Token $(DT_API_TOKEN)
 spec:
 
 
-
 containers:
-
 
 
 - env:
 
 
-
 - name: OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
-
 
 
 value: https://my-private-endpoint/otlp/v1/traces
 
 
-
 - name: OTEL_EXPORTER_OTLP_TRACES_PROTOCOL
-
 
 
 value: http/protobuf
 
 
-
 - name: OTEL_EXPORTER_OTLP_TRACES_HEADERS
-
 
 
 value: authorization=Api-Token 123456
@@ -437,57 +376,43 @@ value: authorization=Api-Token 123456
 spec:
 
 
-
 containers:
-
 
 
 - env:
 
 
-
 - name: OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
-
 
 
 value: https://my-private-endpoint/otlp/v1/traces
 
 
-
 - name: OTEL_EXPORTER_OTLP_TRACES_PROTOCOL
 
 
-
 value: http/protobuf
-
 
 
 - name: OTEL_EXPORTER_OTLP_TRACES_HEADERS
 
 
-
 value: authorization=Api-Token 123456
-
 
 
 - name: OTEL_EXPORTER_OTLP_METRICS_ENDPOINT
 
 
-
 value: https://<environment-id>.live.dynatrace.com/api/v2/otlp/v1/metrics
-
 
 
 - name: OTEL_EXPORTER_OTLP_METRICS_PROTOCOL
 
 
-
 value: http/protobuf
 
 
-
 - name: OTEL_EXPORTER_OTLP_METRICS_HEADERS
-
 
 
 value: authorization=Api-Token $(DT_API_TOKEN)
@@ -505,33 +430,25 @@ value: authorization=Api-Token $(DT_API_TOKEN)
 spec:
 
 
-
 containers:
-
 
 
 - env:
 
 
-
 - name: OTEL_EXPORTER_OTLP_ENDPOINT
-
 
 
 value: https://my-private-endpoint/otlp/v1/traces
 
 
-
 - name: OTEL_EXPORTER_OTLP_PROTOCOL
-
 
 
 value: http/protobuf
 
 
-
 - name: OTEL_EXPORTER_OTLP_HEADERS
-
 
 
 value: authorization=Api-Token 123456
@@ -543,57 +460,43 @@ value: authorization=Api-Token 123456
 spec:
 
 
-
 containers:
-
 
 
 - env:
 
 
-
 - name: OTEL_EXPORTER_OTLP_ENDPOINT
-
 
 
 value: https://my-private-endpoint/otlp/v1/traces
 
 
-
 - name: OTEL_EXPORTER_OTLP_PROTOCOL
 
 
-
 value: http/protobuf
-
 
 
 - name: OTEL_EXPORTER_OTLP_HEADERS
 
 
-
 value: authorization=Api-Token 123456
-
 
 
 - name: OTEL_EXPORTER_OTLP_METRICS_ENDPOINT
 
 
-
 value: https://<environment-id>.live.dynatrace.com/api/v2/otlp/v1/metrics
-
 
 
 - name: OTEL_EXPORTER_OTLP_METRICS_PROTOCOL
 
 
-
 value: http/protobuf
 
 
-
 - name: OTEL_EXPORTER_OTLP_METRICS_HEADERS
-
 
 
 value: authorization=Api-Token $(DT_API_TOKEN)
@@ -609,17 +512,13 @@ value: authorization=Api-Token $(DT_API_TOKEN)
 apiVersion: dynatrace.com/v1beta6
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 annotations:
-
 
 
 feature.dynatrace.com/otlp-exporter-configuration-set-no-proxy: "false"

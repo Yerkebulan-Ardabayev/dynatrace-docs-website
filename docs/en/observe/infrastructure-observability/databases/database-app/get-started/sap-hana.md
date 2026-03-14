@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:07.028567
 
 # Monitor SAP HANA database
 
-# Monitor SAP HANA database
 
 * Latest Dynatrace
 * How-to guide

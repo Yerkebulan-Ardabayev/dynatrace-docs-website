@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:24.593651
 
 # Azure AI - Personalizer monitoring
 
-# Azure AI - Personalizer monitoring
 
 * Latest Dynatrace
 * How-to guide

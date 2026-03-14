@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:36:56.739400
 
 # Host metrics
 
-# Host metrics
 
 * Classic
 * Reference

@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:22:57.338777
 
 # Приём данных Jaeger с помощью OpenTelemetry Collector
 
-# Приём данных Jaeger с помощью OpenTelemetry Collector
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -33,57 +32,43 @@ scraped: 2026-03-03T21:22:57.338777
 receivers:
 
 
-
 jaeger:
-
 
 
 protocols:
 
 
-
 grpc:
-
 
 
 exporters:
 
 
-
 otlp_http:
-
 
 
 endpoint: ${env:DT_ENDPOINT}
 
 
-
 headers:
-
 
 
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
 
 
-
 service:
-
 
 
 pipelines:
 
 
-
 traces:
-
 
 
 receivers: [jaeger]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]

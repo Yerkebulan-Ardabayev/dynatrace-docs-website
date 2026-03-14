@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:26.009069
 
 # Установка и обновление Chromium для Linux
 
-# Установка и обновление Chromium для Linux
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -175,7 +174,6 @@ Amazon Linux 2023, Ubuntu и Oracle Linux 9 используют Chrome for Test
     vi /root/.curlrc
 
 
-
     proxy=http://proxy.example.com:8080
     ```
 
@@ -212,9 +210,7 @@ Amazon Linux 2023, Ubuntu и Oracle Linux 9 используют Chrome for Test
      sudo subscription-manager repos --enable rhel-7-server-extras-rpms
 
 
-
      sudo subscription-manager repos --enable rhel-7-server-optional-rpms
-
 
 
      sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -240,9 +236,7 @@ Amazon Linux 2023, Ubuntu и Oracle Linux 9 используют Chrome for Test
      sudo subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
 
 
-
      sudo subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
-
 
 
      sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
@@ -264,9 +258,7 @@ Amazon Linux 2023, Ubuntu и Oracle Linux 9 используют Chrome for Test
      sudo subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
 
 
-
      sudo subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
-
 
 
      sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
@@ -542,9 +534,7 @@ Amazon Linux 2023, Ubuntu и Oracle Linux 9 используют Chrome for Test
    sudo yum -y install yum-plugin-versionlock
 
 
-
    sudo yum versionlock chromium
-
 
 
    sudo yum versionlock chromium-common
@@ -652,7 +642,6 @@ Chrome for Testing на Ubuntu Server 20.04 и 22.04 поддерживаетс�
      sudo unzip /tmp/chrome.zip -d /usr/lib/chrome_for_testing
 
 
-
      rm /tmp/chrome.zip
      ```
 
@@ -723,9 +712,7 @@ Amazon Linux 2023, Ubuntu и Oracle Linux 9 (Chrome for Testing)
    sudo yum -y install yum-plugin-versionlock
 
 
-
    sudo yum versionlock chromium
-
 
 
    sudo yum versionlock chromium-common
@@ -752,9 +739,7 @@ Ubuntu Server 20.04 и 22.04
    sudo rm -rf /usr/lib/chrome_for_testing/chrome-linux64
 
 
-
    sudo unzip /tmp/chrome.zip -d /usr/lib/chrome_for_testing
-
 
 
    rm /tmp/chrome.zip
@@ -821,7 +806,6 @@ ActiveGate версии 1.243+ В дополнение к [управляемо�
 
    ```
    [synthetic]
-
 
 
    chromium_repo = https://172.18.0.100/chromium-repo

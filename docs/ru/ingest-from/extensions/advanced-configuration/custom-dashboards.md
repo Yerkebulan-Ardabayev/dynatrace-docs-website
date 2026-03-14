@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:22:34.358051
 
 # Распространение пользовательских дашбордов вместе с расширениями
 
-# Распространение пользовательских дашбордов вместе с расширениями
 
 * Latest Dynatrace
 * Руководство
@@ -50,17 +49,13 @@ scraped: 2026-03-03T21:22:34.358051
    extension.zip
 
 
-
    |   extension.yaml
-
 
 
    |
 
 
-
    +---documents
-
 
 
    |   device-health.dashboard.json
@@ -73,13 +68,10 @@ scraped: 2026-03-03T21:22:34.358051
    documents:
 
 
-
    dashboards:
 
 
-
    - displayName: "My Dashboard"
-
 
 
    path: "documents/device-health.dashboard.json"
@@ -121,9 +113,7 @@ scraped: 2026-03-03T21:22:34.358051
    curl -X GET "https://{env-id}.live.dynatrace.com/api/config/v1/dashboards/{dashboard-id}" \
 
 
-
    -H "accept: application/json; charset=utf-8" \
-
 
 
    -H "Authorization: Api-Token `{api-token}"
@@ -146,29 +136,22 @@ scraped: 2026-03-03T21:22:34.358051
 extension.zip
 
 
-
 |   extension.yaml
 
 
-
 |
-
 
 
 +---alerts
 
 
-
 |   |   alert.json
-
 
 
 |
 
 
-
 +---dashboards
-
 
 
 |   dashboard.json
@@ -180,13 +163,10 @@ extension.zip
 dashboards:
 
 
-
 - path: dashboards/dashboard.json
 
 
-
 alerts:
-
 
 
 - path: alerts/alert.json

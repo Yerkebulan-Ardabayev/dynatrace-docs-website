@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:29.540143
 
 # Settings API - Kubernetes app schema table
 
-# Settings API - Kubernetes app schema table
 
 * Published Feb 26, 2024
 

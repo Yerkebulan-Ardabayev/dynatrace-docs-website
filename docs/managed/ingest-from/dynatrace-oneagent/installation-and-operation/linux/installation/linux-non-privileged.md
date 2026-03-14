@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # OneAgent non-privileged mode on Linux
 
-# OneAgent non-privileged mode on Linux
 
 * 7-min read
 * Published Jul 19, 2017

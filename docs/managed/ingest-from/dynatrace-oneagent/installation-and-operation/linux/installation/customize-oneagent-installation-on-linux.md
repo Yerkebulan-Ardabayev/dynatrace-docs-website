@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Customize OneAgent installation on Linux
 
-# Customize OneAgent installation on Linux
 
 * 7-min read
 * Published Sep 19, 2018

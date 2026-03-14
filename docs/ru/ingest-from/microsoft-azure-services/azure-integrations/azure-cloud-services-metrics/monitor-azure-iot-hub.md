@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:35.062567
 
 # Мониторинг Azure IoT Hub
 
-# Мониторинг Azure IoT Hub
 
 * Latest Dynatrace
 * Практическое руководство

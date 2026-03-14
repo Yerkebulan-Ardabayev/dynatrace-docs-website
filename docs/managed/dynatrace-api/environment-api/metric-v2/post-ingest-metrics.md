@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Metrics API - POST ingest data points
 
-# Metrics API - POST ingest data points
 
 * Reference
 * Published Aug 21, 2020
@@ -112,89 +111,67 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "invalidLines": [
 
 
-
 {
-
 
 
 "error": "string",
 
 
-
 "line": 1
-
 
 
 }
 
 
-
 ],
 
 
-
 "message": "string"
-
 
 
 },
 
 
-
 "linesInvalid": 1,
-
 
 
 "linesOk": 1,
 
 
-
 "warnings": {
-
 
 
 "changedMetricKeys": [
 
 
-
 {
-
 
 
 "line": 1,
 
 
-
 "warning": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -208,13 +185,10 @@ With this `curl` command, you'll ingest the `cpu.temperature` metric assigned to
 curl -L -X POST 'https://mySampleEnv.live.dynatrace.com/api/v2/metrics/ingest' \
 
 
-
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
 
 
-
 -H 'Content-Type: text/plain' \
-
 
 
 --data-raw 'cpu.temperature,dt.entity.host=HOST-06F288EE2A930951,cpu=1 55'

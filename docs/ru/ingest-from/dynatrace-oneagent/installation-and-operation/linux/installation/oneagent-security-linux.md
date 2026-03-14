@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:07.272209
 
 # Безопасность OneAgent в Linux
 
-# Безопасность OneAgent в Linux
 
 * Последняя версия Dynatrace
 * Чтение: 5 минут

@@ -59,33 +59,25 @@ feature.dynatrace.com/max-csi-mount-timeout: "8m" # заменяет feature.dyn
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack: {} # то же самое, что autoUpdate: true
-
 
 
   # ...
@@ -96,85 +88,64 @@ feature.dynatrace.com/max-csi-mount-timeout: "8m" # заменяет feature.dyn
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack:
-
 
 
   image: ... # тот же эффект, что autoUpdate: false
 
 
-
   codeModulesImage: # тот же эффект, что autoUpdate: false
-
 
 
   # ...
 
 
-
   ---
-
 
 
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack:
 
 
-
   version: ... # заменяет autoUpdate: false
-
 
 
   # ...

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:35.723933
 
 # Business event bucket assignment via classic pipeline
 
-# Business event bucket assignment via classic pipeline
 
 * Latest Dynatrace
 * Reference

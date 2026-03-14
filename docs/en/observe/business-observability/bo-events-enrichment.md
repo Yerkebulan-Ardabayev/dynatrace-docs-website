@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:30:52.600686
 
 # Business event enrichment
 
-# Business event enrichment
 
 * Latest Dynatrace
 * Reference

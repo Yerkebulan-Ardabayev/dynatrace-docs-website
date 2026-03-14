@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:21:08.408897
 
 # Synthetic app
 
-# Synthetic app
 
 * Latest Dynatrace
 * App

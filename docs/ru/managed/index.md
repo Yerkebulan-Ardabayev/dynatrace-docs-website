@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:22.514660
 
 # Welcome to Dynatrace Documentation
 
-# Welcome to Dynatrace Documentation
 
 Узнайте о Dynatrace и изучите ресурсы для улучшения наблюдаемости и безопасности.
 
@@ -23,11 +22,6 @@ scraped: 2026-03-06T21:09:22.514660
 
 ## Учебные руководства
 
-Filter by
-
-Select an option
-
-Type to filter
 
 ## Основные материалы документации
 

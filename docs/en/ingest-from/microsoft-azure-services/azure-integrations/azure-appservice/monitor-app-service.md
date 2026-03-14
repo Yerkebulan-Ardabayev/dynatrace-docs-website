@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:16.915907
 
 # Monitor Azure App Service Plan metrics
 
-# Monitor Azure App Service Plan metrics
 
 * Latest Dynatrace
 * How-to guide

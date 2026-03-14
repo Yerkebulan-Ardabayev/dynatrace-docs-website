@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:10.445414
 
 # Services API - POST tags
 
-# Services API - POST tags
 
 * Справочник
 * Обновлено 22 марта 2023 г.
@@ -54,21 +53,16 @@ scraped: 2026-03-05T21:27:10.445414
 {
 
 
-
 "tags": [
-
 
 
 "office-linz",
 
 
-
 "office-klagenfurt"
 
 
-
 ]
-
 
 
 }
@@ -118,53 +112,40 @@ scraped: 2026-03-05T21:27:10.445414
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -182,33 +163,25 @@ scraped: 2026-03-05T21:27:10.445414
 curl -X POST \
 
 
-
 https://mySampleEnv.live.dynatrace.com/api/v1/entity/services/SERVICE-72503CBDD2AEF066 \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
 
 
-
 -H 'Content-Type: application/json' \
-
 
 
 -d '{
 
 
-
 "tags": [
-
 
 
 "PHP"
 
 
-
 ]
-
 
 
 }'
@@ -226,17 +199,13 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/services/SERVICE-72503CBDD2
 {
 
 
-
 "tags": [
-
 
 
 "PHP"
 
 
-
 ]
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:47.956083
 
 # Synthetic for Workflows
 
-# Synthetic for Workflows
 
 * Latest Dynatrace
 * How-to guide
@@ -47,9 +46,7 @@ The permission you need are listed in [Workflows](../../../analyze-explore-autom
 environment:roles:manage-settings,
 
 
-
 storage:buckets:read,
-
 
 
 storage:events:read
@@ -61,33 +58,25 @@ Example policy:
 ALLOW
 
 
-
 app-engine:apps:run,
-
 
 
 automation:workflows:read,
 
 
-
 app-engine:functions:run,
-
 
 
 automation:workflows:run,
 
 
-
 automation:workflows:write,
-
 
 
 environment:roles:manage-settings,
 
 
-
 storage:buckets:read,
-
 
 
 storage:events:read;
@@ -186,9 +175,7 @@ Use the following query to get the total duration of the whole batch.
 fetch dt.synthetic.events
 
 
-
 | filter event.id == $batchId
-
 
 
 | fields batch_result.duration
@@ -200,13 +187,10 @@ Use the following query to check if the batch finished successfully.
 fetch dt.synthetic.events
 
 
-
 | filter event.id == $batchId
 
 
-
 | filter batch.status == "Success"
-
 
 
 | summarize count = count()

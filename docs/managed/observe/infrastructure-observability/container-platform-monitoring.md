@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Container platform monitoring
 
-# Container platform monitoring
 
 * Explanation
 * 1-min read

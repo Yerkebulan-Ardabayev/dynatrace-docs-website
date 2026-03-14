@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:08.754245
 
 # Действия для GitLab Connector
 
-# Действия для GitLab Connector
 
 * Последняя версия Dynatrace
 * Справочник

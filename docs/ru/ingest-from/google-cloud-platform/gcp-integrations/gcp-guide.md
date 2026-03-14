@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:24:19.522416
 
 # Полное руководство по мониторингу сервисов Google Cloud с интеграцией Operations Suite
 
-# Полное руководство по мониторингу сервисов Google Cloud с интеграцией Operations Suite
 
 * Latest Dynatrace
 * Обзор

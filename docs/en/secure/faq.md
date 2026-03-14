@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:07.976353
 
 # Application Security FAQ
 
-# Application Security FAQ
 
 * Latest Dynatrace
 * Troubleshooting
@@ -294,13 +293,10 @@ To stop receiving notifications for this vulnerability, you can:
   fetch security.events
 
 
-
   | filter event.type == "VULNERABILITY_STATE_REPORT_EVENT"
 
 
-
   | filter event.level == "ENTITY"
-
 
 
   | fields vulnerability.risk.level, vulnerability.title, vulnerability.remediation.description
@@ -328,9 +324,7 @@ Latest Dynatrace To identify hosts with missing or disabled autoâinjection,
 fetch dt.entity.host
 
 
-
 | fieldsAdd autoInjection
-
 
 
 | fieldsAdd entity.name

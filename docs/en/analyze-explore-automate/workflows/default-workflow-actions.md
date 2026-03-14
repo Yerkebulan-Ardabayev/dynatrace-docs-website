@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:16.176752
 
 # Workflows actions
 
-# Workflows actions
 
 * Latest Dynatrace
 * Overview

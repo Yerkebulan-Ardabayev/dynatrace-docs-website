@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:03.051024
 
 # Извлечение метрики для отслеживания системных событий
 
-# Извлечение метрики для отслеживания системных событий
 
 * Latest Dynatrace
 * Руководство
@@ -50,9 +49,7 @@ Dynatrace генерирует системные события для сист
    fetch dt.system.events
 
 
-
    | filter event.kind == "AUDIT_EVENT" AND event.provider == "APP_REGISTRY"
-
 
 
    | summarize by:{event.type}, count()

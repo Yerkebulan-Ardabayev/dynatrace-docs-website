@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:30.359364
 
 # Migrate to Google Cloud integration version 1.0
 
-# Migrate to Google Cloud integration version 1.0
 
 * Latest Dynatrace
 * How-to guide

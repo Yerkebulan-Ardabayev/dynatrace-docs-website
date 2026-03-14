@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:05.793494
 
 # Сценарии использования нового RUM Experience
 
-# Сценарии использования нового RUM Experience
 
 * Latest Dynatrace
 * Overview

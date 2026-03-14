@@ -14,7 +14,6 @@ scraped: 2026-03-05T21:38:28.083609
 
 # Owner-based access control in OpenPipeline
 
-# Owner-based access control in OpenPipeline
 
 * Latest Dynatrace
 * Explanation
@@ -112,7 +111,6 @@ scraped: 2026-03-06T21:15:54.139751
 
 # Data flow in OpenPipeline
 
-# Data flow in OpenPipeline
 
 * Latest Dynatrace
 * Explanation
@@ -261,7 +259,6 @@ scraped: 2026-03-06T21:13:41.461060
 
 # Processing in OpenPipeline
 
-# Processing in OpenPipeline
 
 * Latest Dynatrace
 * Explanation
@@ -388,7 +385,6 @@ scraped: 2026-03-06T21:15:55.878660
 
 # How to ingest data (events)
 
-# How to ingest data (events)
 
 * Latest Dynatrace
 * How-to guide
@@ -403,9 +399,7 @@ The event we will ingest is
 {
 
 
-
 "name": "My first ingested event"
-
 
 
 }
@@ -465,13 +459,10 @@ The sample command indicates a JSON content type and provides the JSON event dat
 curl -i -X POST "<your-endpoint-URL>" \
 
 
-
 -H "Content-Type: application/json" \
 
 
-
 -H "Authorization: Api-Token <your-API-token>" \
-
 
 
 -d "{\"name\":\"My first ingested event\"}"
@@ -496,7 +487,6 @@ To verify that your event has been ingested successfully, query it via DQL, for 
 
    ```
    fetch events
-
 
 
    | filter name == "My first ingested event"
@@ -534,7 +524,6 @@ scraped: 2026-03-06T21:13:37.885258
 
 # Route data
 
-# Route data
 
 * Latest Dynatrace
 * How-to guide
@@ -565,9 +554,7 @@ You can use Notebooks ![Notebooks](https://dt-cdn.net/images/notebooks-768-04613
    fetch logs
 
 
-
    | filter k8s.namespace.name == "prod"
-
 
 
    | summarize by:{k8s.deployment.name}, count()
@@ -636,7 +623,6 @@ scraped: 2026-03-06T21:37:26.951279
 
 # Set access control in OpenPipeline
 
-# Set access control in OpenPipeline
 
 * Latest Dynatrace
 * How-to guide
@@ -785,7 +771,6 @@ scraped: 2026-03-06T21:15:50.770565
 
 # Configure a processing pipeline
 
-# Configure a processing pipeline
 
 * Latest Dynatrace
 * Tutorial
@@ -907,7 +892,6 @@ scraped: 2026-03-06T21:16:01.329825
 
 # Ingest sources in OpenPipeline
 
-# Ingest sources in OpenPipeline
 
 * Latest Dynatrace
 * Reference
@@ -1090,7 +1074,6 @@ Events-SDLC events
 ### Ingest sources
 
 
-
 | Ingest source | dt.openpipeline.source | Type |
 | --- | --- | --- |
 | Endpoint for Software Development Lifecycle events | `/platform/ingest/v1/events.SDLC` | Built-in |
@@ -1255,7 +1238,6 @@ Spans
 ### Ingest sources
 
 
-
 | Ingest source | dt.openpipeline.source | Type |
 | --- | --- | --- |
 | OneAgent | `oneagent` | Built-in |
@@ -1299,7 +1281,6 @@ System events
 
      ```
      fetch dt.system.events
-
 
 
      | filter isNotNull(dt.openpipeline.pipelines)
@@ -1349,7 +1330,6 @@ scraped: 2026-03-06T21:13:46.603842
 
 # DQL matcher in OpenPipeline
 
-# DQL matcher in OpenPipeline
 
 * Latest Dynatrace
 * Reference
@@ -1570,7 +1550,6 @@ scraped: 2026-03-06T21:16:07.099440
 
 # OpenPipeline limits
 
-# OpenPipeline limits
 
 * Latest Dynatrace
 * Reference
@@ -1762,7 +1741,6 @@ scraped: 2026-03-06T21:16:08.786250
 
 # OpenPipeline API
 
-# OpenPipeline API
 
 * Latest Dynatrace
 * Reference
@@ -1809,7 +1787,6 @@ scraped: 2026-03-06T21:16:05.385634
 
 # Configure multi-cloud ingest governance with pipeline groups
 
-# Configure multi-cloud ingest governance with pipeline groups
 
 * Latest Dynatrace
 * Tutorial
@@ -1882,205 +1859,154 @@ In this tutorial, we'll create two pipeline groups, one per cloud provider, each
      {
 
 
-
      "schemaId": "builtin:openpipeline.logs.pipelines",
 
 
-
      "value": {
-
 
 
      "customId": "global-cost-and-bucket",
 
 
-
      "displayName": "Global cost center and bucket assignment",
-
 
 
      "groupRole": "compositionPipeline",
 
 
-
      "routing": "notRoutable",
-
 
 
      "costAllocation": {
 
 
-
      "processors": [
 
 
-
      {
-
 
 
      "type": "costAllocation",
 
 
-
      "id": "cost-allocation-global",
-
 
 
      "description": "Assign global dt.cost.cost_center",
 
 
-
      "enabled": true,
-
 
 
      "matcher": "true",
 
 
-
      "costAllocation": {
-
 
 
      "value": {
 
 
-
      "type": "constant",
-
 
 
      "constant": "CC-GLOBAL-0001"
 
 
+     }
+
 
      }
 
 
-
      }
-
-
-
-     }
-
 
 
      ]
 
 
-
      },
-
 
 
      "storage": {
 
 
-
      "processors": [
-
 
 
      {
 
 
-
      "type": "bucketAssignment",
-
 
 
      "id": "bucket-assignment-logs-aws-global",
 
 
-
      "description": "Assign AWS logs to global AWS bucket",
 
 
-
      "enabled": true,
-
 
 
      "matcher": "matchesValue(cloud.provider, \"aws\")",
 
 
-
      "sampleData": "{\"cloud.provider\":\"aws\"}",
 
 
-
      "bucketAssignment": {
-
 
 
      "bucketName": "logs-global-aws-90d"
 
 
-
      }
-
 
 
      },
 
 
-
      {
-
 
 
      "type": "bucketAssignment",
 
 
-
      "id": "bucket-assignment-logs-azure-global",
-
 
 
      "description": "Assign Azure logs to global Azure bucket",
 
 
-
      "enabled": true,
-
 
 
      "matcher": "matchesValue(cloud.provider, \"azure\")",
 
 
-
      "sampleData": "{\"cloud.provider\":\"azure\"}",
-
 
 
      "bucketAssignment": {
 
 
-
      "bucketName": "logs-global-azure-90d"
 
 
-
      }
 
 
-
      }
-
 
 
      ]
 
 
-
      }
 
 
-
      }
-
 
 
      }
@@ -2097,581 +2023,436 @@ In this tutorial, we'll create two pipeline groups, one per cloud provider, each
      {
 
 
-
      "schemaId": "builtin:openpipeline.logs.pipelines",
 
 
-
      "value": {
-
 
 
      "customId": "aws-processing",
 
 
-
      "displayName": "AWS processing",
-
 
 
      "groupRole": "compositionPipeline",
 
 
-
      "routing": "notRoutable",
-
 
 
      "processing": {
 
 
-
      "processors": [
-
 
 
      {
 
 
-
      "type": "fieldsAdd",
-
 
 
      "id": "aws-add-provider",
 
 
-
      "description": "Normalize cloud provider",
-
 
 
      "enabled": true,
 
 
-
      "matcher": "true",
-
 
 
      "fieldsAdd": {
 
 
-
      "fields": [
-
 
 
      { "name": "cloud.provider", "value": "aws" }
 
 
-
      ]
-
 
 
      }
 
 
-
      },
-
 
 
      {
 
 
-
      "type": "dql",
-
 
 
      "id": "aws-parse-common",
 
 
-
      "description": "Parse level and requestId from content when present",
-
 
 
      "enabled": true,
 
 
-
      "matcher": "true",
-
 
 
      "sampleData": "{\"content\":\"2025-10-01T10:00:00Z [ERROR] req=abcd-1234 Something failed\",\"service.name\":\"ordersvc\"}",
 
 
-
      "dql": {
-
 
 
      "script": "parse content, \"'[' UPPER:loglevel ']' ' req=' LD:aws.request_id\""
 
 
-
      }
-
 
 
      },
 
 
-
      {
 
 
-
      "type": "drop",
-
 
 
      "id": "aws-drop-elb-health",
 
 
-
      "description": "Drop ELB healthcheck noise",
 
 
-
      "enabled": true,
-
 
 
      "matcher": "matchesValue(content, \"ELB-HealthChecker*\")",
 
 
-
      "sampleData": "{\"content\":\"ELB-HealthChecker 200\"}"
-
 
 
      }
 
 
-
      ]
-
 
 
      },
 
 
-
      "metricExtraction": {
-
 
 
      "processors": [
 
 
-
      {
 
 
-
      "type": "counterMetric",
-
 
 
      "id": "aws-error-counter",
 
 
-
      "description": "Count ERROR logs by service and account",
 
 
-
      "enabled": true,
-
 
 
      "matcher": "matchesValue(loglevel, \"ERROR\")",
 
 
-
      "sampleData": "{\"loglevel\":\"ERROR\",\"service.name\":\"ordersvc\",\"aws.account.id\":\"123456789012\"}",
 
 
-
      "counterMetric": {
-
 
 
      "metricKey": "custom.aws.log.error.count",
 
 
-
      "dimensions": [
-
 
 
      {
 
 
-
      "extractionType": "field",
-
 
 
      "sourceFieldName": "service.name",
 
 
-
      "destinationFieldName": "service"
-
 
 
      },
 
 
-
      {
 
 
-
      "extractionType": "field",
-
 
 
      "sourceFieldName": "aws.account.id",
 
 
-
      "destinationFieldName": "account"
-
 
 
      },
 
 
-
      {
-
 
 
      "extractionType": "field",
 
 
-
      "sourceFieldName": "loglevel"
 
 
-
      }
-
 
 
      ]
 
 
-
      }
 
 
-
      }
-
 
 
      ]
-
 
 
      },
 
 
-
      "davis": {
-
 
 
      "processors": [
 
 
-
      {
 
 
-
      "type": "davis",
-
 
 
      "id": "aws-davis-event",
 
 
-
      "description": "Create Davis problem for ERROR/FATAL AWS logs",
-
 
 
      "enabled": true,
 
 
-
      "matcher": "alert.trigger == true",
-
 
 
      "sampleData": "{\"cloud.provider\":\"aws\",\"service.name\":\"ordersvc\",\"aws.account.id\":\"123456789012\",\"aws.request_id\":\"abcd-1234\",\"dt.source_entity\":\"HOST-1234567890\",\"content\":\"[ERROR] req=abcd-1234 Something failed\"}",
 
 
-
      "davis": {
-
 
 
      "properties": [
 
 
-
      { "key": "event.type", "value": "CUSTOM_ALERT" },
-
 
 
      { "key": "event.name", "value": "AWS log error in {service.name}" },
 
 
-
      { "key": "event.description", "value": "{cloud.provider} error in {service.name} (account:{aws.account.id}, request:{aws.request_id}).{content}" },
-
 
 
      { "key": "dt.source_entity", "value": "{dt.source_entity}" }
 
 
-
      ]
-
 
 
      }
 
 
-
      }
 
 
-
      ]
-
 
 
      },
 
 
-
      "dataExtraction": {
-
 
 
      "processors": [
 
 
-
      {
 
 
-
      "type": "bizevent",
-
 
 
      "id": "aws-bizevent-error",
 
 
-
      "description": "Extract a business event for ERROR/FATAL AWS logs",
 
 
-
      "enabled": true,
-
 
 
      "matcher": "matchesValue(loglevel, \"ERROR\") OR matchesValue(loglevel, \"FATAL\")",
 
 
-
      "sampleData": "{\"cloud.provider\":\"aws\",\"service.name\":\"ordersvc\",\"aws.account.id\":\"123456789012\",\"aws.request_id\":\"abcd-1234\",\"loglevel\":\"ERROR\",\"content\":\"[ERROR] req=abcd-1234 Checkout failed\"}",
-
 
 
      "bizevent": {
 
 
-
      "eventProvider": {
 
 
-
      "type": "constant",
-
 
 
      "constant": "logs"
 
 
-
      },
-
 
 
      "eventType": {
 
 
-
      "type": "constant",
-
 
 
      "constant": "BUSINESS_ERROR"
 
 
-
      },
-
 
 
      "fieldExtraction": {
 
 
-
      "type": "include",
-
 
 
      "include": [
 
 
-
      {
 
 
-
      "extractionType": "field",
-
 
 
      "sourceFieldName": "cloud.provider"
 
 
-
      },
-
 
 
      {
 
 
-
      "extractionType": "field",
-
 
 
      "sourceFieldName": "service.name"
 
 
-
      },
-
 
 
      {
 
 
-
      "extractionType": "field",
-
 
 
      "sourceFieldName": "aws.account.id"
 
 
-
      },
-
 
 
      {
 
 
-
      "extractionType": "field",
-
 
 
      "sourceFieldName": "aws.request_id"
 
 
-
      },
-
 
 
      {
 
 
-
      "extractionType": "field",
-
 
 
      "sourceFieldName": "loglevel"
 
 
-
      },
 
 
-
      {
-
 
 
      "extractionType": "field",
 
 
-
      "sourceFieldName": "content"
 
 
-
      }
-
 
 
      ]
 
 
+     }
+
 
      }
 
 
-
      }
-
-
-
-     }
-
 
 
      ]
 
 
-
      }
 
 
-
      }
-
 
 
      }
@@ -2679,583 +2460,438 @@ In this tutorial, we'll create two pipeline groups, one per cloud provider, each
 
      ```
      {
-
 
 
      "schemaId": "builtin:openpipeline.logs.pipelines",
 
 
-
      "value": {
-
 
 
      "customId": "azure-processing",
 
 
-
      "displayName": "Azure processing",
-
 
 
      "groupRole": "compositionPipeline",
 
 
-
      "routing": "notRoutable",
-
 
 
      "processing": {
 
 
-
      "processors": [
 
 
-
      {
-
 
 
      "type": "fieldsAdd",
 
 
-
      "id": "azure-add-provider",
-
 
 
      "description": "Normalize cloud provider",
 
 
-
      "enabled": true,
 
 
-
      "matcher": "true",
-
 
 
      "fieldsAdd": {
 
 
-
      "fields": [
-
 
 
      { "name": "cloud.provider", "value": "azure" }
 
 
-
      ]
-
 
 
      }
 
 
-
      },
 
 
-
      {
-
 
 
      "type": "dql",
 
 
-
      "id": "azure-parse-common",
-
 
 
      "description": "Parse level and operationId from content when present",
 
 
-
      "enabled": true,
-
 
 
      "matcher": "true",
 
 
-
      "sampleData": "{\"content\":\"2025-10-01 10:00:00 Error opId=efgh-5678 Failure\",\"service.name\":\"inventorysvc\"}",
-
 
 
      "dql": {
 
 
-
      "script": "parse content, \"UPPER:loglevel ' opId=' LD:azure.operation_id\""
-
 
 
      }
 
 
-
      },
 
 
-
      {
-
 
 
      "type": "drop",
 
 
-
      "id": "azure-drop-noise",
-
 
 
      "description": "Drop noisy platform heartbeat logs",
 
 
-
      "enabled": true,
-
 
 
      "matcher": "matchesValue(content, \"Heartbeat*\")",
 
 
-
      "sampleData": "{\"content\":\"Heartbeat OK\"}"
-
 
 
      }
 
 
-
      ]
 
 
-
      },
-
 
 
      "metricExtraction": {
 
 
-
      "processors": [
 
 
-
      {
-
 
 
      "type": "counterMetric",
 
 
-
      "id": "azure-error-counter",
-
 
 
      "description": "Count Error logs by service and resource group",
 
 
-
      "enabled": true,
-
 
 
      "matcher": "matchesValue(loglevel, \"ERROR\") OR matchesValue(loglevel, \"Error\")",
 
 
-
      "sampleData": "{\"loglevel\":\"Error\",\"service.name\":\"inventorysvc\",\"azure.resource.group\":\"rg-observability\"}",
-
 
 
      "counterMetric": {
 
 
-
      "metricKey": "custom.azure.log.error.count",
-
 
 
      "dimensions": [
 
 
-
      {
 
 
-
      "extractionType": "field",
-
 
 
      "sourceFieldName": "service.name",
 
 
-
      "destinationFieldName": "service"
-
 
 
      },
 
 
-
      {
 
 
-
      "extractionType": "field",
-
 
 
      "sourceFieldName": "azure.resource.group",
 
 
-
      "destinationFieldName": "resource_group"
-
 
 
      },
 
 
-
      {
-
 
 
      "extractionType": "field",
 
 
-
      "sourceFieldName": "loglevel"
 
 
-
      }
-
 
 
      ]
 
 
-
      }
 
 
-
      }
-
 
 
      ]
-
 
 
      },
 
 
-
      "davis": {
-
 
 
      "processors": [
 
 
-
      {
-
 
 
      "type": "davis",
 
 
-
      "id": "azure-davis-event",
-
 
 
      "description": "Create Davis problem for Error/ERROR/FATAL Azure logs",
 
 
-
      "enabled": true,
-
 
 
      "matcher": "alert.trigger == true",
 
 
-
      "sampleData": "{\"cloud.provider\":\"azure\",\"service.name\":\"inventorysvc\",\"azure.resource.group\":\"rg-observability\",\"azure.operation_id\":\"efgh-5678\",\"dt.source_entity\":\"HOST-0987654321\",\"content\":\"Error opId=efgh-5678 Failure\"}",
-
 
 
      "davis": {
 
 
-
      "properties": [
-
 
 
      { "key": "event.type", "value": "CUSTOM_ALERT" },
 
 
-
      { "key": "event.name", "value": "Azure log error in {service.name}" },
-
 
 
      { "key": "event.description", "value": "{cloud.provider} error in {service.name} (resource_group:{azure.resource.group}, operation:{azure.operation_id}).{content}" },
 
 
-
      { "key": "dt.source_entity", "value": "{dt.source_entity}" }
 
 
-
      ]
-
 
 
      }
 
 
-
      }
 
 
-
      ]
-
 
 
      },
-
 
 
      "dataExtraction": {
 
 
-
      "processors": [
 
 
-
      {
-
 
 
      "type": "bizevent",
 
 
-
      "id": "azure-bizevent-error",
-
 
 
      "description": "Extract a business event for Error/ERROR/FATAL Azure logs",
 
 
-
      "enabled": true,
-
 
 
      "matcher": "matchesValue(loglevel, \"ERROR\") OR matchesValue(loglevel, \"Error\") OR matchesValue(loglevel, \"FATAL\")",
 
 
-
      "sampleData": "{\"cloud.provider\":\"azure\",\"service.name\":\"inventorysvc\",\"azure.resource.group\":\"rg-observability\",\"azure.operation_id\":\"efgh-5678\",\"loglevel\":\"Error\",\"content\":\"Error opId=efgh-5678 Failure during stock update\"}",
-
 
 
      "bizevent": {
 
 
-
      "eventProvider": {
 
 
-
      "type": "constant",
-
 
 
      "constant": "logs"
 
 
-
      },
-
 
 
      "eventType": {
 
 
-
      "type": "constant",
-
 
 
      "constant": "BUSINESS_ERROR"
 
 
-
      },
-
 
 
      "fieldExtraction": {
 
 
-
      "type": "include",
-
 
 
      "include": [
 
 
-
      {
 
 
-
      "extractionType": "field",
-
 
 
      "sourceFieldName": "cloud.provider"
 
 
-
      },
-
 
 
      {
 
 
-
      "extractionType": "field",
-
 
 
      "sourceFieldName": "service.name"
 
 
-
      },
-
 
 
      {
 
 
-
      "extractionType": "field",
-
 
 
      "sourceFieldName": "azure.resource.group"
 
 
-
      },
-
 
 
      {
 
 
-
      "extractionType": "field",
-
 
 
      "sourceFieldName": "azure.operation_id"
 
 
-
      },
-
 
 
      {
 
 
-
      "extractionType": "field",
-
 
 
      "sourceFieldName": "loglevel"
 
 
-
      },
-
 
 
      {
 
 
-
      "extractionType": "field",
-
 
 
      "sourceFieldName": "content"
 
 
-
      }
-
 
 
      ]
 
 
+     }
+
 
      }
 
 
-
      }
-
-
-
-     }
-
 
 
      ]
 
 
-
      }
 
 
-
      }
-
 
 
      }
@@ -3273,173 +2909,130 @@ In this tutorial, we'll create two pipeline groups, one per cloud provider, each
   {
 
 
-
   "schemaId": "builtin:openpipeline.logs.pipelines",
 
 
-
   "value": {
-
 
 
   "customId": "aws-cost-and-permissions",
 
 
-
   "displayName": "AWS cost and permission assignment",
-
 
 
   "groupRole": "compositionPipeline",
 
 
-
   "routing": "notRoutable",
-
 
 
   "productAllocation": {
 
 
-
   "processors": [
-
 
 
   {
 
 
-
   "type": "productAllocation",
-
 
 
   "id": "aws-product-allocation",
 
 
-
   "description": "Set dt.cost.product for AWS",
 
 
-
   "enabled": true,
-
 
 
   "matcher": "matchesValue(cloud.provider, \"aws\")",
 
 
-
   "sampleData": "{\"cloud.provider\":\"aws\"}",
-
 
 
   "productAllocation": {
 
 
-
   "value": {
 
 
-
   "type": "constant",
-
 
 
   "constant": "prod-aws-observability"
 
 
+  }
+
 
   }
 
 
-
   }
-
-
-
-  }
-
 
 
   ]
 
 
-
   },
-
 
 
   "securityContext": {
 
 
-
   "processors": [
-
 
 
   {
 
 
-
   "type": "securityContext",
-
 
 
   "id": "aws-security-context",
 
 
-
   "description": "Restrict access to mid-level team only (AWS logs)",
-
 
 
   "enabled": true,
 
 
-
   "matcher": "true",
-
 
 
   "securityContext": {
 
 
-
   "value": {
 
 
-
   "type": "constant",
-
 
 
   "constant": "security:mid-level:aws-logs"
 
 
+  }
+
 
   }
 
 
-
   }
-
-
-
-  }
-
 
 
   ]
 
 
-
   }
 
 
-
   }
-
 
 
   }
@@ -3447,181 +3040,137 @@ In this tutorial, we'll create two pipeline groups, one per cloud provider, each
 
   ```
   {
-
 
 
   "schemaId": "builtin:openpipeline.logs.pipelines",
 
 
-
   "value": {
-
 
 
   "customId": "azure-cost-and-permissions",
 
 
-
   "displayName": "Azure cost and permission assignment",
-
 
 
   "groupRole": "compositionPipeline",
 
 
-
   "routing": "notRoutable",
-
 
 
   "productAllocation": {
 
 
-
   "processors": [
 
 
-
   {
-
 
 
   "type": "productAllocation",
 
 
-
   "id": "azure-product-allocation",
-
 
 
   "description": "Set dt.cost.product for Azure",
 
 
-
   "enabled": true,
-
 
 
   "matcher": "matchesValue(cloud.provider, \"azure\")",
 
 
-
   "sampleData": "{\"cloud.provider\":\"azure\"}",
-
 
 
   "productAllocation": {
 
 
-
   "value": {
 
 
-
   "type": "constant",
-
 
 
   "constant": "prod-azure-observability"
 
 
+  }
+
 
   }
 
 
-
   }
-
-
-
-  }
-
 
 
   ]
-
 
 
   },
 
 
-
   "securityContext": {
-
 
 
   "processors": [
 
 
-
   {
-
 
 
   "type": "securityContext",
 
 
-
   "id": "azure-security-context",
-
 
 
   "description": "Restrict access to mid-level team only (Azure logs)",
 
 
-
   "enabled": true,
-
 
 
   "matcher": "true",
 
 
-
   "securityContext": {
-
 
 
   "value": {
 
 
-
   "type": "constant",
-
 
 
   "constant": "security:mid-level:azure-logs"
 
 
+  }
+
 
   }
 
 
-
   }
-
-
-
-  }
-
 
 
   ]
 
 
-
   }
 
 
-
   }
-
 
 
   }
   ```
 * Use the [`POST /api/v2/settings/objects`](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") request with the pipeline schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipelines`).
-
 
 
 ### 2. Create member pipelines
@@ -3636,173 +3185,130 @@ In this tutorial, we'll create two pipeline groups, one per cloud provider, each
    {
 
 
-
    "schemaId": "builtin:openpipeline.logs.pipelines",
-
 
 
    "value": {
 
 
-
    "displayName": "AWS Web Frontend",
-
 
 
    "customId": "aws-web-frontend",
 
 
-
    "groupRole": "memberPipeline",
-
 
 
    "routing": "routable",
 
 
-
    "processing": {
-
 
 
    "processors": [
 
 
-
    {
-
 
 
    "type": "fieldsAdd",
 
 
-
    "id": "web-tags",
 
 
-
    "matcher": "true",
-
 
 
    "description": "Add team and product tags for the web frontend",
 
 
-
    "enabled": true,
-
 
 
    "fieldsAdd": {
 
 
-
    "fields": [
-
 
 
    { "name": "dt.owner", "value": "team-web" },
 
 
-
    { "name": "deployment.release_product", "value": "easytrade" },
-
 
 
    { "name": "deployment.release_stage", "value": "prod" }
 
 
-
    ]
-
 
 
    }
 
 
-
    },
 
 
-
    {
-
 
 
    "type": "dql",
 
 
-
    "id": "web-parse-http",
-
 
 
    "matcher": "true",
 
 
-
    "description": "Parse HTTP logs for the web frontend",
 
 
-
    "enabled": true,
-
 
 
    "dql": {
 
 
-
    "script": "parse content, \"TIMESTAMP:timestamp ' ' UPPER:http.method ' ' LD:url.path ' status=' INT:http.status_code ' duration_ms=' INT:duration.ms ' ua=' LD:user_agent\""
 
 
-
    }
-
 
 
    },
 
 
-
    {
-
 
 
    "type": "drop",
 
 
-
    "id": "drop-health",
-
 
 
    "description": "Drop health and readiness checks for the web frontend",
 
 
-
    "enabled": true,
-
 
 
    "matcher": "matchesPhrase(url.path, \"/health\") or matchesPhrase(url.path, \"/ready\")"
 
 
-
    }
-
 
 
    ]
 
 
-
    }
 
 
-
    }
-
 
 
    }
@@ -3817,53 +3323,40 @@ In this tutorial, we'll create two pipeline groups, one per cloud provider, each
    {
 
 
-
    "schemaId": "builtin:openpipeline.logs.routing",
-
 
 
    "value": {
 
 
-
    "routingEntries": [
-
 
 
    {
 
 
-
    "enabled": true,
-
 
 
    "pipelineType": "custom",
 
 
-
    "pipelineId": "<aws-web-frontend-object-id>",
-
 
 
    "matcher": "cloud.service.name == \"astroshop-web-frontend\"",
 
 
-
    "description": "Route AstroShop Web Frontend logs to the Web Frontend member pipeline"
 
 
-
    }
-
 
 
    ]
 
 
-
    }
-
 
 
    }
@@ -3898,225 +3391,169 @@ Azure
    {
 
 
-
    "schemaId": "builtin:openpipeline.logs.pipeline-groups",
 
 
-
    "value": {
-
 
 
    "displayName": "AWS Pipeline Group",
 
 
-
    "memberPipelines": [
-
 
 
    "<xx000x-web-frontend-object-id>",
 
 
-
    "<xx000x-trade-service-object-id>",
-
 
 
    "<xx000x-portfolio-service-object-id>",
 
 
-
    "<xx000x-account-service-object-id>",
-
 
 
    "<xx000x-quote-service-object-id>",
 
 
-
    "<xx000x-order-service-object-id>",
-
 
 
    "<xx000x-notification-service-object-id>",
 
 
-
    "<xx000x-risk-analytics-service-object-id>",
-
 
 
    "<xx000x-audit-logging-service-object-id>",
 
 
-
    "<xx000x-api-gateway-object-id>",
-
 
 
    "<xx000x-s3-buckets-object-id>",
 
 
-
    "<xx000x-rds-aurora-databases-object-id>",
-
 
 
    "<xx000x-dynamodb-tables-object-id>",
 
 
-
    "<xx000x-lambda-functions-object-id>",
-
 
 
    "<xx000x-ecs-eks-services-object-id>",
 
 
-
    "<xx000x-monitoring-logging-agents-object-id>"
-
 
 
    ],
 
 
-
    "memberStages": {
-
 
 
    "type": "include",
 
 
-
    "include": ["processing"]
-
 
 
    },
 
 
-
    "composition": [
-
 
 
    {
 
 
-
    "isPipelinePlaceholder": false,
-
 
 
    "pipelineId": "<xx000x-global-cost-bucket-object-id>",
 
 
-
    "stages": {
 
 
-
    "type": "include",
-
 
 
    "include": ["costAllocation", "storage"]
 
 
-
    }
-
 
 
    },
 
 
-
    {
 
 
-
    "isPipelinePlaceholder": false,
-
 
 
    "pipelineId": "<xx000x-aws-processing-object-id>",
 
 
-
    "stages": {
-
 
 
    "type": "include",
 
 
-
    "include": ["processing", "metricExtraction", "davis", "dataExtraction"]
-
 
 
    }
 
 
-
    },
-
 
 
    {
 
 
-
    "isPipelinePlaceholder": false,
-
 
 
    "pipelineId": "<xx000x-aws-cost-permissions-object-id>",
 
 
-
    "stages": {
-
 
 
    "type": "include",
 
 
-
    "include": ["productAllocation", "securityContext"]
 
 
-
    }
-
 
 
    },
 
 
-
    {
-
 
 
    "isPipelinePlaceholder": true
 
 
-
    }
-
 
 
    ]
 
 
-
    }
-
 
 
    }
@@ -4124,227 +3561,171 @@ Azure
 
    ```
    {
-
 
 
    "schemaId": "builtin:openpipeline.logs.pipeline-groups",
 
 
-
    "value": {
-
 
 
    "displayName": "Azure Pipeline Group",
 
 
-
    "memberPipelines": [
-
 
 
    "<yy111y-web-frontend-object-id>",
 
 
-
    "<yy111y-product-catalog-service-object-id>",
-
 
 
    "<yy111y-order-service-object-id>",
 
 
-
    "<yy111y-inventory-service-object-id>",
-
 
 
    "<yy111y-user-account-service-object-id>",
 
 
-
    "<yy111y-cart-service-object-id>",
-
 
 
    "<yy111y-payment-gateway-integration-object-id>",
 
 
-
    "<yy111y-review-&amp;-rating-service-object-id>",
-
 
 
    "<yy111y-recommendation-engine-object-id>",
 
 
-
    "<yy111y-notification-service-object-id>",
-
 
 
    "<yy111y-shipping-service-object-id>",
 
 
-
    "<yy111y-image-processing-service-object-id>",
-
 
 
    "<yy111y-api-gateway-object-id>",
 
 
-
    "<yy111y-azure-sql-storage-accounts-object-id>",
-
 
 
    "<yy111y-azure-functions-logic-apps-object-id>",
 
 
-
    "<yy111y-monitoring-logging-agents-object-id>"
-
 
 
    ],
 
 
-
    "memberStages": {
 
 
-
    "type": "include",
-
 
 
    "include": ["processing"]
 
 
-
    },
-
 
 
    "composition": [
 
 
-
    {
 
 
-
    "isPipelinePlaceholder": false,
-
 
 
    "pipelineId": "<yy111y-global-cost-bucket-object-id>",
 
 
-
    "stages": {
 
 
-
    "type": "include",
-
 
 
    "include": ["productAllocation", "storage"]
 
 
-
    }
-
 
 
    },
 
 
-
    {
 
 
-
    "isPipelinePlaceholder": false,
-
 
 
    "pipelineId": "<yy111y-azure-processing-object-id>",
 
 
-
    "stages": {
 
 
-
    "type": "include",
-
 
 
    "include": ["processing", "metricExtraction", "davis", "dataExtraction"]
 
 
-
    }
-
 
 
    },
 
 
-
    {
-
 
 
    "isPipelinePlaceholder": false,
 
 
-
    "pipelineId": "<yy111y-azure-cost-permissions-object-id>",
-
 
 
    "stages": {
 
 
-
    "type": "include",
-
 
 
    "include": ["productAllocation", "securityContext"]
 
 
-
    }
-
 
 
    },
 
 
-
    {
-
 
 
    "isPipelinePlaceholder": true
 
 
-
    }
-
 
 
    ]
 
 
-
    }
-
 
 
    }
@@ -4375,7 +3756,6 @@ scraped: 2026-03-06T21:13:48.584554
 
 # OpenPipeline processing examples
 
-# OpenPipeline processing examples
 
 * Latest Dynatrace
 * Tutorial
@@ -4418,7 +3798,6 @@ A stored event from an application (`myLogSource`) in the log viewer is missing 
       fetch logs
 
 
-
       | filter matchesValue(log.source, "myLogSource")
       ```
    3. Run the query and, when you're satisfied with the filter result, copy the `matchesValue()` function.
@@ -4440,25 +3819,19 @@ The processed log record is displayed with metadata, including a `timestamp` and
 {
 
 
-
 "content":"April 24, 2022 09:59:52 [myPool-thread-1] INFO Lorem ipsum dolor sit amet",
-
 
 
 "status":"NONE",
 
 
-
 "timestamp":"1650889391528",
-
 
 
 "log.source":"myLogSource",
 
 
-
 "loglevel":"NONE"
-
 
 
 }
@@ -4470,61 +3843,46 @@ The processed log record is displayed with metadata, including a `timestamp` and
 {
 
 
-
 "results":
-
 
 
 [
 
 
-
 {
-
 
 
 "matched": true,
 
 
-
 "record": {
-
 
 
 "loglevel": "INFO",
 
 
-
 "log.source": "myLogSource",
-
 
 
 "thread.name": "myPool-thread-1",
 
 
-
 "content": "April 24, 2022 09:59:52 [myPool-thread-1] INFO Lorem ipsum dolor sit amet",
-
 
 
 "timestamp": "2022-04-24T09:59:52.000000000Z",
 
 
-
 "status": "NONE"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -4552,9 +3910,7 @@ All fields and bring them to top-level
 parse content, "JSON{STRING:stringField:new.name}(flat=true)"
 
 
-
 // Parses out a string field from raw record data into a standalone top-level attribute via a DPL JSON matcher.
-
 
 
 // `flat=true` automatically creates attributes named as specified in the JSON. To rename the field, provide a new name inline after an additional `:`.
@@ -4568,9 +3924,7 @@ Conclusion
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }"
-
 
 
 }
@@ -4582,13 +3936,10 @@ Conclusion
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }",
 
 
-
 "new.name": "stringFieldValue"
-
 
 
 }
@@ -4598,17 +3949,13 @@ Conclusion
 parse content, "JSON{STRING:stringField, JSON {STRING:nestedStringField1}:nested}:parsedJson"
 
 
-
 | fieldsAdd new.attribute1 = parsedJson[stringField]
-
 
 
 | fieldsAdd new.attribute2 = parsedJson[nested][nestedStringField1]
 
 
-
 | fieldsRemove parsedJson
-
 
 
 // Parses out multiple string fields, including nested one, from raw record data into standalone top-level attributes, via a DPL JSON matcher.
@@ -4624,9 +3971,7 @@ You can process the record further; for example, you can create a top-level attr
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }"
-
 
 
 }
@@ -4638,17 +3983,13 @@ You can process the record further; for example, you can create a top-level attr
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }",
-
 
 
 "new.attribute1": "stringFieldValue",
 
 
-
 "new.attribute2": "NestedValue1"
-
 
 
 }
@@ -4658,25 +3999,19 @@ You can process the record further; for example, you can create a top-level attr
 parse content, "JSON:parsedJson"
 
 
-
 | fieldsAdd new.field1 = parsedJson[intField],
-
 
 
 new.field2 = parsedJson[stringField],
 
 
-
 new.field3 = parsedJson[nested][nestedStringField1],
-
 
 
 new.field4 = parsedJson[nested][nestedStringField2]
 
 
-
 | fieldsRemove parsedJson
-
 
 
 // Parses out all JSON fields without listing the attributes, via a DPL JSON matcher.
@@ -4692,9 +4027,7 @@ You can process the record further; for example, you can create a top-level attr
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }"
-
 
 
 }
@@ -4706,25 +4039,19 @@ You can process the record further; for example, you can create a top-level attr
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }",
-
 
 
 "new.field1": "13",
 
 
-
 "new.field2": "stringFieldValue",
-
 
 
 "new.field3": "NestedValue1",
 
 
-
 "new.field4": "NestedValue2"
-
 
 
 }
@@ -4732,7 +4059,6 @@ You can process the record further; for example, you can create a top-level attr
 
 ```
 parse content, """LD '"stringField"' SPACE? ':' SPACE?  DQS:newAttribute"""
-
 
 
 // Treats fields as plain text and renames any string that matches as specified.
@@ -4746,9 +4072,7 @@ Conclusion
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }"
-
 
 
 }
@@ -4760,13 +4084,10 @@ Conclusion
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }",
 
 
-
 "newAttribute": "stringField"
-
 
 
 }
@@ -4776,9 +4097,7 @@ Conclusion
 parse content, "JSON:parsedJson"
 
 
-
 | fieldsFlatten parsedJson, prefix: "j"
-
 
 
 // Parses out all fields without enumerating them and creates top-level fields from the JSON string without the need to enumerate the field names. It can be applied to multiple JSON objects.
@@ -4792,9 +4111,7 @@ Conclusion
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }"
-
 
 
 }
@@ -4806,21 +4123,16 @@ Conclusion
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }",
-
 
 
 "j.stringField": "stringFieldValue",
 
 
-
 "j.intField": 13,
 
 
-
 "j.nested":"{\"nestedStringField1\":\"NestedValue1\", \"nestedStringField2\":\"NestedValue2\"}"
-
 
 
 }
@@ -4838,33 +4150,25 @@ To extract the user identifier as a standalone log attribute, configure a **DQL*
 parse content, "
 
 
-
 LD // Matches any text within a single line
-
 
 
 ('user'| 'User') // Matches specified literals
 
 
-
 SPACE? // Matches optional punctuation
-
 
 
 ('id'|'Id'|'ID')
 
 
-
 SPACE?
-
 
 
 PUNCT?
 
 
-
 SPACE?
-
 
 
 INT:my.user.id"
@@ -4880,17 +4184,13 @@ With a single definition, you've extracted the user identifier from different lo
 03/22 08:52:51 INFO user ID=1234567 Call = 0319 Result = 0
 
 
-
 03/22 08:52:51 INFO UserId = 1234567 Call = 0319 Result = 0
-
 
 
 03/22 08:52:51 INFO user id=1234567 Call = 0319 Result = 0
 
 
-
 03/22 08:52:51 INFO User ID: 1234567 Call = 0319 Result = 0
-
 
 
 03/22 08:52:51 INFO userid: 1234567 Call = 0319 Result = 0
@@ -4903,7 +4203,6 @@ With a single definition, you've extracted the user identifier from different lo
 ```
 
 ### Use specialized DPL matchers
-
 
 
 A JSON file contains information that you want to parse out and create new dedicate fields for it, based on the format. You can use [Dynatrace Pattern Language (DPL) matchers](../ru/platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.") for easier pattern building.
@@ -4926,9 +4225,7 @@ You created new fields for the timestamp, a loglevel, IP address, endpoint, and 
 {
 
 
-
 "content": "2022-05-11T13:23:45Z INFO 192.168.33.1 GET /api/v2/logs/ingest HTTP/1.0 200"
-
 
 
 }
@@ -4940,29 +4237,22 @@ You created new fields for the timestamp, a loglevel, IP address, endpoint, and 
 {
 
 
-
 "request": "GET /api/v2/logs/ingest HTTP/1.0",
-
 
 
 "code": 200,
 
 
-
 "loglevel": "INFO",
-
 
 
 "ip": "192.168.33.1",
 
 
-
 "timestamp": "2022-05-11T13:23:45.000000000Z",
 
 
-
 "content": "2022-05-11T13:23:45Z INFO 192.168.33.1 GET /api/v2/logs/ingest HTTP/1.0 200"
-
 
 
 }
@@ -4980,9 +4270,7 @@ Configure a **DQL** processor in the **Processing** stage with the following def
 parse content, "LD 'total: ' INT:total '; failed: ' INT:failed" // Parses `total` and `failed` field values.
 
 
-
 | fieldsAdd failed.percentage = 100.0 * failed / total // Calculates the failure percentage, formats the result to be a percentage, and stores it in a new attribute (`failed.percentage`).
-
 
 
 | fieldsRemove total, failed // Removes temporary fields that are no longer needed from the JSON file.
@@ -4998,9 +4286,7 @@ You calculated the failure percentage based on the JSON content and created a ne
 {
 
 
-
 "content": "Lorem ipsum total: 1000; failed: 255",
-
 
 
 }
@@ -5012,13 +4298,10 @@ You calculated the failure percentage based on the JSON content and created a ne
 {
 
 
-
 "content": "Lorem ipsum total: 1000; failed: 255",
 
 
-
 "failed.percentage": 25.5
-
 
 
 }
@@ -5050,9 +4333,7 @@ You added new top-level fields that store the team name (`company.team.name`) an
 {
 
 
-
 "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis."
-
 
 
 }
@@ -5064,17 +4345,13 @@ You added new top-level fields that store the team name (`company.team.name`) an
 {
 
 
-
 "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis.",
-
 
 
 "company.team.name": "my-team",
 
 
-
 "company.branch.name": "New York"
-
 
 
 }
@@ -5096,9 +4373,7 @@ You added new top-level fields that store the length (`content.length`) and numb
 {
 
 
-
 "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis."
-
 
 
 }
@@ -5110,17 +4385,13 @@ You added new top-level fields that store the length (`content.length`) and numb
 {
 
 
-
 "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis.",
-
 
 
 "content.length": "62",
 
 
-
 "content.words": "9"
-
 
 
 }
@@ -5149,13 +4420,10 @@ Conclusion
 {
 
 
-
 "redundant.attribute": "value",
 
 
-
 "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac neque nisi. Nunc accumsan sollicitudin lacus."
-
 
 
 }
@@ -5167,9 +4435,7 @@ Conclusion
 {
 
 
-
 "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac neque nisi. Nunc accumsan sollicitudin lacus."
-
 
 
 }
@@ -5198,9 +4464,7 @@ Conclusion
 {
 
 
-
 "content": {"field": "Lorem ipsum"}
-
 
 
 }
@@ -5257,9 +4521,7 @@ Conclusion
 {
 
 
-
 "ip": "192.168.1.12"
-
 
 
 }
@@ -5271,9 +4533,7 @@ Conclusion
 {
 
 
-
 "ip": "192.168.1.0"
-
 
 
 }
@@ -5293,9 +4553,7 @@ Conclusion
 {
 
 
-
 "ip": "192.168.1.12"
-
 
 
 }
@@ -5307,9 +4565,7 @@ Conclusion
 {
 
 
-
 "ip": "192.168.1.xxx"
-
 
 
 }
@@ -5329,9 +4585,7 @@ Conclusion
 {
 
 
-
 "content" : "Lorem ipsum client_ip: 192.168.1.12 email: john.doe@dynatrace.com card number: 4012888888881881 server_ip: 215.131.189.194  dolor sit amet"
-
 
 
 }
@@ -5343,9 +4597,7 @@ Conclusion
 {
 
 
-
 "content": "Lorem ipsum client_ip: xxx.xxx.xxx.xxx email: john.doe@dynatrace.com card number: 4012888888881881 server_ip: xxx.xxx.xxx.xxx dolor sit amet"
-
 
 
 }
@@ -5357,9 +4609,7 @@ The following example parses out the username of an email address and uses the [
 parse content, "LD 'email: ' LD:user '@'"
 
 
-
 | fieldsAdd content = replaceString(content, user, "xxx")
-
 
 
 | fieldsRemove user
@@ -5373,9 +4623,7 @@ Conclusion
 {
 
 
-
 "content" : "Lorem ipsum client_ip: 192.168.1.12 email: john.doe@dynatrace.com card number: 4012888888881881 server_ip: 215.131.189.194 dolor sit amet"
-
 
 
 }
@@ -5387,9 +4635,7 @@ Conclusion
 {
 
 
-
 "content": "Lorem ipsum client_ip: 192.168.1.12 email: xxx@dynatrace.com card number: 4012888888881881 server_ip: 215.131.189.194 dolor sit amet"
-
 
 
 }
@@ -5412,7 +4658,6 @@ scraped: 2026-03-06T21:10:39.754758
 
 # Reduce span-based and metric-based cardinality
 
-# Reduce span-based and metric-based cardinality
 
 * Latest Dynatrace
 * Tutorial
@@ -5454,17 +4699,13 @@ Processing rules help you transform these into normalized patterns, such as `/us
      fieldsAdd url.full.orig = url.full
 
 
-
      | fieldsAdd path_normalized = replacePattern(url.path, "UUIDSTRING", "[UUID]")
-
 
 
      | fieldsAdd path_normalized = replacePattern(path_normalized, "[/]LONG", "/[Number]")
 
 
-
      | fieldsAdd port = if(isNotNull(server.port), concat(":", server.port),   else:null)
-
 
 
      | fieldsAdd url.full = concat(url.scheme, "://", server.address, port, path_normalized)
@@ -5523,13 +4764,10 @@ To create a pipeline
      fieldsAdd db.query.text = coalesce(db.query.text, db.statement)
 
 
-
      | fieldsAdd db.query.text.orig = db.query.text
 
 
-
      | fieldsAdd blankPos = indexOf(db.query.text.orig, " ")
-
 
 
      | fieldsAdd db.query.text = if (blankPos > 0, substring(db.query.text, from: 0, to: blankPos), else: "*")
@@ -5576,7 +4814,6 @@ You should see the **DB statement normalization** dynamic route in the list of d
 ### 3. Explore other DQL processorsOptional
 
 
-
 As mentioned before, you can add additional DQL processors when you encounter high-cardinality database queries.
 
 Check the sections below for three additional examples of the DQL processor. When you add a new processor, set **Matching condition** to `db.system == "redis" and (isNotNull(db.statement) or isNotNull(db.query.text))`, and set **DQL processor definition** to the value provided in one of the examples below.
@@ -5599,17 +4836,13 @@ Use the following DQL query to count the original number of Redis statements (be
 fetch spans
 
 
-
 | filter db.system == "redis" and (isNotNull(db.statement) or isNotNull(db.query.text))
-
 
 
 | fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
 
 
-
 | summarize count(), by: { db.query.text }
-
 
 
 | sort `count()` desc
@@ -5627,9 +4860,7 @@ This DQL processor replaces `db.query.text` with the first 15 characters + `*`. 
 | fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
 
 
-
 | fieldsAdd db.query.text.orig = db.query.text
-
 
 
 | fieldsAdd db.query.text = concat(substring(db.query.text, from: 0, to: 15), "*")
@@ -5641,25 +4872,19 @@ This DQL processor replaces `db.query.text` with the first 15 characters + `*`. 
 fetch spans
 
 
-
 | filter db.system == "redis" and (isNotNull(db.statement) or isNotNull(db.query.text))
-
 
 
 | fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
 
 
-
 | fieldsAdd db.query.text.orig = db.query.text
-
 
 
 | fieldsAdd db.query.text = concat(substring(db.query.text, from: 0, to: 15), "*")
 
 
-
 | summarize count(), by: { db.query.text }
-
 
 
 | sort `count()` desc
@@ -5677,13 +4902,10 @@ This DQL processor extracts the first word in `db.query.text` by cutting at the 
 | fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
 
 
-
 | fieldsAdd db.query.text.orig = db.query.text
 
 
-
 | fieldsAdd blankPos = indexOf(db.query.text.orig, " ")
-
 
 
 | fieldsAdd db.query.text = if(blankPos > 0, substring(db.query.text, from: 0, to: blankPos), else: "*")
@@ -5695,29 +4917,22 @@ This DQL processor extracts the first word in `db.query.text` by cutting at the 
 fetch spans
 
 
-
 | filter db.system == "redis" and (isNotNull(db.statement) or isNotNull(db.query.text))
-
 
 
 | fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
 
 
-
 | fieldsAdd db.query.text.orig = db.query.text
-
 
 
 | fieldsAdd blankPos = indexOf(db.query.text.orig, " ")
 
 
-
 | fieldsAdd db.query.text = if(blankPos > 0, substring(db.query.text, from: 0, to: blankPos), else: "*")
 
 
-
 | summarize count(), by: { db.query.text }
-
 
 
 | sort `count()` desc
@@ -5735,9 +4950,7 @@ This DQL processor sets `db.query.text` to the value of `db.operation.name`. Use
 | fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
 
 
-
 | fieldsAdd db.query.text.orig = db.query.text
-
 
 
 | fieldsAdd db.query.text = if(isNotNull(db.operation.name), db.operation.name, else: "*")
@@ -5749,25 +4962,19 @@ This DQL processor sets `db.query.text` to the value of `db.operation.name`. Use
 fetch spans
 
 
-
 | filter db.system == "redis" and (isNotNull(db.statement) or isNotNull(db.query.text))
-
 
 
 | fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
 
 
-
 | fieldsAdd db.query.text.orig = db.query.text
-
 
 
 | fieldsAdd db.query.text = if(isNotNull(db.operation.name), db.operation.name, else: "*")
 
 
-
 | summarize count(), by: { db.query.text }
-
 
 
 | sort `count()` desc
@@ -5795,13 +5002,10 @@ Before implementing normalization rules, query your spans to identify messaging 
    fetch spans
 
 
-
    | filter isNotNull(messaging.system) and isNotNull(messaging.destination.name)
 
 
-
    | summarize count=count(), distinctCount=countDistinct(messaging.destination.name), by:{messaging.system, messaging.destination.temporary}
-
 
 
    | fieldsAdd cardinality_ratio = toDouble(distinctCount) / toDouble(count)
@@ -5838,7 +5042,6 @@ To create a rule
      messaging.destination.temporary == false and
 
 
-
      matchesPhrase(messaging.destination.name, "odaRequestQueue*")
      ```
    * **DQL processor definition**: The only action to perform is to overwrite the existing value from false to true.
@@ -5866,7 +5069,6 @@ To create a rule
 4. Select **Save**.
 
 ### Enable the processor
-
 
 
 Now that we have defined and saved a processor, we can enable the processor by connecting it to OpenPipeline via a new dynamic route, so that your pipeline receives span data.
@@ -5898,7 +5100,6 @@ scraped: 2026-03-06T21:15:57.758999
 
 # Extract metrics from spans and distributed traces
 
-# Extract metrics from spans and distributed traces
 
 * Latest Dynatrace
 * Tutorial
@@ -5947,13 +5148,10 @@ For common splits such as namespace, cluster or cloud region, use the out-of-the
    fetch spans
 
 
-
    | filter k8s.workload.name == "my-otel-demo-frontend" and span.kind == "server" and isNotNull(endpoint.name)
 
 
-
    | fields k8s.pod.name, dt.entity.service, endpoint.name, duration
-
 
 
    | limit 200
@@ -6022,7 +5220,6 @@ You've successfully extracted a metric to track requests to the `my-otel-demo-fr
 ### Number of books successfully sold per service
 
 
-
 In this example, we describe the creation of the pipeline and the metric-extraction processor. For detailed steps, follow the approach of the [workload split by Kubernetes pod example](#workload-requests-pod), but adapt the filter queries and routing.
 
 Assumptions for the example
@@ -6088,17 +5285,13 @@ You added a new `db.query.group` attribute to the database spans that you can no
 {
 
 
-
 "db.namespace": "books",
-
 
 
 "db.operation.name": "SELECT",
 
 
-
 "db.query.text": "select b1_0.id,b1_0.author,b1_0.title from books b1_0 where b1_0.title=?"
-
 
 
 }
@@ -6110,21 +5303,16 @@ You added a new `db.query.group` attribute to the database spans that you can no
 {
 
 
-
 "db.query.group": "SELECT books",
-
 
 
 "db.namespace": "books",
 
 
-
 "db.operation.name": "SELECT",
 
 
-
 "db.query.text": "select b1_0.id,b1_0.author,b1_0.title from books b1_0 where b1_0.title=?"
-
 
 
 }
@@ -6188,7 +5376,6 @@ You successfully created a new processor to extract a metric containing informat
 ### Response time for outbound calls to paypal.com per service, as measured by the caller
 
 
-
 Upcoming features
 
 Histogram metric extraction support is coming soon.
@@ -6226,7 +5413,6 @@ scraped: 2026-03-06T21:13:39.739379
 
 # Parse log lines and extract a metric
 
-# Parse log lines and extract a metric
 
 * Latest Dynatrace
 * Tutorial
@@ -6249,13 +5435,10 @@ The following log line is an example of the raw data this article focuses on.
 {
 
 
-
 "content": "AddItemAsync called with userId=6517055a-9fcc-4707-8786-e33a767a90c4, productId=OLJCESPC7Z, quantity=4",
 
 
-
 "k8s.namespace.name": "online-boutique"
-
 
 
 }
@@ -6296,17 +5479,13 @@ Prerequisites
    fetch logs
 
 
-
    | filter k8s.namespace.name == "online-boutique"
-
 
 
    | filter matchesValue(content, "AddItemAsync*")
 
 
-
    | fields timestamp, content
-
 
 
    | limit 250
@@ -6345,9 +5524,7 @@ Prerequisites
          {
 
 
-
          "content": "AddItemAsync called with userId=6517055a-9fcc-4707-8786-e33a767a90c4, productId=OLJCESPC7Z, quantity=4", "k8s.namespace.name": "online-boutique"
-
 
 
          }
@@ -6416,13 +5593,10 @@ You've successfully configured a new route. The new route is in the routes' list
    curl -i -X POST "https://{your-environment-id}.live.dynatrace.com/api/v2/logs/ingest" \
 
 
-
    -H "Content-Type: application/json" \
 
 
-
    -H "Authorization: Api-Token <your API token>" \
-
 
 
    -d "{\"k8s.namespace.name\":\"online-boutique\",\"content\":\"AddItemAsync called with userId=6517055a-9fcc-4707-8786-e33a767a90c4, productId=OLJCESPC7Z, quantity=4\"}"
@@ -6442,7 +5616,6 @@ You've successfully configured a new route. The new route is in the routes' list
         fetch logs
 
 
-
         | filter userId == "6517055a-9fcc-4707-8786-e33a767a90c4"
         ```
       * To verify the metric, add another section with a DQL query input field.
@@ -6453,9 +5626,7 @@ You've successfully configured a new route. The new route is in the routes' list
         timeseries avg(log.add_item_product_quantity_by_product), by:{productId}
 
 
-
         | fieldsAdd sum = arraySum(`avg(log.add_item_product_quantity_by_product)`)
-
 
 
         | fields sum, productId
@@ -6466,7 +5637,6 @@ You've successfully configured a new route. The new route is in the routes' list
 ## Conclusion
 
 
-
 You have successfully created a pipeline to parse log data and extract a metric. The log records of the user adding a product to their cart are transformed from raw information to structured information according to your rules. They now specify dedicated fields (`userId`, `productId`, and `quantity`), from which you extracted a new metric for better analytics.
 
 **Raw log record**
@@ -6475,13 +5645,10 @@ You have successfully created a pipeline to parse log data and extract a metric.
 {
 
 
-
 "content": "AddItemAsync called with userId=6517055a-9fcc-4707-8786-e33a767a90c4, productId=OLJCESPC7Z, quantity=4",
 
 
-
 "k8s.namespace.name": "online-boutique"
-
 
 
 }
@@ -6493,29 +5660,22 @@ You have successfully created a pipeline to parse log data and extract a metric.
 {
 
 
-
 "k8s.namespace.name": "online-boutique",
-
 
 
 "quantity" : 4,
 
 
-
 "productId": "OLJCESPC7Z",
-
 
 
 "userId": "6517055a-9fcc-4707-8786-e33a767a90c4",
 
 
-
 "content": "AddItemAsync called with userId=6517055a-9fcc-4707-8786-e33a767a90c4, productId=OLJCESPC7Z, quantity=4",
 
 
-
 "timestamp": "2024-06-19T15:29:54.125000000Z"
-
 
 
 }
@@ -6533,7 +5693,6 @@ scraped: 2026-03-06T21:16:03.051024
 
 # Extract a metric to track system events
 
-# Extract a metric to track system events
 
 * Latest Dynatrace
 * Tutorial
@@ -6577,9 +5736,7 @@ Prerequisites
    fetch dt.system.events
 
 
-
    | filter event.kind == "AUDIT_EVENT" AND event.provider == "APP_REGISTRY"
-
 
 
    | summarize by:{event.type}, count()
@@ -6654,7 +5811,6 @@ scraped: 2026-03-06T21:13:36.221723
 
 # Process logs with technology bundle parsers
 
-# Process logs with technology bundle parsers
 
 * Latest Dynatrace
 * Tutorial
@@ -6732,13 +5888,10 @@ Using parsers helps you to better structure and enrich your logs. See this compa
 {
 
 
-
 "dt.openpipeline.source": "extension:syslog",
 
 
-
 "content": "<24>1 2025-08-06T14:50:30.123Z core-router-01.example.com kernel 9999 ID01 Critical system failure: Kernel panic detected, immediate attention required!"
-
 
 
 }
@@ -6750,61 +5903,46 @@ Using parsers helps you to better structure and enrich your logs. See this compa
 {
 
 
-
 "syslog.severity": 0,
-
 
 
 "syslog.version": 1,
 
 
-
 "syslog.priority": 24,
-
 
 
 "syslog.facility": 3,
 
 
-
 "syslog.message": "Critical system failure: Kernel panic detected, immediate attention required!",
-
 
 
 "content": "<24>1 2025-08-06T14:50:30.123Z core-router-01.example.com kernel 9999 ID01 Critical system failure: Kernel panic detected, immediate attention required!",
 
 
-
 "syslog.proc_id": "9999",
-
 
 
 "dt.openpipeline.source": "extension:syslog",
 
 
-
 "loglevel": "EMERGENCY",
-
 
 
 "syslog.message_id": "ID01",
 
 
-
 "syslog.hostname": "core-router-01.example.com",
-
 
 
 "syslog.appname": "kernel",
 
 
-
 "timestamp": "2025-08-06T14:50:30.123000000Z",
 
 
-
 "status": "ERROR"
-
 
 
 }
@@ -6821,13 +5959,10 @@ You can easily filter logs by status, application, or attributes specific to the
      fetch logs
 
 
-
      | filter dt.openpipeline.source == "extension:syslog"
 
 
-
      | filter status == "WARN"
-
 
 
      | sort timestamp desc
@@ -6840,13 +5975,10 @@ You can easily filter logs by status, application, or attributes specific to the
      fetch logs
 
 
-
      | filter dt.openpipeline.source == "extension:syslog" and isNotNull(syslog.appname)
 
 
-
      | summarize totalCount = count(), by: {syslog.appname}
-
 
 
      | sort totalCount desc
@@ -6861,21 +5993,16 @@ You can easily filter logs by status, application, or attributes specific to the
      fetch logs
 
 
-
      | filter dt.openpipeline.source == "extension:syslog" and isNotNull(syslog.appname)
-
 
 
      | summarize TotalCount = count(), Count = countIf(status == "ERROR"), by: {syslog.appname}
 
 
-
      | fieldsAdd Percentage = (Count * 100 / TotalCount)
 
 
-
      | sort Count desc
-
 
 
      | fieldsRemove TotalCount
@@ -6909,7 +6036,6 @@ scraped: 2026-03-06T21:10:24.659240
 
 # OpenPipeline
 
-# OpenPipeline
 
 * Latest Dynatrace
 * Overview

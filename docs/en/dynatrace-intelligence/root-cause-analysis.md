@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:55.335298
 
 # Root cause analysis
 
-# Root cause analysis
 
 * Latest Dynatrace
 * Explanation

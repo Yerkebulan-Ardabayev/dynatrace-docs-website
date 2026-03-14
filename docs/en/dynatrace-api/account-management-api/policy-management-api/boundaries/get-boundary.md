@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:29:45.609196
 
 # Policy management API - GET a policy boundary
 
-# Policy management API - GET a policy boundary
 
 * Latest Dynatrace
 * Reference
@@ -74,65 +73,49 @@ To execute this request, you need the **Allow IAM policy configuration for envir
 {
 
 
-
 "uuid": "string",
-
 
 
 "levelType": "string",
 
 
-
 "levelId": "string",
 
 
-
 "name": "string",
-
 
 
 "boundaryQuery": "string",
 
 
-
 "boundaryConditions": [
 
 
-
 {
-
 
 
 "name": "string",
 
 
-
 "operator": "string",
-
 
 
 "values": [
 
 
-
 "string"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "metadata": {}
-
 
 
 }
@@ -142,17 +125,13 @@ To execute this request, you need the **Allow IAM policy configuration for envir
 {
 
 
-
 "code": 1,
-
 
 
 "message": "string",
 
 
-
 "errorsMap": {}
-
 
 
 }
@@ -168,9 +147,7 @@ In this example, the request retrieves the details of the policy boundary with t
 curl --request GET \
 
 
-
 --url 'https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890/boundaries/9a7b6c54-3d2e-4f10-a8b2-7cde9012f345' \
-
 
 
 --header 'Authorization: Bearer abcdefjhij1234567890'
@@ -188,65 +165,49 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 {
 
 
-
 "uuid": "9a7b6c54-3d2e-4f10-a8b2-7cde9012f345",
-
 
 
 "levelType": "account",
 
 
-
 "levelId": "f1a2b3c4-d5e6-7890-ab12-34cd56ef7890",
-
 
 
 "name": "bndry_teamA",
 
 
-
 "boundaryQuery": "storage:dt.security_context = \"TEAM-AB\";",
-
 
 
 "boundaryConditions": [
 
 
-
 {
-
 
 
 "name": "storage:dt.security_context",
 
 
-
 "operator": "EQ",
-
 
 
 "values": [
 
 
-
 "TEAM-A"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "metadata": {}
-
 
 
 }

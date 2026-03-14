@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:48.917062
 
 # Kubernetes overview
 
-# Kubernetes overview
 
 * Latest Dynatrace
 * Explanation

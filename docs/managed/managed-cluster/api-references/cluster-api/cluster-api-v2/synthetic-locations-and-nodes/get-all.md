@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Synthetic nodes API v2 - GET all nodes (Dynatrace Managed)
 
-# Synthetic nodes API v2 - GET all nodes (Dynatrace Managed)
 
 * Published Oct 30, 2020
 
@@ -98,149 +97,113 @@ A list of constraint violations
 {
 
 
-
 "nodes": [
 
 
-
 {
-
 
 
 "activeGateVersion": "1.172.2.20190607-040913",
 
 
-
 "autoUpdateEnabled": true,
-
 
 
 "browserMonitorsEnabled": true,
 
 
-
 "capabilities": [
-
 
 
 "HTTP_HIGH_RESOURCE",
 
 
-
 "HTTP"
 
 
-
 ],
-
 
 
 "entityId": "3086117876",
 
 
-
 "healthCheckStatus": "Ok",
-
 
 
 "hostname": "gdn.dyna.trace",
 
 
-
 "ips": [
-
 
 
 "238.245.160.14"
 
 
-
 ],
-
 
 
 "oneAgentRoutingEnabled": true,
 
 
-
 "operatingSystem": "Linux",
-
 
 
 "playerVersion": "1.179.0.20190920-145430",
 
 
-
 "status": "Running",
-
 
 
 "version": "1.161.0.20181210-173639"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -260,9 +223,7 @@ The result is truncated to two entries.
 curl -X GET \
 
 
-
 https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/nodes \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -280,141 +241,106 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/nodes
 {
 
 
-
 "nodes": [
 
 
-
 {
-
 
 
 "entityId": "3086117876",
 
 
-
 "hostname": "gdn.dyna.trace",
 
 
-
 "ips": [
-
 
 
 "238.245.160.14"
 
 
-
 ],
-
 
 
 "version": "1.207.0.20201029-141904",
 
 
-
 "browserMonitorsEnabled": true,
-
 
 
 "activeGateVersion": "1.207.0.20201029-180431",
 
 
-
 "oneAgentRoutingEnabled": false,
-
 
 
 "operatingSystem": "Platform: Linux, Version: 4.4.0-1092-aws, Architecture: amd64, Processors: 2",
 
 
-
 "autoUpdateEnabled": true,
-
 
 
 "status": "Running",
 
 
-
 "playerVersion": "1.207.0.20201029-081128",
-
 
 
 "healthCheckStatus": "Ok"
 
 
-
 },
-
 
 
 {
 
 
-
 "entityId": "1267320067",
-
 
 
 "hostname": "244.94.30.253",
 
 
-
 "ips": [
-
 
 
 "244.94.30.253"
 
 
-
 ],
-
 
 
 "version": null,
 
 
-
 "browserMonitorsEnabled": true,
-
 
 
 "activeGateVersion": "1.207.0.20201029-180431",
 
 
-
 "oneAgentRoutingEnabled": false,
-
 
 
 "operatingSystem": "Platform: Linux, Version: 4.15.0-1057-azure, Architecture: amd64, Processors: 2",
 
 
-
 "autoUpdateEnabled": true,
-
 
 
 "status": null,
 
 
-
 "playerVersion": null,
-
 
 
 "healthCheckStatus": "Offline"
 
 
-
 }
 
 
-
 ]
-
 
 
 }

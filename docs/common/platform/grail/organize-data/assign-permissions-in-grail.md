@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Permissions in Grail
 
-# Permissions in Grail
 
 * Latest Dynatrace
 * How-to guide
@@ -32,7 +31,6 @@ To set up the bucket and table-level permissions
 
      ```
      ALLOW storage:buckets:read WHERE <conditions>;
-
 
 
      ALLOW <table permission> WHERE <conditions>;
@@ -107,7 +105,6 @@ The following examples describe how to use bucket permissions to grant access to
 
   ```
   ALLOW storage:buckets:read WHERE storage:query-consumption="INCLUDED";
-
 
 
   ALLOW storage:buckets:read WHERE storage:bucket-name="common_logs" AND storage:query-consumption="ON_DEMAND";
@@ -326,7 +323,6 @@ You can combine both bucket and record level in your table permissions. For exam
 ALLOW storage:logs:read WHERE storage:bucket-name="unrestricted_logs";
 
 
-
 ALLOW storage:logs:read WHERE storage:bucket-name="default_logs" AND storage:dt.security_context="TeamA";
 ```
 
@@ -338,7 +334,6 @@ For example, the following statement will return results for records with `dt.se
 
 ```
 // will match both "crn-70400-alpha" and ["crn-70131", "crn-70400-beta", "crn-70500"]
-
 
 
 ALLOW storage:logs:read WHERE storage:dt.security_context MATCH ("crn-70400-*");
@@ -360,9 +355,7 @@ Make sure that the user has access to all relevant buckets.
 ALLOW storage:buckets:read WHERE â¦ // Ensure that the user has access to all relevant buckets
 
 
-
 ALLOW storage:logs:read WHERE storage:k8s.namespace.name="namespace1";
-
 
 
 ALLOW storage:logs:read WHERE storage:dt.host_group.id MATCH ("shared_host_*");
@@ -383,7 +376,6 @@ Solution:
    ALLOW storage:buckets:read WHERE â¦ // Ensure that the user has access to all relevant buckets
 
 
-
    ALLOW storage:logs:read WHERE storage:dt.security_context MATCH ("TeamA");
    ```
 
@@ -401,7 +393,6 @@ Make sure that the user has access to all relevant buckets.
 ALLOW storage:buckets:read WHERE â¦ // Ensure that the user has access to all relevant buckets
 
 
-
 ALLOW storage:bizevents:read WHERE storage:event.kind="Opportunity Field History";
 ```
 
@@ -415,7 +406,6 @@ Create a policy to grant access to records in `dt_system_events` for the specifi
 
 ```
 ALLOW storage:buckets:read WHERE storage:bucket-name="dt_system_events"
-
 
 
 ALLOW storage:system:read WHERE storage:event.kind="BILLING_EVENT"
@@ -507,49 +497,37 @@ POST https://myapps.mydomain.com/platform/storage/fieldsets/v1/fieldsets
 {
 
 
-
 "name": "sensitive-fields-retail",
-
 
 
 "description": "Sensitive fields retail",
 
 
-
 "enabled": true,
-
 
 
 "scope": "BUCKET",
 
 
-
 "fields": [
-
 
 
 "credit_card",
 
 
-
 "DOB"
-
 
 
 ],
 
 
-
 "buckets": [
-
 
 
 "logs_retail"
 
 
-
 ]
-
 
 
 }
@@ -583,9 +561,7 @@ The following example shows how to provide full access to lookup data stored in 
 ALLOW storage:files:read WHERE storage:file-path startsWith "/lookups/";
 
 
-
 ALLOW storage:files:write WHERE storage:file-path startsWith "/lookups/";
-
 
 
 ALLOW storage:files:delete WHERE storage:file-path startsWith "/lookups/";
@@ -623,7 +599,6 @@ This statement provides access to all built-in and custom buckets.
 ALLOW storage:buckets:read WHERE storage:table-name= "logs";
 
 
-
 ALLOW storage:logs:read;
 ```
 
@@ -635,37 +610,28 @@ This permission statement gives you access to all tables and all buckets, theref
 ALLOW storage:buckets:read;
 
 
-
 ALLOW storage:system:read,
-
 
 
 storage:events:read,
 
 
-
 storage:security.events:read,
-
 
 
 storage:logs:read,
 
 
-
 storage:metrics:read,
-
 
 
 storage:entities:read,
 
 
-
 storage:bizevents:read,
 
 
-
 storage:spans:read,
-
 
 
 storage:smartscape:read;
@@ -683,29 +649,22 @@ This statement does not give access to custom buckets.
 ALLOW storage:buckets:read WHERE storage:bucket-name MATCH ("default_*");
 
 
-
 ALLOW storage:events:read,
-
 
 
 storage:logs:read,
 
 
-
 storage:metrics:read,
-
 
 
 storage:entities:read,
 
 
-
 storage:bizevents:read,
 
 
-
 storage:spans:read,
-
 
 
 storage:smartscape:read;
@@ -717,7 +676,6 @@ This permission statement first narrows the results to system buckets, whose nam
 
 ```
 ALLOW storage:buckets:read WHERE storage:bucket-name MATCH ("dt_*");
-
 
 
 ALLOW storage:system:read;

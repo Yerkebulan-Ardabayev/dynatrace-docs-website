@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:29:46.801922
 
 # Service user management API
 
-# Service user management API
 
 * Latest Dynatrace
 * Reference

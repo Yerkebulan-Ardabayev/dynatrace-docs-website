@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:21.483222
 
 # Add data to a dashboard
 
-# Add data to a dashboard
 
 * Latest Dynatrace
 * How-to guide
@@ -69,7 +68,6 @@ Example timeframe specification in DQL:
 fetch [recordtype], from:now() - 2h
 
 
-
 | ....
 ```
 
@@ -115,7 +113,6 @@ To select tile-level segments
 fetch logs
 
 
-
 | summarize loglines = count(), by:{`1m interval` = bin(timestamp, 1m), status}
 ```
 
@@ -135,17 +132,13 @@ In case you haven't created a variable yet, first see [Add a variable to a dashb
      fetch logs
 
 
-
      | summarize count(), by:{`dt.entity.host`}
-
 
 
      | limit 100
 
 
-
      | sort `count()`, direction:"descending"
-
 
 
      | fields `dt.entity.host`
@@ -161,13 +154,10 @@ In case you haven't created a variable yet, first see [Add a variable to a dashb
      fetch logs, from:now() - 2h
 
 
-
      | summarize  count(), by:{loglevel}
 
 
-
      | sort `count()`, direction:"descending"
-
 
 
      | fields loglevel
@@ -182,9 +172,7 @@ Now add data while referencing your previously created variables `$LogLevel` and
 fetch logs
 
 
-
 | filter in (loglevel, {$Loglevel})
-
 
 
 | limit 10

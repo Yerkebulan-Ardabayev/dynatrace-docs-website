@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:44.080621
 
 # Set up Dynatrace on Docker
 
-# Set up Dynatrace on Docker
 
 * Latest Dynatrace
 * 1-min read

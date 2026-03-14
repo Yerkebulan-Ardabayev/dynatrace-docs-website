@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:39.737550
 
 # Установка OneAgent на AIX
 
-# Установка OneAgent на AIX
 
 * Последняя версия Dynatrace
 * Руководство
@@ -131,9 +130,7 @@ IBM/Apache HTTP Server
 export DT_HOME=/opt/dynatrace/oneagent
 
 
-
 export LDR_PRELOAD64=$DT_HOME/agent/lib64/liboneagentproc.so
-
 
 
 export LDR_PRELOAD=$DT_HOME/agent/lib/liboneagentproc.so
@@ -147,7 +144,6 @@ export LDR_PRELOAD=$DT_HOME/agent/lib/liboneagentproc.so
 LoadModule oneagent_module /opt/dynatrace/oneagent/agent/bin/current/aix-ppc-64/liboneagentloader.so
 
 
-
 OneAgentConfig tenant=<tenant-id>,tenantToken=<tenant-token>,server=https://<server-url>/communication
 ```
 
@@ -157,9 +153,7 @@ OneAgentConfig tenant=<tenant-id>,tenantToken=<tenant-token>,server=https://<ser
 apachectl -c "LoadModule oneagent_module /opt/dynatrace/oneagent/agent/bin/current/aix-ppc-64/liboneagentloader.so"
 
 
-
 -c "OneAgentConfig tenant=<tenantUUID>,tenantToken=<tenant-token>,server=<communicationEndpoints>"
-
 
 
 -k start

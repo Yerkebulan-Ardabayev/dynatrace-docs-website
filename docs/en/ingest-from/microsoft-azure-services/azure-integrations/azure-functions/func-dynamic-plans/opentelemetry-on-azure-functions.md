@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:46.855290
 
 # Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan
 
-# Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:14.398188
 
 # Instrument your Rust application with OpenTelemetry
 
-# Instrument your Rust application with OpenTelemetry
 
 * Latest Dynatrace
 * How-to guide
@@ -50,21 +49,16 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    opentelemetry = { version = "~0", features = ["trace", "metrics"] }
 
 
-
    opentelemetry_sdk = { version = "~0", features = ["rt-tokio", "metrics", "logs", "spec_unstable_metrics_views"] }
-
 
 
    opentelemetry-otlp = { version = "~0", features = ["http-proto", "http-json", "logs", "reqwest-blocking-client", "reqwest-rustls"] }
 
 
-
    opentelemetry-http = { version = "~0" }
 
 
-
    opentelemetry-appender-log = { version = "~0" }
-
 
 
    opentelemetry-semantic-conventions = { version = "~0" }
@@ -75,29 +69,22 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    use std::{env, convert::Infallible, net::SocketAddr, collections::HashMap, io::{BufRead, BufReader, Read}};
 
 
-
    use opentelemetry_sdk::trace::SdkTracerProvider;
-
 
 
    use opentelemetry_sdk::{logs::SdkLoggerProvider, metrics::{PeriodicReader, SdkMeterProvider}, propagation::TraceContextPropagator, Resource};
 
 
-
    use opentelemetry_otlp::{LogExporter, MetricExporter, Protocol, SpanExporter, WithExportConfig, WithHttpConfig};
-
 
 
    use opentelemetry_semantic_conventions::trace;
 
 
-
    use opentelemetry_http::{Bytes, HeaderExtractor, HeaderInjector};
 
 
-
    use opentelemetry_appender_log::OpenTelemetryLogBridge;
-
 
 
    use opentelemetry::{global, trace::{FutureExt, Span, SpanKind, TraceContextExt, Tracer}, Context, KeyValue};
@@ -108,313 +95,235 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    fn init_opentelemetry() {
 
 
-
    // Helper function to read potentially available OneAgent data
-
 
 
    fn read_dt_metadata() ->  Vec<KeyValue> {
 
 
-
    fn read_single(path: &str, metadata: &mut Vec<KeyValue>) -> std::io::Result<()> {
-
 
 
    let mut file = std::fs::File::open(path)?;
 
 
-
    if path.starts_with("dt_metadata") {
-
 
 
    let mut name = String::new();
 
 
-
    file.read_to_string(&mut name)?;
-
 
 
    file = std::fs::File::open(name)?;
 
 
-
    }
-
 
 
    for line in BufReader::new(file).lines() {
 
 
-
    if let Some((k, v)) = line?.split_once('=') {
-
 
 
    metadata.push(KeyValue::new(k.to_string(), v.to_string()))
 
 
-
    }
 
 
-
    }
-
 
 
    Ok(())
 
 
-
    }
-
 
 
    let mut metadata = Vec::new();
 
 
-
    for name in [
-
 
 
    "dt_metadata_e617c525669e072eebe3d0f08212e8f2.properties",
 
 
-
    "/var/lib/dynatrace/enrichment/dt_metadata.properties",
-
 
 
    "/var/lib/dynatrace/enrichment/dt_host_metadata.properties"
 
 
-
    ] {
-
 
 
    let _ = read_single(name, &mut metadata);
 
 
-
    }
-
 
 
    return metadata;
 
 
-
    }
-
 
 
    // ===== GENERAL SETUP =====
 
 
-
    let dt_api_token = env::var("DT_API_TOKEN").unwrap(); // TODO: change
-
 
 
    let dt_api_url = env::var("DT_API_URL").unwrap();
 
 
-
    let mut map = HashMap::new();
-
 
 
    map.insert("Authorization".to_string(), format!("Api-Token {}", dt_api_token));
 
 
-
    let resource = Resource::builder()
-
 
 
    .with_service_name("rust-manual-quickstart")
 
 
-
    .with_attributes(read_dt_metadata())
 
 
-
    .build();
-
 
 
    // ===== TRACING SETUP =====
 
 
-
    global::set_text_map_propagator(TraceContextPropagator::new());
-
 
 
    let tracer_exporter = SpanExporter::builder()
 
 
-
    .with_http()
 
 
-
    .with_headers(map.clone())
-
 
 
    .with_protocol(Protocol::HttpBinary)
 
 
-
    .with_endpoint(dt_api_url.clone() + "/v1/traces")
-
 
 
    .build()
 
 
-
    .unwrap();
-
 
 
    let tracer_provider = SdkTracerProvider::builder()
 
 
-
    .with_resource(resource.clone())
-
 
 
    .with_batch_exporter(tracer_exporter)
 
 
-
    .build();
-
 
 
    global::set_tracer_provider(tracer_provider.clone());
 
 
-
    // ===== METRICS SETUP ======
-
 
 
    let metrics_exporter = MetricExporter::builder()
 
 
-
    .with_http()
 
 
-
    .with_headers(map.clone())
-
 
 
    .with_endpoint(dt_api_url.clone() + "/v1/metrics")
 
 
-
    .with_protocol(opentelemetry_otlp::Protocol::HttpBinary)
-
 
 
    .build()
 
 
-
    .unwrap();
-
 
 
    let meter_provider = SdkMeterProvider::builder()
 
 
-
    .with_reader(PeriodicReader::builder(metrics_exporter).build())
-
 
 
    .with_resource(resource.clone())
 
 
-
    .build();
-
 
 
    global::set_meter_provider(meter_provider);
 
 
-
    // ===== LOGS SETUP ======
-
 
 
    let logger_exporter = LogExporter::builder()
 
 
-
    .with_http()
-
 
 
    .with_headers(map.clone())
 
 
-
    .with_endpoint(dt_api_url.clone() + "/v1/logs")
-
 
 
    .with_protocol(opentelemetry_otlp::Protocol::HttpBinary)
 
 
-
    .build()
-
 
 
    .unwrap();
 
 
-
    let logger_provider = SdkLoggerProvider::builder()
-
 
 
    .with_batch_exporter(logger_exporter)
 
 
-
    .with_resource(resource.clone())
-
 
 
    .build();
 
 
-
    let otel_log_appender = OpenTelemetryLogBridge::new(&logger_provider);
-
 
 
    log::set_boxed_logger(Box::new(otel_log_appender)).unwrap();
 
 
-
    log::set_max_level(Level::Debug.to_level_filter());
-
 
 
    }
@@ -439,29 +348,22 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    let mut _span = tracer
 
 
-
    .span_builder("Call to /myendpoint")
-
 
 
    .with_kind(SpanKind::Internal)
 
 
-
    .start(&tracer);
-
 
 
    _span.set_attribute(KeyValue::new("http.method", "GET"));
 
 
-
    _span.set_attribute(KeyValue::new("net.protocol.version", "1.1"));
 
 
-
    // TODO: Your code goes here
-
 
 
    _span.end();
@@ -500,7 +402,6 @@ In `init_opentelemetry()`, we earlier initialized the [logï»¿](https://docs.r
 error!("logging an error");
 
 
-
 debug!("logging a debug message");
 ```
 
@@ -520,21 +421,16 @@ To continue an existing trace from an HTTP request, we first need to extract the
 // Utility function to extract the context from the incoming request headers
 
 
-
 fn extract_context_from_request(req: &Request<Incoming>) -> Context {
-
 
 
 global::get_text_map_propagator(|propagator| {
 
 
-
 propagator.extract(&HeaderExtractor(req.headers()))
 
 
-
 })
-
 
 
 }
@@ -546,57 +442,43 @@ We can then use `extract_context_from_request()` in our request handler to obtai
 async fn router(req: Request<Incoming>) -> Result<Response<BoxBody<Bytes, hyper::Error>>, Infallible> {
 
 
-
 // Extract the context from the incoming request headers
-
 
 
 let parent_cx = extract_context_from_request(&req);
 
 
-
 let response = {
-
 
 
 // Create a span parenting the remote client span.
 
 
-
 let tracer = global::tracer("example/server");
-
 
 
 let mut span = tracer
 
 
-
 .span_builder("router")
-
 
 
 .with_kind(SpanKind::Server)
 
 
-
 .start_with_context(&tracer, &parent_cx);
-
 
 
 // Adding custom attributes
 
 
-
 span.set_attribute(KeyValue::new("my-server-key-1", "my-server-value-1"));
-
 
 
 };
 
 
-
 // TODO Handle the HTTP request
-
 
 
 }
@@ -612,81 +494,61 @@ Once the hyper request object is initialized, we call `get_text_map_propagator()
 async fn send_request(url: &str, body_content: &str, span_name: &str) -> std::result::Result<(), Box<dyn std::error::Error + Send + Sync + 'static>> {
 
 
-
 let client = Client::builder(TokioExecutor::new()).build_http();
-
 
 
 let tracer = global::tracer("example/client");
 
 
-
 let span = tracer
-
 
 
 .span_builder(String::from(span_name))
 
 
-
 .with_kind(SpanKind::Client)
-
 
 
 .start(&tracer);
 
 
-
 let cx = Context::current_with_span(span);
-
 
 
 let mut req = hyper::Request::builder().uri(url);
 
 
-
 global::get_text_map_propagator(|propagator| {
-
 
 
 propagator.inject_context(&cx, &mut HeaderInjector(req.headers_mut().unwrap()))
 
 
-
 });
-
 
 
 let res = client
 
 
-
 .request(req.body(Full::new(Bytes::from(body_content.to_string())))?)
-
 
 
 .await?;
 
 
-
 cx.span().add_event(
-
 
 
 "Got response!",
 
 
-
 vec![KeyValue::new("status", res.status().to_string())],
-
 
 
 );
 
 
-
 Ok(())
-
 
 
 }

@@ -45,7 +45,6 @@ scraped: 2026-03-06T21:22:46.951929
    data:
 
 
-
    main-snippet: load_module /opt/dynatrace/oneagent/agent/bin/current/linux-musl-x86-64/liboneagentnginx.so;
    ```
 
@@ -53,7 +52,6 @@ scraped: 2026-03-06T21:22:46.951929
 
    ```
    data:
-
 
 
    main-snippet: load_module /opt/dynatrace/oneagent-paas/agent/bin/current/linux-musl-x86-64/liboneagentnginx.so;

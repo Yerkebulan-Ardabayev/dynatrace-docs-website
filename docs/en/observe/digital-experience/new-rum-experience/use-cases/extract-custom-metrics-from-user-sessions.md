@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:52.450536
 
 # Extract a metric from user sessions
 
-# Extract a metric from user sessions
 
 * Latest Dynatrace
 * Tutorial
@@ -26,9 +25,7 @@ Instrumentation was customized to send a user session property `successful_check
 dynatrace.sendSessionPropertyEvent({
 
 
-
 "session_properties.successful_checkout": true
-
 
 
 });
@@ -38,7 +35,6 @@ With this setup, you can analyze the number of sessions with and without custome
 
 ```
 fetch user.sessions
-
 
 
 | summarize by:{session_properties.successful_checkout}, count()
@@ -97,7 +93,6 @@ You have successfully extracted a custom metric from user sessions. You can now 
 
 ```
 timeseries sum(easytravel.checkout_statistics), by: { successful_checkout }, interval: 15m
-
 
 
 | fieldsAdd checkout_status = if(successful_checkout == "true", "Successful Checkout", else: "No Checkout")

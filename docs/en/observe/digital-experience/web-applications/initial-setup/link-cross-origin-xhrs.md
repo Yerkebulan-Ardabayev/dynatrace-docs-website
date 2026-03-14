@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:47.854342
 
 # Link cross-origin XHR user actions and their distributed traces
 
-# Link cross-origin XHR user actions and their distributed traces
 
 * Classic
 * How-to guide

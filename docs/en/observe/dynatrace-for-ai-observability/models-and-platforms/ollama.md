@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:16.809856
 
 # Ollama
 
-# Ollama
 
 * Latest Dynatrace
 * Explanation

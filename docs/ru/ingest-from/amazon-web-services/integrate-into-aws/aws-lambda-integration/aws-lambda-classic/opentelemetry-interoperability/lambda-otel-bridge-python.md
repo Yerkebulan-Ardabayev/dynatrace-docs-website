@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:24.324026
 
 # Совместимость с OpenTelemetry в Python
 
-# Совместимость с OpenTelemetry в Python
 
 * Classic
 * Руководство
@@ -67,65 +66,49 @@ OpenTelemetry для Python предоставляет несколько пак
 import json
 
 
-
 import aiopg
-
 
 
 from opentelemetry.instrumentation.aiopg import AiopgInstrumentor
 
 
-
 AiopgInstrumentor().instrument()
-
 
 
 def lambda_handler(event, context):
 
 
-
 return {
-
 
 
 'statusCode': 200,
 
 
-
 'body': json.dumps(execute_query())
-
 
 
 }
 
 
-
 def execute_query():
-
 
 
 result = []
 
 
-
 with aiopg.connect(database='my_db') as conn:
-
 
 
 with conn.cursor() as cur:
 
 
-
 cur.execute("SELECT 'hello db';")
-
 
 
 for row in cur:
 
 
-
 result.append(row)
-
 
 
 return result
@@ -141,45 +124,34 @@ return result
 import boto3
 
 
-
 import json
-
 
 
 from opentelemetry.instrumentation.botocore import BotocoreInstrumentor
 
 
-
 BotocoreInstrumentor().instrument()
-
 
 
 dynamodb = boto3.resource('dynamodb')
 
 
-
 table = dynamodb.Table('MyTable')
-
 
 
 def lambda_handler(event, handler):
 
 
-
 result = table.get_item(Key={'mykey': 42})
-
 
 
 return {
 
 
-
 "statusCode": 200,
 
 
-
 "answer": json.dumps(result.get("Item"))
-
 
 
 }
@@ -195,49 +167,37 @@ return {
 import json
 
 
-
 from opentelemetry import trace
-
 
 
 def lambda_handler(event, context):
 
 
-
 tracer = trace.get_tracer(__name__)
-
 
 
 with tracer.start_as_current_span("do work"):
 
 
-
 # выполнение работы
-
 
 
 with tracer.start_as_current_span("do some more work") as span:
 
 
-
 span.set_attribute("foo", "bar")
-
 
 
 # выполнение дополнительной работы
 
 
-
 return {
-
 
 
 'statusCode': 200,
 
 
-
 'body': json.dumps('Hello from Hello world from OpenTelemetry Python!')
-
 
 
 }
@@ -298,61 +258,46 @@ SNS
 from opentelemetry.instrumentation.boto3sqs import Boto3SQSInstrumentor
 
 
-
 Boto3SQSInstrumentor().instrument()
-
 
 
 import json
 
 
-
 import boto3
-
 
 
 from datetime import datetime
 
 
-
 QUEUE_URL = "<Your SQS Queue URL>"
-
 
 
 sqs = boto3.client("sqs")
 
 
-
 def lambda_handler(event, context):
-
 
 
 sent = []
 
 
-
 for i in range(5):
-
 
 
 res = sqs.send_message(QueueUrl=QUEUE_URL, MessageBody=f"hello #{i} at {datetime.now()}")
 
 
-
 sent.append(res["MessageId"])
-
 
 
 return {
 
 
-
 "statusCode": 200,
 
 
-
 "body": json.dumps({"produced_messages": sent})
-
 
 
 }
@@ -362,49 +307,37 @@ return {
 from opentelemetry.instrumentation.botocore import BotocoreInstrumentor
 
 
-
 BotocoreInstrumentor().instrument()
-
 
 
 import json
 
 
-
 import boto3
-
 
 
 from datetime import datetime
 
 
-
 TOPIC_ARN = "<Your SNS topic ARN>"
-
 
 
 sns = boto3.client("sns")
 
 
-
 def lambda_handler(event, context):
-
 
 
 res = sns.publish(TopicArn=TOPIC_ARN, Message=f"hello at {datetime.now()}")
 
 
-
 return {
-
 
 
 "statusCode": 200,
 
 
-
 "body": json.dumps({"produced_message": res["MessageId"]})
-
 
 
 }
@@ -435,21 +368,16 @@ SNS
     {
 
 
-
     ...other configuration properties...
-
 
 
     "OpenTelemetry": {
 
 
-
     "AllowExplicitParent": "true"
 
 
-
     }
-
 
 
     }
@@ -465,133 +393,100 @@ SNS
   from pprint import pformat
 
 
-
   import boto3
-
 
 
   import json
 
 
-
   from opentelemetry import trace, propagate
-
 
 
   from opentelemetry.semconv.trace import SpanAttributes, MessagingOperationValues
 
 
-
   tracer = trace.get_tracer("lambda-sqs-triggered")
-
 
 
   def lambda_handler(event, context):
 
 
-
   recvcount = 0
-
 
 
   print("Trigger", pformat(event))
 
 
-
   messages = event.get("Records") or ()
-
 
 
   # Lambda SQS event uses lowerCamelCase in its attribute names
 
 
-
   for msg in messages:
-
 
 
   recvcount += 1
 
 
-
   print("Processing", msg["messageId"])
-
 
 
   parent = _extract_parent(msg, from_sns_payload=False)
 
 
-
   with tracer.start_as_current_span("manual-trigger-process", context=parent, kind=trace.SpanKind.CONSUMER, attributes={
-
 
 
   SpanAttributes.MESSAGING_MESSAGE_ID : msg["messageId"],
 
 
-
   SpanAttributes.MESSAGING_URL : msg["eventSourceARN"],
-
 
 
   SpanAttributes.MESSAGING_SYSTEM : msg["eventSource"],
 
 
-
   SpanAttributes.MESSAGING_OPERATION : MessagingOperationValues.PROCESS.value,
-
 
 
   }):
 
 
-
   # ... Здесь располагается ваша логика обработки...
-
 
 
   pass
 
 
-
   print("Processed", recvcount, "messages")
-
 
 
   def _extract_parent(msg, from_sns_payload=False):
 
 
-
   if from_sns_payload:
-
 
 
   try:
 
 
-
   body = json.loads(msg.get("body", "{}"))
-
 
 
   except json.JSONDecodeError:
 
 
-
   body = {}
-
 
 
   carrier = {key: value["Value"] for key, value in body.get("MessageAttributes", {}).items() if "Value" in value}
 
 
-
   else:
 
 
-
   carrier = {key: value["stringValue"] for key, value in msg.get("messageAttributes", {}).items() if "stringValue" in value}
-
 
 
   return propagate.extract(carrier)
@@ -615,201 +510,151 @@ SNS
   from opentelemetry.instrumentation.boto3sqs import Boto3SQSInstrumentor
 
 
-
   Boto3SQSInstrumentor().instrument()
-
 
 
   from pprint import pformat
 
 
-
   import boto3
-
 
 
   import json
 
 
-
   from opentelemetry import trace, propagate
-
 
 
   from opentelemetry.semconv.trace import SpanAttributes, MessagingOperationValues
 
 
-
   QUEUE_URL = '<Your SQS Queue URL>'
-
 
 
   sqs = boto3.client("sqs")
 
 
-
   tracer = trace.get_tracer("lambda-receive-function")
-
 
 
   def lambda_handler(event, context):
 
 
-
   recvcount = 0
-
 
 
   while True:
 
 
-
   msg_receive_result = sqs.receive_message(
-
 
 
   MaxNumberOfMessages=10,
 
 
-
   QueueUrl=QUEUE_URL,
-
 
 
   WaitTimeSeconds=1, # WaitTime of zero would use sampled receive, may return empty even if there is a message
 
 
-
   # This argument is only required if you do not use the boto3sqs instrumentation:
-
 
 
   #MessageAttributeNames=list(propagate.get_global_textmap().fields)
 
 
-
   )
-
 
 
   print("Received", pformat(msg_receive_result))
 
 
-
   if not msg_receive_result.get('Messages'):
-
 
 
   break
 
 
-
   messages = msg_receive_result.get("Messages")
-
 
 
   # receive result uses PascalCase in its attribute names
 
 
-
   for msg in messages:
-
 
 
   recvcount += 1
 
 
-
   print("Processing", msg["MessageId"])
-
 
 
   parent = _extract_parent(msg, from_sns_payload=False)
 
 
-
   with tracer.start_as_current_span("manual-receive-process", context=parent, kind=trace.SpanKind.CONSUMER, attributes={
-
 
 
   SpanAttributes.MESSAGING_MESSAGE_ID: msg["MessageId"],
 
 
-
   SpanAttributes.MESSAGING_URL: QUEUE_URL,
-
 
 
   SpanAttributes.MESSAGING_SYSTEM: "aws.sqs",
 
 
-
   SpanAttributes.MESSAGING_OPERATION: MessagingOperationValues.PROCESS.value,
-
 
 
   }):
 
 
-
   # ... Здесь располагается ваша логика обработки...
-
 
 
   print("Delete result", sqs.delete_message(
 
 
-
   QueueUrl=QUEUE_URL,
-
 
 
   ReceiptHandle=msg['ReceiptHandle'],
 
 
-
   ))
-
 
 
   print("Processed", recvcount, "messages")
 
 
-
   def _extract_parent(msg, from_sns_payload=False):
-
 
 
   if from_sns_payload:
 
 
-
   try:
-
 
 
   body = json.loads(msg.get("Body", "{}"))
 
 
-
   except json.JSONDecodeError:
-
 
 
   body = {}
 
 
-
   carrier = {key: value["Value"] for key, value in body.get("MessageAttributes", {}).items() if "Value" in value}
-
 
 
   else:
 
 
-
   carrier = {key: value["StringValue"] for key, value in msg.get("MessageAttributes", {}).items() if "StringValue" in value}
-
 
 
   return propagate.extract(carrier)

@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:34:23.609587
 
 # Metrics API - FAQ
 
-# Metrics API - FAQ
 
 * Справочник
 * Обновлено 16 ноября 2022 г.
@@ -64,9 +63,7 @@ builtin:host.availability:splitBy():fold
   builtin:host.cpu.iowait
 
 
-
   /
-
 
 
   builtin:host.disk.throughput.read
@@ -78,9 +75,7 @@ builtin:host.availability:splitBy():fold
   builtin:host.cpu.iowait
 
 
-
   /
-
 
 
   builtin:host.disk.throughput.read:merge(dt.entity.disk)
@@ -93,9 +88,7 @@ builtin:host.availability:splitBy():fold
   builtin:host.cpu.iowait:filter(eq(dt.entity.host,HOST-001))
 
 
-
   /
-
 
 
   builtin:host.cpu.iowait:filter(eq(dt.entity.host,HOST-002))
@@ -107,9 +100,7 @@ builtin:host.availability:splitBy():fold
   builtin:host.cpu.iowait:filter(eq(dt.entity.host,HOST-001)):splitBy()
 
 
-
   /
-
 
 
   builtin:host.cpu.iowait:filter(eq(dt.entity.host,HOST-002)):splitBy()
@@ -123,9 +114,7 @@ builtin:host.availability:splitBy():fold
   builtin:host.cpu.usage:sort(value(avg,descending)):limit(10)
 
 
-
   +
-
 
 
   builtin:host.cpu.idle:sort(value(avg,descending)):limit(10)
@@ -137,25 +126,19 @@ builtin:host.availability:splitBy():fold
   (
 
 
-
   builtin:host.cpu.usage
-
 
 
   +
 
 
-
   builtin:host.cpu.idle
-
 
 
   )
 
 
-
   :sort(value(auto,descending))
-
 
 
   :limit(10)
@@ -168,9 +151,7 @@ builtin:host.availability:splitBy():fold
   builtin:apps.other.keyUserActions.reportedErrorCount.os
 
 
-
   /
-
 
 
   builtin:apps.other.keyUserActions.requestCount.os
@@ -182,9 +163,7 @@ builtin:host.availability:splitBy():fold
   builtin:apps.other.keyUserActions.reportedErrorCount.os:default(0)
 
 
-
   /
-
 
 
   builtin:apps.other.keyUserActions.requestCount.os

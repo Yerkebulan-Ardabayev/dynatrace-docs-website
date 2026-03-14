@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:36.668953
 
 # Configure data privacy settings
 
-# Configure data privacy settings
 
 * Latest Dynatrace
 * How-to guide

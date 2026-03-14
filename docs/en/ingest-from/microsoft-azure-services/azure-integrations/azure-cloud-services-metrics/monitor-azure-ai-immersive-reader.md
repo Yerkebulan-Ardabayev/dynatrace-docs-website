@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:03.658885
 
 # Azure AI - Immersive Reader monitoring
 
-# Azure AI - Immersive Reader monitoring
 
 * Latest Dynatrace
 * How-to guide

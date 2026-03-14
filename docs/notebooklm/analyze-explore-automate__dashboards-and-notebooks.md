@@ -14,7 +14,6 @@ scraped: 2026-03-06T21:11:07.243073
 
 # Add code to a dashboard
 
-# Add code to a dashboard
 
 * Latest Dynatrace
 * How-to guide
@@ -85,21 +84,16 @@ The result of this API call is multiple sample products in JSON format. By addin
 export default async function () {
 
 
-
 const url = "https://dummyjson.com/products";
-
 
 
 const response = await fetch(url);
 
 
-
 const result = await response.json();
 
 
-
 return result.products;
-
 
 
 }
@@ -115,41 +109,31 @@ In this example, we build on example 1 by calculating the average price for all 
 export default async function () {
 
 
-
 const url = "https://dummyjson.com/products";
-
 
 
 const response = await fetch(url);
 
 
-
 const result = await response.json();
-
 
 
 let avgPrice = 0;
 
 
-
 const numberOfProducts = result.products.length;
-
 
 
 for (let i = 0; i < numberOfProducts; i++) {
 
 
-
 avgPrice = avgPrice + 1;
-
 
 
 }
 
 
-
 return avgPrice;
-
 
 
 }
@@ -165,49 +149,37 @@ In this example, we use the Dynatrace [Environment API](../ru/dynatrace-api/envi
 export default async function () {
 
 
-
 const environment = "https://{your-environment}"
-
 
 
 const token = "<DYNATRACE_TOKEN_PLACEHOLDER>";
 
 
-
 const params = '/api/v2/events?status("OPEN")';
-
 
 
 const uri = environment + params;
 
 
-
 const response = await fetch(uri, {
-
 
 
 headers: {
 
 
-
 Accept: "application/json",
-
 
 
 Authorization: "Api-Token " + token
 
 
-
 }});
-
 
 
 const result = await response.json();
 
 
-
 return result.events;
-
 
 
 }
@@ -231,7 +203,6 @@ scraped: 2026-03-06T21:11:21.483222
 
 # Add data to a dashboard
 
-# Add data to a dashboard
 
 * Latest Dynatrace
 * How-to guide
@@ -294,7 +265,6 @@ Example timeframe specification in DQL:
 fetch [recordtype], from:now() - 2h
 
 
-
 | ....
 ```
 
@@ -340,7 +310,6 @@ To select tile-level segments
 fetch logs
 
 
-
 | summarize loglines = count(), by:{`1m interval` = bin(timestamp, 1m), status}
 ```
 
@@ -360,17 +329,13 @@ In case you haven't created a variable yet, first see [Add a variable to a dashb
      fetch logs
 
 
-
      | summarize count(), by:{`dt.entity.host`}
-
 
 
      | limit 100
 
 
-
      | sort `count()`, direction:"descending"
-
 
 
      | fields `dt.entity.host`
@@ -386,13 +351,10 @@ In case you haven't created a variable yet, first see [Add a variable to a dashb
      fetch logs, from:now() - 2h
 
 
-
      | summarize  count(), by:{loglevel}
 
 
-
      | sort `count()`, direction:"descending"
-
 
 
      | fields loglevel
@@ -407,9 +369,7 @@ Now add data while referencing your previously created variables `$LogLevel` and
 fetch logs
 
 
-
 | filter in (loglevel, {$Loglevel})
-
 
 
 | limit 10
@@ -429,7 +389,6 @@ scraped: 2026-03-06T21:11:16.280330
 
 # Add Markdown to dashboard
 
-# Add Markdown to dashboard
 
 * Latest Dynatrace
 * How-to guide
@@ -503,7 +462,6 @@ Each line of an unordered (bulleted) list starts with an asterisk (`*`):
 * Line 1
 
 
-
 * Line 2
 ```
 
@@ -511,7 +469,6 @@ Alternatively, you can use a dash (`-`):
 
 ```
 - Line 1
-
 
 
 - Line 2
@@ -523,9 +480,7 @@ An ordered (numbered) list starts with a number and a period (`1.`) followed by 
 1. The first line of my procedure.
 
 
-
 2. The second line of my procedure.
-
 
 
 3. The third line of my procedure.
@@ -541,9 +496,7 @@ To add a table, define the headers, the column formatting row, and then the rows
 | Header 1 | Header2
 
 
-
 --- | ---
-
 
 
 content2 | content2
@@ -576,7 +529,6 @@ To link to a picture, use this format:
 Here are some of the people who started [Dynatrace](https://www.dynatrace.com).
 
 
-
 ![Dynatrace founders](https://dt-cdn.net/images/original-dynatrace-team-1500-7334dbe9a8.jpg)
 ```
 
@@ -604,7 +556,6 @@ scraped: 2026-03-06T21:11:10.713197
 
 # Add a snippet to a dashboard
 
-# Add a snippet to a dashboard
 
 * Latest Dynatrace
 * How-to guide
@@ -652,9 +603,7 @@ The DQL behind your tile is the snippet you selected with  **Fetch logs**:
 fetch logs
 
 
-
 | sort timestamp desc
-
 
 
 | limit 100
@@ -680,9 +629,7 @@ This one creates a tile based on the following DQL:
 fetch events
 
 
-
 | summarize `event count`=count(), by:{event.kind}
-
 
 
 | limit 5
@@ -713,7 +660,6 @@ scraped: 2026-03-06T21:11:14.517870
 
 # Add a variable to a dashboard
 
-# Add a variable to a dashboard
 
 * Latest Dynatrace
 * How-to guide
@@ -809,7 +755,6 @@ For example:
      fetch dt.entity.host
 
 
-
      | fields entity.name
      ```
 3. Turn on **Multi-select** so you can select more than one value at a time to show in your visualizations.
@@ -828,9 +773,7 @@ For example:
    fetch logs, scanLimitGBytes: 20
 
 
-
    | filter in(host.name, array($Host))
-
 
 
    | makeTimeseries count(), by:{ host.name }
@@ -842,9 +785,7 @@ For example:
    fetch logs, scanLimitGBytes: 20
 
 
-
    | filter host.name == $Host
-
 
 
    | makeTimeseries count(), by:{ host.name }
@@ -945,7 +886,6 @@ To change the order of variables in your dashboard
 ### DQL variable
 
 
-
 To define a DQL variable
 
 1. Set **Name** the name you want to give your variable.
@@ -967,7 +907,6 @@ If you add both examples below to your dashboard, you can filter your dashboard 
 
   ```
   fetch dt.entity.host
-
 
 
   | fields id
@@ -1099,29 +1038,22 @@ To define a code variable
   /*
 
 
-
   * This will run JavaScript in the DYNATRACE
-
 
 
   * serverless environment.
 
 
-
   * To generate variable options return string array.
-
 
 
   */
 
 
-
   export default async function () {
 
 
-
   return ["val1", "val2", "val3"]
-
 
 
   }
@@ -1151,9 +1083,7 @@ Straightforward usage of a `$resolution` variable (as in the following query) do
 fetch logs
 
 
-
 | ...
-
 
 
 | summarize count(), by: {loglevel, bin(timestamp, $resolution)}
@@ -1165,9 +1095,7 @@ As a workaround, you can use the [duration](platform/grail/dynatrace-query-langu
 fetch logs
 
 
-
 | ...
-
 
 
 | summarize count(), by: {loglevel, bin(timestamp, duration(toLong($resolution), unit:"m"))}
@@ -1181,9 +1109,7 @@ If you want to filter a numeric value but compare it with a string representatio
 fetch logs
 
 
-
 | filter amount = toString($amount)
-
 
 
 | ...
@@ -1197,7 +1123,6 @@ If variable values are larger than 30 KB, they can't be stored in the dashboard 
 * If you save a dashboard URL as a bookmark with variable values that exceed the size limit, and you open the dashboard from that bookmark after 90 days, the selected values won't be set.
 
 ## Troubleshoot variables
-
 
 
 A dashboard with one or more variables defined displays the variables in a row under the dashboard name. In this example, you can see:
@@ -1236,7 +1161,6 @@ scraped: 2026-03-06T21:09:39.484018
 
 # Dashboards
 
-# Dashboards
 
 * Latest Dynatrace
 * App
@@ -1397,7 +1321,6 @@ To list keyboard shortcuts, in ![Dashboards](https://dt-cdn.net/images/dashboard
 ### List dashboards
 
 
-
 #### List all dashboards
 
 To list dashboards
@@ -1529,7 +1452,6 @@ Example:
 ### Select the timeframe
 
 
-
 To review or change settings that apply to an entire dashboard
 
 1. Display the dashboard.
@@ -1632,7 +1554,6 @@ Example timeframe specification in DQL:
 fetch [recordtype], from:now() - 2h
 
 
-
 | ....
 ```
 
@@ -1689,7 +1610,6 @@ To select tile-level segments
    * To manage segments in general (list, create, view, edit, delete), select  and then select the **Manage segments** link.
 
 ### Dashboard settings
-
 
 
 To review or change settings that apply to an entire dashboard
@@ -1882,7 +1802,6 @@ When you create a document (dashboard or notebook), you are the owner. To give o
 ### Download a dashboard
 
 
-
 To download (export) the currently displayed dashboard as JSON
 
 1. At the top of the dashboard, open the  menu to the right of the dashboard name.
@@ -2039,7 +1958,6 @@ For details, see [Add Markdown to dashboard](../ru/analyze-explore-automate/dash
 ### Add variable
 
 
-
 Use variables to filter your dashboards, to act as variable values in code tiles, and as placeholders in tile titles and Markdown tile text.
 
 To add a variable to a dashboard
@@ -2113,7 +2031,6 @@ To get started based on a snippet
 For details, see [Add a snippet to a dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet.md "Start with a snippet").
 
 ### Analyze data with AI
-
 
 
 To analyze data using Dynatrace Intelligence Data Analyzers
@@ -2264,7 +2181,6 @@ To detect when CPU usage percent exceeds 70 percent, in your document (dashboard
     ![Example analyzer results with "AI analysis" visualization in the Notebooks app.](https://dt-cdn.net/images/notebooks-ai-analysis-chart-1920-5ac0e1f854.png)
 
 ### Change variable values
-
 
 
 If a dashboard has one or more variables, they are listed by name along the upper-left of the dashboard, under the dashboard name. When you change variable values, the dashboard contents are recalculated and displayed according to the new values.
@@ -2476,7 +2392,6 @@ scraped: 2026-03-06T21:31:09.703615
 
 # API for Dashboards and Notebooks
 
-# API for Dashboards and Notebooks
 
 * Latest Dynatrace
 * Reference
@@ -2526,7 +2441,6 @@ scraped: 2026-03-06T21:11:19.739905
 
 # Manage document versions
 
-# Manage document versions
 
 * Latest Dynatrace
 * How-to guide
@@ -2645,7 +2559,6 @@ scraped: 2026-03-06T21:11:09.059757
 
 # Drilldowns and navigation
 
-# Drilldowns and navigation
 
 * Latest Dynatrace
 * How-to guide
@@ -2785,7 +2698,6 @@ The **Add Link** feature allows you to create links in the UI directly from your
 ### Add and manage links
 
 
-
 The  **Add Link** feature allows you to create links directly from your visualizations. These links can navigate to external systems, other Dynatrace apps, or resources, enabling seamless context passing for faster troubleshooting and analysis.
 
 #### Add a link
@@ -2868,13 +2780,10 @@ Dynamic placeholders are not automatically encoded. If your placeholder values m
 fetch logs
 
 
-
 | summarize occurences=count(), by:{content}
 
 
-
 | fieldsAdd contentEncoded = replaceString(escape(encodeUrl(content)), "+", "%20")
-
 
 
 | fields contentEncoded, occurences
@@ -2922,12 +2831,10 @@ To enable link detection:
    data record(website="Dynatrace main page", link="http://www.dynatrace.com"),
 
 
-
    record(website="Dynatrace community", link="https://community.dynatrace.com/")
    ```
 
 ### Intermediate: links with a display name
-
 
 
 To make links more user-friendly, you can provide a display name (for example, "Dynatrace main page") using Markdown formatting. This replaces raw URLs with descriptive labels that are easier for users to read and understand.
@@ -2948,9 +2855,7 @@ To provide user-friendly links:
    data record(website="Dynatrace main page", link="http://www.dynatrace.com"),
 
 
-
    record(website="Dynatrace community", link="https://community.dynatrace.com/")
-
 
 
    | fieldsAdd markdownLink = concat("[", website, "](", link, ")")
@@ -2976,13 +2881,10 @@ To create intent-based links
    fetch logs
 
 
-
    | filter matchesPhrase(content, "failed to complete the order: rpc error: code") and status == "ERROR"
 
 
-
    | parse content, """DATA 'desc = ' LD:errorCode '    '"""
-
 
 
    | summarize total = count(), by:{errorCode}
@@ -3004,9 +2906,7 @@ To create intent-based links
       | fieldsAdd QueryPart1 = """{"version":0,"data":{"queryConfig":{"query":"fetch logs\n| filter matchesPhrase(content,\"\"\""""
 
 
-
       | fieldsAdd QueryPart1 = encodeUrl(QueryPart1)
-
 
 
       | fieldsAdd QueryPart1 = replaceString(QueryPart1, "+", "%20")
@@ -3017,9 +2917,7 @@ To create intent-based links
       | fieldsAdd QueryPart2 = escape(errorCode)
 
 
-
       | fieldsAdd QueryPart2 = encodeUrl(QueryPart2)
-
 
 
       | fieldsAdd QueryPart2 = replaceString(QueryPart2, "+", "%20")
@@ -3033,7 +2931,6 @@ To create intent-based links
 
       ```
       | fieldsAdd errorCodeLink = concat("[", errorCode, "](", LogAppURL, QueryPart1, QueryPart2, QueryTimeFrame, ")")
-
 
 
       | fields errorCodeLink, total
@@ -3053,7 +2950,6 @@ scraped: 2026-03-06T21:21:31.855169
 
 # Area chart visualization
 
-# Area chart visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -3222,7 +3118,6 @@ For a line chart, area chart, or bar chart, you can optionally [override the sel
 ### Legend position
 
 
-
 Select where to display the visualization legend:
 
 * **Automatic**âDynatrace chooses an appropriate location
@@ -3309,7 +3204,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000
@@ -3402,7 +3296,6 @@ To reset to defaults (discard threshold settings), select the trash can  next to
 ## Units and formats
 
 
-
 To override the default units and formats in a dashboard or notebook visualization
 
 1. Select  to edit the visualization tile.
@@ -3471,7 +3364,6 @@ scraped: 2026-03-06T21:21:22.938820
 
 # Band chart visualization
 
-# Band chart visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -3495,17 +3387,13 @@ The chart above is based on the following query.
 timeseries avg=avg(dt.host.cpu.load),
 
 
-
 max=max(dt.host.cpu.load),
-
 
 
 min=min(dt.host.cpu.load),
 
 
-
 by:dt.entity.host
-
 
 
 | limit 1
@@ -3655,7 +3543,6 @@ Vertical text to display as a label for the Y-axis.
 ## Query limits
 
 
-
 Use the **Query limits** section to check and adjust the Grail query limits per notebook section or dashboard tile. These settings determine the maximum limits when fetching data. Exceeding any limit will generate a warning.
 
 Dashboard tiles and notebook sections created in Dynatrace earlier than version 1.296 are not affected. Those existing tiles/sections will return the same results as before.
@@ -3678,7 +3565,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000
@@ -3838,7 +3724,6 @@ scraped: 2026-03-06T21:20:29.143481
 
 # Categorical chart visualization
 
-# Categorical chart visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -3860,7 +3745,6 @@ The above categorical bar chart is based on the following query.
 
 ```
 fetch logs
-
 
 
 | summarize count(), by:{loglevel}
@@ -4003,7 +3887,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
     fetch logs
 
 
-
     | limit 2000
     ```
 
@@ -4020,7 +3903,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 ## Thresholds
 
 ### Configure thresholds
-
 
 
 To configure thresholds in a dashboard or notebook visualization
@@ -4163,7 +4045,6 @@ scraped: 2026-03-06T21:21:17.390293
 
 # Bar chart visualization
 
-# Bar chart visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -4332,7 +4213,6 @@ For a line chart, area chart, or bar chart, you can optionally [override the sel
 ### Legend position
 
 
-
 Select where to display the visualization legend:
 
 * **Automatic**âDynatrace chooses an appropriate location
@@ -4419,7 +4299,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000
@@ -4512,7 +4391,6 @@ To reset to defaults (discard threshold settings), select the trash can  next to
 ## Units and formats
 
 
-
 To override the default units and formats in a dashboard or notebook visualization
 
 1. Select  to edit the visualization tile.
@@ -4581,7 +4459,6 @@ scraped: 2026-03-06T21:21:28.278196
 
 # Donut visualization
 
-# Donut visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -4603,7 +4480,6 @@ The above donut chart is based on the following query.
 
 ```
 fetch logs
-
 
 
 | summarize count(), by:{loglevel}
@@ -4781,7 +4657,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
     fetch logs
 
 
-
     | limit 2000
     ```
 
@@ -4796,7 +4671,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
   Results in the selection of a subset of Log or Span records.
 
 ## Units and formats
-
 
 
 To override the default units and formats in a dashboard or notebook visualization
@@ -4867,7 +4741,6 @@ scraped: 2026-03-06T21:21:21.119266
 
 # Line chart visualization
 
-# Line chart visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -4907,121 +4780,91 @@ Example code
 /*
 
 
-
 * This example shows how to map data to use the built-in visualization for custom data.
-
 
 
 */
 
 
-
 export default async function () {
-
 
 
 // Sample the exponential function 10 times at 1-minute intervals.
 
 
-
 const sampleCount = 10;
 
 
-
 return {
-
 
 
 records: new Array(sampleCount).fill(null).map((_, index, array) => {
 
 
-
 const invertedIndex = array.length - index;
-
 
 
 const time = new Date().getTime();
 
 
-
 return {
-
 
 
 'my series': Math.exp((index * 3) / 10),
 
 
-
 'my series 2': Math.exp((index * 2) / 8),
-
 
 
 timeframe: {
 
 
-
 start: time - 1000 * 60 * invertedIndex,
-
 
 
 end: time - 1000 * 60 * (invertedIndex - 1),
 
 
-
 },
 
 
-
 };
-
 
 
 }),
 
 
-
 types: [
-
 
 
 {
 
 
-
 indexRange: [0, sampleCount - 1],
-
 
 
 mappings: {
 
 
-
 timeframe: { type: 'timeframe' },
-
 
 
 'my series': { type: 'double' },
 
 
-
 'my series 2': {type: 'double'}
 
 
-
 },
 
 
-
 },
-
 
 
 ],
 
 
-
 };
-
 
 
 }
@@ -5037,61 +4880,46 @@ Example code
 /*
 
 
-
 * This example shows how to visualize your data without explicitly describing
-
 
 
 * the types.
 
 
-
 */
-
 
 
 export default async function () {
 
 
-
 // Take 120 samples of a sine wave for a full period.
-
 
 
 const sampleCount = 120;
 
 
-
 return new Array(sampleCount).fill(null).map((_, index, array) => {
-
 
 
 const invertedIndex = array.length - index;
 
 
-
 const time = new Date().getTime();
-
 
 
 return {
 
 
-
 timestamp: new Date(time - 1000 * 60 * invertedIndex).toISOString(),
-
 
 
 value: Math.sin((index / (array.length - 1)) * (2 * Math.PI)),
 
 
-
 };
 
 
-
 });
-
 
 
 }
@@ -5166,7 +4994,6 @@ The title will be displayed as `Current ð status is Good`.
 If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Data mapping
-
 
 
 The data mapping section shows how a column of your result is mapped to the visualization.
@@ -5327,7 +5154,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
     fetch logs
 
 
-
     | limit 2000
     ```
 
@@ -5344,7 +5170,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 ## Thresholds
 
 ### Configure thresholds
-
 
 
 To configure thresholds in a dashboard or notebook visualization
@@ -5487,7 +5312,6 @@ scraped: 2026-03-06T21:21:26.500073
 
 # Pie visualization
 
-# Pie visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -5510,7 +5334,6 @@ The above pie chart is based on the following query.
 
 ```
 fetch logs
-
 
 
 | summarize count(), by:{loglevel}
@@ -5684,7 +5507,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
     fetch logs
 
 
-
     | limit 2000
     ```
 
@@ -5701,7 +5523,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 ## Thresholds
 
 ### Configure thresholds
-
 
 
 To configure thresholds in a dashboard or notebook visualization
@@ -5844,7 +5665,6 @@ scraped: 2026-03-06T21:20:25.427593
 
 # Single value visualization
 
-# Single value visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -5871,7 +5691,6 @@ The visualization above is based on the following query.
 timeseries sparkline=avg(dt.host.cpu.usage)
 
 
-
 | fieldsAdd value=arrayAvg(sparkline)
 ```
 
@@ -5894,185 +5713,139 @@ Example code
 /*
 
 
-
 * This example shows how to map data to use the built-in visualization for custom data.
-
 
 
 */
 
 
-
 export default async function () {
-
 
 
 return {
 
 
-
 records: [
 
 
-
 {
-
 
 
 value: 'CPU usage',
 
 
-
 interval: '60000000000',
 
 
-
 timeframe: {
-
 
 
 start: '2023-11-13T07:24:00.000Z',
 
 
-
 end: '2023-11-13T09:25:00.000Z',
 
 
-
 },
-
 
 
 series: [1832, 997, 432, 997, 2343, 997, 544, 997, 234],
 
 
-
 },
-
 
 
 ],
 
 
-
 types: [
-
 
 
 {
 
 
-
 mappings: {
-
 
 
 value: {
 
 
-
 type: 'string',
 
 
-
 },
-
 
 
 interval: {
 
 
-
 type: 'duration',
 
 
-
 },
-
 
 
 timeframe: {
 
 
-
 type: 'timeframe',
 
 
-
 },
-
 
 
 series: {
 
 
-
 type: 'array',
-
 
 
 types: [
 
 
-
 {
-
 
 
 mappings: {
 
 
-
 element: {
-
 
 
 type: 'double',
 
 
-
 },
 
 
-
 },
-
 
 
 indexRange: [0, 120],
 
 
-
 },
-
 
 
 ],
 
 
-
 },
 
 
-
 },
-
 
 
 indexRange: [0, 0],
 
 
-
 },
-
 
 
 ],
 
 
-
 };
-
 
 
 }
@@ -6097,13 +5870,10 @@ The visualization above is based on the following query.
 timeseries sparkline=avg(dt.host.cpu.usage), value=avg(dt.host.cpu.usage, scalar:true), by:{dt.entity.host}
 
 
-
 | fieldsAdd name=entityName(dt.entity.host)
 
 
-
 | sort arrayAvg(value), direction:"descending"
-
 
 
 | limit 5
@@ -6215,7 +5985,6 @@ To learn about options quickly and decide what works best for you, turn options 
 ### General
 
 
-
 Use these options to specify the general display options of your visualization.
 
 * **Show label** specifies whether to show the label on the visualization.
@@ -6270,7 +6039,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000
@@ -6388,7 +6156,6 @@ To reset to defaults (discard threshold settings), select the trash can  next to
 ### Edit thresholds
 
 
-
 1. Select  to edit the visualization tile.
 2. Select **Thresholds**.
 
@@ -6432,7 +6199,6 @@ scraped: 2026-03-06T21:21:04.757177
 
 # Gauge chart
 
-# Gauge chart
 
 * Latest Dynatrace
 * How-to guide
@@ -6455,9 +6221,7 @@ The gauge visualization above is based on the following query, which calculates 
 timeseries avg(dt.host.cpu.usage)
 
 
-
 | fieldsAdd CPU = arrayAvg(`avg(dt.host.cpu.usage)`)
-
 
 
 | fieldsKeep CPU
@@ -6475,21 +6239,16 @@ The gauge visualization above is based on the following query, which calculates 
 fetch dt.davis.problems
 
 
-
 | summarize count = count(), by:{event.status}
-
 
 
 | summarize { active=toDouble(takeAny(if(event.status=="ACTIVE", count))), closed=toDouble(takeAny(if(event.status=="CLOSED", count)))}
 
 
-
 | fieldsAdd total = active + closed
 
 
-
 | fieldsAdd pctActive = (active / total) * 100
-
 
 
 | fieldsKeep pctActive
@@ -6654,7 +6413,6 @@ scraped: 2026-03-06T21:21:33.800510
 
 # Heatmap visualization
 
-# Heatmap visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -6680,9 +6438,7 @@ The heatmap visualization above is based on the following query.
 timeseries response_time = avg(dt.service.request.response_time), by: { dt.entity.service }
 
 
-
 | fields response_time, entityName(dt.entity.service), interval, timeframe, dt.entity.service
-
 
 
 | limit 10
@@ -6698,7 +6454,6 @@ The query below has been updated to align with the new Grail security events tab
 
 ```
 fetch security.events
-
 
 
 | summarize count = count(), by:{range(vulnerability.risk.score, 0.5), event.status}
@@ -6823,7 +6578,6 @@ These settings determine the appearance of your heatmap's Y-axis.
 ## Color
 
 
-
 These settings determine how color is used in your heatmap.
 
 * **Color palette**: Displays colors from the selected color palette.
@@ -6904,7 +6658,6 @@ scraped: 2026-03-06T21:21:19.232793
 
 # Histogram visualization
 
-# Histogram visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -6927,13 +6680,10 @@ The histogram visualization above is based on the following query.
 fetch spans
 
 
-
 | filter span.kind == "server"
 
 
-
 | filter duration < 1s
-
 
 
 | summarize count(), by:{range(duration, 10ms)}
@@ -6949,17 +6699,13 @@ The histogram visualization above is based on the following query of bizevents.
 fetch bizevents
 
 
-
 | filter event.type == "com.easytrade.trade-closed"
-
 
 
 | filter direction == "longsell"
 
 
-
 | filter amount <= 10000
-
 
 
 | summarize count = count(), by:{range(amount, 300)}
@@ -6977,9 +6723,7 @@ The query below has been updated to align with the new Grail security events tab
 fetch security.events
 
 
-
 | filter event.status == "OPEN"
-
 
 
 | summarize count = count(), by:{range(vulnerability.risk.score, 0.5)}
@@ -6995,7 +6739,6 @@ The query below has been updated to align with the new Grail security events tab
 
 ```
 fetch security.events
-
 
 
 | summarize count = count(), by:{range(vulnerability.risk.score, 0.5), event.status}
@@ -7149,7 +6892,6 @@ Text to display as a label for the Y-axis.
 ## Query limits
 
 
-
 Use the **Query limits** section to check and adjust the Grail query limits per notebook section or dashboard tile. These settings determine the maximum limits when fetching data. Exceeding any limit will generate a warning.
 
 Dashboard tiles and notebook sections created in Dynatrace earlier than version 1.296 are not affected. Those existing tiles/sections will return the same results as before.
@@ -7172,7 +6914,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000
@@ -7332,7 +7073,6 @@ scraped: 2026-03-06T21:21:15.505928
 
 # Honeycomb visualization
 
-# Honeycomb visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -7353,7 +7093,6 @@ The honeycomb visualization above is based on the following query.
 
 ```
 timeseries avg(dt.host.cpu.usage), by:{dt.entity.host}
-
 
 
 | fieldsAdd cpu = arrayAvg(`avg(dt.host.cpu.usage)`)
@@ -7386,9 +7125,7 @@ The query below has been updated to align with the new Grail security events tab
 fetch security.events
 
 
-
 | filter event.status == "OPEN"
-
 
 
 | summarize takeLast(vulnerability.davis_assessment.score), by:{vulnerability.display_id}
@@ -7528,7 +7265,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
     fetch logs
 
 
-
     | limit 2000
     ```
 
@@ -7543,7 +7279,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
   Results in the selection of a subset of Log or Span records.
 
 ## Units and formats
-
 
 
 To override the default units and formats in a dashboard or notebook visualization
@@ -7614,7 +7349,6 @@ scraped: 2026-03-06T21:21:01.139093
 
 # Bubble map visualization
 
-# Bubble map visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -7646,41 +7380,31 @@ The map above is based on the following data.
 data
 
 
-
 record(geo.location.latitude = 51.509865, geo.location.longitude = -0.118092, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 48.864716, geo.location.longitude = 2.349014, revenue = toLong(random() * 10000000)),
 
 
-
 record(geo.location.latitude = 41.902782, geo.location.longitude = 12.496366, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 52.520008, geo.location.longitude = 13.404954, revenue = toLong(random() * 10000000)),
 
 
-
 record(geo.location.latitude = 40.416775, geo.location.longitude = -3.70379, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 51.9225, geo.location.longitude = 4.47917, revenue = toLong(random() * 10000000)),
 
 
-
 record(geo.location.latitude = 59.329323, geo.location.longitude = 18.068581, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 50.075538, geo.location.longitude = 14.4378, revenue = toLong(random() * 10000000)),
 
 
-
 record(geo.location.latitude = 37.98381, geo.location.longitude = 23.727539, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, revenue = toLong(random() * 10000000))
@@ -7812,7 +7536,6 @@ Radius settings determine bubble size.
 ## Color
 
 
-
 * **Bubble colors**
 
   Select how to color the bubbles:
@@ -7871,7 +7594,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000
@@ -7957,7 +7679,6 @@ scraped: 2026-03-06T21:21:02.999974
 
 # Choropleth map visualization
 
-# Choropleth map visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -7989,41 +7710,31 @@ The map above is based on the following data.
 data
 
 
-
 record(geo.country.iso_code = "US", users = toLong(random() * 10000)),
-
 
 
 record(geo.country.iso_code = "GB", users = toLong(random() * 10000)),
 
 
-
 record(geo.country.iso_code = "DE", users = toLong(random() * 10000)),
-
 
 
 record(geo.country.iso_code = "FR", users = toLong(random() * 10000)),
 
 
-
 record(geo.country.iso_code = "IT", users = toLong(random() * 10000)),
-
 
 
 record(geo.country.iso_code = "ES", users = toLong(random() * 10000)),
 
 
-
 record(geo.country.iso_code = "CN", users = toLong(random() * 10000)),
-
 
 
 record(geo.country.iso_code = "JP", users = toLong(random() * 10000)),
 
 
-
 record(geo.country.iso_code = "IN", users = toLong(random() * 10000)),
-
 
 
 record(geo.country.iso_code = "BR", users = toLong(random() * 10000))
@@ -8039,41 +7750,31 @@ The map above is based on the following data.
 data
 
 
-
 record(geo.country.iso_code = "US", apdex = "Good" ),
-
 
 
 record(geo.country.iso_code = "GB", apdex = "Good" ),
 
 
-
 record(geo.country.iso_code = "DE", apdex = "Poor" ),
-
 
 
 record(geo.country.iso_code = "FR", apdex = "Excellent" ),
 
 
-
 record(geo.country.iso_code = "IT", apdex = "Fair" ),
-
 
 
 record(geo.country.iso_code = "ES", apdex = "Good" ),
 
 
-
 record(geo.country.iso_code = "CN", apdex = "Unacceptable" ),
-
 
 
 record(geo.country.iso_code = "JP", apdex = "Poor" ),
 
 
-
 record(geo.country.iso_code = "IN", apdex = "Good" ),
-
 
 
 record(geo.country.iso_code = "BR", apdex = "Fair" )
@@ -8204,7 +7905,6 @@ Expand the  **Data mapping** section of your visualization settings to see how d
 ## Legend and tooltip
 
 
-
 * **Show custom fields**: To display custom fields (name and value) when you hover over a map area, turn on **Show custom fields** and select each custom field you want to display.
 * **Show legend**: To display a map legend, turn on **Show legend** and select the legend **Position**:
 
@@ -8249,7 +7949,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000
@@ -8335,7 +8034,6 @@ scraped: 2026-03-06T21:21:08.492041
 
 # Connection map visualization
 
-# Connection map visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -8367,45 +8065,34 @@ The map above is based on the following data.
 data
 
 
-
 record(flightNo="DT123", geo.location.latitude=48.2195335, geo.location.longitude=16.3784883), //Vienna
-
 
 
 record(flightNo="DT123", geo.location.latitude=41.3826807, geo.location.longitude=2.1770239), //Barcelona
 
 
-
 record(flightNo="DT456", geo.location.latitude=48.2195335, geo.location.longitude=16.3784883), //Vienna
-
 
 
 record(flightNo="DT456", geo.location.latitude=48.1379879, geo.location.longitude=11.575182), //Munich
 
 
-
 record(flightNo="DT354", geo.location.latitude=48.2195335, geo.location.longitude=16.3784883), //Vienna
-
 
 
 record(flightNo="DT354", geo.location.latitude = 51.509865, geo.location.longitude = -0.118092), //London
 
 
-
 record(flightNo="DT985", geo.location.latitude=48.2195335, geo.location.longitude=16.3784883), //Vienna
-
 
 
 record(flightNo="DT985", geo.location.latitude = 52.520008, geo.location.longitude = 13.404954), //Berlin
 
 
-
 record(flightNo="DT111", geo.location.latitude=48.2195335, geo.location.longitude=16.3784883), //Vienna
 
 
-
 record(flightNo="DT111", geo.location.latitude = 48.864716, geo.location.longitude = 2.349014) //Paris
-
 
 
 | summarize by:{flightNo}, geo.location.latitude=collectArray(geo.location.latitude), geo.location.longitude=collectArray(geo.location.longitude)
@@ -8530,7 +8217,6 @@ Expand the  **Data mapping** section of your visualization settings to see how d
 ## Color
 
 
-
 * **Line colors**
 
   Select how to color the connection lines:
@@ -8589,7 +8275,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000
@@ -8675,7 +8360,6 @@ scraped: 2026-03-06T21:21:06.636827
 
 # Dot map visualization
 
-# Dot map visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -8707,41 +8391,31 @@ The map above is based on the following data.
 data
 
 
-
 record(geo.location.latitude = 51.509865, geo.location.longitude = -0.118092),  // London, UK
-
 
 
 record(geo.location.latitude = 40.712776, geo.location.longitude = -74.005974),  // New York, USA
 
 
-
 record(geo.location.latitude = 35.689487, geo.location.longitude = 139.691711),  // Tokyo, Japan
-
 
 
 record(geo.location.latitude = -33.868820, geo.location.longitude = 151.209290),  // Sydney, Australia
 
 
-
 record(geo.location.latitude = 48.856613, geo.location.longitude = 2.352222),  // Paris, France
-
 
 
 record(geo.location.latitude = 55.755825, geo.location.longitude = 37.617298),  // Moscow, Russia
 
 
-
 record(geo.location.latitude = 34.052235, geo.location.longitude = -118.243683),  // Los Angeles, USA
-
 
 
 record(geo.location.latitude = 19.432608, geo.location.longitude = -99.133209),  // Mexico City, Mexico
 
 
-
 record(geo.location.latitude = 39.904202, geo.location.longitude = 116.407394),  // Beijing, China
-
 
 
 record(geo.location.latitude = 52.520008, geo.location.longitude = 13.404954)  // Berlin, Germany
@@ -8757,41 +8431,31 @@ The map above is based on the following data.
 data
 
 
-
 record(geo.location.latitude = 51.509865, geo.location.longitude = -0.118092, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 48.864716, geo.location.longitude = 2.349014, revenue = toLong(random() * 10000000)),
 
 
-
 record(geo.location.latitude = 41.902782, geo.location.longitude = 12.496366, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 52.520008, geo.location.longitude = 13.404954, revenue = toLong(random() * 10000000)),
 
 
-
 record(geo.location.latitude = 40.416775, geo.location.longitude = -3.70379, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 51.9225, geo.location.longitude = 4.47917, revenue = toLong(random() * 10000000)),
 
 
-
 record(geo.location.latitude = 59.329323, geo.location.longitude = 18.068581, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 50.075538, geo.location.longitude = 14.4378, revenue = toLong(random() * 10000000)),
 
 
-
 record(geo.location.latitude = 37.98381, geo.location.longitude = 23.727539, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, revenue = toLong(random() * 10000000))
@@ -8809,41 +8473,31 @@ The map above is based on the following data.
 data
 
 
-
 record(geo.location.latitude = 51.509865, geo.location.longitude = -0.118092, bearing = toLong(random() * 1000 % 360)),
-
 
 
 record(geo.location.latitude = 48.864716, geo.location.longitude = 2.349014, bearing = toLong(random() * 1000 % 360)),
 
 
-
 record(geo.location.latitude = 41.902782, geo.location.longitude = 12.496366, bearing = toLong(random() * 1000 % 360)),
-
 
 
 record(geo.location.latitude = 52.520008, geo.location.longitude = 13.404954, bearing = toLong(random() * 1000 % 360)),
 
 
-
 record(geo.location.latitude = 40.416775, geo.location.longitude = -3.70379, bearing = toLong(random() * 1000 % 360)),
-
 
 
 record(geo.location.latitude = 51.9225, geo.location.longitude = 4.47917, bearing = toLong(random() * 1000 % 360)),
 
 
-
 record(geo.location.latitude = 59.329323, geo.location.longitude = 18.068581, bearing = toLong(random() * 1000 % 360)),
-
 
 
 record(geo.location.latitude = 50.075538, geo.location.longitude = 14.4378, bearing = toLong(random() * 1000 % 360)),
 
 
-
 record(geo.location.latitude = 37.98381, geo.location.longitude = 23.727539, bearing = toLong(random() * 1000 % 360)),
-
 
 
 record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, bearing = toLong(random() * 1000 % 360))
@@ -8861,41 +8515,31 @@ The map above is based on the following data.
 data
 
 
-
 record(geo.location.latitude = 51.509865, geo.location.longitude = -0.118092, Lab = "London"),
-
 
 
 record(geo.location.latitude = 48.864716, geo.location.longitude = 2.349014, Lab = "Paris"),
 
 
-
 record(geo.location.latitude = 41.902782, geo.location.longitude = 12.496366, Lab = "Rome"),
-
 
 
 record(geo.location.latitude = 52.520008, geo.location.longitude = 13.404954, Lab = "Berlin"),
 
 
-
 record(geo.location.latitude = 40.416775, geo.location.longitude = -3.70379, Lab = "Madrid"),
-
 
 
 record(geo.location.latitude = 51.9225, geo.location.longitude = 4.47917, Lab = "Rotterdam"),
 
 
-
 record(geo.location.latitude = 59.329323, geo.location.longitude = 18.068581, Lab = "Stockholm"),
-
 
 
 record(geo.location.latitude = 50.075538, geo.location.longitude = 14.4378, Lab = "Prague"),
 
 
-
 record(geo.location.latitude = 37.98381, geo.location.longitude = 23.727539, Lab = "Athens"),
-
 
 
 record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, Lab = "Copenhagen")
@@ -8960,7 +8604,6 @@ If you aren't sure that you chose the right visualization, use the [visualizatio
   Turn this on to show region outlines within countries.
 
 ## Data mapping
-
 
 
 The data mapping section shows how a column of your result is mapped to the visualization.
@@ -9088,7 +8731,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
     fetch logs
 
 
-
     | limit 2000
     ```
 
@@ -9103,7 +8745,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
   Results in the selection of a subset of Log or Span records.
 
 ## Units and formats
-
 
 
 To override the default units and formats in a dashboard or notebook visualization
@@ -9174,7 +8815,6 @@ scraped: 2026-03-06T21:21:10.264221
 
 # Meter bar chart
 
-# Meter bar chart
 
 * Latest Dynatrace
 * How-to guide
@@ -9197,9 +8837,7 @@ The meter bar visualization above is based on the following query, which calcula
 timeseries avg(dt.host.cpu.usage)
 
 
-
 | fieldsAdd CPU = arrayAvg(`avg(dt.host.cpu.usage)`)
-
 
 
 | fieldsKeep CPU
@@ -9217,21 +8855,16 @@ The meter bar visualization above is based on the following query, which calcula
 fetch dt.davis.problems
 
 
-
 | summarize count = count(), by:{event.status}
-
 
 
 | summarize { active=toDouble(takeAny(if(event.status=="ACTIVE", count))), closed=toDouble(takeAny(if(event.status=="CLOSED", count)))}
 
 
-
 | fieldsAdd total = active + closed
 
 
-
 | fieldsAdd pctActive = (active / total) * 100
-
 
 
 | fieldsKeep pctActive
@@ -9356,7 +8989,6 @@ Determines where the meter bar ends on the right.
 ## Units and formats
 
 
-
 To override the default units and formats in a dashboard or notebook visualization
 
 1. Select  to edit the visualization tile.
@@ -9425,7 +9057,6 @@ scraped: 2026-03-06T21:21:24.661965
 
 # Raw visualization
 
-# Raw visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -9442,17 +9073,13 @@ The raw data visualization above is based on the following query. Some data has 
 timeseries avg=avg(dt.host.cpu.load),
 
 
-
 max=max(dt.host.cpu.load),
-
 
 
 min=min(dt.host.cpu.load),
 
 
-
 by:dt.entity.host
-
 
 
 | limit 1
@@ -9502,7 +9129,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000
@@ -9588,7 +9214,6 @@ scraped: 2026-03-06T21:21:30.034479
 
 # Record list
 
-# Record list
 
 * Latest Dynatrace
 * How-to guide
@@ -9699,7 +9324,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
     fetch logs
 
 
-
     | limit 2000
     ```
 
@@ -9714,7 +9338,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
   Results in the selection of a subset of Log or Span records.
 
 ## Units and formats
-
 
 
 To override the default units and formats in a dashboard or notebook visualization
@@ -9785,7 +9408,6 @@ scraped: 2026-03-06T21:21:13.704467
 
 # Scatterplot visualization
 
-# Scatterplot visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -9818,13 +9440,10 @@ The scatterplot visualization above is based on the following query.
 timeseries { cpu.usage = avg(dt.host.cpu.usage, scalar: true), memory.usage = avg(dt.host.memory.usage, scalar: true) }, union: TRUE, by: { dt.entity.host }
 
 
-
 | fieldsAdd dt.entity.host.name = entityName(dt.entity.host)
 
 
-
 | fields dt.entity.host, dt.entity.host.name, cpu.usage, memory.usage
-
 
 
 | limit 1000
@@ -9840,13 +9459,10 @@ The scatterplot visualization above is based on the following query.
 timeseries {service.response.time = avg(dt.service.request.response_time, scalar: true), service.response.count = sum(dt.service.request.count, scalar: true)}, union: TRUE, by: { dt.entity.service }
 
 
-
 | fieldsAdd dt.entity.service.name = entityName(dt.entity.service)
 
 
-
 | fields dt.entity.service.name, dt.entity.service, service.response.count, service.response.time
-
 
 
 | limit 1000
@@ -9996,7 +9612,6 @@ These settings determine the appearance of your scatterplot's Y-axis.
 ## Color
 
 
-
 These settings determine how color is used in your scatterplot.
 
 * **Color palette**: Displays colors from the selected color palette.
@@ -10077,7 +9692,6 @@ scraped: 2026-03-06T21:20:27.327638
 
 # Table visualization
 
-# Table visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -10102,9 +9716,7 @@ The table above is based on the following query.
 timeseries cpu=avg(dt.host.cpu.usage), by:{dt.entity.host}
 
 
-
 | sort arrayAvg(cpu), direction:"descending"
-
 
 
 | limit 3
@@ -10247,7 +9859,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
     fetch logs
 
 
-
     | limit 2000
     ```
 
@@ -10262,7 +9873,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
   Results in the selection of a subset of Log or Span records.
 
 ## Units and formats
-
 
 
 To override the default units and formats in a dashboard or notebook visualization
@@ -10407,7 +10017,6 @@ scraped: 2026-03-06T21:11:17.997326
 
 # Edit visualizations for Notebooks and Dashboards
 
-# Edit visualizations for Notebooks and Dashboards
 
 * Latest Dynatrace
 * Reference
@@ -10575,7 +10184,6 @@ scraped: 2026-03-06T21:10:58.587097
 
 # Explore data
 
-# Explore data
 
 * Latest Dynatrace
 * How-to guide
@@ -10697,7 +10305,6 @@ To create a dashboard tile using Dynatrace Intelligence agentic and generative A
 8. Optional Select the **Visual** tab to change the visualization (refer to the [visualization-specific documentation](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
 
 ### Generative AI in your notebook
-
 
 
 To create a notebook section using Dynatrace Intelligence agentic and generative AI
@@ -10840,7 +10447,6 @@ If the **Limit** setting is not displayed,  **Limit** and then set the value.
 ## Metrics
 
 ### Add
-
 
 
 This exploration functionality is the same in ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** and ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**. We use ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** in these examples.
@@ -11030,7 +10636,6 @@ Add expressions to apply arithmetic based on your selected metrics.
 ### Sort
 
 
-
 To sort your results
 
 1. Select  **Sort**.
@@ -11206,7 +10811,6 @@ scraped: 2026-03-06T21:10:03.486902
 
 # Notebooks
 
-# Notebooks
 
 * Latest Dynatrace
 * App
@@ -11416,7 +11020,6 @@ To list keyboard shortcuts, in ![Notebooks](https://dt-cdn.net/images/notebooks-
 ### List notebooks
 
 
-
 #### List all
 
 To list all notebooks
@@ -11596,7 +11199,6 @@ To add data to a notebook
 ### Create a code section
 
 
-
 To add code fetching data for your notebook using Dynatrace functions
 
 1. Open the  **Add** menu and select  **Code**.
@@ -11653,7 +11255,6 @@ To add a Markdown-formatted annotation to a notebook
   * Line 1
 
 
-
   * Line 2
   ```
 
@@ -11661,7 +11262,6 @@ To add a Markdown-formatted annotation to a notebook
 
   ```
   - Line 1
-
 
 
   - Line 2
@@ -11673,9 +11273,7 @@ To add a Markdown-formatted annotation to a notebook
   1. The first line of my procedure.
 
 
-
   2. The second line of my procedure.
-
 
 
   3. The third line of my procedure.
@@ -11688,9 +11286,7 @@ To add a Markdown-formatted annotation to a notebook
   | Header 1 | Header2
 
 
-
   --- | ---
-
 
 
   content2 | content2
@@ -11712,7 +11308,6 @@ To add a Markdown-formatted annotation to a notebook
 
   ```
   Here are some of the people who started [Dynatrace](https://www.dynatrace.com).
-
 
 
   ![Dynatrace founders](https://dt-cdn.net/images/original-dynatrace-team-1500-7334dbe9a8.jpg)
@@ -11805,7 +11400,6 @@ The available edit options will vary depending on the type of section you're edi
   ![Example: Notebooks: edit Markdown section](https://dt-cdn.net/images/notebooks-markdown-edit-969-a08f9afae1.png)
 
 ### Select section segments
-
 
 
 To filter data for a section, you can specify [segments](../ru/manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") for a section.
@@ -12045,7 +11639,6 @@ You can also export a notebook as a JSON file and send the JSON to others, and t
 ### Export a notebook
 
 
-
 To export a notebook
 
 1. At the top of the notebook, open the  menu next to the notebook name.
@@ -12107,7 +11700,6 @@ To print a notebook or export it to PDF
 ## Analyze data
 
 ### Analyze data with AI
-
 
 
 To analyze data using Dynatrace Intelligence Data Analyzers
@@ -12260,7 +11852,6 @@ To detect when CPU usage percent exceeds 70 percent, in your document (dashboard
 ### Start forecast analysis
 
 
-
 From your notebook, you can trigger a series forecast analysis powered by Dynatrace Intelligence.
 
 In this example, we issue the following query:
@@ -12299,7 +11890,6 @@ scraped: 2026-02-17T04:46:08.290556
 
 # Drilldowns and navigation
 
-# Drilldowns and navigation
 
 * Latest Dynatrace
 * How-to guide
@@ -12439,7 +12029,6 @@ The **Add Link** feature allows you to create links in the UI directly from your
 ### Add and manage links
 
 
-
 The  **Add Link** feature allows you to create links directly from your visualizations. These links can navigate to external systems, other Dynatrace apps, or resources, enabling seamless context passing for faster troubleshooting and analysis.
 
 #### Add a link
@@ -12522,13 +12111,10 @@ Dynamic placeholders are not automatically encoded. If your placeholder values m
 fetch logs
 
 
-
 | summarize occurences=count(), by:{content}
 
 
-
 | fieldsAdd contentEncoded = replaceString(escape(encodeUrl(content)), "+", "%20")
-
 
 
 | fields contentEncoded, occurences
@@ -12576,12 +12162,10 @@ To enable link detection:
    data record(website="Dynatrace main page", link="http://www.dynatrace.com"),
 
 
-
    record(website="Dynatrace community", link="https://community.dynatrace.com/")
    ```
 
 ### Intermediate: links with a display name
-
 
 
 To make links more user-friendly, you can provide a display name (for example, "Dynatrace main page") using Markdown formatting. This replaces raw URLs with descriptive labels that are easier for users to read and understand.
@@ -12602,9 +12186,7 @@ To provide user-friendly links:
    data record(website="Dynatrace main page", link="http://www.dynatrace.com"),
 
 
-
    record(website="Dynatrace community", link="https://community.dynatrace.com/")
-
 
 
    | fieldsAdd markdownLink = concat("[", website, "](", link, ")")
@@ -12630,13 +12212,10 @@ To create intent-based links
    fetch logs
 
 
-
    | filter matchesPhrase(content, "failed to complete the order: rpc error: code") and status == "ERROR"
 
 
-
    | parse content, """DATA 'desc = ' LD:errorCode '    '"""
-
 
 
    | summarize total = count(), by:{errorCode}
@@ -12658,9 +12237,7 @@ To create intent-based links
       | fieldsAdd QueryPart1 = """{"version":0,"data":{"queryConfig":{"query":"fetch logs\n| filter matchesPhrase(content,\"\"\""""
 
 
-
       | fieldsAdd QueryPart1 = encodeUrl(QueryPart1)
-
 
 
       | fieldsAdd QueryPart1 = replaceString(QueryPart1, "+", "%20")
@@ -12671,9 +12248,7 @@ To create intent-based links
       | fieldsAdd QueryPart2 = escape(errorCode)
 
 
-
       | fieldsAdd QueryPart2 = encodeUrl(QueryPart2)
-
 
 
       | fieldsAdd QueryPart2 = replaceString(QueryPart2, "+", "%20")
@@ -12687,7 +12262,6 @@ To create intent-based links
 
       ```
       | fieldsAdd errorCodeLink = concat("[", errorCode, "](", LogAppURL, QueryPart1, QueryPart2, QueryTimeFrame, ")")
-
 
 
       | fields errorCodeLink, total
@@ -12707,7 +12281,6 @@ scraped: 2026-03-06T21:09:48.245169
 
 # Ready-made dashboards
 
-# Ready-made dashboards
 
 * Latest Dynatrace
 * Reference
@@ -12890,7 +12463,6 @@ Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-
 ## Kubernetes Namespace - Pods
 
 
-
 Analyze resource allocation of all pods within a namespace.
 
 [Explore in Playgroundï»¿](https://dt-url.net/zvi339y)
@@ -13032,7 +12604,6 @@ In upcoming releases, the extension-distributed dashboards will automatically ap
 ## Salesforce Ingest and Outage
 
 
-
 Use this dashboard to help identify potential salesforce outages.
 
 [Explore in Playgroundï»¿](https://dt-url.net/3i1633rp)
@@ -13145,7 +12716,6 @@ scraped: 2026-03-06T21:13:50.344696
 
 # Ready-made documents
 
-# Ready-made documents
 
 * Latest Dynatrace
 * Reference
@@ -13215,7 +12785,6 @@ scraped: 2026-03-03T21:23:07.840378
 
 # Remote environment data
 
-# Remote environment data
 
 * Latest Dynatrace
 * How-to guide
@@ -13299,249 +12868,187 @@ You can start with a snippet (**Remote environment data via Platform token**) wh
 import { credentialVaultClient } from "@dynatrace-sdk/client-classic-environment-v2";
 
 
-
 /**
-
 
 
 * Execute a query against a Dynatrace API with token retrieval inlined.
 
 
-
 * @param {string} credentialId - The ID of the credential vault entry.
-
 
 
 * @param {string} url - The API endpoint URL.
 
 
-
 * @param {string} query - The query to execute.
-
 
 
 * @returns {Promise<any>} - The API response data.
 
 
-
 * @throws Will throw an error if any step fails.
 
 
-
 */
-
 
 
 async function fetchFromDynatrace(credentialId, url, query) {
 
 
-
 if (!credentialId || !url || !query) {
-
 
 
 throw new Error("[ValidationError] Missing required parameters: credentialId, url, or query.");
 
 
-
 }
 
 
-
 try {
-
 
 
 // Retrieve the platform token from the credential vault.
 
 
-
 const { token } = await credentialVaultClient.getCredentialsDetails({
-
 
 
 id: credentialId,
 
 
-
 }).catch((error) => {
-
 
 
 console.error(`[CredentialVaultError] Failed to retrieve token: ${error.message}`);
 
 
-
 throw new Error("Unable to fetch platform token.");
 
 
-
 });
-
 
 
 if (!token) {
 
 
-
 throw new Error("[CredentialVaultError] Token is undefined or empty.");
 
 
-
 }
-
 
 
 // Perform the API request.
 
 
-
 const response = await fetch(url, {
-
 
 
 method: "POST",
 
 
-
 headers: {
-
 
 
 "Content-Type": "application/json",
 
 
-
 Accept: "application/json",
-
 
 
 Authorization: `Bearer ${token}`,
 
 
-
 },
-
 
 
 body: JSON.stringify({
 
 
-
 query,
-
 
 
 requestTimeoutMilliseconds: 60000,
 
 
-
 enablePreview: true,
-
 
 
 }),
 
 
-
 });
-
 
 
 if (!response.ok) {
 
 
-
 throw new Error(`[HTTPError] API call failed with status ${response.status}: ${response.statusText}`);
 
 
-
 }
-
 
 
 return await response.json();
 
 
-
 } catch (error) {
-
 
 
 console.error(`[FetchError] Query execution failed: ${error.message}`);
 
 
-
 throw new Error("Unable to execute query.");
 
 
-
 }
 
 
-
 }
-
 
 
 /**
 
 
-
 * Main function to fetch and return results from Dynatrace.
-
 
 
 * @returns {Promise<any>} - The query result.
 
 
-
 */
-
 
 
 export default async function() {
 
 
-
 const credentialId = "CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX"; // Replace with your credential vault ID.
-
 
 
 const url = "https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute"; // Replace with API URL.
 
 
-
 const query = "fetch logs | limit 1"; // Replace with your query.
-
 
 
 try {
 
 
-
 const { result } = await fetchFromDynatrace(credentialId, url, query);
-
 
 
 return result;
 
 
-
 } catch (error) {
-
 
 
 console.error(`[MainFunctionError] ${error.message}`);
 
 
-
 return null; // Or handle as needed.
 
 
-
 }
-
 
 
 }
@@ -13554,7 +13061,6 @@ Fetching data from remote environments via OAuth is intended for sharing. This m
 The example JavaScript code described below uses the credential vault for secure token storage, and OAuth for authentication, to offer a robust and secure way to fetch data from a remote Dynatrace environment.
 
 ### Prerequisites
-
 
 
 Before you create the code for your dashboard tile or notebook section:
@@ -13617,409 +13123,307 @@ You can start with a snippet (**Remote environment data via OAuth**) when creati
 import { credentialVaultClient } from "@dynatrace-sdk/client-classic-environment-v2";
 
 
-
 /**
-
 
 
 * Authenticate to Dynatrace SSO using client credentials.
 
 
-
 * @param {string} clientId - The client ID for authentication.
-
 
 
 * @param {string} clientSecret - The client secret for authentication.
 
 
-
 * @returns {Promise<string>} - The access token.
-
 
 
 * @throws Will throw an error if authentication fails.
 
 
-
 */
-
 
 
 async function authenticateToDynatrace(clientId, clientSecret) {
 
 
-
 if (!clientId || !clientSecret) {
-
 
 
 throw new Error("[ValidationError] Missing clientId or clientSecret for SSO authentication.");
 
 
-
 }
-
 
 
 const scopes = [
 
 
-
 "environment-api",
-
 
 
 "storage:buckets:read",
 
 
-
 "storage:bizevents:read",
-
 
 
 "storage:logs:read",
 
 
-
 "storage:metrics:read",
-
 
 
 "storage:entities:read",
 
 
-
 ].join(" ");
 
 
-
 try {
-
 
 
 const response = await fetch("https://sso.dynatrace.com/sso/oauth2/token", {
 
 
-
 method: "POST",
-
 
 
 headers: { "Content-Type": "application/x-www-form-urlencoded" },
 
 
-
 body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}&scopes=${scopes}`,
-
 
 
 });
 
 
-
 if (!response.ok) {
-
 
 
 throw new Error(`[HTTPError] SSO authentication failed with status ${response.status}: ${response.statusText}`);
 
 
-
 }
-
 
 
 const { access_token: accessToken } = await response.json();
 
 
-
 if (!accessToken) {
-
 
 
 throw new Error("[SSOError] Access token not received.");
 
 
-
 }
-
 
 
 return accessToken;
 
 
-
 } catch (error) {
-
 
 
 console.error(`[DynatraceAuthError] ${error.message}`);
 
 
-
 throw error;
 
 
-
 }
 
 
-
 }
-
 
 
 /**
-
 
 
 * Fetch data from Dynatrace using a query.
 
 
-
 * @param {string} credentialId - The credential vault ID.
-
 
 
 * @param {string} url - The API endpoint URL.
 
 
-
 * @param {string} query - The query to execute.
-
 
 
 * @returns {Promise<any>} - The API response data.
 
 
-
 * @throws Will throw an error if any step fails.
 
 
-
 */
-
 
 
 async function fetchFromDynatrace(credentialId, url, query) {
 
 
-
 if (!credentialId || !url || !query) {
-
 
 
 throw new Error("[ValidationError] Missing one or more required parameters: credentialId, url, or query.");
 
 
-
 }
 
 
-
 try {
-
 
 
 // Retrieve credentials from the credential vault.
 
 
-
 const { username: clientId, password: clientSecret } = await credentialVaultClient.getCredentialsDetails({
-
 
 
 id: credentialId,
 
 
-
 }).catch(error => {
-
 
 
 console.error(`[CredentialVaultError] Failed to retrieve credentials: ${error.message}`);
 
 
-
 throw new Error("Unable to fetch credentials from the vault.");
 
 
-
 });
-
 
 
 if (!clientId || !clientSecret) {
 
 
-
 throw new Error("[CredentialVaultError] Missing clientId or clientSecret from the retrieved credentials.");
 
 
-
 }
-
 
 
 // Authenticate and get an access token.
 
 
-
 const accessToken = await authenticateToDynatrace(clientId, clientSecret);
-
 
 
 // Perform the API request.
 
 
-
 const response = await fetch(url, {
-
 
 
 method: "POST",
 
 
-
 headers: {
-
 
 
 "Content-Type": "application/json",
 
 
-
 Accept: "application/json",
-
 
 
 Authorization: `Bearer ${accessToken}`,
 
 
-
 },
-
 
 
 body: JSON.stringify({
 
 
-
 query,
-
 
 
 requestTimeoutMilliseconds: 60000,
 
 
-
 enablePreview: true,
-
 
 
 }),
 
 
-
 });
-
 
 
 if (!response.ok) {
 
 
-
 throw new Error(`[HTTPError] API call failed with status ${response.status}: ${response.statusText}`);
 
 
-
 }
-
 
 
 return await response.json();
 
 
-
 } catch (error) {
-
 
 
 console.error(`[FetchError] ${error.message}`);
 
 
-
 throw error;
 
 
-
 }
 
 
-
 }
-
 
 
 /**
 
 
-
 * Main function to execute a query and return results from Dynatrace.
-
 
 
 * @returns {Promise<any>} - The query result.
 
 
-
 */
-
 
 
 export default async function fetchDynatraceData() {
 
 
-
 const credentialId = "CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX"; // Replace with your credential vault ID.
-
 
 
 const url = "https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute"; // Replace with API URL.
 
 
-
 const query = "fetch logs | limit 1"; // Replace with your query.
-
 
 
 try {
 
 
-
 const { result } = await fetchFromDynatrace(credentialId, url, query);
-
 
 
 return result;
 
 
-
 } catch (error) {
-
 
 
 console.error(`[MainFunctionError] ${error.message}`);
 
 
-
 return null; // Return null or handle gracefully.
 
 
-
 }
-
 
 
 }
@@ -14037,7 +13441,6 @@ scraped: 2026-03-06T21:27:45.177285
 
 # Notebooks and Dashboards use cases
 
-# Notebooks and Dashboards use cases
 
 * Latest Dynatrace
 * How-to guide

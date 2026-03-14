@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Releases API
 
-# Releases API
 
 * Reference
 * Published Apr 20, 2021

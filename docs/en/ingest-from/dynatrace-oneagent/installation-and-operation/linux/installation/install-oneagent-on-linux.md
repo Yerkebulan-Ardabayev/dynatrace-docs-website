@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:57.191682
 
 # Install OneAgent on Linux
 
-# Install OneAgent on Linux
 
 * Latest Dynatrace
 * How-to guide

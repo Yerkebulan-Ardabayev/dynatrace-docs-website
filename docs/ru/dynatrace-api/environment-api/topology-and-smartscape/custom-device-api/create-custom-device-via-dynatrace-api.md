@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:18.380029
 
 # Создание пользовательского устройства через Dynatrace API
 
-# Создание пользовательского устройства через Dynatrace API
 
 * Справочник
 * Обновлено 22 марта 2023 г.
@@ -78,133 +77,100 @@ scraped: 2026-03-05T21:27:18.380029
 {
 
 
-
 "configUrl": "http://coffee-machine.dynatrace.internal.com/coffeemachine/manage",
-
 
 
 "displayName": "coffeeMachine",
 
 
-
 "favicon": "https://www.freefavicon.com/freefavicons/food/cup-of-coffee-152-78475.png",
-
 
 
 "group": "myCustomDeviceGroup",
 
 
-
 "hostNames": [
-
 
 
 "coffee-machine.dynatrace.internal.com"
 
 
-
 ],
-
 
 
 "ipAddresses": [
 
 
-
 "10.0.0.1"
 
 
-
 ],
-
 
 
 "listenPorts": [
 
 
-
 80
 
 
-
 ],
-
 
 
 "properties": {},
 
 
-
 "series": [
-
 
 
 {
 
 
-
 "dataPoints": [
-
 
 
 [
 
 
-
 1521542929000,
-
 
 
 13
 
 
-
 ]
 
 
-
 ],
-
 
 
 "dimensions": {
 
 
-
 "office": "Linz"
-
 
 
 },
 
 
-
 "timeseriesId": "custom:created.coffee.metric"
-
 
 
 }
 
 
-
 ],
-
 
 
 "tags": [
 
 
-
 "office-linz"
-
 
 
 ],
 
 
-
 "type": "coffee machine"
-
 
 
 }
@@ -263,69 +229,53 @@ scraped: 2026-03-05T21:27:18.380029
 {
 
 
-
 "entityId": "string",
-
 
 
 "groupId": "string"
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -349,69 +299,52 @@ scraped: 2026-03-05T21:27:18.380029
 curl -X POST \
 
 
-
 https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/idOfmyCustomDevice \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
 
 
-
 -H 'Content-Type: application/json' \
-
 
 
 -d '{
 
 
-
 "displayName" : "F5 Firewall 24",
-
 
 
 "ipAddresses" : ["172.16.115.211"],
 
 
-
 "listenPorts" : ["9999"],
-
 
 
 "type" : "F5-Firewall",
 
 
-
 "favicon" : "http://assets.dynatrace.com/global/icons/f5.png",
-
 
 
 "configUrl" : "http://192.128.0.1:8080",
 
 
-
 "tags": [
-
 
 
 "REST example"
 
 
-
 ],
-
 
 
 "properties" : {
 
 
-
 "Sample Property 1": "Sample value 1"
 
 
-
 }
-
 
 
 }'
@@ -429,45 +362,34 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/idOfm
 {
 
 
-
 "displayName": "F5 Firewall 24",
-
 
 
 "ipAddresses": ["172.16.115.211"],
 
 
-
 "listenPorts": ["9999"],
-
 
 
 "type": "F5-Firewall",
 
 
-
 "favicon": "http://assets.dynatrace.com/global/icons/f5.png",
-
 
 
 "configUrl": "http://192.128.0.1:8080",
 
 
-
 "tags": ["REST example"],
-
 
 
 "properties": {
 
 
-
 "Sample Property 1": "Sample value 1"
 
 
-
 }
-
 
 
 }
@@ -479,13 +401,10 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/idOfm
 {
 
 
-
 "entityId": "CUSTOM_DEVICE-6A567B33AADC306E",
 
 
-
 "groupId": "CUSTOM_DEVICE_GROUP-FC2E2ABF54F513D8"
-
 
 
 }

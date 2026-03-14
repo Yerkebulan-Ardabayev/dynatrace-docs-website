@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:08.681078
 
 # Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts
 
-# Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts
 
 * Latest Dynatrace
 * Reference

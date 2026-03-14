@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:55.514900
 
 # Загрузка журналов безопасности и событий Akamai
 
-# Загрузка журналов безопасности и событий Akamai
 
 * Последняя версия Dynatrace
 * Расширение
@@ -65,7 +64,6 @@ scraped: 2026-03-06T21:23:55.514900
      fetch logs
 
 
-
      | filter log.source=="Akamai SIEM"
      ```
    * Для событий обнаружения (если расширение настроено для извлечения событий обнаружения):
@@ -74,9 +72,7 @@ scraped: 2026-03-06T21:23:55.514900
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
-
 
 
      | filter event.provider=="Akamai"

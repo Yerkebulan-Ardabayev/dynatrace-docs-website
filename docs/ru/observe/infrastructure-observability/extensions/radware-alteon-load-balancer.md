@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:00.869391
 
 # Расширение Radware Alteon Load Balancer
 
-# Расширение Radware Alteon Load Balancer
 
 * Последняя версия Dynatrace
 * Расширение

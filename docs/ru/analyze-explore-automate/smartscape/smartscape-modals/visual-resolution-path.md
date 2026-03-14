@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:23:15.794747
 
 # Visual Resolution Path
 
-# Visual Resolution Path
 
 * Latest Dynatrace
 * Explanation

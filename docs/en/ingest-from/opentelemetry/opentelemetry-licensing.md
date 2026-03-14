@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:28.479475
 
 # OpenTelemetry licensing
 
-# OpenTelemetry licensing
 
 * Latest Dynatrace
 * Overview

@@ -6,18 +6,12 @@ scraped: 2026-03-06T21:09:49.978758
 
 # What's new in Dynatrace
 
-# What's new in Dynatrace
 
 * Latest Dynatrace
 * Updated on Feb 23, 2026
 
 These release notes for Dynatrace updatesâshowcasing new features, changes, and bug fixesâkeep you informed and ahead of the game.
 
-Filter by
-
-Select an option
-
-Type to filter
 
 ## How does rollout work?
 

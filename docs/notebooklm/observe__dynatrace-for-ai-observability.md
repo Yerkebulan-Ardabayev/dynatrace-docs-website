@@ -14,7 +14,6 @@ scraped: 2026-03-02T21:23:22.538566
 
 # AI Observability
 
-# AI Observability
 
 * Latest Dynatrace
 * App
@@ -130,7 +129,6 @@ Filter your results:
 ### Create and manage Alerts
 
 
-
 * Create new alerts: Select **New alert** on metrics-based tiles (for example, Invocation error count, Invocation latency, Token count, Token usage forecast, Overall guardrail activation). The alert wizard is preâfilled with the current scope (time range, provider/model/service/agent filters) so you can fineâtune thresholds and notifications. Alerts appear in **Manage all alerts** for review and muting.
 * Manage all alerts: Use the **Manage all alerts** action from any tab to review, edit, or mute [custom alerts](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") created from Service Health cards and charts. You can also create a new alert directly from most tiles.
 
@@ -234,7 +232,6 @@ scraped: 2026-03-05T21:32:10.458716
 
 # Kong AI Gateway
 
-# Kong AI Gateway
 
 * Latest Dynatrace
 * Explanation
@@ -269,101 +266,76 @@ With the following config, the collector will scrape AI LLM metrics every 10 sec
 receivers:
 
 
-
 prometheus:
-
 
 
 config:
 
 
-
 scrape_configs:
-
 
 
 - job_name: kong
 
 
-
 scrape_interval: 10s
-
 
 
 honor_labels: false
 
 
-
 static_configs:
-
 
 
 - targets:
 
 
-
 - kong-metrics.kong:8100
-
 
 
 processors:
 
 
-
 cumulativetodelta:
-
 
 
 max_staleness: 25h
 
 
-
 extensions:
-
 
 
 health_check:
 
 
-
 exporters:
-
 
 
 otlp_http:
 
 
-
 endpoint: ${env:DT_ENDPOINT}
-
 
 
 headers:
 
 
-
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
-
 
 
 service:
 
 
-
 extensions: [health_check]
-
 
 
 metrics:
 
 
-
 receivers: [prometheus]
 
 
-
 processors: [cumulativetodelta]
-
 
 
 exporters: [otlp_http]
@@ -379,57 +351,43 @@ Kong does not provide the `kong-metrics` service to scrape the metrics out of th
 apiVersion: v1
 
 
-
 kind: Service
-
 
 
 metadata:
 
 
-
 name: kong-metrics
-
 
 
 namespace: kong
 
 
-
 spec:
-
 
 
 type: ClusterIP
 
 
-
 ports:
-
 
 
 - name: metrics
 
 
-
 port: 8100
-
 
 
 targetPort: 8100
 
 
-
 protocol: TCP
-
 
 
 selector:
 
 
-
 app.kubernetes.io/name: kong
-
 
 
 app.kubernetes.io/instance: kong
@@ -496,7 +454,6 @@ scraped: 2026-03-06T21:28:35.685729
 
 # Get started with OpenTelemetry and AI Observability
 
-# Get started with OpenTelemetry and AI Observability
 
 * Latest Dynatrace
 * Getting started guide
@@ -572,7 +529,6 @@ Node.js
    pip install opentelemetry-distro opentelemetry-exporter-otlp
 
 
-
    opentelemetry-bootstrap -a install
    ```
 3. Initialize the OpenTelemetry SDK.
@@ -582,53 +538,40 @@ Node.js
    from opentelemetry import trace
 
 
-
    from opentelemetry.sdk.resources import Resource
-
 
 
    from opentelemetry.sdk.trace import TracerProvider
 
 
-
    from opentelemetry.sdk.trace.export import BatchSpanProcessor
-
 
 
    from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
 
 
-
    resource = Resource.create({"service.name": "<your-service>"})
-
 
 
    provider = TracerProvider(resource=resource)
 
 
-
    trace.set_tracer_provider(provider)
-
 
 
    exporter = OTLPSpanExporter(
 
 
-
    endpoint="https://<YOUR_ENV>.live.dynatrace.com/api/v2/otlp/v1/traces",
-
 
 
    headers={"Authorization": "Api-Token <YOUR_DT_API_TOKEN>"},
 
 
-
    )
 
 
-
    provider.add_span_processor(BatchSpanProcessor(exporter))
-
 
 
    tracer = trace.get_tracer(__name__)
@@ -647,49 +590,37 @@ Node.js
    import { NodeSDK } from '@opentelemetry/sdk-node';
 
 
-
    import { Resource } from '@opentelemetry/resources';
-
 
 
    import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
 
 
-
    import { trace } from '@opentelemetry/api';
-
 
 
    const sdk = new NodeSDK({
 
 
-
    resource: new Resource({ 'service.name': '<your-service>' }),
-
 
 
    traceExporter: new OTLPTraceExporter({
 
 
-
    url: 'https://<YOUR_ENV>.live.dynatrace.com/api/v2/otlp/v1/traces',
-
 
 
    headers: { Authorization: 'Api-Token <YOUR_DT_API_TOKEN>' },
 
 
-
    }),
-
 
 
    });
 
 
-
    sdk.start();
-
 
 
    const tracer = trace.getTracer('my-tracer');
@@ -710,57 +641,43 @@ Node.js
 from opentelemetry.trace import SpanKind
 
 
-
 with tracer.start_as_current_span("chat gpt-5", kind=SpanKind.CLIENT) as span:
-
 
 
 span.set_attribute("gen_ai.operation.name", "chat")
 
 
-
 span.set_attribute("gen_ai.provider.name", "openai")
-
 
 
 span.set_attribute("gen_ai.request.model", "gpt-5.2")
 
 
-
 span.set_attribute("gen_ai.request.temperature", 0.7)
-
 
 
 response = openai_client.chat.completions.create(
 
 
-
 model="gpt-4",
-
 
 
 messages=messages,
 
 
-
 temperature=0.7,
-
 
 
 )
 
 
-
 span.set_attribute("gen_ai.response.model", response.model)
-
 
 
 span.set_attribute("gen_ai.response.id", response.id)
 
 
-
 span.set_attribute("gen_ai.usage.input_tokens", response.usage.prompt_tokens)
-
 
 
 span.set_attribute("gen_ai.usage.output_tokens", response.usage.completion_tokens)
@@ -770,65 +687,49 @@ span.set_attribute("gen_ai.usage.output_tokens", response.usage.completion_token
 import { SpanKind } from '@opentelemetry/api';
 
 
-
 tracer.startActiveSpan('chat gpt-4', { kind: SpanKind.CLIENT }, async (span) => {
-
 
 
 span.setAttribute('gen_ai.operation.name', 'chat');
 
 
-
 span.setAttribute('gen_ai.provider.name', 'openai');
-
 
 
 span.setAttribute('gen_ai.request.model', 'gpt-5.2');
 
 
-
 span.setAttribute('gen_ai.request.temperature', 0.7);
-
 
 
 const response = await openai.chat.completions.create({
 
 
-
 model: 'gpt-4',
-
 
 
 messages: messages,
 
 
-
 temperature: 0.7,
-
 
 
 });
 
 
-
 span.setAttribute('gen_ai.response.model', response.model);
-
 
 
 span.setAttribute('gen_ai.response.id', response.id);
 
 
-
 span.setAttribute('gen_ai.usage.input_tokens', response.usage.prompt_tokens);
-
 
 
 span.setAttribute('gen_ai.usage.output_tokens', response.usage.completion_tokens);
 
 
-
 span.end();
-
 
 
 });
@@ -853,7 +754,6 @@ scraped: 2026-02-18T05:48:43.190195
 
 # AI data governance with Amazon Bedrock
 
-# AI data governance with Amazon Bedrock
 
 * Latest Dynatrace
 * Tutorial
@@ -994,25 +894,19 @@ Afterward, add the following code at the beginning of your main file:
 from traceloop.sdk import Traceloop
 
 
-
 headers = { "Authorization": "Api-Token <YOUR_DT_API_TOKEN>" }
-
 
 
 Traceloop.init(
 
 
-
 app_name="<your-service>",
-
 
 
 api_endpoint="https://<YOUR_ENV>.live.dynatrace.com/api/v2/otlp",
 
 
-
 headers=headers
-
 
 
 )
@@ -1039,7 +933,6 @@ scraped: 2026-02-18T05:43:54.663089
 
 # OpenAI Observability
 
-# OpenAI Observability
 
 * Latest Dynatrace
 * Tutorial
@@ -1064,41 +957,31 @@ This simple Node.js example is used to explain how Dynatrace OneAgent automatica
 const { Configuration, OpenAIApi } = require("openai");
 
 
-
 const configuration = new Configuration({
-
 
 
 apiKey: process.env.OPENAI_API_KEY
 
 
-
 });
-
 
 
 const openai = new OpenAIApi(configuration);
 
 
-
 const response = await openai.createCompletion({
-
 
 
 model: "text-davinci-003",
 
 
-
 prompt: "Say hello!",
-
 
 
 temperature: 0,
 
 
-
 max_tokens: 10,
-
 
 
 });
@@ -1186,73 +1069,55 @@ You need the following instrumentation to extract the token count from the OpenA
 function report_metric(openai_response) {
 
 
-
 var post_data = "openai.promt_token_count,model=" + openai_response.model + " " + openai_response.usage.prompt_tokens + "\n";
-
 
 
 post_data += "openai.completion_token_count,model=" + openai_response.model + " " + openai_response.usage.completion_tokens + "\n";
 
 
-
 post_data += "openai.total_token_count,model=" + openai_response.model + " " + openai_response.usage.total_tokens + "\n";
-
 
 
 console.log(post_data);
 
 
-
 var post_options = {
-
 
 
 host: 'localhost',
 
 
-
 port: '14499',
-
 
 
 path: '/metrics/ingest',
 
 
-
 method: 'POST',
-
 
 
 headers: {
 
 
-
 'Content-Type': 'text/plain',
-
 
 
 'Content-Length': Buffer.byteLength(post_data)
 
 
-
 }
-
 
 
 };
 
 
-
 var metric_req = http.request(post_options, (resp) => {}).on("error", (err) => { console.log(err); });
-
 
 
 metric_req.write(post_data);
 
 
-
 metric_req.end();
-
 
 
 }
@@ -1263,7 +1128,6 @@ After adding those lines to your Node.js service, three new OpenAI token consump
 ![OpenAI token consumption metrics collected in Dynatrace](https://dt-cdn.net/images/token-metrics-1412-f9c654f368.png)
 
 ## Dynatrace Intelligence automatically detects GPT as root cause
-
 
 
 One of the superb features of Dynatrace is how its Dynatrace Intelligence automatically learns the typical behavior of monitored services.
@@ -1288,7 +1152,6 @@ scraped: 2026-03-06T21:14:22.129372
 
 # Get started
 
-# Get started
 
 * Latest Dynatrace
 * How-to guide
@@ -1323,7 +1186,6 @@ scraped: 2026-03-06T21:14:20.458987
 
 # Amazon Bedrock
 
-# Amazon Bedrock
 
 * Latest Dynatrace
 * Explanation
@@ -1382,7 +1244,6 @@ scraped: 2026-03-06T21:14:25.595461
 
 # NVIDIA NIM
 
-# NVIDIA NIM
 
 * Latest Dynatrace
 * Explanation
@@ -1415,101 +1276,76 @@ With the following config, the collector will scrape AI metrics every 10 seconds
 receivers:
 
 
-
 prometheus:
-
 
 
 config:
 
 
-
 scrape_configs:
-
 
 
 - job_name: nim-metrics
 
 
-
 scrape_interval: 10s
-
 
 
 honor_labels: false
 
 
-
 static_configs:
-
 
 
 - targets:
 
 
-
 - ["<NIM-endpoint>:8000"]
-
 
 
 processors:
 
 
-
 cumulativetodelta:
-
 
 
 max_staleness: 25h
 
 
-
 extensions:
-
 
 
 health_check:
 
 
-
 exporters:
-
 
 
 otlp_http:
 
 
-
 endpoint: ${env:DT_ENDPOINT}
-
 
 
 headers:
 
 
-
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
-
 
 
 service:
 
 
-
 extensions: [health_check]
-
 
 
 metrics:
 
 
-
 receivers: [prometheus]
 
 
-
 processors: [cumulativetodelta]
-
 
 
 exporters: [otlp_http]
@@ -1592,7 +1428,6 @@ scraped: 2026-03-06T21:14:16.809856
 
 # Ollama
 
-# Ollama
 
 * Latest Dynatrace
 * Explanation
@@ -1642,7 +1477,6 @@ scraped: 2026-03-06T21:14:15.056939
 
 # OpenAI
 
-# OpenAI
 
 * Latest Dynatrace
 * Explanation
@@ -1707,7 +1541,6 @@ scraped: 2026-03-06T21:33:34.751016
 
 # TensorFlow Keras observability
 
-# TensorFlow Keras observability
 
 * Latest Dynatrace
 * Tutorial
@@ -1740,201 +1573,151 @@ See below the implementation of a Dynatrace TensorFlow callback receiver that fo
 import tensorflow as tf
 
 
-
 from tensorflow import keras
-
 
 
 import requests
 
 
-
 # Custom TensorFlow Keras callback receiver that sends the logged metrics
-
 
 
 # to a Dynatrace monitoring environment.
 
 
-
 # Read more about writing your own callback receiver here:
-
 
 
 # https://www.tensorflow.org/guide/keras/custom_callback
 
 
-
 class DynatraceKerasCallback(keras.callbacks.Callback):
-
 
 
 metricprefix = ''
 
 
-
 modelname = ''
-
 
 
 url = ''
 
 
-
 apitoken = ''
-
 
 
 batch = ''
 
 
-
 # Constructor that takes a metric prefix, the name of the current model that is used,
-
 
 
 # the Dynatrace metric ingest API endpoint (e.g.: https://your.live.dynatrace.com/api/v2/metrics/ingest)
 
 
-
 # and the Dynatrace API token (with metric ingest scope enabled)
-
 
 
 def __init__(self, metricprefix='tensorflow.', modelname='', url='', apitoken=''):
 
 
-
 self.metricprefix = metricprefix
-
 
 
 self.modelname = modelname
 
 
-
 self.url = url
-
 
 
 self.apitoken = apitoken
 
 
-
 def send_metric(self, name, value, tags):
-
 
 
 tags_str = ''
 
 
-
 for tag_key in tags:
-
 
 
 tags_str = tags_str + ',{key}={value}'.format(key=tag_key, value=tags[tag_key])
 
 
-
 line = '{prefix}.{name}{tags} {value}\n'.format(prefix=self.metricprefix, tags=tags_str, model=self.modelname, name=name, value=value)
-
 
 
 self.batch = self.batch + line
 
 
-
 def flush(self):
-
 
 
 print(self.batch)
 
 
-
 r = requests.post(self.url, headers={'Content-Type': 'text/plain', 'Authorization' : 'Api-Token ' + self.apitoken}, data=self.batch)
-
 
 
 self.batch = ''
 
 
-
 def on_train_end(self, logs=None):
-
 
 
 keys = list(logs.keys())
 
 
-
 for m in keys:
-
 
 
 self.send_metric(m, logs[m], { 'model' : self.modelname, 'stage' : 'train' })
 
 
-
 self.flush()
-
 
 
 def on_epoch_end(self, epoch, logs=None):
 
 
-
 keys = list(logs.keys())
 
 
-
 for m in keys:
-
 
 
 self.send_metric(m, logs[m], { 'model' : self.modelname, 'stage' : 'train' })
 
 
-
 self.flush()
-
 
 
 def on_test_end(self, logs=None):
 
 
-
 keys = list(logs.keys())
 
 
-
 for m in keys:
-
 
 
 self.send_metric(m, logs[m], { 'model' : self.modelname, 'stage' : 'test' })
 
 
-
 self.flush()
-
 
 
 def on_predict_end(self, logs=None):
 
 
-
 keys = list(logs.keys())
-
 
 
 for m in keys:
 
 
-
 self.send_metric(m, logs[m], { 'model' : self.modelname, 'stage' : 'predict' })
-
 
 
 self.flush()
@@ -1952,117 +1735,88 @@ In a production deployment of the model (the evaluation step) the same Dynatrace
 import tensorflow as tf
 
 
-
 print("TensorFlow version:", tf.__version__)
-
 
 
 import time
 
 
-
 # load the Dynatrace callback receiver
-
 
 
 from dynatrace import DynatraceKerasCallback
 
 
-
 # Load a sample data set
-
 
 
 mnist = tf.keras.datasets.mnist
 
 
-
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
-
 
 
 x_train, x_test = x_train / 255.0, x_test / 255.0
 
 
-
 # Define a model
-
 
 
 model = tf.keras.models.Sequential([
 
 
-
 tf.keras.layers.Flatten(input_shape=(28, 28)),
-
 
 
 tf.keras.layers.Dense(128, activation='relu'),
 
 
-
 tf.keras.layers.Dropout(0.2),
-
 
 
 tf.keras.layers.Dense(10)
 
 
-
 ])
-
 
 
 # Define a loss function
 
 
-
 loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
-
 
 
 # Compile the model
 
 
-
 model.compile(optimizer='adam',
-
 
 
 loss=loss_fn,
 
 
-
 metrics=['accuracy'])
-
 
 
 # Define the tensor board callbacks
 
 
-
 dt_callback = DynatraceKerasCallback(metricprefix='tensorflow', modelname='mnist-classifier', url='https://<YOUR_ENV>.live.dynatrace.com/api/v2/metrics/ingest', apitoken='<YOUR_TOKEN>')
-
 
 
 # Train the model
 
 
-
 model.fit(x_train, y_train, epochs=5, callbacks=[dt_callback])
-
 
 
 # Use the model in production
 
 
-
 while True:
 
 
-
 model.evaluate(x_test,  y_test, verbose=2, callbacks=[dt_callback])
-
 
 
 time.sleep(60)
@@ -2088,7 +1842,6 @@ scraped: 2026-03-06T21:14:13.335634
 
 # LangChain
 
-# LangChain
 
 * Latest Dynatrace
 * How-to guide
@@ -2143,7 +1896,6 @@ scraped: 2026-03-06T21:27:33.344954
 
 # AI data governance with Amazon Bedrock
 
-# AI data governance with Amazon Bedrock
 
 * Latest Dynatrace
 * Tutorial
@@ -2284,25 +2036,19 @@ Afterward, add the following code at the beginning of your main file:
 from traceloop.sdk import Traceloop
 
 
-
 headers = { "Authorization": "Api-Token <YOUR_DT_API_TOKEN>" }
-
 
 
 Traceloop.init(
 
 
-
 app_name="<your-service>",
-
 
 
 api_endpoint="https://<YOUR_ENV>.live.dynatrace.com/api/v2/otlp",
 
 
-
 headers=headers
-
 
 
 )
@@ -2329,7 +2075,6 @@ scraped: 2026-03-05T21:31:04.024459
 
 # OpenAI Observability
 
-# OpenAI Observability
 
 * Latest Dynatrace
 * Tutorial
@@ -2379,13 +2124,10 @@ For more configuration options, see the [Get started with AI Observability](../r
    export AZURE_OPENAI_API_KEY=your_api_key
 
 
-
    export AZURE_OPENAI_API_VERSION='2024-08-01-preview'
 
 
-
    export AZURE_OPENAI_ENDPOINT=your_endpoint
-
 
 
    export AZURE_OPENAI_DEPLOYMENT=your_deployment
@@ -2398,13 +2140,10 @@ For more configuration options, see the [Get started with AI Observability](../r
    cd python-backend
 
 
-
    python3.12 -m venv .venv
 
 
-
    source .venv/bin/activate
-
 
 
    pip install -r requirements.txt
@@ -2413,7 +2152,6 @@ For more configuration options, see the [Get started with AI Observability](../r
 
    ```
    cd ui
-
 
 
    npm install
@@ -2458,73 +2196,55 @@ To extract the token count from the OpenAI response and report those measurement
 function report_metric(openai_response) {
 
 
-
 var post_data = "openai.promt_token_count,model=" + openai_response.model + " " + openai_response.usage.prompt_tokens + "\n";
-
 
 
 post_data += "openai.completion_token_count,model=" + openai_response.model + " " + openai_response.usage.completion_tokens + "\n";
 
 
-
 post_data += "openai.total_token_count,model=" + openai_response.model + " " + openai_response.usage.total_tokens + "\n";
-
 
 
 console.log(post_data);
 
 
-
 var post_options = {
-
 
 
 host: 'localhost',
 
 
-
 port: '14499',
-
 
 
 path: '/metrics/ingest',
 
 
-
 method: 'POST',
-
 
 
 headers: {
 
 
-
 'Content-Type': 'text/plain',
-
 
 
 'Content-Length': Buffer.byteLength(post_data)
 
 
-
 }
-
 
 
 };
 
 
-
 var metric_req = http.request(post_options, (resp) => {}).on("error", (err) => { console.log(err); });
-
 
 
 metric_req.write(post_data);
 
 
-
 metric_req.end();
-
 
 
 }
@@ -2554,7 +2274,6 @@ scraped: 2026-03-06T21:10:10.074162
 
 # AI and LLM Observability
 
-# AI and LLM Observability
 
 * Latest Dynatrace
 * Overview

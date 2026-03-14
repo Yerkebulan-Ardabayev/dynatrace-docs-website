@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:32:40.794084
 
 # Extend event observability
 
-# Extend event observability
 
 * Latest Dynatrace
 * 3-min read

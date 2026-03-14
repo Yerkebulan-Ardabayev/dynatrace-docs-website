@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Update OneAgent on Linux
 
-# Update OneAgent on Linux
 
 * 1-min read
 * Published Sep 19, 2018

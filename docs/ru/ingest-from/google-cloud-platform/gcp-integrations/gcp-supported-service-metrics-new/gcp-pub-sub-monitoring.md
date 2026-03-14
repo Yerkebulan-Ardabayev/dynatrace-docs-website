@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:30.502530
 
 # Мониторинг Google Cloud Pub/Sub
 
-# Мониторинг Google Cloud Pub/Sub
 
 * Последняя версия Dynatrace
 * Практическое руководство

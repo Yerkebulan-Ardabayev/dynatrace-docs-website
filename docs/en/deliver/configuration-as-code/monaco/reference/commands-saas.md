@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:51.626440
 
 # Work with Dynatrace Monaco CLI commands for Latest Dynatrace
 
-# Work with Dynatrace Monaco CLI commands for Latest Dynatrace
 
 * Latest Dynatrace
 * Reference
@@ -52,21 +51,16 @@ To do this, set the `HTTPS_PROXY` environment variable to the address of your pr
 # Linux or Mac OS
 
 
-
 HTTPS_PROXY=localhost:5000
-
 
 
 monaco deploy example.yaml
 
 
-
 # Windows
 
 
-
 $env:HTTPS_PROXY="localhost:5000"
-
 
 
 monaco deploy example.yaml
@@ -147,45 +141,34 @@ Some manual post-processing will be needed.
 # Linux or macOS
 
 
-
 MONACO_FEAT_DOWNLOAD_FILTER=false
-
 
 
 # MONACO_FEAT_DOWNLOAD_FILTER_SETTINGS=false
 
 
-
 # MONACO_FEAT_DOWNLOAD_FILTER_SETTINGS_UNMODIFIABLE=false
-
 
 
 # MONACO_FEAT_DOWNLOAD_FILTER_CLASSIC_CONFIGS=false
 
 
-
 monaco download
-
 
 
 # Windows
 
 
-
 $env:MONACO_FEAT_DOWNLOAD_FILTER="false"
-
 
 
 # $env:MONACO_FEAT_DOWNLOAD_FILTER_SETTINGS="false"
 
 
-
 # $env:MONACO_FEAT_DOWNLOAD_FILTER_SETTINGS_UNMODIFIABLE="false"
 
 
-
 # $env:MONACO_FEAT_DOWNLOAD_FILTER_CLASSIC_CONFIGS="false"
-
 
 
 monaco download
@@ -204,21 +187,16 @@ For example, `MONACO_CONCURRENT_REQUESTS=15` enables up to 15 concurrent request
 # Linux or Mac OS
 
 
-
 MONACO_CONCURRENT_REQUESTS=15
-
 
 
 monaco download
 
 
-
 # Windows
 
 
-
 $env:MONACO_CONCURRENT_REQUESTS="15"
-
 
 
 monaco download
@@ -241,21 +219,16 @@ To activate the fast resolver, set the environment variable `MONACO_FEAT_FAST_DE
 # Linux or Mac OS
 
 
-
 MONACO_FEAT_FAST_DEPENDENCY_RESOLVER=true
-
 
 
 monaco download
 
 
-
 # Windows
 
 
-
 $env:MONACO_FEAT_FAST_DEPENDENCY_RESOLVER="true"
-
 
 
 monaco download
@@ -315,45 +288,34 @@ The `generate deletefile` command can't process configurations that contain refe
 configs:
 
 
-
 - id: appRule
-
 
 
 config:
 
 
-
 name:
-
 
 
 configId: application
 
 
-
 configType: application-web
-
 
 
 property: name
 
 
-
 type: reference
-
 
 
 template: rule.json
 
 
-
 skip: false
 
 
-
 type:
-
 
 
 api: app-detection-rule
@@ -417,49 +379,37 @@ In this example, we delete a user, service user, group, policy, and boundary usi
 delete:
 
 
-
 - type: user
-
 
 
 email: the.user@dynatrace.com
 
 
-
 - type: serviceUser
-
 
 
 name: Monaco service user
 
 
-
 - type: group
-
 
 
 name: My Group
 
 
-
 - type: policy
-
 
 
 name: My Policy
 
 
-
 level:
-
 
 
 type: account
 
 
-
 - type: boundary
-
 
 
 name: My Boundary

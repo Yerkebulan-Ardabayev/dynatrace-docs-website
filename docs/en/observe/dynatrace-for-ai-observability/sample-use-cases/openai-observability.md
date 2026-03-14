@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:31:04.024459
 
 # OpenAI Observability
 
-# OpenAI Observability
 
 * Latest Dynatrace
 * Tutorial
@@ -56,13 +55,10 @@ For more configuration options, see the [Get started with AI Observability](../g
    export AZURE_OPENAI_API_KEY=your_api_key
 
 
-
    export AZURE_OPENAI_API_VERSION='2024-08-01-preview'
 
 
-
    export AZURE_OPENAI_ENDPOINT=your_endpoint
-
 
 
    export AZURE_OPENAI_DEPLOYMENT=your_deployment
@@ -75,13 +71,10 @@ For more configuration options, see the [Get started with AI Observability](../g
    cd python-backend
 
 
-
    python3.12 -m venv .venv
 
 
-
    source .venv/bin/activate
-
 
 
    pip install -r requirements.txt
@@ -90,7 +83,6 @@ For more configuration options, see the [Get started with AI Observability](../g
 
    ```
    cd ui
-
 
 
    npm install
@@ -135,73 +127,55 @@ To extract the token count from the OpenAI response and report those measurement
 function report_metric(openai_response) {
 
 
-
 var post_data = "openai.promt_token_count,model=" + openai_response.model + " " + openai_response.usage.prompt_tokens + "\n";
-
 
 
 post_data += "openai.completion_token_count,model=" + openai_response.model + " " + openai_response.usage.completion_tokens + "\n";
 
 
-
 post_data += "openai.total_token_count,model=" + openai_response.model + " " + openai_response.usage.total_tokens + "\n";
-
 
 
 console.log(post_data);
 
 
-
 var post_options = {
-
 
 
 host: 'localhost',
 
 
-
 port: '14499',
-
 
 
 path: '/metrics/ingest',
 
 
-
 method: 'POST',
-
 
 
 headers: {
 
 
-
 'Content-Type': 'text/plain',
-
 
 
 'Content-Length': Buffer.byteLength(post_data)
 
 
-
 }
-
 
 
 };
 
 
-
 var metric_req = http.request(post_options, (resp) => {}).on("error", (err) => { console.log(err); });
-
 
 
 metric_req.write(post_data);
 
 
-
 metric_req.end();
-
 
 
 }

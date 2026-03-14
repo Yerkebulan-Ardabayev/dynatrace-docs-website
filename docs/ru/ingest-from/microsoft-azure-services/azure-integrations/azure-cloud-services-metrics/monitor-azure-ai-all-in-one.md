@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:28.003117
 
 # Мониторинг Azure AI — All In One
 
-# Мониторинг Azure AI — All In One
 
 * Последняя версия Dynatrace
 * Практическое руководство

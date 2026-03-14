@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:31:58.735333
 
 # Failure detection API
 
-# Failure detection API
 
 * Reference
 * Published Jan 11, 2021

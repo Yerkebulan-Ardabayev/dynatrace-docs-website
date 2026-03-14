@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:22:23.769765
 
 # Справочник по источнику данных JMX
 
-# Справочник по источнику данных JMX
 
 * Последняя версия Dynatrace
 * Справочник
@@ -25,9 +24,7 @@ scraped: 2026-03-03T21:22:23.769765
 metrics:
 
 
-
 - key: com.example.somekey
-
 
 
 value: attribute:ThreadCount
@@ -43,17 +40,13 @@ JMX позволяет определять атрибуты со сложным
 metrics:
 
 
-
 - key: com.example.somekey
-
 
 
 value:
 
 
-
 attribute: SomeNonNumericAttribute
-
 
 
 accessor: getSomeNumericValue()
@@ -67,9 +60,7 @@ accessor: getSomeNumericValue()
 metrics:
 
 
-
 - key: com.example.somekey
-
 
 
 value: const:1
@@ -87,9 +78,7 @@ value: const:1
 dimensions:
 
 
-
 - key: k1
-
 
 
 value: const:constant_value
@@ -103,13 +92,10 @@ value: const:constant_value
 query: java.lang:type=GarbageCollector,name=*
 
 
-
 dimensions:
 
 
-
 - key: k1
-
 
 
 value: property:name
@@ -125,13 +111,10 @@ value: property:name
 query: java.lang:type=Compilation
 
 
-
 dimensions:
 
 
-
 - key: k1
-
 
 
 value: attribute:Name
@@ -145,21 +128,16 @@ value: attribute:Name
 query: java.lang:type=Compilation
 
 
-
 dimensions:
-
 
 
 - key: k1
 
 
-
 value:
 
 
-
 attribute: SomeAttribute
-
 
 
 accessor: getName()
@@ -189,77 +167,58 @@ accessor: getName()
 vars:
 
 
-
 - id: gc_name_filter
-
 
 
 displayName: Garbage Collector Name
 
 
-
 type: text
-
 
 
 jmx:
 
 
-
 groups:
-
 
 
 - group: jvm
 
 
-
 subgroups:
-
 
 
 - subgroup: basic
 
 
-
 query: java.lang:type=GarbageCollector
-
 
 
 queryFilters:
 
 
-
 - field: name
-
 
 
 filter: var:gc_name_filter
 
 
-
 dimensions:
-
 
 
 - key: k1
 
 
-
 value: property:name
-
 
 
 metrics:
 
 
-
 - key: com.example.jmx.var
 
 
-
 type: count
-
 
 
 value: attribute:CollectionTime
@@ -277,65 +236,49 @@ value: attribute:CollectionTime
 vars:
 
 
-
 - id: my_variable
-
 
 
 displayName: My Variable
 
 
-
 type: text
-
 
 
 jmx:
 
 
-
 groups:
-
 
 
 - group: jvm
 
 
-
 subgroups:
-
 
 
 - subgroup: variable as dimension value
 
 
-
 query: "java.lang:type=Threading"
-
 
 
 dimensions:
 
 
-
 - key: my_dimension
-
 
 
 value: var:my_variable
 
 
-
 metrics:
-
 
 
 - key: com.example.jmx-reference.var-dimension
 
 
-
 type: gauge
-
 
 
 value: attribute:ThreadCount
@@ -360,29 +303,22 @@ value: attribute:ThreadCount
 - query: Catalina:type=Manager,host=*,context=*
 
 
-
 dimensions:
-
 
 
 - key: host
 
 
-
 value: attribute:host
-
 
 
 metrics:
 
 
-
 - key: metric_activeSessions_1752841036351
 
 
-
 value: attribute:activeSessions
-
 
 
 type: gauge_statcounter

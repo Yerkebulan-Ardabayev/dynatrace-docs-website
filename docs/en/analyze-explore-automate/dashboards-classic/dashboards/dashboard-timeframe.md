@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:29.970843
 
 # Dynatrace dashboard timeframe and management zone settings
 
-# Dynatrace dashboard timeframe and management zone settings
 
 * Classic
 * How-to guide

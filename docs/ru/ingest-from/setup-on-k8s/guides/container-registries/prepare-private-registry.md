@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:22.301535
 
 # Хранение образов Dynatrace в приватных реестрах
 
-# Хранение образов Dynatrace в приватных реестрах
 
 * Последняя версия Dynatrace
 * Чтение: 7 мин
@@ -83,7 +82,6 @@ Docker CLI
 skopeo copy --all docker://public.ecr.aws/dynatrace/dynatrace-operator:<tag> \
 
 
-
 docker://registry.my-company.com/dynatrace-operator:<tag>
 ```
 
@@ -93,7 +91,6 @@ docker://registry.my-company.com/dynatrace-operator:<tag>
 
 ```
 skopeo copy --all docker://public.ecr.aws/dynatrace/dynatrace-activegate:<tag> \
-
 
 
 docker://registry.my-company.com/dynatrace-activegate:<tag>
@@ -107,7 +104,6 @@ docker://registry.my-company.com/dynatrace-activegate:<tag>
 skopeo copy --all docker://public.ecr.aws/dynatrace/dynatrace-codemodules:<tag> \
 
 
-
 docker://registry.my-company.com/dynatrace-codemodules:<tag>
 ```
 
@@ -119,7 +115,6 @@ docker://registry.my-company.com/dynatrace-codemodules:<tag>
 skopeo copy --all docker://public.ecr.aws/dynatrace/dynatrace-oneagent:<tag> \
 
 
-
 docker://registry.my-company.com/dynatrace-oneagent:<tag>
 ```
 
@@ -129,7 +124,6 @@ docker://registry.my-company.com/dynatrace-oneagent:<tag>
 
 ```
 skopeo copy --all docker://public.ecr.aws/dynatrace/dynatrace-k8s-node-config-collector:<tag> \
-
 
 
 docker://registry.my-company.com/dynatrace-k8s-node-config-collector:<tag>
@@ -201,9 +195,7 @@ skopeo login -u <your-environment-id> -p <your-paas-token> <your-environment-url
 skopeo copy --override-arch amd64 --override-os linux
 
 
-
 docker://<your_environment_domain_name>/linux/oneagent:<tag-with-raw-suffix> \
-
 
 
 docker://registry.my-company.com/dynatrace-oneagent-classic:<tag-with-raw-suffix>

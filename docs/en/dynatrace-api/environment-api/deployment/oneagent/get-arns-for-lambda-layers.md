@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:18.857315
 
 # Deployment API - View ARNs for AWS Lambda layers
 
-# Deployment API - View ARNs for AWS Lambda layers
 
 * Reference
 * Published Jul 29, 2022
@@ -76,41 +75,31 @@ Latest information about available AWS lambda layers
 {
 
 
-
 "arns": [
-
 
 
 {
 
 
-
 "arch": "string",
-
 
 
 "arn": "string",
 
 
-
 "region": "string",
-
 
 
 "techType": "string",
 
 
-
 "withCollector": "string"
-
 
 
 }
 
 
-
 ]
-
 
 
 }

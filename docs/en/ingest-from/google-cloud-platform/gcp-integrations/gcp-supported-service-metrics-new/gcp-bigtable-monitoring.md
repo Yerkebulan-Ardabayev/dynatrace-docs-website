@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:34:37.242463
 
 # Google Cloud Bigtable monitoring
 
-# Google Cloud Bigtable monitoring
 
 * Latest Dynatrace
 * How-to guide

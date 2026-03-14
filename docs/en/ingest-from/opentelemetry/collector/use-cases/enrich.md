@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:31.410651
 
 # Enrich OTLP with OneAgent data (non-containerized)
 
-# Enrich OTLP with OneAgent data (non-containerized)
 
 * Latest Dynatrace
 * How-to guide
@@ -40,117 +39,88 @@ See [Collector Deployment](../deployment.md "How to deploy Dynatrace OTel Collec
 receivers:
 
 
-
 otlp:
-
 
 
 protocols:
 
 
-
 grpc:
-
 
 
 endpoint: 0.0.0.0:4317
 
 
-
 http:
-
 
 
 endpoint: 0.0.0.0:4318
 
 
-
 processors:
-
 
 
 resourcedetection/dynatrace:
 
 
-
 detectors: [dynatrace]
-
 
 
 override: false
 
 
-
 exporters:
-
 
 
 otlp_http:
 
 
-
 endpoint: ${env:DT_ENDPOINT}
-
 
 
 headers:
 
 
-
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
-
 
 
 service:
 
 
-
 pipelines:
-
 
 
 traces:
 
 
-
 receivers: [otlp]
-
 
 
 processors: [resourcedetection/dynatrace]
 
 
-
 exporters: [otlp_http]
-
 
 
 metrics:
 
 
-
 receivers: [otlp]
 
 
-
 processors: [resourcedetection/dynatrace]
-
 
 
 exporters: [otlp_http]
 
 
-
 logs:
-
 
 
 receivers: [otlp]
 
 
-
 processors: [resourcedetection/dynatrace]
-
 
 
 exporters: [otlp_http]

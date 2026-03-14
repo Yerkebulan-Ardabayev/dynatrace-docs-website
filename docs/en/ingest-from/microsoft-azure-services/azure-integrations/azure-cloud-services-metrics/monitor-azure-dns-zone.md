@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:36:09.114889
 
 # Azure DNS Zone monitoring
 
-# Azure DNS Zone monitoring
 
 * Latest Dynatrace
 * How-to guide

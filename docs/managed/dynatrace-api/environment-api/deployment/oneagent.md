@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Deployment API - OneAgent
 
-# Deployment API - OneAgent
 
 * Overview
 * Updated on Aug 26, 2025

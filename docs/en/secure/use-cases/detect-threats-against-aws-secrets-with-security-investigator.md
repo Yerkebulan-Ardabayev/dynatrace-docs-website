@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:38:02.748633
 
 # Detect threats against your AWS Secrets with Investigations
 
-# Detect threats against your AWS Secrets with Investigations
 
 * Latest Dynatrace
 * Tutorial
@@ -52,7 +51,6 @@ Once your CloudTrail logs are ingested into Dynatrace, follow these steps to fet
    fetch logs, from: -30min
 
 
-
    | filter aws.service == "cloudtrail"
    ```
 4. Select ![Run](https://dt-cdn.net/images/run-c2f8c2f63c.svg "Run") **Run** to display results.
@@ -65,9 +63,7 @@ Once your CloudTrail logs are ingested into Dynatrace, follow these steps to fet
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
-
 
 
    | filter aws.service == "cloudtrail"
@@ -96,13 +92,10 @@ Follow the steps below to simplify log analysis, speed up investigations, and ma
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
 
 
-
    | filter aws.service == "cloudtrail"
-
 
 
    | parse content, "JSON:event"
@@ -136,53 +129,40 @@ To detect key creations where external key material was used
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
-
 
 
    | filter aws.service == "cloudtrail"
 
 
-
    | parse content, "json:event"
-
 
 
    | filter event[eventName] == "CreateKey"
 
 
-
    | filterOut startsWith(event[requestParameters][origin], "AWS_")
-
 
 
    | fields {
 
 
-
    eventName = event[eventName],
-
 
 
    origin    = event[requestParameters][origin],
 
 
-
    keyUsage  = event[responseElements][keyMetadata][keyUsage],
-
 
 
    region    = event[awsRegion],
 
 
-
    userARN   = event[userIdentity][arn],
 
 
-
    keyId     = event[responseElements][keyMetadata][keyId]
-
 
 
    }
@@ -219,45 +199,34 @@ To see if someone is trying to access such events in your CloudTrail logs
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
-
 
 
    | filter aws.service == "cloudtrail"
 
 
-
    | parse content, "json:event"
-
 
 
    | filter event[eventName] == "GetSecretValue"
 
 
-
    and event[errorCode] == "AccessDenied"
-
 
 
    and event[errorMessage] == "Access to KMS is not allowed"
 
 
-
    | summarize event_count = count(), by: {
-
 
 
    sourceIPAddress = event[sourceIPAddress],
 
 
-
    awsRegion = event[awsRegion],
 
 
-
    userARN = event[userIdentity][arn]
-
 
 
    }
@@ -286,53 +255,40 @@ To see if such events occur in your CloudTrail logs
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
-
 
 
    | filter aws.service == "cloudtrail"
 
 
-
    | parse content, "json:event"
-
 
 
    | filter event[eventName] == "GetSecretValue"
 
 
-
    and event[errorCode] == "AccessDenied"
-
 
 
    | parse event[errorMessage], "LD ':secret:' STRING:secretId"
 
 
-
    | filter isNotNull(secretId)
-
 
 
    | summarize count(), by: {
 
 
-
    sourceIPAddress = event[sourceIPAddress],
-
 
 
    awsRegion = event[awsRegion],
 
 
-
    userARN = event[userIdentity][arn],
 
 
-
    secretId
-
 
 
    }
@@ -362,57 +318,43 @@ To see if such events are present in your CloudTrail logs
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
-
 
 
    | filter aws.service == "cloudtrail"
 
 
-
    | parse content, "json:event"
-
 
 
    | filter event[eventName] == "GetSecretValue"
 
 
-
    and event[errorCode] == "ResourceNotFoundException"
-
 
 
    | summarize {
 
 
-
    event_count = count(),
-
 
 
    distinct_secrets = countDistinct(event[requestParameters][secretId])
 
 
-
    }, by: {
-
 
 
    sourceIPAddress = event[sourceIPAddress],
 
 
-
    awsRegion = event[awsRegion],
-
 
 
    userARN   = event[userIdentity][arn]
 
 
-
    }
-
 
 
    | sort distinct_secrets desc

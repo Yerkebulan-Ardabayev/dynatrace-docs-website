@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Process groups
 
-# Process groups
 
 * Explanation
 * 3-min read

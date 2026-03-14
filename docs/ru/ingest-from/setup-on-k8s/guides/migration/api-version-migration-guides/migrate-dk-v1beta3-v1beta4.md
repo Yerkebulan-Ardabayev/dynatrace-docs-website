@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:31:57.056358
 
 # Миграция DynaKube с v1beta3 на v1beta4
 
-# Миграция DynaKube с v1beta3 на v1beta4
 
 * Latest Dynatrace
 * Reference
@@ -47,33 +46,25 @@ scraped: 2026-03-05T21:31:57.056358
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack: {} # same as autoUpdate: true
-
 
 
   # ...
@@ -84,85 +75,64 @@ scraped: 2026-03-05T21:31:57.056358
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack:
-
 
 
   image: ... # same effect as autoUpdate: false
 
 
-
   codeModulesImage: # same effect as autoUpdate: false
-
 
 
   # ...
 
 
-
   ---
-
 
 
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack:
 
 
-
   version: ... # replaces autoUpdate: false
-
 
 
   # ...

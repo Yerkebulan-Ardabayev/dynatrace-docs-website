@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:50.868896
 
 # Supported authentication methods in Synthetic Monitoring
 
-# Supported authentication methods in Synthetic Monitoring
 
 * Classic
 * How-to guide

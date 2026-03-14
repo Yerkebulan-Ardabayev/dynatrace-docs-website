@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:10.680904
 
 # Инструментирование приложения .NET с помощью OpenTelemetry
 
-# Инструментирование приложения .NET с помощью OpenTelemetry
 
 * Последняя версия Dynatrace
 * Руководство
@@ -83,9 +82,7 @@ scraped: 2026-03-06T21:26:10.680904
 OTEL_EXPORTER_OTLP_ENDPOINT=[URL]
 
 
-
 OTEL_EXPORTER_OTLP_HEADERS="Authorization=Api-Token [TOKEN]"
-
 
 
 OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE=delta
@@ -107,17 +104,13 @@ ASP.NET
    dotnet add package Microsoft.Extensions.Logging
 
 
-
    dotnet add package OpenTelemetry.Extensions.Hosting
-
 
 
    dotnet add package OpenTelemetry
 
 
-
    dotnet add package OpenTelemetry.Api
-
 
 
    dotnet add package OpenTelemetry.Exporter.OpenTelemetryProtocol
@@ -128,37 +121,28 @@ ASP.NET
    using OpenTelemetry;
 
 
-
    using OpenTelemetry.Trace;
-
 
 
    using OpenTelemetry.Exporter;
 
 
-
    using OpenTelemetry.Metrics;
-
 
 
    using OpenTelemetry.Logs;
 
 
-
    using OpenTelemetry.Resources;
-
 
 
    using OpenTelemetry.Context.Propagation;
 
 
-
    using System.Diagnostics;
 
 
-
    using System.Diagnostics.Metrics;
-
 
 
    using Microsoft.Extensions.Logging;
@@ -169,17 +153,13 @@ ASP.NET
    private static string DT_API_URL = ""; // TODO: Provide your SaaS/Managed URL here
 
 
-
    private static string DT_API_TOKEN = ""; // TODO: Provide the OpenTelemetry-scoped access token here
-
 
 
    private const string activitySource = "Dynatrace.DotNetApp.Sample"; // TODO: Provide a descriptive name for your application here
 
 
-
    public static readonly ActivitySource MyActivitySource = new ActivitySource(activitySource);
-
 
 
    private static ILoggerFactory loggerFactoryOT;
@@ -194,241 +174,181 @@ ASP.NET
    private static void initOpenTelemetry(IServiceCollection services)
 
 
-
    {
-
 
 
    List<KeyValuePair<string, object>> dt_metadata = new List<KeyValuePair<string, object>>();
 
 
-
    foreach (string name in new string[] {"dt_metadata_e617c525669e072eebe3d0f08212e8f2.properties",
-
 
 
    "/var/lib/dynatrace/enrichment/dt_metadata.properties",
 
 
-
    "/var/lib/dynatrace/enrichment/dt_host_metadata.properties"}) {
-
 
 
    try {
 
 
-
    foreach (string line in System.IO.File.ReadAllLines(name.StartsWith("/var") ? name : System.IO.File.ReadAllText(name))) {
-
 
 
    var keyvalue = line.Split("=");
 
 
-
    dt_metadata.Add( new KeyValuePair<string, object>(keyvalue[0], keyvalue[1]));
 
 
-
    }
 
 
-
    }
-
 
 
    catch { }
 
 
-
    }
-
 
 
    Action<ResourceBuilder> configureResource = r => r
 
 
-
    .AddService(serviceName: "dotnet-quickstart") //TODO Replace with the name of your application
-
 
 
    .AddAttributes(dt_metadata);
 
 
-
    services.AddOpenTelemetry()
-
 
 
    .ConfigureResource(configureResource)
 
 
-
    .WithTracing(builder => {
-
 
 
    builder
 
 
-
    .SetSampler(new AlwaysOnSampler())
 
 
-
    .AddSource(MyActivitySource.Name)
-
 
 
    .AddOtlpExporter(options =>
 
 
-
    {
-
 
 
    options.Endpoint = new Uri(Environment.GetEnvironmentVariable("DT_API_URL")+ "/v1/traces");
 
 
-
    options.Protocol = OpenTelemetry.Exporter.OtlpExportProtocol.HttpProtobuf;
-
 
 
    options.Headers = $"Authorization=Api-Token {Environment.GetEnvironmentVariable("DT_API_TOKEN")}";
 
 
-
    });
 
 
-
    })
-
 
 
    .WithMetrics(builder => {
 
 
-
    builder
-
 
 
    .AddMeter("my-meter")
 
 
-
    .AddOtlpExporter((OtlpExporterOptions exporterOptions, MetricReaderOptions readerOptions) =>
-
 
 
    {
 
 
-
    exporterOptions.Endpoint = new Uri(Environment.GetEnvironmentVariable("DT_API_URL")+ "/v1/metrics");
-
 
 
    exporterOptions.Headers = $"Authorization=Api-Token {Environment.GetEnvironmentVariable("DT_API_TOKEN")}";
 
 
-
    exporterOptions.Protocol = OpenTelemetry.Exporter.OtlpExportProtocol.HttpProtobuf;
-
 
 
    readerOptions.TemporalityPreference = MetricReaderTemporalityPreference.Delta;
 
 
-
    });
 
 
-
    });
-
 
 
    var resourceBuilder = ResourceBuilder.CreateDefault();
 
 
-
    configureResource!(resourceBuilder);
-
 
 
    loggerFactoryOT = LoggerFactory.Create(builder => {
 
 
-
    builder
-
 
 
    .AddOpenTelemetry(options => {
 
 
-
    options.SetResourceBuilder(resourceBuilder).AddOtlpExporter(options => {
-
 
 
    options.Endpoint = new Uri(Environment.GetEnvironmentVariable("DT_API_URL")+ "/v1/logs");
 
 
-
    options.Headers = $"Authorization=Api-Token {Environment.GetEnvironmentVariable("DT_API_TOKEN")}";
-
 
 
    options.ExportProcessorType = OpenTelemetry.ExportProcessorType.Batch;
 
 
-
    options.Protocol = OtlpExportProtocol.HttpProtobuf;
 
 
-
    });
-
 
 
    })
 
 
-
    .AddConsole();
-
 
 
    });
 
 
-
    Sdk.CreateTracerProviderBuilder()
-
 
 
    .SetSampler(new AlwaysOnSampler())
 
 
-
    .AddSource(MyActivitySource.Name)
-
 
 
    .ConfigureResource(configureResource);
 
 
-
    // add-logging
-
 
 
    }
@@ -442,29 +362,22 @@ ASP.NET
    dotnet add package Microsoft.Extensions.Logging
 
 
-
    dotnet add package OpenTelemetry.Extensions.Hosting
-
 
 
    dotnet add package OpenTelemetry
 
 
-
    dotnet add package OpenTelemetry.Api
-
 
 
    dotnet add package OpenTelemetry.Exporter.OpenTelemetryProtocol
 
 
-
    dotnet add package OpenTelemetry.Instrumentation.AspNetCore
 
 
-
    dotnet add package OpenTelemetry.Instrumentation.Http
-
 
 
    dotnet add package OpenTelemetry.Instrumentation.Runtime
@@ -475,41 +388,31 @@ ASP.NET
    using OpenTelemetry;
 
 
-
    using OpenTelemetry.Trace;
-
 
 
    using OpenTelemetry.Exporter;
 
 
-
    using OpenTelemetry.Metrics;
-
 
 
    using OpenTelemetry.Logs;
 
 
-
    using OpenTelemetry.Resources;
-
 
 
    using OpenTelemetry.Context.Propagation;
 
 
-
    using System.Diagnostics;
-
 
 
    using System.Diagnostics.Metrics;
 
 
-
    using Microsoft.Extensions.Logging;
-
 
 
    using OpenTelemetry.Instrumentation.AspNetCore;
@@ -520,17 +423,13 @@ ASP.NET
    private static string DT_API_URL = ""; // TODO: Provide your SaaS/Managed URL here
 
 
-
    private static string DT_API_TOKEN = ""; // TODO: Provide the OpenTelemetry-scoped access token here
-
 
 
    private const string activitySource = "Dynatrace.DotNetApp.Sample"; // TODO: Provide a descriptive name for your application here
 
 
-
    public static readonly ActivitySource MyActivitySource = new ActivitySource(activitySource);
-
 
 
    private static ILoggerFactory loggerFactoryOT;
@@ -545,273 +444,205 @@ ASP.NET
    private static void initOpenTelemetry(){
 
 
-
    var port = System.Environment.GetEnvironmentVariable("PORT") ?? "8080";
-
 
 
    var appBuilder = WebApplication.CreateBuilder();
 
 
-
    appBuilder.WebHost.ConfigureKestrel(options =>{
-
 
 
    options.ListenAnyIP(Convert.ToInt32(port)); // hardcoding the port
 
 
-
    });
-
 
 
    List<KeyValuePair<string, object>> dt_metadata = new List<KeyValuePair<string, object>>();
 
 
-
    foreach (string name in new string[] {"dt_metadata_e617c525669e072eebe3d0f08212e8f2.properties",
-
 
 
    "/var/lib/dynatrace/enrichment/dt_metadata.properties",
 
 
-
    "/var/lib/dynatrace/enrichment/dt_host_metadata.properties"}) {
-
 
 
    try {
 
 
-
    foreach (string line in System.IO.File.ReadAllLines(name.StartsWith("/var") ? name : System.IO.File.ReadAllText(name))) {
-
 
 
    var keyvalue = line.Split("=");
 
 
-
    dt_metadata.Add( new KeyValuePair<string, object>(keyvalue[0], keyvalue[1]));
 
 
-
    }
 
 
-
    }
-
 
 
    catch { }
 
 
-
    }
-
 
 
    Action<ResourceBuilder> configureResource = r => r
 
 
-
    .AddService(serviceName: "dotnetManual") //TODO Replace with the name of your application
-
 
 
    .AddAttributes(dt_metadata);
 
 
-
    appBuilder.Services.AddOpenTelemetry()
-
 
 
    .ConfigureResource(configureResource)
 
 
-
    .WithTracing(builder =>{
-
 
 
    appBuilder.Services.Configure<AspNetCoreTraceInstrumentationOptions>(appBuilder.Configuration.GetSection("AspNetCoreInstrumentation"));
 
 
-
    builder
-
 
 
    .AddSource(MyActivitySource.Name)
 
 
-
    .SetSampler(new AlwaysOnSampler())
-
 
 
    .AddHttpClientInstrumentation()
 
 
-
    .AddAspNetCoreInstrumentation()
-
 
 
    .AddOtlpExporter(otlpOptions =>{
 
 
-
    otlpOptions.Endpoint = new Uri(Environment.GetEnvironmentVariable("DT_API_URL")+ "/v1/traces");
-
 
 
    otlpOptions.Protocol = OpenTelemetry.Exporter.OtlpExportProtocol.HttpProtobuf;
 
 
-
    otlpOptions.Headers = $"Authorization=Api-Token {Environment.GetEnvironmentVariable("DT_API_TOKEN")}";
 
 
-
    });
-
 
 
    })
 
 
-
    .WithMetrics(builder =>{
-
 
 
    builder
 
 
-
    .AddMeter("my-meter")
-
 
 
    // .AddMeter(Instrumentation.MeterName)
 
 
-
    .AddRuntimeInstrumentation()
-
 
 
    .AddHttpClientInstrumentation()
 
 
-
    .AddAspNetCoreInstrumentation()
-
 
 
    .AddOtlpExporter((OtlpExporterOptions exporterOptions, MetricReaderOptions readerOptions) => {
 
 
-
    exporterOptions.Endpoint = new Uri(Environment.GetEnvironmentVariable("DT_API_URL")+ "/v1/metrics");
-
 
 
    exporterOptions.Headers = $"Authorization=Api-Token {Environment.GetEnvironmentVariable("DT_API_TOKEN")}";
 
 
-
    exporterOptions.Protocol = OpenTelemetry.Exporter.OtlpExportProtocol.HttpProtobuf;
-
 
 
    readerOptions.TemporalityPreference = MetricReaderTemporalityPreference.Delta;
 
 
-
    });
-
 
 
    appBuilder.Logging.ClearProviders();
 
 
-
    appBuilder.Logging.AddOpenTelemetry(options =>
-
 
 
    {
 
 
-
    var resourceBuilder = ResourceBuilder.CreateDefault();
-
 
 
    configureResource(resourceBuilder);
 
 
-
    options.SetResourceBuilder(resourceBuilder);
-
 
 
    options.AddOtlpExporter(otlpOptions => {
 
 
-
    otlpOptions.Endpoint = new Uri(Environment.GetEnvironmentVariable("DT_API_URL")+ "/v1/logs");
-
 
 
    otlpOptions.Headers = $"Authorization=Api-Token {Environment.GetEnvironmentVariable("DT_API_TOKEN")}";
 
 
-
    otlpOptions.ExportProcessorType = OpenTelemetry.ExportProcessorType.Batch;
-
 
 
    otlpOptions.Protocol = OtlpExportProtocol.HttpProtobuf;
 
 
-
    });
 
 
-
    });
-
 
 
    appBuilder.Services.AddControllers();
 
 
-
    appBuilder.Services.AddEndpointsApiExplorer();
-
 
 
    var app = appBuilder.Build();
 
 
-
    app.MapControllers();
-
 
 
    app.Run();
 
 
-
    });
-
 
 
    }
@@ -827,9 +658,7 @@ ASP.NET
 using var activity = Startup.MyActivitySource.StartActivity("Call to /myendpoint", ActivityKind.Consumer, parentContext.ActivityContext);
 
 
-
 activity?.SetTag("http.method", "GET");
-
 
 
 activity?.SetTag("net.protocol.version", "1.1");
@@ -868,13 +697,10 @@ activity?.SetTag("net.protocol.version", "1.1");
 var logger = loggerFactoryOT.CreateLogger<Startup>();
 
 
-
 services.AddSingleton<ILoggerFactory>(loggerFactoryOT);
 
 
-
 services.AddSingleton(logger);
-
 
 
 logger.LogInformation(eventId: 123, "Log line");
@@ -894,25 +720,19 @@ logger.LogInformation(eventId: 123, "Log line");
 private CompositeTextMapPropagator propagator = new CompositeTextMapPropagator(new TextMapPropagator[] {
 
 
-
 new TraceContextPropagator(),
-
 
 
 new BaggagePropagator(),
 
 
-
 });
-
 
 
 private static readonly Func<HttpRequest, string, IEnumerable<string>> valueGetter = (request, name) => request.Headers[name];
 
 
-
 var parentContext = propagator.Extract(default, HttpContext.Request, valueGetter);
-
 
 
 using var activity = MyActivitySource.StartActivity("my-span", ActivityKind.Consumer, parentContext.ActivityContext);
@@ -928,33 +748,25 @@ using var activity = MyActivitySource.StartActivity("my-span", ActivityKind.Cons
 private CompositeTextMapPropagator propagator = new CompositeTextMapPropagator(new TextMapPropagator[] {
 
 
-
 new TraceContextPropagator(),
-
 
 
 new BaggagePropagator()
 
 
-
 });
-
 
 
 private static Action<HttpRequestMessage, string, string> _headerValueSetter => (request, name, value) => {
 
 
-
 request.Headers.Remove(name);
-
 
 
 request.Headers.Add(name, value);
 
 
-
 };
-
 
 
 propagator.Inject(new PropagationContext(activity!.Context, Baggage.Current), request, _headerValueSetter);

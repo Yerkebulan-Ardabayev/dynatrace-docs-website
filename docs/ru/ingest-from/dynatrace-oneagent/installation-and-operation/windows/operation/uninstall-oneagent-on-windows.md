@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:27.656584
 
 # Удаление Dynatrace OneAgent в Windows
 
-# Удаление Dynatrace OneAgent в Windows
 
 * Latest Dynatrace
 * 1-min read
@@ -36,13 +35,10 @@ scraped: 2026-03-06T21:19:27.656584
 > wmic product where name='Dynatrace OneAgent' get IdentifyingNumber
 
 
-
 IdentifyingNumber
 
 
-
 {12345678-ABCD-1234-ABCD-12345678ABCD}
-
 
 
 > msiexec /x {12345678-ABCD-1234-ABCD-12345678ABCD} /quiet /l*vx uninstall.log
@@ -54,7 +50,6 @@ IdentifyingNumber
 
 ```
 PS> $app = Get-WmiObject win32_product -filter "Name like 'Dynatrace OneAgent'"
-
 
 
 PS> msiexec /x $app.IdentifyingNumber /quiet /l*vx uninstall.log

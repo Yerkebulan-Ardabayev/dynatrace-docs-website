@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:24.265515
 
 # Маскирование конфиденциальных данных с помощью OpenTelemetry Collector
 
-# Маскирование конфиденциальных данных с помощью OpenTelemetry Collector
 
 * Latest Dynatrace
 * Практическое руководство
@@ -57,109 +56,82 @@ scraped: 2026-03-06T21:32:24.265515
 receivers:
 
 
-
 otlp:
-
 
 
 protocols:
 
 
-
 grpc:
-
 
 
 endpoint: 0.0.0.0:4317
 
 
-
 http:
-
 
 
 endpoint: 0.0.0.0:4318
 
 
-
 processors:
-
 
 
 PLACEHOLDER-FOR-PROCESSOR-CONFIGURATIONS
 
 
-
 exporters:
-
 
 
 otlp_http:
 
 
-
 endpoint: ${env:DT_ENDPOINT}
-
 
 
 headers:
 
 
-
 "Authorization": "Api-Token ${env:DT_API_TOKEN}"
-
 
 
 service:
 
 
-
 pipelines:
-
 
 
 traces:
 
 
-
 receivers: [otlp]
-
 
 
 processors: [PLACEHOLDER-FOR-PROCESSOR-REFERENCES]
 
 
-
 exporters: [otlp_http]
-
 
 
 metrics:
 
 
-
 receivers: [otlp]
 
 
-
 processors: [PLACEHOLDER-FOR-PROCESSOR-REFERENCES]
-
 
 
 exporters: [otlp_http]
 
 
-
 logs:
-
 
 
 receivers: [otlp]
 
 
-
 processors: [PLACEHOLDER-FOR-PROCESSOR-REFERENCES]
-
 
 
 exporters: [otlp_http]
@@ -178,53 +150,40 @@ exporters: [otlp_http]
 transform:
 
 
-
 error_mode: ignore
-
 
 
 trace_statements:
 
 
-
 - context: span
-
 
 
 statements: &filter-statements
 
 
-
 # это замаскирует не только IP-адреса клиентов конечных пользователей,
-
 
 
 # но и адрес сервера, выступающего в роли клиента при установлении соединения с другим сервером
 
 
-
 - set(attributes["client.address"], "<masked-clientip-ot>")
-
 
 
 metric_statements:
 
 
-
 - context: datapoint
-
 
 
 statements: *filter-statements
 
 
-
 log_statements:
 
 
-
 - context: log
-
 
 
 statements: *filter-statements
@@ -238,45 +197,34 @@ statements: *filter-statements
 transform:
 
 
-
 error_mode: ignore
-
 
 
 trace_statements:
 
 
-
 - context: span
-
 
 
 statements: &filter-statements
 
 
-
 - set(attributes["user.email"], "<masked-email-ot>")
-
 
 
 metric_statements:
 
 
-
 - context: datapoint
-
 
 
 statements: *filter-statements
 
 
-
 log_statements:
 
 
-
 - context: log
-
 
 
 statements: *filter-statements
@@ -290,17 +238,13 @@ statements: *filter-statements
 redaction:
 
 
-
 allow_all_keys: true
-
 
 
 blocked_values:
 
 
-
 - dt0[a-z]0[1-9]\.[A-Za-z0-9]{24}\.([A-Za-z0-9]{64})
-
 
 
 summary: info
@@ -314,53 +258,40 @@ summary: info
 transform:
 
 
-
 error_mode: ignore
-
 
 
 trace_statements:
 
 
-
 - context: span
-
 
 
 statements: &filter-statements
 
 
-
 - set(attributes["user.id"], "<masked-userid-ot>")
-
 
 
 - set(attributes["user.name"], "<masked-username-ot>")
 
 
-
 - set(attributes["user.full_name"], "<masked-userfullname-ot>")
-
 
 
 metric_statements:
 
 
-
 - context: datapoint
-
 
 
 statements: *filter-statements
 
 
-
 log_statements:
 
 
-
 - context: log
-
 
 
 statements: *filter-statements
@@ -374,53 +305,40 @@ statements: *filter-statements
 transform:
 
 
-
 error_mode: ignore
-
 
 
 trace_statements:
 
 
-
 - context: span
-
 
 
 statements: &filter-statements
 
 
-
 - replace_all_patterns(attributes, "value", "^3\\s*[47](\\s*[0-9]){9}((\\s*[0-9]){4})$", "<masked-pcard$$2-ot>") where IsValidLuhn(attributes["value"])
-
 
 
 - replace_all_patterns(attributes, "value", "^(5[1-5]([0-9]){2}|222[1-9]|22[3-9]\\d|2[3-6]\\d{2}|27[0-1]\\d|2720)(\\s*[0-9]){8}\\s*([0-9]{4})$", "<masked-pcard$$4-ot>") where IsValidLuhn(attributes["value"])
 
 
-
 - replace_all_patterns(attributes, "value", "^4(\\s*[0-9]){8,14}\\s*(([0-9]\\s*){4})$", "<masked-pcard$$2-ot>") where IsValidLuhn(attributes["value"])
-
 
 
 metric_statements:
 
 
-
 - context: datapoint
-
 
 
 statements: *filter-statements
 
 
-
 log_statements:
 
 
-
 - context: log
-
 
 
 statements: *filter-statements
@@ -436,17 +354,13 @@ statements: *filter-statements
 redaction:
 
 
-
 allow_all_keys: true
-
 
 
 blocked_values:
 
 
-
 - "^[A-Z]{2}[0-9]{2}(\\s*[A-Z0-9]){8,30}$"
-
 
 
 summary: info
@@ -469,21 +383,16 @@ summary: info
 transform:
 
 
-
 error_mode: ignore
-
 
 
 trace_statements:
 
 
-
 - context: span
 
 
-
 statements:
-
 
 
 - set_semconv_span_name("1.37.0")
@@ -495,21 +404,16 @@ statements:
 transform:
 
 
-
 error_mode: ignore
-
 
 
 trace_statements:
 
 
-
 - context: span
 
 
-
 statements:
-
 
 
 - replace_pattern(name, "(GET /api/v1/users/)\\d+", "$$1{id}")

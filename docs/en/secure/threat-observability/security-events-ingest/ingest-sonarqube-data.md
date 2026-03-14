@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:52.074280
 
 # Ingest SonarQube security and quality events, metrics, and audit logs
 
-# Ingest SonarQube security and quality events, metrics, and audit logs
 
 * Latest Dynatrace
 * Extension
@@ -63,7 +62,6 @@ With the ingested data, you can accomplish various use cases, such as
      fetch logs
 
 
-
      | filter log.source=="SonarQube"
      ```
    * For security finding events:
@@ -72,13 +70,10 @@ With the ingested data, you can accomplish various use cases, such as
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="SonarQube"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -89,13 +84,10 @@ With the ingested data, you can accomplish various use cases, such as
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="SonarQube"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"
@@ -106,13 +98,10 @@ With the ingested data, you can accomplish various use cases, such as
      fetch events
 
 
-
      | filter event.kind == "SDLC_EVENT"
 
 
-
      AND event.type == "control"
-
 
 
      | filter event.provider=="SonarQube"
@@ -123,33 +112,25 @@ With the ingested data, you can accomplish various use cases, such as
      timeseries {
 
 
-
      Vulnerabilities = sum(sonarqube.code.vulnerabilities),
-
 
 
      Hotspots = sum(sonarqube.security.hotspots),
 
 
-
      `Hotspots reviewed` = sum(sonarqube.security.hotspots.reviewed),
-
 
 
      Bugs = sum(sonarqube.bugs),
 
 
-
      Coverage = sum(sonarqube.code.coverage),
-
 
 
      `Duplicated lines` = sum(sonarqube.code.duplication),
 
 
-
      `Code smells` = sum(sonarqube.code.smells)
-
 
 
      }, interval:3h

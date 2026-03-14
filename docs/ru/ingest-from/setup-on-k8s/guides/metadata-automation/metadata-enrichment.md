@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:38.378350
 
 # Настройка директории обогащения
 
-# Настройка директории обогащения
 
 * Latest Dynatrace
 * 2-min read
@@ -36,33 +35,25 @@ scraped: 2026-03-06T21:23:38.378350
 apiVersion: dynatrace.com/v1beta5
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: <dk-name>
-
 
 
 namespace: <dk-namespace>
 
 
-
 spec:
-
 
 
 apiUrl: <dk-apiUrl>
 
 
-
 metadataEnrichment:
-
 
 
 enabled: true
@@ -74,61 +65,46 @@ enabled: true
 apiVersion: dynatrace.com/v1beta5
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: <dk-name>
-
 
 
 namespace: <dk-namespace>
 
 
-
 spec:
-
 
 
 apiUrl: <dk-apiUrl>
 
 
-
 metadataEnrichment:
-
 
 
 enabled: true
 
 
-
 oneAgent:
-
 
 
 cloudNativeFullStack: (or other mode)
 
 
-
 ...
-
 
 
 activeGate:
 
 
-
 capabilities:
 
 
-
 - routing
-
 
 
 ...
@@ -144,17 +120,13 @@ capabilities:
 metadataEnrichment:
 
 
-
 enabled: true
-
 
 
 namespaceSelector:
 
 
-
 matchLabels:
-
 
 
 team: finance
@@ -178,49 +150,37 @@ team: finance
 dt.entity.kubernetes_cluster=<kubernetes-cluster-id>
 
 
-
 dt.kubernetes.cluster.id=<cluster-id>
-
 
 
 dt.kubernetes.workload.kind=<workload-kind>
 
 
-
 dt.kubernetes.workload.name=<workload-name>
-
 
 
 k8s.cluster.name=<cluster-name>
 
 
-
 k8s.cluster.uid=<cluster-uid>
-
 
 
 k8s.container.name=<container-name>
 
 
-
 k8s.namespace.name=<namespace-name>
-
 
 
 k8s.node.name=<node-name>
 
 
-
 k8s.pod.name=<pod-name>
-
 
 
 k8s.pod.uid=<pod-uid>
 
 
-
 k8s.workload.kind=<workload-kind>
-
 
 
 k8s.workload.name=<workload-name>
@@ -232,57 +192,43 @@ k8s.workload.name=<workload-name>
 {
 
 
-
 "dt.entity.kubernetes_cluster": "<kubernetes-cluster-id>",
-
 
 
 "dt.kubernetes.cluster.id": "<cluster-id>",
 
 
-
 "dt.kubernetes.workload.kind": "<workload-kind>",
-
 
 
 "dt.kubernetes.workload.name": "<workload-name>",
 
 
-
 "k8s.cluster.name": "<cluster-name>",
-
 
 
 "k8s.cluster.uid": "<cluster-uid>",
 
 
-
 "k8s.container.name": "<container-name>",
-
 
 
 "k8s.namespace.name": "<namespace-name>",
 
 
-
 "k8s.node.name": "<node-name>",
-
 
 
 "k8s.pod.name": "<pod-name>",
 
 
-
 "k8s.pod.uid": "<pod-uid>",
-
 
 
 "k8s.workload.kind": "<workload-kind>",
 
 
-
 "k8s.workload.name": "<workload-name>"
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:24.120446
 
 # Разрешения в Grail
 
-# Разрешения в Grail
 
 * Latest Dynatrace
 * Практическое руководство
@@ -32,7 +31,6 @@ scraped: 2026-03-06T21:13:24.120446
 
      ```
      ALLOW storage:buckets:read WHERE <conditions>;
-
 
 
      ALLOW <table permission> WHERE <conditions>;
@@ -109,7 +107,6 @@ ALLOW storage:buckets:read WHERE storage:bucket-name MATCH ("default_*", "common
   ALLOW storage:buckets:read WHERE storage:query-consumption="INCLUDED";
 
 
-
   ALLOW storage:buckets:read WHERE storage:bucket-name="common_logs" AND storage:query-consumption="ON_DEMAND";
   ```
 * Всем сохранённым данным во всех бакетах.
@@ -158,7 +155,6 @@ ALLOW storage:logs:read WHERE storage:dt.security_context="TeamA";
 ALLOW storage:logs:read WHERE storage:bucket-name="unrestricted_logs";
 
 
-
 ALLOW storage:logs:read WHERE storage:bucket-name="default_logs" AND storage:dt.security_context="TeamA";
 ```
 
@@ -170,7 +166,6 @@ ALLOW storage:logs:read WHERE storage:bucket-name="default_logs" AND storage:dt.
 
 ```
 // will match both "crn-70400-alpha" and ["crn-70131", "crn-70400-beta", "crn-70500"]
-
 
 
 ALLOW storage:logs:read WHERE storage:dt.security_context MATCH ("crn-70400-*");
@@ -192,9 +187,7 @@ ALLOW storage:logs:read WHERE storage:dt.security_context MATCH ("crn-70400-*");
 ALLOW storage:buckets:read WHERE ... // Убедитесь, что пользователь имеет доступ ко всем соответствующим бакетам
 
 
-
 ALLOW storage:logs:read WHERE storage:k8s.namespace.name="namespace1";
-
 
 
 ALLOW storage:logs:read WHERE storage:dt.host_group.id MATCH ("shared_host_*");
@@ -215,7 +208,6 @@ ALLOW storage:logs:read WHERE storage:dt.host_group.id MATCH ("shared_host_*");
    ALLOW storage:buckets:read WHERE ... // Убедитесь, что пользователь имеет доступ ко всем соответствующим бакетам
 
 
-
    ALLOW storage:logs:read WHERE storage:dt.security_context MATCH ("TeamA");
    ```
 
@@ -233,7 +225,6 @@ ALLOW storage:logs:read WHERE storage:dt.host_group.id MATCH ("shared_host_*");
 ALLOW storage:buckets:read WHERE ... // Убедитесь, что пользователь имеет доступ ко всем соответствующим бакетам
 
 
-
 ALLOW storage:bizevents:read WHERE storage:event.kind="Opportunity Field History";
 ```
 
@@ -247,7 +238,6 @@ ALLOW storage:bizevents:read WHERE storage:event.kind="Opportunity Field History
 
 ```
 ALLOW storage:buckets:read WHERE storage:bucket-name="dt_system_events"
-
 
 
 ALLOW storage:system:read WHERE storage:event.kind="BILLING_EVENT"
@@ -355,9 +345,7 @@ Preview
 ALLOW storage:files:read WHERE storage:file-path startsWith "/lookups/";
 
 
-
 ALLOW storage:files:write WHERE storage:file-path startsWith "/lookups/";
-
 
 
 ALLOW storage:files:delete WHERE storage:file-path startsWith "/lookups/";
@@ -395,7 +383,6 @@ ALLOW storage:files:read WHERE storage:file-path startsWith "/lookups/http_statu
 ALLOW storage:buckets:read WHERE storage:table-name= "logs";
 
 
-
 ALLOW storage:logs:read;
 ```
 
@@ -407,37 +394,28 @@ ALLOW storage:logs:read;
 ALLOW storage:buckets:read;
 
 
-
 ALLOW storage:system:read,
-
 
 
 storage:events:read,
 
 
-
 storage:security.events:read,
-
 
 
 storage:logs:read,
 
 
-
 storage:metrics:read,
-
 
 
 storage:entities:read,
 
 
-
 storage:bizevents:read,
 
 
-
 storage:spans:read,
-
 
 
 storage:smartscape:read;
@@ -455,29 +433,22 @@ storage:smartscape:read;
 ALLOW storage:buckets:read WHERE storage:bucket-name MATCH ("default_*");
 
 
-
 ALLOW storage:events:read,
-
 
 
 storage:logs:read,
 
 
-
 storage:metrics:read,
-
 
 
 storage:entities:read,
 
 
-
 storage:bizevents:read,
 
 
-
 storage:spans:read,
-
 
 
 storage:smartscape:read;
@@ -489,7 +460,6 @@ storage:smartscape:read;
 
 ```
 ALLOW storage:buckets:read WHERE storage:bucket-name MATCH ("dt_*");
-
 
 
 ALLOW storage:system:read;

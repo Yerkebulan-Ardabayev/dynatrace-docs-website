@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:20.064492
 
 # Конечные точки Dynatrace OTLP API
 
-# Конечные точки Dynatrace OTLP API
 
 * Latest Dynatrace
 * Объяснение
@@ -98,9 +97,7 @@ not retryable error: Permanent error: rpc error: code = Unimplemented desc = err
 OTEL_EXPORTER_OTLP_ENDPOINT=[YOUR_BASE_URL]
 
 
-
 OTEL_EXPORTER_OTLP_HEADERS="Authorization=Api-Token [YOUR_TOKEN]"
-
 
 
 OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf

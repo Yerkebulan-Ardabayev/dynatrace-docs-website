@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:50.770565
 
 # Configure a processing pipeline
 
-# Configure a processing pipeline
 
 * Latest Dynatrace
 * Tutorial

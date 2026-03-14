@@ -6,7 +6,6 @@ scraped: 2026-03-01T21:25:54.381923
 
 # GET тег OneAgent JavaScript с SRI
 
-# GET тег OneAgent JavaScript с SRI
 
 * Справочник
 * Обновлено 18 сентября 2025 г.

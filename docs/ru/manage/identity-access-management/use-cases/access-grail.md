@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:18.105486
 
 # Предоставление доступа к Grail
 
-# Предоставление доступа к Grail
 
 * Последняя Dynatrace
 * Практическое руководство
@@ -38,7 +37,6 @@ Dynatrace поставляется с набором встроенных пол
 ALLOW storage:buckets:read WHERE storage:bucket-name STARTSWITH "default_;"
 
 
-
 ALLOW storage:events:read,storage:logs:read,storage:metrics:read,storage:entities:read,storage:bizevents:read,storage:spans:read;
 ```
 
@@ -66,7 +64,6 @@ ALLOW storage:buckets:read WHERE storage:bucket-name startsWith "default_";ALLOW
 ALLOW storage:buckets:read WHERE storage:table-name = "logs";
 
 
-
 ALLOW storage:logs:read;
 ```
 
@@ -86,9 +83,7 @@ ALLOW storage:buckets:read;ALLOW storage:system:read;ALLOW storage:events:read, 
 ALLOW storage:buckets:read;
 
 
-
 ALLOW storage:system:read;
-
 
 
 ALLOW storage:events:read, storage:logs:read, storage:metrics:read, storage:entities:read, storage:bizevents:read,storage:spans:read;

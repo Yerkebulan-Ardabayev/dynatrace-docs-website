@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Extensions 2.0 API
 
-# Extensions 2.0 API
 
 * Reference
 * Published Jan 22, 2021

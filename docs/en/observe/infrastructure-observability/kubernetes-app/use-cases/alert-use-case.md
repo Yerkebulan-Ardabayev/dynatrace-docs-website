@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:33:23.983363
 
 # Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics
 
-# Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics
 
 * Classic
 * Tutorial

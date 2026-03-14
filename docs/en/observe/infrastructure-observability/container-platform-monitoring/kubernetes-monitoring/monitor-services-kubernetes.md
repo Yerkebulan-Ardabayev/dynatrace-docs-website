@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:46.421691
 
 # Monitor Kubernetes/OpenShift services
 
-# Monitor Kubernetes/OpenShift services
 
 * Classic
 * 3-min read

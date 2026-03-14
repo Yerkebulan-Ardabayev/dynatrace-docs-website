@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:31:34.112149
 
 # Enrich OTLP requests with Kubernetes data
 
-# Enrich OTLP requests with Kubernetes data
 
 * Latest Dynatrace
 * How-to guide
@@ -43,409 +42,307 @@ In addition to the Collector configuration, be sure to also update your Kubernet
 extensions:
 
 
-
 health_check:
-
 
 
 endpoint: ${env:MY_POD_IP}:13133
 
 
-
 receivers:
-
 
 
 otlp:
 
 
-
 protocols:
-
 
 
 grpc:
 
 
-
 endpoint: ${env:MY_POD_IP}:4317
-
 
 
 http:
 
 
-
 endpoint: ${env:MY_POD_IP}:4318
-
 
 
 processors:
 
 
-
 transform:
-
 
 
 error_mode: ignore
 
 
-
 trace_statements: &dynatrace_transformations
-
 
 
 # Set attributes taken from k8s metadata.
 
 
-
 - context: resource
 
 
-
 statements:
-
 
 
 - set(attributes["k8s.cluster.name"], "${env:CLUSTER_NAME}")
 
 
-
 - set(attributes["k8s.workload.kind"], "job") where IsString(attributes["k8s.job.name"])
-
 
 
 - set(attributes["k8s.workload.name"], attributes["k8s.job.name"]) where IsString(attributes["k8s.job.name"])
 
 
-
 - set(attributes["k8s.workload.kind"], "cronjob") where IsString(attributes["k8s.cronjob.name"])
-
 
 
 - set(attributes["k8s.workload.name"], attributes["k8s.cronjob.name"]) where IsString(attributes["k8s.cronjob.name"])
 
 
-
 - set(attributes["k8s.workload.kind"], "daemonset") where IsString(attributes["k8s.daemonset.name"])
-
 
 
 - set(attributes["k8s.workload.name"], attributes["k8s.daemonset.name"]) where IsString(attributes["k8s.daemonset.name"])
 
 
-
 - set(attributes["k8s.workload.kind"], "statefulset") where IsString(attributes["k8s.statefulset.name"])
-
 
 
 - set(attributes["k8s.workload.name"], attributes["k8s.statefulset.name"]) where IsString(attributes["k8s.statefulset.name"])
 
 
-
 - set(attributes["k8s.workload.kind"], "replicaset") where IsString(attributes["k8s.replicaset.name"])
-
 
 
 - set(attributes["k8s.workload.name"], attributes["k8s.replicaset.name"]) where IsString(attributes["k8s.replicaset.name"])
 
 
-
 - set(attributes["k8s.workload.kind"], "deployment") where IsString(attributes["k8s.deployment.name"])
-
 
 
 - set(attributes["k8s.workload.name"], attributes["k8s.deployment.name"]) where IsString(attributes["k8s.deployment.name"])
 
 
-
 # remove the delete statements if you want to preserve these attributes
-
 
 
 - delete_key(attributes, "k8s.deployment.name")
 
 
-
 - delete_key(attributes, "k8s.replicaset.name")
-
 
 
 - delete_key(attributes, "k8s.statefulset.name")
 
 
-
 - delete_key(attributes, "k8s.daemonset.name")
-
 
 
 - delete_key(attributes, "k8s.cronjob.name")
 
 
-
 - delete_key(attributes, "k8s.job.name")
-
 
 
 # Set attributes from metadata specified in Dynatrace and set through the Dynatrace Operator.
 
 
-
 # For more info: https://docs.dynatrace.com/docs/shortlink/k8s-metadata-telemetry-enrichment
-
 
 
 - context: resource
 
 
-
 statements:
-
 
 
 - merge_maps(attributes, ParseJSON(attributes["metadata.dynatrace.com"]), "upsert") where IsMatch(attributes["metadata.dynatrace.com"], "^\\{")
 
 
-
 - delete_key(attributes, "metadata.dynatrace.com")
-
 
 
 metric_statements: *dynatrace_transformations
 
 
-
 log_statements: *dynatrace_transformations
-
 
 
 k8sattributes:
 
 
-
 extract:
-
 
 
 metadata:
 
 
-
 - k8s.pod.name
-
 
 
 - k8s.pod.uid
 
 
-
 - k8s.pod.ip
-
 
 
 - k8s.deployment.name
 
 
-
 - k8s.replicaset.name
-
 
 
 - k8s.statefulset.name
 
 
-
 - k8s.daemonset.name
-
 
 
 - k8s.job.name
 
 
-
 - k8s.cronjob.name
-
 
 
 - k8s.namespace.name
 
 
-
 - k8s.node.name
-
 
 
 - k8s.cluster.uid
 
 
-
 - k8s.container.name
-
 
 
 annotations:
 
 
-
 - from: pod
-
 
 
 key_regex: metadata.dynatrace.com/(.*)
 
 
-
 tag_name: $$1
-
 
 
 - from: pod
 
 
-
 key: metadata.dynatrace.com
-
 
 
 tag_name: metadata.dynatrace.com
 
 
-
 pod_association:
-
 
 
 - sources:
 
 
-
 - from: resource_attribute
-
 
 
 name: k8s.pod.name
 
 
-
 - from: resource_attribute
-
 
 
 name: k8s.namespace.name
 
 
-
 - sources:
 
 
-
 - from: resource_attribute
-
 
 
 name: k8s.pod.ip
 
 
-
 - sources:
-
 
 
 - from: resource_attribute
 
 
-
 name: k8s.pod.uid
-
 
 
 - sources:
 
 
-
 - from: connection
-
 
 
 exporters:
 
 
-
 otlp_http:
-
 
 
 endpoint: ${env:DT_ENDPOINT}
 
 
-
 headers:
-
 
 
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
 
 
-
 service:
-
 
 
 extensions:
 
 
-
 - health_check
-
 
 
 pipelines:
 
 
-
 traces:
-
 
 
 receivers: [otlp]
 
 
-
 processors: [k8sattributes, transform]
 
 
-
 exporters: [otlp_http]
-
 
 
 metrics:
 
 
-
 receivers: [otlp]
 
 
-
 processors: [k8sattributes, transform]
-
 
 
 exporters: [otlp_http]
 
 
-
 logs:
-
 
 
 receivers: [otlp]
 
 
-
 processors: [k8sattributes, transform]
-
 
 
 exporters: [otlp_http]
@@ -463,213 +360,160 @@ Configure the following `rbac.yaml` file with your Kubernetes instance, to allow
 apiVersion: v1
 
 
-
 kind: ServiceAccount
-
 
 
 metadata:
 
 
-
 labels:
-
 
 
 app: collector
 
 
-
 name: collector
-
 
 
 ---
 
 
-
 apiVersion: rbac.authorization.k8s.io/v1
-
 
 
 kind: ClusterRole
 
 
-
 metadata:
-
 
 
 name: collector
 
 
-
 labels:
 
 
-
 app: collector
-
 
 
 rules:
 
 
-
 - apiGroups:
-
 
 
 - ''
 
 
-
 resources:
-
 
 
 - 'pods'
 
 
-
 - 'namespaces'
-
 
 
 verbs:
 
 
-
 - 'get'
-
 
 
 - 'watch'
 
 
-
 - 'list'
 
 
-
 - apiGroups:
-
 
 
 - 'apps'
 
 
-
 resources:
-
 
 
 - 'replicasets'
 
 
-
 verbs:
-
 
 
 - 'get'
 
 
-
 - 'list'
 
 
-
 - 'watch'
-
 
 
 - apiGroups:
 
 
-
 - 'extensions'
-
 
 
 resources:
 
 
-
 - 'replicasets'
-
 
 
 verbs:
 
 
-
 - 'get'
-
 
 
 - 'list'
 
 
-
 - 'watch'
-
 
 
 ---
 
 
-
 apiVersion: rbac.authorization.k8s.io/v1
-
 
 
 kind: ClusterRoleBinding
 
 
-
 metadata:
 
 
-
 name: collector
-
 
 
 labels:
 
 
-
 app: collector
-
 
 
 roleRef:
 
 
-
 apiGroup: rbac.authorization.k8s.io
-
 
 
 kind: ClusterRole
 
 
-
 name: collector
-
 
 
 subjects:
 
 
-
 - kind: ServiceAccount
 
 
-
 name: collector
-
 
 
 namespace: default

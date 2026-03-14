@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:38.854384
 
 # Configure the Real User Monitoring code source
 
-# Configure the Real User Monitoring code source
 
 * Classic
 * How-to guide

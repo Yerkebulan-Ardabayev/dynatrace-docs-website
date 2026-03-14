@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:25.051728
 
 # Additional configuration for web frontends
 
-# Additional configuration for web frontends
 
 * Latest Dynatrace
 * Overview

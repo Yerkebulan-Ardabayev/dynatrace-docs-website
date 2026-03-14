@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:19.746089
 
 # Автоматизация устранения уязвимостей с помощью GitHub Copilot и Dynatrace
 
-# Автоматизация устранения уязвимостей с помощью GitHub Copilot и Dynatrace
 
 * Latest Dynatrace
 * Руководство

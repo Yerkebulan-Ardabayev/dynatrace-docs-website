@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Service users
 
-# Service users
 
 * Latest Dynatrace
 * How-to guide
@@ -80,7 +79,6 @@ For example:
 
 ```
 ALLOW iam:service-users:use
-
 
 
 WHERE iam:service-user-email IN ("be820735-3114-4d40-9c44-dfa18fa62be9@service.sso.dynatrace.com");

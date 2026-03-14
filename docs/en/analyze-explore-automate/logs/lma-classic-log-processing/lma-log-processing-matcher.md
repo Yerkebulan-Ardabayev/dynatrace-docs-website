@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:30:59.143327
 
 # DQL matcher in logs
 
-# DQL matcher in logs
 
 * Latest Dynatrace
 * Reference

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace Query Language
 
-# Dynatrace Query Language
 
 * Latest Dynatrace
 * Reference

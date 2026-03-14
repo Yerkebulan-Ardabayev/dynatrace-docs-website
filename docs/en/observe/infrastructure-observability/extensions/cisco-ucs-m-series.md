@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:37.150221
 
 # Cisco UCS M-Series extension
 
-# Cisco UCS M-Series extension
 
 * Latest Dynatrace
 * Extension
@@ -103,73 +102,55 @@ The extension package contains:
 (2 * # of CPUs)
 
 
-
 + (1 * # of Fan Modules)
-
 
 
 + (1 * # of Fans)
 
 
-
 + (1 * # of Local Disks)
-
 
 
 + (1 * # of Memory Arrays)
 
 
-
 + (1 * # of Power Supplies)
-
 
 
 + (1 * # of Storage Controllers)
 
 
-
 + (38 * # of Ethernet Ports)
-
 
 
 + (12 * # of Ethernet Port Pools)
 
 
-
 + (12 * # of Network Port Pools)
-
 
 
 + (12 * # of Server Port Pools)
 
 
-
 + (45 * # of Fabric Interconnects)
-
 
 
 + (34 * # of Fabric Ethernet LAN PCs)
 
 
-
 + (20 * # of Host Ethernet Interfaces)
-
 
 
 + (1 * # of Organizations)
 
 
-
 + (1 * # of Racks)
-
 
 
 + (20 * # of Service Profiles)
 
 
-
 + (1 * # of Switch Cards)
-
 
 
 * 525,600 metric data points/year

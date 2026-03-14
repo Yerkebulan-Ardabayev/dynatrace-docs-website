@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:08.492041
 
 # Визуализация карты соединений
 
-# Визуализация карты соединений
 
 * Latest Dynatrace
 * Практическое руководство
@@ -38,45 +37,34 @@ Dashboards версия 1.311+ Notebooks версия 1.311+
 data
 
 
-
 record(flightNo="DT123", geo.location.latitude=48.2195335, geo.location.longitude=16.3784883), //Vienna
-
 
 
 record(flightNo="DT123", geo.location.latitude=41.3826807, geo.location.longitude=2.1770239), //Barcelona
 
 
-
 record(flightNo="DT456", geo.location.latitude=48.2195335, geo.location.longitude=16.3784883), //Vienna
-
 
 
 record(flightNo="DT456", geo.location.latitude=48.1379879, geo.location.longitude=11.575182), //Munich
 
 
-
 record(flightNo="DT354", geo.location.latitude=48.2195335, geo.location.longitude=16.3784883), //Vienna
-
 
 
 record(flightNo="DT354", geo.location.latitude = 51.509865, geo.location.longitude = -0.118092), //London
 
 
-
 record(flightNo="DT985", geo.location.latitude=48.2195335, geo.location.longitude=16.3784883), //Vienna
-
 
 
 record(flightNo="DT985", geo.location.latitude = 52.520008, geo.location.longitude = 13.404954), //Berlin
 
 
-
 record(flightNo="DT111", geo.location.latitude=48.2195335, geo.location.longitude=16.3784883), //Vienna
 
 
-
 record(flightNo="DT111", geo.location.latitude = 48.864716, geo.location.longitude = 2.349014) //Paris
-
 
 
 | summarize by:{flightNo}, geo.location.latitude=collectArray(geo.location.latitude), geo.location.longitude=collectArray(geo.location.longitude)
@@ -258,7 +246,6 @@ record(flightNo="DT111", geo.location.latitude = 48.864716, geo.location.longitu
 
     ```
     fetch logs
-
 
 
     | limit 2000

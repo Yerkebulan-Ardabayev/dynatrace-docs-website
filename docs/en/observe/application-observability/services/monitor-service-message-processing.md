@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:27.453892
 
 # Monitor service message processing
 
-# Monitor service message processing
 
 * Latest Dynatrace
 * Tutorial
@@ -77,25 +76,19 @@ Monitor service messaging throughput:
 timeseries throughput = sum(dt.service.messaging.process.count),
 
 
-
 by: {dt.smartscape.service}
-
 
 
 | lookup [smartscapeNodes "SERVICE" | fields name,id],
 
 
-
 sourceField:dt.smartscape.service, lookupField:id
-
 
 
 | fieldsAdd `Service` = lookup.name, dt.smartscape.service
 
 
-
 | summarize throughput = sum(throughput[]),
-
 
 
 by: { timeframe, interval, `Service`, dt.smartscape.service }
@@ -107,29 +100,22 @@ Calculate service messaging failure rate:
 timeseries { throughput = sum(dt.service.messaging.process.count),
 
 
-
 failure_count = sum(dt.service.messaging.process.failure_count) },
-
 
 
 by: {dt.smartscape.service}, nonempty:true, union:true
 
 
-
 | lookup [ smartscapeNodes "SERVICE" | fields name, id],
-
 
 
 sourceField:dt.smartscape.service, lookupField:id
 
 
-
 | fieldsAdd `Service` = lookup.name, dt.smartscape.service
 
 
-
 | summarize failure_rate = sum((failure_count[] / throughput[]) * 100),
-
 
 
 by: { timeframe, interval, `Service`, dt.smartscape.service }

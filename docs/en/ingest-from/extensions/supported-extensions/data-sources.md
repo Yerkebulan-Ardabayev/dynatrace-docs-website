@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:47.888698
 
 # Understand extensions data sources
 
-# Understand extensions data sources
 
 * Latest Dynatrace
 * Explanation

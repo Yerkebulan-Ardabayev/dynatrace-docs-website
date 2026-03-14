@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:38:46.599507
 
 # Migration guide for DynaKube API versions
 
-# Migration guide for DynaKube API versions
 
 * Latest Dynatrace
 * Reference
@@ -67,7 +66,6 @@ So when you are checking, using `kubectl` what `apiVersion` you are using, you w
    > helm list -n dynatrace -o json | jq -r '.[].app_version'`
 
 
-
    1.6.2
    ```
 
@@ -79,7 +77,6 @@ So when you are checking, using `kubectl` what `apiVersion` you are using, you w
 
    ```
    > kubectl get deployment dynatrace-operator -n dynatrace -o jsonpath='{.metadata.labels.app\.kubernetes\.io/version}'
-
 
 
    1.6.2

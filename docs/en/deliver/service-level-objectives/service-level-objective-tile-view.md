@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:23:32.190940
 
 # View the details of a service-level objective (SLO) tile in a dashboard
 
-# View the details of a service-level objective (SLO) tile in a dashboard
 
 * Latest Dynatrace
 * How-to guide

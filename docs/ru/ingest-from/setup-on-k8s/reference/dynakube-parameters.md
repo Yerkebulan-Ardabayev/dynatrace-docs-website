@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:41.255882
 
 # Параметры DynaKube для Dynatrace Operator
 
-# Параметры DynaKube для Dynatrace Operator
 
 * Последняя версия Dynatrace
 * Чтение: 57 мин

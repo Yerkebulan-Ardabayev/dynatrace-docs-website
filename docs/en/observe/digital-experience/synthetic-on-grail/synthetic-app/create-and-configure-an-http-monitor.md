@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:44.580785
 
 # Create and configure an HTTP monitor
 
-# Create and configure an HTTP monitor
 
 * Latest Dynatrace
 * How-to guide

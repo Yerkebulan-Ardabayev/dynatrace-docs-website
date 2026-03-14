@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:34.787797
 
 # DQL commands
 
-# DQL commands
 
 * Latest Dynatrace
 * Reference

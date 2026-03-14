@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:52.648519
 
 # Azure Cache for Redis monitoring
 
-# Azure Cache for Redis monitoring
 
 * Latest Dynatrace
 * How-to guide

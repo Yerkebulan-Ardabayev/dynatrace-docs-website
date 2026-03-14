@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:39.137980
 
 # Конфигурация мониторинга базы данных IBM
 
-# Конфигурация мониторинга базы данных IBM
 
 * Latest Dynatrace
 * Reference
@@ -26,113 +25,85 @@ scraped: 2026-03-06T21:36:39.137980
 [
 
 
-
 {
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "description": "My IBM extension",
 
 
-
 "version": "0.1.1",
-
 
 
 "featureSets": [
 
 
-
 "io",
-
 
 
 "cpu",
 
 
-
 ],
-
 
 
 "sqlDb2Remote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "db2host",
-
 
 
 "port": 1521,
 
 
-
 "authentication": {
-
 
 
 "scheme": "basic",
 
 
-
 "username": "admin",
-
 
 
 "password": "password"
 
 
-
 },
-
 
 
 "databaseName": "dbname",
 
 
-
 "ssl": false
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "scope": "ag_group-default"
 
 
-
 }
-
 
 
 ]
@@ -160,13 +131,10 @@ scraped: 2026-03-06T21:36:39.137980
 "featureSets": [
 
 
-
 "cpu",
 
 
-
 "io"
-
 
 
 ]
@@ -180,53 +148,40 @@ scraped: 2026-03-06T21:36:39.137980
 "sqlDb2Remote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "db2host",
-
 
 
 "port": 1433,
 
 
-
 "authentication": {
-
 
 
 "scheme": "basic",
 
 
-
 "username": "user",
-
 
 
 "password": "password"
 
 
-
 },
-
 
 
 "databaseName": "dbname",
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -255,17 +210,13 @@ scraped: 2026-03-06T21:36:39.137980
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": true,
 
 
-
 "credentialVaultId": "some-credential-vault-id"
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:55.800554
 
 # Cloud provider log forwarding (Logs Classic)
 
-# Cloud provider log forwarding (Logs Classic)
 
 * Classic
 * Overview

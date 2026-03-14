@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:53.183725
 
 # IBM MQ tracing
 
-# IBM MQ tracing
 
 * Classic
 * How-to guide
@@ -96,153 +95,115 @@ The ID of the queue manager schema is `builtin:ibmmq.queue-managers`.
    [
 
 
-
    {
-
 
 
    "schemaId": "builtin:ibmmq.queue-managers",
 
 
-
    "scope": "environment",
-
 
 
    "value": {
 
 
-
    "name": "Queue Manager 1",
-
 
 
    "clusters": [
 
 
-
    "Name of the cluster this Queue Manager 1 is part of"
 
 
-
    ],
-
 
 
    "aliasQueues": [
 
 
-
    {
-
 
 
    "aliasQueue": "Alias Queue",
 
 
-
    "baseQueue": "Base queue which the Alias Queue should point to",
 
 
-
    "clusterVisibility": [
-
 
 
    "Name of a cluster this Alias Queue should be visible in (the queue manager must be part of this cluster)"
 
 
-
    ]
-
 
 
    }
 
 
-
    ],
-
 
 
    "remoteQueues": [
 
 
-
    {
-
 
 
    "localQueue": "Local definition of the Remote Queue",
 
 
-
    "remoteQueue": "Remote Queue",
-
 
 
    "remoteQueueManager": "Remote Queue Manager",
 
 
-
    "clusterVisibility": [
-
 
 
    "Name of a cluster this local definition of the Remote Queue should be visible in (the queue manager must be part of this cluster)"
 
 
-
    ]
 
 
-
    }
-
 
 
    ],
 
 
-
    "clusterQueues": [
-
 
 
    {
 
 
-
    "localQueue": "Local Queue",
-
 
 
    "clusterVisibility": [
 
 
-
    "Name of a cluster this Local Queue should be visible in (the queue manager must be part of this cluster)"
 
 
+   ]
+
+
+   }
+
 
    ]
 
 
-
    }
 
 
-
-   ]
-
-
-
    }
-
-
-
-   }
-
 
 
    ]
@@ -261,65 +222,49 @@ The ID of the queue sharing group schema is `builtin:ibmmq.queue-sharing-group`.
    [
 
 
-
    {
-
 
 
    "schemaId": "builtin:ibmmq.queue-sharing-group",
 
 
-
    "scope": "environment",
-
 
 
    "value": {
 
 
-
    "name": "Queue Sharing Group",
-
 
 
    "queueManagers": [
 
 
-
    "Queue Manager 1",
-
 
 
    "Queue Manager 2"
 
 
-
    ],
-
 
 
    "sharedQueues": [
 
 
-
    "Shared Queue 1",
-
 
 
    "Shared Queue 2"
 
 
-
    ]
 
 
-
    }
 
 
-
    }
-
 
 
    ]
@@ -338,69 +283,52 @@ The ID of the IMS bridge schema is `builtin:ibmmq.ims-bridges`.
    [
 
 
-
    {
-
 
 
    "schemaId": "builtin:ibmmq.ims-bridges",
 
 
-
    "scope": "environment",
-
 
 
    "value": {
 
 
-
    "name": "IMS Bridge",
-
 
 
    "queueManagers": [
 
 
-
    {
-
 
 
    "name": "Queue Manager",
 
 
-
    "queueManagerQueue": [
-
 
 
    "Queue 1",
 
 
-
    "Queue 2"
 
 
+   ]
+
+
+   }
+
 
    ]
 
 
-
    }
 
 
-
-   ]
-
-
-
    }
-
-
-
-   }
-
 
 
    ]
@@ -425,141 +353,106 @@ The `aliasQueues` object can be a local queue owned by this queue manager, a loc
      {
 
 
-
      "updateToken": "vu9U3hXY3q0ATAAkMG",
-
 
 
      "value": {
 
 
-
      "name": "Queue Manager A",
-
 
 
      "clusters": [
 
 
-
      "Name of a cluster this Queue Manager A is part of"
 
 
-
      ],
-
 
 
      "aliasQueues": [
 
 
-
      {
-
 
 
      "aliasQueue": "Alias Queue",
 
 
-
      "baseQueue": "Base queue which the Alias Queue should point to",
 
 
-
      "clusterVisibility": [
-
 
 
      "Name of a cluster this Alias Queue should be visible in (the queue manager must be part of this cluster)"
 
 
-
      ]
-
 
 
      }
 
 
-
      ],
-
 
 
      "remoteQueues": [
 
 
-
      {
-
 
 
      "localQueue": "Local definition of the Remote Queue",
 
 
-
      "remoteQueue": "Remote Queue",
-
 
 
      "remoteQueueManager": "Remote Queue Manager",
 
 
-
      "clusterVisibility": [
-
 
 
      "Name of a cluster this local definition of the Remote Queue should be visible in (the queue manager must be part of this cluster)"
 
 
-
      ]
 
 
-
      }
-
 
 
      ],
 
 
-
      "clusterQueues": [
-
 
 
      {
 
 
-
      "localQueue": "Local Queue",
-
 
 
      "clusterVisibility": [
 
 
-
      "Name of a cluster this Local Queue should be visible in (the queue manager must be part of this cluster)"
 
 
-
      ]
-
 
 
      }
 
 
-
      ]
 
 
-
      }
-
 
 
      }
@@ -581,53 +474,40 @@ The ID of the queue sharing group schema is `builtin:ibmmq.queue-sharing-group`.
      {
 
 
-
      "updateToken": "vu9U3hXY3q0ATAAkMG",
-
 
 
      "value": {
 
 
-
      "name": "Queue Sharing Group",
-
 
 
      "queueManagers": [
 
 
-
      "Queue Manager A",
-
 
 
      "Queue Manager B"
 
 
-
      ],
-
 
 
      "sharedQueues": [
 
 
-
      "Shared Queue A",
-
 
 
      "Shared Queue B"
 
 
-
      ]
 
 
-
      }
-
 
 
      }
@@ -650,57 +530,43 @@ The ID of the IMS bridge schema is `builtin:ibmmq.ims-bridges`.
      {
 
 
-
      "updateToken": "vu9U3hXY3q0ATAAkMG",
-
 
 
      "value": {
 
 
-
      "name": "IMS Bridge",
-
 
 
      "queueManagers": [
 
 
-
      {
-
 
 
      "name": "Queue Manager",
 
 
-
      "queueManagerQueue": [
-
 
 
      "Queue A",
 
 
-
      "Queue B"
 
 
-
      ]
-
 
 
      }
 
 
-
      ]
 
 
-
      }
-
 
 
      }

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:29:53.332272
 
 # Monitor JMX metrics on z/OS
 
-# Monitor JMX metrics on z/OS
 
 * Latest Dynatrace
 * 5-min read
@@ -27,69 +26,52 @@ Typically, you've created the `dtconfig.json` file during the [z/OS Java code mo
 {
 
 
-
 "Tenant": "myTenant",
-
 
 
 "ClusterID": myCluster,
 
 
-
 "ZdcName": "DEFAULT",
-
 
 
 "customJmxMetrics": [
 
 
-
 {
-
 
 
 "name": "java.lang.CurrentThreadCount",
 
 
-
 "source":
-
 
 
 {
 
 
-
 "domain": "java.lang",
-
 
 
 "keyProperties": {
 
 
-
 "type": "Threading",
-
 
 
 },
 
 
-
 "attribute": "ThreadCount"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -135,21 +117,16 @@ For example, `HeapMemoryUsage` is a `CompositeData` type that returns the follow
 {
 
 
-
 committed: integer,
-
 
 
 init: integer,
 
 
-
 max: integer,
 
 
-
 used: integer
-
 
 
 }
@@ -161,61 +138,46 @@ If you want to extract the value of `used` from the `HeapMemoryUsage` attribute,
 {
 
 
-
 "customJmxMetrics": [
 
 
-
 {
-
 
 
 "name": "java.lang.HeapMemoryUsage",
 
 
-
 "source":
-
 
 
 {
 
 
-
 "domain": "java.lang",
-
 
 
 "keyProperties": {
 
 
-
 "type": "Memory"
-
 
 
 },
 
 
-
 "attribute": "HeapMemoryUsage",
-
 
 
 "attributePath": "get(\"used\")"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -229,21 +191,16 @@ Splittings can be used to define additional dimensions for a metric.
 "splittings": [
 
 
-
 {
-
 
 
 "name": "dimension",
 
 
-
 "keyProperty": "name"
 
 
-
 }
-
 
 
 ]
@@ -262,89 +219,67 @@ The following example shows how to define a metric providing multiple dimensions
 {
 
 
-
 "customJmxMetrics": [
 
 
-
 {
-
 
 
 "name": "java.lang.MemoryPoolUsage",
 
 
-
 "source":
 
 
-
 {
-
 
 
 "domain": "java.lang",
 
 
-
 "keyProperties": {
-
 
 
 "type": "MemoryPool",
 
 
-
 "name": "*"
-
 
 
 },
 
 
-
 "attribute": "Usage",
-
 
 
 "attributePath": "get(\"used\")",
 
 
-
 "splittings": [
-
 
 
 {
 
 
-
 "name": "memory_type",
-
 
 
 "keyProperty": "name"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }

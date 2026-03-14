@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:46.755460
 
 # Отправка уведомлений Dynatrace в Opsgenie
 
-# Отправка уведомлений Dynatrace в Opsgenie
 
 * Classic
 * 2 мин. чтения

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:09.703615
 
 # API for Dashboards and Notebooks
 
-# API for Dashboards and Notebooks
 
 * Latest Dynatrace
 * Reference

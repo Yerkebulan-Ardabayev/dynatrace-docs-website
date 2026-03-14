@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Extend user experience and behavior data
 
-# Extend user experience and behavior data
 
 * 2-min read
 * Updated on May 30, 2022

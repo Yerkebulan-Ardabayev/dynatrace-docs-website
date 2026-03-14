@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:51.943719
 
 # Интеграции Dynatrace Intelligence
 
-# Интеграции Dynatrace Intelligence
 
 * Последняя версия Dynatrace
 * Обзор

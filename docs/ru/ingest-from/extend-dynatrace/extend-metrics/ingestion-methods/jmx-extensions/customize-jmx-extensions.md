@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:25:03.690347
 
 # Настройка расширений JMX
 
-# Настройка расширений JMX
 
 * Latest Dynatrace
 * Чтение: 10 мин
@@ -20,61 +19,46 @@ scraped: 2026-03-03T21:25:03.690347
 The basic format is as follows:
 
 
-
 {
-
 
 
 "version": "1.0",
 
 
-
 "name": "custom.jmx.hornetq",
-
 
 
 "type": "JMX",
 
 
-
 "entity": "PROCESS_GROUP_INSTANCE",
-
 
 
 "metricGroup": "tech.HornetQ",
 
 
-
 "configUI" : {
-
 
 
 "displayName": "HornetQ JMX"
 
 
-
 },
-
 
 
 "metrics": [ ],
 
 
-
 "ui": {
-
 
 
 "keycharts" : [ ],
 
 
-
 "charts": [ ]
 
 
-
 }
-
 
 
 }
@@ -101,121 +85,91 @@ The basic format is as follows:
 {
 
 
-
 "timeseries": {
-
 
 
 "key": "Queue.ConsumerCount",
 
 
-
 "unit": "Count",
-
 
 
 "displayname": "Queue Consumer Count",
 
 
-
 "dimensions": [
-
 
 
 "rx_pid"
 
 
-
 ]
 
 
-
 },
-
 
 
 "alert_settings": [
 
 
-
 {
-
 
 
 "alert_id": "too_many_consumers",
 
 
-
 "event_type": "PERFORMANCE_EVENT",
-
 
 
 "event_name": "Too many consumers",
 
 
-
 "description": "The {metricname} of {severity} is {alert_condition} the threshold of {threshold}",
-
 
 
 "threshold": 35.0,
 
 
-
 "alert_condition": "ABOVE",
-
 
 
 "samples":5,
 
 
-
 "violating_samples":3,
-
 
 
 "dealerting_samples":5,
 
 
-
 "value_extractor": "MAX"
 
 
-
 }
-
 
 
 ],
 
 
-
 "source": {
-
 
 
 "domain": "org.hornetq",
 
 
-
 "keyProperties": {
-
 
 
 "type": "Queue"
 
 
-
 },
-
 
 
 "attribute": "ConsumerCount"
 
 
-
 }
-
 
 
 }
@@ -281,17 +235,13 @@ The basic format is as follows:
 "splitting": {
 
 
-
 "name": "name",
-
 
 
 "type": "keyProperty",
 
 
-
 "keyProperty": "name"
-
 
 
 }
@@ -303,45 +253,34 @@ The basic format is as follows:
 "splittings":[
 
 
-
 {
-
 
 
 "name":"name",
 
 
-
 "type":"keyProperty",
-
 
 
 "keyProperty":"name"
 
 
-
 },
-
 
 
 {
 
 
-
 "name":"context",
-
 
 
 "type":"keyProperty",
 
 
-
 "keyProperty":"context"
 
 
-
 }
-
 
 
 ]
@@ -363,93 +302,70 @@ The basic format is as follows:
 {
 
 
-
 "timeseries": {
-
 
 
 "key": "XY.Size",
 
 
-
 "unit": "Count",
-
 
 
 "displayname": "Queue Consumer Count",
 
 
-
 "dimensions": [
-
 
 
 "rx_pid",
 
 
-
 "name"
-
 
 
 ]
 
 
-
 }
-
 
 
 "source": {
 
 
-
 "domain": "com.sample",
-
 
 
 "keyProperties": {
 
 
-
 "type": "XY",
-
 
 
 "name": "*"
 
 
-
 },
-
 
 
 "attribute": "Size",
 
 
-
 "splitting": {
-
 
 
 "name": "name",
 
 
-
 "type": "keyProperty",
-
 
 
 "keyProperty": "name"
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -467,21 +383,16 @@ The basic format is as follows:
 {
 
 
-
 committed: integer,
-
 
 
 init: integer,
 
 
-
 max: integer,
 
 
-
 used: integer
-
 
 
 }
@@ -493,29 +404,22 @@ used: integer
 "source": {
 
 
-
 "domain": "java.lang",
-
 
 
 "keyProperties": {
 
 
-
 "type": "Memory",
-
 
 
 },
 
 
-
 "attribute": "HeapMemoryUsage",
 
 
-
 "attributePath": "get(\"used\")"
-
 
 
 }
@@ -529,53 +433,40 @@ used: integer
 {
 
 
-
 "ui": {
-
 
 
 "keymetrics" : [
 
 
-
 {
-
 
 
 "key" : "requestCount",
 
 
-
 "aggregation" : "avg",
-
 
 
 "mergeaggregation" : "sum",
 
 
-
 "displayname" : "Requests"
 
 
-
 }
-
 
 
 ],
 
 
-
 "keycharts" : [ ],
-
 
 
 "charts": [ ]
 
 
-
 }
-
 
 
 }
@@ -596,73 +487,55 @@ used: integer
 {
 
 
-
 "group": "Section Name",
-
 
 
 "title": "Chart Name",
 
 
-
 "series": [
 
 
-
 {
-
 
 
 "key": "MetricName",
 
 
-
 "aggregation": "avg",
-
 
 
 "displayname": "Display name for metric",
 
 
-
 "seriestype": "area"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "Other Metric Name",
 
 
-
 "aggregation": "avg",
-
 
 
 "displayname": "Display name for metric",
 
 
-
 "color": "rgba(42, 182, 244, 0.6)",
-
 
 
 "seriestype": "area"
 
 
-
 }
 
 
-
 ]
-
 
 
 }

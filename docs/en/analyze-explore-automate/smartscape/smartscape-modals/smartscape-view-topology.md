@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:33:03.194289
 
 # View topology
 
-# View topology
 
 * Latest Dynatrace
 * Explanation

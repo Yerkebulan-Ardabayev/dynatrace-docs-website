@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:16.455659
 
 # ActiveGate group
 
-# ActiveGate group
 
 * Latest Dynatrace
 * 2-min read
@@ -48,7 +47,6 @@ Alternatively, you can use the `group` ActiveGate configuration property. For ex
 
 ```
 [collector]
-
 
 
 group = mygroup

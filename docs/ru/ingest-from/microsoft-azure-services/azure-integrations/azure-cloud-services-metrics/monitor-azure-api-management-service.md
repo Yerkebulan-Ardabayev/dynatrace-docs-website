@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:30:14.498339
 
 # Мониторинг Azure API Management Service
 
-# Мониторинг Azure API Management Service
 
 * Последняя версия Dynatrace
 * Практическое руководство

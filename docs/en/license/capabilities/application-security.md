@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:39:06.594397
 
 # Application Security overview (DPS)
 
-# Application Security overview (DPS)
 
 * Latest Dynatrace
 * Overview

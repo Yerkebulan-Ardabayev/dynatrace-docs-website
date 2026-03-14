@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:32:29.858245
 
 # Predictive Kubernetes operations
 
-# Predictive Kubernetes operations
 
 * Latest Dynatrace
 * Tutorial
@@ -103,89 +102,67 @@ Use the configuration retrieval on the alert to trigger the workflow. The workfl
    import { execution } from '@dynatrace-sdk/automation-utils';
 
 
-
    export default async function () {
-
 
 
    const ex = await execution();
 
 
-
    // In this demo workflow we use a previous grail query to get a valid host ID.
-
 
 
    // Usually this would come from a Davis event
 
 
-
    const res = await ex.result("analyze_with_davis_1");
-
 
 
    let prediction = 0.0;
 
 
-
    let validPrediction = true;
-
 
 
    try {
 
 
-
    const points = res.result.output[0].timeSeriesDataWithPredictions.records[0]["dt.davis.forecast:point"];
-
 
 
    console.log("Got these prediction: %s", points);
 
 
-
    const floatPoints = points.map(p => Number(p));
-
 
 
    prediction = Math.max(...floatPoints);
 
 
-
    console.log("Max value is: %s", prediction);
-
 
 
    } catch (e) {
 
 
-
    console.error("Unable to predict: %s", e instanceof Error ? e.message : JSON.stringify(e));
-
 
 
    validPrediction = false;
 
 
-
    }
-
 
 
    return {
 
 
-
    prediction,
-
 
 
    validPrediction,
 
 
-
    };
-
 
 
    }
@@ -202,241 +179,181 @@ Use the configuration retrieval on the alert to trigger the workflow. The workfl
      import {
 
 
-
      monitoredEntitiesClient
-
 
 
      } from "@dynatrace-sdk/client-classic-environment-v2";
 
 
-
      import {
-
 
 
      execution
 
 
-
      } from '@dynatrace-sdk/automation-utils';
-
 
 
      async function getEntityName(entityId) {
 
 
-
      const data = await monitoredEntitiesClient.getEntity({
-
 
 
      entityId: entityId,
 
 
-
      });
-
 
 
      return data.displayName;
 
 
-
      }
-
 
 
      function isKafkaEntity(entityName) {
 
 
-
      return entityName.match(/(\[a-z0-9-]+)-grail kafka/) !== null;
 
 
-
      }
-
 
 
      async function getKafkaConfigURL(ex, entityName) {
 
 
-
      const owners = (await ex.result("get\_owners")).owners;
-
 
 
      let repoLink = undefined;
 
 
-
      // Go though all the owners and figure out which one as a REPOSITORY link type set.
-
 
 
      // We assume that is the correct one and will just use it later for building the URL
 
 
-
      for (const owner of owners) {
-
 
 
      for (const link of owner.links) {
 
 
-
      if (link.linkType === "REPOSITORY") {
-
 
 
      repoLink = link.url;
 
 
-
      break;
 
 
-
      }
 
 
-
      }
-
 
 
      if (repoLink !== undefined) {
 
 
-
      break;
 
 
-
      }
 
 
-
      }
-
 
 
      // "Gracefully" fail and tell the user that no owner had the required link type set;
 
 
-
      // Helps with debugging since otherwise we would build a URL undefined/... which can
-
 
 
      // cause more problems down the line.
 
 
-
      if (repoLink === undefined) {
-
 
 
      throw new Error('No REPOSITORY link was provided for any tagged owner!')
 
 
-
      }
-
 
 
      const baseUrl = repoLink;
 
 
-
      const file = "app//kafka-worker/kafka-configuration/values-scoped.yaml";
-
 
 
      const cluster = entityName.match(/(\[a-z0-9-]+)-grail kafka/)\[1];
 
 
-
      return `${baseUrl}/${cluster}/${file}`;
-
 
 
      }
 
 
-
      export default async function() {
-
 
 
      const ex = await execution();
 
 
-
      // In this demo workflow we use a previous grail query to get a valid host ID.
-
 
 
      // Usually this would come from a Davis event
 
 
-
      const queryResults = await ex.result("query\_grail\_kafka\_hosts");
-
 
 
      const records = queryResults.records;
 
 
-
      // Only have a look at the first element because an event likely only
-
 
 
      // contains one element:
 
 
-
      const {
-
 
 
      id
 
 
-
      } = records\[0];
-
 
 
      // Use the following DQL to query host IDs for grail kafka entities
 
 
-
      // >>> fetch dt.entity.host | filter like(entity.name, "%-grail kafka")
-
 
 
      const name = await getEntityName(id);
 
 
-
      // name should be used here, but only if isKafkaEntity is true!
-
 
 
      return {
 
 
-
      isKafkaHost: isKafkaEntity(name),
 
 
-
      url: await getKafkaConfigURL(ex, name)
-
 
 
      };
@@ -451,153 +368,115 @@ Use the configuration retrieval on the alert to trigger the workflow. The workfl
    apiVersion: batch/v1
 
 
-
    kind: Job
-
 
 
    metadata:
 
 
-
    name: {{ "demo-job-resize-%s" % result('disk_from_host').records[0].id | lower }}
-
 
 
    labels:
 
 
-
    joblabel: "test"
 
 
-
    spec:
-
 
 
    ttlSecondsAfterFinished: 300
 
 
-
    backoffLimit: 0
-
 
 
    activeDeadlineSeconds: 60
 
 
-
    podFailurePolicy:
-
 
 
    rules:
 
 
-
    - action: FailJob
-
 
 
    onExitCodes:
 
 
-
    operator: NotIn
-
 
 
    values: [0]
 
 
-
    template:
-
 
 
    spec:
 
 
-
    restartPolicy: Never
-
 
 
    containers:
 
 
-
    - name: main
-
 
 
    image: docker.io/library/bash:5
 
 
-
    command: ["bash"]
-
 
 
    args:
 
 
-
    - -c
-
 
 
    - echo "Computing..."; sleep 10; echo $PATH_URL; echo $IS_KAFKA_HOST; echo $PREDICTION; echo $VALID_PREDICTION; test $VALID_PREDICTION = 'True'; exit $?
 
 
-
    resources:
-
 
 
    limits:
 
 
-
    memory: 10Mi
-
 
 
    cpu: 1m
 
 
-
    env:
-
 
 
    - name: PATH_URL
 
 
-
    value: "{{result('repository_url').url}}"
-
 
 
    - name: IS_KAFKA_HOST
 
 
-
    value: "{{result('repository_url').isKafkaHost}}"
-
 
 
    - name: PREDICTION
 
 
-
    value: "{{result('extract_prediction').prediction}}"
 
 
-
    - name: VALID_PREDICTION
-
 
 
    value: "{{result('extract_prediction').validPrediction}}"

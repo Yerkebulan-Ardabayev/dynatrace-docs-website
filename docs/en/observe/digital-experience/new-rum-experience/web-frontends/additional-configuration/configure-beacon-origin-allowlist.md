@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:05.716000
 
 # Configure the beacon origin allowlist
 
-# Configure the beacon origin allowlist
 
 * Latest Dynatrace
 * How-to guide

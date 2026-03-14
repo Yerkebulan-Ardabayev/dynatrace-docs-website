@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:38:44.998874
 
 # Metrics API - Metric selector
 
-# Metrics API - Metric selector
 
 * Reference
 * Updated on Oct 31, 2025
@@ -37,69 +36,52 @@ Show descriptor example
 {
 
 
-
 "dimensionDefinitions": [
 
 
-
 {
-
 
 
 "key": "dt.entity.host",
 
 
-
 "name": "Host",
-
 
 
 "displayName": "Host",
 
 
-
 "index": 0,
 
 
-
 "type": "ENTITY"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "dt.entity.disk",
 
 
-
 "name": "Disk",
-
 
 
 "displayName": "Disk",
 
 
-
 "index": 1,
-
 
 
 "type": "ENTITY"
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -135,197 +117,148 @@ Show metric descriptor
 {
 
 
-
 "metricId": "builtin:host.cpu.usage",
-
 
 
 "displayName": "CPU usage %",
 
 
-
 "description": "Percentage of CPU time currently utilized.",
-
 
 
 "unit": "Percent",
 
 
-
 "dduBillable": false,
-
 
 
 "created": 0,
 
 
-
 "lastWritten": 1668607995463,
-
 
 
 "entityType": [
 
 
-
 "HOST"
 
 
-
 ],
-
 
 
 "aggregationTypes": [
 
 
-
 "auto",
-
 
 
 "avg",
 
 
-
 "max",
-
 
 
 "min"
 
 
-
 ],
-
 
 
 "transformations": [
 
 
-
 "filter",
-
 
 
 "fold",
 
 
-
 "limit",
-
 
 
 "merge",
 
 
-
 "names",
-
 
 
 "parents",
 
 
-
 "timeshift",
-
 
 
 "sort",
 
 
-
 "last",
-
 
 
 "splitBy",
 
 
-
 "lastReal",
-
 
 
 "setUnit"
 
 
-
 ],
-
 
 
 "defaultAggregation": {
 
 
-
 "type": "avg"
 
 
-
 },
-
 
 
 "dimensionDefinitions": [
 
 
-
 {
-
 
 
 "key": "dt.entity.host",
 
 
-
 "name": "Host",
-
 
 
 "displayName": "Host",
 
 
-
 "index": 0,
-
 
 
 "type": "ENTITY"
 
 
-
 }
-
 
 
 ],
 
 
-
 "tags": [],
-
 
 
 "metricValueType": {
 
 
-
 "type": "unknown"
-
 
 
 },
 
 
-
 "scalar": false,
 
 
-
 "resolutionInfSupported": true
-
 
 
 }
@@ -359,345 +292,259 @@ Show metric descriptor
 {
 
 
-
 "metricId": "builtin:apps.other.sessionCount.osAndGeo:names",
-
 
 
 "displayName": "Session count - estimated (by OS, geolocation) [mobile, custom]",
 
 
-
 "description": "",
-
 
 
 "unit": "Count",
 
 
-
 "dduBillable": false,
-
 
 
 "created": 0,
 
 
-
 "lastWritten": 1668609851154,
-
 
 
 "entityType": [
 
 
-
 "CUSTOM_APPLICATION",
-
 
 
 "MOBILE_APPLICATION"
 
 
-
 ],
-
 
 
 "aggregationTypes": [
 
 
-
 "auto",
-
 
 
 "value"
 
 
-
 ],
-
 
 
 "transformations": [
 
 
-
 "filter",
-
 
 
 "fold",
 
 
-
 "limit",
-
 
 
 "merge",
 
 
-
 "names",
-
 
 
 "parents",
 
 
-
 "timeshift",
-
 
 
 "sort",
 
 
-
 "last",
-
 
 
 "splitBy",
 
 
-
 "lastReal",
-
 
 
 "setUnit"
 
 
-
 ],
-
 
 
 "defaultAggregation": {
 
 
-
 "type": "value"
 
 
-
 },
-
 
 
 "dimensionDefinitions": [
 
 
-
 {
-
 
 
 "key": "dt.entity.device_application.name",
 
 
-
 "name": "dt.entity.device_application.name",
-
 
 
 "displayName": "dt.entity.device_application.name",
 
 
-
 "index": 0,
-
 
 
 "type": "STRING"
 
 
-
 },
 
 
-
 {
-
 
 
 "key": "dt.entity.device_application",
 
 
-
 "name": "Application",
-
 
 
 "displayName": "Mobile or custom application",
 
 
-
 "index": 1,
-
 
 
 "type": "ENTITY"
 
 
-
 },
 
 
-
 {
-
 
 
 "key": "dt.entity.os.name",
 
 
-
 "name": "dt.entity.os.name",
-
 
 
 "displayName": "dt.entity.os.name",
 
 
-
 "index": 2,
-
 
 
 "type": "STRING"
 
 
-
 },
 
 
-
 {
-
 
 
 "key": "dt.entity.os",
 
 
-
 "name": "Operating system",
-
 
 
 "displayName": "OS",
 
 
-
 "index": 3,
-
 
 
 "type": "ENTITY"
 
 
-
 },
 
 
-
 {
-
 
 
 "key": "dt.entity.geolocation.name",
 
 
-
 "name": "dt.entity.geolocation.name",
-
 
 
 "displayName": "dt.entity.geolocation.name",
 
 
-
 "index": 4,
-
 
 
 "type": "STRING"
 
 
-
 },
-
 
 
 {
 
 
-
 "key": "dt.entity.geolocation",
-
 
 
 "name": "Geolocation",
 
 
-
 "displayName": "Geolocation",
-
 
 
 "index": 5,
 
 
-
 "type": "ENTITY"
-
 
 
 }
 
 
-
 ],
-
 
 
 "tags": [],
 
 
-
 "metricValueType": {
-
 
 
 "type": "unknown"
 
 
-
 },
-
 
 
 "scalar": false,
 
 
-
 "resolutionInfSupported": true,
-
 
 
 "warnings": [
 
 
-
 "The field dimensionCardinalities is only supported for untransformed single metric keys and was ignored."
 
 
-
 ]
-
 
 
 }
@@ -725,13 +572,10 @@ In combination with space aggregation, you can build powerful selectors like the
 builtin:kubernetes.pods
 
 
-
 :filter(eq("k8s.cluster.name","preproduction"))
 
 
-
 :splitBy("dt.entity.cloud_application")
-
 
 
 :max
@@ -743,21 +587,16 @@ You can also filter data based on monitored entities by using the power of the e
 builtin:host.cpu.usage
 
 
-
 :filter(
-
 
 
 in(
 
 
-
 "dt.entity.host",entitySelector("type(~"HOST~"),tag(~"easyTravel~")")
 
 
-
 )
-
 
 
 )
@@ -813,105 +652,79 @@ After default transformation
 {
 
 
-
 "totalCount": 1,
-
 
 
 "nextPageKey": null,
 
 
-
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:tech.jvm.memory.pool.collectionCount",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": [
-
 
 
 "PROCESS_GROUP_INSTANCE-A02ED607B5E9DD20",
 
 
-
 "30382",
-
 
 
 "G1 Old Gen",
 
 
-
 "G1 Old Generation"
-
 
 
 ],
 
 
-
 "dimensionMap": {
-
 
 
 "poolname": "G1 Old Gen",
 
 
-
 "rx_pid": "30382",
-
 
 
 "gcname": "G1 Old Generation",
 
 
-
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-A02ED607B5E9DD20"
-
 
 
 },
 
 
-
 "timestamps": [1623585600000, 1623628800000, 1623672000000, 1623715200000],
-
 
 
 "values": [3, null, null, 1]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -919,107 +732,81 @@ After default transformation
 
 ```
 {
-
 
 
 "totalCount": 1,
 
 
-
 "nextPageKey": null,
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:tech.jvm.memory.pool.collectionCount:default(0)",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": [
-
 
 
 "PROCESS_GROUP_INSTANCE-A02ED607B5E9DD20",
 
 
-
 "30382",
-
 
 
 "G1 Old Gen",
 
 
-
 "G1 Old Generation"
-
 
 
 ],
 
 
-
 "dimensionMap": {
-
 
 
 "poolname": "G1 Old Gen",
 
 
-
 "rx_pid": "30382",
-
 
 
 "gcname": "G1 Old Generation",
 
 
-
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-A02ED607B5E9DD20"
-
 
 
 },
 
 
-
 "timestamps": [1623585600000, 1623628800000, 1623672000000, 1623715200000],
-
 
 
 "values": [3, 0, 0, 1]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -1033,49 +820,37 @@ After default always transformation
 {
 
 
-
 "totalCount": 1,
-
 
 
 "nextPageKey": null,
 
 
-
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:service.errors.fivexx.count:splitBy():auto:default(0)",
 
 
-
 "data": [],
-
 
 
 "warnings": [
 
 
-
 "The :default operator could not be applied as it requires at least one written data point for the metric in the query timeframe."
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -1083,67 +858,51 @@ After default always transformation
 
 ```
 {
-
 
 
 "totalCount": 1,
 
 
-
 "nextPageKey": null,
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:service.errors.fivexx.count:splitBy():auto:default(0,always)",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": [],
-
 
 
 "dimensionMap": {},
 
 
-
 "timestamps": [1623585600000, 1623628800000, 1623672000000, 1623715200000],
-
 
 
 "values": [0, 0, 0, 0]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -1170,73 +929,55 @@ After delta transformation
 {
 
 
-
 "totalCount": 1,
-
 
 
 "nextPageKey": null,
 
 
-
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:service.keyRequest.count.server:value",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": ["SERVICE_METHOD-BD61DD6DAC1EFDE1"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.service_method": "SERVICE_METHOD-BD61DD6DAC1EFDE1"
-
 
 
 },
 
 
-
 "timestamps": [1630886400000, 1630929600000, 1630972800000, 1631016000000, 1631059200000],
-
 
 
 "values": [8338, 8449, 8343, 8372, 8425]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -1244,75 +985,57 @@ After delta transformation
 
 ```
 {
-
 
 
 "totalCount": 1,
 
 
-
 "nextPageKey": null,
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:service.keyRequest.count.server:value:delta",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": ["SERVICE_METHOD-BD61DD6DAC1EFDE1"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.service_method": "SERVICE_METHOD-BD61DD6DAC1EFDE1"
-
 
 
 },
 
 
-
 "timestamps": [1630886400000, 1630929600000, 1630972800000, 1631016000000, 1631059200000],
-
 
 
 "values": [null, 111, 0, 29, 53]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -1410,53 +1133,40 @@ After fold transformation
 {
 
 
-
 "metricId": "builtin:host.disk.avail",
-
 
 
 "data": [
 
 
-
 {
-
 
 
 "dimensions": ["HOST-BB4DF8969CB41C60", "DISK-FB78447211EE76BF"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.disk": "DISK-FB78447211EE76BF",
 
 
-
 "dt.entity.host": "HOST-BB4DF8969CB41C60"
 
 
-
 },
-
 
 
 "timestamps": [1612794060000, 1612794120000, 1612794180000],
 
 
-
 "values": [4.605786630826667e11, 4.424691002026667e11, 439596351488]
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -1464,55 +1174,42 @@ After fold transformation
 
 ```
 {
-
 
 
 "metricId": "builtin:host.disk.avail:fold",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": ["HOST-BB4DF8969CB41C60", "DISK-FB78447211EE76BF"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.disk": "DISK-FB78447211EE76BF",
-
 
 
 "dt.entity.host": "HOST-BB4DF8969CB41C60"
 
 
-
 },
-
 
 
 "timestamps": [1612794480000],
 
 
-
 "values": [4.577198298453333e11]
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -1539,161 +1236,121 @@ After last transformation
 {
 
 
-
 "totalCount": 3,
-
 
 
 "nextPageKey": null,
 
 
-
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:apps.other.sessionCount.osAndGeo:names:splitBy(\"dt.entity.geolocation.name\")",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": ["Austria"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.geolocation.name": "Austria"
-
 
 
 },
 
 
-
 "timestamps": [
-
 
 
 1617178800000, 1617180000000, 1617181200000, 1617182400000, 1617183600000, 1617184800000
 
 
-
 ],
-
 
 
 "values": [90, 106, 110, 96, 116, 102]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": ["Switzerland"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.geolocation.name": "Switzerland"
-
 
 
 },
 
 
-
 "timestamps": [
-
 
 
 1617178800000, 1617180000000, 1617181200000, 1617182400000, 1617183600000, 1617184800000
 
 
-
 ],
-
 
 
 "values": [176, 168, 178, 174, 183, 172]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": ["Germany"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.geolocation.name": "Germany"
 
 
-
 },
-
 
 
 "timestamps": [
 
 
-
 1617178800000, 1617180000000, 1617181200000, 1617182400000, 1617183600000, 1617184800000
-
 
 
 ],
 
 
-
 "values": [1168, 1121, 1154, 1160, 1108, 1135]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -1701,139 +1358,105 @@ After last transformation
 
 ```
 {
-
 
 
 "totalCount": 3,
 
 
-
 "nextPageKey": null,
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:apps.other.sessionCount.osAndGeo:names:splitBy(\"dt.entity.geolocation.name\"):last",
 
 
-
 "data": [
 
 
-
 {
-
 
 
 "dimensions": ["Austria"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.geolocation.name": "Austria"
 
 
-
 },
 
 
-
 "timestamps": [1617184800000],
-
 
 
 "values": [102]
 
 
-
 },
 
 
-
 {
-
 
 
 "dimensions": ["Switzerland"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.geolocation.name": "Switzerland"
 
 
-
 },
 
 
-
 "timestamps": [1617184800000],
-
 
 
 "values": [172]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": ["Germany"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.geolocation.name": "Germany"
-
 
 
 },
 
 
-
 "timestamps": [1617184800000],
-
 
 
 "values": [1135]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -1860,137 +1483,103 @@ After limit transformation
 {
 
 
-
 "totalCount": 4,
-
 
 
 "nextPageKey": null,
 
 
-
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:apps.other.sessionCount.osAndGeo:names:splitBy(\"dt.entity.geolocation.name\"):sort(value(sum,descending))",
 
 
-
 "data": [
 
 
-
 {
-
 
 
 "dimensions": ["Austria"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.geolocation.name": "Austria"
 
 
-
 },
 
 
-
 "timestamps": [1613559180000],
-
 
 
 "values": [6593]
 
 
-
 },
 
 
-
 {
-
 
 
 "dimensions": ["Switzerland"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.geolocation.name": "Switzerland"
 
 
-
 },
-
 
 
 "timestamps": [1613559180000],
 
 
-
 "values": [1002]
-
 
 
 },
 
 
-
 {
-
 
 
 "dimensions": ["Germany"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.geolocation.name": "Germany"
 
 
-
 },
 
 
-
 "timestamps": [1613559180000],
-
 
 
 "values": [564]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -1998,107 +1587,81 @@ After limit transformation
 
 ```
 {
-
 
 
 "totalCount": 2,
 
 
-
 "nextPageKey": null,
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:apps.other.sessionCount.osAndGeo:names:splitBy(\"dt.entity.geolocation.name\"):sort(value(sum,descending)):limit(2)",
 
 
-
 "data": [
 
 
-
 {
-
 
 
 "dimensions": ["Austria"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.geolocation.name": "Austria"
 
 
-
 },
 
 
-
 "timestamps": [1613559180000],
-
 
 
 "values": [6593]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": ["Switzerland"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.geolocation.name": "Switzerland"
-
 
 
 },
 
 
-
 "timestamps": [1613559180000],
-
 
 
 "values": [1002]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -2125,97 +1688,73 @@ After merge transformation
 {
 
 
-
 "totalCount": 2,
-
 
 
 "nextPageKey": null,
 
 
-
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:synthetic.browser.event.actionDuration.load.geo:count",
 
 
-
 "data": [
 
 
-
 {
-
 
 
 "dimensions": ["SYNTHETIC_TEST_STEP-002D5D5A0230A18F", "GEOLOCATION-B69A5A40388CC698"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.synthetic_test_step": "SYNTHETIC_TEST_STEP-97EF148D63564F29",
 
 
-
 "dt.entity.geolocation": "GEOLOCATION-0A41430434C388A9"
-
 
 
 },
 
 
-
 "timestamps": [1559865600000, 1560124800000, 1560384000000],
-
 
 
 "values": [143, 156, 217]
 
 
-
 },
 
 
-
 {
-
 
 
 "dimensions": ["SYNTHETIC_TEST_STEP-002D5D5A0230A18F", "GEOLOCATION-43BA84CAB24D7950"],
 
 
-
 "timestamps": [1559865600000, 1560124800000, 1560384000000],
-
 
 
 "values": [773, 804, 801]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -2223,75 +1762,57 @@ After merge transformation
 
 ```
 {
-
 
 
 "totalCount": 1,
 
 
-
 "nextPageKey": null,
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:synthetic.browser.event.actionDuration.load.geo:count:merge(\"dt.entity.geolocation\")",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": ["SYNTHETIC_TEST_STEP-002D5D5A0230A18F"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.synthetic_test_step": "SYNTHETIC_TEST_STEP-09D1E2CC97B5878B"
-
 
 
 },
 
 
-
 "timestamps": [1559865600000, 1560124800000, 1560384000000],
-
 
 
 "values": [916, 960, 1018]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -2317,25 +1838,19 @@ After names transformation
 {
 
 
-
 "dimensions": ["HOST-BB4DF8969CB41C60", "DISK-FB78447211EE76BF"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.disk": "DISK-FB78447211EE76BF",
-
 
 
 "dt.entity.host": "HOST-BB4DF8969CB41C60"
 
 
-
 }
-
 
 
 }
@@ -2345,33 +1860,25 @@ After names transformation
 {
 
 
-
 "dimensions": ["l-009", "HOST-BB4DF8969CB41C60", "C:\\", "DISK-FB78447211EE76BF"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.disk.name": "C:\\",
-
 
 
 "dt.entity.disk": "DISK-FB78447211EE76BF",
 
 
-
 "dt.entity.host.name": "l-009",
-
 
 
 "dt.entity.host": "HOST-BB4DF8969CB41C60"
 
 
-
 }
-
 
 
 }
@@ -2411,21 +1918,16 @@ After parents transformation
 {
 
 
-
 "dimensions": ["SERVICE_METHOD-D9D3A16FA577BF1C"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.service": "SERVICE-C22F1E8EA66FF4C5"
 
 
-
 }
-
 
 
 }
@@ -2435,25 +1937,19 @@ After parents transformation
 {
 
 
-
 "dimensions": ["SERVICE-C22F1E8EA66FF4C5", "SERVICE_METHOD-D9D3A16FA577BF1C"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.service_method": "SERVICE_METHOD-D9D3A16FA577BF1C",
-
 
 
 "dt.entity.service": "SERVICE-C22F1E8EA66FF4C5"
 
 
-
 }
-
 
 
 }
@@ -2529,21 +2025,16 @@ The following partition transformation is used in this example.
 :partition(
 
 
-
 "Action duration",
-
 
 
 value("slow",gt(200)),
 
 
-
 value("fast",lt(100)),
 
 
-
 value("normal",otherwise)
-
 
 
 )
@@ -2563,97 +2054,73 @@ After partition transformation
 {
 
 
-
 "totalCount": 1,
-
 
 
 "nextPageKey": null,
 
 
-
 "resolution": "10m",
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:apps.web.action.domInteractive.load.browser:avg",
 
 
-
 "data": [
 
 
-
 {
-
 
 
 "dimensions": ["APPLICATION_METHOD-E418A4BC1DC2C911", "BROWSER-EFB8A292CB368A8D"],
 
 
-
 "dimensionMap": {
 
 
-
 "dt.entity.browser": "BROWSER-EFB8A292CB368A8D",
-
 
 
 "dt.entity.application_method": "APPLICATION_METHOD-E418A4BC1DC2C911"
 
 
-
 },
-
 
 
 "timestamps": [
 
 
-
 1637152200000, 1637152800000, 1637153400000, 1637154000000, 1637154600000,
-
 
 
 1637155200000, 1637155800000, 1637156400000, 1637157000000, 1637157600000,
 
 
-
 1637158200000, 1637158800000, 1637159400000
 
 
-
 ],
-
 
 
 "values": [155, 215, 247, 118, 94, 119, 67, 159, 114, 169, 113, 75, 160]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -2661,231 +2128,174 @@ After partition transformation
 
 ```
 {
-
 
 
 "totalCount": 3,
 
 
-
 "nextPageKey": null,
-
 
 
 "resolution": "10m",
 
 
-
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:apps.web.action.domInteractive.load.browser:avg:partition(\"Action duration\",value(slow,gt(200)),value(fast,lt(100)),value(normal,otherwise))",
 
 
-
 "data": [
 
 
-
 {
-
 
 
 "dimensions": [
 
 
-
 "BROWSER-EFB8A292CB368A8D",
-
 
 
 "APPLICATION_METHOD-E418A4BC1DC2C911",
 
 
-
 "normal"
-
 
 
 ],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.browser": "BROWSER-EFB8A292CB368A8D",
 
 
-
 "dt.entity.application_method": "APPLICATION_METHOD-E418A4BC1DC2C911",
-
 
 
 "Action duration": "normal"
 
 
-
 },
 
 
-
 "timestamps": [
-
 
 
 1637152200000, 1637152800000, 1637153400000, 1637154000000, 1637154600000,
 
 
-
 1637155200000, 1637155800000, 1637156400000, 1637157000000, 1637157600000,
-
 
 
 1637158200000, 1637158800000, 1637159400000
 
 
-
 ],
-
 
 
 "values": [155, null, null, 118, null, 119, null, 159, 114, 169, 113, null, 160]
 
 
-
 },
 
 
-
 {
-
 
 
 "dimensions": ["BROWSER-EFB8A292CB368A8D", "APPLICATION_METHOD-E418A4BC1DC2C911", "fast"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.browser": "BROWSER-EFB8A292CB368A8D",
 
 
-
 "dt.entity.application_method": "APPLICATION_METHOD-E418A4BC1DC2C911",
-
 
 
 "Action duration": "fast"
 
 
-
 },
-
 
 
 "timestamps": [
 
 
-
 1637154000000, 1637154600000, 1637155200000, 1637155800000, 1637156400000,
-
 
 
 1637157000000, 1637157600000, 1637158200000, 1637158800000, 1637159400000,
 
 
-
 1637160000000, 1637160600000, 1637161200000
 
 
-
 ],
-
 
 
 "values": [null, null, null, null, 94, null, 67, null, null, null, null, 75, null]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": ["BROWSER-EFB8A292CB368A8D", "APPLICATION_METHOD-E418A4BC1DC2C911", "slow"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.browser": "BROWSER-EFB8A292CB368A8D",
-
 
 
 "dt.entity.application_method": "APPLICATION_METHOD-E418A4BC1DC2C911",
 
 
-
 "Action duration": "slow"
-
 
 
 },
 
 
-
 "timestamps": [
-
 
 
 1637154000000, 1637154600000, 1637155200000, 1637155800000, 1637156400000,
 
 
-
 1637157000000, 1637157600000, 1637158200000, 1637158800000, 1637159400000,
-
 
 
 1637160000000, 1637160600000, 1637161200000
 
 
-
 ],
-
 
 
 "values": [null, 215, 247, null, null, null, null, null, null, null, null, null, null]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -2947,85 +2357,64 @@ After smooth transformation
 {
 
 
-
 "totalCount": 1,
-
 
 
 "nextPageKey": null,
 
 
-
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:service.keyRequest.count.server",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": ["SERVICE_METHOD-BBA9C77B774B0C15"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.service_method": "SERVICE_METHOD-BBA9C77B774B0C15"
-
 
 
 },
 
 
-
 "timestamps": [
-
 
 
 1628618460000, 1628618520000, 1628618580000, 1628618640000, 1628618700000,
 
 
-
 1628618760000, 1628618820000, 1628618880000, 1628618940000, 1628619000000
 
 
-
 ],
-
 
 
 "values": [null, 15, 13, 15, null, null, 28, 14, 14, 13]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -3033,87 +2422,66 @@ After smooth transformation
 
 ```
 {
-
 
 
 "totalCount": 1,
 
 
-
 "nextPageKey": null,
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:service.keyRequest.count.server:smooth(skipfirst)",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": ["SERVICE_METHOD-BBA9C77B774B0C15"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.service_method": "SERVICE_METHOD-BBA9C77B774B0C15"
-
 
 
 },
 
 
-
 "timestamps": [
-
 
 
 1628618460000, 1628618520000, 1628618580000, 1628618640000, 1628618700000,
 
 
-
 1628618760000, 1628618820000, 1628618880000, 1628618940000, 1628619000000
-
 
 
 ],
 
 
-
 "values": [null, null, 13, 15, null, null, null, 14, 14, 13]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -3181,169 +2549,127 @@ After sort transformation
 {
 
 
-
 "totalCount": 4,
-
 
 
 "nextPageKey": null,
 
 
-
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:apps.other.sessionCount.osAndGeo:names:splitBy(\"dt.entity.geolocation.name\")",
 
 
-
 "data": [
 
 
-
 {
-
 
 
 "dimensions": ["Austria"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.geolocation.name": "Austria"
 
 
-
 },
 
 
-
 "timestamps": [1613557980000],
-
 
 
 "values": [6543]
 
 
-
 },
 
 
-
 {
-
 
 
 "dimensions": ["Switzerland"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.geolocation.name": "Switzerland"
 
 
-
 },
 
 
-
 "timestamps": [1613557980000],
-
 
 
 "values": [1009]
 
 
-
 },
 
 
-
 {
-
 
 
 "dimensions": ["Germany"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.geolocation.name": "Germany"
 
 
-
 },
 
 
-
 "timestamps": [1613557980000],
-
 
 
 "values": [6673]
 
 
-
 },
 
 
-
 {
-
 
 
 "dimensions": ["Lichtenstein"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.geolocation.name": "Lichtenstein"
 
 
-
 },
-
 
 
 "timestamps": [1613557980000],
 
 
-
 "values": [86]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -3351,171 +2677,129 @@ After sort transformation
 
 ```
 {
-
 
 
 "totalCount": 4,
 
 
-
 "nextPageKey": null,
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:apps.other.sessionCount.osAndGeo:names:splitBy(\"dt.entity.geolocation.name\"):sort(dimension(\"dt.entity.geolocation.name\",ascending))",
 
 
-
 "data": [
 
 
-
 {
-
 
 
 "dimensions": ["Austria"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.geolocation.name": "Austria"
 
 
-
 },
 
 
-
 "timestamps": [1613557440000],
-
 
 
 "values": [6543]
 
 
-
 },
 
 
-
 {
-
 
 
 "dimensions": ["Germany"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.geolocation.name": "Germany"
 
 
-
 },
 
 
-
 "timestamps": [1613557440000],
-
 
 
 "values": [6673]
 
 
-
 },
 
 
-
 {
-
 
 
 "dimensions": ["Lichtenstein"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.geolocation.name": "Lichtenstein"
 
 
-
 },
-
 
 
 "timestamps": [1613557980000],
 
 
-
 "values": [86]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": ["Switzerland"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.geolocation.name": "Switzerland"
-
 
 
 },
 
 
-
 "timestamps": [1613557440000],
-
 
 
 "values": [1009]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -3542,361 +2826,271 @@ After split by transformation
 {
 
 
-
 "totalCount": 4,
-
 
 
 "nextPageKey": null,
 
 
-
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:apps.other.sessionCount.osAndGeo:names",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": [
-
 
 
 "easyTravel Demo",
 
 
-
 "MOBILE_APPLICATION-752C288D59734C79",
-
 
 
 "Android",
 
 
-
 "OS-472A4A3B41095B09",
-
 
 
 "Switzerland",
 
 
-
 "GEOLOCATION-976217DC7560B588"
-
 
 
 ],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.device_application.name": "easyTravel Demo",
 
 
-
 "dt.entity.os": "OS-472A4A3B41095B09",
-
 
 
 "dt.entity.os.name": "Android",
 
 
-
 "dt.entity.device_application": "MOBILE_APPLICATION-752C288D59734C79",
-
 
 
 "dt.entity.geolocation.name": "Switzerland",
 
 
-
 "dt.entity.geolocation": "GEOLOCATION-976217DC7560B588"
-
 
 
 },
 
 
-
 "timestamps": [1612950360000],
-
 
 
 "values": [557]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": [
-
 
 
 "easyTravel Demo",
 
 
-
 "MOBILE_APPLICATION-752C288D59734C79",
-
 
 
 "Android",
 
 
-
 "OS-472A4A3B41095B09",
-
 
 
 "Austria",
 
 
-
 "GEOLOCATION-EADFE05E062C8D33"
-
 
 
 ],
 
 
-
 "dimensionMap": {
 
 
-
 "dt.entity.device_application.name": "easyTravel Demo",
-
 
 
 "dt.entity.os": "OS-472A4A3B41095B09",
 
 
-
 "dt.entity.os.name": "Android",
-
 
 
 "dt.entity.device_application": "MOBILE_APPLICATION-752C288D59734C79",
 
 
-
 "dt.entity.geolocation.name": "Austria",
-
 
 
 "dt.entity.geolocation": "GEOLOCATION-EADFE05E062C8D33"
 
 
-
 },
 
 
-
 "timestamps": [1612950360000],
-
 
 
 "values": [328]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": [
-
 
 
 "easyTravel Demo",
 
 
-
 "MOBILE_APPLICATION-752C288D59734C79",
-
 
 
 "iOS",
 
 
-
 "OS-62028BEE737F03D4",
-
 
 
 "Switzerland",
 
 
-
 "GEOLOCATION-976217DC7560B588"
-
 
 
 ],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.device_application.name": "easyTravel Demo",
 
 
-
 "dt.entity.os": "OS-62028BEE737F03D4",
-
 
 
 "dt.entity.os.name": "iOS",
 
 
-
 "dt.entity.device_application": "MOBILE_APPLICATION-752C288D59734C79",
-
 
 
 "dt.entity.geolocation.name": "Switzerland",
 
 
-
 "dt.entity.geolocation": "GEOLOCATION-976217DC7560B588"
-
 
 
 },
 
 
-
 "timestamps": [1612950360000],
-
 
 
 "values": [383]
 
 
-
 },
 
 
-
 {
-
 
 
 "dimensions": [
 
 
-
 "easyTravel Demo",
-
 
 
 "MOBILE_APPLICATION-752C288D59734C79",
 
 
-
 "iOS",
-
 
 
 "OS-62028BEE737F03D4",
 
 
-
 "Austria",
-
 
 
 "GEOLOCATION-EADFE05E062C8D33"
 
 
-
 ],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.device_application.name": "easyTravel Demo",
 
 
-
 "dt.entity.os": "OS-62028BEE737F03D4",
-
 
 
 "dt.entity.os.name": "iOS",
 
 
-
 "dt.entity.device_application": "MOBILE_APPLICATION-752C288D59734C79",
-
 
 
 "dt.entity.geolocation.name": "Austria",
 
 
-
 "dt.entity.geolocation": "GEOLOCATION-EADFE05E062C8D33"
-
 
 
 },
 
 
-
 "timestamps": [1612950360000],
-
 
 
 "values": [214]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -3904,107 +3098,81 @@ After split by transformation
 
 ```
 {
-
 
 
 "totalCount": 2,
 
 
-
 "nextPageKey": null,
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:apps.other.sessionCount.osAndGeo:names:splitBy(\"dt.entity.geolocation.name\")",
 
 
-
 "data": [
 
 
-
 {
-
 
 
 "dimensions": ["Austria"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.geolocation.name": "Austria"
 
 
-
 },
 
 
-
 "timestamps": [1612950360000],
-
 
 
 "values": [542]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": ["Switzerland"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.geolocation.name": "Switzerland"
-
 
 
 },
 
 
-
 "timestamps": [1612950360000],
-
 
 
 "values": [940]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }

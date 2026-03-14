@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:29:07.626668
 
 # VMware vSphere monitoring
 
-# VMware vSphere monitoring
 
 * Overview
 * Published Aug 12, 2021

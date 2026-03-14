@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:03.339161
 
 # Vulnerabilities API - PUT заглушить или снять заглушение элемента устранения
 
-# Vulnerabilities API - PUT заглушить или снять заглушение элемента устранения
 
 * Reference
 * Updated on May 03, 2022
@@ -54,17 +53,13 @@ scraped: 2026-03-05T21:38:03.339161
 {
 
 
-
 "comment": "string",
-
 
 
 "muted": true,
 
 
-
 "reason": "IGNORE"
-
 
 
 }
@@ -114,53 +109,40 @@ scraped: 2026-03-05T21:38:03.339161
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -176,33 +158,25 @@ scraped: 2026-03-05T21:38:03.339161
 curl --request PUT \
 
 
-
 --url https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/8788643471842202915/remediationItems/PROCESS_GROUP-70DF2C1374244F5A/muteState \
-
 
 
 --header 'Authorization: Api-Token [your_token]' \
 
 
-
 --header 'Content-Type: application/json' \
-
 
 
 --data '{
 
 
-
 "muted": true,
-
 
 
 "reason": "OTHER",
 
 
-
 "comment": "API test"
-
 
 
 }'
@@ -220,17 +194,13 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/87886434718422029
 {
 
 
-
 "muted": true,
-
 
 
 "reason": "OTHER",
 
 
-
 "comment": "API test"
-
 
 
 }

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Cluster information API
 
-# Cluster information API
 
 * Reference
 * Published Sep 24, 2018
@@ -94,9 +93,7 @@ A list of constraint violations
 {
 
 
-
 "version": "string"
-
 
 
 }
@@ -104,55 +101,42 @@ A list of constraint violations
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }

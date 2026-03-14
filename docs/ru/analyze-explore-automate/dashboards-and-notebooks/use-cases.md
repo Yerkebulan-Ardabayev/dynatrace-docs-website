@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:45.177285
 
 # Сценарии использования Notebooks и Dashboards
 
-# Сценарии использования Notebooks и Dashboards
 
 * Последнее Dynatrace
 * Руководство по использованию

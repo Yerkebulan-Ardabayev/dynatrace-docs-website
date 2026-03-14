@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:53.354074
 
 # Концепции Adaptive Traffic Management
 
-# Концепции Adaptive Traffic Management
 
 * Latest Dynatrace
 * Explanation

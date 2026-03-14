@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace Intelligence
 
-# Dynatrace Intelligence
 
 * Latest Dynatrace
 * Overview

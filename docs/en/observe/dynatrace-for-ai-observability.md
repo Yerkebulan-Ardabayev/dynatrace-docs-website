@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:10.074162
 
 # AI and LLM Observability
 
-# AI and LLM Observability
 
 * Latest Dynatrace
 * Overview

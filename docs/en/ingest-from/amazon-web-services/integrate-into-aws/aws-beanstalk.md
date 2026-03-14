@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:54.642583
 
 # Monitor AWS Elastic Beanstalk
 
-# Monitor AWS Elastic Beanstalk
 
 * Classic
 * How-to guide
@@ -97,21 +96,16 @@ To install OneAgent, you need two configuration files:
    files:
 
 
-
    "/tmp/dynatraceinstall.sh":
-
 
 
    mode: "000755"
 
 
-
    owner: root
 
 
-
    group: root
-
 
 
    source: "https://abcdefghij.live.dynatrace.com/api/v1/deployment/installer/agent/unix/default/latest?arch=x86&flavor=default&Api-Token=abcdefghijklmnopqrstu"
@@ -126,21 +120,16 @@ To install OneAgent, you need two configuration files:
    commands:
 
 
-
    install_dynatrace:
-
 
 
    cwd: /tmp
 
 
-
    command: "/bin/sh dynatraceinstall.sh --set-proxy=172.1.1.128:8080"
 
 
-
    restart_httpd:
-
 
 
    command: "service httpd restart"
@@ -161,77 +150,58 @@ To install OneAgent, you need two configuration files:
    files:
 
 
-
    "/tmp/dynatraceinstall.sh":
-
 
 
    mode: "000755"
 
 
-
    owner: root
-
 
 
    group: root
 
 
-
    content: |
-
 
 
    #!/bin/bash
 
 
-
    if [ ! -d /opt/dynatrace/oneagent ]; then
-
 
 
    wget -O /tmp/Dynatrace-OneAgent.sh "https://abcdefghij.live.dynatrace.com/api/v1/deployment/installer/agent/unix/default/latest?arch=x86&flavor=default&Api-Token=abcdefghijklmnopqrstu"
 
 
-
    chmod 755 /tmp/Dynatrace-OneAgent.sh
-
 
 
    sudo chown root:root /tmp/Dynatrace-OneAgent.sh
 
 
-
    sudo /tmp/Dynatrace-OneAgent.sh
-
 
 
    fi
 
 
-
    commands:
-
 
 
    install_dynatrace:
 
 
-
    cwd: /tmp
-
 
 
    command: "/bin/sh dynatraceinstall.sh --set-proxy=172.1.1.128:8080"
 
 
-
    restart_nginx:
 
 
-
    command: service nginx restart
-
 
 
    ignoreErrors: true
@@ -255,9 +225,7 @@ To install OneAgent, you need two configuration files:
    files:
 
 
-
    "C:/OneAgent/Dynatrace-OneAgent-Installer.exe":
-
 
 
    source: "https://abcdefghij.live.dynatrace.com/api/v1/deployment/installer/agent/windows/default/latest?Api-Token=abcdefghijklmnopqrstu&arch=x86&flavor=default"
@@ -276,9 +244,7 @@ To install OneAgent, you need two configuration files:
    commands:
 
 
-
    install_oneagent:
-
 
 
    command: "C:/OneAgent/Dynatrace-OneAgent-Installer.exe --quiet --set-proxy=172.1.1.128:8080"

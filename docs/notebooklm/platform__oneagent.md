@@ -14,7 +14,6 @@ scraped: 2026-03-06T21:15:37.246688
 
 # How OneAgent works
 
-# How OneAgent works
 
 * Latest Dynatrace
 * 2-min read
@@ -66,7 +65,6 @@ scraped: 2026-03-06T21:15:38.957990
 
 # Enable OneAgent monitoring modes
 
-# Enable OneAgent monitoring modes
 
 * Latest Dynatrace
 * How-to guide
@@ -200,7 +198,6 @@ You can also turn off selected extensions collecting the metrics at the environm
 ### Filter hosts by injection status
 
 
-
 When you turn off auto-injection, you can find such hosts using the **Auto-injection** filter on the **Deployment Status** page or [OneAgent on a host - GET a list of hosts with OneAgent details](../ru/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents.md "Check the configuration of OneAgent instances on your hosts via Dynatrace API.").
 
 Use Dynatrace web UI
@@ -271,7 +268,6 @@ scraped: 2026-03-06T21:10:51.621843
 
 # OneAgent monitoring modes
 
-# OneAgent monitoring modes
 
 * Latest Dynatrace
 * Explanation
@@ -393,7 +389,6 @@ Network
 | builtin:host.net.nic.linkUtilTx | NIC transmit link utilization Network interface transmit link utilization on the host | Percent (%) | autoavgmaxmin |
 
 
-
 ## Virtualization monitoring
 
 Dynatrace supports [virtualization monitoring](../ru/observe/infrastructure-observability/vmware-vsphere-monitoring.md "Monitor VMware vSphere with Dynatrace."). To monitor the virtual components in your environment, you need to complete an extra step beyond the initial setup. For full details, see [Set up virtualization monitoring](../ru/observe/infrastructure-observability/vmware-vsphere-monitoring.md "Monitor VMware vSphere with Dynatrace.").
@@ -432,7 +427,6 @@ scraped: 2026-03-04T21:30:32.246175
 
 # Resource attributes
 
-# Resource attributes
 
 * Latest Dynatrace
 * Reference
@@ -528,7 +522,6 @@ scraped: 2026-03-06T21:15:42.340112
 
 # OneAgent monitoring capabilities
 
-# OneAgent monitoring capabilities
 
 * Latest Dynatrace
 * 3-min read
@@ -578,7 +571,6 @@ scraped: 2026-03-06T21:10:22.998134
 
 # OneAgent
 
-# OneAgent
 
 * Latest Dynatrace
 * 1-min read

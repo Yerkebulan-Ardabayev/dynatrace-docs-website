@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:29:30.899274
 
 # Установка модуля CICS
 
-# Установка модуля CICS
 
 * Последняя версия Dynatrace
 * 14 минут чтения
@@ -108,33 +107,25 @@ DFHKE0010  HVPAC449 Vendor table DFHBPZDT for product ID ZDT has been loaded
 *
 
 
-
 * PLT USED TO SUPPORT DYNATRACE CODE MODULE INITIALIZATION
-
 
 
 *
 
 
-
 DFHPLT TYPE=INITIAL,SUFFIX=SI
-
 
 
 DFHPLT TYPE=ENTRY,PROGRAM=DFHDELIM
 
 
-
 * Other PLT startup programs here...
-
 
 
 DFHPLT TYPE=ENTRY,PROGRAM=ZDTPLT
 
 
-
 DFHPLT TYPE=FINAL
-
 
 
 END
@@ -162,33 +153,25 @@ DBPA 17.02 TRAN=*,PROGRAM=ZDTPLT*,CSECT=*
 *
 
 
-
 * PLT USED TO SUPPORT DYNATRACE CODE MODULE SHUTDOWN
-
 
 
 *
 
 
-
 DFHPLT TYPE=INITIAL,SUFFIX=SD
-
 
 
 DFHPLT TYPE=ENTRY,PROGRAM=ZDTPLTSD
 
 
-
 * Other PLT shutdown programs here...
-
 
 
 DFHPLT TYPE=ENTRY,PROGRAM=DFHDELIM
 
 
-
 DFHPLT TYPE=FINAL
-
 
 
 END
@@ -244,77 +227,58 @@ Dynatrace поддерживает только конвейеры, исполь
 <?xml version="1.0" encoding="EBCDIC-CP-US"?>
 
 
-
 <provider_pipeline
-
 
 
 xmlns="http://www.ibm.com/software/htp/cics/pipeline"
 
 
-
 xmlns:xsi="http://www.w3.org/2001/XMLSchemainstance"
-
 
 
 xsi:schemaLocation="http://www.ibm.com/software/htp/
 
 
-
 cics/pipeline/provider.xsd ">
-
 
 
 <service>
 
 
-
 <terminal_handler>
-
 
 
 <cics_soap_1.1_handler>
 
 
-
 <headerprogram>
-
 
 
 <program_name>ZDTSOAPH</program_name>
 
 
-
 <namespace>*</namespace>
-
 
 
 <localname>*</localname>
 
 
-
 <mandatory>true</mandatory>
-
 
 
 </headerprogram>
 
 
-
 </cics_soap_1.1_handler>
-
 
 
 </terminal_handler>
 
 
-
 </service>
 
 
-
 <apphandler>DFHPITP</apphandler>
-
 
 
 </provider_pipeline>
@@ -328,65 +292,49 @@ cics/pipeline/provider.xsd ">
 <?xml version="1.0" encoding="EBCDIC-CP-US"?>
 
 
-
 <provider_pipeline xmlns="http://www.ibm.com/software/htp/cics/pipeline">
-
 
 
 <transport>
 
 
-
 <default_http_transport_handler_list>
 
 
-
 <handler>
-
 
 
 <program>ZDTSOAPH</program><handler_parameter_list/>
 
 
-
 </handler>
-
 
 
 </default_http_transport_handler_list>
 
 
-
 </transport>
-
 
 
 <service>
 
 
-
 <terminal_handler>
-
 
 
 <handler>
 
 
-
 <program>DFHPIJT</program><handler_parameter_list/>
-
 
 
 </handler>
 
 
-
 </terminal_handler>
 
 
-
 </service>
-
 
 
 </provider_pipeline>
@@ -415,7 +363,6 @@ INITPARM=(ZDTPLT='MEPC,<Option>'),
 
 ```
 Example:
-
 
 
 INITPARM=(ZDTPLT='MEPC,SEVERE'),
@@ -450,29 +397,22 @@ INITPARM=(ZDTPLT='MEPC,SEVERE'),
 CICSAPPL Install for group XXXX has completed successfully.
 
 
-
 CICSAPPL OWNER CSSY Resource definition for ZDTAGT72 has been added.
-
 
 
 CICSAPPL OWNER CSSY Resource definition for ZDTDC2 has been added.
 
 
-
 CICSAPPL OWNER CSSY Resource definition for ZDTDC2A has been added.
-
 
 
 CICSAPPL OWNER CSSY Resource definition for ZDTPLT has been added.
 
 
-
 CICSAPPL OWNER CSSY Resource definition for ZDTPLTSD has been added.
 
 
-
 CICSAPPL OWNER CSSY Resource definition for ZDTSOAPH has been added.
-
 
 
 CICSAPPL OWNER CSSY TRANSACTION definition entry for DTAX has been added.
@@ -488,21 +428,16 @@ CICSAPPL OWNER CSSY TRANSACTION definition entry for DTAX has been added.
 2019-05-09 20:19:11.789 UTC [d37f9842] info    [native] Registering a pgi for the job: HVBAC021, host=10.30.220.41, groupId= f39f4801966aa7c7, pgir.groupInstanceID= fad6dee63cfd1522, hostID= 95c0bb0371704b8c, nodeID= fad6dee63cfd1522, groupName=HVBAC021, hostGroup=, processGroupType= 28
 
 
-
 2019-05-09 20:19:11.789 UTC [d37f9842] info    [native] Registered SubAgent[C021,51,32aa8d038887d1c9] with zDC[Z021,52], rc=true
-
 
 
 2019-05-09 20:19:11.789 UTC [d37f9842] info    [native] ASID[51], smfID[S0W1], sysid[C021], jobName[HVBAC021], subagentid[32aa8d038887d1c9] snaId[NETD    .HVBAC021], CICS release 54 was successfully registered with zdc[52] using protocol version=7.2.0, allocator=pooled.
 
 
-
 2019-05-09 20:19:13.789 UTC [d37f9842] info    [native] ASID[52], smfID[S0W1], sysid[Z021], jobName[AFVBZ021] - ZDC955I  - Dynatrace connection being processed ZDC-Job/ID:AFVBZ021/Z021.
 
 
-
 2019-05-09 20:19:13.790 UTC [d37f9842] info    [native] ASID[51], smfID[S0W1], sysid[C021], jobName[HVBAC021] - ZDTP008I - ZDTP008I ZDTAGT71.
-
 
 
 2019-05-09 20:19:13.790 UTC [d37f9842] info    [native] ASID[51], smfID[S0W1], sysid[C021], jobName[HVBAC021] - ZDTP020I - ZDTP020I Active Sensors: MQ DB2 DB2R SOAP CTG DB2Fetch DLI DLIR HTTP .

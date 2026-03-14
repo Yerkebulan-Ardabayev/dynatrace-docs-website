@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:44.533912
 
 # Deployment API — Просмотр последней версии OneAgent для AWS Lambda Classic
 
-# Deployment API — Просмотр последней версии OneAgent для AWS Lambda Classic
 
 * Reference
 * Updated on Aug 20, 2025
@@ -89,33 +88,25 @@ scraped: 2026-03-06T21:28:44.533912
 {
 
 
-
 "collector": "string",
-
 
 
 "java": "string",
 
 
-
 "java_with_collector": "string",
-
 
 
 "nodejs": "string",
 
 
-
 "nodejs_with_collector": "string",
-
 
 
 "python": "string",
 
 
-
 "python_with_collector": "string"
-
 
 
 }
@@ -123,55 +114,42 @@ scraped: 2026-03-06T21:28:44.533912
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:01.027497
 
 # Span and trace context propagation in Distributed Traces Classic
 
-# Span and trace context propagation in Distributed Traces Classic
 
 * Classic
 * Explanation

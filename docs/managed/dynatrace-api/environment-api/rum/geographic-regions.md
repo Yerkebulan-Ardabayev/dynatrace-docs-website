@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Geographic regions API
 
-# Geographic regions API
 
 * Reference
 * Updated on May 02, 2022

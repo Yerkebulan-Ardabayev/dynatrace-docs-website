@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:40.754078
 
 # Synthetic details for browser monitors
 
-# Synthetic details for browser monitors
 
 * Classic
 * Explanation

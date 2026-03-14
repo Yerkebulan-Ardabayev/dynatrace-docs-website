@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:45.069779
 
 # OneAgent files and disk space requirements on AIX
 
-# OneAgent files and disk space requirements on AIX
 
 * Latest Dynatrace
 * Reference

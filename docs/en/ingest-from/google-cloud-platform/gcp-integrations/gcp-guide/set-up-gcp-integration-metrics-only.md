@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:40:45.625171
 
 # Set up the Dynatrace Google Cloud metric integration on a GKE cluster
 
-# Set up the Dynatrace Google Cloud metric integration on a GKE cluster
 
 * Latest Dynatrace
 * How-to guide
@@ -69,157 +68,118 @@ dynatrace-gcp-monitor-helm-deployment-role.yaml
 title: Dynatrace GCP Monitor helm deployment role
 
 
-
 description: Role for Dynatrace GCP Monitor helm and pubsub deployment
-
 
 
 stage: GA
 
 
-
 includedPermissions:
-
 
 
 - container.clusters.get
 
 
-
 - container.configMaps.create
-
 
 
 - container.configMaps.delete
 
 
-
 - container.configMaps.get
-
 
 
 - container.configMaps.update
 
 
-
 - container.deployments.create
-
 
 
 - container.deployments.delete
 
 
-
 - container.deployments.get
-
 
 
 - container.deployments.update
 
 
-
 - container.namespaces.create
-
 
 
 - container.namespaces.get
 
 
-
 - container.pods.get
-
 
 
 - container.pods.list
 
 
-
 - container.secrets.create
-
 
 
 - container.secrets.delete
 
 
-
 - container.secrets.get
-
 
 
 - container.secrets.list
 
 
-
 - container.secrets.update
-
 
 
 - container.serviceAccounts.create
 
 
-
 - container.serviceAccounts.delete
-
 
 
 - container.serviceAccounts.get
 
 
-
 - iam.roles.create
-
 
 
 - iam.roles.list
 
 
-
 - iam.roles.update
-
 
 
 - iam.serviceAccounts.actAs
 
 
-
 - iam.serviceAccounts.create
-
 
 
 - iam.serviceAccounts.getIamPolicy
 
 
-
 - iam.serviceAccounts.list
-
 
 
 - iam.serviceAccounts.setIamPolicy
 
 
-
 - resourcemanager.projects.get
-
 
 
 - resourcemanager.projects.getIamPolicy
 
 
-
 - resourcemanager.projects.setIamPolicy
-
 
 
 - serviceusage.services.enable
 
 
-
 - serviceusage.services.get
 
 
-
 - serviceusage.services.list
-
 
 
 - serviceusage.services.use
@@ -370,7 +330,6 @@ The latest versions of Google Cloud extensions will be uploaded. You have two op
 cd helm-deployment-package
 
 
-
 ./deploy-helm.sh
 ```
 
@@ -378,7 +337,6 @@ cd helm-deployment-package
 
 ```
 cd helm-deployment-package
-
 
 
 ./deploy-helm.sh [--role-name <role-to-be-created/updated>]
@@ -390,7 +348,6 @@ To keep the existing versions of present extensions and install the latest versi
 cd helm-deployment-package
 
 
-
 ./deploy-helm.sh --without-extensions-upgrade
 ```
 
@@ -398,7 +355,6 @@ Run the command below. The latest versions of extensions will be uploaded.
 
 ```
 cd helm-deployment-package
-
 
 
 ./deploy-helm.sh --create-autopilot-cluster
@@ -410,7 +366,6 @@ To set a different name for the new cluster, run the command below instead, maki
 cd helm-deployment-package
 
 
-
 ./deploy-helm.sh --create-autopilot-cluster --autopilot-cluster-name <name-of-new-cluster>
 ```
 
@@ -418,7 +373,6 @@ To keep the existing versions of present extensions and install the latest versi
 
 ```
 cd helm-deployment-package
-
 
 
 ./deploy-helm.sh --create-autopilot-cluster --without-extensions-upgrade
@@ -510,7 +464,6 @@ Example:
 
 ```
 filter_conditions:
-
 
 
 resource.labels.location = "us-central1-c" AND resource.labels.namespace_name = "dynatrace"

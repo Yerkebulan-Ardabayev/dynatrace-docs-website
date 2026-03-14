@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:55.780096
 
 # Monitor z/OS logs
 
-# Monitor z/OS logs
 
 * Latest Dynatrace
 * 4-min read

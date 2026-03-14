@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:15.682232
 
 # Extend Dynatrace with domain-specific web UI
 
-# Extend Dynatrace with domain-specific web UI
 
 * Classic
 * Обзор

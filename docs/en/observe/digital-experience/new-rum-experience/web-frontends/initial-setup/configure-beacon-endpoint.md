@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:43.809096
 
 # Configure the beacon endpoint for web frontends in the New RUM Experience
 
-# Configure the beacon endpoint for web frontends in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide

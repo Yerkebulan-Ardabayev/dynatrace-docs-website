@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:14.231788
 
 # Действия коннектора обработки текста
 
-# Действия коннектора обработки текста
 
 * Последняя версия Dynatrace
 * Справочник
@@ -44,9 +43,7 @@ scraped: 2026-03-06T21:29:14.231788
 {
 
 
-
 "json": "<updated json content>"
-
 
 
 }
@@ -62,37 +59,28 @@ scraped: 2026-03-06T21:29:14.231788
   {
 
 
-
   "persons": [
 
 
-
   {
-
 
 
   "name": "Max"
 
 
-
   },
-
 
 
   {
 
 
-
   "name": "John"
-
 
 
   }
 
 
-
   ]
-
 
 
   }
@@ -109,37 +97,28 @@ scraped: 2026-03-06T21:29:14.231788
 {
 
 
-
 "persons": [
 
 
-
 {
-
 
 
 "name": "Michael"
 
 
-
 },
-
 
 
 {
 
 
-
 "name": "John"
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -158,9 +137,7 @@ scraped: 2026-03-06T21:29:14.231788
 {
 
 
-
 "yaml": "<updated yaml content>"
-
 
 
 }
@@ -176,29 +153,22 @@ scraped: 2026-03-06T21:29:14.231788
   ---
 
 
-
   persons:
-
 
 
   - name: John
 
 
-
   - name: Sarah
-
 
 
   ---
 
 
-
   persons:
 
 
-
   - name: Max
-
 
 
   - name: Jeff
@@ -218,25 +188,19 @@ scraped: 2026-03-06T21:29:14.231788
 persons:
 
 
-
 - name: John
-
 
 
 - name: Sarah
 
 
-
 ---
-
 
 
 persons:
 
 
-
 - name: Michael
-
 
 
 - name: Jeff
@@ -259,21 +223,16 @@ persons:
   {
 
 
-
   "person": {
-
 
 
   "name": "John Doe"
 
 
-
   "age": 30,
 
 
-
   }
-
 
 
   }
@@ -284,21 +243,16 @@ persons:
   {
 
 
-
   "json": {
-
 
 
   "name": "John Doe",
 
 
-
   "age": 30
 
 
-
   }
-
 
 
   }
@@ -323,9 +277,7 @@ persons:
   person:
 
 
-
   name: "John doe"
-
 
 
   age: 30
@@ -336,9 +288,7 @@ persons:
   {
 
 
-
   "yaml": "name: \"John Doe\"\nage: 30"
-
 
 
   }

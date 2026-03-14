@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:35:51.753899
 
 # Google Compute Engine with Operations suite metrics monitoring
 
-# Google Compute Engine with Operations suite metrics monitoring
 
 * Latest Dynatrace
 * How-to guide

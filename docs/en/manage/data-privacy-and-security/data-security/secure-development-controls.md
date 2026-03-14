@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:23:36.094069
 
 # Secure development controls
 
-# Secure development controls
 
 * Latest Dynatrace
 * 4-min read

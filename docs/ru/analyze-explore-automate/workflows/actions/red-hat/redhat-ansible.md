@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:29.962658
 
 # Red Hat Ansible Automation
 
-# Red Hat Ansible Automation
 
 * Latest Dynatrace
 * Руководство

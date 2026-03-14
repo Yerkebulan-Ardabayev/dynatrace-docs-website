@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:26:50.506651
 
 # Calculate your consumption of Kubernetes Platform Monitoring (DPS)
 
-# Calculate your consumption of Kubernetes Platform Monitoring (DPS)
 
 * Latest Dynatrace
 * Explanation

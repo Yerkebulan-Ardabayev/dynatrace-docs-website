@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:27.035158
 
 # Мониторинг Azure AI - Bing Spell Check
 
-# Мониторинг Azure AI - Bing Spell Check
 
 * Последняя версия Dynatrace
 * Практическое руководство

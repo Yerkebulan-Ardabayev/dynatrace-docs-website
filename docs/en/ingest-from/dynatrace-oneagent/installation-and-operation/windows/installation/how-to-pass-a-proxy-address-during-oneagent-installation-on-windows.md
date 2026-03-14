@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:29.325777
 
 # How to pass a proxy address during OneAgent installation on Windows
 
-# How to pass a proxy address during OneAgent installation on Windows
 
 * Latest Dynatrace
 * 1-min read

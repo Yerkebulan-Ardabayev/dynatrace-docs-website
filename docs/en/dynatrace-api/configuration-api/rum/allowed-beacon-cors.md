@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:51.626363
 
 # Allowed beacon domains API
 
-# Allowed beacon domains API
 
 * Reference
 * Published Sep 23, 2020

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:24.151283
 
 # Migrate from Azure classic (formerly 'built-in') services to cloud services
 
-# Migrate from Azure classic (formerly 'built-in') services to cloud services
 
 * Latest Dynatrace
 * How-to guide

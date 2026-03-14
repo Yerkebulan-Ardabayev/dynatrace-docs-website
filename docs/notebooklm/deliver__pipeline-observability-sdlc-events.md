@@ -14,7 +14,6 @@ scraped: 2026-03-03T21:24:45.170541
 
 # Observe Argo CD deployment and application health with Dashboards and SDLC events
 
-# Observe Argo CD deployment and application health with Dashboards and SDLC events
 
 * Latest Dynatrace
 * Tutorial
@@ -90,7 +89,6 @@ If you prefer, you could follow the [Argo CD tutorial directly on GitHubï»¿](
    git clone https://github.com/Dynatrace/dynatrace-configuration-as-code-samples.git
 
 
-
    cd dynatrace-configuration-as-code-samples/argocd_observability
    ```
 4. Edit the `manifest.yaml` by exchanging your environment ID `<YOUR-DT-ENV-ID>` placeholder with your Dynatrace environment ID at the name property and within the URL of the value property.
@@ -99,61 +97,46 @@ If you prefer, you could follow the [Argo CD tutorial directly on GitHubï»¿](
    manifestVersion: 1.0
 
 
-
    projects:
-
 
 
    - name: pipeline_observability
 
 
-
    environmentGroups:
-
 
 
    - name: group
 
 
-
    environments:
-
 
 
    - name: <YOUR-DT-ENV-ID>
 
 
-
    url:
-
 
 
    type: value
 
 
-
    value: https://<YOUR-DT-ENV-ID>.apps.dynatrace.com
-
 
 
    auth:
 
 
-
    oAuth:
-
 
 
    clientId:
 
 
-
    name: OAUTH_CLIENT_ID
 
 
-
    clientSecret:
-
 
 
    name: OAUTH_CLIENT_SECRET
@@ -225,25 +208,19 @@ To generate an access token:
       apiVersion: v1
 
 
-
       kind: Secret
-
 
 
       metadata:
 
 
-
       name: argocd-notifications-secret
-
 
 
       stringData:
 
 
-
       dt-base-url: https://{your-environment-id}.live.dynatrace.com
-
 
 
       dt-access-token: <YOUR-ACCESS-TOKEN>
@@ -259,109 +236,82 @@ To generate an access token:
       apiVersion: v1
 
 
-
       kind: ConfigMap
-
 
 
       metadata:
 
 
-
       name: argocd-notifications-cm
-
 
 
       data:
 
 
-
       service.webhook.dynatrace-webhook: |
-
 
 
       url: $dt-base-url
 
 
-
       headers:
-
 
 
       - name: "Authorization"
 
 
-
       value: Api-Token $dt-access-token
-
 
 
       - name: "Content-Type"
 
 
-
       value: "application/json; charset=utf-8"
-
 
 
       template.dynatrace-webhook-template: |
 
 
-
       webhook:
-
 
 
       dynatrace-webhook:
 
 
-
       method: POST
-
 
 
       path: /platform/ingest/custom/events.sdlc/argocd
 
 
-
       body: |
-
 
 
       {
 
 
-
       "app": {{toJson .app}}
-
 
 
       }
 
 
-
       trigger.dynatrace-webhook-trigger: |
-
 
 
       - when: app.status.operationState.phase in ['Succeeded'] and app.status.health.status in ['Healthy', 'Degraded']
 
 
-
       send: [dynatrace-webhook-template]
-
 
 
       - when: app.status.operationState.phase in ['Failed', 'Error']
 
 
-
       send: [dynatrace-webhook-template]
 
 
-
       - when: app.status.operationState.phase in ['Running']
-
 
 
       send: [dynatrace-webhook-template]
@@ -383,17 +333,13 @@ To generate an access token:
       apiVersion: argoproj.io/v1alpha1
 
 
-
       kind: Application
-
 
 
       metadata:
 
 
-
       annotations:
-
 
 
       notifications.argoproj.io/subscribe.dynatrace-webhook-trigger.dynatrace-webhook: ""
@@ -423,7 +369,6 @@ To use [Dynatrace ActiveGate](../ru/ingest-from/dynatrace-activegate.md "Underst
    metrics.dynatrace.com/port: {METRICS_PORT}
 
 
-
    metrics.dynatrace.com/scrape: 'true'
    ```
 
@@ -441,7 +386,6 @@ To use [Dynatrace ActiveGate](../ru/ingest-from/dynatrace-activegate.md "Underst
 6. Unlock enhanced deployment insights with Argo CD Dashboards
 
 Now that you've successfully configured Argo CD and Dynatrace, you can use Dashboards and SDLC events to observe your Argo CD deployments.
-
 
 
 ### Analyze
@@ -494,7 +438,6 @@ scraped: 2026-03-02T21:30:16.892113
 
 # Optimize engineering flow metrics using Jira data
 
-# Optimize engineering flow metrics using Jira data
 
 * Latest Dynatrace
 * Tutorial
@@ -632,37 +575,28 @@ In your browser, to find the Jira fields, make a call to the Jira API on any iss
    {
 
 
-
    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
-
 
 
    "id": "10000",
 
 
-
    "self": "https://<your-endpoint>.atlassian.net/rest/api/2/issue/10000",
-
 
 
    "key": "SCRUM-1",
 
 
-
    "names": {
-
 
 
    "customfield_10001": "Team",
 
 
-
    "customfield_10019": "Rank"
 
 
-
    }
-
 
 
    }
@@ -679,153 +613,115 @@ Add the custom field IDs of the automatically created **Rank** and **Team** Jira
    {
 
 
-
    "specversion": "1.0"
-
 
 
    , "id": "{{issue.key}}"
 
 
-
    , "source": "JIRA"
-
 
 
    , "day": "{{now.jiraDate}}"
 
 
-
    , "version": "1"
-
 
 
    , "key": "{{issue.key}}"
 
 
-
    , "summary": {{issue.summary.asJsonString()}}
-
 
 
    , "type": "{{issue.issuetype.name}}"
 
 
-
    {{#exists(issue.assignee)}}
-
 
 
    , "assignee": "{{issue.assignee.displayName}}"
 
 
-
    {{/}}
-
 
 
    {{#exists(issue.customfield_<your-team-custom-field-id>)}}
 
 
-
    , "team": "{{issue.customfield_<your-team-custom-field-id>.name}}"
 
 
-
    {{/}}
-
 
 
    , "status": "{{issue.status.name}}"
 
 
-
    , "status_category": "{{issue.status.statuscategory.name}}"
-
 
 
    {{#exists(issue.resolution)}}
 
 
-
    , "resolution": "{{issue.resolution.name}}"
 
 
-
    {{/}}
-
 
 
    {{#if(not(issue.labels.isEmpty))}}
 
 
-
    , "labels": [
-
 
 
    {{#issue.labels}}
 
 
-
    "{{.}}" {{^last}},{{/}}
 
 
-
    {{/}}
-
 
 
    ]
 
 
-
    {{/}}
-
 
 
    {{#if(equals(issue.fixVersions.size, 1))}}
 
 
-
    {{#issue.fixVersions}}
-
 
 
    , "fix_version": "{{name}}"
 
 
-
    , "fix_version.release_date": "{{releaseDate.format("yyyy-MM-dd")}}"
 
 
-
    {{/}}
 
 
-
    {{/}}
-
 
 
    , "created": "{{issue.created}}"
 
 
-
    , "status_changed_on": "{{issue.statuscategorychangedate}}"
-
 
 
    , "resolved": "{{issue.resolved}}"
 
 
-
    , "rank": "{{issue.customfield_<your-rank-custom-field-id>}}"
 
 
-
    , "project": "{{issue.project.key}}"
-
 
 
    }
@@ -894,7 +790,6 @@ This step is about verifying your Jira and Dynatrace setup.
       fetch events
 
 
-
       | filter dt.system.bucket == "jira_events"
       ```
 
@@ -945,7 +840,6 @@ To find and use the dashboard:
      If lines are crossing each other, priorities have changed.
    * **Changes in the last 2 weeks**:
      Changes to the fields **Status**, **Fix Version**, and **Assignee** are shown.
-
 
 
 ## Next steps

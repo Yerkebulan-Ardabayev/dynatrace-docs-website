@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:46.945923
 
 # Serverless monitoring
 
-# Serverless monitoring
 
 * Latest Dynatrace
 * 3-min read

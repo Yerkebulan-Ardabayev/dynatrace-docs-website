@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:34:37.242463
 
 # Мониторинг Google Cloud Bigtable
 
-# Мониторинг Google Cloud Bigtable
 
 * Последняя версия Dynatrace
 * Практическое руководство

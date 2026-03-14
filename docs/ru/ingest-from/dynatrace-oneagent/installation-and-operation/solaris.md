@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:56.668127
 
 # Solaris
 
-# Solaris
 
 * Последняя Dynatrace
 * 1 мин. чтения

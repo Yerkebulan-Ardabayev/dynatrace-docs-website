@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:26.951279
 
 # Set access control in OpenPipeline
 
-# Set access control in OpenPipeline
 
 * Latest Dynatrace
 * How-to guide

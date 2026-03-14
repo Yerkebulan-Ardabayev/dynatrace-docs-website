@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:43.708179
 
 # Geographic regions - IP address mapping rules API
 
-# Geographic regions - IP address mapping rules API
 
 * Reference
 * Published Sep 24, 2020

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:12.668111
 
 # Dynatrace Intelligence predictive AI analysis
 
-# Dynatrace Intelligence predictive AI analysis
 
 * Latest Dynatrace
 * Explanation
@@ -163,7 +162,6 @@ A DQL query using `fetch` and `summarize` commands returns a result in the [sing
 fetch logs
 
 
-
 | summarize value = count(), by: {timestamp = bin(timestamp, 1m)}
 ```
 
@@ -171,13 +169,10 @@ fetch logs
 fetch events, from: -3d
 
 
-
 | filter event.kind == "DAVIS_PROBLEM"
 
 
-
 | summarize count(), by:{bin(timestamp, 1h), alias: timestamp}
-
 
 
 | fieldsRename value=`count()`
@@ -193,165 +188,124 @@ The following DQL `data` command returns a result in the [time series record for
 data record(
 
 
-
 timeframe=timeframe(from: "2023-03-10T00:00:00.000Z", to: "2023-03-20T00:00:00.000Z"),
-
 
 
 interval=duration(1, "h"),
 
 
-
 `dt.entity.disk`="DISK-A",
-
 
 
 data=array(
 
 
-
 0.6096,  1.1460,  1.2770,  2.3939,  2.2370,  2.6167,  1.2414,
-
 
 
 3.0011,  2.6842,  2.2949,  1.4132,  1.7749,  1.6472,  0.5800,
 
 
-
 0.2937,  0.8003, -0.0277, -0.4114, -0.6020, -0.5019,  0.2261,
-
 
 
 0.9875,  0.9601,  1.7021,  2.7538,  3.2475,  3.4133,  3.6173,
 
 
-
 4.2067,  4.8679,  4.4176,  4.7181,  5.1461,  5.0898,  4.9806,
-
 
 
 3.7390,  3.3774,  2.4088,  2.6754,  2.7673,  1.7551,  1.9633,
 
 
-
 1.5918,  2.4702,  2.5765,  2.8267,  3.4773,  3.8841,  5.4904,
-
 
 
 5.6528,  5.6221,  7.0052,  6.7039,  8.8618,  7.2853,  7.5175,
 
 
-
 7.2200,  7.5092,  7.2807,  6.3166,  6.4115,  5.1241,  5.2359,
-
 
 
 5.6137,  4.5477,  5.2841,  4.8689,  6.1404,  4.3398,  4.7527,
 
 
-
 5.6016,  6.7526,  7.0054,  8.4009,  7.3848,  9.0195,  9.6028,
-
 
 
 10.0891, 10.3137,  9.9700,  8.9944,  9.4415,  9.4228,  8.1233,
 
 
-
 8.5862,  8.4357,  8.0413,  7.1731,  6.9146,  6.6773,  6.7132,
-
 
 
 7.0178,  7.4880,  7.1100,  9.5785,  8.6518,  9.2125, 10.2238,
 
 
-
 11.4487, 11.1977, 11.3190, 12.5375, 11.9569, 12.4308, 11.7920,
-
 
 
 12.6200, 12.0601, 10.5243, 11.3639,  9.8979, 10.9811, 10.1095,
 
 
-
 10.2067,  9.6794,  9.8522,  9.0232,  9.5124, 10.5887, 11.0222,
-
 
 
 10.8741, 12.0817, 13.3625, 13.1324, 13.5550, 13.7834, 14.1806,
 
 
-
 15.5751, 14.7827, 13.9171, 14.5871, 14.5652, 13.4159, 13.6262,
-
 
 
 12.3931, 11.9045, 12.2807, 10.9243, 12.5514, 11.0550, 12.1066,
 
 
-
 12.1569, 12.9026, 12.9851, 13.5527, 14.9463, 14.5251, 15.6653,
-
 
 
 17.1333, 17.5200, 17.4643, 17.3053, 16.9866, 16.6806, 16.4379,
 
 
-
 16.2866, 16.9108, 15.3212, 15.4509, 14.5511, 14.8598, 15.4171,
-
 
 
 14.2590, 14.5359, 14.4026, 15.5683, 14.8414, 15.5065, 15.7033,
 
 
-
 17.1206, 17.4528, 17.5131, 19.2782, 18.6581, 20.6962, 20.4152,
-
 
 
 18.5865, 19.3483, 18.8283, 18.9540, 17.4941, 17.8047, 18.7973,
 
 
-
 17.1900, 16.1135, 17.0345, 17.1779, 16.6910, 16.8454, 16.9357,
-
 
 
 17.3166, 17.9157, 18.8126, 18.8176, 19.9470, 20.5230, 21.2858,
 
 
-
 22.2686, 22.2769, 21.1908, 21.8713, 21.2280, 20.8140, 21.7997,
-
 
 
 20.5656, 20.2129, 20.1171, 19.6284, 18.9140, 18.8314, 19.1833,
 
 
-
 18.4992, 19.0013, 20.0113, 20.4361, 20.2264, 21.7505, 22.0324,
-
 
 
 22.7636, 22.3307, 24.1297, 24.1968, 24.0366, 23.8212, 24.5346,
 
 
-
 24.2898, 24.0449, 23.8067, 22.9443, 23.3615, 22.5078, 22.1239,
-
 
 
 21.9639, 21.9736, 21.8018, 21.5930, 21.5247, 21.7674, 22.7781,
 
 
-
 23.6532, 23.1769
 
 
-
 )
-
 
 
 )
@@ -384,185 +338,139 @@ The following JSON describes the structure of the record format.
 {
 
 
-
 "records": [
 
 
-
 {
-
 
 
 "timeframe": {
 
 
-
 "start": "2023-01-01T00:00Z",
-
 
 
 "end": "2023-01-01T00:05Z"
 
 
-
 },
-
 
 
 "firstTimeSeries": [1.0, 3.0, 5.0, 7.0, 9.0],
 
 
-
 "secondTimeSeries": [0.0, 2.0, 4.0, 6.0, 8.0],
-
 
 
 "interval": "60000000000",
 
 
-
 "dt.metricKey": "host.cpu.usage"
 
 
-
 }
-
 
 
 ],
 
 
-
 "types": [
 
 
-
 {
-
 
 
 "indexRange": [0, 0],
 
 
-
 "mappings": {
-
 
 
 "dt.entity.host": { "type": "string" },
 
 
-
 "dt.metricKey": { "type": "string" },
-
 
 
 "timeframe": { "type": "timeframe" },
 
 
-
 "interval": { "type": "duration" },
-
 
 
 "firstTimeSeries": {
 
 
-
 "type": "array",
-
 
 
 "types": [
 
 
-
 {
-
 
 
 "indexRange": [0, 4],
 
 
-
 "mappings": {
-
 
 
 "element": { "type": "double" }
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 },
 
 
-
 "secondTimeSeries": {
-
 
 
 "type": "array",
 
 
-
 "types": [
-
 
 
 {
 
 
-
 "indexRange": [0, 4],
-
 
 
 "mappings": {
 
 
-
 "element": { "type": "double" }
 
 
-
 }
 
 
-
 }
-
 
 
 ]
 
 
+}
+
 
 }
 
 
-
 }
-
-
-
-}
-
 
 
 ]
-
 
 
 }
@@ -607,129 +515,97 @@ The following JSON describes the structure of the single value format.
 {
 
 
-
 "records": [
 
 
-
 {
-
 
 
 "timestamp": "2019-05-14T08:01Z",
 
 
-
 "interval": "60000000000",
-
 
 
 "dt.metricKey": "host.cpu.usage",
 
 
-
 "value": 0.0
-
 
 
 },
 
 
-
 {
-
 
 
 "timestamp": "2019-05-14T08:02Z",
 
 
-
 "interval": "60000000000",
-
 
 
 "dt.metricKey": "host.cpu.usage",
 
 
-
 "value": 2.0
-
 
 
 },
 
 
-
 {
-
 
 
 "timestamp": "2020-05-14T08:03Z",
 
 
-
 "interval": "60000000000",
 
 
-
 "dt.metricKey": "host.cpu.usage",
-
 
 
 "value": 4.0
 
 
-
 }
-
 
 
 ],
 
 
-
 "types": [
-
 
 
 {
 
 
-
 "indexRange": [0, 2],
 
 
-
 "typeMappings": {
-
 
 
 "timestamp": { "type": "timestamp" },
 
 
-
 "interval": { "type": "duration" },
-
 
 
 "dt.metricKey": { "type": "string" },
 
 
-
 "value": { "type": "double" }
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -737,143 +613,108 @@ The following JSON describes the structure of the single value format.
 
 ```
 {
-
 
 
 "records": [
 
 
-
 {
 
 
-
 "timeframe": {
-
 
 
 "start": "2019-12-09T12:00Z",
 
 
-
 "end": "2019-12-09T13:00Z"
-
 
 
 },
 
 
-
 "interval": "3600000000000",
-
 
 
 "dt.metricKey": "host.cpu.usage",
 
 
-
 "dt.entity.host": "HOST-A",
-
 
 
 "value": 0.0
 
 
-
 },
 
 
-
 {
-
 
 
 "timeframe": {
 
 
-
 "start": "2019-12-09T13:00Z",
-
 
 
 "end": "2019-12-09T14:00Z"
 
 
-
 },
-
 
 
 "interval": "3600000000000",
 
 
-
 "dt.metricKey": "host.cpu.usage",
-
 
 
 "dt.entity.host": "HOST-A",
 
 
-
 "value": 2.0
 
 
-
 }
-
 
 
 ],
 
 
-
 "types": [
-
 
 
 {
 
 
-
 "indexRange": [0, 2],
-
 
 
 "typeMappings": {
 
 
-
 "timeframe": { "type": "timeframe" },
-
 
 
 "interval": { "type": "duration" },
 
 
-
 "dt.metricKey": { "type": "string" },
-
 
 
 "dt.entity.host": { "type": "string" },
 
 
-
 "value": { "type": "double" }
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }

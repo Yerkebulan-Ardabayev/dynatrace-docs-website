@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:22.534201
 
 # Custom topology model
 
-# Custom topology model
 
 * Latest Dynatrace
 * 4-min read
@@ -71,21 +70,16 @@ Easy Shipping LTD trucks send a continuous data stream on fuel (`truck.fuel.tota
 truck.fuel.total,trucknr=99,model=mac-granite 10234
 
 
-
 truck.fuel.usage,trucknr=99,model=mac-granite 17
-
 
 
 truck.operation.hours,trucknr=99,model=mac-granite 23766
 
 
-
 truck.fuel.total,trucknr=12,model=mac-anthem 234
 
 
-
 truck.fuel.usage,trucknr=12,model=mac-anthem 10
-
 
 
 truck.operation.hours,trucknr=12,model=mac-anthem 13766
@@ -99,13 +93,11 @@ Smart containers carried by the company trucks send a continuous data stream on 
 container.temperature,containernr=234321,trucknr=99 40
 
 
-
 container.temperature.dev,containernr=234321,trucknr=99 0
 ```
 
 ```
 container.temperature,containernr=111111,trucknr=12 39
-
 
 
 container.temperature.dev,containernr=111111,trucknr=12 2,5

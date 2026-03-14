@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:59.231616
 
 # Правила приёма журналов
 
-# Правила приёма журналов
 
 * Последняя версия Dynatrace
 * Руководство
@@ -211,113 +210,85 @@ OneAgent версии 1.305+
    [
 
 
-
    {
-
 
 
    "insertAfter":"uAAZ0ZW5hbnQABnRlbmFudAAkMGUzYmY2ZmYtMDc2ZC0zNzFmLhXaq0",
 
 
-
    "schemaId": "builtin:logmonitoring.log-storage-settings",
-
 
 
    "schemaVersion": "0.1.0",
 
 
-
    "scope": "tenant",
-
 
 
    "value": {
 
 
-
    "config-item-title": "Added from REST API",
-
 
 
    "send-to-storage": true,
 
 
-
    "matchers": [
 
 
-
    {
-
 
 
    "attribute": "dt.entity.process_group",
 
 
-
    "operator": "MATCHES",
 
 
-
    "values": [
-
 
 
    "PROCESS_GROUP-05F00CBACF39EBD1"
 
 
-
    ]
-
 
 
    },
 
 
-
    {
-
 
 
    "attribute": "log.source",
 
 
-
    "operator": "MATCHES",
-
 
 
    "values": [
 
 
-
    "Windows System Log",
-
 
 
    "Windows Security Log"
 
 
+   ]
+
+
+   }
+
 
    ]
 
 
-
    }
 
 
-
-   ]
-
-
-
    }
-
-
-
-   }
-
 
 
    ]
@@ -346,117 +317,88 @@ OneAgent версии 1.305+
 {
 
 
-
 "send-to-storage": false,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "/path/to/access.log"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
-
 
 
 "enabled": true
 
 
-
 },
 
 
-
 {
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
-
 
 
 "values": [
 
 
-
 "PROCESS_GROUP-APACHEID"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -470,69 +412,52 @@ OneAgent версии 1.305+
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "values": [
-
 
 
 "*ERROR*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -546,93 +471,70 @@ OneAgent версии 1.305+
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "values": [
-
 
 
 "*ERROR*"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 },
 
 
-
 {
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
-
 
 
 "values": [
 
 
-
 "PROCESS_GROUP-APACHEID"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -646,93 +548,70 @@ OneAgent версии 1.305+
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "values": [
-
 
 
 "*ERROR*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "values": [
-
 
 
 "*Customer*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -746,93 +625,70 @@ OneAgent версии 1.305+
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "values": [
-
 
 
 "*ERROR*", "*Customer*"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 },
 
 
-
 {
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
-
 
 
 "values": [
 
 
-
 "PROCESS_GROUP-APACHEID"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -849,93 +705,70 @@ OneAgent версии 1.305+
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-MYSQL"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 },
 
 
-
 {
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
-
 
 
 "values": [
 
 
-
 "PROCESS_GROUP-APACHEID"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -947,45 +780,34 @@ OneAgent версии 1.305+
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID", "PROCESS_GROUP-MYSQL"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -999,21 +821,16 @@ OneAgent версии 1.305+
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -1032,69 +849,52 @@ OneAgent версии 1.305+
 {
 
 
-
 "send-to-storage": false,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID", "PROCESS_GROUP-MYSQL"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 },
 
 
-
 {
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace for z/OS
 
-# Dynatrace for z/OS
 
 * Latest Dynatrace
 * 8-min read

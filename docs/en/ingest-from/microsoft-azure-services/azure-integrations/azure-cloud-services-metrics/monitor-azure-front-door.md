@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:23.128258
 
 # Azure Front Door (classic) monitoring
 
-# Azure Front Door (classic) monitoring
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:39.484018
 
 # Dashboards
 
-# Dashboards
 
 * Последняя версия Dynatrace
 * Приложение

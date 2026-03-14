@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:31:54.309034
 
 # Stream logs to Dynatrace with Logstash (Logs Classic)
 
-# Stream logs to Dynatrace with Logstash (Logs Classic)
 
 * Classic
 * Explanation
@@ -46,25 +45,19 @@ For instructions on how to deploy Logstash integration, see the [documentation o
 output {
 
 
-
 dynatrace {
-
 
 
 id => "dynatrace_output"
 
 
-
 ingest_endpoint_url => "${ACTIVE_GATE_URL}/api/v2/logs/ingest"
-
 
 
 api_key => "${API_KEY}"
 
 
-
 }
-
 
 
 }

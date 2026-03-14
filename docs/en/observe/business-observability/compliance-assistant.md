@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:30.942740
 
 # Compliance Assistant
 
-# Compliance Assistant
 
 * Latest Dynatrace
 * App

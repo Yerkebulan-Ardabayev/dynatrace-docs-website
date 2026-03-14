@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:22.043515
 
 # Мониторинг доступности сети
 
-# Мониторинг доступности сети
 
 * Classic
 * Описание
@@ -94,29 +93,22 @@ ICMP-мониторы используют исполняемый файл `ping
 securityContext:
 
 
-
 readOnlyRootFilesystem: true
-
 
 
 privileged: false
 
 
-
 allowPrivilegeEscalation: true
-
 
 
 runAsNonRoot: true
 
 
-
 capabilities:
 
 
-
 drop: ["all"]
-
 
 
 add: ["NET_RAW"]

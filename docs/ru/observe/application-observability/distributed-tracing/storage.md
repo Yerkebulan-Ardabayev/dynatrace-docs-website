@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:25.224798
 
 # Настройка хранилища и хранения данных для Distributed Tracing
 
-# Настройка хранилища и хранения данных для Distributed Tracing
 
 * Latest Dynatrace
 * Руководство

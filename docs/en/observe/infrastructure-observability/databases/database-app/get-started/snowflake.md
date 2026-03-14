@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:21.566752
 
 # Monitor Snowflake database
 
-# Monitor Snowflake database
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:16.645715
 
 # Создание метрики журнала
 
-# Создание метрики журнала
 
 * Latest Dynatrace
 * Tutorial
@@ -31,9 +30,7 @@ Dynatrace Log Management and Analytics даёт возможность не то
    fetch logs
 
 
-
    | filter matchesPhrase(content, "Connection refused")
-
 
 
    | sort timestamp desc
@@ -85,9 +82,7 @@ Dynatrace Log Management and Analytics даёт возможность не то
    fetch logs
 
 
-
    | filter matchesValue(dt.entity.kubernetes_cluster, "KUBERNETES_CLUSTER-92233333")
-
 
 
    | summarize count(), by:status

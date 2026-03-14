@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:45.341800
 
 # Расширение Varnish Cache
 
-# Расширение Varnish Cache
 
 * Последняя версия Dynatrace
 * Расширение

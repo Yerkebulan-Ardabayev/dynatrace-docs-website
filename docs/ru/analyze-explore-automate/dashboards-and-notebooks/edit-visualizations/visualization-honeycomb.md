@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:15.505928
 
 # Визуализация «Соты»
 
-# Визуализация «Соты»
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -27,7 +26,6 @@ scraped: 2026-03-06T21:21:15.505928
 
 ```
 timeseries avg(dt.host.cpu.usage), by:{dt.entity.host}
-
 
 
 | fieldsAdd cpu = arrayAvg(`avg(dt.host.cpu.usage)`)
@@ -60,9 +58,7 @@ fetch dt.davis.problems
 fetch security.events
 
 
-
 | filter event.status == "OPEN"
-
 
 
 | summarize takeLast(vulnerability.davis_assessment.score), by:{vulnerability.display_id}
@@ -200,7 +196,6 @@ fetch security.events
 
     ```
     fetch logs
-
 
 
     | limit 2000

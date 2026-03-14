@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:37.406812
 
 # Мониторинг NetApp в Google Cloud
 
-# Мониторинг NetApp в Google Cloud
 
 * Последняя версия Dynatrace
 * Практическое руководство

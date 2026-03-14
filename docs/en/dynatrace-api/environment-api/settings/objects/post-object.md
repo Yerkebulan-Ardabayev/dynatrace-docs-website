@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:34.446565
 
 # Settings API - POST an object
 
-# Settings API - POST an object
 
 * Reference
 * Published Feb 24, 2021
@@ -64,41 +63,31 @@ This is a model of the request body, showing the possible elements. It has to be
 [
 
 
-
 {
-
 
 
 "externalId": "string",
 
 
-
 "insertAfter": "Y2ktaGdyb3VwLTEyMythZjhjOThlOS0wN2I0LTMyMGEtOTQzNi02NTEyMmVlNWY4NGQ=",
-
 
 
 "objectId": "Y2ktaGdyb3VwLTEyMythZjhjOThlOS0wN2I0LTMyMGEtOTQzNi02NTEyMmVlNWY4NGQ=",
 
 
-
 "schemaId": "builtin:container.built-in-monitoring-rule",
-
 
 
 "schemaVersion": "1.0.0",
 
 
-
 "scope": "HOST-D3A3C5A146830A79",
-
 
 
 "value": "string"
 
 
-
 }
-
 
 
 ]
@@ -199,73 +188,55 @@ A schema representing an arbitrary value type.
 [
 
 
-
 {
 
 
-
 "code": 1,
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
-
 
 
 },
 
 
-
 "invalidValue": "string",
-
 
 
 "objectId": "Y2ktaGdyb3VwLTEyMythZjhjOThlOS0wN2I0LTMyMGEtOTQzNi02NTEyMmVlNWY4NGQ="
 
 
-
 }
-
 
 
 ]
@@ -275,73 +246,55 @@ A schema representing an arbitrary value type.
 [
 
 
-
 {
 
 
-
 "code": 1,
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
-
 
 
 },
 
 
-
 "invalidValue": "string",
-
 
 
 "objectId": "Y2ktaGdyb3VwLTEyMythZjhjOThlOS0wN2I0LTMyMGEtOTQzNi02NTEyMmVlNWY4NGQ="
 
 
-
 }
-
 
 
 ]

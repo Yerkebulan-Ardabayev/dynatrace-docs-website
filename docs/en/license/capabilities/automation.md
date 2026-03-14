@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:54.982457
 
 # Automation Workflow capability overview (DPS)
 
-# Automation Workflow capability overview (DPS)
 
 * Latest Dynatrace
 * Explanation

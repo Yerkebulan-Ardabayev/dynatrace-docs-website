@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:32.116161
 
 # Dynatrace Pattern Language
 
-# Dynatrace Pattern Language
 
 * Latest Dynatrace
 * Explanation
@@ -37,21 +36,16 @@ Or you can write the same pattern in a more explanatory way:
 /* this pattern expects an integer number and an IP address
 
 
-
 separated by single space in each line */
-
 
 
 INT       //an integer
 
 
-
 ' '       //followed by single space
 
 
-
 IPADDR:ip //followed by IPv4 or IPv6 address, extracted as a new field, `ip`
-
 
 
 EOL       //line is terminated with line feed character
@@ -131,9 +125,7 @@ Suppose we have a comma-separated record (terminated with the line feed characte
 1,alice,192.168.1.1
 
 
-
 2,bob,10.6.24.18
-
 
 
 3,mallory,192.168.1.3
@@ -145,21 +137,16 @@ This structure can be described by the following pattern expression:
 INT:seq
 
 
-
 ','
-
 
 
 LD:uname
 
 
-
 ','
 
 
-
 IPADDR:user_ip
-
 
 
 EOL

@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:29:51.827929
 
 # Примечания к выпуску Dynatrace Operator версии 0.10.1
 
-# Примечания к выпуску Dynatrace Operator версии 0.10.1
 
 * Latest Dynatrace
 * Примечания к выпуску

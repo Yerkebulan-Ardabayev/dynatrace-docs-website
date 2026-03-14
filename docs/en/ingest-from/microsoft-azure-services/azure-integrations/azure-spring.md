@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:17.162329
 
 # Monitor Azure Spring Apps
 
-# Monitor Azure Spring Apps
 
 * Latest Dynatrace
 * How-to guide
@@ -118,9 +117,7 @@ Run the command below, making sure to replace the placeholders (`<...>`) with yo
 az spring app deploy --name <your-application-name> --jar-path app.jar \
 
 
-
 -s <your-resource-name> -g <your-resource-group-name> --env DT_TENANT=<your-environment-ID> \
-
 
 
 DT_TENANTTOKEN=<your-tenant-token> DT_CONNECTION_POINT=<your-communication-endpoint>

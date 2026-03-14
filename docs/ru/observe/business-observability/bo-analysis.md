@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:29.180885
 
 # Анализ бизнес-событий и примеры
 
-# Анализ бизнес-событий и примеры
 
 * Latest Dynatrace
 * Справочник
@@ -39,9 +38,7 @@ scraped: 2026-03-06T21:14:29.180885
 fetch bizevents, from:now()-24h, to:now()
 
 
-
 | filter event.type == "com.easytrade.quick-buy" or event.type == "com.easytrade.long-buy"
-
 
 
 | summarize dollar_volume = avg(amount*price)
@@ -61,9 +58,7 @@ fetch bizevents, from:now()-24h, to:now()
 fetch bizevents, from:now()-24h, to:now()
 
 
-
 | filter event.type == "com.easytrade.nginx.quick-sell"
-
 
 
 | makeTimeseries dollar_volume= sum (amount*price), interval: 5m
@@ -84,13 +79,10 @@ fetch bizevents, from:now()-24h, to:now()
 fetch bizevents
 
 
-
 | filter event.provider == "www.easytrade.com"
 
 
-
 | filter isNotNull(price)
-
 
 
 | summarize average_price_assets = avg(price)
@@ -114,9 +106,7 @@ fetch bizevents
 fetch bizevents, from: now()-30d, to: now()-1d
 
 
-
 | filter event.type == "com.easytrade.deposit"
-
 
 
 | makeTimeseries moneyTransfered= sum(amount), interval: 1d
@@ -139,21 +129,16 @@ fetch bizevents, from: now()-30d, to: now()-1d
 fetch bizevents, from:now()-1d, to:now()
 
 
-
 | filter event.provider == "www.easytrade.com"
-
 
 
 | filter event.type == "com.easytrade.nginx.long-sell" OR event.type == "com.easytrade.nginx.long-buy"
 
 
-
 | summarize numberOfTrades = count(), by:{sharesAffected=bin(amount, 2000)}
 
 
-
 | fields sharesAffected = concat(toString(toLong(sharesAffected)+1), " - ", toString(toLong(sharesAffected +2000))), numberOfTrades
-
 
 
 | limit 10
@@ -169,37 +154,28 @@ fetch bizevents, from:now()-1d, to:now()
 fetch bizevents, from:now()-30d, to:now()
 
 
-
 | filter event.provider == "www.easytrade.com"
-
 
 
 | sort timestamp, direction:"descending"
 
 
-
 | filter event.type == "com.easytrade.deposit" OR event.type == "com.easytrade.withdraw"
-
 
 
 | fieldsAdd deposit_ts = if(event.type == "com.easytrade.deposit", timestamp)
 
 
-
 | fieldsAdd withdraw_ts = if(event.type == "com.easytrade.withdraw", timestamp)
-
 
 
 | summarize {first_deposit_ts = takeFirst(deposit_ts), first_withdraw_ts = takeFirst(withdraw_ts)}, by:{`accountId`}
 
 
-
 | fieldsAdd timeDepositToDeposit= (first_withdraw_ts - first_deposit_ts) /(1000000000.0)
 
 
-
 | filter timeDepositToDeposit > duration(0,unit:"ns")
-
 
 
 | fields `accountId`, `Seconds From Deposit To Deposit`= timeDepositToDeposit
@@ -295,25 +271,19 @@ fetch bizevents, from:now()-30d, to:now()
 fetch bizevents
 
 
-
 | filter event.provider == "www.easytrade.com"
-
 
 
 | filter isNotNull(`cardType`)
 
 
-
 | fieldsAdd hour = getHour(timestamp), day_of_week = getDayOfWeek(timestamp)
-
 
 
 | filterOut day_of_week == "Sat" or day_of_week == "Sun" // Исключить выходные дни
 
 
-
 | filterOut hour <= 6 or hour >= 17 // Исключить часы вне диапазона 6:00--17:00
-
 
 
 | fields `Account ID`, event.type, amount, cardType, event.kind
@@ -331,45 +301,34 @@ fetch bizevents
 fetch bizevents, from:now()-1d, to:now()
 
 
-
 | filter event.provider == "www.easytrade.com"
-
 
 
 | filter event.type == "com.easytrade.withdraw" or event.type == "com.easytrade.deposit"
 
 
-
 | fieldsAdd amount_withdrawal = if(event.type=="com.easytrade.withdraw", amount, else:0)
-
 
 
 | fieldsAdd amount_deposit = if(event.type=="com.easytrade.deposit", amount, else:0)
 
 
-
 | summarize {total_withdrawals = sum(amount_withdrawal), total_deposits = sum(amount_deposit)}, by:{accountId}
-
 
 
 | fieldsAdd balance_change = total_deposits - total_withdrawals
 
 
-
 | sort balance_change, direction:"ascending"
-
 
 
 | filter balance_change < 0
 
 
-
 | fields accountId, balance_change
 
 
-
 | sort balance_change, direction:"ascending"
-
 
 
 | limit 5
@@ -391,17 +350,13 @@ fetch bizevents, from:now()-1d, to:now()
 `fetch bizevents, from:now()-24h, to:now()
 
 
-
 | filter event.provider == "www.acme.com"
-
 
 
 | summarize {A_place_order = countIf(event.type=="com.acme.order_confirmed"), B_payment_confirmed = countIf(event.type=="com.acme.payment_confirmed"), C_order_confirmed = countIf(event.type=="com.acme.close_order")},by:{order_id}
 
 
-
 | fieldsAdd fulfilled = (A_place_order == B_payment_confirmed and A_place_order == C_order_confirmed)
-
 
 
 | filter A_place_order==1

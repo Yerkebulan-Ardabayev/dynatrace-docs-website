@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:24.255977
 
 # Install OneAgent on Windows
 
-# Install OneAgent on Windows
 
 * Latest Dynatrace
 * How-to guide

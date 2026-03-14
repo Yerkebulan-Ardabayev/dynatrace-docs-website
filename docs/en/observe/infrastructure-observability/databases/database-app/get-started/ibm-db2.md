@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:36.645522
 
 # Monitor IBM DB2 database
 
-# Monitor IBM DB2 database
 
 * Latest Dynatrace
 * How-to guide

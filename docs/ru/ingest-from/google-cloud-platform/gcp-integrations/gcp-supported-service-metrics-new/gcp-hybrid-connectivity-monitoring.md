@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:19.503219
 
 # Мониторинг Google Cloud Hybrid Connectivity
 
-# Мониторинг Google Cloud Hybrid Connectivity
 
 * Последняя версия Dynatrace
 * Практическое руководство

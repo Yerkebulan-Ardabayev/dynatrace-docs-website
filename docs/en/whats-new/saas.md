@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:25.903978
 
 # What's new in Dynatrace SaaS
 
-# What's new in Dynatrace SaaS
 
 * Latest Dynatrace
 * Release notes

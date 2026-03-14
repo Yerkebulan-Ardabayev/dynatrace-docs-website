@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:43.613643
 
 # Manage Oracle Database extensions
 
-# Manage Oracle Database extensions
 
 * Latest Dynatrace
 * How-to guide

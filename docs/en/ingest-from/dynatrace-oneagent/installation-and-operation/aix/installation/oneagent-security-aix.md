@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:30.847920
 
 # OneAgent security on AIX
 
-# OneAgent security on AIX
 
 * Latest Dynatrace
 * Reference

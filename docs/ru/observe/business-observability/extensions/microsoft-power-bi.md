@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:50.262778
 
 # Microsoft Power BI
 
-# Microsoft Power BI
 
 * Latest Dynatrace
 * Overview
@@ -34,7 +33,6 @@ Preview
 
 ```
 ALLOW storage:buckets:read WHERE storage:table-name = "bizevents";
-
 
 
 ALLOW storage:bizevents:read;

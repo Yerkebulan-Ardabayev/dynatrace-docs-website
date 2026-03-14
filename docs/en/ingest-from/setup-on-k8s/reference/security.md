@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:18:55.414129
 
 # Dynatrace Operator security
 
-# Dynatrace Operator security
 
 * Latest Dynatrace
 * 16-min read

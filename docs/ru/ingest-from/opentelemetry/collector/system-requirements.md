@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:25:53.405162
 
 # Системные требования Dynatrace OTel Collector.
 
-# Системные требования Dynatrace OTel Collector.
 
 * Latest Dynatrace
 * Reference

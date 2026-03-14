@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:21.291722
 
 # Мониторинг Azure Data Explorer
 
-# Мониторинг Azure Data Explorer
 
 * Latest Dynatrace
 * Руководство

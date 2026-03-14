@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:45.187175
 
 # Ingest Runecast Analyzer compliance findings
 
-# Ingest Runecast Analyzer compliance findings
 
 * Latest Dynatrace
 * How-to guide

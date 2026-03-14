@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:38.177057
 
 # Jira Connector
 
-# Jira Connector
 
 * Последняя версия Dynatrace
 * Обзор

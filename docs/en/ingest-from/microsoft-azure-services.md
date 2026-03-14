@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:33.794432
 
 # Set up Dynatrace on Microsoft Azure
 
-# Set up Dynatrace on Microsoft Azure
 
 * Latest Dynatrace
 * Overview

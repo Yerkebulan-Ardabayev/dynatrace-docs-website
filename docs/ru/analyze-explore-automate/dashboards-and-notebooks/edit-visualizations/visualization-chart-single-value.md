@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:25.427593
 
 # Визуализация одиночного значения
 
-# Визуализация одиночного значения
 
 * Последняя версия Dynatrace
 * Руководство
@@ -33,7 +32,6 @@ scraped: 2026-03-06T21:20:25.427593
 timeseries sparkline=avg(dt.host.cpu.usage)
 
 
-
 | fieldsAdd value=arrayAvg(sparkline)
 ```
 
@@ -56,185 +54,139 @@ timeseries sparkline=avg(dt.host.cpu.usage)
 /*
 
 
-
 * This example shows how to map data to use the built-in visualization for custom data.
-
 
 
 */
 
 
-
 export default async function () {
-
 
 
 return {
 
 
-
 records: [
 
 
-
 {
-
 
 
 value: 'CPU usage',
 
 
-
 interval: '60000000000',
 
 
-
 timeframe: {
-
 
 
 start: '2023-11-13T07:24:00.000Z',
 
 
-
 end: '2023-11-13T09:25:00.000Z',
 
 
-
 },
-
 
 
 series: [1832, 997, 432, 997, 2343, 997, 544, 997, 234],
 
 
-
 },
-
 
 
 ],
 
 
-
 types: [
-
 
 
 {
 
 
-
 mappings: {
-
 
 
 value: {
 
 
-
 type: 'string',
 
 
-
 },
-
 
 
 interval: {
 
 
-
 type: 'duration',
 
 
-
 },
-
 
 
 timeframe: {
 
 
-
 type: 'timeframe',
 
 
-
 },
-
 
 
 series: {
 
 
-
 type: 'array',
-
 
 
 types: [
 
 
-
 {
-
 
 
 mappings: {
 
 
-
 element: {
-
 
 
 type: 'double',
 
 
-
 },
 
 
-
 },
-
 
 
 indexRange: [0, 120],
 
 
-
 },
-
 
 
 ],
 
 
-
 },
 
 
-
 },
-
 
 
 indexRange: [0, 0],
 
 
-
 },
-
 
 
 ],
 
 
-
 };
-
 
 
 }
@@ -259,13 +211,10 @@ indexRange: [0, 0],
 timeseries sparkline=avg(dt.host.cpu.usage), value=avg(dt.host.cpu.usage, scalar:true), by:{dt.entity.host}
 
 
-
 | fieldsAdd name=entityName(dt.entity.host)
 
 
-
 | sort arrayAvg(value), direction:"descending"
-
 
 
 | limit 5
@@ -430,7 +379,6 @@ timeseries sparkline=avg(dt.host.cpu.usage), value=avg(dt.host.cpu.usage, scalar
 
     ```
     fetch logs
-
 
 
     | limit 2000

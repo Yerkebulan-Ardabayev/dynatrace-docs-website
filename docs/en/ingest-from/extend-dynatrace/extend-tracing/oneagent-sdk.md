@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:36.669068
 
 # OneAgent SDK
 
-# OneAgent SDK
 
 * Latest Dynatrace
 * 2-min read

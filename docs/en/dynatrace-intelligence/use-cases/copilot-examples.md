@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:29:11.693989
 
 # Generative AI quick analysis examples
 
-# Generative AI quick analysis examples
 
 * Latest Dynatrace
 * Reference

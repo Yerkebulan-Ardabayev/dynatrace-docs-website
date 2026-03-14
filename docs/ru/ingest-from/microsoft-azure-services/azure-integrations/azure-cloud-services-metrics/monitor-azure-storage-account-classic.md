@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:26:08.787453
 
 # Мониторинг Azure Storage Account Classic (Blob, File, Queue, Table)
 
-# Мониторинг Azure Storage Account Classic (Blob, File, Queue, Table)
 
 * Актуальная версия Dynatrace
 * Руководство

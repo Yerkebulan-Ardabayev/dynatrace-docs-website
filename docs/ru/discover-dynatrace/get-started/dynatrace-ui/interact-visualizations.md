@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:17.899790
 
 # Data visualizations
 
-# Data visualizations
 
 * Latest Dynatrace
 * 1-min read

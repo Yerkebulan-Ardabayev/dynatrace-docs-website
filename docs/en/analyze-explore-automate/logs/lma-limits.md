@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:43.103611
 
 # Log Management and Analytics default limits
 
-# Log Management and Analytics default limits
 
 * Latest Dynatrace
 * Explanation

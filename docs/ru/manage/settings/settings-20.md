@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:14.018111
 
 # Фреймворк настроек Dynatrace
 
-# Фреймворк настроек Dynatrace
 
 * Latest Dynatrace
 * Объяснение
@@ -61,7 +60,6 @@ scraped: 2026-03-06T21:26:14.018111
 ALLOW settings:objects:read, settings:objects:write, settings:schemas:read
 
 
-
 WHERE settings:schemaId = "builtin:monitoring.slo";
 ```
 
@@ -69,7 +67,6 @@ WHERE settings:schemaId = "builtin:monitoring.slo";
 
 ```
 ALLOW settings:objects:read, settings:objects:write, settings:schemas:read
-
 
 
 WHERE settings:schemaGroup = " group:cloud-automation";
@@ -81,7 +78,6 @@ WHERE settings:schemaGroup = " group:cloud-automation";
 ALLOW settings:objects:read, settings:schemas:read
 
 
-
 WHERE settings:schemaId = "builtin:management-zones";
 ```
 
@@ -91,9 +87,7 @@ WHERE settings:schemaId = "builtin:management-zones";
 ALLOW settings:schemas:read;
 
 
-
 ALLOW settings:objects:read, settings:objects:write
-
 
 
 WHERE settings:entity.hostGroup = "easyTravel";
@@ -105,9 +99,7 @@ WHERE settings:entity.hostGroup = "easyTravel";
 ALLOW settings:schemas:read;
 
 
-
 ALLOW settings:objects:read, settings:objects:write
-
 
 
 WHERE settings:dt.security_context = "easyTravel";
@@ -121,9 +113,7 @@ WHERE settings:dt.security_context = "easyTravel";
 ALLOW settings:schemas:read;
 
 
-
 ALLOW settings:objects:read, settings:objects:write
-
 
 
 WHERE environment:management-zone = "easyTravel";
@@ -135,9 +125,7 @@ WHERE environment:management-zone = "easyTravel";
 ALLOW settings:schemas:read;
 
 
-
 ALLOW settings:objects:read, settings:objects:write
-
 
 
 WHERE settings:schemaId = "builtin:anomaly-detection.infrastructure-hosts" AND environment:management-zone = "easyTravel";

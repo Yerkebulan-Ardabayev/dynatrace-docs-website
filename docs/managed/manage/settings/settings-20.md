@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace settings framework
 
-# Dynatrace settings framework
 
 * Explanation
 * 4-min read
@@ -60,7 +59,6 @@ Grant read and write access to the service-level objective definitions settings
 ALLOW settings:objects:read, settings:objects:write, settings:schemas:read
 
 
-
 WHERE settings:schemaId = "builtin:monitoring.slo";
 ```
 
@@ -68,7 +66,6 @@ Grant read and write access to all cloud automation settings
 
 ```
 ALLOW settings:objects:read, settings:objects:write, settings:schemas:read
-
 
 
 WHERE settings:schemaGroup = " group:cloud-automation";
@@ -80,7 +77,6 @@ Grant read-only access to management zones definitions
 ALLOW settings:objects:read, settings:schemas:read
 
 
-
 WHERE settings:schemaId = "builtin:management-zones";
 ```
 
@@ -90,9 +86,7 @@ Grant read and write access to all settings of the easyTravel host group and its
 ALLOW settings:schemas:read;
 
 
-
 ALLOW settings:objects:read, settings:objects:write
-
 
 
 WHERE settings:entity.hostGroup = "easyTravel";
@@ -104,9 +98,7 @@ Grant read and write access to all settings of all entities with the security co
 ALLOW settings:schemas:read;
 
 
-
 ALLOW settings:objects:read, settings:objects:write
-
 
 
 WHERE settings:dt.security_context = "easyTravel";
@@ -120,9 +112,7 @@ This policy also affects global settings that apply to the easyTravel management
 ALLOW settings:schemas:read;
 
 
-
 ALLOW settings:objects:read, settings:objects:write
-
 
 
 WHERE environment:management-zone = "easyTravel";
@@ -134,9 +124,7 @@ Grant read and write access to the infrastructure anomaly settings on hosts with
 ALLOW settings:schemas:read;
 
 
-
 ALLOW settings:objects:read, settings:objects:write
-
 
 
 WHERE settings:schemaId = "builtin:anomaly-detection.infrastructure-hosts" AND environment:management-zone = "easyTravel";

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:41.046909
 
 # Problem alerting profiles
 
-# Problem alerting profiles
 
 * Classic
 * 4-min read

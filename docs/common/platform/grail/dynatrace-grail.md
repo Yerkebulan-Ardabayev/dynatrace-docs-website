@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # What is Dynatrace Grail?
 
-# What is Dynatrace Grail?
 
 * Latest Dynatrace
 * Explanation

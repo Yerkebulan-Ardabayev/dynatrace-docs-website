@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:23.450010
 
 # Ensure success with OpenTelemetry
 
-# Ensure success with OpenTelemetry
 
 * Latest Dynatrace
 * Troubleshooting

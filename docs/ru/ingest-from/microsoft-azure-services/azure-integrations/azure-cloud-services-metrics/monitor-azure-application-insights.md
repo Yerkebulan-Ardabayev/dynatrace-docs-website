@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:35:49.902914
 
 # Мониторинг Azure Application Insights
 
-# Мониторинг Azure Application Insights
 
 * Последняя версия Dynatrace
 * Практическое руководство

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:23.051337
 
 # ActiveGate tokens API
 
-# ActiveGate tokens API
 
 * Reference
 * Published Dec 02, 2021

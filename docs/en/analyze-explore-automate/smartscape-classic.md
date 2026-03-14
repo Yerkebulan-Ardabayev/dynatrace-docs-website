@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:51.745796
 
 # Visualize your environment through Smartscape Classic
 
-# Visualize your environment through Smartscape Classic
 
 * Classic
 * 8-min read

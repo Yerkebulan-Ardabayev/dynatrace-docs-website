@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:46.163025
 
 # Credential vault API
 
-# Credential vault API
 
 * Reference
 * Published Oct 14, 2019

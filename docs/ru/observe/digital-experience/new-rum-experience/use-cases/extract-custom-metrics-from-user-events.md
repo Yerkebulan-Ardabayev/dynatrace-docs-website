@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:59.487993
 
 # Извлечение метрики из пользовательских событий
 
-# Извлечение метрики из пользовательских событий
 
 * Последняя версия Dynatrace
 * Руководство
@@ -30,29 +29,22 @@ OpenPipeline упрощает преобразование [пользовате
 fetch user.events
 
 
-
 | filter matchesPhrase(frontend.name, "easytravel") AND
-
 
 
 characteristics.has_navigation == true AND
 
 
-
 matchesPhrase(view.url.path, "/easytravel/journeys/*") AND
-
 
 
 not matchesPhrase(view.url.path, "*book")
 
 
-
 | parse view.url.path, "'/'LD'/'LD'/'LD:journey_id"
 
 
-
 | summarize by: {journey_id}, count()
-
 
 
 | sort `count()` desc
@@ -86,9 +78,7 @@ not matchesPhrase(view.url.path, "*book")
      characteristics.has_navigation == true AND
 
 
-
      matchesPhrase(view.url.path, "/easytravel/journeys/*") AND
-
 
 
      not matchesPhrase(view.url.path, "*book")
@@ -97,7 +87,6 @@ not matchesPhrase(view.url.path, "*book")
 
      ```
      parse view.url.path, "'/'LD'/'LD'/'LD:journey_id"
-
 
 
      | fieldsAdd journey_id
@@ -137,9 +126,7 @@ not matchesPhrase(view.url.path, "*book")
 timeseries count = sum(easytravel.journey_view_count), by: {journey_id}, interval: 3h
 
 
-
 | sort arraysum(count) desc
-
 
 
 | limit 5

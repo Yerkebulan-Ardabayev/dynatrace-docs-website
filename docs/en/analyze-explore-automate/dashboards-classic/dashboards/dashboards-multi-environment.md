@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:54.848020
 
 # Create remote/multi-environment Dynatrace dashboards
 
-# Create remote/multi-environment Dynatrace dashboards
 
 * Classic
 * How-to guide

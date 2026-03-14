@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:48.651906
 
 # Azure SCIM configuration for Dynatrace
 
-# Azure SCIM configuration for Dynatrace
 
 * Latest Dynatrace
 * How-to guide

@@ -16,7 +16,9 @@ generated_nav.yaml
 .cache/
 temp_docs/
 .translation_cache*.json
+.translation_titles_cache.json
 scripts/.translation_cache*.json
+scripts/.translation_cache/
 .rag_index_cache.json
 
 # Logs

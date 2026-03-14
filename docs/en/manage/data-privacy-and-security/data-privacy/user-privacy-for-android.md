@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:23:37.193494
 
 # Data safety guidance for Android
 
-# Data safety guidance for Android
 
 * Latest Dynatrace
 * 5-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:40:35.333679
 
 # Instrument your Java application with OpenTelemetry
 
-# Instrument your Java application with OpenTelemetry
 
 * Latest Dynatrace
 * How-to guide

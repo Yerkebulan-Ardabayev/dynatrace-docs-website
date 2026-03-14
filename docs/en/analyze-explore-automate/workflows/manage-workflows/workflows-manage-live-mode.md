@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:08.025695
 
 # Manage live or draft workflows
 
-# Manage live or draft workflows
 
 * Latest Dynatrace
 * How-to guide

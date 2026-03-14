@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:21.949719
 
 # Ingest OTLP traces
 
-# Ingest OTLP traces
 
 * Latest Dynatrace
 * Reference

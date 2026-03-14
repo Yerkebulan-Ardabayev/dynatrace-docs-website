@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:22:23.769765
 
 # JMX data source reference
 
-# JMX data source reference
 
 * Latest Dynatrace
 * Reference
@@ -25,9 +24,7 @@ The most common source is a numeric JMX MBean attribute:
 metrics:
 
 
-
 - key: com.example.somekey
-
 
 
 value: attribute:ThreadCount
@@ -43,17 +40,13 @@ For example:
 metrics:
 
 
-
 - key: com.example.somekey
-
 
 
 value:
 
 
-
 attribute: SomeNonNumericAttribute
-
 
 
 accessor: getSomeNumericValue()
@@ -67,9 +60,7 @@ A special case is to always use the same constant value instead of querying an a
 metrics:
 
 
-
 - key: com.example.somekey
-
 
 
 value: const:1
@@ -87,9 +78,7 @@ The simplest case is to set the dimension value to a constant string:
 dimensions:
 
 
-
 - key: k1
-
 
 
 value: const:constant_value
@@ -103,13 +92,10 @@ MBean object name key property value can be used as a dimension value:
 query: java.lang:type=GarbageCollector,name=*
 
 
-
 dimensions:
 
 
-
 - key: k1
-
 
 
 value: property:name
@@ -125,13 +111,10 @@ An MBean attribute can also be used as a dimension value.
 query: java.lang:type=Compilation
 
 
-
 dimensions:
 
 
-
 - key: k1
-
 
 
 value: attribute:Name
@@ -145,21 +128,16 @@ Similar to metric values, it is possible to extract the dimension value from a c
 query: java.lang:type=Compilation
 
 
-
 dimensions:
-
 
 
 - key: k1
 
 
-
 value:
 
 
-
 attribute: SomeAttribute
-
 
 
 accessor: getName()
@@ -189,77 +167,58 @@ Extension variables can be used to allow users of an extension to monitor only s
 vars:
 
 
-
 - id: gc_name_filter
-
 
 
 displayName: Garbage Collector Name
 
 
-
 type: text
-
 
 
 jmx:
 
 
-
 groups:
-
 
 
 - group: jvm
 
 
-
 subgroups:
-
 
 
 - subgroup: basic
 
 
-
 query: java.lang:type=GarbageCollector
-
 
 
 queryFilters:
 
 
-
 - field: name
-
 
 
 filter: var:gc_name_filter
 
 
-
 dimensions:
-
 
 
 - key: k1
 
 
-
 value: property:name
-
 
 
 metrics:
 
 
-
 - key: com.example.jmx.var
 
 
-
 type: count
-
 
 
 value: attribute:CollectionTime
@@ -277,65 +236,49 @@ Extension variables can also be used directly as the value of custom metric dime
 vars:
 
 
-
 - id: my_variable
-
 
 
 displayName: My Variable
 
 
-
 type: text
-
 
 
 jmx:
 
 
-
 groups:
-
 
 
 - group: jvm
 
 
-
 subgroups:
-
 
 
 - subgroup: variable as dimension value
 
 
-
 query: "java.lang:type=Threading"
-
 
 
 dimensions:
 
 
-
 - key: my_dimension
-
 
 
 value: var:my_variable
 
 
-
 metrics:
-
 
 
 - key: com.example.jmx-reference.var-dimension
 
 
-
 type: gauge
-
 
 
 value: attribute:ThreadCount
@@ -360,29 +303,22 @@ Notice that average can be easily understood by dividing the sum by count.
 - query: Catalina:type=Manager,host=*,context=*
 
 
-
 dimensions:
-
 
 
 - key: host
 
 
-
 value: attribute:host
-
 
 
 metrics:
 
 
-
 - key: metric_activeSessions_1752841036351
 
 
-
 value: attribute:activeSessions
-
 
 
 type: gauge_statcounter

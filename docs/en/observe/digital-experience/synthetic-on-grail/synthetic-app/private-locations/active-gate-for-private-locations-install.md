@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:09.113702
 
 # Install a Synthetic-enabled ActiveGate
 
-# Install a Synthetic-enabled ActiveGate
 
 * Latest Dynatrace
 * How-to guide

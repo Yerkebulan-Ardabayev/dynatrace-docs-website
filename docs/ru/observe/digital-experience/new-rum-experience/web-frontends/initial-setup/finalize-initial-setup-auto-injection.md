@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:35:05.243068
 
 # Завершение начальной настройки для фронтенда с автоматическим внедрением
 
-# Завершение начальной настройки для фронтенда с автоматическим внедрением
 
 * Latest Dynatrace
 * Практическое руководство
@@ -30,13 +29,10 @@ scraped: 2026-03-05T21:35:05.243068
 fetch user.events
 
 
-
 | filter matchesPhrase(page.url.full, "https://example.com/path")
 
 
-
 | filter matchesValue(dt.openpipeline.source, "rumagent")
-
 
 
 | summarize by: {frontend.name}, count()

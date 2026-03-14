@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:36.645522
 
 # Мониторинг базы данных IBM DB2
 
-# Мониторинг базы данных IBM DB2
 
 * Latest Dynatrace
 * How-to guide

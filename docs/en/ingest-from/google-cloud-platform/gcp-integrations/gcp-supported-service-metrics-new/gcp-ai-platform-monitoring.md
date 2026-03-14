@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:12.523553
 
 # Google Cloud AI Platform monitoring (deprecated)
 
-# Google Cloud AI Platform monitoring (deprecated)
 
 * Latest Dynatrace
 * How-to guide

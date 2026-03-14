@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:28:56.720996
 
 # On-demand synthetic monitor executions for CI/CD
 
-# On-demand synthetic monitor executions for CI/CD
 
 * Explanation
 * 17-min read
@@ -200,53 +199,40 @@ API-based on-demand executions offer greater flexibility and scalability than th
   {
 
 
-
   "monitors": [
 
 
-
   {
-
 
 
   "monitorId": "HTTP_CHECK-C608F75BF82E5B22",
 
 
-
   "customizedScript": {
-
 
 
   "requests": [
 
 
-
   {
-
 
 
   "url": "https://www.yourdomain.com"
 
 
-
   }
-
 
 
   ]
 
 
-
   }
 
 
-
   }
-
 
 
   ]
-
 
 
   }
@@ -260,101 +246,76 @@ API-based on-demand executions offer greater flexibility and scalability than th
   {
 
 
-
   "monitors": [
 
 
-
   {
-
 
 
   "monitorId": "HTTP_CHECK-6349B98E1CD87352",
 
 
-
   "customizedScript": {
-
 
 
   "requests": [
 
 
-
   {
-
 
 
   "url": "https://www.somepage.org",
 
 
-
   "preProcessingScript": "if (response.getResponseBody().includes(\"error\")) {api.fail(\"HTTP failing monitor.\");}"
-
 
 
   },
 
 
-
   {
-
 
 
   "sequenceId": "3",
 
 
-
   "validation": {
-
 
 
   "rules": [
 
 
-
   {
-
 
 
   "value": "=201",
 
 
-
   "passIfFound": "true"
 
 
-
   }
-
 
 
   ]
 
 
-
   }
 
 
-
   }
-
 
 
   ]
 
 
-
   }
 
 
-
   }
-
 
 
   ]
-
 
 
   }
@@ -368,61 +329,46 @@ API-based on-demand executions offer greater flexibility and scalability than th
   {
 
 
-
   "takeScreenshotsOnSuccess": true,
-
 
 
   "monitors": [
 
 
-
   {
-
 
 
   "monitorId": "SYNTHETIC_TEST-114F1C18CF07CD1D",
 
 
-
   "customizedScript": {
-
 
 
   "events": [
 
 
-
   {
-
 
 
   "type": "navigate",
 
 
-
   "url": "www.yourdomain.com"
 
 
-
   }
-
 
 
   ]
 
 
-
   }
 
 
-
   }
-
 
 
   ]
-
 
 
   }

@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:22:30.551812
 
 # Встроенные метрики в Grail
 
-# Встроенные метрики в Grail
 
 * Последняя версия Dynatrace
 * Справочник
@@ -43,13 +42,11 @@ scraped: 2026-03-03T21:22:30.551812
 // запрос предварительно агрегированных данных на уровне хоста
 
 
-
 builtin:host.net.bytesRx:splitBy("dt.entity.host"):avg
 ```
 
 ```
 // запрос данных на уровне хоста и сетевого интерфейса
-
 
 
 builtin:host.net.nic.bytesRx:splitBy("dt.entity.host"):avg

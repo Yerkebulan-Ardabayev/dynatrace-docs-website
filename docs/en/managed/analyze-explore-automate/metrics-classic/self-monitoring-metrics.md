@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:18.643612
 
 # Self-monitoring metrics
 
-# Self-monitoring metrics
 
 * Classic
 * 4-min read

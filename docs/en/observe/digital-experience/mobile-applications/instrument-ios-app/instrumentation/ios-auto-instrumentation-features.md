@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:10.008934
 
 # OneAgent for iOS auto-instrumentation features
 
-# OneAgent for iOS auto-instrumentation features
 
 * Classic
 * Explanation

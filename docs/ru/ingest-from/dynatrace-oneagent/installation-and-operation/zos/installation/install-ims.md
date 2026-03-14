@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:29:49.679843
 
 # Установка модуля IMS
 
-# Установка модуля IMS
 
 * Latest Dynatrace
 * Время чтения: 21 мин
@@ -48,7 +47,6 @@ Exit IMS Connect может быть настроен для создания у
 //ZDTPARMS DD *
 
 
-
 ZDCID=<zDC_Id>
 ```
 
@@ -69,7 +67,6 @@ Exit IMS Connect необходим для поддержки протокола
 //S1       EXEC PGM=ZDTIINST,PARM='<IMS_Id>,<zDC_Id>'
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
 ```
 
@@ -79,17 +76,13 @@ Exit IMS Connect необходим для поддержки протокола
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=<IMS_Id>
-
 
 
 ZDC=<zDC_Id>
@@ -101,7 +94,6 @@ ZDC=<zDC_Id>
 
 ```
 // ...    PARM='<IMS_Id>,<zDC_Id>,<ActionCode>|<PathTableSize>,
-
 
 
 <WaitZdcMin>,<Y|N>,<PathTableSegm>,<PathTableIms>'
@@ -121,7 +113,6 @@ ZDC=<zDC_Id>
 //S1       EXEC PGM=ZDTIINST,PARM='IB01,ZDC1,,20'
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
 ```
 
@@ -131,21 +122,16 @@ ZDC=<zDC_Id>
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IB01
 
 
-
 ZDC=ZDC1
-
 
 
 ZDCWAIT=20
@@ -159,7 +145,6 @@ ZDCWAIT=20
 //S1       EXEC PGM=ZDTIINST,PARM='IMSB,ZDC1,D'
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
 ```
 
@@ -169,21 +154,16 @@ ZDCWAIT=20
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSB
 
 
-
 ZDC=ZDC1
-
 
 
 ACTION=D
@@ -197,7 +177,6 @@ ACTION=D
 //S1       EXEC PGM=ZDTIINST,PARM='IMSB,ZDC1,E'
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
 ```
 
@@ -207,21 +186,16 @@ ACTION=D
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSB
 
 
-
 ZDC=ZDC1
-
 
 
 ACTION=E
@@ -239,7 +213,6 @@ ACTION=E
 //S1       EXEC PGM=ZDTIINST,PARM='IMSA,ZDC1,,,Y'
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
 ```
 
@@ -249,21 +222,16 @@ ACTION=E
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
 
 
-
 ZDC=ZDC1
-
 
 
 DUMP=Y
@@ -277,7 +245,6 @@ DUMP=Y
 //S1       EXEC PGM=ZDTIINST,PARM='IMSA,ZDC1,M,,N'
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
 ```
 
@@ -287,25 +254,19 @@ DUMP=Y
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
-
 
 
 ZDC=ZDC1
 
 
-
 ACTION=M
-
 
 
 DUMP=N
@@ -319,7 +280,6 @@ DUMP=N
 //S1       EXEC PGM=ZDTIINST,PARM='IMSA,ZDC1,M,,,SEGM=3'
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
 ```
 
@@ -329,25 +289,19 @@ DUMP=N
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
-
 
 
 ZDC=ZDC1
 
 
-
 ACTION=M
-
 
 
 SEGM=3
@@ -361,7 +315,6 @@ SEGM=3
 //S1       EXEC PGM=ZDTIINST,PARM='IMSA,ZDC1,M,,,SEGM=1,IMSB'
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
 ```
 
@@ -371,29 +324,22 @@ SEGM=3
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
-
 
 
 ZDC=ZDC1
 
 
-
 ACTION=M
 
 
-
 SEGM=1
-
 
 
 PATHIMS=IMSB
@@ -407,21 +353,16 @@ PATHIMS=IMSB
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
 
 
-
 ZDC=ZDC1
-
 
 
 REMOTESEGM=2
@@ -437,21 +378,16 @@ REMOTESEGM=2
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
 
 
-
 ZDC=ZDC1
-
 
 
 FPATH=Y
@@ -465,21 +401,16 @@ FPATH=Y
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
 
 
-
 ZDC=ZDC1
-
 
 
 FPATH=N
@@ -493,25 +424,19 @@ FPATH=N
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
-
 
 
 ZDC=ZDC1
 
 
-
 FPATH=Y
-
 
 
 FPATHSIZE=8
@@ -525,25 +450,19 @@ FPATHSIZE=8
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
-
 
 
 ZDC=ZDC1
 
 
-
 ACTION=M
-
 
 
 FPATHSIZE=2
@@ -575,21 +494,16 @@ FPATHSIZE=2
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
 
 
-
 ZDC=ZDC1
-
 
 
 BMP=Y
@@ -603,21 +517,16 @@ BMP=Y
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
 
 
-
 ZDC=ZDC1
-
 
 
 BMP=N
@@ -662,7 +571,6 @@ BMP=N
 //SYSABEND DD SYSOUT=*
 
 
-
 //SYSMDUMP DD DSN=DT.IMSAGENT.INJECT.SDUMP,DISP=(OLD,KEEP,KEEP)
 ```
 
@@ -695,7 +603,6 @@ BMP=N
    DELETE 'DT.DYNTRC.SZDTAUTH' NOSCRATCH
 
 
-
    DEFINE ALIAS(NAME('DT.DYNTRC.SZDTAUTH') RELATE('DT.R12710.SZDTAUTH'))
    ```
 3. Запустите задание инъекции без кода действия для загрузки обновлённого модуля IMS. Подробности см. в разделе [Заметки по инъекции](#injection-notes).
@@ -711,9 +618,7 @@ BMP=N
 ZDTI032W Recovery routine entered.
 
 
-
 ZDTI036W ZDTIII15 0000000 20221103 10.51 VER 1.255.0 ABEND at offset 007874.
-
 
 
 ZDTI033W Successful ABEND recovery, agent disabled.

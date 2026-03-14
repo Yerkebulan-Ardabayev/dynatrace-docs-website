@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:45.649064
 
 # Log ingest & process (Logs Classic)
 
-# Log ingest & process (Logs Classic)
 
 * Classic
 * Overview

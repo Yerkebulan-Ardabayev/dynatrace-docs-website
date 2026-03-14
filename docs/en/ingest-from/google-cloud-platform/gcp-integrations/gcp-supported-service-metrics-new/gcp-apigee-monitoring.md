@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:15.589538
 
 # Google Cloud Apigee monitoring
 
-# Google Cloud Apigee monitoring
 
 * Latest Dynatrace
 * How-to guide

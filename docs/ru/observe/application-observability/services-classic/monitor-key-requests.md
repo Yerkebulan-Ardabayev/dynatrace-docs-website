@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:32.546778
 
 # Мониторинг ключевых запросов
 
-# Мониторинг ключевых запросов
 
 * Classic
 * Практическое руководство
@@ -100,41 +99,31 @@ Dynatrace предполагает, что низкообъёмные запро
    [
 
 
-
    {
-
 
 
    "schemaId": "builtin:settings.subscriptions.service",
 
 
-
    "scope": "SERVICE-123456789",
-
 
 
    "value": {
 
 
-
    "keyRequestNames": [
-
 
 
    "/cart/checkout"
 
 
-
    ]
 
 
-
    }
 
 
-
    }
-
 
 
    ]
@@ -156,33 +145,25 @@ Dynatrace предполагает, что низкообъёмные запро
       {
 
 
-
       "updateToken": "vu9U3hXY3q0ATAAkMG",
-
 
 
       "value": {
 
 
-
       "keyRequestNames": [
-
 
 
       "/cart/checkout",
 
 
-
       "/cart"
-
 
 
       ]
 
 
-
       }
-
 
 
       }

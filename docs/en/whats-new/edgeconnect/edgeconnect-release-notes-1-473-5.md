@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:24.387263
 
 # EdgeConnect release notes version 1.473.5
 
-# EdgeConnect release notes version 1.473.5
 
 * Latest Dynatrace
 * Release notes

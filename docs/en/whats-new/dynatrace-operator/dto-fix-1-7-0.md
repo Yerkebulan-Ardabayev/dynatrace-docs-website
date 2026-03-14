@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:28:05.786009
 
 # Dynatrace Operator release notes version 1.7.0
 
-# Dynatrace Operator release notes version 1.7.0
 
 * Latest Dynatrace
 * Release notes
@@ -110,7 +109,6 @@ We have identified the following known issues with Dynatrace Operator version 1.
 
   ```
   helm repo remove dynatrace
-
 
 
   helm repo add dynatrace https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/main/config/helm/repos/stable

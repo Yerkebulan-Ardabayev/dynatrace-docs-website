@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:36:32.071097
 
 # Data protection at Dynatrace
 
-# Data protection at Dynatrace
 
 * Latest Dynatrace
 * 4-min read

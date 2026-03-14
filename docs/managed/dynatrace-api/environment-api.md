@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Environment API
 
-# Environment API
 
 * Reference
 * Published Apr 01, 2019

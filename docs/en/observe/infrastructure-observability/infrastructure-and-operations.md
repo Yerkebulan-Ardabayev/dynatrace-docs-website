@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:46.597387
 
 # Infrastructure & Operations
 
-# Infrastructure & Operations
 
 * Latest Dynatrace
 * App

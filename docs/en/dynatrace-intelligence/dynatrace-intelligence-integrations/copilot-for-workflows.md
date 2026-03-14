@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:56.714019
 
 # Dynatrace Intelligence (Preview) app
 
-# Dynatrace Intelligence (Preview) app
 
 * Latest Dynatrace
 * How-to guide

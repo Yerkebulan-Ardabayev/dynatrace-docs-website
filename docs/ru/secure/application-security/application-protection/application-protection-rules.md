@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:27:33.411007
 
 # Правила мониторинга Runtime Application Protection
 
-# Правила мониторинга Runtime Application Protection
 
 * Последняя версия Dynatrace
 * Практическое руководство

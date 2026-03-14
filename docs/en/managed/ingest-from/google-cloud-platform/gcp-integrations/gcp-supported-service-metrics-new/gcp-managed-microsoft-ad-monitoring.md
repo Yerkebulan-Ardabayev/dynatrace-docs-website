@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:35:21.063986
 
 # Google Managed Microsoft AD monitoring
 
-# Google Managed Microsoft AD monitoring
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:38:51.607029
 
 # Azure AI - Bing Autosuggest monitoring
 
-# Azure AI - Bing Autosuggest monitoring
 
 * Latest Dynatrace
 * How-to guide

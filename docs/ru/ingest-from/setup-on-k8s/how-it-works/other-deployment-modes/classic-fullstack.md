@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:07.681929
 
 # Classic Full-Stack monitoring
 
-# Classic Full-Stack monitoring
 
 * Latest Dynatrace
 * 2-min read

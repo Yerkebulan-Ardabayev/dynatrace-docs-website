@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:59.966349
 
 # Встроенные начальные запросы для диалога
 
-# Встроенные начальные запросы для диалога
 
 * Latest Dynatrace
 * Справочник
@@ -148,7 +147,6 @@ scraped: 2026-03-06T21:35:59.966349
 | parse "{\"result\":[{\"type\":\"supplementary\", \"value\":\"The character`*` often represents sensitive data that has been masked\"}]}", "LD JSON_ARRAY:contexts"
 
 
-
 // or for a dynamic context
 ```
 
@@ -156,7 +154,6 @@ scraped: 2026-03-06T21:35:59.966349
 
 ```
 | fieldsAdd supplementaryContext = concat("{\"result\":[{\"type\":\"supplementary\", \"value\":\"Use the following info to answer the question: ", record.summary, "\"}]}")
-
 
 
 | parse supplementaryContext , "LD JSON_ARRAY:contexts"
@@ -171,7 +168,6 @@ scraped: 2026-03-06T21:35:59.966349
 
    ```
    | fieldsAdd prompt = concat("{your question}",  your.field.name)
-
 
 
    | fieldsAdd execute = true
@@ -199,7 +195,6 @@ scraped: 2026-03-06T21:35:59.966349
 | parse "{\"result\":[{\"type\":\"supplementary\", \"value\":\"The character`*` often represents sensitive data that has been masked\"}]}", "LD JSON_ARRAY:contexts"
 
 
-
 // or for a dynamic context
 ```
 
@@ -207,7 +202,6 @@ scraped: 2026-03-06T21:35:59.966349
 
 ```
 | fieldsAdd supplementaryContext = concat("{\"result\":[{\"type\":\"supplementary\", \"value\":\"Use the following info to answer the question: ", record.summary, "\"}]}")
-
 
 
 | parse supplementaryContext , "LD JSON_ARRAY:contexts"
@@ -221,7 +215,6 @@ scraped: 2026-03-06T21:35:59.966349
 
    ```
    | fieldsAdd prompt = concat("{your question}",  your.field.name)
-
 
 
    | fieldsAdd execute = true

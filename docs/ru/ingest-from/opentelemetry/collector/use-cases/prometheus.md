@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:40:09.842786
 
 # Сбор метрик Prometheus с помощью OpenTelemetry Collector
 
-# Сбор метрик Prometheus с помощью OpenTelemetry Collector
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -38,109 +37,82 @@ Dynatrace Collector v0.41.0+
 receivers:
 
 
-
 prometheus:
-
 
 
 config:
 
 
-
 scrape_configs:
-
 
 
 - job_name: 'node-exporter'
 
 
-
 scrape_interval: 60s
 
 
-
 static_configs:
-
 
 
 - targets: ['prometheus-prometheus-node-exporter:9100']
 
 
-
 - job_name: opentelemetry-collector
-
 
 
 scrape_interval: 60s
 
 
-
 static_configs:
-
 
 
 - targets:
 
 
-
 - 127.0.0.1:8888
-
 
 
 processors:
 
 
-
 metricstarttime:
-
 
 
 cumulativetodelta:
 
 
-
 max_staleness: 25h
-
 
 
 exporters:
 
 
-
 otlp_http:
-
 
 
 endpoint: ${env:DT_ENDPOINT}
 
 
-
 headers:
-
 
 
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
 
 
-
 service:
-
 
 
 pipelines:
 
 
-
 metrics:
-
 
 
 receivers: [prometheus]
 
 
-
 processors: [metricstarttime, cumulativetodelta]
-
 
 
 exporters: [otlp_http]
@@ -160,105 +132,79 @@ Prometheus receiver:
 receivers:
 
 
-
 prometheus:
-
 
 
 config:
 
 
-
 scrape_configs:
-
 
 
 - job_name: 'node-exporter'
 
 
-
 scrape_interval: 60s
 
 
-
 static_configs:
-
 
 
 - targets: ['prometheus-prometheus-node-exporter:9100']
 
 
-
 - job_name: opentelemetry-collector
-
 
 
 scrape_interval: 60s
 
 
-
 static_configs:
-
 
 
 - targets:
 
 
-
 - 127.0.0.1:8888
-
 
 
 processors:
 
 
-
 cumulativetodelta:
-
 
 
 max_staleness: 25h
 
 
-
 exporters:
-
 
 
 otlp_http:
 
 
-
 endpoint: ${env:DT_ENDPOINT}
-
 
 
 headers:
 
 
-
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
-
 
 
 service:
 
 
-
 pipelines:
-
 
 
 metrics:
 
 
-
 receivers: [prometheus]
 
 
-
 processors: [cumulativetodelta]
-
 
 
 exporters: [otlp_http]

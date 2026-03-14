@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Synthetic locations API v2 - DELETE a location (Dynatrace Managed)
 
-# Synthetic locations API v2 - DELETE a location (Dynatrace Managed)
 
 * Published Jul 26, 2019
 
@@ -69,53 +68,40 @@ A list of constraint violations
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -133,9 +119,7 @@ The API token is passed in the **Authorization** header.
 curl -X DELETE \
 
 
-
 https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations/SYNTHETIC_LOCATION-493122BFA29674DC \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'

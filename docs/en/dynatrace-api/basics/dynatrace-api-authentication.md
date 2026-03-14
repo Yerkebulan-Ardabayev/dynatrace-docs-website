@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:54.830279
 
 # Dynatrace API - Tokens and authentication
 
-# Dynatrace API - Tokens and authentication
 
 * Reference
 * Published Aug 23, 2018
@@ -103,9 +102,7 @@ The following example shows authentication via HTTP header.
 curl --request GET \
 
 
-
 --url https://mySampleEnv.live.dynatrace.com/api/v1/config/clusterversion \
-
 
 
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -115,7 +112,6 @@ You can authenticate by adding the token as the value of the **api-token** query
 
 ```
 curl --request GET \
-
 
 
 --url 'https://mySampleEnv.live.dynatrace.com/api/v1/config/clusterversion?api-token=abcdefjhij1234567890' \

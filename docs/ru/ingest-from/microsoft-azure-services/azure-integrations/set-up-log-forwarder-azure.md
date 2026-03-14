@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:36.115344
 
 # Логи Azure
 
-# Логи Azure
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -99,17 +98,13 @@ scraped: 2026-03-06T21:17:36.115344
 DEPLOYMENT_NAME=<your_deployment_name>
 
 
-
 TARGET_URL=<your_environment_URL>
-
 
 
 TARGET_API_TOKEN=<your_API_token>
 
 
-
 RESOURCE_GROUP=<your_resource_group>
-
 
 
 EVENT_HUB_CONNECTION_STRING="<your_Event_Hub_connection_string>"
@@ -119,7 +114,6 @@ EVENT_HUB_CONNECTION_STRING="<your_Event_Hub_connection_string>"
 
    ```
    wget -q https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/releases/latest/download/dynatrace-azure-logs.sh -O dynatrace-azure-logs.sh && chmod +x ./dynatrace-azure-logs.sh \
-
 
 
    && ./dynatrace-azure-logs.sh --deployment-name $DEPLOYMENT_NAME --target-url $TARGET_URL --target-api-token $TARGET_API_TOKEN --resource-group $RESOURCE_GROUP --event-hub-connection-string $EVENT_HUB_CONNECTION_STRING  --require-valid-certificate true
@@ -140,9 +134,7 @@ EVENT_HUB_CONNECTION_STRING="<your_Event_Hub_connection_string>"
 fetch logs
 
 
-
 | filter matchesValue(dt.openpipeline.source, "/api/v2/logs/ingest") AND matchesValue(cloud.provider, "Azure")
-
 
 
 | sort timestamp desc
@@ -346,25 +338,19 @@ Dynatrace версии 1.217+
    DEPLOYMENT_NAME=<your_deployment_name>
 
 
-
    TARGET_URL=<your_environment_URL>
-
 
 
    TARGET_API_TOKEN=<your_API_token>
 
 
-
    RESOURCE_GROUP=<your_resource_group>
-
 
 
    EVENT_HUB_CONNECTION_STRING="<your_Event_Hub_connection_string>"
 
 
-
    USE_EXISTING_ACTIVE_GATE=true
-
 
 
    REQUIRE_VALID_CERTIFICATE=true
@@ -375,7 +361,6 @@ Dynatrace версии 1.217+
 
    ```
    wget -q https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/releases/latest/download/dynatrace-azure-logs.sh -O dynatrace-azure-logs.sh && chmod +x ./dynatrace-azure-logs.sh \
-
 
 
    && ./dynatrace-azure-logs.sh --deployment-name $DEPLOYMENT_NAME --target-url $TARGET_URL --target-api-token $TARGET_API_TOKEN --resource-group $RESOURCE_GROUP --event-hub-connection-string $EVENT_HUB_CONNECTION_STRING --require-valid-certificate $REQUIRE_VALID_CERTIFICATE
@@ -405,41 +390,31 @@ Dynatrace версии 1.217+
    DEPLOYMENT_NAME=<your_deployment_name>
 
 
-
    TARGET_URL=<your_environment_URL>
-
 
 
    TARGET_API_TOKEN=<your_API_token>
 
 
-
    RESOURCE_GROUP=<your_resource_group>
-
 
 
    EVENT_HUB_NAME=<your_Event_Hub_name>
 
 
-
    REQUIRE_VALID_CERTIFICATE=true
-
 
 
    ENABLE_USER_ASSIGNED_MANAGED_IDENTITY=true
 
 
-
    EVENT_HUB_CONNECTION_CLIENT_ID=<your_user_assigned_MI_client_id>
-
 
 
    MANAGED_IDENTITY_RESOURCE_NAME=<your_user_assigned_MI_resource_name>
 
 
-
    EVENT_HUB_CONNECTION_FULLY_QUALIFIED_NAMESPACE="<your_eventhub_namespace_host_name>"
-
 
 
    CONSUMER_GROUP ="<Your_custom_default_consumer_group_name>"
@@ -469,7 +444,6 @@ Dynatrace версии 1.217+
 
    ```
    wget -q https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/releases/latest/download/dynatrace-azure-logs.sh -O dynatrace-azure-logs.sh && chmod +x ./dynatrace-azure-logs.sh \
-
 
 
    && ./dynatrace-azure-logs.sh --deployment-name $DEPLOYMENT_NAME --target-url $TARGET_URL --target-api-token $TARGET_API_TOKEN --resource-group $RESOURCE_GROUP --event-hub-name $EVENT_HUB_NAME --require-valid-certificate $REQUIRE_VALID_CERTIFICATE --enable-user-assigned-managed-identity $ENABLE_USER_ASSIGNED_MANAGED_IDENTITY --eventhub-connection-client-id $EVENT_HUB_CONNECTION_CLIENT_ID --managed-identity-resource-name $MANAGED_IDENTITY_RESOURCE_NAME --eventhub-connection-fully-qualified-namespace $EVENT_HUB_CONNECTION_FULLY_QUALIFIED_NAMESPACE --custom-consumer-group $CONSUMER_GROUP

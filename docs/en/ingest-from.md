@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:53.695464
 
 # Ingest data
 
-# Ingest data
 
 * Latest Dynatrace
 * Overview

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:11.678099
 
 # Google Cloud IoT Core monitoring (deprecated)
 
-# Google Cloud IoT Core monitoring (deprecated)
 
 * Latest Dynatrace
 * How-to guide

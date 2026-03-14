@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:57.048048
 
 # Use DQL queries
 
-# Use DQL queries
 
 * Latest Dynatrace
 * Reference
@@ -38,9 +37,7 @@ The `fetch` command requires a reference to the kind of data that should be retr
 fetch logs
 
 
-
 | filter loglevel == "ERROR"
-
 
 
 | summarize numErr = count()
@@ -58,7 +55,6 @@ You can also change the data type to `events` by using the `fetch` command and f
 
 ```
 fetch events
-
 
 
 | summarize Total_amount = sum(amount)
@@ -97,7 +93,6 @@ Narrow down the requested records with `filter`. Use operators like `==` or `!=`
 fetch logs, from:now() - 2h
 
 
-
 | filter loglevel == "SEVERE" or loglevel == "ERROR" and not endsWith(log.source,"audit.log")
 ```
 
@@ -105,7 +100,6 @@ fetch logs, from:now() - 2h
 
 ```
 fetch logs
-
 
 
 | fields timestamp, loglevel, log.source, content
@@ -119,17 +113,13 @@ By default, the sort command sorts records in ascending order. In the following 
 fetch logs
 
 
-
 | filter loglevel == "SEVERE" or loglevel == "ERROR"
-
 
 
 | fields timestamp, loglevel, dt.process.name, host.name, content
 
 
-
 | limit 5
-
 
 
 | sort timestamp desc
@@ -143,17 +133,13 @@ This example calculates the number of `booking.process.started` events. Intentio
 fetch bizevents
 
 
-
 | filter event.type=="booking.process.started"
-
 
 
 | fieldsAdd hour=formatTimestamp(timestamp,format:"hh"), day_of_week=formatTimestamp(timestamp,format:"EE")
 
 
-
 | filterOut (day_of_week  == "Sat" or day_of_week == "Sun") or (toLong(hour) <= 08 or toLong(hour) >= 17)
-
 
 
 | summarize numStarts = count(), by:{product}
@@ -167,9 +153,7 @@ DQL provides dedicated commands such as [makeTimeseries](commands/aggregation-co
 fetch logs
 
 
-
 | filter loglevel == "SEVERE" or loglevel == "ERROR"
-
 
 
 | makeTimeseries count = count(), by:loglevel, interval:5m

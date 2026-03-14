@@ -6,7 +6,6 @@ scraped: 2026-03-01T21:10:49.079167
 
 # Сети
 
-# Сети
 
 * Latest Dynatrace
 * Explanation

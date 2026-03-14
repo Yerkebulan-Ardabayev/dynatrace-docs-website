@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:02.038055
 
 # Analyze monitoring data with segments
 
-# Analyze monitoring data with segments
 
 * Latest Dynatrace
 * Tutorial

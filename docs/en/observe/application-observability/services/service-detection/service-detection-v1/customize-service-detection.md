@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:34.909415
 
 # Service detection rules
 
-# Service detection rules
 
 * Classic
 * How-to guide
@@ -73,161 +72,121 @@ To define a new service detection rule via API
    [
 
 
-
    {
-
 
 
    "schemaId":"builtin:service-detection.full-web-request",
 
 
-
    "scope":"environment",
-
 
 
    "value":{
 
 
-
    "enabled":true,
-
 
 
    "name":"Detect Application,Application-1 as the same",
 
 
-
    "description":"Example: merge services",
-
 
 
    "managementZones":["-8445121454707515572"],
 
 
-
    "idContributors":{
-
 
 
    "applicationId":{
 
 
-
    "enableIdContributor":true,
-
 
 
    "serviceIdContributor":{
 
 
-
    "contributionType":"TransformValue",
-
 
 
    "transformations": [
 
 
-
    {
-
 
 
    "transformationType":"REMOVE_NUMBERS",
 
 
-
    "minDigitCount":1,
-
 
 
    "includeHexNumbers":false
 
 
-
    }
-
 
 
    ]
 
 
-
    }
 
 
-
    },
-
 
 
    "contextRoot":{
 
 
-
    "enableIdContributor":false
 
 
-
    },
-
 
 
    "serverName":{
 
 
-
    "enableIdContributor":false
 
 
-
    }
-
 
 
    },
 
 
-
    "conditions": [
-
 
 
    {
 
 
-
    "attribute":"ApplicationId",
-
 
 
    "compareOperationType":"StringStartsWith",
 
 
-
    "textValues": ["application"],
-
 
 
    "ignoreCase":false
 
 
-
    }
-
 
 
    ]
 
 
-
    }
 
 
-
    }
-
 
 
    ]
@@ -264,161 +223,121 @@ To update an existing rule via API
    [
 
 
-
    {
-
 
 
    "updateToken":"vu9U3hXY3q0ATAAkOWFiNGI2ZDAtYWFhNC00M2IwLWEzZDYtNDQ2OTZkNzIyYzE5ACRmMTA1NTJlMC01M2Q5LTExZWQtODAwMS0wMTAwMDAwMDAwMDO-71TeFdjerQ",
 
 
-
    "value":{
-
 
 
    "enabled":true,
 
 
-
    "name":"Detect Application, Application-1 as the same",
-
 
 
    "description":"Example: merge services",
 
 
-
    "managementZones":["-8445121454707515572"],
-
 
 
    "idContributors":{
 
 
-
    "applicationId":{
-
 
 
    "enableIdContributor":true,
 
 
-
    "serviceIdContributor":{
-
 
 
    "contributionType":"TransformValue",
 
 
-
    "transformations":[
 
 
-
    {
-
 
 
    "transformationType":"REMOVE_NUMBERS",
 
 
-
    "minDigitCount":1,
-
 
 
    "includeHexNumbers":false
 
 
-
    }
-
 
 
    ]
 
 
-
    }
 
 
-
    },
-
 
 
    "contextRoot":{
 
 
-
    "enableIdContributor":false
 
 
-
    },
-
 
 
    "serverName":{
 
 
-
    "enableIdContributor":false
 
 
-
    }
-
 
 
    },
 
 
-
    "conditions":[
-
 
 
    {
 
 
-
    "attribute":"ApplicationId",
-
 
 
    "compareOperationType":"StringStartsWith",
 
 
-
    "textValues":["application"],
-
 
 
    ///Added condition to ignore case sensitivity for texts.
 
 
-
    "ignoreCase":true
 
 
-
    }
-
 
 
    ]
 
 
-
    }
 
 
-
    }
-
 
 
    ]
@@ -482,141 +401,106 @@ via API
 [
 
 
-
 {
-
 
 
 "schemaId":"builtin:service-detection.full-web-request",
 
 
-
 "scope":"environment",
-
 
 
 "value":{
 
 
-
 "enabled":true,
-
 
 
 "name":"Dynatrace Blog",
 
 
-
 "description":"Detect first segment of an URL path as service when it starts with blog/",
-
 
 
 "managementZones":[],
 
 
-
 "idContributors":{
-
 
 
 "applicationId":{
 
 
-
 "enableIdContributor":false
 
 
-
 },
-
 
 
 "contextRoot":{
 
 
-
 "enableIdContributor":true,
-
 
 
 "serviceIdContributor":{
 
 
-
 "contributionType":"TransformURL",
-
 
 
 "segmentCount":1,
 
 
-
 "transformations":[]
-
 
 
 }
 
 
-
 },
-
 
 
 "serverName":{
 
 
-
 "enableIdContributor":false
 
 
-
 }
-
 
 
 },
 
 
-
 "conditions":[
-
 
 
 {
 
 
-
 "attribute":"UrlPath",
-
 
 
 "compareOperationType":"StringStartsWith",
 
 
-
 "textValues":["blog/"],
-
 
 
 "ignoreCase":false
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 }
-
 
 
 ]
@@ -692,145 +576,109 @@ via API
 [
 
 
-
 {
-
 
 
 "schemaId":"builtin:service-detection.external-web-request",
 
 
-
 "scope":"environment",
-
 
 
 "value":{
 
 
-
 "enabled":true,
-
 
 
 "name":"Dynatrace.com - based on URL",
 
 
-
 "description":"Blog example: Dynatrace.com based on URL",
-
 
 
 "managementZones":[],
 
 
-
 "idContributors":{
-
 
 
 "applicationId":{
 
 
-
 "enableIdContributor":false
 
 
-
 },
-
 
 
 "contextRoot":{
 
 
-
 "enableIdContributor":true,
-
 
 
 "serviceIdContributor":{
 
 
-
 "contributionType":"TransformURL",
-
 
 
 "segmentCount":1,
 
 
-
 "transformations":[]
-
 
 
 }
 
 
-
 },
-
 
 
 "publicDomainName":{
 
 
-
 "enableIdContributor":false
 
 
-
 },
-
 
 
 "portForServiceId":false
 
 
-
 },
-
 
 
 "conditions":[
 
 
-
 {
-
 
 
 "attribute":"TopLevelDomain",
 
 
-
 "compareOperationType":"StringEndsWith",
-
 
 
 "textValues":["dynatrace.com"],
 
 
-
 "ignoreCase":true
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 }
-
 
 
 ]
@@ -870,141 +718,106 @@ via API
 [
 
 
-
 {
-
 
 
 "schemaId":"builtin:service-detection.external-web-request",
 
 
-
 "scope":"environment",
-
 
 
 "value":{
 
 
-
 "enabled":true,
-
 
 
 "name":"Dynatrace.com - based on subdomains",
 
 
-
 "description":"Blog example: Separate services for public network services based on subdomains ",
-
 
 
 "managementZones":[],
 
 
-
 "idContributors":{
-
 
 
 "applicationId":{
 
 
-
 "enableIdContributor":false
 
 
-
 },
-
 
 
 "contextRoot":{
 
 
-
 "enableIdContributor":false
 
 
-
 },
-
 
 
 "publicDomainName":{
 
 
-
 "enableIdContributor":true,
-
 
 
 "serviceIdContributor":{
 
 
-
 "contributionType":"OriginalValue",
-
 
 
 "copyFromHostName":true
 
 
-
 }
 
 
-
 },
-
 
 
 "portForServiceId":false
 
 
-
 },
-
 
 
 "conditions":[
 
 
-
 {
-
 
 
 "attribute":"TopLevelDomain",
 
 
-
 "compareOperationType":"StringEndsWith",
-
 
 
 "textValues":["dynatrace.com"],
 
 
-
 "ignoreCase":true
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 }
-
 
 
 ]

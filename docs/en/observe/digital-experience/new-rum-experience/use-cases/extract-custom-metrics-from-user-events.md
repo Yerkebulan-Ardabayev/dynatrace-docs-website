@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:59.487993
 
 # Extract a metric from user events
 
-# Extract a metric from user events
 
 * Latest Dynatrace
 * Tutorial
@@ -30,29 +29,22 @@ Therefore, you can analyze the number of views per journey by running the follow
 fetch user.events
 
 
-
 | filter matchesPhrase(frontend.name, "easytravel") AND
-
 
 
 characteristics.has_navigation == true AND
 
 
-
 matchesPhrase(view.url.path, "/easytravel/journeys/*") AND
-
 
 
 not matchesPhrase(view.url.path, "*book")
 
 
-
 | parse view.url.path, "'/'LD'/'LD'/'LD:journey_id"
 
 
-
 | summarize by: {journey_id}, count()
-
 
 
 | sort `count()` desc
@@ -86,9 +78,7 @@ Ensure you have the permissions described in [New RUM Experience permissions](..
      characteristics.has_navigation == true AND
 
 
-
      matchesPhrase(view.url.path, "/easytravel/journeys/*") AND
-
 
 
      not matchesPhrase(view.url.path, "*book")
@@ -97,7 +87,6 @@ Ensure you have the permissions described in [New RUM Experience permissions](..
 
      ```
      parse view.url.path, "'/'LD'/'LD'/'LD:journey_id"
-
 
 
      | fieldsAdd journey_id
@@ -137,9 +126,7 @@ You have successfully created a pipeline to parse user events and extract a metr
 timeseries count = sum(easytravel.journey_view_count), by: {journey_id}, interval: 3h
 
 
-
 | sort arraysum(count) desc
-
 
 
 | limit 5

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:41.296118
 
 # Dedicated performance profile configuration
 
-# Dedicated performance profile configuration
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -31,125 +30,94 @@ scraped: 2026-03-06T21:29:41.296118
    [aws_monitoring]
 
 
-
    aws_monitoring_enabled = false
-
 
 
    [azure_monitoring]
 
 
-
    azure_monitoring_enabled = false
-
 
 
    [cloudfoundry_monitoring]
 
 
-
    cloudfoundry_monitoring_enabled = false
-
 
 
    [debugging]
 
 
-
    debugging_enabled = false
-
 
 
    [kubernetes_monitoring]
 
 
-
    kubernetes_monitoring_enabled = false
-
 
 
    [log_analytics_collector]
 
 
-
    log_analytics_collector_enabled = false
-
 
 
    [vmware_monitoring]
 
 
-
    vmware_monitoring_enabled = false
-
 
 
    [dbAgent]
 
 
-
    dbAgent_enabled = false
-
 
 
    [zremote]
 
 
-
    zremote_enabled = false
-
 
 
    [synthetic]
 
 
-
    synthetic_enabled = false
-
 
 
    [beacon_forwarder]
 
 
-
    beacon_forwarder_enabled = false
-
 
 
    [metrics_ingest]
 
 
-
    metrics_ingest_enabled = false
 
 
-
    [collector]
-
 
 
    DumpSupported = false
 
 
-
    [collector]
-
 
 
    MSGrouter = false
 
 
-
    [otlp_ingest]
-
 
 
    otlp_ingest_enabled = false
 
 
-
    [collector]
-
 
 
    restInterface = false
@@ -158,7 +126,6 @@ scraped: 2026-03-06T21:29:41.296118
 
    ```
    -java.xmx.absolute_part=2000
-
 
 
    -java.xmx.relative_part=0

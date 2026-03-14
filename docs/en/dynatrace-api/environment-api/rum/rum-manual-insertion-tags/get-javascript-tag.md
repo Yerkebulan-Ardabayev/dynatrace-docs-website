@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:40.132058
 
 # GET JavaScript tag
 
-# GET JavaScript tag
 
 * Reference
 * Updated on Sep 18, 2025

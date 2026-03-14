@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:42.319279
 
 # Google Cloud supported service metrics (legacy)
 
-# Google Cloud supported service metrics (legacy)
 
 * Latest Dynatrace
 * How-to guide

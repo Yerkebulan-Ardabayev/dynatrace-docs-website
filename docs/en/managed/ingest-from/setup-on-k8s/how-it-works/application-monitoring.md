@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:53.393313
 
 # Application observability
 
-# Application observability
 
 * Latest Dynatrace
 * 3-min read

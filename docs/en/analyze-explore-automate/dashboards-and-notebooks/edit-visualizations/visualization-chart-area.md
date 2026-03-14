@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:31.855169
 
 # Area chart visualization
 
-# Area chart visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -260,7 +259,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000

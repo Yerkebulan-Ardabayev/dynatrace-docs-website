@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:29:14.207839
 
 # Google Cloud Storage monitoring
 
-# Google Cloud Storage monitoring
 
 * Latest Dynatrace
 * How-to guide

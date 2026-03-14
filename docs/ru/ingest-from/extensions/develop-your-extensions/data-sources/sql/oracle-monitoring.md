@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:43.036318
 
 # Конфигурация мониторинга Oracle Database
 
-# Конфигурация мониторинга Oracle Database
 
 * Latest Dynatrace
 * Справочник
@@ -25,121 +24,91 @@ scraped: 2026-03-05T21:37:43.036318
 [
 
 
-
 {
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "description": "My Oracle SQL extension",
 
 
-
 "version": "0.1.1",
-
 
 
 "featureSets": [
 
 
-
 "io",
-
 
 
 "cpu",
 
 
-
 ],
-
 
 
 "sqlOracleRemote": {
 
 
-
 "licenseAccepted": true,
-
 
 
 "endpoints": [
 
 
-
 {
-
 
 
 "host": "sqlserver.org",
 
 
-
 "port": 1521,
-
 
 
 "databaseIdentifier": "serviceName",
 
 
-
 "authentication": {
-
 
 
 "scheme": "basic",
 
 
-
 "username": "admin",
-
 
 
 "password": "password"
 
 
-
 },
-
 
 
 "serviceName": "some-serviceName"
 
 
-
 "ssl": false
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "scope": "ag_group-default"
 
 
-
 }
-
 
 
 ]
@@ -159,9 +128,7 @@ scraped: 2026-03-05T21:37:43.036318
 curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/{extension-name}/{extension-version}/schema" \
 
 
-
 -H "accept: application/json; charset=utf-8" \
-
 
 
 -H "Authorization: Api-Token {api-token}"
@@ -203,69 +170,52 @@ curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/{extension-name}/{ext
 "sqlOracleRemote": {
 
 
-
 "licenseAccepted": true,
-
 
 
 "endpoints": [
 
 
-
 {
-
 
 
 "host": "sqlserver.org",
 
 
-
 "port": 1521,
-
 
 
 "databaseIdentifier": "serviceName",
 
 
-
 "authentication": {
-
 
 
 "scheme": "basic",
 
 
-
 "username": "admin",
-
 
 
 "password": "password"
 
 
-
 },
-
 
 
 "serviceName": "some-serviceName"
 
 
-
 "ssl": false
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 }
@@ -300,17 +250,13 @@ curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/{extension-name}/{ext
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": true,
 
 
-
 "credentialVaultId": "some-credential-vault-id"
-
 
 
 }
@@ -324,13 +270,10 @@ curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/{extension-name}/{ext
 "featureSets": [
 
 
-
 "cpu",
 
 
-
 "io"
-
 
 
 ]
@@ -344,9 +287,7 @@ curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/{extension-name}/{ext
 "featureSets": [
 
 
-
 "topN"
-
 
 
 ]
@@ -362,9 +303,7 @@ curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/{extension-name}/{ext
 "featureSets": [
 
 
-
 "multitenancy"
-
 
 
 ]
@@ -396,9 +335,7 @@ ActiveGate версии 1.275+
 "vars": {
 
 
-
 "long-running-query-timeout": null
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:11.540618
 
 # Disk Analytics extension
 
-# Disk Analytics extension
 
 * Latest Dynatrace
 * Extension

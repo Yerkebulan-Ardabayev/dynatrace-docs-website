@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:01.329825
 
 # Ingest sources in OpenPipeline
 
-# Ingest sources in OpenPipeline
 
 * Latest Dynatrace
 * Reference
@@ -394,7 +393,6 @@ System events
 
      ```
      fetch dt.system.events
-
 
 
      | filter isNotNull(dt.openpipeline.pipelines)

@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:29:49.893436
 
 # Set up alerts based on events extracted from logs
 
-# Set up alerts based on events extracted from logs
 
 * Latest Dynatrace
 * Tutorial
@@ -40,9 +39,7 @@ You can find alerts by opening ![Logs](https://dt-cdn.net/images/logs-256-ae0a9c
 fetch logs
 
 
-
 | filter matchesPhrase(content, "Dropping data because sending_queue is full")
-
 
 
 | sort timestamp desc

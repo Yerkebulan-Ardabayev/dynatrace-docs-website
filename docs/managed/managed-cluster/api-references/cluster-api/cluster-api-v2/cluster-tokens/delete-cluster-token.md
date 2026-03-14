@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Delete Cluster token
 
-# Delete Cluster token
 
 * Published Feb 12, 2020
 
@@ -69,53 +68,40 @@ A list of constraint violations
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -131,7 +117,6 @@ The API token is passed in the Authorization header.
 
 ```
 curl -X DELETE "https://myManaged.cluster.com/api/cluster/v2/tokens/4e9f128e-04f9-4795-pj319-8b7c-3c14a5e885e4"
-
 
 
 -H "accept: application/json; charset=utf-8"

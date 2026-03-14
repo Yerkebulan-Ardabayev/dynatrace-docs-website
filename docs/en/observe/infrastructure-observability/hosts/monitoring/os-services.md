@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:55.370527
 
 # OS services monitoring
 
-# OS services monitoring
 
 * Classic
 * How-to guide
@@ -38,7 +37,6 @@ With the service status property in ![Smartscape](https://dt-cdn.net/images/smar
 fetch `dt.entity.os:service`
 
 
-
 | fieldsAdd status
 ```
 
@@ -60,9 +58,7 @@ Advanced alerting provides access to the service status and the service availabi
 timeseries count(dt.osservice.availability),
 
 
-
 by:{dt.osservice.display_name, dt.osservice.status}
-
 
 
 | filter dt.osservice.display_name=="apache2"

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Metrics API - GET metric data points
 
-# Metrics API - GET metric data points
 
 * Reference
 * Published Jun 14, 2019
@@ -167,237 +166,178 @@ Metric query translation to DQL.
 {
 
 
-
 "nextPageKey": "null",
-
 
 
 "resolution": "1h",
 
 
-
 "result": [
 
 
-
 {
-
 
 
 "data": [
 
 
-
 {
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.disk": "DISK-F1266E1D0AAC2C3F",
-
 
 
 "dt.entity.host": "HOST-F1266E1D0AAC2C3C"
 
 
-
 },
-
 
 
 "dimensions": [
 
 
-
 "HOST-F1266E1D0AAC2C3C",
-
 
 
 "DISK-F1266E1D0AAC2C3F"
 
 
-
 ],
-
 
 
 "timestamps": [
 
 
-
 3151435100000,
-
 
 
 3151438700000,
 
 
-
 3151442300000
-
 
 
 ],
 
 
-
 "values": [
-
 
 
 11.1,
 
 
-
 22.2,
-
 
 
 33.3
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "dimensions": [
 
 
-
 "HOST-F1266E1D0AAC2C3C",
-
 
 
 "DISK-F1266E1D0AAC2C3D"
 
 
-
 ],
-
 
 
 "timestamps": [
 
 
-
 3151435100000,
-
 
 
 3151438700000,
 
 
-
 3151442300000
 
 
-
 ],
-
 
 
 "values": [
 
 
-
 111.1,
-
 
 
 222.2,
 
 
-
 333.3
-
 
 
 ]
 
 
-
 }
 
 
-
 ],
-
 
 
 "dataPointCountRatio": "0.1211",
 
 
-
 "dimensionCountRatio": "0.0322",
-
 
 
 "metricId": "builtin:host.disk.avail"
 
 
-
 },
-
 
 
 {
 
 
-
 "data": [],
-
 
 
 "metricId": "builtin:host.cpu.idle:filter(eq(\"dt.entityhost\",HOST-123))",
 
 
-
 "warnings": [
-
 
 
 "The dimension key `dt.entityhost` has been referenced, but the metric has no such key."
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
-
 
 
 "totalCount": 3,
 
 
-
 "warnings": [
-
 
 
 "The dimension key `dt.entityhost` has been referenced, but the metric has no such key."
 
 
-
 ]
-
 
 
 }
@@ -441,9 +381,7 @@ With untransformed metrics and **entitySelector** filter:
 curl -L -X GET 'https://mySampleEnv.live.dynatrace.com/api/v2/metrics/query?metricSelector=builtin:host.cpu.(usage,idle)&entitySelector=type(%22dt.entity.host%22),entityId(%22HOST-0990886B7D39FE29%22,%22HOST-0956C3557E9109C1%22)&from=now-5m' \
 
 
-
 -H 'Authorization: Api-Token abcdefjhij1234567890' \
-
 
 
 -H 'Accept: application/json'
@@ -455,9 +393,7 @@ With transformation applied directly to the metrics:
 curl -L -X GET 'https://mySampleEnv.live.dynatrace.com/api/v2/metrics/query?metricSelector=builtin:host.cpu.(usage,idle):filter(or(eq(%22dt.entity.host%22,%22HOST-0990886B7D39FE29%22),eq(%22dt.entity.host%22,%22HOST-0956C3557E9109C1%22)))&from=now-5m' \
 
 
-
 -H 'Authorization: Api-Token abcdefjhij1234567890' \
-
 
 
 -H 'Accept: application/json'
@@ -485,365 +421,274 @@ The result is truncated to three data points per dimension.
 {
 
 
-
 "totalCount": 2,
-
 
 
 "nextPageKey": null,
 
 
-
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:host.cpu.idle",
 
 
-
 "dataPointCountRatio": 1.8E-5,
-
 
 
 "dimensionCountRatio": 3.0E-5,
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": [
-
 
 
 "HOST-0990886B7D39FE29"
 
 
-
 ],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.host": "HOST-0990886B7D39FE29"
-
 
 
 },
 
 
-
 "timestamps": [
-
 
 
 1589456100000,
 
 
-
 1589456160000,
-
 
 
 1589456220000
 
 
-
 ],
-
 
 
 "values": [
 
 
-
 81.0,
 
 
-
 81.0,
-
 
 
 79.0
 
 
-
 ]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": [
-
 
 
 "HOST-0956C3557E9109C1"
 
 
-
 ],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.host": "HOST-0956C3557E9109C1"
-
 
 
 },
 
 
-
 "timestamps": [
-
 
 
 1589456100000,
 
 
-
 1589456160000,
-
 
 
 1589456220000
 
 
-
 ],
 
 
-
 "values": [
-
 
 
 81.0,
 
 
-
 79.0,
-
 
 
 78.0
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "metricId": "builtin:host.cpu.usage",
 
 
-
 "dataPointCountRatio": 1.8E-5,
-
 
 
 "dimensionCountRatio": 3.0E-5,
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": [
-
 
 
 "HOST-0990886B7D39FE29"
 
 
-
 ],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.host": "HOST-0990886B7D39FE29"
 
 
-
 },
-
 
 
 "timestamps": [
 
 
-
 1589456100000,
-
 
 
 1589456160000,
 
 
-
 1589456220000
-
 
 
 ],
 
 
-
 "values": [
 
 
-
 19.0,
 
 
-
 19.0,
-
 
 
 21.0
 
 
-
 ]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": [
-
 
 
 "HOST-0956C3557E9109C1"
 
 
-
 ],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.host": "HOST-0956C3557E9109C1"
-
 
 
 },
 
 
-
 "timestamps": [
-
 
 
 1589456100000,
 
 
-
 1589456160000,
-
 
 
 1589456220000
 
 
-
 ],
-
 
 
 "values": [
 
 
-
 19.0,
-
 
 
 21.0,
 
 
-
 22.0
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -855,25 +700,19 @@ The CSV table with header row looks like this. To obtain it, change the **Accept
 metricId,dt.entity.host,time,value
 
 
-
 builtin:host.cpu.usage,HOST-0956C3557E9109C1,2020-05-14 11:35:00,19.0
-
 
 
 builtin:host.cpu.usage,HOST-0956C3557E9109C1,2020-05-14 11:36:00,19.0
 
 
-
 builtin:host.cpu.usage,HOST-0956C3557E9109C1,2020-05-14 11:37:00,21.0
-
 
 
 builtin:host.cpu.usage,HOST-0990886B7D39FE29,2020-05-14 11:35:00,19.0
 
 
-
 builtin:host.cpu.usage,HOST-0990886B7D39FE29,2020-05-14 11:36:00,21.0
-
 
 
 builtin:host.cpu.usage,HOST-0990886B7D39FE29,2020-05-14 11:37:00,22.0
@@ -891,9 +730,7 @@ With untransformed metrics and **entitySelector** filter:
 curl -L -X GET 'https://mySampleEnv.live.dynatrace.com/api/v2/metrics/query?metricSelector=builtin:host.cpu.(usage,idle):fold&entitySelector=type(%22dt.entity.host%22),entityId(%22HOST-0990886B7D39FE29%22,%22HOST-0956C3557E9109C1%22)&from=now-5m' \
 
 
-
 -H 'Authorization: Api-Token abcdefjhij1234567890' \
-
 
 
 -H 'Accept: application/json'
@@ -905,9 +742,7 @@ With transformation applied directly to the metrics:
 curl -L -X GET 'https://mySampleEnv.live.dynatrace.com/api/v2/metrics/query?metricSelector=builtin:host.cpu.(usage,idle):filter(or(eq(%22dt.entity.host%22,%22HOST-0990886B7D39FE29%22),eq(%22dt.entity.host%22,%22HOST-0956C3557E9109C1%22))):fold&from=now-5m' \
 
 
-
 -H 'Authorization: Api-Token abcdefjhij1234567890' \
-
 
 
 -H 'Accept: application/json'
@@ -933,305 +768,229 @@ https://mySampleEnv.live.dynatrace.com/api/v2/metrics/query?metricSelector=built
 {
 
 
-
 "totalCount": 2,
-
 
 
 "nextPageKey": null,
 
 
-
 "resolution": "1m",
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:host.cpu.idle:fold",
 
 
-
 "dataPointCountRatio": 1.8E-5,
-
 
 
 "dimensionCountRatio": 3.0E-5,
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": [
-
 
 
 "HOST-0990886B7D39FE29"
 
 
-
 ],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.host": "HOST-0990886B7D39FE29"
-
 
 
 },
 
 
-
 "timestamps": [
-
 
 
 1589455320000
 
 
-
 ],
 
 
-
 "values": [
-
 
 
 79.0
 
 
-
 ]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": [
-
 
 
 "HOST-0956C3557E9109C1"
 
 
-
 ],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.host": "HOST-0956C3557E9109C1"
-
 
 
 },
 
 
-
 "timestamps": [
-
 
 
 1589455320000
 
 
-
 ],
 
 
-
 "values": [
-
 
 
 78.0
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "metricId": "builtin:host.cpu.usage:fold",
 
 
-
 "dataPointCountRatio": 1.8E-5,
-
 
 
 "dimensionCountRatio": 3.0E-5,
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": [
-
 
 
 "HOST-0990886B7D39FE29"
 
 
-
 ],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.host": "HOST-0990886B7D39FE29"
 
 
-
 },
-
 
 
 "timestamps": [
 
 
-
 1589455320000
-
 
 
 ],
 
 
-
 "values": [
-
 
 
 21.0
 
 
-
 ]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": [
-
 
 
 "HOST-0956C3557E9109C1"
 
 
-
 ],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.host": "HOST-0956C3557E9109C1"
-
 
 
 },
 
 
-
 "timestamps": [
-
 
 
 1589455320000
 
 
-
 ],
-
 
 
 "values": [
 
 
-
 22.0
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -1243,9 +1002,7 @@ The CSV table with header row looks like this. To obtain it, change the **Accept
 metricId,dt.entity.host,time,value
 
 
-
 builtin:host.cpu.usage,HOST-0956C3557E9109C1,2020-05-14 11:22:00,21.0
-
 
 
 builtin:host.cpu.usage,HOST-0990886B7D39FE29,2020-05-14 11:22:00,22.00
