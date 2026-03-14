@@ -1,5 +1,5 @@
 ---
-title: Geographic regions - IP mapping headers API
+title: Географические регионы - заголовки сопоставления IP API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-header
 scraped: 2026-03-05T21:40:40.325738
 ---

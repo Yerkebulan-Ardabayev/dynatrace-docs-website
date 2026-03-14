@@ -1,5 +1,5 @@
 ---
-title: Allowed beacon domains API
+title: Разрешенные домены маяка API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/allowed-beacon-cors
 scraped: 2026-03-06T21:25:51.626363
 ---

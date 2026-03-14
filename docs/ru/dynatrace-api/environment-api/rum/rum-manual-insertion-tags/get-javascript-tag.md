@@ -1,5 +1,5 @@
 ---
-title: GET JavaScript tag
+title: Получение тега JavaScript
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag
 scraped: 2026-03-05T21:32:40.132058
 ---

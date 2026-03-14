@@ -1,5 +1,5 @@
 ---
-title: Kong AI Gateway
+title: Шлюз Kong AI
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-traffic-management-and-security/kong
 scraped: 2026-03-05T21:32:10.458716
 ---

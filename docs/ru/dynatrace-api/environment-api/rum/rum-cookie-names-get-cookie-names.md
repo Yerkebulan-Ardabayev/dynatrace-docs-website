@@ -1,5 +1,5 @@
 ---
-title: RUM cookie names API - GET cookie names
+title: Имена файлов cookie RUM API - Получение имен файлов cookie
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-cookie-names-get-cookie-names
 scraped: 2026-03-06T21:28:53.298305
 ---
