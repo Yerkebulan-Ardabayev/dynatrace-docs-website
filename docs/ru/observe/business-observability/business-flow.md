@@ -1,5 +1,5 @@
 ---
-title: Business Flow
+title: Поток бизнеса
 source: https://www.dynatrace.com/docs/observe/business-observability/business-flow
 scraped: 2026-03-06T21:14:34.599595
 ---

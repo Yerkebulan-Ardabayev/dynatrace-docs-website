@@ -6,6 +6,7 @@
 
 // Configuration - Auto-detect mode
 const GROQ_PROXY_URL = '/api/chat';
+const GEMINI_DIRECT_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
 const GROQ_DIRECT_URL = 'https://api.groq.com/openai/v1/chat/completions';
 const GROQ_MODEL = 'llama-3.3-70b-versatile';
 
@@ -63,9 +64,9 @@ async function detectMode() {
             }
 
             // 2b. Direct API key (fallback — key exposed in config file)
-            if (config.groq_api_key) {
-                GROQ_API_KEY_CLIENT = config.groq_api_key;
-                GROQ_MODE = 'direct';
+            if (config.gemini_api_key || config.groq_api_key) {
+                GROQ_API_KEY_CLIENT = config.gemini_api_key || config.groq_api_key;
+                GROQ_MODE = config.gemini_api_key ? 'direct_gemini' : 'direct_groq';
                 console.log('[AI Chat] Mode: direct API (GitHub Pages)');
                 return;
             }
@@ -89,13 +90,13 @@ function createChatWidget() {
         </button>
         <div id="chat-container" class="chat-container" style="display: none;">
             <div class="chat-header">
-                <h3>🚀 AI-Ассистент Groq</h3>
-                <span style="font-size: 0.8em; opacity: 0.8;">Llama 3.3 70B • Мгновенные ответы</span>
+                <h3>🚀 AI-Ассистент</h3>
+                <span style="font-size: 0.8em; opacity: 0.8;">Gemini Flash + Groq • Мгновенные ответы</span>
                 <button id="chat-close">&times;</button>
             </div>
             <div id="chat-messages" class="chat-messages">
                 <div class="message bot-message">
-                    <p>👋 Привет! Я ваш супер-быстрый AI-помощник на базе <strong>Groq Llama 3.3 70B</strong>!</p>
+                    <p>👋 Привет! Я ваш супер-быстрый AI-помощник на базе <strong>Gemini Flash</strong>!</p>
                     <p><em>Спрашивайте что угодно о Dynatrace - отвечу мгновенно! ⚡</em></p>
                     <p style="font-size: 0.9em; opacity: 0.7;">Отвечаю на русском или английском.</p>
                 </div>
@@ -195,43 +196,75 @@ async function sendViaWorker(message, systemPrompt) {
     return data.choices[0].message.content;
 }
 
-// Send message directly to Groq API (GitHub Pages mode)
+// Send message directly to Gemini (or Groq) API (GitHub Pages mode)
 async function sendDirect(message, systemPrompt) {
     if (!checkRateLimit()) {
         throw new Error('⏳ Превышен лимит запросов (8/мин). Подождите минуту.');
     }
 
-    const messages = [
-        { role: 'system', content: systemPrompt },
-        ...conversationHistory.slice(-MAX_HISTORY),
-        { role: 'user', content: message }
-    ];
+    if (GROQ_MODE === 'direct_gemini') {
+        // Gemini API Format
+        const contents = [];
+        if (systemPrompt) {
+            contents.push({ role: 'user', parts: [{ text: "System Context:\n" + systemPrompt }] });
+        }
+        
+        for (const msg of conversationHistory.slice(-MAX_HISTORY)) {
+            contents.push({
+                role: msg.role === 'assistant' ? 'model' : 'user',
+                parts: [{ text: msg.content }]
+            });
+        }
+        contents.push({ role: 'user', parts: [{ text: message }] });
 
-    const response = await fetch(GROQ_DIRECT_URL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${GROQ_API_KEY_CLIENT}`
-        },
-        body: JSON.stringify({
-            model: GROQ_MODEL,
-            messages: messages,
-            temperature: 0.7,
-            max_tokens: 1024,
-            stream: false
-        })
-    });
+        const response = await fetch(`${GEMINI_DIRECT_URL}?key=${GROQ_API_KEY_CLIENT}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                contents: contents,
+                generationConfig: { temperature: 0.7, maxOutputTokens: 1024 }
+            })
+        });
 
-    if (response.status === 429) {
-        throw new Error('⏳ Groq rate limit. Подождите 30 секунд и попробуйте снова.');
+        if (response.status === 429) throw new Error('⏳ rate limit. Подождите 30 секунд и попробуйте снова.');
+        if (!response.ok) throw new Error(`API ошибка: ${response.status}`);
+
+        const data = await response.json();
+        return data.candidates && data.candidates.length > 0 ? data.candidates[0].content.parts[0].text : "Empty response";
+    } else {
+        // Fallback to Groq Format if using groq key in frontend
+        const messages = [
+            { role: 'system', content: systemPrompt },
+            ...conversationHistory.slice(-MAX_HISTORY),
+            { role: 'user', content: message }
+        ];
+
+        const response = await fetch(GROQ_DIRECT_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${GROQ_API_KEY_CLIENT}`
+            },
+            body: JSON.stringify({
+                model: GROQ_MODEL,
+                messages: messages,
+                temperature: 0.7,
+                max_tokens: 1024,
+                stream: false
+            })
+        });
+
+        if (response.status === 429) {
+            throw new Error('⏳ Groq rate limit. Подождите 30 секунд и попробуйте снова.');
+        }
+        if (!response.ok) {
+            const err = await response.json().catch(() => ({}));
+            throw new Error(err.error?.message || `API ошибка: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data.choices && data.choices.length > 0 ? data.choices[0].message.content : "Empty response";
     }
-    if (!response.ok) {
-        const err = await response.json().catch(() => ({}));
-        throw new Error(err.error?.message || `API ошибка: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data.choices[0].message.content;
 }
 
 // Send message to Groq API
@@ -311,7 +344,7 @@ ${context}
         botMsg.innerHTML = `
             <div class="markdown-content">${markdownToHtml(answer)}</div>
             <div style="font-size: 0.75em; opacity: 0.5; margin-top: 8px; text-align: right;">
-                ⚡ ${responseTime}с • ${{proxy:'Server', worker:'Edge', direct:'Direct'}[GROQ_MODE] || GROQ_MODE}
+                ⚡ ${responseTime}с • ${GROQ_MODE.startsWith('direct') ? 'Direct' : (GROQ_MODE === 'proxy' ? 'Server' : 'Edge')}
             </div>
         `;
         messagesDiv.appendChild(botMsg);
@@ -380,9 +413,10 @@ document.addEventListener('DOMContentLoaded', async function () {
     const statusSpan = document.querySelector('.chat-header span');
     if (statusSpan) {
         const modeLabel = {
-            'proxy': 'Llama 3.3 70B • Server Mode',
-            'worker': 'Llama 3.3 70B • Cloudflare Edge',
-            'direct': 'Llama 3.3 70B • Direct API',
+            'proxy': 'Gemini / Groq • Server Mode',
+            'worker': 'Gemini / Groq • Cloudflare Edge',
+            'direct_gemini': 'Gemini Flash • Direct API',
+            'direct_groq': 'Groq Llama • Direct API',
             'disabled': '⚠️ Не настроен'
         };
         statusSpan.textContent = modeLabel[GROQ_MODE] || 'Detecting...';

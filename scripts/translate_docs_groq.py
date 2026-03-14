@@ -53,7 +53,8 @@ def _load_dotenv():
 _load_dotenv()
 
 # API ключи из окружения (или .env)
-GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', '')
+GEMINI_API_KEYS = [val for key, val in os.environ.items() if key.startswith('GEMINI_API_KEY') and val]
+GEMINI_API_KEY = GEMINI_API_KEYS[0] if GEMINI_API_KEYS else ''
 GROQ_API_KEY   = os.environ.get('GROQ_API_KEY', '')
 OPENROUTER_API_KEY = os.environ.get('OPENROUTER_API_KEY', '')
 
@@ -195,69 +196,72 @@ def split_into_chunks(text: str, max_chars: int = MAX_CHUNK_CHARS) -> list:
 
 def translate_via_gemini(text: str) -> str | None:
     """Перевод через Gemini Flash. Возвращает None при ошибке/лимите."""
-    if not GEMINI_API_KEY:
+    if not GEMINI_API_KEYS:
         return None
 
     prompt = TRANSLATION_PROMPT.format(text=text)
     max_retries = 5
-    for attempt in range(max_retries):
-        try:
-            response = requests.post(
-                f"{GEMINI_API_URL}?key={GEMINI_API_KEY}",
-                headers={'Content-Type': 'application/json'},
-                json={
-                    'contents': [{'parts': [{'text': prompt}]}],
-                    'generationConfig': {
-                        'temperature': 0.3,
-                        'maxOutputTokens': 8192,
-                    }
-                },
-                timeout=90
-            )
+    
+    for api_key in GEMINI_API_KEYS:
+        for attempt in range(max_retries):
+            try:
+                response = requests.post(
+                    f"{GEMINI_API_URL}?key={api_key}",
+                    headers={'Content-Type': 'application/json'},
+                    json={
+                        'contents': [{'parts': [{'text': prompt}]}],
+                        'generationConfig': {
+                            'temperature': 0.3,
+                            'maxOutputTokens': 8192,
+                        }
+                    },
+                    timeout=90
+                )
 
-            if response.status_code == 429:
-                # Check if it's daily quota exhausted vs per-minute limit
-                err_text = response.text
-                if 'limit: 0' in err_text or 'quota' in err_text.lower():
-                    print(f"  ⏳ Gemini дневная квота исчерпана — пропускаю на Groq")
-                    return None
-                wait = 20 * (attempt + 1)  # 20, 40, 60, 80, 100 sec
-                print(f"  ⏳ Gemini rate limit, жду {wait}с...")
-                time.sleep(wait)
-                continue
-
-            if response.status_code == 403 or response.status_code == 401:
-                print(f"  ❌ Gemini: неверный ключ или квота исчерпана ({response.status_code})")
-                return None
-
-            if response.status_code != 200:
-                print(f"  ❌ Gemini API ошибка: {response.status_code}")
-                if attempt < max_retries - 1:
-                    time.sleep(2 ** attempt)
+                if response.status_code == 429:
+                    # Check if it's daily quota exhausted vs per-minute limit
+                    err_text = response.text
+                    if 'limit: 0' in err_text or 'quota' in err_text.lower():
+                        print(f"  ⏳ Gemini дневная квота исчерпана для ключа, пробую следующий...")
+                        break
+                    wait = 20 * (attempt + 1)  # 20, 40, 60, 80, 100 sec
+                    print(f"  ⏳ Gemini rate limit, жду {wait}с...")
+                    time.sleep(wait)
                     continue
-                return None
 
-            data = response.json()
-            candidates = data.get('candidates', [])
-            if not candidates:
-                print(f"  ❌ Gemini: пустой ответ")
-                return None
+                if response.status_code == 403 or response.status_code == 401:
+                    print(f"  ❌ Gemini: неверный ключ или квота исчерпана ({response.status_code}), пробую следующий...")
+                    break
 
-            translation = candidates[0]['content']['parts'][0]['text'].strip()
-            time.sleep(4.0)  # Gemini free: 15 req/min = 4 sec between requests
-            return translation
+                if response.status_code != 200:
+                    print(f"  ❌ Gemini API ошибка: {response.status_code}")
+                    if attempt < max_retries - 1:
+                        time.sleep(2 ** attempt)
+                        continue
+                    break
 
-        except requests.Timeout:
-            wait = 2 ** (attempt + 1)
-            print(f"  ⏳ Gemini таймаут, жду {wait}с...")
-            time.sleep(wait)
-        except Exception as e:
-            print(f"  ❌ Gemini исключение: {e}")
-            if attempt < max_retries - 1:
-                time.sleep(2)
-                continue
-            return None
+                data = response.json()
+                candidates = data.get('candidates', [])
+                if not candidates:
+                    print(f"  ❌ Gemini: пустой ответ")
+                    break
 
+                translation = candidates[0]['content']['parts'][0]['text'].strip()
+                time.sleep(4.0)  # Gemini free: 15 req/min = 4 sec between requests
+                return translation
+
+            except requests.Timeout:
+                wait = 2 ** (attempt + 1)
+                print(f"  ⏳ Gemini таймаут, жду {wait}с...")
+                time.sleep(wait)
+            except Exception as e:
+                print(f"  ❌ Gemini исключение: {e}")
+                if attempt < max_retries - 1:
+                    time.sleep(2)
+                    continue
+                break
+                
+    print(f"  ⏳ Все ключи Gemini исчерпаны — пропускаю на Groq")
     return None
 
 

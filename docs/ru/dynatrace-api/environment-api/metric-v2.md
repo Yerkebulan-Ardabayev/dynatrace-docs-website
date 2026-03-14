@@ -1,5 +1,5 @@
 ---
-title: Metrics API v2
+title: Метрики API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2
 scraped: 2026-03-06T21:21:35.889227
 ---
