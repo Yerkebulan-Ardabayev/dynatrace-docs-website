@@ -1,5 +1,5 @@
 ---
-title: Data privacy in the New RUM Experience
+title: Конфиденциальность данных в новом опыте RUM
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/data-privacy
 scraped: 2026-03-04T21:27:31.792647
 ---

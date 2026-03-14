@@ -1,5 +1,5 @@
 ---
-title: Web applications
+title: Веб-приложения
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications
 scraped: 2026-03-06T21:14:09.923490
 ---

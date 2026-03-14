@@ -1,5 +1,5 @@
 ---
-title: Configure key user actions for custom applications
+title: Настройка ключевых действий пользователя для пользовательских приложений
 source: https://www.dynatrace.com/docs/observe/digital-experience/custom-applications/additional-configuration/configure-key-user-actions-custom
 scraped: 2026-03-03T21:23:18.298824
 ---

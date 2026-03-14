@@ -1,5 +1,5 @@
 ---
-title: Configure a simple custom alert
+title: Настройка простого пользовательского оповещения
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad
 scraped: 2026-03-06T21:35:01.911530
 ---

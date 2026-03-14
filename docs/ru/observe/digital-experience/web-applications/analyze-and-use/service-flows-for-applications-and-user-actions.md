@@ -1,5 +1,5 @@
 ---
-title: Service flows for applications and user actions
+title: Потоки сервисов для приложений и действий пользователя
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/analyze-and-use/service-flows-for-applications-and-user-actions
 scraped: 2026-03-05T21:27:38.698380
 ---

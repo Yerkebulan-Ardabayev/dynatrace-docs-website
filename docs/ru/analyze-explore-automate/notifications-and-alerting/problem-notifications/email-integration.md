@@ -1,5 +1,5 @@
 ---
-title: Send Dynatrace notifications via email
+title: Отправка Dynatrace уведомлений по электронной почте
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration
 scraped: 2026-03-06T21:11:39.929087
 ---

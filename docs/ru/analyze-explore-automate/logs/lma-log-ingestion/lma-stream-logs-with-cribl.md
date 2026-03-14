@@ -1,5 +1,5 @@
 ---
-title: Stream Logs with Cribl
+title: Потоковые журналы с Cribl
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-cribl
 scraped: 2026-03-06T21:27:17.743091
 ---

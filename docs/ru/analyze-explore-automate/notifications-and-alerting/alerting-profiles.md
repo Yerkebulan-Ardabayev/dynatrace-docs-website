@@ -1,5 +1,5 @@
 ---
-title: Problem alerting profiles
+title: Профили оповещения о проблемах
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles
 scraped: 2026-03-06T21:21:41.046909
 ---

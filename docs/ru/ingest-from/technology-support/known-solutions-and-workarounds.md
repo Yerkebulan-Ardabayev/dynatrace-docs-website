@@ -1,110 +1,110 @@
 ---
-title: Known solutions and workarounds
+title: Известные решения и обходные пути
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/known-solutions-and-workarounds
 scraped: 2026-03-05T21:25:51.745190
 ---
 
-# Known solutions and workarounds
+# Известные решения и обходные пути
 
-# Known solutions and workarounds
+# Известные решения и обходные пути
 
-* Latest Dynatrace
-* 14-min read
-* Updated on Feb 26, 2024
+* Последняя версия Dynatrace
+* Время чтения: 14 мин
+* Обновлено 26 фев. 2024
 
-This page details a number of resolved issues and solutions to issues that have been reported to the Dynatrace Support team.
+На этой странице описаны решённые проблемы и решения проблем, о которых сообщалось в службу поддержки Dynatrace.
 
-## OneAgent prevents startup of Elasticsearch 8.18+
+## OneAgent препятствует запуску Elasticsearch 8.18+
 
-**Issue:**
+**Проблема:**
 
-OneAgent prevents startup of Elasticsearch 8.18+
+OneAgent препятствует запуску Elasticsearch 8.18+
 
-**Solution:**
+**Решение:**
 
-For more information, kindly visit [this pageï»¿](https://community.dynatrace.com/t5/Heads-up-from-Dynatrace/OneAgent-prevents-startup-of-Elasticsearch-8-18/ta-p/278744)
+Для получения дополнительной информации посетите [эту страницу](https://community.dynatrace.com/t5/Heads-up-from-Dynatrace/OneAgent-prevents-startup-of-Elasticsearch-8-18/ta-p/278744)
 
-## OneAgent on a SAP HANA host
+## OneAgent на хосте SAP HANA
 
-**Issue:**
+**Проблема:**
 
-OneAgent installed on a HANA host may interfere with database updates if it has automatic process injection enabled (default).
+OneAgent, установленный на хосте HANA, может вмешиваться в обновления базы данных, если включена автоматическая инъекция процессов (по умолчанию).
 
-**Solution:**
+**Решение:**
 
-Disable process auto-injection for a OneAgent installed on a SAP HANA host.
+Отключите автоматическую инъекцию процессов для OneAgent, установленного на хосте SAP HANA.
 
-### Disable auto-injection at installation time
+### Отключение автоинъекции при установке
 
-To install OneAgent with the parameters to enable Infrastructure Monitoring mode and disable process injection, run the command below:
+Чтобы установить OneAgent с параметрами для включения режима мониторинга инфраструктуры и отключения инъекции процессов, выполните следующую команду:
 
 ```
 /bin/sh Dynatrace-OneAgent-Linux-<version>.sh --set-monitoring-mode=infra-only --set-auto-injection-enabled=false
 ```
 
-### Disable auto-injection after OneAgent installation
+### Отключение автоинъекции после установки OneAgent
 
-To disable auto-injection after OneAgent is installed
+Чтобы отключить автоинъекцию после установки OneAgent
 
-1. Open a terminal on your HANA host.
-2. Run the `oneagentctl` command-line tool with the following parameters to enable Infrastructure Monitoring mode and disable process injection. The command will also restart the OneAgent service to automatically apply your changes.
+1. Откройте терминал на вашем хосте HANA.
+2. Запустите инструмент командной строки `oneagentctl` с следующими параметрами для включения режима мониторинга инфраструктуры и отключения инъекции процессов. Команда также перезапустит службу OneAgent для автоматического применения ваших изменений.
 
 ```
 ./oneagentctl --set-monitoring-mode=infra-only --set-auto-injection-enabled=false --restart-service
 ```
 
-For more information, see [OneAgent configuration via command-line interface](../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
+Для получения дополнительной информации см. [Конфигурация OneAgent через интерфейс командной строки](../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Узнайте, как выполнять некоторые задачи конфигурации OneAgent без необходимости переустановки OneAgent.")
 
-#### Dynatrace web UI
+#### Веб-интерфейс Dynatrace
 
-1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
-2. Find your HANA host and select it.
-3. Select **More** (**â¦**) > **Settings** > **Monitoring**.
-4. Turn off **Full-stack monitoring** and **Auto-injection**.
+1. Перейдите в ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+2. Найдите ваш хост HANA и выберите его.
+3. Выберите **Дополнительно** (**...**) > **Настройки** > **Мониторинг**.
+4. Отключите **Полностековый мониторинг** и **Автоинъекцию**.
 
-## Alpine Linux/musl-libc, Memory allocation
+## Alpine Linux/musl-libc, Выделение памяти
 
-**Issue:**
+**Проблема:**
 
-On musl-libc-based Alpine Linux systems, each executable has its memory limits which are controlled via the `MPROTECT` parameter. When monitoring an musl-libc-based Alpine Linux application with Dynatrace OneAgent, your process (for example, a Java process) may exceed the specified memory limit. When this is the case, the subsequent memory allocation will fail with a message like `There is insufficient memory for the Java Runtime Environment to continue.`
+В системах Alpine Linux на основе musl-libc каждый исполняемый файл имеет свои ограничения памяти, контролируемые параметром `MPROTECT`. При мониторинге приложения Alpine Linux на основе musl-libc с помощью Dynatrace OneAgent ваш процесс (например, процесс Java) может превысить указанный предел памяти. В этом случае последующее выделение памяти завершится с ошибкой вида `There is insufficient memory for the Java Runtime Environment to continue.`
 
-**Solution:**
+**Решение:**
 
-To overcome such issues, it's recommended that you ignore the memory protection parameter for executables that you plan to monitor with Dynatrace OneAgent. To do this, you must install the paxctl tool using:
+Для решения таких проблем рекомендуется игнорировать параметр защиты памяти для исполняемых файлов, которые вы планируете мониторить с помощью Dynatrace OneAgent. Для этого необходимо установить инструмент paxctl:
 
 `apk add paxctl`
 
-You can then remove the memory check, for example
+Затем вы можете снять проверку памяти, например
 
 `paxctl -m /usr/lib/jvm/java-1.8-openjdk/jre/bin/java`
 
-For 3rd-party executables not shipped by Alpine, you'll be notified that
+Для сторонних исполняемых файлов, не поставляемых Alpine, вы получите уведомление
 
 `<file> does not have a PT_PAX_FLAGS program`
 
-In such instances, convert your file beforehand, for example
+В таких случаях предварительно сконвертируйте файл, например
 
 `paxctl -C /usr/lib/jvm/java-1.8-openjdk/jre/bin/java`
 
-## Alpine Linux/musl-libc, GNU C Library (glibc) compatibility packages
+## Alpine Linux/musl-libc, Пакеты совместимости GNU C Library (glibc)
 
-**Issue:**
+**Проблема:**
 
-Binaries built against GNU C Library (glibc) running on Alpine based Linux systems via **gcompat (GNU C Library compatibility layer for musl)** package or **libc6-compat (compatibility libraries for glibc)** package are not supported.
+Бинарные файлы, скомпилированные против GNU C Library (glibc), работающие в системах Linux на основе Alpine через пакет **gcompat (слой совместимости GNU C Library для musl)** или пакет **libc6-compat (библиотеки совместимости для glibc)**, не поддерживаются.
 
-**Solution:**
+**Решение:**
 
-Please migrate your build pipeline to natively compile and package against the Alpine based Linux.
+Пожалуйста, перенесите ваш конвейер сборки для нативной компиляции и упаковки под Alpine Linux.
 
-## PHP running in Apache on Windows, Stack size
+## PHP, работающий в Apache на Windows, Размер стека
 
-**Issue:**
+**Проблема:**
 
-The default stack size of Apache on Windows is 1 MB, which is rather low compared to other platforms. Therefore, the additional memory footprint involved in enabling Dynatrace monitoring for PHP can lead to stack overflows.
+Размер стека Apache по умолчанию в Windows составляет 1 МБ, что довольно мало по сравнению с другими платформами. Поэтому дополнительная нагрузка на память при включении мониторинга Dynatrace для PHP может привести к переполнению стека.
 
-**Solution:**
+**Решение:**
 
-This problem can be solved by changing the stack size to 8 MB, which is the default on Linux.
+Эту проблему можно решить, изменив размер стека на 8 МБ, что является значением по умолчанию в Linux.
 
 ```
 <IfModule mpm_winnt_module>
@@ -120,90 +120,90 @@ ThreadStackSize 8388608
 
 ## Cloud Foundry, IBM WebSphere Liberty buildpack
 
-**Issue:**
+**Проблема:**
 
-The recommended version of IBM WebSphere Liberty buildpack changed from `v3.7-20170118-2046` to `v3.9-20170419-1403` due to known issues related to a limitation of the JVM command line to 512 characters and an issue with trailing slashes.
+Рекомендуемая версия IBM WebSphere Liberty buildpack была изменена с `v3.7-20170118-2046` на `v3.9-20170419-1403` из-за известных проблем, связанных с ограничением командной строки JVM в 512 символов и проблемой с завершающими слэшами.
 
-**Solution:**  
-Please use IBM WebSphere Liberty buildpack version v3.9-20170419-1403+
+**Решение:**
+Пожалуйста, используйте IBM WebSphere Liberty buildpack версии v3.9-20170419-1403+
 
-## Host, Ubuntu 16.10
+## Хост, Ubuntu 16.10
 
-**Issue:**
+**Проблема:**
 
-Due to compile optimization changes in the C runtime packages provided with Ubuntu 16.10, new stack-alignment requirements have been introduced. OneAgent versions earlier than 1.103.237 don't yet fulfill these requirements. Using versions of OneAgent earlier than 1.103.237 may lead to process crashes during dynamic symbol resolution (`dlsym`) calls in the C runtime.
+Из-за изменений оптимизации компиляции в пакетах среды выполнения C, поставляемых с Ubuntu 16.10, были введены новые требования к выравниванию стека. Версии OneAgent ранее 1.103.237 ещё не соответствуют этим требованиям. Использование версий OneAgent ранее 1.103.237 может привести к аварийному завершению процессов во время вызовов динамического разрешения символов (`dlsym`) в среде выполнения C.
 
-**Solution:**
+**Решение:**
 
-Update to OneAgent version 1.103.237 or higher. This version of OneAgent will be available to all Dynatrace environments by October 20th, 2016. Here are the instructions for upgrading OneAgent:
+Обновите до OneAgent версии 1.103.237 или выше. Эта версия OneAgent будет доступна для всех сред Dynatrace к 20 октября 2016 года. Инструкции по обновлению OneAgent:
 
-1. Go to **Settings** > **Preferences** (only visible to environment admins).
-2. Ensure that the **Automatically update OneAgent instances** setting is enabled. OneAgent version 1.103.237 will be automatically deployed once itâs available on your environment.
-   If **Automatically update One Agent instances** is disabled, select **OneAgent version 1.103.237 or higher** and click **Update now**.
+1. Перейдите в **Настройки** > **Предпочтения** (видно только администраторам среды).
+2. Убедитесь, что настройка **Автоматически обновлять экземпляры OneAgent** включена. Версия OneAgent 1.103.237 будет автоматически развёрнута, как только она станет доступна в вашей среде.
+   Если **Автоматически обновлять экземпляры OneAgent** отключена, выберите **OneAgent версии 1.103.237 или выше** и нажмите **Обновить сейчас**.
 
 ## Java, IBM J9
 
-**Issue:**
+**Проблема:**
 
-In rare situations, when implementing a try-catch-finally block and catching a multi-type exception with Java 7, the exception is caught, but the source code in the finally block doesn't execute. This issue has been fixed since IBM J9.
+В редких случаях при реализации блока try-catch-finally и перехвате мульти-типового исключения в Java 7 исключение перехватывается, но исходный код в блоке finally не выполняется. Эта проблема была исправлена начиная с IBM J9.
 
-**Solution:**
+**Решение:**
 
-Fixed since IBM J9
+Исправлено начиная с IBM J9
 
 * 7 R1 SR2 FP11 (7.1.3.0)
 * 7 SR9 (7.0.9.0)
 * 8 SR1 (8.0.1.0)
 
-**Source:**
+**Источник:**
 
-* [IBM 1IV68110ï»¿](https://www-01.ibm.com/support/docview.wss?uid=swg1IV68110)
+* [IBM 1IV68110](https://www-01.ibm.com/support/docview.wss?uid=swg1IV68110)
 
-## Java, WebSphere MQ , JMS
+## Java, WebSphere MQ, JMS
 
-**Issue:**
+**Проблема:**
 
-When using WebSphere MQ via JMS, Dynatrace isn't always able to determine the queue name and may report the queue name as 'unavailable'. This happens when MQ messages have not been properly mapped to JMS.
+При использовании WebSphere MQ через JMS Dynatrace не всегда может определить имя очереди и может сообщать имя очереди как 'unavailable'. Это происходит, когда сообщения MQ не были должным образом сопоставлены с JMS.
 
-**Solution:**
+**Решение:**
 
-Follow the IBM documentation for [mapping JMS messages onto IBM MQ messagesï»¿](https://www.ibm.com/support/knowledgecenter/SSFKSJ_8.0.0/com.ibm.mq.dev.doc/q031990_.htm). Once the `MQRFH2` header has been properly mapped, Dynatrace will pick up the correct queue name.
+Следуйте документации IBM по [сопоставлению сообщений JMS с сообщениями IBM MQ](https://www.ibm.com/support/knowledgecenter/SSFKSJ_8.0.0/com.ibm.mq.dev.doc/q031990_.htm). После правильного сопоставления заголовка `MQRFH2` Dynatrace определит правильное имя очереди.
 
 ## Java, Oracle HotSpot/OpenJDK
 
-**Issue:**
+**Проблема:**
 
-A known issue in Oracle HotSpot and OpenJDK can lead to a JVM deadlock in `ThreadTimesClosure` or incomplete CPU timings of background activities. Be sure to update to Oracle HotSpot 6u38/7u40 or OpenJDK 7u45 and higher to benefit from this solution.
+Известная проблема в Oracle HotSpot и OpenJDK может привести к взаимоблокировке JVM в `ThreadTimesClosure` или неполным таймингам ЦП фоновых активностей. Обязательно обновитесь до Oracle HotSpot 6u38/7u40 или OpenJDK 7u45 и выше, чтобы воспользоваться этим решением.
 
-**Solution:**
+**Решение:**
 
-Fixed in Oracle HotSpot 6u38/7u40 and OpenJDK 7u45
+Исправлено в Oracle HotSpot 6u38/7u40 и OpenJDK 7u45
 
-**Source:**
+**Источник:**
 
-* [Source Oracle HotSpot 6 (bug 7196045))ï»¿](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=7196045)
-* [Source Oracle HotSpot 7 (bug 8005479)ï»¿](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8005479)
-* [Source OpenJDK (JDK-7196045)ï»¿](https://bugs.openjdk.java.net/browse/JDK-7196045)
+* [Источник Oracle HotSpot 6 (bug 7196045))](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=7196045)
+* [Источник Oracle HotSpot 7 (bug 8005479)](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8005479)
+* [Источник OpenJDK (JDK-7196045)](https://bugs.openjdk.java.net/browse/JDK-7196045)
 
-**Issue:**
+**Проблема:**
 
-A known issue in Oracle HotSpot and OpenJDK can lead to a JVM crash when a JVMTI agent is loaded, [class data sharingï»¿](https://docs.oracle.com/en/java/javase/11/vm/class-data-sharing.html#GUID-7EAA3411-8CF0-4D19-BD05-DF5E1780AA91) is turned on, and the `classes.jsa` file exists. This is not normally the case, but it does occur in Docker environments, especially with Java 11 where class data sharing is set to `auto`.
+Известная проблема в Oracle HotSpot и OpenJDK может привести к аварийному завершению JVM, когда загружен JVMTI-агент, включён [совместное использование данных классов](https://docs.oracle.com/en/java/javase/11/vm/class-data-sharing.html#GUID-7EAA3411-8CF0-4D19-BD05-DF5E1780AA91) и существует файл `classes.jsa`. Обычно это не так, но происходит в Docker-средах, особенно с Java 11, где совместное использование данных классов установлено в `auto`.
 
-**Solution:**
+**Решение:**
 
-Change the java command line to turn off class data sharing via -Xshare:off.
+Измените командную строку Java для отключения совместного использования данных классов через -Xshare:off.
 
-**Source:**
+**Источник:**
 
-* [Source OpenJDK (JDK-8212200)ï»¿](https://bugs.openjdk.java.net/browse/JDK-8212200)
+* [Источник OpenJDK (JDK-8212200)](https://bugs.openjdk.java.net/browse/JDK-8212200)
 
 ## Java, Spring, AspectJ
 
-**Issue:**
+**Проблема:**
 
-Some customers have reported the following `NullPointerException` during startup of their Java Spring or AspectJ applications. AspectJ has resolved this issue in version 1.6+. Ensure that the classpath is updated to use AspectJ 1.6+.
+Некоторые пользователи сообщали о следующем `NullPointerException` при запуске приложений Java Spring или AspectJ. AspectJ решил эту проблему в версии 1.6+. Убедитесь, что classpath обновлён для использования AspectJ 1.6+.
 
-Message: `NullPointerException at`
+Сообщение: `NullPointerException at`
 
 ```
 `org.aspectj.weaver.reflect.Java15AnnotationFindergetAnnotations
@@ -213,302 +213,302 @@ Message: `NullPointerException at`
 (Java15AnnotationFinder.java:109)`
 ```
 
-**Solution:**
+**Решение:**
 
-Fixed since Spring 2.5.4/AspectJ 1.6
+Исправлено начиная с Spring 2.5.4/AspectJ 1.6
 
-**Source:**
+**Источник:**
 
-* [SPR-4390ï»¿](https://jira.spring.io/browse/SPR-4390)
+* [SPR-4390](https://jira.spring.io/browse/SPR-4390)
 
-## Java/Real User Monitoring/Apigee
+## Java/Мониторинг реальных пользователей/Apigee
 
-**Issue:**
+**Проблема:**
 
-Real User Monitoring of Java applications may trigger a `ClassCastException` error upon a type cast to the implemented `HttpServletRequest` interface because Dynatrace replaces the original `HttpServletRequest` implementation with a `RequestWrapper` for automatic RUM JavaScript injection.
+Мониторинг реальных пользователей Java-приложений может вызвать ошибку `ClassCastException` при приведении типа к реализованному интерфейсу `HttpServletRequest`, поскольку Dynatrace заменяет исходную реализацию `HttpServletRequest` на `RequestWrapper` для автоматической инъекции JavaScript RUM.
 
-This crash also occurs for customers using [Apigeeï»¿](https://apigee.com).
+Этот сбой также возникает у пользователей [Apigee](https://apigee.com).
 
-**Solution:**
+**Решение:**
 
-You have a few options:
+У вас есть несколько вариантов:
 
-1. Change your source code so that it doesn't expect a specific implementation of the `HttpServletRequest` interface.
-2. If you're using a 3rd party framework, you can reach out to your framework vendor.
-3. For Apigee, we've disabled Real User Monitoring auto-injection. Manual Real User Monitoring injection isn't affected and can be used as a workaround.
-4. You can use a web server in front of Javaâthe web server will auto-inject the Real User Monitoring JavaScript and thereby avoid the crash.
+1. Измените исходный код, чтобы он не ожидал конкретную реализацию интерфейса `HttpServletRequest`.
+2. Если вы используете сторонний фреймворк, вы можете обратиться к поставщику фреймворка.
+3. Для Apigee мы отключили автоинъекцию мониторинга реальных пользователей. Ручная инъекция мониторинга реальных пользователей не затронута и может использоваться как обходной путь.
+4. Вы можете использовать веб-сервер перед Java — веб-сервер будет автоматически инъектировать JavaScript мониторинга реальных пользователей, тем самым избегая сбоя.
 
-**Source:**  
-n/a
+**Источник:**
+н/д
 
-## Java CPU overhead
+## Нагрузка на ЦП Java
 
-**Issue:**
+**Проблема:**
 
-Periodically, spikes of CPU usage or overall CPU usage occur when instrumenting Preview for JBoss. Querying JMX measures cause these spikes. JMX calls done in 10 sec intervals lead to a CPU spike on certain versions affected by this JBoss bug. Versions 6.4.x are considered to be problematic.
+Периодически возникают пиковые или постоянно повышенные нагрузки на ЦП при инструментировании Preview для JBoss. Эти пики вызваны запросами JMX-метрик. Вызовы JMX, выполняемые с интервалом 10 секунд, приводят к пикам ЦП на определённых версиях, затронутых этой ошибкой JBoss. Версии 6.4.x считаются проблемными.
 
-**Solution:**
+**Решение:**
 
-Solution is to upgrade to Preview for JBoss and/or contact RedHat.
+Решение — обновить Preview для JBoss и/или обратиться в RedHat.
 
-**Source:**
+**Источник:**
 
-* [Bug 1367784ï»¿](https://bugzilla.redhat.com/show_bug.cgi?id=1367784)
+* [Bug 1367784](https://bugzilla.redhat.com/show_bug.cgi?id=1367784)
 
-## UI/Docker
+## Пользовательский интерфейс/Docker
 
-**Issue:**
+**Проблема:**
 
-With Docker versions 1.10.3 - 1.11, CPU, memory, and network container statistics are missing from the UI because data requests sent to containers via `docker stats` time out. Restarting Docker addresses this issue temporarily.
+В Docker версий 1.10.3 - 1.11 статистика ЦП, памяти и сети контейнеров отсутствует в пользовательском интерфейсе, поскольку запросы данных к контейнерам через `docker stats` завершаются по таймауту. Перезапуск Docker временно решает эту проблему.
 
-**Solution:**
+**Решение:**
 
-Fixed since Docker 1.12. Upgrade to Docker 1.12.
+Исправлено начиная с Docker 1.12. Обновите до Docker 1.12.
 
-**Source:**
+**Источник:**
 
-* [Issue 22655ï»¿](https://github.com/docker/docker/issues/22655)
+* [Issue 22655](https://github.com/docker/docker/issues/22655)
 
-## UI/IIS
+## Пользовательский интерфейс/IIS
 
-**Issue:**
+**Проблема:**
 
-Due to a lack of Windows Performance Counters, the **Further details** tab may be not visible in the UI for IIS processes, even following IIS restart. No errors are raised during OneAgent injection.
+Из-за отсутствия счётчиков производительности Windows вкладка **Дополнительные сведения** может быть не видна в пользовательском интерфейсе для процессов IIS даже после перезапуска IIS. При инъекции OneAgent ошибки не возникают.
 
-**Solution:**
+**Решение:**
 
-This can occur if there is a problem with the Performance Counter Library in the Windows Registry. To check this:
+Это может произойти, если есть проблема с библиотекой счётчиков производительности в реестре Windows. Для проверки:
 
-Using a Windows command, verify that the metrics are not retrievable from the Windows Registry:
+Используя команду Windows, убедитесь, что метрики не извлекаются из реестра Windows:
 typeperf `"\Process(w3wp*)\ID Process" -sc 15`
-Alternatively, use `Perfmon.exe` to see if data is available for the counters or to confirm that the counters don't exist.
+Также можно использовать `Perfmon.exe`, чтобы проверить, доступны ли данные для счётчиков или подтвердить, что счётчики не существуют.
 
-Consult Microsoft technical documentation to rebuild the performance libraries in the registry.
+Обратитесь к технической документации Microsoft для пересоздания библиотек производительности в реестре.
 
-**Source:**
+**Источник:**
 
-* [KB 00956ï»¿](https://support.microsoft.com/en-us/kb/300956)
+* [KB 00956](https://support.microsoft.com/en-us/kb/300956)
 
 ## .NET, IIS
 
-**Issue:**
+**Проблема:**
 
-If IIS monitoring is enabled for an ASP.NET application using .NET >= 4.5 and < 4.6, in rare circumstances the application could fail with an unhandled `NullReferenceException`.
+Если мониторинг IIS включён для приложения ASP.NET, использующего .NET >= 4.5 и < 4.6, в редких случаях приложение может завершиться с необработанным `NullReferenceException`.
 
-Message: `System.NullReferenceException at`
+Сообщение: `System.NullReferenceException at`
 
 ```
 `System.Web.Security.Roles.IsUserInRole(String username, String roleName)`
 ```
 
-**Solution:**
+**Решение:**
 
-Fixed since .NET 4.6.
+Исправлено начиная с .NET 4.6.
 
-* [Sourceï»¿](https://connect.microsoft.com/VisualStudio/feedbackdetail/view/967133/roles-getrolesforuser-throw-a-nullreferenceexception-in-a-wcf-service-which-is-hosted-in-asp-net-with-the-aspnetcompatibilityenabled-define-to-false)
+* [Источник](https://connect.microsoft.com/VisualStudio/feedbackdetail/view/967133/roles-getrolesforuser-throw-a-nullreferenceexception-in-a-wcf-service-which-is-hosted-in-asp-net-with-the-aspnetcompatibilityenabled-define-to-false)
 
 ## .NET, Cassette
 
-**Issue:**
+**Проблема:**
 
-Customers reported a crash when using the Cassette web asset management library.
+Пользователи сообщали о сбое при использовании библиотеки управления веб-ресурсами Cassette.
 
-Message: Crash at
+Сообщение: Сбой в
 
 ```
 `[TinyIoCResolutionException: Unable to resolve type: Cassette.Views.BundlesDocumentationer]`
 ```
 
-**Solution:**
+**Решение:**
 
-As a workaround, you can use the file system as Cassette's cache by specifying a directory in your `web.config` file as follows:
+В качестве обходного пути вы можете использовать файловую систему в качестве кэша Cassette, указав директорию в файле `web.config` следующим образом:
 
 ```
 `<cassette cacheDirectory="App_Data\Cassette" />`
 ```
 
-Potentially fixed in v2.4.1
+Возможно исправлено в v2.4.1
 
-**Source:**
+**Источник:**
 
-* [Pull 441ï»¿](https://github.com/andrewdavey/cassette/pull/441)
+* [Pull 441](https://github.com/andrewdavey/cassette/pull/441)
 
 ## .NET, ConfuserEx
 
-**Issue:**
+**Проблема:**
 
-Using the assembly-obfuscation tool ConfuserEx can sometimes crash .NET applications because the ConfuserEx assembly doesn't allow "profilers" like Dynatrace.
+Использование инструмента обфускации сборок ConfuserEx иногда может вызывать сбой .NET-приложений, поскольку сборка ConfuserEx не допускает «профайлеры» вроде Dynatrace.
 
-Message: Crash at
+Сообщение: Сбой в
 
 ```
 `System.Environment.FailFast(System.String)`
 ```
 
-**Solution:**
+**Решение:**
 
-Disable ConfuserEx obfuscation or disable Dynatrace monitoring at the process level.
+Отключите обфускацию ConfuserEx или отключите мониторинг Dynatrace на уровне процесса.
 
-**Source:**
+**Источник:**
 
-* [Sourceï»¿](https://github.com/yck1509/ConfuserEx/blob/816172adcb1ea2a6c74a964274373987fc2e9fe5/Confuser.Runtime/AntiDebug.Antinet.cs)
+* [Источник](https://github.com/yck1509/ConfuserEx/blob/816172adcb1ea2a6c74a964274373987fc2e9fe5/Confuser.Runtime/AntiDebug.Antinet.cs)
 
-## Real User Monitoring, Chrome
+## Мониторинг реальных пользователей, Chrome
 
-**Issue:**
+**Проблема:**
 
-Real User Monitoring analysis with Google Chrome can lead to browser crashes when some resources can't be loaded.
+Анализ мониторинга реальных пользователей с Google Chrome может приводить к сбоям браузера, когда некоторые ресурсы не могут быть загружены.
 
-Message: Crash at
+Сообщение: Сбой в
 
 ```
 `window.performance.getEntriesByType('resource')`
 ```
 
-**Solution:**
+**Решение:**
 
-Until Chrome provides a fix for this issue, make sure that all resources are loaded successfully (no 301 responses) or disable **W3C resource timing for third party/CDN**.
+Пока Chrome не предоставит исправление для этой проблемы, убедитесь, что все ресурсы загружаются успешно (без ответов 301) или отключите **W3C resource timing для сторонних ресурсов/CDN**.
 
-To disable W3C resource timing for third party/CDN:
+Чтобы отключить W3C resource timing для сторонних ресурсов/CDN:
 
-1. Go to **Frontend**.
-2. Select the application you want to edit.
-3. Click the **More** (**â¦**) button.
-4. Click **Edit**.
-5. Click **Content capture**.
-6. Set the **W3C resource timing for third party/CDN** switch to **Off**.
+1. Перейдите в **Frontend**.
+2. Выберите приложение, которое хотите изменить.
+3. Нажмите кнопку **Дополнительно** (**...**).
+4. Нажмите **Изменить**.
+5. Нажмите **Захват контента**.
+6. Установите переключатель **W3C resource timing для сторонних ресурсов/CDN** в положение **Выкл**.
 
-**Source:**
+**Источник:**
 
-* [Issue 586443ï»¿](https://bugs.chromium.org/p/chromium/issues/detail?id=586443)
+* [Issue 586443](https://bugs.chromium.org/p/chromium/issues/detail?id=586443)
 
-## Agentless Real User Monitoring, Chrome
+## Безагентный мониторинг реальных пользователей, Chrome
 
-**Issue:**
+**Проблема:**
 
-Users may see a browser warning in Chrome's Developer Console if they are on slow connections such as 2G networks.
+Пользователи могут видеть предупреждение браузера в консоли разработчика Chrome при использовании медленных соединений, таких как сети 2G.
 
-Message:
+Сообщение:
 `A Parser-blocking, cross-origin script, https://js-cdn.dynatrace.com/jstag/148709fdc4b/ruxitagent_2fgjqrx_10111170210093847.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity. See https://www.chromestatus.com/feature/5718547946799104 for more details.`
 
-**Solution:**
+**Решение:**
 
-1. Go to **Frontend**.
-2. Select the application you want to configure.
-3. Click the **Browse (â¦)** button and select **Edit**.
-4. In the **Setup** section, select **Agentless monitoring setup**.
-5. Disable the **Easy monitoring** switch.
+1. Перейдите в **Frontend**.
+2. Выберите приложение, которое хотите настроить.
+3. Нажмите кнопку **Обзор (...)** и выберите **Изменить**.
+4. В разделе **Настройка** выберите **Безагентная настройка мониторинга**.
+5. Отключите переключатель **Простой мониторинг**.
 
-The only downside of this change is that every time you make a configuration change you have to copy and re-inject the Real User Monitoring JavaScript again. Therefore, it's better to use the REST API to get the updated tag.
+Единственный недостаток этого изменения заключается в том, что каждый раз при изменении конфигурации вам нужно копировать и повторно инъектировать JavaScript мониторинга реальных пользователей. Поэтому лучше использовать REST API для получения обновлённого тега.
 
-**Source:**
+**Источник:**
 
-* [Update 2016/08ï»¿](https://developers.google.com/web/updates/2016/08/removing-document-write)
+* [Обновление 2016/08](https://developers.google.com/web/updates/2016/08/removing-document-write)
 
-## Real User Monitoring, jQuery
+## Мониторинг реальных пользователей, jQuery
 
-**Issue:**
+**Проблема:**
 
-In the course of Real User Monitoring, failing asynchronous JQuery user actions lead to action timeouts after 180 seconds, but no error is reported. This is caused by a known jQuery limitation.
+В ходе мониторинга реальных пользователей неудачные асинхронные пользовательские действия jQuery приводят к таймаутам действий через 180 секунд, но ошибка не сообщается. Это вызвано известным ограничением jQuery.
 
-**Solution:**
+**Решение:**
 
-JQuery has not provided a fix for this problem. To resolve this issue, fix the failing jQuery call on your end (for example, an AJAX request to a missing resource) or disable jQuery in XHR (Ajax) detection settings and enable basic XHR detection.
+jQuery не предоставил исправление для этой проблемы. Для решения этой проблемы исправьте неудачный вызов jQuery на вашей стороне (например, AJAX-запрос к отсутствующему ресурсу) или отключите jQuery в настройках обнаружения XHR (Ajax) и включите базовое обнаружение XHR.
 
-To disable JQuery detection and enable basic XHR detection:
+Чтобы отключить обнаружение jQuery и включить базовое обнаружение XHR:
 
-1. Go to **Frontend**.
-2. Select the application you want to edit.
-3. Click the **More** (**â¦**) button.
-4. Click **Edit**.
-5. Click **XHR (Ajax)** detection.
-6. Set the **JQuery, Backbone.js** switch to **Off**.
-7. Set the **Basic XHR detection** switch to **On**.
+1. Перейдите в **Frontend**.
+2. Выберите приложение, которое хотите изменить.
+3. Нажмите кнопку **Дополнительно** (**...**).
+4. Нажмите **Изменить**.
+5. Нажмите **Обнаружение XHR (Ajax)**.
+6. Установите переключатель **JQuery, Backbone.js** в положение **Выкл**.
+7. Установите переключатель **Базовое обнаружение XHR** в положение **Вкл**.
 
-**Source:**
+**Источник:**
 
-* [Ticket 9613ï»¿](https://bugs.jquery.com/ticket/9613)
+* [Ticket 9613](https://bugs.jquery.com/ticket/9613)
 
-## Real User Monitoring, Ext JS
+## Мониторинг реальных пользователей, Ext JS
 
-**Issue:**
+**Проблема:**
 
-In large, complex Ext JS applications customers experienced client side response time degradation like a web browser notification about an unresponsive script. Due to the internal event handling mechanism of Ext JS the application can be running slow if too many events are triggered which are captured by the RUM JavaScript.
+В крупных, сложных приложениях Ext JS пользователи испытывали ухудшение времени отклика на стороне клиента, например, уведомление браузера о неотвечающем скрипте. Из-за внутреннего механизма обработки событий Ext JS приложение может работать медленно, если генерируется слишком много событий, перехватываемых JavaScript RUM.
 
-**Solution:**
+**Решение:**
 
-Turn off extended Ext JS event capturing in Real User Monitoring settings.
+Отключите расширенный перехват событий Ext JS в настройках мониторинга реальных пользователей.
 
-1. Go to **Web**.
-2. Select the application that you want to configure.
-3. In the upper-right corner of the application overview page, select **More** (**â¦**) > **Edit**.
-4. From the application settings, select **Capturing** > **Custom configuration properties**.
-5. Select **Add a custom configuration property** and enter `exteventsoff=1`.
+1. Перейдите в **Web**.
+2. Выберите приложение, которое хотите настроить.
+3. В правом верхнем углу страницы обзора приложения выберите **Дополнительно** (**...**) > **Изменить**.
+4. В настройках приложения выберите **Захват** > **Пользовательские свойства конфигурации**.
+5. Выберите **Добавить пользовательское свойство конфигурации** и введите `exteventsoff=1`.
 
-If certain user actions are not captured afterwards, use the JavaScript API to trigger actions manually.
+Если определённые пользовательские действия после этого не захватываются, используйте JavaScript API для ручного запуска действий.
 
-## Real User Monitoring, Salesforce
+## Мониторинг реальных пользователей, Salesforce
 
-**Issue:**
-When [injecting RUM](../../observe/digital-experience/web-applications/initial-setup/rum-injection.md "Configure automatic injection of the RUM JavaScript into the pages of your applications") into Salesforce, you may experience the application stuck in "loading" when viewing records from a search result. When this happens, browser debugging displays the JavaScript error: `Wrong number of arguments or invalid property assignment on b.b.open,arguments,b.b`.
+**Проблема:**
+При [инъекции RUM](../../observe/digital-experience/web-applications/initial-setup/rum-injection.md "Настройте автоматическую инъекцию JavaScript RUM на страницы ваших приложений") в Salesforce вы можете столкнуться с зависанием приложения в состоянии «загрузка» при просмотре записей из результатов поиска. В этом случае отладка браузера показывает ошибку JavaScript: `Wrong number of arguments or invalid property assignment on b.b.open,arguments,b.b`.
 
-This occurs when the RUM JavaScript is not the first JavaScript loaded on the page. There can be JavaScript code loading in the heading that has a negative impact on the RUM JavaScript.
+Это происходит, когда JavaScript RUM не является первым JavaScript, загружаемым на странице. В заголовке может загружаться код JavaScript, негативно влияющий на JavaScript RUM.
 
-**Solution:**
-Shifting the RUM JavaScript to load before any JavaScript resolves this issue.
+**Решение:**
+Перемещение JavaScript RUM для загрузки перед любым другим JavaScript решает эту проблему.
 
-**Issue:**
-Dynatrace RUM isn't working for Salesforce applications based on the [Lightning Component Frameworkï»¿](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/intro_framework.htm).
+**Проблема:**
+RUM Dynatrace не работает для приложений Salesforce, основанных на [Lightning Component Framework](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/intro_framework.htm).
 
-The reason for this is that many Salesforce applications and offerings are based on [Lightning Component Frameworkï»¿](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/intro_framework.htm). This framework has a security architecture called [Lightning Lockerï»¿](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/security_code.htm), which restricts access to DOM elements and therefore influences the Dynatrace RUM JavaScript. Whenever the Locker code is loaded and executed before the Dynatrace RUM JavaScript, monitoring won't work, independently of whether you add the [RUM JavaScript](../../observe/digital-experience/web-applications/initial-setup/rum-injection.md "Configure automatic injection of the RUM JavaScript into the pages of your applications").
+Причина в том, что многие приложения и продукты Salesforce основаны на [Lightning Component Framework](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/intro_framework.htm). Этот фреймворк имеет архитектуру безопасности под названием [Lightning Locker](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/security_code.htm), которая ограничивает доступ к элементам DOM и, следовательно, влияет на JavaScript RUM Dynatrace. Когда код Locker загружается и выполняется до JavaScript RUM Dynatrace, мониторинг не будет работать, независимо от того, добавляете ли вы [JavaScript RUM](../../observe/digital-experience/web-applications/initial-setup/rum-injection.md "Настройте автоматическую инъекцию JavaScript RUM на страницы ваших приложений").
 
-**Solution:**
-There is currently no solution from the Dynatrace side. Please contact Salesforce support. Perhaps there is a way to allow the Dynatrace RUM JavaScript.
+**Решение:**
+В настоящее время решения со стороны Dynatrace нет. Пожалуйста, обратитесь в поддержку Salesforce. Возможно, существует способ разрешить JavaScript RUM Dynatrace.
 
-## Real User Monitoring, Salesforce Commerce
+## Мониторинг реальных пользователей, Salesforce Commerce
 
-**Issue:**
+**Проблема:**
 
-There is currently an incompatibility between Dynatrace Agentless RUM and Salesforce Commerce. This is due to a reserved character within the Salesforce compiler.
+В настоящее время существует несовместимость между безагентным RUM Dynatrace и Salesforce Commerce. Это связано с зарезервированным символом в компиляторе Salesforce.
 
-**Solution:**
+**Решение:**
 
-Replace `#` with `${'#'}` in the Dynatrace RUM JavaScript.
+Замените `#` на `${'#'}` в JavaScript RUM Dynatrace.
 
-## Real User Monitoring, Visually complete, Internet Explorer 11
+## Мониторинг реальных пользователей, Visually complete, Internet Explorer 11
 
-**Issue:**
+**Проблема:**
 
-Enabling the [**Visually complete**](../../observe/digital-experience/web-applications/analyze-and-use/how-to-use-visually-complete-and-speed-index-metrics.md "Learn how to use 'Visually complete' and 'Speed index' metrics.") application setting while using Dynatrace with Internet Explorer 11 can lead to a complete page crash or hanging in cases where heavy `<table>` or table-like (using the style attribute `display:table`) DOM mutations occur. This tends to be more common with single-page applications. Simply monitoring mutations with the MutationObserver, as is done for Visually complete, can crash the page once it's loaded. Here is a [simple reproduction of the issueï»¿](https://jsfiddle.net/gd88q1n3/2/) with a table-like element mutation crash.
+Включение настройки приложения [**Visually complete**](../../observe/digital-experience/web-applications/analyze-and-use/how-to-use-visually-complete-and-speed-index-metrics.md "Узнайте, как использовать метрики 'Visually complete' и 'Speed index'.") при использовании Dynatrace с Internet Explorer 11 может привести к полному сбою или зависанию страницы в случаях, когда происходят интенсивные мутации DOM `<table>` или подобных таблице элементов (с атрибутом стиля `display:table`). Это чаще встречается в одностраничных приложениях. Простое наблюдение за мутациями с помощью MutationObserver, как это делается для Visually complete, может привести к сбою страницы после её загрузки. Вот [простое воспроизведение проблемы](https://jsfiddle.net/gd88q1n3/2/) с мутацией элемента, подобного таблице.
 
-#### More information on Visually complete and Speed index
+#### Дополнительная информация о Visually complete и Speed index
 
-Speed index and Visually complete metrics are only available on browsers that support [`mutationobservers`ï»¿](https://developers.google.com/web/updates/2012/02/Detect-DOM-changes-with-Mutation-Observers). This includes the following browsers:
+Метрики Speed index и Visually complete доступны только в браузерах, поддерживающих [`mutationobservers`](https://developers.google.com/web/updates/2012/02/Detect-DOM-changes-with-Mutation-Observers). К ним относятся следующие браузеры:
 
 * Microsoft Internet Explorer 11
-* Microsoft Edge 15 or later
-* Firefox 57 or later
-* Google Chrome 61 or later
+* Microsoft Edge 15 или новее
+* Firefox 57 или новее
+* Google Chrome 61 или новее
 
-Speed index is available only for load actions. Visually complete is available for all actions, including load actions, but not for AJAX requests that don't affect the DOM.
+Speed index доступен только для действий загрузки. Visually complete доступен для всех действий, включая действия загрузки, но не для AJAX-запросов, не затрагивающих DOM.
 
-**Solution:**
+**Решение:**
 
-Microsoft fixed the bulk of this issue for `<table>` element mutations in a [recent updateï»¿](https://support.microsoft.com/en-za/help/4025252/cumulative-security-update-for-internet-explorer-july-11-2017). Update Internet Explorer 11 to this version to fix this issue in most cases.
+Microsoft исправила основную часть этой проблемы для мутаций элементов `<table>` в [недавнем обновлении](https://support.microsoft.com/en-za/help/4025252/cumulative-security-update-for-internet-explorer-july-11-2017). Обновите Internet Explorer 11 до этой версии, чтобы исправить эту проблему в большинстве случаев.
 
-Elements with the style attribute `display:table` still run into this problem following update of Internet Explorer 11. For this reason, we've created a feature flag you can use to disable Visually complete within Internet Explorer 11 only. To enable this feature flag, Please contact a Dynatrace product expert via live chat within your environment..
+Элементы с атрибутом стиля `display:table` по-прежнему сталкиваются с этой проблемой после обновления Internet Explorer 11. По этой причине мы создали флаг функции, который можно использовать для отключения Visually complete только в Internet Explorer 11. Чтобы включить этот флаг функции, обратитесь к эксперту по продукту Dynatrace через чат в вашей среде.
 
 ## Redhat Enterprise Linux 7.4
 
-**Issue:**
+**Проблема:**
 
-RHEL v7.4 (upgraded from v7.3 or fresh install) comes with the stix-fonts package. When this package is installed, the default font changes from `Utopia` to `STIX`. As a result, Java default fonts are mapped to `STIX`, including the `sans-serif` font family. However, the `STIX` fonts don't seem to be compatible with Java (OpenJDK + IBM JDK) and cause exceptions and bad calculated artefacts when using `java.awt`, which is the case with `JasperReports`.
+RHEL v7.4 (обновлённый с v7.3 или свежая установка) поставляется с пакетом stix-fonts. Когда этот пакет установлен, шрифт по умолчанию меняется с `Utopia` на `STIX`. В результате стандартные шрифты Java отображаются на `STIX`, включая семейство шрифтов `sans-serif`. Однако шрифты `STIX`, по-видимому, несовместимы с Java (OpenJDK + IBM JDK) и вызывают исключения и неправильно рассчитанные артефакты при использовании `java.awt`, что имеет место в `JasperReports`.
 
-For Dynatrace Managed, which is based on Java, this issue was experienced as a problem in Smartscape. More specifically, selecting any item in Smartscape shows an unspecific error message that something went wrong.
+Для Dynatrace Managed, основанного на Java, эта проблема проявлялась как проблема в Smartscape. В частности, выбор любого элемента в Smartscape показывает неспецифическое сообщение об ошибке о том, что что-то пошло не так.
 
-**Solution:**
+**Решение:**
 
-Create a file `/etc/fonts/local.conf` with the content shown below to explicitly make `Utopia` the default font again.
+Создайте файл `/etc/fonts/local.conf` с содержимым, показанным ниже, чтобы явно сделать `Utopia` шрифтом по умолчанию снова.
 
 ```
 <?xml version='1.0'?>
@@ -606,35 +606,35 @@ Create a file `/etc/fonts/local.conf` with the content shown below to explicitly
 </fontconfig>
 ```
 
-**Source:**
+**Источник:**
 
-* [Bug 1484079ï»¿](https://bugzilla.redhat.com/show_bug.cgi?id=1484079#c8)
+* [Bug 1484079](https://bugzilla.redhat.com/show_bug.cgi?id=1484079#c8)
 
 ## IBM HTTP Server (IHS) 8.5
 
-**Issue:**
+**Проблема:**
 
-IHS 8.5 on Linux crashes with segmentation fault.
+IHS 8.5 на Linux аварийно завершается с ошибкой сегментации.
 
-**Solution:**
+**Решение:**
 
-Disable prelink on IHS server.
+Отключите prelink на сервере IHS.
 
-**Source:**
+**Источник:**
 
-* [Sourceï»¿](https://www.google.at/search?q=prelink+crash)
+* [Источник](https://www.google.at/search?q=prelink+crash)
 
 ## Adobe Dispatcher
 
-**Issue:**
+**Проблема:**
 
-When using Adobe Dispatcher with a web server monitored by Dynatrace OneAgent, the RUM JavaScript agent tag is injected twice into the HTML page. As a consequence, the RUM JavaScript agent will be executed twice at the browser, producing unnecessary load (e.g. the beacons will be sent twice, etc.).
+При использовании Adobe Dispatcher с веб-сервером, мониторируемым Dynatrace OneAgent, тег JavaScript-агента RUM инъектируется дважды в HTML-страницу. В результате JavaScript-агент RUM будет выполняться дважды в браузере, создавая ненужную нагрузку (например, маяки будут отправляться дважды и т.д.).
 
-The reason for this is that Adobe Dispatcher doesn't cache HTTP response headers by default and so the header X-OneAgent-JS-Injection "gets lost" for already injected sites, which are served from the cache. If this header is not present, the webserver agent injects (another) RUM JavaScript agent tag, even if it's already present in the cached content.
+Причина в том, что Adobe Dispatcher по умолчанию не кэширует заголовки HTTP-ответов, поэтому заголовок X-OneAgent-JS-Injection «теряется» для уже инъектированных сайтов, которые обслуживаются из кэша. Если этот заголовок отсутствует, агент веб-сервера инъектирует (ещё один) тег JavaScript-агента RUM, даже если он уже присутствует в кэшированном содержимом.
 
-**Solution:**
+**Решение:**
 
-The dispatcher needs to be configured to cache the response header "X-OneAgent-JS-Injection". To avoid double injection of the RUM JavaScript agent tag when using Adobe Dispatcher with a web server monitored by Dynatrace OneAgent, add "X-OneAgent-JS-Injection" to the `/cache/headers` section of the Adobe Dispatcher configuration:
+Диспетчер необходимо настроить для кэширования заголовка ответа "X-OneAgent-JS-Injection". Чтобы избежать двойной инъекции тега JavaScript-агента RUM при использовании Adobe Dispatcher с веб-сервером, мониторируемым Dynatrace OneAgent, добавьте "X-OneAgent-JS-Injection" в раздел `/cache/headers` конфигурации Adobe Dispatcher:
 
 ```
 /cache

@@ -1,5 +1,5 @@
 ---
-title: Network traffic
+title: Сетевой трафик
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/network
 scraped: 2026-02-23T21:31:13.154982
 ---

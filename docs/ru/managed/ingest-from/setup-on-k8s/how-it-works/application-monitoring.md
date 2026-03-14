@@ -1,5 +1,5 @@
 ---
-title: Application observability
+title: Наблюдаемость приложений
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works/application-monitoring
 scraped: 2026-03-05T21:25:53.393313
 ---

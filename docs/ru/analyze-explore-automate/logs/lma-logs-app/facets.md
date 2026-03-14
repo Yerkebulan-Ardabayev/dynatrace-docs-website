@@ -1,5 +1,5 @@
 ---
-title: Filter with facets
+title: Фильтрация с помощью __KEEP000__
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/facets
 scraped: 2026-03-06T21:11:24.814119
 ---

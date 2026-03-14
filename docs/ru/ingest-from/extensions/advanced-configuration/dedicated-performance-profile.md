@@ -1,5 +1,5 @@
 ---
-title: Dedicated performance profile configuration
+title: Выделенная конфигурация профиля производительности
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/dedicated-performance-profile
 scraped: 2026-03-06T21:29:41.296118
 ---

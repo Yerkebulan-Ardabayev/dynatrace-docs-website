@@ -1,5 +1,5 @@
 ---
-title: Amazon Inspector monitoring
+title: Мониторинг Amazon Inspector
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-inspector
 scraped: 2026-03-04T21:34:27.007436
 ---
@@ -518,7 +518,7 @@ Dynatrace принимает метрики для множества предв
 | Amazon RDS (built-in) | Не применимо |
 | Amazon S3 (built-in) | Не применимо |
 | AWS Certificate Manager Private Certificate Authority | Не применимо |
-| All monitored Amazon services | Не применимо |
+| Все мониторируемые сервисы Amazon | Не применимо |
 | Amazon API Gateway | Не применимо |
 | AWS App Runner | Не применимо |
 | Amazon AppStream | Применимо |

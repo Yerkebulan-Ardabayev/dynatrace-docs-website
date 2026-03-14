@@ -1,5 +1,5 @@
 ---
-title: Monitor suspicious sign-in activity with Dynatrace
+title: Мониторинг подозрительной активности входа с Dynatrace
 source: https://www.dynatrace.com/docs/secure/use-cases/monitor-sign-in-activity
 scraped: 2026-03-06T21:15:04.248703
 ---

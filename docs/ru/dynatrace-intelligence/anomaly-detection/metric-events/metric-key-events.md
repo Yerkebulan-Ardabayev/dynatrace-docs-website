@@ -1,5 +1,5 @@
 ---
-title: Metric key events
+title: События по ключам метрик
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-key-events
 scraped: 2026-03-03T21:31:54.613136
 ---

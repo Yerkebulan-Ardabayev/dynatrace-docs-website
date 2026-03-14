@@ -1,5 +1,5 @@
 ---
-title: Host availability
+title: Доступность хоста
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring/host-availability
 scraped: 2026-03-06T21:28:41.098256
 ---

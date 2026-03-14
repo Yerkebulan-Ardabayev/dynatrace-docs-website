@@ -1,5 +1,5 @@
 ---
-title: Embedded conversation starters
+title: Встроенные начальные фразы для разговора
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters
 scraped: 2026-03-06T21:35:59.966349
 ---

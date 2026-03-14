@@ -1,5 +1,5 @@
 ---
-title: Your first year with DPS
+title: Ваш первый год с DPS
 source: https://www.dynatrace.com/docs/license/dps-first-year
 scraped: 2026-03-02T21:24:18.010129
 ---

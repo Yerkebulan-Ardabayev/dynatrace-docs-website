@@ -1,5 +1,5 @@
 ---
-title: Merged services
+title: Объединенные сервисы
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/merged-services
 scraped: 2026-03-04T21:36:47.023440
 ---

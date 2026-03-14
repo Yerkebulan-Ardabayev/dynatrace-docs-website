@@ -1,5 +1,5 @@
 ---
-title: Site Reliability guardian event structure
+title: Структура события Site Reliability guardian
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/event-structure
 scraped: 2026-03-05T21:35:41.303232
 ---

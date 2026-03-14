@@ -1,5 +1,5 @@
 ---
-title: Synthetic architecture and communication
+title: Архитектура и коммуникации Synthetic
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/general-information/architecture-communication
 scraped: 2026-03-06T21:36:15.258243
 ---

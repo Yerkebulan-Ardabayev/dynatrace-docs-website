@@ -1,5 +1,5 @@
 ---
-title: Send StatsD metrics to Dynatrace
+title: Отправка метрик StatsD в Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd
 scraped: 2026-03-06T21:16:29.318435
 ---

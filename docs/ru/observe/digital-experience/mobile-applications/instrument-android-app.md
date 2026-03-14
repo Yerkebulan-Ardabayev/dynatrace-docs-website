@@ -1,5 +1,5 @@
 ---
-title: Instrument Android apps
+title: Инструментирование Android-приложений
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-android-app
 scraped: 2026-03-05T21:26:31.388242
 ---

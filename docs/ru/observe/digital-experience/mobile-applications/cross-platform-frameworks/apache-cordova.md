@@ -1,5 +1,5 @@
 ---
-title: Instrument mobile apps with Dynatrace Cordova plugin
+title: Инструментирование мобильных приложений с помощью плагина Dynatrace Cordova
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/apache-cordova
 scraped: 2026-03-05T21:25:33.699476
 ---

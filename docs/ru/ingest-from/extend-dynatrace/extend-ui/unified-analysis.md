@@ -1,5 +1,5 @@
 ---
-title: Unified analysis pages
+title: Страницы унифицированного анализа
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-ui/unified-analysis
 scraped: 2026-03-06T21:25:40.142787
 ---

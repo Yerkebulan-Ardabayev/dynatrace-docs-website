@@ -1,5 +1,5 @@
 ---
-title: Create a new AWS connection
+title: Создание нового подключения AWS
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection
 scraped: 2026-03-06T21:24:56.840993
 ---

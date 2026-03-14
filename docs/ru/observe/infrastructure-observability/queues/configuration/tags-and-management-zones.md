@@ -1,5 +1,5 @@
 ---
-title: Queue tags and management zones
+title: Теги очередей и зоны управления
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues/configuration/tags-and-management-zones
 scraped: 2026-03-01T21:16:56.958006
 ---

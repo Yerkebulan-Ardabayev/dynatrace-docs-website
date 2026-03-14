@@ -1,5 +1,5 @@
 ---
-title: User details
+title: Сведения о пользователе
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmentation/analyze-all-sessions-of-a-single-user
 scraped: 2026-03-06T21:31:51.312648
 ---

@@ -1,5 +1,5 @@
 ---
-title: Manage Extensions
+title: Управление расширениями
 source: https://www.dynatrace.com/docs/ingest-from/extensions/manage-extensions
 scraped: 2026-03-06T21:24:23.338562
 ---

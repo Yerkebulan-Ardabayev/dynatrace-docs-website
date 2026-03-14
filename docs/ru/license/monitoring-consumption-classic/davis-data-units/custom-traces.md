@@ -1,5 +1,5 @@
 ---
-title: DDUs for custom traces (Trace API)
+title: DDU для пользовательских трассировок (Trace API)
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/custom-traces
 scraped: 2026-03-06T21:37:37.198226
 ---

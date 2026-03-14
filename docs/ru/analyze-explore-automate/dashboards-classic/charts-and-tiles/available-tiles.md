@@ -1,1234 +1,1222 @@
 ---
-title: Available tiles
+title: Доступные плитки
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles
 scraped: 2026-03-02T21:29:13.586579
 ---
 
-# Available tiles
+# Доступные плитки
 
-# Available tiles
+# Доступные плитки
 
-* Reference
-* 33-min read
-* Updated on May 16, 2022
+* Справка
+* 33-минутное чтение
+* Обновлено 16 мая 2022 г.
 
-[Dashboards Classic](../../dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+[Классические панели](../../dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Классические панели.")
 
-This page refers to classic dashboards created using the ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** functionality integrated with Dynatrace Classic.
+Эта страница относится к классическим панелям, созданным с помощью функциональности ![Классические панели](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Классические панели") **Классические панели**, интегрированной с Dynatrace Classic.
 
-* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see [Dashboards](../../dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") for related documentation.
-* If you're still using classic dashboards, we encourage you to [upgrade your dashboards](../dashboards-upgrade-classic-to-latest.md "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
+* Если вы уже используете приложение ![Панели](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Панели") **Панели** в последнем Dynatrace, см. [Панели](../../dashboards-and-notebooks/dashboards-new.md "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в режиме реального времени.") для связанной документации.
+* Если вы все еще используете классические панели, мы рекомендуем вам [обновить свои панели](../dashboards-upgrade-classic-to-latest.md "Обновите классические панели, созданные в предыдущем Dynatrace, до приложения Панели в последнем Dynatrace.") и воспользоваться всеми возможностями последних панелей, доступными в приложении ![Панели](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Панели") **Панели** в последнем Dynatrace.
 
-Tiles you can add to your dashboards are described below.
+Плитки, которые можно добавить к вашим панелям, описаны ниже.
 
-Editing tips
+Советы по редактированию
 
-* To make multiple similar **tiles**, start with one good tile, clone it, and then edit the cloned tiles.
+* Чтобы создать несколько похожих **плиток**, начните с одной хорошей плитки, клонируйте ее, а затем отредактируйте клонированные плитки.
 
-  Clone a tile to the current dashboard
+  Клонирование плитки в текущую панель
 
-  1. Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**.
-  2. Select the name of a dashboard to display that dashboard.
-  3. Select **Edit** in the upper-right corner of the dashboard. The dashboard opens in edit mode.
+  1. Перейдите к ![Классические панели](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Классические панели") **Классические панели**.
+  2. Выберите имя панели, чтобы отобразить эту панель.
+  3. Выберите **Редактировать** в правом верхнем углу панели. Панель открывается в режиме редактирования.
 
-     + If you don't see an **Edit** option, you don't have permission to edit that dashboard.
-  4. Select the tile that you want to clone (add a copy of the tile to the current dashboard) and then select **Clone**.
+     + Если вы не видите опцию **Редактировать**, у вас нет разрешения на редактирование этой панели.
+  4. Выберите плитку, которую вы хотите клонировать (добавить копию плитки в текущую панель), а затем выберите **Клонировать**.
 
-     + To clone multiple tiles to the current dashboard, drag a selection rectangle around the *x* tiles you want to clone and then select **Clone x tiles**.
-  5. Edit the cloned tiles as needed.
+     + Чтобы клонировать несколько плиток в текущую панель, перетащите прямоугольник выбора вокруг *x* плиток, которые вы хотите клонировать, а затем выберите **Клонировать x плиток**.
+  5. Отредактируйте клонированные плитки по мере необходимости.
 
-  Clone a tile to another dashboard
+  Клонирование плитки в другую панель
 
-  1. Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**.
-  2. Select the name of a dashboard to display that dashboard.
-  3. Select **Edit** in the upper-right corner of the dashboard. The dashboard opens in edit mode.
+  1. Перейдите к ![Классические панели](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Классические панели") **Классические панели**.
+  2. Выберите имя панели, чтобы отобразить эту панель.
+  3. Выберите **Редактировать** в правом верхнем углу панели. Панель открывается в режиме редактирования.
 
-     + If you don't see an **Edit** option, you don't have permission to edit that dashboard.
-  4. Select the tile you want to clone to another dashboard and then select **Clone to**.
+     + Если вы не видите опцию **Редактировать**, у вас нет разрешения на редактирование этой панели.
+  4. Выберите плитку, которую вы хотите клонировать в другую панель, а затем выберите **Клонировать в**.
 
-     + To clone multiple tiles to another dashboard, drag a selection rectangle around the *x* tiles you want to clone and then select **Clone x to**.
-  5. In the **Where do you want to pin to?** pop-up window, select an existing dashboard or **Create new dashboard**.
-  6. Select **Pin** to add the selected tiles to the dashboard.
-  7. Edit the cloned tiles as needed.
-* To make multiple similar **dashboards**, each with the same tiles, start with one good dashboard, clone it, and then edit the cloned dashboards/tiles.
+     + Чтобы клонировать несколько плиток в другую панель, перетащите прямоугольник выбора вокруг *x* плиток, которые вы хотите клонировать, а затем выберите **Клонировать x в**.
+  5. В всплывающем окне **Куда вы хотите прикрепить?** выберите существующую панель или **Создать новую панель**.
+  6. Выберите **Прикрепить**, чтобы добавить выбранные плитки к панели.
+  7. Отредактируйте клонированные плитки по мере необходимости.
+* Чтобы создать несколько похожих **панелей**, каждую с одинаковыми плитками, начните с одной хорошей панели, клонируйте ее, а затем отредактируйте клонированные панели/плитки.
 
-  Clone an existing dashboard
+  Клонирование существующей панели
 
-  1. Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**.
-  2. In the table of dashboards, select **More** (**â¦**) > **Clone** for the dashboard you want to copy.
+  1. Перейдите к ![Классические панели](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Классические панели") **Классические панели**.
+  2. В таблице панелей выберите **Еще** (**…**) > **Клонировать** для панели, которую вы хотите скопировать.
 
-     + The copy opens in edit mode.
-     + The original dashboard is unaffected.
+     + Копия открывается в режиме редактирования.
+     + Оригинальная панель не затрагивается.
 
-## Visualizations
+## Визуализации
 
-Use visualization tiles to create visual representations of [Data Explorer](../../explorer.md "Query for metrics and transform results to gain desired insights.") queries that you can pin to your dashboards.
+Используйте плитки визуализаций, чтобы создать визуальные представления запросов [Data Explorer](../../explorer.md "Запросите метрики и преобразуйте результаты, чтобы получить желаемые сведения."), которые можно прикрепить к вашим панелям.
 
-### Visualization types
+### Типы визуализаций
 
+Dynatrace предлагает следующие типы визуализации:
 
+* [График](visualization-graph.md "Настройте и используйте визуализацию графика в Data Explorer и закрепите ее на ваших панелях управления в виде плитки графика.")
+* [Столбчатая диаграмма](visualization-stacked-column.md "Настройте и используйте визуализацию столбчатой диаграммы в Data Explorer и отобразите ее на ваших панелях управления.")
+* [Диаграмма площадей](visualization-stacked-area.md "Настройте и используйте визуализацию диаграммы площадей в Data Explorer и отобразите ее на ваших панелях управления.")
+* [Круговая диаграмма](visualization-pie.md "Настройте и используйте визуализацию круговой диаграммы/пирога в Data Explorer и отобразите ее на ваших панелях управления.")
+* [Одиночное значение](visualization-single-value.md "Настройте и используйте визуализацию одиночного значения в Data Explorer и отобразите ее на ваших панелях управления.")
+* [Таблица](visualization-table.md "Настройте и используйте визуализацию таблицы в Data Explorer и отобразите ее на ваших панелях управления.")
+* [Список лучших](visualization-top-list.md "Настройте визуализацию списка лучших в Data Explorer и отобразите ее на ваших панелях управления.")
+* [Тепловая карта](visualization-heatmap.md "Настройте и используйте визуализацию тепловой карты в Data Explorer и закрепите ее на ваших панелях управления в виде плитки тепловой карты.")
+* [Пчелиная сотка](visualization-honeycomb.md "Настройте и используйте визуализацию пчелиной сотки в Data Explorer и отобразите ее на ваших панелях управления.")
 
-Dynatrace offers the following visualization types:
+#### Интерактивность
 
-* [Graph](visualization-graph.md "Configure and use a graph visualization in Data Explorer and pin it to your dashboards as a graph tile.")
-* [Stacked column](visualization-stacked-column.md "Configure and use a stacked column visualization in Data Explorer and display it on your dashboards.")
-* [Stacked area](visualization-stacked-area.md "Configure and use a stacked area visualization in Data Explorer and display it on your dashboards.")
-* [Pie](visualization-pie.md "Configure and use a pie/doughnut visualization in Data Explorer and display it on your dashboards.")
-* [Single value](visualization-single-value.md "Configure and use a single-value visualization in Data Explorer and display it on your dashboards.")
-* [Table](visualization-table.md "Configure and use a table visualization in Data Explorer and display it on your dashboards.")
-* [Top list](visualization-top-list.md "Configure a top-list visualization in Data Explorer and display it on your dashboards.")
-* [Heatmap](visualization-heatmap.md "Configure and use a heatmap visualization in Data Explorer and pin it to your dashboards as a heatmap tile.")
-* [Honeycomb](visualization-honeycomb.md "Configure and use a honeycomb visualization in Data Explorer and display it on your dashboards.")
+Интерактивность плиток визуализации варьируется в зависимости от типа визуализации, но они обычно имеют общие возможности.
 
-#### Interactivity
+* Наведите указатель мыши на элемент (например, линию или сектор круговой диаграммы), чтобы увидеть подробную информацию в подсказке.
+* Выберите (нажмите) элемент и затем выберите кнопку в подсказке, чтобы получить подробную информацию. Например, в визуализации, показывающей линию для каждого хоста, выберите интересную точку на линии и затем выберите кнопку **Просмотр хоста**, чтобы перейти на страницу выбранного хоста.
+* Легенда активна: выберите запись легенды, чтобы показать или скрыть соответствующий элемент на визуализации.
+* Все плитки имеют меню плитки в правом верхнем углу:
 
-Interactivity of visualization tiles varies according to the type of visualization, but they generally share common capabilities.
+  + **Настройка плитки в Data Explorer** открывает плитку в [Data Explorer](../../explorer.md "Запросите метрики и преобразуйте результаты, чтобы получить желаемые сведения."), где вы можете настроить запрос и визуализацию.
+  + **Редактировать плитку** (если у вас есть права на редактирование) открывает панель управления в режиме редактирования с выбранной плиткой.
 
-* Hover over an element (such as a line or a slice of pie) to see details in a tooltip.
-* Select (click) an element and then select a button in the tooltip to drill down for details. For example, in a visualization showing a line for each host, select an interesting point on a line and then select the **View host** button to drill down to the selected host page.
-* The legend is active: select a legend entry to show or hide the corresponding element on the visualization.
-* All tiles have a tile menu in the upper-right corner:
+#### Настройка
 
-  + **Configure tile in Data Explorer** opens the tile in [Data Explorer](../../explorer.md "Query for metrics and transform results to gain desired insights."), where you can configure the query and visualization.
-  + **Edit tile** (if you have edit rights) opens the dashboard in edit mode with the current tile selected.
+Чтобы настроить плитку визуализации из редактора панели управления
 
-#### Configuration
+1. Отобразите свою панель управления и выберите **Редактировать**.
+2. Перетащите плитку визуализации из панели **Редактировать панель управления**, вкладки **Плитки**, на свою панель управления.
+3. Выберите **Настроить плитку**, чтобы открыть свою плитку в [Data Explorer](../../explorer.md "Запросите метрики и преобразуйте результаты, чтобы получить желаемые сведения.").
+4. Настройте запрос для плитки. Вы не должны создавать окончательную версию сразу; вы можете строить свой запрос итеративно.
 
-To configure a visualization tile from the dashboard editor
+   * Выберите **Выполнить запрос** после каждого изменения запроса, чтобы увидеть результаты изменения.
+   * Необязательно выберите другой тип визуализации и посмотрите, что работает лучше всего для вашего запроса.
+   * Выбор визуальных настроек зависит от запроса и типа визуализации.
+5. После того, как вы определили запрос:
 
-1. Display your dashboard and select **Edit**.
-2. Drag a visualization tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard.
-3. Select **Configure tile** to open your tile in [Data Explorer](../../explorer.md "Query for metrics and transform results to gain desired insights.").
-4. Configure the query for the tile. You don't have to create the final version all at once; you can build your query iteratively.
+   * Чтобы сохранить изменения в плитке и панели управления, с которой вы начали, выберите **Сохранить изменения в панели управления**.
+   * Чтобы сохранить изменения в другой плитке, даже на другой панели управления, выберите **Закрепить на панели управления** и выберите целевую панель управления и название плитки.
+6. Выберите **Открыть панель управления**.
+7. Необязательно измените название плитки.
+8. Необязательно выберите пользовательский временной интервал.
+9. Необязательно выберите пользовательскую зону управления.
+10. Необязательно выберите среду.
 
-   * Select **Run query** after you make a query change to see the results of the change.
-   * Optional Select a different visualization type and see what works best for your query.
-   * The selection of visual settings available depends on the query and visualization type.
-5. After you have defined the query:
+Чтобы настроить плитку визуализации из 'Data Explorer'
 
-   * To save your changes to the tile and dashboard you started from, select **Save changes to dashboard**.
-   * To save your changes to a different tile, even a different dashboard, select **Pin to dashboard** and choose the destination dashboard and tile title.
-6. Select **Open dashboard**.
-7. Optional Change the tile title.
-8. Optional Select a custom timeframe.
-9. Optional Select a custom management zone.
-10. Optional Select an environment.
+1. Перейдите в **Data Explorer**.
+2. Настройте запрос для плитки. Вы не должны создавать окончательную версию сразу; вы можете строить свой запрос итеративно.
 
-To configure a visualization tile from the 'Data Explorer'
+   * Выберите **Выполнить запрос** после каждого изменения запроса, чтобы увидеть результаты изменения.
+   * Выберите разные типы визуализации, чтобы посмотреть, что работает лучше всего для вашего запроса.
+   * Выбор визуальных настроек зависит от запроса и типа визуализации. Для подробной информации:
 
-1. Go to **Data Explorer**.
-2. Configure the query for the tile. You don't have to create the final version all at once; you can build your query iteratively.
+     + [График](visualization-graph.md "Настройте и используйте визуализацию графика в Data Explorer и закрепите ее на ваших панелях управления в виде плитки графика.")
+     + [Столбчатая диаграмма](visualization-stacked-column.md "Настройте и используйте визуализацию столбчатой диаграммы в Data Explorer и отобразите ее на ваших панелях управления.")
+     + [Диаграмма площадей](visualization-stacked-area.md "Настройте и используйте визуализацию диаграммы площадей в Data Explorer и отобразите ее на ваших панелях управления.")
+     + [Круговая диаграмма](visualization-pie.md "Настройте и используйте визуализацию круговой диаграммы/пирога в Data Explorer и отобразите ее на ваших панелях управления.")
+     + [Одиночное значение](visualization-single-value.md "Настройте и используйте визуализацию одиночного значения в Data Explorer и отобразите ее на ваших панелях управления.")
+     + [Таблица](visualization-table.md "Настройте и используйте визуализацию таблицы в Data Explorer и отобразите ее на ваших панелях управления.")
+     + [Список лучших](visualization-top-list.md "Настройте визуализацию списка лучших в Data Explorer и отобразите ее на ваших панелях управления.")
+     + [Тепловая карта](visualization-heatmap.md "Настройте и используйте визуализацию тепловой карты в Data Explorer и закрепите ее на ваших панелях управления в виде плитки тепловой карты.")
+     + [Пчелиная сотка](visualization-honeycomb.md "Настройте и используйте визуализацию пчелиной сотки в Data Explorer и отобразите ее на ваших панелях управления.")
+   * Некоторые визуализации (например, тепловые карты) могут отображать только одну метрику. Чтобы отобразить другую метрику на визуализации, выберите букву рядом с метрикой, которую вы хотите визуализировать. В этом примере мы бы изменили выбор с **A** (`Использование CPU %`) на **B** (`Использование памяти %`).
 
-   * Select **Run query** after you make a query change to see the results of the change.
-   * Select different visualization types to see what works best for your query.
-   * The selection of visual settings available depends on the query and visualization type. For details:
+     ![Изменение выбора метрики](https://dt-cdn.net/images/select-metric-379-6a5af28695.png)
 
-     + [Graph](visualization-graph.md "Configure and use a graph visualization in Data Explorer and pin it to your dashboards as a graph tile.")
-     + [Stacked column](visualization-stacked-column.md "Configure and use a stacked column visualization in Data Explorer and display it on your dashboards.")
-     + [Stacked area](visualization-stacked-area.md "Configure and use a stacked area visualization in Data Explorer and display it on your dashboards.")
-     + [Pie](visualization-pie.md "Configure and use a pie/doughnut visualization in Data Explorer and display it on your dashboards.")
-     + [Single value](visualization-single-value.md "Configure and use a single-value visualization in Data Explorer and display it on your dashboards.")
-     + [Table](visualization-table.md "Configure and use a table visualization in Data Explorer and display it on your dashboards.")
-     + [Top list](visualization-top-list.md "Configure a top-list visualization in Data Explorer and display it on your dashboards.")
-     + [Heatmap](visualization-heatmap.md "Configure and use a heatmap visualization in Data Explorer and pin it to your dashboards as a heatmap tile.")
-     + [Honeycomb](visualization-honeycomb.md "Configure and use a honeycomb visualization in Data Explorer and display it on your dashboards.")
-   * Some visualizations (for example, heatmaps) can display only one metric. To display a different metric in the visualization, select the letter next to the metric you want to visualize. In this example, we would change the selection from **A** (`CPU usage %`) to **B** (`Memory used %`).
+     Другие визуализации (например, таблицы) могут отображать более одной метрики. Чтобы изменить выбор метрик для визуализации, выберите буквы рядом с именами метрик. В вышеуказанном примере мы бы изменили выбор с **A** (`Использование CPU %` только) на **A** и **B** (`Использование CPU %` и `Использование памяти %`).
+3. Когда вы удовлетворены результатами своего запроса, выберите **Закрепить на панели управления** и выберите целевую панель управления и название плитки.
+4. Выберите **Открыть панель управления**, чтобы увидеть плитку на панели управления.
+5. Необязательно измените название плитки.
+6. Необязательно выберите пользовательский временной интервал.
+7. Необязательно выберите пользовательскую зону управления.
+8. Необязательно выберите среду.
 
-     ![Change metric selection](https://dt-cdn.net/images/select-metric-379-6a5af28695.png)
+## Контекст
 
-     Other visualizations (for example, tables) can display more than one metric. To change the selection of metrics to visualize, select the letters next to the metric names. In the above example, we would change the selection from **A** (`CPU usage %` only) to both **A** and **B** (`CPU usage %` and `Memory used %`).
-3. When you are satisfied with the results of your query, select **Pin to dashboard** and choose the destination dashboard and tile title.
-4. Select **Open dashboard** to see the tile on the dashboard.
-5. Optional Change the tile title.
-6. Optional Select a custom timeframe.
-7. Optional Select a custom management zone.
-8. Optional Select an environment.
+Используйте плитки контекста (**Заголовок**, **Markdown** и **Изображение**), чтобы объяснить содержимое своей панели управления и добавить графику, такую как логотипы компаний. Это особенно важно, если вы создаете панели управления для обмена с другими.
 
-## Context
+### Заголовок
 
-Use the context tiles (**Header**, **Markdown**, and **Image**) to explain your dashboard contents and add graphics such as company logos. This is particularly important if you're making dashboards to share with others.
-
-### Header
-
-Use a header tile to put a bold label over another tile.
+Используйте плитку заголовка, чтобы поместить жирный ярлык над другой плиткой.
 
 ### Markdown
 
+Используйте одну или несколько плиток markdown, чтобы настроить и описать свою панель управления: что она делает, как ее использовать и т. д.
 
+Ограничения: 1 000 символов на плитку markdown.
 
-Use one or more markdown tiles to customize and describe your dashboard: what it does, how to use it, and so on.
+Синтаксис markdown
 
-Limitations: 1,000 characters per markdown tile.
+#### Заголовки
 
-Markdown syntax
+Уровни заголовков markdown `#` - `######` поддерживаются.
 
-#### Headings
+#### Горизонтальные линии
 
-Markdown heading levels `#` - `######` are supported.
+Используйте `***` или `___` или `---` в одиночестве на одной строке, чтобы добавить горизонтальную линию, разделяющую разделы своей плитки.
 
-#### Horizontal lines
+#### Переходы строк
 
-Use `***` or `___` or `---` alone on one line to add a horizontal line separating sections of your tile.
+Оставьте два пробела в конце строки, чтобы принудительно выполнить переход строки.
 
-#### Line breaks
+#### Акцент
 
-Leave two spaces at the end of a line to force a line break.
+Используйте `**текст**` или `__текст__`, чтобы отобразить жирный **текст**.
 
-#### Emphasis
+#### Списки
 
-Use `**text**` or `__text__` to display bold **text**.
+Вы можете создать пронумерованные (`1.`) или маркированные (`*`) списки markdown или смесь того и другого, с вложением.
 
-#### Lists
+#### Ссылки
 
-You can create numbered (`1.`) or bulleted (`*`) markdown lists, or a mix of the two, with nesting.
+Если у вас есть любимые страницы Dynatrace и веб-сайты, вы можете добавить ссылки на все они со своих панелей управления.
 
-#### Links
+Ссылка состоит из двух частей:
 
-If you have favorite Dynatrace pages and websites, you can add links to all of them from your dashboards.
+* Метка ссылки в квадратных скобках: `[` и `]`. Это свободный текст между двумя квадратными скобками, такой как `[Dynatrace]`.
+* Цель ссылки в круглых скобках: `(` и `)`. Существует два способа определить цель:
 
-A link consists of two parts:
-
-* The link label in square brackets: `[` and `]`. This is free-form text between two square brackets, such as `[Dynatrace]`.
-* The link target in parentheses: `(` and `)`. There are two ways to define a target:
-
-  + An absolute URL. For example, to link to:
+  + Абсолютный URL. Например, чтобы связаться с:
 
     ```
     https://www.example.com/
     ```
 
-    put the whole URL in parentheses
+    поместите весь URL в круглые скобки
 
     ```
     (https://www.example.com/)
     ```
 
-    to get a link definition like:
+    чтобы получить определение ссылки, подобное:
 
     ```
-    [Example](https://www.example.com/)
+    [Пример](https://www.example.com/)
     ```
-  + An anchor to a Dynatrace page (including other dashboards).  
-    To get that anchor, navigate to the target page in Dynatrace and copy everything on the browser address line that follows the domain and slash.  
-    If the full URL of the target page is:
+  + Якорь на страницу Dynatrace (включая другие панели управления).  
+    Чтобы получить этот якорь, перейдите на целевую страницу в Dynatrace и скопируйте все, что следует за доменом и косой чертой, в строке адреса браузера.  
+    Если полный URL целевой страницы:
 
     ```
     https://myenvironment.live.dynatrace.com/ui/deploymentstatus/oneagents?gtf=-2h&gf=all
     ```
 
-    the anchor text is:
+    текст якоря:
 
     ```
     ui/deploymentstatus/oneagents?gtf=-2h&gf=all
     ```
 
-    and the full link specification is something like:
+    и полное определение ссылки:
 
     ```
-    [My link to deployment status](ui/deploymentstatus/oneagents?gtf=-2h&gf=all)
+    [Моя ссылка на статус развертывания](ui/deploymentstatus/oneagents?gtf=-2h&gf=all)
     ```
 
-    Similarly, if you added this example to a markdown tile on one of your dashboards, the link would open the Dynatrace Hosts table:
+    Аналогично, если вы добавите этот пример в плитку markdown на одной из своих панелей управления, ссылка откроет таблицу хостов Dynatrace:
 
     ```
-    [Hosts](#newhosts;gtf=-2h;gf=all)
+    [Хосты](#newhosts;gtf=-2h;gf=all)
     ```
 
-### Image
+### Изображение
 
-Add images to your dashboards to improve their appearance and customize them for presentations.
+Добавьте изображения в свои панели мониторинга, чтобы улучшить их внешний вид и настроить их для презентаций.
 
-Supported image file types: JPG/JPEG, GIF, PNG, WEBP, TIFF, BMP, SVG
+Поддерживаемые типы файлов изображений: JPG/JPEG, GIF, PNG, WEBP, TIFF, BMP, SVG
 
-You can upload an image or point to it via URL.
+Вы можете загрузить изображение или указать на него через URL.
 
-Unlike other tile types, an image tile is not automatically refreshed. You need to refresh a dashboard manually to update the image tiles on that dashboard.
+В отличие от других типов плиток, плитка изображения не автоматически обновляется. Вам необходимо вручную обновить панель мониторинга, чтобы обновить плитки изображений на этой панели.
 
-Upload an image
+Загрузите изображение
 
-To upload an image and display it on your dashboard
+Чтобы загрузить изображение и отобразить его на своей панели мониторинга
 
-1. Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**.
-2. Select the name of a dashboard to display that dashboard.
-3. Select **Edit** in the upper-right corner of the dashboard. The dashboard opens in edit mode.
+1. Перейдите к ![Панели мониторинга Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Панели мониторинга Classic") **Панели мониторинга Classic**.
+2. Выберите имя панели мониторинга, чтобы отобразить эту панель мониторинга.
+3. Выберите **Редактировать** в правом верхнем углу панели мониторинга. Панель мониторинга открывается в режиме редактирования.
 
-   * If you don't see an **Edit** option, you don't have permission to edit that dashboard.
-4. Drag an **Image** tile into position.
-5. On the **Image** panel, select the **Upload an image** tab.
-6. Select **Upload image**.
-7. Browse for and select the image file you want to display in the tile.
-8. Size and position the tile as needed.
+   * Если вы не видите опцию **Редактировать**, у вас нет разрешения на редактирование этой панели мониторинга.
+4. Перетащите плитку **Изображение** в нужное положение.
+5. На панели **Изображение** выберите вкладку **Загрузить изображение**.
+6. Выберите **Загрузить изображение**.
+7. Найдите и выберите файл изображения, который вы хотите отобразить на плитке.
+8. Измените размер и положение плитки по мере необходимости.
 
-Point to image via URL
+Укажите изображение через URL
 
-To point to an image via URL and display it on your dashboard, you first need to add the URL to the allowlist, and then you can refer to that URL from an image tile.
+Чтобы указать изображение через URL и отобразить его на своей панели мониторинга, сначала вам нужно добавить URL в список разрешенных, а затем вы можете сослаться на этот URL из плитки изображения.
 
-**Add the URL to the allowlist**
+**Добавьте URL в список разрешенных**
 
-1. Go to **Settings** and select **Dashboards** > **Allowed URL pattern rules**.
-2. Select **Add item**.
-3. Set **Rule**, which specifies how to process this allowlist entry.
+1. Перейдите к **Настройки** и выберите **Панели мониторинга** > **Правила разрешенных URL-шаблонов**.
+2. Выберите **Добавить элемент**.
+3. Установите **Правило**, которое указывает, как обработать эту запись в списке разрешенных.
 
-   * **Starts with**âallow any image whose URL starts with the contents of **Pattern**.
-   * **Exact**âallow the specific image whose URL matches the contents of **Pattern** exactly.
-4. Set **Pattern**:
+   * **Начинается с** — разрешить любое изображение, URL которого начинается с содержимого **Шаблона**.
+   * **Точный** — разрешить конкретное изображение, URL которого точно соответствует содержимому **Шаблона**.
+4. Установите **Шаблон**:
 
-   * To specify a URL start, enter enough of the URL to make sure any matching image URLs will be suitable for your dashboards.  
-     Example: enter `https://example.com/images/` to allow any image whose URL starts with `https://example.com/images/`, such as  
-     `https://example.com/images/image-x.jpg` and
+   * Чтобы указать начало URL, введите достаточно URL, чтобы убедиться, что любые совпадающие URL изображений будут подходящими для ваших панелей мониторинга.  
+     Пример: введите `https://example.com/images/`, чтобы разрешить любое изображение, URL которого начинается с `https://example.com/images/`, например  
+     `https://example.com/images/image-x.jpg` и
      `https://example.com/images/my-picture.svg`
-   * To specify an exact URL, enter the entire URL of the image you want to allow.  
-     Example: enter `https://example.com/images/my-image-file-name.jpg` to allow only that image
-5. Select **Save changes** to add the specified rule to the allowlist.
+   * Чтобы указать точный URL, введите полный URL изображения, которое вы хотите разрешить.  
+     Пример: введите `https://example.com/images/my-image-file-name.jpg`, чтобы разрешить только это изображение
+5. Выберите **Сохранить изменения**, чтобы добавить указанное правило в список разрешенных.
 
-**Add the image tile**
+**Добавьте плитку изображения**
 
-1. Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**.
-2. Select the name of a dashboard to display that dashboard.
-3. Select **Edit** in the upper-right corner of the dashboard. The dashboard opens in edit mode.
+1. Перейдите к ![Панели мониторинга Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Панели мониторинга Classic") **Панели мониторинга Classic**.
+2. Выберите имя панели мониторинга, чтобы отобразить эту панель мониторинга.
+3. Выберите **Редактировать** в правом верхнем углу панели мониторинга. Панель мониторинга открывается в режиме редактирования.
 
-   * If you don't see an **Edit** option, you don't have permission to edit that dashboard.
-4. Drag an **Image** tile into position.
-5. On the **Image** panel, select the **Add image URL** tab.
-6. Enter the URL of the image file you want to display in the tile. It needs to match one of the rules on the allowlist.
-7. Size and position the tile as needed.
+   * Если вы не видите опцию **Редактировать**, у вас нет разрешения на редактирование этой панели мониторинга.
+4. Перетащите плитку **Изображение** в нужное положение.
+5. На панели **Изображение** выберите вкладку **Добавить URL изображения**.
+6. Введите URL файла изображения, который вы хотите отобразить на плитке. Он должен соответствовать одному из правил в списке разрешенных.
+7. Измените размер и положение плитки по мере необходимости.
 
-Example dashboard with images:
+Пример панели мониторинга с изображениями:
 
-![Example dashboard with images](https://dt-cdn.net/images/dashboard-image-example-01-1286-031295613c.png)
+![Пример панели мониторинга с изображениями](https://dt-cdn.net/images/dashboard-image-example-01-1286-031295613c.png)
 
-## Infrastructure
+## Инфраструктура
 
-### Host health
+### Здоровье хоста
 
-Displays the number of hosts (operating system instances, whether physical and virtual) in your environment compared to the number of hosts in your environment that are currently affected by problems. Each host instance equates to a Dynatrace OneAgent installed in your environment.
-
-#### Drilldowns
-
-Health tile drilldowns
-
-* From a health tile (such as **Host health**, **Service health**, and **Application health**), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.
-* To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
-
-  ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
-* You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select **View details** to display the relevant Dynatrace page for the tile. For example, **View details** from a **Synthetic monitor health** tile displays the **Synthetic monitors** table.
-
-  ![Select tile menu](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
-
-  ![Select 'View details' from tile menu](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
-
-#### Configuration
-
-To configure this tile type from the dashboard editor
-
-1. Drag a **Host health** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Optional Select whether to show a visualization on the tile
-3. Optional Select a custom timeframe
-4. Optional Select a custom management zone
-5. Optional Select an environment
-
-To pin this tile to your dashboard with filters set
-
-1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
-2. Set filters in the **Filtered by** box.
-3. Select **Pin to dashboard**, select a target dashboard, and select **Pin** to add a **Hosts** tile to the selected dashboard with the selected filters. You can then set any of the options described above.
-
-   * The tile will reflect all filters and options you have set
-   * The next time you select the tile on your dashboard, the **Hosts** page will open with the filters and options already applied
-
-### Network metrics
-
-Displays network health metrics for traffic flowing through your monitored hosts. Shows current traffic volume and quality of communication of both new (Connectivity) and established sessions (Retransmissions).
+Отображает количество хостов (экземпляров операционной системы, как физических, так и виртуальных) в вашей среде по сравнению с количеством хостов в вашей среде, которые в настоящее время затронуты проблемами. Каждый экземпляр хоста соответствует Dynatrace OneAgent, установленному в вашей среде.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the **Host networking** page
+Drilldowns плитки здоровья
 
-#### Configuration
+* Из плитки здоровья (например, **Здоровье хоста**, **Здоровье службы**, **Здоровье приложения**), где вы видите зеленые и красные элементы (например, хосты, службы или приложения), наведите курсор на любой проблемный (красный) элемент, чтобы увидеть идентификатор элемента.
+* Чтобы выполнить drilldown на проблемный (красный) элемент, выберите красный шестиугольник, а затем выберите кнопку **Просмотр...**. На этом примере плитки **Здоровье синтетического монитора** мы выбрали красный элемент, который активировал кнопку drilldown **Просмотр теста** для этого элемента.
 
-To configure this tile type from the dashboard editor
+  ![Drill down to проблемного сущности из плитки здоровья](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
+* Вы не можете выполнить drilldown из здорового (зеленого) элемента. Однако из любой плитки вы можете выбрать меню в правом верхнем углу плитки, а затем выбрать **Просмотр деталей**, чтобы отобразить соответствующую страницу Dynatrace для плитки. Например, **Просмотр деталей** из плитки **Здоровье синтетического монитора** отображает таблицу **Синтетические мониторы**.
 
-1. Optional Select a custom timeframe
-2. Optional Select a custom management zone
-3. Optional Select an environment
+  ![Выберите меню плитки](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
 
-### Network status
+  ![Выберите 'Просмотр деталей' из меню плитки](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
 
-Displays current network traffic flowing through your monitored hosts. Shows traffic volume, number of nodes (Talkers) exchanging network traffic, and number of nodes experiencing performance problems (Processes and Hosts).
+#### Конфигурация
+
+Чтобы настроить этот тип плитки из редактора панели мониторинга
+
+1. Перетащите плитку **Здоровье хоста** из панели **Редактировать панель мониторинга**, вкладки **Плитки**, в свою панель мониторинга
+2. Необязательно выберите, следует ли отображать визуализацию на плитке
+3. Необязательно выберите пользовательский временной интервал
+4. Необязательно выберите пользовательскую зону управления
+5. Необязательно выберите среду
+
+Чтобы закрепить эту плитку на своей панели мониторинга с установленными фильтрами
+
+1. Перейдите к ![Хосты](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Хосты") **Хосты Classic**.
+2. Установите фильтры в поле **Отфильтровано по**.
+3. Выберите **Закрепить на панели мониторинга**, выберите целевую панель мониторинга и выберите **Закрепить**, чтобы добавить плитку **Хосты** на выбранную панель мониторинга с выбранными фильтрами. Затем вы можете установить любой из вариантов, описанных выше.
+
+   * Плитка будет отражать все фильтры и варианты, которые вы установили
+   * В следующий раз, когда вы выберете плитку на своей панели мониторинга, страница **Хосты** откроется с уже примененными фильтрами и вариантами
+
+### Метрики сети
+
+Отображает метрики здоровья сети для трафика, проходящего через ваши контролируемые хосты. Показывает текущий объем трафика и качество связи как новых (Соединение), так и установленных сессий (Передача).
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the **Host networking** page
+* Из меню плитки выберите **Просмотр деталей**, чтобы открыть страницу **Сетевое взаимодействие хоста**
 
-#### Configuration
+#### Конфигурация
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип плитки из редактора панели мониторинга
 
-1. Drag a **Network status** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Optional Select whether to show a visualization on the tile
-3. Optional Select a custom timeframe
-4. Optional Select a custom management zone
-5. Optional Select an environment
+1. Необязательно выберите пользовательский временной интервал
+2. Необязательно выберите пользовательскую зону управления
+3. Необязательно выберите среду
+
+### Состояние сети
+
+Отображает текущий сетевой трафик, проходящий через ваши контролируемые хосты. Показывает объем трафика, количество узлов (Говорящих), обменивающихся сетевым трафиком, и количество узлов, испытывающих проблемы с производительностью (Процессы и Хосты).
+
+#### Drilldowns
+
+* Из меню плитки выберите **Просмотр деталей**, чтобы открыть страницу **Сетевое взаимодействие хоста**
+
+#### Конфигурация
+
+Чтобы настроить этот тип плитки из редактора панели мониторинга
+
+1. Перетащите плитку **Состояние сети** из панели **Редактировать панель мониторинга**, вкладки **Плитки**, в свою панель мониторинга
+2. Необязательно выберите, следует ли отображать визуализацию на плитке
+3. Необязательно выберите пользовательский временной интервал
+4. Необязательно выберите пользовательскую зону управления
+5. Необязательно выберите среду
 
 ### Docker
 
-Displays current number of Docker containers and images compared to last week, plus current number of Docker hosts.
+Отображает текущее количество Docker контейнеров и изображений по сравнению с прошлой неделей, а также текущее количество Docker хостов.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the **Docker** page
+* Из меню плитки выберите **Просмотр деталей**, чтобы открыть страницу **Docker**
 
-#### Configuration
+#### Конфигурация
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип плитки из редактора панели мониторинга
 
-1. Drag a **Docker** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Optional Select a custom timeframe
-3. Optional Select a custom management zone
-4. Optional Select an environment
+1. Перетащите плитку **Docker** из панели **Редактировать панель мониторинга**, вкладки **Плитки**, в свою панель мониторинга
+2. Необязательно выберите пользовательский временной интервал
+3. Необязательно выберите пользовательскую зону управления
+4. Необязательно выберите среду
 
 ### VMware
 
-
-
-Displays current basic indicators related to the virtualized infrastructure in your environment, including the number of VMs, migration events, and the corresponding trends, as well as the number of ESXi hosts (standalone or managed by attached vCenter servers) against the number of ESXi hosts in your environment that are currently affected by problems. If there are multiple vCenter or ESXi hosts attached, all gathered data can be aggregated or presented for a selected entity.
+Отображает текущие основные индикаторы, связанные с виртуализированной инфраструктурой в вашей среде, включая количество виртуальных машин, событий миграции и соответствующие тенденции, а также количество хостов ESXi (самостоятельных или управляемых подключенными серверами vCenter) по сравнению с количеством хостов ESXi в вашей среде, которые в настоящее время затронуты проблемами. Если есть несколько серверов vCenter или хостов ESXi, подключенных к нему, все собранные данные можно объединить или представить для выбранного объекта.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the **VMware** page
+* Из меню плитки выберите **Просмотр деталей**, чтобы открыть страницу **VMware**
 
-#### Configuration
+#### Конфигурация
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип плитки из редактора панели мониторинга
 
-1. Drag a **VMware** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Optional Select a custom timeframe
-3. Optional Select an environment
+1. Перетащите плитку **VMware** из панели **Редактировать панель мониторинга**, вкладки **Плитки**, в свою панель мониторинга
+2. Необязательно выберите пользовательский временной интервал
+3. Необязательно выберите среду
 
 ### AWS
 
-Displays quick insights and health indicators of three services running under your AWS account:
+Отображает быстрые сведения и индикаторы здоровья трех служб, работающих под вашей учетной записью AWS:
 
-* Elastic Compute Cloud (EC2) instances
+* Экземпляры Elastic Compute Cloud (EC2)
 * Elastic Block Storage (EBS)
 * Classic Load Balancer (ELB)
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the **AWS** page
+* Из меню плитки выберите **Просмотр деталей**, чтобы открыть страницу **AWS**
 
-#### Configuration
+#### Конфигурация
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип плитки из редактора панели мониторинга
 
-1. Drag an **AWS** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select an AWS account
-3. Optional Select a custom timeframe
-4. Optional Select an environment
+1. Перетащите плитку **AWS** из панели **Редактировать панель мониторинга**, вкладки **Плитки**, в свою панель мониторинга
+2. Выберите учетную запись AWS
+3. Необязательно выберите пользовательский временной интервал
+4. Необязательно выберите среду
 
-## Services
+## Службы
 
-### Service health
+### Здоровье службы
 
-Displays an overview of all services monitored by Dynatrace, including the number of services experiencing performance degradation. This high-level visualization provides an easily digestible view, which makes it a great fit for management dashboards.
+Отображает обзор всех сервисов, контролируемых Dynatrace, включая количество сервисов, испытывающих ухудшение производительности. Это высокоуровневая визуализация обеспечивает легко воспринимаемый вид, что делает его отличным вариантом для панелей управления.
 
-Depending on the selected timeframe, the tile shows:
+В зависимости от выбранного временного интервала плитка показывает:
 
-* For a *last X* timeframe: the most recent time slot of data.
-* For other timeframe types: the average value within the timeframe.
-
-#### Drilldowns
-
-Health tile drilldowns
-
-* From a health tile (such as **Host health**, **Service health**, and **Application health**), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.
-* To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
-
-  ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
-* You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select **View details** to display the relevant Dynatrace page for the tile. For example, **View details** from a **Synthetic monitor health** tile displays the **Synthetic monitors** table.
-
-  ![Select tile menu](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
-
-  ![Select 'View details' from tile menu](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
-
-#### Configuration
-
-To configure this tile type from the dashboard editor
-
-1. Drag a **Service health** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Optional Select whether to show a visualization on the tile
-3. Optional Select a custom timeframe
-4. Optional Select a custom management zone
-5. Optional Select an environment
-
-To pin this tile to your dashboard with filters set
-
-1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
-2. Set filters in the **Filtered by** box.
-3. Select **Pin to dashboard** to add a **Services** tile to the selected dashboard with the selected filters. You can then set any of the options described above.
-
-   * The tile will reflect all filters and options you have set
-   * The next time you select the tile on your dashboard, the **Services** page will open with the filters and options already applied
-
-### Service or request
-
-Displays current key performance indicators related to the selected service or request (requests per minute, failure rate, and response time) in a resizable tile format.
+* Для временного интервала *последние X*: самый недавний временной интервал данных.
+* Для других типов временных интервалов: среднее значение в течение временного интервала.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the selected service or request details page
+Drilldowns плитки состояния
 
-#### Configuration
+* Из плитки состояния (такой как **Состояние хоста**, **Состояние сервиса** и **Состояние приложения**), где вы видите зеленые и красные элементы (такие как хосты, сервисы или приложения), наведите курсор на любой проблемный (красный) элемент, чтобы увидеть идентификатор элемента.
+* Чтобы перейти к проблемному (красному) элементу, выберите красный гексагон и затем выберите кнопку **Просмотр...**. На этом примере плитки **Состояние синтетического монитора** мы выбрали красный элемент, который активировал кнопку drilldown **Просмотр теста** для этого элемента.
 
-To configure this tile type from the dashboard editor
+  ![Перейти к проблемному элементу из плитки состояния](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
+* Вы не можете перейти из здорового (зеленого) элемента. Однако из любой плитки вы можете выбрать меню в правом верхнем углу плитки и затем выбрать **Просмотр деталей**, чтобы отобразить соответствующую страницу Dynatrace для плитки. Например, **Просмотр деталей** из плитки **Состояние синтетического монитора** отображает таблицу **Синтетические мониторы**.
 
-1. Drag a **Service or request** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select a service type
-3. Select a service
-4. Select a key request
-5. Optional Select a custom timeframe
-6. Optional Select an environment
+  ![Выбрать меню плитки](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
 
-To pin this tile to your dashboard with filters set
+  ![Выбрать 'Просмотр деталей' из меню плитки](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
 
-1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
-2. Select a service.
-3. From the service page, select **More** (**â¦**) > **Pin to dashboard**. You can then set any of the options described above.
+#### Конфигурация
 
-   * The tile will reflect the options you have set
-   * The next time you select the tile on your dashboard, the service page will open with the options already applied
+Чтобы настроить этот тип плитки из редактора панели управления
 
-## Applications
+1. Перетащите плитку **Состояние сервиса** из панели **Редактировать панель**, вкладка **Плитки**, в свою панель управления
+2. Необязательно выберите, следует ли отображать визуализацию на плитке
+3. Необязательно выберите пользовательский временной интервал
+4. Необязательно выберите пользовательскую зону управления
+5. Необязательно выберите среду
 
-### Top web applications
+Чтобы закрепить эту плитку на своей панели управления с установленными фильтрами
 
-Displays load details related to up to three web applications in your environment that have the highest user-action rate.
+1. Перейдите к ![Сервисы Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Сервисы Classic") **Сервисы Classic**.
+2. Установите фильтры в поле **Отфильтровано по**.
+3. Выберите **Закрепить на панели управления**, чтобы добавить плитку **Сервисы** к выбранной панели управления с установленными фильтрами. Затем вы можете установить любой из вариантов, описанных выше.
 
-* Current values are compared against baseline measurements (when available)
-* Performance threshold violations are color coded in red
-* Optional Select a custom management zone
+   * Плитка будет отражать все фильтры и варианты, которые вы установили
+   * В следующий раз, когда вы выберете плитку на своей панели управления, страница **Сервисы** будет открыта с фильтрами и вариантами, уже примененными
 
-#### Drilldowns
+### Сервис или запрос
 
-* From the tile menu, select **View details** to open the **Applications** page filtered by web applications (and any other filters you set on the tile if you pinned it from the **Applications** page)
-
-#### Configuration
-
-To configure this tile type from the dashboard editor
-
-1. Drag a **Top web applications** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Optional Select a custom management zone
-
-To pin this tile to your dashboard with filters set
-
-1. Go to **Web**.
-2. Set other filters as needed.
-3. Select **Pin to dashboard**, select a target dashboard, and select **Pin**.
-
-### Application health
-
-Displays the total number of applications in your environment versus the number of applications that are currently affected by problems. Opens your Applications page.
+Отображает текущие ключевые показатели производительности, связанные с выбранным сервисом или запросом (запросы в минуту, скорость сбоя и время ответа) в формате плитки, которую можно изменить в размере.
 
 #### Drilldowns
 
-Health tile drilldowns
+* Из меню плитки выберите **Просмотр деталей**, чтобы открыть страницу деталей выбранного сервиса или запроса
 
-* From a health tile (such as **Host health**, **Service health**, and **Application health**), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.
-* To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
+#### Конфигурация
 
-  ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
-* You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select **View details** to display the relevant Dynatrace page for the tile. For example, **View details** from a **Synthetic monitor health** tile displays the **Synthetic monitors** table.
+Чтобы настроить этот тип плитки из редактора панели управления
 
-  ![Select tile menu](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
+1. Перетащите плитку **Сервис или запрос** из панели **Редактировать панель**, вкладка **Плитки**, в свою панель управления
+2. Выберите тип сервиса
+3. Выберите сервис
+4. Выберите ключевой запрос
+5. Необязательно выберите пользовательский временной интервал
+6. Необязательно выберите среду
 
-  ![Select 'View details' from tile menu](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
+Чтобы закрепить эту плитку на своей панели управления с установленными фильтрами
 
-#### Configuration
+1. Перейдите к ![Сервисы Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Сервисы Classic") **Сервисы Classic**.
+2. Выберите сервис.
+3. Из страницы сервиса выберите **Еще** (**...**) > **Закрепить на панели управления**. Затем вы можете установить любой из вариантов, описанных выше.
 
-To configure this tile type from the dashboard editor
+   * Плитка будет отражать варианты, которые вы установили
+   * В следующий раз, когда вы выберете плитку на своей панели управления, страница сервиса будет открыта с вариантами, уже примененными
 
-1. Drag an **Application health** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Optional Select whether to show a visualization on the tile
-3. Optional Select a custom timeframe
-4. Optional Select a custom management zone
-5. Optional Select an environment
+## Приложения
 
-To pin this tile to your dashboard with filters set
+### Топ веб-приложения
 
-1. Go to **Custom Applications**, **Frontend**, **Mobile**, or **Web**.
-2. Set filters in the **Filtered by** box.
-3. Select **Pin to dashboard** to add an **Application health** tile to the selected dashboard with the selected filters. You can then set any of the options described above.
+Отображает детали нагрузки, связанные с до тремя веб-приложениями в вашей среде, имеющими наивысшую скорость пользовательских действий.
 
-   * The tile will reflect all filters and options you have set
-   * The next time you select the tile on your dashboard, the **Applications** page will open with the filters and options already applied
-
-### User behavior
-
-Displays key user behavior indicators related to the selected application (active sessions per minute, actions per session, and session duration) over the timeframe.
+* Текущие значения сравниваются с базовыми измерениями (при наличии)
+* Нарушения порогов производительности кодируются красным цветом
+* Необязательно выберите пользовательскую зону управления
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the selected application's user behavior section
+* Из меню плитки выберите **Просмотр деталей**, чтобы открыть страницу **Приложения**, отфильтрованную по веб-приложениям (и любым другим фильтрам, которые вы установили на плитке, если вы закрепили ее из страницы **Приложения**)
 
-#### Configuration
+#### Конфигурация
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип плитки из редактора панели управления
 
-1. Drag a **User behavior** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select an application from the list
-3. Optional Select a custom timeframe
-4. Optional Select an environment
+1. Перетащите плитку **Топ веб-приложения** из панели **Редактировать панель**, вкладка **Плитки**, в свою панель управления
+2. Необязательно выберите пользовательскую зону управления
 
-To pin this tile to your dashboard with filters set
+Чтобы закрепить эту плитку на своей панели управления с установленными фильтрами
 
-1. Go to **Custom Applications**, **Frontend**, **Mobile**, or **Web**, depending on the type of application you want to monitor.
-2. Select the application you want to monitor with a tile.
-3. Select the **User behavior** section of the infographic.
-4. Select **Pin to dashboard**, select a target dashboard, and select **Pin**.  
-   A **User behavior** tile for the selected application is pinned to the selected dashboard.
+1. Перейдите к **Веб**.
+2. Установите другие фильтры по мере необходимости.
+3. Выберите **Закрепить на панели управления**, выберите целевую панель управления и выберите **Закрепить**.
 
-### User breakdown
+### Состояние приложения
 
-
-
-Displays a user type breakdown (doughnut) by real users, robots, and monitors, and visualizes new users versus returning users over the timeframe.
+Отображает общее количество приложений в вашей среде по сравнению с количеством приложений, которые в настоящее время затронуты проблемами. Открывает страницу **Приложения**.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the selected application's user behavior section
+Drilldowns плитки состояния
 
-#### Configuration
+* Из плитки состояния (такой как **Состояние хоста**, **Состояние сервиса** и **Состояние приложения**), где вы видите зеленые и красные элементы (такие как хосты, сервисы или приложения), наведите курсор на любой проблемный (красный) элемент, чтобы увидеть идентификатор элемента.
+* Чтобы перейти к проблемному (красному) элементу, выберите красный гексагон и затем выберите кнопку **Просмотр...**. На этом примере плитки **Состояние синтетического монитора** мы выбрали красный элемент, который активировал кнопку drilldown **Просмотр теста** для этого элемента.
 
-To configure this tile type from the dashboard editor
+  ![Перейти к проблемному элементу из плитки состояния](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
+* Вы не можете перейти из здорового (зеленого) элемента. Однако из любой плитки вы можете выбрать меню в правом верхнем углу плитки и затем выбрать **Просмотр деталей**, чтобы отобразить соответствующую страницу Dynatrace для плитки. Например, **Просмотр деталей** из плитки **Состояние синтетического монитора** отображает таблицу **Синтетические мониторы**.
 
-1. Drag a **User breakdown** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select an application you want to monitor with a tile
-3. Optional Select a custom timeframe
-4. Optional Select an environment
+  ![Выбрать меню плитки](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
 
-### World map
+  ![Выбрать 'Просмотр деталей' из меню плитки](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
 
-Displays a geographic map of the selected metric for the selected application.
+#### Конфигурация
 
-The timeframe of the world map tile is always **Last 2 hours**, regardless of the global or dashboard timeframe setting. If you need to see a different timeframe, drill down to the full world map and change the timeframe there.
+Чтобы настроить этот тип плитки из редактора панели управления
 
-#### Drilldowns
+1. Перетащите плитку **Состояние приложения** из панели **Редактировать панель**, вкладка **Плитки**, в свою панель управления
+2. Необязательно выберите, следует ли отображать визуализацию на плитке
+3. Необязательно выберите пользовательский временной интервал
+4. Необязательно выберите пользовательскую зону управления
+5. Необязательно выберите среду
 
-* To open the full-sized world map page for the selected metric and location, either select the tile or select **View details** from the tile menu
+Чтобы закрепить эту плитку на своей панели управления с установленными фильтрами
 
-#### Configuration
+1. Перейдите к **Пользовательские приложения**, **Фронтенд**, **Мобильные** или **Веб**.
+2. Установите фильтры в поле **Отфильтровано по**.
+3. Выберите **Закрепить на панели управления**, чтобы добавить плитку **Состояние приложения** к выбранной панели управления с установленными фильтрами. Затем вы можете установить любой из вариантов, описанных выше.
 
-To configure this tile type from the dashboard editor
+   * Плитка будет отражать все фильтры и варианты, которые вы установили
+   * В следующий раз, когда вы выберете плитку на своей панели управления, страница **Приложения** будет открыта с фильтрами и вариантами, уже примененными
 
-1. Drag a **World map** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select an application (or `Most active application`) from the list
-3. Select a geolocation
-4. Select the metric you want to map. There are two categories. You can select only one item.
+### Поведение пользователя
 
-   **Performance metric based on user actions:**
-
-   * [Apdex](../../../observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings.md "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.")
-   * [User actions](../../../observe/digital-experience/rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.")
-   * [Load actions](../../../observe/digital-experience/rum-concepts/user-actions.md#load-action "Learn what user actions are and how they help you understand what users do with your application.")
-   * [XHR actions](../../../observe/digital-experience/rum-concepts/user-actions.md#xhr-action "Learn what user actions are and how they help you understand what users do with your application.")
-   * [Custom actions](../../../observe/digital-experience/rum-concepts/user-actions.md#custom-action "Learn what user actions are and how they help you understand what users do with your application.")
-   * Errors
-
-   **Behavior metric based on sessions or users:**
-
-   * Active sessions
-   * Active users
-   * Actions per session
-   * Bounce rate
-   * Session duration
-
-To pin this tile to your dashboard with filters set
-
-1. Go to **Custom Applications**, **Frontend**, **Mobile**, or **Web**, depending on the type of application you want to monitor.
-2. Select an application.
-3. On the infographic, select **View geolocation breakdown**.
-4. In the **Geolocation breakdown** section that is now displayed under the infographic, select **View full world map**.
-5. In the filter bar, set a `Location` filter to zoom that map to that location
-6. Select a metric button (**Apdex**, **User actions**, **Load actions**, **XHR actions**, **Custom actions**, or **Errors**) to focus the map on that metric
-7. Select **Pin to dashboard**, select the target dashboard, and select **Pin**.
-
-**Troubleshooting:**
-
-* If you don't see data on the world map, you might need to map your internal IP addresses to locations for your [web](../../../observe/digital-experience/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web.md "Configure Dynatrace to use local addresses to understand where the users of your web applications are."), [mobile](../../../observe/digital-experience/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile.md "Configure Dynatrace to use local addresses to understand where the users of your mobile applications are."), and [custom applications](../../../observe/digital-experience/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom.md "Configure Dynatrace to use local addresses to understand where the users of your custom applications are.").
-* Remember that the timeframe of a world map tile is always **Last 2 hours**, regardless of how you set the global or dashboard timeframe.
-
-### Key user action overview
-
-Displays an overview of the selected application's key user actions and any corresponding open problems.
+Отображает ключевые показатели поведения пользователя, связанные с выбранным приложением (активные сессии в минуту, действия за сессию и продолжительность сессии) за временной интервал.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the user action analysis page for the selected application with a full list of key user actions.
+* Из меню плитки выберите **Просмотр деталей**, чтобы открыть раздел поведения пользователя выбранного приложения
 
-#### Configuration
+#### Конфигурация
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип плитки из редактора панели управления
 
-1. Drag a **Key user action overview** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select an application from the list
-3. Optional Select a custom timeframe
-4. Optional Select an environment
+1. Перетащите плитку **Поведение пользователя** из панели **Редактировать панель**, вкладка **Плитки**, в свою панель управления
+2. Выберите приложение из списка
+3. Необязательно выберите пользовательский временной интервал
+4. Необязательно выберите среду
 
-### Bounce rate
+Чтобы закрепить эту плитку на своей панели управления с установленными фильтрами
 
-Displays a comparison of the current bounce rate with yesterday and the number of entry actions.
+1. Перейдите к **Пользовательские приложения**, **Фронтенд**, **Мобильные** или **Веб**, в зависимости от типа приложения, которое вы хотите контролировать.
+2. Выберите приложение, которое вы хотите контролировать с помощью плитки.
+3. Выберите раздел **Поведение пользователя** инфографики.
+4. Выберите **Закрепить на панели управления**, выберите целевую панель управления и выберите **Закрепить**.  
+   Плитка **Поведение пользователя** для выбранного приложения будет закреплена на выбранной панели управления.
 
-#### Drilldowns
+### Распределение пользователей
 
-* From the tile menu, select **View details** to open the selected application's bounce rate analysis.
-
-#### Configuration
-
-To configure this tile type from the dashboard editor
-
-1. Drag a **Bounce rate** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select an application from the list
-3. Optional Select a custom timeframe
-4. Optional Select an environment
-
-### Top conversion goals
-
-Displays the overall conversion rate and your top 5 goals for the selected application. This tile also serves as a direct link to the selected application goals view.
+Отображает распределение типов пользователей (диаграмма в виде кольца) по реальным пользователям, роботам и мониторам, и визуализирует новых пользователей по сравнению с возвращающимися пользователями за временной интервал.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the selected application's **Conversion** page.
+* Из меню плитки выберите **Просмотр деталей**, чтобы открыть раздел поведения пользователя выбранного приложения
 
-#### Configuration
+#### Конфигурация
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип плитки из редактора панели управления
 
-1. Drag a **Top conversion goals** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select an application from the list
-3. Optional Select a custom timeframe
-4. Optional Select an environment
+1. Перетащите плитку **Распределение пользователей** из панели **Редактировать панель**, вкладка **Плитки**, в свою панель управления
+2. Выберите приложение, которое вы хотите контролировать с помощью плитки
+3. Необязательно выберите пользовательский временной интервал
+4. Необязательно выберите среду
 
-### Conversion goal
+### Мировая карта
 
-Displays the overall conversion rate and completions for the selected goal. This tile also serves as a direct link to the selected application goals view.
+Отображает географическую карту выбранной метрики для выбранного приложения.
 
-#### Drilldowns
-
-* From the tile menu, select **View details** to open the selected application's goals view.
-
-#### Configuration
-
-To configure this tile type from the dashboard editor
-
-1. Drag a **Conversion goal** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select an application from the list
-3. Select a goal
-4. Optional Select a custom timeframe
-5. Optional Select an environment
-
-### JavaScript errors
-
-Displays JavaScript error indicators related to the selected application (JavaScript errors per minute, percent affected user actions).
+Временной интервал тайла мировой карты всегда составляет **Последние 2 часа**, независимо от глобальной или настройки временного интервала панели мониторинга. Если вам нужно просмотреть другой временной интервал, перейдите к полной мировой карте и измените временной интервал там.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open **Compare JavaScript errors** for the selected application.
+* Чтобы открыть полноэкранную страницу мировой карты для выбранной метрики и местоположения, выберите тайл или выберите **Просмотреть подробности** из меню тайла
 
-#### Configuration
+#### Настройка
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип тайла из редактора панели мониторинга
 
-1. Drag a **JavaScript errors** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select an application from the list
-3. Optional Select a custom timeframe
-4. Optional Select an environment
+1. Перетащите тайл **Мировая карта** из панели **Редактировать панель мониторинга**, вкладка **Тайлы**, в вашу панель мониторинга
+2. Выберите приложение (или `Самое активное приложение`) из списка
+3. Выберите геолокацию
+4. Выберите метрику, которую вы хотите отобразить на карте. Существует две категории. Вы можете выбрать только один элемент.
 
-### Resources
+   **Метрика производительности на основе действий пользователей:**
 
-Displays load details for application-specific resources grouped by first-party, third-party, and CDN resources.
+   * [Apdex](../../../observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings.md "Узнайте, как Dynatrace использует Apdex для измерения удовлетворенности пользователей производительностью приложения.")
+   * [Действия пользователей](../../../observe/digital-experience/rum-concepts/user-actions.md "Узнайте, что такое действия пользователей и как они помогают вам понять, что пользователи делают с вашим приложением.")
+   * [Действия загрузки](../../../observe/digital-experience/rum-concepts/user-actions.md#load-action "Узнайте, что такое действия пользователей и как они помогают вам понять, что пользователи делают с вашим приложением.")
+   * [Действия XHR](../../../observe/digital-experience/rum-concepts/user-actions.md#xhr-action "Узнайте, что такое действия пользователей и как они помогают вам понять, что пользователи делают с вашим приложением.")
+   * [Пользовательские действия](../../../observe/digital-experience/rum-concepts/user-actions.md#custom-action "Узнайте, что такое действия пользователей и как они помогают вам понять, что пользователи делают с вашим приложением.")
+   * Ошибки
 
-#### Drilldowns
+   **Метрика поведения на основе сессий или пользователей:**
 
-* From the tile menu, select **View details** to open the application details page with **Resources** selected.
+   * Активные сессии
+   * Активные пользователи
+   * Действия на сессию
+   * Коэффициент отказов
+   * Продолжительность сессии
 
-#### Configuration
+Чтобы закрепить этот тайл на вашей панели мониторинга с установленными фильтрами
 
-To configure this tile type from the dashboard editor
+1. Перейдите в **Пользовательские приложения**, **Фронтенд**, **Мобильные**, или **Веб**, в зависимости от типа приложения, которое вы хотите контролировать.
+2. Выберите приложение.
+3. На инфографике выберите **Просмотреть геолокационный разбив**.
+4. В разделе **Геолокационный разбив**, который теперь отображается под инфографикой, выберите **Просмотреть полную мировую карту**.
+5. В строке фильтров установите фильтр `Местоположение`, чтобы масштабировать карту до этого местоположения
+6. Выберите кнопку метрики (**Apdex**, **Действия пользователей**, **Действия загрузки**, **Действия XHR**, **Пользовательские действия** или **Ошибки**), чтобы сосредоточить карту на этой метрике
+7. Выберите **Закрепить на панели мониторинга**, выберите целевую панель мониторинга, и выберите **Закрепить**.
 
-1. Drag a **Resources** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select an application from the list
-3. Select a metric: `Count per minute` or `Load time`
-4. Optional Select a custom timeframe
-5. Optional Select an environment
+**Устранение неполадок:**
 
-### Most used 3rd parties
+* Если вы не видите данных на мировой карте, вам, возможно, нужно сопоставить внутренние IP-адреса с местоположениями для вашего [веб](../../../observe/digital-experience/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web.md "Настройте Dynatrace, чтобы использовать локальные адреса для понимания, где находятся пользователи ваших веб-приложений.")-, [мобильных](../../../observe/digital-experience/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile.md "Настройте Dynatrace, чтобы использовать локальные адреса для понимания, где находятся пользователи ваших мобильных приложений.")- и [пользовательских приложений](../../../observe/digital-experience/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom.md "Настройте Dynatrace, чтобы использовать локальные адреса для понимания, где находятся пользователи ваших пользовательских приложений.").
+* Помните, что временной интервал тайла мировой карты всегда составляет **Последние 2 часа**, независимо от того, как вы установили глобальный или временной интервал панели мониторинга.
 
-Displays load details related to the three third-party content providers that your application uses most frequently.
+### Обзор ключевых действий пользователей
 
-#### Drilldowns
-
-* From the tile menu, select **View details** to open the application details page with **Resources** selected.
-
-#### Configuration
-
-To configure this tile type from the dashboard editor
-
-1. Drag a **Most used 3rd parties** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select an application from the list
-3. Select a metric: `3rd party`, `CDN`, or `1st party`
-4. Optional Select a custom timeframe
-5. Optional Select an environment
-
-### Mobile app
-
-Displays key performance indicators related to the selected mobile app (users, crash-free user rate, and number of crashes).
+Отображает обзор ключевых действий пользователей выбранного приложения и любых соответствующих открытых проблем.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the selected mobile app page.
+* Из меню тайла выберите **Просмотреть подробности**, чтобы открыть страницу анализа действий пользователей для выбранного приложения с полным списком ключевых действий пользователей.
 
-#### Configuration
+#### Настройка
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип тайла из редактора панели мониторинга
 
-1. Drag a **Mobile map** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select a mobile app from the list.
-3. Optional Select a custom timeframe.
-4. Optional Select an environment.
+1. Перетащите тайл **Обзор ключевых действий пользователей** из панели **Редактировать панель мониторинга**, вкладка **Тайлы**, в вашу панель мониторинга
+2. Выберите приложение из списка
+3. Необязательно выберите пользовательский временной интервал
+4. Необязательно выберите среду
 
-To pin this tile to your dashboard with filters set
+### Коэффициент отказов
 
-1. Go to **Mobile**.
-2. Select the mobile application for which you want to create a dashboard tile.
-3. On the application page, select **Pin to dashboard**, select the target dashboard, and select **Pin**.
-
-### Custom application
-
-
-
-Displays key performance indicators related to the selected custom application (users, crash free user rate, and number of crashes).
+Отображает сравнение текущего коэффициента отказов с вчерашним и количество входных действий.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the selected custom application page.
+* Из меню тайла выберите **Просмотреть подробности**, чтобы открыть анализ коэффициента отказов выбранного приложения.
 
-#### Configuration
+#### Настройка
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип тайла из редактора панели мониторинга
 
-1. Drag a **Custom application** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select a custom application from the list
-3. Optional Select a custom timeframe
-4. Optional Select an environment
+1. Перетащите тайл **Коэффициент отказов** из панели **Редактировать панель мониторинга**, вкладка **Тайлы**, в вашу панель мониторинга
+2. Выберите приложение из списка
+3. Необязательно выберите пользовательский временной интервал
+4. Необязательно выберите среду
 
-To pin this tile to your dashboard with filters set
+### Лучшие цели конверсии
 
-1. Go to **Custom Applications**.
-2. Select the custom application you want to monitor with a dashboard tile.
-3. On the application page, select **Pin to dashboard**, select the target dashboard, and select **Pin**.
-
-### Live user activity
-
-Displays the number of current live users overall as well as your applications with most live users.
+Отображает общий коэффициент конверсии и ваши лучшие 5 целей для выбранного приложения. Этот тайл также служит прямой ссылкой на страницу целей выбранного приложения.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open **User sessions** filtered for `Live: Yes` and `User type: Real users`.
+* Из меню тайла выберите **Просмотреть подробности**, чтобы открыть страницу **Конверсия** выбранного приложения.
 
-#### Configuration
+#### Настройка
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип тайла из редактора панели мониторинга
 
-1. Drag a **Live user activity** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Optional Select a custom timeframe
-3. Optional Select a custom management zone
-4. Optional Select an environment
+1. Перетащите тайл **Лучшие цели конверсии** из панели **Редактировать панель мониторинга**, вкладка **Тайлы**, в вашу панель мониторинга
+2. Выберите приложение из списка
+3. Необязательно выберите пользовательский временной интервал
+4. Необязательно выберите среду
 
-### Web application
+### Цель конверсии
 
-Displays key performance indicators related to the selected application: [Apdex rating](../../../observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings.md "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance."), [user actions](../../../observe/digital-experience/rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.") per minute, and number of JavaScript errors per minute.
-
-#### Drilldowns
-
-* From the tile menu, select **View details** to open the selected application page.
-
-#### Configuration
-
-To configure this tile type from the dashboard editor
-
-1. Drag a **Web application** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select an application from the list
-3. Optional Select a custom timeframe
-4. Optional Select an environment
-
-To pin this tile to your dashboard with filters set
-
-1. Go to **Web**.
-2. Select the web application you want to monitor with this tile.
-3. Display the **Performance analysis** section of the infographic.
-4. Select **Pin to dashboard**.  
-   A **Web application** tile for the selected application is pinned to the selected web dashboard.
-
-### Key user action
-
-Displays key performance indicators related to the selected application and key [user action](../../../observe/digital-experience/rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application."): user action duration, user actions/min, and number of errors/min.
+Отображает общий коэффициент конверсии и завершения для выбранной цели. Этот тайл также служит прямой ссылкой на страницу целей выбранного приложения.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the selected key user action page for the selected application and key user action.
+* Из меню тайла выберите **Просмотреть подробности**, чтобы открыть страницу целей выбранного приложения.
 
-#### Configuration
+#### Настройка
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип тайла из редактора панели мониторинга
 
-1. Drag a **Key user action** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select an application from the list
-3. Select a key user action from the list
-4. Optional Select a custom timeframe
-5. Optional Select an environment
+1. Перетащите тайл **Цель конверсии** из панели **Редактировать панель мониторинга**, вкладка **Тайлы**, в вашу панель мониторинга
+2. Выберите приложение из списка
+3. Выберите цель
+4. Необязательно выберите пользовательский временной интервал
+5. Необязательно выберите среду
 
-To pin this tile to your dashboard with filters set
+### Ошибки JavaScript
 
-1. Go to **Custom Applications**, **Frontend**, **Mobile**, or **Web**, depending on the type of application you want to monitor.
-2. Select the application you want to monitor with this tile.
-3. In the **Top 3 user actions** section, select **View full details**.
-4. Select a key user action.
-
-   * If the user action has already been selected as a key user action, select it in the **Key user actions** list.
-   * If the user action has not been selected as a key user action, select a user action from the **Top 100 user actions** tab, and then select **More** (**â¦**) > **Mark as key user action**.
-
-   The **Pin to dashboard** button is now displayed.
-5. Select **Pin to dashboard**, select a target dashboard, and select **Pin**.
-
-### User Sessions Query
-
-Create advanced queries on completed user sessions with user sessions query language.
+Отображает индикаторы ошибок JavaScript, связанные с выбранным приложением (ошибки JavaScript в минуту, процент затронутых действий пользователей).
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the user sessions query page for this query.
+* Из меню тайла выберите **Просмотреть подробности**, чтобы открыть **Сравнить ошибки JavaScript** для выбранного приложения.
 
-#### Configuration
+#### Настройка
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип тайла из редактора панели мониторинга
 
-1. Drag a **User Sessions Query** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select **Configure tile** in the **User Sessions Query** configuration pane
-3. On the **User sessions query** page, [create a query](../../../observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") and select **Run query**
-4. When you have a query that you want to link to your tile, select **Save changes to dashboard**
-5. Optional Select a custom timeframe
-6. Optional Select a custom management zone
-7. Optional Select an environment
+1. Перетащите тайл **Ошибки JavaScript** из панели **Редактировать панель мониторинга**, вкладка **Тайлы**, в вашу панель мониторинга
+2. Выберите приложение из списка
+3. Необязательно выберите пользовательский временной интервал
+4. Необязательно выберите среду
 
-## Service-level objectives
+### Ресурсы
 
-### Service-level objective
-
-Displays the following:
-
-* **Title**
-* **Status**: numeric value displayed in green (good), yellow (warning), red (bad), or gray (no data).
-* **Error budget**: numeric value displayed in green (good), yellow (warning), red (bad), or gray (no data).
-* **Target**: numeric value
-* Problems indicator is optional
-* Legend (colors) and metric names are optional
-* Colorized based on status is optional
-* **Tiles filters\*Environment**
-* Optional Set **Title**
-
-For more information, see [Configure and monitor service-level objectives with Dynatrace](../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#slodashboardtile "Create, configure, and monitor service-level objectives with Dynatrace.").
+Отображает подробности загрузки ресурсов, специфичных для приложения, сгруппированных по первичным, третьим и CDN-ресурсам.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the **Service-level objectives** page filtered to the selected SLO.
+* Из меню тайла выберите **Просмотреть подробности**, чтобы открыть страницу подробностей приложения с выбранными **Ресурсами**.
 
-#### Configuration
+#### Настройка
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип тайла из редактора панели мониторинга
 
-1. Drag a **Service-level objective** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Set **Select a SLO** to one of the listed service-level objectives.
-3. Adjust its configuration as needed.
+1. Перетащите тайл **Ресурсы** из панели **Редактировать панель мониторинга**, вкладка **Тайлы**, в вашу панель мониторинга
+2. Выберите приложение из списка
+3. Выберите метрику: `Количество в минуту` или `Время загрузки`
+4. Необязательно выберите пользовательский временной интервал
+5. Необязательно выберите среду
 
-   * Optional Set **Max shown decimals** to a different value.
-   * Optional Turn **Show metric names** on or off.
-   * Optional Turn **Show legend** on or off.
-   * Optional Turn **Show problems indicator** on or off.
-   * Optional Turn **Colorize based on status** on or off.
-   * Optional Select a custom timeframe.
-   * Optional Select an environment.
-4. Select **Done**.
+### Наиболее часто используемые третьи стороны
 
-To pin this tile to your dashboard with filters set
-
-1. Go to ![SLOs Classic](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs Classic") **Service-Level Objectives Classic**.
-2. Find the SLO you want to pin to the dashboard.
-3. In the **Actions** column, select the pin icon for that SLO.
-4. Select the dashboard to which you want to pin the tile.
-5. Select **Pin**.
-6. Select **Open dashboard** to open the dashboard in edit mode with the new tile selected.
-7. Adjust its configuration as needed.
-
-   * Optional Turn **Show legend** on or off.
-   * Optional Turn **Show metric names** on or off.
-   * Optional Turn **Show problems indicator** on or off.
-   * Optional Set **Max shown decimals** to a different value.
-   * Optional Select a custom timeframe.
-   * Optional Select an environment.
-8. Select **Done**.
-
-## Synthetic
-
-### Browser monitor
-
-Displays key performance indicators related to the selected browser monitor (availability, duration, and location status).
+Отображает подробности загрузки, связанные с тремя наиболее часто используемыми поставщиками контента третьих сторон, которые ваше приложение использует.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the selected browser monitor page.
+* Из меню тайла выберите **Просмотреть подробности**, чтобы открыть страницу подробностей приложения с выбранными **Ресурсами**.
 
-#### Configuration
+#### Настройка
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип тайла из редактора панели мониторинга
 
-1. Drag a **Browser monitor** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select a browser monitor from the list
-3. Optional Exclude maintenance windows from availability calculations
-4. Optional Select a custom timeframe
-5. Optional Select an environment
+1. Перетащите тайл **Наиболее часто используемые третьи стороны** из панели **Редактировать панель мониторинга**, вкладка **Тайлы**, в вашу панель мониторинга
+2. Выберите приложение из списка
+3. Выберите метрику: `Третья сторона`, `CDN` или `Первая сторона`
+4. Необязательно выберите пользовательский временной интервал
+5. Необязательно выберите среду
 
-To pin this tile to your dashboard with filters set
+### Мобильное приложение
 
-1. Go to **Synthetic Classic**.  
-   To filter the list, set **Type of synthetic monitor** to **Browser**.
-2. Select the browser monitor for which you want to create a dashboard tile.
-3. On the browser monitor page, select **Pin to dashboard**, select the target dashboard, and select **Pin**.
-
-### Synthetic monitor health
-
-
-
-Displays the number of active synthetic monitors in your environment against the number of synthetic monitors in your environment that are currently affected by problems.
+Отображает ключевые показатели производительности, связанные с выбранным мобильным приложением (пользователи, коэффициент безаварийных пользователей и количество аварий).
 
 #### Drilldowns
 
-Health tile drilldowns
+* Из меню тайла выберите **Просмотреть подробности**, чтобы открыть страницу выбранного мобильного приложения.
 
-* From a health tile (such as **Host health**, **Service health**, and **Application health**), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.
-* To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
+#### Настройка
 
-  ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
-* You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select **View details** to display the relevant Dynatrace page for the tile. For example, **View details** from a **Synthetic monitor health** tile displays the **Synthetic monitors** table.
+Чтобы настроить этот тип тайла из редактора панели мониторинга
 
-  ![Select tile menu](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
+1. Перетащите тайл **Мобильная карта** из панели **Редактировать панель мониторинга**, вкладка **Тайлы**, в вашу панель мониторинга
+2. Выберите мобильное приложение из списка.
+3. Необязательно выберите пользовательский временной интервал.
+4. Необязательно выберите среду.
 
-  ![Select 'View details' from tile menu](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
+Чтобы закрепить этот тайл на вашей панели мониторинга с установленными фильтрами
 
-#### Configuration
+1. Перейдите в **Мобильные**.
+2. Выберите мобильное приложение, для которого вы хотите создать тайл панели мониторинга.
+3. На странице приложения выберите **Закрепить на панели мониторинга**, выберите целевую панель мониторинга, и выберите **Закрепить**.
 
-To configure this tile type from the dashboard editor
+### Пользовательское приложение
 
-1. Drag a **Synthetic monitor health** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Optional Show a visualization on the tile
-3. Optional Select a custom timeframe
-4. Optional Select a custom management zone
-5. Optional Select an environment
-
-To pin this tile to your dashboard with filters set
-
-1. Go to **Synthetic Classic**.
-2. Set filters in the **Filtered by** box.
-3. Select **Pin to dashboard** to add a **Hosts** tile to the selected dashboard with the selected filters. You can then set any of the options described above (timeframe, management zone, environment).
-
-   * The tile will reflect all filters and options you have set
-   * The next time you select the tile on your dashboard, the **Synthetic** page will open with the filters and options already applied
-
-### Third-party monitor
-
-Displays key performance indicators related to the selected third-party monitor (availability, duration, and location status).
+Отображает ключевые показатели производительности, связанные с выбранным пользовательским приложением (пользователи, коэффициент безаварийных пользователей и количество аварий).
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the selected third-party monitor page.
+* Из меню тайла выберите **Просмотреть подробности**, чтобы открыть страницу выбранного пользовательского приложения.
 
-#### Configuration
+#### Настройка
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип тайла из редактора панели мониторинга
 
-1. Drag a **Third-party monitor** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select a third-party monitor from the list
-3. Optional Select a custom timeframe
-4. Optional Select an environment
+1. Перетащите тайл **Пользовательское приложение** из панели **Редактировать панель мониторинга**, вкладка **Тайлы**, в вашу панель мониторинга
+2. Выберите пользовательское приложение из списка
+3. Необязательно выберите пользовательский временной интервал
+4. Необязательно выберите среду
 
-To pin this tile to your dashboard with filters set
+Чтобы закрепить этот тайл на вашей панели мониторинга с установленными фильтрами
 
-1. Go to **Synthetic Classic**.
-2. In the **Filtered by** box, set **Type of synthetic monitor** to **Third-party**.
-3. Select the third-party monitor for which you want to create a dashboard tile.
-4. On the third-party monitor page, select **Pin to dashboard**, select the target dashboard, and select **Pin**.
+1. Перейдите в **Пользовательские приложения**.
+2. Выберите пользовательское приложение, которое вы хотите контролировать с помощью тайла панели мониторинга.
+3. На странице приложения выберите **Закрепить на панели мониторинга**, выберите целевую панель мониторинга, и выберите **Закрепить**.
 
-### HTTP monitor
+### Живая активность пользователей
 
-Displays key performance indicators related to the selected HTTP monitor (availability and duration).
-
-#### Drilldowns
-
-* From the tile menu, select **View details** to open the selected HTTP monitor page.
-
-#### Configuration
-
-To configure this tile type from the dashboard editor
-
-1. Drag an **HTTP monitor** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select an HTTP monitor from the list
-3. Optional Select a custom timeframe
-4. Optional Select an environment
-
-To pin this tile to your dashboard with filters set
-
-1. Go to **Synthetic Classic**.
-2. In the **Filtered by** box, set **Type of synthetic monitor** to **HTTP**.
-3. Select the HTTP monitor for which you want to create a dashboard tile.
-4. On the HTTP monitor page, select **Pin to dashboard**, select the target dashboard, and select **Pin**.
-
-## Databases
-
-### Database health
-
-Displays the number of databases in your environment against the number of databases that are currently affected by problems.
+Отображает количество текущих активных пользователей в целом, а также ваши приложения с наибольшим количеством активных пользователей.
 
 #### Drilldowns
 
-Health tile drilldowns
+* Из меню плитки выберите **Просмотреть подробности**, чтобы открыть **Сеансы пользователей**, отфильтрованные по `Активно: Да` и `Тип пользователя: Реальные пользователи`.
 
-* From a health tile (such as **Host health**, **Service health**, and **Application health**), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.
-* To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
+#### Конфигурация
 
-  ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
-* You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select **View details** to display the relevant Dynatrace page for the tile. For example, **View details** from a **Synthetic monitor health** tile displays the **Synthetic monitors** table.
+Чтобы настроить этот тип плитки из редактора панели мониторинга
 
-  ![Select tile menu](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
+1. Перетащите плитку **Активность пользователей** из панели **Редактировать панель мониторинга**, вкладки **Плитки**, в вашу панель мониторинга
+2. Необязательно выберите пользовательский временной интервал
+3. Необязательно выберите пользовательскую зону управления
+4. Необязательно выберите среду
 
-  ![Select 'View details' from tile menu](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
+### Веб-приложение
 
-#### Configuration
-
-To configure this tile type from the dashboard editor
-
-1. Drag a **Database health** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Optional Show a visualization on the tile
-3. Optional Select a custom timeframe
-4. Optional Select a custom management zone
-5. Optional Select an environment
-
-### Database performance
-
-Displays key performance indicators related to the selected database service (commits per hour, statements per minute, and response time).
+Отображает ключевые показатели производительности, связанные с выбранным веб-приложением: [рейтинг Apdex](../../../observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings.md "Узнайте, как Dynatrace использует Apdex для измерения удовлетворенности пользователей производительностью приложения."), [действия пользователей](../../../observe/digital-experience/rum-concepts/user-actions.md "Узнайте, что такое действия пользователей и как они помогают вам понять, что пользователи делают с вашим приложением.") в минуту, и количество ошибок JavaScript в минуту.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open the selected Database service page.
+* Из меню плитки выберите **Просмотреть подробности**, чтобы открыть страницу выбранного веб-приложения.
 
-#### Configuration
+#### Конфигурация
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип плитки из редактора панели мониторинга
 
-1. Drag a **Database performance** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Select a database service from the list.
-3. Optional Select a custom timeframe
-4. Optional Select an environment
+1. Перетащите плитку **Веб-приложение** из панели **Редактировать панель мониторинга**, вкладки **Плитки**, в вашу панель мониторинга
+2. Выберите приложение из списка
+3. Необязательно выберите пользовательский временной интервал
+4. Необязательно выберите среду
 
-## Integrations
+Чтобы закрепить эту плитку на вашей панели мониторинга с установленными фильтрами
 
-### Data center service health
+1. Перейдите в **Веб**.
+2. Выберите веб-приложение, которое вы хотите контролировать с помощью этой плитки.
+3. Отобразите раздел **Анализ производительности** инфографики.
+4. Выберите **Закрепить на панели мониторинга**.  
+   Плитка **Веб-приложение** для выбранного приложения закрепляется на выбранной веб-панели мониторинга.
 
-Displays the total number of data center services in your environment against the number of data center services that are currently affected by problems.
+### Ключевое действие пользователя
 
-#### Drilldowns
-
-Health tile drilldowns
-
-* From a health tile (such as **Host health**, **Service health**, and **Application health**), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.
-* To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
-
-  ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
-* You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select **View details** to display the relevant Dynatrace page for the tile. For example, **View details** from a **Synthetic monitor health** tile displays the **Synthetic monitors** table.
-
-  ![Select tile menu](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
-
-  ![Select 'View details' from tile menu](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
-
-#### Configuration
-
-To configure this tile type from the dashboard editor
-
-1. Drag a **Data center service health** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Optional Select a custom timeframe
-3. Optional Select a custom management zone
-4. Optional Select an environment
-
-## Analysis
-
-### Problems
-
-Displays the number of problems that are currently watched and active against the number of resolved problems in your environment. When a problem is active, the problem count is displayed in red.
+Отображает ключевые показатели производительности, связанные с выбранным приложением и ключевым [действием пользователя](../../../observe/digital-experience/rum-concepts/user-actions.md "Узнайте, что такое действия пользователей и как они помогают вам понять, что пользователи делают с вашим приложением."): продолжительность действия пользователя, действия пользователей в минуту, и количество ошибок в минуту.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open your [Problems](../../../dynatrace-intelligence/root-cause-analysis/concepts.md "Get acquainted with root cause analysis concepts.") feed.
+* Из меню плитки выберите **Просмотреть подробности**, чтобы открыть страницу выбранного ключевого действия пользователя для выбранного приложения и ключевого действия пользователя.
 
-#### Configuration
+#### Конфигурация
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип плитки из редактора панели мониторинга
 
-1. Drag a **Problems** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Optional Select a custom timeframe
-3. Optional Select a custom management zone
-4. Optional Select an environment
+1. Перетащите плитку **Ключевое действие пользователя** из панели **Редактировать панель мониторинга**, вкладки **Плитки**, в вашу панель мониторинга
+2. Выберите приложение из списка
+3. Выберите ключевое действие пользователя из списка
+4. Необязательно выберите пользовательский временной интервал
+5. Необязательно выберите среду
+
+Чтобы закрепить эту плитку на вашей панели мониторинга с установленными фильтрами
+
+1. Перейдите в **Пользовательские приложения**, **Фронтенд**, **Мобильное** или **Веб**, в зависимости от типа приложения, которое вы хотите контролировать.
+2. Выберите приложение, которое вы хотите контролировать с помощью этой плитки.
+3. В разделе **Топ-3 действия пользователей** выберите **Просмотреть полные подробности**.
+4. Выберите ключевое действие пользователя.
+
+   * Если действие пользователя уже было выбрано как ключевое действие пользователя, выберите его в списке **Ключевые действия пользователей**.
+   * Если действие пользователя не было выбрано как ключевое действие пользователя, выберите действие пользователя из вкладки **Топ-100 действий пользователей**, а затем выберите **Больше** (**…**) > **Отметить как ключевое действие пользователя**.
+
+   Кнопка **Закрепить на панели мониторинга** теперь отображается.
+5. Выберите **Закрепить на панели мониторинга**, выберите целевую панель мониторинга, и выберите **Закрепить**.
+
+### Запрос сеанса пользователя
+
+Создайте расширенные запросы на завершенные сеансы пользователей с помощью языка запросов сеанса пользователя.
+
+#### Drilldowns
+
+* Из меню плитки выберите **Просмотреть подробности**, чтобы открыть страницу запроса сеанса пользователя для этого запроса.
+
+#### Конфигурация
+
+Чтобы настроить этот тип плитки из редактора панели мониторинга
+
+1. Перетащите плитку **Запрос сеанса пользователя** из панели **Редактировать панель мониторинга**, вкладки **Плитки**, в вашу панель мониторинга
+2. Выберите **Настроить плитку** в панели конфигурации **Запрос сеанса пользователя**
+3. На странице **Запрос сеанса пользователя** [создайте запрос](../../../observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Узнайте, как вы можете получить доступ и запросить данные о сеансах пользователей на основе ключевых слов, синтаксиса, функций и многое другое.") и выберите **Выполнить запрос**
+4. Когда у вас есть запрос, который вы хотите связать с вашей плиткой, выберите **Сохранить изменения в панели мониторинга**
+5. Необязательно выберите пользовательский временной интервал
+6. Необязательно выберите пользовательскую зону управления
+7. Необязательно выберите среду
+
+## Цели обслуживания
+
+### Цель обслуживания
+
+Отображает следующее:
+
+* **Название**
+* **Статус**: числовое значение, отображаемое в зеленом (хорошо), желтом (предупреждение), красном (плохо) или сером (нет данных) цвете.
+* **Бюджет ошибок**: числовое значение, отображаемое в зеленом (хорошо), желтом (предупреждение), красном (плохо) или сером (нет данных) цвете.
+* **Цель**: числовое значение
+* Индикатор проблем является необязательным
+* Легенда (цвета) и имена метрик являются необязательными
+* Окраска на основе статуса является необязательной
+* **Фильтры плиток\*Environment**
+* Необязательно установите **Название**
+
+Для получения дополнительной информации см. [Настройка и мониторинг целей обслуживания с Dynatrace](../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#slodashboardtile "Создайте, настройте и контролируйте цели обслуживания с Dynatrace.").
+
+#### Drilldowns
+
+* Из меню плитки выберите **Просмотреть подробности**, чтобы открыть страницу **Цели обслуживания**, отфильтрованную по выбранной цели обслуживания.
+
+#### Конфигурация
+
+Чтобы настроить этот тип плитки из редактора панели мониторинга
+
+1. Перетащите плитку **Цель обслуживания** из панели **Редактировать панель мониторинга**, вкладки **Плитки**, в вашу панель мониторинга
+2. Установите **Выберите цель обслуживания** на одну из перечисленных целей обслуживания.
+3. Настройте ее конфигурацию по мере необходимости.
+
+   * Необязательно установите **Максимальное количество знаков после запятой** на другое значение.
+   * Необязательно включите или выключите **Показывать имена метрик**.
+   * Необязательно включите или выключите **Показывать легенду**.
+   * Необязательно включите или выключите **Показывать индикатор проблем**.
+   * Необязательно включите или выключите **Окраску на основе статуса**.
+   * Необязательно выберите пользовательский временной интервал.
+   * Необязательно выберите среду.
+4. Выберите **Готово**.
+
+Чтобы закрепить эту плитку на вашей панели мониторинга с установленными фильтрами
+
+1. Перейдите в ![Цели обслуживания Classic](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "Цели обслуживания Classic") **Цели обслуживания Classic**.
+2. Найдите цель обслуживания, которую вы хотите закрепить на панели мониторинга.
+3. В столбце **Действия** выберите значок закрепления для этой цели обслуживания.
+4. Выберите панель мониторинга, на которую вы хотите закрепить плитку.
+5. Выберите **Закрепить**.
+6. Выберите **Открыть панель мониторинга**, чтобы открыть панель мониторинга в режиме редактирования с выбранной плиткой.
+7. Настройте ее конфигурацию по мере необходимости.
+
+   * Необязательно включите или выключите **Показывать легенду**.
+   * Необязательно включите или выключите **Показывать имена метрик**.
+   * Необязательно включите или выключите **Показывать индикатор проблем**.
+   * Необязательно установите **Максимальное количество знаков после запятой** на другое значение.
+   * Необязательно выберите пользовательский временной интервал.
+   * Необязательно выберите среду.
+8. Выберите **Готово**.
+
+## Синтетическое
+
+### Монитор браузера
+
+Отображает ключевые показатели производительности, связанные с выбранным монитором браузера (доступность, продолжительность и статус местоположения).
+
+#### Drilldowns
+
+* Из меню плитки выберите **Просмотреть подробности**, чтобы открыть страницу выбранного монитора браузера.
+
+#### Конфигурация
+
+Чтобы настроить этот тип плитки из редактора панели мониторинга
+
+1. Перетащите плитку **Монитор браузера** из панели **Редактировать панель мониторинга**, вкладки **Плитки**, в вашу панель мониторинга
+2. Выберите монитор браузера из списка
+3. Необязательно исключите окна обслуживания из расчетов доступности
+4. Необязательно выберите пользовательский временной интервал
+5. Необязательно выберите среду
+
+Чтобы закрепить эту плитку на вашей панели мониторинга с установленными фильтрами
+
+1. Перейдите в **Синтетическое Classic**.  
+   Чтобы отфильтровать список, установите **Тип синтетического монитора** на **Браузер**.
+2. Выберите монитор браузера, для которого вы хотите создать плитку панели мониторинга.
+3. На странице монитора браузера выберите **Закрепить на панели мониторинга**, выберите целевую панель мониторинга, и выберите **Закрепить**.
+
+### Здоровье синтетического монитора
+
+#### Отображение количества активных синтетических мониторов
+
+Отображает количество активных синтетических мониторов в вашей среде против количества синтетических мониторов в вашей среде, на которые в настоящее время влияют проблемы.
+
+#### Drilldowns
+
+Drilldowns для плитки здоровья
+
+* Из плитки здоровья (например, **Здоровье хоста**, **Здоровье сервиса** и **Здоровье приложения**), где вы видите зеленые и красные элементы (например, хосты, сервисы или приложения), наведите курсор на любой проблемный (красный) элемент, чтобы увидеть идентификатор элемента.
+* Чтобы перейти к проблемному (красному) элементу, выберите красный шестиугольник, а затем выберите кнопку **Просмотр...**. На этом примере **Плитка здоровья синтетического монитора** мы выбрали красный элемент, который активировал кнопку drilldown **Просмотр теста** для этого элемента.
+
+  ![Перейти к проблемному элементу из плитки здоровья](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
+* Вы не можете перейти из здорового (зеленого) элемента. Однако из любой плитки вы можете выбрать меню в правом верхнем углу плитки, а затем выбрать **Просмотр деталей**, чтобы отобразить соответствующую страницу Dynatrace для плитки. Например, **Просмотр деталей** из плитки **Здоровье синтетического монитора** отображает таблицу **Синтетические мониторы**.
+
+  ![Выбрать меню плитки](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
+
+  ![Выбрать 'Просмотр деталей' из меню плитки](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
+
+#### Конфигурация
+
+Чтобы настроить этот тип плитки из редактора панели мониторинга
+
+1. Перетащите плитку **Здоровье синтетического монитора** из панели **Редактировать панель мониторинга**, вкладка **Плитки**, в вашу панель мониторинга
+2. Необязательно: Отобразить визуализацию на плитке
+3. Необязательно: Выбрать пользовательский временной интервал
+4. Необязательно: Выбрать пользовательскую зону управления
+5. Необязательно: Выбрать среду
+
+Чтобы прикрепить эту плитку к вашей панели мониторинга с установленными фильтрами
+
+1. Перейдите в **Синтетический классический**.
+2. Установите фильтры в поле **Отфильтровано по**.
+3. Выберите **Прикрепить к панели мониторинга**, чтобы добавить плитку **Хосты** к выбранной панели мониторинга с выбранными фильтрами. Затем вы можете установить любые из опций, описанных выше (временной интервал, зона управления, среда).
+
+   * Плитка будет отражать все фильтры и опции, которые вы установили
+   * В следующий раз, когда вы выберете плитку на вашей панели мониторинга, страница **Синтетический** откроется с уже примененными фильтрами и опциями
+
+### Монитор третьей стороны
+
+Отображает ключевые показатели производительности, связанные с выбранным монитором третьей стороны (доступность, продолжительность и статус местоположения).
+
+#### Drilldowns
+
+* Из меню плитки выберите **Просмотр деталей**, чтобы открыть страницу выбранного монитора третьей стороны.
+
+#### Конфигурация
+
+Чтобы настроить этот тип плитки из редактора панели мониторинга
+
+1. Перетащите плитку **Монитор третьей стороны** из панели **Редактировать панель мониторинга**, вкладка **Плитки**, в вашу панель мониторинга
+2. Выберите монитор третьей стороны из списка
+3. Необязательно: Выбрать пользовательский временной интервал
+4. Необязательно: Выбрать среду
+
+Чтобы прикрепить эту плитку к вашей панели мониторинга с установленными фильтрами
+
+1. Перейдите в **Синтетический классический**.
+2. В поле **Отфильтровано по** установите **Тип синтетического монитора** на **Третья сторона**.
+3. Выберите монитор третьей стороны, для которого вы хотите создать плитку панели мониторинга.
+4. На странице монитора третьей стороны выберите **Прикрепить к панели мониторинга**, выберите целевую панель мониторинга и выберите **Прикрепить**.
+
+### Монитор HTTP
+
+Отображает ключевые показатели производительности, связанные с выбранным монитором HTTP (доступность и продолжительность).
+
+#### Drilldowns
+
+* Из меню плитки выберите **Просмотр деталей**, чтобы открыть страницу выбранного монитора HTTP.
+
+#### Конфигурация
+
+Чтобы настроить этот тип плитки из редактора панели мониторинга
+
+1. Перетащите плитку **Монитор HTTP** из панели **Редактировать панель мониторинга**, вкладка **Плитки**, в вашу панель мониторинга
+2. Выберите монитор HTTP из списка
+3. Необязательно: Выбрать пользовательский временной интервал
+4. Необязательно: Выбрать среду
+
+Чтобы прикрепить эту плитку к вашей панели мониторинга с установленными фильтрами
+
+1. Перейдите в **Синтетический классический**.
+2. В поле **Отфильтровано по** установите **Тип синтетического монитора** на **HTTP**.
+3. Выберите монитор HTTP, для которого вы хотите создать плитку панели мониторинга.
+4. На странице монитора HTTP выберите **Прикрепить к панели мониторинга**, выберите целевую панель мониторинга и выберите **Прикрепить**.
+
+## Базы данных
+
+### Здоровье базы данных
+
+Отображает количество баз данных в вашей среде против количества баз данных, на которые в настоящее время влияют проблемы.
+
+#### Drilldowns
+
+Drilldowns для плитки здоровья
+
+* Из плитки здоровья (например, **Здоровье хоста**, **Здоровье сервиса** и **Здоровье приложения**), где вы видите зеленые и красные элементы (например, хосты, сервисы или приложения), наведите курсор на любой проблемный (красный) элемент, чтобы увидеть идентификатор элемента.
+* Чтобы перейти к проблемному (красному) элементу, выберите красный шестиугольник, а затем выберите кнопку **Просмотр...**. На этом примере **Плитка здоровья синтетического монитора** мы выбрали красный элемент, который активировал кнопку drilldown **Просмотр теста** для этого элемента.
+
+  ![Перейти к проблемному элементу из плитки здоровья](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
+* Вы не можете перейти из здорового (зеленого) элемента. Однако из любой плитки вы можете выбрать меню в правом верхнем углу плитки, а затем выбрать **Просмотр деталей**, чтобы отобразить соответствующую страницу Dynatrace для плитки. Например, **Просмотр деталей** из плитки **Здоровье синтетического монитора** отображает таблицу **Синтетические мониторы**.
+
+  ![Выбрать меню плитки](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
+
+  ![Выбрать 'Просмотр деталей' из меню плитки](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
+
+#### Конфигурация
+
+Чтобы настроить этот тип плитки из редактора панели мониторинга
+
+1. Перетащите плитку **Здоровье базы данных** из панели **Редактировать панель мониторинга**, вкладка **Плитки**, в вашу панель мониторинга
+2. Необязательно: Отобразить визуализацию на плитке
+3. Необязательно: Выбрать пользовательский временной интервал
+4. Необязательно: Выбрать пользовательскую зону управления
+5. Необязательно: Выбрать среду
+
+### Производительность базы данных
+
+Отображает ключевые показатели производительности, связанные с выбранной базой данных (коммиты в час, операторы в минуту и время ответа).
+
+#### Drilldowns
+
+* Из меню плитки выберите **Просмотр деталей**, чтобы открыть страницу выбранной базы данных.
+
+#### Конфигурация
+
+Чтобы настроить этот тип плитки из редактора панели мониторинга
+
+1. Перетащите плитку **Производительность базы данных** из панели **Редактировать панель мониторинга**, вкладка **Плитки**, в вашу панель мониторинга
+2. Выберите базу данных из списка.
+3. Необязательно: Выбрать пользовательский временной интервал
+4. Необязательно: Выбрать среду
+
+## Интеграции
+
+### Здоровье сервиса центра данных
+
+Отображает общее количество сервисов центра данных в вашей среде против количества сервисов центра данных, на которые в настоящее время влияют проблемы.
+
+#### Drilldowns
+
+Drilldowns для плитки здоровья
+
+* Из плитки здоровья (например, **Здоровье хоста**, **Здоровье сервиса** и **Здоровье приложения**), где вы видите зеленые и красные элементы (например, хосты, сервисы или приложения), наведите курсор на любой проблемный (красный) элемент, чтобы увидеть идентификатор элемента.
+* Чтобы перейти к проблемному (красному) элементу, выберите красный шестиугольник, а затем выберите кнопку **Просмотр...**. На этом примере **Плитка здоровья синтетического монитора** мы выбрали красный элемент, который активировал кнопку drilldown **Просмотр теста** для этого элемента.
+
+  ![Перейти к проблемному элементу из плитки здоровья](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
+* Вы не можете перейти из здорового (зеленого) элемента. Однако из любой плитки вы можете выбрать меню в правом верхнем углу плитки, а затем выбрать **Просмотр деталей**, чтобы отобразить соответствующую страницу Dynatrace для плитки. Например, **Просмотр деталей** из плитки **Здоровье синтетического монитора** отображает таблицу **Синтетические мониторы**.
+
+  ![Выбрать меню плитки](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
+
+  ![Выбрать 'Просмотр деталей' из меню плитки](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
+
+#### Конфигурация
+
+Чтобы настроить этот тип плитки из редактора панели мониторинга
+
+1. Перетащите плитку **Здоровье сервиса центра данных** из панели **Редактировать панель мониторинга**, вкладка **Плитки**, в вашу панель мониторинга
+2. Необязательно: Выбрать пользовательский временной интервал
+3. Необязательно: Выбрать пользовательскую зону управления
+4. Необязательно: Выбрать среду
+
+## Анализ
+
+### Проблемы
+
+Отображает количество проблем, которые в настоящее время отслеживаются и активны, против количества решенных проблем в вашей среде. Когда проблема активна, счетчик проблем отображается красным.
+
+#### Drilldowns
+
+* Из меню плитки выберите **Просмотр деталей**, чтобы открыть вашу [Проблемы](../../../dynatrace-intelligence/root-cause-analysis/concepts.md "Ознакомьтесь с концепциями анализа коренной причины.") ленту.
+
+#### Конфигурация
+
+Чтобы настроить этот тип плитки из редактора панели мониторинга
+
+1. Перетащите плитку **Проблемы** из панели **Редактировать панель мониторинга**, вкладка **Плитки**, в вашу панель мониторинга
+2. Необязательно: Выбрать пользовательский временной интервал
+3. Необязательно: Выбрать пользовательскую зону управления
+4. Необязательно: Выбрать среду
 
 ### Smartscape
 
-Synthetically visualizes your environment components based on [Smartscape](../../smartscape-classic.md "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") analysis. The tile display constantly cycles through the five Smartscape layers: applications, services, OS processes, hosts, and datacenters. For each layer, the tile shows the total number in your environment and, in red, the number currently affected by problems.
+Синтетически визуализирует компоненты вашей среды на основе анализа [Smartscape](../../smartscape-classic.md "Узнайте, как Smartscape Classic визуализирует все сущности и зависимости в вашей среде."). Плитка постоянно циклически проходит через пять слоев Smartscape: приложения, сервисы, процессы ОС, хосты и центры данных. Для каждого слоя плитка показывает общее количество в вашей среде и, красным, количество, на которое в настоящее время влияют проблемы.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open your [Smartscape](../../smartscape-classic.md#services "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") topology view to the Services layer.
+* Из меню плитки выберите **Просмотр деталей**, чтобы открыть вашу [Smartscape](../../smartscape-classic.md#services "Узнайте, как Smartscape Classic визуализирует все сущности и зависимости в вашей среде.") топологический вид на слой Сервисы.
 
-#### Configuration
+#### Конфигурация
 
-To configure this tile type from the dashboard editor
+Чтобы настроить этот тип плитки из редактора панели мониторинга
 
-1. Drag a **Smartscape** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
-2. Optional Select a custom timeframe
-3. Optional Select a custom management zone
-4. Optional Select an environment
+1. Перетащите плитку **Smartscape** из панели **Редактировать панель мониторинга**, вкладка **Плитки**, в вашу панель мониторинга
+2. Необязательно: Выбрать пользовательский временной интервал
+3. Необязательно: Выбрать пользовательскую зону управления
+4. Необязательно: Выбрать среду
 
-### Log query table
+### Таблица запроса журнала
 
+Отображает события журнала, соответствующие конкретному запросу журнальных данных. В таблице отображаются только столбцы, настроенные в просмотрщике журналов для этого запроса.
 
+#### Конфигурация
 
-Displays log events matching the specific log data query. Only columns configured in the log viewer for that query are displayed in the table tile.
+Чтобы закрепить этот тип плитки на вашей панели мониторинга с установленными фильтрами:
 
-#### Configuration
+1. Перейдите к ![Журналы и события](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Журналы и события") **Журналы и события Classic**.
+2. В **Просмотрщике журналов** введите запрос журнала, который должен быть отражен плиткой.
+3. Необязательно выберите **Параметры таблицы**, чтобы указать, какие столбцы таблицы отображать.
+4. Выберите **Закрепить на панели мониторинга**, выберите целевую панель мониторинга, а затем выберите **Закрепить**.
+5. Выберите **Открыть панель мониторинга**, чтобы увидеть новую плитку на панели мониторинга.
 
-To pin this tile type to your dashboard with filters set
+   * Плитка отображает результаты запроса, который вы указали в **Просмотрщике журналов**.
+   * Отображаются только столбцы, которые вы указали с помощью **Параметров таблицы**.
 
-1. Go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**.
-2. In **Log Viewer**, enter the log query that you want the tile to reflect.
-3. Optional Select **Table options** to specify which table columns to display.
-4. Select **Pin to dashboard**, select the target dashboard, and then select **Pin**.
-5. Select **Open dashboard** to see the new tile on the dashboard.
+Чтобы настроить этот тип плитки из редактора панели мониторинга:
 
-   * The tile displays the results of the query you specified in **Log Viewer**.
-   * Only the columns you specified with **Table options** are displayed.
-
-To configure this tile type from the dashboard editor
-
-1. Drag a **Log query table** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard.
-2. Select **Configure tile** to display **Log Viewer**.
-3. Enter a log query.
-4. Optional Select **Table options** to specify which table columns to display.
-5. Select **Save changes to dashboard** to return to editing the **Log query table** tile on the dashboard.
-6. Optional Select a custom timeframe.
-7. Optional Select a custom management zone.
-8. Optional Select an environment.
+1. Перетащите плитку **Таблица запроса журнала** из панели **Редактировать панель мониторинга**, вкладка **Плитки**, на свою панель мониторинга.
+2. Выберите **Настроить плитку**, чтобы отобразить **Просмотрщик журналов**.
+3. Введите запрос журнала.
+4. Необязательно выберите **Параметры таблицы**, чтобы указать, какие столбцы таблицы отображать.
+5. Выберите **Сохранить изменения в панели мониторинга**, чтобы вернуться к редактированию плитки **Таблица запроса журнала** на панели мониторинга.
+6. Необязательно выберите пользовательский временной интервал.
+7. Необязательно выберите пользовательскую зону управления.
+8. Необязательно выберите среду.

@@ -1,5 +1,5 @@
 ---
-title: Mobile applications
+title: Мобильные приложения
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications
 scraped: 2026-03-06T21:14:02.066070
 ---

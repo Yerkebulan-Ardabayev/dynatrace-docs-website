@@ -1,5 +1,5 @@
 ---
-title: Link cross-origin XHR user actions and their distributed traces
+title: Связывание cross-origin XHR действий пользователя и их распределённых трассировок
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/initial-setup/link-cross-origin-xhrs
 scraped: 2026-03-06T21:28:47.854342
 ---

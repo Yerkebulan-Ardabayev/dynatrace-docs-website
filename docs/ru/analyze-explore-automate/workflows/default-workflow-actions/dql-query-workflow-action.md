@@ -1,22 +1,22 @@
 ---
-title: DQL query action for Workflows
+title: DQL запрос действий для Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action
 scraped: 2026-03-02T21:31:44.785730
 ---
 
-# Действие DQL-запроса для Workflows
+# DQL запрос действий для Workflows
 
-# Действие DQL-запроса для Workflows
+# DQL запрос действий для Workflows
 
-* Latest Dynatrace
-* Reference
-* 1-min read
-* Published Apr 02, 2024
+* Последнее Dynatrace
+* Справка
+* 1-минутное чтение
+* Опубликовано 02 апр. 2024 г.
 
-Действие **Execute DQL Query** для Workflows позволяет использовать DQL-запросы в рабочем процессе. В поле **DQL query** введите ваш [DQL-запрос](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language."). В поле **Segment** можно дополнительно выбрать сегмент фильтрации.
+Действие **Выполнить запрос DQL** для Workflows позволяет использовать запросы DQL в рабочем процессе. В **запросе DQL** введите свой [запрос DQL](../../../platform/grail/dynatrace-query-language.md "Как использовать язык запросов Dynatrace."). В **Сегменте** вы можете необязательно выбрать фильтровый сегмент.
 
-Результаты можно найти на вкладке **Result** в разделе **Execution** — их можно использовать в последующих задачах.
+Вы можете найти результаты во вкладке **Результат** выполнения, который можно использовать в последующих задачах.
 
 ## Связанные темы
 
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* [Язык запросов Dynatrace](../../../platform/grail/dynatrace-query-language.md "Как использовать язык запросов Dynatrace.")

@@ -1,5 +1,5 @@
 ---
-title: Segment logs by bucket
+title: Сегментация логов по bucket
 source: https://www.dynatrace.com/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket
 scraped: 2026-03-06T21:13:17.215643
 ---

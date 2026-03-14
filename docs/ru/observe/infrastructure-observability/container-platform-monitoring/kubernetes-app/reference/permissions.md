@@ -1,5 +1,5 @@
 ---
-title: Permissions
+title: Права доступа
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/reference/permissions
 scraped: 2026-02-06T16:19:43.850239
 ---

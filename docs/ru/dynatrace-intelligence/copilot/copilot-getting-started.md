@@ -1,5 +1,5 @@
 ---
-title: Get started with Dynatrace Intelligence agentic and generative AI
+title: Начало работы с агентным и генеративным ИИ Dynatrace Intelligence
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-getting-started
 scraped: 2026-03-06T21:13:25.807648
 ---

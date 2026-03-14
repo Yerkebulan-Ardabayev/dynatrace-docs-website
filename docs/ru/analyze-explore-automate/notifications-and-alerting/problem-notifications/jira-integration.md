@@ -1,5 +1,5 @@
 ---
-title: Send Dynatrace notifications to Jira
+title: Отправка Dynatrace уведомлений в Jira
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration
 scraped: 2026-03-06T21:11:34.918585
 ---

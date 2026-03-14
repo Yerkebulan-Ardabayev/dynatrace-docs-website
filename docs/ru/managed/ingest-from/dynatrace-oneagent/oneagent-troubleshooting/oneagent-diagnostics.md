@@ -1,5 +1,5 @@
 ---
-title: OneAgent diagnostics
+title: Диагностика OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics
 scraped: 2026-03-04T21:32:36.436365
 ---

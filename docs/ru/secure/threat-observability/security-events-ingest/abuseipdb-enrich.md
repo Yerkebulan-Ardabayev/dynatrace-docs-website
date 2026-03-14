@@ -1,5 +1,5 @@
 ---
-title: Enrich threat observables with AbuseIPDB
+title: Обогащение наблюдаемых угроз данными AbuseIPDB
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/abuseipdb-enrich
 scraped: 2026-03-06T21:23:50.302180
 ---

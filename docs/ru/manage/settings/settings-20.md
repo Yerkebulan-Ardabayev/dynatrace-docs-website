@@ -1,5 +1,5 @@
 ---
-title: Dynatrace settings framework
+title: Фреймворк настроек Dynatrace
 source: https://www.dynatrace.com/docs/manage/settings/settings-20
 scraped: 2026-03-06T21:26:14.018111
 ---

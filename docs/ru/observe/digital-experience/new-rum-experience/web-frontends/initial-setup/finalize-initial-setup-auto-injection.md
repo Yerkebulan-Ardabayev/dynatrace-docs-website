@@ -1,5 +1,5 @@
 ---
-title: Finalize the initial setup for your auto-injected frontend
+title: Завершение начальной настройки для фронтенда с автоматическим внедрением
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/finalize-initial-setup-auto-injection
 scraped: 2026-03-05T21:35:05.243068
 ---

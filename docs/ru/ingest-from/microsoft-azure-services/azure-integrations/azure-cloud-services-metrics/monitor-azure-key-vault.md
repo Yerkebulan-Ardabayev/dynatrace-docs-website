@@ -1,5 +1,5 @@
 ---
-title: Azure Key Vault monitoring
+title: Мониторинг Azure Key Vault
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-key-vault
 scraped: 2026-03-05T21:40:30.301955
 ---

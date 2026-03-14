@@ -1,5 +1,5 @@
 ---
-title: Log content analysis
+title: Анализ содержимого журнала
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-analysis
 scraped: 2026-03-06T21:23:14.965677
 ---

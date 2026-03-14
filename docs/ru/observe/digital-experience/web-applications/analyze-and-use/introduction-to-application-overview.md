@@ -1,5 +1,5 @@
 ---
-title: Introduction to application overview page
+title: Введение в страницу обзора приложения
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/analyze-and-use/introduction-to-application-overview
 scraped: 2026-03-05T21:27:35.018091
 ---

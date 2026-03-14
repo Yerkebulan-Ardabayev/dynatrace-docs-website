@@ -1,5 +1,5 @@
 ---
-title: Manage configurations with Monaco
+title: Управление конфигурациями с Monaco
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-getting-started
 scraped: 2026-03-02T21:28:22.074262
 ---

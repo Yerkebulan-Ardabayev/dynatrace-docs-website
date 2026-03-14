@@ -1,5 +1,5 @@
 ---
-title: Business event enrichment
+title: Обогащение бизнес-событий
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-events-enrichment
 scraped: 2026-03-03T21:30:52.600686
 ---

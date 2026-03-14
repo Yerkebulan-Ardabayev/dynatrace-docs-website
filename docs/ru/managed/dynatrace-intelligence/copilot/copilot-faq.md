@@ -1,5 +1,5 @@
 ---
-title: Dynatrace Intelligence agentic and generative AI FAQ
+title: Часто задаваемые вопросы об агентном и генеративном ИИ Dynatrace Intelligence
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-faq
 scraped: 2026-03-06T21:34:50.006629
 ---

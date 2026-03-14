@@ -1,5 +1,5 @@
 ---
-title: Lookup data in Grail
+title: Поиск данных в Grail
 source: https://www.dynatrace.com/docs/platform/grail/lookup-data
 scraped: 2026-03-03T21:22:43.067716
 ---

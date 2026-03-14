@@ -1,5 +1,5 @@
 ---
-title: Query with natural language
+title: Запросы на естественном языке
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql
 scraped: 2026-03-04T21:30:33.891937
 ---

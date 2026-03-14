@@ -1,5 +1,5 @@
 ---
-title: Log alerts
+title: Оповещения журнала
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/alerting-on-logs
 scraped: 2026-03-06T21:15:23.570408
 ---

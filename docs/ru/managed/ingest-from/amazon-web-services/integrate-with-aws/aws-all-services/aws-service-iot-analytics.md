@@ -1,5 +1,5 @@
 ---
-title: AWS IoT Analytics monitoring
+title: Мониторинг AWS IoT Analytics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-iot-analytics
 scraped: 2026-03-06T21:35:49.089558
 ---

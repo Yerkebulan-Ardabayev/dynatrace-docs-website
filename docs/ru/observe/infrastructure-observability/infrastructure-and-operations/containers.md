@@ -1,5 +1,5 @@
 ---
-title: Containers
+title: Контейнеры
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/containers
 scraped: 2026-03-06T21:16:59.898065
 ---

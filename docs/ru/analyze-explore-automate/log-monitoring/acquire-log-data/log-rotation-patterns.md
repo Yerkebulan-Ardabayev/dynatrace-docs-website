@@ -1,5 +1,5 @@
 ---
-title: Log rotation patterns (Logs Classic)
+title: Шаблоны ротации журналов (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-rotation-patterns
 scraped: 2026-03-03T21:26:48.887797
 ---

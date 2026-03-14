@@ -1,5 +1,5 @@
 ---
-title: Leverage log enrichment for traces to resolve problems
+title: Использование обогащения логов для трассировок при решении проблем
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/use-cases/problems-logs-traces
 scraped: 2026-03-06T21:22:41.769050
 ---

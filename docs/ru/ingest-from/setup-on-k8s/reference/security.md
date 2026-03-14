@@ -20,11 +20,11 @@ scraped: 2026-03-02T21:18:55.414129
 
 ### Dynatrace Operator
 
-**Purpose:** Maintains the lifecycle of Dynatrace components. Replaces OneAgent Operator.
+**Назначение:** Управляет жизненным циклом компонентов Dynatrace. Заменяет OneAgent Operator.
 
-**Default configuration:** `1-replica-per-cluster`
+**Конфигурация по умолчанию:** `1-replica-per-cluster`
 
-**RBAC objects**:
+**Объекты RBAC**:
 
 * Service Account `dynatrace-operator`
 * Cluster-Role `dynatrace-operator`
@@ -32,7 +32,7 @@ scraped: 2026-03-02T21:18:55.414129
 
 #### Разрешения на уровне кластера
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `nodes` | `""` | Get/List/Watch |  |
 | `namespaces` | `""` | Get/List/Watch/Update |  |
@@ -44,9 +44,9 @@ scraped: 2026-03-02T21:18:55.414129
 | `customresourcedefinitions/status` | `apiextensions.k8s.io` | Get/Update | `dynakubes.dynatrace.com` `edgeconnects.dynatrace.com` |
 | `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` `nonroot-v2` |
 
-#### Namespace `dynatrace` permissions
+#### Разрешения пространства имён `dynatrace`
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `dynakubes` | `dynatrace.com` | Get/List/Watch/Update |  |
 | `edgeconnects` | `dynatrace.com` | Get/List/Watch/Update |  |
@@ -70,15 +70,15 @@ scraped: 2026-03-02T21:18:55.414129
 
 ### Сервер вебхуков Dynatrace Operator
 
-**Purposes**:
+**Назначение**:
 
-* Modifies pod definitions to include Dynatrace code modules for application observability
-* Validates DynaKube custom resources
-* Handles the DynaKube conversion between versions
+* Модифицирует определения подов для включения модулей кода Dynatrace для наблюдаемости приложений
+* Валидирует пользовательские ресурсы DynaKube
+* Обрабатывает конвертацию DynaKube между версиями
 
-**Default configuration**: `1-replica-per-cluster`, can be scaled
+**Конфигурация по умолчанию**: `1-replica-per-cluster`, может масштабироваться
 
-**RBAC objects**:
+**Объекты RBAC**:
 
 * Service Account `dynatrace-webhook`
 * Cluster-Role `dynatrace-webhook`
@@ -86,7 +86,7 @@ scraped: 2026-03-02T21:18:55.414129
 
 #### Разрешения на уровне кластера
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `namespaces` | `""` | Get/List/Watch/Update |  |
 | `secrets` | `""` | Create |  |
@@ -101,9 +101,9 @@ scraped: 2026-03-02T21:18:55.414129
 | `deploymentconfigs` | `apps.openshift.io` | Get |  |
 | `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` `nonroot-v2` |
 
-#### Namespace `dynatrace` permissions
+#### Разрешения пространства имён `dynatrace`
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `events` | `""` | Create/Patch |  |
 | `secrets` | `""` | Get/List/Watch |  |
@@ -113,15 +113,15 @@ scraped: 2026-03-02T21:18:55.414129
 
 ### CSI-драйвер Dynatrace Operator
 
-**Purpose**:
+**Назначение**:
 
-* For `applicationMonitoring` configurations, it provides the necessary OneAgent binary for application monitoring to the pods on each node.
-* For `hostMonitoring` configurations, it provides a writable folder for the OneAgent configurations when a read-only host file system is used.
-* For `cloudNativeFullStack`, it provides both of the above.
+* Для конфигураций `applicationMonitoring` предоставляет необходимый бинарный файл OneAgent для мониторинга приложений подам на каждом узле.
+* Для конфигураций `hostMonitoring` предоставляет доступную для записи папку для конфигураций OneAgent при использовании файловой системы хоста в режиме «только чтение».
+* Для `cloudNativeFullStack` предоставляет оба вышеперечисленных варианта.
 
-**Default configuration**: `1-replica-per-node` (deployed via a DaemonSet)
+**Конфигурация по умолчанию**: `1-replica-per-node` (развёртывается через DaemonSet)
 
-**RBAC objects**:
+**Объекты RBAC**:
 
 * Service Account `dynatrace-oneagent-csi-driver`
 * Cluster-Role `dynatrace-oneagent-csi-driver`
@@ -129,13 +129,13 @@ scraped: 2026-03-02T21:18:55.414129
 
 #### Разрешение на уровне кластера
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
 
-#### Namespace `dynatrace` permissions
+#### Разрешения пространства имён `dynatrace`
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `dynakubes` | `dynatrace.com` | Get/List/Watch |  |
 | `secrets` | `""` | Get/List/Watch |  |
@@ -146,27 +146,27 @@ scraped: 2026-03-02T21:18:55.414129
 
 ### ActiveGate
 
-#### Kubernetes Platform Monitoring
+#### Мониторинг платформы Kubernetes
 
-**Purpose**: collects cluster and workload metrics, events, and status from the Kubernetes API.
+**Назначение**: собирает метрики кластера и рабочих нагрузок, события и статус из Kubernetes API.
 
-**Default configuration**: `1-replica-per-cluster`, can be scaled
+**Конфигурация по умолчанию**: `1-replica-per-cluster`, может масштабироваться
 
-**RBAC objects**:
+**Объекты RBAC**:
 
 * Service Account: `dynatrace-kubernetes`
 * Cluster-Roles:
 
   + `dynatrace-kubernetes-monitoring`
 
-    - Used to aggregate all ClusterRoles with the label `rbac.dynatrace.com/aggregate-to-monitoring: "true"`
+    - Используется для агрегации всех ClusterRoles с меткой `rbac.dynatrace.com/aggregate-to-monitoring: "true"`
   + `dynatrace-kubernetes-monitoring-default`
 
-    - Aggregated by `dynatrace-kubernetes-monitoring`, more details can be found in the [ClusterRole aggregation documentation](../guides/deployment-and-configuration/cluster-role-aggregation.md "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.")
+    - Агрегируется через `dynatrace-kubernetes-monitoring`, подробности см. в [документации по агрегации ClusterRole](../guides/deployment-and-configuration/cluster-role-aggregation.md "Описание использования агрегации ClusterRole в Dynatrace Operator для управления разрешениями мониторинга Kubernetes.")
 
 ##### Разрешения на уровне кластера
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `nodes` | `""` | List/Watch/Get |  |
 | `pods` | `""` | List/Watch/Get |  |
@@ -197,21 +197,20 @@ scraped: 2026-03-02T21:18:55.414129
 
 #### Dynatrace Kubernetes Security Posture Management (KSPM)
 
-**Purposes**: [Kubernetes Security Posture Management](../deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.") detects, analyzes, and continuously watches for
-misconfigurations, security hardening guidelines, and potential compliance violations in Kubernetes.
+**Назначение**: [Kubernetes Security Posture Management](../deployment/security-posture-management.md "Настройка и включение Security Posture Management в Kubernetes.") обнаруживает, анализирует и непрерывно отслеживает ошибки конфигурации, рекомендации по усилению безопасности и потенциальные нарушения соответствия в Kubernetes.
 
-**Default configuration**: `1-replica-per-node` (deployed via a DaemonSet)
+**Конфигурация по умолчанию**: `1-replica-per-node` (развёртывается через DaemonSet)
 
-**RBAC objects**:
+**Объекты RBAC**:
 
 * Service Account `dynatrace-node-config-collector`
 * Cluster-Role `dynatrace-kubernetes-monitoring-kspm`
 
-  + Aggregated by the `dynatrace-kubernetes-monitoring` ClusterRole, more details can be found in the [ClusterRole aggregation documentation](../guides/deployment-and-configuration/cluster-role-aggregation.md "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.")
+  + Агрегируется через ClusterRole `dynatrace-kubernetes-monitoring`, подробности см. в [документации по агрегации ClusterRole](../guides/deployment-and-configuration/cluster-role-aggregation.md "Описание использования агрегации ClusterRole в Dynatrace Operator для управления разрешениями мониторинга Kubernetes.")
 
 ##### Разрешения на уровне кластера
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `namespaces` | `""` | Get/List/Watch |  |
 | `nodes` | `""` | Get/List/Watch |  |
@@ -233,58 +232,58 @@ misconfigurations, security hardening guidelines, and potential compliance viola
 
 ### OneAgent
 
-**Purposes**:
+**Назначение**:
 
-* Collects host metrics from Kubernetes nodes.
-* Detects new containers and injects Dynatrace code modules into application pods using classic full-stack injection. Optional
-* Collects container logs from Kubernetes nodes.
+* Собирает метрики хоста с узлов Kubernetes.
+* Обнаруживает новые контейнеры и внедряет модули кода Dynatrace в поды приложений с использованием классической инъекции полного стека. Необязательно
+* Собирает логи контейнеров с узлов Kubernetes.
 
-**Default configuration**: `1-replica-per-node` (deployed via a DaemonSet)
+**Конфигурация по умолчанию**: `1-replica-per-node` (развёртывается через DaemonSet)
 
-**RBAC objects**:
+**Объекты RBAC**:
 
 * Service Account `dynatrace-dynakube-oneagent`
 * Cluster-Role `dynatrace-dynakube-oneagent`
 * Cluster-Role `dynatrace-logmonitoring`
 
-**Policy settings**: Allows **HostNetwork**, **HostPID**, to use any volume types.
+**Настройки политики**: Разрешает **HostNetwork**, **HostPID**, использование любых типов томов.
 
-**Necessary capabilities**: `CHOWN`, `DAC_OVERRIDE`, `DAC_READ_SEARCH`, `FOWNER`, `FSETID`, `KILL`, `NET_ADMIN`, `NET_RAW`, `SETFCAP`, `SETGID`, `SETUID`, `SYS_ADMIN`, `SYS_CHROOT`, `SYS_PTRACE`, `SYS_RESOURCE`
+**Необходимые capabilities**: `CHOWN`, `DAC_OVERRIDE`, `DAC_READ_SEARCH`, `FOWNER`, `FSETID`, `KILL`, `NET_ADMIN`, `NET_RAW`, `SETFCAP`, `SETGID`, `SETUID`, `SYS_ADMIN`, `SYS_CHROOT`, `SYS_PTRACE`, `SYS_RESOURCE`
 
 #### Разрешения на уровне кластера
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `nodes/proxy` | `""` | Get |  |
 | `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
 
 ### Модуль логов Dynatrace
 
-**Purposes**:
+**Назначение**:
 
-* Collects container logs from Kubernetes nodes.
+* Собирает логи контейнеров с узлов Kubernetes.
 
-**Default configuration**: `1-replica-per-node` (deployed via a DaemonSet)
+**Конфигурация по умолчанию**: `1-replica-per-node` (развёртывается через DaemonSet)
 
-**RBAC objects**:
+**Объекты RBAC**:
 
 * Service Account `dynatrace-logmonitoring`
 * Cluster-Role `dynatrace-logmonitoring`
 
 #### Разрешения на уровне кластера
 
-Log monitoring requires [the same cluster-wide permissions as OneAgent](#oneagent-permissions).
+Мониторинг логов требует [те же разрешения на уровне кластера, что и OneAgent](#oneagent-permissions).
 
 ### Приём телеметрии Dynatrace
 
-**Purposes**:
+**Назначение**:
 
-* Enable [Dynatrace telemetry endpoints](../extend-observability-k8s/telemetry-ingest.md "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") in Kubernetes for cluster-local data ingest
+* Включение [эндпоинтов телеметрии Dynatrace](../extend-observability-k8s/telemetry-ingest.md "Включение эндпоинтов приёма телеметрии Dynatrace в Kubernetes для локального приёма данных в кластере.") в Kubernetes для локального приёма данных в кластере
 
-  + Ingest data via [OTLPï»¿](https://opentelemetry.io/docs/specs/otel/protocol/), [Jaegerï»¿](https://www.jaegertracing.io/), [StatsDï»¿](https://github.com/statsd/statsd) or [Zipkinï»¿](https://zipkin.io/) endpoints
-* Analyze context-rich data with built-in apps, DQL, Notebooks and Dashboards
+  + Приём данных через эндпоинты [OTLP](https://opentelemetry.io/docs/specs/otel/protocol/), [Jaeger](https://www.jaegertracing.io/), [StatsD](https://github.com/statsd/statsd) или [Zipkin](https://zipkin.io/)
+* Анализ контекстно-обогащённых данных с помощью встроенных приложений, DQL, Notebooks и Dashboards
 
-**RBAC objects**:
+**Объекты RBAC**:
 
 * Service Accounts
 
@@ -295,7 +294,7 @@ Log monitoring requires [the same cluster-wide permissions as OneAgent](#oneagen
 
 #### Разрешения на уровне кластера
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `pods` | `""` | Get/Watch/List |  |
 | `namespaces` | `""` | Get/Watch/List |  |
@@ -305,19 +304,19 @@ Log monitoring requires [the same cluster-wide permissions as OneAgent](#oneagen
 
 ### Расширения
 
-**Purposes**:
+**Назначение**:
 
-* Extensions extend Dynatrace analytics capabilities by ingesting data from various sources, such as third-party applications, services, and custom metrics. See [Extensions](../../extensions.md "Learn how to create and manage Dynatrace Extensions.") for more information.
+* Расширения расширяют аналитические возможности Dynatrace, принимая данные из различных источников, таких как сторонние приложения, сервисы и пользовательские метрики. Подробнее см. [Расширения](../../extensions.md "Узнайте, как создавать и управлять расширениями Dynatrace.").
 
-**Default configuration**:
+**Конфигурация по умолчанию**:
 
-The following components are required, regardless of which extensions are used:
+Следующие компоненты необходимы независимо от используемых расширений:
 
 * Extension Execution Controller (EEC): `1-replica-per-cluster`
 
-**RBAC objects**:
+**Объекты RBAC**:
 
-Depending on the used extension, the following RBAC objects are required.
+В зависимости от используемого расширения требуются следующие объекты RBAC.
 
 * Service Accounts
 
@@ -328,32 +327,32 @@ Depending on the used extension, the following RBAC objects are required.
   + `dynatrace-extension-controller-prometheus`
   + `dynatrace-extension-controller-database`
 
-##### Namespace `dynatrace` permissions
+##### Разрешения пространства имён `dynatrace`
 
-*Prometheus extension*
+*Расширение Prometheus*
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
 
-*Database extension*
+*Расширение базы данных*
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `pods` | `""` | List |  |
 | `securitycontextconstraints` | `security.openshift.io` | Use | `nonroot-v2` |
 
-#### Prometheus extension
+#### Расширение Prometheus
 
-**Purpose**:
+**Назначение**:
 
-* Collects metrics from Prometheus endpoints in your cluster.
+* Собирает метрики с эндпоинтов Prometheus в вашем кластере.
 
-**Default configuration**:
+**Конфигурация по умолчанию**:
 
-* Prometheus datasource: `replicas-set-in-dynakube` (no default, replicas set in the DynaKube)
+* Источник данных Prometheus: `replicas-set-in-dynakube` (значение по умолчанию отсутствует, реплики задаются в DynaKube)
 
-**RBAC objects**:
+**Объекты RBAC**:
 
 * Service Accounts
 
@@ -364,7 +363,7 @@ Depending on the used extension, the following RBAC objects are required.
 
 ##### Разрешения на уровне кластера
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `pods` | `""` | Get/List/Watch |  |
 | `namespaces` | `""` | Get/List/Watch |  |
@@ -378,17 +377,17 @@ Depending on the used extension, the following RBAC objects are required.
 | `statefulsets` | `apps` | Get/List/Watch |  |
 | `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
 
-#### Database extension
+#### Расширение базы данных
 
-**Purpose**:
+**Назначение**:
 
-* Collects metrics from database endpoints in your cluster.
+* Собирает метрики с эндпоинтов баз данных в вашем кластере.
 
-**Default configuration**:
+**Конфигурация по умолчанию**:
 
-* SQL Extension Executor: `replicas-set-in-dynakube` (no default, replicas set in the DynaKube)
+* SQL Extension Executor: `replicas-set-in-dynakube` (значение по умолчанию отсутствует, реплики задаются в DynaKube)
 
-**RBAC objects**:
+**Объекты RBAC**:
 
 * Service Accounts
 
@@ -397,31 +396,31 @@ Depending on the used extension, the following RBAC objects are required.
 
   + `dynatrace-sql-ext-exec`
 
-##### Namespace `dynatrace` permissions
+##### Разрешения пространства имён `dynatrace`
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `pods` | `""` | List |  |
 
 ### Поддерживаемость Dynatrace Operator
 
-**Purposes**:
+**Назначение**:
 
-* Allow Dynatrace Operator to execute [the support-archive command](../deployment/troubleshooting.md#support-archive "This page will assist you in navigating any challenges you may encounter while working with the Dynatrace Operator and its various components."). Necessary for troubleshooting Operator related issues.
+* Позволяет Dynatrace Operator выполнять [команду support-archive](../deployment/troubleshooting.md#support-archive "Эта страница поможет вам справиться с любыми трудностями при работе с Dynatrace Operator и его различными компонентами."). Необходимо для устранения неполадок, связанных с Operator.
 
-**RBAC objects**:
+**Объекты RBAC**:
 
 * Role `dynatrace-operator-supportability`
 
-**Opt-out**:
+**Отключение**:
 
-* You can opt out of this feature by setting the Dynatrace Operator Helm chart value `rbac.supportability` to `false`.
+* Вы можете отключить эту функцию, установив значение `rbac.supportability` в Helm-чарте Dynatrace Operator в `false`.
 
-Disabling this feature will make it harder to provide the necessary information when opening support cases regarding Dynatrace Operator.
+Отключение этой функции затруднит предоставление необходимой информации при открытии обращений в службу поддержки по вопросам Dynatrace Operator.
 
-#### Namespace `dynatrace` permissions
+#### Разрешения пространства имён `dynatrace`
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `pods/log` | `""` | Get |  |
 | `pods/exec` | `""` | Create |  |
@@ -429,341 +428,341 @@ Disabling this feature will make it harder to provide the necessary information 
 
 ### Поддержка обновления API Dynatrace Operator
 
-**Purposes**:
+**Назначение**:
 
-* Start `dynatrace-operator-crd-storage-migration` Job for automatic cleanup of removed Dynakube API versions in `pre-upgrade` Helm hook.
+* Запуск задания `dynatrace-operator-crd-storage-migration` для автоматической очистки удалённых версий API Dynakube в хуке Helm `pre-upgrade`.
 
-**RBAC objects**:
+**Объекты RBAC**:
 
 * ClusterRole `dynatrace-crd-storage-migration`
 * Role `dynatrace-crd-storage-migration`
 * ServiceAccount `dynatrace-crd-storage-migration`
 
-**Opt-in**:
+**Включение**:
 
-* You can opt-out of this feature by setting the Dynatrace Operator Helm chart value `crdStorageMigrationJob` to `false`.
+* Вы можете отключить эту функцию, установив значение `crdStorageMigrationJob` в Helm-чарте Dynatrace Operator в `false`.
 
 #### Разрешения на уровне кластера
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `customresourcedefinitions` | `apiextensions.k8s.io` | Get/Update | `dynakubes.dynatrace.com` `edgeconnects.dynatrace.com` |
 | `customresourcedefinitions/status` | `apiextensions.k8s.io` | Get/Update | `dynakubes.dynatrace.com` `edgeconnects.dynatrace.com` |
 | `securitycontextconstraints` | `security.openshift.io` | Use | `nonroot-v2` |
 
-#### Namespace `dynatrace` permissions
+#### Разрешения пространства имён `dynatrace`
 
-| Resources accessed | API group | APIs used | Resource names |
+| Доступные ресурсы | Группа API | Используемые API | Имена ресурсов |
 | --- | --- | --- | --- |
 | `dynakubes` | `dynatrace.com` | Get/List/Watch/Update |  |
 | `edgeconnects` | `dynatrace.com` | Get/List/Watch/Update |  |
 
 ## Средства контроля безопасности компонентов Dynatrace Operator
 
-The following table presents a detailed analysis of the security controls for Kubernetes components: Dynatrace Operator, Dynatrace Operator webhook, and Dynatrace Operator CSI driver. This report is based on:
+В следующей таблице представлен подробный анализ средств контроля безопасности для компонентов Kubernetes: Dynatrace Operator, вебхук Dynatrace Operator и CSI-драйвер Dynatrace Operator. Этот отчёт основан на:
 
-* [CIS Benchmarkï»¿](https://dt-url.net/zd0368p), a globally recognized standard for securing Kubernetes deployments.
-* [POD Security Standard policiesï»¿](https://dt-url.net/mp0345l).
-* Best practices.
+* [CIS Benchmark](https://dt-url.net/zd0368p) — всемирно признанном стандарте для обеспечения безопасности развёртываний Kubernetes.
+* [Политиках POD Security Standard](https://dt-url.net/mp0345l).
+* Лучших практиках.
 
-| Security Control | Standard (\*) | Operator | Webhook | CSI driver | OneAgent | Extensions Controller | Dynatrace Collector | ActiveGate | EdgeConnect | KSPM |
+| Средство контроля безопасности | Стандарт (\*) | Operator | Webhook | CSI driver | OneAgent | Extensions Controller | Dynatrace Collector | ActiveGate | EdgeConnect | KSPM |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Disallow privileged containers | CIS [1](#fn-1-1-def) 5.2.2 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Required [5](#fn-1-5-def) | Required [10](#fn-1-10-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
-| Disallow privilege escalation | CIS [1](#fn-1-1-def) 5.2.6 / PSSR [3](#fn-1-3-def) | Satisfied | Satisfied | Required [5](#fn-1-5-def) | Required [11](#fn-1-11-def) | Satisfied | Required [16](#fn-1-16-def) | Satisfied | Satisfied | Satisfied |
-| Disallow containers running as root | CIS [1](#fn-1-1-def) 5.2.7 / PSSR [3](#fn-1-3-def) | Satisfied | Satisfied | Required [6](#fn-1-6-def) | Required [10](#fn-1-10-def) | Satisfied | Required [16](#fn-1-16-def) | Required [18](#fn-1-18-def) | Satisfied | Required [19](#fn-1-19-def) |
-| Disallow use of too many or insecure capabilities | CIS [1](#fn-1-1-def) 5.2.8 / 5.2.9 / 5.2.10 / PSSR [3](#fn-1-3-def) | Satisfied | Satisfied | Satisfied | Required [12](#fn-1-12-def) | Satisfied | Satisfied | Required [18](#fn-1-18-def) | Satisfied | Required [24](#fn-1-24-def) |
-| Limit access to secrets (RBAC) | CIS [1](#fn-1-1-def) 5.1.4 | Planned improvement [22](#fn-1-22-def) | Planned improvement [22](#fn-1-22-def) | Planned improvement [22](#fn-1-22-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
-| Disallow use of HostPath volumes | CIS [1](#fn-1-1-def) 5.2.12 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Required [7](#fn-1-7-def) | Required [10](#fn-1-10-def) | Satisfied | Satisfied | Satisfied | Satisfied | Required [20](#fn-1-20-def) |
-| Disallow use of HostPorts | CIS [1](#fn-1-1-def) 5.2.13 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
-| Disallow access to host network | CIS [1](#fn-1-1-def) 5.2.5 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Required [13](#fn-1-13-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
-| Disallow use of host PID | CIS [1](#fn-1-1-def) 5.2.3 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Required [14](#fn-1-14-def) | Satisfied | Satisfied | Satisfied | Satisfied | Required [23](#fn-1-23-def) |
-| Disallow use of host IPC | CIS [1](#fn-1-1-def) 5.2.4 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
-| Require readOnlyRootFilesystem | Best practice | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
-| Require Resource limits | Best practice | Satisfied | Satisfied | Satisfied [9](#fn-1-9-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
-| Demand seccomp to be used (at least default/runtime) | CIS [1](#fn-1-1-def) 5.7.2 / PSSR [3](#fn-1-3-def) | Satisfied | Satisfied | Satisfied | Required [15](#fn-1-15-def) | Satisfied | Satisfied | Required [18](#fn-1-18-def) | Required [21](#fn-1-21-def) | Required [19](#fn-1-19-def) |
-| Disallow Secrets mounted as env variable | CIS [1](#fn-1-1-def) 5.4.1 | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Planned improvement [17](#fn-1-17-def) | Satisfied | Satisfied | Satisfied |
-| Restrict sysctls | PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
-| Restrict AppArmor | PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
-| Disallow SELinux | PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Required [8](#fn-1-8-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
-| Restrict automounting of service account token | CIS [1](#fn-1-1-def) 5.1.6 | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) |
-| /proc Mount Type | PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Запрет привилегированных контейнеров | CIS [1](#fn-1-1-def) 5.2.2 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Required [5](#fn-1-5-def) | Required [10](#fn-1-10-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Запрет повышения привилегий | CIS [1](#fn-1-1-def) 5.2.6 / PSSR [3](#fn-1-3-def) | Satisfied | Satisfied | Required [5](#fn-1-5-def) | Required [11](#fn-1-11-def) | Satisfied | Required [16](#fn-1-16-def) | Satisfied | Satisfied | Satisfied |
+| Запрет запуска контейнеров от имени root | CIS [1](#fn-1-1-def) 5.2.7 / PSSR [3](#fn-1-3-def) | Satisfied | Satisfied | Required [6](#fn-1-6-def) | Required [10](#fn-1-10-def) | Satisfied | Required [16](#fn-1-16-def) | Required [18](#fn-1-18-def) | Satisfied | Required [19](#fn-1-19-def) |
+| Запрет использования избыточных или небезопасных capabilities | CIS [1](#fn-1-1-def) 5.2.8 / 5.2.9 / 5.2.10 / PSSR [3](#fn-1-3-def) | Satisfied | Satisfied | Satisfied | Required [12](#fn-1-12-def) | Satisfied | Satisfied | Required [18](#fn-1-18-def) | Satisfied | Required [24](#fn-1-24-def) |
+| Ограничение доступа к секретам (RBAC) | CIS [1](#fn-1-1-def) 5.1.4 | Planned improvement [22](#fn-1-22-def) | Planned improvement [22](#fn-1-22-def) | Planned improvement [22](#fn-1-22-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Запрет использования томов HostPath | CIS [1](#fn-1-1-def) 5.2.12 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Required [7](#fn-1-7-def) | Required [10](#fn-1-10-def) | Satisfied | Satisfied | Satisfied | Satisfied | Required [20](#fn-1-20-def) |
+| Запрет использования HostPorts | CIS [1](#fn-1-1-def) 5.2.13 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Запрет доступа к сети хоста | CIS [1](#fn-1-1-def) 5.2.5 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Required [13](#fn-1-13-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Запрет использования host PID | CIS [1](#fn-1-1-def) 5.2.3 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Required [14](#fn-1-14-def) | Satisfied | Satisfied | Satisfied | Satisfied | Required [23](#fn-1-23-def) |
+| Запрет использования host IPC | CIS [1](#fn-1-1-def) 5.2.4 / PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Требование readOnlyRootFilesystem | Лучшая практика | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Требование лимитов ресурсов | Лучшая практика | Satisfied | Satisfied | Satisfied [9](#fn-1-9-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Требование использования seccomp (минимум default/runtime) | CIS [1](#fn-1-1-def) 5.7.2 / PSSR [3](#fn-1-3-def) | Satisfied | Satisfied | Satisfied | Required [15](#fn-1-15-def) | Satisfied | Satisfied | Required [18](#fn-1-18-def) | Required [21](#fn-1-21-def) | Required [19](#fn-1-19-def) |
+| Запрет секретов, монтированных как переменные окружения | CIS [1](#fn-1-1-def) 5.4.1 | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Planned improvement [17](#fn-1-17-def) | Satisfied | Satisfied | Satisfied |
+| Ограничение sysctls | PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Ограничение AppArmor | PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Запрет SELinux | PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Required [8](#fn-1-8-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
+| Ограничение автомонтирования токена сервисного аккаунта | CIS [1](#fn-1-1-def) 5.1.6 | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) | Required [4](#fn-1-4-def) |
+| Тип монтирования /proc | PSSB [2](#fn-1-2-def) | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied | Satisfied |
 
-**Standard**:
+**Стандарт**:
 
 1
 
-[Center for Internet Security (CIS) Kubernetes benchmarkï»¿](https://dt-url.net/zd0368p).
+[Center for Internet Security (CIS) Kubernetes benchmark](https://dt-url.net/zd0368p).
 
 2
 
-[POD Security Standards Baseline profileï»¿](https://kubernetes.io/docs/concepts/security/pod-security-standards/#baseline).
+[POD Security Standards Baseline profile](https://kubernetes.io/docs/concepts/security/pod-security-standards/#baseline).
 
 3
 
-[POD Security Standards Restricted profileï»¿](https://dt-url.net/ut4387d).
+[POD Security Standards Restricted profile](https://dt-url.net/ut4387d).
 
-**General**:
+**Общее**:
 
 4
 
-Component needs to communicate with the Kubernetes API.
+Компоненту необходимо взаимодействовать с Kubernetes API.
 
 **CSI**:
 
 5
 
-CSI driver requires elevated permissions to create and manage mounts on the host system. For more details, see [CSI driver privileges](../how-it-works/components/dynatrace-operator.md#csidriver-privileges "Components of Dynatrace Operator").
+CSI-драйверу требуются повышенные разрешения для создания и управления монтированиями на хост-системе. Подробнее см. [Привилегии CSI-драйвера](../how-it-works/components/dynatrace-operator.md#csidriver-privileges "Компоненты Dynatrace Operator").
 
 6
 
-CSI driver communicates with kubelet using a socket on the host, to access this socket the CSI driver needs to run as root.
+CSI-драйвер взаимодействует с kubelet через сокет на хосте; для доступа к этому сокету CSI-драйвер должен запускаться от имени root.
 
 7
 
-CSI driver stores/caches the OneAgent binaries on the host's filesystem, in order to do that it needs a hostVolume mount.
+CSI-драйвер сохраняет/кеширует бинарные файлы OneAgent в файловой системе хоста; для этого ему необходимо монтирование hostVolume.
 
 8
 
-CSI driver needs seLinux level s0 for the application pods to see files from the volume created by the CSI driver.
+CSI-драйверу необходим уровень seLinux s0, чтобы поды приложений могли видеть файлы из тома, созданного CSI-драйвером.
 
 9
 
-CSI driver provisioner has no resources limits by default in order to provide the best [performance during provisioning](../guides/deployment-and-configuration/resource-management/dto-resource-limits.md#customize-resource-limits "Set resource limits for Dynatrace Operator components."); limits can be set via Helm chart values.
+Провизионер CSI-драйвера не имеет лимитов ресурсов по умолчанию для обеспечения наилучшей [производительности при провизионировании](../guides/deployment-and-configuration/resource-management/dto-resource-limits.md#customize-resource-limits "Установка лимитов ресурсов для компонентов Dynatrace Operator."); лимиты могут быть установлены через значения Helm-чарта.
 
 **OneAgent**:
 
 10
 
-OneAgent DaemonSet runs with host-level privileges for full-stack visibility (network, processes, file system).
+DaemonSet OneAgent запускается с привилегиями уровня хоста для полной видимости (сеть, процессы, файловая система).
 
 11
 
-Required for init containers that instrument processes before startup.
+Требуется для init-контейнеров, которые инструментируют процессы перед запуском.
 
 12
 
-Requires limited Linux capabilities (e.g., NET\_RAW) for network observability.
+Требуются ограниченные Linux capabilities (например, NET\_RAW) для наблюдаемости сети.
 
 13
 
-Uses host network namespace to monitor network traffic.
+Использует пространство имён сети хоста для мониторинга сетевого трафика.
 
 14
 
-Uses host PID namespace to correlate process metrics.
+Использует пространство имён PID хоста для корреляции метрик процессов.
 
 15
 
-Uses default runtime seccomp profile; explicit setting planned.
+Использует профиль seccomp среды выполнения по умолчанию; явная настройка запланирована.
 
 **Extension Execution Controller / Dynatrace Collector**:
 
 16
 
-Dynatrace Collector and Extensions controller may require root or elevated privileges for metrics collection and sidecar operations.
+Dynatrace Collector и контроллер расширений могут требовать привилегии root или повышенные привилегии для сбора метрик и операций sidecar.
 
 17
 
-Dynatrace Collector currently uses environment variables for tokens; migrating to secret files is planned.
+Dynatrace Collector в настоящее время использует переменные окружения для токенов; миграция на файлы секретов запланирована.
 
 **ActiveGate / EdgeConnect / KSPM**:
 
 18
 
-ActiveGate runs with minimal elevated privileges to manage inbound connections.
+ActiveGate запускается с минимальными повышенными привилегиями для управления входящими подключениями.
 
 19
 
-KSPM mounts the host root filesystem `/` to perform configuration and security scans; hostPath restriction evaluation is planned.
+KSPM монтирует корневую файловую систему хоста `/` для выполнения сканирования конфигурации и безопасности; оценка ограничения hostPath запланирована.
 
 20
 
-KSPM mounts the entire host filesystem for node-level scanning; improvement under review to restrict mounted paths.
+KSPM монтирует всю файловую систему хоста для сканирования на уровне узла; рассматривается улучшение для ограничения монтируемых путей.
 
 21
 
-EdgeConnect currently lacks an explicit seccomp profile; addition is planned in future releases. This control is being addressed in upcoming releases.
+EdgeConnect в настоящее время не имеет явного профиля seccomp; его добавление запланировано в будущих выпусках. Этот контроль рассматривается в предстоящих выпусках.
 
 22
 
-Namespace-scoped Roles for the Operator, Webhook, and CSI driver currently allow access to all secrets within their namespace. Improvement planned to restrict these Roles to specific secret names, consistent with ClusterRole configuration.
+Роли на уровне пространства имён для Operator, Webhook и CSI-драйвера в настоящее время разрешают доступ ко всем секретам в их пространстве имён. Запланировано улучшение для ограничения этих ролей конкретными именами секретов, в соответствии с конфигурацией ClusterRole.
 
 23
 
-KSPM requires host PID namespace access for the node collector to gather process-level data. This requirement will be documented.
+KSPM требуется доступ к пространству имён host PID для сборщика узлов, чтобы собирать данные на уровне процессов. Это требование будет задокументировано.
 
 24
 
-KSPM requires specific Linux capabilities to scan and collect system configuration and security data; this is by design and cannot be removed.
+KSPM требуются определённые Linux capabilities для сканирования и сбора данных конфигурации и безопасности системы; это сделано намеренно и не может быть удалено.
 
 ## Средства контроля безопасности компонентов, управляемых Dynatrace Operator
 
-The following table presents a detailed analysis of the security controls for Kubernetes components managed by Dynatrace Operator: ActiveGate, [OneAgent (CloudNative)](../how-it-works/cloud-native-fullstack.md "In-depth description of full-stack observability using Dynatrace Operator."), LogAgent. This report is based on:
+В следующей таблице представлен подробный анализ средств контроля безопасности для компонентов Kubernetes, управляемых Dynatrace Operator: ActiveGate, [OneAgent (CloudNative)](../how-it-works/cloud-native-fullstack.md "Подробное описание полной наблюдаемости стека с использованием Dynatrace Operator."), LogAgent. Этот отчёт основан на:
 
-* [CIS Benchmarkï»¿](https://dt-url.net/zd0368p), a globally recognized standard for securing Kubernetes deployments.
-* [POD Security Standard policiesï»¿](https://dt-url.net/mp0345l).
-* Best practices.
+* [CIS Benchmark](https://dt-url.net/zd0368p) — всемирно признанном стандарте для обеспечения безопасности развёртываний Kubernetes.
+* [Политиках POD Security Standard](https://dt-url.net/mp0345l).
+* Лучших практиках.
 
-| Security Control | Standard (\*) | ActiveGate | OneAgent CloudNative | OneAgent Log Module |
+| Средство контроля безопасности | Стандарт (\*) | ActiveGate | OneAgent CloudNative | Модуль логов OneAgent |
 | --- | --- | --- | --- | --- |
-| Disallow privileged containers | CIS [1](#fn-2-1-def) 5.2.2 / PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Required [15](#fn-2-15-def) |
-| Disallow privilege escalation | CIS [1](#fn-2-1-def) 5.2.6 / PSSR [3](#fn-2-3-def) | Satisfied | Required [6](#fn-2-6-def) | Required [16](#fn-2-16-def) |
-| Disallow containers running as root | CIS [1](#fn-2-1-def) 5.2.7 / PSSR [3](#fn-2-3-def) | Satisfied | Satisfied | Satisfied |
-| Disallow usage of too many or insecure capabilities | CIS [1](#fn-2-1-def) 5.2.8 / 5.2.9 / 5.2.10 / PSSR [3](#fn-2-3-def) | Satisfied | Required [7](#fn-2-7-def) | Required [17](#fn-2-17-def) |
-| Disallow usage of HostPath volumes | CIS [1](#fn-2-1-def) 5.2.12 / PSSB [2](#fn-2-2-def) | Satisfied | Required [8](#fn-2-8-def) | Required [18](#fn-2-18-def) |
-| Disallow usage of HostPorts | CIS [1](#fn-2-1-def) 5.2.13 / PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Satisfied |
-| Disallow access to host network | CIS [1](#fn-2-1-def) 5.2.5 / PSSB [2](#fn-2-2-def) | Satisfied | Required [9](#fn-2-9-def) | Satisfied |
-| Disallow usage of host PID | CIS [1](#fn-2-1-def) 5.2.3 / PSSB [2](#fn-2-2-def) | Satisfied | Required [10](#fn-2-10-def) | Satisfied |
-| Disallow usage of host IPC | CIS [1](#fn-2-1-def) 5.2.4 / PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Satisfied |
-| Require readOnlyRootFilesystem | Best practice | Satisfied | Satisfied | Satisfied |
-| Require Resource limits | Best practice | Configurable [5](#fn-2-5-def) | Configurable [11](#fn-2-11-def) | Configurable [19](#fn-2-19-def) |
-| Demand seccomp to be used (at least default/runtime) | CIS [1](#fn-2-1-def) 5.7.2 / PSSR [3](#fn-2-3-def) | Satisfied | Required [12](#fn-2-12-def) | Required [20](#fn-2-20-def) |
-| Disallow Secrets mounted as env variable | CIS [1](#fn-2-1-def) 5.4.1 | Satisfied | Satisfied | Satisfied |
-| Restrict sysctls | PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Satisfied |
-| Restrict AppArmor | PSSB [2](#fn-2-2-def) | Satisfied | Required [13](#fn-2-13-def) | Satisfied |
-| Disallow SELinux | PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Satisfied |
-| Restrict automounting of service account token | CIS [1](#fn-2-1-def) 5.1.6 | Required [4](#fn-2-4-def) | Configurable [14](#fn-2-14-def) | Required [4](#fn-2-4-def) |
-| /proc Mount Type | PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Satisfied |
+| Запрет привилегированных контейнеров | CIS [1](#fn-2-1-def) 5.2.2 / PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Required [15](#fn-2-15-def) |
+| Запрет повышения привилегий | CIS [1](#fn-2-1-def) 5.2.6 / PSSR [3](#fn-2-3-def) | Satisfied | Required [6](#fn-2-6-def) | Required [16](#fn-2-16-def) |
+| Запрет запуска контейнеров от имени root | CIS [1](#fn-2-1-def) 5.2.7 / PSSR [3](#fn-2-3-def) | Satisfied | Satisfied | Satisfied |
+| Запрет использования избыточных или небезопасных capabilities | CIS [1](#fn-2-1-def) 5.2.8 / 5.2.9 / 5.2.10 / PSSR [3](#fn-2-3-def) | Satisfied | Required [7](#fn-2-7-def) | Required [17](#fn-2-17-def) |
+| Запрет использования томов HostPath | CIS [1](#fn-2-1-def) 5.2.12 / PSSB [2](#fn-2-2-def) | Satisfied | Required [8](#fn-2-8-def) | Required [18](#fn-2-18-def) |
+| Запрет использования HostPorts | CIS [1](#fn-2-1-def) 5.2.13 / PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Satisfied |
+| Запрет доступа к сети хоста | CIS [1](#fn-2-1-def) 5.2.5 / PSSB [2](#fn-2-2-def) | Satisfied | Required [9](#fn-2-9-def) | Satisfied |
+| Запрет использования host PID | CIS [1](#fn-2-1-def) 5.2.3 / PSSB [2](#fn-2-2-def) | Satisfied | Required [10](#fn-2-10-def) | Satisfied |
+| Запрет использования host IPC | CIS [1](#fn-2-1-def) 5.2.4 / PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Satisfied |
+| Требование readOnlyRootFilesystem | Лучшая практика | Satisfied | Satisfied | Satisfied |
+| Требование лимитов ресурсов | Лучшая практика | Configurable [5](#fn-2-5-def) | Configurable [11](#fn-2-11-def) | Configurable [19](#fn-2-19-def) |
+| Требование использования seccomp (минимум default/runtime) | CIS [1](#fn-2-1-def) 5.7.2 / PSSR [3](#fn-2-3-def) | Satisfied | Required [12](#fn-2-12-def) | Required [20](#fn-2-20-def) |
+| Запрет секретов, монтированных как переменные окружения | CIS [1](#fn-2-1-def) 5.4.1 | Satisfied | Satisfied | Satisfied |
+| Ограничение sysctls | PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Satisfied |
+| Ограничение AppArmor | PSSB [2](#fn-2-2-def) | Satisfied | Required [13](#fn-2-13-def) | Satisfied |
+| Запрет SELinux | PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Satisfied |
+| Ограничение автомонтирования токена сервисного аккаунта | CIS [1](#fn-2-1-def) 5.1.6 | Required [4](#fn-2-4-def) | Configurable [14](#fn-2-14-def) | Required [4](#fn-2-4-def) |
+| Тип монтирования /proc | PSSB [2](#fn-2-2-def) | Satisfied | Satisfied | Satisfied |
 
-**Standard**:
+**Стандарт**:
 
 1
 
-[Center for Internet Security (CIS) Kubernetes benchmarkï»¿](https://dt-url.net/zd0368p).
+[Center for Internet Security (CIS) Kubernetes benchmark](https://dt-url.net/zd0368p).
 
 2
 
-[POD Security Standards Baseline profileï»¿](https://kubernetes.io/docs/concepts/security/pod-security-standards/#baseline).
+[POD Security Standards Baseline profile](https://kubernetes.io/docs/concepts/security/pod-security-standards/#baseline).
 
 3
 
-[POD Security Standards Restricted profileï»¿](https://dt-url.net/ut4387d).
+[POD Security Standards Restricted profile](https://dt-url.net/ut4387d).
 
-**General**:
+**Общее**:
 
 4
 
-Component needs to communicate with the Kubernetes API.
+Компоненту необходимо взаимодействовать с Kubernetes API.
 
 **ActiveGate**
 
 5
 
-The limits are highly dependent on the amount of data processed. Can be set via DynaKube.
+Лимиты в значительной степени зависят от объёма обрабатываемых данных. Могут быть установлены через DynaKube.
 
 **OneAgent**
 
 6
 
-Privilege escalation is needed for processes inside OneAgent container to get Linux capabilities.
+Повышение привилегий необходимо для процессов внутри контейнера OneAgent для получения Linux capabilities.
 
 7
 
-[Monitoring actions](../../dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux.md#operation "Learn about Dynatrace OneAgent security and modifications to your Linux-based system") executed by OneAgent processes need the following [capabilities](../../dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged.md#linux-system-capabilities "Find out when Dynatrace OneAgent requires root privileges on Linux.").
+[Действия мониторинга](../../dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux.md#operation "Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей Linux-системе"), выполняемые процессами OneAgent, требуют следующих [capabilities](../../dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged.md#linux-system-capabilities "Узнайте, когда Dynatrace OneAgent требует привилегий root в Linux.").
 
 8
 
-Mounted host's root filesystem is accessed by all OneAgent modules and allows for log files access, disk metrics, and other host and process monitoring capabilities.
+Смонтированная корневая файловая система хоста используется всеми модулями OneAgent и обеспечивает доступ к файлам логов, метрикам диска и другим возможностям мониторинга хоста и процессов.
 
 9
 
-OneAgent needs access to host network namespace to provide host-level and process-level network health monitoring.
+OneAgent требуется доступ к пространству имён сети хоста для обеспечения мониторинга сетевого состояния на уровне хоста и процессов.
 
 10
 
-OneAgent needs access to host process table to collect performance metrics for all processes running on the host.
+OneAgent требуется доступ к таблице процессов хоста для сбора метрик производительности всех процессов, запущенных на хосте.
 
 11
 
-The limits are highly dependent on the amount of data processed. Can be set via DynaKube.
+Лимиты в значительной степени зависят от объёма обрабатываемых данных. Могут быть установлены через DynaKube.
 
 12
 
-OneAgent needs access to kernel syscalls beyond the RuntimeDefault set for monitoring purposes.
+OneAgent требуется доступ к системным вызовам ядра за пределами набора RuntimeDefault для целей мониторинга.
 
 13
 
-OneAgent needs access to the mount command which is blocked by the default AppArmor profile.
+OneAgent требуется доступ к команде mount, которая заблокирована профилем AppArmor по умолчанию.
 
 14
 
-OneAgent component needs to communicate with the kubelet `/pods` endpoint. The K8s token is not mounted to the Pod if LogMonitoring is turned off via Helm values.
+Компоненту OneAgent необходимо взаимодействовать с эндпоинтом kubelet `/pods`. Токен K8s не монтируется в под, если LogMonitoring отключён через значения Helm.
 
-**OneAgent Log Module**:
+**Модуль логов OneAgent**:
 
 15
 
-LogAgent needs to run as privileged container on OCP cluster to access its persistent storage. [OCP persistent storage using hostPathï»¿](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/storage/configuring-persistent-storage#persistent-storage-using-hostpath).
+LogAgent должен запускаться как привилегированный контейнер в кластере OCP для доступа к его постоянному хранилищу. [Постоянное хранилище OCP с использованием hostPath](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/storage/configuring-persistent-storage#persistent-storage-using-hostpath).
 
 16
 
-AllowPrivilegeEscalation is always true when the container is run as privileged. [Configure a Security Context for a Pod or Containerï»¿](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/).
+AllowPrivilegeEscalation всегда имеет значение true, когда контейнер запускается как привилегированный. [Настройка контекста безопасности для пода или контейнера](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/).
 
 17
 
-LogAgent needs additional capability to get access to all monitored log files.
+LogAgent требуется дополнительный capability для доступа ко всем отслеживаемым файлам логов.
 
 18
 
-Needs access to log files on the host's filesystem.
+Требуется доступ к файлам логов в файловой системе хоста.
 
 19
 
-The limits are highly dependent on the amount of data processed. Can be set via DynaKube.
+Лимиты в значительной степени зависят от объёма обрабатываемых данных. Могут быть установлены через DynaKube.
 
 20
 
-The seccomp profile can be set via DynaKube in order to run in secure computing mode.
+Профиль seccomp может быть задан через DynaKube для запуска в режиме безопасных вычислений.
 
 ## Политики безопасности подов
 
-These permissions used to be managed using a **PodSecurityPolicy** (PSP), but [in Kubernetes version 1.25 PSPs will be removedï»¿](https://dt-url.net/2403pxy) from the following components:
+Ранее эти разрешения управлялись с помощью **PodSecurityPolicy** (PSP), но [в Kubernetes версии 1.25 PSP будут удалены](https://dt-url.net/2403pxy) из следующих компонентов:
 
-* [Dynatrace Operatorï»¿](https://dt-url.net/d7034gj) version 0.2.2
-* **LEGACY** [Dynatrace OneAgent Operatorï»¿](https://dt-url.net/3023pvs) version 0.11.0
-* [Corresponding Helm chartsï»¿](https://dt-url.net/rp43pl1)
+* [Dynatrace Operator](https://dt-url.net/d7034gj) версии 0.2.2
+* **УСТАРЕВШИЙ** [Dynatrace OneAgent Operator](https://dt-url.net/3023pvs) версии 0.11.0
+* [Соответствующие Helm-чарты](https://dt-url.net/rp43pl1)
 
-**Dynatrace Operator version 0.2.1** is the last version in which PSPs are applied by default, so it's up to you to enforce these rules. As PSP alternatives, you can use other policy enforcement tools such as:
+**Dynatrace Operator версии 0.2.1** — последняя версия, в которой PSP применяются по умолчанию, поэтому обеспечение соблюдения этих правил зависит от вас. В качестве альтернатив PSP вы можете использовать другие инструменты принудительного применения политик, такие как:
 
-* [k-railï»¿](https://dt-url.net/qx63p3n)
-* [Kyvernoï»¿](https://dt-url.net/6m83ppk)
-* [Gatekeeperï»¿](https://dt-url.net/aha3ps4)
+* [k-rail](https://dt-url.net/qx63p3n)
+* [Kyverno](https://dt-url.net/6m83ppk)
+* [Gatekeeper](https://dt-url.net/aha3ps4)
 
-If you choose to use a PSP alternative, be sure to provide the necessary permissions to the Dynatrace components.
+Если вы решите использовать альтернативу PSP, убедитесь, что компонентам Dynatrace предоставлены необходимые разрешения.
 
 ## Безопасность Dynatrace Operator context constraints
 
-Dynatrace Operator version 0.12.0+
+Dynatrace Operator версии 0.12.0+
 
-Starting with Dynatrace Operator version 0.12.0, the built-in creation of custom security context constraints (SCCs) has been removed for Dynatrace Operator and Dynatrace Operatorâmanaged components. This change was made to reduce complications caused by custom SCCs in unique OpenShift setups.
+Начиная с Dynatrace Operator версии 0.12.0, встроенное создание пользовательских ограничений контекста безопасности (SCC) было удалено для Dynatrace Operator и компонентов, управляемых Dynatrace Operator. Это изменение было сделано для уменьшения сложностей, вызванных пользовательскими SCC в уникальных конфигурациях OpenShift.
 
-Despite this update, the components maintain the same permissions and security requirements as before.
+Несмотря на это обновление, компоненты сохраняют те же разрешения и требования безопасности, что и раньше.
 
-The following tables show the SCCs used in different versions of Dynatrace Operator and OpenShift.
+В следующих таблицах показаны SCC, используемые в различных версиях Dynatrace Operator и OpenShift.
 
-| Resources accessed | Custom SCC used in Dynatrace Operator versions earlier than 0.12.0 | SCC in Dynatrace Operator version 0.12.0+ and OpenShift earlier than 4.11 |
+| Доступные ресурсы | Пользовательский SCC в версиях Dynatrace Operator ранее 0.12.0 | SCC в Dynatrace Operator версии 0.12.0+ и OpenShift ранее 4.11 |
 | --- | --- | --- |
 | Dynatrace Operator | `dynatrace-operator` | `privileged`[1](#fn-3-1-def) |
-| Dynatrace Operator Webhook Server | `dynatrace-webhook` | `privileged`[1](#fn-3-1-def) |
-| Dynatrace Operator CSI driver | `dynatrace-oneagent-csi-driver` | `privileged`[1](#fn-3-1-def) |
+| Сервер вебхуков Dynatrace Operator | `dynatrace-webhook` | `privileged`[1](#fn-3-1-def) |
+| CSI-драйвер Dynatrace Operator | `dynatrace-oneagent-csi-driver` | `privileged`[1](#fn-3-1-def) |
 | ActiveGate | `dynatrace-activegate` | `privileged`[1](#fn-3-1-def) |
 | OneAgent | `dynatrace-dynakube-oneagent-privileged` `dynatrace-dynakube-oneagent-unprivileged` | `privileged`[1](#fn-3-1-def) |
 
-| Resources accessed | Custom SCC used in Dynatrace Operator versions earlier than 0.12.0 | SCC in Dynatrace Operator version 0.12.0+ and OpenShift 4.11+ |
+| Доступные ресурсы | Пользовательский SCC в версиях Dynatrace Operator ранее 0.12.0 | SCC в Dynatrace Operator версии 0.12.0+ и OpenShift 4.11+ |
 | --- | --- | --- |
 | Dynatrace Operator | `dynatrace-operator` | `nonroot-v2` |
-| Dynatrace Operator Webhook Server | `dynatrace-webhook` | `nonroot-v2` |
-| Dynatrace Operator CSI driver | `dynatrace-oneagent-csi-driver` | `privileged`[1](#fn-3-1-def) |
+| Сервер вебхуков Dynatrace Operator | `dynatrace-webhook` | `nonroot-v2` |
+| CSI-драйвер Dynatrace Operator | `dynatrace-oneagent-csi-driver` | `privileged`[1](#fn-3-1-def) |
 | ActiveGate | `dynatrace-activegate` | `nonroot-v2` |
 | OneAgent | `dynatrace-dynakube-oneagent-privileged` `dynatrace-dynakube-oneagent-unprivileged` | `privileged`[1](#fn-3-1-def) |
 
 1
 
-This SCC is the only built-in OpenShift SCC that allows usage of seccomp, which our components have set by default, and also the usage of CSI volumes.
+Этот SCC является единственным встроенным SCC OpenShift, который разрешает использование seccomp (что установлено по умолчанию для наших компонентов), а также использование томов CSI.
 
-It is still possible to create your own more permissive or restrictive SCCs that take your specific setup into consideration. You can safely remove the old SCCs that were created by a previous Dynatrace Operator version.
+Вы по-прежнему можете создавать собственные более разрешительные или ограничительные SCC с учётом вашей конкретной конфигурации. Старые SCC, созданные предыдущей версией Dynatrace Operator, можно безопасно удалить.
 
-To remove the old SCCs, use the following command:
+Для удаления старых SCC используйте следующую команду:
 
 ```
 oc delete scc <scc-name>

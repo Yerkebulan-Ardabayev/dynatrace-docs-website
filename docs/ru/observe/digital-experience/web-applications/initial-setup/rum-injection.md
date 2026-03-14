@@ -1,5 +1,5 @@
 ---
-title: Configure automatic injection
+title: Настройка автоматического внедрения
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/initial-setup/rum-injection
 scraped: 2026-03-05T21:25:26.027742
 ---

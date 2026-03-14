@@ -1,5 +1,5 @@
 ---
-title: Event analysis and correlation
+title: Анализ событий и корреляция
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation
 scraped: 2026-03-06T21:36:01.116811
 ---

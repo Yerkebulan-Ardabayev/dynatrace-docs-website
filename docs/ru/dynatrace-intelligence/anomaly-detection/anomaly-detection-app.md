@@ -1,5 +1,5 @@
 ---
-title: Anomaly Detection app
+title: Приложение Anomaly Detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app
 scraped: 2026-03-06T21:14:57.037010
 ---

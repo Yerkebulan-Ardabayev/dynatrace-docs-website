@@ -1,5 +1,5 @@
 ---
-title: OpenTelemetry Collector use cases
+title: Варианты использования OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases
 scraped: 2026-03-06T21:32:50.601348
 ---

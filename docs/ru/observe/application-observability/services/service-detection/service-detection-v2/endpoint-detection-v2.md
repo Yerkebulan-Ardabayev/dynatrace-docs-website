@@ -1,5 +1,5 @@
 ---
-title: Customize endpoint detection in Service Detection v2
+title: Настройка обнаружения конечных точек в Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/endpoint-detection-v2
 scraped: 2026-03-02T21:30:56.317085
 ---

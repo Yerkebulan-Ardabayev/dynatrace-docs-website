@@ -1,5 +1,5 @@
 ---
-title: Drilldowns and navigation
+title: Свертывание и навигация
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/open-with
 scraped: 2026-02-17T04:46:08.290556
 ---

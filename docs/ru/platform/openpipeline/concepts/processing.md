@@ -1,5 +1,5 @@
 ---
-title: Processing in OpenPipeline
+title: Обработка в OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/processing
 scraped: 2026-03-06T21:13:41.461060
 ---

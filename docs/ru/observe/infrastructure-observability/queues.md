@@ -1,5 +1,5 @@
 ---
-title: Message queues
+title: Очереди сообщений
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues
 scraped: 2026-03-06T21:16:50.344003
 ---

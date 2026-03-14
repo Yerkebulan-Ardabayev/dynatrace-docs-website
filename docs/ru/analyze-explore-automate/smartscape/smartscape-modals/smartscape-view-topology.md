@@ -1,5 +1,5 @@
 ---
-title: View topology
+title: Вид топологии
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals/smartscape-view-topology
 scraped: 2026-03-03T21:33:03.194289
 ---

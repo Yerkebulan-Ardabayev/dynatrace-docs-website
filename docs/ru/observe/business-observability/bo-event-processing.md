@@ -1,5 +1,5 @@
 ---
-title: Business event processing
+title: Обработка бизнес-событий
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing
 scraped: 2026-03-06T21:34:23.823960
 ---

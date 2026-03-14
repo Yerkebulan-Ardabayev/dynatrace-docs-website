@@ -1,5 +1,5 @@
 ---
-title: Data security controls
+title: Средства контроля безопасности данных
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-security/data-security-controls
 scraped: 2026-03-05T21:37:27.232057
 ---

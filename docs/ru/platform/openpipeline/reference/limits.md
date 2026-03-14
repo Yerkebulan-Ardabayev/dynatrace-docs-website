@@ -1,5 +1,5 @@
 ---
-title: OpenPipeline limits
+title: Ограничения OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/limits
 scraped: 2026-03-06T21:16:07.099440
 ---

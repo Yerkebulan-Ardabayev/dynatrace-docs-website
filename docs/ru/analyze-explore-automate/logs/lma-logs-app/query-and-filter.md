@@ -1,5 +1,5 @@
 ---
-title: Query and filter logs
+title: Запрос и фильтрация логов
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/query-and-filter
 scraped: 2026-03-06T21:11:29.840932
 ---

@@ -1,5 +1,5 @@
 ---
-title: Sign extensions
+title: Подписание расширений
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/sign-extensions
 scraped: 2026-03-05T21:36:26.987234
 ---

@@ -1,5 +1,5 @@
 ---
-title: Oracle Database monitoring configuration
+title: Конфигурация мониторинга Oracle Database
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring
 scraped: 2026-03-05T21:37:43.036318
 ---

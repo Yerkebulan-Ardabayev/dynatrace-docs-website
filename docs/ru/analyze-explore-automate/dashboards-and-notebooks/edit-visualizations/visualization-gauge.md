@@ -1,5 +1,5 @@
 ---
-title: Gauge chart
+title: Диаграмма измерения
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge
 scraped: 2026-03-06T21:21:04.757177
 ---

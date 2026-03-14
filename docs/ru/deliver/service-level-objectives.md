@@ -1,5 +1,5 @@
 ---
-title: Service-Level Objectives
+title: Цели уровня обслуживания
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives
 scraped: 2026-03-06T21:30:36.060105
 ---

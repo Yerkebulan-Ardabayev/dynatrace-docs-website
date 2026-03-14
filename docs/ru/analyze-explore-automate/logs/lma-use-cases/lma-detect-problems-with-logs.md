@@ -1,5 +1,5 @@
 ---
-title: Detect problems with Logs
+title: Обнаружение проблем с Logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs
 scraped: 2026-03-04T21:35:39.748570
 ---

@@ -1,5 +1,5 @@
 ---
-title: Manage Microsoft SQL Server extensions
+title: Управление расширениями Microsoft SQL Server
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql
 scraped: 2026-03-06T21:16:10.453218
 ---

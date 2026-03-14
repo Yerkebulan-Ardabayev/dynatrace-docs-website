@@ -1,5 +1,5 @@
 ---
-title: Dynatrace Intelligence agentic and generative AI overview
+title: Обзор агентного и генеративного ИИ Dynatrace Intelligence
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-overview
 scraped: 2026-03-06T21:13:22.200079
 ---

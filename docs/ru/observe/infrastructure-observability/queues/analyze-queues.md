@@ -1,5 +1,5 @@
 ---
-title: Analyze queues
+title: Анализ очередей
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues/analyze-queues
 scraped: 2026-03-05T21:39:29.621233
 ---

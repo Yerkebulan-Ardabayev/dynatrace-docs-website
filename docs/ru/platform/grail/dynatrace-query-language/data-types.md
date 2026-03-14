@@ -1,5 +1,5 @@
 ---
-title: DQL data types
+title: Типы данных DQL
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/data-types
 scraped: 2026-03-06T21:20:40.056889
 ---

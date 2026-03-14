@@ -1,5 +1,5 @@
 ---
-title: Static thresholds for anomaly detection
+title: Статические пороговые значения для обнаружения аномалий
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/static-thresholds
 scraped: 2026-03-06T21:20:53.079076
 ---

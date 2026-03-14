@@ -1,5 +1,5 @@
 ---
-title: Log processing with OpenPipeline
+title: Обработка журналов с OpenPipeline
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline
 scraped: 2026-03-06T21:10:01.169544
 ---

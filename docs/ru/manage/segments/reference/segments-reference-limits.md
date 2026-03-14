@@ -1,5 +1,5 @@
 ---
-title: Segment limits
+title: Ограничения сегментов
 source: https://www.dynatrace.com/docs/manage/segments/reference/segments-reference-limits
 scraped: 2026-03-06T21:13:10.363454
 ---

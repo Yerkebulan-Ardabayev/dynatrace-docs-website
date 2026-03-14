@@ -1,5 +1,5 @@
 ---
-title: Route data
+title: Маршрутизация данных
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/how-to-routing
 scraped: 2026-03-06T21:13:37.885258
 ---

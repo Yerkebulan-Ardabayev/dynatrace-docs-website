@@ -1,5 +1,5 @@
 ---
-title: Event triggers for workflows
+title: Триггеры событий для __KEEP000__
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/trigger/event-trigger
 scraped: 2026-03-05T21:32:26.413235
 ---

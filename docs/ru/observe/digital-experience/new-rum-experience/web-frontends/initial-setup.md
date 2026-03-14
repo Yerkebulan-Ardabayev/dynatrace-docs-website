@@ -1,5 +1,5 @@
 ---
-title: Initial setup for web frontends
+title: Начальная настройка для веб-фронтендов
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup
 scraped: 2026-03-06T21:28:09.180900
 ---

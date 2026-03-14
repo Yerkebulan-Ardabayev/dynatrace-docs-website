@@ -1,5 +1,5 @@
 ---
-title: How to ingest data (events)
+title: Как принимать данные (события)
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/how-to-ingestion
 scraped: 2026-03-06T21:15:55.878660
 ---

@@ -28,9 +28,9 @@ Dynatrace собирает метрики для множества предва
   Для ролевого доступа в развертывании [SaaS](../cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") вам необходим [Environment ActiveGate](../../../dynatrace-activegate/installation.md "Learn how to configure ActiveGate") установленный на хосте Amazon EC2.
 
 * Dynatrace version 1.200+
-* An updated [AWS monitoring policy](../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.
+* Обновлённая [политика мониторинга AWS](../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.
 
-To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+Чтобы [обновить политику AWS IAMï»¿](https://dt-url.net/8q038eb), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
 Предопределенная политика JSON для всех поддерживаемых сервисов
 
@@ -690,7 +690,7 @@ To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), использ
 
 ## Включение мониторинга
 
-Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, смотрите [Включение мониторинга сервиса](../aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
 
 ## Просмотр метрик сервиса
 
@@ -700,14 +700,14 @@ Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-
 
 Для доступа к странице обзора пользовательского устройства
 
-1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
 2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
 3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
 4. **Страница обзора группы пользовательских устройств** отображает все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
 
 ### Просмотр метрик на панели мониторинга
 
-You can also view metrics in the Dynatrace web UI on dashboards. There is no preset dashboard available for this service, but you can [create your own dashboard](../../../../analyze-explore-automate/dashboards-classic/dashboards/create-dashboards.md "Learn how to create and edit Dynatrace dashboards.").
+Вы также можете просматривать метрики в веб-интерфейсе Dynatrace на панелях мониторинга. Для этого сервиса предустановленная панель мониторинга недоступна, но вы можете [создать собственную панель мониторинга](../../../../analyze-explore-automate/dashboards-classic/dashboards/create-dashboards.md "Learn how to create and edit Dynatrace dashboards.").
 
 Для проверки доступности предустановленных панелей мониторинга для каждого сервиса AWS смотрите список ниже.
 
@@ -823,51 +823,51 @@ You can also view metrics in the Dynatrace web UI on dashboards. There is no pre
 
 ## Доступные метрики
 
-This service monitors a part of Amazon DynamoDB (AWS/DynamoDB). While you have this service configured, you can't have Amazon Dynamo Database (built-in) service turned on.
+Этот сервис мониторит часть Amazon DynamoDB (AWS/DynamoDB). При активном использовании этого сервиса нельзя одновременно включить сервис Amazon Dynamo Database (встроенный).
 
 `TableName` является основным измерением.
 
 | Название | Описание | Измерения | Единица | Рекомендуется |
 | --- | --- | --- | --- | --- |
-| ConsumedReadCapacityUnits | The number of read capacity units consumed over the specified time period for both provisioned and on-demand capacity, so you can track how much of your throughput is used. | TableName | Count | Применимо |
-| ConsumedReadCapacityUnits | The number of read capacity units consumed over the specified time period for both provisioned and on-demand capacity, so you can track how much of your throughput is used. | TableName, GlobalSecondaryIndexName | Count |  |
-| MaxProvisionedTableReadCapacityUtilization | The percentage of provisioned read capacity utilized by the highest provisioned read table or global secondary index of an account. | Region | Percent |  |
-| SuccessfulRequestLatency | The latency of successful requests to DynamoDB or Amazon DynamoDB Streams during the specified time period. | TableName, Operation | Milliseconds | Применимо |
-| ReturnedItemCount | The number of items returned by Query, Scan or ExecuteStatement (select) operations during the specified time period. | TableName, Operation | Count | Применимо |
-| AccountProvisionedReadCapacityUtilization | The percentage of provisioned read capacity units utilized by an account. | Region | Percent |  |
-| MaxProvisionedTableWriteCapacityUtilization | The percentage of provisioned write capacity utilized by the highest provisioned write table or global secondary index of an account. | Region | Percent |  |
-| AccountMaxTableLevelWrites | The maximum number of write capacity units that can be used by a table or global secondary index of an account. | Region | Count |  |
-| AccountMaxReads | The maximum number of read capacity units that can be used by an account. | Region | Count |  |
-| ConsumedWriteCapacityUnits | The number of write capacity units consumed over the specified time period for both provisioned and on-demand capacity, so you can track how much of your throughput is used. | TableName | Count | Применимо |
-| ConsumedWriteCapacityUnits | The number of write capacity units consumed over the specified time period for both provisioned and on-demand capacity, so you can track how much of your throughput is used. | TableName, GlobalSecondaryIndexName | Count |  |
-| AccountMaxTableLevelReads | The maximum number of read capacity units that can be used by a table or global secondary index of an account. | Region | Count |  |
-| ProvisionedReadCapacityUnits | The number of provisioned read capacity units for a table or a global secondary index. | TableName | Count | Применимо |
-| ProvisionedReadCapacityUnits | The number of provisioned read capacity units for a table or a global secondary index. | TableName, GlobalSecondaryIndexName | Count |  |
-| ProvisionedWriteCapacityUnits | The number of provisioned write capacity units for a table or a global secondary index. | TableName | Count | Применимо |
-| ProvisionedWriteCapacityUnits | The number of provisioned write capacity units for a table or a global secondary index. | TableName, GlobalSecondaryIndexName | Count |  |
-| AccountProvisionedWriteCapacityUtilization | The percentage of provisioned write capacity units utilized by an account. | Region | Percent |  |
-| AccountMaxWrites | The maximum number of write capacity units that can be used by an account. | Region | Count |  |
-| AgeOfOldestUnreplicatedRecord | The elapsed time since a record yet to be replicated to the Kinesis data stream first appeared in the DynamoDB table. | TableName, DelegatedOperation | Milliseconds |  |
-| ConditionalCheckFailedRequests | The number of failed attempts to perform conditional writes. | TableName | Count | Применимо |
+| ConsumedReadCapacityUnits | Количество единиц ёмкости чтения, потреблённых за указанный период времени как для выделенной, так и для ёмкости по требованию, что позволяет отслеживать использование пропускной способности. | TableName | Count | Применимо |
+| ConsumedReadCapacityUnits | Количество единиц ёмкости чтения, потреблённых за указанный период времени как для выделенной, так и для ёмкости по требованию, что позволяет отслеживать использование пропускной способности. | TableName, GlobalSecondaryIndexName | Count |  |
+| MaxProvisionedTableReadCapacityUtilization | Процент выделенной ёмкости чтения, используемой таблицей или глобальным вторичным индексом с наибольшей выделенной ёмкостью чтения в аккаунте. | Region | Percent |  |
+| SuccessfulRequestLatency | Задержка успешных запросов к DynamoDB или Amazon DynamoDB Streams за указанный период времени. | TableName, Operation | Milliseconds | Применимо |
+| ReturnedItemCount | Количество элементов, возвращённых операциями Query, Scan или ExecuteStatement (select) за указанный период времени. | TableName, Operation | Count | Применимо |
+| AccountProvisionedReadCapacityUtilization | Процент выделенных единиц ёмкости чтения, используемых аккаунтом. | Region | Percent |  |
+| MaxProvisionedTableWriteCapacityUtilization | Процент выделенной ёмкости записи, используемой таблицей или глобальным вторичным индексом с наибольшей выделенной ёмкостью записи в аккаунте. | Region | Percent |  |
+| AccountMaxTableLevelWrites | Максимальное количество единиц ёмкости записи, которое может использоваться таблицей или глобальным вторичным индексом аккаунта. | Region | Count |  |
+| AccountMaxReads | Максимальное количество единиц ёмкости чтения, которое может использоваться аккаунтом. | Region | Count |  |
+| ConsumedWriteCapacityUnits | Количество единиц ёмкости записи, потреблённых за указанный период времени как для выделенной, так и для ёмкости по требованию, что позволяет отслеживать использование пропускной способности. | TableName | Count | Применимо |
+| ConsumedWriteCapacityUnits | Количество единиц ёмкости записи, потреблённых за указанный период времени как для выделенной, так и для ёмкости по требованию, что позволяет отслеживать использование пропускной способности. | TableName, GlobalSecondaryIndexName | Count |  |
+| AccountMaxTableLevelReads | Максимальное количество единиц ёмкости чтения, которое может использоваться таблицей или глобальным вторичным индексом аккаунта. | Region | Count |  |
+| ProvisionedReadCapacityUnits | Количество выделенных единиц ёмкости чтения для таблицы или глобального вторичного индекса. | TableName | Count | Применимо |
+| ProvisionedReadCapacityUnits | Количество выделенных единиц ёмкости чтения для таблицы или глобального вторичного индекса. | TableName, GlobalSecondaryIndexName | Count |  |
+| ProvisionedWriteCapacityUnits | Количество выделенных единиц ёмкости записи для таблицы или глобального вторичного индекса. | TableName | Count | Применимо |
+| ProvisionedWriteCapacityUnits | Количество выделенных единиц ёмкости записи для таблицы или глобального вторичного индекса. | TableName, GlobalSecondaryIndexName | Count |  |
+| AccountProvisionedWriteCapacityUtilization | Процент выделенных единиц ёмкости записи, используемых аккаунтом. | Region | Percent |  |
+| AccountMaxWrites | Максимальное количество единиц ёмкости записи, которое может использоваться аккаунтом. | Region | Count |  |
+| AgeOfOldestUnreplicatedRecord | Время, прошедшее с момента первого появления в таблице DynamoDB записи, ещё не реплицированной в поток данных Kinesis. | TableName, DelegatedOperation | Milliseconds |  |
+| ConditionalCheckFailedRequests | Количество неудачных попыток выполнить условную запись. | TableName | Count | Применимо |
 | ConsumedChangeDataCaptureUnits |  | TableName, DelegatedOperation | Count |  |
-| FailedToReplicateRecordCount | The number of records that DynamoDB failed to replicate to your Kinesis data stream. | TableName, DelegatedOperation | Count |  |
-| OnlineIndexConsumedWriteCapacity | The number of write capacity units consumed when adding a new global secondary index to a table. | TableName | Count |  |
-| OnlineIndexConsumedWriteCapacity | The number of write capacity units consumed when adding a new global secondary index to a table. | TableName, GlobalSecondaryIndexName | Count |  |
-| OnlineIndexPercentageProgress | The percentage of completion when a new global secondary index is being added to a table. | TableName | Count |  |
-| OnlineIndexPercentageProgress | The percentage of completion when a new global secondary index is being added to a table. | TableName, GlobalSecondaryIndexName | Count |  |
-| OnlineIndexThrottleEvents | The number of write throttle events that occur when adding a new global secondary index to a table. | TableName | Count |  |
-| OnlineIndexThrottleEvents | The number of write throttle events that occur when adding a new global secondary index to a table. | TableName, GlobalSecondaryIndexName | Count |  |
-| PendingReplicationCount | The number of item updates that are written to one replica table, but that have not yet been written to another replica in the global table. | TableName, ReceivingRegion | Count |  |
-| ReadThrottleEvents | Requests to DynamoDB that exceed the provisioned read capacity units for a table or a global secondary index. | TableName | Count | Применимо |
-| ReadThrottleEvents | Requests to DynamoDB that exceed the provisioned read capacity units for a table or a global secondary index. | TableName, GlobalSecondaryIndexName | Count |  |
-| ReplicationLatency | The elapsed time between an updated item appearing in the DynamoDB stream for one replica table, and that item appearing in another replica in the global table. | TableName, ReceivingRegion | Milliseconds |  |
-| ReturnedBytes | The number of bytes returned by GetRecords operations (Amazon DynamoDB Streams) during the specified time period. | TableName, Operation, StreamLabel | Bytes |  |
-| ReturnedRecordsCount | The number of stream records returned by GetRecords operations (Amazon DynamoDB Streams) during the specified time period. | TableName, Operation, StreamLabel | Count |  |
-| SystemErrors | The requests to DynamoDB or Amazon DynamoDB Streams that generate an HTTP 500 status code during the specified time period. | TableName, Operation | Count | Применимо |
-| TimeToLiveDeletedItemCount | The number of items deleted by Time to Live (TTL) during the specified time period. | TableName | Count |  |
-| ThrottledPutRecordCount | The number of records that were throttled by your Kinesis data stream due to insufficient Kinesis Data Streams capacity. | TableName, DelegatedOperation | Count |  |
-| ThrottledRequests | Requests to DynamoDB that exceed the provisioned throughput limits on a resource (such as a table or an index). | TableName, Operation | Count | Применимо |
-| TransactionConflict | Rejected item-level requests due to transactional conflicts between concurrent requests on the same items. | TableName | Count | Применимо |
-| UserErrors | Requests to DynamoDB or Amazon DynamoDB Streams that generate an HTTP 400 status code during the specified time period. | Region | Count | Применимо |
-| WriteThrottleEvents | Requests to DynamoDB that exceed the provisioned write capacity units for a table or a global secondary index. | TableName | Count | Применимо |
-| WriteThrottleEvents | Requests to DynamoDB that exceed the provisioned write capacity units for a table or a global secondary index. | TableName, GlobalSecondaryIndexName | Count |  |
+| FailedToReplicateRecordCount | Количество записей, которые DynamoDB не удалось реплицировать в ваш поток данных Kinesis. | TableName, DelegatedOperation | Count |  |
+| OnlineIndexConsumedWriteCapacity | Количество единиц ёмкости записи, потреблённых при добавлении нового глобального вторичного индекса к таблице. | TableName | Count |  |
+| OnlineIndexConsumedWriteCapacity | Количество единиц ёмкости записи, потреблённых при добавлении нового глобального вторичного индекса к таблице. | TableName, GlobalSecondaryIndexName | Count |  |
+| OnlineIndexPercentageProgress | Процент завершения при добавлении нового глобального вторичного индекса к таблице. | TableName | Count |  |
+| OnlineIndexPercentageProgress | Процент завершения при добавлении нового глобального вторичного индекса к таблице. | TableName, GlobalSecondaryIndexName | Count |  |
+| OnlineIndexThrottleEvents | Количество событий ограничения записи, возникающих при добавлении нового глобального вторичного индекса к таблице. | TableName | Count |  |
+| OnlineIndexThrottleEvents | Количество событий ограничения записи, возникающих при добавлении нового глобального вторичного индекса к таблице. | TableName, GlobalSecondaryIndexName | Count |  |
+| PendingReplicationCount | Количество обновлений элементов, записанных в одну таблицу-реплику, но ещё не записанных в другую реплику глобальной таблицы. | TableName, ReceivingRegion | Count |  |
+| ReadThrottleEvents | Запросы к DynamoDB, превышающие выделенные единицы ёмкости чтения для таблицы или глобального вторичного индекса. | TableName | Count | Применимо |
+| ReadThrottleEvents | Запросы к DynamoDB, превышающие выделенные единицы ёмкости чтения для таблицы или глобального вторичного индекса. | TableName, GlobalSecondaryIndexName | Count |  |
+| ReplicationLatency | Время между появлением обновлённого элемента в потоке DynamoDB для одной таблицы-реплики и появлением этого элемента в другой реплике глобальной таблицы. | TableName, ReceivingRegion | Milliseconds |  |
+| ReturnedBytes | Количество байтов, возвращённых операциями GetRecords (Amazon DynamoDB Streams) за указанный период времени. | TableName, Operation, StreamLabel | Bytes |  |
+| ReturnedRecordsCount | Количество потоковых записей, возвращённых операциями GetRecords (Amazon DynamoDB Streams) за указанный период времени. | TableName, Operation, StreamLabel | Count |  |
+| SystemErrors | Запросы к DynamoDB или Amazon DynamoDB Streams, генерирующие код состояния HTTP 500 за указанный период времени. | TableName, Operation | Count | Применимо |
+| TimeToLiveDeletedItemCount | Количество элементов, удалённых функцией Time to Live (TTL) за указанный период времени. | TableName | Count |  |
+| ThrottledPutRecordCount | Количество записей, ограниченных вашим потоком данных Kinesis из-за недостаточной ёмкости Kinesis Data Streams. | TableName, DelegatedOperation | Count |  |
+| ThrottledRequests | Запросы к DynamoDB, превышающие лимиты выделенной пропускной способности ресурса (например, таблицы или индекса). | TableName, Operation | Count | Применимо |
+| TransactionConflict | Отклонённые запросы на уровне элементов из-за транзакционных конфликтов между параллельными запросами к одним и тем же элементам. | TableName | Count | Применимо |
+| UserErrors | Запросы к DynamoDB или Amazon DynamoDB Streams, генерирующие код состояния HTTP 400 за указанный период времени. | Region | Count | Применимо |
+| WriteThrottleEvents | Запросы к DynamoDB, превышающие выделенные единицы ёмкости записи для таблицы или глобального вторичного индекса. | TableName | Count | Применимо |
+| WriteThrottleEvents | Запросы к DynamoDB, превышающие выделенные единицы ёмкости записи для таблицы или глобального вторичного индекса. | TableName, GlobalSecondaryIndexName | Count |  |

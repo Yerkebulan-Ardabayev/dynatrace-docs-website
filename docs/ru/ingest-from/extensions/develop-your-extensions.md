@@ -1,5 +1,5 @@
 ---
-title: Develop your own Extensions
+title: Разработка собственных расширений
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions
 scraped: 2026-03-06T21:24:25.042127
 ---

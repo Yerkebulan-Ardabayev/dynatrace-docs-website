@@ -1,5 +1,5 @@
 ---
-title: Amazon Web Services monitoring
+title: Мониторинг Amazon Web Services
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/aws-monitoring
 scraped: 2026-02-06T16:29:00.184458
 ---

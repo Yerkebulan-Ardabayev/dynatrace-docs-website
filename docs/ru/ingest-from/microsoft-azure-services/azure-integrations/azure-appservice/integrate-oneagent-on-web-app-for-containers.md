@@ -1,5 +1,5 @@
 ---
-title: Integrate OneAgent on Azure App Service for Linux and containers
+title: Интеграция OneAgent в Azure App Service для Linux и контейнеров
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers
 scraped: 2026-03-06T21:26:42.608656
 ---

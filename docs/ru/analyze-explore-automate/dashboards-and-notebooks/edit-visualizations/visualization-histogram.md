@@ -1,5 +1,5 @@
 ---
-title: Histogram visualization
+title: Визуализация гистограммы
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-histogram
 scraped: 2026-03-06T21:21:19.232793
 ---

@@ -1,5 +1,5 @@
 ---
-title: AWS Billing monitoring
+title: Мониторинг AWS Billing
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-billing
 scraped: 2026-03-03T21:24:00.751455
 ---

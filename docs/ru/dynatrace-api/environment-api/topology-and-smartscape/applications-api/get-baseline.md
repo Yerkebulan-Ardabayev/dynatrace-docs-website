@@ -4,13 +4,13 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-an
 scraped: 2026-03-05T21:26:55.942296
 ---
 
-# Applications API - GET baseline
+# Applications API — GET baseline
 
-# Applications API - GET baseline
+# Applications API — GET baseline
 
-* Reference
-* Updated on Mar 22, 2023
-* Deprecated
+* Справочник
+* Обновлено 22 марта 2023 г.
+* Устарело
 
 Получает базовые данные указанного приложения.
 

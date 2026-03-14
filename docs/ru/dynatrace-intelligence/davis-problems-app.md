@@ -1,5 +1,5 @@
 ---
-title: Problems app
+title: Приложение Problems
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app
 scraped: 2026-03-06T21:09:32.258514
 ---

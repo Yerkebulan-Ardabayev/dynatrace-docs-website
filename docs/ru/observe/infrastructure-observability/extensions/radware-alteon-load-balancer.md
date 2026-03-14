@@ -1,5 +1,5 @@
 ---
-title: Radware Alteon Load Balancer extension
+title: Расширение Radware Alteon Load Balancer
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer
 scraped: 2026-03-06T21:31:00.869391
 ---
@@ -8,9 +8,9 @@ scraped: 2026-03-06T21:31:00.869391
 
 # Расширение Radware Alteon Load Balancer
 
-* Latest Dynatrace
-* Extension
-* Updated on Feb 25, 2026
+* Последняя версия Dynatrace
+* Расширение
+* Обновлено 25 февраля 2026 г.
 
 Мониторинг устройств и интерфейсов балансировщика нагрузки Radware Alteon через SNMP.
 

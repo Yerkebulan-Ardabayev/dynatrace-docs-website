@@ -1,5 +1,5 @@
 ---
-title: SNMP data source
+title: Источник данных SNMP
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions
 scraped: 2026-03-02T21:28:59.047980
 ---

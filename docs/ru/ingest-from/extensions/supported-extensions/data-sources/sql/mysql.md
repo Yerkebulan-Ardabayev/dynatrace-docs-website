@@ -1,5 +1,5 @@
 ---
-title: Manage MySQL extensions
+title: Управление расширениями MySQL
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/mysql
 scraped: 2026-03-06T21:36:51.298927
 ---

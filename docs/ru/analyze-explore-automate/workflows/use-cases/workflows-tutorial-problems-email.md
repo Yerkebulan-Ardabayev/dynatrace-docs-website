@@ -1,5 +1,5 @@
 ---
-title: Send email notifications for problems
+title: Отправка уведомлений по электронной почте для проблем
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-email
 scraped: 2026-02-18T05:43:42.904107
 ---

@@ -1,5 +1,5 @@
 ---
-title: OneAgent privileges for container monitoring
+title: Права доступа OneAgent для мониторинга контейнеров
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/oneagent-privileges
 scraped: 2026-03-05T21:38:31.407473
 ---

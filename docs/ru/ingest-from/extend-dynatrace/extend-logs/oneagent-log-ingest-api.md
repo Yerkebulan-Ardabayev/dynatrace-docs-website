@@ -1,5 +1,5 @@
 ---
-title: OneAgent log ingest API
+title: API приёма журналов OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-logs/oneagent-log-ingest-api
 scraped: 2026-03-05T21:32:31.516583
 ---

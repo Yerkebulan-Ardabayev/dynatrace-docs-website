@@ -1,5 +1,5 @@
 ---
-title: Monitor AWS Fargate
+title: Мониторинг AWS Fargate
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate
 scraped: 2026-03-06T21:18:01.703557
 ---

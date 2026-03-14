@@ -1,5 +1,5 @@
 ---
-title: Log ingestion
+title: Ввод журналов
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion
 scraped: 2026-03-06T21:15:18.200005
 ---

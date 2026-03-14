@@ -1,5 +1,5 @@
 ---
-title: Visualize and analyze security findings
+title: Визуализация и анализ результатов безопасности
 source: https://www.dynatrace.com/docs/secure/use-cases/visualize-and-analyze-security-findings
 scraped: 2026-03-06T21:15:02.482232
 ---

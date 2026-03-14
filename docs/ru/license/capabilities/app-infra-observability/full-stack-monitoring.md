@@ -1,131 +1,131 @@
 ---
-title: Calculate your consumption of Full-Stack Monitoring (DPS)
+title: Расчёт потребления Full-Stack Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/full-stack-monitoring
 scraped: 2026-03-06T21:19:50.073712
 ---
 
-# Calculate your consumption of Full-Stack Monitoring (DPS)
+# Расчёт потребления Full-Stack Monitoring (DPS)
 
-# Calculate your consumption of Full-Stack Monitoring (DPS)
+# Расчёт потребления Full-Stack Monitoring (DPS)
 
-* Latest Dynatrace
-* Explanation
-* 5-min read
-* Updated on Jan 26, 2026
+* Актуальная версия Dynatrace
+* Пояснение
+* Чтение: 5 мин
+* Обновлено 26 января 2026 г.
 
-Full-Stack Monitoring for hosts and containers offers comprehensive application performance monitoring.
-Application performance monitoring includes: distributed tracing, code-level visibility, CPU profiling, memory profiling, and deep process monitoring for hosts and containers.
+Full-Stack Monitoring для хостов и контейнеров предлагает комплексный мониторинг производительности приложений.
+Мониторинг производительности приложений включает: распределённую трассировку, видимость на уровне кода, профилирование CPU, профилирование памяти и глубокий мониторинг процессов для хостов и контейнеров.
 
-* Host-based Full-Stack Monitoring:
+* Full-Stack Monitoring на основе хостов:
 
-  + Consumption is based on host memory, see [GiB-hours](#gib-hour).
-  + Additionally offers all features of [Infrastructure Monitoring](infrastructure-monitoring.md "Learn how your consumption of the Dynatrace Infrastructure Monitoring DPS capability is billed and charged.").
+  + Потребление основано на памяти хоста, см. [ГиБ-часы](#gib-hour).
+  + Дополнительно предлагает все функции [Infrastructure Monitoring](infrastructure-monitoring.md "Узнайте, как рассчитывается потребление возможности Dynatrace Infrastructure Monitoring DPS.").
 
-  + Additionally offers all features of [Kubernetes Platform Monitoring](../container-monitoring.md#kubernetes-monitoring "Learn about the different container monitoring modes that are available with a Dynatrace Platform Subscription (DPS) license.")[1](#fn-1-1-def) [2](#fn-1-2-def).
+  + Дополнительно предлагает все функции [Kubernetes Platform Monitoring](../container-monitoring.md#kubernetes-monitoring "Узнайте о различных режимах мониторинга контейнеров, доступных с лицензией Dynatrace Platform Subscription (DPS).")[1](#fn-1-1-def) [2](#fn-1-2-def).
 
-  + Dynatrace Extensions can be enabled on hosts with host-based Full-Stack Monitoring and may consume [Full-Stack custom metric data points](#full-stack-metrics) and [Log Analytics](../log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
-* Container-based application-only Full-Stack Monitoring: Consumption is based on container memory, see [GiB-hour calculation for application-only container monitoring](#app-only-gib-hour)[3](#fn-1-3-def).
+  + Расширения Dynatrace Extensions могут быть включены на хостах с Full-Stack Monitoring на основе хостов и могут потреблять [пользовательские точки данных метрик Full-Stack](#full-stack-metrics) и [Log Analytics](../log-analytics.md "Узнайте, как рассчитывается потребление Dynatrace Log Analytics с использованием модели Dynatrace Platform Subscription.").
+* Full-Stack Monitoring на основе контейнеров (application-only): Потребление основано на памяти контейнера, см. [Расчёт ГиБ-часов для мониторинга контейнеров application-only](#app-only-gib-hour)[3](#fn-1-3-def).
 
-To learn more about supported platforms, see [OneAgent platform and capability support matrix](../../../ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.").
+Чтобы узнать больше о поддерживаемых платформах, см. [Матрица поддержки платформ и возможностей OneAgent](../../../ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах.").
 
 1
 
-Host-based Full-Stack monitoring includes Kubernetes Platform Monitoring for all pods running on Full-Stack monitored hosts.
-Pods running on non-Full-Stack monitored hosts and pods stuck in Pending are not included in host-based Full-Stack monitoring.
-These two types of pods are charged per pod-hour as described in [Kubernetes Platform Monitoring](../container-monitoring/kubernetes-platform-monitoring.md#how-consumption-is-calculated-pod-hour "Learn how your consumption of the Dynatrace Kubernetes Platform Monitoring DPS capability is billed and charged.").
+Full-Stack Monitoring на основе хостов включает Kubernetes Platform Monitoring для всех подов, работающих на хостах с Full-Stack мониторингом.
+Поды, работающие на хостах без Full-Stack мониторинга, и поды в состоянии Pending не включены в Full-Stack Monitoring на основе хостов.
+Эти два типа подов тарифицируются за под-час, как описано в [Kubernetes Platform Monitoring](../container-monitoring/kubernetes-platform-monitoring.md#how-consumption-is-calculated-pod-hour "Узнайте, как рассчитывается потребление возможности Dynatrace Kubernetes Platform Monitoring DPS.").
 
 2
 
-For Kubernetes Platform Monitoring to be included with host-based Full-Stack monitoring, you must have OneAgent version 1.301+.
-If you have OneAgent version 1.300 or earlier, Kubernetes Platform Monitoring will still be available, but pod-hour charges will apply as described in [Kubernetes Platform Monitoring](../container-monitoring/kubernetes-platform-monitoring.md#how-consumption-is-calculated-pod-hour "Learn how your consumption of the Dynatrace Kubernetes Platform Monitoring DPS capability is billed and charged.").
+Для включения Kubernetes Platform Monitoring в Full-Stack Monitoring на основе хостов необходим OneAgent версии 1.301+.
+Если у вас OneAgent версии 1.300 или более ранней, Kubernetes Platform Monitoring будет по-прежнему доступен, но будут применяться тарифы за под-час, как описано в [Kubernetes Platform Monitoring](../container-monitoring/kubernetes-platform-monitoring.md#how-consumption-is-calculated-pod-hour "Узнайте, как рассчитывается потребление возможности Dynatrace Kubernetes Platform Monitoring DPS.").
 
 3
 
-Container-based application-only Full-Stack Monitoring does not include Infrastructure Monitoring or Kubernetes Platform Monitoring.
+Full-Stack Monitoring на основе контейнеров (application-only) не включает Infrastructure Monitoring или Kubernetes Platform Monitoring.
 
-## GiB-hours
+## ГиБ-часы
 
-Dynatrace uses GiB-hours (referred to as "memory-gibibyte-hours" in your rate card) as the unit of measure for calculating your organization's consumption of host monitoring in Full-Stack Monitoring mode.
-The more memory that a host has, and the longer that the host is monitored, the higher the number of GiB-hours that the host consumes.
+Dynatrace использует ГиБ-часы (упоминаемые как «memory-gibibyte-hours» в вашем тарифном плане) в качестве единицы измерения для расчёта потребления мониторинга хостов вашей организацией в режиме Full-Stack Monitoring.
+Чем больше памяти у хоста и чем дольше хост отслеживается, тем выше количество ГиБ-часов, потребляемых хостом.
 
-The advantage of the GiB-hour approach to monitoring consumption is its simplicity and transparency.
-Technology-specific factors (for example, the number of JVMs or the number of microservices hosted on a server) don't affect consumption.
-It doesn't matter if a host runs Kubernetes or other containerized applications, .NET-based applications, Java-based applications, or something else.
-You can have 10 or 1,000 JVMs; such factors don't affect an environment's monitoring consumption.
+Преимущество подхода ГиБ-часов к потреблению мониторинга — его простота и прозрачность.
+Технологически-специфические факторы (например, количество JVM или количество микросервисов, размещённых на сервере) не влияют на потребление.
+Не имеет значения, работает ли хост под управлением Kubernetes или других контейнеризованных приложений, приложений на основе .NET, Java или чего-то другого.
+У вас может быть 10 или 1000 JVM; такие факторы не влияют на потребление мониторинга среды.
 
-### Billing granularity for GiB-hour consumption
+### Гранулярность тарификации для потребления ГиБ-часов
 
-Dynatrace is built for dynamic cloud-native environments where hosts and services are rapidly spun up and destroyed.
-Therefore, billing granularity for GiB-hour consumption is calculated in 15-minute intervals.
-When a host or container is monitored for fewer than 15 minutes in an interval, GiB-hour consumption is rounded up to 15 minutes before consumption is calculated.
+Dynatrace создан для динамических облачных сред, где хосты и сервисы быстро создаются и уничтожаются.
+Поэтому гранулярность тарификации для потребления ГиБ-часов рассчитывается 15-минутными интервалами.
+Когда хост или контейнер отслеживается менее 15 минут в интервале, потребление ГиБ-часов округляется до 15 минут перед расчётом потребления.
 
-### GiB-hour calculation for physical hosts and virtual machines (VMs)
+### Расчёт ГиБ-часов для физических хостов и виртуальных машин (ВМ)
 
-Each installed instance of Dynatrace OneAgent running on an operating system instance (deployed on, for example, a physical or virtual machine) in Full-Stack Monitoring mode consumes GiB-hours based on the monitored host's physical or virtual RAM, calculated in 15-minute intervals (see the diagram example below).
+Каждый установленный экземпляр Dynatrace OneAgent, работающий на экземпляре операционной системы (развёрнутый, например, на физической или виртуальной машине) в режиме Full-Stack Monitoring, потребляет ГиБ-часы на основе физической или виртуальной оперативной памяти отслеживаемого хоста, рассчитанные 15-минутными интервалами (см. пример диаграммы ниже).
 
-The RAM of each VM or host is rounded up to the next multiple of 0.25 GiB (which equates to 256 MiB) before monitoring consumption is calculated.
-A 4 GiB minimum is applied to GiB-hour consumption for physical and virtual hosts.
-For example, a host with 8.3 GiB memory is counted as an 8.5 GiB host, being the next multiple of 0.25 GiB, while a host with 2 GiB memory is counted as a 4 GiB host (no rounding needed, but application of the 4 GiB minimum).
+Оперативная память каждой ВМ или хоста округляется до следующего кратного 0,25 ГиБ (что равно 256 МиБ) перед расчётом потребления мониторинга.
+К потреблению ГиБ-часов для физических и виртуальных хостов применяется минимум 4 ГиБ.
+Например, хост с 8,3 ГиБ памяти считается как хост с 8,5 ГиБ, что является следующим кратным 0,25 ГиБ, а хост с 2 ГиБ памяти считается как хост с 4 ГиБ (округление не требуется, но применяется минимум 4 ГиБ).
 
-### GiB-hour calculation for application-only container monitoring
+### Расчёт ГиБ-часов для мониторинга контейнеров application-only
 
-In cloud-native environments, services and hosts are often short-lived.
-Therefore, calculating monitoring consumption in 15-minute time intervals, rather than full hours, better reflects actual usage.
-Containers, which are an essential mechanism in cloud-native environments, typically use less memory than hosts.
-Therefore, the minimum memory threshold for containers is 256 MiB, rather than 4 GiB, the minimum memory threshold for hosts.
+В облачных средах сервисы и хосты часто являются кратковременными.
+Поэтому расчёт потребления мониторинга 15-минутными интервалами, а не полными часами, лучше отражает фактическое использование.
+Контейнеры, являющиеся важным механизмом в облачных средах, обычно используют меньше памяти, чем хосты.
+Поэтому минимальный порог памяти для контейнеров составляет 256 МиБ, а не 4 ГиБ — минимальный порог памяти для хостов.
 
-The same rounding as for hosts, to the next multiple of 0.25 GiB, also applies to containers.
-For example, a container with 780 MiB memory is counted as a 1 GiB container (780 MiB, which equals 0.78 GiB, being rounded up to the next multiple of 0.25 GiB).
+Такое же округление, как и для хостов, до следующего кратного 0,25 ГиБ, также применяется к контейнерам.
+Например, контейнер с 780 МиБ памяти считается как контейнер с 1 ГиБ (780 МиБ, что равно 0,78 ГиБ, округляется до следующего кратного 0,25 ГиБ).
 
-The figure below illustrates how memory is counted for GiB-hour consumption calculations at 15-minute intervals.
-Each interval is divided by four in order to reach the GiB-hour consumption unit of measure.
+На рисунке ниже показано, как память учитывается при расчётах потребления ГиБ-часов с 15-минутными интервалами.
+Каждый интервал делится на четыре для получения единицы измерения потребления ГиБ-часов.
 
-![Full-Stack consumption](https://dt-cdn.net/images/fullstack-monitoring-consumption-5584-2d3c737d8b.jpg)
+![Потребление Full-Stack](https://dt-cdn.net/images/fullstack-monitoring-consumption-5584-2d3c737d8b.jpg)
 
-#### Memory-size calculations
+#### Расчёты объёма памяти
 
-Memory-size calculations for containers monitored in an application-only approach are based on either:
+Расчёты объёма памяти для контейнеров, отслеживаемых в режиме application-only, основаны на одном из следующих параметров:
 
-* The container's used memory.
+* Используемая память контейнера.
 
-  + OneAgent version 1.275+ (for Kubernetes containers)
-  + OneAgent version 1.297+ (for serverless containers)
-* Container-defined memory limits.
-  If no memory limit is set, the memory of the underlying virtual machine is used instead.
+  + OneAgent версии 1.275+ (для контейнеров Kubernetes)
+  + OneAgent версии 1.297+ (для бессерверных контейнеров)
+* Определённые контейнером лимиты памяти.
+  Если лимит памяти не установлен, вместо него используется память базовой виртуальной машины.
 
-  + OneAgent version <1.275 (for Kubernetes containers)
-  + OneAgent version <1.297 (for serverless containers)
+  + OneAgent версии <1.275 (для контейнеров Kubernetes)
+  + OneAgent версии <1.297 (для бессерверных контейнеров)
 
-[Automatic container detection](../../../observe/infrastructure-observability/process-groups/configuration/cloud-app-and-workload-detection.md#automatic-container-detection "Detect cloud applications and workloads, and define rules to merge similar Kubernetes workloads into process groups.") needs to be enabled for existing tenants.
+Для существующих тенантов необходимо включить [автоматическое обнаружение контейнеров](../../../observe/infrastructure-observability/process-groups/configuration/cloud-app-and-workload-detection.md#automatic-container-detection "Обнаружение облачных приложений и рабочих нагрузок, а также определение правил для объединения аналогичных рабочих нагрузок Kubernetes в группы процессов.").
 
-Certain monitoring scenarios have their own calculations for GiB-hour consumption, as described in the table below.
+Определённые сценарии мониторинга имеют собственные расчёты потребления ГиБ-часов, как описано в таблице ниже.
 
-| Scenario | Description |
+| Сценарий | Описание |
 | --- | --- |
-| Azure App Services (running on the App Service (dedicated) plan for Windows) | Consumption is based on the number and memory of the plan's instances. It does not matter how many applications run on the instances.  The minimum billed memory is 256 MiB (instead of 4 GiB). |
-| Azure App Service (running on Linux OS or Linux containers) OneAgent version 1.297+ | If automatic container detection is enabled: consumption is based on the used memory of the container.  If automatic container detection is not enabled: consumption is based on the memory of the plan's instance, multiplied by the number of running containers. |
-| Azure App Service (running on Linux OS or Linux containers) OneAgent version <1.297 | Consumption is based on the memory of the plan's instance, multiplied by the number of running containers, regardless if automatic container detection is enabled or not. |
-| Oracle Solaris Zones | Solaris Zones are counted as hosts. |
-| Monitored containers that are not detected as containers | These containers are counted as hosts. |
+| Azure App Services (работающие на плане App Service (dedicated) для Windows) | Потребление основано на количестве и памяти экземпляров плана. Не имеет значения, сколько приложений работает на экземплярах.  Минимальная тарифицируемая память составляет 256 МиБ (вместо 4 ГиБ). |
+| Azure App Service (работающий на Linux OS или контейнерах Linux) OneAgent версии 1.297+ | Если автоматическое обнаружение контейнеров включено: потребление основано на используемой памяти контейнера.  Если автоматическое обнаружение контейнеров не включено: потребление основано на памяти экземпляра плана, умноженной на количество работающих контейнеров. |
+| Azure App Service (работающий на Linux OS или контейнерах Linux) OneAgent версии <1.297 | Потребление основано на памяти экземпляра плана, умноженной на количество работающих контейнеров, независимо от того, включено ли автоматическое обнаружение контейнеров или нет. |
+| Oracle Solaris Zones | Solaris Zones считаются как хосты. |
+| Отслеживаемые контейнеры, не обнаруженные как контейнеры | Эти контейнеры считаются как хосты. |
 
-## Metrics
+## Метрики
 
-This section assumes that you have followed the Dynatrace-recommended deployment options, especially regarding telemetry enrichment.
-If you implement a custom deployment, the charging of included metrics may still work as describedâbut this is not guaranteed by Dynatrace.
+В этом разделе предполагается, что вы следовали рекомендованным Dynatrace вариантам развёртывания, особенно в отношении обогащения телеметрии.
+Если вы реализуете пользовательское развёртывание, тарификация включённых метрик может по-прежнему работать как описано, но это не гарантируется Dynatrace.
 
-For more information, see [Supported deployment options](#deployment-options).
+Для получения дополнительной информации см. [Поддерживаемые варианты развёртывания](#deployment-options).
 
-Full-Stack Monitoring includes all Infrastructure Monitoring metrics, application performance monitoring metrics, and [other built-in metrics](../metrics/dps-metrics-ingest.md#billable-and-non-billable-metrics "Learn how your consumption of the Metrics - Ingest & Process DPS capability is billed and charged.").
-These metrics are included and never produce any charge.
+Full-Stack Monitoring включает все метрики Infrastructure Monitoring, метрики мониторинга производительности приложений и [другие встроенные метрики](../metrics/dps-metrics-ingest.md#billable-and-non-billable-metrics "Узнайте, как рассчитывается потребление возможности Metrics - Ingest & Process DPS.").
+Эти метрики включены и никогда не создают дополнительных расходов.
 
-Full-Stack Monitoring also includes a defined amount of custom metric data points.
-Every contributing GiB of host or application memory adds 900 custom metric data points in each 15-minute interval.
-Included metric data points that are not consumed within the 15-minute interval in which they are granted do not roll over to subsequent intervals.
-Your environment's included metric data points are applied automatically to metrics that originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.
+Full-Stack Monitoring также включает определённый объём пользовательских точек данных метрик.
+Каждый вносящий вклад ГиБ памяти хоста или приложения добавляет 900 пользовательских точек данных метрик в каждом 15-минутном интервале.
+Включённые точки данных метрик, не использованные в 15-минутном интервале, в котором они были предоставлены, не переносятся на последующие интервалы.
+Включённые точки данных метрик вашей среды автоматически применяются к метрикам, которые исходят от хостов и контейнеров, отслеживаемых OneAgent в режиме Full-Stack Monitoring.
 
-All metric keys starting with `dt.service.*` are for [service monitoring](../../../observe/application-observability/services.md "Learn how to monitor and analyze your services, define and use request attributes, and more.") and consume included Full-Stack metric data points if the span data itself originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.
-If the span data originates at any other source, these metrics are charged as [Metrics powered by Grail](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
-Such metric keys include, for example:
+Все ключи метрик, начинающиеся с `dt.service.*`, предназначены для [мониторинга сервисов](../../../observe/application-observability/services.md "Узнайте, как отслеживать и анализировать ваши сервисы, определять и использовать атрибуты запросов и многое другое.") и потребляют включённые точки данных метрик Full-Stack, если данные спанов исходят от хостов и контейнеров, отслеживаемых OneAgent в режиме Full-Stack Monitoring.
+Если данные спанов исходят из другого источника, эти метрики тарифицируются как [Metrics powered by Grail](../metrics.md "Узнайте, как рассчитывается потребление Dynatrace Metrics powered by Grail с использованием модели Dynatrace Platform Subscription.").
+Такие ключи метрик включают, например:
 
 * `dt.service.request.count`
 * `dt.service.request.failure_count`
@@ -138,273 +138,273 @@ Such metric keys include, for example:
 * `dt.service.messaging.publish.count`
 * `dt.service.messaging.receive.count`
 
-Metric data points that exceed your included volume are charged as:
+Точки данных метрик, превышающие ваш включённый объём, тарифицируются как:
 
-* If Metrics powered by Grail exists on your rate card, these are charged as [Metrics powered by Grail](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
-* If Metrics powered by Grail does not exist on your rate card, these are charged as [Custom Metrics Classic](../platform-extensions/custom-metrics-classic.md "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
+* Если Metrics powered by Grail есть в вашем тарифном плане, они тарифицируются как [Metrics powered by Grail](../metrics.md "Узнайте, как рассчитывается потребление Dynatrace Metrics powered by Grail с использованием модели Dynatrace Platform Subscription.").
+* Если Metrics powered by Grail нет в вашем тарифном плане, они тарифицируются как [Custom Metrics Classic](../platform-extensions/custom-metrics-classic.md "Узнайте, как рассчитывается потребление возможности Dynatrace Custom Metrics Classic DPS.").
 
-Your environment's included metric data points are applied automatically to metrics that originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.
-This applies to custom metrics as described in the table below.
+Включённые точки данных метрик вашей среды автоматически применяются к метрикам, которые исходят от хостов и контейнеров, отслеживаемых OneAgent в режиме Full-Stack Monitoring.
+Это применяется к пользовательским метрикам, как описано в таблице ниже.
 
 1
 
-Metric data points originating from Application Observability are included only if [Metrics powered by Grail overview (DPS)](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") exists on your rate card.
+Точки данных метрик, исходящие от Application Observability, включены только если [Обзор Metrics powered by Grail (DPS)](../metrics.md "Узнайте, как рассчитывается потребление Dynatrace Metrics powered by Grail с использованием модели Dynatrace Platform Subscription.") есть в вашем тарифном плане.
 
 2
 
-Metric data points sent via the Dynatrace Collector are included only if [Metrics powered by Grail overview (DPS)](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") exists on your rate card.
+Точки данных метрик, отправленные через Dynatrace Collector, включены только если [Обзор Metrics powered by Grail (DPS)](../metrics.md "Узнайте, как рассчитывается потребление Dynatrace Metrics powered by Grail с использованием модели Dynatrace Platform Subscription.") есть в вашем тарифном плане.
 
 3
 
-Metric data points sent via the OpenTelemetry Collector are included only if [Metrics powered by Grail overview (DPS)](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") exists on your rate card and the OpenTelemetry Collector has been configured as described in [Enrich OTLP requests with Kubernetes data](../../../ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich.md "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.").
+Точки данных метрик, отправленные через OpenTelemetry Collector, включены только если [Обзор Metrics powered by Grail (DPS)](../metrics.md "Узнайте, как рассчитывается потребление Dynatrace Metrics powered by Grail с использованием модели Dynatrace Platform Subscription.") есть в вашем тарифном плане и OpenTelemetry Collector настроен, как описано в [Обогащение OTLP-запросов данными Kubernetes](../../../ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich.md "Настройка OpenTelemetry Collector для обогащения OTLP-запросов данными Kubernetes.").
 
-### Included metric data point calculation example
+### Пример расчёта включённых точек данных метрик
 
-Considering the example shown in Figure 1, here are the calculations for the included metric data point volumes for each of the four 15-minute intervals, assuming a volume of 900 included metric data points for each 15-minute interval.
+Рассматривая пример, показанный на рисунке 1, ниже приведены расчёты включённых объёмов точек данных метрик для каждого из четырёх 15-минутных интервалов, при условии объёма в 900 включённых точек данных метрик для каждого 15-минутного интервала.
 
-* First 15-minute interval: `900 (included metric data points) Ã 13.5 (GiB memory) = 12,150 included metric data points`
-* Second 15-minute interval: `900 (included metric data points) Ã 9.5 (GiB memory) = 8,550 included metric data points`
-* Third 15-minute interval: `900 (included metric data points) Ã 8.75 (GiB memory) = 7,875 included metric data points`
-* Fourth 15-minute interval: `900 (included metric data points) Ã 0.25 (GiB memory) = 225 included metric data points`
+* Первый 15-минутный интервал: `900 (включённых точек данных метрик) x 13,5 (ГиБ памяти) = 12 150 включённых точек данных метрик`
+* Второй 15-минутный интервал: `900 (включённых точек данных метрик) x 9,5 (ГиБ памяти) = 8 550 включённых точек данных метрик`
+* Третий 15-минутный интервал: `900 (включённых точек данных метрик) x 8,75 (ГиБ памяти) = 7 875 включённых точек данных метрик`
+* Четвёртый 15-минутный интервал: `900 (включённых точек данных метрик) x 0,25 (ГиБ памяти) = 225 включённых точек данных метрик`
 
-### How metric data points are consumed in Full-Stack Monitoring mode
+### Как потребляются точки данных метрик в режиме Full-Stack Monitoring
 
-Metric data point consumption takes many forms.
-An equal number of data points can be consumed:
+Потребление точек данных метрик принимает различные формы.
+Одинаковое количество точек данных может быть потреблено:
 
-* By a few high-resolution metrics or numerous low-resolution metrics.
-* Equally across multiple 15-minute intervals or all at once in a single minute.
-* By all monitored hosts, a subset of all Full-Stack monitored hosts, or a single host.
+* Несколькими метриками с высоким разрешением или множеством метрик с низким разрешением.
+* Равномерно распределённо по нескольким 15-минутным интервалам или сразу в течение одной минуты.
+* Всеми отслеживаемыми хостами, подмножеством всех хостов с Full-Stack мониторингом или одним хостом.
 
-## Distributed traces
+## Распределённые трассировки
 
-Full-Stack Monitoring includes a defined amount of trace data volume.
-Every contributing GiB of host or application memory adds 200 KiB of trace data per minute, for a total of 3000 KiB of trace data in each 15-minute interval of the [Monitoring environment](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
-This volume addresses the majority of customer use cases.
-If necessary, customers can explicitly [extend the trace ingest](#extend-trace-ingest).
+Full-Stack Monitoring включает определённый объём данных трассировок.
+Каждый вносящий вклад ГиБ памяти хоста или приложения добавляет 200 КиБ данных трассировок в минуту, что составляет в общей сложности 3000 КиБ данных трассировок в каждом 15-минутном интервале [Среды мониторинга](../../../discover-dynatrace/get-started/monitoring-environment.md "Узнайте и научитесь работать со средами мониторинга.").
+Этот объём покрывает большинство сценариев использования клиентов.
+При необходимости клиенты могут явно [расширить объём приёма трассировок](#extend-trace-ingest).
 
-Included trace data volume that is not consumed within the 15-minute interval in which it is granted does not roll over to subsequent intervals.
+Включённый объём данных трассировок, не использованный в 15-минутном интервале, в котором он был предоставлен, не переносится на последующие интервалы.
 
-Environments that have less then 320 memory GiB contributing to the included trace volume will receive a fixed minimum peak volume of 64,000 KiB/minute, which is equivalent to 937.5 MiB in a single 15-minute interval.
+Среды, имеющие менее 320 ГиБ памяти, вносящей вклад во включённый объём трассировок, получат фиксированный минимальный пиковый объём 64 000 КиБ/минуту, что эквивалентно 937,5 МиБ в одном 15-минутном интервале.
 
-Full-Stack Monitoring trace data comes from two sources and takes one of two forms.
+Данные трассировок Full-Stack Monitoring поступают из двух источников и принимают одну из двух форм.
 
-* Trace data from the Dynatrace OneAgent: OneAgent automatically manages the volume of captured trace data via [Adaptive Traffic Management](../../../ingest-from/dynatrace-oneagent/adaptive-traffic-management.md#dps "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.").
-  It automatically and continuously adjusts the sampling rate in an intelligent way and keeps the ingested trace data volume roughly within your included trace-data volume, which prevents any unexpected costs.
-* The second data source is trace data sent via the [OneAgent Trace API](../../../ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") or, more generally, OpenTelemetry traces that originate at a Full-Stack Monitoring host or application and are sent via the OTLP API.
-  Trace data sent this way may be sampled by an OpenTelemetry agent, the SDK, or Collector at a fixed rate.
-  These mechanisms are not controlled by Dynatrace or by [Adaptive Traffic Management](../../../ingest-from/dynatrace-oneagent/adaptive-traffic-management.md#dps "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.").
-  This means this trace data is not automatically kept below the included trace data volume.
-  OpenTelemetry traces that are sent this way count against the included trace data volume (200 KiB of trace data per minute), and any trace data that exceeds the include trace data volume is charged as [Traces - Ingest & Process](../traces.md#trace-ingest-usage "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.").
+* Данные трассировок от Dynatrace OneAgent: OneAgent автоматически управляет объёмом захваченных данных трассировок через [Adaptive Traffic Management](../../../ingest-from/dynatrace-oneagent/adaptive-traffic-management.md#dps "Dynatrace Adaptive Traffic Management обеспечивает динамическую выборку для того, чтобы объём захваченных трассировок оставался в пределах включённого объёма трассировок Full-Stack Monitoring.").
+  Он автоматически и непрерывно интеллектуально корректирует частоту выборки и поддерживает объём принимаемых данных трассировок примерно в пределах включённого объёма данных трассировок, что предотвращает непредвиденные расходы.
+* Второй источник данных — данные трассировок, отправленные через [OneAgent Trace API](../../../ingest-from/opentelemetry/otlp-api.md "Узнайте об конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") или, в более общем смысле, трассировки OpenTelemetry, исходящие от хоста или приложения с Full-Stack Monitoring и отправленные через OTLP API.
+  Данные трассировок, отправленные таким образом, могут быть сэмплированы агентом OpenTelemetry, SDK или Collector с фиксированной частотой.
+  Эти механизмы не контролируются Dynatrace или [Adaptive Traffic Management](../../../ingest-from/dynatrace-oneagent/adaptive-traffic-management.md#dps "Dynatrace Adaptive Traffic Management обеспечивает динамическую выборку для того, чтобы объём захваченных трассировок оставался в пределах включённого объёма трассировок Full-Stack Monitoring.").
+  Это означает, что данные трассировок не удерживаются автоматически ниже включённого объёма данных трассировок.
+  Трассировки OpenTelemetry, отправленные таким образом, учитываются в рамках включённого объёма данных трассировок (200 КиБ данных трассировок в минуту), и любые данные трассировок, превышающие включённый объём, тарифицируются как [Traces - Ingest & Process](../traces.md#trace-ingest-usage "Узнайте, как рассчитывается потребление Dynatrace Traces powered by Grail с использованием модели Dynatrace Platform Subscription (DPS).").
 
-  Note that traces sent via the Custom Trace API and not coming from a Full-Stack Monitoring host or application are always charged as [Traces - Ingest & Process](../traces.md#trace-ingest-usage "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.").
+  Обратите внимание, что трассировки, отправленные через Custom Trace API и не исходящие от хоста или приложения с Full-Stack Monitoring, всегда тарифицируются как [Traces - Ingest & Process](../traces.md#trace-ingest-usage "Узнайте, как рассчитывается потребление Dynatrace Traces powered by Grail с использованием модели Dynatrace Platform Subscription (DPS).").
 
-  For OpenTelemetry traces, this section assumes that you have followed the Dynatrace-recommended deployment options, especially regarding telemetry enrichment.
-  If you implement a custom deployment, the charging of included traces from OpenTelemetry sources may still work as describedâbut this is not guaranteed by Dynatrace.
+  Для трассировок OpenTelemetry в этом разделе предполагается, что вы следовали рекомендованным Dynatrace вариантам развёртывания, особенно в отношении обогащения телеметрии.
+  Если вы реализуете пользовательское развёртывание, тарификация включённых трассировок из источников OpenTelemetry может по-прежнему работать как описано, но это не гарантируется Dynatrace.
 
-  For more information, see [Supported deployment options](#deployment-options).
+  Для получения дополнительной информации см. [Поддерживаемые варианты развёртывания](#deployment-options).
 
-What about the included trace volume in DPS prior to Traces powered by Grail
+Что насчёт включённого объёма трассировок в DPS до Traces powered by Grail
 
-While the uncompressed amount of spans and traces has not changed, the way Dynatrace measures this has changed with the release of Traces powered by Grail.
-Due to this the stated included trace volume and the stated peak trace volume for DPS subscriptions prior the enablement of traces powered by Grail is different.
+Хотя несжатое количество спанов и трассировок не изменилось, способ их измерения Dynatrace изменился с выпуском Traces powered by Grail.
+В связи с этим указанный включённый объём трассировок и указанный пиковый объём трассировок для подписок DPS до активации Traces powered by Grail отличаются.
 
-For non-Grail enabled DPS:
+Для DPS без включённого Grail:
 
-* Every contributing GiB of host or application memory adds a peak trace volume of 45 KiB/min.
-* Each environment has a minimum trace peak volume of 14 MiB/min.
+* Каждый вносящий вклад ГиБ памяти хоста или приложения добавляет пиковый объём трассировок 45 КиБ/мин.
+* Каждая среда имеет минимальный пиковый объём трассировок 14 МиБ/мин.
 
-### Peak trace volume/minute calculation example
+### Пример расчёта пикового объёма трассировок/минуту
 
-* First 15-minute interval: `200 KiB (peak trace volume) Ã 1350 (GiB memory) = 263.67 MiB/minute`
-* Second 15-minute interval: `200 KiB (peak trace volume) Ã 950 (GiB memory) = 185.55 MiB/minute`
-* Third 15-minute interval: `200 KiB (peak trace volume) Ã 875 (GiB memory) = 170.9 MiB/minute`
-* Fourth 15-minute interval: `200 KiB (peak trace volume) Ã 25 (GiB memory) = 58.6 MiB/minute`
+* Первый 15-минутный интервал: `200 КиБ (пиковый объём трассировок) x 1350 (ГиБ памяти) = 263,67 МиБ/минуту`
+* Второй 15-минутный интервал: `200 КиБ (пиковый объём трассировок) x 950 (ГиБ памяти) = 185,55 МиБ/минуту`
+* Третий 15-минутный интервал: `200 КиБ (пиковый объём трассировок) x 875 (ГиБ памяти) = 170,9 МиБ/минуту`
+* Четвёртый 15-минутный интервал: `200 КиБ (пиковый объём трассировок) x 25 (ГиБ памяти) = 58,6 МиБ/минуту`
 
-(In the fourth 15-minute interval the actually ingested amount would be below the minimum trace volume, hence the actual applied limit is equal to this minimum.)
+(В четвёртом 15-минутном интервале фактический объём приёма был бы ниже минимального объёма трассировок, поэтому фактически применяемый лимит равен этому минимуму.)
 
-### Included and extended Trace retention
+### Включённое и расширенное хранение трассировок
 
-Dynatrace [retains all traces](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#purepath "Check retention times for various data types.") ingested from your environment for 10 days.
+Dynatrace [хранит все трассировки](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#purepath "Проверьте сроки хранения различных типов данных."), принятые из вашей среды, в течение 10 дней.
 
-Dynatrace provides the ability to extend trace retention on a selective basis for up to 10 years, regardless of the ingest method or volume.
-This is achieved by [creating custom buckets](../../../platform/grail/organize-data.md "Insights on the Grail data model consisting of buckets, tables, and views.") in Grail.
-The first 10 days of retention are always included.
-Any trace data retained longer than 10 days is charged on a per-gibibyte basis as [Traces - Retain](../traces.md#trace-retain-usage "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.").
+Dynatrace предоставляет возможность расширить хранение трассировок на выборочной основе до 10 лет, независимо от метода приёма или объёма.
+Это достигается путём [создания пользовательских бакетов](../../../platform/grail/organize-data.md "Информация о модели данных Grail, состоящей из бакетов, таблиц и представлений.") в Grail.
+Первые 10 дней хранения всегда включены.
+Любые данные трассировок, хранящиеся дольше 10 дней, тарифицируются за гибибайт как [Traces - Retain](../traces.md#trace-retain-usage "Узнайте, как рассчитывается потребление Dynatrace Traces powered by Grail с использованием модели Dynatrace Platform Subscription (DPS).").
 
-### Extended Trace ingest for Full-Stack Monitoring
+### Расширенный приём трассировок для Full-Stack Monitoring
 
-Full-Stack Monitoring includes a defined amount of trace data volume.
-Every contributing GiB of host or application memory adds 200 KiB of trace data per minute, for a total of 3000 KiB of trace data in each 15-minute interval of the [Monitoring environment](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+Full-Stack Monitoring включает определённый объём данных трассировок.
+Каждый вносящий вклад ГиБ памяти хоста или приложения добавляет 200 КиБ данных трассировок в минуту, что составляет в общей сложности 3000 КиБ данных трассировок в каждом 15-минутном интервале [Среды мониторинга](../../../discover-dynatrace/get-started/monitoring-environment.md "Узнайте и научитесь работать со средами мониторинга.").
 
-Dynatrace provides the ability to extend the amount of trace data ingested with OneAgent.
-To do this you can request an increased Trace ingest limit beyond the 200 KiB of trace data included per memory-gibibyte.
-Adaptive Traffic Management keeps your trace ingestion within the requested volume, which prevents any unexpected costs.
-(For an explanation of Adaptive Traffic Management, see [Distributed traces](#full-stack-traces)).
-The trace data ingested that exceeds the included volume of 3000 KiB in a given 15-minute interval is charged as [Traces - Ingest & Process](../traces.md#trace-ingest-usage "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.").
+Dynatrace предоставляет возможность расширить объём данных трассировок, принимаемых с помощью OneAgent.
+Для этого вы можете запросить увеличенный лимит приёма трассировок сверх 200 КиБ данных трассировок, включённых на гибибайт памяти.
+Adaptive Traffic Management поддерживает приём трассировок в рамках запрошенного объёма, что предотвращает непредвиденные расходы.
+(Объяснение Adaptive Traffic Management см. в [Распределённые трассировки](#full-stack-traces)).
+Данные трассировок, принятые сверх включённого объёма в 3000 КиБ в данном 15-минутном интервале, тарифицируются как [Traces - Ingest & Process](../traces.md#trace-ingest-usage "Узнайте, как рассчитывается потребление Dynatrace Traces powered by Grail с использованием модели Dynatrace Platform Subscription (DPS).").
 
-The **Full-Stack Adaptive Traffic Management and trace capture** dashboard contains a calculator that helps you estimate how much data this will be based on your desired trace ingest volume.
-To request Extended trace ingest for Full-Stack Monitoring, Please contact a Dynatrace product expert via live chat within your environment.
+Дашборд **Full-Stack Adaptive Traffic Management and trace capture** содержит калькулятор, который поможет вам оценить объём данных на основе желаемого объёма приёма трассировок.
+Чтобы запросить расширенный приём трассировок для Full-Stack Monitoring, обратитесь к эксперту по продуктам Dynatrace через чат в вашей среде.
 
-For example, your current trace capture rate is 100% most of times, but drops to 50% during peak times for 2 hours a day.
-You can request a 2x Trace ingest volume limit, which would raise it to 400 KiB per contributing gibibyte in each 15-minute interval.
-For those 2 hours per day you now ingest twice the amount of trace volume.
-As a result your trace capture rate is now at 100% also during peak hours.
-It does not charge anything for the 22 hours a day that you are already at 100% before the change.
-During the 2 peak hours per day though about half the trace ingest volume will be charged as [Traces - Ingest & Process](../traces.md#trace-ingest-usage "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.").
+Например, ваша текущая частота захвата трассировок составляет 100% большую часть времени, но снижается до 50% в пиковые часы на 2 часа в день.
+Вы можете запросить 2-кратный лимит объёма приёма трассировок, что повысит его до 400 КиБ на вносящий вклад гибибайт в каждом 15-минутном интервале.
+В течение этих 2 часов в день вы теперь принимаете вдвое больший объём трассировок.
+В результате ваша частота захвата трассировок теперь составляет 100% также в пиковые часы.
+Плата не взимается за 22 часа в день, когда вы уже находились на 100% до изменения.
+Однако в течение 2 пиковых часов в день примерно половина объёма приёма трассировок будет тарифицироваться как [Traces - Ingest & Process](../traces.md#trace-ingest-usage "Узнайте, как рассчитывается потребление Dynatrace Traces powered by Grail с использованием модели Dynatrace Platform Subscription (DPS).").
 
-### CPU, memory, and thread profiling
+### Профилирование CPU, памяти и потоков
 
-Full-Stack Monitoring includes [CPU](../../../observe/application-observability/profiling-and-optimization/cpu-profiling.md "Learn how you can use Dynatrace to perform enhanced code analysis."), [memory](../../../observe/application-observability/profiling-and-optimization/memory-profiling.md "Analyze memory allocation with Dynatrace."), and thread profiling for technologies like Java, .NET, Go, Node.js, and PHP.
-OneAgent uses an intelligent patented mechanism to manage the volume of profiling data.
-Dynatrace [retains the total amount of ingested profiling data](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#purepath "Check retention times for various data types.") from your environment for 10 days.
+Full-Stack Monitoring включает профилирование [CPU](../../../observe/application-observability/profiling-and-optimization/cpu-profiling.md "Узнайте, как использовать Dynatrace для выполнения расширенного анализа кода."), [памяти](../../../observe/application-observability/profiling-and-optimization/memory-profiling.md "Анализ распределения памяти с помощью Dynatrace.") и потоков для таких технологий, как Java, .NET, Go, Node.js и PHP.
+OneAgent использует интеллектуальный запатентованный механизм для управления объёмом данных профилирования.
+Dynatrace [хранит общий объём принятых данных профилирования](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#purepath "Проверьте сроки хранения различных типов данных.") из вашей среды в течение 10 дней.
 
-## Supported deployment options
+## Поддерживаемые варианты развёртывания
 
-To ensure that your OpenTelemetry traces and custom metrics benefit from the included trace and metric volumes, you need to enable telemetry enrichment according to the Dynatrace-recommended deployment options.
+Чтобы ваши трассировки OpenTelemetry и пользовательские метрики использовали включённые объёмы трассировок и метрик, необходимо включить обогащение телеметрии в соответствии с рекомендованными Dynatrace вариантами развёртывания.
 
-Automatic telemetry enrichment is enabled for:
+Автоматическое обогащение телеметрии включено для:
 
-* Custom metrics and OpenTelemetry spans that originate from any:
+* Пользовательских метрик и спанов OpenTelemetry, исходящих от любого:
 
-  + Full-Stack monitored host or container, when you use OneAgent or follow the steps described in [Enrich ingested data with Dynatrace-specific fields](../../../ingest-from/extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
-  + Full-Stack monitored Kubernetes container, when you use Dynatrace Operator and [metadata enrichment is enabled](../../../ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.").
-  + Cloud-native Full-Stack monitored Kubernetes node, when you use Dynatrace Operator and [metadata enrichment is enabled](../../../ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.").
-    This includes any containers running on the monitored Kubernetes node.
-* Custom metrics that are sent from any Full-Stack monitored host via the OneAgent local metric API. For more information, see [OneAgent metric API](../../../ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api.md "Use the Dynatrace API to retrieve the metrics of monitored entities.").
+  + Хоста или контейнера с Full-Stack мониторингом, при использовании OneAgent или выполнении шагов, описанных в [Обогащение принимаемых данных полями, специфичными для Dynatrace](../../../ingest-from/extend-dynatrace/extend-data.md "Узнайте, как автоматически обогатить данные телеметрии полями, специфичными для Dynatrace.").
+  + Контейнера Kubernetes с Full-Stack мониторингом, при использовании Dynatrace Operator с [включённым обогащением метаданных](../../../ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment.md "Обогащение метаданных в Dynatrace Operator добавляет контекст к подам Kubernetes, прикрепляя релевантные метаданные к сущностям, таким как поды, хосты и процессы, для улучшения наблюдаемости.").
+  + Ноды Kubernetes с Cloud-native Full-Stack мониторингом, при использовании Dynatrace Operator с [включённым обогащением метаданных](../../../ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment.md "Обогащение метаданных в Dynatrace Operator добавляет контекст к подам Kubernetes, прикрепляя релевантные метаданные к сущностям, таким как поды, хосты и процессы, для улучшения наблюдаемости.").
+    Это включает все контейнеры, работающие на отслеживаемой ноде Kubernetes.
+* Пользовательских метрик, отправленных с любого хоста с Full-Stack мониторингом через локальный API метрик OneAgent. Для получения дополнительной информации см. [OneAgent metric API](../../../ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api.md "Используйте Dynatrace API для получения метрик отслеживаемых сущностей.").
 
-* OpenTelemetry traces that are sent from any Full-Stack monitored host via the OneAgent local trace API. For more information, see [Send OpenTelemetry traces to the OTLP endpoint exposed by OneAgent](../../../ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel.md#send-opentelemetry-traces-to-the-otlp-endpoint-exposed-by-oneagent "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.").
+* Трассировок OpenTelemetry, отправленных с любого хоста с Full-Stack мониторингом через локальный API трассировок OneAgent. Для получения дополнительной информации см. [Отправка трассировок OpenTelemetry на конечную точку OTLP, предоставляемую OneAgent](../../../ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel.md#send-opentelemetry-traces-to-the-otlp-endpoint-exposed-by-oneagent "Узнайте, как отправлять данные OpenTelemetry в Dynatrace OneAgent.").
 
-If you implement a custom deployment, the charging of traces and metrics may still work as describedâbut this is not guaranteed by Dynatrace.
+Если вы реализуете пользовательское развёртывание, тарификация трассировок и метрик может по-прежнему работать как описано, но это не гарантируется Dynatrace.
 
-## Consumption details: Full-Stack
+## Детали потребления: Full-Stack
 
-Dynatrace provides built-in usage metrics that help you understand and analyze your organization's consumption of Full-Stack Monitoring.
-To use these metrics, in ![Data Explorer](https://dt-cdn.net/images/data-explorer-512-743267b1fc.png "Data Explorer") **Data Explorer**, enter `DPS` in the **Search** field.
-These metrics are also available via the Environment API and in Account Management (**Usage summary** > **Full-Stack Monitoring** > **Actions** > **View details**).
+Dynatrace предоставляет встроенные метрики использования, которые помогают вам понять и проанализировать потребление Full-Stack Monitoring вашей организацией.
+Для использования этих метрик в ![Data Explorer](https://dt-cdn.net/images/data-explorer-512-743267b1fc.png "Data Explorer") **Data Explorer** введите `DPS` в поле **Search**.
+Эти метрики также доступны через Environment API и в Account Management (**Usage summary** > **Full-Stack Monitoring** > **Actions** > **View details**).
 
-Here are the metrics you can use to monitor the consumption of Dynatrace Full-Stack Monitoring.
+Ниже приведены метрики, которые вы можете использовать для мониторинга потребления Dynatrace Full-Stack Monitoring.
 
 (DPS) Full-Stack Monitoring billing usage
-:   Key: `builtin:billing.full_stack_monitoring.usage`
+:   Ключ: `builtin:billing.full_stack_monitoring.usage`
 
-    Dimension: count
+    Измерение: count
 
-    Resolution: 15 min
+    Разрешение: 15 мин
 
-    Description: Total GiB memory of all hosts monitored in Full-Stack Monitoring mode counted in 15-min intervals.
+    Описание: Общая память ГиБ всех хостов, отслеживаемых в режиме Full-Stack Monitoring, подсчитанная 15-минутными интервалами.
 
 (DPS) Full-Stack Monitoring billing usage per host
-:   Key: `builtin:billing.full_stack_monitoring.usage_per_host`
+:   Ключ: `builtin:billing.full_stack_monitoring.usage_per_host`
 
-    Dimension: Host (`dt.entity.host`)
+    Измерение: Host (`dt.entity.host`)
 
-    Resolution: 15 min
+    Разрешение: 15 мин
 
-    Description: GiB memory per host monitored in Full-Stack Monitoring mode counted in 15-min intervals.
+    Описание: Память ГиБ на хост, отслеживаемый в режиме Full-Stack Monitoring, подсчитанная 15-минутными интервалами.
 
 (DPS) Full-stack usage by container type
-:   Key: `builtin:billing.full_stack_monitoring.usage_per_container`
+:   Ключ: `builtin:billing.full_stack_monitoring.usage_per_container`
 
-    Dimension: application\_only\_type; k8s.cluster.uid; k8s.namespace.name
+    Измерение: application\_only\_type; k8s.cluster.uid; k8s.namespace.name
 
-    Resolution: 15 min
+    Разрешение: 15 мин
 
-    Description: GiB memory per container monitored in Full-Stack application-only Monitoring mode counted in 15-min intervals.
+    Описание: Память ГиБ на контейнер, отслеживаемый в режиме Full-Stack application-only Monitoring, подсчитанная 15-минутными интервалами.
 
 (DPS) Total metric data points reported by Full-Stack monitored hosts
-:   Key: `builtin:billing.full_stack_monitoring.metric_data_points.ingested`
+:   Ключ: `builtin:billing.full_stack_monitoring.metric_data_points.ingested`
 
-    Dimension: Count
+    Измерение: Count
 
-    Resolution: 15 min
+    Разрешение: 15 мин
 
-    Description: Number of reported metric data points aggregated over all Full-Stack monitored hosts.
+    Описание: Количество зарегистрированных точек данных метрик, агрегированных по всем хостам с Full-Stack мониторингом.
 
 (DPS) Metric data points reported and split by Full-Stack monitored hosts
-:   Key: `builtin:billing.full_stack_monitoring.metric_data_points.ingested_by_host`
+:   Ключ: `builtin:billing.full_stack_monitoring.metric_data_points.ingested_by_host`
 
-    Dimension: Host (`dt.entity.host`)
+    Измерение: Host (`dt.entity.host`)
 
-    Resolution: 15 min
+    Разрешение: 15 мин
 
-    Description: Number of reported metric data points split by Full-Stack monitored hosts.
+    Описание: Количество зарегистрированных точек данных метрик в разрезе хостов с Full-Stack мониторингом.
 
 (DPS) Available included metric data points for Full-Stack monitored hosts
-:   Key: `builtin:billing.full_stack_monitoring.metric_data_points.included`
+:   Ключ: `builtin:billing.full_stack_monitoring.metric_data_points.included`
 
-    Dimension: Count
+    Измерение: Count
 
-    Resolution: 15 min
+    Разрешение: 15 мин
 
-    Description: Total number of included metric data points that can be deducted from the consumed metric data points reported by Full-Stack monitored hosts.
+    Описание: Общее количество включённых точек данных метрик, которые могут быть вычтены из потреблённых точек данных метрик, зарегистрированных хостами с Full-Stack мониторингом.
 
 (DPS) Used included metric data points for Full-Stack monitored hosts
-:   Key: `builtin:billing.full_stack_monitoring.metric_data_points.included_used`
+:   Ключ: `builtin:billing.full_stack_monitoring.metric_data_points.included_used`
 
-    Dimension: Count
+    Измерение: Count
 
-    Resolution: 15 min
+    Разрешение: 15 мин
 
-    Description: Number of consumed included metric data points for Full-Stack monitored hosts.
+    Описание: Количество потреблённых включённых точек данных метрик для хостов с Full-Stack мониторингом.
 
-### Monitor memory-GiB-hour consumption for Full-Stack monitored hosts
+### Мониторинг потребления ГиБ-часов памяти для хостов с Full-Stack мониторингом
 
-You can monitor the total memory-GiB-hour consumption aggregated across all Full-Stack monitored hosts for different intervals (15 min, hour, day, or week) for any selected timeframe using the "(DPS) Full-Stack Monitoring billing usage" metric.
-The example below shows memory GiB monitored in 1-hour intervals.
-Between 11:00 and 14:00, 523 memory-GiB were monitored each 1 hour.
-This results in 523 memory-GiB-hours consumed.
+Вы можете отслеживать общее потребление ГиБ-часов памяти, агрегированное по всем хостам с Full-Stack мониторингом, для различных интервалов (15 мин, час, день или неделя) за любой выбранный период времени с помощью метрики «(DPS) Full-Stack Monitoring billing usage».
+Пример ниже показывает ГиБ памяти, отслеживаемые 1-часовыми интервалами.
+Между 11:00 и 14:00 каждый час отслеживалось 523 ГиБ памяти.
+Это приводит к потреблению 523 ГиБ-часов памяти.
 
 ![Full-Stack Monitoring (DPS)](https://dt-cdn.net/images/image001-1183-79f381ccb1.png)
 
-You can break down the total memory-GiB-hour consumption using the "(DPS) Full-Stack Monitoring billing usage per host" metric.
-The example below shows the list of all hosts that contributed to the 523 memory-GiB-hour consumption between 13:00 and 14:00.
-The respective number of memory-GiB-hours per host is displayed as well.
+Вы можете детализировать общее потребление ГиБ-часов памяти с помощью метрики «(DPS) Full-Stack Monitoring billing usage per host».
+Пример ниже показывает список всех хостов, которые внесли вклад в потребление 523 ГиБ-часов памяти между 13:00 и 14:00.
+Соответствующее количество ГиБ-часов памяти на хост также отображается.
 
 ![Full-Stack Monitoring (DPS)](https://dt-cdn.net/images/image004-905-f0e44ad601.png)
 
-### Monitor memory-GiB-hour consumption for Full-Stack monitored containers
+### Мониторинг потребления ГиБ-часов памяти для контейнеров с Full-Stack мониторингом
 
-Platform and cluster owners can monitor their Kubernetes clusters using [Kubernetes Platform Monitoring](../container-monitoring.md "Learn about the different container monitoring modes that are available with a Dynatrace Platform Subscription (DPS) license.").
-Application owners can leverage container-based Full-Stack Monitoring to monitor applications running within Kubernetes clusters.
+Владельцы платформ и кластеров могут отслеживать свои кластеры Kubernetes с помощью [Kubernetes Platform Monitoring](../container-monitoring.md "Узнайте о различных режимах мониторинга контейнеров, доступных с лицензией Dynatrace Platform Subscription (DPS).").
+Владельцы приложений могут использовать Full-Stack Monitoring на основе контейнеров для мониторинга приложений, работающих в кластерах Kubernetes.
 
-To get consumption insights for monitored Kubernetes clusters or namespaces, you can query memory-GiB-hour consumption by leveraging the "(DPS) Full-Stack Monitoring billing usage per container" metric, as shown in the following query:
+Для получения информации о потреблении отслеживаемых кластеров или пространств имён Kubernetes вы можете запросить потребление ГиБ-часов памяти, используя метрику «(DPS) Full-Stack Monitoring billing usage per container», как показано в следующем запросе:
 
 `builtin:billing.full_stack_monitoring.usage_per_container:filter(eq("application_only_type","kubernetes")):splitBy()`
 
-In the example below, 1.58 TiB of memory was consumed by the Kubernetes cluster within the past 30 days.
+В примере ниже 1,58 ТиБ памяти было потреблено кластером Kubernetes за последние 30 дней.
 
 ![Kubernetes Platform Monitoring](https://dt-cdn.net/images/billing-full-stack-monitoring-usage-per-container-1025-3019577b21.png)
 
-Of course, you can filter your analysis for deeper insights (for example, add a split for Kubernetes namespaces).
+Конечно, вы можете фильтровать анализ для более глубоких выводов (например, добавить разбивку по пространствам имён Kubernetes).
 
 ![Kubernetes Platform Monitoring](https://dt-cdn.net/images/billing-full-stack-monitoring-usage-per-container-by-namespace-1023-c5e1c10583.png)
 
-### Monitor metric consumption for Full-Stack monitored hosts
+### Мониторинг потребления метрик для хостов с Full-Stack мониторингом
 
-To monitor your metrics budget for the whole pool of metric data points in your environment, you can track available included metric data points against total reported metrics data points using these two metrics: "(DPS) Available included metric data points for Full-Stack monitored hosts" and "(DPS) Total metric data points reported by Full-Stack monitored hosts".
-The example below shows data for a full day.
-At no time was the number of included metrics for this environment's metric pool (purple line) overspent.
+Для мониторинга бюджета метрик для всего пула точек данных метрик в вашей среде вы можете отслеживать доступные включённые точки данных метрик в сравнении с общим количеством зарегистрированных точек данных метрик, используя две метрики: «(DPS) Available included metric data points for Full-Stack monitored hosts» и «(DPS) Total metric data points reported by Full-Stack monitored hosts».
+Пример ниже показывает данные за полный день.
+Ни в один момент времени количество включённых метрик для пула метрик этой среды (фиолетовая линия) не было перерасходовано.
 
 ![Full-Stack Monitoring (DPS)](https://dt-cdn.net/images/image005-1212-35369921df.png)
 
-In cases where the number of included metrics for an environment's metric pool are overspent, the following analysis can help you to identify the hosts that are contributing to the overspending.
-Use the metric "(DPS) Metric data points reported and split by Full-Stack monitored hosts" for this analysis.
+В случаях, когда количество включённых метрик для пула метрик среды перерасходовано, следующий анализ может помочь вам определить хосты, которые вносят вклад в перерасход.
+Используйте метрику «(DPS) Metric data points reported and split by Full-Stack monitored hosts» для этого анализа.
 
-The example below shows that between 10:45 and 11:00, each of the first 3 hosts in the list reported far more than 2,000 metric data points.
-In the same period, each of these 3 hosts shows a memory-GiB-hour consumption of 2 GiB.
-Dynatrace offers 900 included custom metric data points for each GiB of host memory, calculated at 15-minute intervals.
-This means that the first 3 hosts contribute 1,800 (2\*900) metric data points to the environment's pool of available data points.
-However these hosts consumed more data points than they contributed during the same time period.
+Пример ниже показывает, что между 10:45 и 11:00 каждый из первых 3 хостов в списке зарегистрировал значительно более 2000 точек данных метрик.
+В тот же период каждый из этих 3 хостов показывает потребление ГиБ-часов памяти в 2 ГиБ.
+Dynatrace предлагает 900 включённых пользовательских точек данных метрик для каждого ГиБ памяти хоста, рассчитанных 15-минутными интервалами.
+Это означает, что первые 3 хоста вносят 1800 (2*900) точек данных метрик в пул доступных точек данных среды.
+Однако эти хосты потребили больше точек данных, чем они внесли за тот же период времени.
 
 ![Full-Stack Monitoring (DPS)](https://dt-cdn.net/images/image008-905-929928d644.png)
 
-When using the metric "(DPS) Total metric data points billed for Full-Stack monitored hosts" from Custom Metrics Classic you can see that no overspending occurred for this environment's Full-Stack Monitoring metric pool between 10:45 and 11:00 because no metric data points were billed.
+При использовании метрики «(DPS) Total metric data points billed for Full-Stack monitored hosts» из Custom Metrics Classic видно, что перерасхода для пула метрик Full-Stack Monitoring этой среды между 10:45 и 11:00 не произошло, поскольку ни одна точка данных метрик не была тарифицирована.
 
 ![Full-Stack Monitoring (DPS)](https://dt-cdn.net/images/image009-1210-914bc4742c.png)
 
-## Related topics
+## Связанные темы
 
-* [Dynatrace OneAgent](../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
-* [Application & Infrastructure Observability overview (DPS)](../app-infra-observability.md "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.")
-* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+* [Dynatrace OneAgent](../../../ingest-from/dynatrace-oneagent.md "Узнайте важные концепции, связанные с OneAgent, и узнайте, как установить и управлять OneAgent на различных платформах.")
+* [Обзор Application & Infrastructure Observability (DPS)](../app-infra-observability.md "Узнайте о различных вариантах Application & Infrastructure Observability, доступных с лицензией Dynatrace Platform Subscription (DPS).")
+* [Ценообразование Dynatrace](https://www.dynatrace.com/pricing/)

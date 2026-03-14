@@ -1,5 +1,5 @@
 ---
-title: Release monitoring Classic
+title: Мониторинг релизов Classic
 source: https://www.dynatrace.com/docs/deliver/release-monitoring
 scraped: 2026-03-05T21:30:30.226479
 ---

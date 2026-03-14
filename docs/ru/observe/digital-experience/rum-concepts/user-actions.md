@@ -1,5 +1,5 @@
 ---
-title: User actions
+title: Действия пользователя
 source: https://www.dynatrace.com/docs/observe/digital-experience/rum-concepts/user-actions
 scraped: 2026-03-05T21:27:20.221618
 ---

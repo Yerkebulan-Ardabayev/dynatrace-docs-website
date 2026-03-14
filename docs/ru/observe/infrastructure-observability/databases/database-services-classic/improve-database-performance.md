@@ -1,5 +1,5 @@
 ---
-title: Improve database performance
+title: Улучшение производительности баз данных
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance
 scraped: 2026-03-04T21:37:36.126300
 ---

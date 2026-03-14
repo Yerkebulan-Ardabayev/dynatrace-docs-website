@@ -1,5 +1,5 @@
 ---
-title: Adjust the log message
+title: Настройка сообщения журнала
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/message
 scraped: 2026-03-06T21:11:28.183710
 ---

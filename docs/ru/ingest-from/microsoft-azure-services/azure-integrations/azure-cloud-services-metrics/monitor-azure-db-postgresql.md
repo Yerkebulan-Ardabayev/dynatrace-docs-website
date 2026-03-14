@@ -1,5 +1,5 @@
 ---
-title: Azure Database for PostgreSQL (Single Server, Hyperscale, Flexible Server) monitoring
+title: Мониторинг Azure Database for PostgreSQL (Single Server, Hyperscale, Flexible Server)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-db-postgresql
 scraped: 2026-03-06T21:25:58.699675
 ---

@@ -1,5 +1,5 @@
 ---
-title: Hosts
+title: Хосты
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts
 scraped: 2026-02-06T16:29:11.779328
 ---

@@ -1,5 +1,5 @@
 ---
-title: Dashboards
+title: Панели управления
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new
 scraped: 2026-03-06T21:09:39.484018
 ---

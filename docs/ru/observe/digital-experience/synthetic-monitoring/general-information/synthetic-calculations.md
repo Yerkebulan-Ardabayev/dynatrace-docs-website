@@ -1,5 +1,5 @@
 ---
-title: Synthetic calculations
+title: Расчеты Synthetic
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations
 scraped: 2026-03-02T21:29:52.567205
 ---

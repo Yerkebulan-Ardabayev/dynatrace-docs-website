@@ -1,5 +1,5 @@
 ---
-title: On-demand monitor executions
+title: Выполнение мониторов по запросу
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/on-demand-executions
 scraped: 2026-02-06T16:33:28.218045
 ---

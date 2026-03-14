@@ -1,5 +1,5 @@
 ---
-title: Management zones and ingested log data (Logs Classic)
+title: Управление зонами и принятые журналы данных (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring
 scraped: 2026-03-06T21:28:58.652457
 ---

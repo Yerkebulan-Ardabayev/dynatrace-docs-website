@@ -1,5 +1,5 @@
 ---
-title: Vulnerabilities
+title: Уязвимости
 source: https://www.dynatrace.com/docs/secure/vulnerabilities
 scraped: 2026-03-06T21:34:35.874049
 ---

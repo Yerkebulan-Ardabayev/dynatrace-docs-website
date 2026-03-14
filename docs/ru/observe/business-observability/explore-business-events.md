@@ -1,5 +1,5 @@
 ---
-title: Explore Business Events
+title: Исследование бизнес-событий
 source: https://www.dynatrace.com/docs/observe/business-observability/explore-business-events
 scraped: 2026-03-06T21:14:45.059247
 ---

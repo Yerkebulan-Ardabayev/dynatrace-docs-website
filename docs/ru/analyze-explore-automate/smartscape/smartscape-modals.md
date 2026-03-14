@@ -1,5 +1,5 @@
 ---
-title: Smartscape modals
+title: Модальные окна Smartscape
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals
 scraped: 2026-03-05T21:34:12.624189
 ---

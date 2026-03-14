@@ -1,5 +1,5 @@
 ---
-title: Understand extensions data sources
+title: Понимание источников данных расширений
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources
 scraped: 2026-03-06T21:36:47.888698
 ---

@@ -1,5 +1,5 @@
 ---
-title: Leverage enhanced endpoints for SDv1
+title: Использование расширенных конечных точек для SDv1
 source: https://www.dynatrace.com/docs/observe/application-observability/services/enhanced-endpoints-sdv1
 scraped: 2026-02-23T21:35:46.464742
 ---

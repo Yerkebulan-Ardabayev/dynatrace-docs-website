@@ -1,5 +1,5 @@
 ---
-title: Google BigQuery monitoring
+title: Мониторинг Google BigQuery
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-bigquery-monitoring
 scraped: 2026-03-03T21:22:54.546019
 ---
@@ -10,24 +10,24 @@ scraped: 2026-03-03T21:22:54.546019
 
 * Последняя версия Dynatrace
 * Практическое руководство
-* Чтение займёт 1 минуту
-* Опубликовано 17 января 2022 г.
+* 1 мин. чтения
+* Опубликовано 17 янв. 2022 г.
 
-Интеграция Dynatrace с Google Cloud использует данные, собранные из Google Operation API, для постоянного мониторинга работоспособности и производительности сервисов Google Cloud. Объединяя все соответствующие данные в дашбордах, она также обеспечивает оповещение и отслеживание событий.
+Интеграция Dynatrace с Google Cloud использует данные, собранные из Google Operations API, для непрерывного мониторинга работоспособности и производительности сервисов Google Cloud. Помимо объединения всех релевантных данных в дашборды, она также обеспечивает оповещения и отслеживание событий.
 
 ## Предварительные требования
 
-[Настройка интеграции](../gcp-guide/deploy-k8.md "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+[Настройка интеграции](../gcp-guide/deploy-k8.md "Настройка мониторинга логов и метрик для сервисов GCP в новом кластере GKE Autopilot.")
 
-## Добавление сервисов и наборов функций (необязательно)
+## Добавление сервисов и наборов функций Необязательно
 
-После интеграции Dynatrace автоматически начинает мониторинг ряда предустановленных сервисов и наборов функций (метрик) Google Cloud. Помимо этого, вы можете добавить в мониторинг дополнительные сервисы или наборы функций. Подробнее см. в разделе [Добавление или удаление сервисов](../gcp-guide/deploy-k8.md#manage "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+После интеграции Dynatrace автоматически начинает мониторинг ряда предустановленных сервисов Google Cloud и наборов функций (метрик). Помимо них, вы можете добавить дополнительные сервисы или наборы функций для мониторинга. Подробнее см. в разделе [Добавление и удаление сервисов](../gcp-guide/deploy-k8.md#manage "Настройка мониторинга логов и метрик для сервисов GCP в новом кластере GKE Autopilot.").
 
-Список наборов функций, доступных для данного сервиса, приведён в [таблице метрик](#table).
+Список наборов функций, доступных для данного сервиса, см. в разделе [Таблица метрик](#table).
 
 ## Просмотр метрик
 
-После развёртывания интеграции метрики из отслеживаемых сервисов можно просматривать в [браузере метрик](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser."), в [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") и на плитках дашборда.
+После развёртывания интеграции вы можете просматривать метрики отслеживаемых сервисов в [браузере метрик](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Просмотр метрик с помощью браузера метрик Dynatrace."), [Data Explorer](../../../../analyze-explore-automate/explorer.md "Запрашивайте метрики и преобразуйте результаты для получения нужных данных."), а также в плитках дашбордов.
 
 ## Таблица метрик
 
@@ -47,9 +47,9 @@ scraped: 2026-03-03T21:22:54.546019
 | bigquery\_project/default\_metrics | Максимально назначенные слоты | Count | bigquery.googleapis.com/slots/max\_assigned |
 | bigquery\_project/default\_metrics | Слоты, используемые проектами в резервировании | Count | bigquery.googleapis.com/slots/total\_allocated\_for\_reservation |
 | bigquery\_project/default\_metrics | Всего слотов | Count | bigquery.googleapis.com/slots/total\_available |
-| bigquery\_project/default\_metrics | Всего байт резервирования | Byte | bigquerybiengine.googleapis.com/reservation/total\_bytes |
-| bigquery\_project/default\_metrics | Используемые байты резервирования | Byte | bigquerybiengine.googleapis.com/reservation/used\_bytes |
+| bigquery\_project/default\_metrics | Суммарный объём резервирования в байтах | Byte | bigquerybiengine.googleapis.com/reservation/total\_bytes |
+| bigquery\_project/default\_metrics | Используемый объём резервирования в байтах | Byte | bigquerybiengine.googleapis.com/reservation/used\_bytes |
 
 ## Связанные темы
 
-* [Интеграции Google Cloud](../../gcp-integrations.md "Set up and configure Dynatrace on Google Cloud.")
+* [Интеграции Google Cloud](../../gcp-integrations.md "Настройка и конфигурирование Dynatrace на Google Cloud.")

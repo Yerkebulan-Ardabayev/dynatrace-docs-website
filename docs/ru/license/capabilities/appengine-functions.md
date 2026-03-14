@@ -1,5 +1,5 @@
 ---
-title: AppEngine Functions (Serverless Functions) overview (DPS)
+title: Обзор AppEngine Functions (Serverless Functions) (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/appengine-functions
 scraped: 2026-03-04T21:37:03.569424
 ---

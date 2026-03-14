@@ -1,5 +1,5 @@
 ---
-title: Dynatrace Platform Subscription API - GET cost allocation
+title: Dynatrace Платформа Подписка API - Получить распределение затрат
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/get-cost-allocation
 scraped: 2026-03-06T21:26:54.898889
 ---

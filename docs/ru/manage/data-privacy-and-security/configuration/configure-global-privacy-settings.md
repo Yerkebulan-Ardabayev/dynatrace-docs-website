@@ -1,5 +1,5 @@
 ---
-title: Configure data privacy settings
+title: Настройка параметров конфиденциальности данных
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/configuration/configure-global-privacy-settings
 scraped: 2026-03-06T21:23:36.668953
 ---

@@ -1,5 +1,5 @@
 ---
-title: Web frontends
+title: Веб-фронтенды
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends
 scraped: 2026-03-06T21:36:58.159236
 ---

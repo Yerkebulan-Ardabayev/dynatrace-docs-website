@@ -1,5 +1,5 @@
 ---
-title: Ingest data
+title: Прием данных
 source: https://www.dynatrace.com/docs/ingest-from
 scraped: 2026-03-06T21:16:53.695464
 ---

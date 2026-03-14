@@ -1,5 +1,5 @@
 ---
-title: Update Dynatrace OneAgent on Windows
+title: Обновление Dynatrace OneAgent на Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/update-oneagent-on-windows
 scraped: 2026-03-06T21:19:20.645595
 ---

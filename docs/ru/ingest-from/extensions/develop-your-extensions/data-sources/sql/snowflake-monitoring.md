@@ -1,5 +1,5 @@
 ---
-title: Snowflake Database monitoring configuration
+title: Конфигурация мониторинга Snowflake Database
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring
 scraped: 2026-03-05T21:35:29.081764
 ---

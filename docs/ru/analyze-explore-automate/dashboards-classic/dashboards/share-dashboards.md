@@ -1,5 +1,5 @@
 ---
-title: Share Dynatrace dashboards
+title: Обмен Dynatrace панелями
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards
 scraped: 2026-02-27T21:26:39.808422
 ---

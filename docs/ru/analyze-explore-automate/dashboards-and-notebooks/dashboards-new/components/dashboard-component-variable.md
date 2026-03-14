@@ -1,5 +1,5 @@
 ---
-title: Add a variable to a dashboard
+title: Добавить переменную к __KEEP000__
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable
 scraped: 2026-03-06T21:11:14.517870
 ---

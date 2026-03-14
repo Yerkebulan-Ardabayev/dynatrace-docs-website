@@ -1,5 +1,5 @@
 ---
-title: Ownership Classic
+title: Владение Classic
 source: https://www.dynatrace.com/docs/deliver/ownership
 scraped: 2026-03-06T21:28:42.755901
 ---

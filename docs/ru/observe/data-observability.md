@@ -1,5 +1,5 @@
 ---
-title: Data Observability
+title: Наблюдаемость данных
 source: https://www.dynatrace.com/docs/observe/data-observability
 scraped: 2026-03-03T21:27:00.225748
 ---

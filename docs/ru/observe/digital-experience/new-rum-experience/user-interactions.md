@@ -1,5 +1,5 @@
 ---
-title: User interactions
+title: Пользовательские взаимодействия
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/user-interactions
 scraped: 2026-02-18T05:54:44.398841
 ---

@@ -1,5 +1,5 @@
 ---
-title: Dynatrace Intelligence DQL examples
+title: Примеры DQL для Dynatrace Intelligence
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-dql-examples
 scraped: 2026-03-06T21:20:33.076571
 ---

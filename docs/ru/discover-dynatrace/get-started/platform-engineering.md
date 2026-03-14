@@ -1,597 +1,590 @@
 ---
-title: Platform Engineering
+title: Платформенная инженерия
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/platform-engineering
 scraped: 2026-03-06T21:28:32.226910
 ---
 
-# Platform Engineering
+# Платформенная инженерия
 
-# Platform Engineering
+# Платформенная инженерия
 
 * Latest Dynatrace
-* 24-min read
-* Published Jan 18, 2024
+* 24 мин. чтения
+* Опубликовано 18 января 2024
 
-Gartner[1](#fn-1-1-def) predicts that by 2026, 80% of large software engineering organizations will establish platform engineering teams as internal providers of reusable services, components, and tools for application delivery, up from 45% in 2022.
+Gartner[1](#fn-1-1-def) прогнозирует, что к 2026 году 80% крупных организаций по разработке программного обеспечения создадут команды платформенной инженерии в качестве внутренних поставщиков переиспользуемых сервисов, компонентов и инструментов для доставки приложений — по сравнению с 45% в 2022 году.
 
-## What is platform engineering?
+## Что такое платформенная инженерия?
 
-Platform engineering is a modern, core engineering discipline that has emerged to accelerate the development and deployment of software that is resilient and effective at scale.
+Платформенная инженерия — это современная, ключевая инженерная дисциплина, появившаяся для ускорения разработки и развёртывания программного обеспечения, устойчивого и эффективного в масштабе.
 
-The goal is to operationalize DevSecOps and SRE practices by providing an internal self-service platform with development workspace templates to reduce the cognitive load on engineering teams and provide fast development feedback cycles out of the box.
+Цель состоит в том, чтобы операционализировать практики DevSecOps и SRE, предоставив внутреннюю платформу самообслуживания с шаблонами рабочих пространств для разработки, чтобы снизить когнитивную нагрузку на инженерные команды и обеспечить быстрые циклы обратной связи при разработке «из коробки».
 
-An internal developer platform (IDP) encompasses a set of tools, services, and infrastructure that enables developers to build, test, and deploy software applications. These platforms are tailored specifically to an organization's needs, demands, and goals.
+Внутренняя платформа разработчика (IDP) охватывает набор инструментов, сервисов и инфраструктуры, которые позволяют разработчикам создавать, тестировать и развёртывать программные приложения. Эти платформы специально адаптированы к потребностям, требованиям и целям организации.
 
-Through the development, deployment, and maintenance of these IDPs, platform engineering teams deliver:
+Благодаря разработке, развёртыванию и поддержке этих IDP, команды платформенной инженерии обеспечивают:
 
-* Increased innovation and development speed
-* Better developer experience
-* Higher developer productivity
-* Reduced infrastructure costs
-* And more
+* Повышение скорости инноваций и разработки
+* Улучшение опыта разработчиков
+* Повышение продуктивности разработчиков
+* Снижение затрат на инфраструктуру
+* И многое другое
 
-IDPs allow teams to shift more of their time and effort to delivering best-in-class products to their end customers.
+IDP позволяют командам переключить больше времени и усилий на создание лучших продуктов для конечных клиентов.
 
-## Effective IDPs
+## Эффективные IDP
 
-The majority of IDPs are containerized and built on top of Kubernetes-centric infrastructure with a core set of technologies. The diagram below maps out what a basic IDP should include.
+Большинство IDP контейнеризированы и построены поверх Kubernetes-ориентированной инфраструктуры с базовым набором технологий. Диаграмма ниже показывает, что должна включать базовая IDP.
 
-Features of a strong and effective IDP:
+Характеристики сильной и эффективной IDP:
 
-Crucial capabilities of an IDP are provided as self-service to development teams. Some of these self-service capabilities might include:
+Ключевые возможности IDP предоставляются командам разработки в режиме самообслуживания. Некоторые из этих возможностей самообслуживания могут включать:
 
-* Platform services (service mesh, data storage, security vaults, policy agents)
-* Delivery services (continuous integration, continuous delivery, Git, GitOps)
-* Observability services for monitoring, automation, and security
-* Templates for development workspaces including all the above
+* Платформенные сервисы (service mesh, хранение данных, хранилища секретов, агенты политик)
+* Сервисы доставки (непрерывная интеграция, непрерывная доставка, Git, GitOps)
+* Сервисы наблюдаемости для мониторинга, автоматизации и безопасности
+* Шаблоны для рабочих пространств разработки, включающие всё вышеперечисленное
 
-Platform engineering also offers the ability to:
+Платформенная инженерия также предоставляет возможность:
 
-* Automate key workflows like validation
-* Achieve optimal performance and security
-* Ensure the platform is working as expected and resources are being used in an optimal manner
+* Автоматизировать ключевые рабочие процессы, такие как валидация
+* Достигать оптимальной производительности и безопасности
+* Обеспечивать работу платформы в соответствии с ожиданиями и оптимальное использование ресурсов
 
 ![Platform Engineering](https://dt-cdn.net/images/image001-1268-955bdd4f04.webp)
 
-Source: [https://tag-app-delivery.cncf.io/whitepapers/platforms/ï»¿](https://tag-app-delivery.cncf.io/whitepapers/platforms/#capabilities-of-platforms)
+Источник: [https://tag-app-delivery.cncf.io/whitepapers/platforms/](https://tag-app-delivery.cncf.io/whitepapers/platforms/#capabilities-of-platforms)
 
-## Treat your platform as a product
+## Относитесь к платформе как к продукту
 
-A key aspect of platform engineering is approaching your platform with a product management mentality. Every aspect should be meticulously designed and optimized for the benefit of the user: the developer.
+Ключевой аспект платформенной инженерии — подход к платформе с менталитетом управления продуктом. Каждый аспект должен быть тщательно продуман и оптимизирован для пользы пользователя: разработчика.
 
-### Looking at an IDP with a product management lens
+### Взгляд на IDP через призму управления продуктом
 
-* **The product**: An internal development platform (IDP) built to provide self-service for infrastructure, services, and support for the development teams as they build, test, and deploy applications at scale
-* **The customer**: Development teams who want to accelerate the production of high-quality, resilient apps â with low effort for onboarding for new applications and new developers
+* **Продукт**: Внутренняя платформа разработки (IDP), созданная для предоставления самообслуживания в области инфраструктуры, сервисов и поддержки командам разработки при создании, тестировании и развёртывании приложений в масштабе
+* **Клиент**: Команды разработки, которые хотят ускорить создание высококачественных, устойчивых приложений — с минимальными усилиями по подключению новых приложений и новых разработчиков
 
-## Maturing DevOps with platform engineering
+## Развитие DevOps с помощью платформенной инженерии
 
-**You build it, you run it doesnât scale anymore.**
+**Принцип «ты создал — ты и поддерживаешь» больше не масштабируется.**
 
-DevOps alone doesnât meet the demands of cloud-native software development. Platform engineering is DevOps applied at cloud-native scale.
+DevOps сам по себе не соответствует требованиям облачно-нативной разработки программного обеспечения. Платформенная инженерия — это DevOps, применённый в облачно-нативном масштабе.
 
-Effective DevOps supports cross-functional cooperation and boosts efficiency. Platform engineering builds on traditional DevOps practices but goes a step further.
+Эффективный DevOps поддерживает кросс-функциональное сотрудничество и повышает эффективность. Платформенная инженерия строится на традиционных практиках DevOps, но идёт на шаг дальше.
 
-By providing a framework and techstack to apply DevOps principles at scale with Kubernetes-centric infrastructure, platform engineering allows organizations to realize many of the benefits DevOps promised to deliver.
+Предоставляя фреймворк и технологический стек для применения принципов DevOps в масштабе с Kubernetes-ориентированной инфраструктурой, платформенная инженерия позволяет организациям реализовать многие преимущества, которые DevOps обещал предоставить.
 
-In practice, maturing DevOps into platform engineering involves providing centrally maintained development tooling, templates for CI/CD toolchains, processes, and application lifecycle orchestration solutions via a unified platform that development teams can use for greater efficiency. It enables a frictionless developer experience with minimum overhead, reducing cognitive load and providing fast feedback out of the box.
+На практике развитие DevOps в платформенную инженерию предполагает предоставление централизованно поддерживаемых инструментов разработки, шаблонов для CI/CD-конвейеров, процессов и решений по оркестрации жизненного цикла приложений через единую платформу, которую команды разработки могут использовать для повышения эффективности. Это обеспечивает бесшовный опыт разработчика с минимальными накладными расходами, снижая когнитивную нагрузку и предоставляя быструю обратную связь «из коробки».
 
-Platform engineeringâs standardized processes and technologies across development and operations teams lead to significant gains in developer productivity and improvements in developer experience.
+Стандартизированные процессы и технологии платформенной инженерии, охватывающие команды разработки и эксплуатации, приводят к значительному повышению продуктивности разработчиков и улучшению опыта разработчиков.
 
-Additionally, the platform engineering approach allows organizations to take advantage of economies of scale, consolidating sprawling tech stacks to:
+Кроме того, подход платформенной инженерии позволяет организациям воспользоваться преимуществами экономии от масштаба, консолидируя разрастающиеся технологические стеки для:
 
-* Manage cost
-* Optimize resource usage
-* Improve governance
+* Управления затратами
+* Оптимизации использования ресурсов
+* Улучшения управления (governance)
 
-### Cloud-native platforms require a new approach to observability
+### Облачно-нативные платформы требуют нового подхода к наблюдаемости
 
-To be broadly adopted by internal development teams and deliver on its promise of unlocking DevSecOps at scale, a Kubernetes-centric IDP requires other services and components to tackle challenges related to:
+Чтобы быть широко принятой внутренними командами разработки и выполнить обещание разблокировать DevSecOps в масштабе, Kubernetes-ориентированная IDP требует других сервисов и компонентов для решения задач, связанных с:
 
-* Visibility
-* Resource utilization
-* Security
-* Orchestration
-* Collaboration
+* Видимостью
+* Использованием ресурсов
+* Безопасностью
+* Оркестрацией
+* Совместной работой
 
-Top engineering teams unlock faster deployments and fewer errors by empowering developers to manage their own deployments. Enabling self-service requires developers to be able to debug code quickly, which isnât easy in complex environments. Observability makes all the difference.
+Лучшие инженерные команды ускоряют развёртывания и сокращают количество ошибок, предоставляя разработчикам возможность самостоятельно управлять развёртываниями. Обеспечение самообслуживания требует от разработчиков возможности быстро отлаживать код, что непросто в сложных средах. Наблюдаемость меняет всё.
 
-Observability isnât just about the user-facing application. Effective platform engineeringâas DevOps at cloud-native scaleâenables self-service for developers or development teams, and that self-service often requires automation in the background. To provide guard rails and make the system governable, it must be observable.
+Наблюдаемость — это не только пользовательское приложение. Эффективная платформенная инженерия — как DevOps в облачно-нативном масштабе — обеспечивает самообслуживание для разработчиков или команд разработки, и это самообслуживание часто требует автоматизации в фоновом режиме. Для обеспечения ограничений и управляемости системы она должна быть наблюдаемой.
 
-When implemented properly, platform engineering brings end-to-end observability to the full software development lifecycle, from development to release, to operation, and eventually to retirement.
+При правильной реализации платформенная инженерия обеспечивает сквозную наблюдаемость всего жизненного цикла разработки программного обеспечения — от разработки до выпуска, эксплуатации и, в конечном итоге, вывода из эксплуатации.
 
-### Implementation
+### Внедрение
 
-Fortunately, organizations donât have to replace every tool, vendor, and practice to implement platform engineering. DevOps and cloud-native processes often continue managing systems and pipelines and working on automation and self-service.
+К счастью, организациям не нужно заменять каждый инструмент, поставщика и практику для внедрения платформенной инженерии. Процессы DevOps и облачно-нативные процессы часто продолжают управлять системами и конвейерами, работать над автоматизацией и самообслуживанием.
 
-### Benefits
+### Преимущества
 
-#### Accelerate development and support developer productivity
+#### Ускорение разработки и поддержка продуктивности разработчиков
 
-More than two-thirds of all organizations (68%) implementing platform engineering have already realized an increase in development velocity.
+Более двух третей всех организаций (68%), внедряющих платформенную инженерию, уже добились увеличения скорости разработки.
 
-Organizations with platform engineering teams see various benefits to their speed and efficiency. They report a variety of benefits, notably:
+Организации с командами платформенной инженерии отмечают различные преимущества в скорости и эффективности. Они сообщают о различных выгодах, в частности:
 
-1. Improved system reliability
-2. Improved efficiency and productivity of work
-3. Faster delivery time
+1. Улучшение надёжности систем
+2. Повышение эффективности и продуктивности работы
+3. Сокращение времени доставки
 
-#### Improve developer experience
+#### Улучшение опыта разработчиков
 
-A best-in-class developer experience gives your organization a strategic
-advantage.
+Лучший в своём классе опыт разработчиков даёт вашей организации стратегическое преимущество.
 
-* Reduces the cognitive load of the developer
-* Reduces overall burden on the operations team
-* Improves quality of services from internal IT operations resources, processes, and practices
-* Provides a more efficient path for product delivery
-* Provides fast feedback cycles to developers
+* Снижает когнитивную нагрузку на разработчика
+* Снижает общую нагрузку на команду эксплуатации
+* Улучшает качество сервисов от внутренних ИТ-ресурсов, процессов и практик
+* Обеспечивает более эффективный путь для доставки продукта
+* Предоставляет быстрые циклы обратной связи для разработчиков
 
-#### Optimize resources and mitigate cost
+#### Оптимизация ресурсов и снижение затрат
 
-With a shared pool of resources for all projects, standardized practices, and the power of AI, platform engineering optimizes resource usage, leverages economies of scales, and mitigates cost.
+С общим пулом ресурсов для всех проектов, стандартизированными практиками и силой ИИ, платформенная инженерия оптимизирует использование ресурсов, использует преимущества экономии от масштаба и снижает затраты.
 
-#### Standardize tech stack to minimize risk and increase governance
+#### Стандартизация технологического стека для минимизации рисков и повышения управляемости
 
-Effective platform engineering enables teams to keep complexity low, standardize delivery, and still allow for autonomy and freedom.
+Эффективная платформенная инженерия позволяет командам поддерживать низкий уровень сложности, стандартизировать доставку и при этом обеспечивать автономию и свободу.
 
-* Security and compliance are built in by design of the platform components and services.
-* Golden Path templates standardize delivery â providing governance.
-* Identification and remediation of issues or misconfigurations across templatized and standardized services becomes quick and easy.
+* Безопасность и соответствие требованиям встроены в дизайн компонентов и сервисов платформы.
+* Шаблоны Golden Path стандартизируют доставку — обеспечивая управляемость.
+* Выявление и устранение проблем или неправильных конфигураций в стандартизированных сервисах на основе шаблонов становится быстрым и лёгким.
 
-## The minimum viable platform: BACK stack + observability
+## Минимально жизнеспособная платформа: стек BACK + наблюдаемость
 
-If you were to start from scratch, only with a Git and CI tool in place, a simple beginning could be to work with the BACK stack:
+Если бы вы начинали с нуля, имея только инструменты Git и CI, простым началом мог бы стать стек BACK:
 
 Backstage
-:   [Graphical user interface (web portal)ï»¿](https://backstage.io/)
+:   [Графический пользовательский интерфейс (веб-портал)](https://backstage.io/)
 
 Argo
-:   [Delivery of artifactsï»¿](https://argo-cd.readthedocs.io/en/stable/)
+:   [Доставка артефактов](https://argo-cd.readthedocs.io/en/stable/)
 
 Crossplane
-:   [APIs and CLIs for configuration automationï»¿](https://www.crossplane.io/)
+:   [API и CLI для автоматизации конфигурации](https://www.crossplane.io/)
 
 Kyverno
-:   [Scan artifacts and enforce policiesï»¿](https://kyverno.io/)
+:   [Сканирование артефактов и применение политик](https://kyverno.io/)
 
-The BACK stack includes the artifact delivery and security as well as the configuration and developer portal, but thatâs not all it takes. Observing the workloads is equally important and must be included in a minimum viable platform.
+Стек BACK включает доставку артефактов и безопасность, а также конфигурацию и портал разработчика, но этого недостаточно. Наблюдение за рабочими нагрузками не менее важно и должно быть включено в минимально жизнеспособную платформу.
 
-To feed the observability and security data back to the developers, we offer a [Backstage integration](../../deliver/backstage-integration.md "Learn how to integrate Dynatrace into Backstage") with Kubernetes support by default and customizable queries.
+Для обратной передачи данных наблюдаемости и безопасности разработчикам мы предлагаем [интеграцию с Backstage](../../deliver/backstage-integration.md "Learn how to integrate Dynatrace into Backstage") с поддержкой Kubernetes по умолчанию и настраиваемыми запросами.
 
-OpenTelemetry offers open-source observability, and Dynatrace can be used for observability either out of the box with our proprietary OneAgent or by easily ingesting and using the data provided through OpenTelemetry.
+OpenTelemetry предоставляет наблюдаемость с открытым исходным кодом, а Dynatrace может использоваться для наблюдаемости либо «из коробки» с нашим проприетарным OneAgent, либо путём простого приёма и использования данных, предоставленных через OpenTelemetry.
 
-## Core platform observability and security principles
+## Основные принципы наблюдаемости и безопасности платформы
 
-Kubernetes is a good starting point for building a platform, allowing platform engineering teams to provide self-service capabilities and features to their DevSecOps teams. However, it also introduces complexity to the cloud environment.
+Kubernetes — хорошая отправная точка для построения платформы, позволяющая командам платформенной инженерии предоставлять возможности и функции самообслуживания своим командам DevSecOps. Однако он также вносит сложность в облачную среду.
 
-Organizations need the automatic answers and insights that observability and security analytics provide to manage and overcome the complexity introduced by todayâs business needs and complex multi-cloud-native environments.
+Организациям необходимы автоматические ответы и аналитика, которые обеспечивают наблюдаемость и аналитика безопасности, для управления и преодоления сложности, привносимой современными бизнес-потребностями и сложными мультиоблачными средами.
 
-Follow these core principles when building your Internal Developer Platform (IDP) to manage an application or service throughout its Software Development Lifecycle (SDLC).
+Следуйте этим основным принципам при построении вашей внутренней платформы разработчика (IDP) для управления приложением или сервисом на протяжении всего жизненного цикла разработки программного обеспечения (SDLC).
 
-### 1. Core platform observability
+### 1. Базовая наблюдаемость платформы
 
-A critical first step in achieving actionable platform insights is
-ensuring monitoring of the artifact (service or application) as well as
-the full software development lifecycle and the underlying IDP:
+Критически важный первый шаг в получении полезных аналитических данных о платформе — обеспечение мониторинга артефакта (сервиса или приложения), а также всего жизненного цикла разработки ПО и базовой IDP:
 
-* **Artifact**: How does my product behave in various environments (staging, testing, production)?
-* **Platform Toolstack**: What is the health and utilization of the tools in use (e.g. BACK stack)?
+* **Артефакт**: Как ведёт себя мой продукт в различных средах (staging, тестирование, production)?
+* **Технологический стек платформы**: Каково состояние и утилизация используемых инструментов (например, стека BACK)?
 
-Treating (critical) platform services like any other business-critical service allows for easy and effective incident triage, issue resolution, and improved developer experience.
+Отношение к (критически важным) платформенным сервисам как к любому другому бизнес-критичному сервису позволяет легко и эффективно проводить сортировку инцидентов, решение проблем и улучшать опыт разработчиков.
 
-#### Some aspects of core platform observability
+#### Некоторые аспекты базовой наблюдаемости платформы
 
-* **Ensuring resiliency, availability, and security** by applying the same practices to all platform services
-* **Optimizing usage, performance, and licensing** to positively impact the application lifecycle and reduce cost
-* **Detecting misconfiguration or misuse** by discovering upcoming problems and issues, used to educate users.
+* **Обеспечение отказоустойчивости, доступности и безопасности** путём применения одинаковых практик ко всем платформенным сервисам
+* **Оптимизация использования, производительности и лицензирования** для положительного влияния на жизненный цикл приложения и снижения затрат
+* **Обнаружение неправильной конфигурации или неправильного использования** путём выявления предстоящих проблем, используемых для обучения пользователей.
 
-### 2. Release information
+### 2. Информация о релизах
 
-Attaching the current version and stage information to services allows for easy triaging and resolution of issues. This can be done by promoting the version and stage information to Kubernetes containers as environment variables or annotations.
+Привязка текущей версии и информации об этапе к сервисам позволяет легко проводить сортировку и решение проблем. Это можно сделать путём передачи информации о версии и этапе в контейнеры Kubernetes как переменных окружения или аннотаций.
 
-### 3. Pipeline efficiency
+### 3. Эффективность конвейера
 
-While the platform tool stack monitoring outlined in the previous paragraph covers the health of the IDP, it does not yet cover the efficiency of the pipeline. This is where logs, events, and telemetry data from pipeline or workflow executions come in.
+Хотя мониторинг технологического стека платформы, описанный в предыдущем разделе, охватывает состояние IDP, он ещё не охватывает эффективность конвейера. Здесь на помощь приходят логи, события и данные телеметрии из выполнений конвейеров или рабочих процессов.
 
-By analyzing pipeline or workflow logs, events, and traces, itâs possible to create metrics (for example, DORA metrics) that can be used for benchmarking and deciding where to invest time or resources for improvement.
+Анализируя логи, события и трассировки конвейеров или рабочих процессов, можно создавать метрики (например, метрики DORA), которые могут использоваться для бенчмаркинга и принятия решений о том, куда инвестировать время или ресурсы для улучшения.
 
-Most used tools in a cloud-native environment already emit events or telemetry data, but this area currently lacks dedicated standards and semantic conventions.
+Большинство используемых инструментов в облачно-нативных средах уже генерируют события или данные телеметрии, но в этой области в настоящее время отсутствуют специализированные стандарты и семантические конвенции.
 
-### 4. Ownership information
+### 4. Информация о владении
 
-When looking at artifacts, responsibility is a critical piece of information. Who is responsible for an application or service in production, and who owns security?
+При рассмотрении артефактов ответственность является критически важной информацией. Кто отвечает за приложение или сервис в production, и кто владеет безопасностью?
 
-This was often maintained in CMDBs, Excel sheets, or active directories. However, it's wise to manage this information proactively and automatically in cloud-native environments with constant updates and changes.
+Раньше это часто поддерживалось в CMDB, таблицах Excel или Active Directory. Однако разумно управлять этой информацией проактивно и автоматически в облачно-нативных средах с постоянными обновлениями и изменениями.
 
-One way to do this is through Kubernetes labels and annotations, ensuring out-of-the-box availability of this critical information across the lifecycle.
+Один из способов сделать это — через метки и аннотации Kubernetes, обеспечивая доступность этой критически важной информации «из коробки» на протяжении всего жизненного цикла.
 
-### 5. AI Observability
+### 5. Наблюдаемость ИИ
 
-With the rise of generative AI in DevOps Portals and IDP tools, providing observability for these systems is growing to efficiently drive the experience they provide while keeping costs in check.
+С ростом использования генеративного ИИ в порталах DevOps и инструментах IDP, обеспечение наблюдаемости этих систем становится всё более важным для эффективного управления предоставляемым ими опытом при контроле затрат.
 
-## Platform Engineering use cases
+## Сценарии использования платформенной инженерии
 
-With effective platform engineering, everything is available in self-service through Golden Paths (templates). Self-service provides autonomy for rapid, secure innovation while maintaining guard rails for consistency and enabling governance.
+При эффективной платформенной инженерии всё доступно в режиме самообслуживания через Golden Paths (шаблоны). Самообслуживание обеспечивает автономию для быстрых, безопасных инноваций при сохранении ограничений для единообразия и управляемости.
 
-We have categorized use cases with a product-lifecycle-centric view, rather than a platform-centric view, to emphasize the ease of adoption of use cases for platform engineering teams and cases in which no formal platform engineering team has been established.
+Мы категоризировали сценарии использования с точки зрения жизненного цикла продукта, а не с точки зрения платформы, чтобы подчеркнуть лёгкость принятия сценариев использования командами платформенной инженерии и случаи, когда формальная команда платформенной инженерии ещё не создана.
 
-**Develop - Release - Operate - Predict - Prevent - Resolve - Protect - Improve**
+**Разработка - Выпуск - Эксплуатация - Прогнозирование - Предотвращение - Решение - Защита - Улучшение**
 
-All of the following use cases are available to the platform engineering team to make their work observable and easier, or for the platform engineering team to provide automation and self-service capabilities to their usersâthe development teams.
+Все следующие сценарии использования доступны команде платформенной инженерии для обеспечения наблюдаемости и упрощения работы, или для предоставления автоматизации и возможностей самообслуживания пользователям — командам разработки.
 
-### Develop
+### Разработка
 
-This category contains all activities around planning, developing, building, and testing services and applications on an Internal Developer Platform (IDP) provided by a platform engineering team.
+Эта категория содержит все действия, связанные с планированием, разработкой, сборкой и тестированием сервисов и приложений на внутренней платформе разработчика (IDP), предоставленной командой платформенной инженерии.
 
-#### Test pipeline observability Test pipeline observability
+#### Наблюдаемость тестового конвейера Наблюдаемость тестового конвейера
 
-Goal
-:   From millions of test events to a single source of truth.
+Цель
+:   От миллионов тестовых событий к единому источнику истины.
 
-Provide observability into test results automatically across different used tools and ensure all test results are available in a single source of truth.
+Обеспечение наблюдаемости результатов тестирования автоматически по различным используемым инструментам и обеспечение доступности всех результатов тестирования в едином источнике истины.
 
-* Increase efficiency and insights through test observability
-* Ingest test events and metadata into a single unified observability platform
-* Visualize test results and KPIs in one central view or dashboard
-* Identify long lasting tests to easily optimize for faster test feedback
+* Повышение эффективности и аналитики через наблюдаемость тестирования
+* Приём тестовых событий и метаданных в единую унифицированную платформу наблюдаемости
+* Визуализация результатов тестирования и KPI в одном центральном представлении или дашборде
+* Определение долго выполняющихся тестов для простой оптимизации и ускорения обратной связи по тестированию
 
-Try it yourself: [Test pipeline observability](../../deliver/test-pipeline-observability.md "Utilize Dynatrace to observe and analyze test pipelines effectively").
+Попробуйте сами: [Наблюдаемость тестового конвейера](../../deliver/test-pipeline-observability.md "Utilize Dynatrace to observe and analyze test pipelines effectively").
 
-#### Continuous testing validation Continuous testing validation
+#### Непрерывная валидация тестирования Непрерывная валидация тестирования
 
-Goal
-:   120X reduction in evaluation times from days to minutes.
+Цель
+:   120-кратное сокращение времени оценки с дней до минут.
 
-Testing is often highly automated already, but teams still frequently test in siloes.
+Тестирование часто уже высоко автоматизировано, но команды всё ещё часто тестируют в изоляции.
 
-To ensure high quality customer experience automatically and proactively:
+Для автоматического и проактивного обеспечения высокого качества клиентского опыта:
 
-* Combine, continuously evaluate, and baseline test results from testing tools
-* Incorporate SLOs, security findings and synthetic tests
-* Reduce the number of manual operations by engineers to verify quality of new release
-* Easily integrate CI/CD delivery pipeline with tools like Dynatrace Synthetic Monitoring to ensure that new releases where all critical user journeys work as expected
+* Объединяйте, непрерывно оценивайте и создавайте базовые линии результатов тестирования от инструментов тестирования
+* Включайте SLO, результаты проверки безопасности и синтетические тесты
+* Сокращайте количество ручных операций инженеров для проверки качества нового релиза
+* Легко интегрируйте CI/CD-конвейер доставки с такими инструментами, как Dynatrace Synthetic Monitoring, чтобы гарантировать, что в новых релизах все критические пользовательские сценарии работают как ожидается
 
-#### Observability-driven development Observability-driven development
+#### Разработка на основе наблюдаемости Разработка на основе наблюдаемости
 
-Goal
-:   Mean Time to Observability reduction from hours to seconds.
+Цель
+:   Сокращение среднего времени до наблюдаемости с часов до секунд.
 
-In the previous section, we outlined the importance of covering ownership and release information early in the lifecycle by extending the provided metadata to include observability and security rules, SLOs, and even automation and remediation steps.
+В предыдущем разделе мы описали важность охвата информации о владении и релизах на раннем этапе жизненного цикла путём расширения предоставляемых метаданных для включения правил наблюдаемости и безопасности, SLO и даже шагов автоматизации и устранения.
 
-Standardizing these based on technology, team, or criticality of service enables the use of simple as-code templates as Golden Paths, ensuring consistency and governance across the lifecycle.
+Стандартизация этих элементов на основе технологии, команды или критичности сервиса позволяет использовать простые шаблоны as-code в качестве Golden Paths, обеспечивая единообразие и управляемость на протяжении всего жизненного цикла.
 
-Standardizing across teams can:
+Стандартизация между командами может:
 
-* Bring observability and transparency to development teams out-of-the-box
-* Provide real-time insights into what's happening
-* Conduct observability and reliability checks at an early stage to enable faster reaction to potential issues before they reach production
-* Increase accountability of application teams and empower them to get early insights in their implementations
-* Provide autonomy while having consistent rules for the same criticality of service
+* Обеспечить наблюдаемость и прозрачность для команд разработки «из коробки»
+* Предоставить аналитику в реальном времени о происходящем
+* Проводить проверки наблюдаемости и надёжности на ранней стадии для ускорения реакции на потенциальные проблемы до их попадания в production
+* Повысить ответственность команд приложений и дать им возможность получать ранние данные о своих реализациях
+* Обеспечить автономию при наличии единых правил для сервисов одного уровня критичности
 
-### Release
+### Выпуск
 
-This category contains all activities around releasing and deploying in environments along the Software Development Lifecycle (SDLC).
+Эта категория содержит все действия, связанные с выпуском и развёртыванием в средах на протяжении жизненного цикла разработки ПО (SDLC).
 
-#### Continuous testing validation Release validation
+#### Непрерывная валидация тестирования Валидация релиза
 
-Goal
-:   Reduce change failure rate and reduce production deployment lead time by up to 99%
+Цель
+:   Снижение доли неудачных изменений и сокращение времени развёртывания в production до 99%
 
-Automatically validate new releases â taking downstream and upstream dependencies into account â based on baselining, observability data, SLOs, and security information. Use the results to drive meaningful follow-up actions. Providing release validation templates as part of every delivery process enables fast feedback regarding any negative side-effects of a new version. Faster feedback leads to better developer experience, higher release quality, and higher innovation pace.
+Автоматическая валидация новых релизов — с учётом нисходящих и восходящих зависимостей — на основе базовых линий, данных наблюдаемости, SLO и информации о безопасности. Использование результатов для выполнения осмысленных последующих действий. Предоставление шаблонов валидации релиза как части каждого процесса доставки обеспечивает быструю обратную связь о любых негативных побочных эффектах новой версии. Более быстрая обратная связь ведёт к лучшему опыту разработчика, более высокому качеству релизов и более высокому темпу инноваций.
 
-Try it yourself: [Release validation](../../deliver/quality-gates.md "Validate the releases of your business-critical services").
+Попробуйте сами: [Валидация релиза](../../deliver/quality-gates.md "Validate the releases of your business-critical services").
 
-#### Progressive delivery Progressive delivery
+#### Прогрессивная доставка Прогрессивная доставка
 
-Goal
-:   90-99% reduced problem exposure with progressive delivery.
+Цель
+:   90–99% снижение воздействия проблем при прогрессивной доставке.
 
-Releasing updates and new versions of an application or service in a gradual and controlled manner can help teams provide fast, secure, and high-quality services without disrupting business.
+Выпуск обновлений и новых версий приложения или сервиса постепенно и контролируемо может помочь командам предоставлять быстрые, безопасные и качественные сервисы без нарушения бизнес-процессов.
 
-Based on the observability data, including SLO trends and synthetic checks, an automated progressive delivery release like canary or blue/green can be established.
+На основе данных наблюдаемости, включая тренды SLO и синтетические проверки, может быть реализован автоматизированный прогрессивный выпуск, такой как canary или blue/green.
 
-* Automated workflow execution to control the software delivery
-* Direct Kubernetes interactions to apply configuration changes
-* Governance for the delivery process by leveraging events
-* Targeted notifications to inform the team in charge of the delivery process
+* Автоматическое выполнение рабочих процессов для управления доставкой ПО
+* Прямые взаимодействия с Kubernetes для применения изменений конфигурации
+* Управление процессом доставки с использованием событий
+* Целевые уведомления для информирования ответственной команды о процессе доставки
 
-#### Pipeline observability Pipeline observability
+#### Наблюдаемость конвейера Наблюдаемость конвейера
 
-Goal
-:   100% real-time standardized coverage of your software lifecycle health.
+Цель
+:   100% покрытие в реальном времени стандартизированного мониторинга состояния жизненного цикла ПО.
 
-People often say, you canât manage what you canât measure. The statement holds true for the software development lifecycle as well. To calculate critical metrics, such as lead time for change, it's
-important to take note of the pipeline telemetry data.
+Часто говорят, что нельзя управлять тем, что нельзя измерить. Это утверждение справедливо и для жизненного цикла разработки ПО. Для расчёта критических метрик, таких как время от внесения изменения до развёртывания, важно учитывать данные телеметрии конвейера.
 
-Using pipeline observability, the data (for example failed builds, lead time) can be calculated and acted upon automatically. With automated data, these metricsâlike the DORA metrics lead time for change, deployment frequency, change failure rate, and mean time to resolveâare readily available in several dimensions, including application/service, platform service/pipeline, and technology and
-ownership.
+Используя наблюдаемость конвейера, данные (например, неудачные сборки, время до развёртывания) могут быть рассчитаны и автоматически обработаны. С автоматизированными данными такие метрики — как метрики DORA: время до развёртывания изменений, частота развёртываний, доля неудачных изменений и среднее время восстановления — легко доступны в нескольких измерениях, включая приложение/сервис, платформенный сервис/конвейер, а также технологию и владение.
 
-In addition to metrics, logs and traces of pipeline runs can help debug erroneous pipelines or identify time-consuming hotspots that can be optimized for more efficient pipelines.
+Помимо метрик, логи и трассировки выполнений конвейера помогают отлаживать ошибочные конвейеры или определять затратные по времени узкие места, которые можно оптимизировать для более эффективных конвейеров.
 
-### Operate
+### Эксплуатация
 
-This category contains activities around monitoring and operating services and applications in production environments.
+Эта категория содержит действия, связанные с мониторингом и эксплуатацией сервисов и приложений в production-средах.
 
-#### Data-driven cloud tuning Cloud cost optimization
+#### Оптимизация облачных затрат на основе данных Оптимизация облачных затрат
 
-Goal
-:   Reduce cross-zone network traffic by up to 55%.
+Цель
+:   Снижение межзонального сетевого трафика до 55%.
 
-By combining network data with infrastructure and billing information, top cost contributors can be identified and analyzed, leading to improvements by pinpointed adoption of network compression or other hyperscaler tools.
+Объединяя сетевые данные с информацией об инфраструктуре и биллинге, можно определить и проанализировать основных контрибьюторов затрат, что приводит к улучшениям через точечное применение сжатия сети или других инструментов гиперскейлера.
 
-Try it yourself: [Data-driven cloud tuning](../../observe/infrastructure-observability/cloud-platform-monitoring/use-cases/cloud-costs.md "Manage your cloud deployment using Grail and your cloud vendor-provided data in context.").
+Попробуйте сами: [Оптимизация облачных затрат на основе данных](../../observe/infrastructure-observability/cloud-platform-monitoring/use-cases/cloud-costs.md "Manage your cloud deployment using Grail and your cloud vendor-provided data in context.").
 
-#### AI Observability Generative AI observability
+#### Наблюдаемость ИИ Наблюдаемость генеративного ИИ
 
-Goal
-:   Increase reliability while keeping costs from surging.
+Цель
+:   Повышение надёжности при контроле роста затрат.
 
-With the rise of generative AI in DevOps Portals and IDP tools, tracking usage and consumption is becoming increasingly important, allowing streamlined access and managing cost effectively.
+С ростом использования генеративного ИИ в порталах DevOps и инструментах IDP, отслеживание использования и потребления становится всё более важным, обеспечивая упорядоченный доступ и эффективное управление затратами.
 
-Using observability data further allows the proper sizing and configuration of generative AI tools, increasing experience and productivity for development teams.
+Использование данных наблюдаемости дополнительно позволяет правильно масштабировать и настраивать инструменты генеративного ИИ, повышая опыт и продуктивность для команд разработки.
 
-Try it yourself:
+Попробуйте сами:
 
-* [AI and LLM Observability](../../observe/dynatrace-for-ai-observability.md "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more.")
+* [Наблюдаемость ИИ и LLM](../../observe/dynatrace-for-ai-observability.md "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more.")
 
-#### Infrastructure observability Observability for infrastructure
+#### Наблюдаемость инфраструктуры Наблюдаемость инфраструктуры
 
-Goal
-:   30% reduced MTTR by breaking down data silos.
+Цель
+:   30% сокращение MTTR благодаря устранению информационных изоляций.
 
-For IT operations teams, the central challenge in ensuring the health of the IT infrastructure lies in the daunting task of pinpointing the exact root cause of issues.
+Для команд ИТ-операций центральная задача в обеспечении состояния ИТ-инфраструктуры заключается в сложной задаче точного определения первопричины проблем.
 
-By applying Golden Paths and as-code templates, users can quickly trace performance issues to their source by "following the red" to the problematic infrastructure entity. This approach allows an immediate understanding of how entities such as hosts, processes, and their associated relationships contribute to the identified issue.
+Применяя Golden Paths и шаблоны as-code, пользователи могут быстро отследить проблемы производительности до их источника, «следуя за красным» к проблемной сущности инфраструктуры. Этот подход позволяет немедленно понять, как сущности, такие как хосты, процессы и их связанные отношения, способствуют выявленной проблеме.
 
-#### Kubernetes monitoring
+#### Мониторинг Kubernetes
 
-Goal
-:   Manage your platform with 30+ out-of-the-box health alerts.
+Цель
+:   Управление платформой с 30+ готовыми оповещениями о состоянии.
 
-Establishing scalable cluster lifecycle management within a diverse multi-cluster environment featuring various distributions requires a centralized repository with a single source of truth.
+Создание масштабируемого управления жизненным циклом кластеров в разнообразной мультикластерной среде с различными дистрибутивами требует централизованного репозитория с единым источником истины.
 
-This centralized view:
+Это централизованное представление:
 
-* Serves as the hub for ingesting, visualizing, and analyzing telemetry data from different layers of the Kubernetes stack
-* Enables the execution of configuration actions based on observability insights, such as resource consumption and performance management across all clusters
-* Offers extended centralized monitoring and alerting capabilities, particularly for node failure incidents
+* Служит центром для приёма, визуализации и анализа данных телеметрии от различных уровней стека Kubernetes
+* Позволяет выполнять действия по конфигурации на основе аналитики наблюдаемости, таких как управление потреблением ресурсов и производительностью по всем кластерам
+* Предлагает расширенные возможности централизованного мониторинга и оповещений, особенно для инцидентов отказа узлов
 
-### Predict
+### Прогнозирование
 
-Many incidents that used to result in wake-up calls for people on standby can now be addressed before they become major issues by using predictive AI and forecasting.
+Многие инциденты, которые раньше приводили к ночным звонкам дежурным, теперь могут быть решены до того, как они станут серьёзными проблемами, с помощью прогнозного ИИ и прогнозирования.
 
-#### Predictive operations Predictive Kubernetes operations
+#### Прогнозные операции Прогнозные операции Kubernetes
 
-Goal
-:   Reduce overprovisioning and storage needs by up to 75%.
+Цель
+:   Сокращение избыточного выделения ресурсов и потребностей в хранилище до 75%.
 
-Within cloud-native environments, resizing disks can happen frequently. Predictive AI for forecasting enables automatic and timely resizing of disks, avoiding system outages while keeping costs low.
+В облачно-нативных средах изменение размера дисков может происходить часто. Прогнозный ИИ для прогнозирования обеспечивает автоматическое и своевременное изменение размера дисков, предотвращая сбои системы при контроле затрат.
 
-Try it yourself: [Predictive Kubernetes operations](../../observe/infrastructure-observability/kubernetes-app/use-cases/predictive-operations.md "Proactively manage disk space within Kubernetes environments").
+Попробуйте сами: [Прогнозные операции Kubernetes](../../observe/infrastructure-observability/kubernetes-app/use-cases/predictive-operations.md "Proactively manage disk space within Kubernetes environments").
 
-#### Forecasting in data analytics Forecasting in data analytics
+#### Прогнозирование в аналитике данных Прогнозирование в аналитике данных
 
-Goal
-:   Zero disk-resize related after-hour alerts for SREs.
+Цель
+:   Ноль оповещений, связанных с изменением размера дисков, в нерабочее время для SRE.
 
-Anticipatory management of cloud resources within highly dynamic IT systems is a critical success factor for modern companies. Operators must closely observe business-critical resources such as storage, CPU, and memory to avoid resource-driven outages.
+Упреждающее управление облачными ресурсами в высокодинамичных ИТ-системах является критическим фактором успеха для современных компаний. Операторы должны внимательно наблюдать за бизнес-критичными ресурсами, такими как хранилище, CPU и память, чтобы избежать сбоев, вызванных нехваткой ресурсов.
 
-#### Forecasting in workflows Forecasting in workflow automation
+#### Прогнозирование в рабочих процессах Прогнозирование в автоматизации рабочих процессов
 
-Goal
-:   Reduce up to 100% of recurring manual efforts with prediction-driven automation.
+Цель
+:   Сокращение до 100% повторяющихся ручных операций с помощью автоматизации на основе прогнозирования.
 
-Predictive AI in workflow automation makes it possible to proactively raise tickets and act automatically before problems arise.
+Прогнозный ИИ в автоматизации рабочих процессов позволяет проактивно создавать тикеты и действовать автоматически до возникновения проблем.
 
-Try it yourself: [AI in Workflows - Predictive maintenance of cloud disks](../../dynatrace-intelligence/use-cases/davis-for-workflows.md "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.").
+Попробуйте сами: [ИИ в Workflows — Прогнозное обслуживание облачных дисков](../../dynatrace-intelligence/use-cases/davis-for-workflows.md "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.").
 
-### Prevent
+### Предотвращение
 
-Even when AI canât predict issues, it can often prevent them using observability and security data.
+Даже когда ИИ не может предсказать проблемы, он часто может предотвратить их, используя данные наблюдаемости и безопасности.
 
-#### Bug prevention Preventing customer-facing bugs
+#### Предотвращение ошибок Предотвращение ошибок, видимых пользователям
 
-Goal
-:   Reduce end-user-facing bugs by up to 36%.
+Цель
+:   Сокращение ошибок, видимых конечным пользователям, до 36%.
 
-Ingesting and automatically analyzing application log data from production makes it easy to issue tickets with context and create and assign work to the respective development teams, allowing them to act and resolve bugs before end-users encounter them.
+Приём и автоматический анализ данных журналов приложений из production упрощает создание тикетов с контекстом и назначение работы соответствующим командам разработки, позволяя им действовать и устранять ошибки до того, как конечные пользователи столкнутся с ними.
 
-Try it yourself: [Automated bug triaging and ticketing](../../analyze-explore-automate/logs/lma-use-cases/lma-e2e-resolve-dependencies.md "Explore a Log Management and Analytics use case for resolving team dependencies.").
+Попробуйте сами: [Автоматизированная сортировка ошибок и создание тикетов](../../analyze-explore-automate/logs/lma-use-cases/lma-e2e-resolve-dependencies.md "Explore a Log Management and Analytics use case for resolving team dependencies.").
 
-#### Unified exposure protection Unified exposure protection
+#### Единая защита от уязвимостей Единая защита от уязвимостей
 
-Goal
-:   Cut risk remediation from 96 hours to 4 hours â 95% faster.
+Цель
+:   Сокращение времени устранения рисков с 96 часов до 4 часов — на 95% быстрее.
 
-Observability and security are converging to facilitate prioritization and risk assessment of security findings, resolving the most common frustration with existing tools, specifically during the software development stages. Combining this with automation leads to effective engagements with the teams who need to act on those security findings.
+Наблюдаемость и безопасность сближаются для облегчения приоритизации и оценки рисков результатов проверки безопасности, решая наиболее распространённое разочарование существующими инструментами, особенно на этапах разработки ПО. Объединение этого с автоматизацией приводит к эффективному взаимодействию с командами, которым необходимо действовать по результатам проверки безопасности.
 
-#### Continuous security posture awareness Continuous security posture awareness
+#### Непрерывный мониторинг состояния безопасности Непрерывный мониторинг состояния безопасности
 
-Goal
-:   Instant live security reports.
+Цель
+:   Мгновенные отчёты о безопасности в реальном времени.
 
-Get a unified and prioritized view of different exposures across your different application tiers and your production and pre-production environments.
+Получите унифицированное и приоритизированное представление различных уязвимостей по различным уровням приложений и средам production и pre-production.
 
-* Prioritize vulnerabilities with a custom risk specific to your organization
-* Learn what remediation activities prioritize for impactâand let automation handle it
-* Learn the details of a vulnerability, such as which entities are impacted and whether thereâs any link to databases.
+* Приоритизируйте уязвимости с учётом пользовательского риска, специфичного для вашей организации
+* Узнайте, какие действия по устранению приоритизировать для максимального эффекта — и позвольте автоматизации справиться с этим
+* Изучите детали уязвимости, такие как какие сущности затронуты и есть ли связь с базами данных.
 
-### Resolve
+### Решение
 
-Once an incident occurs, it's important to take the right steps immediately. Sometimes, the first step is to inform the right team with the required information. At other times, issues can be remediated and resolved automatically.
+Когда инцидент происходит, важно немедленно предпринять правильные шаги. Иногда первый шаг — информировать правильную команду с необходимой информацией. В других случаях проблемы могут быть устранены и решены автоматически.
 
-#### Incident auto-routing Incident triaging and response
+#### Автоматическая маршрутизация инцидентов Сортировка инцидентов и реагирование
 
-Goal
-:   Improve MTTR by up to 99%.
+Цель
+:   Улучшение MTTR до 99%.
 
-Using observability and security data combined with context and further metadata (such as ownership information), it becomes easy to automatically triage issues as they arise and follow through with the
-proper response.
+Используя данные наблюдаемости и безопасности в сочетании с контекстом и дополнительными метаданными (такими как информация о владении), становится легко автоматически сортировать проблемы по мере их возникновения и выполнять надлежащую реакцию.
 
-The proper response could be any automated action available, such as informing stakeholders through communication tools, opening incident tickets, triggering configuration management tools, or remediating directly by executing Kubernetes jobs or creating pull requests.
+Надлежащей реакцией может быть любое доступное автоматизированное действие, такое как информирование заинтересованных сторон через коммуникационные инструменты, открытие тикетов инцидентов, запуск инструментов управления конфигурацией или прямое устранение путём выполнения задач Kubernetes или создания pull-запросов.
 
-#### Business impact Resolving critical business impact
+#### Влияние на бизнес Решение критического влияния на бизнес
 
-Goal
-:   Linking IT alerts to business impact provides prioritization.
+Цель
+:   Связывание ИТ-оповещений с влиянием на бизнес обеспечивает приоритизацию.
 
-Combining IDP observability data with the impact an IDP has on business transactions and footprints allows organizations to prioritize based on the highest-impact issues first.
+Объединение данных наблюдаемости IDP с влиянием, которое IDP оказывает на бизнес-транзакции и бизнес-процессы, позволяет организациям приоритизировать на основе наиболее значимых проблем.
 
-#### Error budget alerting Error budget alerting
+#### Оповещение по бюджету ошибок Оповещение по бюджету ошибок
 
-Goal
-:   Increase triaging efficiency by 90%.
+Цель
+:   Повышение эффективности сортировки на 90%.
 
-If you have 99 problems, how do you prioritize?
+Если у вас 99 проблем, как расставить приоритеты?
 
-An easy way to focus on the right problems is to look at those actively impacting Service-Level Objectives (SLOs). If the number of issues in an environment still calls for further prioritization, automatically triage and inform stakeholders easily by alerting them on the SLO error budget burn rate (how fast the SLO error budget is consumed).
+Простой способ сосредоточиться на правильных проблемах — обратить внимание на те, которые активно влияют на целевые уровни обслуживания (SLO). Если количество проблем в среде всё ещё требует дополнительной приоритизации, автоматически сортируйте и информируйте заинтересованных лиц, оповещая их о скорости потребления бюджета ошибок SLO (как быстро расходуется бюджет ошибок SLO).
 
-### Protect
+### Защита
 
-All environments, infrastructures, and applications must be protected â with the right measures. Organizations can protect their assets more easily with a consistent Internal Developer Platform (IDP), providing governance and security.
+Все среды, инфраструктуры и приложения должны быть защищены — с правильными мерами. Организации могут защитить свои активы проще с помощью единой внутренней платформы разработчика (IDP), обеспечивающей управляемость и безопасность.
 
-#### Security alert noise reduction Security Operations Center (SOC) noise reduction
+#### Снижение шума оповещений безопасности Снижение шума центра управления безопасностью (SOC)
 
-Goal
-:   Reduce security event storms by 99%
+Цель
+:   Снижение штормов событий безопасности на 99%
 
-Avoiding fatigue due to the myriad of security events emitted by hyperscaler tools every single day by deduplication and consolidation combined with automatic ticket creation and assignment based on development and security ownership.
+Предотвращение усталости от множества событий безопасности, генерируемых инструментами гиперскейлеров каждый день, путём дедупликации и консолидации в сочетании с автоматическим созданием и назначением тикетов на основе владения разработкой и безопасностью.
 
-Try it yourself: [CSPM Notification Automation](../../secure/use-cases/notification-automation.md "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.").
+Попробуйте сами: [Автоматизация уведомлений CSPM](../../secure/use-cases/notification-automation.md "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.").
 
-#### Security as a service Automate security findings at scale
+#### Безопасность как сервис Автоматизация результатов проверки безопасности в масштабе
 
-Goal
-:   Strive towards zero false positives.
+Цель
+:   Стремление к нулю ложных срабатываний.
 
-Understand the threat posed by your code, third party, and open-source libraries and block malicious requests attempting to exploit code weaknesses in these.
+Понимание угроз, исходящих от вашего кода, сторонних и открытых библиотек, и блокирование вредоносных запросов, пытающихся использовать слабости кода.
 
-* Precisely detect & block attacks
-* While applications keep serving their users
-* Integrated with OneAgent & available at the flip of a switch
+* Точное обнаружение и блокирование атак
+* При продолжении обслуживания пользователей приложением
+* Интеграция с OneAgent и доступность одним переключением
 
-#### Continuous security posture awareness Contextualized threat detection and incident response
+#### Непрерывный мониторинг состояния безопасности Контекстуализированное обнаружение угроз и реагирование на инциденты
 
-Goal
-:   From threat hypothesis to tangible evidence in minutes.
+Цель
+:   От гипотезы об угрозе до реальных доказательств за минуты.
 
-Today, security takes everyone in your organization, and all your data is relevant for security. That's why it needs to be easy to ingest any data and have it available for manual detailed security analytics. At the pace of cybersecurity attacks today, there is no way around automation. By the time your valuable security analysts get in front of an incident or investigate a malicious pattern - you want to ensure it's worth their time. With data contextualization, workflow actions, and dedicated security analytics apps, you have all the tools to be proactive about security. Finding whether you have a bad actor in your system, what they are up to, and preventing them from being successful â with the merge of observability and security, it's easy to understand how to elevate your analysts by leveling up the security incident first, fully contextualizing the incident, and prioritizing based on
-importance.
+Сегодня безопасность требует участия всех в организации, и все ваши данные имеют значение для безопасности. Поэтому должна быть возможность легко принимать любые данные и иметь их доступными для ручной детальной аналитики безопасности. При современном темпе кибератак без автоматизации не обойтись. К тому времени, когда ваши ценные аналитики безопасности приступят к инциденту или расследованию вредоносного паттерна, вы хотите убедиться, что это стоит их времени. С контекстуализацией данных, действиями рабочих процессов и специализированными приложениями аналитики безопасности у вас есть все инструменты для проактивного подхода к безопасности. Определение наличия злоумышленника в системе, его действий и предотвращение успеха — с объединением наблюдаемости и безопасности легко понять, как повысить уровень аналитиков, сначала полностью контекстуализируя инцидент безопасности и приоритизируя на основе важности.
 
-* Stop attackers in their tracks
-* Leverage observability and security data in context to see every detail of your environment
-* All the data is consolidated at your fingertips
-* Automation actions easily combined into a workflow elevate your analysts whenever they need to look at an incident
+* Остановите злоумышленников на месте
+* Используйте данные наблюдаемости и безопасности в контексте для просмотра каждой детали вашей среды
+* Все данные консолидированы и доступны
+* Действия автоматизации, легко объединяемые в рабочий процесс, поддерживают ваших аналитиков при работе с инцидентом
 
-### Improve
+### Улучшение
 
-Continuous improvement of resources drives business. These improvements can range from cost- to time-savings to always ensuring best-in-class customer experiences.
+Непрерывное улучшение ресурсов движет бизнес. Эти улучшения могут варьироваться от экономии затрат и времени до постоянного обеспечения лучшего клиентского опыта.
 
-#### Always-on app profiling Always-on app profiling
+#### Постоянное профилирование приложений Постоянное профилирование приложений
 
-Goal
-:   5x faster performance bottleneck issue resolution
+Цель
+:   5-кратное ускорение решения проблем с узкими местами производительности
 
-With observability data around CPU, thread, and memory usage, it's easy to quickly identify the biggest performance bottlenecks and flag them for improvement. Such bottlenecks could manifest themselves as inefficient string operations leading to high memory allocation and pressure on the garbage collector, which can, in turn, lead to scalability and performance issues.
+С данными наблюдаемости о CPU, потоках и использовании памяти легко быстро определить крупнейшие узкие места производительности и отметить их для улучшения. Такие узкие места могут проявляться как неэффективные строковые операции, приводящие к высокому выделению памяти и нагрузке на сборщик мусора, что, в свою очередь, может привести к проблемам масштабируемости и производительности.
 
-Try it yourself: [Always-on app profiling](../../observe/application-observability/services/always-on-app-profiling.md "Optimize your code and find performance problems").
+Попробуйте сами: [Постоянное профилирование приложений](../../observe/application-observability/services/always-on-app-profiling.md "Optimize your code and find performance problems").
 
-#### Kubernetes utilization improvement Kubernetes utilization improvement
+#### Улучшение утилизации Kubernetes Улучшение утилизации Kubernetes
 
-Goal
-:   Automated K8s utilization improvement reduces spend up to 25%.
+Цель
+:   Автоматизированное улучшение утилизации K8s снижает расходы до 25%.
 
-Continuously update and improve k8s requests and limits automatically, reducing cognitive load on developers and providing peace of mind for platform engineers.
+Непрерывное автоматическое обновление и улучшение запросов и лимитов K8s, снижающее когнитивную нагрузку на разработчиков и обеспечивающее спокойствие для платформенных инженеров.
 
-By analyzing Kubernetes metrics and SLOs for resource allocation and utilization, it's possible to set environment configuration avoiding any misalignment.
+Анализируя метрики Kubernetes и SLO по распределению и использованию ресурсов, можно настроить конфигурацию среды, избегая любых несоответствий.
 
-#### Business alignment Business alignment
+#### Бизнес-согласованность Бизнес-согласованность
 
-Goal
-:   Bring in context to your business processes and accelerate collaboration.
+Цель
+:   Привнесение контекста в ваши бизнес-процессы и ускорение совместной работы.
 
-It's critical to align platform engineering initiatives and work with the primary value stream. Aligning initiatives to assets allows for easier prioritization of improvement work and communication with the line of business.
+Критически важно согласовать инициативы платформенной инженерии и работу с основным потоком создания ценности. Привязка инициатив к активам позволяет упростить приоритизацию работы по улучшению и коммуникацию с бизнес-подразделениями.
 
-## Measuring platform success
+## Измерение успеха платформы
 
-### Governance and consistency at scale
+### Управляемость и единообразие в масштабе
 
-Golden Paths guide developers, saving time and reducing risks. But they're not one-size-fits-all â flexibility exists for individual customization and exploration.
+Golden Paths направляют разработчиков, экономя время и снижая риски. Но они не универсальны — существует гибкость для индивидуальной настройки и экспериментирования.
 
-The result? A platform that scales effortlessly, where standardized efficiency works with developer autonomy to offer governance and consistency.
+Результат? Платформа, которая легко масштабируется, где стандартизированная эффективность сочетается с автономией разработчиков, обеспечивая управляемость и единообразие.
 
-Applying product management principles and observability to the IDP makes it possible to provide meaningful insights into platform infrastructure, tools, and services. Golden Paths adoption and efficiency regarding feedback for developers.
+Применение принципов управления продуктом и наблюдаемости к IDP позволяет предоставлять значимые данные об инфраструктуре, инструментах и сервисах платформы. Принятие и эффективность Golden Paths относительно обратной связи для разработчиков.
 
-### DORA metrics
+### Метрики DORA
 
-Googleâs DevOps Research and Assessment (DORA) team established the DORA metrics to provide key metrics on the performance of a software development team.
+Команда DevOps Research and Assessment (DORA) Google создала метрики DORA для предоставления ключевых метрик производительности команды разработки ПО.
 
-The established four keys include:
+Установленные четыре ключевых метрики включают:
 
-Deployment frequency
-:   Measures how often a team successfully releases to production
+Частота развёртываний
+:   Измеряет, как часто команда успешно выпускает в production
 
-Lead time for change
-:   Measures the time it takes for committed code to get into production.
+Время до развёртывания изменений
+:   Измеряет время, необходимое для того, чтобы зафиксированный код попал в production.
 
-Change failure rate
-:   Measures the percentage of deployments that result in a failure in production that requires a bug fix or roll-back.
+Доля неудачных изменений
+:   Измеряет процент развёртываний, приводящих к сбою в production, требующему исправления ошибки или отката.
 
-Mean time to restore service (MTTR)
-:   Measures how long it takes an organization to recover from a failure in production.
+Среднее время восстановления сервиса (MTTR)
+:   Измеряет, сколько времени требуется организации для восстановления после сбоя в production.
 
-The DORA team extended these metrics by adding a fifth one in 2021:
+Команда DORA расширила эти метрики, добавив пятую в 2021 году:
 
-Reliability
-:   Representing availability, latency, performance, and scalability
+Надёжность
+:   Представляющая доступность, задержку, производительность и масштабируемость
 
-Benchmarking in real-time and across dimensions (such as technologies and teams) provides crucial benefits or a platform engineering team.
+Бенчмаркинг в реальном времени и по различным измерениям (таким как технологии и команды) предоставляет критически важные преимущества для команды платформенной инженерии.
 
-### Developer experience
+### Опыт разработчиков
 
-Platform engineering is ultimately about driving developer productivity. But how do you define and measure developer productivity and satisfaction? It canât be reduced to a single metric, but the SPACE framework captures critical dimensions of developer productivity:
+Платформенная инженерия в конечном счёте направлена на повышение продуктивности разработчиков. Но как определить и измерить продуктивность и удовлетворённость разработчиков? Это нельзя свести к одной метрике, но фреймворк SPACE охватывает критические измерения продуктивности разработчиков:
 
-* Satisfaction
-* Performance
-* Activity
-* Communication and collaboration
-* Efficiency and flow
+* Удовлетворённость
+* Производительность
+* Активность
+* Коммуникация и сотрудничество
+* Эффективность и поток
 
-The SPACE framework doesn't provide a ready-to-use list of metrics like the DORA metrics, but instead guides in providing categories to consider.
+Фреймворк SPACE не предоставляет готовый список метрик, как метрики DORA, но направляет в предоставлении категорий для рассмотрения.
 
-## Dynatrace and OpenTelemetry
+## Dynatrace и OpenTelemetry
 
-[OpenTelemetry](../../ingest-from/opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") (also referred to as OTel) is an open-source observability framework made up of a collection of tools, APIs, and SDKs.
+[OpenTelemetry](../../ingest-from/opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") (также называемый OTel) — это фреймворк наблюдаемости с открытым исходным кодом, состоящий из набора инструментов, API и SDK.
 
-* OTel enables IT teams to instrument, generate, collect, and export telemetry data for analysis and understanding software performance and behavior.
+* OTel позволяет ИТ-командам инструментировать, генерировать, собирать и экспортировать данные телеметрии для анализа и понимания производительности и поведения программного обеспечения.
 
-  As a Cloud Native Computing Foundation (CNCF) incubating project, OTel aims to provide unified sets of vendor-agnostic libraries and APIs, mainly for collecting data and transferring it somewhere.
-* Dynatrace, which is committed to making observability seamless for technical teams, is the only observability solution that combines high-fidelity distributed tracing, code-level visibility, and advanced diagnostics across cloud-native architectures. Data plus context are critical to supercharging observability.
+  Как проект CNCF (Cloud Native Computing Foundation) на стадии инкубации, OTel стремится предоставить унифицированные наборы вендор-независимых библиотек и API, главным образом для сбора данных и их передачи.
+* Dynatrace, стремящаяся сделать наблюдаемость бесшовной для технических команд, является единственным решением для наблюдаемости, объединяющим высокоточную распределённую трассировку, видимость на уровне кода и продвинутую диагностику в облачно-нативных архитектурах. Данные плюс контекст критически важны для усиления наблюдаемости.
 
-  By integrating OTel data seamlessly, Dynatraceâs distributed tracing technology automatically picks up OTel data and provides the instrumentation for all the essential frameworks beyond the scope of OTel.
+  Бесшовно интегрируя данные OTel, технология распределённой трассировки Dynatrace автоматически подхватывает данные OTel и обеспечивает инструментацию для всех ключевых фреймворков за пределами области охвата OTel.
 
 ![Platform Engineering](https://dt-cdn.net/images/image003-960-07f1ef33d5.png)
 
-## Take action!
+## Действуйте!
 
-Implementing DevOps and platform engineering is not optional for organizations serious about transforming their ability to deliver value in the cloud. These practices are crucial, not just beneficial, for boosting productivity and achieving success in today's tech landscape.
+Внедрение DevOps и платформенной инженерии не является опциональным для организаций, серьёзно настроенных на трансформацию своей способности доставлять ценность в облаке. Эти практики критически важны, а не просто полезны, для повышения продуктивности и достижения успеха в современном технологическом ландшафте.
 
-Dynatraceâs purpose-built solution for platform engineering reduces complexity through automated workflows, including auto-scaling, deployment validation, and anomaly remediation.
+Целенаправленное решение Dynatrace для платформенной инженерии снижает сложность через автоматизированные рабочие процессы, включая автомасштабирование, валидацию развёртываний и устранение аномалий.
 
-By leveraging the power of the Dynatrace platform and the new Kubernetes experience, platform engineers are empowered to implement the following best practices, enabling their development teams to deliver best-in-class applications and services to their customers.
+Используя возможности платформы Dynatrace и нового опыта работы с Kubernetes, платформенные инженеры получают возможность внедрять следующие лучшие практики, позволяя командам разработки доставлять лучшие приложения и сервисы своим клиентам.
 
-Centralize and standardize
-:   The ability to effectively manage multi-cluster infrastructure is critical to consistent and scalable service delivery.
+Централизация и стандартизация
+:   Способность эффективно управлять мультикластерной инфраструктурой критически важна для единообразной и масштабируемой доставки сервисов.
 
-Provide self-service platform services with dedicated UI
-:   for development teams to improve developer experience and increase speed of delivery.
+Предоставление платформенных сервисов самообслуживания с выделенным UI
+:   для команд разработки для улучшения опыта разработчиков и увеличения скорости доставки.
 
-Automation, automation, automation
-:   Adoption of GitOps practices enables platform provisioning at scale.
+Автоматизация, автоматизация, автоматизация
+:   Применение практик GitOps обеспечивает провижининг платформы в масштабе.
 
-Context
-:   Get access to not just data, but answers â reaching the right stakeholders at the right time.
+Контекст
+:   Получите доступ не только к данным, но и к ответам — обращаясь к нужным заинтересованным сторонам в нужное время.
 
 1
 

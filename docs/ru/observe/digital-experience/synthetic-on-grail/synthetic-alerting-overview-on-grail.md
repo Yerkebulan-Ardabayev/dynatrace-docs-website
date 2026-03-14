@@ -1,5 +1,5 @@
 ---
-title: Synthetic alerting overview
+title: Обзор оповещений Synthetic
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-alerting-overview-on-grail
 scraped: 2026-03-04T21:38:54.851437
 ---

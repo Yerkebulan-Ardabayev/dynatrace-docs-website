@@ -1,5 +1,5 @@
 ---
-title: Deploy OneAgent on Mesos/Marathon
+title: Развертывание OneAgent на Mesos/Marathon
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/deploy-dynatrace-oneagent-on-mesos-marathon
 scraped: 2026-03-06T21:15:40.651397
 ---

@@ -8,45 +8,45 @@ scraped: 2026-03-05T21:25:41.748811
 
 # NGINX
 
-* Latest Dynatrace
-* Reference
-* 3-min read
-* Updated on Oct 23, 2025
+* Актуальная версия Dynatrace
+* Справочник
+* Чтение: 3 мин
+* Обновлено 23 октября 2025 г.
 
-With the NGINX code module of OneAgent, you can get observability for your NGINX instances and processed web requests.
+С помощью модуля кода NGINX в OneAgent вы можете получить наблюдаемость для ваших экземпляров NGINX и обрабатываемых веб-запросов.
 
-Support on Windows
+Поддержка на Windows
 
-NGINX deep monitoring is currently not supported on Windows.
+Глубокий мониторинг NGINX в настоящее время не поддерживается на Windows.
 
-See [OneAgent support matrix](../oneagent-platform-and-capability-support-matrix.md#os-code-modules "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") for more details.
+Подробнее см. [Матрица поддержки OneAgent](../oneagent-platform-and-capability-support-matrix.md#os-code-modules "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах.").
 
-Which modules of NGINX are supported for outgoing web requests?
+Какие модули NGINX поддерживаются для исходящих веб-запросов?
 
-| Modules of NGINX | Versions |
+| Модули NGINX | Версии |
 | --- | --- |
-| ngx\_http\_fastcgi\_module (fastcgi\_pass) | All versions supported |
-| ngx\_http\_grpc\_module (grpc\_pass) | All versions supported |
-| ngx\_http\_memcached\_module (memcached\_pass) | All versions supported |
-| ngx\_http\_proxy\_module (proxy\_pass) | All versions supported |
-| ngx\_http\_scgi\_module (scgi\_pass) | All versions supported |
-| ngx\_http\_uwsgi\_module (uwsgi\_pass) | All versions supported |
+| ngx\_http\_fastcgi\_module (fastcgi\_pass) | Все версии поддерживаются |
+| ngx\_http\_grpc\_module (grpc\_pass) | Все версии поддерживаются |
+| ngx\_http\_memcached\_module (memcached\_pass) | Все версии поддерживаются |
+| ngx\_http\_proxy\_module (proxy\_pass) | Все версии поддерживаются |
+| ngx\_http\_scgi\_module (scgi\_pass) | Все версии поддерживаются |
+| ngx\_http\_uwsgi\_module (uwsgi\_pass) | Все версии поддерживаются |
 
-## Support lifecycle
+## Жизненный цикл поддержки
 
-Dynatrace supports a variety of NGINX, NGINX Plus, OpenResty, and Tengine versions, see the tables below. A notification appears on the NGINX process page in the Dynatrace web UI if an attempt is made to instrument an unsupported version.
+Dynatrace поддерживает различные версии NGINX, NGINX Plus, OpenResty и Tengine, см. таблицы ниже. Уведомление появляется на странице процесса NGINX в веб-интерфейсе Dynatrace, если предпринимается попытка инструментировать неподдерживаемую версию.
 
-If your OneAgent build date is newer than a specific NGINX release date, the NGINX code module may be able to instrument your NGINX release even if it's not listed in the supported version tables.
+Если дата сборки вашего OneAgent новее, чем дата выпуска конкретной версии NGINX, модуль кода NGINX может инструментировать вашу версию NGINX, даже если она не указана в таблицах поддерживаемых версий.
 
-Where I can find the OneAgent build date?
+Где найти дату сборки OneAgent?
 
-The OneAgent build date is part of the OneAgent intaller version, for example 1.254.0.**20221012-201831**.
+Дата сборки OneAgent является частью версии установщика OneAgent, например 1.254.0.**20221012-201831**.
 
-### Support for NGINX
+### Поддержка NGINX
 
-Support for the latest NGINX release is typically included in the next subsequent OneAgent releases.
+Поддержка последнего выпуска NGINX обычно включается в следующие выпуски OneAgent.
 
-| NGINX version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](../../technology-support.md#support-levels) |
+| Версия NGINX | Дата выпуска вендором | Дата окончания поддержки вендором | Первая поддерживаемая версия Dynatrace OneAgent | Последняя поддерживаемая версия Dynatrace OneAgent | Поддержка Dynatrace до | [Уровень поддержки Dynatrace](../../technology-support.md#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1.29.5 | 2026-02-04 | - | 1.335 | - | - | Not supported |
 | 1.29.4 | 2025-12-09 | - | 1.331 | - | - | Supported |
@@ -117,21 +117,21 @@ Support for the latest NGINX release is typically included in the next subsequen
 
 1
 
-Support for the CPU architecture PPCLE was added with OneAgent version 1.169 and ARM64 (AArch64) with OneAgent version 1.189.
+Поддержка архитектуры процессора PPCLE была добавлена в OneAgent версии 1.169, а ARM64 (AArch64) — в OneAgent версии 1.189.
 
 2
 
-Supported if the used binary is in the list of [supported binaries](nginx.md#nginx-supported-binaries "Learn the details of Dynatrace support for NGINX.") or the corresponding debug information is available locally.
+Поддерживается, если используемый бинарный файл находится в списке [поддерживаемых бинарных файлов](nginx.md#nginx-supported-binaries "Узнайте подробности поддержки NGINX в Dynatrace.") или соответствующая отладочная информация доступна локально.
 
-Support details for NGINX versions 1.4 - 1.11.4
+Подробности поддержки версий NGINX 1.4 - 1.11.4
 
-The NGINX code module uses debug information from the NGINX packages for instrumenting NGINX. Standard NGINX package sources are regularly discovered by Dynatrace to support new binaries. If you use other binaries (for example, custom builds), you need to provide their debug packages locally.
+Модуль кода NGINX использует отладочную информацию из пакетов NGINX для инструментирования NGINX. Стандартные источники пакетов NGINX регулярно обнаруживаются Dynatrace для поддержки новых бинарных файлов. Если вы используете другие бинарные файлы (например, пользовательские сборки), вам необходимо предоставить их отладочные пакеты локально.
 
-The following image can help you to determine if a NGINX release is qualified for support:
+Следующее изображение поможет вам определить, подходит ли выпуск NGINX для поддержки:
 
-![NGINX supported versions](https://dt-cdn.net/images/nginx-instrumentation-simplified-1800-9148ec25fc.png)
+![Поддерживаемые версии NGINX](https://dt-cdn.net/images/nginx-instrumentation-simplified-1800-9148ec25fc.png)
 
-Supported binaries for which Dynatrace has debug information available
+Поддерживаемые бинарные файлы, для которых у Dynatrace имеется отладочная информация
 
 ##### http://archive.ubuntu.com/ubuntu/pool/main/n/nginx
 
@@ -6753,11 +6753,11 @@ Supported binaries for which Dynatrace has debug information available
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.9.6.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.9.6.tgz
 
-### Support for NGINX Plus
+### Поддержка NGINX Plus
 
-Support for the latest NGINX Plus release may differ from the NGINX support lifecycle, but we aim to stay current.
+Поддержка последнего выпуска NGINX Plus может отличаться от жизненного цикла поддержки NGINX, но мы стремимся поддерживать актуальность.
 
-| NGINX Plus version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](../../technology-support.md#support-levels) |
+| Версия NGINX Plus | Дата выпуска вендором | Дата окончания поддержки вендором | Первая поддерживаемая версия Dynatrace OneAgent | Последняя поддерживаемая версия Dynatrace OneAgent | Поддержка Dynatrace до | [Уровень поддержки Dynatrace](../../technology-support.md#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
 | R36 | 2025-12-01 | 2027-11-30 | 1.329 | - | - | Supported |
 | R35 | 2025-08-13 | 2027-08-13 | 1.321 | - | - | Supported |
@@ -6785,17 +6785,17 @@ Support for the latest NGINX Plus release may differ from the NGINX support life
 
 1
 
-Support for the CPU architecture PPCLE was added with OneAgent version 1.169 and ARM64 (AArch64) with OneAgent version 1.189.
+Поддержка архитектуры процессора PPCLE была добавлена в OneAgent версии 1.169, а ARM64 (AArch64) — в OneAgent версии 1.189.
 
 2
 
-Supported if the used binary is either in the list of [supported binaries](nginx.md#nginx-supported-binaries "Learn the details of Dynatrace support for NGINX.") or the corresponding debug information is available locally.
+Поддерживается, если используемый бинарный файл находится в списке [поддерживаемых бинарных файлов](nginx.md#nginx-supported-binaries "Узнайте подробности поддержки NGINX в Dynatrace.") или соответствующая отладочная информация доступна локально.
 
-### Supported for OpenResty
+### Поддержка OpenResty
 
-Support for the latest OpenResty release may differ from the NGINX support lifecycle, but we aim to stay current.
+Поддержка последнего выпуска OpenResty может отличаться от жизненного цикла поддержки NGINX, но мы стремимся поддерживать актуальность.
 
-| OpenResty version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](../../technology-support.md#support-levels) |
+| Версия OpenResty | Дата выпуска вендором | Дата окончания поддержки вендором | Первая поддерживаемая версия Dynatrace OneAgent | Последняя поддерживаемая версия Dynatrace OneAgent | Поддержка Dynatrace до | [Уровень поддержки Dynatrace](../../technology-support.md#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1.27.1.2 | 2025-03-14 | - | 1.311 | - | - | Supported |
 | 1.27.1.1 | 2024-10-16 | - | 1.305 | - | - | Supported |
@@ -6813,13 +6813,13 @@ Support for the latest OpenResty release may differ from the NGINX support lifec
 
 1
 
-Supported if the used binary is in the list of [supported binaries](nginx.md#nginx-supported-binaries "Learn the details of Dynatrace support for NGINX.").
+Поддерживается, если используемый бинарный файл находится в списке [поддерживаемых бинарных файлов](nginx.md#nginx-supported-binaries "Узнайте подробности поддержки NGINX в Dynatrace.").
 
-### Support for Tengine
+### Поддержка Tengine
 
-Support for the latest Tengine release may differ from the NGINX support lifecycle, but we aim to stay current.
+Поддержка последнего выпуска Tengine может отличаться от жизненного цикла поддержки NGINX, но мы стремимся поддерживать актуальность.
 
-| Tengine version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](../../technology-support.md#support-levels) |
+| Версия Tengine | Дата выпуска вендором | Дата окончания поддержки вендором | Первая поддерживаемая версия Dynatrace OneAgent | Последняя поддерживаемая версия Dynatrace OneAgent | Поддержка Dynatrace до | [Уровень поддержки Dynatrace](../../technology-support.md#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
 | 2.4.1 | - | - | 1.269 | - | - | Supported |
 | 2.4.0 | - | - | 1.261 | - | - | Supported |
@@ -6827,33 +6827,33 @@ Support for the latest Tengine release may differ from the NGINX support lifecyc
 | 2.3.0 - 2.3.3 | - | - | 1.237 | - | - | Supported |
 | 1.4.2 - 2.2.3 | - | - | 1.173 | - | - | Supported |
 
-## NGINX HTTP connection metrics
+## Метрики HTTP-соединений NGINX
 
-The NGINX module captures HTTP connection metrics if you build your NGINX with [http\_stub\_status\_moduleï»¿](https://nginx.org/en/docs/http/ngx_http_stub_status_module.html).
+Модуль NGINX собирает метрики HTTP-соединений, если вы собираете NGINX с модулем [http\_stub\_status\_module](https://nginx.org/en/docs/http/ngx_http_stub_status_module.html).
 
-How to build NGINX with http\_stub\_status\_module
+Как собрать NGINX с http\_stub\_status\_module
 
-Use the `--with-http_stub_status_module` configuration parameter.
+Используйте параметр конфигурации `--with-http_stub_status_module`.
 
-How to check if an NGINX binary was built with http\_stub\_status\_module
+Как проверить, собран ли бинарный файл NGINX с http\_stub\_status\_module
 
-Invoke `nginx -V` on your command line. This will return the NGINX configuration parameters.
-Make sure that the output contains the `--with-http_stub_status_module` parameter.
+Выполните команду `nginx -V` в командной строке. Она вернёт параметры конфигурации NGINX.
+Убедитесь, что вывод содержит параметр `--with-http_stub_status_module`.
 
-## NGINX Plus metrics
+## Метрики NGINX Plus
 
-The NGINX module captures NGINX Plus metrics from [NGINX Plus Status API (up to R15) or NGINX Plus API (R16+)ï»¿](https://www.nginx.com/blog/transitioning-to-nginx-plus-api-configuration-monitoring/).
+Модуль NGINX собирает метрики NGINX Plus из [NGINX Plus Status API (до R15) или NGINX Plus API (R16+)](https://www.nginx.com/blog/transitioning-to-nginx-plus-api-configuration-monitoring/).
 
-The API needs to be turned on and accessible by the NGINX module. If the API is protected by NGINX authentication, ensure it's accessible from localhost for HTTP GET requests. The Nginx module requires the API configuration to be available from the start (adding the configuration during Nginx runtime and reloading it is not supported).
+API должен быть включён и доступен для модуля NGINX. Если API защищён аутентификацией NGINX, убедитесь, что он доступен с localhost для HTTP GET-запросов. Модуль NGINX требует, чтобы конфигурация API была доступна с самого начала (добавление конфигурации во время работы NGINX и её перезагрузка не поддерживаются).
 
-A notification appears on the NGINX process page in Dynatrace if the API for extended NGINX Plus metrics is not accessible.
+Уведомление появляется на странице процесса NGINX в Dynatrace, если API для расширенных метрик NGINX Plus недоступен.
 
-## Process logs with technology bundle parsers
+## Обработка логов с помощью парсеров технологических пакетов
 
-Through OpenPipeline, you can use and configure technology bundles. A technology bundle is a library of parsers (processing rules) that process logs from various technologies, such as Java, .NET, and Microsoft IIS.
+Через OpenPipeline вы можете использовать и настраивать технологические пакеты. Технологический пакет — это библиотека парсеров (правил обработки), которые обрабатывают логи из различных технологий, таких как Java, .NET и Microsoft IIS.
 
-Parsers help you to improve filtering, troubleshooting, metrics, alerts, and dashboards by efficiently extracting log levels and relevant attributes. You can also use technology bundles to structure logs from technologies that are not supported by Dynatrace out of the box.
+Парсеры помогают улучшить фильтрацию, устранение неполадок, метрики, оповещения и дашборды путём эффективного извлечения уровней логов и соответствующих атрибутов. Вы также можете использовать технологические пакеты для структурирования логов из технологий, которые не поддерживаются Dynatrace из коробки.
 
 ![syslog-bundles](https://dt-cdn.net/images/env-syslogbundles-2589-90e4e38b45.png)
 
-For more information, see [Process logs with technology bundle parsers](../../../platform/openpipeline/use-cases/tutorial-technology-processor.md "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
+Для получения дополнительной информации см. [Обработка логов с помощью парсеров технологических пакетов](../../../platform/openpipeline/use-cases/tutorial-technology-processor.md "Настройка конвейера обработки для структурирования логов конкретных технологий в соответствии с Dynatrace Semantic Dictionary.").

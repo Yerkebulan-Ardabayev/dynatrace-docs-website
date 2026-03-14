@@ -1,5 +1,5 @@
 ---
-title: Log ingestion warnings
+title: Предупреждения при приеме журналов
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-troubleshooting/lma-ingest-warnings
 scraped: 2026-03-06T21:31:38.206815
 ---

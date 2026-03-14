@@ -1,5 +1,5 @@
 ---
-title: Customize data with extensions
+title: Настройка данных с помощью расширений
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/extension-customize
 scraped: 2026-03-06T21:33:40.035225
 ---

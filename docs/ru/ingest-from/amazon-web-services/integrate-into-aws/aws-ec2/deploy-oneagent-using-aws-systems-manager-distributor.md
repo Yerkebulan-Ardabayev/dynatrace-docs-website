@@ -1,5 +1,5 @@
 ---
-title: Deploy OneAgent using AWS Systems Manager Distributor
+title: Развертывание OneAgent с помощью AWS Systems Manager Distributor
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-ec2/deploy-oneagent-using-aws-systems-manager-distributor
 scraped: 2026-03-02T21:20:06.387958
 ---

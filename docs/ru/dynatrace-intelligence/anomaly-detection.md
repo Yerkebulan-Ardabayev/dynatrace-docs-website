@@ -1,5 +1,5 @@
 ---
-title: Anomaly detection
+title: Обнаружение аномалий
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection
 scraped: 2026-03-06T21:11:03.759228
 ---

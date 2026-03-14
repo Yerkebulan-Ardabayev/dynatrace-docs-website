@@ -1,5 +1,5 @@
 ---
-title: Top database statements
+title: Наиболее частые запросы к базе данных
 source: https://www.dynatrace.com/docs/observe/application-observability/multidimensional-analysis/top-database-statements
 scraped: 2026-03-06T21:28:56.990128
 ---

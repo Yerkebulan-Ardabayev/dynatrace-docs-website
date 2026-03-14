@@ -1,5 +1,5 @@
 ---
-title: Explore data
+title: Изучение данных
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data
 scraped: 2026-03-06T21:10:58.587097
 ---

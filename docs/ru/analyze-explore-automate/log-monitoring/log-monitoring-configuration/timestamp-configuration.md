@@ -1,5 +1,5 @@
 ---
-title: Timestamp/splitting configuration (Logs Classic)
+title: Настройка временной метки/разделения (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-configuration
 scraped: 2026-03-06T21:29:36.765843
 ---

@@ -1,5 +1,5 @@
 ---
-title: Full-stack observability
+title: Полноценная наблюдаемость
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack
 scraped: 2026-03-05T21:25:24.269087
 ---

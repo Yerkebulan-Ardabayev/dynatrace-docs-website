@@ -1,5 +1,5 @@
 ---
-title: Data Explorer FAQ
+title: Данные Data Explorer FAQ
 source: https://www.dynatrace.com/docs/analyze-explore-automate/explorer/explorer-troubleshooting
 scraped: 2026-03-06T21:27:03.952660
 ---

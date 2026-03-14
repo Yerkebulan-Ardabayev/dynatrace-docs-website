@@ -1,5 +1,5 @@
 ---
-title: Discovery & Coverage
+title: Обнаружение и охват
 source: https://www.dynatrace.com/docs/ingest-from/discovery-coverage-app
 scraped: 2026-03-05T21:35:56.822233
 ---

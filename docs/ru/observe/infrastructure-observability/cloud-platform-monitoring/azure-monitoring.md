@@ -1,5 +1,5 @@
 ---
-title: Microsoft Azure monitoring
+title: Мониторинг Microsoft Azure
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring
 scraped: 2026-02-06T16:29:13.189649
 ---

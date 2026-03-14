@@ -1,5 +1,5 @@
 ---
-title: Accelerate root cause analysis
+title: Ускорение анализа первопричин
 source: https://www.dynatrace.com/docs/secure/investigations/accelerate-root-cause-analysis
 scraped: 2026-03-04T21:36:21.144114
 ---

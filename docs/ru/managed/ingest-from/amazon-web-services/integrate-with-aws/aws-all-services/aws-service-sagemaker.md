@@ -622,8 +622,8 @@ Dynatrace собирает метрики для множества предва
 
 В этом примере из полного списка разрешений необходимо выбрать
 
-* `"apigateway:GET"` for **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"apigateway:GET"` для **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
 ### Конечные точки AWS, которые должны быть доступны из ActiveGate с соответствующими сервисами AWS
 
@@ -823,20 +823,20 @@ Dynatrace собирает метрики для множества предва
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
-| CPUUtilization | The percentage of CPU units that are used by the containers on an instance. The value can range between `0%` and `100%`, and is multiplied by the number of CPUs. For example, if there are four CPUs, `CPUUtilization` can range from `0%` to `400%'. | Percent | Average | Region, Host | Доступна |
-| MemoryUtilization | The percentage of memory that is used by the containers on an instance. This value can range between `0%` and `100%`. | Percent | Average | Region, Host | Доступна |
-| GPUMemoryUtilization | The percentage of GPU memory used by the containers on an instance. The value can range between `0%` and `100%` and is multiplied by the number of GPUs. For example, if there are four GPUs, `GPUMemoryUtilization` can range from `0%` to `400%'. | Percent | Average | Region, Host | Доступна |
-| GPUUtilization | The percentage of GPU units that are used by the containers on an instance. The value can range between `0%` and `100%`and is multiplied by the number of GPUs. For example, if there are four GPUs, `GPUUtilization` can range from `0%` to `400%'. | Percent | Average | Region, Host | Доступна |
+| CPUUtilization | Процент использования ЦПУ контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество ЦПУ. Например, при четырёх ЦПУ `CPUUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | Region, Host | Доступна |
+| MemoryUtilization | Процент памяти, используемой контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%`. | Percent | Average | Region, Host | Доступна |
+| GPUMemoryUtilization | Процент использования памяти GPU контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUMemoryUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | Region, Host | Доступна |
+| GPUUtilization | Процент использования GPU контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | Region, Host | Доступна |
 
 ### Amazon SageMaker Processing Jobs, Amazon SageMaker Training Jobs
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
-| CPUUtilization | The percentage of CPU units that are used by the containers on an instance. The value can range between `0%` and `100%`, and is multiplied by the number of CPUs. For example, if there are four CPUs, `CPUUtilization` can range from `0%` to `400%'. | Percent | Average | Region, Host | Доступна |
-| DiskUtilization | The percentage of disk space used by the containers on an instance uses. This value can range between `0%` and `100%`. This metric is not supported for batch transform jobs. | Percent | Average | EndpointName, VariantName | Доступна |
-| GPUMemoryUtilization | The percentage of GPU memory used by the containers on an instance. The value can range between `0%` and `100%` and is multiplied by the number of GPUs. For example, if there are four GPUs, `GPUMemoryUtilization` can range from `0%` to `400%'. | Percent | Average | Region, Host | Доступна |
-| GPUUtilization | The percentage of GPU units that are used by the containers on an instance. The value can range between `0%` and `100%`and is multiplied by the number of GPUs. For example, if there are four GPUs, `GPUUtilization` can range from `0%` to `400%'. | Percent | Average | Region, Host | Доступна |
-| MemoryUtilization | The percentage of memory that is used by the containers on an instance. This value can range between `0%` and `100%`. | Percent | Average | Region, Host | Доступна |
+| CPUUtilization | Процент использования ЦПУ контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество ЦПУ. Например, при четырёх ЦПУ `CPUUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | Region, Host | Доступна |
+| DiskUtilization | Процент дискового пространства, используемого контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%`. Эта метрика не поддерживается для заданий пакетного преобразования. | Percent | Average | EndpointName, VariantName | Доступна |
+| GPUMemoryUtilization | Процент использования памяти GPU контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUMemoryUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | Region, Host | Доступна |
+| GPUUtilization | Процент использования GPU контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | Region, Host | Доступна |
+| MemoryUtilization | Процент памяти, используемой контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%`. | Percent | Average | Region, Host | Доступна |
 
 ### Amazon SageMaker Endpoint Instances
 
@@ -844,13 +844,13 @@ Dynatrace собирает метрики для множества предва
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
-| CPUUtilization | The percentage of CPU units that are used by the containers on an instance. The value can range between `0%` and `100%`, and is multiplied by the number of CPUs. For example, if there are four CPUs, `CPUUtilization` can range from `0%` to `400%'. | Percent | Average | EndpointName, VariantName | Доступна |
-| DiskUtilization | The percentage of disk space used by the containers on an instance uses. This value can range between `0%` and `100%`. This metric is not supported for batch transform jobs. | Percent | Average | EndpointName, VariantName | Доступна |
-| GPUMemoryUtilization | The percentage of GPU units that are used by the containers on an instance. The value can range between `0%` and `100%`and is multiplied by the number of GPUs. For example, if there are four GPUs, `GPUUtilization` can range from `0%` to `400%'. | Percent | Average | EndpointName, VariantName | Доступна |
-| GPUUtilization | The percentage of GPU units that are used by the containers on an instance. The value can range between `0%` and `100%`and is multiplied by the number of GPUs. For example, if there are four GPUs, `GPUUtilization` can range from `0%` to `400%'. | Percent | Average | EndpointName, VariantName | Доступна |
-| LoadedModelCount | The number of models loaded in the containers of the multi-model endpoint. This metric is emitted per instance. | None | Average | EndpointName, VariantName |  |
+| CPUUtilization | Процент использования ЦПУ контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество ЦПУ. Например, при четырёх ЦПУ `CPUUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | EndpointName, VariantName | Доступна |
+| DiskUtilization | Процент дискового пространства, используемого контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%`. Эта метрика не поддерживается для заданий пакетного преобразования. | Percent | Average | EndpointName, VariantName | Доступна |
+| GPUMemoryUtilization | Процент использования GPU контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | EndpointName, VariantName | Доступна |
+| GPUUtilization | Процент использования GPU контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | EndpointName, VariantName | Доступна |
+| LoadedModelCount | Количество моделей, загруженных в контейнеры мульти-модельной конечной точки. Эта метрика выдаётся для каждого экземпляра. | None | Average | EndpointName, VariantName |  |
 | LoadedModelCount |  | None | Sum | EndpointName, VariantName |  |
-| MemoryUtilization | The percentage of memory that is used by the containers on an instance. This value can range between `0%` and `100%`. | Percent | Average | EndpointName, VariantName | Доступна |
+| MemoryUtilization | Процент памяти, используемой контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%`. | Percent | Average | EndpointName, VariantName | Доступна |
 
 ### Amazon SageMaker Endpoints
 
@@ -858,49 +858,49 @@ Dynatrace собирает метрики для множества предва
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
-| Invocation4XXErrors | The number of `InvokeEndpoint` requests where the model returned a `4xx` HTTP response code. For each `4xx` response, `1` is sent; otherwise, `0` is sent. | None | Average | EndpointName, VariantName |  |
+| Invocation4XXErrors | Количество запросов `InvokeEndpoint`, при которых модель вернула HTTP-код ответа `4xx`. Для каждого ответа `4xx` отправляется `1`, в противном случае — `0`. | None | Average | EndpointName, VariantName |  |
 | Invocation4XXErrors |  | None | Sum | EndpointName, VariantName |  |
-| Invocation5XXErrors | The number of `InvokeEndpoint` requests where the model returned a `5xx` HTTP response code. For each `5xx` response, `1` is sent; otherwise, `0` is sent. | None | Average | EndpointName, VariantName |  |
+| Invocation5XXErrors | Количество запросов `InvokeEndpoint`, при которых модель вернула HTTP-код ответа `5xx`. Для каждого ответа `5xx` отправляется `1`, в противном случае — `0`. | None | Average | EndpointName, VariantName |  |
 | Invocation5XXErrors |  | None | Sum | EndpointName, VariantName | Доступна |
-| Invocations | The number of `InvokeEndpoint` requests sent to a model endpoint | None | Sum | EndpointName, VariantName | Доступна |
+| Invocations | Количество запросов `InvokeEndpoint`, отправленных на конечную точку модели | None | Sum | EndpointName, VariantName | Доступна |
 | Invocations |  | None | Count | EndpointName, VariantName |  |
-| InvocationsPerInstance | The number of invocations sent to a model, normalized by `InstanceCount` in each `ProductionVariant`. `1/numberOfInstances` is sent as the value on each request, where `numberOfInstances` is the number of active instances for the `ProductionVariant` behind the endpoint at the time of the request. | None | Sum | EndpointName, VariantName |  |
-| ModelCacheHit | The number of `InvokeEndpoint` requests sent to the multi-model endpoint for which the model was already loaded | None | Sum | EndpointName, VariantName |  |
+| InvocationsPerInstance | Количество вызовов, отправленных модели, нормализованное по `InstanceCount` в каждом `ProductionVariant`. Значение `1/numberOfInstances` отправляется при каждом запросе, где `numberOfInstances` — количество активных экземпляров для `ProductionVariant` за конечной точкой на момент запроса. | None | Sum | EndpointName, VariantName |  |
+| ModelCacheHit | Количество запросов `InvokeEndpoint`, отправленных на мульти-модельную конечную точку, для которых модель уже была загружена | None | Sum | EndpointName, VariantName |  |
 | ModelCacheHit |  | None | Average | EndpointName, VariantName |  |
 | ModelCacheHit |  | None | Count | EndpointName, VariantName |  |
-| ModelLatency | The interval of time taken by a model to respond as viewed from SageMaker. This interval includes the local communication times taken to send the request and to fetch the response from the container of a model and the time taken to complete the inference in the container. | Microseconds | Multi | EndpointName, VariantName | Доступна |
+| ModelLatency | Время отклика модели с точки зрения SageMaker. Этот интервал включает время локальной коммуникации для отправки запроса и получения ответа от контейнера модели, а также время выполнения инференса в контейнере. | Microseconds | Multi | EndpointName, VariantName | Доступна |
 | ModelLatency |  | Microseconds | Sum | EndpointName, VariantName |  |
 | ModelLatency |  | Microseconds | Count | EndpointName, VariantName |  |
-| ModelLoadingTime | The interval of time that it took to load the model through the container's `LoadModel` API call. | Microseconds | Multi | EndpointName, VariantName |  |
+| ModelLoadingTime | Время загрузки модели через API-вызов `LoadModel` контейнера. | Microseconds | Multi | EndpointName, VariantName |  |
 | ModelLoadingTime |  | Microseconds | Sum | EndpointName, VariantName |  |
 | ModelLoadingTime |  | Microseconds | Count | EndpointName, VariantName |  |
-| ModelLoadingWaitTime | The interval of time that an invocation request has waited for the target model to be downloaded, or loaded, or both in order to perform inference | Microseconds | Multi | EndpointName, VariantName |  |
+| ModelLoadingWaitTime | Время ожидания запросом вызова загрузки или скачивания целевой модели (или того и другого) для выполнения инференса | Microseconds | Multi | EndpointName, VariantName |  |
 | ModelLoadingWaitTime |  | Microseconds | Sum | EndpointName, VariantName |  |
 | ModelLoadingWaitTime |  | Microseconds | Count | EndpointName, VariantName |  |
-| ModelDownloadingTime | The interval of time that it took to download the model from Amazon Simple Storage Service (Amazon S3) | Microseconds | Multi | EndpointName, VariantName |  |
+| ModelDownloadingTime | Время скачивания модели из Amazon Simple Storage Service (Amazon S3) | Microseconds | Multi | EndpointName, VariantName |  |
 | ModelDownloadingTime |  | Microseconds | Sum | EndpointName, VariantName |  |
 | ModelDownloadingTime |  | Microseconds | Count | EndpointName, VariantName |  |
-| ModelUnloadingTime | The interval of time that it took to unload the model through the container's `UnloadModel` API call | Microseconds | Multi | EndpointName, VariantName |  |
+| ModelUnloadingTime | Время выгрузки модели через API-вызов `UnloadModel` контейнера | Microseconds | Multi | EndpointName, VariantName |  |
 | ModelUnloadingTime |  | Microseconds | Sum | EndpointName, VariantName |  |
 | ModelUnloadingTime |  | Microseconds | Count | EndpointName, VariantName |  |
-| OverheadLatency | The interval of time added to the time taken to respond to a client request by SageMaker overheads. This interval is measured from the time SageMaker receives the request until it returns a response to the client, minus the `ModelLatency`. | Microseconds | Multi | EndpointName, VariantName | Доступна |
+| OverheadLatency | Дополнительное время, добавленное к времени ответа на клиентский запрос накладными расходами SageMaker. Этот интервал измеряется от момента получения запроса SageMaker до возврата ответа клиенту, за вычетом `ModelLatency`. | Microseconds | Multi | EndpointName, VariantName | Доступна |
 | OverheadLatency |  | Microseconds | Sum | EndpointName, VariantName |  |
 | OverheadLatency |  | Microseconds | Count | EndpointName, VariantName |  |
 
 ### Amazon SageMaker Ground Truth
 
-| Name | Description | Dimensions | Statistics | Unit | Recommended |
+| Название | Описание | Измерения | Статистика | Единица | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
-| ActiveWorkers | The number of workers on a private work team performing a labeling job | Region, LabelingJobName | Maximum | None |  |
-| DatasetObjectsAutoAnnotated | The number of dataset objects auto-annotated in a labeling job. This metric is only emitted when automated labeling is enabled. | Region, LabelingJobName | Maximum | None | Доступна |
-| DatasetObjectsHumanAnnotated | The number of dataset objects annotated by a human in a labeling job | Region, LabelingJobName | Maximum | None | Доступна |
-| DatasetObjectsLabelingFailed | The number of dataset objects that failed labeling in a labeling job | Region, LabelingJobName | Maximum | None | Доступна |
-| JobsFailed | The number of labeling jobs that failed | Region | Count | None |  |
+| ActiveWorkers | Количество работников частной рабочей группы, выполняющих задание по разметке | Region, LabelingJobName | Maximum | None |  |
+| DatasetObjectsAutoAnnotated | Количество объектов набора данных, автоматически аннотированных в задании по разметке. Эта метрика выдаётся только при включённой автоматической разметке. | Region, LabelingJobName | Maximum | None | Доступна |
+| DatasetObjectsHumanAnnotated | Количество объектов набора данных, аннотированных человеком в задании по разметке | Region, LabelingJobName | Maximum | None | Доступна |
+| DatasetObjectsLabelingFailed | Количество объектов набора данных, для которых разметка не удалась в задании по разметке | Region, LabelingJobName | Maximum | None | Доступна |
+| JobsFailed | Количество неудачных заданий по разметке | Region | Count | None |  |
 | JobsFailed |  | Region | Sum | None | Доступна |
-| JobsStopped | The number of labeling jobs that were stopped | Region | Count | None |  |
+| JobsStopped | Количество остановленных заданий по разметке | Region | Count | None |  |
 | JobsStopped |  | Region | Sum | None |  |
-| JobsSucceeded | The number of labeling jobs that succeeded | Region | Count | None |  |
+| JobsSucceeded | Количество успешных заданий по разметке | Region | Count | None |  |
 | JobsSucceeded |  | Region | Sum | None | Доступна |
-| TasksSubmitted | The number of tasks submitted/completed by a private work team | Region, LabelingJobName | Maximum | None |  |
-| TimeSpent | Time spent on a task completed by a private work team | Region, LabelingJobName | Maximum | Seconds |  |
-| TotalDatasetObjectsLabeled | The number of dataset objects labeled successfully in a labeling job | Region, LabelingJobName | Maximum | None | Доступна |
+| TasksSubmitted | Количество задач, отправленных/завершённых частной рабочей группой | Region, LabelingJobName | Maximum | None |  |
+| TimeSpent | Время, затраченное на задачу, завершённую частной рабочей группой | Region, LabelingJobName | Maximum | Seconds |  |
+| TotalDatasetObjectsLabeled | Количество объектов набора данных, успешно размеченных в задании по разметке | Region, LabelingJobName | Maximum | None | Доступна |

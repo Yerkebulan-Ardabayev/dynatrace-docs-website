@@ -623,14 +623,14 @@ Dynatrace собирает метрики для множества предва
 
 В этом примере из полного списка разрешений необходимо выбрать
 
-* `"apigateway:GET"` for **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"apigateway:GET"` для **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
-* A request metrics filter for the buckets you want to monitor. For more information, see [Creating a request metrics filter for an S3 bucketï»¿](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/configure-metrics.html) in [AWS documentationï»¿](https://dt-url.net/aw030yi).
+* Фильтр метрик запросов для корзин, которые вы хотите отслеживать. Подробнее см. [Создание фильтра метрик запросов для корзины S3ï»¿](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/configure-metrics.html) в [документации AWSï»¿](https://dt-url.net/aw030yi).
 
-To monitor S3 metrics, you need to select **Amazon S3 service**, otherwise Amazon S3 (built-in) will provide only a basic count of S3 buckets in your account.
+Для мониторинга метрик S3 необходимо выбрать сервис **Amazon S3**, в противном случае Amazon S3 (built-in) будет предоставлять только базовый подсчёт корзин S3 в вашей учётной записи.
 
-By default, request metrics **aren't** reported. To have them reported, you need to enable them in the **AWS S3** console.
+По умолчанию метрики запросов **не** передаются. Для их получения необходимо включить их в консоли **AWS S3**.
 
 ## Включение мониторинга
 
@@ -771,35 +771,35 @@ By default, request metrics **aren't** reported. To have them reported, you need
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
-| AllRequests | The total number of HTTP requests made to an Amazon S3 bucket, regardless of type | Count | Sum | BucketName, FilterId | Доступна |
-| BytesDownloaded | The number of bytes downloaded for requests made to an Amazon S3 bucket, where the response includes a body | Bytes | Multi | BucketName, FilterId |  |
+| AllRequests | Общее количество HTTP-запросов к корзине Amazon S3, независимо от типа | Count | Sum | BucketName, FilterId | Доступна |
+| BytesDownloaded | Количество загруженных байт для запросов к корзине Amazon S3, где ответ содержит тело | Bytes | Multi | BucketName, FilterId |  |
 | BytesDownloaded |  | Bytes | Sum | BucketName, FilterId |  |
 | BytesDownloaded |  | Count | Count | BucketName, FilterId |  |
-| BytesUploaded | The number of bytes uploaded that contain a request body, made to an Amazon S3 bucket | Bytes | Multi | BucketName, FilterId |  |
+| BytesUploaded | Количество отправленных байт, содержащих тело запроса, к корзине Amazon S3 | Bytes | Multi | BucketName, FilterId |  |
 | BytesUploaded |  | Bytes | Sum | BucketName, FilterId |  |
 | BytesUploaded |  | Count | Count | BucketName, FilterId |  |
-| DeleteRequests | The number of HTTP DELETE requests made for objects in an Amazon S3 bucket (includes Delete multiple objects requests). | Count | Sum | BucketName, FilterId |  |
-| FirstByteLatency | Per request, the time from when the Amazon S3 bucket receives the complete request to when the response starts to be returned | Milliseconds | Multi | BucketName, FilterId |  |
+| DeleteRequests | Количество HTTP DELETE запросов для объектов в корзине Amazon S3 (включая запросы на удаление нескольких объектов). | Count | Sum | BucketName, FilterId |  |
+| FirstByteLatency | Время от получения корзиной Amazon S3 полного запроса до начала возврата ответа (для каждого запроса) | Milliseconds | Multi | BucketName, FilterId |  |
 | FirstByteLatency |  | Milliseconds | Sum | BucketName, FilterId |  |
 | FirstByteLatency |  | Count | Count | BucketName, FilterId |  |
-| GetRequests | The number of HTTP GET requests made for objects in an Amazon S3 bucket (doesn't include list operations) | Count | Sum | BucketName, FilterId |  |
-| HeadRequests | The number of HTTP HEAD requests made to an Amazon S3 bucket | Count | Sum | BucketName, FilterId |  |
-| ListRequests | The number of HTTP requests that list the contents of a bucket | Count | Sum | BucketName, FilterId |  |
-| PostRequests | The number of HTTP POST requests made to an Amazon S3 bucket | Count | Sum | BucketName, FilterId |  |
-| PutRequests | The number of HTTP PUT requests made for objects in an Amazon S3 bucket | Count | Sum | BucketName, FilterId |  |
-| SelectRequests | The number of Amazon S3 SelectObjectContent requests made for objects in an Amazon S3 bucket | Count | Sum | BucketName, FilterId |  |
-| SelectReturnedBytes | The number of bytes of data returned with Amazon S3 SelectObjectContent requests in an Amazon S3 bucket | Bytes | Multi | BucketName, FilterId |  |
+| GetRequests | Количество HTTP GET запросов для объектов в корзине Amazon S3 (не включает операции списка) | Count | Sum | BucketName, FilterId |  |
+| HeadRequests | Количество HTTP HEAD запросов к корзине Amazon S3 | Count | Sum | BucketName, FilterId |  |
+| ListRequests | Количество HTTP-запросов, перечисляющих содержимое корзины | Count | Sum | BucketName, FilterId |  |
+| PostRequests | Количество HTTP POST запросов к корзине Amazon S3 | Count | Sum | BucketName, FilterId |  |
+| PutRequests | Количество HTTP PUT запросов для объектов в корзине Amazon S3 | Count | Sum | BucketName, FilterId |  |
+| SelectRequests | Количество запросов Amazon S3 SelectObjectContent для объектов в корзине Amazon S3 | Count | Sum | BucketName, FilterId |  |
+| SelectReturnedBytes | Количество байт данных, возвращённых запросами Amazon S3 SelectObjectContent в корзине Amazon S3 | Bytes | Multi | BucketName, FilterId |  |
 | SelectReturnedBytes |  | Bytes | Sum | BucketName, FilterId |  |
 | SelectReturnedBytes |  | Count | Count | BucketName, FilterId |  |
-| SelectScannedBytes | The number of bytes of data scanned with Amazon S3 SelectObjectContent requests in an Amazon S3 bucket | Bytes | Multi | BucketName, FilterId |  |
+| SelectScannedBytes | Количество байт данных, просканированных запросами Amazon S3 SelectObjectContent в корзине Amazon S3 | Bytes | Multi | BucketName, FilterId |  |
 | SelectScannedBytes |  | Bytes | Sum | BucketName, FilterId |  |
 | SelectScannedBytes |  | Count | Count | BucketName, FilterId |  |
-| TotalRequestLatency | The time per request, starting from the first byte received to the last byte sent to an Amazon S3 bucket. This includes the time taken to receive the request body and send the response body, which is not included in FirstByteLatency. | Milliseconds | Multi | BucketName, FilterId |  |
+| TotalRequestLatency | Время на запрос, от первого полученного байта до последнего отправленного байта в корзину Amazon S3. Включает время на получение тела запроса и отправку тела ответа, которое не включено в FirstByteLatency. | Milliseconds | Multi | BucketName, FilterId |  |
 | TotalRequestLatency |  | Milliseconds | Sum | BucketName, FilterId |  |
 | TotalRequestLatency |  | Count | Count | BucketName, FilterId |  |
-| 4xxErrors | The number of HTTP 4xx client error status code requests made to an Amazon S3 bucket with a value of either 0 or 1. The average statistic shows the error rate, and the sum statistic shows the count of that type of error, during each period. | Count | Multi | BucketName, FilterId | Доступна |
+| 4xxErrors | Количество запросов с кодом ошибки HTTP 4xx клиента к корзине Amazon S3 со значением 0 или 1. Средняя статистика показывает частоту ошибок, а суммарная статистика показывает количество ошибок данного типа за каждый период. | Count | Multi | BucketName, FilterId | Доступна |
 | 4xxErrors |  | Count | Sum | BucketName, FilterId |  |
 | 4xxErrors |  | Count | Count | BucketName, FilterId |  |
-| 5xxErrors | The number of HTTP 5xx server error status code requests made to an Amazon S3 bucket with a value of either 0 or 1. The average statistic shows the error rate, and the sum statistic shows the count of that type of error, during each period. | Count | Multi | BucketName, FilterId | Доступна |
+| 5xxErrors | Количество запросов с кодом ошибки HTTP 5xx сервера к корзине Amazon S3 со значением 0 или 1. Средняя статистика показывает частоту ошибок, а суммарная статистика показывает количество ошибок данного типа за каждый период. | Count | Multi | BucketName, FilterId | Доступна |
 | 5xxErrors |  | Count | Sum | BucketName, FilterId |  |
 | 5xxErrors |  | Count | Count | BucketName, FilterId |  |

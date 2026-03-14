@@ -1,5 +1,5 @@
 ---
-title: Log Analytics
+title: Анализ журналов
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs
 scraped: 2026-03-06T21:10:16.285435
 ---

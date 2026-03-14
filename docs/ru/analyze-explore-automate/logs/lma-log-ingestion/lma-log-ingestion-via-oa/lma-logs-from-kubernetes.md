@@ -1,5 +1,5 @@
 ---
-title: Stream Kubernetes logs with Dynatrace Log Module
+title: Передача Kubernetes журналов с помощью Dynatrace модуля журнала
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes
 scraped: 2026-03-06T21:25:49.968543
 ---

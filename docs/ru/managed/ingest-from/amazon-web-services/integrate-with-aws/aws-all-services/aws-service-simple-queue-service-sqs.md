@@ -623,8 +623,8 @@ Dynatrace собирает метрики для множества предва
 
 В этом примере из полного списка разрешений необходимо выбрать
 
-* `"apigateway:GET"` for **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"apigateway:GET"` для **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
 ### Конечные точки AWS, которые должны быть доступны из ActiveGate с соответствующими сервисами AWS
 
@@ -824,21 +824,21 @@ Dynatrace собирает метрики для множества предва
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
-| ApproximateAgeOfOldestMessage | The approximate age of the oldest non-deleted message in the queue | Seconds | Multi | QueueName | Доступна |
+| ApproximateAgeOfOldestMessage | Приблизительный возраст самого старого неудалённого сообщения в очереди | Seconds | Multi | QueueName | Доступна |
 | ApproximateAgeOfOldestMessage |  | Seconds | Sum | QueueName |  |
-| ApproximateNumberOfMessagesDelayed | The number of messages in the queue that are delayed and not available for reading immediately | Count | Multi | QueueName |  |
+| ApproximateNumberOfMessagesDelayed | Количество сообщений в очереди, которые отложены и недоступны для немедленного чтения | Count | Multi | QueueName |  |
 | ApproximateNumberOfMessagesDelayed |  | Count | Sum | QueueName |  |
-| ApproximateNumberOfMessagesNotVisible | The number of messages that are in flight. Messages are considered to be in flight if they have been sent to a client but haven't yet been deleted or haven't yet reached the end of their visibility window. | Count | Multi | QueueName |  |
+| ApproximateNumberOfMessagesNotVisible | Количество сообщений в процессе обработки. Сообщения считаются находящимися в процессе обработки, если они были отправлены клиенту, но ещё не удалены или не достигли конца окна видимости. | Count | Multi | QueueName |  |
 | ApproximateNumberOfMessagesNotVisible |  | Count | Sum | QueueName | Доступна |
-| ApproximateNumberOfMessagesVisible | The number of messages available for retrieval from the queue | Count | Multi | QueueName |  |
+| ApproximateNumberOfMessagesVisible | Количество сообщений, доступных для получения из очереди | Count | Multi | QueueName |  |
 | ApproximateNumberOfMessagesVisible |  | Count | Sum | QueueName |  |
-| NumberOfEmptyReceives | The number of `ReceiveMessage` API calls that didn't return a message | Count | Multi | QueueName |  |
+| NumberOfEmptyReceives | Количество вызовов API `ReceiveMessage`, которые не вернули сообщение | Count | Multi | QueueName |  |
 | NumberOfEmptyReceives |  | Count | Sum | QueueName |  |
-| NumberOfMessagesDeleted | The number of messages deleted from the queue | Count | Multi | QueueName |  |
+| NumberOfMessagesDeleted | Количество сообщений, удалённых из очереди | Count | Multi | QueueName |  |
 | NumberOfMessagesDeleted |  | Count | Sum | QueueName |  |
-| NumberOfMessagesReceived | The number of messages returned by calls to the `ReceiveMessage` action | Count | Multi | QueueName |  |
+| NumberOfMessagesReceived | Количество сообщений, возвращённых вызовами действия `ReceiveMessage` | Count | Multi | QueueName |  |
 | NumberOfMessagesReceived |  | Count | Sum | QueueName | Доступна |
-| NumberOfMessagesSent | The number of messages added to a queue | Count | Multi | QueueName |  |
+| NumberOfMessagesSent | Количество сообщений, добавленных в очередь | Count | Multi | QueueName |  |
 | NumberOfMessagesSent |  | Count | Sum | QueueName | Доступна |
-| SentMessageSize | The size of messages added to a queue | Bytes | Multi | QueueName |  |
+| SentMessageSize | Размер сообщений, добавленных в очередь | Bytes | Multi | QueueName |  |
 | SentMessageSize |  | Bytes | Sum | QueueName |  |

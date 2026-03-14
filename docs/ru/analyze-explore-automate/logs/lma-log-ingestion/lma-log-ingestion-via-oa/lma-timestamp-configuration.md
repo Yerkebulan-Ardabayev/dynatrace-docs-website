@@ -1,5 +1,5 @@
 ---
-title: Timestamp/splitting configuration
+title: Настройка временной метки/разделения
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration
 scraped: 2026-03-06T21:20:09.868600
 ---

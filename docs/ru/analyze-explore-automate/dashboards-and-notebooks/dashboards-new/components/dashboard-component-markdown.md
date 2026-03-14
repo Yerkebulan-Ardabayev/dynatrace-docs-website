@@ -1,5 +1,5 @@
 ---
-title: Add Markdown to dashboard
+title: Добавление Markdown к панели мониторинга __KEEP000__
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown
 scraped: 2026-03-06T21:11:16.280330
 ---

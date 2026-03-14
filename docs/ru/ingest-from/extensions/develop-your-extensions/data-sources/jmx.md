@@ -1,5 +1,5 @@
 ---
-title: JMX data source
+title: Источник данных JMX
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/jmx
 scraped: 2026-03-06T21:36:35.777912
 ---

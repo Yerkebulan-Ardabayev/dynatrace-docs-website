@@ -1,5 +1,5 @@
 ---
-title: Calculated metrics for services
+title: Вычисляемые метрики для сервисов
 source: https://www.dynatrace.com/docs/observe/application-observability/services/calculated-service-metric
 scraped: 2026-03-06T21:32:31.355718
 ---

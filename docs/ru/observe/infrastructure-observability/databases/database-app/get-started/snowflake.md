@@ -1,5 +1,5 @@
 ---
-title: Monitor Snowflake database
+title: Мониторинг базы данных Snowflake
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/snowflake
 scraped: 2026-03-06T21:37:21.566752
 ---

@@ -1,5 +1,5 @@
 ---
-title: Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts
+title: Агентный и генеративный ИИ Dynatrace Intelligence - советы по написанию более эффективных запросов
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips
 scraped: 2026-03-06T21:35:08.681078
 ---

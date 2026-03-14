@@ -1,5 +1,5 @@
 ---
-title: Monitor releases with Dynatrace
+title: Мониторинг релизов с Dynatrace
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/monitor-releases-with-dynatrace
 scraped: 2026-03-06T21:33:50.318161
 ---

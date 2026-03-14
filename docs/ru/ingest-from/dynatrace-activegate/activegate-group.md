@@ -1,5 +1,5 @@
 ---
-title: ActiveGate group
+title: Группа ActiveGate
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-group
 scraped: 2026-03-06T21:24:16.455659
 ---

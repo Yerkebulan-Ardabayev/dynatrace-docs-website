@@ -623,8 +623,8 @@ Dynatrace собирает метрики для множества предва
 
 В этом примере из полного списка разрешений необходимо выбрать
 
-* `"apigateway:GET"` for **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"apigateway:GET"` для **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
 ### Конечные точки AWS, которые должны быть доступны из ActiveGate с соответствующими сервисами AWS
 
@@ -828,47 +828,47 @@ Dynatrace собирает метрики для множества предва
 | 3xx |  | Count | Sum | ClientId, DomainName |  |
 | 4xx |  | Count | Sum | ClientId, DomainName |  |
 | 5xx |  | Count | Sum | ClientId, DomainName |  |
-| AutomatedSnapshotFailure | The number of failed automated snapshots for the cluster. A value of `1` indicates that no automated snapshot of the domain has been taken for the last 36 hours. | Count | Minimum | DomainName, ClientId |  |
+| AutomatedSnapshotFailure | Количество неудачных автоматических снимков кластера. Значение `1` указывает, что автоматический снимок домена не был создан за последние 36 часов. | Count | Minimum | DomainName, ClientId |  |
 | AutomatedSnapshotFailure |  | Count | Maximum | DomainName, ClientId |  |
-| CPUCreditBalance | The remaining CPU credits available for data nodes in the cluster. A CPU credit provides the performance of a full CPU core for one minute. This metric is available only for the T2 instance types. | Count | Minimum | DomainName, ClientId |  |
-| CPUUtilization | The percentage of CPU usage for data nodes in the cluster. Maximum shows the node with the highest CPU usage. Average represents all nodes in the cluster. This metric is also available for individual nodes. | Percent | Average | ClientId, DomainName, NodeId |  |
+| CPUCreditBalance | Оставшиеся кредиты ЦПУ, доступные для узлов данных в кластере. Один кредит ЦПУ обеспечивает производительность полного ядра ЦПУ в течение одной минуты. Эта метрика доступна только для типов экземпляров T2. | Count | Minimum | DomainName, ClientId |  |
+| CPUUtilization | Процент использования ЦПУ узлами данных в кластере. Maximum показывает узел с наибольшим использованием ЦПУ. Average представляет все узлы в кластере. Эта метрика также доступна для отдельных узлов. | Percent | Average | ClientId, DomainName, NodeId |  |
 | CPUUtilization |  | Percent | Average | DomainName, ClientId | Доступна |
 | CPUUtilization |  | Percent | Maximum | ClientId, DomainName, NodeId |  |
 | CPUUtilization |  | Percent | Maximum | DomainName, ClientId | Доступна |
-| ClusterIndexWritesBlocked | Indicates whether your cluster is accepting or blocking incoming write requests. A value of `0` means that the cluster is accepting requests. A value of `1` means that the cluster is blocking requests. | Count | Maximum | DomainName, ClientId |  |
-| ClusterStatus.green | A value of `1` indicates that all index shards are allocated to nodes in the cluster | Count | Minimum | DomainName, ClientId | Доступна |
+| ClusterIndexWritesBlocked | Указывает, принимает ли кластер входящие запросы на запись или блокирует их. Значение `0` означает, что кластер принимает запросы. Значение `1` означает, что кластер блокирует запросы. | Count | Maximum | DomainName, ClientId |  |
+| ClusterStatus.green | Значение `1` указывает, что все шарды индексов распределены по узлам кластера | Count | Minimum | DomainName, ClientId | Доступна |
 | ClusterStatus.green |  | Count | Maximum | DomainName, ClientId |  |
-| ClusterStatus.red | A value of `1` indicates that the primary and replica shards for at least one index aren't allocated to nodes in the cluster | Count | Minimum | DomainName, ClientId |  |
+| ClusterStatus.red | Значение `1` указывает, что основные и реплицированные шарды хотя бы одного индекса не распределены по узлам кластера | Count | Minimum | DomainName, ClientId |  |
 | ClusterStatus.red |  | Count | Maximum | DomainName, ClientId | Доступна |
-| ClusterStatus.yellow | A value of `1` indicates that the primary shards for all indices are allocated to nodes in the cluster, but replica shards for at least one index aren't allocated to nodes in the cluster | Count | Minimum | DomainName, ClientId |  |
+| ClusterStatus.yellow | Значение `1` указывает, что основные шарды всех индексов распределены по узлам кластера, но реплицированные шарды хотя бы одного индекса не распределены по узлам кластера | Count | Minimum | DomainName, ClientId |  |
 | ClusterStatus.yellow |  | Count | Maximum | DomainName, ClientId | Доступна |
-| ClusterUsedSpace | The total used space for the cluster | Megabytes | Minimum | DomainName, ClientId |  |
+| ClusterUsedSpace | Общее использованное пространство кластера | Megabytes | Minimum | DomainName, ClientId |  |
 | ClusterUsedSpace |  | Megabytes | Maximum | DomainName, ClientId |  |
-| DeletedDocuments | The total number of documents marked for deletion across all data nodes in the cluster. These documents no longer appear in search results, but Elasticsearch only removes deleted documents from disk during segment merges. This metric increases after delete requests and decreases after segment merges. | Count | Multi | DomainName, ClientId |  |
-| DiskQueueDepth | The number of pending input and output (I/O) requests for an EBS volume | Count | Multi | DomainName, ClientId |  |
-| ElasticsearchRequests | The number of requests made to the Elasticsearch cluster | Count | Sum | DomainName, ClientId | Доступна |
-| FreeStorageSpace | The free space for data nodes in the cluster | Megabytes | Multi | ClientId, DomainName, NodeId |  |
+| DeletedDocuments | Общее количество документов, помеченных для удаления, на всех узлах данных кластера. Эти документы больше не отображаются в результатах поиска, но Elasticsearch удаляет их с диска только при слиянии сегментов. Эта метрика увеличивается после запросов на удаление и уменьшается после слияния сегментов. | Count | Multi | DomainName, ClientId |  |
+| DiskQueueDepth | Количество ожидающих запросов ввода-вывода (I/O) для тома EBS | Count | Multi | DomainName, ClientId |  |
+| ElasticsearchRequests | Количество запросов, выполненных к кластеру Elasticsearch | Count | Sum | DomainName, ClientId | Доступна |
+| FreeStorageSpace | Свободное пространство для узлов данных в кластере | Megabytes | Multi | ClientId, DomainName, NodeId |  |
 | FreeStorageSpace |  | Megabytes | Multi | DomainName, ClientId | Доступна |
 | FreeStorageSpace |  | Megabytes | Sum | DomainName, ClientId |  |
 | FreeStorageSpace |  | Megabytes | Sum | ClientId, DomainName, NodeId |  |
-| InvalidHostHeaderRequests | The number of HTTP requests made to the Elasticsearch cluster that included an invalid (or missing) host header | Count | Sum | DomainName, ClientId |  |
-| JVMMemoryPressure | The maximum percentage of the Java heap used for all data nodes in the cluster | Percent | Maximum | DomainName, ClientId |  |
-| KMSKeyError | A value of `1` indicates that the KMS customer master key used to encrypt data at rest has been disabled | Count | Minimum | DomainName, ClientId |  |
+| InvalidHostHeaderRequests | Количество HTTP-запросов к кластеру Elasticsearch с недопустимым (или отсутствующим) заголовком хоста | Count | Sum | DomainName, ClientId |  |
+| JVMMemoryPressure | Максимальный процент использования кучи Java для всех узлов данных в кластере | Percent | Maximum | DomainName, ClientId |  |
+| KMSKeyError | Значение `1` указывает, что мастер-ключ клиента KMS, используемый для шифрования данных в состоянии покоя, был отключён | Count | Minimum | DomainName, ClientId |  |
 | KMSKeyError |  | Count | Maximum | DomainName, ClientId |  |
-| KMSKeyInaccessible | A value of `1` indicates that the KMS customer master key used to encrypt data at rest has been deleted or revoked its grants to Amazon ES | Count | Minimum | DomainName, ClientId |  |
+| KMSKeyInaccessible | Значение `1` указывает, что мастер-ключ клиента KMS, используемый для шифрования данных в состоянии покоя, был удалён или его разрешения для Amazon ES были отозваны | Count | Minimum | DomainName, ClientId |  |
 | KMSKeyInaccessible |  | Count | Maximum | DomainName, ClientId |  |
-| KibanaHealthyNodes | A health check for Kibana. A value of `1` indicates normal behavior. A value of `0` indicates that Kibana is inaccessible. In most cases, the health of Kibana mirrors the health of the cluster. | Count | Minimum | DomainName, ClientId |  |
-| MasterCPUCreditBalance | The remaining CPU credits available for dedicated master nodes in the cluster. A CPU credit provides the performance of a full CPU core for one minute. | Count | Minimum | DomainName, ClientId |  |
-| MasterCPUUtilization | The maximum percentage of CPU resources used by the dedicated master nodes | Percent | Average | DomainName, ClientId | Доступна |
-| MasterJVMMemoryPressure | The maximum percentage of the Java heap used for all dedicated master nodes in the cluster | Percent | Maximum | DomainName, ClientId |  |
-| MasterReachableFromNode | A health check for MasterNotDiscovered exceptions. A value of `1` indicates normal behavior. A value of `0` indicates that `/\_cluster/health/`` is failing. | Count | Minimum | DomainName, ClientId |  |
-| Nodes | The number of nodes in the Amazon ES cluster, including dedicated master nodes and UltraWarm nodes | Count | Multi | DomainName, ClientId | Доступна |
-| ReadIOPS | The number of input and output (I/O) operations per second for read operations on EBS volumes | Count/Second | Multi | DomainName, ClientId |  |
-| ReadLatency | The latency for read operations on EBS volumes | Seconds | Multi | DomainName, ClientId |  |
-| ReadThroughput | The throughput for read operations on EBS volumes | Bytes/Second | Multi | DomainName, ClientId |  |
-| RequestCount | The number of requests made to the Elasticsearch cluster | Count | Sum | DomainName, ClientId |  |
+| KibanaHealthyNodes | Проверка работоспособности Kibana. Значение `1` указывает на нормальную работу. Значение `0` указывает, что Kibana недоступна. В большинстве случаев состояние Kibana соответствует состоянию кластера. | Count | Minimum | DomainName, ClientId |  |
+| MasterCPUCreditBalance | Оставшиеся кредиты ЦПУ, доступные для выделенных мастер-узлов кластера. Один кредит ЦПУ обеспечивает производительность полного ядра ЦПУ в течение одной минуты. | Count | Minimum | DomainName, ClientId |  |
+| MasterCPUUtilization | Максимальный процент использования ресурсов ЦПУ выделенными мастер-узлами | Percent | Average | DomainName, ClientId | Доступна |
+| MasterJVMMemoryPressure | Максимальный процент использования кучи Java для всех выделенных мастер-узлов кластера | Percent | Maximum | DomainName, ClientId |  |
+| MasterReachableFromNode | Проверка работоспособности для исключений MasterNotDiscovered. Значение `1` указывает на нормальную работу. Значение `0` указывает, что `/\_cluster/health/`` завершается с ошибкой. | Count | Minimum | DomainName, ClientId |  |
+| Nodes | Количество узлов в кластере Amazon ES, включая выделенные мастер-узлы и узлы UltraWarm | Count | Multi | DomainName, ClientId | Доступна |
+| ReadIOPS | Количество операций ввода-вывода (I/O) в секунду для операций чтения на томах EBS | Count/Second | Multi | DomainName, ClientId |  |
+| ReadLatency | Задержка операций чтения на томах EBS | Seconds | Multi | DomainName, ClientId |  |
+| ReadThroughput | Пропускная способность операций чтения на томах EBS | Bytes/Second | Multi | DomainName, ClientId |  |
+| RequestCount | Количество запросов, выполненных к кластеру Elasticsearch | Count | Sum | DomainName, ClientId |  |
 | SearchLatency |  | Milliseconds | Multi | ClientId, DomainName |  |
-| SearchableDocuments | The total number of searchable documents across all data nodes in the cluster | Count | Multi | DomainName, ClientId |  |
-| WriteIOPS | The number of input and output (I/O) operations per second for write operations on EBS volumes | Count/Second | Multi | DomainName, ClientId |  |
-| WriteLatency | The latency for write operations on EBS volumes | Seconds | Multi | DomainName, ClientId |  |
-| WriteThroughput | The throughput for write operations on EBS volumes | Bytes/Second | Multi | DomainName, ClientId |  |
+| SearchableDocuments | Общее количество документов, доступных для поиска, на всех узлах данных кластера | Count | Multi | DomainName, ClientId |  |
+| WriteIOPS | Количество операций ввода-вывода (I/O) в секунду для операций записи на томах EBS | Count/Second | Multi | DomainName, ClientId |  |
+| WriteLatency | Задержка операций записи на томах EBS | Seconds | Multi | DomainName, ClientId |  |
+| WriteThroughput | Пропускная способность операций записи на томах EBS | Bytes/Second | Multi | DomainName, ClientId |  |

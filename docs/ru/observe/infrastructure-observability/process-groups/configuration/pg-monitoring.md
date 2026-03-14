@@ -1,5 +1,5 @@
 ---
-title: Process deep monitoring
+title: Глубокий мониторинг процессов
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring
 scraped: 2026-03-06T21:20:08.014873
 ---

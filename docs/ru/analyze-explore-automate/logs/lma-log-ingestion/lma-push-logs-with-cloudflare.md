@@ -1,5 +1,5 @@
 ---
-title: Push logs with Cloudflare
+title: Передача журналов с Cloudflare
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-push-logs-with-cloudflare
 scraped: 2026-03-06T21:29:58.548826
 ---

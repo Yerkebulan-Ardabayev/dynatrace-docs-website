@@ -1,5 +1,5 @@
 ---
-title: Deployment
+title: Развертывание
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment
 scraped: 2026-03-06T21:18:13.543710
 ---

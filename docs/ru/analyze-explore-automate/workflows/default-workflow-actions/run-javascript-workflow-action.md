@@ -1,5 +1,5 @@
 ---
-title: Run JavaScript action for Workflows
+title: Запуск действия JavaScript для Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action
 scraped: 2026-03-04T21:33:36.756619
 ---

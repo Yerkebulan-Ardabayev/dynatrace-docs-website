@@ -1,5 +1,5 @@
 ---
-title: Create log alerts for a log event or summary of log data
+title: Создание оповещений по журналам для события журнала или сводки данных журнала
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/create-alert-in-logs
 scraped: 2026-03-05T21:40:14.975184
 ---

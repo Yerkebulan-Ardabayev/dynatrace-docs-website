@@ -1,5 +1,5 @@
 ---
-title: Business event bucket assignment via classic pipeline
+title: Назначение бакетов бизнес-событий через классический конвейер
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing/bo-bucket-assignment
 scraped: 2026-03-06T21:14:35.723933
 ---

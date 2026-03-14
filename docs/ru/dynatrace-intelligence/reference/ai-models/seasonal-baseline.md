@@ -1,5 +1,5 @@
 ---
-title: Seasonal baseline
+title: Сезонный базовый показатель
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline
 scraped: 2026-03-06T21:31:15.044601
 ---

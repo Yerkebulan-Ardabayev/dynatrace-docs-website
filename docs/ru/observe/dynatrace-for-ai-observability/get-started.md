@@ -1,5 +1,5 @@
 ---
-title: Get started
+title: Начало работы
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started
 scraped: 2026-03-06T21:14:22.129372
 ---
@@ -8,10 +8,10 @@ scraped: 2026-03-06T21:14:22.129372
 
 # Начало работы
 
-* Latest Dynatrace
-* How-to guide
-* 1-min read
-* Updated on Feb 25, 2026
+* Последняя версия Dynatrace
+* Практическое руководство
+* Чтение: 1 мин
+* Обновлено 25 февраля 2026 г.
 
 Платформу полного стека наблюдаемости Dynatrace можно использовать совместно с:
 

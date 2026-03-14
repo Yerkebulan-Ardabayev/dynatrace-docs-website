@@ -1,5 +1,5 @@
 ---
-title: Ready-made documents
+title: Готовые документы
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents
 scraped: 2026-03-06T21:13:50.344696
 ---

@@ -1,5 +1,5 @@
 ---
-title: Monitor Azure Functions on App Service Plan for Windows
+title: Мониторинг Azure Functions на App Service Plan для Windows
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions
 scraped: 2026-03-05T21:25:48.203441
 ---

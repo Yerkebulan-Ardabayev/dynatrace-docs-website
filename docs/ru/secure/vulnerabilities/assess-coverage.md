@@ -1,5 +1,5 @@
 ---
-title: Assess coverage
+title: Оценка покрытия
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/assess-coverage
 scraped: 2026-03-06T21:32:08.678905
 ---

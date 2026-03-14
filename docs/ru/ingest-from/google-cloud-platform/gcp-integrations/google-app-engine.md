@@ -1,5 +1,5 @@
 ---
-title: Monitor Google App Engine
+title: Мониторинг Google App Engine
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine
 scraped: 2026-02-06T16:24:08.961664
 ---

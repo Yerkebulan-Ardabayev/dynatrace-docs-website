@@ -1,5 +1,5 @@
 ---
-title: Segments
+title: Сегменты
 source: https://www.dynatrace.com/docs/manage/segments
 scraped: 2026-03-06T21:09:53.431828
 ---
