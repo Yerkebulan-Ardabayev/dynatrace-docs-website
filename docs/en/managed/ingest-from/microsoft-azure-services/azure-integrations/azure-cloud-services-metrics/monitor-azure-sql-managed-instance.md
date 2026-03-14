@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:12.325912
 
 # Azure SQL Managed Instance monitoring
 
-# Azure SQL Managed Instance monitoring
 
 * Latest Dynatrace
 * How-to guide

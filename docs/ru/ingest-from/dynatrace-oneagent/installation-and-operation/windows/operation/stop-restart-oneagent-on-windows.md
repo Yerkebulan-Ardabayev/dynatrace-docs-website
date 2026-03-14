@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:32.708456
 
 # Остановка/перезапуск OneAgent на Windows
 
-# Остановка/перезапуск OneAgent на Windows
 
 * Latest Dynatrace
 * 1-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:01.892064
 
 # Развёртывание OneAgent Operator на OpenShift (устарело)
 
-# Развёртывание OneAgent Operator на OpenShift (устарело)
 
 * Последняя Dynatrace
 * 10 мин. чтения
@@ -48,9 +47,7 @@ scraped: 2026-03-06T21:32:01.892064
    # Для OCP 3.11
 
 
-
    oc -n dynatrace create secret docker-registry redhat-connect --docker-server=registry.connect.redhat.com --docker-username=REDHAT_CONNECT_USERNAME --docker-password=REDHAT_CONNECT_PASSWORD --docker-email=unused
-
 
 
    oc -n dynatrace create secret docker-registry redhat-connect-sso --docker-server=sso.redhat.com --docker-username=REDHAT_CONNECT_USERNAME --docker-password=REDHAT_CONNECT_PASSWORD --docker-email=unused
@@ -59,7 +56,6 @@ scraped: 2026-03-06T21:32:01.892064
 
    ```
    oc apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/latest/download/openshift.yaml
-
 
 
    oc -n dynatrace logs -f deployment/dynatrace-oneagent-operator
@@ -71,9 +67,7 @@ scraped: 2026-03-06T21:32:01.892064
    required:
 
 
-
    -  spec
-
 
 
    type: object  # удалите эту строку — это правило валидации
@@ -97,7 +91,6 @@ scraped: 2026-03-06T21:32:01.892064
 
    ```
    args:
-
 
 
    - "--set-proxy="
@@ -149,57 +142,43 @@ scraped: 2026-03-06T21:32:01.892064
    apiVersion: dynatrace.com/v1alpha1
 
 
-
    kind: OneAgent
-
 
 
    metadata:
 
 
-
    name: oneagent
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    apiUrl: https://environmentid.dynatrace.com/api
 
 
-
    tolerations:
-
 
 
    - effect: NoSchedule
 
 
-
    key: node-role.kubernetes.io/master
-
 
 
    operator: Exists
 
 
-
    args: []
-
 
 
    enableIstio: true
 
 
-
    proxy:
-
 
 
    value: http://mysuperproxy
@@ -222,57 +201,43 @@ scraped: 2026-03-06T21:32:01.892064
       apiVersion: dynatrace.com/v1alpha1
 
 
-
       kind: OneAgent
-
 
 
       metadata:
 
 
-
       name: oneagent
-
 
 
       namespace: dynatrace
 
 
-
       spec:
-
 
 
       apiUrl: https://environmentid.dynatrace.com/api
 
 
-
       tolerations:
-
 
 
       - effect: NoSchedule
 
 
-
       key: node-role.kubernetes.io/master
-
 
 
       operator: Exists
 
 
-
       args: []
-
 
 
       enableIstio: true
 
 
-
       proxy:
-
 
 
       valueFrom: myproxysecret
@@ -283,7 +248,6 @@ scraped: 2026-03-06T21:32:01.892064
 
    ```
    args:
-
 
 
    - --set-network-zone=<your.network.zone>
@@ -312,14 +276,12 @@ scraped: 2026-03-06T21:32:01.892064
    helm repo add dynatrace \
 
 
-
    https://raw.githubusercontent.com/Dynatrace/helm-charts/master/repos/stable
    ```
 3. Создайте определения пользовательских ресурсов (CRD).
 
    ```
    oc apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/latest/download/dynatrace.com_oneagents.yaml
-
 
 
    oc apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/latest/download/dynatrace.com_oneagentapms.yaml
@@ -331,7 +293,6 @@ scraped: 2026-03-06T21:32:01.892064
    oc apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/latest/download/dynatrace.com_oneagents-v1beta1.yaml
 
 
-
    oc apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/latest/download/dynatrace.com_oneagentapms-v1beta1.yaml
    ```
 4. Создайте файл `values.yaml` со следующим содержимым.
@@ -340,93 +301,70 @@ scraped: 2026-03-06T21:32:01.892064
    platform: "openshift"
 
 
-
    operator:
 
 
-
    image: ""
-
 
 
    oneagent:
 
 
-
    name: "oneagent"
-
 
 
    apiUrl: "https://ENVIRONMENTID.live.dynatrace.com/api"
 
 
-
    image: ""
-
 
 
    args: []
 
 
-
    env: []
-
 
 
    nodeSelector: []
 
 
-
    labels: []
-
 
 
    skipCertCheck: false
 
 
-
    disableAgentUpdate: false
-
 
 
    enableIstio: false
 
 
-
    dnsPolicy: ""
-
 
 
    resources: []
 
 
-
    waitReadySeconds: null
-
 
 
    priorityClassName: ""
 
 
-
    serviceAccountName: ""
-
 
 
    proxy: ""
 
 
-
    trustedCAs: ""
-
 
 
    secret:
 
 
-
    apiToken: "DYNATRACE_API_TOKEN"
-
 
 
    paasToken: "PLATFORM_AS_A_SERVICE_TOKEN"
@@ -437,7 +375,6 @@ scraped: 2026-03-06T21:32:01.892064
 
    ```
    args:
-
 
 
    - --set-network-zone=<your.network.zone>
@@ -451,9 +388,7 @@ scraped: 2026-03-06T21:32:01.892064
    required:
 
 
-
    -  spec
-
 
 
    type: object  # удалите эту строку — это правило валидации
@@ -464,9 +399,7 @@ scraped: 2026-03-06T21:32:01.892064
    helm install dynatrace-oneagent-operator \
 
 
-
    dynatrace/dynatrace-oneagent-operator -n\
-
 
 
    dynatrace --disable-openapi-validation --values values.yaml
@@ -527,7 +460,6 @@ oc apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/la
    helm upgrade dynatrace-oneagent-operator dynatrace/\
 
 
-
    dynatrace-oneagent-operator -n dynatrace --reuse-values
    ```
 
@@ -543,7 +475,6 @@ oc apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/la
 
    ```
    oc delete -n dynatrace oneagent --all
-
 
 
    oc delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/latest/download/openshift.yaml

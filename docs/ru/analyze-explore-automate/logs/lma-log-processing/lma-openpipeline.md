@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:01.169544
 
 # Обработка логов с помощью OpenPipeline
 
-# Обработка логов с помощью OpenPipeline
 
 * Latest Dynatrace
 * Explanation

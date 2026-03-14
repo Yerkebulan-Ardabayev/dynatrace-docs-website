@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:51.621843
 
 # Режимы мониторинга OneAgent
 
-# Режимы мониторинга OneAgent
 
 * Latest Dynatrace
 * Пояснение

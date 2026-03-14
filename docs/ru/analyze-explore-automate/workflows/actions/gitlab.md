@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:21:04.457505
 
 # GitLab Connector
 
-# GitLab Connector
 
 * Последняя версия Dynatrace
 * Обзор

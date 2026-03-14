@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:02.016377
 
 # Real User Monitoring for process groups
 
-# Real User Monitoring for process groups
 
 * Classic
 * How-to guide

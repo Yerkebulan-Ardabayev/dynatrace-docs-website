@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:54.098381
 
 # Google Kubernetes Engine monitoring
 
-# Google Kubernetes Engine monitoring
 
 * Latest Dynatrace
 * How-to guide

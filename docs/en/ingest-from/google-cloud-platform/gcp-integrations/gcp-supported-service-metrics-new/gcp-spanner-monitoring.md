@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:34.736396
 
 # Google Cloud Spanner monitoring
 
-# Google Cloud Spanner monitoring
 
 * Latest Dynatrace
 * How-to guide

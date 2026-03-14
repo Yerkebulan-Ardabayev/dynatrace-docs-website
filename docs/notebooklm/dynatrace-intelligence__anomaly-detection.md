@@ -14,7 +14,6 @@ scraped: 2026-03-06T21:19:53.492399
 
 # Adjust the sensitivity of anomaly detection for infrastructure
 
-# Adjust the sensitivity of anomaly detection for infrastructure
 
 * Latest Dynatrace
 * How-to guide
@@ -122,7 +121,6 @@ scraped: 2026-03-06T21:20:54.757825
 
 # Adjust the sensitivity of anomaly detection
 
-# Adjust the sensitivity of anomaly detection
 
 * Latest Dynatrace
 * Explanation
@@ -170,7 +168,6 @@ scraped: 2026-03-06T21:20:51.429284
 
 # Anomaly Detection status types
 
-# Anomaly Detection status types
 
 * Latest Dynatrace
 * Explanation
@@ -219,7 +216,6 @@ scraped: 2026-03-06T21:35:01.911530
 
 # Configure a simple custom alert
 
-# Configure a simple custom alert
 
 * Latest Dynatrace
 * How-to guide
@@ -325,7 +321,6 @@ scraped: 2026-03-04T21:27:21.119513
 
 # Anomaly Detection DQL writing guide
 
-# Anomaly Detection DQL writing guide
 
 * Latest Dynatrace
 * How-to guide
@@ -358,17 +353,13 @@ Most of the fields in a `timeseries` record are treated as dimensions. This mean
 timeseries cpu_usage = avg(dt.host.cpu.usage), by:{dt.entity.host}
 
 
-
 | fieldsAdd tags = entityAttr(dt.entity.host, "tags")
-
 
 
 | filter iAny(tags[] ==  "Windows")
 
 
-
 | fieldsAdd entityName(dt.entity.host)
-
 
 
 | fieldsAdd average_usage = arrayAvg(cpu_usage)
@@ -399,13 +390,10 @@ If any of the volatile dimensions changes value, the custom alert considers it a
 timeseries cpu_usage = avg(dt.host.cpu.usage), by:{dt.entity.host}
 
 
-
 | fieldsAdd tags = entityAttr(dt.entity.host, "tags")
 
 
-
 | filter iAny(tags[] ==  "Windows")
-
 
 
 | fieldsKeep cpu_usage, dt.entity.host, timeframe, interval
@@ -429,9 +417,7 @@ When creating a custom alert:
   timeseries sum(dt.service.request.failure_count),
 
 
-
   by:{http.response.status_code},
-
 
 
   from:now()-1h, to:now() // remove these parameters
@@ -442,9 +428,7 @@ When creating a custom alert:
   fetch bizevents
 
 
-
   | makeTimeseries count(), time:timestamp
-
 
 
   | fieldsAdd timeframe = timeframe(duration(5, "min")) // assigns new value to the timeframe
@@ -458,9 +442,7 @@ When creating a custom alert:
   timeseries avg(dt.host.cpu.usage), by: { dt.entity.host }
 
 
-
   | sort `avg(dt.host.cpu.usage)` desc // remove this
-
 
 
   | filter dt.entity.host == "HOST-1234"
@@ -469,7 +451,6 @@ When creating a custom alert:
 
   ```
   timeseries avg(dt.host.cpu.usage), by: { dt.entity.host }
-
 
 
   | limit 10 // remove this; to choose specific hosts, we recommend using filter instead
@@ -492,7 +473,6 @@ scraped: 2026-03-05T21:38:33.126042
 
 # Anomaly Detection DQL optimization guide
 
-# Anomaly Detection DQL optimization guide
 
 * Latest Dynatrace
 * How-to guide
@@ -545,7 +525,6 @@ Incorporate the following DQL query to include the `dt.system.bucket` field, whi
 
 ```
 fetch logs
-
 
 
 | fieldsAdd dt.system.bucket
@@ -687,7 +666,6 @@ To optimize filtering and avoid including redundant fields, we recommend trying 
 ## Related topics
 
 
-
 * [Anomaly Detection app](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.")
 * [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
 * [Anomaly Detection DQL writing guide](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice.md "Best practices for creating Anomaly Detection custom alert DQL queries.")
@@ -704,7 +682,6 @@ scraped: 2026-03-06T21:14:57.037010
 
 # Anomaly Detection app
 
-# Anomaly Detection app
 
 * Latest Dynatrace
 * App
@@ -856,7 +833,6 @@ scraped: 2026-03-06T21:20:56.392646
 
 # Anomaly detection configuration
 
-# Anomaly detection configuration
 
 * Latest Dynatrace
 * Explanation
@@ -984,7 +960,6 @@ scraped: 2026-03-06T21:20:46.412216
 
 # Auto-adaptive thresholds for anomaly detection
 
-# Auto-adaptive thresholds for anomaly detection
 
 * Latest Dynatrace
 * Explanation
@@ -1034,7 +1009,6 @@ scraped: 2026-03-06T21:20:49.775801
 
 # Automated multi-dimensional baselining
 
-# Automated multi-dimensional baselining
 
 * Latest Dynatrace
 * Explanation
@@ -1106,7 +1080,6 @@ Services of the `PROCESS` type don't support automated baselining. Use [anomaly 
 ### How automated baselining works
 
 
-
 Automated baselining attempts to figure out the best reference values for incoming application and service traffic. To do this, Dynatrace automatically generates a baseline cube for your actual incoming application and service traffic. This means that if your traffic comes mainly from New York, and most of your users use the Chrome browser, your baseline cube will contain the following reference values:
 
 `USA - New York â Chrome â Reference response time : 2s, error rate: 0%, load: 2 actions/min`
@@ -1153,7 +1126,6 @@ scraped: 2026-03-03T21:31:54.613136
 
 # Metric key events
 
-# Metric key events
 
 * Latest Dynatrace
 * How-to guide
@@ -1239,7 +1211,6 @@ scraped: 2026-03-06T21:25:45.312965
 
 # Metric selector events
 
-# Metric selector events
 
 * Classic
 * How-to guide
@@ -1339,7 +1310,6 @@ scraped: 2026-03-06T21:20:48.129795
 
 # Metric events
 
-# Metric events
 
 * Classic
 * Overview
@@ -1414,7 +1384,6 @@ Example: revenue numbers measured for all retail shops per geographic region
 business.revenue,shop=shop111,city=NewYork 234
 
 
-
 business.revenue,shop=shop999,city=Atlanta 499
 ```
 
@@ -1428,7 +1397,6 @@ Example: batch job executions measured on a monitored host, where the measuremen
 batchjob.executions,dt.entity.host=HOST-1111111,hostname=hostA,ip=53.43.23.12 23
 
 
-
 batchjob.executions,dt.entity.host=HOST-2222222,hostname=hostB,ip=53.43.23.12 23
 ```
 
@@ -1440,7 +1408,6 @@ Example: the number of batch job runs measured for a process on a monitored host
 
 ```
 batchjob.executions,dt.entity.host=HOST-1,dt.entity.process_group_instance=PROCESS-GROUP-INSTANCE-1,hostname=hostA,ip=53.43.23.12 23
-
 
 
 batchjob.executions,dt.entity.host=HOST-2222222,dt.entity.process_group_instance=PROCESS-GROUP-INSTANCE-2,hostname=hostB,ip=53.43.23.12 23
@@ -1462,7 +1429,6 @@ scraped: 2026-03-06T21:20:44.696000
 
 # Automate alerts with API
 
-# Automate alerts with API
 
 * Latest Dynatrace
 * Tutorial
@@ -1540,300 +1506,226 @@ To create a custom alert configuration
    curl 'https://{your-environment-id}.apps.dynatrace.com/platform/classic/environment-api/v2/settings/objects' \
 
 
-
    -X POST \
-
 
 
    -H 'Accept: application/json; charset=utf-8' \
 
 
-
    -H 'Content-Type: application/json; charset=utf-8' \
-
 
 
    -H 'Authorization: Bearer {your-bearer-token}' \
 
 
-
    -d '[
 
 
-
    {
-
 
 
    "schemaId": "builtin:davis.anomaly-detectors",
 
 
-
    "scope": "environment",
-
 
 
    "value": {
 
 
-
    "enabled": true,
-
 
 
    "title": "Low disk space alert",
 
 
-
    "description": "",
-
 
 
    "source": "Rest-API",
 
 
-
    "executionSettings": {
-
 
 
    "actor": null,
 
 
-
    "queryOffset": null
 
 
-
    },
-
 
 
    "analyzer": {
 
 
-
    "name": "dt.statistics.ui.anomaly_detection.StaticThresholdAnomalyDetectionAnalyzer",
-
 
 
    "input": [
 
 
-
    {
-
 
 
    "key": "query",
 
 
-
    "value": "timeseries avg(dt.host.disk.free), by:{dt.entity.host, dt.entity.disk}"
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "threshold",
 
 
-
    "value": "10"
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "alertCondition",
 
 
-
    "value": "BELOW"
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "alertOnMissingData",
 
 
-
    "value": "false"
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "violatingSamples",
 
 
-
    "value": "3"
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "slidingWindow",
 
 
-
    "value": "5"
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "dealertingSamples",
 
 
-
    "value": "5"
-
 
 
    }
 
 
-
    ]
 
 
-
    },
-
 
 
    "eventTemplate": {
 
 
-
    "properties": [
 
 
-
    {
-
 
 
    "key": "dt.source_entity",
 
 
-
    "value": "{dims:dt.entity.host}"
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "event.type",
 
 
-
    "value": "CUSTOM_ALERT"
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "event.description",
 
 
-
    "value": "The disk {dims:dt.entity.disk.name} runs out of space. Free up space or resize disk."
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "event.name",
 
 
-
    "value": "Low amount of disk space available on host {dims:dt.entity.host.name}"
 
 
-
    }
-
 
 
    ]
 
 
+   }
+
 
    }
 
 
-
    }
-
-
-
-   }
-
 
 
    ]'
    ```
 
 ### Parameters
-
 
 
 An anomaly detection configuration consists of the following fields:
@@ -1912,7 +1804,6 @@ scraped: 2026-03-06T21:20:53.079076
 
 # Static thresholds for anomaly detection
 
-# Static thresholds for anomaly detection
 
 * Latest Dynatrace
 * Explanation
@@ -1951,7 +1842,6 @@ scraped: 2026-03-06T21:11:03.759228
 
 # Обнаружение аномалий
 
-# Обнаружение аномалий
 
 * Последнее Dynatrace
 * Обзор

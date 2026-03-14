@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:32.965519
 
 # Custom metric metadata
 
-# Custom metric metadata
 
 * Latest Dynatrace
 * 1-min read
@@ -38,129 +37,97 @@ A dimension of the metric.
 {
 
 
-
 "displayName": "Total revenue",
-
 
 
 "description": "Total store revenue by region, city, and store",
 
 
-
 "unit": "Unspecified",
-
 
 
 "sourceEntityType": "string",
 
 
-
 "tags": ["KPI", "Business"],
-
 
 
 "metricProperties": {
 
 
-
 "maxValue": 1000000,
-
 
 
 "minValue": 0,
 
 
-
 "rootCauseRelevant": false,
-
 
 
 "impactRelevant": true,
 
 
-
 "valueType": "score",
-
 
 
 "latency": 1
 
 
-
 },
-
 
 
 "dimensions": [
 
 
-
 {
-
 
 
 "key": "city",
 
 
-
 "displayName": "City name"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "country",
 
 
-
 "displayName": "Country name"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "region",
 
 
-
 "displayName": "Sales region"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "store",
 
 
-
 "displayName": "Store #"
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -182,153 +149,115 @@ Example payload
 [
 
 
-
 {
-
 
 
 "scope": "metric-business.shop.revenue",
 
 
-
 "schemaId": "builtin:metric.metadata",
-
 
 
 "value": {
 
 
-
 "displayName": "Total revenue",
-
 
 
 "description": "Total store revenue by region, city, and store",
 
 
-
 "unit": "Unspecified",
-
 
 
 "sourceEntityType": "string",
 
 
-
 "tags": ["KPI", "Business"],
-
 
 
 "metricProperties": {
 
 
-
 "maxValue": 1000000,
-
 
 
 "minValue": 0,
 
 
-
 "rootCauseRelevant": false,
-
 
 
 "impactRelevant": true,
 
 
-
 "valueType": "score",
-
 
 
 "latency": 1
 
 
-
 },
-
 
 
 "dimensions": [
 
 
-
 {
-
 
 
 "key": "city",
 
 
-
 "displayName": "City name"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "country",
 
 
-
 "displayName": "Country name"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "region",
 
 
-
 "displayName": "Sales region"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "store",
 
 
-
 "displayName": "Store #"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 }
-
 
 
 ]

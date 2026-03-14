@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:53.313434
 
 # Настройка обнаружения сбоев в Service Detection v2
 
-# Настройка обнаружения сбоев в Service Detection v2
 
 * Latest Dynatrace
 * How-to guide

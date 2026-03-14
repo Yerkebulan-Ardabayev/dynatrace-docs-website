@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:34.967295
 
 # Мониторинг Kong Gateway
 
-# Мониторинг Kong Gateway
 
 * Latest Dynatrace
 * 4-min read
@@ -63,49 +62,37 @@ Kong Gateway требует настройки двух параметров.
 curl -X POST http://{HOST}:8001/plugins \
 
 
-
 -H 'Content-Type: application/json' \
-
 
 
 -d '{
 
 
-
 "name": "opentelemetry",
-
 
 
 "instance_name": "{PLUGIN-INSTANCE_NAME}",
 
 
-
 "config": {
-
 
 
 "traces_endpoint": "http://{OPENTELEMETRY_COLLECTOR}:4318/v1/traces",
 
 
-
 "logs_endpoint": "http://{OPENTELEMETRY_COLLECTOR}:4318/v1/logs",
-
 
 
 "resource_attributes": {
 
 
-
 "service.name": "kong-dev"
 
 
-
 }
 
 
-
 }
-
 
 
 }'
@@ -119,77 +106,58 @@ curl -X POST http://{HOST}:8001/plugins \
 receivers:
 
 
-
 otlp:
-
 
 
 protocols:
 
 
-
 http:
-
 
 
 endpoint: 0.0.0.0:4318
 
 
-
 exporters:
-
 
 
 otlp_http:
 
 
-
 endpoint: "${env:DT_BASEURL}/api/v2/otlp"
-
 
 
 headers:
 
 
-
 "Authorization": "Api-Token ${env:DT_API_TOKEN}"
-
 
 
 service:
 
 
-
 pipelines:
-
 
 
 traces:
 
 
-
 receivers: [otlp]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]
 
 
-
 logs:
-
 
 
 receivers: [otlp]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]
@@ -203,85 +171,64 @@ exporters: [otlp_http]
 connectors:
 
 
-
 spanmetrics:
-
 
 
 dimensions:
 
 
-
 - name: http.method
-
 
 
 default: GET
 
 
-
 - name: http.status_code
-
 
 
 - name: http.route
 
 
-
 exclude_dimensions:
-
 
 
 - status.code
 
 
-
 metrics_flush_interval: 15s
-
 
 
 histogram:
 
 
-
 disable: false
-
 
 
 service:
 
 
-
 pipelines:
-
 
 
 traces:
 
 
-
 receivers: [otlp]
 
 
-
 processors: []
-
 
 
 exporters: [spanmetrics]
 
 
-
 metrics:
-
 
 
 receivers: [spanmetrics]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]
@@ -303,17 +250,13 @@ exporters: [otlp_http]
 curl -s -X POST http://{HOST}:8001/plugins \
 
 
-
 -H 'Content-Type: application/json' \
-
 
 
 -d '{
 
 
-
 "name": "prometheus"
-
 
 
 }'
@@ -327,49 +270,37 @@ curl -s -X POST http://{HOST}:8001/plugins \
 curl -s -X POST http://{HOST}:8001/plugins \
 
 
-
 -H 'Content-Type: application/json' \
-
 
 
 -d '{
 
 
-
 "name": "prometheus",
-
 
 
 "instance_name": "{PLUGIN-INSTANCE_NAME}",
 
 
-
 "config": {
-
 
 
 "per_consumer": true,
 
 
-
 "status_code_metrics": true,
-
 
 
 "latency_metrics": true,
 
 
-
 "bandwidth_metrics": true,
-
 
 
 "upstream_health_metrics": true
 
 
-
 }
-
 
 
 }'

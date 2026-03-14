@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:12.282254
 
 # Microsoft Entra ID Connector
 
-# Microsoft Entra ID Connector
 
 * Latest Dynatrace
 * 5-min read
@@ -120,13 +119,10 @@ Microsoft Entra ID Connector требует секрет клиента из Mic
 [INFO]    Successfully retrieved connection settings.
 
 
-
 [INFO]    Successfully fetched authentication token.
 
 
-
 [INFO]    Calling Entra-ID groups endpoint with the following query params: $filter=startswith(displayName, 'team-deco')&$select=id,displayName,description,mail,mailNickname&$count=true&$top=999
-
 
 
 [INFO]    Successfully fetched Groups from Entra-ID.

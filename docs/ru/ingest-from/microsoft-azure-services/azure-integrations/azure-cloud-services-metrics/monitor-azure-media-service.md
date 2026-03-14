@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:36:33.736981
 
 # Мониторинг Azure Media Services
 
-# Мониторинг Azure Media Services
 
 * Последняя версия Dynatrace
 * Практическое руководство

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:46.855136
 
 # Устранение неполадок при установке OneAgent
 
-# Устранение неполадок при установке OneAgent
 
 * Последняя версия Dynatrace
 * Устранение неполадок
@@ -179,7 +178,6 @@ OneAgent поддерживает SELinux только при загруженн
    # grep type=AVC /var/log/audit/audit.log
 
 
-
    # journalctl --utc -a -t "audit"
    ```
 2. Если вы обнаружите отказ для рассматриваемого процесса, например:
@@ -323,13 +321,10 @@ Oracle Database Server 19c не отвечает
 MSI (s) (C0:E4) [09:27:14:308]: Warning: Local cached package 'C:\Windows\Installer\312c0.msi' is missing.
 
 
-
 ...
 
 
-
 Error 1714. The older version of Dynatrace OneAgent cannot be removed.  Contact your technical support group.  System Error 1612.
-
 
 
 MSI (s) (C0:54) [09:27:56:489]: Product: Dynatrace OneAgent -- Error 1714. The older version of Dynatrace OneAgent cannot be removed.  Contact your technical support group.  System Error 1612.
@@ -366,7 +361,6 @@ LDR\_PRELOAD64: параметр не установлен
 Info: using DT_HOME: /opt/dynatrace/oneagent
 
 
-
 .profile[33] LDR_PRELOAD64: parameter not set
 ```
 
@@ -376,13 +370,10 @@ Info: using DT_HOME: /opt/dynatrace/oneagent
 # avoid error
 
 
-
 set +u
 
 
-
 export DT_HOME=/opt/dynatrace/oneagent
-
 
 
 . $DT_HOME/dynatrace-agent64.sh

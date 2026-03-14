@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:24:18.010129
 
 # Your first year with DPS
 
-# Your first year with DPS
 
 * Latest Dynatrace
 * Explanation

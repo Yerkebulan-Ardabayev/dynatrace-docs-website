@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:34.259019
 
 # Service backtrace
 
-# Service backtrace
 
 * Classic
 * How-to guide

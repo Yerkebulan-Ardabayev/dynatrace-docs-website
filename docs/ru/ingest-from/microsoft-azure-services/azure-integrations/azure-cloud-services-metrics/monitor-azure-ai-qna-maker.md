@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:03.231423
 
 # Мониторинг Azure AI - QnA Maker
 
-# Мониторинг Azure AI - QnA Maker
 
 * Latest Dynatrace
 * How-to guide

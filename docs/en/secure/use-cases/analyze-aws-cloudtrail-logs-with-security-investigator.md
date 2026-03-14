@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:49.736649
 
 # Analyze AWS CloudTrail logs with Investigations
 
-# Analyze AWS CloudTrail logs with Investigations
 
 * Latest Dynatrace
 * Tutorial
@@ -53,7 +52,6 @@ Once your CloudTrail logs are ingested into Dynatrace, follow these steps to fet
    fetch logs, from: -30min
 
 
-
    | filter aws.service == "cloudtrail"
    ```
 4. Select ![Run](https://dt-cdn.net/images/run-c2f8c2f63c.svg "Run") **Run** to display results.
@@ -66,9 +64,7 @@ Once your CloudTrail logs are ingested into Dynatrace, follow these steps to fet
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
-
 
 
    | filter aws.service == "cloudtrail"
@@ -97,13 +93,10 @@ Follow the steps below to simplify log analysis, speed up investigations, and ma
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
 
 
-
    | filter aws.service == "cloudtrail"
-
 
 
    | parse content, "JSON:event"
@@ -131,9 +124,7 @@ To monitor sign-in failures to the AWS console using CloudTrail logs
    | filter event[eventSource] == "signin.amazonaws.com"
 
 
-
    and event[eventName] == "ConsoleLogin"
-
 
 
    and event[responseElements][ConsoleLogin] == "Failure"
@@ -146,25 +137,19 @@ To monitor sign-in failures to the AWS console using CloudTrail logs
    | summarize event_count = count(), by: {
 
 
-
    source  = event[sourceIPAddress],
-
 
 
    reason  = event[errorMessage],
 
 
-
    region  = event[awsRegion],
-
 
 
    userARN = event[userIdentity][arn],
 
 
-
    MFAUsed = event[additionalEventData][MFAUsed]
-
 
 
    }
@@ -176,53 +161,40 @@ To monitor sign-in failures to the AWS console using CloudTrail logs
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
-
 
 
    | filter aws.service == "cloudtrail"
 
 
-
    | parse content, "JSON:event"
-
 
 
    | filter event[eventSource] == "signin.amazonaws.com"
 
 
-
    and event[eventName]   == "ConsoleLogin"
-
 
 
    and event[responseElements][ConsoleLogin] == "Failure"
 
 
-
    | summarize count(), by: {
-
 
 
    ipAddr  = event[sourceIPAddress],
 
 
-
    reason  = event[errorMessage],
-
 
 
    region  = event[awsRegion],
 
 
-
    userARN = event[userIdentity][arn],
 
 
-
    MFAUsed = event[additionalEventData][MFAUsed]
-
 
 
    }
@@ -245,29 +217,22 @@ To identify the "top targets" from the API list
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
-
 
 
    | filter aws.service == "cloudtrail"
 
 
-
    | parse content, "json:event"
-
 
 
    | filter in(event[errorCode], { "AccessDenied", "UnauthorizedOperation" })
 
 
-
    | makeTimeseries event_count = count(), by: { eventName = event[eventName] }
 
 
-
    | sort arrayAvg(event_count) desc
-
 
 
    | limit 10
@@ -281,13 +246,10 @@ To identify the "top targets" from the API list
    | makeTimeseries count(), by: {
 
 
-
    user      = event[userIdentity][arn],
 
 
-
    eventName = event[eventName]
-
 
 
    }
@@ -313,21 +275,16 @@ To monitor AWS API throttling from AWS CloudTrail logs in Dynatrace
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
-
 
 
    | filter aws.service == "cloudtrail"
 
 
-
    | parse content, "json:event"
 
 
-
    | filter event[errorCode] == "Client.RequestLimitExceeded"
-
 
 
    | makeTimeseries count(), by: { eventName = event[eventName] }
@@ -354,53 +311,40 @@ To detect such key creations, where external key material was used
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
-
 
 
    | filter aws.service == "cloudtrail"
 
 
-
    | parse content, "json:event"
-
 
 
    | filter event[eventName] == "CreateKey"
 
 
-
    | filterOut startsWith(event[requestParameters][origin], "AWS_")
-
 
 
    | fields {
 
 
-
    eventName = event[eventName],
-
 
 
    origin    = event[requestParameters][origin],
 
 
-
    keyUsage  = event[responseElements][keyMetadata][keyUsage],
-
 
 
    region    = event[awsRegion],
 
 
-
    userARN   = event[userIdentity][arn],
 
 
-
    keyId     = event[responseElements][keyMetadata][keyId]
-
 
 
    }

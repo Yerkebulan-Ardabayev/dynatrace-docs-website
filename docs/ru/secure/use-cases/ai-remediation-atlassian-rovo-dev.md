@@ -6,7 +6,6 @@ scraped: 2026-03-01T21:24:59.058380
 
 # Автоматизация устранения уязвимостей с помощью Atlassian Rovo Dev и Dynatrace
 
-# Автоматизация устранения уязвимостей с помощью Atlassian Rovo Dev и Dynatrace
 
 * Latest Dynatrace
 * Tutorial
@@ -108,41 +107,31 @@ Dynatrace интегрируется с Atlassian Rovo Dev через Model Cont
 {
 
 
-
 "mcpServers": {
-
 
 
 "dynatrace": {
 
 
-
 "transport": "sse",
-
 
 
 "url": "https://<DYNATRACE_TENANT>/platform/mcp-gateway/sse",
 
 
-
 "headers": {
-
 
 
 "Authorization": "Api-Token <DYNATRACE_PLATFORM_TOKEN>"
 
 
+}
+
 
 }
 
 
-
 }
-
-
-
-}
-
 
 
 }

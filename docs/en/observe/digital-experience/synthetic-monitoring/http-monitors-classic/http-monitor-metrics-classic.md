@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:57.630725
 
 # HTTP monitor metrics
 
-# HTTP monitor metrics
 
 * Classic
 * Explanation

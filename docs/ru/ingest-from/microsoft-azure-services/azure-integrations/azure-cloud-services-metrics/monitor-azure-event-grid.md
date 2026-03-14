@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:06.933213
 
 # Мониторинг Azure Event Grid (Domain Topics, Topics, System Topics)
 
-# Мониторинг Azure Event Grid (Domain Topics, Topics, System Topics)
 
 * Latest Dynatrace
 * How-to guide

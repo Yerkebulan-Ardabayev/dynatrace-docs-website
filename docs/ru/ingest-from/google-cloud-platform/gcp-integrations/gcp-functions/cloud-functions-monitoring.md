@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:36:51.464222
 
 # Мониторинг Google Cloud Functions
 
-# Мониторинг Google Cloud Functions
 
 * Latest Dynatrace
 * How-to guide

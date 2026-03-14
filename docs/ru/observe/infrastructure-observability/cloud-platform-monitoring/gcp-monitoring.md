@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:29:02.800414
 
 # Мониторинг Google Cloud
 
-# Мониторинг Google Cloud
 
 * Latest Dynatrace
 * Пояснение

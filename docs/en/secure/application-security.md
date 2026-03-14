@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:31.053864
 
 # Application Security
 
-# Application Security
 
 * Latest Dynatrace
 * How-to guide

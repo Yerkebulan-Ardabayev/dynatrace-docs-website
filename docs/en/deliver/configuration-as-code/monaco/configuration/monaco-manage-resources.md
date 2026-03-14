@@ -6,7 +6,6 @@ scraped: 2026-03-01T21:24:34.545844
 
 # Monaco resources
 
-# Monaco resources
 
 * Latest Dynatrace
 * Reference
@@ -27,181 +26,136 @@ An example of a manifest.yaml:
 manifestVersion: 1.0
 
 
-
 projects:
-
 
 
 - name: infra
 
 
-
 path: shared/infrastructure
-
 
 
 - name: general
 
 
-
 path: general
-
 
 
 type: grouping
 
 
-
 environmentGroups:
-
 
 
 - name: dev
 
 
-
 environments:
-
 
 
 - name: test-env-1
 
 
-
 url:
-
 
 
 value: https://<YOUR-DT-DEV-ENV-ID>.apps.dynatrace.com
 
 
-
 auth:
 
 
-
 token:
-
 
 
 name: DEV_TOKEN
 
 
-
 oAuth:
 
 
-
 clientId:
-
 
 
 name: DEV_CLIENT_ID
 
 
-
 clientSecret:
-
 
 
 name: DEV_CLIENT_SECRET
 
 
-
 - name: test-env-2
 
 
-
 url:
-
 
 
 value: https://<YOUR-DT-SPRINT-ENV-ID>.apps.dynatrace.com
 
 
-
 auth:
 
 
-
 token:
-
 
 
 name: SPRINT_TOKEN
 
 
-
 oAuth:
 
 
-
 clientId:
-
 
 
 name: SPRINT_CLIENT_ID
 
 
-
 clientSecret:
-
 
 
 name: SPRINT_CLIENT_SECRET
 
 
-
 - name: prod
-
 
 
 environments:
 
 
-
 - name: prod-env-1
-
 
 
 url:
 
 
-
 type: environment
-
 
 
 value: https://<YOUR-DT-PROD-ENV-ID>.apps.dynatrace.com
 
 
-
 auth:
-
 
 
 token:
 
 
-
 name: PROD_TOKEN
-
 
 
 oAuth:
 
 
-
 clientId:
-
 
 
 name: PROD_CLIENT_ID
 
 
-
 clientSecret:
-
 
 
 name: PROD_CLIENT_SECRET
@@ -274,9 +228,7 @@ An `environment` type consists of `name`, `url`, and `auth` sections.
   url:
 
 
-
   type: value
-
 
 
   value: "https://<YOUR-ENV-ID>.apps.dynatrace.com"
@@ -288,9 +240,7 @@ An `environment` type consists of `name`, `url`, and `auth` sections.
   url:
 
 
-
   type: environment
-
 
 
   value: YOUR_URL_ENV_VAR

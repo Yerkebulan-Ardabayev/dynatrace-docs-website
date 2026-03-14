@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:17:52.701431
 
 # Google Cloud Pub/Sub Lite monitoring
 
-# Google Cloud Pub/Sub Lite monitoring
 
 * Latest Dynatrace
 * How-to guide

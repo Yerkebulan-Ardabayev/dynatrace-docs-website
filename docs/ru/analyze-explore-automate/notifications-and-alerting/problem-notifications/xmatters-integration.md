@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:38.259950
 
 # Отправка уведомлений Dynatrace в xMatters
 
-# Отправка уведомлений Dynatrace в xMatters
 
 * Classic
 * 2-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:21.566752
 
 # Мониторинг базы данных Snowflake
 
-# Мониторинг базы данных Snowflake
 
 * Latest Dynatrace
 * How-to guide

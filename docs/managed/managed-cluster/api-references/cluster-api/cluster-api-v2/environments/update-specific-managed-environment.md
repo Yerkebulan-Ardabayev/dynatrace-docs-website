@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Update specific environment
 
-# Update specific environment
 
 * Published Mar 09, 2021
 
@@ -281,33 +280,25 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "name": "example environment",
-
 
 
 "state": "ENABLED",
 
 
-
 "tags": [
-
 
 
 "tag1",
 
 
-
 "tag2"
-
 
 
 ],
 
 
-
 "trial": false
-
 
 
 }
@@ -342,21 +333,16 @@ The short representation of an environment.
 {
 
 
-
 "description": "string",
-
 
 
 "id": "string",
 
 
-
 "name": "string",
 
 
-
 "tokenManagementToken": "string"
-
 
 
 }
@@ -370,7 +356,6 @@ Disables the environment with identifier `19a963a7-b19f-4382-964a-4df674c8eb8e`.
 
 ```
 curl -X PUT "https://myManaged.cluster.com/api/cluster/v2/environments/19a963a7-b19f-4382-964a-4df674c8eb8e?createToken=false" -H "accept: application/json; charset=utf-8" -H "Authorization: Api-Token fSRCdB7PQDSdFVANvNfSF" -H "Content-Type: application/json; charset=utf-8" -d "
-
 
 
 {\"name\":\"MyNewTeam\",\"id\":\"19a963a7-b19f-4382-964a-4df674c8eb8e\",\"trial\":false,\"state\":\"DISABLED\",\"tags\":[\"owner:john.wicked@dynatrace.com\",\"department:finance\"]}
@@ -388,13 +373,10 @@ https://myManaged.cluster.com/api/cluster/v2/environments/19a963a7-b19f-4382-964
 {
 
 
-
 "name": "MyNewTeam",
 
 
-
 "state": "DISABLED"
-
 
 
 }

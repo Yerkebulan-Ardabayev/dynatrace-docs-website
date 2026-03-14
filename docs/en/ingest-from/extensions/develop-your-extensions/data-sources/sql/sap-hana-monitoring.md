@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:59.952480
 
 # SAP Hana Database monitoring configuration
 
-# SAP Hana Database monitoring configuration
 
 * Latest Dynatrace
 * Reference
@@ -26,105 +25,79 @@ Example payload to activate the SAP Hana extension:
 [
 
 
-
 {
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "description": "My SAP Hana extension",
 
 
-
 "version": "0.1.1",
-
 
 
 "featureSets": [
 
 
-
 "io",
-
 
 
 "cpu",
 
 
-
 ],
-
 
 
 "sqlHanaRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "hanahost",
-
 
 
 "port": 1521,
 
 
-
 "authentication": {
-
 
 
 "username": "user",
 
 
-
 "password": "password"
 
 
-
 },
-
 
 
 "ssl": false
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "scope": "ag_group-default"
 
 
-
 }
-
 
 
 ]
@@ -152,13 +125,10 @@ Add a list of feature sets you want to monitor. To report all feature sets, add 
 "featureSets": [
 
 
-
 "cpu",
 
 
-
 "io"
-
 
 
 ]
@@ -172,45 +142,34 @@ You can define up to 20,000 endpoints in a single monitoring configuration in th
 "sqlHanaRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "hanahost",
-
 
 
 "port": 1521,
 
 
-
 "authentication": {
-
 
 
 "username": "user",
 
 
-
 "password": "password"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -232,21 +191,16 @@ The credential vault authentication type provides a more secure approach to usin
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": "true",
 
 
-
 "skipVerifyHttps": false,
 
 
-
 "credentialVaultId": "some-credential-vault-id"
-
 
 
 }

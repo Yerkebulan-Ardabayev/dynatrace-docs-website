@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:26:48.887797
 
 # Log rotation patterns (Logs Classic)
 
-# Log rotation patterns (Logs Classic)
 
 * Explanation
 * 3-min read

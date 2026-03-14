@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:34.980862
 
 # Мониторинг Azure Container Instances
 
-# Мониторинг Azure Container Instances
 
 * Latest Dynatrace
 * How-to guide

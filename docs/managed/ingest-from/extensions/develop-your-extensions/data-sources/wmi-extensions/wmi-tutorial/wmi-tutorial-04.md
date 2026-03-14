@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # WMI tutorial - custom topology
 
-# WMI tutorial - custom topology
 
 * How-to guide
 * 2-min read
@@ -53,149 +52,112 @@ For more information on extending the Dynatrace topology, see [Custom topology m
 topology:
 
 
-
 types:
-
 
 
 - name: wmi:generic_host
 
 
-
 displayName: Generic Host
-
 
 
 enabled: true
 
 
-
 rules:
-
 
 
 - idPattern: wmi_generic_host_{dt.entity.host}
 
 
-
 sources:
 
 
-
 - sourceType: Metrics
-
 
 
 condition: $prefix(custom.demo.host-observability)
 
 
-
 attributes: []
 
 
-
 requiredDimensions: []
-
 
 
 instanceNamePattern: Generic Host on {dt.entity.host}
 
 
-
 - name: wmi:generic_network_device
-
 
 
 displayName: Network device
 
 
-
 enabled: true
-
 
 
 rules:
 
 
-
 - idPattern: wmi_generic_{dt.entity.host}_{network.type}_{network.name}
-
 
 
 sources:
 
 
-
 - sourceType: Metrics
-
 
 
 condition: $prefix(custom.demo.host-observability.network)
 
 
-
 attributes:
-
 
 
 - pattern: '{network.name}'
 
 
-
 key: wmi_network_name
-
 
 
 displayName: Name
 
 
-
 - pattern: '{network.type}'
-
 
 
 key: wmi_network_type
 
 
-
 displayName: Type
-
 
 
 requiredDimensions: []
 
 
-
 instanceNamePattern: Network {network.type} {network.name} on {dt.entity.host}
-
 
 
 relationships:
 
 
-
 - typeOfRelation: RUNS_ON
-
 
 
 fromType: wmi:generic_network_device
 
 
-
 toType: wmi:generic_host
-
 
 
 enabled: true
 
 
-
 sources:
 
 
-
 - sourceType: Metrics
-
 
 
 condition: $prefix(custom.demo.host-observability)

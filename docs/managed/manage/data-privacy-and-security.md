@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Data privacy and security
 
-# Data privacy and security
 
 * Explanation
 * 2-min read

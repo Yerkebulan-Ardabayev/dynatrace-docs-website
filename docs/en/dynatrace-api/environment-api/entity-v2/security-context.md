@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:16.110902
 
 # Monitored entities API - security context
 
-# Monitored entities API - security context
 
 * Reference
 * Updated on Jun 06, 2025
@@ -62,17 +61,13 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "securityContext": [
-
 
 
 "string"
 
 
-
 ]
-
 
 
 }
@@ -130,85 +125,65 @@ A list of constraint violations
 {
 
 
-
 "entityIds": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "managementZoneIds": [
 
 
-
 1
-
 
 
 ]
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -287,85 +262,65 @@ A list of constraint violations
 {
 
 
-
 "entityIds": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "managementZoneIds": [
 
 
-
 1
-
 
 
 ]
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:28:21.884183
 
 # Ввод журналов API (Классические журналы)
 
-# Ввод журналов API (Классические журналы)
 
 * Обзор
 * 3-минутное чтение
@@ -52,9 +51,7 @@ Dynatrace автоматически собирает журнальные и с
 [generic_ingest]
 
 
-
 #disk_queue_path=<custom_path> # по умолчанию временная папка
-
 
 
 #disk_queue_max_size_mb=<limit> # по умолчанию 300 МБ
@@ -78,45 +75,34 @@ Dynatrace автоматически собирает журнальные и с
 curl -X POST \
 
 
-
 https://environment.activegate.domain.com:9999/e/abc123a/api/v2/logs/ingest \
-
 
 
 -H 'Content-Type: application/json; charset=utf-8' \
 
 
-
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
-
 
 
 -d '[
 
 
-
 {
-
 
 
 "content": "Исключение: Пользовательский журнал ошибок, переданный через Ввод журналов API",
 
 
-
 "status": "ошибка",
-
 
 
 "service.name": "log-monitoring-tenant",
 
 
-
 "service.namespace": "dev-stage-cluster"
 
 
-
 }
-
 
 
 ]'

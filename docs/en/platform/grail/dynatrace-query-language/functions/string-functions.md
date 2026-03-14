@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:55.672336
 
 # String functions
 
-# String functions
 
 * Latest Dynatrace
 * Reference
@@ -20,7 +19,6 @@ All string matching functions are case-sensitive per default. If otherwise requi
 
 ```
 ...
-
 
 
 | fieldsAdd str_found = contains(content, "FlushCommand", caseSensitive:false)
@@ -46,7 +44,6 @@ The data type of the returned value is `string`.
 
 ```
 data record(a = "DQL", b = "is", c = "awesome!")
-
 
 
 | fieldsAdd concat(a, b, c, delimiter: " ")
@@ -78,17 +75,13 @@ The data type of the returned value is `boolean`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd contains(content, "DQL"),
 
 
-
 contains(content, "dql", caseSensitive: false),
-
 
 
 contains(content, "Query")
@@ -120,9 +113,7 @@ The data type of the returned value is `string`.
 data record(content = "https%3A%2F%2Fwww.dynatrace.com%2Fplatform%2Fgrail"),
 
 
-
 record(content = "https://www.dynatrace.com/platform/grail")
-
 
 
 | fieldsAdd decodeUrl(content)
@@ -154,7 +145,6 @@ The data type of the returned value is `string`.
 data record(content = "https://www.dynatrace.com/platform/grail")
 
 
-
 | fieldsAdd encodeUrl(content)
 ```
 
@@ -184,17 +174,13 @@ The data type of the returned value is `boolean`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd endsWith(content, "awesome!"),
 
 
-
 endsWith(content, "AWESOME!", caseSensitive: false),
-
 
 
 endsWith(content, "Language")
@@ -245,7 +231,6 @@ The data type of the returned value is `string`.
 data record(content = """"foo@bar.com""")
 
 
-
 | fieldsAdd escape(content)
 ```
 
@@ -279,17 +264,13 @@ The data type of the returned value is `string`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd getCharacter(content, 1),
 
 
-
 getCharacter(content, 17),
-
 
 
 getCharacter(content, -1)
@@ -325,17 +306,13 @@ The data type of the returned value is `long`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd indexOf(content, "a"),
 
 
-
 indexOf(content, "a", from: 10),
-
 
 
 indexOf(content, "Query")
@@ -367,21 +344,16 @@ The data type of the returned value is `long`, `double`, `boolean`, `string`, `a
 data record(content = """{
 
 
-
 "name":"John",
-
 
 
 "children":["Mallory", "Mary"],
 
 
-
 "address":{"city":"Boston", "zip":"02210"}
 
 
-
 }""")
-
 
 
 | fieldsAdd jsonField(content, "name")
@@ -397,9 +369,7 @@ Query result:
 data record(content = """JSON: {"name": "John"} ...""")
 
 
-
 | fieldsAdd jsonField(content, "name", seek:false)
-
 
 
 | fieldsAdd jsonField(content, "name", seek:true)
@@ -431,29 +401,22 @@ The data type of the returned value is `long`, `double`, `boolean`, `string`, `a
 data record(content = """{
 
 
-
 "name":"John",
-
 
 
 "children":["Mallory", "Mary"],
 
 
-
 "address":{"city":"Boston", "zip":"02210"}
-
 
 
 }""")
 
 
-
 | fieldsAdd jsonPath(content, "$.children[0]")
 
 
-
 | fieldsAdd jsonPath(content, "$.address.city")
-
 
 
 | fieldsAdd jsonPath(content, "$['address']['zip']")
@@ -469,9 +432,7 @@ Query result:
 data record(content = """JSON: {"name": "John"} ...""")
 
 
-
 | fieldsAdd jsonPath(content, "$.name", seek:false)
-
 
 
 | fieldsAdd jsonPath(content, "$.name", seek:true)
@@ -503,17 +464,13 @@ The data type of the returned value is `long`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd lastIndexOf(content, "a"),
 
 
-
 lastIndexOf(content, "a", from: 10),
-
 
 
 lastIndexOf(content, "Query")
@@ -545,13 +502,10 @@ The data type of the returned value is `long`.
 data record(a = "DQL is awesome!", b = "Grail is awesome!"),
 
 
-
 record(a = "Dynatrace Query Language", b = "DQL"),
 
 
-
 record(a = "Dynatrace Query Language", b = "dynatrace query language")
-
 
 
 | fieldsAdd levenshteinDistance(a, b)
@@ -583,17 +537,13 @@ The data type of the returned value is `boolean`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd like(content, "%DQL%"),
 
 
-
 like(content, "D%L%"),
-
 
 
 like(content, "D_L%")
@@ -625,9 +575,7 @@ The data type of the returned value is `string`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd lower(content)
@@ -659,17 +607,13 @@ The data type of the returned value is `boolean`.
 data record(content = "2023-11-01 12:52:12 : 766"),
 
 
-
 record(content = "2023-11-01 12:53:00:123"),
-
 
 
 record(content = "2023-11-01 12:55:59 : 192.168.0.1")
 
 
-
 | fieldsAdd matchesPattern(content, "TIME ' : ' LONG"),
-
 
 
 matchesPattern(content, "TIME ' : ' IP")
@@ -707,25 +651,19 @@ The data type of the returned value is `boolean`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language"),
-
 
 
 record(content = array("DQL", "is", "awesome", "!", "Dynatrace Query Language"))
 
 
-
 | fieldsAdd matchesPhrase(content, "DQL"),
-
 
 
 matchesPhrase(content, "Dyna"),
 
 
-
 matchesPhrase(content, "query"),
-
 
 
 matchesPhrase(content, "query", caseSensitive: true)
@@ -759,13 +697,10 @@ Values are matched case-insensitive by default:
 data record(content = "User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1")
 
 
-
 | fieldsAdd matchesValue(content, "User*"),
 
 
-
 matchesValue(content, "user*"),
-
 
 
 matchesValue(content, "user*", caseSensitive: true)
@@ -783,13 +718,10 @@ Values are matched from the beginning. To match parts of the value, use `*` as w
 data record(content = "User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1")
 
 
-
 | fieldsAdd matchesValue(content, "192.168.0.1"),
 
 
-
 matchesValue(content, "*192.168.0.1"),
-
 
 
 matchesValue(content, "*failed to log*")
@@ -807,9 +739,7 @@ Only ASCII characters are matched case-insensitive:
 data record(content = "Ãsterreich")
 
 
-
 | fieldsAdd matchesValue(content, "Ã¶sterreich"),
-
 
 
 matchesValue(content, "Ãsterreich")
@@ -827,13 +757,10 @@ The function handles values of arrays in "any-match" manner.
 data record(technologies = array("Java11", "java17"))
 
 
-
 | fieldsAdd matchesValue(technologies, "Java11"),
 
 
-
 matchesValue(technologies, "java"),
-
 
 
 matchesValue(technologies, "java*")
@@ -853,17 +780,13 @@ The `matchesValue()` function supports matching against multiple patterns. You c
 data record(content = array("DQL", "is", "awesome", "!"))
 
 
-
 | fieldsAdd matchesValue(content, array("Grail", "dql")),
-
 
 
 matchesValue(content, {"Grail", "dql"}),
 
 
-
 matchesValue(content, {"Grail", "dq*"}),
-
 
 
 matchesValue(content, {"Grail", "dq*"}, caseSensitive: true)
@@ -896,17 +819,13 @@ Fields created from the output of the `parse` function by default get the name o
 data record(src = "1 2"),
 
 
-
 record(src = "45 46 47 48")
-
 
 
 | fieldsAdd parse(src, "LONG:result"),
 
 
-
 value = parse(src, "LONG:result"),
-
 
 
 parse(src, "LONG:field1 ' ' LONG:field2")
@@ -944,17 +863,13 @@ The data type of the returned value is `array`.
 data record(src = "1 2"),
 
 
-
 record(src = "45 46 47 48")
-
 
 
 | fieldsAdd parseAll(src, "LONG:result"),
 
 
-
 value = parseAll(src, "LONG:result"),
-
 
 
 parseAll(src, "LONG:field1 ' ' LONG:field2")
@@ -993,21 +908,16 @@ In this example, we extract the punctuation characters from each input string.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language"),
-
 
 
 record(content = "${placeholder}")
 
 
-
 | fieldsAdd punctuation(content),
 
 
-
 punctuation(content, count: 2),
-
 
 
 punctuation(content, count: 2, withSpace: true)
@@ -1039,13 +949,10 @@ The data type of the returned value is `string`.
 data record(content = "DQL 2019-08-01 09:30:00"),
 
 
-
 record(content = "Dynatrace Query L4nguage")
 
 
-
 | fieldsAdd replacePattern(content, "TIME", "is awesome!"),
-
 
 
 replacePattern(content, "LONG", "a")
@@ -1082,17 +989,13 @@ The data type of the returned value is `string`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language"),
-
 
 
 record(content = "abcabca")
 
 
-
 | fieldsAdd replaceString(content, "awesome", "simple"),
-
 
 
 replaceString(content, "abca", "xyz")
@@ -1124,17 +1027,13 @@ The data type of the returned value is `array`.
 data record(content = "one $1 two $4 three"),
 
 
-
 record(content = "foo $1000 bar"),
-
 
 
 record(content = "no separator"),
 
 
-
 record(content = "")
-
 
 
 | fieldsAdd splitByPattern(content, " ' $' LONG ' ' ")
@@ -1186,21 +1085,16 @@ The data type of the returned value is `array`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd splitString(content, " "),
 
 
-
 splitString(content, "is"),
 
 
-
 splitString(content, ""),
-
 
 
 splitString(content, "XYZ")
@@ -1232,13 +1126,10 @@ The data type of the returned value is `boolean`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
 
 
-
 | fieldsAdd startsWith(content, "D"),
-
 
 
 startsWith(content, "dql", caseSensitive: false)
@@ -1274,13 +1165,10 @@ The data type of the returned value is `long`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language"),
 
 
-
 record(content = "ðâð¦º")
-
 
 
 | fieldsAdd stringLength(content)
@@ -1324,21 +1212,16 @@ The data type of the returned value is `string`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd substring(content, from: 4),
 
 
-
 substring(content, from: -2),
 
 
-
 substring(content, from: 4, to: 9),
-
 
 
 substring(content, from: -42, to: 42)
@@ -1370,9 +1253,7 @@ The data type of the returned value is `string`.
 data record(content = " DQL is awesome!"),
 
 
-
 record(content = " Dynatrace Query Language ")
-
 
 
 | fieldsAdd trim(content)
@@ -1418,7 +1299,6 @@ The data type of the returned value is `string`.
 data record(content = """"foo\x40bar\u002ecom""")
 
 
-
 | fieldsAdd unescape(content)
 ```
 
@@ -1452,9 +1332,7 @@ The data type of the returned value is `string`.
 data record(content = "DQL is &lt;bold&gt;awesome&lt;/bold&gt;!"),
 
 
-
 record(content = "&lt;a href=&quot;https://www.dynatrace.com/platform/grail&quot;&gt;Dynatrace Query Language&lt;/a&gt;")
-
 
 
 | fieldsAdd unescapeHtml(content)
@@ -1486,9 +1364,7 @@ The data type of the returned value is `string`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd upper(content)

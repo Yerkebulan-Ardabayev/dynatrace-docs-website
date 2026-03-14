@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:30:11.553276
 
 # Мониторинг Azure Automation Account
 
-# Мониторинг Azure Automation Account
 
 * Latest Dynatrace
 * How-to guide

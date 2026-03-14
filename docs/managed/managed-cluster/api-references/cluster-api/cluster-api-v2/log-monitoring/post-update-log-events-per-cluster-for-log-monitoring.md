@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Update log events per cluster for Log Monitoring
 
-# Update log events per cluster for Log Monitoring
 
 * Published Oct 14, 2021
 
@@ -47,9 +46,7 @@ The request doesn't provide any configurable parameters.
 {
 
 
-
 "limit": 1
-
 
 
 }
@@ -65,9 +62,7 @@ In this example, you increase the log events ingest limit to `54236` log events 
 curl -X POST "https://myManaged.cluster.com/api/cluster/v2/logMonitoring/refreshLogEventsLimit"
 
 
-
 -H "accept: application/json; charset=utf-8"
-
 
 
 -H "Authorization: Api-Token abc"
@@ -85,9 +80,7 @@ https://myManaged.cluster.com/api/cluster/v2/logMonitoring/refreshLogEventsLimit
 {
 
 
-
 "limit": 54236
-
 
 
 }

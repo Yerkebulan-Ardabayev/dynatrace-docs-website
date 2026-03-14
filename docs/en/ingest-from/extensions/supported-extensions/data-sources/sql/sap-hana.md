@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:51.339235
 
 # Manage SAP Hana Database extensions
 
-# Manage SAP Hana Database extensions
 
 * Latest Dynatrace
 * How-to guide

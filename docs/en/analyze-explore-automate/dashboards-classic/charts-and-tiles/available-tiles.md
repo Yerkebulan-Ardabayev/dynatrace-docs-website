@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:29:13.586579
 
 # Available tiles
 
-# Available tiles
 
 * Reference
 * 33-min read

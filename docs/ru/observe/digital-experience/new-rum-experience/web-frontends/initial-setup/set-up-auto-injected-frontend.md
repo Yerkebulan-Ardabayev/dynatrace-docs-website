@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:29:01.569167
 
 # Настройка автоматически внедряемого фронтенда в New RUM Experience
 
-# Настройка автоматически внедряемого фронтенда в New RUM Experience
 
 * Latest Dynatrace
 * How-to guide

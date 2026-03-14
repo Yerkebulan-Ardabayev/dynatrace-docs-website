@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:25.224798
 
 # Configure data storage and retention for Distributed Tracing
 
-# Configure data storage and retention for Distributed Tracing
 
 * Latest Dynatrace
 * How-to guide

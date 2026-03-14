@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:22.153555
 
 # Syslog ingestion with ActiveGate
 
-# Syslog ingestion with ActiveGate
 
 * Latest Dynatrace
 * How-to guide
@@ -70,437 +69,328 @@ To enable syslog ingestion
    receivers:
 
 
-
    syslog/udp:
-
 
 
    udp:
 
 
-
    listen_address: '0.0.0.0:514'
-
 
 
    add_attributes: true
 
 
-
    protocol: rfc5424
-
 
 
    operators:
 
 
-
    - type: syslog_parser
 
 
-
    protocol: rfc5424
-
 
 
    syslog/tcp:
 
 
-
    tcp:
-
 
 
    listen_address: '0.0.0.0:601'
 
 
-
    add_attributes: true
 
 
-
    protocol: rfc5424
-
 
 
    operators:
 
 
-
    - type: syslog_parser
-
 
 
    protocol: rfc5424
 
 
-
    #  syslog/tcp_tls:
-
 
 
    #    tcp:
 
 
-
    #      listen_address: "0.0.0.0:6514"
-
 
 
    #      tls:
 
 
-
    #        cert_file: "/absolute/path/to/server.crt"
-
 
 
    #        key_file: "/absolute/path/to/server.key"
 
 
-
    #    protocol: rfc5424
-
 
 
    #    operators:
 
 
-
    #      - type: syslog_parser
-
 
 
    #        protocol: rfc5424
 
 
-
    #DO.NOT.MODIFY
-
 
 
    exporters:
 
 
-
    otlp_http/syslog: ${file:syslogendpoint.yaml}
-
 
 
    processors:
 
 
-
    batch:
-
 
 
    send_batch_size: 512
 
 
-
    send_batch_max_size: 1024
-
 
 
    transform:
 
 
-
    log_statements:
-
 
 
    - context: log
 
 
-
    statements:
-
 
 
    - set(body, attributes["message"])
 
 
-
    attributes:
-
 
 
    actions:
 
 
-
    - key: net.host.name
 
 
-
    action: delete
-
 
 
    - key: net.peer.name
 
 
-
    action: delete
-
 
 
    - key: net.peer.port
 
 
-
    action: delete
-
 
 
    - key: net.transport
 
 
-
    action: delete
-
 
 
    - key: net.host.ip
 
 
-
    action: delete
-
 
 
    - key: dt.ingest.port
 
 
-
    from_attribute: net.host.port
 
 
-
    action: upsert
-
 
 
    - key: dt.ingest.source.ip
 
 
-
    from_attribute: net.peer.ip
 
 
-
    action: upsert
-
 
 
    - key: net.peer.ip
 
 
-
    action: delete
-
 
 
    - key: net.host.port
 
 
-
    action: delete
-
 
 
    - key: syslog.hostname
 
 
-
    from_attribute: hostname
 
 
-
    action: upsert
-
 
 
    - key: hostname
 
 
-
    action: delete
-
 
 
    - key: syslog.facility
 
 
-
    from_attribute: facility
 
 
-
    action: upsert
-
 
 
    - key: facility
 
 
-
    action: delete
-
 
 
    - key: syslog.priority
 
 
-
    from_attribute: priority
 
 
-
    action: upsert
-
 
 
    - key: priority
 
 
-
    action: delete
-
 
 
    - key: syslog.proc_id
 
 
-
    from_attribute: proc_id
 
 
-
    action: upsert
-
 
 
    - key: proc_id
 
 
-
    action: delete
-
 
 
    - key: syslog.version
 
 
-
    from_attribute: version
 
 
-
    action: upsert
-
 
 
    - key: version
 
 
-
    action: delete
-
 
 
    - key: syslog.appname
 
 
-
    from_attribute: appname
-
 
 
    action: upsert
 
 
-
    - key: appname
 
 
-
    action: delete
-
 
 
    - key: message
 
 
-
    action: delete
-
 
 
    service:
 
 
-
    telemetry:
-
 
 
    metrics:
 
 
-
    level: none
-
 
 
    pipelines:
 
 
-
    logs/udp:
-
 
 
    receivers: [syslog/udp]
 
 
-
    processors: [transform, attributes, batch]
 
 
-
    exporters: [otlp_http/syslog]
-
 
 
    logs/tcp:
 
 
-
    receivers: [syslog/tcp]
-
 
 
    processors: [transform, attributes, batch]
 
 
-
    exporters: [otlp_http/syslog]
-
 
 
    #    logs/tcp_tls:
 
 
-
    #      receivers: [syslog/tcp_tls]
 
 
-
    #      processors: [transform, attributes, batch]
-
 
 
    #      exporters: [otlp_http/syslog]
@@ -546,65 +436,49 @@ To enable syslog ingestion
    [otelSyslog][otelSyslog][37448][err]LogRecord #3
 
 
-
    [otelSyslog][oteiSyslog][37448][err]ObservedTimestamp: 2024-05-06 @9:52:10.6748723 +8000 UTC
-
 
 
    [otelSyslog][otelSyslog][37448][err]Timestamp: 2624-05-@6 11:52:16 +90e0 UTC
 
 
-
    [otelSyslog][otelsyslog][37448][err]SeverityText: info
-
 
 
    [otelSyslog][otelSyslog][37443][err]SeverityNumber: Info(9)
 
 
-
    [otelSyslog][otelSyslog][37448][err]Body: Str(<30>May 6 11:52:10 SOME-HOST systemd[1]: Finished    Load Kernel Module fuse.)
-
 
 
    [otelSyslog][otelSyslog][37448][err]Attributes:
 
 
-
    [otelSyslog][otelSyslog][37448][err]    -> priority: Int(3)
-
 
 
    [otelSyslog][otelSyslog][37448][err]    -> facility: Int(3)
 
 
-
    [otelSyslog][otelSyslog][37448][err]    -> appname: Str(systemd)
-
 
 
    [otelSyslog][otelSyslog][37448][err]    -> proc_id: Str(1)
 
 
-
    [otelSyslog][otelSyslog][37443][err]    -> log: Map({âsource": âsyslog"})
-
 
 
    [otelSyslog][otelSyslog][37443][err]    -> hostname: Str(SOME-HOST)
 
 
-
    [otelSyslog][otelSyslog][37443][err]    -> message: Str(Finished Load Kernel Module fuse.)
-
 
 
    [otelSyslog][otelSyslog][37448][err]Trace ID:
 
 
-
    [otelSyslog][otelSyslog][37448][err]Span ID:
-
 
 
    [otelSyslog][otelSyslog][37443][err]Flags: 0
@@ -632,21 +506,16 @@ To mask a credit card number, add the following configuration under the [process
 processors:
 
 
-
 transform/redact_credict_cart:
-
 
 
 log_statements:
 
 
-
 - context: log
 
 
-
 statements:
-
 
 
 - replace_pattern(body, "\\d{15,16}", "REDACTED")
@@ -662,113 +531,85 @@ You can also modify the default syslog receiver configuration if you want to gro
 receivers:
 
 
-
 syslog/f5:
 
 
-
 tcp:
-
 
 
 listen_address: "0.0.0.0:54526"
 
 
-
 protocol: rfc5424
-
 
 
 operators:
 
 
-
 - type: add
-
 
 
 field: attributes.log.source
 
 
-
 value: syslog
 
 
-
 - type: add
-
 
 
 field: attributes.dt.ip_addresses
 
 
-
 value: "1xx.xx.xx.xx1"
 
 
-
 - type: add
-
 
 
 field: attributes.instance.name
 
 
-
 value: "ip-1xx-xx-x-xx9.ec2.internal"
-
 
 
 - type: add
 
 
-
 field: attributes.device.type
-
 
 
 value: "f5bigip"
 
 
-
 syslog/host:
-
 
 
 tcp:
 
 
-
 listen_address: "0.0.0.0:54527"
-
 
 
 protocol: rfc5424
 
 
-
 operators:
 
 
-
 - type: add
-
 
 
 field: attributes.log.source
 
 
-
 value: syslog
-
 
 
 - type: add
 
 
-
 field: attributes.device.type
-
 
 
 value: "ubuntu-syslog"
@@ -785,17 +626,13 @@ For example, if you can read the `net.peer.port` attribute, its value is used fo
 attributes:
 
 
-
 actions:
-
 
 
 - key: custom.remote.port
 
 
-
 from_attribute: net.peer.port
-
 
 
 action: upsert
@@ -819,13 +656,10 @@ Add the following filter to the `syslog.yaml` file. For details, see the **Edit 
 filter/mail:
 
 
-
 logs:
 
 
-
 log_record:
-
 
 
 - attributes["syslog.facility"] == 21

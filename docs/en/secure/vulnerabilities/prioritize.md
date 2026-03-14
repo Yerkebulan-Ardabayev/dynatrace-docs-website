@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:48.320869
 
 # Prioritize vulnerabilities
 
-# Prioritize vulnerabilities
 
 * Latest Dynatrace
 * How-to guide

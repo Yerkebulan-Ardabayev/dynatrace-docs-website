@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Davis Security Advisor API
 
-# Davis Security Advisor API
 
 * Reference
 * Updated on May 03, 2022
@@ -109,165 +108,125 @@ A list of constraint violations
 {
 
 
-
 "advices": [
 
 
-
 {
-
 
 
 "adviceType": "UPGRADE",
 
 
-
 "critical": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "high": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "low": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "medium": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "name": "string",
 
 
-
 "none": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "technology": "DOTNET",
 
 
-
 "vulnerableComponent": "string"
-
 
 
 }
 
 
-
 ],
-
 
 
 "nextPageKey": "AQAAABQBAAAABQ==",
 
 
-
 "pageSize": 1,
-
 
 
 "totalCount": 1
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }

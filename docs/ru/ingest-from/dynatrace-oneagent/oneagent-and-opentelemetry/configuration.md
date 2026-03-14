@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:54.102654
 
 # Включение OpenTelemetry Span Sensor для OneAgent
 
-# Включение OpenTelemetry Span Sensor для OneAgent
 
 * Latest Dynatrace
 * Руководство

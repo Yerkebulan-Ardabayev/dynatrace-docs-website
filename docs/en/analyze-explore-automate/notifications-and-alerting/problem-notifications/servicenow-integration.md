@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:41.657451
 
 # Send Dynatrace notifications to ServiceNow
 
-# Send Dynatrace notifications to ServiceNow
 
 * Classic
 * 9-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:20.716773
 
 # Log monitoring with AWS log forwarder
 
-# Log monitoring with AWS log forwarder
 
 * Classic
 * How-to guide
@@ -83,157 +82,118 @@ Permissions policy for deployment
 {
 
 
-
 "Version": "2012-10-17",
-
 
 
 "Statement": [
 
 
-
 {
-
 
 
 "Effect": "Allow",
 
 
-
 "Action": [
-
 
 
 "cloudformation:CreateChangeSet",
 
 
-
 "cloudformation:ExecuteChangeSet",
-
 
 
 "cloudformation:DescribeChangeSet",
 
 
-
 "cloudformation:DescribeStackEvents",
-
 
 
 "cloudformation:DescribeStacks",
 
 
-
 "cloudformation:GetTemplateSummary",
-
 
 
 "ec2:DescribeImages",
 
 
-
 "s3:CreateBucket",
-
 
 
 "s3:PutLifecycleConfiguration",
 
 
-
 "s3:PutBucketPublicAccessBlock",
-
 
 
 "iam:GetRole",
 
 
-
 "iam:CreateRole",
-
 
 
 "iam:AttachRolePolicy",
 
 
-
 "iam:PutRolePolicy",
-
 
 
 "iam:GetRolePolicy",
 
 
-
 "iam:PassRole",
-
 
 
 "lambda:CreateFunction",
 
 
-
 "lambda:UpdateFunctionCode",
-
 
 
 "lambda:GetFunction",
 
 
-
 "lambda:GetFunctionCodeSigningConfig",
-
 
 
 "cloudwatch:PutDashboard",
 
 
-
 "cloudwatch:GetDashboard",
-
 
 
 "firehose:DescribeDeliveryStream",
 
 
-
 "firehose:CreateDeliveryStream",
-
 
 
 "firehose:ListTagsForDeliveryStream",
 
 
-
 "logs:DeleteSubscriptionFilter",
-
 
 
 "logs:DescribeLogGroups",
 
 
-
 "logs:PutSubscriptionFilter",
-
 
 
 "ssm:GetParameters"
 
 
-
 ],
-
 
 
 "Resource": "*"
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -251,9 +211,7 @@ Permissions policy for deployment
    TARGET_URL=<your_environment_URL>
 
 
-
    TARGET_API_TOKEN=<your_API_token>
-
 
 
    STACK_NAME=dynatrace-aws-logs
@@ -264,9 +222,7 @@ Permissions policy for deployment
    wget -O dynatrace-aws-log-forwarder.zip https://github.com/dynatrace-oss/dynatrace-aws-log-forwarder/releases/latest/download/dynatrace-aws-log-forwarder.zip \
 
 
-
    && unzip -qo dynatrace-aws-log-forwarder.zip \
-
 
 
    && ./dynatrace-aws-logs.sh deploy --target-url $TARGET_URL --target-api-token $TARGET_API_TOKEN --stack-name $STACK_NAME --require-valid-certificate true
@@ -334,7 +290,6 @@ Consult the [Subscription table](#subscription) for the commands below when repl
 
 ```
 dynatrace-aws-logs.sh subscribe {--log-groups <your_log_group_list> | --log-groups-from-file <your_file_name>}
-
 
 
 [--stack-name <your_stack_name>] [--filter-pattern <your_filter_pattern>] [--role-arn ROLE_ARN] [--firehose-arn FIREHOSE_ARN]
@@ -417,157 +372,118 @@ Permissions policy for deployment with an existing ActiveGate
 {
 
 
-
 "Version": "2012-10-17",
-
 
 
 "Statement": [
 
 
-
 {
-
 
 
 "Effect": "Allow",
 
 
-
 "Action": [
-
 
 
 "cloudformation:CreateChangeSet",
 
 
-
 "cloudformation:ExecuteChangeSet",
-
 
 
 "cloudformation:DescribeChangeSet",
 
 
-
 "cloudformation:DescribeStackEvents",
-
 
 
 "cloudformation:DescribeStacks",
 
 
-
 "cloudformation:GetTemplateSummary",
-
 
 
 "ec2:DescribeImages",
 
 
-
 "s3:CreateBucket",
-
 
 
 "s3:PutLifecycleConfiguration",
 
 
-
 "s3:PutBucketPublicAccessBlock",
-
 
 
 "iam:GetRole",
 
 
-
 "iam:CreateRole",
-
 
 
 "iam:AttachRolePolicy",
 
 
-
 "iam:PutRolePolicy",
-
 
 
 "iam:GetRolePolicy",
 
 
-
 "iam:PassRole",
-
 
 
 "lambda:CreateFunction",
 
 
-
 "lambda:UpdateFunctionCode",
-
 
 
 "lambda:GetFunction",
 
 
-
 "lambda:GetFunctionCodeSigningConfig",
-
 
 
 "cloudwatch:PutDashboard",
 
 
-
 "cloudwatch:GetDashboard",
-
 
 
 "firehose:DescribeDeliveryStream",
 
 
-
 "firehose:CreateDeliveryStream",
-
 
 
 "firehose:ListTagsForDeliveryStream",
 
 
-
 "logs:DeleteSubscriptionFilter",
-
 
 
 "logs:DescribeLogGroups",
 
 
-
 "logs:PutSubscriptionFilter",
-
 
 
 "ssm:GetParameters"
 
 
-
 ],
-
 
 
 "Resource": "*"
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -584,9 +500,7 @@ Permissions policy for deployment with an existing ActiveGate
    TARGET_URL=<your_API_URL>
 
 
-
    TARGET_API_TOKEN=<your_API_token>
-
 
 
    REQUIRE_VALID_CERTIFICATE=false
@@ -597,9 +511,7 @@ Permissions policy for deployment with an existing ActiveGate
    wget -O dynatrace-aws-log-forwarder.zip https://github.com/dynatrace-oss/dynatrace-aws-log-forwarder/releases/latest/download/dynatrace-aws-log-forwarder.zip \
 
 
-
    && unzip -qo dynatrace-aws-log-forwarder.zip \
-
 
 
    && ./dynatrace-aws-logs.sh deploy --target-url $TARGET_URL --target-api-token $TARGET_API_TOKEN --require-valid-certificate $REQUIRE_VALID_CERTIFICATE

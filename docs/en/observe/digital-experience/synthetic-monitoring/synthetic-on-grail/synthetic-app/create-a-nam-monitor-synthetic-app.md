@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:33:12.512338
 
 # Create a NAM monitor
 
-# Create a NAM monitor
 
 * Latest Dynatrace
 * How-to guide

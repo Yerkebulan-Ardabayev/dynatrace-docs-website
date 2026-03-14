@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:24.238689
 
 # Stream logs to Dynatrace with Fluentd on Kubernetes
 
-# Stream logs to Dynatrace with Fluentd on Kubernetes
 
 * Latest Dynatrace
 * Explanation

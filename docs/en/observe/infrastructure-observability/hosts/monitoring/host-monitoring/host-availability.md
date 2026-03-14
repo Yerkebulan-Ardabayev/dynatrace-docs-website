@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:41.098256
 
 # Host availability
 
-# Host availability
 
 * Classic
 * How-to guide

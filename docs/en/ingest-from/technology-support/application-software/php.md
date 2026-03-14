@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:12.292037
 
 # PHP
 
-# PHP
 
 * Latest Dynatrace
 * Reference

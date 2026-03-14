@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:41.888368
 
 # Просмотр логов (Logs Classic)
 
-# Просмотр логов (Logs Classic)
 
 * Classic
 * Пояснение

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:46.417540
 
 # Distributed Tracing
 
-# Distributed Tracing
 
 * Последняя версия Dynatrace
 * Приложение

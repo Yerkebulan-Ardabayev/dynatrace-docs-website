@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:54.871292
 
 # Метрики Istio/Envoy proxy
 
-# Метрики Istio/Envoy proxy
 
 * Classic
 * 1-min read

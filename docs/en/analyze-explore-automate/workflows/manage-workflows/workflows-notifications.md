@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:34.815912
 
 # Get notified about workflow changes
 
-# Get notified about workflow changes
 
 * Latest Dynatrace
 * How-to guide

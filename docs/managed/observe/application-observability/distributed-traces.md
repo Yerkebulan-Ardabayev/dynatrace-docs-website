@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Distributed Traces
 
-# Distributed Traces
 
 * Overview
 * 1-min read

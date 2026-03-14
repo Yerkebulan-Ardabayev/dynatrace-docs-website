@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Set up Dynatrace on Docker
 
-# Set up Dynatrace on Docker
 
 * Latest Dynatrace
 * 1-min read

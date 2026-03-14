@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:28:36.205318
 
 # Grant access to entities with security context
 
-# Grant access to entities with security context
 
 * Latest Dynatrace
 * Tutorial
@@ -103,9 +102,7 @@ For that configuration, the extension sends metric data points using the Metrics
 postgres.activity.idle,port=5432,dt.security_context="TeamA",dt.entity.sql:postgres_instance="CUSTOM_DEVICE-..." 42
 
 
-
 postgres.activity.idle,port=5432,dt.security_context="TeamA",dt.entity.sql:postgres_instance="CUSTOM_DEVICE-..." 45
-
 
 
 postgres.activity.idle,port=5432,dt.security_context="TeamA",dt.entity.sql:postgres_instance="CUSTOM_DEVICE-..." 43
@@ -142,13 +139,10 @@ For example, the following policy grants access to data with the security contex
 ALLOW
 
 
-
 storage:entities:read
 
 
-
 WHERE
-
 
 
 storage:dt.security_context = "mySecurityContext";

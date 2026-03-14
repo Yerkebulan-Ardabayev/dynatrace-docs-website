@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:17.198712
 
 # Add a service-level objective (SLO) tile to a dashboard
 
-# Add a service-level objective (SLO) tile to a dashboard
 
 * Latest Dynatrace
 * How-to guide

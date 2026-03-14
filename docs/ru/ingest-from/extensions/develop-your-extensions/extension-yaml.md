@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:32.192927
 
 # YAML-файл расширения
 
-# YAML-файл расширения
 
 * Последняя версия Dynatrace
 * Руководство
@@ -37,9 +36,7 @@ scraped: 2026-03-06T21:35:32.192927
    curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/schemas" \
 
 
-
    -H "accept: application/json; charset=utf-8" \
-
 
 
    -H "Authorization: Api-Token {api-token}"
@@ -51,21 +48,16 @@ scraped: 2026-03-06T21:35:32.192927
    {
 
 
-
    "versions": [
-
 
 
    "1.213.0",
 
 
-
    "1.215.0",
 
 
-
    ]
-
 
 
    }
@@ -77,9 +69,7 @@ scraped: 2026-03-06T21:35:32.192927
    curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/schemas/{dynatrace-version}" \
 
 
-
    -H "accept: application/json; charset=utf-8" \
-
 
 
    -H "Authorization: Api-Token {api-token}"
@@ -91,45 +81,34 @@ scraped: 2026-03-06T21:35:32.192927
    {
 
 
-
    "files": [
-
 
 
    "metric.metadata.schema.json",
 
 
-
    "topology.schema.json",
-
 
 
    "generic.types.schema.json",
 
 
-
    "generic.relationships.schema.json",
-
 
 
    "snmp.schema.json",
 
 
-
    "metric.schema.json",
-
 
 
    "wmi.schema.json",
 
 
-
    "extension.schema.json"
 
 
-
    ]
-
 
 
    }
@@ -140,9 +119,7 @@ scraped: 2026-03-06T21:35:32.192927
    curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/schemas/1.215/extension.schema.json" \
 
 
-
    -H "accept: application/json; charset=utf-8" \
-
 
 
    -H "Authorization: Api-Token {api-token}"
@@ -173,93 +150,70 @@ YAML-файл расширения начинается с базовой инф
 name: com.dynatrace.cisco-catalyst-health
 
 
-
 version: 1.0.0
-
 
 
 minDynatraceVersion: "1.238"
 
 
-
 author:
-
 
 
 name: Joe Doe
 
 
-
 snmp:
-
 
 
 - group: Device health
 
 
-
 interval:
-
 
 
 minutes: 1
 
 
-
 dimensions:
-
 
 
 - key: device.name
 
 
-
 value: oid:1.3.6.1.2.1.1.5.0
-
 
 
 - key: device.contact
 
 
-
 value: oid:1.3.6.1.2.1.1.4.0
-
 
 
 subgroups:
 
 
-
 - subgroup: Device health (Temperature)
-
 
 
 table: true
 
 
-
 dimensions:
-
 
 
 - key: envmon.temperature.desc
 
 
-
 value: oid:1.3.6.1.4.1.9.9.13.1.3.1.2
-
 
 
 metrics:
 
 
-
 - key: envmon.temperature.value
 
 
-
 value: oid:1.3.6.1.4.1.9.9.13.1.3.1.3
-
 
 
 type: gauge
@@ -275,7 +229,6 @@ type: gauge
 
 ```
 interval:
-
 
 
 minutes: 5
@@ -316,25 +269,19 @@ interval: 5m
 vars:
 
 
-
 - id: ifNameFilter
-
 
 
 displayName: Pattern matching interfaces for which metrics should be queried
 
 
-
 type: text
-
 
 
 - id: ext.activationtag
 
 
-
 displayName: Extension activation tag
-
 
 
 type: text
@@ -348,29 +295,22 @@ type: text
   - id: textVariable
 
 
-
   type: text
-
 
 
   displayName: Variable
 
 
-
   description: "Detailed information about this variable"
-
 
 
   maxLength: 2000
 
 
-
   required: true
 
 
-
   defaultValue: "#ff1"
-
 
 
   pattern: ^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$
@@ -387,37 +327,28 @@ type: text
   - id: multilineVariable
 
 
-
   type: multiline-text
-
 
 
   displayName: Variable
 
 
-
   description: Detailed information about this variable
-
 
 
   maxLength: 2000
 
 
-
   required: true
-
 
 
   defaultValue: |
 
 
-
   Pipe
 
 
-
   style
-
 
 
   multiline
@@ -432,41 +363,31 @@ type: text
   - id: Colors
 
 
-
   type: enum
-
 
 
   defaultValue: green
 
 
-
   description: Choose your favorite color!
-
 
 
   availableValues:
 
 
-
   - value: red
-
 
 
   displayName: Red as a rose
 
 
-
   - value: green
-
 
 
   displayName: Green as grass
 
 
-
   - value: white
-
 
 
   displayName: White as snow

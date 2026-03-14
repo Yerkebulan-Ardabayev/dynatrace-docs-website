@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:55.514900
 
 # Ingest Akamai security logs and events
 
-# Ingest Akamai security logs and events
 
 * Latest Dynatrace
 * Extension
@@ -65,7 +64,6 @@ See below for the [Akamai](#akamai) and [Dynatrace](#dt) requirements.
      fetch logs
 
 
-
      | filter log.source=="Akamai SIEM"
      ```
    * For finding events (if you configured the extension to extract detection events):
@@ -74,9 +72,7 @@ See below for the [Akamai](#akamai) and [Dynatrace](#dt) requirements.
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
-
 
 
      | filter event.provider=="Akamai"

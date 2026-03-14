@@ -14,7 +14,6 @@ scraped: 2026-03-06T21:27:03.952660
 
 # Data Explorer FAQ
 
-# Data Explorer FAQ
 
 * Classic
 * 1-min read
@@ -80,7 +79,6 @@ scraped: 2026-03-06T21:19:57.272076
 
 # Data Explorer
 
-# Data Explorer
 
 * Classic
 * 7-min read
@@ -270,7 +268,6 @@ Use these commands in the query editor to select query components and set values
 ### Visualization
 
 
-
 The default visualization is a graph. To change the visualization, select one from the list in the upper-left corner of your query definition.
 
 ![Select visualization](https://dt-cdn.net/images/visualization-select-285-c06615cee7.png)
@@ -401,7 +398,6 @@ You may notice differences between baselines in Data Explorer and metric events.
 For details on seasonal baselining, see [Seasonal baseline](../ru/dynatrace-intelligence/reference/ai-models/seasonal-baseline.md "How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.").
 
 ### Baselines FAQ
-
 
 
 How is the baseline calculated?
@@ -576,7 +572,6 @@ For example:
 * `CPU usage % +1 (May 24, 2022, 13_19 - 13_49).csv`âcontains results from metric `CPU usage %` and one more metric, run on May 24, 2022, for a half-hour timeframe of 13:19-13:49.
 
 ### Use in API
-
 
 
 After you run a query, you have the option to copy the request for use in an API request.

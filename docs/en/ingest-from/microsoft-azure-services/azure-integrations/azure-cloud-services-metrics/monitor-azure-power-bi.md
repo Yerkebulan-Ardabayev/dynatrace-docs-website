@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:28:24.618299
 
 # Azure Power BI Embedded monitoring
 
-# Azure Power BI Embedded monitoring
 
 * Latest Dynatrace
 * How-to guide

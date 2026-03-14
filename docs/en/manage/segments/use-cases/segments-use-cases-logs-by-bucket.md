@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:17.215643
 
 # Segment logs by bucket
 
-# Segment logs by bucket
 
 * Latest Dynatrace
 * Tutorial
@@ -85,13 +84,10 @@ Adding a variable to the segment to dynamically filter for many log buckets inst
    fetch dt.system.buckets
 
 
-
    | filter dt.system.table == "logs"
 
 
-
    | fields bucket=name
-
 
 
    | sort bucket

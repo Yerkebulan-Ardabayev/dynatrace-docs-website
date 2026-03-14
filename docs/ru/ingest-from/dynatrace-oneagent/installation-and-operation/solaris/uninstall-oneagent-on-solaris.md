@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:14.876301
 
 # Удаление OneAgent на Solaris
 
-# Удаление OneAgent на Solaris
 
 * Последняя версия Dynatrace
 * Практическое руководство

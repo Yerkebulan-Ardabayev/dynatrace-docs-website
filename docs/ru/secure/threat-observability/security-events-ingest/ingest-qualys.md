@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:53.759111
 
 # Импорт результатов анализа уязвимостей, событий сканирования и журналов аудита Qualys
 
-# Импорт результатов анализа уязвимостей, событий сканирования и журналов аудита Qualys
 
 * Latest Dynatrace
 * Расширение
@@ -74,7 +73,6 @@ scraped: 2026-03-06T21:23:53.759111
      fetch logs
 
 
-
      | filter log.source=="Qualys"
      ```
    * Для событий обнаружения:
@@ -83,13 +81,10 @@ scraped: 2026-03-06T21:23:53.759111
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Qualys"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -100,13 +95,10 @@ scraped: 2026-03-06T21:23:53.759111
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Qualys"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"

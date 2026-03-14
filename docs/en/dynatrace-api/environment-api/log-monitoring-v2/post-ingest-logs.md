@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:35:09.361330
 
 # Log Monitoring API v2 - POST ingest logs
 
-# Log Monitoring API v2 - POST ingest logs
 
 * Reference
 * Published May 05, 2021
@@ -65,7 +64,6 @@ A set of one or more log events:
   { "message": "1" }
 
 
-
   { "message": "2" }
   ```
 
@@ -81,153 +79,115 @@ This is a model of the request body, showing the possible elements. It has to be
 [
 
 
-
 {
-
 
 
 "content": "Exception: Custom error log sent via Generic Log Ingest",
 
 
-
 "log.source": "/var/log/syslog",
-
 
 
 "timestamp": "2025-12-17T22:12:31.0000",
 
 
-
 "severity": "error",
-
 
 
 "custom.attribute": "attribute value",
 
 
-
 "complex": {
-
 
 
 "key-1": "attribute value-1",
 
 
-
 "key-2": 234.2
 
 
-
 },
-
 
 
 "array.attr": [
 
 
-
 "value-1",
 
 
-
 1,
-
 
 
 null,
 
 
-
 true,
-
 
 
 [
 
 
-
 1,
-
 
 
 2,
 
 
-
 3
-
 
 
 ],
 
 
-
 {
-
 
 
 "key": "value"
 
 
-
 }
-
 
 
 ]
 
 
-
 },
 
 
-
 {
-
 
 
 "message": "User1 logged in successfully",
 
 
-
 "log.source": "/var/log/syslog",
-
 
 
 "@timestamp": "1765281600"
 
 
-
 },
 
 
-
 {
-
 
 
 "payload": "Exception: Custom error log sent via Generic Log Ingest",
 
 
-
 "log.source": "/var/log/syslog"
-
 
 
 },
 
 
-
 {
-
 
 
 "log": "My log message without additional attributes"
 
 
-
 }
-
 
 
 ]
@@ -299,21 +259,16 @@ A list of constraint violations
 {
 
 
-
 "details": {
-
 
 
 "code": 1,
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -321,55 +276,42 @@ A list of constraint violations
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }

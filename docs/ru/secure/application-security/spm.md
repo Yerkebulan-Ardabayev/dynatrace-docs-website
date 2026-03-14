@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:09.176526
 
 # Security Posture Management
 
-# Security Posture Management
 
 * Последняя Dynatrace
 * Практическое руководство

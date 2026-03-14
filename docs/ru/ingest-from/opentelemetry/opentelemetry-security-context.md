@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:34.936360
 
 # Настройка разрешений Grail для OpenTelemetry
 
-# Настройка разрешений Grail для OpenTelemetry
 
 * Latest Dynatrace
 * Практическое руководство

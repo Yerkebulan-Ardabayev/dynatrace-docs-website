@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:42.937574
 
 # Azure Database for MySQL monitoring
 
-# Azure Database for MySQL monitoring
 
 * Latest Dynatrace
 * How-to guide

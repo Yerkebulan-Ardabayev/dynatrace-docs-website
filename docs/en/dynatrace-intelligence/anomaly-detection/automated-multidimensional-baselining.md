@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:49.775801
 
 # Automated multi-dimensional baselining
 
-# Automated multi-dimensional baselining
 
 * Latest Dynatrace
 * Explanation

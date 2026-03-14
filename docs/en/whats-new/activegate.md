@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:30.363341
 
 # ActiveGate release notes
 
-# ActiveGate release notes
 
 * Latest Dynatrace
 * Release notes

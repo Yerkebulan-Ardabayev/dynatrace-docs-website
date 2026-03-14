@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:19:57.817186
 
 # Azure Batch monitoring
 
-# Azure Batch monitoring
 
 * Latest Dynatrace
 * How-to guide

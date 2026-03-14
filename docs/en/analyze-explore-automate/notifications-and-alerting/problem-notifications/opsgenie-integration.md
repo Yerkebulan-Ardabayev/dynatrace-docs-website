@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:46.755460
 
 # Send Dynatrace notifications to Opsgenie
 
-# Send Dynatrace notifications to Opsgenie
 
 * Classic
 * 2-min read

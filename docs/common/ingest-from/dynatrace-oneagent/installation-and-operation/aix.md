@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # AIX
 
-# AIX
 
 * Latest Dynatrace
 * Overview

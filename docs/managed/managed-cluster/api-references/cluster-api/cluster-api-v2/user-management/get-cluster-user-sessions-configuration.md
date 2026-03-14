@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Get cluster user sessions configuration
 
-# Get cluster user sessions configuration
 
 * Published Apr 02, 2020
 
@@ -67,37 +66,28 @@ The configuration of the concurrent sessions policy. Set '0' to disable session 
 {
 
 
-
 "automaticLogoutDto": {
-
 
 
 "logoutInactiveUsersEnabled": true,
 
 
-
 "userInactivityTimeout": 900
-
 
 
 },
 
 
-
 "concurrentSessionPolicyDto": {
-
 
 
 "adminLimit": 1,
 
 
-
 "userLimit": 1
 
 
-
 }
-
 
 
 }
@@ -125,37 +115,28 @@ https://myManaged.cluster.com/api/cluster/v2/clusterConfig/userSessions
 {
 
 
-
 "concurrentSessionPolicyDto": {
-
 
 
 "userLimit": 2,
 
 
-
 "adminLimit": 5
-
 
 
 },
 
 
-
 "automaticLogoutDto": {
-
 
 
 "logoutInactiveUsersEnabled": true,
 
 
-
 "userInactivityTimeout": 900
 
 
-
 }
-
 
 
 }

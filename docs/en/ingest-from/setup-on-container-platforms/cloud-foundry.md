@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:45.746356
 
 # Set up Dynatrace on Cloud Foundry
 
-# Set up Dynatrace on Cloud Foundry
 
 * Latest Dynatrace
 * 1-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:34.058448
 
 # Настройка обнаружения сервисов в Service Detection v2
 
-# Настройка обнаружения сервисов в Service Detection v2
 
 * Classic
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:17:10.782245
 
 # Tags and management zones for Azure integration
 
-# Tags and management zones for Azure integration
 
 * Latest Dynatrace
 * How-to guide

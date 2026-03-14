@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:07.529890
 
 # Vulnerabilities API - GET remediation items
 
-# Vulnerabilities API - GET remediation items
 
 * Reference
 * Updated on May 03, 2022
@@ -182,289 +181,217 @@ A list of constraint violations
 {
 
 
-
 "remediationItems": [
 
 
-
 {
-
 
 
 "assessment": {
 
 
-
 "assessmentAccuracy": "FULL",
-
 
 
 "assessmentAccuracyDetails": {
 
 
-
 "reducedReasons": [
-
 
 
 "LIMITED_AGENT_SUPPORT"
 
 
-
 ]
 
 
-
 },
-
 
 
 "dataAssets": "NOT_AVAILABLE",
 
 
-
 "exposure": "NOT_AVAILABLE",
-
 
 
 "numberOfDataAssets": 1,
 
 
-
 "vulnerableFunctionRestartRequired": true,
-
 
 
 "vulnerableFunctionUsage": "IN_USE",
 
 
-
 "vulnerableFunctionsInUse": [
 
 
-
 {
-
 
 
 "className": "string",
 
 
-
 "filePath": "string",
-
 
 
 "functionName": "string"
 
 
-
 }
 
 
-
 ],
-
 
 
 "vulnerableFunctionsNotAvailable": [
 
 
-
 {}
 
 
-
 ],
-
 
 
 "vulnerableFunctionsNotInUse": [
 
 
-
 {}
-
 
 
 ]
 
 
-
 },
-
 
 
 "entityIds": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "firstAffectedTimestamp": 1,
 
 
-
 "id": "string",
-
 
 
 "muteState": {
 
 
-
 "comment": "string",
 
 
-
 "lastUpdatedTimestamp": 1,
-
 
 
 "muted": true,
 
 
-
 "reason": "AFFECTED",
-
 
 
 "user": "string"
 
 
-
 },
-
 
 
 "name": "string",
 
 
-
 "remediationProgress": {
-
 
 
 "affectedEntities": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "unaffectedEntities": [
 
 
-
 "string"
-
 
 
 ]
 
 
-
 },
-
 
 
 "resolvedTimestamp": 1,
 
 
-
 "trackingLink": {
 
 
-
 "displayName": "string",
-
 
 
 "lastUpdatedTimestamp": 1,
 
 
-
 "url": "string",
-
 
 
 "user": "string"
 
 
-
 },
-
 
 
 "vulnerabilityState": "RESOLVED",
 
 
-
 "vulnerableComponents": [
 
 
-
 {
-
 
 
 "affectedEntities": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "displayName": "string",
 
 
-
 "fileName": "string",
-
 
 
 "id": "string",
 
 
-
 "numberOfAffectedEntities": 1,
-
 
 
 "shortName": "string"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -472,55 +399,42 @@ A list of constraint violations
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -536,9 +450,7 @@ List the remediation items of the `8788643471842202915` vulnerability. The respo
 curl --request GET \
 
 
-
 --url https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/8788643471842202915/remediationItems \
-
 
 
 --header 'Authorization: Api-Token [your_token]'
@@ -556,429 +468,322 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/87886434718422029
 {
 
 
-
 "remediationItems": [
 
 
-
 {
-
 
 
 "id": "PROCESS_GROUP-70DF2C1374244F5A",
 
 
-
 "entityIds": [
-
 
 
 "PROCESS_GROUP-70DF2C1374244F5A"
 
 
-
 ],
-
 
 
 "name": "KpiTomcatBackEnd-CWS-1-IG-144-HG",
 
 
-
 "firstAffectedTimestamp": 1633531037359,
 
 
-
 "assessment": {
-
 
 
 "exposure": "NOT_DETECTED",
 
 
-
 "dataAssets": "REACHABLE"
 
 
-
 },
-
 
 
 "vulnerabilityState": "VULNERABLE",
 
 
-
 "muteState": {
-
 
 
 "muted": false,
 
 
-
 "user": "unknown",
-
 
 
 "reason": "INITIAL_STATE"
 
 
-
 },
-
 
 
 "vulnerableComponents": [
 
 
-
 {
 
 
-
 "id": "SOFTWARE_COMPONENT-2559CD116033C217",
-
 
 
 "displayName": "io.software.component.1.1",
 
 
-
 "fileName": "io.software.component.1.1.jar",
-
 
 
 "numberOfAffectedEntities": 2,
 
 
-
 "affectedEntities": [
 
 
-
 "PROCESS_GROUP_INSTANCE-3684888745E180D5",
-
 
 
 "PROCESS_GROUP_INSTANCE-8F100796B9296962"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "id": "SOFTWARE_COMPONENT-0A679AA673B2B525",
 
 
-
 "displayName": "io.software.component.loader.2.0.Final",
-
 
 
 "fileName": "io.software.component.loader.2.0.jar",
 
 
-
 "numberOfAffectedEntities": 4,
-
 
 
 "affectedEntities": [
 
 
-
 "PROCESS_GROUP_INSTANCE-0D133F13A28B477A",
-
 
 
 "PROCESS_GROUP_INSTANCE-258962DC804FEDBC",
 
 
-
 "PROCESS_GROUP_INSTANCE-3684888745E180D5",
-
 
 
 "PROCESS_GROUP_INSTANCE-B79C2594071FBF6C"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
-
 
 
 "remediationProgress": {
 
 
-
 "affectedEntities": [
-
 
 
 "PROCESS_GROUP_INSTANCE-0D133F13A28B477A",
 
 
-
 "PROCESS_GROUP_INSTANCE-258962DC804FEDBC",
 
 
-
 "PROCESS_GROUP_INSTANCE-3684888745E180D5",
-
 
 
 "PROCESS_GROUP_INSTANCE-8F100796B9296962",
 
 
-
 "PROCESS_GROUP_INSTANCE-B79C2594071FBF6C"
-
 
 
 ],
 
 
-
 "unaffectedEntities": [
-
 
 
 "PROCESS_GROUP_INSTANCE-63AD33941D667CAC",
 
 
-
 "PROCESS_GROUP_INSTANCE-E20A5DDF167AF3B8",
-
 
 
 "PROCESS_GROUP_INSTANCE-F1166B3AB1F4312D",
 
 
-
 "PROCESS_GROUP_INSTANCE-F9D0250A7432521D",
-
 
 
 "PROCESS_GROUP_INSTANCE-FF1B355E4E252FA1"
 
 
-
 ]
-
 
 
 }
 
 
-
 },
 
 
-
 {
-
 
 
 "id": "PROCESS_GROUP-18407614632D87A6",
 
 
-
 "entityIds": [
-
 
 
 "PROCESS_GROUP-18407614632D87A6"
 
 
-
 ],
-
 
 
 "name": "KpiTomcatFrontEnd-CWS-1-IG-67-HG",
 
 
-
 "firstAffectedTimestamp": 1633531037359,
-
 
 
 "assessment": {
 
 
-
 "exposure": "PUBLIC_NETWORK",
-
 
 
 "dataAssets": "NOT_DETECTED"
 
 
-
 },
-
 
 
 "resolvedTimestamp": 1636096094323,
 
 
-
 "vulnerabilityState": "RESOLVED",
-
 
 
 "muteState": {
 
 
-
 "muted": false,
-
 
 
 "user": "unknown",
 
 
-
 "reason": "INITIAL_STATE"
-
 
 
 },
 
 
-
 "vulnerableComponents": [
-
 
 
 {
 
 
-
 "id": "SOFTWARE_COMPONENT-2559CD116033C217",
-
 
 
 "displayName": "io.software.component.1.1.Final",
 
 
-
 "fileName": "io.software.component.1.1.jar",
-
 
 
 "numberOfAffectedEntities": 1,
 
 
-
 "affectedEntities": [
-
 
 
 "PROCESS_GROUP_INSTANCE-41115D4B6F8BFEEC"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
-
 
 
 "remediationProgress": {
 
 
-
 "affectedEntities": [
-
 
 
 "PROCESS_GROUP_INSTANCE-41115D4B6F8BFEEC"
 
 
-
 ],
-
 
 
 "unaffectedEntities": [
 
 
-
 "PROCESS_GROUP_INSTANCE-0189CF4780B4B872",
-
 
 
 "PROCESS_GROUP_INSTANCE-2D54D85C45C0BA57",
 
 
-
 "PROCESS_GROUP_INSTANCE-3E6373ACEA9DE722",
-
 
 
 "PROCESS_GROUP_INSTANCE-47BCF72F93FF9528",
 
 
-
 "PROCESS_GROUP_INSTANCE-6B5EF5C1A5ED42D0",
-
 
 
 "PROCESS_GROUP_INSTANCE-BA18DB16A7A28A04",
 
 
-
 "PROCESS_GROUP_INSTANCE-BCAECCB29AB12462",
-
 
 
 "PROCESS_GROUP_INSTANCE-DD3CD2024A06BB5B",
 
 
-
 "PROCESS_GROUP_INSTANCE-DE5B280889AC6569"
 
 
-
 ]
-
 
 
 }
 
 
-
 }
 
 
-
 ]
-
 
 
 }

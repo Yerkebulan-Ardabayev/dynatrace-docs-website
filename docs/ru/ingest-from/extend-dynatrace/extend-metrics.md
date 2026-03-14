@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:17.802394
 
 # Расширение наблюдаемости метрик
 
-# Расширение наблюдаемости метрик
 
 * Последняя версия Dynatrace
 * Чтение: 4 мин
@@ -112,14 +111,12 @@ scraped: 2026-03-06T21:29:17.802394
   cpu.temp,cpu=cpu1,cpu_type="INTEL" 55
 
 
-
   cpu.temp,cpu=cpu1,cpu_type="INTEL" 75
   ```
 * Здесь две различные пары измерений отправляются в пределах одноминутного интервала. Поэтому потребляются две точки данных (`2 x 0,001 DDU`). С точки зрения потребления это фактически две различные метрики. Кортеж с двумя измерениями потребляет `526 x 2 = 1 052` DDU в год.
 
   ```
   cpu.temp,cpu=cpu1,cpu_type="INTEL" 55
-
 
 
   cpu.temp,cpu=cpu2,cpu_type="INTEL" 75
@@ -130,13 +127,10 @@ scraped: 2026-03-06T21:29:17.802394
   cpu.temp,cpu=cpu1,cpu_type="INTEL" 55
 
 
-
   cpu.temp,cpu=cpu2,cpu_type="INTEL" 75
 
 
-
   cpu.temp,cpu=cpu3,cpu_type="INTEL" 55
-
 
 
   cpu.temp,cpu=cpu4,cpu_type="INTEL" 75

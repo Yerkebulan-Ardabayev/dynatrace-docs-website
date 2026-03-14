@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:23.389831
 
 # Monaco concepts
 
-# Monaco concepts
 
 * Latest Dynatrace
 * Explanation

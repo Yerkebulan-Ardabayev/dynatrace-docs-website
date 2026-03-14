@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:30:28.434429
 
 # Using network zones in Kubernetes
 
-# Using network zones in Kubernetes
 
 * Latest Dynatrace
 * 5-min read
@@ -49,53 +48,40 @@ The adoption of network zones is therefore widely recommended for optimal traffi
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    ...
-
 
 
    spec:
 
 
-
    ...
-
 
 
    networkZone: my-networkzone # Configures network zone
 
 
-
    oneAgent:
-
 
 
    ...
 
 
-
    activeGate: # Ensures ActiveGate rollout
-
 
 
    capabilities:
 
 
-
    - routing
 
 
-
    - kubernetes-monitoring
-
 
 
    ...
@@ -126,13 +112,10 @@ Additionally, it may be necessary to also [configure a proxy](../network-configu
    curl -X PUT https://<environment-fqdn>/api/v2/networkZones/<network-zone-name> \
 
 
-
    -H "Authorization: Api-Token <api-token>" \
 
 
-
    -H "Content-Type: application/json" \
-
 
 
    -d "{ \"fallbackMode\": \"NONE\" }"
@@ -145,53 +128,40 @@ Additionally, it may be necessary to also [configure a proxy](../network-configu
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    ...
-
 
 
    spec:
 
 
-
    ...
-
 
 
    networkZone: my-networkzone # Configures network zone
 
 
-
    oneAgent:
-
 
 
    ...
 
 
-
    activeGate: # Ensures ActiveGate rollout
-
 
 
    capabilities:
 
 
-
    - routing
 
 
-
    - kubernetes-monitoring
-
 
 
    ...
@@ -225,7 +195,6 @@ Additionally, it may be necessary to also [configure a proxy](../network-configu
 
    ```
    oneagent.dynatrace.com/injected: "false"
-
 
 
    oneagent.dynatrace.com/reason: "EmptyConnectionInfo"

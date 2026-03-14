@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:43.613643
 
 # Управление расширениями Oracle Database
 
-# Управление расширениями Oracle Database
 
 * Latest Dynatrace
 * Руководство

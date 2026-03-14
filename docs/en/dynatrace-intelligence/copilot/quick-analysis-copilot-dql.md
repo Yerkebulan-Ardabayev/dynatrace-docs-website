@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:30:33.891937
 
 # Query with natural language
 
-# Query with natural language
 
 * Latest Dynatrace
 * Overview
@@ -104,9 +103,7 @@ If you have environment-aware queries enabled, the following DQL will be generat
 fetch bizevents , from:now() â 30d
 
 
-
 | filter event.type ==  "new trip"
-
 
 
 | makeTimeseries interval:1h, {profit= avg(profit), discount= avg(discount)}
@@ -120,9 +117,7 @@ If you don't have environment-aware queries enabled, Dynatrace Intelligence gene
 fetch bizevents, from:now() â 30d
 
 
-
 | filter event.type ==  "new trip"
-
 
 
 | makeTimeseries interval:1h, {avg_money_made = avg(money_made), avg_price_reduction = avg(price_reduction)}

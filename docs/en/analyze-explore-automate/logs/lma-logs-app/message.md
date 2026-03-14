@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:28.183710
 
 # Adjust the log message
 
-# Adjust the log message
 
 * Latest Dynatrace
 * How-to guide

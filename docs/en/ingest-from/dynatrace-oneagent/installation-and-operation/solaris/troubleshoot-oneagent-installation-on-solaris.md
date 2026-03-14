@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:18.314953
 
 # Troubleshooting OneAgent installation on Solaris
 
-# Troubleshooting OneAgent installation on Solaris
 
 * Latest Dynatrace
 * 3-min read
@@ -22,17 +21,13 @@ While downloading, you may encounter the following error:
 Releasing 0x0000000239ae1890 (new refcount 1).
 
 
-
 Initiating SSL handshake.
-
 
 
 SSL handshake failed.
 
 
-
 Closed fd 5
-
 
 
 Unable to establish SSL connection.
@@ -46,9 +41,7 @@ For this specific case, to select the correct protocol, you must specify `--secu
 wget --secure-protocol=tlsv1_2
 
 
-
 -O Dynatrace-OneAgent-Solaris-xxx-1.xxx.xxx.zip
-
 
 
 "https://xxx/xxx/api/v1/deployment/installer/agent/solaris/paas/latest?Api-Token=xxx&arch=x86"
@@ -84,7 +77,6 @@ You may encounter an error like this when you use `dynatrace-agentXX.sh` in a sh
 Info: using DT_HOME: /opt/dynatrace/oneagent
 
 
-
 .profile[33] LD_PRELOAD_64: parameter not set
 ```
 
@@ -94,17 +86,13 @@ This happens if use `set -u` to treat unset variables and parameters as errors. 
 # avoid error
 
 
-
 set +u
-
 
 
 DT_HOME=/opt/dynatrace/oneagent
 
 
-
 export DT_HOME
-
 
 
 . $DT_HOME/dynatrace-agent64.sh
@@ -143,17 +131,13 @@ If you have trouble setting the environment variables
    DT_HOME="/opt/dynatrace/oneagent"
 
 
-
    export DT_HOME
-
 
 
    source "$DT_HOME/dynatrace-env.sh"
 
 
-
    LD_PRELOAD="$DT_HOME/agent/lib/liboneagentproc.so"
-
 
 
    export LD_PRELOAD
@@ -168,7 +152,6 @@ If you have trouble setting the environment variables
 
    ```
    aabb@aaaabbb01a:/apps/wldomains/wls-aabb-1a$pargs -e 26531 |grep LD
-
 
 
    envp[27]: envp[28]: LD_PRELOAD=/opt/dynatrace/oneagent/agent/lib/liboneagentproc.so

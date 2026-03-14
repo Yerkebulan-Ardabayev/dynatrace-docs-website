@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:23:06.151627
 
 # Sensitive data masking (Logs Classic)
 
-# Sensitive data masking (Logs Classic)
 
 * 11-min read
 * Updated on Jan 18, 2023
@@ -109,89 +108,67 @@ To create a sensitive data masking configuration using the API
 [
 
 
-
 {
-
 
 
 "schemaId":"builtin:logmonitoring.sensitive-data-masking-settings",
 
 
-
 "scope":"tenant",
-
 
 
 "value":{
 
 
-
 "config-item-title":"Added from REST API",
-
 
 
 "masking":{
 
 
-
 "expression":"run (\\d+?)",
-
 
 
 "type":"STRING",
 
 
-
 "replacement":"testing"
-
 
 
 },
 
 
-
 "matchers":[
-
 
 
 {
 
 
-
 "attribute":"log.source",
-
 
 
 "operator":"MATCHES",
 
 
-
 "values":[
-
 
 
 "/var/log/syslog"
 
 
+]
+
+
+}
+
 
 ]
 
 
-
 }
 
 
-
-]
-
-
-
 }
-
-
-
-}
-
 
 
 ]
@@ -265,73 +242,55 @@ To mask all credit card numbers and emails in your content, you need to create t
 {
 
 
-
 "masking": {
-
 
 
 "expression": "(\\d{4}-\\d{4}-\\d{4}-\\d{4})",
 
 
-
 "type": "STRING",
-
 
 
 "replacement": "MaskedCreditCardNumber"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 ],
-
 
 
 "enabled": true
 
 
-
 },
-
 
 
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA1"
-
 
 
 },
 
 
-
 "matchers": [
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -345,81 +304,61 @@ To mask logs that are written by Apache AND whose log filename is `error.log`, y
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA1"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "/path/to/error.log"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -431,117 +370,88 @@ To mask logs that are written by Apache OR whose log filename is `error.log`, yo
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA1"
-
 
 
 },
 
 
-
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "/path/to/error.log"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
-
 
 
 "enabled": true
 
 
-
 },
 
 
-
 {
-
 
 
 "masking": {
 
 
-
 "expression": "email: (.*),",
-
 
 
 "type": "SHA1"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -553,105 +463,79 @@ To mask logs that are written by Apache and whose log filename starts with `erro
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA1"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "/path/to/error*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "*log"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -663,81 +547,61 @@ To mask logs that are written by Apache and whose log filename starts with `erro
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA1"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "/path/to/error*", "*log"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -753,117 +617,88 @@ The scenario with two rules:
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA1"
-
 
 
 },
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-MYSQL"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
-
 
 
 "enabled": true
 
 
-
 },
 
 
-
 {
-
 
 
 "masking": {
 
 
-
 "expression": "email: (.*),",
-
 
 
 "type": "SHA1"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -875,57 +710,43 @@ The scenario with one rule with a matcher that has two values:
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA1"
-
 
 
 },
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
-
 
 
 "values": [
 
 
-
 "PROCESS_GROUP-APACHEID", "PROCESS_GROUP-MYSQL"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }

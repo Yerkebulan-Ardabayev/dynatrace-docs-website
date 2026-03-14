@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:08.444180
 
 # Digital Experience
 
-# Digital Experience
 
 * Latest Dynatrace
 * Overview

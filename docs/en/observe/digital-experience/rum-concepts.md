@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:58.729143
 
 # Real User Monitoring concepts
 
-# Real User Monitoring concepts
 
 * Classic
 * Overview

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:17.390293
 
 # Bar chart visualization
 
-# Bar chart visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -260,7 +259,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000

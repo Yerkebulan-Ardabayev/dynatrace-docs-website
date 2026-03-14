@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # How to enable deep monitoring for applications confined by AppArmor
 
-# How to enable deep monitoring for applications confined by AppArmor
 
 * 2-min read
 * Published Aug 08, 2017
@@ -21,7 +20,6 @@ We assume that the directory structure for AppArmor is the following:
 /etc/apparmor.d/
 
 
-
 |--- usr.sbin.tomcat-sysd
 ```
 
@@ -33,13 +31,10 @@ Where `usr.sbin.tomcat-sysd` is the file that defines the AppArmor profile for T
    /etc/apparmor.d/
 
 
-
    |--- usr.sbin.tomcat-sysd
 
 
-
    |--- dynatrace-oneagent
-
 
 
    |--- agentinjection
@@ -50,129 +45,97 @@ Where `usr.sbin.tomcat-sysd` is the file that defines the AppArmor profile for T
    #include <abstractions/base>
 
 
-
    #include <abstractions/nameservice>
-
 
 
    # Process Agent injection
 
 
-
    /etc/ld.so.preload r,
-
 
 
    # Host identifier calculation
 
 
-
    /sys/class/net/ r,
-
 
 
    /sys/devices/virtual/net/** r,
 
 
-
    /sys/devices/*/*{,/*}/net/** r,
-
 
 
    # OneAgent directories
 
 
-
    /opt/dynatrace/oneagent/agent/** mr,
-
 
 
    /var/lib/dynatrace/oneagent/** r,
 
 
-
    /var/lib/dynatrace/oneagent/agent/runtime/** w,
-
 
 
    /var/lib/dynatrace/oneagent/agent/config/{discovery_entry_point,ruxit_shm_v*} w,
 
 
-
    /var/lib/dynatrace/enrichment/** r,
-
 
 
    # This path must be adjusted if LOG_PATH installation parameter was used
 
 
-
    /var/log/dynatrace/oneagent/** rkw,
-
 
 
    # This path must be adjusted if DATA_STORAGE installation parameter was used
 
 
-
    /var/lib/dynatrace/oneagent/datastorage/** rkw,
-
 
 
    # Needed for Process Agent to determine whether specialized agent should be loaded and to calculate PGI ID
 
 
-
    /proc/[0-9]*/{cgroup,cmdline,environ,maps,mem,mountinfo,stat,statm,task/*/maps,task/*/mem} r,
-
 
 
    # Miscellaneous
 
 
-
    /dev/random rw,
-
 
 
    /etc/os-release r,
 
 
-
    /proc/sys/fs/file-nr r,
-
 
 
    /proc/sys/kernel/hostname r,
 
 
-
    /proc/{uptime,vmstat} r,
-
 
 
    /sys/devices/system/cpu/ r,
 
 
-
    /sys/fs/cgroup{,/,/**} r,
-
 
 
    /tmp/** rw,
 
 
-
    /var/tmp/ r,
-
 
 
    /var/tmp/** rw,
 
 
-
    /{,var/}run/utmp rk,
-
 
 
    /proc/cgroups r,
@@ -184,7 +147,6 @@ Where `usr.sbin.tomcat-sysd` is the file that defines the AppArmor profile for T
    # This path must be adjusted if DATA_STORAGE installation parameter was used
 
 
-
    /var/lib/dynatrace/oneagent/datastorage/** rkw,
    ```
 3. Include the rule set in the Tomcat profile (`/etc/apparmor.d/usr.sbin.tomcat-sysd`).
@@ -193,13 +155,10 @@ Where `usr.sbin.tomcat-sysd` is the file that defines the AppArmor profile for T
    /usr/sbin/tomcat-sysd {
 
 
-
    #include <dynatrace-oneagent/agentinjection>
 
 
-
    ... (rest of the rules that were already present in the profile)
-
 
 
    }
@@ -221,13 +180,10 @@ In case you experience denials related to OneAgent for other processes in the sy
 # Process injection
 
 
-
 /etc/ld.so.preload r,
 
 
-
 /etc/oneagentproc/ld.so.preload r,
-
 
 
 /var/log/dynatrace/oneagent/process/* rkw,

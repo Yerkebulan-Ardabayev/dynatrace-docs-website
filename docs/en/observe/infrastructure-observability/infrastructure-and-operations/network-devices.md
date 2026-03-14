@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:45.289692
 
 # Network devices
 
-# Network devices
 
 * Latest Dynatrace
 * Explanation

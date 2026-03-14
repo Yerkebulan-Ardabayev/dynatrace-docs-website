@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:50.604966
 
 # Create custom user action names for mobile applications
 
-# Create custom user action names for mobile applications
 
 * Classic
 * How-to guide

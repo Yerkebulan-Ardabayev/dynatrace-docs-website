@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:22.621291
 
 # Инструментирование мобильных приложений с помощью плагина Dynatrace React Native
 
-# Инструментирование мобильных приложений с помощью плагина Dynatrace React Native
 
 * Classic
 * How-to guide
@@ -60,21 +59,16 @@ scraped: 2026-03-05T21:25:22.621291
    module.exports = {
 
 
-
    transformer: {
-
 
 
    babelTransformerPath: require.resolve('@dynatrace/react-native-plugin/lib/dynatrace-transformer')
 
 
-
    },
 
 
-
    reporter: require("@dynatrace/react-native-plugin/lib/dynatrace-reporter")
-
 
 
    };
@@ -95,53 +89,40 @@ scraped: 2026-03-05T21:25:22.621291
    module.exports = {
 
 
-
    presets: [
-
 
 
    ['module:metro-react-native-babel-preset'],
 
 
-
    ],
-
 
 
    plugins: [
 
 
-
    [
-
 
 
    '@babel/plugin-transform-react-jsx',
 
 
-
    {
-
 
 
    runtime: 'automatic',
 
 
-
    importSource: "@dynatrace/react-native-plugin"
-
 
 
    },
 
 
-
    ],
 
 
-
    ],
-
 
 
    };
@@ -153,37 +134,28 @@ scraped: 2026-03-05T21:25:22.621291
    module.exports = {
 
 
-
    presets: [
-
 
 
    ['babel-preset-expo',
 
 
-
    {
-
 
 
    jsxRuntime: 'automatic',
 
 
-
    jsxImportSource: '@dynatrace/react-native-plugin',
-
 
 
    },
 
 
-
    ],
 
 
-
    ],
-
 
 
    };

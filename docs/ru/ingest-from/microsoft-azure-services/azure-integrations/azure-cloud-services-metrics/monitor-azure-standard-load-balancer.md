@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:17.913970
 
 # Мониторинг Azure Standard Load Balancer
 
-# Мониторинг Azure Standard Load Balancer
 
 * Последняя версия Dynatrace
 * Практическое руководство

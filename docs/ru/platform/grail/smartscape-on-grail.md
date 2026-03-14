@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:23.549476
 
 # Smartscape на Grail
 
-# Smartscape на Grail
 
 * Latest Dynatrace
 * Explanation
@@ -91,7 +90,6 @@ Smartscape на Grail включён в лицензию DPS. Это означ�
 smartscapeNodes "*"
 
 
-
 | fieldsAdd references
 ```
 
@@ -99,7 +97,6 @@ smartscapeNodes "*"
 
 ```
 smartscapeNodes CONTAINER
-
 
 
 | summarize by:references[runs_on.host], count()
@@ -148,49 +145,37 @@ smartscapeNodes CONTAINER
 POST /fieldsets
 
 
-
 {
-
 
 
 "name": "sensitive-field-k8s-object",
 
 
-
 "description": "Make k8s.object sensitive",
-
 
 
 "enabled": true,
 
 
-
 "scope": "TABLE",
-
 
 
 "fields": [
 
 
-
 "k8s.object"
-
 
 
 ],
 
 
-
 "tables": [
-
 
 
 "smartscape"
 
 
-
 ]
-
 
 
 }

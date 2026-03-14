@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:48.121649
 
 # Частные локации синтетического мониторинга
 
-# Частные локации синтетического мониторинга
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -212,25 +211,19 @@ Chrome for Testing
    wget https://ca.dynatrace.com/dt-root.cert.pem ; openssl cms
 
 
-
    -verify
-
 
 
    -in chromium.tgz.sig
 
 
-
    -inform PEM
-
 
 
    -content chromium.tgz
 
 
-
    -binary
-
 
 
    -CAfile dt-root.cert.pem > /dev/null
@@ -256,25 +249,19 @@ Chrome for Testing
    wget https://ca.dynatrace.com/dt-root.cert.pem ; openssl cms
 
 
-
    -verify
-
 
 
    -in chrome.zip.sig
 
 
-
    -inform PEM
-
 
 
    -content chrome.zip
 
 
-
    -binary
-
 
 
    -CAfile dt-root.cert.pem > /dev/null

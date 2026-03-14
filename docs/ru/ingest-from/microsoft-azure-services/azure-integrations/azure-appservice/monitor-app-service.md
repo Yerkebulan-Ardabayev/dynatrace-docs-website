@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:16.915907
 
 # Мониторинг метрик Azure App Service Plan
 
-# Мониторинг метрик Azure App Service Plan
 
 * Последняя версия Dynatrace
 * Практическое руководство

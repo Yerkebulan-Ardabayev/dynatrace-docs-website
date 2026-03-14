@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:06.065359
 
 # Ingest vulnerability findings in OCSF format
 
-# Ingest vulnerability findings in OCSF format
 
 * Latest Dynatrace
 * How-to guide

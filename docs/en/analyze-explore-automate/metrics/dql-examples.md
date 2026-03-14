@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:38.254143
 
 # DQL timeseries examples
 
-# DQL timeseries examples
 
 * Latest Dynatrace
 * 8-min read
@@ -40,13 +39,10 @@ Charting individual hosts' CPU usage helps to visualize normal and outlier usage
    timeseries usage=avg(dt.host.cpu.usage), usage_summary=avg(dt.host.cpu.usage, scalar:true), by:{dt.entity.host}
 
 
-
    | fieldsAdd entityName(dt.entity.host)
 
 
-
    | sort usage_summary desc
-
 
 
    | limit 3
@@ -59,17 +55,13 @@ Charting individual hosts' CPU usage helps to visualize normal and outlier usage
    timeseries usage=avg(dt.host.cpu.usage, scalar:true), by:{dt.entity.host}
 
 
-
    | fieldsAdd entityName(dt.entity.host)
-
 
 
    | sort usage desc
 
 
-
    | limit 3
-
 
 
    | fields dt.entity.host, dt.entity.host.name, usage
@@ -89,17 +81,13 @@ Using the timeseries `filter` parameter is more performant than chaining `timese
 timeseries usage=avg(dt.host.cpu.usage),
 
 
-
 filter: {in(
-
 
 
 dt.entity.host,
 
 
-
 classicEntitySelector("type(host),ipAddress(\"10.102.39.126\")")
-
 
 
 )}
@@ -115,7 +103,6 @@ Other DQL commands can also be chained with `timeseries` as demonstrated in prev
 timeseries usage=avg(dt.host.cpu.usage), by:{dt.entity.host}
 
 
-
 | summarize count()
 ```
 
@@ -129,41 +116,31 @@ Even when focused on disk read operations, the corresponding disk writes can pro
 timeseries by:{dt.entity.host}, {
 
 
-
 bytes_read=sum(dt.host.disk.bytes_read, scalar:true),
-
 
 
 bytes_written=sum(dt.host.disk.bytes_written, scalar:true)
 
 
-
 }
-
 
 
 | sort bytes_read desc
 
 
-
 | limit 3
-
 
 
 | fields
 
 
-
 dt.entity.host,
-
 
 
 entityName(dt.entity.host),
 
 
-
 bytes_read,
-
 
 
 bytes_written
@@ -181,37 +158,28 @@ The available CPU is integral for efficient resource utilization and avoiding re
 timeseries {
 
 
-
 cpu_allocatable = min(dt.kubernetes.node.cpu_allocatable),
-
 
 
 requests_cpu = max(dt.kubernetes.container.requests_cpu)
 
 
-
 },
-
 
 
 by:{dt.entity.kubernetes_cluster, dt.entity.kubernetes_node}
 
 
-
 | fieldsAdd  // add friendly names
-
 
 
 entityName(dt.entity.kubernetes_cluster),
 
 
-
 entityName(dt.entity.kubernetes_node)
 
 
-
 | fieldsAdd result = cpu_allocatable[] - requests_cpu[]
-
 
 
 | fieldsRemove cpu_allocatable, requests_cpu
@@ -229,9 +197,7 @@ Host-level information can sometimes be too fine-grained and difficult to interp
 timeseries usage=avg(dt.host.cpu.usage, scalar:true), by:{dt.entity.host}
 
 
-
 | fieldsAdd cpuCores = entityAttr(dt.entity.host, "cpuCores")
-
 
 
 | summarize by:{cpuCores}, avg(usage), count_hosts=count()
@@ -249,49 +215,37 @@ As you query many metrics from a single host and perform no arithmetic, the `app
 timeseries idle=avg(dt.host.cpu.idle),
 
 
-
 by:{dt.entity.host},
-
 
 
 filter:{dt.entity.host == "HOST-EFAB6D2FE7274823"}
 
 
-
 | append [
-
 
 
 timeseries system=avg(dt.host.cpu.system),
 
 
-
 by:{dt.entity.host},
 
 
-
 filter:{dt.entity.host == "HOST-EFAB6D2FE7274823"}
-
 
 
 ]
 
 
-
 | append [
-
 
 
 timeseries user=avg(dt.host.cpu.user),
 
 
-
 by:{dt.entity.host},
 
 
-
 filter:{dt.entity.host == "HOST-EFAB6D2FE7274823"}
-
 
 
 ]
@@ -309,33 +263,25 @@ Failure rate calculations are common and critical for monitoring service-level o
 timeseries {
 
 
-
 new = sum(dt.process.network.sessions.new),
-
 
 
 reset = sum(dt.process.network.sessions.reset, default:0),
 
 
-
 timeout = sum(dt.process.network.sessions.timeout, default:0)
-
 
 
 },
 
 
-
 by:{dt.entity.host}
-
 
 
 | fieldsAdd result = 100 * (reset[] + timeout[]) / new[]
 
 
-
 | filter arrayAvg(result) > 0
-
 
 
 | sort arrayAvg(result) desc
@@ -351,9 +297,7 @@ You can use the timeseries command with the [`nonempty` parameter](../../platfor
 timeseries availability = sum(dt.host.availability, default:0),
 
 
-
 nonempty:true,
-
 
 
 filter:{availability.state == "up"}
@@ -369,17 +313,13 @@ You can use the [`union` parameter](../../platform/grail/dynatrace-query-languag
 timeseries
 
 
-
 failure_count=sum(log.readiness_probe.failure_count, default:0),
-
 
 
 success_count=sum(log.readiness_probe.success_count, default:0),
 
 
-
 by:{dt.entity.host},
-
 
 
 union:true
@@ -399,7 +339,6 @@ Dynatrace shows the per-minute request count by default, as Dynatrace service me
 timeseries sum(dt.service.request.failure_count, rate:1s),
 
 
-
 filter:{startsWith(endpoint.name, "/api/accounts")}
 ```
 
@@ -413,17 +352,13 @@ Monitoring host-disk availability helps with capacity planning. If today's disk 
 timeseries avail=avg(dt.host.disk.avail), by:{dt.entity.host}, from:-24h
 
 
-
 | append [
-
 
 
 timeseries avail.yesterday=avg(dt.host.disk.avail), by:{dt.entity.host}, shift:-168h
 
 
-
 ]
-
 
 
 | filter startsWith(entityName(dt.entity.host), "prod-")
@@ -439,9 +374,7 @@ Applications frequently deploy hosts across multiple availability zones (AZs) to
 timeseries num_hosts = count(dt.host.cpu.usage),
 
 
-
 by:{aws.availability_zone},
-
 
 
 filter:{startsWith(aws.availability_zone, "us-east-1")}
@@ -457,7 +390,6 @@ Tracking the service response time [percentilesï»¿](https://www.dynatrace.com
 timeseries p90 = percentile(dt.service.request.response_time, 90),
 
 
-
 filter:{startsWith(endpoint.name, "/api/accounts")}
 ```
 
@@ -471,17 +403,13 @@ Identifying overprovisioned deployments helps reduce operating costs. By removin
 timeseries avail=avg(dt.host.disk.avail, scalar:true),
 
 
-
 by:{dt.entity.disk, dt.entity.host},
-
 
 
 filter:{startsWith(dt.entity.host, "my-app-")}
 
 
-
 | fieldsAdd disk_usage=if(avail>450000000000, "underused", else: "optimal")
-
 
 
 | limit 3
@@ -499,21 +427,16 @@ Many [`summarize` command functions](../../platform/grail/dynatrace-query-langua
 timeseries cpu_usage = sum(dt.kubernetes.container.cpu_usage, rollup:max),
 
 
-
 by:{dt.entity.cloud_application}
-
 
 
 | fieldsAdd annotations = entityAttr(dt.entity.cloud_application, "kubernetesAnnotations")
 
 
-
 | fieldsAdd component = annotations[`app.kubernetes.io/component`]
 
 
-
 | summarize cpu_usage = sum(cpu_usage[]),
-
 
 
 by:{timeframe, interval, component}

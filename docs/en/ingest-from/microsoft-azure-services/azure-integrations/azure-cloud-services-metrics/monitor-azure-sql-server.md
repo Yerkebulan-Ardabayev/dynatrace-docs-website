@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:22.392494
 
 # Azure SQL Server monitoring
 
-# Azure SQL Server monitoring
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:35.037946
 
 # Серверы с поддержкой Microsoft Azure Arc
 
-# Серверы с поддержкой Microsoft Azure Arc
 
 * Latest Dynatrace
 * Практическое руководство
@@ -58,29 +57,22 @@ Azure CLI 2.0
 az connectedmachine extension create
 
 
-
 --publisher "Dynatrace.Ruxit"
-
 
 
 --type "<Extension-Type>"
 
 
-
 --name "<Extension-Type>"
-
 
 
 --resource-group "<Resource-Group>"
 
 
-
 --machine-name "<Azure Arc Server Name>"
 
 
-
 --location <Azure Region>
-
 
 
 --settings "{\"tenantId\":\"<Environment-ID>\",\"token\":\"<API-Token>\", \"server\":\"<Server-Url>\", \"enableLogAnalytics\":\"yes\", \"hostGroup\":\"<Host-Group>\"}"
@@ -111,165 +103,124 @@ az connectedmachine extension create
 {
 
 
-
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-
 
 
     "contentVersion": "1.0.0.0",
 
 
-
     "parameters": {
-
 
 
         "vmName": {
 
 
-
             "type": "string"
 
 
-
         },
-
 
 
         "location": {
 
 
-
             "type": "string"
 
 
-
         },
-
 
 
         "tenant": {
 
 
-
             "type": "string"
 
 
-
         },
-
 
 
         "token": {
 
 
-
             "type": "securestring"
-
 
 
         },
 
 
-
         "server": {
-
 
 
             "type": "string",
 
 
-
             "defaultValue": ""
 
 
-
         }
-
 
 
     },
 
 
-
     "resources": [
-
 
 
         {
 
 
-
             "name": "[concat(parameters('vmName'),'/<Extension-Type>')]",
-
 
 
             "type": "Microsoft.HybridCompute/machines/extensions",
 
 
-
             "location": "[parameters('location')]",
-
 
 
             "apiVersion": "2022-03-10",
 
 
-
             "properties": {
-
 
 
                 "publisher": "dynatrace.ruxit",
 
 
-
                 "type": " <Extension-Type>",
-
 
 
                 "autoUpgradeMinorVersion": true,
 
 
-
                 "settings": {
-
 
 
                     "tenantId": "[parameters('tenant')]",
 
 
-
                     "server": "[parameters('server')]"
-
 
 
                 },
 
 
-
                 "protectedSettings": {
-
 
 
                     "token": "[parameters('token')]"
 
 
-
                 }
-
 
 
             }
 
 
-
         }
 
 
-
     ]
-
 
 
 }

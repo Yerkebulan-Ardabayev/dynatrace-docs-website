@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:07.083776
 
 # Session Replay
 
-# Session Replay
 
 * Classic
 * Overview

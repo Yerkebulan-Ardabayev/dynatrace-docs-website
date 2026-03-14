@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:38.461964
 
 # Мониторинг Azure SQL Database (vCore)
 
-# Мониторинг Azure SQL Database (vCore)
 
 * Последняя версия Dynatrace
 * Практическое руководство

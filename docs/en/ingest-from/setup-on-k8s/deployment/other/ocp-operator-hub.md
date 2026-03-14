@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:57.570952
 
 # Set up OpenShift monitoring via OperatorHub
 
-# Set up OpenShift monitoring via OperatorHub
 
 * Latest Dynatrace
 * 2-min read
@@ -64,7 +63,6 @@ To install Dynatrace Operator on OpenShift via OperatorHub
 
       ```
       spec:
-
 
 
       apiURL: 'https://ENVIRONMENTID.live.dynatrace.com/api'

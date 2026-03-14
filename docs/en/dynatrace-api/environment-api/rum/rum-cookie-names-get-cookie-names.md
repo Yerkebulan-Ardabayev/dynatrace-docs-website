@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:53.298305
 
 # RUM cookie names API - GET cookie names
 
-# RUM cookie names API - GET cookie names
 
 * Reference
 * Published Jun 25, 2024
@@ -88,93 +87,71 @@ A list of constraint violations
 {
 
 
-
 "domainValidationCookieName": "dtValidationCookie",
-
 
 
 "latencyCookieName": "dtLatC",
 
 
-
 "pageContextCookieName": "dtPC",
-
 
 
 "sessionCookieName": "dtCookie",
 
 
-
 "sessionReplayViewIdCookieName": "dtsrVID",
-
 
 
 "sessionTimeoutCookieName": "rxvt",
 
 
-
 "sourceActionCookieName": "dtSA",
-
 
 
 "visitorCookieName": "rxVisitor"
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }

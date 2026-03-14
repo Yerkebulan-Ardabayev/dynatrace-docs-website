@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Application Security
 
-# Application Security
 
 * How-to guide
 * Updated on Nov 03, 2025

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Summarize and explain queries
 
-# Summarize and explain queries
 
 * Latest Dynatrace
 * Tutorial

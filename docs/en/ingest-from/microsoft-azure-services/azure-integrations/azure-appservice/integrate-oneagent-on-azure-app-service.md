@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:31.997001
 
 # Integrate OneAgent on Azure App Service for Windows
 
-# Integrate OneAgent on Azure App Service for Windows
 
 * Latest Dynatrace
 * How-to guide
@@ -103,613 +102,460 @@ dynatrace-oneagent-site-extension.json
 {
 
 
-
 "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-
 
 
 "contentVersion": "1.0.0.0",
 
 
-
 "parameters": {
-
 
 
 // WebApp Settings
 
 
-
 "siteName": {
-
 
 
 "type": "string",
 
 
-
 "metadata": {
-
 
 
 "description": "Web app name where you would like to install extension."
 
 
-
 }
 
 
-
 },
-
 
 
 "location": {
 
 
-
 "type": "string",
 
 
-
 "metadata": {
-
 
 
 "description": "Region of your web app."
 
 
-
 }
 
 
-
 },
-
 
 
 "skuCapacity": {
 
 
-
 "type": "int",
-
 
 
 "defaultValue": 1,
 
 
-
 "minValue": 1,
 
 
-
 "metadata": {
-
 
 
 "description": "Describes plan's instance count."
 
 
-
 }
 
 
-
 },
-
 
 
 "skuName": {
 
 
-
 "type": "string",
-
 
 
 "defaultValue": "B1",
 
 
-
 "allowedValues": [
-
 
 
 "B1",
 
 
-
 "B2",
-
 
 
 "B3",
 
 
-
 "D1",
-
 
 
 "F1",
 
 
-
 "I1",
-
 
 
 "I1v2",
 
 
-
 "I2",
-
 
 
 "I2v2",
 
 
-
 "I3",
-
 
 
 "I3v2",
 
 
-
 "P1V2",
-
 
 
 "P1V3",
 
 
-
 "P2V2",
-
 
 
 "P2V3",
 
 
-
 "P3V2",
-
 
 
 "P3V3",
 
 
-
 "PC2",
-
 
 
 "PC3",
 
 
-
 "PC4",
-
 
 
 "S1",
 
 
-
 "S2",
-
 
 
 "S3"
 
 
-
 ],
 
 
-
 "metadata": {
-
 
 
 "description": "Describes plan's pricing tier and instance size. Check details at https://azure.microsoft.com/en-us/pricing/details/app-service/."
 
 
-
 }
 
 
-
 },
-
 
 
 "webAppAlwaysOn": {
 
 
-
 "type": "bool",
 
 
-
 "metadata": {
-
 
 
 "description": "If AlwaysOn isn't set to true, installation of OneAgent is triggered on the start-up/first request to Kudu."
 
 
-
 },
-
 
 
 "defaultValue": true
 
 
-
 },
-
 
 
 // Dynatrace OneAgent site extension settings
 
 
-
 "environmentID": {
-
 
 
 "type": "string",
 
 
-
 "metadata": {
-
 
 
 "description": "The environment ID."
 
 
-
 }
 
 
-
 },
-
 
 
 "APIToken": {
 
 
-
 "type": "string",
 
 
-
 "metadata": {
-
 
 
 "description": "The PaaS token."
 
 
-
 }
 
 
-
 },
-
 
 
 "APIUrl": {
 
 
-
 "type": "string",
 
 
-
 "metadata": {
-
 
 
 "description": "The server URL, if you want to configure an alternative communication endpoint."
 
 
-
 }
 
 
-
 },
-
 
 
 "SSLMode": {
 
 
-
 "type": "string",
 
 
-
 "metadata": {
-
 
 
 "description": "To automatically accept all self-signed TLS certificates, set the value to all."
 
 
-
 },
-
 
 
 "allowedValues": ["default", "all"],
 
 
-
 "defaultValue": "default"
 
 
-
 },
-
 
 
 "monitoredCLR": {
 
 
-
 "type": "string",
 
 
-
 "metadata": {
-
 
 
 "description": "Your .NET application runtime"
 
 
-
 },
-
 
 
 "allowedValues": ["both", "coreclr", "clr"],
 
 
-
 "defaultValue": "both"
 
 
-
 },
-
 
 
 "networkZone": {
 
 
-
 "type": "string",
-
 
 
 "metadata": {
 
 
-
 "description": "Your network zone. Set the value you want for your App Service instance. See network zones for more information."
 
 
-
 },
-
 
 
 "defaultValue": ""
 
 
-
 }
-
 
 
 },
 
 
-
 "resources": [
-
 
 
 {
 
 
-
 "apiVersion": "2020-12-01",
 
 
-
 "name": "[parameters('siteName')]",
-
 
 
 "type": "Microsoft.Web/serverfarms",
 
 
-
 "location": "[parameters('location')]",
-
 
 
 "sku": {
 
 
-
 "name": "[parameters('skuName')]",
-
 
 
 "capacity": "[parameters('skuCapacity')]"
 
 
-
 },
 
 
-
 "properties": {
-
 
 
 "name": "[parameters('siteName')]"
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "apiVersion": "2020-12-01",
 
 
-
 "name": "[parameters('siteName')]",
-
 
 
 "type": "Microsoft.Web/sites",
 
 
-
 "properties": {
-
 
 
 "name": "[parameters('siteName')]",
 
 
-
 "siteConfig": {
-
 
 
 "alwaysOn": "[parameters('webAppAlwaysOn')]",
 
 
-
 "appSettings": [
-
 
 
 { "Name": "DT_TENANT", "Value": "[parameters('environmentID')]" },
 
 
-
 { "Name": "DT_API_TOKEN", "Value": "[parameters('APIToken')]" },
-
 
 
 { "Name": "DT_API_URL", "Value": "[parameters('APIUrl')]" },
 
 
-
 { "Name": "DT_SSL_MODE", "Value": "[parameters('SSLMode')]" },
-
 
 
 { "Name": "DT_MONITORED_CLR", "Value": "[parameters('monitoredCLR')]" },
 
 
-
 { "Name": "DT_NETWORK_ZONE", "Value": "[parameters('networkZone')]" }
-
 
 
 ]
 
 
-
 },
-
 
 
 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('siteName'))]"
 
 
-
 },
-
 
 
 "dependsOn": ["[concat('Microsoft.Web/serverfarms/', parameters('siteName'))]"],
 
 
-
 "location": "[parameters('location')]",
-
 
 
 "resources": [
 
 
-
 {
-
 
 
 "apiVersion": "2020-12-01",
 
 
-
 "name": "Dynatrace",
-
 
 
 "type": "siteextensions",
 
 
-
 "dependsOn": ["[resourceId('Microsoft.Web/sites/', parameters('siteName'))]"]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "outputs": {}
-
 
 
 }

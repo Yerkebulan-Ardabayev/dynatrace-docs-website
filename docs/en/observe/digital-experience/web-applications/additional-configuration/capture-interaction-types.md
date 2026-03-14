@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:24.896704
 
 # Capture additional interaction types for web applications
 
-# Capture additional interaction types for web applications
 
 * Classic
 * How-to guide

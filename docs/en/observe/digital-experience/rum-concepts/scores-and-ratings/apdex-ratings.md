@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:21.930906
 
 # Apdex ratings
 
-# Apdex ratings
 
 * Classic
 * Explanation

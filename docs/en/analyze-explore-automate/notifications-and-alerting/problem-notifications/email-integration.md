@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:39.929087
 
 # Send Dynatrace notifications via email
 
-# Send Dynatrace notifications via email
 
 * Classic
 * 2-min read

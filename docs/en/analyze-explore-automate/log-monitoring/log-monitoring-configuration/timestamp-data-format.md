@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:13.780187
 
 # Supported timestamp formats (Logs Classic)
 
-# Supported timestamp formats (Logs Classic)
 
 * Classic
 * 3-min read
@@ -52,37 +51,28 @@ JSON files are supported for Docker only. If the `log` tag is detected in a JSON
 {
 
 
-
 "log":"2020-11-24 11:01:36,484 CRIT Supervisor running as root (no user in config file)\n",
 
 
-
 "stream":"stdout",
-
 
 
 "time":"2020-11-24T11:01:36.484996713Z"
 
 
-
 }
-
 
 
 {
 
 
-
 "log":"2020-11-24 11:01:36,500 INFO RPC interface 'supervisor' initialized\n",
-
 
 
 "stream":"stdout",
 
 
-
 "time":"2020-11-24T11:01:36.50065223Z"
-
 
 
 }

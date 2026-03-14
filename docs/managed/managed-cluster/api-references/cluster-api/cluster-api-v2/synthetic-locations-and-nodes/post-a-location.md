@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Synthetic locations API v2 - POST a location (Dynatrace Managed)
 
-# Synthetic locations API v2 - POST a location (Dynatrace Managed)
 
 * Published Mar 13, 2019
 
@@ -71,113 +70,85 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "autoUpdateChromium": true,
-
 
 
 "availabilityLocationNodeOutageDelayInMinutes": 5,
 
 
-
 "availabilityLocationOutage": false,
-
 
 
 "availabilityNodeOutage": false,
 
 
-
 "availabilityNotificationsEnabled": true,
-
 
 
 "browserExecutionSupported": true,
 
 
-
 "city": "Linz",
-
 
 
 "countryCode": "AT",
 
 
-
 "deploymentType": "STANDARD",
-
 
 
 "fipsMode": "DISABLED",
 
 
-
 "latitude": 48.306351,
-
 
 
 "longitude": 14.287399,
 
 
-
 "maxActiveGateCount": 5,
-
 
 
 "minActiveGateCount": 2,
 
 
-
 "namExecutionSupported": false,
-
 
 
 "name": "Linz Location",
 
 
-
 "nodeNames": {
-
 
 
 "93302281": "ActiveGate 1"
 
 
-
 },
-
 
 
 "nodeSize": "S",
 
 
-
 "nodes": [
-
 
 
 "93302281"
 
 
-
 ],
-
 
 
 "regionCode": "04",
 
 
-
 "status": "ENABLED",
-
 
 
 "type": "PRIVATE",
 
 
-
 "useNewKubernetesVersion": true
-
 
 
 }
@@ -235,69 +206,53 @@ A list of constraint violations
 {
 
 
-
 "entityId": "string",
-
 
 
 "geoLocationId": "string"
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -317,73 +272,55 @@ You can download or copy the example request body to try it out on your own. Be 
 curl -L -X POST 'https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations' \
 
 
-
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
-
 
 
 -H 'Content-Type: application/json' \
 
 
-
 --data-raw '{
-
 
 
 "type": "PRIVATE",
 
 
-
 "name": "REST example - Linz",
-
 
 
 "countryCode": "AT",
 
 
-
 "city": "Linz",
-
 
 
 "status": "ENABLED",
 
 
-
 "latitude": 48.306351,
-
 
 
 "longitude": 14.287399,
 
 
-
 "nodes": [
-
 
 
 "290433380"
 
 
-
 ],
-
 
 
 "availabilityLocationOutage": false,
 
 
-
 "availabilityNodeOutage": false,
-
 
 
 "locationNodeOutageDelayInMillis": 5000
 
 
-
 }
-
 
 
 '
@@ -401,49 +338,37 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations
 {
 
 
-
 "type": "PRIVATE",
-
 
 
 "name": "REST example - Linz",
 
 
-
 "countryCode": "AT",
-
 
 
 "city": "Linz",
 
 
-
 "status": "ENABLED",
-
 
 
 "latitude": 48.306351,
 
 
-
 "longitude": 14.287399,
-
 
 
 "nodes": ["290433380"],
 
 
-
 "availabilityLocationOutage": false,
-
 
 
 "availabilityNodeOutage": false,
 
 
-
 "locationNodeOutageDelayInMillis": 5000
-
 
 
 }
@@ -455,13 +380,10 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations
 {
 
 
-
 "entityId": "SYNTHETIC_LOCATION-493122BFA29674DC",
 
 
-
 "geoLocationId": "GEOLOCATION-96B57899C9B5A3C7"
-
 
 
 }

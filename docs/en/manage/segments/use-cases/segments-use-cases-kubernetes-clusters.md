@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:18.908578
 
 # Segment data by Kubernetes clusters
 
-# Segment data by Kubernetes clusters
 
 * Latest Dynatrace
 * Tutorial

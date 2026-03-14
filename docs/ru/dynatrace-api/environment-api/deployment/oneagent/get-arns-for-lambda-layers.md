@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:18.857315
 
 # Deployment API — Просмотр ARN для слоёв AWS Lambda
 
-# Deployment API — Просмотр ARN для слоёв AWS Lambda
 
 * Справочник
 * Опубликовано 29 июл. 2022 г.
@@ -76,41 +75,31 @@ scraped: 2026-03-06T21:32:18.857315
 {
 
 
-
 "arns": [
-
 
 
 {
 
 
-
 "arch": "string",
-
 
 
 "arn": "string",
 
 
-
 "region": "string",
-
 
 
 "techType": "string",
 
 
-
 "withCollector": "string"
-
 
 
 }
 
 
-
 ]
-
 
 
 }

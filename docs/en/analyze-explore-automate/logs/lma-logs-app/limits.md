@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:33.237702
 
 # Limits in Logs
 
-# Limits in Logs
 
 * Latest Dynatrace
 * Reference

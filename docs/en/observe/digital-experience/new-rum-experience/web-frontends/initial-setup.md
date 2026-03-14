@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:09.180900
 
 # Initial setup for web frontends
 
-# Initial setup for web frontends
 
 * Latest Dynatrace
 * How-to guide

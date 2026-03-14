@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:32:46.793171
 
 # Smartscape concepts
 
-# Smartscape concepts
 
 * Latest Dynatrace
 * Explanation

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:05.803028
 
 # Requirements for private Synthetic locations
 
-# Requirements for private Synthetic locations
 
 * Classic
 * Reference

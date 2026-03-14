@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:15.258243
 
 # Synthetic architecture and communication
 
-# Synthetic architecture and communication
 
 * Classic
 * Explanation

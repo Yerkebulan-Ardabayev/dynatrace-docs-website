@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:39.737550
 
 # Install OneAgent on AIX
 
-# Install OneAgent on AIX
 
 * Latest Dynatrace
 * How-to guide
@@ -131,9 +130,7 @@ Prepend your application command with the following commands:
 export DT_HOME=/opt/dynatrace/oneagent
 
 
-
 export LDR_PRELOAD64=$DT_HOME/agent/lib64/liboneagentproc.so
-
 
 
 export LDR_PRELOAD=$DT_HOME/agent/lib/liboneagentproc.so
@@ -147,7 +144,6 @@ Edit your `httpd.conf` and add the following two lines at a location of your cho
 LoadModule oneagent_module /opt/dynatrace/oneagent/agent/bin/current/aix-ppc-64/liboneagentloader.so
 
 
-
 OneAgentConfig tenant=<tenant-id>,tenantToken=<tenant-token>,server=https://<server-url>/communication
 ```
 
@@ -157,9 +153,7 @@ Alternatively, if you prefer to leave your `httpd.conf` unchanged, you can speci
 apachectl -c "LoadModule oneagent_module /opt/dynatrace/oneagent/agent/bin/current/aix-ppc-64/liboneagentloader.so"
 
 
-
 -c "OneAgentConfig tenant=<tenantUUID>,tenantToken=<tenant-token>,server=<communicationEndpoints>"
-
 
 
 -k start

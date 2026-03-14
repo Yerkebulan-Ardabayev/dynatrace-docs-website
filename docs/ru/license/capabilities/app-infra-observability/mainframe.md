@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:44.937750
 
 # Расчёт потребления Mainframe Monitoring (DPS)
 
-# Расчёт потребления Mainframe Monitoring (DPS)
 
 * Latest Dynatrace
 * Explanation

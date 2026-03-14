@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:28:59.047980
 
 # SNMP data source
 
-# SNMP data source
 
 * Latest Dynatrace
 * Reference

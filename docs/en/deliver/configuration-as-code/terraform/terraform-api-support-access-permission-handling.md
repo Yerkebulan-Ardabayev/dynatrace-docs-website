@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:34.807717
 
 # Terraform API support and access permission handling
 
-# Terraform API support and access permission handling
 
 * Latest Dynatrace
 * Reference
@@ -37,13 +36,11 @@ Linux
 set DYNATRACE_ENV_URL=https://<YOUR-DT-ENV-ID>.apps.dynatrace.com
 
 
-
 set DYNATRACE_PLATFORM_TOKEN=<YOUR_PLATFORM_TOKEN>
 ```
 
 ```
 export DYNATRACE_ENV_URL=https://<YOUR-DT-ENV-ID>.apps.dynatrace.com
-
 
 
 export DYNATRACE_PLATFORM_TOKEN=<YOUR_PLATFORM_TOKEN>
@@ -68,9 +65,7 @@ Linux
 set DYNATRACE_ENV_URL=https://<YOUR-DT-ENV-ID>.apps.dynatrace.com
 
 
-
 set DYNATRACE_CLIENT_ID=<YOUR_CLIENT_ID>
-
 
 
 set DYNATRACE_CLIENT_SECRET=<YOUR_CLIENT_SECRET>
@@ -80,9 +75,7 @@ set DYNATRACE_CLIENT_SECRET=<YOUR_CLIENT_SECRET>
 export DYNATRACE_ENV_URL=https://<YOUR-DT-ENV-ID>.apps.dynatrace.com
 
 
-
 export DYNATRACE_CLIENT_ID=<YOUR_CLIENT_ID>
-
 
 
 export DYNATRACE_CLIENT_SECRET=<YOUR_CLIENT_SECRET>
@@ -103,13 +96,11 @@ Linux SaaS Classic Dynatrace
 set DYNATRACE_ENV_URL=https://<YOUR-DT-ENV-ID>.apps.dynatrace.com
 
 
-
 set DYNATRACE_API_TOKEN=<YOUR_API_TOKEN>
 ```
 
 ```
 export DYNATRACE_ENV_URL=https://<YOUR-DT-ENV-ID>.apps.dynatrace.com
-
 
 
 export DYNATRACE_API_TOKEN=<YOUR_API_TOKEN>

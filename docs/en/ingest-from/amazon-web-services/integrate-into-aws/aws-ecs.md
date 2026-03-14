@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:11.880580
 
 # Monitor Amazon Elastic Container Service (ECS)
 
-# Monitor Amazon Elastic Container Service (ECS)
 
 * Classic
 * How-to guide
@@ -41,21 +40,16 @@ Privileged mode and volume parameters are prerequisites for this deployment meth
      {
 
 
-
      "name": "oneagent",
-
 
 
      "image": "dynatrace/oneagent",
 
 
-
      "essential": true,
 
 
-
      "privileged": true
-
 
 
      }
@@ -66,9 +60,7 @@ Privileged mode and volume parameters are prerequisites for this deployment meth
      {
 
 
-
      "name": "oneagent"
-
 
 
      }

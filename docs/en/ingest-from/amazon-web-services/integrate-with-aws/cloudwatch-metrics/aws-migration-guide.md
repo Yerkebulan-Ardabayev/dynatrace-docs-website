@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:57.370633
 
 # Migrate from AWS classic (formerly 'built-in') services to cloud services
 
-# Migrate from AWS classic (formerly 'built-in') services to cloud services
 
 * Classic
 * How-to guide

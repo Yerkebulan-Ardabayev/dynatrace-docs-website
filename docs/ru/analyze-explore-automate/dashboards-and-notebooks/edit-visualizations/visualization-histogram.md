@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:19.232793
 
 # Визуализация «Гистограмма»
 
-# Визуализация «Гистограмма»
 
 * Latest Dynatrace
 * Руководство
@@ -29,13 +28,10 @@ scraped: 2026-03-06T21:21:19.232793
 fetch spans
 
 
-
 | filter span.kind == "server"
 
 
-
 | filter duration < 1s
-
 
 
 | summarize count(), by:{range(duration, 10ms)}
@@ -51,17 +47,13 @@ fetch spans
 fetch bizevents
 
 
-
 | filter event.type == "com.easytrade.trade-closed"
-
 
 
 | filter direction == "longsell"
 
 
-
 | filter amount <= 10000
-
 
 
 | summarize count = count(), by:{range(amount, 300)}
@@ -79,9 +71,7 @@ fetch bizevents
 fetch security.events
 
 
-
 | filter event.status == "OPEN"
-
 
 
 | summarize count = count(), by:{range(vulnerability.risk.score, 0.5)}
@@ -97,7 +87,6 @@ fetch security.events
 
 ```
 fetch security.events
-
 
 
 | summarize count = count(), by:{range(vulnerability.risk.score, 0.5), event.status}
@@ -272,7 +261,6 @@ fetch security.events
 
     ```
     fetch logs
-
 
 
     | limit 2000

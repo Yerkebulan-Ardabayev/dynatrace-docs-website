@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:41.961961
 
 # Manage WMI extensions
 
-# Manage WMI extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -102,11 +101,6 @@ The extension activation wizard contains a dynamically updated JSON payload with
 
 ## Explore WMI extensions
 
-Filter by
-
-Select an option
-
-Type to filter
 
 ## Related topics
 

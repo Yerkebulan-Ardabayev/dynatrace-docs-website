@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:20.642559
 
 # Azure Network Interface monitoring
 
-# Azure Network Interface monitoring
 
 * Latest Dynatrace
 * How-to guide

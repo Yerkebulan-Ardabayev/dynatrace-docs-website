@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace OneAgent
 
-# Dynatrace OneAgent
 
 * 2-min read
 * Published Oct 09, 2018

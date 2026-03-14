@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:34.444969
 
 # API сетевых зон — GET: получение сетевой зоны
 
-# API сетевых зон — GET: получение сетевой зоны
 
 * Справочник
 * Опубликовано 5 марта 2020 г.
@@ -85,109 +84,83 @@ scraped: 2026-03-06T21:13:34.444969
 {
 
 
-
 "alternativeZones": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "description": "string",
 
 
-
 "fallbackMode": "ANY_ACTIVE_GATE",
-
 
 
 "id": "string",
 
 
-
 "numOfConfiguredActiveGates": 1,
-
 
 
 "numOfConfiguredOneAgents": 1,
 
 
-
 "numOfOneAgentsFromOtherZones": 1,
-
 
 
 "numOfOneAgentsUsing": 1,
 
 
-
 "overridesGlobal": true,
-
 
 
 "scope": "string"
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }

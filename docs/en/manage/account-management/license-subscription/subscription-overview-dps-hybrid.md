@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:32:07.873486
 
 # Subscription overview (DPS for Hybrid)
 
-# Subscription overview (DPS for Hybrid)
 
 * Latest Dynatrace
 * Explanation

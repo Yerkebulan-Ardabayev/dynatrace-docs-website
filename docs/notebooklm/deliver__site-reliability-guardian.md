@@ -14,7 +14,6 @@ scraped: 2026-03-05T21:35:41.303232
 
 # Site Reliability guardian event structure
 
-# Site Reliability guardian event structure
 
 * Latest Dynatrace
 * Reference
@@ -33,9 +32,7 @@ To query [Lifecycle guardian](../ru/deliver/site-reliability-guardian.md#lifecyc
 fetch events
 
 
-
 | filter event.kind == "SDLC_EVENT"
-
 
 
 | filter event.provider == "dynatrace.site.reliability.guardian"
@@ -56,17 +53,13 @@ To query Lifecycle guardian `validation` `started` events, use the following DQL
 fetch events
 
 
-
 | filter event.kind == "SDLC_EVENT"
-
 
 
 | filter event.provider == "dynatrace.site.reliability.guardian"
 
 
-
 | filter event.type == "validation"
-
 
 
 | filter event.status == "started"
@@ -78,17 +71,13 @@ To query Lifecycle guardian `validation` `finished` events, use the following DQ
 fetch events
 
 
-
 | filter event.kind == "SDLC_EVENT"
-
 
 
 | filter event.provider == "dynatrace.site.reliability.guardian"
 
 
-
 | filter event.type == "validation"
-
 
 
 | filter event.status == "finished"
@@ -100,13 +89,10 @@ To query Lifecycle guardian `validation.objective` events, use the following DQL
 fetch events
 
 
-
 | filter event.kind == "SDLC_EVENT"
 
 
-
 | filter event.provider == "dynatrace.site.reliability.guardian"
-
 
 
 | filter event.type == "validation.objective"
@@ -128,7 +114,6 @@ To query business guardian events with DQL, use the following query:
 fetch bizevents
 
 
-
 | filter event.provider == "dynatrace.site.reliability.guardian"
 ```
 
@@ -146,9 +131,7 @@ To query Business `guardian.validation.started` events, use the following DQL qu
 fetch bizevents
 
 
-
 | filter event.provider == "dynatrace.site.reliability.guardian"
-
 
 
 | filter event.type == "guardian.validation.started"
@@ -160,9 +143,7 @@ To query Business `guardian.validation.finished` events, use the following DQL q
 fetch bizevents
 
 
-
 | filter event.provider == "dynatrace.site.reliability.guardian"
-
 
 
 | filter event.type == "guardian.validation.finished"
@@ -174,9 +155,7 @@ To query Business `guardian.validation.objective` events, use the following DQL 
 fetch bizevents
 
 
-
 | filter event.provider == "dynatrace.site.reliability.guardian"
-
 
 
 | filter event.type == "guardian.validation.objective"
@@ -200,7 +179,6 @@ scraped: 2026-03-06T21:37:23.233559
 
 # Guardian execution context
 
-# Guardian execution context
 
 * Latest Dynatrace
 * How-to guide
@@ -223,69 +201,52 @@ To propagate the execution context, the event triggering a workflow execution mu
 {
 
 
-
 "timeframe.to": "2023-03-08T06:29:08.809Z",
-
 
 
 "timeframe.from": "2023-03-08T05:29:08.809Z",
 
 
-
 "errors": "[]",
-
 
 
 "status": "fail",
 
 
-
 "event.id": "d08a70d8-f6de-4d0d-bd34-5d416a20ba6a",
-
 
 
 "timestamp": 1678256963078000000,
 
 
-
 "event.kind": "BIZ_EVENT",
-
 
 
 "event.type": "guardian.validation.triggered",
 
 
-
 "tag.stage": "hardening",
-
 
 
 "tag.service": "carts",
 
 
-
 "event.provider": "Jenkins",
-
 
 
 "dt.system.bucket": "default_bizevents_short"
 
 
-
 "execution_context": {
-
 
 
 "buildId": "4711",
 
 
-
 "version": "0.1.0"
 
 
-
 }
-
 
 
 }
@@ -301,13 +262,10 @@ This DQL shows you the first `guardian.validation.objective` business event with
 fetch bizevents |
 
 
-
 filter event.type == "guardian.validation.objective" AND guardian.id == "vu9U3hXa3q0AAAABADFhcHA6ZHluYXRyYWNlLnNpdGUucmVsaWFiaWxpdHkuZ3VhcmRpYW46Z3VhcmRpYW5zAAZ0ZW5hbnQABnRlbmFudAAkMWNiZDVkYWYtZThhNi0zMDkxLWFkOGQtMmU5NDNmNWJmZWJmvu9U3hXa3q0" |
 
 
-
 limit 1 |
-
 
 
 parse execution_context, "JSON:parsed_execution_context"
@@ -319,13 +277,10 @@ This DQL shows you all `guardian.validation.finished` business events where the 
 fetch bizevents
 
 
-
 | filter event.type == "guardian.validation.finished"
 
 
-
 | parse execution_context, "JSON:parsed_execution_context"
-
 
 
 | filter parsed_execution_context[buildId] == "4711"
@@ -343,7 +298,6 @@ scraped: 2026-03-04T21:37:50.953374
 
 # List and work with your guardians
 
-# List and work with your guardians
 
 * Latest Dynatrace
 * How-to guide
@@ -393,7 +347,6 @@ scraped: 2026-03-05T21:34:43.909572
 
 # Add and access validation insight links
 
-# Add and access validation insight links
 
 * Latest Dynatrace
 * How-to guide
@@ -437,17 +390,13 @@ Access validation insight links using DQL:
   fetch events
 
 
-
   | filter event.kind == "SDLC_EVENT"
-
 
 
   | filter event.type == "validation.objective"
 
 
-
   | filter event.provider == "dynatrace.site.reliability.guardian"
-
 
 
   | fields dt.srg.objective
@@ -460,13 +409,10 @@ Access validation insight links using DQL:
   fetch bizevents
 
 
-
   | filter event.provider == "dynatrace.site.reliability.guardian"
 
 
-
   | filter event.type == "guardian.validation.objective"
-
 
 
   | fields guardian.objective
@@ -488,7 +434,6 @@ scraped: 2026-03-06T21:15:28.801417
 
 # Site Reliability Guardian
 
-# Site Reliability Guardian
 
 * Latest Dynatrace
 * App
@@ -665,13 +610,10 @@ This DQL shows you the first `guardian.validation.objective` business event with
 fetch bizevents |
 
 
-
 filter event.type == "guardian.validation.objective" AND guardian.id == "vu9U3hXa3q0AAAABADFhcHA6ZHluYXRyYWNlLnNpdGUucmVsaWFiaWxpdHkuZ3VhcmRpYW46Z3VhcmRpYW5zAAZ0ZW5hbnQABnRlbmFudAAkMWNiZDVkYWYtZThhNi0zMDkxLWFkOGQtMmU5NDNmNWJmZWJmvu9U3hXa3q0" |
 
 
-
 limit 1 |
-
 
 
 parse guardian.tags, "JSON:parsed_guardian_tags"
@@ -683,20 +625,16 @@ This DQL shows you all `guardian.validation.finished` business events from guard
 fetch bizevents
 
 
-
 | filter event.type == "guardian.validation.finished"
 
 
-
 | expand guardian.tags
-
 
 
 | filter contains(guardian.tags, "my-tagged-guardian")
 ```
 
 ### 8. Guardian workflow action
-
 
 
 You can automate the execution of a guardian via [Workflows](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), tying guardian execution to [an event](../ru/analyze-explore-automate/workflows/trigger/event-trigger.md#event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") or [an API call](analyze-explore-automate/workflows/trigger.md#on-demand-trigger "Introduction to workflow automation triggers for workflows.").

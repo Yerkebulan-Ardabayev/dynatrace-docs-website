@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:33.553012
 
 # Extend distributed tracing
 
-# Extend distributed tracing
 
 * Latest Dynatrace
 * 1-min read

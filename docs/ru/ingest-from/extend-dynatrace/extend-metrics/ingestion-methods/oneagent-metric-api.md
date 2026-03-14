@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:38.345678
 
 # API метрик OneAgent
 
-# API метрик OneAgent
 
 * Latest Dynatrace
 * Чтение: 2 мин
@@ -75,7 +74,6 @@ API метрик OneAgent поставляется с OneAgent версии 1.20
 curl --data "cpu.temperature,cpu=1 55" http://localhost:14499/metrics/ingest \
 
 
-
 -H "Content-Type: text/plain; charset=utf-8"
 ```
 
@@ -85,17 +83,13 @@ curl --data "cpu.temperature,cpu=1 55" http://localhost:14499/metrics/ingest \
 {
 
 
-
 "error": null,
-
 
 
 "linesValid": 1,
 
 
-
 "linesInvalid": 0
-
 
 
 }

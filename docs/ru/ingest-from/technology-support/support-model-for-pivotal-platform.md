@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:38.490404
 
 # Модель поддержки Dynatrace для VMware Tanzu Application Service
 
-# Модель поддержки Dynatrace для VMware Tanzu Application Service
 
 * Последняя версия Dynatrace
 * Чтение: 5 мин

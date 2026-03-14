@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:23:33.445267
 
 # Migration guides
 
-# Migration guides
 
 * Latest Dynatrace
 * 1-min read

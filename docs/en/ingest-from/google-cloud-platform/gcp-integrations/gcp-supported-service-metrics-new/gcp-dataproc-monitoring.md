@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:51.032158
 
 # Google Cloud Dataproc monitoring
 
-# Google Cloud Dataproc monitoring
 
 * Latest Dynatrace
 * How-to guide

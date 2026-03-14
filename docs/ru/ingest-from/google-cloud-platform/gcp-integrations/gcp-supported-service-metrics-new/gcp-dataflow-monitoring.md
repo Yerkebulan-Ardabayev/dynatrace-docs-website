@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:33:52.001795
 
 # Мониторинг Google Cloud Dataflow
 
-# Мониторинг Google Cloud Dataflow
 
 * Последняя версия Dynatrace
 * Практическое руководство

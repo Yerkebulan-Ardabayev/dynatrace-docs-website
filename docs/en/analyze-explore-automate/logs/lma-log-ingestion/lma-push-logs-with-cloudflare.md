@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:58.548826
 
 # Push logs with Cloudflare
 
-# Push logs with Cloudflare
 
 * Latest Dynatrace
 * Tutorial
@@ -96,41 +95,31 @@ An example request using `cURL` is shown in the code block below:
 $ curl -s https://api.cloudflare.com/client/v4/zones/<ZONE_TAG>/logpush/jobs -X \
 
 
-
 -H "X-Auth-Email: <CLOUDFLARE_EMAIL>" \
-
 
 
 -H "X-Auth-Key: <CLOUDFLARE_API_KEY>" \
 
 
-
 POST -d '{
-
 
 
 "name": "dynatrace",
 
 
-
 "logpull_options": "fields=ClientIP,EdgeStartTimestamp,EdgeResponseStatus,EdgeResponseBytes,ClientRequestURI,ClientRequestHost,ClientRequestMethod,ClientRequestPath&timestamps=rfc3339",
-
 
 
 "destination_conf": "https://<DYNATRACE_BASE_URL>/api/v2/logs/ingest?header_Authorization=Api-Token%20<DYNATRACE API_TOKEN>&header_accept=application/json&header_content-type=application/json&dt.ingest.origin=cloudflare",
 
 
-
 "dataset": "http_requests",
-
 
 
 "enabled": true,
 
 
-
 "output_options": { "output_type": "ndjson", "batch_prefix": "[", "batch_suffix": "]", "record_delimiter": ","}
-
 
 
 }'
@@ -158,73 +147,55 @@ An example JSON response is shown in the code block below.
 {
 
 
-
 "errors": [],
-
 
 
 "messages": [],
 
 
-
 "result": {
-
 
 
 "id": <JOB_ID>,
 
 
-
 "dataset": "http_requests",
-
 
 
 "enabled": false,
 
 
-
 "name": "<DOMAIN_NAME>",
-
 
 
 "output_options": {
 
 
-
 "field_names": [ "ClientIP", "ClientRequestHost", "ClientRequestMethod", "ClientRequestURI", "ClientRequestPath", "EdgeEndTimestamp", "EdgeResponseBytes", "EdgeResponseStatus", "EdgeStartTimestamp", "RayID"],
-
 
 
 "timestamp_format": "rfc3339"
 
 
-
 },
-
 
 
 "destination_conf": "https://<DYNATRACE_BASE_URL>/api/v2/logs/ingest?header_Authorization=Api-Token%20<DYNATRACE API_TOKEN>&header_accept=application/json&header_content-type=application/json&dt.ingest.origin=cloudflare",
 
 
-
 "last_complete": null,
-
 
 
 "last_error": null,
 
 
-
 "error_message": null
-
 
 
 },
 
 
-
 "success": true
-
 
 
 }
@@ -243,29 +214,22 @@ An example request using `cURL` is shown in the code block below.
 $ curl --request PUT \
 
 
-
 https://api.cloudflare.com/client/v4/zones/{ZONE_ID}/logpush/jobs/{JOB_ID} \
-
 
 
 --header "X-Auth-Email: <CLOUDFLARE_EMAIL>" \
 
 
-
 --header "X-Auth-Key: <CLOUDFLARE_API_KEY>" \
-
 
 
 --header "Content-Type: application/json" \
 
 
-
 --data '{
 
 
-
 "enabled": true
-
 
 
 }'
@@ -277,69 +241,52 @@ An example JSON response is shown in the code block below.
 {
 
 
-
 "errors": [],
-
 
 
 "messages": [],
 
 
-
 "result": {
-
 
 
 "id": <JOB_ID>,
 
 
-
 "dataset": "http_requests",
-
 
 
 "enabled": true,
 
 
-
 "name": "<DOMAIN_NAME>",
-
 
 
 "output_options": {
 
 
-
 "field_names": [ "ClientIP", "ClientRequestHost", "ClientRequestMethod", "ClientRequestURI", "ClientRequestPath", "EdgeEndTimestamp", "EdgeResponseBytes", "EdgeResponseStatus", "EdgeStartTimestamp", "RayID"],
-
 
 
 "timestamp_format": "rfc3339"
 
 
-
 },
-
 
 
 "destination_conf": "https://<YOUR_DYNATRACE_ENVIRONMENT>.live.dynatrace.com/api/v2/logs/ingest?header_Authorization=Api-Token%20<DYNATRACE_API_TOKEN>&header_accept=application/json&header_content-type=application/json&dt.ingest.origin=cloudflare",
 
 
-
 "last_error": null,
-
 
 
 "error_message": null
 
 
-
 },
 
 
-
 "success": true
-
 
 
 }

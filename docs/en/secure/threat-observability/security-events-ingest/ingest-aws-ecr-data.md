@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:02.533373
 
 # Ingest Amazon ECR container vulnerability findings and scan events
 
-# Ingest Amazon ECR container vulnerability findings and scan events
 
 * Latest Dynatrace
 * How-to guide

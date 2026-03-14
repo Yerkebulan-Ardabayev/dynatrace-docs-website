@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:22.200079
 
 # Dynatrace Intelligence agentic and generative AI overview
 
-# Dynatrace Intelligence agentic and generative AI overview
 
 * Latest Dynatrace
 * Explanation

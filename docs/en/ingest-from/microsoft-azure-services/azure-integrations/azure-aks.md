@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:52.902395
 
 # Azure Kubernetes Service (AKS)
 
-# Azure Kubernetes Service (AKS)
 
 * Latest Dynatrace
 * Overview

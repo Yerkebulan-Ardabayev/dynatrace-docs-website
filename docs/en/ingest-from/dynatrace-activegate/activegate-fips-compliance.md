@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:05.450636
 
 # ActiveGate FIPS compliance
 
-# ActiveGate FIPS compliance
 
 * Latest Dynatrace
 * Updated on Jul 15, 2025

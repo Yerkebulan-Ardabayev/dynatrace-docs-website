@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:11.974601
 
 # Your license lifecycle
 
-# Your license lifecycle
 
 * Latest Dynatrace
 * Explanation

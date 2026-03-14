@@ -14,7 +14,6 @@ scraped: 2026-03-06T21:21:41.046909
 
 # Problem alerting profiles
 
-# Problem alerting profiles
 
 * Classic
 * 4-min read
@@ -112,7 +111,6 @@ scraped: 2026-03-06T21:11:39.929087
 
 # Send Dynatrace notifications via email
 
-# Send Dynatrace notifications via email
 
 * Classic
 * 2-min read
@@ -161,7 +159,6 @@ scraped: 2026-03-06T21:11:34.918585
 
 # Send Dynatrace notifications to Jira
 
-# Send Dynatrace notifications to Jira
 
 * Classic
 * 3-min read
@@ -237,7 +234,6 @@ scraped: 2026-03-06T21:11:51.891771
 
 # Send Dynatrace notifications to Microsoft Teams
 
-# Send Dynatrace notifications to Microsoft Teams
 
 * Classic
 * 2-min read
@@ -270,17 +266,13 @@ To set up integration of Microsoft Teams and Dynatrace
      {
 
 
-
      "title":"{ProblemTitle}",
-
 
 
      "text":"{ProblemDetailsHTML}",
 
 
-
      "themeColor":"EA4300"
-
 
 
      }
@@ -308,7 +300,6 @@ scraped: 2026-03-06T21:11:46.755460
 
 # Send Dynatrace notifications to Opsgenie
 
-# Send Dynatrace notifications to Opsgenie
 
 * Classic
 * 2-min read
@@ -364,7 +355,6 @@ scraped: 2026-03-06T21:11:50.165388
 
 # Send Dynatrace notifications to PagerDuty
 
-# Send Dynatrace notifications to PagerDuty
 
 * Classic
 * 3-min read
@@ -433,7 +423,6 @@ scraped: 2026-03-06T21:11:41.657451
 
 # Send Dynatrace notifications to ServiceNow
 
-# Send Dynatrace notifications to ServiceNow
 
 * Classic
 * 9-min read
@@ -591,7 +580,6 @@ Optionally, you can review the OneAgent download page to see the IP addresses fo
 ### Dynatrace Incident integration
 
 
-
 How does the integration work?
 
 You can see an overview Dynatrace Incident integration in the flowchart below:
@@ -678,7 +666,6 @@ scraped: 2026-03-06T21:11:36.546788
 
 # Send Dynatrace notifications to Slack
 
-# Send Dynatrace notifications to Slack
 
 * Classic
 * 2-min read
@@ -735,7 +722,6 @@ scraped: 2026-03-06T21:11:43.353925
 
 # Send Dynatrace notifications to Trello
 
-# Send Dynatrace notifications to Trello
 
 * Classic
 * 2-min read
@@ -784,7 +770,6 @@ scraped: 2026-03-06T21:11:48.414954
 
 # Send Dynatrace notifications to VictorOps
 
-# Send Dynatrace notifications to VictorOps
 
 * Classic
 * 2-min read
@@ -833,7 +818,6 @@ scraped: 2026-03-06T21:11:45.096983
 
 # Send Dynatrace notifications via webhooks
 
-# Send Dynatrace notifications via webhooks
 
 * Classic
 * 3-min read
@@ -881,49 +865,37 @@ Here is a valid JSON web hook problem-notification definition example:
 {
 
 
-
 "ImpactedEntities": {ImpactedEntities},
-
 
 
 "ImpactedEntity": "{ImpactedEntity}",
 
 
-
 "PID": "{PID}",
-
 
 
 "ProblemDetailsHTML": "{ProblemDetailsHTML}",
 
 
-
 "ProblemDetailsJSON": {ProblemDetailsJSON},
-
 
 
 "ProblemID": "{ProblemID}",
 
 
-
 "ProblemImpact": "{ProblemImpact}",
-
 
 
 "ProblemTitle": "{ProblemTitle}",
 
 
-
 "Problem URL": "https://example.com",
-
 
 
 "State": "{State}",
 
 
-
 "Tags": "{Tags}"
-
 
 
 }
@@ -937,61 +909,46 @@ After a problem has been detected, the placeholders are populated with the actua
 {
 
 
-
 "ImpactedEntities": [
-
 
 
 {"type": "HOST", "name": "MyHost1", "entity": "HOST-XXXXXXXXXXXXX" },
 
 
-
 {"type": "SERVICE", "name": "MyService1", "entity": "SERVICE-XXXXXXXXXXXXX"}
-
 
 
 ],
 
 
-
 "ImpactedEntity": "MyHost1, MyService1",
-
 
 
 "PID": "99999",
 
 
-
 "ProblemDetailsHTML": "<h1>Dynatrace problem notification test run details</h1>",
-
 
 
 "ProblemDetailsJSON": {"ID" : "99999" },
 
 
-
 "ProblemID": "999",
-
 
 
 "ProblemImpact": "INFRASTRUCTURE",
 
 
-
 "ProblemTitle": "Dynatrace problem notification test run",
-
 
 
 "Problem URL": "https://example.com",
 
 
-
 "State": "OPEN",
 
 
-
 "Tags": "testtag1, testtag2"
-
 
 
 }
@@ -1009,7 +966,6 @@ scraped: 2026-03-06T21:11:38.259950
 
 # Send Dynatrace notifications to xMatters
 
-# Send Dynatrace notifications to xMatters
 
 * Classic
 * 2-min read
@@ -1054,7 +1010,6 @@ scraped: 2026-03-06T21:09:42.896584
 
 # Problem notifications
 
-# Problem notifications
 
 * Classic
 * 2-min read

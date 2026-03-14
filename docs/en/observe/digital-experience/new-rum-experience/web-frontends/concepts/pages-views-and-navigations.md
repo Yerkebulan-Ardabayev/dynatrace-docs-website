@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:00.182245
 
 # Pages, views, and navigations in the New RUM Experience
 
-# Pages, views, and navigations in the New RUM Experience
 
 * Latest Dynatrace
 * Explanation
@@ -46,25 +45,19 @@ The following DQL query retrieves the 75th percentile for the Largest Contentful
 fetch user.events
 
 
-
 | filter characteristics.has_page_summary
-
 
 
 | filter isNotNull(web_vitals.largest_contentful_paint)
 
 
-
 | summarize {
-
 
 
 percentile(web_vitals.largest_contentful_paint, 75)
 
 
-
 }, alias:page_LCP, by:{ page.name }
-
 
 
 | sort page_LCP desc
@@ -133,25 +126,19 @@ The following query retrieves the 75th percentile for LCP by view.
 fetch user.events
 
 
-
 | filter characteristics.has_view_summary
-
 
 
 | filter isNotNull(web_vitals.largest_contentful_paint)
 
 
-
 | summarize {
-
 
 
 percentile(web_vitals.largest_contentful_paint, 75)
 
 
-
 }, alias:view_LCP, by:{ view.name }
-
 
 
 | sort view_LCP desc
@@ -196,9 +183,7 @@ The following DQL query retrieves the amount of hard and soft navigations.
 fetch user.events
 
 
-
 | filter characteristics.has_navigation
-
 
 
 | summarize count(), by: navigation.type

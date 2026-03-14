@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:56.082307
 
 # Set up EdgeConnect
 
-# Set up EdgeConnect
 
 * Latest Dynatrace
 * 2-min read
@@ -36,29 +35,22 @@ To create EdgeConnect, follow the instruction provided in [Create a new EdgeConn
    apiVersion: v1
 
 
-
    kind: Secret
-
 
 
    metadata:
 
 
-
    name: edgeconnect-oauth
-
 
 
    namespace: dynatrace
 
 
-
    data:
 
 
-
    oauth-client-id: <base64 encoded client id>
-
 
 
    oauth-client-secret: <base64 encoded client secret>
@@ -78,45 +70,34 @@ To create EdgeConnect, follow the instruction provided in [Create a new EdgeConn
    apiVersion: dynatrace.com/v1alpha2
 
 
-
    kind: EdgeConnect
-
 
 
    metadata:
 
 
-
    name: sample-edge-connect-name
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    apiServer: "<environment-id>.apps.dynatrace.com"
 
 
-
    replicas: 1
-
 
 
    oauth:
 
 
-
    clientSecret: edgeconnect-oauth
 
 
-
    endpoint: https://sso.dynatrace.com/sso/oauth2/token
-
 
 
    resource: urn:dtenvironment:<tenant>
@@ -139,7 +120,6 @@ Ensure that the status displays `Running`.
 
 ```
 NAME          APISERVER                             STATUS    AGE
-
 
 
 sample-edge-connect-name   <environment-id>.apps.dynatrace.com   Running   16m

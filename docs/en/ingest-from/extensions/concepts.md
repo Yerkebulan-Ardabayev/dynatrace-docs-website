@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:33:06.167215
 
 # About Extensions
 
-# About Extensions
 
 * Latest Dynatrace
 * Explanation
@@ -145,13 +144,10 @@ Extension packages with different contents are not accepted for upload. The maxi
 bundle.zip
 
 
-
 â   extension.zip
 
 
-
 â   extension.zip.sig
-
 
 
 â   extension.zip.sig.tsr

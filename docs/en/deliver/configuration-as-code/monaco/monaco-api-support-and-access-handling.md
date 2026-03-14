@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:49.923198
 
 # Monaco API support and access permission handling
 
-# Monaco API support and access permission handling
 
 * Latest Dynatrace
 * Reference

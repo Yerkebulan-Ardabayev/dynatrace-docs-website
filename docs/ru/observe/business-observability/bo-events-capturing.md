@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:32.902952
 
 # Захват бизнес-событий
 
-# Захват бизнес-событий
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -123,21 +122,16 @@ OneAgent версии 1.253+
    {
 
 
-
    "accountId":6,
-
 
 
    "amount":10,
 
 
-
    "instrumentId":1,
 
 
-
    "price":157.025
-
 
 
    }
@@ -168,165 +162,124 @@ OneAgent версии 1.253+
   {
 
 
-
   "time":"2022-03-12T12:16:36.5881611+00:00",
-
 
 
   "transactionId":"1748-2b59-5c78-9c75-f500-274a-88f5-7965",
 
 
-
   "user":{
-
 
 
   "user.id":"1684588",
 
 
-
   "userName":"johndoe",
-
 
 
   "name":"John",
 
 
-
   "surname":"Doe",
-
 
 
   "email":"me@johndoe.one"
 
 
-
   },
-
 
 
   "order":{
 
 
-
   "order.id":"58449798",
-
 
 
   "retailer":{
 
 
-
   "id":"558",
-
 
 
   "name":"HappyShop"
 
 
-
   },
-
 
 
   "amount":240.44,
 
 
-
   "currency":"usd",
-
 
 
   "tags":[
 
 
-
   "fancy",
-
 
 
   "modern",
 
 
-
   "classic",
-
 
 
   "vintage"
 
 
-
   ],
-
 
 
   "items":[
 
 
-
   {
-
 
 
   "itemId":"674",
 
 
-
   "price":175.99,
-
 
 
   "productName":"Product A",
 
 
-
   "productCategory":"Furniture",
-
 
 
   "quantity":1
 
 
-
   },
-
 
 
   {
 
 
-
   "itemId":48,
-
 
 
   "price":12.89,
 
 
-
   "productName":"Product Z",
-
 
 
   "productCategory":"Decoration",
 
 
-
   "quantity":5
 
 
-
   }
-
 
 
   ]
 
 
-
   }
-
 
 
   }
@@ -351,9 +304,7 @@ OneAgent версии 1.253+
 <LogoutRequest id="102030AF">
 
 
-
 <accountId>100</accountId>
-
 
 
 </LogoutRequest>
@@ -370,45 +321,34 @@ OneAgent версии 1.253+
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
-
 
 
 <s:Body>
 
 
-
 <Tagh1 xmlns="http://tempuri.org/">
-
 
 
 <Tagh2 cusType="A" xmlns:a="http://schemas.datacontract.org/ex" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
 
 
-
 <a:Code i:nil="true" />
-
 
 
 <a:Name>MyCustomer1</a:Name>
 
 
-
 <a:TotalValue>45</a:TotalValue>
-
 
 
 </Tagh2>
 
 
-
 </Tagh1>
 
 
-
 </s:Body>
-
 
 
 </s:Envelope>
@@ -470,53 +410,40 @@ OneAgent версии 1.253+
 let attributes = {
 
 
-
 "event.name": "Confirmed Booking",
-
 
 
 "page": "booking-confirmation",
 
 
-
 "product": "Danube Anna Hotel",
-
 
 
 "amount": 358.35,
 
 
-
 "currency": "USD",
-
 
 
 "reviewScore": 4.8,
 
 
-
 "arrivalDate": "2022-11-05",
-
 
 
 "departureDate": "2022-11-15",
 
 
-
 "journeyDuration": 10,
-
 
 
 "adultTravelers": 2,
 
 
-
 "childrenTravelers": 0
 
 
-
 };
-
 
 
 dynatrace.sendBizEvent('com.easytravel.funnel.booking-finished', attributes);
@@ -534,9 +461,7 @@ dynatrace.sendBizEvent('com.easytravel.funnel.booking-finished', attributes);
 {
 
 
-
 "content": "{\"user\": \"009494\", \"ordervalue\": 1000}"
-
 
 
 }
@@ -589,65 +514,49 @@ dynatrace.sendBizEvent('com.easytravel.funnel.booking-finished', attributes);
   [
 
 
-
   {
-
 
 
   "currency.code":"USD",
 
 
-
   "currency.name":"US dollar",
-
 
 
   "exchange.rate":"1.1718"
 
 
-
   },
 
 
-
   {
-
 
 
   "currency.code":"EUR",
 
 
-
   "currency.name":"Euro",
-
 
 
   "exchange.rate":"1.0000"
 
 
-
   },
-
 
 
   {
 
 
-
   "currency.code":"GBP",
-
 
 
   "currency.name":"Pound sterling",
 
 
-
   "exchange.rate":"0.86320"
 
 
-
   }
-
 
 
   ]
@@ -692,45 +601,34 @@ HTTP-запрос возвращает содержимое полезной н�
 {
 
 
-
 "success": true,
-
 
 
 "timestamp": 1754946555,
 
 
-
 "base": "EUR",
-
 
 
 "date": "2025-08-11",
 
 
-
 "rates": {
-
 
 
 "USD": 1.161388,
 
 
-
 "JPY": 171.953923,
-
 
 
 "AUD": 1.78907,
 
 
-
 "CAD": 1.600567
 
 
-
 }
-
 
 
 }
@@ -764,13 +662,10 @@ HTTP-запрос возвращает содержимое полезной н�
 fetch bizevents
 
 
-
 | filter event.type == "currency"
 
 
-
 | parse rates, "JSON:rates"
-
 
 
 | fields aud = rates[AUD], usd=rates[USD]

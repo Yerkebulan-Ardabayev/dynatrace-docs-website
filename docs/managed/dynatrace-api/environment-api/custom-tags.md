@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Custom tags API
 
-# Custom tags API
 
 * Reference
 * Published May 29, 2020

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:57.097581
 
 # Container monitoring rules
 
-# Container monitoring rules
 
 * Classic
 * How-to guide

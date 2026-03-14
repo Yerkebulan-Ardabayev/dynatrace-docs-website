@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:58.033259
 
 # Мониторинг Google Cloud Functions
 
-# Мониторинг Google Cloud Functions
 
 * Последняя версия Dynatrace
 * Обзор

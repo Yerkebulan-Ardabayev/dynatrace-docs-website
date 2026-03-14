@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Digital Experience
 
-# Digital Experience
 
 * Overview
 * 1-min read

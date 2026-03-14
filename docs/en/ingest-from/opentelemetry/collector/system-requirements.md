@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:25:53.405162
 
 # Dynatrace OTel Collector system requirements.
 
-# Dynatrace OTel Collector system requirements.
 
 * Latest Dynatrace
 * Reference

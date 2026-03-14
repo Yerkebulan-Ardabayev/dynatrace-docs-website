@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace Intelligence generative AI FAQ
 
-# Dynatrace Intelligence generative AI FAQ
 
 * Latest Dynatrace
 * Troubleshooting

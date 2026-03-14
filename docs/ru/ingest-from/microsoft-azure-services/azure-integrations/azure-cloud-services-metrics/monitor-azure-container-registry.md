@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:27.702564
 
 # Мониторинг Azure Container Registry
 
-# Мониторинг Azure Container Registry
 
 * Latest Dynatrace
 * How-to guide

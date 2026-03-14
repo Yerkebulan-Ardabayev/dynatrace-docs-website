@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # List available Cluster tokens
 
-# List available Cluster tokens
 
 * Published Feb 12, 2020
 
@@ -70,61 +69,46 @@ The short representation of a Dynatrace entity.
 {
 
 
-
 "values": [
 
 
-
 {
-
 
 
 "description": "Dynatrace entity 1 for the REST API example",
 
 
-
 "id": "6a98d7bc-abb9-44f8-ae6a-73e68e71812a",
-
 
 
 "name": "Dynatrace entity 1"
 
 
-
 },
 
 
-
 {
-
 
 
 "id": "ee70f7d3-9a4e-4f5f-94d2-c9d6156f1618",
 
 
-
 "name": "Dynatrace entity 2"
-
 
 
 },
 
 
-
 {
-
 
 
 "id": "8cdabe77-9e1a-4be8-b3df-269dd6fa9d7f"
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -138,7 +122,6 @@ In this example, the request lists API tokens in the `myManaged.cluster.com` env
 
 ```
 curl -X GET "https://myManaged.cluster.com/api/cluster/v2/tokens?limit=1000&user=Pete&permissions=ClusterTokenManagement"
-
 
 
 -H  "accept: application/json; charset=utf-8"
@@ -156,61 +139,46 @@ https://myManaged.cluster.com/api/cluster/v2/tokens?limit=1000
 {
 
 
-
 "values": [
 
 
-
 {
-
 
 
 "id": "6a98d7bc-abb9-44f8-ae6a-73e68e71812a",
 
 
-
 "name": "Dynatrace entity 1",
-
 
 
 "description": "Dynatrace entity 1 for the REST API example"
 
 
-
 },
 
 
-
 {
-
 
 
 "id": "ee70f7d3-9a4e-4f5f-94d2-c9d6156f1618",
 
 
-
 "name": "Dynatrace entity 2"
-
 
 
 },
 
 
-
 {
-
 
 
 "id": "8cdabe77-9e1a-4be8-b3df-269dd6fa9d7f"
 
 
-
 }
 
 
-
 ]
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:34:00.535138
 
 # Issue-tracking integration
 
-# Issue-tracking integration
 
 * Classic
 * How-to guide

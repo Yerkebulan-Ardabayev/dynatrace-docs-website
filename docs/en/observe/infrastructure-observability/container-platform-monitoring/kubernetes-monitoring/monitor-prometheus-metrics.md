@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:44.712888
 
 # Monitor Prometheus metrics
 
-# Monitor Prometheus metrics
 
 * Classic
 * 14-min read
@@ -145,85 +144,64 @@ This example shows how to use the filter syntax in a pod definition with annotat
 apiVersion: v1
 
 
-
 kind: Pod
-
 
 
 metadata:
 
 
-
 name: mypod
-
 
 
 annotations:
 
 
-
 metrics.dynatrace.com/scrape: 'true'
-
 
 
 metrics.dynatrace.com/path: '/path/to-metrics'
 
 
-
 metrics.dynatrace.com/port: '9001'
-
 
 
 metrics.dynatrace.com/secure: 'false'
 
 
-
 metrics.dynatrace.com/filter: |
-
 
 
 {
 
 
-
 "mode": "include",
-
 
 
 "names": [
 
 
-
 "redis_db_keys",
-
 
 
 "*insights*",
 
 
-
 "*bytes"
-
 
 
 ]
 
 
-
 }
-
 
 
 spec:
 
 
-
 containers:
 
 
-
 - name: mycontainer
-
 
 
 image: myregistry/myimage:mytag
@@ -250,61 +228,46 @@ For example, the annotations could look as follows:
 apiVersion: v1
 
 
-
 kind: Pod
-
 
 
 metadata:
 
 
-
 name: mypod
-
 
 
 annotations:
 
 
-
 metrics.dynatrace.com/scrape: 'true'
-
 
 
 metrics.dynatrace.com/path: '/path/to-metrics'
 
 
-
 metrics.dynatrace.com/port: '9001'
-
 
 
 metrics.dynatrace.com/secure: 'false'
 
 
-
 metrics.dynatrace.com/tls.ca.crt: 'configmap:kubernetes-config:etcd-metric-serving-ca:ca-bundle.crt'
-
 
 
 metrics.dynatrace.com/tls.crt: 'secret:kubernetes-config:etcd-metric-client:tls.crt'
 
 
-
 metrics.dynatrace.com/tls.key: 'secret:kubernetes-config:etcd-metric-client:tls.key'
-
 
 
 spec:
 
 
-
 containers:
 
 
-
 - name: mycontainer
-
 
 
 image: myregistry/myimage:mytag
@@ -328,49 +291,37 @@ The aforementioned annotations are then used on a pod, with the secrets referenc
 apiVersion: v1
 
 
-
 kind: Secret
 
 
-
 metadata:
-
 
 
 name: user-secret
 
 
-
 data:
-
 
 
 username: bXktdXNlcm5hbWUtc2VjcmV0Cg==
 
 
-
 ---
-
 
 
 apiVersion: v1
 
 
-
 kind: Secret
-
 
 
 metadata:
 
 
-
 name: password-secret
 
 
-
 data:
-
 
 
 password: bXktcGFzc3dvcmQtc2VjcmV0Cg==
@@ -380,57 +331,43 @@ password: bXktcGFzc3dvcmQtc2VjcmV0Cg==
 apiVersion: v1
 
 
-
 kind: Pod
-
 
 
 metadata:
 
 
-
 name: mypod
-
 
 
 annotations:
 
 
-
 metrics.dynatrace.com/scrape: 'true'
-
 
 
 metrics.dynatrace.com/path: '/path/to-metrics'
 
 
-
 metrics.dynatrace.com/port: '9001'
-
 
 
 metrics.dynatrace.com/secure: 'false'
 
 
-
 metrics.dynatrace.com/http.auth.basic.username: 'secret:default:user-secret:username'
-
 
 
 metrics.dynatrace.com/http.auth.basic.password: 'secret:default:password-secret:password'
 
 
-
 spec:
-
 
 
 containers:
 
 
-
 - name: mycontainer
-
 
 
 image: myregistry/myimage:mytag
@@ -453,21 +390,16 @@ The following example shows a secret called `token-secret` created in the `defau
 apiVersion: v1
 
 
-
 kind: Secret
-
 
 
 metadata:
 
 
-
 name: token-secret
 
 
-
 data:
-
 
 
 bearer: bXktYmVhcmVyLXRva2VuCg==
@@ -479,53 +411,40 @@ The annotation is then used on a pod, with the secret referenced in the annotati
 apiVersion: v1
 
 
-
 kind: Pod
-
 
 
 metadata:
 
 
-
 name: mypod
-
 
 
 annotations:
 
 
-
 metrics.dynatrace.com/scrape: 'true'
-
 
 
 metrics.dynatrace.com/path: '/path/to-metrics'
 
 
-
 metrics.dynatrace.com/port: '9001'
-
 
 
 metrics.dynatrace.com/secure: 'false'
 
 
-
 metrics.dynatrace.com/http.auth: 'secret:default:token-secret:bearer'
-
 
 
 spec:
 
 
-
 containers:
 
 
-
 - name: mycontainer
-
 
 
 image: myregistry/myimage:mytag
@@ -579,65 +498,49 @@ If you don't have full control over the pod template, you have the following opt
   kind: Service
 
 
-
   apiVersion: v1
-
 
 
   metadata:
 
 
-
   name: dynatrace-monitoring-node-exporter
-
 
 
   namespace: kubernetes-monitoring
 
 
-
   annotations:
-
 
 
   metrics.dynatrace.com/port: '12071'
 
 
-
   metrics.dynatrace.com/scrape: 'true'
-
 
 
   metrics.dynatrace.com/secure: 'true'
 
 
-
   metrics.dynatrace.com/path: '/metrics'
-
 
 
   spec:
 
 
-
   ports:
-
 
 
   - name: dynatrace-monitoring-node-exporter-port
 
 
-
   port: 9100
-
 
 
   targetPort: 12071
 
 
-
   selector:
-
 
 
   app.kubernetes.io/name: node-exporter
@@ -653,65 +556,49 @@ If you don't have full control over the pod template, you have the following opt
   kind: Service
 
 
-
   apiVersion: v1
-
 
 
   metadata:
 
 
-
   name: dynatrace-monitoring-node-exporter
-
 
 
   namespace: kubernetes-monitoring
 
 
-
   annotations:
-
 
 
   metrics.dynatrace.com/port: '12071'
 
 
-
   metrics.dynatrace.com/scrape: 'true'
-
 
 
   metrics.dynatrace.com/secure: 'true'
 
 
-
   metrics.dynatrace.com/path: '/metrics'
-
 
 
   spec:
 
 
-
   ports:
-
 
 
   - name: dynatrace-monitoring-node-exporter-port
 
 
-
   port: 12071
-
 
 
   selector:
 
 
-
   app.kubernetes.io/name: node-exporter
-
 
 
   clusterIP: None

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:50.886096
 
 # EdgeConnect release notes
 
-# EdgeConnect release notes
 
 * Latest Dynatrace
 * Release notes

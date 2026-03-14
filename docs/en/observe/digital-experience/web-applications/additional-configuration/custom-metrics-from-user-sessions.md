@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:28:06.966694
 
 # Create USQL custom metrics for web applications
 
-# Create USQL custom metrics for web applications
 
 * Classic
 * How-to guide
@@ -85,117 +84,88 @@ You can also use the [Settings API](../../../../dynatrace-api/environment-api/se
    [
 
 
-
    {
-
 
 
    "schemaVersion":"0.0.4",
 
 
-
    "schemaId":"builtin:custom-metrics",
-
 
 
    "scope":"tenant",
 
 
-
    "value":{
-
 
 
    "enabled":true,
 
 
-
    "metricKey":"uscm.sessions_by_browser_family_and_country_easytravel",
-
 
 
    "value":{
 
 
-
    "type":"COUNTER"
 
 
-
    },
-
 
 
    "dimensions":[
 
 
-
    "browserFamily",
-
 
 
    "country"
 
 
-
    ],
-
 
 
    "filters":[
 
 
-
    {
-
 
 
    "fieldName":"useraction.application",
 
 
-
    "operator":"EQUALS",
-
 
 
    "value":"www.easytravel.com"
 
 
-
    },
-
 
 
    {
 
 
-
    "fieldName":"userType",
-
 
 
    "operator":"EQUALS",
 
 
-
    "value":"REAL_USER"
 
 
-
    }
-
 
 
    ]
 
 
-
    }
 
 
-
    }
-
 
 
    ]
@@ -209,117 +179,88 @@ You can also use the [Settings API](../../../../dynatrace-api/environment-api/se
    [
 
 
-
    {
-
 
 
    "schemaVersion":"1.0.0",
 
 
-
    "schemaId":"builtin:user-action-custom-metrics",
-
 
 
    "scope":"tenant",
 
 
-
    "value":{
-
 
 
    "enabled":true,
 
 
-
    "metricKey":"uacm.actions_by_type_and_country_easytravel",
-
 
 
    "value":{
 
 
-
    "type":"COUNTER"
 
 
-
    },
-
 
 
    "dimensions":[
 
 
-
    "type",
-
 
 
    "usersession.country"
 
 
-
    ],
-
 
 
    "filters":[
 
 
-
    {
-
 
 
    "fieldName":"application",
 
 
-
    "operator":"EQUALS",
-
 
 
    "value":"www.easytravel.com"
 
 
-
    },
-
 
 
    {
 
 
-
    "fieldName":"usersession.userType",
-
 
 
    "operator":"EQUALS",
 
 
-
    "value":"REAL_USER"
 
 
-
    }
-
 
 
    ]
 
 
-
    }
 
 
-
    }
-
 
 
    ]

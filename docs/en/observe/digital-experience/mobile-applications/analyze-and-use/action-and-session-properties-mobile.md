@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:38.421195
 
 # Leverage user action and user session properties for mobile applications
 
-# Leverage user action and user session properties for mobile applications
 
 * Classic
 * How-to guide

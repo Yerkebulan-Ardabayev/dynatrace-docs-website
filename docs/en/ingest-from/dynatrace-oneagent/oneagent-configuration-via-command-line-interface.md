@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:30:55.688261
 
 # OneAgent configuration via command-line interface
 
-# OneAgent configuration via command-line interface
 
 * Latest Dynatrace
 * Reference
@@ -300,13 +299,10 @@ The command saves the archive as the `support_archive_agent_YYYY-MM-DD_hhmmss.zi
 Creating support archive from last 30 days in C:\data\support-archive
 
 
-
 Waiting 30s for archive request to be processed
 
 
-
 Processing archive, waiting up to 15m 0s
-
 
 
 Archive saved as C:\data\support-archive\support_archive_agent_2021-09-07_121619.zip

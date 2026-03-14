@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:19.074562
 
 # Metric scripting integration
 
-# Metric scripting integration
 
 * Latest Dynatrace
 * 2-min read

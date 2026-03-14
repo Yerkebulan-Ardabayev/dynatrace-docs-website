@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:57.037010
 
 # Anomaly Detection app
 
-# Anomaly Detection app
 
 * Latest Dynatrace
 * App

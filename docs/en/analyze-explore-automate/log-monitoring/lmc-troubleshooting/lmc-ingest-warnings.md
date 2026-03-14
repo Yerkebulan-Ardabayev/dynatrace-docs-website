@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:30:37.409638
 
 # Log ingestion warnings (Logs Classic)
 
-# Log ingestion warnings (Logs Classic)
 
 * Classic
 * Overview

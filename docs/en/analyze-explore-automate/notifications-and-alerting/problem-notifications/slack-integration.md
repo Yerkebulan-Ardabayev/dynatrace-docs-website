@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:36.546788
 
 # Send Dynatrace notifications to Slack
 
-# Send Dynatrace notifications to Slack
 
 * Classic
 * 2-min read

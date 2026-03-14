@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:29.247566
 
 # Dynatrace Apps
 
-# Dynatrace Apps
 
 * Latest Dynatrace
 * Overview
@@ -15,8 +14,4 @@ scraped: 2026-03-06T21:09:29.247566
 
 Select an app to start learning about it.
 
-Filter by
 
-Select an option
-
-Type to filter

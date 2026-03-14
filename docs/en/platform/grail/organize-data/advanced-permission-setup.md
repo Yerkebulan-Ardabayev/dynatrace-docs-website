@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:14.199849
 
 # Configure advanced permissions with security context
 
-# Configure advanced permissions with security context
 
 * Latest Dynatrace
 * How-to guide
@@ -74,7 +73,6 @@ You can [enforce access controls](assign-permissions-in-grail.md "Find out how t
 
 ```
 ALLOW storage:buckets:read WHERE storage:bucket-name MATCH (â*-database-*â);
-
 
 
 ALLOW storage:logs:read WHERE storage:dt.security_context = "TeamA" AND storage:dt.host_group.id MATCH ("shared_host_*");

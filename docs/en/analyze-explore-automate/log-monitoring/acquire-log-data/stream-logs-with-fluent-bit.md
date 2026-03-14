@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:29.846836
 
 # Stream logs to Dynatrace with Fluent Bit (Logs Classic)
 
-# Stream logs to Dynatrace with Fluent Bit (Logs Classic)
 
 * Classic
 * Tutorial
@@ -38,53 +37,40 @@ The Fluent Bit `http output` plugin allows you to forward your logs to the Dynat
 [OUTPUT]
 
 
-
 name  http
-
 
 
 match *
 
 
-
 header Content-Type application/json; charset=utf-8
-
 
 
 header Authorization Api-Token {your-API-token-here}
 
 
-
 allow_duplicated_headers false
-
 
 
 host  {your-environment-id}.live.dynatrace.com
 
 
-
 Port  443
-
 
 
 URI   /api/v2/logs/ingest
 
 
-
 Format json
-
 
 
 json_date_format iso8601
 
 
-
 json_date_key timestamp
 
 
-
 tls On
-
 
 
 tls.verify On
@@ -128,37 +114,28 @@ URL. Your configuration for AWS FireLens should have the following:
 Name: http
 
 
-
 TLS: on
-
 
 
 Format: json
 
 
-
 Header: Content-Type application/json; charset=utf-8
-
 
 
 Host: {your-environment-id}.live.dynatrace.com
 
 
-
 Port: 443
-
 
 
 URI: /api/v2/logs/ingest?api-token={your-API-token-here}
 
 
-
 Allow_Duplicated_Headers": "false"
 
 
-
 Json_Date_Format": "iso8601"
-
 
 
 Json_Date_Key": "timestamp"

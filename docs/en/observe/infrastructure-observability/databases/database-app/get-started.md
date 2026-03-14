@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:14.737474
 
 # Get started with database monitoring
 
-# Get started with database monitoring
 
 * Latest Dynatrace
 * How-to guide

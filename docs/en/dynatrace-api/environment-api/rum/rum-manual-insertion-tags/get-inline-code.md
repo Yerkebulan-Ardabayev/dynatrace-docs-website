@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:33:10.946309
 
 # GET inline code
 
-# GET inline code
 
 * Reference
 * Updated on Sep 18, 2025

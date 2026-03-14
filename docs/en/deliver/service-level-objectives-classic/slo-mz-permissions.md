@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:10.855487
 
 # SLO management with management-zone permissions
 
-# SLO management with management-zone permissions
 
 * Classic
 * Reference

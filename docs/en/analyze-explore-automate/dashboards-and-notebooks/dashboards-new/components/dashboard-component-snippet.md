@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:10.713197
 
 # Add a snippet to a dashboard
 
-# Add a snippet to a dashboard
 
 * Latest Dynatrace
 * How-to guide
@@ -54,9 +53,7 @@ The DQL behind your tile is the snippet you selected with  **Fetch logs**:
 fetch logs
 
 
-
 | sort timestamp desc
-
 
 
 | limit 100
@@ -82,9 +79,7 @@ This one creates a tile based on the following DQL:
 fetch events
 
 
-
 | summarize `event count`=count(), by:{event.kind}
-
 
 
 | limit 5

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:35:23.930808
 
 # Мониторинг Google Cloud DNS
 
-# Мониторинг Google Cloud DNS
 
 * Latest Dynatrace
 * How-to guide

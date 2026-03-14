@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:57.288661
 
 # Ingest Microsoft Sentinel security events
 
-# Ingest Microsoft Sentinel security events
 
 * Latest Dynatrace
 * How-to guide
@@ -60,9 +59,7 @@ See below for the Microsoft Sentinel and Dynatrace requirements.
    fetch security.events
 
 
-
    | filter dt.system.bucket == "default_securityevents"
-
 
 
    | filter event.provider=="Microsoft Sentinel"

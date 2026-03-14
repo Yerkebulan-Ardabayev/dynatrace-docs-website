@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:26:39.711082
 
 # Monitor Kubernetes/OpenShift cluster utilization
 
-# Monitor Kubernetes/OpenShift cluster utilization
 
 * 2-min read
 * Updated on Apr 29, 2024

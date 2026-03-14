@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # User sessions API
 
-# User sessions API
 
 * Reference
 * Updated on May 02, 2022

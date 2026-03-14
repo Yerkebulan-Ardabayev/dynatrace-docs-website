@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:13.739557
 
 # Azure Machine - Azure Arc
 
-# Azure Machine - Azure Arc
 
 * Latest Dynatrace
 * How-to guide

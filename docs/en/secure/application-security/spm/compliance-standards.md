@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:20.216388
 
 # Security Posture Management compliance standards
 
-# Security Posture Management compliance standards
 
 * Latest Dynatrace
 * How-to guide

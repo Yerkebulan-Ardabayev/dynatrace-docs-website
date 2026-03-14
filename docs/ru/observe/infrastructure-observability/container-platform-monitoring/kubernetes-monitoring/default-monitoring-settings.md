@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:49.803705
 
 # Глобальные настройки мониторинга по умолчанию для Kubernetes/OpenShift
 
-# Глобальные настройки мониторинга по умолчанию для Kubernetes/OpenShift
 
 * Classic
 * 2-min read

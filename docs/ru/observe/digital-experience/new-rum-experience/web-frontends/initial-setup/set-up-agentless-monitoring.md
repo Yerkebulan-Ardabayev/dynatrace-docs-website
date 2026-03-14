@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:10.443740
 
 # Настройка безагентного RUM в New RUM Experience
 
-# Настройка безагентного RUM в New RUM Experience
 
 * Latest Dynatrace
 * How-to guide
@@ -73,61 +72,46 @@ New RUM Experience предоставляет несколько формато�
 <!DOCTYPE html>
 
 
-
 <html  lang="en">
-
 
 
 <head>
 
 
-
 <meta charset="UTF-8">
-
 
 
 <title>MyApp</title>
 
 
-
 <script type="text/javascript" src="myapp.js"></script>
-
 
 
 </head>
 
 
-
 <body>
-
 
 
 <form>
 
 
-
 Username: <input type="text" name="username"/><br/>
-
 
 
 Password: <input type="password" name="password"/><br/>
 
 
-
 <input type="submit" value="Login">
-
 
 
 </form>
 
 
-
 </body>
 
 
-
 </html>
-
 
 
 </html>
@@ -137,61 +121,46 @@ Password: <input type="password" name="password"/><br/>
 <!DOCTYPE html>
 
 
-
 <html  lang="en">
-
 
 
 <head>
 
 
-
 <meta charset="UTF-8">
-
 
 
 <title>MyApp</title>
 
 
-
 <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/145e12d594f/cg36988wxq/477g8ec68708x5c1_complete.js" crossorigin="anonymous"></script>
-
 
 
 <script type="text/javascript" src="myapp.js"></script>
 
 
-
 </head>
-
 
 
 <body>
 
 
-
 <form>
-
 
 
 Username: <input type="text" name="username"/><br/>
 
 
-
 Password: <input type="password" name="password"/><br/>
-
 
 
 <input type="submit" value="Login">
 
 
-
 </form>
 
 
-
 </body>
-
 
 
 </html>

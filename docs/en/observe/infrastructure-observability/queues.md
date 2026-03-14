@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:50.344003
 
 # Message queues
 
-# Message queues
 
 * Classic
 * Explanation

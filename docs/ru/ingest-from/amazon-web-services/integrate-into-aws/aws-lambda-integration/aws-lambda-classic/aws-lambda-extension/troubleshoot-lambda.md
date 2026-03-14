@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:30:20.410674
 
 # Проверка интеграции
 
-# Проверка интеграции
 
 * Classic
 * Troubleshooting
@@ -27,7 +26,6 @@ scraped: 2026-03-04T21:30:20.410674
   DT_LOGGING_DESTINATION: stdout
 
 
-
   DT_LOGGING_NODEJS_FLAGS: Exporter=true,LambdaSensor=true
   ```
 * Для **Python**
@@ -36,14 +34,12 @@ scraped: 2026-03-04T21:30:20.410674
   DT_LOGGING_DESTINATION: stdout
 
 
-
   DT_LOGGING_PYTHON_FLAGS: dynatrace=True
   ```
 * Для **Java**
 
   ```
   DT_LOGGING_DESTINATION: stdout
-
 
 
   DT_LOGGING_JAVA_FLAGS: log-Transformer=true,log-OpenTelemetryUtils=true,log-AsyncClassRetransformer=true,log-ClassValue=true

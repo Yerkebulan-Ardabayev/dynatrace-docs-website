@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:38:21.488936
 
 # Трассировка Azure Functions, написанных на .NET
 
-# Трассировка Azure Functions, написанных на .NET
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -32,7 +31,6 @@ scraped: 2026-03-06T21:38:21.488936
    dotnet add package Dynatrace.OpenTelemetry
 
 
-
    dotnet add package --version 1.0.0-rc9.5 OpenTelemetry.Extensions.Hosting
    ```
 2. Дополнительно, в зависимости от используемой среды выполнения, мы рекомендуем использовать следующие вспомогательные пакеты для Azure Functions:
@@ -46,7 +44,6 @@ scraped: 2026-03-06T21:38:21.488936
 
      ```
      dotnet add package Dynatrace.OpenTelemetry.Instrumentation.AzureFunctions
-
 
 
      dotnet add package --version 1.0.0-rc9.5 OpenTelemetry.Instrumentation.AspNetCore
@@ -94,85 +91,64 @@ scraped: 2026-03-06T21:38:21.488936
 using Dynatrace.OpenTelemetry;
 
 
-
 using Dynatrace.OpenTelemetry.Instrumentation.AzureFunctions;
-
 
 
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 
 
-
 using Microsoft.Extensions.DependencyInjection;
-
 
 
 using OpenTelemetry.Trace;
 
 
-
 [assembly: FunctionsStartup(typeof(Examples.AzureFunctionApp.Startup))]
-
 
 
 namespace Examples.AzureFunctionApp
 
 
-
 {
-
 
 
 internal class Startup : FunctionsStartup
 
 
-
 {
-
 
 
 public override void Configure(IFunctionsHostBuilder builder)
 
 
-
 {
-
 
 
 builder.Services.AddOpenTelemetryTracing(sdk => sdk
 
 
-
 .AddAzureFunctionsInstrumentation()
-
 
 
 .AddAspNetCoreInstrumentation()
 
 
-
 // ... any custom OTel setup ...
-
 
 
 .AddDynatrace()
 
 
-
 // ... if you need custom resources, set them after AddDynatrace & call AddTelemetrySdk (see below)
-
 
 
 );
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -184,121 +160,91 @@ builder.Services.AddOpenTelemetryTracing(sdk => sdk
 using System.Diagnostics;
 
 
-
 using System.Threading.Tasks;
-
 
 
 using Dynatrace.OpenTelemetry;
 
 
-
 using Dynatrace.OpenTelemetry.Instrumentation.AzureFunctions;
-
 
 
 using Microsoft.AspNetCore.Http;
 
 
-
 using Microsoft.AspNetCore.Mvc;
-
 
 
 using Microsoft.Azure.WebJobs;
 
 
-
 using Microsoft.Azure.WebJobs.Extensions.Http;
-
 
 
 using Microsoft.Extensions.Logging;
 
 
-
 namespace Examples.AzureFunctionApp
 
 
-
 {
-
 
 
 public class Function
 
 
-
 {
-
 
 
 public Function(ILoggerFactory loggerFactory)
 
 
-
 {
-
 
 
 // This is needed in every function in your app.
 
 
-
 DynatraceSetup.InitializeLogging(loggerFactory);
 
 
-
 }
-
 
 
 [FunctionName("MyFunction")]
 
 
-
 public async Task<IActionResult> Run(
-
 
 
 [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest request,
 
 
-
 Microsoft.Azure.WebJobs.ExecutionContext ctx)
-
 
 
 {
 
 
-
 // This adds the required attributes to make the activity recognizable as an Azure function invocation.
-
 
 
 // Put this line first - there should be minimal time elapsing between the Activity being created
 
 
-
 // by the ASP.NET core instrumentation and the call to this method.
-
 
 
 AzureFunctionsInstrumentation.AddIncomingHttpAzureFunctionCallInfo(Activity.Current, ctx);
 
 
-
 // Your handler code...
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -311,33 +257,25 @@ AzureFunctionsInstrumentation.AddIncomingHttpAzureFunctionCallInfo(Activity.Curr
 {
 
 
-
 "version": "2.0",
-
 
 
 "logging": {
 
 
-
 // ...
-
 
 
 "logLevel": {
 
 
-
 "Dynatrace.OpenTelemetry": "Debug"
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -357,65 +295,49 @@ OpenTelemetry версии 1.4+
 using Dynatrace.OpenTelemetry;
 
 
-
 using Dynatrace.OpenTelemetry.Instrumentation.AzureFunctions;
-
 
 
 using Dynatrace.OpenTelemetry.Instrumentation.AzureFunctions.Worker;
 
 
-
 using Microsoft.Extensions.DependencyInjection;
-
 
 
 using Microsoft.Extensions.Hosting;
 
 
-
 DynatraceSetup.InitializeLogging();
-
 
 
 var host = new HostBuilder()
 
 
-
 .ConfigureFunctionsWorkerDefaults(fw => fw.UseTracingMiddleware())
-
 
 
 .ConfigureServices(services => services
 
 
-
 .AddOpenTelemetryTracing(tracing => tracing
-
 
 
 .AddAzureFunctionsInstrumentation()
 
 
-
 // ... any custom OTel setup ...
-
 
 
 .AddDynatrace()
 
 
-
 // ... if you need custom resources, set them after AddDynatrace (see below)
-
 
 
 ))
 
 
-
 .Build();
-
 
 
 host.Run();
@@ -425,69 +347,52 @@ host.Run();
 using Dynatrace.OpenTelemetry;
 
 
-
 using Dynatrace.OpenTelemetry.Instrumentation.AzureFunctions;
-
 
 
 using Dynatrace.OpenTelemetry.Instrumentation.AzureFunctions.Worker;
 
 
-
 using Microsoft.Extensions.DependencyInjection;
-
 
 
 using Microsoft.Extensions.Hosting;
 
 
-
 DynatraceSetup.InitializeLogging();
-
 
 
 var host = new HostBuilder()
 
 
-
 .ConfigureFunctionsWorkerDefaults(fw => fw.UseTracingMiddleware())
-
 
 
 .ConfigureServices(services => services
 
 
-
 .AddOpenTelemetry()
-
 
 
 .WithTracing(tracing => tracing
 
 
-
 .AddAzureFunctionsInstrumentation()
-
 
 
 // ... any custom OTel setup ...
 
 
-
 .AddDynatrace()
-
 
 
 // ... if you need custom resources, set them after AddDynatrace (see below)
 
 
-
 ))
 
 
-
 .Build();
-
 
 
 host.Run();
@@ -505,69 +410,52 @@ host.Run();
 using Dynatrace.OpenTelemetry;
 
 
-
 using Dynatrace.OpenTelemetry.Instrumentation.AzureFunctions;
-
 
 
 using Dynatrace.OpenTelemetry.Instrumentation.AzureFunctions.Worker;
 
 
-
 using Microsoft.Extensions.DependencyInjection;
-
 
 
 using Microsoft.Extensions.Hosting;
 
 
-
 DynatraceSetup.InitializeLogging();
-
 
 
 var host = new HostBuilder()
 
 
-
 .ConfigureFunctionsWebApplication(fw => fw.UseTracingMiddleware())
-
 
 
 .ConfigureServices(services => services
 
 
-
 .AddOpenTelemetry()
-
 
 
 .WithTracing(tracing => tracing
 
 
-
 .AddAzureFunctionsInstrumentation()
-
 
 
 // ... any custom OTel setup ...
 
 
-
 .AddDynatrace()
-
 
 
 // ... if you need custom resources, set them after AddDynatrace (see below)
 
 
-
 ))
 
 
-
 .Build();
-
 
 
 host.Run();
@@ -587,33 +475,25 @@ host.Run();
   {
 
 
-
   "version": "2.0",
-
 
 
   "logging": {
 
 
-
   // ...
-
 
 
   "logLevel": {
 
 
-
   "Dynatrace.OpenTelemetry": "Debug"
 
 
-
   }
 
 
-
   }
-
 
 
   }
@@ -633,25 +513,19 @@ host.Run();
 using Dynatrace.OpenTelemetry;
 
 
-
 using Dynatrace.OpenTelemetry.Instrumentation.AzureFunctions;
-
 
 
 using OpenTelemetry.Trace;
 
 
-
 // ...
-
 
 
 // (call DynatraceSetup.InitializeLogging before or after AddDynatrace depending on runtime)
 
 
-
 // ...
-
 
 
 TracerProvider tracerProvider = Sdk.CreateTracerProviderBuilder().AddDynatrace().Build();
@@ -667,65 +541,49 @@ TracerProvider tracerProvider = Sdk.CreateTracerProviderBuilder().AddDynatrace()
 public class HttpExample {
 
 
-
 private readonly TracerProvider _tracerProvider;
-
 
 
 public HttpExample(TracerProvider tracerProvider) {
 
 
-
 _tracerProvider = tracerProvider;
 
 
-
 }
-
 
 
 [Function("HttpExample")]
 
 
-
 public IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequestData req, FunctionContext ctx)
 
 
-
 {
-
 
 
 var parent = ExtractParentContext(req, ctx); // See further below after this code snippet
 
 
-
 return AzureFunctionsCoreInstrumentation.Trace(_tracerProvider, ctx.FunctionDefinition.Name, () => RunInternal(req), parent);
 
 
-
 }
-
 
 
 public IActionResult RunInternal(HttpRequestData req)
 
 
-
 {
-
 
 
 // ... your actual handler code ...
 
 
-
 return new OkObjectResult("Your result");
 
 
-
 }
-
 
 
 }
@@ -739,25 +597,19 @@ return new OkObjectResult("Your result");
 private static ActivityContext ExtractParentContext(HttpRequest request)
 
 
-
 {
-
 
 
 var context = Propagators.DefaultTextMapPropagator.Extract(default, request, HeaderValuesGetter);
 
 
-
 return context.ActivityContext;
-
 
 
 }
 
 
-
 private static IEnumerable<string> HeaderValuesGetter(HttpRequest request, string name) =>
-
 
 
 request.Headers.TryGetValue(name, out var values) ? values : (IEnumerable<string>)null;
@@ -769,93 +621,70 @@ request.Headers.TryGetValue(name, out var values) ? values : (IEnumerable<string
 private static ActivityContext ExtractParentContext(HttpRequestData request, FunctionContext context) {
 
 
-
 ActivityContext parent = default;
-
 
 
 PropagationContext ctx = Propagators.DefaultTextMapPropagator.Extract(
 
 
-
 default,
-
 
 
 request.Headers,
 
 
-
 (c, k) => c.TryGetValues(k, out var value) ? value : null);
-
 
 
 parent = ctx.ActivityContext;
 
 
-
 if (parent == default)
 
 
-
 {
-
 
 
 PropagationContext ctx2 = Propagators.DefaultTextMapPropagator.Extract(
 
 
-
 default,
-
 
 
 context.TraceContext,
 
 
-
 (c, k) =>
-
 
 
 {
 
 
-
 string? result =
-
 
 
 k.Equals("traceparent", StringComparison.OrdinalIgnoreCase) ? c.TraceParent :
 
 
-
 k.Equals("tracestate", StringComparison.OrdinalIgnoreCase) ? c.TraceState :
-
 
 
 null;
 
 
-
 return result == null ? null : new[] { result };
-
 
 
 });
 
 
-
 parent = ctx2.ActivityContext;
-
 
 
 }
 
 
-
 return parent;
-
 
 
 }
@@ -875,125 +704,95 @@ OpenTelemetry версии 1.4+
 // ...
 
 
-
 using OpenTelemetry.Trace;
 
 
-
 // ...
-
 
 
 DynatraceSetup.InitializeLogging();
 
 
-
 var host = new HostBuilder()
-
 
 
 // ...
 
 
-
 .ConfigureServices(services => services
-
 
 
 .AddOpenTelemetryTracing(tracing => tracing
 
 
-
 // ...
-
 
 
 .AddHttpClientInstrumentation(op =>
 
 
-
 {
-
 
 
 // Exclude outgoing calls to external telemetry endpoints
 
 
-
 op.Filter = AzureFunctionsCoreInstrumentation.FilterExternalTelemetry;
-
 
 
 })))
 
 
-
 .Build();
 
 
-
 // ...
 ```
 
 ```
 // ...
-
 
 
 using OpenTelemetry.Trace;
 
 
-
 // ...
-
 
 
 DynatraceSetup.InitializeLogging();
 
 
-
 var host = new HostBuilder()
-
 
 
 // ...
 
 
-
 .ConfigureServices(services => services
-
 
 
 .AddOpenTelemetry()
 
 
-
 .WithTracing(tracing => tracing
-
 
 
 .AddHttpClientInstrumentation(op =>
 
 
-
 {
-
 
 
 // Exclude irrelevant outgoing calls (e.g. AppInsights QuickPulse pings)
 
 
-
 op.FilterHttpRequestMessage = AzureFunctionsCoreInstrumentation.FilterExternalTelemetry;
-
 
 
 })))
 
 
-
 .Build();
-
 
 
 host.Run();

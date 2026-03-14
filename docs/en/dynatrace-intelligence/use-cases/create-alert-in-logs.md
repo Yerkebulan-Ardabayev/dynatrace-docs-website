@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:40:14.975184
 
 # Create log alerts for a log event or summary of log data
 
-# Create log alerts for a log event or summary of log data
 
 * Latest Dynatrace
 * Tutorial
@@ -45,25 +44,19 @@ To save time and effort, you can set a log alert instead of an anomaly detection
 fetch logs
 
 
-
 | filter matchesValue(process.technology, "nginx")
-
 
 
 | filter matchesValue(loglevel, "ERROR")
 
 
-
 | filter matchesPhrase(content, "Connection refused")
-
 
 
 | fields timestamp,content, process.technology
 
 
-
 | parse content, "LD '[error] ' INT:error_number '#' INT LD 'Connection refused' LD 'client:' SPACE? IPADDR:client_ip LD 'request:' SPACE? DQS:http_request"
-
 
 
 | sort timestamp desc
@@ -104,13 +97,10 @@ To create a log alert on a summary of log data
    fetch logs
 
 
-
    | filter dt.system.bucket == "{your bucket name}"
 
 
-
    | filter matchesPhrase(content, "Connection refused")
-
 
 
    | makeTimeseries count(), interval:1m

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dashboards API - GET a dashboard
 
-# Dashboards API - GET a dashboard
 
 * Reference
 * Published Jan 23, 2019
@@ -164,349 +163,262 @@ It overrides dashboard's filter.
 {
 
 
-
 "dashboardMetadata": {
-
 
 
 "dashboardFilter": {
 
 
-
 "managementZone": {
-
 
 
 "id": "3438779970106539862",
 
 
-
 "name": "Example Management Zone"
 
 
-
 },
-
 
 
 "timeframe": "l_72_HOURS"
 
 
-
 },
-
 
 
 "dynamicFilters": {
 
 
-
 "filters": [
-
 
 
 "SERVICE_TYPE"
 
 
-
 ]
 
 
-
 },
-
 
 
 "name": "Example Dashboard",
 
 
-
 "owner": "Example Owner",
-
 
 
 "shared": true
 
 
-
 },
-
 
 
 "metadata": {
 
 
-
 "clusterVersion": "Mock version",
-
 
 
 "configurationVersions": [
 
 
-
 4,
-
 
 
 2
 
 
-
 ]
 
 
-
 },
-
 
 
 "tiles": [
 
 
-
 {
-
 
 
 "bounds": {
 
 
-
 "height": 38,
-
 
 
 "left": 0,
 
 
-
 "top": 0,
-
 
 
 "width": 304
 
 
-
 },
 
 
-
 "configured": true,
-
 
 
 "name": "Hosts",
 
 
-
 "tileFilter": {},
-
 
 
 "tileType": "HEADER"
 
 
-
 },
-
 
 
 {
 
 
-
 "bounds": {
-
 
 
 "height": 38,
 
 
-
 "left": 304,
-
 
 
 "top": 0,
 
 
-
 "width": 304
-
 
 
 },
 
 
-
 "configured": true,
-
 
 
 "name": "Applications",
 
 
-
 "tileFilter": {},
-
 
 
 "tileType": "HEADER"
 
 
-
 },
-
 
 
 {
 
 
-
 "bounds": {
 
 
-
 "height": 304,
-
 
 
 "left": 0,
 
 
-
 "top": 38,
-
 
 
 "width": 304
 
 
-
 },
-
 
 
 "chartVisible": true,
 
 
-
 "configured": true,
-
 
 
 "name": "Host health",
 
 
-
 "tileFilter": {
-
 
 
 "managementZone": {
 
 
-
 "id": "3438779970106539862",
-
 
 
 "name": "Example Management Zone"
 
 
-
 }
 
 
-
 },
-
 
 
 "tileType": "HOSTS"
 
 
-
 },
-
 
 
 {
 
 
-
 "bounds": {
-
 
 
 "height": 304,
 
 
-
 "left": 304,
-
 
 
 "top": 38,
 
 
-
 "width": 304
 
 
-
 },
-
 
 
 "chartVisible": true,
 
 
-
 "configured": true,
-
 
 
 "name": "Application health",
 
 
-
 "tileFilter": {
-
 
 
 "managementZone": {
 
 
-
 "id": "3438779970106539862",
-
 
 
 "name": "Example Management Zone"
 
 
-
 }
-
 
 
 },
 
 
-
 "tileType": "APPLICATIONS"
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -528,9 +440,7 @@ The dashboard looks like this in the UI:
 curl -X GET \
 
 
-
 https://mySampleEnv.live.dynatrace.com/api/config/v1/dashboards/2768e6ca-e199-4433-9e0d-2922aec2099b \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -548,237 +458,178 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/dashboards/2768e6ca-e199-44
 {
 
 
-
 "metadata": {
-
 
 
 "clusterVersion": "1.166.0.20190311-110828",
 
 
-
 "configurationVersions": [
-
 
 
 2
 
 
-
 ]
 
 
-
 },
-
 
 
 "id": "2768e6ca-e199-4433-9e0d-2922aec2099b",
 
 
-
 "dashboardMetadata": {
-
 
 
 "name": "Sample dashboard",
 
 
-
 "shared": true,
-
 
 
 "owner": "john.smith",
 
 
-
 "sharingDetails": {
-
 
 
 "linkShared": true,
 
 
-
 "published": true
 
 
-
 },
-
 
 
 "dashboardFilter": {
 
 
-
 "timeframe": "l_2_HOURS",
-
 
 
 "managementZone": null
 
 
-
 }
 
 
-
 },
-
 
 
 "tiles": [
 
 
-
 {
-
 
 
 "name": "Host health",
 
 
-
 "tileType": "HOSTS",
-
 
 
 "configured": true,
 
 
-
 "bounds": {
 
 
-
 "top": 0,
-
 
 
 "left": 304,
 
 
-
 "width": 304,
-
 
 
 "height": 304
 
 
-
 },
 
 
-
 "tileFilter": {
-
 
 
 "managementZone": {
 
 
-
 "id": "9130632296508575249",
-
 
 
 "name": "Easytravel"
 
 
-
 }
 
 
-
 },
-
 
 
 "filterConfig": null,
 
 
-
 "chartVisible": true
 
 
-
 },
-
 
 
 {
 
 
-
 "name": "User behavior",
-
 
 
 "tileType": "SESSION_METRICS",
 
 
-
 "configured": true,
-
 
 
 "bounds": {
 
 
-
 "top": 0,
-
 
 
 "left": 0,
 
 
-
 "width": 304,
-
 
 
 "height": 304
 
 
-
 },
-
 
 
 "tileFilter": {
 
 
-
 "managementZone": null
-
 
 
 },
 
 
-
 "assignedEntities": [
-
 
 
 "APPLICATION-8E41C8C247910758"
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:32:36.436365
 
 # OneAgent diagnostics
 
-# OneAgent diagnostics
 
 * Latest Dynatrace
 * 7-min read

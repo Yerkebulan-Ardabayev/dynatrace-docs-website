@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:11.531334
 
 # Edit a service-level objective (SLO) tile in a dashboard
 
-# Edit a service-level objective (SLO) tile in a dashboard
 
 * Latest Dynatrace
 * How-to guide

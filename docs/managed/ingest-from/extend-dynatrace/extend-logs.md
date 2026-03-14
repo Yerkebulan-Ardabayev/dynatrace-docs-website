@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Extend log observability
 
-# Extend log observability
 
 * 1-min read
 * Published Feb 04, 2022

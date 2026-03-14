@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:59.818788
 
 # Переход с RUM Classic на новый функционал RUM Experience
 
-# Переход с RUM Classic на новый функционал RUM Experience
 
 * Последняя Dynatrace
 * Описание

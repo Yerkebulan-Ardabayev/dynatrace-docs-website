@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:51.339235
 
 # Управление расширениями SAP Hana Database
 
-# Управление расширениями SAP Hana Database
 
 * Latest Dynatrace
 * Руководство

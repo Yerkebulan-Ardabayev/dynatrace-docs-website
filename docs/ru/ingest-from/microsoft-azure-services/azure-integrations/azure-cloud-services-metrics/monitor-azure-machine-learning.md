@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:06.355236
 
 # Мониторинг Azure Machine Learning
 
-# Мониторинг Azure Machine Learning
 
 * Latest Dynatrace
 * Практическое руководство

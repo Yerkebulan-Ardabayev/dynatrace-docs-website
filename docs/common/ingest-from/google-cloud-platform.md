@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Set up Dynatrace on Google Cloud
 
-# Set up Dynatrace on Google Cloud
 
 * Latest Dynatrace
 * Overview

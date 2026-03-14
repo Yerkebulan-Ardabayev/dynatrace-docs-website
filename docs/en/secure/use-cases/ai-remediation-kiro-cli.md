@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:32:27.037221
 
 # Automate cloud misconfiguration triaging and remediation with Kiro CLI and Dynatrace
 
-# Automate cloud misconfiguration triaging and remediation with Kiro CLI and Dynatrace
 
 * Latest Dynatrace
 * Tutorial

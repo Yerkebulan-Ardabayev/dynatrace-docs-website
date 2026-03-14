@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:06.750651
 
 # Настройка Session Replay для iOS
 
-# Настройка Session Replay для iOS
 
 * Classic
 * How-to guide
@@ -93,7 +92,6 @@ Session Replay поставляется с тремя предустановле
 let maskingConfiguration = MaskingConfiguration(maskingLevelType: .safe)
 
 
-
 try? AgentManager.setMaskingConfiguration(maskingConfiguration)
 ```
 
@@ -113,13 +111,10 @@ try? AgentManager.setMaskingConfiguration(maskingConfiguration)
 try? maskingConfiguration.add(rule: .maskAllImages) // Adds one rule
 
 
-
 try? maskingConfiguration.remove(rule: .maskAllSwitches) // Removes one rule
 
 
-
 try? maskingConfiguration.addAllRules() // Adds all rules
-
 
 
 try? maskingConfiguration.removeAllRules() // Removes all rules
@@ -135,13 +130,10 @@ try? maskingConfiguration.removeAllRules() // Removes all rules
 try? maskingConfiguration.addMaskedView(viewIds: \["masked_view_id"\])
 
 
-
 try? maskingConfiguration.removeMaskedView(viewIds: \["masked_view_id"\])
 
 
-
 try? maskingConfiguration.addNonMaskedView(viewIds: \["nonMasked_view_id"\])
-
 
 
 try? maskingConfiguration.removeNonMaskedView(viewIds: \["nonMasked_view_id"\])
@@ -165,17 +157,13 @@ Session Replay записывает только определённые соб
 do {
 
 
-
 try AgentManager.trackCustomEvent(name: "my_event_name", view: nil)
-
 
 
 } catch {
 
 
-
 print(error)
-
 
 
 }

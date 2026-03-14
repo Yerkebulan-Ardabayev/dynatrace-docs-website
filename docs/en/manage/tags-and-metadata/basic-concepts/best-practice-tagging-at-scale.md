@@ -6,7 +6,6 @@ scraped: 2026-02-28T21:28:13.423587
 
 # Best practices for scaling tagging and management-zone rules
 
-# Best practices for scaling tagging and management-zone rules
 
 * Explanation
 * 8-min read

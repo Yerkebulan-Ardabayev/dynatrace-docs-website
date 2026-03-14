@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:30.983595
 
 # Настройка Okta SCIM для Dynatrace
 
-# Настройка Okta SCIM для Dynatrace
 
 * Latest Dynatrace
 * How-to guide

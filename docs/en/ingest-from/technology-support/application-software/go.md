@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:20.925617
 
 # Go
 
-# Go
 
 * Latest Dynatrace
 * Reference

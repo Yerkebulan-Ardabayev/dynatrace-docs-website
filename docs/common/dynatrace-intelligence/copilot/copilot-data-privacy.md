@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace Intelligence generative AI data privacy and security
 
-# Dynatrace Intelligence generative AI data privacy and security
 
 * Latest Dynatrace
 * Explanation

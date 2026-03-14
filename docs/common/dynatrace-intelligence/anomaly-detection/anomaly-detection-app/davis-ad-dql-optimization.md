@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Anomaly Detection DQL optimization guide
 
-# Anomaly Detection DQL optimization guide
 
 * Latest Dynatrace
 * How-to guide
@@ -59,7 +58,6 @@ Incorporate the following DQL query to include the `dt.system.bucket` field, whi
 
 ```
 fetch logs
-
 
 
 | fieldsAdd dt.system.bucket

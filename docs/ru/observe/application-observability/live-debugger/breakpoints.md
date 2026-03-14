@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:45.256610
 
 # Точки останова Live Debugger
 
-# Точки останова Live Debugger
 
 * Latest Dynatrace
 * Explanation

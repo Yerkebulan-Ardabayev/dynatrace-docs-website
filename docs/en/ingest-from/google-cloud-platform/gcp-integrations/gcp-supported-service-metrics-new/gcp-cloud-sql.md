@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:56.584086
 
 # Google Cloud SQL monitoring
 
-# Google Cloud SQL monitoring
 
 * Latest Dynatrace
 * How-to guide

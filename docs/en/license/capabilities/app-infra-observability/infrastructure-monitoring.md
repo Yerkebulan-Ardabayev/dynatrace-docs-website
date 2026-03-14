@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:15.496882
 
 # Calculate your consumption of Infrastructure Monitoring (DPS)
 
-# Calculate your consumption of Infrastructure Monitoring (DPS)
 
 * Latest Dynatrace
 * Explanation

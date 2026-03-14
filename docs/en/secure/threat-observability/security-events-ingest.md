@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:36.899894
 
 # Security integrations
 
-# Security integrations
 
 * Latest Dynatrace
 * Overview

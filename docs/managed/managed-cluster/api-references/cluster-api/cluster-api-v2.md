@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Cluster API v2
 
-# Cluster API v2
 
 * Published Feb 10, 2020
 

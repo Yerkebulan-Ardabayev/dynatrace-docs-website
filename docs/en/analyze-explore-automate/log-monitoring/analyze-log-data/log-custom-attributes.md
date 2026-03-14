@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:21:55.698101
 
 # Log custom attributes (Logs Classic)
 
-# Log custom attributes (Logs Classic)
 
 * Tutorial
 * 3-min read
@@ -51,29 +50,22 @@ In this example, you will make an API log ingest call with JSON that contains th
 {
 
 
-
 "timestamp": "2021-07-29T10:54:40.962165022Z",
-
 
 
 "level": "error",
 
 
-
 "source": "Skynet",
-
 
 
 "application.id": "PaymentService-Prod",
 
 
-
 "message": "PaymentService-Prod failure.",
 
 
-
 "data": {}
-
 
 
 }

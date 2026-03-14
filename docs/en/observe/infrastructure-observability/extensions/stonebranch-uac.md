@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:08.442249
 
 # Stonebranch Universal Automation Center extension
 
-# Stonebranch Universal Automation Center extension
 
 * Latest Dynatrace
 * Extension
@@ -163,33 +162,25 @@ License consumption is based on the number of metric data points ingested. A rou
 (
 
 
-
 (
-
 
 
 ( 1 * number of UC Cluster Nodes )
 
 
-
 + ( 46 * number of Universal Controllers )
-
 
 
 + ( 1 * number of OMS )
 
 
-
 + ( 4 * number of Universal Agents )
-
 
 
 + ( 5 * number of unique Task Names )
 
 
-
 )
-
 
 
 ) * 60 minutes * 24 hours * 365 days per year

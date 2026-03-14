@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:30:09.923259
 
 # Azure Public IP Address monitoring
 
-# Azure Public IP Address monitoring
 
 * Latest Dynatrace
 * How-to guide

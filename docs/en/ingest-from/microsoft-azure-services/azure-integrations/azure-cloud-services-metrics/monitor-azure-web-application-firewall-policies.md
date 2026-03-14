@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:24:02.095091
 
 # Azure Web Application Firewall (WAF) Policy on Azure CDN monitoring
 
-# Azure Web Application Firewall (WAF) Policy on Azure CDN monitoring
 
 * Latest Dynatrace
 * How-to guide

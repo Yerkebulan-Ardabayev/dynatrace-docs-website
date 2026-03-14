@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:40.035225
 
 # Customize data with extensions
 
-# Customize data with extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -36,9 +35,7 @@ Export custom event for alerting definition
    curl -X GET "https://{env-id}.live.dynatrace.com/api/config/v1/anomalyDetection/metricEvents/{custom-event-id}" \
 
 
-
    -H "accept: application/json; charset=utf-8" \
-
 
 
    -H "Authorization: Api-Token `{api-token}"
@@ -163,89 +160,67 @@ Log metrics
 name: custom:dynatrace.logmetric.test.extension
 
 
-
 version: 1.0.0
-
 
 
 minDynatraceVersion: "1.281.0"
 
 
-
 author:
-
 
 
 name: "John Doe"
 
 
-
 logMetrics:
-
 
 
 - key: log.test.extension.occurrence
 
 
-
 query: content="AllProcessed"
-
 
 
 enabled: true
 
 
-
 measure: OCCURRENCE
-
 
 
 - key: log.test.extension.attribute
 
 
-
 query: content="AllProcessed"
 
 
-
 enabled: true
-
 
 
 measure: ATTRIBUTE
 
 
-
 measureAttribute: dt.os.type
-
 
 
 - key: log.test.extension.dimensions
 
 
-
 query: content="AllProcessed"
-
 
 
 enabled: true
 
 
-
 measure: OCCURRENCE
-
 
 
 dimensions: [
 
 
-
 dimension1,
 
 
-
 dimension2
-
 
 
 ]
@@ -257,85 +232,64 @@ Log events
 ame: custom:dynatrace.logevent.test.extension2
 
 
-
 version: 1.0.0
-
 
 
 minDynatraceVersion: "1.281.0"
 
 
-
 author:
-
 
 
 name: "John Doe"
 
 
-
 logEvents:
-
 
 
 - query: content="a"
 
 
-
 enabled: true
-
 
 
 summary: abc
 
 
-
 eventTemplate:
-
 
 
 title: log_event_a
 
 
-
 description: ''
 
 
-
 eventType: CUSTOM_ALERT
-
 
 
 davisMerge: false
 
 
-
 - query: content="a"
-
 
 
 enabled: true
 
 
-
 summary: abd
-
 
 
 eventTemplate:
 
 
-
 title: abd
-
 
 
 description: My custom log event description :)
 
 
-
 eventType: CUSTOM_ALERT
-
 
 
 davisMerge: false
@@ -349,49 +303,37 @@ With this definition, you use the `RAPLACE_PATTERN` to mask sensitive data retri
 logProcessingRules:
 
 
-
 - ruleName: TopN statements masking
-
 
 
 query: event.group="query_performance"
 
 
-
 enabled: true
-
 
 
 ProcessorDefinition:
 
 
-
 rule: |
-
 
 
 USING(INOUT content) | FIELDS_ADD(content: REPLACE_PATTERN(content, "(\"'\"):p1 (LD):p2 (\"'\"):p3", "${p1}${p2|sha1}${p3}"))
 
 
-
 RuleTesting:
-
 
 
 sampleLog: |
 
 
-
 {
-
 
 
 "event.group": "query_performance",
 
 
-
 "content": "/*dt:ownQuery*/SELECT DECODE(name, 'sessions', value) AS sessions_limit, DECODE(name, 'processes', value) AS processes_limit FROM v$parameter WHERE name IN('sessions', 'processes')"
-
 
 
 }

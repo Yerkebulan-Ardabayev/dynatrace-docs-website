@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:02.999974
 
 # Choropleth map visualization
 
-# Choropleth map visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -38,41 +37,31 @@ The map above is based on the following data.
 data
 
 
-
 record(geo.country.iso_code = "US", users = toLong(random() * 10000)),
-
 
 
 record(geo.country.iso_code = "GB", users = toLong(random() * 10000)),
 
 
-
 record(geo.country.iso_code = "DE", users = toLong(random() * 10000)),
-
 
 
 record(geo.country.iso_code = "FR", users = toLong(random() * 10000)),
 
 
-
 record(geo.country.iso_code = "IT", users = toLong(random() * 10000)),
-
 
 
 record(geo.country.iso_code = "ES", users = toLong(random() * 10000)),
 
 
-
 record(geo.country.iso_code = "CN", users = toLong(random() * 10000)),
-
 
 
 record(geo.country.iso_code = "JP", users = toLong(random() * 10000)),
 
 
-
 record(geo.country.iso_code = "IN", users = toLong(random() * 10000)),
-
 
 
 record(geo.country.iso_code = "BR", users = toLong(random() * 10000))
@@ -88,41 +77,31 @@ The map above is based on the following data.
 data
 
 
-
 record(geo.country.iso_code = "US", apdex = "Good" ),
-
 
 
 record(geo.country.iso_code = "GB", apdex = "Good" ),
 
 
-
 record(geo.country.iso_code = "DE", apdex = "Poor" ),
-
 
 
 record(geo.country.iso_code = "FR", apdex = "Excellent" ),
 
 
-
 record(geo.country.iso_code = "IT", apdex = "Fair" ),
-
 
 
 record(geo.country.iso_code = "ES", apdex = "Good" ),
 
 
-
 record(geo.country.iso_code = "CN", apdex = "Unacceptable" ),
-
 
 
 record(geo.country.iso_code = "JP", apdex = "Poor" ),
 
 
-
 record(geo.country.iso_code = "IN", apdex = "Good" ),
-
 
 
 record(geo.country.iso_code = "BR", apdex = "Fair" )
@@ -296,7 +275,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000

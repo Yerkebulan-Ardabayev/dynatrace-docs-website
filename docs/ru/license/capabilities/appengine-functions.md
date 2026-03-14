@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:03.569424
 
 # Обзор AppEngine Functions (бессерверных функций) (DPS)
 
-# Обзор AppEngine Functions (бессерверных функций) (DPS)
 
 * Latest Dynatrace
 * Explanation

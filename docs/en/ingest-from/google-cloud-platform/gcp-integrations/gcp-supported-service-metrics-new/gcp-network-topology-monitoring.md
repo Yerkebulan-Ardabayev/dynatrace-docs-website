@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:22.175754
 
 # Google Cloud Network Topology monitoring
 
-# Google Cloud Network Topology monitoring
 
 * Latest Dynatrace
 * How-to guide

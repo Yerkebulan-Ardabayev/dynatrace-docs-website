@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:28.286023
 
 # Define applications for Real User Monitoring
 
-# Define applications for Real User Monitoring
 
 * Classic
 * How-to guide

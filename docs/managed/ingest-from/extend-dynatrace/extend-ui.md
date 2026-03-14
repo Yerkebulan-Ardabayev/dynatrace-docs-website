@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Extend Dynatrace with domain-specific web UI
 
-# Extend Dynatrace with domain-specific web UI
 
 * Overview
 * 1-min read

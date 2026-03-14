@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:10.458716
 
 # Kong AI Gateway
 
-# Kong AI Gateway
 
 * Latest Dynatrace
 * Explanation
@@ -41,101 +40,76 @@ OpenTelemetry Collector
 receivers:
 
 
-
 prometheus:
-
 
 
 config:
 
 
-
 scrape_configs:
-
 
 
 - job_name: kong
 
 
-
 scrape_interval: 10s
-
 
 
 honor_labels: false
 
 
-
 static_configs:
-
 
 
 - targets:
 
 
-
 - kong-metrics.kong:8100
-
 
 
 processors:
 
 
-
 cumulativetodelta:
-
 
 
 max_staleness: 25h
 
 
-
 extensions:
-
 
 
 health_check:
 
 
-
 exporters:
-
 
 
 otlp_http:
 
 
-
 endpoint: ${env:DT_ENDPOINT}
-
 
 
 headers:
 
 
-
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
-
 
 
 service:
 
 
-
 extensions: [health_check]
-
 
 
 metrics:
 
 
-
 receivers: [prometheus]
 
 
-
 processors: [cumulativetodelta]
-
 
 
 exporters: [otlp_http]
@@ -151,57 +125,43 @@ Kong не предоставляет сервис `kong-metrics` для сбор
 apiVersion: v1
 
 
-
 kind: Service
-
 
 
 metadata:
 
 
-
 name: kong-metrics
-
 
 
 namespace: kong
 
 
-
 spec:
-
 
 
 type: ClusterIP
 
 
-
 ports:
-
 
 
 - name: metrics
 
 
-
 port: 8100
-
 
 
 targetPort: 8100
 
 
-
 protocol: TCP
-
 
 
 selector:
 
 
-
 app.kubernetes.io/name: kong
-
 
 
 app.kubernetes.io/instance: kong

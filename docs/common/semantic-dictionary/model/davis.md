@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Davis AI
 
-# Davis AI
 
 * Latest Dynatrace
 * Reference
@@ -218,9 +217,7 @@ Searches for all unique Davis problems and return status, title and the display 
 fetch dt.davis.problems
 
 
-
 | filter not(dt.davis.is_duplicate)
-
 
 
 | fields id=display_id, title=event.name, status=event.status
@@ -232,13 +229,10 @@ Searches for all currently active, unique Davis problems and return status, titl
 fetch dt.davis.problems
 
 
-
 | filter not(dt.davis.is_duplicate)
 
 
-
 | filter event.status == "ACTIVE"
-
 
 
 | fields id=display_id, title=event.name, status=event.status
@@ -250,13 +244,10 @@ Search for details of a specific problem with a given display id.
 fetch dt.davis.problems
 
 
-
 | filter not(dt.davis.is_duplicate)
 
 
-
 | filter display_id == "P-12345678"
-
 
 
 | fields id=display_id, title=event.name, status=event.status
@@ -268,13 +259,10 @@ Count the total number of active problems in the last hour.
 fetch dt.davis.problems, from:-1h
 
 
-
 | filter not(dt.davis.is_duplicate)
 
 
-
 | filter event.status == "ACTIVE"
-
 
 
 | summarize active_problem_count = count()
@@ -286,9 +274,7 @@ Chart the number of currently active problems over the last 24 hours.
 fetch dt.davis.problems, from:-24h
 
 
-
 | filter event.status == "ACTIVE"
-
 
 
 | makeTimeseries active_problems = count(), interval:1h, spread: timeframe(from:event.start, to:coalesce(event.end, now()))
@@ -300,21 +286,16 @@ Shows the logs of all entities affected by the problem 'P-12345678'.
 fetch logs
 
 
-
 | filter dt.source_entity in [
-
 
 
 fetch dt.davis.problems
 
 
-
 | filter display_id == "P-12345678"
 
 
-
 | fields affected_entity_ids
-
 
 
 ]

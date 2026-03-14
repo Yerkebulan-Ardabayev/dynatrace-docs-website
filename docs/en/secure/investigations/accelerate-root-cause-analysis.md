@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:36:21.144114
 
 # Accelerate root cause analysis
 
-# Accelerate root cause analysis
 
 * Latest Dynatrace
 * How-to guide

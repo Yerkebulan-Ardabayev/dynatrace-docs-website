@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:17.944567
 
 # AutomationEngine
 
-# AutomationEngine
 
 * Latest Dynatrace
 * 1-min read

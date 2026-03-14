@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:25.252177
 
 # Observe your logs in real time
 
-# Observe your logs in real time
 
 * Latest Dynatrace
 * Tutorial

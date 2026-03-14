@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Get Log Monitoring status
 
-# Get Log Monitoring status
 
 * Published Oct 18, 2021
 
@@ -51,9 +50,7 @@ Log Monitoring status
 {
 
 
-
 "enabled": "true"
-
 
 
 }
@@ -67,7 +64,6 @@ In this example, you retrieve Log Monitoring configuration status for the enviro
 
 ```
 curl -X GET "https://myManaged.cluster.com/api/cluster/v2/logMonitoring/19a963a7-b19f-4382-964a-4df674c8eb8e/status"
-
 
 
 -H  "accept: application/json; charset=utf-8"
@@ -85,9 +81,7 @@ https://myManaged.cluster.com/api/cluster/v2/logMonitoring/19a963a7-b19f-4382-96
 {
 
 
-
 "enabled": "true"
-
 
 
 }

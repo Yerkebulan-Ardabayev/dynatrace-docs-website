@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Event analysis and correlation
 
-# Event analysis and correlation
 
 * Latest Dynatrace
 * Explanation

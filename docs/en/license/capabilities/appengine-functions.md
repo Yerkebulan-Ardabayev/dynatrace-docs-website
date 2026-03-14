@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:03.569424
 
 # AppEngine Functions (Serverless Functions) overview (DPS)
 
-# AppEngine Functions (Serverless Functions) overview (DPS)
 
 * Latest Dynatrace
 * Explanation

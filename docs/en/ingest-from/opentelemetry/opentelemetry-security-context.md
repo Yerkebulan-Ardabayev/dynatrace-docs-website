@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:34.936360
 
 # Set up Grail permissions for OpenTelemetry
 
-# Set up Grail permissions for OpenTelemetry
 
 * Latest Dynatrace
 * How-to guide

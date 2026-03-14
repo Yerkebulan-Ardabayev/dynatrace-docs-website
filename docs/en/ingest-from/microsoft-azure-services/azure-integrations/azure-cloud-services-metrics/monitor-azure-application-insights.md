@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:35:49.902914
 
 # Azure Application Insights monitoring
 
-# Azure Application Insights monitoring
 
 * Latest Dynatrace
 * How-to guide

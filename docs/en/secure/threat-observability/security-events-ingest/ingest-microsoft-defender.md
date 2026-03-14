@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:00.859946
 
 # Ingest Microsoft Defender for Cloud security events
 
-# Ingest Microsoft Defender for Cloud security events
 
 * Latest Dynatrace
 * How-to guide

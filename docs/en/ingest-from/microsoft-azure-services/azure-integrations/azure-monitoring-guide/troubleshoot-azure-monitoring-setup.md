@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:36:45.397307
 
 # Troubleshooting Azure monitoring setup
 
-# Troubleshooting Azure monitoring setup
 
 * Latest Dynatrace
 * How-to guide

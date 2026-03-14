@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:22.993785
 
 # Supported distributions
 
-# Supported distributions
 
 * Latest Dynatrace
 * 6-min read
@@ -35,69 +34,52 @@ You can deploy Dynatrace for Application Observability and configure Platform Ob
 apiVersion: dynatrace.com/v1beta5
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: dynatrace
 
 
-
 annotations:
-
 
 
 feature.dynatrace.com/automatic-kubernetes-api-monitoring: "true"
 
 
-
 feature.dynatrace.com/injection-readonly-volume: "true"
-
 
 
 spec:
 
 
-
 apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
-
 
 
 oneAgent:
 
 
-
 applicationMonitoring: {}
-
 
 
 activeGate:
 
 
-
 capabilities:
-
 
 
 - routing
 
 
-
 - kubernetes-monitoring
 
 
-
 - dynatrace-api
-
 
 
 ...
@@ -125,49 +107,37 @@ If you deploy Dynatrace in `classicFullStack` or `hostMonitoring` without Dynatr
 apiVersion: dynatrace.com/v1beta5
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
 
 
-
 oneAgent:
-
 
 
 classicFullStack:
 
 
-
 env:
-
 
 
 - name: ONEAGENT_ENABLE_VOLUME_STORAGE
 
 
-
 value: "true"
-
 
 
 ...
@@ -205,29 +175,22 @@ Deploying and managing the AllowlistSynchronizer will be automated in Dynatrace 
 apiVersion: auto.gke.io/v1
 
 
-
 kind: AllowlistSynchronizer
-
 
 
 metadata:
 
 
-
 name: allowlist-synchronizer-dynatrace
-
 
 
 spec:
 
 
-
 allowlistPaths:
 
 
-
 - Dynatrace/csidriver/1.4.2/*
-
 
 
 - Dynatrace/logmonitoring/1.4.2/*
@@ -305,9 +268,7 @@ In the `values.yaml`, additional configuration is required for these modes to co
 csidriver:
 
 
-
 enabled: true
-
 
 
 kubeletPath: "/var/vcap/data/kubelet"
@@ -321,25 +282,19 @@ Requires images from the Dynatrace built-in registry and not from the public reg
 oneAgent:
 
 
-
 classicFullStack:
-
 
 
 env:
 
 
-
 - name: ONEAGENT_ENABLE_VOLUME_STORAGE
-
 
 
 value: "true"
 
 
-
 - name: ONEAGENT_CONTAINER_STORAGE_PATH
-
 
 
 value: /var/vcap/store
@@ -359,9 +314,7 @@ Additional configuration is required for these modes to configure the CSI driver
 csidriver:
 
 
-
 enabled: true
-
 
 
 kubeletPath: "/var/data/kubelet"
@@ -375,25 +328,19 @@ Requires images from the Dynatrace built-in registry and not from the public reg
 oneAgent:
 
 
-
 classicFullStack:
-
 
 
 env:
 
 
-
 - name: ONEAGENT_ENABLE_VOLUME_STORAGE
-
 
 
 value: "true"
 
 
-
 - name: ONEAGENT_CONTAINER_STORAGE_PATH
-
 
 
 value: /opt
@@ -409,45 +356,34 @@ If you deploy Dynatrace in `classicFullStack` or `hostMonitoring` without the CS
 apiVersion: dynatrace.com/v1beta5
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
 
 
-
 oneAgent:
-
 
 
 classicFullStack: # change to `hostMonitoring` if needed
 
 
-
 env:
 
 
-
 - name: ONEAGENT_ENABLE_VOLUME_STORAGE
-
 
 
 value: "true"

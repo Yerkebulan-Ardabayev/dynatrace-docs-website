@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:35.777912
 
 # Источник данных JMX
 
-# Источник данных JMX
 
 * Latest Dynatrace
 * Reference
@@ -47,93 +46,70 @@ JMX определяет стандартизированный синтакси
 # required extension metadata
 
 
-
 name: custom:com.example.jmx
-
 
 
 version: 1.0.0
 
 
-
 minDynatraceVersion: 1.265.0
-
 
 
 author:
 
 
-
 name: John Doe
-
 
 
 # optional metric metadata
 
 
-
 metrics:
 
 
-
 - key: com.example.jmx.thread_count
-
 
 
 metadata:
 
 
-
 displayName: Thread Count
-
 
 
 description: Number of active Java threads
 
 
-
 unit: Count
-
 
 
 # defines how to create metrics from JMX MBeans
 
 
-
 jmx:
-
 
 
 groups:
 
 
-
 - group: jvm
-
 
 
 subgroups:
 
 
-
 - subgroup: basic
-
 
 
 query: java.lang:type=Threading
 
 
-
 metrics:
-
 
 
 - key: com.example.jmx.thread_count
 
 
-
 type: gauge
-
 
 
 value: attribute:ThreadCount

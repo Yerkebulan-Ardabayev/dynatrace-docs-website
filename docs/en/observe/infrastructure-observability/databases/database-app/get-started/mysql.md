@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:05.181395
 
 # Monitor MySQL database
 
-# Monitor MySQL database
 
 * Latest Dynatrace
 * How-to guide

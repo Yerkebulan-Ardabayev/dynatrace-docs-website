@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:59.187376
 
 # OneAgent for iOS configuration keys
 
-# OneAgent for iOS configuration keys
 
 * Classic
 * How-to guide

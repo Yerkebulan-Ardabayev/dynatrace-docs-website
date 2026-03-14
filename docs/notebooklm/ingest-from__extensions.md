@@ -14,7 +14,6 @@ scraped: 2026-03-03T21:22:34.358051
 
 # Distribute custom dashboards with your extensions
 
-# Distribute custom dashboards with your extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -58,17 +57,13 @@ After you create a dashboard that uses your extension data, and you export the d
    extension.zip
 
 
-
    â   extension.yaml
-
 
 
    â
 
 
-
    ââââdocuments
-
 
 
    â   device-health.dashboard.json
@@ -81,13 +76,10 @@ After you create a dashboard that uses your extension data, and you export the d
    documents:
 
 
-
    dashboards:
 
 
-
    - displayName: "My Dashboard"
-
 
 
    path: "documents/device-health.dashboard.json"
@@ -129,9 +121,7 @@ After your extension starts sending data to Dynatrace, you can [create a custom 
    curl -X GET "https://{env-id}.live.dynatrace.com/api/config/v1/dashboards/{dashboard-id}" \
 
 
-
    -H "accept: application/json; charset=utf-8" \
-
 
 
    -H "Authorization: Api-Token `{api-token}"
@@ -154,29 +144,22 @@ For the following package structure:
 extension.zip
 
 
-
 â   extension.yaml
 
 
-
 â
-
 
 
 ââââalerts
 
 
-
 â   |   alert.json
-
 
 
 â
 
 
-
 ââââdashboards
-
 
 
 â   dashboard.json
@@ -188,13 +171,10 @@ Use the following reference in the top level of your [YAML file](../ru/ingest-fr
 dashboards:
 
 
-
 - path: dashboards/dashboard.json
 
 
-
 alerts:
-
 
 
 - path: alerts/alert.json
@@ -212,7 +192,6 @@ scraped: 2026-03-06T21:29:41.296118
 
 # Dedicated performance profile configuration
 
-# Dedicated performance profile configuration
 
 * Latest Dynatrace
 * How-to guide
@@ -237,125 +216,94 @@ To configure the ActiveGate for the dedicated performance profile
    [aws_monitoring]
 
 
-
    aws_monitoring_enabled = false
-
 
 
    [azure_monitoring]
 
 
-
    azure_monitoring_enabled = false
-
 
 
    [cloudfoundry_monitoring]
 
 
-
    cloudfoundry_monitoring_enabled = false
-
 
 
    [debugging]
 
 
-
    debugging_enabled = false
-
 
 
    [kubernetes_monitoring]
 
 
-
    kubernetes_monitoring_enabled = false
-
 
 
    [log_analytics_collector]
 
 
-
    log_analytics_collector_enabled = false
-
 
 
    [vmware_monitoring]
 
 
-
    vmware_monitoring_enabled = false
-
 
 
    [dbAgent]
 
 
-
    dbAgent_enabled = false
-
 
 
    [zremote]
 
 
-
    zremote_enabled = false
-
 
 
    [synthetic]
 
 
-
    synthetic_enabled = false
-
 
 
    [beacon_forwarder]
 
 
-
    beacon_forwarder_enabled = false
-
 
 
    [metrics_ingest]
 
 
-
    metrics_ingest_enabled = false
 
 
-
    [collector]
-
 
 
    DumpSupported = false
 
 
-
    [collector]
-
 
 
    MSGrouter = false
 
 
-
    [otlp_ingest]
-
 
 
    otlp_ingest_enabled = false
 
 
-
    [collector]
-
 
 
    restInterface = false
@@ -364,7 +312,6 @@ To configure the ActiveGate for the dedicated performance profile
 
    ```
    -java.xmx.absolute_part=2000
-
 
 
    -java.xmx.relative_part=0
@@ -388,7 +335,6 @@ scraped: 2026-03-06T21:29:48.202555
 
 # Extension Execution Controller custom configuration
 
-# Extension Execution Controller custom configuration
 
 * Latest Dynatrace
 * How-to guide
@@ -426,14 +372,12 @@ To restart the EEC service on a Linux system, run the following commands:
   service extensionsmodule stop
 
 
-
   service extensionsmodule start
   ```
 * For systems with systemd:
 
   ```
   systemctl stop extensionsmodule
-
 
 
   systemctl start extensionsmodule
@@ -443,7 +387,6 @@ To restart the EEC service on a Windows system, either start **Task Manager** an
 
 ```
 net stop "Dynatrace Extensions Controller"
-
 
 
 net start "Dynatrace Extensions Controller"
@@ -522,7 +465,6 @@ scraped: 2026-03-06T21:33:40.035225
 
 # Customize data with extensions
 
-# Customize data with extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -552,9 +494,7 @@ Export custom event for alerting definition
    curl -X GET "https://{env-id}.live.dynatrace.com/api/config/v1/anomalyDetection/metricEvents/{custom-event-id}" \
 
 
-
    -H "accept: application/json; charset=utf-8" \
-
 
 
    -H "Authorization: Api-Token `{api-token}"
@@ -642,7 +582,6 @@ The attributes are applied to all metrics, logs, and events produced by the conf
 ## Log metrics, events, and processing rules
 
 
-
 After you enable [log ingestion](../ru/analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") into Dynatrace you can define the log metrics, events, and add your own log processing rules to be shipped with your extension.
 
 For general information, on your logs configuration, see
@@ -681,89 +620,67 @@ Log metrics
 name: custom:dynatrace.logmetric.test.extension
 
 
-
 version: 1.0.0
-
 
 
 minDynatraceVersion: "1.281.0"
 
 
-
 author:
-
 
 
 name: "John Doe"
 
 
-
 logMetrics:
-
 
 
 - key: log.test.extension.occurrence
 
 
-
 query: content="AllProcessed"
-
 
 
 enabled: true
 
 
-
 measure: OCCURRENCE
-
 
 
 - key: log.test.extension.attribute
 
 
-
 query: content="AllProcessed"
 
 
-
 enabled: true
-
 
 
 measure: ATTRIBUTE
 
 
-
 measureAttribute: dt.os.type
-
 
 
 - key: log.test.extension.dimensions
 
 
-
 query: content="AllProcessed"
-
 
 
 enabled: true
 
 
-
 measure: OCCURRENCE
-
 
 
 dimensions: [
 
 
-
 dimension1,
 
 
-
 dimension2
-
 
 
 ]
@@ -775,85 +692,64 @@ Log events
 ame: custom:dynatrace.logevent.test.extension2
 
 
-
 version: 1.0.0
-
 
 
 minDynatraceVersion: "1.281.0"
 
 
-
 author:
-
 
 
 name: "John Doe"
 
 
-
 logEvents:
-
 
 
 - query: content="a"
 
 
-
 enabled: true
-
 
 
 summary: abc
 
 
-
 eventTemplate:
-
 
 
 title: log_event_a
 
 
-
 description: ''
 
 
-
 eventType: CUSTOM_ALERT
-
 
 
 davisMerge: false
 
 
-
 - query: content="a"
-
 
 
 enabled: true
 
 
-
 summary: abd
-
 
 
 eventTemplate:
 
 
-
 title: abd
-
 
 
 description: My custom log event description :)
 
 
-
 eventType: CUSTOM_ALERT
-
 
 
 davisMerge: false
@@ -867,49 +763,37 @@ With this definition, you use the `RAPLACE_PATTERN` to mask sensitive data retri
 logProcessingRules:
 
 
-
 - ruleName: TopN statements masking
-
 
 
 query: event.group="query_performance"
 
 
-
 enabled: true
-
 
 
 ProcessorDefinition:
 
 
-
 rule: |
-
 
 
 USING(INOUT content) | FIELDS_ADD(content: REPLACE_PATTERN(content, "(\"'\"):p1 (LD):p2 (\"'\"):p3", "${p1}${p2|sha1}${p3}"))
 
 
-
 RuleTesting:
-
 
 
 sampleLog: |
 
 
-
 {
-
 
 
 "event.group": "query_performance",
 
 
-
 "content": "/*dt:ownQuery*/SELECT DECODE(name, 'sessions', value) AS sessions_limit, DECODE(name, 'processes', value) AS processes_limit FROM v$parameter WHERE name IN('sessions', 'processes')"
-
 
 
 }
@@ -927,7 +811,6 @@ scraped: 2026-03-04T21:33:06.167215
 
 # About Extensions
 
-# About Extensions
 
 * Latest Dynatrace
 * Explanation
@@ -1035,7 +918,6 @@ Without an environment configuration, an extension is invisible to the Dynatrace
 ### Monitoring configuration
 
 
-
 A monitoring configuration is specific to the data source type you want to monitor. It defines:
 
 * From where the extension runs.
@@ -1068,13 +950,10 @@ Extension packages with different contents are not accepted for upload. The maxi
 bundle.zip
 
 
-
 â   extension.zip
 
 
-
 â   extension.zip.sig
-
 
 
 â   extension.zip.sig.tsr
@@ -1146,7 +1025,6 @@ scraped: 2026-03-03T21:22:23.769765
 
 # JMX data source reference
 
-# JMX data source reference
 
 * Latest Dynatrace
 * Reference
@@ -1165,9 +1043,7 @@ The most common source is a numeric JMX MBean attribute:
 metrics:
 
 
-
 - key: com.example.somekey
-
 
 
 value: attribute:ThreadCount
@@ -1183,17 +1059,13 @@ For example:
 metrics:
 
 
-
 - key: com.example.somekey
-
 
 
 value:
 
 
-
 attribute: SomeNonNumericAttribute
-
 
 
 accessor: getSomeNumericValue()
@@ -1207,9 +1079,7 @@ A special case is to always use the same constant value instead of querying an a
 metrics:
 
 
-
 - key: com.example.somekey
-
 
 
 value: const:1
@@ -1227,9 +1097,7 @@ The simplest case is to set the dimension value to a constant string:
 dimensions:
 
 
-
 - key: k1
-
 
 
 value: const:constant_value
@@ -1243,13 +1111,10 @@ MBean object name key property value can be used as a dimension value:
 query: java.lang:type=GarbageCollector,name=*
 
 
-
 dimensions:
 
 
-
 - key: k1
-
 
 
 value: property:name
@@ -1265,13 +1130,10 @@ An MBean attribute can also be used as a dimension value.
 query: java.lang:type=Compilation
 
 
-
 dimensions:
 
 
-
 - key: k1
-
 
 
 value: attribute:Name
@@ -1285,21 +1147,16 @@ Similar to metric values, it is possible to extract the dimension value from a c
 query: java.lang:type=Compilation
 
 
-
 dimensions:
-
 
 
 - key: k1
 
 
-
 value:
 
 
-
 attribute: SomeAttribute
-
 
 
 accessor: getName()
@@ -1329,77 +1186,58 @@ Extension variables can be used to allow users of an extension to monitor only s
 vars:
 
 
-
 - id: gc_name_filter
-
 
 
 displayName: Garbage Collector Name
 
 
-
 type: text
-
 
 
 jmx:
 
 
-
 groups:
-
 
 
 - group: jvm
 
 
-
 subgroups:
-
 
 
 - subgroup: basic
 
 
-
 query: java.lang:type=GarbageCollector
-
 
 
 queryFilters:
 
 
-
 - field: name
-
 
 
 filter: var:gc_name_filter
 
 
-
 dimensions:
-
 
 
 - key: k1
 
 
-
 value: property:name
-
 
 
 metrics:
 
 
-
 - key: com.example.jmx.var
 
 
-
 type: count
-
 
 
 value: attribute:CollectionTime
@@ -1417,65 +1255,49 @@ Extension variables can also be used directly as the value of custom metric dime
 vars:
 
 
-
 - id: my_variable
-
 
 
 displayName: My Variable
 
 
-
 type: text
-
 
 
 jmx:
 
 
-
 groups:
-
 
 
 - group: jvm
 
 
-
 subgroups:
-
 
 
 - subgroup: variable as dimension value
 
 
-
 query: "java.lang:type=Threading"
-
 
 
 dimensions:
 
 
-
 - key: my_dimension
-
 
 
 value: var:my_variable
 
 
-
 metrics:
-
 
 
 - key: com.example.jmx-reference.var-dimension
 
 
-
 type: gauge
-
 
 
 value: attribute:ThreadCount
@@ -1500,29 +1322,22 @@ Notice that average can be easily understood by dividing the sum by count.
 - query: Catalina:type=Manager,host=*,context=*
 
 
-
 dimensions:
-
 
 
 - key: host
 
 
-
 value: attribute:host
-
 
 
 metrics:
 
 
-
 - key: metric_activeSessions_1752841036351
 
 
-
 value: attribute:activeSessions
-
 
 
 type: gauge_statcounter
@@ -1540,7 +1355,6 @@ scraped: 2026-03-06T21:36:35.777912
 
 # JMX data source
 
-# JMX data source
 
 * Latest Dynatrace
 * Reference
@@ -1581,93 +1395,70 @@ Let's start with a minimal JMX extension:
 # required extension metadata
 
 
-
 name: custom:com.example.jmx
-
 
 
 version: 1.0.0
 
 
-
 minDynatraceVersion: 1.265.0
-
 
 
 author:
 
 
-
 name: John Doe
-
 
 
 # optional metric metadata
 
 
-
 metrics:
 
 
-
 - key: com.example.jmx.thread_count
-
 
 
 metadata:
 
 
-
 displayName: Thread Count
-
 
 
 description: Number of active Java threads
 
 
-
 unit: Count
-
 
 
 # defines how to create metrics from JMX MBeans
 
 
-
 jmx:
-
 
 
 groups:
 
 
-
 - group: jvm
-
 
 
 subgroups:
 
 
-
 - subgroup: basic
-
 
 
 query: java.lang:type=Threading
 
 
-
 metrics:
-
 
 
 - key: com.example.jmx.thread_count
 
 
-
 type: gauge
-
 
 
 value: attribute:ThreadCount
@@ -1708,7 +1499,6 @@ scraped: 2026-03-04T21:37:13.983043
 
 # Prometheus data source
 
-# Prometheus data source
 
 * Latest Dynatrace
 * Reference
@@ -1762,7 +1552,6 @@ scraped: 2026-03-06T21:32:00.044917
 
 # Dynatrace Extensions Python SDK
 
-# Dynatrace Extensions Python SDK
 
 * Latest Dynatrace
 * Reference
@@ -1802,7 +1591,6 @@ scraped: 2026-03-05T21:30:19.842360
 
 # Troubleshooting
 
-# Troubleshooting
 
 * Latest Dynatrace
 * Troubleshooting
@@ -1874,7 +1662,6 @@ scraped: 2026-03-02T21:28:59.047980
 
 # SNMP data source
 
-# SNMP data source
 
 * Latest Dynatrace
 * Reference
@@ -1973,7 +1760,6 @@ scraped: 2026-03-06T21:36:39.137980
 
 # IBM Database monitoring configuration
 
-# IBM Database monitoring configuration
 
 * Latest Dynatrace
 * Reference
@@ -1993,113 +1779,85 @@ Example payload to activate an IBM DB2 extension:
 [
 
 
-
 {
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "description": "My IBM extension",
 
 
-
 "version": "0.1.1",
-
 
 
 "featureSets": [
 
 
-
 "io",
-
 
 
 "cpu",
 
 
-
 ],
-
 
 
 "sqlDb2Remote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "db2host",
-
 
 
 "port": 1521,
 
 
-
 "authentication": {
-
 
 
 "scheme": "basic",
 
 
-
 "username": "admin",
-
 
 
 "password": "password"
 
 
-
 },
-
 
 
 "databaseName": "dbname",
 
 
-
 "ssl": false
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "scope": "ag_group-default"
 
 
-
 }
-
 
 
 ]
@@ -2127,13 +1885,10 @@ Add a list of feature sets you want to monitor. To report all feature sets, add 
 "featureSets": [
 
 
-
 "cpu",
 
 
-
 "io"
-
 
 
 ]
@@ -2147,53 +1902,40 @@ You can define up to 20,000 endpoints in a single monitoring configuration in th
 "sqlDb2Remote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "db2host",
-
 
 
 "port": 1433,
 
 
-
 "authentication": {
-
 
 
 "scheme": "basic",
 
 
-
 "username": "user",
-
 
 
 "password": "password"
 
 
-
 },
-
 
 
 "databaseName": "dbname",
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -2222,17 +1964,13 @@ The credential vault authentication type provides a more secure approach to usin
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": true,
 
 
-
 "credentialVaultId": "some-credential-vault-id"
-
 
 
 }
@@ -2312,7 +2050,6 @@ scraped: 2026-03-06T21:35:03.651720
 
 # JDBC monitoring configuration
 
-# JDBC monitoring configuration
 
 * Latest Dynatrace
 * How-to guide
@@ -2355,109 +2092,82 @@ Example payload to activate the JDBC extension:
 [
 
 
-
 {
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "description": "My JDBC extension",
 
 
-
 "version": "0.0.1",
-
 
 
 "featureSets": [
 
 
-
 "statements"
-
 
 
 ],
 
 
-
 "jdbcRemote": {
-
 
 
 "endpoints": [
 
 
-
 {
-
 
 
 "host": "193.36.194.170",
 
 
-
 "port": 3306,
-
 
 
 "connectionString": "jdbc:mariadb://193.36.194.170/mysql",
 
 
-
 "authentication": {
-
 
 
 "scheme": "basic",
 
 
-
 "useCredentialVault": false,
-
 
 
 "username": "user",
 
 
-
 "password": "password"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "scope": "ag_group-someAgGroup"
 
 
-
 }
-
 
 
 ]
@@ -2494,13 +2204,10 @@ Add a list of feature sets you want to monitor.
 "featureSets": [
 
 
-
 "cpu",
 
 
-
 "io"
-
 
 
 ]
@@ -2514,57 +2221,43 @@ You can define up to 20,000 endpoints in a single monitoring configuration in th
 "jdbcRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "jdbchost",
-
 
 
 "port": 3306,
 
 
-
 "connectionString": "jdbc:mariadb://193.36.194.170/mysql",
-
 
 
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": false,
 
 
-
 "username": "admin",
-
 
 
 "password": "password"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -2593,17 +2286,13 @@ The credential vault authentication type provides a more secure approach to usin
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": true,
 
 
-
 "credentialVaultId": "some-credential-vault-id"
-
 
 
 }
@@ -2683,7 +2372,6 @@ scraped: 2026-03-03T21:31:20.683420
 
 # MySQL monitoring configuration
 
-# MySQL monitoring configuration
 
 * Latest Dynatrace
 * Reference
@@ -2703,113 +2391,85 @@ Example payload to activate the MySQL extension:
 [
 
 
-
 {
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "description": "My MySQL extension",
 
 
-
 "version": "0.1.1",
-
 
 
 "featureSets": [
 
 
-
 "io",
-
 
 
 "cpu",
 
 
-
 ],
-
 
 
 "sqlMySqlRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "mysqlhost",
-
 
 
 "port": 3306,
 
 
-
 "databaseName": "dbname",
-
 
 
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "username": "user",
 
 
-
 "password": "password"
 
 
-
 },
-
 
 
 "ssl": false
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "scope": "ag_group-default"
 
 
-
 }
-
 
 
 ]
@@ -2837,13 +2497,10 @@ Add a list of feature sets you want to monitor. To report all feature sets, add 
 "featureSets": [
 
 
-
 "cpu",
 
 
-
 "io"
-
 
 
 ]
@@ -2857,53 +2514,40 @@ You can define up to 20,000 endpoints in a single monitoring configuration in th
 "sqlMySqlRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "sqlserver.org",
-
 
 
 "port": 1521,
 
 
-
 "databaseName": "dbname",
-
 
 
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "username": "admin",
 
 
-
 "password": "password"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -2928,17 +2572,13 @@ Basic authentication requires only a username and password.
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "username": "username",
 
 
-
 "password": "password"
-
 
 
 }
@@ -2958,17 +2598,13 @@ The ActiveGate uses the IAM role assigned to it to authenticate, so there's no n
 "authentication": {
 
 
-
 "scheme": "identity_aws",
-
 
 
 "username": "username",
 
 
-
 "region": "eu-central-1"
-
 
 
 }
@@ -2986,17 +2622,13 @@ The credential vault authentication type provides a more secure approach to usin
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": true,
 
 
-
 "credentialVaultId": "some-credential-vault-id"
-
 
 
 }
@@ -3076,7 +2708,6 @@ scraped: 2026-03-05T21:37:43.036318
 
 # Oracle Database monitoring configuration
 
-# Oracle Database monitoring configuration
 
 * Latest Dynatrace
 * Reference
@@ -3095,121 +2726,91 @@ Example payload to activate an Oracle SQL extension:
 [
 
 
-
 {
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "description": "My Oracle SQL extension",
 
 
-
 "version": "0.1.1",
-
 
 
 "featureSets": [
 
 
-
 "io",
-
 
 
 "cpu",
 
 
-
 ],
-
 
 
 "sqlOracleRemote": {
 
 
-
 "licenseAccepted": true,
-
 
 
 "endpoints": [
 
 
-
 {
-
 
 
 "host": "sqlserver.org",
 
 
-
 "port": 1521,
-
 
 
 "databaseIdentifier": "serviceName",
 
 
-
 "authentication": {
-
 
 
 "scheme": "basic",
 
 
-
 "username": "admin",
-
 
 
 "password": "password"
 
 
-
 },
-
 
 
 "serviceName": "some-serviceName"
 
 
-
 "ssl": false
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "scope": "ag_group-default"
 
 
-
 }
-
 
 
 ]
@@ -3229,9 +2830,7 @@ Issue the following request:
 curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/{extension-name}/{extension-version}/schema" \
 
 
-
 -H "accept: application/json; charset=utf-8" \
-
 
 
 -H "Authorization: Api-Token {api-token}"
@@ -3273,69 +2872,52 @@ You can define up to 20,000 endpoints in a single monitoring configuration in th
 "sqlOracleRemote": {
 
 
-
 "licenseAccepted": true,
-
 
 
 "endpoints": [
 
 
-
 {
-
 
 
 "host": "sqlserver.org",
 
 
-
 "port": 1521,
-
 
 
 "databaseIdentifier": "serviceName",
 
 
-
 "authentication": {
-
 
 
 "scheme": "basic",
 
 
-
 "username": "admin",
-
 
 
 "password": "password"
 
 
-
 },
-
 
 
 "serviceName": "some-serviceName"
 
 
-
 "ssl": false
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 }
@@ -3370,17 +2952,13 @@ The credential vault authentication type provides a more secure approach to usin
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": true,
 
 
-
 "credentialVaultId": "some-credential-vault-id"
-
 
 
 }
@@ -3394,13 +2972,10 @@ Add a list of feature sets you want to monitor. To report all feature sets, add 
 "featureSets": [
 
 
-
 "cpu",
 
 
-
 "io"
-
 
 
 ]
@@ -3414,9 +2989,7 @@ The feature set `topN` enables monitoring of the most resource-intensive queries
 "featureSets": [
 
 
-
 "topN"
-
 
 
 ]
@@ -3432,9 +3005,7 @@ The feature set `multitenancy` enhances the monitoring capabilities by querying 
 "featureSets": [
 
 
-
 "multitenancy"
-
 
 
 ]
@@ -3466,9 +3037,7 @@ Add the `long-running-query-timeout` parameter to configure the timeout duration
 "vars": {
 
 
-
 "long-running-query-timeout": null
-
 
 
 }
@@ -3538,7 +3107,6 @@ scraped: 2026-03-06T21:27:55.570675
 
 # PostgreSQL monitoring configuration
 
-# PostgreSQL monitoring configuration
 
 * Latest Dynatrace
 * Reference
@@ -3558,113 +3126,85 @@ Example payload to activate the PostgreSQL extension:
 [
 
 
-
 {
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "description": "My PostgreSQL extension",
 
 
-
 "version": "0.1.1",
-
 
 
 "featureSets": [
 
 
-
 "io",
-
 
 
 "cpu",
 
 
-
 ],
-
 
 
 "sqlPostgresRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "psqlserver.org",
-
 
 
 "port": 1521,
 
 
-
 "databaseName": "dbname",
-
 
 
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "username": "user",
 
 
-
 "password": "password"
 
 
-
 },
-
 
 
 "ssl": false
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "scope": "ag_group-default"
 
 
-
 }
-
 
 
 ]
@@ -3692,13 +3232,10 @@ Add a list of feature sets you want to monitor. To report all feature sets, add 
 "featureSets": [
 
 
-
 "cpu",
 
 
-
 "io"
-
 
 
 ]
@@ -3712,53 +3249,40 @@ You can define up to 20,000 endpoints in a single monitoring configuration in th
 "sqlPostgresRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "psqlserver.org",
-
 
 
 "port": 1433,
 
 
-
 "databaseName": "dbname",
-
 
 
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "username": "user",
 
 
-
 "password": "password"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -3783,17 +3307,13 @@ Basic authentication requires only a username and password.
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "username": "username",
 
 
-
 "password": "password"
-
 
 
 }
@@ -3813,17 +3333,13 @@ The ActiveGate uses the IAM role assigned to it to authenticate, so there's no n
 "authentication": {
 
 
-
 "scheme": "identity_aws",
-
 
 
 "username": "username",
 
 
-
 "region": "eu-central-1"
-
 
 
 }
@@ -3841,17 +3357,13 @@ The credential vault authentication type provides a more secure approach to usin
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": true,
 
 
-
 "credentialVaultId": "some-credential-vault-id"
-
 
 
 }
@@ -3931,7 +3443,6 @@ scraped: 2026-03-06T21:36:59.952480
 
 # SAP Hana Database monitoring configuration
 
-# SAP Hana Database monitoring configuration
 
 * Latest Dynatrace
 * Reference
@@ -3951,105 +3462,79 @@ Example payload to activate the SAP Hana extension:
 [
 
 
-
 {
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "description": "My SAP Hana extension",
 
 
-
 "version": "0.1.1",
-
 
 
 "featureSets": [
 
 
-
 "io",
-
 
 
 "cpu",
 
 
-
 ],
-
 
 
 "sqlHanaRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "hanahost",
-
 
 
 "port": 1521,
 
 
-
 "authentication": {
-
 
 
 "username": "user",
 
 
-
 "password": "password"
 
 
-
 },
-
 
 
 "ssl": false
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "scope": "ag_group-default"
 
 
-
 }
-
 
 
 ]
@@ -4077,13 +3562,10 @@ Add a list of feature sets you want to monitor. To report all feature sets, add 
 "featureSets": [
 
 
-
 "cpu",
 
 
-
 "io"
-
 
 
 ]
@@ -4097,45 +3579,34 @@ You can define up to 20,000 endpoints in a single monitoring configuration in th
 "sqlHanaRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "hanahost",
-
 
 
 "port": 1521,
 
 
-
 "authentication": {
-
 
 
 "username": "user",
 
 
-
 "password": "password"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -4157,21 +3628,16 @@ The credential vault authentication type provides a more secure approach to usin
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": "true",
 
 
-
 "skipVerifyHttps": false,
 
 
-
 "credentialVaultId": "some-credential-vault-id"
-
 
 
 }
@@ -4260,7 +3726,6 @@ scraped: 2026-03-05T21:35:29.081764
 
 # Snowflake Database monitoring configuration
 
-# Snowflake Database monitoring configuration
 
 * Latest Dynatrace
 * Reference
@@ -4280,117 +3745,88 @@ Example payload to activate the Snowflake Database extension:
 [
 
 
-
 {
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "description": "My SnowFlake DB extension",
 
 
-
 "version": "0.1.1",
-
 
 
 "featureSets": [
 
 
-
 "io",
-
 
 
 "cpu",
 
 
-
 ],
-
 
 
 "sqlSnowflakeRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "sqlserver.org",
-
 
 
 "port": 1521,
 
 
-
 "databaseName":"SNOWFLAKE_SAMPLE_DATA",
-
 
 
 "warehouse":"yourwarehouse",
 
 
-
 "schema":"yourschema",
-
 
 
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "username": "admin",
 
 
-
 "password": "password"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "scope": "ag_group-default"
 
 
-
 }
-
 
 
 ]
@@ -4418,13 +3854,10 @@ Add a list of feature sets you want to monitor. To report all feature sets, add 
 "featureSets": [
 
 
-
 "cpu",
 
 
-
 "io"
-
 
 
 ]
@@ -4438,61 +3871,46 @@ You can define up to 20,000 endpoints in a single monitoring configuration in th
 "sqlSnowflakeRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "your-snowflake.com",
-
 
 
 "port": 1521,
 
 
-
 "databaseName":"SNOWFLAKE_SAMPLE_DATA",
-
 
 
 "warehouse":"yourwarehouse",
 
 
-
 "schema":"yourschema",
-
 
 
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "username": "admin",
 
 
-
 "password": "password"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -4523,17 +3941,13 @@ The credential vault authentication type provides a more secure approach to usin
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": true,
 
 
-
 "credentialVaultId": "some-credential-vault-id"
-
 
 
 }
@@ -4565,7 +3979,6 @@ scraped: 2026-03-01T21:14:57.566228
 
 # SQL data source reference
 
-# SQL data source reference
 
 * Latest Dynatrace
 * Reference
@@ -4602,161 +4015,121 @@ In our example, we create a simple extension collecting basic CPU performance de
 name: com.dynatrace.extension.sql-oracle
 
 
-
 version: 1.0
-
 
 
 minDynatraceVersion: '1.239'
 
 
-
 author:
-
 
 
 name: Dynatrace
 
 
-
 sqlOracle:
-
 
 
 - group: Number of CPU cores
 
 
-
 featureSet: cpu
 
 
-
 query: >
-
 
 
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
 
 
-
 type: gauge
-
 
 
 - group: Background CPU Usage Per CPU Per Sec
 
 
-
 featureSet: cpu
-
 
 
 query: >
 
 
-
 SELECT
-
 
 
 DECODE(metric_name, 'Background CPU Usage Per Sec',
 
 
-
 v$metric.value) AS background_cpu_usage,
-
 
 
 DECODE(metric_name, 'CPU Usage Per Sec',
 
 
-
 v$metric.value) AS foreground_cpu_usage,
-
 
 
 DECODE(metric_name, 'Host CPU Usage Per Sec',
 
 
-
 v$metric.value) AS host_cpu_usage
-
 
 
 FROM v$metric,
 
 
-
 v$metricgroup
-
 
 
 WHERE v$metric.group_id = v$metricgroup.group_id
 
 
-
 AND v$metric.metric_name IN ('Background CPU Usage Per Sec',
-
 
 
 'CPU Usage Per Sec', 'Host CPU Usage Per Sec')
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.backgroundTotal
 
 
-
 value: col:background_cpu_usage
 
 
-
 type: gauge
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.foregroundTotal
 
 
-
 value: col:foreground_cpu_usage
-
 
 
 type: gauge
 
 
-
 - key: com.dynatrace.extension.sql-oracle.cpu.hostTotal
 
 
-
 value: col:host_cpu_usage
-
 
 
 type: gauge
@@ -4779,17 +4152,13 @@ Dynatrace Extensions SQL data source enables you to query any database allowing 
 jdbc:
 
 
-
 driverClassName: âorg.mariadb.jdbc.Driverâ
-
 
 
 connectionStringPattern: âjdbc:mariadb:(. |\\s)+$"
 
 
-
 connectionStringPatternErrorMessage: âThis isn't a correct connection string, please start with jdbc:mariadb."
-
 
 
 validationQuery: âSELECT 1â
@@ -4807,9 +4176,7 @@ For example, the following SQL query returns the number of CPU cores.
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
@@ -4821,41 +4188,31 @@ You can use it in your extension and report the value returned by a query as the
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 featureSet: cpu
 
 
-
 query:
-
 
 
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
@@ -4879,49 +4236,37 @@ The interval value accepts an integer value expressing minutes. For example, to 
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 featureSet: cpu
 
 
-
 interval:
-
 
 
 minutes: 10
 
 
-
 query:
-
 
 
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
@@ -4939,25 +4284,19 @@ The expression must follow the Unix cron format:
 # * * * * *
 
 
-
 # | | | | |
-
 
 
 # | | | | day of the week (1â7) (Sunday to Saturday)
 
 
-
 # | | | month (1â12)
-
 
 
 # | | day of the month (1â31)
 
 
-
 # | hour (0â23)
-
 
 
 # minute (0â59)
@@ -4973,45 +4312,34 @@ For example, to run a query at 12:00 on every week day (Monday-Friday), use the 
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 featureSet: cpu
 
 
-
 schedule: "0 12 ? * 2-6"
-
 
 
 query:
 
 
-
 SELECT value AS cpu_count
-
 
 
 FROM v$parameter
 
 
-
 WHERE name = 'cpu_count'
-
 
 
 metrics:
 
 
-
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
@@ -5033,25 +4361,19 @@ For example, to let user control the interval:
    vars:
 
 
-
    - id: myInterval
-
 
 
    displayName: Interval
 
 
-
    description: Interval at which your database provider is queried in minutes. 10 minutes by default.
-
 
 
    defaultValue: "10"
 
 
-
    pattern: ^[0-9]+$
-
 
 
    type: text
@@ -5062,49 +4384,37 @@ For example, to let user control the interval:
    sqlOracle:
 
 
-
    - group: Number of CPU cores
-
 
 
    interval:
 
 
-
    minutes: var:myInterval
-
 
 
    featureSet: cpu
 
 
-
    query:
-
 
 
    SELECT value AS cpu_count
 
 
-
    FROM v$parameter
-
 
 
    WHERE name = 'cpu_count'
 
 
-
    metrics:
-
 
 
    - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
    value: col:cpu_count
-
 
 
    type: gauge
@@ -5115,7 +4425,6 @@ For example, to let user control the interval:
 ## Timeouts
 
 
-
 When developing an extension, a timeout value can be specified for a given query at both group and subgroup levels. Timeouts are specified in seconds; the default value is `10`. The provided value must be a string, for example: `20`, `60`, `120`, and so on.
 
 You can also use a reference to a variable to specify the timeout. For more information on using variables, see [Extension YAML file](../ru/ingest-from/extensions/develop-your-extensions/extension-yaml.md#variables "Learn how to create an extension YAML file using the Extensions framework.").
@@ -5124,45 +4433,34 @@ You can also use a reference to a variable to specify the timeout. For more info
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 timeout: "20"
 
 
-
 featureSet: cpu
-
 
 
 query: |
 
 
-
 SELECT value AS cpu_count
-
 
 
 FROM v$parameter
 
 
-
 WHERE name = 'cpu_count'
-
 
 
 metrics:
 
 
-
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
@@ -5190,37 +4488,28 @@ You use an SQL query to retrieve a value for your dimension (prefix with `col:`)
 query: >
 
 
-
 SELECT event, wait_class
-
 
 
 FROM v$system_event
 
 
-
 dimensions:
-
 
 
 - key: event
 
 
-
 value: col:event
-
 
 
 - key: wait_class
 
 
-
 value: col:wait_class
 
 
-
 - key: stage
-
 
 
 value: const:dev
@@ -5239,33 +4528,25 @@ Filters can be set as a constant value or as a [variable](../ru/ingest-from/exte
 dimensions:
 
 
-
 - key: event
-
 
 
 value: col:event
 
 
-
 filter: var:event_filter
-
 
 
 - key: wait_class
 
 
-
 value: col:wait_class
-
 
 
 filter: const:$not(0)
 
 
-
 - key: stage
-
 
 
 value: const:dev
@@ -5322,41 +4603,31 @@ For example:
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 featureSet: cpu
 
 
-
 query:
-
 
 
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
@@ -5390,37 +4661,28 @@ Define all metric metadata in the `metrics` section of the extension's YAML file
 name: custom:example-extension-name
 
 
-
 version: 1.0.0
-
 
 
 minDynatraceVersion: "1.236"
 
 
-
 author:
-
 
 
 name: Dynatrace
 
 
-
 metrics:
-
 
 
 - key: your.metric.name
 
 
-
 metadata:
 
 
-
 displayName: Display name of the metric visible in Metrics browser
-
 
 
 unit: Count
@@ -5434,101 +4696,76 @@ Feature sets are categories into which you organize the data collected by the ex
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 featureSet: cpu
 
 
-
 query:
-
 
 
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
 
 
-
 - group: Physical read bytes
-
 
 
 featureSet: io
 
 
-
 query: >
-
 
 
 SELECT
 
 
-
 DECODE(name, 'physical read total bytes', value) AS bytes_written,
-
 
 
 DECODE(name, 'physical write total bytes', value) AS bytes_read
 
 
-
 FROM v$sysstat
-
 
 
 WHERE name IN ('physical read total bytes', 'physical write total bytes')
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.io.bytesRead
 
 
-
 value: col:bytes_read
-
 
 
 type: count
 
 
-
 - key: com.dynatrace.extension.sql-oracle.io.bytesWritten
 
 
-
 value: col:bytes_written
-
 
 
 type: count
@@ -5560,7 +4797,6 @@ scraped: 2026-03-06T21:31:46.228065
 
 # SQL data source
 
-# SQL data source
 
 * Latest Dynatrace
 * Overview
@@ -5623,7 +4859,6 @@ scraped: 2026-03-04T21:28:59.832907
 
 # WMI data source tutorial
 
-# WMI data source tutorial
 
 * Latest Dynatrace
 * How-to guide
@@ -5662,7 +4897,6 @@ To successfully develop an Extensions extension and be able to complete this tut
 
 ```
 dt extension genca
-
 
 
 dt extension generate-developer-pem -o developer.pem --ca-crt ca.pem --ca-key ca.key --name 'JDoe'
@@ -5711,7 +4945,6 @@ scraped: 2026-03-03T21:24:12.065610
 
 # WMI data source
 
-# WMI data source
 
 * Latest Dynatrace
 * How-to guide
@@ -5822,7 +5055,6 @@ scraped: 2026-03-06T21:35:32.192927
 
 # Extension YAML file
 
-# Extension YAML file
 
 * Latest Dynatrace
 * How-to guide
@@ -5853,9 +5085,7 @@ To download Extensions schemas:
    curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/schemas" \
 
 
-
    -H "accept: application/json; charset=utf-8" \
-
 
 
    -H "Authorization: Api-Token {api-token}"
@@ -5867,21 +5097,16 @@ To download Extensions schemas:
    {
 
 
-
    "versions": [
-
 
 
    "1.213.0",
 
 
-
    "1.215.0",
 
 
-
    ]
-
 
 
    }
@@ -5893,9 +5118,7 @@ To download Extensions schemas:
    curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/schemas/{dynatrace-version}" \
 
 
-
    -H "accept: application/json; charset=utf-8" \
-
 
 
    -H "Authorization: Api-Token {api-token}"
@@ -5907,45 +5130,34 @@ To download Extensions schemas:
    {
 
 
-
    "files": [
-
 
 
    "metric.metadata.schema.json",
 
 
-
    "topology.schema.json",
-
 
 
    "generic.types.schema.json",
 
 
-
    "generic.relationships.schema.json",
-
 
 
    "snmp.schema.json",
 
 
-
    "metric.schema.json",
-
 
 
    "wmi.schema.json",
 
 
-
    "extension.schema.json"
 
 
-
    ]
-
 
 
    }
@@ -5956,9 +5168,7 @@ To download Extensions schemas:
    curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/schemas/1.215/extension.schema.json" \
 
 
-
    -H "accept: application/json; charset=utf-8" \
-
 
 
    -H "Authorization: Api-Token {api-token}"
@@ -5989,93 +5199,70 @@ For example:
 name: com.dynatrace.cisco-catalyst-health
 
 
-
 version: 1.0.0
-
 
 
 minDynatraceVersion: "1.238"
 
 
-
 author:
-
 
 
 name: Joe Doe
 
 
-
 snmp:
-
 
 
 - group: Device health
 
 
-
 interval:
-
 
 
 minutes: 1
 
 
-
 dimensions:
-
 
 
 - key: device.name
 
 
-
 value: oid:1.3.6.1.2.1.1.5.0
-
 
 
 - key: device.contact
 
 
-
 value: oid:1.3.6.1.2.1.1.4.0
-
 
 
 subgroups:
 
 
-
 - subgroup: Device health (Temperature)
-
 
 
 table: true
 
 
-
 dimensions:
-
 
 
 - key: envmon.temperature.desc
 
 
-
 value: oid:1.3.6.1.4.1.9.9.13.1.3.1.2
-
 
 
 metrics:
 
 
-
 - key: envmon.temperature.value
 
 
-
 value: oid:1.3.6.1.4.1.9.9.13.1.3.1.3
-
 
 
 type: gauge
@@ -6091,7 +5278,6 @@ For example:
 
 ```
 interval:
-
 
 
 minutes: 5
@@ -6127,32 +5313,25 @@ See:
 ## Variables
 
 
-
 If you want to make your extension customizable with the monitoring configuration, you can use variables that will be replaced by values passed from the monitoring configuration. You can use variables directly as the dimension value or with [filters](#filters). To use variables, you must first declare them in your extension YAML file:
 
 ```
 vars:
 
 
-
 - id: ifNameFilter
-
 
 
 displayName: Pattern matching interfaces for which metrics should be queried
 
 
-
 type: text
-
 
 
 - id: ext.activationtag
 
 
-
 displayName: Extension activation tag
-
 
 
 type: text
@@ -6166,29 +5345,22 @@ There are three types of variables that can be used in your variables definition
   - id: textVariable
 
 
-
   type: text
-
 
 
   displayName: Variable
 
 
-
   description: "Detailed information about this variable"
-
 
 
   maxLength: 2000
 
 
-
   required: true
 
 
-
   defaultValue: "#ff1"
-
 
 
   pattern: ^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$
@@ -6205,37 +5377,28 @@ There are three types of variables that can be used in your variables definition
   - id: multilineVariable
 
 
-
   type: multiline-text
-
 
 
   displayName: Variable
 
 
-
   description: Detailed information about this variable
-
 
 
   maxLength: 2000
 
 
-
   required: true
-
 
 
   defaultValue: |
 
 
-
   Pipe
 
 
-
   style
-
 
 
   multiline
@@ -6250,41 +5413,31 @@ There are three types of variables that can be used in your variables definition
   - id: Colors
 
 
-
   type: enum
-
 
 
   defaultValue: green
 
 
-
   description: Choose your favorite color!
-
 
 
   availableValues:
 
 
-
   - value: red
-
 
 
   displayName: Red as a rose
 
 
-
   - value: green
-
 
 
   displayName: Green as grass
 
 
-
   - value: white
-
 
 
   displayName: White as snow
@@ -6360,7 +5513,6 @@ scraped: 2026-03-05T21:36:26.987234
 
 # Sign extensions
 
-# Sign extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -6432,7 +5584,6 @@ scraped: 2026-03-06T21:24:25.042127
 
 # Develop your own Extensions
 
-# Develop your own Extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -6509,7 +5660,6 @@ scraped: 2026-03-06T21:24:23.338562
 
 # Manage Extensions
 
-# Manage Extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -6661,17 +5811,13 @@ Run the following command to upload the extension package to your environment. F
 curl -X POST "https://{env-id}.live.dynatrace.com/api/v2/extensions" \
 
 
-
 -H "accept: application/json; charset=utf-8" \
-
 
 
 -H "Authorization: Api-Token {api-token}" \
 
 
-
 -H "Content-Type: multipart/form-data" \
-
 
 
 -F "file=@MyCustomExtension.zip;type=application/zip"
@@ -6689,60 +5835,46 @@ After a successful upload, the Dynatrace API returns basic extension details, in
 {
 
 
-
 "extensionName":"custom:my.company.extension",
-
 
 
 "version":"1.0.0",
 
 
-
 "author":{
-
 
 
 "name":"My Company"
 
 
-
 },
-
 
 
 "dataSources":[
 
 
-
 ],
-
 
 
 "variables":[
 
 
-
 ],
-
 
 
 "featureSets":[
 
 
-
 ],
 
 
-
 "minDynatraceVersion":"1.213.0"
-
 
 
 }
 ```
 
 ### Enable an extension with Dynatrace API
-
 
 
 After you upload the extension to your environment, you need to enable the environment configuration. This step is necessary because you can upload up to 10 extension versions but you can use only one extension version at the time. When you activate the extension, you specify which extension version to use.
@@ -6753,17 +5885,13 @@ Run the following command to activate the extension in your environment. For thi
 curl -X PUT "https://{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/environmentConfiguration" \
 
 
-
 -H "accept: application/json; charset=utf-8" \
-
 
 
 -H "Authorization: Api-Token {api-token}" \
 
 
-
 -H "Content-Type: application/json; charset=utf-8" \
-
 
 
 -d "{\"version\":\"{version}\"}"
@@ -6792,17 +5920,13 @@ To start monitoring, you need to add at least one version of the monitoring conf
 curl -X POST "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName>/monitoringConfigurations" \
 
 
-
 -H "accept: application/json; charset=utf-8" \
-
 
 
 -H "Authorization: Api-Token {api-token}" \
 
 
-
 -H "Content-Type: application/json; charset=utf-8" \
-
 
 
 --data @{monitoring-configuration} -i
@@ -6822,9 +5946,7 @@ After a successful call, the Dynatrace API returns the `MonitoringConfigurationR
 [
 
 
-
 { "objectId": "vu9U3hXa3q0AAAABACVleHQ6Y29tLmR5bmF0cmFjZS5zY2hlbWEtc25tcC1nZW5lcmljAAhhZ19ncm91cAAHRTJFVEVTVAAkMWMxZTlhMDctNzVkYi0zZjI0LWI4OGUtZmIxYWRiNGNjYTY4vu9U3hXa3q0", "code": 200 }
-
 
 
 ]
@@ -6854,17 +5976,13 @@ Run the following command to activate the new version. For this example, we use 
 curl -X PUT "https://{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/environmentConfiguration" \
 
 
-
 -H "accept: application/json; charset=utf-8" \
-
 
 
 -H "Authorization: Api-Token  {api-token}" \
 
 
-
 -H "Content-Type: application/json; charset=utf-8" \
-
 
 
 -d "{\"version\":\"{version}\"}"
@@ -6897,9 +6015,7 @@ To delete the currently active environment configuration, use [DELETE environmen
 curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/environmentConfiguration" \
 
 
-
 -H "accept: application/json; charset=utf-8" \
-
 
 
 -H "Authorization: Api-Token {api-token}"
@@ -6925,9 +6041,7 @@ To delete an extension version, use [DELETE an extension version](dynatrace-api/
 curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/{version}" \
 
 
-
 -H "accept: application/json; charset=utf-8" \
-
 
 
 -H "Authorization: Api-Token {api-token}"
@@ -6946,53 +6060,40 @@ After a successful version deletion, the Dynatrace API returns the following res
 {
 
 
-
 "extensionName":"custom:my.company.extension",
-
 
 
 "version":"1.0.0",
 
 
-
 "author":{
-
 
 
 "name":"My Company"
 
 
-
 },
-
 
 
 "dataSources":[
 
 
-
 ],
-
 
 
 "variables":[
 
 
-
 ],
-
 
 
 "featureSets":[
 
 
-
 ],
 
 
-
 "minDynatraceVersion":"1.213.0"
-
 
 
 }
@@ -7016,7 +6117,6 @@ scraped: 2026-03-06T21:16:12.258749
 
 # Manage SNMP extensions
 
-# Manage SNMP extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -7146,11 +6246,6 @@ The files stored in the `mib-files-custom` directory are preserved between updat
 
 ## Explore SNMP extensions
 
-Filter by
-
-Select an option
-
-Type to filter
 
 ## Related topics
 
@@ -7168,7 +6263,6 @@ scraped: 2026-03-04T21:37:15.660573
 
 # Manage IBM Database extensions
 
-# Manage IBM Database extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -7259,7 +6353,6 @@ scraped: 2026-03-06T21:16:10.453218
 
 # Manage Microsoft SQL Server extensions
 
-# Manage Microsoft SQL Server extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -7351,7 +6444,6 @@ scraped: 2026-03-06T21:36:51.298927
 
 # Manage MySQL extensions
 
-# Manage MySQL extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -7445,7 +6537,6 @@ scraped: 2026-03-06T21:16:43.613643
 
 # Manage Oracle Database extensions
 
-# Manage Oracle Database extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -7553,7 +6644,6 @@ scraped: 2026-03-04T21:32:21.031267
 
 # Manage PostgreSQL extensions
 
-# Manage PostgreSQL extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -7647,7 +6737,6 @@ scraped: 2026-03-05T21:33:51.339235
 
 # Manage SAP Hana Database extensions
 
-# Manage SAP Hana Database extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -7758,7 +6847,6 @@ scraped: 2026-03-05T21:31:26.943854
 
 # Manage Snowflake Database extensions
 
-# Manage Snowflake Database extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -7856,7 +6944,6 @@ scraped: 2026-03-06T21:16:41.961961
 
 # Manage WMI extensions
 
-# Manage WMI extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -7952,11 +7039,6 @@ The extension activation wizard contains a dynamically updated JSON payload with
 
 ## Explore WMI extensions
 
-Filter by
-
-Select an option
-
-Type to filter
 
 ## Related topics
 
@@ -7974,7 +7056,6 @@ scraped: 2026-03-06T21:36:47.888698
 
 # Understand extensions data sources
 
-# Understand extensions data sources
 
 * Latest Dynatrace
 * Explanation
@@ -8049,7 +7130,6 @@ scraped: 2026-03-06T21:24:21.522966
 
 # Explore supported Extensions
 
-# Explore supported Extensions
 
 * Latest Dynatrace
 * Explanation
@@ -8060,11 +7140,6 @@ Dynatrace Extensions are pre-built integrations that allow you to extend Dynatra
 
 Select an extension to start learning about it.
 
-Filter by
-
-Select an option
-
-Type to filter
 
 ## Where can you find an Extension?
 
@@ -8094,7 +7169,6 @@ scraped: 2026-03-06T21:12:40.260899
 
 # Extensions
 
-# Extensions
 
 * Latest Dynatrace
 * Overview

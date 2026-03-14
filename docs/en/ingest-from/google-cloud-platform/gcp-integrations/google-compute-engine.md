@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:20.555137
 
 # Monitor Google Compute Engine
 
-# Monitor Google Compute Engine
 
 * Latest Dynatrace
 * How-to guide

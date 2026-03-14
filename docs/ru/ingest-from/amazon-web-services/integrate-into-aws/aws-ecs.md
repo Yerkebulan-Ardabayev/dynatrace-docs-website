@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:11.880580
 
 # Мониторинг Amazon Elastic Container Service (ECS)
 
-# Мониторинг Amazon Elastic Container Service (ECS)
 
 * Classic
 * Практическое руководство
@@ -41,21 +40,16 @@ scraped: 2026-03-06T21:18:11.880580
      {
 
 
-
      "name": "oneagent",
-
 
 
      "image": "dynatrace/oneagent",
 
 
-
      "essential": true,
 
 
-
      "privileged": true
-
 
 
      }
@@ -66,9 +60,7 @@ scraped: 2026-03-06T21:18:11.880580
      {
 
 
-
      "name": "oneagent"
-
 
 
      }

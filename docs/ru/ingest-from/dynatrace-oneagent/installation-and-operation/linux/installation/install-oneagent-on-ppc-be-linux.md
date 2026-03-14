@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:30:49.933952
 
 # Установка OneAgent на PPC BE Linux
 
-# Установка OneAgent на PPC BE Linux
 
 * Последняя версия Dynatrace
 * Чтение займёт 3 минуты
@@ -68,13 +67,10 @@ scraped: 2026-02-06T16:30:49.933952
    DT_HOME=<installation directory>
 
 
-
    export DT_HOME
 
 
-
    LD_PRELOAD=$DT_HOME/agent/<system library>/liboneagentproc.so
-
 
 
    export LD_PRELOAD

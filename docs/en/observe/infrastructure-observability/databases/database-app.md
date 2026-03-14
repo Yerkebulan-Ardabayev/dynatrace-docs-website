@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:38.609532
 
 # Databases app
 
-# Databases app
 
 * Latest Dynatrace
 * App

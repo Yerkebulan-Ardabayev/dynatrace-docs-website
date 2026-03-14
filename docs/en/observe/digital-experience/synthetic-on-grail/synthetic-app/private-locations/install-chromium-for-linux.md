@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:26.009069
 
 # Install and update Chromium for Linux
 
-# Install and update Chromium for Linux
 
 * Latest Dynatrace
 * How-to guide
@@ -175,7 +174,6 @@ You can [verify the authenticity of the packages](../private-locations.md#verify
     vi /root/.curlrc
 
 
-
     proxy=http://proxy.example.com:8080
     ```
 
@@ -212,9 +210,7 @@ You can [verify the authenticity of the packages](../private-locations.md#verify
      sudo subscription-manager repos --enable rhel-7-server-extras-rpms
 
 
-
      sudo subscription-manager repos --enable rhel-7-server-optional-rpms
-
 
 
      sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -240,9 +236,7 @@ You can [verify the authenticity of the packages](../private-locations.md#verify
      sudo subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
 
 
-
      sudo subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
-
 
 
      sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
@@ -264,9 +258,7 @@ You can [verify the authenticity of the packages](../private-locations.md#verify
      sudo subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
 
 
-
      sudo subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
-
 
 
      sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
@@ -542,9 +534,7 @@ You can [verify the authenticity of the packages](../private-locations.md#verify
    sudo yum -y install yum-plugin-versionlock
 
 
-
    sudo yum versionlock chromium
-
 
 
    sudo yum versionlock chromium-common
@@ -652,7 +642,6 @@ On Ubuntu Server 20.04 and 22.04 Chrome for Testing is supported since 1.331
      sudo unzip /tmp/chrome.zip -d /usr/lib/chrome_for_testing
 
 
-
      rm /tmp/chrome.zip
      ```
 
@@ -723,9 +712,7 @@ If you've installed Chromium manually, there's no need at the time of the update
    sudo yum -y install yum-plugin-versionlock
 
 
-
    sudo yum versionlock chromium
-
 
 
    sudo yum versionlock chromium-common
@@ -752,9 +739,7 @@ When migrating from Chromium snap, first update the ActiveGate, then install Chr
    sudo rm -rf /usr/lib/chrome_for_testing/chrome-linux64
 
 
-
    sudo unzip /tmp/chrome.zip -d /usr/lib/chrome_for_testing
-
 
 
    rm /tmp/chrome.zip
@@ -821,7 +806,6 @@ If you've enabled a [custom, local repository for the browser installation](#cus
 
    ```
    [synthetic]
-
 
 
    chromium_repo = https://172.18.0.100/chromium-repo

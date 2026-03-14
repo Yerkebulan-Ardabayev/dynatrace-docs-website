@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:06.993281
 
 # Monitor Kubernetes/OpenShift cluster utilization
 
-# Monitor Kubernetes/OpenShift cluster utilization
 
 * Classic
 * 2-min read

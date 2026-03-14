@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:40.339379
 
 # Концепции уязвимостей
 
-# Концепции уязвимостей
 
 * Последняя версия Dynatrace
 * Объяснение
@@ -463,9 +462,7 @@ URL-путь
 fetch security.events
 
 
-
 | filter event.provider == "Dynatrace"
-
 
 
 | filter event.type == "VULNERABILITY_FINDING" OR event.type == "VULNERABILITY_SCAN"

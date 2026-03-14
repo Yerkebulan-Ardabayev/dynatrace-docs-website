@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:02.598112
 
 # Azure Device Provisioning Service monitoring
 
-# Azure Device Provisioning Service monitoring
 
 * Latest Dynatrace
 * How-to guide

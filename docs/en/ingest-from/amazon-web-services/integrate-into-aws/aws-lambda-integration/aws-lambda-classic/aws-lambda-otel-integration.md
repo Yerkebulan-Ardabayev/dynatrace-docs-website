@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:29:40.064891
 
 # Trace .NET Lambda functions
 
-# Trace .NET Lambda functions
 
 * Classic
 * How-to guide
@@ -59,117 +58,88 @@ The initialization code for AWS Lambda tracing in your `Function.cs` file could 
 using System.Threading.Tasks;
 
 
-
 using Amazon.Lambda.Core;
-
 
 
 using Dynatrace.OpenTelemetry;
 
 
-
 using Dynatrace.OpenTelemetry.Instrumentation.AwsLambda;
-
 
 
 using OpenTelemetry;
 
 
-
 using OpenTelemetry.Instrumentation.AWSLambda;
-
 
 
 using OpenTelemetry.Trace;
 
 
-
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
-
 
 
 namespace Examples.AwsFunctionApp
 
 
-
 {
-
 
 
 public class Function
 
 
-
 {
-
 
 
 private static readonly TracerProvider TracerProvider;
 
 
-
 static Function()
-
 
 
 {
 
 
-
 DynatraceSetup.InitializeLogging();
-
 
 
 TracerProvider = Sdk.CreateTracerProviderBuilder()
 
 
-
 .AddDynatrace()
-
 
 
 // Configures AWS Lambda invocations tracing
 
 
-
 .AddAWSLambdaConfigurations(c => c.DisableAwsXRayContextExtraction = true)
-
 
 
 // Instrumentation for creation of span (Activity) representing AWS SDK call.
 
 
-
 // Can be omitted if there are no outgoing AWS SDK calls to other AWS Lambdas and/or calls to AWS services like DynamoDB and SQS.
-
 
 
 .AddAWSInstrumentation(c => c.SuppressDownstreamInstrumentation = true)
 
 
-
 // Adds injection of Dynatrace-specific context information in certain SDK calls (e.g. Lambda Invoke).
-
 
 
 // This is required if there are outgoing calls to other Lambdas or DynamoDB using AWS SDK clients.
 
 
-
 .AddDynatraceAwsSdkInjection()
-
 
 
 .Build();
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -188,101 +158,76 @@ In addition to the initialization part provided [above](#initialization), the ha
 using System.Threading.Tasks;
 
 
-
 using Amazon.Lambda.Core;
-
 
 
 using Dynatrace.OpenTelemetry;
 
 
-
 using Dynatrace.OpenTelemetry.Instrumentation.AwsLambda;
-
 
 
 using OpenTelemetry;
 
 
-
 using OpenTelemetry.Instrumentation.AWSLambda;
-
 
 
 using OpenTelemetry.Trace;
 
 
-
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
-
 
 
 namespace Examples.AwsFunctionApp
 
 
-
 {
-
 
 
 public class Function
 
 
-
 {
-
 
 
 private static readonly TracerProvider TracerProvider;
 
 
-
 // Use initialization code from the "Initialization" section of the docs
-
 
 
 public Task FunctionHandlerAsync(object input, ILambdaContext context)
 
 
-
 {
-
 
 
 var propagationContext = AwsLambdaHelpers.ExtractPropagationContext(context);
 
 
-
 return AWSLambdaWrapper.TraceAsync(TracerProvider, FunctionHandlerInternalAsync, input, context, propagationContext.ActivityContext);
 
 
-
 }
-
 
 
 private Task FunctionHandlerInternalAsync(object input, ILambdaContext context)
 
 
-
 {
-
 
 
 // This is just an example of function handler and should be replaced by actual code.
 
 
-
 return Task.CompletedTask;
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -300,113 +245,85 @@ In addition to the initialization part provided above, the Lambda handler invoke
 using Amazon.Lambda.APIGatewayEvents;
 
 
-
 using Amazon.Lambda.Core;
-
 
 
 using Dynatrace.OpenTelemetry;
 
 
-
 using Dynatrace.OpenTelemetry.Instrumentation.AwsLambda;
-
 
 
 using OpenTelemetry;
 
 
-
 using OpenTelemetry.Instrumentation.AWSLambda;
-
 
 
 using OpenTelemetry.Trace;
 
 
-
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
-
 
 
 namespace Examples.AwsFunctionApp
 
 
-
 {
-
 
 
 public class Function
 
 
-
 {
-
 
 
 private static readonly TracerProvider TracerProvider;
 
 
-
 // Use initialization code from the "Initialization" section of the docs
-
 
 
 public APIGatewayHttpApiV2ProxyResponse FunctionHandler(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
 
 
-
 {
-
 
 
 return AWSLambdaWrapper.Trace(TracerProvider, FunctionHandlerInternal, request, context);
 
 
-
 }
-
 
 
 private APIGatewayHttpApiV2ProxyResponse FunctionHandlerInternal(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
 
 
-
 {
-
 
 
 // This is just an example of function handler and should be replaced by actual code.
 
 
-
 return new APIGatewayHttpApiV2ProxyResponse
-
 
 
 {
 
 
-
 StatusCode = 200,
-
 
 
 Body = "Example function result",
 
 
-
 };
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -428,297 +345,223 @@ For this example, only the `Dynatrace.OpenTelemetry.Instrumentation.AwsLambda` p
 using System;
 
 
-
 using System.Collections.Generic;
-
 
 
 using System.Diagnostics;
 
 
-
 using System.Reflection;
-
 
 
 using Amazon.Lambda.APIGatewayEvents;
 
 
-
 using Amazon.Lambda.Core;
-
 
 
 using Dynatrace.OpenTelemetry;
 
 
-
 using Dynatrace.OpenTelemetry.Instrumentation.AwsLambda;
-
 
 
 using OpenTelemetry;
 
 
-
 using OpenTelemetry.Context.Propagation;
-
 
 
 using OpenTelemetry.Trace;
 
 
-
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
-
 
 
 namespace Examples.AwsFunctionApp
 
 
-
 {
-
 
 
 public class Function
 
 
-
 {
-
 
 
 private static readonly TracerProvider TracerProvider;
 
 
-
 private static readonly ActivitySource ActivitySource;
-
 
 
 static Function()
 
 
-
 {
-
 
 
 DynatraceSetup.InitializeLogging();
 
 
-
 var activitySourceName = Assembly.GetExecutingAssembly().GetName().Name;
-
 
 
 ActivitySource = new ActivitySource(activitySourceName);
 
 
-
 TracerProvider = Sdk.CreateTracerProviderBuilder()
-
 
 
 .AddSource(activitySourceName)
 
 
-
 .AddDynatrace()
-
 
 
 .Build();
 
 
-
 }
-
 
 
 public static IEnumerable<KeyValuePair<string, object>> GetFunctionTags(ILambdaContext context, string trigger)
 
 
-
 {
-
 
 
 return new KeyValuePair<string, object>[]
 
 
-
 {
-
 
 
 new("faas.name", context.FunctionName),
 
 
-
 new("faas.id", context.InvokedFunctionArn),
-
 
 
 new("faas.trigger", trigger),
 
 
-
 new("cloud.platform", "aws_lambda"),
-
 
 
 new("cloud.provider", "aws"),
 
 
-
 new("cloud.region", Environment.GetEnvironmentVariable("AWS_REGION")),
-
 
 
 };
 
 
-
 }
-
 
 
 public APIGatewayProxyResponse FunctionHandler(APIGatewayHttpApiV2ProxyRequest apiGatewayProxyEvent, ILambdaContext context)
 
 
-
 {
-
 
 
 try
 
 
-
 {
-
 
 
 var parentContext = ExtractParentContext(apiGatewayProxyEvent, context);
 
 
-
 using var activity = ActivitySource.StartActivity(ActivityKind.Server, parentContext, GetFunctionTags(context, "http"));
-
 
 
 return new APIGatewayProxyResponse
 
 
-
 {
-
 
 
 StatusCode = 200,
 
 
-
 Body = "Example function result",
-
 
 
 };
 
 
-
 }
-
 
 
 catch (Exception ex)
 
 
-
 {
-
 
 
 context.Logger.LogLine($"Exception occurred while handling request: {ex.Message}");
 
 
-
 throw;
 
 
-
 }
-
 
 
 finally
 
 
-
 {
-
 
 
 TracerProvider?.ForceFlush();
 
 
-
 }
 
 
-
 }
-
 
 
 private static ActivityContext ExtractParentContext(APIGatewayHttpApiV2ProxyRequest apiGatewayProxyEvent, ILambdaContext context)
 
 
-
 {
-
 
 
 var propagationContext = AwsLambdaHelpers.ExtractPropagationContext(context);
 
 
-
 if (propagationContext == default)
-
 
 
 {
 
 
-
 propagationContext = Propagators.DefaultTextMapPropagator.Extract(default, apiGatewayProxyEvent, HeaderValuesGetter);
 
 
-
 }
-
 
 
 return propagationContext.ActivityContext;
 
 
-
 }
-
 
 
 private static IEnumerable<string> HeaderValuesGetter(APIGatewayHttpApiV2ProxyRequest apiGatewayProxyEvent, string name) =>
 
 
-
 (apiGatewayProxyEvent.Headers != null && apiGatewayProxyEvent.Headers.TryGetValue(name.ToLowerInvariant(), out var value)) ? new[] { value } : null;
 
 
-
 }
-
 
 
 }
@@ -742,97 +585,73 @@ To set up tracing of AWS SDK calls,
    using Dynatrace.OpenTelemetry;
 
 
-
    using OpenTelemetry;
-
 
 
    using OpenTelemetry.Trace;
 
 
-
    namespace Examples.AwsFunctionApp
 
 
-
    {
-
 
 
    public class Function
 
 
-
    {
-
 
 
    private static readonly TracerProvider TracerProvider;
 
 
-
    static Function()
 
 
-
    {
-
 
 
    DynatraceSetup.InitializeLogging();
 
 
-
    TracerProvider = Sdk.CreateTracerProviderBuilder()
-
 
 
    .AddDynatrace()
 
 
-
    .AddAWSLambdaConfigurations(c =>
-
 
 
    {
 
 
-
    c.DisableAwsXRayContextExtraction = true;
-
 
 
    c.SetParentFromBatch = true;
 
 
-
    })
-
 
 
    // Instrumentation used for tracing outgoing calls to AWS services via AWS SDK (including Amazon DynamoDB, SQS/SNS).
 
 
-
    // Can be omitted if no outgoing AWS SDK calls expected.
-
 
 
    .AddAWSInstrumentation(c => c.SuppressDownstreamInstrumentation = true)
 
 
-
    .Build();
 
 
-
    }
 
 
-
    }
-
 
 
    }
@@ -872,97 +691,73 @@ To trace incoming SQS/SNS messages,
 using Amazon.Lambda.Core;
 
 
-
 using Amazon.Lambda.SQSEvents;
-
 
 
 using Dynatrace.OpenTelemetry;
 
 
-
 using OpenTelemetry;
-
 
 
 using OpenTelemetry.Instrumentation.AWSLambda;
 
 
-
 using OpenTelemetry.Trace;
-
 
 
 using System.Threading.Tasks;
 
 
-
 namespace Examples.AwsFunctionApp
 
 
-
 {
-
 
 
 public class Function
 
 
-
 {
-
 
 
 private static readonly TracerProvider TracerProvider;
 
 
-
 static Function()
 
 
-
 {
-
 
 
 // See "Set up tracing for AWS SDK calls" section above.
 
 
-
 }
-
 
 
 public Task Handler(SQSEvent sqsEvent, ILambdaContext context) =>
 
 
-
 AWSLambdaWrapper.TraceAsync(tracerProvider, HandlerInternal, sqsEvent, context);
-
 
 
 private Task HandlerInternal(SQSEvent sqsEvent, ILambdaContext context)
 
 
-
 {
-
 
 
 // This is just an example of async function handler and it should be replaced by actual code.
 
 
-
 return Task.CompletedTask;
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -978,25 +773,19 @@ However, outgoing HTTP request activities related to [AWS Runtime APIï»¿](htt
 var tracerProvider = Sdk.CreateTracerProviderBuilder()
 
 
-
 // Initialization code similar to previous examples...
-
 
 
 .AddHttpClientInstrumentation(op =>
 
 
-
 {
-
 
 
 op.FilterHttpRequestMessage = req => Activity.Current?.Parent?.IsAllDataRequested ?? false;
 
 
-
 })
-
 
 
 .Build();

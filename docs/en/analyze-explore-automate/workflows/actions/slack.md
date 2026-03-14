@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:22:08.797257
 
 # Slack Connector
 
-# Slack Connector
 
 * Latest Dynatrace
 * 5-min read
@@ -61,93 +60,70 @@ For Slack Connector workflow actions to interact with your Slack workspace, you 
    display_information:
 
 
-
    name: <app-name>
-
 
 
    features:
 
 
-
    bot_user:
-
 
 
    display_name: <bot-name>
 
 
-
    always_online: false
-
 
 
    oauth_config:
 
 
-
    scopes:
-
 
 
    bot:
 
 
-
    - channels:join
-
 
 
    - channels:read
 
 
-
    - chat:write
-
 
 
    - chat:write.public
 
 
-
    - files:read
-
 
 
    - files:write
 
 
-
    - groups:read
-
 
 
    - im:read
 
 
-
    - mpim:read
-
 
 
    - reactions:read
 
 
-
    - reactions:write
-
 
 
    settings:
 
 
-
    org_deploy_enabled: false
 
 
-
    socket_mode_enabled: false
-
 
 
    token_rotation_enabled: false
@@ -184,7 +160,6 @@ The workflow action can be used to send Markdown-formatted messages or [Block Ki
     [INFO] POST https://slack.com/api/chat.postMessage called successfully
 
 
-
     [INFO] Message has been posted successfully
     ```
   + **Error**:
@@ -204,241 +179,181 @@ in Dynatrace Workflows using workflow expressions.
 {
 
 
-
 "blocks": [
 
 
-
 {
-
 
 
 "type": "header",
 
 
-
 "text": {
 
 
-
 "type": "plain_text",
-
 
 
 "text": "ð¨ Dynatrace Alert: High CPU Usage Detected",
 
 
-
 "emoji": true
-
 
 
 }
 
 
-
 },
-
 
 
 {
 
 
-
 "type": "section",
-
 
 
 "text": {
 
 
-
 "type": "mrkdwn",
-
 
 
 "text": "*Alert Details:*\nâ¢ *Entity*: `Host-1234`\nâ¢ *Metric*: CPU Usage\nâ¢ *Threshold*: > 90%\nâ¢ *Current Value*: 95%"
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "divider"
 
 
-
 },
 
 
-
 {
-
 
 
 "type": "section",
 
 
-
 "text": {
 
 
-
 "type": "mrkdwn",
-
 
 
 "text": "ð¡ *Recommended Actions:*"
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "actions",
 
 
-
 "elements": [
-
 
 
 {
 
 
-
 "type": "button",
-
 
 
 "text": {
 
 
-
 "type": "plain_text",
-
 
 
 "text": "Acknowledge Alert"
 
 
-
 },
-
 
 
 "style": "primary",
 
 
-
 "value": "acknowledge_alert"
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "button",
 
 
-
 "text": {
-
 
 
 "type": "plain_text",
 
 
-
 "text": "View in Dynatrace"
 
 
-
 },
-
 
 
 "url": "https://dynatrace.example.com/alert/1234",
 
 
-
 "style": "danger"
-
 
 
 }
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "context",
 
 
-
 "elements": [
-
 
 
 {
 
 
-
 "type": "mrkdwn",
-
 
 
 "text": "Triggered at: 2026-01-08 14:30 UTC"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -457,161 +372,121 @@ If you want to create a structured message with multiple data fields, you can us
 {
 
 
-
 "blocks": [
 
 
-
 {
-
 
 
 "type": "header",
 
 
-
 "text": {
 
 
-
 "type": "plain_text",
-
 
 
 "text": "production-payment-service",
 
 
-
 "emoji": true
-
 
 
 }
 
 
-
 },
-
 
 
 {
 
 
-
 "type": "section",
 
 
-
 "text": {
-
 
 
 "type": "plain_text",
 
 
-
 "emoji": true,
-
 
 
 "text": "2024-01-09T11:30:00+01:00"
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "section",
 
 
-
 "text": {
 
 
-
 "type": "mrkdwn",
-
 
 
 "text": "```Error: Connection timeout after 5000ms\n  at PaymentGateway.connect (gateway.js:45)\n  at processPayment (service.js:123)```"
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "section",
 
 
-
 "text": {
 
 
-
 "type": "mrkdwn",
-
 
 
 "text": "DT App function: `processPayment`"
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "section",
 
 
-
 "text": {
-
 
 
 "type": "mrkdwn",
 
 
-
 "text": "DT entity service: `SERVICE-A1B2C3D4E5F6G7H8`"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -623,221 +498,166 @@ To replicate this behavior, you can use expressions instead. The same example ab
 {%- set data = [
 
 
-
 {
-
 
 
 "dt_app_id": "production-payment-service",
 
 
-
 "instance": "2024-01-09T10:30:00Z",
-
 
 
 "error": "Error: Connection timeout after 5000ms\n  at PaymentGateway.connect (gateway.js:45)\n  at processPayment (service.js:123)",
 
 
-
 "dt_app_function": "processPayment",
-
 
 
 "dt_entity_service": "SERVICE-A1B2C3D4E5F6G7H8"
 
 
-
 }
 
 
-
 ]
-
 
 
 -%}
 
 
-
 {
-
 
 
 "blocks": [
 
 
-
 {% for item in data %}
 
 
-
 {
-
 
 
 "type": "header",
 
 
-
 "text": {
 
 
-
 "type": "plain_text",
-
 
 
 "text": "{{ item.dt_app_id }}",
 
 
-
 "emoji": true
-
 
 
 }
 
 
-
 },
-
 
 
 {
 
 
-
 "type": "section",
 
 
-
 "text": {
-
 
 
 "type": "plain_text",
 
 
-
 "emoji": true,
-
 
 
 "text": "{{ item.instance | to_datetime(timezone='Europe/Vienna') }}"
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "section",
 
 
-
 "text": {
 
 
-
 "type": "mrkdwn",
-
 
 
 "text": {{ ("```" ~ item.error ~ "```") | to_json }}
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "section",
 
 
-
 "text": {
 
 
-
 "type": "mrkdwn",
-
 
 
 "text": "DT App function: `{{ item.dt_app_function }}`"
 
 
-
 }
-
 
 
 },
 
 
-
 {% if 'dt_entity_service' in item %}
-
 
 
 {
 
 
-
 "type": "section",
-
 
 
 "text": {
 
 
-
 "type": "mrkdwn",
-
 
 
 "text": "DT entity service: `{{ item.dt_entity_service }}`"
 
 
-
 }
 
 
-
 }
-
 
 
 {% endif %}
 
 
-
 {% if not loop.last %},{% endif %}
-
 
 
 {% endfor %}
 
 
-
 ]
-
 
 
 }

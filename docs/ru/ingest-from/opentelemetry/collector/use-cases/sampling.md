@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:07.307900
 
 # Сэмплирование с OpenTelemetry Collector
 
-# Сэмплирование с OpenTelemetry Collector
 
 * Latest Dynatrace
 * How-to guide
@@ -46,181 +45,136 @@ scraped: 2026-03-04T21:37:07.307900
 receivers:
 
 
-
 otlp:
-
 
 
 protocols:
 
 
-
 grpc:
-
 
 
 endpoint: 0.0.0.0:4317
 
 
-
 http:
-
 
 
 endpoint: 0.0.0.0:4318
 
 
-
 processors:
-
 
 
 tail_sampling:
 
 
-
 # This configuration keeps errors, traces longer than 500ms, and 20% of all remaining traces.
-
 
 
 # Adjust with policies of your choice.
 
 
-
 policies:
-
 
 
 - name: policy1-keep-errors
 
 
-
 type: status_code
-
 
 
 status_code: {status_codes: [ERROR, UNSET]}
 
 
-
 - name: policy2-keep-slow-traces
-
 
 
 type: latency
 
 
-
 latency: {threshold_ms: 500}
-
 
 
 - name: policy3-keep-random-sample
 
 
-
 type: probabilistic
-
 
 
 probabilistic: {sampling_percentage: 20}
 
 
-
 decision_wait: 30s
-
 
 
 connectors:
 
 
-
 spanmetrics:
-
 
 
 aggregation_temporality: "AGGREGATION_TEMPORALITY_DELTA"
 
 
-
 namespace: "requests"
-
 
 
 metrics_flush_interval: 15s
 
 
-
 exporters:
-
 
 
 otlp_http:
 
 
-
 endpoint: ${env:DT_ENDPOINT}
-
 
 
 headers:
 
 
-
 Authorization: Api-Token ${env:DT_API_TOKEN}
-
 
 
 service:
 
 
-
 pipelines:
-
 
 
 traces:
 
 
-
 receivers: [otlp]
-
 
 
 processors: [tail_sampling]
 
 
-
 exporters: [otlp_http]
-
 
 
 traces/spanmetrics:
 
 
-
 receivers: [otlp]
 
 
-
 processors: []
-
 
 
 exporters: [spanmetrics]
 
 
-
 metrics:
-
 
 
 receivers: [spanmetrics]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]

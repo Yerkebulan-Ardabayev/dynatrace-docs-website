@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:50.224051
 
 # Configure key user actions for web applications
 
-# Configure key user actions for web applications
 
 * Classic
 * How-to guide

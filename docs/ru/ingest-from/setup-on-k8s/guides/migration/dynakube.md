@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:38:46.599507
 
 # Руководство по миграции версий API DynaKube
 
-# Руководство по миграции версий API DynaKube
 
 * Актуальная версия Dynatrace
 * Справочник
@@ -67,7 +66,6 @@ scraped: 2026-03-04T21:38:46.599507
    > helm list -n dynatrace -o json | jq -r '.[].app_version'`
 
 
-
    1.6.2
    ```
 
@@ -79,7 +77,6 @@ scraped: 2026-03-04T21:38:46.599507
 
    ```
    > kubectl get deployment dynatrace-operator -n dynatrace -o jsonpath='{.metadata.labels.app\.kubernetes\.io/version}'
-
 
 
    1.6.2

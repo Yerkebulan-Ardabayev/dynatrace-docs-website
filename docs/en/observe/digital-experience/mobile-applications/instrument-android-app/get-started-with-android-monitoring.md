@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:16.242622
 
 # Get started with Android monitoring
 
-# Get started with Android monitoring
 
 * Classic
 * How-to guide

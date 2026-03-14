@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:19:57.817186
 
 # Мониторинг Azure Batch
 
-# Мониторинг Azure Batch
 
 * Latest Dynatrace
 * Руководство

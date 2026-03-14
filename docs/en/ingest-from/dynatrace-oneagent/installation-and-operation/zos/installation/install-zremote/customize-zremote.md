@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:53.068278
 
 # Customize the zRemote module
 
-# Customize the zRemote module
 
 * Latest Dynatrace
 * 9-min read
@@ -64,13 +63,10 @@ To assign an LPAR to a host group, specify the group name in between a pair of `
 [HostGroup]
 
 
-
 <LPAR_Name1>=<HostGroupName>
 
 
-
 <LPAR_Name2>=<HostGroupName>
-
 
 
 [HostGroup]
@@ -94,17 +90,13 @@ In this example, we add three LPARsâ`LPARA`, `LPARB`, and `LPARC` to a sing
 [HostGroup]
 
 
-
 LPARA=TEST_HOST
-
 
 
 LPARB=TEST_HOST
 
 
-
 LPARC=TEST_HOST
-
 
 
 [HostGroup]
@@ -118,17 +110,13 @@ In this example we assign each LPAR to a separate host group.
 [HostGroup]
 
 
-
 LPARA=TEST_HOST
-
 
 
 LPARB=PROD_HOST
 
 
-
 LPARC=PERF_HOST
-
 
 
 [HostGroup]
@@ -184,7 +172,6 @@ The **SQL statement fetch** feature is disabled by default. To enable it
      \<cli-driver-path\>/bin/db2cli validate -connect -database \<db-location\>:\<ip\>:\<port\> -user \<id\> -passwd \<pw\>
 
 
-
      \<cli-driver-path\>/bin/db2cli validate -connect -dsn \<db-alias\>
      ```
    * To configure the CLI driver, you need Db2 credentials that grant access to Db2 connections (from distributed using DDF/DRDA) and grants to select on CATALOG, specifically on SYSPACKSTMT.
@@ -194,57 +181,43 @@ The **SQL statement fetch** feature is disabled by default. To enable it
    # Linux
 
 
-
    cli_driver_lib=/opt/IBM/CLIDRIVER/lib/libdb2.so
-
 
 
    # ... or Windows
 
 
-
    cli_driver_lib=C:/IBM/CLIDRIVER/bin/db2app64.dll
 
 
-
    [DbAlias]
-
 
 
    dbHost1.dbName1=alias1
 
 
-
    dbHost2.dbName2=alias2
-
 
 
    dbHostN.dbNameN=aliasN
 
 
-
    [DbAlias]
-
 
 
    # Beginning with zRemote 1.279 it is possible to set the new flag sqlStmtExtended, if
 
 
-
    # true the full (fetched) SQL statement is appended with its old (unfetched) format,
-
 
 
    # for example, from an example above "FETCH (GETTAB INTO : H , : H , : H , : H , : H)"
 
 
-
    # would be shown as "FETCH (GETTAB INTO : H , : H , : H , : H , : H) (PROGNAME;165;3)".
 
 
-
    # The default is false. Note: if enabled this setting would affect the aggregation count.
-
 
 
    sqlStmtExtended=false
@@ -273,189 +246,142 @@ Example of an AT-TLS configuration
 TTLSRule                       <client-rule>
 
 
-
 {
-
 
 
 RemoteAddr                 <ALL | specific-ip-addr>
 
 
-
 RemotePortRange            <zdclistenerport>
-
 
 
 Direction                  Outbound
 
 
-
 TTLSGroupActionRef         <group-action>
-
 
 
 TTLSEnvironmentActionRef   <environment-action>
 
 
-
 TTLSConnectionActionRef    <connection-action>
 
 
-
 }
-
 
 
 TTLSGroupAction                <group-action>
 
 
-
 {
-
 
 
 TTLSEnabled                On
 
 
-
 Trace                       <trace-level>
 
 
-
 }
-
 
 
 TTLSEnvironmentAction          <environment-action>
 
 
-
 {
-
 
 
 HandshakeRole              Client
 
 
-
 TTLSKeyringParmsRef        <keyring-parms>
-
 
 
 TTLSCipherParmsRef         <cipher-parms>
 
 
-
 }
-
 
 
 TTLSKeyringParms               <keyring-parms>
 
 
-
 {
-
 
 
 #   A certificate matches that of the zRemote's certificate
 
 
-
 #   must be loaded into RACF and connected to the Keyring here.
-
 
 
 Keyring                    <pub-key-or-certificate>
 
 
-
 }
-
 
 
 TTLSCipherParms                <cipher-parms>
 
 
-
 {
 
 
-
 ...
-
 
 
 V3CipherSuites             TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
 
 
-
 V3CipherSuites             TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
-
 
 
 V3CipherSuites             TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
 
 
-
 V3CipherSuites             TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-
 
 
 ...
 
 
-
 }
-
 
 
 TTLSConnectionAction           <connection-action>
 
 
-
 {
-
 
 
 TTLSConnectionAdvancedParmsRef  <connection-advanced-parms>
 
 
-
 }
-
 
 
 TTLSConnectionAdvancedParms    <connection-advanced-parms>
 
 
-
 {
-
 
 
 SSLv2                      Off
 
 
-
 SSLv3                      Off
-
 
 
 TLSv1                      Off
 
 
-
 TLSv1.1                    Off
-
 
 
 TLSv1.2                    On
 
 
-
 TLSv1.3                    On
-
 
 
 }
@@ -479,45 +405,34 @@ Show configuration template
 # Must be true to enable secure connection; all other SSL settings are ignored if false
 
 
-
 sslEnabled=true
-
 
 
 # Absolute paths to your private key (with the pass-phrase stripped) and certificate PEM files.
 
 
-
 # Beginning with zRemote module version 1.301.0, multiple private-key/certificate pairs delimited
-
 
 
 # by a semicolon can be specified. For example:
 
 
-
 # sslPrivateKey=<private-key-1.pem; private-key-2.pem; ...; private-key-n.pem>
-
 
 
 # sslCertificate=<certificate-1.pem; certificate-2.pem; ...; certificate-n.pem>
 
 
-
 sslPrivateKey=<private-key.pem>
-
 
 
 sslCertificate=<certificate.pem>
 
 
-
 # Optional: TLS cipher suites allowed according to OpenSSL
 
 
-
 # Example: sslCiphers=ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384
-
 
 
 sslCiphers=<cipher-suites>

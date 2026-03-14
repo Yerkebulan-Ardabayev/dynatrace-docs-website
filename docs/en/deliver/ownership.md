@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:42.755901
 
 # Ownership Classic
 
-# Ownership Classic
 
 * Classic
 * Overview

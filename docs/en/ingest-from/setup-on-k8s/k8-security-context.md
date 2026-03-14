@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:36:49.757968
 
 # Set up Grail permissions for telemetry from Kubernetes and Kubernetes workloads
 
-# Set up Grail permissions for telemetry from Kubernetes and Kubernetes workloads
 
 * Latest Dynatrace
 * How-to guide
@@ -56,9 +55,7 @@ You can provide `dt.security_context` as a pod annotatation:
 metadata:
 
 
-
 annotations:
-
 
 
 metadata.dynatrace.com/dt.security_context: foo

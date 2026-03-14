@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:19.498721
 
 # Reverse proxy or load balancer for OneAgent
 
-# Reverse proxy or load balancer for OneAgent
 
 * Latest Dynatrace
 * 1-min read
@@ -37,7 +36,6 @@ To specify the reverse proxy address after ActiveGate installation
    [connectivity]
 
 
-
    dnsEntryPoint = https://address.of.my.lb.com:9999
    ```
 
@@ -45,7 +43,6 @@ To specify the reverse proxy address after ActiveGate installation
 
    ```
    [connectivity]
-
 
 
    dnsEntryPoint = https://address.of.my.lb-1.com:9999,https://address.of.my.lb-2.com:9999

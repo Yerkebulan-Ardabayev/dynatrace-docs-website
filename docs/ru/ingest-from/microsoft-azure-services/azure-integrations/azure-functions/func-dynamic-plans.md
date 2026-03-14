@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:24.559248
 
 # Мониторинг Azure Functions на тарифных планах Consumption
 
-# Мониторинг Azure Functions на тарифных планах Consumption
 
 * Последняя версия Dynatrace
 * Обзор

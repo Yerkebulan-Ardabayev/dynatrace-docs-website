@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:27:41.938129
 
 # Обзор Digital Experience Monitoring (DEM) (DPS)
 
-# Обзор Digital Experience Monitoring (DEM) (DPS)
 
 * Актуальная версия Dynatrace
 * Обзор

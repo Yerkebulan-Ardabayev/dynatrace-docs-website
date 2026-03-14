@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:26.940960
 
 # Span settings
 
-# Span settings
 
 * Latest Dynatrace
 * 4-min read

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # AI models
 
-# AI models
 
 * Latest Dynatrace
 * Overview

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:12.923279
 
 # Automatic log processing at ingestion
 
-# Automatic log processing at ingestion
 
 * Latest Dynatrace
 * Explanation

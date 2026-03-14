@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:29:47.819803
 
 # Трассировка Azure Functions, написанных на Python
 
-# Трассировка Azure Functions, написанных на Python
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -50,21 +49,16 @@ dynatrace-opentelemetry-azure-functions
 from opentelemetry.sdk.resources import Resource
 
 
-
 from opentelemetry.semconv.resource import ResourceAttributes
-
 
 
 from dynatrace.opentelemetry.tracing.api import configure_dynatrace
 
 
-
 tracer_provider = configure_dynatrace(
 
 
-
 resource=Resource.create({"my.resource.attribute": "My Resource"})
-
 
 
 )
@@ -76,69 +70,52 @@ resource=Resource.create({"my.resource.attribute": "My Resource"})
 from opentelemetry.propagate import set_global_textmap
 
 
-
 from opentelemetry.sdk.resources import Resource
-
 
 
 from opentelemetry.sdk.trace import TracerProvider
 
 
-
 from opentelemetry.semconv.resource import ResourceAttributes
-
 
 
 from opentelemetry.trace import set_tracer_provider
 
 
-
 from dynatrace.opentelemetry.tracing.api import (
-
 
 
 DtSampler,
 
 
-
 DtSpanProcessor,
-
 
 
 DtTextMapPropagator,
 
 
-
 )
-
 
 
 span_processor = DtSpanProcessor()
 
 
-
 tracer_provider = TracerProvider(
-
 
 
 sampler=DtSampler(),
 
 
-
 resource=Resource.create({"my.resource.attribute": "My Resource"}),
-
 
 
 )
 
 
-
 tracer_provider.add_span_processor(span_processor)
 
 
-
 set_global_textmap(DtTextMapPropagator())
-
 
 
 set_tracer_provider(tracer_provider)
@@ -150,13 +127,10 @@ set_tracer_provider(tracer_provider)
 # isort: off
 
 
-
 import setup_tracing  # import the module containing your setup code
 
 
-
 # isort: on
-
 
 
 # import other modules
@@ -172,29 +146,22 @@ import setup_tracing  # import the module containing your setup code
 from azure import functions as func
 
 
-
 # import the wrap_handler decorator
-
 
 
 from dynatrace.opentelemetry.azure.functions import wrap_handler
 
 
-
 @wrap_handler
-
 
 
 def main(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
 
 
-
 # From here the created span is available in the OpenTelemetry context as the current span.
 
 
-
 # do something ...
-
 
 
 return  func.HttpResponse(f"Hello world.", status_code=200)
@@ -210,25 +177,19 @@ return  func.HttpResponse(f"Hello world.", status_code=200)
 from azure import functions as func
 
 
-
 # import the wrap_handler decorator
-
 
 
 from dynatrace.opentelemetry.azure.functions import wrap_handler
 
 
-
 @wrap_handler(http_result_param_name="res")
-
 
 
 def main(req: func.HttpRequest, other: func.Out[str], res: func.Out[func.HttpResponse]):
 
 
-
 # do something ...
-
 
 
 res.set(func.HttpResponse(f"Hello world.", status_code=200))
@@ -245,37 +206,28 @@ res.set(func.HttpResponse(f"Hello world.", status_code=200))
 import azure.functions as func
 
 
-
 # import the wrap_handler decorator
-
 
 
 from dynatrace.opentelemetry.azure.functions import wrap_handler
 
 
-
 app = func.FunctionApp()
-
 
 
 @app.function_name("MyHttpFunc")
 
 
-
 @app.route(route="hello")
-
 
 
 @wrap_handler # Note: wrap_handler must be located after the app.route decorator, so it's executed first.
 
 
-
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
 
-
 # do something ...
-
 
 
 return func.HttpResponse("Hello world", status_code=200)

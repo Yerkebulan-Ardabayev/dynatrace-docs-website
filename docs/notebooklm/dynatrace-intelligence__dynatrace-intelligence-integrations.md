@@ -14,7 +14,6 @@ scraped: 2026-03-06T21:29:56.714019
 
 # Dynatrace Intelligence (Предварительный просмотр) приложение
 
-# Dynatrace Intelligence (Предварительный просмотр) приложение
 
 * Последнее Dynatrace
 * Руководство по началу работы
@@ -100,7 +99,6 @@ scraped: 2026-03-06T21:21:11.934524
 
 # Dynatrace Intelligence для Notebooks
 
-# Dynatrace Intelligence для Notebooks
 
 * Последнее Dynatrace
 * Руководство по использованию
@@ -168,7 +166,6 @@ scraped: 2026-03-06T21:14:51.943719
 
 # Dynatrace Intelligence интеграции
 
-# Dynatrace Intelligence интеграции
 
 * Последнее Dynatrace
 * Обзор

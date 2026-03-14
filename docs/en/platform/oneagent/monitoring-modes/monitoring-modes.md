@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:51.621843
 
 # OneAgent monitoring modes
 
-# OneAgent monitoring modes
 
 * Latest Dynatrace
 * Explanation

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:58.402699
 
 # Additional configuration for mobile frontends
 
-# Additional configuration for mobile frontends
 
 * Latest Dynatrace
 * Overview

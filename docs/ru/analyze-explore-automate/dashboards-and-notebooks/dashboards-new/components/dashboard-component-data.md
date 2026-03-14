@@ -66,7 +66,6 @@ scraped: 2026-03-06T21:11:21.483222
 fetch [recordtype], from:now() - 2h
 
 
-
 | ....
 ```
 
@@ -111,7 +110,6 @@ fetch [recordtype], from:now() - 2h
 fetch logs
 
 
-
 | summarize loglines = count(), by:{`1m interval` = bin(timestamp, 1m), status}
 ```
 
@@ -131,17 +129,13 @@ fetch logs
      fetch logs
 
 
-
      | summarize count(), by:{`dt.entity.host`}
-
 
 
      | limit 100
 
 
-
      | sort `count()`, direction:"descending"
-
 
 
      | fields `dt.entity.host`
@@ -157,13 +151,10 @@ fetch logs
      fetch logs, from:now() - 2h
 
 
-
      | summarize  count(), by:{loglevel}
 
 
-
      | sort `count()`, direction:"descending"
-
 
 
      | fields loglevel
@@ -178,9 +169,7 @@ fetch logs
 fetch logs
 
 
-
 | filter in (loglevel, {$Loglevel})
-
 
 
 | limit 10

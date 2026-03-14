@@ -14,7 +14,6 @@ scraped: 2026-03-06T21:17:18.901123
 
 # Application and Infrastructure Monitoring (Host Units)
 
-# Application and Infrastructure Monitoring (Host Units)
 
 * Classic
 * 12-min read
@@ -122,7 +121,6 @@ If you've arranged for an allotment of host units to monitor your hosts and you'
 To add or remove overages from your account, [contact Dynatrace Salesï»¿](https://www.dynatrace.com/contact/).
 
 ## Application-only monitoring
-
 
 
 Dynatrace provides application-only monitoring for container platforms.
@@ -236,7 +234,6 @@ scraped: 2026-03-06T21:37:37.198226
 
 # DDUs for custom traces (Trace API)
 
-# DDUs for custom traces (Trace API)
 
 * Classic
 * 2-min read
@@ -278,7 +275,6 @@ scraped: 2026-03-06T21:32:03.536928
 
 # DDUs for custom Davis events
 
-# DDUs for custom Davis events
 
 * Classic
 * 2-min read
@@ -323,7 +319,6 @@ scraped: 2026-03-06T21:26:35.434463
 
 # DDUs for Log Management and Analytics
 
-# DDUs for Log Management and Analytics
 
 * Classic
 * 12-min read
@@ -478,7 +473,6 @@ scraped: 2026-03-06T21:17:17.183082
 
 # Dynatrace classic licensing
 
-# Dynatrace classic licensing
 
 * Classic
 * 1-min read

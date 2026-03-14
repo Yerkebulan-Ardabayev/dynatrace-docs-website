@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Synthetic nodes API v1
 
-# Synthetic nodes API v1
 
 * Reference
 * Published Jan 14, 2019

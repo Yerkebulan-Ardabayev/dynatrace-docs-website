@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:23:09.817428
 
 # Azure Blockchain monitoring
 
-# Azure Blockchain monitoring
 
 * Latest Dynatrace
 * How-to guide

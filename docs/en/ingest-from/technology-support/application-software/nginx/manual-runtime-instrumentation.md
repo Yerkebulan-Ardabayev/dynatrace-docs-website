@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:40.159355
 
 # Runtime instrumentation
 
-# Runtime instrumentation
 
 * Latest Dynatrace
 * 2-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:38.345678
 
 # OneAgent metric API
 
-# OneAgent metric API
 
 * Latest Dynatrace
 * 2-min read
@@ -75,7 +74,6 @@ With this `curl` command, you'll ingest the `cpu.temperature` metric assigned to
 curl --data "cpu.temperature,cpu=1 55" http://localhost:14499/metrics/ingest \
 
 
-
 -H "Content-Type: text/plain; charset=utf-8"
 ```
 
@@ -85,17 +83,13 @@ Successful response:
 {
 
 
-
 "error": null,
-
 
 
 "linesValid": 1,
 
 
-
 "linesInvalid": 0
-
 
 
 }

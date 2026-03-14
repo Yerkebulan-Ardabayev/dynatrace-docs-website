@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:39.229286
 
 # Monitor Azure services with Azure Monitor metrics
 
-# Monitor Azure services with Azure Monitor metrics
 
 * Latest Dynatrace
 * How-to guide
@@ -133,349 +132,262 @@ Another way to get reader permission is to create a custom role for Dynatrace wi
    {
 
 
-
    "properties": {
-
 
 
    "roleName": "dynatrace-monitoring-role",
 
 
-
    "description": "",
-
 
 
    "assignableScopes": [],
 
 
-
    "permissions": [
-
 
 
    {
 
 
-
    "actions": [
-
 
 
    "Microsoft.AVS/*/read",
 
 
-
    "Microsoft.Aadiam/*/read",
-
 
 
    "Microsoft.AnalysisServices/*/read",
 
 
-
    "Microsoft.ApiManagement/*/read",
-
 
 
    "Microsoft.App/*/read",
 
 
-
    "Microsoft.AppConfiguration/*/read",
-
 
 
    "Microsoft.AppPlatform/*/read",
 
 
-
    "Microsoft.Automation/*/read",
-
 
 
    "Microsoft.Batch/*/read",
 
 
-
    "Microsoft.Blockchain/*/read",
-
 
 
    "Microsoft.BotService/*/read",
 
 
-
    "Microsoft.Cache/*/read",
-
 
 
    "Microsoft.Cdn/*/read",
 
 
-
    "Microsoft.ClassicCompute/*/read",
-
 
 
    "Microsoft.ClassicStorage/*/read",
 
 
-
    "Microsoft.CognitiveServices/*/read",
-
 
 
    "Microsoft.Compute/*/read",
 
 
-
    "Microsoft.ContainerInstance/*/read",
-
 
 
    "Microsoft.ContainerRegistry/*/read",
 
 
-
    "Microsoft.ContainerService/*/read",
-
 
 
    "Microsoft.CustomProviders/*/read",
 
 
-
    "Microsoft.DBforMariaDB/*/read",
-
 
 
    "Microsoft.DBforMySQL/*/read",
 
 
-
    "Microsoft.DBforPostgreSQL/*/read",
-
 
 
    "Microsoft.DataBoxEdge/*/read",
 
 
-
    "Microsoft.DataCollaboration/*/read",
-
 
 
    "Microsoft.DataFactory/*/read",
 
 
-
    "Microsoft.DataLakeAnalytics/*/read",
-
 
 
    "Microsoft.DataLakeStore/*/read",
 
 
-
    "Microsoft.DataShare/*/read",
-
 
 
    "Microsoft.Devices/*/read",
 
 
-
    "Microsoft.DigitalTwins/*/read",
-
 
 
    "Microsoft.DocumentDB/*/read",
 
 
-
    "Microsoft.EnterpriseKnowledgeGraph/*/read",
-
 
 
    "Microsoft.EventGrid/*/read",
 
 
-
    "Microsoft.EventHub/*/read",
-
 
 
    "Microsoft.HDInsight/*/read",
 
 
-
    "Microsoft.HealthcareApis/*/read",
-
 
 
    "Microsoft.Insights/*/read",
 
 
-
    "Microsoft.IoTCentral/*/read",
-
 
 
    "Microsoft.KeyVault/*/read",
 
 
-
    "Microsoft.Kusto/*/read",
-
 
 
    "Microsoft.Logic/*/read",
 
 
-
    "Microsoft.MachineLearningServices/*/read",
-
 
 
    "Microsoft.Management/*/read/",
 
 
-
    "Microsoft.Maps/*/read",
-
 
 
    "Microsoft.Media/*/read",
 
 
-
    "Microsoft.MixedReality/*/read",
-
 
 
    "Microsoft.NetApp/*/read",
 
 
-
    "Microsoft.Network/*/read",
-
 
 
    "Microsoft.NotificationHubs/*/read",
 
 
-
    "Microsoft.OperationalInsights/*/read",
-
 
 
    "Microsoft.Peering/*/read",
 
 
-
    "Microsoft.PowerBIDedicated/*/read",
-
 
 
    "Microsoft.ProjectBabylon/*/read",
 
 
-
    "Microsoft.Purview/*/read",
-
 
 
    "Microsoft.RecoveryServices/*/read",
 
 
-
    "Microsoft.Relay/*/read",
-
 
 
    "Microsoft.ResourceGraph/*/read/",
 
 
-
    "Microsoft.Search/*/read",
-
 
 
    "Microsoft.SecurityDetonation/*/read",
 
 
-
    "Microsoft.ServiceBus/*/read",
-
 
 
    "Microsoft.ServiceFabricMesh/*/read",
 
 
-
    "Microsoft.SignalRService/*/read",
-
 
 
    "Microsoft.Sql/*/read",
 
 
-
    "Microsoft.StorageCache/*/read",
-
 
 
    "Microsoft.StreamAnalytics/*/read",
 
 
-
    "Microsoft.Synapse/*/read",
-
 
 
    "Microsoft.TimeSeriesInsights/*/read",
 
 
-
    "Microsoft.VMwareCloudSimple/*/read",
-
 
 
    "Microsoft.storagesync/*/read",
 
 
-
    "Microsoft.web/*/read"
-
 
 
    ],
 
 
-
    "notActions": [],
-
 
 
    "dataActions": [],
 
 
-
    "notDataActions": []
 
 
-
    }
-
 
 
    ]
 
 
-
    }
-
 
 
    }
@@ -543,345 +455,259 @@ Setup if you create a custom role
    {
 
 
-
    "properties": {
-
 
 
    "roleName": "dynatrace-monitoring-role",
 
 
-
    "description": "",
-
 
 
    "assignableScopes": [],
 
 
-
    "permissions": [
-
 
 
    {
 
 
-
    "actions": [
-
 
 
    "Microsoft.Aadiam/*/read",
 
 
-
    "Microsoft.AnalysisServices/*/read",
-
 
 
    "Microsoft.ApiManagement/*/read",
 
 
-
    "Microsoft.Automation/*/read",
-
 
 
    "Microsoft.Batch/*/read",
 
 
-
    "Microsoft.BotService/*/read",
-
 
 
    "Microsoft.Cache/*/read",
 
 
-
    "Microsoft.Cdn/*/read",
-
 
 
    "Microsoft.ClassicCompute/*/read",
 
 
-
    "Microsoft.ClassicStorage/*/read",
-
 
 
    "Microsoft.CognitiveServices/*/read",
 
 
-
    "Microsoft.Compute/*/read",
-
 
 
    "Microsoft.ContainerInstance/*/read",
 
 
-
    "Microsoft.ContainerRegistry/*/read",
-
 
 
    "Microsoft.ContainerService/*/read",
 
 
-
    "Microsoft.DataFactory/*/read",
-
 
 
    "Microsoft.DataLakeAnalytics/*/read",
 
 
-
    "Microsoft.DataLakeStore/*/read",
-
 
 
    "Microsoft.DBforMySQL/*/read",
 
 
-
    "Microsoft.DBforPostgreSQL/*/read",
-
 
 
    "Microsoft.Devices/*/read",
 
 
-
    "Microsoft.DocumentDB/*/read",
-
 
 
    "Microsoft.EventGrid/*/read",
 
 
-
    "Microsoft.EventHub/*/read",
-
 
 
    "Microsoft.HDInsight/*/read",
 
 
-
    "Microsoft.Insights/*/read",
-
 
 
    "Microsoft.KeyVault/*/read",
 
 
-
    "Microsoft.Kusto/*/read",
-
 
 
    "Microsoft.Logic/*/read",
 
 
-
    "Microsoft.MachineLearningServices/*/read",
-
 
 
    "Microsoft.Maps/*/read",
 
 
-
    "Microsoft.Media/*/read",
-
 
 
    "Microsoft.NetApp/*/read",
 
 
-
    "Microsoft.Network/*/read",
-
 
 
    "Microsoft.NotificationHubs/*/read",
 
 
-
    "Microsoft.OperationalInsights/*/read",
-
 
 
    "Microsoft.PowerBIDedicated/*/read",
 
 
-
    "Microsoft.RecoveryServices/*/read",
-
 
 
    "Microsoft.Relay/*/read",
 
 
-
    "Microsoft.Search/*/read",
-
 
 
    "Microsoft.ServiceBus/*/read",
 
 
-
    "Microsoft.SignalRService/*/read",
-
 
 
    "Microsoft.Sql/*/read",
 
 
-
    "Microsoft.StreamAnalytics/*/read",
-
 
 
    "microsoft.storagesync/*/read",
 
 
-
    "Microsoft.TimeSeriesInsights/*/read",
-
 
 
    "microsoft.web/*/read",
 
 
-
    "Microsoft.DBforMariaDB/*/read",
-
 
 
    "Microsoft.DataBoxEdge/*/read",
 
 
-
    "Microsoft.IoTCentral/*/read",
-
 
 
    "Microsoft.Blockchain/*/read",
 
 
-
    "Microsoft.MixedReality/*/read",
-
 
 
    "Microsoft.EnterpriseKnowledgeGraph/*/read",
 
 
-
    "Microsoft.AppConfiguration/*/read",
-
 
 
    "Microsoft.DataShare/*/read",
 
 
-
    "Microsoft.ServiceFabricMesh/*/read",
-
 
 
    "Microsoft.VMwareCloudSimple/*/read",
 
 
-
    "Microsoft.Peering/*/read",
-
 
 
    "Microsoft.HealthcareApis/*/read",
 
 
-
    "Microsoft.CustomProviders/*/read",
-
 
 
    "Microsoft.StorageCache/*/read",
 
 
-
    "Microsoft.AppPlatform/*/read",
-
 
 
    "Microsoft.ProjectBabylon/*/read",
 
 
-
    "Microsoft.Synapse/*/read",
-
 
 
    "Microsoft.DigitalTwins/*/read",
 
 
-
    "Microsoft.AVS/*/read",
-
 
 
    "Microsoft.DataCollaboration/*/read",
 
 
-
    "Microsoft.SecurityDetonation/*/read",
-
 
 
    "Microsoft.Purview/*/read",
 
 
-
    "Microsoft.Management/*/read/",
-
 
 
    "Microsoft.ResourceGraph/*/read/"
 
 
-
    ],
-
 
 
    "notActions": [],
 
 
-
    "dataActions": [],
-
 
 
    "notDataActions": []
 
 
-
    }
-
 
 
    ]
 
 
-
    }
-
 
 
    }

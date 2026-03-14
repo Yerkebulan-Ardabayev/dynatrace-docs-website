@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dashboards API - DELETE a dashboard
 
-# Dashboards API - DELETE a dashboard
 
 * Reference
 * Published Aug 30, 2019
@@ -50,9 +49,7 @@ The API token is passed in the **Authorization** header.
 curl -X DELETE \
 
 
-
 https://mySampleEnv.live.dynatrace.com/api/config/v1/dashboards/7dd386fe-f91d-42e3-a2ec-0c88070933f4 \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'

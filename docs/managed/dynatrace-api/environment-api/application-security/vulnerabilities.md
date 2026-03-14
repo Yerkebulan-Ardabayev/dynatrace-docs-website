@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Vulnerabilities API
 
-# Vulnerabilities API
 
 * Reference
 * Updated on Nov 24, 2022

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:35.889227
 
 # Metrics API v2
 
-# Metrics API v2
 
 * Reference
 * Updated on Jan 22, 2026

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:08.954506
 
 # Удаление OneAgent на Linux
 
-# Удаление OneAgent на Linux
 
 * Последняя версия Dynatrace
 * Время чтения: 1 мин

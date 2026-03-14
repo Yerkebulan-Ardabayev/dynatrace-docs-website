@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:20:45.488376
 
 # Infrastructure and Discovery monitoring modes
 
-# Infrastructure and Discovery monitoring modes
 
 * Explanation
 * 12-min read

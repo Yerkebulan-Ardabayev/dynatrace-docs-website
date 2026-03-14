@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:20.149749
 
 # Log on Grail examples
 
-# Log on Grail examples
 
 * Latest Dynatrace
 * Overview
@@ -36,7 +35,6 @@ The proxy server logs HTTP response status codes. You need to see the response c
    fetch logs
 
 
-
    | filter contains(content, "haproxy")
    ```
 
@@ -44,7 +42,6 @@ The proxy server logs HTTP response status codes. You need to see the response c
 
    ```
    fetch logs
-
 
 
    | filter dt.entity.process_group=="PROCESS_GROUP-123F4A56BCDA0EA9"
@@ -62,9 +59,7 @@ The proxy server logs HTTP response status codes. You need to see the response c
    fetch logs
 
 
-
    | filter dt.entity.process_group=="PROCESS_GROUP-123F4A56BCDA0EA9"
-
 
 
    | parse content, "LD 'HTTP_STATUS ' INT:httpstatus"
@@ -78,13 +73,10 @@ The proxy server logs HTTP response status codes. You need to see the response c
    fetch logs
 
 
-
    | filter dt.entity.process_group=="PROCESS_GROUP-802F3A32CECA0EA9"
 
 
-
    | parse content, "LD 'HTTP_STATUS ' INT:httpstatus"
-
 
 
    | filter httpstatus >= 400
@@ -96,17 +88,13 @@ The proxy server logs HTTP response status codes. You need to see the response c
    fetch logs
 
 
-
    | filter dt.entity.process_group=="PROCESS_GROUP-802F3A32CECA0EA9"
-
 
 
    | parse content, "LD 'HTTP_STATUS ' INT:httpstatus"
 
 
-
    | filter httpstatus >= 400
-
 
 
    | summarize count(), by:{httpstatus}
@@ -127,7 +115,6 @@ Your application logs context data that is relevant to your business. You need t
    fetch logs, from:now()-3h
 
 
-
    | filter dt.process.name=="cartservice cartservice-*"
    ```
 
@@ -139,13 +126,10 @@ Your application logs context data that is relevant to your business. You need t
    fetch logs, from:now()-3h
 
 
-
    | filter dt.process.name=="cartservice cartservice-*"
 
 
-
    | filter contains(content, "AddItemAsync")
-
 
 
    | fields timestamp, content
@@ -170,17 +154,13 @@ Your application logs context data that is relevant to your business. You need t
    fetch logs, from:now()-3h
 
 
-
    | filter dt.process.name=="cartservice cartservice-*"
-
 
 
    | filter contains(content, "AddItemAsync")
 
 
-
    | fields timestamp, content
-
 
 
    | parse content, "LD 'userId=' LD:userId ', productId=' LD:productId ', quantity=' INT:productQuantity"
@@ -194,21 +174,16 @@ Your application logs context data that is relevant to your business. You need t
    fetch logs, from:now()-3h
 
 
-
    | filter dt.process.name=="cartservice cartservice-*"
-
 
 
    | filter contains(content, "AddItemAsync")
 
 
-
    | fields timestamp, content
 
 
-
    | parse content, "LD 'userId=' LD:userId ', productId=' LD:productId ', quantity=' INT:productQuantity"
-
 
 
    | fields productId , productQuantity
@@ -222,25 +197,19 @@ Your application logs context data that is relevant to your business. You need t
    fetch logs, from:now()-3h
 
 
-
    | filter dt.process.name=="cartservice cartservice-*"
-
 
 
    | filter contains(content, "AddItemAsync")
 
 
-
    | fields timestamp, content
-
 
 
    | parse content, "LD 'userId=' LD:userId ', productId=' LD:productId ', quantity=' INT:productQuantity"
 
 
-
    | fields productId , productQuantity
-
 
 
    | summarize sum(productQuantity), by:{productId}
@@ -254,33 +223,25 @@ Your application logs context data that is relevant to your business. You need t
    fetch logs, from:now()-3h
 
 
-
    | filter dt.process.name=="cartservice cartservice-*"
-
 
 
    | filter contains(content, "AddItemAsync")
 
 
-
    | fields timestamp, content
-
 
 
    | parse content, "LD 'userId=' LD:userId ', productId=' LD:productId ', quantity=' INT:productQuantity"
 
 
-
    | fields productId , productQuantity
-
 
 
    | summarize averageProductQuantity = avg(productQuantity), by:{productId}
 
 
-
    | sort averageProductQuantity desc
-
 
 
    | limit 5
@@ -299,7 +260,6 @@ In this example, you track user changes with audit logs. You want to track the t
 
    ```
    fetch logs, from:now()-5m
-
 
 
    | filter endsWith(log.source,"change.log")
@@ -322,25 +282,19 @@ In this example, you track user changes with audit logs. You want to track the t
    fetch logs, from:now()-5m
 
 
-
    | filter endsWith(log.source,"change.log")
-
 
 
    | limit 1
 
 
-
    | parse content, "TIMESTAMP('yyyy-MM-dd HH:mm:ss'):ts LD JSON:settings"
-
 
 
    | fields ts, settings
 
 
-
    | fieldsAdd type = settings[eventType], tenant = settings[tenantId], user = settings[userId]
-
 
 
    | fieldsRemove settings
@@ -357,25 +311,19 @@ In this example, you track user changes with audit logs. You want to track the t
    fetch logs, from:now()-5m
 
 
-
    | filter endsWith(log.source,"change.log")
-
 
 
    | parse content, "TIMESTAMP('yyyy-MM-dd HH:mm:ss'):ts LD JSON:settings"
 
 
-
    | fields ts, settings
-
 
 
    | fieldsAdd type = settings[eventType], tenant = settings[tenantId], user = settings[userId]
 
 
-
    | fieldsRemove settings
-
 
 
    | filter in(type,array("UPDATE","DELETE"))
@@ -389,29 +337,22 @@ In this example, you track user changes with audit logs. You want to track the t
    fetch logs, from:now()-5m
 
 
-
    | filter endsWith(log.source,"change.log")
-
 
 
    | parse content, "TIMESTAMP('yyyy-MM-dd HH:mm:ss'):ts LD JSON:settings"
 
 
-
    | fields ts, settings
-
 
 
    | fieldsAdd type = settings[eventType], tenant = settings[tenantId], user = settings[userId]
 
 
-
    | fieldsRemove settings
 
 
-
    | filter in(type,array("UPDATE","DELETE"))
-
 
 
    | summarize count(), by:{user,type}
@@ -425,29 +366,22 @@ In this example, you track user changes with audit logs. You want to track the t
    fetch logs, from:now()-5m
 
 
-
    | filter endsWith(log.source,"change.log")
-
 
 
    | parse content, "TIMESTAMP('yyyy-MM-dd HH:mm:ss'):ts LD JSON:settings"
 
 
-
    | fields ts, settings
-
 
 
    | fieldsAdd type = settings[eventType], tenant = settings[tenantId], user = settings[userId]
 
 
-
    | fieldsRemove settings
 
 
-
    | filter in(type,array("UPDATE","DELETE"))
-
 
 
    | summarize {countIf(type=="CREATE"), countIf(type=="UPDATE"), countIf(type=="DELETE")}, by:{tenant, user}

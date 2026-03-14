@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:42.722106
 
 # Мониторинг Amazon Elastic Compute Cloud (EC2)
 
-# Мониторинг Amazon Elastic Compute Cloud (EC2)
 
 * Classic
 * How-to guide

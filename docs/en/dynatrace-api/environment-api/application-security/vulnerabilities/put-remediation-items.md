@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:03.339161
 
 # Vulnerabilities API - PUT mute or unmute a remediation item
 
-# Vulnerabilities API - PUT mute or unmute a remediation item
 
 * Reference
 * Updated on May 03, 2022
@@ -54,17 +53,13 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "comment": "string",
-
 
 
 "muted": true,
 
 
-
 "reason": "IGNORE"
-
 
 
 }
@@ -114,53 +109,40 @@ A list of constraint violations
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -176,33 +158,25 @@ Mute the `PROCESS_GROUP-70DF2C1374244F5A` remediation item of the `8788643471842
 curl --request PUT \
 
 
-
 --url https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/8788643471842202915/remediationItems/PROCESS_GROUP-70DF2C1374244F5A/muteState \
-
 
 
 --header 'Authorization: Api-Token [your_token]' \
 
 
-
 --header 'Content-Type: application/json' \
-
 
 
 --data '{
 
 
-
 "muted": true,
-
 
 
 "reason": "OTHER",
 
 
-
 "comment": "API test"
-
 
 
 }'
@@ -220,17 +194,13 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/87886434718422029
 {
 
 
-
 "muted": true,
-
 
 
 "reason": "OTHER",
 
 
-
 "comment": "API test"
-
 
 
 }

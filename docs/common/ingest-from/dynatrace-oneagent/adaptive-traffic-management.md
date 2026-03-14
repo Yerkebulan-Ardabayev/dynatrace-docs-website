@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Adaptive Traffic Management for distributed tracing
 
-# Adaptive Traffic Management for distributed tracing
 
 * Latest Dynatrace
 * Overview

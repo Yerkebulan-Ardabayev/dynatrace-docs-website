@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:33.806116
 
 # Extend user experience and behavior data
 
-# Extend user experience and behavior data
 
 * Latest Dynatrace
 * 2-min read

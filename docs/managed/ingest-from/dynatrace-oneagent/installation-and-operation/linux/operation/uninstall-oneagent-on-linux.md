@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Uninstall OneAgent on Linux
 
-# Uninstall OneAgent on Linux
 
 * 1-min read
 * Updated on Oct 20, 2025

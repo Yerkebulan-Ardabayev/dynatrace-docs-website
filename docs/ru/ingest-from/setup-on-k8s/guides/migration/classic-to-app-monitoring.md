@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:20.359464
 
 # Миграция с классического полнофункционального режима на режим мониторинга приложений
 
-# Миграция с классического полнофункционального режима на режим мониторинга приложений
 
 * Latest Dynatrace
 * 3-min read
@@ -51,13 +50,10 @@ Dynatrace Operator версии 1.0.0+
    helm upgrade dynatrace-operator oci://docker.io/dynatrace/dynatrace-operator \
 
 
-
    --atomic \
 
 
-
    --csidriver.enabled="true" \ # By default CSI driver is enabled
-
 
 
    --namespace dynatrace
@@ -86,65 +82,49 @@ Dynatrace Operator версии 1.0.0+
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    apiUrl: https://<environment-id>.live.dynatrace.com/api
 
 
-
    networkZone: <network-zone>
-
 
 
    oneAgent:
 
 
-
    classicFullStack:
-
 
 
    args:
 
 
-
    - "--set-host-group=<host-group>"
-
 
 
    activeGate:
 
 
-
    capabilities:
-
 
 
    - routing
 
 
-
    - kubernetes-monitoring
-
 
 
    - dynatrace-api
@@ -154,61 +134,46 @@ Dynatrace Operator версии 1.0.0+
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    apiUrl: https://<environment-id>.live.dynatrace.com/api
 
 
-
    networkZone: <network-zone>
-
 
 
    oneAgent:
 
 
-
    hostGroup: <host-group>
-
 
 
    applicationMonitoring: {}
 
 
-
    activeGate:
-
 
 
    capabilities:
 
 
-
    - routing
 
 
-
    - kubernetes-monitoring
-
 
 
    - dynatrace-api

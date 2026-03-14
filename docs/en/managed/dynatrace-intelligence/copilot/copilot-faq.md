@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:50.006629
 
 # Dynatrace Intelligence agentic and generative AI FAQ
 
-# Dynatrace Intelligence agentic and generative AI FAQ
 
 * Latest Dynatrace
 * Troubleshooting

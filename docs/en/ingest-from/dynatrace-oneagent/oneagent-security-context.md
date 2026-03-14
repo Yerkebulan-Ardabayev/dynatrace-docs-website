@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:33.828725
 
 # Set up Grail permissions for OneAgent
 
-# Set up Grail permissions for OneAgent
 
 * Latest Dynatrace
 * How-to guide

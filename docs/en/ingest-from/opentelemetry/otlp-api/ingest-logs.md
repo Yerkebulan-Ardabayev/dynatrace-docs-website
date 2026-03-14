@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:49.637661
 
 # Ingest OTLP logs
 
-# Ingest OTLP logs
 
 * Latest Dynatrace
 * Reference
@@ -218,13 +217,10 @@ The API supports a special header for passing additional attributes:
 otlphttp:
 
 
-
 endpoint: /api/v2/otlp
 
 
-
 headers:
-
 
 
 X-Dynatrace-Attr: region=eu-central-1&team=core

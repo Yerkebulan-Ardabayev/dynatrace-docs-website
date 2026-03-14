@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:29:41.920596
 
 # Трассировка Lambda-функций на Python, Node.js и Java
 
-# Трассировка Lambda-функций на Python, Node.js и Java
 
 * Classic
 * Практическое руководство
@@ -201,45 +200,34 @@ Node.js Python Для работы трассировки вызовов из д
    {
 
 
-
    "path": "$context.path",
-
 
 
    "httpMethod": "$context.httpMethod",
 
 
-
    "headers": {
-
 
 
    #foreach($param in ["x-dynatrace", "traceparent", "tracestate", "x-dtc", "referer", "host", "x-forwarded-proto", "x-forwarded-for", "x-forwarded-port"])
 
 
-
    "$param": "$util.escapeJavaScript($input.params().header.get($param))"
-
 
 
    #if($foreach.hasNext),#end
 
 
-
    #end    },
-
 
 
    "requestContext": {
 
 
-
    "stage": "$context.stage"
 
 
-
    }
-
 
 
    }

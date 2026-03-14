@@ -5,8 +5,6 @@ scraped: 2026-03-05T21:26:33.193087
 ---
 # Отслеживание функций Lambda
 
-# Отслеживание функций Lambda
-
 * Classic
 * Руководство по настройке
 * 8-минутное чтение
@@ -166,45 +164,34 @@ AWS Lambda также поддерживает [**non-proxy integration**ï»¿]
    {
 
 
-
    "path": "$context.path",
-
 
 
    "httpMethod": "$context.httpMethod",
 
 
-
    "headers": {
-
 
 
    #foreach($param in ["x-dynatrace", "traceparent", "tracestate", "x-dtc", "referer", "host", "x-forwarded-proto", "x-forwarded-for", "x-forwarded-port"])
 
 
-
    "$param": "$util.escapeJavaScript($input.params().header.get($param))"
-
 
 
    #if($foreach.hasNext),#end
 
 
-
    #end    },
-
 
 
    "requestContext": {
 
 
-
    "stage": "$context.stage"
 
 
-
    }
-
 
 
    }
@@ -339,41 +326,31 @@ OneAgent версия 1.295+
   import { Context, APIGatewayProxyResult, APIGatewayEvent } from 'aws-lambda';
 
 
-
   export const handler = async (event: APIGatewayEvent, context: Context): Promise<APIGatewayProxyResult> => {
-
 
 
   console.log(`Event: ${JSON.stringify(event, null, 2)}`);
 
 
-
   console.log(`Context: ${JSON.stringify(context, null, 2)}`);
-
 
 
   return {
 
 
-
   statusCode: 200,
-
 
 
   body: JSON.stringify({
 
 
-
   message: 'hello world',
-
 
 
   }),
 
 
-
   };
-
 
 
   };
@@ -388,7 +365,6 @@ OneAgent версия 1.295+
 
      ```
      const esbuildDist = require("./dist/index");
-
 
 
      exports.handler = esbuildDist.handler;

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:10.318160
 
 # Customize cost alerts
 
-# Customize cost alerts
 
 * Latest Dynatrace
 * How-to guide

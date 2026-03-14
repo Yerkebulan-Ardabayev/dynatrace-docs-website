@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:31.608688
 
 # Problems API v2
 
-# Problems API v2
 
 * Reference
 * Published Oct 12, 2020

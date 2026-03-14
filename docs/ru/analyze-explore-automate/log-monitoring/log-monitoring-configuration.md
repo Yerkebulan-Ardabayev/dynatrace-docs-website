@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:34.979418
 
 # Конфигурация Log Monitoring (Logs Classic)
 
-# Конфигурация Log Monitoring (Logs Classic)
 
 * Classic
 * Чтение: 5 мин
@@ -122,33 +121,25 @@ Dynatrace Log Monitoring использует [модуль логов OneAgent]
 {
 
 
-
 "agent-configuration": [
-
 
 
 {
 
 
-
 "AppLogRemoteConfiguration": true,
-
 
 
 "AppLogContentAccess": true,
 
 
-
 "AppLogAutoDetection": true
-
 
 
 }
 
 
-
 ]
-
 
 
 }

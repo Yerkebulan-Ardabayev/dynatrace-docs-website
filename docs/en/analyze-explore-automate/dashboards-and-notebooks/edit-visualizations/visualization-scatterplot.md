@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:13.704467
 
 # Scatterplot visualization
 
-# Scatterplot visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -39,13 +38,10 @@ The scatterplot visualization above is based on the following query.
 timeseries { cpu.usage = avg(dt.host.cpu.usage, scalar: true), memory.usage = avg(dt.host.memory.usage, scalar: true) }, union: TRUE, by: { dt.entity.host }
 
 
-
 | fieldsAdd dt.entity.host.name = entityName(dt.entity.host)
 
 
-
 | fields dt.entity.host, dt.entity.host.name, cpu.usage, memory.usage
-
 
 
 | limit 1000
@@ -61,13 +57,10 @@ The scatterplot visualization above is based on the following query.
 timeseries {service.response.time = avg(dt.service.request.response_time, scalar: true), service.response.count = sum(dt.service.request.count, scalar: true)}, union: TRUE, by: { dt.entity.service }
 
 
-
 | fieldsAdd dt.entity.service.name = entityName(dt.entity.service)
 
 
-
 | fields dt.entity.service.name, dt.entity.service, service.response.count, service.response.time
-
 
 
 | limit 1000

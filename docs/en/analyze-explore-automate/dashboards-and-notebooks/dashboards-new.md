@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:39.484018
 
 # Dashboards
 
-# Dashboards
 
 * Latest Dynatrace
 * App
@@ -396,7 +395,6 @@ Example timeframe specification in DQL:
 
 ```
 fetch [recordtype], from:now() - 2h
-
 
 
 | ....

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:14.407570
 
 # AWS EC2 ecosystem overview
 
-# AWS EC2 ecosystem overview
 
 * Latest Dynatrace
 * Explanation

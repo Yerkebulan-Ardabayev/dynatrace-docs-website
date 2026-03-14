@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:48.564057
 
 # Azure SQL elastic pool (DTU) monitoring
 
-# Azure SQL elastic pool (DTU) monitoring
 
 * Latest Dynatrace
 * How-to guide

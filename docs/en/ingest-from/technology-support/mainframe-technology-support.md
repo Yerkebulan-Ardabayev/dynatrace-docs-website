@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:51.815419
 
 # Mainframe technology support
 
-# Mainframe technology support
 
 * Latest Dynatrace
 * 3-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:46.892274
 
 # Ingest Harbor vulnerability findings, scans, and audit logs
 
-# Ingest Harbor vulnerability findings, scans, and audit logs
 
 * Latest Dynatrace
 * Extension
@@ -78,7 +77,6 @@ These permissions must be granted for all projects you want Dynatrace to monitor
      fetch logs
 
 
-
      | filter log.source=="Harbor"
      ```
    * For finding events:
@@ -87,13 +85,10 @@ These permissions must be granted for all projects you want Dynatrace to monitor
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Harbor"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -104,13 +99,10 @@ These permissions must be granted for all projects you want Dynatrace to monitor
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Harbor"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"

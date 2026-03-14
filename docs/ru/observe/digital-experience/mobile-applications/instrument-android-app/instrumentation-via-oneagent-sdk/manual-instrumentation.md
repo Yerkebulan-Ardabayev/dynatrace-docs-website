@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:03.786138
 
 # Ручная инструментация приложения с помощью OneAgent SDK для Android
 
-# Ручная инструментация приложения с помощью OneAgent SDK для Android
 
 * Classic
 * Практическое руководство
@@ -54,9 +53,7 @@ scraped: 2026-03-05T21:32:03.786138
    dependencies {
 
 
-
    implementation 'com.dynatrace.agent:agent-android:8.+'
-
 
 
    }
@@ -66,9 +63,7 @@ scraped: 2026-03-05T21:32:03.786138
    dependencies {
 
 
-
    implementation("com.dynatrace.agent:agent-android:8.+")
-
 
 
    }
@@ -89,37 +84,28 @@ scraped: 2026-03-05T21:32:03.786138
    public class YourApplication extends Application {
 
 
-
    @Override
-
 
 
    public void onCreate() {
 
 
-
    super.onCreate();
-
 
 
    // provide the application context as parameter
 
 
-
    Dynatrace.startup(this, new DynatraceConfigurationBuilder("<YourApplicationID>", "<ProvidedBeaconUrl>")
-
 
 
    ... // additional configuration
 
 
-
    .buildConfiguration());
 
 
-
    }
-
 
 
    }
@@ -129,33 +115,25 @@ scraped: 2026-03-05T21:32:03.786138
    class YourApplication : Application() {
 
 
-
    override fun onCreate() {
-
 
 
    super.onCreate()
 
 
-
    // provide the application context as parameter
-
 
 
    Dynatrace.startup(this, DynatraceConfigurationBuilder("<YourApplicationID>", "<ProvidedBeaconUrl>")
 
 
-
    ... // additional configuration
-
 
 
    .buildConfiguration())
 
 
-
    }
-
 
 
    }
@@ -171,9 +149,7 @@ scraped: 2026-03-05T21:32:03.786138
    Dynatrace.startup(yourActiveActivity, new DynatraceConfigurationBuilder("<YourApplicationID>", "<ProvidedBeaconUrl>")
 
 
-
    ... // additional configuration
-
 
 
    .buildConfiguration());
@@ -183,9 +159,7 @@ scraped: 2026-03-05T21:32:03.786138
    Dynatrace.startup(yourActiveActivity, DynatraceConfigurationBuilder("<YourApplicationID>", "<ProvidedBeaconUrl>")
 
 
-
    ... // additional configuration
-
 
 
    .buildConfiguration())

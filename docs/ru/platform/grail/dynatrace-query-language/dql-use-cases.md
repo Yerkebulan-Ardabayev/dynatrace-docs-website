@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:25:43.385489
 
 # Сценарии использования DQL
 
-# Сценарии использования DQL
 
 * Последняя версия Dynatrace
 * Справочник
@@ -24,45 +23,34 @@ scraped: 2026-03-02T21:25:43.385489
 {
 
 
-
 "country_code":"US",
-
 
 
 "session_id":"6a6c6b6d6a7c7b7f7a7c7b7a7f7",
 
 
-
 "invoicing_data":null,
-
 
 
 "bill_to":{
 
 
-
 "first_name":"John",
-
 
 
 "last_name":"Doe",
 
 
-
 "email":"john.doe@gmail.com",
-
 
 
 "phone":null
 
 
-
 },
 
 
-
 "payment_provider":"paypal"
-
 
 
 }
@@ -74,37 +62,28 @@ scraped: 2026-03-02T21:25:43.385489
 fetch logs
 
 
-
 | parse content, "JSON:json"
-
 
 
 | fields payment = json[payment_provider]
 
 
-
 | summarize
-
 
 
 bank_card=countIf(payment=="bank_card"), bank_cardPer=toDouble(countIf(payment=="bank_card"))/toDouble(count()),
 
 
-
 apple_pay=countIf(payment=="apple_pay"),apple_payPerc=toDouble(countIf(payment=="apple_pay"))/toDouble(count()),
-
 
 
 paypal=countIf(payment=="paypal"),paypalPerc=toDouble(countIf(payment=="paypal"))/toDouble(count()),
 
 
-
 google_pay=countIf(payment=="google_pay"),google_payPerc=toDouble(countIf(payment=="google_pay"))/toDouble(count()),
 
 
-
 unpaid_booking=countIf(payment=="unpaid_booking"),unpaid_bookingPerc=toDouble(countIf(payment=="unpaid_booking"))/toDouble(count()),
-
 
 
 total=count()
@@ -120,9 +99,7 @@ total=count()
 {
 
 
-
 "kiosk": "LAOBAUA729"
-
 
 
 }
@@ -132,9 +109,7 @@ total=count()
 ...
 
 
-
 | parse kiosk, "DATA{3}:kioskLoc"
-
 
 
 | fields kiosk, kioskLoc
@@ -152,57 +127,43 @@ total=count()
 <log-entry serial='1467' domain='bca_icas_soa'>
 
 
-
 <date>Fri Sep 21 2023</date>
-
 
 
 <time utc='1380295304719'>11:21:44</time>
 
 
-
 <date-time>2012-09-21T11:21:44</date-time>
-
 
 
 <type>xmlfirewall</type>
 
 
-
 <class>xmlfirewall</class>
-
 
 
 <object>example-Firewall</object>
 
 
-
 <level num='3'>error</level>
-
 
 
 <transaction-type>error</transaction-type>
 
 
-
 <transaction>6187</transaction>
-
 
 
 <client>127.0.0.1</client>
 
 
-
 <code>0x01130007</code>
-
 
 
 <file></file>
 
 
-
 <message>Failed to establish backend connection</message>
-
 
 
 </log-entry>
@@ -214,25 +175,19 @@ total=count()
 ...
 
 
-
 | parse content, "XML(excludeRoot=true):xml"
-
 
 
 | fields domain = xml[`@domain`],
 
 
-
 serial = toLong(xml[`@serial`]),
-
 
 
 object = xml[object],
 
 
-
 transaction = xml[transaction],
-
 
 
 code = xml[code]

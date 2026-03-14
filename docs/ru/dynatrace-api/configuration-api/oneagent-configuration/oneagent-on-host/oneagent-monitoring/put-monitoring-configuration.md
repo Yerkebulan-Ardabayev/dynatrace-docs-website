@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:31:13.607418
 
 # OneAgent мониторинговая конфигурация API - PUT конфигурация
 
-# OneAgent мониторинговая конфигурация API - PUT конфигурация
 
 * Ссылка
 * Обновлено 23 июня 2022 г.
@@ -68,65 +67,49 @@ scraped: 2026-02-06T16:31:13.607418
 {
 
 
-
 "autoInjectionEnabled": true,
-
 
 
 "id": "HOST-0123456789ABCDE",
 
 
-
 "metadata": {
-
 
 
 "clusterVersion": "1.192.1",
 
 
-
 "configurationVersions": [
-
 
 
 4,
 
 
-
 2
-
 
 
 ],
 
 
-
 "currentConfigurationVersions": [
-
 
 
 "1.0.4",
 
 
-
 "1.23"
-
 
 
 ]
 
 
-
 },
-
 
 
 "monitoringEnabled": true,
 
 
-
 "monitoringMode": "FULL_STACK"
-
 
 
 }
@@ -174,53 +157,40 @@ scraped: 2026-02-06T16:31:13.607418
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 )
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 )
-
 
 
 }
@@ -285,53 +255,40 @@ scraped: 2026-02-06T16:31:13.607418
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 )
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 )
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:08.867039
 
 # Настройка источника кода Real User Monitoring в New RUM Experience
 
-# Настройка источника кода Real User Monitoring в New RUM Experience
 
 * Последняя версия Dynatrace
 * Практическое руководство

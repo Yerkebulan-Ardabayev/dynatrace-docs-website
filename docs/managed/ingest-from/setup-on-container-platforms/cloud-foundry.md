@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Set up Dynatrace on Cloud Foundry
 
-# Set up Dynatrace on Cloud Foundry
 
 * 1-min read
 * Published Aug 03, 2018

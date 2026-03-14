@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:53.306624
 
 # Dynatrace для z/OS
 
-# Dynatrace для z/OS
 
 * Latest Dynatrace
 * 8 мин. чтения

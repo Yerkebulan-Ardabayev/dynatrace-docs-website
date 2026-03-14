@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:51.891771
 
 # Send Dynatrace notifications to Microsoft Teams
 
-# Send Dynatrace notifications to Microsoft Teams
 
 * Classic
 * 2-min read
@@ -39,17 +38,13 @@ To set up integration of Microsoft Teams and Dynatrace
      {
 
 
-
      "title":"{ProblemTitle}",
-
 
 
      "text":"{ProblemDetailsHTML}",
 
 
-
      "themeColor":"EA4300"
-
 
 
      }

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:37.885258
 
 # Route data
 
-# Route data
 
 * Latest Dynatrace
 * How-to guide
@@ -37,9 +36,7 @@ You can use Notebooks ![Notebooks](https://dt-cdn.net/images/notebooks-768-04613
    fetch logs
 
 
-
    | filter k8s.namespace.name == "prod"
-
 
 
    | summarize by:{k8s.deployment.name}, count()

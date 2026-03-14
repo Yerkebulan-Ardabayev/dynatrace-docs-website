@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:29:00.184458
 
 # Amazon Web Services monitoring
 
-# Amazon Web Services monitoring
 
 * Latest Dynatrace
 * Explanation

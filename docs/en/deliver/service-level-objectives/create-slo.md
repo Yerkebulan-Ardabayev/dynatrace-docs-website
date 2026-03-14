@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:31:21.874741
 
 # Create service-level objectives
 
-# Create service-level objectives
 
 * Latest Dynatrace
 * How-to guide
@@ -60,13 +59,10 @@ To create a new SLO with a predefined template
 timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }
 
 
-
 , by: { dt.entity.service }
 
 
-
 , filter: { in (dt.entity.service, { services }) }
-
 
 
 | fieldsAdd sli=(((total[]-failures[])/total[])*(100))

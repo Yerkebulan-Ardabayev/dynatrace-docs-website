@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Network zones API
 
-# Network zones API
 
 * Reference
 * Published Mar 05, 2020

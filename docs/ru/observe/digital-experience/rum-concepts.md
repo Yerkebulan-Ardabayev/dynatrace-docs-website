@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:58.729143
 
 # Концепции Real User Monitoring
 
-# Концепции Real User Monitoring
 
 * Классическая версия
 * Обзор

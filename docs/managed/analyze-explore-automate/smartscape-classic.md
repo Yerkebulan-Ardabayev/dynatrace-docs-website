@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Visualize your environment through Smartscape
 
-# Visualize your environment through Smartscape
 
 * 8-min read
 * Published Jul 19, 2017

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:42.608656
 
 # Integrate OneAgent on Azure App Service for Linux and containers
 
-# Integrate OneAgent on Azure App Service for Linux and containers
 
 * Latest Dynatrace
 * How-to guide
@@ -65,45 +64,34 @@ Use the [appCommandLineï»¿](https://docs.microsoft.com/en-us/azure/templates/
 {
 
 
-
 "acrUseManagedIdentityCreds": false,
-
 
 
 "acrUserManagedIdentityId": null,
 
 
-
 "alwaysOn": false,
-
 
 
 "apiDefinition": null,
 
 
-
 "apiManagementConfig": null,
-
 
 
 "appCommandLine": "<startup-script/command>",
 
 
-
 "appSettings": null,
-
 
 
 "autoHealEnabled": false,
 
 
-
 "autoHealRules": null,
 
 
-
 "autoSwapSlotName": null,
-
 
 
 ...
@@ -143,7 +131,6 @@ To monitor both PHP-FPM and NGINX
    echo '/opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so' >> /etc/ld.so.preload
 
 
-
    /etc/init.d/nginx restart
    ```
 
@@ -167,17 +154,13 @@ Alternatively, you can use the calling-only script below, which works for all Li
 #!/bin/sh
 
 
-
 readonly installerWrapperInstallationPath=/tmp/installer-wrapper.sh
-
 
 
 readonly installerWrapperURL=https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh
 
 
-
 wget -O $installerWrapperInstallationPath -q $installerWrapperURL
-
 
 
 sh $installerWrapperInstallationPath
@@ -199,17 +182,13 @@ Alternatively, you can use the startup file as shown below.
 #!/bin/sh
 
 
-
 readonly installerWrapperInstallationPath=/tmp/installer-wrapper.sh
-
 
 
 readonly installerWrapperURL=https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh
 
 
-
 wget -O $installerWrapperInstallationPath -q $installerWrapperURL
-
 
 
 DT_ENDPOINT=$DT_ENDPOINT DT_API_TOKEN=$DT_API_TOKEN DT_INCLUDE=$DT_INCLUDE START_APP_CMD=$START_APP_CMD sh $installerWrapperInstallationPath
@@ -229,29 +208,22 @@ DT_ENDPOINT=$DT_ENDPOINT DT_API_TOKEN=$DT_API_TOKEN DT_INCLUDE=$DT_INCLUDE START
 RESOURCE_GROUP="my-appservice-test"
 
 
-
 APPSVC="my-linux-webapp"
-
 
 
 DT_ENDPOINT="https://XXXXXX.live.dynatrace.com"
 
 
-
 DT_API_TOKEN="XXXXXX"
-
 
 
 DT_INCLUDE="nodejs"
 
 
-
 START_APP_CMD="pm2 start index.js --no-daemon"
 
 
-
 STARTUP_CMD="wget -O /tmp/installer-wrapper.sh -q https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh && DT_ENDPOINT=$DT_ENDPOINT DT_API_TOKEN=$DT_API_TOKEN DT_INCLUDE=$DT_INCLUDE START_APP_CMD=$START_APP_CMD sh /tmp/installer-wrapper.sh"
-
 
 
 az webapp config set --resource-group $RESOURCE_GROUP --name $APPSVC --startup-file "$STARTUP_CMD"
@@ -286,7 +258,6 @@ This option requires that you have Docker v17.05+ installed on your computer.
    COPY --from=<ADDRESS>/linux/oneagent-codemodules:<TECHNOLOGY> / /
 
 
-
    ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
    ```
 
@@ -298,7 +269,6 @@ This option requires that you have Docker v17.05+ installed on your computer.
 
    ```
    COPY --from=<ADDRESS>/linux/oneagent-codemodules-musl:<TECHNOLOGY> / /
-
 
 
    ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
@@ -321,7 +291,6 @@ This option requires that you have Docker v17.05+ installed on your computer.
 
    ```
    RUN wget -O /tmp/installer.sh -q "<DT_ENDPOINT>/api/v1/deployment/installer/agent/unix/paas-sh/latest?Api-Token=<DT_API_TOKEN>&flavor=<DT_FLAVOR>&include=<DT_INCLUDE>" && sh /tmp/installer.sh
-
 
 
    ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so

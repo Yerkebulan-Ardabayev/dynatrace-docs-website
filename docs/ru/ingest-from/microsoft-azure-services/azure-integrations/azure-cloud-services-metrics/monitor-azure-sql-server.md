@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:22.392494
 
 # Мониторинг Azure SQL Server
 
-# Мониторинг Azure SQL Server
 
 * Последняя версия Dynatrace
 * Практическое руководство

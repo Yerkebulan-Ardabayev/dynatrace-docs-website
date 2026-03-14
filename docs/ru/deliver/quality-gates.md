@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:00.295299
 
 # Валидация релизов
 
-# Валидация релизов
 
 * Последняя версия Dynatrace
 * Руководство
@@ -52,169 +51,127 @@ scraped: 2026-03-06T21:30:00.295299
    #!groovy
 
 
-
    /**
-
 
 
    * Sends biz_event to a given Dynatrace environment.
 
 
-
    * @param monitoringTenant url to monitoring environment
-
 
 
    * @param oauthClientId OAuth client id
 
 
-
    * @param oauthClientSecret OAuth client secret
-
 
 
    * @param payload biz_event payload
 
 
-
    * @return
-
 
 
    */
 
 
-
    def call(
-
 
 
    def monitoringTenant,
 
 
-
    def oauthClientId,
-
 
 
    def oauthClientSecret,
 
 
-
    def payload
-
 
 
    ) {
 
 
-
    // Get Access Token via OAuth - see https://developer.dynatrace.com/develop/access-platform-apis-from-outside/ for reference
-
 
 
    def ssoResponse = sh(script: """
 
 
-
    set +x
-
 
 
    curl --location --request POST 'https://sso.dynatrace.com/sso/oauth2/token' \\
 
 
-
    --header 'Content-Type: application/x-www-form-urlencoded' \\
-
 
 
    --data-urlencode 'grant_type=client_credentials' \\
 
 
-
    --data-urlencode 'client_id=${oauthClientId}' \\
-
 
 
    --data-urlencode 'client_secret=${oauthClientSecret}' \\
 
 
-
    --data-urlencode 'scope=storage:events:write'
 
 
-
    set -x
-
 
 
    """, returnStdout: true).trim()
 
 
-
    // Note: readJSON needs pipeline-utility-steps -> https://www.jenkins.io/doc/pipeline/steps/pipeline-utility-steps/#readjson-read-json-from-files-in-the-workspace
-
 
 
    def ssoResponseJSON = readJSON(text: ssoResponse)
 
 
-
    if (ssoResponseJSON.errorCode) {
-
 
 
    error(message: "Authentication failed: ${ssoResponse}")
 
 
-
    }
-
 
 
    def accessToken = ssoResponseJSON.access_token
 
 
-
    // Ingest BizEvent
-
 
 
    println("Sending BizEvent: ${payload}")
 
 
-
    sh(script: """
-
 
 
    set +x
 
 
-
    curl --location --request POST '${monitoringTenant}/platform/classic/environment-api/v2/bizevents/ingest' \\
-
 
 
    --header 'Content-Type: application/json' \\
 
 
-
    --header 'Authorization: Bearer ${accessToken}' \\
-
 
 
    --data-raw '${payload}'
 
 
-
    set -x
 
 
-
    """)
-
 
 
    }
@@ -229,53 +186,40 @@ scraped: 2026-03-06T21:30:00.295299
    {
 
 
-
    "timeframe.to": "2023-03-08T06:29:08.809Z",
-
 
 
    "timeframe.from": "2023-03-08T05:29:08.809Z",
 
 
-
    "event.id": "d08a70d8-f6de-4d0d-bd34-5d416a20ba6a",
-
 
 
    "timestamp": 1678256963078000000,
 
 
-
    "event.kind": "BIZ_EVENT",
-
 
 
    "event.type": "guardian.validation.triggered",
 
 
-
    "stage": "hardening",
-
 
 
    "event.provider": "Jenkins",
 
 
-
    "dt.system.bucket": "default_bizevents_short"
-
 
 
    "execution_context": {
 
 
-
    "buildId": "4711",
 
 
-
    "version": "0.1.0"
-
 
 
    }
@@ -308,177 +252,133 @@ scraped: 2026-03-06T21:30:00.295299
    metadata:
 
 
-
    version: "1"
-
 
 
    dependencies:
 
 
-
    apps:
-
 
 
    - id: dynatrace.site.reliability.guardian
 
 
-
    version: ^1.8.1
-
 
 
    inputs:
 
 
-
    - type: connection
-
 
 
    schema: app:dynatrace.site.reliability.guardian:guardians
 
 
-
    targets:
-
 
 
    - tmy-object.objectId
 
 
-
    workflow:
-
 
 
    title: Pipeline validation
 
 
-
    tasks:
 
 
-
    trigger:
-
 
 
    name: validation-guardian
 
 
-
    description: Automation action to start a Site Reliability Guardian validation
-
 
 
    action: dynatrace.site.reliability.guardian:validate-guardian-action
 
 
-
    input:
-
 
 
    objectId: ""
 
 
-
    executionId: "{{ execution().id }}"
-
 
 
    expressionTo: '{{ event()["timeframe.to"] }}'
 
 
-
    expressionFrom: '{{ event()["timeframe.from"] }}'
-
 
 
    timeframeSelector:
 
 
-
    to: now
-
 
 
    from: now-2h
 
 
-
    timeframeInputType: expression
-
 
 
    position:
 
 
-
    x: 0
-
 
 
    y: 1
 
 
-
    predecessors: []
-
 
 
    description: ""
 
 
-
    trigger:
-
 
 
    eventTrigger:
 
 
-
    filterQuery: >
 
 
-
    ((event.type == "guardian.validation.triggered") and stage == "dev")
-
 
 
    isActive: true
 
 
-
    uniqueExpression: null
-
 
 
    triggerConfiguration:
 
 
-
    type: event
-
 
 
    value:
 
 
-
    query: >
-
 
 
    ((event.type == "guardian.validation.triggered") and stage == "dev")
 
 
-
    eventType: bizevents
-
 
 
    schemaVersion: 3
@@ -491,25 +391,19 @@ scraped: 2026-03-06T21:30:00.295299
    query: fetch bizevents, from:now() - 5m, to:now()
 
 
-
    | filter event.type == "guardian.validation.finished"
-
 
 
    | filter event.provider == "dynatrace.site.reliability.guardian"
 
 
-
    | filter guardian.name == "validation-guardian"
-
 
 
    | filter matchesPhrase(execution_context, "1.286.0.0.20240129-160934")
 
 
-
    | sort timestamp desc
-
 
 
    limit 1 ,"timezone": "Europe/Warsaw", "enablePreview": true

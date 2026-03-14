@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:55.878660
 
 # Как принимать данные (события)
 
-# Как принимать данные (события)
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -21,9 +20,7 @@ scraped: 2026-03-06T21:15:55.878660
 {
 
 
-
 "name": "My first ingested event"
-
 
 
 }
@@ -83,13 +80,10 @@ scraped: 2026-03-06T21:15:55.878660
 curl -i -X POST "<your-endpoint-URL>" \
 
 
-
 -H "Content-Type: application/json" \
 
 
-
 -H "Authorization: Api-Token <your-API-token>" \
-
 
 
 -d "{\"name\":\"My first ingested event\"}"
@@ -114,7 +108,6 @@ HTTP/2 202
 
    ```
    fetch events
-
 
 
    | filter name == "My first ingested event"

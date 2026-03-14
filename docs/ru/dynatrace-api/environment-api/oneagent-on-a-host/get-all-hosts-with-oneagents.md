@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:31:11.346773
 
 # OneAgent на хосте — GET-запрос списка хостов с информацией о OneAgent
 
-# OneAgent на хосте — GET-запрос списка хостов с информацией о OneAgent
 
 * Справочник
 * Опубликовано 3 февраля 2020
@@ -327,801 +326,601 @@ API **OneAgent на хосте** позволяет проверять конф�
 {
 
 
-
 "hosts": [
-
 
 
 {
 
 
-
 "active": true,
-
 
 
 "autoUpdateSetting": "ENABLED",
 
 
-
 "availabilityState": "CRASHED",
-
 
 
 "availableVersions": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "configuredMonitoringEnabled": true,
 
 
-
 "configuredMonitoringMode": "CLOUD_INFRASTRUCTURE",
-
 
 
 "currentActiveGateId": 1,
 
 
-
 "currentActiveGateIds": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "currentNetworkZoneId": "string",
 
 
-
 "detailedAvailabilityState": "CRASHED_FAILURE",
 
 
-
 "faultyVersion": true,
-
 
 
 "hostInfo": {
 
 
-
 "agentVersion": {
-
 
 
 "major": 1,
 
 
-
 "minor": 1,
-
 
 
 "revision": 1,
 
 
-
 "sourceRevision": "string",
-
 
 
 "timestamp": "string"
 
 
-
 },
-
 
 
 "amiId": "string",
 
 
-
 "autoInjection": "DISABLED_MANUALLY",
-
 
 
 "autoScalingGroup": "string",
 
 
-
 "awsInstanceId": "string",
-
 
 
 "awsInstanceType": "string",
 
 
-
 "awsNameTag": "string",
-
 
 
 "awsSecurityGroup": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azureComputeModeName": "DEDICATED",
 
 
-
 "azureEnvironment": "string",
-
 
 
 "azureHostNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azureResourceGroupName": "string",
 
 
-
 "azureResourceId": "string",
-
 
 
 "azureSiteNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azureSku": "BASIC",
 
 
-
 "azureVmName": "string",
-
 
 
 "azureVmScaleSetName": "string",
 
 
-
 "azureVmSizeLabel": "string",
-
 
 
 "azureZone": "string",
 
 
-
 "beanstalkEnvironmentName": "string",
-
 
 
 "bitness": "32bit",
 
 
-
 "boshAvailabilityZone": "string",
-
 
 
 "boshDeploymentId": "string",
 
 
-
 "boshInstanceId": "string",
-
 
 
 "boshInstanceName": "string",
 
 
-
 "boshName": "string",
-
 
 
 "boshStemcellVersion": "string",
 
 
-
 "cloudPlatformVendorVersion": "string",
-
 
 
 "cloudType": "AZURE",
 
 
-
 "consumedHostUnits": "string",
-
 
 
 "cpuCores": 1,
 
 
-
 "customizedName": "string",
-
 
 
 "discoveredName": "string",
 
 
-
 "displayName": "string",
-
 
 
 "entityId": "string",
 
 
-
 "esxiHostName": "string",
-
 
 
 "firstSeenTimestamp": 1,
 
 
-
 "fromRelationships": {
-
 
 
 "isNetworkClientOfHost": [
 
 
-
 "string"
-
 
 
 ]
 
 
-
 },
-
 
 
 "gceInstanceId": "string",
 
 
-
 "gceInstanceName": "string",
-
 
 
 "gceMachineType": "string",
 
 
-
 "gceProject": "string",
-
 
 
 "gceProjectId": "string",
 
 
-
 "gcePublicIpAddresses": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "gcpZone": "string",
 
 
-
 "hostGroup": {
-
 
 
 "meId": "string",
 
 
-
 "name": "string"
 
 
-
 },
-
 
 
 "hypervisorType": "AHV",
 
 
-
 "ipAddresses": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "isMonitoringCandidate": true,
 
 
-
 "kubernetesCluster": "string",
-
 
 
 "kubernetesLabels": {},
 
 
-
 "kubernetesNode": "string",
-
 
 
 "lastSeenTimestamp": 1,
 
 
-
 "localHostName": "string",
-
 
 
 "localIp": "string",
 
 
-
 "logicalCpuCores": 1,
-
 
 
 "logicalCpus": 1,
 
 
-
 "managementZones": [
 
 
-
 {
-
 
 
 "description": "Dynatrace entity for the REST API example",
 
 
-
 "id": "6a98d7bc-abb9-44f8-ae6a-73e68e71812a",
-
 
 
 "name": "Dynatrace entity"
 
 
-
 }
 
 
-
 ],
-
 
 
 "monitoringMode": "FULL_STACK",
 
 
-
 "networkZoneId": "string",
-
 
 
 "oneAgentCustomHostName": "string",
 
 
-
 "openStackInstaceType": "string",
-
 
 
 "openstackAvZone": "string",
 
 
-
 "openstackComputeNodeName": "string",
-
 
 
 "openstackProjectName": "string",
 
 
-
 "openstackSecurityGroups": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "openstackVmName": "string",
 
 
-
 "osArchitecture": "ARM",
-
 
 
 "osType": "AIX",
 
 
-
 "osVersion": "string",
-
 
 
 "paasAgentVersions": [
 
 
-
 {}
 
 
-
 ],
-
 
 
 "paasMemoryLimit": 1,
 
 
-
 "paasType": "AWS_ECS_EC2",
-
 
 
 "publicHostName": "string",
 
 
-
 "publicIp": "string",
-
 
 
 "scaleSetName": "string",
 
 
-
 "simultaneousMultithreading": 1,
-
 
 
 "softwareTechnologies": [
 
 
-
 {
-
 
 
 "edition": "string",
 
 
-
 "type": "string",
-
 
 
 "version": "string"
 
 
-
 }
 
 
-
 ],
-
 
 
 "tags": [
 
 
-
 {
-
 
 
 "context": "AWS",
 
 
-
 "key": "string",
-
 
 
 "value": "string"
 
 
-
 }
 
 
-
 ],
-
 
 
 "toRelationships": {
 
 
-
 "isNetworkClientOfHost": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "isProcessOf": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "isSiteOf": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "runsOn": [
 
 
-
 "string"
-
 
 
 ]
 
 
-
 },
-
 
 
 "userLevel": "NON_SUPERUSER",
 
 
-
 "virtualCpus": 1,
-
 
 
 "vmwareName": "string",
 
 
-
 "zosCPUModelNumber": "string",
-
 
 
 "zosCPUSerialNumber": "string",
 
 
-
 "zosLpaName": "string",
-
 
 
 "zosSystemName": "string",
 
 
-
 "zosTotalGeneralPurposeProcessors": 1,
-
 
 
 "zosTotalPhysicalMemory": 1,
 
 
-
 "zosTotalZiipProcessors": 1,
-
 
 
 "zosVirtualization": "string"
 
 
-
 },
-
 
 
 "modules": [
 
 
-
 {
-
 
 
 "instances": [
 
 
-
 {
-
 
 
 "active": true,
 
 
-
 "faultyVersion": true,
-
 
 
 "instanceName": "string",
 
 
-
 "moduleVersion": "string"
-
 
 
 }
 
 
-
 ],
-
 
 
 "moduleType": "APACHE"
 
 
-
 }
 
 
-
 ],
-
 
 
 "monitoringType": "CLOUD_INFRASTRUCTURE",
 
 
-
 "plugins": [
 
 
-
 {
-
 
 
 "instances": [
 
 
-
 {
-
 
 
 "pluginVersion": "string",
 
 
-
 "state": "string"
-
 
 
 }
 
 
-
 ],
-
 
 
 "pluginName": "string"
 
 
-
 }
 
 
-
 ],
-
 
 
 "unlicensed": true,
 
 
-
 "updateStatus": "INCOMPATIBLE"
-
 
 
 }
 
 
-
 ],
-
 
 
 "nextPageKey": "string",
 
 
-
 "percentageOfEnvironmentSearched": 1
-
 
 
 }
@@ -1129,55 +928,42 @@ API **OneAgent на хосте** позволяет проверять конф�
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }

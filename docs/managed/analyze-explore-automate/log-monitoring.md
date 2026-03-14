@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Log Monitoring
 
-# Log Monitoring
 
 * 2-min read
 * Updated on Nov 20, 2025

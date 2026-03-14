@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Configure a simple custom alert
 
-# Configure a simple custom alert
 
 * Latest Dynatrace
 * How-to guide

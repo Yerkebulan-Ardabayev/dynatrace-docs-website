@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:55.107115
 
 # Host-level settings
 
-# Host-level settings
 
 * Classic
 * How-to guide

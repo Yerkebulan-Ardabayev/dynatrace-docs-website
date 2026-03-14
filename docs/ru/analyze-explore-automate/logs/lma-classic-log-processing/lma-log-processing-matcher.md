@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:30:59.143327
 
 # Матчер DQL в логах
 
-# Матчер DQL в логах
 
 * Latest Dynatrace
 * Reference

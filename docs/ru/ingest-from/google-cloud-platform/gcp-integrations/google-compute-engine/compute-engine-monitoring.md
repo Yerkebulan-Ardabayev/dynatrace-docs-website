@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:35:51.753899
 
 # Мониторинг Google Compute Engine с метриками Operations suite
 
-# Мониторинг Google Compute Engine с метриками Operations suite
 
 * Последняя версия Dynatrace
 * Практическое руководство

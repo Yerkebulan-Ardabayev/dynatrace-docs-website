@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:28:08.700183
 
 # Red Hat Quarkus native applications monitoring
 
-# Red Hat Quarkus native applications monitoring
 
 * Latest Dynatrace
 * 3-min read
@@ -58,13 +57,10 @@ The following example shows how to configure `application.properties` to export 
 quarkus.application.name=myservice
 
 
-
 quarkus.otel.exporter.otlp.traces.endpoint=https://{your-environment-id}.live.dynatrace.com/api/v2/otlp
 
 
-
 quarkus.otel.exporter.otlp.traces.headers=authorization=Api-Token%20dt.....
-
 
 
 quarkus.log.console.format=%d{HH:mm:ss} %-5p traceId=%X{traceId}, parentId=%X{parentId}, spanId=%X{spanId}, sampled=%X{sampled} [%c{2.}] (%t) %s%e%n
@@ -98,645 +94,484 @@ Extension example based on Prometheus
 name: custom:com.dynatrace.extension.micrometer-quarkus
 
 
-
 version: 1.0.0
-
 
 
 minDynatraceVersion: "1.247"
 
 
-
 author:
-
 
 
 name: Dynatrace
 
 
-
 #dashboards:
-
 
 
 #  - path: "dashboards/dashboard_exporter.json"
 
 
-
 #alerts:
-
 
 
 #  - path: "alerts/alert_socket_usage.json"
 
 
-
 prometheus:
-
 
 
 - group: quarkus metrics
 
 
-
 interval:
-
 
 
 minutes: 1
 
 
-
 featureSet: all
 
 
-
 dimensions:
-
 
 
 - key: quarkus
 
 
-
 value: const:quarkus
-
 
 
 subgroups:
 
 
-
 # global counters
-
 
 
 - subgroup: quarkus global counter
 
 
-
 dimensions:
-
 
 
 - key: global_counters
 
 
-
 value: const:global_counters
-
 
 
 metrics:
 
 
-
 # HELP process_uptime_seconds The uptime of the Java virtual machine
-
 
 
 # TYPE process_uptime_seconds gauge
 
 
-
 - key: com.dynatrace.process.global.uptime.seconds
-
 
 
 value: metric:process_uptime_seconds
 
 
-
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP process_cpu_usage The "recent cpu usage" for the Java Virtual Machine process
 
 
-
 # TYPE process_cpu_usage gauge
-
 
 
 - key: com.dynatrace.process.global.cpu.usage
 
 
-
 value: metric:process_cpu_usage
-
 
 
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP system_cpu_usage The "recent cpu usage" of the system the application is running in
 
 
-
 # TYPE system_cpu_usage gauge
-
 
 
 - key: com.dynatrace.system.global.cpu.usage
 
 
-
 value: metric:system_cpu_usage
-
 
 
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP jvm_classes_unloaded_classes_total The total number of classes unloaded since the Java virtual machine has started execution
 
 
-
 # TYPE jvm_classes_unloaded_classes_total counter
-
 
 
 - key: com.dynatrace.jvm.classes.global.uploaded.total
 
 
-
 value: metric:jvm_classes_unloaded_classes_total
-
 
 
 type: count
 
 
-
 featureSet: global
-
 
 
 # HELP jvm_info_total JVM version info
 
 
-
 # TYPE jvm_info_total counter
-
 
 
 - key: com.dynatrace.jvm.global.info.total
 
 
-
 value: metric:jvm_info_total
-
 
 
 type: count
 
 
-
 featureSet: global
-
 
 
 # HELP http_server_connections_seconds_max
 
 
-
 # TYPE http_server_connections_seconds_max gauge
-
 
 
 - key: com.dynatrace.http.server.connections.seconds.global.max
 
 
-
 value: metric:http_server_connections_seconds_max
-
 
 
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP http_server_connections_seconds
 
 
-
 # TYPE http_server_connections_seconds summary
-
 
 
 - key: com.dynatrace.http.server.connections.seconds.active.global.count
 
 
-
 value: metric:http_server_connections_seconds_active_count
-
 
 
 type: count
 
 
-
 featureSet: global
-
 
 
 - key: com.dynatrace.http.server.connections.seconds.active.global.duration.summary
 
 
-
 value: metric:http_server_connections_seconds_duration_sum
-
 
 
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP process_files_max_files The maximum file descriptor count
 
 
-
 # TYPE process_files_max_files gauge
-
 
 
 - key: com.dynatrace.process.files.global.max
 
 
-
 value: metric:process_files_max_files
-
 
 
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP http_server_bytes_written_max
 
 
-
 # TYPE http_server_bytes_written_max gauge
-
 
 
 - key: com.dynatrace.http.server.bytes.wrriten.global.max
 
 
-
 value: metric:http_server_bytes_written_max
-
 
 
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP http_server_bytes_written
 
 
-
 # TYPE http_server_bytes_written summary
 
 
-
 - key: com.dynatrace.http.server.bytes.written.global.count
-
 
 
 value: metric:http_server_bytes_written_count
 
 
-
 type: count
-
 
 
 featureSet: global
 
 
-
 - key: com.dynatrace.http.server.bytes.written.global.summary
-
 
 
 value: metric:http_server_bytes_written_sum
 
 
-
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP system_load_average_1m The sum of the number of runnable entities queued to available processors and the number of runnable entities running on the available processors averaged over a period of time
 
 
-
 # TYPE system_load_average_1m gauge
-
 
 
 - key: com.dynatrace.system.load.average.global.lm
 
 
-
 value: metric:system_load_average_1m
-
 
 
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP jvm_gc_overhead_percent An approximation of the percent of CPU time used by GC activities over the last lookback period or since monitoring began, whichever is shorter, in the range [0..1]
 
 
-
 # TYPE jvm_gc_overhead_percent gauge
-
 
 
 - key: com.dynatrace.jvm.gc.overhead.global.percent
 
 
-
 value: metric:jvm_gc_overhead_percent
-
 
 
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP jvm_threads_daemon_threads The current number of live daemon threads
 
 
-
 # TYPE jvm_threads_daemon_threads gauge
-
 
 
 - key: com.dynatrace.jvm.threads.daemon.global.threads
 
 
-
 value: metric:jvm_threads_daemon_threads
-
 
 
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP jvm_threads_live_threads The current number of live threads including both daemon and non-daemon threads
 
 
-
 # TYPE jvm_threads_live_threads gauge
-
 
 
 - key: com.dynatrace.jvm.threads.live.global.threads
 
 
-
 value: metric:jvm_threads_live_threads
-
 
 
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP http_server_requests_seconds
 
 
-
 # TYPE http_server_requests_seconds summary
-
 
 
 - key: com.dynatrace.http.server.bytes.written.global.count
 
 
-
 value: metric:http_server_requests_seconds_count
-
 
 
 type: count
 
 
-
 featureSet: global
-
 
 
 - key: com.dynatrace.http.server.bytes.written.global.summary
 
 
-
 value: metric:http_server_requests_seconds_sum
-
 
 
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP http_server_requests_seconds_max
 
 
-
 # TYPE http_server_requests_seconds_max gauge
-
 
 
 - key: com.dynatrace.http.server.requests.seconds.max
 
 
-
 value: metric:http_server_requests_seconds_max
-
 
 
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP process_start_time_seconds Start time of the process since unix epoch.
 
 
-
 # TYPE process_start_time_seconds gauge
-
 
 
 - key: com.dynatrace.process.start.time.global.seconds
 
 
-
 value: metric:process_start_time_seconds
-
 
 
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP jvm_classes_loaded_classes The number of classes that are currently loaded in the Java virtual machine
 
 
-
 # TYPE jvm_classes_loaded_classes gauge
-
 
 
 - key: com.dynatrace.jvm.classes.loaded.global.max
 
 
-
 value: metric:jvm_classes_loaded_classes
-
 
 
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP jvm_threads_peak_threads The peak live thread count since the Java virtual machine started or peak was reset
 
 
-
 # TYPE jvm_threads_peak_threads gauge
-
 
 
 - key: com.dynatrace.jvm.threads.peak.global.threads
 
 
-
 value: metric:jvm_threads_peak_threads
-
 
 
 type: gauge
 
 
-
 featureSet: global
-
 
 
 # HELP system_cpu_count The number of processors available to the Java virtual machine
 
 
-
 # TYPE system_cpu_count gauge
-
 
 
 - key: com.dynatrace.system.cpu.global.counter
 
 
-
 value: metric:system_cpu_count
 
 
-
 type: gauge
-
 
 
 featureSet: global
 
 
-
 # HELP process_files_open_files The open file descriptor count
-
 
 
 # TYPE process_files_open_files gauge
 
 
-
 - key: com.dynatrace.process.files.open.global.files
-
 
 
 value: metric:process_files_open_files
 
 
-
 type: gauge
-
 
 
 featureSet: global

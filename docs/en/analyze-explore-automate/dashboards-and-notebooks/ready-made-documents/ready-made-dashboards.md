@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:48.245169
 
 # Ready-made dashboards
 
-# Ready-made dashboards
 
 * Latest Dynatrace
 * Reference

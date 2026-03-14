@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:58.159236
 
 # Web frontends
 
-# Web frontends
 
 * Latest Dynatrace
 * Overview

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:12.098693
 
 # Управление версией RUM JavaScript в новом RUM Experience
 
-# Управление версией RUM JavaScript в новом RUM Experience
 
 * Latest Dynatrace
 * How-to guide

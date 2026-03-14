@@ -5,8 +5,6 @@ scraped: 2026-03-06T21:10:12.940403
 ---
 # Dynatrace Intelligence
 
-# Dynatrace Intelligence
-
 * Последнее Dynatrace
 * Обзор
 * 2-минутное чтение

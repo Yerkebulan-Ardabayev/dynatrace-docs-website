@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:22.288093
 
 # Azure IoT Central Applications monitoring
 
-# Azure IoT Central Applications monitoring
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:17.758122
 
 # Deploy the Dynatrace Google Cloud metric integration in Google Cloud Functions
 
-# Deploy the Dynatrace Google Cloud metric integration in Google Cloud Functions
 
 * Latest Dynatrace
 * How-to guide
@@ -54,165 +53,124 @@ To create a custom role
    title: Dynatrace GCP Monitor cloud function deployment role
 
 
-
    description: Role for Dynatrace GCP Monitor cloud function deployment
-
 
 
    stage: GA
 
 
-
    includedPermissions:
-
 
 
    - appengine.applications.get
 
 
-
    - appengine.applications.create
-
 
 
    - cloudfunctions.functions.create
 
 
-
    - cloudfunctions.functions.get
-
 
 
    - cloudfunctions.functions.list
 
 
-
    - cloudfunctions.functions.sourceCodeSet
-
 
 
    - cloudfunctions.functions.update
 
 
-
    - cloudfunctions.functions.getIamPolicy
-
 
 
    - cloudfunctions.operations.get
 
 
-
    - cloudfunctions.operations.list
-
 
 
    - cloudscheduler.locations.list
 
 
-
    - cloudscheduler.jobs.list
-
 
 
    - cloudscheduler.jobs.create
 
 
-
    - cloudscheduler.jobs.get
-
 
 
    - cloudscheduler.jobs.delete
 
 
-
    - pubsub.topics.list
-
 
 
    - pubsub.topics.create
 
 
-
    - pubsub.topics.update
-
 
 
    - secretmanager.secrets.list
 
 
-
    - secretmanager.versions.add
-
 
 
    - secretmanager.secrets.create
 
 
-
    - secretmanager.versions.list
-
 
 
    - secretmanager.secrets.getIamPolicy
 
 
-
    - secretmanager.secrets.setIamPolicy
-
 
 
    - resourcemanager.projects.get
 
 
-
    - resourcemanager.projects.getIamPolicy
-
 
 
    - resourcemanager.projects.setIamPolicy
 
 
-
    - serviceusage.services.enable
-
 
 
    - iam.serviceAccounts.actAs
 
 
-
    - iam.serviceAccounts.list
-
 
 
    - iam.serviceAccounts.create
 
 
-
    - iam.serviceAccounts.getIamPolicy
-
 
 
    - iam.serviceAccounts.setIamPolicy
 
 
-
    - iam.roles.list
-
 
 
    - iam.roles.create
 
 
-
    - iam.roles.update
 
 
-
    - monitoring.dashboards.list
-
 
 
    - monitoring.dashboards.create
@@ -338,7 +296,6 @@ Adding, removing and updating versions of existing services is done by modyfing 
      filter_conditions:
 
 
-
      resource.labels.location = "us-central1-c" AND resource.labels.namespace_name = "dynatrace"
      ```
 2. Update monitored services by running the script below.
@@ -361,61 +318,46 @@ In the following example
 # Google App Engine Instance
 
 
-
 #- service: gae_instance
-
 
 
 #  featureSets:
 
 
-
 #    - default_metrics
-
 
 
 #  vars:
 
 
-
 #    filter_conditions: ""
-
 
 
 # Google VM Instance
 
 
-
 - service: gce_instance
-
 
 
 featureSets:
 
 
-
 - default_metrics
-
 
 
 #    - agent
 
 
-
 #    - firewallinsights
-
 
 
 - istio
 
 
-
 #    - uptime_check
 
 
-
 vars:
-
 
 
 filter_conditions: ""

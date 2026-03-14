@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:53.313434
 
 # Customize failure detection in Service Detection v2
 
-# Customize failure detection in Service Detection v2
 
 * Latest Dynatrace
 * How-to guide

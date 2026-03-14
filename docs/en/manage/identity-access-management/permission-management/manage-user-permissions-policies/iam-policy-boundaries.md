@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:40:49.400146
 
 # Policy boundaries
 
-# Policy boundaries
 
 * Latest Dynatrace
 * 6-min read
@@ -64,7 +63,6 @@ The `storage:k8s.namespace.name IN ("DEV","PREPROD")` is a recurring pattern in 
 
 ```
 ALLOW storage:logs:read WHERE storage:k8s.namespace.name IN ("DEV","PREPROD");
-
 
 
 ALLOW storage:metrics:read WHERE storage:k8s.namespace.name IN ("DEV","PREPROD");
@@ -160,13 +158,10 @@ will produce:
 ALLOW storage:entities:read;
 
 
-
 ALLOW storage:entities:read WHERE storage:dt.security_context = "mySC";
 
 
-
 ALLOW storage:logs:read WHERE storage:host.name = "myHost";
-
 
 
 ALLOW storage:logs:read WHERE storage:dt.security_context = "mySC" `
@@ -186,7 +181,6 @@ Boundary **Kubernetes**:
 
 ```
 environment:management-zone startsWith "[Kubernetes]";
-
 
 
 storage:k8s.namespace.name IN ("DEV","PREPROD");

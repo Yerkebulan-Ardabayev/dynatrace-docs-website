@@ -14,7 +14,6 @@ scraped: 2026-03-06T21:34:56.682759
 
 # Set up cross-environment tracing
 
-# Set up cross-environment tracing
 
 * Classic
 * How-to guide
@@ -185,7 +184,6 @@ scraped: 2026-03-04T21:38:08.883099
 
 # Treat diagnostic messages
 
-# Treat diagnostic messages
 
 * Classic
 * 4-min read
@@ -245,7 +243,6 @@ scraped: 2026-03-06T21:22:53.406867
 
 # Distributed traces concepts
 
-# Distributed traces concepts
 
 * Classic
 * Explanation
@@ -353,7 +350,6 @@ scraped: 2026-03-06T21:33:01.027497
 
 # Span and trace context propagation in Distributed Traces Classic
 
-# Span and trace context propagation in Distributed Traces Classic
 
 * Classic
 * Explanation
@@ -434,7 +430,6 @@ scraped: 2026-03-06T21:22:41.769050
 
 # Leverage log enrichment for traces to resolve problems
 
-# Leverage log enrichment for traces to resolve problems
 
 * Classic
 * Tutorial
@@ -547,7 +542,6 @@ Logs in proactive troubleshooting (Kubernetes)
 ### Scenario
 
 
-
 From the dashboard, we want to investigate the `frontend` service, which is deployed as a Kubernetes workload. To get information on the workload, we select the **frontend** Kubernetes workload tile.
 
 ![Dashboard - Logs for Kubernetes](https://dt-cdn.net/images/service-failure-logs-root-cause-analysis3-2560-78d5bf5753.png)
@@ -600,7 +594,6 @@ scraped: 2026-03-06T21:12:14.538129
 
 # Segment requests to improve response time degradation
 
-# Segment requests to improve response time degradation
 
 * Classic
 * Tutorial
@@ -671,7 +664,6 @@ scraped: 2026-03-06T21:17:20.534941
 
 # Distributed Traces Classic
 
-# Distributed Traces Classic
 
 * Classic
 * Overview
@@ -712,7 +704,6 @@ scraped: 2026-03-06T21:12:12.811038
 
 # Advanced Tracing Analytics powered by Grail
 
-# Advanced Tracing Analytics powered by Grail
 
 * Latest Dynatrace
 * Tutorial
@@ -749,13 +740,10 @@ The following example query fetches spans with an HTTP request header and, for e
 fetch spans
 
 
-
 | filter isNotNull( http.request.header.host)
 
 
-
 | fields endpoint.name, http.request.header.host, http.request.method, trace.id
-
 
 
 | limit 5
@@ -771,17 +759,13 @@ The following query fetches spans generated with an HTTP route from the server. 
 fetch spans
 
 
-
 | filter span.kind == "server" and isNotNull(http.route)
-
 
 
 | fieldsAdd http.request.method = coalesce(http.request.method, http.method)
 
 
-
 | summarize { count(), avg(duration), p50=percentile(duration, 50)}, by: { http.request.method, http.route }
-
 
 
 | limit 3
@@ -797,13 +781,10 @@ The following example fetches spans with an HTTP route that contain `user` and d
 fetch spans
 
 
-
 | filterOut isNull(http.route)
 
 
-
 | filter contains(http.route, "v1/") and not endsWith(http.route, "/sell")
-
 
 
 | summarize count(), by: { http.request.method, http.route }
@@ -814,7 +795,6 @@ Query result:
 For more examples, see the [Introductionï»¿](https://wkf10640.apps.dynatrace.com/ui/document/v0/#share=404274dc-4f04-4dda-840d-47ba9bd17a9f) notebook in Dynatrace Playground.
 
 ## HTTP requests and networking
-
 
 
 You can analyze your Web Requests via DQL and
@@ -832,29 +812,22 @@ In the following example, the query fetches spans that contain the HTTP route wi
 fetch spans
 
 
-
 // filter for specific HTTP route
-
 
 
 | filter contains(http.route, "services")
 
 
-
 | summarize {
-
 
 
 spans=count(),
 
 
-
 trace=takeAny(record(start_time, trace.id)) // pick random trace from aggregation bucket
 
 
-
 }, by: { bin(duration, 100ms) }
-
 
 
 | fields `bin(duration, 100ms)`, spans, trace.id=trace[trace.id], start_time=trace[start_time]
@@ -872,21 +845,16 @@ The following query fetches spans that contain a specific HTTP route and extract
 fetch spans
 
 
-
 // filter for specific http route
-
 
 
 | filter contains(http.route, "services") and http.request.method == "GET"
 
 
-
 // extract timeseries
 
 
-
 | makeTimeseries { avg=avg(duration) }
-
 
 
 , by: { http.route }, bins:250
@@ -904,21 +872,16 @@ The following query fetches failed requests and displays the values of the speci
 fetch spans
 
 
-
 // filter only for request root spans
-
 
 
 | filter request.is_root_span == true
 
 
-
 | filter request.is_failed == true
 
 
-
 | fields trace.id, span.id, start_time, response_time = duration, endpoint.name
-
 
 
 | limit 100
@@ -932,93 +895,70 @@ In the following example, the goal is to gather information on the child spans o
 fetch spans
 
 
-
 // request.id is pre-requisite for this query. not always present
-
 
 
 | filter isNotNull(request.id)
 
 
-
 | summarize {
-
 
 
 spans = count(),
 
 
-
 client_spans = countIf(span.kind == "client"),
-
 
 
 span_events = sum(arraySize(span.events)),
 
 
-
 // from all spans in the summarized group, select the one that is the request root
-
 
 
 request_root = takeMin(record(
 
 
-
 root_detection_helper = coalesce(if(request.is_root_span, 1), 2 /* INVALID */),
-
 
 
 start_time, endpoint.name, duration
 
 
-
 ))
-
 
 
 }, by: { trace.id, request.id }
 
 
-
 // reset request_root to NULL if root_detection_helper is invalid
-
 
 
 | fieldsAdd request_root=if(request_root[root_detection_helper] < 2, request_root)
 
 
-
 | fieldsFlatten request_root | fieldsRemove request_root.root_detection_helper, request_root
-
 
 
 | fields
 
 
-
 start_time = request_root.start_time,
-
 
 
 endpoint = request_root.endpoint.name,
 
 
-
 response_time = request_root.duration,
-
 
 
 spans,
 
 
-
 client_spans, span_events,
 
 
-
 trace.id
-
 
 
 | limit 100
@@ -1034,101 +974,76 @@ The following query finds the root request span and additionally does aggregatio
 fetch spans
 
 
-
 | summarize {
-
 
 
 spans = count(),
 
 
-
 client_spans = countIf(span.kind == "client"),
-
 
 
 span_events = sum(arraySize(span.events)),
 
 
-
 // endpoints involved in the trace
-
 
 
 endpoints = toString(arrayRemoveNulls(collectDistinct(endpoint.name))),
 
 
-
 // hosts involved in the trace
-
 
 
 hosts = arrayRemoveNulls(collectDistinct(host.name)),
 
 
-
 // from all spans in the summarized group, select the one that is the first request root in the trace
-
 
 
 trace_root = takeMin(record(
 
 
-
 root_detection_helper = coalesce(if(request.is_root_span, 1), if(isNull(span.parent_id), 2), 3),
-
 
 
 start_time, endpoint.name, duration
 
 
-
 ))
-
 
 
 }, by: { trace.id }
 
 
-
 | fieldsFlatten trace_root | fieldsRemove trace_root.root_detection_helper, trace_root
-
 
 
 | fields
 
 
-
 start_time = trace_root.start_time,
-
 
 
 endpoint = trace_root.endpoint.name,
 
 
-
 response_time = trace_root.duration,
-
 
 
 spans,
 
 
-
 client_spans, span_events,
-
 
 
 endpoints, hosts,
 
 
-
 trace.id
 
 
-
 | sort start_time
-
 
 
 | limit 100
@@ -1144,17 +1059,13 @@ If the request attribute name contains special characters, you need to use backt
 fetch spans
 
 
-
 // no backticks required
-
 
 
 | filter isNotNull(request_attribute.my_customer_id)
 
 
-
 // backticks required
-
 
 
 | filter isNotNull(`request_attribute.My Customer ID`)
@@ -1169,7 +1080,6 @@ For more examples, see the [HTTP Requests and Networkingï»¿](https://wkf10640
 ## Databases
 
 
-
 You can analyze your Databases with Traces DQL.
 
 Example: Top 10 most frequent database queries
@@ -1180,17 +1090,13 @@ This query identifies the top 10 most frequently executed database queries from 
 fetch spans
 
 
-
 | filter isNotNull(db.namespace) AND span.kind == "client"
-
 
 
 | summarize by:{db.system, db.operation.name, db.query.text}, count = count()
 
 
-
 | sort count desc
-
 
 
 | limit 10
@@ -1204,57 +1110,43 @@ This query identifies the top 10 database statements executed by each service, a
 fetch spans
 
 
-
 // filter for database spans
-
 
 
 | filter span.kind == "client" and isNotNull(db.namespace)
 
 
-
 // add service name
-
 
 
 | fieldsAdd entityName = dt.entity.service
 
 
-
 // calculate multiplicity factor for every span, to for extrapolations
-
 
 
 | fieldsAdd sampling.probability = (power(2, 56) - coalesce(sampling.threshold, 0)) * power(2, -56)
 
 
-
 | fieldsAdd sampling.multiplicity = 1/sampling.probability
-
 
 
 | fieldsAdd multiplicity = coalesce(sampling.multiplicity, 1)
 
 
-
 * coalesce(aggregation.count, 1)
-
 
 
 * dt.system.sampling_ratio
 
 
-
 | summarize { db_calls = sum(multiplicity) }, by: { dt.entity.service.name, code.function, db.system, db.namespace, db.query.text }
-
 
 
 // top 100
 
 
-
 | sort db_calls desc
-
 
 
 | limit 10
@@ -1268,109 +1160,82 @@ This query identifies the top 10 database calls made to each endpoint over time.
 fetch spans
 
 
-
 // calculate multiplicity factor for every span, to for extrapolations
-
 
 
 | fieldsAdd sampling.probability = (power(2, 56) - coalesce(sampling.threshold, 0)) * power(2, -56)
 
 
-
 | fieldsAdd sampling.multiplicity = 1/sampling.probability
-
 
 
 | fieldsAdd multiplicity = coalesce(sampling.multiplicity, 1)
 
 
-
 * coalesce(aggregation.count, 1)
-
 
 
 * dt.system.sampling_ratio
 
 
-
 | summarize {
-
 
 
 spans = count(),
 
 
-
 db_spans = countIf(span.kind == "client" and isNotNull(db.namespace)),
-
 
 
 db_calls = sum(if(span.kind == "client" and isNotNull(db.namespace),   multiplicity, else: 0) ),
 
 
-
 // from all spans in the summarized group, select the one that is the request root
-
 
 
 request_root = takeMin(record(
 
 
-
 root_detection_helper = coalesce(if(isNotNull(endpoint.name), 1), 2),
-
 
 
 start_time, endpoint.name, duration
 
 
-
 ))
-
 
 
 }, by: { trace.id, request.id }
 
 
-
 | fields
-
 
 
 start_time = request_root[start_time],
 
 
-
 endpoint = request_root[endpoint.name],
-
 
 
 respopnse_time = request_root[duration],
 
 
-
 spans,
-
 
 
 db_spans, db_calls,
 
 
-
 trace.id
-
 
 
 | makeTimeseries { avg(db_calls) }, by: { endpoint }
 
 
-
 // only show top 10 timeseries
 
 
-
 | sort arraySum(`avg(db_calls)`) desc
-
 
 
 | limit 10
@@ -1384,73 +1249,55 @@ This query identifies the top 10 database errors occurring in client spans, and 
 fetch spans
 
 
-
 // filter for database spans
-
 
 
 | filter span.kind == "client"
 
 
-
 | filter isNotNull(span.events)
-
 
 
 | filter db.namespace != ""
 
 
-
 | filter isNotNull(db.query.text)
-
 
 
 | filter eventname == "exception"
 
 
-
 // adds service name
-
 
 
 | fieldsAdd entityName(dt.entity.service)
 
 
-
 // adds the error message
-
 
 
 | fieldsAdd exception = span.events[0][exception.message]
 
 
-
 // adds span name
-
 
 
 | fieldsAdd eventname = span.events[0][span_event.name]
 
 
-
 | summarize {ExceptionMessage = collectDistinct(exception),
-
 
 
 Errors = count()},
 
 
-
 by:{Database = db.namespace, Query = db.query.text}
-
 
 
 // only show top 10 errors
 
 
-
 | sort Errors desc
-
 
 
 | limit 10
@@ -1474,41 +1321,31 @@ This query extracts spans that contain error events, specifically focusing on ex
 fetch spans
 
 
-
 // only spans which contain a span event of type "exception"
-
 
 
 | filter iAny(span.events[][span_event.name] == "error")
 
 
-
 // exclude specific exception
-
 
 
 | filter iAny(contains(span.events[][span_event.name], "http"))
 
 
-
 // make exception attributes top level attributes
-
 
 
 | expand span.events
 
 
-
 | fields span.events
-
 
 
 | fieldsFlatten span.events
 
 
-
 | fieldsRemove span.events
-
 
 
 | limit 1000
@@ -1522,29 +1359,22 @@ This query performs a full-text search on the stack trace of spans to find speci
 fetch spans
 
 
-
 // full text search on stacktrace
-
 
 
 | filter iAny(contains(span.events[][exception.stack_trace], "hang up"))
 
 
-
 // make exception attributes top level attributes
-
 
 
 | expand span.events
 
 
-
 | fields span.events
 
 
-
 | fieldsFlatten span.events
-
 
 
 | limit 1000
@@ -1558,25 +1388,19 @@ This query counts the number of exceptions by their type.
 fetch spans
 
 
-
 // only spans which contain a span event of type "exception"
-
 
 
 | filter iAny(span.events[][span_event.name] == "exception")
 
 
-
 // make exception type top level attribute
-
 
 
 | expand span.events
 
 
-
 | fieldsFlatten span.events, fields: { exception.type }
-
 
 
 | summarize count(), by: { exception.type }
@@ -1592,25 +1416,19 @@ This query creates a timeseries chart showing the frequency of exceptions by the
 fetch spans
 
 
-
 // only spans which contain a span event of type "exception"
-
 
 
 | filter iAny(span.events[][span_event.name] == "exception")
 
 
-
 // make exception type top level attribute
-
 
 
 | expand span.events
 
 
-
 | fieldsFlatten span.events, fields: { exception.type }
-
 
 
 | makeTimeseries count(), by: { exception.type }
@@ -1628,53 +1446,40 @@ This query extracts structured information from exception messages using the `pa
 fetch spans
 
 
-
 | filter iAny(contains(span.events[][exception.message], "Bio for user with id"))
-
 
 
 // make exception attributes top level attributes
 
 
-
 | expand span.events
-
 
 
 | fields span.events
 
 
-
 | fieldsFlatten span.events
-
 
 
 | fieldsRemove span.events
 
 
-
 // parse "user_id" number from the exception message
-
 
 
 // Example message: "Bio for user with id '9146' not found"
 
 
-
 | parse `span.events.exception.message`, "Bio for user with id \'INT:user_id\' not found"
-
 
 
 | summarize count(), by: { user_id }
 
 
-
 // show top 5
 
 
-
 | sort `count()` desc
-
 
 
 | limit 5
@@ -1696,13 +1501,10 @@ This query fetches logs that are enriched with trace context information.
 fetch logs
 
 
-
 // only logs that have a trace context
 
 
-
 | filterOut isNull(trace_id)
-
 
 
 | limit 10
@@ -1716,41 +1518,31 @@ This query fetches spans that contain a specific string in their attributes.
 fetch spans
 
 
-
 | filter trace.id in [
-
 
 
 fetch logs
 
 
-
 // only logs that have a trace context
-
 
 
 | filter isNotNull(trace_id)
 
 
-
 // search for a particular string in logs content
-
 
 
 | filter contains(content, "No carts for user")
 
 
-
 // convert from string to UID type
-
 
 
 | fields toUid(trace_id)
 
 
-
 ]
-
 
 
 | limit 5
@@ -1764,45 +1556,34 @@ This query fetches spans that were active when a specific log message was emitte
 fetch spans
 
 
-
 | filter span.id in [
-
 
 
 fetch logs
 
 
-
 // only logs that have a trace context
-
 
 
 | filter isNotNull(span_id)
 
 
-
 | filter contains(content, "No carts for user")
-
 
 
 // convert from string to UID type
 
 
-
 | fields toUid(span_id)
-
 
 
 ]
 
 
-
 // pick either the span name or code namespace and function, depending on what's available
 
 
-
 | fieldsAdd name = coalesce(span.name, concat(code.namespace, ".", code.function))
-
 
 
 | summarize { count(), avg(duration), p99=percentile(duration, 99), trace.id=takeAny(trace.id) } , by: { k8s.pod.name, name }
@@ -1816,25 +1597,19 @@ This query joins spans with logs based on the trace ID.
 fetch spans
 
 
-
 | fieldsAdd trace_id = toString(trace.id)
-
 
 
 | join [ fetch logs ]
 
 
-
 , on:{ left[trace_id] == right[trace_id] }
-
 
 
 , fields: { content, loglevel }
 
 
-
 | fields start_time, trace.id, span.id, code=concat(code.namespace, ".", code.function), loglevel, content
-
 
 
 | limit 100
@@ -1843,7 +1618,6 @@ fetch spans
 For more examples, see the [Logsï»¿](https://wkf10640.apps.dynatrace.com/ui/document/v0/#share=3701c262-0afd-4ad7-bdf0-154fe93333ca) notebook in Dynatrace Playground.
 
 ## Sampling, aggregation, and extrapolation
-
 
 
 Sampling
@@ -1866,21 +1640,16 @@ Extrapolation
     // calculate multiplicity factor for every span, to for extrapolations
 
 
-
     | fieldsAdd sampling.probability = (power(2, 56) - coalesce(sampling.threshold, 0)) * power(2, -56)
-
 
 
     | fieldsAdd sampling.multiplicity = 1/sampling.probability
 
 
-
     | fieldsAdd multiplicity = coalesce(sampling.multiplicity, 1)
 
 
-
     * coalesce(aggregation.count, 1)
-
 
 
     * dt.system.sampling_ratio
@@ -1900,45 +1669,34 @@ This query counts the number of requests with extrapolations applied.
 fetch spans
 
 
-
 // read only 1% of data for better read performance
-
 
 
 , samplingRatio:100
 
 
-
 // only request roots
-
 
 
 | filter request.is_root_span == true
 
 
-
 // calculate multiplicity factor for every span, to for extrapolations
-
 
 
 | fieldsAdd sampling.probability = (power(2, 56) - coalesce(sampling.threshold, 0)) * power(2, -56)
 
 
-
 | fieldsAdd sampling.multiplicity = 1/sampling.probability
-
 
 
 | fieldsAdd multiplicity = coalesce(sampling.multiplicity, 1)
 
 
-
 * coalesce(aggregation.count, 1)
 
 
-
 * dt.system.sampling_ratio
-
 
 
 | summarize span_count=count(), request_count_extrapolated = sum(multiplicity)
@@ -1954,61 +1712,46 @@ This query counts the number of database calls with extrapolations applied.
 fetch spans
 
 
-
 // read only 1% of data for better read performance
-
 
 
 , samplingRatio:100
 
 
-
 // only database spans
-
 
 
 | filter isNotNull(db.statement)
 
 
-
 // calculate multiplicity factor for every span, to for extrapolations
-
 
 
 | fieldsAdd sampling.probability = (power(2, 56) - coalesce(sampling.threshold, 0)) * power(2, -56)
 
 
-
 | fieldsAdd sampling.multiplicity = 1/sampling.probability
-
 
 
 | fieldsAdd multiplicity = coalesce(sampling.multiplicity, 1)
 
 
-
 * coalesce(aggregation.count, 1)
-
 
 
 * dt.system.sampling_ratio
 
 
-
 | fieldsAdd aggregation.duration_avg = coalesce(aggregation.duration_sum / aggregation.count, duration)
-
 
 
 | summarize {
 
 
-
 operation_count_extrapolated = sum(multiplicity),
 
 
-
 operation_duration_extrapolated = sum(aggregation.duration_avg * multiplicity) / sum(multiplicity)
-
 
 
 }
@@ -2021,7 +1764,6 @@ For more examples, see the [Sampling, aggregation, and extrapolationï»¿](http
 ## Trace query usage
 
 
-
 Explore the Trace query usage from the billing perspective. Discover usage per apps, users, and query type.
 
 Example: Query traces usage for Apps
@@ -2032,153 +1774,115 @@ This query analyzes billing usage data specifically related to trace queries, ai
 fetch dt.system.events
 
 
-
 | filter event.kind == "BILLING_USAGE_EVENT"
-
 
 
 | filter event.type == "Traces - Query"
 
 
-
 | dedup event.id
 
 
-
 | summarize {
-
 
 
 data_read_GiB = sum(billed_bytes / 1024 / 1024 / 1024.0),
 
 
-
 Query_count = count()
-
 
 
 }, by: {
 
 
-
 App_context = client.application_context, application_detail = client.source, User = user.email
 
 
-
 }
-
 
 
 | fieldsAdd split_by_user = record(data_read_GiB, App_context, application_detail, User, Query_count)
 
 
-
 | summarize {
-
 
 
 split_by_user = arraySort(collectArray(split_by_user), direction: "descending"),
 
 
-
 data_read_GiB = sum(data_read_GiB),
-
 
 
 Query_count = sum(Query_count)
 
 
-
 }, by:{
-
 
 
 App_context, application_detail
 
 
-
 }
-
 
 
 | fieldsAdd split_by_user = record(App_context = split_by_user[][App_context], application_detail = split_by_user[][application_detail], User = split_by_user[][User], data_read_GiB = split_by_user[][data_read_GiB], data_read_pct = (split_by_user[][data_read_GiB] / data_read_GiB * 100), Query_count = split_by_user[][Query_count])
 
 
-
 | fieldsAdd split_by_user = if(arraySize(split_by_user) == 1, arrayFirst(split_by_user)[User], else: split_by_user)
-
 
 
 | fieldsAdd application_details = record(data_read_GiB, App_context, application_detail, split_by_user, Query_count)
 
 
-
 | summarize {
-
 
 
 application_details = arraySort(collectArray(application_details), direction: "descending"),
 
 
-
 data_read_GiB = sum(data_read_GiB),
-
 
 
 Query_count = toLong(sum(Query_count))
 
 
-
 }, by:{
-
 
 
 App_context
 
 
-
 }
-
 
 
 | fieldsAdd application_details = record(App_context = application_details[][App_context], application_detail = application_details[][application_detail], split_by_user = application_details[][split_by_user], data_read_GiB = application_details[][data_read_GiB], data_read_pct = application_details[][data_read_GiB] / data_read_GiB * 100, Query_count = application_details[][Query_count])
 
 
-
 | fieldsAdd key = 1
-
 
 
 | fieldsAdd total = lookup([
 
 
-
 fetch dt.system.events
-
 
 
 | filter event.kind == "BILLING_USAGE_EVENT" and event.type == "Traces - Query"
 
 
-
 | dedup event.id
-
 
 
 | summarize total = sum(billed_bytes / 1024 / 1024 / 1024.0)
 
 
-
 | fieldsAdd key = 1
-
 
 
 ], sourceField: key, lookupField:key)[total]
 
 
-
 | fields App_context, application_details, data_read_GiB, data_read_pct = data_read_GiB / total * 100, Query_count
-
 
 
 | sort data_read_GiB desc
@@ -2192,153 +1896,115 @@ This query provides a detailed breakdown of trace query billing usage by user, f
 fetch dt.system.events
 
 
-
 | filter event.kind == "BILLING_USAGE_EVENT"
-
 
 
 | filter event.type == "Traces - Query"
 
 
-
 | dedup event.id
 
 
-
 | summarize {
-
 
 
 data_read_GiB = sum(billed_bytes / 1024 / 1024 / 1024.0),
 
 
-
 Query_count = count()
-
 
 
 }, by: {
 
 
-
 App_context = client.application_context, application_detail = client.source, User = user.email
 
 
-
 }
-
 
 
 | fieldsAdd split_by_application_detail = record(data_read_GiB, App_context, application_detail, User, Query_count)
 
 
-
 | summarize {
-
 
 
 split_by_application_detail = arraySort(collectArray(split_by_application_detail), direction: "descending"),
 
 
-
 data_read_GiB = sum(data_read_GiB),
-
 
 
 Query_count = sum(Query_count)
 
 
-
 }, by:{
-
 
 
 User, App_context
 
 
-
 }
-
 
 
 | fieldsAdd split_by_application_detail = record(User = split_by_application_detail[][User], App_context = split_by_application_detail[][App_context], application_detail = split_by_application_detail[][application_detail], data_read_GiB = split_by_application_detail[][data_read_GiB], data_read_pct = (split_by_application_detail[][data_read_GiB] / data_read_GiB * 100), Query_count = split_by_application_detail[][Query_count])
 
 
-
 | fieldsAdd split_by_application_detail = if(arraySize(split_by_application_detail) == 1, arrayFirst(split_by_application_detail)[application_detail], else: split_by_application_detail)
-
 
 
 | fieldsAdd App_contexts = record(data_read_GiB, User, App_context, split_by_application_detail, Query_count)
 
 
-
 | summarize {
-
 
 
 App_contexts = arraySort(collectArray(App_contexts), direction: "descending"),
 
 
-
 data_read_GiB = sum(data_read_GiB),
-
 
 
 Query_count = toLong(sum(Query_count))
 
 
-
 }, by:{
-
 
 
 User
 
 
-
 }
-
 
 
 | fieldsAdd App_contexts = record(User = App_contexts[][User], App_context = App_contexts[][App_context], split_by_application_detail = App_contexts[][split_by_application_detail], data_read_GiB = App_contexts[][data_read_GiB], data_read_pct = App_contexts[][data_read_GiB] / data_read_GiB * 100, Query_count = App_contexts[][Query_count])
 
 
-
 | fieldsAdd key = 1
-
 
 
 | fieldsAdd total = lookup([
 
 
-
 fetch dt.system.events
-
 
 
 | filter event.kind == "BILLING_USAGE_EVENT" and event.type == "Traces - Query"
 
 
-
 | dedup event.id
-
 
 
 | summarize total = sum(billed_bytes / 1024 / 1024 / 1024.0)
 
 
-
 | fieldsAdd key = 1
-
 
 
 ], sourceField: key, lookupField:key)[total]
 
 
-
 | fields User, App_contexts, data_read_GiB, data_read_pct = data_read_GiB / total * 100, Query_count
-
 
 
 | sort data_read_GiB desc
@@ -2352,17 +2018,13 @@ This query identifies the top 10 disks with the highest average usage across hos
 timeseries percent = avg(dt.host.disk.used.percent), by:{dt.entity.host, dt.entity.disk}
 
 
-
 | fieldsAdd percent = arrayAvg(percent)
-
 
 
 | fieldsAdd display = concat(entityName(dt.entity.host), " | ",  entityName(dt.entity.disk), " | " , round(percent, decimals:2), "%", if(percent>80, "â ï¸"))
 
 
-
 | sort percent desc
-
 
 
 | limit 10
@@ -2391,7 +2053,6 @@ scraped: 2026-03-06T21:10:05.194209
 
 # Retain trace data for long periods
 
-# Retain trace data for long periods
 
 * Latest Dynatrace
 * Tutorial
@@ -2499,7 +2160,6 @@ scraped: 2026-03-06T21:12:30.239053
 
 # Detect performance issues
 
-# Detect performance issues
 
 * Latest Dynatrace
 * Tutorial
@@ -2602,7 +2262,6 @@ scraped: 2026-03-06T21:22:48.617165
 
 # Manage facets
 
-# Manage facets
 
 * Latest Dynatrace
 * How-to guide
@@ -2675,7 +2334,6 @@ scraped: 2026-03-06T21:12:10.619868
 
 # Distributed Tracing app
 
-# Distributed Tracing app
 
 * Latest Dynatrace
 * Explanation
@@ -2842,7 +2500,6 @@ scraped: 2026-03-06T21:12:06.923724
 
 # Exception analysis
 
-# Exception analysis
 
 * Latest Dynatrace
 * Tutorial
@@ -2945,7 +2602,6 @@ scraped: 2026-03-06T21:12:03.627298
 
 # Ingest traces
 
-# Ingest traces
 
 * Latest Dynatrace
 * How-to guide
@@ -3014,7 +2670,6 @@ scraped: 2026-03-06T21:12:31.901700
 
 # Set up Grail permissions for Distributed Tracing
 
-# Set up Grail permissions for Distributed Tracing
 
 * Latest Dynatrace
 * How-to guide
@@ -3054,7 +2709,6 @@ Alternatively, you can define a security context based on existing resource attr
 
 ```
 fetch spans
-
 
 
 | filter matchesPhrase(deployment.release_stage, "prod-")
@@ -3102,7 +2756,6 @@ scraped: 2026-03-06T21:12:25.224798
 
 # Configure data storage and retention for Distributed Tracing
 
-# Configure data storage and retention for Distributed Tracing
 
 * Latest Dynatrace
 * How-to guide
@@ -3185,7 +2838,6 @@ scraped: 2026-03-06T21:12:05.268034
 
 # Span and trace context propagation
 
-# Span and trace context propagation
 
 * Latest Dynatrace
 * Reference
@@ -3266,7 +2918,6 @@ scraped: 2026-03-06T21:12:23.534272
 
 # Use traces, DQL, and logs to spot patterns
 
-# Use traces, DQL, and logs to spot patterns
 
 * Latest Dynatrace
 * Tutorial
@@ -3393,13 +3044,10 @@ Explain this DQL query
 fetch spans
 
 
-
 | filter isNotNull(db.query.text)
 
 
-
 | parse db.query.text, "string:type"
-
 
 
 | makeTimeseries count(), by:{upper(type)}
@@ -3425,9 +3073,7 @@ Explain this DQL query
 fetch spans
 
 
-
 | filter isNotNull(db.query.text)
-
 
 
 | makeTimeseries sum(duration), by:{db.query.text}
@@ -3442,7 +3088,6 @@ This time series allows us to spot time-consuming database queries and is great 
 ### Reveal high-impact queries
 
 
-
 With this query, we can check how many rows of data are affectedâfor example, `SELECT`ed, `INSERT`ed, or `DELETE`dâby each database query.
 
 Explain this DQL query
@@ -3455,9 +3100,7 @@ Explain this DQL query
 fetch spans
 
 
-
 | filter isNotNull(db.query.text)
-
 
 
 | makeTimeseries sum(db.affected_item_count), by:{db.query.text}
@@ -3489,17 +3132,13 @@ Explain this DQL query
 fetch spans
 
 
-
 | filter iAny(span.events[][span_event.name] == "exception")
-
 
 
 | expand span.events
 
 
-
 | fieldsFlatten span.events, fields: {exception.type}
-
 
 
 | makeTimeseries count(), by: {exception.type}, time:start_time
@@ -3531,17 +3170,13 @@ Explain this DQL query
 fetch spans
 
 
-
 | filter iAny(span.events[][span_event.name] == "exception")
-
 
 
 | expand span.events
 
 
-
 | fieldsFlatten span.events, fields: {exception.type, exception.message}
-
 
 
 | summarize count(), by: {service.name, exception.message}
@@ -3587,17 +3222,13 @@ Explain this DQL query
 fetch spans
 
 
-
 | filter matchesValue(`span.kind`, "internal")
-
 
 
 | summarize {durationSum = sum(duration), callCount = count(), avgDuration = avg(duration)}, by: {service.name, span.name}
 
 
-
 | sort avgDuration desc
-
 
 
 | limit 10
@@ -3623,17 +3254,13 @@ Explain this DQL query
 fetch logs
 
 
-
 | filter isNotNull(trace_id)
-
 
 
 | summarize count = count(), by: {service.name}
 
 
-
 | sort count desc
-
 
 
 | limit 20
@@ -3644,7 +3271,6 @@ Run in Playground
 Such a DQL query comes in handy when you need to understand which services produce the largest number of logs. Knowing that, you can identify log-heavy services, which might be over-logging, and optimize log ingestion costs.
 
 ## Join logs and traces: count logs per service endpoint
-
 
 
 Finally, let's find out how many logs are created per service endpoint.
@@ -3669,37 +3295,28 @@ Explain this DQL query
 fetch spans
 
 
-
 | join [
-
 
 
 fetch logs
 
 
-
 | fieldsAdd trace.id = toUid(trace_id)
-
 
 
 | summarize logCount = count(), by: {trace.id}
 
 
-
 ], on: {trace.id}
-
 
 
 | filter isNotNull(http.url)
 
 
-
 | summarize {requestCount = count(), logCount = sum(right.logCount)}, by: {http.url}
 
 
-
 | fieldsAdd logPerRequest = logCount / requestCount
-
 
 
 | sort logPerRequest desc
@@ -3740,7 +3357,6 @@ scraped: 2026-03-06T21:09:46.417540
 
 # Distributed Tracing
 
-# Distributed Tracing
 
 * Latest Dynatrace
 * App
@@ -3875,7 +3491,6 @@ The span context allows a child span to relate to the trace and its parent span.
 ### Attribute
 
 
-
 Attributes are key-value pairs that provide details about a span, request, or resource such as response codes, HTTP methods, and URLs. Via attributes, you can group, query, find, and analyze your traces and spans.
 
 #### Use cases
@@ -3998,7 +3613,6 @@ scraped: 2026-03-05T21:31:23.604150
 
 # Configure additional settings for Live Debugging
 
-# Configure additional settings for Live Debugging
 
 * Latest Dynatrace
 * How-to guide
@@ -4054,41 +3668,31 @@ If your application's code is being transpiled or bundled, you need to include t
 const TerserPlugin = require("terser-webpack-plugin");
 
 
-
 module.exports = {
-
 
 
 // ...
 
 
-
 optimization: {
-
 
 
 minimizer: \[new TerserPlugin({
 
 
-
 terserOptions: {
-
 
 
 mangle: false,
 
 
-
 },
-
 
 
 })],
 
 
-
 },
-
 
 
 };
@@ -4159,7 +3763,6 @@ scraped: 2026-03-06T21:32:45.256610
 
 # Live Debugger breakpoints
 
-# Live Debugger breakpoints
 
 * Latest Dynatrace
 * Explanation
@@ -4305,7 +3908,6 @@ scraped: 2026-03-05T21:32:28.128008
 
 # Use Live Debugger with your IDE
 
-# Use Live Debugger with your IDE
 
 * Latest Dynatrace
 * How-to guide
@@ -4409,7 +4011,6 @@ scraped: 2026-03-04T21:33:29.156035
 
 # Set up permissions for Live Debugging
 
-# Set up permissions for Live Debugging
 
 * Latest Dynatrace
 * How-to guide
@@ -4494,7 +4095,6 @@ Grants permission to read user-level Live Debugging snapshots.
   ALLOW storage:application.snapshots:read;
 
 
-
   ALLOW storage:buckets:read WHERE storage:table-name = "application.snapshots";
   ```
 
@@ -4510,7 +4110,6 @@ scraped: 2026-03-06T21:17:25.680314
 
 # Live Debugger
 
-# Live Debugger
 
 * Latest Dynatrace
 * App
@@ -4591,9 +4190,7 @@ To enable the Live Debugger module
    activeGate:
 
 
-
    capabilities:
-
 
 
    - debugging
@@ -4665,7 +4262,6 @@ To use Bitbucket On-Premises, install the [Dynatrace Desktop app](#local-file-sy
 3. Install the app according to the instructions in your operating system.
 
 ### Place a non-breaking breakpoint
-
 
 
 To get real-time code-level data
@@ -4759,7 +4355,6 @@ scraped: 2026-03-06T21:28:56.990128
 
 # Top database statements
 
-# Top database statements
 
 * Classic
 * How-to guide
@@ -4871,7 +4466,6 @@ scraped: 2026-03-06T21:33:41.702134
 
 # Top web requests
 
-# Top web requests
 
 * Classic
 * How-to guide
@@ -4954,7 +4548,6 @@ scraped: 2026-03-06T21:17:27.365659
 
 # Multidimensional analysis
 
-# Multidimensional analysis
 
 * Classic
 * How-to guide
@@ -5074,7 +4667,6 @@ scraped: 2026-03-06T21:20:13.204821
 
 # Crash analysis
 
-# Crash analysis
 
 * Classic
 * How-to guide
@@ -5101,129 +4693,97 @@ Crash details often include a **Download** button that provides access to additi
 dumpproc version 1.108.0.20161025-115919, installer version 1.108.0.20161025-121046
 
 
-
 2016-11-09 18:00:44: Application 'CreditCardAutho', inner pid '15891', outer pid '0', signal: 'Segmentation fault' (11)
-
 
 
 process group ID: 0x441b2cb89962033d
 
 
-
 process group instance ID: 0xfe58bab23100f42c
-
 
 
 process group Name: easytravel-*-x*
 
 
-
 threadCount: 1
-
 
 
 thread: 0 - stack range: 0x7ffeda572000-0x7ffeda594000, size: 136 kB
 
 
-
 0x00007ffeda592be0 0x00007f4de477604d libpthread-2.15.so!<imagebase>+0xf04d
-
 
 
 0x00007ffeda592bf0 0x00000000004038d8 CreditCardAuthorizationS64!main+0x1b8
 
 
-
 0x00007ffeda592c60 0x00007f4de41c676d libc-2.15.so!__libc_start_main+0xed
-
 
 
 0x00007ffeda592d20 0x000000000040329a CreditCardAuthorizationS64!<imagebase>+0x329a
 
 
-
 mapped files:
-
 
 
 0000000000400000-000000000041e000 0 /home/labuser/easytravel-2.0.0-x64/CreditCardAuthorizationS64 (MD5: da5992daf5ba3b76c633c853c7da5e87)
 
 
-
 000000000051d000-000000000051e000 1d /home/labuser/easytravel-2.0.0-x64/CreditCardAuthorizationS64 (MD5: da5992daf5ba3b76c633c853c7da5e87)
-
 
 
 00007f4de41a5000-00007f4de4359000 0 /lib/x86_64-linux-gnu/libc-2.15.so (GNU Build-Id: aa64a66ac46bff200848c0a0694011bd0140ab4e)
 
 
-
 00007f4de4359000-00007f4de4558000 1b4 /lib/x86_64-linux-gnu/libc-2.15.so (GNU Build-Id: aa64a66ac46bff200848c0a0694011bd0140ab4e)
-
 
 
 00007f4de4558000-00007f4de455c000 1b3 /lib/x86_64-linux-gnu/libc-2.15.so (GNU Build-Id: aa64a66ac46bff200848c0a0694011bd0140ab4e)
 
 
-
 00007f4de455c000-00007f4de455e000 1b7 /lib/x86_64-linux-gnu/libc-2.15.so (GNU Build-Id: aa64a66ac46bff200848c0a0694011bd0140ab4e)
-
 
 
 00007f4de4563000-00007f4de4565000 0 /lib/x86_64-linux-gnu/libdl-2.15.so (GNU Build-Id: d181af551dbbc43e9d55913d532635fde18e7c4e)
 
 
-
 00007f4de4565000-00007f4de4765000 2 /lib/x86_64-linux-gnu/libdl-2.15.so (GNU Build-Id: d181af551dbbc43e9d55913d532635fde18e7c4e)
-
 
 
 00007f4de4765000-00007f4de4766000 2 /lib/x86_64-linux-gnu/libdl-2.15.so (GNU Build-Id: d181af551dbbc43e9d55913d532635fde18e7c4e)
 
 
-
 00007f4de4766000-00007f4de4767000 3 /lib/x86_64-linux-gnu/libdl-2.15.so (GNU Build-Id: d181af551dbbc43e9d55913d532635fde18e7c4e)
-
 
 
 00007f4de4767000-00007f4de477f000 0 /lib/x86_64-linux-gnu/libpthread-2.15.so (GNU Build-Id: c340af9dee97c17c730f7d03693286c5194a46b8)
 
 
-
 00007f4de477f000-00007f4de497e000 18 /lib/x86_64-linux-gnu/libpthread-2.15.so (GNU Build-Id: c340af9dee97c17c730f7d03693286c5194a46b8)
-
 
 
 00007f4de497e000-00007f4de497f000 17 /lib/x86_64-linux-gnu/libpthread-2.15.so (GNU Build-Id: c340af9dee97c17c730f7d03693286c5194a46b8)
 
 
-
 00007f4de497f000-00007f4de4980000 18 /lib/x86_64-linux-gnu/libpthread-2.15.so (GNU Build-Id: c340af9dee97c17c730f7d03693286c5194a46b8)
-
 
 
 00007f4de4984000-00007f4de4a02000 0 /lib/x86_64-linux-gnu/liboneagentproc.so (1.108.0.20161025-115919)
 
 
-
 00007f4de4a02000-00007f4de4c01000 7e /lib/x86_64-linux-gnu/liboneagentproc.so (1.108.0.20161025-115919)
-
 
 
 00007f4de4c01000-00007f4de4c03000 7d /lib/x86_64-linux-gnu/liboneagentproc.so (1.108.0.20161025-115919)
 
 
-
 00007f4de4c03000-00007f4de4c05000 7f /lib/x86_64-linux-gnu/liboneagentproc.so (1.108.0.20161025-115919)
-
 
 
 00007f4de4cc0000-00007f4de4ce2000 0 /lib/x86_64-linux-gnu/ld-2.15.so (GNU Build-Id: e25ad1a11ccf57e734116b8ec9c69f643dca9f18)
 
 
-
 00007f4de4ee2000-00007f4de4ee3000 22 /lib/x86_64-linux-gnu/ld-2.15.so (GNU Build-Id: e25ad1a11ccf57e734116b8ec9c69f643dca9f18)
-
 
 
 00007f4de4ee3000-00007f4de4ee5000 23 /lib/x86_64-linux-gnu/ld-2.15.so (GNU Build-Id: e25ad1a11ccf57e734116b8ec9c69f643dca9f18)
@@ -5263,7 +4823,6 @@ In the last example, when a program crashes, the `coredump` output is pushed to 
 [Read moreâ¦ï»¿](https://askubuntu.com/questions/420410/how-to-permanently-edit-the-core-pattern-file)
 
 ### Operating system changes
-
 
 
 OneAgent installer performs the following changes to your system to handle core dumps.
@@ -5344,7 +4903,6 @@ scraped: 2026-03-04T21:32:39.693962
 
 # Analyze memory dumps
 
-# Analyze memory dumps
 
 * Classic
 * How-to guide
@@ -5457,7 +5015,6 @@ scraped: 2026-03-06T21:17:22.247193
 
 # Profiling and optimization
 
-# Profiling and optimization
 
 * Classic
 * Overview
@@ -5494,7 +5051,6 @@ scraped: 2026-03-06T21:32:31.355718
 
 # Calculated metrics for services
 
-# Calculated metrics for services
 
 * Latest Dynatrace
 * How-to guide
@@ -5624,7 +5180,6 @@ For a complete list of available dimensions see [Built-in Metrics on Grail - Cal
 ## Related topics
 
 
-
 * [Service metrics API](dynatrace-api/configuration-api/calculated-metrics/service-metrics.md "Manage calculated service metrics via the Dynatrace configuration API.")
 * [Multidimensional analysis](../ru/observe/application-observability/multidimensional-analysis.md "Configure a multidimensional analysis view and save it as a calculated metric.")
 
@@ -5640,7 +5195,6 @@ scraped: 2026-03-06T21:26:01.503322
 
 # Custom API definitions
 
-# Custom API definitions
 
 * Latest Dynatrace
 * How-to guide
@@ -5681,7 +5235,6 @@ scraped: 2026-02-23T21:35:46.464742
 
 # Leverage enhanced endpoints for SDv1
 
-# Leverage enhanced endpoints for SDv1
 
 * Latest Dynatrace
 * How-to guide
@@ -5766,7 +5319,6 @@ From there, you can view the service endpoints, check the related endpoint metri
 ![Services app showing the Endpoints section with four different endpoints and their metrics](https://dt-cdn.net/images/service-app-endpoints-section-3840-6f62930eb6.png)
 
 ## Changes to endpoint names
-
 
 
 Enabling the **Enhanced endpoints for SDv1** feature changes some request names and their associated endpoint names. Check the flowchart and textual description below for the details.
@@ -5869,7 +5421,6 @@ scraped: 2026-03-06T21:10:41.458675
 
 # Failure Analysis
 
-# Failure Analysis
 
 * Latest Dynatrace
 * Tutorial
@@ -5982,7 +5533,6 @@ scraped: 2026-03-06T21:18:27.453892
 
 # Monitor service message processing
 
-# Monitor service message processing
 
 * Latest Dynatrace
 * Tutorial
@@ -6053,25 +5603,19 @@ Monitor service messaging throughput:
 timeseries throughput = sum(dt.service.messaging.process.count),
 
 
-
 by: {dt.smartscape.service}
-
 
 
 | lookup [smartscapeNodes "SERVICE" | fields name,id],
 
 
-
 sourceField:dt.smartscape.service, lookupField:id
-
 
 
 | fieldsAdd `Service` = lookup.name, dt.smartscape.service
 
 
-
 | summarize throughput = sum(throughput[]),
-
 
 
 by: { timeframe, interval, `Service`, dt.smartscape.service }
@@ -6083,29 +5627,22 @@ Calculate service messaging failure rate:
 timeseries { throughput = sum(dt.service.messaging.process.count),
 
 
-
 failure_count = sum(dt.service.messaging.process.failure_count) },
-
 
 
 by: {dt.smartscape.service}, nonempty:true, union:true
 
 
-
 | lookup [ smartscapeNodes "SERVICE" | fields name, id],
-
 
 
 sourceField:dt.smartscape.service, lookupField:id
 
 
-
 | fieldsAdd `Service` = lookup.name, dt.smartscape.service
 
 
-
 | summarize failure_rate = sum((failure_count[] / throughput[]) * 100),
-
 
 
 by: { timeframe, interval, `Service`, dt.smartscape.service }
@@ -6123,7 +5660,6 @@ scraped: 2026-03-06T21:23:04.069896
 
 # Capture request attributes based on method arguments
 
-# Capture request attributes based on method arguments
 
 * Latest Dynatrace
 * 6-min read
@@ -6254,7 +5790,6 @@ scraped: 2026-03-06T21:23:11.613362
 
 # Capture request attributes based on web request data
 
-# Capture request attributes based on web request data
 
 * Latest Dynatrace
 * 4-min read
@@ -6354,7 +5889,6 @@ scraped: 2026-03-06T21:23:07.407482
 
 # Filter monitoring data via request attributes
 
-# Filter monitoring data via request attributes
 
 * Latest Dynatrace
 * 2-min read
@@ -6404,7 +5938,6 @@ scraped: 2026-03-06T21:12:20.029265
 
 # Request attributes
 
-# Request attributes
 
 * Latest Dynatrace
 * 3-min read
@@ -6483,7 +6016,6 @@ scraped: 2026-03-06T21:10:37.879847
 
 # Response time analysis
 
-# Response time analysis
 
 * Latest Dynatrace
 * Tutorial
@@ -6571,7 +6103,6 @@ scraped: 2026-03-06T21:18:29.143198
 
 # Configure service failure detection
 
-# Configure service failure detection
 
 * Classic
 * How-to guide
@@ -6655,7 +6186,6 @@ Parameters for failure detection include HTTP-specific parameters and general pa
 ### General parameters
 
 
-
 * **Success forcing exceptions**
 
   These exceptions indicate that a service call should not be considered as failed, for example, because the client aborted the operation. Although they are technical errors, in principle they don't count as failed requests because they aren't caused by faults with the service. If a request encounters such an exception in the root call of the service, Dynatrace considers the request to be successful, regardless of the HTTP error code or any other information. You can select **Add exception** to add exception classes that indicate such situations.
@@ -6724,7 +6254,6 @@ scraped: 2026-03-06T21:22:34.909415
 
 # Service detection rules
 
-# Service detection rules
 
 * Classic
 * How-to guide
@@ -6791,161 +6320,121 @@ To define a new service detection rule via API
    [
 
 
-
    {
-
 
 
    "schemaId":"builtin:service-detection.full-web-request",
 
 
-
    "scope":"environment",
-
 
 
    "value":{
 
 
-
    "enabled":true,
-
 
 
    "name":"Detect Application,Application-1 as the same",
 
 
-
    "description":"Example: merge services",
-
 
 
    "managementZones":["-8445121454707515572"],
 
 
-
    "idContributors":{
-
 
 
    "applicationId":{
 
 
-
    "enableIdContributor":true,
-
 
 
    "serviceIdContributor":{
 
 
-
    "contributionType":"TransformValue",
-
 
 
    "transformations": [
 
 
-
    {
-
 
 
    "transformationType":"REMOVE_NUMBERS",
 
 
-
    "minDigitCount":1,
-
 
 
    "includeHexNumbers":false
 
 
-
    }
-
 
 
    ]
 
 
-
    }
 
 
-
    },
-
 
 
    "contextRoot":{
 
 
-
    "enableIdContributor":false
 
 
-
    },
-
 
 
    "serverName":{
 
 
-
    "enableIdContributor":false
 
 
-
    }
-
 
 
    },
 
 
-
    "conditions": [
-
 
 
    {
 
 
-
    "attribute":"ApplicationId",
-
 
 
    "compareOperationType":"StringStartsWith",
 
 
-
    "textValues": ["application"],
-
 
 
    "ignoreCase":false
 
 
-
    }
-
 
 
    ]
 
 
-
    }
 
 
-
    }
-
 
 
    ]
@@ -6982,161 +6471,121 @@ To update an existing rule via API
    [
 
 
-
    {
-
 
 
    "updateToken":"vu9U3hXY3q0ATAAkOWFiNGI2ZDAtYWFhNC00M2IwLWEzZDYtNDQ2OTZkNzIyYzE5ACRmMTA1NTJlMC01M2Q5LTExZWQtODAwMS0wMTAwMDAwMDAwMDO-71TeFdjerQ",
 
 
-
    "value":{
-
 
 
    "enabled":true,
 
 
-
    "name":"Detect Application, Application-1 as the same",
-
 
 
    "description":"Example: merge services",
 
 
-
    "managementZones":["-8445121454707515572"],
-
 
 
    "idContributors":{
 
 
-
    "applicationId":{
-
 
 
    "enableIdContributor":true,
 
 
-
    "serviceIdContributor":{
-
 
 
    "contributionType":"TransformValue",
 
 
-
    "transformations":[
 
 
-
    {
-
 
 
    "transformationType":"REMOVE_NUMBERS",
 
 
-
    "minDigitCount":1,
-
 
 
    "includeHexNumbers":false
 
 
-
    }
-
 
 
    ]
 
 
-
    }
 
 
-
    },
-
 
 
    "contextRoot":{
 
 
-
    "enableIdContributor":false
 
 
-
    },
-
 
 
    "serverName":{
 
 
-
    "enableIdContributor":false
 
 
-
    }
-
 
 
    },
 
 
-
    "conditions":[
-
 
 
    {
 
 
-
    "attribute":"ApplicationId",
-
 
 
    "compareOperationType":"StringStartsWith",
 
 
-
    "textValues":["application"],
-
 
 
    ///Added condition to ignore case sensitivity for texts.
 
 
-
    "ignoreCase":true
 
 
-
    }
-
 
 
    ]
 
 
-
    }
 
 
-
    }
-
 
 
    ]
@@ -7165,7 +6614,6 @@ To delete a rule via API
 3. Delete the rule via the [DELETE an object](dynatrace-api/environment-api/settings/objects/del-object.md "Delete a settings object via the Dynatrace API.") call. Use the object ID obtained in the previous step.
 
 ### Examples
-
 
 
 #### Separate fully monitored web request services based on URL or superimposed context root
@@ -7202,141 +6650,106 @@ via API
 [
 
 
-
 {
-
 
 
 "schemaId":"builtin:service-detection.full-web-request",
 
 
-
 "scope":"environment",
-
 
 
 "value":{
 
 
-
 "enabled":true,
-
 
 
 "name":"Dynatrace Blog",
 
 
-
 "description":"Detect first segment of an URL path as service when it starts with blog/",
-
 
 
 "managementZones":[],
 
 
-
 "idContributors":{
-
 
 
 "applicationId":{
 
 
-
 "enableIdContributor":false
 
 
-
 },
-
 
 
 "contextRoot":{
 
 
-
 "enableIdContributor":true,
-
 
 
 "serviceIdContributor":{
 
 
-
 "contributionType":"TransformURL",
-
 
 
 "segmentCount":1,
 
 
-
 "transformations":[]
-
 
 
 }
 
 
-
 },
-
 
 
 "serverName":{
 
 
-
 "enableIdContributor":false
 
 
-
 }
-
 
 
 },
 
 
-
 "conditions":[
-
 
 
 {
 
 
-
 "attribute":"UrlPath",
-
 
 
 "compareOperationType":"StringStartsWith",
 
 
-
 "textValues":["blog/"],
-
 
 
 "ignoreCase":false
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 }
-
 
 
 ]
@@ -7412,145 +6825,109 @@ via API
 [
 
 
-
 {
-
 
 
 "schemaId":"builtin:service-detection.external-web-request",
 
 
-
 "scope":"environment",
-
 
 
 "value":{
 
 
-
 "enabled":true,
-
 
 
 "name":"Dynatrace.com - based on URL",
 
 
-
 "description":"Blog example: Dynatrace.com based on URL",
-
 
 
 "managementZones":[],
 
 
-
 "idContributors":{
-
 
 
 "applicationId":{
 
 
-
 "enableIdContributor":false
 
 
-
 },
-
 
 
 "contextRoot":{
 
 
-
 "enableIdContributor":true,
-
 
 
 "serviceIdContributor":{
 
 
-
 "contributionType":"TransformURL",
-
 
 
 "segmentCount":1,
 
 
-
 "transformations":[]
-
 
 
 }
 
 
-
 },
-
 
 
 "publicDomainName":{
 
 
-
 "enableIdContributor":false
 
 
-
 },
-
 
 
 "portForServiceId":false
 
 
-
 },
-
 
 
 "conditions":[
 
 
-
 {
-
 
 
 "attribute":"TopLevelDomain",
 
 
-
 "compareOperationType":"StringEndsWith",
-
 
 
 "textValues":["dynatrace.com"],
 
 
-
 "ignoreCase":true
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 }
-
 
 
 ]
@@ -7590,141 +6967,106 @@ via API
 [
 
 
-
 {
-
 
 
 "schemaId":"builtin:service-detection.external-web-request",
 
 
-
 "scope":"environment",
-
 
 
 "value":{
 
 
-
 "enabled":true,
-
 
 
 "name":"Dynatrace.com - based on subdomains",
 
 
-
 "description":"Blog example: Separate services for public network services based on subdomains ",
-
 
 
 "managementZones":[],
 
 
-
 "idContributors":{
-
 
 
 "applicationId":{
 
 
-
 "enableIdContributor":false
 
 
-
 },
-
 
 
 "contextRoot":{
 
 
-
 "enableIdContributor":false
 
 
-
 },
-
 
 
 "publicDomainName":{
 
 
-
 "enableIdContributor":true,
-
 
 
 "serviceIdContributor":{
 
 
-
 "contributionType":"OriginalValue",
-
 
 
 "copyFromHostName":true
 
 
-
 }
 
 
-
 },
-
 
 
 "portForServiceId":false
 
 
-
 },
-
 
 
 "conditions":[
 
 
-
 {
-
 
 
 "attribute":"TopLevelDomain",
 
 
-
 "compareOperationType":"StringEndsWith",
-
 
 
 "textValues":["dynatrace.com"],
 
 
-
 "ignoreCase":true
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 }
-
 
 
 ]
@@ -7744,7 +7086,6 @@ via API
 Some technologies don't provide unique application names. In such cases, you can define an environment variable called `DT_APPLICATIONID` to provide a unique name. This only impacts services of the respective process that don't already have application IDs. For Java applications, you can alternatively use the system property `dynatrace.application.id`.
 
 ### Rotating and anonymous ports
-
 
 
 Dynatrace takes the listen port of each web request service into account when naming and detecting requests. In some cases, these ports are meaningless or random, changing with each restart. This is especially true if you're using a load balancer that dynamically assigns ports to application processes, as is the case in many Node.js scenarios.
@@ -7776,7 +7117,6 @@ scraped: 2026-03-06T21:22:38.429363
 
 # Service naming rules
 
-# Service naming rules
 
 * Classic
 * How-to guide
@@ -7829,7 +7169,6 @@ scraped: 2026-03-06T21:17:29.123598
 
 # Leverage enhanced endpoints for SDv1
 
-# Leverage enhanced endpoints for SDv1
 
 * Latest Dynatrace
 * How-to guide
@@ -7939,7 +7278,6 @@ Identify services with most endpoints
 Use the **Endpoint Cardinality Dashboard** to see which services have the most endpoints and act accordingly. For more information, see [Dashboard with endpoint-heavy services](#dashboard-endpoint-heavy-service).
 
 ## Dashboard with endpoint-heavy services
-
 
 
 The **Endpoint Cardinality Dashboard** displays services with the most endpoints (SDv1 and SDv2 services).
@@ -8055,7 +7393,6 @@ scraped: 2026-03-06T21:13:00.325403
 
 # Opaque services
 
-# Opaque services
 
 * Classic
 * How-to guide
@@ -8109,7 +7446,6 @@ scraped: 2026-03-05T21:34:37.084360
 
 # Unified services
 
-# Unified services
 
 * Classic
 * How-to guide
@@ -8156,7 +7492,6 @@ scraped: 2026-03-06T21:22:32.956281
 
 # Set up request naming
 
-# Set up request naming
 
 * Classic
 * How-to guide
@@ -8297,7 +7632,6 @@ By constructing your service entry and end points in this way for Dynatrace moni
 ### Cleanup rules
 
 
-
 Service-level rules and settings, including web request services clean URL rules, override global request naming rules.
 
 * You can define global request naming rules through the API to clean up the URLs of one or more services at the time.
@@ -8387,7 +7721,6 @@ scraped: 2026-03-06T21:12:01.948608
 
 # Service Detection v1
 
-# Service Detection v1
 
 * Classic
 * Overview
@@ -8472,7 +7805,6 @@ scraped: 2026-03-02T21:30:56.317085
 
 # Customize endpoint detection in Service Detection v2
 
-# Customize endpoint detection in Service Detection v2
 
 * How-to guide
 * 2-min read
@@ -8615,7 +7947,6 @@ scraped: 2026-03-06T21:25:53.313434
 
 # Customize failure detection in Service Detection v2
 
-# Customize failure detection in Service Detection v2
 
 * Latest Dynatrace
 * How-to guide
@@ -8800,7 +8131,6 @@ scraped: 2026-03-06T21:36:34.058448
 
 # Customize service detection in Service Detection v2
 
-# Customize service detection in Service Detection v2
 
 * Classic
 * How-to guide
@@ -8916,7 +8246,6 @@ scraped: 2026-03-04T21:38:13.805559
 
 # Customize service splitting in Service Detection v2
 
-# Customize service splitting in Service Detection v2
 
 * Classic
 * How-to guide
@@ -9022,7 +8351,6 @@ scraped: 2026-03-06T21:33:25.840613
 
 # Configure URL path pattern matching in Service Detection v2
 
-# Configure URL path pattern matching in Service Detection v2
 
 * Latest Dynatrace
 * How-to guide
@@ -9170,7 +8498,6 @@ scraped: 2026-03-06T21:22:31.186176
 
 # Service Detection v2
 
-# Service Detection v2
 
 * Classic
 * Overview
@@ -9229,7 +8556,6 @@ scraped: 2026-03-06T21:09:35.629907
 
 # Services app
 
-# Services app
 
 * Latest Dynatrace
 * App
@@ -9344,7 +8670,6 @@ Remember that a query executing thousands of times with a modest duration can im
 ### Outbound calls
 
 
-
 ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** captures and analyzes outbound calls made by your services, and then presents the most frequently called and slowest external dependencies ranked by request rate and duration. The **Outbound calls** view displays request rate, error rate, average duration, and cumulative duration for each outbound call. Discover which external calls consume the most resources and where performance bottlenecks exist in your service dependencies. By integrating outbound call observability with service-level metrics, you can eliminate blind spots and quickly determine if issues originate within your service or downstream.
 
 ![Outbound calls tab](https://dt-cdn.net/images/scr-20260204-oxkt-1998-bc116aaf86.png)
@@ -9385,7 +8710,6 @@ scraped: 2026-03-06T21:10:34.460722
 
 # Service-related concepts
 
-# Service-related concepts
 
 * Latest Dynatrace
 * Explanation
@@ -9454,7 +8778,6 @@ scraped: 2026-03-06T21:17:32.546778
 
 # Monitor key requests
 
-# Monitor key requests
 
 * Classic
 * How-to guide
@@ -9548,41 +8871,31 @@ Follow the steps below to create a new key request configuration. Note that this
    [
 
 
-
    {
-
 
 
    "schemaId": "builtin:settings.subscriptions.service",
 
 
-
    "scope": "SERVICE-123456789",
-
 
 
    "value": {
 
 
-
    "keyRequestNames": [
-
 
 
    "/cart/checkout"
 
 
-
    ]
 
 
-
    }
 
 
-
    }
-
 
 
    ]
@@ -9590,7 +8903,6 @@ Follow the steps below to create a new key request configuration. Note that this
 3. Use the [POST an object](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 ### Update key request configuration
-
 
 
 1. To learn the format of the settings object, query its schema via the [GET a schema](../ru/dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") call. The ID of key request schema is `builtin:settings.subscriptions.service`.  
@@ -9606,33 +8918,25 @@ Follow the steps below to create a new key request configuration. Note that this
       {
 
 
-
       "updateToken": "vu9U3hXY3q0ATAAkMG",
-
 
 
       "value": {
 
 
-
       "keyRequestNames": [
-
 
 
       "/cart/checkout",
 
 
-
       "/cart"
-
 
 
       ]
 
 
-
       }
-
 
 
       }
@@ -9657,7 +8961,6 @@ scraped: 2026-03-06T21:22:59.023258
 
 # Response time distribution and outlier analysis
 
-# Response time distribution and outlier analysis
 
 * Classic
 * How-to guide
@@ -9756,7 +9059,6 @@ scraped: 2026-03-04T21:36:52.029410
 
 # Service analysis
 
-# Service analysis
 
 * Classic
 * How-to guide
@@ -9890,7 +9192,6 @@ The **Key requests** card offers an overview of the key requests found for the s
 ### Topology
 
 
-
 In the **Topology** card, you can learn
 
 * Which services are calling and which are called by the service.  
@@ -9933,7 +9234,6 @@ scraped: 2026-03-06T21:12:16.263242
 
 # Service analysis timings
 
-# Service analysis timings
 
 * Classic
 * Reference
@@ -9967,7 +9267,6 @@ scraped: 2026-03-06T21:17:34.259019
 
 # Service backtrace
 
-# Service backtrace
 
 * Classic
 * How-to guide
@@ -10067,7 +9366,6 @@ scraped: 2026-03-06T21:22:57.357175
 
 # Service flow filtering
 
-# Service flow filtering
 
 * Classic
 * 5-min read
@@ -10188,7 +9486,6 @@ scraped: 2026-03-06T21:17:45.732646
 
 # Service flow
 
-# Service flow
 
 * Classic
 * How-to guide
@@ -10229,7 +9526,6 @@ scraped: 2026-03-06T21:23:00.695154
 
 # Service response time hotspots
 
-# Service response time hotspots
 
 * Classic
 * How-to guide
@@ -10360,7 +9656,6 @@ scraped: 2026-03-06T21:17:23.936481
 
 # Services Classic
 
-# Services Classic
 
 * Classic
 * Overview
@@ -10439,7 +9734,6 @@ scraped: 2026-03-06T21:10:36.219731
 
 # Services
 
-# Services
 
 * Latest Dynatrace
 * Overview
@@ -10569,7 +9863,6 @@ Read this guide](../ru/observe/application-observability/services-classic/servic
 ## Related topics
 
 
-
 * [Service flow](../ru/observe/application-observability/services-classic/service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.")
 * [Distributed Traces Classic](../ru/observe/application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.")
 
@@ -10585,7 +9878,6 @@ scraped: 2026-03-06T21:10:32.743972
 
 # Application Observability
 
-# Application Observability
 
 * Latest Dynatrace
 * Overview

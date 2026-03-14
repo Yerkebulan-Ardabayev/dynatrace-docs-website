@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:35:39.748570
 
 # Обнаружение проблем с помощью логов
 
-# Обнаружение проблем с помощью логов
 
 * Последняя версия Dynatrace
 * Руководство
@@ -104,9 +103,7 @@ OpenPipeline — это решение Dynatrace для обработки и п
      isNotNull(alertmessage) and
 
 
-
      isNotNull(priority) and
-
 
 
      priority == "1"

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:04.551751
 
 # Мониторинг Azure Data Factory (V1, V2)
 
-# Мониторинг Azure Data Factory (V1, V2)
 
 * Latest Dynatrace
 * Практическое руководство

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Credential vault
 
-# Credential vault
 
 * Latest Dynatrace
 * Tutorial

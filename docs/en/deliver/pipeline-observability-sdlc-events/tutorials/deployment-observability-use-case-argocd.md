@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:24:45.170541
 
 # Observe Argo CD deployment and application health with Dashboards and SDLC events
 
-# Observe Argo CD deployment and application health with Dashboards and SDLC events
 
 * Latest Dynatrace
 * Tutorial
@@ -82,7 +81,6 @@ If you prefer, you could follow the [Argo CD tutorial directly on GitHubï»¿](
    git clone https://github.com/Dynatrace/dynatrace-configuration-as-code-samples.git
 
 
-
    cd dynatrace-configuration-as-code-samples/argocd_observability
    ```
 4. Edit the `manifest.yaml` by exchanging your environment ID `<YOUR-DT-ENV-ID>` placeholder with your Dynatrace environment ID at the name property and within the URL of the value property.
@@ -91,61 +89,46 @@ If you prefer, you could follow the [Argo CD tutorial directly on GitHubï»¿](
    manifestVersion: 1.0
 
 
-
    projects:
-
 
 
    - name: pipeline_observability
 
 
-
    environmentGroups:
-
 
 
    - name: group
 
 
-
    environments:
-
 
 
    - name: <YOUR-DT-ENV-ID>
 
 
-
    url:
-
 
 
    type: value
 
 
-
    value: https://<YOUR-DT-ENV-ID>.apps.dynatrace.com
-
 
 
    auth:
 
 
-
    oAuth:
-
 
 
    clientId:
 
 
-
    name: OAUTH_CLIENT_ID
 
 
-
    clientSecret:
-
 
 
    name: OAUTH_CLIENT_SECRET
@@ -217,25 +200,19 @@ To generate an access token:
       apiVersion: v1
 
 
-
       kind: Secret
-
 
 
       metadata:
 
 
-
       name: argocd-notifications-secret
-
 
 
       stringData:
 
 
-
       dt-base-url: https://{your-environment-id}.live.dynatrace.com
-
 
 
       dt-access-token: <YOUR-ACCESS-TOKEN>
@@ -251,109 +228,82 @@ To generate an access token:
       apiVersion: v1
 
 
-
       kind: ConfigMap
-
 
 
       metadata:
 
 
-
       name: argocd-notifications-cm
-
 
 
       data:
 
 
-
       service.webhook.dynatrace-webhook: |
-
 
 
       url: $dt-base-url
 
 
-
       headers:
-
 
 
       - name: "Authorization"
 
 
-
       value: Api-Token $dt-access-token
-
 
 
       - name: "Content-Type"
 
 
-
       value: "application/json; charset=utf-8"
-
 
 
       template.dynatrace-webhook-template: |
 
 
-
       webhook:
-
 
 
       dynatrace-webhook:
 
 
-
       method: POST
-
 
 
       path: /platform/ingest/custom/events.sdlc/argocd
 
 
-
       body: |
-
 
 
       {
 
 
-
       "app": {{toJson .app}}
-
 
 
       }
 
 
-
       trigger.dynatrace-webhook-trigger: |
-
 
 
       - when: app.status.operationState.phase in ['Succeeded'] and app.status.health.status in ['Healthy', 'Degraded']
 
 
-
       send: [dynatrace-webhook-template]
-
 
 
       - when: app.status.operationState.phase in ['Failed', 'Error']
 
 
-
       send: [dynatrace-webhook-template]
 
 
-
       - when: app.status.operationState.phase in ['Running']
-
 
 
       send: [dynatrace-webhook-template]
@@ -375,17 +325,13 @@ To generate an access token:
       apiVersion: argoproj.io/v1alpha1
 
 
-
       kind: Application
-
 
 
       metadata:
 
 
-
       annotations:
-
 
 
       notifications.argoproj.io/subscribe.dynatrace-webhook-trigger.dynatrace-webhook: ""
@@ -413,7 +359,6 @@ To use [Dynatrace ActiveGate](../../../ingest-from/dynatrace-activegate.md "Unde
 
    ```
    metrics.dynatrace.com/port: {METRICS_PORT}
-
 
 
    metrics.dynatrace.com/scrape: 'true'

@@ -14,7 +14,6 @@ scraped: 2026-03-06T21:34:53.354074
 
 # Adaptive Traffic Management concepts
 
-# Adaptive Traffic Management concepts
 
 * Latest Dynatrace
 * Explanation
@@ -87,7 +86,6 @@ scraped: 2026-03-06T21:22:40.096399
 
 # Adaptive Traffic Management for distributed tracing
 
-# Adaptive Traffic Management for distributed tracing
 
 * Latest Dynatrace
 * Overview
@@ -116,7 +114,6 @@ scraped: 2026-03-06T21:18:38.038225
 
 # Customize OneAgent installation on AIX
 
-# Customize OneAgent installation on AIX
 
 * Latest Dynatrace
 * How-to guide
@@ -295,7 +292,6 @@ To change or clear the proxy address after installation, use `--set-proxy` in th
 ## Port range
 
 
-
 Deprecated
 
 Starting with OneAgent version 1.301, OneAgent doesn't use the TCP ports for its own inter-process communication. In case OneAgent occupies your applications' ports, upgrade OneAgent to version 1.301+.
@@ -461,7 +457,6 @@ To install OneAgent on a Citrix host, set the host ID source to `FQDN`:
 ### Custom directory requirements
 
 
-
 Make sure that your custom data storage meets the following requirements:
 
 * The directory must be dedicated to OneAgent purposes only. No other software can have access to it. One reason is security, while the other is automatic cleanup performed periodically by OneAgent, which could remove files created by other applications.
@@ -531,7 +526,6 @@ scraped: 2026-03-06T21:18:45.069779
 
 # OneAgent files and disk space requirements on AIX
 
-# OneAgent files and disk space requirements on AIX
 
 * Latest Dynatrace
 * Reference
@@ -645,7 +639,6 @@ scraped: 2026-03-06T21:18:39.737550
 
 # Install OneAgent on AIX
 
-# Install OneAgent on AIX
 
 * Latest Dynatrace
 * How-to guide
@@ -755,7 +748,6 @@ Use the generic installation steps to download the OneAgent, and then, after you
 ## Manual OneAgent injection
 
 
-
 If you can't use the unified monitoring approach, you can inject OneAgent manually.
 
 Processes that have been given special privileges using AIX's Role-Based Access Control (RBAC) system can't be auto-injected. This is a safety mechanism of the operating system to restrict unknown code from being run with elevated privileges. For example, an Apache or IHS web server might have been given the `PV_NET_PORT` privilege to allow starting the server as a non-root user but still letting it bind into restricted ports like port `80`. In this case, any libraries configured for preloading, including OneAgent, will be silently ignored. In such cases, only manual OneAgent injection will work.
@@ -772,9 +764,7 @@ Prepend your application command with the following commands:
 export DT_HOME=/opt/dynatrace/oneagent
 
 
-
 export LDR_PRELOAD64=$DT_HOME/agent/lib64/liboneagentproc.so
-
 
 
 export LDR_PRELOAD=$DT_HOME/agent/lib/liboneagentproc.so
@@ -788,7 +778,6 @@ Edit your `httpd.conf` and add the following two lines at a location of your cho
 LoadModule oneagent_module /opt/dynatrace/oneagent/agent/bin/current/aix-ppc-64/liboneagentloader.so
 
 
-
 OneAgentConfig tenant=<tenant-id>,tenantToken=<tenant-token>,server=https://<server-url>/communication
 ```
 
@@ -798,9 +787,7 @@ Alternatively, if you prefer to leave your `httpd.conf` unchanged, you can speci
 apachectl -c "LoadModule oneagent_module /opt/dynatrace/oneagent/agent/bin/current/aix-ppc-64/liboneagentloader.so"
 
 
-
 -c "OneAgentConfig tenant=<tenantUUID>,tenantToken=<tenant-token>,server=<communicationEndpoints>"
-
 
 
 -k start
@@ -842,7 +829,6 @@ scraped: 2026-03-06T21:18:30.847920
 
 # OneAgent security on AIX
 
-# OneAgent security on AIX
 
 * Latest Dynatrace
 * Reference
@@ -942,7 +928,6 @@ scraped: 2026-03-06T21:18:48.563032
 
 # Automated injection of deep-code monitoring on AIX
 
-# Automated injection of deep-code monitoring on AIX
 
 * Latest Dynatrace
 * How-to guide
@@ -983,7 +968,6 @@ scraped: 2026-03-06T21:18:34.259197
 
 # Stop/restart OneAgent on AIX
 
-# Stop/restart OneAgent on AIX
 
 * Latest Dynatrace
 * How-to guide
@@ -1022,7 +1006,6 @@ scraped: 2026-03-06T21:18:32.537603
 
 # Uninstall OneAgent on AIX
 
-# Uninstall OneAgent on AIX
 
 * Latest Dynatrace
 * How-to guide
@@ -1056,7 +1039,6 @@ scraped: 2026-03-06T21:18:41.434597
 
 # Update Dynatrace OneAgent on AIX
 
-# Update Dynatrace OneAgent on AIX
 
 * Latest Dynatrace
 * How-to guide
@@ -1224,7 +1206,6 @@ Your host requires 200 MB free memory to run OneAgent update.
 Use one of these methods to check which version of OneAgent you currently have installed.
 
 
-
 ### OneAgent command-line interface
 
 Run `oneagentctl` with the `--version` parameter. For more information, see [OneAgent configuration via command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#display-oneagent-version "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
@@ -1253,7 +1234,6 @@ scraped: 2026-03-06T21:10:43.059904
 
 # AIX
 
-# AIX
 
 * Latest Dynatrace
 * Overview
@@ -1350,7 +1330,6 @@ scraped: 2026-03-06T21:18:53.790650
 
 # Customize OneAgent installation on Linux
 
-# Customize OneAgent installation on Linux
 
 * Latest Dynatrace
 * 7-min read
@@ -1528,7 +1507,6 @@ Alternatively, you can use `--set-network-zone` on the [OneAgent command-line in
 ## Proxy
 
 
-
 **Default value**: `unset`
 
 The address of the proxy server. Use the IP address or a name, and add the port number following a colon. For an authenticating proxy you can specify a username and password like this `username:password@172.1.1.128:8080` where both username and password need to be URL encoded.
@@ -1676,7 +1654,6 @@ To change the host tags after installation, use [Remote configuration management
 Alternatively, you can use `--set-host-tag` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Host ID source
-
 
 
 **Default value**: `auto`
@@ -1827,7 +1804,6 @@ For more information, see the [permission requirements for OneAgent installation
 ### **`USER`**
 
 
-
 **Default value**: `dtuser`
 
 Specifies the name of the non-privileged user, which is used by unprivileged OneAgent processes. Unprivileged processes are those that don't need root privileges. These processes on Linux are called `Network OneAgent` and `Plugin OneAgent`.
@@ -1893,7 +1869,6 @@ scraped: 2026-03-06T21:19:00.574729
 
 # OneAgent files and disk space requirements on Linux
 
-# OneAgent files and disk space requirements on Linux
 
 * Latest Dynatrace
 * 4-min read
@@ -2018,7 +1993,6 @@ scraped: 2026-03-06T21:19:05.563891
 
 # How to pass a proxy address during OneAgent installation on Linux
 
-# How to pass a proxy address during OneAgent installation on Linux
 
 * Latest Dynatrace
 * 1-min read
@@ -2036,9 +2010,7 @@ Let's say you're running an openSUSE server, you've downloaded your OneAgent ins
 cd /tmp
 
 
-
 chmod +x Dynatrace-OneAgent-Linux-0.5.0-20140217-175809.sh
-
 
 
 su -c 'Dynatrace-OneAgent-Linux-0.5.0-20140217-175809.sh --set-proxy=10.1.1.5'
@@ -2060,7 +2032,6 @@ scraped: 2026-03-06T21:18:57.191682
 
 # Install OneAgent on Linux
 
-# Install OneAgent on Linux
 
 * Latest Dynatrace
 * How-to guide
@@ -2097,7 +2068,6 @@ Ensure that your firewall settings allow communication to Dynatrace.
 Depending on your firewall policy, you may need to explicitly allow certain outgoing connections. **The remote Dynatrace addresses to add to the allow list are given on the installation page for OneAgent.**
 
 ## Installation
-
 
 
 1. In Dynatrace Hub, select **OneAgent**.
@@ -2185,7 +2155,6 @@ scraped: 2026-02-06T16:30:49.933952
 
 # Install OneAgent on PPC BE Linux
 
-# Install OneAgent on PPC BE Linux
 
 * Latest Dynatrace
 * 3-min read
@@ -2247,13 +2216,10 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    DT_HOME=<installation directory>
 
 
-
    export DT_HOME
 
 
-
    LD_PRELOAD=$DT_HOME/agent/<system library>/liboneagentproc.so
-
 
 
    export LD_PRELOAD
@@ -2280,7 +2246,6 @@ scraped: 2026-03-06T21:18:58.872793
 
 # OneAgent non-privileged mode on Linux
 
-# OneAgent non-privileged mode on Linux
 
 * Latest Dynatrace
 * 7-min read
@@ -2396,7 +2361,6 @@ To enable Linux Filesystem Capabilities, add `file_caps=1` to your kernel boot o
 ## Privileges during automatic updates and operation
 
 
-
 The scope of privileges required by OneAgent depends on whether the kernel supports Linux ambient capabilities. As a general rule, kernel 4.3+ supports ambient capabilities. However, in the case of Red Hat Enterprise Linux, these may be supported in older kernel versions because of the Red Hat policy to backport patches. This makes ambient capabilities supported by kernel versions as old as 3.10.x.
 
 Kernels with ambient capabilities (version 4.3+)
@@ -2443,7 +2407,6 @@ scraped: 2026-03-06T21:19:07.272209
 
 # OneAgent security on Linux
 
-# OneAgent security on Linux
 
 * Latest Dynatrace
 * 5-min read
@@ -2575,7 +2538,6 @@ scraped: 2026-03-06T21:19:03.893393
 
 # Flatcar support on SELinux
 
-# Flatcar support on SELinux
 
 * Latest Dynatrace
 * 1-min read
@@ -2604,7 +2566,6 @@ scraped: 2026-03-06T21:18:55.494155
 
 # How to enable deep monitoring for applications confined by AppArmor
 
-# How to enable deep monitoring for applications confined by AppArmor
 
 * Latest Dynatrace
 * 2-min read
@@ -2620,7 +2581,6 @@ We assume that the directory structure for AppArmor is the following:
 /etc/apparmor.d/
 
 
-
 |--- usr.sbin.tomcat-sysd
 ```
 
@@ -2632,13 +2592,10 @@ Where `usr.sbin.tomcat-sysd` is the file that defines the AppArmor profile for T
    /etc/apparmor.d/
 
 
-
    |--- usr.sbin.tomcat-sysd
 
 
-
    |--- dynatrace-oneagent
-
 
 
    |--- agentinjection
@@ -2649,129 +2606,97 @@ Where `usr.sbin.tomcat-sysd` is the file that defines the AppArmor profile for T
    #include <abstractions/base>
 
 
-
    #include <abstractions/nameservice>
-
 
 
    # Process Agent injection
 
 
-
    /etc/ld.so.preload r,
-
 
 
    # Host identifier calculation
 
 
-
    /sys/class/net/ r,
-
 
 
    /sys/devices/virtual/net/** r,
 
 
-
    /sys/devices/*/*{,/*}/net/** r,
-
 
 
    # OneAgent directories
 
 
-
    /opt/dynatrace/oneagent/agent/** mr,
-
 
 
    /var/lib/dynatrace/oneagent/** r,
 
 
-
    /var/lib/dynatrace/oneagent/agent/runtime/** w,
-
 
 
    /var/lib/dynatrace/oneagent/agent/config/{discovery_entry_point,ruxit_shm_v*} w,
 
 
-
    /var/lib/dynatrace/enrichment/** r,
-
 
 
    # This path must be adjusted if LOG_PATH installation parameter was used
 
 
-
    /var/log/dynatrace/oneagent/** rkw,
-
 
 
    # This path must be adjusted if DATA_STORAGE installation parameter was used
 
 
-
    /var/lib/dynatrace/oneagent/datastorage/** rkw,
-
 
 
    # Needed for Process Agent to determine whether specialized agent should be loaded and to calculate PGI ID
 
 
-
    /proc/[0-9]*/{cgroup,cmdline,environ,maps,mem,mountinfo,stat,statm,task/*/maps,task/*/mem} r,
-
 
 
    # Miscellaneous
 
 
-
    /dev/random rw,
-
 
 
    /etc/os-release r,
 
 
-
    /proc/sys/fs/file-nr r,
-
 
 
    /proc/sys/kernel/hostname r,
 
 
-
    /proc/{uptime,vmstat} r,
-
 
 
    /sys/devices/system/cpu/ r,
 
 
-
    /sys/fs/cgroup{,/,/**} r,
-
 
 
    /tmp/** rw,
 
 
-
    /var/tmp/ r,
-
 
 
    /var/tmp/** rw,
 
 
-
    /{,var/}run/utmp rk,
-
 
 
    /proc/cgroups r,
@@ -2783,7 +2708,6 @@ Where `usr.sbin.tomcat-sysd` is the file that defines the AppArmor profile for T
    # This path must be adjusted if DATA_STORAGE installation parameter was used
 
 
-
    /var/lib/dynatrace/oneagent/datastorage/** rkw,
    ```
 3. Include the rule set in the Tomcat profile (`/etc/apparmor.d/usr.sbin.tomcat-sysd`).
@@ -2792,13 +2716,10 @@ Where `usr.sbin.tomcat-sysd` is the file that defines the AppArmor profile for T
    /usr/sbin/tomcat-sysd {
 
 
-
    #include <dynatrace-oneagent/agentinjection>
 
 
-
    ... (rest of the rules that were already present in the profile)
-
 
 
    }
@@ -2820,13 +2741,10 @@ In case you experience denials related to OneAgent for other processes in the sy
 # Process injection
 
 
-
 /etc/ld.so.preload r,
 
 
-
 /etc/oneagentproc/ld.so.preload r,
-
 
 
 /var/log/dynatrace/oneagent/process/* rkw,
@@ -2846,7 +2764,6 @@ scraped: 2026-03-06T21:19:02.259999
 
 # Stop/restart OneAgent on Linux
 
-# Stop/restart OneAgent on Linux
 
 * Latest Dynatrace
 * 1-min read
@@ -2912,7 +2829,6 @@ scraped: 2026-03-06T21:19:08.954506
 
 # Uninstall OneAgent on Linux
 
-# Uninstall OneAgent on Linux
 
 * Latest Dynatrace
 * 1-min read
@@ -2950,7 +2866,6 @@ scraped: 2026-03-06T21:19:10.728325
 
 # Update OneAgent on Linux
 
-# Update OneAgent on Linux
 
 * Latest Dynatrace
 * 1-min read
@@ -3117,7 +3032,6 @@ Your host requires 200 MB free memory to run OneAgent update.
 Use one of these methods to check which version of OneAgent you currently have installed.
 
 
-
 ### OneAgent command-line interface
 
 Run `oneagentctl` with the `--version` parameter. For more information, see [OneAgent configuration via command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#display-oneagent-version "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
@@ -3146,7 +3060,6 @@ scraped: 2026-03-06T21:18:51.882688
 
 # Update OneAgent on PPC BE Linux
 
-# Update OneAgent on PPC BE Linux
 
 * Latest Dynatrace
 * 1-min read
@@ -3202,7 +3115,6 @@ scraped: 2026-03-06T21:10:44.799206
 
 # OneAgent on Linux
 
-# OneAgent on Linux
 
 * Latest Dynatrace
 * 1-min read
@@ -3261,7 +3173,6 @@ scraped: 2026-03-06T21:20:16.604221
 
 # Install OneAgent on Solaris
 
-# Install OneAgent on Solaris
 
 * Latest Dynatrace
 * 7-min read
@@ -3321,21 +3232,16 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    DT_HOME=/opt/dynatrace/oneagent
 
 
-
    export DT_HOME
-
 
 
    LD_PRELOAD_64=$DT_HOME/agent/lib64/liboneagentproc.so
 
 
-
    export LD_PRELOAD_64
 
 
-
    LD_PRELOAD=$DT_HOME/agent/lib/liboneagentproc.so
-
 
 
    export LD_PRELOAD
@@ -3357,9 +3263,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
       DT_HOME=/opt/dynatrace/oneagent
 
 
-
       LD_PRELOAD_64=/opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
-
 
 
       LD_PRELOAD=/opt/dynatrace/oneagent/agent/lib/liboneagentproc.so
@@ -3376,85 +3280,64 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    # Monitor WebLogic with Dynatrace OneAgent
 
 
-
    DT_HOME=/opt/dynatrace/oneagent
-
 
 
    export DT_HOME
 
 
-
    LD_PRELOAD_64=$DT_HOME/agent/lib64/liboneagentproc.so
-
 
 
    export LD_PRELOAD_64
 
 
-
    LD_PRELOAD=$DT_HOME/agent/lib/liboneagentproc.so
-
 
 
    export LD_PRELOAD
 
 
-
    # WebLogic checks and startup, this is part of your script, add the 3 lines prior to this.
-
 
 
    echo "starting weblogic with Java version:"
 
 
-
    ${JAVA_HOME}/bin/java ${JAVA_VM} -version
-
 
 
    if [ "${WLS_REDIRECT_LOG}" = "" ] ; then
 
 
-
    echo "Starting WLS with line:"
-
 
 
    echo "${JAVA_HOME}/bin/java ${JAVA_VM} ${MEM_ARGS} ${JAVA_OPTIONS} -Dweblogic.Name=${SERVER_NAME}
 
 
-
    -Djava.security.policy=${WL_HOME}/server/lib/weblogic.policy ${PROXY_SETTINGS} ${SERVER_CLASS}"
 
 
-
    ${JAVA_HOME}/bin/java ${JAVA_VM} ${MEM_ARGS} ${JAVA_OPTIONS} -Dweblogic.Name=${SERVER_NAME}
-
 
 
    -Djava.security.policy=${WL_HOME}/server/lib/weblogic.policy ${PROXY_SETTINGS} ${SERVER_CLASS}
 
 
-
    else
-
 
 
    echo "Redirecting output from WLS window to ${WLS_REDIRECT_LOG}"
 
 
-
    ${JAVA_HOME}/bin/java ${JAVA_VM} ${MEM_ARGS} ${JAVA_OPTIONS} -Dweblogic.Name=${SERVER_NAME}
-
 
 
    -Djava.security.policy=${WL_HOME}/server/lib/weblogic.policy ${PROXY_SETTINGS}
 
 
-
    ${SERVER_CLASS} 2>&1 >"${WLS_REDIRECT_LOG}"
-
 
 
    fi
@@ -3474,21 +3357,16 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    DT_HOME=/opt/dynatrace/oneagent
 
 
-
    export DT_HOME
-
 
 
    LD_PRELOAD_64=$DT_HOME/agent/lib64/liboneagentproc.so
 
 
-
    export LD_PRELOAD_64
 
 
-
    LD_PRELOAD=$DT_HOME/agent/lib/liboneagentproc.so
-
 
 
    export LD_PRELOAD
@@ -3498,13 +3376,10 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    DT_HOME=/opt/dynatrace/oneagent
 
 
-
    export DT_HOME
 
 
-
    . $DT_HOME/dynatrace-agent64.sh
-
 
 
    . $DT_HOME/dynatrace-agent32.sh
@@ -3515,7 +3390,6 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 If you use the WebLogic admin server to restart managed nodes on Solaris, see [Troubleshoot OneAgent installation on Solaris](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/troubleshoot-oneagent-installation-on-solaris.md#weblogic-admin "Find out how to solve problems related to installing OneAgent on Solaris.") to learn how to modify the startup script.
 
 ## OneAgent versions older than v1.137 and fallback
-
 
 
 If your OneAgent is older than v1.137, or if you have problems with the unified monitoring approach, you can inject OneAgent manually.
@@ -3532,9 +3406,7 @@ Modify the command line of your Java application:
 DT_HOME=/opt/dynatrace/oneagent
 
 
-
 . $DT_HOME/dynatrace-java-env.sh 64
-
 
 
 java $JAVA_OPTS <MainClass>
@@ -3550,7 +3422,6 @@ Edit your `httpd.conf` and add the following two lines in a location of your cho
 LoadModule oneagent_module /opt/dynatrace/oneagent/agent/bin/solaris-<arch>-<bitness>/liboneagentloader.so
 
 
-
 OneAgentConfig tenant=<tenant-id>,tenantToken=<tenant-token>,server=https://<server-url>/communication
 ```
 
@@ -3560,9 +3431,7 @@ Alternatively, if you prefer to leave your `httpd.conf` unchanged, you can speci
 apachectl -c "LoadModule oneagent_module /opt/dynatrace/oneagent/agent/bin/solaris-<arch>-<bitness>/liboneagentloader.so"
 
 
-
 -c "OneAgentConfig tenant=<tenantUUID>,tenantToken=<tenant-token>,server=<communicationEndpoints>"
-
 
 
 -k start
@@ -3604,7 +3473,6 @@ scraped: 2026-03-06T21:20:18.314953
 
 # Troubleshooting OneAgent installation on Solaris
 
-# Troubleshooting OneAgent installation on Solaris
 
 * Latest Dynatrace
 * 3-min read
@@ -3620,17 +3488,13 @@ While downloading, you may encounter the following error:
 Releasing 0x0000000239ae1890 (new refcount 1).
 
 
-
 Initiating SSL handshake.
-
 
 
 SSL handshake failed.
 
 
-
 Closed fd 5
-
 
 
 Unable to establish SSL connection.
@@ -3644,9 +3508,7 @@ For this specific case, to select the correct protocol, you must specify `--secu
 wget --secure-protocol=tlsv1_2
 
 
-
 -O Dynatrace-OneAgent-Solaris-xxx-1.xxx.xxx.zip
-
 
 
 "https://xxx/xxx/api/v1/deployment/installer/agent/solaris/paas/latest?Api-Token=xxx&arch=x86"
@@ -3682,7 +3544,6 @@ You may encounter an error like this when you use `dynatrace-agentXX.sh` in a sh
 Info: using DT_HOME: /opt/dynatrace/oneagent
 
 
-
 .profile[33] LD_PRELOAD_64: parameter not set
 ```
 
@@ -3692,17 +3553,13 @@ This happens if use `set -u` to treat unset variables and parameters as errors. 
 # avoid error
 
 
-
 set +u
-
 
 
 DT_HOME=/opt/dynatrace/oneagent
 
 
-
 export DT_HOME
-
 
 
 . $DT_HOME/dynatrace-agent64.sh
@@ -3741,17 +3598,13 @@ If you have trouble setting the environment variables
    DT_HOME="/opt/dynatrace/oneagent"
 
 
-
    export DT_HOME
-
 
 
    source "$DT_HOME/dynatrace-env.sh"
 
 
-
    LD_PRELOAD="$DT_HOME/agent/lib/liboneagentproc.so"
-
 
 
    export LD_PRELOAD
@@ -3766,7 +3619,6 @@ If you have trouble setting the environment variables
 
    ```
    aabb@aaaabbb01a:/apps/wldomains/wls-aabb-1a$pargs -e 26531 |grep LD
-
 
 
    envp[27]: envp[28]: LD_PRELOAD=/opt/dynatrace/oneagent/agent/lib/liboneagentproc.so
@@ -3792,7 +3644,6 @@ scraped: 2026-03-06T21:20:14.876301
 
 # Uninstall OneAgent on Solaris
 
-# Uninstall OneAgent on Solaris
 
 * Latest Dynatrace
 * How-to guide
@@ -3830,7 +3681,6 @@ scraped: 2026-03-06T21:20:19.993240
 
 # Update OneAgent on Solaris
 
-# Update OneAgent on Solaris
 
 * Latest Dynatrace
 * 1-min read
@@ -3878,7 +3728,6 @@ scraped: 2026-03-06T21:10:56.668127
 
 # Solaris
 
-# Solaris
 
 * Latest Dynatrace
 * 1-min read
@@ -3910,7 +3759,6 @@ scraped: 2026-03-06T21:19:22.490308
 
 # Customize OneAgent installation on Windows
 
-# Customize OneAgent installation on Windows
 
 * Latest Dynatrace
 * 9-min read
@@ -4073,7 +3921,6 @@ To change the endpoint after installation, use `--set-server` in the [OneAgent c
 ## Environment ID
 
 
-
 **Default value**: `environment specific`
 
 The Dynatrace [environment ID](../ru/discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") you received with your activation email. If you install OneAgent using the Dynatrace **Deploy** page, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
@@ -4233,7 +4080,6 @@ To change the host name after installation, use `--set-host-name` in the [OneAge
 ## Custom host metadata
 
 
-
 **Default value**: `unset`
 
 Once configured, custom metadata is displayed as a set of properties at the bottom of the **Properties and tags** section of the host overview page. The property values must not contain the `=` (except key-value delimiter) and whitespace characters. The maximum length is 256 characters including the key-value delimiter.
@@ -4351,7 +4197,6 @@ For more information, see [Metric ingestion](../ru/ingest-from/extend-dynatrace/
 ## OneAgent extension user
 
 
-
 The **Default value**: `LocalSystem` (OneAgent version 1.195+)
 
 Use the **`USER`** parameter to define the user running the process responsible for [Dynatrace extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") functionality. For example:
@@ -4466,7 +4311,6 @@ scraped: 2026-03-06T21:19:31.029614
 
 # OneAgent files and disk space requirements on Windows
 
-# OneAgent files and disk space requirements on Windows
 
 * Latest Dynatrace
 * 4-min read
@@ -4581,7 +4425,6 @@ scraped: 2026-03-06T21:19:29.325777
 
 # How to pass a proxy address during OneAgent installation on Windows
 
-# How to pass a proxy address during OneAgent installation on Windows
 
 * Latest Dynatrace
 * 1-min read
@@ -4617,7 +4460,6 @@ scraped: 2026-03-06T21:19:24.255977
 
 # Install OneAgent on Windows
 
-# Install OneAgent on Windows
 
 * Latest Dynatrace
 * How-to guide
@@ -4665,7 +4507,6 @@ During the upgrade from `WinPcap` to `Npcap`, you might encounter network disrup
 OneAgent installer for Windows doesn't support the `modify` and `repair` operations. You can't reinstall OneAgent using the same installer version as was used to install the currently installed OneAgent. To reinstall OneAgent, uninstall it first or simply install a newer version.
 
 ## Installation
-
 
 
 1. In Dynatrace Hub, select **OneAgent**.
@@ -4748,7 +4589,6 @@ scraped: 2026-03-06T21:19:25.957588
 
 # OneAgent security on Windows
 
-# OneAgent security on Windows
 
 * Latest Dynatrace
 * 5-min read
@@ -4869,7 +4709,6 @@ If your Windows-based system has been offline since March 2021 or longer, Window
 ### Windows 2008 R2
 
 
-
 Starting with OneAgent version 1.225, the installer is signed using the SHA-2 algorithm. Consequently, Windows 2008 R2 hosts are required to have SHA-2 code signing support installed. If you use Windows Update, the updates were offered to you automatically (KB4474419 and KB4490628). If, however, your Windows 2008 R2 system doesn't support verifying SHA-2 signed installers, OneAgent auto-update and installation won't work if `Applocker` is configured to block unknown publishers and/or security warnings may be displayed. For more information, see the Microsoft [2019 SHA-2 Code Signing Support requirement for Windows and WSUSï»¿](https://support.microsoft.com/en-us/topic/2019-sha-2-code-signing-support-requirement-for-windows-and-wsus-64d1c82d-31ee-c273-3930-69a4cde8e64f) announcement.
 
 ---
@@ -4884,7 +4723,6 @@ scraped: 2026-03-06T21:19:32.708456
 
 # Stop/restart OneAgent on Windows
 
-# Stop/restart OneAgent on Windows
 
 * Latest Dynatrace
 * 1-min read
@@ -4933,7 +4771,6 @@ scraped: 2026-03-06T21:19:27.656584
 
 # Uninstall Dynatrace OneAgent on Windows
 
-# Uninstall Dynatrace OneAgent on Windows
 
 * Latest Dynatrace
 * 1-min read
@@ -4963,13 +4800,10 @@ or
 > wmic product where name='Dynatrace OneAgent' get IdentifyingNumber
 
 
-
 IdentifyingNumber
 
 
-
 {12345678-ABCD-1234-ABCD-12345678ABCD}
-
 
 
 > msiexec /x {12345678-ABCD-1234-ABCD-12345678ABCD} /quiet /l*vx uninstall.log
@@ -4981,7 +4815,6 @@ You can omit `/l*vx uninstall.log` if the log file is not relevant to you.
 
 ```
 PS> $app = Get-WmiObject win32_product -filter "Name like 'Dynatrace OneAgent'"
-
 
 
 PS> msiexec /x $app.IdentifyingNumber /quiet /l*vx uninstall.log
@@ -5008,7 +4841,6 @@ scraped: 2026-03-06T21:19:20.645595
 
 # Update Dynatrace OneAgent on Windows
 
-# Update Dynatrace OneAgent on Windows
 
 * Latest Dynatrace
 * 1-min read
@@ -5173,7 +5005,6 @@ Your host requires 200 MB free memory to run OneAgent update.
 ## Check installed version of OneAgent
 
 
-
 Use one of these methods to check which version of OneAgent you currently have installed.
 
 ### OneAgent command-line interface
@@ -5204,7 +5035,6 @@ scraped: 2026-03-06T21:10:48.224480
 
 # OneAgent on Windows
 
-# OneAgent on Windows
 
 * Latest Dynatrace
 * 1-min read
@@ -5252,7 +5082,6 @@ scraped: 2026-03-05T21:29:30.899274
 
 # Install the CICS module
 
-# Install the CICS module
 
 * Latest Dynatrace
 * 14-min read
@@ -5354,33 +5183,25 @@ An example of the PLTPI table that contains the CICS startup program
 *
 
 
-
 * PLT USED TO SUPPORT DYNATRACE CODE MODULE INITIALIZATION
-
 
 
 *
 
 
-
 DFHPLT TYPE=INITIAL,SUFFIX=SI
-
 
 
 DFHPLT TYPE=ENTRY,PROGRAM=DFHDELIM
 
 
-
 * Other PLT startup programs here...
-
 
 
 DFHPLT TYPE=ENTRY,PROGRAM=ZDTPLT
 
 
-
 DFHPLT TYPE=FINAL
-
 
 
 END
@@ -5408,33 +5229,25 @@ An example of the PLTSD table that contains the CICS shutdown program
 *
 
 
-
 * PLT USED TO SUPPORT DYNATRACE CODE MODULE SHUTDOWN
-
 
 
 *
 
 
-
 DFHPLT TYPE=INITIAL,SUFFIX=SD
-
 
 
 DFHPLT TYPE=ENTRY,PROGRAM=ZDTPLTSD
 
 
-
 * Other PLT shutdown programs here...
-
 
 
 DFHPLT TYPE=ENTRY,PROGRAM=DFHDELIM
 
 
-
 DFHPLT TYPE=FINAL
-
 
 
 END
@@ -5470,7 +5283,6 @@ If you enabled CICSPlex name grouping **after** the CICS region is up, you need 
 ### CICS web services support
 
 
-
 The CICS module can trace the CICS web services invoked through a SOAP request or a JSON request (non-Java JSON pipeline). You need OneAgent version 1.257 or later to trace JSON requests.
 
 To trace the CICS web service provider programs that are invoked by handler programs from CICS SOAP pipelines or from CICS non-Java JSON pipelines, update the provider pipeline config (`.xml`) file with `ZDTSOAPH` as shown below.
@@ -5492,77 +5304,58 @@ To trace outbound SOAP requests that originate within CICS transactions that are
 <?xml version="1.0" encoding="EBCDIC-CP-US"?>
 
 
-
 <provider_pipeline
-
 
 
 xmlns="http://www.ibm.com/software/htp/cics/pipeline"
 
 
-
 xmlns:xsi="http://www.w3.org/2001/XMLSchemainstance"
-
 
 
 xsi:schemaLocation="http://www.ibm.com/software/htp/
 
 
-
 cics/pipeline/provider.xsd ">
-
 
 
 <service>
 
 
-
 <terminal_handler>
-
 
 
 <cics_soap_1.1_handler>
 
 
-
 <headerprogram>
-
 
 
 <program_name>ZDTSOAPH</program_name>
 
 
-
 <namespace>*</namespace>
-
 
 
 <localname>*</localname>
 
 
-
 <mandatory>true</mandatory>
-
 
 
 </headerprogram>
 
 
-
 </cics_soap_1.1_handler>
-
 
 
 </terminal_handler>
 
 
-
 </service>
 
 
-
 <apphandler>DFHPITP</apphandler>
-
 
 
 </provider_pipeline>
@@ -5576,65 +5369,49 @@ cics/pipeline/provider.xsd ">
 <?xml version="1.0" encoding="EBCDIC-CP-US"?>
 
 
-
 <provider_pipeline xmlns="http://www.ibm.com/software/htp/cics/pipeline">
-
 
 
 <transport>
 
 
-
 <default_http_transport_handler_list>
 
 
-
 <handler>
-
 
 
 <program>ZDTSOAPH</program><handler_parameter_list/>
 
 
-
 </handler>
-
 
 
 </default_http_transport_handler_list>
 
 
-
 </transport>
-
 
 
 <service>
 
 
-
 <terminal_handler>
-
 
 
 <handler>
 
 
-
 <program>DFHPIJT</program><handler_parameter_list/>
-
 
 
 </handler>
 
 
-
 </terminal_handler>
 
 
-
 </service>
-
 
 
 </provider_pipeline>
@@ -5665,7 +5442,6 @@ INITPARM=(ZDTPLT='MEPC,<Option>'),
 Example:
 
 
-
 INITPARM=(ZDTPLT='MEPC,SEVERE'),
 ```
 
@@ -5689,7 +5465,6 @@ To update your CICS module to a newer version without restarting the region
 ## FAQ
 
 
-
 How can I verify whether the CICS module and resources are installed correctly?
 
 The group name might be different, as well as the two-character suffix representing the CICS release of the module (for example, CTS52 uses 69).
@@ -5700,29 +5475,22 @@ From the CICS region, look for these messages to validate the CICS module resour
 CICSAPPL Install for group XXXX has completed successfully.
 
 
-
 CICSAPPL OWNER CSSY Resource definition for ZDTAGT72 has been added.
-
 
 
 CICSAPPL OWNER CSSY Resource definition for ZDTDC2 has been added.
 
 
-
 CICSAPPL OWNER CSSY Resource definition for ZDTDC2A has been added.
-
 
 
 CICSAPPL OWNER CSSY Resource definition for ZDTPLT has been added.
 
 
-
 CICSAPPL OWNER CSSY Resource definition for ZDTPLTSD has been added.
 
 
-
 CICSAPPL OWNER CSSY Resource definition for ZDTSOAPH has been added.
-
 
 
 CICSAPPL OWNER CSSY TRANSACTION definition entry for DTAX has been added.
@@ -5738,21 +5506,16 @@ The zRemote log can be accessed from within Dynatrace, in the same manner as all
 2019-05-09 20:19:11.789 UTC [d37f9842] info    [native] Registering a pgi for the job: HVBAC021, host=10.30.220.41, groupId= f39f4801966aa7c7, pgir.groupInstanceID= fad6dee63cfd1522, hostID= 95c0bb0371704b8c, nodeID= fad6dee63cfd1522, groupName=HVBAC021, hostGroup=, processGroupType= 28
 
 
-
 2019-05-09 20:19:11.789 UTC [d37f9842] info    [native] Registered SubAgent[C021,51,32aa8d038887d1c9] with zDC[Z021,52], rc=true
-
 
 
 2019-05-09 20:19:11.789 UTC [d37f9842] info    [native] ASID[51], smfID[S0W1], sysid[C021], jobName[HVBAC021], subagentid[32aa8d038887d1c9] snaId[NETD    .HVBAC021], CICS release 54 was successfully registered with zdc[52] using protocol version=7.2.0, allocator=pooled.
 
 
-
 2019-05-09 20:19:13.789 UTC [d37f9842] info    [native] ASID[52], smfID[S0W1], sysid[Z021], jobName[AFVBZ021] - ZDC955I  - Dynatrace connection being processed ZDC-Job/ID:AFVBZ021/Z021.
 
 
-
 2019-05-09 20:19:13.790 UTC [d37f9842] info    [native] ASID[51], smfID[S0W1], sysid[C021], jobName[HVBAC021] - ZDTP008I - ZDTP008I ZDTAGT71.
-
 
 
 2019-05-09 20:19:13.790 UTC [d37f9842] info    [native] ASID[51], smfID[S0W1], sysid[C021], jobName[HVBAC021] - ZDTP020I - ZDTP020I Active Sensors: MQ DB2 DB2R SOAP CTG DB2Fetch DLI DLIR HTTP .
@@ -5788,7 +5551,6 @@ scraped: 2026-03-05T21:29:49.679843
 
 # Install the IMS module
 
-# Install the IMS module
 
 * Latest Dynatrace
 * 21-min read
@@ -5830,7 +5592,6 @@ The IMS Connect exit can be enabled to create PurePath nodes in a distributed tr
 //ZDTPARMS DD *
 
 
-
 ZDCID=<zDC_Id>
 ```
 
@@ -5851,7 +5612,6 @@ Sample JCL with positional parameters:
 //S1       EXEC PGM=ZDTIINST,PARM='<IMS_Id>,<zDC_Id>'
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
 ```
 
@@ -5861,17 +5621,13 @@ Sample JCL with keyword parameters:
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=<IMS_Id>
-
 
 
 ZDC=<zDC_Id>
@@ -5883,7 +5639,6 @@ Below is the complete list and description of the positional parameters of the i
 
 ```
 // ...    PARM='<IMS_Id>,<zDC_Id>,<ActionCode>|<PathTableSize>,
-
 
 
 <WaitZdcMin>,<Y|N>,<PathTableSegm>,<PathTableIms>'
@@ -5903,7 +5658,6 @@ Note that the third positional parameter is not specified.
 //S1       EXEC PGM=ZDTIINST,PARM='IB01,ZDC1,,20'
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
 ```
 
@@ -5913,21 +5667,16 @@ With keyword parameter:
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IB01
 
 
-
 ZDC=ZDC1
-
 
 
 ZDCWAIT=20
@@ -5941,7 +5690,6 @@ With positional parameter:
 //S1       EXEC PGM=ZDTIINST,PARM='IMSB,ZDC1,D'
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
 ```
 
@@ -5951,21 +5699,16 @@ With keyword parameter:
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSB
 
 
-
 ZDC=ZDC1
-
 
 
 ACTION=D
@@ -5979,7 +5722,6 @@ With positional parameter:
 //S1       EXEC PGM=ZDTIINST,PARM='IMSB,ZDC1,E'
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
 ```
 
@@ -5989,21 +5731,16 @@ With keyword parameter:
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSB
 
 
-
 ZDC=ZDC1
-
 
 
 ACTION=E
@@ -6021,7 +5758,6 @@ Accept the defaults for the third and fourth parameters.
 //S1       EXEC PGM=ZDTIINST,PARM='IMSA,ZDC1,,,Y'
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
 ```
 
@@ -6031,21 +5767,16 @@ With keyword parameter:
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
 
 
-
 ZDC=ZDC1
-
 
 
 DUMP=Y
@@ -6059,7 +5790,6 @@ With positional parameter:
 //S1       EXEC PGM=ZDTIINST,PARM='IMSA,ZDC1,M,,N'
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
 ```
 
@@ -6069,25 +5799,19 @@ With keyword parameter:
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
-
 
 
 ZDC=ZDC1
 
 
-
 ACTION=M
-
 
 
 DUMP=N
@@ -6101,7 +5825,6 @@ With positional parameter:
 //S1       EXEC PGM=ZDTIINST,PARM='IMSA,ZDC1,M,,,SEGM=3'
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
 ```
 
@@ -6111,25 +5834,19 @@ With keyword parameter:
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
-
 
 
 ZDC=ZDC1
 
 
-
 ACTION=M
-
 
 
 SEGM=3
@@ -6143,7 +5860,6 @@ With positional parameter:
 //S1       EXEC PGM=ZDTIINST,PARM='IMSA,ZDC1,M,,,SEGM=1,IMSB'
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
 ```
 
@@ -6153,29 +5869,22 @@ With keyword parameter:
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
-
 
 
 ZDC=ZDC1
 
 
-
 ACTION=M
 
 
-
 SEGM=1
-
 
 
 PATHIMS=IMSB
@@ -6189,21 +5898,16 @@ Use the `REMOTESEGM=2` parameter:
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
 
 
-
 ZDC=ZDC1
-
 
 
 REMOTESEGM=2
@@ -6219,21 +5923,16 @@ With keyword parameter:
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
 
 
-
 ZDC=ZDC1
-
 
 
 FPATH=Y
@@ -6247,21 +5946,16 @@ With keyword parameter:
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
 
 
-
 ZDC=ZDC1
-
 
 
 FPATH=N
@@ -6275,25 +5969,19 @@ With keyword parameter:
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
-
 
 
 ZDC=ZDC1
 
 
-
 FPATH=Y
-
 
 
 FPATHSIZE=8
@@ -6307,25 +5995,19 @@ With keyword parameter:
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
-
 
 
 ZDC=ZDC1
 
 
-
 ACTION=M
-
 
 
 FPATHSIZE=2
@@ -6336,7 +6018,6 @@ FPATHSIZE=2
 IMS module version 1.259+
 
 ## BMP transaction tracing notes
-
 
 
 Automatic tracking for transaction-oriented BMPs (message input is from the IMS message queues) will be the same as currently exists for MPP/IFP regions: if the input message is being tracked by a control region sensor, a path will be started for the transaction in the BMP region.
@@ -6359,21 +6040,16 @@ With keyword parameter:
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
 
 
-
 ZDC=ZDC1
-
 
 
 BMP=Y
@@ -6387,21 +6063,16 @@ With keyword parameter:
 //S1       EXEC PGM=ZDTIINST
 
 
-
 //STEPLIB  DD DISP=SHR,DSN=<hlq>.SZDTAUTH
-
 
 
 //SYSIN DD *
 
 
-
 IMSID=IMSA
 
 
-
 ZDC=ZDC1
-
 
 
 BMP=N
@@ -6446,7 +6117,6 @@ Depending on your z/OS system parameters, a symptom dump may also be written to 
 //SYSABEND DD SYSOUT=*
 
 
-
 //SYSMDUMP DD DSN=DT.IMSAGENT.INJECT.SDUMP,DISP=(OLD,KEEP,KEEP)
 ```
 
@@ -6479,14 +6149,12 @@ To update your IMS module to a newer version without restarting the region
    DELETE 'DT.DYNTRC.SZDTAUTH' NOSCRATCH
 
 
-
    DEFINE ALIAS(NAME('DT.DYNTRC.SZDTAUTH') RELATE('DT.R12710.SZDTAUTH'))
    ```
 3. Run the injection job without the action code to pick up the updated IMS module. For more details, see the [Injection notes](#injection-notes).
 4. To recover the ECSA used by the old version of the IMS module see section [Garbage collection notes](#gc-notes).
 
 ## FAQ
-
 
 
 How can I deactivate the IMS module?
@@ -6497,9 +6165,7 @@ If an ABEND occurs in the IMS module, the recovery process produces ABEND diagno
 ZDTI032W Recovery routine entered.
 
 
-
 ZDTI036W ZDTIII15 0000000 20221103 10.51 VER 1.255.0 ABEND at offset 007874.
-
 
 
 ZDTI033W Successful ABEND recovery, agent disabled.
@@ -6533,7 +6199,6 @@ scraped: 2026-03-06T21:36:53.068278
 
 # Customize the zRemote module
 
-# Customize the zRemote module
 
 * Latest Dynatrace
 * 9-min read
@@ -6591,13 +6256,10 @@ To assign an LPAR to a host group, specify the group name in between a pair of `
 [HostGroup]
 
 
-
 <LPAR_Name1>=<HostGroupName>
 
 
-
 <LPAR_Name2>=<HostGroupName>
-
 
 
 [HostGroup]
@@ -6621,17 +6283,13 @@ In this example, we add three LPARsâ`LPARA`, `LPARB`, and `LPARC` to a sing
 [HostGroup]
 
 
-
 LPARA=TEST_HOST
-
 
 
 LPARB=TEST_HOST
 
 
-
 LPARC=TEST_HOST
-
 
 
 [HostGroup]
@@ -6645,17 +6303,13 @@ In this example we assign each LPAR to a separate host group.
 [HostGroup]
 
 
-
 LPARA=TEST_HOST
-
 
 
 LPARB=PROD_HOST
 
 
-
 LPARC=PERF_HOST
-
 
 
 [HostGroup]
@@ -6711,7 +6365,6 @@ The **SQL statement fetch** feature is disabled by default. To enable it
      \<cli-driver-path\>/bin/db2cli validate -connect -database \<db-location\>:\<ip\>:\<port\> -user \<id\> -passwd \<pw\>
 
 
-
      \<cli-driver-path\>/bin/db2cli validate -connect -dsn \<db-alias\>
      ```
    * To configure the CLI driver, you need Db2 credentials that grant access to Db2 connections (from distributed using DDF/DRDA) and grants to select on CATALOG, specifically on SYSPACKSTMT.
@@ -6721,57 +6374,43 @@ The **SQL statement fetch** feature is disabled by default. To enable it
    # Linux
 
 
-
    cli_driver_lib=/opt/IBM/CLIDRIVER/lib/libdb2.so
-
 
 
    # ... or Windows
 
 
-
    cli_driver_lib=C:/IBM/CLIDRIVER/bin/db2app64.dll
 
 
-
    [DbAlias]
-
 
 
    dbHost1.dbName1=alias1
 
 
-
    dbHost2.dbName2=alias2
-
 
 
    dbHostN.dbNameN=aliasN
 
 
-
    [DbAlias]
-
 
 
    # Beginning with zRemote 1.279 it is possible to set the new flag sqlStmtExtended, if
 
 
-
    # true the full (fetched) SQL statement is appended with its old (unfetched) format,
-
 
 
    # for example, from an example above "FETCH (GETTAB INTO : H , : H , : H , : H , : H)"
 
 
-
    # would be shown as "FETCH (GETTAB INTO : H , : H , : H , : H , : H) (PROGNAME;165;3)".
 
 
-
    # The default is false. Note: if enabled this setting would affect the aggregation count.
-
 
 
    sqlStmtExtended=false
@@ -6800,191 +6439,142 @@ Example of an AT-TLS configuration
 TTLSRule                       <client-rule>
 
 
-
 {
-
 
 
 RemoteAddr                 <ALL | specific-ip-addr>
 
 
-
 RemotePortRange            <zdclistenerport>
-
 
 
 Direction                  Outbound
 
 
-
 TTLSGroupActionRef         <group-action>
-
 
 
 TTLSEnvironmentActionRef   <environment-action>
 
 
-
 TTLSConnectionActionRef    <connection-action>
 
 
-
 }
-
 
 
 TTLSGroupAction                <group-action>
 
 
-
 {
-
 
 
 TTLSEnabled                On
 
 
-
 Trace                       <trace-level>
 
 
-
 }
-
 
 
 TTLSEnvironmentAction          <environment-action>
 
 
-
 {
-
 
 
 HandshakeRole              Client
 
 
-
 TTLSKeyringParmsRef        <keyring-parms>
-
 
 
 TTLSCipherParmsRef         <cipher-parms>
 
 
-
 }
-
 
 
 TTLSKeyringParms               <keyring-parms>
 
 
-
 {
-
 
 
 #   A certificate matches that of the zRemote's certificate
 
 
-
 #   must be loaded into RACF and connected to the Keyring here.
-
-
-
 
 
 Keyring                    <pub-key-or-certificate>
 
 
-
 }
-
 
 
 TTLSCipherParms                <cipher-parms>
 
 
-
 {
 
 
-
 ...
-
 
 
 V3CipherSuites             TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
 
 
-
 V3CipherSuites             TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
-
 
 
 V3CipherSuites             TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
 
 
-
 V3CipherSuites             TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-
 
 
 ...
 
 
-
 }
-
 
 
 TTLSConnectionAction           <connection-action>
 
 
-
 {
-
 
 
 TTLSConnectionAdvancedParmsRef  <connection-advanced-parms>
 
 
-
 }
-
 
 
 TTLSConnectionAdvancedParms    <connection-advanced-parms>
 
 
-
 {
-
 
 
 SSLv2                      Off
 
 
-
 SSLv3                      Off
-
 
 
 TLSv1                      Off
 
 
-
 TLSv1.1                    Off
-
 
 
 TLSv1.2                    On
 
 
-
 TLSv1.3                    On
-
 
 
 }
@@ -7008,45 +6598,34 @@ Show configuration template
 # Must be true to enable secure connection; all other SSL settings are ignored if false
 
 
-
 sslEnabled=true
-
 
 
 # Absolute paths to your private key (with the pass-phrase stripped) and certificate PEM files.
 
 
-
 # Beginning with zRemote module version 1.301.0, multiple private-key/certificate pairs delimited
-
 
 
 # by a semicolon can be specified. For example:
 
 
-
 # sslPrivateKey=<private-key-1.pem; private-key-2.pem; ...; private-key-n.pem>
-
 
 
 # sslCertificate=<certificate-1.pem; certificate-2.pem; ...; certificate-n.pem>
 
 
-
 sslPrivateKey=<private-key.pem>
-
 
 
 sslCertificate=<certificate.pem>
 
 
-
 # Optional: TLS cipher suites allowed according to OpenSSL
 
 
-
 # Example: sslCiphers=ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384
-
 
 
 sslCiphers=<cipher-suites>
@@ -7086,7 +6665,6 @@ scraped: 2026-03-06T21:25:07.541300
 
 # Install the zRemote module
 
-# Install the zRemote module
 
 * Latest Dynatrace
 * 8-min read
@@ -7217,7 +6795,6 @@ Windows
 ### Operations
 
 
-
 To stop, start, or restart the zRemote module, you can use the following commands.
 
 Linux
@@ -7266,7 +6843,6 @@ scraped: 2026-03-04T21:28:44.483728
 
 # Download z/OS product datasets
 
-# Download z/OS product datasets
 
 * Latest Dynatrace
 * 5-min read
@@ -7365,393 +6941,295 @@ You can extract the product datasets from the PAX file as follows:
    //EXTRACT JOB ('ACCTINFO'),'User name or comment',NOTIFY=&SYSUID,
 
 
-
    //             MSGLEVEL=(1,1),CLASS=A,MSGCLASS=X,REGION=0M,
-
 
 
    //             COND=(0,NE)
 
 
-
    //*
-
 
 
    //* !!!!!!!! IMPORTANT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-
    //*
-
 
 
    //* When upgrading the zDC to version 1.213+ while
 
 
-
    //* the CICS code module is enabled, it is important to follow
-
 
 
    //* the below steps in the given sequence.
 
 
-
    //*
-
 
 
    //* 1. Stop the zDC
 
 
-
    //* 2. Wait for 15 minutes for the CICS code module to
-
 
 
    //*    reset/cleanup the control blocks
 
 
-
    //* 3. Upgrade the zDC to newer version
-
 
 
    //* 4. Start the zDC
 
 
-
    //*
-
 
 
    //* !!!!!!!! IMPORTANT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-
    //*
-
 
 
    //* This job extracts the product installation datasets from
 
 
-
    //* the installation files at <MYUSS>/GIMZIP to
-
 
 
    //* <hlq>.<rel>.SZDT* libraries.
 
 
-
    //*
-
 
 
    //* Change the JOB card and the SET statements below to meet
 
 
-
    //* site standards.
 
 
-
    //*
-
 
 
    //* Verify if the SMPCPATH and SMPJHOME DD below points to the
 
 
-
    //* correct PATH to meet site standards.
 
 
-
    //*
-
 
 
    //* WARNING!
 
 
-
    //* This JCL must be in mixed case and sequence numbers are not allowed
 
 
-
    //*
-
 
 
    // EXPORT SYMLIST=*
 
 
-
    // SET HLQ='DT'             <== HLQ of the target PDS datasets
-
 
 
    // SET REL='R12770'         <== Release number
 
 
-
    // SET VOLSER='NSM001'      <== Volume of the target PDS datasets
-
 
 
    // SET MYUSS='/u/dt'        <== USS work directory
 
 
-
    //*
 
 
-
    //*
-
 
 
    //STEP1   EXEC PGM=IKJEFT01,DYNAMNBR=10
 
 
-
    //SYSPRINT DD SYSOUT=*
-
 
 
    //SYSTSPRT DD SYSOUT=*
 
 
-
    //STDOUT   DD SYSOUT=*
-
 
 
    //STDERR   DD SYSOUT=*
 
 
-
    //SYSIN    DD DUMMY
-
 
 
    //SYSTSIN  DD *,SYMBOLS=EXECSYS
 
 
-
    BPXBATCH SH rm -Rf &MYUSS/GIMZIP
-
 
 
    BPXBATCH SH cd &MYUSS &&  +
 
 
-
    pax -rvf dynatrace-zos.pax GIMZIP
 
 
-
    //*
 
 
-
    //*
-
 
 
    //STEP2    EXEC PGM=GIMUNZIP,PARM='HASH=YES'
 
 
-
    //SMPDIR   DD PATH='&MYUSS/GIMZIP/',PATHDISP=KEEP
-
 
 
    //SMPCPATH DD PATH='/usr/lpp/smp/classes/',PATHDISP=KEEP
 
 
-
    //SMPJHOME DD PATH='/usr/lpp/java/J8.0/',PATHDISP=KEEP
-
 
 
    //SMPOUT   DD SYSOUT=*
 
 
-
    //SYSPRINT DD SYSOUT=*
-
 
 
    //SYSUT3   DD UNIT=SYSALLDA,SPACE=(CYL,(25,5))
 
 
-
    //SYSUT4   DD UNIT=SYSALLDA,SPACE=(CYL,(25,5))
-
 
 
    //SYSIN    DD *,SYMBOLS=EXECSYS
 
 
-
    <GIMUNZIP>
-
 
 
    <ARCHDEF archid="AUTHLIB"
 
 
-
    replace="YES"
 
 
-
    volume="&VOLSER"
-
 
 
    newname="&HLQ..&REL..SZDTAUTH">
 
 
-
    </ARCHDEF>
-
 
 
    <ARCHDEF archid="LOAD"
 
 
-
    replace="YES"
 
 
-
    volume="&VOLSER"
-
 
 
    newname="&HLQ..&REL..SZDTLOAD">
 
 
-
    </ARCHDEF>
-
 
 
    <ARCHDEF archid="SAMPLE"
 
 
-
    replace="YES"
-
 
 
    volume="&VOLSER"
 
 
-
    newname="&HLQ..&REL..SZDTSAMP">
-
 
 
    </ARCHDEF>
 
 
-
    </GIMUNZIP>
-
 
 
    /*
 
 
-
    //*
-
 
 
    //STEP3   EXEC PGM=IKJEFT01,DYNAMNBR=10
 
 
-
    //SYSPRINT DD SYSOUT=*
-
 
 
    //SYSTSPRT DD SYSOUT=*
 
 
-
    //STDOUT   DD SYSOUT=*
-
 
 
    //STDERR   DD SYSOUT=*
 
 
-
    //SYSIN    DD DUMMY
 
 
-
    //SYSTSIN  DD *,SYMBOLS=EXECSYS
-
 
 
    BPXBATCH SH export ussdir=&MYUSS &&+
 
 
-
    cp ${ussdir}/GIMZIP/dynatrace-oneagent-zos-java.jar +
-
 
 
    ${ussdir}/dynatrace-oneagent-zos-java.jar
 
 
-
    //*
 
 
-
    //*
-
 
 
    //STEP4   EXEC PGM=IKJEFT01,DYNAMNBR=55
 
 
-
    //SYSPRINT DD SYSOUT=*
-
 
 
    //SYSTSPRT DD SYSOUT=*
 
 
-
    //STDOUT   DD SYSOUT=*
-
 
 
    //STDERR   DD SYSOUT=*
 
 
-
    //SYSIN    DD DUMMY
-
 
 
    //SYSTSIN  DD *,SYMBOLS=EXECSYS
 
 
-
    BPXBATCH SH rm -Rf &MYUSS/GIMZIP
-
 
 
    //
@@ -7762,7 +7240,6 @@ You can extract the product datasets from the PAX file as follows:
    Optional Delete `dynatrace-zos.pax` and `dynatrace-oneagent-zos-java.jar` (if it is not needed) to free up disk space.
 
 ### Product datasets
-
 
 
 The extraction process creates the following product datasets (the names are provided for the default high-level qualifier and the `R1nnnx` release version):
@@ -7779,17 +7256,13 @@ On an average, the product datasets and installation files in the z/OS USS direc
 Dsname                Tracks(3390) %Used
 
 
-
 ---------------------------------------
-
 
 
 DT.R1nnnm.SZDTAUTH      893          5
 
 
-
 DT.R1nnnm.SZDTLOAD       61         27
-
 
 
 DT.R1nnnm.SZDTSAMP     1221         24
@@ -7797,7 +7270,6 @@ DT.R1nnnm.SZDTSAMP     1221         24
 
 ```
 ./GIMZIP/                      8K
-
 
 
 ./dynatrace-zos-1.nnn.m.pax    5M
@@ -7811,7 +7283,6 @@ For example:
 
 ```
 DEFINE ALIAS(NAME('DT.DYNTRC.SZDTAUTH') RELATE('DT.R12770.SZDTAUTH'))
-
 
 
 DEFINE ALIAS(NAME('DT.DYNTRC.SZDTLOAD') RELATE('DT.R12770.SZDTLOAD'))
@@ -7829,7 +7300,6 @@ scraped: 2026-03-06T21:19:48.285337
 
 # z/OS installation overview
 
-# z/OS installation overview
 
 * Latest Dynatrace
 * 1-min read
@@ -7864,7 +7334,6 @@ scraped: 2026-03-05T21:29:56.255357
 
 # Monitor file access of CICS applications
 
-# Monitor file access of CICS applications
 
 * Latest Dynatrace
 * 1-min read
@@ -7906,7 +7375,6 @@ scraped: 2026-03-06T21:37:55.780096
 
 # Monitor z/OS logs
 
-# Monitor z/OS logs
 
 * Latest Dynatrace
 * 4-min read
@@ -8004,7 +7472,6 @@ scraped: 2026-03-05T21:29:53.332272
 
 # Monitor JMX metrics on z/OS
 
-# Monitor JMX metrics on z/OS
 
 * Latest Dynatrace
 * 5-min read
@@ -8025,69 +7492,52 @@ Typically, you've created the `dtconfig.json` file during the [z/OS Java code mo
 {
 
 
-
 "Tenant": "myTenant",
-
 
 
 "ClusterID": myCluster,
 
 
-
 "ZdcName": "DEFAULT",
-
 
 
 "customJmxMetrics": [
 
 
-
 {
-
 
 
 "name": "java.lang.CurrentThreadCount",
 
 
-
 "source":
-
 
 
 {
 
 
-
 "domain": "java.lang",
-
 
 
 "keyProperties": {
 
 
-
 "type": "Threading",
-
 
 
 },
 
 
-
 "attribute": "ThreadCount"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -8133,21 +7583,16 @@ For example, `HeapMemoryUsage` is a `CompositeData` type that returns the follow
 {
 
 
-
 committed: integer,
-
 
 
 init: integer,
 
 
-
 max: integer,
 
 
-
 used: integer
-
 
 
 }
@@ -8159,61 +7604,46 @@ If you want to extract the value of `used` from the `HeapMemoryUsage` attribute,
 {
 
 
-
 "customJmxMetrics": [
 
 
-
 {
-
 
 
 "name": "java.lang.HeapMemoryUsage",
 
 
-
 "source":
-
 
 
 {
 
 
-
 "domain": "java.lang",
-
 
 
 "keyProperties": {
 
 
-
 "type": "Memory"
-
 
 
 },
 
 
-
 "attribute": "HeapMemoryUsage",
-
 
 
 "attributePath": "get(\"used\")"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -8227,21 +7657,16 @@ Splittings can be used to define additional dimensions for a metric.
 "splittings": [
 
 
-
 {
-
 
 
 "name": "dimension",
 
 
-
 "keyProperty": "name"
 
 
-
 }
-
 
 
 ]
@@ -8260,89 +7685,67 @@ The following example shows how to define a metric providing multiple dimensions
 {
 
 
-
 "customJmxMetrics": [
 
 
-
 {
-
 
 
 "name": "java.lang.MemoryPoolUsage",
 
 
-
 "source":
 
 
-
 {
-
 
 
 "domain": "java.lang",
 
 
-
 "keyProperties": {
-
 
 
 "type": "MemoryPool",
 
 
-
 "name": "*"
-
 
 
 },
 
 
-
 "attribute": "Usage",
-
 
 
 "attributePath": "get(\"used\")",
 
 
-
 "splittings": [
-
 
 
 {
 
 
-
 "name": "memory_type",
-
 
 
 "keyProperty": "name"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -8385,7 +7788,6 @@ scraped: 2026-03-06T21:19:43.227674
 
 # Extend traces using OpenTelemetry
 
-# Extend traces using OpenTelemetry
 
 * Latest Dynatrace
 * 7-min read
@@ -8426,17 +7828,13 @@ Typically, you've created the `dtconfig.json` file during the [z/OS Java code mo
 {
 
 
-
 "OpenTelemetry": {
-
 
 
 "EnableIntegration": true
 
 
-
 }
-
 
 
 }
@@ -8464,25 +7862,19 @@ This example shows how you can capture an additional operation in a Java applica
    import io.opentelemetry.api.GlobalOpenTelemetry;
 
 
-
    import io.opentelemetry.api.trace.Tracer;
-
 
 
    public final class RestaurantOpenTelemetry {
 
 
-
    public static Tracer getTracer() {
-
 
 
    return GlobalOpenTelemetry.getTracer("restaurant", "0.0.1");
 
 
-
    }
-
 
 
    }
@@ -8493,93 +7885,70 @@ This example shows how you can capture an additional operation in a Java applica
    import io.opentelemetry.api.trace.Span;
 
 
-
    import io.opentelemetry.api.trace.SpanKind;
-
 
 
    import io.opentelemetry.context.Scope;
 
 
-
    public class MenuDao {
-
 
 
    public Order newOrder(String customer) {
 
 
-
    // OpenTelemetry: create a span and define it's scope
-
 
 
    Span span = RestaurantOpenTelemetry.getTracer().spanBuilder("MenuDao.newOrder")
 
 
-
    .setSpanKind(SpanKind.INTERNAL)
-
 
 
    .setAttribute("customer", customer)
 
 
-
    .startSpan();
-
 
 
    try (Scope scope = span.makeCurrent()) {
 
 
-
    // Your application code: create a new order
-
 
 
    Order order = new Order();
 
 
-
    order.setCustomer(customer);
-
 
 
    order.setStatus("pending");
 
 
-
    // OpenTelemetry: add order ID to the span
-
 
 
    span.setAttribute("newOrderId", order.getId());
 
 
-
    return order;
-
 
 
    } finally {
 
 
-
    // OpenTelemetry: close the span
-
 
 
    span.end();
 
 
-
    }
 
 
-
    }
-
 
 
    }
@@ -8601,85 +7970,64 @@ To learn more about context propagation, refer to the official [OpenTelemetry Co
 import io.opentelemetry.api.GlobalOpenTelemetry;
 
 
-
 import io.opentelemetry.context.Context;
-
 
 
 import io.opentelemetry.context.propagation.TextMapPropagator;
 
 
-
 public class AuditService {
-
 
 
 public static void sendAuditEntry(Order order) {
 
 
-
 // Your application code: declare an audit entry
-
 
 
 Map<String, String> auditEntry = new HashMap<>();
 
 
-
 auditEntry.put("name", order.getId().toString());
-
 
 
 auditEntry.put("description", order.getCustomer());
 
 
-
 // OpenTelemetry: Inject current context of audit entry and propagate it
-
 
 
 TextMapPropagator propagator = GlobalOpenTelemetry.getPropagators().getTextMapPropagator();
 
 
-
 propagator.inject(
-
 
 
 Context.current(),
 
 
-
 auditEntry,
-
 
 
 Map::put
 
 
-
 );
-
 
 
 // Your application code: write audit entry to objectOutputStream (Socket)
 
 
-
 Socket socket = new Socket(host, port);
-
 
 
 ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream())) {
 
 
-
 objectOutputStream.writeObject(auditEntry);
 
 
-
 }
-
 
 
 }
@@ -8691,137 +8039,103 @@ objectOutputStream.writeObject(auditEntry);
 import io.opentelemetry.api.GlobalOpenTelemetry;
 
 
-
 import io.opentelemetry.api.trace.Span;
-
 
 
 import io.opentelemetry.api.trace.SpanKind;
 
 
-
 import io.opentelemetry.context.Context;
-
 
 
 import io.opentelemetry.context.Scope;
 
 
-
 import io.opentelemetry.context.propagation.TextMapGetter;
-
 
 
 public class AuditService {
 
 
-
 private static void receivedAuditEntry(Map<String, String> auditEntry) {
-
 
 
 // OpenTelemetry: declare the tracer, create a span and define it's scope
 
 
-
 Span span = GlobalOpenTelemetry.getTracer("auditing-center", "0.0.1")
-
 
 
 .spanBuilder("auditEntry")
 
 
-
 .setSpanKind(SpanKind.SERVER)
-
 
 
 .setAttribute("auditName", auditEntry.get("name"))
 
 
-
 .startSpan();
-
 
 
 try (Scope scope = span.makeCurrent()) {
 
 
-
 // Your application code: process audit entry
-
 
 
 // ...
 
 
-
 }
-
 
 
 span.end();
 
 
-
 }
-
 
 
 public static void readAuditEntryFromSocket(Socket socket) {
 
 
-
 ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
-
 
 
 Object input = objectInputStream.readObject();
 
 
-
 // OpenTelemetry: extract context of audit entry
-
 
 
 Context context = GlobalOpenTelemetry.getPropagators().getTextMapPropagator()
 
 
-
 .extract(
-
 
 
 Context.current(),
 
 
-
 input,
-
 
 
 new TextMapGetter<Map<String, String>>(){ /* ... */ });
 
 
-
 try (Scope scope = context.makeCurrent()) {
-
 
 
 receivedAuditEntry((Map<String, String>) input);
 
 
-
 }
-
 
 
 // ...
 
 
-
 }
-
 
 
 }
@@ -8834,40 +8148,31 @@ Dynatrace displays the full end-to-end trace as a distributed trace that contain
 ## Suppress spans from specific instrumentations
 
 
-
 You can suppress spans coming from a particular instrumentation scope/library. To do so, add the library name to the `OpenTelemetry: DisabledSensors` parameter in name via the `dtconfig.json` file. You can use an asterisk (`*`) to exclude all instrumentation scope/library names starting with the preceding string. You can't use asterisk at the beginning or in the middle of a library name.
 
 ```
 {
 
 
-
 "OpenTelemetry": {
-
 
 
 "EnableIntegration": true,
 
 
-
 "DisabledSensors": [
-
 
 
 "com.example.MyLib",
 
 
-
 "opentelemetry.urllib3*"
-
 
 
 ]
 
 
-
 }
-
 
 
 }
@@ -8924,7 +8229,6 @@ scraped: 2026-03-06T21:37:49.354494
 
 # Set up IBM MQ tracing on z/OS
 
-# Set up IBM MQ tracing on z/OS
 
 * Latest Dynatrace
 * 1-min read
@@ -8986,7 +8290,6 @@ scraped: 2026-03-06T21:10:53.306624
 
 # Dynatrace for z/OS
 
-# Dynatrace for z/OS
 
 * Latest Dynatrace
 * 8-min read
@@ -9109,7 +8412,6 @@ No, the CICS and IMS modules can only capture static SQL statements.
 ### z/OS Java module
 
 
-
 Can I monitor the Servants of my WebSphere Application Server with the z/OS Java module?
 
 The WebSphere Application Server on z/OS allows you to spin up [Servantsï»¿](https://www.ibm.com/docs/en/was-zos/9.0.5?topic=zos-websphere-application-server-terminology) dynamically depending on the workload.
@@ -9172,7 +8474,6 @@ scraped: 2026-03-06T21:09:37.289101
 
 # Install OneAgent on a server
 
-# Install OneAgent on a server
 
 * Latest Dynatrace
 * 3-min read
@@ -9263,7 +8564,6 @@ scraped: 2026-03-06T21:23:40.075406
 
 # OneAgent requirements
 
-# OneAgent requirements
 
 * Latest Dynatrace
 * 3-min read
@@ -9355,7 +8655,6 @@ scraped: 2026-03-06T21:18:50.225002
 
 # OneAgent file aging mechanism
 
-# OneAgent file aging mechanism
 
 * Latest Dynatrace
 * 6-min read
@@ -9502,7 +8801,6 @@ scraped: 2026-03-06T21:30:54.102654
 
 # Enable the OpenTelemetry Span Sensor for OneAgent
 
-# Enable the OpenTelemetry Span Sensor for OneAgent
 
 * Latest Dynatrace
 * How-to guide
@@ -9707,7 +9005,6 @@ Searching by span attribute is limited to the span name: filter by `Request` on 
 ## How the Span Sensor works
 
 
-
 For more information about the OneAgent code module's OpenTelemetry Span Sensor, see [Detect OpenTelemetry spans using the OneAgent code module's OpenTelemetry Span Sensor](../ru/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel.md#oneagent-otel-span-sensor "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.").
 
 ### Entry points
@@ -9831,7 +9128,6 @@ scraped: 2026-03-06T21:16:25.986356
 
 # Use OneAgent with OpenTelemetry data
 
-# Use OneAgent with OpenTelemetry data
 
 * Latest Dynatrace
 * How-to guide
@@ -9949,21 +9245,16 @@ The following example shows what OneAgent would detect and stitch into the OneAg
 GET /calculate-price/ABC123  # OneAgent
 
 
-
 âââ SELECT FROM products     # OneAgent
-
 
 
 âââ calculate-discount       # OpenTelemetry
 
 
-
 â   âââ seasonal-rules       # OpenTelemetry
 
 
-
 â   âââ loyalty-calculation  # OpenTelemetry
-
 
 
 âââ INSERT INTO prices       # OneAgent
@@ -9975,145 +9266,109 @@ These auto-instrumented spans are woven together with your manual OpenTelemetry 
 @RestController
 
 
-
 public class PricingController {
-
 
 
 private static final Tracer tracer = GlobalOpenTelemetry.getTracer("pricing-service");
 
 
-
 @GetMapping("/calculate-price/{productId}")
-
 
 
 public PriceResponse calculatePrice(@PathVariable String productId) {
 
 
-
 Product product = productRepository.findById(productId);
-
 
 
 Span calcSpan = tracer.spanBuilder("calculate-discount")
 
 
-
 .setAttribute("product.category", product.getCategory())
 
 
-
 .startSpan();
-
 
 
 double discount;
 
 
-
 try (Scope scope = calcSpan.makeCurrent()) {
-
 
 
 discount = applySeasonalRules(product);
 
 
-
 discount += applyCustomerLoyalty(product);
 
 
-
 } finally {
-
 
 
 calcSpan.end();
 
 
-
 }
-
 
 
 return priceRepository.save(new PriceResponse(product, discount));
 
 
-
 }
-
 
 
 private double applySeasonalRules(Product product) {
 
 
-
 Span span = tracer.spanBuilder("seasonal-rules")
-
 
 
 .setAttribute("season", "winter-sale")
 
 
-
 .startSpan();
 
 
-
 try (Scope scope = span.makeCurrent()) {
-
 
 
 return calculateSeasonalDiscount();
 
 
-
 } finally {
-
 
 
 span.end();
 
 
-
 }
 
 
-
 }
-
 
 
 private double applyCustomerLoyalty(Product product) {
 
 
-
 Span span = tracer.spanBuilder("loyalty-calculation").startSpan();
-
 
 
 try (Scope scope = span.makeCurrent()) {
 
 
-
 return calculateLoyaltyDiscount();
-
 
 
 } finally {
 
 
-
 span.end();
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -10131,7 +9386,6 @@ scraped: 2026-02-06T16:30:55.688261
 
 # OneAgent configuration via command-line interface
 
-# OneAgent configuration via command-line interface
 
 * Latest Dynatrace
 * Reference
@@ -10337,7 +9591,6 @@ Use the `--get-watchdog-portrange` parameter to check the current port range def
 ### Set a new port range
 
 
-
 Deprecated
 
 Starting with OneAgent version 1.301, OneAgent doesn't use the TCP ports for its own inter-process communication. In case OneAgent occupies your applications' ports, upgrade OneAgent to version 1.301+.
@@ -10427,13 +9680,10 @@ The command saves the archive as the `support_archive_agent_YYYY-MM-DD_hhmmss.zi
 Creating support archive from last 30 days in C:\data\support-archive
 
 
-
 Waiting 30s for archive request to be processed
 
 
-
 Processing archive, waiting up to 15m 0s
-
 
 
 Archive saved as C:\data\support-archive\support_archive_agent_2021-09-07_121619.zip
@@ -10496,7 +9746,6 @@ To find a host ID, use the `--get-host-id` parameter. For example:
   `.\oneagentctl.exe --get-host-id`
 
 ### Define the host ID source
-
 
 
 Available on all supported platforms for OneAgent version 1.223+. For OneAgent version 1.221 and earlier, this feature is supported only for Citrix Virtual Apps and Desktops.
@@ -10624,7 +9873,6 @@ To show the host name:
   `.\oneagentctl.exe --get-host-name`
 
 ### Custom host metadata
-
 
 
 Once configured, custom metadata is displayed as a set of properties at the bottom of the **Properties and tags** section of the host overview page. The property values must not contain an `=` character (unless used as a key-value delimiter) or whitespace characters. The maximum length is 256 characters, including the key-value delimiter. The key name must not start with a `#` character.
@@ -10786,7 +10034,6 @@ You can use the `oneagentctl` command to check or change communication ports use
 See [Metrics ingestion](../ru/ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.") to learn more.
 
 ### OneAgent API, scripting integration, and Telegraf
-
 
 
 The default metric ingestion port is `14499`. If necessary, you can use the [oneagentctl](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the port. Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
@@ -10987,7 +10234,6 @@ scraped: 2026-03-06T21:10:49.876144
 
 # OneAgent features
 
-# OneAgent features
 
 * Latest Dynatrace
 * 4-min read
@@ -11065,37 +10311,28 @@ To use the Settings API
    [
 
 
-
    {
-
 
 
    "schemaId":  "builtin:oneagent.features",
 
 
-
    "scope": "PROCESS_GROUP-1",
-
 
 
    "value": {
 
 
-
    "enabled": false,
-
 
 
    "key": "JAVA_LOG_ENRICHMENT_UNSTRUCTURED"
 
 
-
    }
 
 
-
    }
-
 
 
    ]
@@ -11111,37 +10348,28 @@ To use the Settings API
    [
 
 
-
    {
-
 
 
    "schemaId":  "builtin:oneagent.features",
 
 
-
    "scope": "Environment",
-
 
 
    "value": {
 
 
-
    "enabled": true,
-
 
 
    "key": "JAVA_KAFKA_STREAMS"
 
 
-
    }
 
 
-
    }
-
 
 
    ]
@@ -11160,7 +10388,6 @@ scraped: 2026-03-06T21:13:30.839577
 
 # OneAgent health overview
 
-# OneAgent health overview
 
 * Latest Dynatrace
 * 4-min read
@@ -11221,7 +10448,6 @@ scraped: 2026-03-06T21:23:33.828725
 
 # Set up Grail permissions for OneAgent
 
-# Set up Grail permissions for OneAgent
 
 * Latest Dynatrace
 * How-to guide
@@ -11280,7 +10506,6 @@ scraped: 2026-03-06T21:19:36.131208
 
 # Troubleshooting OneAgent deep-monitoring issues
 
-# Troubleshooting OneAgent deep-monitoring issues
 
 * Latest Dynatrace
 * 3-min read
@@ -11351,7 +10576,6 @@ scraped: 2026-03-06T21:18:46.855136
 
 # Troubleshooting OneAgent installation
 
-# Troubleshooting OneAgent installation
 
 * Latest Dynatrace
 * Troubleshooting
@@ -11495,7 +10719,6 @@ After successfully initializing the SDK, you might still encounter issues, such 
 ### Linux
 
 
-
 OneAgent installed on Chef Habitat deployments doesn't inject into processes
 
 Even though you can successfully install OneAgent on machines hosting services deployed by Chef Habitat, OneAgent won't be able to inject into the processes, because in such deployments, the Chef Habitat uses its own supervisor host-specific glibc, not the system-level glibc OneAgent relies on.
@@ -11524,7 +10747,6 @@ If you are using a system with SELinux in enforcing mode and injected OneAgents 
 
    ```
    # grep type=AVC /var/log/audit/audit.log
-
 
 
    # journalctl --utc -a -t "audit"
@@ -11631,7 +10853,6 @@ For further assistance, reach out to Dynatrace support specialists in chat.
 ### Windows
 
 
-
 Compatibility with antivirus software
 
 To ensure seamless functioning of OneAgent and to avoid overhead, we recommend excluding all files in the OneAgent installation directory from antivirus scan.
@@ -11672,13 +10893,10 @@ OneAgent Windows installer utilizes the Windows Installer Cache, which is locate
 MSI (s) (C0:E4) [09:27:14:308]: Warning: Local cached package 'C:\Windows\Installer\312c0.msi' is missing.
 
 
-
 ...
 
 
-
 Error 1714. The older version of Dynatrace OneAgent cannot be removed.  Contact your technical support group.  System Error 1612.
-
 
 
 MSI (s) (C0:54) [09:27:56:489]: Product: Dynatrace OneAgent -- Error 1714. The older version of Dynatrace OneAgent cannot be removed.  Contact your technical support group.  System Error 1612.
@@ -11715,7 +10933,6 @@ You may encounter an error like this when you use `dynatrace-agentXX.sh` in a sh
 Info: using DT_HOME: /opt/dynatrace/oneagent
 
 
-
 .profile[33] LDR_PRELOAD64: parameter not set
 ```
 
@@ -11725,13 +10942,10 @@ This happens if you use `set -u` to treat unset variables and parameters as erro
 # avoid error
 
 
-
 set +u
 
 
-
 export DT_HOME=/opt/dynatrace/oneagent
-
 
 
 . $DT_HOME/dynatrace-agent64.sh
@@ -11749,7 +10963,6 @@ scraped: 2026-03-06T21:12:35.235477
 
 # Dynatrace OneAgent
 
-# Dynatrace OneAgent
 
 * Latest Dynatrace
 * 2-min read

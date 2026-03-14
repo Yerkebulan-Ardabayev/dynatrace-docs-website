@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:52.244287
 
 # Azure SQL Database (DTU) monitoring
 
-# Azure SQL Database (DTU) monitoring
 
 * Latest Dynatrace
 * How-to guide

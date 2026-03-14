@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:38.315462
 
 # Разрешения пользователей для рабочих процессов
 
-# Разрешения пользователей для рабочих процессов
 
 * Latest Dynatrace
 * Справочник
@@ -150,7 +149,6 @@ scraped: 2026-03-06T21:27:38.315462
 
 ```
 ALLOW iam:service-users:use
-
 
 
 WHERE iam:service-user-email IN ("<SERVICE_USER_1_EMAIL>", "<SERVICE_USER_2_EMAIL>");

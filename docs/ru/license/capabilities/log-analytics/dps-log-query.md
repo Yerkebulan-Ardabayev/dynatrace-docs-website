@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:26.513950
 
 # Расчёт потребления Log Management & Analytics — Query (DPS)
 
-# Расчёт потребления Log Management & Analytics — Query (DPS)
 
 * Latest Dynatrace
 * Explanation
@@ -75,33 +74,25 @@ Log Management & Analytics — Query
 fetch dt.system.events
 
 
-
 | filter event.kind == "BILLING_USAGE_EVENT"
-
 
 
 | filter event.type == "Log Management & Analytics - Query"
 
 
-
 | dedup event.id
-
 
 
 | summarize {
 
 
-
 data_read_bytes = sum(billed_bytes)
-
 
 
 }, by: {
 
 
-
 startHour = bin(timestamp, 1d)
-
 
 
 }

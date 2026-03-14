@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:13.738522
 
 # Include data in segments
 
-# Include data in segments
 
 * Latest Dynatrace
 * Explanation

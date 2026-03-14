@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:47.089943
 
 # Web application configuration API
 
-# Web application configuration API
 
 * Reference
 * Published Jan 24, 2019

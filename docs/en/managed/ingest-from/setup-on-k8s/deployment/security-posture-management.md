@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:32:50.568498
 
 # Kubernetes Security Posture Management
 
-# Kubernetes Security Posture Management
 
 * Latest Dynatrace
 * How-to guide
@@ -107,9 +106,7 @@ If you already created a secret with a token in a previous deployment of Dynatra
          [kubernetes_monitoring]
 
 
-
          kubernetes_configuration_dataset_pipeline_enabled = true
-
 
 
          kubernetes_configuration_dataset_pipeline_include_node_config = true
@@ -120,25 +117,19 @@ If you already created a secret with a token in a previous deployment of Dynatra
      spec:
 
 
-
      ...
-
 
 
      templates:
 
 
-
      kspmNodeConfigurationCollector:
-
 
 
      imageRef:
 
 
-
      repository: public.ecr.aws/dynatrace/dynatrace-k8s-node-config-collector
-
 
 
      tag: <tag>
@@ -159,125 +150,94 @@ If you already created a secret with a token in a previous deployment of Dynatra
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
 
 
-
    tokens: <secret-token>
-
 
 
    kspm:
 
 
-
    mappedHostPaths:
-
 
 
    - /boot
 
 
-
    - /etc
-
 
 
    - /proc/sys/kernel
 
 
-
    - /sys/fs
-
 
 
    - /sys/kernel/security/apparmor
 
 
-
    - /usr/lib/systemd/system
-
 
 
    - /var/lib
 
 
-
    activeGate:
-
 
 
    capabilities:
 
 
-
    - kubernetes-monitoring
-
 
 
    templates:
 
 
-
    kspmNodeConfigurationCollector:
-
 
 
    imageRef:
 
 
-
    repository: public.ecr.aws/dynatrace/dynatrace-k8s-node-config-collector
-
 
 
    tag: <tag>
 
 
-
    tolerations:
 
 
-
    - effect: NoSchedule
-
 
 
    key: node-role.kubernetes.io/master
 
 
-
    operator: Exists
-
 
 
    - effect: NoSchedule
 
 
-
    key: node-role.kubernetes.io/control-plane
-
 
 
    operator: Exists
@@ -289,113 +249,85 @@ If you already created a secret with a token in a previous deployment of Dynatra
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
 
 
-
    kspm:
-
 
 
    mappedHostPaths:
 
 
-
    - /boot
-
 
 
    - /etc
 
 
-
    - /proc/sys/kernel
-
 
 
    - /sys/fs
 
 
-
    - /sys/kernel/security/apparmor
-
 
 
    - /usr/lib/systemd/system
 
 
-
    - /var/lib
-
 
 
    activeGate:
 
 
-
    capabilities:
-
 
 
    - kubernetes-monitoring
 
 
-
    customProperties:
-
 
 
    value: |
 
 
-
    [kubernetes_monitoring]
-
 
 
    kubernetes_configuration_dataset_pipeline_enabled = true
 
 
-
    kubernetes_configuration_dataset_pipeline_include_node_config = true
-
 
 
    templates:
 
 
-
    kspmNodeConfigurationCollector:
-
 
 
    imageRef:
 
 
-
    repository: public.ecr.aws/dynatrace/dynatrace-k8s-node-config-collector
-
 
 
    tag: <tag>
@@ -422,7 +354,6 @@ If you already created a secret with a token in a previous deployment of Dynatra
    NAME       APIURL                  STATUS    AGE
 
 
-
    dynakube   <environment-api-url>   Running   3m48s
    ```
 2. Check the deployment status of the Node Configuration Collector DaemonSet.
@@ -439,7 +370,6 @@ If you already created a secret with a token in a previous deployment of Dynatra
    NAME                             DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
 
 
-
    dynakube-node-config-collector   3         3         3       3            3           <none>          11m
    ```
 3. Check the deployment status of the ActiveGate StatefulSet.
@@ -454,7 +384,6 @@ If you already created a secret with a token in a previous deployment of Dynatra
 
    ```
    NAME                  READY   AGE
-
 
 
    dynakube-activegate   1/1     14m

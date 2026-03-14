@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:04.248703
 
 # Monitor suspicious sign-in activity with Dynatrace
 
-# Monitor suspicious sign-in activity with Dynatrace
 
 * Latest Dynatrace
 * Tutorial
@@ -93,21 +92,16 @@ You can reproduce the **Sign-in activity outcomes over time** chart in [![Invest
 fetch logs
 
 
-
 | filter isNotNull(audit.action) and isNotNull(authentication.is_multifactor)
-
 
 
 | makeTimeseries {
 
 
-
 Success = countIf(audit.result=="Succeeded", default:0),
 
 
-
 Failure = countIf(audit.result!="Succeeded", default:0)
-
 
 
 }, time:audit.time
@@ -137,29 +131,22 @@ You can reproduce the **Top 10 sign-in users** chart in [![Investigations](https
 fetch logs
 
 
-
 | filter isNotNull(audit.action) and isNotNull(authentication.is_multifactor)
-
 
 
 | summarize {
 
 
-
 Success = countIf(audit.result=="Succeeded" or isNull(result.code)),
-
 
 
 Failure = countIf(audit.result!="Succeeded", by:{User=audit.identity
 
 
-
 }
 
 
-
 | sort Success+Failure desc
-
 
 
 | limit 10
@@ -171,37 +158,28 @@ You can reproduce the **Top 10 users by failed sign-in attempts** table in [![In
 fetch logs
 
 
-
 | filter isNotNull(audit.action) and isNotNull(authentication.is_multifactor)
-
 
 
 and audit.result!="Succeeded"
 
 
-
 | summarize {
-
 
 
 Failures = count(),
 
 
-
 `Client applications` = collectDistinct(client.app.name),
-
 
 
 `IPs` = collectDistinct(client.ip)
 
 
-
 }, by:{User=audit.identity}
 
 
-
 | sort Failures desc
-
 
 
 | limit 10
@@ -226,29 +204,22 @@ You can reproduce the **Top 10 sign-in IPs** chart in [![Investigations](https:/
 fetch logs
 
 
-
 | filter isNotNull(audit.action) and isNotNull(authentication.is_multifactor)
-
 
 
 | summarize {
 
 
-
 Success = countIf(audit.result=="Succeeded" or isNull(result.code)),
-
 
 
 Failure = countIf(audit.result!="Succeeded")
 
 
-
 }, by:{IP=client.ip}
 
 
-
 | sort Success+Failure desc
-
 
 
 | limit 10
@@ -260,33 +231,25 @@ You can reproduce the **Top 10 addresses by failed sign-in attempts** table in [
 fetch logs
 
 
-
 | filter isNotNull(audit.action) and isNotNull(authentication.is_multifactor)
-
 
 
 and audit.result!="Succeeded"
 
 
-
 | summarize {
-
 
 
 Failures = count(), Users = collectDistinct(audit.identity),
 
 
-
 `Target services` = collectDistinct(client.app.name)
-
 
 
 }, by:{`Client IP`=client.ip, City=actor.geo.city.name}
 
 
-
 | sort Failures desc
-
 
 
 | limit 10

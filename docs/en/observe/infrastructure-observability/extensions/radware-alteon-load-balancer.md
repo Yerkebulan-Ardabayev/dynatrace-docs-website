@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:00.869391
 
 # Radware Alteon Load Balancer extension
 
-# Radware Alteon Load Balancer extension
 
 * Latest Dynatrace
 * Extension

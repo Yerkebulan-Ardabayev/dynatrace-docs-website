@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:01.750284
 
 # Лучшие практики для владения сущностями
 
-# Лучшие практики для владения сущностями
 
 * Classic
 * 5 мин чтения
@@ -45,101 +44,76 @@ scraped: 2026-03-06T21:37:01.750284
 apiVersion: apps/v1
 
 
-
 kind: Deployment
 
 
-
 metadata:
-
 
 
 name: demo
 
 
-
 labels:
-
 
 
 dt.owner-1: my-team-1 # Dual team ownership defined for the Deployment
 
 
-
 dt.owner-2: my-team-2
 
 
-
 spec:
-
 
 
 replicas: 1
 
 
-
 selector:
-
 
 
 matchLabels:
 
 
-
 app: demo
-
 
 
 template:
 
 
-
 metadata:
-
 
 
 labels:
 
 
-
 app: demo
-
 
 
 dt.owner-1: my-team-1 # Ownership defined for the Pod
 
 
-
 spec:
-
 
 
 containers:
 
 
-
 - name: demo
-
 
 
 image: demo:1.0.0
 
 
-
 ports:
-
 
 
 - containerPort: 8888
 
 
-
 env:
 
 
-
 - name: DT_CUSTOM_PROP # Environment variable
-
 
 
 value: 'dt.owner-1=my-team-1' # Ownership defined for the process

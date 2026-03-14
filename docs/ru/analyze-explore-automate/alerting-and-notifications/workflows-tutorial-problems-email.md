@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:35:46.557548
 
 # Отправка email-уведомлений о проблемах
 
-# Отправка email-уведомлений о проблемах
 
 * Последняя Dynatrace
 * Учебное пособие
@@ -76,7 +75,6 @@ scraped: 2026-03-04T21:35:46.557548
 
       ```
       {{ event()["event.description"] }}
-
 
 
       Go to problem: {{ environment().url }}/ui/apps/dynatrace.davis.problems/problem/{{ event()["event.id"] }}

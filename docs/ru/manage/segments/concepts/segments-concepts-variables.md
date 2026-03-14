@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:15.473875
 
 # Переменные в сегментах
 
-# Переменные в сегментах
 
 * Последняя версия Dynatrace
 * Пояснение
@@ -44,13 +43,10 @@ scraped: 2026-03-06T21:13:15.473875
 data
 
 
-
 record(bucket="custom_sen_high_kubernetes_istio_network_logs"),
 
 
-
 record(bucket="custom_sen_low_logs_platform_service_shared"),
-
 
 
 record(bucket="custom_sen_low_query_frontend_dql_logs")
@@ -72,13 +68,10 @@ record(bucket="custom_sen_low_query_frontend_dql_logs")
 data
 
 
-
 record(name = "istio_network", key="custom_sen_high_kubernetes_istio_network_logs"),
 
 
-
 record(name = "platform_service", key="custom_sen_low_logs_platform_service_shared"),
-
 
 
 record(name = "dql_query_frontend", key="custom_sen_low_query_frontend_dql_logs")

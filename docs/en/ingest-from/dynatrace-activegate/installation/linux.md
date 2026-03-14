@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:10.882192
 
 # ActiveGate on Linux
 
-# ActiveGate on Linux
 
 * Latest Dynatrace
 * 1-min read

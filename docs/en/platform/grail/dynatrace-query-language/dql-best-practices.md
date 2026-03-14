@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:18.368123
 
 # DQL best practices
 
-# DQL best practices
 
 * Latest Dynatrace
 * Reference
@@ -40,9 +39,7 @@ The following query uses sampling to improve query performance to observe an app
 fetch spans, samplingRatio:100
 
 
-
 | summarize c=count(), by: { span.kind, code.namespace, code.function }
-
 
 
 | fieldsAdd c = c*100
@@ -86,21 +83,16 @@ Applying the mentioned practices above leads to the following blueprint:
 fetch logs, bucket:{"astroshop_log_*"}, from:-1d@d, samplingRatio:10
 
 
-
 | filter loglevel=="ERROR" and k8s.namespace.name ~ "astroshop"
-
 
 
 | filter content ~ "error"
 
 
-
 | summarize c=count(), by:pod.name
 
 
-
 | sort c desc
-
 
 
 | limit 5
@@ -118,9 +110,7 @@ It is recommended to place `sort` at the end of the query. Sorting right after `
 fetch logs
 
 
-
 | sort timestamp desc
-
 
 
 | filter content ~ "error"
@@ -132,9 +122,7 @@ This example shows the recommended order of putting `sort` at the end of the que
 fetch logs
 
 
-
 | filter content ~ "error"
-
 
 
 | sort timestamp desc
@@ -146,21 +134,16 @@ You can repeat the same command within one query and still stick to the recommen
 fetch logs, bucket:{"astroshop_log_*"}, from:-1d@d, samplingRatio:10
 
 
-
 | filter loglevel == "ERROR" and k8s.namespace.name ~ "astroshop"
-
 
 
 | parse content, "ipaddr:ip ld ' POST ' ld:action ' HTTP/1.1 ' long:status ld"
 
 
-
 | filter action == "/cart" or action == "/cart/checkout"
 
 
-
 | summarize count = count(), by:{ ip, log.source }
-
 
 
 | sort count desc
@@ -174,14 +157,12 @@ fetch logs, bucket:{"astroshop_log_*"}, from:-1d@d, samplingRatio:10
   fetch logs
 
 
-
   | filter k8s.container.name == "coredns"
   ```
 * Use `~` whenever the value of a field is only partly known or unknown.
 
   ```
   fetch logs
-
 
 
   | filter k8s.container.name ~ "core*"
@@ -208,13 +189,11 @@ For example, if you have a dimension named 'true':
 ...
 
 
-
 | fields x = true // creates a boolean field that is always true
 ```
 
 ```
 ...
-
 
 
 | fields x = `true` // allows to access the custom dimension named 'true'
@@ -226,13 +205,11 @@ Similarly, if you need to sort by a field named 'not':
 ...
 
 
-
 | sort not desc // sorts by a boolean value of dimension `desc`
 ```
 
 ```
 ...
-
 
 
 | sort `not` desc // sorts descending by a field named `not`

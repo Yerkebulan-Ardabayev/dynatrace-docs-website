@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:35:27.364176
 
 # Обеспечение соответствия требованиям с помощью Security Posture Management
 
-# Обеспечение соответствия требованиям с помощью Security Posture Management
 
 * Актуальная версия Dynatrace
 * Руководство

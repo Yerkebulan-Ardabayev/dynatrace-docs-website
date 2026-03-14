@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:49.610500
 
 # Log sources and storage (Logs Classic)
 
-# Log sources and storage (Logs Classic)
 
 * Classic
 * 2-min read

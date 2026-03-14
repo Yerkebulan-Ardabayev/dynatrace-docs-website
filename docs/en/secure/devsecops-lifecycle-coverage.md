@@ -6,7 +6,6 @@ scraped: 2026-02-18T05:48:18.936133
 
 # DevSecOps Lifecycle Coverage with Snyk
 
-# DevSecOps Lifecycle Coverage with Snyk
 
 * Latest Dynatrace
 * App

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:57.570952
 
 # Настройка мониторинга OpenShift через OperatorHub
 
-# Настройка мониторинга OpenShift через OperatorHub
 
 * Последняя версия Dynatrace
 * 2 минуты на чтение
@@ -64,7 +63,6 @@ OperatorHub — это интерфейс, с помощью которого а
 
       ```
       spec:
-
 
 
       apiURL: 'https://ENVIRONMENTID.live.dynatrace.com/api'

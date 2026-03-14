@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Third-party synthetic API
 
-# Third-party synthetic API
 
 * Reference
 * Published May 15, 2020

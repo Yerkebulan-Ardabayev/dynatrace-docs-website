@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Synthetic monitor executions API v2
 
-# Synthetic monitor executions API v2
 
 * Reference
 * Published Apr 20, 2021

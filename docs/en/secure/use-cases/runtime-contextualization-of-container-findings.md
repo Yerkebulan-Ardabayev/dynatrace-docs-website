@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:09.804438
 
 # Runtime contextualization of container findings
 
-# Runtime contextualization of container findings
 
 * Latest Dynatrace
 * Tutorial
@@ -89,241 +88,181 @@ This query has been updated to align with the new Grail security events table. F
 // The query has a rolling window of 7 days and the last 24hrs.
 
 
-
 // Vulnerability finding events which have already been reported
-
 
 
 // before the current 24hr window will not be reported again.
 
 
-
 fetch security.events, from: now() - 7d
-
 
 
 | filter dt.system.bucket == "default_securityevents"
 
 
-
 AND object.type == "CONTAINER_IMAGE"
-
 
 
 AND event.type == "VULNERABILITY_FINDING"
 
 
-
 AND dt.security.risk.level == "CRITICAL"
-
 
 
 // now enrich the runtime context
 
 
-
 | join [
-
 
 
 fetch dt.entity.container_group_instance, from:now()-3h
 
 
-
 | fieldsAdd entity.name, containerImageDigest, containerImageName, workloadName, containerStatus, processes=contains[dt.entity.process_group_instance]
-
 
 
 | expand dt.entity.process=processes
 
 
-
 | fieldsRemove processes
-
 
 
 | join [
 
 
-
 fetch dt.entity.process_group_instance, from:now()-3h
-
 
 
 ], on:{left[dt.entity.process]==right[id]}, kind:leftOuter, fields:{releasesProduct, releasesStage}
 
 
-
 ], on:{left[container_image.digest]==right[containerImageDigest]}, kind:leftOuter,
-
 
 
 fields:{container_instance.id=id, container_instance.name=entity.name, container_image.name=containerImageName,
 
 
-
 releasesProduct, releasesStage, containerStatus}
-
 
 
 // summarize and filter
 
 
-
 | dedup {object.id, vulnerability.id, component.name, component.version,
-
 
 
 container_image.registry, container_image.repository}, sort: {timestamp desc}
 
 
-
 | parse containerStatus, """LD* "state=" LD:containerStatus ("}" | ",")"""
-
 
 
 | fieldsAdd containerStatus=if(isNull(containerStatus),"not running",else:containerStatus)
 
 
-
 | fieldsAdd releasesStage=if(isNull(releasesStage), "None", else:releasesStage)
-
 
 
 | filter containerStatus=="running" AND releasesStage=="production"
 
 
-
 // Aggregate vulnerability findings per vulnerability, repository,
-
 
 
 // component and component version.
 
 
-
 | summarize {
-
 
 
 affected_images_count = count(),
 
 
-
 vulnerability_finding_events = collectArray(
-
 
 
 record(
 
 
-
 object.id = object.id,
-
 
 
 event.provider = event.provider,
 
 
-
 container_image.registry = container_image.registry,
-
 
 
 container_image.repository = container_image.repository,
 
 
-
 component.version = component.version,
-
 
 
 component.name = component.name,
 
 
-
 dt.security.risk.level = dt.security.risk.level,
-
 
 
 ingest_time = timestamp
 
 
-
 )
 
 
-
 )
-
 
 
 }, by:{ vulnerability.id, vulnerability.title, event.provider, container_image.registry, container_image.repository, component.name, component.version }
-
 
 
 // Filter out, if this vulnerability for the repository and the component
 
 
-
 // and version was already reported before the last 24 hours.
-
 
 
 // For example, if the same vulnerability was reported multiple times
 
 
-
 // during the last 7 days, don't report it again.
-
 
 
 | filterOut iAny(vulnerability_finding_events[][ingest_time] < now() - 24h)
 
 
-
 // Expand and deduplicate for repetitive findings if they
-
 
 
 // were reported more than once in the last 24 hours.
 
 
-
 | expand vulnerability_finding_events
-
 
 
 | dedup { vulnerability.id, vulnerability.title, vulnerability_finding_events[object.id], vulnerability_finding_events[component.name], vulnerability_finding_events[component.version] }
 
 
-
 // Aggregate again to count the unique affected images within each repository.
-
 
 
 | summarize {
 
 
-
 affected_images_count = count(),
-
 
 
 vulnerability_finding_events = collectArray(
 
 
-
 vulnerability_finding_events
-
 
 
 )
 
 
-
 }, by:{ vulnerability.id, vulnerability.title, event.provider, container_image.registry, container_image.repository, component.name, component.version }
-
 
 
 | sort vulnerability_finding_events[][ingest_time] desc

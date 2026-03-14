@@ -14,7 +14,6 @@ scraped: 2026-03-04T21:32:46.793171
 
 # Smartscape concepts
 
-# Smartscape concepts
 
 * Latest Dynatrace
 * Explanation
@@ -130,7 +129,6 @@ scraped: 2026-03-03T21:33:03.194289
 
 # View topology
 
-# View topology
 
 * Latest Dynatrace
 * Explanation
@@ -244,7 +242,6 @@ scraped: 2026-03-03T21:23:15.794747
 
 # Visual Resolution Path
 
-# Visual Resolution Path
 
 * Latest Dynatrace
 * Explanation
@@ -337,7 +334,6 @@ scraped: 2026-03-05T21:34:12.624189
 
 # Smartscape modals
 
-# Smartscape modals
 
 * Latest Dynatrace
 * Overview
@@ -368,7 +364,6 @@ scraped: 2026-03-06T21:37:14.407570
 
 # AWS EC2 ecosystem overview
 
-# AWS EC2 ecosystem overview
 
 * Latest Dynatrace
 * Explanation
@@ -442,7 +437,6 @@ scraped: 2026-03-05T21:35:17.082641
 
 # Infrastructure overview
 
-# Infrastructure overview
 
 * Latest Dynatrace
 * Explanation
@@ -520,7 +514,6 @@ scraped: 2026-03-05T21:39:48.917062
 
 # Kubernetes overview
 
-# Kubernetes overview
 
 * Latest Dynatrace
 * Explanation
@@ -583,7 +576,6 @@ scraped: 2026-03-03T21:23:24.583520
 
 # Problem graph
 
-# Problem graph
 
 * Latest Dynatrace
 * Explanation
@@ -646,7 +638,6 @@ scraped: 2026-03-06T21:26:46.276233
 
 # Service dependency graph
 
-# Service dependency graph
 
 * Latest Dynatrace
 * Explanation
@@ -704,7 +695,6 @@ scraped: 2026-03-06T21:30:59.119248
 
 # Smartscape on Grail view
 
-# Smartscape on Grail view
 
 * Latest Dynatrace
 * Explanation
@@ -763,7 +753,6 @@ scraped: 2026-03-03T21:21:58.309883
 
 # Smartscape views
 
-# Smartscape views
 
 * Latest Dynatrace
 * Overview
@@ -804,7 +793,6 @@ scraped: 2026-03-01T21:20:36.536218
 
 # Smartscape
 
-# Smartscape
 
 * Latest Dynatrace
 * Overview

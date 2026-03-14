@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:37.469462
 
 # OpenTelemetry to Dynatrace semantic mapping
 
-# OpenTelemetry to Dynatrace semantic mapping
 
 * Latest Dynatrace
 * Reference

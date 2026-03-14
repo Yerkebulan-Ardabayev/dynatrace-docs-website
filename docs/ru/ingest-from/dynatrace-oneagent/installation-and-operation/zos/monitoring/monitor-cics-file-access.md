@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:29:56.255357
 
 # Monitor file access of CICS applications
 
-# Monitor file access of CICS applications
 
 * Latest Dynatrace
 * 1-min read

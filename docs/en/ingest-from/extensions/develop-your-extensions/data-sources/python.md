@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:00.044917
 
 # Dynatrace Extensions Python SDK
 
-# Dynatrace Extensions Python SDK
 
 * Latest Dynatrace
 * Reference

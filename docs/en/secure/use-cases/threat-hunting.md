@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:04.027447
 
 # Threat hunting and forensics
 
-# Threat hunting and forensics
 
 * Latest Dynatrace
 * Tutorial
@@ -67,7 +66,6 @@ In the [timeframe section](../investigations/define-timeframes.md#selector "Adju
    fetch logs
 
 
-
    | summarize count(), by: aws.log_group
    ```
 2. Select **Run** to execute the query.
@@ -111,25 +109,19 @@ In the query results table, right-click on any cell in the **content** field and
    JSON{
 
 
-
    STRING:verb,
-
 
 
    JSON{string:username}(flat=true):user,
 
 
-
    JSON_ARRAY{ipaddr}(typed=true):sourceIPs,
-
 
 
    JSON{string+:resource}(flat=true):objectRef,
 
 
-
    JSON{int:code}(flat=true):responseStatus
-
 
 
    }(flat=true)
@@ -156,9 +148,7 @@ To find out which IPs have unauthorized activity, you need to
    | expand sourceIPs
 
 
-
    | summarize count(), by: {sourceIPs, username, verb, resource=objectRef, responseStatus}
-
 
 
    | filter in(responseStatus, {401, 403})
@@ -225,7 +215,6 @@ Since youâre interested only in the results from the suspicious pod, you ca
    | summarize count(), by: { pkt_dstaddr, protocol, action, dstport}
 
 
-
    | sort `count()` desc
    ```
 4. Select **Run** to execute the query.
@@ -246,7 +235,6 @@ To look for the DNS names resolved by a pod you need to check the CoreDNS logs. 
 
    ```
    fetch logs
-
 
 
    | filter k8s.container.name == "coredns"
@@ -277,7 +265,6 @@ There could be quite a lot of DNS requests in the results table. For a better un
 
    ```
    | parse name, "ld* '.'? ( (ld '.' ld):domain '.' eos)"
-
 
 
    | summarize count = count(), by: {domain}
@@ -332,13 +319,10 @@ As there are thousands of DNS requests towards that particular domain, you may w
    | parse name, """ld:id '.' ld:payload '.tiitha-maliciousdomain'"""
 
 
-
    | fieldsAdd payload=replaceString(payload,".","")
 
 
-
    | fields timestamp, id, payload=decodeBase16ToString(payload)
-
 
 
    | sort timestamp, id
@@ -371,21 +355,16 @@ You know for sure the pod is sending information to an external DNS server, but 
    json{
 
 
-
    string:query_name,
-
 
 
    string:query_type,
 
 
-
    json_array:answers,
 
 
-
    ipaddr:srcaddr
-
 
 
    }(flat=true)
@@ -405,9 +384,7 @@ You know for sure the pod is sending information to an external DNS server, but 
    | filter endsWith(query_name, "tiitha-maliciousdomain.com.") and query_type == "TXT"
 
 
-
    | expand answers
-
 
 
    | fields srcaddr, uery_name, answer=answers[Rdata]

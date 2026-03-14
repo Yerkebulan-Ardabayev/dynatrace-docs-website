@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:14.270507
 
 # Supported connectivity schemes for ActiveGates
 
-# Supported connectivity schemes for ActiveGates
 
 * Latest Dynatrace
 * 4-min read

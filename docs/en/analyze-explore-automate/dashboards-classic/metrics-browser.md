@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:08.300543
 
 # Metrics browser
 
-# Metrics browser
 
 * Classic
 * How-to guide

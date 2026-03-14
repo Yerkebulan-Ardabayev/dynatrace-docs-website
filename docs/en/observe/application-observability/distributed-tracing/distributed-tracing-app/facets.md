@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:48.617165
 
 # Manage facets
 
-# Manage facets
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:50.462070
 
 # Capture event and session properties for web frontends
 
-# Capture event and session properties for web frontends
 
 * Latest Dynatrace
 * How-to guide

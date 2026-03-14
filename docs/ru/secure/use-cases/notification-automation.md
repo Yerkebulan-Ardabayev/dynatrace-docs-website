@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:00.738663
 
 # Автоматизация уведомлений CSPM
 
-# Автоматизация уведомлений CSPM
 
 * Latest Dynatrace
 * Руководство
@@ -98,1045 +97,784 @@ Dynatrace решает эти проблемы и улучшает управл�
    {
 
 
-
    "id": "dcce961d-26a9-46e6-a9e4-14a0f7f2185c",
-
 
 
    "title": "CSPM Notification Automation",
 
 
-
    "description": "",
-
 
 
    "tasks": {
 
 
-
    "count_all_new_findings": {
-
 
 
    "name": "count_all_new_findings",
 
 
-
    "description": "Executes query to count all recently created AWS findings",
-
 
 
    "action": "dynatrace.automations:execute-dql-query",
 
 
-
    "active": true,
 
 
-
    "input": {
-
 
 
    "query": "fetch logs, from:now() - 24h, scanLimitGBytes: -1\n| filter aws.log_group == \"/aws/events/AWSSecurityHubLogGroup\"\n| fields timestamp\n| filter timestamp > now() - 24h                                                                        // Only filter created since last successful run         \n| summarize { count=count() }"
 
 
-
    },
-
 
 
    "position": {
 
 
-
    "x": -1,
-
 
 
    "y": 2
 
 
-
    },
-
 
 
    "predecessors": [
 
 
-
    "workflow_config_params"
-
 
 
    ],
 
 
-
    "conditions": {
-
 
 
    "states": {
 
 
-
    "workflow_config_params": "OK"
 
 
-
    }
 
 
-
    }
-
 
 
    },
-
 
 
    "log_new_findings_count": {
 
 
-
    "name": "log_new_findings_count",
-
 
 
    "description": "Logs total number of recently created AWS findings",
 
 
-
    "action": "dynatrace.automations:run-javascript",
-
 
 
    "active": true,
 
 
-
    "input": {
-
 
 
    "script": "import { execution } from '@dynatrace-sdk/automation-utils';\n\nexport default async function () {\n\n  const ex = await execution();\n  const countResult = await ex.result(\"count_all_new_findings\");\n\n  console.log('======================================================================')\n  console.log('Total findings added since last run: ')\n  console.log(countResult.records[0].count)\n  console.log('')\n}"
 
 
-
    },
 
 
-
    "position": {
-
 
 
    "x": -1,
 
 
-
    "y": 3
-
 
 
    },
 
 
-
    "predecessors": [
-
 
 
    "count_all_new_findings"
 
 
-
    ],
-
 
 
    "conditions": {
 
 
-
    "states": {
-
 
 
    "count_all_new_findings": "OK"
 
 
-
    }
 
 
-
    }
-
 
 
    },
-
 
 
    "log_tickets_by_account": {
 
 
-
    "name": "log_tickets_by_account",
-
 
 
    "description": "Logs potentially created Jira issues for findings by account",
 
 
-
    "action": "dynatrace.automations:run-javascript",
-
 
 
    "active": true,
 
 
-
    "input": {
-
 
 
    "script": "import { execution } from '@dynatrace-sdk/automation-utils';\n\nexport default async function () {\n  const ex = await execution();\n  const by_control_id = await ex.result(\"fetch_findings_by_account\");\n\n  console.log('=================================================================================================')\n  console.log(`Issues by accounts, ${by_control_id.records.length} findings`)\n  console.log('=================================================================================================')\n\n  for(let finding of by_control_id.records) {\n    console.log('')\n    console.log('=================================================================================================')\n    console.log(`Automatic Vulnerability Report for ${finding.controlId} - AWS account ${finding.awsAccountId}`)\n    console.log('=================================================================================================')\n    console.log('')\n    console.log('The following vulnerabilities were reported for your account via AWS Security Hub.')\n    console.log('')\n    console.log(`AWS Account: ${finding.awsAccountId}`)\n    console.log('')\n    console.log('Vulnerability:')\n    console.log(`${finding.controlId} - ${finding.title}`)\n    console.log(finding.severity)\n    console.log(finding.description)\n    console.log(finding.remediation[0].Recommendation.Url)\n    console.log('')\n    console.log('Affected resources:')\n    for(let resource of finding.resources) {\n      console.log(resource)\n    }\n    console.log('')          \n    console.log('=================================================================================================')\n    console.log('')\n    console.log('')\n  }\n  \n  return by_control_id.records;\n}"
 
 
-
    },
-
 
 
    "position": {
 
 
-
    "x": 0,
-
 
 
    "y": 3
 
 
-
    },
 
 
-
    "predecessors": [
-
 
 
    "fetch_findings_by_account"
 
 
-
    ],
-
 
 
    "conditions": {
 
 
-
    "states": {
-
 
 
    "fetch_findings_by_account": "OK"
 
 
-
    }
 
 
-
    }
-
 
 
    },
-
 
 
    "workflow_config_params": {
 
 
-
    "name": "workflow_config_params",
-
 
 
    "description": "Sets configuration parameters for the workflow run",
 
 
-
    "action": "dynatrace.automations:run-javascript",
 
 
-
    "input": {
-
 
 
    "script": "// This step sets up some configurational parameters for the workflow run \n// (e.g. which accounts, which finding types we are filtering for)\nexport default async function () {\n\n  // AWS accounts to filter for\n  const awsAccountIds = [\n    // add your AWS account ids here, e.g.\n    // \"1234567890\"\n  ]\n\n  // Findings that should be grouped by AWS account\n  const securityControlIdsToGroupByAccount = [\n    // add you control IDs here, e.g.\n    // \"S3.1\" // S3 Block Public Access setting should be enabled\n  ]\n\n  // Findings that should be grouped by AWS Resource\n  const securityControlIdsToGroupByResource = [\n    // add you control IDs here, e.g.\n    // \"EC2.13\" // Security groups should not allow ingress from 0.0.0.0/0 to port 22\n  ]\n  \n  return { awsAccountIds, securityControlIdsToGroupByAccount, securityControlIdsToGroupByResource }\n}"
 
 
-
    },
-
 
 
    "position": {
 
 
-
    "x": 0,
-
 
 
    "y": 1
 
 
-
    },
-
 
 
    "predecessors": []
 
 
-
    },
-
 
 
    "log_tickets_by_resource": {
 
 
-
    "name": "log_tickets_by_resource",
-
 
 
    "description": "Logs potentially created Jira issues for findings by resource",
 
 
-
    "action": "dynatrace.automations:run-javascript",
-
 
 
    "active": true,
 
 
-
    "input": {
-
 
 
    "script": "import { execution } from '@dynatrace-sdk/automation-utils';\n\nexport default async function () {\n  const ex = await execution();\n  const by_resource = await ex.result(\"fetch_findings_by_resource\");\n\n  console.log('=================================================================================================')\n  console.log(`Issues by resource, ${by_resource.records.length} findings`)\n  console.log('=================================================================================================')\n\n  for(let finding of by_resource.records) {\n    console.log('')\n    console.log('=================================================================================================')\n    console.log(`Automatic Vulnerability Report for ${finding.resource.resourceId}`)\n    console.log('=================================================================================================')\n    console.log('')\n    console.log('The following vulnerabilities were reported for your resource via AWS Security Hub.')\n    console.log('')\n    console.log(`AWS Account: ${finding.aws.accountId}`)\n    console.log('')\n    console.log('Resource details:')\n    console.log(finding.resource.resourceType)\n    console.log(finding.resource.resourceId)\n    console.log('')\n    console.log('Vulnerabilities:')\n    for(let vulnerability of finding.vulnerabilities) {\n      console.log(`${vulnerability.controlId} - ${vulnerability.title}`)\n      console.log(vulnerability.severity)\n      console.log(vulnerability.description)\n      console.log(vulnerability.remediation[0].Recommendation.Url)      \n    }\n    console.log('=================================================================================================')\n    console.log('')\n    console.log('')\n  }\n  \n  return by_resource.records;\n}"
 
 
-
    },
-
 
 
    "position": {
 
 
-
    "x": 1,
-
 
 
    "y": 3
 
 
-
    },
 
 
-
    "predecessors": [
-
 
 
    "fetch_findings_by_resource"
 
 
-
    ],
-
 
 
    "conditions": {
 
 
-
    "states": {
-
 
 
    "fetch_findings_by_resource": "OK"
 
 
-
    }
 
 
-
    }
-
 
 
    },
-
 
 
    "create_issue_for_account": {
 
 
-
    "name": "create_issue_for_account",
-
 
 
    "description": "Creates new Jira issue or the vulnerable AWS account",
 
 
-
    "action": "dynatrace.jira:jira-create-issue",
-
 
 
    "active": false,
 
 
-
    "input": {
-
 
 
    "labels": [],
 
 
-
    "summary": "{{ _.item.summary }}",
-
 
 
    "components": [],
 
 
-
    "description": "{{ _.item.description }}",
-
 
 
    "fieldSetters": []
 
 
-
    },
-
 
 
    "position": {
 
 
-
    "x": 0,
-
 
 
    "y": 5
 
 
-
    },
 
 
-
    "predecessors": [
-
 
 
    "prepare_tickets_by_account"
 
 
-
    ],
-
 
 
    "conditions": {
 
 
-
    "states": {
-
 
 
    "prepare_tickets_by_account": "OK"
 
 
-
    }
-
 
 
    },
 
 
-
    "concurrency": 1,
-
 
 
    "withItems": "item in {{result(\"prepare_tickets_by_account\")}}"
 
 
-
    },
-
 
 
    "create_issue_for_resource": {
 
 
-
    "name": "create_issue_for_resource",
-
 
 
    "description": "Creates new issue for the vulnerable AWS resource",
 
 
-
    "action": "dynatrace.jira:jira-create-issue",
-
 
 
    "active": false,
 
 
-
    "input": {
-
 
 
    "labels": [],
 
 
-
    "summary": "{{ _.item.summary }}",
-
 
 
    "components": [],
 
 
-
    "description": "{{ _.item.description }}",
-
 
 
    "fieldSetters": []
 
 
-
    },
-
 
 
    "position": {
 
 
-
    "x": 1,
-
 
 
    "y": 5
 
 
-
    },
 
 
-
    "predecessors": [
-
 
 
    "prepare_tickets_by_resource"
 
 
-
    ],
-
 
 
    "conditions": {
 
 
-
    "states": {
-
 
 
    "prepare_tickets_by_resource": "OK"
 
 
-
    }
 
 
-
    },
-
 
 
    "concurrency": 1,
 
 
-
    "withItems": "item in {{result(\"prepare_tickets_by_resource\")}}"
 
 
-
    },
-
 
 
    "fetch_findings_by_account": {
 
 
-
    "name": "fetch_findings_by_account",
-
 
 
    "description": "Executes query to get relevant security findings grouped by AWS account",
 
 
-
    "action": "dynatrace.automations:execute-dql-query",
-
 
 
    "active": true,
 
 
-
    "input": {
-
 
 
    "query": "fetch logs, from:now() - 24h, scanLimitGBytes: -1\n| filter aws.log_group == \"/aws/events/AWSSecurityHubLogGroup\"\n| parse content, \"JSON:alert\"\n| fields timestamp,\n         awsRegion = toString(alert[detail][findings][0][Region]),\n         awsAccountId = toString(alert[detail][findings][0][AwsAccountId]),\n         resourceType = toString(alert[detail][findings][0][Resources][0][Type]),          \n         resource = toString(alert[detail][findings][0][Resources][0][Id]),\n         alertType = toString(alert[detail][findings][0][Types][0]),\n         id = toString(alert[detail][findings][0][Id]),\n         severity = toString(alert[detail][findings][0][FindingProviderFields][Severity][Label]),\n         title = toString(alert[detail][findings][0][Title]),\n         description = toString(alert[detail][findings][0][Description]),\n         complianceStatus = toString(alert[detail][findings][0][Compliance][Status]),\n         controlId = toString(alert[detail][findings][0][Compliance][SecurityControlId]),\n         remediation = alert[detail][findings][0][Remediation],\n         created = toTimestamp(alert[detail][findings][0][CreatedAt]),\n         lastObservedAt = toTimestamp(alert[detail][findings][0][LastObservedAt])\n| filter in(severity, array(\"HIGH\", \"CRITICAL\", \"MEDIUM\"))\n| filter created > now() - 24h\n| filter in(awsAccountId, array(\"{{ result('workflow_config_params').awsAccountIds | join('\",\"') }}\"))\n| filter in(controlId, array(\"{{ result('workflow_config_params').securityControlIdsToGroupByAccount | join('\",\"') }}\"))\n| summarize { count=count(),\n              lastObservedAt = max(lastObservedAt),\n              remediation = collectDistinct(remediation),\n              complianceStatus = takeLast(complianceStatus),\n              resources = collectDistinct(resource),\n              title = takeAny(title),\n              description = takeAny(description),\n              severity = takeAny(severity),\n              awsRegion = collectArray(awsRegion)\n            },\n            by:{\n              controlId, \n              awsAccountId\n           }\n| lookup\n  [ fetch dt.entity.aws_credentials \n    | fields awsAccountId, entity.name\n  ], lookupField:awsAccountId, sourceField:awsAccountId, prefix: \"aws.account.\"\n"
 
 
-
    },
-
 
 
    "position": {
 
 
-
    "x": 0,
-
 
 
    "y": 2
 
 
-
    },
-
 
 
    "predecessors": [
 
 
-
    "workflow_config_params"
-
 
 
    ],
 
 
-
    "conditions": {
-
 
 
    "states": {
 
 
-
    "workflow_config_params": "OK"
 
 
-
    }
 
 
-
    }
-
 
 
    },
-
 
 
    "fetch_findings_by_resource": {
 
 
-
    "name": "fetch_findings_by_resource",
-
 
 
    "description": "Executes query to get relevant security findings grouped by AWS resource",
 
 
-
    "action": "dynatrace.automations:execute-dql-query",
-
 
 
    "active": true,
 
 
-
    "input": {
-
 
 
    "query": "fetch logs, from:now() - 24h, scanLimitGBytes: -1\n| filter aws.log_group == \"/aws/events/AWSSecurityHubLogGroup\"\n| parse content, \"JSON:alert\"\n| fields timestamp,\n         awsRegion = toString(alert[detail][findings][0][Region]),\n         awsAccountId = toString(alert[detail][findings][0][AwsAccountId]),\n         resourceType = toString(alert[detail][findings][0][Resources][0][Type]),          \n         resourceId = toString(alert[detail][findings][0][Resources][0][Id]),\n         alertType = toString(alert[detail][findings][0][Types][0]),\n         id = toString(alert[detail][findings][0][Id]),\n         severity = toString(alert[detail][findings][0][FindingProviderFields][Severity][Label]),\n         title = toString(alert[detail][findings][0][Title]),\n         description = toString(alert[detail][findings][0][Description]),\n         complianceStatus = toString(alert[detail][findings][0][Compliance][Status]),\n         controlId = toString(alert[detail][findings][0][Compliance][SecurityControlId]),\n         remediation = alert[detail][findings][0][Remediation],\n         created = toTimestamp(alert[detail][findings][0][CreatedAt]),\n         lastObservedAt = toTimestamp(alert[detail][findings][0][LastObservedAt])\n| filter in(severity, array(\"HIGH\", \"CRITICAL\", \"MEDIUM\"))\n| filter created > now() - 24h\n| filter in(awsAccountId, array(\"{{ result('workflow_config_params').awsAccountIds | join('\",\"') }}\"))\n| filter in(controlId, array(\"{{ result('workflow_config_params').securityControlIdsToGroupByResource | join('\",\"') }}\"))\n| summarize { count=count(),\n              lastObservedAt = max(lastObservedAt),\n              remediation = collectDistinct(remediation),\n              complianceStatus = takeLast(complianceStatus)\n            },\n            by:{\n              alertType, \n              resourceType, \n              controlId, \n              title,\n              description, \n              severity, \n              resourceId, \n              awsAccountId,\n              created,\n              awsRegion\n           }\n| lookup\n  [ fetch dt.entity.aws_credentials \n    | fields id, awsAccountId, entity.name, tags, awsNameTag\n  ], lookupField:awsAccountId, sourceField:awsAccountId, prefix: \"aws.account.\"\n| fields aws = record(\n            accountId = awsAccountId,\n            name = aws.account.entity.name,\n            entity = aws.account.id\n         ), \n         resource = record(\n           resourceId = resourceId,\n           resourceType = resourceType\n         ),\n         region = awsRegion,\n         alert = record(controlId = controlId, \n           severity = severity, \n           complianceStatus = complianceStatus,\n           title = title,\n           description = description,\n           remediation = remediation\n         )\n| summarize {\n        count=count(),\n        vulnerabilities = collectDistinct(alert)\n      },\n      by:{\n        aws,\n        resource,\n        region\n      }"
 
 
-
    },
-
 
 
    "position": {
 
 
-
    "x": 1,
-
 
 
    "y": 2
 
 
-
    },
 
 
-
    "predecessors": [
-
 
 
    "workflow_config_params"
 
 
-
    ],
-
 
 
    "conditions": {
 
 
-
    "states": {
-
 
 
    "workflow_config_params": "OK"
 
 
-
    }
 
 
-
    }
-
 
 
    },
-
 
 
    "prepare_tickets_by_account": {
 
 
-
    "name": "prepare_tickets_by_account",
-
 
 
    "description": "Prepares payload of Jira tickets for vulnerable AWS accounts",
 
 
-
    "action": "dynatrace.automations:run-javascript",
-
 
 
    "active": true,
 
 
-
    "input": {
-
 
 
    "script": "import { execution } from '@dynatrace-sdk/automation-utils';\n\nexport default async function () {\n    const ex = await execution();\n    const records = await ex.result(\"log_tickets_by_account\");\n\n    console.log(`${records.length} Tickets will be created!`)\n    const result = [];\n    for (const finding of records) {\n        console.log('------------------------------------- NEW TICKET -------------------------------------')\n        const resourcesList = finding.resources\n          .map( resource => `|${resource}|` )\n          .join('\\n')\n        const ticket =  {\n            summary: `Automatic Vulnerability Report for ${finding.controlId} - AWS Account ${finding.awsAccountId}`,\n            description: 'The following vulnerabilities were reported for your resource via AWS Security Hub:\\n\\n'\n              + '*AWS Account*:\\n'\n              + '||AWS Account Id||\\n'\n              +  `|${finding.awsAccountId}|\\n\\n`\n              + '*Vulnerability*:\\n'\n              + '||Id||Sev||Title||Description||Remediation Url||\\n'\n              + `|{noformat}${finding.controlId}{noformat}|{noformat}${finding.severity}{noformat}|${finding.title}|${finding.description}|[${finding.remediation[0].Recommendation.Url}]|\\n\\n`\n              + '*Affected Resources*:\\n'\n              + '||Resource Id||\\n'\n              + resourcesList\n              + '\\n\\n---\\nAutomatically generated by CSPM Notification Automation'\n        }\n        console.log(JSON.stringify(ticket))\n        result.push(ticket)\n    }\n\n    return result;\n}"
 
 
-
    },
 
 
-
    "position": {
-
 
 
    "x": 0,
 
 
-
    "y": 4
-
 
 
    },
 
 
-
    "predecessors": [
-
 
 
    "log_tickets_by_account"
 
 
-
    ],
-
 
 
    "conditions": {
 
 
-
    "states": {
-
 
 
    "log_tickets_by_account": "OK"
 
 
-
    }
 
 
-
    }
-
 
 
    },
-
 
 
    "prepare_tickets_by_resource": {
 
 
-
    "name": "prepare_tickets_by_resource",
-
 
 
    "description": "Prepares payload of Jira tickets for vulnerable AWS resources",
 
 
-
    "action": "dynatrace.automations:run-javascript",
-
 
 
    "active": true,
 
 
-
    "input": {
-
 
 
    "script": "import { execution } from '@dynatrace-sdk/automation-utils';\n\nexport default async function () {\n    const ex = await execution();\n    const records = await ex.result(\"log_tickets_by_resource\");\n\n    console.log(`${records.length} Tickets will be created!`)\n    const result = [];\n    for (const finding of records) {\n        console.log('------------------------------------- NEW TICKET -------------------------------------')\n        const vulnerabilitiesList = finding.vulnerabilities\n          .map( vuln => \n            `|{noformat}${vuln.controlId}{noformat}|{noformat}${vuln.severity}{noformat}|${vuln.title}|${vuln.description}|[${vuln.remediation[0].Recommendation.Url}]|`)\n          .join('\\n')\n        const ticket =  {\n            summary: `Automatic Vulnerability Report for ${finding.resource.resourceId}`,\n            description: 'The following vulnerabilities were reported for your resource via AWS Security Hub:\\n\\n'\n              + '*AWS Account*:\\n'\n              + '||AWS Account Id||\\n'\n              +  `|${finding.aws.accountId}|\\n\\n`\n              + '*Resource Details*:\\n'\n              + '||Resource Type||Resource Id||\\n'\n              + `|${finding.resource.resourceType}|${finding.resource.resourceId}|\\n\\n`\n              + '*Vulnerabilities*:\\n'\n              + '||Id||Sev||Title||Description||Remediation Url||\\n'\n              + vulnerabilitiesList\n              + '\\n\\n---\\nAutomatically generated by CSPM Notification Automation'\n        }\n        console.log(JSON.stringify(ticket))\n        result.push(ticket)\n    }\n\n    return result;\n}"
 
 
-
    },
-
 
 
    "position": {
 
 
-
    "x": 1,
-
 
 
    "y": 4
 
 
-
    },
-
 
 
    "predecessors": [
 
 
-
    "log_tickets_by_resource"
-
 
 
    ],
 
 
-
    "conditions": {
-
 
 
    "states": {
 
 
-
    "log_tickets_by_resource": "OK"
 
 
+   }
+
 
    }
 
 
-
    }
-
-
-
-   }
-
 
 
    },
-
 
 
    "ownerType": "USER",
 
 
-
    "isPrivate": false,
 
 
-
    "trigger": {
-
 
 
    "schedule": {
 
 
-
    "rule": null,
-
 
 
    "trigger": {
 
 
-
    "type": "time",
-
 
 
    "time": "09:00"
 
 
-
    },
-
 
 
    "timezone": "Europe/Berlin",
 
 
-
    "isActive": true,
-
 
 
    "isFaulty": false,
 
 
-
    "nextExecution": "2023-10-03T07:00:00.000Z",
-
 
 
    "filterParameters": {
 
 
-
    "earliestStart": "2023-09-25"
 
 
-
    },
-
 
 
    "inputs": {}
 
 
-
    }
-
 
 
    },
 
 
-
    "schemaVersion": 3
-
 
 
    }

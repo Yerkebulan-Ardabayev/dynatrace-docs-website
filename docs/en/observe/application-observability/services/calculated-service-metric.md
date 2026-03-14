@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:31.355718
 
 # Calculated metrics for services
 
-# Calculated metrics for services
 
 * Latest Dynatrace
 * How-to guide

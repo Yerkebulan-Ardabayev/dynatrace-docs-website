@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:43.549341
 
 # View your previous DPS periods via subscription history
 
-# View your previous DPS periods via subscription history
 
 * Latest Dynatrace
 * Tutorial

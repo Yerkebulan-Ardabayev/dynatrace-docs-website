@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:41.748811
 
 # NGINX
 
-# NGINX
 
 * Latest Dynatrace
 * Reference

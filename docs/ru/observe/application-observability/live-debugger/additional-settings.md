@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:31:23.604150
 
 # Настройка дополнительных параметров Live Debugging
 
-# Настройка дополнительных параметров Live Debugging
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -62,41 +61,31 @@ ALLOW dev-obs:breakpoints:manage;
 const TerserPlugin = require("terser-webpack-plugin");
 
 
-
 module.exports = {
-
 
 
 // ...
 
 
-
 optimization: {
-
 
 
 minimizer: \[new TerserPlugin({
 
 
-
 terserOptions: {
-
 
 
 mangle: false,
 
 
-
 },
-
 
 
 })],
 
 
-
 },
-
 
 
 };

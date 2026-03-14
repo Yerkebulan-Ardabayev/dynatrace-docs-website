@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:28:34.508791
 
 # Отправка метрик Telegraf в Dynatrace
 
-# Отправка метрик Telegraf в Dynatrace
 
 * Latest Dynatrace
 * Чтение: 2 мин.
@@ -31,121 +30,91 @@ scraped: 2026-02-06T16:28:34.508791
 # # Send telegraf metrics to a Dynatrace environment
 
 
-
 [[outputs.dynatrace]]
-
 
 
 #   ## For usage with the Dynatrace OneAgent you can omit any configuration,
 
 
-
 #   ## the only requirement is that the OneAgent is running on the same host.
-
 
 
 #   ## Only setup environment url and token if you want to monitor a Host without the OneAgent present.
 
 
-
 #   ##
-
 
 
 #   ## Your Dynatrace environment URL.
 
 
-
 #   ## For Dynatrace OneAgent you can leave this empty or set it to "http://127.0.0.1:14499/metrics/ingest" (default)
-
 
 
 #   ## For Dynatrace SaaS environments the URL scheme is "https://{your-environment-id}.live.dynatrace.com/api/v2/metrics/ingest"
 
 
-
 #   ## For Dynatrace Managed environments the URL scheme is "https://{your-domain}/e/{your-environment-id}/api/v2/metrics/ingest"
-
 
 
 #   url = ""
 
 
-
 #
-
 
 
 #   ## Your Dynatrace API token.
 
 
-
 #   ## Create an API token within your Dynatrace environment, by navigating to Settings > Integration > Dynatrace API
-
 
 
 #   ## The API token needs data ingest scope permission. When using OneAgent, no API token is required.
 
 
-
 #   api_token = ""
 
 
-
 #
-
 
 
 #   ## Optional prefix for metric names (e.g.: "telegraf.")
 
 
-
 prefix = "telegraf."
 
 
-
 #
-
 
 
 #   ## Optional TLS Config
 
 
-
 #   # tls_ca = "/etc/telegraf/ca.pem"
-
 
 
 #   # tls_cert = "/etc/telegraf/cert.pem"
 
 
-
 #   # tls_key = "/etc/telegraf/key.pem"
 
 
-
 #
-
 
 
 #   ## Optional flag for ignoring tls certificate check
 
 
-
 #   # insecure_skip_verify = false
 
 
-
 #
 
 
-
 #
-
 
 
 #   ## Connection timeout, defaults to "5s" if not set.
-
 
 
 #   timeout = "5s"
@@ -174,121 +143,91 @@ prefix = "telegraf."
 # # Send telegraf metrics to a Dynatrace environment
 
 
-
 [[outputs.dynatrace]]
-
 
 
 #   ## For usage with the Dynatrace OneAgent you can omit any configuration,
 
 
-
 #   ## the only requirement is that the OneAgent is running on the same host.
-
 
 
 #   ## Only setup environment url and token if you want to monitor a Host without the OneAgent present.
 
 
-
 #   ##
-
 
 
 #   ## Your Dynatrace environment URL.
 
 
-
 #   ## For Dynatrace OneAgent you can leave this empty or set it to "http://127.0.0.1:14499/metrics/ingest" (default)
-
 
 
 #   ## For Dynatrace SaaS environments the URL scheme is "https://{your-environment-id}.live.dynatrace.com/api/v2/metrics/ingest"
 
 
-
 #   ## For Dynatrace Managed environments the URL scheme is "https://{your-domain}/e/{your-environment-id}/api/v2/metrics/ingest"
-
 
 
 #   url = "https://abd12345.live.dynatrace.com/api/v2/metrics/ingest"
 
 
-
 #
-
 
 
 #   ## Your Dynatrace API token.
 
 
-
 #   ## Create an API token within your Dynatrace environment, by navigating to Settings > Integration > Dynatrace API
-
 
 
 #   ## The API token needs data ingest scope permission. When using OneAgent, no API token is required.
 
 
-
 api_token = "abcdefjhij1234567890"
 
 
-
 #
-
 
 
 #   ## Optional prefix for metric names (e.g.: "telegraf.")
 
 
-
 prefix = "telegraf."
 
 
-
 #
-
 
 
 #   ## Optional TLS Config
 
 
-
 #   # tls_ca = "/etc/telegraf/ca.pem"
-
 
 
 #   # tls_cert = "/etc/telegraf/cert.pem"
 
 
-
 #   # tls_key = "/etc/telegraf/key.pem"
 
 
-
 #
-
 
 
 #   ## Optional flag for ignoring tls certificate check
 
 
-
 #   # insecure_skip_verify = false
 
 
-
 #
 
 
-
 #
-
 
 
 #   ## Connection timeout, defaults to "5s" if not set.
-
 
 
 #   timeout = "5s"

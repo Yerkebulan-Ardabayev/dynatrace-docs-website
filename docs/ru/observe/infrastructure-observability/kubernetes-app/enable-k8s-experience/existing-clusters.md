@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:00.286290
 
 # Включение Kubernetes experience для существующих кластеров
 
-# Включение Kubernetes experience для существующих кластеров
 
 * Latest Dynatrace
 * How-to guide

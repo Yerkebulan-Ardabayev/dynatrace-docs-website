@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:58.699675
 
 # Azure Database for PostgreSQL (Single Server, Hyperscale, Flexible Server) monitoring
 
-# Azure Database for PostgreSQL (Single Server, Hyperscale, Flexible Server) monitoring
 
 * Latest Dynatrace
 * How-to guide

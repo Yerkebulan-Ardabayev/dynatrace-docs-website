@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:01.980137
 
 # Azure App Configuration monitoring
 
-# Azure App Configuration monitoring
 
 * Latest Dynatrace
 * How-to guide

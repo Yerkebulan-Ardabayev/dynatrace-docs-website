@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:33.828725
 
 # Настройка разрешений Grail для OneAgent
 
-# Настройка разрешений Grail для OneAgent
 
 * Latest Dynatrace
 * How-to guide

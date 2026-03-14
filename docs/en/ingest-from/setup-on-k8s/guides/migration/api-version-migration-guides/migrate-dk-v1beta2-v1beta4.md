@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:36:05.242871
 
 # Migration of DynaKube v1beta2 to v1beta4
 
-# Migration of DynaKube v1beta2 to v1beta4
 
 * Latest Dynatrace
 * Reference
@@ -59,33 +58,25 @@ We recommend the following:
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack: {} # same as autoUpdate: true
-
 
 
   # ...
@@ -96,85 +87,64 @@ We recommend the following:
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack:
-
 
 
   image: ... # same effect as autoUpdate: false
 
 
-
   codeModulesImage: # same effect as autoUpdate: false
-
 
 
   # ...
 
 
-
   ---
-
 
 
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack:
 
 
-
   version: ... # replaces autoUpdate: false
-
 
 
   # ...

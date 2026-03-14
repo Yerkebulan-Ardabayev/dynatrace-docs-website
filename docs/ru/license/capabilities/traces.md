@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:53.688477
 
 # Обзор Traces powered by Grail (DPS)
 
-# Обзор Traces powered by Grail (DPS)
 
 * Последняя версия Dynatrace
 * Обзор

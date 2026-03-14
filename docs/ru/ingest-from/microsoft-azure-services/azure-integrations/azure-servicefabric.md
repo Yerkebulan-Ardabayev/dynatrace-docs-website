@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:10.162845
 
 # Мониторинг Azure Service Fabric
 
-# Мониторинг Azure Service Fabric
 
 * Последняя версия Dynatrace
 * Практическое руководство

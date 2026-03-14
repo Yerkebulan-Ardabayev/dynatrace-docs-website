@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:07.243073
 
 # Add code to a dashboard
 
-# Add code to a dashboard
 
 * Latest Dynatrace
 * How-to guide
@@ -77,21 +76,16 @@ The result of this API call is multiple sample products in JSON format. By addin
 export default async function () {
 
 
-
 const url = "https://dummyjson.com/products";
-
 
 
 const response = await fetch(url);
 
 
-
 const result = await response.json();
 
 
-
 return result.products;
-
 
 
 }
@@ -107,41 +101,31 @@ In this example, we build on example 1 by calculating the average price for all 
 export default async function () {
 
 
-
 const url = "https://dummyjson.com/products";
-
 
 
 const response = await fetch(url);
 
 
-
 const result = await response.json();
-
 
 
 let avgPrice = 0;
 
 
-
 const numberOfProducts = result.products.length;
-
 
 
 for (let i = 0; i < numberOfProducts; i++) {
 
 
-
 avgPrice = avgPrice + 1;
-
 
 
 }
 
 
-
 return avgPrice;
-
 
 
 }
@@ -157,49 +141,37 @@ In this example, we use the Dynatrace [Environment API](../../../../dynatrace-ap
 export default async function () {
 
 
-
 const environment = "https://{your-environment}"
-
 
 
 const token = "<DYNATRACE_TOKEN_PLACEHOLDER>";
 
 
-
 const params = '/api/v2/events?status("OPEN")';
-
 
 
 const uri = environment + params;
 
 
-
 const response = await fetch(uri, {
-
 
 
 headers: {
 
 
-
 Accept: "application/json",
-
 
 
 Authorization: "Api-Token " + token
 
 
-
 }});
-
 
 
 const result = await response.json();
 
 
-
 return result.events;
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:57.469012
 
 # Оптимизация производительности и стоимости дашбордов с запросами логов
 
-# Оптимизация производительности и стоимости дашбордов с запросами логов
 
 * Последняя версия Dynatrace
 * Руководство
@@ -30,13 +29,10 @@ scraped: 2026-03-06T21:37:57.469012
     fetch logs
 
 
-
     | filter k8s.namespace.name == "obslab-log-problem-detection"
 
 
-
     | filter status == "ERROR"
-
 
 
     | makeTimeseries  count = count()
@@ -49,13 +45,10 @@ scraped: 2026-03-06T21:37:57.469012
     fetch logs
 
 
-
     | filter k8s.namespace.name == "obslab-log-problem-detection"
 
 
-
     | filter status == "ERROR"
-
 
 
     | summarize count = count(), by: { k8s.deployment.name } | sort count desc
@@ -68,9 +61,7 @@ scraped: 2026-03-06T21:37:57.469012
   fetch logs
 
 
-
   | filter k8s.namespace.name == "obslab-log-problem-detection"
-
 
 
   | filter status == "ERROR"
@@ -141,17 +132,13 @@ timeseries count = count(log.obslab.errors)
 fetch logs
 
 
-
 | filter dt.system.bucket == "default_logs"
-
 
 
 | filter k8s.namespace.name == "obslab-log-problem-detection"
 
 
-
 | filter status == "ERROR"
-
 
 
 | fields timestamp, content, k8s.workload.name

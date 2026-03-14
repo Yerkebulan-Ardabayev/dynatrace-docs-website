@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:56.392646
 
 # Anomaly detection configuration
 
-# Anomaly detection configuration
 
 * Latest Dynatrace
 * Explanation

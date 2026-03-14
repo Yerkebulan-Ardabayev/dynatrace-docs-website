@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:36.107375
 
 # Azure Search Service monitoring
 
-# Azure Search Service monitoring
 
 * Latest Dynatrace
 * How-to guide

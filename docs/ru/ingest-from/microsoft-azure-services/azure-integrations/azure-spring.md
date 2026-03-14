@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:17.162329
 
 # Мониторинг Azure Spring Apps
 
-# Мониторинг Azure Spring Apps
 
 * Latest Dynatrace
 * Практическое руководство
@@ -118,9 +117,7 @@ scraped: 2026-03-06T21:18:17.162329
 az spring app deploy --name <your-application-name> --jar-path app.jar \
 
 
-
 -s <your-resource-name> -g <your-resource-group-name> --env DT_TENANT=<your-environment-ID> \
-
 
 
 DT_TENANTTOKEN=<your-tenant-token> DT_CONNECTION_POINT=<your-communication-endpoint>

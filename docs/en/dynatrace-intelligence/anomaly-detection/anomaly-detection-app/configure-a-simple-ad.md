@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:01.911530
 
 # Configure a simple custom alert
 
-# Configure a simple custom alert
 
 * Latest Dynatrace
 * How-to guide

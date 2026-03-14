@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:36:03.524929
 
 # Check application detection rules
 
-# Check application detection rules
 
 * Classic
 * Explanation

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:03.952660
 
 # Data Explorer FAQ
 
-# Data Explorer FAQ
 
 * Classic
 * 1-min read

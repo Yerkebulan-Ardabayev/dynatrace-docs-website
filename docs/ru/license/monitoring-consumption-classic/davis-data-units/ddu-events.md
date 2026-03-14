@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:03.536928
 
 # DDUs for custom Davis events
 
-# DDUs for custom Davis events
 
 * Classic
 * 2-min read

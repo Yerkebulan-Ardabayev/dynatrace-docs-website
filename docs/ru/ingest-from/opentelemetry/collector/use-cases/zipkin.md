@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:40:00.956915
 
 # Приём данных Zipkin с помощью OpenTelemetry Collector
 
-# Приём данных Zipkin с помощью OpenTelemetry Collector
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -27,9 +26,7 @@ scraped: 2026-03-05T21:40:00.956915
 spring:
 
 
-
 sleuth:
-
 
 
 supports-join: false
@@ -57,49 +54,37 @@ supports-join: false
 receivers:
 
 
-
 zipkin:
-
 
 
 exporters:
 
 
-
 otlp_http:
-
 
 
 endpoint: ${env:DT_ENDPOINT}
 
 
-
 headers:
-
 
 
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
 
 
-
 service:
-
 
 
 pipelines:
 
 
-
 traces:
-
 
 
 receivers: [zipkin]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]

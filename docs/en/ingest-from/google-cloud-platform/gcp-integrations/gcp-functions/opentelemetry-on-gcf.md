@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:42.968498
 
 # Set up OpenTelemetry monitoring for Google Cloud Functions
 
-# Set up OpenTelemetry monitoring for Google Cloud Functions
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:56.066698
 
 # Topology and Smartscape API
 
-# Topology and Smartscape API
 
 * Reference
 * Updated on Mar 22, 2023

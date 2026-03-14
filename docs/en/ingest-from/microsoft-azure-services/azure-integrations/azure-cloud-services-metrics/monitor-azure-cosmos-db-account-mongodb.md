@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:04.102554
 
 # Azure Cosmos DB Account (MongoDB) monitoring
 
-# Azure Cosmos DB Account (MongoDB) monitoring
 
 * Latest Dynatrace
 * How-to guide

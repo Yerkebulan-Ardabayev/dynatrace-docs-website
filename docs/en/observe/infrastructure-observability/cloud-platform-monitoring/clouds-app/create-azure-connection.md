@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:55.181464
 
 # Create a new Azure connection
 
-# Create a new Azure connection
 
 * Latest Dynatrace
 * How-to guide

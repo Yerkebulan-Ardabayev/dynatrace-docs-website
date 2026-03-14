@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:35:27.364176
 
 # Stay compliant with Security Posture Management
 
-# Stay compliant with Security Posture Management
 
 * Latest Dynatrace
 * Tutorial

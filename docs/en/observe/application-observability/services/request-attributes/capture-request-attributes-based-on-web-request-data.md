@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:11.613362
 
 # Capture request attributes based on web request data
 
-# Capture request attributes based on web request data
 
 * Latest Dynatrace
 * 4-min read

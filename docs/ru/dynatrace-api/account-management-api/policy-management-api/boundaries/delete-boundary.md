@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:29.616618
 
 # API управления политиками — УДАЛЕНИЕ границы политики
 
-# API управления политиками — УДАЛЕНИЕ границы политики
 
 * Последняя версия Dynatrace
 * Справочник
@@ -51,17 +50,13 @@ scraped: 2026-03-06T21:29:29.616618
 {
 
 
-
 "code": 1,
-
 
 
 "message": "string",
 
 
-
 "errorsMap": {}
-
 
 
 }
@@ -77,9 +72,7 @@ scraped: 2026-03-06T21:29:29.616618
 curl --request DELETE \
 
 
-
 --url https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890/boundaries/9a7b6c54-3d2e-4f10-a8b2-7cde9012f345 \
-
 
 
 --header 'Authorization: Bearer abcdefjhij1234567890'

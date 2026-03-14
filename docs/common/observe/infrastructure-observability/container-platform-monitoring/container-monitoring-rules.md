@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Container monitoring rules
 
-# Container monitoring rules
 
 * How-to guide
 * 2-min read

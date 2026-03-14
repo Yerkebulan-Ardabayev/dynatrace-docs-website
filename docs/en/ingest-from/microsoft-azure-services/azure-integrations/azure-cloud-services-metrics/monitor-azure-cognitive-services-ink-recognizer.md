@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:39:33.010885
 
 # Azure Cognitive Services - Ink Recognizer monitoring (deprecated)
 
-# Azure Cognitive Services - Ink Recognizer monitoring (deprecated)
 
 * Latest Dynatrace
 * How-to guide

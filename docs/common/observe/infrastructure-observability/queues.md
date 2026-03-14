@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Message queues
 
-# Message queues
 
 * Explanation
 * 4-min read

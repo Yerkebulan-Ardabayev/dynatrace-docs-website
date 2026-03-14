@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Deployment API - ActiveGate
 
-# Deployment API - ActiveGate
 
 * Reference
 * Published Apr 02, 2021

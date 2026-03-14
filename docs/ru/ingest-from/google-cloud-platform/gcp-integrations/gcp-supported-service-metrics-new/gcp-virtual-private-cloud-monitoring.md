@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:45.103383
 
 # Мониторинг Google Cloud Virtual Private Cloud (VPC)
 
-# Мониторинг Google Cloud Virtual Private Cloud (VPC)
 
 * Последняя версия Dynatrace
 * Практическое руководство

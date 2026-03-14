@@ -6,7 +6,6 @@ scraped: 2026-03-01T21:24:59.058380
 
 # Automate vulnerability remediation with Atlassian Rovo Dev and Dynatrace
 
-# Automate vulnerability remediation with Atlassian Rovo Dev and Dynatrace
 
 * Latest Dynatrace
 * Tutorial
@@ -108,41 +107,31 @@ To get started, follow the steps below.
 {
 
 
-
 "mcpServers": {
-
 
 
 "dynatrace": {
 
 
-
 "transport": "sse",
-
 
 
 "url": "https://<DYNATRACE_TENANT>/platform/mcp-gateway/sse",
 
 
-
 "headers": {
-
 
 
 "Authorization": "Api-Token <DYNATRACE_PLATFORM_TOKEN>"
 
 
+}
+
 
 }
 
 
-
 }
-
-
-
-}
-
 
 
 }

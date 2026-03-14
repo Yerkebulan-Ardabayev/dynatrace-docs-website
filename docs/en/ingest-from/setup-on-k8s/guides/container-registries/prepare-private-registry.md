@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:22.301535
 
 # Store Dynatrace images in private registries
 
-# Store Dynatrace images in private registries
 
 * Latest Dynatrace
 * 7-min read
@@ -83,7 +82,6 @@ The following command shows how to copy the Dynatrace Operator image to our priv
 skopeo copy --all docker://public.ecr.aws/dynatrace/dynatrace-operator:<tag> \
 
 
-
 docker://registry.my-company.com/dynatrace-operator:<tag>
 ```
 
@@ -93,7 +91,6 @@ The following command shows how to copy the Dynatrace ActiveGate image to our pr
 
 ```
 skopeo copy --all docker://public.ecr.aws/dynatrace/dynatrace-activegate:<tag> \
-
 
 
 docker://registry.my-company.com/dynatrace-activegate:<tag>
@@ -107,7 +104,6 @@ The following command shows how to copy the Dynatrace Code Modules image to our 
 skopeo copy --all docker://public.ecr.aws/dynatrace/dynatrace-codemodules:<tag> \
 
 
-
 docker://registry.my-company.com/dynatrace-codemodules:<tag>
 ```
 
@@ -119,7 +115,6 @@ The following command shows how to copy the Dynatrace OneAgent image to our priv
 skopeo copy --all docker://public.ecr.aws/dynatrace/dynatrace-oneagent:<tag> \
 
 
-
 docker://registry.my-company.com/dynatrace-oneagent:<tag>
 ```
 
@@ -129,7 +124,6 @@ The following command shows how to copy the Dynatrace K8s Node Config Collector 
 
 ```
 skopeo copy --all docker://public.ecr.aws/dynatrace/dynatrace-k8s-node-config-collector:<tag> \
-
 
 
 docker://registry.my-company.com/dynatrace-k8s-node-config-collector:<tag>
@@ -201,9 +195,7 @@ Before executing the following command, be sure to replace `<tag-with-raw-suffix
 skopeo copy --override-arch amd64 --override-os linux
 
 
-
 docker://<your_environment_domain_name>/linux/oneagent:<tag-with-raw-suffix> \
-
 
 
 docker://registry.my-company.com/dynatrace-oneagent-classic:<tag-with-raw-suffix>

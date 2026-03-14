@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:05.268034
 
 # Span and trace context propagation
 
-# Span and trace context propagation
 
 * Latest Dynatrace
 * Reference

@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:32:29.510104
 
 # Ограничение API-вызовов к Azure
 
-# Ограничение API-вызовов к Azure
 
 * Latest Dynatrace
 * Explanation

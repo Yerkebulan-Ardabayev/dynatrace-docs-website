@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:41.657451
 
 # Отправка уведомлений Dynatrace в ServiceNow
 
-# Отправка уведомлений Dynatrace в ServiceNow
 
 * Classic
 * 9 мин. чтения

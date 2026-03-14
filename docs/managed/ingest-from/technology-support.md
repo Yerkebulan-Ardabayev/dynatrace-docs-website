@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Technology support
 
-# Technology support
 
 * 17-min read
 * Updated on Feb 02, 2026

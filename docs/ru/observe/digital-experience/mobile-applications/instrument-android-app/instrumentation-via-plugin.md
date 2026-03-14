@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:36.781022
 
 # Dynatrace Android Gradle plugin
 
-# Dynatrace Android Gradle plugin
 
 * Classic
 * Overview

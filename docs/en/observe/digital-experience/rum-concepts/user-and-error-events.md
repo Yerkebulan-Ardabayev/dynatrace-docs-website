@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:34.294869
 
 # User and error events
 
-# User and error events
 
 * Classic
 * Explanation

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:53.493213
 
 # Создание подключения AWS через настройки
 
-# Создание подключения AWS через настройки
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -160,897 +159,673 @@ scraped: 2026-03-06T21:24:53.493213
 {
 
 
-
 "Version": "2012-10-17",
-
 
 
 "Statement": [
 
 
-
 {
-
 
 
 "Sid": "cloudformation0",
 
 
-
 "Effect": "Allow",
 
 
-
 "Action": [
-
 
 
 "cloudformation:CreateStack",
 
 
-
 "cloudformation:DescribeStacks",
-
 
 
 "cloudformation:UpdateStack",
 
 
-
 "cloudformation:ListStacks",
-
 
 
 "cloudformation:DescribeStackResources",
 
 
-
 "cloudformation:DeleteStack",
-
 
 
 "cloudformation:CreateChangeSet",
 
 
-
 "cloudformation:DescribeChangeSet",
-
 
 
 "cloudformation:ExecuteChangeSet",
 
 
-
 "cloudformation:CreateStackInstances",
-
 
 
 "cloudformation:ListStackInstances",
 
 
-
 "cloudformation:DescribeStackInstance",
-
 
 
 "cloudformation:DeleteStackInstances",
 
 
-
 "cloudformation:CreateStackSet",
-
 
 
 "cloudformation:UpdateStackSet",
 
 
-
 "cloudformation:DescribeStackSet",
-
 
 
 "cloudformation:DescribeStackSetOperation",
 
 
-
 "cloudformation:ListStackSetOperationResults",
-
 
 
 "cloudformation:DeleteStackSet",
 
 
-
 "cloudformation:TagResource",
-
 
 
 "cloudformation:UntagResource"
 
 
-
 ],
 
 
-
 "Resource": [
-
 
 
 "arn:aws:cloudformation:*:<AWS-Account-ID>:stackset-target/*",
 
 
-
 "arn:aws:cloudformation:<Deployment-Region>:<AWS-Account-ID>:stackset/Dynatrace*:*",
-
 
 
 "arn:aws:cloudformation:<Deployment-Region>:<AWS-Account-ID>:stack/<Deployment-Stack-Name-Prefix>*/*",
 
 
-
 "arn:aws:cloudformation:*:<AWS-Account-ID>:stack/StackSet-Dynatrace*/*",
-
 
 
 "arn:aws:cloudformation:*:<AWS-Account-ID>:type/resource/*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "Sid": "cloudformation1",
 
 
-
 "Effect": "Allow",
 
 
-
 "Action": [
-
 
 
 "cloudformation:GetTemplate",
 
 
-
 "cloudformation:ValidateTemplate",
-
 
 
 "cloudformation:GetTemplateSummary"
 
 
-
 ],
 
 
-
 "Resource": [
-
 
 
 "*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "Sid": "lambda",
 
 
-
 "Effect": "Allow",
 
 
-
 "Action": [
-
 
 
 "lambda:CreateFunction",
 
 
-
 "lambda:UpdateFunctionCode",
-
 
 
 "lambda:UpdateFunctionConfiguration",
 
 
-
 "lambda:GetFunction",
-
 
 
 "lambda:InvokeFunction",
 
 
-
 "lambda:DeleteFunction",
-
 
 
 "lambda:TagResource",
 
 
-
 "lambda:UntagResource"
-
 
 
 ],
 
 
-
 "Resource": [
-
 
 
 "arn:aws:lambda:<Deployment-Region>:<AWS-Account-ID>:function:DynatraceApiClientFunction*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "Sid": "iam",
 
 
-
 "Effect": "Allow",
 
 
-
 "Action": [
-
 
 
 "iam:CreatePolicy",
 
 
-
 "iam:CreatePolicyVersion",
-
 
 
 "iam:DeletePolicyVersion",
 
 
-
 "iam:DeletePolicy",
-
 
 
 "iam:CreateRole",
 
 
-
 "iam:UpdateRole",
-
 
 
 "iam:DeleteRole",
 
 
-
 "iam:PassRole",
-
 
 
 "iam:AttachRolePolicy",
 
 
-
 "iam:PutRolePolicy",
-
 
 
 "iam:DetachRolePolicy",
 
 
-
 "iam:GetRole",
-
 
 
 "iam:GetPolicy",
 
 
-
 "iam:ListPolicyVersions",
-
 
 
 "iam:TagPolicy",
 
 
-
 "iam:TagRole",
-
 
 
 "iam:UntagPolicy",
 
 
-
 "iam:UntagRole",
-
 
 
 "iam:GetRolePolicy",
 
 
-
 "iam:UpdateAssumeRolePolicy",
-
 
 
 "iam:DeleteRolePolicy"
 
 
-
 ],
 
 
-
 "Resource": [
-
 
 
 "arn:aws:iam::<AWS-Account-ID>:policy/<Deployment-Stack-Name-Prefix>*",
 
 
-
 "arn:aws:iam::<AWS-Account-ID>:role/<Deployment-Stack-Name-Prefix>*",
-
 
 
 "arn:aws:iam::<AWS-Account-ID>:role/Dynatrace*",
 
 
-
 "arn:aws:iam::<AWS-Account-ID>:policy/Dynatrace*"
-
 
 
 ]
 
 
-
 },
 
 
-
 {
-
 
 
 "Sid": "s3",
 
 
-
 "Effect": "Allow",
 
 
-
 "Action": [
-
 
 
 "s3:GetObject",
 
 
-
 "s3:CreateBucket",
-
 
 
 "s3:DeleteBucket",
 
 
-
 "s3:PutLifecycleConfiguration",
-
 
 
 "s3:PutBucketTagging"
 
 
-
 ],
 
 
-
 "Resource": [
-
 
 
 "arn:aws:s3:::dynatrace*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "Sid": "secretsmanager",
 
 
-
 "Effect": "Allow",
 
 
-
 "Action": [
-
 
 
 "secretsmanager:CreateSecret",
 
 
-
 "secretsmanager:DescribeSecret",
-
 
 
 "secretsmanager:UpdateSecret",
 
 
-
 "secretsmanager:GetSecretValue",
-
 
 
 "secretsmanager:PutSecretValue",
 
 
-
 "secretsmanager:TagResource",
-
 
 
 "secretsmanager:DeleteSecret",
 
 
-
 "secretsmanager:PutResourcePolicy",
-
 
 
 "secretsmanager:DeleteResourcePolicy"
 
 
-
 ],
 
 
-
 "Resource": [
-
 
 
 "arn:aws:secretsmanager:<Deployment-Region>:<AWS-Account-ID>:secret:DynatraceAPIAccessToken*",
 
 
-
 "arn:aws:secretsmanager:<Deployment-Region>:<AWS-Account-ID>:secret:DynatraceAPIPlatformToken*",
-
 
 
 "arn:aws:secretsmanager:<Deployment-Region>:<AWS-Account-ID>:secret:/dynatrace/*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "Sid": "kms0",
 
 
-
 "Effect": "Allow",
 
 
-
 "Action": [
-
 
 
 "kms:CreateKey",
 
 
-
 "kms:TagResource",
-
 
 
 "kms:UntagResource"
 
 
-
 ],
-
 
 
 "Resource": "*",
 
 
-
 "Condition": {
 
 
-
 "StringEquals": {
-
 
 
 "aws:RequestTag/dt:CreatedBy": "Dynatrace"
 
 
-
 }
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "Sid": "kms1",
 
 
-
 "Effect": "Allow",
 
 
-
 "Action": [
-
 
 
 "kms:CreateGrant",
 
 
-
 "kms:RevokeGrant",
-
 
 
 "kms:DescribeKey",
 
 
-
 "kms:GetKeyPolicy",
-
 
 
 "kms:PutKeyPolicy",
 
 
-
 "kms:ScheduleKeyDeletion"
 
 
-
 ],
-
 
 
 "Resource": "*",
 
 
-
 "Condition": {
-
 
 
 "StringEquals": {
 
 
-
 "aws:ResourceTag/dt:CreatedBy": "Dynatrace"
 
 
-
 }
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "Sid": "kms2",
 
 
-
 "Effect": "Allow",
-
 
 
 "Action": [
 
 
-
 "kms:CreateAlias",
-
 
 
 "kms:DeleteAlias",
 
 
-
 "kms:UpdateAlias"
-
 
 
 ],
 
 
-
 "Resource": [
-
 
 
 "arn:aws:kms:<Deployment-Region>:<AWS-Account-ID>:key/*"
 
 
-
 ],
-
 
 
 "Condition": {
 
 
-
 "StringEquals": {
-
 
 
 "aws:ResourceTag/dt:CreatedBy": "Dynatrace"
 
 
-
 }
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "Sid": "kms3",
 
 
-
 "Effect": "Allow",
 
 
-
 "Action": [
-
 
 
 "kms:CreateAlias",
 
 
-
 "kms:DeleteAlias",
-
 
 
 "kms:UpdateAlias"
 
 
-
 ],
-
 
 
 "Resource": "arn:aws:kms:<Deployment-Region>:<AWS-Account-ID>:alias/dynatrace/*/keys/aws/integration/*"
 
 
-
 },
 
 
-
 {
-
 
 
 "Sid": "logs0",
 
 
-
 "Effect": "Allow",
 
 
-
 "Action": [
-
 
 
 "logs:DescribeLogGroups"
 
 
-
 ],
-
 
 
 "Resource": "*"
 
 
-
 },
-
 
 
 {
 
 
-
 "Sid": "logs1",
-
 
 
 "Effect": "Allow",
 
 
-
 "Action": [
-
 
 
 "logs:DeleteLogGroup",
 
 
-
 "logs:CreateLogGroup",
-
 
 
 "logs:DeleteLogStream",
 
 
-
 "logs:CreateLogStream",
-
 
 
 "logs:DescribeLogStreams",
 
 
-
 "logs:PutRetentionPolicy",
-
 
 
 "logs:ListTagsForResource",
 
 
-
 "logs:DescribeIndexPolicies",
-
 
 
 "logs:AssociateKmsKey",
 
 
-
 "logs:DisassociateKmsKey",
-
 
 
 "logs:PutLogEvents",
 
 
-
 "logs:TagResource"
-
 
 
 ],
 
 
-
 "Resource": [
-
 
 
 "arn:aws:logs:<Deployment-Region>:<AWS-Account-ID>:log-group:/aws/lambda/<Deployment-Stack-Name-Prefix>*",
 
 
-
 "arn:aws:logs:<Deployment-Region>:<AWS-Account-ID>:log-group:/aws/lambda/DynatraceApiClientFunction-*"
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
-
 
 
 }

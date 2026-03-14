@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:28.801417
 
 # Site Reliability Guardian
 
-# Site Reliability Guardian
 
 * Последняя версия Dynatrace
 * Приложение
@@ -183,13 +182,10 @@ Guardian предоставляет вам [рабочий процесс авт
 fetch bizevents |
 
 
-
 filter event.type == "guardian.validation.objective" AND guardian.id == "vu9U3hXa3q0AAAABADFhcHA6ZHluYXRyYWNlLnNpdGUucmVsaWFiaWxpdHkuZ3VhcmRpYW46Z3VhcmRpYW5zAAZ0ZW5hbnQABnRlbmFudAAkMWNiZDVkYWYtZThhNi0zMDkxLWFkOGQtMmU5NDNmNWJmZWJmvu9U3hXa3q0" |
 
 
-
 limit 1 |
-
 
 
 parse guardian.tags, "JSON:parsed_guardian_tags"
@@ -201,13 +197,10 @@ parse guardian.tags, "JSON:parsed_guardian_tags"
 fetch bizevents
 
 
-
 | filter event.type == "guardian.validation.finished"
 
 
-
 | expand guardian.tags
-
 
 
 | filter contains(guardian.tags, "my-tagged-guardian")

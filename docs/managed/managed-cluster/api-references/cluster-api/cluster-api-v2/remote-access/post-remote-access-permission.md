@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Grant remote access permission
 
-# Grant remote access permission
 
 * Published Feb 12, 2020
 
@@ -52,21 +51,16 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "reason": "string",
-
 
 
 "requestedDays": 1,
 
 
-
 "role": "devops-admin",
 
 
-
 "userId": "string"
-
 
 
 }
@@ -108,41 +102,31 @@ Access Request data
 {
 
 
-
 "createdTimestamp": 1,
-
 
 
 "expirationTimestamp": 1,
 
 
-
 "reason": "string",
-
 
 
 "requestId": "string",
 
 
-
 "requestedDays": 1,
-
 
 
 "role": "devops-admin",
 
 
-
 "state": "ACCEPTED",
-
 
 
 "stateModifiedByUser": "string",
 
 
-
 "userId": "string"
-
 
 
 }
@@ -158,13 +142,10 @@ In this example, you grant the user `john.smith@dynatrace.com` a remote cluster 
 curl -X POST "https://myManaged.cluster.com/api/cluster/v2/remoteaccess/requests"
 
 
-
 -H  "accept: application/json"
 
 
-
 -H  "Content-Type: */*"
-
 
 
 -d "{\"userId\":\"john.smith@dynatrace.com\",\"reason\":\"SUP-123456 Verifying cluster state after upgrade\",\"requestedDays\":7,\"role\":\"devops-admin\"}"
@@ -182,21 +163,16 @@ https://myManaged.cluster.com/api/cluster/v2/remoteaccess/requests
 {
 
 
-
 "userId": "john.smith@dynatrace.com",
-
 
 
 "reason": "SUP-123456 Verifying cluster state after upgrade",
 
 
-
 "requestedDays": 7,
 
 
-
 "role": "devops-admin"
-
 
 
 }
@@ -208,41 +184,31 @@ https://myManaged.cluster.com/api/cluster/v2/remoteaccess/requests
 {
 
 
-
 "requestId":"7a397770-86b7-473b-b23e-4a07d79f2eff",
-
 
 
 "userId":"john.smith@dynatrace.com",
 
 
-
 "reason":"SUP-123456 Verifying cluster state after upgrade",
-
 
 
 "requestedDays":7,
 
 
-
 "role":"devops-admin",
-
 
 
 "createdTimestamp":1586452866661,
 
 
-
 "expirationTimestamp":null,
-
 
 
 "state":"PENDING",
 
 
-
 "stateModifiedByUser":null
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:44.696000
 
 # Automate alerts with API
 
-# Automate alerts with API
 
 * Latest Dynatrace
 * Tutorial
@@ -84,293 +83,220 @@ To create a custom alert configuration
    curl 'https://{your-environment-id}.apps.dynatrace.com/platform/classic/environment-api/v2/settings/objects' \
 
 
-
    -X POST \
-
 
 
    -H 'Accept: application/json; charset=utf-8' \
 
 
-
    -H 'Content-Type: application/json; charset=utf-8' \
-
 
 
    -H 'Authorization: Bearer {your-bearer-token}' \
 
 
-
    -d '[
 
 
-
    {
-
 
 
    "schemaId": "builtin:davis.anomaly-detectors",
 
 
-
    "scope": "environment",
-
 
 
    "value": {
 
 
-
    "enabled": true,
-
 
 
    "title": "Low disk space alert",
 
 
-
    "description": "",
-
 
 
    "source": "Rest-API",
 
 
-
    "executionSettings": {
-
 
 
    "actor": null,
 
 
-
    "queryOffset": null
 
 
-
    },
-
 
 
    "analyzer": {
 
 
-
    "name": "dt.statistics.ui.anomaly_detection.StaticThresholdAnomalyDetectionAnalyzer",
-
 
 
    "input": [
 
 
-
    {
-
 
 
    "key": "query",
 
 
-
    "value": "timeseries avg(dt.host.disk.free), by:{dt.entity.host, dt.entity.disk}"
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "threshold",
 
 
-
    "value": "10"
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "alertCondition",
 
 
-
    "value": "BELOW"
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "alertOnMissingData",
 
 
-
    "value": "false"
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "violatingSamples",
 
 
-
    "value": "3"
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "slidingWindow",
 
 
-
    "value": "5"
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "dealertingSamples",
 
 
-
    "value": "5"
-
 
 
    }
 
 
-
    ]
 
 
-
    },
-
 
 
    "eventTemplate": {
 
 
-
    "properties": [
 
 
-
    {
-
 
 
    "key": "dt.source_entity",
 
 
-
    "value": "{dims:dt.entity.host}"
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "event.type",
 
 
-
    "value": "CUSTOM_ALERT"
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "event.description",
 
 
-
    "value": "The disk {dims:dt.entity.disk.name} runs out of space. Free up space or resize disk."
-
 
 
    },
 
 
-
    {
-
 
 
    "key": "event.name",
 
 
-
    "value": "Low amount of disk space available on host {dims:dt.entity.host.name}"
 
 
-
    }
-
 
 
    ]
 
 
+   }
+
 
    }
 
 
-
    }
-
-
-
-   }
-
 
 
    ]'

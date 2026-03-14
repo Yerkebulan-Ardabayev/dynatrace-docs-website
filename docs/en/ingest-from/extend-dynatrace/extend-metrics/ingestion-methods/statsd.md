@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:29.318435
 
 # Send StatsD metrics to Dynatrace
 
-# Send StatsD metrics to Dynatrace
 
 * Latest Dynatrace
 * 5-min read
@@ -99,14 +98,12 @@ To enable DynatraceStatsD metric ingestion
        service extensionsmodule stop
 
 
-
        service extensionsmodule start
        ```
      + for systems with systemd:
 
        ```
        systemctl stop extensionsmodule
-
 
 
        systemctl start extensionsmodule
@@ -116,7 +113,6 @@ To enable DynatraceStatsD metric ingestion
 
      ```
      net stop "Dynatrace Extensions Controller"
-
 
 
      net start "Dynatrace Extensions Controller"

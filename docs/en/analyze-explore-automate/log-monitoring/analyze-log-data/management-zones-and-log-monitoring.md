@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:58.652457
 
 # Management zones and ingested log data (Logs Classic)
 
-# Management zones and ingested log data (Logs Classic)
 
 * Classic
 * Explanation

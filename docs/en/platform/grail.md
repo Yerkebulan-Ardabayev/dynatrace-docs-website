@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:21.329914
 
 # Grail
 
-# Grail
 
 * Latest Dynatrace
 * Overview

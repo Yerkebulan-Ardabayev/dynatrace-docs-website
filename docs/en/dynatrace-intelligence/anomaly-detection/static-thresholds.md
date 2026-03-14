@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:53.079076
 
 # Static thresholds for anomaly detection
 
-# Static thresholds for anomaly detection
 
 * Latest Dynatrace
 * Explanation

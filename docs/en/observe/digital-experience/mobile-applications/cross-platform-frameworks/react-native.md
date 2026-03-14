@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:22.621291
 
 # Instrument mobile apps with Dynatrace React Native plugin
 
-# Instrument mobile apps with Dynatrace React Native plugin
 
 * Classic
 * How-to guide
@@ -60,21 +59,16 @@ To create a mobile application in Dynatrace
    module.exports = {
 
 
-
    transformer: {
-
 
 
    babelTransformerPath: require.resolve('@dynatrace/react-native-plugin/lib/dynatrace-transformer')
 
 
-
    },
 
 
-
    reporter: require("@dynatrace/react-native-plugin/lib/dynatrace-reporter")
-
 
 
    };
@@ -95,53 +89,40 @@ To create a mobile application in Dynatrace
    module.exports = {
 
 
-
    presets: [
-
 
 
    ['module:metro-react-native-babel-preset'],
 
 
-
    ],
-
 
 
    plugins: [
 
 
-
    [
-
 
 
    '@babel/plugin-transform-react-jsx',
 
 
-
    {
-
 
 
    runtime: 'automatic',
 
 
-
    importSource: "@dynatrace/react-native-plugin"
-
 
 
    },
 
 
-
    ],
 
 
-
    ],
-
 
 
    };
@@ -153,37 +134,28 @@ To create a mobile application in Dynatrace
    module.exports = {
 
 
-
    presets: [
-
 
 
    ['babel-preset-expo',
 
 
-
    {
-
 
 
    jsxRuntime: 'automatic',
 
 
-
    jsxImportSource: '@dynatrace/react-native-plugin',
-
 
 
    },
 
 
-
    ],
 
 
-
    ],
-
 
 
    };

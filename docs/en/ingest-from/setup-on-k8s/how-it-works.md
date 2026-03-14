@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:36.661384
 
 # How it works
 
-# How it works
 
 * Latest Dynatrace
 * 1-min read

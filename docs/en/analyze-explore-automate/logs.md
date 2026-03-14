@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:16.285435
 
 # Log Analytics
 
-# Log Analytics
 
 * Latest Dynatrace
 * Explanation

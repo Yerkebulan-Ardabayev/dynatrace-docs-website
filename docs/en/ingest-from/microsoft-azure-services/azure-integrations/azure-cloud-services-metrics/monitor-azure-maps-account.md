@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:19.933105
 
 # Azure Maps Account monitoring
 
-# Azure Maps Account monitoring
 
 * Latest Dynatrace
 * How-to guide

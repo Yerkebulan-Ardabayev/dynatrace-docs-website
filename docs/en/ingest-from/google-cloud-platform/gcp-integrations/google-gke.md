@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:08.510400
 
 # Monitor Google Kubernetes Engine (GKE)
 
-# Monitor Google Kubernetes Engine (GKE)
 
 * Latest Dynatrace
 * Overview

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:52.648519
 
 # Мониторинг Azure Cache for Redis
 
-# Мониторинг Azure Cache for Redis
 
 * Последняя версия Dynatrace
 * Практическое руководство

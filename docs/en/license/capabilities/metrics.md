@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:49.836217
 
 # Metrics powered by Grail overview (DPS)
 
-# Metrics powered by Grail overview (DPS)
 
 * Latest Dynatrace
 * Overview

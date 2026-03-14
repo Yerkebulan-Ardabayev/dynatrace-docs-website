@@ -14,7 +14,6 @@ scraped: 2026-03-06T21:17:13.819056
 
 # Calculate your consumption of Foundation & Discovery (DPS)
 
-# Calculate your consumption of Foundation & Discovery (DPS)
 
 * Latest Dynatrace
 * Explanation
@@ -120,7 +119,6 @@ scraped: 2026-03-06T21:19:50.073712
 
 # Calculate your consumption of Full-Stack Monitoring (DPS)
 
-# Calculate your consumption of Full-Stack Monitoring (DPS)
 
 * Latest Dynatrace
 * Explanation
@@ -223,7 +221,6 @@ Certain monitoring scenarios have their own calculations for GiB-hour consumptio
 | Monitored containers that are not detected as containers | These containers are counted as hosts. |
 
 ## Metrics
-
 
 
 This section assumes that you have followed the Dynatrace-recommended deployment options, especially regarding telemetry enrichment.
@@ -331,7 +328,6 @@ For non-Grail enabled DPS:
 * Each environment has a minimum trace peak volume of 14 MiB/min.
 
 ### Peak trace volume/minute calculation example
-
 
 
 * First 15-minute interval: `200 KiB (peak trace volume) Ã 1350 (GiB memory) = 263.67 MiB/minute`
@@ -469,7 +465,6 @@ Here are the metrics you can use to monitor the consumption of Dynatrace Full-St
 ### Monitor memory-GiB-hour consumption for Full-Stack monitored hosts
 
 
-
 You can monitor the total memory-GiB-hour consumption aggregated across all Full-Stack monitored hosts for different intervals (15 min, hour, day, or week) for any selected timeframe using the "(DPS) Full-Stack Monitoring billing usage" metric.
 The example below shows memory GiB monitored in 1-hour intervals.
 Between 11:00 and 14:00, 523 memory-GiB were monitored each 1 hour.
@@ -541,7 +536,6 @@ scraped: 2026-03-06T21:17:15.496882
 
 # Calculate your consumption of Infrastructure Monitoring (DPS)
 
-# Calculate your consumption of Infrastructure Monitoring (DPS)
 
 * Latest Dynatrace
 * Explanation
@@ -702,7 +696,6 @@ The example below shows the list of all hosts that reported consumption.
 ### Monitor metric consumption for Infrastructure monitored hosts
 
 
-
 Use the metric "(DPS) Total metric data points billed for Infrastructure hosts" to monitor the number of metric data points that are billed for Infrastructure monitored hosts, as shown in the example below.
 
 ![Infrastructure Monitoring (DPS)](https://dt-cdn.net/images/image015-1101-5c4b7620a4.png)
@@ -736,7 +729,6 @@ scraped: 2026-03-06T21:19:44.937750
 
 # Calculate your consumption of Mainframe Monitoring (DPS)
 
-# Calculate your consumption of Mainframe Monitoring (DPS)
 
 * Latest Dynatrace
 * Explanation
@@ -877,7 +869,6 @@ scraped: 2026-03-05T21:32:41.795195
 
 # Application & Infrastructure Observability overview (DPS)
 
-# Application & Infrastructure Observability overview (DPS)
 
 * Latest Dynatrace
 * Overview
@@ -910,7 +901,6 @@ scraped: 2026-03-04T21:37:03.569424
 
 # AppEngine Functions (Serverless Functions) overview (DPS)
 
-# AppEngine Functions (Serverless Functions) overview (DPS)
 
 * Latest Dynatrace
 * Explanation
@@ -954,7 +944,6 @@ scraped: 2026-03-04T21:39:06.594397
 
 # Application Security overview (DPS)
 
-# Application Security overview (DPS)
 
 * Latest Dynatrace
 * Overview
@@ -1011,7 +1000,6 @@ scraped: 2026-03-06T21:34:54.982457
 
 # Automation Workflow capability overview (DPS)
 
-# Automation Workflow capability overview (DPS)
 
 * Latest Dynatrace
 * Explanation
@@ -1044,7 +1032,6 @@ scraped: 2026-02-06T16:26:50.506651
 
 # Calculate your consumption of Kubernetes Platform Monitoring (DPS)
 
-# Calculate your consumption of Kubernetes Platform Monitoring (DPS)
 
 * Latest Dynatrace
 * Explanation
@@ -1146,7 +1133,6 @@ scraped: 2026-03-04T21:27:41.938129
 
 # Digital Experience Monitoring (DEM) overview (DPS)
 
-# Digital Experience Monitoring (DEM) overview (DPS)
 
 * Latest Dynatrace
 * Overview
@@ -1240,7 +1226,6 @@ scraped: 2026-03-06T21:24:51.504563
 
 # Events powered by Grail overview (DPS)
 
-# Events powered by Grail overview (DPS)
 
 * Latest Dynatrace
 * Overview
@@ -1328,7 +1313,6 @@ scraped: 2026-03-06T21:11:26.513950
 
 # Calculate your consumption of Log Management & Analytics - Query (DPS)
 
-# Calculate your consumption of Log Management & Analytics - Query (DPS)
 
 * Latest Dynatrace
 * Explanation
@@ -1397,33 +1381,25 @@ The following DQL query provides an overview of total [Query](#query) usage in g
 fetch dt.system.events
 
 
-
 | filter event.kind == "BILLING_USAGE_EVENT"
-
 
 
 | filter event.type == "Log Management & Analytics - Query"
 
 
-
 | dedup event.id
-
 
 
 | summarize {
 
 
-
 data_read_bytes = sum(billed_bytes)
-
 
 
 }, by: {
 
 
-
 startHour = bin(timestamp, 1d)
-
 
 
 }
@@ -1462,7 +1438,6 @@ scraped: 2026-03-06T21:15:21.899416
 
 # Log Analytics (DPS)
 
-# Log Analytics (DPS)
 
 * Latest Dynatrace
 * Overview
@@ -1582,7 +1557,6 @@ scraped: 2026-03-06T21:24:49.836217
 
 # Metrics powered by Grail overview (DPS)
 
-# Metrics powered by Grail overview (DPS)
 
 * Latest Dynatrace
 * Overview
@@ -1631,7 +1605,6 @@ scraped: 2026-03-06T21:36:49.590243
 
 # Platform extensions overview (DPS)
 
-# Platform extensions overview (DPS)
 
 * Latest Dynatrace
 * Overview
@@ -1709,7 +1682,6 @@ scraped: 2026-03-06T21:13:53.688477
 
 # Traces powered by Grail overview (DPS)
 
-# Traces powered by Grail overview (DPS)
 
 * Latest Dynatrace
 * Overview
@@ -1800,7 +1772,6 @@ scraped: 2026-03-06T21:22:16.999914
 
 # Understanding DPS capabilities
 
-# Understanding DPS capabilities
 
 * Latest Dynatrace
 * Explanation

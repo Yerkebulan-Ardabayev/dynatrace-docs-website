@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:24.238689
 
 # Потоковая передача журналов в Dynatrace с помощью Fluentd на Kubernetes
 
-# Потоковая передача журналов в Dynatrace с помощью Fluentd на Kubernetes
 
 * Latest Dynatrace
 * Explanation

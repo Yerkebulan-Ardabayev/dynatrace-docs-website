@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:05.194209
 
 # Retain trace data for long periods
 
-# Retain trace data for long periods
 
 * Latest Dynatrace
 * Tutorial

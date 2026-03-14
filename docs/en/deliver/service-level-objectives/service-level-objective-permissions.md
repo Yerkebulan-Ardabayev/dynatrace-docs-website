@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:41.871210
 
 # Permissions for service-level objective (SLO) tiles in a dashboard
 
-# Permissions for service-level objective (SLO) tiles in a dashboard
 
 * Latest Dynatrace
 * 1-min read

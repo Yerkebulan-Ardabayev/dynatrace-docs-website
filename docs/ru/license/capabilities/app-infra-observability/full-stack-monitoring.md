@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:50.073712
 
 # Расчёт потребления Full-Stack Monitoring (DPS)
 
-# Расчёт потребления Full-Stack Monitoring (DPS)
 
 * Актуальная версия Dynatrace
 * Пояснение

@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:33:00.345852
 
 # Waterfall graphs
 
-# Waterfall graphs
 
 * Classic
 * Explanation

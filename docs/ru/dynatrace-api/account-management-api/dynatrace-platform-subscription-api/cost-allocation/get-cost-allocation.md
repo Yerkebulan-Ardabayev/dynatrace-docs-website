@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:54.898889
 
 # Dynatrace Platform Subscription API — GET cost allocation
 
-# Dynatrace Platform Subscription API — GET cost allocation
 
 * Последняя версия Dynatrace
 * Reference
@@ -61,29 +60,22 @@ scraped: 2026-03-06T21:26:54.898889
 {
 
 
-
 "environmentId": "string",
-
 
 
 "field": "string",
 
 
-
 "records": [
-
 
 
 "string"
 
 
-
 ],
 
 
-
 "nextPageKey": "string"
-
 
 
 }

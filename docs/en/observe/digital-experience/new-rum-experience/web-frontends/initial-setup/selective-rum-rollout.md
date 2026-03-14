@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:59.716367
 
 # Roll out RUM selectively for your frontends in the New RUM Experience
 
-# Roll out RUM selectively for your frontends in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide

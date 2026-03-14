@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # ActiveGate information API
 
-# ActiveGate information API
 
 * Reference
 * Published Mar 15, 2021

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:01.329825
 
 # Источники загрузки данных в OpenPipeline
 
-# Источники загрузки данных в OpenPipeline
 
 * Последняя версия Dynatrace
 * Справочник
@@ -394,7 +393,6 @@ scraped: 2026-03-06T21:16:01.329825
 
      ```
      fetch dt.system.events
-
 
 
      | filter isNotNull(dt.openpipeline.pipelines)

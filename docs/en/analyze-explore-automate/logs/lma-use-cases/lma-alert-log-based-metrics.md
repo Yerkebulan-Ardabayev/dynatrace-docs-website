@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:43.409363
 
 # Set up custom alerts based on metrics extracted from logs
 
-# Set up custom alerts based on metrics extracted from logs
 
 * Latest Dynatrace
 * Tutorial
@@ -42,9 +41,7 @@ You can find alerts by opening ![Logs](https://dt-cdn.net/images/logs-256-ae0a9c
 fetch logs
 
 
-
 | filter matchesPhrase(content, "Dropping data because sending_queue is full")
-
 
 
 | sort timestamp desc

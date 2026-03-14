@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:22:34.358051
 
 # Distribute custom dashboards with your extensions
 
-# Distribute custom dashboards with your extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -50,17 +49,13 @@ After you create a dashboard that uses your extension data, and you export the d
    extension.zip
 
 
-
    â   extension.yaml
-
 
 
    â
 
 
-
    ââââdocuments
-
 
 
    â   device-health.dashboard.json
@@ -73,13 +68,10 @@ After you create a dashboard that uses your extension data, and you export the d
    documents:
 
 
-
    dashboards:
 
 
-
    - displayName: "My Dashboard"
-
 
 
    path: "documents/device-health.dashboard.json"
@@ -121,9 +113,7 @@ After your extension starts sending data to Dynatrace, you can [create a custom 
    curl -X GET "https://{env-id}.live.dynatrace.com/api/config/v1/dashboards/{dashboard-id}" \
 
 
-
    -H "accept: application/json; charset=utf-8" \
-
 
 
    -H "Authorization: Api-Token `{api-token}"
@@ -146,29 +136,22 @@ For the following package structure:
 extension.zip
 
 
-
 â   extension.yaml
 
 
-
 â
-
 
 
 ââââalerts
 
 
-
 â   |   alert.json
-
 
 
 â
 
 
-
 ââââdashboards
-
 
 
 â   dashboard.json
@@ -180,13 +163,10 @@ Use the following reference in the top level of your [YAML file](../develop-your
 dashboards:
 
 
-
 - path: dashboards/dashboard.json
 
 
-
 alerts:
-
 
 
 - path: alerts/alert.json

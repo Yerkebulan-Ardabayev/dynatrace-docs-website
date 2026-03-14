@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:47.956083
 
 # Synthetic for Workflows
 
-# Synthetic for Workflows
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -47,9 +46,7 @@ Synthetic for Workflows позволяет выполнять синтетиче
 environment:roles:manage-settings,
 
 
-
 storage:buckets:read,
-
 
 
 storage:events:read
@@ -61,33 +58,25 @@ storage:events:read
 ALLOW
 
 
-
 app-engine:apps:run,
-
 
 
 automation:workflows:read,
 
 
-
 app-engine:functions:run,
-
 
 
 automation:workflows:run,
 
 
-
 automation:workflows:write,
-
 
 
 environment:roles:manage-settings,
 
 
-
 storage:buckets:read,
-
 
 
 storage:events:read;
@@ -186,9 +175,7 @@ storage:events:read;
 fetch dt.synthetic.events
 
 
-
 | filter event.id == $batchId
-
 
 
 | fields batch_result.duration
@@ -200,13 +187,10 @@ fetch dt.synthetic.events
 fetch dt.synthetic.events
 
 
-
 | filter event.id == $batchId
 
 
-
 | filter batch.status == "Success"
-
 
 
 | summarize count = count()

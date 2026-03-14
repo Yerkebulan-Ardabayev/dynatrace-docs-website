@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:29:34.371827
 
 # Совместимость с OpenTelemetry в Java
 
-# Совместимость с OpenTelemetry в Java
 
 * Classic
 * Reference
@@ -39,85 +38,64 @@ Dynatrace версии 1.277+ Следующий пример показывае
 import java.util.Map;
 
 
-
 import com.amazonaws.services.lambda.runtime.Context;
-
 
 
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 
-
 import com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent;
-
 
 
 import com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPResponse;
 
 
-
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
-
 
 
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 
 
-
 import software.amazon.awssdk.services.dynamodb.model.GetItemRequest;
-
 
 
 public class SimpleDynamoDBSample implements RequestHandler<APIGatewayV2HTTPEvent, APIGatewayV2HTTPResponse> {
 
 
-
 public APIGatewayV2HTTPResponse handleRequest(APIGatewayV2HTTPEvent input, Context context) {
-
 
 
 GetItemRequest request = GetItemRequest.builder()
 
 
-
 .key(Map.of("mykey", AttributeValue.fromN("42")))
-
 
 
 .tableName("MyTable")
 
 
-
 .build();
-
 
 
 try (DynamoDbClient dynamoDbClient = DynamoDbClient.builder().build()) {
 
 
-
 dynamoDbClient.getItem(request);
-
 
 
 } catch (Exception e) {
 
 
-
 return APIGatewayV2HTTPResponse.builder().withBody("error!").withStatusCode(500).build();
 
 
-
 }
-
 
 
 return APIGatewayV2HTTPResponse.builder().withBody("success!").withStatusCode(200).build();
 
 
-
 }
-
 
 
 }
@@ -135,45 +113,34 @@ return APIGatewayV2HTTPResponse.builder().withBody("success!").withStatusCode(20
 @Override
 
 
-
 public String handleRequest(Object input, Context context) {
-
 
 
 Tracer tracer = GlobalOpenTelemetry.getTracer("instrumentation-library-name", "1.0.0");
 
 
-
 Span span = tracer.spanBuilder("do some work").startSpan();
-
 
 
 try {
 
 
-
 span.setAttribute("foo", "bar");
-
 
 
 // ....
 
 
-
 return "Hello from OpenTelemetry Java!";
-
 
 
 } finally {
 
 
-
 span.end();
 
 
-
 }
-
 
 
 }
@@ -210,49 +177,37 @@ OneAgent версии 1.267+
    dependencies {
 
 
-
    // Instrumentation for SQS dependencies
-
 
 
    implementation(platform('io.opentelemetry.instrumentation:opentelemetry-instrumentation-bom-alpha:1.27.0-alpha'))
 
 
-
    runtimeOnly('io.opentelemetry.instrumentation:opentelemetry-aws-sdk-2.2-autoconfigure')
-
 
 
    // Only needed if you want to trace messages from batches separately
 
 
-
    implementation('io.opentelemetry:opentelemetry-api') // (Version taken from otel-instrumentation BOM)
-
 
 
    // Dependencies for the AWS SDK itself -- you should already have this in your Lambda if you send SQS messages
 
 
-
    implementation(platform('software.amazon.awssdk:bom:2.20.85'))
-
 
 
    implementation('software.amazon.awssdk:sqs') // Uses version from above BOM
 
 
-
    // Basic AWS Lambda dependencies -- you should already have this in your Lambda
-
 
 
    implementation('com.amazonaws:aws-lambda-java-events:3.6.0') // SQSEvent input, etc
 
 
-
    implementation('com.amazonaws:aws-lambda-java-core:1.2.1') // RequestHandler interface, etc
-
 
 
    }
@@ -266,73 +221,55 @@ OneAgent версии 1.267+
 package com.dynatrace.example.lambda;
 
 
-
 import com.amazonaws.services.lambda.runtime.Context;
-
 
 
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 
-
 import software.amazon.awssdk.services.sqs.SqsClient;
-
 
 
 import software.amazon.awssdk.services.sqs.model.SendMessageResponse;
 
 
-
 public class MessageSender implements RequestHandler<Object, Void> {
-
 
 
 private static final SqsClient client = SqsClient.create();
 
 
-
 @Override
-
 
 
 public Void handleRequest(Object input, Context context) {
 
 
-
 final SendMessageResponse resp = client.sendMessage(builder -> builder
-
 
 
 .queueUrl("[your SQS-queue URL]")
 
 
-
 .messageBody("[your payload]")
-
 
 
 );
 
 
-
 System.out.printf("Sent message with ID %s (send request ID %s)%n",
-
 
 
 resp.messageId(),
 
 
-
 resp.responseMetadata().requestId());
-
 
 
 return null;
 
 
-
 }
-
 
 
 }
@@ -367,21 +304,16 @@ OpenTelemetry API, а OneAgent автоматически перехватыва
     {
 
 
-
     ...other configuration properties...
-
 
 
     "OpenTelemetry": {
 
 
-
     "AllowExplicitParent": "true"
 
 
-
     }
-
 
 
     }
@@ -395,225 +327,169 @@ OpenTelemetry API, а OneAgent автоматически перехватыва
 package com.dynatrace.example.lambda;
 
 
-
 import java.util.Map;
-
 
 
 import com.amazonaws.services.lambda.runtime.Context;
 
 
-
 import com.amazonaws.services.lambda.runtime.RequestHandler;
-
 
 
 import com.amazonaws.services.lambda.runtime.events.SQSEvent;
 
 
-
 import io.opentelemetry.api.GlobalOpenTelemetry;
-
 
 
 import io.opentelemetry.api.trace.Span;
 
 
-
 import io.opentelemetry.api.trace.Tracer;
-
 
 
 import io.opentelemetry.context.Scope;
 
 
-
 import io.opentelemetry.context.propagation.TextMapGetter;
-
 
 
 public class MessageIngress implements RequestHandler<SQSEvent, Void> {
 
 
-
 private static final Tracer tracer = GlobalOpenTelemetry.getTracer("message-ingress-app");
 
 
-
 @Override
-
 
 
 public Void handleRequest(SQSEvent input, Context context) {
 
 
-
 for (SQSEvent.SQSMessage message: input.getRecords()) {
-
 
 
 Span span = tracer
 
 
-
 .spanBuilder(message.getEventSource() + " process")
-
 
 
 .setSpanKind(SpanKind.CONSUMER) // MUST be either CONSUMER or SERVER
 
 
-
 .setParent(GlobalOpenTelemetry
-
 
 
 .getPropagators()
 
 
-
 .getTextMapPropagator()
-
 
 
 .extract(
 
 
-
 io.opentelemetry.context.Context.current(),
-
 
 
 message.getMessageAttributes(),
 
 
-
 SqsMessageRecordGetter.INSTANCE))
-
 
 
 .startSpan();
 
 
-
 try (Scope ignored = span.makeCurrent()) {
-
 
 
 handleMessage(message);
 
 
-
 } catch (Throwable e) {
-
 
 
 span.recordException(e);
 
 
-
 throw e;
-
 
 
 } finally {
 
 
-
 span.end();
 
 
-
 }
 
 
-
 }
-
 
 
 return null;
 
 
-
 }
-
 
 
 private void handleMessage(SQSEvent.SQSMessage message) {
 
 
-
 // This is where your actual handling code would go
-
 
 
 System.out.printf("Handling message with ID %s...%n", message.getMessageId());
 
 
-
 }
-
 
 
 private enum SqsMessageRecordGetter implements TextMapGetter<Map<String, SQSEvent.MessageAttribute>> {
 
 
-
 INSTANCE;
 
 
-
 @Override
-
 
 
 public Iterable<String> keys(Map<String, SQSEvent.MessageAttribute> carrier) {
 
 
-
 return carrier.keySet();
 
 
-
 }
-
 
 
 @Override
 
 
-
 public String get(Map<String, SQSEvent.MessageAttribute> carrier, String key) {
-
 
 
 if (carrier == null) {
 
 
-
 return null;
 
 
-
 }
-
 
 
 SQSEvent.MessageAttribute messageAttribute = carrier.get(key);
 
 
-
 return messageAttribute == null ? null : messageAttribute.getStringValue();
 
 
-
 }
 
 
-
 }
-
 
 
 }

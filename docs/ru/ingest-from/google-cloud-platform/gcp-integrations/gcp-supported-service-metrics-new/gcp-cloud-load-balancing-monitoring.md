@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:09.848966
 
 # Мониторинг Google Cloud Load Balancing
 
-# Мониторинг Google Cloud Load Balancing
 
 * Последняя версия Dynatrace
 * Практическое руководство

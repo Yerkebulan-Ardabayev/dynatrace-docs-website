@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:31:12.564761
 
 # Page load waterfall
 
-# Page load waterfall
 
 * Latest Dynatrace
 * Reference

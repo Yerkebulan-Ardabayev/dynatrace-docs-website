@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:27:05.548728
 
 # Мониторинг Azure Spring Apps
 
-# Мониторинг Azure Spring Apps
 
 * Latest Dynatrace
 * Практическое руководство

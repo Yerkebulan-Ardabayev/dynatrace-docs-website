@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:55.153167
 
 # Поиск релевантных руководств по устранению неполадок с помощью агентного и генеративного ИИ Dynatrace Intelligence
 
-# Поиск релевантных руководств по устранению неполадок с помощью агентного и генеративного ИИ Dynatrace Intelligence
 
 * Latest Dynatrace
 * Руководство
@@ -96,177 +95,133 @@ scraped: 2026-03-06T21:09:55.153167
    import { documentsClient } from "@dynatrace-sdk/client-document";
 
 
-
    import { credentialVaultClient } from '@dynatrace-sdk/client-classic-environment-v2';
-
 
 
    import { execution } from '@dynatrace-sdk/automation-utils';
 
 
-
    function generateGUID() {
-
 
 
    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
 
 
-
    const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
-
 
 
    return v.toString(16);
 
 
-
    });
 
 
-
    }
-
 
 
    export default async function () {
 
 
-
    const ex = await execution();
-
 
 
    const problem_event = ex.params.event;
 
 
-
    var problem_id = problem_event['event.id'];
-
 
 
    problem_id = problem_id.replace('_', '-'); // Replace the unsupported character
 
 
-
    // Create a new Notebook and pin it to the triggering problem
-
 
 
    try {
 
 
-
    const notebookContent = {
-
 
 
    defaultTimeframe: { from: "now()-2h", to: "now()" },
 
 
-
    defaultSegments: [],
-
 
 
    sections: [
 
 
-
    {"id":"19ebed94-69a9-4a6e-b392-7bb7b0deb330","type":"markdown","markdown":"# Domain Analysis Results\n\nHere goes the external, domain-specific analysis results"}
-
 
 
    ],
 
 
-
    };
-
 
 
    const generatedNotebook = await documentsClient.createDocument({
 
 
-
    body: {
-
 
 
    name: "[TSG] Domain Analysis Results",
 
 
-
    type: "notebook",
-
 
 
    description: "A notebook containing domain specific analysis results",
 
 
-
    id: "problem-TSG-" + problem_id + "-" + generateGUID(),
-
 
 
    content: new Blob([JSON.stringify(notebookContent)], { type: "application/json" }),
 
 
-
    },
-
 
 
    });
 
 
-
    // Make the document public
-
 
 
    const updated = await documentsClient.updateDocument({
 
 
-
    id: generatedNotebook.id,
-
 
 
    optimisticLockingVersion: generatedNotebook.version,
 
 
-
    body: {
-
 
 
    isPrivate: false,
 
 
-
    }
-
 
 
    })
 
 
-
    } catch (error) {
-
 
 
    console.error("Error creating notebook:", error);
 
 
-
    }
 
 
-
    return { };
-
 
 
    }

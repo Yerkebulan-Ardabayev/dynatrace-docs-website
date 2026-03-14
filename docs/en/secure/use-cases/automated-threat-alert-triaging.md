@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:55.922343
 
 # Automated threat-alert triaging
 
-# Automated threat-alert triaging
 
 * Latest Dynatrace
 * Tutorial

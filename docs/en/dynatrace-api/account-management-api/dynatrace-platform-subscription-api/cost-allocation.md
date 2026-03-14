@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:27:43.541975
 
 # Dynatrace Platform Subscription API - Cost allocation
 
-# Dynatrace Platform Subscription API - Cost allocation
 
 * Latest Dynatrace
 * Reference

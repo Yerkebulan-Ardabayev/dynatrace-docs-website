@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:03.486902
 
 # Notebooks
 
-# Notebooks
 
 * Latest Dynatrace
 * App
@@ -449,7 +448,6 @@ To add a Markdown-formatted annotation to a notebook
   * Line 1
 
 
-
   * Line 2
   ```
 
@@ -457,7 +455,6 @@ To add a Markdown-formatted annotation to a notebook
 
   ```
   - Line 1
-
 
 
   - Line 2
@@ -469,9 +466,7 @@ To add a Markdown-formatted annotation to a notebook
   1. The first line of my procedure.
 
 
-
   2. The second line of my procedure.
-
 
 
   3. The third line of my procedure.
@@ -484,9 +479,7 @@ To add a Markdown-formatted annotation to a notebook
   | Header 1 | Header2
 
 
-
   --- | ---
-
 
 
   content2 | content2
@@ -508,7 +501,6 @@ To add a Markdown-formatted annotation to a notebook
 
   ```
   Here are some of the people who started [Dynatrace](https://www.dynatrace.com).
-
 
 
   ![Dynatrace founders](https://dt-cdn.net/images/original-dynatrace-team-1500-7334dbe9a8.jpg)

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Credential vault API
 
-# Credential vault API
 
 * Reference
 * Published Oct 14, 2019

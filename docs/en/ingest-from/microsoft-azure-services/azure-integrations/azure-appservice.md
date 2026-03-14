@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:06.853367
 
 # Monitor Azure App Service
 
-# Monitor Azure App Service
 
 * Latest Dynatrace
 * Overview

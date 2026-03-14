@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Metric units API - GET convert units
 
-# Metric units API - GET convert units
 
 * Reference
 * Published Mar 25, 2022
@@ -65,13 +64,10 @@ The result of a unit conversion.
 {
 
 
-
 "resultValue": 1,
 
 
-
 "unitId": "string"
-
 
 
 }

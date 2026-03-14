@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:08.678905
 
 # Оценка охвата
 
-# Оценка охвата
 
 * Latest Dynatrace
 * Explanation

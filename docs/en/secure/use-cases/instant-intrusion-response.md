@@ -6,7 +6,6 @@ scraped: 2026-02-23T21:25:08.031293
 
 # Instant Intrusion Response
 
-# Instant Intrusion Response
 
 * Latest Dynatrace
 * Tutorial
@@ -187,13 +186,10 @@ Query example:
 fetch logs, scanLimitGBytes:-1
 
 
-
 | filter log.source == "/var/log/nginx/access.log"
 
 
-
 | filter net.peer.ip == "<<IP ADDRESS>>"
-
 
 
 | sort timestamp desc
@@ -207,17 +203,13 @@ Query example:
 fetch logs, scanLimitGBytes:-1
 
 
-
 | filter log.source == "/var/log/nginx/access.log"
-
 
 
 | filter net.peer.ip == "<<IP Address>>"
 
 
-
 | filter http.status_code == "200"
-
 
 
 | sort timestamp desc
@@ -231,17 +223,13 @@ Query example:
 fetch logs, scanLimitGBytes:-1
 
 
-
 | filter log.source == "/var/log/nginx/access.log"
-
 
 
 | filter net.peer.ip == "<<IP Address>>"
 
 
-
 | summarize requests=count(), by:{http.status_code, http.user_agent}
-
 
 
 | sort http.status_code
@@ -255,25 +243,19 @@ Query example:
 fetch logs, scanLimitGBytes:-1
 
 
-
 | filter log.source == "/var/log/nginx/access.log"
-
 
 
 // Successful requests only
 
 
-
 | filter http.status_code == "200"
-
 
 
 | filter net.peer.ip == "<<IP Address>>"
 
 
-
 | summarize requests=count(), by:{http.target}
-
 
 
 | sort requests DESC
@@ -287,25 +269,19 @@ Query example:
 fetch logs, scanLimitGBytes:-1
 
 
-
 | filter log.source == "/var/log/nginx/access.log"
-
 
 
 | fields timestamp, net.peer.ip, http.target, http.status_code, http.response_content_length, http.user_agent
 
 
-
 | filter http.status_code == "200"
-
 
 
 // Filter for a specific IP address
 
 
-
 | filter net.peer.ip == "<<IP Address>>"
-
 
 
 | sort toLong(http.response_content_length) DESC
@@ -319,13 +295,10 @@ Query example:
 fetch logs, scanLimitGBytes:-1
 
 
-
 | filter log.source == "/var/log/nginx/access.log"
 
 
-
 | fields payload = "<<PAYLOAD>>", timestamp, net.peer.ip, http.method, http.target, http.status_code, http.request.header.referrer, http.response_content_length, http.user_agent, content
-
 
 
 | filter contains(content, payload)
@@ -339,21 +312,16 @@ Query example:
 fetch logs, scanLimitGBytes: -1
 
 
-
 // Search for logins
-
 
 
 | filter log.source == "/var/log/sso.log"
 
 
-
 // Search for successful logins from a given IP address
 
 
-
 | filter contains(content, "user login successful") and contains(content, "<<IP address>>")
-
 
 
 | sort timestamp desc
@@ -367,21 +335,16 @@ Query example:
 fetch logs, scanLimitGBytes: -1
 
 
-
 // Search for logins
-
 
 
 | filter log.source == "/var/log/sso.log"
 
 
-
 // Search for logins from a given account id
 
 
-
 | filter contains(content, "<<Account ID>>") and contains(content, "tenant: ")
-
 
 
 | sort timestamp desc

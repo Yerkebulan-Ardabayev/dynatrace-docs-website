@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:22.920771
 
 # Migrate from OneAgent Operator to Dynatrace Operator
 
-# Migrate from OneAgent Operator to Dynatrace Operator
 
 * Latest Dynatrace
 * 5-min read
@@ -129,7 +128,6 @@ OpenShift
    kubectl delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/download/<version>/kubernetes.yaml
 
 
-
    kubectl delete namespace dynatrace
    ```
 2. [Set up monitoring with Dynatrace Operator](../../deployment.md "Deploy Dynatrace Operator on Kubernetes").
@@ -138,7 +136,6 @@ OpenShift
 
    ```
    oc delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/download/<version>/openshift.yaml
-
 
 
    oc delete project dynatrace
@@ -157,17 +154,13 @@ OpenShift
    helm uninstall dynatrace-oneagent-operator
 
 
-
    kubectl delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/download/v0.10.2/dynatrace.com_oneagentapms.yaml
-
 
 
    kubectl delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/download/v0.10.2/dynatrace.com_oneagents.yaml
 
 
-
    helm repo remove dynatrace
-
 
 
    kubectl delete namespace dynatrace
@@ -180,17 +173,13 @@ OpenShift
    helm uninstall dynatrace-oneagent-operator
 
 
-
    oc delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/download/v0.10.2/dynatrace.com_oneagentapms.yaml
-
 
 
    oc delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/download/v0.10.2/dynatrace.com_oneagents.yaml
 
 
-
    helm repo remove dynatrace
-
 
 
    oc delete project dynatrace

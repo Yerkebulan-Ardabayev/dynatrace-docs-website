@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:16.604221
 
 # Install OneAgent on Solaris
 
-# Install OneAgent on Solaris
 
 * Latest Dynatrace
 * 7-min read
@@ -66,21 +65,16 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    DT_HOME=/opt/dynatrace/oneagent
 
 
-
    export DT_HOME
-
 
 
    LD_PRELOAD_64=$DT_HOME/agent/lib64/liboneagentproc.so
 
 
-
    export LD_PRELOAD_64
 
 
-
    LD_PRELOAD=$DT_HOME/agent/lib/liboneagentproc.so
-
 
 
    export LD_PRELOAD
@@ -102,9 +96,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
       DT_HOME=/opt/dynatrace/oneagent
 
 
-
       LD_PRELOAD_64=/opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
-
 
 
       LD_PRELOAD=/opt/dynatrace/oneagent/agent/lib/liboneagentproc.so
@@ -121,85 +113,64 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    # Monitor WebLogic with Dynatrace OneAgent
 
 
-
    DT_HOME=/opt/dynatrace/oneagent
-
 
 
    export DT_HOME
 
 
-
    LD_PRELOAD_64=$DT_HOME/agent/lib64/liboneagentproc.so
-
 
 
    export LD_PRELOAD_64
 
 
-
    LD_PRELOAD=$DT_HOME/agent/lib/liboneagentproc.so
-
 
 
    export LD_PRELOAD
 
 
-
    # WebLogic checks and startup, this is part of your script, add the 3 lines prior to this.
-
 
 
    echo "starting weblogic with Java version:"
 
 
-
    ${JAVA_HOME}/bin/java ${JAVA_VM} -version
-
 
 
    if [ "${WLS_REDIRECT_LOG}" = "" ] ; then
 
 
-
    echo "Starting WLS with line:"
-
 
 
    echo "${JAVA_HOME}/bin/java ${JAVA_VM} ${MEM_ARGS} ${JAVA_OPTIONS} -Dweblogic.Name=${SERVER_NAME}
 
 
-
    -Djava.security.policy=${WL_HOME}/server/lib/weblogic.policy ${PROXY_SETTINGS} ${SERVER_CLASS}"
 
 
-
    ${JAVA_HOME}/bin/java ${JAVA_VM} ${MEM_ARGS} ${JAVA_OPTIONS} -Dweblogic.Name=${SERVER_NAME}
-
 
 
    -Djava.security.policy=${WL_HOME}/server/lib/weblogic.policy ${PROXY_SETTINGS} ${SERVER_CLASS}
 
 
-
    else
-
 
 
    echo "Redirecting output from WLS window to ${WLS_REDIRECT_LOG}"
 
 
-
    ${JAVA_HOME}/bin/java ${JAVA_VM} ${MEM_ARGS} ${JAVA_OPTIONS} -Dweblogic.Name=${SERVER_NAME}
-
 
 
    -Djava.security.policy=${WL_HOME}/server/lib/weblogic.policy ${PROXY_SETTINGS}
 
 
-
    ${SERVER_CLASS} 2>&1 >"${WLS_REDIRECT_LOG}"
-
 
 
    fi
@@ -219,21 +190,16 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    DT_HOME=/opt/dynatrace/oneagent
 
 
-
    export DT_HOME
-
 
 
    LD_PRELOAD_64=$DT_HOME/agent/lib64/liboneagentproc.so
 
 
-
    export LD_PRELOAD_64
 
 
-
    LD_PRELOAD=$DT_HOME/agent/lib/liboneagentproc.so
-
 
 
    export LD_PRELOAD
@@ -243,13 +209,10 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    DT_HOME=/opt/dynatrace/oneagent
 
 
-
    export DT_HOME
 
 
-
    . $DT_HOME/dynatrace-agent64.sh
-
 
 
    . $DT_HOME/dynatrace-agent32.sh
@@ -275,9 +238,7 @@ Modify the command line of your Java application:
 DT_HOME=/opt/dynatrace/oneagent
 
 
-
 . $DT_HOME/dynatrace-java-env.sh 64
-
 
 
 java $JAVA_OPTS <MainClass>
@@ -293,7 +254,6 @@ Edit your `httpd.conf` and add the following two lines in a location of your cho
 LoadModule oneagent_module /opt/dynatrace/oneagent/agent/bin/solaris-<arch>-<bitness>/liboneagentloader.so
 
 
-
 OneAgentConfig tenant=<tenant-id>,tenantToken=<tenant-token>,server=https://<server-url>/communication
 ```
 
@@ -303,9 +263,7 @@ Alternatively, if you prefer to leave your `httpd.conf` unchanged, you can speci
 apachectl -c "LoadModule oneagent_module /opt/dynatrace/oneagent/agent/bin/solaris-<arch>-<bitness>/liboneagentloader.so"
 
 
-
 -c "OneAgentConfig tenant=<tenantUUID>,tenantToken=<tenant-token>,server=<communicationEndpoints>"
-
 
 
 -k start

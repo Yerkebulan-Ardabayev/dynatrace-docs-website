@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:50.652820
 
 # Dynatrace tutorials
 
-# Dynatrace tutorials
 
 * Latest Dynatrace
 * Overview
@@ -15,8 +14,4 @@ scraped: 2026-03-05T21:39:50.652820
 
 See a selection of Dynatrace tutorials available to the teams to make their work observable and easier. You can use these tutorials to provide automation and self-service capabilities to your usersâthe development teams.
 
-Filter by
 
-Select an option
-
-Type to filter

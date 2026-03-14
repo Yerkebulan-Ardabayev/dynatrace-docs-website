@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:29:49.893436
 
 # Настройка оповещений на основе событий, извлечённых из логов
 
-# Настройка оповещений на основе событий, извлечённых из логов
 
 * Последняя версия Dynatrace
 * Руководство
@@ -40,9 +39,7 @@ scraped: 2026-03-02T21:29:49.893436
 fetch logs
 
 
-
 | filter matchesPhrase(content, "Dropping data because sending_queue is full")
-
 
 
 | sort timestamp desc

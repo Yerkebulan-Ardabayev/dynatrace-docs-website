@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:04.757177
 
 # Gauge chart
 
-# Gauge chart
 
 * Latest Dynatrace
 * How-to guide
@@ -29,9 +28,7 @@ The gauge visualization above is based on the following query, which calculates 
 timeseries avg(dt.host.cpu.usage)
 
 
-
 | fieldsAdd CPU = arrayAvg(`avg(dt.host.cpu.usage)`)
-
 
 
 | fieldsKeep CPU
@@ -49,21 +46,16 @@ The gauge visualization above is based on the following query, which calculates 
 fetch dt.davis.problems
 
 
-
 | summarize count = count(), by:{event.status}
-
 
 
 | summarize { active=toDouble(takeAny(if(event.status=="ACTIVE", count))), closed=toDouble(takeAny(if(event.status=="CLOSED", count)))}
 
 
-
 | fieldsAdd total = active + closed
 
 
-
 | fieldsAdd pctActive = (active / total) * 100
-
 
 
 | fieldsKeep pctActive

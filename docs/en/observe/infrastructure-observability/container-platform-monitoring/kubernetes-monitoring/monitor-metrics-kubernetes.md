@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:00.078051
 
 # Monitor Kubernetes/OpenShift metrics
 
-# Monitor Kubernetes/OpenShift metrics
 
 * Classic
 * 2-min read

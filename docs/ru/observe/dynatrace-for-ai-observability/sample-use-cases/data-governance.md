@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:33.344954
 
 # Управление данными ИИ с Amazon Bedrock
 
-# Управление данными ИИ с Amazon Bedrock
 
 * Последняя Dynatrace
 * Руководство
@@ -147,25 +146,19 @@ pip install -i https://test.pypi.org/simple/ dynatrace-openllmetry-sdk==0.0.1a4
 from traceloop.sdk import Traceloop
 
 
-
 headers = { "Authorization": "Api-Token <YOUR_DT_API_TOKEN>" }
-
 
 
 Traceloop.init(
 
 
-
 app_name="<your-service>",
-
 
 
 api_endpoint="https://<YOUR_ENV>.live.dynatrace.com/api/v2/otlp",
 
 
-
 headers=headers
-
 
 
 )

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:38.490404
 
 # Dynatrace support model for VMware Tanzu Application Service
 
-# Dynatrace support model for VMware Tanzu Application Service
 
 * Latest Dynatrace
 * 5-min read

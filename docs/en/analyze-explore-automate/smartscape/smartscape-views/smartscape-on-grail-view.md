@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:59.119248
 
 # Smartscape on Grail view
 
-# Smartscape on Grail view
 
 * Latest Dynatrace
 * Explanation

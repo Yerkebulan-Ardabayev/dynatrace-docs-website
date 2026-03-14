@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:27.302891
 
 # Upgrade to Log Management and Analytics
 
-# Upgrade to Log Management and Analytics
 
 * Classic
 * How-to guide
@@ -131,21 +130,16 @@ Management Zones configuration will not work with Grail. You have to use buckets
      {
 
 
-
      "scope": "iam:policies:read iam:policies:write",
-
 
 
      "token_type": "Bearer",
 
 
-
      "expires_in": 300,
 
 
-
      "access_token": "123(...)ABC"
-
 
 
      }
@@ -159,21 +153,16 @@ Management Zones configuration will not work with Grail. You have to use buckets
      {
 
 
-
      "name": "Storage Events Read",
-
 
 
      "description": "Storage Events Read",
 
 
-
      "tags": [
 
 
-
      ],
-
 
 
      "statementQuery": "ALLOW storage:events:read;"
@@ -187,25 +176,19 @@ Management Zones configuration will not work with Grail. You have to use buckets
      {
 
 
-
      "name": "Storage Logs Read",
-
 
 
      "description": "Storage Logs Read",
 
 
-
      "tags": [
-
 
 
      ]  ,
 
 
-
      "statementQuery": "ALLOW storage:logs:read;"
-
 
 
      }

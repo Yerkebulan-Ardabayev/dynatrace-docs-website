@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:39:33.010885
 
 # Мониторинг Azure Cognitive Services - Ink Recognizer (устаревший)
 
-# Мониторинг Azure Cognitive Services - Ink Recognizer (устаревший)
 
 * Latest Dynatrace
 * Практическое руководство

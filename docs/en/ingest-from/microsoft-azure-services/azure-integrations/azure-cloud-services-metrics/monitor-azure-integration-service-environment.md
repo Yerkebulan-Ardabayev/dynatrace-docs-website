@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:39:21.472534
 
 # Azure Integration Service Environment monitoring
 
-# Azure Integration Service Environment monitoring
 
 * Latest Dynatrace
 * How-to guide

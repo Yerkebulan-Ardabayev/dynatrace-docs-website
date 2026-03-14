@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:33.193087
 
 # Trace Lambda functions
 
-# Trace Lambda functions
 
 * Classic
 * How-to guide
@@ -169,45 +168,34 @@ To make tracing calls from other monitored applications/RUM detection work in th
    {
 
 
-
    "path": "$context.path",
-
 
 
    "httpMethod": "$context.httpMethod",
 
 
-
    "headers": {
-
 
 
    #foreach($param in ["x-dynatrace", "traceparent", "tracestate", "x-dtc", "referer", "host", "x-forwarded-proto", "x-forwarded-for", "x-forwarded-port"])
 
 
-
    "$param": "$util.escapeJavaScript($input.params().header.get($param))"
-
 
 
    #if($foreach.hasNext),#end
 
 
-
    #end    },
-
 
 
    "requestContext": {
 
 
-
    "stage": "$context.stage"
 
 
-
    }
-
 
 
    }
@@ -344,41 +332,31 @@ To analyze cold starts
   import { Context, APIGatewayProxyResult, APIGatewayEvent } from 'aws-lambda';
 
 
-
   export const handler = async (event: APIGatewayEvent, context: Context): Promise<APIGatewayProxyResult> => {
-
 
 
   console.log(`Event: ${JSON.stringify(event, null, 2)}`);
 
 
-
   console.log(`Context: ${JSON.stringify(context, null, 2)}`);
-
 
 
   return {
 
 
-
   statusCode: 200,
-
 
 
   body: JSON.stringify({
 
 
-
   message: 'hello world',
-
 
 
   }),
 
 
-
   };
-
 
 
   };
@@ -393,7 +371,6 @@ To analyze cold starts
 
      ```
      const esbuildDist = require("./dist/index");
-
 
 
      exports.handler = esbuildDist.handler;

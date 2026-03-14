@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:13.621808
 
 # Subscription and license management (DPS pre-April 2023)
 
-# Subscription and license management (DPS pre-April 2023)
 
 * Latest Dynatrace
 * Explanation

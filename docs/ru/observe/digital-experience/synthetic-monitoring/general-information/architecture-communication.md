@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:15.258243
 
 # Архитектура и коммуникация Synthetic
 
-# Архитектура и коммуникация Synthetic
 
 * Classic
 * Explanation

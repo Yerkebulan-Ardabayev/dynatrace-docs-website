@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:43.535336
 
 # AWS Lambda logs in context of traces
 
-# AWS Lambda logs in context of traces
 
 * Classic
 * How-to guide
@@ -35,69 +34,52 @@ In the example below, a `dt_log` function has been created to enrich a given log
 import logging
 
 
-
 from opentelemetry import trace
-
 
 
 def dt_log(self, record):
 
 
-
 if (not self.disabled) and self.filter(record):
-
 
 
 ctx = trace.get_current_span().get_span_context()
 
 
-
 if ctx.is_valid:
-
 
 
 trace_id = "{0:032X}".format(ctx.trace_id)
 
 
-
 span_id = "{0:016X}".format(ctx.span_id)
-
 
 
 record.msg = f"[!dt dt.trace_id={trace_id},dt.span_id={span_id}] - {record.msg}"
 
 
-
 self.callHandlers(record)
-
 
 
 logging.Logger.handle = dt_log
 
 
-
 def lambda_handler(event, context):
-
 
 
 logger = logging.getLogger()
 
 
-
 logger.warning("Hello world")
-
 
 
 return {
 
 
-
 "statusCode": 200,
 
 
-
 "body": "Hello from lambda"
-
 
 
 }
@@ -111,49 +93,37 @@ In the example below, a `dt_log` function has been created to enrich a given log
 const opentelemetry = require('@opentelemetry/api');
 
 
-
 function dtLog(msg) {
-
 
 
 const spanContext = opentelemetry.trace.getSpanContext(opentelemetry.context.active()) ?? opentelemetry.INVALID_SPAN_CONTEXT;
 
 
-
 console.log(`[!dt dt.trace_id=${spanContext.traceId},dt.span_id=${spanContext.spanId}] - ${msg}`);
-
 
 
 }
 
 
-
 exports.handler = function(event, context) {
-
 
 
 const msg = "Hello World"
 
 
-
 dtLog(msg);
-
 
 
 context.succeed({
 
 
-
 statusCode: 200,
-
 
 
 body: msg
 
 
-
 });
-
 
 
 };
@@ -167,65 +137,49 @@ In the example below, the winston instrumentation is used to enrich a winston in
 const otelApi = require('@opentelemetry/api');
 
 
-
 const { registerInstrumentations } = require('@opentelemetry/instrumentation');
-
 
 
 const { WinstonInstrumentation } = require('@opentelemetry/instrumentation-winston');
 
 
-
 registerInstrumentations({
-
 
 
 instrumentations: [new WinstonInstrumentation()],
 
 
-
 });
-
 
 
 const winston = require('winston');
 
 
-
 exports.handler = function (event, context, callback) {
-
 
 
 const logger = winston.createLogger({
 
 
-
 transports: [new winston.transports.Console()],
 
 
-
 });
-
 
 
 logger.info('winston info log');
 
 
-
 context.succeed({
-
 
 
 statusCode: 200,
 
 
-
 body: 'Hello from AWS Lambda Node.js',
 
 
-
 });
-
 
 
 }
@@ -239,85 +193,64 @@ In the example below, a `dtLog` method has been created to enrich a given log me
 package com.amazonaws.lambda.demo;
 
 
-
 import com.amazonaws.services.lambda.runtime.Context;
-
 
 
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 
-
 import io.opentelemetry.api.trace.Span;
-
 
 
 import io.opentelemetry.api.trace.SpanContext;
 
 
-
 public class HelloJava implements RequestHandler<Object, String> {
-
 
 
 private static void dtLog(final String msg) {
 
 
-
 SpanContext spanContext = Span.current().getSpanContext();
-
 
 
 System.out.printf(
 
 
-
 "[!dt dt.trace_id=%s,dt.span_id=%s] - %s%n",
-
 
 
 spanContext.getTraceId(),
 
 
-
 spanContext.getSpanId(),
-
 
 
 msg
 
 
-
 );
 
 
-
 }
-
 
 
 @Override
 
 
-
 public String handleRequest(Object input, Context context) {
-
 
 
 String msg = "Hello World";
 
 
-
 dtLog(msg);
-
 
 
 return msg;
 
 
-
 }
-
 
 
 }

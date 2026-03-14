@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:57.818899
 
 # Services API — GET baseline
 
-# Services API — GET baseline
 
 * Справочник
 * Обновлено 22 марта 2023 г.
@@ -100,121 +99,92 @@ scraped: 2026-03-05T21:26:57.818899
 {
 
 
-
 "displayName": "string",
 
 
-
 "entityId": "string",
-
 
 
 "serviceResponseTimeBaselines": [
 
 
-
 {
-
 
 
 "childBaselines": [
 
 
-
 {}
 
 
-
 ],
-
 
 
 "displayName": "string",
 
 
-
 "entityId": "string",
-
 
 
 "errorRate": 1,
 
 
-
 "hasLoadBaseline": true,
-
 
 
 "micros90thPercentile": 1,
 
 
-
 "microsMedian": 1
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }

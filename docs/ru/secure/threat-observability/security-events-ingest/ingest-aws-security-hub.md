@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:41.794802
 
 # Загрузка результатов безопасности AWS Security Hub
 
-# Загрузка результатов безопасности AWS Security Hub
 
 * Latest Dynatrace
 * How-to guide
@@ -173,33 +172,25 @@ scraped: 2026-03-06T21:23:41.794802
 {
 
 
-
 "source": ["aws.securityhub"],
-
 
 
 "detail-type": ["Security Hub Findings - Imported"],
 
 
-
 "detail": {
-
 
 
 "findings": {
 
 
-
 "Types": ["Software and Configuration Checks/Vulnerabilities/CVE"]
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -209,57 +200,43 @@ scraped: 2026-03-06T21:23:41.794802
 {
 
 
-
 "source": ["aws.securityhub"],
-
 
 
 "detail-type": ["Security Hub Findings - Imported"],
 
 
-
 "detail": {
-
 
 
 "findings": {
 
 
-
 "Types": [{
-
 
 
 "wildcard": "TTPs*"
 
 
-
 }, {
-
 
 
 "wildcard": "Effects*"
 
 
-
 }, {
-
 
 
 "wildcard": "Unusual Behaviors*"
 
 
-
 }]
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -271,41 +248,31 @@ experimental
 {
 
 
-
 "source": ["aws.securityhub"],
-
 
 
 "detail-type": ["Security Hub Findings - Imported"],
 
 
-
 "detail": {
-
 
 
 "findings": {
 
 
-
 "Types": [{
-
 
 
 "wildcard": "Software and Configuration Checks/Industry and Regulatory Standards*"
 
 
-
 }]
 
 
-
 }
 
 
-
 }
-
 
 
 }

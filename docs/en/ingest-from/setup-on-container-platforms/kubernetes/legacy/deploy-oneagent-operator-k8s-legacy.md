@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:44.845264
 
 # Deploy OneAgent Operator on Kubernetes (deprecated)
 
-# Deploy OneAgent Operator on Kubernetes (deprecated)
 
 * Latest Dynatrace
 * 10-min read
@@ -71,7 +70,6 @@ Prerequisites
    args:
 
 
-
    - "--set-proxy="
    ```
 
@@ -106,9 +104,7 @@ Prerequisites
    env:
 
 
-
    - name: ONEAGENT_ENABLE_VOLUME_STORAGE
-
 
 
    value: "true"
@@ -120,17 +116,13 @@ Prerequisites
    env:
 
 
-
    - name: ONEAGENT_ENABLE_VOLUME_STORAGE
-
 
 
    value: "true"
 
 
-
    - name: ONEAGENT_CONTAINER_STORAGE_PATH
-
 
 
    value: /var/vcap/store
@@ -142,17 +134,13 @@ Prerequisites
    env:
 
 
-
    - name: ONEAGENT_ENABLE_VOLUME_STORAGE
-
 
 
    value: "true"
 
 
-
    - name: ONEAGENT_CONTAINER_STORAGE_PATH
-
 
 
    value: /opt
@@ -164,9 +152,7 @@ Prerequisites
    env:
 
 
-
    - name: ONEAGENT_ENABLE_VOLUME_STORAGE
-
 
 
    value: "true"
@@ -196,57 +182,43 @@ Prerequisites
    apiVersion: dynatrace.com/v1alpha1
 
 
-
    kind: OneAgent
-
 
 
    metadata:
 
 
-
    name: oneagent
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    apiUrl: https://environmentid.dynatrace.com/api
 
 
-
    tolerations:
-
 
 
    - effect: NoSchedule
 
 
-
    key: node-role.kubernetes.io/master
-
 
 
    operator: Exists
 
 
-
    args: []
-
 
 
    enableIstio: true
 
 
-
    proxy:
-
 
 
    value: http://mysuperproxy
@@ -269,57 +241,43 @@ Prerequisites
       apiVersion: dynatrace.com/v1alpha1
 
 
-
       kind: OneAgent
-
 
 
       metadata:
 
 
-
       name: oneagent
-
 
 
       namespace: dynatrace
 
 
-
       spec:
-
 
 
       apiUrl: https://environmentid.dynatrace.com/api
 
 
-
       tolerations:
-
 
 
       - effect: NoSchedule
 
 
-
       key: node-role.kubernetes.io/master
-
 
 
       operator: Exists
 
 
-
       args: []
-
 
 
       enableIstio: true
 
 
-
       proxy:
-
 
 
       valueFrom: myproxysecret
@@ -330,7 +288,6 @@ Prerequisites
 
    ```
    args:
-
 
 
    - --set-network-zone=<your.network.zone>
@@ -353,7 +310,6 @@ Prerequisites
    helm repo add dynatrace \
 
 
-
    https://raw.githubusercontent.com/Dynatrace/helm-charts/master/repos/stable
    ```
 2. Create a Dynatrace namespace.
@@ -369,7 +325,6 @@ Prerequisites
 kubectl apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/latest/download/dynatrace.com_oneagents.yaml
 
 
-
 kubectl apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/latest/download/dynatrace.com_oneagentapms.yaml
 ```
 
@@ -379,93 +334,70 @@ kubectl apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releas
    platform: "kubernetes"
 
 
-
    operator:
 
 
-
    image: ""
-
 
 
    oneagent:
 
 
-
    name: "oneagent"
-
 
 
    apiUrl: "https://ENVIRONMENTID.live.dynatrace.com/api"
 
 
-
    image: ""
-
 
 
    args: {}
 
 
-
    env: {}
-
 
 
    nodeSelector: {}
 
 
-
    labels: {}
-
 
 
    skipCertCheck: false
 
 
-
    disableAgentUpdate: false
-
 
 
    enableIstio: false
 
 
-
    dnsPolicy: ""
-
 
 
    resources: {}
 
 
-
    waitReadySeconds: null
-
 
 
    priorityClassName: ""
 
 
-
    serviceAccountName: ""
-
 
 
    proxy: ""
 
 
-
    trustedCAs: ""
-
 
 
    secret:
 
 
-
    apiToken: "DYNATRACE_API_TOKEN"
-
 
 
    paasToken: "PLATFORM_AS_A_SERVICE_TOKEN"
@@ -483,9 +415,7 @@ kubectl apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releas
    env:
 
 
-
    - name: ONEAGENT_ENABLE_VOLUME_STORAGE
-
 
 
    value: "true"
@@ -497,17 +427,13 @@ kubectl apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releas
    env:
 
 
-
    - name: ONEAGENT_ENABLE_VOLUME_STORAGE
-
 
 
    value: "true"
 
 
-
    - name: ONEAGENT_CONTAINER_STORAGE_PATH
-
 
 
    value: /var/vcap/store
@@ -519,17 +445,13 @@ kubectl apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releas
    env:
 
 
-
    - name: ONEAGENT_ENABLE_VOLUME_STORAGE
-
 
 
    value: "true"
 
 
-
    - name: ONEAGENT_CONTAINER_STORAGE_PATH
-
 
 
    value: /opt
@@ -542,7 +464,6 @@ kubectl apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releas
    args:
 
 
-
    - --set-network-zone=<your.network.zone>
    ```
 
@@ -553,9 +474,7 @@ kubectl apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releas
    helm install dynatrace-oneagent-operator \
 
 
-
    dynatrace/dynatrace-oneagent-operator -n\
-
 
 
    dynatrace --values values.yaml
@@ -599,9 +518,7 @@ If the custom resource of the new version is compatible with the already deploye
 kubectl -n dynatrace set image deployment \
 
 
-
 dynatrace-oneagent-operator *=quay.io/dynatrace/\
-
 
 
 dynatrace-oneagent-operator:vX.Y.Z
@@ -632,7 +549,6 @@ kubectl apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releas
    helm upgrade dynatrace-oneagent-operator dynatrace/\
 
 
-
    dynatrace-oneagent-operator -n dynatrace --reuse-values
    ```
 
@@ -648,7 +564,6 @@ To uninstall OneAgent Operator from Kubernetes version 1.9+
 
    ```
    kubectl delete -n dynatrace oneagent --all
-
 
 
    kubectl delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/latest/download/kubernetes.yaml

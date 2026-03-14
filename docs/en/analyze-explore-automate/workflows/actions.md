@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:39.365090
 
 # Workflows Connectors
 
-# Workflows Connectors
 
 * Latest Dynatrace
 * Overview

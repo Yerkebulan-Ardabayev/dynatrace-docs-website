@@ -6,7 +6,6 @@ scraped: 2026-02-18T05:43:42.904107
 
 # Send email notifications for problems
 
-# Send email notifications for problems
 
 * Latest Dynatrace
 * Tutorial
@@ -76,7 +75,6 @@ At a short glance, you will:
 
       ```
       {{ event()["event.description"] }}
-
 
 
       Go to problem: {{ environment().url }}/ui/apps/dynatrace.davis.problems/problem/{{ event()["event.id"] }}

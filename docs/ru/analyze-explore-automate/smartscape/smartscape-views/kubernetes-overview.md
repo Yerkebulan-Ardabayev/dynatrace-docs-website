@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:48.917062
 
 # Обзор Kubernetes
 
-# Обзор Kubernetes
 
 * Последняя версия Dynatrace
 * Пояснение

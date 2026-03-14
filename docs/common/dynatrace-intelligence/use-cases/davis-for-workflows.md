@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # AI in Workflows - Predictive maintenance of cloud disks
 
-# AI in Workflows - Predictive maintenance of cloud disks
 
 * Latest Dynatrace
 * Tutorial
@@ -60,33 +59,25 @@ A successful Dynatrace Intelligence analysis requires proper access rights.
    davis:analyzers:read
 
 
-
    davis:analyzers:execute
-
 
 
    storage:bizevents:read
 
 
-
    storage:buckets:read
-
 
 
    storage:events:read
 
 
-
    storage:logs:read
-
 
 
    storage:metrics:read
 
 
-
    storage:spans:read
-
 
 
    storage:system:read
@@ -141,133 +132,100 @@ The next workflow action tests each prediction to determine whether the disk wil
    import { execution } from '@dynatrace-sdk/automation-utils';
 
 
-
    const THRESHOLD = 15;
-
 
 
    const TASK_ID = 'predict_disk_capacity';
 
 
-
    export default async function ({ executionId }) {
-
 
 
    const exe = await execution(executionId);
 
 
-
    const predResult = await exe.result(TASK_ID);
-
 
 
    const result = predResult['result'];
 
 
-
    const predictionSummary = { violation: false, violations: new Array<Record<string, string>>() };
-
 
 
    console.log("Total number of predicted lines: " + result.output.length);
 
 
-
    // Check if prediction was successful.
-
 
 
    if (result && result.executionStatus == 'COMPLETED') {
 
 
-
    console.log('Prediction was successful.')
-
 
 
    // Check each predicted result, if it violates the threshold.
 
 
-
    for (let i = 0; i < result.output.length; i++) {
-
 
 
    const prediction = result.output[i];
 
 
-
    // Check if the prediction result is considered valid
-
 
 
    if (prediction.analysisStatus == 'OK' && prediction.forecastQualityAssessment == 'VALID') {
 
 
-
    const lowerPredictions = prediction.timeSeriesDataWithPredictions.records[0]['dt.davis.forecast:lower'];
-
 
 
    const lastValue = lowerPredictions[lowerPredictions.length-1];
 
 
-
    // check against the threshold
-
 
 
    if (lastValue < THRESHOLD) {
 
 
-
    predictionSummary.violation = true;
-
 
 
    // we need to remember all metric properties in the result,
 
 
-
    // to inform the next actions which disk ran out of space
-
 
 
    predictionSummary.violations.push(prediction.timeSeriesDataWithPredictions.records[0]);
 
 
+   }
+
 
    }
 
 
-
    }
-
-
-
-   }
-
 
 
    console.log(predictionSummary.violations.length == 0 ? 'No violations found :)' : '' + predictionSummary.violations.length + ' capacity shortages were found!')
 
 
-
    return predictionSummary;
-
 
 
    } else {
 
 
-
    console.log('Prediction run failed!');
 
 
-
    }
-
 
 
    }
@@ -304,77 +262,58 @@ To raise a Davis problem
    import { eventsClient, EventIngestEventType } from "@dynatrace-sdk/client-classic-environment-v2";
 
 
-
    import { execution } from '@dynatrace-sdk/automation-utils';
-
 
 
    export default async function ({ executionId }) {
 
 
-
    const exe = await execution(executionId);
-
 
 
    const checkResult = await exe.result('check_prediction');
 
 
-
    const violations = await checkResult.violations;
-
 
 
    // Raise an event for each violation
 
 
-
    violations.forEach(function (violation) {
-
 
 
    eventsClient.createEvent({
 
 
-
    body : {
-
 
 
    eventType: EventIngestEventType.ResourceContentionEvent,
 
 
-
    title: 'Predicted Disk Capacity Alarm',
-
 
 
    entitySelector: 'type(DISK),entityId("' + violation['dt.entity.disk'] + '")',
 
 
-
    properties: {
-
 
 
    'dt.entity.host' : violation['dt.entity.host']
 
 
-
    }
 
 
-
    }
-
 
 
    });
 
 
-
    });
-
 
 
    };

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Hub items API
 
-# Hub items API
 
 * Reference
 * Published Feb 07, 2023

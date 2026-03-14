@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:38:13.805559
 
 # Настройка разделения сервисов в Service Detection v2
 
-# Настройка разделения сервисов в Service Detection v2
 
 * Classic
 * How-to guide

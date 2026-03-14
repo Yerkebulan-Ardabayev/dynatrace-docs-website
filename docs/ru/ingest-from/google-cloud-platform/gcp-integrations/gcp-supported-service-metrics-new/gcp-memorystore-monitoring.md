@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:01.482673
 
 # Мониторинг Google Cloud Memorystore
 
-# Мониторинг Google Cloud Memorystore
 
 * Последняя версия Dynatrace
 * Практическое руководство

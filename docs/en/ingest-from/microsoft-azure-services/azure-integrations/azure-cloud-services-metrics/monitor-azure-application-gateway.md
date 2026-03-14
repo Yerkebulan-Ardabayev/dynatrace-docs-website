@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:27.529086
 
 # Azure Application Gateway monitoring
 
-# Azure Application Gateway monitoring
 
 * Latest Dynatrace
 * How-to guide

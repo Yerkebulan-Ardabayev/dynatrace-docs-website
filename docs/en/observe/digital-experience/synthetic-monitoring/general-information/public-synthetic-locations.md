@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:46.338930
 
 # Public Synthetic locations
 
-# Public Synthetic locations
 
 * Classic
 * Reference

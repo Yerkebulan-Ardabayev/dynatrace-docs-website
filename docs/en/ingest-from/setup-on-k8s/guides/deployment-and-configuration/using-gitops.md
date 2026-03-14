@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:22.287307
 
 # Manage Dynatrace deployments using GitOps
 
-# Manage Dynatrace deployments using GitOps
 
 * Latest Dynatrace
 * 4-min read
@@ -34,57 +33,43 @@ The following ArgoCD Application defines Dynatrace Operator deployment using the
 apiVersion: argoproj.io/v1alpha1
 
 
-
 kind: Application
-
 
 
 metadata:
 
 
-
 name: dynatrace-operator
-
 
 
 namespace: argocd
 
 
-
 spec:
-
 
 
 project: default
 
 
-
 destination:
-
 
 
 server: https://kubernetes.default.svc
 
 
-
 namespace: dynatrace
-
 
 
 source:
 
 
-
 repoURL: public.ecr.aws/dynatrace
-
 
 
 chart: dynatrace-operator
 
 
-
 targetRevision: 1.0.0
-
 
 
 helm: {}
@@ -109,53 +94,40 @@ The following ArgoCD Application references a Git repository holding a DynaKube 
 apiVersion: argoproj.io/v1alpha1
 
 
-
 kind: Application
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: argocd
 
 
-
 spec:
-
 
 
 project: default
 
 
-
 destination:
-
 
 
 server: https://kubernetes.default.svc
 
 
-
 namespace: dynatrace
-
 
 
 source:
 
 
-
 repoURL: <git-reopository-url>
 
 
-
 targetRevision: <revision>
-
 
 
 path: <path-to-dynakube-dir>
@@ -178,73 +150,55 @@ Add the `argocd.argoproj.io/sync-wave` annotation with the respective value to t
 apiVersion: argoproj.io/v1alpha1
 
 
-
 kind: Application
-
 
 
 metadata:
 
 
-
 annotations:
-
 
 
 argocd.argoproj.io/sync-wave: "0"
 
 
-
 name: dynatrace-operator
-
 
 
 namespace: argocd
 
 
-
 spec:
-
 
 
 ...
 
 
-
 ---
-
 
 
 apiVersion: argoproj.io/v1alpha1
 
 
-
 kind: Application
-
 
 
 metadata:
 
 
-
 annotations:
-
 
 
 argocd.argoproj.io/sync-wave: "10"
 
 
-
 name: dynakube
-
 
 
 namespace: argocd
 
 
-
 spec:
-
 
 
 ...
@@ -267,109 +221,82 @@ Additionally, the feature allows Helm value files to be sources from a Git repos
 apiVersion: argoproj.io/v1alpha1
 
 
-
 kind: Application
-
 
 
 metadata:
 
 
-
 name: dynatrace
-
 
 
 namespace: argocd
 
 
-
 spec:
-
 
 
 project: default
 
 
-
 destination:
-
 
 
 server: https://kubernetes.default.svc
 
 
-
 namespace: dynatrace
-
 
 
 sources:
 
 
-
 - repoURL: public.ecr.aws/dynatrace
-
 
 
 chart: dynatrace-operator
 
 
-
 targetRevision: 1.0.0
-
 
 
 helm:
 
 
-
 valueFiles:
-
 
 
 - $values/<path-to-dynatrace-operator-values-file>
 
 
-
 - repoURL: <git-repository-url>
 
 
-
 targetRevision: HEAD
-
 
 
 ref: values
 
 
-
 - repoURL: <git-repository-url>
-
 
 
 targetRevision: HEAD
 
 
-
 path: <path-to-dynakube-dir>
-
 
 
 syncPolicy:
 
 
-
 retry: # sample retry configuration; for details, see footnote below
-
 
 
 limit: 5
 
 
-
 ...
-
 
 
 ...

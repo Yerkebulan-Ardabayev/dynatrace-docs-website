@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:36.765843
 
 # Timestamp/splitting configuration (Logs Classic)
 
-# Timestamp/splitting configuration (Logs Classic)
 
 * Classic
 * 7-min read
@@ -60,9 +59,7 @@ See the code block below for an example.
 Log entry 1: Pattern 1, Pattern 2
 
 
-
 Log entry 2: Pattern 2
-
 
 
 Log entry 3: Pattern 1, Pattern 2
@@ -192,117 +189,88 @@ To create a timestamp configuration using the API
    [
 
 
-
    {
-
 
 
    "insertAfter":"uAAZ0ZW5hbnQABnRlbmFudAAkMGUzYmY2ZmYtMDc2ZC0zNzFmLhXaq0",
 
 
-
    "schemaId": "builtin:logmonitoring.timestamp-configuration",
-
 
 
    "schemaVersion": "0.1.0",
 
 
-
    "scope": "tenant",
-
 
 
    "value": {
 
 
-
    "config-item-title": "Added from REST API",
-
 
 
    "date-time-pattern": "%Y-%m-%d %H:%M:%S",
 
 
-
    "timezone": "CET",
-
 
 
    "matchers": [
 
 
-
    {
-
 
 
    "attribute": "dt.entity.process_group",
 
 
-
    "operator": "MATCHES",
 
 
-
    "values": [
-
 
 
    "PROCESS_GROUP-05F00CBACF39EBD1"
 
 
-
    ]
-
 
 
    },
 
 
-
    {
-
 
 
    "attribute": "log.source",
 
 
-
    "operator": "MATCHES",
-
 
 
    "values": [
 
 
-
    "Windows System Log",
-
 
 
    "Windows Security Log"
 
 
+   ]
+
+
+   }
+
 
    ]
 
 
-
    }
 
 
-
-   ]
-
-
-
    }
-
-
-
-   }
-
 
 
    ]

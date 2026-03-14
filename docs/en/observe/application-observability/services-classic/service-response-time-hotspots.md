@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:00.695154
 
 # Service response time hotspots
 
-# Service response time hotspots
 
 * Classic
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:27:46.123119
 
 # Потоковая передача syslog в Dynatrace с помощью Fluentd
 
-# Потоковая передача syslog в Dynatrace с помощью Fluentd
 
 * Latest Dynatrace
 * Руководство
@@ -80,45 +79,34 @@ scraped: 2026-03-03T21:27:46.123119
 <source>
 
 
-
 @type syslog
-
 
 
 port 5140
 
 
-
 bind 0.0.0.0
-
 
 
 tag system-linux
 
 
-
 </source>
-
 
 
 <source>
 
 
-
 @type syslog
-
 
 
 port 5141
 
 
-
 bind 0.0.0.0
 
 
-
 tag system-f5
-
 
 
 </source>
@@ -130,45 +118,34 @@ tag system-f5
 <filter system-linux.**>
 
 
-
 @type record_transformer
 
 
-
 <record>
-
 
 
 log.source "linux syslogs"
 
 
-
 </record>
-
 
 
 </filter>
 
 
-
 <filter system-f5.**>
-
 
 
 @type record_transformer
 
 
-
 <record>
-
 
 
 log.source "f5 syslogs"
 
 
-
 </record>
-
 
 
 </filter>

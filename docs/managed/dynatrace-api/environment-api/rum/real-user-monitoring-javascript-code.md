@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Real User Monitoring JavaScript API
 
-# Real User Monitoring JavaScript API
 
 * Reference
 * Updated on Sep 18, 2025

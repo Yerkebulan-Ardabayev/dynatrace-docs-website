@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:05.737095
 
 # Calculated metrics API
 
-# Calculated metrics API
 
 * Reference
 * Published Apr 16, 2020

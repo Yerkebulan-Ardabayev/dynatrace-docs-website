@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:09.059821
 
 # Delete a web application
 
-# Delete a web application
 
 * Classic
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:21.680541
 
 # Events API v2 - POST an event
 
-# Events API v2 - POST an event
 
 * Reference
 * Published Nov 05, 2021
@@ -58,33 +57,25 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "endTime": 1,
-
 
 
 "entitySelector": "string",
 
 
-
 "eventType": "AVAILABILITY_EVENT",
-
 
 
 "properties": {},
 
 
-
 "startTime": 1,
-
 
 
 "timeout": 1,
 
 
-
 "title": "string"
-
 
 
 }
@@ -151,89 +142,68 @@ A list of constraint violations
 {
 
 
-
 "eventIngestResults": [
 
 
-
 {
-
 
 
 "correlationId": "string",
 
 
-
 "status": "INVALID_ENTITY_TYPE"
-
 
 
 }
 
 
-
 ],
-
 
 
 "reportCount": 1
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -261,45 +231,34 @@ The API token is passed in the **Authorization** header.
 curl --request POST \
 
 
-
 --url https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest \
-
 
 
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
 
 
-
 --header 'Content-Type: application/json' \
-
 
 
 --data '{
 
 
-
 "eventType": "MARKED_FOR_TERMINATION",
-
 
 
 "title": "Planned host downscale",
 
 
-
 "entitySelector": "type(HOST),fromRelationship.isInstanceOf(type(HOST_GROUP),entityName(cloud-burst-hosts))",
-
 
 
 "properties": {
 
 
-
 "job.number": "21234346"
 
 
-
 }
-
 
 
 }'
@@ -317,29 +276,22 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 {
 
 
-
 "eventType": "MARKED_FOR_TERMINATION",
-
 
 
 "title": "Planned host downscale",
 
 
-
 "entitySelector": "type(HOST),fromRelationship.isInstanceOf(type(HOST_GROUP),entityName(cloud-burst-hosts))",
-
 
 
 "properties": {
 
 
-
 "job.number": "21234346"
 
 
-
 }
-
 
 
 }
@@ -351,49 +303,37 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 {
 
 
-
 "reportCount": 2,
-
 
 
 "eventIngestResults": [
 
 
-
 {
-
 
 
 "correlationId": "41f5d263011a6c9a",
 
 
-
 "status": "OK"
-
 
 
 },
 
 
-
 {
-
 
 
 "correlationId": "80eae4d163cc5760",
 
 
-
 "status": "OK"
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -417,57 +357,43 @@ The API token is passed in the **Authorization** header.
 curl --request POST \
 
 
-
 --url https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest \
-
 
 
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
 
 
-
 --header 'Content-Type: application/json' \
-
 
 
 --data '{
 
 
-
 "eventType": "CUSTOM_INFO",
-
 
 
 "title": "Loadtest start",
 
 
-
 "timeout": 30,
-
 
 
 "entitySelector": "type(SERVICE),entityName.equals(BookingService)",
 
 
-
 "properties": {
-
 
 
 "Tool": "MyLoadTool",
 
 
-
 "Load per minute": "100",
-
 
 
 "Load pattern": "production"
 
 
-
 }
-
 
 
 }'
@@ -485,41 +411,31 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 {
 
 
-
 "eventType": "CUSTOM_INFO",
-
 
 
 "title": "Loadtest start",
 
 
-
 "timeout": 30,
-
 
 
 "entitySelector": "type(SERVICE),entityName.equals(BookingService)",
 
 
-
 "properties": {
-
 
 
 "Tool": "MyLoadTool",
 
 
-
 "Load per minute": "100",
-
 
 
 "Load pattern": "production"
 
 
-
 }
-
 
 
 }
@@ -531,33 +447,25 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 {
 
 
-
 "reportCount": 1,
-
 
 
 "eventIngestResults": [
 
 
-
 {
-
 
 
 "correlationId": "eba82f647696e485",
 
 
-
 "status": "OK"
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -581,57 +489,43 @@ The API token is passed in the **Authorization** header.
 curl --request POST \
 
 
-
 --url https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest \
-
 
 
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
 
 
-
 --header 'Content-Type: application/json' \
-
 
 
 --data '{
 
 
-
 "eventType": "ERROR_EVENT",
-
 
 
 "title": "Product catalog update failed",
 
 
-
 "timeout": 30,
-
 
 
 "entitySelector": "type(SERVICE),entityName.equals(BookingService)",
 
 
-
 "properties": {
-
 
 
 "dt.event.allow_davis_merge": "false",
 
 
-
 "Catalog": "APAC travels",
-
 
 
 "Batch processor": "travel-catalog"
 
 
-
 }
-
 
 
 }'
@@ -649,41 +543,31 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 {
 
 
-
 "eventType": "ERROR_EVENT",
-
 
 
 "title": "Product catalog update failed",
 
 
-
 "timeout": 30,
-
 
 
 "entitySelector": "type(SERVICE),entityName.equals(BookingService)",
 
 
-
 "properties": {
-
 
 
 "dt.event.allow_davis_merge": "false",
 
 
-
 "Catalog": "APAC travels",
-
 
 
 "Batch processor": "travel-catalog"
 
 
-
 }
-
 
 
 }
@@ -695,33 +579,25 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 {
 
 
-
 "reportCount": 1,
-
 
 
 "eventIngestResults": [
 
 
-
 {
-
 
 
 "correlationId": "cefb7ae03ac720b6",
 
 
-
 "status": "OK"
-
 
 
 }
 
 
-
 ]
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:16.084658
 
 # Instrument mobile apps with Dynatrace Flutter plugin
 
-# Instrument mobile apps with Dynatrace Flutter plugin
 
 * Classic
 * Практическое руководство

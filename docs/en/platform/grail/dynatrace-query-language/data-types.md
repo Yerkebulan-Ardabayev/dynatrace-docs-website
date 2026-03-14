@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:40.056889
 
 # DQL data types
 
-# DQL data types
 
 * Latest Dynatrace
 * Reference
@@ -31,7 +30,6 @@ Boolean has only two possible values: `true` and `false`.
   ...
 
 
-
   | fields toBoolean("true"), toBoolean("TrUe"), toBoolean("1"), toBoolean(3), toBoolean("test"), toBoolean(0)
   ```
 * **Expressions**
@@ -40,13 +38,10 @@ Boolean has only two possible values: `true` and `false`.
   boolean_expr1 AND boolean_expr2
 
 
-
   boolean_expr1 OR boolean_expr2
 
 
-
   boolean_expr1 XOR boolean_expr2
-
 
 
   NOT boolean_expr
@@ -66,7 +61,6 @@ The signed long has a minimum value of -2^63 and a maximum value of 2^63-1.
   ..
 
 
-
   | fields toLong("83457264009472472"), toLong(30), toLong(25.34)
   ```
 
@@ -83,7 +77,6 @@ Double-precision 64-bit IEEE 754 floating point.
 
   ```
   ...
-
 
 
   | fields toDouble("1234.5"), toDouble(4+3/2)
@@ -105,9 +98,7 @@ fetch logs, from:-2h, to:-20m
 ...
 
 
-
 | fields time = toTimestamp("2022-08-01T12:00:00+01:00")
-
 
 
 | fieldsAdd time == now(), time > now()-10d, newTime = time + 3d
@@ -122,7 +113,6 @@ To execute the full query result including nanoseconds, change the visualization
 data record(tf = timeframe(from:now()-2h, to:now()))
 
 
-
 | fields tf, tf[start], tf[end]
 ```
 
@@ -132,7 +122,6 @@ A duration between two timestamps, consisting of an amount and a time unit.
 
 ```
 ...
-
 
 
 | fields duration = 1s
@@ -173,13 +162,10 @@ In many cases, a parsed numeric value semantically represents a duration. The `d
 ...
 
 
-
 | fields     dur = 62
 
 
-
 | fieldsAdd  dur_ms = duration(dur, unit:"ms")
-
 
 
 | fieldsAdd  dur_ms > 50ms
@@ -193,13 +179,10 @@ Converting a nanoseconds value to a `duration`:
 ...
 
 
-
 ...
 
 
-
 | fields     dur = toDuration(62*1000000000*60*60*24)
-
 
 
 | fieldsAdd  dur > 60d
@@ -213,25 +196,19 @@ To illustrate, we calculate the age of the latest log message seen from a specif
 ...
 
 
-
 ...
-
 
 
 fetch       logs
 
 
-
 | filter    dt.entity.host == "HOST-DD5679D1A0C6426C"
-
 
 
 | sort      timestamp desc
 
 
-
 | limit     1
-
 
 
 | fields    timestamp, age_message = now()-timestamp
@@ -252,7 +229,6 @@ Sequence of characters with a specified character set.
 
   ```
   ...
-
 
 
   | fields toString(toBoolean(1)), toString(array(1,2,3)), toString(1), toString(toTimestamp(now())), toString(toIpAddress("192.168.0.1"))
@@ -284,9 +260,7 @@ A data structure that contains a sequence of values, each identified by index.
   ...
 
 
-
   | fieldsAdd int_array = array(1,2,2,3,4,5)
-
 
 
   | fields first_element = int_array[0], fifth_element = int_array[4]
@@ -298,13 +272,10 @@ A data structure that contains a sequence of values, each identified by index.
   ...
 
 
-
   | ...
 
 
-
   | fields a=array(1,2), b=array(1,2,3), c=array("a","b"), d=toArray("c,d")
-
 
 
   | fields a == b, arraySize(b) > arraySize(c)
@@ -323,9 +294,7 @@ A set of key-value pair data whose value can be any DQL data type.
   ...
 
 
-
   | fields person = record({name="john", age=33, address=record({city="Atlanta", pcode="30308"})})
-
 
 
   | fields person[name], person[address][pcode]
@@ -335,7 +304,6 @@ A set of key-value pair data whose value can be any DQL data type.
 
   ```
   ...
-
 
 
   | fields t = record(a=1+2,b=3,c=toString(timestamp))
@@ -349,13 +317,10 @@ A set of key-value pair data whose value can be any DQL data type.
   STRUCTURE{matcher_expr, ...}:fieldname
 
 
-
   JSON{matcher_expr, ...}:fieldname
 
 
-
   KVP{matcher_expr, ...}:fieldname
-
 
 
   $subpattern:fieldname
@@ -366,13 +331,10 @@ A set of key-value pair data whose value can be any DQL data type.
   ...
 
 
-
   | fields str = "name=\"john\"; age=33; city=\"Atlanta\""
 
 
-
   | parse str, "KVP{LD:key'='(LONG:valueLong | STRING:valueStr)'; '?}:person"
-
 
 
   | fields person[name], person[age], person[city]
@@ -383,13 +345,10 @@ A set of key-value pair data whose value can be any DQL data type.
   ...
 
 
-
   | fields str = "{\"type\":\"update\",\"host\":\"CI_preprod_1\",\"version\":\"10.2.2367\"}"
 
 
-
   | parse str,"JSON:event"
-
 
 
   | fields event[type], event[host], event[version]

@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:27:45.484805
 
 # Трассировка Google Cloud Functions с помощью OpenTelemetry JavaScript
 
-# Трассировка Google Cloud Functions с помощью OpenTelemetry JavaScript
 
 * Latest Dynatrace
 * Руководство
@@ -49,33 +48,25 @@ Dynatrace использует OpenTelemetry Trace Ingest для обеспеч�
 "dependencies": {
 
 
-
 "@opentelemetry/api": "^1.0.4",
-
 
 
 "@opentelemetry/core": "^1.0.1",
 
 
-
 "@opentelemetry/exporter-trace-otlp-proto": "^0.27.0",
-
 
 
 "@opentelemetry/instrumentation": "^0.27.0",
 
 
-
 "@opentelemetry/instrumentation-http": "^0.27.0",
-
 
 
 "@opentelemetry/sdk-trace-node": "^1.0.1",
 
 
-
 "@opentelemetry/semantic-conventions": "^1.0.1"
-
 
 
 }
@@ -112,129 +103,97 @@ Dynatrace использует OpenTelemetry Trace Ingest для обеспеч�
 const { NodeTracerProvider } = require('@opentelemetry/sdk-trace-node');
 
 
-
 const { W3CTraceContextPropagator, AlwaysOnSampler } = require('@opentelemetry/core');
-
 
 
 const { registerInstrumentations } = require('@opentelemetry/instrumentation');
 
 
-
 const { HttpInstrumentation } = require('@opentelemetry/instrumentation-http');
-
 
 
 const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
 
 
-
 const { OTLPTraceExporter } = require("@opentelemetry/exporter-trace-otlp-proto");
-
 
 
 const { BatchSpanProcessor } = require("@opentelemetry/sdk-trace-base");
 
 
-
 const { Resource } = require("@opentelemetry/resources");
-
 
 
 const { diag, DiagConsoleLogger, DiagLogLevel } = require("@opentelemetry/api");
 
 
-
 diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.ALL);
-
 
 
 function setupOtel(functionName) {
 
 
-
 // create tracer provider
-
 
 
 const provider = new NodeTracerProvider({
 
 
-
 resource: new Resource({
-
 
 
 [SemanticResourceAttributes.SERVICE_NAME]: functionName,
 
 
-
 }),
-
 
 
 sampler: new AlwaysOnSampler()
 
 
-
 });
-
 
 
 // add proto exporter
 
 
-
 const exporter = new OTLPTraceExporter();
-
 
 
 provider.addSpanProcessor(new BatchSpanProcessor(exporter));
 
 
-
 // register globally
-
 
 
 provider.register({
 
 
-
 propagator: new W3CTraceContextPropagator()
 
 
-
 });
-
 
 
 // add http automatic instrumentation
 
 
-
 registerInstrumentations({
-
 
 
 instrumentations: [
 
 
-
 new HttpInstrumentation()
-
 
 
 ],
 
 
-
 });
 
 
-
 return provider;
-
 
 
 }
@@ -264,37 +223,28 @@ return provider;
 /**
 
 
-
 * Responds to any HTTP request.
-
 
 
 *
 
 
-
 * @param {!express:Request} req HTTP request context.
-
 
 
 * @param {!express:Response} res HTTP response context.
 
 
-
 */
-
 
 
 exports.helloWorld = (req, res) => {
 
 
-
 let message = req.query.message || req.body.message || 'Hello World!';
 
 
-
 res.status(200).send(message);
-
 
 
 };
@@ -314,37 +264,28 @@ const { trace, context } = require("@opentelemetry/api");
 function instrumentHandler(handler, funcName) {
 
 
-
 setupOtel(funcName);
-
 
 
 return (req, res) => {
 
 
-
 const span = trace.getSpan(context.active());
-
 
 
 if (span != null) {
 
 
-
 span.updateName(funcName);
-
 
 
 }
 
 
-
 handler(req, res);
 
 
-
 };
-
 
 
 }
@@ -356,13 +297,10 @@ handler(req, res);
 async function myHandler(req, res) {
 
 
-
 let message = req.query.message || req.body.message || 'Hello World!';
 
 
-
 res.status(200).send(message);
-
 
 
 };
@@ -376,13 +314,10 @@ res.status(200).send(message);
 exports.helloWorld = instrumentHandler(myHandler, "helloWorld");
 
 
-
 // make sure the http(s) library is patched before the first call
 
 
-
 require("http");
-
 
 
 require("https");
@@ -404,97 +339,73 @@ OpenTelemetry JS предоставляет [инструментацию](https
 async function httpGet(url) {
 
 
-
 return new Promise((resolve, reject) => {
-
 
 
 const isHttps = url.startsWith("https://");
 
 
-
 const httpLib = isHttps ? https : http;
-
 
 
 const request = httpLib.get(url, (res) => {
 
 
-
 console.log(`${url} status code - ${res.statusCode}`);
-
 
 
 const responseData = [];
 
 
-
 res.on("error", (error) => {
-
 
 
 console.error(`${url} reponse error - ${error}`);
 
 
-
 reject(error);
 
 
-
 });
-
 
 
 res.on("data", (chunk) => {
 
 
-
 responseData.push(chunk);
 
 
-
 });
-
 
 
 res.on("end", () => {
 
 
-
 resolve({ statusCode: res.statusCode, data: responseData });
 
 
-
 });
 
 
-
 });
-
 
 
 request.on("error", error => {
 
 
-
 console.error(`${url} request error - ${error}`);
-
 
 
 reject(error);
 
 
-
 });
-
 
 
 request.end();
 
 
-
 });
-
 
 
 }
@@ -506,21 +417,16 @@ request.end();
 async function myHandler(req, res) {
 
 
-
 await httpGet('https://example.com');
-
 
 
 await httpGet('http://example.net');
 
 
-
 let message = req.query.message || req.body.message || 'Hello World!';
 
 
-
 res.status(200).send(message);
-
 
 
 };
@@ -532,333 +438,250 @@ res.status(200).send(message);
 const { trace, context } = require("@opentelemetry/api");
 
 
-
 const { NodeTracerProvider } = require('@opentelemetry/sdk-trace-node');
-
 
 
 const { W3CTraceContextPropagator, AlwaysOnSampler } = require('@opentelemetry/core');
 
 
-
 const { registerInstrumentations } = require('@opentelemetry/instrumentation');
-
 
 
 const { HttpInstrumentation } = require('@opentelemetry/instrumentation-http');
 
 
-
 const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
-
 
 
 const { OTLPTraceExporter } = require("@opentelemetry/exporter-trace-otlp-proto");
 
 
-
 const { BatchSpanProcessor } = require("@opentelemetry/sdk-trace-base");
-
 
 
 const { Resource } = require("@opentelemetry/resources");
 
 
-
 const { diag, DiagConsoleLogger, DiagLogLevel } = require("@opentelemetry/api");
-
 
 
 const http = require("http");
 
 
-
 const https = require("https");
-
 
 
 diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.ALL);
 
 
-
 function setupOtel(functionName) {
-
 
 
 // create tracer provider
 
 
-
 const provider = new NodeTracerProvider({
-
 
 
 resource: new Resource({
 
 
-
 [SemanticResourceAttributes.SERVICE_NAME]: functionName,
-
 
 
 }),
 
 
-
 sampler: new AlwaysOnSampler()
 
 
-
 });
-
 
 
 // add proto exporter
 
 
-
 const exporter = new OTLPTraceExporter();
-
 
 
 provider.addSpanProcessor(new BatchSpanProcessor(exporter));
 
 
-
 // register globally
-
 
 
 provider.register({
 
 
-
 propagator: new W3CTraceContextPropagator()
 
 
-
 });
-
 
 
 // add http automatic instrumentation
 
 
-
 registerInstrumentations({
-
 
 
 instrumentations: [
 
 
-
 new HttpInstrumentation()
-
 
 
 ],
 
 
-
 });
-
 
 
 return provider;
 
 
-
 }
-
 
 
 async function httpGet(url) {
 
 
-
 return new Promise((resolve, reject) => {
-
 
 
 const isHttps = url.startsWith("https://");
 
 
-
 const httpLib = isHttps ? https : http;
-
 
 
 const request = httpLib.get(url, (res) => {
 
 
-
 console.log(`${url} status code - ${res.statusCode}`);
-
 
 
 const responseData = [];
 
 
-
 res.on("error", (error) => {
-
 
 
 console.error(`${url} reponse error - ${error}`);
 
 
-
 reject(error);
 
 
-
 });
-
 
 
 res.on("data", (chunk) => {
 
 
-
 responseData.push(chunk);
 
 
-
 });
-
 
 
 res.on("end", () => {
 
 
-
 resolve({ statusCode: res.statusCode, data: responseData });
 
 
-
 });
 
 
-
 });
-
 
 
 request.on("error", error => {
 
 
-
 console.error(`${url} request error - ${error}`);
-
 
 
 reject(error);
 
 
-
 });
-
 
 
 request.end();
 
 
-
 });
 
 
-
 }
-
 
 
 // The function's custom logic goes in here.
 
 
-
 async function myHandler(req, res) {
-
 
 
 // Perform 2 outgoing HTTP calls.
 
 
-
 await httpGet('https://example.com');
-
 
 
 await httpGet('http://example.net');
 
 
-
 let message = req.query.message || req.body.message || 'Hello World!';
-
 
 
 res.status(200).send(message);
 
 
-
 };
-
 
 
 function instrumentHandler(handler, funcName) {
 
 
-
 setupOtel(funcName);
-
 
 
 return (req, res) => {
 
 
-
 const span = trace.getSpan(context.active());
-
 
 
 if (span != null) {
 
 
-
 span.updateName(funcName);
 
 
-
 }
-
 
 
 handler(req, res);
 
 
-
 };
-
 
 
 }
 
 
-
 // This is the function'S entrypoint.
-
 
 
 exports.helloWorld = instrumentHandler(myHandler, "helloWorld");
 
 
-
 // make sure the http(s) library is patched before the first call
 
 
-
 require("http");
-
 
 
 require("https");

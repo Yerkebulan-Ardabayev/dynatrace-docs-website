@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:28.083609
 
 # Owner-based access control in OpenPipeline
 
-# Owner-based access control in OpenPipeline
 
 * Latest Dynatrace
 * Explanation

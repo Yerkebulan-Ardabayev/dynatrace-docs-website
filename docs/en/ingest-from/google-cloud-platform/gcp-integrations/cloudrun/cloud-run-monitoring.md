@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:21.208747
 
 # Google Cloud Run monitoring
 
-# Google Cloud Run monitoring
 
 * Latest Dynatrace
 * How-to guide

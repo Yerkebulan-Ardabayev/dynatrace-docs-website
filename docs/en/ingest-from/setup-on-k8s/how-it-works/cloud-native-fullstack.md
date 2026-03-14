@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:24.269087
 
 # Full-stack observability
 
-# Full-stack observability
 
 * Latest Dynatrace
 * 3-min read

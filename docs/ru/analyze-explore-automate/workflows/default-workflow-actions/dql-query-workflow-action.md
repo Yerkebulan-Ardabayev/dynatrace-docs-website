@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:31:44.785730
 
 # DQL запрос действий для Workflows
 
-# DQL запрос действий для Workflows
 
 * Последнее Dynatrace
 * Справка

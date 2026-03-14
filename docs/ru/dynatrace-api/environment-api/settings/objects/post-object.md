@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:34.446565
 
 # Settings API - POST-запрос для создания объекта
 
-# Settings API - POST-запрос для создания объекта
 
 * Справочник
 * Опубликовано 24 февраля 2021
@@ -64,41 +63,31 @@ scraped: 2026-03-06T21:19:34.446565
 [
 
 
-
 {
-
 
 
 "externalId": "string",
 
 
-
 "insertAfter": "Y2ktaGdyb3VwLTEyMythZjhjOThlOS0wN2I0LTMyMGEtOTQzNi02NTEyMmVlNWY4NGQ=",
-
 
 
 "objectId": "Y2ktaGdyb3VwLTEyMythZjhjOThlOS0wN2I0LTMyMGEtOTQzNi02NTEyMmVlNWY4NGQ=",
 
 
-
 "schemaId": "builtin:container.built-in-monitoring-rule",
-
 
 
 "schemaVersion": "1.0.0",
 
 
-
 "scope": "HOST-D3A3C5A146830A79",
-
 
 
 "value": "string"
 
 
-
 }
-
 
 
 ]
@@ -199,73 +188,55 @@ scraped: 2026-03-06T21:19:34.446565
 [
 
 
-
 {
 
 
-
 "code": 1,
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
-
 
 
 },
 
 
-
 "invalidValue": "string",
-
 
 
 "objectId": "Y2ktaGdyb3VwLTEyMythZjhjOThlOS0wN2I0LTMyMGEtOTQzNi02NTEyMmVlNWY4NGQ="
 
 
-
 }
-
 
 
 ]
@@ -275,73 +246,55 @@ scraped: 2026-03-06T21:19:34.446565
 [
 
 
-
 {
 
 
-
 "code": 1,
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
-
 
 
 },
 
 
-
 "invalidValue": "string",
-
 
 
 "objectId": "Y2ktaGdyb3VwLTEyMythZjhjOThlOS0wN2I0LTMyMGEtOTQzNi02NTEyMmVlNWY4NGQ="
 
 
-
 }
-
 
 
 ]

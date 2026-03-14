@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:30:25.620961
 
 # Configure data privacy settings for mobile frontends
 
-# Configure data privacy settings for mobile frontends
 
 * Latest Dynatrace
 * How-to guide

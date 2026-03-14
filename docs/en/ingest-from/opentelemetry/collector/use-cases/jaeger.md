@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:22:57.338777
 
 # Ingest Jaeger data with the OpenTelemetry Collector
 
-# Ingest Jaeger data with the OpenTelemetry Collector
 
 * Latest Dynatrace
 * How-to guide
@@ -33,57 +32,43 @@ See [Collector Deployment](../deployment.md "How to deploy Dynatrace OTel Collec
 receivers:
 
 
-
 jaeger:
-
 
 
 protocols:
 
 
-
 grpc:
-
 
 
 exporters:
 
 
-
 otlp_http:
-
 
 
 endpoint: ${env:DT_ENDPOINT}
 
 
-
 headers:
-
 
 
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
 
 
-
 service:
-
 
 
 pipelines:
 
 
-
 traces:
-
 
 
 receivers: [jaeger]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Events API v2 - GET all event properties
 
-# Events API v2 - GET all event properties
 
 * Reference
 * Published Oct 07, 2021
@@ -99,109 +98,83 @@ A list of constraint violations
 {
 
 
-
 "eventProperties": [
 
 
-
 {
-
 
 
 "description": "string",
 
 
-
 "displayName": "Custom description",
-
 
 
 "filterable": true,
 
 
-
 "key": "dt.event.description",
-
 
 
 "writable": true
 
 
-
 }
 
 
-
 ],
-
 
 
 "nextPageKey": "AQAAABQBAAAABQ==",
 
 
-
 "pageSize": 1,
-
 
 
 "totalCount": 1
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -219,9 +192,7 @@ The API token is passed in the **Authorization** header.
 curl --request GET \
 
 
-
 --url 'https://mySampleEnv.live.dynatrace.com/api/v2/eventProperties?pageSize=3' \
-
 
 
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -239,97 +210,73 @@ https://mySampleEnv.live.dynatrace.com/api/v2/eventProperties?pageSize=3
 {
 
 
-
 "totalCount": 23,
-
 
 
 "pageSize": 3,
 
 
-
 "nextPageKey": "AQAAAAMBAAAAAw==",
-
 
 
 "eventProperties": [
 
 
-
 {
-
 
 
 "key": "dt.event.allow_davis_merge",
 
 
-
 "displayName": "Allow Davis merge",
-
 
 
 "description": "Allow Davis AI to merge this event into existing problems (true) or force creating a new problem (false)",
 
 
-
 "writable": true
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "dt.event.baseline.service_method",
 
 
-
 "displayName": "Baseline affected service method",
-
 
 
 "description": "Lists affected service methods of the triggered service event",
 
 
-
 "writable": false
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "dt.event.baseline.total_load",
 
 
-
 "displayName": "Baseline total load",
-
 
 
 "description": "The load (calls per minute) of the entire service or application for triggered event",
 
 
-
 "writable": false
-
 
 
 }
 
 
-
 ]
-
 
 
 }

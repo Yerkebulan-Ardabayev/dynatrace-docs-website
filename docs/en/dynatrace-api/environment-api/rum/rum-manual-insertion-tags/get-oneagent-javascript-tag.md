@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:19:10.698775
 
 # GET OneAgent JavaScript tag
 
-# GET OneAgent JavaScript tag
 
 * Reference
 * Updated on Sep 18, 2025

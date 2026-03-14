@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:00.819854
 
 # Мониторинг Google Cloud Storage Transfer Service
 
-# Мониторинг Google Cloud Storage Transfer Service
 
 * Latest Dynatrace
 * How-to guide

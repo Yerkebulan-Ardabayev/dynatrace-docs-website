@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:54.216194
 
 # Applications API - GET all apps
 
-# Applications API - GET all apps
 
 * Reference
 * Updated on Mar 22, 2023
@@ -143,149 +142,112 @@ A list of constraint violations
 [
 
 
-
 {
-
 
 
 "applicationMatchTarget": "DOMAIN",
 
 
-
 "applicationType": "AGENTLESS_MONITORING",
-
 
 
 "customizedName": "string",
 
 
-
 "discoveredName": "string",
-
 
 
 "displayName": "string",
 
 
-
 "entityId": "string",
-
 
 
 "firstSeenTimestamp": 1,
 
 
-
 "fromRelationships": {
-
 
 
 "calls": [
 
 
-
 "string"
 
 
-
 ]
-
 
 
 },
 
 
-
 "lastSeenTimestamp": 1,
-
 
 
 "managementZones": [
 
 
-
 {
-
 
 
 "description": "Dynatrace entity for the REST API example",
 
 
-
 "id": "6a98d7bc-abb9-44f8-ae6a-73e68e71812a",
-
 
 
 "name": "Dynatrace entity"
 
 
-
 }
 
 
-
 ],
-
 
 
 "ruleAppliedMatchType": "ALL_URLS_AND_DOMAINS",
 
 
-
 "ruleAppliedPattern": "string",
-
 
 
 "tags": [
 
 
-
 {
-
 
 
 "context": "AWS",
 
 
-
 "key": "string",
-
 
 
 "value": "string"
 
 
-
 }
 
 
-
 ],
-
 
 
 "toRelationships": {
 
 
-
 "monitors": [
-
 
 
 "string"
 
 
-
 ]
 
 
-
 }
 
 
-
 }
-
 
 
 ]
@@ -293,55 +255,42 @@ A list of constraint violations
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -361,9 +310,7 @@ The result is truncated to three entries.
 curl -X GET \
 
 
-
 https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications/ \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -381,405 +328,304 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications
 [
 
 
-
 {
-
 
 
 "entityId": "APPLICATION-EA7C4B59F27D43EB",
 
 
-
 "displayName": "RUM Default Application",
-
 
 
 "customizedName": "RUM Default Application",
 
 
-
 "discoveredName": "RUM Default Application",
-
 
 
 "firstSeenTimestamp": 1422282024216,
 
 
-
 "lastSeenTimestamp": 1538579528065,
-
 
 
 "tags": [
 
 
-
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "Mytag"
 
 
-
 },
-
 
 
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "Test"
 
 
-
 }
-
 
 
 ],
 
 
-
 "fromRelationships": {
 
 
-
 "calls": [
-
 
 
 "SERVICE-FFE4B7A6D72F2CAC"
 
 
-
 ]
-
 
 
 },
 
 
-
 "toRelationships": {},
-
 
 
 "applicationType": "DEFAULT",
 
 
-
 "ruleAppliedPattern": "http",
-
 
 
 "managementZones": [
 
 
-
 {
-
 
 
 "id": "-6239538939987181652",
 
 
-
 "name": "allTypes"
-
 
 
 },
 
 
-
 {
-
 
 
 "id": "-2519468841583898843",
 
 
-
 "name": "app name exists"
-
 
 
 },
 
 
-
 {
-
 
 
 "id": "4485554873951847460",
 
 
-
 "name": "Applications except easyTravel"
-
 
 
 }
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "entityId": "APPLICATION-BBFA55551D507E2B",
 
 
-
 "displayName": "easyTravel Ionic Web",
-
 
 
 "discoveredName": "easyTravel Ionic Web",
 
 
-
 "firstSeenTimestamp": 1528695861873,
-
 
 
 "lastSeenTimestamp": 1538572321269,
 
 
-
 "tags": [],
-
 
 
 "fromRelationships": {
 
 
-
 "calls": [
-
 
 
 "SERVICE-ED0B103392AC86BF"
 
 
-
 ]
-
 
 
 },
 
 
-
 "toRelationships": {},
-
 
 
 "applicationType": "RUMONLY",
 
 
-
 "managementZones": [
 
 
-
 {
-
 
 
 "id": "-6239538939987181652",
 
 
-
 "name": "allTypes"
-
 
 
 },
 
 
-
 {
-
 
 
 "id": "-4085081632192243904",
 
 
-
 "name": "easyTravel"
-
 
 
 }
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "entityId": "MOBILE_APPLICATION-752C288D59734C79",
 
 
-
 "displayName": "easyTravel Demo",
-
 
 
 "customizedName": "easyTravel Demo",
 
 
-
 "discoveredName": "752c288d-5973-4c79-b7d1-3a49d4d42ea0",
-
 
 
 "firstSeenTimestamp": 1469613941393,
 
 
-
 "lastSeenTimestamp": 1538654940201,
-
 
 
 "tags": [
 
 
-
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "portal"
 
 
-
 },
 
 
-
 {
-
 
 
 "context": "CONTEXTLESS",
 
 
-
 "key": "easyTravel"
-
 
 
 }
 
 
-
 ],
-
 
 
 "fromRelationships": {
 
 
-
 "calls": [
-
 
 
 "SERVICE-ED0B103392AC86BF"
 
 
-
 ]
-
 
 
 },
 
 
-
 "toRelationships": {},
-
 
 
 "mobileOsFamily": [
 
 
-
 "ANDROID",
-
 
 
 "IOS",
 
 
-
 "WINDOWS"
-
 
 
 ],
 
 
-
 "managementZones": [
-
 
 
 {
 
 
-
 "id": "-4085081632192243904",
-
 
 
 "name": "easyTravel"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 ]

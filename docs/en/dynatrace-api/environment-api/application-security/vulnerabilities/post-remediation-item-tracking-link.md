@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:24:04.456847
 
 # Vulnerabilities API - POST remediation item tracking links
 
-# Vulnerabilities API - POST remediation item tracking links
 
 * Reference
 * Updated on Sep 25, 2024
@@ -61,21 +60,16 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "deletes": [
-
 
 
 "string"
 
 
-
 ],
 
 
-
 "updates": {}
-
 
 
 }
@@ -124,53 +118,40 @@ A list of constraint violations
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -193,61 +174,46 @@ Goal: Make the endpoint link the ticket with the remediation item. The following
 curl -X 'POST' 'https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/2919200225913269102/remediationItems/trackingLinks' \
 
 
-
 -H 'accept: */*' \
-
 
 
 -H 'Authorization: Api-Token [your_token]' \
 
 
-
 -H 'Content-Type: application/json; charset=utf-8' \
-
 
 
 -d '{
 
 
-
 "updates": {
-
 
 
 "PROCESS_GROUP-46C0E12D9B0EF2D9": {
 
 
-
 "displayName": "TICKET-46C0E12D9B0EF2D9",
-
 
 
 "url": "https://example.com/TICKET-46C0E12D9B0EF2D9"
 
 
-
 },
-
 
 
 "PROCESS_GROUP-549E6AD75BD598EC": {
 
 
-
 "displayName": "TICKET-549E6AD75BD598EC",
-
 
 
 "url": "https://example.com/TICKET-549E6AD75BD598EC"
 
 
-
 }
 
 
-
 }
-
 
 
 }'
@@ -265,45 +231,34 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 {
 
 
-
 "updates": {
-
 
 
 "PROCESS_GROUP-46C0E12D9B0EF2D9": {
 
 
-
 "displayName": "TICKET-46C0E12D9B0EF2D9",
-
 
 
 "url": "https://example.com/TICKET-46C0E12D9B0EF2D9"
 
 
-
 },
-
 
 
 "PROCESS_GROUP-549E6AD75BD598EC": {
 
 
-
 "displayName": "TICKET-549E6AD75BD598EC",
-
 
 
 "url": "https://example.com/TICKET-549E6AD75BD598EC"
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -323,29 +278,22 @@ Remove tracking links from `"PROCESS_GROUP-46C0E12D9B0EF2D9"` and `"PROCESS_GROU
 curl -X 'POST' 'https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/2919200225913269102/remediationItems/trackingLinks' \
 
 
-
 -H 'accept: */*' \
-
 
 
 -H 'Authorization: Api-Token [your_token]' \
 
 
-
 -H 'Content-Type: application/json; charset=utf-8' \
-
 
 
 -d '{
 
 
-
 "deletes": ["PROCESS_GROUP-46C0E12D9B0EF2D9", "PROCESS_GROUP-549E6AD75BD598EC"]
 
 
-
 }
-
 
 
 }'
@@ -363,9 +311,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 {
 
 
-
 "deletes": ["PROCESS_GROUP-46C0E12D9B0EF2D9", "PROCESS_GROUP-549E6AD75BD598EC"]
-
 
 
 }

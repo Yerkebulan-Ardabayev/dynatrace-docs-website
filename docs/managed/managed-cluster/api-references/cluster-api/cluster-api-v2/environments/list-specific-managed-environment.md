@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # List properties for specific environment
 
-# List properties for specific environment
 
 * Published Mar 09, 2021
 
@@ -289,33 +288,25 @@ Maximum number of user actions generated per minute on environment level. Can be
 {
 
 
-
 "name": "example environment",
-
 
 
 "state": "ENABLED",
 
 
-
 "tags": [
-
 
 
 "tag1",
 
 
-
 "tag2"
-
 
 
 ],
 
 
-
 "trial": false
-
 
 
 }
@@ -343,209 +334,157 @@ https://myManaged.cluster.com/api/cluster/v2/environments/19a963a7-b19f-4382-964
 {
 
 
-
 "name": "MyNewTeam",
-
 
 
 "id": "19a963a7-b19f-4382-964a-4df674c8eb8e",
 
 
-
 "trial": false,
-
 
 
 "state": "ENABLED",
 
 
-
 "tags": [
-
 
 
 "owner:john.wicked@dynatrace.com",
 
 
-
 "department:finance"
-
 
 
 ],
 
 
-
 "creationDate": "2021-03-09T08:43:32.496Z",
-
 
 
 "quotas": {
 
 
-
 "hostUnits": {
-
 
 
 "maxLimit": null,
 
 
-
 "currentUsage": 0
 
 
-
 },
-
 
 
 "demUnits": {
 
 
-
 "monthlyLimit": null,
-
 
 
 "annualLimit": null,
 
 
-
 "consumedThisMonth": 0,
-
 
 
 "consumedThisYear": 0
 
 
-
 },
-
 
 
 "userSessions": {
 
 
-
 "totalMonthlyLimit": null,
-
 
 
 "totalAnnualLimit": null,
 
 
-
 "totalConsumedThisMonth": 0,
-
 
 
 "totalConsumedThisYear": 0,
 
 
-
 "consumedMobileSessionsThisMonth": 0,
-
 
 
 "consumedMobileSessionsThisYear": 0,
 
 
-
 "consumedUserSessionsWithWebSessionReplayThisMonth": 0,
-
 
 
 "consumedUserSessionsWithWebSessionReplayThisYear": 0,
 
 
-
 "consumedUserSessionsWithMobileSessionReplayThisMonth": 0,
-
 
 
 "consumedUserSessionsWithMobileSessionReplayThisYear": 0
 
 
-
 },
-
 
 
 "sessionProperties": {
 
 
-
 "consumedThisMonth": 0,
-
 
 
 "consumedThisYear": 0
 
 
-
 },
-
 
 
 "syntheticMonitors": {
 
 
-
 "monthlyLimit": null,
-
 
 
 "annualLimit": null,
 
 
-
 "consumedThisMonth": 0,
-
 
 
 "consumedThisYear": 0
 
 
-
 },
-
 
 
 "customMetrics": null,
 
 
-
 "davisDataUnits": {
-
 
 
 "monthlyLimit": null,
 
 
-
 "annualLimit": null,
-
 
 
 "consumedThisMonth": 0,
 
 
-
 "consumedThisYear": 0
-
 
 
 },
 
 
-
 "logMonitoring": null
 
 
-
 }
-
 
 
 }

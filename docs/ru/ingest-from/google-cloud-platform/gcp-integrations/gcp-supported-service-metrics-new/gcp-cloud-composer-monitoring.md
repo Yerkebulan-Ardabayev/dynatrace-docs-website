@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:01.937241
 
 # Мониторинг Google Cloud Composer
 
-# Мониторинг Google Cloud Composer
 
 * Последняя версия Dynatrace
 * Практическое руководство

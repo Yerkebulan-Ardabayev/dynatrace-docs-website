@@ -6,7 +6,6 @@ scraped: 2026-02-18T05:48:39.343910
 
 # Отправка уведомлений в Slack о проблемах
 
-# Отправка уведомлений в Slack о проблемах
 
 * Latest Dynatrace
 * Tutorial
@@ -74,141 +73,106 @@ scraped: 2026-02-18T05:48:39.343910
       {
 
 
-
       "blocks": [
 
 
-
       {
-
 
 
       "type": "header",
 
 
-
       "text": {
-
 
 
       "type": "plain_text",
 
 
-
       "text": "{{ ':white_check_mark:' if event()['event.status'] == 'CLOSED' else ':warning:' }} {{ 'RESOLVED' if event()['event.status'] == 'CLOSED' else 'OPEN' }} - {{ event()['event.name']}}",
-
 
 
       "emoji": true
 
 
-
       }
-
 
 
       },
 
 
-
       {
-
 
 
       "type": "section",
 
 
-
       "text": {
 
 
-
       "type": "mrkdwn",
-
 
 
       "text": "- *Problem link*: <{{ environment().url }}/ui/intent/dynatrace.davis.problems/view-problem#%7B%22event.id%22%3A%22{{ event()['event.id'] }}%22,%22event.kind%22%3A%22{{event()['event.kind']}}%22%7D|{{ event()['display_id'] }}> \n- *Impacted Entities:* `{{ event()['affected_entity_ids'] }}`\n- *Problem duration:* `{{ (event().get('resolved_problem_duration', 0) | int) / 1000000 / 1000 / 60 }} minutes`"
 
 
-
       }
-
 
 
       },
 
 
-
       {
-
 
 
       "type": "section",
 
 
-
       "text": {
 
 
-
       "type": "mrkdwn",
-
 
 
       "text": {{ ('>' ~ event()['event.description']) | replace('\n', '\n>') | to_json }}
 
 
-
       }
-
 
 
       },
 
 
-
       {
-
 
 
       "type": "divider"
 
 
-
       },
-
 
 
       {
 
 
-
       "type": "section",
-
 
 
       "text": {
 
 
-
       "type": "mrkdwn",
-
 
 
       "text": "*Workflow link*: <{{ environment().url }}/ui/apps/dynatrace.automations/workflows/{{ execution().workflow.id }}|Workflow>"
 
 
-
       }
 
 
-
       }
-
 
 
       ]
-
 
 
       }

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:43.227674
 
 # Расширение трассировок с помощью OpenTelemetry
 
-# Расширение трассировок с помощью OpenTelemetry
 
 * Latest Dynatrace
 * 7-min read

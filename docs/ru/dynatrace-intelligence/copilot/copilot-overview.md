@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:22.200079
 
 # Обзор агентного и генеративного ИИ Dynatrace Intelligence
 
-# Обзор агентного и генеративного ИИ Dynatrace Intelligence
 
 * Latest Dynatrace
 * Описание

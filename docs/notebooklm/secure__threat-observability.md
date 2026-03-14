@@ -14,7 +14,6 @@ scraped: 2026-03-06T21:38:10.774019
 
 # Threat Observability concepts
 
-# Threat Observability concepts
 
 * Latest Dynatrace
 * Explanation
@@ -84,13 +83,10 @@ Security events are a type of [security-related data](#security-data) consisting
   fetch security.events
 
 
-
   | parse dt.raw_data, """JSON:dt.raw_data"""
 
 
-
   | filter isNotNull(dt.raw_data[vulnerability.title])
-
 
 
   | fields dt.raw_data[vulnerability.title]
@@ -154,7 +150,6 @@ Findings include details such as:
 ## Compliance events
 
 
-
 A compliance event is a type of security event specific to the [Security Posture Management capability](../ru/secure/application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."). It represents the assessment of a resource in the context of the rule specified in the compliance standard.
 
 | Event types | Description |
@@ -180,13 +175,10 @@ To retrieve detection finding events, use a query such as the following:
 fetch security.events
 
 
-
 | filter event.kind == "SECURITY_EVENT" AND event.type == "DETECTION_FINDING"
 
 
-
 | filter product.name == "Runtime Application Protection"
-
 
 
 | makeTimeseries count()
@@ -232,7 +224,6 @@ scraped: 2026-03-06T21:20:31.345755
 
 # DQL examples for security data
 
-# DQL examples for security data
 
 * Latest Dynatrace
 * How-to guide
@@ -254,49 +245,37 @@ Get the total number of open, non-muted vulnerabilities in your environment.
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for open non-muted vulnerabilities
-
 
 
 | filter vulnerability.resolution.status=="OPEN"
 
 
-
 AND vulnerability.parent.mute.status!="MUTED"
-
 
 
 AND vulnerability.mute.status!="MUTED"
 
 
-
 // count unique vulnerabilities
-
 
 
 | summarize {`Open vulnerabilities`=countDistinctExact(vulnerability.display_id)}
@@ -316,53 +295,40 @@ Get the total number of critical open, non-muted vulnerabilities in your environ
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for critical open non-muted vulnerabilities
-
 
 
 | filter vulnerability.resolution.status=="OPEN"
 
 
-
 AND vulnerability.parent.mute.status!="MUTED"
-
 
 
 AND vulnerability.mute.status!="MUTED"
 
 
-
 AND vulnerability.risk.level=="CRITICAL"
 
 
-
 // count unique vulnerabilities
-
 
 
 | summarize {`Critical open vulnerabilities`=countDistinctExact(vulnerability.display_id)}
@@ -382,53 +348,40 @@ Get the total number of open, non-muted vulnerabilities in a specific management
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for open non-muted vulnerabilities in a specific management zone
-
 
 
 | filter vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 AND in("AppSec: Unguard", affected_entity.management_zones.names)
 
 
-
 // count unique vulnerabilities
-
 
 
 | summarize {`Open vulnerabilities (unguard)`=countDistinctExact(vulnerability.display_id)}
@@ -448,53 +401,40 @@ Get the total number of open, non-muted vulnerabilities with public internet exp
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for open non-muted vulnerabilities with public internet exposure
-
 
 
 | filter vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 AND vulnerability.davis_assessment.exposure_status=="PUBLIC_NETWORK"
 
 
-
 // count unique vulnerabilities
-
 
 
 | summarize {`With internet exposure`=countDistinctExact(vulnerability.display_id)}
@@ -514,49 +454,37 @@ Get the total number of affected entities in your environment.
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for open non-muted vulnerabilities
-
 
 
 | filter vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 // count unique entities
-
 
 
 | summarize {`Affected entities`=countDistinctExact(affected_entity.id)}
@@ -576,53 +504,40 @@ Get the total number of affected process groups in your environment.
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for open non-muted vulnerabilities detected in running processes
-
 
 
 | filter vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 AND affected_entity.type=="PROCESS_GROUP"
 
 
-
 // count unique entities
-
 
 
 | summarize {`Affected process groups`=countDistinctExact(affected_entity.id)}
@@ -642,45 +557,34 @@ Get the total number of affected, non-muted entities over time (in three-hour bu
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for open non-muted vulnerabilities
-
 
 
 AND vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 // count unique entities for each timestamp bucket of 3h
 
 
-
 | sort timestamp desc
-
 
 
 | summarize {entities=countDistinctExact(affected_entity.id)}, by: {timestamp=bin(timestamp, 3h)}
@@ -700,49 +604,37 @@ Get the total number of hosts that are indirectly affected by open vulnerabiliti
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for open non-muted vulnerabilities
-
 
 
 |filter  vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 // count hosts
-
 
 
 | summarize {`Related hosts`=arraySize(collectDistinct(related_entities.hosts.ids, expand:true))}
@@ -755,7 +647,6 @@ AND vulnerability.mute.status != "MUTED"
 ### Open vulnerabilities by risk level
 
 
-
 Get a count of open vulnerabilities split by risk levels.
 
 **Query example**:
@@ -764,85 +655,64 @@ Get a count of open vulnerabilities split by risk levels.
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for open non-muted vulnerabilities
-
 
 
 | filter vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 // summarize score per vulnerability
-
 
 
 | summarize {vulnerability.risk.score=takeMax(vulnerability.risk.score)}, by: {vulnerability.display_id}
 
 
-
 // map the risk level
-
 
 
 | fieldsAdd vulnerability.risk.level=if(vulnerability.risk.score>=9,"CRITICAL",
 
 
-
 else:if(vulnerability.risk.score>=7,"HIGH",
-
 
 
 else:if(vulnerability.risk.score>=4,"MEDIUM",
 
 
-
 else:if(vulnerability.risk.score>=0.1,"LOW",
-
 
 
 else:"NONE"))))
 
 
-
 // count vulnerabilities per risk level
 
 
-
 | summarize { Vulnerabilities=count(), maxScore=takeMax(vulnerability.risk.score) }, by:{vulnerability.risk.level}
-
 
 
 | sort maxScore, direction:"descending"
@@ -862,57 +732,43 @@ Get a count of open vulnerabilities split by type.
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for open non-muted vulnerabilities
-
 
 
 | filter vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 // count vulnerabilities per type
-
 
 
 | summarize { Vulnerabilities=countDistinctExact(vulnerability.display_id) }, by:{vulnerability.type}
 
 
-
 | sort Vulnerabilities, direction:"descending"
-
 
 
 | limit 10
@@ -932,41 +788,31 @@ Get the open vulnerability count over time, in three-hour buckets.
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for open non-muted vulnerabilities
-
 
 
 AND vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 | sort timestamp desc
-
 
 
 | summarize {Open=countDistinctExact(vulnerability.display_id)}, by: {timestamp=bin(timestamp,3h)}
@@ -986,125 +832,94 @@ Get the open vulnerabilities on a specific library (in this example, `log4j`).
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for open non-muted vulnerabilities
-
 
 
 | filter vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 // filter by the vulnerable library/component name
-
 
 
 AND contains(affected_entity.vulnerable_component.name,"log4j",caseSensitive:false)
 
 
-
 // now summarize on the vulnerability level
-
 
 
 | summarize{
 
 
-
 vulnerability.risk.score=round(takeMax(vulnerability.risk.score),decimals:1),
-
 
 
 vulnerability.title=takeFirst(vulnerability.title),
 
 
-
 vulnerability.references.cve=takeFirst(vulnerability.references.cve),
-
 
 
 last_detected=coalesce(takeMax(vulnerability.resolution.change_date),takeMax(vulnerability.parent.first_seen)),
 
 
-
 affected_entities=countDistinctExact(affected_entity.id),
-
 
 
 vulnerable_function_in_use=if(in("IN_USE",collectArray(vulnerability.davis_assessment.vulnerable_function_status)),true, else:false),
 
 
-
 public_internet_exposure=if(in("PUBLIC_NETWORK",collectArray(vulnerability.davis_assessment.exposure_status)),true,else:false),
-
 
 
 public_exploit_available=if(in("AVAILABLE",collectArray(vulnerability.davis_assessment.exploit_status)),true,else:false),
 
 
-
 data_assets_within_reach=if(in("REACHABLE",collectArray(vulnerability.davis_assessment.data_assets_status)),true,else:false)
-
 
 
 }, by: {vulnerability.display_id}
 
 
-
 // map the risk level
-
 
 
 | fieldsAdd vulnerability.risk.level=if(vulnerability.risk.score>=9,"CRITICAL",
 
 
-
 else:if(vulnerability.risk.score>=7,"HIGH",
-
 
 
 else:if(vulnerability.risk.score>=4,"MEDIUM",
 
 
-
 else:if(vulnerability.risk.score>=0.1,"LOW",
 
 
-
 else:"NONE"))))
-
 
 
 | sort   {vulnerability.risk.score, direction:"descending"}, {affected_entities, direction:"descending"}
@@ -1124,125 +939,94 @@ Get the open vulnerabilities directly or indirectly affecting a specific host (i
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for open non-muted vulnerabilities
-
 
 
 | filter vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 // filter by the host name of the related/affected host
-
 
 
 AND in("easytravel-demo2",related_entities.hosts.names) OR affected_entity.name=="easytravel-demo2"
 
 
-
 // now summarize on the vulnerability level
-
 
 
 | summarize{
 
 
-
 vulnerability.risk.score=round(takeMax(vulnerability.risk.score),decimals:1),
-
 
 
 vulnerability.title=takeFirst(vulnerability.title),
 
 
-
 vulnerability.references.cve=takeFirst(vulnerability.references.cve),
-
 
 
 last_detected=coalesce(takeMax(vulnerability.resolution.change_date),takeMax(vulnerability.parent.first_seen)),
 
 
-
 affected_entities=countDistinctExact(affected_entity.id),
-
 
 
 vulnerable_function_in_use=if(in("IN_USE",collectArray(vulnerability.davis_assessment.vulnerable_function_status)),true, else:false),
 
 
-
 public_internet_exposure=if(in("PUBLIC_NETWORK",collectArray(vulnerability.davis_assessment.exposure_status)),true,else:false),
-
 
 
 public_exploit_available=if(in("AVAILABLE",collectArray(vulnerability.davis_assessment.exploit_status)),true,else:false),
 
 
-
 data_assets_within_reach=if(in("REACHABLE",collectArray(vulnerability.davis_assessment.data_assets_status)),true,else:false)
-
 
 
 }, by: {vulnerability.display_id}
 
 
-
 // map the risk level
-
 
 
 | fieldsAdd vulnerability.risk.level=if(vulnerability.risk.score>=9,"CRITICAL",
 
 
-
 else:if(vulnerability.risk.score>=7,"HIGH",
-
 
 
 else:if(vulnerability.risk.score>=4,"MEDIUM",
 
 
-
 else:if(vulnerability.risk.score>=0.1,"LOW",
 
 
-
 else:"NONE"))))
-
 
 
 | sort {vulnerability.risk.score, direction:"descending"}, {affected_entities, direction:"descending"}
@@ -1255,7 +1039,6 @@ else:"NONE"))))
 ### Vulnerabilities on an application
 
 
-
 Get the open vulnerabilities affecting a specific application (in this example, `www.easytravel.com`).
 
 **Query example**:
@@ -1264,125 +1047,94 @@ Get the open vulnerabilities affecting a specific application (in this example, 
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for open non-muted vulnerabilities
-
 
 
 | filter vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 // filter by name of the related applications
-
 
 
 AND in("www.easytravel.com",related_entities.applications.names)
 
 
-
 // now summarize on the vulnerability level
-
 
 
 | summarize{
 
 
-
 vulnerability.risk.score=round(takeMax(vulnerability.risk.score),decimals:1),
-
 
 
 vulnerability.title=takeFirst(vulnerability.title),
 
 
-
 vulnerability.references.cve=takeFirst(vulnerability.references.cve),
-
 
 
 last_detected=coalesce(takeMax(vulnerability.resolution.change_date),takeMax(vulnerability.parent.first_seen)),
 
 
-
 affected_entities=countDistinctExact(affected_entity.id),
-
 
 
 vulnerable_function_in_use=if(in("IN_USE",collectArray(vulnerability.davis_assessment.vulnerable_function_status)),true, else:false),
 
 
-
 public_internet_exposure=if(in("PUBLIC_NETWORK",collectArray(vulnerability.davis_assessment.exposure_status)),true,else:false),
-
 
 
 public_exploit_available=if(in("AVAILABLE",collectArray(vulnerability.davis_assessment.exploit_status)),true,else:false),
 
 
-
 data_assets_within_reach=if(in("REACHABLE",collectArray(vulnerability.davis_assessment.data_assets_status)),true,else:false)
-
 
 
 }, by: {vulnerability.display_id}
 
 
-
 // map the risk level
-
 
 
 | fieldsAdd vulnerability.risk.level=if(vulnerability.risk.score>=9,"CRITICAL",
 
 
-
 else:if(vulnerability.risk.score>=7,"HIGH",
-
 
 
 else:if(vulnerability.risk.score>=4,"MEDIUM",
 
 
-
 else:if(vulnerability.risk.score>=0.1,"LOW",
 
 
-
 else:"NONE"))))
-
 
 
 | sort   {vulnerability.risk.score, direction:"descending"}, {affected_entities, direction:"descending"}
@@ -1402,69 +1154,52 @@ Get the top 10 affected entities by the number of open vulnerabilities.
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for open non-muted vulnerabilities
-
 
 
 | filter vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 | summarize {
-
 
 
 `Affected entity name` = takeFirst(affected_entity.name),
 
 
-
 Type = takeFirst(affected_entity.type),
-
 
 
 Vulnerabilities = countDistinctExact(vulnerability.display_id)
 
 
-
 }, by: {dt.source_entity=affected_entity.id}
 
 
-
 | sort {Vulnerabilities, direction:"descending"}
-
 
 
 | limit 10
@@ -1484,105 +1219,79 @@ Get the top five process groups by the count of open vulnerabilities, with their
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for open non-muted vulnerabilities
-
 
 
 | filter vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 AND affected_entity.type=="PROCESS_GROUP"
-
 
 
 // summarize per process group
 
 
-
 | summarize {
-
 
 
 `Affected entity name` = takeFirst(affected_entity.name),
 
 
-
 Type = takeFirst(affected_entity.type),
-
 
 
 Vulnerabilities = countDistinctExact(vulnerability.display_id)
 
 
-
 }, by: {dt.source_entity=affected_entity.id}
-
 
 
 | sort {Vulnerabilities, direction:"descending"}
 
 
-
 | limit 10
-
 
 
 // add ownership information
 
 
-
 | lookup [
-
 
 
 fetch dt.entity.process_group
 
 
-
 | parse toString(tags), "LD ('owner:'|'owner\\\\:') (SPACE)? LD:Team ('\"')"
-
 
 
 | fields id, Team=coalesce(Team, "-")
 
 
-
 ], sourceField:dt.source_entity, lookupField:id, fields:{Team}
-
 
 
 | sort Vulnerabilities, direction:"descending"
@@ -1602,89 +1311,67 @@ Get the hosts that are indirectly related to open vulnerabilities on a specific 
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for open non-muted vulnerabilities
-
 
 
 | filter vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 AND related_entities.hosts.count > 0
-
 
 
 // filter by the vulnerable component name
 
 
-
 AND contains(affected_entity.vulnerable_component.name,"tomcat")
-
 
 
 | expand entity_id=related_entities.hosts.ids
 
 
-
 | summarize Vulnerabilities=countDistinctExact(vulnerability.display_id), by: {entity_id}
-
 
 
 //add ownership information
 
 
-
 | lookup [
-
 
 
 fetch dt.entity.host
 
 
-
 | parse toString(tags), "LD ('owner:'|'owner\\\\:') (SPACE)? LD:Team ('\"')"
-
 
 
 | fields id, Host=entity.name, Team=coalesce(Team, "-")
 
 
-
 ], sourceField:entity_id, lookupField:id, fields: {Host,Team}
-
 
 
 | sort Vulnerabilities, direction:"descending"
@@ -1704,101 +1391,76 @@ Get the vulnerable components of a specific host (in this example, `HOST-4CF0F65
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for open non-muted vulnerabilities
-
 
 
 | filter vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 // filter by ID of the related or affected host
-
 
 
 AND in("HOST-DBF63A01C27E4B50",related_entities.hosts.ids) or affected_entity.id=="HOST-DBF63A01C27E4B50"
 
 
-
 | summarize{
-
 
 
 entities=countDistinctExact(affected_entity.id),
 
 
-
 vulnerable_functions=arraySize(collectDistinct(affected_entity.vulnerable_functions, expand:true)),
-
 
 
 vulnerable_component.name=takeAny(affected_entity.vulnerable_component.name)
 
 
-
 }, by: {dt.entity.software_component=affected_entity.vulnerable_component.id}
-
 
 
 | filterOut isNull(dt.entity.software_component)
 
 
-
 // add component information
-
 
 
 | lookup [
 
 
-
 fetch dt.entity.software_component
-
 
 
 | fieldsAdd softwareComponentFileName
 
 
-
 ], sourceField:dt.entity.software_component, lookupField:id, fields:{softwareComponentFileName}
 
 
-
 | fields dt.entity.software_component, vulnerable_component.name, softwareComponentFileName, entities, vulnerable_functions
-
 
 
 | sort {entities, direction:"descending"}, {vulnerable_functions, direction:"descending"}
@@ -1818,65 +1480,49 @@ Get the vulnerable functions of a specific software component (in this example, 
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents_builtin"
-
 
 
 AND event.provider=="Dynatrace"
 
 
-
 AND event.type=="VULNERABILITY_STATE_REPORT_EVENT"
-
 
 
 AND event.level=="ENTITY"
 
 
-
 // filter for the latest snapshot per entity
-
 
 
 | dedup {vulnerability.display_id, affected_entity.id}, sort:{timestamp desc}
 
 
-
 // filter for open non-muted vulnerabilities
-
 
 
 | filter vulnerability.resolution.status == "OPEN"
 
 
-
 AND vulnerability.parent.mute.status != "MUTED"
-
 
 
 AND vulnerability.mute.status != "MUTED"
 
 
-
 // filter for the software component ID
-
 
 
 AND affected_entity.vulnerable_component.id=="SOFTWARE_COMPONENT-1D466FB7ADEBF92E"
 
 
-
 | expand vulnerable_function=affected_entity.vulnerable_functions
-
 
 
 | filter isNotNull(vulnerable_function)
 
 
-
 | summarize{Usages=countIf(in(vulnerable_function,affected_entity.vulnerable_functions))}, by: {vulnerable_function}
-
 
 
 | sort {Usages, direction:"descending"}
@@ -1891,7 +1537,6 @@ AND affected_entity.vulnerable_component.id=="SOFTWARE_COMPONENT-1D466FB7ADEBF92
 ### Total number of critical vulnerability findings
 
 
-
 Get the total number of critical vulnerability findings ingested into Dynatrace.
 
 **Query example**:
@@ -1900,33 +1545,25 @@ Get the total number of critical vulnerability findings ingested into Dynatrace.
 fetch security.events
 
 
-
 | filter dt.system.bucket == "default_securityevents"
-
 
 
 AND event.type == "VULNERABILITY_FINDING"
 
 
-
 AND isNotNull(component.name)
-
 
 
 // latest findings per affected object, vulnerability and component
 
 
-
 | dedup {object.id, vulnerability.id, component.name, component.version}, sort: {timestamp desc}
-
 
 
 // aggregation and custom filtering
 
 
-
 | filter dt.security.risk.level=="CRITICAL"
-
 
 
 | summarize {Vulnerabilities=countDistinctExact(vulnerability.id)}
@@ -1946,33 +1583,25 @@ Get the total number of container images containing vulnerability findings inges
 fetch security.events
 
 
-
 | filter dt.system.bucket == "default_securityevents"
-
 
 
 AND event.type == "VULNERABILITY_FINDING"
 
 
-
 AND isNotNull(component.name)
-
 
 
 // latest findings per affected object, vulnerability and component
 
 
-
 | dedup {object.id, vulnerability.id, component.name, component.version,
-
 
 
 container_image.registry, container_image.repository, container_image.tags}, sort: {timestamp desc}
 
 
-
 // aggregation and custom filtering
-
 
 
 | summarize {containerImages=countDistinctExact(container_image.digest)}
@@ -1992,29 +1621,22 @@ Get the total number of vulnerable components in the container images containing
 fetch security.events
 
 
-
 | filter dt.system.bucket == "default_securityevents"
-
 
 
 AND event.type == "VULNERABILITY_FINDING"
 
 
-
 AND isNotNull(component.name)
-
 
 
 // latest findings per affected object, vulnerability and component
 
 
-
 | dedup {object.id, vulnerability.id, component.name, component.version}, sort: {timestamp desc}
 
 
-
 // aggregation and custom filtering
-
 
 
 | summarize {components=countDistinctExact(component.name)}
@@ -2034,29 +1656,22 @@ Get the most recent vulnerability findings ingested into Dynatrace.
 fetch security.events
 
 
-
 // data access
-
 
 
 | filter dt.system.bucket == "default_securityevents"
 
 
-
 AND event.type == "VULNERABILITY_FINDING"
-
 
 
 AND isNotNull(component.name)
 
 
-
 // latest findings per affected object, vulnerability and component
 
 
-
 | dedup {object.id, vulnerability.id, component.name, component.version}, sort: {timestamp desc}
-
 
 
 | sort timestamp desc
@@ -2076,17 +1691,13 @@ Get the total number of ingested container images that have been scanned.
 fetch security.events
 
 
-
 | filter dt.system.bucket == "default_securityevents"
-
 
 
 | filter object.type == "CONTAINER_IMAGE" // includes both SCAN_EVENTS and VULNERABILITY_FINDINGS without scan events
 
 
-
 | dedup {container_image.digest}, sort: {timestamp desc}
-
 
 
 | summarize {containerImages=count()}
@@ -2106,17 +1717,13 @@ Get the total number of scan events from ingested container images.
 fetch security.events
 
 
-
 | filter dt.system.bucket == "default_securityevents"
-
 
 
 | filter event.type == "VULNERABILITY_SCAN"
 
 
-
 AND object.type == "CONTAINER_IMAGE"
-
 
 
 | summarize {scanEvents=count()}
@@ -2138,37 +1745,28 @@ Get the latest compliance results of supported standards for all systems [covere
 fetch security.events
 
 
-
 | filter dt.system.bucket == "default_securityevents_builtin"
-
 
 
 AND event.type == "COMPLIANCE_SCAN_COMPLETED"
 
 
-
 // filter for the latest assessment
-
 
 
 | dedup {object.name}, sort:{timestamp desc}
 
 
-
 // parse the compliance percentage from json
-
 
 
 | parse `scan.result.summary_json`, """JSON{JSON_ARRAY{JSON{ STRING:standardCode, INT:compliancePercentage }}:standardResultSummaries}(flat=true)"""
 
 
-
 | expand standardResultSummaries
 
 
-
 | fieldsFlatten standardResultSummaries
-
 
 
 | fields timestamp, object.name, standard = standardResultSummaries.standardCode, compliance = standardResultSummaries.compliancePercentage
@@ -2188,37 +1786,28 @@ Get the historical compliance results for a standard (in this case, DORA) for al
 fetch security.events
 
 
-
 | filter dt.system.bucket == "default_securityevents_builtin"
-
 
 
 AND event.type == "COMPLIANCE_SCAN_COMPLETED"
 
 
-
 // parse the compliance percentage from json
-
 
 
 | parse `scan.result.summary_json`, """JSON{JSON_ARRAY{JSON{ STRING:standardCode, INT:compliancePercentage }}:standardResultSummaries}(flat=true)"""
 
 
-
 | expand standardResultSummaries
-
 
 
 | fieldsFlatten standardResultSummaries
 
 
-
 // filter for the specific standard
 
 
-
 | filter standardResultSummaries.standardCode == "DORA"
-
 
 
 | fields timestamp, object.name, standardResultSummaries.compliancePercentage
@@ -2240,137 +1829,103 @@ This results in a view similar to that displayed in ![xSPM](https://dt-cdn.net/i
 fetch security.events
 
 
-
 | filter dt.system.bucket == "default_securityevents_builtin"
-
 
 
 AND event.type == "COMPLIANCE_FINDING"
 
 
-
 // filter for the latest rule assessment results in the timeframe
-
 
 
 | join [
 
 
-
 fetch security.events
-
 
 
 | filter dt.system.bucket == "default_securityevents_builtin"
 
 
-
 AND event.type == "COMPLIANCE_SCAN_COMPLETED"
-
 
 
 // filter for desired system
 
 
-
 AND object.name == "demo-kspm"
-
 
 
 | dedup object.name, sort: { timestamp desc }
 
 
-
 | fields scan.id
-
 
 
 ], on: {scan.id}
 
 
-
 // summarize findings on rule level
-
 
 
 | summarize {
 
 
-
 compliance.rule.severity.level = takeFirst(compliance.rule.severity.level),
-
 
 
 compliance.standard.short_name = takeFirst(compliance.standard.short_name),
 
 
-
 compliance.rule.title = takeFirst(compliance.rule.title),
-
 
 
 compliance.standard.url = takeFirst(compliance.standard.url),
 
 
-
 finding.time.created = takeFirst(finding.time.created),
-
 
 
 compliance.result.count.passed = countIf(compliance.result.status.level == "PASSED"),
 
 
-
 compliance.result.count.failed = countIf(compliance.result.status.level == "FAILED"),
-
 
 
 compliance.result.count.manual = countIf(compliance.result.status.level == "MANUAL"),
 
 
-
 compliance.result.count.not_relevant = countIf(compliance.result.status.level == "NOT_RELEVANT"),
-
 
 
 compliance.rule.metadata_json = takeFirst(compliance.rule.metadata_json)
 
 
-
 },
-
 
 
 by: { compliance.rule.id }
 
 
-
 // add rule level status
-
 
 
 | fieldsAdd compliance.result.status.level =
 
 
-
 if(compliance.result.count.failed > 0, "FAILED",
-
 
 
 else: if(compliance.result.count.manual > 0, "MANUAL",
 
 
-
 else: if(compliance.result.count.passed > 0, "PASSED",
-
 
 
 else: "NOT_RELEVANT"
 
 
-
 )))
-
 
 
 | filterout compliance.result.status.level == "NOT_RELEVANT"
@@ -2390,53 +1945,40 @@ Get the counts for every assessment that happened in a selected period for a sel
 fetch security.events
 
 
-
 | filter dt.system.bucket == "default_securityevents_builtin"
-
 
 
 AND event.type == "COMPLIANCE_FINDING"
 
 
-
 AND k8s.cluster.name == "dt-cluster-01"
-
 
 
 // filter for the specific rule
 
 
-
 AND compliance.rule.id == "DORA-67950"
-
 
 
 // summarize findings on rule level
 
 
-
 | summarize {
-
 
 
 timestamp = takeFirst(timestamp),
 
 
-
 Passed=countIf(compliance.result.status.level == "PASSED"),
-
 
 
 Failed=countIf(compliance.result.status.level == "FAILED"),
 
 
-
 Manual=countIf(compliance.result.status.level == "MANUAL")
 
 
-
 }, by: {scan.id}
-
 
 
 | makeTimeseries avg(Passed), avg(Failed), avg(Manual)
@@ -2449,7 +1991,6 @@ Manual=countIf(compliance.result.status.level == "MANUAL")
 ### Latest misconfigurations of the object according to a specific standard
 
 
-
 Get the counts of the latest misconfigurations of the object (in this case, `ip-10-45-243-57`) for a specific standard (in this case, CIS).
 
 **Query example**:
@@ -2458,73 +1999,55 @@ Get the counts of the latest misconfigurations of the object (in this case, `ip-
 fetch security.events
 
 
-
 | filter dt.system.bucket == "default_securityevents_builtin"
-
 
 
 AND event.type == "COMPLIANCE_FINDING"
 
 
-
 // filter for desired object
-
 
 
 AND object.name == "ip-10-45-243-57"
 
 
-
 // filter for compliance findings reporting misconfigurations
-
 
 
 AND compliance.result.status.level == "FAILED"
 
 
-
 // filter for the specific standard
-
 
 
 AND compliance.standard.short_name == "CIS"
 
 
-
 // filter for the latest rule assessment results in the timeframe
-
 
 
 | join [
 
 
-
 fetch security.events
-
 
 
 | filter dt.system.bucket == "default_securityevents_builtin"
 
 
-
 AND event.type == "COMPLIANCE_SCAN_COMPLETED"
-
 
 
 // filter for desired system
 
 
-
 AND object.name == "demo-kspm"
-
 
 
 | dedup object.name, sort: { timestamp desc }
 
 
-
 | fields scan.id
-
 
 
 ], on: {scan.id}
@@ -2546,7 +2069,6 @@ scraped: 2026-03-05T21:34:18.947110
 
 # Grail security table migration guide
 
-# Grail security table migration guide
 
 * Latest Dynatrace
 * How-to guide
@@ -2605,21 +2127,16 @@ With the introduction of the `security.events` table, some updates take place au
     // previous security events within the events data table
 
 
-
     ALLOW storage:buckets:read WHERE storage:bucket-name IN ("default_security_events", "default_security_custom_events");
-
 
 
     ALLOW storage:events:read;
 
 
-
     // new table permissions
 
 
-
     ALLOW storage:buckets:read WHERE storage:table-name = 'security.events';
-
 
 
     ALLOW storage:security.events:read;
@@ -2628,7 +2145,6 @@ With the introduction of the `security.events` table, some updates take place au
 
     ```
     ALLOW storage:buckets:read WHERE storage:bucket-name IN ("default_security_events", "default_security_custom_events");
-
 
 
     ALLOW storage:events:read;
@@ -2683,7 +2199,6 @@ Dynatrace-generated events are stored in both the legacy and new tables until mi
 ### Example query updates
 
 
-
 #### Query all security events
 
 * New:
@@ -2732,37 +2247,28 @@ fetch events | filter dt.system.bucket=="default_security_custom_events"
 // Fetch all migrated security events
 
 
-
 fetch security.events
-
 
 
 | filter dt.system.bucket!="default_securityevents_builtin"
 
 
-
 | append [
-
 
 
 // Fetch all security events that were not migrated
 
 
-
 fetch events
-
 
 
 | filter event.kind == "SECURITY_EVENT"
 
 
-
 // Exclude the by Dynatrace generated security events as they are written in both tables
 
 
-
 | filter dt.system.bucket!="default_security_events"
-
 
 
 ]
@@ -2780,7 +2286,6 @@ scraped: 2026-03-06T21:23:50.302180
 
 # Enrich threat observables with AbuseIPDB
 
-# Enrich threat observables with AbuseIPDB
 
 * Latest Dynatrace
 * How-to guide
@@ -2925,7 +2430,6 @@ scraped: 2026-03-06T21:23:55.514900
 
 # Ingest Akamai security logs and events
 
-# Ingest Akamai security logs and events
 
 * Latest Dynatrace
 * Extension
@@ -2984,7 +2488,6 @@ See below for the [Akamai](#akamai) and [Dynatrace](#dt) requirements.
      fetch logs
 
 
-
      | filter log.source=="Akamai SIEM"
      ```
    * For finding events (if you configured the extension to extract detection events):
@@ -2993,9 +2496,7 @@ See below for the [Akamai](#akamai) and [Dynatrace](#dt) requirements.
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
-
 
 
      | filter event.provider=="Akamai"
@@ -3071,7 +2572,6 @@ Some extracted fields from which you can benefit include:
 ### Which metrics are extracted automatically with the Akamai extension?
 
 
-
 | Metric key | Description |
 | --- | --- |
 | `log.akamai-siem.volumetric-activity` | The count of events matching volume-based activity, such as request rates exceeded or DoS attacks. |
@@ -3107,7 +2607,6 @@ scraped: 2026-03-06T21:24:07.806532
 
 # Ingest Amazon GuardDuty security findings
 
-# Ingest Amazon GuardDuty security findings
 
 * Latest Dynatrace
 * How-to guide
@@ -3304,7 +2803,6 @@ scraped: 2026-03-06T21:24:02.533373
 
 # Ingest Amazon ECR container vulnerability findings and scan events
 
-# Ingest Amazon ECR container vulnerability findings and scan events
 
 * Latest Dynatrace
 * How-to guide
@@ -3459,7 +2957,6 @@ scraped: 2026-03-06T21:23:41.794802
 
 # Ingest AWS Security Hub security findings
 
-# Ingest AWS Security Hub security findings
 
 * Latest Dynatrace
 * How-to guide
@@ -3626,33 +3123,25 @@ Ingest only compliance findings
 {
 
 
-
 "source": ["aws.securityhub"],
-
 
 
 "detail-type": ["Security Hub Findings - Imported"],
 
 
-
 "detail": {
-
 
 
 "findings": {
 
 
-
 "Types": ["Software and Configuration Checks/Vulnerabilities/CVE"]
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -3662,57 +3151,43 @@ Ingest only compliance findings
 {
 
 
-
 "source": ["aws.securityhub"],
-
 
 
 "detail-type": ["Security Hub Findings - Imported"],
 
 
-
 "detail": {
-
 
 
 "findings": {
 
 
-
 "Types": [{
-
 
 
 "wildcard": "TTPs*"
 
 
-
 }, {
-
 
 
 "wildcard": "Effects*"
 
 
-
 }, {
-
 
 
 "wildcard": "Unusual Behaviors*"
 
 
-
 }]
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -3724,48 +3199,37 @@ experimental
 {
 
 
-
 "source": ["aws.securityhub"],
-
 
 
 "detail-type": ["Security Hub Findings - Imported"],
 
 
-
 "detail": {
-
 
 
 "findings": {
 
 
-
 "Types": [{
-
 
 
 "wildcard": "Software and Configuration Checks/Industry and Regulatory Standards*"
 
 
-
 }]
 
 
-
 }
 
 
-
 }
-
 
 
 }
 ```
 
 ### Delete connections
-
 
 
 To stop sending events to Dynatrace
@@ -3804,7 +3268,6 @@ scraped: 2026-03-06T21:24:11.399509
 
 # Ingest custom security events via API
 
-# Ingest custom security events via API
 
 * Latest Dynatrace
 * How-to guide
@@ -3867,357 +3330,268 @@ Example JSON
 [
 
 
-
 {
-
 
 
 "imageId": {
 
 
-
 "imageDigest": "sha256:9282579f5330ae90d22f21b1a9be944f893895f06e3bc1985f14d1cfc084c60c"
 
 
-
 },
-
 
 
 "imageScanFindings": {
 
 
-
 "findingSeverityCounts": {
-
 
 
 "HIGH": 125,
 
 
-
 "MEDIUM": 188,
-
 
 
 "LOW": 30,
 
 
-
 "UNDEFINED": 13,
-
 
 
 "INFORMATIONAL": 353,
 
 
-
 "CRITICAL": 6
 
 
-
 },
-
 
 
 "findings": [
 
 
-
 {
-
 
 
 "attributes": [
 
 
-
 { "key": "CVSS3_SCORE", "value": "9.8" },
-
 
 
 { "key": "package_version", "value": "4.19.269-1" },
 
 
-
 { "key": "package_name", "value": "linux" },
-
 
 
 {
 
 
-
 "key": "CVSS3_VECTOR",
-
 
 
 "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
 
 
-
 }
 
 
-
 ],
-
 
 
 "description": "An issue was discovered in drivers/net/ethernet/intel/igb/igb_main.c in the IGB driver in the Linux kernel before 6.5.3. A buffer size may not be adequate for frames larger than the MTU.",
 
 
-
 "name": "CVE-2023-45871",
 
 
-
 "severity": "CRITICAL",
-
 
 
 "uri": "https://security-tracker.debian.org/tracker/CVE-2023-45871 "
 
 
-
 },
-
 
 
 {
 
 
-
 "attributes": [
 
 
-
 { "key": "CVSS3_SCORE", "value": "9.8" },
-
 
 
 { "key": "package_version", "value": "1:7.9p1-10+deb10u2" },
 
 
-
 { "key": "package_name", "value": "openssh" },
-
 
 
 {
 
 
-
 "key": "CVSS3_VECTOR",
-
 
 
 "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
 
 
-
 }
 
 
-
 ],
-
 
 
 "description": "The PKCS#11 feature in ssh-agent in OpenSSH before 9.3p2 has an insufficiently trustworthy search path, leading to remote code execution if an agent is forwarded to an attacker-controlled system. (Code in /usr/lib is not necessarily safe for loading into ssh-agent.) NOTE: this issue exists because of an incomplete fix for CVE-2016-10009.",
 
 
-
 "name": "CVE-2023-38408",
 
 
-
 "severity": "CRITICAL",
-
 
 
 "uri": "https://security-tracker.debian.org/tracker/CVE-2023-38408 "
 
 
-
 },
 
 
-
 {
-
 
 
 "attributes": [
 
 
-
 { "key": "CVSS3_SCORE", "value": "9.8" },
-
 
 
 { "key": "package_version", "value": "2.7.16-2+deb10u1" },
 
 
-
 { "key": "package_name", "value": "python2.7" },
-
 
 
 {
 
 
-
 "key": "CVSS3_VECTOR",
-
 
 
 "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
 
 
-
 }
 
 
-
 ],
-
 
 
 "description": "An XML External Entity (XXE) issue was discovered in Python through 3.9.1. The plistlib module no longer accepts entity declarations in XML plist files to avoid XML vulnerabilities.",
 
 
-
 "name": "CVE-2022-48565",
 
 
-
 "severity": "CRITICAL",
-
 
 
 "uri": "https://security-tracker.debian.org/tracker/CVE-2022-48565 "
 
 
-
 },
 
 
-
 {
-
 
 
 "attributes": [
 
 
-
 { "key": "CVSS3_SCORE", "value": "9.8" },
-
 
 
 { "key": "package_version", "value": "2.7.16-2+deb10u1" },
 
 
-
 { "key": "package_name", "value": "python2.7" },
-
 
 
 {
 
 
-
 "key": "CVSS3_VECTOR",
-
 
 
 "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
 
 
-
 },
-
 
 
 { "key": "CVSS2_VECTOR", "value": "AV:N/AC:L/Au:N/C:P/I:P/A:P" },
 
 
-
 { "key": "CVSS2_SCORE", "value": "7.5" }
 
 
-
 ],
-
 
 
 "description": "Python 3.x through 3.9.1 has a buffer overflow in PyCArg_repr in _ctypes/callproc.c, which may lead to remote code execution in certain Python applications that accept floating-point numbers as untrusted input, as demonstrated by a 1e300 argument to c_double.from_param. This occurs because sprintf is used unsafely.",
 
 
-
 "name": "CVE-2021-3177",
-
 
 
 "severity": "CRITICAL",
 
 
-
 "uri": "https://security-tracker.debian.org/tracker/CVE-2021-3177 "
 
 
-
 }
-
 
 
 ],
 
 
-
 "imageScanCompletedAt": 1698376478,
-
 
 
 "vulnerabilitySourceUpdatedAt": 1698343825
 
 
-
 },
-
 
 
 "imageScanStatus": {
 
 
-
 "description": "The scan was completed successfully.",
-
 
 
 "status": "COMPLETE"
 
 
-
 },
-
 
 
 "nextToken": "ukD72mdD/mC8b5xV3susmJzzaTgp3hKwR9nRUW1yZZ63B5NL+m8CiI+qgoiLO0t5s6Oi9w2CQBANPaxpQTFWXxF/Sq7shr/h//oNXvOJ2XuWPSF3ox6DgxQztXUFyKzeGw+HpbYZAAxpHjJVELVXXnhpxAScZkKhVG85CbbUGfSPyuKcSeeHoNvQPGBdxCWD6CaKl4nFxtXyUeFRs3RV+mkX5FUxosMnBJepE2JbaoM9elE1niY2Rpq3BZrp/QeOyWdmjeuySi+2KZO03915df+6OMIfXtt3zclPZ+BGcdMgWoETrte2fkh2y1RDO3PI4OCohgCbjlTk9X6fYLWrrxwkhfWAIRekqToQq+S8BHEm1o82jxDoyKO0Et9UrZVIEFOofBkvenm5U+8XvgQ4V5kvMZZLa9DZykVDteq28OF+KCgjo7WHTbXMy1yh7jyRJ6A77N12YJfxYgv16JjkVgmDqGjlM3YJEH2o55SYTAnSsiBXiMvvq1RK1hl567SIstgGPMK3c0v7TGDnCE6o3EhP4FC73As6mj2q4uGkLf8eMQLi9ogBJ1UAzKCiCl3bxeTKuMz1W8hokdPauwuAd9uKg0vLdHmM6iftfrVhsgbbioNLy3R5jOon7X61YbIGF7fUOkaj72o37fpPd/JG2g==",
 
 
-
 "registryId": "123456789876",
-
 
 
 "repositoryName": "unguard-frontend"
 
 
-
 }
-
 
 
 ]
@@ -4233,49 +3607,37 @@ Custom API endpoint
 [
 
 
-
 {
-
 
 
 "timestamp": "2024-06-17T14:58:36.820000000+02:00",
 
 
-
 "dt.ingest.source": "/platform/ingest/v1/security.events/",
-
 
 
 "event.kind": "SECURITY_EVENT",
 
 
-
 "imageId": "{\"imageDigest\":\"sha256:9282579f5330ae90d22f21b1a9be944f893895f06e3bc1985f14d1cfc084c60c\"}",
-
 
 
 "imageScanFindings": "{\"findingSeverityCounts\":{\"HIGH\":125,\"MEDIUM\":188,\"LOW\":30,\"UNDEFINED\":13,\"INFORMATIONAL\":353,\"CRITICAL\":6},\"findings\":[{\"attributes\":[{\"key\":\"CVSS3_SCORE\",\"value\":\"9.8\"},{\"key\":\"package_version\",\"value\":\"4.19.269-1\"},{\"key\":\"package_name\",\"value\":\"linux\"},{\"key\":\"CVSS3_VECTOR\",\"value\":\"CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H\"}],\"description\":\"An issue was discovered in drivers/net/ethernet/intel/igb/igb_main.c in the IGB driver in the Linux kernel before 6.5.3. A buffer size may not be adequate for frames larger than the MTU.\",\"name\":\"CVE-2023-45871\",\"severity\":\"CRITICAL\",\"uri\":\"https://security-tracker.debian.org/tracker/CVE-2023-45871 \"},{\"attributes\":[{\"key\":\"CVSS3_SCORE\",\"value\":\"9.8\"},{\"key\":\"package_version\",\"value\":\"1:7.9p1-10+deb10u2\"},{\"key\":\"package_name\",\"value\":\"openssh\"},{\"key\":\"CVSS3_VECTOR\",\"value\":\"CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H\"}],\"description\":\"The PKCS#11 feature in ssh-agent in OpenSSH before 9.3p2 has an insufficiently trustworthy search path, leading to remote code execution if an agent is forwarded to an attacker-controlled system. (Code in /usr/lib is not necessarily safe for loading into ssh-agent.) NOTE: this issue exists because of an incomplete fix for CVE-2016-10009.\",\"name\":\"CVE-2023-38408\",\"severity\":\"CRITICAL\",\"uri\":\"https://security-tracker.debian.org/tracker/CVE-2023-38408 \"},{\"attributes\":[{\"key\":\"CVSS3_SCORE\",\"value\":\"9.8\"},{\"key\":\"package_version\",\"value\":\"2.7.16-2+deb10u1\"},{\"key\":\"package_name\",\"value\":\"python2.7\"},{\"key\":\"CVSS3_VECTOR\",\"value\":\"CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H\"}],\"description\":\"An XML External Entity (XXE) issue was discovered in Python through 3.9.1. The plistlib module no longer accepts entity declarations in XML plist files to avoid XML vulnerabilities.\",\"name\":\"CVE-2022-48565\",\"severity\":\"CRITICAL\",\"uri\":\"https://security-tracker.debian.org/tracker/CVE-2022-48565 \"},{\"attributes\":[{\"key\":\"CVSS3_SCORE\",\"value\":\"9.8\"},{\"key\":\"package_version\",\"value\":\"2.7.16-2+deb10u1\"},{\"key\":\"package_name\",\"value\":\"python2.7\"},{\"key\":\"CVSS3_VECTOR\",\"value\":\"CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H\"},{\"key\":\"CVSS2_VECTOR\",\"value\":\"AV:N/AC:L/Au:N/C:P/I:P/A:P\"},{\"key\":\"CVSS2_SCORE\",\"value\":\"7.5\"}],\"description\":\"Python 3.x through 3.9.1 has a buffer overflow in PyCArg_repr in _ctypes/callproc.c, which may lead to remote code execution in certain Python applications that accept floating-point numbers as untrusted input, as demonstrated by a 1e300 argument to c_double.from_param. This occurs because sprintf is used unsafely.\",\"name\":\"CVE-2021-3177\",\"severity\":\"CRITICAL\",\"uri\":\"https://security-tracker.debian.org/tracker/CVE-2021-3177 \"}],\"imageScanCompletedAt\":1698376478,\"vulnerabilitySourceUpdatedAt\":1698343825}",
 
 
-
 "imageScanStatus": "{\"description\":\"The scan was completed successfully.\",\"status\":\"COMPLETE\"}",
-
 
 
 "nextToken": "ukD72mdD/mC8b5xV3susmJzzaTgp3hKwR9nRUW1yZZ63B5NL+m8CiI+qgoiLO0t5s6Oi9w2CQBANPaxpQTFWXxF/Sq7shr/h//oNXvOJ2XuWPSF3ox6DgxQztXUFyKzeGw+HpbYZAAxpHjJVELVXXnhpxAScZkKhVG85CbbUGfSPyuKcSeeHoNvQPGBdxCWD6CaKl4nFxtXyUeFRs3RV+mkX5FUxosMnBJepE2JbaoM9elE1niY2Rpq3BZrp/QeOyWdmjeuySi+2KZO03915df+6OMIfXtt3zclPZ+BGcdMgWoETrte2fkh2y1RDO3PI4OCohgCbjlTk9X6fYLWrrxwkhfWAIRekqToQq+S8BHEm1o82jxDoyKO0Et9UrZVIEFOofBkvenm5U+8XvgQ4V5kvMZZLa9DZykVDteq28OF+KCgjo7WHTbXMy1yh7jyRJ6A77N12YJfxYgv16JjkVgmDqGjlM3YJEH2o55SYTAnSsiBXiMvvq1RK1hl567SIstgGPMK3c0v7TGDnCE6o3EhP4FC73As6mj2q4uGkLf8eMQLi9ogBJ1UAzKCiCl3bxeTKuMz1W8hokdPauwuAd9uKg0vLdHmM6iftfrVhsgbbioNLy3R5jOon7X61YbIGF7fUOkaj72o37fpPd/JG2g==",
 
 
-
 "registryId": "123456789876",
-
 
 
 "repositoryName": "unguard-frontend"
 
 
-
 }
-
 
 
 ]
@@ -4285,42 +3647,32 @@ Custom API endpoint
 {
 
 
-
 "timestamp": "2024-06-17T14:58:36.820000000+02:00",
-
 
 
 "dt.ingest.source": "/platform/ingest/v1/security.events/",
 
 
-
 "imageId": "{\"imageDigest\":\"sha256:9282579f5330ae90d22f21b1a9be944f893895f06e3bc1985f14d1cfc084c60c\"}",
-
 
 
 "imageScanFindings": "{\"findingSeverityCounts\":{\"HIGH\":125,\"MEDIUM\":188,\"LOW\":30,\"UNDEFINED\":13,\"INFORMATIONAL\":353,\"CRITICAL\":6},\"findings\":[{\"attributes\":[{\"key\":\"CVSS3_SCORE\",\"value\":\"9.8\"},{\"key\":\"package_version\",\"value\":\"4.19.269-1\"},{\"key\":\"package_name\",\"value\":\"linux\"},{\"key\":\"CVSS3_VECTOR\",\"value\":\"CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H\"}],\"description\":\"An issue was discovered in drivers/net/ethernet/intel/igb/igb_main.c in the IGB driver in the Linux kernel before 6.5.3. A buffer size may not be adequate for frames larger than the MTU.\",\"name\":\"CVE-2023-45871\",\"severity\":\"CRITICAL\",\"uri\":\"https://security-tracker.debian.org/tracker/CVE-2023-45871 \"},{\"attributes\":[{\"key\":\"CVSS3_SCORE\",\"value\":\"9.8\"},{\"key\":\"package_version\",\"value\":\"1:7.9p1-10+deb10u2\"},{\"key\":\"package_name\",\"value\":\"openssh\"},{\"key\":\"CVSS3_VECTOR\",\"value\":\"CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H\"}],\"description\":\"The PKCS#11 feature in ssh-agent in OpenSSH before 9.3p2 has an insufficiently trustworthy search path, leading to remote code execution if an agent is forwarded to an attacker-controlled system. (Code in /usr/lib is not necessarily safe for loading into ssh-agent.) NOTE: this issue exists because of an incomplete fix for CVE-2016-10009.\",\"name\":\"CVE-2023-38408\",\"severity\":\"CRITICAL\",\"uri\":\"https://security-tracker.debian.org/tracker/CVE-2023-38408 \"},{\"attributes\":[{\"key\":\"CVSS3_SCORE\",\"value\":\"9.8\"},{\"key\":\"package_version\",\"value\":\"2.7.16-2+deb10u1\"},{\"key\":\"package_name\",\"value\":\"python2.7\"},{\"key\":\"CVSS3_VECTOR\",\"value\":\"CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H\"}],\"description\":\"An XML External Entity (XXE) issue was discovered in Python through 3.9.1. The plistlib module no longer accepts entity declarations in XML plist files to avoid XML vulnerabilities.\",\"name\":\"CVE-2022-48565\",\"severity\":\"CRITICAL\",\"uri\":\"https://security-tracker.debian.org/tracker/CVE-2022-48565 \"},{\"attributes\":[{\"key\":\"CVSS3_SCORE\",\"value\":\"9.8\"},{\"key\":\"package_version\",\"value\":\"2.7.16-2+deb10u1\"},{\"key\":\"package_name\",\"value\":\"python2.7\"},{\"key\":\"CVSS3_VECTOR\",\"value\":\"CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H\"},{\"key\":\"CVSS2_VECTOR\",\"value\":\"AV:N/AC:L/Au:N/C:P/I:P/A:P\"},{\"key\":\"CVSS2_SCORE\",\"value\":\"7.5\"}],\"description\":\"Python 3.x through 3.9.1 has a buffer overflow in PyCArg_repr in _ctypes/callproc.c, which may lead to remote code execution in certain Python applications that accept floating-point numbers as untrusted input, as demonstrated by a 1e300 argument to c_double.from_param. This occurs because sprintf is used unsafely.\",\"name\":\"CVE-2021-3177\",\"severity\":\"CRITICAL\",\"uri\":\"https://security-tracker.debian.org/tracker/CVE-2021-3177 \"}],\"imageScanCompletedAt\":1698376478,\"vulnerabilitySourceUpdatedAt\":1698343825}",
 
 
-
 "imageScanStatus": "{\"description\":\"The scan was completed successfully.\",\"status\":\"COMPLETE\"}",
-
 
 
 "nextToken": "ukD72mdD/mC8b5xV3susmJzzaTgp3hKwR9nRUW1yZZ63B5NL+m8CiI+qgoiLO0t5s6Oi9w2CQBANPaxpQTFWXxF/Sq7shr/h//oNXvOJ2XuWPSF3ox6DgxQztXUFyKzeGw+HpbYZAAxpHjJVELVXXnhpxAScZkKhVG85CbbUGfSPyuKcSeeHoNvQPGBdxCWD6CaKl4nFxtXyUeFRs3RV+mkX5FUxosMnBJepE2JbaoM9elE1niY2Rpq3BZrp/QeOyWdmjeuySi+2KZO03915df+6OMIfXtt3zclPZ+BGcdMgWoETrte2fkh2y1RDO3PI4OCohgCbjlTk9X6fYLWrrxwkhfWAIRekqToQq+S8BHEm1o82jxDoyKO0Et9UrZVIEFOofBkvenm5U+8XvgQ4V5kvMZZLa9DZykVDteq28OF+KCgjo7WHTbXMy1yh7jyRJ6A77N12YJfxYgv16JjkVgmDqGjlM3YJEH2o55SYTAnSsiBXiMvvq1RK1hl567SIstgGPMK3c0v7TGDnCE6o3EhP4FC73As6mj2q4uGkLf8eMQLi9ogBJ1UAzKCiCl3bxeTKuMz1W8hokdPauwuAd9uKg0vLdHmM6iftfrVhsgbbioNLy3R5jOon7X61YbIGF7fUOkaj72o37fpPd/JG2g==",
 
 
-
 "registryId": "123456789876",
-
 
 
 "repositoryName": "unguard-frontend"
 
 
-
 }
 ```
-
 
 
 ### Licensing and cost
@@ -4347,7 +3699,6 @@ scraped: 2026-03-06T21:24:04.309763
 
 # Ingest GitHub Advanced Security security events and audit logs
 
-# Ingest GitHub Advanced Security security events and audit logs
 
 * Latest Dynatrace
 * Extension
@@ -4473,7 +3824,6 @@ To generate a Personal Access Token, follow the instructions at [Managing your p
      fetch logs
 
 
-
      | filter log.source=="GitHub Advanced Security"
      ```
    * For finding events:
@@ -4482,13 +3832,10 @@ To generate a Personal Access Token, follow the instructions at [Managing your p
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="GitHub Advanced Security"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -4499,13 +3846,10 @@ To generate a Personal Access Token, follow the instructions at [Managing your p
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="GitHub Advanced Security"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"
@@ -4515,7 +3859,6 @@ To generate a Personal Access Token, follow the instructions at [Managing your p
 ## Details
 
 ### How it works
-
 
 
 ![how it works](https://dt-cdn.net/images/diagram-2560-ac2977ae34.png)
@@ -4630,7 +3973,6 @@ scraped: 2026-03-06T21:23:46.892274
 
 # Ingest Harbor vulnerability findings, scans, and audit logs
 
-# Ingest Harbor vulnerability findings, scans, and audit logs
 
 * Latest Dynatrace
 * Extension
@@ -4702,7 +4044,6 @@ These permissions must be granted for all projects you want Dynatrace to monitor
      fetch logs
 
 
-
      | filter log.source=="Harbor"
      ```
    * For finding events:
@@ -4711,13 +4052,10 @@ These permissions must be granted for all projects you want Dynatrace to monitor
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Harbor"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -4728,13 +4066,10 @@ These permissions must be granted for all projects you want Dynatrace to monitor
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Harbor"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"
@@ -4798,7 +4133,6 @@ The `container_image.tags` field isn't reported by Harbor, so it's not available
 ### How do we normalize the risk score for Harbor findings?
 
 
-
 Dynatrace normalizes severity and risk scores for all findings ingested through the current integration. This helps you to prioritize findings consistently, regardless of their source.  
 For details on how normalization works, see [Severity and score normalization](../ru/secure/threat-observability/concepts.md#normalization "Basic concepts related to Threat Observability").
 
@@ -4837,7 +4171,6 @@ scraped: 2026-03-06T21:24:00.859946
 
 # Ingest Microsoft Defender for Cloud security events
 
-# Ingest Microsoft Defender for Cloud security events
 
 * Latest Dynatrace
 * How-to guide
@@ -4971,7 +4304,6 @@ For billing information, see [Events powered by Grail](../ru/license/capabilitie
 ### Which extension fields are added on the events ingested from Microsoft Defender for Cloud?
 
 
-
 The `container_image` namespace is added to store all the container image-related information with the following fields:
 
 * `container_image.digest` represents the container image digest; this value can be used to match to the runtime containers
@@ -5023,7 +4355,6 @@ scraped: 2026-03-06T21:23:43.477598
 
 # Ingest Microsoft Entra ID sign-in logs
 
-# Ingest Microsoft Entra ID sign-in logs
 
 * Latest Dynatrace
 * How-to guide
@@ -5069,7 +4400,6 @@ To set up Microsoft Entra ID sign-in log monitoring, follow the steps below.
    matchesValue(cloud.provider, "azure") AND
 
 
-
    matchesPhrase(content, "\"SignInLogs\"")
    ```
 8. Select the newly created pipeline, enter a name for the Dynamic route, and select **Add**.
@@ -5082,13 +4412,10 @@ Verify the configuration by running the following query in [![Notebooks](https:/
 fetch logs
 
 
-
 | filter cloud.provide == "azure"
 
 
-
 AND isNotNull(audit.action)
-
 
 
 AND isNotNull(authentication.is_multifactor)
@@ -5159,7 +4486,6 @@ scraped: 2026-03-06T21:23:57.288661
 
 # Ingest Microsoft Sentinel security events
 
-# Ingest Microsoft Sentinel security events
 
 * Latest Dynatrace
 * How-to guide
@@ -5213,9 +4539,7 @@ See below for the Microsoft Sentinel and Dynatrace requirements.
    fetch security.events
 
 
-
    | filter dt.system.bucket == "default_securityevents"
-
 
 
    | filter event.provider=="Microsoft Sentinel"
@@ -5304,7 +4628,6 @@ For billing information, see [Events powered by Grail](../ru/license/capabilitie
 ### Which extension fields are added on top of the core fields of the events ingested from Microsoft Sentinel?
 
 
-
 * The `actor` namespace is added to store all the actor-related fields if present in an alert:
 
   + `actor.ips` represents the list of IPs of the suspicious actor
@@ -5359,7 +4682,6 @@ scraped: 2026-03-06T21:24:06.065359
 
 # Ingest vulnerability findings in OCSF format
 
-# Ingest vulnerability findings in OCSF format
 
 * Latest Dynatrace
 * How-to guide
@@ -5501,7 +4823,6 @@ scraped: 2026-03-06T21:23:53.759111
 
 # Ingest Qualys vulnerability findings, scan events, and audit logs
 
-# Ingest Qualys vulnerability findings, scan events, and audit logs
 
 * Latest Dynatrace
 * Extension
@@ -5569,7 +4890,6 @@ To authenticate with a username and password, the user account must have the fol
      fetch logs
 
 
-
      | filter log.source=="Qualys"
      ```
    * For finding events:
@@ -5578,13 +4898,10 @@ To authenticate with a username and password, the user account must have the fol
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Qualys"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -5595,13 +4912,10 @@ To authenticate with a username and password, the user account must have the fol
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Qualys"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"
@@ -5679,7 +4993,6 @@ The Qualys Detection Score (QDS) has a range from 1 to 100. To map this to the 1
 ## Related topics
 
 
-
 * [OpenPipeline](../ru/platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
 * [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
 * [Security events](semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")
@@ -5696,7 +5009,6 @@ scraped: 2026-03-06T21:23:45.187175
 
 # Ingest Runecast Analyzer compliance findings
 
-# Ingest Runecast Analyzer compliance findings
 
 * Latest Dynatrace
 * How-to guide
@@ -5835,7 +5147,6 @@ scraped: 2026-03-06T21:24:13.097220
 
 # Ingest Snyk vulnerability findings, scans, and audit logs
 
-# Ingest Snyk vulnerability findings, scans, and audit logs
 
 * Latest Dynatrace
 * Extension
@@ -5895,7 +5206,6 @@ See below for the [Snyk](#snyk) and [Dynatrace](#dt) requirements.
      fetch logs
 
 
-
      | filter log.source=="Snyk"
      ```
    * For finding events:
@@ -5904,13 +5214,10 @@ See below for the [Snyk](#snyk) and [Dynatrace](#dt) requirements.
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Snyk"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -5921,13 +5228,10 @@ See below for the [Snyk](#snyk) and [Dynatrace](#dt) requirements.
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Snyk"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"
@@ -5992,7 +5296,6 @@ To count the number of Snyk issues from the data in Dynatrace, you can use a `| 
 ### What Snyk asset types are supported by Dynatrace for runtime contextualization?
 
 
-
 `CONTAINER_IMAGE`: All the findings from Snyk Container coming from the assessment of container images are mapped with the `CONTAINER_IMAGE` value in the `object.type` field, and the `container_image` namespace is added with the corresponding fields:
 
 * `container_image.digest` is set to the container image digest. This value can be used to match the runtime containers.
@@ -6046,7 +5349,6 @@ scraped: 2026-03-06T21:23:52.074280
 
 # Ingest SonarQube security and quality events, metrics, and audit logs
 
-# Ingest SonarQube security and quality events, metrics, and audit logs
 
 * Latest Dynatrace
 * Extension
@@ -6103,7 +5405,6 @@ With the ingested data, you can accomplish various use cases, such as
      fetch logs
 
 
-
      | filter log.source=="SonarQube"
      ```
    * For security finding events:
@@ -6112,13 +5413,10 @@ With the ingested data, you can accomplish various use cases, such as
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="SonarQube"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -6129,13 +5427,10 @@ With the ingested data, you can accomplish various use cases, such as
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="SonarQube"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"
@@ -6146,13 +5441,10 @@ With the ingested data, you can accomplish various use cases, such as
      fetch events
 
 
-
      | filter event.kind == "SDLC_EVENT"
 
 
-
      AND event.type == "control"
-
 
 
      | filter event.provider=="SonarQube"
@@ -6163,33 +5455,25 @@ With the ingested data, you can accomplish various use cases, such as
      timeseries {
 
 
-
      Vulnerabilities = sum(sonarqube.code.vulnerabilities),
-
 
 
      Hotspots = sum(sonarqube.security.hotspots),
 
 
-
      `Hotspots reviewed` = sum(sonarqube.security.hotspots.reviewed),
-
 
 
      Bugs = sum(sonarqube.bugs),
 
 
-
      Coverage = sum(sonarqube.code.coverage),
-
 
 
      `Duplicated lines` = sum(sonarqube.code.duplication),
 
 
-
      `Code smells` = sum(sonarqube.code.smells)
-
 
 
      }, interval:3h
@@ -6256,7 +5540,6 @@ Example fields:
 ### How do we normalize the risk score for SonarQube findings?
 
 
-
 Dynatrace normalizes severity and risk scores for all findings ingested through the current integration. This helps you to prioritize findings consistently, regardless of their source.  
 For details on how normalization works, see [Severity and score normalization](../ru/secure/threat-observability/concepts.md#normalization "Basic concepts related to Threat Observability").
 
@@ -6297,7 +5580,6 @@ scraped: 2026-03-06T21:24:09.563425
 
 # Ingest Sonatype Lifecycle security events and audit logs
 
-# Ingest Sonatype Lifecycle security events and audit logs
 
 * Latest Dynatrace
 * Extension
@@ -6368,7 +5650,6 @@ To ensure successful data collection, the authenticated user must have the follo
      fetch logs
 
 
-
      | filter log.source=="Sonatype Lifecycle"
      ```
    * For finding events:
@@ -6377,13 +5658,10 @@ To ensure successful data collection, the authenticated user must have the follo
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Sonatype Lifecycle"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -6394,13 +5672,10 @@ To ensure successful data collection, the authenticated user must have the follo
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Sonatype Lifecycle"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"
@@ -6461,7 +5736,6 @@ The `sonatype` namespace is added for extracting several Sonatype-specific attri
 ### How is the risk score for Sonatype Lifecycle findings normalized?
 
 
-
 Dynatrace normalizes severity and risk scores for all findings ingested through the current integration. This helps you to prioritize findings consistently, regardless of their source.  
 For details on how normalization works, see [Severity and score normalization](../ru/secure/threat-observability/concepts.md#normalization "Basic concepts related to Threat Observability").
 
@@ -6501,7 +5775,6 @@ scraped: 2026-03-06T21:23:59.180814
 
 # Ingest Tenable vulnerability findings, scan events, and audit logs
 
-# Ingest Tenable vulnerability findings, scan events, and audit logs
 
 * Latest Dynatrace
 * Extension
@@ -6569,9 +5842,7 @@ With the ingested data, you can accomplish various use cases, such as
      fetch security.events
 
 
-
      | filter dt.system.bucket=="default_securityevents"
-
 
 
      | filter event.provider == "Tenable"
@@ -6580,7 +5851,6 @@ With the ingested data, you can accomplish various use cases, such as
 
      ```
      fetch logs
-
 
 
      | filter log.source == "Tenable"
@@ -6644,9 +5914,7 @@ For examples of how you can build your queries, see below.
 fetch logs
 
 
-
 | filter log.source == "Tenable"
-
 
 
 | makeTimeseries logs=countDistinctExact(id), by:{audit.action}, time:{toTimestamp(received)}, interval:{3h}
@@ -6662,41 +5930,31 @@ Example result:
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents"
-
 
 
 | filter event.type == "VULNERABILITY_FINDING"
 
 
-
 | filter event.provider == "Tenable"
-
 
 
 | dedup {object.id, vulnerability.id}, sort:{timestamp}
 
 
-
 | summarize Vulnerabilities=countDistinctExact(vulnerability.id), by:{dt.security.risk.level}
-
 
 
 | fieldsAdd order=if(dt.security.risk.level=="CRITICAL", 1, else:
 
 
-
 if(dt.security.risk.level=="HIGH", 2, else:
-
 
 
 if(dt.security.risk.level=="MEDIUM", 3, else:
 
 
-
 if(dt.security.risk.level=="LOW", 4, else:5))))
-
 
 
 | sort order asc
@@ -6712,29 +5970,22 @@ Example result:
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents"
-
 
 
 | filter event.type == "VULNERABILITY_SCAN"
 
 
-
 | filter event.provider == "Tenable"
-
 
 
 | dedup {object.id, scan.id}
 
 
-
 | summarize Hosts=countDistinctExact(object.id), by:{scan.name}
 
 
-
 | sort Hosts desc
-
 
 
 | limit 10
@@ -6745,7 +5996,6 @@ Example result:
 ![Query for top 10 scans with the most host coverage](https://dt-cdn.net/images/2024-12-11-19-42-02-1753-871fb9630c.png)
 
 ### Automate notifications
-
 
 
 1. Download our [sample workflow for Jiraï»¿](https://dt-url.net/od23qa1) or [sample workflow for Slackï»¿](https://dt-url.net/ko43qsm).
@@ -6789,17 +6039,13 @@ Example:
 fetch security.events
 
 
-
 | filter dt.system.bucket=="default_securityevents"
-
 
 
 | filter event.type == "VULNERABILITY_FINDING"
 
 
-
 | filter event.provider == "Tenable"
-
 
 
 | dedup {object.id, finding.id}, sort:{timestamp}
@@ -6899,7 +6145,6 @@ scraped: 2026-03-06T21:23:48.585892
 
 # Enrich threat observables with VirusTotal
 
-# Enrich threat observables with VirusTotal
 
 * Latest Dynatrace
 * How-to guide
@@ -7044,7 +6289,6 @@ scraped: 2026-03-06T21:12:36.899894
 
 # Security integrations
 
-# Security integrations
 
 * Latest Dynatrace
 * Overview
@@ -7100,7 +6344,6 @@ scraped: 2026-03-06T21:10:14.637105
 
 # Threat Observability
 
-# Threat Observability
 
 * Latest Dynatrace
 * Overview

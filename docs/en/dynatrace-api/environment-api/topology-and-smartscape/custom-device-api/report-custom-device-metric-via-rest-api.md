@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:41.992599
 
 # Report custom device metric via Dynatrace API
 
-# Report custom device metric via Dynatrace API
 
 * Reference
 * Updated on Mar 22, 2023
@@ -80,133 +79,100 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "configUrl": "http://coffee-machine.dynatrace.internal.com/coffeemachine/manage",
-
 
 
 "displayName": "coffeeMachine",
 
 
-
 "favicon": "https://www.freefavicon.com/freefavicons/food/cup-of-coffee-152-78475.png",
-
 
 
 "group": "myCustomDeviceGroup",
 
 
-
 "hostNames": [
-
 
 
 "coffee-machine.dynatrace.internal.com"
 
 
-
 ],
-
 
 
 "ipAddresses": [
 
 
-
 "10.0.0.1"
 
 
-
 ],
-
 
 
 "listenPorts": [
 
 
-
 80
 
 
-
 ],
-
 
 
 "properties": {},
 
 
-
 "series": [
-
 
 
 {
 
 
-
 "dataPoints": [
-
 
 
 [
 
 
-
 1521542929000,
-
 
 
 13
 
 
-
 ]
 
 
-
 ],
-
 
 
 "dimensions": {
 
 
-
 "office": "Linz"
-
 
 
 },
 
 
-
 "timeseriesId": "custom:created.coffee.metric"
-
 
 
 }
 
 
-
 ],
-
 
 
 "tags": [
 
 
-
 "office-linz"
-
 
 
 ],
 
 
-
 "type": "coffee machine"
-
 
 
 }
@@ -265,69 +231,53 @@ A list of constraint violations
 {
 
 
-
 "entityId": "string",
-
 
 
 "groupId": "string"
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -351,137 +301,103 @@ You can download or copy the example request body to try it out on your own.
 curl -X POST \
 
 
-
 https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/idOfmyCustomDevice \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
 
 
-
 -H 'Content-Type: application/json' \
-
 
 
 -d '{
 
 
-
 "tags": [
-
 
 
 "tag2"
 
 
-
 ],
-
 
 
 "type": "F5-Firewall",
 
 
-
 "properties" : {
-
 
 
 "Sample Property 2": "Sample value 2"
 
 
-
 },
-
 
 
 "series" : [
 
 
-
 {
-
 
 
 "timeseriesId" : "custom:firewall.connections.dropped",
 
 
-
 "dimensions" : {
-
 
 
 "nic" : "ethernetcard1"
 
 
-
 },
 
 
-
 "dataPoints" : [
-
 
 
 [ 1539860400000, 460 ],
 
 
-
 [ 1539860460000, 456 ]
-
 
 
 ]
 
 
-
 },
-
 
 
 {
 
 
-
 "timeseriesId" : "custom:firewall.connections.dropped",
-
 
 
 "dimensions" : {
 
 
-
 "nic" : "ethernetcard2"
-
 
 
 },
 
 
-
 "dataPoints" : [
-
 
 
 [ 1539860430000, 439 ],
 
 
-
 [ 1539860490000, 460 ]
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
-
 
 
 }'
@@ -499,113 +415,85 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/idOfm
 {
 
 
-
 "tags": ["tag2"],
-
 
 
 "type": "F5-Firewall",
 
 
-
 "properties": {
-
 
 
 "Sample Property 2": "Sample value 2"
 
 
-
 },
-
 
 
 "series": [
 
 
-
 {
-
 
 
 "timeseriesId": "custom:firewall.connections.dropped",
 
 
-
 "dimensions": {
-
 
 
 "nic": "ethernetcard1"
 
 
-
 },
 
 
-
 "dataPoints": [
-
 
 
 [1539860400000, 460],
 
 
-
 [1539860460000, 456]
-
 
 
 ]
 
 
-
 },
-
 
 
 {
 
 
-
 "timeseriesId": "custom:firewall.connections.dropped",
-
 
 
 "dimensions": {
 
 
-
 "nic": "ethernetcard2"
-
 
 
 },
 
 
-
 "dataPoints": [
-
 
 
 [1539860430000, 439],
 
 
-
 [1539860490000, 460]
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -617,13 +505,10 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/idOfm
 {
 
 
-
 "entityId": "CUSTOM_DEVICE-6A567B33AADC306E",
 
 
-
 "groupId": "CUSTOM_DEVICE_GROUP-FC2E2ABF54F513D8"
-
 
 
 }

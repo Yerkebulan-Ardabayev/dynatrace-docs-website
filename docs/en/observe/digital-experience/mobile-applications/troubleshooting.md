@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:25.181485
 
 # Troubleshooting RUM for mobile applications
 
-# Troubleshooting RUM for mobile applications
 
 * Classic
 * Troubleshooting

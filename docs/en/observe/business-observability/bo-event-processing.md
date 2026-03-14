@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:23.823960
 
 # Business event processing
 
-# Business event processing
 
 * Latest Dynatrace
 * Explanation

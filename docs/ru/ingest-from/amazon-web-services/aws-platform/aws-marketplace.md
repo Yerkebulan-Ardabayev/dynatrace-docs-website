@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:10.170372
 
 # Частное предложение AWS Marketplace
 
-# Частное предложение AWS Marketplace
 
 * Classic
 * How-to guide

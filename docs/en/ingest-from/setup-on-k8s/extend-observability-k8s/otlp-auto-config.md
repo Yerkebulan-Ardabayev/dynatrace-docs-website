@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:30.633862
 
 # Enable automatic OpenTelemetry OTLP exporter configuration
 
-# Enable automatic OpenTelemetry OTLP exporter configuration
 
 * Latest Dynatrace
 * Published Nov 24, 2025
@@ -29,45 +28,34 @@ Add the `otlpExporterConfiguration` section to your DynaKube custom resource. Th
 apiVersion: dynatrace.com/v1beta6
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 apiUrl: https://<environment-id>.live.dynatrace.com/api
 
 
-
 otlpExporterConfiguration:
-
 
 
 signals:
 
 
-
 metrics: {}
 
 
-
 traces: {}
-
 
 
 logs: {}
@@ -89,7 +77,6 @@ If something goes wrong, the pod is annotated with a reason for the failure:
 
 ```
 otlp-exporter-configuration.dynatrace.com/injected: "false"
-
 
 
 otlp-exporter-configuration.dynatrace.com/reason: <reason>
@@ -177,57 +164,43 @@ To limit auto-configuration to specific namespaces, you can use a namespace sele
 apiVersion: dynatrace.com/v1beta6
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 apiUrl: https://<environment-id>.live.dynatrace.com/api
 
 
-
 otlpExporterConfiguration:
-
 
 
 namespaceSelector:
 
 
-
 matchLabels:
-
 
 
 my.app.com/otel: "true"
 
 
-
 signals:
-
 
 
 metrics: {}
 
 
-
 traces: {}
-
 
 
 logs: {}
@@ -265,41 +238,31 @@ To enable this override, you can turn on the override mode:
 apiVersion: dynatrace.com/v1beta6
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 apiUrl: https://<environment-id>.live.dynatrace.com/api
 
 
-
 otlpExporterConfiguration:
-
 
 
 signals:
 
 
-
 metrics: {}
-
 
 
 overrideEnvVars: true
@@ -321,33 +284,25 @@ The following examples have the above DynaKube configuration with `metrics` enab
 spec:
 
 
-
 containers:
-
 
 
 - env:
 
 
-
 - name: OTEL_EXPORTER_OTLP_METRICS_ENDPOINT
-
 
 
 value: https://my-private-endpoint/otlp/v1/traces
 
 
-
 - name: OTEL_EXPORTER_OTLP_METRICS_PROTOCOL
-
 
 
 value: grpc
 
 
-
 - name: OTEL_EXPORTER_OTLP_METRICS_HEADERS
-
 
 
 value: authorization=Api-Token 123456
@@ -359,33 +314,25 @@ value: authorization=Api-Token 123456
 spec:
 
 
-
 containers:
-
 
 
 - env:
 
 
-
 - name: OTEL_EXPORTER_OTLP_METRICS_ENDPOINT
-
 
 
 value: https://<environment-id>.live.dynatrace.com/api/v2/otlp/v1/metrics
 
 
-
 - name: OTEL_EXPORTER_OTLP_METRICS_PROTOCOL
-
 
 
 value: http/protobuf
 
 
-
 - name: OTEL_EXPORTER_OTLP_METRICS_HEADERS
-
 
 
 value: authorization=Api-Token $(DT_API_TOKEN)
@@ -399,33 +346,25 @@ value: authorization=Api-Token $(DT_API_TOKEN)
 spec:
 
 
-
 containers:
-
 
 
 - env:
 
 
-
 - name: OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
-
 
 
 value: https://my-private-endpoint/otlp/v1/traces
 
 
-
 - name: OTEL_EXPORTER_OTLP_TRACES_PROTOCOL
-
 
 
 value: http/protobuf
 
 
-
 - name: OTEL_EXPORTER_OTLP_TRACES_HEADERS
-
 
 
 value: authorization=Api-Token 123456
@@ -437,57 +376,43 @@ value: authorization=Api-Token 123456
 spec:
 
 
-
 containers:
-
 
 
 - env:
 
 
-
 - name: OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
-
 
 
 value: https://my-private-endpoint/otlp/v1/traces
 
 
-
 - name: OTEL_EXPORTER_OTLP_TRACES_PROTOCOL
 
 
-
 value: http/protobuf
-
 
 
 - name: OTEL_EXPORTER_OTLP_TRACES_HEADERS
 
 
-
 value: authorization=Api-Token 123456
-
 
 
 - name: OTEL_EXPORTER_OTLP_METRICS_ENDPOINT
 
 
-
 value: https://<environment-id>.live.dynatrace.com/api/v2/otlp/v1/metrics
-
 
 
 - name: OTEL_EXPORTER_OTLP_METRICS_PROTOCOL
 
 
-
 value: http/protobuf
 
 
-
 - name: OTEL_EXPORTER_OTLP_METRICS_HEADERS
-
 
 
 value: authorization=Api-Token $(DT_API_TOKEN)
@@ -505,33 +430,25 @@ In this example, metrics will now be sent to the Dynatrace endpoint, while trace
 spec:
 
 
-
 containers:
-
 
 
 - env:
 
 
-
 - name: OTEL_EXPORTER_OTLP_ENDPOINT
-
 
 
 value: https://my-private-endpoint/otlp/v1/traces
 
 
-
 - name: OTEL_EXPORTER_OTLP_PROTOCOL
-
 
 
 value: http/protobuf
 
 
-
 - name: OTEL_EXPORTER_OTLP_HEADERS
-
 
 
 value: authorization=Api-Token 123456
@@ -543,57 +460,43 @@ value: authorization=Api-Token 123456
 spec:
 
 
-
 containers:
-
 
 
 - env:
 
 
-
 - name: OTEL_EXPORTER_OTLP_ENDPOINT
-
 
 
 value: https://my-private-endpoint/otlp/v1/traces
 
 
-
 - name: OTEL_EXPORTER_OTLP_PROTOCOL
 
 
-
 value: http/protobuf
-
 
 
 - name: OTEL_EXPORTER_OTLP_HEADERS
 
 
-
 value: authorization=Api-Token 123456
-
 
 
 - name: OTEL_EXPORTER_OTLP_METRICS_ENDPOINT
 
 
-
 value: https://<environment-id>.live.dynatrace.com/api/v2/otlp/v1/metrics
-
 
 
 - name: OTEL_EXPORTER_OTLP_METRICS_PROTOCOL
 
 
-
 value: http/protobuf
 
 
-
 - name: OTEL_EXPORTER_OTLP_METRICS_HEADERS
-
 
 
 value: authorization=Api-Token $(DT_API_TOKEN)
@@ -609,17 +512,13 @@ You can opt-out of of this by adding the following annotation to your DynaKube:
 apiVersion: dynatrace.com/v1beta6
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 annotations:
-
 
 
 feature.dynatrace.com/otlp-exporter-configuration-set-no-proxy: "false"

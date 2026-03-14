@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:36.932998
 
 # User action metrics
 
-# User action metrics
 
 * Classic
 * Explanation

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:08.510400
 
 # Мониторинг Google Kubernetes Engine (GKE)
 
-# Мониторинг Google Kubernetes Engine (GKE)
 
 * Последняя версия Dynatrace
 * Обзор

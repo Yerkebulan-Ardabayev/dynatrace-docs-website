@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:23:06.237162
 
 # Collector References
 
-# Collector References
 
 * Latest Dynatrace
 * Reference

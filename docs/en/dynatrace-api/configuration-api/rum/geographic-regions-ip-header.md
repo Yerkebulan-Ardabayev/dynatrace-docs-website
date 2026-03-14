@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:40:40.325738
 
 # Geographic regions - IP mapping headers API
 
-# Geographic regions - IP mapping headers API
 
 * Reference
 * Published Sep 24, 2020

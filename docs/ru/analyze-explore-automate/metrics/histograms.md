@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:32.533433
 
 # Метрики гистограмм
 
-# Метрики гистограмм
 
 * Latest Dynatrace
 * Explanation

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:32.671349
 
 # Process group detection
 
-# Process group detection
 
 * Classic
 * How-to guide
@@ -143,49 +142,37 @@ To use the Settings API
      [
 
 
-
      {
-
 
 
      "schemaId": "builtin:process-group.simple-detection-rule"
 
 
-
      "scope": "environment"
-
 
 
      "value": {
 
 
-
      "enabled": true,
-
 
 
      "ruleType": "env",
 
 
-
      "groupIdentifier": "MY_PG_NAME",
-
 
 
      "instanceIdentifier": "MY_INSTANCE_NAME",
 
 
-
      "processType": "PROCESS_TYPE_APACHE_HTTPD"
 
 
-
      }
 
 
-
      }
-
 
 
      ]
@@ -199,93 +186,70 @@ To use the Settings API
      [
 
 
-
      {
-
 
 
      "schemaId": "builtin:process-group.advanced-detection-rule"
 
 
-
      "scope": "environment"
-
 
 
      "value": {
 
 
-
      "enabled": true,
-
 
 
      "processDetection": {
 
 
-
      "property": "JBOSS_SERVER_NAME",
-
 
 
      "containedString": "MyJBossServer",
 
 
-
      "restrictToProcessType": "PROCESS_TYPE_JBOSS"
 
 
-
      },
-
 
 
      "groupExtraction": {
 
 
-
      "property": "COMMAND_LINE_ARGS",
-
 
 
      "delimiter": {
 
 
-
      "from": "-environment=",
-
 
 
      "to": "-",
 
 
-
      "removeIds": true
 
 
-
      },
-
 
 
      "standaloneRule": false
 
 
-
      },
-
 
 
      "instanceExtraction": {}
 
 
-
      }
 
 
-
      }
-
 
 
      ]
@@ -299,113 +263,85 @@ To use the Settings API
      [
 
 
-
      {
-
 
 
      "schemaId": "builtin:declarativegrouping"
 
 
-
      "scope": "environment"
-
 
 
      "value": {
 
 
-
      "name": "keepalived",
-
 
 
      "detection": [
 
 
-
      {
-
 
 
      "id": "keepalived",
 
 
-
      "processGroupName": "keepalived",
-
 
 
      "rules": [
 
 
-
      {
-
 
 
      "property": "executable",
 
 
-
      "condition": "$eq(keepalived)"
-
 
 
      },
 
 
-
      {
-
 
 
      "property": "executablePath",
 
 
-
      "condition": "$prefix(/usr/sbin/keepalived)"
-
 
 
      },
 
 
-
      {
-
 
 
      "property": "commandLine",
 
 
-
      "condition": "$eq(-d)"
 
 
-
      }
-
 
 
      ]
 
 
-
      }
-
 
 
      ]
 
 
-
      }
 
 
-
      }
-
 
 
      ]
@@ -420,69 +356,52 @@ You can also attach your current configuration to your [Extensions 2.0](../../..
 ---
 
 
-
 name: custom:my-extension
-
 
 
 version: 1.0.0
 
 
-
 minDynatraceVersion: "1.218"
-
 
 
 author:
 
 
-
 name: Joe Doe
-
 
 
 processes:
 
 
-
 - name: keepalived
-
 
 
 detection:
 
 
-
 - id: ext.keepalived
-
 
 
 processGroupName: keepalived
 
 
-
 rules:
-
 
 
 - property: executable
 
 
-
 condition: "$eq(keepalived)"
-
 
 
 - property: executablePath
 
 
-
 condition: "$prefix(/usr/sbin/keepalived)"
 
 
-
 - property: commandLine
-
 
 
 condition: "$eq(-d)"

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:43.227674
 
 # Extend traces using OpenTelemetry
 
-# Extend traces using OpenTelemetry
 
 * Latest Dynatrace
 * 7-min read
@@ -47,17 +46,13 @@ Typically, you've created the `dtconfig.json` file during the [z/OS Java code mo
 {
 
 
-
 "OpenTelemetry": {
-
 
 
 "EnableIntegration": true
 
 
-
 }
-
 
 
 }
@@ -85,25 +80,19 @@ This example shows how you can capture an additional operation in a Java applica
    import io.opentelemetry.api.GlobalOpenTelemetry;
 
 
-
    import io.opentelemetry.api.trace.Tracer;
-
 
 
    public final class RestaurantOpenTelemetry {
 
 
-
    public static Tracer getTracer() {
-
 
 
    return GlobalOpenTelemetry.getTracer("restaurant", "0.0.1");
 
 
-
    }
-
 
 
    }
@@ -114,93 +103,70 @@ This example shows how you can capture an additional operation in a Java applica
    import io.opentelemetry.api.trace.Span;
 
 
-
    import io.opentelemetry.api.trace.SpanKind;
-
 
 
    import io.opentelemetry.context.Scope;
 
 
-
    public class MenuDao {
-
 
 
    public Order newOrder(String customer) {
 
 
-
    // OpenTelemetry: create a span and define it's scope
-
 
 
    Span span = RestaurantOpenTelemetry.getTracer().spanBuilder("MenuDao.newOrder")
 
 
-
    .setSpanKind(SpanKind.INTERNAL)
-
 
 
    .setAttribute("customer", customer)
 
 
-
    .startSpan();
-
 
 
    try (Scope scope = span.makeCurrent()) {
 
 
-
    // Your application code: create a new order
-
 
 
    Order order = new Order();
 
 
-
    order.setCustomer(customer);
-
 
 
    order.setStatus("pending");
 
 
-
    // OpenTelemetry: add order ID to the span
-
 
 
    span.setAttribute("newOrderId", order.getId());
 
 
-
    return order;
-
 
 
    } finally {
 
 
-
    // OpenTelemetry: close the span
-
 
 
    span.end();
 
 
-
    }
 
 
-
    }
-
 
 
    }
@@ -222,85 +188,64 @@ To learn more about context propagation, refer to the official [OpenTelemetry Co
 import io.opentelemetry.api.GlobalOpenTelemetry;
 
 
-
 import io.opentelemetry.context.Context;
-
 
 
 import io.opentelemetry.context.propagation.TextMapPropagator;
 
 
-
 public class AuditService {
-
 
 
 public static void sendAuditEntry(Order order) {
 
 
-
 // Your application code: declare an audit entry
-
 
 
 Map<String, String> auditEntry = new HashMap<>();
 
 
-
 auditEntry.put("name", order.getId().toString());
-
 
 
 auditEntry.put("description", order.getCustomer());
 
 
-
 // OpenTelemetry: Inject current context of audit entry and propagate it
-
 
 
 TextMapPropagator propagator = GlobalOpenTelemetry.getPropagators().getTextMapPropagator();
 
 
-
 propagator.inject(
-
 
 
 Context.current(),
 
 
-
 auditEntry,
-
 
 
 Map::put
 
 
-
 );
-
 
 
 // Your application code: write audit entry to objectOutputStream (Socket)
 
 
-
 Socket socket = new Socket(host, port);
-
 
 
 ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream())) {
 
 
-
 objectOutputStream.writeObject(auditEntry);
 
 
-
 }
-
 
 
 }
@@ -312,137 +257,103 @@ objectOutputStream.writeObject(auditEntry);
 import io.opentelemetry.api.GlobalOpenTelemetry;
 
 
-
 import io.opentelemetry.api.trace.Span;
-
 
 
 import io.opentelemetry.api.trace.SpanKind;
 
 
-
 import io.opentelemetry.context.Context;
-
 
 
 import io.opentelemetry.context.Scope;
 
 
-
 import io.opentelemetry.context.propagation.TextMapGetter;
-
 
 
 public class AuditService {
 
 
-
 private static void receivedAuditEntry(Map<String, String> auditEntry) {
-
 
 
 // OpenTelemetry: declare the tracer, create a span and define it's scope
 
 
-
 Span span = GlobalOpenTelemetry.getTracer("auditing-center", "0.0.1")
-
 
 
 .spanBuilder("auditEntry")
 
 
-
 .setSpanKind(SpanKind.SERVER)
-
 
 
 .setAttribute("auditName", auditEntry.get("name"))
 
 
-
 .startSpan();
-
 
 
 try (Scope scope = span.makeCurrent()) {
 
 
-
 // Your application code: process audit entry
-
 
 
 // ...
 
 
-
 }
-
 
 
 span.end();
 
 
-
 }
-
 
 
 public static void readAuditEntryFromSocket(Socket socket) {
 
 
-
 ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
-
 
 
 Object input = objectInputStream.readObject();
 
 
-
 // OpenTelemetry: extract context of audit entry
-
 
 
 Context context = GlobalOpenTelemetry.getPropagators().getTextMapPropagator()
 
 
-
 .extract(
-
 
 
 Context.current(),
 
 
-
 input,
-
 
 
 new TextMapGetter<Map<String, String>>(){ /* ... */ });
 
 
-
 try (Scope scope = context.makeCurrent()) {
-
 
 
 receivedAuditEntry((Map<String, String>) input);
 
 
-
 }
-
 
 
 // ...
 
 
-
 }
-
 
 
 }
@@ -460,33 +371,25 @@ You can suppress spans coming from a particular instrumentation scope/library. T
 {
 
 
-
 "OpenTelemetry": {
-
 
 
 "EnableIntegration": true,
 
 
-
 "DisabledSensors": [
-
 
 
 "com.example.MyLib",
 
 
-
 "opentelemetry.urllib3*"
-
 
 
 ]
 
 
-
 }
-
 
 
 }

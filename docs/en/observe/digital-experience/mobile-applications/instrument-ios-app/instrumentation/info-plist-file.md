@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:38:07.966569
 
 # Info.plist file
 
-# Info.plist file
 
 * Classic
 * Explanation

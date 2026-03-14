@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:03.912818
 
 # Hardware and system requirements for routing/monitoring ActiveGates on Windows
 
-# Hardware and system requirements for routing/monitoring ActiveGates on Windows
 
 * Latest Dynatrace
 * 2-min read

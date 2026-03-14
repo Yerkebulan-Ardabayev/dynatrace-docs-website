@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:12.113649
 
 # Runtime Application Protection
 
-# Runtime Application Protection
 
 * Latest Dynatrace
 * How-to guide

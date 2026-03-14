@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:52.070519
 
 # Dynatrace Assist
 
-# Dynatrace Assist
 
 * Последняя версия Dynatrace
 * Приложение

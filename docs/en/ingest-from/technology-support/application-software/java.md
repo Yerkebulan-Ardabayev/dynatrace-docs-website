@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:24.102960
 
 # Java
 
-# Java
 
 * Latest Dynatrace
 * Reference

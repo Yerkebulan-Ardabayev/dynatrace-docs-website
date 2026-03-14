@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:09.923490
 
 # Web applications
 
-# Web applications
 
 * Classic
 * Overview

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Events API v2 - GET list events
 
-# Events API v2 - GET list events
 
 * Reference
 * Published Aug 06, 2021
@@ -161,197 +160,148 @@ A list of constraint violations
 {
 
 
-
 "events": [
 
 
-
 {
-
 
 
 "correlationId": "933613657e1c8fcf",
 
 
-
 "endTime": 1564039524182,
 
 
-
 "entityId": {
 
 
-
 "entityId": {
-
 
 
 "id": "string",
-
 
 
 "type": "string"
 
 
-
 },
-
 
 
 "name": "string"
 
 
-
 },
-
 
 
 "entityTags": [
 
 
-
 {
-
 
 
 "context": "string",
 
 
-
 "key": "string",
-
 
 
 "stringRepresentation": "string",
 
 
-
 "value": "string"
-
 
 
 }
 
 
-
 ],
-
 
 
 "eventId": "4293884258445543163_1564039524182",
 
 
-
 "eventType": "LOW_DISK_SPACE",
-
 
 
 "frequentEvent": true,
 
 
-
 "managementZones": [
 
 
-
 {
-
 
 
 "id": "string",
 
 
-
 "name": "string"
-
 
 
 }
 
 
-
 ],
-
 
 
 "properties": [
 
 
-
 {
-
 
 
 "key": "string",
 
 
-
 "value": "string"
-
 
 
 }
 
 
-
 ],
-
 
 
 "startTime": 1564039524182,
 
 
-
 "status": "OPEN",
-
 
 
 "suppressAlert": true,
 
 
-
 "suppressProblem": true,
-
 
 
 "title": "High CPU load on host X",
 
 
-
 "underMaintenance": true
-
 
 
 }
 
 
-
 ],
-
 
 
 "nextPageKey": "AQAAABQBAAAABQ==",
 
 
-
 "pageSize": 1,
-
 
 
 "totalCount": 1,
 
 
-
 "warnings": [
-
 
 
 "string"
 
 
-
 ]
-
 
 
 }
@@ -359,55 +309,42 @@ A list of constraint violations
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -425,9 +362,7 @@ The API token is passed in the **Authorization** header.
 curl --request GET \
 
 
-
 --url 'https://mySampleEnv.live.dynatrace.com/api/v2/events?eventSelector=eventType(%22PROCESS_RESTART%22)%2CunderMaintenance(true)&from=now-2h' \
-
 
 
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -445,505 +380,379 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events?eventSelector=eventType(%22
 {
 
 
-
 "totalCount": 43,
-
 
 
 "pageSize": 100,
 
 
-
 "events": [
 
 
-
 {
-
 
 
 "eventId": "-6475311485380369979_1628500180000",
 
 
-
 "startTime": 1628500180000,
-
 
 
 "endTime": 1628500240000,
 
 
-
 "eventType": "PROCESS_RESTART",
-
 
 
 "title": "Process restart",
 
 
-
 "entityId": {
 
 
-
 "entityId": {
-
 
 
 "id": "PROCESS_GROUP_INSTANCE-03F98EA8639FD052",
 
 
-
 "type": "PROCESS_GROUP_INSTANCE"
 
 
-
 },
-
 
 
 "name": "IIS app pool dotNetFrontend_easyTravel_x64"
 
 
-
 },
-
 
 
 "properties": [
 
 
-
 {
-
 
 
 "key": "dt.event.group_label",
 
 
-
 "value": "Process restart"
-
 
 
 }
 
 
-
 ],
-
 
 
 "status": "OPEN",
 
 
-
 "entityTags": [
-
 
 
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "easyTravel",
 
 
-
 "stringRepresentation": "easyTravel"
-
 
 
 },
 
 
-
 {
-
 
 
 "context": "CONTEXTLESS",
 
 
-
 "key": "tech",
-
 
 
 "value": "IIS",
 
 
-
 "stringRepresentation": "tech:IIS"
-
 
 
 },
 
 
-
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "tech",
 
 
-
 "value": ".NET",
-
 
 
 "stringRepresentation": "tech:.NET"
 
 
-
 },
-
 
 
 {
 
 
-
 "context": "CONTEXTLESS",
 
 
-
 "key": "hosts",
-
 
 
 "value": "w-077",
 
 
-
 "stringRepresentation": "hosts:w-077"
-
 
 
 },
 
 
-
 {
-
 
 
 "context": "CONTEXTLESS",
 
 
-
 "key": "Infrastructure",
-
 
 
 "value": "Windows",
 
 
-
 "stringRepresentation": "Infrastructure:Windows"
-
 
 
 },
 
 
-
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "dotNetFrontend",
 
 
-
 "stringRepresentation": "dotNetFrontend"
-
 
 
 },
 
 
-
 ],
-
 
 
 "managementZones": [
 
 
-
 {
-
 
 
 "id": "9130632296508575249",
 
 
-
 "name": "Easytravel"
-
 
 
 },
 
 
-
 {
-
 
 
 "id": "-6239538939987181652",
 
 
-
 "name": "frontend"
-
 
 
 },
 
 
-
 {
-
 
 
 "id": "5130731705740636866",
 
 
-
 "name": "Windows"
-
 
 
 }
 
 
-
 ],
 
 
-
 "underMaintenance": true,
-
 
 
 "suppressAlert": true,
 
 
-
 "suppressProblem": true,
-
 
 
 "frequentEvent": false
 
 
-
 },
 
 
-
 {
-
 
 
 "eventId": "-231290298591263162_1628500000000",
 
 
-
 "startTime": 1628500000000,
-
 
 
 "endTime": 1628500060000,
 
 
-
 "eventType": "PROCESS_RESTART",
-
 
 
 "title": "Process restart",
 
 
-
 "entityId": {
 
 
-
 "entityId": {
-
 
 
 "id": "PROCESS_GROUP_INSTANCE-00CA9B0F1AE9BAF8",
 
 
-
 "type": "PROCESS_GROUP_INSTANCE"
 
 
-
 },
-
 
 
 "name": "chromedriver_linux64"
 
 
-
 },
-
 
 
 "properties": [
 
 
-
 {
-
 
 
 "key": "dt.event.group_label",
 
 
-
 "value": "Process restart"
-
 
 
 }
 
 
-
 ],
-
 
 
 "status": "CLOSED",
 
 
-
 "entityTags": [
-
 
 
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "Infrastructure",
 
 
-
 "value": "Linux",
-
 
 
 "stringRepresentation": "Infrastructure:Linux"
 
 
-
 },
 
 
-
 {
-
 
 
 "context": "CONTEXTLESS",
 
 
-
 "key": "hosts",
-
 
 
 "value": "l-008",
 
 
-
 "stringRepresentation": "hosts:l-008"
-
 
 
 }
 
 
-
 ],
-
 
 
 "managementZones": [
 
 
-
 {
-
 
 
 "id": "2631544906797876001",
 
 
-
 "name": "Linux"
-
 
 
 }
 
 
-
 ],
-
 
 
 "underMaintenance": true,
 
 
-
 "suppressAlert": false,
-
 
 
 "suppressProblem": false,
 
 
-
 "frequentEvent": false
-
 
 
 }
 
 
-
 ],
 
 
-
 "warnings": []
-
 
 
 }

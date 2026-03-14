@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:52.367065
 
 # Enable the New RUM Experience for your RUM Classic web applications
 
-# Enable the New RUM Experience for your RUM Classic web applications
 
 * Latest Dynatrace
 * How-to guide

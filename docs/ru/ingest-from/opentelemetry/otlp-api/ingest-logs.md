@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:49.637661
 
 # Загрузка логов OTLP
 
-# Загрузка логов OTLP
 
 * Latest Dynatrace
 * Справочник
@@ -218,13 +217,10 @@ API поддерживает специальный заголовок для п
 otlphttp:
 
 
-
 endpoint: /api/v2/otlp
 
 
-
 headers:
-
 
 
 X-Dynatrace-Attr: region=eu-central-1&team=core

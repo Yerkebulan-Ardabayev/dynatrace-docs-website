@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:08.607908
 
 # Adjust Apdex settings for web applications
 
-# Adjust Apdex settings for web applications
 
 * Classic
 * How-to guide

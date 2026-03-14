@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:00.286290
 
 # Enable Kubernetes experience for existing clusters
 
-# Enable Kubernetes experience for existing clusters
 
 * Latest Dynatrace
 * How-to guide

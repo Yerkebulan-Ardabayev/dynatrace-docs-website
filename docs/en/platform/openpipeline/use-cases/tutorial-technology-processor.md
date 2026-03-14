@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:36.221723
 
 # Process logs with technology bundle parsers
 
-# Process logs with technology bundle parsers
 
 * Latest Dynatrace
 * Tutorial
@@ -84,13 +83,10 @@ Using parsers helps you to better structure and enrich your logs. See this compa
 {
 
 
-
 "dt.openpipeline.source": "extension:syslog",
 
 
-
 "content": "<24>1 2025-08-06T14:50:30.123Z core-router-01.example.com kernel 9999 ID01 Critical system failure: Kernel panic detected, immediate attention required!"
-
 
 
 }
@@ -102,61 +98,46 @@ Using parsers helps you to better structure and enrich your logs. See this compa
 {
 
 
-
 "syslog.severity": 0,
-
 
 
 "syslog.version": 1,
 
 
-
 "syslog.priority": 24,
-
 
 
 "syslog.facility": 3,
 
 
-
 "syslog.message": "Critical system failure: Kernel panic detected, immediate attention required!",
-
 
 
 "content": "<24>1 2025-08-06T14:50:30.123Z core-router-01.example.com kernel 9999 ID01 Critical system failure: Kernel panic detected, immediate attention required!",
 
 
-
 "syslog.proc_id": "9999",
-
 
 
 "dt.openpipeline.source": "extension:syslog",
 
 
-
 "loglevel": "EMERGENCY",
-
 
 
 "syslog.message_id": "ID01",
 
 
-
 "syslog.hostname": "core-router-01.example.com",
-
 
 
 "syslog.appname": "kernel",
 
 
-
 "timestamp": "2025-08-06T14:50:30.123000000Z",
 
 
-
 "status": "ERROR"
-
 
 
 }
@@ -173,13 +154,10 @@ You can easily filter logs by status, application, or attributes specific to the
      fetch logs
 
 
-
      | filter dt.openpipeline.source == "extension:syslog"
 
 
-
      | filter status == "WARN"
-
 
 
      | sort timestamp desc
@@ -192,13 +170,10 @@ You can easily filter logs by status, application, or attributes specific to the
      fetch logs
 
 
-
      | filter dt.openpipeline.source == "extension:syslog" and isNotNull(syslog.appname)
 
 
-
      | summarize totalCount = count(), by: {syslog.appname}
-
 
 
      | sort totalCount desc
@@ -213,21 +188,16 @@ You can easily filter logs by status, application, or attributes specific to the
      fetch logs
 
 
-
      | filter dt.openpipeline.source == "extension:syslog" and isNotNull(syslog.appname)
-
 
 
      | summarize TotalCount = count(), Count = countIf(status == "ERROR"), by: {syslog.appname}
 
 
-
      | fieldsAdd Percentage = (Count * 100 / TotalCount)
 
 
-
      | sort Count desc
-
 
 
      | fieldsRemove TotalCount

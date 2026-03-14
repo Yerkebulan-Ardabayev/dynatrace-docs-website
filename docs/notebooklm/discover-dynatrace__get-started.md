@@ -14,7 +14,6 @@ scraped: 2026-03-04T21:30:00.075945
 
 # Accessibility
 
-# Accessibility
 
 * Latest Dynatrace
 * 1-min read
@@ -53,7 +52,6 @@ scraped: 2026-03-06T21:30:17.899790
 
 # Data visualizations
 
-# Data visualizations
 
 * Latest Dynatrace
 * 1-min read
@@ -101,7 +99,6 @@ scraped: 2026-03-06T21:20:58.151502
 
 # Launchpads
 
-# Launchpads
 
 * Latest Dynatrace
 * 4-min read
@@ -253,7 +250,6 @@ scraped: 2026-03-03T21:27:49.998461
 
 # Troubleshooting sign-in issues
 
-# Troubleshooting sign-in issues
 
 * Latest Dynatrace
 * 1-min read
@@ -276,7 +272,6 @@ scraped: 2026-03-06T21:11:05.522860
 
 # Share documents
 
-# Share documents
 
 * Latest Dynatrace
 * 10-min read
@@ -438,7 +433,6 @@ To manage sharing permissions for your document
 ## Remove all access
 
 
-
 Sometimes you need to quickly and easily remove all shared access to a document.
 
 To revoke all sharing for your document
@@ -582,7 +576,6 @@ scraped: 2026-03-06T21:19:18.937696
 
 # Filter field
 
-# Filter field
 
 * Latest Dynatrace
 * Reference
@@ -731,7 +724,6 @@ scraped: 2026-03-05T21:39:57.477430
 
 # Navigate the Dynatrace platform
 
-# Navigate the Dynatrace platform
 
 * Latest Dynatrace
 * Reference
@@ -856,7 +848,6 @@ To open the user menu, select your name in the lower-left corner, at the bottom 
 ## Previous Dynatrace
 
 
-
 If you haven't upgraded to the latest Dynatrace, the following sections describe basic navigation for the previous Dynatrace.
 
 Filter the menu
@@ -921,7 +912,6 @@ scraped: 2026-03-06T21:13:03.640210
 
 # What is a monitoring environment?
 
-# What is a monitoring environment?
 
 * Latest Dynatrace
 * 4-min read
@@ -1014,7 +1004,6 @@ scraped: 2026-03-06T21:28:32.226910
 
 # Platform Engineering
 
-# Platform Engineering
 
 * Latest Dynatrace
 * 24-min read
@@ -1180,7 +1169,6 @@ Follow these core principles when building your Internal Developer Platform (IDP
 ### 1. Core platform observability
 
 
-
 A critical first step in achieving actionable platform insights is
 ensuring monitoring of the artifact (service or application) as well as
 the full software development lifecycle and the underlying IDP:
@@ -1322,7 +1310,6 @@ In addition to metrics, logs and traces of pipeline runs can help debug erroneou
 ### Operate
 
 
-
 This category contains activities around monitoring and operating services and applications in production environments.
 
 #### Data-driven cloud tuning Cloud cost optimization
@@ -1460,7 +1447,6 @@ If you have 99 problems, how do you prioritize?
 An easy way to focus on the right problems is to look at those actively impacting Service-Level Objectives (SLOs). If the number of issues in an environment still calls for further prioritization, automatically triage and inform stakeholders easily by alerting them on the SLO error budget burn rate (how fast the SLO error budget is consumed).
 
 ### Protect
-
 
 
 All environments, infrastructures, and applications must be protected â with the right measures. Organizations can protect their assets more easily with a consistent Internal Developer Platform (IDP), providing governance and security.
@@ -1623,7 +1609,6 @@ scraped: 2026-03-06T21:16:46.945923
 
 # Serverless monitoring
 
-# Serverless monitoring
 
 * Latest Dynatrace
 * 3-min read
@@ -1716,7 +1701,6 @@ scraped: 2026-03-06T21:09:27.563916
 
 # Get started with Dynatrace
 
-# Get started with Dynatrace
 
 * Latest Dynatrace
 * How-to guide

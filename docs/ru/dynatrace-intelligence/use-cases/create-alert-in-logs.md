@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:40:14.975184
 
 # Создание оповещений журналов для события журнала или сводки данных журналов
 
-# Создание оповещений журналов для события журнала или сводки данных журналов
 
 * Latest Dynatrace
 * Обучающее руководство
@@ -45,25 +44,19 @@ scraped: 2026-03-05T21:40:14.975184
 fetch logs
 
 
-
 | filter matchesValue(process.technology, "nginx")
-
 
 
 | filter matchesValue(loglevel, "ERROR")
 
 
-
 | filter matchesPhrase(content, "Connection refused")
-
 
 
 | fields timestamp,content, process.technology
 
 
-
 | parse content, "LD '[error] ' INT:error_number '#' INT LD 'Connection refused' LD 'client:' SPACE? IPADDR:client_ip LD 'request:' SPACE? DQS:http_request"
-
 
 
 | sort timestamp desc
@@ -104,13 +97,10 @@ fetch logs
    fetch logs
 
 
-
    | filter dt.system.bucket == "{your bucket name}"
 
 
-
    | filter matchesPhrase(content, "Connection refused")
-
 
 
    | makeTimeseries count(), interval:1m

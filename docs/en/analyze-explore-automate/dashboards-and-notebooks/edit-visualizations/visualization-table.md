@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:27.327638
 
 # Table visualization
 
-# Table visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -31,9 +30,7 @@ The table above is based on the following query.
 timeseries cpu=avg(dt.host.cpu.usage), by:{dt.entity.host}
 
 
-
 | sort arrayAvg(cpu), direction:"descending"
-
 
 
 | limit 3
@@ -174,7 +171,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000

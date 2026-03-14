@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:01.503322
 
 # Custom API definitions
 
-# Custom API definitions
 
 * Latest Dynatrace
 * How-to guide

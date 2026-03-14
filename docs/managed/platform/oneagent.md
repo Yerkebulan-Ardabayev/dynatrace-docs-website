@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # OneAgent
 
-# OneAgent
 
 * 1-min read
 * Published Mar 29, 2019

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:39.204491
 
 # Workflow templates
 
-# Workflow templates
 
 * Latest Dynatrace
 * How-to guide

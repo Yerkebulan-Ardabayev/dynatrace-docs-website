@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # OneAgent security on Linux
 
-# OneAgent security on Linux
 
 * 5-min read
 * Published Nov 11, 2020

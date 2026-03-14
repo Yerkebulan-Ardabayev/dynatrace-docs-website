@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:24.885857
 
 # Select a snippet format in the New RUM Experience
 
-# Select a snippet format in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide

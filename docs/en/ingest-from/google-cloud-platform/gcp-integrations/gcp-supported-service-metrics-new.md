@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:05.172973
 
 # Google Cloud supported services
 
-# Google Cloud supported services
 
 * Latest Dynatrace
 * Overview

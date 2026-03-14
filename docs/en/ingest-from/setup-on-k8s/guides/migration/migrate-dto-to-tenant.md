@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:30.280689
 
 # Migrate Dynatrace Operator to a new environment
 
-# Migrate Dynatrace Operator to a new environment
 
 * Latest Dynatrace
 * 2-min read

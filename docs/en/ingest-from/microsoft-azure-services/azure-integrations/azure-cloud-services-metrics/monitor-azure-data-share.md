@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:28:14.296102
 
 # Azure Data Share monitoring
 
-# Azure Data Share monitoring
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # OneAgent files and disk space requirements on Linux
 
-# OneAgent files and disk space requirements on Linux
 
 * 4-min read
 * Updated on Jun 25, 2025

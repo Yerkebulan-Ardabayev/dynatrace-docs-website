@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:29.616618
 
 # Policy management API - DELETE a policy boundary
 
-# Policy management API - DELETE a policy boundary
 
 * Latest Dynatrace
 * Reference
@@ -51,17 +50,13 @@ To execute this request, you need the **Allow IAM policy configuration for envir
 {
 
 
-
 "code": 1,
-
 
 
 "message": "string",
 
 
-
 "errorsMap": {}
-
 
 
 }
@@ -77,9 +72,7 @@ In this example, the request deletes a policy boundary with policy boundary `UUI
 curl --request DELETE \
 
 
-
 --url https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890/boundaries/9a7b6c54-3d2e-4f10-a8b2-7cde9012f345 \
-
 
 
 --header 'Authorization: Bearer abcdefjhij1234567890'

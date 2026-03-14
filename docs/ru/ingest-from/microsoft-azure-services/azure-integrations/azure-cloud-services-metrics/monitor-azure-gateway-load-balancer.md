@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:15.372108
 
 # Мониторинг Azure Gateway Load Balancer
 
-# Мониторинг Azure Gateway Load Balancer
 
 * Последняя версия Dynatrace
 * Практическое руководство

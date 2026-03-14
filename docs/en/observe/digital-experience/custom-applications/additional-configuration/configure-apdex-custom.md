@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:03.715778
 
 # Adjust Apdex settings for custom applications
 
-# Adjust Apdex settings for custom applications
 
 * Classic
 * How-to guide

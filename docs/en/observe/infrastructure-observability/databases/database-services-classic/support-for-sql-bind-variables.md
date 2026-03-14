@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:11.357794
 
 # Support for SQL bind variables
 
-# Support for SQL bind variables
 
 * Classic
 * How-to guide

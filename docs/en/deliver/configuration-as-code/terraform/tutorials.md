@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:40:31.962704
 
 # Terraform tutorials overview
 
-# Terraform tutorials overview
 
 * Latest Dynatrace
 * Explanation

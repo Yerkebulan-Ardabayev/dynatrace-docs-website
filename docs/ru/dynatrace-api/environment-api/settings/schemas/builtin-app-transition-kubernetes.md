@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:29.540143
 
 # Settings API — таблица схемы приложения Kubernetes
 
-# Settings API — таблица схемы приложения Kubernetes
 
 * Опубликовано 26 февраля 2024 г.
 

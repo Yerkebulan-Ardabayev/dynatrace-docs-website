@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:53.332620
 
 # Мониторинг Azure Mesh Application
 
-# Мониторинг Azure Mesh Application
 
 * Последняя версия Dynatrace
 * Практическое руководство

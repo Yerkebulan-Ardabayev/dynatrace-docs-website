@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:45.103383
 
 # Google Cloud Virtual Private Cloud (VPC) monitoring
 
-# Google Cloud Virtual Private Cloud (VPC) monitoring
 
 * Latest Dynatrace
 * How-to guide

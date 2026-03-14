@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:25:28.391388
 
 # Мониторинг Azure Notification Hub
 
-# Мониторинг Azure Notification Hub
 
 * Latest Dynatrace
 * How-to guide

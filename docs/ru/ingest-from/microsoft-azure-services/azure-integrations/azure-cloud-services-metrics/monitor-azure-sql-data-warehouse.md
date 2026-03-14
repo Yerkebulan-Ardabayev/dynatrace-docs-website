@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:12.122586
 
 # Azure SQL Data Warehouse (устаревший)
 
-# Azure SQL Data Warehouse (устаревший)
 
 * Последняя версия Dynatrace
 * Практическое руководство

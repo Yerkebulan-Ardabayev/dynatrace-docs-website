@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:33:38.466390
 
 # Vulnerabilities API - POST mute vulnerabilities
 
-# Vulnerabilities API - POST mute vulnerabilities
 
 * Reference
 * Updated on Sep 25, 2024
@@ -52,25 +51,19 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "comment": "string",
-
 
 
 "reason": "CONFIGURATION_NOT_AFFECTED",
 
 
-
 "securityProblemIds": [
-
 
 
 "string"
 
 
-
 ]
-
 
 
 }
@@ -137,89 +130,68 @@ A list of constraint violations
 {
 
 
-
 "summary": [
 
 
-
 {
-
 
 
 "muteStateChangeTriggered": true,
 
 
-
 "reason": "ALREADY_MUTED",
-
 
 
 "securityProblemId": "string"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -235,41 +207,31 @@ Mute two vulnerabilities, `2919200225913269102` and `4537041069803077238`, as th
 curl -X 'POST' 'https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/mute' \
 
 
-
 -H 'accept: application/json; charset=utf-8' \
-
 
 
 -H 'Authorization: Api-Token [your_token]' \
 
 
-
 -H 'Content-Type: application/json; charset=utf-8' \
-
 
 
 -d '{
 
 
-
 "comment": "Example mute batch",
-
 
 
 "reason": "CONFIGURATION_NOT_AFFECTED",
 
 
-
 "securityProblemIds": [
-
 
 
 "2919200225913269102", "4537041069803077238"
 
 
-
 ]
-
 
 
 }'
@@ -287,25 +249,19 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/mute
 {
 
 
-
 "comment": "Example mute batch",
-
 
 
 "reason": "CONFIGURATION_NOT_AFFECTED",
 
 
-
 "securityProblemIds": [
-
 
 
 "2919200225913269102", "4537041069803077238"
 
 
-
 ]
-
 
 
 }
@@ -317,45 +273,34 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/mute
 {
 
 
-
 "summary": [
 
 
-
 {
-
 
 
 "securityProblemId": "2919200225913269102",
 
 
-
 "muteStateChangeTriggered": true
-
 
 
 },
 
 
-
 {
-
 
 
 "securityProblemId": "4537041069803077238",
 
 
-
 "muteStateChangeTriggered": true
-
 
 
 }
 
 
-
 ]
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:58.010413
 
 # RUM metrics migration
 
-# RUM metrics migration
 
 * Latest Dynatrace
 * Reference

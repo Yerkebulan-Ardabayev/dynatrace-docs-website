@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:23:18.298824
 
 # Configure key user actions for custom applications
 
-# Configure key user actions for custom applications
 
 * How-to guide
 * 1-min read

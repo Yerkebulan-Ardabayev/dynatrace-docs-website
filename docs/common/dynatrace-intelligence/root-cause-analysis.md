@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Root cause analysis
 
-# Root cause analysis
 
 * Latest Dynatrace
 * Explanation

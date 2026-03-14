@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:59.119248
 
 # Представление Smartscape on Grail
 
-# Представление Smartscape on Grail
 
 * Последняя версия Dynatrace
 * Пояснение

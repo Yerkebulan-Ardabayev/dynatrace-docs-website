@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Retain trace data for long periods
 
-# Retain trace data for long periods
 
 * Latest Dynatrace
 * Tutorial

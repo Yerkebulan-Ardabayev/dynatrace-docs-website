@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:49.590243
 
 # Platform extensions overview (DPS)
 
-# Platform extensions overview (DPS)
 
 * Latest Dynatrace
 * Overview

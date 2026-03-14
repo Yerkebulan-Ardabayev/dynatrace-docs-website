@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:44.668198
 
 # Kubernetes
 
-# Kubernetes
 
 * Latest Dynatrace
 * App

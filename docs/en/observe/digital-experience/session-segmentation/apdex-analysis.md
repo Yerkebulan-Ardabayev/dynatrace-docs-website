@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:25.972152
 
 # Context-based Apdex analysis
 
-# Context-based Apdex analysis
 
 * Classic
 * How-to guide

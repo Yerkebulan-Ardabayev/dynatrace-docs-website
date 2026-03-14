@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:28:51.746646
 
 # Мониторинг Google Cloud Data Loss Prevention
 
-# Мониторинг Google Cloud Data Loss Prevention
 
 * Последняя версия Dynatrace
 * Практическое руководство

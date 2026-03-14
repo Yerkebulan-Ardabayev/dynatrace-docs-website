@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:25.957588
 
 # OneAgent security on Windows
 
-# OneAgent security on Windows
 
 * Latest Dynatrace
 * 5-min read

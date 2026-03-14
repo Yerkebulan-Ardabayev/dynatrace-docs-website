@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:36:50.391726
 
 # Azure AI Content Moderator monitoring
 
-# Azure AI Content Moderator monitoring
 
 * Latest Dynatrace
 * How-to guide

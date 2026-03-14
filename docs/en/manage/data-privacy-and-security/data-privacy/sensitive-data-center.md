@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:45.103522
 
 # Sensitive Data Center
 
-# Sensitive Data Center
 
 * Latest Dynatrace
 * App
@@ -76,29 +75,22 @@ Some one-time setup is necessary before using ![Sensitive Data Center](https://d
 ALLOW app-engine:apps:run WHERE shared:app-id = 'dynatrace.sensitive.data.center';
 
 
-
 ALLOW state:app-states:read, state:app-states:write, state:app-states:delete WHERE shared:app-id = 'dynatrace.sensitive.data.center';
-
 
 
 ALLOW iam:users:read, iam:groups:read;
 
 
-
 ALLOW storage:records:delete, storage:logs:write, storage:events:write;
-
 
 
 ALLOW storage:fieldsets:read, storage:system:read, storage:logs:read, storage:events:read, storage:bizevents:read, storage:metrics:read, storage:spans:read, storage:buckets:read;
 
 
-
 ALLOW email:emails:send;
 
 
-
 ALLOW document:documents:read, document:documents:write, document:direct-shares:write, document:documents:delete, document:trash.documents:delete;
-
 
 
 ALLOW automation:workflows:read, automation:workflows:write;
@@ -114,41 +106,31 @@ Assign users to this group when you want them to be able to create requests and 
 ALLOW app-engine:apps:run WHERE shared:app-id = 'dynatrace.sensitive.data.center';
 
 
-
 ALLOW app-engine:functions:run;
-
 
 
 ALLOW state:app-states:read, state:app-states:write, state:app-states:delete WHERE shared:app-id = 'dynatrace.sensitive.data.center';
 
 
-
 ALLOW state:user-app-states:read, state:user-app-states:write, state:user-app-states:delete WHERE shared:app-id = 'dynatrace.sensitive.data.center';
-
 
 
 ALLOW iam:service-users:use WHERE iam:service-user-email = "YOUR-SERVICE-USER-EMAIL-HERE";
 
 
-
 ALLOW iam:users:read, iam:groups:read;
-
 
 
 ALLOW storage:logs:write, storage:events:write;
 
 
-
 ALLOW storage:fieldsets:read, storage:logs:read, storage:bizevents:read, storage:buckets:read;
-
 
 
 ALLOW email:emails:send;
 
 
-
 ALLOW document:documents:read;
-
 
 
 ALLOW automation:workflows:read, automation:workflows:write;
@@ -185,13 +167,10 @@ As sensitive data is visible in ![Sensitive Data Center](https://dt-cdn.net/imag
 DENY app-engine:apps:run WHERE shared:app-id = 'dynatrace.sensitive.data.center';
 
 
-
 DENY state:app-states:read, state:app-states:write, state:app-states:delete WHERE shared:app-id = 'dynatrace.sensitive.data.center';
 
 
-
 DENY state-management:app-states:delete WHERE shared:app-id = 'dynatrace.sensitive.data.center';
-
 
 
 DENY iam:service-users:use WHERE iam:service-user-email = "YOUR-SERVICE-USER-EMAIL-HERE";

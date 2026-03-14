@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:12.258749
 
 # Manage SNMP extensions
 
-# Manage SNMP extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -136,11 +135,6 @@ The files stored in the `mib-files-custom` directory are preserved between updat
 
 ## Explore SNMP extensions
 
-Filter by
-
-Select an option
-
-Type to filter
 
 ## Related topics
 

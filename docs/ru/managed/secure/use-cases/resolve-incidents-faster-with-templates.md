@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:29:09.345024
 
 # Ускорение разрешения инцидентов с помощью шаблонов Investigations
 
-# Ускорение разрешения инцидентов с помощью шаблонов Investigations
 
 * Latest Dynatrace
 * Tutorial

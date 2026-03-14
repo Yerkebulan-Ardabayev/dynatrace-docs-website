@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:25.734911
 
 # SAML
 
-# SAML
 
 * Latest Dynatrace
 * Reference
@@ -199,137 +198,103 @@ After you [create a fallback user account](#create-fallback) and [verify your ow
      <AttributeStatement>
 
 
-
      <Attribute Name="http://schemas.microsoft.com/identity/claims/tenantid">
-
 
 
      <AttributeValue>70ebe3a3-5b30-435d-9d67-7716d74ca190</AttributeValue>
 
 
-
      </Attribute>
-
 
 
      <Attribute Name="http://schemas.microsoft.com/identity/claims/objectidentifier">
 
 
-
      <AttributeValue>c72581d1-f178-4a50-9816-504ee495bc15</AttributeValue>
 
 
-
      </Attribute>
-
 
 
      <Attribute Name="http://schemas.microsoft.com/identity/claims/displayname">
 
 
-
      <AttributeValue>McSample, Sandy</AttributeValue>
 
 
-
      </Attribute>
-
 
 
      <Attribute Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/groups">
 
 
-
      <AttributeValue>5ab67c8d-9e0f-1ghi-23j4-56klmn7o8p9q</AttributeValue>
-
 
 
      (...)
 
 
-
      <AttributeValue>5ba67c8d-9e0f-1ghi-23j4-56klmn7o8p9q</AttributeValue>
 
 
-
      </Attribute>
-
 
 
      <Attribute Name="http://schemas.microsoft.com/identity/claims/identityprovider">
 
 
-
      <AttributeValue>https://sts.windows.net/70ebe3a3-5b30-435d-9d67-7716d74ca190/</AttributeValue>
 
 
-
      </Attribute>
-
 
 
      <Attribute Name="http://schemas.microsoft.com/claims/authnmethodsreferences">
 
 
-
      <AttributeValue>http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password</AttributeValue>
-
 
 
      <AttributeValue>http://schemas.microsoft.com/claims/multipleauthn</AttributeValue>
 
 
-
      </Attribute>
-
 
 
      <Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname">
 
 
-
      <AttributeValue>Sandy</AttributeValue>
 
 
-
      </Attribute>
-
 
 
      <Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname">
 
 
-
      <AttributeValue>McSample</AttributeValue>
 
 
-
      </Attribute>
-
 
 
      <Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress">
 
 
-
      <AttributeValue>Sandy.McSample@dynatrace.com</AttributeValue>
 
 
-
      </Attribute>
-
 
 
      <Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">
 
 
-
      <AttributeValue>Sandy.McSample@dynatrace.com</AttributeValue>
 
 
-
      </Attribute>
-
 
 
      </AttributeStatement>
@@ -566,53 +531,40 @@ To switch certificates
      <KeyDescriptor use="signing">
 
 
-
      <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
 
 
-
      <X509Data>
-
 
 
      <X509Certificate>(...) Certificate 1 (...)</X509Certificate>
 
 
-
      </X509Data>
 
 
-
      </KeyInfo>
-
 
 
      </KeyDescriptor>
 
 
-
      <KeyDescriptor use="signing">
-
 
 
      <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
 
 
-
      <X509Data>
-
 
 
      <X509Certificate>(...) Certificate 2 (...)</X509Certificate>
 
 
-
      </X509Data>
 
 
-
      </KeyInfo>
-
 
 
      </KeyDescriptor>

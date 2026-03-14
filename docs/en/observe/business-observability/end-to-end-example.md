@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:48.552772
 
 # Business events end-to-end example
 
-# Business events end-to-end example
 
 * Latest Dynatrace
 * Tutorial
@@ -47,21 +46,16 @@ You also need to define the data items of the quick-buy-asset request. For examp
 {
 
 
-
 "accountId":6,
-
 
 
 "amount":10,
 
 
-
 "instrumentId":1,
 
 
-
 "price":157.025
-
 
 
 }
@@ -222,13 +216,10 @@ To see if your data was captured correctly
    fetch bizevents
 
 
-
    | filter event.provider == "www.easytrade.com"
 
 
-
    | filter event.type == "com.easytrade.quick-buy" OR event.type == "com.easytrade.deposit" OR event.type == "com.easytrade.quick-sell"
-
 
 
    | sort timestamp desc
@@ -257,21 +248,16 @@ To analyze your data using DQL, select **Run in Playground**  below this query:
 fetch bizevents, from:now()-30d, to:now()
 
 
-
 | filter event.provider == "www.easytrade.com" and (event.type == "com.easytrade.quick-buy" OR event.type == "com.easytrade.deposit" OR event.type == "com.easytrade.quick-sell")
-
 
 
 | fieldsAdd moneyTransfered = if(event.type == "com.easytrade.deposit", toDouble(amount)),
 
 
-
 buyAssets = if(event.type == "com.easytrade.quick-buy", toDouble(amount)),
 
 
-
 trading_volume= if(event.type == "com.easytrade.quick-sell",(amount*price))
-
 
 
 | summarize sum(moneyTransfered), sum(buyAssets), sum(trading_volume), max(trading_volume), by:accountId

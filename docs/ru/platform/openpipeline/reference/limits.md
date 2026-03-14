@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:07.099440
 
 # Лимиты OpenPipeline
 
-# Лимиты OpenPipeline
 
 * Последняя версия Dynatrace
 * Справочник

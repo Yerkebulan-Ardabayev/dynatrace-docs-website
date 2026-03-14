@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:27:46.123119
 
 # Stream syslog to Dynatrace with Fluentd
 
-# Stream syslog to Dynatrace with Fluentd
 
 * Latest Dynatrace
 * Tutorial
@@ -80,45 +79,34 @@ The syslog message often needs additional context to differentiate sources durin
 <source>
 
 
-
 @type syslog
-
 
 
 port 5140
 
 
-
 bind 0.0.0.0
-
 
 
 tag system-linux
 
 
-
 </source>
-
 
 
 <source>
 
 
-
 @type syslog
-
 
 
 port 5141
 
 
-
 bind 0.0.0.0
 
 
-
 tag system-f5
-
 
 
 </source>
@@ -130,45 +118,34 @@ You need to add `log.source` attribute based on the fluentd tag.
 <filter system-linux.**>
 
 
-
 @type record_transformer
 
 
-
 <record>
-
 
 
 log.source "linux syslogs"
 
 
-
 </record>
-
 
 
 </filter>
 
 
-
 <filter system-f5.**>
-
 
 
 @type record_transformer
 
 
-
 <record>
-
 
 
 log.source "f5 syslogs"
 
 
-
 </record>
-
 
 
 </filter>

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:33.931700
 
 # Create and configure a browser monitor
 
-# Create and configure a browser monitor
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:48.124731
 
 # Monitor persistent volume claims on Kubernetes/OpenShift
 
-# Monitor persistent volume claims on Kubernetes/OpenShift
 
 * Classic
 * 2-min read

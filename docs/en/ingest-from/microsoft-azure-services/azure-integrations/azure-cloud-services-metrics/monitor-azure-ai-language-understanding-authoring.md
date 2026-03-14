@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:28.620671
 
 # Azure AI - Language Understanding (LUIS) Authoring monitoring
 
-# Azure AI - Language Understanding (LUIS) Authoring monitoring
 
 * Latest Dynatrace
 * How-to guide

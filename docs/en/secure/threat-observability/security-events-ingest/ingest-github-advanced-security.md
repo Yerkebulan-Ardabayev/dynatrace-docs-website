@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:04.309763
 
 # Ingest GitHub Advanced Security security events and audit logs
 
-# Ingest GitHub Advanced Security security events and audit logs
 
 * Latest Dynatrace
 * Extension
@@ -132,7 +131,6 @@ To generate a Personal Access Token, follow the instructions at [Managing your p
      fetch logs
 
 
-
      | filter log.source=="GitHub Advanced Security"
      ```
    * For finding events:
@@ -141,13 +139,10 @@ To generate a Personal Access Token, follow the instructions at [Managing your p
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="GitHub Advanced Security"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -158,13 +153,10 @@ To generate a Personal Access Token, follow the instructions at [Managing your p
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="GitHub Advanced Security"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"

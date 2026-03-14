@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:55.942296
 
 # Applications API - GET baseline
 
-# Applications API - GET baseline
 
 * Reference
 * Updated on Mar 22, 2023
@@ -118,149 +117,112 @@ A list of constraint violations
 {
 
 
-
 "applicationDomInteractiveBaselines": [
 
 
-
 {
-
 
 
 "childBaselines": [
 
 
-
 {}
-
 
 
 ],
 
 
-
 "displayName": "string",
-
 
 
 "entityId": "string",
 
 
-
 "errorRate": 1,
-
 
 
 "hasLoadBaseline": true,
 
 
-
 "micros90thPercentile": 1,
-
 
 
 "microsMedian": 1
 
 
-
 }
 
 
-
 ],
-
 
 
 "applicationHtmlDownloadedBaselines": [
 
 
-
 {}
 
 
-
 ],
-
 
 
 "applicationLoadEventEndBaselines": [
 
 
-
 {}
 
 
-
 ],
-
 
 
 "applicationLoadEventStartBaselines": [
 
 
-
 {}
 
 
-
 ],
-
 
 
 "applicationResponseTimeBaselines": [
 
 
-
 {}
 
 
-
 ],
-
 
 
 "applicationSpeedIndexBaselines": [
 
 
-
 {}
 
 
-
 ],
-
 
 
 "applicationTimeToFirstByteBaselines": [
 
 
-
 {}
 
 
-
 ],
-
 
 
 "applicationVisualCompleteBaselines": [
 
 
-
 {}
 
 
-
 ],
-
 
 
 "displayName": "string",
 
 
-
 "entityId": "string"
-
 
 
 }
@@ -268,55 +230,42 @@ A list of constraint violations
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }

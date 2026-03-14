@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:55.534393
 
 # Миграция DynaKube с v1beta1 на v1beta4
 
-# Миграция DynaKube с v1beta1 на v1beta4
 
 * Latest Dynatrace
 * Reference
@@ -45,33 +44,25 @@ scraped: 2026-03-05T21:32:55.534393
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 metadataEnrichment:
 
 
-
 enabled: true # replaces feature.dynatrace.com/metadata-enrichment: true
-
 
 
 #...
@@ -85,29 +76,22 @@ enabled: true # replaces feature.dynatrace.com/metadata-enrichment: true
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
 
 
-
 dynatraceApiRequestThreshold: 10 # replaces feature.dynatrace.com/dynatrace-api-request-threshold: "10"
-
 
 
 #...
@@ -127,37 +111,28 @@ Cloud native fullstack
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
 
 
-
 oneAgent:
-
 
 
 hostMonitoring:
 
 
-
 secCompProfile: example # replaces feature.dynatrace.com/oneagent-seccomp-profile: "example"
-
 
 
 #...
@@ -167,37 +142,28 @@ secCompProfile: example # replaces feature.dynatrace.com/oneagent-seccomp-profil
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
 
 
-
 oneAgent:
-
 
 
 classicFullStack:
 
 
-
 secCompProfile: example # replaces feature.dynatrace.com/oneagent-seccomp-profile: "example"
-
 
 
 #...
@@ -207,37 +173,28 @@ secCompProfile: example # replaces feature.dynatrace.com/oneagent-seccomp-profil
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 oneAgent:
 
 
-
 cloudNativeFullstack:
 
 
-
 secCompProfile: example # replaces feature.dynatrace.com/oneagent-seccomp-profile: "example"
-
 
 
 #...
@@ -267,37 +224,28 @@ Metadata enrichment
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
 
 
-
 oneAgent:
-
 
 
 cloudNativeFullstack:
 
 
-
 namespaceSelector: ... # replaces spec.namespaceSelector
-
 
 
 # ...
@@ -307,37 +255,28 @@ namespaceSelector: ... # replaces spec.namespaceSelector
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 oneAgent:
 
 
-
 applicationMonitoring:
 
 
-
 namespaceSelector: ... # replaces spec.namespaceSelector
-
 
 
 # ...
@@ -347,33 +286,25 @@ namespaceSelector: ... # replaces spec.namespaceSelector
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 metadataEnrichment:
 
 
-
 namespaceSelector: ... # replaces spec.namespaceSelector
-
 
 
 # ...
@@ -393,33 +324,25 @@ namespaceSelector: ... # replaces spec.namespaceSelector
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack: {} # same as autoUpdate: true
-
 
 
   # ...
@@ -430,85 +353,64 @@ namespaceSelector: ... # replaces spec.namespaceSelector
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack:
-
 
 
   image: ... # same effect as autoUpdate: false
 
 
-
   codeModulesImage: # same effect as autoUpdate: false
-
 
 
   # ...
 
 
-
   ---
-
 
 
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack:
 
 
-
   version: ... # replaces autoUpdate: false
-
 
 
   # ...
@@ -532,69 +434,52 @@ CSI-драйвер теперь используется при установк
 apiVersion: dynatrace.com/v1beta1
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 kubernetesMonitoring:
 
 
-
 enabled: true
-
 
 
 replicas: ...
 
 
-
 image: ...
-
 
 
 group: ...
 
 
-
 customProperties: ...
-
 
 
 resources: ...
 
 
-
 nodeSelector: ...
-
 
 
 tolerations: ...
 
 
-
 labels: ...
 
 
-
 env: ...
-
 
 
 #...
@@ -606,73 +491,55 @@ env: ...
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 activeGate:
 
 
-
 capabilities:
-
 
 
 - kubernetes-monitoring #<-- explicitly enable Kubernetes monitoring
 
 
-
 replicas: ...
-
 
 
 image: ...
 
 
-
 group: ...
-
 
 
 customProperties: ...
 
 
-
 resources: ...
-
 
 
 nodeSelector: ...
 
 
-
 tolerations: ...
-
 
 
 labels: ...
 
 
-
 env: ...
-
 
 
 #...
@@ -688,69 +555,52 @@ env: ...
 apiVersion: dynatrace.com/v1beta1
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 routing:
 
 
-
 enabled: true
-
 
 
 replicas: ...
 
 
-
 image: ...
-
 
 
 group: ...
 
 
-
 customProperties: ...
-
 
 
 resources: ...
 
 
-
 nodeSelector: ...
-
 
 
 tolerations: ...
 
 
-
 labels: ...
 
 
-
 env: ...
-
 
 
 #...
@@ -762,73 +612,55 @@ env: ...
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 activeGate:
 
 
-
 capabilities:
-
 
 
 - routing #<-- explicitly enable routing
 
 
-
 replicas: ...
-
 
 
 image: ...
 
 
-
 group: ...
-
 
 
 customProperties: ...
 
 
-
 resources: ...
-
 
 
 nodeSelector: ...
 
 
-
 tolerations: ...
-
 
 
 labels: ...
 
 
-
 env: ...
-
 
 
 #...

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # System notifications
 
-# System notifications
 
 * Explanation
 * 2-min read

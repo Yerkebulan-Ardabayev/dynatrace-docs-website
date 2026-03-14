@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:34.444969
 
 # Network zones API - GET a network zone
 
-# Network zones API - GET a network zone
 
 * Reference
 * Published Mar 05, 2020
@@ -85,109 +84,83 @@ A list of constraint violations
 {
 
 
-
 "alternativeZones": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "description": "string",
 
 
-
 "fallbackMode": "ANY_ACTIVE_GATE",
-
 
 
 "id": "string",
 
 
-
 "numOfConfiguredActiveGates": 1,
-
 
 
 "numOfConfiguredOneAgents": 1,
 
 
-
 "numOfOneAgentsFromOtherZones": 1,
-
 
 
 "numOfOneAgentsUsing": 1,
 
 
-
 "overridesGlobal": true,
-
 
 
 "scope": "string"
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }

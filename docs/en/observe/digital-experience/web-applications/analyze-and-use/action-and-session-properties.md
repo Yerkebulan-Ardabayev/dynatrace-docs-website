@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:12.602325
 
 # Leverage user action and user session properties for web applications
 
-# Leverage user action and user session properties for web applications
 
 * Classic
 * How-to guide

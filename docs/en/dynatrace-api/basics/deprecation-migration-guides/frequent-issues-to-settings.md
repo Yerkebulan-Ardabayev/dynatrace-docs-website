@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:01.543097
 
 # Migrate from Frequent issue detection API to Settings API
 
-# Migrate from Frequent issue detection API to Settings API
 
 * Reference
 * Published Dec 22, 2022
@@ -57,53 +56,40 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects?schemaIds=bui
 {
 
 
-
 "items": [
-
 
 
 {
 
 
-
 "objectId": "vu9U3hXa3q0AAAABAClidWlsdGluOmFub21hbHktZGV0ZWN0aW9uLmZyZXF1ZW50LWlzc3VlcwAGdGVuYW50AAZ0ZW5hbnQAJDNiNjk1ZjA4LWNhZDEtM2Y2OC04ZDM4LTQyODZkNzkzNjlkNL7vVN4V2t6t",
-
 
 
 "value": {
 
 
-
 "detectFrequentIssuesInApplications": true,
-
 
 
 "detectFrequentIssuesInTransactionsAndServices": true,
 
 
-
 "detectFrequentIssuesInInfrastructure": true
 
 
-
 }
 
 
-
 }
-
 
 
 ],
 
 
-
 "totalCount": 1,
 
 
-
 "pageSize": 500
-
 
 
 }
@@ -121,45 +107,34 @@ GET https://mySampleEnv.live.dynatrace.com/config/v1/frequentIssueDetection
 {
 
 
-
 "metadata": {
-
 
 
 "currentConfigurationVersions": [
 
 
-
 "1.0.2"
-
 
 
 ],
 
 
-
 "configurationVersions": [],
-
 
 
 "clusterVersion": "1.258.0.20221221-200358"
 
 
-
 },
-
 
 
 "frequentIssueDetectionApplicationEnabled": true,
 
 
-
 "frequentIssueDetectionServiceEnabled": true,
 
 
-
 "frequentIssueDetectionInfrastructureEnabled": true
-
 
 
 }
@@ -185,33 +160,25 @@ PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AA
 {
 
 
-
 "schemaId": "builtin:alerting.maintenance-window",
-
 
 
 "scope": "environment",
 
 
-
 "value": {
-
 
 
 "detectFrequentIssuesInApplications": true,
 
 
-
 "detectFrequentIssuesInTransactionsAndServices": true,
-
 
 
 "detectFrequentIssuesInInfrastructure": true
 
 
-
 }
-
 
 
 }
@@ -223,21 +190,16 @@ PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AA
 [
 
 
-
 {
-
 
 
 "code": 200,
 
 
-
 "objectId": "vu9U3hXa3q0AAAABAClidWlsdGluOmFub21hbHktZGV0ZWN0aW9uLmZyZXF1ZW50LWlzc3VlcwAGdGVuYW50AAZ0ZW5hbnQAJDNiNjk1ZjA4LWNhZDEtM2Y2OC04ZDM4LTQyODZkNzkzNjlkNL7vVN4V2t6t"
 
 
-
 }
-
 
 
 ]
@@ -255,17 +217,13 @@ PUT https://mySampleEnv.live.dynatrace.com/config/v1/frequentIssueDetection/07f4
 {
 
 
-
 "frequentIssueDetectionApplicationEnabled": true,
-
 
 
 "frequentIssueDetectionServiceEnabled": true,
 
 
-
 "frequentIssueDetectionInfrastructureEnabled": false
-
 
 
 }

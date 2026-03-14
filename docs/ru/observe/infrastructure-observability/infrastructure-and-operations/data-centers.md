@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:58.775446
 
 # Data centers
 
-# Data centers
 
 * Latest Dynatrace
 * Explanation

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:28.596172
 
 # Get started with OpenTelemetry and Dynatrace
 
-# Get started with OpenTelemetry and Dynatrace
 
 * Latest Dynatrace
 * Overview

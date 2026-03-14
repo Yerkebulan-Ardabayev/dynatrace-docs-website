@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:17.215643
 
 # Сегментирование журналов по бакетам
 
-# Сегментирование журналов по бакетам
 
 * Последняя версия Dynatrace
 * Руководство
@@ -85,13 +84,10 @@ scraped: 2026-03-06T21:13:17.215643
    fetch dt.system.buckets
 
 
-
    | filter dt.system.table == "logs"
 
 
-
    | fields bucket=name
-
 
 
    | sort bucket

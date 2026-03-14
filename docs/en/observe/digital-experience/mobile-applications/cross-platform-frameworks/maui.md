@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:06.541220
 
 # Instrument mobile apps with Dynatrace .NET MAUI NuGet package
 
-# Instrument mobile apps with Dynatrace .NET MAUI NuGet package
 
 * Classic
 * How-to guide
@@ -108,13 +107,11 @@ iOS
 using Dynatrace.MAUI;
 
 
-
 Agent.Instance.Start();
 ```
 
 ```
 using Dynatrace.MAUI;
-
 
 
 Agent.Instance.Start();
@@ -128,9 +125,7 @@ You can optionally use the following method to enable the auto-instrumentation o
 using Dynatrace.MAUI;
 
 
-
 var httpHandler = Agent.Instance.GetHttpMessageHandler();
-
 
 
 var httpClient = new HttpClient(httpHandler);
@@ -142,13 +137,10 @@ Moreover, you can also have your own HTTP handler:
 using Dynatrace.MAUI;
 
 
-
 var defaultHttpHandler = new HttpClientHandler();
 
 
-
 var httpHandler = Agent.Instance.GetHttpMessageHandler(defaultHttpHandler);
-
 
 
 var httpClient = new HttpClient(httpHandler);
@@ -172,25 +164,19 @@ You can use the manual startup with a configuration builder (Android) or a confi
    {
 
 
-
    "android": {
-
 
 
    "autoStart": {
 
 
-
    "enabled": false
 
 
-
    }
 
 
-
    }
-
 
 
    }
@@ -200,17 +186,13 @@ You can use the manual startup with a configuration builder (Android) or a confi
    {
 
 
-
    "ios": {
-
 
 
    "DTXAutoStart": false
 
 
-
    }
-
 
 
    }
@@ -227,13 +209,11 @@ You can use the manual startup with a configuration builder (Android) or a confi
    using Dynatrace.MAUI;
 
 
-
    Agent.Instance.Start(new ConfigurationBuilder("<insertBeaconURL>","<insertApplicationID>").BuildConfiguration());
    ```
 
    ```
    using Dynatrace.MAUI;
-
 
 
    Agent.Instance.Start(new ConfigurationBuilder("<insertBeaconURL>","<insertApplicationID>").BuildConfiguration());
@@ -249,13 +229,10 @@ Call `EnterAction` to start a custom action and `LeaveAction` to close a custom 
 using Dynatrace.MAUI;
 
 
-
 IRootAction myAction = Agent.Instance.EnterAction("Tap on Confirm");
 
 
-
 //Perform the action and whatever else is needed.
-
 
 
 myAction.LeaveAction();
@@ -277,21 +254,16 @@ Child actions are similar to parent custom actions. When a parent action is clos
 using Dynatrace.MAUI;
 
 
-
 IRootAction myAction = Agent.Instance.EnterAction("Tap on Confirm");
-
 
 
 IAction mySubAction = myAction.EnterAction("Tap on Confirm again");
 
 
-
 //Perform the action and whatever else is needed.
 
 
-
 mySubAction.LeaveAction();
-
 
 
 myAction.LeaveAction();
@@ -311,13 +283,10 @@ If you need to cancel an already created but not yet closed custom action, call 
 using Dynatrace.MAUI;
 
 
-
 IRootAction myAction = Agent.Instance.EnterAction("Tap on Confirm");
 
 
-
 // Action is canceled
-
 
 
 myAction.Cancel();
@@ -333,109 +302,82 @@ Use the following code snippet to instrument web requests:
 using Dynatrace.MAUI;
 
 
-
 // Create an action
-
 
 
 IRootAction webAction = Agent.Instance.EnterAction(actionName: "WebRequest Action");
 
 
-
 // Generate a new unique tag associated with the web request action
-
 
 
 string requestTag = webAction.GetRequestTag(url);
 
 
-
 string requestTagHeader = webAction.GetRequestTagHeader();
-
 
 
 // Place the Dynatrace HTTP header on your web request
 
 
-
 httpClient.DefaultRequestHeaders.Add(requestTagHeader, requestTag);
-
 
 
 // Generate a WebRequestTiming object based on the unique tag
 
 
-
 IWebRequestTiming timing = Agent.Instance.GetWebRequestTiming(requestTag, url);
-
 
 
 // Start web request timing before the HTTP request is sent
 
 
-
 timing.StartWebRequestTiming();
-
 
 
 try
 
 
-
 {
-
 
 
 var response = await httpClient.GetAsync(url);
 
 
-
 // Stop web request timing when the HTTP response is received and the response body is obtained
-
 
 
 timing.StopWebRequestTiming(url, (int)response.StatusCode, response.ReasonPhrase);
 
 
-
 }
-
 
 
 catch (HttpRequestException exception)
 
 
-
 {
-
 
 
 // Stop web request timing when a connection exception occurs
 
 
-
 timing.StopWebRequestTiming(url, -1, exception.ToString());
-
 
 
 }
 
 
-
 finally
-
 
 
 {
 
 
-
 // Leave an action
 
 
-
 webAction.LeaveAction();
-
 
 
 }
@@ -455,9 +397,7 @@ You can report values of the following data types:
 ReportValue(valueName: string, value: int);
 
 
-
 ReportValue(valueName: string, value: double);
-
 
 
 ReportValue(valueName: string, value: string);
@@ -469,13 +409,10 @@ For instance, to report a `string` value within the `Tap on Confirm` action, use
 using Dynatrace.MAUI;
 
 
-
 IRootAction myAction = Agent.Instance.EnterAction("Tap on Confirm");
 
 
-
 myAction.ReportValue("Customer type", "Gold");
-
 
 
 myAction.LeaveAction();
@@ -519,7 +456,6 @@ To report an error stack trace, use the following API call:
 using Dynatrace.MAUI;
 
 
-
 Agent.Instance.ReportErrorStacktrace("Error_Class", "Error_Value", "Error_Reason", "Error_Stacktrace");
 ```
 
@@ -531,7 +467,6 @@ To report a [crash](../../rum-concepts/user-and-error-events.md#crash "Learn abo
 using Dynatrace.MAUI;
 
 
-
 Agent.Instance.ReportCrash("CrashWithoutException", "Crash_Reason", "Crash_Stacktrace");
 ```
 
@@ -539,7 +474,6 @@ You can also use an exception object:
 
 ```
 using Dynatrace.MAUI;
-
 
 
 Agent.Instance.ReportCrashWithException("CrashWithExceptionObj", exception);
@@ -570,53 +504,40 @@ For additional details on business events, refer to [Business Observability](../
 using Dynatrace.MAUI;
 
 
-
 var attributes = new Dictionary<string, JsonValue>();
-
 
 
 attributes.Add("event.name", "Confirmed Booking");
 
 
-
 attributes.Add("screen", "booking-confirmation");
-
 
 
 attributes.Add("product", "Danube Anna Hotel");
 
 
-
 attributes.Add("amount", 358.35);
-
 
 
 attributes.Add("currency", "USD");
 
 
-
 attributes.Add("reviewScore", 4.8);
-
 
 
 attributes.Add("arrivalDate", "2022-11-05");
 
 
-
 attributes.Add("departureDate", "2022-11-15");
-
 
 
 attributes.Add("journeyDuration", 10);
 
 
-
 attributes.Add("adultTravelers", 2);
 
 
-
 attributes.Add("childrenTravelers", 0);
-
 
 
 Agent.Instance.SendBizEvent("com.easytravel.funnel.booking-finished", attributes);
@@ -630,7 +551,6 @@ Make the following API call to tag the current session with a particular name:
 
 ```
 using Dynatrace.MAUI;
-
 
 
 Agent.Instance.IdentifyUser("John Smith");
@@ -658,7 +578,6 @@ You can force a session to end via the API call. This also closes all open actio
 using Dynatrace.MAUI;
 
 
-
 Agent.Instance.EndVisit();
 ```
 
@@ -680,21 +599,16 @@ To get the current `UserPrivacyOptions` configuration, use the following API cal
 using Dynatrace.MAUI;
 
 
-
 // Get the UserPrivacyOptions object
-
 
 
 UserPrivacyOptions currentOptions = Agent.Instance.GetUserPrivacyOptions();
 
 
-
 // Get the individual settings for DataCollectionLevel and crash reporting
 
 
-
 bool crashOptedIn = Agent.Instance.GetUserPrivacyOptions().CrashReportingOptedIn;
-
 
 
 DataCollectionLevel dataCollectionLevel = Agent.Instance.GetUserPrivacyOptions().DataCollectionLevel;
@@ -710,49 +624,37 @@ To set new options on a `UserPrivacyOptions` object, use the following code:
 using Dynatrace.MAUI;
 
 
-
 // Creating a new UserPrivacyOptions object requires setting the two parameters of DataCollectionLevel and crash reporting
-
 
 
 UserPrivacyOptions options = new UserPrivacyOptions(DataCollectionLevel.Performance, false);
 
 
-
 // Update the options with the setter
-
 
 
 // Set a data collection level (user allowed you to capture performance and personal data)
 
 
-
 options.DataCollectionLevel = DataCollectionLevel.UserBehavior;
-
 
 
 // Allow crash reporting (user allowed you to collect information on crashes)
 
 
-
 options.CrashReportingOptedIn = true;
-
 
 
 // Get the values of the configuration with the getter
 
 
-
 options.DataCollectionLevel;
-
 
 
 options.CrashReportingOptedIn;
 
 
-
 // Get the UserPrivacyOptions object
-
 
 
 UserPrivacyOptions currentOptions = Agent.Instance.GetUserPrivacyOptions();
@@ -764,9 +666,7 @@ To apply the new `UserPrivacyOptions` configuration, use this code:
 using Dynatrace.MAUI;
 
 
-
 UserPrivacyOptions options = new UserPrivacyOptions(DataCollectionLevel.UserBehavior, true);
-
 
 
 Agent.Instance.ApplyUserPrivacyOptions(options);
@@ -810,17 +710,13 @@ The `dynatrace.config.json` configuration file contains your application ID, bea
   <Project>
 
 
-
   <PropertyGroup>
-
 
 
   <DynatraceConfigurationFile>CUSTOM_PATH/dynatrace.config.json</DynatraceConfigurationFile>
 
 
-
   </PropertyGroup>
-
 
 
   </Project>
@@ -842,45 +738,34 @@ iOS
 {
 
 
-
 "android": {
-
 
 
 "autoStart": {
 
 
-
 "applicationId": "<insertApplicationID>",
-
 
 
 "beaconUrl": "<insertBeaconURL>"
 
 
-
 },
-
 
 
 "userOptIn": true,
 
 
-
 "agentBehavior": {
-
 
 
 "startupLoadBalancing": true
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -890,29 +775,22 @@ iOS
 {
 
 
-
 "ios": {
-
 
 
 "DTXApplicationId": "<insertApplicationID>",
 
 
-
 "DTXBeaconUrl": "<insertBeaconURL>",
-
 
 
 "DTXUserOptIn": true,
 
 
-
 "DTXStartupLoadBalancing": true
 
 
-
 }
-
 
 
 }
@@ -934,45 +812,34 @@ Update your [`dynatrace.config.json` file](#config-file) to enable OneAgent debu
 {
 
 
-
 "android": {
-
 
 
 "autoStart": {
 
 
-
 "applicationId": "<insertApplicationID>",
-
 
 
 "beaconUrl": "<insertBeaconURL>"
 
 
-
 },
-
 
 
 "userOptIn": true,
 
 
-
 "debug": {
-
 
 
 "agentLogging": true
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -984,29 +851,22 @@ Add the following configuration snippet to the [`dynatrace.config.json` file](#c
 {
 
 
-
 "ios": {
-
 
 
 "DTXApplicationId": "<insertApplicationID>",
 
 
-
 "DTXBeaconUrl": "<insertBeaconURL>",
-
 
 
 "DTXUserOptIn": true,
 
 
-
 "DTXLogLevel": "ALL"
 
 
-
 }
-
 
 
 }
@@ -1026,17 +886,13 @@ If the Android instrumentation fails, you most likely need to open a support tic
    <Project>
 
 
-
    <PropertyGroup>
-
 
 
    <DynatraceInstrumentationLogging>true</DynatraceInstrumentationLogging>
 
 
-
    </PropertyGroup>
-
 
 
    </Project>

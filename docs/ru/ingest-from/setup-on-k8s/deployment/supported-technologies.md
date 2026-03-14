@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:22.993785
 
 # Поддерживаемые дистрибутивы
 
-# Поддерживаемые дистрибутивы
 
 * Последняя версия Dynatrace
 * Чтение: 6 мин
@@ -35,69 +34,52 @@ applicationMonitoring
 apiVersion: dynatrace.com/v1beta5
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: dynatrace
 
 
-
 annotations:
-
 
 
 feature.dynatrace.com/automatic-kubernetes-api-monitoring: "true"
 
 
-
 feature.dynatrace.com/injection-readonly-volume: "true"
-
 
 
 spec:
 
 
-
 apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
-
 
 
 oneAgent:
 
 
-
 applicationMonitoring: {}
-
 
 
 activeGate:
 
 
-
 capabilities:
-
 
 
 - routing
 
 
-
 - kubernetes-monitoring
 
 
-
 - dynatrace-api
-
 
 
 ...
@@ -125,49 +107,37 @@ cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
 apiVersion: dynatrace.com/v1beta5
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
 
 
-
 oneAgent:
-
 
 
 classicFullStack:
 
 
-
 env:
-
 
 
 - name: ONEAGENT_ENABLE_VOLUME_STORAGE
 
 
-
 value: "true"
-
 
 
 ...
@@ -205,29 +175,22 @@ Dynatrace работает совместно с Google для своеврем�
 apiVersion: auto.gke.io/v1
 
 
-
 kind: AllowlistSynchronizer
-
 
 
 metadata:
 
 
-
 name: allowlist-synchronizer-dynatrace
-
 
 
 spec:
 
 
-
 allowlistPaths:
 
 
-
 - Dynatrace/csidriver/1.4.2/*
-
 
 
 - Dynatrace/logmonitoring/1.4.2/*
@@ -305,9 +268,7 @@ cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
 csidriver:
 
 
-
 enabled: true
-
 
 
 kubeletPath: "/var/vcap/data/kubelet"
@@ -321,25 +282,19 @@ kubeletPath: "/var/vcap/data/kubelet"
 oneAgent:
 
 
-
 classicFullStack:
-
 
 
 env:
 
 
-
 - name: ONEAGENT_ENABLE_VOLUME_STORAGE
-
 
 
 value: "true"
 
 
-
 - name: ONEAGENT_CONTAINER_STORAGE_PATH
-
 
 
 value: /var/vcap/store
@@ -359,9 +314,7 @@ cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
 csidriver:
 
 
-
 enabled: true
-
 
 
 kubeletPath: "/var/data/kubelet"
@@ -375,25 +328,19 @@ kubeletPath: "/var/data/kubelet"
 oneAgent:
 
 
-
 classicFullStack:
-
 
 
 env:
 
 
-
 - name: ONEAGENT_ENABLE_VOLUME_STORAGE
-
 
 
 value: "true"
 
 
-
 - name: ONEAGENT_CONTAINER_STORAGE_PATH
-
 
 
 value: /opt
@@ -409,45 +356,34 @@ cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
 apiVersion: dynatrace.com/v1beta5
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
 
 
-
 oneAgent:
-
 
 
 classicFullStack: # измените на `hostMonitoring` при необходимости
 
 
-
 env:
 
 
-
 - name: ONEAGENT_ENABLE_VOLUME_STORAGE
-
 
 
 value: "true"

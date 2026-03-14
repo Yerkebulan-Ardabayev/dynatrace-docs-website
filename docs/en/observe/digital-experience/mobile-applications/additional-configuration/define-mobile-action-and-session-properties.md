@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:35:06.948712
 
 # Define user action and user session properties for mobile applications
 
-# Define user action and user session properties for mobile applications
 
 * Classic
 * How-to guide

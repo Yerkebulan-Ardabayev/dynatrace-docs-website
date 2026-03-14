@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:29:13.189649
 
 # Мониторинг Microsoft Azure
 
-# Мониторинг Microsoft Azure
 
 * Последняя версия Dynatrace
 * Пояснение

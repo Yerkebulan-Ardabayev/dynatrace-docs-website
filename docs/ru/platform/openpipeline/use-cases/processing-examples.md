@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:48.584554
 
 # Примеры обработки OpenPipeline
 
-# Примеры обработки OpenPipeline
 
 * Latest Dynatrace
 * Tutorial
@@ -49,7 +48,6 @@ scraped: 2026-03-06T21:13:48.584554
       fetch logs
 
 
-
       | filter matchesValue(log.source, "myLogSource")
       ```
    3. Выполните запрос и, когда результат фильтрации вас устроит, скопируйте функцию `matchesValue()`.
@@ -71,25 +69,19 @@ scraped: 2026-03-06T21:13:48.584554
 {
 
 
-
 "content":"April 24, 2022 09:59:52 [myPool-thread-1] INFO Lorem ipsum dolor sit amet",
-
 
 
 "status":"NONE",
 
 
-
 "timestamp":"1650889391528",
-
 
 
 "log.source":"myLogSource",
 
 
-
 "loglevel":"NONE"
-
 
 
 }
@@ -101,61 +93,46 @@ scraped: 2026-03-06T21:13:48.584554
 {
 
 
-
 "results":
-
 
 
 [
 
 
-
 {
-
 
 
 "matched": true,
 
 
-
 "record": {
-
 
 
 "loglevel": "INFO",
 
 
-
 "log.source": "myLogSource",
-
 
 
 "thread.name": "myPool-thread-1",
 
 
-
 "content": "April 24, 2022 09:59:52 [myPool-thread-1] INFO Lorem ipsum dolor sit amet",
-
 
 
 "timestamp": "2022-04-24T09:59:52.000000000Z",
 
 
-
 "status": "NONE"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -183,9 +160,7 @@ scraped: 2026-03-06T21:13:48.584554
 parse content, "JSON{STRING:stringField:new.name}(flat=true)"
 
 
-
 // Parses out a string field from raw record data into a standalone top-level attribute via a DPL JSON matcher.
-
 
 
 // `flat=true` automatically creates attributes named as specified in the JSON. To rename the field, provide a new name inline after an additional `:`.
@@ -199,9 +174,7 @@ parse content, "JSON{STRING:stringField:new.name}(flat=true)"
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }"
-
 
 
 }
@@ -213,13 +186,10 @@ parse content, "JSON{STRING:stringField:new.name}(flat=true)"
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }",
 
 
-
 "new.name": "stringFieldValue"
-
 
 
 }
@@ -229,17 +199,13 @@ parse content, "JSON{STRING:stringField:new.name}(flat=true)"
 parse content, "JSON{STRING:stringField, JSON {STRING:nestedStringField1}:nested}:parsedJson"
 
 
-
 | fieldsAdd new.attribute1 = parsedJson[stringField]
-
 
 
 | fieldsAdd new.attribute2 = parsedJson[nested][nestedStringField1]
 
 
-
 | fieldsRemove parsedJson
-
 
 
 // Parses out multiple string fields, including nested one, from raw record data into standalone top-level attributes, via a DPL JSON matcher.
@@ -255,9 +221,7 @@ parse content, "JSON{STRING:stringField, JSON {STRING:nestedStringField1}:nested
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }"
-
 
 
 }
@@ -269,17 +233,13 @@ parse content, "JSON{STRING:stringField, JSON {STRING:nestedStringField1}:nested
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }",
-
 
 
 "new.attribute1": "stringFieldValue",
 
 
-
 "new.attribute2": "NestedValue1"
-
 
 
 }
@@ -289,25 +249,19 @@ parse content, "JSON{STRING:stringField, JSON {STRING:nestedStringField1}:nested
 parse content, "JSON:parsedJson"
 
 
-
 | fieldsAdd new.field1 = parsedJson[intField],
-
 
 
 new.field2 = parsedJson[stringField],
 
 
-
 new.field3 = parsedJson[nested][nestedStringField1],
-
 
 
 new.field4 = parsedJson[nested][nestedStringField2]
 
 
-
 | fieldsRemove parsedJson
-
 
 
 // Parses out all JSON fields without listing the attributes, via a DPL JSON matcher.
@@ -323,9 +277,7 @@ new.field4 = parsedJson[nested][nestedStringField2]
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }"
-
 
 
 }
@@ -337,25 +289,19 @@ new.field4 = parsedJson[nested][nestedStringField2]
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }",
-
 
 
 "new.field1": "13",
 
 
-
 "new.field2": "stringFieldValue",
-
 
 
 "new.field3": "NestedValue1",
 
 
-
 "new.field4": "NestedValue2"
-
 
 
 }
@@ -363,7 +309,6 @@ new.field4 = parsedJson[nested][nestedStringField2]
 
 ```
 parse content, """LD '"stringField"' SPACE? ':' SPACE?  DQS:newAttribute"""
-
 
 
 // Treats fields as plain text and renames any string that matches as specified.
@@ -377,9 +322,7 @@ parse content, """LD '"stringField"' SPACE? ':' SPACE?  DQS:newAttribute"""
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }"
-
 
 
 }
@@ -391,13 +334,10 @@ parse content, """LD '"stringField"' SPACE? ':' SPACE?  DQS:newAttribute"""
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }",
 
 
-
 "newAttribute": "stringField"
-
 
 
 }
@@ -407,9 +347,7 @@ parse content, """LD '"stringField"' SPACE? ':' SPACE?  DQS:newAttribute"""
 parse content, "JSON:parsedJson"
 
 
-
 | fieldsFlatten parsedJson, prefix: "j"
-
 
 
 // Parses out all fields without enumerating them and creates top-level fields from the JSON string without the need to enumerate the field names. It can be applied to multiple JSON objects.
@@ -423,9 +361,7 @@ parse content, "JSON:parsedJson"
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }"
-
 
 
 }
@@ -437,21 +373,16 @@ parse content, "JSON:parsedJson"
 {
 
 
-
 "content": "{\"intField\": 13, \"stringField\": \"stringFieldValue\", \"nested\": {\"nestedStringField1\": \"NestedValue1\", \"nestedStringField2\": \"NestedValue2\"} }",
-
 
 
 "j.stringField": "stringFieldValue",
 
 
-
 "j.intField": 13,
 
 
-
 "j.nested":"{\"nestedStringField1\":\"NestedValue1\", \"nestedStringField2\":\"NestedValue2\"}"
-
 
 
 }
@@ -495,17 +426,13 @@ INT:my.user.id"
 03/22 08:52:51 INFO user ID=1234567 Call = 0319 Result = 0
 
 
-
 03/22 08:52:51 INFO UserId = 1234567 Call = 0319 Result = 0
-
 
 
 03/22 08:52:51 INFO user id=1234567 Call = 0319 Result = 0
 
 
-
 03/22 08:52:51 INFO User ID: 1234567 Call = 0319 Result = 0
-
 
 
 03/22 08:52:51 INFO userid: 1234567 Call = 0319 Result = 0
@@ -539,9 +466,7 @@ parse content, "ISO8601:timestamp SPACE UPPER:loglevel SPACE IPADDR:ip SPACE DQS
 {
 
 
-
 "content": "2022-05-11T13:23:45Z INFO 192.168.33.1 GET /api/v2/logs/ingest HTTP/1.0 200"
-
 
 
 }
@@ -553,29 +478,22 @@ parse content, "ISO8601:timestamp SPACE UPPER:loglevel SPACE IPADDR:ip SPACE DQS
 {
 
 
-
 "request": "GET /api/v2/logs/ingest HTTP/1.0",
-
 
 
 "code": 200,
 
 
-
 "loglevel": "INFO",
-
 
 
 "ip": "192.168.33.1",
 
 
-
 "timestamp": "2022-05-11T13:23:45.000000000Z",
 
 
-
 "content": "2022-05-11T13:23:45Z INFO 192.168.33.1 GET /api/v2/logs/ingest HTTP/1.0 200"
-
 
 
 }
@@ -593,9 +511,7 @@ parse content, "ISO8601:timestamp SPACE UPPER:loglevel SPACE IPADDR:ip SPACE DQS
 parse content, "LD 'total: ' INT:total '; failed: ' INT:failed" // Parses `total` and `failed` field values.
 
 
-
 | fieldsAdd failed.percentage = 100.0 * failed / total // Calculates the failure percentage, formats the result to be a percentage, and stores it in a new attribute (`failed.percentage`).
-
 
 
 | fieldsRemove total, failed // Removes temporary fields that are no longer needed from the JSON file.
@@ -611,9 +527,7 @@ parse content, "LD 'total: ' INT:total '; failed: ' INT:failed" // Parses `total
 {
 
 
-
 "content": "Lorem ipsum total: 1000; failed: 255",
-
 
 
 }
@@ -625,13 +539,10 @@ parse content, "LD 'total: ' INT:total '; failed: ' INT:failed" // Parses `total
 {
 
 
-
 "content": "Lorem ipsum total: 1000; failed: 255",
 
 
-
 "failed.percentage": 25.5
-
 
 
 }
@@ -663,9 +574,7 @@ DQL
 {
 
 
-
 "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis."
-
 
 
 }
@@ -677,17 +586,13 @@ DQL
 {
 
 
-
 "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis.",
-
 
 
 "company.team.name": "my-team",
 
 
-
 "company.branch.name": "New York"
-
 
 
 }
@@ -709,9 +614,7 @@ fieldsAdd content.length = stringLength(content), content.words = arraySize(spli
 {
 
 
-
 "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis."
-
 
 
 }
@@ -723,17 +626,13 @@ fieldsAdd content.length = stringLength(content), content.words = arraySize(spli
 {
 
 
-
 "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis.",
-
 
 
 "content.length": "62",
 
 
-
 "content.words": "9"
-
 
 
 }
@@ -762,13 +661,10 @@ fieldsAdd content.length = stringLength(content), content.words = arraySize(spli
 {
 
 
-
 "redundant.attribute": "value",
 
 
-
 "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac neque nisi. Nunc accumsan sollicitudin lacus."
-
 
 
 }
@@ -780,9 +676,7 @@ fieldsAdd content.length = stringLength(content), content.words = arraySize(spli
 {
 
 
-
 "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac neque nisi. Nunc accumsan sollicitudin lacus."
-
 
 
 }
@@ -811,9 +705,7 @@ fieldsAdd content.length = stringLength(content), content.words = arraySize(spli
 {
 
 
-
 "content": {"field": "Lorem ipsum"}
-
 
 
 }
@@ -870,9 +762,7 @@ fieldsAdd ip = ipMask(ip, 24)
 {
 
 
-
 "ip": "192.168.1.12"
-
 
 
 }
@@ -884,9 +774,7 @@ fieldsAdd ip = ipMask(ip, 24)
 {
 
 
-
 "ip": "192.168.1.0"
-
 
 
 }
@@ -906,9 +794,7 @@ fieldsAdd ip = replacePattern(ip, "<< (INT'.'INT'.'INT'.') INT", "xxx")
 {
 
 
-
 "ip": "192.168.1.12"
-
 
 
 }
@@ -920,9 +806,7 @@ fieldsAdd ip = replacePattern(ip, "<< (INT'.'INT'.'INT'.') INT", "xxx")
 {
 
 
-
 "ip": "192.168.1.xxx"
-
 
 
 }
@@ -942,9 +826,7 @@ fieldsAdd content=replacePattern(content, "IPADDR", "xxx.xxx.xxx.xxx")
 {
 
 
-
 "content" : "Lorem ipsum client_ip: 192.168.1.12 email: john.doe@dynatrace.com card number: 4012888888881881 server_ip: 215.131.189.194  dolor sit amet"
-
 
 
 }
@@ -956,9 +838,7 @@ fieldsAdd content=replacePattern(content, "IPADDR", "xxx.xxx.xxx.xxx")
 {
 
 
-
 "content": "Lorem ipsum client_ip: xxx.xxx.xxx.xxx email: john.doe@dynatrace.com card number: 4012888888881881 server_ip: xxx.xxx.xxx.xxx dolor sit amet"
-
 
 
 }
@@ -970,9 +850,7 @@ fieldsAdd content=replacePattern(content, "IPADDR", "xxx.xxx.xxx.xxx")
 parse content, "LD 'email: ' LD:user '@'"
 
 
-
 | fieldsAdd content = replaceString(content, user, "xxx")
-
 
 
 | fieldsRemove user
@@ -986,9 +864,7 @@ parse content, "LD 'email: ' LD:user '@'"
 {
 
 
-
 "content" : "Lorem ipsum client_ip: 192.168.1.12 email: john.doe@dynatrace.com card number: 4012888888881881 server_ip: 215.131.189.194 dolor sit amet"
-
 
 
 }
@@ -1000,9 +876,7 @@ parse content, "LD 'email: ' LD:user '@'"
 {
 
 
-
 "content": "Lorem ipsum client_ip: 192.168.1.12 email: xxx@dynatrace.com card number: 4012888888881881 server_ip: 215.131.189.194 dolor sit amet"
-
 
 
 }

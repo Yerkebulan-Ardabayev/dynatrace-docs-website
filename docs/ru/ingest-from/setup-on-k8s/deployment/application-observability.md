@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:25.245616
 
 # Начало работы с мониторингом платформы Kubernetes + наблюдаемость приложений
 
-# Начало работы с мониторингом платформы Kubernetes + наблюдаемость приложений
 
 * Последняя версия Dynatrace
 * Чтение: 7 мин
@@ -84,13 +83,10 @@ helm repo remove dynatrace
    helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
 
 
-
    --create-namespace \
 
 
-
    --namespace dynatrace \
-
 
 
    --atomic
@@ -104,17 +100,13 @@ helm repo remove dynatrace
    helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
 
 
-
    --create-namespace \
-
 
 
    --namespace dynatrace \
 
 
-
    --atomic \
-
 
 
    -f values.yaml
@@ -144,113 +136,85 @@ helm repo remove dynatrace
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    annotations:
-
 
 
    feature.dynatrace.com/k8s-app-enabled: "true"
 
 
-
    feature.dynatrace.com/injection-readonly-volume: "true"
-
 
 
    spec:
 
 
-
    # For detailed instructions on DynaKube parameters in the spec section, visit https://docs.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
-
 
 
    # Dynatrace apiUrl including the /api path at the end.
 
 
-
    # Replace 'ENVIRONMENTID' with your environment ID.
-
 
 
    # For instructions on how to determine the environment ID and how to configure the apiUrl address, see https://www.dynatrace.com/support/help/reference/dynatrace-concepts/environment-id/.
 
 
-
    apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
-
 
 
    metadataEnrichment:
 
 
-
    enabled: true
-
 
 
    oneAgent:
 
 
-
    applicationMonitoring: {}
-
 
 
    activeGate:
 
 
-
    capabilities:
-
 
 
    - routing
 
 
-
    - kubernetes-monitoring
-
 
 
    resources:
 
 
-
    requests:
-
 
 
    cpu: 500m
 
 
-
    memory: 512Mi
-
 
 
    limits:
 
 
-
    cpu: 1000m
-
 
 
    memory: 1.5Gi
@@ -265,65 +229,49 @@ helm repo remove dynatrace
    ---
 
 
-
    apiVersion: rbac.authorization.k8s.io/v1
-
 
 
    kind: ClusterRole
 
 
-
    metadata:
-
 
 
    labels:
 
 
-
    rbac.dynatrace.com/aggregate-to-monitoring: "true"
-
 
 
    name: dynatrace-kubernetes-monitoring-sensitive
 
 
-
    rules:
-
 
 
    - apiGroups:
 
 
-
    - ""
-
 
 
    resources:
 
 
-
    - configmaps
-
 
 
    - secrets
 
 
-
    verbs:
-
 
 
    - list
 
 
-
    - watch
-
 
 
    - get
@@ -345,9 +293,7 @@ helm repo remove dynatrace
    > kubectl get dynakube -n dynatrace
 
 
-
    NAME         APIURL                                          STATUS     AGE
-
 
 
    dynakube     https://<ENVIRONMENTID>.live.dynatrace.com/api  Running    45s
@@ -359,33 +305,25 @@ helm repo remove dynatrace
    > kubectl get pods -n dynatrace
 
 
-
    NAME                                  READY   STATUS    RESTARTS        AGE
-
 
 
    dynakube-activegate-0                 1/1     Running   0               50s
 
 
-
    dynatrace-oneagent-csi-driver-qxfwx   4/4     Running   0               2m49s
-
 
 
    dynatrace-oneagent-csi-driver-xk5c4   4/4     Running   0               2m49s
 
 
-
    dynatrace-oneagent-csi-driver-mz6ch   4/4     Running   0               2m49s
-
 
 
    dynatrace-operator-7dc8dc7d8c-wmh4z   1/1     Running   0               2m59s
 
 
-
    dynatrace-webhook-7bb6957fb5-l8fsq    1/1     Running   0               2m59s
-
 
 
    dynatrace-webhook-7bb6957fb5-rqnqk    1/1     Running   0               2m59s
@@ -440,113 +378,85 @@ OpenShift
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    annotations:
-
 
 
    feature.dynatrace.com/k8s-app-enabled: "true"
 
 
-
    feature.dynatrace.com/injection-readonly-volume: "true"
-
 
 
    spec:
 
 
-
    # For detailed instructions on DynaKube parameters in the spec section, visit https://docs.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
-
 
 
    # Dynatrace apiUrl including the /api path at the end.
 
 
-
    # Replace 'ENVIRONMENTID' with your environment ID.
-
 
 
    # For instructions on how to determine the environment ID and how to configure the apiUrl address, see https://www.dynatrace.com/support/help/reference/dynatrace-concepts/environment-id/.
 
 
-
    apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
-
 
 
    metadataEnrichment:
 
 
-
    enabled: true
-
 
 
    oneAgent:
 
 
-
    applicationMonitoring: {}
-
 
 
    activeGate:
 
 
-
    capabilities:
-
 
 
    - routing
 
 
-
    - kubernetes-monitoring
-
 
 
    resources:
 
 
-
    requests:
-
 
 
    cpu: 500m
 
 
-
    memory: 512Mi
-
 
 
    limits:
 
 
-
    cpu: 1000m
-
 
 
    memory: 1.5Gi
@@ -561,65 +471,49 @@ OpenShift
    ---
 
 
-
    apiVersion: rbac.authorization.k8s.io/v1
-
 
 
    kind: ClusterRole
 
 
-
    metadata:
-
 
 
    labels:
 
 
-
    rbac.dynatrace.com/aggregate-to-monitoring: "true"
-
 
 
    name: dynatrace-kubernetes-monitoring-sensitive
 
 
-
    rules:
-
 
 
    - apiGroups:
 
 
-
    - ""
-
 
 
    resources:
 
 
-
    - configmaps
-
 
 
    - secrets
 
 
-
    verbs:
-
 
 
    - list
 
 
-
    - watch
-
 
 
    - get
@@ -641,9 +535,7 @@ OpenShift
    > kubectl get dynakube -n dynatrace
 
 
-
    NAME         APIURL                                          STATUS     AGE
-
 
 
    dynakube     https://<ENVIRONMENTID>.live.dynatrace.com/api  Running    45s
@@ -655,33 +547,25 @@ OpenShift
    > kubectl get pods -n dynatrace
 
 
-
    NAME                                  READY   STATUS    RESTARTS        AGE
-
 
 
    dynakube-activegate-0                 1/1     Running   0               50s
 
 
-
    dynatrace-oneagent-csi-driver-qxfwx   4/4     Running   0               2m49s
-
 
 
    dynatrace-oneagent-csi-driver-xk5c4   4/4     Running   0               2m49s
 
 
-
    dynatrace-oneagent-csi-driver-mz6ch   4/4     Running   0               2m49s
-
 
 
    dynatrace-operator-7dc8dc7d8c-wmh4z   1/1     Running   0               2m59s
 
 
-
    dynatrace-webhook-7bb6957fb5-l8fsq    1/1     Running   0               2m59s
-
 
 
    dynatrace-webhook-7bb6957fb5-rqnqk    1/1     Running   0               2m59s
@@ -728,113 +612,85 @@ OpenShift
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    annotations:
-
 
 
    feature.dynatrace.com/k8s-app-enabled: "true"
 
 
-
    feature.dynatrace.com/injection-readonly-volume: "true"
-
 
 
    spec:
 
 
-
    # For detailed instructions on DynaKube parameters in the spec section, visit https://docs.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
-
 
 
    # Dynatrace apiUrl including the /api path at the end.
 
 
-
    # Replace 'ENVIRONMENTID' with your environment ID.
-
 
 
    # For instructions on how to determine the environment ID and how to configure the apiUrl address, see https://www.dynatrace.com/support/help/reference/dynatrace-concepts/environment-id/.
 
 
-
    apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
-
 
 
    metadataEnrichment:
 
 
-
    enabled: true
-
 
 
    oneAgent:
 
 
-
    applicationMonitoring: {}
-
 
 
    activeGate:
 
 
-
    capabilities:
-
 
 
    - routing
 
 
-
    - kubernetes-monitoring
-
 
 
    resources:
 
 
-
    requests:
-
 
 
    cpu: 500m
 
 
-
    memory: 512Mi
-
 
 
    limits:
 
 
-
    cpu: 1000m
-
 
 
    memory: 1.5Gi
@@ -849,65 +705,49 @@ OpenShift
    ---
 
 
-
    apiVersion: rbac.authorization.k8s.io/v1
-
 
 
    kind: ClusterRole
 
 
-
    metadata:
-
 
 
    labels:
 
 
-
    rbac.dynatrace.com/aggregate-to-monitoring: "true"
-
 
 
    name: dynatrace-kubernetes-monitoring-sensitive
 
 
-
    rules:
-
 
 
    - apiGroups:
 
 
-
    - ""
-
 
 
    resources:
 
 
-
    - configmaps
-
 
 
    - secrets
 
 
-
    verbs:
-
 
 
    - list
 
 
-
    - watch
-
 
 
    - get
@@ -928,9 +768,7 @@ OpenShift
    > oc get dynakube -n dynatrace
 
 
-
    NAME         APIURL                                          STATUS     AGE
-
 
 
    dynakube     https://<ENVIRONMENTID>.live.dynatrace.com/api  Running    45s
@@ -942,33 +780,25 @@ OpenShift
    > oc get pods -n dynatrace
 
 
-
    NAME                                  READY   STATUS    RESTARTS        AGE
-
 
 
    dynakube-activegate-0                 1/1     Running   0               50s
 
 
-
    dynatrace-oneagent-csi-driver-qxfwx   4/4     Running   0               2m49s
-
 
 
    dynatrace-oneagent-csi-driver-xk5c4   4/4     Running   0               2m49s
 
 
-
    dynatrace-oneagent-csi-driver-mz6ch   4/4     Running   0               2m49s
-
 
 
    dynatrace-operator-7dc8dc7d8c-wmh4z   1/1     Running   0               2m59s
 
 
-
    dynatrace-webhook-7bb6957fb5-l8fsq    1/1     Running   0               2m59s
-
 
 
    dynatrace-webhook-7bb6957fb5-rqnqk    1/1     Running   0               2m59s

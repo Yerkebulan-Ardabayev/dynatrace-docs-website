@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:28:39.896650
 
 # Business event metric extraction via classic pipeline
 
-# Business event metric extraction via classic pipeline
 
 * Latest Dynatrace
 * How-to guide

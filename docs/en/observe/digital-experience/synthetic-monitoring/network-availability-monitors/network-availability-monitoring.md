@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:22.043515
 
 # Network availability monitoring
 
-# Network availability monitoring
 
 * Classic
 * Explanation
@@ -94,29 +93,22 @@ The entire `securityContext` for the `synthetic-vuc` container with enabled netw
 securityContext:
 
 
-
 readOnlyRootFilesystem: true
-
 
 
 privileged: false
 
 
-
 allowPrivilegeEscalation: true
-
 
 
 runAsNonRoot: true
 
 
-
 capabilities:
 
 
-
 drop: ["all"]
-
 
 
 add: ["NET_RAW"]

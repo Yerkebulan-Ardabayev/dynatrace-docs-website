@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:37.817709
 
 # Policy management API - POST границы политики
 
-# Policy management API - POST границы политики
 
 * Последняя версия Dynatrace
 * Справочник
@@ -47,17 +46,13 @@ scraped: 2026-03-05T21:38:37.817709
 {
 
 
-
 "name": "string",
-
 
 
 "boundaryQuery": "string",
 
 
-
 "metadata": {}
-
 
 
 }
@@ -111,65 +106,49 @@ scraped: 2026-03-05T21:38:37.817709
 {
 
 
-
 "uuid": "string",
-
 
 
 "levelType": "string",
 
 
-
 "levelId": "string",
 
 
-
 "name": "string",
-
 
 
 "boundaryQuery": "string",
 
 
-
 "boundaryConditions": [
 
 
-
 {
-
 
 
 "name": "string",
 
 
-
 "operator": "string",
-
 
 
 "values": [
 
 
-
 "string"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "metadata": {}
-
 
 
 }
@@ -179,17 +158,13 @@ scraped: 2026-03-05T21:38:37.817709
 {
 
 
-
 "code": 1,
-
 
 
 "message": "string",
 
 
-
 "errorsMap": {}
-
 
 
 }
@@ -232,17 +207,13 @@ scraped: 2026-03-05T21:38:37.817709
 {
 
 
-
 "name": "string",
-
 
 
 "boundaryQuery": "string",
 
 
-
 "metadata": {}
-
 
 
 }
@@ -258,37 +229,28 @@ scraped: 2026-03-05T21:38:37.817709
 curl --request POST \
 
 
-
 --url https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890/boundaries \
-
 
 
 --header 'accept: application/json' \
 
 
-
 --header 'Authorization: Bearer abcdefjhij1234567890' \
-
 
 
 --header 'Content-Type: application/json' \
 
 
-
 --data '{
-
 
 
 "name": "name_string",
 
 
-
 "boundaryQuery": "boundaryQuery",
 
 
-
 "metadata": {}
-
 
 
 }'
@@ -306,17 +268,13 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 {
 
 
-
 "name": "bnd_teamAA",
-
 
 
 "boundaryQuery": "storage:dt.security_context = \"TEAM-AA\";",
 
 
-
 "metadata": {}
-
 
 
 }
@@ -328,65 +286,49 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 {
 
 
-
 "uuid": "9a7b6c54-3d2e-4f10-a8b2-7cde9012f345",
-
 
 
 "levelType": "account",
 
 
-
 "levelId": "f1a2b3c4-d5e6-7890-ab12-34cd56ef7890",
-
 
 
 "name": "bnd_teamAA",
 
 
-
 "boundaryQuery": "storage:dt.security_context = \"TEAM-AA\";",
-
 
 
 "boundaryConditions": [
 
 
-
 {
-
 
 
 "name": "storage:dt.security_context",
 
 
-
 "operator": "EQ",
-
 
 
 "values": [
 
 
-
 "TEAM-AA"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "metadata": {}
-
 
 
 }

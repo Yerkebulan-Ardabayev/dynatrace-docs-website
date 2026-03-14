@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:36:37.105292
 
 # Troubleshooting RUM for custom applications
 
-# Troubleshooting RUM for custom applications
 
 * Classic
 * Troubleshooting

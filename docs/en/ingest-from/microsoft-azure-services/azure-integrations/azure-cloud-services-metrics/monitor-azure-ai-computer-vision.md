@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:34:55.644738
 
 # Azure AI - Computer Vision monitoring
 
-# Azure AI - Computer Vision monitoring
 
 * Latest Dynatrace
 * How-to guide

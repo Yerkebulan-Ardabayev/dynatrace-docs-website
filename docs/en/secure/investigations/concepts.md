@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:26:06.299326
 
 # Investigations concepts
 
-# Investigations concepts
 
 * Latest Dynatrace
 * Explanation

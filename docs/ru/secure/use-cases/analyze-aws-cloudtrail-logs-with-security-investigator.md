@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:49.736649
 
 # Анализ логов AWS CloudTrail с помощью Investigations
 
-# Анализ логов AWS CloudTrail с помощью Investigations
 
 * Latest Dynatrace
 * Руководство
@@ -53,7 +52,6 @@ scraped: 2026-03-06T21:28:49.736649
    fetch logs, from: -30min
 
 
-
    | filter aws.service == "cloudtrail"
    ```
 4. Выберите ![Run](https://dt-cdn.net/images/run-c2f8c2f63c.svg "Run") **Run** для отображения результатов.
@@ -66,9 +64,7 @@ scraped: 2026-03-06T21:28:49.736649
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
-
 
 
    | filter aws.service == "cloudtrail"
@@ -97,13 +93,10 @@ scraped: 2026-03-06T21:28:49.736649
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
 
 
-
    | filter aws.service == "cloudtrail"
-
 
 
    | parse content, "JSON:event"
@@ -131,9 +124,7 @@ scraped: 2026-03-06T21:28:49.736649
    | filter event[eventSource] == "signin.amazonaws.com"
 
 
-
    and event[eventName] == "ConsoleLogin"
-
 
 
    and event[responseElements][ConsoleLogin] == "Failure"
@@ -146,25 +137,19 @@ scraped: 2026-03-06T21:28:49.736649
    | summarize event_count = count(), by: {
 
 
-
    source  = event[sourceIPAddress],
-
 
 
    reason  = event[errorMessage],
 
 
-
    region  = event[awsRegion],
-
 
 
    userARN = event[userIdentity][arn],
 
 
-
    MFAUsed = event[additionalEventData][MFAUsed]
-
 
 
    }
@@ -176,53 +161,40 @@ scraped: 2026-03-06T21:28:49.736649
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
-
 
 
    | filter aws.service == "cloudtrail"
 
 
-
    | parse content, "JSON:event"
-
 
 
    | filter event[eventSource] == "signin.amazonaws.com"
 
 
-
    and event[eventName]   == "ConsoleLogin"
-
 
 
    and event[responseElements][ConsoleLogin] == "Failure"
 
 
-
    | summarize count(), by: {
-
 
 
    ipAddr  = event[sourceIPAddress],
 
 
-
    reason  = event[errorMessage],
-
 
 
    region  = event[awsRegion],
 
 
-
    userARN = event[userIdentity][arn],
 
 
-
    MFAUsed = event[additionalEventData][MFAUsed]
-
 
 
    }
@@ -245,29 +217,22 @@ scraped: 2026-03-06T21:28:49.736649
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
-
 
 
    | filter aws.service == "cloudtrail"
 
 
-
    | parse content, "json:event"
-
 
 
    | filter in(event[errorCode], { "AccessDenied", "UnauthorizedOperation" })
 
 
-
    | makeTimeseries event_count = count(), by: { eventName = event[eventName] }
 
 
-
    | sort arrayAvg(event_count) desc
-
 
 
    | limit 10
@@ -281,13 +246,10 @@ scraped: 2026-03-06T21:28:49.736649
    | makeTimeseries count(), by: {
 
 
-
    user      = event[userIdentity][arn],
 
 
-
    eventName = event[eventName]
-
 
 
    }
@@ -313,21 +275,16 @@ scraped: 2026-03-06T21:28:49.736649
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
-
 
 
    | filter aws.service == "cloudtrail"
 
 
-
    | parse content, "json:event"
 
 
-
    | filter event[errorCode] == "Client.RequestLimitExceeded"
-
 
 
    | makeTimeseries count(), by: { eventName = event[eventName] }
@@ -354,53 +311,40 @@ scraped: 2026-03-06T21:28:49.736649
    fetch logs, from: -30min
 
 
-
    | filter dt.system.bucket == "my_aws_bucket"
-
 
 
    | filter aws.service == "cloudtrail"
 
 
-
    | parse content, "json:event"
-
 
 
    | filter event[eventName] == "CreateKey"
 
 
-
    | filterOut startsWith(event[requestParameters][origin], "AWS_")
-
 
 
    | fields {
 
 
-
    eventName = event[eventName],
-
 
 
    origin    = event[requestParameters][origin],
 
 
-
    keyUsage  = event[responseElements][keyMetadata][keyUsage],
-
 
 
    region    = event[awsRegion],
 
 
-
    userARN   = event[userIdentity][arn],
 
 
-
    keyId     = event[responseElements][keyMetadata][keyId]
-
 
 
    }

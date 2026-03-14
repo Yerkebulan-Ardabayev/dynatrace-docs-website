@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:30:01.817464
 
 # Параметры EdgeConnect для Dynatrace Operator
 
-# Параметры EdgeConnect для Dynatrace Operator
 
 * Latest Dynatrace
 * 7-min read

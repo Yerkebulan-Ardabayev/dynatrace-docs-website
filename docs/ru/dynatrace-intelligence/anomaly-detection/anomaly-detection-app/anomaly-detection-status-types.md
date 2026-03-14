@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:51.429284
 
 # Типы статусов Anomaly Detection
 
-# Типы статусов Anomaly Detection
 
 * Последняя версия Dynatrace
 * Пояснение

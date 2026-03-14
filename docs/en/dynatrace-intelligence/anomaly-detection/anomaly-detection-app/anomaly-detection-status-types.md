@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:51.429284
 
 # Anomaly Detection status types
 
-# Anomaly Detection status types
 
 * Latest Dynatrace
 * Explanation

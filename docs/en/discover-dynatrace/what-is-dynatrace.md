@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:33.956733
 
 # What is Dynatrace
 
-# What is Dynatrace
 
 * Latest Dynatrace
 * Explanation

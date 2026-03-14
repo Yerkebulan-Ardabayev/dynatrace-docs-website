@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:26:16.765189
 
 # Мониторинг Google Cloud Tasks
 
-# Мониторинг Google Cloud Tasks
 
 * Latest Dynatrace
 * How-to guide

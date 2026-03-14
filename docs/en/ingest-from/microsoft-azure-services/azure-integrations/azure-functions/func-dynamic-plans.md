@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:24.559248
 
 # Monitor Azure Functions on Consumption Plans
 
-# Monitor Azure Functions on Consumption Plans
 
 * Latest Dynatrace
 * Overview

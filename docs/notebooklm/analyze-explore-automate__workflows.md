@@ -14,7 +14,6 @@ scraped: 2026-03-05T21:40:37.061485
 
 # Email
 
-# Email
 
 * Latest Dynatrace
 * 3-min read
@@ -104,7 +103,6 @@ Each line of an unordered (bulleted) list starts with an asterisk (`*`):
 * Line 1
 
 
-
 * Line 2
 ```
 
@@ -112,7 +110,6 @@ Alternatively, you can use a dash (`-`):
 
 ```
 - Line 1
-
 
 
 - Line 2
@@ -124,9 +121,7 @@ An ordered (numbered) list starts with a number and a period (`1.`) followed by 
 1. The first line of my procedure.
 
 
-
 2. The second line of my procedure.
-
 
 
 3. The third line of my procedure.
@@ -140,9 +135,7 @@ To add a table, define the headers, the column formatting row, and then the rows
 | Header 1 | Header2
 
 
-
 --- | ---
-
 
 
 content2 | content2
@@ -238,7 +231,6 @@ scraped: 2026-03-01T21:25:46.175084
 
 # Actions for GitHub Connector
 
-# Actions for GitHub Connector
 
 * Latest Dynatrace
 * Reference
@@ -427,7 +419,6 @@ The **Update issue** action updates an existing issue in a specified repository.
 ### Input
 
 
-
 | Field | Description | Required |
 | --- | --- | --- |
 | **Connection** | [Connection](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
@@ -523,7 +514,6 @@ scraped: 2026-03-05T21:36:46.023049
 
 # Set up GitHub Connector
 
-# Set up GitHub Connector
 
 * Latest Dynatrace
 * How-to guide
@@ -600,7 +590,6 @@ scraped: 2026-03-04T21:32:31.513544
 
 # GitHub Connector
 
-# GitHub Connector
 
 * Latest Dynatrace
 * Overview
@@ -636,7 +625,6 @@ scraped: 2026-03-05T21:32:08.754245
 
 # Actions for GitLab Connector
 
-# Actions for GitLab Connector
 
 * Latest Dynatrace
 * Reference
@@ -891,7 +879,6 @@ Gets the status of a pipeline running in your GitLab repository.
 ### Inputs
 
 
-
 | Field | Description | Required |
 | --- | --- | --- |
 | **Branch** | The name of the branch. | Required |
@@ -934,7 +921,6 @@ scraped: 2026-03-06T21:36:42.472660
 
 # Set up GitLab Connector
 
-# Set up GitLab Connector
 
 * Latest Dynatrace
 * How-to guide
@@ -1007,7 +993,6 @@ scraped: 2026-03-02T21:21:04.457505
 
 # GitLab Connector
 
-# GitLab Connector
 
 * Latest Dynatrace
 * Overview
@@ -1038,7 +1023,6 @@ scraped: 2026-03-05T21:30:53.886389
 
 # Set up Jenkins Connector
 
-# Set up Jenkins Connector
 
 * Latest Dynatrace
 * How-to guide
@@ -1100,7 +1084,6 @@ scraped: 2026-03-06T21:33:38.177057
 
 # Jira Connector
 
-# Jira Connector
 
 * Latest Dynatrace
 * Overview
@@ -1149,7 +1132,6 @@ scraped: 2026-03-05T21:39:12.282254
 
 # Microsoft Entra ID Connector
 
-# Microsoft Entra ID Connector
 
 * Latest Dynatrace
 * 5-min read
@@ -1263,13 +1245,10 @@ The log of a successful run is shown below.
 [INFO]    Successfully retrieved connection settings.
 
 
-
 [INFO]    Successfully fetched authentication token.
 
 
-
 [INFO]    Calling Entra-ID groups endpoint with the following query params: $filter=startswith(displayName, 'team-deco')&$select=id,displayName,description,mail,mailNickname&$count=true&$top=999
-
 
 
 [INFO]    Successfully fetched Groups from Entra-ID.
@@ -1287,7 +1266,6 @@ scraped: 2026-03-06T21:27:05.600890
 
 # PagerDuty
 
-# PagerDuty
 
 * Latest Dynatrace
 * 5-min read
@@ -1393,7 +1371,6 @@ scraped: 2026-03-06T21:27:29.962658
 
 # Red Hat Ansible Automation
 
-# Red Hat Ansible Automation
 
 * Latest Dynatrace
 * How-to guide
@@ -1511,7 +1488,6 @@ scraped: 2026-03-03T21:30:53.933975
 
 # Red Hat Event-Driven Ansible
 
-# Red Hat Event-Driven Ansible
 
 * Latest Dynatrace
 * How-to guide
@@ -1639,57 +1615,43 @@ To use the [dt\_webhookï»¿](https://dt-url.net/5w23n6c) plugin, you need to c
   ---
 
 
-
   - name: Listen for events on dt_webhook
-
 
 
   hosts: all
 
 
-
   sources:
-
 
 
   - dynatrace.event_driven_ansible.dt_webhook:
 
 
-
   host: 0.0.0.0
-
 
 
   port: 5000
 
 
-
   token: '{{ dt_webhook_token }}'
-
 
 
   rules:
 
 
-
   - name: API Endpoint not available
-
 
 
   condition: event.payload.eventData["event.name"] is match ("Monitoring not available")
 
 
-
   action:
-
 
 
   run_job_template:
 
 
-
   name: "Trigger test playbook"
-
 
 
   organization: "Default"
@@ -1729,7 +1691,6 @@ To fine-tune permissions granted to Workflows
 For more on general Workflows user permissions, see [User permissions for workflows](../ru/analyze-explore-automate/workflows/security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Step 3 Configure Red Hat Ansible connection
-
 
 
 You need a configured connection for your Red Hat Event-Driven Ansible environments.
@@ -1788,7 +1749,6 @@ scraped: 2026-03-06T21:21:42.823422
 
 # ServiceNow
 
-# ServiceNow
 
 * Latest Dynatrace
 * 7-min read
@@ -1951,7 +1911,6 @@ To comment on an incident in your workflow ![Workflows](https://dt-cdn.net/image
 ## Search in ServiceNow
 
 
-
 To search ServiceNow in your workflow ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
 1. In the **Choose action** pane, search for ServiceNow and select **Search**.
@@ -2052,7 +2011,6 @@ scraped: 2026-03-03T21:22:08.797257
 
 # Slack Connector
 
-# Slack Connector
 
 * Latest Dynatrace
 * 5-min read
@@ -2107,93 +2065,70 @@ For Slack Connector workflow actions to interact with your Slack workspace, you 
    display_information:
 
 
-
    name: <app-name>
-
 
 
    features:
 
 
-
    bot_user:
-
 
 
    display_name: <bot-name>
 
 
-
    always_online: false
-
 
 
    oauth_config:
 
 
-
    scopes:
-
 
 
    bot:
 
 
-
    - channels:join
-
 
 
    - channels:read
 
 
-
    - chat:write
-
 
 
    - chat:write.public
 
 
-
    - files:read
-
 
 
    - files:write
 
 
-
    - groups:read
-
 
 
    - im:read
 
 
-
    - mpim:read
-
 
 
    - reactions:read
 
 
-
    - reactions:write
-
 
 
    settings:
 
 
-
    org_deploy_enabled: false
 
 
-
    socket_mode_enabled: false
-
 
 
    token_rotation_enabled: false
@@ -2230,7 +2165,6 @@ The workflow action can be used to send Markdown-formatted messages or [Block Ki
     [INFO] POST https://slack.com/api/chat.postMessage called successfully
 
 
-
     [INFO] Message has been posted successfully
     ```
   + **Error**:
@@ -2250,241 +2184,181 @@ in Dynatrace Workflows using workflow expressions.
 {
 
 
-
 "blocks": [
 
 
-
 {
-
 
 
 "type": "header",
 
 
-
 "text": {
 
 
-
 "type": "plain_text",
-
 
 
 "text": "ð¨ Dynatrace Alert: High CPU Usage Detected",
 
 
-
 "emoji": true
-
 
 
 }
 
 
-
 },
-
 
 
 {
 
 
-
 "type": "section",
-
 
 
 "text": {
 
 
-
 "type": "mrkdwn",
-
 
 
 "text": "*Alert Details:*\nâ¢ *Entity*: `Host-1234`\nâ¢ *Metric*: CPU Usage\nâ¢ *Threshold*: > 90%\nâ¢ *Current Value*: 95%"
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "divider"
 
 
-
 },
 
 
-
 {
-
 
 
 "type": "section",
 
 
-
 "text": {
 
 
-
 "type": "mrkdwn",
-
 
 
 "text": "ð¡ *Recommended Actions:*"
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "actions",
 
 
-
 "elements": [
-
 
 
 {
 
 
-
 "type": "button",
-
 
 
 "text": {
 
 
-
 "type": "plain_text",
-
 
 
 "text": "Acknowledge Alert"
 
 
-
 },
-
 
 
 "style": "primary",
 
 
-
 "value": "acknowledge_alert"
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "button",
 
 
-
 "text": {
-
 
 
 "type": "plain_text",
 
 
-
 "text": "View in Dynatrace"
 
 
-
 },
-
 
 
 "url": "https://dynatrace.example.com/alert/1234",
 
 
-
 "style": "danger"
-
 
 
 }
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "context",
 
 
-
 "elements": [
-
 
 
 {
 
 
-
 "type": "mrkdwn",
-
 
 
 "text": "Triggered at: 2026-01-08 14:30 UTC"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -2503,161 +2377,121 @@ If you want to create a structured message with multiple data fields, you can us
 {
 
 
-
 "blocks": [
 
 
-
 {
-
 
 
 "type": "header",
 
 
-
 "text": {
 
 
-
 "type": "plain_text",
-
 
 
 "text": "production-payment-service",
 
 
-
 "emoji": true
-
 
 
 }
 
 
-
 },
-
 
 
 {
 
 
-
 "type": "section",
 
 
-
 "text": {
-
 
 
 "type": "plain_text",
 
 
-
 "emoji": true,
-
 
 
 "text": "2024-01-09T11:30:00+01:00"
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "section",
 
 
-
 "text": {
 
 
-
 "type": "mrkdwn",
-
 
 
 "text": "```Error: Connection timeout after 5000ms\n  at PaymentGateway.connect (gateway.js:45)\n  at processPayment (service.js:123)```"
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "section",
 
 
-
 "text": {
 
 
-
 "type": "mrkdwn",
-
 
 
 "text": "DT App function: `processPayment`"
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "section",
 
 
-
 "text": {
-
 
 
 "type": "mrkdwn",
 
 
-
 "text": "DT entity service: `SERVICE-A1B2C3D4E5F6G7H8`"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -2669,221 +2503,166 @@ To replicate this behavior, you can use expressions instead. The same example ab
 {%- set data = [
 
 
-
 {
-
 
 
 "dt_app_id": "production-payment-service",
 
 
-
 "instance": "2024-01-09T10:30:00Z",
-
 
 
 "error": "Error: Connection timeout after 5000ms\n  at PaymentGateway.connect (gateway.js:45)\n  at processPayment (service.js:123)",
 
 
-
 "dt_app_function": "processPayment",
-
 
 
 "dt_entity_service": "SERVICE-A1B2C3D4E5F6G7H8"
 
 
-
 }
 
 
-
 ]
-
 
 
 -%}
 
 
-
 {
-
 
 
 "blocks": [
 
 
-
 {% for item in data %}
 
 
-
 {
-
 
 
 "type": "header",
 
 
-
 "text": {
 
 
-
 "type": "plain_text",
-
 
 
 "text": "{{ item.dt_app_id }}",
 
 
-
 "emoji": true
-
 
 
 }
 
 
-
 },
-
 
 
 {
 
 
-
 "type": "section",
 
 
-
 "text": {
-
 
 
 "type": "plain_text",
 
 
-
 "emoji": true,
-
 
 
 "text": "{{ item.instance | to_datetime(timezone='Europe/Vienna') }}"
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "section",
 
 
-
 "text": {
 
 
-
 "type": "mrkdwn",
-
 
 
 "text": {{ ("```" ~ item.error ~ "```") | to_json }}
 
 
-
 }
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "section",
 
 
-
 "text": {
 
 
-
 "type": "mrkdwn",
-
 
 
 "text": "DT App function: `{{ item.dt_app_function }}`"
 
 
-
 }
-
 
 
 },
 
 
-
 {% if 'dt_entity_service' in item %}
-
 
 
 {
 
 
-
 "type": "section",
-
 
 
 "text": {
 
 
-
 "type": "mrkdwn",
-
 
 
 "text": "DT entity service: `{{ item.dt_entity_service }}`"
 
 
-
 }
 
 
-
 }
-
 
 
 {% endif %}
 
 
-
 {% if not loop.last %},{% endif %}
-
 
 
 {% endfor %}
 
 
-
 ]
-
 
 
 }
@@ -2901,7 +2680,6 @@ To replicate this behavior, you can use expressions instead. The same example ab
 For more expression capabilities, see [Expression reference](analyze-explore-automate/workflows/reference.md "Get to know the workflows expression").
 
 ## Use Workflows with Slack
-
 
 
 1. Go to **Workflows** ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") and select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") to create a new workflow.
@@ -2944,7 +2722,6 @@ scraped: 2026-03-06T21:29:14.231788
 
 # Actions for Text Processing Connector
 
-# Actions for Text Processing Connector
 
 * Latest Dynatrace
 * Reference
@@ -2983,9 +2760,7 @@ Configures a JSON file.
 {
 
 
-
 "json": "<updated json content>"
-
 
 
 }
@@ -3001,37 +2776,28 @@ This is an example input for the **Set JSON value** action where we change the v
   {
 
 
-
   "persons": [
 
 
-
   {
-
 
 
   "name": "Max"
 
 
-
   },
-
 
 
   {
 
 
-
   "name": "John"
-
 
 
   }
 
 
-
   ]
-
 
 
   }
@@ -3048,37 +2814,28 @@ The first name was changed to Michael.
 {
 
 
-
 "persons": [
 
 
-
 {
-
 
 
 "name": "Michael"
 
 
-
 },
-
 
 
 {
 
 
-
 "name": "John"
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -3097,9 +2854,7 @@ Supports multi-document YAML files.
 {
 
 
-
 âyamlâ: â<updated yaml content>â
-
 
 
 }
@@ -3115,29 +2870,22 @@ This is an example input for the **Set YAML value** action where we change the v
   ---
 
 
-
   persons:
-
 
 
   - name: John
 
 
-
   - name: Sarah
-
 
 
   ---
 
 
-
   persons:
 
 
-
   - name: Max
-
 
 
   - name: Jeff
@@ -3157,25 +2905,19 @@ This is the result of running the **Set JSON value** action as part of a workflo
 persons:
 
 
-
 - name: John
-
 
 
 - name: Sarah
 
 
-
 ---
-
 
 
 persons:
 
 
-
 - name: Michael
-
 
 
 - name: Jeff
@@ -3198,21 +2940,16 @@ Retrieves a value from a JSON file.
   {
 
 
-
   "person": {
-
 
 
   "name": "John Doe"
 
 
-
   "age": 30,
 
 
-
   }
-
 
 
   }
@@ -3223,21 +2960,16 @@ Retrieves a value from a JSON file.
   {
 
 
-
   "json": {
-
 
 
   "name": "John Doe",
 
 
-
   "age": 30
 
 
-
   }
-
 
 
   }
@@ -3262,9 +2994,7 @@ Supports multi-document YAML files.
   person:
 
 
-
   name: "John doe"
-
 
 
   age: 30
@@ -3275,9 +3005,7 @@ Supports multi-document YAML files.
   {
 
 
-
   "yaml": "name: \"John Doe\"\nage: 30"
-
 
 
   }
@@ -3295,7 +3023,6 @@ scraped: 2026-03-06T21:36:02.786540
 
 # Text Processing
 
-# Text Processing
 
 * Latest Dynatrace
 * Overview
@@ -3326,7 +3053,6 @@ scraped: 2026-03-06T21:21:39.365090
 
 # Workflows Connectors
 
-# Workflows Connectors
 
 * Latest Dynatrace
 * Overview
@@ -3439,7 +3165,6 @@ scraped: 2026-03-02T21:31:44.785730
 
 # DQL query action for Workflows
 
-# DQL query action for Workflows
 
 * Latest Dynatrace
 * Reference
@@ -3466,7 +3191,6 @@ scraped: 2026-03-06T21:34:27.419257
 
 # HTTP request action for Workflows
 
-# HTTP request action for Workflows
 
 * Latest Dynatrace
 * Reference
@@ -3516,7 +3240,6 @@ scraped: 2026-03-04T21:33:36.756619
 
 # Run JavaScript action for Workflows
 
-# Run JavaScript action for Workflows
 
 * Latest Dynatrace
 * Reference
@@ -3565,33 +3288,25 @@ Your JavaScript actions can retrieve the result of a previous task and use it fo
 // import of sdk modules
 
 
-
 import { result } from '@dynatrace-sdk/automation-utils';
-
 
 
 export default async function () {
 
 
-
 // get the result of task 'my_task'. 'my_task' must be a predecessor.
-
 
 
 var myResult = await result('my_task');
 
 
-
 // log the result object
-
 
 
 console.log('The whole result object: ', myResult);
 
 
-
 console.log('only one variable: ', myResult.myVariable)
-
 
 
 }
@@ -3603,37 +3318,28 @@ console.log('only one variable: ', myResult.myVariable)
 // import of sdk modules
 
 
-
 import { executionsClient } from '@dynatrace-sdk/client-automation';
-
 
 
 export default async function ({ executionId }) {
 
 
-
 // load the execution object using the current executionId
-
 
 
 var config = {executionId, id: 'my_task'}
 
 
-
 var myResult = await executionsClient.getTaskExecutionResult(config)
-
 
 
 // log the result object
 
 
-
 console.log('My task result: ', myResult)
 
 
-
 console.log('only one variable: ', myResult.myVariable)
-
 
 
 }
@@ -3647,17 +3353,13 @@ The following execution context is available out of the box and can be accessed 
 export default async function ({ executionId, actionExecutionId }) {
 
 
-
 //log available execution context ids
-
 
 
 console.log('Workflow execution id: ', executionId);
 
 
-
 console.log('Action execution id: ', actionExecutionId)
-
 
 
 }
@@ -3676,13 +3378,10 @@ When using the option to loop a task, you might want to access the value of the 
 export default async function ({ loopItemValue }) {
 
 
-
 // log the current value of the loop item
 
 
-
 console.log(loopItemValue)
-
 
 
 }
@@ -3701,17 +3400,13 @@ The `@dynatrace-sdk/automation-utils` package available to run JavaScript tasks 
 // optional import of sdk modules
 
 
-
 import { actionExecutionId, executionId, taskName, workflowId } from '@dynatrace-sdk/automation-utils';
-
 
 
 export default async function () {
 
 
-
 console.log(`Running action execution '${actionExecutionId}' for task '${taskName}' of workflow '${workflowId}' in workflow execution '${executionId}'`)
-
 
 
 }
@@ -3757,33 +3452,25 @@ Let's say your backend produces legacy XML output, but you need to process data 
 // Load the XML parser from ESM
 
 
-
 import xml2js from "https://esm.sh/xml2js@0.6.2";
-
 
 
 export default async function() {
 
 
-
 // Dummy XML, can be fetched from your back-end
-
 
 
 const xml = "<root><list><item>Hello</item><item>World</item></list></root>";
 
 
-
 const parser = new xml2js.Parser();
-
 
 
 const json = await parser.parseStringPromise(xml);
 
 
-
 return json;
-
 
 
 }
@@ -3796,7 +3483,6 @@ Note that some of those libraries either depend on Node.js internals or Deno int
 ## Intentionally fail task
 
 
-
 If you need to fail a run JavaScript task by intention, you throw an unhandled exception.
 
 Here is an example that will always fail the execution of the task.
@@ -3805,9 +3491,7 @@ Here is an example that will always fail the execution of the task.
 export default async function() {
 
 
-
 throw new Error()
-
 
 
 }
@@ -3823,21 +3507,16 @@ Here is an example to retrieve event context from the workflow execution for eve
 import { execution } from '@dynatrace-sdk/automation-utils';
 
 
-
 export default async function () {
-
 
 
 const ex = await execution();
 
 
-
 console.log( ex.params.event);
 
 
-
 // your code goes here
-
 
 
 }
@@ -3855,7 +3534,6 @@ scraped: 2026-03-06T21:30:16.176752
 
 # Workflows actions
 
-# Workflows actions
 
 * Latest Dynatrace
 * Overview
@@ -3904,7 +3582,6 @@ scraped: 2026-03-06T21:30:23.206905
 
 # Access workflow management functionality
 
-# Access workflow management functionality
 
 * Latest Dynatrace
 * How-to guide
@@ -3949,7 +3626,6 @@ scraped: 2026-03-06T21:31:08.025695
 
 # Manage live or draft workflows
 
-# Manage live or draft workflows
 
 * Latest Dynatrace
 * How-to guide
@@ -3987,7 +3663,6 @@ scraped: 2026-03-06T21:32:34.815912
 
 # Get notified about workflow changes
 
-# Get notified about workflow changes
 
 * Latest Dynatrace
 * How-to guide
@@ -4060,7 +3735,6 @@ scraped: 2026-03-06T21:34:39.204491
 
 # Workflow templates
 
-# Workflow templates
 
 * Latest Dynatrace
 * How-to guide
@@ -4119,7 +3793,6 @@ scraped: 2026-03-06T21:27:38.315462
 
 # User permissions for workflows
 
-# User permissions for workflows
 
 * Latest Dynatrace
 * Reference
@@ -4265,7 +3938,6 @@ The user editing a workflow needs the `iam:service-users:use` permission to use 
 ALLOW iam:service-users:use
 
 
-
 WHERE iam:service-user-email IN ("<SERVICE_USER_1_EMAIL>", "<SERVICE_USER_2_EMAIL>");
 ```
 
@@ -4283,7 +3955,6 @@ scraped: 2026-03-05T21:32:26.413235
 
 # Event triggers for workflows
 
-# Event triggers for workflows
 
 * Latest Dynatrace
 * Reference
@@ -4383,7 +4054,6 @@ To remedy this situation, we recommend adjusting the event trigger configuration
 ## Hints on working with workflows and event triggers
 
 
-
 * To access the event payload to parameterize tasks in your workflow, use the `event()` [expression](analyze-explore-automate/workflows/reference.md#event "Get to know the workflows expression").
 * For an event trigger, Workflows will prompt the event context of the last successful execution for manually triggered workflow runs. The Workflows prompt allows you to adjust the event context for manual runs during workflow development iterations.
 * With **Query past events** in the event trigger definition, you can quickly see how many matching events were observed in the past in your environment.
@@ -4402,7 +4072,6 @@ scraped: 2026-02-18T05:43:42.904107
 
 # Send email notifications for problems
 
-# Send email notifications for problems
 
 * Latest Dynatrace
 * Tutorial
@@ -4474,7 +4143,6 @@ At a short glance, you will:
       {{ event()["event.description"] }}
 
 
-
       Go to problem: {{ environment().url }}/ui/apps/dynatrace.davis.problems/problem/{{ event()["event.id"] }}
       ```
 
@@ -4529,7 +4197,6 @@ scraped: 2026-02-18T05:48:39.343910
 
 # Send Slack notifications for problems
 
-# Send Slack notifications for problems
 
 * Latest Dynatrace
 * Tutorial
@@ -4597,141 +4264,106 @@ At a short glance, you will:
       {
 
 
-
       "blocks": [
 
 
-
       {
-
 
 
       "type": "header",
 
 
-
       "text": {
-
 
 
       "type": "plain_text",
 
 
-
       "text": "{{ ':white_check_mark:' if event()['event.status'] == 'CLOSED' else ':warning:' }} {{ 'RESOLVED' if event()['event.status'] == 'CLOSED' else 'OPEN' }} - {{ event()['event.name']}}",
-
 
 
       "emoji": true
 
 
-
       }
-
 
 
       },
 
 
-
       {
-
 
 
       "type": "section",
 
 
-
       "text": {
 
 
-
       "type": "mrkdwn",
-
 
 
       "text": "- *Problem link*: <{{ environment().url }}/ui/intent/dynatrace.davis.problems/view-problem#%7B%22event.id%22%3A%22{{ event()['event.id'] }}%22,%22event.kind%22%3A%22{{event()['event.kind']}}%22%7D|{{ event()['display_id'] }}> \n- *Impacted Entities:* `{{ event()['affected_entity_ids'] }}`\n- *Problem duration:* `{{ (event().get('resolved_problem_duration', 0) | int) / 1000000 / 1000 / 60 }} minutes`"
 
 
-
       }
-
 
 
       },
 
 
-
       {
-
 
 
       "type": "section",
 
 
-
       "text": {
 
 
-
       "type": "mrkdwn",
-
 
 
       "text": {{ ('>' ~ event()['event.description']) | replace('\n', '\n>') | to_json }}
 
 
-
       }
-
 
 
       },
 
 
-
       {
-
 
 
       "type": "divider"
 
 
-
       },
-
 
 
       {
 
 
-
       "type": "section",
-
 
 
       "text": {
 
 
-
       "type": "mrkdwn",
-
 
 
       "text": "*Workflow link*: <{{ environment().url }}/ui/apps/dynatrace.automations/workflows/{{ execution().workflow.id }}|Workflow>"
 
 
-
       }
 
 
-
       }
-
 
 
       ]
-
 
 
       }
@@ -4785,7 +4417,6 @@ scraped: 2026-03-06T21:33:55.552697
 
 # Workflows use cases
 
-# Workflows use cases
 
 * Latest Dynatrace
 * Overview
@@ -4854,7 +4485,6 @@ scraped: 2026-03-06T21:15:26.954952
 
 # Workflows
 
-# Workflows
 
 * Latest Dynatrace
 * App

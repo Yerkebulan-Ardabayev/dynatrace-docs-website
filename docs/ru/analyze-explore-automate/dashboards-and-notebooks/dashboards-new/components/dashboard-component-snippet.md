@@ -51,9 +51,7 @@ DQL за вашей плиткой является сниппетом, кото
 fetch logs
 
 
-
 | sort timestamp desc
-
 
 
 | limit 100
@@ -79,9 +77,7 @@ fetch logs
 fetch events
 
 
-
 | summarize `event count`=count(), by:{event.kind}
-
 
 
 | limit 5

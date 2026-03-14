@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:41.477715
 
 # Settings API - OneAgent features schema table
 
-# Settings API - OneAgent features schema table
 
 * Published Dec 05, 2023
 

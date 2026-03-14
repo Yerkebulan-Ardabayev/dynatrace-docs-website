@@ -6,7 +6,6 @@ scraped: 2026-03-01T21:20:36.536218
 
 # Smartscape
 
-# Smartscape
 
 * Latest Dynatrace
 * Overview

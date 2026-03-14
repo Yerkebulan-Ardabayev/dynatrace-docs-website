@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:24:02.095091
 
 # Мониторинг политики Azure Web Application Firewall (WAF) в Azure CDN
 
-# Мониторинг политики Azure Web Application Firewall (WAF) в Azure CDN
 
 * Последняя версия Dynatrace
 * Практическое руководство

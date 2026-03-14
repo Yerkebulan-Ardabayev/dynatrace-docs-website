@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:41.434597
 
 # Update Dynatrace OneAgent on AIX
 
-# Update Dynatrace OneAgent on AIX
 
 * Latest Dynatrace
 * How-to guide

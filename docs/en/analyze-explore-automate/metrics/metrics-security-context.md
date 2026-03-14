@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:30:28.462282
 
 # Set up Grail permissions for Metrics
 
-# Set up Grail permissions for Metrics
 
 * Latest Dynatrace
 * How-to guide

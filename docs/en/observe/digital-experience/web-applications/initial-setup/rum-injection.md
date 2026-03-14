@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:26.027742
 
 # Configure automatic injection
 
-# Configure automatic injection
 
 * Classic
 * How-to guide

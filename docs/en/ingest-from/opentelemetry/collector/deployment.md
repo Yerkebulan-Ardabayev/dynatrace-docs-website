@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:58.147239
 
 # Deploy Dynatrace OTel Collector
 
-# Deploy Dynatrace OTel Collector
 
 * Latest Dynatrace
 * How-to guide
@@ -90,177 +89,133 @@ Deploy as a gateway (Deployment)
 apiVersion: opentelemetry.io/v1beta1
 
 
-
 kind: OpenTelemetryCollector
-
 
 
 metadata:
 
 
-
 name: dynatrace-otel
-
 
 
 spec:
 
 
-
 envFrom:
-
 
 
 - secretRef:
 
 
-
 name: dynatrace-otelcol-dt-api-credentials
-
 
 
 env:
 
 
-
 - name: MY_POD_IP
-
 
 
 valueFrom:
 
 
-
 fieldRef:
-
 
 
 fieldPath: status.podIP
 
 
-
 mode: "deployment"
-
 
 
 image: "ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0"
 
 
-
 resources:
-
 
 
 limits:
 
 
-
 memory: 512Mi
-
 
 
 config:
 
 
-
 receivers:
-
 
 
 otlp:
 
 
-
 protocols:
-
 
 
 grpc:
 
 
-
 endpoint: ${env:MY_POD_IP}:4317
-
 
 
 http:
 
 
-
 endpoint: ${env:MY_POD_IP}:4318
-
 
 
 exporters:
 
 
-
 otlp_http:
-
 
 
 endpoint: "${env:DT_ENDPOINT}"
 
 
-
 headers:
-
 
 
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
 
 
-
 service:
-
 
 
 pipelines:
 
 
-
 traces:
-
 
 
 receivers: [otlp]
 
 
-
 processors: []
 
 
-
 exporters: [otlp_http]
-
 
 
 metrics:
 
 
-
 receivers: [otlp]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]
 
 
-
 logs:
-
 
 
 receivers: [otlp]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]
@@ -272,177 +227,133 @@ Deploy as an agent (DaemonSet)
 apiVersion: opentelemetry.io/v1beta1
 
 
-
 kind: OpenTelemetryCollector
-
 
 
 metadata:
 
 
-
 name: dynatrace-otel
-
 
 
 spec:
 
 
-
 envFrom:
-
 
 
 - secretRef:
 
 
-
 name: dynatrace-otelcol-dt-api-credentials
-
 
 
 env:
 
 
-
 - name: MY_POD_IP
-
 
 
 valueFrom:
 
 
-
 fieldRef:
-
 
 
 fieldPath: status.podIP
 
 
-
 mode: "daemonset"
-
 
 
 image: "ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0"
 
 
-
 resources:
-
 
 
 limits:
 
 
-
 memory: 512Mi
-
 
 
 config:
 
 
-
 receivers:
-
 
 
 otlp:
 
 
-
 protocols:
-
 
 
 grpc:
 
 
-
 endpoint: ${env:MY_POD_IP}:4317
-
 
 
 http:
 
 
-
 endpoint: ${env:MY_POD_IP}:4318
-
 
 
 exporters:
 
 
-
 otlp_http:
-
 
 
 endpoint: "${env:DT_ENDPOINT}"
 
 
-
 headers:
-
 
 
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
 
 
-
 service:
-
 
 
 pipelines:
 
 
-
 traces:
-
 
 
 receivers: [otlp]
 
 
-
 processors: []
 
 
-
 exporters: [otlp_http]
-
 
 
 metrics:
 
 
-
 receivers: [otlp]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]
 
 
-
 logs:
-
 
 
 receivers: [otlp]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]
@@ -460,205 +371,154 @@ Deploy as a gateway (Deployment)
    mode: deployment
 
 
-
    image:
-
 
 
    repository: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector
 
 
-
    tag: 0.44.0
-
 
 
    command:
 
 
-
    name: dynatrace-otel-collector
-
 
 
    extraEnvs:
 
 
-
    - name: DT_API_TOKEN
-
 
 
    valueFrom:
 
 
-
    secretKeyRef:
 
 
-
    name: dynatrace-otelcol-dt-api-credentials
-
 
 
    key: DT_API_TOKEN
 
 
-
    - name: DT_ENDPOINT
-
 
 
    valueFrom:
 
 
-
    secretKeyRef:
-
 
 
    name: dynatrace-otelcol-dt-api-credentials
 
 
-
    key: DT_ENDPOINT
-
 
 
    resources:
 
 
-
    limits:
-
 
 
    memory: 512Mi
 
 
-
    alternateConfig:
-
 
 
    extensions:
 
 
-
    health_check:
-
 
 
    endpoint: "${env:MY_POD_IP}:13133"
 
 
-
    receivers:
-
 
 
    otlp:
 
 
-
    protocols:
-
 
 
    grpc:
 
 
-
    endpoint: ${env:MY_POD_IP}:4317
-
 
 
    http:
 
 
-
    endpoint: ${env:MY_POD_IP}:4318
-
 
 
    filelog: null
 
 
-
    exporters:
-
 
 
    otlp_http:
 
 
-
    endpoint: "${env:DT_ENDPOINT}"
-
 
 
    headers:
 
 
-
    Authorization: "Api-Token ${env:DT_API_TOKEN}"
-
 
 
    service:
 
 
-
    extensions: [health_check]
-
 
 
    pipelines:
 
 
-
    traces:
-
 
 
    receivers: [otlp]
 
 
-
    processors: []
 
 
-
    exporters: [otlp_http]
-
 
 
    metrics:
 
 
-
    receivers: [otlp]
 
 
-
    processors: []
-
 
 
    exporters: [otlp_http]
 
 
-
    logs:
-
 
 
    receivers: [otlp]
 
 
-
    processors: []
-
 
 
    exporters: [otlp_http]
@@ -669,9 +529,7 @@ Deploy as a gateway (Deployment)
    helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
 
 
-
    helm repo update
-
 
 
    helm upgrade -i dynatrace-collector open-telemetry/opentelemetry-collector -f values-deployment.yaml
@@ -685,201 +543,151 @@ Deploy as an agent (DaemonSet)
    mode: daemonset
 
 
-
    image:
-
 
 
    repository: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector
 
 
-
    tag: 0.44.0
-
 
 
    command:
 
 
-
    name: dynatrace-otel-collector
-
 
 
    extraEnvs:
 
 
-
    - name: DT_API_TOKEN
-
 
 
    valueFrom:
 
 
-
    secretKeyRef:
 
 
-
    name: dynatrace-otelcol-dt-api-credentials
-
 
 
    key: DT_API_TOKEN
 
 
-
    - name: DT_ENDPOINT
-
 
 
    valueFrom:
 
 
-
    secretKeyRef:
-
 
 
    name: dynatrace-otelcol-dt-api-credentials
 
 
-
    key: DT_ENDPOINT
-
 
 
    resources:
 
 
-
    limits:
-
 
 
    memory: 512Mi
 
 
-
    alternateConfig:
-
 
 
    extensions:
 
 
-
    health_check:
-
 
 
    endpoint: "${env:MY_POD_IP}:13133"
 
 
-
    receivers:
-
 
 
    otlp:
 
 
-
    protocols:
-
 
 
    grpc:
 
 
-
    endpoint: ${env:MY_POD_IP}:4317
-
 
 
    http:
 
 
-
    endpoint: ${env:MY_POD_IP}:4318
-
 
 
    exporters:
 
 
-
    otlp_http:
-
 
 
    endpoint: "${env:DT_ENDPOINT}"
 
 
-
    headers:
-
 
 
    Authorization: "Api-Token ${env:DT_API_TOKEN}"
 
 
-
    service:
-
 
 
    extensions: [health_check]
 
 
-
    pipelines:
-
 
 
    traces:
 
 
-
    receivers: [otlp]
-
 
 
    processors: []
 
 
-
    exporters: [otlp_http]
-
 
 
    metrics:
 
 
-
    receivers: [otlp]
 
 
-
    processors: []
-
 
 
    exporters: [otlp_http]
 
 
-
    logs:
-
 
 
    receivers: [otlp]
 
 
-
    processors: []
-
 
 
    exporters: [otlp_http]
@@ -890,9 +698,7 @@ Deploy as an agent (DaemonSet)
    helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
 
 
-
    helm repo update
-
 
 
    helm upgrade -i dynatrace-collector open-telemetry/opentelemetry-collector -f values-daemonset.yaml
@@ -910,157 +716,118 @@ Use `kubectl apply` with the following configuration to set up the service defin
 apiVersion: v1
 
 
-
 kind: Service
-
 
 
 metadata:
 
 
-
 name: dynatrace-otel-collector
-
 
 
 spec:
 
 
-
 internalTrafficPolicy: Cluster
-
 
 
 ipFamilies:
 
 
-
 - IPv4
-
 
 
 ipFamilyPolicy: SingleStack
 
 
-
 ports:
-
 
 
 - name: jaeger-compact
 
 
-
 port: 6831
-
 
 
 protocol: UDP
 
 
-
 targetPort: 6831
-
 
 
 - name: jaeger-grpc
 
 
-
 port: 14250
 
 
-
 protocol: TCP
-
 
 
 targetPort: 14250
 
 
-
 - name: jaeger-thrift
-
 
 
 port: 14268
 
 
-
 protocol: TCP
-
 
 
 targetPort: 14268
 
 
-
 - appProtocol: grpc
-
 
 
 name: otlp
 
 
-
 port: 4317
 
 
-
 protocol: TCP
-
 
 
 targetPort: 4317
 
 
-
 - name: otlp-http
-
 
 
 port: 4318
 
 
-
 protocol: TCP
-
 
 
 targetPort: 4318
 
 
-
 - name: zipkin
-
 
 
 port: 9411
 
 
-
 protocol: TCP
-
 
 
 targetPort: 9411
 
 
-
 selector:
-
 
 
 app.kubernetes.io/instance: dynatrace-otel-collector
 
 
-
 app.kubernetes.io/name: dynatrace-otel-collector
 
 
-
 sessionAffinity: None
-
 
 
 type: ClusterIP
@@ -1074,125 +841,94 @@ Create a ConfigMap by applying the following configuration with `kubectl apply` 
 apiVersion: v1
 
 
-
 kind: ConfigMap
-
 
 
 metadata:
 
 
-
 name: dynatrace-otel-collector-config
-
 
 
 data:
 
 
-
 otel-collector-config: |
-
 
 
 receivers:
 
 
-
 otlp:
-
 
 
 protocols:
 
 
-
 grpc:
-
 
 
 endpoint: ${env:MY_POD_IP}:4317
 
 
-
 http:
-
 
 
 endpoint: ${env:MY_POD_IP}:4318
 
 
-
 exporters:
-
 
 
 otlp_http:
 
 
-
 endpoint: "${env:DT_ENDPOINT}"
-
 
 
 headers:
 
 
-
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
-
 
 
 service:
 
 
-
 pipelines:
-
 
 
 traces:
 
 
-
 receivers: [otlp]
-
 
 
 processors: []
 
 
-
 exporters: [otlp_http]
-
 
 
 metrics:
 
 
-
 receivers: [otlp]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]
 
 
-
 logs:
-
 
 
 receivers: [otlp]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]
@@ -1206,205 +942,154 @@ Apply the following manifest configuration with `kubectl apply` to create the Dy
 apiVersion: apps/v1
 
 
-
 kind: Deployment
 
 
-
 metadata:
-
 
 
 name: dynatrace-otel-collector
 
 
-
 spec:
-
 
 
 selector:
 
 
-
 matchLabels:
 
 
-
 app.kubernetes.io/name: dynatrace-otel-collector
-
 
 
 replicas: 1
 
 
-
 template:
-
 
 
 metadata:
 
 
-
 labels:
-
 
 
 app.kubernetes.io/instance: dynatrace-otel-collector
 
 
-
 app.kubernetes.io/name: dynatrace-otel-collector
-
 
 
 spec:
 
 
-
 #You may have to configure RBAC to grant proper permissions for enriching data
-
 
 
 #serviceAccountName: dynatrace-otel-collector
 
 
-
 containers:
-
 
 
 - name: dynatrace-otel-collector
 
 
-
 args: ["--config", "/conf/otel-collector-config.yaml"]
-
 
 
 env:
 
 
-
 - name: MY_POD_IP
 
 
-
 valueFrom:
-
 
 
 fieldRef:
 
 
-
 apiVersion: v1
-
 
 
 fieldPath: status.podIP
 
 
-
 - name: DT_ENDPOINT
-
 
 
 valueFrom:
 
 
-
 secretKeyRef:
 
 
-
 name: dynatrace-otelcol-dt-api-credentials
-
 
 
 key: DT_ENDPOINT
 
 
-
 - name: DT_API_TOKEN
-
 
 
 valueFrom:
 
 
-
 secretKeyRef:
-
 
 
 name: dynatrace-otelcol-dt-api-credentials
 
 
-
 key: DT_API_TOKEN
-
 
 
 image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0
 
 
-
 resources:
-
 
 
 limits:
 
 
-
 memory: 512Mi
-
 
 
 ports:
 
 
-
 - containerPort: 8888 # Default endpoint for querying metrics of prometheus exporter.
-
 
 
 volumeMounts:
 
 
-
 - name: dynatrace-otel-collector-config
-
 
 
 mountPath: /conf
 
 
-
 volumes:
-
 
 
 - configMap:
 
 
-
 name: dynatrace-otel-collector-config
-
 
 
 items:
 
 
-
 - key: otel-collector-config
 
 
-
 path: otel-collector-config.yaml
-
 
 
 name: dynatrace-otel-collector-config
@@ -1442,37 +1127,28 @@ Use the following configuration in your Compose file to deploy and run the Colle
 version: "3"
 
 
-
 services:
-
 
 
 collector:
 
 
-
 image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0
-
 
 
 command: ["--config=/etc/otelcol/otel-collector-config.yaml"]
 
 
-
 volumes:
-
 
 
 - ./otel-collector-config.yaml:/etc/otelcol/otel-collector-config.yaml
 
 
-
 ports:
 
 
-
 - "4317:4317"   # OTLP gRPC
-
 
 
 - "4318:4318"   # OTLP HTTP
@@ -1516,13 +1192,11 @@ Red Hat (.rpm)
 apt-get update
 
 
-
 dpkg -i dynatrace-otel-collector_<VERSION>_Linux_<ARCH>.deb
 ```
 
 ```
 yum update
-
 
 
 rpm -ivh dynatrace-otel-collector_<VERSION>_Linux_<ARCH>.rpm

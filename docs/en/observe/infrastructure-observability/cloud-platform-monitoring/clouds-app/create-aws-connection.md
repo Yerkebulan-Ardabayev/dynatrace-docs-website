@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:56.840993
 
 # Create a new AWS connection
 
-# Create a new AWS connection
 
 * Latest Dynatrace
 * How-to guide

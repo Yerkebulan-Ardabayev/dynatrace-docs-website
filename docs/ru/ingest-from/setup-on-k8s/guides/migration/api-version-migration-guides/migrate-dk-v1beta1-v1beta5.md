@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:36:12.229894
 
 # Миграция DynaKube с v1beta1 на v1beta5
 
-# Миграция DynaKube с v1beta1 на v1beta5
 
 * Latest Dynatrace
 * Справочник
@@ -65,17 +64,13 @@ kubectl get customresourcedefinitions dynakubes.dynatrace.com -o jsonpath='{.sta
 for item in $(kubectl get dynakubes.dynatrace.com -A -o jsonpath='{range .items[*]}{.metadata.namespace}{"/"}{.metadata.name}{"\n"}{end}'); do
 
 
-
 namespace=${item%/*}
-
 
 
 name=${item#*/}
 
 
-
 kubectl get dynakubes.dynatrace.com -n $namespace $name -o yaml | kubectl replace -f -
-
 
 
 done
@@ -99,33 +94,25 @@ kubectl patch customresourcedefinitions dynakubes.dynatrace.com --subresource st
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 metadataEnrichment:
 
 
-
 enabled: true # replaces feature.dynatrace.com/metadata-enrichment: true
-
 
 
 #...
@@ -139,29 +126,22 @@ enabled: true # replaces feature.dynatrace.com/metadata-enrichment: true
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
 
 
-
 dynatraceApiRequestThreshold: 10 # replaces feature.dynatrace.com/dynatrace-api-request-threshold: "10"
-
 
 
 #...
@@ -181,37 +161,28 @@ Cloud native fullstack
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
 
 
-
 oneAgent:
-
 
 
 hostMonitoring:
 
 
-
 secCompProfile: example # replaces feature.dynatrace.com/oneagent-seccomp-profile: "example"
-
 
 
 #...
@@ -221,37 +192,28 @@ secCompProfile: example # replaces feature.dynatrace.com/oneagent-seccomp-profil
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
 
 
-
 oneAgent:
-
 
 
 classicFullStack:
 
 
-
 secCompProfile: example # replaces feature.dynatrace.com/oneagent-seccomp-profile: "example"
-
 
 
 #...
@@ -261,37 +223,28 @@ secCompProfile: example # replaces feature.dynatrace.com/oneagent-seccomp-profil
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 oneAgent:
 
 
-
 cloudNativeFullstack:
 
 
-
 secCompProfile: example # replaces feature.dynatrace.com/oneagent-seccomp-profile: "example"
-
 
 
 #...
@@ -321,37 +274,28 @@ Metadata enrichment
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
 
 
-
 oneAgent:
-
 
 
 cloudNativeFullstack:
 
 
-
 namespaceSelector: ... # replaces spec.namespaceSelector
-
 
 
 # ...
@@ -361,37 +305,28 @@ namespaceSelector: ... # replaces spec.namespaceSelector
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 oneAgent:
 
 
-
 applicationMonitoring:
 
 
-
 namespaceSelector: ... # replaces spec.namespaceSelector
-
 
 
 # ...
@@ -401,33 +336,25 @@ namespaceSelector: ... # replaces spec.namespaceSelector
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 metadataEnrichment:
 
 
-
 namespaceSelector: ... # replaces spec.namespaceSelector
-
 
 
 # ...
@@ -447,33 +374,25 @@ namespaceSelector: ... # replaces spec.namespaceSelector
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack: {} # same as autoUpdate: true
-
 
 
   # ...
@@ -484,85 +403,64 @@ namespaceSelector: ... # replaces spec.namespaceSelector
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack:
-
 
 
   image: ... # same effect as autoUpdate: false
 
 
-
   codeModulesImage: # same effect as autoUpdate: false
-
 
 
   # ...
 
 
-
   ---
-
 
 
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack:
 
 
-
   version: ... # replaces autoUpdate: false
-
 
 
   # ...
@@ -586,69 +484,52 @@ CSI-драйвер теперь используется, когда он уст
 apiVersion: dynatrace.com/v1beta1
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 kubernetesMonitoring:
 
 
-
 enabled: true
-
 
 
 replicas: ...
 
 
-
 image: ...
-
 
 
 group: ...
 
 
-
 customProperties: ...
-
 
 
 resources: ...
 
 
-
 nodeSelector: ...
-
 
 
 tolerations: ...
 
 
-
 labels: ...
 
 
-
 env: ...
-
 
 
 #...
@@ -660,73 +541,55 @@ env: ...
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 activeGate:
 
 
-
 capabilities:
-
 
 
 - kubernetes-monitoring #<-- explicitly enable Kubernetes monitoring
 
 
-
 replicas: ...
-
 
 
 image: ...
 
 
-
 group: ...
-
 
 
 customProperties: ...
 
 
-
 resources: ...
-
 
 
 nodeSelector: ...
 
 
-
 tolerations: ...
-
 
 
 labels: ...
 
 
-
 env: ...
-
 
 
 #...
@@ -742,69 +605,52 @@ env: ...
 apiVersion: dynatrace.com/v1beta1
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 routing:
 
 
-
 enabled: true
-
 
 
 replicas: ...
 
 
-
 image: ...
-
 
 
 group: ...
 
 
-
 customProperties: ...
-
 
 
 resources: ...
 
 
-
 nodeSelector: ...
-
 
 
 tolerations: ...
 
 
-
 labels: ...
 
 
-
 env: ...
-
 
 
 #...
@@ -816,73 +662,55 @@ env: ...
 apiVersion: dynatrace.com/v1beta4
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: example
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 activeGate:
 
 
-
 capabilities:
-
 
 
 - routing #<-- explicitly enable routing
 
 
-
 replicas: ...
-
 
 
 image: ...
 
 
-
 group: ...
-
 
 
 customProperties: ...
 
 
-
 resources: ...
-
 
 
 nodeSelector: ...
 
 
-
 tolerations: ...
-
 
 
 labels: ...
 
 
-
 env: ...
-
 
 
 #...

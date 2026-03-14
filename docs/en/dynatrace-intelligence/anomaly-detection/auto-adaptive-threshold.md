@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:46.412216
 
 # Auto-adaptive thresholds for anomaly detection
 
-# Auto-adaptive thresholds for anomaly detection
 
 * Latest Dynatrace
 * Explanation

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:01.703557
 
 # Мониторинг AWS Fargate
 
-# Мониторинг AWS Fargate
 
 * Classic
 * Практическое руководство
@@ -98,7 +97,6 @@ Kubernetes версии 1.20+
   COPY --from=<your-environment-url>/linux/oneagent-codemodules:<technology> / /
 
 
-
   ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
   ```
 
@@ -110,7 +108,6 @@ Dynatrace OneAgent поддерживает среды на базе Alpine Linu
 
 ```
 COPY --from=<your-activegate>/linux/oneagent-codemodules-musl:<technology> / /
-
 
 
 ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
@@ -163,41 +160,31 @@ ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
    ARG DT_API_URL="https://<your-environment-id>.live.dynatrace.com/api"
 
 
-
    ARG DT_API_TOKEN="<your-paas-token>"
-
 
 
    ARG ARCH="<x86|arm>"
 
 
-
    ARG DT_ONEAGENT_OPTIONS="flavor=default&include=<technology1>&include=<technology2>"
-
 
 
    ENV DT_HOME="/opt/dynatrace/oneagent"
 
 
-
    RUN mkdir -p "$DT_HOME" && \
-
 
 
    wget -O "$DT_HOME/oneagent.zip" "$DT_API_URL/v1/deployment/installer/agent/unix/paas/latest?arch=$ARCH&Api-Token=$DT_API_TOKEN&$DT_ONEAGENT_OPTIONS" && \
 
 
-
    unzip -d "$DT_HOME" "$DT_HOME/oneagent.zip" && \
-
 
 
    rm "$DT_HOME/oneagent.zip"
 
 
-
    ENTRYPOINT [ "/opt/dynatrace/oneagent/dynatrace-agent64.sh" ]
-
 
 
    CMD [ "executable", "param1", "param2" ] # команда вашего приложения, например, Java
@@ -288,25 +275,19 @@ ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
        ARCH=$(uname -p);
 
 
-
        export ARCH;
-
 
 
        if [ "$ARCH" = "arm" ] || [ "$ARCH" = "arm64" ] || [ "$ARCH" = "aarch64" ]; then
 
 
-
        export ARCH="arm";
-
 
 
        else
 
 
-
        export ARCH="x86";
-
 
 
        fi
