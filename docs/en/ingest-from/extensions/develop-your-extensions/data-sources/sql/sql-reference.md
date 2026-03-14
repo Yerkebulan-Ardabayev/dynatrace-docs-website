@@ -6,7 +6,6 @@ scraped: 2026-03-01T21:14:57.566228
 
 # SQL data source reference
 
-# SQL data source reference
 
 * Latest Dynatrace
 * Reference
@@ -43,161 +42,121 @@ In our example, we create a simple extension collecting basic CPU performance de
 name: com.dynatrace.extension.sql-oracle
 
 
-
 version: 1.0
-
 
 
 minDynatraceVersion: '1.239'
 
 
-
 author:
-
 
 
 name: Dynatrace
 
 
-
 sqlOracle:
-
 
 
 - group: Number of CPU cores
 
 
-
 featureSet: cpu
 
 
-
 query: >
-
 
 
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
 
 
-
 type: gauge
-
 
 
 - group: Background CPU Usage Per CPU Per Sec
 
 
-
 featureSet: cpu
-
 
 
 query: >
 
 
-
 SELECT
-
 
 
 DECODE(metric_name, 'Background CPU Usage Per Sec',
 
 
-
 v$metric.value) AS background_cpu_usage,
-
 
 
 DECODE(metric_name, 'CPU Usage Per Sec',
 
 
-
 v$metric.value) AS foreground_cpu_usage,
-
 
 
 DECODE(metric_name, 'Host CPU Usage Per Sec',
 
 
-
 v$metric.value) AS host_cpu_usage
-
 
 
 FROM v$metric,
 
 
-
 v$metricgroup
-
 
 
 WHERE v$metric.group_id = v$metricgroup.group_id
 
 
-
 AND v$metric.metric_name IN ('Background CPU Usage Per Sec',
-
 
 
 'CPU Usage Per Sec', 'Host CPU Usage Per Sec')
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.backgroundTotal
 
 
-
 value: col:background_cpu_usage
 
 
-
 type: gauge
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.foregroundTotal
 
 
-
 value: col:foreground_cpu_usage
-
 
 
 type: gauge
 
 
-
 - key: com.dynatrace.extension.sql-oracle.cpu.hostTotal
 
 
-
 value: col:host_cpu_usage
-
 
 
 type: gauge
@@ -220,17 +179,13 @@ Dynatrace Extensions SQL data source enables you to query any database allowing 
 jdbc:
 
 
-
 driverClassName: âorg.mariadb.jdbc.Driverâ
-
 
 
 connectionStringPattern: âjdbc:mariadb:(. |\\s)+$"
 
 
-
 connectionStringPatternErrorMessage: âThis isn't a correct connection string, please start with jdbc:mariadb."
-
 
 
 validationQuery: âSELECT 1â
@@ -248,9 +203,7 @@ For example, the following SQL query returns the number of CPU cores.
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
@@ -262,41 +215,31 @@ You can use it in your extension and report the value returned by a query as the
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 featureSet: cpu
 
 
-
 query:
-
 
 
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
@@ -320,49 +263,37 @@ The interval value accepts an integer value expressing minutes. For example, to 
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 featureSet: cpu
 
 
-
 interval:
-
 
 
 minutes: 10
 
 
-
 query:
-
 
 
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
@@ -380,25 +311,19 @@ The expression must follow the Unix cron format:
 # * * * * *
 
 
-
 # | | | | |
-
 
 
 # | | | | day of the week (1â7) (Sunday to Saturday)
 
 
-
 # | | | month (1â12)
-
 
 
 # | | day of the month (1â31)
 
 
-
 # | hour (0â23)
-
 
 
 # minute (0â59)
@@ -414,45 +339,34 @@ For example, to run a query at 12:00 on every week day (Monday-Friday), use the 
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 featureSet: cpu
 
 
-
 schedule: "0 12 ? * 2-6"
-
 
 
 query:
 
 
-
 SELECT value AS cpu_count
-
 
 
 FROM v$parameter
 
 
-
 WHERE name = 'cpu_count'
-
 
 
 metrics:
 
 
-
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
@@ -474,25 +388,19 @@ For example, to let user control the interval:
    vars:
 
 
-
    - id: myInterval
-
 
 
    displayName: Interval
 
 
-
    description: Interval at which your database provider is queried in minutes. 10 minutes by default.
-
 
 
    defaultValue: "10"
 
 
-
    pattern: ^[0-9]+$
-
 
 
    type: text
@@ -503,49 +411,37 @@ For example, to let user control the interval:
    sqlOracle:
 
 
-
    - group: Number of CPU cores
-
 
 
    interval:
 
 
-
    minutes: var:myInterval
-
 
 
    featureSet: cpu
 
 
-
    query:
-
 
 
    SELECT value AS cpu_count
 
 
-
    FROM v$parameter
-
 
 
    WHERE name = 'cpu_count'
 
 
-
    metrics:
-
 
 
    - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
    value: col:cpu_count
-
 
 
    type: gauge
@@ -563,45 +459,34 @@ You can also use a reference to a variable to specify the timeout. For more info
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 timeout: "20"
 
 
-
 featureSet: cpu
-
 
 
 query: |
 
 
-
 SELECT value AS cpu_count
-
 
 
 FROM v$parameter
 
 
-
 WHERE name = 'cpu_count'
-
 
 
 metrics:
 
 
-
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
@@ -629,37 +514,28 @@ You use an SQL query to retrieve a value for your dimension (prefix with `col:`)
 query: >
 
 
-
 SELECT event, wait_class
-
 
 
 FROM v$system_event
 
 
-
 dimensions:
-
 
 
 - key: event
 
 
-
 value: col:event
-
 
 
 - key: wait_class
 
 
-
 value: col:wait_class
 
 
-
 - key: stage
-
 
 
 value: const:dev
@@ -678,33 +554,25 @@ Filters can be set as a constant value or as a [variable](../../extension-yaml.m
 dimensions:
 
 
-
 - key: event
-
 
 
 value: col:event
 
 
-
 filter: var:event_filter
-
 
 
 - key: wait_class
 
 
-
 value: col:wait_class
-
 
 
 filter: const:$not(0)
 
 
-
 - key: stage
-
 
 
 value: const:dev
@@ -761,41 +629,31 @@ For example:
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 featureSet: cpu
 
 
-
 query:
-
 
 
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
@@ -829,37 +687,28 @@ Define all metric metadata in the `metrics` section of the extension's YAML file
 name: custom:example-extension-name
 
 
-
 version: 1.0.0
-
 
 
 minDynatraceVersion: "1.236"
 
 
-
 author:
-
 
 
 name: Dynatrace
 
 
-
 metrics:
-
 
 
 - key: your.metric.name
 
 
-
 metadata:
 
 
-
 displayName: Display name of the metric visible in Metrics browser
-
 
 
 unit: Count
@@ -873,101 +722,76 @@ Feature sets are categories into which you organize the data collected by the ex
 sqlOracle:
 
 
-
 - group: Number of CPU cores
-
 
 
 featureSet: cpu
 
 
-
 query:
-
 
 
 SELECT value AS cpu_count
 
 
-
 FROM v$parameter
-
 
 
 WHERE name = 'cpu_count'
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.cpu.cores
 
 
-
 value: col:cpu_count
-
 
 
 type: gauge
 
 
-
 - group: Physical read bytes
-
 
 
 featureSet: io
 
 
-
 query: >
-
 
 
 SELECT
 
 
-
 DECODE(name, 'physical read total bytes', value) AS bytes_written,
-
 
 
 DECODE(name, 'physical write total bytes', value) AS bytes_read
 
 
-
 FROM v$sysstat
-
 
 
 WHERE name IN ('physical read total bytes', 'physical write total bytes')
 
 
-
 metrics:
-
 
 
 - key: com.dynatrace.extension.sql-oracle.io.bytesRead
 
 
-
 value: col:bytes_read
-
 
 
 type: count
 
 
-
 - key: com.dynatrace.extension.sql-oracle.io.bytesWritten
 
 
-
 value: col:bytes_written
-
 
 
 type: count

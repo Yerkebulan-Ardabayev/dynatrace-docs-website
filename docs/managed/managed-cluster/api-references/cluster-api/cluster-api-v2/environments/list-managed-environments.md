@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # List all existing environments
 
-# List all existing environments
 
 * Published Mar 09, 2021
 
@@ -303,61 +302,46 @@ Maximum number of user actions generated per minute on environment level. Can be
 {
 
 
-
 "environments": [
-
 
 
 {
 
 
-
 "name": "example environment",
-
 
 
 "state": "ENABLED",
 
 
-
 "tags": [
-
 
 
 "tag1",
 
 
-
 "tag2"
 
 
-
 ],
-
 
 
 "trial": false
 
 
-
 }
-
 
 
 ],
 
 
-
 "nextPageKey": "AQAAABQBAAAABQ==",
-
 
 
 "pageSize": 1,
 
 
-
 "totalCount": 1
-
 
 
 }
@@ -385,425 +369,319 @@ https://myManaged.cluster.com/api/cluster/v2/environments?pageSize=2&sort=-creat
 {
 
 
-
 "totalCount": 78,
-
 
 
 "pageSize": 2,
 
 
-
 "nextPageKey": "AAAAAQAAAAIBnldfkgldsjoeriKIDFL2AAABd3uuvIMBAA5zdGF0ZShFTkFCTEVEKQEADS1jcmVhdGlvbkRhdGU=",
-
 
 
 "environments": [
 
 
-
 {
-
 
 
 "name": "AndroidApps",
 
 
-
 "id": "be22c776-1414-00e0-a00a-00b0dcf56443321",
-
 
 
 "trial": false,
 
 
-
 "state": "ENABLED",
 
 
-
 "tags": [],
-
 
 
 "creationDate": "2021-02-09T11:03:17.732Z",
 
 
-
 "quotas": {
 
 
-
 "hostUnits": {
-
 
 
 "maxLimit": 10,
 
 
-
 "currentUsage": 0
-
 
 
 },
 
 
-
 "demUnits": {
-
 
 
 "monthlyLimit": 50001,
 
 
-
 "annualLimit": null,
-
 
 
 "consumedThisMonth": 0,
 
 
-
 "consumedThisYear": 0
 
 
-
 },
-
 
 
 "userSessions": {
 
 
-
 "totalMonthlyLimit": null,
-
 
 
 "totalAnnualLimit": null,
 
 
-
 "totalConsumedThisMonth": 0,
-
 
 
 "totalConsumedThisYear": 0,
 
 
-
 "consumedMobileSessionsThisMonth": 0,
-
 
 
 "consumedMobileSessionsThisYear": 0,
 
 
-
 "consumedUserSessionsWithWebSessionReplayThisMonth": 0,
-
 
 
 "consumedUserSessionsWithWebSessionReplayThisYear": 0,
 
 
-
 "consumedUserSessionsWithMobileSessionReplayThisMonth": 0,
-
 
 
 "consumedUserSessionsWithMobileSessionReplayThisYear": 0
 
 
-
 },
-
 
 
 "sessionProperties": {
 
 
-
 "consumedThisMonth": 0,
-
 
 
 "consumedThisYear": 0
 
 
-
 },
-
 
 
 "syntheticMonitors": {
 
 
-
 "monthlyLimit": null,
-
 
 
 "annualLimit": null,
 
 
-
 "consumedThisMonth": 0,
-
 
 
 "consumedThisYear": 0
 
 
-
 },
-
 
 
 "customMetrics": null,
 
 
-
 "davisDataUnits": {
-
 
 
 "monthlyLimit": 18162,
 
 
-
 "annualLimit": null,
-
 
 
 "consumedThisMonth": 0,
 
 
-
 "consumedThisYear": 0
 
 
-
 },
-
 
 
 "logMonitoring": null
 
 
-
 }
 
 
-
 },
-
 
 
 {
 
 
-
 "name": "Service Team",
-
 
 
 "id": "881c4134-0000-0a00-aa0a-5b03ab7a34ed",
 
 
-
 "trial": false,
-
 
 
 "state": "ENABLED",
 
 
-
 "tags": [],
-
 
 
 "creationDate": "2021-02-07T08:49:45.091Z",
 
 
-
 "quotas": {
-
 
 
 "hostUnits": {
 
 
-
 "maxLimit": null,
-
 
 
 "currentUsage": 0
 
 
-
 },
-
 
 
 "demUnits": {
 
 
-
 "monthlyLimit": null,
-
 
 
 "annualLimit": null,
 
 
-
 "consumedThisMonth": 0,
-
 
 
 "consumedThisYear": 62
 
 
-
 },
-
 
 
 "userSessions": {
 
 
-
 "totalMonthlyLimit": null,
-
 
 
 "totalAnnualLimit": null,
 
 
-
 "totalConsumedThisMonth": 0,
-
 
 
 "totalConsumedThisYear": 0,
 
 
-
 "consumedMobileSessionsThisMonth": 0,
-
 
 
 "consumedMobileSessionsThisYear": 0,
 
 
-
 "consumedUserSessionsWithWebSessionReplayThisMonth": 0,
-
 
 
 "consumedUserSessionsWithWebSessionReplayThisYear": 0,
 
 
-
 "consumedUserSessionsWithMobileSessionReplayThisMonth": 0,
-
 
 
 "consumedUserSessionsWithMobileSessionReplayThisYear": 0
 
 
-
 },
-
 
 
 "sessionProperties": {
 
 
-
 "consumedThisMonth": 0,
-
 
 
 "consumedThisYear": 0
 
 
-
 },
-
 
 
 "syntheticMonitors": {
 
 
-
 "monthlyLimit": null,
-
 
 
 "annualLimit": null,
 
 
-
 "consumedThisMonth": 0,
-
 
 
 "consumedThisYear": 62
 
 
-
 },
-
 
 
 "customMetrics": null,
 
 
-
 "davisDataUnits": {
-
 
 
 "monthlyLimit": null,
 
 
-
 "annualLimit": null,
-
 
 
 "consumedThisMonth": 0,
 
 
-
 "consumedThisYear": 0
-
 
 
 },
 
 
-
 "logMonitoring": null
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }

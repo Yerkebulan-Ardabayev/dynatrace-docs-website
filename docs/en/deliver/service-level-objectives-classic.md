@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:33:40.088795
 
 # Service-Level Objectives Classic
 
-# Service-Level Objectives Classic
 
 * Classic
 * Overview

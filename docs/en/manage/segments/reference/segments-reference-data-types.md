@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:20.535483
 
 # Supported data types in segments
 
-# Supported data types in segments
 
 * Latest Dynatrace
 * Reference

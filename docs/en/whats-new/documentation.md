@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:52.465298
 
 # New Documentation articles
 
-# New Documentation articles
 
 * Latest Dynatrace
 * Release notes

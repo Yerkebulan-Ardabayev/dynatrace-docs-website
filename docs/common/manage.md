@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Manage your Dynatrace
 
-# Manage your Dynatrace
 
 * Latest Dynatrace
 * Overview

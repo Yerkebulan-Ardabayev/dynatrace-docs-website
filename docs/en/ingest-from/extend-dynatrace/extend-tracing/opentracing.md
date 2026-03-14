@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:20.837739
 
 # OpenTracing
 
-# OpenTracing
 
 * Latest Dynatrace
 * 2-min read
@@ -55,49 +54,37 @@ To enable support for capturing span data
    // Make sure to use the correct Tracer.
 
 
-
    Tracer tracer = GlobalTracer.get();
-
 
 
    SpanBuilder spanBuilder = tracer.buildSpan("hello");
 
 
-
    spanBuilder.withTag("foo", "bar");
-
 
 
    Span span = spanBuilder.start();
 
 
-
    // Make sure to close every created Scope.
-
 
 
    // It is recommended to use a try-with-resource statement for that.
 
 
-
    try (Scope scope = tracer.activateSpan(span)) {
-
 
 
    // Do actual operation.
 
 
-
    } finally {
-
 
 
    // Make sure to finish every started Span.
 
 
-
    span.finish();
-
 
 
    }
@@ -109,53 +96,40 @@ To enable support for capturing span data
    HazelcastInstance untraced = HazelcastClient.newHazelcastClient();
 
 
-
    // This operation will not be visible in Dynatrace.
-
 
 
    untraced.getMap("map").put("key", "value");
 
 
-
    // TracingHazelcastInstance implements the same interface (HazelcastInstance)
-
 
 
    // but automatially creates span for every operation.
 
 
-
    // It internally calls GlobalTracer.get().
-
 
 
    // Available as a separate instrumentation scope/library:
 
 
-
    // https://github.com/opentracing-contrib/java-hazelcast
-
 
 
    HazelcastInstance traced = new TracingHazelcastInstance(
 
 
-
    HazelcastClient.newHazelcastClient(),
-
 
 
    false // traceWithActiveSpanOnly
 
 
-
    );
 
 
-
    // This operation will be visible in Dynatrace.
-
 
 
    traced.getMap("map").put("key", "value");

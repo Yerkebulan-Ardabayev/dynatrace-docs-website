@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:35:17.082641
 
 # Infrastructure overview
 
-# Infrastructure overview
 
 * Latest Dynatrace
 * Explanation

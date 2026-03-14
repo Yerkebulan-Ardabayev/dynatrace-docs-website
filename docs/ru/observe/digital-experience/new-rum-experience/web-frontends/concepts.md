@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:32:00.912853
 
 # Concepts for web frontends
 
-# Concepts for web frontends
 
 * Актуальная версия Dynatrace
 * Обзор

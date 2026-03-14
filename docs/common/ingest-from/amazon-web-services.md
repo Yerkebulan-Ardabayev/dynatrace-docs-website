@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Set up Dynatrace on Amazon Web Services
 
-# Set up Dynatrace on Amazon Web Services
 
 * Latest Dynatrace
 * How-to guide

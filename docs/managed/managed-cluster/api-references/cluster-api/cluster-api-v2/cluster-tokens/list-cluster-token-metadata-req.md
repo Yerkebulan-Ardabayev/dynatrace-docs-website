@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # List Cluster token metadata with request
 
-# List Cluster token metadata with request
 
 * Published Feb 12, 2020
 
@@ -42,9 +41,7 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "token": "abcdefjhij1234567890"
-
 
 
 }
@@ -82,57 +79,43 @@ Metadata of a token.
 {
 
 
-
 "created": 1554076800000,
-
 
 
 "expires": 1585976400000,
 
 
-
 "id": "acbed0c4-4ef1-4303-991f-102510a69322",
-
 
 
 "lastUse": 1554354000000,
 
 
-
 "name": "myToken",
-
 
 
 "personalAccessToken": true,
 
 
-
 "revoked": true,
-
 
 
 "scopes": [
 
 
-
 "DataExport",
-
 
 
 "ReadConfig",
 
 
-
 "WriteConfig"
-
 
 
 ],
 
 
-
 "userId": "john.smith"
-
 
 
 }
@@ -148,13 +131,10 @@ In this example, the request queries the metadata of the `4e9f128e-04f9-4795-pj3
 curl -X POST "https://myManaged.cluster.com/api/cluster/v2/tokens/lookup"
 
 
-
 -H  "accept: application/json; charset=utf-8"
 
 
-
 -H  "Content-Type: application/json; charset=utf-8"
-
 
 
 -d  "{  \"token\": \"abcdefjhij1234567890\"}"
@@ -172,53 +152,40 @@ https://myManaged.cluster.com/api/cluster/v2/tokens/lookup
 {
 
 
-
 "id": "4e9f128e-04f9-4795-pj319-8b7c-3c14a5e885e4",
-
 
 
 "name": "myToken",
 
 
-
 "userId": "john.smith",
-
 
 
 "revoked": true,
 
 
-
 "created": 1554076800000,
-
 
 
 "expires": 1585976400000,
 
 
-
 "lastUse": 1554354000000,
-
 
 
 "scopes": [
 
 
-
 "DataExport",
-
 
 
 "ReadConfig",
 
 
-
 "WriteConfig"
 
 
-
 ]
-
 
 
 }

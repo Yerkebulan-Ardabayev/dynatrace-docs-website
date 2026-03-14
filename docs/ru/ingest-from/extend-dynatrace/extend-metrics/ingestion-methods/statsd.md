@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:29.318435
 
 # Отправка метрик StatsD в Dynatrace
 
-# Отправка метрик StatsD в Dynatrace
 
 * Latest Dynatrace
 * 5-min read
@@ -99,14 +98,12 @@ ActiveGate версии 1.227+
        service extensionsmodule stop
 
 
-
        service extensionsmodule start
        ```
      + для систем с systemd:
 
        ```
        systemctl stop extensionsmodule
-
 
 
        systemctl start extensionsmodule
@@ -116,7 +113,6 @@ ActiveGate версии 1.227+
 
      ```
      net stop "Dynatrace Extensions Controller"
-
 
 
      net start "Dynatrace Extensions Controller"

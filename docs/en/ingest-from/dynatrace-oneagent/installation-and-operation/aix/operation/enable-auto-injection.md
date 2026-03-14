@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:48.563032
 
 # Automated injection of deep-code monitoring on AIX
 
-# Automated injection of deep-code monitoring on AIX
 
 * Latest Dynatrace
 * How-to guide

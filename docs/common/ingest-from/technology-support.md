@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Technology support
 
-# Technology support
 
 * Latest Dynatrace
 * 17-min read

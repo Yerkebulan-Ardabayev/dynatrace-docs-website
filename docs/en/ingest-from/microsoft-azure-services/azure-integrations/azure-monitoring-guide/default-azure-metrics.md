@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:33.010747
 
 # Classic (formerly 'built-in') Azure metrics
 
-# Classic (formerly 'built-in') Azure metrics
 
 * Latest Dynatrace
 * Reference

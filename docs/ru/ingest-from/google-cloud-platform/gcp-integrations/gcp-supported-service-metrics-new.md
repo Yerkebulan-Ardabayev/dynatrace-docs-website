@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:05.172973
 
 # Поддерживаемые сервисы Google Cloud
 
-# Поддерживаемые сервисы Google Cloud
 
 * Последняя версия Dynatrace
 * Overview

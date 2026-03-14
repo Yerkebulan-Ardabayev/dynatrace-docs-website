@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:48.904064
 
 # Event topology extraction and mapping
 
-# Event topology extraction and mapping
 
 * Latest Dynatrace
 * 4-min read
@@ -46,37 +45,28 @@ Show an example JSON
 {
 
 
-
 "eventType": "CUSTOM_ALERT",
-
 
 
 "title": "Truck fuel low",
 
 
-
 "timeout": 5,
-
 
 
 "properties": {
 
 
-
 "trucknr": "13",
-
 
 
 "dt.event.allow_entity_remapping": "true",
 
 
-
 "dt.event.preferred_entity_type": "logistics:truck"
 
 
-
 }
-
 
 
 }

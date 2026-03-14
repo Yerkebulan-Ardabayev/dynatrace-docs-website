@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:05.309312
 
 # API управления подпиской Dynatrace Platform
 
-# API управления подпиской Dynatrace Platform
 
 * Последняя версия Dynatrace
 * Справочник

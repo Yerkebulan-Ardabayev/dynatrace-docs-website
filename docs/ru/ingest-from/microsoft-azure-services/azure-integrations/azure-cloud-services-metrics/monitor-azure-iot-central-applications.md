@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:22.288093
 
 # Мониторинг Azure IoT Central Applications
 
-# Мониторинг Azure IoT Central Applications
 
 * Последняя версия Dynatrace
 * Практическое руководство

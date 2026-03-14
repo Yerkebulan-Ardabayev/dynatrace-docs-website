@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:22:43.067716
 
 # Lookup data in Grail
 
-# Lookup data in Grail
 
 * Latest Dynatrace
 * Explanation
@@ -64,9 +63,7 @@ You can configure permissions with [Account Management](../../manage/account-man
 ALLOW storage:files:read WHERE storage:file-path startsWith "/lookups/";
 
 
-
 ALLOW storage:files:write WHERE storage:file-path startsWith "/lookups/";
-
 
 
 ALLOW storage:files:delete WHERE storage:file-path startsWith "/lookups/";
@@ -125,13 +122,10 @@ You can define any DPL pattern that matches your data. Every pattern match produ
 Code,Category,Message
 
 
-
 100,informational,Continue
 
 
-
 101,informational,Switching Protocols
-
 
 
 ...
@@ -145,9 +139,7 @@ With the same data in JSONL format you can use the `JSON:json` DPL pattern:
 {"code": 100, "category": "informational", "message": "Continue"}
 
 
-
 {"code": 101, "category": "informational", "message": "Switching Protocols"}
-
 
 
 ...
@@ -163,37 +155,28 @@ The following example shows a curl command for interacting with the Resource Sto
 curl -X 'POST' \
 
 
-
 'https://<environment>.apps.dynatrace.com/platform/storage/resource-store/v1/files/tabular/lookup:test-pattern' \
-
 
 
 -H 'accept: */*' \
 
 
-
 -H 'Content-Type: multipart/form-data' \
-
 
 
 -H 'Authorization: Bearer <platformtoken>' \
 
 
-
 -F 'request={
-
 
 
 "parsePattern":"JSON:json",
 
 
-
 "lookupField":"code"
 
 
-
 }' \
-
 
 
 -F 'content=@http_status_codes.jsonl'
@@ -221,49 +204,37 @@ The following example shows a curl command for interacting with the Resource Sto
 curl -X 'POST' \
 
 
-
 'https://<environment>.apps.dynatrace.com/platform/storage/resource-store/v1/files/tabular/lookup:upload' \
-
 
 
 -H 'accept: */*' \
 
 
-
 -H 'Content-Type: multipart/form-data' \
-
 
 
 -H 'Authorization: Bearer <platformtoken>' \
 
 
-
 -F 'request={
-
 
 
 "parsePattern":"JSON:json",
 
 
-
 "lookupField":"code",
-
 
 
 "filePath":"/lookups/http_status_codes",
 
 
-
 "displayName":"My lookup data",
-
 
 
 "description":"Description of my lookup data"
 
 
-
 }' \
-
 
 
 -F 'content=@http_status_codes.jsonl'
@@ -279,21 +250,16 @@ The following example shows a curl command for interacting with the Resource Sto
 curl -X 'POST' \
 
 
-
 'https://<environment>.apps.dynatrace.com/platform/storage/resource-store/v1/files:delete' \
-
 
 
 -H 'accept: */*' \
 
 
-
 -H 'Content-Type: application/json' \
 
 
-
 -H 'Authorization: Bearer <platformtoken>' \
-
 
 
 -d '{"filePath": "/lookups/http_status_codes"}'
@@ -323,13 +289,10 @@ You can use the [load](dynatrace-query-language/commands/data-source-commands.md
 fetch spans
 
 
-
 | lookup [ load "/lookups/http_status_codes" ],
 
 
-
 Â  Â  sourcefield: http.response.status_code,
-
 
 
 Â  Â  lookupField: code

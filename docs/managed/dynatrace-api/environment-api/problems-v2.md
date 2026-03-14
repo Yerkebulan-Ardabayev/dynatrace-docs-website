@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Problems API v2
 
-# Problems API v2
 
 * Reference
 * Published Oct 12, 2020

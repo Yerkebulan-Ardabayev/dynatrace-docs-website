@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:50.165388
 
 # Отправка уведомлений Dynatrace в PagerDuty
 
-# Отправка уведомлений Dynatrace в PagerDuty
 
 * Classic
 * 3-min read

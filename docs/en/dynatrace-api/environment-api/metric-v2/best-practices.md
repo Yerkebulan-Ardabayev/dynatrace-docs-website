@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:29:10.593343
 
 # Metrics API v2 - Best practices
 
-# Metrics API v2 - Best practices
 
 * Reference
 * Updated on Oct 28, 2025
@@ -31,9 +30,7 @@ The following example creates a metric with two dimensions, `host.name` and `own
 cpu.temperature, host.name="Alice's PC",           owner="Alice"  gauge,50 1699625420
 
 
-
 cpu.temperature, host.name="Alice's Raspberry Pi", owner="Alice"  gauge,40 1699625420
-
 
 
 cpu.temperature, host.name="Bob's PC",             owner="Bob"    gauge,60 1699625420
@@ -45,9 +42,7 @@ The data above creates the following dimension tuples.
 (host.name="Alice's PC",           owner="Alice")
 
 
-
 (host.name="Alice's Raspberry Pi", owner="Alice")
-
 
 
 (host.name="Bob's PC",             owner="Bob")
@@ -70,13 +65,10 @@ metric ingestion protocol:
 cpu.temperature, host.name="Alice's PC", measured_at="1699625420"  gauge,50 1699625420
 
 
-
 cpu.temperature, host.name="Alice's PC", measured_at="1699625421"  gauge,50 1699625421
 
 
-
 cpu.temperature, host.name="Alice's PC", measured_at="1699625422"  gauge,49 1699625422
-
 
 
 cpu.temperature, host.name="Alice's PC", measured_at="1699625423"  gauge,49 1699625423

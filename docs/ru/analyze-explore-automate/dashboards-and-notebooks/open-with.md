@@ -214,13 +214,10 @@ scraped: 2026-02-17T04:46:08.290556
 fetch logs
 
 
-
 | summarize occurences=count(), by:{content}
 
 
-
 | fieldsAdd contentEncoded = replaceString(escape(encodeUrl(content)), "+", "%20")
-
 
 
 | fields contentEncoded, occurences
@@ -314,13 +311,10 @@ record(website="Dynatrace сообщество", link="https://community.dynatra
    fetch logs
 
 
-
    | filter matchesPhrase(content, "failed to complete the order: rpc error: code") and status == "ERROR"
 
 
-
    | parse content, """DATA 'desc = ' LD:errorCode '    '"""
-
 
 
    | summarize total = count(), by:{errorCode}
@@ -342,9 +336,7 @@ record(website="Dynatrace сообщество", link="https://community.dynatra
       | fieldsAdd QueryPart1 = """{"version":0,"data":{"queryConfig":{"query":"fetch logs\n| filter matchesPhrase(content,\"\"\""""
 
 
-
       | fieldsAdd QueryPart1 = encodeUrl(QueryPart1)
-
 
 
       | fieldsAdd QueryPart1 = replaceString(QueryPart1, "+", "%20")
@@ -355,9 +347,7 @@ record(website="Dynatrace сообщество", link="https://community.dynatra
       | fieldsAdd QueryPart2 = escape(errorCode)
 
 
-
       | fieldsAdd QueryPart2 = encodeUrl(QueryPart2)
-
 
 
       | fieldsAdd QueryPart2 = replaceString(QueryPart2, "+", "%20")
@@ -371,7 +361,6 @@ record(website="Dynatrace сообщество", link="https://community.dynatra
 
       ```
       | fieldsAdd errorCodeLink = concat("[", errorCode, "](", LogAppURL, QueryPart1, QueryPart2, QueryTimeFrame, ")")
-
 
 
       | fields errorCodeLink, total

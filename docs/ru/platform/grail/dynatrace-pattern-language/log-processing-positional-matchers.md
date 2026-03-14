@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:17.344467
 
 # DPL: позиционные сопоставители
 
-# DPL: позиционные сопоставители
 
 * Latest Dynatrace
 * Reference
@@ -26,9 +25,7 @@ scraped: 2026-03-05T21:39:17.344467
 "name";"age"
 
 
-
 Homer Simpson;40
-
 
 
 Charles Montgomery Burns;104
@@ -59,9 +56,7 @@ BOF LD:header EOL;
 "name";"age"
 
 
-
 Homer Simpson;40
-
 
 
 Charles Montgomery Burns;104
@@ -93,13 +88,10 @@ MOF LD:name ';' INT:age EOL
 "name";"age"
 
 
-
 Homer Simpson;40
 
 
-
 Charles Montgomery Burns;104
-
 
 
 total:2 persons, average age: 72 years

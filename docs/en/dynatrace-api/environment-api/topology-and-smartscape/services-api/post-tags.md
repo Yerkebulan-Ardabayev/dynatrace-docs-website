@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:10.445414
 
 # Services API - POST tags
 
-# Services API - POST tags
 
 * Reference
 * Updated on Mar 22, 2023
@@ -54,21 +53,16 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "tags": [
-
 
 
 "office-linz",
 
 
-
 "office-klagenfurt"
 
 
-
 ]
-
 
 
 }
@@ -118,53 +112,40 @@ A list of constraint violations
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -182,33 +163,25 @@ The API token is passed in the **Authorization** header.
 curl -X POST \
 
 
-
 https://mySampleEnv.live.dynatrace.com/api/v1/entity/services/SERVICE-72503CBDD2AEF066 \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
 
 
-
 -H 'Content-Type: application/json' \
-
 
 
 -d '{
 
 
-
 "tags": [
-
 
 
 "PHP"
 
 
-
 ]
-
 
 
 }'
@@ -226,17 +199,13 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/services/SERVICE-72503CBDD2
 {
 
 
-
 "tags": [
-
 
 
 "PHP"
 
 
-
 ]
-
 
 
 }

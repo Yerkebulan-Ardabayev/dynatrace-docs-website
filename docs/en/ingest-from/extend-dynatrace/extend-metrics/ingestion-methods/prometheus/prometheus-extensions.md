@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:49.624600
 
 # Manage Prometheus extensions
 
-# Manage Prometheus extensions
 
 * Latest Dynatrace
 * 4-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:05.563891
 
 # Как передать адрес прокси при установке OneAgent на Linux
 
-# Как передать адрес прокси при установке OneAgent на Linux
 
 * Последняя версия Dynatrace
 * Время чтения: 1 мин
@@ -24,9 +23,7 @@ scraped: 2026-03-06T21:19:05.563891
 cd /tmp
 
 
-
 chmod +x Dynatrace-OneAgent-Linux-0.5.0-20140217-175809.sh
-
 
 
 su -c 'Dynatrace-OneAgent-Linux-0.5.0-20140217-175809.sh --set-proxy=10.1.1.5'

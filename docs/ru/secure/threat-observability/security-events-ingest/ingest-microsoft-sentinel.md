@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:57.288661
 
 # Приём событий безопасности Microsoft Sentinel
 
-# Приём событий безопасности Microsoft Sentinel
 
 * Latest Dynatrace
 * Практическое руководство
@@ -60,9 +59,7 @@ scraped: 2026-03-06T21:23:57.288661
    fetch security.events
 
 
-
    | filter dt.system.bucket == "default_securityevents"
-
 
 
    | filter event.provider=="Microsoft Sentinel"

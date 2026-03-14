@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:32.142789
 
 # Browser monitors reporting results
 
-# Browser monitors reporting results
 
 * Latest Dynatrace
 * Reference
@@ -86,9 +85,7 @@ In the example below, the availability is less than 100% because the down execut
 timeseries av = avg(dt.synthetic.browser.availability), by: {dt.entity.synthetic_test}
 
 
-
 | fields dt.entity.synthetic_test, avgAV=arrayAvg(av)
-
 
 
 | filter dt.entity.synthetic_test == "SYNTHETIC_TEST-2891B733D75330FA"
@@ -107,13 +104,10 @@ In the example below, we observed down executions during the maintenance period.
 timeseries av = avg(dt.synthetic.browser.availability), by: {dt.entity.synthetic_test, dt.maintenance_window_ids}
 
 
-
 | filter dt.entity.synthetic_test == "SYNTHETIC_TEST-2891B733D75330FA"
 
 
-
 | filter isNull(dt.maintenance_window_ids)
-
 
 
 | fields avgAV=arrayAvg(av)
@@ -131,7 +125,6 @@ To see interpolated data points, add the `interpolated` dimension to the query.
 
 ```
 timeseries avg(dt.synthetic.browser.availability), by:{dt.entity.synthetic_test, interpolated}
-
 
 
 | filter dt.entity.synthetic_test == "SYNTHETIC_TEST-7E0A1CF206C4A1C5"

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Infrastructure Observability
 
-# Infrastructure Observability
 
 * Overview
 * 1-min read

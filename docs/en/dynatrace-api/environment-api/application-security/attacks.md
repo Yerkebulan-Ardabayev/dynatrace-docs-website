@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:23:37.224696
 
 # Attacks API
 
-# Attacks API
 
 * Reference
 * Published Aug 30, 2023

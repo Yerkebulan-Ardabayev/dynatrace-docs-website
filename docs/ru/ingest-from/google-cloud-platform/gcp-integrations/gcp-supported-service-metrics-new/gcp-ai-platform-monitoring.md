@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:12.523553
 
 # Мониторинг Google Cloud AI Platform (устарело)
 
-# Мониторинг Google Cloud AI Platform (устарело)
 
 * Последняя версия Dynatrace
 * Практическое руководство

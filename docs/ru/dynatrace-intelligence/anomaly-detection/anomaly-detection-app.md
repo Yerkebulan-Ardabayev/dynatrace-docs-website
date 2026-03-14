@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:57.037010
 
 # Приложение Anomaly Detection
 
-# Приложение Anomaly Detection
 
 * Последняя версия Dynatrace
 * Приложение

@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:33:08.277176
 
 # Результаты отчетов HTTP-мониторов
 
-# Результаты отчетов HTTP-мониторов
 
 * Последняя версия Dynatrace
 * Справочник
@@ -144,7 +143,6 @@ scraped: 2026-02-06T16:33:08.277176
 timeseries avg(dt.synthetic.http.availability), by:{dt.entity.http_check, dt.maintenance_window_ids, interpolated}
 
 
-
 | filter dt.entity.http_check == "HTTP_CHECK-2F280898D4FCB1A8"
 ```
 
@@ -163,13 +161,10 @@ timeseries avg(dt.synthetic.http.availability), by:{dt.entity.http_check, dt.mai
 timeseries av = avg(dt.synthetic.http.availability), by: {dt.entity.http_check, dt.maintenance_window_ids}
 
 
-
 | filter dt.entity.http_check == "HTTP_CHECK-2F280898D4FCB1A8"
 
 
-
 | filter isNull(dt.maintenance_window_ids)
-
 
 
 | fields avgAV=arrayAvg(av)

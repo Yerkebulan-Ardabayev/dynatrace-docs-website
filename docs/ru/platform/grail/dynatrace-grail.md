@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:53.544675
 
 # Что такое Dynatrace Grail?
 
-# Что такое Dynatrace Grail?
 
 * Последняя версия Dynatrace
 * Описание

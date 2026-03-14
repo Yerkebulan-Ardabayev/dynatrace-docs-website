@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:48.959710
 
 # Azure AI - Speech monitoring
 
-# Azure AI - Speech monitoring
 
 * Latest Dynatrace
 * How-to guide

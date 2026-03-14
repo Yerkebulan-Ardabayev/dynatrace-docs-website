@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:56.963126
 
 # Лицензия Dynatrace
 
-# Лицензия Dynatrace
 
 * Последнее Dynatrace
 * Обзор

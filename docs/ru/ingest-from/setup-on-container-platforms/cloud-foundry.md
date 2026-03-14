@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:45.746356
 
 # Настройка Dynatrace на Cloud Foundry
 
-# Настройка Dynatrace на Cloud Foundry
 
 * Latest Dynatrace
 * 1-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:38:44.998874
 
 # Metrics API — Селектор метрик
 
-# Metrics API — Селектор метрик
 
 * Справочник
 * Обновлено 31 октября 2025 г.
@@ -37,69 +36,52 @@ scraped: 2026-03-04T21:38:44.998874
 {
 
 
-
 "dimensionDefinitions": [
 
 
-
 {
-
 
 
 "key": "dt.entity.host",
 
 
-
 "name": "Host",
-
 
 
 "displayName": "Host",
 
 
-
 "index": 0,
 
 
-
 "type": "ENTITY"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "dt.entity.disk",
 
 
-
 "name": "Disk",
-
 
 
 "displayName": "Disk",
 
 
-
 "index": 1,
-
 
 
 "type": "ENTITY"
 
 
-
 }
 
 
-
 ]
-
 
 
 }

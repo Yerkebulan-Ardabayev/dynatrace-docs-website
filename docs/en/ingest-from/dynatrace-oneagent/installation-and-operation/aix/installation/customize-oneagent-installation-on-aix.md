@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:38.038225
 
 # Customize OneAgent installation on AIX
 
-# Customize OneAgent installation on AIX
 
 * Latest Dynatrace
 * How-to guide

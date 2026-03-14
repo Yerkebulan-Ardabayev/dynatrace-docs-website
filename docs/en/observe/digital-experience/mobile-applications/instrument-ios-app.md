@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:00.148955
 
 # Instrument iOS apps
 
-# Instrument iOS apps
 
 * Classic
 * Overview

@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:31:20.683420
 
 # MySQL monitoring configuration
 
-# MySQL monitoring configuration
 
 * Latest Dynatrace
 * Reference
@@ -26,113 +25,85 @@ Example payload to activate the MySQL extension:
 [
 
 
-
 {
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "description": "My MySQL extension",
 
 
-
 "version": "0.1.1",
-
 
 
 "featureSets": [
 
 
-
 "io",
-
 
 
 "cpu",
 
 
-
 ],
-
 
 
 "sqlMySqlRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "mysqlhost",
-
 
 
 "port": 3306,
 
 
-
 "databaseName": "dbname",
-
 
 
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "username": "user",
 
 
-
 "password": "password"
 
 
-
 },
-
 
 
 "ssl": false
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "scope": "ag_group-default"
 
 
-
 }
-
 
 
 ]
@@ -160,13 +131,10 @@ Add a list of feature sets you want to monitor. To report all feature sets, add 
 "featureSets": [
 
 
-
 "cpu",
 
 
-
 "io"
-
 
 
 ]
@@ -180,53 +148,40 @@ You can define up to 20,000 endpoints in a single monitoring configuration in th
 "sqlMySqlRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "sqlserver.org",
-
 
 
 "port": 1521,
 
 
-
 "databaseName": "dbname",
-
 
 
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "username": "admin",
 
 
-
 "password": "password"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -251,17 +206,13 @@ Basic authentication requires only a username and password.
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "username": "username",
 
 
-
 "password": "password"
-
 
 
 }
@@ -281,17 +232,13 @@ The ActiveGate uses the IAM role assigned to it to authenticate, so there's no n
 "authentication": {
 
 
-
 "scheme": "identity_aws",
-
 
 
 "username": "username",
 
 
-
 "region": "eu-central-1"
-
 
 
 }
@@ -309,17 +256,13 @@ The credential vault authentication type provides a more secure approach to usin
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": true,
 
 
-
 "credentialVaultId": "some-credential-vault-id"
-
 
 
 }

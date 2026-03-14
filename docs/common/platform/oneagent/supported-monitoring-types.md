@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # OneAgent monitoring capabilities
 
-# OneAgent monitoring capabilities
 
 * Latest Dynatrace
 * 3-min read

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # OneAgent release notes
 
-# OneAgent release notes
 
 * Release notes
 * Updated on Feb 03, 2026

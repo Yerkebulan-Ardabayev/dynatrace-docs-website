@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:25.986356
 
 # Использование OneAgent с данными OpenTelemetry
 
-# Использование OneAgent с данными OpenTelemetry
 
 * Latest Dynatrace
 * How-to guide
@@ -124,21 +123,16 @@ EEC недоступен в контейнерных окружениях
 GET /calculate-price/ABC123  # OneAgent
 
 
-
 ├── SELECT FROM products     # OneAgent
-
 
 
 ├── calculate-discount       # OpenTelemetry
 
 
-
 │   ├── seasonal-rules       # OpenTelemetry
 
 
-
 │   └── loyalty-calculation  # OpenTelemetry
-
 
 
 └── INSERT INTO prices       # OneAgent
@@ -150,145 +144,109 @@ GET /calculate-price/ABC123  # OneAgent
 @RestController
 
 
-
 public class PricingController {
-
 
 
 private static final Tracer tracer = GlobalOpenTelemetry.getTracer("pricing-service");
 
 
-
 @GetMapping("/calculate-price/{productId}")
-
 
 
 public PriceResponse calculatePrice(@PathVariable String productId) {
 
 
-
 Product product = productRepository.findById(productId);
-
 
 
 Span calcSpan = tracer.spanBuilder("calculate-discount")
 
 
-
 .setAttribute("product.category", product.getCategory())
 
 
-
 .startSpan();
-
 
 
 double discount;
 
 
-
 try (Scope scope = calcSpan.makeCurrent()) {
-
 
 
 discount = applySeasonalRules(product);
 
 
-
 discount += applyCustomerLoyalty(product);
 
 
-
 } finally {
-
 
 
 calcSpan.end();
 
 
-
 }
-
 
 
 return priceRepository.save(new PriceResponse(product, discount));
 
 
-
 }
-
 
 
 private double applySeasonalRules(Product product) {
 
 
-
 Span span = tracer.spanBuilder("seasonal-rules")
-
 
 
 .setAttribute("season", "winter-sale")
 
 
-
 .startSpan();
 
 
-
 try (Scope scope = span.makeCurrent()) {
-
 
 
 return calculateSeasonalDiscount();
 
 
-
 } finally {
-
 
 
 span.end();
 
 
-
 }
 
 
-
 }
-
 
 
 private double applyCustomerLoyalty(Product product) {
 
 
-
 Span span = tracer.spanBuilder("loyalty-calculation").startSpan();
-
 
 
 try (Scope scope = span.makeCurrent()) {
 
 
-
 return calculateLoyaltyDiscount();
-
 
 
 } finally {
 
 
-
 span.end();
 
 
-
 }
 
 
-
 }
-
 
 
 }

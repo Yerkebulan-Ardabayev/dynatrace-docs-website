@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:29:29.015445
 
 # Integrate on Google Cloud Functions .NET
 
-# Integrate on Google Cloud Functions .NET
 
 * Latest Dynatrace
 * How-to guide
@@ -47,81 +46,61 @@ The initialization code for GCF tracing in your `Function.cs` file could look as
 using Dynatrace.OpenTelemetry;
 
 
-
 using Dynatrace.OpenTelemetry.Instrumentation.GoogleCloudFunctions;
-
 
 
 using Google.Cloud.Functions.Framework;
 
 
-
 using Microsoft.AspNetCore.Http;
-
 
 
 using OpenTelemetry;
 
 
-
 using OpenTelemetry.Trace;
-
 
 
 namespace Examples.GcfFunctionApp
 
 
-
 {
-
 
 
 public class Function
 
 
-
 {
-
 
 
 private static readonly TracerProvider TracerProvider;
 
 
-
 static Function()
-
 
 
 {
 
 
-
 DynatraceSetup.InitializeLogging();
-
 
 
 TracerProvider = Sdk.CreateTracerProviderBuilder()
 
 
-
 .AddDynatrace()
-
 
 
 .AddGoogleCloudFunctionsInstrumentation()
 
 
-
 .Build();
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -137,41 +116,31 @@ To instrument an HTTP-triggered function to trace incoming calls, in addition to
 public Task HandleAsync(HttpContext context)
 
 
-
 {
-
 
 
 return GoogleCloudFunctionsWrapper.TraceAsync(
 
 
-
 TracerProvider,
-
 
 
 () => HandleInternalAsync(context), context);
 
 
-
 }
-
 
 
 private Task HandleInternalAsync(HttpContext context)
 
 
-
 {
-
 
 
 // This is just an example of function handler and should be replaced by actual code.
 
 
-
 return Task.CompletedTask;
-
 
 
 }
@@ -197,17 +166,13 @@ To disable flushing after every invocation, you can provide a configuration para
 TracerProvider = Sdk.CreateTracerProviderBuilder()
 
 
-
 .AddDynatrace()
-
 
 
 // Setting ForceFlushAfterEachInvocation to false disables the flushing after every function invocation.
 
 
-
 .AddGoogleCloudFunctionsInstrumentation(c => c.ForceFlushAfterEachInvocation = false)
-
 
 
 .Build();

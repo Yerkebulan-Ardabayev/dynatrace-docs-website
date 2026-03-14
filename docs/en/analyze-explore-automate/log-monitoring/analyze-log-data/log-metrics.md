@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:20:32.239685
 
 # Log metrics (Logs Classic)
 
-# Log metrics (Logs Classic)
 
 * Tutorial
 * 7-min read

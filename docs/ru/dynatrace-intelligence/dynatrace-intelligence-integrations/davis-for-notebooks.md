@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:11.934524
 
 # Dynatrace Intelligence for Notebooks
 
-# Dynatrace Intelligence for Notebooks
 
 * Latest Dynatrace
 * How-to guide

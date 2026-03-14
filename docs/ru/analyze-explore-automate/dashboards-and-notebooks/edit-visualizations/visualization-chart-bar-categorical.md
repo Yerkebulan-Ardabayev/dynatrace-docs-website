@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:29.143481
 
 # Визуализация категориальной диаграммы
 
-# Визуализация категориальной диаграммы
 
 * Latest Dynatrace
 * Руководство
@@ -28,7 +27,6 @@ scraped: 2026-03-06T21:20:29.143481
 
 ```
 fetch logs
-
 
 
 | summarize count(), by:{loglevel}
@@ -168,7 +166,6 @@ fetch logs
 
     ```
     fetch logs
-
 
 
     | limit 2000

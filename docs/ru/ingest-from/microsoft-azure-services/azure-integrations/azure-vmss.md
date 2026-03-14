@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:37.851510
 
 # Мониторинг Azure Virtual Machine Scale Set (VMSS)
 
-# Мониторинг Azure Virtual Machine Scale Set (VMSS)
 
 * Latest Dynatrace
 * Практическое руководство
@@ -49,21 +48,16 @@ PowerShell
    az vmss extension set
 
 
-
    --publisher dynatrace.ruxit
-
 
 
    -n "<Extension-Type>"
 
 
-
    -g "<Resource-Group>"
 
 
-
    --vmss-name "<VMSS-Name>"
-
 
 
    --settings "{\"tenantId\":\"<Environment-ID>\",\"token\":\"<API-Token>\", \"server\":\"<Server-Url>\", \"enableLogAnalytics\":\"yes\", \"hostGroup\":\"<Host-Group>\"}"
@@ -102,29 +96,22 @@ PowerShell
    $vmss = Get-AzVmss -ResourceGroupName "<Resource-Group>" -VMScaleSetName "<VMSS-Name>"
 
 
-
    $vmss = Add-AzVmssExtension
-
 
 
    -VirtualMachineScaleSet $vmss
 
 
-
    -Name "dynatrace"
-
 
 
    -Publisher "dynatrace.ruxit"
 
 
-
    -Type "<Extension-Type>"
 
 
-
    -TypeHandlerVersion "2.300"
-
 
 
    -Setting @{ "tenantId"="<Environment-ID>"; "token"="<API Token>";"server"="<Server-Url>"; "enableLogAnalytics"="yes"; "hostGroup"="<Host-Group>"; }
@@ -144,13 +131,10 @@ PowerShell
    Update-AzVmss
 
 
-
    -ResourceGroupName "<Resource-Group>"
 
 
-
    -Name "<VMSS-Name>"
-
 
 
    -VirtualMachineScaleSet $vmss
@@ -176,129 +160,97 @@ PowerShell
    {
 
 
-
    "type": "Microsoft.Compute/virtualMachineScaleSets",
-
 
 
    "sku": {...},
 
 
-
    "name": "<VMSS-Name>",
-
 
 
    "apiVersion": "2018-06-01",
 
 
-
    "location": "centralus",
 
 
-
    "properties": {
-
 
 
    "upgradePolicy": {...},
 
 
-
    "virtualMachineProfile": {
-
 
 
    "osProfile": {...},
 
 
-
    "storageProfile": {...},
-
 
 
    "networkProfile": {...},
 
 
-
    "extensionProfile": {
-
 
 
    "extensions": [
 
 
-
    {
-
 
 
    "name": "dynatrace",
 
 
-
    "properties": {
-
 
 
    "publisher": "dynatrace.ruxit",
 
 
-
    "type": "<Extension-Type>",
-
 
 
    "typeHandlerVersion": "<Extension-Version>",
 
 
-
    "autoUpgradeMinorVersion": true,
-
 
 
    "settings": {
 
 
-
    "tenantId": "<Environment-ID>",
-
 
 
    "token": "<API-Token>",
 
 
-
    "enableLogAnalytics": "yes"
 
 
+   }
+
 
    }
 
 
-
    }
-
-
-
-   }
-
 
 
    ]
 
 
+   }
+
 
    }
 
 
-
    }
-
-
-
-   }
-
 
 
    }
@@ -309,61 +261,46 @@ PowerShell
    {
 
 
-
    "name": "dynatrace",
-
 
 
    "properties": {
 
 
-
    "publisher": "dynatrace.ruxit",
-
 
 
    "type": "<Extension-Type>",
 
 
-
    "typeHandlerVersion": "<Extension-Version>",
-
 
 
    "autoUpgradeMinorVersion": true,
 
 
-
    "settings": {
-
 
 
    "tenantId": "<Environment-ID>",
 
 
-
    "token": "<API-Token>",
-
 
 
    "server": "<Server-Url>",
 
 
-
    "enableLogAnalytics": "yes",
-
 
 
    "hostGroup": "<Host-Group>"
 
 
-
    },
 
 
-
    }
-
 
 
    }

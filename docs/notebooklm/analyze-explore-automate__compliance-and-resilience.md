@@ -14,7 +14,6 @@ scraped: 2026-03-05T21:30:24.955360
 
 # Compliance Assistant
 
-# Compliance Assistant
 
 * Latest Dynatrace
 * App
@@ -128,7 +127,6 @@ scraped: 2026-03-04T21:31:00.913416
 
 # Compliance and resilience
 
-# Compliance and resilience
 
 * Latest Dynatrace
 * Explanation

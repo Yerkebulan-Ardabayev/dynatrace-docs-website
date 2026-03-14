@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Preview program
 
-# Preview program
 
 * Latest Dynatrace
 * Updated on Feb 04, 2026

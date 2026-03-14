@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Monitored entities API
 
-# Monitored entities API
 
 * Reference
 * Published May 28, 2020

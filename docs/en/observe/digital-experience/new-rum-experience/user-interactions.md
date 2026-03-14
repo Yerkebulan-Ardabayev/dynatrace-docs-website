@@ -6,7 +6,6 @@ scraped: 2026-02-18T05:54:44.398841
 
 # User interactions
 
-# User interactions
 
 * Latest Dynatrace
 * How-to guide

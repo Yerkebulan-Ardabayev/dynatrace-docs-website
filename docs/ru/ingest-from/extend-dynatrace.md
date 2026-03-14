@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:28.052302
 
 # Расширение Dynatrace
 
-# Расширение Dynatrace
 
 * Latest Dynatrace
 * 3 мин чтения

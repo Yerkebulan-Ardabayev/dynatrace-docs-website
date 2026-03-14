@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:25.595461
 
 # NVIDIA NIM
 
-# NVIDIA NIM
 
 * Latest Dynatrace
 * Explanation
@@ -39,101 +38,76 @@ With the following config, the collector will scrape AI metrics every 10 seconds
 receivers:
 
 
-
 prometheus:
-
 
 
 config:
 
 
-
 scrape_configs:
-
 
 
 - job_name: nim-metrics
 
 
-
 scrape_interval: 10s
-
 
 
 honor_labels: false
 
 
-
 static_configs:
-
 
 
 - targets:
 
 
-
 - ["<NIM-endpoint>:8000"]
-
 
 
 processors:
 
 
-
 cumulativetodelta:
-
 
 
 max_staleness: 25h
 
 
-
 extensions:
-
 
 
 health_check:
 
 
-
 exporters:
-
 
 
 otlp_http:
 
 
-
 endpoint: ${env:DT_ENDPOINT}
-
 
 
 headers:
 
 
-
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
-
 
 
 service:
 
 
-
 extensions: [health_check]
-
 
 
 metrics:
 
 
-
 receivers: [prometheus]
 
 
-
 processors: [cumulativetodelta]
-
 
 
 exporters: [otlp_http]

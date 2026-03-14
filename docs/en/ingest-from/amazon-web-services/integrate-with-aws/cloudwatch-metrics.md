@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:27.989679
 
 # Monitor Amazon Web Services with CloudWatch metrics
 
-# Monitor Amazon Web Services with CloudWatch metrics
 
 * Classic
 * How-to guide
@@ -400,17 +399,13 @@ To create role-based access
    aws cloudformation create-stack \
 
 
-
    --capabilities CAPABILITY_NAMED_IAM \
-
 
 
    --stack-name <stack_name> \
 
 
-
    --template-body <file:///home/user/template_file.yaml> \
-
 
 
    --parameters ParameterKey=ExternalID,ParameterValue=<external_id> ParameterKey=RoleName,ParameterValue=<role_name> ParameterKey=PolicyName,ParameterValue=<policy_name>
@@ -460,17 +455,13 @@ You can also create a stack via CLI using the command below:
 aws cloudformation create-stack \
 
 
-
 --capabilities CAPABILITY_NAMED_IAM \
-
 
 
 --stack-name <stack_name> \
 
 
-
 --template-body <file:///home/user/template_file.yaml> \
-
 
 
 --parameters ParameterKey=ActiveGateRoleName,ParameterValue=<role_name> ParameterKey=AssumePolicyName,ParameterValue=<policy_name> ParameterKey=MonitoringRoleName,ParameterValue=<monitoring_role_name> ParameterKey=MonitoredAccountID,ParameterValue=<monitored_account_id>
@@ -499,17 +490,13 @@ You can also create a stack via CLI using the command below:
 aws cloudformation create-stack \
 
 
-
 --capabilities CAPABILITY_NAMED_IAM \
-
 
 
 --stack-name <stack_name> \
 
 
-
 --template-body <file:///home/user/template_file.yaml> \
-
 
 
 --parameters ParameterKey=ExternalID,ParameterValue=<external_id> ParameterKey=ActiveGateRoleName,ParameterValue=<activegate_role_name> ParameterKey=ActiveGateAccountID,ParameterValue=<activegate_account_id>
@@ -526,9 +513,7 @@ Starting with ActiveGate version 1.217, AWS monitoring is enabled by default. Fo
    [aws_monitoring]
 
 
-
    use_aws_proxy_role = false
-
 
 
    aws_monitoring_enabled = true
@@ -538,7 +523,6 @@ Starting with ActiveGate version 1.217, AWS monitoring is enabled by default. Fo
 
    ```
    [collector]
-
 
 
    MSGrouter = false
@@ -563,381 +547,286 @@ To create the AWS monitoring policy
    {
 
 
-
    "Version": "2012-10-17",
-
 
 
    "Statement": [
 
 
-
    {
-
 
 
    "Sid": "VisualEditor0",
 
 
-
    "Effect": "Allow",
-
 
 
    "Action": [
 
 
-
    "acm-pca:ListCertificateAuthorities",
-
 
 
    "apigateway:GET",
 
 
-
    "apprunner:ListServices",
-
 
 
    "appstream:DescribeFleets",
 
 
-
    "appsync:ListGraphqlApis",
-
 
 
    "athena:ListWorkGroups",
 
 
-
    "autoscaling:DescribeAutoScalingGroups",
-
 
 
    "cloudformation:ListStackResources",
 
 
-
    "cloudfront:ListDistributions",
-
 
 
    "cloudhsm:DescribeClusters",
 
 
-
    "cloudsearch:DescribeDomains",
-
 
 
    "cloudwatch:GetMetricData",
 
 
-
    "cloudwatch:GetMetricStatistics",
-
 
 
    "cloudwatch:ListMetrics",
 
 
-
    "codebuild:ListProjects",
-
 
 
    "datasync:ListTasks",
 
 
-
    "dax:DescribeClusters",
-
 
 
    "directconnect:DescribeConnections",
 
 
-
    "dms:DescribeReplicationInstances",
-
 
 
    "dynamodb:ListTables",
 
 
-
    "dynamodb:ListTagsOfResource",
-
 
 
    "ec2:DescribeAvailabilityZones",
 
 
-
    "ec2:DescribeInstances",
-
 
 
    "ec2:DescribeNatGateways",
 
 
-
    "ec2:DescribeSpotFleetRequests",
-
 
 
    "ec2:DescribeTransitGateways",
 
 
-
    "ec2:DescribeVolumes",
-
 
 
    "ec2:DescribeVpnConnections",
 
 
-
    "ecs:ListClusters",
-
 
 
    "eks:ListClusters",
 
 
-
    "elasticache:DescribeCacheClusters",
-
 
 
    "elasticbeanstalk:DescribeEnvironmentResources",
 
 
-
    "elasticbeanstalk:DescribeEnvironments",
-
 
 
    "elasticfilesystem:DescribeFileSystems",
 
 
-
    "elasticloadbalancing:DescribeInstanceHealth",
-
 
 
    "elasticloadbalancing:DescribeListeners",
 
 
-
    "elasticloadbalancing:DescribeLoadBalancers",
-
 
 
    "elasticloadbalancing:DescribeRules",
 
 
-
    "elasticloadbalancing:DescribeTags",
-
 
 
    "elasticloadbalancing:DescribeTargetHealth",
 
 
-
    "elasticmapreduce:ListClusters",
-
 
 
    "elastictranscoder:ListPipelines",
 
 
-
    "es:ListDomainNames",
-
 
 
    "events:ListEventBuses",
 
 
-
    "firehose:ListDeliveryStreams",
-
 
 
    "fsx:DescribeFileSystems",
 
 
-
    "gamelift:ListFleets",
-
 
 
    "glue:GetJobs",
 
 
-
    "inspector:ListAssessmentTemplates",
-
 
 
    "kafka:ListClusters",
 
 
-
    "kinesis:ListStreams",
-
 
 
    "kinesisanalytics:ListApplications",
 
 
-
    "kinesisvideo:ListStreams",
-
 
 
    "lambda:ListFunctions",
 
 
-
    "lambda:ListTags",
-
 
 
    "lex:GetBots",
 
 
-
    "logs:DescribeLogGroups",
-
 
 
    "mediaconnect:ListFlows",
 
 
-
    "mediaconvert:DescribeEndpoints",
-
 
 
    "mediapackage-vod:ListPackagingConfigurations",
 
 
-
    "mediapackage:ListChannels",
-
 
 
    "mediatailor:ListPlaybackConfigurations",
 
 
-
    "opsworks:DescribeStacks",
-
 
 
    "qldb:ListLedgers",
 
 
-
    "rds:DescribeDBClusters",
-
 
 
    "rds:DescribeDBInstances",
 
 
-
    "rds:DescribeEvents",
-
 
 
    "rds:ListTagsForResource",
 
 
-
    "redshift:DescribeClusters",
-
 
 
    "robomaker:ListSimulationJobs",
 
 
-
    "route53:ListHostedZones",
-
 
 
    "route53resolver:ListResolverEndpoints",
 
 
-
    "s3:ListAllMyBuckets",
-
 
 
    "sagemaker:ListEndpoints",
 
 
-
    "sns:ListTopics",
-
 
 
    "sqs:ListQueues",
 
 
-
    "storagegateway:ListGateways",
-
 
 
    "sts:GetCallerIdentity",
 
 
-
    "swf:ListDomains",
-
 
 
    "tag:GetResources",
 
 
-
    "tag:GetTagKeys",
-
 
 
    "transfer:ListServers",
 
 
-
    "workmail:ListOrganizations",
-
 
 
    "workspaces:DescribeWorkspaces"
 
 
-
    ],
-
 
 
    "Resource": "*"
 
 
-
    }
 
 
-
    ]
-
 
 
    }

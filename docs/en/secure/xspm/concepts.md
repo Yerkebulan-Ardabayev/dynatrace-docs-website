@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:32:43.387274
 
 # Security Posture Management concepts
 
-# Security Posture Management concepts
 
 * Latest Dynatrace
 * Explanation

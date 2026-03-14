@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Synthetic nodes API v2 - GET a node (Dynatrace Managed)
 
-# Synthetic nodes API v2 - GET a node (Dynatrace Managed)
 
 * Published Oct 30, 2020
 
@@ -93,141 +92,107 @@ A list of constraint violations
 {
 
 
-
 "activeGateVersion": "1.172.2.20190607-040913",
-
 
 
 "autoUpdateEnabled": true,
 
 
-
 "browserMonitorsEnabled": true,
-
 
 
 "browserType": "Chrome",
 
 
-
 "browserVersion": "69.0.3497.81",
-
 
 
 "capabilities": [
 
 
-
 "HTTP_HIGH_RESOURCE",
-
 
 
 "HTTP"
 
 
-
 ],
-
 
 
 "entityId": "3086117876",
 
 
-
 "healthCheckStatus": "Ok",
-
 
 
 "hostname": "gdn.dyna.trace",
 
 
-
 "ips": [
-
 
 
 "238.245.160.14"
 
 
-
 ],
-
 
 
 "oneAgentRoutingEnabled": true,
 
 
-
 "operatingSystem": "Linux",
-
 
 
 "playerVersion": "1.179.0.20190920-145430",
 
 
-
 "status": "Running",
-
 
 
 "version": "1.161.0.20181210-173639"
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -245,9 +210,7 @@ The API token is passed in the **Authorization** header.
 curl -X GET \
 
 
-
 https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/nodes/3086117876 \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -265,61 +228,46 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/nodes/3086117876
 {
 
 
-
 "entityId": "3086117876",
-
 
 
 "hostname": "gdn.dyna.trace",
 
 
-
 "ips": [
-
 
 
 "238.245.160.14"
 
 
-
 ],
-
 
 
 "version": "1.207.0.20201029-141904",
 
 
-
 "browserMonitorsEnabled": true,
-
 
 
 "activeGateVersion": "1.207.0.20201029-180431",
 
 
-
 "oneAgentRoutingEnabled": false,
-
 
 
 "operatingSystem": "Platform: Linux, Version: 4.4.0-1092-aws, Architecture: amd64, Processors: 2",
 
 
-
 "autoUpdateEnabled": true,
-
 
 
 "status": "Running",
 
 
-
 "playerVersion": "1.207.0.20201029-081128",
 
 
-
 "healthCheckStatus": "Ok"
-
 
 
 }

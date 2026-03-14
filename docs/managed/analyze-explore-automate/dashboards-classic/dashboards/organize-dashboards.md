@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Organize Dynatrace dashboards
 
-# Organize Dynatrace dashboards
 
 * How-to guide
 * 3-min read

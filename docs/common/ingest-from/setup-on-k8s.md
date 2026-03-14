@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Set up Dynatrace on Kubernetes
 
-# Set up Dynatrace on Kubernetes
 
 * Latest Dynatrace
 * 2-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:51.187037
 
 # Мониторинг Google App Engine
 
-# Мониторинг Google App Engine
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -32,37 +31,28 @@ scraped: 2026-03-06T21:17:51.187037
 ARG DT_API_URL="https://<environmentID>.live.dynatrace.com/api"
 
 
-
 ARG DT_API_TOKEN="<token>"
-
 
 
 ARG DT_ONEAGENT_OPTIONS="flavor=default&include=<technology1>&include=<technology2>"
 
 
-
 ENV DT_HOME="/opt/dynatrace/oneagent"
-
 
 
 RUN mkdir -p "$DT_HOME" && \
 
 
-
 wget -O "$DT_HOME/oneagent.zip" "$DT_API_URL/v1/deployment/installer/agent/unix/paas/latest?Api-Token=$DT_API_TOKEN&$DT_ONEAGENT_OPTIONS" && \
-
 
 
 unzip -d "$DT_HOME" "$DT_HOME/oneagent.zip" && \
 
 
-
 rm "$DT_HOME/oneagent.zip"
 
 
-
 ENTRYPOINT [ "/opt/dynatrace/oneagent/dynatrace-agent64.sh" ]
-
 
 
 CMD [ "executable", "param1", "param2" ] # команда вашего приложения, например Java

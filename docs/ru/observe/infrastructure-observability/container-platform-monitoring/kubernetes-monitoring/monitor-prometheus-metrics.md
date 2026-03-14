@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:44.712888
 
 # Мониторинг метрик Prometheus
 
-# Мониторинг метрик Prometheus
 
 * Classic
 * Чтение: 14 мин.
@@ -139,85 +138,64 @@ Dynatrace собирает метрики из любых подов, аннот
 apiVersion: v1
 
 
-
 kind: Pod
-
 
 
 metadata:
 
 
-
 name: mypod
-
 
 
 annotations:
 
 
-
 metrics.dynatrace.com/scrape: 'true'
-
 
 
 metrics.dynatrace.com/path: '/path/to-metrics'
 
 
-
 metrics.dynatrace.com/port: '9001'
-
 
 
 metrics.dynatrace.com/secure: 'false'
 
 
-
 metrics.dynatrace.com/filter: |
-
 
 
 {
 
 
-
 "mode": "include",
-
 
 
 "names": [
 
 
-
 "redis_db_keys",
-
 
 
 "*insights*",
 
 
-
 "*bytes"
-
 
 
 ]
 
 
-
 }
-
 
 
 spec:
 
 
-
 containers:
 
 
-
 - name: mycontainer
-
 
 
 image: myregistry/myimage:mytag
@@ -244,61 +222,46 @@ image: myregistry/myimage:mytag
 apiVersion: v1
 
 
-
 kind: Pod
-
 
 
 metadata:
 
 
-
 name: mypod
-
 
 
 annotations:
 
 
-
 metrics.dynatrace.com/scrape: 'true'
-
 
 
 metrics.dynatrace.com/path: '/path/to-metrics'
 
 
-
 metrics.dynatrace.com/port: '9001'
-
 
 
 metrics.dynatrace.com/secure: 'false'
 
 
-
 metrics.dynatrace.com/tls.ca.crt: 'configmap:kubernetes-config:etcd-metric-serving-ca:ca-bundle.crt'
-
 
 
 metrics.dynatrace.com/tls.crt: 'secret:kubernetes-config:etcd-metric-client:tls.crt'
 
 
-
 metrics.dynatrace.com/tls.key: 'secret:kubernetes-config:etcd-metric-client:tls.key'
-
 
 
 spec:
 
 
-
 containers:
 
 
-
 - name: mycontainer
-
 
 
 image: myregistry/myimage:mytag
@@ -322,49 +285,37 @@ image: myregistry/myimage:mytag
 apiVersion: v1
 
 
-
 kind: Secret
 
 
-
 metadata:
-
 
 
 name: user-secret
 
 
-
 data:
-
 
 
 username: bXktdXNlcm5hbWUtc2VjcmV0Cg==
 
 
-
 ---
-
 
 
 apiVersion: v1
 
 
-
 kind: Secret
-
 
 
 metadata:
 
 
-
 name: password-secret
 
 
-
 data:
-
 
 
 password: bXktcGFzc3dvcmQtc2VjcmV0Cg==
@@ -374,57 +325,43 @@ password: bXktcGFzc3dvcmQtc2VjcmV0Cg==
 apiVersion: v1
 
 
-
 kind: Pod
-
 
 
 metadata:
 
 
-
 name: mypod
-
 
 
 annotations:
 
 
-
 metrics.dynatrace.com/scrape: 'true'
-
 
 
 metrics.dynatrace.com/path: '/path/to-metrics'
 
 
-
 metrics.dynatrace.com/port: '9001'
-
 
 
 metrics.dynatrace.com/secure: 'false'
 
 
-
 metrics.dynatrace.com/http.auth.basic.username: 'secret:default:user-secret:username'
-
 
 
 metrics.dynatrace.com/http.auth.basic.password: 'secret:default:password-secret:password'
 
 
-
 spec:
-
 
 
 containers:
 
 
-
 - name: mycontainer
-
 
 
 image: myregistry/myimage:mytag
@@ -447,21 +384,16 @@ image: myregistry/myimage:mytag
 apiVersion: v1
 
 
-
 kind: Secret
-
 
 
 metadata:
 
 
-
 name: token-secret
 
 
-
 data:
-
 
 
 bearer: bXktYmVhcmVyLXRva2VuCg==
@@ -473,53 +405,40 @@ bearer: bXktYmVhcmVyLXRva2VuCg==
 apiVersion: v1
 
 
-
 kind: Pod
-
 
 
 metadata:
 
 
-
 name: mypod
-
 
 
 annotations:
 
 
-
 metrics.dynatrace.com/scrape: 'true'
-
 
 
 metrics.dynatrace.com/path: '/path/to-metrics'
 
 
-
 metrics.dynatrace.com/port: '9001'
-
 
 
 metrics.dynatrace.com/secure: 'false'
 
 
-
 metrics.dynatrace.com/http.auth: 'secret:default:token-secret:bearer'
-
 
 
 spec:
 
 
-
 containers:
 
 
-
 - name: mycontainer
-
 
 
 image: myregistry/myimage:mytag
@@ -573,65 +492,49 @@ image: myregistry/myimage:mytag
   kind: Service
 
 
-
   apiVersion: v1
-
 
 
   metadata:
 
 
-
   name: dynatrace-monitoring-node-exporter
-
 
 
   namespace: kubernetes-monitoring
 
 
-
   annotations:
-
 
 
   metrics.dynatrace.com/port: '12071'
 
 
-
   metrics.dynatrace.com/scrape: 'true'
-
 
 
   metrics.dynatrace.com/secure: 'true'
 
 
-
   metrics.dynatrace.com/path: '/metrics'
-
 
 
   spec:
 
 
-
   ports:
-
 
 
   - name: dynatrace-monitoring-node-exporter-port
 
 
-
   port: 9100
-
 
 
   targetPort: 12071
 
 
-
   selector:
-
 
 
   app.kubernetes.io/name: node-exporter
@@ -647,65 +550,49 @@ image: myregistry/myimage:mytag
   kind: Service
 
 
-
   apiVersion: v1
-
 
 
   metadata:
 
 
-
   name: dynatrace-monitoring-node-exporter
-
 
 
   namespace: kubernetes-monitoring
 
 
-
   annotations:
-
 
 
   metrics.dynatrace.com/port: '12071'
 
 
-
   metrics.dynatrace.com/scrape: 'true'
-
 
 
   metrics.dynatrace.com/secure: 'true'
 
 
-
   metrics.dynatrace.com/path: '/metrics'
-
 
 
   spec:
 
 
-
   ports:
-
 
 
   - name: dynatrace-monitoring-node-exporter-port
 
 
-
   port: 12071
-
 
 
   selector:
 
 
-
   app.kubernetes.io/name: node-exporter
-
 
 
   clusterIP: None

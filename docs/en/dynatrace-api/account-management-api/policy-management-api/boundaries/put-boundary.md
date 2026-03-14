@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:42.980568
 
 # Policy management API - PUT a policy boundary
 
-# Policy management API - PUT a policy boundary
 
 * Latest Dynatrace
 * Reference
@@ -50,17 +49,13 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "name": "string",
-
 
 
 "boundaryQuery": "string",
 
 
-
 "metadata": {}
-
 
 
 }
@@ -115,65 +110,49 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "uuid": "string",
-
 
 
 "levelType": "string",
 
 
-
 "levelId": "string",
 
 
-
 "name": "string",
-
 
 
 "boundaryQuery": "string",
 
 
-
 "boundaryConditions": [
 
 
-
 {
-
 
 
 "name": "string",
 
 
-
 "operator": "string",
-
 
 
 "values": [
 
 
-
 "string"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "metadata": {}
-
 
 
 }
@@ -183,17 +162,13 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "code": 1,
-
 
 
 "message": "string",
 
 
-
 "errorsMap": {}
-
 
 
 }
@@ -237,29 +212,22 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "name": "string",
-
 
 
 "description": "string",
 
 
-
 "tags": [
-
 
 
 "string"
 
 
-
 ],
 
 
-
 "statementQuery": "string"
-
 
 
 }
@@ -275,33 +243,25 @@ In this example, the request updates the `name` of the policy boundary with `UUI
 curl --request PUT \
 
 
-
 --url https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890/boundaries/3c9f1a72-bd84-4e6c-9f03-7a1e2c4d5b68 \
-
 
 
 --header 'Authorization: Bearer abcdefjhij1234567890' \
 
 
-
 --header 'Content-Type: application/json' \
-
 
 
 --data '{
 
 
-
 "name": "host name",
-
 
 
 "description": "storage:host.name = \"myHost\"",
 
 
-
 "metadata": {}
-
 
 
 }'
@@ -319,17 +279,13 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 {
 
 
-
 "name": "host name",
-
 
 
 "boundaryQuery": "storage:host.name = \"myHost\";",
 
 
-
 "metadata": {}
-
 
 
 }

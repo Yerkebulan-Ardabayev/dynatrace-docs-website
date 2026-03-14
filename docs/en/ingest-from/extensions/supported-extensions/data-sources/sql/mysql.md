@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:51.298927
 
 # Manage MySQL extensions
 
-# Manage MySQL extensions
 
 * Latest Dynatrace
 * How-to guide

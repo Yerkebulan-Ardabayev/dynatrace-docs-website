@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:03.651720
 
 # JDBC monitoring configuration
 
-# JDBC monitoring configuration
 
 * Latest Dynatrace
 * How-to guide
@@ -49,109 +48,82 @@ Example payload to activate the JDBC extension:
 [
 
 
-
 {
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "description": "My JDBC extension",
 
 
-
 "version": "0.0.1",
-
 
 
 "featureSets": [
 
 
-
 "statements"
-
 
 
 ],
 
 
-
 "jdbcRemote": {
-
 
 
 "endpoints": [
 
 
-
 {
-
 
 
 "host": "193.36.194.170",
 
 
-
 "port": 3306,
-
 
 
 "connectionString": "jdbc:mariadb://193.36.194.170/mysql",
 
 
-
 "authentication": {
-
 
 
 "scheme": "basic",
 
 
-
 "useCredentialVault": false,
-
 
 
 "username": "user",
 
 
-
 "password": "password"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "scope": "ag_group-someAgGroup"
 
 
-
 }
-
 
 
 ]
@@ -188,13 +160,10 @@ Add a list of feature sets you want to monitor.
 "featureSets": [
 
 
-
 "cpu",
 
 
-
 "io"
-
 
 
 ]
@@ -208,57 +177,43 @@ You can define up to 20,000 endpoints in a single monitoring configuration in th
 "jdbcRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "jdbchost",
-
 
 
 "port": 3306,
 
 
-
 "connectionString": "jdbc:mariadb://193.36.194.170/mysql",
-
 
 
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": false,
 
 
-
 "username": "admin",
-
 
 
 "password": "password"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -287,17 +242,13 @@ The credential vault authentication type provides a more secure approach to usin
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": true,
 
 
-
 "credentialVaultId": "some-credential-vault-id"
-
 
 
 }

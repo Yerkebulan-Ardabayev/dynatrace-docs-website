@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:20:06.387958
 
 # Развёртывание OneAgent с помощью AWS Systems Manager Distributor
 
-# Развёртывание OneAgent с помощью AWS Systems Manager Distributor
 
 * How-to guide
 * 8-min read
@@ -82,37 +81,28 @@ AWS CLI необходим, если вы используете Parameter Store
         {
 
 
-
         "Version": "2012-10-17",
-
 
 
         "Statement": [
 
 
-
         {
-
 
 
         "Effect": "Allow",
 
 
-
         "Action": "secretsmanager:GetSecretValue",
-
 
 
         "Resource": "arn:aws:secretsmanager:us-east-2:123456789012:secret:dynatrace-paas-token"
 
 
-
         }
 
 
-
         ]
-
 
 
         }
@@ -125,13 +115,10 @@ AWS CLI необходим, если вы используете Parameter Store
         {
 
 
-
         "SSM_DYNATRACE_URL" : "https://environment.live.dynatrace.com/",
 
 
-
         "SSM_DYNATRACE_TOKEN_SECRET_ID" : "dynatrace-paas-token"
-
 
 
         }
@@ -149,45 +136,34 @@ AWS CLI необходим, если вы используете Parameter Store
         {
 
 
-
         "Version": "2012-10-17",
-
 
 
         "Statement": [
 
 
-
         {
-
 
 
         "Effect": "Allow",
 
 
-
         "Action": [
-
 
 
         "ssm:GetParameter"
 
 
-
         ],
-
 
 
         "Resource": "arn:aws:ssm:us-east-2:123456789012:parameter/dynatrace-paas-token"
 
 
-
         }
 
 
-
         ]
-
 
 
         }
@@ -198,13 +174,10 @@ AWS CLI необходим, если вы используете Parameter Store
         {
 
 
-
         "SSM_DYNATRACE_URL" : "https://environment.live.dynatrace.com/",
 
 
-
         "SSM_DYNATRACE_TOKEN" : "abcdefghij123456",
-
 
 
         }
@@ -221,25 +194,19 @@ AWS CLI необходим, если вы используете Parameter Store
    {
 
 
-
    "SSM_DYNATRACE_URL" : "https://your-tenant.live.dynatrace.com/",
-
 
 
    "SSM_DYNATRACE_HOST_GROUP" : "MY-HOST-GROUP",
 
 
-
    "SSM_DYNATRACE_MONITORING_MODE" : "infra-only",
-
 
 
    "SSM_DYNATRACE_APP_LOG_CONTENT_ACCESS" : "true",
 
 
-
    "SSM_DYNATRACE_TOKEN_SECRET_ID" : "dynatrace-paas-token"
-
 
 
    }
@@ -254,53 +221,40 @@ AWS CLI необходим, если вы используете Parameter Store
    Initiating DynatraceOneAgent_ 1.0.51 install
 
 
-
    Plugin aws:runPowerShellScript ResultStatus Success
-
 
 
    install output: Running install.ps1
 
 
-
    Installing Dynatrace OneAgent on Windows...
-
 
 
    script version: 1.0.51
 
 
-
    Configuration parameters:
-
 
 
    - Dynatrace URL: https://environment.live.dynatrace.com/
 
 
-
    --quiet
-
 
 
    Installing Dynatrace Package on Windows...
 
 
-
    - downloading agent from: https://environment.live.dynatrace.com/ to: %PROGRAMDATA%\Amazon\SSM\Packages\DynatraceOneAgent_\1.0.51\Dynatrace-OneAgent-Windows.exe
-
 
 
    - running installation
 
 
-
    - cleaning up
 
 
-
    Done
-
 
 
    Successfully installed DynatraceOneAgent_ 1.0.51

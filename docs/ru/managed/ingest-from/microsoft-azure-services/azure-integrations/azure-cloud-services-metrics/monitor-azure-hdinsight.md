@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:08.478436
 
 # Мониторинг Azure HDInsight
 
-# Мониторинг Azure HDInsight
 
 * Latest Dynatrace
 * How-to guide
@@ -52,7 +51,6 @@ Dynatrace получает метрики из Azure Metrics API для Azure HD
 
 ```
 wget  -O Dynatrace-OneAgent-Linux-1.137.163.sh "https://YOURTENANT.live.dynatrace.com/api/v1/deployment/installer/agent/unix/default/latest?Api-Token=YOURAPITOKEN&arch=x86&flavor=default"
-
 
 
 /bin/sh Dynatrace-OneAgent-Linux-1.137.163.sh  --set-app-log-content-access=1

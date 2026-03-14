@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:59.952480
 
 # Конфигурация мониторинга SAP Hana Database
 
-# Конфигурация мониторинга SAP Hana Database
 
 * Latest Dynatrace
 * Справочник
@@ -26,105 +25,79 @@ scraped: 2026-03-06T21:36:59.952480
 [
 
 
-
 {
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "description": "My SAP Hana extension",
 
 
-
 "version": "0.1.1",
-
 
 
 "featureSets": [
 
 
-
 "io",
-
 
 
 "cpu",
 
 
-
 ],
-
 
 
 "sqlHanaRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "hanahost",
-
 
 
 "port": 1521,
 
 
-
 "authentication": {
-
 
 
 "username": "user",
 
 
-
 "password": "password"
 
 
-
 },
-
 
 
 "ssl": false
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "scope": "ag_group-default"
 
 
-
 }
-
 
 
 ]
@@ -152,13 +125,10 @@ scraped: 2026-03-06T21:36:59.952480
 "featureSets": [
 
 
-
 "cpu",
 
 
-
 "io"
-
 
 
 ]
@@ -172,45 +142,34 @@ scraped: 2026-03-06T21:36:59.952480
 "sqlHanaRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "hanahost",
-
 
 
 "port": 1521,
 
 
-
 "authentication": {
-
 
 
 "username": "user",
 
 
-
 "password": "password"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -232,21 +191,16 @@ scraped: 2026-03-06T21:36:59.952480
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": "true",
 
 
-
 "skipVerifyHttps": false,
 
 
-
 "credentialVaultId": "some-credential-vault-id"
-
 
 
 }

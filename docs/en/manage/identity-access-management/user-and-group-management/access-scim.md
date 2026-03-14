@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:10.828770
 
 # SCIM
 
-# SCIM
 
 * Latest Dynatrace
 * Reference

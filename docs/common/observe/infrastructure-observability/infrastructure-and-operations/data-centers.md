@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Data centers
 
-# Data centers
 
 * Latest Dynatrace
 * Explanation

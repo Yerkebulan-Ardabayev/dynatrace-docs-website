@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:20.064492
 
 # Dynatrace OTLP API endpoints
 
-# Dynatrace OTLP API endpoints
 
 * Latest Dynatrace
 * Explanation
@@ -98,9 +97,7 @@ When you configure your application to export to Dynatrace, one way is to config
 OTEL_EXPORTER_OTLP_ENDPOINT=[YOUR_BASE_URL]
 
 
-
 OTEL_EXPORTER_OTLP_HEADERS="Authorization=Api-Token [YOUR_TOKEN]"
-
 
 
 OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf

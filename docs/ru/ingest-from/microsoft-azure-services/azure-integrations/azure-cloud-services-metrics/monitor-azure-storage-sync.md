@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:20.835627
 
 # Мониторинг Azure Storage Sync
 
-# Мониторинг Azure Storage Sync
 
 * Последняя версия Dynatrace
 * Практическое руководство

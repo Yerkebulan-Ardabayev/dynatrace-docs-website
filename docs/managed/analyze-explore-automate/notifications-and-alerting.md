@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Notifications and alerting
 
-# Notifications and alerting
 
 * 1-min read
 * Published Feb 06, 2023

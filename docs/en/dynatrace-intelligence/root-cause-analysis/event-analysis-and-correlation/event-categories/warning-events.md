@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:57.535745
 
 # Warning events
 
-# Warning events
 
 * Latest Dynatrace
 * Explanation

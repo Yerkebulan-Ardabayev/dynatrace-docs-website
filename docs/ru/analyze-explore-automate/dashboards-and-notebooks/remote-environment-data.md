@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:23:07.840378
 
 # Данные удаленной среды
 
-# Данные удаленной среды
 
 * Последнее Dynatrace
 * Руководство по началу работы
@@ -90,245 +89,184 @@ scraped: 2026-03-03T21:23:07.840378
 import { credentialVaultClient } from "@dynatrace-sdk/client-classic-environment-v2";
 
 
-
 /**
-
 
 
 * Выполните запрос против Dynatrace API с получением токена.
 
 
-
 * @param {string} credentialId - Идентификатор записи хранилища учетных данных.
-
 
 
 * @param {string} url - URL-адрес конечной точки API.
 
 
-
 * @param {string} query - Запрос на выполнение.
-
 
 
 * @returns {Promise<any>} - Данные ответа API.
 
 
-
 * @throws Будет выброшена ошибка, если любой шаг не удался.
 
 
-
 */
-
 
 
 async function fetchFromDynatrace(credentialId, url, query) {
 
 
-
 if (!credentialId || !url || !query) {
-
 
 
 throw new Error("[ValidationError] Отсутствуют обязательные параметры: credentialId, url или query.");
 
 
-
 }
 
 
-
 try 
-
 
 
 // Извлеките токен платформы из хранилища учетных данных.
 
 
-
 const { token } = await credentialVaultClient.getCredentialsDetails({
-
 
 
 id: credentialId,
 
 
-
 }).catch((error) => 
-
 
 
 console.error(`[CredentialVaultError] Не удалось получить токен: ${error.message}`);
 
 
-
 throw new Error("Не удалось получить токен платформы.");
-
 
 
  });
 
 
-
 if (!token) 
-
 
 
 throw new Error("[CredentialVaultError] Токен не определен или пуст.");
 
 
-
 // Выполните запрос API.
-
 
 
 const response = await fetch(url, 
 
 
-
 {
-
 
 
 method: "POST",
 
 
-
 headers: 
-
 
 
 {
 
 
-
 "Content-Type": "application/json",
-
 
 
 Accept: "application/json",
 
 
-
 Authorization: `Bearer ${token}`,
-
 
 
 },
 
 
-
 body: JSON.stringify({
-
 
 
 query,
 
 
-
 requestTimeoutMilliseconds: 60000,
-
 
 
 enablePreview: true,
 
 
-
 }),
-
 
 
 });
 
 
-
 if (!response.ok) 
-
 
 
 throw new Error(`[HTTPError] API-вызов не удался со статусом ${response.status}: ${response.statusText}`);
 
 
-
 return await response.json();
 
 
-
 } catch (error) 
-
 
 
 console.error(`[FetchError] Выполнение запроса не удалось: ${error.message}`);
 
 
-
 throw new Error("Не удалось выполнить запрос.");
 
 
-
 }
-
 
 
 /**
 
 
-
 * Основная функция для получения и возврата результатов из Dynatrace.
-
 
 
 * @returns {Promise<any>} - Результат запроса.
 
 
-
 */
-
 
 
 export default async function() 
 
 
-
 const credentialId = "CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX"; // Замените на свой идентификатор хранилища учетных данных.
-
 
 
 const url = "https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute"; // Замените на URL-адрес API.
 
 
-
 const query = "fetch logs | limit 1"; // Замените на свой запрос.
-
 
 
 try 
 
 
-
 const { result } = await fetchFromDynatrace(credentialId, url, query);
-
 
 
 return result;
 
 
-
 } catch (error) 
-
 
 
 console.error(`[MainFunctionError] ${error.message}`);
 
 
-
 return null; // Или обработайте как необходимо.
 
 
-
 }
-
 
 
 ## Аутентификация клиента OAuth
@@ -399,409 +337,307 @@ return null; // Или обработайте как необходимо.
 import { credentialVaultClient } from "@dynatrace-sdk/client-classic-environment-v2";
 
 
-
 /**
-
 
 
 * Аутентифицируйтесь в Dynatrace SSO, используя учетные данные клиента.
 
 
-
 * @param {string} clientId - Идентификатор клиента для аутентификации.
-
 
 
 * @param {string} clientSecret - Секрет клиента для аутентификации.
 
 
-
 * @returns {Promise<string>} - Токен доступа.
-
 
 
 * @throws Будет бросать ошибку, если аутентификация не удалась.
 
 
-
 */
-
 
 
 async function authenticateToDynatrace(clientId, clientSecret) {
 
 
-
 if (!clientId || !clientSecret) {
-
 
 
 throw new Error("[ValidationError] Отсутствует clientId или clientSecret для аутентификации SSO.");
 
 
-
 }
-
 
 
 const scopes = [
 
 
-
 "environment-api",
-
 
 
 "storage:buckets:read",
 
 
-
 "storage:bizevents:read",
-
 
 
 "storage:logs:read",
 
 
-
 "storage:metrics:read",
-
 
 
 "storage:entities:read",
 
 
-
 ].join(" ");
-
 
 
 try {
 
 
-
 const response = await fetch("https://sso.dynatrace.com/sso/oauth2/token", {
 
 
-
 method: "POST",
-
 
 
 headers: { "Content-Type": "application/x-www-form-urlencoded" },
 
 
-
 body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}&scopes=${scopes}`,
-
 
 
 });
 
 
-
 if (!response.ok) {
-
 
 
 throw new Error(`[HTTPError] Аутентификация SSO не удалась со статусом ${response.status}: ${response.statusText}`);
 
 
-
 }
-
 
 
 const { access_token: accessToken } = await response.json();
 
 
-
 if (!accessToken) {
-
 
 
 throw new Error("[SSOError] Токен доступа не получен.");
 
 
-
 }
-
 
 
 return accessToken;
 
 
-
 } catch (error) {
-
 
 
 console.error(`[DynatraceAuthError] ${error.message}`);
 
 
-
 throw error;
-
 
 
 }
 
 
-
 )
 
 
-
 /**
-
 
 
 * Получите данные из Dynatrace, используя запрос.
 
 
-
 * @param {string} credentialId - Идентификатор учетных данных.
-
 
 
 * @param {string} url - URL-адрес конечной точки API.
 
 
-
 * @param {string} query - Запрос на выполнение.
-
 
 
 * @returns {Promise<any>} - Данные ответа API.
 
 
-
 * @throws Будет бросать ошибку, если любой шаг не удался.
 
 
-
 */
-
 
 
 async function fetchFromDynatrace(credentialId, url, query) {
 
 
-
 if (!credentialId || !url || !query) {
-
 
 
 throw new Error("[ValidationError] Отсутствует один или несколько обязательных параметров: credentialId, url или query.");
 
 
-
 }
 
 
-
 try 
-
 
 
 // Извлеките учетные данные из хранилища учетных данных.
 
 
-
 const { username: clientId, password: clientSecret } = await credentialVaultClient.getCredentialsDetails({
-
 
 
 id: credentialId,
 
 
-
 }).catch(error => 
-
 
 
 console.error(`[CredentialVaultError] Не удалось получить учетные данные: ${error.message}`);
 
 
-
 throw new Error("Невозможно получить учетные данные из хранилища.");
 
 
-
 )
-
 
 
 if (!clientId || !clientSecret) 
 
 
-
 throw new Error("[CredentialVaultError] Отсутствует clientId или clientSecret из полученных учетных данных.");
 
 
-
 )
-
 
 
 // Аутентифицируйтесь и получите токен доступа.
 
 
-
 const accessToken = await authenticateToDynatrace(clientId, clientSecret);
-
 
 
 // Выполните запрос API.
 
 
-
 const response = await fetch(url, 
-
 
 
 method: "POST",
 
 
-
 headers: 
-
 
 
 "Content-Type": "application/json",
 
 
-
 Accept: "application/json",
-
 
 
 Authorization: `Bearer ${accessToken}`,
 
 
-
 },
-
 
 
 body: JSON.stringify({
 
 
-
 query,
-
 
 
 requestTimeoutMilliseconds: 60000,
 
 
-
 enablePreview: true,
-
 
 
 }),
 
 
-
 )
-
 
 
 if (!response.ok) 
 
 
-
 throw new Error(`[HTTPError] Вызов API не удался со статусом ${response.status}: ${response.statusText}`)
 
 
-
 )
-
 
 
 return await response.json()
 
 
-
 } catch (error) 
-
 
 
 console.error(`[FetchError] ${error.message}`)
 
 
-
 throw error
 
 
-
 )
 
 
-
 )
-
 
 
 /**
 
 
-
 * Основная функция для выполнения запроса и возврата результатов из Dynatrace.
-
 
 
 * @returns {Promise<any>} - Результат запроса.
 
 
-
 */
-
 
 
 export default async function fetchDynatraceData() 
 
 
-
 const credentialId = "CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX"; // Замените на свой идентификатор учетных данных.
-
 
 
 const url = "https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute"; // Замените на URL-адрес API.
 
 
-
 const query = "fetch logs | limit 1"; // Замените на свой запрос.
-
 
 
 try 
 
 
-
 const { result } = await fetchFromDynatrace(credentialId, url, query)
-
 
 
 return result
 
 
-
 } catch (error) 
-
 
 
 console.error(`[MainFunctionError] ${error.message}`)
 
 
-
 return null // Верните null или обработайте благополучно.
 
 
-
 )
-
 
 
 ```

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:19.816559
 
 # Данные, собираемые при мониторинге баз данных Dynatrace
 
-# Данные, собираемые при мониторинге баз данных Dynatrace
 
 * Последняя версия Dynatrace
 * Справочник
@@ -39,7 +38,6 @@ scraped: 2026-03-06T21:24:19.816559
 
 ```
 SELECT * FROM customers WHERE email = 'john.doe@example.com';
-
 
 
 SELECT * FROM customers WHERE email = 'J.I.Jane@other_example.com';

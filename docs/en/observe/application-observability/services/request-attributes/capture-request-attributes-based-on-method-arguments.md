@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:04.069896
 
 # Capture request attributes based on method arguments
 
-# Capture request attributes based on method arguments
 
 * Latest Dynatrace
 * 6-min read

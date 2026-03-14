@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:51.891771
 
 # Отправка уведомлений Dynatrace в Microsoft Teams
 
-# Отправка уведомлений Dynatrace в Microsoft Teams
 
 * Classic
 * Чтение займёт 2 минуты
@@ -39,17 +38,13 @@ Deprecation
      {
 
 
-
      "title":"{ProblemTitle}",
-
 
 
      "text":"{ProblemDetailsHTML}",
 
 
-
      "themeColor":"EA4300"
-
 
 
      }

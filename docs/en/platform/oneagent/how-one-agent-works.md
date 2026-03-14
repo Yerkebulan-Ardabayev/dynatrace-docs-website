@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:37.246688
 
 # How OneAgent works
 
-# How OneAgent works
 
 * Latest Dynatrace
 * 2-min read

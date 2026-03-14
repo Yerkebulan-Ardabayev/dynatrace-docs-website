@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:30:00.075945
 
 # Accessibility
 
-# Accessibility
 
 * Latest Dynatrace
 * 1-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:50.225002
 
 # OneAgent file aging mechanism
 
-# OneAgent file aging mechanism
 
 * Latest Dynatrace
 * 6-min read

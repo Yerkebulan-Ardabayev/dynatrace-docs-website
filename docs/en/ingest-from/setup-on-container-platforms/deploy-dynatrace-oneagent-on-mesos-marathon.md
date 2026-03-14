@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:40.651397
 
 # Deploy OneAgent on Mesos/Marathon
 
-# Deploy OneAgent on Mesos/Marathon
 
 * Latest Dynatrace
 * 2-min read
@@ -74,129 +73,97 @@ This is your `ONEAGENT_INSTALLER_SCRIPT_URL`.
    cat <<- EOF > dynatrace-oneagent.json
 
 
-
    {
-
 
 
    "id": "dynatrace-oneagent",
 
 
-
    "cpus": 0.1,
-
 
 
    "mem": 256,
 
 
-
    "instances": REPLACE_WITH_NUMBER_OF_NODES,
-
 
 
    "constraints": [["hostname", "UNIQUE"], ["hostname", "GROUP_BY"]],
 
 
-
    "container": {
-
 
 
    "type": "DOCKER",
 
 
-
    "volumes": [
-
 
 
    {
 
 
-
    "containerPath": "/mnt/root",
-
 
 
    "hostPath": "/",
 
 
-
    "mode": "RW"
 
 
-
    }
-
 
 
    ],
 
 
-
    "docker": {
-
 
 
    "image": "dynatrace/oneagent",
 
 
-
    "forcePullImage": true,
-
 
 
    "network": "HOST",
 
 
-
    "privileged": true,
-
 
 
    "parameters": [
 
 
-
    { "key": "pid", "value": "host" },
-
 
 
    { "key": "ipc", "value": "host" },
 
 
-
    { "key": "env", "value": "ONEAGENT_INSTALLER_SCRIPT_URL=REPLACE_WITH_YOUR_URL" },
-
 
 
    { "key": "env", "value": "ONEAGENT_INSTALLER_SKIP_CERT_CHECK=false "}
 
 
-
    ]
 
 
-
    }
-
 
 
    },
 
 
-
    "args": [
-
 
 
    ]
 
 
-
    }
-
 
 
    EOF

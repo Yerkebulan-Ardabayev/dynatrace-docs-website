@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:53.492399
 
 # Adjust the sensitivity of anomaly detection for infrastructure
 
-# Adjust the sensitivity of anomaly detection for infrastructure
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:31:54.613136
 
 # Metric key events
 
-# Metric key events
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:35.528815
 
 # Set up Dynatrace on Heroku
 
-# Set up Dynatrace on Heroku
 
 * Latest Dynatrace
 * 6-min read
@@ -46,25 +45,19 @@ To integrate Dynatrace OneAgent into your existing application, you need to add 
 # Add the Dynatrace buildpack
 
 
-
 heroku buildpacks:add https://github.com/Dynatrace/heroku-buildpack-dynatrace.git#<version>
-
 
 
 # Set required credentials to your Dynatrace environment
 
 
-
 heroku config:set DT_TENANT=<environmentID>
-
 
 
 heroku config:set DT_API_TOKEN=<token>
 
 
-
 # Deploy to Heroku
-
 
 
 git push heroku master
@@ -100,17 +93,13 @@ Also, youâre no longer required to add the following statement as the first
 try {
 
 
-
 require('@dynatrace/oneagent')();
-
 
 
 } catch(err) {
 
 
-
 console.log(err.toString());
-
 
 
 }

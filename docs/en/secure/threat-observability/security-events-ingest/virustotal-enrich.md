@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:48.585892
 
 # Enrich threat observables with VirusTotal
 
-# Enrich threat observables with VirusTotal
 
 * Latest Dynatrace
 * How-to guide

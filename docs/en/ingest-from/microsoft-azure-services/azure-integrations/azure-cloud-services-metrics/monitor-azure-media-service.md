@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:36:33.736981
 
 # Azure Media Services monitoring
 
-# Azure Media Services monitoring
 
 * Latest Dynatrace
 * How-to guide

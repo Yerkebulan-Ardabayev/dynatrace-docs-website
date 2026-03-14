@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:26.299483
 
 # Инструментирование мобильных приложений с помощью Dynatrace Xamarin NuGet пакета
 
-# Инструментирование мобильных приложений с помощью Dynatrace Xamarin NuGet пакета
 
 * Classic
 * Практическое руководство
@@ -116,13 +115,11 @@ iOS
 using Dynatrace.Xamarin;
 
 
-
 Agent.Instance.Start();
 ```
 
 ```
 using Dynatrace.Xamarin;
-
 
 
 Agent.Instance.Start();
@@ -142,17 +139,13 @@ Agent.Instance.Start();
 using Dynatrace.Xamarin;
 
 
-
 Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-
 
 
 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
 
-
 Xamarin.Forms.DependencyService.RegisterSingleton<IDynatrace>(Agent.Instance);
-
 
 
 LoadApplication(new App());
@@ -162,7 +155,6 @@ LoadApplication(new App());
 
 ```
 using Dynatrace.Xamarin;
-
 
 
 IDynatrace dynatrace = DependencyService.Get<IDynatrace>();
@@ -180,61 +172,46 @@ Xamarin.Forms 4.6.0 и более ранние версии
 public partial class App : Application
 
 
-
 {
-
 
 
 static readonly Dictionary<Type, Func<object, object>> factories = new Dictionary<Type, Func<object, object>>();
 
 
-
 public App()
 
 
-
 {
-
 
 
 InitializeComponent();
 
 
-
 DependencyResolver.ResolveUsing((type, args) => factories.ContainsKey(type) ? factories[type].Invoke(args) : null);
-
 
 
 IDynatrace Dynatrace = DependencyService.Resolve<IDynatrace>();
 
 
-
 Dynatrace.Start(null);
 
 
-
 }
-
 
 
 public static void Register(Type type, Func<object, object> factory)
 
 
-
 {
-
 
 
 factories[type] = factory;
 
 
-
 }
 
 
-
 ...
-
 
 
 }
@@ -246,45 +223,34 @@ factories[type] = factory;
 public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 
 
-
 {
-
 
 
 protected override void OnCreate(Bundle savedInstanceState)
 
 
-
 {
 
 
-
 ...
-
 
 
 Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
 
-
 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-
 
 
 App.Register(typeof(IDynatrace), (o) => Agent.Instance);
 
 
-
 LoadApplication(new App());
-
 
 
 }
 
 
-
 ...
-
 
 
 }
@@ -298,9 +264,7 @@ LoadApplication(new App());
 using Dynatrace.Xamarin;
 
 
-
 var httpHandler = Agent.Instance.GetHttpMessageHandler();
-
 
 
 var httpClient = new HttpClient(httpHandler);
@@ -312,13 +276,10 @@ var httpClient = new HttpClient(httpHandler);
 using Dynatrace.Xamarin;
 
 
-
 var defaultHttpHandler = new HttpClientHandler();
 
 
-
 var httpHandler = Agent.Instance.GetHttpMessageHandler(defaultHttpHandler);
-
 
 
 var httpClient = new HttpClient(httpHandler);
@@ -342,25 +303,19 @@ var httpClient = new HttpClient(httpHandler);
    {
 
 
-
    "android": {
-
 
 
    "autoStart": {
 
 
-
    "enabled": false
 
 
-
    }
 
 
-
    }
-
 
 
    }
@@ -370,17 +325,13 @@ var httpClient = new HttpClient(httpHandler);
    {
 
 
-
    "ios": {
-
 
 
    "DTXAutoStart": false
 
 
-
    }
-
 
 
    }
@@ -397,7 +348,6 @@ var httpClient = new HttpClient(httpHandler);
    using Dynatrace.Xamarin;
 
 
-
    Agent.Instance.Start(new ConfigurationBuilder("<insertBeaconURL>","<insertApplicationID>") .BuildConfiguration());
    ```
 
@@ -405,17 +355,13 @@ var httpClient = new HttpClient(httpHandler);
    using Dynatrace.Xamarin;
 
 
-
    var configDict = new Dictionary<string, object>();
-
 
 
    configDict.Add("DTXApplicationID", "<insertApplicationID>");
 
 
-
    configDict.Add("DTXBeaconURL", "<insertBeaconURL");
-
 
 
    Agent.Instance.Start(configDict);
@@ -431,13 +377,10 @@ var httpClient = new HttpClient(httpHandler);
 using Dynatrace.Xamarin;
 
 
-
 var myAction = Agent.Instance.EnterAction("Tap on Confirm");
 
 
-
 //Perform the action and whatever else is needed.
-
 
 
 myAction.LeaveAction();
@@ -459,21 +402,16 @@ myAction.LeaveAction();
 using Dynatrace.Xamarin;
 
 
-
 var myAction = Agent.Instance.EnterAction("Tap on Confirm");
-
 
 
 var mySubAction = myAction.EnterAction("Tap on Confirm again");
 
 
-
 //Perform the action and whatever else is needed.
 
 
-
 mySubAction.LeaveAction();
-
 
 
 myAction.LeaveAction();
@@ -493,13 +431,10 @@ myAction.LeaveAction();
 using Dynatrace.Xamarin;
 
 
-
 var myAction = Agent.Instance.EnterAction("Tap on Confirm");
 
 
-
 // Action is canceled
-
 
 
 myAction.Cancel();
@@ -515,109 +450,82 @@ myAction.Cancel();
 using Dynatrace.Xamarin;
 
 
-
 // Create an action
-
 
 
 var webAction = Agent.Instance.EnterAction(actionName: "WebRequest Action");
 
 
-
 // Generate a new unique tag associated with the web request action
-
 
 
 string requestTag = webAction.GetRequestTag(url);
 
 
-
 string requestTagHeader = webAction.GetRequestTagHeader();
-
 
 
 // Place the Dynatrace HTTP header on your web request
 
 
-
 httpClient.DefaultRequestHeaders.Add(requestTagHeader, requestTag);
-
 
 
 // Generate a WebRequestTiming object based on the unique tag
 
 
-
 WebRequestTiming timing = (WebRequestTiming)Agent.Instance.GetWebRequestTiming(requestTag, url);
-
 
 
 // Start web request timing before the HTTP request is sent
 
 
-
 timing.StartWebRequestTiming();
-
 
 
 try
 
 
-
 {
-
 
 
 var response = await httpClient.GetAsync(url);
 
 
-
 // Stop web request timing when the HTTP response is received and the response body is obtained
-
 
 
 timing.StopWebRequestTiming(url, (int)response.StatusCode, response.ReasonPhrase);
 
 
-
 }
-
 
 
 catch (HttpRequestException exception)
 
 
-
 {
-
 
 
 // Stop web request timing when a connection exception occurs
 
 
-
 timing.StopWebRequestTiming(url, -1, exception.ToString());
-
 
 
 }
 
 
-
 finally
-
 
 
 {
 
 
-
 // Leave an action
 
 
-
 webAction.LeaveAction();
-
 
 
 }
@@ -637,9 +545,7 @@ webAction.LeaveAction();
 ReportValue(valueName: string, value: int);
 
 
-
 ReportValue(valueName: string, value: double);
-
 
 
 ReportValue(valueName: string, value: string);
@@ -651,13 +557,10 @@ ReportValue(valueName: string, value: string);
 using Dynatrace.Xamarin;
 
 
-
 var myAction = Agent.Instance.EnterAction("Tap on Confirm");
 
 
-
 myAction.ReportValue("Customer type", "Gold");
-
 
 
 myAction.LeaveAction();
@@ -701,7 +604,6 @@ ReportError(errorName: string, errorCode: number);
 using Dynatrace.Xamarin;
 
 
-
 Agent.Instance.ReportErrorStacktrace("Error_Class", "Error_Value", "Error_Reason", "Error_Stacktrace");
 ```
 
@@ -713,7 +615,6 @@ Agent.Instance.ReportErrorStacktrace("Error_Class", "Error_Value", "Error_Reason
 using Dynatrace.Xamarin;
 
 
-
 Agent.Instance.ReportCrash("CrashWithoutException", "Crash_Reason", "Crash_Stacktrace");
 ```
 
@@ -721,7 +622,6 @@ Agent.Instance.ReportCrash("CrashWithoutException", "Crash_Reason", "Crash_Stack
 
 ```
 using Dynatrace.Xamarin;
-
 
 
 Agent.Instance.ReportCrashWithException("CrashWithExceptionObj", exception);
@@ -754,53 +654,40 @@ Dynatrace SaaS версии 1.253+
 using Dynatrace.Xamarin;
 
 
-
 var attributes = new Dictionary<string, JsonValue>();
-
 
 
 attributes.Add("event.name", "Confirmed Booking");
 
 
-
 attributes.Add("screen", "booking-confirmation");
-
 
 
 attributes.Add("product", "Danube Anna Hotel");
 
 
-
 attributes.Add("amount", 358.35);
-
 
 
 attributes.Add("currency", "USD");
 
 
-
 attributes.Add("reviewScore", 4.8);
-
 
 
 attributes.Add("arrivalDate", "2022-11-05");
 
 
-
 attributes.Add("departureDate", "2022-11-15");
-
 
 
 attributes.Add("journeyDuration", 10);
 
 
-
 attributes.Add("adultTravelers", 2);
 
 
-
 attributes.Add("childrenTravelers", 0);
-
 
 
 Agent.Instance.SendBizEvent("com.easytravel.funnel.booking-finished", attributes);
@@ -814,7 +701,6 @@ Agent.Instance.SendBizEvent("com.easytravel.funnel.booking-finished", attributes
 
 ```
 using Dynatrace.Xamarin;
-
 
 
 Agent.Instance.IdentifyUser("John Smith");
@@ -842,7 +728,6 @@ OneAgent для Android версии 237+ OneAgent для iOS версии 235+ 
 using Dynatrace.Xamarin;
 
 
-
 Agent.Instance.EndVisit();
 ```
 
@@ -864,21 +749,16 @@ Agent.Instance.EndVisit();
 using Dynatrace.Xamarin;
 
 
-
 // Get the UserPrivacyOptions object
-
 
 
 UserPrivacyOptions currentOptions = Agent.Instance.GetUserPrivacyOptions();
 
 
-
 // Get the individual settings for DataCollectionLevel and crash reporting
 
 
-
 bool crashOptedIn = Agent.Instance.GetUserPrivacyOptions().CrashReportingOptedIn;
-
 
 
 DataCollectionLevel dataCollectionLevel = Agent.Instance.GetUserPrivacyOptions().DataCollectionLevel;
@@ -894,49 +774,37 @@ DataCollectionLevel dataCollectionLevel = Agent.Instance.GetUserPrivacyOptions()
 using Dynatrace.Xamarin;
 
 
-
 // Creating a new UserPrivacyOptions object requires setting the two parameters of DataCollectionLevel and crash reporting
-
 
 
 UserPrivacyOptions options = new UserPrivacyOptions(DataCollectionLevel.Performance, false);
 
 
-
 // Update the options with the setter
-
 
 
 // Set a data collection level (user allowed you to capture performance and personal data)
 
 
-
 options.DataCollectionLevel = DataCollectionLevel.UserBehavior;
-
 
 
 // Allow crash reporting (user allowed you to collect information on crashes)
 
 
-
 options.CrashReportingOptedIn = true;
-
 
 
 // Get the values of the configuration with the getter
 
 
-
 options.DataCollectionLevel;
-
 
 
 options.CrashReportingOptedIn;
 
 
-
 // Get the UserPrivacyOptions object
-
 
 
 UserPrivacyOptions currentOptions = Agent.Instance.GetUserPrivacyOptions();
@@ -948,9 +816,7 @@ UserPrivacyOptions currentOptions = Agent.Instance.GetUserPrivacyOptions();
 using Dynatrace.Xamarin;
 
 
-
 UserPrivacyOptions options = new UserPrivacyOptions(DataCollectionLevel.UserBehavior, true);
-
 
 
 Agent.Instance.ApplyUserPrivacyOptions(options);
@@ -985,17 +851,13 @@ SetGPSLocation(latitude: double, longitude: double);
   <Project>
 
 
-
   <PropertyGroup>
-
 
 
   <DynatraceConfigurationFile>CUSTOM_PATH/dynatrace.config.json</DynatraceConfigurationFile>
 
 
-
   </PropertyGroup>
-
 
 
   </Project>
@@ -1017,45 +879,34 @@ iOS
 {
 
 
-
 "android": {
-
 
 
 "autoStart": {
 
 
-
 "applicationId": "<insertApplicationID>",
-
 
 
 "beaconUrl": "<insertBeaconURL>"
 
 
-
 },
-
 
 
 "userOptIn": true,
 
 
-
 "agentBehavior": {
-
 
 
 "startupLoadBalancing": true
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -1065,29 +916,22 @@ iOS
 {
 
 
-
 "ios": {
-
 
 
 "DTXApplicationId": "<insertApplicationID>",
 
 
-
 "DTXBeaconUrl": "<insertBeaconURL>",
-
 
 
 "DTXUserOptIn": true,
 
 
-
 "DTXStartupLoadBalancing": true
 
 
-
 }
-
 
 
 }
@@ -1109,45 +953,34 @@ iOS
 {
 
 
-
 "android": {
-
 
 
 "autoStart": {
 
 
-
 "applicationId": "<insertApplicationID>",
-
 
 
 "beaconUrl": "<insertBeaconURL>"
 
 
-
 },
-
 
 
 "userOptIn": true,
 
 
-
 "debug": {
-
 
 
 "agentLogging": true
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -1159,29 +992,22 @@ iOS
 {
 
 
-
 "ios": {
-
 
 
 "DTXApplicationId": "<insertApplicationID>",
 
 
-
 "DTXBeaconUrl": "<insertBeaconURL>",
-
 
 
 "DTXUserOptIn": true,
 
 
-
 "DTXLogLevel": "ALL"
 
 
-
 }
-
 
 
 }
@@ -1201,17 +1027,13 @@ iOS
    <Project>
 
 
-
    <PropertyGroup>
-
 
 
    <DynatraceInstrumentationLogging>true</DynatraceInstrumentationLogging>
 
 
-
    </PropertyGroup>
-
 
 
    </Project>

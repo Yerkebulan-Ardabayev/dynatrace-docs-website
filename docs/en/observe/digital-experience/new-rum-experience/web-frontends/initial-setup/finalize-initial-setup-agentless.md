@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:15.702725
 
 # Finalize the initial setup for your agentless frontend
 
-# Finalize the initial setup for your agentless frontend
 
 * Latest Dynatrace
 * How-to guide

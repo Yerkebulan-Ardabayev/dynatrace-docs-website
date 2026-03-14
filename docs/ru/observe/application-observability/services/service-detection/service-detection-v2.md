@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:31.186176
 
 # Service Detection v2
 
-# Service Detection v2
 
 * Classic
 * Обзор

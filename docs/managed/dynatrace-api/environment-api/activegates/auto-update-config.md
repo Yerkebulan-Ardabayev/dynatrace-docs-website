@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # ActiveGate auto-update configuration API
 
-# ActiveGate auto-update configuration API
 
 * Reference
 * Published Mar 15, 2021

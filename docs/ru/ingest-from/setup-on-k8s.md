@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:49.061055
 
 # Настройка Dynatrace на Kubernetes
 
-# Настройка Dynatrace на Kubernetes
 
 * Latest Dynatrace
 * 2-min read

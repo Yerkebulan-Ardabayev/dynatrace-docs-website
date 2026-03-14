@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:06.981371
 
 # Performance analysis
 
-# Performance analysis
 
 * Classic
 * How-to guide

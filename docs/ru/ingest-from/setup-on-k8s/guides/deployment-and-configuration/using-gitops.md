@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:22.287307
 
 # Управление развертываниями Dynatrace с помощью GitOps
 
-# Управление развертываниями Dynatrace с помощью GitOps
 
 * Последняя версия Dynatrace
 * Чтение: 4 мин
@@ -34,57 +33,43 @@ scraped: 2026-03-06T21:18:22.287307
 apiVersion: argoproj.io/v1alpha1
 
 
-
 kind: Application
-
 
 
 metadata:
 
 
-
 name: dynatrace-operator
-
 
 
 namespace: argocd
 
 
-
 spec:
-
 
 
 project: default
 
 
-
 destination:
-
 
 
 server: https://kubernetes.default.svc
 
 
-
 namespace: dynatrace
-
 
 
 source:
 
 
-
 repoURL: public.ecr.aws/dynatrace
-
 
 
 chart: dynatrace-operator
 
 
-
 targetRevision: 1.0.0
-
 
 
 helm: {}
@@ -109,53 +94,40 @@ CR Application можно применить следующими способа
 apiVersion: argoproj.io/v1alpha1
 
 
-
 kind: Application
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: argocd
 
 
-
 spec:
-
 
 
 project: default
 
 
-
 destination:
-
 
 
 server: https://kubernetes.default.svc
 
 
-
 namespace: dynatrace
-
 
 
 source:
 
 
-
 repoURL: <git-reopository-url>
 
 
-
 targetRevision: <revision>
-
 
 
 path: <path-to-dynakube-dir>
@@ -178,73 +150,55 @@ path: <path-to-dynakube-dir>
 apiVersion: argoproj.io/v1alpha1
 
 
-
 kind: Application
-
 
 
 metadata:
 
 
-
 annotations:
-
 
 
 argocd.argoproj.io/sync-wave: "0"
 
 
-
 name: dynatrace-operator
-
 
 
 namespace: argocd
 
 
-
 spec:
-
 
 
 ...
 
 
-
 ---
-
 
 
 apiVersion: argoproj.io/v1alpha1
 
 
-
 kind: Application
-
 
 
 metadata:
 
 
-
 annotations:
-
 
 
 argocd.argoproj.io/sync-wave: "10"
 
 
-
 name: dynakube
-
 
 
 namespace: argocd
 
 
-
 spec:
-
 
 
 ...
@@ -267,109 +221,82 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 
 
-
 kind: Application
-
 
 
 metadata:
 
 
-
 name: dynatrace
-
 
 
 namespace: argocd
 
 
-
 spec:
-
 
 
 project: default
 
 
-
 destination:
-
 
 
 server: https://kubernetes.default.svc
 
 
-
 namespace: dynatrace
-
 
 
 sources:
 
 
-
 - repoURL: public.ecr.aws/dynatrace
-
 
 
 chart: dynatrace-operator
 
 
-
 targetRevision: 1.0.0
-
 
 
 helm:
 
 
-
 valueFiles:
-
 
 
 - $values/<path-to-dynatrace-operator-values-file>
 
 
-
 - repoURL: <git-repository-url>
 
 
-
 targetRevision: HEAD
-
 
 
 ref: values
 
 
-
 - repoURL: <git-repository-url>
-
 
 
 targetRevision: HEAD
 
 
-
 path: <path-to-dynakube-dir>
-
 
 
 syncPolicy:
 
 
-
 retry: # пример конфигурации повторных попыток; подробности см. в примечании ниже
-
 
 
 limit: 5
 
 
-
 ...
-
 
 
 ...

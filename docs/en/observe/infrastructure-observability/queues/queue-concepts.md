@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:38:09.609161
 
 # Queue concepts
 
-# Queue concepts
 
 * Classic
 * Explanation

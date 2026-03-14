@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:06.328362
 
 # Маскирование конфиденциальных данных в OneAgent
 
-# Маскирование конфиденциальных данных в OneAgent
 
 * Latest Dynatrace
 * Руководство
@@ -139,89 +138,67 @@ scraped: 2026-03-06T21:20:06.328362
 [
 
 
-
 {
-
 
 
 "schemaId":"builtin:logmonitoring.sensitive-data-masking-settings",
 
 
-
 "scope":"tenant",
-
 
 
 "value":{
 
 
-
 "config-item-title":"Added from REST API",
-
 
 
 "masking":{
 
 
-
 "expression":"run (\\d+?)",
-
 
 
 "type":"STRING",
 
 
-
 "replacement":"testing"
-
 
 
 },
 
 
-
 "matchers":[
-
 
 
 {
 
 
-
 "attribute":"log.source",
-
 
 
 "operator":"MATCHES",
 
 
-
 "values":[
-
 
 
 "/var/log/syslog"
 
 
+]
+
+
+}
+
 
 ]
 
 
-
 }
 
 
-
-]
-
-
-
 }
-
-
-
-}
-
 
 
 ]
@@ -295,73 +272,55 @@ Username: John Doe, 011897d555c81e88f286cbb74c59f4ad99ec2f8d
 {
 
 
-
 "masking": {
-
 
 
 "expression": "(\\d{4}-\\d{4}-\\d{4}-\\d{4})",
 
 
-
 "type": "STRING",
-
 
 
 "replacement": "MaskedCreditCardNumber"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 ],
-
 
 
 "enabled": true
 
 
-
 },
-
 
 
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA256"
-
 
 
 },
 
 
-
 "matchers": [
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -375,81 +334,61 @@ Username: John Doe, 011897d555c81e88f286cbb74c59f4ad99ec2f8d
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA256"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "/path/to/error.log"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -461,117 +400,88 @@ Username: John Doe, 011897d555c81e88f286cbb74c59f4ad99ec2f8d
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA256"
-
 
 
 },
 
 
-
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "/path/to/error.log"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
-
 
 
 "enabled": true
 
 
-
 },
 
 
-
 {
-
 
 
 "masking": {
 
 
-
 "expression": "email: (.*),",
-
 
 
 "type": "SHA256"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -583,105 +493,79 @@ Username: John Doe, 011897d555c81e88f286cbb74c59f4ad99ec2f8d
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA256"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "/path/to/error*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "*log"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -693,81 +577,61 @@ Username: John Doe, 011897d555c81e88f286cbb74c59f4ad99ec2f8d
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA256"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "/path/to/error*", "*log"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -783,117 +647,88 @@ Username: John Doe, 011897d555c81e88f286cbb74c59f4ad99ec2f8d
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA256"
-
 
 
 },
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-MYSQL"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
-
 
 
 "enabled": true
 
 
-
 },
 
 
-
 {
-
 
 
 "masking": {
 
 
-
 "expression": "email: (.*),",
-
 
 
 "type": "SHA256"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -905,57 +740,43 @@ Username: John Doe, 011897d555c81e88f286cbb74c59f4ad99ec2f8d
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA256"
-
 
 
 },
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
-
 
 
 "values": [
 
 
-
 "PROCESS_GROUP-APACHEID", "PROCESS_GROUP-MYSQL"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }

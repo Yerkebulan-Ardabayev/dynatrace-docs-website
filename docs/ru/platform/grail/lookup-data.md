@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:22:43.067716
 
 # Данные подстановки в Grail
 
-# Данные подстановки в Grail
 
 * Последняя версия Dynatrace
 * Объяснение
@@ -64,9 +63,7 @@ Dynatrace хранит данные подстановки в виде табл�
 ALLOW storage:files:read WHERE storage:file-path startsWith "/lookups/";
 
 
-
 ALLOW storage:files:write WHERE storage:file-path startsWith "/lookups/";
-
 
 
 ALLOW storage:files:delete WHERE storage:file-path startsWith "/lookups/";
@@ -125,13 +122,10 @@ API предоставляет эндпоинт `/platform/storage/resource-stor
 Code,Category,Message
 
 
-
 100,informational,Continue
 
 
-
 101,informational,Switching Protocols
-
 
 
 ...
@@ -145,9 +139,7 @@ Code,Category,Message
 {"code": 100, "category": "informational", "message": "Continue"}
 
 
-
 {"code": 101, "category": "informational", "message": "Switching Protocols"}
-
 
 
 ...
@@ -163,37 +155,28 @@ Code,Category,Message
 curl -X 'POST' \
 
 
-
 'https://<environment>.apps.dynatrace.com/platform/storage/resource-store/v1/files/tabular/lookup:test-pattern' \
-
 
 
 -H 'accept: */*' \
 
 
-
 -H 'Content-Type: multipart/form-data' \
-
 
 
 -H 'Authorization: Bearer <platformtoken>' \
 
 
-
 -F 'request={
-
 
 
 "parsePattern":"JSON:json",
 
 
-
 "lookupField":"code"
 
 
-
 }' \
-
 
 
 -F 'content=@http_status_codes.jsonl'
@@ -221,49 +204,37 @@ API предоставляет эндпоинт `/platform/storage/resource-stor
 curl -X 'POST' \
 
 
-
 'https://<environment>.apps.dynatrace.com/platform/storage/resource-store/v1/files/tabular/lookup:upload' \
-
 
 
 -H 'accept: */*' \
 
 
-
 -H 'Content-Type: multipart/form-data' \
-
 
 
 -H 'Authorization: Bearer <platformtoken>' \
 
 
-
 -F 'request={
-
 
 
 "parsePattern":"JSON:json",
 
 
-
 "lookupField":"code",
-
 
 
 "filePath":"/lookups/http_status_codes",
 
 
-
 "displayName":"My lookup data",
-
 
 
 "description":"Description of my lookup data"
 
 
-
 }' \
-
 
 
 -F 'content=@http_status_codes.jsonl'
@@ -279,21 +250,16 @@ curl -X 'POST' \
 curl -X 'POST' \
 
 
-
 'https://<environment>.apps.dynatrace.com/platform/storage/resource-store/v1/files:delete' \
-
 
 
 -H 'accept: */*' \
 
 
-
 -H 'Content-Type: application/json' \
 
 
-
 -H 'Authorization: Bearer <platformtoken>' \
-
 
 
 -d '{"filePath": "/lookups/http_status_codes"}'
@@ -323,13 +289,10 @@ load "/lookups/http_status_codes"
 fetch spans
 
 
-
 | lookup [ load "/lookups/http_status_codes" ],
 
 
-
     sourcefield: http.response.status_code,
-
 
 
     lookupField: code

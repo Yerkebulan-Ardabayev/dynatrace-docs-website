@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:37.690091
 
 # Monaco configuration YAML file structure
 
-# Monaco configuration YAML file structure
 
 * Latest Dynatrace
 * Reference
@@ -21,37 +20,28 @@ Here is a basic example of an SLO `configs` YAML file:
 configs:
 
 
-
 - id: newSLO
-
 
 
 type: slo-v2
 
 
-
 config:
-
 
 
 parameters:
 
 
-
 target: 95
-
 
 
 title: myNewSLO
 
 
-
 entityScope: HOST-#######
 
 
-
 template: slo-cpu-usage.json
-
 
 
 skip: false
@@ -63,69 +53,52 @@ Here is a basic example of an SLO `slo-cpu-usage.json` YAML file:
 {
 
 
-
 "name": "{{ .title }}",
-
 
 
 "description": "test SLO for template test",
 
 
-
 "tags": [],
-
 
 
 "customSli": {
 
 
-
 "filterSegments": [],
-
 
 
 "indicator": "timeseries sli=avg(dt.host.cpu.usage)\n, by: { \"{{ .entityScope }}\" }
 
 
-
 \n  , filter: in(dt.entity.host, { $hosts })\n  | fieldsAdd entityName(dt.entity.host)"
-
 
 
 },
 
 
-
 "criteria": [
-
 
 
 {
 
 
-
 "target": {{ .target }},
-
 
 
 "timeframeFrom": "now-7d",
 
 
-
 "timeframeTo": "now",
-
 
 
 "warning": 99
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -242,29 +215,22 @@ Any new lines, special characters such as double quotes, are escaped.
 parameters:
 
 
-
 name: "Dev"
-
 
 
 example1: "This is \\n already escaped."
 
 
-
 example2: "This will \n be escaped."
-
 
 
 example3: This "will" be escaped too.
 
 
-
 text: |
 
 
-
 This will also
-
 
 
 be escaped.
@@ -339,25 +305,19 @@ An example of setting the `value` parameter:
 parameters:
 
 
-
 threshold: 15
-
 
 
 complexThreshold:
 
 
-
 type: value
-
 
 
 value:
 
 
-
 amount: 15
-
 
 
 unit: sec
@@ -392,29 +352,22 @@ The following example defines an `owner` and `target` parameter:
   parameters:
 
 
-
   owner:
 
 
-
   type: environment
-
 
 
   name: OWNER
 
 
-
   default: "-"
-
 
 
   target:
 
 
-
   type: environment
-
 
 
   name: TARGET
@@ -440,97 +393,73 @@ To use the parameter reference type, provide the following required fields:
   configs:
 
 
-
   - id: myservice-srg-validation-workflow
-
 
 
   config:
 
 
-
   name: CasC-sample myService Performance Quality Gate Validation
-
 
 
   parameters:
 
 
-
   event_filter_service:
-
 
 
   value: myService
 
 
-
   type: value
-
 
 
   event_filter_stage:
 
 
-
   value: prod
 
 
-
   type: value
-
 
 
   event_filter_gate:
 
 
-
   value: performance gate
-
 
 
   type: value
 
 
-
   guardianid:
-
 
 
   configId: myservice-guardian
 
 
-
   configType: app:dynatrace.site.reliability.guardian:guardians
-
 
 
   property: id
 
 
-
   type: reference
-
 
 
   project: other-project
 
 
-
   template: myservice-srg-validation-workflow.json
-
 
 
   skip: false
 
 
-
   type:
 
 
-
   automation:
-
 
 
   resource: workflow
@@ -559,21 +488,16 @@ This can be used to simplify referencing configurations within the same project.
 parameters:
 
 
-
 mz_id:
-
 
 
 type: reference
 
 
-
 configType: management-zone
 
 
-
 configId: main
-
 
 
 property: id
@@ -593,25 +517,19 @@ Below is a complete sample using shorthand references:
   configs:
 
 
-
   - id: main
-
 
 
   type:
 
 
-
   api: management-zone
-
 
 
   config:
 
 
-
   name: "Main zone"
-
 
 
   template: "zone.json"
@@ -622,25 +540,19 @@ Below is a complete sample using shorthand references:
   configs:
 
 
-
   - id: development
-
 
 
   type:
 
 
-
   api: management-zone
-
 
 
   config:
 
 
-
   name: "Development zone"
-
 
 
   template: "zone.json"
@@ -651,65 +563,49 @@ Below is a complete sample using shorthand references:
   configs:
 
 
-
   - id: a_dashboard
-
 
 
   type:
 
 
-
   api: dashboard
-
 
 
   config:
 
 
-
   name: "Overview dashboard"
 
 
-
   template: "dashboard.json"
-
 
 
   - id: overview
 
 
-
   type:
-
 
 
   api: dashboard
 
 
-
   config:
-
 
 
   name: "Overview dashboard"
 
 
-
   template: "dashboard.json"
-
 
 
   parameters:
 
 
-
   zoneId: ["infrastructure", "management-zone", "main", "id"]
 
 
-
   devZoneId: ["management-zone", "development", "id"] # inferred project 'development'
-
 
 
   otherDashboard: ["a_dashboard", "id"] # inferred project 'development' and type 'dashboard'
@@ -733,41 +629,31 @@ An example of using a `compound` parameter:
 parameters:
 
 
-
 example:
-
 
 
 type: compound
 
 
-
 format: "{{ .resource.name }}: {{ .resource.percent }}%"
-
 
 
 references:
 
 
-
 - resource
-
 
 
 progress:
 
 
-
 type: value
-
 
 
 value:
 
 
-
 name: "Health"
-
 
 
 percent: 40
@@ -784,57 +670,43 @@ An example of using a compound parameter:
 parameters:
 
 
-
 example:
-
 
 
 type: compound
 
 
-
 format: "{{ .user }}'s dashboard is {{ .status }}"
-
 
 
 references:
 
 
-
 - user
-
 
 
 - status
 
 
-
 user:
-
 
 
 type: environment
 
 
-
 name: USER_NAME
-
 
 
 status:
 
 
-
 type: reference
-
 
 
 configType: dashboarddocument
 
 
-
 configId: my-dashboard
-
 
 
 property: status
@@ -852,53 +724,40 @@ An example of using a `list` parameter:
 Configs:
 
 
-
 - id: myservice-slo-availability
-
 
 
 config:
 
 
-
 name: CasC-sample myService availability
-
 
 
 parameters:
 
 
-
 service_id:
-
 
 
 name: SERVICE_ID
 
 
-
 type: environment
-
 
 
 tags: #INPUT: Customize your SLO with tags
 
 
-
 type: list
-
 
 
 values: ["service:myService", "dt.owner:myTeam"]
 
 
-
 template: myservice-slo-availability.json
 
 
-
 skip: false
-
 
 
 type: slo-v2
@@ -910,61 +769,46 @@ An example of using a `list` parameter and a JSON template called myservice-slo-
 {
 
 
-
 "criteria": [
-
 
 
 {
 
 
-
 "target": 95,
-
 
 
 "timeframeFrom": "now-7d",
 
 
-
 "timeframeTo": "now"
-
 
 
 }
 
 
-
 ],
-
 
 
 "customSli": {
 
 
-
 "filterSegments": [],
-
 
 
 "indicator": "timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }\n  , by: { dt.entity.service }\n  , filter: { in (dt.entity.service, { \"{{ .service_id }}\" }) }\n| fieldsAdd sli=(((total[]-failures[])/total[])*(100))\n| fieldsAdd entityName(dt.entity.service)\n| fieldsRemove total, failures"
 
 
-
 },
-
 
 
 "description": "Measures the proportion of successful service requests over time.",
 
 
-
 "name": "{{ .name }}",
 
 
-
 "tags": {{ .tags }}
-
 
 
 }
@@ -987,25 +831,19 @@ An example of using a `file` parameter:
 parameters:
 
 
-
 comment: "// hello special comment"
-
 
 
 myWf:
 
 
-
 type: file        # parameter type "file"
-
 
 
 path: "myWf.js"   # relative path to the file
 
 
-
 references:       # other parameters names referenced in the content of the file
-
 
 
 - comment
@@ -1053,97 +891,73 @@ In this example, a configuration gets some special configuration applied for two
 configs:
 
 
-
 - id: test-dashboard
-
 
 
 type:
 
 
-
 api: dashboard
-
 
 
 config:
 
 
-
 name: Test Dashboard
-
 
 
 template: dashboard.json
 
 
-
 parameters:
-
 
 
 owner: Test User
 
 
-
 content: "Some Text ..."
-
 
 
 environmentOverrides:
 
 
-
 - environment: dev-env-42
 
 
-
 override:
-
 
 
 name: Special Dev Dashboard
 
 
-
 parameters:
-
 
 
 content: "Some even better Text!"
 
 
-
 - environment: staging-env-21
 
 
-
 override:
-
 
 
 name: Special Staging Dashboard
 
 
-
 parameters:
-
 
 
 content: "Some much better Text!"
 
 
-
 groupOverrides:
-
 
 
 - group: production-environments
 
 
-
 override:
-
 
 
 skip: true

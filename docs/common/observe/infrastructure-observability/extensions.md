@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Extensions
 
-# Extensions
 
 * Latest Dynatrace
 * Reference
@@ -17,17 +16,6 @@ Extensions help you gain deeper insights into your environment and enhance your 
 
 Explore available extensions, narrow results using the filters (data source, category, technology, and vendor), and select an extension to view its detailed documentation, configuration steps, and use cases.
 
-Filter by
-
-
-11yText{z-index:9999;border:0;clip:rect(1px, 1px, 1px, 1px);height:1px;width:1px;position:absolute;overflow:hidden;padding:0;white-space:nowrap;}
-
-.css-14oxtc6{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:grid;-webkit-flex:1;-ms-flex:1;flex:1;-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-overflow-scrolling:touch;position:relative;overflow:hidden;box-sizing:border-box;}
-
-
-Select an option
-
-Type to filter
 
 Unable to render DataTable. Check configuration.
 

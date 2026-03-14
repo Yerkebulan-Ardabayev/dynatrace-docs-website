@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:30:20.410674
 
 # Validate integration
 
-# Validate integration
 
 * Classic
 * Troubleshooting
@@ -27,7 +26,6 @@ To get extensive log output on Lambda, add the variables below.
   DT_LOGGING_DESTINATION: stdout
 
 
-
   DT_LOGGING_NODEJS_FLAGS: Exporter=true,LambdaSensor=true
   ```
 * For **Python**
@@ -36,14 +34,12 @@ To get extensive log output on Lambda, add the variables below.
   DT_LOGGING_DESTINATION: stdout
 
 
-
   DT_LOGGING_PYTHON_FLAGS: dynatrace=True
   ```
 * For **Java**
 
   ```
   DT_LOGGING_DESTINATION: stdout
-
 
 
   DT_LOGGING_JAVA_FLAGS: log-Transformer=true,log-OpenTelemetryUtils=true,log-AsyncClassRetransformer=true,log-ClassValue=true

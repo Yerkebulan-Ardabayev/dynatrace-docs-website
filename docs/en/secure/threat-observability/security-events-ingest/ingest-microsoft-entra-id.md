@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:43.477598
 
 # Ingest Microsoft Entra ID sign-in logs
 
-# Ingest Microsoft Entra ID sign-in logs
 
 * Latest Dynatrace
 * How-to guide
@@ -52,7 +51,6 @@ To set up Microsoft Entra ID sign-in log monitoring, follow the steps below.
    matchesValue(cloud.provider, "azure") AND
 
 
-
    matchesPhrase(content, "\"SignInLogs\"")
    ```
 8. Select the newly created pipeline, enter a name for the Dynamic route, and select **Add**.
@@ -65,13 +63,10 @@ Verify the configuration by running the following query in [![Notebooks](https:/
 fetch logs
 
 
-
 | filter cloud.provide == "azure"
 
 
-
 AND isNotNull(audit.action)
-
 
 
 AND isNotNull(authentication.is_multifactor)

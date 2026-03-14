@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:01.027497
 
 # Распространение контекста спана и трассировки в Distributed Traces Classic
 
-# Распространение контекста спана и трассировки в Distributed Traces Classic
 
 * Classic
 * Explanation

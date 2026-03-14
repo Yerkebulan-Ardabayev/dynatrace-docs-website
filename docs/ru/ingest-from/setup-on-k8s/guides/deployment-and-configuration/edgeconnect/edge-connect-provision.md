@@ -34,29 +34,22 @@ EdgeConnect обеспечивает безопасное взаимодейст
    apiVersion: v1
 
 
-
    kind: Secret
-
 
 
    metadata:
 
 
-
    name: edgeconnect-oauth
-
 
 
    namespace: dynatrace
 
 
-
    data:
 
 
-
    oauth-client-id: <base64 encoded client id>
-
 
 
    oauth-client-secret: <base64 encoded client secret>
@@ -75,53 +68,40 @@ EdgeConnect обеспечивает безопасное взаимодейст
    apiVersion: dynatrace.com/v1alpha2
 
 
-
    kind: EdgeConnect
-
 
 
    metadata:
 
 
-
    name: sample-edge-connect-name
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    apiServer: "<environment-id>.apps.dynatrace.com"
 
 
-
    hostPatterns:
-
 
 
    - '*.mycompany.org'
 
 
-
    oauth:
-
 
 
    provisioner: true
 
 
-
    clientSecret: edgeconnect-oauth
 
 
-
    endpoint: https://sso.dynatrace.com/sso/oauth2/token
-
 
 
    resource: urn:dtaccount:<your-account-uuid>

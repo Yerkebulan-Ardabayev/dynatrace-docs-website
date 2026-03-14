@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:52.044078
 
 # Processes
 
-# Processes
 
 * Latest Dynatrace
 * Explanation

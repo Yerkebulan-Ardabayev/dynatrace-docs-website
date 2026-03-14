@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:40.339379
 
 # Vulnerabilities concepts
 
-# Vulnerabilities concepts
 
 * Latest Dynatrace
 * Explanation
@@ -463,9 +462,7 @@ Here's an example DQL query to retrieve vulnerability findings and scans:
 fetch security.events
 
 
-
 | filter event.provider == "Dynatrace"
-
 
 
 | filter event.type == "VULNERABILITY_FINDING" OR event.type == "VULNERABILITY_SCAN"

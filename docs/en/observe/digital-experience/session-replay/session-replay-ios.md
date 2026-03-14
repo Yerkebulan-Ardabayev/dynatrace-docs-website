@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:06.750651
 
 # Configure Session Replay for iOS
 
-# Configure Session Replay for iOS
 
 * Classic
 * How-to guide
@@ -93,7 +92,6 @@ Use the following code to set the masking level to Safe.
 let maskingConfiguration = MaskingConfiguration(maskingLevelType: .safe)
 
 
-
 try? AgentManager.setMaskingConfiguration(maskingConfiguration)
 ```
 
@@ -113,13 +111,10 @@ You can enable or disable rules globally or for the selected components, such as
 try? maskingConfiguration.add(rule: .maskAllImages) // Adds one rule
 
 
-
 try? maskingConfiguration.remove(rule: .maskAllSwitches) // Removes one rule
 
 
-
 try? maskingConfiguration.addAllRules() // Adds all rules
-
 
 
 try? maskingConfiguration.removeAllRules() // Removes all rules
@@ -135,13 +130,10 @@ You can enable or disable masking of the selected views based on their accessibi
 try? maskingConfiguration.addMaskedView(viewIds: \["masked_view_id"\])
 
 
-
 try? maskingConfiguration.removeMaskedView(viewIds: \["masked_view_id"\])
 
 
-
 try? maskingConfiguration.addNonMaskedView(viewIds: \["nonMasked_view_id"\])
-
 
 
 try? maskingConfiguration.removeNonMaskedView(viewIds: \["nonMasked_view_id"\])
@@ -165,17 +157,13 @@ All methods for capturing custom events can throw a TrackCustomEventError.notInM
 do {
 
 
-
 try AgentManager.trackCustomEvent(name: "my_event_name", view: nil)
-
 
 
 } catch {
 
 
-
 print(error)
-
 
 
 }

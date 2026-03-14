@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:51.312648
 
 # User details
 
-# User details
 
 * Classic
 * Explanation

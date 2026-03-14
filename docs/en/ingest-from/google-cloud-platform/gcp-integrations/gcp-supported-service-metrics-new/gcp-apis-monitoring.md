@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:33.909174
 
 # Google Cloud APIs monitoring
 
-# Google Cloud APIs monitoring
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:14.876301
 
 # Uninstall OneAgent on Solaris
 
-# Uninstall OneAgent on Solaris
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:23.371162
 
 # JSON log processing with unescaped nested JSON strings
 
-# JSON log processing with unescaped nested JSON strings
 
 * Latest Dynatrace
 * Explanation
@@ -43,29 +42,22 @@ JSON log pre-processing performs the following steps.
    {
 
 
-
    "content": {
-
 
 
    "loglevel": "ERROR",
 
 
-
    "event": "{\\\"type\\\":\\\"db_error\\\",\\\"code\\\":\\\"CONN_FAIL\\\"}"
-
 
 
    },
 
 
-
    "source": "fluentbit",
 
 
-
    "host.name": "app-server-01"
-
 
 
    }
@@ -77,41 +69,31 @@ JSON log pre-processing performs the following steps.
    {
 
 
-
    "content": {
-
 
 
    "loglevel": "ERROR",
 
 
-
    "event": {
-
 
 
    "type": "db_error",
 
 
-
    "code": "CONN_FAIL"
-
 
 
    }
 
 
-
    },
-
 
 
    "source": "fluentbit",
 
 
-
    "host.name": "app-server-01"
-
 
 
    }
@@ -129,9 +111,7 @@ You can query the unescaped JSON field for precise extraction and filtering log 
   fetch logs
 
 
-
   | fieldsAdd logLevel = jsonField(content, "loglevel")
-
 
 
   | filter logLevel == "ERROR"
@@ -144,9 +124,7 @@ You can query the unescaped JSON field for precise extraction and filtering log 
   fetch logs
 
 
-
   | fieldsAdd eventType = jsonPath(content, "$.event.type")
-
 
 
   | filter eventType == "db_error"

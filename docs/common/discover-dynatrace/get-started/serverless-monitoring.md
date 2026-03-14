@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Serverless monitoring
 
-# Serverless monitoring
 
 * Latest Dynatrace
 * 3-min read

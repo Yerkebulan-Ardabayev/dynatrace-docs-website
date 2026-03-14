@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:35:37.839352
 
 # Data model of the New RUM Experience
 
-# Data model of the New RUM Experience
 
 * Latest Dynatrace
 * Explanation

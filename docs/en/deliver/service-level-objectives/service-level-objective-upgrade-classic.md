@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:42.817794
 
 # Upgrade Classic SLOs
 
-# Upgrade Classic SLOs
 
 * Latest Dynatrace
 * How-to guide
@@ -107,14 +106,12 @@ The SLO DQL query is structured in a certain way to define the SLO and SLI. The 
   | fieldsAdd name = entityName(dt.entity.service)
 
 
-
   | filter in(name, "astroshop-checkoutservice", "astroshop-cartservice", "astroshop-paymentservice", "astroshop-shippingservice", "astroshop-currencyservice", "astroshop-frontend", "astroshop-recommendationservice")
   ```
 * Calculate the SLI.
 
   ```
   | fieldsAdd sli = (((total[] - failures[]) / total[]) * 100)
-
 
 
   | fields timeframe, interval, dt.entity.service, name, sli

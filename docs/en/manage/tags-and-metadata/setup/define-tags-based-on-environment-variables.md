@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:46.653629
 
 # Define tags based on environment variables
 
-# Define tags based on environment variables
 
 * Classic
 * How-to guide

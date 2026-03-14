@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:35:29.081764
 
 # Snowflake Database monitoring configuration
 
-# Snowflake Database monitoring configuration
 
 * Latest Dynatrace
 * Reference
@@ -26,117 +25,88 @@ Example payload to activate the Snowflake Database extension:
 [
 
 
-
 {
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "description": "My SnowFlake DB extension",
 
 
-
 "version": "0.1.1",
-
 
 
 "featureSets": [
 
 
-
 "io",
-
 
 
 "cpu",
 
 
-
 ],
-
 
 
 "sqlSnowflakeRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "sqlserver.org",
-
 
 
 "port": 1521,
 
 
-
 "databaseName":"SNOWFLAKE_SAMPLE_DATA",
-
 
 
 "warehouse":"yourwarehouse",
 
 
-
 "schema":"yourschema",
-
 
 
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "username": "admin",
 
 
-
 "password": "password"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "scope": "ag_group-default"
 
 
-
 }
-
 
 
 ]
@@ -164,13 +134,10 @@ Add a list of feature sets you want to monitor. To report all feature sets, add 
 "featureSets": [
 
 
-
 "cpu",
 
 
-
 "io"
-
 
 
 ]
@@ -184,61 +151,46 @@ You can define up to 20,000 endpoints in a single monitoring configuration in th
 "sqlSnowflakeRemote": {
 
 
-
 "endpoints": [
-
 
 
 {
 
 
-
 "host": "your-snowflake.com",
-
 
 
 "port": 1521,
 
 
-
 "databaseName":"SNOWFLAKE_SAMPLE_DATA",
-
 
 
 "warehouse":"yourwarehouse",
 
 
-
 "schema":"yourschema",
-
 
 
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "username": "admin",
 
 
-
 "password": "password"
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }
@@ -269,17 +221,13 @@ The credential vault authentication type provides a more secure approach to usin
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": true,
 
 
-
 "credentialVaultId": "some-credential-vault-id"
-
 
 
 }

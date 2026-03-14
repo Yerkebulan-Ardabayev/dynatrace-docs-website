@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:30:54.459729
 
 # Vulnerabilities API - POST включение уязвимостей
 
-# Vulnerabilities API - POST включение уязвимостей
 
 * Reference
 * Updated on Sep 25, 2024
@@ -52,25 +51,19 @@ scraped: 2026-03-04T21:30:54.459729
 {
 
 
-
 "comment": "string",
-
 
 
 "reason": "AFFECTED",
 
 
-
 "securityProblemIds": [
-
 
 
 "string"
 
 
-
 ]
-
 
 
 }
@@ -137,89 +130,68 @@ scraped: 2026-03-04T21:30:54.459729
 {
 
 
-
 "summary": [
 
 
-
 {
-
 
 
 "muteStateChangeTriggered": true,
 
 
-
 "reason": "ALREADY_MUTED",
-
 
 
 "securityProblemId": "string"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -235,41 +207,31 @@ scraped: 2026-03-04T21:30:54.459729
 curl -X 'POST' 'https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/unmute' \
 
 
-
 -H 'accept: application/json; charset=utf-8' \
-
 
 
 -H 'Authorization: Api-Token [your_token]' \
 
 
-
 -H 'Content-Type: application/json; charset=utf-8' \
-
 
 
 -d '{
 
 
-
 "comment": "Example unmute bulk",
-
 
 
 "reason": "AFFECTED",
 
 
-
 "securityProblemIds": [
-
 
 
 "2919200225913269102", "4537041069803077238"
 
 
-
 ]
-
 
 
 }'
@@ -287,25 +249,19 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/unmute
 {
 
 
-
 "comment": "Example unmute bulk",
-
 
 
 "reason": "AFFECTED",
 
 
-
 "securityProblemIds": [
-
 
 
 "2919200225913269102", "4537041069803077238"
 
 
-
 ]
-
 
 
 }
@@ -317,45 +273,34 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/unmute
 {
 
 
-
 "summary": [
 
 
-
 {
-
 
 
 "securityProblemId": "2919200225913269102",
 
 
-
 "muteStateChangeTriggered": true
-
 
 
 },
 
 
-
 {
-
 
 
 "securityProblemId": "4537041069803077238",
 
 
-
 "muteStateChangeTriggered": true
-
 
 
 }
 
 
-
 ]
-
 
 
 }

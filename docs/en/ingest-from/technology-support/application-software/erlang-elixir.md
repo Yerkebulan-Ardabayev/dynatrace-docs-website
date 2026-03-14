@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:19.421268
 
 # Erlang/Elixir
 
-# Erlang/Elixir
 
 * Latest Dynatrace
 * Reference

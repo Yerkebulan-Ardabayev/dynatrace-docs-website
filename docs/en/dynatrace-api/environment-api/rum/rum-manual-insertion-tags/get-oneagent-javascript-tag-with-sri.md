@@ -6,7 +6,6 @@ scraped: 2026-03-01T21:25:54.381923
 
 # GET OneAgent JavaScript tag with SRI
 
-# GET OneAgent JavaScript tag with SRI
 
 * Reference
 * Updated on Sep 18, 2025

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:20.221618
 
 # User actions
 
-# User actions
 
 * Classic
 * Explanation

@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:29:54.840473
 
 # NAM monitor metrics
 
-# NAM monitor metrics
 
 * Classic
 * Explanation
@@ -118,9 +117,7 @@ By using the `dt.synthetic.multi_protocol.request.executions` metric and splitti
 Timeseries status = avg(dt.synthetic.multi_protocol.request.executions),
 
 
-
 by:{dt.entity.host, result.status.message},
-
 
 
 filter: dt.entity.multiprotocol_monitor == "MULTIPROTOCOL_MONITOR-5C2F92334DF71A90"
@@ -142,37 +139,28 @@ For `18.x.x.x`, the same number of packets were received as were sent, but for `
 timeseries {
 
 
-
 packets_sent = sum(dt.synthetic.multi_protocol.icmp.packets_sent),
-
 
 
 packets_received= sum(dt.synthetic.multi_protocol.icmp.packets_received)
 
 
-
 },
-
 
 
 by:{request.target_address},
 
 
-
 filter: dt.entity.multiprotocol_monitor == "MULTIPROTOCOL_MONITOR-548C3CD54183CED9"
-
 
 
 AND (
 
 
-
 request.target_address == "18.x.x.x"
 
 
-
 OR request.target_address == "10.x.x.x"
-
 
 
 )
@@ -201,13 +189,10 @@ Note that results of this query can be limited to just successful requests by fi
 timeseries status = sum(dt.synthetic.multi_protocol.request.executions),
 
 
-
 by: {request.target_address, request.tcp_port_number, result.status.message},
 
 
-
 filter: dt.entity.multiprotocol_monitor == "MULTIPROTOCOL_MONITOR-74E68F22FF5E9227"
-
 
 
 //  and result.status.code == 0
@@ -233,9 +218,7 @@ Only ports `22` (SSH) and `8080` (HTTP server) are open, and these are the only 
 timeseries duration = avg(dt.synthetic.multi_protocol.tcp.connection_time),
 
 
-
 by:{dt.entity.host, request.target_address, request.tcp_port_number},
-
 
 
 filter: dt.entity.multiprotocol_monitor == "MULTIPROTOCOL_MONITOR-74E68F22FF5E9227"

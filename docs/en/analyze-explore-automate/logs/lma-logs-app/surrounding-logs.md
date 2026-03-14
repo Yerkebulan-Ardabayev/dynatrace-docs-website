@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:23.170852
 
 # View surrounding logs
 
-# View surrounding logs
 
 * Latest Dynatrace
 * How-to guide

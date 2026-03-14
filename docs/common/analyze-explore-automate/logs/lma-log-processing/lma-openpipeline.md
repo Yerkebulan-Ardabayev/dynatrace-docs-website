@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Log processing with OpenPipeline
 
-# Log processing with OpenPipeline
 
 * Latest Dynatrace
 * Explanation

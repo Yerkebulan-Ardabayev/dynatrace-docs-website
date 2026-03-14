@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:28:51.845671
 
 # Мониторинг Cloud Foundry
 
-# Мониторинг Cloud Foundry
 
 * Latest Dynatrace
 * 1-min read

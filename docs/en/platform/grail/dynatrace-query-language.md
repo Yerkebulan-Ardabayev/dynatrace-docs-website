@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:00.245264
 
 # Dynatrace Query Language
 
-# Dynatrace Query Language
 
 * Latest Dynatrace
 * Reference

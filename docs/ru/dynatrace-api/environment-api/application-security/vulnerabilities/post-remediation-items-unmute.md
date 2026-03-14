@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:54.405045
 
 # Уязвимости API - POST снятие ограничений с элементов исправления
 
-# Уязвимости API - POST снятие ограничений с элементов исправления
 
 * Ссылка
 * Обновлено 25 сентября 2024 г.
@@ -53,25 +52,19 @@ scraped: 2026-03-06T21:35:54.405045
 {
 
 
-
 "comment": "строка",
-
 
 
 "reason": "AFFECTED",
 
 
-
 "remediationItemIds": [
-
 
 
 "строка"
 
 
-
 ]
-
 
 
 }
@@ -138,93 +131,71 @@ scraped: 2026-03-06T21:35:54.405045
 {
 
 
-
 "summary": [
 
 
-
 {
-
 
 
 "muteStateChangeTriggered": true,
 
 
-
 "reason": "ALREADY_MUTED",
-
 
 
 "remediationItemId": "строка"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "строка",
 
 
-
 "message": "строка",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "строка"
 
 
-
 ?
-
 
 
 ],
 
 
-
 "message": "строка"
-
 
 
 ?
 
 
-
 }
-
 
 
 }
@@ -248,17 +219,13 @@ curl -X 'POST' 'https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/2
 -d '{
 
 
-
 "comment": "Пример снятия ограничений с нескольких элементов",
-
 
 
 "reason": "AFFECTED",
 
 
-
 "remediationItemIds": ["PROCESS_GROUP-46C0E12D9B0EF2D9", "PROCESS_GROUP-549E6AD75BD598EC"]
-
 
 
 }'
@@ -276,17 +243,13 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 {
 
 
-
 "comment": "Пример снятия ограничений с нескольких элементов",
-
 
 
 "reason": "AFFECTED",
 
 
-
 "remediationItemIds": ["PROCESS_GROUP-46C0E12D9B0EF2D9", "PROCESS_GROUP-549E6AD75BD598EC"]
-
 
 
 }
@@ -298,49 +261,37 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 {
 
 
-
 "summary": [
 
 
-
 {
-
 
 
 "remediationItemId": "PROCESS_GROUP-46C0E12D9B0EF2D9",
 
 
-
 "muteStateChangeTriggered": true
-
 
 
 ?),
 
 
-
 {
-
 
 
 "remediationItemId": "PROCESS_GROUP-549E6AD75BD598EC",
 
 
-
 "muteStateChangeTriggered": true
 
 
-
 ?
 
 
-
 ?
-
 
 
 ]
-
 
 
 }

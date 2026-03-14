@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:38.897755
 
 # Preset Dynatrace dashboards
 
-# Preset Dynatrace dashboards
 
 * Classic
 * How-to guide

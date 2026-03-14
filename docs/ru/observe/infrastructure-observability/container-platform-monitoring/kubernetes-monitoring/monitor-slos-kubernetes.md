@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:03.440195
 
 # Мониторинг целевых показателей уровня сервиса в Kubernetes/OpenShift
 
-# Мониторинг целевых показателей уровня сервиса в Kubernetes/OpenShift
 
 * Classic
 * 2-min read

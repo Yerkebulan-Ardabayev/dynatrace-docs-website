@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:19.637942
 
 # Dynatrace Hub
 
-# Dynatrace Hub
 
 * Latest Dynatrace
 * App
@@ -175,7 +174,6 @@ Example policy
 
 ```
 ALLOW settings:objects:read, settings:objects:write, settings:schemas:read
-
 
 
 WHERE settings:schemaId = "builtin:hub-channel.subscriptions";

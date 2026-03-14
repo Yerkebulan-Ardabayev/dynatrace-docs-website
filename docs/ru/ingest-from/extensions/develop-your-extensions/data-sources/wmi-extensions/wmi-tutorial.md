@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:28:59.832907
 
 # Руководство по источнику данных WMI
 
-# Руководство по источнику данных WMI
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -45,7 +44,6 @@ scraped: 2026-03-04T21:28:59.832907
 
 ```
 dt extension genca
-
 
 
 dt extension generate-developer-pem -o developer.pem --ca-crt ca.pem --ca-key ca.key --name 'JDoe'

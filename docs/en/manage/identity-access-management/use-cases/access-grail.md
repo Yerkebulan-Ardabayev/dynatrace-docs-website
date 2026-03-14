@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:18.105486
 
 # Grant access to Grail
 
-# Grant access to Grail
 
 * Latest Dynatrace
 * How-to guide
@@ -38,7 +37,6 @@ Dynatrace comes with a set of built-in policies for data access. Their names all
 ALLOW storage:buckets:read WHERE storage:bucket-name STARTSWITH "default_;"
 
 
-
 ALLOW storage:events:read,storage:logs:read,storage:metrics:read,storage:entities:read,storage:bizevents:read,storage:spans:read;
 ```
 
@@ -66,7 +64,6 @@ Each table includes a policy that combines table and bucket access called **Stor
 ALLOW storage:buckets:read WHERE storage:table-name = âlogsâ;
 
 
-
 ALLOW storage:logs:read;
 ```
 
@@ -86,9 +83,7 @@ The **Storage All Grail Data Read** policy grants unfiltered access to all data 
 ALLOW storage:buckets:read;
 
 
-
 ALLOW storage:system:read;
-
 
 
 ALLOW storage:events:read, storage:logs:read, storage:metrics:read, storage:entities:read, storage:bizevents:read,storage:spans:read;

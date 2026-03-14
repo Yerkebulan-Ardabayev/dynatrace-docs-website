@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:49.624600
 
 # Управление расширениями Prometheus
 
-# Управление расширениями Prometheus
 
 * Latest Dynatrace
 * Чтение: 4 мин

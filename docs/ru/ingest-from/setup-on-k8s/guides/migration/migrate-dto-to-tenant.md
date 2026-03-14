@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:30.280689
 
 # Миграция Dynatrace Operator в новую среду
 
-# Миграция Dynatrace Operator в новую среду
 
 * Latest Dynatrace
 * Чтение займёт 2 минуты

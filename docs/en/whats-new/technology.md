@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:54.357617
 
 # New technology support
 
-# New technology support
 
 * Latest Dynatrace
 * Reference

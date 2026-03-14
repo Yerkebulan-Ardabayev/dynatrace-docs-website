@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:28.297927
 
 # Ingest NetFlow with the OpenTelemetry Collector
 
-# Ingest NetFlow with the OpenTelemetry Collector
 
 * Latest Dynatrace
 * How-to guide
@@ -34,85 +33,64 @@ See [Collector Deployment](../deployment.md "How to deploy Dynatrace OTel Collec
 receivers:
 
 
-
 netflow:
-
 
 
 hostname: "0.0.0.0"
 
 
-
 scheme: netflow
-
 
 
 port: 2055
 
 
-
 sockets: 2
-
 
 
 workers: 4
 
 
-
 processors:
-
 
 
 batch:
 
 
-
 send_batch_size: 30
-
 
 
 timeout: 30s
 
 
-
 exporters:
-
 
 
 otlp_http:
 
 
-
 endpoint: ${env:DT_ENDPOINT}
-
 
 
 headers:
 
 
-
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
-
 
 
 service:
 
 
-
 pipelines:
-
 
 
 logs:
 
 
-
 receivers: [netflow]
 
 
-
 processors: [batch]
-
 
 
 exporters: [otlp_http]
@@ -165,21 +143,16 @@ The logs records will be available in Dynatrace with fields documented in the [r
   fetch logs
 
 
-
   | filter otel.scope.name == "otelcol/netflowreceiver"
-
 
 
   | summarize {bytes=sum(toDouble(flow.io.bytes)), packets=sum(toDouble(flow.io.packets))}, by: {source = source.address, destination = destination.address}
 
 
-
   | fieldsAdd bytes_relative=bytes
 
 
-
   | fieldsAdd packets_relative=packets
-
 
 
   | sort bytes desc
@@ -192,17 +165,13 @@ The logs records will be available in Dynatrace with fields documented in the [r
   fetch logs
 
 
-
   | filter otel.scope.name == "otelcol/netflowreceiver"
-
 
 
   | summarize {bytes=sum(toDouble(flow.io.bytes))}, by: {port = destination.port}
 
 
-
   | sort bytes desc
-
 
 
   | limit 10

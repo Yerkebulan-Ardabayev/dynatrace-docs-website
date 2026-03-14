@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:02.066070
 
 # Mobile applications
 
-# Mobile applications
 
 * Classic
 * Overview

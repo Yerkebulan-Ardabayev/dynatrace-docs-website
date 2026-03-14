@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:46.855290
 
 # Настройка мониторинга OpenTelemetry для Azure Functions на плане Consumption
 
-# Настройка мониторинга OpenTelemetry для Azure Functions на плане Consumption
 
 * Latest Dynatrace
 * How-to guide

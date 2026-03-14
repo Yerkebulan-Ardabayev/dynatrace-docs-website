@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:51.619326
 
 # Review findings
 
-# Review findings
 
 * Latest Dynatrace
 * How-to guide

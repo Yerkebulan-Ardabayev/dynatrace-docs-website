@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:40:42.006124
 
 # Operations: Cloud Monitoring & Logging
 
-# Operations: Cloud Monitoring & Logging
 
 * Последняя версия Dynatrace
 * Практическое руководство

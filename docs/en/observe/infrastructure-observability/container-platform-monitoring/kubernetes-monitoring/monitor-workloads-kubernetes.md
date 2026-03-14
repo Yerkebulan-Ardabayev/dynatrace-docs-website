@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:51.483367
 
 # Monitor Kubernetes/OpenShift workloads
 
-# Monitor Kubernetes/OpenShift workloads
 
 * Classic
 * 5-min read

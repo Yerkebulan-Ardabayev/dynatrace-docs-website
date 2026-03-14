@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:28:27.484055
 
 # Мониторинг Amazon Cognito
 
-# Мониторинг Amazon Cognito
 
 * Практическое руководство
 * Время чтения: 1 мин
@@ -34,381 +33,286 @@ Dynatrace собирает метрики для нескольких предв
 {
 
 
-
 "Version": "2012-10-17",
-
 
 
 "Statement": [
 
 
-
 {
-
 
 
 "Sid": "VisualEditor0",
 
 
-
 "Effect": "Allow",
-
 
 
 "Action": [
 
 
-
 "acm-pca:ListCertificateAuthorities",
-
 
 
 "apigateway:GET",
 
 
-
 "apprunner:ListServices",
-
 
 
 "appstream:DescribeFleets",
 
 
-
 "appsync:ListGraphqlApis",
-
 
 
 "athena:ListWorkGroups",
 
 
-
 "autoscaling:DescribeAutoScalingGroups",
-
 
 
 "cloudformation:ListStackResources",
 
 
-
 "cloudfront:ListDistributions",
-
 
 
 "cloudhsm:DescribeClusters",
 
 
-
 "cloudsearch:DescribeDomains",
-
 
 
 "cloudwatch:GetMetricData",
 
 
-
 "cloudwatch:GetMetricStatistics",
-
 
 
 "cloudwatch:ListMetrics",
 
 
-
 "codebuild:ListProjects",
-
 
 
 "datasync:ListTasks",
 
 
-
 "dax:DescribeClusters",
-
 
 
 "directconnect:DescribeConnections",
 
 
-
 "dms:DescribeReplicationInstances",
-
 
 
 "dynamodb:ListTables",
 
 
-
 "dynamodb:ListTagsOfResource",
-
 
 
 "ec2:DescribeAvailabilityZones",
 
 
-
 "ec2:DescribeInstances",
-
 
 
 "ec2:DescribeNatGateways",
 
 
-
 "ec2:DescribeSpotFleetRequests",
-
 
 
 "ec2:DescribeTransitGateways",
 
 
-
 "ec2:DescribeVolumes",
-
 
 
 "ec2:DescribeVpnConnections",
 
 
-
 "ecs:ListClusters",
-
 
 
 "eks:ListClusters",
 
 
-
 "elasticache:DescribeCacheClusters",
-
 
 
 "elasticbeanstalk:DescribeEnvironmentResources",
 
 
-
 "elasticbeanstalk:DescribeEnvironments",
-
 
 
 "elasticfilesystem:DescribeFileSystems",
 
 
-
 "elasticloadbalancing:DescribeInstanceHealth",
-
 
 
 "elasticloadbalancing:DescribeListeners",
 
 
-
 "elasticloadbalancing:DescribeLoadBalancers",
-
 
 
 "elasticloadbalancing:DescribeRules",
 
 
-
 "elasticloadbalancing:DescribeTags",
-
 
 
 "elasticloadbalancing:DescribeTargetHealth",
 
 
-
 "elasticmapreduce:ListClusters",
-
 
 
 "elastictranscoder:ListPipelines",
 
 
-
 "es:ListDomainNames",
-
 
 
 "events:ListEventBuses",
 
 
-
 "firehose:ListDeliveryStreams",
-
 
 
 "fsx:DescribeFileSystems",
 
 
-
 "gamelift:ListFleets",
-
 
 
 "glue:GetJobs",
 
 
-
 "inspector:ListAssessmentTemplates",
-
 
 
 "kafka:ListClusters",
 
 
-
 "kinesis:ListStreams",
-
 
 
 "kinesisanalytics:ListApplications",
 
 
-
 "kinesisvideo:ListStreams",
-
 
 
 "lambda:ListFunctions",
 
 
-
 "lambda:ListTags",
-
 
 
 "lex:GetBots",
 
 
-
 "logs:DescribeLogGroups",
-
 
 
 "mediaconnect:ListFlows",
 
 
-
 "mediaconvert:DescribeEndpoints",
-
 
 
 "mediapackage-vod:ListPackagingConfigurations",
 
 
-
 "mediapackage:ListChannels",
-
 
 
 "mediatailor:ListPlaybackConfigurations",
 
 
-
 "opsworks:DescribeStacks",
-
 
 
 "qldb:ListLedgers",
 
 
-
 "rds:DescribeDBClusters",
-
 
 
 "rds:DescribeDBInstances",
 
 
-
 "rds:DescribeEvents",
-
 
 
 "rds:ListTagsForResource",
 
 
-
 "redshift:DescribeClusters",
-
 
 
 "robomaker:ListSimulationJobs",
 
 
-
 "route53:ListHostedZones",
-
 
 
 "route53resolver:ListResolverEndpoints",
 
 
-
 "s3:ListAllMyBuckets",
-
 
 
 "sagemaker:ListEndpoints",
 
 
-
 "sns:ListTopics",
-
 
 
 "sqs:ListQueues",
 
 
-
 "storagegateway:ListGateways",
-
 
 
 "sts:GetCallerIdentity",
 
 
-
 "swf:ListDomains",
-
 
 
 "tag:GetResources",
 
 
-
 "tag:GetTagKeys",
-
 
 
 "transfer:ListServers",
 
 
-
 "workmail:ListOrganizations",
-
 
 
 "workspaces:DescribeWorkspaces"
 
 
-
 ],
-
 
 
 "Resource": "*"
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -544,77 +448,58 @@ JSON-политика для Amazon API Gateway
 {
 
 
-
 "Version": "2012-10-17",
-
 
 
 "Statement": [
 
 
-
 {
-
 
 
 "Sid": "VisualEditor0",
 
 
-
 "Effect": "Allow",
-
 
 
 "Action": [
 
 
-
 "apigateway:GET",
-
 
 
 "cloudwatch:GetMetricData",
 
 
-
 "cloudwatch:GetMetricStatistics",
-
 
 
 "cloudwatch:ListMetrics",
 
 
-
 "sts:GetCallerIdentity",
-
 
 
 "tag:GetResources",
 
 
-
 "tag:GetTagKeys",
-
 
 
 "ec2:DescribeAvailabilityZones"
 
 
-
 ],
-
 
 
 "Resource": "*"
 
 
-
 }
 
 
-
 ]
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:50.601348
 
 # Сценарии использования OpenTelemetry Collector
 
-# Сценарии использования OpenTelemetry Collector
 
 * Latest Dynatrace
 * How-to guide

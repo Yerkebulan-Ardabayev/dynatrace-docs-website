@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:27.702564
 
 # Azure Container Registry monitoring
 
-# Azure Container Registry monitoring
 
 * Latest Dynatrace
 * How-to guide

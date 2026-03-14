@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:24.255977
 
 # Установка OneAgent на Windows
 
-# Установка OneAgent на Windows
 
 * Последняя версия Dynatrace
 * Практическое руководство

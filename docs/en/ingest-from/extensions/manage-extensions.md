@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:23.338562
 
 # Manage Extensions
 
-# Manage Extensions
 
 * Latest Dynatrace
 * How-to guide
@@ -158,17 +157,13 @@ Run the following command to upload the extension package to your environment. F
 curl -X POST "https://{env-id}.live.dynatrace.com/api/v2/extensions" \
 
 
-
 -H "accept: application/json; charset=utf-8" \
-
 
 
 -H "Authorization: Api-Token {api-token}" \
 
 
-
 -H "Content-Type: multipart/form-data" \
-
 
 
 -F "file=@MyCustomExtension.zip;type=application/zip"
@@ -186,53 +181,40 @@ After a successful upload, the Dynatrace API returns basic extension details, in
 {
 
 
-
 "extensionName":"custom:my.company.extension",
-
 
 
 "version":"1.0.0",
 
 
-
 "author":{
-
 
 
 "name":"My Company"
 
 
-
 },
-
 
 
 "dataSources":[
 
 
-
 ],
-
 
 
 "variables":[
 
 
-
 ],
-
 
 
 "featureSets":[
 
 
-
 ],
 
 
-
 "minDynatraceVersion":"1.213.0"
-
 
 
 }
@@ -248,17 +230,13 @@ Run the following command to activate the extension in your environment. For thi
 curl -X PUT "https://{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/environmentConfiguration" \
 
 
-
 -H "accept: application/json; charset=utf-8" \
-
 
 
 -H "Authorization: Api-Token {api-token}" \
 
 
-
 -H "Content-Type: application/json; charset=utf-8" \
-
 
 
 -d "{\"version\":\"{version}\"}"
@@ -287,17 +265,13 @@ To start monitoring, you need to add at least one version of the monitoring conf
 curl -X POST "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName>/monitoringConfigurations" \
 
 
-
 -H "accept: application/json; charset=utf-8" \
-
 
 
 -H "Authorization: Api-Token {api-token}" \
 
 
-
 -H "Content-Type: application/json; charset=utf-8" \
-
 
 
 --data @{monitoring-configuration} -i
@@ -317,9 +291,7 @@ After a successful call, the Dynatrace API returns the `MonitoringConfigurationR
 [
 
 
-
 { "objectId": "vu9U3hXa3q0AAAABACVleHQ6Y29tLmR5bmF0cmFjZS5zY2hlbWEtc25tcC1nZW5lcmljAAhhZ19ncm91cAAHRTJFVEVTVAAkMWMxZTlhMDctNzVkYi0zZjI0LWI4OGUtZmIxYWRiNGNjYTY4vu9U3hXa3q0", "code": 200 }
-
 
 
 ]
@@ -349,17 +321,13 @@ Run the following command to activate the new version. For this example, we use 
 curl -X PUT "https://{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/environmentConfiguration" \
 
 
-
 -H "accept: application/json; charset=utf-8" \
-
 
 
 -H "Authorization: Api-Token  {api-token}" \
 
 
-
 -H "Content-Type: application/json; charset=utf-8" \
-
 
 
 -d "{\"version\":\"{version}\"}"
@@ -392,9 +360,7 @@ To delete the currently active environment configuration, use [DELETE environmen
 curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/environmentConfiguration" \
 
 
-
 -H "accept: application/json; charset=utf-8" \
-
 
 
 -H "Authorization: Api-Token {api-token}"
@@ -420,9 +386,7 @@ To delete an extension version, use [DELETE an extension version](../../dynatrac
 curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/{version}" \
 
 
-
 -H "accept: application/json; charset=utf-8" \
-
 
 
 -H "Authorization: Api-Token {api-token}"
@@ -441,53 +405,40 @@ After a successful version deletion, the Dynatrace API returns the following res
 {
 
 
-
 "extensionName":"custom:my.company.extension",
-
 
 
 "version":"1.0.0",
 
 
-
 "author":{
-
 
 
 "name":"My Company"
 
 
-
 },
-
 
 
 "dataSources":[
 
 
-
 ],
-
 
 
 "variables":[
 
 
-
 ],
-
 
 
 "featureSets":[
 
 
-
 ],
 
 
-
 "minDynatraceVersion":"1.213.0"
-
 
 
 }

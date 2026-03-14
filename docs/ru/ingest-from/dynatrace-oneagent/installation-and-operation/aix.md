@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:43.059904
 
 # AIX
 
-# AIX
 
 * Latest Dynatrace
 * Overview

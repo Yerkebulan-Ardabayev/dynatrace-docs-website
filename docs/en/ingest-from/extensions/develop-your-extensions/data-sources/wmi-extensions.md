@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:24:12.065610
 
 # WMI data source
 
-# WMI data source
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:30:55.602824
 
 # Мониторинг среды Azure Container Apps Environment
 
-# Мониторинг среды Azure Container Apps Environment
 
 * Latest Dynatrace
 * How-to guide

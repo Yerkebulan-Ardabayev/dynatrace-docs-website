@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:46.871609
 
 # Azure OpenAI
 
-# Azure OpenAI
 
 * Последняя версия Dynatrace
 * Практическое руководство

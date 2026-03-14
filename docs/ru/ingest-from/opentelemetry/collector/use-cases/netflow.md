@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:28.297927
 
 # Приём данных NetFlow с помощью OpenTelemetry Collector
 
-# Приём данных NetFlow с помощью OpenTelemetry Collector
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -34,85 +33,64 @@ scraped: 2026-03-06T21:27:28.297927
 receivers:
 
 
-
 netflow:
-
 
 
 hostname: "0.0.0.0"
 
 
-
 scheme: netflow
-
 
 
 port: 2055
 
 
-
 sockets: 2
-
 
 
 workers: 4
 
 
-
 processors:
-
 
 
 batch:
 
 
-
 send_batch_size: 30
-
 
 
 timeout: 30s
 
 
-
 exporters:
-
 
 
 otlp_http:
 
 
-
 endpoint: ${env:DT_ENDPOINT}
-
 
 
 headers:
 
 
-
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
-
 
 
 service:
 
 
-
 pipelines:
-
 
 
 logs:
 
 
-
 receivers: [netflow]
 
 
-
 processors: [batch]
-
 
 
 exporters: [otlp_http]
@@ -165,21 +143,16 @@ exporters: [otlp_http]
   fetch logs
 
 
-
   | filter otel.scope.name == "otelcol/netflowreceiver"
-
 
 
   | summarize {bytes=sum(toDouble(flow.io.bytes)), packets=sum(toDouble(flow.io.packets))}, by: {source = source.address, destination = destination.address}
 
 
-
   | fieldsAdd bytes_relative=bytes
 
 
-
   | fieldsAdd packets_relative=packets
-
 
 
   | sort bytes desc
@@ -192,17 +165,13 @@ exporters: [otlp_http]
   fetch logs
 
 
-
   | filter otel.scope.name == "otelcol/netflowreceiver"
-
 
 
   | summarize {bytes=sum(toDouble(flow.io.bytes))}, by: {port = destination.port}
 
 
-
   | sort bytes desc
-
 
 
   | limit 10

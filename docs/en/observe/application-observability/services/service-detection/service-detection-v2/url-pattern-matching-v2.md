@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:25.840613
 
 # Configure URL path pattern matching in Service Detection v2
 
-# Configure URL path pattern matching in Service Detection v2
 
 * Latest Dynatrace
 * How-to guide

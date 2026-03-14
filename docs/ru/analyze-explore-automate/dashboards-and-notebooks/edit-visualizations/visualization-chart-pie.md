@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:26.500073
 
 # Круговая диаграмма
 
-# Круговая диаграмма
 
 * Актуальная версия Dynatrace
 * Руководство
@@ -29,7 +28,6 @@ scraped: 2026-03-06T21:21:26.500073
 
 ```
 fetch logs
-
 
 
 | summarize count(), by:{loglevel}
@@ -201,7 +199,6 @@ fetch logs
 
     ```
     fetch logs
-
 
 
     | limit 2000

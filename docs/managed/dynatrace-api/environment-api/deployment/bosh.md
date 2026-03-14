@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Deployment API - BOSH tarballs
 
-# Deployment API - BOSH tarballs
 
 * Reference
 * Published Apr 02, 2021

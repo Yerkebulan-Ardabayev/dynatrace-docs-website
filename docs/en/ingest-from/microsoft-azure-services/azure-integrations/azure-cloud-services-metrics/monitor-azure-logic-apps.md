@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:30:39.153427
 
 # Azure Logic Apps monitoring
 
-# Azure Logic Apps monitoring
 
 * Latest Dynatrace
 * How-to guide

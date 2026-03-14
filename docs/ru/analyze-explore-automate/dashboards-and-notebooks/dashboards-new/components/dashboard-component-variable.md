@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:14.517870
 
 # Добавление переменной на дашборд
 
-# Добавление переменной на дашборд
 
 * Последняя версия Dynatrace
 * Руководство
@@ -102,7 +101,6 @@ scraped: 2026-03-06T21:11:14.517870
      fetch dt.entity.host
 
 
-
      | fields entity.name
      ```
 3. Включите **Multi-select**, чтобы можно было выбирать более одного значения одновременно для отображения в визуализациях.
@@ -121,9 +119,7 @@ scraped: 2026-03-06T21:11:14.517870
    fetch logs, scanLimitGBytes: 20
 
 
-
    | filter in(host.name, array($Host))
-
 
 
    | makeTimeseries count(), by:{ host.name }
@@ -135,9 +131,7 @@ scraped: 2026-03-06T21:11:14.517870
    fetch logs, scanLimitGBytes: 20
 
 
-
    | filter host.name == $Host
-
 
 
    | makeTimeseries count(), by:{ host.name }
@@ -258,7 +252,6 @@ scraped: 2026-03-06T21:11:14.517870
 
   ```
   fetch dt.entity.host
-
 
 
   | fields id
@@ -390,29 +383,22 @@ $varName:triplequote
   /*
 
 
-
   * This will run JavaScript in the DYNATRACE
-
 
 
   * serverless environment.
 
 
-
   * To generate variable options return string array.
-
 
 
   */
 
 
-
   export default async function () {
 
 
-
   return ["val1", "val2", "val3"]
-
 
 
   }
@@ -442,9 +428,7 @@ $varName:triplequote
 fetch logs
 
 
-
 | ...
-
 
 
 | summarize count(), by: {loglevel, bin(timestamp, $resolution)}
@@ -456,9 +440,7 @@ fetch logs
 fetch logs
 
 
-
 | ...
-
 
 
 | summarize count(), by: {loglevel, bin(timestamp, duration(toLong($resolution), unit:"m"))}
@@ -472,9 +454,7 @@ fetch logs
 fetch logs
 
 
-
 | filter amount = toString($amount)
-
 
 
 | ...

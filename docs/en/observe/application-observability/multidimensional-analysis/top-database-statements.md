@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:56.990128
 
 # Top database statements
 
-# Top database statements
 
 * Classic
 * How-to guide

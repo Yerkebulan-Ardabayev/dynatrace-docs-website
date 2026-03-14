@@ -14,7 +14,6 @@ scraped: 2026-03-06T21:11:53.544675
 
 # What is Dynatrace Grail?
 
-# What is Dynatrace Grail?
 
 * Latest Dynatrace
 * Explanation
@@ -108,7 +107,6 @@ Because of this architecture:
 ## Guidance: using Grail vs. conventional databases
 
 
-
 Grail is optimized for extreme throughput and extreme volumes of immutable data converged into one unified place for cost-effective storage and high-performance query. It incorporates elements of ACID and BASE providing full flexibility and contextual analytics.
 
 Conventional databases are either built to handle transactional data in low volume following the ACID paradigm, or implement the BASE paradigm known from NoSQL databases.
@@ -150,7 +148,6 @@ scraped: 2026-03-05T21:36:08.666981
 
 # DPL Architect
 
-# DPL Architect
 
 * Latest Dynatrace
 * Reference
@@ -332,7 +329,6 @@ scraped: 2026-03-05T21:39:17.344467
 
 # DPL Positional Matchers
 
-# DPL Positional Matchers
 
 * Latest Dynatrace
 * Reference
@@ -352,9 +348,7 @@ Extracting the first line in the string:
 "name";"age"
 
 
-
 Homer Simpson;40
-
 
 
 Charles Montgomery Burns;104
@@ -385,9 +379,7 @@ Extracting records after the first row in the string
 "name";"age"
 
 
-
 Homer Simpson;40
-
 
 
 Charles Montgomery Burns;104
@@ -419,13 +411,10 @@ Extracting the last line of the string:
 "name";"age"
 
 
-
 Homer Simpson;40
 
 
-
 Charles Montgomery Burns;104
-
 
 
 total:2 persons, average age: 72 years
@@ -456,7 +445,6 @@ scraped: 2026-03-06T21:25:46.961981
 
 # DPL Universally Unique Identifiers
 
-# DPL Universally Unique Identifiers
 
 * Latest Dynatrace
 * Reference
@@ -490,7 +478,6 @@ scraped: 2026-03-06T21:15:32.116161
 
 # Dynatrace Pattern Language
 
-# Dynatrace Pattern Language
 
 * Latest Dynatrace
 * Explanation
@@ -521,21 +508,16 @@ Or you can write the same pattern in a more explanatory way:
 /* this pattern expects an integer number and an IP address
 
 
-
 separated by single space in each line */
-
 
 
 INT       //an integer
 
 
-
 ' '       //followed by single space
 
 
-
 IPADDR:ip //followed by IPv4 or IPv6 address, extracted as a new field, `ip`
-
 
 
 EOL       //line is terminated with line feed character
@@ -605,7 +587,6 @@ Matcher expressions have `operators`:
 ## Example
 
 
-
 The following is an example of step-by-step pattern matching.  
 Suppose we have a comma-separated record (terminated with the line feed character) with the following fields:
 
@@ -617,9 +598,7 @@ Suppose we have a comma-separated record (terminated with the line feed characte
 1,alice,192.168.1.1
 
 
-
 2,bob,10.6.24.18
-
 
 
 3,mallory,192.168.1.3
@@ -631,21 +610,16 @@ This structure can be described by the following pattern expression:
 INT:seq
 
 
-
 ','
-
 
 
 LD:uname
 
 
-
 ','
 
 
-
 IPADDR:user_ip
-
 
 
 EOL
@@ -692,7 +666,6 @@ scraped: 2026-03-06T21:20:34.787797
 
 # DQL commands
 
-# DQL commands
 
 * Latest Dynatrace
 * Reference
@@ -741,7 +714,6 @@ scraped: 2026-03-06T21:20:40.056889
 
 # DQL data types
 
-# DQL data types
 
 * Latest Dynatrace
 * Reference
@@ -766,7 +738,6 @@ Boolean has only two possible values: `true` and `false`.
   ...
 
 
-
   | fields toBoolean("true"), toBoolean("TrUe"), toBoolean("1"), toBoolean(3), toBoolean("test"), toBoolean(0)
   ```
 * **Expressions**
@@ -775,13 +746,10 @@ Boolean has only two possible values: `true` and `false`.
   boolean_expr1 AND boolean_expr2
 
 
-
   boolean_expr1 OR boolean_expr2
 
 
-
   boolean_expr1 XOR boolean_expr2
-
 
 
   NOT boolean_expr
@@ -801,7 +769,6 @@ The signed long has a minimum value of -2^63 and a maximum value of 2^63-1.
   ..
 
 
-
   | fields toLong("83457264009472472"), toLong(30), toLong(25.34)
   ```
 
@@ -818,7 +785,6 @@ Double-precision 64-bit IEEE 754 floating point.
 
   ```
   ...
-
 
 
   | fields toDouble("1234.5"), toDouble(4+3/2)
@@ -840,9 +806,7 @@ fetch logs, from:-2h, to:-20m
 ...
 
 
-
 | fields time = toTimestamp("2022-08-01T12:00:00+01:00")
-
 
 
 | fieldsAdd time == now(), time > now()-10d, newTime = time + 3d
@@ -857,7 +821,6 @@ To execute the full query result including nanoseconds, change the visualization
 data record(tf = timeframe(from:now()-2h, to:now()))
 
 
-
 | fields tf, tf[start], tf[end]
 ```
 
@@ -867,7 +830,6 @@ A duration between two timestamps, consisting of an amount and a time unit.
 
 ```
 ...
-
 
 
 | fields duration = 1s
@@ -908,13 +870,10 @@ In many cases, a parsed numeric value semantically represents a duration. The `d
 ...
 
 
-
 | fields     dur = 62
 
 
-
 | fieldsAdd  dur_ms = duration(dur, unit:"ms")
-
 
 
 | fieldsAdd  dur_ms > 50ms
@@ -928,13 +887,10 @@ Converting a nanoseconds value to a `duration`:
 ...
 
 
-
 ...
 
 
-
 | fields     dur = toDuration(62*1000000000*60*60*24)
-
 
 
 | fieldsAdd  dur > 60d
@@ -948,25 +904,19 @@ To illustrate, we calculate the age of the latest log message seen from a specif
 ...
 
 
-
 ...
-
 
 
 fetch       logs
 
 
-
 | filter    dt.entity.host == "HOST-DD5679D1A0C6426C"
-
 
 
 | sort      timestamp desc
 
 
-
 | limit     1
-
 
 
 | fields    timestamp, age_message = now()-timestamp
@@ -987,7 +937,6 @@ Sequence of characters with a specified character set.
 
   ```
   ...
-
 
 
   | fields toString(toBoolean(1)), toString(array(1,2,3)), toString(1), toString(toTimestamp(now())), toString(toIpAddress("192.168.0.1"))
@@ -1019,9 +968,7 @@ A data structure that contains a sequence of values, each identified by index.
   ...
 
 
-
   | fieldsAdd int_array = array(1,2,2,3,4,5)
-
 
 
   | fields first_element = int_array[0], fifth_element = int_array[4]
@@ -1033,13 +980,10 @@ A data structure that contains a sequence of values, each identified by index.
   ...
 
 
-
   | ...
 
 
-
   | fields a=array(1,2), b=array(1,2,3), c=array("a","b"), d=toArray("c,d")
-
 
 
   | fields a == b, arraySize(b) > arraySize(c)
@@ -1058,9 +1002,7 @@ A set of key-value pair data whose value can be any DQL data type.
   ...
 
 
-
   | fields person = record({name="john", age=33, address=record({city="Atlanta", pcode="30308"})})
-
 
 
   | fields person[name], person[address][pcode]
@@ -1070,7 +1012,6 @@ A set of key-value pair data whose value can be any DQL data type.
 
   ```
   ...
-
 
 
   | fields t = record(a=1+2,b=3,c=toString(timestamp))
@@ -1084,13 +1025,10 @@ A set of key-value pair data whose value can be any DQL data type.
   STRUCTURE{matcher_expr, ...}:fieldname
 
 
-
   JSON{matcher_expr, ...}:fieldname
 
 
-
   KVP{matcher_expr, ...}:fieldname
-
 
 
   $subpattern:fieldname
@@ -1101,13 +1039,10 @@ A set of key-value pair data whose value can be any DQL data type.
   ...
 
 
-
   | fields str = "name=\"john\"; age=33; city=\"Atlanta\""
 
 
-
   | parse str, "KVP{LD:key'='(LONG:valueLong | STRING:valueStr)'; '?}:person"
-
 
 
   | fields person[name], person[age], person[city]
@@ -1118,13 +1053,10 @@ A set of key-value pair data whose value can be any DQL data type.
   ...
 
 
-
   | fields str = "{\"type\":\"update\",\"host\":\"CI_preprod_1\",\"version\":\"10.2.2367\"}"
 
 
-
   | parse str,"JSON:event"
-
 
 
   | fields event[type], event[host], event[version]
@@ -1153,7 +1085,6 @@ scraped: 2026-03-06T21:23:18.368123
 
 # DQL best practices
 
-# DQL best practices
 
 * Latest Dynatrace
 * Reference
@@ -1187,9 +1118,7 @@ The following query uses sampling to improve query performance to observe an app
 fetch spans, samplingRatio:100
 
 
-
 | summarize c=count(), by: { span.kind, code.namespace, code.function }
-
 
 
 | fieldsAdd c = c*100
@@ -1233,21 +1162,16 @@ Applying the mentioned practices above leads to the following blueprint:
 fetch logs, bucket:{"astroshop_log_*"}, from:-1d@d, samplingRatio:10
 
 
-
 | filter loglevel=="ERROR" and k8s.namespace.name ~ "astroshop"
-
 
 
 | filter content ~ "error"
 
 
-
 | summarize c=count(), by:pod.name
 
 
-
 | sort c desc
-
 
 
 | limit 5
@@ -1265,9 +1189,7 @@ It is recommended to place `sort` at the end of the query. Sorting right after `
 fetch logs
 
 
-
 | sort timestamp desc
-
 
 
 | filter content ~ "error"
@@ -1279,9 +1201,7 @@ This example shows the recommended order of putting `sort` at the end of the que
 fetch logs
 
 
-
 | filter content ~ "error"
-
 
 
 | sort timestamp desc
@@ -1293,21 +1213,16 @@ You can repeat the same command within one query and still stick to the recommen
 fetch logs, bucket:{"astroshop_log_*"}, from:-1d@d, samplingRatio:10
 
 
-
 | filter loglevel == "ERROR" and k8s.namespace.name ~ "astroshop"
-
 
 
 | parse content, "ipaddr:ip ld ' POST ' ld:action ' HTTP/1.1 ' long:status ld"
 
 
-
 | filter action == "/cart" or action == "/cart/checkout"
 
 
-
 | summarize count = count(), by:{ ip, log.source }
-
 
 
 | sort count desc
@@ -1321,14 +1236,12 @@ fetch logs, bucket:{"astroshop_log_*"}, from:-1d@d, samplingRatio:10
   fetch logs
 
 
-
   | filter k8s.container.name == "coredns"
   ```
 * Use `~` whenever the value of a field is only partly known or unknown.
 
   ```
   fetch logs
-
 
 
   | filter k8s.container.name ~ "core*"
@@ -1355,13 +1268,11 @@ For example, if you have a dimension named 'true':
 ...
 
 
-
 | fields x = true // creates a boolean field that is always true
 ```
 
 ```
 ...
-
 
 
 | fields x = `true` // allows to access the custom dimension named 'true'
@@ -1373,13 +1284,11 @@ Similarly, if you need to sort by a field named 'not':
 ...
 
 
-
 | sort not desc // sorts by a boolean value of dimension `desc`
 ```
 
 ```
 ...
-
 
 
 | sort `not` desc // sorts descending by a field named `not`
@@ -1408,7 +1317,6 @@ scraped: 2026-03-06T21:20:41.784151
 
 # DQL compared to SQL and more
 
-# DQL compared to SQL and more
 
 * Latest Dynatrace
 * Reference
@@ -1452,7 +1360,6 @@ Narrows the number of records based on a filter expression. In this example, we 
 fetch events
 
 
-
 | filter event.type == "travel.funnel.booking-payment"
 ```
 
@@ -1474,7 +1381,6 @@ sourcetype = event* | where event.type = "travel.funnel.booking-payment"
 events
 
 
-
 | where ['event.type'] == "travel.funnel.booking-payment"
 ```
 
@@ -1484,7 +1390,6 @@ We can add as many filters as needed to the pipeline. For example, we can look f
 
 ```
 fetch events
-
 
 
 | filter event.type == "travel.funnel.booking-payment" and loyaltyStatus == "Platinum" and childrenTravelers > 0
@@ -1502,7 +1407,6 @@ SELECT * FROM events WHERE 'event.type'="travel.funnel.booking-payment" AND loya
 sourcetype = event*
 
 
-
 | where event.type = "travel.funnel.booking-payment" AND loyaltyStatus = "Platinum" AND childrenTravelers > 0
 ```
 
@@ -1510,7 +1414,6 @@ sourcetype = event*
 
 ```
 events
-
 
 
 | where ['event.type'] == "travel.funnel.booking-payment" and loyaltyStatus == "Platinum" and childrenTravelers > 0
@@ -1526,9 +1429,7 @@ Selecting just the relevant fields can be done in any pipeline stage. In this ex
 fetch events
 
 
-
 | filter event.type == "travel.funnel.booking-payment"
-
 
 
 | fields product
@@ -1546,9 +1447,7 @@ SELECT product FROM events WHERE 'event.type'="travel.funnel.booking-payment"
 sourcetype = event*
 
 
-
 | where event.type = "travel.funnel.booking-payment"
-
 
 
 | fields product
@@ -1560,9 +1459,7 @@ sourcetype = event*
 event
 
 
-
 | where ['event.type'] == "travel.funnel.booking-payment"
-
 
 
 | project product
@@ -1578,13 +1475,10 @@ We can transform the selected records in the pipelines. For example, we select t
 fetch event
 
 
-
 | filter event.type == "travel.funnel.booking-payment"
 
 
-
 | fieldsAdd journeyWeeks = journeyDuration/7
-
 
 
 | sort journeyWeeks desc
@@ -1602,13 +1496,10 @@ SELECT journeyDuration/7 AS journeyWeeks FROM events WHERE 'event.type'="travel.
 sourcetype = event*
 
 
-
 | where event.type = "travel.funnel.booking-payment"
 
 
-
 | eval journeyweeks = journeyDuration/7
-
 
 
 | sort -journeyweeks
@@ -1620,13 +1511,10 @@ sourcetype = event*
 event
 
 
-
 | where ['event.type'] == "travel.funnel.booking-payment"
 
 
-
 | project journeyWeeks = journeyDuration/7
-
 
 
 | sort journeyweeks desc
@@ -1642,9 +1530,7 @@ If we are interested only in unique values in our key, we can deduplicate the re
 fetch events
 
 
-
 | summarize count(), by:event.type
-
 
 
 | fields event.type
@@ -1662,7 +1548,6 @@ SELECT DISTINCT 'event.type' FROM events
 sourcetype = event*
 
 
-
 | stats count by event.type
 ```
 
@@ -1670,7 +1555,6 @@ sourcetype = event*
 
 ```
 events
-
 
 
 | summarize by event.type
@@ -1686,9 +1570,7 @@ After grouping selected records based on a field, we can aggregate the results t
 fetch events
 
 
-
 | filter event.type == "travel.funnel.booking-payment"
-
 
 
 | summarize sum = sum(amount), by:travelAgency
@@ -1706,9 +1588,7 @@ SELECT sum(amount) AS sum FROM events GROUP BY sum, travelAgency WHERE 'event.ty
 sourcetype = event*
 
 
-
 | where event.type = "travel.funnel.booking-payment"
-
 
 
 | stats sum(amount) as total_amount by travelAgency
@@ -1720,9 +1600,7 @@ sourcetype = event*
 event
 
 
-
 | filter event.type == "travel.funnel.booking-payment"
-
 
 
 | summarize sum = sum(amount) by travelAgency
@@ -1736,13 +1614,10 @@ Let's take a look at a bit more complex use case, where we want to add a new fie
 fetch events
 
 
-
 | filter event.type == "travel.funnel.booking-payment"
 
 
-
 | summarize sum = sum(amount), by:{travelAgency, travelers}
-
 
 
 | fieldsAdd has_more_than_2 = travelers > 2
@@ -1760,13 +1635,10 @@ SELECT sum(amount) AS sum, travelers > 2  AS has_more_than_2 FROM events  GROUP 
 sourcetype = event*
 
 
-
 | where event.type = "travel.funnel.booking-payment"
 
 
-
 | stats sum(amount) as total_amount by travelAgency, travelers
-
 
 
 | eval has_more_than_2 = travelers > 2
@@ -1778,13 +1650,10 @@ sourcetype = event*
 events
 
 
-
 | where ['event.type'] == "travel.funnel.booking-payment"
 
 
-
 | summarize sumBytes = sum(amount) by travelAgency, travelers
-
 
 
 | project has_more_than_2 = travelers > 2
@@ -1813,7 +1682,6 @@ scraped: 2026-03-06T21:13:57.048048
 
 # Use DQL queries
 
-# Use DQL queries
 
 * Latest Dynatrace
 * Reference
@@ -1845,9 +1713,7 @@ The `fetch` command requires a reference to the kind of data that should be retr
 fetch logs
 
 
-
 | filter loglevel == "ERROR"
-
 
 
 | summarize numErr = count()
@@ -1865,7 +1731,6 @@ You can also change the data type to `events` by using the `fetch` command and f
 
 ```
 fetch events
-
 
 
 | summarize Total_amount = sum(amount)
@@ -1904,7 +1769,6 @@ Narrow down the requested records with `filter`. Use operators like `==` or `!=`
 fetch logs, from:now() - 2h
 
 
-
 | filter loglevel == "SEVERE" or loglevel == "ERROR" and not endsWith(log.source,"audit.log")
 ```
 
@@ -1912,7 +1776,6 @@ fetch logs, from:now() - 2h
 
 ```
 fetch logs
-
 
 
 | fields timestamp, loglevel, log.source, content
@@ -1926,17 +1789,13 @@ By default, the sort command sorts records in ascending order. In the following 
 fetch logs
 
 
-
 | filter loglevel == "SEVERE" or loglevel == "ERROR"
-
 
 
 | fields timestamp, loglevel, dt.process.name, host.name, content
 
 
-
 | limit 5
-
 
 
 | sort timestamp desc
@@ -1950,17 +1809,13 @@ This example calculates the number of `booking.process.started` events. Intentio
 fetch bizevents
 
 
-
 | filter event.type=="booking.process.started"
-
 
 
 | fieldsAdd hour=formatTimestamp(timestamp,format:"hh"), day_of_week=formatTimestamp(timestamp,format:"EE")
 
 
-
 | filterOut (day_of_week  == "Sat" or day_of_week == "Sun") or (toLong(hour) <= 08 or toLong(hour) >= 17)
-
 
 
 | summarize numStarts = count(), by:{product}
@@ -1974,9 +1829,7 @@ DQL provides dedicated commands such as [makeTimeseries](platform/grail/dynatrac
 fetch logs
 
 
-
 | filter loglevel == "SEVERE" or loglevel == "ERROR"
-
 
 
 | makeTimeseries count = count(), by:loglevel, interval:5m
@@ -2009,7 +1862,6 @@ scraped: 2026-03-06T21:20:36.484418
 
 # DQL language reference
 
-# DQL language reference
 
 * Latest Dynatrace
 * Reference
@@ -2138,13 +1990,10 @@ The following DQL query uses seven pipeline steps to get from raw log data to an
   | summarize total_payload = sum(payload),
 
 
-
   failedRequests = countIf(http_status >= 400),
 
 
-
   successfulRequests = countIf(http_status < 400),
-
 
 
   by:{ip, host.name}
@@ -2209,7 +2058,6 @@ scraped: 2026-03-02T21:25:43.385489
 
 # DQL use cases
 
-# DQL use cases
 
 * Latest Dynatrace
 * Reference
@@ -2227,45 +2075,34 @@ The content field for every record looks as below:
 {
 
 
-
 "country_code":"US",
-
 
 
 "session_id":"6a6c6b6d6a7c7b7f7a7c7b7a7f7",
 
 
-
 "invoicing_data":null,
-
 
 
 "bill_to":{
 
 
-
 "first_name":"John",
-
 
 
 "last_name":"Doe",
 
 
-
 "email":"john.doe@gmail.com",
-
 
 
 "phone":null
 
 
-
 },
 
 
-
 "payment_provider":"paypal"
-
 
 
 }
@@ -2277,37 +2114,28 @@ You can use the `parse` command in combination with the [Dynatrace Pattern Langu
 fetch logs
 
 
-
 | parse content, "JSON:json"
-
 
 
 | fields payment = json[payment_provider]
 
 
-
 | summarize
-
 
 
 bank_card=countIf(payment=="bank_card"), bank_cardPer=toDouble(countIf(payment=="bank_card"))/toDouble(count()),
 
 
-
 apple_pay=countIf(payment=="apple_pay"),apple_payPerc=toDouble(countIf(payment=="apple_pay"))/toDouble(count()),
-
 
 
 paypal=countIf(payment=="paypal"),paypalPerc=toDouble(countIf(payment=="paypal"))/toDouble(count()),
 
 
-
 google_pay=countIf(payment=="google_pay"),google_payPerc=toDouble(countIf(payment=="google_pay"))/toDouble(count()),
 
 
-
 unpaid_booking=countIf(payment=="unpaid_booking"),unpaid_bookingPerc=toDouble(countIf(payment=="unpaid_booking"))/toDouble(count()),
-
 
 
 total=count()
@@ -2323,9 +2151,7 @@ In this example, you have a field called `kiosk` and need to extract the first t
 {
 
 
-
 "kiosk": "LAOBAUA729"
-
 
 
 }
@@ -2335,9 +2161,7 @@ In this example, you have a field called `kiosk` and need to extract the first t
 ...
 
 
-
 | parse kiosk, "DATA{3}:kioskLoc"
-
 
 
 | fields kiosk, kioskLoc
@@ -2355,57 +2179,43 @@ The XML field for every record looks as below:
 <log-entry serial='1467' domain='bca_icas_soa'>
 
 
-
 <date>Fri Sep 21 2023</date>
-
 
 
 <time utc='1380295304719'>11:21:44</time>
 
 
-
 <date-time>2012-09-21T11:21:44</date-time>
-
 
 
 <type>xmlfirewall</type>
 
 
-
 <class>xmlfirewall</class>
-
 
 
 <object>example-Firewall</object>
 
 
-
 <level num='3'>error</level>
-
 
 
 <transaction-type>error</transaction-type>
 
 
-
 <transaction>6187</transaction>
-
 
 
 <client>127.0.0.1</client>
 
 
-
 <code>0x01130007</code>
-
 
 
 <file></file>
 
 
-
 <message>Failed to establish backend connection</message>
-
 
 
 </log-entry>
@@ -2417,25 +2227,19 @@ In the DQL query, you need to use the [DPL matcher](platform/grail/dynatrace-pat
 ...
 
 
-
 | parse content, "XML(excludeRoot=true):xml"
-
 
 
 | fields domain = xml[`@domain`],
 
 
-
 serial = toLong(xml[`@serial`]),
-
 
 
 object = xml[object],
 
 
-
 transaction = xml[transaction],
-
 
 
 code = xml[code]
@@ -2474,7 +2278,6 @@ scraped: 2026-03-06T21:22:55.672336
 
 # String functions
 
-# String functions
 
 * Latest Dynatrace
 * Reference
@@ -2488,7 +2291,6 @@ All string matching functions are case-sensitive per default. If otherwise requi
 
 ```
 ...
-
 
 
 | fieldsAdd str_found = contains(content, "FlushCommand", caseSensitive:false)
@@ -2514,7 +2316,6 @@ The data type of the returned value is `string`.
 
 ```
 data record(a = "DQL", b = "is", c = "awesome!")
-
 
 
 | fieldsAdd concat(a, b, c, delimiter: " ")
@@ -2546,17 +2347,13 @@ The data type of the returned value is `boolean`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd contains(content, "DQL"),
 
 
-
 contains(content, "dql", caseSensitive: false),
-
 
 
 contains(content, "Query")
@@ -2588,9 +2385,7 @@ The data type of the returned value is `string`.
 data record(content = "https%3A%2F%2Fwww.dynatrace.com%2Fplatform%2Fgrail"),
 
 
-
 record(content = "https://www.dynatrace.com/platform/grail")
-
 
 
 | fieldsAdd decodeUrl(content)
@@ -2622,7 +2417,6 @@ The data type of the returned value is `string`.
 data record(content = "https://www.dynatrace.com/platform/grail")
 
 
-
 | fieldsAdd encodeUrl(content)
 ```
 
@@ -2652,17 +2446,13 @@ The data type of the returned value is `boolean`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd endsWith(content, "awesome!"),
 
 
-
 endsWith(content, "AWESOME!", caseSensitive: false),
-
 
 
 endsWith(content, "Language")
@@ -2713,7 +2503,6 @@ The data type of the returned value is `string`.
 data record(content = """"foo@bar.com""")
 
 
-
 | fieldsAdd escape(content)
 ```
 
@@ -2747,17 +2536,13 @@ The data type of the returned value is `string`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd getCharacter(content, 1),
 
 
-
 getCharacter(content, 17),
-
 
 
 getCharacter(content, -1)
@@ -2793,17 +2578,13 @@ The data type of the returned value is `long`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd indexOf(content, "a"),
 
 
-
 indexOf(content, "a", from: 10),
-
 
 
 indexOf(content, "Query")
@@ -2835,21 +2616,16 @@ The data type of the returned value is `long`, `double`, `boolean`, `string`, `a
 data record(content = """{
 
 
-
 "name":"John",
-
 
 
 "children":["Mallory", "Mary"],
 
 
-
 "address":{"city":"Boston", "zip":"02210"}
 
 
-
 }""")
-
 
 
 | fieldsAdd jsonField(content, "name")
@@ -2865,9 +2641,7 @@ Query result:
 data record(content = """JSON: {"name": "John"} ...""")
 
 
-
 | fieldsAdd jsonField(content, "name", seek:false)
-
 
 
 | fieldsAdd jsonField(content, "name", seek:true)
@@ -2899,29 +2673,22 @@ The data type of the returned value is `long`, `double`, `boolean`, `string`, `a
 data record(content = """{
 
 
-
 "name":"John",
-
 
 
 "children":["Mallory", "Mary"],
 
 
-
 "address":{"city":"Boston", "zip":"02210"}
-
 
 
 }""")
 
 
-
 | fieldsAdd jsonPath(content, "$.children[0]")
 
 
-
 | fieldsAdd jsonPath(content, "$.address.city")
-
 
 
 | fieldsAdd jsonPath(content, "$['address']['zip']")
@@ -2937,9 +2704,7 @@ Query result:
 data record(content = """JSON: {"name": "John"} ...""")
 
 
-
 | fieldsAdd jsonPath(content, "$.name", seek:false)
-
 
 
 | fieldsAdd jsonPath(content, "$.name", seek:true)
@@ -2971,17 +2736,13 @@ The data type of the returned value is `long`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd lastIndexOf(content, "a"),
 
 
-
 lastIndexOf(content, "a", from: 10),
-
 
 
 lastIndexOf(content, "Query")
@@ -3013,13 +2774,10 @@ The data type of the returned value is `long`.
 data record(a = "DQL is awesome!", b = "Grail is awesome!"),
 
 
-
 record(a = "Dynatrace Query Language", b = "DQL"),
 
 
-
 record(a = "Dynatrace Query Language", b = "dynatrace query language")
-
 
 
 | fieldsAdd levenshteinDistance(a, b)
@@ -3051,17 +2809,13 @@ The data type of the returned value is `boolean`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd like(content, "%DQL%"),
 
 
-
 like(content, "D%L%"),
-
 
 
 like(content, "D_L%")
@@ -3093,9 +2847,7 @@ The data type of the returned value is `string`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd lower(content)
@@ -3106,7 +2858,6 @@ Run in Playground
 Query result:
 
 ## matchesPattern
-
 
 
 Tests if a string expression matches the DPL pattern and returns `true` if it does, otherwise, returns `false`.
@@ -3129,17 +2880,13 @@ The data type of the returned value is `boolean`.
 data record(content = "2023-11-01 12:52:12 : 766"),
 
 
-
 record(content = "2023-11-01 12:53:00:123"),
-
 
 
 record(content = "2023-11-01 12:55:59 : 192.168.0.1")
 
 
-
 | fieldsAdd matchesPattern(content, "TIME ' : ' LONG"),
-
 
 
 matchesPattern(content, "TIME ' : ' IP")
@@ -3177,25 +2924,19 @@ The data type of the returned value is `boolean`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language"),
-
 
 
 record(content = array("DQL", "is", "awesome", "!", "Dynatrace Query Language"))
 
 
-
 | fieldsAdd matchesPhrase(content, "DQL"),
-
 
 
 matchesPhrase(content, "Dyna"),
 
 
-
 matchesPhrase(content, "query"),
-
 
 
 matchesPhrase(content, "query", caseSensitive: true)
@@ -3229,13 +2970,10 @@ Values are matched case-insensitive by default:
 data record(content = "User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1")
 
 
-
 | fieldsAdd matchesValue(content, "User*"),
 
 
-
 matchesValue(content, "user*"),
-
 
 
 matchesValue(content, "user*", caseSensitive: true)
@@ -3253,13 +2991,10 @@ Values are matched from the beginning. To match parts of the value, use `*` as w
 data record(content = "User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1")
 
 
-
 | fieldsAdd matchesValue(content, "192.168.0.1"),
 
 
-
 matchesValue(content, "*192.168.0.1"),
-
 
 
 matchesValue(content, "*failed to log*")
@@ -3277,9 +3012,7 @@ Only ASCII characters are matched case-insensitive:
 data record(content = "Ãsterreich")
 
 
-
 | fieldsAdd matchesValue(content, "Ã¶sterreich"),
-
 
 
 matchesValue(content, "Ãsterreich")
@@ -3297,13 +3030,10 @@ The function handles values of arrays in "any-match" manner.
 data record(technologies = array("Java11", "java17"))
 
 
-
 | fieldsAdd matchesValue(technologies, "Java11"),
 
 
-
 matchesValue(technologies, "java"),
-
 
 
 matchesValue(technologies, "java*")
@@ -3323,17 +3053,13 @@ The `matchesValue()` function supports matching against multiple patterns. You c
 data record(content = array("DQL", "is", "awesome", "!"))
 
 
-
 | fieldsAdd matchesValue(content, array("Grail", "dql")),
-
 
 
 matchesValue(content, {"Grail", "dql"}),
 
 
-
 matchesValue(content, {"Grail", "dq*"}),
-
 
 
 matchesValue(content, {"Grail", "dq*"}, caseSensitive: true)
@@ -3366,17 +3092,13 @@ Fields created from the output of the `parse` function by default get the name o
 data record(src = "1 2"),
 
 
-
 record(src = "45 46 47 48")
-
 
 
 | fieldsAdd parse(src, "LONG:result"),
 
 
-
 value = parse(src, "LONG:result"),
-
 
 
 parse(src, "LONG:field1 ' ' LONG:field2")
@@ -3414,17 +3136,13 @@ The data type of the returned value is `array`.
 data record(src = "1 2"),
 
 
-
 record(src = "45 46 47 48")
-
 
 
 | fieldsAdd parseAll(src, "LONG:result"),
 
 
-
 value = parseAll(src, "LONG:result"),
-
 
 
 parseAll(src, "LONG:field1 ' ' LONG:field2")
@@ -3463,21 +3181,16 @@ In this example, we extract the punctuation characters from each input string.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language"),
-
 
 
 record(content = "${placeholder}")
 
 
-
 | fieldsAdd punctuation(content),
 
 
-
 punctuation(content, count: 2),
-
 
 
 punctuation(content, count: 2, withSpace: true)
@@ -3509,13 +3222,10 @@ The data type of the returned value is `string`.
 data record(content = "DQL 2019-08-01 09:30:00"),
 
 
-
 record(content = "Dynatrace Query L4nguage")
 
 
-
 | fieldsAdd replacePattern(content, "TIME", "is awesome!"),
-
 
 
 replacePattern(content, "LONG", "a")
@@ -3552,17 +3262,13 @@ The data type of the returned value is `string`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language"),
-
 
 
 record(content = "abcabca")
 
 
-
 | fieldsAdd replaceString(content, "awesome", "simple"),
-
 
 
 replaceString(content, "abca", "xyz")
@@ -3594,17 +3300,13 @@ The data type of the returned value is `array`.
 data record(content = "one $1 two $4 three"),
 
 
-
 record(content = "foo $1000 bar"),
-
 
 
 record(content = "no separator"),
 
 
-
 record(content = "")
-
 
 
 | fieldsAdd splitByPattern(content, " ' $' LONG ' ' ")
@@ -3622,7 +3324,6 @@ Query result:
 | *empty string* | `[]` |
 
 ## splitString
-
 
 
 Splits a string according to the parameters set.  
@@ -3658,21 +3359,16 @@ The data type of the returned value is `array`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd splitString(content, " "),
 
 
-
 splitString(content, "is"),
 
 
-
 splitString(content, ""),
-
 
 
 splitString(content, "XYZ")
@@ -3704,13 +3400,10 @@ The data type of the returned value is `boolean`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
 
 
-
 | fieldsAdd startsWith(content, "D"),
-
 
 
 startsWith(content, "dql", caseSensitive: false)
@@ -3746,13 +3439,10 @@ The data type of the returned value is `long`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language"),
 
 
-
 record(content = "ðâð¦º")
-
 
 
 | fieldsAdd stringLength(content)
@@ -3796,21 +3486,16 @@ The data type of the returned value is `string`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd substring(content, from: 4),
 
 
-
 substring(content, from: -2),
 
 
-
 substring(content, from: 4, to: 9),
-
 
 
 substring(content, from: -42, to: 42)
@@ -3842,9 +3527,7 @@ The data type of the returned value is `string`.
 data record(content = " DQL is awesome!"),
 
 
-
 record(content = " Dynatrace Query Language ")
-
 
 
 | fieldsAdd trim(content)
@@ -3890,7 +3573,6 @@ The data type of the returned value is `string`.
 data record(content = """"foo\x40bar\u002ecom""")
 
 
-
 | fieldsAdd unescape(content)
 ```
 
@@ -3924,9 +3606,7 @@ The data type of the returned value is `string`.
 data record(content = "DQL is &lt;bold&gt;awesome&lt;/bold&gt;!"),
 
 
-
 record(content = "&lt;a href=&quot;https://www.dynatrace.com/platform/grail&quot;&gt;Dynatrace Query Language&lt;/a&gt;")
-
 
 
 | fieldsAdd unescapeHtml(content)
@@ -3958,9 +3638,7 @@ The data type of the returned value is `string`.
 data record(content = "DQL is awesome!"),
 
 
-
 record(content = "Dynatrace Query Language")
-
 
 
 | fieldsAdd upper(content)
@@ -3993,7 +3671,6 @@ scraped: 2026-03-06T21:20:42.968672
 
 # DQL functions
 
-# DQL functions
 
 * Latest Dynatrace
 * Reference
@@ -4080,7 +3757,6 @@ scraped: 2026-03-06T21:20:22.400501
 
 # DQL operators
 
-# DQL operators
 
 * Latest Dynatrace
 * Reference
@@ -4161,7 +3837,6 @@ You can use arithmetic operators with numbers, represented by both the types `lo
 ### DIVISION
 
 
-
 Integer division
 
 When you divide a `long` value by another `long` value using the `/` operator, the result is also a `long` value, and any fractional part is discarded. To get a result with the fractional part (a `double` value), you need to convert or cast at least one of the operands to `double` (e.g., by using the [toDouble](platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions.md#toDouble "A list of DQL conversion and casting functions.") function).
@@ -4231,7 +3906,6 @@ The data type resulting from the operation is indicated in parentheses in the ta
 ## Equality operators
 
 
-
 Equality comparisons (`==`, `!=`) use a tri-state boolean algebra (`true`, `false`, `null`). This means that if any side of the equality comparison is `null`, the overall result of the comparison is `null`.
 There are four DQL functions that cover scenarios where missing or `null` records need to be retrieved:
 
@@ -4246,7 +3920,6 @@ For example, the below query that uses basic filtering does not provide records 
 fetch logs
 
 
-
 | filter log.source != "logsourcename"  // does not provide the records where `log.source` is null or missing
 ```
 
@@ -4254,7 +3927,6 @@ However, using the `isTrueOrNull` function includes those records with `null` an
 
 ```
 fetch logs
-
 
 
 | filter isTrueOrNull(log.source != "logsourcename") // also provides the records where `log.source` is null or missing
@@ -4323,9 +3995,7 @@ Checks an iterative boolean expression and returns `true`, if the expression was
 fetch logs
 
 
-
 | fieldsAdd a = array(1, 2, 3)
-
 
 
 | filter iAny(a[] > 2)
@@ -4339,9 +4009,7 @@ Collects the results of an iterative expression into an array. For example:
 fetch logs
 
 
-
 | fieldsAdd a = array(1, 2, 3), b = array(10, 11, 12)
-
 
 
 | fieldsAdd iCollectArray(a[] + b[])
@@ -4355,13 +4023,10 @@ Allows to access the index of an iterative expression element. For example, you 
 data record(a = array(2, 3, 7, 7, 1))
 
 
-
 | fields a = record(value = a[], index = iIndex())
 
 
-
 | expand a
-
 
 
 | fields value = a[value], index = a[index]
@@ -4389,13 +4054,10 @@ This example shows how to use the `in` keyword for filtering a host metric for t
 timeseries avg(dt.host.cpu.usage), filter:dt.entity.host in [fetch dt.entity.host
 
 
-
 | fieldsAdd tags
 
 
-
 | expand tags
-
 
 
 | filter tags == "ServiceNow" | fields id]
@@ -4445,7 +4107,6 @@ For example, `@w1` means midnight of Monday of the current week.
 For the following examples, the current time is Wednesday, 04 September 2024, 14:47:05+0200.
 
 ## Search
-
 
 
 You can use the `~` operator in expressions to match the value of an expression against a given search string. The performed comparison is case-insensitive and supports pattern matching using wildcards. The `~` operator returns a `boolean` value: `true` in case of a match, and `false` otherwise.
@@ -4517,7 +4178,6 @@ scraped: 2026-03-06T21:11:00.245264
 
 # Dynatrace Query Language
 
-# Dynatrace Query Language
 
 * Latest Dynatrace
 * Reference
@@ -4571,7 +4231,6 @@ scraped: 2026-03-03T21:22:43.067716
 
 # Lookup data in Grail
 
-# Lookup data in Grail
 
 * Latest Dynatrace
 * Explanation
@@ -4629,9 +4288,7 @@ You can configure permissions with [Account Management](../ru/manage/account-man
 ALLOW storage:files:read WHERE storage:file-path startsWith "/lookups/";
 
 
-
 ALLOW storage:files:write WHERE storage:file-path startsWith "/lookups/";
-
 
 
 ALLOW storage:files:delete WHERE storage:file-path startsWith "/lookups/";
@@ -4690,13 +4347,10 @@ You can define any DPL pattern that matches your data. Every pattern match produ
 Code,Category,Message
 
 
-
 100,informational,Continue
 
 
-
 101,informational,Switching Protocols
-
 
 
 ...
@@ -4710,9 +4364,7 @@ With the same data in JSONL format you can use the `JSON:json` DPL pattern:
 {"code": 100, "category": "informational", "message": "Continue"}
 
 
-
 {"code": 101, "category": "informational", "message": "Switching Protocols"}
-
 
 
 ...
@@ -4728,37 +4380,28 @@ The following example shows a curl command for interacting with the Resource Sto
 curl -X 'POST' \
 
 
-
 'https://<environment>.apps.dynatrace.com/platform/storage/resource-store/v1/files/tabular/lookup:test-pattern' \
-
 
 
 -H 'accept: */*' \
 
 
-
 -H 'Content-Type: multipart/form-data' \
-
 
 
 -H 'Authorization: Bearer <platformtoken>' \
 
 
-
 -F 'request={
-
 
 
 "parsePattern":"JSON:json",
 
 
-
 "lookupField":"code"
 
 
-
 }' \
-
 
 
 -F 'content=@http_status_codes.jsonl'
@@ -4767,7 +4410,6 @@ curl -X 'POST' \
 The response includes the number of records that matched the pattern and a preview of up to 100 records.
 
 ### Store lookup data
-
 
 
 The API provides the `/platform/storage/resource-store/v1/files/tabular/lookup:upload` endpoint, which allows you to upload and store your lookup data as a tabular file in Grail.
@@ -4788,49 +4430,37 @@ The following example shows a curl command for interacting with the Resource Sto
 curl -X 'POST' \
 
 
-
 'https://<environment>.apps.dynatrace.com/platform/storage/resource-store/v1/files/tabular/lookup:upload' \
-
 
 
 -H 'accept: */*' \
 
 
-
 -H 'Content-Type: multipart/form-data' \
-
 
 
 -H 'Authorization: Bearer <platformtoken>' \
 
 
-
 -F 'request={
-
 
 
 "parsePattern":"JSON:json",
 
 
-
 "lookupField":"code",
-
 
 
 "filePath":"/lookups/http_status_codes",
 
 
-
 "displayName":"My lookup data",
-
 
 
 "description":"Description of my lookup data"
 
 
-
 }' \
-
 
 
 -F 'content=@http_status_codes.jsonl'
@@ -4846,21 +4476,16 @@ The following example shows a curl command for interacting with the Resource Sto
 curl -X 'POST' \
 
 
-
 'https://<environment>.apps.dynatrace.com/platform/storage/resource-store/v1/files:delete' \
-
 
 
 -H 'accept: */*' \
 
 
-
 -H 'Content-Type: application/json' \
 
 
-
 -H 'Authorization: Bearer <platformtoken>' \
-
 
 
 -d '{"filePath": "/lookups/http_status_codes"}'
@@ -4890,13 +4515,10 @@ You can use the [load](platform/grail/dynatrace-query-language/commands/data-sou
 fetch spans
 
 
-
 | lookup [ load "/lookups/http_status_codes" ],
 
 
-
 Â  Â  sourcefield: http.response.status_code,
-
 
 
 Â  Â  lookupField: code
@@ -4914,7 +4536,6 @@ scraped: 2026-03-06T21:27:14.199849
 
 # Configure advanced permissions with security context
 
-# Configure advanced permissions with security context
 
 * Latest Dynatrace
 * How-to guide
@@ -4984,7 +4605,6 @@ You can [enforce access controls](../ru/platform/grail/organize-data/assign-perm
 ALLOW storage:buckets:read WHERE storage:bucket-name MATCH (â*-database-*â);
 
 
-
 ALLOW storage:logs:read WHERE storage:dt.security_context = "TeamA" AND storage:dt.host_group.id MATCH ("shared_host_*");
 ```
 
@@ -5011,7 +4631,6 @@ scraped: 2026-03-06T21:13:24.120446
 
 # Permissions in Grail
 
-# Permissions in Grail
 
 * Latest Dynatrace
 * How-to guide
@@ -5037,7 +4656,6 @@ To set up the bucket and table-level permissions
 
      ```
      ALLOW storage:buckets:read WHERE <conditions>;
-
 
 
      ALLOW <table permission> WHERE <conditions>;
@@ -5114,7 +4732,6 @@ The following examples describe how to use bucket permissions to grant access to
   ALLOW storage:buckets:read WHERE storage:query-consumption="INCLUDED";
 
 
-
   ALLOW storage:buckets:read WHERE storage:bucket-name="common_logs" AND storage:query-consumption="ON_DEMAND";
   ```
 * All retained data in all buckets.
@@ -5163,7 +4780,6 @@ You can combine both bucket and record level in your table permissions. For exam
 ALLOW storage:logs:read WHERE storage:bucket-name="unrestricted_logs";
 
 
-
 ALLOW storage:logs:read WHERE storage:bucket-name="default_logs" AND storage:dt.security_context="TeamA";
 ```
 
@@ -5175,7 +4791,6 @@ For example, the following statement will return results for records with `dt.se
 
 ```
 // will match both "crn-70400-alpha" and ["crn-70131", "crn-70400-beta", "crn-70500"]
-
 
 
 ALLOW storage:logs:read WHERE storage:dt.security_context MATCH ("crn-70400-*");
@@ -5197,9 +4812,7 @@ Make sure that the user has access to all relevant buckets.
 ALLOW storage:buckets:read WHERE â¦ // Ensure that the user has access to all relevant buckets
 
 
-
 ALLOW storage:logs:read WHERE storage:k8s.namespace.name="namespace1";
-
 
 
 ALLOW storage:logs:read WHERE storage:dt.host_group.id MATCH ("shared_host_*");
@@ -5220,7 +4833,6 @@ Solution:
    ALLOW storage:buckets:read WHERE â¦ // Ensure that the user has access to all relevant buckets
 
 
-
    ALLOW storage:logs:read WHERE storage:dt.security_context MATCH ("TeamA");
    ```
 
@@ -5238,7 +4850,6 @@ Make sure that the user has access to all relevant buckets.
 ALLOW storage:buckets:read WHERE â¦ // Ensure that the user has access to all relevant buckets
 
 
-
 ALLOW storage:bizevents:read WHERE storage:event.kind="Opportunity Field History";
 ```
 
@@ -5252,7 +4863,6 @@ Create a policy to grant access to records in `dt_system_events` for the specifi
 
 ```
 ALLOW storage:buckets:read WHERE storage:bucket-name="dt_system_events"
-
 
 
 ALLOW storage:system:read WHERE storage:event.kind="BILLING_EVENT"
@@ -5274,7 +4884,6 @@ In contrast to monitoring data, entity permissions only allow filtering for the 
 For more information, see [Grant access to entities with security context](../ru/manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context").
 
 ## Field permissions
-
 
 
 You can use field permissions to hide fields that might contain sensitive data. For this purpose, we provide fieldsets. A field is considered sensitive when it's part of a fieldset. Once a field is part of a fieldset, only users with the right permissions can use it in DQL queries for filtering and grouping. For other users, it won't show up in the query results.
@@ -5322,49 +4931,37 @@ POST https://myapps.mydomain.com/platform/storage/fieldsets/v1/fieldsets
 {
 
 
-
 "name": "sensitive-fields-retail",
-
 
 
 "description": "Sensitive fields retail",
 
 
-
 "enabled": true,
-
 
 
 "scope": "BUCKET",
 
 
-
 "fields": [
-
 
 
 "credit_card",
 
 
-
 "DOB"
-
 
 
 ],
 
 
-
 "buckets": [
-
 
 
 "logs_retail"
 
 
-
 ]
-
 
 
 }
@@ -5398,9 +4995,7 @@ The following example shows how to provide full access to lookup data stored in 
 ALLOW storage:files:read WHERE storage:file-path startsWith "/lookups/";
 
 
-
 ALLOW storage:files:write WHERE storage:file-path startsWith "/lookups/";
-
 
 
 ALLOW storage:files:delete WHERE storage:file-path startsWith "/lookups/";
@@ -5438,7 +5033,6 @@ This statement provides access to all built-in and custom buckets.
 ALLOW storage:buckets:read WHERE storage:table-name= "logs";
 
 
-
 ALLOW storage:logs:read;
 ```
 
@@ -5450,37 +5044,28 @@ This permission statement gives you access to all tables and all buckets, theref
 ALLOW storage:buckets:read;
 
 
-
 ALLOW storage:system:read,
-
 
 
 storage:events:read,
 
 
-
 storage:security.events:read,
-
 
 
 storage:logs:read,
 
 
-
 storage:metrics:read,
-
 
 
 storage:entities:read,
 
 
-
 storage:bizevents:read,
 
 
-
 storage:spans:read,
-
 
 
 storage:smartscape:read;
@@ -5498,29 +5083,22 @@ This statement does not give access to custom buckets.
 ALLOW storage:buckets:read WHERE storage:bucket-name MATCH ("default_*");
 
 
-
 ALLOW storage:events:read,
-
 
 
 storage:logs:read,
 
 
-
 storage:metrics:read,
-
 
 
 storage:entities:read,
 
 
-
 storage:bizevents:read,
 
 
-
 storage:spans:read,
-
 
 
 storage:smartscape:read;
@@ -5532,7 +5110,6 @@ This permission statement first narrows the results to system buckets, whose nam
 
 ```
 ALLOW storage:buckets:read WHERE storage:bucket-name MATCH ("dt_*");
-
 
 
 ALLOW storage:system:read;
@@ -5564,7 +5141,6 @@ scraped: 2026-03-06T21:13:55.366845
 
 # Organize data
 
-# Organize data
 
 * Latest Dynatrace
 * Overview
@@ -5599,7 +5175,6 @@ For a full list of available built-in buckets, run this DQL query:
 
 ```
 fetch dt.system.buckets
-
 
 
 | filter startsWith(name, "default_") or startsWith(name, "dt_")
@@ -5688,7 +5263,6 @@ scraped: 2026-03-04T21:37:09.081125
 
 # Query monitored entities in Grail
 
-# Query monitored entities in Grail
 
 * Latest Dynatrace
 * Reference
@@ -5725,7 +5299,6 @@ Relationships are exposed as fields and can be added similarly to other fields. 
 fetch dt.entity.host
 
 
-
 | fieldsAdd runs
 ```
 
@@ -5737,7 +5310,6 @@ Selecting a type refines the query to only return an array containing the proces
 
 ```
 fetch dt.entity.host
-
 
 
 | fieldsAdd runs[dt.entity.process_group]
@@ -5759,7 +5331,6 @@ For example, to include the host tags with your service instances, you can acces
 fetch dt.entity.service_instance
 
 
-
 | fieldsAdd runs_on[dt.entity.host]
 ```
 
@@ -5769,9 +5340,7 @@ It's important to note that service instances always run on a single host, which
 fetch dt.entity.service_instance
 
 
-
 | fieldsAdd runs_on[dt.entity.host]
-
 
 
 | lookup sourceField:`runs_on[dt.entity.host]`, lookupField:id, [ fetch dt.entity.host ]
@@ -5785,7 +5354,6 @@ Hosts can run multiple service instances, so the `runs[dt.entity.service_instanc
 fetch dt.entity.host
 
 
-
 | fieldsAdd runs[dt.entity.service_instance]
 ```
 
@@ -5795,9 +5363,7 @@ The `lookup` command doesn't apply to arrays of IDs, so you need to use the `exp
 fetch dt.entity.host
 
 
-
 | fieldsAdd runs[dt.entity.service_instance]
-
 
 
 | expand runs[dt.entity.service_instance]
@@ -5809,13 +5375,10 @@ In this example, the first record expands into three. Now you can use the `looku
 fetch dt.entity.host
 
 
-
 | fieldsAdd runs[dt.entity.service_instance]
 
 
-
 | expand runs[dt.entity.service_instance]
-
 
 
 | lookup sourceField:`runs[dt.entity.service_instance]`, lookupField:id, [ fetch dt.entity.service_instance]
@@ -5836,9 +5399,7 @@ The following query example retrieves a list of host entity tags.
 fetch dt.entity.host
 
 
-
 | expand tags, alias:tag
-
 
 
 | fields tag
@@ -5850,9 +5411,7 @@ You can use the `expand` command to optimize tag filtering. This example filters
 fetch dt.entity.host
 
 
-
 | expand tags
-
 
 
 | filter contains(tags, "[Environment]Cluster.Name:prod-eu-west-6-ireland")
@@ -5864,9 +5423,7 @@ If you need structured access to the key, context, or value, you can use the fol
 fetch dt.entity.host
 
 
-
 | expand tags, alias:tag_string
-
 
 
 | parse tag_string, """(('['LD:tag_context ']' LD:tag_key (!<<'\\' ':') LD:tag_value)|(LD:tag_key (!<<'\\' ':') LD:tag_value)|LD:tag_key)"""
@@ -5895,7 +5452,6 @@ The `describe` command is a valuable tool to explore the Grail data schema.
 describe dt.entity.service_instance
 
 
-
 | filter in(data_types, "record")
 ```
 
@@ -5915,7 +5471,6 @@ For example, you can filter service instances running on hosts with a specific t
 fetch dt.entity.service
 
 
-
 | filter in(id, classicEntitySelector("type(service), fromRelationship.runsOnHost(type(host), tag([AWS]Category:ABC))"))
 ```
 
@@ -5925,21 +5480,16 @@ You can also obtain this result using native DQL with the following query.
 fetch dt.entity.service
 
 
-
 | fieldsAdd host.id = runs_on[dt.entity.host]
-
 
 
 | expand host.id
 
 
-
 | lookup sourceField:host.id, lookupField: id, fields:host.tags=tags, [ fetch dt.entity.host]
 
 
-
 | expand host.tags
-
 
 
 | filter host.tags == "[AWS]Category:ABC"
@@ -5957,33 +5507,25 @@ In the following examples, the native DQL query will be slower and might yield i
 // fetch all hosts that run Java processes
 
 
-
 // using native DQL
-
 
 
 fetch dt.entity.host
 
 
-
 | expand pgi=contains[dt.entity.process_group_instance]
-
 
 
 | filter pgi in [
 
 
-
 fetch dt.entity.process_group_instance
-
 
 
 | filter matchesValue(softwareTechnologies, "*JAVA*")
 
 
-
 | fields id
-
 
 
 ]
@@ -5993,13 +5535,10 @@ fetch dt.entity.process_group_instance
 // fetch all hosts that run Java processes
 
 
-
 // using classicEntitySelector()
 
 
-
 fetch dt.entity.host
-
 
 
 | filter in (id, classicEntitySelector("type(host),toRelationship.isProcessOf(type(PROCESS_GROUP_INSTANCE),softwareTechnologies(JAVA))"))
@@ -6008,28 +5547,22 @@ fetch dt.entity.host
 ### Combine `classicEntitySelector` with native DQL filters
 
 
-
 If you already use the `classicEntitySelector` function, it is better to add all filter criteria into the function call rather than add additional native filter statements. The mixed query is slower than the query that contains all filter conditions in the entity selector.
 
 ```
 // fetch all LINUX hosts that run Java processes
 
 
-
 // using a mix of classicEntitySelector and native DQL filters
-
 
 
 fetch dt.entity.host
 
 
-
 | filter in (id, classicEntitySelector("type(host),toRelationship.isProcessOf(type(PROCESS_GROUP_INSTANCE),softwareTechnologies(JAVA))"))
 
 
-
 | fieldsAdd osType
-
 
 
 | filter osType == "LINUX"
@@ -6039,17 +5572,13 @@ fetch dt.entity.host
 // fetch all LINUX hosts that run Java processes
 
 
-
 // using only classicEntitySelector
-
 
 
 fetch dt.entity.host
 
 
-
 | filter in (id, classicEntitySelector("type(host),osType(LINUX),toRelationship.isProcessOf(type(PROCESS_GROUP_INSTANCE),softwareTechnologies(JAVA))"))
-
 
 
 | fieldsAdd osType
@@ -6084,7 +5613,6 @@ scraped: 2026-03-06T21:20:23.549476
 
 # Smartscape on Grail
 
-# Smartscape on Grail
 
 * Latest Dynatrace
 * Explanation
@@ -6169,7 +5697,6 @@ Display the references field by using fieldsAdd for all nodes
 smartscapeNodes "*"
 
 
-
 | fieldsAdd references
 ```
 
@@ -6177,7 +5704,6 @@ Summarize containers by the host ID they're running on
 
 ```
 smartscapeNodes CONTAINER
-
 
 
 | summarize by:references[runs_on.host], count()
@@ -6226,49 +5752,37 @@ To define a new fieldset that filters the Kubernetes configuration details that 
 POST /fieldsets
 
 
-
 {
-
 
 
 "name": "sensitive-field-k8s-object",
 
 
-
 "description": "Make k8s.object sensitive",
-
 
 
 "enabled": true,
 
 
-
 "scope": "TABLE",
-
 
 
 "fields": [
 
 
-
 "k8s.object"
-
 
 
 ],
 
 
-
 "tables": [
-
 
 
 "smartscape"
 
 
-
 ]
-
 
 
 }
@@ -6320,7 +5834,6 @@ scraped: 2026-03-06T21:10:21.329914
 
 # Grail
 
-# Grail
 
 * Latest Dynatrace
 * Overview

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:30:26.766950
 
 # Настройка безагентного мониторинга реальных пользователей
 
-# Настройка безагентного мониторинга реальных пользователей
 
 * Classic
 * Практическое руководство
@@ -59,41 +58,31 @@ scraped: 2026-03-05T21:30:26.766950
 <html>
 
 
-
 <head>
-
 
 
 <title>MyApp</title>
 
 
-
 <script type="text/javascript" src="myapp.js"></script>
-
 
 
 </head>
 
 
-
 <body>
-
 
 
 <form>
 
 
-
 Username: <input type="text name="username"/><br/>
-
 
 
 Password: <input type="password" name="password"/><br/>
 
 
-
 <input type="submit" value="Login">
-
 
 
 </form>
@@ -103,45 +92,34 @@ Password: <input type="password" name="password"/><br/>
 <html>
 
 
-
 <head>
-
 
 
 <title>MyApp</title>
 
 
-
 <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/145e12d594f/cg36988wxq/477g8ec68708x5c1_complete.js" crossorigin="anonymous"></script>
-
 
 
 <script type="text/javascript" src="myapp.js"></script>
 
 
-
 </head>
-
 
 
 <body>
 
 
-
 <form>
-
 
 
 Username: <input type="text name="username"/><br/>
 
 
-
 Password: <input type="password" name="password"/><br/>
 
 
-
 <input type="submit" value="Login">
-
 
 
 </form>

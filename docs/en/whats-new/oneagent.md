@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:24.251174
 
 # OneAgent release notes
 
-# OneAgent release notes
 
 * Latest Dynatrace
 * Release notes

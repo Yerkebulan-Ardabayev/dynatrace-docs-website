@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:31.516583
 
 # API загрузки логов OneAgent
 
-# API загрузки логов OneAgent
 
 * Latest Dynatrace
 * 2-min read
@@ -73,13 +72,10 @@ curl -i -X POST "http://127.0.0.1:14499/v2/logs/ingest" -H "Content-Type: applic
 HTTP/1.1 204 No Content
 
 
-
 Content-Type: application/json
 
 
-
 Server: EEC
-
 
 
 Content-Length: 116

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace Intelligence generative AI overview
 
-# Dynatrace Intelligence generative AI overview
 
 * Latest Dynatrace
 * Explanation

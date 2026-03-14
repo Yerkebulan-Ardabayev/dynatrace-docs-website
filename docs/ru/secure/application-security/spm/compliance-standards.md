@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:20.216388
 
 # Стандарты соответствия Security Posture Management
 
-# Стандарты соответствия Security Posture Management
 
 * Последняя Dynatrace
 * Практическое руководство

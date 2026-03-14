@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dashboards API - PUT a dashboard
 
-# Dashboards API - PUT a dashboard
 
 * Reference
 * Published Aug 30, 2019
@@ -159,349 +158,262 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "dashboardMetadata": {
-
 
 
 "dashboardFilter": {
 
 
-
 "managementZone": {
-
 
 
 "id": "3438779970106539862",
 
 
-
 "name": "Example Management Zone"
 
 
-
 },
-
 
 
 "timeframe": "l_72_HOURS"
 
 
-
 },
-
 
 
 "dynamicFilters": {
 
 
-
 "filters": [
-
 
 
 "SERVICE_TYPE"
 
 
-
 ]
 
 
-
 },
-
 
 
 "name": "Example Dashboard",
 
 
-
 "owner": "Example Owner",
-
 
 
 "shared": true
 
 
-
 },
-
 
 
 "metadata": {
 
 
-
 "clusterVersion": "Mock version",
-
 
 
 "configurationVersions": [
 
 
-
 4,
-
 
 
 2
 
 
-
 ]
 
 
-
 },
-
 
 
 "tiles": [
 
 
-
 {
-
 
 
 "bounds": {
 
 
-
 "height": 38,
-
 
 
 "left": 0,
 
 
-
 "top": 0,
-
 
 
 "width": 304
 
 
-
 },
 
 
-
 "configured": true,
-
 
 
 "name": "Hosts",
 
 
-
 "tileFilter": {},
-
 
 
 "tileType": "HEADER"
 
 
-
 },
-
 
 
 {
 
 
-
 "bounds": {
-
 
 
 "height": 38,
 
 
-
 "left": 304,
-
 
 
 "top": 0,
 
 
-
 "width": 304
-
 
 
 },
 
 
-
 "configured": true,
-
 
 
 "name": "Applications",
 
 
-
 "tileFilter": {},
-
 
 
 "tileType": "HEADER"
 
 
-
 },
-
 
 
 {
 
 
-
 "bounds": {
 
 
-
 "height": 304,
-
 
 
 "left": 0,
 
 
-
 "top": 38,
-
 
 
 "width": 304
 
 
-
 },
-
 
 
 "chartVisible": true,
 
 
-
 "configured": true,
-
 
 
 "name": "Host health",
 
 
-
 "tileFilter": {
-
 
 
 "managementZone": {
 
 
-
 "id": "3438779970106539862",
-
 
 
 "name": "Example Management Zone"
 
 
-
 }
 
 
-
 },
-
 
 
 "tileType": "HOSTS"
 
 
-
 },
-
 
 
 {
 
 
-
 "bounds": {
-
 
 
 "height": 304,
 
 
-
 "left": 304,
-
 
 
 "top": 38,
 
 
-
 "width": 304
 
 
-
 },
-
 
 
 "chartVisible": true,
 
 
-
 "configured": true,
-
 
 
 "name": "Application health",
 
 
-
 "tileFilter": {
-
 
 
 "managementZone": {
 
 
-
 "id": "3438779970106539862",
-
 
 
 "name": "Example Management Zone"
 
 
-
 }
-
 
 
 },
 
 
-
 "tileType": "APPLICATIONS"
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -560,17 +472,13 @@ A list of constraint violations
 {
 
 
-
 "description": "Dynatrace entity for the REST API example",
-
 
 
 "id": "6a98d7bc-abb9-44f8-ae6a-73e68e71812a",
 
 
-
 "name": "Dynatrace entity"
-
 
 
 }
@@ -578,55 +486,42 @@ A list of constraint violations
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -678,17 +573,13 @@ Since the request body is lengthy, it is truncated in this example **Curl** sect
 curl -X PUT \
 
 
-
 https://mySampleEnv.live.dynatrace.com/api/config/v1/dashboards/2768e6ca-e199-4433-9e0d-2922aec2099b \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
 
 
-
 -H 'Content-Type: application/json' \
-
 
 
 -d '{<truncated - see the Request body section >}'
@@ -706,281 +597,211 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/dashboards/2768e6ca-e199-44
 {
 
 
-
 "id": "2768e6ca-e199-4433-9e0d-2922aec2099b",
-
 
 
 "dashboardMetadata": {
 
 
-
 "name": "Sample dashboard",
-
 
 
 "shared": true,
 
 
-
 "owner": "john.smith",
-
 
 
 "sharingDetails": {
 
 
-
 "linkShared": true,
-
 
 
 "published": true
 
 
-
 },
-
 
 
 "dashboardFilter": {
 
 
-
 "timeframe": "l_2_HOURS",
-
 
 
 "managementZone": null
 
 
-
 }
 
 
-
 },
-
 
 
 "tiles": [
 
 
-
 {
-
 
 
 "name": "Host health",
 
 
-
 "tileType": "HOSTS",
-
 
 
 "configured": true,
 
 
-
 "bounds": {
 
 
-
 "top": 0,
-
 
 
 "left": 304,
 
 
-
 "width": 304,
-
 
 
 "height": 304
 
 
-
 },
-
 
 
 "tileFilter": {
 
 
-
 "managementZone": {
-
 
 
 "id": "9130632296508575249",
 
 
-
 "name": "Easytravel"
-
 
 
 }
 
 
-
 },
-
 
 
 "filterConfig": null,
 
 
-
 "chartVisible": true
-
 
 
 },
 
 
-
 {
-
 
 
 "name": "User behavior",
 
 
-
 "tileType": "SESSION_METRICS",
-
 
 
 "configured": true,
 
 
-
 "bounds": {
 
 
-
 "top": 0,
-
 
 
 "left": 0,
 
 
-
 "width": 304,
-
 
 
 "height": 304
 
 
-
 },
 
 
-
 "tileFilter": {
-
 
 
 "managementZone": null
 
 
-
 },
-
 
 
 "assignedEntities": ["APPLICATION-8E41C8C247910758"]
 
 
-
 },
-
 
 
 {
 
 
-
 "name": "Service health",
-
 
 
 "tileType": "SERVICES",
 
 
-
 "configured": true,
-
 
 
 "bounds": {
 
 
-
 "top": 0,
-
 
 
 "left": 608,
 
 
-
 "width": 304,
-
 
 
 "height": 304
 
 
-
 },
-
 
 
 "tileFilter": {
 
 
-
 "managementZone": {
-
 
 
 "id": "9130632296508575249",
 
 
-
 "name": "Easytravel"
 
 
-
 }
-
 
 
 },
 
 
-
 "filterConfig": null,
-
 
 
 "chartVisible": true
 
 
-
 }
 
 
-
 ]
-
 
 
 }

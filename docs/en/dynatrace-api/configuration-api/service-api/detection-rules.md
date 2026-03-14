@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:36.788501
 
 # Service detection API
 
-# Service detection API
 
 * Reference
 * Published Jun 19, 2019

@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:28:36.205318
 
 # Предоставление доступа к сущностям с контекстом безопасности
 
-# Предоставление доступа к сущностям с контекстом безопасности
 
 * Latest Dynatrace
 * Руководство
@@ -103,9 +102,7 @@ scraped: 2026-03-04T21:28:36.205318
 postgres.activity.idle,port=5432,dt.security_context="TeamA",dt.entity.sql:postgres_instance="CUSTOM_DEVICE-..." 42
 
 
-
 postgres.activity.idle,port=5432,dt.security_context="TeamA",dt.entity.sql:postgres_instance="CUSTOM_DEVICE-..." 45
-
 
 
 postgres.activity.idle,port=5432,dt.security_context="TeamA",dt.entity.sql:postgres_instance="CUSTOM_DEVICE-..." 43
@@ -142,13 +139,10 @@ postgres.activity.idle,port=5432,dt.security_context="TeamA",dt.entity.sql:postg
 ALLOW
 
 
-
 storage:entities:read
 
 
-
 WHERE
-
 
 
 storage:dt.security_context = "mySecurityContext";

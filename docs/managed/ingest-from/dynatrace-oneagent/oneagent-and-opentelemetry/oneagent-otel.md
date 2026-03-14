@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Use OneAgent with OpenTelemetry data
 
-# Use OneAgent with OpenTelemetry data
 
 * How-to guide
 * 3-min read
@@ -123,21 +122,16 @@ The following example shows what OneAgent would detect and stitch into the OneAg
 GET /calculate-price/ABC123  # OneAgent
 
 
-
 âââ SELECT FROM products     # OneAgent
-
 
 
 âââ calculate-discount       # OpenTelemetry
 
 
-
 â   âââ seasonal-rules       # OpenTelemetry
 
 
-
 â   âââ loyalty-calculation  # OpenTelemetry
-
 
 
 âââ INSERT INTO prices       # OneAgent
@@ -149,145 +143,109 @@ These auto-instrumented spans are woven together with your manual OpenTelemetry 
 @RestController
 
 
-
 public class PricingController {
-
 
 
 private static final Tracer tracer = GlobalOpenTelemetry.getTracer("pricing-service");
 
 
-
 @GetMapping("/calculate-price/{productId}")
-
 
 
 public PriceResponse calculatePrice(@PathVariable String productId) {
 
 
-
 Product product = productRepository.findById(productId);
-
 
 
 Span calcSpan = tracer.spanBuilder("calculate-discount")
 
 
-
 .setAttribute("product.category", product.getCategory())
 
 
-
 .startSpan();
-
 
 
 double discount;
 
 
-
 try (Scope scope = calcSpan.makeCurrent()) {
-
 
 
 discount = applySeasonalRules(product);
 
 
-
 discount += applyCustomerLoyalty(product);
 
 
-
 } finally {
-
 
 
 calcSpan.end();
 
 
-
 }
-
 
 
 return priceRepository.save(new PriceResponse(product, discount));
 
 
-
 }
-
 
 
 private double applySeasonalRules(Product product) {
 
 
-
 Span span = tracer.spanBuilder("seasonal-rules")
-
 
 
 .setAttribute("season", "winter-sale")
 
 
-
 .startSpan();
 
 
-
 try (Scope scope = span.makeCurrent()) {
-
 
 
 return calculateSeasonalDiscount();
 
 
-
 } finally {
-
 
 
 span.end();
 
 
-
 }
 
 
-
 }
-
 
 
 private double applyCustomerLoyalty(Product product) {
 
 
-
 Span span = tracer.spanBuilder("loyalty-calculation").startSpan();
-
 
 
 try (Scope scope = span.makeCurrent()) {
 
 
-
 return calculateLoyaltyDiscount();
-
 
 
 } finally {
 
 
-
 span.end();
 
 
-
 }
 
 
-
 }
-
 
 
 }

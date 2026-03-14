@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:31:13.607418
 
 # OneAgent monitoring configuration API - PUT configuration
 
-# OneAgent monitoring configuration API - PUT configuration
 
 * Reference
 * Updated on Jun 23, 2022
@@ -68,65 +67,49 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "autoInjectionEnabled": true,
-
 
 
 "id": "HOST-0123456789ABCDE",
 
 
-
 "metadata": {
-
 
 
 "clusterVersion": "1.192.1",
 
 
-
 "configurationVersions": [
-
 
 
 4,
 
 
-
 2
-
 
 
 ],
 
 
-
 "currentConfigurationVersions": [
-
 
 
 "1.0.4",
 
 
-
 "1.23"
-
 
 
 ]
 
 
-
 },
-
 
 
 "monitoringEnabled": true,
 
 
-
 "monitoringMode": "FULL_STACK"
-
 
 
 }
@@ -174,53 +157,40 @@ A list of constraint violations
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -285,53 +255,40 @@ A list of constraint violations
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:13.395203
 
 # Мониторинг Google App Engine с метриками Operations suite
 
-# Мониторинг Google App Engine с метриками Operations suite
 
 * Последняя версия Dynatrace
 * Практическое руководство

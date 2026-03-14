@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:39.079131
 
 # Set up the Dynatrace GCP metric and log integration on a new GKE Autopilot cluster
 
-# Set up the Dynatrace GCP metric and log integration on a new GKE Autopilot cluster
 
 * Latest Dynatrace
 * How-to guide
@@ -68,193 +67,145 @@ dynatrace-gcp-monitor-helm-deployment-role.yaml
 title: Dynatrace GCP Monitor helm deployment role
 
 
-
 description: Role for Dynatrace GCP Monitor helm and pubsub deployment
-
 
 
 stage: GA
 
 
-
 includedPermissions:
-
 
 
 - container.clusters.get
 
 
-
 - container.configMaps.create
-
 
 
 - container.configMaps.delete
 
 
-
 - container.configMaps.get
-
 
 
 - container.configMaps.update
 
 
-
 - container.deployments.create
-
 
 
 - container.deployments.delete
 
 
-
 - container.deployments.get
-
 
 
 - container.deployments.update
 
 
-
 - container.namespaces.create
-
 
 
 - container.namespaces.get
 
 
-
 - container.pods.get
-
 
 
 - container.pods.list
 
 
-
 - container.secrets.create
-
 
 
 - container.secrets.delete
 
 
-
 - container.secrets.get
-
 
 
 - container.secrets.list
 
 
-
 - container.secrets.update
-
 
 
 - container.serviceAccounts.create
 
 
-
 - container.serviceAccounts.delete
-
 
 
 - container.serviceAccounts.get
 
 
-
 - iam.roles.create
-
 
 
 - iam.roles.list
 
 
-
 - iam.roles.update
-
 
 
 - iam.serviceAccounts.actAs
 
 
-
 - iam.serviceAccounts.create
-
 
 
 - iam.serviceAccounts.getIamPolicy
 
 
-
 - iam.serviceAccounts.list
-
 
 
 - iam.serviceAccounts.setIamPolicy
 
 
-
 - pubsub.subscriptions.create
-
 
 
 - pubsub.subscriptions.get
 
 
-
 - pubsub.subscriptions.list
-
 
 
 - pubsub.topics.attachSubscription
 
 
-
 - pubsub.topics.create
-
 
 
 - pubsub.topics.getIamPolicy
 
 
-
 - pubsub.topics.list
-
 
 
 - pubsub.topics.setIamPolicy
 
 
-
 - pubsub.topics.update
-
 
 
 - resourcemanager.projects.get
 
 
-
 - resourcemanager.projects.getIamPolicy
-
 
 
 - resourcemanager.projects.setIamPolicy
 
 
-
 - serviceusage.services.enable
-
 
 
 - serviceusage.services.get
 
 
-
 - serviceusage.services.list
-
 
 
 - serviceusage.services.use
@@ -293,9 +244,7 @@ Be sure to replace `<your-subscription-name>` and `<your-topic-name>` with your 
 wget https://raw.githubusercontent.com/dynatrace-oss/dynatrace-gcp-monitor/master/scripts/deploy-pubsub.sh
 
 
-
 chmod +x deploy-pubsub.sh
-
 
 
 ./deploy-pubsub.sh --topic-name <your-topic-name> --subscription-name <your-subscription-name>
@@ -389,7 +338,6 @@ The deployment script will automatically create the new GKE Autopilot cluster na
 cd helm-deployment-package
 
 
-
 ./deploy-helm.sh --create-autopilot-cluster
 ```
 
@@ -399,7 +347,6 @@ To set a different name for the new cluster, run the command below instead, maki
 cd helm-deployment-package
 
 
-
 ./deploy-helm.sh --create-autopilot-cluster --autopilot-cluster-name <name-of-new-cluster>
 ```
 
@@ -407,7 +354,6 @@ To keep the existing versions of present extensions and install the latest versi
 
 ```
 cd helm-deployment-package
-
 
 
 ./deploy-helm.sh --create-autopilot-cluster --without-extensions-upgrade
@@ -434,7 +380,6 @@ To check whether installation was successful
 
    ```
    kubectl -n dynatrace logs -l app=dynatrace-gcp-monitor -c dynatrace-gcp-monitor-metrics
-
 
 
    kubectl -n dynatrace logs -l app=dynatrace-gcp-monitor -c dynatrace-gcp-monitor-logs
@@ -503,7 +448,6 @@ Example:
 
 ```
 filter_conditions:
-
 
 
 resource.labels.location = "us-central1-c" AND resource.labels.namespace_name = "dynatrace"

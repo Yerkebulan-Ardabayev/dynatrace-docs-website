@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:58.424568
 
 # Kubernetes API Monitoring
 
-# Kubernetes API Monitoring
 
 * Latest Dynatrace
 * 8-min read
@@ -38,21 +37,16 @@ Configure the **ActiveGate** values of the DynaKube according to the [list of pa
 ...
 
 
-
 activeGate:
-
 
 
 capabilities:
 
 
-
 - routing
 
 
-
 - kubernetes-monitoring
-
 
 
 ...
@@ -94,45 +88,34 @@ To connect automatically to the local Kubernetes API endpoint
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    annotations:
-
 
 
    feature.dynatrace.com/automatic-kubernetes-api-monitoring: "true"
 
 
-
    spec:
-
 
 
    ...
 
 
-
    activeGate:
 
 
-
    capabilities:
-
 
 
    - kubernetes-monitoring
@@ -146,49 +129,37 @@ To connect automatically to the local Kubernetes API endpoint
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    annotations:
-
 
 
    feature.dynatrace.com/automatic-kubernetes-api-monitoring: "true"
 
 
-
    feature.dynatrace.com/automatic-kubernetes-api-monitoring-cluster-name: "custom-cluster-name"
-
 
 
    spec:
 
 
-
    ...
-
 
 
    activeGate:
 
 
-
    capabilities:
-
 
 
    - kubernetes-monitoring
@@ -267,25 +238,19 @@ To connect to the public Kubernetes API, follow the instructions that apply to y
    apiVersion: v1
 
 
-
    kind: Secret
-
 
 
    metadata:
 
 
-
    name: dynatrace-activegate
-
 
 
    annotations:
 
 
-
    kubernetes.io/service-account.name: "dynatrace-activegate"
-
 
 
    type: kubernetes.io/service-account-token

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:42.801902
 
 # Create a private Synthetic location
 
-# Create a private Synthetic location
 
 * Classic
 * How-to guide
@@ -274,7 +273,6 @@ You can [verify the authenticity of the packages](#verify) using the signature f
     vi /root/.curlrc
 
 
-
     proxy=http://proxy.example.com:8080
     ```
 
@@ -311,9 +309,7 @@ You can [verify the authenticity of the packages](#verify) using the signature f
      sudo subscription-manager repos --enable rhel-7-server-extras-rpms
 
 
-
      sudo subscription-manager repos --enable rhel-7-server-optional-rpms
-
 
 
      sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -339,9 +335,7 @@ You can [verify the authenticity of the packages](#verify) using the signature f
      sudo subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
 
 
-
      sudo subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
-
 
 
      sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
@@ -363,9 +357,7 @@ You can [verify the authenticity of the packages](#verify) using the signature f
      sudo subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
 
 
-
      sudo subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
-
 
 
      sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
@@ -641,9 +633,7 @@ You can [verify the authenticity of the packages](#verify) using the signature f
    sudo yum -y install yum-plugin-versionlock
 
 
-
    sudo yum versionlock chromium
-
 
 
    sudo yum versionlock chromium-common
@@ -751,7 +741,6 @@ On Ubuntu Server 20.04 and 22.04 Chrome for Testing is supported since 1.331
 
      ```
      sudo unzip /tmp/chrome.zip -d /usr/lib/chrome_for_testing
-
 
 
      rm /tmp/chrome.zip
@@ -934,25 +923,19 @@ Each `tgz` package archive is stored in the S3 bucket together with the `*.tgz.s
    wget https://ca.dynatrace.com/dt-root.cert.pem ; openssl cms
 
 
-
    -verify
-
 
 
    -in chromium.tgz.sig
 
 
-
    -inform PEM
-
 
 
    -content chromium.tgz
 
 
-
    -binary
-
 
 
    -CAfile dt-root.cert.pem > /dev/null
@@ -978,25 +961,19 @@ Each `zip` package archive is stored in the S3 bucket together with the `*.zip.s
    wget https://ca.dynatrace.com/dt-root.cert.pem ; openssl cms
 
 
-
    -verify
-
 
 
    -in chrome.zip.sig
 
 
-
    -inform PEM
-
 
 
    -content chrome.zip
 
 
-
    -binary
-
 
 
    -CAfile dt-root.cert.pem > /dev/null

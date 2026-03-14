@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:51.483367
 
 # Мониторинг рабочих нагрузок Kubernetes/OpenShift
 
-# Мониторинг рабочих нагрузок Kubernetes/OpenShift
 
 * Classic
 * 5-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:45.649064
 
 # Приём и обработка журналов (Logs Classic)
 
-# Приём и обработка журналов (Logs Classic)
 
 * Classic
 * Overview

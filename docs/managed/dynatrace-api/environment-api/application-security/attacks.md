@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Attacks API
 
-# Attacks API
 
 * Reference
 * Published Aug 30, 2023

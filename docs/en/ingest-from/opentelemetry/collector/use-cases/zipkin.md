@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:40:00.956915
 
 # Ingest Zipkin data with the OpenTelemetry Collector
 
-# Ingest Zipkin data with the OpenTelemetry Collector
 
 * Latest Dynatrace
 * How-to guide
@@ -27,9 +26,7 @@ For example, if you are using [Spring Code Sleuthï»¿](https://cloud.spring.io
 spring:
 
 
-
 sleuth:
-
 
 
 supports-join: false
@@ -57,49 +54,37 @@ See [Collector Deployment](../deployment.md "How to deploy Dynatrace OTel Collec
 receivers:
 
 
-
 zipkin:
-
 
 
 exporters:
 
 
-
 otlp_http:
-
 
 
 endpoint: ${env:DT_ENDPOINT}
 
 
-
 headers:
-
 
 
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
 
 
-
 service:
-
 
 
 pipelines:
 
 
-
 traces:
-
 
 
 receivers: [zipkin]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]

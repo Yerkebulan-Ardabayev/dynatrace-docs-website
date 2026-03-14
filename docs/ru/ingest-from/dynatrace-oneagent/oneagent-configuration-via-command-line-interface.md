@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:30:55.688261
 
 # Настройка OneAgent через интерфейс командной строки
 
-# Настройка OneAgent через интерфейс командной строки
 
 * Последняя версия Dynatrace
 * Справочник
@@ -300,13 +299,10 @@ OneAgent версии 1.225+
 Creating support archive from last 30 days in C:\data\support-archive
 
 
-
 Waiting 30s for archive request to be processed
 
 
-
 Processing archive, waiting up to 15m 0s
-
 
 
 Archive saved as C:\data\support-archive\support_archive_agent_2021-09-07_121619.zip

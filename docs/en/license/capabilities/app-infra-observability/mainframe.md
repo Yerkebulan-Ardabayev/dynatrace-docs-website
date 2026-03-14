@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:44.937750
 
 # Calculate your consumption of Mainframe Monitoring (DPS)
 
-# Calculate your consumption of Mainframe Monitoring (DPS)
 
 * Latest Dynatrace
 * Explanation

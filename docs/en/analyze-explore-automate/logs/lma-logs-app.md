@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:41.161992
 
 # Logs app
 
-# Logs app
 
 * Latest Dynatrace
 * App

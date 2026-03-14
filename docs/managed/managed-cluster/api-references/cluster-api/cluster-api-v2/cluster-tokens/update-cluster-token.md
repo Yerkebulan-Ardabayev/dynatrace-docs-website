@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Update Cluster token
 
-# Update Cluster token
 
 * Published Feb 12, 2020
 
@@ -50,25 +49,19 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "name": "string",
-
 
 
 "revoked": true,
 
 
-
 "scopes": [
-
 
 
 "DiagnosticExport"
 
 
-
 ]
-
 
 
 }
@@ -117,53 +110,40 @@ A list of constraint violations
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -179,13 +159,10 @@ In this example, the request queries the metadata of the specific token, which h
 curl -X PUT "https://myManaged.cluster.com/api/cluster/v2/tokens/4e9f128e-04f9-4795-pj319-8b7c-3c14a5e885e4"
 
 
-
 -H  "accept: application/json; charset=utf-8"
 
 
-
 -H  "Content-Type: application/json; charset=utf-8"
-
 
 
 -d  "{  \"revoked\": \"true\",  \"name\": \"updated token\",  \"scopes\": [    \"UnattendedInstall\"  ]}"
@@ -203,17 +180,13 @@ https://myManaged.cluster.com/api/cluster/v2/tokens/4e9f128e-04f9-4795-pj319-8b7
 {
 
 
-
 "revoked": "true",
-
 
 
 "name": "updated token",
 
 
-
 "scopes": ["UnattendedInstall"]
-
 
 
 }

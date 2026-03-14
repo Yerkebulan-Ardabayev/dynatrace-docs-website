@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:19.746089
 
 # Automate vulnerability remediation with GitHub Copilot and Dynatrace
 
-# Automate vulnerability remediation with GitHub Copilot and Dynatrace
 
 * Latest Dynatrace
 * Tutorial
@@ -126,49 +125,37 @@ To connect GitHub Copilot with Dynatrace MCP Server:
    {
 
 
-
    "mcpServers":
-
 
 
    {
 
 
-
    "dynatrace": {
-
 
 
    "type": "http",
 
 
-
    "url": "https://pia1134d.dev.apps.dynatracelabs.com/platform-reserved/mcp-gateway/v0.1/servers/dynatrace-mcp/mcp",
-
 
 
    "headers": {
 
 
-
    "Authorization": "Bearer $COPILOT_MCP_DT_API_TOKEN"
-
 
 
    },
 
 
-
    "tools": ["*"]
 
 
-
    }
 
 
-
    }
-
 
 
    }
@@ -261,49 +248,37 @@ To connect GitHub Copilot with Dynatrace MCP Server
    {
 
 
-
    "mcpServers":
-
 
 
    {
 
 
-
    "dynatrace": {
-
 
 
    "type": "http",
 
 
-
    "url": "https://pia1134d.dev.apps.dynatracelabs.com/platform-reserved/mcp-gateway/v0.1/servers/dynatrace-mcp/mcp",
-
 
 
    "headers": {
 
 
-
    "Authorization": "Bearer $COPILOT_MCP_DT_API_TOKEN"
-
 
 
    },
 
 
-
    "tools": ["*"]
 
 
-
    }
 
 
-
    }
-
 
 
    }

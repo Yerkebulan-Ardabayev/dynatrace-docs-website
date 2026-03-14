@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:28:24.618299
 
 # Мониторинг Azure Power BI Embedded
 
-# Мониторинг Azure Power BI Embedded
 
 * Последняя версия Dynatrace
 * Практическое руководство

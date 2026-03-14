@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:10.728325
 
 # Update OneAgent on Linux
 
-# Update OneAgent on Linux
 
 * Latest Dynatrace
 * 1-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:31:26.943854
 
 # Manage Snowflake Database extensions
 
-# Manage Snowflake Database extensions
 
 * Latest Dynatrace
 * How-to guide

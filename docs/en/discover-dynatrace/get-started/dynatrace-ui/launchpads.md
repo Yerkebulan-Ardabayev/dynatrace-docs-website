@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:58.151502
 
 # Launchpads
 
-# Launchpads
 
 * Latest Dynatrace
 * 4-min read

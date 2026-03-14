@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:04.309763
 
 # Приём событий безопасности и журналов аудита GitHub Advanced Security
 
-# Приём событий безопасности и журналов аудита GitHub Advanced Security
 
 * Latest Dynatrace
 * Расширение
@@ -132,7 +131,6 @@ scraped: 2026-03-06T21:24:04.309763
      fetch logs
 
 
-
      | filter log.source=="GitHub Advanced Security"
      ```
    * Для событий обнаружения:
@@ -141,13 +139,10 @@ scraped: 2026-03-06T21:24:04.309763
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="GitHub Advanced Security"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -158,13 +153,10 @@ scraped: 2026-03-06T21:24:04.309763
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="GitHub Advanced Security"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"

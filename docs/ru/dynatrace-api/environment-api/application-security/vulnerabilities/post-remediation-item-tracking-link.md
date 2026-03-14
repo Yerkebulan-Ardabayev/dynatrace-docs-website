@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:24:04.456847
 
 # Vulnerabilities API - POST ссылки отслеживания элементов исправления
 
-# Vulnerabilities API - POST ссылки отслеживания элементов исправления
 
 * Справочник
 * Обновлено 25 сентября 2024
@@ -61,21 +60,16 @@ scraped: 2026-03-02T21:24:04.456847
 {
 
 
-
 "deletes": [
-
 
 
 "string"
 
 
-
 ],
 
 
-
 "updates": {}
-
 
 
 }
@@ -124,53 +118,40 @@ scraped: 2026-03-02T21:24:04.456847
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -193,61 +174,46 @@ scraped: 2026-03-02T21:24:04.456847
 curl -X 'POST' 'https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/2919200225913269102/remediationItems/trackingLinks' \
 
 
-
 -H 'accept: */*' \
-
 
 
 -H 'Authorization: Api-Token [your_token]' \
 
 
-
 -H 'Content-Type: application/json; charset=utf-8' \
-
 
 
 -d '{
 
 
-
 "updates": {
-
 
 
 "PROCESS_GROUP-46C0E12D9B0EF2D9": {
 
 
-
 "displayName": "TICKET-46C0E12D9B0EF2D9",
-
 
 
 "url": "https://example.com/TICKET-46C0E12D9B0EF2D9"
 
 
-
 },
-
 
 
 "PROCESS_GROUP-549E6AD75BD598EC": {
 
 
-
 "displayName": "TICKET-549E6AD75BD598EC",
-
 
 
 "url": "https://example.com/TICKET-549E6AD75BD598EC"
 
 
-
 }
 
 
-
 }
-
 
 
 }'
@@ -265,45 +231,34 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 {
 
 
-
 "updates": {
-
 
 
 "PROCESS_GROUP-46C0E12D9B0EF2D9": {
 
 
-
 "displayName": "TICKET-46C0E12D9B0EF2D9",
-
 
 
 "url": "https://example.com/TICKET-46C0E12D9B0EF2D9"
 
 
-
 },
-
 
 
 "PROCESS_GROUP-549E6AD75BD598EC": {
 
 
-
 "displayName": "TICKET-549E6AD75BD598EC",
-
 
 
 "url": "https://example.com/TICKET-549E6AD75BD598EC"
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -323,29 +278,22 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 curl -X 'POST' 'https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/2919200225913269102/remediationItems/trackingLinks' \
 
 
-
 -H 'accept: */*' \
-
 
 
 -H 'Authorization: Api-Token [your_token]' \
 
 
-
 -H 'Content-Type: application/json; charset=utf-8' \
-
 
 
 -d '{
 
 
-
 "deletes": ["PROCESS_GROUP-46C0E12D9B0EF2D9", "PROCESS_GROUP-549E6AD75BD598EC"]
 
 
-
 }
-
 
 
 '
@@ -363,9 +311,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 {
 
 
-
 "deletes": ["PROCESS_GROUP-46C0E12D9B0EF2D9", "PROCESS_GROUP-549E6AD75BD598EC"]
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:33:29.156035
 
 # Set up permissions for Live Debugging
 
-# Set up permissions for Live Debugging
 
 * Latest Dynatrace
 * How-to guide
@@ -89,7 +88,6 @@ Grants permission to read user-level Live Debugging snapshots.
 
   ```
   ALLOW storage:application.snapshots:read;
-
 
 
   ALLOW storage:buckets:read WHERE storage:table-name = "application.snapshots";

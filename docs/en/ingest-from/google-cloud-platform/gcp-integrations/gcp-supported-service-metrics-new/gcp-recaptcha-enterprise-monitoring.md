@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:38:14.267785
 
 # Google Cloud reCAPTCHA Enterprise monitoring
 
-# Google Cloud reCAPTCHA Enterprise monitoring
 
 * Latest Dynatrace
 * How-to guide

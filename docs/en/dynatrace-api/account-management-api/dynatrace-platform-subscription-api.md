@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:05.309312
 
 # Dynatrace Platform Subscription API
 
-# Dynatrace Platform Subscription API
 
 * Latest Dynatrace
 * Reference

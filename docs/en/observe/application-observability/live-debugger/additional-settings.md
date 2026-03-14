@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:31:23.604150
 
 # Configure additional settings for Live Debugging
 
-# Configure additional settings for Live Debugging
 
 * Latest Dynatrace
 * How-to guide
@@ -62,41 +61,31 @@ If your application's code is being transpiled or bundled, you need to include t
 const TerserPlugin = require("terser-webpack-plugin");
 
 
-
 module.exports = {
-
 
 
 // ...
 
 
-
 optimization: {
-
 
 
 minimizer: \[new TerserPlugin({
 
 
-
 terserOptions: {
-
 
 
 mangle: false,
 
 
-
 },
-
 
 
 })],
 
 
-
 },
-
 
 
 };

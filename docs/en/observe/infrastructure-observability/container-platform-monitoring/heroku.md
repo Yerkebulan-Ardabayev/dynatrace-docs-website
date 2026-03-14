@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:28:55.999404
 
 # Heroku monitoring
 
-# Heroku monitoring
 
 * Reference
 * 2-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:40.541970
 
 # Мониторинг Google Cloud Network Security
 
-# Мониторинг Google Cloud Network Security
 
 * Latest Dynatrace
 * How-to guide

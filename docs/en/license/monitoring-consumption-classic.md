@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:17.183082
 
 # Dynatrace classic licensing
 
-# Dynatrace classic licensing
 
 * Classic
 * 1-min read

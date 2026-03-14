@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:30.836454
 
 # Semantic Dictionary
 
-# Semantic Dictionary
 
 * Latest Dynatrace
 * Overview

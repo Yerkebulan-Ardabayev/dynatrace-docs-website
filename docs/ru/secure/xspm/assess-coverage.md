@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:21:59.541148
 
 # Оценка покрытия
 
-# Оценка покрытия
 
 * Latest Dynatrace
 * How-to guide

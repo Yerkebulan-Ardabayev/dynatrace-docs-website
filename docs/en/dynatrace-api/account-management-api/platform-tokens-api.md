@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:18.452864
 
 # Platform tokens API
 
-# Platform tokens API
 
 * Latest Dynatrace
 * Reference

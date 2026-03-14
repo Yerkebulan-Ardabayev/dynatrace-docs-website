@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:33.800510
 
 # Визуализация "Тепловая карта"
 
-# Визуализация "Тепловая карта"
 
 * Latest Dynatrace
 * Практическое руководство
@@ -32,9 +31,7 @@ scraped: 2026-03-06T21:21:33.800510
 timeseries response_time = avg(dt.service.request.response_time), by: { dt.entity.service }
 
 
-
 | fields response_time, entityName(dt.entity.service), interval, timeframe, dt.entity.service
-
 
 
 | limit 10
@@ -50,7 +47,6 @@ timeseries response_time = avg(dt.service.request.response_time), by: { dt.entit
 
 ```
 fetch security.events
-
 
 
 | summarize count = count(), by:{range(vulnerability.risk.score, 0.5), event.status}

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:26.413235
 
 # Event triggers for workflows
 
-# Event triggers for workflows
 
 * Latest Dynatrace
 * Reference

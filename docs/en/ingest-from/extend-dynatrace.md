@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:28.052302
 
 # Extend Dynatrace
 
-# Extend Dynatrace
 
 * Latest Dynatrace
 * 3-min read

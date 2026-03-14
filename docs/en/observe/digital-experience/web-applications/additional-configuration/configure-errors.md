@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:31.687061
 
 # Configure error detection for web applications
 
-# Configure error detection for web applications
 
 * Classic
 * How-to guide

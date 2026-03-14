@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:30:33.891937
 
 # Запросы на естественном языке
 
-# Запросы на естественном языке
 
 * Последняя версия Dynatrace
 * Обзор
@@ -104,9 +103,7 @@ scraped: 2026-03-04T21:30:33.891937
 fetch bizevents , from:now() â 30d
 
 
-
 | filter event.type ==  "new trip"
-
 
 
 | makeTimeseries interval:1h, {profit= avg(profit), discount= avg(discount)}
@@ -120,9 +117,7 @@ fetch bizevents , from:now() â 30d
 fetch bizevents, from:now() â 30d
 
 
-
 | filter event.type ==  "new trip"
-
 
 
 | makeTimeseries interval:1h, {avg_money_made = avg(money_made), avg_price_reduction = avg(price_reduction)}

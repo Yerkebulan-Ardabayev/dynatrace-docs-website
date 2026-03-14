@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:32.708456
 
 # Stop/restart OneAgent on Windows
 
-# Stop/restart OneAgent on Windows
 
 * Latest Dynatrace
 * 1-min read

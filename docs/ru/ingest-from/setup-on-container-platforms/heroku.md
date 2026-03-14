@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:35.528815
 
 # Настройка Dynatrace на Heroku
 
-# Настройка Dynatrace на Heroku
 
 * Latest Dynatrace
 * Чтение: 6 мин
@@ -46,25 +45,19 @@ Heroku — это облачная платформа как услуга (PaaS)
 # Add the Dynatrace buildpack
 
 
-
 heroku buildpacks:add https://github.com/Dynatrace/heroku-buildpack-dynatrace.git#<version>
-
 
 
 # Set required credentials to your Dynatrace environment
 
 
-
 heroku config:set DT_TENANT=<environmentID>
-
 
 
 heroku config:set DT_API_TOKEN=<token>
 
 
-
 # Deploy to Heroku
-
 
 
 git push heroku master
@@ -100,17 +93,13 @@ git push heroku master
 try {
 
 
-
 require('@dynatrace/oneagent')();
-
 
 
 } catch(err) {
 
 
-
 console.log(err.toString());
-
 
 
 }

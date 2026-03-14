@@ -14,7 +14,6 @@ scraped: 2026-03-05T21:33:16.381453
 
 # Business Insights
 
-# Business Insights
 
 * Latest Dynatrace
 * App
@@ -163,7 +162,6 @@ scraped: 2026-03-05T21:33:03.715778
 
 # Adjust Apdex settings for custom applications
 
-# Adjust Apdex settings for custom applications
 
 * Classic
 * How-to guide
@@ -213,7 +211,6 @@ scraped: 2026-03-03T21:23:18.298824
 
 # Configure key user actions for custom applications
 
-# Configure key user actions for custom applications
 
 * How-to guide
 * 1-min read
@@ -278,7 +275,6 @@ scraped: 2026-03-06T21:33:31.236151
 
 # Define user action and user session properties for custom applications
 
-# Define user action and user session properties for custom applications
 
 * Classic
 * How-to guide
@@ -402,7 +398,6 @@ scraped: 2026-03-05T21:36:37.105292
 
 # Troubleshooting RUM for custom applications
 
-# Troubleshooting RUM for custom applications
 
 * Classic
 * Troubleshooting
@@ -426,7 +421,6 @@ scraped: 2026-03-06T21:14:00.392814
 
 # Custom applications
 
-# Custom applications
 
 * Classic
 * Overview
@@ -486,7 +480,6 @@ scraped: 2026-03-06T21:14:08.788123
 
 # Effective customer support with session segmentation
 
-# Effective customer support with session segmentation
 
 * Classic
 * Tutorial
@@ -574,7 +567,6 @@ To watch a session recording
 ## Check request waterfall graphs
 
 
-
 After watching the session recording, let's investigate the issue further using waterfall analysis and identify a specific request to blame.
 
 [Waterfall analysis](observe/digital-experience/web-applications/analyze-and-use/waterfall-analysis.md "Learn how to analyze all user action monitoring data through waterfall analysis.") proves to be invaluable in analyzing the performance of a user action and getting detailed information about various requests that comprise a user action. Waterfall graphs come in handy when you want to find a specific request that is responsible for failures or performance violations, while [top findings](observe/digital-experience/web-applications/analyze-and-use/waterfall-analysis.md#top-findings "Learn how to analyze all user action monitoring data through waterfall analysis.") streamline the captured data into easily understandable and actionable information, simplifying the troubleshooting process.
@@ -643,7 +635,6 @@ scraped: 2026-03-05T21:34:25.987547
 
 # Configure key user actions for mobile applications
 
-# Configure key user actions for mobile applications
 
 * Classic
 * How-to guide
@@ -709,7 +700,6 @@ scraped: 2026-03-05T21:35:06.948712
 
 # Define user action and user session properties for mobile applications
 
-# Define user action and user session properties for mobile applications
 
 * Classic
 * How-to guide
@@ -822,7 +812,6 @@ The **Credit card type** is an example of how we've "promoted" a server-side req
 ## Limitations
 
 
-
 * You can define a maximum of 200 properties per application.
 * You can define a maximum of 20 action properties per application.
 * Action and session properties of the `String` data type are limited to 100 characters after applying the cleanup rule.
@@ -851,7 +840,6 @@ scraped: 2026-03-06T21:30:50.604966
 
 # Create custom user action names for mobile applications
 
-# Create custom user action names for mobile applications
 
 * Classic
 * How-to guide
@@ -885,7 +873,6 @@ scraped: 2026-03-06T21:25:38.421195
 
 # Leverage user action and user session properties for mobile applications
 
-# Leverage user action and user session properties for mobile applications
 
 * Classic
 * How-to guide
@@ -1003,7 +990,6 @@ scraped: 2026-03-05T21:25:33.699476
 
 # Instrument mobile apps with Dynatrace Cordova plugin
 
-# Instrument mobile apps with Dynatrace Cordova plugin
 
 * Classic
 * How-to guide
@@ -1083,7 +1069,6 @@ scraped: 2026-03-05T21:26:16.084658
 
 # Instrument mobile apps with Dynatrace Flutter plugin
 
-# Instrument mobile apps with Dynatrace Flutter plugin
 
 * Classic
 * How-to guide
@@ -1128,7 +1113,6 @@ scraped: 2026-03-06T21:34:06.541220
 
 # Instrument mobile apps with Dynatrace .NET MAUI NuGet package
 
-# Instrument mobile apps with Dynatrace .NET MAUI NuGet package
 
 * Classic
 * How-to guide
@@ -1230,13 +1214,11 @@ iOS
 using Dynatrace.MAUI;
 
 
-
 Agent.Instance.Start();
 ```
 
 ```
 using Dynatrace.MAUI;
-
 
 
 Agent.Instance.Start();
@@ -1250,9 +1232,7 @@ You can optionally use the following method to enable the auto-instrumentation o
 using Dynatrace.MAUI;
 
 
-
 var httpHandler = Agent.Instance.GetHttpMessageHandler();
-
 
 
 var httpClient = new HttpClient(httpHandler);
@@ -1264,13 +1244,10 @@ Moreover, you can also have your own HTTP handler:
 using Dynatrace.MAUI;
 
 
-
 var defaultHttpHandler = new HttpClientHandler();
 
 
-
 var httpHandler = Agent.Instance.GetHttpMessageHandler(defaultHttpHandler);
-
 
 
 var httpClient = new HttpClient(httpHandler);
@@ -1294,25 +1271,19 @@ You can use the manual startup with a configuration builder (Android) or a confi
    {
 
 
-
    "android": {
-
 
 
    "autoStart": {
 
 
-
    "enabled": false
 
 
-
    }
 
 
-
    }
-
 
 
    }
@@ -1322,17 +1293,13 @@ You can use the manual startup with a configuration builder (Android) or a confi
    {
 
 
-
    "ios": {
-
 
 
    "DTXAutoStart": false
 
 
-
    }
-
 
 
    }
@@ -1349,13 +1316,11 @@ You can use the manual startup with a configuration builder (Android) or a confi
    using Dynatrace.MAUI;
 
 
-
    Agent.Instance.Start(new ConfigurationBuilder("<insertBeaconURL>","<insertApplicationID>").BuildConfiguration());
    ```
 
    ```
    using Dynatrace.MAUI;
-
 
 
    Agent.Instance.Start(new ConfigurationBuilder("<insertBeaconURL>","<insertApplicationID>").BuildConfiguration());
@@ -1371,13 +1336,10 @@ Call `EnterAction` to start a custom action and `LeaveAction` to close a custom 
 using Dynatrace.MAUI;
 
 
-
 IRootAction myAction = Agent.Instance.EnterAction("Tap on Confirm");
 
 
-
 //Perform the action and whatever else is needed.
-
 
 
 myAction.LeaveAction();
@@ -1392,7 +1354,6 @@ When the [user opt-in mode](observe/digital-experience/mobile-applications/addit
 ### Create child actions
 
 
-
 Besides generating standalone custom actions, you can also create [child actions](../ru/observe/digital-experience/rum-concepts/user-actions.md#child-actions "Learn what user actions are and how they help you understand what users do with your application.").
 
 Child actions are similar to parent custom actions. When a parent action is closed, all child actions of the parent action are automatically closed.
@@ -1401,21 +1362,16 @@ Child actions are similar to parent custom actions. When a parent action is clos
 using Dynatrace.MAUI;
 
 
-
 IRootAction myAction = Agent.Instance.EnterAction("Tap on Confirm");
-
 
 
 IAction mySubAction = myAction.EnterAction("Tap on Confirm again");
 
 
-
 //Perform the action and whatever else is needed.
 
 
-
 mySubAction.LeaveAction();
-
 
 
 myAction.LeaveAction();
@@ -1435,13 +1391,10 @@ If you need to cancel an already created but not yet closed custom action, call 
 using Dynatrace.MAUI;
 
 
-
 IRootAction myAction = Agent.Instance.EnterAction("Tap on Confirm");
 
 
-
 // Action is canceled
-
 
 
 myAction.Cancel();
@@ -1457,109 +1410,82 @@ Use the following code snippet to instrument web requests:
 using Dynatrace.MAUI;
 
 
-
 // Create an action
-
 
 
 IRootAction webAction = Agent.Instance.EnterAction(actionName: "WebRequest Action");
 
 
-
 // Generate a new unique tag associated with the web request action
-
 
 
 string requestTag = webAction.GetRequestTag(url);
 
 
-
 string requestTagHeader = webAction.GetRequestTagHeader();
-
 
 
 // Place the Dynatrace HTTP header on your web request
 
 
-
 httpClient.DefaultRequestHeaders.Add(requestTagHeader, requestTag);
-
 
 
 // Generate a WebRequestTiming object based on the unique tag
 
 
-
 IWebRequestTiming timing = Agent.Instance.GetWebRequestTiming(requestTag, url);
-
 
 
 // Start web request timing before the HTTP request is sent
 
 
-
 timing.StartWebRequestTiming();
-
 
 
 try
 
 
-
 {
-
 
 
 var response = await httpClient.GetAsync(url);
 
 
-
 // Stop web request timing when the HTTP response is received and the response body is obtained
-
 
 
 timing.StopWebRequestTiming(url, (int)response.StatusCode, response.ReasonPhrase);
 
 
-
 }
-
 
 
 catch (HttpRequestException exception)
 
 
-
 {
-
 
 
 // Stop web request timing when a connection exception occurs
 
 
-
 timing.StopWebRequestTiming(url, -1, exception.ToString());
-
 
 
 }
 
 
-
 finally
-
 
 
 {
 
 
-
 // Leave an action
 
 
-
 webAction.LeaveAction();
-
 
 
 }
@@ -1579,9 +1505,7 @@ You can report values of the following data types:
 ReportValue(valueName: string, value: int);
 
 
-
 ReportValue(valueName: string, value: double);
-
 
 
 ReportValue(valueName: string, value: string);
@@ -1593,13 +1517,10 @@ For instance, to report a `string` value within the `Tap on Confirm` action, use
 using Dynatrace.MAUI;
 
 
-
 IRootAction myAction = Agent.Instance.EnterAction("Tap on Confirm");
 
 
-
 myAction.ReportValue("Customer type", "Gold");
-
 
 
 myAction.LeaveAction();
@@ -1643,19 +1564,16 @@ To report an error stack trace, use the following API call:
 using Dynatrace.MAUI;
 
 
-
 Agent.Instance.ReportErrorStacktrace("Error_Class", "Error_Value", "Error_Reason", "Error_Stacktrace");
 ```
 
 ### Report a crash
 
 
-
 To report a [crash](../ru/observe/digital-experience/rum-concepts/user-and-error-events.md#crash "Learn about user and error events and the types of user and error events captured by Dynatrace."), use the following API call.
 
 ```
 using Dynatrace.MAUI;
-
 
 
 Agent.Instance.ReportCrash("CrashWithoutException", "Crash_Reason", "Crash_Stacktrace");
@@ -1665,7 +1583,6 @@ You can also use an exception object:
 
 ```
 using Dynatrace.MAUI;
-
 
 
 Agent.Instance.ReportCrashWithException("CrashWithExceptionObj", exception);
@@ -1696,53 +1613,40 @@ For additional details on business events, refer to [Business Observability](../
 using Dynatrace.MAUI;
 
 
-
 var attributes = new Dictionary<string, JsonValue>();
-
 
 
 attributes.Add("event.name", "Confirmed Booking");
 
 
-
 attributes.Add("screen", "booking-confirmation");
-
 
 
 attributes.Add("product", "Danube Anna Hotel");
 
 
-
 attributes.Add("amount", 358.35);
-
 
 
 attributes.Add("currency", "USD");
 
 
-
 attributes.Add("reviewScore", 4.8);
-
 
 
 attributes.Add("arrivalDate", "2022-11-05");
 
 
-
 attributes.Add("departureDate", "2022-11-15");
-
 
 
 attributes.Add("journeyDuration", 10);
 
 
-
 attributes.Add("adultTravelers", 2);
 
 
-
 attributes.Add("childrenTravelers", 0);
-
 
 
 Agent.Instance.SendBizEvent("com.easytravel.funnel.booking-finished", attributes);
@@ -1756,7 +1660,6 @@ Make the following API call to tag the current session with a particular name:
 
 ```
 using Dynatrace.MAUI;
-
 
 
 Agent.Instance.IdentifyUser("John Smith");
@@ -1784,7 +1687,6 @@ You can force a session to end via the API call. This also closes all open actio
 using Dynatrace.MAUI;
 
 
-
 Agent.Instance.EndVisit();
 ```
 
@@ -1806,21 +1708,16 @@ To get the current `UserPrivacyOptions` configuration, use the following API cal
 using Dynatrace.MAUI;
 
 
-
 // Get the UserPrivacyOptions object
-
 
 
 UserPrivacyOptions currentOptions = Agent.Instance.GetUserPrivacyOptions();
 
 
-
 // Get the individual settings for DataCollectionLevel and crash reporting
 
 
-
 bool crashOptedIn = Agent.Instance.GetUserPrivacyOptions().CrashReportingOptedIn;
-
 
 
 DataCollectionLevel dataCollectionLevel = Agent.Instance.GetUserPrivacyOptions().DataCollectionLevel;
@@ -1836,49 +1733,37 @@ To set new options on a `UserPrivacyOptions` object, use the following code:
 using Dynatrace.MAUI;
 
 
-
 // Creating a new UserPrivacyOptions object requires setting the two parameters of DataCollectionLevel and crash reporting
-
 
 
 UserPrivacyOptions options = new UserPrivacyOptions(DataCollectionLevel.Performance, false);
 
 
-
 // Update the options with the setter
-
 
 
 // Set a data collection level (user allowed you to capture performance and personal data)
 
 
-
 options.DataCollectionLevel = DataCollectionLevel.UserBehavior;
-
 
 
 // Allow crash reporting (user allowed you to collect information on crashes)
 
 
-
 options.CrashReportingOptedIn = true;
-
 
 
 // Get the values of the configuration with the getter
 
 
-
 options.DataCollectionLevel;
-
 
 
 options.CrashReportingOptedIn;
 
 
-
 // Get the UserPrivacyOptions object
-
 
 
 UserPrivacyOptions currentOptions = Agent.Instance.GetUserPrivacyOptions();
@@ -1890,9 +1775,7 @@ To apply the new `UserPrivacyOptions` configuration, use this code:
 using Dynatrace.MAUI;
 
 
-
 UserPrivacyOptions options = new UserPrivacyOptions(DataCollectionLevel.UserBehavior, true);
-
 
 
 Agent.Instance.ApplyUserPrivacyOptions(options);
@@ -1913,7 +1796,6 @@ SetGPSLocation(latitude: double, longitude: double);
 ```
 
 ## Instrumentation Overhead
-
 
 
 When using auto-instrumentation through our plugin, here are some examples of the size differences before and after instrumentation for release builds.
@@ -1938,17 +1820,13 @@ The `dynatrace.config.json` configuration file contains your application ID, bea
   <Project>
 
 
-
   <PropertyGroup>
-
 
 
   <DynatraceConfigurationFile>CUSTOM_PATH/dynatrace.config.json</DynatraceConfigurationFile>
 
 
-
   </PropertyGroup>
-
 
 
   </Project>
@@ -1970,45 +1848,34 @@ iOS
 {
 
 
-
 "android": {
-
 
 
 "autoStart": {
 
 
-
 "applicationId": "<insertApplicationID>",
-
 
 
 "beaconUrl": "<insertBeaconURL>"
 
 
-
 },
-
 
 
 "userOptIn": true,
 
 
-
 "agentBehavior": {
-
 
 
 "startupLoadBalancing": true
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -2018,29 +1885,22 @@ iOS
 {
 
 
-
 "ios": {
-
 
 
 "DTXApplicationId": "<insertApplicationID>",
 
 
-
 "DTXBeaconUrl": "<insertBeaconURL>",
-
 
 
 "DTXUserOptIn": true,
 
 
-
 "DTXStartupLoadBalancing": true
 
 
-
 }
-
 
 
 }
@@ -2062,45 +1922,34 @@ Update your [`dynatrace.config.json` file](#config-file) to enable OneAgent debu
 {
 
 
-
 "android": {
-
 
 
 "autoStart": {
 
 
-
 "applicationId": "<insertApplicationID>",
-
 
 
 "beaconUrl": "<insertBeaconURL>"
 
 
-
 },
-
 
 
 "userOptIn": true,
 
 
-
 "debug": {
-
 
 
 "agentLogging": true
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -2112,29 +1961,22 @@ Add the following configuration snippet to the [`dynatrace.config.json` file](#c
 {
 
 
-
 "ios": {
-
 
 
 "DTXApplicationId": "<insertApplicationID>",
 
 
-
 "DTXBeaconUrl": "<insertBeaconURL>",
-
 
 
 "DTXUserOptIn": true,
 
 
-
 "DTXLogLevel": "ALL"
 
 
-
 }
-
 
 
 }
@@ -2154,17 +1996,13 @@ If the Android instrumentation fails, you most likely need to open a support tic
    <Project>
 
 
-
    <PropertyGroup>
-
 
 
    <DynatraceInstrumentationLogging>true</DynatraceInstrumentationLogging>
 
 
-
    </PropertyGroup>
-
 
 
    </Project>
@@ -2196,7 +2034,6 @@ scraped: 2026-03-05T21:25:22.621291
 
 # Instrument mobile apps with Dynatrace React Native plugin
 
-# Instrument mobile apps with Dynatrace React Native plugin
 
 * Classic
 * How-to guide
@@ -2250,21 +2087,16 @@ To create a mobile application in Dynatrace
    module.exports = {
 
 
-
    transformer: {
-
 
 
    babelTransformerPath: require.resolve('@dynatrace/react-native-plugin/lib/dynatrace-transformer')
 
 
-
    },
 
 
-
    reporter: require("@dynatrace/react-native-plugin/lib/dynatrace-reporter")
-
 
 
    };
@@ -2285,53 +2117,40 @@ To create a mobile application in Dynatrace
    module.exports = {
 
 
-
    presets: [
-
 
 
    ['module:metro-react-native-babel-preset'],
 
 
-
    ],
-
 
 
    plugins: [
 
 
-
    [
-
 
 
    '@babel/plugin-transform-react-jsx',
 
 
-
    {
-
 
 
    runtime: 'automatic',
 
 
-
    importSource: "@dynatrace/react-native-plugin"
-
 
 
    },
 
 
-
    ],
 
 
-
    ],
-
 
 
    };
@@ -2343,37 +2162,28 @@ To create a mobile application in Dynatrace
    module.exports = {
 
 
-
    presets: [
-
 
 
    ['babel-preset-expo',
 
 
-
    {
-
 
 
    jsxRuntime: 'automatic',
 
 
-
    jsxImportSource: '@dynatrace/react-native-plugin',
-
 
 
    },
 
 
-
    ],
 
 
-
    ],
-
 
 
    };
@@ -2430,7 +2240,6 @@ scraped: 2026-03-05T21:26:26.299483
 
 # Instrument mobile apps with Dynatrace Xamarin NuGet package
 
-# Instrument mobile apps with Dynatrace Xamarin NuGet package
 
 * Classic
 * How-to guide
@@ -2540,13 +2349,11 @@ iOS
 using Dynatrace.Xamarin;
 
 
-
 Agent.Instance.Start();
 ```
 
 ```
 using Dynatrace.Xamarin;
-
 
 
 Agent.Instance.Start();
@@ -2566,17 +2373,13 @@ The following example is for an Android Forms application:
 using Dynatrace.Xamarin;
 
 
-
 Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-
 
 
 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
 
-
 Xamarin.Forms.DependencyService.RegisterSingleton<IDynatrace>(Agent.Instance);
-
 
 
 LoadApplication(new App());
@@ -2586,7 +2389,6 @@ The following code in your Xamarin.Forms application allows you to access OneAge
 
 ```
 using Dynatrace.Xamarin;
-
 
 
 IDynatrace dynatrace = DependencyService.Get<IDynatrace>();
@@ -2604,61 +2406,46 @@ The `App.xaml.cs` file in the Xamarin.Forms part:
 public partial class App : Application
 
 
-
 {
-
 
 
 static readonly Dictionary<Type, Func<object, object>> factories = new Dictionary<Type, Func<object, object>>();
 
 
-
 public App()
 
 
-
 {
-
 
 
 InitializeComponent();
 
 
-
 DependencyResolver.ResolveUsing((type, args) => factories.ContainsKey(type) ? factories[type].Invoke(args) : null);
-
 
 
 IDynatrace Dynatrace = DependencyService.Resolve<IDynatrace>();
 
 
-
 Dynatrace.Start(null);
 
 
-
 }
-
 
 
 public static void Register(Type type, Func<object, object> factory)
 
 
-
 {
-
 
 
 factories[type] = factory;
 
 
-
 }
 
 
-
 ...
-
 
 
 }
@@ -2670,45 +2457,34 @@ The Android part, where you have to call `RegisterSingleton`, should look like t
 public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 
 
-
 {
-
 
 
 protected override void OnCreate(Bundle savedInstanceState)
 
 
-
 {
 
 
-
 ...
-
 
 
 Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
 
-
 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-
 
 
 App.Register(typeof(IDynatrace), (o) => Agent.Instance);
 
 
-
 LoadApplication(new App());
-
 
 
 }
 
 
-
 ...
-
 
 
 }
@@ -2722,9 +2498,7 @@ You can optionally use the following method to enable the auto-instrumentation o
 using Dynatrace.Xamarin;
 
 
-
 var httpHandler = Agent.Instance.GetHttpMessageHandler();
-
 
 
 var httpClient = new HttpClient(httpHandler);
@@ -2736,13 +2510,10 @@ Moreover, you can also have your own HTTP handler:
 using Dynatrace.Xamarin;
 
 
-
 var defaultHttpHandler = new HttpClientHandler();
 
 
-
 var httpHandler = Agent.Instance.GetHttpMessageHandler(defaultHttpHandler);
-
 
 
 var httpClient = new HttpClient(httpHandler);
@@ -2766,25 +2537,19 @@ You can use the manual startup with a configuration builder (Android) or a confi
    {
 
 
-
    "android": {
-
 
 
    "autoStart": {
 
 
-
    "enabled": false
 
 
-
    }
 
 
-
    }
-
 
 
    }
@@ -2794,17 +2559,13 @@ You can use the manual startup with a configuration builder (Android) or a confi
    {
 
 
-
    "ios": {
-
 
 
    "DTXAutoStart": false
 
 
-
    }
-
 
 
    }
@@ -2821,7 +2582,6 @@ You can use the manual startup with a configuration builder (Android) or a confi
    using Dynatrace.Xamarin;
 
 
-
    Agent.Instance.Start(new ConfigurationBuilder("<insertBeaconURL>","<insertApplicationID>") .BuildConfiguration());
    ```
 
@@ -2829,24 +2589,19 @@ You can use the manual startup with a configuration builder (Android) or a confi
    using Dynatrace.Xamarin;
 
 
-
    var configDict = new Dictionary<string, object>();
-
 
 
    configDict.Add("DTXApplicationID", "<insertApplicationID>");
 
 
-
    configDict.Add("DTXBeaconURL", "<insertBeaconURL");
-
 
 
    Agent.Instance.Start(configDict);
    ```
 
 ### Create custom actions
-
 
 
 You can create custom actions and enhance them with additional information such as values, events, and errors.
@@ -2857,13 +2612,10 @@ Call `EnterAction` to start a custom action and `LeaveAction` to close a custom 
 using Dynatrace.Xamarin;
 
 
-
 var myAction = Agent.Instance.EnterAction("Tap on Confirm");
 
 
-
 //Perform the action and whatever else is needed.
-
 
 
 myAction.LeaveAction();
@@ -2885,21 +2637,16 @@ Child actions are similar to parent custom actions. When a parent action is clos
 using Dynatrace.Xamarin;
 
 
-
 var myAction = Agent.Instance.EnterAction("Tap on Confirm");
-
 
 
 var mySubAction = myAction.EnterAction("Tap on Confirm again");
 
 
-
 //Perform the action and whatever else is needed.
 
 
-
 mySubAction.LeaveAction();
-
 
 
 myAction.LeaveAction();
@@ -2919,13 +2666,10 @@ If you need to cancel an already created but not yet closed custom action, call 
 using Dynatrace.Xamarin;
 
 
-
 var myAction = Agent.Instance.EnterAction("Tap on Confirm");
 
 
-
 // Action is canceled
-
 
 
 myAction.Cancel();
@@ -2941,109 +2685,82 @@ Use the following code snippet to instrument web requests:
 using Dynatrace.Xamarin;
 
 
-
 // Create an action
-
 
 
 var webAction = Agent.Instance.EnterAction(actionName: "WebRequest Action");
 
 
-
 // Generate a new unique tag associated with the web request action
-
 
 
 string requestTag = webAction.GetRequestTag(url);
 
 
-
 string requestTagHeader = webAction.GetRequestTagHeader();
-
 
 
 // Place the Dynatrace HTTP header on your web request
 
 
-
 httpClient.DefaultRequestHeaders.Add(requestTagHeader, requestTag);
-
 
 
 // Generate a WebRequestTiming object based on the unique tag
 
 
-
 WebRequestTiming timing = (WebRequestTiming)Agent.Instance.GetWebRequestTiming(requestTag, url);
-
 
 
 // Start web request timing before the HTTP request is sent
 
 
-
 timing.StartWebRequestTiming();
-
 
 
 try
 
 
-
 {
-
 
 
 var response = await httpClient.GetAsync(url);
 
 
-
 // Stop web request timing when the HTTP response is received and the response body is obtained
-
 
 
 timing.StopWebRequestTiming(url, (int)response.StatusCode, response.ReasonPhrase);
 
 
-
 }
-
 
 
 catch (HttpRequestException exception)
 
 
-
 {
-
 
 
 // Stop web request timing when a connection exception occurs
 
 
-
 timing.StopWebRequestTiming(url, -1, exception.ToString());
-
 
 
 }
 
 
-
 finally
-
 
 
 {
 
 
-
 // Leave an action
 
 
-
 webAction.LeaveAction();
-
 
 
 }
@@ -3063,9 +2780,7 @@ You can report values of the following data types:
 ReportValue(valueName: string, value: int);
 
 
-
 ReportValue(valueName: string, value: double);
-
 
 
 ReportValue(valueName: string, value: string);
@@ -3077,13 +2792,10 @@ For instance, to report a `string` value within the `Tap on Confirm` action, use
 using Dynatrace.Xamarin;
 
 
-
 var myAction = Agent.Instance.EnterAction("Tap on Confirm");
 
 
-
 myAction.ReportValue("Customer type", "Gold");
-
 
 
 myAction.LeaveAction();
@@ -3112,7 +2824,6 @@ When the [user opt-in mode](observe/digital-experience/mobile-applications/addit
 ### Report an error
 
 
-
 To report an [error](../ru/observe/digital-experience/rum-concepts/user-and-error-events.md#error "Learn about user and error events and the types of user and error events captured by Dynatrace."), use the `ReportError` method.
 
 ```
@@ -3129,7 +2840,6 @@ To report an error stack trace, use the following API call:
 using Dynatrace.Xamarin;
 
 
-
 Agent.Instance.ReportErrorStacktrace("Error_Class", "Error_Value", "Error_Reason", "Error_Stacktrace");
 ```
 
@@ -3141,7 +2851,6 @@ To report a [crash](../ru/observe/digital-experience/rum-concepts/user-and-error
 using Dynatrace.Xamarin;
 
 
-
 Agent.Instance.ReportCrash("CrashWithoutException", "Crash_Reason", "Crash_Stacktrace");
 ```
 
@@ -3149,7 +2858,6 @@ You can also use an exception object:
 
 ```
 using Dynatrace.Xamarin;
-
 
 
 Agent.Instance.ReportCrashWithException("CrashWithExceptionObj", exception);
@@ -3182,53 +2890,40 @@ For additional details on business events, refer to [Business Observability](../
 using Dynatrace.Xamarin;
 
 
-
 var attributes = new Dictionary<string, JsonValue>();
-
 
 
 attributes.Add("event.name", "Confirmed Booking");
 
 
-
 attributes.Add("screen", "booking-confirmation");
-
 
 
 attributes.Add("product", "Danube Anna Hotel");
 
 
-
 attributes.Add("amount", 358.35);
-
 
 
 attributes.Add("currency", "USD");
 
 
-
 attributes.Add("reviewScore", 4.8);
-
 
 
 attributes.Add("arrivalDate", "2022-11-05");
 
 
-
 attributes.Add("departureDate", "2022-11-15");
-
 
 
 attributes.Add("journeyDuration", 10);
 
 
-
 attributes.Add("adultTravelers", 2);
 
 
-
 attributes.Add("childrenTravelers", 0);
-
 
 
 Agent.Instance.SendBizEvent("com.easytravel.funnel.booking-finished", attributes);
@@ -3242,7 +2937,6 @@ Make the following API call to tag the current session with a particular name:
 
 ```
 using Dynatrace.Xamarin;
-
 
 
 Agent.Instance.IdentifyUser("John Smith");
@@ -3270,12 +2964,10 @@ You can force a session to end via the API call. This also closes all open actio
 using Dynatrace.Xamarin;
 
 
-
 Agent.Instance.EndVisit();
 ```
 
 ### Configure data privacy (opt-in mode)
-
 
 
 With user opt-in mode, each user of your application can set their data privacy preferences and decide whether they want or don't want to share their information. When the opt-in mode is enabled, you need to ask each user for permission to capture their data; then, you store their data privacy preferences. For details, see [User opt-in mode](observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile.md#opt-in-mode-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.").
@@ -3294,21 +2986,16 @@ To get the current `UserPrivacyOptions` configuration, use the following API cal
 using Dynatrace.Xamarin;
 
 
-
 // Get the UserPrivacyOptions object
-
 
 
 UserPrivacyOptions currentOptions = Agent.Instance.GetUserPrivacyOptions();
 
 
-
 // Get the individual settings for DataCollectionLevel and crash reporting
 
 
-
 bool crashOptedIn = Agent.Instance.GetUserPrivacyOptions().CrashReportingOptedIn;
-
 
 
 DataCollectionLevel dataCollectionLevel = Agent.Instance.GetUserPrivacyOptions().DataCollectionLevel;
@@ -3324,49 +3011,37 @@ To set new options on a `UserPrivacyOptions` object, use the following code:
 using Dynatrace.Xamarin;
 
 
-
 // Creating a new UserPrivacyOptions object requires setting the two parameters of DataCollectionLevel and crash reporting
-
 
 
 UserPrivacyOptions options = new UserPrivacyOptions(DataCollectionLevel.Performance, false);
 
 
-
 // Update the options with the setter
-
 
 
 // Set a data collection level (user allowed you to capture performance and personal data)
 
 
-
 options.DataCollectionLevel = DataCollectionLevel.UserBehavior;
-
 
 
 // Allow crash reporting (user allowed you to collect information on crashes)
 
 
-
 options.CrashReportingOptedIn = true;
-
 
 
 // Get the values of the configuration with the getter
 
 
-
 options.DataCollectionLevel;
-
 
 
 options.CrashReportingOptedIn;
 
 
-
 // Get the UserPrivacyOptions object
-
 
 
 UserPrivacyOptions currentOptions = Agent.Instance.GetUserPrivacyOptions();
@@ -3378,9 +3053,7 @@ To apply the new `UserPrivacyOptions` configuration, use this code:
 using Dynatrace.Xamarin;
 
 
-
 UserPrivacyOptions options = new UserPrivacyOptions(DataCollectionLevel.UserBehavior, true);
-
 
 
 Agent.Instance.ApplyUserPrivacyOptions(options);
@@ -3415,17 +3088,13 @@ The `dynatrace.config.json` configuration file contains your application ID, bea
   <Project>
 
 
-
   <PropertyGroup>
-
 
 
   <DynatraceConfigurationFile>CUSTOM_PATH/dynatrace.config.json</DynatraceConfigurationFile>
 
 
-
   </PropertyGroup>
-
 
 
   </Project>
@@ -3447,45 +3116,34 @@ iOS
 {
 
 
-
 "android": {
-
 
 
 "autoStart": {
 
 
-
 "applicationId": "<insertApplicationID>",
-
 
 
 "beaconUrl": "<insertBeaconURL>"
 
 
-
 },
-
 
 
 "userOptIn": true,
 
 
-
 "agentBehavior": {
-
 
 
 "startupLoadBalancing": true
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -3495,29 +3153,22 @@ iOS
 {
 
 
-
 "ios": {
-
 
 
 "DTXApplicationId": "<insertApplicationID>",
 
 
-
 "DTXBeaconUrl": "<insertBeaconURL>",
-
 
 
 "DTXUserOptIn": true,
 
 
-
 "DTXStartupLoadBalancing": true
 
 
-
 }
-
 
 
 }
@@ -3539,45 +3190,34 @@ Update your [`dynatrace.config.json` file](#config-file) to enable OneAgent debu
 {
 
 
-
 "android": {
-
 
 
 "autoStart": {
 
 
-
 "applicationId": "<insertApplicationID>",
-
 
 
 "beaconUrl": "<insertBeaconURL>"
 
 
-
 },
-
 
 
 "userOptIn": true,
 
 
-
 "debug": {
-
 
 
 "agentLogging": true
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -3589,29 +3229,22 @@ Add the following configuration snippet to the [`dynatrace.config.json` file](#c
 {
 
 
-
 "ios": {
-
 
 
 "DTXApplicationId": "<insertApplicationID>",
 
 
-
 "DTXBeaconUrl": "<insertBeaconURL>",
-
 
 
 "DTXUserOptIn": true,
 
 
-
 "DTXLogLevel": "ALL"
 
 
-
 }
-
 
 
 }
@@ -3631,17 +3264,13 @@ If the Android instrumentation fails, you most likely need to open a support tic
    <Project>
 
 
-
    <PropertyGroup>
-
 
 
    <DynatraceInstrumentationLogging>true</DynatraceInstrumentationLogging>
 
 
-
    </PropertyGroup>
-
 
 
    </Project>
@@ -3673,7 +3302,6 @@ scraped: 2026-03-06T21:28:16.242622
 
 # Get started with Android monitoring
 
-# Get started with Android monitoring
 
 * Classic
 * How-to guide
@@ -3748,7 +3376,6 @@ scraped: 2026-03-05T21:32:03.786138
 
 # Manually instrument your application using OneAgent SDK for Android
 
-# Manually instrument your application using OneAgent SDK for Android
 
 * Classic
 * How-to guide
@@ -3796,9 +3423,7 @@ When you use standalone manual instrumentation, nothing is done automatically. E
    dependencies {
 
 
-
    implementation 'com.dynatrace.agent:agent-android:8.+'
-
 
 
    }
@@ -3808,9 +3433,7 @@ When you use standalone manual instrumentation, nothing is done automatically. E
    dependencies {
 
 
-
    implementation("com.dynatrace.agent:agent-android:8.+")
-
 
 
    }
@@ -3831,37 +3454,28 @@ When you use standalone manual instrumentation, nothing is done automatically. E
    public class YourApplication extends Application {
 
 
-
    @Override
-
 
 
    public void onCreate() {
 
 
-
    super.onCreate();
-
 
 
    // provide the application context as parameter
 
 
-
    Dynatrace.startup(this, new DynatraceConfigurationBuilder("<YourApplicationID>", "<ProvidedBeaconUrl>")
-
 
 
    ... // additional configuration
 
 
-
    .buildConfiguration());
 
 
-
    }
-
 
 
    }
@@ -3871,33 +3485,25 @@ When you use standalone manual instrumentation, nothing is done automatically. E
    class YourApplication : Application() {
 
 
-
    override fun onCreate() {
-
 
 
    super.onCreate()
 
 
-
    // provide the application context as parameter
-
 
 
    Dynatrace.startup(this, DynatraceConfigurationBuilder("<YourApplicationID>", "<ProvidedBeaconUrl>")
 
 
-
    ... // additional configuration
-
 
 
    .buildConfiguration())
 
 
-
    }
-
 
 
    }
@@ -3913,9 +3519,7 @@ When you use standalone manual instrumentation, nothing is done automatically. E
    Dynatrace.startup(yourActiveActivity, new DynatraceConfigurationBuilder("<YourApplicationID>", "<ProvidedBeaconUrl>")
 
 
-
    ... // additional configuration
-
 
 
    .buildConfiguration());
@@ -3925,9 +3529,7 @@ When you use standalone manual instrumentation, nothing is done automatically. E
    Dynatrace.startup(yourActiveActivity, DynatraceConfigurationBuilder("<YourApplicationID>", "<ProvidedBeaconUrl>")
 
 
-
    ... // additional configuration
-
 
 
    .buildConfiguration())
@@ -3952,7 +3554,6 @@ scraped: 2026-03-05T21:26:36.781022
 
 # Dynatrace Android Gradle plugin
 
-# Dynatrace Android Gradle plugin
 
 * Classic
 * Overview
@@ -4027,7 +3628,6 @@ The Gradle snippet from the **Instrumentation** page and the Gradle snippets fro
 ### Configure monitoring capabilities
 
 
-
 The following options can be used to customize OneAgent SDK for Android monitoring capabilities and fine-tune the auto-instrumentation process.
 
 * [User action monitoring](observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities.md#user-action-monitoring "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.")
@@ -4080,7 +3680,6 @@ scraped: 2026-03-05T21:26:31.388242
 
 # Instrument Android apps
 
-# Instrument Android apps
 
 * Classic
 * Overview
@@ -4145,7 +3744,6 @@ scraped: 2026-03-04T21:32:53.595693
 
 # Instrument hybrid apps
 
-# Instrument hybrid apps
 
 * Classic
 * How-to guide
@@ -4207,37 +3805,28 @@ Here is the example configuration for the `easytravel.com` domain:
 dynatrace {
 
 
-
 configurations {
-
 
 
 sampleConfig {
 
 
-
 hybridWebView {
-
 
 
 enabled true
 
 
-
 domains '.easytravel.com'
 
 
+}
+
 
 }
 
 
-
 }
-
-
-
-}
-
 
 
 }
@@ -4253,37 +3842,28 @@ Here is the example configuration for the `easytravel.com` domain:
 <key>DTXHybridApplication</key>
 
 
-
 <true/>
-
 
 
 <key>DTXSetCookiesForDomain</key>
 
 
-
 <array>
-
 
 
 <string>.easytravel.com</string>
 
 
-
 </array>
-
 
 
 <key>DTXSetSecureCookiesForDomain</key>
 
 
-
 <array>
 
 
-
 <string>.example.com</string>
-
 
 
 </array>
@@ -4326,7 +3906,6 @@ scraped: 2026-03-06T21:37:59.187376
 
 # OneAgent for iOS configuration keys
 
-# OneAgent for iOS configuration keys
 
 * Classic
 * How-to guide
@@ -4387,7 +3966,6 @@ scraped: 2026-03-06T21:38:07.966569
 
 # Info.plist file
 
-# Info.plist file
 
 * Classic
 * Explanation
@@ -4418,7 +3996,6 @@ scraped: 2026-03-05T21:25:19.171690
 
 # Instrument SwiftUI controls
 
-# Instrument SwiftUI controls
 
 * Classic
 * How-to guide
@@ -4550,7 +4127,6 @@ When you build your app, you should do that with the scheme that you've instrume
 ### Update the instrumentor
 
 
-
 When the new version of the SwiftUI instrumentor is available, you can update it via Homebrew or manually.
 
 Homebrew
@@ -4644,9 +4220,7 @@ In the example below, the instrumentor will extract `"Login"` as a label for the
 Button("Login", action: {
 
 
-
 /* perform login */
-
 
 
 })
@@ -4660,17 +4234,13 @@ In the following example, a user interaction with this button would be reported 
 Button(action: {
 
 
-
 print("Hello world!")
-
 
 
 }) {
 
 
-
 Image("bookmark")
-
 
 
 }
@@ -4684,9 +4254,7 @@ Use the `withCustomInstrumentationConfig(.useDefaultControlName)` modifier to se
 Button("Login", action: {
 
 
-
 /* perform login */
-
 
 
 }).withCustomInstrumentationConfig(.useDefaultControlName)
@@ -4702,9 +4270,7 @@ Use the `withCustomInstrumentationConfig(.useControlName(<Name>)` modifier to sp
 Button("Login", action: {
 
 
-
 /* perform login */
-
 
 
 }).withCustomInstrumentationConfig(.useControlName("Login Button"))
@@ -4732,17 +4298,13 @@ To globally exclude controls from the SwiftUI instrumentation, add the [`DTXSwif
 <key>DTXExcludedSwiftUIFiles</key>
 
 
-
 <array>
-
 
 
 <string>Button</string>
 
 
-
 <string>Slider</string>
-
 
 
 </array>
@@ -4765,17 +4327,13 @@ Follow these guidelines when applying the `withCustomInstrumentationConfig(.skip
   Button("Login", action: { /* perform login */ })
 
 
-
   .padding()
-
 
 
   .background(Color.red)
 
 
-
   .frame(width: 40)
-
 
 
   .withCustomInstrumentationConfig(.skipInstrumentation)
@@ -4789,13 +4347,10 @@ Use the following code to locally exclude a single control from the SwiftUI inst
 import Dynatrace
 
 
-
 â¦
 
 
-
 Button("Login", action: { /* perform login */ })
-
 
 
 .withCustomInstrumentationConfig(.skipInstrumentation)
@@ -4809,28 +4364,22 @@ To locally exclude a group of controls, apply the `withCustomInstrumentationConf
 import Dynatrace
 
 
-
 â¦
-
 
 
 HStack {
 
 
-
 Button("Login", action: { /* perform login */ })
 
 
-
 Button("Register", action: { /* perform registration */ })
-
 
 
 }.withCustomInstrumentationConfig(.skipInstrumentation)
 ```
 
 ### Exclude files from SwiftUI instrumentation
-
 
 
 By default, the Dynatrace SwiftUI instrumentor processes all files with a `.swift` file extension, but it only instruments files that contain the [supported controls](#supported-controls). When required, you can exclude certain files and directories from the SwiftUI instrumentation process.
@@ -4844,17 +4393,13 @@ To exclude files and directories from the SwiftUI instrumentation
    <key>DTXExcludedSwiftUIFiles</key>
 
 
-
    <array>
-
 
 
    <string>relative/file/path/</string>
 
 
-
    <string>relative/file.swift</string>
-
 
 
    </array>
@@ -4872,7 +4417,6 @@ To enable the SwiftUI instrumentation for simulator builds, add the [`DTXSwiftUI
 <key>DTXSwiftUIInstrumentSimulatorBuilds</key>
 
 
-
 <true/>
 ```
 
@@ -4884,7 +4428,6 @@ To override this check, add the [`DTXSwiftUIIgnoreDeploymentTarget` configuratio
 
 ```
 <key>DTXSwiftUIIgnoreDeploymentTarget</key>
-
 
 
 <true/>
@@ -4904,7 +4447,6 @@ To enable line number mapping for Objective-C projects
    <key>DTXSwiftUIManualPlaceholder</key>
 
 
-
    <true/>
    ```
 2. Add the special `AppDelegate.m` placeholder to the main class.
@@ -4918,21 +4460,16 @@ To enable line number mapping for Objective-C projects
    - (BOOL)application:(UIApplication *)application
 
 
-
    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
 
 
    [Dynatrace handoverInstrumentorConfig:@{kDTXSwiftMappingJson: @"_DYNATRACE_SWIFTUI_MAPPING_PLACEHOLDER_"}];
 
 
-
    // ... your existing setup code
 
 
-
    return YES;
-
 
 
    }
@@ -4942,25 +4479,19 @@ To enable line number mapping for Objective-C projects
    - (instancetype)init {
 
 
-
    self = [super init];
-
 
 
    if (self) {
 
 
-
    [Dynatrace handoverInstrumentorConfig:@{kDTXSwiftMappingJson: @"_DYNATRACE_SWIFTUI_MAPPING_PLACEHOLDER_"}];
-
 
 
    }
 
 
-
    return self;
-
 
 
    }
@@ -4980,14 +4511,12 @@ After each build, the SwiftUI instrumentor creates backups of the instrumented f
   <key>DTXCleanSwiftUILogsByCount</key>
 
 
-
   <number>10</number>
   ```
 * To delete the logs after a certain number of days, add the [`DTXCleanSwiftUILogsByAgeDays` configuration key](../ru/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys.md#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to the `Info.plist` file.
 
   ```
   <key>DTXCleanSwiftUILogsByAgeDays</key>
-
 
 
   <number>5</number>
@@ -5011,7 +4540,6 @@ scraped: 2026-03-06T21:34:10.008934
 
 # OneAgent for iOS auto-instrumentation features
 
-# OneAgent for iOS auto-instrumentation features
 
 * Classic
 * Explanation
@@ -5072,7 +4600,6 @@ Set the [`DTXInstrumentWebViewTiming` configuration key](../ru/observe/digital-e
 ## User action detection
 
 
-
 OneAgent detects and times user actions such as button taps, view actions, and other UI control interactions. OneAgent creates user actions based on the UI components that trigger these actions and automatically combines user action data with other monitoring data, such as information on web requests and crashes. OneAgent extends the lifetime of user actions to properly aggregate them with other events that are executed in a background thread or immediately after a user action.
 
 Set the [`DTXInstrumentAutoUserAction` configuration key](../ru/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys.md#user-actions "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to `false` to disable automatic creation of user actions. Also, check other configuration keys in the [**User actions**](../ru/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys.md#user-actions "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") section to control user action detection.
@@ -5113,7 +4640,6 @@ scraped: 2026-03-05T21:26:00.148955
 
 # Instrument iOS apps
 
-# Instrument iOS apps
 
 * Classic
 * Overview
@@ -5171,7 +4697,6 @@ scraped: 2026-03-06T21:35:25.181485
 
 # Troubleshooting RUM for mobile applications
 
-# Troubleshooting RUM for mobile applications
 
 * Classic
 * Troubleshooting
@@ -5220,7 +4745,6 @@ scraped: 2026-03-06T21:14:02.066070
 
 # Mobile applications
 
-# Mobile applications
 
 * Classic
 * Overview
@@ -5268,7 +4792,6 @@ Mobile applications are native mobile apps on iOS or Android as well as hybrid a
 ### Additional configuration
 
 
-
 * [Configure cost and traffic control for mobile applications](observe/digital-experience/mobile-applications/additional-configuration/configure-cost-and-traffic-control-mobile.md "Leverage the cost and traffic control setting in Dynatrace to reduce session usage for mobile apps.")
 * [Configure data privacy settings for mobile applications](observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile.md "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.")
 * [Ignore web request errors for mobile applications](observe/digital-experience/mobile-applications/additional-configuration/web-request-errors-mobile.md "Stop treating certain response HTTP codes as errors for your mobile applications.")
@@ -5312,7 +4835,6 @@ scraped: 2026-03-05T21:35:37.839352
 
 # Data model of the New RUM Experience
 
-# Data model of the New RUM Experience
 
 * Latest Dynatrace
 * Explanation
@@ -5425,7 +4947,6 @@ scraped: 2026-03-04T21:27:31.792647
 
 # Data privacy in the New RUM Experience
 
-# Data privacy in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide
@@ -5475,7 +4996,6 @@ scraped: 2026-03-04T21:31:12.564761
 
 # Page load waterfall
 
-# Page load waterfall
 
 * Latest Dynatrace
 * Reference
@@ -5554,7 +5074,6 @@ scraped: 2026-03-06T21:28:07.516797
 
 # Capture event and session properties for mobile frontends
 
-# Capture event and session properties for mobile frontends
 
 * Latest Dynatrace
 * How-to guide
@@ -5621,7 +5140,6 @@ scraped: 2026-03-04T21:37:47.727029
 
 # Configure user interaction capturing for mobile frontends
 
-# Configure user interaction capturing for mobile frontends
 
 * Latest Dynatrace
 * How-to guide
@@ -5669,7 +5187,6 @@ scraped: 2026-03-06T21:31:58.402699
 
 # Additional configuration for mobile frontends
 
-# Additional configuration for mobile frontends
 
 * Latest Dynatrace
 * Overview
@@ -5693,7 +5210,6 @@ scraped: 2026-03-04T21:30:25.620961
 
 # Configure data privacy settings for mobile frontends
 
-# Configure data privacy settings for mobile frontends
 
 * Latest Dynatrace
 * How-to guide
@@ -5789,7 +5305,6 @@ scraped: 2026-03-06T21:36:56.506191
 
 # New RUM APIs for mobile frontends
 
-# New RUM APIs for mobile frontends
 
 * Latest Dynatrace
 * Reference
@@ -5818,7 +5333,6 @@ scraped: 2026-03-06T21:30:10.639111
 
 # Mobile frontends
 
-# Mobile frontends
 
 * Latest Dynatrace
 * Overview
@@ -5855,7 +5369,6 @@ scraped: 2026-02-23T21:26:20.516474
 
 # Relationship between the New RUM Experience and RUM Classic
 
-# Relationship between the New RUM Experience and RUM Classic
 
 * Latest Dynatrace
 * Explanation
@@ -5903,7 +5416,6 @@ scraped: 2026-03-06T21:25:59.818788
 
 # Transition from RUM Classic to the New RUM Experience
 
-# Transition from RUM Classic to the New RUM Experience
 
 * Latest Dynatrace
 * Explanation
@@ -5966,7 +5478,6 @@ scraped: 2026-03-06T21:15:59.487993
 
 # Extract a metric from user events
 
-# Extract a metric from user events
 
 * Latest Dynatrace
 * Tutorial
@@ -5990,29 +5501,22 @@ Therefore, you can analyze the number of views per journey by running the follow
 fetch user.events
 
 
-
 | filter matchesPhrase(frontend.name, "easytravel") AND
-
 
 
 characteristics.has_navigation == true AND
 
 
-
 matchesPhrase(view.url.path, "/easytravel/journeys/*") AND
-
 
 
 not matchesPhrase(view.url.path, "*book")
 
 
-
 | parse view.url.path, "'/'LD'/'LD'/'LD:journey_id"
 
 
-
 | summarize by: {journey_id}, count()
-
 
 
 | sort `count()` desc
@@ -6046,9 +5550,7 @@ Ensure you have the permissions described in [New RUM Experience permissions](ob
      characteristics.has_navigation == true AND
 
 
-
      matchesPhrase(view.url.path, "/easytravel/journeys/*") AND
-
 
 
      not matchesPhrase(view.url.path, "*book")
@@ -6057,7 +5559,6 @@ Ensure you have the permissions described in [New RUM Experience permissions](ob
 
      ```
      parse view.url.path, "'/'LD'/'LD'/'LD:journey_id"
-
 
 
      | fieldsAdd journey_id
@@ -6097,9 +5598,7 @@ You have successfully created a pipeline to parse user events and extract a metr
 timeseries count = sum(easytravel.journey_view_count), by: {journey_id}, interval: 3h
 
 
-
 | sort arraysum(count) desc
-
 
 
 | limit 5
@@ -6124,7 +5623,6 @@ scraped: 2026-03-06T21:15:52.450536
 
 # Extract a metric from user sessions
 
-# Extract a metric from user sessions
 
 * Latest Dynatrace
 * Tutorial
@@ -6144,9 +5642,7 @@ Instrumentation was customized to send a user session property `successful_check
 dynatrace.sendSessionPropertyEvent({
 
 
-
 "session_properties.successful_checkout": true
-
 
 
 });
@@ -6156,7 +5652,6 @@ With this setup, you can analyze the number of sessions with and without custome
 
 ```
 fetch user.sessions
-
 
 
 | summarize by:{session_properties.successful_checkout}, count()
@@ -6217,7 +5712,6 @@ You have successfully extracted a custom metric from user sessions. You can now 
 timeseries sum(easytravel.checkout_statistics), by: { successful_checkout }, interval: 15m
 
 
-
 | fieldsAdd checkout_status = if(successful_checkout == "true", "Successful Checkout", else: "No Checkout")
 ```
 
@@ -6242,7 +5736,6 @@ scraped: 2026-03-06T21:28:05.793494
 
 # Use cases for the New RUM Experience
 
-# Use cases for the New RUM Experience
 
 * Latest Dynatrace
 * Overview
@@ -6283,7 +5776,6 @@ scraped: 2026-02-18T05:54:44.398841
 
 # User interactions
 
-# User interactions
 
 * Latest Dynatrace
 * How-to guide
@@ -6408,7 +5900,6 @@ scraped: 2026-03-06T21:29:05.716000
 
 # Configure the beacon origin allowlist
 
-# Configure the beacon origin allowlist
 
 * Latest Dynatrace
 * How-to guide
@@ -6477,7 +5968,6 @@ scraped: 2026-03-04T21:29:27.363043
 
 # Configure data privacy settings for web frontends
 
-# Configure data privacy settings for web frontends
 
 * Latest Dynatrace
 * How-to guide
@@ -6575,7 +6065,6 @@ scraped: 2026-03-05T21:32:50.462070
 
 # Capture event and session properties for web frontends
 
-# Capture event and session properties for web frontends
 
 * Latest Dynatrace
 * How-to guide
@@ -6630,7 +6119,6 @@ scraped: 2026-03-06T21:35:12.098693
 
 # Control the RUM JavaScript version in the New RUM Experience
 
-# Control the RUM JavaScript version in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide
@@ -6674,7 +6162,6 @@ scraped: 2026-03-05T21:30:50.126179
 
 # Associate user interactions with features and UI components
 
-# Associate user interactions with features and UI components
 
 * Latest Dynatrace
 * How-to guide
@@ -6707,41 +6194,31 @@ Examples
 <!-- Single feature -->
 
 
-
 <div data-dt-features="search">
-
 
 
 <input type="text" placeholder="Search...">
 
 
-
 <button>Search</button>
-
 
 
 </div>
 
 
-
 <!-- Multiple features -->
-
 
 
 <nav data-dt-features="navigation,sidebar">
 
 
-
 <a href="/home">Home</a>
-
 
 
 <a href="/products">Products</a>
 
 
-
 <a href="/about">About</a>
-
 
 
 </nav>
@@ -6757,65 +6234,49 @@ Examples
 <div data-dt-features="shop,product-catalog">
 
 
-
 <div data-dt-features="filters">
-
 
 
 <button>Price</button>          <!-- ui_element.features: ["shop", "product-catalog", "filters"] -->
 
 
-
 <button>Brand</button>          <!-- ui_element.features: ["shop", "product-catalog", "filters"] -->
 
 
-
 </div>
-
 
 
 <div data-dt-features="results">
 
 
-
 <div>Product 1</div>            <!-- ui_element.features: ["shop", "product-catalog", "results"] -->
-
 
 
 <div>Product 2</div>            <!-- ui_element.features: ["shop", "product-catalog", "results"] -->
 
 
-
 </div>
 
 
-
 </div>
-
 
 
 <div data-dt-features="app,main">
 
 
-
 <div data-dt-features="sidebar,navigation">
-
 
 
 <div data-dt-features="menu,navigation">
 
 
-
 <button>Click</button>  <!-- ui_element.features: ["app", "main", "sidebar", "navigation", "menu"] -->
 
 
-
 </div>
 
 
-
 </div>
-
 
 
 </div>
@@ -6829,13 +6290,10 @@ The following DQL query generates a timeseries that shows, for each feature, the
 fetch user.events
 
 
-
 | filter isNotNull(ui_element.features)
 
 
-
 | expand ui_element.features
-
 
 
 | makeTimeseries countDistinct(dt.rum.session.id), by: {ui_element.features}, interval: 1d
@@ -6864,53 +6322,40 @@ Example (React JSX)
 <App data-dt-component="App">
 
 
-
 <Container data-dt-component="Container">
-
 
 
 <AuthProvider data-dt-component="AuthProvider">
 
 
-
 <Dashboard data-dt-component="Dashboard">
-
 
 
 <Container data-dt-component="Container">
 
 
-
 <Card data-dt-component="Card">
-
 
 
 <Button data-dt-component="Button">Save</Button>
 
 
-
 {/* ui_element.components: ["App", "Container", "AuthProvider", "Dashboard", "Container", "Card", "Button"] */}
-
 
 
 </Card>
 
 
-
 </Container>
-
 
 
 </Dashboard>
 
 
-
 </AuthProvider>
 
 
-
 </Container>
-
 
 
 </App>
@@ -6924,13 +6369,10 @@ The following DQL query generates a timeseries showing how many different users 
 fetch user.events
 
 
-
 | expand ui_element.components
 
 
-
 | filter ui_element.components == "TimeframeSelector"
-
 
 
 | makeTimeseries countDistinct(dt.rum.instance.id), by: {frontend.name}, interval: 1d
@@ -6948,7 +6390,6 @@ scraped: 2026-03-05T21:33:14.629107
 
 # Configure user interaction capturing for web frontends
 
-# Configure user interaction capturing for web frontends
 
 * Latest Dynatrace
 * How-to guide
@@ -6991,53 +6432,40 @@ Examples
 <!-- Track when users focus on search -->
 
 
-
 <input data-dt-focus type="text" placeholder="Search products...">
-
 
 
 <!-- Monitor form field interaction -->
 
 
-
 <form>
-
 
 
 <input data-dt-focus name="email" type="email" placeholder="Email">
 
 
-
 <input data-dt-focus name="password" type="password" placeholder="Password">
-
 
 
 <button type="submit">Login</button>
 
 
-
 </form>
-
 
 
 <!-- Track focus on custom components -->
 
 
-
 <div data-dt-focus tabindex="0" role="button">Custom Button</div>
-
 
 
 <!-- Track both focus and blur for complete interaction -->
 
 
-
 <textarea data-dt-focus data-dt-blur placeholder="Your feedback..."></textarea>
 
 
-
 <!-- Monitor search abandonment -->
-
 
 
 <input data-dt-focus data-dt-blur type="search" placeholder="What are you looking for?">
@@ -7056,81 +6484,61 @@ Examples
 <!-- Track hover after 300ms (shows intent) -->
 
 
-
 <button data-dt-mouse-over="300">
-
 
 
 Learn More
 
 
-
 </button>
-
 
 
 <!-- Monitor product card interest with 500ms threshold -->
 
 
-
 <div class="product-card" data-dt-mouse-over="500">
-
 
 
 <img src="product.jpg">
 
 
-
 <h3>Premium Headphones</h3>
-
 
 
 <p>$299.99</p>
 
 
-
 </div>
-
 
 
 <!-- Track tooltip hover with 1 second threshold -->
 
 
-
 <span data-dt-mouse-over="1000">
-
 
 
 <i class="info-icon">?</i>
 
 
-
 <div class="tooltip">Detailed information appears here</div>
-
 
 
 </span>
 
 
-
 <!-- Possible different thresholds for different intents -->
-
 
 
 <nav>
 
 
-
 <div data-dt-mouse-over="200">Products</div>      <!-- Quick hover -->
-
 
 
 <div data-dt-mouse-over="500">Solutions</div>     <!-- Medium intent -->
 
 
-
 <div data-dt-mouse-over="1000">Documentation</div> <!-- Strong intent -->
-
 
 
 </nav>
@@ -7152,7 +6560,6 @@ scraped: 2026-03-06T21:28:25.051728
 
 # Additional configuration for web frontends
 
-# Additional configuration for web frontends
 
 * Latest Dynatrace
 * Overview
@@ -7179,7 +6586,6 @@ scraped: 2026-03-06T21:35:00.182245
 
 # Pages, views, and navigations in the New RUM Experience
 
-# Pages, views, and navigations in the New RUM Experience
 
 * Latest Dynatrace
 * Explanation
@@ -7219,25 +6625,19 @@ The following DQL query retrieves the 75th percentile for the Largest Contentful
 fetch user.events
 
 
-
 | filter characteristics.has_page_summary
-
 
 
 | filter isNotNull(web_vitals.largest_contentful_paint)
 
 
-
 | summarize {
-
 
 
 percentile(web_vitals.largest_contentful_paint, 75)
 
 
-
 }, alias:page_LCP, by:{ page.name }
-
 
 
 | sort page_LCP desc
@@ -7306,25 +6706,19 @@ The following query retrieves the 75th percentile for LCP by view.
 fetch user.events
 
 
-
 | filter characteristics.has_view_summary
-
 
 
 | filter isNotNull(web_vitals.largest_contentful_paint)
 
 
-
 | summarize {
-
 
 
 percentile(web_vitals.largest_contentful_paint, 75)
 
 
-
 }, alias:view_LCP, by:{ view.name }
-
 
 
 | sort view_LCP desc
@@ -7364,16 +6758,13 @@ The diagram below illustrates how view and page summaries are reported during ha
 ### Example DQL query
 
 
-
 The following DQL query retrieves the amount of hard and soft navigations.
 
 ```
 fetch user.events
 
 
-
 | filter characteristics.has_navigation
-
 
 
 | summarize count(), by: navigation.type
@@ -7395,7 +6786,6 @@ scraped: 2026-03-06T21:34:15.038712
 
 # User actions in web frontends
 
-# User actions in web frontends
 
 * Latest Dynatrace
 * Explanation
@@ -7465,7 +6855,6 @@ scraped: 2026-03-04T21:32:00.912853
 
 # Concepts for web frontends
 
-# Concepts for web frontends
 
 * Latest Dynatrace
 * Overview
@@ -7509,7 +6898,6 @@ scraped: 2026-03-05T21:31:37.283802
 
 # Adapt CSP rules for the New RUM Experience
 
-# Adapt CSP rules for the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide
@@ -7567,7 +6955,6 @@ If you use Session Replay Classic, your CSP rules must allow the RUM JavaScript 
 Additionally, even if you're using the snippet format [inline code](../ru/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/snippet-formats.md#inline-code "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience."), make sure your CSP rules [allow the loading of external monitoring code](#allow-external-monitoring-code). This is important because the monitoring code for Session Replay Classic is always requested as an external file, regardless of the snippet format.
 
 ## Examples
-
 
 
 Below is a basic example of a simple CSP rule:
@@ -7650,7 +7037,6 @@ scraped: 2026-03-06T21:30:14.503901
 
 # Configure automatic injection in the New RUM Experience
 
-# Configure automatic injection in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide
@@ -7779,7 +7165,6 @@ OneAgent does not alter the `Expires` and `Cache-Control` headers, which explici
 ### Disabling cache control header optimizations
 
 
-
 In rare cases, cache control header optimizations may interfere with your application's functionality. If this occurs, you can disable the feature.
 When disabled, the rollout of new RUM configurations will depend entirely on your application's existing caching behavior.
 
@@ -7830,7 +7215,6 @@ scraped: 2026-03-06T21:35:43.809096
 
 # Configure the beacon endpoint for web frontends in the New RUM Experience
 
-# Configure the beacon endpoint for web frontends in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide
@@ -7936,7 +7320,6 @@ scraped: 2026-03-05T21:39:08.867039
 
 # Configure the Real User Monitoring code source in the New RUM Experience
 
-# Configure the Real User Monitoring code source in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide
@@ -8024,7 +7407,6 @@ This configuration is effective for both automatic injection and [manual inserti
 ### Configure a custom monitoring code filename prefix
 
 
-
 After changing the monitoring code filename prefix, you may experience a temporary reduction in collected RUM data. Therefore, we recommend avoiding frequent changes to this setting.
 
 By default, the monitoring code filename is prefixed with `ruxitagent` or `ruxitagentjs`, unless the snippet format JavaScript tag is used. Alternatively, you can specify a custom prefix, which will be used instead for both agentless and auto-injected frontends, as well as for both RUM and Session Replay Classic monitoring code.
@@ -8047,7 +7429,6 @@ scraped: 2026-03-05T21:39:52.367065
 
 # Enable the New RUM Experience for your RUM Classic web applications
 
-# Enable the New RUM Experience for your RUM Classic web applications
 
 * Latest Dynatrace
 * How-to guide
@@ -8115,7 +7496,6 @@ scraped: 2026-03-06T21:26:15.702725
 
 # Finalize the initial setup for your agentless frontend
 
-# Finalize the initial setup for your agentless frontend
 
 * Latest Dynatrace
 * How-to guide
@@ -8195,7 +7575,6 @@ scraped: 2026-03-05T21:35:05.243068
 
 # Finalize the initial setup for your auto-injected frontend
 
-# Finalize the initial setup for your auto-injected frontend
 
 * Latest Dynatrace
 * How-to guide
@@ -8219,13 +7598,10 @@ To check whether data has been captured and mapped to another frontend
 fetch user.events
 
 
-
 | filter matchesPhrase(page.url.full, "https://example.com/path")
 
 
-
 | filter matchesValue(dt.openpipeline.source, "rumagent")
-
 
 
 | summarize by: {frontend.name}, count()
@@ -8285,7 +7661,6 @@ If you see CSP rule violations in the browser console associated with loading th
 ### No application deployed at the root
 
 
-
 When OneAgent handles monitoring code requests, they are often [sent to the root of the web or app server](../ru/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-monitoring-code-source.md#default-behavior-auto-injection "Configure the Real User Monitoring code source in the New RUM Experience to meet your specific requirements."). These requests may return response codes such as `404 Not Found` or `503 Service Unavailable` if no application is deployed at the root.
 
 In this case, configure the URL path as described in [Modify the monitoring code URL path](../ru/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-monitoring-code-source.md#modify-rum-monitoring-code-url-path "Configure the Real User Monitoring code source in the New RUM Experience to meet your specific requirements.").
@@ -8339,7 +7714,6 @@ scraped: 2026-03-05T21:37:59.716367
 
 # Roll out RUM selectively for your frontends in the New RUM Experience
 
-# Roll out RUM selectively for your frontends in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide
@@ -8442,7 +7816,6 @@ scraped: 2026-03-06T21:35:10.443740
 
 # Set up agentless RUM in the New RUM Experience
 
-# Set up agentless RUM in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide
@@ -8509,61 +7882,46 @@ After insertion
 <!DOCTYPE html>
 
 
-
 <html  lang="en">
-
 
 
 <head>
 
 
-
 <meta charset="UTF-8">
-
 
 
 <title>MyApp</title>
 
 
-
 <script type="text/javascript" src="myapp.js"></script>
-
 
 
 </head>
 
 
-
 <body>
-
 
 
 <form>
 
 
-
 Username: <input type="text" name="username"/><br/>
-
 
 
 Password: <input type="password" name="password"/><br/>
 
 
-
 <input type="submit" value="Login">
-
 
 
 </form>
 
 
-
 </body>
 
 
-
 </html>
-
 
 
 </html>
@@ -8573,61 +7931,46 @@ Password: <input type="password" name="password"/><br/>
 <!DOCTYPE html>
 
 
-
 <html  lang="en">
-
 
 
 <head>
 
 
-
 <meta charset="UTF-8">
-
 
 
 <title>MyApp</title>
 
 
-
 <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/145e12d594f/cg36988wxq/477g8ec68708x5c1_complete.js" crossorigin="anonymous"></script>
-
 
 
 <script type="text/javascript" src="myapp.js"></script>
 
 
-
 </head>
-
 
 
 <body>
 
 
-
 <form>
-
 
 
 Username: <input type="text" name="username"/><br/>
 
 
-
 Password: <input type="password" name="password"/><br/>
-
 
 
 <input type="submit" value="Login">
 
 
-
 </form>
 
 
-
 </body>
-
 
 
 </html>
@@ -8652,7 +7995,6 @@ If no data appears yet, your environment may require further configuration steps
 ## Step 5 Keep the RUM JavaScript up-to-date
 
 
-
 If you inserted the RUM JavaScript using the [JavaScript tag](../ru/observe/digital-experience/web-applications/initial-setup/snippet-formats.md#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") snippet format, the monitoring code and configuration update automatically. For other snippet formats, you need to update the RUM JavaScript whenever the configuration changes.
 
 The recommended approach is to integrate the snippet insertion into your build process using the [RUM manual insertion tags API](../ru/dynatrace-api/environment-api/rum/rum-manual-insertion-tags.md "Learn how you can download the RUM manual insertion tags via API"). This ensures your application consistently runs with the latest configuration.
@@ -8675,7 +8017,6 @@ scraped: 2026-03-04T21:29:01.569167
 
 # Set up an auto-injected frontend in the New RUM Experience
 
-# Set up an auto-injected frontend in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide
@@ -8761,7 +8102,6 @@ You can create up to 1,000 frontend detection rules per environment.
 ## Step 5 Set the order of frontend detection rules
 
 
-
 Frontend detection rules have a defined order, and OneAgent applies them sequentially. Rules at the top of the list take precedence over those further down. To ensure accurate detection, place more specific rulesâfor example, those that include both a domain and a pathâhigher in the list than generic rulesâsuch as those that include only the domain.
 
 The rules you created in the previous step are added to the bottom of the list, so you may need to move them up for them to take effect. To adjust the order, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **Real User Monitoring** > **Frontend** > **Application detection**. Select and hold ![Drag handle](https://dt-cdn.net/images/drag-handle-turquoise-600-1aa0e5ea00.svg "Drag handle") next to the rule name, then drag the rule up or down to change its priority.
@@ -8807,7 +8147,6 @@ scraped: 2026-03-06T21:29:12.501368
 
 # Set up host name determination in the New RUM Experience
 
-# Set up host name determination in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide
@@ -8854,7 +8193,6 @@ scraped: 2026-03-06T21:27:24.885857
 
 # Select a snippet format in the New RUM Experience
 
-# Select a snippet format in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide
@@ -9070,7 +8408,6 @@ Because the RUM monitoring code is inlined, its cache duration matches that of y
 The monitoring code is loaded and evaluated synchronously by the browser.
 
 
-
 ## Related topics
 
 * [RUM manual insertion tags API](../ru/dynatrace-api/environment-api/rum/rum-manual-insertion-tags.md "Learn how you can download the RUM manual insertion tags via API")
@@ -9091,7 +8428,6 @@ scraped: 2026-03-03T21:25:12.585695
 
 # Use Subresource Integrity (SRI) in the New RUM Experience
 
-# Use Subresource Integrity (SRI) in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide
@@ -9151,7 +8487,6 @@ scraped: 2026-03-06T21:28:09.180900
 
 # Initial setup for web frontends
 
-# Initial setup for web frontends
 
 * Latest Dynatrace
 * How-to guide
@@ -9233,7 +8568,6 @@ scraped: 2026-03-06T21:26:26.266335
 
 # Customize web frontend monitoring using the JavaScript API
 
-# Customize web frontend monitoring using the JavaScript API
 
 * Latest Dynatrace
 * Reference
@@ -9256,7 +8590,6 @@ scraped: 2026-03-06T21:36:58.159236
 
 # Web frontends
 
-# Web frontends
 
 * Latest Dynatrace
 * Overview
@@ -9294,7 +8627,6 @@ scraped: 2026-03-06T21:14:03.737862
 
 # New Real User Monitoring Experience
 
-# New Real User Monitoring Experience
 
 * Latest Dynatrace
 * Explanation
@@ -9377,7 +8709,6 @@ scraped: 2026-03-05T21:27:21.930906
 
 # Apdex ratings
 
-# Apdex ratings
 
 * Classic
 * Explanation
@@ -9455,7 +8786,6 @@ scraped: 2026-03-05T21:27:36.932998
 
 # User action metrics
 
-# User action metrics
 
 * Classic
 * Explanation
@@ -9558,7 +8888,6 @@ scraped: 2026-03-05T21:27:20.221618
 
 # User actions
 
-# User actions
 
 * Classic
 * Explanation
@@ -9695,7 +9024,6 @@ User action contributors aggregated for the entire application
 ## User action naming rules
 
 
-
 Many applications allow users to accomplish the same goal using different UI controls and following different paths. When monitoring such applications, it can be difficult to differentiate between actions that have the same result and goal but are executed using different parts of the application UI. Likewise, if the application is translated into multiple languages, the same application function or UI element can appear under varying names. With user action naming rules, Dynatrace can detect such subtle variations and intelligently group user actions that achieve the same goal into logical groups for monitoring.
 
 Dynatrace automatically removes certain common `sessionid` tokens from user action names, for example, `jsessionid` for Java containers, default `sessionid` for PHP, and `CFID` and `CFTOKEN` for ColdFusion. Nonetheless, there are numerous session ID variations that may be present in your environment. If Dynatrace doesn't automatically recognize and remove session IDs from certain user action names you encounter, you'll need to configure custom naming rules for your [web](observe/digital-experience/web-applications/initial-setup/create-custom-names-for-user-actions.md "Customize automatically generated user action names for your web applications."), [mobile](../ru/observe/digital-experience/mobile-applications/additional-configuration/naming-rules-mobile.md "Customize automatically generated user action names for your mobile applications."), and [custom applications](observe/digital-experience/custom-applications/additional-configuration/naming-rules-custom.md "Customize automatically generated user action names for your custom applications.").
@@ -9761,7 +9089,6 @@ scraped: 2026-03-06T21:26:34.294869
 
 # User and error events
 
-# User and error events
 
 * Classic
 * Explanation
@@ -9824,7 +9151,6 @@ To help you identify the origin of detected JavaScript errors and mobile crashes
 ### Error
 
 
-
 Dynatrace reports an error whenever a browser throws a JavaScript exception, a web request results in an error, a custom error is sent via API, and for other reasons.
 
 The following error types are captured depending on your application type.
@@ -9852,7 +9178,6 @@ You can leverage performance, multidimensional, and user session analysis to get
 * [User session analysis | View error details](../ru/observe/digital-experience/session-segmentation/new-user-sessions.md#errors "Learn about user session segmentation and filtering attributes.")
 
 ### Crash
-
 
 
 Mobile and custom applications
@@ -9907,7 +9232,6 @@ scraped: 2026-03-06T21:13:58.729143
 
 # Real User Monitoring concepts
 
-# Real User Monitoring concepts
 
 * Classic
 * Overview
@@ -9937,7 +9261,6 @@ scraped: 2026-03-02T21:21:17.753446
 
 # Configure Session Replay for Android
 
-# Configure Session Replay for Android
 
 * How-to guide
 * 7-min read
@@ -10007,13 +9330,10 @@ For Android Gradle plugin versions 4.0 and 4.1, you need to change the compile o
 compileOptions {
 
 
-
 sourceCompatibility 1.8
 
 
-
 targetCompatibility 1.8
-
 
 
 }
@@ -10043,17 +9363,13 @@ Use the following code to set the masking level to Safe.
 MaskingConfiguration config = new MaskingConfiguration.Safe();
 
 
-
 // .Safest or .Custom
-
 
 
 DynatraceSessionReplay.setConfiguration(Configuration.builder()
 
 
-
 .withMaskingConfiguration(config)
-
 
 
 .build());
@@ -10067,17 +9383,13 @@ Use the following code to set the masking level to Custom. For additional option
 MaskingConfiguration config = new MaskingConfiguration.Custom();
 
 
-
 // .Safest or .Safe
-
 
 
 DynatraceSessionReplay.setConfiguration(Configuration.builder()
 
 
-
 .withMaskingConfiguration(config)
-
 
 
 .build());
@@ -10091,13 +9403,10 @@ Use the following code to set the masking level to Custom and remove all masked 
 MaskingConfiguration config = new MaskingConfiguration.Custom().removeAllMaskedViews();
 
 
-
 DynatraceSessionReplay.setConfiguration(Configuration.builder()
 
 
-
 .withMaskingConfiguration(config)
-
 
 
 .build());
@@ -10120,29 +9429,22 @@ You can enable or disable masking globally or for the selected components, such 
 Set&lt;Class<? extends View&gt;> set = new HashSet&lt;Class<? extends View&gt;>()\\{{
 
 
-
 add(ImageView.class);
-
 
 
 add(WebView.class);
 
 
-
 }};
-
 
 
 new MaskingConfiguration.Custom().addMaskedView(ImageView.class); // Adds one masked view
 
 
-
 new MaskingConfiguration.Custom().addMaskedViews(set); // Adds all masked views
 
 
-
 new MaskingConfiguration.Custom().removeMaskedView(ImageView.class); // Removes one masked view
-
 
 
 new MaskingConfiguration.Custom().removeAllMaskedViews(); // Removes all masked views
@@ -10158,29 +9460,22 @@ You can also enable or disable masking of the selected views based on their `and
 Set&lt;Integer&gt; set = new HashSet&lt;Integer&gt;()\\{{
 
 
-
 add(R.id.view_id1);
-
 
 
 add(R.id.view_id2);
 
 
-
 }};
-
 
 
 new MaskingConfiguration.Custom().addMaskedIds(set);
 
 
-
 new MaskingConfiguration.Custom().addNonMaskedIds(set);
 
 
-
 new MaskingConfiguration.Custom().removeMaskedIds(set);
-
 
 
 new MaskingConfiguration.Custom().removeNonMaskedIds(set);
@@ -10200,44 +9495,34 @@ Jetpack Compose provides manual masking functionality that allows you to control
 import com.dynatrace.agent.compose.api.dtMask
 
 
-
 @Composable
-
 
 
 fun MyScreen() {
 
 
-
 Column {
-
 
 
 Text(
 
 
-
 text = "This text will be masked",
-
 
 
 modifier = Modifier.dtMask()
 
 
-
 )
 
 
-
 }
-
 
 
 }
 ```
 
 ## Enable Session Replay logs
-
 
 
 You can enable Session Replay logs the same way as for OneAgent. See [Enable debug logging for Dynatrace Android Gradle plugin or OneAgent SDK](observe/digital-experience/mobile-applications/instrument-android-app/debug-logging-oneagent.md "Activate the debug logs from OneAgent.") for more information.
@@ -10258,17 +9543,13 @@ By default, all dataâinformation on captured events and imagesâis sent
 DynatraceSessionReplay.setConfiguration(
 
 
-
 Configuration.builder()
-
 
 
 .withDataTransmissionMode(DataTransmissionMode.NOT_METERED_NETWORK)
 
 
-
 .build()
-
 
 
 )
@@ -10296,7 +9577,6 @@ scraped: 2026-03-05T21:37:06.750651
 
 # Configure Session Replay for iOS
 
-# Configure Session Replay for iOS
 
 * Classic
 * How-to guide
@@ -10383,7 +9663,6 @@ Use the following code to set the masking level to Safe.
 let maskingConfiguration = MaskingConfiguration(maskingLevelType: .safe)
 
 
-
 try? AgentManager.setMaskingConfiguration(maskingConfiguration)
 ```
 
@@ -10403,13 +9682,10 @@ You can enable or disable rules globally or for the selected components, such as
 try? maskingConfiguration.add(rule: .maskAllImages) // Adds one rule
 
 
-
 try? maskingConfiguration.remove(rule: .maskAllSwitches) // Removes one rule
 
 
-
 try? maskingConfiguration.addAllRules() // Adds all rules
-
 
 
 try? maskingConfiguration.removeAllRules() // Removes all rules
@@ -10425,13 +9701,10 @@ You can enable or disable masking of the selected views based on their accessibi
 try? maskingConfiguration.addMaskedView(viewIds: \["masked_view_id"\])
 
 
-
 try? maskingConfiguration.removeMaskedView(viewIds: \["masked_view_id"\])
 
 
-
 try? maskingConfiguration.addNonMaskedView(viewIds: \["nonMasked_view_id"\])
-
 
 
 try? maskingConfiguration.removeNonMaskedView(viewIds: \["nonMasked_view_id"\])
@@ -10455,17 +9728,13 @@ All methods for capturing custom events can throw a TrackCustomEventError.notInM
 do {
 
 
-
 try AgentManager.trackCustomEvent(name: "my_event_name", view: nil)
-
 
 
 } catch {
 
 
-
 print(error)
-
 
 
 }
@@ -10504,7 +9773,6 @@ AgentManager.setTransmissionMode(.wifi) // .data by default
 ```
 
 ## Screenshot debugger
-
 
 
 The Session Replay screenshot debugger allows you to see when the screenshots are taken, which parts of the screen are captured, and what dataâtext fields, images, labels, web views, and togglesâis masked
@@ -10548,7 +9816,6 @@ scraped: 2026-03-06T21:14:07.083776
 
 # Session Replay
 
-# Session Replay
 
 * Classic
 * Overview
@@ -10636,7 +9903,6 @@ scraped: 2026-03-06T21:31:51.312648
 
 # User details
 
-# User details
 
 * Classic
 * Explanation
@@ -10719,7 +9985,6 @@ scraped: 2026-03-06T21:32:25.972152
 
 # Context-based Apdex analysis
 
-# Context-based Apdex analysis
 
 * Classic
 * How-to guide
@@ -10796,7 +10061,6 @@ scraped: 2026-03-06T21:23:09.934912
 
 # Custom queries, segmentation, and aggregation of session data
 
-# Custom queries, segmentation, and aggregation of session data
 
 * Classic
 * How-to guide
@@ -10904,7 +10168,6 @@ Selects one or more columns from the specified data table or performs aggregatio
 columns: [DISTINCT] <column>, <column>, ... | function(<parameter>) |
 
 
-
 <column> AS <alias> | JSON
 ```
 
@@ -10914,9 +10177,7 @@ Example
 SELECT country, city, browserfamily FROM usersession
 
 
-
 SELECT DISTINCT country, city, useractioncount FROM usersession
-
 
 
 SELECT country, city, avg(duration) AS average FROM usersession GROUP BY country, city
@@ -10944,9 +10205,7 @@ Instead of running the following three queries:
 SELECT COUNT(*) FROM usersession where useraction.name = "AppStart"
 
 
-
 SELECT COUNT(*) FROM usersession where useraction.name = "AppStart" AND useraction.name = "searchJourney"
-
 
 
 SELECT COUNT(*) FROM usersession where useraction.name = "AppStart" AND useraction.name = "searchJourney"  AND useraction.name = "bookJourney"
@@ -10958,7 +10217,6 @@ The following single query returns the same result:
 SELECT FUNNEL (useraction.name = "AppStart", useraction.name = "searchJourney", useraction.name = "bookJourney")
 
 
-
 FROM usersession
 ```
 
@@ -10968,7 +10226,6 @@ To list the number of users that successfully booked the journey:
 
 ```
 SELECT FUNNEL (useraction.name="login", useraction.name = "searchJourney", useraction.name = "bookJourney")
-
 
 
 FROM usersession
@@ -10989,7 +10246,6 @@ Example
 SELECT country, city, browserfamily FROM usersession
 
 
-
 SELECT name, starttime, endtime, duration FROM useraction ORDER BY duration DESC
 ```
 
@@ -11001,9 +10257,7 @@ You can combine multiple conditions using Boolean logic and parentheses within t
 condition: (condition AND condition) | (condition OR condition) | field IN(...) |
 
 
-
 field IS <value> | field IS NULL | field = <value> | field > <value> | field < <value> |
-
 
 
 field <> <value> | field IS NOT <value> | field BETWEEN <value> AND <value> | ...
@@ -11017,17 +10271,13 @@ Examples
 SELECT country, city, browserfamily FROM usersession WHERE country = 'Albania' AND screenWidth > 1000
 
 
-
 SELECT TOP(country, 20), TOP(city, 20), TOP(duration, 10), AVG(duration) AS average
-
 
 
 FROM usersession
 
 
-
 WHERE duration BETWEEN 1000 AND 2000
-
 
 
 GROUP BY TOP(country, 20), TOP(city, 20), TOP(duration, 10)
@@ -11047,9 +10297,7 @@ Example
 SELECT city, count(*) FROM usersession GROUP BY city
 
 
-
 SELECT MONTH(starttime) as month, count (*) FROM usersession
-
 
 
 GROUP BY month
@@ -11103,13 +10351,10 @@ You can achieve ordering of functions in the select list by stating the column n
 SELECT avg(duration) AS average, count(*) as number, day(startTime) as startDay
 
 
-
 FROM usersession where duration < 2000
 
 
-
 GROUP BY startTime
-
 
 
 ORDER BY average
@@ -11121,13 +10366,10 @@ or
 SELECT avg(duration) AS average, count(*) as number, day(startTime) as startDay
 
 
-
 FROM usersession where duration < 2000
 
 
-
 GROUP BY startTime
-
 
 
 ORDER BY number DESC, average ASC
@@ -11198,21 +10440,16 @@ Usually, we simply count the number of `LIKE` conditions used in the query. For 
 SELECT CONDITION(COUNT(userSessionId), WHERE useraction.name LIKE '*search.html'),
 
 
-
 CONDITION(COUNT(userSessionId), WHERE useraction.name LIKE '*booking-payment1.html')
-
 
 
 FROM usersession
 
 
-
 WHERE city LIKE "%York"
 
 
-
 OR city LIKE "S*Francisco"
-
 
 
 AND city LIKE "L*inz"
@@ -11232,9 +10469,7 @@ is changed to the following three queries:
 SELECT COUNT(*) FROM usersession where useraction.name LIKE "*start"
 
 
-
 SELECT COUNT(*) FROM usersession where useraction.name LIKE "*start" AND useraction.name LIKE "Jou%rney"
-
 
 
 SELECT COUNT(*) FROM usersession where useraction.name LIKE "*start" AND useraction.name LIKE "Jou%rney" AND useraction.name LIKE "bookJourn*ey"
@@ -11252,21 +10487,16 @@ Example
 SELECT useraction.application,
 
 
-
 AVG(usersession.doubleProperties.bookings)
-
 
 
 FILTER > 1500
 
 
-
 FROM usersession
 
 
-
 WHERE usersession.doubleProperties.bookings IS NOT NULL
-
 
 
 GROUP BY useraction.application
@@ -11275,9 +10505,7 @@ GROUP BY useraction.application
 The `WHERE` and `FILTER` functions aren't interchangeable. While you can use the `WHERE` clause only on absolute values, the `FILTER` function works on aggregated values as well.
 
 
-
 ### Frequently used functions
-
 
 
 #### MIN(field)
@@ -11288,7 +10516,6 @@ Example
 
 ```
 SELECT MIN(duration), MAX(duration), AVG(duration), MEDIAN(duration)
-
 
 
 FROM usersession
@@ -11304,7 +10531,6 @@ Example
 SELECT MIN(duration), MAX(duration), AVG(duration), MEDIAN(duration)
 
 
-
 FROM usersession
 ```
 
@@ -11316,7 +10542,6 @@ Example
 
 ```
 SELECT MIN(duration), MAX(duration), AVG(duration), MEDIAN(duration)
-
 
 
 FROM usersession
@@ -11332,7 +10557,6 @@ Example
 SELECT MIN(duration), MAX(duration), AVG(duration), MEDIAN(duration)
 
 
-
 FROM usersession
 ```
 
@@ -11344,7 +10568,6 @@ Example
 
 ```
 SELECT TOP(name, 20), SUM(duration) FROM useraction
-
 
 
 GROUP BY name
@@ -11364,9 +10587,7 @@ Example
 SELECT country, COUNT(*), COUNT(city), COUNT(DISTINCT city)
 
 
-
 FROM usersession
-
 
 
 GROUP BY country
@@ -11399,9 +10620,7 @@ Example
 SELECT country, COUNT(*), COUNT(city), COUNT(DISTINCT city)
 
 
-
 FROM usersession
-
 
 
 GROUP BY country
@@ -11417,9 +10636,7 @@ Example
 SELECT TOP(name, 20), SUM(duration)
 
 
-
 FROM useraction
-
 
 
 GROUP BY name
@@ -11431,9 +10648,7 @@ If `TOP(<field>, n)` is selected and the results are grouped, but `<field>` is n
 SELECT TOP(country, 20), TOP(city, 3), COUNT(*)
 
 
-
 FROM usersession
-
 
 
 GROUP BY country
@@ -11455,13 +10670,10 @@ Example
 SELECT starttime,
 
 
-
 DATETIME(starttime), YEAR(starttime), MONTH(starttime), DAY(starttime), HOUR(starttime), MINUTE(starttime)
 
 
-
 FROM usersession
-
 
 
 ORDER BY starttime DESC
@@ -11490,7 +10702,6 @@ Example
 SELECT DATETIME(starttime, 'yyyy-MM') FROM usersession
 
 
-
 SELECT DISTINCT DATETIME(starttime, 'HH:mm', '5m'), COUNT(*) FROM usersession
 ```
 
@@ -11502,13 +10713,10 @@ Examples
 SELECT application, DATETIME(MAX(starttime)) AS LastUsedTime FROM useraction GROUP BY application
 
 
-
 SELECT DATETIME(starttime, "HH") AS hourOfDay, COUNT(*) FROM usersession GROUP BY hourOfDay
 
 
-
 SELECT application, DATETIME(starttime, "E") AS daysOfWeek FROM useraction GROUP BY application
-
 
 
 SELECT DATETIME(CONDITION(MAX(startTime), WHERE name = "index.jsp")) FROM useraction
@@ -11534,17 +10742,13 @@ You can combine multiple conditions using Boolean logic and parentheses with the
 CONDITION(function, condition)
 
 
-
 condition:
-
 
 
 (condition AND condition) | (condition OR condition) | field IN(...) |
 
 
-
 field IS <value> | field IS NULL | field = <value> | field > <value> | field < <value> |
-
 
 
 field <> <value> | field IS NOT <value> | field BETWEEN <value> AND <value> | ...
@@ -11562,13 +10766,10 @@ Example
 SELECT CONDITION(COUNT(usersessionId), WHERE userActionCount > 2 AND useraction.name = "search.jsp") FROM usersession
 
 
-
 SELECT CONDITION(SUM(usersession.duration), WHERE name = "index.jsp") AS c1, CONDITION(SUM(usersession.duration), WHERE name = "search.jsp") AS c2, CONDITION(SUM(usersession.duration), WHERE name IS NOT "index.jsp" AND name IS NOT "search.jsp") AS c3 FROM useraction WHERE (duration > 1000 OR usersession.userActionCount > 4)
 
 
-
 SELECT CONDITION(SUM(usersession.duration), WHERE name = "index.jsp") AS c1 FROM useraction WHERE (duration > 1000 OR usersession.userActionCount > 4) ORDER BY c1
-
 
 
 SELECT DATETIME(CONDITION(MIN(startTime ), WHERE useraction.application = "RUM Default Application" ), "yyyy-MM-dd" ) FROM usersession
@@ -11584,29 +10785,22 @@ Example
 SELECT name, usersession.country, usersession.browserFamily,
 
 
-
 AVG(duration),
-
 
 
 MEDIAN(duration),
 
 
-
 PERCENTILE(duration, 99)
-
 
 
 FROM useraction
 
 
-
 WHERE useraction.name = "easytravel/rest/login"
 
 
-
 GROUP BY usersession.country, usersession.browserFamily, name
-
 
 
 ORDER BY usersession.continent
@@ -11640,9 +10834,7 @@ Example 1
 SELECT KEYS(stringProperties) FROM useraction WHERE application = "easyTravel demo application"
 
 
-
 SELECT KEYS(useraction.longProperties) FROM usersession WHERE applicationType="WEB_APPLICATION" ORDER BY keys(useraction.longProperties)
-
 
 
 SELECT KEYS(usersession.stringProperties) FROM useraction WHERE usersession.city ="Berlin"
@@ -11656,12 +10848,10 @@ Example 2
 SELECT DISTINCT KEYS(stringProperties) FROM useraction WHERE useraction.application = "easyTravel demo application" ORDER BY keys(stringProperties)
 
 
-
 SELECT DISTINCT KEYS(doubleProperties) FROM usersession
 ```
 
 ## Mathematical operations
-
 
 
 The following operations are supported as part of queries:
@@ -11682,7 +10872,6 @@ Example
 
 ```
 SELECT 7 + 80 * 100, duration + startTime, MONTH(startTime) - 1
-
 
 
 FROM usersession
@@ -11716,7 +10905,6 @@ Example 1
 SELECT DISTINCT ip FROM usersession
 
 
-
 WHERE ip BETWEEN '192.168.0.0' AND '192.168.255.255'
 ```
 
@@ -11724,7 +10912,6 @@ Example 2
 
 ```
 SELECT startTime FROM useraction
-
 
 
 WHERE NOT startTime BETWEEN $NOW - DURATION("2h") AND $NOW
@@ -11736,9 +10923,7 @@ Example 3
 SELECT ip, browserType, userId, city
 
 
-
 FROM usersession
-
 
 
 WHERE NOT ip BETWEEN '52.179.11.1' AND '52.179.11.255'
@@ -11810,21 +10995,16 @@ When your query contains multiple "equals" conditions for the same field via `OR
 SELECT COUNT(*) FROM userevent
 
 
-
 WHERE pageReferrer = "/some/page/referrer/1"
-
 
 
 OR pageReferrer = "/some/page/referrer/2"
 
 
-
 OR pageReferrer = "/some/page/referrer/3"
 
 
-
 OR pageReferrer = "/some/page/referrer/4"
-
 
 
 OR pageReferrer = "/some/page/referrer/5"
@@ -11836,21 +11016,16 @@ OR pageReferrer = "/some/page/referrer/5"
 SELECT COUNT(*) FROM userevent
 
 
-
 WHERE pageReferrer IN ("/some/page/referrer/1",
-
 
 
 "/some/page/referrer/2",
 
 
-
 "/some/page/referrer/3",
 
 
-
 "/some/page/referrer/4",
-
 
 
 "/some/page/referrer/5")
@@ -11866,29 +11041,22 @@ To optimize the speed of your queries, use arrays for queries: instead of using 
 SELECT useraction.name, usersession.userId
 
 
-
 FROM useraction
-
 
 
 WHERE name = "loading of page /"
 
 
-
 AND usersession.userId IS NOT NULL
-
 
 
 AND usersession.userId <> "Speed Travel Agency"
 
 
-
 AND usersession.userId <> "some user"
 
 
-
 AND usersession.userId <> "easyTravel - One step to happiness"
-
 
 
 AND usersession.userId <> "easyTravel - Booking - Finish"
@@ -11900,29 +11068,22 @@ AND usersession.userId <> "easyTravel - Booking - Finish"
 SELECT useraction.name, usersession.userId
 
 
-
 FROM useraction
-
 
 
 WHERE name = "loading of page /"
 
 
-
 AND usersession.userId IS NOT NULL
-
 
 
 AND NOT usersession.userId IN ("Speed Travel Agency",
 
 
-
 "some user",
 
 
-
 "easyTravel - One step to happiness",
-
 
 
 "easyTravel - Booking - Finish")
@@ -11938,7 +11099,6 @@ Example
 
 ```
 SELECT * FROM usersession WHERE ip > '211.44.94.0' AND ip < '212.113.5.0'
-
 
 
 SELECT * FROM usersession WHERE ip BETWEEN '211.44.94.0' AND '212.113.5.0'
@@ -11963,7 +11123,6 @@ Example
 
 ```
 SELECT name, duration FROM useraction
-
 
 
 WHERE startTime BETWEEN $TIME_FRAME_START and $TIME_FRAME_END
@@ -11992,9 +11151,7 @@ Example
 SELECT * FROM usersession WHERE startTime >= $NOW - DURATION("1q") AND endTime <= $NOW
 
 
-
 SELECT * FROM useraction WHERE startTime BETWEEN $NOW - DURATION("2h") AND $NOW
-
 
 
 SELECT * FROM useraction WHERE usersession.startTime >= $TIME_FRAME_START - DURATION("2h") AND $NOW - DURATION("1h")
@@ -12003,7 +11160,6 @@ SELECT * FROM useraction WHERE usersession.startTime >= $TIME_FRAME_START - DURA
 The timeframe selected in the Dynatrace web UI or Dynatrace API still applies to the results, even if timestamp-based filtering is used as part of your query.
 
 ### Secondary tables for `usersession`, `useraction`, `userevent`, and `usererror`
-
 
 
 When using `SELECT` with `usersession`, `useraction`, `userevent`, or `usererror`, columns from the other table can be accessed and included in the results by prefixing column names with the table name.
@@ -12016,7 +11172,6 @@ Selecting a logical view of the `usersession` or the `useraction` table. Multipl
 SELECT city, useraction.name FROM usersession
 
 
-
 SELECT usersession.city, name FROM useraction
 ```
 
@@ -12026,9 +11181,7 @@ You can use other secondary tables `userevent` and `usererror` in the same way.
 SELECT usersession.country, name, page FROM userevent
 
 
-
 SELECT usersession.country, name, type FROM usererror
-
 
 
 SELECT country, userevent.name, usererror.name FROM usersession
@@ -12042,7 +11195,6 @@ Example 2
 SELECT city, useraction.name, userevent.page, usererror.type FROM usersession
 
 
-
 SELECT city, usererror.name, userevent.page, useraction.duration FROM usersession WHERE usererror.name IS NOT NULL
 ```
 
@@ -12052,7 +11204,6 @@ Listing all user sessions that contain a user event or a user action from the sa
 
 ```
 SELECT * FROM usersession
-
 
 
 WHERE userevent.application = "a" OR useraction.application="a"
@@ -12074,7 +11225,6 @@ The following queries won't fail, as only fields from the selected secondary tab
 SELECT usersession.userId, name, duration FROM useraction
 
 
-
 SELECT usersession.userId, name, type FROM usererror
 ```
 
@@ -12084,7 +11234,6 @@ Applied conditions differ in meaning depending on the table. For example, consid
 
 ```
 SELECT * FROM usersession
-
 
 
 WHERE useraction.name = "a" AND useraction.name = "b"
@@ -12098,7 +11247,6 @@ If you want to select user session data for a specific user action that matches 
 SELECT usersession.*, * FROM useraction
 
 
-
 WHERE useraction.name = "a" AND useraction.duration > 1000
 ```
 
@@ -12110,17 +11258,13 @@ Let's take a look at another query.
 SELECT COUNT(usersession.userSessionId)
 
 
-
 FROM usersession
-
 
 
 WHERE userevent.name = 'Page change'
 
 
-
 AND userevent.pageGroup = '/Booking'
-
 
 
 AND userevent.type = 'UserTag'
@@ -12134,17 +11278,13 @@ If you run the same query on the `userevent` table, the conditions are applied o
 SELECT COUNT(usersession.userSessionId)
 
 
-
 FROM userevent
-
 
 
 WHERE userevent.name = 'Page change'
 
 
-
 AND userevent.pageGroup = '/Booking'
-
 
 
 AND userevent.type = 'UserTag'
@@ -12178,13 +11318,10 @@ Example
 SELECT * FROM usersession
 
 
-
 SELECT useraction.* FROM usersession
 
 
-
 SELECT city, useraction.* FROM usersession
-
 
 
 SELECT *, useraction.* FROM usersession
@@ -12206,7 +11343,6 @@ The query below returns the matching user sessions as JSON in an additional colu
 SELECT usersessionId, browserFamily, useraction.name, useraction.duration, JSON
 
 
-
 FROM usersession LIMIT 5
 ```
 
@@ -12218,7 +11354,6 @@ The query below returns the matching user actions as JSON in an additional colum
 
 ```
 SELECT name, duration, JSON
-
 
 
 FROM useraction LIMIT 5
@@ -12236,7 +11371,6 @@ Example
 SELECT * FROM usersession WHERE userId = "some 'custom' name for ""my user"""
 
 
-
 SELECT * FROM usersession WHERE userId = 'some ''custom'' name for "my user"'
 ```
 
@@ -12250,21 +11384,16 @@ Example
 SELECT FUNNEL(
 
 
-
 useraction.name = "AppStart (easyTravel)" AS "Open easytravel",
-
 
 
 useraction.name = "searchJourney" AS "Search journey",
 
 
-
 useraction.name = "bookJourney" AS "Book journey",
 
 
-
 useraction.matchingConversionGoals = "Payment" OR useraction.matchingConversionGoals = "booking-finished" AS "Booked")
-
 
 
 FROM usersession
@@ -12278,25 +11407,19 @@ Example
 SELECT FUNNEL(
 
 
-
 useraction.name = "AppStart (easyTravel)" AS "Open easytravel",
-
 
 
 useraction.name = "searchJourney" AS "Search journey",
 
 
-
 useraction.name = "bookJourney" AS "Book journey",
-
 
 
 useraction.matchingConversionGoals = "Payment" OR useraction.matchingConversionGoals = "booking-finished" AS "Booked")
 
 
-
 FROM usersession
-
 
 
 WHERE stringProperties.memberstatus="GOLD"
@@ -12305,7 +11428,6 @@ WHERE stringProperties.memberstatus="GOLD"
 `FUNNEL` does not support ordering. There's no guarantee that `useraction1` happened before `useraction2` for the `SELECT FUNNEL (useraction.name = "useraction1", useraction.name = "useraction2") FROM usersession` query. This query is only the equivalent of two `SELECT` statements.
 
 ## Available user session data tables and fields
-
 
 
 For user session data, the following tables are available.
@@ -12342,7 +11464,6 @@ This code:
 curl --location --insecure -H "Content-Type: application/json" -H "Authorization: Api-Token _token_" \
 
 
-
 -XGET "https://{your-environment-id}.live.dynatrace.com/api/v1/userSessionQueryLanguage/table?query=select%20city,count(*)%20from%20usersession%20group%20by%20city"
 ```
 
@@ -12352,29 +11473,22 @@ provides the following result:
 {
 
 
-
 "columnNames": ["city",    "count(*)"],
-
 
 
 "values": [
 
 
-
 ["Dublin",    23],
-
 
 
 ["N. Virginia (Amazon)",    80],
 
 
-
 ["Portland",    56]
 
 
-
 ]
-
 
 
 }
@@ -12386,7 +11500,6 @@ This code:
 curl --location --insecure -H "Content-Type: application/json" -H "Authorization: Api-Token _token_" \
 
 
-
 -XGET "https://{your-environment-id}.live.dynatrace.com/api/v1/userSessionQueryLanguage/tree?query=select%20country,city,count(*)%20from%20usersession%20group%20by%20country,city"
 ```
 
@@ -12396,49 +11509,37 @@ provides the following result:
 {
 
 
-
 "branchNames": ["country",    "city"],
-
 
 
 "leafNames": ["count(*)"],
 
 
-
 "values": {
-
 
 
 "United States": {
 
 
-
 "Portland": [56],
-
 
 
 "N. Virginia (Amazon)": [83]
 
 
-
 },
-
 
 
 "Ireland": {
 
 
-
 "Dublin": [24]
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -12506,7 +11607,6 @@ scraped: 2026-03-02T21:18:42.759294
 
 # New: User session analysis
 
-# New: User session analysis
 
 * How-to guide
 * 21-min read
@@ -12623,7 +11723,6 @@ User sessions that are [live](observe/digital-experience/rum-concepts/user-sessi
 For instance, if the timeframe is set for 12:00â12:05, and a session that started at 11:55 is still live during that timeframe, that session is shown in the session list but isn't considered for the **Analysis over time** finding. This is because the session started before the set timeframe.
 
 
-
 ## Drill down using findings
 
 The findings panel is located on the left side of the **User sessions** page. This panel contains out-of-the-box findings and different visualizations for various attributes. For example, select the **Application versions** category to see which of your application version has more user sessions, or select the **Applications** category to see data on aggregated sessions for each of your applications.
@@ -12706,7 +11805,6 @@ To view user sessions with rage events
 4. Scroll down to the **Events and actions** section, and expand the rage click or rage tap event to view its details.
 
 ## Examine crashes
-
 
 
 Mobile and custom applications
@@ -12818,7 +11916,6 @@ scraped: 2026-03-06T21:14:05.384648
 
 # Session segmentation
 
-# Session segmentation
 
 * Classic
 * Overview
@@ -12847,7 +11944,6 @@ scraped: 2026-03-06T21:24:40.754078
 
 # Synthetic details for browser monitors
 
-# Synthetic details for browser monitors
 
 * Classic
 * Explanation
@@ -12928,7 +12024,6 @@ Select **Pin to dashboard** to pin a **Browser monitor** tile to a classic dashb
 ## Performance
 
 
-
 The **Performance** card shows trend lines for **Total duration** for **all actions** in your monitor or for your selected key performance metric for **load actions** or **XHR actions**. You can view performance split by **events** or by monitoring **locations**.
 
 ![Performance card](https://dt-cdn.net/images/clickpathdetailsperformance-2225-4fad47a8bf.png)
@@ -12988,7 +12083,6 @@ Events are highlighted when they are in violation of their performance threshold
 ![Event performance violation](https://dt-cdn.net/images/clickpathdetailseventviolation-1120-65f9eefc94.png)
 
 ## Problems
-
 
 
 The **Problems** card shows performance (threshold violation) and availability (local or global outage) problems when you enable the respective thresholds in [monitor settings](observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors.md "Learn about configuring browser monitors and clickpaths."). Expand the card to see active as well as resolved problems for the selected timeframe.
@@ -13073,7 +12167,6 @@ scraped: 2026-03-06T21:24:30.297902
 
 # HTTP monitors reporting results
 
-# HTTP monitors reporting results
 
 * Classic
 * Explanation
@@ -13152,7 +12245,6 @@ The `customLogs` attribute displays the timestamp, log level, and message for ea
 The **On-demand execution** tab is overwritten with each on-demand execution. Use the dropdown list to select any on-demand execution for the monitor from the preceding six hours. If the on-demand executions are in [**Standard** or **Disable problem detection** modes](../ru/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions.md#ui "Execute synthetic monitors on demand from public or private locations"), details are also written to the last failed/successful execution tabs. Note that in these modes, if you fail a monitor for violating a performance threshold, the execution appears in the tabs for successful and on-demand executions.
 
 ### Filters and comparisions
-
 
 
 Use the filter bar at the top and left of each tab to narrow down execution detailsâyou can have different filters for each tab. You can select from provided options to filter by **Locations**, **Requests**, and JSON **Attributes** (either individually or in groupsâsee below).
@@ -13251,7 +12343,6 @@ Problems, along with their constituent [events](#events) and any corresponding [
 ## Events
 
 
-
 The **Events** card shows all events that compose problems. Events for active as well as resolved problems show up in the list and timeline.
 
 Hover over a time slot in the event timeline to see the type and number of events generated in that interval. Select a time slot to view a tooltip with the events that took place in it.
@@ -13296,7 +12387,6 @@ scraped: 2026-03-04T21:33:00.345852
 
 # Waterfall graphs
 
-# Waterfall graphs
 
 * Classic
 * Explanation
@@ -13396,7 +12486,6 @@ Another finding highlights uncompressed text resources; if an uncompressed text 
 ### Thresholds for waterfall findings
 
 
-
 If Real User Monitoring (RUM) is enabled for the web applications your browser monitor runs against, you can specify thresholds for waterfall findings in application settings.
 
 You can also find default values for findings here. For example, you can determine how to peg **Speed index** to **Visually complete** or how large is too large when it comes to being warned about the size of resources.
@@ -13490,7 +12579,6 @@ scraped: 2026-03-06T21:24:38.972736
 
 # Create a single-URL browser monitor
 
-# Create a single-URL browser monitor
 
 * Classic
 * How-to guide
@@ -13574,7 +12662,6 @@ scraped: 2026-03-06T21:36:15.258243
 
 # Synthetic architecture and communication
 
-# Synthetic architecture and communication
 
 * Classic
 * Explanation
@@ -13642,7 +12729,6 @@ scraped: 2026-03-06T21:27:16.073735
 
 # External vault integration
 
-# External vault integration
 
 * Classic
 * How-to guide
@@ -13696,7 +12782,6 @@ See also [Best practices](#best-practices) and what happens when you [edit or de
 ![Set up Azure synchronization - token](https://dt-cdn.net/images/cv-azure-token-1113-f0f69b54d9.webp)
 
 ### Azure Key Vault synchronization monitors
-
 
 
 When you have [set up your synchronized username-password or token credential](#azure-set-up), Dynatrace automatically creates and executes an [HTTP monitor](observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic.md "Learn how to set up an HTTP monitor to check the performance and availability of your site.") that synchronizes the credential with Azure Key Vault. This monitor is automatically associated with the synchronized username-password or token credential.
@@ -13785,7 +12870,6 @@ We recommend naming such prerequisite tokens and certificates so that they're ea
 ### Set up synchronized credentials
 
 
-
 1. In the credential vault, create a **User and password** or **Token** credential. You can also overwrite an existing credential.
 2. For **Credential scope**, select **Synthetic**.
 3. Turn on **Synchronization with external vault**.
@@ -13831,7 +12915,6 @@ See also [Best practices](#best-practices) and what happens when you [edit or de
 When you have set up your synchronized credential, Dynatrace automatically creates and executes an [HTTP monitor](observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic.md "Learn how to set up an HTTP monitor to check the performance and availability of your site.") that synchronizes the credential with HashiCorp Vault.
 
 ### HashiCorp Vault AppRole synchronization monitors
-
 
 
 The autocreated HTTP monitor contains two requests and is automatically associated with the [synchronized credential](#hashicorp-set-up) defined above.
@@ -13897,7 +12980,6 @@ Token credentials
      ![HashiCorp AppRole request 2 post-script to save token](https://dt-cdn.net/images/cv-hashi-approle-request2-postscript-savetoken-936-a139146cec.png)
 
 ### HashiCorp Vault TLS certificate synchronization monitors
-
 
 
 The autocreated HTTP monitor contains two requests and is automatically associated with the [synchronized credential](#hashicorp-set-up) defined above.
@@ -13968,7 +13050,6 @@ Username-password credentials for use in synthetic monitors can be synchronized 
 We recommend naming any prerequisite credentials so that they're easily identifiable as companion credentials for synchronization.
 
 ### Set up synchronized credentials
-
 
 
 1. In the credential vault, create a **User and password** credential. You can also overwrite an existing credential.
@@ -14062,7 +13143,6 @@ Request configuration details
 ## Best practices and caveats
 
 
-
 If creating a synchronization monitor manually, be sure to select **Do not store and display request and response bodies and header values in execution details** in any requests that fetch client tokens or credential values from external vaults. Failing to do so will expose the sensitive information when you **Analyze execution details** in [HTTP monitor details](../ru/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic.md "Learn about the Synthetic details page for HTTP monitors.").
 
 * Automatically created synchronization monitors may be edited. To edit an autocreated synchronization monitor, you must have [access to the credentials](../common/manage/credential-vault.md#owner-shared-public "Store and manage credentials in the credential vault.") referenced in the monitor. You might need to make edits if the external vault vendor makes changes. For example, you might need to edit request URLs if Microsoft changes the API version for fetching client tokens from Azure Key Vault.
@@ -14097,7 +13177,6 @@ scraped: 2026-03-03T21:28:56.720996
 
 # On-demand synthetic monitor executions for CI/CD
 
-# On-demand synthetic monitor executions for CI/CD
 
 * Explanation
 * 17-min read
@@ -14169,7 +13248,6 @@ Even if you [disable scheduled synthetic monitor execution during maintenance wi
    ![Triggered execution](https://dt-cdn.net/images/on-demand-exec-triggered-2185-f3ccf8cf28.png)
 
 ### Throttling and limits
-
 
 
 * There is a mandatory gap per user of 60 seconds between consecutive on-demand executions of a monitor from the same location (whether triggered via the web UI or API).
@@ -14293,53 +13371,40 @@ API-based on-demand executions offer greater flexibility and scalability than th
   {
 
 
-
   "monitors": [
 
 
-
   {
-
 
 
   "monitorId": "HTTP_CHECK-C608F75BF82E5B22",
 
 
-
   "customizedScript": {
-
 
 
   "requests": [
 
 
-
   {
-
 
 
   "url": "https://www.yourdomain.com"
 
 
-
   }
-
 
 
   ]
 
 
-
   }
 
 
-
   }
-
 
 
   ]
-
 
 
   }
@@ -14353,101 +13418,76 @@ API-based on-demand executions offer greater flexibility and scalability than th
   {
 
 
-
   "monitors": [
 
 
-
   {
-
 
 
   "monitorId": "HTTP_CHECK-6349B98E1CD87352",
 
 
-
   "customizedScript": {
-
 
 
   "requests": [
 
 
-
   {
-
 
 
   "url": "https://www.somepage.org",
 
 
-
   "preProcessingScript": "if (response.getResponseBody().includes(\"error\")) {api.fail(\"HTTP failing monitor.\");}"
-
 
 
   },
 
 
-
   {
-
 
 
   "sequenceId": "3",
 
 
-
   "validation": {
-
 
 
   "rules": [
 
 
-
   {
-
 
 
   "value": "=201",
 
 
-
   "passIfFound": "true"
 
 
-
   }
-
 
 
   ]
 
 
-
   }
 
 
-
   }
-
 
 
   ]
 
 
-
   }
 
 
-
   }
-
 
 
   ]
-
 
 
   }
@@ -14461,61 +13501,46 @@ API-based on-demand executions offer greater flexibility and scalability than th
   {
 
 
-
   "takeScreenshotsOnSuccess": true,
-
 
 
   "monitors": [
 
 
-
   {
-
 
 
   "monitorId": "SYNTHETIC_TEST-114F1C18CF07CD1D",
 
 
-
   "customizedScript": {
-
 
 
   "events": [
 
 
-
   {
-
 
 
   "type": "navigate",
 
 
-
   "url": "www.yourdomain.com"
 
 
-
   }
-
 
 
   ]
 
 
-
   }
 
 
-
   }
-
 
 
   ]
-
 
 
   }
@@ -14554,7 +13579,6 @@ API-based on-demand executions offer greater flexibility and scalability than th
   To retrieve data (GET), you need any of the `ExternalSyntheticIntegration`, `ReadSyntheticData`, or `syntheticExecutions.read` token scopes.
 
 
-
 ### Best practices
 
 * When you override any credentials in a monitor script, for example, for the Authorization header, be sure that you have access to the updated credential.
@@ -14576,7 +13600,6 @@ scraped: 2026-03-06T21:24:46.338930
 
 # Public Synthetic locations
 
-# Public Synthetic locations
 
 * Classic
 * Reference
@@ -14783,7 +13806,6 @@ scraped: 2026-03-05T21:34:50.868896
 
 # Supported authentication methods in Synthetic Monitoring
 
-# Supported authentication methods in Synthetic Monitoring
 
 * Classic
 * How-to guide
@@ -14874,7 +13896,6 @@ Supported username formats
 * **NTLM authentication** in browser and HTTP monitors: `<username>`
 
 ### Client certificate authentication for web applications
-
 
 
 Certificate authentication is available for browser monitors executed from any [public location](../ru/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations.md "Learn about all currently available public Synthetic Monitoring locations.") and on Linux-based [private locations](../ru/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring."). Once you set up your browser monitor, you need to specify client certificate details in the **Advanced setup** tab of monitor settings in edit mode.
@@ -14996,7 +14017,6 @@ For subsequent HTTP requests
 ### Client certificate authentication for endpoints
 
 
-
 1. Go to **Synthetic Classic** > **Create a synthetic monitor** > **Create an HTTP monitor** and provide a **Name**.
 2. Select **Add HTTP request** and choose the **HTTP request** type.
 3. In the **Additional options** of the request, **Add client certificate**.
@@ -15017,7 +14037,6 @@ scraped: 2026-03-02T21:29:52.567205
 
 # Synthetic calculations
 
-# Synthetic calculations
 
 * Explanation
 * 4-min read
@@ -15113,7 +14132,6 @@ scraped: 2026-03-05T21:34:57.630725
 
 # HTTP monitor metrics
 
-# HTTP monitor metrics
 
 * Classic
 * Explanation
@@ -15155,7 +14173,6 @@ scraped: 2026-03-06T21:19:14.372926
 
 # Configure a NAM monitor
 
-# Configure a NAM monitor
 
 * Classic
 * How-to guide
@@ -15307,7 +14324,6 @@ IP range and IP mask are filters for hosts or devices known for the Dynatrace se
 ## Performance thresholds
 
 
-
 The performance threshold metric is compared to metric calculated for each request within monitor/step. For example, if TCP port check monitor, tests on the same host port `80` and `443` separately, Dynatrace compares threshold TCP connection establishment time twice, once for port `80` and once for port `443`.
 
 There are three performance metrics for three types of NAM monitors:
@@ -15419,25 +14435,19 @@ For example, if 1 request out of 6 has failed, the ratio is (6-1)/6 = 83.33%.
 {
 
 
-
 "type": "SUCCESS_RATE_PERCENT",
-
 
 
 "properties": {
 
 
-
 "value": "80",
-
 
 
 "operator": ">"
 
 
-
 }
-
 
 
 }
@@ -15446,7 +14456,6 @@ For example, if 1 request out of 6 has failed, the ratio is (6-1)/6 = 83.33%.
 For requests with only one target, we suggest setting the constraints values to `100`.
 
 ### Request-level constraints
-
 
 
 #### ICMP request constraints
@@ -15472,25 +14481,19 @@ For example, if 5 packets were sent and 4 packets were received, the ratio is 4/
 {
 
 
-
 "type": "ICMP_SUCCESS_RATE_PERCENT",
-
 
 
 "properties": {
 
 
-
 "value": "80",
-
 
 
 "operator": ">"
 
 
-
 }
-
 
 
 }
@@ -15517,13 +14520,10 @@ If this constraint is applied:
 {
 
 
-
 "type": "TCP_PORT_UNREACHABLE",
 
 
-
 "properties": {}
-
 
 
 }
@@ -15549,25 +14549,19 @@ DNS constraints are **optional**, but at least one must be defined to indicate w
 {
 
 
-
 "type": "DNS_STATUS_CODE",
-
 
 
 "properties": {
 
 
-
 "operator": "=",
-
 
 
 "statusCode": "0"
 
 
-
 }
-
 
 
 }
@@ -15577,25 +14571,19 @@ DNS constraints are **optional**, but at least one must be defined to indicate w
 {
 
 
-
 "type": "DNS_STATUS_CODE",
-
 
 
 "properties": {
 
 
-
 "operator": "=",
-
 
 
 "status": "NOERROR"
 
 
-
 }
-
 
 
 }
@@ -15617,33 +14605,25 @@ Verifies the IP address value returned in A/AAAA records.
 {
 
 
-
 "type": "DNS_IP_ADDRESS",
-
 
 
 "properties": {
 
 
-
 "quantifier": "any",
-
 
 
 "recordType": "A",
 
 
-
 "operator": "=",
-
 
 
 "address": "54.208.9.71"
 
 
-
 }
-
 
 
 }
@@ -15653,33 +14633,25 @@ Verifies the IP address value returned in A/AAAA records.
 {
 
 
-
 "type": "DNS_IP_ADDRESS",
-
 
 
 "properties": {
 
 
-
 "quantifier": "all",
-
 
 
 "recordType": "A",
 
 
-
 "operator": "in",
-
 
 
 "subnet": "10.102.44.0/24"
 
 
-
 }
-
 
 
 }
@@ -15699,29 +14671,22 @@ Verifies the count of records of a given type.
 {
 
 
-
 "type": "DNS_RECORD_COUNT",
-
 
 
 "properties": {
 
 
-
 "recordType": "A",
-
 
 
 "operator": ">",
 
 
-
 "value": "80"
 
 
-
 }
-
 
 
 }
@@ -15742,33 +14707,25 @@ Verifies the time to live (TTL) of records of a given type.
 {
 
 
-
 "type": "DNS_TIME_TO_LIVE",
-
 
 
 "properties": {
 
 
-
 "quantifier": "any",
-
 
 
 "recordType": "A",
 
 
-
 "operator": ">=",
-
 
 
 "value": "80"
 
 
-
 }
-
 
 
 }
@@ -15792,33 +14749,25 @@ Constraints process all records in a response, regardless of the section to whic
 {
 
 
-
 "type": "DNS_RECORD_VALUE",
-
 
 
 "properties": {
 
 
-
 "quantifier": "any",
-
 
 
 "recordType": "TXT",
 
 
-
 "operator": "contains",
-
 
 
 "sequence": "ms71815323"
 
 
-
 }
-
 
 
 }
@@ -15828,33 +14777,25 @@ Constraints process all records in a response, regardless of the section to whic
 {
 
 
-
 "type": "DNS_RECORD_VALUE",
-
 
 
 "properties": {
 
 
-
 "quantifier": "any",
-
 
 
 "recordType": "TXT",
 
 
-
 "operator": "matches",
-
 
 
 "pattern": "\"v=spf1 include:*"
 
 
-
 }
-
 
 
 }
@@ -15876,7 +14817,6 @@ scraped: 2026-03-04T21:29:54.840473
 
 # NAM monitor metrics
 
-# NAM monitor metrics
 
 * Classic
 * Explanation
@@ -15932,7 +14872,6 @@ scraped: 2026-03-04T21:29:54.840473
 ### Request metrics (all network availability monitors)
 
 
-
 | Name | Type | Dimensions | Description |
 | --- | --- | --- | --- |
 | `dt.synthetic.multi_protocol.request.availability` (latest Dynatrace) `builtin:synthetic.multiProtocol.request.availability` (previous Dynatrace) | numeric | `dt.entity.multiprotocol_monitor` `dt.entity.synthetic_location` `dt.entity.host` (only for monitors with filter defined) `dt.synthetic.monitored_entity_ids` `dt.security_context` `step.id` `request.id` `request.target.address` `request.type` `multi_protocol.step.id` (deprecated, use `step.id`) `multi_protocol.request.id` (deprecated, use `request.id`) `multi_protocol.request.target_address` (deprecated, use `request.target.address`) `multi_protocol.request.type` (deprecated, use `request.type`) | Availability calculated based on the execution status of requests - 100% for code=`0`: `HEALTHY`, `SCRIPT_FINISH`, `SKIPPED` - 0% for error status codes such as `1401 - CONSTRAINT_VIOLATED` |
@@ -15983,7 +14922,6 @@ The following examples use [Notebooks](../ru/analyze-explore-automate/dashboards
 ### Host entity status for ICMP requests
 
 
-
 The monitor `MULTIPROTOCOL_MONITOR-5C2F92334DF71A90` executes ICMP requests and filters monitored hosts with `"targetFilter": "hostGroup == e2e-synthetic-private-location"` (which resolves to about 26 hosts).
 
 By using the `dt.synthetic.multi_protocol.request.executions` metric and splitting it by the `dt.entity.host` and `result.status.message` dimensions, we can display the status of the connection to a particular monitored host entity in this host group. Some hosts do not fulfill the expected success rate; instead of being `HEALTHY`, their requests are marked as `CONSTRAINT_VIOLATED`.
@@ -15992,9 +14930,7 @@ By using the `dt.synthetic.multi_protocol.request.executions` metric and splitti
 Timeseries status = avg(dt.synthetic.multi_protocol.request.executions),
 
 
-
 by:{dt.entity.host, result.status.message},
-
 
 
 filter: dt.entity.multiprotocol_monitor == "MULTIPROTOCOL_MONITOR-5C2F92334DF71A90"
@@ -16016,37 +14952,28 @@ For `18.x.x.x`, the same number of packets were received as were sent, but for `
 timeseries {
 
 
-
 packets_sent = sum(dt.synthetic.multi_protocol.icmp.packets_sent),
-
 
 
 packets_received= sum(dt.synthetic.multi_protocol.icmp.packets_received)
 
 
-
 },
-
 
 
 by:{request.target_address},
 
 
-
 filter: dt.entity.multiprotocol_monitor == "MULTIPROTOCOL_MONITOR-548C3CD54183CED9"
-
 
 
 AND (
 
 
-
 request.target_address == "18.x.x.x"
 
 
-
 OR request.target_address == "10.x.x.x"
-
 
 
 )
@@ -16075,13 +15002,10 @@ Note that results of this query can be limited to just successful requests by fi
 timeseries status = sum(dt.synthetic.multi_protocol.request.executions),
 
 
-
 by: {request.target_address, request.tcp_port_number, result.status.message},
 
 
-
 filter: dt.entity.multiprotocol_monitor == "MULTIPROTOCOL_MONITOR-74E68F22FF5E9227"
-
 
 
 //  and result.status.code == 0
@@ -16107,9 +15031,7 @@ Only ports `22` (SSH) and `8080` (HTTP server) are open, and these are the only 
 timeseries duration = avg(dt.synthetic.multi_protocol.tcp.connection_time),
 
 
-
 by:{dt.entity.host, request.target_address, request.tcp_port_number},
-
 
 
 filter: dt.entity.multiprotocol_monitor == "MULTIPROTOCOL_MONITOR-74E68F22FF5E9227"
@@ -16148,7 +15070,6 @@ scraped: 2026-03-05T21:37:22.043515
 
 # Network availability monitoring
 
-# Network availability monitoring
 
 * Classic
 * Explanation
@@ -16236,29 +15157,22 @@ The entire `securityContext` for the `synthetic-vuc` container with enabled netw
 securityContext:
 
 
-
 readOnlyRootFilesystem: true
-
 
 
 privileged: false
 
 
-
 allowPrivilegeEscalation: true
-
 
 
 runAsNonRoot: true
 
 
-
 capabilities:
 
 
-
 drop: ["all"]
-
 
 
 add: ["NET_RAW"]
@@ -16280,7 +15194,6 @@ scraped: 2026-03-06T21:35:19.564395
 
 # Containerized, auto-scalable private Synthetic locations on Kubernetes
 
-# Containerized, auto-scalable private Synthetic locations on Kubernetes
 
 * Classic
 * How-to guide
@@ -16393,7 +15306,6 @@ M node
 ### Best practices and caveats
 
 
-
 #### ActiveGates
 
 * We recommend the **S** ActiveGate size and a minimum of two ActiveGates per location.
@@ -16429,49 +15341,37 @@ API service definition in the metric adapter template
 apiVersion: apiregistration.k8s.io/v1
 
 
-
 kind: APIService
-
 
 
 metadata:
 
 
-
 name: v1beta1.external.metrics.k8s.io
-
 
 
 spec:
 
 
-
 service:
-
 
 
 name: dynatrace-metrics-apiserver
 
 
-
 namespace: {{adapterNamespace}}
-
 
 
 group: external.metrics.k8s.io
 
 
-
 version: v1beta1
-
 
 
 insecureSkipTLSVerify: true
 
 
-
 groupPriorityMinimum: 100
-
 
 
 versionPriority: 100
@@ -16485,45 +15385,34 @@ Existing resource modification in the metric adapter template
 apiVersion: rbac.authorization.k8s.io/v1
 
 
-
 kind: ClusterRoleBinding
-
 
 
 metadata:
 
 
-
 name: hpa-controller-dynatrace-metrics
-
 
 
 roleRef:
 
 
-
 apiGroup: rbac.authorization.k8s.io
-
 
 
 kind: ClusterRole
 
 
-
 name: dynatrace-metrics-server-resources
-
 
 
 subjects:
 
 
-
 - kind: ServiceAccount
 
 
-
 name: horizontal-pod-autoscaler
-
 
 
 namespace: kube-system
@@ -16595,7 +15484,6 @@ Select your location in **Private Synthetic locations** to download the location
    ![ActiveGate deployment status filters](https://dt-cdn.net/images/k8s-location-deployment-status-1109-28df0f6a0c.png)
 
 ### 3. Deploy the Synthetic metric adapter
-
 
 
 This procedure generates a separate template for the Synthetic metric adapter. You then execute generated commands on your Kubernetes cluster to deploy the metric adapter.
@@ -16756,9 +15644,7 @@ To set node affinity
    spec:
 
 
-
    nodeSelector:
-
 
 
    zone: us-east-1a
@@ -16769,7 +15655,6 @@ To set node affinity
 Nodes with the same zone label will be deployed in the same availability zone and you'll be able to share PVC between them without causing an error.
 
 ### Use shared storage systems
-
 
 
 Each cloud service provides its own shared storage systems options. To explain how to use shared storage systems, we will use AWS EFS as the example. For information about storage systems used by other cloud storage providers, see:
@@ -16791,37 +15676,28 @@ To use storage class with EFS
    kind: StorageClass
 
 
-
    apiVersion: storage.k8s.io/v1
-
 
 
    metadata:
 
 
-
    name: efs-test
-
 
 
    provisioner: efs.csi.aws.com
 
 
-
    parameters:
-
 
 
    fileSystemId: fs-0c155dcd8425aa39d
 
 
-
    provisioningMode: efs-ap
 
 
-
    directoryPerms: "700"
-
 
 
    basePath: "/"
@@ -16832,37 +15708,28 @@ To use storage class with EFS
    volumeClaimTemplates:
 
 
-
    - metadata:
-
 
 
    name: persistent-storage
 
 
-
    spec:
-
 
 
    storageClassName: efs-test
 
 
-
    accessModes:
-
 
 
    - ReadWriteMany
 
 
-
    resources:
 
 
-
    requests:
-
 
 
    storage: 3Gi
@@ -16892,29 +15759,22 @@ The entire `securityContext` for the `synthetic-vuc` container with enabled netw
 securityContext:
 
 
-
 readOnlyRootFilesystem: true
-
 
 
 privileged: false
 
 
-
 allowPrivilegeEscalation: true
-
 
 
 runAsNonRoot: true
 
 
-
 capabilities:
 
 
-
 drop: ["all"]
-
 
 
 add: ["NET_RAW"]
@@ -16934,7 +15794,6 @@ The recommended solution is to prepare a custom Security Context Constraint.
      oc -n $NAMESPACE create sa sa-dt-synthetic
 
 
-
      oc -n $NAMESPACE adm policy add-role-to-user edit system:serviceaccount:$NAMESPACE:sa-dt-synthetic
      ```
 2. Create a custom Security Context Constraint
@@ -16945,145 +15804,109 @@ The recommended solution is to prepare a custom Security Context Constraint.
      apiVersion: security.openshift.io/v1
 
 
-
      kind: SecurityContextConstraints
-
 
 
      metadata:
 
 
-
      name: scc-dt-synthetic
-
 
 
      allowPrivilegedContainer: false
 
 
-
      allowHostDirVolumePlugin: false
-
 
 
      allowHostIPC: false
 
 
-
      allowHostNetwork: false
-
 
 
      allowHostPID: false
 
 
-
      allowHostPorts: false
-
 
 
      runAsUser:
 
 
-
      type: MustRunAsRange
-
 
 
      seccompProfiles:
 
 
-
      - runtime/default
-
 
 
      seLinuxContext:
 
 
-
      type: MustRunAs
-
 
 
      fsGroup:
 
 
-
      type: MustRunAs
-
 
 
      supplementalGroups:
 
 
-
      type: MustRunAs
-
 
 
      volumes:
 
 
-
      - configMap
-
 
 
      - downwardAPI
 
 
-
      - emptyDir
-
 
 
      - persistentVolumeClaim
 
 
-
      - projected
-
 
 
      - secret
 
 
-
      users: []
-
 
 
      groups: []
 
 
-
      priority: null
-
 
 
      readOnlyRootFilesystem: true
 
 
-
      requiredDropCapabilities:
-
 
 
      - ALL
 
 
-
      defaultAddCapabilities: null
-
 
 
      allowedCapabilities:
 
 
-
      - NET_RAW
-
 
 
      allowPrivilegeEscalation: true
@@ -17127,49 +15950,37 @@ In the code sample below:
 kind: ConfigMap
 
 
-
 apiVersion: v1
-
 
 
 data:
 
 
-
 custom.properties: |-
-
 
 
 [http.client]
 
 
-
 proxy-server = 10.102.43.210
-
 
 
 proxy-port = 3128
 
 
-
 proxy-user = proxyuser
-
 
 
 proxy-password = proxypass
 
 
-
 metadata:
-
 
 
 name: ag-custom-configmap
 
 
-
 namespace: dynatrace
-
 
 
 ---
@@ -17181,21 +15992,16 @@ Add the following code at `spec.template.spec.volumes:`.
 - name: ag-custom-volume
 
 
-
 configMap:
-
 
 
 name: ag-custom-configmap
 
 
-
 items:
 
 
-
 - key: custom.properties
-
 
 
 path: custom.properties
@@ -17207,9 +16013,7 @@ Add the following code to the ActiveGate container configuration under `volumeMo
 - name: ag-custom-volume
 
 
-
 mountPath: /var/lib/dynatrace/gateway/config_template/custom.properties
-
 
 
 subPath: custom.properties
@@ -17234,7 +16038,6 @@ Compared to the regular template, following changes are introduced:
    - name: DT_SYNTHETIC_UNSUPPORTED_MONITORING_MODULES
 
 
-
    value: "browser"
    ```
 2. No `synthetic-vuc-worker` containers are included
@@ -17255,109 +16058,82 @@ In the code sample below:
 kind: ConfigMap
 
 
-
 apiVersion: v1
-
 
 
 data:
 
 
-
 krb5.conf: |-
-
 
 
 [libdefaults]
 
 
-
 dns_lookup_realm = false
-
 
 
 ticket_lifetime = 24h
 
 
-
 renew_lifetime = 7d
-
 
 
 forwardable = true
 
 
-
 rdns = false
-
 
 
 pkinit_anchors = FILE:/etc/pki/tls/certs/ca-bundle.crt
 
 
-
 spake_preauth_groups = edwards25519
-
 
 
 dns_canonicalize_hostname = fallback
 
 
-
 qualify_shortname = ""
-
 
 
 default_realm = EXAMPLE.COM
 
 
-
 default_ccache_name = /tmp/krb5cc_%{uid}
-
 
 
 [realms]
 
 
-
 EXAMPLE.COM = {
-
 
 
 kdc = kerberos.example.com
 
 
-
 admin_server = kerberos.example.com
-
 
 
 }
 
 
-
 [domain_realm]
-
 
 
 .example.com = EXAMPLE.COM
 
 
-
 example.com = EXAMPLE.COM
-
 
 
 metadata:
 
 
-
 name: krb-map
 
 
-
 namespace: dynatrace
-
 
 
 ---
@@ -17369,21 +16145,16 @@ Add the following code at `spec.template.spec.volumes:`.
 - name: krb5-conf
 
 
-
 configMap:
-
 
 
 name: krb-map
 
 
-
 items:
 
 
-
 - key: krb5.conf
-
 
 
 path: krb5.conf
@@ -17395,9 +16166,7 @@ Add the following code to every `synthetic-vuc-worker` container configuration u
 - name: krb5-conf
 
 
-
 mountPath: /etc/krb5.conf
-
 
 
 subPath: krb5.conf
@@ -17408,12 +16177,10 @@ subPath: krb5.conf
 ### Disable domain certificate validation
 
 
-
 Add the following code to Synthetic metric adapter template under `env:`
 
 ```
 - name: TLS_SECURE
-
 
 
 value: "false"
@@ -17429,13 +16196,10 @@ Add the following code to Synthetic metric adapter template under `env:`
 - name: HTTPS_PROXY
 
 
-
 value: "http://proxyuser:proxypass@10.102.43.210:3128"
 
 
-
 - name: NO_PROXY
-
 
 
 value: "172.20.0.0/16"  # do not proxy internal calls to Kubernetes cluster
@@ -17492,7 +16256,6 @@ scraped: 2026-03-06T21:24:42.801902
 
 # Create a private Synthetic location
 
-# Create a private Synthetic location
 
 * Classic
 * How-to guide
@@ -17544,7 +16307,6 @@ End-of-support information
 * Both manual and automatic browser updates require access to `https://synthetic-packages.s3.amazonaws.com`. For security reasons, public access to the S3 bucket is enabled only for specific files; trying anything else will result in a 403 error.
 
 ## Install a Synthetic-enabled ActiveGate
-
 
 
 Install an ActiveGate in latest Dynatrace
@@ -17616,7 +16378,6 @@ Also see [Install the browser from a custom repository](#custom-repo) below.
 See [how to update the browser manually](../ru/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations.md#browser-manual "Analyze and manage capacity usage at your private Synthetic locations.") in [Manage private Synthetic locations](../ru/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations.md "Analyze and manage capacity usage at your private Synthetic locations."). We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the [latest Dynatrace-supported version](../ru/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic.md#browser-linux "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for a specific ActiveGate release.
 
 ### Ubuntu Server 20.04 and 22.04
-
 
 
 This section is only relevant for releases 1.329 and earlier.
@@ -17764,7 +16525,6 @@ You can [verify the authenticity of the packages](#verify) using the signature f
     vi /root/.curlrc
 
 
-
     proxy=http://proxy.example.com:8080
     ```
 
@@ -17801,9 +16561,7 @@ You can [verify the authenticity of the packages](#verify) using the signature f
      sudo subscription-manager repos --enable rhel-7-server-extras-rpms
 
 
-
      sudo subscription-manager repos --enable rhel-7-server-optional-rpms
-
 
 
      sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -17829,9 +16587,7 @@ You can [verify the authenticity of the packages](#verify) using the signature f
      sudo subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
 
 
-
      sudo subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
-
 
 
      sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
@@ -17853,9 +16609,7 @@ You can [verify the authenticity of the packages](#verify) using the signature f
      sudo subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
 
 
-
      sudo subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
-
 
 
      sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
@@ -18131,9 +16885,7 @@ You can [verify the authenticity of the packages](#verify) using the signature f
    sudo yum -y install yum-plugin-versionlock
 
 
-
    sudo yum versionlock chromium
-
 
 
    sudo yum versionlock chromium-common
@@ -18150,7 +16902,6 @@ You can [verify the authenticity of the packages](#verify) using the signature f
    ```
 
 You can [verify the authenticity of the packages](#verify) using the signature files stored together with the package archives.
-
 
 
 ### Amazon Linux 2023, Ubuntu, and Oracle Linux 9 (Chrome for Testing)
@@ -18245,7 +16996,6 @@ On Ubuntu Server 20.04 and 22.04 Chrome for Testing is supported since 1.331
      sudo unzip /tmp/chrome.zip -d /usr/lib/chrome_for_testing
 
 
-
      rm /tmp/chrome.zip
      ```
 
@@ -18268,7 +17018,6 @@ On Ubuntu Server 20.04 and 22.04 Chrome for Testing is supported since 1.331
 * You can [verify the authenticity of the packages](#verify) using the signature files stored together with the package archives.
 
 ## Linux only Install the browser from a custom repository
-
 
 
 ActiveGate version 1.243+ In addition to [web UI-guided ActiveGate installation](#install) and [manual installation of the browser and dependencies](#manual), you can also **install ActiveGate by pointing to a custom, local repository for browser components**. As this repository is an HTTP server that you set up within your network, the advantage of this method is that it can be used in environments with intranet-only or limited network access.
@@ -18402,7 +17151,6 @@ Additionally, if you intend to execute browser monitors, additional setup will b
 ### Ensuring compliance
 
 
-
 To ensure the browser monitor traffic is FIPS compliant, it must be routed through a local intercepting proxy that encrypts traffic with a FIPS-certified crypto library. See [Proxy configuration for FIPS mode](observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic.md#fips-proxy "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.") for details.
 
 For HTTP monitors, we use the [Amazon Corretto Crypto Providerï»¿](https://github.com/corretto/amazon-corretto-crypto-provider/) FIPS-certified cryptographic library that uses AWS-LC-FIPS 2.x as its cryptographic module. See [Certificate #4816ï»¿](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4816).
@@ -18430,25 +17178,19 @@ Each `tgz` package archive is stored in the S3 bucket together with the `*.tgz.s
    wget https://ca.dynatrace.com/dt-root.cert.pem ; openssl cms
 
 
-
    -verify
-
 
 
    -in chromium.tgz.sig
 
 
-
    -inform PEM
-
 
 
    -content chromium.tgz
 
 
-
    -binary
-
 
 
    -CAfile dt-root.cert.pem > /dev/null
@@ -18474,25 +17216,19 @@ Each `zip` package archive is stored in the S3 bucket together with the `*.zip.s
    wget https://ca.dynatrace.com/dt-root.cert.pem ; openssl cms
 
 
-
    -verify
-
 
 
    -in chrome.zip.sig
 
 
-
    -inform PEM
-
 
 
    -content chrome.zip
 
 
-
    -binary
-
 
 
    -CAfile dt-root.cert.pem > /dev/null
@@ -18541,7 +17277,6 @@ scraped: 2026-03-03T21:29:31.056016
 
 # Manage private Synthetic locations
 
-# Manage private Synthetic locations
 
 * How-to guide
 * 10-min read
@@ -18601,7 +17336,6 @@ Metrics for the health status of each monitor type are available for charting an
 ### Browser autoupdate
 
 
-
 You can **Enable Chrome(-ium) auto-update** at the location level, that is, for all ActiveGates assigned to a private location. The browser autoupdate takes place during manual as well as automatic ActiveGate and Synthetic engine updates.
 
 As we recommend using the [latest supported browser version](../ru/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic.md#browser-linux "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for the smooth and secure execution of browser monitors from your private location, the browser autoupdate is turned on by default for locations with Linux-based ActiveGates. If you don't want the browser to be updated automatically, for example, to use a specific browser version, or if you have offline environments, turn off the switch **before triggering an ActiveGate update**.
@@ -18647,7 +17381,6 @@ From the main settings page listing all your private Synthetic locations, you ca
 5. **Save changes**.
 
 ## Update the browser manually from S3
-
 
 
 If you have an offline environment or you installed an ActiveGate manually for dependency management or due to limited access to Amazon S3, you need to update the browser and dependencies manually.
@@ -18697,9 +17430,7 @@ If you've installed Chromium manually, there's no need at the time of the update
    sudo yum -y install yum-plugin-versionlock
 
 
-
    sudo yum versionlock chromium
-
 
 
    sudo yum versionlock chromium-common
@@ -18726,9 +17457,7 @@ When migrating from the snap Chromium distribution, first update ActiveGate, the
    sudo rm -rf /usr/lib/chrome_for_testing/chrome-linux64
 
 
-
    sudo unzip /tmp/chrome.zip -d /usr/lib/chrome_for_testing
-
 
 
    rm /tmp/chrome.zip
@@ -18746,14 +17475,12 @@ When migrating from the snap Chromium distribution, first update ActiveGate, the
 ## Browser autoupdate from a custom repository
 
 
-
 If you've enabled a [custom, local repository for the browser installation](../ru/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location.md#custom-repo "Learn how to create a private location for synthetic monitoring."), the browser can only be autoupdated. Follow this procedure to autoupdate the browser via the same custom repository.
 
 1. After ActiveGate installation, specify the custom repository of the ActiveGate in the [`[synthetic]` section of the `custom.properties` file](ingest-from/dynatrace-activegate/configuration/configure-activegate.md#synth_mod "Learn which ActiveGate properties you can configure based on your needs and requirements.") in the `/var/lib/dynatrace/gateway/config` directory. This allows for automatic browser updates from the custom repository during manual or automatic Synthetic engine updates.
 
    ```
    [synthetic]
-
 
 
    chromium_repo = https://172.18.0.100/chromium-repo
@@ -18779,7 +17506,6 @@ scraped: 2026-03-06T21:25:05.803028
 
 # Requirements for private Synthetic locations
 
-# Requirements for private Synthetic locations
 
 * Classic
 * Reference
@@ -18976,7 +17702,6 @@ If not configured correctly, the File Access Policy Daemon (`fapolicyd`) can pot
 To ensure proper stability and performance, consider adding directories and processes to the allowed list or excluding them from the policy. For more detailed information, refer to the [Red Hat documentation on fapolicydï»¿](https://dt-url.net/tn1v0z1x). Prior to contacting Dynatrace support to troubleshoot issues with your private synthetic locations, make sure that `fapolicyd` was excluded as a source of problems.
 
 File Access Policy Daemon framework can be run in debug mode where all denials are logged, making tracking down missing rules and troubleshooting issues easier. For more detailed information about its debug mode, refer to the [documentation on troubleshooting problems related to fapolicydï»¿](https://dt-url.net/e943wcc)
-
 
 
 ## Hardware requirements
@@ -19214,7 +17939,6 @@ There were multiple resolution targets used during tests; all of them were resol
 Publicly available DNS servers were used: Google (8.8.8.8 and 8.8.4.4) and Cloudflare (1.1.1.1 and 1.1.1.2)
 
 
-
 ### Storage and file system permissions
 
 The table below shows the default installation locations (Linux and Windows) of various ActiveGate directories and the minimum size requirements. This information is compiled from details in [ActiveGate directories](ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files.md "Find out where ActiveGate files are stored on Windows and Linux systems.").
@@ -19245,7 +17969,6 @@ scraped: 2026-02-06T16:33:26.124355
 
 # Browser monitors reporting results
 
-# Browser monitors reporting results
 
 * Latest Dynatrace
 * Reference
@@ -19325,9 +18048,7 @@ In the example below, the availability is less than 100% because the down execut
 timeseries av = avg(dt.synthetic.browser.availability), by: {dt.entity.synthetic_test}
 
 
-
 | fields dt.entity.synthetic_test, avgAV=arrayAvg(av)
-
 
 
 | filter dt.entity.synthetic_test == "SYNTHETIC_TEST-2891B733D75330FA"
@@ -19346,13 +18067,10 @@ In the example below, we observed down executions during the maintenance period.
 timeseries av = avg(dt.synthetic.browser.availability), by: {dt.entity.synthetic_test, dt.maintenance_window_ids}
 
 
-
 | filter dt.entity.synthetic_test == "SYNTHETIC_TEST-2891B733D75330FA"
 
 
-
 | filter isNull(dt.maintenance_window_ids)
-
 
 
 | fields avgAV=arrayAvg(av)
@@ -19372,7 +18090,6 @@ To see interpolated data points, add the `interpolated` dimension to the query.
 timeseries avg(dt.synthetic.browser.availability), by:{dt.entity.synthetic_test, interpolated}
 
 
-
 | filter dt.entity.synthetic_test == "SYNTHETIC_TEST-7E0A1CF206C4A1C5"
 ```
 
@@ -19385,7 +18102,6 @@ Let's imagine a monitor is set to execute tests every five minutes. So, every fi
 Down executions = the first actual down execution + all following "down" data points.
 
 ### Notifications over availability chart
-
 
 
 Also, the **Availability** card displays notifications over the availability chart. The notifications show details of a maintenance window, outages, and not executed or finished tests. A notification is displayed as a bar above the timeframe when a maintenance window was applied, an outage occurred, or some tests were not executed or finished. Hover over the bar to see the details:
@@ -19535,7 +18251,6 @@ If the new browser monitoring experience is not activated, you can analyze execu
 ### Analyze executions with new browser monitoring experience
 
 
-
 DPS License
 
 If the new browser monitoring experience is activated, you can analyze executions via the Waterfall chart in Latest Dynatrace.
@@ -19623,7 +18338,6 @@ scraped: 2026-02-06T16:33:12.512338
 
 # Create a NAM monitor
 
-# Create a NAM monitor
 
 * Latest Dynatrace
 * How-to guide
@@ -19773,7 +18487,6 @@ IP range and IP mask are filters for hosts or devices known for the Dynatrace se
 * `type == CUSTOM_DEVICE and extensionName == "Docker devices"`
 
 
-
 ## Performance thresholds
 
 The performance threshold metric is compared to metric calculated for each request within monitor/step. For example, if TCP port check monitor, tests on the same host port `80` and `443` separately, Dynatrace compares threshold TCP connection establishment time twice, once for port `80` and once for port `443`.
@@ -19824,7 +18537,6 @@ scraped: 2026-02-06T16:33:30.435733
 
 # Create and configure an HTTP monitor
 
-# Create and configure an HTTP monitor
 
 * Latest Dynatrace
 * How-to guide
@@ -20064,7 +18776,6 @@ In **Visual** mode, you can also:
 * Select  icon and duplicate the request.
 
 
-
 ### Frequency and locations
 
 Two factors make up your monitoring scheduleâhow frequently your browser monitor runs and the number of locations it's executed from.
@@ -20119,7 +18830,6 @@ scraped: 2026-02-06T16:33:21.611413
 
 # Create and configure a browser monitor
 
-# Create and configure a browser monitor
 
 * Latest Dynatrace
 * How-to guide
@@ -20210,7 +18920,6 @@ Define the steps. You have two options when you create a browser monitor:
 9. Select **Continue** to proceed with the monitor configuration.
 
 ## Frequency and locations
-
 
 
 Two factors make up your monitoring scheduleâhow frequently your browser monitor runs and the number of locations it's executed from.
@@ -20328,7 +19037,6 @@ You can specify an exact status code, range, or status class mask. Use commas to
 ### Other
 
 
-
 **Bypass Content Security Policy (CSP) of monitored page**âif you have a Content Security Policy in place, it's likely to prevent the browser from sending monitoring data to the Dynatrace Cluster. As a first and preferred method to have Chrome bypass the CSP of any monitored pages in your single-URL browser monitor or browser clickpath, turn on this option. If you're unable to use this option for some reason, refer to the advanced solutions for bypassing CSP in the Dynatrace Community article [Browser monitors: Issues with Content Security Policyï»¿](https://dt-url.net/ycs2x56).
 
 **Capture performance metrics for pages loaded in frames**âturn this on to begin capturing performance data for pages in iframes or framesets.
@@ -20349,7 +19057,6 @@ scraped: 2026-02-06T16:33:23.757175
 
 # NAM monitors results reporting
 
-# NAM monitors results reporting
 
 * Latest Dynatrace
 * Reference
@@ -20391,7 +19098,6 @@ scraped: 2026-02-06T16:33:28.218045
 
 # On-demand monitor executions
 
-# On-demand monitor executions
 
 * Latest Dynatrace
 * How-to guide
@@ -20474,7 +19180,6 @@ scraped: 2026-02-06T16:33:14.869956
 
 # Private synthetic locations
 
-# Private synthetic locations
 
 * Latest Dynatrace
 * How-to guide
@@ -20536,7 +19241,6 @@ Additional support notes
 * Both manual and automatic Chromium updates require access to `https://synthetic-packages.s3.amazonaws.com`. For security reasons, public access to the S3 bucket is enabled only for specific files; trying anything else will result in a 403 error.
 
 ## Create a private location
-
 
 
 To add a classic private location
@@ -20639,7 +19343,6 @@ The configuration is dependent on the Linux distribution. You can find more info
 ### Synthetic FIPS compliance
 
 
-
 ActiveGate version 1.315+
 
 #### Installation
@@ -20691,25 +19394,19 @@ Each `tgz` package archive is stored in the S3 bucket together with the `*.tgz.s
    wget https://ca.dynatrace.com/dt-root.cert.pem ; openssl cms
 
 
-
    -verify
-
 
 
    -in chromium.tgz.sig
 
 
-
    -inform PEM
-
 
 
    -content chromium.tgz
 
 
-
    -binary
-
 
 
    -CAfile dt-root.cert.pem > /dev/null
@@ -20735,25 +19432,19 @@ Each `zip` package archive is stored in the S3 bucket together with the `*.zip.s
    wget https://ca.dynatrace.com/dt-root.cert.pem ; openssl cms
 
 
-
    -verify
-
 
 
    -in chrome.zip.sig
 
 
-
    -inform PEM
-
 
 
    -content chrome.zip
 
 
-
    -binary
-
 
 
    -CAfile dt-root.cert.pem > /dev/null
@@ -20798,7 +19489,6 @@ scraped: 2026-02-06T16:33:08.277176
 
 # HTTP monitors reporting results
 
-# HTTP monitors reporting results
 
 * Latest Dynatrace
 * Reference
@@ -20909,7 +19599,6 @@ The **Availability** card shows overall availability across all monitor location
 ### Availability calculation
 
 
-
 Availability metrics are calculated by dividing the number of successful executions ("up") by the total number of executions. Thus, to calculate availability
 
 1. Determine the number of up executions within the timeframe.
@@ -20938,7 +19627,6 @@ In the example below, the availability is less than 100% because the down execut
 timeseries avg(dt.synthetic.http.availability), by:{dt.entity.http_check, dt.maintenance_window_ids, interpolated}
 
 
-
 | filter dt.entity.http_check == "HTTP_CHECK-2F280898D4FCB1A8"
 ```
 
@@ -20957,13 +19645,10 @@ In the example below, we have down executions detected during the maintenance pe
 timeseries av = avg(dt.synthetic.http.availability), by: {dt.entity.http_check, dt.maintenance_window_ids}
 
 
-
 | filter dt.entity.http_check == "HTTP_CHECK-2F280898D4FCB1A8"
 
 
-
 | filter isNull(dt.maintenance_window_ids)
-
 
 
 | fields avgAV=arrayAvg(av)
@@ -21048,7 +19733,6 @@ The problems section lists all problems in the selected time frame, both open an
 Problems, along with their constituent [events](#events) and any corresponding [status codes](#http-requests) give you a full picture of the number and scope of your monitor's issues.
 
 ## HTTP requests
-
 
 
 An HTTP monitor can consist of one or multiple HTTP requests. The **HTTP requests** card overviews all executed requests, their order, name, request URL, and the HTTP method used. For each request, the **HTTP requests** card splits performance (**Response time**) by the following metrics (see more in [HTTP monitor metrics](../ru/observe/digital-experience/synthetic-monitoring/http-monitors-classic/http-monitor-metrics-classic.md "Learn about the performance metrics collected for HTTP monitors (classic).")):
@@ -21161,7 +19845,6 @@ scraped: 2026-02-06T16:21:08.408897
 
 # Синтетическое приложение
 
-# Синтетическое приложение
 
 * Последняя версия Dynatrace
 * Приложение
@@ -21428,7 +20111,6 @@ scraped: 2026-03-06T21:14:11.591598
 
 # Synthetic Monitoring
 
-# Synthetic Monitoring
 
 * Classic
 * Overview
@@ -21509,7 +20191,6 @@ scraped: 2026-03-04T21:38:54.851437
 
 # Synthetic alerting overview
 
-# Synthetic alerting overview
 
 * Latest Dynatrace
 * Reference
@@ -21576,7 +20257,6 @@ scraped: 2026-03-06T21:24:32.142789
 
 # Browser monitors reporting results
 
-# Browser monitors reporting results
 
 * Latest Dynatrace
 * Reference
@@ -21656,9 +20336,7 @@ In the example below, the availability is less than 100% because the down execut
 timeseries av = avg(dt.synthetic.browser.availability), by: {dt.entity.synthetic_test}
 
 
-
 | fields dt.entity.synthetic_test, avgAV=arrayAvg(av)
-
 
 
 | filter dt.entity.synthetic_test == "SYNTHETIC_TEST-2891B733D75330FA"
@@ -21677,13 +20355,10 @@ In the example below, we observed down executions during the maintenance period.
 timeseries av = avg(dt.synthetic.browser.availability), by: {dt.entity.synthetic_test, dt.maintenance_window_ids}
 
 
-
 | filter dt.entity.synthetic_test == "SYNTHETIC_TEST-2891B733D75330FA"
 
 
-
 | filter isNull(dt.maintenance_window_ids)
-
 
 
 | fields avgAV=arrayAvg(av)
@@ -21703,7 +20378,6 @@ To see interpolated data points, add the `interpolated` dimension to the query.
 timeseries avg(dt.synthetic.browser.availability), by:{dt.entity.synthetic_test, interpolated}
 
 
-
 | filter dt.entity.synthetic_test == "SYNTHETIC_TEST-7E0A1CF206C4A1C5"
 ```
 
@@ -21716,7 +20390,6 @@ Let's imagine a monitor is set to execute tests every five minutes. So, every fi
 Down executions = the first actual down execution + all following "down" data points.
 
 ### Notifications over availability chart
-
 
 
 Also, the **Availability** card displays notifications over the availability chart. The notifications show details of a maintenance window, outages, and not executed or finished tests. A notification is displayed as a bar above the timeframe when a maintenance window was applied, an outage occurred, or some tests were not executed or finished. Hover over the bar to see the details:
@@ -21864,7 +20537,6 @@ If the new browser monitoring experience is not activated, you can analyze execu
 ### Analyze executions with new browser monitoring experience
 
 
-
 DPS License
 
 If the new browser monitoring experience is activated, you can analyze executions via the Waterfall chart in Latest Dynatrace.
@@ -21952,7 +20624,6 @@ scraped: 2026-03-06T21:24:37.294345
 
 # Create a NAM monitor
 
-# Create a NAM monitor
 
 * Latest Dynatrace
 * How-to guide
@@ -22104,7 +20775,6 @@ IP range and IP mask are filters for hosts or devices known for the Dynatrace se
 ## Performance thresholds
 
 
-
 The performance threshold metric is compared to metric calculated for each request within monitor/step. For example, if TCP port check monitor, tests on the same host port `80` and `443` separately, Dynatrace compares threshold TCP connection establishment time twice, once for port `80` and once for port `443`.
 
 There are three performance metrics for three types of NAM monitors:
@@ -22153,7 +20823,6 @@ scraped: 2026-03-06T21:24:44.580785
 
 # Create and configure an HTTP monitor
 
-# Create and configure an HTTP monitor
 
 * Latest Dynatrace
 * How-to guide
@@ -22373,7 +21042,6 @@ In **Visual** mode, you can also:
 * Select  icon and duplicate the request.
 
 
-
 ### Frequency and locations
 
 Two factors make up your monitoring scheduleâhow frequently your browser monitor runs and the number of locations it's executed from.
@@ -22428,7 +21096,6 @@ scraped: 2026-03-06T21:24:33.931700
 
 # Create and configure a browser monitor
 
-# Create and configure a browser monitor
 
 * Latest Dynatrace
 * How-to guide
@@ -22519,7 +21186,6 @@ Define the steps. You have two options when you create a browser monitor:
 9. Select **Continue** to proceed with the monitor configuration.
 
 ## Frequency and locations
-
 
 
 Two factors make up your monitoring scheduleâhow frequently your browser monitor runs and the number of locations it's executed from.
@@ -22639,7 +21305,6 @@ You can specify an exact status code, range, or status class mask. Use commas to
 ### Other
 
 
-
 **Bypass Content Security Policy (CSP) of monitored page**âif you have a Content Security Policy in place, it's likely to prevent the browser from sending monitoring data to the Dynatrace Cluster. As a first and preferred method to have Chrome bypass the CSP of any monitored pages in your single-URL browser monitor or browser clickpath, turn on this option. If you're unable to use this option for some reason, refer to the advanced solutions for bypassing CSP in the Dynatrace Community article [Browser monitors: Issues with Content Security Policyï»¿](https://dt-url.net/ycs2x56).
 
 **Capture performance metrics for pages loaded in frames**âturn this on to begin capturing performance data for pages in iframes or framesets.
@@ -22660,7 +21325,6 @@ scraped: 2026-03-06T21:24:35.608154
 
 # NAM monitors results reporting
 
-# NAM monitors results reporting
 
 * Latest Dynatrace
 * Reference
@@ -22702,7 +21366,6 @@ scraped: 2026-03-06T21:24:28.548720
 
 # On-demand monitor executions
 
-# On-demand monitor executions
 
 * Latest Dynatrace
 * How-to guide
@@ -22785,7 +21448,6 @@ scraped: 2026-03-06T21:27:09.113702
 
 # Install a Synthetic-enabled ActiveGate
 
-# Install a Synthetic-enabled ActiveGate
 
 * Latest Dynatrace
 * How-to guide
@@ -22830,7 +21492,6 @@ scraped: 2026-03-06T21:31:26.009069
 
 # Install and update Chromium for Linux
 
-# Install and update Chromium for Linux
 
 * Latest Dynatrace
 * How-to guide
@@ -22999,7 +21660,6 @@ You can [verify the authenticity of the packages](../ru/observe/digital-experien
     vi /root/.curlrc
 
 
-
     proxy=http://proxy.example.com:8080
     ```
 
@@ -23036,9 +21696,7 @@ You can [verify the authenticity of the packages](../ru/observe/digital-experien
      sudo subscription-manager repos --enable rhel-7-server-extras-rpms
 
 
-
      sudo subscription-manager repos --enable rhel-7-server-optional-rpms
-
 
 
      sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -23064,9 +21722,7 @@ You can [verify the authenticity of the packages](../ru/observe/digital-experien
      sudo subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
 
 
-
      sudo subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
-
 
 
      sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
@@ -23088,9 +21744,7 @@ You can [verify the authenticity of the packages](../ru/observe/digital-experien
      sudo subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
 
 
-
      sudo subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
-
 
 
      sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
@@ -23366,9 +22020,7 @@ You can [verify the authenticity of the packages](../ru/observe/digital-experien
    sudo yum -y install yum-plugin-versionlock
 
 
-
    sudo yum versionlock chromium
-
 
 
    sudo yum versionlock chromium-common
@@ -23385,7 +22037,6 @@ You can [verify the authenticity of the packages](../ru/observe/digital-experien
    ```
 
 You can [verify the authenticity of the packages](../ru/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations.md#verify "Learn how to manage private locations in the Synthetic app.") using the signature files stored together with the package archives.
-
 
 
 ### Amazon Linux 2023, Ubuntu, and Oracle Linux 9 (Chrome for Testing)
@@ -23478,7 +22129,6 @@ On Ubuntu Server 20.04 and 22.04 Chrome for Testing is supported since 1.331
      sudo unzip /tmp/chrome.zip -d /usr/lib/chrome_for_testing
 
 
-
      rm /tmp/chrome.zip
      ```
 
@@ -23501,7 +22151,6 @@ On Ubuntu Server 20.04 and 22.04 Chrome for Testing is supported since 1.331
 * You can [verify the authenticity of the packages](../ru/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations.md#verify "Learn how to manage private locations in the Synthetic app.") using the signature files stored together with the package archives.
 
 ## Update the browser manually from S3
-
 
 
 If you have an offline environment or you installed an ActiveGate manually for dependency management or due to limited access to Amazon S3, you need to update the browser and dependencies manually.
@@ -23551,9 +22200,7 @@ If you've installed Chromium manually, there's no need at the time of the update
    sudo yum -y install yum-plugin-versionlock
 
 
-
    sudo yum versionlock chromium
-
 
 
    sudo yum versionlock chromium-common
@@ -23580,9 +22227,7 @@ When migrating from Chromium snap, first update the ActiveGate, then install Chr
    sudo rm -rf /usr/lib/chrome_for_testing/chrome-linux64
 
 
-
    sudo unzip /tmp/chrome.zip -d /usr/lib/chrome_for_testing
-
 
 
    rm /tmp/chrome.zip
@@ -23598,7 +22243,6 @@ When migrating from Chromium snap, first update the ActiveGate, then install Chr
    The Synthetic engine will use the new Chrome for Testing version immediately. Note that the status is updated once every hour, so it may take up to an hour to refresh the Chrome version displayed for your ActiveGate in **Deployment Status**.
 
 ## Install the browser from a custom repository
-
 
 
 ActiveGate version 1.243+ In addition to [web UI-guided ActiveGate installation](../ru/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/active-gate-for-private-locations-install.md "Learn how to install Synthetic-enabled ActiveGates.") and [manual installation of the browser and dependencies](#manual), you can also **install ActiveGate by pointing to a custom, local repository for browser components**. As this repository is an HTTP server that you set up within your network, the advantage of this method is that it can be used in environments with intranet-only or limited network access.
@@ -23653,7 +22297,6 @@ If you've enabled a [custom, local repository for the browser installation](#cus
    [synthetic]
 
 
-
    chromium_repo = https://172.18.0.100/chromium-repo
    ```
 2. Turn on [**Enable Chrome(-ium) auto-update**](../ru/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations.md#browser-autoupdate "Learn how to manage private locations in the Synthetic app.") for your private location.
@@ -23693,7 +22336,6 @@ scraped: 2026-03-03T21:32:38.245044
 
 # Manage private locations
 
-# Manage private locations
 
 * Latest Dynatrace
 * How-to guide
@@ -23788,7 +22430,6 @@ scraped: 2026-03-02T21:20:36.386068
 
 # Proxy for private locations
 
-# Proxy for private locations
 
 * Latest Dynatrace
 * How-to guide
@@ -23814,25 +22455,19 @@ These are the possible scenarios for your proxy configuration. Access to tested 
 [http.client]
 
 
-
 proxy-server=<proxy>
-
 
 
 proxy-port=8080
 
 
-
 proxy-user=username
-
 
 
 proxy-password=password
 
 
-
 [synthetic]
-
 
 
 proxy-off=true
@@ -23844,17 +22479,13 @@ proxy-off=true
 [http.client]
 
 
-
 proxy-server=<proxy>
-
 
 
 proxy-port=8080
 
 
-
 proxy-user=username
-
 
 
 proxy-password=password
@@ -23868,17 +22499,13 @@ proxy-password=password
   [http.client]
 
 
-
   proxy-server=<proxy>
-
 
 
   proxy-port=8080
 
 
-
   proxy-user=username
-
 
 
   proxy-password=password
@@ -23889,17 +22516,13 @@ proxy-password=password
   [synthetic]
 
 
-
   proxy-server=<proxy between AG and tested resource>
-
 
 
   proxy-port=9090
 
 
-
   proxy-user=username_two
-
 
 
   proxy-password=password_two
@@ -23913,17 +22536,13 @@ The Synthetic-enabled ActiveGate needs access to the Amazon S3 service to upload
 [synthetic]
 
 
-
 proxy-server=<proxy between AG and tested resource>
-
 
 
 proxy-port=8080
 
 
-
 proxy-user=username
-
 
 
 proxy-password=password
@@ -23937,21 +22556,16 @@ For more information, see [Proxy Auto-Configuration (PAC) files](#proxy-auto-con
 [synthetic]
 
 
-
 proxy-server=<proxy between AG and tested resource>
-
 
 
 proxy-port=8080
 
 
-
 proxy-user=username
 
 
-
 proxy-password=password
-
 
 
 proxy-non-proxy-hosts=my.corp.org|*.gdansk.dynatrace.com
@@ -23983,9 +22597,7 @@ A Proxy Auto-Configuration (PAC) file is a JavaScript function that determines w
    "proxy": {
 
 
-
    "pacUrl": "https://www.example.com/test.pac"
-
 
 
    }
@@ -24038,17 +22650,13 @@ In this example setup, we use the Squid proxy linked to the system's OpenSSL lib
    sudo mkdir /etc/squid/ssl_cert
 
 
-
    sudo mv ~/prepared_ca_cert.pem /etc/squid/ssl_cert/squid.pem
-
 
 
    sudo chown --recursive squid:squid /etc/squid/ssl_cert
 
 
-
    sudo chmod 700 /etc/squid/ssl_cert
-
 
 
    sudo chmod 600 /etc/squid/ssl_cert/squid.pem
@@ -24058,17 +22666,13 @@ In this example setup, we use the Squid proxy linked to the system's OpenSSL lib
    sudo mkdir /etc/squid/ssl_cert
 
 
-
    sudo mv ~/prepared_ca_cert.pem /etc/squid/ssl_cert/squid.pem
-
 
 
    sudo chown --recursive proxy:proxy /etc/squid/ssl_cert
 
 
-
    sudo chmod 700 /etc/squid/ssl_cert
-
 
 
    sudo chmod 600 /etc/squid/ssl_cert/squid.pem
@@ -24085,13 +22689,11 @@ In this example setup, we use the Squid proxy linked to the system's OpenSSL lib
    sudo /usr/lib64/squid/security_file_certgen -c -s /var/spool/squid/ssl_db -M 4MB
 
 
-
    sudo chown --recursive squid:squid /var/spool/squid/ssl_db
    ```
 
    ```
    sudo /usr/lib/squid/security_file_certgen -c -s /var/spool/squid/ssl_db -M 4MB
-
 
 
    sudo chown --recursive proxy:proxy /var/spool/squid/ssl_db
@@ -24102,45 +22704,34 @@ In this example setup, we use the Squid proxy linked to the system's OpenSSL lib
    acl SSL_ports port 443
 
 
-
    acl Safe_ports port 80 443 1025-65535
-
 
 
    acl CONNECT method CONNECT
 
 
-
    http_access deny !Safe_ports
-
 
 
    http_access deny CONNECT !SSL_ports
 
 
-
    http_access allow localhost
-
 
 
    http_access deny all
 
 
-
    http_port 3128 ssl-bump generate-host-certificates=on dynamic_cert_mem_cache_size=4MB cert=/etc/squid/ssl_cert/squid.pem
-
 
 
    acl step1 at_step SslBump1
 
 
-
    ssl_bump peek step1
 
 
-
    ssl_bump bump all
-
 
 
    cache deny all
@@ -24149,7 +22740,6 @@ In this example setup, we use the Squid proxy linked to the system's OpenSSL lib
 
    ```
    sudo systemctl enable squid
-
 
 
    sudo systemctl restart squid
@@ -24166,7 +22756,6 @@ In this example setup, we use the Squid proxy linked to the system's OpenSSL lib
    ```
 
 ### Proxy configuration for FIPS mode with corporate proxy
-
 
 
 If your organization mandates use of a corporate proxy, you need to set up a second local Squid instance due to limitations of Squid:
@@ -24190,49 +22779,37 @@ If you're using a different proxy software, this might not be applicable to you.
    [Unit]
 
 
-
    Description=Squid with upstream proxy
-
 
 
    After=network.target network-online.target nss-lookup.target
 
 
-
    [Service]
-
 
 
    Type=notify
 
 
-
    LimitNOFILE=16384
-
 
 
    PIDFile=/run/squid2.pid
 
 
-
    ExecStart=/usr/sbin/squid --foreground -n squid2 -f "/etc/squid/squid2.conf"
-
 
 
    ExecReload=/usr/bin/kill -HUP $MAINPID
 
 
-
    KillMode=mixed
-
 
 
    NotifyAccess=all
 
 
-
    [Install]
-
 
 
    WantedBy=multi-user.target
@@ -24244,57 +22821,43 @@ If you're using a different proxy software, this might not be applicable to you.
    [Unit]
 
 
-
    Description=Squid with upstream proxy
-
 
 
    After=network.target network-online.target nss-lookup.target
 
 
-
    [Service]
-
 
 
    Type=notify
 
 
-
    PIDFile=/run/squid2.pid
-
 
 
    Group=proxy
 
 
-
    RuntimeDirectory=squid2
-
 
 
    RuntimeDirectoryMode=0775
 
 
-
    ExecStart=/usr/sbin/squid --foreground -sYC -n squid2 -f "/etc/squid/squid2.conf"
-
 
 
    ExecReload=/bin/kill -HUP $MAINPID
 
 
-
    KillMode=mixed
-
 
 
    NotifyAccess=all
 
 
-
    [Install]
-
 
 
    WantedBy=multi-user.target
@@ -24305,57 +22868,43 @@ If you're using a different proxy software, this might not be applicable to you.
    acl SSL_ports port 443
 
 
-
    acl Safe_ports port 80 443 1025-65535
-
 
 
    acl CONNECT method CONNECT
 
 
-
    http_access deny !Safe_ports
-
 
 
    http_access deny CONNECT !SSL_ports
 
 
-
    http_access allow localhost
-
 
 
    http_access deny all
 
 
-
    http_port 3129
-
 
 
    access_log daemon:/var/log/squid/access2.log squid
 
 
-
    cache_log /var/log/squid/cache2.log
-
 
 
    pid_filename /run/squid2.pid
 
 
-
    cache_peer upstream-proxy.example.com parent 443 0 default no-digest proxy-only login=proxyuser:proxypass tls tls-min-version=1.2 tls-options=NO_SSLv3
-
 
 
    never_direct allow all
 
 
-
    visible_hostname squid2
-
 
 
    cache deny all
@@ -24366,9 +22915,7 @@ If you're using a different proxy software, this might not be applicable to you.
    cache_peer localhost parent 3129 0 default no-digest proxy-only
 
 
-
    never_direct allow all
-
 
 
    visible_hostname squid1
@@ -24379,13 +22926,10 @@ If you're using a different proxy software, this might not be applicable to you.
    sudo systemctl daemon-reload
 
 
-
    sudo systemctl enable squid2
 
 
-
    sudo systemctl start squid2
-
 
 
    sudo systemctl restart squid
@@ -24413,7 +22957,6 @@ scraped: 2026-03-05T21:32:05.107957
 
 # Requirements for private Synthetic locations
 
-# Requirements for private Synthetic locations
 
 * Latest Dynatrace
 * How-to guide
@@ -24606,7 +23149,6 @@ If not configured correctly, the File Access Policy Daemon (`fapolicyd`) can pot
 To ensure proper stability and performance, consider adding directories and processes to the allowed list or excluding them from the policy. For more detailed information, refer to the [Red Hat documentation on fapolicydï»¿](https://dt-url.net/tn1v0z1x). Prior to contacting Dynatrace support to troubleshoot issues with your private synthetic locations, make sure that `fapolicyd` was excluded as a source of problems.
 
 File Access Policy Daemon framework can be run in debug mode where all denials are logged, making tracking down missing rules and troubleshooting issues easier. For more detailed information about its debug mode, refer to the [documentation on troubleshooting problems related to fapolicydï»¿](https://dt-url.net/e943wcc)
-
 
 
 ## Hardware requirements
@@ -24844,7 +23386,6 @@ There were multiple resolution targets used during tests; all of them were resol
 Publicly available DNS servers were used: Google (8.8.8.8 and 8.8.4.4) and Cloudflare (1.1.1.1 and 1.1.1.2)
 
 
-
 ### Storage and file system permissions
 
 The table below shows the default installation locations (Linux and Windows) of various ActiveGate directories and the minimum size requirements. This information is compiled from details in [ActiveGate directories](ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files.md "Find out where ActiveGate files are stored on Windows and Linux systems.").
@@ -24875,7 +23416,6 @@ scraped: 2026-03-06T21:24:48.121649
 
 # Private synthetic locations
 
-# Private synthetic locations
 
 * Latest Dynatrace
 * How-to guide
@@ -24930,7 +23470,6 @@ End-of-support information
 * Both manual and automatic browser updates require access to `https://synthetic-packages.s3.amazonaws.com`. For security reasons, public access to the S3 bucket is enabled only for specific files; trying anything else will result in a 403 error.
 
 ## Create a private location
-
 
 
 To add a classic private location
@@ -25033,7 +23572,6 @@ The configuration is dependent on the Linux distribution. You can find more info
 ### Synthetic FIPS compliance
 
 
-
 ActiveGate version 1.315+
 
 #### Installation
@@ -25085,25 +23623,19 @@ Each `tgz` package archive is stored in the S3 bucket together with the `*.tgz.s
    wget https://ca.dynatrace.com/dt-root.cert.pem ; openssl cms
 
 
-
    -verify
-
 
 
    -in chromium.tgz.sig
 
 
-
    -inform PEM
-
 
 
    -content chromium.tgz
 
 
-
    -binary
-
 
 
    -CAfile dt-root.cert.pem > /dev/null
@@ -25129,25 +23661,19 @@ Each `zip` package archive is stored in the S3 bucket together with the `*.zip.s
    wget https://ca.dynatrace.com/dt-root.cert.pem ; openssl cms
 
 
-
    -verify
-
 
 
    -in chrome.zip.sig
 
 
-
    -inform PEM
-
 
 
    -content chrome.zip
 
 
-
    -binary
-
 
 
    -CAfile dt-root.cert.pem > /dev/null
@@ -25192,7 +23718,6 @@ scraped: 2026-03-06T21:24:26.847734
 
 # HTTP monitors reporting results
 
-# HTTP monitors reporting results
 
 * Latest Dynatrace
 * Reference
@@ -25303,7 +23828,6 @@ The **Availability** card shows overall availability across all monitor location
 ### Availability calculation
 
 
-
 Availability metrics are calculated by dividing the number of successful executions ("up") by the total number of executions. Thus, to calculate availability
 
 1. Determine the number of up executions within the timeframe.
@@ -25332,7 +23856,6 @@ In the example below, the availability is less than 100% because the down execut
 timeseries avg(dt.synthetic.http.availability), by:{dt.entity.http_check, dt.maintenance_window_ids, interpolated}
 
 
-
 | filter dt.entity.http_check == "HTTP_CHECK-2F280898D4FCB1A8"
 ```
 
@@ -25351,13 +23874,10 @@ In the example below, we have down executions detected during the maintenance pe
 timeseries av = avg(dt.synthetic.http.availability), by: {dt.entity.http_check, dt.maintenance_window_ids}
 
 
-
 | filter dt.entity.http_check == "HTTP_CHECK-2F280898D4FCB1A8"
 
 
-
 | filter isNull(dt.maintenance_window_ids)
-
 
 
 | fields avgAV=arrayAvg(av)
@@ -25442,7 +23962,6 @@ The problems section lists all problems in the selected time frame, both open an
 Problems, along with their constituent [events](#events) and any corresponding [status codes](#http-requests) give you a full picture of the number and scope of your monitor's issues.
 
 ## HTTP requests
-
 
 
 An HTTP monitor can consist of one or multiple HTTP requests. The **HTTP requests** card overviews all executed requests, their order, name, request URL, and the HTTP method used. For each request, the **HTTP requests** card splits performance (**Response time**) by the following metrics (see more in [HTTP monitor metrics](../ru/observe/digital-experience/synthetic-monitoring/http-monitors-classic/http-monitor-metrics-classic.md "Learn about the performance metrics collected for HTTP monitors.")):
@@ -25563,7 +24082,6 @@ scraped: 2026-03-06T21:12:42.033714
 
 # Synthetic app
 
-# Synthetic app
 
 * Latest Dynatrace
 * App
@@ -25689,7 +24207,6 @@ Use the controls in the upper-right corner of the preview panel to:
 ### Filters
 
 
-
 Filters allowing multiple selections help you find the monitors you're looking for. You can also save frequently used filters. Expand ![Open Dashboards panel](https://dt-cdn.net/images/dashboards-app-dashboards-panel-open-6c03b43117.svg "Open Dashboards panel") or collapse ![Close Dashboards panel](https://dt-cdn.net/images/dashboards-app-dashboards-panel-close-78d6b527ad.svg "Close Dashboards panel") the filters to focus on search or results, as required. The filters are automatically collapsed when viewing the quick overview for a monitor.
 
 The following filter categories (each with multiple options) allow you to search for monitors.
@@ -25803,7 +24320,6 @@ Go through the following process to learn using the ![Synthetic](https://dt-cdn.
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
 
-
 ### Explore in Dynatrace Hub
 
 View the status of all data centers and hosts and identify the root cause of infrastructure problems.](https://www.dynatrace.com/hub/detail/synthetic-preview/?internal_source=doc&internal_medium=link&internal_campaign=cross)
@@ -25820,7 +24336,6 @@ scraped: 2026-03-06T21:31:47.956083
 
 # Synthetic for Workflows
 
-# Synthetic for Workflows
 
 * Latest Dynatrace
 * How-to guide
@@ -25861,9 +24376,7 @@ The permission you need are listed in [Workflows](../ru/analyze-explore-automate
 environment:roles:manage-settings,
 
 
-
 storage:buckets:read,
-
 
 
 storage:events:read
@@ -25875,33 +24388,25 @@ Example policy:
 ALLOW
 
 
-
 app-engine:apps:run,
-
 
 
 automation:workflows:read,
 
 
-
 app-engine:functions:run,
-
 
 
 automation:workflows:run,
 
 
-
 automation:workflows:write,
-
 
 
 environment:roles:manage-settings,
 
 
-
 storage:buckets:read,
-
 
 
 storage:events:read;
@@ -26000,9 +24505,7 @@ Use the following query to get the total duration of the whole batch.
 fetch dt.synthetic.events
 
 
-
 | filter event.id == $batchId
-
 
 
 | fields batch_result.duration
@@ -26014,13 +24517,10 @@ Use the following query to check if the batch finished successfully.
 fetch dt.synthetic.events
 
 
-
 | filter event.id == $batchId
 
 
-
 | filter batch.status == "Success"
-
 
 
 | summarize count = count()
@@ -26042,7 +24542,6 @@ scraped: 2026-03-05T21:36:03.524929
 
 # Check application detection rules
 
-# Check application detection rules
 
 * Classic
 * Explanation
@@ -26079,7 +24578,6 @@ scraped: 2026-03-05T21:26:29.720687
 
 # Configure beacon endpoint for web applications
 
-# Configure beacon endpoint for web applications
 
 * Classic
 * How-to guide
@@ -26196,7 +24694,6 @@ scraped: 2026-03-06T21:30:24.896704
 
 # Capture additional interaction types for web applications
 
-# Capture additional interaction types for web applications
 
 * Classic
 * How-to guide
@@ -26255,7 +24752,6 @@ scraped: 2026-03-06T21:26:08.607908
 
 # Adjust Apdex settings for web applications
 
-# Adjust Apdex settings for web applications
 
 * Classic
 * How-to guide
@@ -26307,7 +24803,6 @@ scraped: 2026-03-05T21:27:31.687061
 
 # Configure error detection for web applications
 
-# Configure error detection for web applications
 
 * Classic
 * How-to guide
@@ -26446,7 +24941,6 @@ For more information on how to report custom errors, see [RUM JavaScript API - r
 ## Configure JavaScript errors
 
 
-
 Browsers detect JavaScript errors automatically, so you don't have to add these errors. If you configure JavaScript errors to be captured, they are automatically included in Apdex calculations and Davis analysis.
 
 To ignore JavaScript errors on an individual level, select **Ignore this JavaScript error** on the respective JavaScript error details page.
@@ -26493,7 +24987,6 @@ scraped: 2026-03-06T21:27:50.224051
 
 # Configure key user actions for web applications
 
-# Configure key user actions for web applications
 
 * Classic
 * How-to guide
@@ -26559,7 +25052,6 @@ scraped: 2026-03-05T21:25:38.854384
 
 # Configure the Real User Monitoring code source
 
-# Configure the Real User Monitoring code source
 
 * Classic
 * How-to guide
@@ -26649,7 +25141,6 @@ scraped: 2026-03-06T21:28:02.411095
 
 # Configure the RUM cookie domain for web applications
 
-# Configure the RUM cookie domain for web applications
 
 * Classic
 * How-to guide
@@ -26717,7 +25208,6 @@ scraped: 2026-03-05T21:27:26.544330
 
 # Configure first-party, third-party, and CDN resource detection for web applications
 
-# Configure first-party, third-party, and CDN resource detection for web applications
 
 * Classic
 * How-to guide
@@ -26793,7 +25283,6 @@ scraped: 2026-03-03T21:23:52.409334
 
 # Change user experience score thresholds for web applications
 
-# Change user experience score thresholds for web applications
 
 * How-to guide
 * 1-min read
@@ -26827,7 +25316,6 @@ scraped: 2026-03-04T21:28:06.966694
 
 # Create USQL custom metrics for web applications
 
-# Create USQL custom metrics for web applications
 
 * Classic
 * How-to guide
@@ -26906,117 +25394,88 @@ You can also use the [Settings API](../ru/dynatrace-api/environment-api/settings
    [
 
 
-
    {
-
 
 
    "schemaVersion":"0.0.4",
 
 
-
    "schemaId":"builtin:custom-metrics",
-
 
 
    "scope":"tenant",
 
 
-
    "value":{
-
 
 
    "enabled":true,
 
 
-
    "metricKey":"uscm.sessions_by_browser_family_and_country_easytravel",
-
 
 
    "value":{
 
 
-
    "type":"COUNTER"
 
 
-
    },
-
 
 
    "dimensions":[
 
 
-
    "browserFamily",
-
 
 
    "country"
 
 
-
    ],
-
 
 
    "filters":[
 
 
-
    {
-
 
 
    "fieldName":"useraction.application",
 
 
-
    "operator":"EQUALS",
-
 
 
    "value":"www.easytravel.com"
 
 
-
    },
-
 
 
    {
 
 
-
    "fieldName":"userType",
-
 
 
    "operator":"EQUALS",
 
 
-
    "value":"REAL_USER"
 
 
-
    }
-
 
 
    ]
 
 
-
    }
 
 
-
    }
-
 
 
    ]
@@ -27030,117 +25489,88 @@ You can also use the [Settings API](../ru/dynatrace-api/environment-api/settings
    [
 
 
-
    {
-
 
 
    "schemaVersion":"1.0.0",
 
 
-
    "schemaId":"builtin:user-action-custom-metrics",
-
 
 
    "scope":"tenant",
 
 
-
    "value":{
-
 
 
    "enabled":true,
 
 
-
    "metricKey":"uacm.actions_by_type_and_country_easytravel",
-
 
 
    "value":{
 
 
-
    "type":"COUNTER"
 
 
-
    },
-
 
 
    "dimensions":[
 
 
-
    "type",
-
 
 
    "usersession.country"
 
 
-
    ],
-
 
 
    "filters":[
 
 
-
    {
-
 
 
    "fieldName":"application",
 
 
-
    "operator":"EQUALS",
-
 
 
    "value":"www.easytravel.com"
 
 
-
    },
-
 
 
    {
 
 
-
    "fieldName":"usersession.userType",
-
 
 
    "operator":"EQUALS",
 
 
-
    "value":"REAL_USER"
 
 
-
    }
-
 
 
    ]
 
 
-
    }
 
 
-
    }
-
 
 
    ]
@@ -27563,7 +25993,6 @@ Any custom long, double, or string property
 Any custom long, double, or string property, for example, `usersession.longProperties.outerwidth`, `usersession.doubleProperties.revenue`, or `usersession.stringProperties.author`
 
 
-
 ## Known limitations
 
 We've identified the following limitations for USQL metric events:
@@ -27682,7 +26111,6 @@ scraped: 2026-03-02T21:18:41.584332
 
 # Define user action and user session properties for web applications
 
-# Define user action and user session properties for web applications
 
 * How-to guide
 * 8-min read
@@ -27775,7 +26203,6 @@ To define a custom property
 ## Add a property pack
 
 
-
 Use property packs to link analytics data to performance insights. You can do this by integrating tools, such as web analytics and performance monitoring, into Dynatrace. A host of property packs are available, for example, Adobe, Google, Intercom, and Tealeaf.
 
 To add a property from a property pack
@@ -27858,7 +26285,6 @@ scraped: 2026-03-06T21:29:09.059821
 
 # Delete a web application
 
-# Delete a web application
 
 * Classic
 * How-to guide
@@ -27896,7 +26322,6 @@ scraped: 2026-03-05T21:33:02.016377
 
 # Real User Monitoring for process groups
 
-# Real User Monitoring for process groups
 
 * Classic
 * How-to guide
@@ -27944,7 +26369,6 @@ scraped: 2026-03-03T21:29:57.852417
 
 # Control the RUM JavaScript version
 
-# Control the RUM JavaScript version
 
 * How-to guide
 * Published Jul 01, 2025
@@ -28013,7 +26437,6 @@ scraped: 2026-03-06T21:28:12.602325
 
 # Leverage user action and user session properties for web applications
 
-# Leverage user action and user session properties for web applications
 
 * Classic
 * How-to guide
@@ -28117,7 +26540,6 @@ For more details, see [Export user sessions](observe/digital-experience/session-
 ## Multidimensional analysis
 
 
-
 You can also leverage custom properties in [Multidimensional analysis](../ru/observe/digital-experience/web-applications/analyze-and-use/multi-dimensional-analysis.md "Find out how Dynatrace Real User Monitoring enables you to dig deep into your user actions and perform analysis across numerous dimensions."). For instance, you can analyze user actions based on your custom properties or you can filter data by property values.
 
 To use custom properties on the **Multidimensional analysis** page
@@ -28174,7 +26596,6 @@ scraped: 2026-03-05T21:27:33.326633
 
 # Analyze individual user actions
 
-# Analyze individual user actions
 
 * Classic
 * How-to guide
@@ -28272,7 +26693,6 @@ scraped: 2026-03-05T21:27:35.018091
 
 # Introduction to application overview page
 
-# Introduction to application overview page
 
 * Classic
 * Explanation
@@ -28340,7 +26760,6 @@ scraped: 2026-03-05T21:27:24.846990
 
 # Multidimensional analysis for web applications
 
-# Multidimensional analysis for web applications
 
 * Classic
 * How-to guide
@@ -28517,7 +26936,6 @@ scraped: 2026-03-06T21:13:06.981371
 
 # Performance analysis
 
-# Performance analysis
 
 * Classic
 * How-to guide
@@ -28601,7 +27019,6 @@ If you have one or more [synthetic monitors](../ru/observe/digital-experience/we
 ## Composite metrics across response times
 
 
-
 This section helps you figure out from a high level perspective where your performance focus should lie. You can identify, for example, whether the duration up to the time to first byte is an issue for your application or you should focus on user perceived loading performance, indicated by Speed index and Visually complete.
 
 If you select **Analyze performance** in the bottom right corner of this section, you can [analyze your applicationâs performance and user actions across multiple dimensions](../ru/observe/digital-experience/web-applications/analyze-and-use/multi-dimensional-analysis.md "Find out how Dynatrace Real User Monitoring enables you to dig deep into your user actions and perform analysis across numerous dimensions.").
@@ -28659,7 +27076,6 @@ scraped: 2026-03-05T21:27:38.698380
 
 # Service flows for applications and user actions
 
-# Service flows for applications and user actions
 
 * Classic
 * How-to guide
@@ -28708,7 +27124,6 @@ scraped: 2026-03-05T21:27:23.633190
 
 # World map view
 
-# World map view
 
 * Classic
 * How-to guide
@@ -28742,7 +27157,6 @@ scraped: 2026-03-05T21:38:54.552227
 
 # Check your application health
 
-# Check your application health
 
 * Classic
 * How-to guide
@@ -28808,7 +27222,6 @@ scraped: 2026-03-05T21:27:28.286023
 
 # Define applications for Real User Monitoring
 
-# Define applications for Real User Monitoring
 
 * Classic
 * How-to guide
@@ -28918,7 +27331,6 @@ As explained in [How does Dynatrace apply your application detection rules?](#ru
 ### Host is rewritten
 
 
-
 You can configure components like proxies and load balancers to transport the original host information to the backend in a request header, for example, in the [`X-Forwarded-Host`ï»¿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-Host) or [`Forwarded`ï»¿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded) header. OneAgent can retrieve the original host from one of these headers or from any proprietary header that has the same format as `X-Forwarded-Host`.
 
 ![Passing the original host information in the X-Forwarded-Host header](https://dt-cdn.net/images/host-name-determination-1093-9025d73d9b.png)
@@ -28959,7 +27371,6 @@ For a list of technologies and servers that support automatic RUM JavaScript inj
 ## Best practices and recommendations
 
 
-
 * Define your applications based on team ownership so that you can easily make use of [management zones](manage/identity-access-management/permission-management/management-zones.md "Learn about management zones concepts, how to define management zones, and how to make the most of them.") for access restrictions.
 * It may make sense to define applications based on their technology stack so that the right settings are applied and the management of specific settings is easier. For example, activating support for specific XHR frameworks is typically required only for specific parts of a large application and for specific user action naming rules. It may help separate such large applications into smaller ones based on the technologies in use or team ownership.
 * **My web application** placeholder application
@@ -28997,7 +27408,6 @@ scraped: 2026-03-06T21:28:47.854342
 
 # Link cross-origin XHR user actions and their distributed traces
 
-# Link cross-origin XHR user actions and their distributed traces
 
 * Classic
 * How-to guide
@@ -29074,7 +27484,6 @@ scraped: 2026-03-05T21:25:26.027742
 
 # Configure automatic injection
 
-# Configure automatic injection
 
 * Classic
 * How-to guide
@@ -29204,7 +27613,6 @@ OneAgent does not alter the `Expires` and `Cache-Control` headers, which explici
 ### Disabling cache control header optimizations
 
 
-
 In rare cases, cache control header optimizations may interfere with your application's functionality. If this occurs, you can disable the feature.
 When disabled, the rollout of new RUM configurations will depend entirely on your application's existing caching behavior.
 
@@ -29250,7 +27658,6 @@ scraped: 2026-03-05T21:30:26.766950
 
 # Set up agentless Real User Monitoring
 
-# Set up agentless Real User Monitoring
 
 * Classic
 * How-to guide
@@ -29303,41 +27710,31 @@ After injection
 <html>
 
 
-
 <head>
-
 
 
 <title>MyApp</title>
 
 
-
 <script type="text/javascript" src="myapp.js"></script>
-
 
 
 </head>
 
 
-
 <body>
-
 
 
 <form>
 
 
-
 Username: <input type="text name="username"/><br/>
-
 
 
 Password: <input type="password" name="password"/><br/>
 
 
-
 <input type="submit" value="Login">
-
 
 
 </form>
@@ -29347,45 +27744,34 @@ Password: <input type="password" name="password"/><br/>
 <html>
 
 
-
 <head>
-
 
 
 <title>MyApp</title>
 
 
-
 <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/145e12d594f/cg36988wxq/477g8ec68708x5c1_complete.js" crossorigin="anonymous"></script>
-
 
 
 <script type="text/javascript" src="myapp.js"></script>
 
 
-
 </head>
-
 
 
 <body>
 
 
-
 <form>
-
 
 
 Username: <input type="text name="username"/><br/>
 
 
-
 Password: <input type="password" name="password"/><br/>
 
 
-
 <input type="submit" value="Login">
-
 
 
 </form>
@@ -29437,7 +27823,6 @@ Agentless monitoring requires you to insert the RUM JavaScript by yourself, so m
 ### Standards and security policies
 
 
-
 Certain development standards that are created to make applications more secure and faster also introduce new limitations.
 
 For example, the [Content Security Policy (CSP) standardï»¿](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP), which was introduced to minimize the chance of becoming a victim of cross-site scripting, disallows inline JavaScript code. This means that you might need to use the **JavaScript tag** [snippet format of the RUM JavaScript](../ru/observe/digital-experience/web-applications/initial-setup/snippet-formats.md#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case").
@@ -29481,7 +27866,6 @@ scraped: 2026-03-02T21:21:35.206723
 
 # Select a snippet format
 
-# Select a snippet format
 
 * How-to guide
 * Published Jul 01, 2025
@@ -29755,7 +28139,6 @@ scraped: 2026-03-06T21:14:09.923490
 
 # Web applications
 
-# Web applications
 
 * Classic
 * Overview
@@ -29782,7 +28165,6 @@ We ended support for Internet Explorer 11 starting with RUM JavaScript version 1
 * [Roll out RUM selectively for your applications](observe/digital-experience/web-applications/initial-setup/selective-rum-rollout.md "Roll out RUM selectively after installing OneAgent in full-stack monitoring mode on your hosts")
 
 ### Additional configuration
-
 
 
 * [Control the RUM JavaScript version](../ru/observe/digital-experience/web-applications/additional-configuration/rum-javascript-version.md "Control the RUM JavaScript version used to monitor your applications")
@@ -29814,7 +28196,6 @@ We ended support for Internet Explorer 11 starting with RUM JavaScript version 1
 * [Delete a web application](../ru/observe/digital-experience/web-applications/additional-configuration/delete-application-web.md "Delete your web applications via the Dynatrace web UI or API.")
 
 ### Analyze and use RUM data
-
 
 
 * [Introduction to application overview page](../ru/observe/digital-experience/web-applications/analyze-and-use/introduction-to-application-overview.md "Read an overview of the analysis options offered on the application overview page.")
@@ -29849,7 +28230,6 @@ scraped: 2026-03-06T21:10:08.444180
 
 # Digital Experience
 
-# Digital Experience
 
 * Latest Dynatrace
 * Overview

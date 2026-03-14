@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:10.579111
 
 # Supported Go versions
 
-# Supported Go versions
 
 * Latest Dynatrace
 * 7-min read

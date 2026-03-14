@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Share Dynatrace dashboards
 
-# Share Dynatrace dashboards
 
 * How-to guide
 * 7-min read

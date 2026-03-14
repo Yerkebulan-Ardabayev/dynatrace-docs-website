@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:28.775935
 
 # Business reporting
 
-# Business reporting
 
 * Latest Dynatrace
 * Tutorial

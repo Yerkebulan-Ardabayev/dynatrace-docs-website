@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:17.382325
 
 # Расширения JMX
 
-# Расширения JMX
 
 * Latest Dynatrace
 * Чтение: 7 мин.
@@ -121,101 +120,76 @@ Dynatrace версии 1.161 и старше
 "metrics": [
 
 
-
 {
-
 
 
 "timeseries": {
 
 
-
 "key": "XY.Size",
-
 
 
 "unit": "Count",
 
 
-
 "displayname": "Queue Consumer Count",
-
 
 
 "dimensions": [
 
 
-
 "rx_pid",
-
 
 
 "name"
 
 
-
 ]
 
 
-
 }
-
 
 
 "source": {
 
 
-
 "domain": "com.sample",
-
 
 
 "keyProperties": {
 
 
-
 "type": "XY",
-
 
 
 "name": "*"
 
 
-
 },
-
 
 
 "attribute": "Size",
 
 
-
 "splitting": {
-
 
 
 "name": "name",
 
 
-
 "type": "keyProperty",
-
 
 
 "keyProperty": "name"
 
 
+}
+
 
 }
 
 
-
 }
-
-
-
-}
-
 
 
 ]

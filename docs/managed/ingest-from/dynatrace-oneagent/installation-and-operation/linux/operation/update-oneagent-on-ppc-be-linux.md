@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Update OneAgent on PPC BE Linux
 
-# Update OneAgent on PPC BE Linux
 
 * 1-min read
 * Published Aug 21, 2019

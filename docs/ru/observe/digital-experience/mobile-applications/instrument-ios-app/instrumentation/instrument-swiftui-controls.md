@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:19.171690
 
 # Инструментирование элементов управления SwiftUI
 
-# Инструментирование элементов управления SwiftUI
 
 * Classic
 * Практическое руководство
@@ -230,9 +229,7 @@ Dynatrace поддерживает инструментирование SwiftUI 
 Button("Login", action: {
 
 
-
 /* perform login */
-
 
 
 })
@@ -246,17 +243,13 @@ Button("Login", action: {
 Button(action: {
 
 
-
 print("Hello world!")
-
 
 
 }) {
 
 
-
 Image("bookmark")
-
 
 
 }
@@ -270,9 +263,7 @@ Image("bookmark")
 Button("Login", action: {
 
 
-
 /* perform login */
-
 
 
 }).withCustomInstrumentationConfig(.useDefaultControlName)
@@ -288,9 +279,7 @@ Button("Login", action: {
 Button("Login", action: {
 
 
-
 /* perform login */
-
 
 
 }).withCustomInstrumentationConfig(.useControlName("Login Button"))
@@ -318,17 +307,13 @@ OneAgent для iOS версии 8.263+
 <key>DTXExcludedSwiftUIFiles</key>
 
 
-
 <array>
-
 
 
 <string>Button</string>
 
 
-
 <string>Slider</string>
-
 
 
 </array>
@@ -351,17 +336,13 @@ OneAgent для iOS версии 8.263+
   Button("Login", action: { /* perform login */ })
 
 
-
   .padding()
-
 
 
   .background(Color.red)
 
 
-
   .frame(width: 40)
-
 
 
   .withCustomInstrumentationConfig(.skipInstrumentation)
@@ -375,13 +356,10 @@ OneAgent для iOS версии 8.263+
 import Dynatrace
 
 
-
 …
 
 
-
 Button("Login", action: { /* perform login */ })
-
 
 
 .withCustomInstrumentationConfig(.skipInstrumentation)
@@ -395,21 +373,16 @@ Button("Login", action: { /* perform login */ })
 import Dynatrace
 
 
-
 …
-
 
 
 HStack {
 
 
-
 Button("Login", action: { /* perform login */ })
 
 
-
 Button("Register", action: { /* perform registration */ })
-
 
 
 }.withCustomInstrumentationConfig(.skipInstrumentation)
@@ -428,17 +401,13 @@ Button("Register", action: { /* perform registration */ })
    <key>DTXExcludedSwiftUIFiles</key>
 
 
-
    <array>
-
 
 
    <string>relative/file/path/</string>
 
 
-
    <string>relative/file.swift</string>
-
 
 
    </array>
@@ -456,7 +425,6 @@ Button("Register", action: { /* perform registration */ })
 <key>DTXSwiftUIInstrumentSimulatorBuilds</key>
 
 
-
 <true/>
 ```
 
@@ -468,7 +436,6 @@ Button("Register", action: { /* perform registration */ })
 
 ```
 <key>DTXSwiftUIIgnoreDeploymentTarget</key>
-
 
 
 <true/>
@@ -488,7 +455,6 @@ Button("Register", action: { /* perform registration */ })
    <key>DTXSwiftUIManualPlaceholder</key>
 
 
-
    <true/>
    ```
 2. Добавьте специальный заполнитель `AppDelegate.m` в основной класс.
@@ -502,21 +468,16 @@ Button("Register", action: { /* perform registration */ })
    - (BOOL)application:(UIApplication *)application
 
 
-
    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
 
 
    [Dynatrace handoverInstrumentorConfig:@{kDTXSwiftMappingJson: @"_DYNATRACE_SWIFTUI_MAPPING_PLACEHOLDER_"}];
 
 
-
    // ... your existing setup code
 
 
-
    return YES;
-
 
 
    }
@@ -526,25 +487,19 @@ Button("Register", action: { /* perform registration */ })
    - (instancetype)init {
 
 
-
    self = [super init];
-
 
 
    if (self) {
 
 
-
    [Dynatrace handoverInstrumentorConfig:@{kDTXSwiftMappingJson: @"_DYNATRACE_SWIFTUI_MAPPING_PLACEHOLDER_"}];
-
 
 
    }
 
 
-
    return self;
-
 
 
    }
@@ -564,14 +519,12 @@ OneAgent для iOS версии 8.257+
   <key>DTXCleanSwiftUILogsByCount</key>
 
 
-
   <number>10</number>
   ```
 * Чтобы удалять журналы по истечении определённого количества дней, добавьте [ключ конфигурации `DTXCleanSwiftUILogsByAgeDays`](../customization/ios-configuration-keys.md#swiftui "С помощью ключей конфигурации вы можете тонко настроить автоматическое инструментирование ваших приложений iOS.") в файл `Info.plist`.
 
   ```
   <key>DTXCleanSwiftUILogsByAgeDays</key>
-
 
 
   <number>5</number>

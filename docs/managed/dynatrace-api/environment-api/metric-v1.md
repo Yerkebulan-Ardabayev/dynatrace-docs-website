@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Timeseries API v1
 
-# Timeseries API v1
 
 * Reference
 * Published Jul 19, 2017

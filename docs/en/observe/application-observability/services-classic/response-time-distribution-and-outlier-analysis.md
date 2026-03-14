@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:59.023258
 
 # Response time distribution and outlier analysis
 
-# Response time distribution and outlier analysis
 
 * Classic
 * How-to guide

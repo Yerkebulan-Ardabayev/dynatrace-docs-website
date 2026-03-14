@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:35:39.748570
 
 # Detect problems with Logs
 
-# Detect problems with Logs
 
 * Latest Dynatrace
 * Tutorial
@@ -104,9 +103,7 @@ To add new dynamic routing
      isNotNull(alertmessage) and
 
 
-
      isNotNull(priority) and
-
 
 
      priority == "1"

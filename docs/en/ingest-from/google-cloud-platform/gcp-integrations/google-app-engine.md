@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:24:08.961664
 
 # Monitor Google App Engine
 
-# Monitor Google App Engine
 
 * Latest Dynatrace
 * How-to guide
@@ -32,37 +31,28 @@ To integrate OneAgent into a container deployment with a Dockerfile in Google Ap
 ARG DT_API_URL="https://<environmentID>.live.dynatrace.com/api"
 
 
-
 ARG DT_API_TOKEN="<token>"
-
 
 
 ARG DT_ONEAGENT_OPTIONS="flavor=default&include=<technology1>&include=<technology2>"
 
 
-
 ENV DT_HOME="/opt/dynatrace/oneagent"
-
 
 
 RUN mkdir -p "$DT_HOME" && \
 
 
-
 wget -O "$DT_HOME/oneagent.zip" "$DT_API_URL/v1/deployment/installer/agent/unix/paas/latest?Api-Token=$DT_API_TOKEN&$DT_ONEAGENT_OPTIONS" && \
-
 
 
 unzip -d "$DT_HOME" "$DT_HOME/oneagent.zip" && \
 
 
-
 rm "$DT_HOME/oneagent.zip"
 
 
-
 ENTRYPOINT [ "/opt/dynatrace/oneagent/dynatrace-agent64.sh" ]
-
 
 
 CMD [ "executable", "param1", "param2" ] # the command of your application, for example, Java

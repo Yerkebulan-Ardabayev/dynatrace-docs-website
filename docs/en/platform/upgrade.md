@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:36:38.918382
 
 # Upgrade to the latest Dynatrace
 
-# Upgrade to the latest Dynatrace
 
 * Classic
 * 20-min read
@@ -175,7 +174,6 @@ For example, have a look at the **Storage Default Monitoring Read** policy, whic
 ALLOW storage:buckets:read WHERE storage:bucket-name STARTSWITH "default_;"
 
 
-
 ALLOW storage:events:read,storage:logs:read,storage:metrics:read,storage:entities:read,storage:bizevents:read,storage:spans:read;
 ```
 
@@ -278,13 +276,10 @@ Most of your log data might be needed for troubleshooting, and you don't want to
    ALLOW storage:bucket-definitions:read,
 
 
-
    storage:bucket-definitions:write,
 
 
-
    storage:bucket-definitions:truncate,
-
 
 
    storage:bucket-definitions:delete;
@@ -339,9 +334,7 @@ Most of your log data might be needed for troubleshooting, and you don't want to
    ALLOW storage:buckets:read WHERE storage:bucket-name STARTSWITH "log_sec_dev";
 
 
-
    ALLOW storage:buckets:read WHERE storage:bucket-name = "default_logs";
-
 
 
    ALLOW storage:logs:read;
@@ -403,7 +396,6 @@ To filter on our troubleshooting logs, we can add this filter criteria:
 fetch logs
 
 
-
 | filter dt.system.bucket == "log_sec_dev_troubleshoot_14d"
 ```
 
@@ -442,13 +434,10 @@ Suppose a new external team will work for the next 18 months on a project and yo
 ALLOW storage:buckets:read WHERE storage:bucket-name STARTSWITH "log_sec_dev";
 
 
-
 ALLOW storage:buckets:read WHERE storage:bucket-name = "default_logs";
 
 
-
 ALLOW storage:logs:read;
-
 
 
 ALLOW storage:logs:read WHERE storage:dt.security_context=`"extDev";

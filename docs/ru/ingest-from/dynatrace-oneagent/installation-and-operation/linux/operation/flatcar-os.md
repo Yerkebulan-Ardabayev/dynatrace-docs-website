@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:03.893393
 
 # Поддержка Flatcar в SELinux
 
-# Поддержка Flatcar в SELinux
 
 * Latest Dynatrace
 * 1-min read

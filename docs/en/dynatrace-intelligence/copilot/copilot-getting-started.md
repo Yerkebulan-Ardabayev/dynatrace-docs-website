@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:25.807648
 
 # Get started with Dynatrace Intelligence agentic and generative AI
 
-# Get started with Dynatrace Intelligence agentic and generative AI
 
 * Latest Dynatrace
 * How-to guide

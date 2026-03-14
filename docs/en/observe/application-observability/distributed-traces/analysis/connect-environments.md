@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:56.682759
 
 # Set up cross-environment tracing
 
-# Set up cross-environment tracing
 
 * Classic
 * How-to guide

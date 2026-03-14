@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:49.944416
 
 # Hosts API — POST tags
 
-# Hosts API — POST tags
 
 * Reference
 * Updated on Mar 22, 2023
@@ -54,21 +53,16 @@ scraped: 2026-03-05T21:26:49.944416
 {
 
 
-
 "tags": [
-
 
 
 "office-linz",
 
 
-
 "office-klagenfurt"
 
 
-
 ]
-
 
 
 }
@@ -118,53 +112,40 @@ scraped: 2026-03-05T21:26:49.944416
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -182,37 +163,28 @@ scraped: 2026-03-05T21:26:49.944416
 curl -X POST \
 
 
-
 https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-B7A6F9EE9F366CB5 \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
 
 
-
 -H 'Content-Type: application/json' \
-
 
 
 -d '{
 
 
-
 "tags": [
-
 
 
 "Linux",
 
 
-
 "Rack 123"
 
 
-
 ]
-
 
 
 }'
@@ -230,21 +202,16 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-B
 {
 
 
-
 "tags": [
-
 
 
 "iOS app",
 
 
-
 "Adnroid app"
 
 
-
 ]
-
 
 
 }

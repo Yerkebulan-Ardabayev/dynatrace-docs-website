@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:05.522860
 
 # Share documents
 
-# Share documents
 
 * Latest Dynatrace
 * 10-min read

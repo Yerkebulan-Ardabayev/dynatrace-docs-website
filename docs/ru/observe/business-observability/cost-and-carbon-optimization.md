@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:41.254324
 
 # Оптимизация стоимости и углеродного следа
 
-# Оптимизация стоимости и углеродного следа
 
 * Последняя версия Dynatrace
 * Приложение
@@ -403,7 +402,6 @@ Kubernetes — это динамическая среда, и количеств
 
   ```
   fetch bizevents
-
 
 
   filter event.type == "carbon.measurement" or event.type == "carbon.measurement.k8s.cluster"

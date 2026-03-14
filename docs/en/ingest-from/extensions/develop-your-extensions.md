@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:25.042127
 
 # Develop your own Extensions
 
-# Develop your own Extensions
 
 * Latest Dynatrace
 * How-to guide

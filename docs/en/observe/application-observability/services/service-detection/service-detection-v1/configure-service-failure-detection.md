@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:29.143198
 
 # Configure service failure detection
 
-# Configure service failure detection
 
 * Classic
 * How-to guide

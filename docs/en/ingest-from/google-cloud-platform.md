@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:23.826280
 
 # Set up Dynatrace on Google Cloud
 
-# Set up Dynatrace on Google Cloud
 
 * Latest Dynatrace
 * Overview

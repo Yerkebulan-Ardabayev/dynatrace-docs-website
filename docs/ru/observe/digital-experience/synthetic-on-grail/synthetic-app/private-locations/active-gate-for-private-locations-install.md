@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:09.113702
 
 # Установка ActiveGate с поддержкой Synthetic
 
-# Установка ActiveGate с поддержкой Synthetic
 
 * Последняя версия Dynatrace
 * Практическое руководство

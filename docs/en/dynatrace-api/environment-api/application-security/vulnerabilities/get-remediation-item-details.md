@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:17.504404
 
 # Vulnerabilities API - GET remediation item details
 
-# Vulnerabilities API - GET remediation item details
 
 * Reference
 * Updated on Sep 25, 2024
@@ -175,341 +174,257 @@ A list of constraint violations
 {
 
 
-
 "assessment": {
-
 
 
 "assessmentAccuracy": "FULL",
 
 
-
 "assessmentAccuracyDetails": {
-
 
 
 "reducedReasons": [
 
 
-
 "LIMITED_AGENT_SUPPORT"
-
 
 
 ]
 
 
-
 },
-
 
 
 "dataAssets": "NOT_AVAILABLE",
 
 
-
 "exposure": "NOT_AVAILABLE",
-
 
 
 "numberOfDataAssets": 1,
 
 
-
 "vulnerableFunctionRestartRequired": true,
-
 
 
 "vulnerableFunctionUsage": "IN_USE",
 
 
-
 "vulnerableFunctionsInUse": [
 
 
-
 {
-
 
 
 "className": "string",
 
 
-
 "filePath": "string",
-
 
 
 "functionName": "string"
 
 
-
 }
 
 
-
 ],
-
 
 
 "vulnerableFunctionsNotAvailable": [
 
 
-
 {}
 
 
-
 ],
-
 
 
 "vulnerableFunctionsNotInUse": [
 
 
-
 {}
-
 
 
 ]
 
 
-
 },
-
 
 
 "entityIds": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "firstAffectedTimestamp": 1,
 
 
-
 "id": "string",
-
 
 
 "muteState": {
 
 
-
 "comment": "string",
 
 
-
 "lastUpdatedTimestamp": 1,
-
 
 
 "muted": true,
 
 
-
 "reason": "AFFECTED",
-
 
 
 "user": "string"
 
 
-
 },
-
 
 
 "name": "string",
 
 
-
 "remediationProgress": {
-
 
 
 "affectedEntities": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "unaffectedEntities": [
 
 
-
 "string"
-
 
 
 ]
 
 
-
 },
-
 
 
 "resolvedTimestamp": 1,
 
 
-
 "trackingLink": {
 
 
-
 "displayName": "string",
-
 
 
 "lastUpdatedTimestamp": 1,
 
 
-
 "url": "string",
-
 
 
 "user": "string"
 
 
-
 },
-
 
 
 "vulnerabilityState": "RESOLVED",
 
 
-
 "vulnerableComponents": [
 
 
-
 {
-
 
 
 "affectedEntities": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "displayName": "string",
 
 
-
 "fileName": "string",
-
 
 
 "id": "string",
 
 
-
 "loadOrigins": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "numberOfAffectedEntities": 1,
 
 
-
 "shortName": "string"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -530,9 +445,7 @@ Required filters:
 curl -X 'GET' 'https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/7412525767433554374/remediationItems/PROCESS_GROUP-F32C09AEDCB7A450' \
 
 
-
 -H 'accept: application/json; charset=utf-8' \
-
 
 
 -H 'Authorization: Api-Token [your_token]'
@@ -550,177 +463,133 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/74125257674335543
 {
 
 
-
 "id": "PROCESS_GROUP-F32C09AEDCB7A450",
-
 
 
 "entityIds": [
 
 
-
 "PROCESS_GROUP-F32C09AEDCB7A450"
 
 
-
 ],
-
 
 
 "name": "app.js (frontend) unguard-frontend-*",
 
 
-
 "firstAffectedTimestamp": 1725894871213,
-
 
 
 "assessment": {
 
 
-
 "exposure": "PUBLIC_NETWORK",
-
 
 
 "dataAssets": "NOT_DETECTED",
 
 
-
 "numberOfDataAssets": 0,
-
 
 
 "vulnerableFunctionRestartRequired": false,
 
 
-
 "vulnerableFunctionUsage": "NOT_AVAILABLE",
-
 
 
 "vulnerableFunctionsInUse": [],
 
 
-
 "vulnerableFunctionsNotInUse": [],
-
 
 
 "vulnerableFunctionsNotAvailable": [],
 
 
-
 "assessmentAccuracy": "FULL",
-
 
 
 "assessmentAccuracyDetails": {
 
 
-
 "reducedReasons": []
-
 
 
 }
 
 
-
 },
-
 
 
 "vulnerabilityState": "VULNERABLE",
 
 
-
 "muteState": {
-
 
 
 "muted": false,
 
 
-
 "user": "unknown",
-
 
 
 "reason": "INITIAL_STATE"
 
 
-
 },
-
 
 
 "vulnerableComponents": [
 
 
-
 {
-
 
 
 "id": "SOFTWARE_COMPONENT-30CF12729DF87E61",
 
 
-
 "displayName": "minimatch:3.0.4",
-
 
 
 "shortName": "minimatch",
 
 
-
 "numberOfAffectedEntities": 1,
-
 
 
 "affectedEntities": [
 
 
-
 "PROCESS_GROUP_INSTANCE-66B8C7F0FA77E541"
-
 
 
 ]
 
 
-
 }
 
 
-
 ],
-
 
 
 "remediationProgress": {
 
 
-
 "affectedEntities": [
-
 
 
 "PROCESS_GROUP_INSTANCE-66B8C7F0FA77E541"
 
 
-
 ],
-
 
 
 "unaffectedEntities": []
 
 
-
 }
-
 
 
 }

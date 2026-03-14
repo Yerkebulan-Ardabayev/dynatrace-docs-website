@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:32:21.031267
 
 # Управление расширениями PostgreSQL
 
-# Управление расширениями PostgreSQL
 
 * Latest Dynatrace
 * How-to guide

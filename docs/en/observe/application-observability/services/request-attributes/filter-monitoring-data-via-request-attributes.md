@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:07.407482
 
 # Filter monitoring data via request attributes
 
-# Filter monitoring data via request attributes
 
 * Latest Dynatrace
 * 2-min read

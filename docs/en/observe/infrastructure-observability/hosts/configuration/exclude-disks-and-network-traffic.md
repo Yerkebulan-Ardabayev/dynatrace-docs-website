@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:41.661234
 
 # Exclude disks and network traffic from host monitoring
 
-# Exclude disks and network traffic from host monitoring
 
 * Classic
 * How-to guide

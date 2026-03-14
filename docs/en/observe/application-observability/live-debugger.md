@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:25.680314
 
 # Live Debugger
 
-# Live Debugger
 
 * Latest Dynatrace
 * App
@@ -87,9 +86,7 @@ To enable the Live Debugger module
    activeGate:
 
 
-
    capabilities:
-
 
 
    - debugging

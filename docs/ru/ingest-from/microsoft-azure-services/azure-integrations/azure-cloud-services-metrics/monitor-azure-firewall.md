@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:25:40.935487
 
 # Мониторинг Azure Firewall
 
-# Мониторинг Azure Firewall
 
 * Latest Dynatrace
 * How-to guide

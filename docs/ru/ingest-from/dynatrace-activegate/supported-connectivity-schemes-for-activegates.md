@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:14.270507
 
 # Поддерживаемые схемы подключения для ActiveGates
 
-# Поддерживаемые схемы подключения для ActiveGates
 
 * Latest Dynatrace
 * 4-min read

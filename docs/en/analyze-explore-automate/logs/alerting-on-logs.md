@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:23.570408
 
 # Log alerts
 
-# Log alerts
 
 * Latest Dynatrace
 * Explanation

@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:39:21.472534
 
 # Мониторинг Azure Integration Service Environment
 
-# Мониторинг Azure Integration Service Environment
 
 * Latest Dynatrace
 * Практическое руководство

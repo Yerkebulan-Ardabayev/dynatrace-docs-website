@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:21.252492
 
 # Azure AI - Translator monitoring
 
-# Azure AI - Translator monitoring
 
 * Latest Dynatrace
 * How-to guide

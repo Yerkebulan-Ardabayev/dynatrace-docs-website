@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:58.481368
 
 # Фильтрация узлов Smartscape с помощью сегментов
 
-# Фильтрация узлов Smartscape с помощью сегментов
 
 * Latest Dynatrace
 * Tutorial

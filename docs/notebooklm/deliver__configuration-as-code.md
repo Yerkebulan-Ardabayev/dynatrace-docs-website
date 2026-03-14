@@ -14,7 +14,6 @@ scraped: 2026-03-02T21:30:29.843938
 
 # Account configuration for Monaco account management
 
-# Account configuration for Monaco account management
 
 * Latest Dynatrace
 * How-to guide
@@ -29,29 +28,22 @@ In the following example, we define a single account object containing account-r
 accounts:
 
 
-
 - name: my-account
-
 
 
 accountUUID: 12345678-1234-5678-1234-123456789012
 
 
-
 oAuth:
-
 
 
 clientId:
 
 
-
 name: OAUTH_CLIENT_ID
 
 
-
 clientSecret:
-
 
 
 name: OAUTH_CLIENT_SECRET
@@ -80,205 +72,154 @@ The following sections will describe each configuration in detail.
 users:
 
 
-
 - email: monaco@dynatrace.com
-
 
 
 groups:
 
 
-
 - Log viewer
-
 
 
 - type: reference
 
 
-
 id: my-group
-
 
 
 serviceUsers:
 
 
-
 - name: Monaco service user
-
 
 
 description: Description of service user
 
 
-
 groups:
-
 
 
 - Log viewer
 
 
-
 - type: reference
 
 
-
 id: my-group
-
 
 
 groups:
 
 
-
 - name: My Group
-
 
 
 id: my-group
 
 
-
 description: This is my group
-
 
 
 account:
 
 
-
 permissions:
-
 
 
 - account-viewer
 
 
-
 policies:
-
 
 
 - policy: Environment role - Access environment
 
 
-
 environments:
-
 
 
 - environment: abc12345
 
 
-
 permissions:
-
 
 
 - tenant-viewer
 
 
-
 policies:
-
 
 
 - policy: Environment role - Replay session data without masking
 
 
-
 - policy:
-
 
 
 type: reference
 
 
-
 id: my-policy
 
 
-
 boundaries:
-
 
 
 - type: reference
 
 
-
 id: workflow-simple-boundary
-
 
 
 - MyExistingBoundary # If you want to reference by name directly
 
 
-
 managementZones:
-
 
 
 - environment: abc12345
 
 
-
 managementZone: Management Zone 2000
-
 
 
 permissions:
 
 
-
 - tenant-viewer
-
 
 
 policies:
 
 
-
 - name: My Policy
-
 
 
 id: my-policy
 
 
-
 level:
-
 
 
 type: account
 
 
-
 description: My policy description.
-
 
 
 policy: |-
 
 
-
 ALLOW automation:workflows:read;
-
 
 
 boundaries:
 
 
-
 - id: workflow-simple-boundary
 
 
-
 name: Workflow Simple boundary
-
 
 
 query: automation:workflow-type = "SIMPLE";
@@ -292,21 +233,16 @@ While this sample shows users, service users, groups, policies, and boundaries d
 users:
 
 
-
 - email: my-user@example.com
-
 
 
 groups:
 
 
-
 - Log viewer
 
 
-
 - type: reference
-
 
 
 id: my-group
@@ -330,29 +266,22 @@ Dynatrace Monaco CLI version 2.23.0+
 serviceUsers:
 
 
-
 - name: Monaco service user
-
 
 
 description: Description of the service user.
 
 
-
 originObjectId: 123e4567-e89b-12d3-a456-426614174000
-
 
 
 groups:
 
 
-
 - Log viewer
 
 
-
 - type: reference
-
 
 
 id: my-group
@@ -373,105 +302,79 @@ In this example, we define these objects.
 groups:
 
 
-
 - name: My Group
-
 
 
 id: my-group
 
 
-
 description: This is my group
-
 
 
 account:
 
 
-
 permissions:
-
 
 
 - account-viewer
 
 
-
 policies:
-
 
 
 - policy: Environment role - Access environment
 
 
-
 environments:
-
 
 
 - environment: abc12345
 
 
-
 permissions:
-
 
 
 - tenant-viewer
 
 
-
 policies:
-
 
 
 - policy: Environment role - Replay session data without masking
 
 
-
 - policy:
-
 
 
 type: reference
 
 
-
 id: my-policy
-
 
 
 boundaries:
 
 
-
 - type: reference
-
 
 
 id: my-boundary
 
 
-
 - MyExistingBoundary # If you want to reference by name directly
-
 
 
 managementZones:
 
 
-
 - environment: abc12345
-
 
 
 managementZone: Management Zone 2000
 
 
-
 permissions:
-
 
 
 - tenant-viewer
@@ -510,61 +413,46 @@ In this example, we define these objects.
 policies:
 
 
-
 - name: My policy
-
 
 
 id: my-policy
 
 
-
 level:
-
 
 
 type: account
 
 
-
 description: My policy is defined for the account.
 
 
-
 policy: |-
-
 
 
 ALLOW automation:workflows:read;
 
 
-
 - name: My other policy.
-
 
 
 id: my-other-policy
 
 
-
 level:
-
 
 
 type: environment
 
 
-
 environment: abc12345
-
 
 
 description: My policy is defined for a specific environment.
 
 
-
 policy: |-
-
 
 
 ALLOW automation:workflows:read;
@@ -589,13 +477,10 @@ In this example, we define these objects.
 boundaries:
 
 
-
 - id: workflow-simple-boundary
 
 
-
 name: Workflow Simple boundary
-
 
 
 query: automation:workflow-type = "SIMPLE";
@@ -610,7 +495,6 @@ In this example, we define these objects.
   + **query** contains one or more policy statements separated by `;`.
 
 ## Commands
-
 
 
 Because account-level configuration is usually distinct from environment-level configuration and changes less frequently, existing commands like `monaco deploy` ignore any account configuration that may be defined in a manifest file.
@@ -629,7 +513,6 @@ scraped: 2026-03-01T21:24:34.545844
 
 # Monaco resources
 
-# Monaco resources
 
 * Latest Dynatrace
 * Reference
@@ -650,181 +533,136 @@ An example of a manifest.yaml:
 manifestVersion: 1.0
 
 
-
 projects:
-
 
 
 - name: infra
 
 
-
 path: shared/infrastructure
-
 
 
 - name: general
 
 
-
 path: general
-
 
 
 type: grouping
 
 
-
 environmentGroups:
-
 
 
 - name: dev
 
 
-
 environments:
-
 
 
 - name: test-env-1
 
 
-
 url:
-
 
 
 value: https://<YOUR-DT-DEV-ENV-ID>.apps.dynatrace.com
 
 
-
 auth:
 
 
-
 token:
-
 
 
 name: DEV_TOKEN
 
 
-
 oAuth:
 
 
-
 clientId:
-
 
 
 name: DEV_CLIENT_ID
 
 
-
 clientSecret:
-
 
 
 name: DEV_CLIENT_SECRET
 
 
-
 - name: test-env-2
 
 
-
 url:
-
 
 
 value: https://<YOUR-DT-SPRINT-ENV-ID>.apps.dynatrace.com
 
 
-
 auth:
 
 
-
 token:
-
 
 
 name: SPRINT_TOKEN
 
 
-
 oAuth:
 
 
-
 clientId:
-
 
 
 name: SPRINT_CLIENT_ID
 
 
-
 clientSecret:
-
 
 
 name: SPRINT_CLIENT_SECRET
 
 
-
 - name: prod
-
 
 
 environments:
 
 
-
 - name: prod-env-1
-
 
 
 url:
 
 
-
 type: environment
-
 
 
 value: https://<YOUR-DT-PROD-ENV-ID>.apps.dynatrace.com
 
 
-
 auth:
-
 
 
 token:
 
 
-
 name: PROD_TOKEN
-
 
 
 oAuth:
 
 
-
 clientId:
-
 
 
 name: PROD_CLIENT_ID
 
 
-
 clientSecret:
-
 
 
 name: PROD_CLIENT_SECRET
@@ -897,9 +735,7 @@ An `environment` type consists of `name`, `url`, and `auth` sections.
   url:
 
 
-
   type: value
-
 
 
   value: "https://<YOUR-ENV-ID>.apps.dynatrace.com"
@@ -911,9 +747,7 @@ An `environment` type consists of `name`, `url`, and `auth` sections.
   url:
 
 
-
   type: environment
-
 
 
   value: YOUR_URL_ENV_VAR
@@ -999,7 +833,6 @@ scraped: 2026-03-06T21:33:46.968318
 
 # Monaco configuration YAML file - list of special configuration types
 
-# Monaco configuration YAML file - list of special configuration types
 
 * Latest Dynatrace
 * Reference
@@ -1071,57 +904,43 @@ We recommend the following values for the `dashboardMetadata`:
 "dashboardMetadata": {
 
 
-
 "name": "{{ .name }}",
-
 
 
 "shared": true,
 
 
-
 "sharingDetails": {
-
 
 
 "linkShared": true,
 
 
-
 "published": true
-
 
 
 },
 
 
-
 "dashboardFilter": {
-
 
 
 "timeframe": "",
 
 
-
 "managementZone": {
-
 
 
 "id": "{{ .managementZoneId }}",
 
 
-
 "name": "{{ .managementZoneName }}"
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -1151,17 +970,13 @@ You need to reference at least the `metricKey` of the log metric, as `{{ .name }
 configs:
 
 
-
 - id: some-log-metric-config
-
 
 
 config:
 
 
-
 name:  "cal.log:this-is-some-metric"
-
 
 
 [...]
@@ -1173,21 +988,16 @@ And in the corresponding JSON:
 {
 
 
-
 "metricKey": "{{ .name }}",
-
 
 
 "active": true,
 
 
-
 "displayName": "{{ .name }}",
 
 
-
 [...]
-
 
 
 }
@@ -1204,21 +1014,16 @@ The `PROCESS_GROUP` type:
 {
 
 
-
 "type": "PROCESS_GROUP",
-
 
 
 "nameFormat": "Test naming PG for {Host:DetectedName}",
 
 
-
 "displayName": "{{ .name }}",
 
 
-
 [...]
-
 
 
 }
@@ -1230,21 +1035,16 @@ The `HOST` type:
 {
 
 
-
 "type": "HOST",
-
 
 
 "nameFormat": "Test - {Host:DetectedName}",
 
 
-
 "displayName": "{{ .name }}",
 
 
-
 [...]
-
 
 
 }
@@ -1256,28 +1056,22 @@ The `SERVICE` type:
 {
 
 
-
 "type": "SERVICE",
-
 
 
 "nameFormat": "{ProcessGroup:KubernetesNamespace} - {Service:DetectedName}",
 
 
-
 "displayName": "{{ .name }}",
 
 
-
 ...
-
 
 
 }
 ```
 
 ### Settings 2.0 JSON
-
 
 
 The [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") has additional properties unrelated to the specific schemas.
@@ -1291,285 +1085,214 @@ For example, while the API response for a custom alert config (`builtin:davis.an
 {
 
 
-
 "items": [
 
 
-
 {
-
 
 
 "objectId": "XYZ",
 
 
-
 "value": {
-
 
 
 "enabled": false,
 
 
-
 "title": "Error when adding item to cart",
-
 
 
 "description": "",
 
 
-
 "source": "Anomaly Detection",
-
 
 
 "executionSettings": {
 
 
-
 "queryOffset": 3
 
 
-
 },
-
 
 
 "analyzer": {
 
 
-
 "name": "dt.statistics.ui.anomaly_detection.StaticThresholdAnomalyDetectionAnalyzer",
-
 
 
 "input": [
 
 
-
 {
-
 
 
 "key": "query",
 
 
-
 "value": "timeseries cartFailedToAddItem=sum(log.cartFailedToAddItem)"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "slidingWindow",
 
 
-
 "value": "3"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "violatingSamples",
 
 
-
 "value": "1"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "dealertingSamples",
 
 
-
 "value": "3"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "alertCondition",
 
 
-
 "value": "ABOVE"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "alertOnMissingData",
 
 
-
 "value": "false"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "threshold",
 
 
-
 "value": "0"
-
 
 
 }
 
 
-
 ]
 
 
-
 },
-
 
 
 "eventTemplate": {
 
 
-
 "properties": [
 
 
-
 {
-
 
 
 "key": "event.name",
 
 
-
 "value": "Cart Failure increase"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "event.description",
 
 
-
 "value": "The {metricname} value was {alert_condition} normal behavior."
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "event.type",
 
 
-
 "value": "ERROR_EVENT"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "dt.event.allow_davis_merge",
 
 
-
 "value": "true"
 
 
-
 }
-
 
 
 ]
 
 
+}
+
 
 }
 
 
-
 }
-
-
-
-}
-
 
 
 ]
-
 
 
 "totalCount": 89,
 
 
-
 "pageSize": 1,
 
 
-
 "nextPageKey": "XY"
-
 
 
 }
@@ -1581,245 +1304,184 @@ The Dynatrace Monaco JSON template only requires the `value` content:
 {
 
 
-
 "enabled": false,
-
 
 
 "title": "Error when adding item to cart",
 
 
-
 "description": "",
-
 
 
 "source": "Anomaly Detection",
 
 
-
 "executionSettings": {
-
 
 
 "queryOffset": 3
 
 
-
 },
-
 
 
 "analyzer": {
 
 
-
 "name": "dt.statistics.ui.anomaly_detection.StaticThresholdAnomalyDetectionAnalyzer",
-
 
 
 "input": [
 
 
-
 {
-
 
 
 "key": "query",
 
 
-
 "value": "timeseries cartFailedToAddItem=sum(log.cartFailedToAddItem)"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "slidingWindow",
 
 
-
 "value": "3"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "violatingSamples",
 
 
-
 "value": "1"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "dealertingSamples",
 
 
-
 "value": "3"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "alertCondition",
 
 
-
 "value": "ABOVE"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "alertOnMissingData",
 
 
-
 "value": "false"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "threshold",
 
 
-
 "value": "0"
-
 
 
 }
 
 
-
 ]
 
 
-
 },
-
 
 
 "eventTemplate": {
 
 
-
 "properties": [
 
 
-
 {
-
 
 
 "key": "event.name",
 
 
-
 "value": "Cart Failure increase"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "event.description",
 
 
-
 "value": "The {metricname} value was {alert_condition} normal behavior."
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "event.type",
 
 
-
 "value": "ERROR_EVENT"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "dt.event.allow_davis_merge",
 
 
-
 "value": "true"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 }
@@ -1839,7 +1501,6 @@ scraped: 2026-03-06T21:30:43.612602
 
 # Monaco configuration YAML file - list of type fields
 
-# Monaco configuration YAML file - list of type fields
 
 * Latest Dynatrace
 * Reference
@@ -1868,21 +1529,16 @@ The `type` field `api` can be defined as follows.
 configs:
 
 
-
 id: [...]
-
 
 
 type:
 
 
-
 api: synthetic-monitor
 
 
-
 config:
-
 
 
 [...]
@@ -1894,17 +1550,13 @@ or
 configs:
 
 
-
 id: [...]
-
 
 
 type: synthetic-monitor
 
 
-
 config:
-
 
 
 [...]
@@ -1924,81 +1576,61 @@ In the example below, a mobile application and related key-user actions are conf
 configs:
 
 
-
 - id: mobile-application-id
 
 
-
 config:
-
 
 
 name: my-mobile-app
 
 
-
 template: mobile-app.json
-
 
 
 skip: false
 
 
-
 type:
-
 
 
 api: application-mobile
 
 
-
 - id: MyKua
-
 
 
 config:
 
 
-
 name: myKeyUserAction
-
 
 
 template: kua.json
 
 
-
 skip: false
-
 
 
 type:
 
 
-
 api:
-
 
 
 name: key-user-actions-mobile
 
 
-
 scope:
-
 
 
 type: reference
 
 
-
 configType: application-mobile
 
 
-
 configId: mobile-application-id
-
 
 
 property: id
@@ -2014,33 +1646,25 @@ The `type` field `settings` can be defined as follows.
 configs:
 
 
-
 id: [...]
-
 
 
 type:
 
 
-
 settings:
-
 
 
 schema: builtin:davis.anomaly-detectors
 
 
-
 schemaVersion: 1.0.2
-
 
 
 scope: environment
 
 
-
 config:
-
 
 
 [...]
@@ -2058,81 +1682,61 @@ The `rum.web.enablement` `settings` scope references the web application `MyApp`
 configs:
 
 
-
 - id: MyAppId
 
 
-
 type:
-
 
 
 api: application-web
 
 
-
 config:
-
 
 
 name: My Sample Web Application
 
 
-
 template: application.json
-
 
 
 skip: false
 
 
-
 - id: MyApp_RUMSettingsId
-
 
 
 type:
 
 
-
 settings:
-
 
 
 schema: builtin:rum.web.enablement
 
 
-
 scope:
-
 
 
 type: reference
 
 
-
 configType: application-web
-
 
 
 configId: MyAppId
 
 
-
 property: id
-
 
 
 config:
 
 
-
 name: MyApp_RUMSettings
 
 
-
 template: rum-settings.json
-
 
 
 skip: false
@@ -2149,57 +1753,43 @@ In the example below, if the `insertAfter` is set, Dynatrace Monaco ensures the 
   - id: mySecondAppDetectionRuleId
 
 
-
   config:
-
 
 
   parameters:
 
 
-
   [...]
-
 
 
   template: wed-detect-rule.json
 
 
-
   skip: false
-
 
 
   type:
 
 
-
   settings:
-
 
 
   schema: builtin:rum.web.app-detection
 
 
-
   schemaVersion: 2.1.1
-
 
 
   scope: environment
 
 
-
   insertAfter:
-
 
 
   configId: myFirstAppDetectionRuleId  # Monaco config id
 
 
-
   property: id                         # must be âidâ
-
 
 
   type: reference                      # must be âreferenceâ
@@ -2210,29 +1800,22 @@ In the example below, if the `insertAfter` is set, Dynatrace Monaco ensures the 
   type:
 
 
-
   settings:
-
 
 
   schema: builtin:rum.web.app-detection
 
 
-
   schemaVersion: 2.1.1
-
 
 
   scope: environment
 
 
-
   insertAfter:
 
 
-
   value: myFirstAppDetectionRuleId     # hardcoded config id
-
 
 
   type: value                          # must be âvalueâ
@@ -2243,21 +1826,16 @@ In the example below, if the `insertAfter` is set, Dynatrace Monaco ensures the 
   type:
 
 
-
   settings:
-
 
 
   schema: builtin:rum.web.app-detection
 
 
-
   schemaVersion: 2.1.1
 
 
-
   scope: environment
-
 
 
   insertAfter: front       # âfrontâ puts the config on top of the list, âbackâ puts it at the bottom
@@ -2280,53 +1858,40 @@ An example is shown below.
 configs:
 
 
-
 - id: security-jira-connection
-
 
 
 config:
 
 
-
 name: 'Security: Jira Connection'
-
 
 
 template: jira-connection.json
 
 
-
 skip: false
-
 
 
 parameters:
 
 
-
 [â¦]
-
 
 
 type:
 
 
-
 settings:
-
 
 
 schema: app:dynatrace.jira:connection
 
 
-
 scope: environment
 
 
-
 permissions:
-
 
 
 allUsers: read
@@ -2343,9 +1908,7 @@ The `type` field `automation` can be defined as follows.
 type:
 
 
-
 automation:
-
 
 
 resource: workflow # or business-calendar, or scheduling-rule
@@ -2360,45 +1923,34 @@ An example is shown below.
 configs:
 
 
-
 - id: myRemediationWorkflow
-
 
 
 config:
 
 
-
 name:
-
 
 
 value: âHigh Prio Incident Remediationâ
 
 
-
 parameters:
-
 
 
 [...]
 
 
-
 template: remediationWorkflow.json
-
 
 
 skip: false
 
 
-
 type:
 
 
-
 automation:
-
 
 
 resource: workflow
@@ -2438,99 +1990,73 @@ An example is shown below.
 configs:
 
 
-
 # this is the new custom bucket
-
 
 
 - id: my-bucket-id
 
 
-
 config:
-
 
 
 name: My awesome bucket
 
 
-
 template: bucket.json
 
 
-
 parameters:
-
 
 
 retention_days: 372
 
 
-
 type: bucket
-
 
 
 # this is a new setting to define the rule what data shall be stored in the previously defined custom Grail bucket
 
 
-
-
-
 - id: log-bucket-rule
-
 
 
 type:
 
 
-
 settings:
-
 
 
 schema: builtin:logmonitoring.log-buckets-rules
 
 
-
 scope: environment
-
 
 
 config:
 
 
-
 name: My custom rule
-
 
 
 template: log-bucket-rule.json
 
 
-
 parameters:
-
 
 
 phrase: My phrase to look for
 
 
-
 bucket:
-
 
 
 type: reference
 
 
-
 configType: bucket
 
 
-
 configId: my-bucket-id
-
 
 
 property: id
@@ -2558,17 +2084,13 @@ The `type` field `document` can be defined as follows.
 type:
 
 
-
 document:
-
 
 
 kind: dashboard # other possible types: ânotebookâ or âlaunchpadâ
 
 
-
 private: true # optional field specifying the visibility of the document
-
 
 
 id: custom-document-id # optional field specifying a user-defined document ID
@@ -2604,9 +2126,7 @@ The `type` field `openpipeline` can be defined as follows.
 type:
 
 
-
 openpipeline:
-
 
 
 kind: bizevents # id of openpipeline configuration (for example, "bizevents", "events", "logs", "spans", or "metrics")
@@ -2639,73 +2159,55 @@ An example is shown below.
 configs:
 
 
-
 - id: segment                # configures the desired segment
-
 
 
 type: segment
 
 
-
 config:
-
 
 
 template: segment.json
 
 
-
 - id: dashboard              # creates a dashboard that references a segment
-
 
 
 type:
 
 
-
 document:
-
 
 
 kind: dashboard
 
 
-
 private: true
-
 
 
 config:
 
 
-
 name: Log Dashboard with Dynatrace Segment
-
 
 
 parameters:
 
 
-
 segment_id:            # references the previously created segment within a dashboard
-
 
 
 configId: segment
 
 
-
 configType: segment
-
 
 
 property: id
 
 
-
 type: reference
-
 
 
 template: dashboard.json
@@ -2734,41 +2236,31 @@ An example is shown below.
 configs:
 
 
-
 - id: custom-sli          # An SLO based using a custom DQL query as SLI
-
 
 
 type: slo-v2
 
 
-
 config:
-
 
 
 name: custom-sli
 
 
-
 template: custom-sli.json
-
 
 
 - id: sli-reference       # another SLO using an out-of-the-box template (aka reference)
 
 
-
 type: slo-v2
-
 
 
 config:
 
 
-
 name: sli-reference
-
 
 
 template: sli-reference.json
@@ -2785,29 +2277,22 @@ The `name` property specifies the account name, my-account, which can be referen
 accounts:
 
 
-
 - name: my-account
-
 
 
 accountUUID: 12345678-1234-5678-1234-123456789012
 
 
-
 oAuth:
-
 
 
 clientId:
 
 
-
 name: OAUTH_CLIENT_ID
 
 
-
 clientSecret:
-
 
 
 name: OAUTH_CLIENT_SECRET
@@ -2831,179 +2316,133 @@ The example shows how Monaco represents account management resources locally, wi
 users: # users define one or more users bound to different groups
 
 
-
 - email: monaco@dynatrace.com
-
 
 
 groups:
 
 
-
 - Log viewer # default group
-
 
 
 - type: reference
 
 
-
 id: my-group
-
 
 
 # id: specifies a custom group. The ID must match a group defined in groups. Custom groups need to be referenced (vs. default groups)
 
 
-
-
-
 serviceUsers:     # supported with Monaco CLI v2.23.0+
-
 
 
 - name: Monaco service user # name: must be unique. Otherwise, an originObjectId is needed
 
 
-
 description: Description of service user
-
 
 
 originObjectId: 3037325d-6475-4adf-a14d-93d1c862f9e9 # (optional) only needed if the userâs name is not unique
 
 
-
 groups:
-
 
 
 - Log viewer # default group
 
 
-
 - type: reference # custom group my-group needs to be referenced
 
 
-
 id: my-group
-
 
 
 groups:
 
 
-
 - name: My Group
-
 
 
 id: my-group
 
 
-
 description: This is my group
-
 
 
 account: # specifies permissions and policies to which the group is bound on the account level.
 
 
-
 permissions:
-
 
 
 - account-viewer
 
 
-
 policies:
-
 
 
 - policy: Environment role - Access environment
 
 
-
 environments: # specify the permissions and policies to which the group is bound on the environment/tenant level.
-
 
 
 - environment: abc12345
 
 
-
 permissions:
 
 
-
 - tenant-viewer
-
 
 
 policies:
 
 
-
 - policy: Environment role - Replay session data without masking
-
 
 
 - type: reference
 
 
-
 id: my-policy
-
 
 
 managementZones: # classic Dynatrace only
 
 
-
 - environment: abc12345
-
 
 
 managementZone: Management Zone 2000
 
 
-
 permissions:
-
 
 
 - tenant-viewer
 
 
-
 policies: # defines one or more policies for the selected group
-
 
 
 - name: My Policy
 
 
-
 id: my-policy
-
 
 
 level:
 
 
-
 type: account
-
 
 
 description: abcde
 
 
-
 policy: |- # contains any policy rules of this particular policy.
-
 
 
 ALLOW automation:workflows:read;
@@ -3027,7 +2466,6 @@ scraped: 2026-03-06T21:28:37.690091
 
 # Monaco configuration YAML file structure
 
-# Monaco configuration YAML file structure
 
 * Latest Dynatrace
 * Reference
@@ -3042,37 +2480,28 @@ Here is a basic example of an SLO `configs` YAML file:
 configs:
 
 
-
 - id: newSLO
-
 
 
 type: slo-v2
 
 
-
 config:
-
 
 
 parameters:
 
 
-
 target: 95
-
 
 
 title: myNewSLO
 
 
-
 entityScope: HOST-#######
 
 
-
 template: slo-cpu-usage.json
-
 
 
 skip: false
@@ -3084,69 +2513,52 @@ Here is a basic example of an SLO `slo-cpu-usage.json` YAML file:
 {
 
 
-
 "name": "{{ .title }}",
-
 
 
 "description": "test SLO for template test",
 
 
-
 "tags": [],
-
 
 
 "customSli": {
 
 
-
 "filterSegments": [],
-
 
 
 "indicator": "timeseries sli=avg(dt.host.cpu.usage)\n, by: { \"{{ .entityScope }}\" }
 
 
-
 \n  , filter: in(dt.entity.host, { $hosts })\n  | fieldsAdd entityName(dt.entity.host)"
-
 
 
 },
 
 
-
 "criteria": [
-
 
 
 {
 
 
-
 "target": {{ .target }},
-
 
 
 "timeframeFrom": "now-7d",
 
 
-
 "timeframeTo": "now",
-
 
 
 "warning": 99
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -3263,29 +2675,22 @@ Any new lines, special characters such as double quotes, are escaped.
 parameters:
 
 
-
 name: "Dev"
-
 
 
 example1: "This is \\n already escaped."
 
 
-
 example2: "This will \n be escaped."
-
 
 
 example3: This "will" be escaped too.
 
 
-
 text: |
 
 
-
 This will also
-
 
 
 be escaped.
@@ -3314,7 +2719,6 @@ Use the `name` property in JSON like this `"{{ .name }}"`.
 If you encounter issues with the configurations not being created several times instead of updated, check to make sure that your reference to the name does not contain any spaces or other characters that make what is sent to Dynatrace in the JSON different from the name defined in the YAML.
 
 ### Other configuration types
-
 
 
 The `name` property isn't used to identify Dynatrace objects.
@@ -3362,25 +2766,19 @@ An example of setting the `value` parameter:
 parameters:
 
 
-
 threshold: 15
-
 
 
 complexThreshold:
 
 
-
 type: value
-
 
 
 value:
 
 
-
 amount: 15
-
 
 
 unit: sec
@@ -3415,29 +2813,22 @@ The following example defines an `owner` and `target` parameter:
   parameters:
 
 
-
   owner:
 
 
-
   type: environment
-
 
 
   name: OWNER
 
 
-
   default: "-"
-
 
 
   target:
 
 
-
   type: environment
-
 
 
   name: TARGET
@@ -3463,97 +2854,73 @@ To use the parameter reference type, provide the following required fields:
   configs:
 
 
-
   - id: myservice-srg-validation-workflow
-
 
 
   config:
 
 
-
   name: CasC-sample myService Performance Quality Gate Validation
-
 
 
   parameters:
 
 
-
   event_filter_service:
-
 
 
   value: myService
 
 
-
   type: value
-
 
 
   event_filter_stage:
 
 
-
   value: prod
 
 
-
   type: value
-
 
 
   event_filter_gate:
 
 
-
   value: performance gate
-
 
 
   type: value
 
 
-
   guardianid:
-
 
 
   configId: myservice-guardian
 
 
-
   configType: app:dynatrace.site.reliability.guardian:guardians
-
 
 
   property: id
 
 
-
   type: reference
-
 
 
   project: other-project
 
 
-
   template: myservice-srg-validation-workflow.json
-
 
 
   skip: false
 
 
-
   type:
 
 
-
   automation:
-
 
 
   resource: workflow
@@ -3582,21 +2949,16 @@ This can be used to simplify referencing configurations within the same project.
 parameters:
 
 
-
 mz_id:
-
 
 
 type: reference
 
 
-
 configType: management-zone
 
 
-
 configId: main
-
 
 
 property: id
@@ -3616,25 +2978,19 @@ Below is a complete sample using shorthand references:
   configs:
 
 
-
   - id: main
-
 
 
   type:
 
 
-
   api: management-zone
-
 
 
   config:
 
 
-
   name: "Main zone"
-
 
 
   template: "zone.json"
@@ -3645,25 +3001,19 @@ Below is a complete sample using shorthand references:
   configs:
 
 
-
   - id: development
-
 
 
   type:
 
 
-
   api: management-zone
-
 
 
   config:
 
 
-
   name: "Development zone"
-
 
 
   template: "zone.json"
@@ -3674,65 +3024,49 @@ Below is a complete sample using shorthand references:
   configs:
 
 
-
   - id: a_dashboard
-
 
 
   type:
 
 
-
   api: dashboard
-
 
 
   config:
 
 
-
   name: "Overview dashboard"
 
 
-
   template: "dashboard.json"
-
 
 
   - id: overview
 
 
-
   type:
-
 
 
   api: dashboard
 
 
-
   config:
-
 
 
   name: "Overview dashboard"
 
 
-
   template: "dashboard.json"
-
 
 
   parameters:
 
 
-
   zoneId: ["infrastructure", "management-zone", "main", "id"]
 
 
-
   devZoneId: ["management-zone", "development", "id"] # inferred project 'development'
-
 
 
   otherDashboard: ["a_dashboard", "id"] # inferred project 'development' and type 'dashboard'
@@ -3756,41 +3090,31 @@ An example of using a `compound` parameter:
 parameters:
 
 
-
 example:
-
 
 
 type: compound
 
 
-
 format: "{{ .resource.name }}: {{ .resource.percent }}%"
-
 
 
 references:
 
 
-
 - resource
-
 
 
 progress:
 
 
-
 type: value
-
 
 
 value:
 
 
-
 name: "Health"
-
 
 
 percent: 40
@@ -3807,57 +3131,43 @@ An example of using a compound parameter:
 parameters:
 
 
-
 example:
-
 
 
 type: compound
 
 
-
 format: "{{ .user }}'s dashboard is {{ .status }}"
-
 
 
 references:
 
 
-
 - user
-
 
 
 - status
 
 
-
 user:
-
 
 
 type: environment
 
 
-
 name: USER_NAME
-
 
 
 status:
 
 
-
 type: reference
-
 
 
 configType: dashboarddocument
 
 
-
 configId: my-dashboard
-
 
 
 property: status
@@ -3875,53 +3185,40 @@ An example of using a `list` parameter:
 Configs:
 
 
-
 - id: myservice-slo-availability
-
 
 
 config:
 
 
-
 name: CasC-sample myService availability
-
 
 
 parameters:
 
 
-
 service_id:
-
 
 
 name: SERVICE_ID
 
 
-
 type: environment
-
 
 
 tags: #INPUT: Customize your SLO with tags
 
 
-
 type: list
-
 
 
 values: ["service:myService", "dt.owner:myTeam"]
 
 
-
 template: myservice-slo-availability.json
 
 
-
 skip: false
-
 
 
 type: slo-v2
@@ -3933,61 +3230,46 @@ An example of using a `list` parameter and a JSON template called myservice-slo-
 {
 
 
-
 "criteria": [
-
 
 
 {
 
 
-
 "target": 95,
-
 
 
 "timeframeFrom": "now-7d",
 
 
-
 "timeframeTo": "now"
-
 
 
 }
 
 
-
 ],
-
 
 
 "customSli": {
 
 
-
 "filterSegments": [],
-
 
 
 "indicator": "timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }\n  , by: { dt.entity.service }\n  , filter: { in (dt.entity.service, { \"{{ .service_id }}\" }) }\n| fieldsAdd sli=(((total[]-failures[])/total[])*(100))\n| fieldsAdd entityName(dt.entity.service)\n| fieldsRemove total, failures"
 
 
-
 },
-
 
 
 "description": "Measures the proportion of successful service requests over time.",
 
 
-
 "name": "{{ .name }}",
 
 
-
 "tags": {{ .tags }}
-
 
 
 }
@@ -4010,25 +3292,19 @@ An example of using a `file` parameter:
 parameters:
 
 
-
 comment: "// hello special comment"
-
 
 
 myWf:
 
 
-
 type: file        # parameter type "file"
-
 
 
 path: "myWf.js"   # relative path to the file
 
 
-
 references:       # other parameters names referenced in the content of the file
-
 
 
 - comment
@@ -4044,7 +3320,6 @@ You can include references to other parameters within the content of the referen
 Each reference parameter must be defined as a separate parameter and listed in the references section of the file parameter type.
 
 In the given example, you can reference the additional parameter called `comment` within the content specified by the file parameter using the notation `{{ .comment }}`.
-
 
 
 ### `originObjectId`
@@ -4078,97 +3353,73 @@ In this example, a configuration gets some special configuration applied for two
 configs:
 
 
-
 - id: test-dashboard
-
 
 
 type:
 
 
-
 api: dashboard
-
 
 
 config:
 
 
-
 name: Test Dashboard
-
 
 
 template: dashboard.json
 
 
-
 parameters:
-
 
 
 owner: Test User
 
 
-
 content: "Some Text ..."
-
 
 
 environmentOverrides:
 
 
-
 - environment: dev-env-42
 
 
-
 override:
-
 
 
 name: Special Dev Dashboard
 
 
-
 parameters:
-
 
 
 content: "Some even better Text!"
 
 
-
 - environment: staging-env-21
 
 
-
 override:
-
 
 
 name: Special Staging Dashboard
 
 
-
 parameters:
-
 
 
 content: "Some much better Text!"
 
 
-
 groupOverrides:
-
 
 
 - group: production-environments
 
 
-
 override:
-
 
 
 skip: true
@@ -4190,7 +3441,6 @@ scraped: 2026-03-06T21:29:49.923198
 
 # Monaco API support and access permission handling
 
-# Monaco API support and access permission handling
 
 * Latest Dynatrace
 * Reference
@@ -4318,7 +3568,6 @@ scraped: 2026-03-06T21:35:23.389831
 
 # Monaco concepts
 
-# Monaco concepts
 
 * Latest Dynatrace
 * Explanation
@@ -4376,7 +3625,6 @@ scraped: 2026-03-02T21:28:22.074262
 
 # Manage configurations with Monaco
 
-# Manage configurations with Monaco
 
 * Latest Dynatrace
 * Explanation
@@ -4410,7 +3658,6 @@ To create a new Dynatrace configuration, follow the steps below.
    mkdir -p monaco-getting-started/project-example/slo
 
 
-
    cd monaco-getting-started/project-example/slo
    ```
 2. Create two files.
@@ -4420,17 +3667,13 @@ To create a new Dynatrace configuration, follow the steps below.
    # Linux
 
 
-
    touch slo.json slo.yaml
-
 
 
    # Windows
 
 
-
    New-Item slo.json
-
 
 
    New-Item slo.yaml
@@ -4443,61 +3686,46 @@ To create a new Dynatrace configuration, follow the steps below.
    {
 
 
-
    "name": "{{ .name }}",
-
 
 
    "description": "Measures the proportion of successful service requests over time.",
 
 
-
    "tags": {{ .tags }},
-
 
 
    "criteria": [
 
 
-
    {
-
 
 
    "target": 95,
 
 
-
    "timeframeFrom": "now-7d",
-
 
 
    "timeframeTo": "now"
 
 
-
    }
-
 
 
    ],
 
 
-
    "customSli": {
-
 
 
    "filterSegments": [],
 
 
-
    "indicator": "timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }\n  , by: { dt.entity.service }\n  | fieldsAdd sli=(((total[]-failures[])/total[])*(100))\n | fieldsRemove total, failures"
 
 
-
    }
-
 
 
    }
@@ -4513,45 +3741,34 @@ To create a new Dynatrace configuration, follow the steps below.
    configs:
 
 
-
    - id: my-sample-slo
-
 
 
    config:
 
 
-
    name: mySampleSLO
-
 
 
    parameters:
 
 
-
    tags:
-
 
 
    type: list
 
 
-
    values: ["service:myService",
-
 
 
    "dt.owner:myTeam"]
 
 
-
    template: slo.json
 
 
-
    skip: false
-
 
 
    type: slo-v2
@@ -4565,21 +3782,16 @@ To create a new Dynatrace configuration, follow the steps below.
    # Linux
 
 
-
    cd ../..
-
 
 
    touch manifest.yaml
 
 
-
    # Windows
 
 
-
    cd ../..
-
 
 
    New-Item manifest.yaml
@@ -4592,57 +3804,43 @@ To create a new Dynatrace configuration, follow the steps below.
    manifestVersion: 1.0
 
 
-
    projects:
-
 
 
    - name: my-slo-project
 
 
-
    path: project-example
-
 
 
    environmentGroups:
 
 
-
    - name: development
-
 
 
    environments:
 
 
-
    - name: development-environment
-
 
 
    url:
 
 
-
    type: environment
-
 
 
    value: DT_ENV_URL
 
 
-
    auth:
-
 
 
    platformToken:
 
 
-
    type: environment
-
 
 
    name: PLATFORM_TOKEN
@@ -4654,21 +3852,16 @@ To create a new Dynatrace configuration, follow the steps below.
    # Linux
 
 
-
    export DT_ENV_URL="https://<your-dynatrace-environment>.apps.dynatrace.com"
-
 
 
    export PLATFORM_TOKEN="YourPlatformTokenValue"
 
 
-
    # Windows
 
 
-
    $env:DT_ENV_URL="https://<your-dynatrace-environment>.apps.dynatrace.com"
-
 
 
    $env:PLATFORM_TOKEN="YourTokenValue"
@@ -4685,41 +3878,31 @@ To create a new Dynatrace configuration, follow the steps below.
    time=2025-09-01T09:06:23.506+02:00 level=INFO msg="Monaco version 2.24.0"
 
 
-
    time=2025-09-01T09:06:23.507+02:00 level=INFO msg="Loading manifest \"{your full path to the file}\manifest.yaml\". Restrictions: groups=[], environments=[]" manifestPath="{your full path to the file}\manifest.yaml"
-
 
 
    time=2025-09-01T09:06:23.535+02:00 level=INFO msg="Projects to be deployed (1):"
 
 
-
    time=2025-09-01T09:06:23.536+02:00 level=INFO msg="  - my-slo-project"
-
 
 
    time=2025-09-01T09:06:23.536+02:00 level=INFO msg="Environments to deploy to (1):"
 
 
-
    time=2025-09-01T09:06:23.537+02:00 level=INFO msg="  - development-environment"
-
 
 
    time=2025-09-01T09:06:23.537+02:00 level=INFO msg="Deploying configurations to environment \"development-environment\"..." environment.name=default environment.group=group
 
 
-
    time=2025-09-01T09:06:23.556+02:00 level=INFO msg="Deploying config" deploymentStatus=deploying environment.name=development-environment environment.group=group coordinate.reference=my-slo-project:slo-v2:my-sample-slo coordinate.project=my-slo-project coordinate.type=slo-v2 coordinate.configId=my-sample-slo gid=0
-
 
 
    time=2025-09-01T09:06:23.557+02:00 level=INFO msg="Deployment successful" deploymentStatus=deployed environment.name=development-environment environment.group=group coordinate.reference=my-slo-project:slo-v2:my-sample-slo coordinate.project=my-slo-project coordinate.type=slo-v2 coordinate.configId=my-sample-slo gid=0
 
 
-
    time=2025-09-01T09:06:23.557+02:00 level=INFO msg="Deployment successful for environment 'development-environment'" environment.group=group environment.name=development-environment environment.name=development-environment environment.group=group
-
 
 
    time=2025-09-01T09:06:23.557+02:00 level=INFO msg="Validation finished without errors"
@@ -4744,41 +3927,31 @@ A successful deployment will return output similar to that shown in the code blo
 time=2025-09-01T09:08:23.506+02:00 level=INFO msg="Monaco version 2.24.0"
 
 
-
 time=2025-09-01T09:08:23.507+02:00 level=INFO msg="Loading manifest \"{your full path to the file}\manifest.yaml\". Restrictions: groups=[], environments=[]" manifestPath="{your full path to the file}\manifest.yaml"
-
 
 
 time=2025-09-01T09:08:23.535+02:00 level=INFO msg="Projects to be deployed (1):"
 
 
-
 time=2025-09-01T09:08:23.536+02:00 level=INFO msg="  - my-slo-project"
-
 
 
 time=2025-09-01T09:08:23.536+02:00 level=INFO msg="Environments to deploy to (1):"
 
 
-
 time=2025-09-01T09:08:23.537+02:00 level=INFO msg="  - development-environment"
-
 
 
 time=2025-09-01T09:08:23.537+02:00 level=INFO msg="Deploying configurations to environment \"development-environment\"..." environment.name=default environment.group=group
 
 
-
 time=2025-09-01T09:08:23.556+02:00 level=INFO msg="Deploying config" deploymentStatus=deploying environment.name=development-environment environment.group=group coordinate.reference=my-slo-project:slo-v2:my-sample-slo coordinate.project=my-slo-project coordinate.type=slo-v2 coordinate.configId=my-sample-slo gid=0
-
 
 
 time=2025-09-01T09:08:23.557+02:00 level=INFO msg="Deployment successful" deploymentStatus=deployed environment.name=development-environment environment.group=group coordinate.reference=my-slo-project:slo:my-sample-slo coordinate.project=my-slo-project coordinate.type=slo-v2 coordinate.configId=my-sample-slo gid=0
 
 
-
 time=2025-09-01T09:08:23.557+02:00 level=INFO msg="Deployment successful for environment 'development-environment'" environment.group=group environment.name=development-environment environment.name=development-environment environment.group=group
-
 
 
 time=2025-09-01T09:08:23.557+02:00 level=INFO msg="Deployment finished without errors"
@@ -4796,7 +3969,6 @@ To verify that your Dynatrace config has been created in your Dynatrace environm
 ## Delete a configuration with Monaco
 
 
-
 Now that your configuration is deployed, you can delete it from your local filesystem.
 
 1. To delete the previously created SLO, create a delete file.
@@ -4806,13 +3978,10 @@ Now that your configuration is deployed, you can delete it from your local files
    # Linux
 
 
-
    touch delete.yaml
 
 
-
    # Windows
-
 
 
    New-Item delete.yaml
@@ -4824,13 +3993,10 @@ Now that your configuration is deployed, you can delete it from your local files
    delete:
 
 
-
    - project: my-slo-project
 
 
-
    type: slo-v2
-
 
 
    id: my-sample-slo
@@ -4849,13 +4015,10 @@ Now that your configuration is deployed, you can delete it from your local files
    time=2025-09-01T09:10:23.506+02:00 level=INFO msg="Monaco version 2.24.0"
 
 
-
    time=2025-09-01T09:10:23.751+02:00 level=INFO msg="Loading manifest \"{your full path to the file}\manifest.yaml\". Restrictions: groups=[], environments=[]" manifestPath="{your full path to the file}\manifest.yaml"
 
 
-
    time=2025-09-01T09:11:24.140+02:00 level=INFO msg="Deleting configs for environment \"development-environment\"..." environment.name=development-environment environment.group=group
-
 
 
    time=2025-09-01T09:11:24.140+02:00 level=INFO msg="Deleting 1 config(s) of type \"slo-v2\"..." type=slo-v2 environment.name=development-environment environment.group=group
@@ -4884,7 +4047,6 @@ scraped: 2026-03-06T21:28:51.626440
 
 # Work with Dynatrace Monaco CLI commands for Latest Dynatrace
 
-# Work with Dynatrace Monaco CLI commands for Latest Dynatrace
 
 * Latest Dynatrace
 * Reference
@@ -4930,21 +4092,16 @@ To do this, set the `HTTPS_PROXY` environment variable to the address of your pr
 # Linux or Mac OS
 
 
-
 HTTPS_PROXY=localhost:5000
-
 
 
 monaco deploy example.yaml
 
 
-
 # Windows
 
 
-
 $env:HTTPS_PROXY="localhost:5000"
-
 
 
 monaco deploy example.yaml
@@ -5025,45 +4182,34 @@ Some manual post-processing will be needed.
 # Linux or macOS
 
 
-
 MONACO_FEAT_DOWNLOAD_FILTER=false
-
 
 
 # MONACO_FEAT_DOWNLOAD_FILTER_SETTINGS=false
 
 
-
 # MONACO_FEAT_DOWNLOAD_FILTER_SETTINGS_UNMODIFIABLE=false
-
 
 
 # MONACO_FEAT_DOWNLOAD_FILTER_CLASSIC_CONFIGS=false
 
 
-
 monaco download
-
 
 
 # Windows
 
 
-
 $env:MONACO_FEAT_DOWNLOAD_FILTER="false"
-
 
 
 # $env:MONACO_FEAT_DOWNLOAD_FILTER_SETTINGS="false"
 
 
-
 # $env:MONACO_FEAT_DOWNLOAD_FILTER_SETTINGS_UNMODIFIABLE="false"
 
 
-
 # $env:MONACO_FEAT_DOWNLOAD_FILTER_CLASSIC_CONFIGS="false"
-
 
 
 monaco download
@@ -5082,21 +4228,16 @@ For example, `MONACO_CONCURRENT_REQUESTS=15` enables up to 15 concurrent request
 # Linux or Mac OS
 
 
-
 MONACO_CONCURRENT_REQUESTS=15
-
 
 
 monaco download
 
 
-
 # Windows
 
 
-
 $env:MONACO_CONCURRENT_REQUESTS="15"
-
 
 
 monaco download
@@ -5119,21 +4260,16 @@ To activate the fast resolver, set the environment variable `MONACO_FEAT_FAST_DE
 # Linux or Mac OS
 
 
-
 MONACO_FEAT_FAST_DEPENDENCY_RESOLVER=true
-
 
 
 monaco download
 
 
-
 # Windows
 
 
-
 $env:MONACO_FEAT_FAST_DEPENDENCY_RESOLVER="true"
-
 
 
 monaco download
@@ -5193,45 +4329,34 @@ The `generate deletefile` command can't process configurations that contain refe
 configs:
 
 
-
 - id: appRule
-
 
 
 config:
 
 
-
 name:
-
 
 
 configId: application
 
 
-
 configType: application-web
-
 
 
 property: name
 
 
-
 type: reference
-
 
 
 template: rule.json
 
 
-
 skip: false
 
 
-
 type:
-
 
 
 api: app-detection-rule
@@ -5260,7 +4385,6 @@ monaco account [ARGS] [OPTIONS]
 ### Arguments
 
 ### Options
-
 
 
 The available options depend on the specific argument that is used.
@@ -5297,49 +4421,37 @@ In this example, we delete a user, service user, group, policy, and boundary usi
 delete:
 
 
-
 - type: user
-
 
 
 email: the.user@dynatrace.com
 
 
-
 - type: serviceUser
-
 
 
 name: Monaco service user
 
 
-
 - type: group
-
 
 
 name: My Group
 
 
-
 - type: policy
-
 
 
 name: My Policy
 
 
-
 level:
-
 
 
 type: account
 
 
-
 - type: boundary
-
 
 
 name: My Boundary
@@ -5362,7 +4474,6 @@ scraped: 2026-03-05T21:37:34.807717
 
 # Terraform API support and access permission handling
 
-# Terraform API support and access permission handling
 
 * Latest Dynatrace
 * Reference
@@ -5393,13 +4504,11 @@ Linux
 set DYNATRACE_ENV_URL=https://<YOUR-DT-ENV-ID>.apps.dynatrace.com
 
 
-
 set DYNATRACE_PLATFORM_TOKEN=<YOUR_PLATFORM_TOKEN>
 ```
 
 ```
 export DYNATRACE_ENV_URL=https://<YOUR-DT-ENV-ID>.apps.dynatrace.com
-
 
 
 export DYNATRACE_PLATFORM_TOKEN=<YOUR_PLATFORM_TOKEN>
@@ -5424,9 +4533,7 @@ Linux
 set DYNATRACE_ENV_URL=https://<YOUR-DT-ENV-ID>.apps.dynatrace.com
 
 
-
 set DYNATRACE_CLIENT_ID=<YOUR_CLIENT_ID>
-
 
 
 set DYNATRACE_CLIENT_SECRET=<YOUR_CLIENT_SECRET>
@@ -5436,9 +4543,7 @@ set DYNATRACE_CLIENT_SECRET=<YOUR_CLIENT_SECRET>
 export DYNATRACE_ENV_URL=https://<YOUR-DT-ENV-ID>.apps.dynatrace.com
 
 
-
 export DYNATRACE_CLIENT_ID=<YOUR_CLIENT_ID>
-
 
 
 export DYNATRACE_CLIENT_SECRET=<YOUR_CLIENT_SECRET>
@@ -5459,13 +4564,11 @@ Linux SaaS Classic Dynatrace
 set DYNATRACE_ENV_URL=https://<YOUR-DT-ENV-ID>.apps.dynatrace.com
 
 
-
 set DYNATRACE_API_TOKEN=<YOUR_API_TOKEN>
 ```
 
 ```
 export DYNATRACE_ENV_URL=https://<YOUR-DT-ENV-ID>.apps.dynatrace.com
-
 
 
 export DYNATRACE_API_TOKEN=<YOUR_API_TOKEN>
@@ -5490,7 +4593,6 @@ scraped: 2026-03-06T21:25:48.138678
 
 # Terraform CLI commands
 
-# Terraform CLI commands
 
 * Latest Dynatrace
 * Reference
@@ -5606,7 +4708,6 @@ scraped: 2026-03-06T21:28:19.838321
 
 # Configure automated notifications using Terraform and Configuration as Code
 
-# Configure automated notifications using Terraform and Configuration as Code
 
 * Latest Dynatrace
 * Tutorial
@@ -5653,481 +4754,361 @@ To build a configuration for raising an event and a simple workflow for sending 
    locals {
 
 
-
    event_name = "Authentication Service: High Response Time"
 
 
-
    }
-
 
 
    resource "dynatrace_davis_anomaly_detectors" "Authentication_Service_High_Response_Time" {
 
 
-
    enabled     = true
-
 
 
    source      = "Anomaly Detection"
 
 
-
    title       = "Authentication Service: High Response Time"
-
 
 
    description = "Raises an event if my service response time performance decreases"
 
 
-
    analyzer {
-
 
 
    name = "dt.statistics.ui.anomaly_detection.StaticThresholdAnomalyDetectionAnalyzer"
 
 
-
    input {
 
 
-
    analyzer_input_field {
-
 
 
    key   = "query"
 
 
-
    value =<<-EOT
-
 
 
    timeseries avg(dt.service.request.response_time), by:{dt.entity.service}
 
 
-
    | fieldsAdd name=entityName(dt.entity.service)
-
 
 
    | filter in(name, "AuthenticationService")
 
 
-
    EOT
-
 
 
    }
 
 
-
    analyzer_input_field {
-
 
 
    key   = "threshold"
 
 
-
    value = "3000000"
-
 
 
    }
 
 
-
    analyzer_input_field {
-
 
 
    key   = "alertCondition"
 
 
-
    value = "ABOVE"
-
 
 
    }
 
 
-
    analyzer_input_field {
-
 
 
    key   = "alertOnMissingData"
 
 
-
    value = "false"
-
 
 
    }
 
 
-
    analyzer_input_field {
-
 
 
    key   = "violatingSamples"
 
 
-
    value = "3"
-
 
 
    }
 
 
-
    analyzer_input_field {
-
 
 
    key   = "slidingWindow"
 
 
-
    value = "30"
 
 
-
    }
-
 
 
    analyzer_input_field {
 
 
-
    key   = "dealertingSamples"
-
 
 
    value = "15"
 
 
+   }
+
 
    }
 
 
-
    }
-
-
-
-   }
-
 
 
    event_template {
 
 
-
    properties {
 
 
-
    property {
-
 
 
    key   = "dt.source_entity"
 
 
-
    value = "{dims:dt.entity.service}"
-
 
 
    }
 
 
-
    property {
-
 
 
    key   = "event.type"
 
 
-
    value = "PERFORMANCE_EVENT"
-
 
 
    }
 
 
-
    property {
-
 
 
    key   = "event.description"
 
 
-
    value =<<-EOT
-
 
 
    **Alert description** An anomaly was detected:
 
 
-
    An anomaly was detected on {metricname}. Within the sliding window, {violating_samples} violation samples were detected that were {alert_condition} the threshold of {threshold}.
-
 
 
    EOT
 
 
-
    }
 
 
-
    property {
-
 
 
    key   = "event.name"
 
 
-
    value = local.event_name
 
 
-
    }
-
 
 
    property {
 
 
-
    key   = "dt.owner"
-
 
 
    value = "myTeam"
 
 
+   }
+
 
    }
 
 
-
    }
-
-
-
-   }
-
 
 
    execution_settings {
 
 
-
    }
 
 
-
    }
-
 
 
    resource "dynatrace_automation_workflow" "Authentication_Service_Email_Notification" {
 
 
-
    type          = "SIMPLE"
-
 
 
    private       = false
 
 
-
    title         = "Authentication Service: Email Notification"
-
 
 
    tasks {
 
 
-
    task {
-
 
 
    name        = "send_email"
 
 
-
    description = "Send email"
-
 
 
    action      = "dynatrace.email:send-email"
 
 
-
    input       = jsonencode({
-
 
 
    "bcc": [],
 
 
-
    "cc": [
-
 
 
    "otherteam@mycompany.com"
 
 
-
    ],
-
 
 
    "content": "{{event()[\"event.description\"]}}\nAn alert has been raised, impacting the service: \n\nDetails:\nStatus:             {{event()[\"event.status\"]}}\nId:                 {{event()[\"event.id\"]}}\nTime:               {{event()[\"timestamp\"]}}\nCategory:           {{event()[\"event.category\"]}}\nImpacted service:   {{event()[\"dt.entity.service.name\"]}}\nResponsible team:   {{event()[\"dt.owner\"]}},\n",
 
 
-
    "environmentUrl": "{{ environment().url }}",
-
 
 
    "executionId": "{{ execution().id }}",
 
 
-
    "subject": "Dynatrace Alert",
-
 
 
    "taskId": "{{ task().id }}",
 
 
-
    "to": [
-
 
 
    "myteam@mycompany.com"
 
 
-
    ]
-
 
 
    })
 
 
-
    position {
-
 
 
    x = 0
 
 
-
    y = 1
 
 
+   }
+
 
    }
 
 
-
    }
-
-
-
-   }
-
 
 
    trigger {
 
 
-
    event {
-
 
 
    active = true
 
 
-
    config {
-
 
 
    davis_event {
 
 
-
    entity_tags_match = "all"
-
 
 
    names {
 
 
-
    name {
-
 
 
    name = local.event_name
 
 
-
    match = "equals"
 
 
-
    }
-
-
-
-   }
-
 
 
    }
 
 
+   }
+
 
    }
 
 
-
    }
 
 
-
    }
-
 
 
    }
@@ -6147,561 +5128,421 @@ To build a configuration for raising an event and a simple workflow for sending 
    Terraform used the selected providers to generate the following execution
 
 
-
    plan. Resource actions are indicated with the following symbols:
-
 
 
    + create
 
 
-
    Terraform will perform the following actions:
-
 
 
    # dynatrace_automation_workflow.Authentication_Service_Email_Notification will be created
 
 
-
    + resource "dynatrace_automation_workflow" "Authentication_Service_Email_Notification" {
-
 
 
    + id      = (known after apply)
 
 
-
    + private = false
-
 
 
    + title   = "Authentication Service: Email Notification"
 
 
-
    + type    = "SIMPLE"
-
 
 
    + tasks {
 
 
-
    + task {
-
 
 
    + action      = "dynatrace.email:send-email"
 
 
-
    + active      = true
-
 
 
    + description = "Send email"
 
 
-
    + input       = jsonencode(
-
 
 
    {
 
 
-
    + bcc            = []
-
 
 
    + cc             = [
 
 
-
    + "otherteam@mycompany.com",
 
 
-
    ]
-
 
 
    + content        = <<-EOT
 
 
-
    {{event()["event.description"]}}
-
 
 
    An alert has been raised, impacting the service:
 
 
-
    Details:
-
 
 
    Status:             {{event()["event.status"]}}
 
 
-
    Id:                 {{event()["event.id"]}}
-
 
 
    Time:               {{event()["timestamp"]}}
 
 
-
    Category:           {{event()["event.category"]}}
-
 
 
    Impacted service:   {{event()["dt.entity.service.name"]}}
 
 
-
    Responsible team:   {{event()["dt.owner"]}},
 
 
-
    EOT
-
 
 
    + environmentUrl = "{{ environment().url }}"
 
 
-
    + executionId    = "{{ execution().id }}"
-
 
 
    + subject        = "Dynatrace Alert"
 
 
-
    + taskId         = "{{ task().id }}"
-
 
 
    + to             = [
 
 
-
    + "myteam@mycompany.com",
-
 
 
    ]
 
 
-
    }
-
 
 
    )
 
 
-
    + name        = "send_email"
-
 
 
    # (4 unchanged attributes hidden)
 
 
-
    + position {
-
 
 
    + x = 0
 
 
-
    + y = 1
 
 
+   }
+
 
    }
 
 
-
    }
-
-
-
-   }
-
 
 
    + trigger {
 
 
-
    + event {
-
 
 
    + active = true
 
 
-
    + config {
-
 
 
    + davis_event {
 
 
-
    + entity_tags_match = "all"
-
 
 
    + on_problem_close  = false
 
 
-
    + names {
-
 
 
    + name {
 
 
-
    + match = "equals"
-
 
 
    + name  = "Authentication Service: High Response Time"
 
 
-
    }
-
-
-
-   }
-
 
 
    }
 
 
-
    }
-
-
-
-   }
-
 
 
    }
 
 
+   }
+
 
    }
 
+
+   }
 
 
    # dynatrace_davis_anomaly_detectors.Authentication_Service_High_Response_Time will be created
 
 
-
    + resource "dynatrace_davis_anomaly_detectors" "Authentication_Service_High_Response_Time" {
-
 
 
    + description = "Raises an event if my service response time performance decreases"
 
 
-
    + enabled     = true
-
 
 
    + id          = (known after apply)
 
 
-
    + source      = "Anomaly Detection"
-
 
 
    + title       = "Authentication Service: High Response Time"
 
 
-
    + analyzer {
-
 
 
    + name = "dt.statistics.ui.anomaly_detection.StaticThresholdAnomalyDetectionAnalyzer"
 
 
-
    + input {
 
 
-
    + analyzer_input_field {
-
 
 
    + key   = "alertCondition"
 
 
-
    + value = "ABOVE"
-
 
 
    }
 
 
-
    + analyzer_input_field {
-
 
 
    + key   = "alertOnMissingData"
 
 
-
    + value = "false"
-
 
 
    }
 
 
-
    + analyzer_input_field {
-
 
 
    + key   = "dealertingSamples"
 
 
-
    + value = "15"
-
 
 
    }
 
 
-
    + analyzer_input_field {
-
 
 
    + key   = "query"
 
 
-
    + value = <<-EOT
-
 
 
    timeseries avg(dt.service.request.response_time), by:{dt.entity.service}
 
 
-
    | fieldsAdd name=entityName(dt.entity.service)
-
 
 
    | filter in(name, "AuthenticationService")
 
 
-
    EOT
-
 
 
    }
 
 
-
    + analyzer_input_field {
-
 
 
    + key   = "slidingWindow"
 
 
-
    + value = "30"
-
 
 
    }
 
 
-
    + analyzer_input_field {
-
 
 
    + key   = "threshold"
 
 
-
    + value = "3000000"
 
 
-
    }
-
 
 
    + analyzer_input_field {
 
 
-
    + key   = "violatingSamples"
-
 
 
    + value = "3"
 
 
+   }
+
 
    }
 
 
-
    }
-
-
-
-   }
-
 
 
    + event_template {
 
 
-
    + properties {
 
 
-
    + property {
-
 
 
    + key   = "dt.source_entity"
 
 
-
    + value = "{dims:dt.entity.service}"
-
 
 
    }
 
 
-
    + property {
-
 
 
    + key   = "event.type"
 
 
-
    + value = "PERFORMANCE_EVENT"
-
 
 
    }
 
 
-
    + property {
-
 
 
    + key   = "event.description"
 
 
-
    + value = <<-EOT
-
 
 
    **Alert description** An anomaly was detected:
 
 
-
    An anomaly was detected on {metricname}. Within the sliding window, {violating_samples} violation samples were detected that were {alert_condition} the threshold of {threshold}.
-
 
 
    EOT
 
 
-
    }
 
 
-
    + property {
-
 
 
    + key   = "event.name"
 
 
-
    + value = "Authentication Service: High Response Time"
 
 
-
    }
-
 
 
    + property {
 
 
-
    + key   = "dt.owner"
-
 
 
    + value = "myTeam"
 
 
+   }
+
 
    }
 
 
-
    }
-
-
-
-   }
-
 
 
    + execution_settings {}
 
 
-
    }
-
 
 
    Plan: 2 to add, 0 to change, 0 to destroy.
@@ -6714,17 +5555,13 @@ To build a configuration for raising an event and a simple workflow for sending 
    dynatrace_automation_workflow.Authentication_Service_Email_Notification: Creating...
 
 
-
    dynatrace_davis_anomaly_detectors.Authentication_Service_High_Response_Time: Creating...
-
 
 
    dynatrace_davis_anomaly_detectors.Authentication_Service_High_Response_Time: Creation complete after 2s [id=************]
 
 
-
    dynatrace_automation_workflow.Authentication_Service_Email_Notification: Creation complete after 5s [id=************]
-
 
 
    Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
@@ -6732,7 +5569,6 @@ To build a configuration for raising an event and a simple workflow for sending 
 
    A Terraform `terraform.tfstate` state file is automatically generated. It keeps track of the resources that Terraform manages.
    It's crucial for subsequent Terraform operations.
-
 
 
 ### Modify Terraform configuration
@@ -6747,13 +5583,10 @@ To modify the Terraform configuration
    dynatrace_automation_workflow.Authentication_Service_Email_Notification: Refreshing state... [id=************]
 
 
-
    dynatrace_davis_anomaly_detectors.Authentication_Service_High_Response_Time: Refreshing state... [id=************]
 
 
-
    No changes. Your infrastructure matches the configuration.
-
 
 
    Terraform has compared your real infrastructure against your configuration and found no differences, so no changes are needed.
@@ -6767,9 +5600,7 @@ To modify the Terraform configuration
    dynatrace_automation_workflow.Authentication_Service_Email_Notification: Modifying... [id=************]
 
 
-
    dynatrace_automation_workflow.Authentication_Service_Email_Notification: Modifications complete after 3s [id=************]
-
 
 
    Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
@@ -6785,13 +5616,10 @@ To modify the Terraform configuration
    dynatrace_automation_workflow.Authentication_Service_Email_Notification: Refreshing state... [id=************]
 
 
-
    dynatrace_davis_anomaly_detectors.Authentication_Service_High_Response_Time: Refreshing state... [id=************]
 
 
-
    No changes. Your infrastructure matches the configuration.
-
 
 
    Terraform has compared your real infrastructure against your configuration and found no differences, so no changes are needed.
@@ -6804,17 +5632,13 @@ To modify the Terraform configuration
    dynatrace_davis_anomaly_detectors.Authentication_Service_High_Response_Time: Destroying... [id= ************]
 
 
-
    dynatrace_automation_workflow.Authentication_Service_Email_Notification: Destroying... [id= ************]
-
 
 
    dynatrace_davis_anomaly_detectors.Authentication_Service_High_Response_Time: Destruction complete after 0s
 
 
-
    dynatrace_automation_workflow.Authentication_Service_Email_Notification: Destruction complete after 1s
-
 
 
    Destroy complete! Resources: 2 destroyed.
@@ -6834,7 +5658,6 @@ scraped: 2026-03-05T21:40:31.962704
 
 # Terraform tutorials overview
 
-# Terraform tutorials overview
 
 * Latest Dynatrace
 * Explanation
@@ -6857,7 +5680,6 @@ scraped: 2026-03-05T21:37:41.264166
 
 # Configuration as Code overview
 
-# Configuration as Code overview
 
 * Latest Dynatrace
 * Overview

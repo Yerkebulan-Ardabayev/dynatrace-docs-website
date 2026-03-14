@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Preview and Early Adopter releases for Dynatrace API
 
-# Preview and Early Adopter releases for Dynatrace API
 
 * Reference
 * Published Feb 07, 2020

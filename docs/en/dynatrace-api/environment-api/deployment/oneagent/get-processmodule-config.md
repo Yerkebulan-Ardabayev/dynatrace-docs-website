@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:44.834218
 
 # Deployment API - View process module configuration for OneAgent
 
-# Deployment API - View process module configuration for OneAgent
 
 * Reference
 * Published Mar 25, 2022
@@ -95,93 +94,71 @@ A list of constraint violations
 {
 
 
-
 "properties": [
 
 
-
 {
-
 
 
 "key": "dockerInjection",
 
 
-
 "section": "general",
-
 
 
 "value": "on"
 
 
-
 }
 
 
-
 ],
-
 
 
 "revision": 64459404400310540
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }

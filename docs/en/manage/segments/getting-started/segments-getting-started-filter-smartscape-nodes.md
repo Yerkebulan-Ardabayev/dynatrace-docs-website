@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:58.481368
 
 # Filter Smartscape nodes with segments
 
-# Filter Smartscape nodes with segments
 
 * Latest Dynatrace
 * Tutorial

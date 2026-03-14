@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:40.075406
 
 # OneAgent requirements
 
-# OneAgent requirements
 
 * Latest Dynatrace
 * 3-min read

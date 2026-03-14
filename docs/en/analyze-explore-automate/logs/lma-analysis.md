@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:14.965677
 
 # Log content analysis
 
-# Log content analysis
 
 * Latest Dynatrace
 * Overview

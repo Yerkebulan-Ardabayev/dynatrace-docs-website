@@ -14,7 +14,6 @@ scraped: 2026-03-03T21:29:11.693989
 
 # Generative AI quick analysis examples
 
-# Generative AI quick analysis examples
 
 * Latest Dynatrace
 * Reference
@@ -59,7 +58,6 @@ scraped: 2026-03-06T21:33:02.783409
 
 # Optimize DQL cost with Workflows
 
-# Optimize DQL cost with Workflows
 
 * Latest Dynatrace
 * Tutorial
@@ -129,17 +127,13 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
    fetch dt.system.query_executions, from:now() - 24h
 
 
-
    | filter status == "SUCCEEDED"
-
 
 
    | summarize executionCount = count(), sum = sum(scanned_bytes.on_demand), user = collectDistinct(user.email), app = collectDistinct(client.application_context), by: {query_string}
 
 
-
    | sort sum desc
-
 
 
    | limit 20
@@ -157,25 +151,19 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
   I've supplied you with result of a DQL Grail query. This result has information about top 20 expensive executed by users in last 24 hours.
 
 
-
   Create a json array with the following info:
-
 
 
   - query: that is the original query that is given in the result
 
 
-
   - email: email of the user who executed the query
-
 
 
   - improvement: tell me the reasons why query is expensive and how can user improve it
 
 
-
   - context: any relevant context where the query is executed and so on
-
 
 
   Make sure that there is no other text beside the json array and no backticks or anything
@@ -201,53 +189,40 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
   Hi {{_.list.email}},
 
 
-
   You've executed an expensive query that could be optimized to reduce costs. Below are the details to help you improve it:
 
 
-
   ---
-
 
 
   ### Query Details:
 
 
-
   - **Original Query**:
-
 
 
   `{{_.list.query}}`
 
 
-
   - **Suggested Improvements**:
-
 
 
   {{_.list.improvement}}
 
 
-
   - **Context**:
-
 
 
   {{_.list.context}}
 
 
-
   ---
-
 
 
   Taking these steps can help improve performance and reduce expenses.
 
 
-
   Thanks,
-
 
 
   Your Admin
@@ -281,7 +256,6 @@ scraped: 2026-03-03T21:26:45.029733
 
 # Summarize open problems with Workflows
 
-# Summarize open problems with Workflows
 
 * Latest Dynatrace
 * Tutorial
@@ -352,37 +326,28 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
    import { execution } from '@dynatrace-sdk/automation-utils';
 
 
-
    export default async function () {
-
 
 
    const ex = await execution();
 
 
-
    let rawEvent = ex.params.event;
-
 
 
    let problemDescription = rawEvent["event.description"];
 
 
-
    return {
-
 
 
    description : rawEvent["event.description"],
 
 
-
    problem_id : rawEvent["display_id"]
 
 
-
    };
-
 
 
    }
@@ -409,13 +374,10 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
      Use the following information about the Davis Problem with Id {{result("extract_problem_details")["problem_id"]}}:
 
 
-
      """
 
 
-
      {{result("extract_problem_details")["description"]}}
-
 
 
      """
@@ -446,9 +408,7 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
      A Davis Problem with ID {{ result("extract_problem_details")["problem_id"] }} has been opened.
 
 
-
      Dynatrace Intelligence generative AI has analyzed it and provided the following information:
-
 
 
      {{ result("analyze_problem_with_davis_copilot")["text"] }}
@@ -487,7 +447,6 @@ scraped: 2026-03-05T21:40:14.975184
 
 # Create log alerts for a log event or summary of log data
 
-# Create log alerts for a log event or summary of log data
 
 * Latest Dynatrace
 * Tutorial
@@ -526,25 +485,19 @@ To save time and effort, you can set a log alert instead of an anomaly detection
 fetch logs
 
 
-
 | filter matchesValue(process.technology, "nginx")
-
 
 
 | filter matchesValue(loglevel, "ERROR")
 
 
-
 | filter matchesPhrase(content, "Connection refused")
-
 
 
 | fields timestamp,content, process.technology
 
 
-
 | parse content, "LD '[error] ' INT:error_number '#' INT LD 'Connection refused' LD 'client:' SPACE? IPADDR:client_ip LD 'request:' SPACE? DQS:http_request"
-
 
 
 | sort timestamp desc
@@ -585,13 +538,10 @@ To create a log alert on a summary of log data
    fetch logs
 
 
-
    | filter dt.system.bucket == "{your bucket name}"
 
 
-
    | filter matchesPhrase(content, "Connection refused")
-
 
 
    | makeTimeseries count(), interval:1m
@@ -639,7 +589,6 @@ scraped: 2026-03-06T21:20:33.076571
 
 # Dynatrace Intelligence DQL examples
 
-# Dynatrace Intelligence DQL examples
 
 * Latest Dynatrace
 * Reference
@@ -684,7 +633,6 @@ Davis events represent raw events that originate from various custom alerts with
 fetch dt.davis.problems, from:now()-24h, to:now()
 
 
-
 | summarize {problemCount = countDistinct(event.id)}
 ```
 
@@ -700,9 +648,7 @@ fetch dt.davis.problems, from:now()-24h, to:now()
 fetch dt.davis.problems
 
 
-
 | filter event.status == "ACTIVE"
-
 
 
 | summarize {activeProblems = countDistinct(event.id)}
@@ -719,7 +665,6 @@ fetch dt.davis.problems
 
 ```
 fetch dt.davis.problems, from:now()-7d
-
 
 
 | makeTimeseries count(default:0)
@@ -739,17 +684,13 @@ fetch dt.davis.problems, from:now()-7d
 fetch dt.davis.problems
 
 
-
 | expand affected_entity_ids
-
 
 
 | summarize count = countDistinct(display_id), by:{affected_entity_ids}
 
 
-
 | sort count, direction:"descending"
-
 
 
 | limit 3
@@ -771,13 +712,10 @@ This example joins entity attributes in order to filter all problems with a give
 fetch dt.davis.problems
 
 
-
 | expand affected_entity_ids
 
 
-
 | fieldsAdd host.name = entityName(affected_entity_ids, type: "dt.entity.host")
-
 
 
 | filter host.name == "myhost"
@@ -795,7 +733,6 @@ This example shows you how to filter problems by a unique ID.
 
 ```
 fetch dt.davis.problems
-
 
 
 | filter display_id == "P-24051200"
@@ -817,7 +754,6 @@ Since the duplicate flag appears during the lifecycle of a problem, the update e
 fetch dt.davis.problems
 
 
-
 | filter event.status == "ACTIVE" and not dt.davis.is_duplicate == "true"
 ```
 
@@ -837,13 +773,10 @@ This example shows you how to calculate the mean time that was needed to resolve
 fetch dt.davis.problems, from:now()-7d
 
 
-
 | filter event.status == "CLOSED"
 
 
-
 | filter dt.davis.is_frequent_event == false and dt.davis.is_duplicate == false and maintenance.is_under_maintenance == false
-
 
 
 | makeTimeseries `AVG Problem duration in hours` = avg(toLong(resolved_problem_duration)/3600000000000.0), time:event.end
@@ -861,7 +794,6 @@ This example shows how to create a chart displaying the number of concurrently o
 fetch dt.davis.problems
 
 
-
 | makeTimeseries count = count(), spread: timeframe(from: event.start, to: coalesce(event.end, now()))
 ```
 
@@ -874,13 +806,10 @@ fetch dt.davis.problems
 fetch dt.davis.events, from:now()-7d, to:now()
 
 
-
 | filter event.kind == "DAVIS_EVENT"
 
 
-
 | filter event.type == "OSI_HIGH_CPU" or event.type == "OSI_HIGH_MEMORY"
-
 
 
 | makeTimeseries count =  count(default: 0)
@@ -900,7 +829,6 @@ scraped: 2026-03-03T21:23:38.569179
 
 # AI in Workflows - Predictive maintenance of cloud disks
 
-# AI in Workflows - Predictive maintenance of cloud disks
 
 * Latest Dynatrace
 * Tutorial
@@ -954,33 +882,25 @@ A successful Dynatrace Intelligence analysis requires proper access rights.
    davis:analyzers:read
 
 
-
    davis:analyzers:execute
-
 
 
    storage:bizevents:read
 
 
-
    storage:buckets:read
-
 
 
    storage:events:read
 
 
-
    storage:logs:read
-
 
 
    storage:metrics:read
 
 
-
    storage:spans:read
-
 
 
    storage:system:read
@@ -1035,140 +955,106 @@ The next workflow action tests each prediction to determine whether the disk wil
    import { execution } from '@dynatrace-sdk/automation-utils';
 
 
-
    const THRESHOLD = 15;
-
 
 
    const TASK_ID = 'predict_disk_capacity';
 
 
-
    export default async function () {
-
 
 
    const exe = await execution();
 
 
-
    const predResult = await exe.result(TASK_ID);
-
 
 
    const result = predResult['result'];
 
 
-
    const predictionSummary = { violation: false, violations: new Array<Record<string, string>>() };
-
 
 
    console.log("Total number of predicted lines: " + result.output.length);
 
 
-
    // Check if prediction was successful.
-
 
 
    if (result && result.executionStatus == 'COMPLETED') {
 
 
-
    console.log('Prediction was successful.')
-
 
 
    // Check each predicted result, if it violates the threshold.
 
 
-
    for (let i = 0; i < result.output.length; i++) {
-
 
 
    const prediction = result.output[i];
 
 
-
    // Check if the prediction result is considered valid
-
 
 
    if (prediction.analysisStatus == 'OK' && prediction.forecastQualityAssessment == 'VALID') {
 
 
-
    const lowerPredictions = prediction.timeSeriesDataWithPredictions.records[0]['dt.davis.forecast:lower'];
-
 
 
    const lastValue = lowerPredictions[lowerPredictions.length-1];
 
 
-
    // check against the threshold
-
 
 
    if (lastValue < THRESHOLD) {
 
 
-
    predictionSummary.violation = true;
-
 
 
    // we need to remember all metric properties in the result,
 
 
-
    // to inform the next actions which disk ran out of space
-
 
 
    predictionSummary.violations.push(prediction.timeSeriesDataWithPredictions.records[0]);
 
 
+   }
+
 
    }
 
 
-
    }
-
-
-
-   }
-
 
 
    console.log(predictionSummary.violations.length == 0 ? 'No violations found :)' : '' + predictionSummary.violations.length + ' capacity shortages were found!')
 
 
-
    return predictionSummary;
-
 
 
    } else {
 
 
-
    console.log('Prediction run failed!');
 
 
-
    }
-
 
 
    }
    ```
 
 ### Step 6 Remediate before it happens
-
 
 
 You have a variety of remediation actions to follow up on predicted capacity shortages. In our example, the workflow raises a Davis problem and sends a Slack message for each potential shortage. Both are conditional actions that only trigger if the forecast predicts any disk space shortages.
@@ -1200,77 +1086,58 @@ To raise a Davis problem
    import { eventsClient, EventIngestEventType } from "@dynatrace-sdk/client-classic-environment-v2";
 
 
-
    import { execution } from '@dynatrace-sdk/automation-utils';
-
 
 
    export default async function () {
 
 
-
    const exe = await execution();
-
 
 
    const checkResult = await exe.result('check_prediction');
 
 
-
    const violations = await checkResult.violations;
-
 
 
    // Raise an event for each violation
 
 
-
    violations.forEach(function (violation) {
-
 
 
    eventsClient.createEvent({
 
 
-
    body : {
-
 
 
    eventType: EventIngestEventType.ResourceContentionEvent,
 
 
-
    title: 'Predicted Disk Capacity Alarm',
-
 
 
    entitySelector: 'type(DISK),entityId("' + violation['dt.entity.disk'] + '")',
 
 
-
    properties: {
-
 
 
    'dt.entity.host' : violation['dt.entity.host']
 
 
-
    }
 
 
-
    }
-
 
 
    });
 
 
-
    });
-
 
 
    };

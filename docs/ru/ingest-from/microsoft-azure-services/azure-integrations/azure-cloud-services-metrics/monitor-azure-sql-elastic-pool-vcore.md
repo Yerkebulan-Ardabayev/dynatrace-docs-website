@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:30:20.627289
 
 # Мониторинг Azure SQL elastic pool (vCore)
 
-# Мониторинг Azure SQL elastic pool (vCore)
 
 * Latest Dynatrace
 * How-to guide

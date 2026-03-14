@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:33.831582
 
 # Create and manage teams for entity ownership
 
-# Create and manage teams for entity ownership
 
 * Classic
 * How-to guide

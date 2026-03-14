@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Settings API
 
-# Settings API
 
 * Reference
 * Published Feb 24, 2021

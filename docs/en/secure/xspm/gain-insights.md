@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:24.011274
 
 # Gain insights
 
-# Gain insights
 
 * Latest Dynatrace
 * How-to guide

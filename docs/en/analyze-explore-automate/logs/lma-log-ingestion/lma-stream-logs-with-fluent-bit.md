@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:44.146131
 
 # Stream logs to Dynatrace with Fluent Bit
 
-# Stream logs to Dynatrace with Fluent Bit
 
 * Latest Dynatrace
 * Tutorial
@@ -34,53 +33,40 @@ The Fluent Bit `http output` plugin allows you to stream your logs to the Dynatr
 [OUTPUT]
 
 
-
 name  http
-
 
 
 match *
 
 
-
 header Content-Type application/json; charset=utf-8
-
 
 
 header Authorization Api-Token {your-API-token-here}
 
 
-
 allow_duplicated_headers false
-
 
 
 host  {your-environment-id}.live.dynatrace.com
 
 
-
 Port  443
-
 
 
 URI   /api/v2/logs/ingest
 
 
-
 Format json
-
 
 
 json_date_format iso8601
 
 
-
 json_date_key timestamp
 
 
-
 tls On
-
 
 
 tls.verify On
@@ -119,37 +105,28 @@ The settings for the log driver should point to the log ingest API of your SaaS 
 Name: http
 
 
-
 TLS: on
-
 
 
 Format: json
 
 
-
 Header: Authorization Api-Token {your-API-token-here}
-
 
 
 Host: {your-environment-id}.live.dynatrace.com
 
 
-
 Port: 443
-
 
 
 URI: /api/v2/logs/ingest?Content-Type=application/json
 
 
-
 Allow_Duplicated_Headers": "false"
 
 
-
 Json_Date_Format": "iso8601"
-
 
 
 Json_Date_Key": "timestamp"

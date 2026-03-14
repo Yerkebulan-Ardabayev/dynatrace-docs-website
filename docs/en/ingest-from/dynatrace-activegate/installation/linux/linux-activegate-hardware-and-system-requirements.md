@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:17.698735
 
 # Hardware and system requirements for routing/monitoring ActiveGates on Linux
 
-# Hardware and system requirements for routing/monitoring ActiveGates on Linux
 
 * Latest Dynatrace
 * 4-min read
@@ -123,17 +122,13 @@ For ActiveGates with the zRemote module, see [Install the zRemote module: System
   INSTALL=
 
 
-
   CONFIG=
-
 
 
   LOG=
 
 
-
   TEMP=
-
 
 
   PACKAGES_DIR=

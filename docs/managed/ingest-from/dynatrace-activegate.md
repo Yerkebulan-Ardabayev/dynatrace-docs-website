@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace ActiveGate
 
-# Dynatrace ActiveGate
 
 * 3-min read
 * Published Jul 23, 2018

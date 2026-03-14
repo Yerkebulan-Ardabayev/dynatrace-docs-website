@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Solaris
 
-# Solaris
 
 * Latest Dynatrace
 * 1-min read

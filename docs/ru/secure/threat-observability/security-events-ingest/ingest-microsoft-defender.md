@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:00.859946
 
 # Приём событий безопасности Microsoft Defender for Cloud
 
-# Приём событий безопасности Microsoft Defender for Cloud
 
 * Последняя версия Dynatrace
 * Практическое руководство

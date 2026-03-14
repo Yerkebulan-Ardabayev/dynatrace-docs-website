@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:39.366787
 
 # Salesforce Insights
 
-# Salesforce Insights
 
 * Latest Dynatrace
 * Extension
@@ -230,7 +229,6 @@ It can be queried using DQL:
 fetch bizevents
 
 
-
 | filter event.type == "salesforce.ApiEventStream"
 ```
 
@@ -247,9 +245,7 @@ So we can create visualizations using all of these properties.
 fetch bizevents
 
 
-
 | filter event.type == "salesforce.ApiEventStream"
-
 
 
 | summarize count(), by: {SourceIp}
@@ -265,9 +261,7 @@ You can get a list of all event types with DQL:
 fetch bizevents
 
 
-
 | filter event.provider == "https://dynatrace--staging.sandbox.my.salesforce.com"
-
 
 
 | summarize count(), by: {event.type}
@@ -283,13 +277,10 @@ Visualization of a query result
 fetch bizevents
 
 
-
 | filter event.type == "salesforce.LoginEventStream"
 
 
-
 | makeTimeseries logins=count(), by:{Username}, interval: 5m
-
 
 
 | sort logins desc
@@ -361,7 +352,6 @@ The events are sent as Log Events to Dynatrace, and can be queries using DQL:
 fetch logs
 
 
-
 | filter query.type == "EventLogFile"
 ```
 
@@ -380,9 +370,7 @@ Get details about `ApexExecution` events:
 fetch logs
 
 
-
 | filter EVENT_TYPE == "ApexExecution"
-
 
 
 | fields TIMESTAMP_DERIVED, ENTRY_POINT, EXEC_TIME, CPU_TIME, DB_TOTAL_TIME, NUMBER_SOQL_QUERIES
@@ -425,7 +413,6 @@ Let's consider this query configuration:
 Query Name: Logins
 
 
-
 Query: SELECT UserId, COUNT(Id) from LoginHistory WHERE LoginTime > {last_execution_timestamp} GROUP BY UserId
 ```
 
@@ -435,7 +422,6 @@ The results can be obtained with the DQL:
 
 ```
 fetch logs
-
 
 
 | filter query.name == "Logins"
@@ -451,9 +437,7 @@ And a chart could be created with:
 fetch logs
 
 
-
 | filter query.name == "Logins"
-
 
 
 | makeTimeseries sum(toDouble(expr0)), by: {UserId}, interval: 5m
@@ -469,9 +453,7 @@ You can also fetch all the queries and their text configured for this Salesforce
 fetch logs
 
 
-
 | filter event.provider == "https://dynatrace--staging.sandbox.my.salesforce.com"
-
 
 
 | summarize count(), by: {query.name}
@@ -517,7 +499,6 @@ Platform Events are sent as Business Events to Dynatrace and can be queried usin
 fetch bizevents
 
 
-
 | filter event.type == "salesforce.YourCustomEvent__e"
 ```
 
@@ -527,9 +508,7 @@ Example: Query all Platform Events from a Salesforce instance
 fetch bizevents
 
 
-
 | filter event.provider == "https://yourinstance.my.salesforce.com"
-
 
 
 | summarize count(), by: {event.type}

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Create a new environment
 
-# Create a new environment
 
 * Published Mar 09, 2021
 
@@ -280,33 +279,25 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "name": "example environment",
-
 
 
 "state": "ENABLED",
 
 
-
 "tags": [
-
 
 
 "tag1",
 
 
-
 "tag2"
-
 
 
 ],
 
 
-
 "trial": false
-
 
 
 }
@@ -340,21 +331,16 @@ The short representation of an environment.
 {
 
 
-
 "description": "string",
-
 
 
 "id": "string",
 
 
-
 "name": "string",
 
 
-
 "tokenManagementToken": "string"
-
 
 
 }
@@ -368,7 +354,6 @@ Creates an environment called `MyNewTeam` specifying details on license quota, s
 
 ```
 curl -X POST "https://myManaged.cluster.com/api/cluster/v2/environments?createToken=true" -H "accept: application/json; charset=utf-8" -H "Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890" -H "Content-Type: application/json; charset=utf-8" -d
-
 
 
 "{\"name\":\"MyNewTeam\",\"state\":\"ENABLED\",\"tags\":[\"owner:john.wicked@dynatrace.com\",\"department:finance\"],\"trial\":false}, \"quotas\":{\"hostUnits\":{\"maxLimit\":1},\"demUnits\":{\"monthlyLimit\":1,\"annualLimit\":1},\"userSessions\":{\"totalMonthlyLimit\":1,\"totalAnnualLimit\":2},\"syntheticMonitors\":{\"monthlyLimit\":1,\"annualLimit\":1},\"davisDataUnits\":{\"monthlyLimit\":1,\"annualLimit\":2}},\"storage\":{\"transactionStorage\":{\"maxLimit\":1024},\"sessionReplayStorage\":{\"maxLimit\":2048},\"symbolFilesFromMobileApps\":{\"maxLimit\":5050},\"serviceRequestLevelRetention\":{\"maxLimitInDays\":35},\"serviceCodeLevelRetention\":{\"maxLimitInDays\":10},\"realUserMonitoringRetention\":{\"maxLimitInDays\":35},\"syntheticMonitoringRetention\":{\"maxLimitInDays\":35},\"sessionReplayRetention\":{\"maxLimitInDays\":35},\"userActionsPerMinute\":{\"maxLimit\":3500},\"transactionTrafficQuota\":{\"maxLimit\":1000}}}"
@@ -386,245 +371,184 @@ https://myManaged.cluster.com/api/cluster/v2/environments?createToken=true
 {
 
 
-
 "name": "MyNewTeam",
-
 
 
 "state": "ENABLED",
 
 
-
 "tags": [
-
 
 
 "owner:john.wicked@dynatrace.com",
 
 
-
 "department:finance"
-
 
 
 ],
 
 
-
 "trial": false,
-
 
 
 "quotas": {
 
 
-
 "hostUnits": {
-
 
 
 "maxLimit": 1
 
 
-
 },
-
 
 
 "demUnits": {
 
 
-
 "monthlyLimit": 1,
-
 
 
 "annualLimit": 1
 
 
-
 },
-
 
 
 "userSessions": {
 
 
-
 "totalMonthlyLimit": 1,
-
 
 
 "totalAnnualLimit": 2
 
 
-
 },
-
 
 
 "syntheticMonitors": {
 
 
-
 "monthlyLimit": 1,
-
 
 
 "annualLimit": 1
 
 
-
 },
-
 
 
 "davisDataUnits": {
 
 
-
 "monthlyLimit": 1,
-
 
 
 "annualLimit": 2
 
 
-
 }
 
 
-
 },
-
 
 
 "storage": {
 
 
-
 "transactionStorage": {
-
 
 
 "maxLimit": 1024
 
 
-
 },
-
 
 
 "sessionReplayStorage": {
 
 
-
 "maxLimit": 2048
 
 
-
 },
-
 
 
 "symbolFilesFromMobileApps": {
 
 
-
 "maxLimit": 5050
 
 
-
 },
-
 
 
 "serviceRequestLevelRetention": {
 
 
-
 "maxLimitInDays": 35
 
 
-
 },
-
 
 
 "serviceCodeLevelRetention": {
 
 
-
 "maxLimitInDays": 10
 
 
-
 },
-
 
 
 "realUserMonitoringRetention": {
 
 
-
 "maxLimitInDays": 35
 
 
-
 },
-
 
 
 "syntheticMonitoringRetention": {
 
 
-
 "maxLimitInDays": 35
 
 
-
 },
-
 
 
 "sessionReplayRetention": {
 
 
-
 "maxLimitInDays": 35
 
 
-
 },
-
 
 
 "userActionsPerMinute": {
 
 
-
 "maxLimit": 3500
-
 
 
 },
 
 
-
 "transactionTrafficQuota": {
-
 
 
 "maxLimit": 1000
 
 
-
 }
 
 
-
 }
-
 
 
 }
@@ -638,21 +562,16 @@ Success. The environment has been created and started. The response body contain
 {
 
 
-
 "id": "11a113a1-a11b-1234-123a-4df674c8eb8e",
-
 
 
 "name": "MyNewTeam",
 
 
-
 "tokenManagementToken":
 
 
-
 "<DYNATRACE_TOKEN_PLACEHOLDER>.<token-value>"
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:32:31.882413
 
 # Azure ExpressRoute Circuit monitoring
 
-# Azure ExpressRoute Circuit monitoring
 
 * Latest Dynatrace
 * How-to guide

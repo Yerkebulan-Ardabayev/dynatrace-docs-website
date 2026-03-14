@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace Intelligence integrations
 
-# Dynatrace Intelligence integrations
 
 * Latest Dynatrace
 * Overview

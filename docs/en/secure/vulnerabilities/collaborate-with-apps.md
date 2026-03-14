@@ -6,7 +6,6 @@ scraped: 2026-03-01T21:19:36.163432
 
 # Integrate vulnerability insights across Dynatrace and external apps
 
-# Integrate vulnerability insights across Dynatrace and external apps
 
 * Latest Dynatrace
 * How-to guide

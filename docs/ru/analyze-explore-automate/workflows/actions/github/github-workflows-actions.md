@@ -6,7 +6,6 @@ scraped: 2026-03-01T21:25:46.175084
 
 # Действия для GitHub Connector
 
-# Действия для GitHub Connector
 
 * Latest Dynatrace
 * Справочник

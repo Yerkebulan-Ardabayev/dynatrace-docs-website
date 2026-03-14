@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:27.772573
 
 # Set up CORS on Amazon S3
 
-# Set up CORS on Amazon S3
 
 * Classic
 * How-to guide
@@ -42,57 +41,43 @@ The first step is to input CORS settings for your resources on S3. This is done 
    [
 
 
-
    {
-
 
 
    "AllowedHeaders": [
 
 
-
    "*"
 
 
-
    ],
-
 
 
    "AllowedMethods": [
 
 
-
    "GET",
-
 
 
    "HEAD"
 
 
-
    ],
-
 
 
    "AllowedOrigins": [
 
 
-
    "*"
-
 
 
    ],
 
 
-
    "ExposeHeaders": []
 
 
-
    }
-
 
 
    ]

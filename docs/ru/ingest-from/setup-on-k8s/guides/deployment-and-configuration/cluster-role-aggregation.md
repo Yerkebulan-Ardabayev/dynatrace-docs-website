@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:35:12.026761
 
 # ClusterRole aggregation for Kubernetes monitoring
 
-# ClusterRole aggregation for Kubernetes monitoring
 
 * Latest Dynatrace
 * 2-min read
@@ -43,61 +42,46 @@ Dynatrace Operator версии 1.8.0+
 apiVersion: rbac.authorization.k8s.io/v1
 
 
-
 kind: ClusterRole
-
 
 
 metadata:
 
 
-
 name: dynatrace-kubernetes-monitoring-sensitive
-
 
 
 labels:
 
 
-
 rbac.dynatrace.com/aggregate-to-monitoring: "true"
-
 
 
 rules:
 
 
-
 - apiGroups:
-
 
 
 - ""
 
 
-
 resources:
-
 
 
 - configmaps
 
 
-
 - secrets
-
 
 
 verbs:
 
 
-
 - list
 
 
-
 - watch
-
 
 
 - get

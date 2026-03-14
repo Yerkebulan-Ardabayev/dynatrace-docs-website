@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:38:16.007113
 
 # Environment API v2 - Entity selector
 
-# Environment API v2 - Entity selector
 
 * Reference
 * Updated on Jan 27, 2026

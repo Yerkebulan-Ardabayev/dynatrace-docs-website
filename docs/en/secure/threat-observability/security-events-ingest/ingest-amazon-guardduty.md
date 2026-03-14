@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:07.806532
 
 # Ingest Amazon GuardDuty security findings
 
-# Ingest Amazon GuardDuty security findings
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:29.840932
 
 # Query and filter logs
 
-# Query and filter logs
 
 * Latest Dynatrace
 * How-to guide

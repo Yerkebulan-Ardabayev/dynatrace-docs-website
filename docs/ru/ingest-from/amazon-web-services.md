@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:47.416400
 
 # Настройка Dynatrace на Amazon Web Services
 
-# Настройка Dynatrace на Amazon Web Services
 
 * Последняя версия Dynatrace
 * Практическое руководство

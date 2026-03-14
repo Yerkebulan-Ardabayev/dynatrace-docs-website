@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:30:38.216751
 
 # Monitor Oracle database
 
-# Monitor Oracle database
 
 * Latest Dynatrace
 * How-to guide

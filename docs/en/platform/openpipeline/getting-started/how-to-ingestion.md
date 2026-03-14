@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:55.878660
 
 # How to ingest data (events)
 
-# How to ingest data (events)
 
 * Latest Dynatrace
 * How-to guide
@@ -21,9 +20,7 @@ The event we will ingest is
 {
 
 
-
 "name": "My first ingested event"
-
 
 
 }
@@ -83,13 +80,10 @@ The sample command indicates a JSON content type and provides the JSON event dat
 curl -i -X POST "<your-endpoint-URL>" \
 
 
-
 -H "Content-Type: application/json" \
 
 
-
 -H "Authorization: Api-Token <your-API-token>" \
-
 
 
 -d "{\"name\":\"My first ingested event\"}"
@@ -114,7 +108,6 @@ To verify that your event has been ingested successfully, query it via DQL, for 
 
    ```
    fetch events
-
 
 
    | filter name == "My first ingested event"

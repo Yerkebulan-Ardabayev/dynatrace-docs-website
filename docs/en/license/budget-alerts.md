@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:15.290236
 
 # Set budget alerts
 
-# Set budget alerts
 
 * Latest Dynatrace
 * How-to guide

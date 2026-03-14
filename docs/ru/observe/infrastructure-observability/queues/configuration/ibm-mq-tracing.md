@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:53.183725
 
 # Трассировка IBM MQ
 
-# Трассировка IBM MQ
 
 * Classic
 * How-to guide

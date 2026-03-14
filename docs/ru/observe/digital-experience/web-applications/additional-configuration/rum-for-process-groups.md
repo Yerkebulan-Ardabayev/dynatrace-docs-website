@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:02.016377
 
 # Real User Monitoring для групп процессов
 
-# Real User Monitoring для групп процессов
 
 * Classic
 * How-to guide

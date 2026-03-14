@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Tokens API v2
 
-# Tokens API v2
 
 * Reference
 * Published Feb 23, 2021

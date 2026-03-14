@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Set up Dynatrace on Kubernetes
 
-# Set up Dynatrace on Kubernetes
 
 * 2-min read
 * Updated on Sep 01, 2025

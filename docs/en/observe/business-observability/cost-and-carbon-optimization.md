@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:41.254324
 
 # Cost & Carbon Optimization
 
-# Cost & Carbon Optimization
 
 * Latest Dynatrace
 * App
@@ -403,7 +402,6 @@ Ensure that a Dynatrace IAM administrator adds these policies to your user/group
 
   ```
   fetch bizevents
-
 
 
   filter event.type == "carbon.measurement" or event.type == "carbon.measurement.k8s.cluster"

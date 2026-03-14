@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:32.418100
 
 # Миграция с классического полнофункционального режима на облачный полнофункциональный режим
 
-# Миграция с классического полнофункционального режима на облачный полнофункциональный режим
 
 * Latest Dynatrace
 * 4-min read
@@ -49,13 +48,10 @@ Dynatrace Operator версии 1.0.0+
    helm upgrade dynatrace-operator oci://docker.io/dynatrace/dynatrace-operator \
 
 
-
    --atomic \
 
 
-
    --csidriver.enabled="true" \ # By default CSI driver is enabled
-
 
 
    --namespace dynatrace
@@ -84,61 +80,46 @@ Dynatrace Operator версии 1.0.0+
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    apiUrl: https://<environment-id>.live.dynatrace.com/api
 
 
-
    networkZone: <network-zone>
-
 
 
    oneAgent:
 
 
-
    hostGroup: <host-group>
-
 
 
    classicFullStack: {}
 
 
-
    activeGate:
-
 
 
    capabilities:
 
 
-
    - routing
 
 
-
    - kubernetes-monitoring
-
 
 
    - dynatrace-api
@@ -148,61 +129,46 @@ Dynatrace Operator версии 1.0.0+
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    apiUrl: https://<environment-id>.live.dynatrace.com/api
 
 
-
    networkZone: <network-zone>
-
 
 
    oneAgent:
 
 
-
    hostGroup: <host-group>
-
 
 
    cloudNativeFullStack: {}
 
 
-
    activeGate:
-
 
 
    capabilities:
 
 
-
    - routing
 
 
-
    - kubernetes-monitoring
-
 
 
    - dynatrace-api

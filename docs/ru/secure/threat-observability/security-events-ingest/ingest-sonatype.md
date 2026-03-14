@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:09.563425
 
 # Загрузка событий безопасности и журналов аудита Sonatype Lifecycle
 
-# Загрузка событий безопасности и журналов аудита Sonatype Lifecycle
 
 * Latest Dynatrace
 * Extension
@@ -77,7 +76,6 @@ Sonatype предлагает ряд продуктов, помогающих р
      fetch logs
 
 
-
      | filter log.source=="Sonatype Lifecycle"
      ```
    * Для событий обнаружения:
@@ -86,13 +84,10 @@ Sonatype предлагает ряд продуктов, помогающих р
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Sonatype Lifecycle"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -103,13 +98,10 @@ Sonatype предлагает ряд продуктов, помогающих р
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Sonatype Lifecycle"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"

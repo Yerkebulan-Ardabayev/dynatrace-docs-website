@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Embedded conversation starters
 
-# Embedded conversation starters
 
 * Latest Dynatrace
 * Reference
@@ -148,7 +147,6 @@ You can also provide additional information to  **Dynatrace Assist** via the sup
 | parse "{\"result\":[{\"type\":\"supplementary\", \"value\":\"The character`*` often represents sensitive data that has been masked\"}]}", "LD JSON_ARRAY:contexts"
 
 
-
 // or for a dynamic context
 ```
 
@@ -156,7 +154,6 @@ While the supplementary context is hidden in the chat UI, it can help Generative
 
 ```
 | fieldsAdd supplementaryContext = concat("{\"result\":[{\"type\":\"supplementary\", \"value\":\"Use the following info to answer the question: ", record.summary, "\"}]}")
-
 
 
 | parse supplementaryContext , "LD JSON_ARRAY:contexts"
@@ -171,7 +168,6 @@ To integrate  **Dynatrace Assist** into your [![Dashboards](https://dt-cdn.net/i
 
    ```
    | fieldsAdd prompt = concat("{your question}",  your.field.name)
-
 
 
    | fieldsAdd execute = true
@@ -199,7 +195,6 @@ You can also provide additional information to  **Dynatrace Assist** via the sup
 | parse "{\"result\":[{\"type\":\"supplementary\", \"value\":\"The character`*` often represents sensitive data that has been masked\"}]}", "LD JSON_ARRAY:contexts"
 
 
-
 // or for a dynamic context
 ```
 
@@ -207,7 +202,6 @@ While the supplementary context is hidden in the chat UI, it can help Generative
 
 ```
 | fieldsAdd supplementaryContext = concat("{\"result\":[{\"type\":\"supplementary\", \"value\":\"Use the following info to answer the question: ", record.summary, "\"}]}")
-
 
 
 | parse supplementaryContext , "LD JSON_ARRAY:contexts"
@@ -221,7 +215,6 @@ To integrate  **Dynatrace Assist** into your [![Notebooks](https://dt-cdn.net/im
 
    ```
    | fieldsAdd prompt = concat("{your question}",  your.field.name)
-
 
 
    | fieldsAdd execute = true

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # OneAgent remote configuration management API
 
-# OneAgent remote configuration management API
 
 * Reference
 * Published Jun 01, 2022

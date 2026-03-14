@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:18:42.759294
 
 # New: User session analysis
 
-# New: User session analysis
 
 * How-to guide
 * 21-min read

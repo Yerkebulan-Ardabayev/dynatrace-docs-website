@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:34:13.644856
 
 # Azure Virtual Network Gateway monitoring
 
-# Azure Virtual Network Gateway monitoring
 
 * Latest Dynatrace
 * How-to guide

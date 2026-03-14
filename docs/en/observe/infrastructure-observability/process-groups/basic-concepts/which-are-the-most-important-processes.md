@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:05.291736
 
 # Which are the most important processes?
 
-# Which are the most important processes?
 
 * Classic
 * How-to guide

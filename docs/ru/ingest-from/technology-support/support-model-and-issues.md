@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:56.797299
 
 # Поддержка Dynatrace Operator и известные проблемы
 
-# Поддержка Dynatrace Operator и известные проблемы
 
 * Latest Dynatrace
 * Время чтения: 5 мин.
@@ -146,9 +145,7 @@ Dynatrace Operator версии 1.5.0 Dynatrace Operator версии 1.5.1 Dyna
   > find /data -name latest-codemodule
 
 
-
   /data/_dynakubes/my-dynakube-1/latest-codemodule
-
 
 
   /data/_dynakubes/my-dynakube-2/latest-codemodule

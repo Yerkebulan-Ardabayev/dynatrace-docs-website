@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:39.739379
 
 # Разбор строк логов и извлечение метрики
 
-# Разбор строк логов и извлечение метрики
 
 * Latest Dynatrace
 * Руководство
@@ -29,13 +28,10 @@ scraped: 2026-03-06T21:13:39.739379
 {
 
 
-
 "content": "AddItemAsync called with userId=6517055a-9fcc-4707-8786-e33a767a90c4, productId=OLJCESPC7Z, quantity=4",
 
 
-
 "k8s.namespace.name": "online-boutique"
-
 
 
 }
@@ -76,17 +72,13 @@ scraped: 2026-03-06T21:13:39.739379
    fetch logs
 
 
-
    | filter k8s.namespace.name == "online-boutique"
-
 
 
    | filter matchesValue(content, "AddItemAsync*")
 
 
-
    | fields timestamp, content
-
 
 
    | limit 250
@@ -125,9 +117,7 @@ scraped: 2026-03-06T21:13:39.739379
          {
 
 
-
          "content": "AddItemAsync called with userId=6517055a-9fcc-4707-8786-e33a767a90c4, productId=OLJCESPC7Z, quantity=4", "k8s.namespace.name": "online-boutique"
-
 
 
          }
@@ -196,13 +186,10 @@ scraped: 2026-03-06T21:13:39.739379
    curl -i -X POST "https://{your-environment-id}.live.dynatrace.com/api/v2/logs/ingest" \
 
 
-
    -H "Content-Type: application/json" \
 
 
-
    -H "Authorization: Api-Token <your API token>" \
-
 
 
    -d "{\"k8s.namespace.name\":\"online-boutique\",\"content\":\"AddItemAsync called with userId=6517055a-9fcc-4707-8786-e33a767a90c4, productId=OLJCESPC7Z, quantity=4\"}"
@@ -222,7 +209,6 @@ scraped: 2026-03-06T21:13:39.739379
         fetch logs
 
 
-
         | filter userId == "6517055a-9fcc-4707-8786-e33a767a90c4"
         ```
       * Для проверки метрики добавьте ещё один раздел с полем ввода DQL-запроса.
@@ -233,9 +219,7 @@ scraped: 2026-03-06T21:13:39.739379
         timeseries avg(log.add_item_product_quantity_by_product), by:{productId}
 
 
-
         | fieldsAdd sum = arraySum(`avg(log.add_item_product_quantity_by_product)`)
-
 
 
         | fields sum, productId
@@ -253,13 +237,10 @@ scraped: 2026-03-06T21:13:39.739379
 {
 
 
-
 "content": "AddItemAsync called with userId=6517055a-9fcc-4707-8786-e33a767a90c4, productId=OLJCESPC7Z, quantity=4",
 
 
-
 "k8s.namespace.name": "online-boutique"
-
 
 
 }
@@ -271,29 +252,22 @@ scraped: 2026-03-06T21:13:39.739379
 {
 
 
-
 "k8s.namespace.name": "online-boutique",
-
 
 
 "quantity" : 4,
 
 
-
 "productId": "OLJCESPC7Z",
-
 
 
 "userId": "6517055a-9fcc-4707-8786-e33a767a90c4",
 
 
-
 "content": "AddItemAsync called with userId=6517055a-9fcc-4707-8786-e33a767a90c4, productId=OLJCESPC7Z, quantity=4",
 
 
-
 "timestamp": "2024-06-19T15:29:54.125000000Z"
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:36.644435
 
 # Configure message queue monitoring
 
-# Configure message queue monitoring
 
 * Classic
 * How-to guide

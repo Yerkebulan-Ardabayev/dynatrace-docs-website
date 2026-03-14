@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:38.146283
 
 # Settings API - Получение схемы (GET)
 
-# Settings API - Получение схемы (GET)
 
 * Справочник
 * Опубликовано 24 фев. 2021
@@ -401,501 +400,376 @@ scraped: 2026-03-06T21:19:38.146283
 {
 
 
-
 "allowedScopes": [
-
 
 
 "host",
 
 
-
 "application"
 
 
-
 ],
-
 
 
 "constraints": [
 
 
-
 {
-
 
 
 "checkAllProperties": false,
 
 
-
 "customMessage": "string",
 
 
-
 "customValidatorId": "my-min-max",
-
 
 
 "maximumPropertyCount": 2,
 
 
-
 "minimumPropertyCount": 1,
-
 
 
 "properties": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "skipAsyncValidation": false,
 
 
-
 "timeout": 5,
-
 
 
 "type": "CUSTOM_VALIDATOR_REF"
 
 
-
 }
 
 
-
 ],
-
 
 
 "deletionConstraints": [
 
 
-
 {
-
 
 
 "customMessage": "string",
 
 
-
 "customValidatorId": "my-min-max",
-
 
 
 "schemaIds": [
 
 
-
 "my-schema-id"
 
 
-
 ],
-
 
 
 "timeout": 5,
 
 
-
 "type": "CUSTOM_VALIDATOR_REF"
-
 
 
 }
 
 
-
 ],
-
 
 
 "description": "Dynatrace disables monitoring of containers that do not run any applications",
 
 
-
 "displayName": "Built-in container monitoring rules",
-
 
 
 "documentation": "string",
 
 
-
 "dynatrace": "1",
-
 
 
 "enums": {},
 
 
-
 "keyProperty": "keyProperty",
-
 
 
 "maturity": "GENERAL_AVAILABILITY",
 
 
-
 "maxObjects": 10,
-
 
 
 "metadata": {},
 
 
-
 "multiObject": true,
-
 
 
 "ordered": true,
 
 
-
 "properties": {},
-
 
 
 "schemaConstraints": [
 
 
-
 {
-
 
 
 "byteLimit": 500000,
 
 
-
 "customMessage": "string",
-
 
 
 "customValidatorId": "my-min-max",
 
 
-
 "flattenCollections": true,
-
 
 
 "skipAsyncValidation": false,
 
 
-
 "type": "BYTE_SIZE_LIMIT",
-
 
 
 "uniqueProperties": [
 
 
-
 "my-prop-1",
-
 
 
 "my-prop-2"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
-
 
 
 "schemaGroups": [
 
 
-
 "group:some.1",
-
 
 
 "group:some.2"
 
 
-
 ],
-
 
 
 "schemaId": "builtin:container.built-in-monitoring-rule",
 
 
-
 "tableColumns": {},
-
 
 
 "types": {},
 
 
-
 "uiCustomization": {
-
 
 
 "callback": {
 
 
-
 "buttons": [
-
 
 
 {
 
 
-
 "description": "string",
 
 
-
 "displayName": "string",
-
 
 
 "identifier": "string",
 
 
-
 "insert": "FIRST"
-
 
 
 }
 
 
-
 ]
 
 
-
 },
-
 
 
 "expandable": {
 
 
-
 "displayName": "string",
 
 
-
 "expanded": true,
-
 
 
 "sections": [
 
 
-
 {
-
 
 
 "description": "string",
 
 
-
 "displayName": "string",
-
 
 
 "expanded": true,
 
 
-
 "properties": [
-
 
 
 "string"
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
 
 
-
 },
-
 
 
 "table": {
 
 
-
 "columns": [
 
 
-
 {
-
 
 
 "builtinColumnRef": "summary",
 
 
-
 "columnRef": "myCustomColumn",
-
 
 
 "displayName": "Color",
 
 
-
 "id": "color",
-
 
 
 "items": [
 
 
-
 {
-
 
 
 "displayName": "Active",
 
 
-
 "icon": "CRITICAL",
-
 
 
 "value": "ACTIVE"
 
 
-
 }
 
 
-
 ],
-
 
 
 "propertyRef": "apiColor",
 
 
-
 "type": "cell-color-picker",
-
 
 
 "width": "10%"
 
 
-
 }
 
 
-
 ],
-
 
 
 "emptyState": {
 
 
-
 "text": "string"
-
 
 
 }
 
 
-
 },
-
 
 
 "tabs": {
 
 
-
 "groups": [
 
 
-
 {
-
 
 
 "description": "string",
 
 
-
 "displayName": "string",
-
 
 
 "properties": [
 
 
-
 "string"
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "version": "1.4.2"
-
 
 
 }
@@ -903,55 +777,42 @@ scraped: 2026-03-06T21:19:38.146283
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }

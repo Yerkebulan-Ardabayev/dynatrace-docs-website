@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Export license data
 
-# Export license data
 
 * Updated on Nov 25, 2025
 
@@ -52,7 +51,6 @@ In this example, you request license data from Dynatrace Managed in a range star
 
 ```
 curl -X GET "https://myManaged.cluster.com/api/cluster/v2/license/consumption?startTs=1584594000000&endTs=1591714800000"
-
 
 
 -H  "accept: application/octet-stream"

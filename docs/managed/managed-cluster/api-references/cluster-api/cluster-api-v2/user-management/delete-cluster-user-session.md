@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Delete user sessions of a given user
 
-# Delete user sessions of a given user
 
 * Published Apr 02, 2020
 

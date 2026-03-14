@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:27:33.411007
 
 # Runtime Application Protection monitoring rules
 
-# Runtime Application Protection monitoring rules
 
 * Latest Dynatrace
 * How-to guide

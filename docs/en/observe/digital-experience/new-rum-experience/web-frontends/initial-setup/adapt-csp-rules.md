@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:31:37.283802
 
 # Adapt CSP rules for the New RUM Experience
 
-# Adapt CSP rules for the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:16.073735
 
 # External vault integration
 
-# External vault integration
 
 * Classic
 * How-to guide

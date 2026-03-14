@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:39:20.835627
 
 # Azure Storage Sync monitoring
 
-# Azure Storage Sync monitoring
 
 * Latest Dynatrace
 * How-to guide

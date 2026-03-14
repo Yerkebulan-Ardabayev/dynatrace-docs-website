@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:05.262057
 
 # Metrics API — Метрические выражения
 
-# Metrics API — Метрические выражения
 
 * Справочник
 * Обновлено 29 июля 2022 г.
@@ -83,21 +82,16 @@ metric1 / metric2 * 100
 (
 
 
-
 builtin:host.cpu.usage:filter(eq("dt.entity.host","HOST-001")):splitBy()
-
 
 
 +
 
 
-
 builtin:host.cpu.usage:filter(eq("dt.entity.host","HOST-002")):splitBy()
 
 
-
 )
-
 
 
 /2
@@ -109,33 +103,25 @@ builtin:host.cpu.usage:filter(eq("dt.entity.host","HOST-002")):splitBy()
 builtin:host.cpu.usage
 
 
-
 :filter(
-
 
 
 or(
 
 
-
 eq("dt.entity.host","HOST-001"),
-
 
 
 eq("dt.entity.host","HOST-002")
 
 
-
 )
 
 
-
 )
-
 
 
 :splitBy()
-
 
 
 :avg
@@ -155,9 +141,7 @@ eq("dt.entity.host","HOST-002")
 builtin:host.cpu.usage:sort(value(avg,descending)):limit(10)
 
 
-
 +
-
 
 
 builtin:host.cpu.idle:sort(value(avg,descending)):limit(10)
@@ -169,25 +153,19 @@ builtin:host.cpu.idle:sort(value(avg,descending)):limit(10)
 (
 
 
-
 builtin:host.cpu.usage
-
 
 
 +
 
 
-
 builtin:host.cpu.idle
-
 
 
 )
 
 
-
 :sort(value(auto,descending))
-
 
 
 :limit(10)
@@ -203,9 +181,7 @@ builtin:host.cpu.idle
 builtin:apps.other.keyUserActions.reportedErrorCount.os
 
 
-
 /
-
 
 
 builtin:apps.other.keyUserActions.requestCount.os
@@ -217,9 +193,7 @@ builtin:apps.other.keyUserActions.requestCount.os
 builtin:apps.other.keyUserActions.reportedErrorCount.os:default(0)
 
 
-
 /
-
 
 
 builtin:apps.other.keyUserActions.requestCount.os
@@ -240,25 +214,19 @@ builtin:apps.other.keyUserActions.requestCount.os
 builtin:service.errors.total.count:value:default(0)
 
 
-
 /
-
 
 
 (
 
 
-
 builtin:service.errors.total.successCount:value:default(0)
-
 
 
 +
 
 
-
 builtin:service.errors.total.count:value:default(0)
-
 
 
 )
@@ -276,105 +244,79 @@ builtin:service.errors.total.count:value:default(0)
 {
 
 
-
 "totalCount": 3,
-
 
 
 "nextPageKey": null,
 
 
-
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:service.errors.total.count",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": ["SERVICE-B82BFBCB4E264A98"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.service": "SERVICE-B82BFBCB4E264A98"
-
 
 
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [48763, 81283, 80798]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": ["SERVICE-BE8B6928C46204B5"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.service": "SERVICE-BE8B6928C46204B5"
-
 
 
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [1096, 1124, 1095]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -382,107 +324,81 @@ builtin:service.errors.total.count:value:default(0)
 
 ```
 {
-
 
 
 "totalCount": 3,
 
 
-
 "nextPageKey": null,
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:service.errors.total.successCount",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": ["SERVICE-B82BFBCB4E264A98"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.service": "SERVICE-B82BFBCB4E264A98"
-
 
 
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [46182, 77110, 76736]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": ["SERVICE-BE8B6928C46204B5"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.service": "SERVICE-BE8B6928C46204B5"
-
 
 
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [0, 0, 0]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -490,107 +406,81 @@ builtin:service.errors.total.count:value:default(0)
 
 ```
 {
-
 
 
 "totalCount": 3,
 
 
-
 "nextPageKey": null,
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:service.errors.total.count/(builtin:service.errors.total.count+builtin:service.errors.total.successCount)",
 
 
-
 "data": [
 
 
-
 {
-
 
 
 "dimensions": ["SERVICE-B82BFBCB4E264A98"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.service": "SERVICE-B82BFBCB4E264A98"
 
 
-
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [0.513592079625046, 0.513172930621934, 0.5128924549621035]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": ["SERVICE-BE8B6928C46204B5"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.service": "SERVICE-BE8B6928C46204B5"
-
 
 
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [1, 1, 1]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -611,9 +501,7 @@ builtin:service.errors.total.count:value:default(0)
 builtin:service.errors.total.count:filter(eq("dt.entity.service","SERVICE-B82BFBCB4E264A98")):value:default(0)
 
 
-
 /
-
 
 
 builtin:service.errors.total.count:splitBy():value:default(0) * 100
@@ -631,73 +519,55 @@ builtin:service.errors.total.count:splitBy():value:default(0) * 100
 {
 
 
-
 "totalCount": 1,
-
 
 
 "nextPageKey": null,
 
 
-
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:service.errors.total.count:filter(eq(\"dt.entity.service\",SERVICE-B82BFBCB4E264A98))",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": ["SERVICE-B82BFBCB4E264A98"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.service": "SERVICE-B82BFBCB4E264A98"
-
 
 
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [48763, 81283, 80798]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -705,67 +575,51 @@ builtin:service.errors.total.count:splitBy():value:default(0) * 100
 
 ```
 {
-
 
 
 "totalCount": 1,
 
 
-
 "nextPageKey": null,
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:service.errors.total.count:splitBy()",
 
 
-
 "data": [
 
 
-
 {
-
 
 
 "dimensions": [],
 
 
-
 "dimensionMap": {},
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [49882, 82425, 81911]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -773,75 +627,57 @@ builtin:service.errors.total.count:splitBy():value:default(0) * 100
 
 ```
 {
-
 
 
 "totalCount": 1,
 
 
-
 "nextPageKey": null,
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:service.errors.total.count:filter(eq(\"dt.entity.service\",SERVICE-B82BFBCB4E264A98))/builtin:service.errors.total.count:splitBy()*100",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": ["SERVICE-B82BFBCB4E264A98"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.service": "SERVICE-B82BFBCB4E264A98"
-
 
 
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [97.75670582574877, 98.61449802851077, 98.64120814054277]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -859,17 +695,13 @@ builtin:service.errors.total.count:splitBy():value:default(0) * 100
 (
 
 
-
 builtin:tech.jvm.memory.gc.collectionTime
-
 
 
 /
 
 
-
 builtin:tech.jvm.memory.pool.collectionCount:splitBy("dt.entity.process_group_instance")
-
 
 
 ):sort(value(max,descending))
@@ -885,137 +717,103 @@ builtin:tech.jvm.memory.pool.collectionCount:splitBy("dt.entity.process_group_in
 {
 
 
-
 "totalCount": 3,
-
 
 
 "nextPageKey": null,
 
 
-
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:tech.jvm.memory.gc.collectionTime",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": ["PROCESS_GROUP_INSTANCE-18A5241823ABC769"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-18A5241823ABC769"
-
 
 
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [164670, 171630, 163044]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": ["PROCESS_GROUP_INSTANCE-92605BB8AE962F1C"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-92605BB8AE962F1C"
-
 
 
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [6883411, 5977311, 6356225]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": ["PROCESS_GROUP_INSTANCE-4285F2EF6B79E8A9"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-4285F2EF6B79E8A9"
-
 
 
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [163368, 162924, 170502]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -1023,139 +821,105 @@ builtin:tech.jvm.memory.pool.collectionCount:splitBy("dt.entity.process_group_in
 
 ```
 {
-
 
 
 "totalCount": 3,
 
 
-
 "nextPageKey": null,
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "builtin:tech.jvm.memory.pool.collectionCount:splitBy(\"dt.entity.process_group_instance\")",
 
 
-
 "data": [
-
 
 
 {
 
 
-
 "dimensions": ["PROCESS_GROUP_INSTANCE-18A5241823ABC769"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-18A5241823ABC769"
-
 
 
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [1727814, 1720686, 1691604]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": ["PROCESS_GROUP_INSTANCE-92605BB8AE962F1C"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-92605BB8AE962F1C"
-
 
 
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [31363, 30588, 31419.5]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": ["PROCESS_GROUP_INSTANCE-4285F2EF6B79E8A9"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-4285F2EF6B79E8A9"
-
 
 
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [1697262, 1703742, 1722612]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -1163,139 +927,105 @@ builtin:tech.jvm.memory.pool.collectionCount:splitBy("dt.entity.process_group_in
 
 ```
 {
-
 
 
 "totalCount": 3,
 
 
-
 "nextPageKey": null,
-
 
 
 "result": [
 
 
-
 {
-
 
 
 "metricId": "(builtin:tech.jvm.memory.gc.collectionTime/builtin:tech.jvm.memory.pool.collectionCount:splitBy(\"dt.entity.process_group_instance\")):sort(value(max,descending))",
 
 
-
 "data": [
 
 
-
 {
-
 
 
 "dimensions": ["PROCESS_GROUP_INSTANCE-92605BB8AE962F1C"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-92605BB8AE962F1C"
 
 
-
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [219.47552848898383, 195.41359356610437, 202.3019144162065]
 
 
-
 },
 
 
-
 {
-
 
 
 "dimensions": ["PROCESS_GROUP_INSTANCE-18A5241823ABC769"],
 
 
-
 "dimensionMap": {
-
 
 
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-18A5241823ABC769"
 
 
-
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [0.09530539745597616, 0.09974510166294141, 0.09638426014599162]
 
 
-
 },
-
 
 
 {
 
 
-
 "dimensions": ["PROCESS_GROUP_INSTANCE-4285F2EF6B79E8A9"],
-
 
 
 "dimensionMap": {
 
 
-
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-4285F2EF6B79E8A9"
-
 
 
 },
 
 
-
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
-
 
 
 "values": [0.09625384884596486, 0.09562715481569392, 0.09897876016189368]
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }

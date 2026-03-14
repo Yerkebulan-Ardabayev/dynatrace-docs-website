@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:27:05.548728
 
 # Monitor Azure Spring Apps
 
-# Monitor Azure Spring Apps
 
 * Latest Dynatrace
 * How-to guide

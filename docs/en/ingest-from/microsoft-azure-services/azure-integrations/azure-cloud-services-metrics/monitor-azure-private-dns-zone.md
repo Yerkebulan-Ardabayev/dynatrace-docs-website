@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:38:53.246659
 
 # Azure Private DNS Zone monitoring
 
-# Azure Private DNS Zone monitoring
 
 * Latest Dynatrace
 * How-to guide

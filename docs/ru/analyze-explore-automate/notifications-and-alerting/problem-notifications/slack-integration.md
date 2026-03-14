@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:36.546788
 
 # Отправка уведомлений Dynatrace в Slack
 
-# Отправка уведомлений Dynatrace в Slack
 
 * Classic
 * Чтение: 2 мин

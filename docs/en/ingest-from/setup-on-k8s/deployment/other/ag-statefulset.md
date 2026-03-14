@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:13.482217
 
 # Manually deploy ActiveGate as a StatefulSet
 
-# Manually deploy ActiveGate as a StatefulSet
 
 * Latest Dynatrace
 * 5-min read
@@ -88,9 +87,7 @@ To deploy ActiveGate, follow the steps below.
    kubectl -n dynatrace create secret generic dynatrace-tokens \
 
 
-
    --from-literal=tenant-token=<YOUR_TENANT_TOKEN> \
-
 
 
    --from-literal=auth-token=<YOUR_AUTH_TOKEN>
@@ -100,9 +97,7 @@ To deploy ActiveGate, follow the steps below.
    oc -n dynatrace create secret generic dynatrace-tokens \
 
 
-
    --from-literal=tenant-token=<YOUR_TENANT_TOKEN> \
-
 
 
    --from-literal=auth-token=<YOUR_AUTH_TOKEN>
@@ -126,197 +121,148 @@ To deploy ActiveGate, follow the steps below.
    apiVersion: v1
 
 
-
    kind: ServiceAccount
-
 
 
    metadata:
 
 
-
    name: dynatrace-activegate
-
 
 
    namespace: dynatrace
 
 
-
    ---
-
 
 
    apiVersion: rbac.authorization.k8s.io/v1
 
 
-
    kind: ClusterRole
-
 
 
    metadata:
 
 
-
    name: dynatrace-activegate
-
 
 
    rules:
 
 
-
    - apiGroups:
-
 
 
    - ""
 
 
-
    - batch
-
 
 
    - apps
 
 
-
    - apps.openshift.io
-
 
 
    resources:
 
 
-
    - nodes
-
 
 
    - nodes/metrics
 
 
-
    - pods
-
 
 
    - namespaces
 
 
-
    - deployments
-
 
 
    - replicasets
 
 
-
    - deploymentconfigs
-
 
 
    - replicationcontrollers
 
 
-
    - jobs
-
 
 
    - cronjobs
 
 
-
    - statefulsets
-
 
 
    - daemonsets
 
 
-
    - events
-
 
 
    - resourcequotas
 
 
-
    - pods/proxy
-
 
 
    - services
 
 
-
    verbs:
-
 
 
    - list
 
 
-
    - watch
-
 
 
    - get
 
 
-
    ---
-
 
 
    apiVersion: rbac.authorization.k8s.io/v1
 
 
-
    kind: ClusterRoleBinding
-
 
 
    metadata:
 
 
-
    name: dynatrace-activegate
-
 
 
    roleRef:
 
 
-
    apiGroup: rbac.authorization.k8s.io
-
 
 
    kind: ClusterRole
 
 
-
    name: dynatrace-activegate
-
 
 
    subjects:
 
 
-
    - kind: ServiceAccount
 
 
-
    name: dynatrace-activegate
-
 
 
    namespace: dynatrace
@@ -345,593 +291,445 @@ To deploy ActiveGate, follow the steps below.
    apiVersion: v1
 
 
-
    kind: Service
-
 
 
    metadata:
 
 
-
    name: dynatrace-activegate
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    type: ClusterIP
 
 
-
    selector:
-
 
 
    activegate: kubernetes-monitoring-and-routing
 
 
-
    ports:
-
 
 
    - protocol: TCP
 
 
-
    port: 443
-
 
 
    targetPort: ag-https
 
 
-
    ---
-
 
 
    apiVersion: apps/v1
 
 
-
    kind: StatefulSet
 
 
-
    metadata:
-
 
 
    name: dynatrace-activegate
 
 
-
    namespace: dynatrace
-
 
 
    labels:
 
 
-
    activegate: kubernetes-monitoring-and-routing
 
 
-
    spec:
-
 
 
    serviceName: ""
 
 
-
    selector:
-
 
 
    matchLabels:
 
 
-
    activegate: kubernetes-monitoring-and-routing
-
 
 
    template:
 
 
-
    metadata:
-
 
 
    #     Uncomment the lines below to enable AppArmor
 
 
-
    #     annotations:
-
 
 
    #  container.apparmor.security.beta.kubernetes.io/activegate: runtime/default
 
 
-
    labels:
-
 
 
    activegate: kubernetes-monitoring-and-routing
 
 
-
    spec:
-
 
 
    serviceAccountName: dynatrace-activegate
 
 
-
    affinity:
-
 
 
    nodeAffinity:
 
 
-
    requiredDuringSchedulingIgnoredDuringExecution:
-
 
 
    nodeSelectorTerms:
 
 
-
    - matchExpressions:
-
 
 
    - key: kubernetes.io/arch
 
 
-
    operator: In
 
 
-
    values:
-
 
 
    - amd64
 
 
-
    - key: kubernetes.io/os
-
 
 
    operator: In
 
 
-
    values:
-
 
 
    - linux
 
 
-
    containers:
-
 
 
    - name: activegate
 
 
-
    image: <YOUR_ENVIRONMENT_URL>/linux/activegate
-
 
 
    imagePullPolicy: Always
 
 
-
    ports:
-
 
 
    - name: ag-https
 
 
-
    containerPort: 9999
-
 
 
    env:
 
 
-
    - name: DT_ID_SEED_NAMESPACE
-
 
 
    value: dynatrace
 
 
-
    - name: DT_ID_SEED_K8S_CLUSTER_ID
-
 
 
    value: <YOUR_KUBE-SYSTEM_NAMESPACE_UUID>
 
 
-
    - name: DT_CAPABILITIES
-
 
 
    value: kubernetes_monitoring,MSGrouter,restInterface
 
 
-
    # - name: DT_NETWORK_ZONE
-
 
 
    #   value: <CUSTOM_NZ>
 
 
-
    - name: DT_DNS_ENTRY_POINT
-
 
 
    value: https://$(DYNATRACE_ACTIVEGATE_SERVICE_HOST):$(DYNATRACE_ACTIVEGATE_SERVICE_PORT)/communication
 
 
-
    volumeMounts:
 
 
-
    - name: dynatrace-tokens
-
 
 
    mountPath: /var/lib/dynatrace/secrets/tokens
 
 
-
    - name: truststore-volume
-
 
 
    mountPath: /opt/dynatrace/gateway/jre/lib/security/cacerts
 
 
-
    readOnly: true
-
 
 
    subPath: k8s-local.jks
 
 
-
    - name: ag-lib-gateway-config
-
 
 
    mountPath: /var/lib/dynatrace/gateway/config
 
 
-
    - name: ag-lib-gateway-temp
-
 
 
    mountPath: /var/lib/dynatrace/gateway/temp
 
 
-
    - name: ag-lib-gateway-data
-
 
 
    mountPath: /var/lib/dynatrace/gateway/data
 
 
-
    - name: ag-log-gateway
-
 
 
    mountPath: /var/log/dynatrace/gateway
 
 
-
    - name: ag-tmp-gateway
-
 
 
    mountPath: /var/tmp/dynatrace/gateway
 
 
-
    livenessProbe:
-
 
 
    failureThreshold: 2
 
 
-
    httpGet:
-
 
 
    path: /rest/state
 
 
-
    port: ag-https
-
 
 
    scheme: HTTPS
 
 
-
    initialDelaySeconds: 30
-
 
 
    periodSeconds: 30
 
 
-
    successThreshold: 1
 
 
-
    timeoutSeconds: 1
-
 
 
    readinessProbe:
 
 
-
    failureThreshold: 3
-
 
 
    httpGet:
 
 
-
    path: /rest/health
-
 
 
    port: ag-https
 
 
-
    scheme: HTTPS
-
 
 
    initialDelaySeconds: 30
 
 
-
    periodSeconds: 15
-
 
 
    successThreshold: 1
 
 
-
    timeoutSeconds: 1
-
 
 
    resources:
 
 
-
    requests:
-
 
 
    cpu: 250m
 
 
-
    memory: 512Mi
-
 
 
    limits:
 
 
-
    cpu: 250m
-
 
 
    memory: 512Mi
 
 
-
    securityContext:
-
 
 
    allowPrivilegeEscalation: false
 
 
-
    capabilities:
-
 
 
    drop:
 
 
-
    - all
-
 
 
    privileged: false
 
 
-
    readOnlyRootFilesystem: true
-
 
 
    runAsNonRoot: true
 
 
-
    seccompProfile:
-
 
 
    type: RuntimeDefault
 
 
-
    initContainers:
-
 
 
    - name: certificate-loader
 
 
-
    image: <YOUR_ENVIRONMENT_URL>/linux/activegate
-
 
 
    workingDir: /var/lib/dynatrace/gateway
 
 
-
    command: ['/bin/bash']
-
 
 
    args: ['-c', '/opt/dynatrace/gateway/k8scrt2jks.sh']
 
 
-
    volumeMounts:
-
 
 
    - mountPath: /var/lib/dynatrace/gateway/ssl
 
 
-
    name: truststore-volume
-
 
 
    imagePullSecrets:
 
 
-
    - name: dynatrace-docker-registry
-
 
 
    volumes:
 
 
-
    - name: dynatrace-tokens
-
 
 
    secret:
 
 
-
    secretName: dynatrace-tokens
-
 
 
    - name: truststore-volume
 
 
-
    emptyDir: {}
-
 
 
    - name: ag-lib-gateway-config
 
 
-
    emptyDir: {}
-
 
 
    - name: ag-lib-gateway-temp
 
 
-
    emptyDir: {}
-
 
 
    - name: ag-lib-gateway-data
 
 
-
    emptyDir: {}
-
 
 
    - name: ag-log-gateway
 
 
-
    emptyDir: {}
-
 
 
    - name: ag-tmp-gateway
 
 
-
    emptyDir: {}
 
 
-
    updateStrategy:
-
 
 
    type: RollingUpdate

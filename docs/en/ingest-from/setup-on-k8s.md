@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:49.061055
 
 # Set up Dynatrace on Kubernetes
 
-# Set up Dynatrace on Kubernetes
 
 * Latest Dynatrace
 * 2-min read

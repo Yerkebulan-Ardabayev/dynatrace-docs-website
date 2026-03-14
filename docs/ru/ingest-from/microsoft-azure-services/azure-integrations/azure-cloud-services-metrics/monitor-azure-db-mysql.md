@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:42.937574
 
 # Мониторинг Azure Database for MySQL
 
-# Мониторинг Azure Database for MySQL
 
 * Последняя версия Dynatrace
 * Практическое руководство

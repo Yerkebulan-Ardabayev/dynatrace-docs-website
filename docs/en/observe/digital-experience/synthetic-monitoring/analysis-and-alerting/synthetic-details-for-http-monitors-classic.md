@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:30.297902
 
 # HTTP monitors reporting results
 
-# HTTP monitors reporting results
 
 * Classic
 * Explanation

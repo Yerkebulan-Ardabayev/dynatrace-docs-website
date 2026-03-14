@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # OneAgent on Linux
 
-# OneAgent on Linux
 
 * Latest Dynatrace
 * 1-min read

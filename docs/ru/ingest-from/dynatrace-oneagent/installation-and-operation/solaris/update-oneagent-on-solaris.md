@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:19.993240
 
 # Update OneAgent on Solaris
 
-# Update OneAgent on Solaris
 
 * Latest Dynatrace
 * 1-min read

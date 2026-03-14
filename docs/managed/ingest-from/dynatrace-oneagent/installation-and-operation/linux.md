@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # OneAgent on Linux
 
-# OneAgent on Linux
 
 * 1-min read
 * Published Jul 19, 2017

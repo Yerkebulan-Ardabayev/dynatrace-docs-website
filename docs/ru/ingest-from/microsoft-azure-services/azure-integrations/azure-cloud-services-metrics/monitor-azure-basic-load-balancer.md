@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:40:04.660813
 
 # Мониторинг Azure Basic Load Balancer
 
-# Мониторинг Azure Basic Load Balancer
 
 * Последняя версия Dynatrace
 * Практическое руководство

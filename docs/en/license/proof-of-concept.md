@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:15.430515
 
 # Proof of Concept for existing DPS subscriptions
 
-# Proof of Concept for existing DPS subscriptions
 
 * Latest Dynatrace
 * Tutorial

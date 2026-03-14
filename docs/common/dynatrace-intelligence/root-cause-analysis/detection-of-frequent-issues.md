@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Detection of frequent issues
 
-# Detection of frequent issues
 
 * Latest Dynatrace
 * Explanation

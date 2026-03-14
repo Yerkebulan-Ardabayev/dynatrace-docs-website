@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:55.255187
 
 # Kubernetes Classic
 
-# Kubernetes Classic
 
 * Classic
 * 1 мин. чтения

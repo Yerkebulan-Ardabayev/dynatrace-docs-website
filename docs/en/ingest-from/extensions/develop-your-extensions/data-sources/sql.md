@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:46.228065
 
 # SQL data source
 
-# SQL data source
 
 * Latest Dynatrace
 * Overview

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:41.769050
 
 # Leverage log enrichment for traces to resolve problems
 
-# Leverage log enrichment for traces to resolve problems
 
 * Classic
 * Tutorial

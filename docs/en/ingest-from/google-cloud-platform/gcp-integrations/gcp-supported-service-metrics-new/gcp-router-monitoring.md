@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:27.949865
 
 # Google Cloud Router monitoring
 
-# Google Cloud Router monitoring
 
 * Latest Dynatrace
 * How-to guide

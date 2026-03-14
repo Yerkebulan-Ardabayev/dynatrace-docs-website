@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Set up Dynatrace on Microsoft Azure
 
-# Set up Dynatrace on Microsoft Azure
 
 * Latest Dynatrace
 * Overview

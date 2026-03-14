@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:19.171690
 
 # Instrument SwiftUI controls
 
-# Instrument SwiftUI controls
 
 * Classic
 * How-to guide
@@ -230,9 +229,7 @@ In the example below, the instrumentor will extract `"Login"` as a label for the
 Button("Login", action: {
 
 
-
 /* perform login */
-
 
 
 })
@@ -246,17 +243,13 @@ In the following example, a user interaction with this button would be reported 
 Button(action: {
 
 
-
 print("Hello world!")
-
 
 
 }) {
 
 
-
 Image("bookmark")
-
 
 
 }
@@ -270,9 +263,7 @@ Use the `withCustomInstrumentationConfig(.useDefaultControlName)` modifier to se
 Button("Login", action: {
 
 
-
 /* perform login */
-
 
 
 }).withCustomInstrumentationConfig(.useDefaultControlName)
@@ -288,9 +279,7 @@ Use the `withCustomInstrumentationConfig(.useControlName(<Name>)` modifier to sp
 Button("Login", action: {
 
 
-
 /* perform login */
-
 
 
 }).withCustomInstrumentationConfig(.useControlName("Login Button"))
@@ -318,17 +307,13 @@ To globally exclude controls from the SwiftUI instrumentation, add the [`DTXSwif
 <key>DTXExcludedSwiftUIFiles</key>
 
 
-
 <array>
-
 
 
 <string>Button</string>
 
 
-
 <string>Slider</string>
-
 
 
 </array>
@@ -351,17 +336,13 @@ Follow these guidelines when applying the `withCustomInstrumentationConfig(.skip
   Button("Login", action: { /* perform login */ })
 
 
-
   .padding()
-
 
 
   .background(Color.red)
 
 
-
   .frame(width: 40)
-
 
 
   .withCustomInstrumentationConfig(.skipInstrumentation)
@@ -375,13 +356,10 @@ Use the following code to locally exclude a single control from the SwiftUI inst
 import Dynatrace
 
 
-
 â¦
 
 
-
 Button("Login", action: { /* perform login */ })
-
 
 
 .withCustomInstrumentationConfig(.skipInstrumentation)
@@ -395,21 +373,16 @@ To locally exclude a group of controls, apply the `withCustomInstrumentationConf
 import Dynatrace
 
 
-
 â¦
-
 
 
 HStack {
 
 
-
 Button("Login", action: { /* perform login */ })
 
 
-
 Button("Register", action: { /* perform registration */ })
-
 
 
 }.withCustomInstrumentationConfig(.skipInstrumentation)
@@ -428,17 +401,13 @@ To exclude files and directories from the SwiftUI instrumentation
    <key>DTXExcludedSwiftUIFiles</key>
 
 
-
    <array>
-
 
 
    <string>relative/file/path/</string>
 
 
-
    <string>relative/file.swift</string>
-
 
 
    </array>
@@ -456,7 +425,6 @@ To enable the SwiftUI instrumentation for simulator builds, add the [`DTXSwiftUI
 <key>DTXSwiftUIInstrumentSimulatorBuilds</key>
 
 
-
 <true/>
 ```
 
@@ -468,7 +436,6 @@ To override this check, add the [`DTXSwiftUIIgnoreDeploymentTarget` configuratio
 
 ```
 <key>DTXSwiftUIIgnoreDeploymentTarget</key>
-
 
 
 <true/>
@@ -488,7 +455,6 @@ To enable line number mapping for Objective-C projects
    <key>DTXSwiftUIManualPlaceholder</key>
 
 
-
    <true/>
    ```
 2. Add the special `AppDelegate.m` placeholder to the main class.
@@ -502,21 +468,16 @@ To enable line number mapping for Objective-C projects
    - (BOOL)application:(UIApplication *)application
 
 
-
    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
 
 
    [Dynatrace handoverInstrumentorConfig:@{kDTXSwiftMappingJson: @"_DYNATRACE_SWIFTUI_MAPPING_PLACEHOLDER_"}];
 
 
-
    // ... your existing setup code
 
 
-
    return YES;
-
 
 
    }
@@ -526,25 +487,19 @@ To enable line number mapping for Objective-C projects
    - (instancetype)init {
 
 
-
    self = [super init];
-
 
 
    if (self) {
 
 
-
    [Dynatrace handoverInstrumentorConfig:@{kDTXSwiftMappingJson: @"_DYNATRACE_SWIFTUI_MAPPING_PLACEHOLDER_"}];
-
 
 
    }
 
 
-
    return self;
-
 
 
    }
@@ -564,14 +519,12 @@ After each build, the SwiftUI instrumentor creates backups of the instrumented f
   <key>DTXCleanSwiftUILogsByCount</key>
 
 
-
   <number>10</number>
   ```
 * To delete the logs after a certain number of days, add the [`DTXCleanSwiftUILogsByAgeDays` configuration key](../customization/ios-configuration-keys.md#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to the `Info.plist` file.
 
   ```
   <key>DTXCleanSwiftUILogsByAgeDays</key>
-
 
 
   <number>5</number>

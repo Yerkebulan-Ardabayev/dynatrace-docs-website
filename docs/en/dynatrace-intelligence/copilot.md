@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:58.711515
 
 # Agentic and generative AI
 
-# Agentic and generative AI
 
 * Latest Dynatrace
 * App

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:21.119266
 
 # Визуализация линейной диаграммы
 
-# Визуализация линейной диаграммы
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -46,121 +45,91 @@ timeseries avg(dt.host.cpu.usage)
 /*
 
 
-
 * This example shows how to map data to use the built-in visualization for custom data.
-
 
 
 */
 
 
-
 export default async function () {
-
 
 
 // Sample the exponential function 10 times at 1-minute intervals.
 
 
-
 const sampleCount = 10;
 
 
-
 return {
-
 
 
 records: new Array(sampleCount).fill(null).map((_, index, array) => {
 
 
-
 const invertedIndex = array.length - index;
-
 
 
 const time = new Date().getTime();
 
 
-
 return {
-
 
 
 'my series': Math.exp((index * 3) / 10),
 
 
-
 'my series 2': Math.exp((index * 2) / 8),
-
 
 
 timeframe: {
 
 
-
 start: time - 1000 * 60 * invertedIndex,
-
 
 
 end: time - 1000 * 60 * (invertedIndex - 1),
 
 
-
 },
 
 
-
 };
-
 
 
 }),
 
 
-
 types: [
-
 
 
 {
 
 
-
 indexRange: [0, sampleCount - 1],
-
 
 
 mappings: {
 
 
-
 timeframe: { type: 'timeframe' },
-
 
 
 'my series': { type: 'double' },
 
 
-
 'my series 2': {type: 'double'}
 
 
-
 },
 
 
-
 },
-
 
 
 ],
 
 
-
 };
-
 
 
 }
@@ -176,61 +145,46 @@ timeframe: { type: 'timeframe' },
 /*
 
 
-
 * This example shows how to visualize your data without explicitly describing
-
 
 
 * the types.
 
 
-
 */
-
 
 
 export default async function () {
 
 
-
 // Take 120 samples of a sine wave for a full period.
-
 
 
 const sampleCount = 120;
 
 
-
 return new Array(sampleCount).fill(null).map((_, index, array) => {
-
 
 
 const invertedIndex = array.length - index;
 
 
-
 const time = new Date().getTime();
-
 
 
 return {
 
 
-
 timestamp: new Date(time - 1000 * 60 * invertedIndex).toISOString(),
-
 
 
 value: Math.sin((index / (array.length - 1)) * (2 * Math.PI)),
 
 
-
 };
 
 
-
 });
-
 
 
 }
@@ -462,7 +416,6 @@ Dynatrace версии 1.322+
 
     ```
     fetch logs
-
 
 
     | limit 2000

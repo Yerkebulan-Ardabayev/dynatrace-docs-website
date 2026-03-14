@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:12.459284
 
 # Миграция с Topology and Smartscape API на Monitored entities API
 
-# Миграция с Topology and Smartscape API на Monitored entities API
 
 * Reference
 * Опубликовано 22 марта 2023 г.
@@ -95,9 +94,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/entities?fields=properties.monitor
 fields=properties.monitoringMode,tags
 
 
-
 entitySelector=type("HOST")
-
 
 
 from=now-2h
@@ -109,241 +106,181 @@ from=now-2h
 {
 
 
-
 "totalCount": 85,
-
 
 
 "pageSize": 50,
 
 
-
 "nextPageKey": "AQAMdHlwZSgiSE9TV==",
-
 
 
 "entities": [
 
 
-
 {
-
 
 
 "entityId": "HOST-01A00204B50FF735",
 
 
-
 "type": "HOST",
-
 
 
 "displayName": "easytravel-backend.internal",
 
 
-
 "properties": {
-
 
 
 "monitoringMode": "FULL_STACK"
 
 
-
 },
-
 
 
 "tags": [
 
 
-
 {
-
 
 
 "context": "CONTEXTLESS",
 
 
-
 "key": "Stage",
-
 
 
 "value": "PreProduction",
 
 
-
 "stringRepresentation": "Stage:PreProduction"
-
 
 
 },
 
 
-
 {
-
 
 
 "context": "CONTEXTLESS",
 
 
-
 "key": "OS",
-
 
 
 "value": "Linux",
 
 
-
 "stringRepresentation": "OS:Linux"
-
 
 
 },
 
 
-
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "backend",
 
 
-
 "stringRepresentation": "backend"
-
 
 
 }
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "entityId": "HOST-0AF138A0258C7DFF",
 
 
-
 "type": "HOST",
-
 
 
 "displayName": "easytravel-frontend.prod",
 
 
-
 "properties": {
-
 
 
 "monitoringMode": "FULL_STACK"
 
 
-
 },
-
 
 
 "tags": [
 
 
-
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "Stage",
 
 
-
 "value": "Production",
-
 
 
 "stringRepresentation": "Stage:Production"
 
 
-
 },
-
 
 
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "OS",
 
 
-
 "value": "Windows",
-
 
 
 "stringRepresentation": "OS:Windows"
 
 
-
 },
-
 
 
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "frontend",
 
 
-
 "stringRepresentation": "frontend"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -367,7 +304,6 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts?relati
 relativeTime=2hours
 
 
-
 includeDetails=false
 ```
 
@@ -377,477 +313,358 @@ includeDetails=false
 [
 
 
-
 {
-
 
 
 "entityId": "HOST-01A00204B50FF735",
 
 
-
 "displayName": "easytravel-backend.internal",
-
 
 
 "discoveredName": "APM-ET-MF2",
 
 
-
 "firstSeenTimestamp": 1627476376157,
-
 
 
 "lastSeenTimestamp": 1679410093531,
 
 
-
 "tags": [
-
 
 
 {
 
 
-
 "context": "CONTEXTLESS",
 
 
-
 "key": "Stage",
-
 
 
 "value": "PreProduction"
 
 
-
 },
-
 
 
 {
 
 
-
 "context": "CONTEXTLESS",
 
 
-
 "key": "OS",
-
 
 
 "value": "Linux"
 
 
-
 },
-
 
 
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "backend"
 
 
-
 }
-
 
 
 ],
 
 
-
 "fromRelationships": {},
 
 
-
 "toRelationships": {},
-
 
 
 "osType": "LINUX",
 
 
-
 "osArchitecture": "X86",
-
 
 
 "osVersion": "Ubuntu 20.04.1 LTS (Focal Fossa) (kernel 5.4.0-135-generic)",
 
 
-
 "hypervisorType": "VMWARE",
 
 
-
 "ipAddresses": [
-
 
 
 "192.168.0.1"
 
 
-
 ],
 
 
-
 "bitness": "64bit",
-
 
 
 "cpuCores": 4,
 
 
-
 "logicalCpuCores": 4,
-
 
 
 "monitoringMode": "FULL_STACK",
 
 
-
 "networkZoneId": "default",
-
 
 
 "agentVersion": {
 
 
-
 "major": 1,
-
 
 
 "minor": 259,
 
 
-
 "revision": 339,
-
 
 
 "timestamp": "20230228-182655",
 
 
-
 "sourceRevision": ""
 
 
-
 },
-
 
 
 "consumedHostUnits": 2.0,
 
 
-
 "userLevel": "SUPERUSER",
 
 
-
 "autoInjection": "ENABLED",
-
 
 
 "oneAgentCustomHostName": "easytravel-backend.internal",
 
 
-
 "managementZones": [
 
 
-
 {
-
 
 
 "id": "460039148655162069",
 
 
-
 "name": "backend"
-
 
 
 }
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "entityId": "HOST-0AF138A0258C7DFF",
 
 
-
 "displayName": "easytravel-frontend.prod",
-
 
 
 "firstSeenTimestamp": 1619706183299,
 
 
-
 "lastSeenTimestamp": 1679409948352,
-
 
 
 "tags": [
 
 
-
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "Stage",
 
 
-
 "value": "Production",
-
 
 
 "stringRepresentation": "Stage:Production"
 
 
-
 },
-
 
 
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "OS",
 
 
-
 "value": "Windows",
-
 
 
 "stringRepresentation": "OS:Windows"
 
 
-
 },
 
 
-
 {
-
 
 
 "context": "CONTEXTLESS",
 
 
-
 "key": "frontend",
-
 
 
 "stringRepresentation": "frontend"
 
 
-
 }
 
 
-
 ],
-
 
 
 "fromRelationships": {},
 
 
-
 "toRelationships": {},
-
 
 
 "osType": "WINDOWS",
 
 
-
 "osArchitecture": "X86",
-
 
 
 "osVersion": "Windows Server 2008 R2 Datacenter Service Pack 1, ver. 6.1.7601",
 
 
-
 "hypervisorType": "XEN",
-
 
 
 "ipAddresses": [
 
 
-
 "192.168.0.2",
-
 
 
 "192.168.0.3"
 
 
-
 ],
-
 
 
 "bitness": "64bit",
 
 
-
 "cpuCores": 1,
-
 
 
 "logicalCpuCores": 2,
 
 
-
 "cloudType": "EC2",
-
 
 
 "monitoringMode": "FULL_STACK",
 
 
-
 "networkZoneId": "default",
-
 
 
 "agentVersion": {
 
 
-
 "major": 1,
-
 
 
 "minor": 247,
 
 
-
 "revision": 277,
-
 
 
 "timestamp": "20221006-094946",
 
 
-
 "sourceRevision": ""
-
 
 
 },
 
 
-
 "consumedHostUnits": 0.5,
-
 
 
 "userLevel": "SUPERUSER",
 
 
-
 "autoInjection": "ENABLED",
-
 
 
 "softwareTechnologies": [
 
 
-
 {
-
 
 
 "type": "CITRIX",
 
 
-
 "edition": null,
-
 
 
 "version": null
 
 
-
 }
-
 
 
 ],
 
 
-
 "managementZones": [
-
 
 
 {
 
 
-
 "id": "-4279023605659327282",
-
 
 
 "name": "frontend"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 ]
@@ -883,45 +700,34 @@ entitySelector=entityId("HOST-01A00204B50FF735","HOST-0AF138A0258C7DFF")
 {
 
 
-
 "tags": [
 
 
-
 {
-
 
 
 "key": "Datacenter",
 
 
-
 "value": "Linz"
-
 
 
 },
 
 
-
 {
-
 
 
 "key": "Rack",
 
 
-
 "value": "014"
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -933,65 +739,49 @@ entitySelector=entityId("HOST-01A00204B50FF735","HOST-0AF138A0258C7DFF")
 {
 
 
-
 "matchedEntitiesCount": 2,
-
 
 
 "appliedTags": [
 
 
-
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "Datacenter",
 
 
-
 "value": "Linz",
-
 
 
 "stringRepresentation": "Datacenter:Linz"
 
 
-
 },
-
 
 
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "Rack",
 
 
-
 "value": "014",
-
 
 
 "stringRepresentation": "Rack:014"
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -1013,21 +803,16 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-0
 {
 
 
-
 "tags": [
-
 
 
 "Datacenter:Linz",
 
 
-
 "Rack:014"
 
 
-
 ]
-
 
 
 }
@@ -1059,45 +844,34 @@ https://mySampleEnv.live.dynatrace.com/api/v2/entities/custom
 {
 
 
-
 "customDeviceId": "restExample",
-
 
 
 "displayName": "F5 Firewall 24",
 
 
-
 "ipAddresses": ["172.16.115.211"],
-
 
 
 "listenPorts": ["9999"],
 
 
-
 "type": "F5-Firewall",
-
 
 
 "favicon": "http://assets.dynatrace.com/global/icons/f5.png",
 
 
-
 "configUrl": "http://192.128.0.1:8080",
-
 
 
 "properties": {
 
 
-
 "Sample Property 1": "Sample value 1"
 
 
-
 }
-
 
 
 }
@@ -1109,13 +883,10 @@ https://mySampleEnv.live.dynatrace.com/api/v2/entities/custom
 {
 
 
-
 "entityId": "CUSTOM_DEVICE-1525F193C0578E2C",
 
 
-
 "groupId": "CUSTOM_DEVICE_GROUP-FC2E2ABF54F513D8"
-
 
 
 }
@@ -1133,45 +904,34 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/restE
 {
 
 
-
 "displayName": "F5 Firewall 24",
-
 
 
 "ipAddresses": ["172.16.115.211"],
 
 
-
 "listenPorts": ["9999"],
-
 
 
 "type": "F5-Firewall",
 
 
-
 "favicon": "http://assets.dynatrace.com/global/icons/f5.png",
-
 
 
 "configUrl": "http://192.128.0.1:8080",
 
 
-
 "tags": ["REST example"],
-
 
 
 "properties": {
 
 
-
 "Sample Property 1": "Sample value 1"
 
 
-
 }
-
 
 
 }
@@ -1183,13 +943,10 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/restE
 {
 
 
-
 "entityId": "CUSTOM_DEVICE-6A567B33AADC306E",
 
 
-
 "groupId": "CUSTOM_DEVICE_GROUP-FC2E2ABF54F513D8"
-
 
 
 }

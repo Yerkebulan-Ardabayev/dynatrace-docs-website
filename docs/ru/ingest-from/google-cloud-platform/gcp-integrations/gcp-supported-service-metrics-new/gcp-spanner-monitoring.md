@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:34.736396
 
 # Мониторинг Google Cloud Spanner
 
-# Мониторинг Google Cloud Spanner
 
 * Последняя версия Dynatrace
 * Практическое руководство

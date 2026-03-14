@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:14.657488
 
 # Hosts API - GET a host
 
-# Hosts API - GET a host
 
 * Reference
 * Updated on Mar 22, 2023
@@ -223,657 +222,494 @@ A list of constraint violations
 {
 
 
-
 "agentVersion": {
-
 
 
 "major": 1,
 
 
-
 "minor": 1,
-
 
 
 "revision": 1,
 
 
-
 "sourceRevision": "string",
-
 
 
 "timestamp": "string"
 
 
-
 },
-
 
 
 "amiId": "string",
 
 
-
 "autoInjection": "DISABLED_MANUALLY",
-
 
 
 "autoScalingGroup": "string",
 
 
-
 "awsInstanceId": "string",
-
 
 
 "awsInstanceType": "string",
 
 
-
 "awsNameTag": "string",
-
 
 
 "awsSecurityGroup": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azureComputeModeName": "DEDICATED",
 
 
-
 "azureEnvironment": "string",
-
 
 
 "azureHostNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azureResourceGroupName": "string",
 
 
-
 "azureResourceId": "string",
-
 
 
 "azureSiteNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azureSku": "BASIC",
 
 
-
 "azureVmName": "string",
-
 
 
 "azureVmScaleSetName": "string",
 
 
-
 "azureVmSizeLabel": "string",
-
 
 
 "azureZone": "string",
 
 
-
 "beanstalkEnvironmentName": "string",
-
 
 
 "bitness": "32bit",
 
 
-
 "boshAvailabilityZone": "string",
-
 
 
 "boshDeploymentId": "string",
 
 
-
 "boshInstanceId": "string",
-
 
 
 "boshInstanceName": "string",
 
 
-
 "boshName": "string",
-
 
 
 "boshStemcellVersion": "string",
 
 
-
 "cloudPlatformVendorVersion": "string",
-
 
 
 "cloudType": "AZURE",
 
 
-
 "consumedHostUnits": "string",
-
 
 
 "cpuCores": 1,
 
 
-
 "customizedName": "string",
-
 
 
 "discoveredName": "string",
 
 
-
 "displayName": "string",
-
 
 
 "entityId": "string",
 
 
-
 "esxiHostName": "string",
-
 
 
 "firstSeenTimestamp": 1,
 
 
-
 "fromRelationships": {
-
 
 
 "isNetworkClientOfHost": [
 
 
-
 "string"
-
 
 
 ]
 
 
-
 },
-
 
 
 "gceInstanceId": "string",
 
 
-
 "gceInstanceName": "string",
-
 
 
 "gceMachineType": "string",
 
 
-
 "gceProject": "string",
-
 
 
 "gceProjectId": "string",
 
 
-
 "gcePublicIpAddresses": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "gcpZone": "string",
 
 
-
 "hostGroup": {
-
 
 
 "meId": "string",
 
 
-
 "name": "string"
 
 
-
 },
-
 
 
 "hypervisorType": "AHV",
 
 
-
 "ipAddresses": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "isMonitoringCandidate": true,
 
 
-
 "kubernetesCluster": "string",
-
 
 
 "kubernetesLabels": {},
 
 
-
 "kubernetesNode": "string",
-
 
 
 "lastSeenTimestamp": 1,
 
 
-
 "localHostName": "string",
-
 
 
 "localIp": "string",
 
 
-
 "logicalCpuCores": 1,
-
 
 
 "logicalCpus": 1,
 
 
-
 "managementZones": [
 
 
-
 {
-
 
 
 "description": "Dynatrace entity for the REST API example",
 
 
-
 "id": "6a98d7bc-abb9-44f8-ae6a-73e68e71812a",
-
 
 
 "name": "Dynatrace entity"
 
 
-
 }
 
 
-
 ],
-
 
 
 "monitoringMode": "FULL_STACK",
 
 
-
 "networkZoneId": "string",
-
 
 
 "oneAgentCustomHostName": "string",
 
 
-
 "openStackInstaceType": "string",
-
 
 
 "openstackAvZone": "string",
 
 
-
 "openstackComputeNodeName": "string",
-
 
 
 "openstackProjectName": "string",
 
 
-
 "openstackSecurityGroups": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "openstackVmName": "string",
 
 
-
 "osArchitecture": "ARM",
-
 
 
 "osType": "AIX",
 
 
-
 "osVersion": "string",
-
 
 
 "paasAgentVersions": [
 
 
-
 {}
 
 
-
 ],
-
 
 
 "paasMemoryLimit": 1,
 
 
-
 "paasType": "AWS_ECS_EC2",
-
 
 
 "publicHostName": "string",
 
 
-
 "publicIp": "string",
-
 
 
 "scaleSetName": "string",
 
 
-
 "simultaneousMultithreading": 1,
-
 
 
 "softwareTechnologies": [
 
 
-
 {
-
 
 
 "edition": "string",
 
 
-
 "type": "string",
-
 
 
 "version": "string"
 
 
-
 }
 
 
-
 ],
-
 
 
 "tags": [
 
 
-
 {
-
 
 
 "context": "AWS",
 
 
-
 "key": "string",
-
 
 
 "value": "string"
 
 
-
 }
 
 
-
 ],
-
 
 
 "toRelationships": {
 
 
-
 "isNetworkClientOfHost": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "isProcessOf": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "isSiteOf": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "runsOn": [
 
 
-
 "string"
-
 
 
 ]
 
 
-
 },
-
 
 
 "userLevel": "NON_SUPERUSER",
 
 
-
 "virtualCpus": 1,
-
 
 
 "vmwareName": "string",
 
 
-
 "zosCPUModelNumber": "string",
-
 
 
 "zosCPUSerialNumber": "string",
 
 
-
 "zosLpaName": "string",
-
 
 
 "zosSystemName": "string",
 
 
-
 "zosTotalGeneralPurposeProcessors": 1,
-
 
 
 "zosTotalPhysicalMemory": 1,
 
 
-
 "zosTotalZiipProcessors": 1,
-
 
 
 "zosVirtualization": "string"
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -891,9 +727,7 @@ The API token is passed in the **Authorization** header.
 curl -X GET \
 
 
-
 https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-B7A6F9EE9F366CB5 \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -911,229 +745,172 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-B
 {
 
 
-
 "entityId": "HOST-B7A6F9EE9F366CB5",
-
 
 
 "displayName": "tag009",
 
 
-
 "discoveredName": "tag009",
-
 
 
 "firstSeenTimestamp": 1538473087608,
 
 
-
 "lastSeenTimestamp": 1538641647769,
-
 
 
 "tags": [
 
 
-
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "loadtest"
 
 
-
 },
 
 
-
 {
-
 
 
 "context": "CONTEXTLESS",
 
 
-
 "key": "host tag"
-
 
 
 }
 
 
-
 ],
-
 
 
 "fromRelationships": {
 
 
-
 "isNetworkClientOfHost": [
-
 
 
 "HOST-80FF8584D8954C1D",
 
 
-
 "HOST-A281F848361E79A1"
-
 
 
 ]
 
 
-
 },
-
 
 
 "toRelationships": {
 
 
-
 "isProcessOf": [
-
 
 
 "PROCESS_GROUP_INSTANCE-9146FB8A6A155F93"
 
 
-
 ],
-
 
 
 "isSiteOf": [
 
 
-
 "GEOLOC_SITE-F72DF471AE5F56F6"
 
 
-
 ],
-
 
 
 "isNetworkClientOfHost": [
 
 
-
 "HOST-80FF8584D8954C1D"
 
 
-
 ],
-
 
 
 "runsOn": [
 
 
-
 "PROCESS_GROUP-83D74C22E79B074F"
-
 
 
 ]
 
 
-
 },
-
 
 
 "osType": "LINUX",
 
 
-
 "osArchitecture": "X86",
-
 
 
 "osVersion": "Ubuntu 18.04.1",
 
 
-
 "ipAddresses": [
-
 
 
 "127.0.0.1",
 
 
-
 "192.168.1.1"
-
 
 
 ],
 
 
-
 "bitness": "64bit",
-
 
 
 "cpuCores": 4,
 
 
-
 "logicalCpuCores": 8,
-
 
 
 "consumedHostUnits": 2,
 
 
-
 "managementZones": [
 
 
-
 {
-
 
 
 "id": "6164525246045854296",
 
 
-
 "name": "Zone Service E"
-
 
 
 },
 
 
-
 {
-
 
 
 "id": "5678",
 
 
-
 "name": "Infrastructure Linux"
-
 
 
 }
 
 
-
 ]
-
 
 
 }

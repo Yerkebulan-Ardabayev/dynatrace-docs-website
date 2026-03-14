@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:37.921494
 
 # Instrument your JavaScript application on Node.js with OpenTelemetry
 
-# Instrument your JavaScript application on Node.js with OpenTelemetry
 
 * Latest Dynatrace
 * How-to guide
@@ -50,33 +49,25 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    npm install \
 
 
-
    @opentelemetry/api \
-
 
 
    @opentelemetry/exporter-metrics-otlp-proto \
 
 
-
    @opentelemetry/exporter-trace-otlp-proto \
-
 
 
    @opentelemetry/instrumentation \
 
 
-
    @opentelemetry/resources \
-
 
 
    @opentelemetry/sdk-metrics \
 
 
-
    @opentelemetry/sdk-trace-node \
-
 
 
    @opentelemetry/semantic-conventions
@@ -89,233 +80,175 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    const opentelemetry = require("@opentelemetry/api");
 
 
-
    const { resourceFromAttributes, emptyResource, defaultResource } = require("@opentelemetry/resources");
-
 
 
    const { ATTR_SERVICE_NAME, ATTR_SERVICE_VERSION } = require("@opentelemetry/semantic-conventions");
 
 
-
    const { NodeTracerProvider } = require("@opentelemetry/sdk-trace-node");
-
 
 
    const { registerInstrumentations } = require("@opentelemetry/instrumentation");
 
 
-
    const { BatchSpanProcessor } = require("@opentelemetry/sdk-trace-base");
-
 
 
    const { OTLPTraceExporter } = require("@opentelemetry/exporter-trace-otlp-proto");
 
 
-
    const { OTLPMetricExporter } = require("@opentelemetry/exporter-metrics-otlp-proto");
-
 
 
    const { MeterProvider, PeriodicExportingMetricReader, AggregationTemporality } = require('@opentelemetry/sdk-metrics');
 
 
-
    const DT_API_URL = ''; // TODO: Provide your SaaS/Managed URL here
-
 
 
    const DT_API_TOKEN = ''; // TODO: Provide the OpenTelemetry-scoped access token here
 
 
-
    // ===== GENERAL SETUP =====
-
 
 
    registerInstrumentations({
 
 
-
    instrumentations: [ /* TODO Register your auto-instrumentation libraries here */ ],
 
 
-
    });
-
 
 
    const fs = require("fs");
 
 
-
    let dtmetadata = emptyResource();
-
 
 
    for (let name of ['dt_metadata_e617c525669e072eebe3d0f08212e8f2.json', '/var/lib/dynatrace/enrichment/dt_metadata.json', '/var/lib/dynatrace/enrichment/dt_host_metadata.json']) {
 
 
-
    try {
-
 
 
    dtmetadata = dtmetadata.merge(
 
 
-
    resourceFromAttributes(JSON.parse(fs.readFileSync(name.startsWith("/var") ?
-
 
 
    name : fs.readFileSync(name).toString('utf-8').trim()).toString('utf-8'))));
 
 
-
    break
-
 
 
    } catch { }
 
 
-
    }
-
 
 
    const resource =
 
 
-
    defaultResource().merge(
-
 
 
    resourceFromAttributes({
 
 
-
    [ATTR_SERVICE_NAME]: "js-agent",
-
 
 
    [ATTR_SERVICE_VERSION]: "0.1.0",
 
 
-
    })
-
 
 
    ).merge(dtmetadata);
 
 
-
    // ===== TRACING SETUP =====
-
 
 
    const exporter = new OTLPTraceExporter({
 
 
-
    url: DT_API_URL + '/v1/traces',
-
 
 
    headers: { Authorization: 'Api-Token ' + DT_API_TOKEN }
 
 
-
    });
-
 
 
    const processor = new BatchSpanProcessor(exporter);
 
 
-
    const provider = new NodeTracerProvider({
 
 
-
    resource: resource,
-
 
 
    spanProcessors: [ processor ]
 
 
-
    });
-
 
 
    provider.register();
 
 
-
    // ===== METRIC SETUP =====
-
 
 
    const metricExporter = new OTLPMetricExporter({
 
 
-
    url: DT_API_URL + '/v1/metrics',
-
 
 
    headers: { Authorization: 'Api-Token ' + DT_API_TOKEN },
 
 
-
    temporalityPreference: AggregationTemporality.DELTA
 
 
-
    });
-
 
 
    const metricReader = new PeriodicExportingMetricReader({
 
 
-
    exporter: metricExporter,
-
 
 
    exportIntervalMillis: 3000
 
 
-
    });
-
 
 
    const meterProvider = new MeterProvider({
 
 
-
    resource: resource,
-
 
 
    readers: [ metricReader ]
 
 
-
    });
 
 
-
    // Set this MeterProvider to be global to the app being instrumented.
-
 
 
    opentelemetry.metrics.setGlobalMeterProvider(meterProvider);
@@ -353,17 +286,13 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    const span = tracer.startSpan('Call to /myendpoint');
 
 
-
    span.setAttribute('http.method', 'GET');
-
 
 
    span.setAttribute('net.protocol.version','1.1');
 
 
-
    // TODO your code goes here
-
 
 
    span.end();
@@ -394,9 +323,7 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    const requestCounter = meter.createCounter('request_counter', {
 
 
-
    description: 'The number of requests we received'
-
 
 
    });
@@ -415,13 +342,10 @@ The following example records on each invocation the available memory:
 const gauge = meter.createObservableGauge('free_memory');
 
 
-
 gauge.addCallback(r => {
 
 
-
 r.observe(require('os').freemem());
-
 
 
 });
@@ -447,37 +371,28 @@ The following examples assume that we received a network call via [`ClientReques
 //Extract context from incoming headers
 
 
-
 const { SpanKind, ROOT_CONTEXT } = require("@opentelemetry/api");
-
 
 
 const remoteCtx = opentelemetry.propagation.extract(ROOT_CONTEXT, req.headers);
 
 
-
 const serverSpan = opentelemetry.trace.getTracer('my-server-tracer')
-
 
 
 .startSpan('my-server-span', {
 
 
-
 kind: SpanKind.SERVER,
-
 
 
 attributes: {
 
 
-
 'my-server-key-1': 'my-server-value-1'
 
 
-
 },
-
 
 
 }, remoteCtx);
@@ -493,29 +408,22 @@ To do so, we create a `ctx` object, pass it the current span, and mark it as act
 const ctx = opentelemetry.trace.setSpan(
 
 
-
 opentelemetry.context.active(),
-
 
 
 serverSpan
 
 
-
 );
-
 
 
 const my_headers = {};
 
 
-
 opentelemetry.propagation.inject(ctx, my_headers);
 
 
-
 await axios.get(URL, {headers: my_headers});
-
 
 
 serverSpan.end();

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:40.541970
 
 # Google Cloud Network Security monitoring
 
-# Google Cloud Network Security monitoring
 
 * Latest Dynatrace
 * How-to guide

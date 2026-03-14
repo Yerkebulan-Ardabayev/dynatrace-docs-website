@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:18.947110
 
 # Grail security table migration guide
 
-# Grail security table migration guide
 
 * Latest Dynatrace
 * How-to guide
@@ -65,21 +64,16 @@ With the introduction of the `security.events` table, some updates take place au
     // previous security events within the events data table
 
 
-
     ALLOW storage:buckets:read WHERE storage:bucket-name IN ("default_security_events", "default_security_custom_events");
-
 
 
     ALLOW storage:events:read;
 
 
-
     // new table permissions
 
 
-
     ALLOW storage:buckets:read WHERE storage:table-name = 'security.events';
-
 
 
     ALLOW storage:security.events:read;
@@ -88,7 +82,6 @@ With the introduction of the `security.events` table, some updates take place au
 
     ```
     ALLOW storage:buckets:read WHERE storage:bucket-name IN ("default_security_events", "default_security_custom_events");
-
 
 
     ALLOW storage:events:read;
@@ -190,37 +183,28 @@ fetch events | filter dt.system.bucket=="default_security_custom_events"
 // Fetch all migrated security events
 
 
-
 fetch security.events
-
 
 
 | filter dt.system.bucket!="default_securityevents_builtin"
 
 
-
 | append [
-
 
 
 // Fetch all security events that were not migrated
 
 
-
 fetch events
-
 
 
 | filter event.kind == "SECURITY_EVENT"
 
 
-
 // Exclude the by Dynatrace generated security events as they are written in both tables
 
 
-
 | filter dt.system.bucket!="default_security_events"
-
 
 
 ]

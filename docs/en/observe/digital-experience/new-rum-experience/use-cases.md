@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:05.793494
 
 # Use cases for the New RUM Experience
 
-# Use cases for the New RUM Experience
 
 * Latest Dynatrace
 * Overview

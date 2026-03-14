@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:02.783409
 
 # Optimize DQL cost with Workflows
 
-# Optimize DQL cost with Workflows
 
 * Latest Dynatrace
 * Tutorial
@@ -76,17 +75,13 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
    fetch dt.system.query_executions, from:now() - 24h
 
 
-
    | filter status == "SUCCEEDED"
-
 
 
    | summarize executionCount = count(), sum = sum(scanned_bytes.on_demand), user = collectDistinct(user.email), app = collectDistinct(client.application_context), by: {query_string}
 
 
-
    | sort sum desc
-
 
 
    | limit 20
@@ -104,25 +99,19 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
   I've supplied you with result of a DQL Grail query. This result has information about top 20 expensive executed by users in last 24 hours.
 
 
-
   Create a json array with the following info:
-
 
 
   - query: that is the original query that is given in the result
 
 
-
   - email: email of the user who executed the query
-
 
 
   - improvement: tell me the reasons why query is expensive and how can user improve it
 
 
-
   - context: any relevant context where the query is executed and so on
-
 
 
   Make sure that there is no other text beside the json array and no backticks or anything
@@ -148,53 +137,40 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
   Hi {{_.list.email}},
 
 
-
   You've executed an expensive query that could be optimized to reduce costs. Below are the details to help you improve it:
 
 
-
   ---
-
 
 
   ### Query Details:
 
 
-
   - **Original Query**:
-
 
 
   `{{_.list.query}}`
 
 
-
   - **Suggested Improvements**:
-
 
 
   {{_.list.improvement}}
 
 
-
   - **Context**:
-
 
 
   {{_.list.context}}
 
 
-
   ---
-
 
 
   Taking these steps can help improve performance and reduce expenses.
 
 
-
   Thanks,
-
 
 
   Your Admin

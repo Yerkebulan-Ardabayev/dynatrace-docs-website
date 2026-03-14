@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:45.096983
 
 # Send Dynatrace notifications via webhooks
 
-# Send Dynatrace notifications via webhooks
 
 * Classic
 * 3-min read
@@ -54,49 +53,37 @@ Here is a valid JSON web hook problem-notification definition example:
 {
 
 
-
 "ImpactedEntities": {ImpactedEntities},
-
 
 
 "ImpactedEntity": "{ImpactedEntity}",
 
 
-
 "PID": "{PID}",
-
 
 
 "ProblemDetailsHTML": "{ProblemDetailsHTML}",
 
 
-
 "ProblemDetailsJSON": {ProblemDetailsJSON},
-
 
 
 "ProblemID": "{ProblemID}",
 
 
-
 "ProblemImpact": "{ProblemImpact}",
-
 
 
 "ProblemTitle": "{ProblemTitle}",
 
 
-
 "Problem URL": "https://example.com",
-
 
 
 "State": "{State}",
 
 
-
 "Tags": "{Tags}"
-
 
 
 }
@@ -110,61 +97,46 @@ After a problem has been detected, the placeholders are populated with the actua
 {
 
 
-
 "ImpactedEntities": [
-
 
 
 {"type": "HOST", "name": "MyHost1", "entity": "HOST-XXXXXXXXXXXXX" },
 
 
-
 {"type": "SERVICE", "name": "MyService1", "entity": "SERVICE-XXXXXXXXXXXXX"}
-
 
 
 ],
 
 
-
 "ImpactedEntity": "MyHost1, MyService1",
-
 
 
 "PID": "99999",
 
 
-
 "ProblemDetailsHTML": "<h1>Dynatrace problem notification test run details</h1>",
-
 
 
 "ProblemDetailsJSON": {"ID" : "99999" },
 
 
-
 "ProblemID": "999",
-
 
 
 "ProblemImpact": "INFRASTRUCTURE",
 
 
-
 "ProblemTitle": "Dynatrace problem notification test run",
-
 
 
 "Problem URL": "https://example.com",
 
 
-
 "State": "OPEN",
 
 
-
 "Tags": "testtag1, testtag2"
-
 
 
 }

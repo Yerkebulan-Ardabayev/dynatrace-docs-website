@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:27.327638
 
 # Визуализация таблицы
 
-# Визуализация таблицы
 
 * Latest Dynatrace
 * Практическое руководство
@@ -31,9 +30,7 @@ scraped: 2026-03-06T21:20:27.327638
 timeseries cpu=avg(dt.host.cpu.usage), by:{dt.entity.host}
 
 
-
 | sort arrayAvg(cpu), direction:"descending"
-
 
 
 | limit 3
@@ -174,7 +171,6 @@ timeseries cpu=avg(dt.host.cpu.usage), by:{dt.entity.host}
 
     ```
     fetch logs
-
 
 
     | limit 2000

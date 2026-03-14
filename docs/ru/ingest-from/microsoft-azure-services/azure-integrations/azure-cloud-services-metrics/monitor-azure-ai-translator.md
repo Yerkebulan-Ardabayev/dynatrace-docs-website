@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:21.252492
 
 # Мониторинг Azure AI - Translator
 
-# Мониторинг Azure AI - Translator
 
 * Latest Dynatrace
 * Практическое руководство

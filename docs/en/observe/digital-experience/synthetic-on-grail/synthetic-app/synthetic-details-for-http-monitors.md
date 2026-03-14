@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:26.847734
 
 # HTTP monitors reporting results
 
-# HTTP monitors reporting results
 
 * Latest Dynatrace
 * Reference
@@ -144,7 +143,6 @@ In the example below, the availability is less than 100% because the down execut
 timeseries avg(dt.synthetic.http.availability), by:{dt.entity.http_check, dt.maintenance_window_ids, interpolated}
 
 
-
 | filter dt.entity.http_check == "HTTP_CHECK-2F280898D4FCB1A8"
 ```
 
@@ -163,13 +161,10 @@ In the example below, we have down executions detected during the maintenance pe
 timeseries av = avg(dt.synthetic.http.availability), by: {dt.entity.http_check, dt.maintenance_window_ids}
 
 
-
 | filter dt.entity.http_check == "HTTP_CHECK-2F280898D4FCB1A8"
 
 
-
 | filter isNull(dt.maintenance_window_ids)
-
 
 
 | fields avgAV=arrayAvg(av)

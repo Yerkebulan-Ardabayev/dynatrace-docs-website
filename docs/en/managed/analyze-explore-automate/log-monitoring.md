@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:33.825630
 
 # Log Monitoring Classic
 
-# Log Monitoring Classic
 
 * Classic
 * 2-min read

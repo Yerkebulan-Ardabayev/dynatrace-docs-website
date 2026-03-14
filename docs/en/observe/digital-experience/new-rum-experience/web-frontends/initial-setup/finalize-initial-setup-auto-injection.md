@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:35:05.243068
 
 # Finalize the initial setup for your auto-injected frontend
 
-# Finalize the initial setup for your auto-injected frontend
 
 * Latest Dynatrace
 * How-to guide
@@ -30,13 +29,10 @@ To check whether data has been captured and mapped to another frontend
 fetch user.events
 
 
-
 | filter matchesPhrase(page.url.full, "https://example.com/path")
 
 
-
 | filter matchesValue(dt.openpipeline.source, "rumagent")
-
 
 
 | summarize by: {frontend.name}, count()

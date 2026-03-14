@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:21.689286
 
 # Root cause analysis concepts
 
-# Root cause analysis concepts
 
 * Latest Dynatrace
 * Explanation

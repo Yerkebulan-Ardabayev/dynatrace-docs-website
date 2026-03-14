@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:33:29.156035
 
 # Настройка разрешений для Live Debugging
 
-# Настройка разрешений для Live Debugging
 
 * Latest Dynatrace
 * How-to guide
@@ -89,7 +88,6 @@ dev-obs:breakpoints:manage
 
   ```
   ALLOW storage:application.snapshots:read;
-
 
 
   ALLOW storage:buckets:read WHERE storage:table-name = "application.snapshots";

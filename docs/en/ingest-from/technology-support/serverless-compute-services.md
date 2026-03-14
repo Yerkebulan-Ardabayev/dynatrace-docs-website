@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:10.840259
 
 # Serverless compute support matrix
 
-# Serverless compute support matrix
 
 * Latest Dynatrace
 * 13-min read

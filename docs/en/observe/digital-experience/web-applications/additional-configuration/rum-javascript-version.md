@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:29:57.852417
 
 # Control the RUM JavaScript version
 
-# Control the RUM JavaScript version
 
 * How-to guide
 * Published Jul 01, 2025

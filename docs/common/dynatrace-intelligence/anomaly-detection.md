@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Anomaly detection
 
-# Anomaly detection
 
 * Latest Dynatrace
 * Overview

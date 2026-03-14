@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # OneAgent requirements
 
-# OneAgent requirements
 
 * Latest Dynatrace
 * 3-min read

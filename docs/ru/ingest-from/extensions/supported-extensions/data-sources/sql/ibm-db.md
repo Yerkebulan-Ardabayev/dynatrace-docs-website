@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:15.660573
 
 # Управление расширениями IBM Database
 
-# Управление расширениями IBM Database
 
 * Latest Dynatrace
 * How-to guide

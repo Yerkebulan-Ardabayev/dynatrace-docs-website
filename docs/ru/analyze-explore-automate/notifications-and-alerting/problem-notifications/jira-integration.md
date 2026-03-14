@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:34.918585
 
 # Отправка уведомлений Dynatrace в Jira
 
-# Отправка уведомлений Dynatrace в Jira
 
 * Classic
 * Чтение 3 мин

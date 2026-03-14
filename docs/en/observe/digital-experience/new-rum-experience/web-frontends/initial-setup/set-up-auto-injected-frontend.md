@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:29:01.569167
 
 # Set up an auto-injected frontend in the New RUM Experience
 
-# Set up an auto-injected frontend in the New RUM Experience
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:14.629107
 
 # Настройка захвата пользовательских взаимодействий для веб-фронтендов
 
-# Настройка захвата пользовательских взаимодействий для веб-фронтендов
 
 * Последняя Dynatrace
 * Практическое руководство
@@ -49,53 +48,40 @@ scraped: 2026-03-05T21:33:14.629107
 <!-- Track when users focus on search -->
 
 
-
 <input data-dt-focus type="text" placeholder="Search products...">
-
 
 
 <!-- Monitor form field interaction -->
 
 
-
 <form>
-
 
 
 <input data-dt-focus name="email" type="email" placeholder="Email">
 
 
-
 <input data-dt-focus name="password" type="password" placeholder="Password">
-
 
 
 <button type="submit">Login</button>
 
 
-
 </form>
-
 
 
 <!-- Track focus on custom components -->
 
 
-
 <div data-dt-focus tabindex="0" role="button">Custom Button</div>
-
 
 
 <!-- Track both focus and blur for complete interaction -->
 
 
-
 <textarea data-dt-focus data-dt-blur placeholder="Your feedback..."></textarea>
 
 
-
 <!-- Monitor search abandonment -->
-
 
 
 <input data-dt-focus data-dt-blur type="search" placeholder="What are you looking for?">
@@ -114,81 +100,61 @@ scraped: 2026-03-05T21:33:14.629107
 <!-- Track hover after 300ms (shows intent) -->
 
 
-
 <button data-dt-mouse-over="300">
-
 
 
 Learn More
 
 
-
 </button>
-
 
 
 <!-- Monitor product card interest with 500ms threshold -->
 
 
-
 <div class="product-card" data-dt-mouse-over="500">
-
 
 
 <img src="product.jpg">
 
 
-
 <h3>Premium Headphones</h3>
-
 
 
 <p>$299.99</p>
 
 
-
 </div>
-
 
 
 <!-- Track tooltip hover with 1 second threshold -->
 
 
-
 <span data-dt-mouse-over="1000">
-
 
 
 <i class="info-icon">?</i>
 
 
-
 <div class="tooltip">Detailed information appears here</div>
-
 
 
 </span>
 
 
-
 <!-- Possible different thresholds for different intents -->
-
 
 
 <nav>
 
 
-
 <div data-dt-mouse-over="200">Products</div>      <!-- Quick hover -->
-
 
 
 <div data-dt-mouse-over="500">Solutions</div>     <!-- Medium intent -->
 
 
-
 <div data-dt-mouse-over="1000">Documentation</div> <!-- Strong intent -->
-
 
 
 </nav>

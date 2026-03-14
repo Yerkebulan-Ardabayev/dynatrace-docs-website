@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Flatcar support on SELinux
 
-# Flatcar support on SELinux
 
 * 1-min read
 * Published May 30, 2023

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Update cluster user sessions configuration
 
-# Update cluster user sessions configuration
 
 * Published Feb 12, 2020
 
@@ -18,13 +17,10 @@ You can use this request to update automatic logout policy. By default, there's 
 "automaticLogoutDto": {
 
 
-
 "logoutInactiveUsersEnabled": true,
 
 
-
 "userInactivityTimeout": 900
-
 
 
 }
@@ -81,37 +77,28 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "automaticLogoutDto": {
-
 
 
 "logoutInactiveUsersEnabled": true,
 
 
-
 "userInactivityTimeout": 900
-
 
 
 },
 
 
-
 "concurrentSessionPolicyDto": {
-
 
 
 "adminLimit": 1,
 
 
-
 "userLimit": 1
 
 
-
 }
-
 
 
 }
@@ -137,13 +124,10 @@ In this example, the request updates the cluster user sessions configuration. Cl
 curl -X PUT "https://myManaged.cluster.com/api/cluster/v2/clusterConfig/userSessions"
 
 
-
 -H  "accept: */*"
 
 
-
 -H  "Content-Type: */*"
-
 
 
 -d "{\"concurrentSessionPolicyDto\":{\"userLimit\":0,\"adminLimit\":0},\"automaticLogoutDto\":{\"logoutInactiveUsersEnabled\":true,\"userInactivityTimeout\":900}}"
@@ -161,37 +145,28 @@ https://myManaged.cluster.com/api/cluster/v2/clusterConfig/userSessions
 {
 
 
-
 "concurrentSessionPolicyDto": {
-
 
 
 "userLimit": 3,
 
 
-
 "adminLimit": 5
-
 
 
 },
 
 
-
 "automaticLogoutDto": {
-
 
 
 "logoutInactiveUsersEnabled": true,
 
 
-
 "userInactivityTimeout": 900
 
 
-
 }
-
 
 
 }

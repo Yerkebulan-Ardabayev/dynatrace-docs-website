@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace Intelligence generative AI - Tips for writing better prompts
 
-# Dynatrace Intelligence generative AI - Tips for writing better prompts
 
 * Latest Dynatrace
 * Reference

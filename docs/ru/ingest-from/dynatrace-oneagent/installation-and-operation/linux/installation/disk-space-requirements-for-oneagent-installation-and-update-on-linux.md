@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:00.574729
 
 # Файлы OneAgent и требования к дисковому пространству в Linux
 
-# Файлы OneAgent и требования к дисковому пространству в Linux
 
 * Latest Dynatrace
 * 4-min read

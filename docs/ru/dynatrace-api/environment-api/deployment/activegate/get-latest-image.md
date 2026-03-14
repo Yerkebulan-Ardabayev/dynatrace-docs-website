@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:29:58.784822
 
 # Deployment API — GET последней доступной версии образа ActiveGate
 
-# Deployment API — GET последней доступной версии образа ActiveGate
 
 * Справочник
 * Опубликовано 22 ноября 2023 г.
@@ -56,13 +55,10 @@ scraped: 2026-03-02T21:29:58.784822
 {
 
 
-
 "source": "string",
 
 
-
 "tag": "string"
-
 
 
 }

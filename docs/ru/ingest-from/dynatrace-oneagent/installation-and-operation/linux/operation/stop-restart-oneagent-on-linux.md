@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:02.259999
 
 # Остановка и перезапуск OneAgent в Linux
 
-# Остановка и перезапуск OneAgent в Linux
 
 * Latest Dynatrace
 * 1-min read

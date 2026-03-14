@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:29:57.548368
 
 # Тома контейнеризованного ActiveGate
 
-# Тома контейнеризованного ActiveGate
 
 * Latest Dynatrace
 * 3-min read
@@ -32,37 +31,28 @@ scraped: 2026-03-02T21:29:57.548368
 securityContext:
 
 
-
 allowPrivilegeEscalation: false
-
 
 
 capabilities:
 
 
-
 drop:
-
 
 
 - all
 
 
-
 privileged: false
-
 
 
 readOnlyRootFilesystem: true
 
 
-
 runAsNonRoot: true
 
 
-
 seccompProfile:
-
 
 
 type: RuntimeDefault
@@ -74,49 +64,37 @@ type: RuntimeDefault
 volumeMounts:
 
 
-
 - name: server-certs-storage
-
 
 
 mountPath: /var/lib/dynatrace/gateway/ssl
 
 
-
 - name: ag-lib-gateway-config
-
 
 
 mountPath: /var/lib/dynatrace/gateway/config
 
 
-
 - name: ag-lib-gateway-temp
-
 
 
 mountPath: /var/lib/dynatrace/gateway/temp
 
 
-
 - name: ag-lib-gateway-data
-
 
 
 mountPath: /var/lib/dynatrace/gateway/data
 
 
-
 - name: ag-log-gateway
-
 
 
 mountPath: /var/log/dynatrace/gateway
 
 
-
 - name: ag-tmp-gateway
-
 
 
 mountPath: /var/tmp/dynatrace/gateway

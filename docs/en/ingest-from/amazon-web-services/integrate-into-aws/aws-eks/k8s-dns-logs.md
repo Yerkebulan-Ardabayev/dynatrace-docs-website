@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:29:46.309494
 
 # Ingest Kubernetes DNS logs from AWS
 
-# Ingest Kubernetes DNS logs from AWS
 
 * How-to guide
 * 5-min read
@@ -41,81 +40,61 @@ To enable DNS query logging in Kubernetes, you need to enable the [log pluginÃ¯Â
    apiVersion: v1
 
 
-
    kind: ConfigMap
-
 
 
    metadata:
 
 
-
    name: coredns
-
 
 
    namespace: kube-system
 
 
-
    data:
-
 
 
    Corefile: |
 
 
-
    .:53 {
-
 
 
    errors
 
 
-
    health
-
 
 
    kubernetes cluster.local in-addr.arpa ip6.arpa {
 
 
-
    pods insecure
-
 
 
    fallthrough in-addr.arpa ip6.arpa
 
 
-
    }
-
 
 
    prometheus :9153
 
 
-
    forward . /etc/resolv.conf
-
 
 
    cache 30
 
 
-
    loop
-
 
 
    reload
 
 
-
    loadbalance
-
 
 
    }
@@ -126,9 +105,7 @@ To enable DNS query logging in Kubernetes, you need to enable the [log pluginÃ¯Â
    . {
 
 
-
    log
-
 
 
    }
@@ -139,85 +116,64 @@ To enable DNS query logging in Kubernetes, you need to enable the [log pluginÃ¯Â
    apiVersion: v1
 
 
-
    kind: ConfigMap
-
 
 
    metadata:
 
 
-
    name: coredns
-
 
 
    namespace: kube-system
 
 
-
    data:
-
 
 
    Corefile: |
 
 
-
    .:53 {
-
 
 
    log
 
 
-
    errors
-
 
 
    health
 
 
-
    kubernetes cluster.local in-addr.arpa ip6.arpa {
-
 
 
    pods insecure
 
 
-
    fallthrough in-addr.arpa ip6.arpa
-
 
 
    }
 
 
-
    prometheus :9153
-
 
 
    forward . /etc/resolv.conf
 
 
-
    cache 30
-
 
 
    loop
 
 
-
    reload
 
 
-
    loadbalance
-
 
 
    }
@@ -277,21 +233,16 @@ Let's go through why you need both CoreDNS logs and Route53 logs with some log c
   {
 
 
-
   "version":"1.100000","account_id":"<id>","region":"us-east-1","vpc_id":"vpc-<id>",
-
 
 
   "query_timestamp":"2023-11-20T21:20:29Z","query_name":"www.dynatrace.com.","query_type":"A",
 
 
-
   "query_class":"IN","rcode":"NOERROR","answers":[{"Rdata":"52.3.5.163","Type":"A","Class":"IN"}],
 
 
-
   "srcaddr":"172.31.73.143","srcport":"51217","transport":"UDP","srcids":{"instance":"i-<id>"}
-
 
 
   }
@@ -313,21 +264,16 @@ To configure it in AWS CloudShell, perform the following actions:
 # setting the environment in CLI
 
 
-
 TARGET_URL=<your_environment_URL>
-
 
 
 TARGET_API_TOKEN=dt0c01.*****
 
 
-
 STACK_NAME=dynatrace-log-delivery-stream
 
 
-
 wget -O dynatrace-firehose-log-stream.yaml https://assets.cloud.dynatrace.com/awslogstreaming/dynatrace-firehose-log-stream.yaml
-
 
 
 aws cloudformation deploy --capabilities CAPABILITY_NAMED_IAM --template-file ./dynatrace-firehose-log-stream.yaml --stack-name $STACK_NAME --parameter-overrides DtApiUrl=$DYNATRACE_API_URL DtApiToken=$DYNATRACE_API_KEY
@@ -339,7 +285,6 @@ To configure CloudWatch Logs log groups to be forwarded to Dynatrace, use the fo
 wget -O dynatrace-firehose-logs.sh https://assets.cloud.dynatrace.com/awslogstreaming/dynatrace-firehose-logs.sh && chmod +x dynatrace-firehose-logs.sh
 
 
-
 ./dynatrace-firehose-logs.sh subscribe --log-groups <log-group-name> --stack-name $STACK_NAME
 ```
 
@@ -347,7 +292,6 @@ To see your CloudWatch Logs log group in Dynatrace, use the following DQL script
 
 ```
 fetch logs
-
 
 
 | filter aws.log_group == "<log-group-name>"

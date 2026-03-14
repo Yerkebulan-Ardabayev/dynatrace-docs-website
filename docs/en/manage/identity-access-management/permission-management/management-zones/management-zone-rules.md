@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:58.467374
 
 # Management-zone rules
 
-# Management-zone rules
 
 * Classic
 * How-to guide

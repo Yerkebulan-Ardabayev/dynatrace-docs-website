@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:10.162845
 
 # Monitor Azure Service Fabric
 
-# Monitor Azure Service Fabric
 
 * Latest Dynatrace
 * How-to guide

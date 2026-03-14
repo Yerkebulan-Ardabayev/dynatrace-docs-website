@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:54.164145
 
 # Log processing (Logs Classic)
 
-# Log processing (Logs Classic)
 
 * Classic
 * Explanation

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:27.798228
 
 # Working with policies
 
-# Working with policies
 
 * Latest Dynatrace
 * Explanation

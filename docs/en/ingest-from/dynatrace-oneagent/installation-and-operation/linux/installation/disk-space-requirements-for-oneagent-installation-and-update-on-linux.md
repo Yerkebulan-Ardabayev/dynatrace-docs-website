@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:00.574729
 
 # OneAgent files and disk space requirements on Linux
 
-# OneAgent files and disk space requirements on Linux
 
 * Latest Dynatrace
 * 4-min read

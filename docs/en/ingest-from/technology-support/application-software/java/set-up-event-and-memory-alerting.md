@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:46.503655
 
 # Out-of-memory (OOM) and out-of-threads (OOT) events and alerting
 
-# Out-of-memory (OOM) and out-of-threads (OOT) events and alerting
 
 * Latest Dynatrace
 * 2-min read

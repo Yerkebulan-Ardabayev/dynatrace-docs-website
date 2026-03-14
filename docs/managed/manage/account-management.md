@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Account Management
 
-# Account Management
 
 * Explanation
 * 5-min read

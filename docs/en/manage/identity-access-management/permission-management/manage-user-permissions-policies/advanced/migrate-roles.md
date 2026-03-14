@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:52.290524
 
 # Upgrade role-based permissions to Dynatrace IAM policies
 
-# Upgrade role-based permissions to Dynatrace IAM policies
 
 * Latest Dynatrace
 * 11-min read
@@ -175,7 +174,6 @@ If we were to create a new custom policy to assign those permissions, we could w
 
 ```
 ALLOW  environment:roles:replay-sessions-with-masking, environment:roles:replay-sessions-without-masking, environment:roles:manage-settings, environment:roles:view-sensitive-request-data , environment:roles:manage-security-problems, environment:roles:logviewer
-
 
 
 WHERE environment:management-zone startsWith "mgmt_na";

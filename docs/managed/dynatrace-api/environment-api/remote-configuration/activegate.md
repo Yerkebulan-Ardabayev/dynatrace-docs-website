@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # ActiveGate remote configuration management API
 
-# ActiveGate remote configuration management API
 
 * Reference
 * Published Jun 01, 2022

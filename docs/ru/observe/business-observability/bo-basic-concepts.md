@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:46.759834
 
 # Основные концепции Dynatrace Business Observability
 
-# Основные концепции Dynatrace Business Observability
 
 * Последняя версия Dynatrace
 * Пояснение

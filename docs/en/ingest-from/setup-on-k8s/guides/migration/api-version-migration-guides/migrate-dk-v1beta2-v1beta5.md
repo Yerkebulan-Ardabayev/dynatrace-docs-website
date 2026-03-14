@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:59.327256
 
 # Migration of DynaKube v1beta2 to v1beta5
 
-# Migration of DynaKube v1beta2 to v1beta5
 
 * Latest Dynatrace
 * Reference
@@ -65,17 +64,13 @@ To ensure that the Kubernetes storage backend no longer contains outdated DynaKu
 for item in $(kubectl get dynakubes.dynatrace.com -A -o jsonpath='{range .items[*]}{.metadata.namespace}{"/"}{.metadata.name}{"\n"}{end}'); do
 
 
-
 namespace=${item%/*}
-
 
 
 name=${item#*/}
 
 
-
 kubectl get dynakubes.dynatrace.com -n $namespace $name -o yaml | kubectl replace -f -
-
 
 
 done
@@ -113,33 +108,25 @@ We recommend the following:
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack: {} # same as autoUpdate: true
-
 
 
   # ...
@@ -150,85 +137,64 @@ We recommend the following:
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack:
-
 
 
   image: ... # same effect as autoUpdate: false
 
 
-
   codeModulesImage: # same effect as autoUpdate: false
-
 
 
   # ...
 
 
-
   ---
-
 
 
   apiVersion: dynatrace.com/v1beta5
 
 
-
   kind: DynaKube
-
 
 
   metadata:
 
 
-
   name: example
-
 
 
   namespace: dynatrace
 
 
-
   spec:
-
 
 
   oneAgent:
 
 
-
   cloudNativeFullstack:
 
 
-
   version: ... # replaces autoUpdate: false
-
 
 
   # ...

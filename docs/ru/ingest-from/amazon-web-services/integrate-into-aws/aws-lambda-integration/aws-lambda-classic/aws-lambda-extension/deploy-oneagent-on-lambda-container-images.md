@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:31:40.930635
 
 # Интеграция Dynatrace Lambda Layer в контейнерные образы
 
-# Интеграция Dynatrace Lambda Layer в контейнерные образы
 
 * Classic
 * Практическое руководство
@@ -41,17 +40,13 @@ Lambda-слой, как и пакет функции, представляет �
 ENV AWS_LAMBDA_EXEC_WRAPPER=/opt/dynatrace
 
 
-
 ENV DT_TENANT=abcd1234
-
 
 
 ENV DT_CLUSTER_ID=1234567890
 
 
-
 ENV DT_CONNECTION_BASE_URL=https://abcd1234.live.dynatrace.com
-
 
 
 ENV DT_CONNECTION_AUTH_TOKEN=dt0a01...
@@ -94,7 +89,6 @@ ENV DT_CONNECTION_AUTH_TOKEN=dt0a01...
    curl $(aws --region <YOUR_LAMBDA_LAYER_REGION> lambda get-layer-version-by-arn --arn <YOUR_LAMBDA_LAYER_ARN_SNIPPET> --query 'Content.Location' --output text) --output layer.zip
 
 
-
    unzip -d DynatraceOneAgentExtension layer.zip
    ```
 
@@ -106,7 +100,6 @@ ENV DT_CONNECTION_AUTH_TOKEN=dt0a01...
    curl $(aws --region us-east-1 lambda get-layer-version-by-arn --arn arn:aws:lambda:us-east-1:725887861453:layer:Dynatrace_OneAgent_1_207_6_20201127-103507_nodejs:1 --query 'Content.Location' --output text) --output layer.zip
 
 
-
    unzip -d DynatraceOneAgentExtension layer.zip
    ```
 
@@ -115,7 +108,6 @@ ENV DT_CONNECTION_AUTH_TOKEN=dt0a01...
 
    ```
    COPY DynatraceOneAgentExtension/ /opt/
-
 
 
    RUN chmod +x /opt/dynatrace
@@ -131,13 +123,10 @@ ENV DT_CONNECTION_AUTH_TOKEN=dt0a01...
 containerized-lambda-sample
 
 
-
 --- Dockerfile
 
 
-
 --- DynatraceOneAgentExtension
-
 
 
 --- index.js
@@ -151,9 +140,7 @@ containerized-lambda-sample
 exports.handler = async () => {
 
 
-
 return "hello world";
-
 
 
 }
@@ -165,61 +152,46 @@ return "hello world";
 FROM public.ecr.aws/lambda/nodejs:18
 
 
-
 COPY index.js ${LAMBDA_TASK_ROOT}
-
 
 
 # --- Begin of enable Dynatrace OneAgent monitoring section
 
 
-
 # environment variables copied from Dynatrace AWS Lambda deployment screen
-
 
 
 # (prefix with ENV and remove spaces around equal signs)
 
 
-
 ENV AWS_LAMBDA_EXEC_WRAPPER=/opt/dynatrace
-
 
 
 ENV DT_TENANT=abcd1234
 
 
-
 ENV DT_CLUSTER_ID=1234567890
-
 
 
 ENV DT_CONNECTION_BASE_URL=https://abcd1234.live.dynatrace.com
 
 
-
 ENV DT_CONNECTION_AUTH_TOKEN=dt0a01...
-
 
 
 # copy Dynatrace OneAgent extension download and extracted to local disk into container image
 
 
-
 COPY DynatraceOneAgentExtension/ /opt/
-
 
 
 # make /opt/dynatrace shell script executable
 
 
-
 RUN chmod +x /opt/dynatrace
 
 
-
 # --- End of enable Dynatrace OneAgent monitoring section
-
 
 
 CMD [ "index.handler" ]

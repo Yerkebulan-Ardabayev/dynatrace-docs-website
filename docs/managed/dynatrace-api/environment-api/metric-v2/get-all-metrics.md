@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Metrics API - GET metrics
 
-# Metrics API - GET metrics
 
 * Reference
 * Published Jun 14, 2019
@@ -154,381 +153,286 @@ The value type for the metric.
 {
 
 
-
 "metrics": [
 
 
-
 {
-
 
 
 "aggregationTypes": [
 
 
-
 "auto",
-
 
 
 "value"
 
 
-
 ],
-
 
 
 "created": 1597400123451,
 
 
-
 "dduBillable": false,
-
 
 
 "defaultAggregation": {
 
 
-
 "type": "value"
-
 
 
 },
 
 
-
 "description": "Percentage of user-space CPU time currently utilized, per host.",
-
 
 
 "dimensionDefinitions": [
 
 
-
 {
-
 
 
 "displayName": "Host",
 
 
-
 "index": 0,
-
 
 
 "key": "dt.entity.host",
 
 
-
 "name": "Host",
-
 
 
 "type": "ENTITY"
 
 
-
 }
 
 
-
 ],
-
 
 
 "displayName": "CPU user",
 
 
-
 "entityType": [
-
 
 
 "HOST"
 
 
-
 ],
 
 
-
 "lastWritten": 1597400717783,
-
 
 
 "metricId": "builtin:host.cpu.user:splitBy(\"dt.entity.host\"):max:fold",
 
 
-
 "metricValueType": {
-
 
 
 "type": "unknown"
 
 
-
 },
-
 
 
 "tags": [],
 
 
-
 "transformations": [
-
 
 
 "filter",
 
 
-
 "fold",
-
 
 
 "limit",
 
 
-
 "merge",
-
 
 
 "names",
 
 
-
 "parents",
-
 
 
 "timeshift",
 
 
-
 "rate",
-
 
 
 "sort",
 
 
-
 "last",
-
 
 
 "splitBy"
 
 
-
 ],
-
 
 
 "unit": "Percent"
 
 
-
 },
 
 
-
 {
-
 
 
 "aggregationTypes": [
 
 
-
 "auto",
-
 
 
 "value"
 
 
-
 ],
-
 
 
 "created": 1597400123451,
 
 
-
 "dduBillable": false,
-
 
 
 "defaultAggregation": {
 
 
-
 "type": "value"
 
 
-
 },
-
 
 
 "description": "Percentage of user-space CPU time currently utilized, per host.",
 
 
-
 "dimensionDefinitions": [
-
 
 
 {
 
 
-
 "displayName": "Host",
-
 
 
 "index": 0,
 
 
-
 "key": "dt.entity.host",
-
 
 
 "name": "Host",
 
 
-
 "type": "ENTITY"
-
 
 
 }
 
 
-
 ],
-
 
 
 "displayName": "CPU user",
 
 
-
 "entityType": [
-
 
 
 "HOST"
 
 
-
 ],
-
 
 
 "lastWritten": 1597400717783,
 
 
-
 "metricId": "builtin:host.cpu.user:splitBy()",
-
 
 
 "metricValueType": {
 
 
-
 "type": "unknown"
-
 
 
 },
 
 
-
 "tags": [],
-
 
 
 "transformations": [
 
 
-
 "filter",
-
 
 
 "fold",
 
 
-
 "limit",
-
 
 
 "merge",
 
 
-
 "names",
-
 
 
 "parents",
 
 
-
 "timeshift",
-
 
 
 "rate",
 
 
-
 "sort",
-
 
 
 "last",
 
 
-
 "splitBy"
 
 
-
 ],
-
 
 
 "unit": "Percent"
 
 
-
 }
-
 
 
 ],
 
 
-
 "nextPageKey": "ABCDEFABCDEFABCDEF_",
 
 
-
 "totalCount": 3
-
 
 
 }
@@ -554,9 +458,7 @@ The response is in `application/json` format and is truncated to four entries.
 curl -L -X GET 'https://mySampleEnv.live.dynatrace.com/api/v2/metrics?fields=unit,aggregationTypes&metricSelector=builtin:*' \
 
 
-
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
-
 
 
 -H 'Accept: application/json'
@@ -574,165 +476,124 @@ https://mySampleEnv.live.dynatrace.com/api/v2/metrics?fields=unit,aggregationTyp
 {
 
 
-
 "totalCount": 1808,
-
 
 
 "nextPageKey": "___a7acX3q0AAAAGAQAJYnVpbHRpbjoqAQA",
 
 
-
 "metrics": [
 
 
-
 {
-
 
 
 "metricId": "builtin:host.cpu.idle",
 
 
-
 "unit": "Percent",
-
 
 
 "aggregationTypes": [
 
 
-
 "auto",
-
 
 
 "avg",
 
 
-
 "max",
-
 
 
 "min"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "metricId": "builtin:host.cpu.load",
 
 
-
 "unit": "Ratio",
-
 
 
 "aggregationTypes": [
 
 
-
 "auto",
-
 
 
 "avg",
 
 
-
 "max",
-
 
 
 "min"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "metricId": "builtin:service.errors.server.count",
 
 
-
 "unit": "Count",
-
 
 
 "aggregationTypes": [
 
 
-
 "auto",
-
 
 
 "value"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "metricId": "builtin:service.keyRequest.count.client",
 
 
-
 "unit": "Count",
-
 
 
 "aggregationTypes": [
 
 
-
 "auto",
-
 
 
 "value"
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -744,17 +605,13 @@ The CSV table with header row looks like this. To obtain it, change the **Accept
 metricId,unit,aggregationTypes
 
 
-
 builtin:host.cpu.idle,Percent,"[auto, avg, max, min]"
-
 
 
 builtin:host.cpu.load,Ratio,"[auto, avg, max, min]"
 
 
-
 builtin:service.errors.server.count,Count,"[auto, value]"
-
 
 
 builtin:service.keyRequest.count.client,Count,"[auto, value]"

@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:26:16.765189
 
 # Google Cloud Tasks monitoring
 
-# Google Cloud Tasks monitoring
 
 * Latest Dynatrace
 * How-to guide

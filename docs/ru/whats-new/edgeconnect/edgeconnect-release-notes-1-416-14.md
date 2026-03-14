@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:22.711016
 
 # EdgeConnect release notes version 1.416.14
 
-# EdgeConnect release notes version 1.416.14
 
 * Актуальная версия Dynatrace
 * Примечания к выпуску

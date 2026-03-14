@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:43.997109
 
 # Configure OpenTelemetry tracing with Istio
 
-# Configure OpenTelemetry tracing with Istio
 
 * Latest Dynatrace
 * How-to guide
@@ -133,65 +132,49 @@ The resulting configuration should look like this, assuming the default ingest s
 apiVersion: install.istio.io/v1alpha1
 
 
-
 kind: IstioOperator
-
 
 
 spec:
 
 
-
 meshConfig:
-
 
 
 extensionProviders:
 
 
-
 - name: dynatrace-otel
-
 
 
 opentelemetry:
 
 
-
 port: 4318
-
 
 
 service: "<dynakube-name>-telemetry-ingest.<dynatrace-operator-namespace>.svc.cluster.local" # <-- Please fill in your ingest endpoint service
 
 
-
 http:
-
 
 
 path: "/v1/traces"
 
 
-
 timeout: 10s
-
 
 
 resource_detectors:
 
 
-
 dynatrace: {}
-
 
 
 dynatrace_sampler:
 
 
-
 tenant: "<your-tenant-id>"  # <-- This must not be changed from step 2
-
 
 
 cluster_id: <cluster-id>    # <-- This must not be changed from step 2

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:22.247193
 
 # Profiling and optimization
 
-# Profiling and optimization
 
 * Classic
 * Overview

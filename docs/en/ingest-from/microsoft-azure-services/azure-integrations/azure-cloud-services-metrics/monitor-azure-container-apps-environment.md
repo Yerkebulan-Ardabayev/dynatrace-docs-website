@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:30:55.602824
 
 # Azure Container Apps Environment monitoring
 
-# Azure Container Apps Environment monitoring
 
 * Latest Dynatrace
 * How-to guide

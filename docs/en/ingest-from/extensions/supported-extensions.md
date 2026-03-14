@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:21.522966
 
 # Explore supported Extensions
 
-# Explore supported Extensions
 
 * Latest Dynatrace
 * Explanation
@@ -17,11 +16,6 @@ Dynatrace Extensions are pre-built integrations that allow you to extend Dynatra
 
 Select an extension to start learning about it.
 
-Filter by
-
-Select an option
-
-Type to filter
 
 ## Where can you find an Extension?
 

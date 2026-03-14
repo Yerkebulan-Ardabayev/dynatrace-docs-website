@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:13.097220
 
 # Ingest Snyk vulnerability findings, scans, and audit logs
 
-# Ingest Snyk vulnerability findings, scans, and audit logs
 
 * Latest Dynatrace
 * Extension
@@ -66,7 +65,6 @@ See below for the [Snyk](#snyk) and [Dynatrace](#dt) requirements.
      fetch logs
 
 
-
      | filter log.source=="Snyk"
      ```
    * For finding events:
@@ -75,13 +73,10 @@ See below for the [Snyk](#snyk) and [Dynatrace](#dt) requirements.
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Snyk"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -92,13 +87,10 @@ See below for the [Snyk](#snyk) and [Dynatrace](#dt) requirements.
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Snyk"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"

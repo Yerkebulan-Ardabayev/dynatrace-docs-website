@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:48.414954
 
 # Send Dynatrace notifications to VictorOps
 
-# Send Dynatrace notifications to VictorOps
 
 * Classic
 * 2-min read

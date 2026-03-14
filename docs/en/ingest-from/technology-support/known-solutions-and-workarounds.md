@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:51.745190
 
 # Known solutions and workarounds
 
-# Known solutions and workarounds
 
 * Latest Dynatrace
 * 14-min read
@@ -110,9 +109,7 @@ This problem can be solved by changing the stack size to 8 MB, which is the defa
 <IfModule mpm_winnt_module>
 
 
-
 ThreadStackSize 8388608
-
 
 
 </IfModule>
@@ -207,7 +204,6 @@ Message: `NullPointerException at`
 
 ```
 `org.aspectj.weaver.reflect.Java15AnnotationFindergetAnnotations
-
 
 
 (Java15AnnotationFinder.java:109)`
@@ -514,93 +510,70 @@ Create a file `/etc/fonts/local.conf` with the content shown below to explicitly
 <?xml version='1.0'?>
 
 
-
 <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
-
 
 
 <fontconfig>
 
 
-
 <alias>
-
 
 
 <family>serif</family>
 
 
-
 <prefer><family>Utopia</family></prefer>
-
 
 
 </alias>
 
 
-
 <alias>
-
 
 
 <family>sans-serif</family>
 
 
-
 <prefer><family>Utopia</family></prefer>
-
 
 
 </alias>
 
 
-
 <alias>
-
 
 
 <family>monospace</family>
 
 
-
 <prefer><family>Utopia</family></prefer>
-
 
 
 </alias>
 
 
-
 <alias>
-
 
 
 <family>dialog</family>
 
 
-
 <prefer><family>Utopia</family></prefer>
 
 
-
 </alias>
-
 
 
 <alias>
 
 
-
 <family>dialoginput</family>
-
 
 
 <prefer><family>Utopia</family></prefer>
 
 
-
 </alias>
-
 
 
 </fontconfig>
@@ -640,37 +613,28 @@ The dispatcher needs to be configured to cache the response header "X-OneAgent-J
 /cache
 
 
-
 {
-
 
 
 # Cache configuration
 
 
-
 # <existing configuration>
-
 
 
 # ...
 
 
-
 /headers
-
 
 
 {
 
 
-
 "X-OneAgent-JS-Injection"
 
 
-
 }
-
 
 
 }

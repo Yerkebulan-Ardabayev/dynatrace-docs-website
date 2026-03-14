@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:40.158562
 
 # Adaptive Data Retention
 
-# Adaptive Data Retention
 
 * Latest Dynatrace
 * 6-min read

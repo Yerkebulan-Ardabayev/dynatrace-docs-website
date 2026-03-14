@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:41.434597
 
 # Обновление Dynatrace OneAgent на AIX
 
-# Обновление Dynatrace OneAgent на AIX
 
 * Последняя версия Dynatrace
 * Практическое руководство

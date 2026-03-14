@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:44.146131
 
 # Передача журналов в Dynatrace с помощью Fluent Bit
 
-# Передача журналов в Dynatrace с помощью Fluent Bit
 
 * Последняя Dynatrace
 * Учебник

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:41.888368
 
 # Log viewer (Logs Classic)
 
-# Log viewer (Logs Classic)
 
 * Classic
 * Explanation

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:06.853367
 
 # Мониторинг Azure App Service
 
-# Мониторинг Azure App Service
 
 * Последняя Dynatrace
 * Обзор

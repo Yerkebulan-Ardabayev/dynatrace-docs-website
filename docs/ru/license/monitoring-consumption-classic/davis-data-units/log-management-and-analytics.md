@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:35.434463
 
 # DDU для Log Management and Analytics
 
-# DDU для Log Management and Analytics
 
 * Classic
 * 12 мин. чтения

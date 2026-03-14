@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:03.440195
 
 # Monitor service-level objectives in Kubernetes/OpenShift
 
-# Monitor service-level objectives in Kubernetes/OpenShift
 
 * Classic
 * 2-min read

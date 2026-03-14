@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:22.865282
 
 # Events API v2
 
-# Events API v2
 
 * Reference
 * Published Aug 06, 2021

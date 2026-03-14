@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # OneAgent platform and capability support matrix
 
-# OneAgent platform and capability support matrix
 
 * Latest Dynatrace
 * 13-min read

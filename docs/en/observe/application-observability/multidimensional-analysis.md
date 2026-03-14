@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:27.365659
 
 # Multidimensional analysis
 
-# Multidimensional analysis
 
 * Classic
 * How-to guide

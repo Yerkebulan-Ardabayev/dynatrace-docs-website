@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:21:17.753446
 
 # Настройка Session Replay для Android
 
-# Настройка Session Replay для Android
 
 * Практическое руководство
 * Время чтения: 7 мин.
@@ -76,13 +75,10 @@ Session Replay -- это видеоподобная реконструкция �
 compileOptions {
 
 
-
 sourceCompatibility 1.8
 
 
-
 targetCompatibility 1.8
-
 
 
 }
@@ -112,17 +108,13 @@ Session Replay поставляется с тремя предустановле
 MaskingConfiguration config = new MaskingConfiguration.Safe();
 
 
-
 // .Safest or .Custom
-
 
 
 DynatraceSessionReplay.setConfiguration(Configuration.builder()
 
 
-
 .withMaskingConfiguration(config)
-
 
 
 .build());
@@ -136,17 +128,13 @@ DynatraceSessionReplay.setConfiguration(Configuration.builder()
 MaskingConfiguration config = new MaskingConfiguration.Custom();
 
 
-
 // .Safest or .Safe
-
 
 
 DynatraceSessionReplay.setConfiguration(Configuration.builder()
 
 
-
 .withMaskingConfiguration(config)
-
 
 
 .build());
@@ -160,13 +148,10 @@ DynatraceSessionReplay.setConfiguration(Configuration.builder()
 MaskingConfiguration config = new MaskingConfiguration.Custom().removeAllMaskedViews();
 
 
-
 DynatraceSessionReplay.setConfiguration(Configuration.builder()
 
 
-
 .withMaskingConfiguration(config)
-
 
 
 .build());
@@ -189,29 +174,22 @@ DynatraceSessionReplay.setConfiguration(Configuration.builder()
 Set&lt;Class<? extends View&gt;> set = new HashSet&lt;Class<? extends View&gt;>()\\{{
 
 
-
 add(ImageView.class);
-
 
 
 add(WebView.class);
 
 
-
 }};
-
 
 
 new MaskingConfiguration.Custom().addMaskedView(ImageView.class); // Adds one masked view
 
 
-
 new MaskingConfiguration.Custom().addMaskedViews(set); // Adds all masked views
 
 
-
 new MaskingConfiguration.Custom().removeMaskedView(ImageView.class); // Removes one masked view
-
 
 
 new MaskingConfiguration.Custom().removeAllMaskedViews(); // Removes all masked views
@@ -227,29 +205,22 @@ new MaskingConfiguration.Custom().removeAllMaskedViews(); // Removes all masked 
 Set&lt;Integer&gt; set = new HashSet&lt;Integer&gt;()\\{{
 
 
-
 add(R.id.view_id1);
-
 
 
 add(R.id.view_id2);
 
 
-
 }};
-
 
 
 new MaskingConfiguration.Custom().addMaskedIds(set);
 
 
-
 new MaskingConfiguration.Custom().addNonMaskedIds(set);
 
 
-
 new MaskingConfiguration.Custom().removeMaskedIds(set);
-
 
 
 new MaskingConfiguration.Custom().removeNonMaskedIds(set);
@@ -269,37 +240,28 @@ Jetpack Compose предоставляет функциональность ру
 import com.dynatrace.agent.compose.api.dtMask
 
 
-
 @Composable
-
 
 
 fun MyScreen() {
 
 
-
 Column {
-
 
 
 Text(
 
 
-
 text = "This text will be masked",
-
 
 
 modifier = Modifier.dtMask()
 
 
-
 )
 
 
-
 }
-
 
 
 }
@@ -325,17 +287,13 @@ DynatraceSessionReplay.trackCustomEvent("User logged")
 DynatraceSessionReplay.setConfiguration(
 
 
-
 Configuration.builder()
-
 
 
 .withDataTransmissionMode(DataTransmissionMode.NOT_METERED_NETWORK)
 
 
-
 .build()
-
 
 
 )

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:16.110902
 
 # API отслеживаемых сущностей — контекст безопасности
 
-# API отслеживаемых сущностей — контекст безопасности
 
 * Справочник
 * Обновлено 6 июня 2025 г.
@@ -62,17 +61,13 @@ scraped: 2026-03-06T21:29:16.110902
 {
 
 
-
 "securityContext": [
-
 
 
 "string"
 
 
-
 ]
-
 
 
 }
@@ -130,85 +125,65 @@ scraped: 2026-03-06T21:29:16.110902
 {
 
 
-
 "entityIds": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "managementZoneIds": [
 
 
-
 1
-
 
 
 ]
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -287,85 +262,65 @@ scraped: 2026-03-06T21:29:16.110902
 {
 
 
-
 "entityIds": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "managementZoneIds": [
 
 
-
 1
-
 
 
 ]
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }

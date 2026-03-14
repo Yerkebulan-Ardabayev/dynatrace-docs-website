@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:29:41.920596
 
 # Trace Python, Node.js, and Java Lambda functions
 
-# Trace Python, Node.js, and Java Lambda functions
 
 * Classic
 * How-to guide
@@ -201,45 +200,34 @@ Node.jsPython To make tracing calls from other monitored applications/RUM detect
    {
 
 
-
    "path": "$context.path",
-
 
 
    "httpMethod": "$context.httpMethod",
 
 
-
    "headers": {
-
 
 
    #foreach($param in ["x-dynatrace", "traceparent", "tracestate", "x-dtc", "referer", "host", "x-forwarded-proto", "x-forwarded-for", "x-forwarded-port"])
 
 
-
    "$param": "$util.escapeJavaScript($input.params().header.get($param))"
-
 
 
    #if($foreach.hasNext),#end
 
 
-
    #end    },
-
 
 
    "requestContext": {
 
 
-
    "stage": "$context.stage"
 
 
-
    }
-
 
 
    }

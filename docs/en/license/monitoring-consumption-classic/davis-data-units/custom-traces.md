@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:37.198226
 
 # DDUs for custom traces (Trace API)
 
-# DDUs for custom traces (Trace API)
 
 * Classic
 * 2-min read

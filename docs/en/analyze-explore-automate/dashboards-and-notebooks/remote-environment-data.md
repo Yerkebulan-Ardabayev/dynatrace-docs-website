@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:23:07.840378
 
 # Remote environment data
 
-# Remote environment data
 
 * Latest Dynatrace
 * How-to guide
@@ -90,249 +89,187 @@ You can start with a snippet (**Remote environment data via Platform token**) wh
 import { credentialVaultClient } from "@dynatrace-sdk/client-classic-environment-v2";
 
 
-
 /**
-
 
 
 * Execute a query against a Dynatrace API with token retrieval inlined.
 
 
-
 * @param {string} credentialId - The ID of the credential vault entry.
-
 
 
 * @param {string} url - The API endpoint URL.
 
 
-
 * @param {string} query - The query to execute.
-
 
 
 * @returns {Promise<any>} - The API response data.
 
 
-
 * @throws Will throw an error if any step fails.
 
 
-
 */
-
 
 
 async function fetchFromDynatrace(credentialId, url, query) {
 
 
-
 if (!credentialId || !url || !query) {
-
 
 
 throw new Error("[ValidationError] Missing required parameters: credentialId, url, or query.");
 
 
-
 }
 
 
-
 try {
-
 
 
 // Retrieve the platform token from the credential vault.
 
 
-
 const { token } = await credentialVaultClient.getCredentialsDetails({
-
 
 
 id: credentialId,
 
 
-
 }).catch((error) => {
-
 
 
 console.error(`[CredentialVaultError] Failed to retrieve token: ${error.message}`);
 
 
-
 throw new Error("Unable to fetch platform token.");
 
 
-
 });
-
 
 
 if (!token) {
 
 
-
 throw new Error("[CredentialVaultError] Token is undefined or empty.");
 
 
-
 }
-
 
 
 // Perform the API request.
 
 
-
 const response = await fetch(url, {
-
 
 
 method: "POST",
 
 
-
 headers: {
-
 
 
 "Content-Type": "application/json",
 
 
-
 Accept: "application/json",
-
 
 
 Authorization: `Bearer ${token}`,
 
 
-
 },
-
 
 
 body: JSON.stringify({
 
 
-
 query,
-
 
 
 requestTimeoutMilliseconds: 60000,
 
 
-
 enablePreview: true,
-
 
 
 }),
 
 
-
 });
-
 
 
 if (!response.ok) {
 
 
-
 throw new Error(`[HTTPError] API call failed with status ${response.status}: ${response.statusText}`);
 
 
-
 }
-
 
 
 return await response.json();
 
 
-
 } catch (error) {
-
 
 
 console.error(`[FetchError] Query execution failed: ${error.message}`);
 
 
-
 throw new Error("Unable to execute query.");
 
 
-
 }
 
 
-
 }
-
 
 
 /**
 
 
-
 * Main function to fetch and return results from Dynatrace.
-
 
 
 * @returns {Promise<any>} - The query result.
 
 
-
 */
-
 
 
 export default async function() {
 
 
-
 const credentialId = "CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX"; // Replace with your credential vault ID.
-
 
 
 const url = "https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute"; // Replace with API URL.
 
 
-
 const query = "fetch logs | limit 1"; // Replace with your query.
-
 
 
 try {
 
 
-
 const { result } = await fetchFromDynatrace(credentialId, url, query);
-
 
 
 return result;
 
 
-
 } catch (error) {
-
 
 
 console.error(`[MainFunctionError] ${error.message}`);
 
 
-
 return null; // Or handle as needed.
 
 
-
 }
-
 
 
 }
@@ -406,409 +343,307 @@ You can start with a snippet (**Remote environment data via OAuth**) when creati
 import { credentialVaultClient } from "@dynatrace-sdk/client-classic-environment-v2";
 
 
-
 /**
-
 
 
 * Authenticate to Dynatrace SSO using client credentials.
 
 
-
 * @param {string} clientId - The client ID for authentication.
-
 
 
 * @param {string} clientSecret - The client secret for authentication.
 
 
-
 * @returns {Promise<string>} - The access token.
-
 
 
 * @throws Will throw an error if authentication fails.
 
 
-
 */
-
 
 
 async function authenticateToDynatrace(clientId, clientSecret) {
 
 
-
 if (!clientId || !clientSecret) {
-
 
 
 throw new Error("[ValidationError] Missing clientId or clientSecret for SSO authentication.");
 
 
-
 }
-
 
 
 const scopes = [
 
 
-
 "environment-api",
-
 
 
 "storage:buckets:read",
 
 
-
 "storage:bizevents:read",
-
 
 
 "storage:logs:read",
 
 
-
 "storage:metrics:read",
-
 
 
 "storage:entities:read",
 
 
-
 ].join(" ");
 
 
-
 try {
-
 
 
 const response = await fetch("https://sso.dynatrace.com/sso/oauth2/token", {
 
 
-
 method: "POST",
-
 
 
 headers: { "Content-Type": "application/x-www-form-urlencoded" },
 
 
-
 body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}&scopes=${scopes}`,
-
 
 
 });
 
 
-
 if (!response.ok) {
-
 
 
 throw new Error(`[HTTPError] SSO authentication failed with status ${response.status}: ${response.statusText}`);
 
 
-
 }
-
 
 
 const { access_token: accessToken } = await response.json();
 
 
-
 if (!accessToken) {
-
 
 
 throw new Error("[SSOError] Access token not received.");
 
 
-
 }
-
 
 
 return accessToken;
 
 
-
 } catch (error) {
-
 
 
 console.error(`[DynatraceAuthError] ${error.message}`);
 
 
-
 throw error;
 
 
-
 }
 
 
-
 }
-
 
 
 /**
-
 
 
 * Fetch data from Dynatrace using a query.
 
 
-
 * @param {string} credentialId - The credential vault ID.
-
 
 
 * @param {string} url - The API endpoint URL.
 
 
-
 * @param {string} query - The query to execute.
-
 
 
 * @returns {Promise<any>} - The API response data.
 
 
-
 * @throws Will throw an error if any step fails.
 
 
-
 */
-
 
 
 async function fetchFromDynatrace(credentialId, url, query) {
 
 
-
 if (!credentialId || !url || !query) {
-
 
 
 throw new Error("[ValidationError] Missing one or more required parameters: credentialId, url, or query.");
 
 
-
 }
 
 
-
 try {
-
 
 
 // Retrieve credentials from the credential vault.
 
 
-
 const { username: clientId, password: clientSecret } = await credentialVaultClient.getCredentialsDetails({
-
 
 
 id: credentialId,
 
 
-
 }).catch(error => {
-
 
 
 console.error(`[CredentialVaultError] Failed to retrieve credentials: ${error.message}`);
 
 
-
 throw new Error("Unable to fetch credentials from the vault.");
 
 
-
 });
-
 
 
 if (!clientId || !clientSecret) {
 
 
-
 throw new Error("[CredentialVaultError] Missing clientId or clientSecret from the retrieved credentials.");
 
 
-
 }
-
 
 
 // Authenticate and get an access token.
 
 
-
 const accessToken = await authenticateToDynatrace(clientId, clientSecret);
-
 
 
 // Perform the API request.
 
 
-
 const response = await fetch(url, {
-
 
 
 method: "POST",
 
 
-
 headers: {
-
 
 
 "Content-Type": "application/json",
 
 
-
 Accept: "application/json",
-
 
 
 Authorization: `Bearer ${accessToken}`,
 
 
-
 },
-
 
 
 body: JSON.stringify({
 
 
-
 query,
-
 
 
 requestTimeoutMilliseconds: 60000,
 
 
-
 enablePreview: true,
-
 
 
 }),
 
 
-
 });
-
 
 
 if (!response.ok) {
 
 
-
 throw new Error(`[HTTPError] API call failed with status ${response.status}: ${response.statusText}`);
 
 
-
 }
-
 
 
 return await response.json();
 
 
-
 } catch (error) {
-
 
 
 console.error(`[FetchError] ${error.message}`);
 
 
-
 throw error;
 
 
-
 }
 
 
-
 }
-
 
 
 /**
 
 
-
 * Main function to execute a query and return results from Dynatrace.
-
 
 
 * @returns {Promise<any>} - The query result.
 
 
-
 */
-
 
 
 export default async function fetchDynatraceData() {
 
 
-
 const credentialId = "CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX"; // Replace with your credential vault ID.
-
 
 
 const url = "https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute"; // Replace with API URL.
 
 
-
 const query = "fetch logs | limit 1"; // Replace with your query.
-
 
 
 try {
 
 
-
 const { result } = await fetchFromDynatrace(credentialId, url, query);
-
 
 
 return result;
 
 
-
 } catch (error) {
-
 
 
 console.error(`[MainFunctionError] ${error.message}`);
 
 
-
 return null; // Return null or handle gracefully.
 
 
-
 }
-
 
 
 }

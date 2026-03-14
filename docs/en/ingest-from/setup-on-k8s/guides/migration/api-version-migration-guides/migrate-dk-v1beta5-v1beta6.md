@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:30:43.529124
 
 # Migration of DynaKube v1beta5 to v1beta6
 
-# Migration of DynaKube v1beta5 to v1beta6
 
 * Latest Dynatrace
 * Reference

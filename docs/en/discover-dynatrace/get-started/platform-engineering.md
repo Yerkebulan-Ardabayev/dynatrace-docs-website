@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:32.226910
 
 # Platform Engineering
 
-# Platform Engineering
 
 * Latest Dynatrace
 * 24-min read

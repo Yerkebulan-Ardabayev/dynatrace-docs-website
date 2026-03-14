@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Networks
 
-# Networks
 
 * Latest Dynatrace
 * Explanation

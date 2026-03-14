@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:58.626956
 
 # Permissions
 
-# Permissions
 
 * Latest Dynatrace
 * Reference
@@ -35,17 +34,13 @@ Example policy
 ALLOW hub:catalog:read;
 
 
-
 ALLOW storage:buckets:read, storage:entities:read, storage:events:read, storage:logs:read, storage:metrics:read;
-
 
 
 ALLOW environment-api:api-tokens:write, environment-api:entities:read, environment-api:entities:write, environment-api:metrics:read, environment-api:security-problems:read, environment-api:slo:read;
 
 
-
 ALLOW settings:objects:read, settings:objects:write, state:user-app-states:read, state:user-app-states:write;
-
 
 
 ALLOW davis:analyzers:execute, unified-analysis:screen-definition:read;

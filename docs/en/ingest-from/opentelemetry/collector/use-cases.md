@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:50.601348
 
 # OpenTelemetry Collector use cases
 
-# OpenTelemetry Collector use cases
 
 * Latest Dynatrace
 * How-to guide

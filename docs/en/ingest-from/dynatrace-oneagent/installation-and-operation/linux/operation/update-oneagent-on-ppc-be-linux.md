@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:51.882688
 
 # Update OneAgent on PPC BE Linux
 
-# Update OneAgent on PPC BE Linux
 
 * Latest Dynatrace
 * 1-min read

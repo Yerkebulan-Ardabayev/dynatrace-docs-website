@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:29:32.606351
 
 # Integrate on Google Cloud Functions Python
 
-# Integrate on Google Cloud Functions Python
 
 * Latest Dynatrace
 * How-to guide
@@ -48,21 +47,16 @@ Select one of the following ways to initialize tracing:
   from opentelemetry.sdk.resources import Resource
 
 
-
   from opentelemetry.semconv.resource import ResourceAttributes
-
 
 
   from dynatrace.opentelemetry.tracing.api import configure_dynatrace
 
 
-
   tracer_provider = configure_dynatrace(
 
 
-
   resource=Resource.create({"my.resource.attribute": "My Resource"})
-
 
 
   )
@@ -75,69 +69,52 @@ Select one of the following ways to initialize tracing:
   from opentelemetry.propagate import set_global_textmap
 
 
-
   from opentelemetry.sdk.resources import Resource
-
 
 
   from opentelemetry.sdk.trace import TracerProvider
 
 
-
   from opentelemetry.semconv.resource import ResourceAttributes
-
 
 
   from opentelemetry.trace import set_tracer_provider
 
 
-
   from dynatrace.opentelemetry.tracing.api import (
-
 
 
   DtSampler,
 
 
-
   DtSpanProcessor,
-
 
 
   DtTextMapPropagator,
 
 
-
   )
-
 
 
   span_processor = DtSpanProcessor()
 
 
-
   tracer_provider = TracerProvider(
-
 
 
   sampler=DtSampler(),
 
 
-
   resource=Resource.create({"my.resource.attribute": "My Resource"}),
-
 
 
   )
 
 
-
   tracer_provider.add_span_processor(span_processor)
 
 
-
   set_global_textmap(DtTextMapPropagator())
-
 
 
   set_tracer_provider(tracer_provider)
@@ -149,13 +126,10 @@ The tracing setup code should be implemented to set up tracing only once before 
 # isort: off
 
 
-
 import setup_tracing  # import the module containing your setup code
 
 
-
 # isort: on
-
 
 
 # import other modules
@@ -169,25 +143,19 @@ Use the `wrap_handler` decorator to instrument your handler function as shown in
 import flask
 
 
-
 from dynatrace.opentelemetry.gcf import wrap_handler
-
 
 
 @wrap_handler
 
 
-
 def handler(request: flask.Request) -> flask.Response:
-
 
 
 # From here the created span is available in the OpenTelemetry context as the current span.
 
 
-
 # do something ...
-
 
 
 return flask.Response("Hello World", 200)

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:31.407473
 
 # OneAgent privileges for container monitoring
 
-# OneAgent privileges for container monitoring
 
 * Latest Dynatrace
 * 2-min read

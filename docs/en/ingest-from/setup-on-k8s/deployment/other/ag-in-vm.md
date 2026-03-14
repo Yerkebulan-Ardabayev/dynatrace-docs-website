@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:23.286611
 
 # Deploy ActiveGate in a VM
 
-# Deploy ActiveGate in a VM
 
 * Latest Dynatrace
 * 5-min read
@@ -79,509 +78,382 @@ To connect the Kubernetes API to Dynatrace, follow the instructions that apply t
    apiVersion: v1
 
 
-
    kind: ServiceAccount
-
 
 
    metadata:
 
 
-
    name: dynatrace-monitoring
-
 
 
    namespace: dynatrace
 
 
-
    ---
-
 
 
    apiVersion: rbac.authorization.k8s.io/v1
 
 
-
    kind: ClusterRole
-
 
 
    metadata:
 
 
-
    name: dynatrace-monitoring-cluster
-
 
 
    rules:
 
 
-
    - apiGroups:
-
 
 
    - ""
 
 
-
    resources:
-
 
 
    - nodes
 
 
-
    - pods
-
 
 
    - namespaces
 
 
-
    - replicationcontrollers
-
 
 
    - events
 
 
-
    - resourcequotas
-
 
 
    - pods/proxy
 
 
-
    - nodes/proxy
-
 
 
    - nodes/metrics
 
 
-
    - services
-
 
 
    - persistentvolumeclaims
 
 
-
    - persistentvolumes
-
 
 
    verbs:
 
 
-
    - list
-
 
 
    - watch
 
 
-
    - get
 
 
-
    - apiGroups:
-
 
 
    - batch
 
 
-
    resources:
-
 
 
    - jobs
 
 
-
    - cronjobs
-
 
 
    verbs:
 
 
-
    - list
-
 
 
    - watch
 
 
-
    - get
 
 
-
    - apiGroups:
-
 
 
    - apps
 
 
-
    resources:
-
 
 
    - deployments
 
 
-
    - replicasets
-
 
 
    - statefulsets
 
 
-
    - daemonsets
-
 
 
    verbs:
 
 
-
    - list
-
 
 
    - watch
 
 
-
    - get
 
 
-
    - apiGroups:
-
 
 
    - apps.openshift.io
 
 
-
    resources:
-
 
 
    - deploymentconfigs
 
 
-
    verbs:
-
 
 
    - list
 
 
-
    - watch
-
 
 
    - get
 
 
-
    - apiGroups:
-
 
 
    - config.openshift.io
 
 
-
    resources:
-
 
 
    - clusterversions
 
 
-
    verbs:
-
 
 
    - list
 
 
-
    - watch
-
 
 
    - get
 
 
-
    - apiGroups:
-
 
 
    - dynatrace.com
 
 
-
    resources:
-
 
 
    - dynakubes
 
 
-
    - edgeconnects
-
 
 
    verbs:
 
 
-
    - list
-
 
 
    - watch
 
 
-
    - get
 
 
-
    - apiGroups:
-
 
 
    - apiextensions.k8s.io
 
 
-
    resources:
-
 
 
    - customresourcedefinitions
 
 
-
    verbs:
-
 
 
    - list
 
 
-
    - watch
-
 
 
    - get
 
 
-
    - apiGroups:
-
 
 
    - networking.k8s.io
 
 
-
    resources:
-
 
 
    - ingresses
 
 
-
    - networkpolicies
-
 
 
    verbs:
 
 
-
    - list
-
 
 
    - watch
 
 
-
    - get
 
 
-
    - apiGroups:
-
 
 
    - discovery.k8s.io
 
 
-
    resources:
-
 
 
    - endpointslices
 
 
-
    verbs:
-
 
 
    - list
 
 
-
    - watch
 
 
-
    - get
-
 
 
    - apiGroups:
 
 
-
    - autoscaling
-
 
 
    resources:
 
 
-
    - horizontalpodautoscalers
 
 
-
    verbs:
-
 
 
    - list
 
 
-
    - watch
 
 
-
    - get
-
 
 
    - nonResourceURLs:
 
 
-
    - /metrics
-
 
 
    - /version
 
 
-
    - /readyz
-
 
 
    - /livez
 
 
-
    verbs:
-
 
 
    - get
 
 
-
    ---
-
 
 
    apiVersion: rbac.authorization.k8s.io/v1
 
 
-
    kind: ClusterRoleBinding
-
 
 
    metadata:
 
 
-
    name: dynatrace-monitoring-cluster
-
 
 
    roleRef:
 
 
-
    apiGroup: rbac.authorization.k8s.io
-
 
 
    kind: ClusterRole
 
 
-
    name: dynatrace-monitoring-cluster
-
 
 
    subjects:
 
 
-
    - kind: ServiceAccount
 
 
-
    name: dynatrace-monitoring
-
 
 
    namespace: dynatrace
@@ -602,25 +474,19 @@ To connect the Kubernetes API to Dynatrace, follow the instructions that apply t
    apiVersion: v1
 
 
-
    kind: Secret
-
 
 
    metadata:
 
 
-
    name: dynatrace-monitoring
-
 
 
    annotations:
 
 
-
    kubernetes.io/service-account.name: "dynatrace-monitoring"
-
 
 
    type: kubernetes.io/service-account-token

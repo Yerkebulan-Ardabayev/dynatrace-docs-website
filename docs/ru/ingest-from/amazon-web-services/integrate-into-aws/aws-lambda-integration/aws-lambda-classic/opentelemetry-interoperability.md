@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:18.576681
 
 # Совместимость с OpenTelemetry
 
-# Совместимость с OpenTelemetry
 
 * Classic
 * 1-min read
@@ -25,21 +24,16 @@ scraped: 2026-03-06T21:36:18.576681
   {
 
 
-
   ...other configuration properties...
-
 
 
   "OpenTelemetry": {
 
 
-
   "EnableIntegration": true
 
 
-
   }
-
 
 
   }

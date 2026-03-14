@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:23.549476
 
 # Smartscape on Grail
 
-# Smartscape on Grail
 
 * Latest Dynatrace
 * Explanation
@@ -91,7 +90,6 @@ Display the references field by using fieldsAdd for all nodes
 smartscapeNodes "*"
 
 
-
 | fieldsAdd references
 ```
 
@@ -99,7 +97,6 @@ Summarize containers by the host ID they're running on
 
 ```
 smartscapeNodes CONTAINER
-
 
 
 | summarize by:references[runs_on.host], count()
@@ -148,49 +145,37 @@ To define a new fieldset that filters the Kubernetes configuration details that 
 POST /fieldsets
 
 
-
 {
-
 
 
 "name": "sensitive-field-k8s-object",
 
 
-
 "description": "Make k8s.object sensitive",
-
 
 
 "enabled": true,
 
 
-
 "scope": "TABLE",
-
 
 
 "fields": [
 
 
-
 "k8s.object"
-
 
 
 ],
 
 
-
 "tables": [
-
 
 
 "smartscape"
 
 
-
 ]
-
 
 
 }

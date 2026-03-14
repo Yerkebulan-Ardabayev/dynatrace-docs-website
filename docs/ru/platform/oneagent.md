@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:22.998134
 
 # OneAgent
 
-# OneAgent
 
 * Последняя версия Dynatrace
 * Чтение: 1 мин

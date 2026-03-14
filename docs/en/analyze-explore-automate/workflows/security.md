@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:38.315462
 
 # User permissions for workflows
 
-# User permissions for workflows
 
 * Latest Dynatrace
 * Reference
@@ -150,7 +149,6 @@ The user editing a workflow needs the `iam:service-users:use` permission to use 
 
 ```
 ALLOW iam:service-users:use
-
 
 
 WHERE iam:service-user-email IN ("<SERVICE_USER_1_EMAIL>", "<SERVICE_USER_2_EMAIL>");

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:52.324824
 
 # Log Monitoring in Kubernetes (Logs Classic)
 
-# Log Monitoring in Kubernetes (Logs Classic)
 
 * Classic
 * Tutorial
@@ -158,121 +157,91 @@ To create a log ingest rule using the API:
    {
 
 
-
    "items": [
 
 
-
    {
-
 
 
    "objectId": "vu9U3hXa3q0AAAABACpidWlsdGluOmxvZ21vbml0b3JpbmcubG9nLXN0b3JhZ2Utc2V0dGluZ3MABEhPU1QAEEFEMDVFRDZGQUUxNjQ2MjMAJDZkZGU3YzY5LTMzZjEtMzNiZC05ZTAwLWZlNDFmMjUxNzUzY77vVN4V2t6t",
 
 
-
    "value": {
-
 
 
    "enabled": true,
 
 
-
    "config-item-title": "Send kube-system logs",
-
 
 
    "send-to-storage": true,
 
 
-
    "matchers": [
 
 
-
    {
-
 
 
    "attribute": "k8s.container.name",
 
 
-
    "operator": "MATCHES",
 
 
-
    "values": [
-
 
 
    "kubedns",
 
 
-
    "kube-proxy"
 
 
-
    ]
-
 
 
    },
 
 
-
    {
-
 
 
    "attribute": "k8s.namespace.name",
 
 
-
    "operator": "MATCHES",
-
 
 
    "values": [
 
 
-
    "kube-system"
 
 
+   ]
+
+
+   }
+
 
    ]
 
 
-
    }
 
 
-
-   ]
-
-
-
    }
-
-
-
-   }
-
 
 
    ],
 
 
-
    "totalCount": 1,
 
 
-
    "pageSize": 100
-
 
 
    }
@@ -290,69 +259,52 @@ This task requires setting one rule with one matcher.
 [{
 
 
-
 "schemaId": "builtin:logmonitoring.log-storage-settings",
-
 
 
 "scope": "tenant",
 
 
-
 "value": {
-
 
 
 "enabled": true,
 
 
-
 "config-item-title": "All logs from kube-system namespace",
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "k8s.namespace.name",
-
 
 
 "operator": "MATCHES",
 
 
-
 "values": [
-
 
 
 "kube-system"
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
 
 
-
 }
-
 
 
 }]
@@ -366,129 +318,97 @@ This task requires setting one rule with three matchers.
 [{
 
 
-
 "schemaId": "builtin:logmonitoring.log-storage-settings",
-
 
 
 "scope": "tenant",
 
 
-
 "value": {
-
 
 
 "enabled": true,
 
 
-
 "config-item-title": "Error logs from kube-proxy and kube-dns containers",
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "k8s.namespace.name",
 
 
-
 "operator": "MATCHES",
 
 
-
 "values": [
-
 
 
 "kube-system"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "k8s.container.name",
 
 
-
 "operator": "MATCHES",
 
 
-
 "values": [
-
 
 
 "kubedns",
 
 
-
 "kube-proxy"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "operator": "MATCHES",
-
 
 
 "values": [
 
 
-
 "*ERROR*"
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
 
 
-
 }
-
 
 
 }]
@@ -502,137 +422,103 @@ This task requires setting two rules.
 [{
 
 
-
 "schemaId": "builtin:logmonitoring.log-storage-settings",
-
 
 
 "scope": "HOST_GROUP-1D91E46493049D07",
 
 
-
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "config-item-title": "Exclude logs from kube-system namespace",
 
 
-
 "send-to-storage": false,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "k8s.namespace.name",
 
 
-
 "operator": "MATCHES",
 
 
-
 "values": [
-
 
 
 "kube-system"
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
 
 
-
 }
-
 
 
 },{
 
 
-
 "schemaId": "builtin:logmonitoring.log-storage-settings",
-
 
 
 "scope": "HOST_GROUP-1D91E46493049D07",
 
 
-
 "value": {
-
 
 
 "enabled": true,
 
 
-
 "config-item-title": "All Kubernetes logs",
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "k8s.namespace.name",
-
 
 
 "operator": "MATCHES",
 
 
-
 "values": [
-
 
 
 "*"
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
 
 
-
 }
-
 
 
 }]

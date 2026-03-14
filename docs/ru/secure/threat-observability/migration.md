@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:18.947110
 
 # Руководство по миграции таблицы безопасности Grail
 
-# Руководство по миграции таблицы безопасности Grail
 
 * Latest Dynatrace
 * Практическое руководство
@@ -65,21 +64,16 @@ Dynatrace вводит новую таблицу `security.events` в [Grail](..
     // предыдущие события безопасности в таблице данных events
 
 
-
     ALLOW storage:buckets:read WHERE storage:bucket-name IN ("default_security_events", "default_security_custom_events");
-
 
 
     ALLOW storage:events:read;
 
 
-
     // новые разрешения для таблицы
 
 
-
     ALLOW storage:buckets:read WHERE storage:table-name = 'security.events';
-
 
 
     ALLOW storage:security.events:read;
@@ -88,7 +82,6 @@ Dynatrace вводит новую таблицу `security.events` в [Grail](..
 
     ```
     ALLOW storage:buckets:read WHERE storage:bucket-name IN ("default_security_events", "default_security_custom_events");
-
 
 
     ALLOW storage:events:read;
@@ -190,37 +183,28 @@ fetch events | filter dt.system.bucket=="default_security_custom_events"
 // Получить все мигрированные события безопасности
 
 
-
 fetch security.events
-
 
 
 | filter dt.system.bucket!="default_securityevents_builtin"
 
 
-
 | append [
-
 
 
 // Получить все события безопасности, которые не были мигрированы
 
 
-
 fetch events
-
 
 
 | filter event.kind == "SECURITY_EVENT"
 
 
-
 // Исключить генерируемые Dynatrace события безопасности, так как они записываются в обе таблицы
 
 
-
 | filter dt.system.bucket!="default_security_events"
-
 
 
 ]

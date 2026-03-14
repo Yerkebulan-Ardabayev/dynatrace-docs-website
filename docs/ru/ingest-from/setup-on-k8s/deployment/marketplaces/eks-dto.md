@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:30:58.689094
 
 # Установка дополнения Dynatrace Operator для AWS Elastic Kubernetes Service (AWS EKS)
 
-# Установка дополнения Dynatrace Operator для AWS Elastic Kubernetes Service (AWS EKS)
 
 * Последняя версия Dynatrace
 * Чтение: 3 минуты
@@ -88,9 +87,7 @@ scraped: 2026-03-03T21:30:58.689094
    > kubectl get dynakube -n dynatrace
 
 
-
    NAME         APIURL                                          STATUS     AGE
-
 
 
    dynakube     https://<ENVIRONMENTID>.live.dynatrace.com/api  Running    45s
@@ -102,45 +99,34 @@ scraped: 2026-03-03T21:30:58.689094
    > kubectl get pods -n dynatrace
 
 
-
    NAME                                  READY   STATUS    RESTARTS        AGE
-
 
 
    dynakube-activegate-0                 1/1     Running   0               50s
 
 
-
    dynakube-oneagent-b88rn               1/1     Running   0               50s
-
 
 
    dynakube-oneagent-m5jm4               1/1     Running   0               50s
 
 
-
    dynakube-oneagent-qhd9u               1/1     Running   0               50s
-
 
 
    dynatrace-oneagent-csi-driver-qxfwx   4/4     Running   0               2m49s
 
 
-
    dynatrace-oneagent-csi-driver-xk5c4   4/4     Running   0               2m49s
-
 
 
    dynatrace-oneagent-csi-driver-mz6ch   4/4     Running   0               2m49s
 
 
-
    dynatrace-operator-7dc8dc7d8c-wmh4z   1/1     Running   0               2m59s
 
 
-
    dynatrace-webhook-7bb6957fb5-l8fsq    1/1     Running   0               2m59s
-
 
 
    dynatrace-webhook-7bb6957fb5-rqnqk    1/1     Running   0               2m59s

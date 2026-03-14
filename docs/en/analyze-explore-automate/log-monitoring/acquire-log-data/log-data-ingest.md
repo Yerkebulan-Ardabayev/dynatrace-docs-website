@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:28:21.884183
 
 # Log ingestion API (Logs Classic)
 
-# Log ingestion API (Logs Classic)
 
 * Overview
 * 3-min read
@@ -52,9 +51,7 @@ You can customize the log data queue properties by editing the `custom.propertie
 [generic_ingest]
 
 
-
 #disk_queue_path=<custom_path> # defaults to temp folder
-
 
 
 #disk_queue_max_size_mb=<limit> # defaults to 300 MB
@@ -78,45 +75,34 @@ The response contains response code `204`.
 curl -X POST \
 
 
-
 https://environment.activegate.domain.com:9999/e/abc123a/api/v2/logs/ingest \
-
 
 
 -H 'Content-Type: application/json; charset=utf-8' \
 
 
-
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
-
 
 
 -d '[
 
 
-
 {
-
 
 
 "content": "Exception: Custom error log sent via Log ingestion API",
 
 
-
 "status": "error",
-
 
 
 "service.name": "log-monitoring-tenant",
 
 
-
 "service.namespace": "dev-stage-cluster"
 
 
-
 }
-
 
 
 ]'

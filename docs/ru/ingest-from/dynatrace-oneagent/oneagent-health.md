@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:30.839577
 
 # OneAgent health overview
 
-# OneAgent health overview
 
 * Последняя версия Dynatrace
 * Чтение: 4 мин

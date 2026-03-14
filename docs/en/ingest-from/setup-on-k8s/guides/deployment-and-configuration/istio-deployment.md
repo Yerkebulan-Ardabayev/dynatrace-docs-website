@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:03.469401
 
 # Deploy Dynatrace alongside Istio
 
-# Deploy Dynatrace alongside Istio
 
 * Latest Dynatrace
 * 10-min read
@@ -75,9 +74,7 @@ The easiest way to exclude the CNI pods from the injection by the Dynatrace Oper
 cni:
 
 
-
 podAnnotations:
-
 
 
 oneagent.dynatrace.com/inject: "false"
@@ -95,17 +92,13 @@ Example values for the Istio helm chart:
 pilot:
 
 
-
 ...
-
 
 
 env:
 
 
-
 ENABLE_NATIVE_SIDECARS: false
-
 
 
 ...
@@ -183,33 +176,25 @@ The most compatible deployment option is to deploy only the ActiveGate inside th
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: your-dynakube-name
-
 
 
    spec:
 
 
-
    enableIstio: true
-
 
 
    activeGate:
 
 
-
    labels:
-
 
 
    sidecar.istio.io/inject: "true"
@@ -221,33 +206,25 @@ The most compatible deployment option is to deploy only the ActiveGate inside th
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: your-dynakube-name
-
 
 
    spec:
 
 
-
    enableIstio: true
-
 
 
    activeGate:
 
 
-
    labels:
-
 
 
    istio.io/dataplane-mode: "ambient"
@@ -258,45 +235,34 @@ The most compatible deployment option is to deploy only the ActiveGate inside th
    apiVersion: security.istio.io/v1
 
 
-
    kind: PeerAuthentication
-
 
 
    metadata:
 
 
-
    name: ag-no-mtls # <yourname>
-
 
 
    namespace: dynatrace-operator # <operator namespace>
 
 
-
    spec:
-
 
 
    mtls:
 
 
-
    mode: PERMISSIVE
-
 
 
    selector:
 
 
-
    matchLabels:
 
 
-
    app.kubernetes.io/managed-by: dynatrace-operator
-
 
 
    app.kubernetes.io/name: activegate
@@ -326,61 +292,46 @@ When using Istio configured to `REGISTRY_ONLY` mode with the `codeModulesImage` 
    apiVersion: networking.istio.io/v1
 
 
-
    kind: ServiceEntry
-
 
 
    metadata:
 
 
-
    name: codemodules-docker-io
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    hosts:
 
 
-
    - index.docker.io
-
 
 
    - auth.docker.io
 
 
-
    - production.cloudflare.docker.com
-
 
 
    location: MESH_EXTERNAL
 
 
-
    ports:
-
 
 
    - name: https-443
 
 
-
    number: 443
 
 
-
    protocol: HTTPS
-
 
 
    resolution: DNS
@@ -411,45 +362,34 @@ Example of all required annotations:
 apiVersion: v1
 
 
-
 kind: Pod
-
 
 
 metadata:
 
 
-
 annotations:
-
 
 
 ...
 
 
-
 metrics.dynatrace.com/path: /stats/prometheus # Endpoint created by Istio
-
 
 
 metrics.dynatrace.com/port: "15020" # Port of the Envoy sidecar
 
 
-
 metrics.dynatrace.com/scrape: "true"
-
 
 
 prometheus.io/path: /metrics # Metric endpoint of the application
 
 
-
 prometheus.io/port: "8080" # Metric port of the application
 
 
-
 prometheus.io/scrape: "true"
-
 
 
 ...

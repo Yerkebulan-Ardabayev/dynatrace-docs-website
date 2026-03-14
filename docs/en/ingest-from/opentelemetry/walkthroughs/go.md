@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:47.260842
 
 # Instrument your Go application with OpenTelemetry
 
-# Instrument your Go application with OpenTelemetry
 
 * Latest Dynatrace
 * How-to guide
@@ -58,85 +57,64 @@ It's a good idea to start with automatic instrumentation and add manual instrume
    import (
 
 
-
    "context"
-
 
 
    "github.com/Dynatrace/OneAgent-SDK-for-Go/sdk"
 
 
-
    "go.opentelemetry.io/otel"
-
 
 
    "go.opentelemetry.io/otel/attribute"
 
 
-
    "go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetrichttp"
-
 
 
    "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp"
 
 
-
    "go.opentelemetry.io/otel/exporters/otlp/otlplog/otlploghttp"
-
 
 
    "go.opentelemetry.io/otel/propagation"
 
 
-
    "go.opentelemetry.io/otel/trace"
-
 
 
    sdkmetric "go.opentelemetry.io/otel/sdk/metric"
 
 
-
    "go.opentelemetry.io/otel/sdk/metric/metricdata"
-
 
 
    "go.opentelemetry.io/otel/sdk/resource"
 
 
-
    sdktrace "go.opentelemetry.io/otel/sdk/trace"
-
 
 
    semconv "go.opentelemetry.io/otel/semconv/v1.20.0"
 
 
-
    "log"
-
 
 
    "time"
 
 
-
    "log/slog"
-
 
 
    "go.opentelemetry.io/contrib/bridges/otelslog"
 
 
-
    "go.opentelemetry.io/otel/log/global"
 
 
-
    sdklog "go.opentelemetry.io/otel/sdk/log"
-
 
 
    )
@@ -155,289 +133,217 @@ It's a good idea to start with automatic instrumentation and add manual instrume
    func InitOpenTelemetry() {
 
 
-
    // ===== GENERAL SETUP =====
-
 
 
    DT_API_HOST := "" // Only the host part of your Dynatrace URL
 
 
-
    DT_API_BASE_PATH := "/api/v2/otlp"
-
 
 
    DT_API_TOKEN := ""
 
 
-
    authHeader := map[string]string{"Authorization": "Api-Token " + DT_API_TOKEN}
-
 
 
    ctx := context.Background()
 
 
-
    oneagentsdk := sdk.CreateInstance()
-
 
 
    dtMetadata := oneagentsdk.GetEnrichmentMetadata()
 
 
-
    var attributes []attribute.KeyValue
-
 
 
    for k, v := range dtMetadata {
 
 
-
    attributes = append(attributes, attribute.KeyValue{Key: attribute.Key(k), Value: attribute.StringValue(v)})
 
 
-
    }
-
 
 
    attributes = append(attributes,
 
 
-
    semconv.ServiceNameKey.String("go-quickstart"), //TODO Replace with the name of your application
-
 
 
    semconv.ServiceVersionKey.String("1.0.1"),      //TODO Replace with the version of your application
 
 
-
    )
-
 
 
    res, err := resource.New(ctx, resource.WithAttributes(attributes...))
 
 
-
    if err != nil {
-
 
 
    log.Fatalf("Failed to create resource: %v", err)
 
 
-
    }
-
 
 
    // ===== TRACING SETUP =====
 
 
-
    exporter, err := otlptracehttp.New(
 
 
-
    ctx,
-
 
 
    otlptracehttp.WithEndpoint(DT_API_HOST),
 
 
-
    otlptracehttp.WithURLPath(DT_API_BASE_PATH+"/v1/traces"),
-
 
 
    otlptracehttp.WithHeaders(authHeader),
 
 
-
    )
-
 
 
    if err != nil {
 
 
-
    log.Fatalf("Failed to create OTLP exporter: %v", err)
 
 
-
    }
-
 
 
    tp := sdktrace.NewTracerProvider(
 
 
-
    sdktrace.WithResource(res),
-
 
 
    sdktrace.WithSampler(sdktrace.AlwaysSample()),
 
 
-
    sdktrace.WithBatcher(exporter),
 
 
-
    )
-
 
 
    otel.SetTracerProvider(tp)
 
 
-
    otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(propagation.TraceContext{}, propagation.Baggage{}))
-
 
 
    // ===== METRIC SETUP =====
 
 
-
    var deltaTemporalitySelector = func(sdkmetric.InstrumentKind) metricdata.Temporality { return metricdata.DeltaTemporality }
-
 
 
    metricsExporter, err := otlpmetrichttp.New(
 
 
-
    ctx,
-
 
 
    otlpmetrichttp.WithEndpoint(DT_API_HOST),
 
 
-
    otlpmetrichttp.WithURLPath(DT_API_BASE_PATH+"/v1/metrics"),
-
 
 
    otlpmetrichttp.WithHeaders(authHeader),
 
 
-
    otlpmetrichttp.WithTemporalitySelector(deltaTemporalitySelector),
-
 
 
    )
 
 
-
    if err != nil {
-
 
 
    log.Fatalf("Failed to create OTLP exporter: %v", err)
 
 
-
    }
-
 
 
    mp := sdkmetric.NewMeterProvider(
 
 
-
    sdkmetric.WithResource(res),
-
 
 
    sdkmetric.WithReader(sdkmetric.NewPeriodicReader(metricsExporter, sdkmetric.WithInterval(2*time.Second))),
 
 
-
    )
-
 
 
    otel.SetMeterProvider(mp)
 
 
-
    // ===== LOG SETUP =====
-
 
 
    logExporter, err := otlploghttp.New(
 
 
-
    ctx,
-
 
 
    otlploghttp.WithEndpoint(DT_API_HOST),
 
 
-
    otlploghttp.WithURLPath(DT_API_BASE_PATH+"/v1/logs"),
-
 
 
    otlploghttp.WithHeaders(authHeader),
 
 
-
    )
-
 
 
    if err != nil {
 
 
-
    log.Fatalf("Failed to create OTLP exporter: %v", err)
-
 
 
    }
 
 
-
    lp := sdklog.NewLoggerProvider(
-
 
 
    sdklog.WithProcessor(sdklog.NewBatchProcessor(logExporter)),
 
 
-
    sdklog.WithResource(res),
-
 
 
    )
 
 
-
    global.SetLoggerProvider(lp)
-
 
 
    logger := otelslog.NewLogger("my-logger-scope", otelslog.WithLoggerProvider(lp))
 
 
-
    slog.SetDefault(logger) // here we are overwriting the sdtout to http logger exporter
-
 
 
    }
@@ -453,9 +359,7 @@ It's a good idea to start with automatic instrumentation and add manual instrume
    import (
 
 
-
    "go.opentelemetry.io/[PACKAGE]"
-
 
 
    )
@@ -476,13 +380,10 @@ It's a good idea to start with automatic instrumentation and add manual instrume
    import (
 
 
-
    // other packages
 
 
-
    "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
-
 
 
    )
@@ -493,13 +394,10 @@ It's a good idea to start with automatic instrumentation and add manual instrume
    handler := http.HandlerFunc(httpHandler)
 
 
-
    wrappedHandler := otelhttp.NewHandler(handler, "my-span") //TODO Replace with the name of your span
 
 
-
    //Use the wrappedHandler with your handle
-
 
 
    http.Handle("/", wrappedHandler)
@@ -520,13 +418,10 @@ It's a good idea to start with automatic instrumentation and add manual instrume
    _, span := tracer.Start(r.Context(), "Call to /myendpoint")
 
 
-
    defer span.End()
 
 
-
    span.SetAttributes(attribute.String("http.method", "GET"), attribute.String("net.protocol.version", "1.1"))
-
 
 
    // TODO your code goes here
@@ -565,9 +460,7 @@ With OpenTelemetry logging initialized in `InitOpenTelemetry()` and set as defau
 slog.Info("an info message")
 
 
-
 slog.Debug("a debug message")
-
 
 
 slog.Error("an error")
@@ -587,49 +480,37 @@ To obtain a handle to the original context (which was provided by the calling se
 func httpHandler(w http.ResponseWriter, r *http.Request) {
 
 
-
 parentCtx := otel.GetTextMapPropagator().Extract(r.Context(), propagation.HeaderCarrier(r.Header))
-
 
 
 tracer := otel.Tracer("my-tracer")
 
 
-
 ctx, span := tracer.Start(
-
 
 
 parentCtx,
 
 
-
 "manual-server", //TODO Replace with the name of your span
-
 
 
 trace.WithAttributes(
 
 
-
 attribute.String("my-key-1", "my-value-1"), //TODO Add attributes
-
 
 
 ),
 
 
-
 )
-
 
 
 defer span.End()
 
 
-
 //TODO your code goes here
-
 
 
 }
@@ -643,29 +524,22 @@ In the following example, we set up a new instance of [`Request`ï»¿](https://
 client := http.Client{}
 
 
-
 req, err := http.NewRequest("<method>", "<url>", <body>)
-
 
 
 if err != nil {
 
 
-
 // TODO handle error
-
 
 
 }
 
 
-
 //Method to inject the current context in the request headers
 
 
-
 otel.GetTextMapPropagator().Inject(ctx, propagation.HeaderCarrier(req.Header))
-
 
 
 client.Do(req) // Your call goes here

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:19.411859
 
 # Dynatrace Intelligence limits
 
-# Dynatrace Intelligence limits
 
 * Latest Dynatrace
 * Reference

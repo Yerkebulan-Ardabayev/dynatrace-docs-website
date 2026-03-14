@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Extend metric observability
 
-# Extend metric observability
 
 * 4-min read
 * Published Feb 04, 2022
@@ -108,14 +107,12 @@ For the following examples, assume that all metrics are ingested once per minute
   cpu.temp,cpu=cpu1,cpu_type="INTEL" 55
 
 
-
   cpu.temp,cpu=cpu1,cpu_type="INTEL" 75
   ```
 * Here two distinct dimension pairs are reported within a 1-minute interval. Therefore two data points are consumed (`2 Ã 0.001 DDUs`). From a consumption perspective, this is effectively two different metrics. A two-dimension tuple like this consumes `526 Ã 2 = 1,052` DDUs per year.
 
   ```
   cpu.temp,cpu=cpu1,cpu_type="INTEL" 55
-
 
 
   cpu.temp,cpu=cpu2,cpu_type="INTEL" 75
@@ -126,13 +123,10 @@ For the following examples, assume that all metrics are ingested once per minute
   cpu.temp,cpu=cpu1,cpu_type="INTEL" 55
 
 
-
   cpu.temp,cpu=cpu2,cpu_type="INTEL" 75
 
 
-
   cpu.temp,cpu=cpu3,cpu_type="INTEL" 55
-
 
 
   cpu.temp,cpu=cpu4,cpu_type="INTEL" 75

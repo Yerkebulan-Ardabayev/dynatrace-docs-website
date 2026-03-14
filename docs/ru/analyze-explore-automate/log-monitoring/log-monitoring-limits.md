@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:35:22.745317
 
 # Лимиты Log Monitoring по умолчанию (Logs Classic)
 
-# Лимиты Log Monitoring по умолчанию (Logs Classic)
 
 * Classic
 * Чтение: 1 мин

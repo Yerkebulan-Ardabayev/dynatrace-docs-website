@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:54.139751
 
 # Data flow in OpenPipeline
 
-# Data flow in OpenPipeline
 
 * Latest Dynatrace
 * Explanation

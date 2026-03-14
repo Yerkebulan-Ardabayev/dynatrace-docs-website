@@ -6,7 +6,6 @@ scraped: 2026-02-27T21:26:39.808422
 
 # Share Dynatrace dashboards
 
-# Share Dynatrace dashboards
 
 * How-to guide
 * 7-min read

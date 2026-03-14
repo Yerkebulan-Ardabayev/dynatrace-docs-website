@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:09.848966
 
 # Google Cloud Load Balancing monitoring
 
-# Google Cloud Load Balancing monitoring
 
 * Latest Dynatrace
 * How-to guide

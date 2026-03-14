@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:33:36.756619
 
 # Действие Run JavaScript для Workflows
 
-# Действие Run JavaScript для Workflows
 
 * Latest Dynatrace
 * Справочник
@@ -55,33 +54,25 @@ scraped: 2026-03-04T21:33:36.756619
 // import of sdk modules
 
 
-
 import { result } from '@dynatrace-sdk/automation-utils';
-
 
 
 export default async function () {
 
 
-
 // get the result of task 'my_task'. 'my_task' must be a predecessor.
-
 
 
 var myResult = await result('my_task');
 
 
-
 // log the result object
-
 
 
 console.log('The whole result object: ', myResult);
 
 
-
 console.log('only one variable: ', myResult.myVariable)
-
 
 
 }
@@ -93,37 +84,28 @@ console.log('only one variable: ', myResult.myVariable)
 // import of sdk modules
 
 
-
 import { executionsClient } from '@dynatrace-sdk/client-automation';
-
 
 
 export default async function ({ executionId }) {
 
 
-
 // load the execution object using the current executionId
-
 
 
 var config = {executionId, id: 'my_task'}
 
 
-
 var myResult = await executionsClient.getTaskExecutionResult(config)
-
 
 
 // log the result object
 
 
-
 console.log('My task result: ', myResult)
 
 
-
 console.log('only one variable: ', myResult.myVariable)
-
 
 
 }
@@ -137,17 +119,13 @@ console.log('only one variable: ', myResult.myVariable)
 export default async function ({ executionId, actionExecutionId }) {
 
 
-
 //log available execution context ids
-
 
 
 console.log('Workflow execution id: ', executionId);
 
 
-
 console.log('Action execution id: ', actionExecutionId)
-
 
 
 }
@@ -166,13 +144,10 @@ console.log('Action execution id: ', actionExecutionId)
 export default async function ({ loopItemValue }) {
 
 
-
 // log the current value of the loop item
 
 
-
 console.log(loopItemValue)
-
 
 
 }
@@ -191,17 +166,13 @@ console.log(loopItemValue)
 // optional import of sdk modules
 
 
-
 import { actionExecutionId, executionId, taskName, workflowId } from '@dynatrace-sdk/automation-utils';
-
 
 
 export default async function () {
 
 
-
 console.log(`Running action execution '${actionExecutionId}' for task '${taskName}' of workflow '${workflowId}' in workflow execution '${executionId}'`)
-
 
 
 }
@@ -247,33 +218,25 @@ console.log(`Running action execution '${actionExecutionId}' for task '${taskNam
 // Load the XML parser from ESM
 
 
-
 import xml2js from "https://esm.sh/xml2js@0.6.2";
-
 
 
 export default async function() {
 
 
-
 // Dummy XML, can be fetched from your back-end
-
 
 
 const xml = "<root><list><item>Hello</item><item>World</item></list></root>";
 
 
-
 const parser = new xml2js.Parser();
-
 
 
 const json = await parser.parseStringPromise(xml);
 
 
-
 return json;
-
 
 
 }
@@ -293,9 +256,7 @@ CDN-площадки для пакетов, такие как [esm.sh](https://e
 export default async function() {
 
 
-
 throw new Error()
-
 
 
 }
@@ -311,21 +272,16 @@ throw new Error()
 import { execution } from '@dynatrace-sdk/automation-utils';
 
 
-
 export default async function () {
-
 
 
 const ex = await execution();
 
 
-
 console.log( ex.params.event);
 
 
-
 // your code goes here
-
 
 
 }

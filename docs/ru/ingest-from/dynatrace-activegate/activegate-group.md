@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:16.455659
 
 # Группа ActiveGate
 
-# Группа ActiveGate
 
 * Последняя версия Dynatrace
 * Чтение займёт 2 минуты
@@ -48,7 +47,6 @@ Dynatrace-ActiveGate-Windows-x86-<version>.exe --set-group=my-group
 
 ```
 [collector]
-
 
 
 group = mygroup

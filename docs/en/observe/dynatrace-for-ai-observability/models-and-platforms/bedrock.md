@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:20.458987
 
 # Amazon Bedrock
 
-# Amazon Bedrock
 
 * Latest Dynatrace
 * Explanation

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:40.252158
 
 # Отправка метрик Micrometer в Dynatrace
 
-# Отправка метрик Micrometer в Dynatrace
 
 * Последняя версия Dynatrace
 * 7 минут чтения
@@ -53,17 +52,13 @@ scraped: 2026-03-06T21:16:40.252158
   <dependency>
 
 
-
   <groupId>io.micrometer</groupId>
-
 
 
   <artifactId>micrometer-registry-dynatrace</artifactId>
 
 
-
   <version>{micrometer.version}</version>
-
 
 
   </dependency>
@@ -85,13 +80,10 @@ scraped: 2026-03-06T21:16:40.252158
   <dependency>
 
 
-
   <groupId>io.micrometer</groupId>
 
 
-
   <artifactId>micrometer-registry-dynatrace</artifactId>
-
 
 
   </dependency>
@@ -136,25 +128,19 @@ YAML
 management.dynatrace.metrics.export:
 
 
-
 v2:
-
 
 
 metric-key-prefix: "service.component"
 
 
-
 enrich-with-dynatrace-metadata: true
-
 
 
 default-dimensions:
 
 
-
 stack: "prod"
-
 
 
 region: "us-east-1"
@@ -166,13 +152,10 @@ region: "us-east-1"
 management.dynatrace.metrics.export.v2.metric-key-prefix=service.component
 
 
-
 management.dynatrace.metrics.export.v2.enrich-with-dynatrace-metadata=true
 
 
-
 management.dynatrace.metrics.export.v2.default-dimensions.stack=prod
-
 
 
 management.dynatrace.metrics.export.v2.default-dimensions.region=us-east-1
@@ -191,25 +174,19 @@ YAML
 management.dynatrace.metrics.export:
 
 
-
 v2:
-
 
 
 metric-key-prefix: "service.component"
 
 
-
 enrich-with-dynatrace-metadata: true
-
 
 
 default-dimensions:
 
 
-
 stack: "prod"
-
 
 
 region: "us-east-1"
@@ -221,13 +198,10 @@ region: "us-east-1"
 management.dynatrace.metrics.export.v2.metric-key-prefix=service.component
 
 
-
 management.dynatrace.metrics.export.v2.enrich-with-dynatrace-metadata=true
 
 
-
 management.dynatrace.metrics.export.v2.default-dimensions.stack=prod
-
 
 
 management.dynatrace.metrics.export.v2.default-dimensions.region=us-east-1
@@ -247,37 +221,28 @@ YAML
 management.dynatrace.metrics.export:
 
 
-
 uri: "https://mySampleEnv.live.dynatrace.com/api/v2/metrics/ingest"
-
 
 
 # Read the environment variable YOUR_METRICS_INGEST_API_TOKEN and supply the value of the env var instead.
 
 
-
 api-token: ${YOUR_METRICS_INGEST_API_TOKEN}
-
 
 
 v2:
 
 
-
 metric-key-prefix: "service.component"
-
 
 
 enrich-with-dynatrace-metadata: true
 
 
-
 default-dimensions:
 
 
-
 stack: "prod"
-
 
 
 region: "us-east-1"
@@ -289,21 +254,16 @@ region: "us-east-1"
 management.dynatrace.metrics.export.uri=https://mySampleEnv.live.dynatrace.com/api/v2/metrics/ingest
 
 
-
 management.dynatrace.metrics.export.api-token=${YOUR_METRICS_INGEST_API_TOKEN}
-
 
 
 management.dynatrace.metrics.export.v2.metric-key-prefix=service.component
 
 
-
 management.dynatrace.metrics.export.v2.enrich-with-dynatrace-metadata=true
 
 
-
 management.dynatrace.metrics.export.v2.default-dimensions.stack=prod
-
 
 
 management.dynatrace.metrics.export.v2.default-dimensions.region=us-east-1
@@ -325,37 +285,28 @@ management.dynatrace.metrics.export.v2.default-dimensions.region=us-east-1
 DynatraceConfig dynatraceConfig = new DynatraceConfig() {
 
 
-
 @Override
-
 
 
 @Nullable
 
 
-
 public String get(String k) {
-
 
 
 // This method can be used for retrieving arbitrary config items;
 
 
-
 // null means accepting the defaults defined in DynatraceConfig
-
 
 
 return null;
 
 
-
 }
 
 
-
 };
-
 
 
 DynatraceMeterRegistry registry = DynatraceMeterRegistry.builder(config).build();
@@ -374,37 +325,28 @@ Dynatrace Operator настраивает реестр Dynatrace Micrometer, п�
 DynatraceConfig dynatraceConfig = new DynatraceConfig() {
 
 
-
 @Override
-
 
 
 @Nullable
 
 
-
 public String get(String k) {
-
 
 
 // This method can be used for retrieving arbitrary config items;
 
 
-
 // null means accepting the defaults defined in DynatraceConfig
-
 
 
 return null;
 
 
-
 }
 
 
-
 };
-
 
 
 DynatraceMeterRegistry registry = DynatraceMeterRegistry.builder(config).build();
@@ -424,109 +366,82 @@ HTTP-клиенты, подключающиеся к непубличной ко
 DynatraceConfig dynatraceConfig = new DynatraceConfig() {
 
 
-
 @Override
-
 
 
 public DynatraceApiVersion apiVersion() {
 
 
-
 // Not strictly required, but makes the code more clear/explicit
-
 
 
 return DynatraceApiVersion.V2;
 
 
-
 }
 
 
-
 @Override
-
 
 
 public String uri() {
 
 
-
 // The endpoint of the Dynatrace Metrics API v2 including path:
-
 
 
 // "https://{your-environment-id}.live.dynatrace.com/api/v2/metrics/ingest"
 
 
-
 String endpoint = System.getenv("YOUR_METRICS_INGEST_URL");
-
 
 
 return endpoint != null ? endpoint : DynatraceConfig.super.uri();
 
 
-
 }
 
 
-
 @Override
-
 
 
 public String apiToken() {
 
 
-
 // Should be read from a secure source
-
 
 
 String token = System.getenv("YOUR_METRICS_INGEST_TOKEN");
 
 
-
 return token != null ? token : "";
 
 
-
 }
-
 
 
 @Override
 
 
-
 @Nullable
-
 
 
 public String get(String k) {
 
 
-
 // This method can be used for retrieving arbitrary config items;
-
 
 
 // null means accepting the defaults defined in DynatraceConfig
 
 
-
 return null;
-
 
 
 }
 
 
-
 };
-
 
 
 DynatraceMeterRegistry registry = DynatraceMeterRegistry.builder(dynatraceConfig).build();
@@ -552,205 +467,154 @@ Spring Boot
 DynatraceConfig dynatraceConfig = new DynatraceConfig() {
 
 
-
 @Override
-
 
 
 public DynatraceApiVersion apiVersion() {
 
 
-
 // Defaults to V2 if not set explicitly.
-
 
 
 return DynatraceApiVersion.V2;
 
 
-
 }
 
 
-
 @Override
-
 
 
 public String uri() {
 
 
-
 // The endpoint of the Dynatrace Metrics API v2 including path. For example:
-
 
 
 // "https://{your-environment-id}.live.dynatrace.com/api/v2/metrics/ingest".
 
 
-
 String endpoint = System.getenv("YOUR_METRICS_INGEST_URL");
-
 
 
 return endpoint != null ? endpoint : DynatraceConfig.super.uri();
 
 
-
 }
 
 
-
 @Override
-
 
 
 public String apiToken() {
 
 
-
 // Should be read from a secure source
-
 
 
 String token = System.getenv("YOUR_METRICS_INGEST_API_TOKEN");
 
 
-
 return token != null ? token : "";
-
 
 
 }
 
 
-
 @Override
-
 
 
 public String metricKeyPrefix() {
 
 
-
 // Will be prepended to all metric keys
-
 
 
 return "service.component";
 
 
-
 }
 
 
-
 @Override
-
 
 
 public boolean enrichWithDynatraceMetadata() {
 
 
-
 // On by default, but can be turned off explicitly.
-
 
 
 return true;
 
 
-
 }
 
 
-
 @Override
-
 
 
 public Map<String, String> defaultDimensions() {
 
 
-
 // Create and return a map containing the desired key-value pairs.
-
 
 
 Map<String, String> dims = new HashMap<>();
 
 
-
 dims.put("dimensionKey", "dimensionValue");
-
 
 
 return dims;
 
 
-
 }
-
 
 
 // Only available in Micrometer 1.9.0 and above.
 
 
-
 @Override
-
 
 
 public boolean useDynatraceSummaryInstruments() {
 
 
-
 return false;
 
 
-
 }
-
 
 
 // Only available in Micrometer 1.12.0 and above.
 
 
-
 @Override
-
 
 
 public boolean exportMeterMetadata() {
 
 
-
 return false;
 
 
-
 }
-
 
 
 @Override
 
 
-
 @Nullable
-
 
 
 public String get(String k) {
 
 
-
 return null; // Accept the rest of the defaults
 
 
-
 }
-
 
 
 };
@@ -780,21 +644,16 @@ YAML
 management:
 
 
-
 metrics:
-
 
 
 export:
 
 
-
 dynatrace:
 
 
-
 v2:
-
 
 
 export-meter-metadata: false  # default: true
@@ -815,45 +674,34 @@ management.dynatrace.metrics.export.v2.export-meter-metadata=false
 DynatraceConfig dynatraceConfig = new DynatraceConfig() {
 
 
-
 // Only available in Micrometer 1.12.0 and above.
 
 
-
 @Override
-
 
 
 public boolean exportMeterMetadata() {
 
 
-
 return false;
 
 
-
 }
-
 
 
 @Override
 
 
-
 @Nullable
-
 
 
 public String get(String k) {
 
 
-
 return null; // Accept the rest of the defaults
 
 
-
 }
-
 
 
 };
@@ -892,17 +740,13 @@ YAML
 management.metrics.enable:
 
 
-
 # disable jvm.memory metrics
-
 
 
 jvm.memory: false
 
 
-
 # disable all jvm metrics:
-
 
 
 jvm: false
@@ -914,13 +758,10 @@ jvm: false
 # disable jvm.memory metrics
 
 
-
 management.metrics.enable.jvm.memory=false
 
 
-
 # disable all jvm metrics
-
 
 
 management.metrics.enable.jvm=false
@@ -934,17 +775,13 @@ YAML
 management.metrics.enable:
 
 
-
 # disable all metrics
-
 
 
 all: false
 
 
-
 # re-enable only jvm.* metrics
-
 
 
 jvm: true
@@ -956,13 +793,10 @@ jvm: true
 # disable all metrics
 
 
-
 management.metrics.enable.all=false
 
 
-
 # re-enable jvm.* metrics
-
 
 
 management.metrics.enable.jvm=true
@@ -978,29 +812,22 @@ Micrometer предоставляет [фильтры измерителей](ht
 @Configuration(proxyBeanMethods = false)
 
 
-
 public class MyMeterRegistryConfiguration {
-
 
 
 @Bean
 
 
-
 public MeterRegistryCustomizer<MeterRegistry> metricsCommonTags() {
-
 
 
 return registry -> registry.config()
 
 
-
 .meterFilter(MeterFilter.denyNameStartsWith("jvm.gc"));
 
 
-
 }
-
 
 
 }
@@ -1020,9 +847,7 @@ return registry -> registry.config()
 // Disable all metrics with metric names starting with jvm.gc
 
 
-
 registry.config()
-
 
 
 .meterFilter(MeterFilter.denyNameStartsWith("jvm.gc"));

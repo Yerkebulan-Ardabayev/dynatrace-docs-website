@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:55.383877
 
 # Process groups
 
-# Process groups
 
 * Classic
 * Explanation

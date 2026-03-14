@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Get cluster user sessions
 
-# Get cluster user sessions
 
 * Published Apr 02, 2020
 
@@ -61,49 +60,37 @@ Managed user session instance
 [
 
 
-
 {
-
 
 
 "creationTime": 1,
 
 
-
 "device": "string",
-
 
 
 "ip": "string",
 
 
-
 "lastAccessedTimestamp": 1,
-
 
 
 "loginType": "LOCAL",
 
 
-
 "nodeId": 1,
-
 
 
 "sessionId": "string",
 
 
-
 "tenantUuid": "string",
-
 
 
 "userId": "string"
 
 
-
 }
-
 
 
 ]
@@ -117,7 +104,6 @@ In this example, the request lists user sessions in the `myManaged.cluster.com` 
 
 ```
 curl -X GET "https://myManaged.cluster.com/api/cluster/v2/userSessions?userId=user.name"
-
 
 
 -H  "accept: application/json"
@@ -135,49 +121,37 @@ https://myManaged.cluster.com/api/cluster/v2/userSessions?userId=user.name
 [
 
 
-
 {
-
 
 
 "userId": "user.name",
 
 
-
 "nodeId": 4,
-
 
 
 "sessionId": "string",
 
 
-
 "creationTime": 0,
-
 
 
 "lastAccessedTimestamp": 0,
 
 
-
 "tenantUuid": "string",
-
 
 
 "loginType": "LOCAL",
 
 
-
 "device": "string",
-
 
 
 "ip": "string"
 
 
-
 }
-
 
 
 ]

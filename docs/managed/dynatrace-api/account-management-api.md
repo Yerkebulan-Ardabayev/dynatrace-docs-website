@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Account Management API
 
-# Account Management API
 
 * Reference
 * Updated on Mar 31, 2023

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:41.784151
 
 # Сравнение DQL с SQL и другими языками
 
-# Сравнение DQL с SQL и другими языками
 
 * Последняя версия Dynatrace
 * Справочник
@@ -50,7 +49,6 @@ events
 fetch events
 
 
-
 | filter event.type == "travel.funnel.booking-payment"
 ```
 
@@ -72,7 +70,6 @@ sourcetype = event* | where event.type = "travel.funnel.booking-payment"
 events
 
 
-
 | where ['event.type'] == "travel.funnel.booking-payment"
 ```
 
@@ -82,7 +79,6 @@ events
 
 ```
 fetch events
-
 
 
 | filter event.type == "travel.funnel.booking-payment" and loyaltyStatus == "Platinum" and childrenTravelers > 0
@@ -100,7 +96,6 @@ SELECT * FROM events WHERE 'event.type'="travel.funnel.booking-payment" AND loya
 sourcetype = event*
 
 
-
 | where event.type = "travel.funnel.booking-payment" AND loyaltyStatus = "Platinum" AND childrenTravelers > 0
 ```
 
@@ -108,7 +103,6 @@ sourcetype = event*
 
 ```
 events
-
 
 
 | where ['event.type'] == "travel.funnel.booking-payment" and loyaltyStatus == "Platinum" and childrenTravelers > 0
@@ -124,9 +118,7 @@ events
 fetch events
 
 
-
 | filter event.type == "travel.funnel.booking-payment"
-
 
 
 | fields product
@@ -144,9 +136,7 @@ SELECT product FROM events WHERE 'event.type'="travel.funnel.booking-payment"
 sourcetype = event*
 
 
-
 | where event.type = "travel.funnel.booking-payment"
-
 
 
 | fields product
@@ -158,9 +148,7 @@ sourcetype = event*
 event
 
 
-
 | where ['event.type'] == "travel.funnel.booking-payment"
-
 
 
 | project product
@@ -176,13 +164,10 @@ event
 fetch event
 
 
-
 | filter event.type == "travel.funnel.booking-payment"
 
 
-
 | fieldsAdd journeyWeeks = journeyDuration/7
-
 
 
 | sort journeyWeeks desc
@@ -200,13 +185,10 @@ SELECT journeyDuration/7 AS journeyWeeks FROM events WHERE 'event.type'="travel.
 sourcetype = event*
 
 
-
 | where event.type = "travel.funnel.booking-payment"
 
 
-
 | eval journeyweeks = journeyDuration/7
-
 
 
 | sort -journeyweeks
@@ -218,13 +200,10 @@ sourcetype = event*
 event
 
 
-
 | where ['event.type'] == "travel.funnel.booking-payment"
 
 
-
 | project journeyWeeks = journeyDuration/7
-
 
 
 | sort journeyweeks desc
@@ -240,9 +219,7 @@ event
 fetch events
 
 
-
 | summarize count(), by:event.type
-
 
 
 | fields event.type
@@ -260,7 +237,6 @@ SELECT DISTINCT 'event.type' FROM events
 sourcetype = event*
 
 
-
 | stats count by event.type
 ```
 
@@ -268,7 +244,6 @@ sourcetype = event*
 
 ```
 events
-
 
 
 | summarize by event.type
@@ -284,9 +259,7 @@ events
 fetch events
 
 
-
 | filter event.type == "travel.funnel.booking-payment"
-
 
 
 | summarize sum = sum(amount), by:travelAgency
@@ -304,9 +277,7 @@ SELECT sum(amount) AS sum FROM events GROUP BY sum, travelAgency WHERE 'event.ty
 sourcetype = event*
 
 
-
 | where event.type = "travel.funnel.booking-payment"
-
 
 
 | stats sum(amount) as total_amount by travelAgency
@@ -318,9 +289,7 @@ sourcetype = event*
 event
 
 
-
 | filter event.type == "travel.funnel.booking-payment"
-
 
 
 | summarize sum = sum(amount) by travelAgency
@@ -334,13 +303,10 @@ event
 fetch events
 
 
-
 | filter event.type == "travel.funnel.booking-payment"
 
 
-
 | summarize sum = sum(amount), by:{travelAgency, travelers}
-
 
 
 | fieldsAdd has_more_than_2 = travelers > 2
@@ -358,13 +324,10 @@ SELECT sum(amount) AS sum, travelers > 2  AS has_more_than_2 FROM events  GROUP 
 sourcetype = event*
 
 
-
 | where event.type = "travel.funnel.booking-payment"
 
 
-
 | stats sum(amount) as total_amount by travelAgency, travelers
-
 
 
 | eval has_more_than_2 = travelers > 2
@@ -376,13 +339,10 @@ sourcetype = event*
 events
 
 
-
 | where ['event.type'] == "travel.funnel.booking-payment"
 
 
-
 | summarize sumBytes = sum(amount) by travelAgency, travelers
-
 
 
 | project has_more_than_2 = travelers > 2

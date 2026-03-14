@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:34.990823
 
 # Dynatrace API
 
-# Dynatrace API
 
 * Reference
 * Updated on Feb 26, 2026

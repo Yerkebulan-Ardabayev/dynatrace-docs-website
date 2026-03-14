@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:43.103611
 
 # Лимиты по умолчанию для Log Management and Analytics
 
-# Лимиты по умолчанию для Log Management and Analytics
 
 * Последняя версия Dynatrace
 * Пояснение

@@ -6,7 +6,6 @@ scraped: 2026-02-23T21:35:46.464742
 
 # Leverage enhanced endpoints for SDv1
 
-# Leverage enhanced endpoints for SDv1
 
 * Latest Dynatrace
 * How-to guide

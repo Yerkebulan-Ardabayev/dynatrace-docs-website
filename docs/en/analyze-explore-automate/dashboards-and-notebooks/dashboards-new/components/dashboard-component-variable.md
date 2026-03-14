@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:14.517870
 
 # Add a variable to a dashboard
 
-# Add a variable to a dashboard
 
 * Latest Dynatrace
 * How-to guide
@@ -102,7 +101,6 @@ For example:
      fetch dt.entity.host
 
 
-
      | fields entity.name
      ```
 3. Turn on **Multi-select** so you can select more than one value at a time to show in your visualizations.
@@ -121,9 +119,7 @@ For example:
    fetch logs, scanLimitGBytes: 20
 
 
-
    | filter in(host.name, array($Host))
-
 
 
    | makeTimeseries count(), by:{ host.name }
@@ -135,9 +131,7 @@ For example:
    fetch logs, scanLimitGBytes: 20
 
 
-
    | filter host.name == $Host
-
 
 
    | makeTimeseries count(), by:{ host.name }
@@ -258,7 +252,6 @@ If you add both examples below to your dashboard, you can filter your dashboard 
 
   ```
   fetch dt.entity.host
-
 
 
   | fields id
@@ -390,29 +383,22 @@ To define a code variable
   /*
 
 
-
   * This will run JavaScript in the DYNATRACE
-
 
 
   * serverless environment.
 
 
-
   * To generate variable options return string array.
-
 
 
   */
 
 
-
   export default async function () {
 
 
-
   return ["val1", "val2", "val3"]
-
 
 
   }
@@ -442,9 +428,7 @@ Straightforward usage of a `$resolution` variable (as in the following query) do
 fetch logs
 
 
-
 | ...
-
 
 
 | summarize count(), by: {loglevel, bin(timestamp, $resolution)}
@@ -456,9 +440,7 @@ As a workaround, you can use the [duration](../../../../platform/grail/dynatrace
 fetch logs
 
 
-
 | ...
-
 
 
 | summarize count(), by: {loglevel, bin(timestamp, duration(toLong($resolution), unit:"m"))}
@@ -472,9 +454,7 @@ If you want to filter a numeric value but compare it with a string representatio
 fetch logs
 
 
-
 | filter amount = toString($amount)
-
 
 
 | ...

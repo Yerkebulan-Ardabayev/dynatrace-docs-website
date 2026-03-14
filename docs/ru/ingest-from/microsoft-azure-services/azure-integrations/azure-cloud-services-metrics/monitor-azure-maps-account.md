@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:19.933105
 
 # Мониторинг Azure Maps Account
 
-# Мониторинг Azure Maps Account
 
 * Последняя версия Dynatrace
 * Практическое руководство

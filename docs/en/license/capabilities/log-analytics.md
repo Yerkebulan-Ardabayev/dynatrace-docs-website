@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:21.899416
 
 # Log Analytics (DPS)
 
-# Log Analytics (DPS)
 
 * Latest Dynatrace
 * Overview

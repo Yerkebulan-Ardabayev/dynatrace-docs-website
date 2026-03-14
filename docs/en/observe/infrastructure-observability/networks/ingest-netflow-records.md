@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:20:28.336015
 
 # Ingest NetFlow records into Dynatrace
 
-# Ingest NetFlow records into Dynatrace
 
 * How-to guide
 * 2-min read
@@ -42,113 +41,85 @@ In this example, we deploy using Docker to keep the demonstration simple. For pr
    receivers:
 
 
-
    netflow:
-
 
 
    scheme: netflow
 
 
-
    port: 2055
-
 
 
    sockets: 16
 
 
-
    workers: 32
-
 
 
    netflow/sflow:
 
 
-
    scheme: sflow
-
 
 
    port: 6343
 
 
-
    sockets: 16
-
 
 
    workers: 32
 
 
-
    processors:
-
 
 
    batch:
 
 
-
    send_batch_size: 2000
-
 
 
    timeout: 30s
 
 
-
    exporters:
-
 
 
    otlp_http:
 
 
-
    endpoint: "${env:DT_ENDPOINT}"
-
 
 
    headers:
 
 
-
    Authorization: "Api-Token ${env:DT_API_TOKEN}"
-
 
 
    service:
 
 
-
    pipelines:
 
 
-
    logs:
-
 
 
    receivers: [netflow, netflow/sflow]
 
 
-
    processors: [batch]
-
 
 
    exporters: [otlp_http]
 
 
-
    telemetry:
 
 
-
    logs:
-
 
 
    level: debug
@@ -207,17 +178,13 @@ Using this DQL query, you can get a summary of the bytes by destination IP and p
 fetch logs
 
 
-
 | filter matchesValue(flow.type, "netflow_v9")
-
 
 
 | summarize {totalBytes= sum(toLong(flow.io.bytes)),totalPackets=sum(toLong(flow.io.packets))}, by: {destination.address,destination.port}
 
 
-
 | sort totalBytes desc
-
 
 
 | limit 10

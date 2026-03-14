@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:07.452068
 
 # Dynatrace Platform Subscription API - manage cost allocation
 
-# Dynatrace Platform Subscription API - manage cost allocation
 
 * Latest Dynatrace
 * Reference
@@ -67,29 +66,22 @@ To execute this request, you need the **Allow read access for usage and consumpt
 {
 
 
-
 "records": [
-
 
 
 {
 
 
-
 "key": "string"
-
 
 
 }
 
 
-
 ],
 
 
-
 "hasNextPage": true
-
 
 
 }
@@ -134,25 +126,19 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "values": [
-
 
 
 {
 
 
-
 "key": "string"
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -209,25 +195,19 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "values": [
-
 
 
 {
 
 
-
 "key": "string"
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -325,29 +305,22 @@ To execute this request, you need the **Allow read access for usage and consumpt
 {
 
 
-
 "records": [
-
 
 
 {
 
 
-
 "key": "string"
-
 
 
 }
 
 
-
 ],
 
 
-
 "hasNextPage": true
-
 
 
 }
@@ -392,25 +365,19 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "values": [
-
 
 
 {
 
 
-
 "key": "string"
-
 
 
 }
 
 
-
 ]
-
 
 
 }
@@ -467,25 +434,19 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "values": [
-
 
 
 {
 
 
-
 "key": "string"
-
 
 
 }
 
 
-
 ]
-
 
 
 }

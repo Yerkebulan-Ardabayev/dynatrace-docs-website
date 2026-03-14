@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:45.224601
 
 # Instrument your Python application with OpenTelemetry
 
-# Instrument your Python application with OpenTelemetry
 
 * Latest Dynatrace
 * Overview

@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:31:59.293255
 
 # Configure auto-update for Dynatrace Operator managed components
 
-# Configure auto-update for Dynatrace Operator managed components
 
 * Latest Dynatrace
 * 2-min read
@@ -30,33 +29,25 @@ Minimal DynaKube configuration that uses auto-update:
 apiVersion: dynatrace.com/v1beta5
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
 
 
-
 oneAgent:
-
 
 
 cloudNativeFullStack: {}
@@ -88,25 +79,19 @@ Dynatrace Operator can be configured to disable auto-updates by setting the `aut
 apiVersion: dynatrace.com/v1alpha2
 
 
-
 kind: EdgeConnect
-
 
 
 metadata:
 
 
-
 name: edgeconnect
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 autoUpdate: false

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Create new Cluster token
 
-# Create new Cluster token
 
 * Published Feb 12, 2020
 
@@ -57,37 +56,28 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "expiresIn": {
-
 
 
 "unit": "DAYS",
 
 
-
 "value": 1
-
 
 
 },
 
 
-
 "name": "string",
-
 
 
 "scopes": [
 
 
-
 "DiagnosticExport"
 
 
-
 ]
-
 
 
 }
@@ -141,9 +131,7 @@ A list of constraint violations
 {
 
 
-
 "token": "abcdefjhij1234567890"
-
 
 
 }
@@ -151,55 +139,42 @@ A list of constraint violations
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -215,13 +190,10 @@ In this example, the request creates a new token named `Mytoken` that is valid f
 curl -X POST "https://myManaged.cluster.com/api/cluster/v2/tokens"
 
 
-
 -H "accept: application/json; charset=utf-8"
 
 
-
 -H "Content-Type: application/json; charset=utf-8"
-
 
 
 -d "{  \"name\": \"MyToken\",  \"scopes\": [    \"DiagnosticExport\",    \"UnattendedInstall\"  ],  \"expiresIn\": {    \"value\": 24,    \"unit\": \"HOURS\"  }}"
@@ -239,29 +211,22 @@ https://myManaged.cluster.com/api/cluster/v2/tokens
 {
 
 
-
 "name": "MyToken",
-
 
 
 "scopes": ["DiagnosticExport", "UnattendedInstall"],
 
 
-
 "expiresIn": {
-
 
 
 "value": 24,
 
 
-
 "unit": "HOURS"
 
 
-
 }
-
 
 
 }
@@ -273,9 +238,7 @@ https://myManaged.cluster.com/api/cluster/v2/tokens
 {
 
 
-
 "token": "abcdefjhij1234567890"
-
 
 
 }

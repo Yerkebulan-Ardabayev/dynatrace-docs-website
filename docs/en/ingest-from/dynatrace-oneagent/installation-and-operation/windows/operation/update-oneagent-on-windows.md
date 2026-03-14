@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:20.645595
 
 # Update Dynatrace OneAgent on Windows
 
-# Update Dynatrace OneAgent on Windows
 
 * Latest Dynatrace
 * 1-min read

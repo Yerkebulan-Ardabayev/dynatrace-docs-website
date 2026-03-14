@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace Intelligence limits
 
-# Dynatrace Intelligence limits
 
 * Latest Dynatrace
 * Reference

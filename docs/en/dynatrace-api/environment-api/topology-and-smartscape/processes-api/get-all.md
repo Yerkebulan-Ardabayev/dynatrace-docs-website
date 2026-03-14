@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:44.386556
 
 # Processes API - GET all processes
 
-# Processes API - GET all processes
 
 * Reference
 * Updated on Mar 22, 2023
@@ -186,2145 +185,1609 @@ A list of constraint violations
 [
 
 
-
 {
-
 
 
 "agentVersions": [
 
 
-
 {
-
 
 
 "major": 1,
 
 
-
 "minor": 1,
-
 
 
 "revision": 1,
 
 
-
 "sourceRevision": "string",
-
 
 
 "timestamp": "string"
 
 
-
 }
 
 
-
 ],
-
 
 
 "azureHostName": "string",
 
 
-
 "azureSiteName": "string",
-
 
 
 "bitness": "32bit",
 
 
-
 "customizedName": "string",
-
 
 
 "discoveredName": "string",
 
 
-
 "displayName": "string",
-
 
 
 "entityId": "string",
 
 
-
 "firstSeenTimestamp": 1,
-
 
 
 "fromRelationships": {
 
 
-
 "isInstanceOf": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "isNetworkClientOf": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "isProcessOf": [
 
 
-
 "string"
-
 
 
 ]
 
 
-
 },
-
 
 
 "lastSeenTimestamp": 1,
 
 
-
 "listenPorts": [
-
 
 
 1
 
 
-
 ],
-
 
 
 "managementZones": [
 
 
-
 {
-
 
 
 "description": "Dynatrace entity for the REST API example",
 
 
-
 "id": "6a98d7bc-abb9-44f8-ae6a-73e68e71812a",
-
 
 
 "name": "Dynatrace entity"
 
 
-
 }
 
 
-
 ],
-
 
 
 "metadata": {
 
 
-
 "adobe.em.env_type": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "adobe.em.program": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "adobe.em.service": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "adobe.em.tier": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "agentValueMetadata": {},
 
 
-
 "apacheConfigPaths": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "apacheSparkMasterIpAddresses": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "aspDotNetCoreApplicationPaths": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "awsEcrImageAccountIds": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "awsEcrImageRegions": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "awsEcsCluster": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "awsEcsContainerARN": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "awsEcsContainerName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "awsEcsDockerID": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "awsEcsDockerName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "awsEcsFamily": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "awsEcsRevision": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "awsEcsTaskARN": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "awsLambdaFunctionNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "awsRegions": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azure.containerapp.dnssuffix": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azure.containerapp.hostname": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azure.containerapp.name": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azure.containerapp.replica.name": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azure.servicefabric.application.id": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azure.servicefabric.application.name": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azure.servicefabric.codepackage.name": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azure.servicefabric.hostedservice.name": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azure.servicefabric.instance.id": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azure.servicefabric.replica.id": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azure.servicefabric.servicepackage.name": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azure.spring.application.name": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azure.spring.cloudconfiguri": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azure.website.instance.id": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azure.website.owner.name": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "azure.website.site.name": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "cassandraClusterNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "catalinaBaseValues": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "catalinaHomeValues": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "cloudFoundryAppIds": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "cloudFoundryAppNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "cloudFoundryInstanceIndexes": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "cloudFoundrySpaceIds": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "cloudFoundrySpaceNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "cloudfoundryMetadata": {},
 
 
-
 "coldfusionJvmConfigFiles": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "commandLineArgs": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "datasourceMonitoringConfigId": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "declarativeConfigRuleId": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "declarativeId": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "dockerContainerIds": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "dockerContainerImageNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "dockerContainerImageVersions": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "dockerContainerNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "dotNetCommands": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "dotnetCommandPath": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "dynatraceClusterIds": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "dynatraceNodeIds": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "elasticSearchClusterNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "elasticSearchNodeNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "envVariables": {},
 
 
-
 "equinoxConfigPath": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "executablePaths": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "executables": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "glassfishDomainNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "glassfishInstanceNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "google.appengine.version": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "google.cloudrun.execution": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "google.cloudrun.job": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "google.cloudrun.revision": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "googleAppEngineInstances": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "googleAppEngineServices": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "googleCloudInstanceId": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "googleCloudInstanceRegion": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "googleCloudProjects": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "googleCloudRunService": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "googleComputeEngineMetadata": {},
 
 
-
 "heroku.appdefaultdomainname": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "heroku.dyno": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "heroku.releaseversion": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "hostGroups": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "hybrisBinDirectories": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "hybrisConfigDirectories": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "hybrisDataDirectories": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "ibmApplid": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "ibmCicsImsApplid": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "ibmCicsImsJobName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "ibmCicsRegion": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "ibmCtgName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "ibmImsConnectRegions": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "ibmImsControlRegions": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "ibmImsMessageProcessingRegions": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "ibmImsSoapGwName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "ibmIntegrationNodeName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "ibmIntegrationServerName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "ibmJobName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "iisAppPools": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "iisRoleNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "javaJarFiles": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "javaJarPaths": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "javaMainClasses": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "javaMainModules": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "jbossHomes": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "jbossModes": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "jbossServerNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "kubernetesAnnotations": {},
 
 
-
 "kubernetesBasePodNames": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "kubernetesClusterId": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "kubernetesContainerNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "kubernetesFullPodNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "kubernetesNamespaces": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "kubernetesPodUids": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "kubernetesRuleResult": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "linkage": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "mssqlInstanceName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "nodejsAppBaseDirectories": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "nodejsAppNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "nodejsScriptNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "oracleSid": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "osagent.groupIdName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "osagent.instanceIdName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "phpScripts": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "phpWorkingDirectories": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "pluginMetadata": {},
 
 
-
 "pythonModule": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "pythonScript": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "pythonScriptPath": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "rke2Type": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "rubyAppRootPaths": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "rubyScriptPaths": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "ruleResult": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "serviceNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "softwareAgInstallRoot": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "softwareAgProductPropertyName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "springBootAppName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "springBootProfileName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "springBootStartupClass": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "tibcoBWEnginePropertyFilePaths": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "tibcoBusinessWorksAppNodeName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "tibcoBusinessWorksAppSpaceName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "tibcoBusinessWorksCeAppName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "tibcoBusinessWorksCeVersion": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "tibcoBusinessWorksDomainName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "tibcoBusinessWorksEnginePropertyFiles": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "tibcoBusinessWorksHome": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "varnishInstanceNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "weblogicClusterNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "weblogicDomainNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "weblogicHomeValues": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "weblogicNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "websphereCellNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "websphereClusterNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "websphereLibertyServerName": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "websphereNodeNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "websphereServerNames": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "zCodeModuleVersion": [
 
 
-
 "string"
-
 
 
 ]
 
 
-
 },
-
 
 
 "modules": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "monitoringState": {
 
 
-
 "actualMonitoringState": "OFF",
-
 
 
 "expectedMonitoringState": "OFF",
 
 
-
 "restartRequired": true
 
 
-
 },
-
 
 
 "softwareTechnologies": [
 
 
-
 {
-
 
 
 "edition": "string",
 
 
-
 "type": "string",
-
 
 
 "version": "string"
 
 
-
 }
 
 
-
 ],
-
 
 
 "tags": [
 
 
-
 {
-
 
 
 "context": "AWS",
 
 
-
 "key": "string",
-
 
 
 "value": "string"
 
 
-
 }
 
 
-
 ],
-
 
 
 "toRelationships": {
 
 
-
 "isNetworkClientOf": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "runsOnProcessGroupInstance": [
 
 
-
 "string"
 
 
-
 ]
-
 
 
 },
 
 
-
 "versionedModules": [
 
 
-
 {
-
 
 
 "name": "string",
 
 
-
 "version": "string"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 ]
@@ -2332,55 +1795,42 @@ A list of constraint violations
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -2408,9 +1858,7 @@ The result is truncated to two entries.
 curl -X GET \
 
 
-
 'https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/processes?relativeTime=5mins' \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
@@ -2428,465 +1876,349 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/processes?re
 [
 
 
-
 {
-
 
 
 "entityId": "PROCESS_GROUP_INSTANCE-EC9688429EB24B6B",
 
 
-
 "displayName": "Apache Web Server apache2",
-
 
 
 "discoveredName": "Apache Web Server apache2",
 
 
-
 "firstSeenTimestamp": 1464951001104,
-
 
 
 "lastSeenTimestamp": 1544024894801,
 
 
-
 "tags": [],
-
 
 
 "fromRelationships": {
 
 
-
 "isProcessOf": [
-
 
 
 "HOST-5FD609AD6757BE7D"
 
 
-
 ],
 
 
-
 "isInstanceOf": [
-
 
 
 "PROCESS_GROUP-B34081EFF9E5F516"
 
 
-
 ]
 
 
-
 },
-
 
 
 "toRelationships": {
 
 
-
 "runsOnProcessGroupInstance": [
-
 
 
 "SERVICE-C3173FEB08025322",
 
 
-
 "SERVICE-B8C88BAA442098CF"
-
 
 
 ]
 
 
-
 },
 
 
-
 "metadata": {
-
 
 
 "commandLineArgs": [
 
 
-
 "/usr/sbin/apache2 -k start"
 
 
-
 ],
-
 
 
 "executables": [
 
 
-
 "apache2"
 
 
-
 ],
-
 
 
 "executablePaths": [
 
 
-
 "/usr/sbin/apache2"
 
 
-
 ],
-
 
 
 "apacheConfigPaths": [
 
 
-
 "/etc/apache2/apache2.conf"
-
 
 
 ]
 
 
-
 },
-
 
 
 "softwareTechnologies": [
 
 
-
 {
-
 
 
 "type": "PHP",
 
 
-
 "edition": "Apache",
-
 
 
 "version": "5.5.9"
 
 
-
 },
 
 
-
 {
-
 
 
 "type": "APACHE_HTTPD",
 
 
-
 "edition": null,
-
 
 
 "version": "2.4.7"
 
 
-
 },
 
 
-
 {
-
 
 
 "type": "SQLITE",
 
 
-
 "edition": null,
-
 
 
 "version": null
 
 
-
 }
 
 
-
 ],
-
 
 
 "listenPorts": [
 
 
-
 443,
-
 
 
 80
 
 
-
 ],
-
 
 
 "bitness": "64bit",
 
 
-
 "monitoringState": {
-
 
 
 "actualMonitoringState": "ON",
 
 
-
 "expectedMonitoringState": "ON",
-
 
 
 "restartRequired": false
 
 
-
 },
-
 
 
 "agentVersions": [
 
 
-
 {
-
 
 
 "major": 1,
 
 
-
 "minor": 157,
-
 
 
 "revision": 167,
 
 
-
 "timestamp": "20181127-152923",
-
 
 
 "sourceRevision": ""
 
 
-
 }
-
 
 
 ]
 
 
-
 },
 
 
-
 {
-
 
 
 "entityId": "PROCESS_GROUP_INSTANCE-C43E52A77ED8F809",
 
 
-
 "displayName": "OneAgent network monitoring",
-
 
 
 "discoveredName": "OneAgent network monitoring",
 
 
-
 "firstSeenTimestamp": 1543571247077,
-
 
 
 "lastSeenTimestamp": 1544024847791,
 
 
-
 "tags": [
 
 
-
 {
-
 
 
 "context": "CONTEXTLESS",
 
 
-
 "key": "sample tag"
-
 
 
 }
 
 
-
 ],
-
 
 
 "fromRelationships": {
 
 
-
 "isProcessOf": [
-
 
 
 "HOST-CCEA78FDE257A4B9"
 
 
-
 ],
-
 
 
 "isInstanceOf": [
 
 
-
 "PROCESS_GROUP-E2B399E9E7FF43C0"
 
 
-
 ],
-
 
 
 "isNetworkClientOf": [
 
 
-
 "PROCESS_GROUP_INSTANCE-9E7865921C2C984E"
-
 
 
 ]
 
 
-
 },
-
 
 
 "toRelationships": {},
 
 
-
 "metadata": {
-
 
 
 "hostGroups": [
 
 
-
 "wazuh"
-
 
 
 ]
 
 
-
 },
-
 
 
 "softwareTechnologies": [
 
 
-
 {
-
 
 
 "type": "APMNG",
 
 
-
 "edition": null,
-
 
 
 "version": null
 
 
-
 }
-
 
 
 ],
 
 
-
 "bitness": "64bit",
-
 
 
 "monitoringState": {
 
 
-
 "actualMonitoringState": "ON",
-
 
 
 "expectedMonitoringState": "ON",
 
 
-
 "restartRequired": false
 
 
-
 }
 
 
-
 }
-
 
 
 ]

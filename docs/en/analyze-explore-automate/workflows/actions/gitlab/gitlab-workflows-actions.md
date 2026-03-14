@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:08.754245
 
 # Actions for GitLab Connector
 
-# Actions for GitLab Connector
 
 * Latest Dynatrace
 * Reference

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace API - Response codes
 
-# Dynatrace API - Response codes
 
 * Reference
 * Published Sep 13, 2018

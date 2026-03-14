@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:04.027447
 
 # Поиск угроз и криминалистический анализ
 
-# Поиск угроз и криминалистический анализ
 
 * Latest Dynatrace
 * Руководство
@@ -67,7 +66,6 @@ scraped: 2026-03-06T21:29:04.027447
    fetch logs
 
 
-
    | summarize count(), by: aws.log_group
    ```
 2. Нажмите **Run** для выполнения запроса.
@@ -111,25 +109,19 @@ scraped: 2026-03-06T21:29:04.027447
    JSON{
 
 
-
    STRING:verb,
-
 
 
    JSON{string:username}(flat=true):user,
 
 
-
    JSON_ARRAY{ipaddr}(typed=true):sourceIPs,
-
 
 
    JSON{string+:resource}(flat=true):objectRef,
 
 
-
    JSON{int:code}(flat=true):responseStatus
-
 
 
    }(flat=true)
@@ -156,9 +148,7 @@ scraped: 2026-03-06T21:29:04.027447
    | expand sourceIPs
 
 
-
    | summarize count(), by: {sourceIPs, username, verb, resource=objectRef, responseStatus}
-
 
 
    | filter in(responseStatus, {401, 403})
@@ -225,7 +215,6 @@ scraped: 2026-03-06T21:29:04.027447
    | summarize count(), by: { pkt_dstaddr, protocol, action, dstport}
 
 
-
    | sort `count()` desc
    ```
 4. Нажмите **Run** для выполнения запроса.
@@ -246,7 +235,6 @@ scraped: 2026-03-06T21:29:04.027447
 
    ```
    fetch logs
-
 
 
    | filter k8s.container.name == "coredns"
@@ -277,7 +265,6 @@ scraped: 2026-03-06T21:29:04.027447
 
    ```
    | parse name, "ld* '.'? ( (ld '.' ld):domain '.' eos)"
-
 
 
    | summarize count = count(), by: {domain}
@@ -332,13 +319,10 @@ scraped: 2026-03-06T21:29:04.027447
    | parse name, """ld:id '.' ld:payload '.tiitha-maliciousdomain'"""
 
 
-
    | fieldsAdd payload=replaceString(payload,".","")
 
 
-
    | fields timestamp, id, payload=decodeBase16ToString(payload)
-
 
 
    | sort timestamp, id
@@ -371,21 +355,16 @@ scraped: 2026-03-06T21:29:04.027447
    json{
 
 
-
    string:query_name,
-
 
 
    string:query_type,
 
 
-
    json_array:answers,
 
 
-
    ipaddr:srcaddr
-
 
 
    }(flat=true)
@@ -405,9 +384,7 @@ scraped: 2026-03-06T21:29:04.027447
    | filter endsWith(query_name, "tiitha-maliciousdomain.com.") and query_type == "TXT"
 
 
-
    | expand answers
-
 
 
    | fields srcaddr, uery_name, answer=answers[Rdata]

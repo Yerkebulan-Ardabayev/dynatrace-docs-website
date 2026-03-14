@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:27:32.027669
 
 # Monitor Azure Virtual Machines (classic)
 
-# Monitor Azure Virtual Machines (classic)
 
 * Latest Dynatrace
 * How-to guide

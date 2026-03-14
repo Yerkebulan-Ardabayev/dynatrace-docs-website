@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:36:46.023049
 
 # Настройка GitHub Connector
 
-# Настройка GitHub Connector
 
 * Последняя версия Dynatrace
 * Практическое руководство

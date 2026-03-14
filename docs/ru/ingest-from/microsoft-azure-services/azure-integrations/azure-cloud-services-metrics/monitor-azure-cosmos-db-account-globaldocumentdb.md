@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:39:13.305924
 
 # Мониторинг Azure Cosmos DB Account (GlobalDocumentDB)
 
-# Мониторинг Azure Cosmos DB Account (GlobalDocumentDB)
 
 * Latest Dynatrace
 * Практическое руководство

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:19.564395
 
 # Containerized, auto-scalable private Synthetic locations on Kubernetes
 
-# Containerized, auto-scalable private Synthetic locations on Kubernetes
 
 * Classic
 * How-to guide
@@ -153,49 +152,37 @@ API service definition in the metric adapter template
 apiVersion: apiregistration.k8s.io/v1
 
 
-
 kind: APIService
-
 
 
 metadata:
 
 
-
 name: v1beta1.external.metrics.k8s.io
-
 
 
 spec:
 
 
-
 service:
-
 
 
 name: dynatrace-metrics-apiserver
 
 
-
 namespace: {{adapterNamespace}}
-
 
 
 group: external.metrics.k8s.io
 
 
-
 version: v1beta1
-
 
 
 insecureSkipTLSVerify: true
 
 
-
 groupPriorityMinimum: 100
-
 
 
 versionPriority: 100
@@ -209,45 +196,34 @@ Existing resource modification in the metric adapter template
 apiVersion: rbac.authorization.k8s.io/v1
 
 
-
 kind: ClusterRoleBinding
-
 
 
 metadata:
 
 
-
 name: hpa-controller-dynatrace-metrics
-
 
 
 roleRef:
 
 
-
 apiGroup: rbac.authorization.k8s.io
-
 
 
 kind: ClusterRole
 
 
-
 name: dynatrace-metrics-server-resources
-
 
 
 subjects:
 
 
-
 - kind: ServiceAccount
 
 
-
 name: horizontal-pod-autoscaler
-
 
 
 namespace: kube-system
@@ -478,9 +454,7 @@ To set node affinity
    spec:
 
 
-
    nodeSelector:
-
 
 
    zone: us-east-1a
@@ -511,37 +485,28 @@ To use storage class with EFS
    kind: StorageClass
 
 
-
    apiVersion: storage.k8s.io/v1
-
 
 
    metadata:
 
 
-
    name: efs-test
-
 
 
    provisioner: efs.csi.aws.com
 
 
-
    parameters:
-
 
 
    fileSystemId: fs-0c155dcd8425aa39d
 
 
-
    provisioningMode: efs-ap
 
 
-
    directoryPerms: "700"
-
 
 
    basePath: "/"
@@ -552,37 +517,28 @@ To use storage class with EFS
    volumeClaimTemplates:
 
 
-
    - metadata:
-
 
 
    name: persistent-storage
 
 
-
    spec:
-
 
 
    storageClassName: efs-test
 
 
-
    accessModes:
-
 
 
    - ReadWriteMany
 
 
-
    resources:
 
 
-
    requests:
-
 
 
    storage: 3Gi
@@ -612,29 +568,22 @@ The entire `securityContext` for the `synthetic-vuc` container with enabled netw
 securityContext:
 
 
-
 readOnlyRootFilesystem: true
-
 
 
 privileged: false
 
 
-
 allowPrivilegeEscalation: true
-
 
 
 runAsNonRoot: true
 
 
-
 capabilities:
 
 
-
 drop: ["all"]
-
 
 
 add: ["NET_RAW"]
@@ -654,7 +603,6 @@ The recommended solution is to prepare a custom Security Context Constraint.
      oc -n $NAMESPACE create sa sa-dt-synthetic
 
 
-
      oc -n $NAMESPACE adm policy add-role-to-user edit system:serviceaccount:$NAMESPACE:sa-dt-synthetic
      ```
 2. Create a custom Security Context Constraint
@@ -665,145 +613,109 @@ The recommended solution is to prepare a custom Security Context Constraint.
      apiVersion: security.openshift.io/v1
 
 
-
      kind: SecurityContextConstraints
-
 
 
      metadata:
 
 
-
      name: scc-dt-synthetic
-
 
 
      allowPrivilegedContainer: false
 
 
-
      allowHostDirVolumePlugin: false
-
 
 
      allowHostIPC: false
 
 
-
      allowHostNetwork: false
-
 
 
      allowHostPID: false
 
 
-
      allowHostPorts: false
-
 
 
      runAsUser:
 
 
-
      type: MustRunAsRange
-
 
 
      seccompProfiles:
 
 
-
      - runtime/default
-
 
 
      seLinuxContext:
 
 
-
      type: MustRunAs
-
 
 
      fsGroup:
 
 
-
      type: MustRunAs
-
 
 
      supplementalGroups:
 
 
-
      type: MustRunAs
-
 
 
      volumes:
 
 
-
      - configMap
-
 
 
      - downwardAPI
 
 
-
      - emptyDir
-
 
 
      - persistentVolumeClaim
 
 
-
      - projected
-
 
 
      - secret
 
 
-
      users: []
-
 
 
      groups: []
 
 
-
      priority: null
-
 
 
      readOnlyRootFilesystem: true
 
 
-
      requiredDropCapabilities:
-
 
 
      - ALL
 
 
-
      defaultAddCapabilities: null
-
 
 
      allowedCapabilities:
 
 
-
      - NET_RAW
-
 
 
      allowPrivilegeEscalation: true
@@ -847,49 +759,37 @@ In the code sample below:
 kind: ConfigMap
 
 
-
 apiVersion: v1
-
 
 
 data:
 
 
-
 custom.properties: |-
-
 
 
 [http.client]
 
 
-
 proxy-server = 10.102.43.210
-
 
 
 proxy-port = 3128
 
 
-
 proxy-user = proxyuser
-
 
 
 proxy-password = proxypass
 
 
-
 metadata:
-
 
 
 name: ag-custom-configmap
 
 
-
 namespace: dynatrace
-
 
 
 ---
@@ -901,21 +801,16 @@ Add the following code at `spec.template.spec.volumes:`.
 - name: ag-custom-volume
 
 
-
 configMap:
-
 
 
 name: ag-custom-configmap
 
 
-
 items:
 
 
-
 - key: custom.properties
-
 
 
 path: custom.properties
@@ -927,9 +822,7 @@ Add the following code to the ActiveGate container configuration under `volumeMo
 - name: ag-custom-volume
 
 
-
 mountPath: /var/lib/dynatrace/gateway/config_template/custom.properties
-
 
 
 subPath: custom.properties
@@ -954,7 +847,6 @@ Compared to the regular template, following changes are introduced:
    - name: DT_SYNTHETIC_UNSUPPORTED_MONITORING_MODULES
 
 
-
    value: "browser"
    ```
 2. No `synthetic-vuc-worker` containers are included
@@ -975,109 +867,82 @@ In the code sample below:
 kind: ConfigMap
 
 
-
 apiVersion: v1
-
 
 
 data:
 
 
-
 krb5.conf: |-
-
 
 
 [libdefaults]
 
 
-
 dns_lookup_realm = false
-
 
 
 ticket_lifetime = 24h
 
 
-
 renew_lifetime = 7d
-
 
 
 forwardable = true
 
 
-
 rdns = false
-
 
 
 pkinit_anchors = FILE:/etc/pki/tls/certs/ca-bundle.crt
 
 
-
 spake_preauth_groups = edwards25519
-
 
 
 dns_canonicalize_hostname = fallback
 
 
-
 qualify_shortname = ""
-
 
 
 default_realm = EXAMPLE.COM
 
 
-
 default_ccache_name = /tmp/krb5cc_%{uid}
-
 
 
 [realms]
 
 
-
 EXAMPLE.COM = {
-
 
 
 kdc = kerberos.example.com
 
 
-
 admin_server = kerberos.example.com
-
 
 
 }
 
 
-
 [domain_realm]
-
 
 
 .example.com = EXAMPLE.COM
 
 
-
 example.com = EXAMPLE.COM
-
 
 
 metadata:
 
 
-
 name: krb-map
 
 
-
 namespace: dynatrace
-
 
 
 ---
@@ -1089,21 +954,16 @@ Add the following code at `spec.template.spec.volumes:`.
 - name: krb5-conf
 
 
-
 configMap:
-
 
 
 name: krb-map
 
 
-
 items:
 
 
-
 - key: krb5.conf
-
 
 
 path: krb5.conf
@@ -1115,9 +975,7 @@ Add the following code to every `synthetic-vuc-worker` container configuration u
 - name: krb5-conf
 
 
-
 mountPath: /etc/krb5.conf
-
 
 
 subPath: krb5.conf
@@ -1133,7 +991,6 @@ Add the following code to Synthetic metric adapter template under `env:`
 - name: TLS_SECURE
 
 
-
 value: "false"
 ```
 
@@ -1147,13 +1004,10 @@ Add the following code to Synthetic metric adapter template under `env:`
 - name: HTTPS_PROXY
 
 
-
 value: "http://proxyuser:proxypass@10.102.43.210:3128"
 
 
-
 - name: NO_PROXY
-
 
 
 value: "172.20.0.0/16"  # do not proxy internal calls to Kubernetes cluster

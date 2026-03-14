@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Configuration as Code overview
 
-# Configuration as Code overview
 
 * Overview
 * 2-min read

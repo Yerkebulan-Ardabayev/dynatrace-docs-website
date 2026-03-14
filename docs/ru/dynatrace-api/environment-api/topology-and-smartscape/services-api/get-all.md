@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:48.257759
 
 # Services API - GET всех сервисов
 
-# Services API - GET всех сервисов
 
 * Справочник
 * Обновлено 22 марта 2023
@@ -175,309 +174,232 @@ scraped: 2026-03-05T21:26:48.257759
 [
 
 
-
 {
-
 
 
 "agentTechnologyType": "APACHE",
 
 
-
 "akkaActorSystem": "string",
-
 
 
 "className": "string",
 
 
-
 "contextRoot": "string",
-
 
 
 "customizedName": "string",
 
 
-
 "databaseHostNames": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "databaseName": "string",
 
 
-
 "databaseVendor": "string",
-
 
 
 "discoveredName": "string",
 
 
-
 "displayName": "string",
-
 
 
 "entityId": "string",
 
 
-
 "esbApplicationName": "string",
-
 
 
 "firstSeenTimestamp": 1,
 
 
-
 "fromRelationships": {
-
 
 
 "calls": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "runsOn": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "runsOnProcessGroupInstance": [
 
 
-
 "string"
-
 
 
 ]
 
 
-
 },
-
 
 
 "ibmCtgGatewayUrl": "string",
 
 
-
 "ibmCtgServerName": "string",
-
 
 
 "iibApplicationName": "string",
 
 
-
 "ipAddresses": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "isExternalService": true,
 
 
-
 "lastSeenTimestamp": 1,
-
 
 
 "managementZones": [
 
 
-
 {
-
 
 
 "description": "Dynatrace entity for the REST API example",
 
 
-
 "id": "6a98d7bc-abb9-44f8-ae6a-73e68e71812a",
-
 
 
 "name": "Dynatrace entity"
 
 
-
 }
 
 
-
 ],
-
 
 
 "path": "string",
 
 
-
 "port": 1,
-
 
 
 "publicDomainName": {},
 
 
-
 "remoteEndpoint": "string",
-
 
 
 "remoteServiceName": "string",
 
 
-
 "serviceDetectionAttributes": {},
-
 
 
 "serviceTechnologyTypes": [
 
 
-
 "string"
 
 
-
 ],
-
 
 
 "serviceType": "Cics",
 
 
-
 "softwareTechnologies": [
 
 
-
 {
-
 
 
 "edition": "string",
 
 
-
 "type": "string",
-
 
 
 "version": "string"
 
 
-
 }
 
 
-
 ],
-
 
 
 "tags": [
 
 
-
 {
-
 
 
 "context": "AWS",
 
 
-
 "key": "string",
-
 
 
 "value": "string"
 
 
-
 }
 
 
-
 ],
-
 
 
 "toRelationships": {
 
 
-
 "calls": [
-
 
 
 "string"
 
 
-
 ]
-
 
 
 },
 
 
-
 "webApplicationId": "string",
-
 
 
 "webServerName": "string",
 
 
-
 "webServiceName": "string",
-
 
 
 "webServiceNamespace": "string"
 
 
-
 }
-
 
 
 ]
@@ -487,53 +409,40 @@ scraped: 2026-03-05T21:26:48.257759
 {
 
 
-
 "error": {
-
 
 
 "code": 1,
 
 
-
 "constraintViolations": [
-
 
 
 {
 
 
-
 "location": "string",
-
 
 
 "message": "string",
 
 
-
 "parameterLocation": "HEADER",
-
 
 
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -553,9 +462,7 @@ scraped: 2026-03-05T21:26:48.257759
 curl -X GET \
 
 
-
 'https://mySampleEnv.live.dynatrace.com/api/v1/entity/services?relativeTime=5mins' \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
@@ -573,265 +480,199 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/services?relativeTime=5mins
 [
 
 
-
 {
-
 
 
 "entityId": "SERVICE-72503CBDD2AEF066",
 
 
-
 "displayName": "PHP-FPM via domain socket /run/php7-fpm.sock",
-
 
 
 "discoveredName": "PHP-FPM via domain socket /run/php7-fpm.sock",
 
 
-
 "firstSeenTimestamp": 1505902015554,
-
 
 
 "lastSeenTimestamp": 1544025169570,
 
 
-
 "tags": [
 
 
-
 {
-
 
 
 "context": "CONTEXTLESS",
 
 
-
 "key": "Sample tag"
-
 
 
 }
 
 
-
 ],
-
 
 
 "fromRelationships": {
 
 
-
 "runsOnProcessGroupInstance": [
-
 
 
 "PROCESS_GROUP_INSTANCE-165E2E1655782C30",
 
 
-
 "PROCESS_GROUP_INSTANCE-2E41AD6095ACE67B",
-
 
 
 "PROCESS_GROUP_INSTANCE-3E537F0F455E9757"
 
 
-
 ],
-
 
 
 "runsOn": [
 
 
-
 "PROCESS_GROUP-E5C3CC7EC1F80B5B"
-
 
 
 ]
 
 
-
 },
-
 
 
 "toRelationships": {
 
 
-
 "calls": [
-
 
 
 "SERVICE-5304CCF4AFBFF35E"
 
 
-
 ]
-
 
 
 },
 
 
-
 "agentTechnologyType": "N/A",
-
 
 
 "serviceType": "WebRequest",
 
 
-
 "softwareTechnologies": [
 
 
-
 {
-
 
 
 "type": "SQLITE",
 
 
-
 "edition": null,
-
 
 
 "version": null
 
 
-
 },
 
 
-
 {
-
 
 
 "type": "PHP",
 
 
-
 "edition": "FPM",
-
 
 
 "version": "7.0.32"
 
 
-
 },
 
 
-
 {
-
 
 
 "type": "PHP_FPM",
 
 
-
 "edition": null,
-
 
 
 "version": null
 
 
-
 }
-
 
 
 ]
 
 
-
 },
-
 
 
 {
 
 
-
 "entityId": "SERVICE-52AC624D70C377BC",
-
 
 
 "displayName": "Requests to public networks",
 
 
-
 "discoveredName": "Requests to public networks",
-
 
 
 "firstSeenTimestamp": 1421376505750,
 
 
-
 "lastSeenTimestamp": 1544025153570,
-
 
 
 "tags": [],
 
 
-
 "fromRelationships": {},
-
 
 
 "toRelationships": {
 
 
-
 "calls": [
-
 
 
 "SERVICE-635F6C4CAD07BC56",
 
 
-
 "SERVICE-74C7ACD74FA27688",
-
 
 
 "SERVICE-C7790E5EDD1F895E"
 
 
-
 ]
-
 
 
 },
 
 
-
 "agentTechnologyType": "N/A",
-
 
 
 "serviceType": "WebRequest"
 
 
-
 }
-
 
 
 ]

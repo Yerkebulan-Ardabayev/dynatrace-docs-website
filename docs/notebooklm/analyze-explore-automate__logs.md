@@ -14,7 +14,6 @@ scraped: 2026-03-06T21:15:23.570408
 
 # Log alerts
 
-# Log alerts
 
 * Latest Dynatrace
 * Explanation
@@ -97,7 +96,6 @@ scraped: 2026-03-06T21:23:14.965677
 
 # Log content analysis
 
-# Log content analysis
 
 * Latest Dynatrace
 * Overview
@@ -152,7 +150,6 @@ scraped: 2026-03-06T21:21:37.693611
 
 # Log Management and Analytics best practices
 
-# Log Management and Analytics best practices
 
 * Latest Dynatrace
 * Tutorial
@@ -303,7 +300,6 @@ For more information about bucket filters, see [Query and filter logs](../ru/ana
 ### Set access permissions
 
 
-
 By default, a DQL query will scan all buckets that the user has access to. To limit the number and kind of buckets that a user has access to, you can use IAM policies to set access permissions on individual bucket level.
 
 This way you don't have to define bucket filters manually, with every query.
@@ -402,7 +398,6 @@ There are two ways that you can verify data is ingested and retained.
   fetch logs
 
 
-
   | filter dt.system.bucket == "default_logs"
   ```
 
@@ -429,7 +424,6 @@ This step creates a dedicated bucket for certain data.
 6. Select **Create** to save the bucket.
 
 ### 2. Filter logs on ingest
-
 
 
 [OpenPipeline](../ru/platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") handles log ingestion from all sources and allows processing, transformation and bucket assignment before logs are stored in Grail.
@@ -475,7 +469,6 @@ To verify the configuration, go to ![Logs](https://dt-cdn.net/images/logs-256-ae
 
 ```
 fetch logs
-
 
 
 | filter dt.openpipeline == {pipeline_AWS_cloudfront_logs_5498}
@@ -551,7 +544,6 @@ scraped: 2026-03-06T21:15:14.824079
 
 # Configure data storage and retention for logs
 
-# Configure data storage and retention for logs
 
 * Latest Dynatrace
 * Tutorial
@@ -674,7 +666,6 @@ scraped: 2026-03-05T21:30:59.143327
 
 # DQL matcher in logs
 
-# DQL matcher in logs
 
 * Latest Dynatrace
 * Reference
@@ -850,7 +841,6 @@ scraped: 2026-03-06T21:13:44.771782
 
 # Log processing with classic pipeline
 
-# Log processing with classic pipeline
 
 * Latest Dynatrace
 * Explanation
@@ -950,7 +940,6 @@ scraped: 2026-03-06T21:13:43.103611
 
 # Log Management and Analytics default limits
 
-# Log Management and Analytics default limits
 
 * Latest Dynatrace
 * Explanation
@@ -1077,7 +1066,6 @@ scraped: 2026-03-06T21:12:18.348722
 
 # Connect log data to traces
 
-# Connect log data to traces
 
 * Latest Dynatrace
 * Explanation
@@ -1152,41 +1140,31 @@ Log data in JSON format is enriched with additional `<dt.trace_id>`, `<dt.span_i
 {
 
 
-
 "severity": "error",
-
 
 
 "time": 1638957438023,
 
 
-
 "pid": 1,
-
 
 
 "hostname": "paymentservice-788946fdcd-42lgq",
 
 
-
 "name": "paymentservice-charge",
-
 
 
 "dt.trace_id": "d04b42bc9f4b6ecdbf6bc9f4b6ecdbc",
 
 
-
 "dt.span_id": "9adc716eb808d428",
-
 
 
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-27204EFED3D8466E",
 
 
-
 "message": "Unsupported card type for cardNumber=************0454"
-
 
 
 }
@@ -1200,61 +1178,46 @@ Log data in XML format is enriched with additional `<dt.trace_id>`, `<dt.span_id
 <?xml version="1.0" encoding="windows-1252" standalone="no"?>
 
 
-
 <record>
-
 
 
 <date>2021-08-24T14:41:36.565218700Z</date>
 
 
-
 <millis>1629816096565</millis>
-
 
 
 <nanos>218700</nanos>
 
 
-
 <sequence>0</sequence>
-
 
 
 <logger>com.apm.testapp.logging.jul.XMLLoggingSample</logger>
 
 
-
 <level>INFO</level>
-
 
 
 <class>com.apm.testapp.logging.jul.BaseLoggingSample</class>
 
 
-
 <method>info</method>
-
 
 
 <thread>1</thread>
 
 
-
 <message>Update completed successfully.</message>
-
 
 
 <dt.trace_id>513fcd4e9b08792fcd4e9b08792</dt.trace_id>
 
 
-
 <dt.span_id>125840e3125840e3</dt.span_id>
 
 
-
 <dt.entity.process_group_instance>PROCESS_GROUP_INSTANCE-27204EFED3D8466E</dt.entity.process_group_instance>
-
 
 
 </record>
@@ -1298,7 +1261,6 @@ Suppose you want to manually enrich your NGINX log data with `dt.trace_id`, `dt.
 log_format custom '$remote_addr - [$time_local] $request $status $body_bytes_sent [!dt dt.trace_id=$dt_trace_id,dt.span_id=$dt_span_id,dt.trace_sampled=$dt_trace_sampled]';
 
 
-
 access_log logs/access.log custom;
 ```
 
@@ -1306,7 +1268,6 @@ The result will be an `access.log` file containing the enriched log records:
 
 ```
 127.0.0.1 - [22/Mar/2022:08:50:45 +0100] GET /index.htm HTTP/1.1 200 30 [!dt dt.trace_id=b9e5c9ec08be5fab5071d76f427be7da,dt.span_id=43c5bb9432593963,dt.trace_sampled=true]
-
 
 
 127.0.0.1 - [22/Mar/2022:08:50:45 +0100] GET /index.htm HTTP/1.1 200 30 [!dt dt.trace_id=01e52950b145d97bf22345e68c5e6c58,dt.span_id=de819d856eecb236,dt.trace_sampled=true]
@@ -1322,7 +1283,6 @@ The result will be an `access.log` file containing the enriched log records:
 
 ```
 127.0.0.1 - [21/Oct/2021:10:33:28 +0200] GET /index.htm HTTP/1.1 404 597 [!dt dt.trace_id=e1c0afeb0b8a91d7748139aa764ee37e,dt.span_id=e5e6748fab93ede8]
-
 
 
 127.0.0.1 - [21/Oct/2021:10:33:31 +0200] GET /index.html HTTP/1.1 200 1056 [!dt dt.trace_id=81fe7816ba6c38f7aa09aef3684cd941,dt.span_id=3bdacc466ae073cd]
@@ -1341,7 +1301,6 @@ In the **Log4j** PatternFormatter, you can specify a pattern like this to includ
 ### Example of manually enriching Logstash Logback encoder
 
 
-
 Logback is a successor to the log4j project. Logstash Logback is an extension that provides logback encoders, layouts, and appenders to log in JSON and other formats supported by Jackson.
 
 The following is an example of manual enrichment using the Logstash encoder. Note the additional `mdc` property in the configuration file, where you can include MDC variables.
@@ -1350,149 +1309,112 @@ The following is an example of manual enrichment using the Logstash encoder. Not
 <appender name="COMPOSITEJSONENCODER" class="ch.qos.logback.core.FileAppender">
 
 
-
 <file>compositejsonencoder.log</file>
-
 
 
 <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
 
 
-
 <providers>
-
 
 
 <timestamp>
 
 
-
 <fieldName>timestamp</fieldName>
-
 
 
 <timeZone>UTC</timeZone>
 
 
-
 </timestamp>
-
 
 
 <loggerName>
 
 
-
 <fieldName>logger</fieldName>
-
 
 
 </loggerName>
 
 
-
 <logLevel>
-
 
 
 <fieldName>level</fieldName>
 
 
-
 </logLevel>
-
 
 
 <threadName>
 
 
-
 <fieldName>thread</fieldName>
-
 
 
 </threadName>
 
 
-
 <mdc>
-
 
 
 <includeMdcKeyName>dt.span_id</includeMdcKeyName>
 
 
-
 <includeMdcKeyName>dt.trace_id</includeMdcKeyName>
-
 
 
 <includeMdcKeyName>dt.entity.host</includeMdcKeyName>
 
 
-
 </mdc>
-
 
 
 <stackTrace>
 
 
-
 <fieldName>stackTrace</fieldName>
-
 
 
 <!-- maxLength - limit the length of the stack trace -->
 
 
-
 <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
-
 
 
 <maxDepthPerThrowable>200</maxDepthPerThrowable>
 
 
-
 <maxLength>14000</maxLength>
-
 
 
 <rootCauseFirst>true</rootCauseFirst>
 
 
-
 </throwableConverter>
-
 
 
 </stackTrace>
 
 
-
 <message />
-
 
 
 <throwableClassName>
 
 
-
 <fieldName>exceptionClass</fieldName>
-
 
 
 </throwableClassName>
 
 
-
 </providers>
 
 
-
 </encoder>
-
 
 
 </appender>
@@ -1519,7 +1441,6 @@ You can enrich your logs using NGINX ingress with Kubernetes in two steps:
 main-snippet: load_module /opt/dynatrace/oneagent/agent/bin/current/linux-musl-x86-64/liboneagentnginx.so;
 
 
-
 log-format-upstream: '$remote_addr - $remote_user [$time_local] "$request" [!dt dt.trace_id=$dt_trace_id,dt.span_id=$dt_span_id,dt.trace_sampled=$dt_trace_sampled] $status $body_bytes_sent  "$http_referer" "$http_user_agent" $request_length'
 ```
 
@@ -1529,161 +1450,121 @@ Example of configmap.yaml file
 apiVersion: v1
 
 
-
 kind: Namespace
 
 
-
 metadata:
-
 
 
 name: prod-ingress-nginx
 
 
-
 labels:
-
 
 
 app.kubernetes.io/name: ingress-nginx
 
 
-
 app.kubernetes.io/instance: ingress-nginx
 
 
-
 ---
-
 
 
 # Source: ingress-nginx/templates/controller-serviceaccount.yaml
 
 
-
 apiVersion: v1
-
 
 
 kind: ServiceAccount
 
 
-
 metadata:
-
 
 
 labels:
 
 
-
 helm.sh/chart: ingress-nginx-4.0.6
-
 
 
 app.kubernetes.io/name: ingress-nginx
 
 
-
 app.kubernetes.io/instance: ingress-nginx
-
 
 
 app.kubernetes.io/version: 1.0.4
 
 
-
 app.kubernetes.io/managed-by: Helm
 
 
-
 app.kubernetes.io/component: controller
-
 
 
 name: ingress-nginx
 
 
-
 namespace: prod-ingress-nginx
-
 
 
 automountServiceAccountToken: true
 
 
-
 ---
-
 
 
 # Source: ingress-nginx/templates/controller-configmap.yaml
 
 
-
 apiVersion: v1
-
 
 
 kind: ConfigMap
 
 
-
 metadata:
-
 
 
 labels:
 
 
-
 helm.sh/chart: ingress-nginx-4.0.6
-
 
 
 app.kubernetes.io/name: ingress-nginx
 
 
-
 app.kubernetes.io/instance: ingress-nginx
-
 
 
 app.kubernetes.io/version: 1.0.4
 
 
-
 app.kubernetes.io/managed-by: Helm
-
 
 
 app.kubernetes.io/component: controller
 
 
-
 name: ingress-nginx-controller
-
 
 
 namespace: prod-ingress-nginx
 
 
-
 data:
-
 
 
 allow-snippet-annotations: 'true'
 
 
-
 main-snippet: load_module /opt/dynatrace/oneagent/agent/bin/current/linux-musl-x86-64/liboneagentnginx.so;
 
 
-
 log-format-upstream: '$remote_addr - $remote_user [$time_local] "$request" [!dt dt.trace_id=$dt_trace_id,dt.span_id=$dt_span_id,dt.trace_sampled=$dt_trace_sampled] $status $body_bytes_sent  "$http_referer" "$http_user_agent" $request_length'
-
 
 
 ...
@@ -1709,69 +1590,52 @@ In the example below, a `dt_log` function has been created to enrich a given log
 import logging
 
 
-
 from opentelemetry import trace
-
 
 
 def dt_log(self, record):
 
 
-
 if (not self.disabled) and self.filter(record):
-
 
 
 ctx = trace.get_current_span().get_span_context()
 
 
-
 if ctx.is_valid:
-
 
 
 trace_id = "{0:032X}".format(ctx.trace_id)
 
 
-
 span_id = "{0:016X}".format(ctx.span_id)
-
 
 
 record.msg = f"[!dt dt.trace_id={trace_id},dt.span_id={span_id}] - {record.msg}"
 
 
-
 self.callHandlers(record)
-
 
 
 logging.Logger.handle = dt_log
 
 
-
 def lambda_handler(event, context):
-
 
 
 logger = logging.getLogger()
 
 
-
 logger.warning("Hello world")
-
 
 
 return {
 
 
-
 "statusCode": 200,
 
 
-
 "body": "Hello from lambda"
-
 
 
 }
@@ -1783,49 +1647,37 @@ In the example below, a `dt_log` function has been created to enrich a given log
 const opentelemetry = require('@opentelemetry/api');
 
 
-
 function dtLog(msg) {
-
 
 
 const spanContext = opentelemetry.trace.getSpanContext(opentelemetry.context.active()) ?? opentelemetry.INVALID_SPAN_CONTEXT;
 
 
-
 console.log(`[!dt dt.trace_id=${spanContext.traceId},dt.span_id=${spanContext.spanId}] - ${msg}`);
-
 
 
 }
 
 
-
 exports.handler = function(event, context) {
-
 
 
 const msg = "Hello World"
 
 
-
 dtLog(msg);
-
 
 
 context.succeed({
 
 
-
 statusCode: 200,
-
 
 
 body: msg
 
 
-
 });
-
 
 
 };
@@ -1837,85 +1689,64 @@ In the example below, a `dtLog` method has been created to enrich a given log me
 package com.amazonaws.lambda.demo;
 
 
-
 import com.amazonaws.services.lambda.runtime.Context;
-
 
 
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 
-
 import io.opentelemetry.api.trace.Span;
-
 
 
 import io.opentelemetry.api.trace.SpanContext;
 
 
-
 public class HelloJava implements RequestHandler<Object, String> {
-
 
 
 private static void dtLog(final String msg) {
 
 
-
 SpanContext spanContext = Span.current().getSpanContext();
-
 
 
 System.out.printf(
 
 
-
 "[!dt dt.trace_id=%s,dt.span_id=%s] - %s%n",
-
 
 
 spanContext.getTraceId(),
 
 
-
 spanContext.getSpanId(),
-
 
 
 msg
 
 
-
 );
 
 
-
 }
-
 
 
 @Override
 
 
-
 public String handleRequest(Object input, Context context) {
-
 
 
 String msg = "Hello World";
 
 
-
 dtLog(msg);
-
 
 
 return msg;
 
 
-
 }
-
 
 
 }
@@ -1927,89 +1758,67 @@ In the example below, the HTTP handler uses `Printf()` to log the response to st
 package main
 
 
-
 import (
-
 
 
 "fmt"
 
 
-
 "log"
-
 
 
 "net/http"
 
 
-
 "github.com/Dynatrace/OneAgent-SDK-for-Go/sdk"
-
 
 
 )
 
 
-
 func main() {
-
 
 
 // Create OneAgent SDK API instance
 
 
-
 var oneagentsdk = sdk.CreateInstance()
-
 
 
 http.HandleFunc("/", func(w http.ResponseWriter, _ *http.Request) {
 
 
-
 // Get TraceContextInfo within the incoming HTTP request
-
 
 
 // to obtain Trace ID and Span ID of the active distributed trace context
 
 
-
 traceContext := oneagentsdk.GetTraceContextInfo()
-
 
 
 msg := "Hello World"
 
 
-
 // Log to console
-
 
 
 fmt.Printf("[!dt dt.trace_id=%s,dt.span_id=%s] - %s\n", traceContext.GetTraceId(), traceContext.GetSpanId(), msg)
 
 
-
 // Write HTTP body
-
 
 
 fmt.Fprintf(w, msg)
 
 
-
 })
-
 
 
 fmt.Println("Starting HTTP server at port 8080...")
 
 
-
 log.Fatal(http.ListenAndServe(":8080", nil))
-
 
 
 }
@@ -2025,7 +1834,6 @@ For instructions on how to source these attributes via OneAgent SDK:
 ## Retrieve process group instance ID
 
 
-
 You can get the `dt.entity.process_group_instance` field using the OpenTelemetry Python command containing `merged`. The `process_group_instance` is retrieved as one of the attributes delivered in `merged`, as shown in the example below:
 
 With OneAgent, you can simply point to a local endpoint without an authentication token to enable trace ingestion.
@@ -2034,117 +1842,88 @@ With OneAgent, you can simply point to a local endpoint without an authenticatio
 import json
 
 
-
 from opentelemetry import trace as OpenTelemetry
-
 
 
 from opentelemetry.exporter.otlp.proto.http.trace_exporter import (
 
 
-
 OTLPSpanExporter,
 
 
-
 )
-
 
 
 from opentelemetry.sdk.resources import Resource
 
 
-
 from opentelemetry.sdk.trace import TracerProvider, sampling
-
 
 
 from opentelemetry.sdk.trace.export import (
 
 
-
 BatchSpanProcessor,
-
 
 
 )
 
 
-
 merged = dict()
-
 
 
 for name in ["dt_metadata_e617c525669e072eebe3d0f08212e8f2.json", "/var/lib/dynatrace/enrichment/dt_metadata.json"]:
 
 
-
 try:
-
 
 
 data = ''
 
 
-
 with open(name) as f:
-
 
 
 data = json.load(f if name.startswith("/var") else open(f.read()))
 
 
-
 merged.update(data)
-
 
 
 except:
 
 
-
 pass
-
 
 
 merged.update({
 
 
-
 "service.name": "python-quickstart", #TODO Replace with the name of your application
-
 
 
 "service.version": "1.0.1", #TODO Replace with the version of your application
 
 
-
 })
-
 
 
 resource = Resource.create(merged)
 
 
-
 tracer_provider = TracerProvider(sampler=sampling.ALWAYS_ON, resource=resource)
-
 
 
 OpenTelemetry.set_tracer_provider(tracer_provider)
 
 
-
 tracer_provider.add_span_processor(
-
 
 
 BatchSpanProcessor(OTLPSpanExporter(
 
 
-
 endpoint="http://localhost:14499/otlp/v1/traces"
-
 
 
 )))
@@ -2164,93 +1943,70 @@ If you use a custom winston formatter/transport (applicable to Node.js only), yo
 const winston = require("winston");
 
 
-
 const Transport = require("winston-transport");
-
 
 
 class CustomTransport extends Transport {
 
 
-
 log(info, next) {
-
 
 
 let myLogLine = `MyLogLine: ${info.timestamp} level=${info.level}: ${info.message}`;
 
 
-
 // this is important as above line only picks timestamp, level and message but nothing else from metadata
-
 
 
 if (info["dt.trace_id"]) {
 
 
-
 myLogLine = `[!dt dt.trace_id=${info["dt.trace_id"]},dt.span_id=${info["dt.span_id"]},dt.trace_sampled=${info["dt.trace_sampled"]}] ${myLogLine}`;
 
 
-
 }
-
 
 
 console.log(myLogLine);
 
 
-
 next();
 
 
-
 }
 
 
-
 }
-
 
 
 const logger = winston.createLogger({
 
 
-
 level: "info",
-
 
 
 format: winston.format.timestamp(),
 
 
-
 transports: [
-
 
 
 new CustomTransport(),
 
 
-
 // this transport includes all metadata (including dynatrace added traceId,..)
-
 
 
 new winston.transport.Console({
 
 
-
 format: winston.format.simple()
-
 
 
 })
 
 
-
 ]
-
 
 
 })
@@ -2273,7 +2029,6 @@ scraped: 2026-03-06T21:34:22.153555
 
 # Syslog ingestion with ActiveGate
 
-# Syslog ingestion with ActiveGate
 
 * Latest Dynatrace
 * How-to guide
@@ -2310,7 +2065,6 @@ This guide is intended for network and Dynatrace administrators who are tasked t
 ## Enable syslog ingestion
 
 
-
 To enable syslog ingestion
 
 1. **Deploy Environment ActiveGate**.
@@ -2339,437 +2093,328 @@ To enable syslog ingestion
    receivers:
 
 
-
    syslog/udp:
-
 
 
    udp:
 
 
-
    listen_address: '0.0.0.0:514'
-
 
 
    add_attributes: true
 
 
-
    protocol: rfc5424
-
 
 
    operators:
 
 
-
    - type: syslog_parser
 
 
-
    protocol: rfc5424
-
 
 
    syslog/tcp:
 
 
-
    tcp:
-
 
 
    listen_address: '0.0.0.0:601'
 
 
-
    add_attributes: true
 
 
-
    protocol: rfc5424
-
 
 
    operators:
 
 
-
    - type: syslog_parser
-
 
 
    protocol: rfc5424
 
 
-
    #  syslog/tcp_tls:
-
 
 
    #    tcp:
 
 
-
    #      listen_address: "0.0.0.0:6514"
-
 
 
    #      tls:
 
 
-
    #        cert_file: "/absolute/path/to/server.crt"
-
 
 
    #        key_file: "/absolute/path/to/server.key"
 
 
-
    #    protocol: rfc5424
-
 
 
    #    operators:
 
 
-
    #      - type: syslog_parser
-
 
 
    #        protocol: rfc5424
 
 
-
    #DO.NOT.MODIFY
-
 
 
    exporters:
 
 
-
    otlp_http/syslog: ${file:syslogendpoint.yaml}
-
 
 
    processors:
 
 
-
    batch:
-
 
 
    send_batch_size: 512
 
 
-
    send_batch_max_size: 1024
-
 
 
    transform:
 
 
-
    log_statements:
-
 
 
    - context: log
 
 
-
    statements:
-
 
 
    - set(body, attributes["message"])
 
 
-
    attributes:
-
 
 
    actions:
 
 
-
    - key: net.host.name
 
 
-
    action: delete
-
 
 
    - key: net.peer.name
 
 
-
    action: delete
-
 
 
    - key: net.peer.port
 
 
-
    action: delete
-
 
 
    - key: net.transport
 
 
-
    action: delete
-
 
 
    - key: net.host.ip
 
 
-
    action: delete
-
 
 
    - key: dt.ingest.port
 
 
-
    from_attribute: net.host.port
 
 
-
    action: upsert
-
 
 
    - key: dt.ingest.source.ip
 
 
-
    from_attribute: net.peer.ip
 
 
-
    action: upsert
-
 
 
    - key: net.peer.ip
 
 
-
    action: delete
-
 
 
    - key: net.host.port
 
 
-
    action: delete
-
 
 
    - key: syslog.hostname
 
 
-
    from_attribute: hostname
 
 
-
    action: upsert
-
 
 
    - key: hostname
 
 
-
    action: delete
-
 
 
    - key: syslog.facility
 
 
-
    from_attribute: facility
 
 
-
    action: upsert
-
 
 
    - key: facility
 
 
-
    action: delete
-
 
 
    - key: syslog.priority
 
 
-
    from_attribute: priority
 
 
-
    action: upsert
-
 
 
    - key: priority
 
 
-
    action: delete
-
 
 
    - key: syslog.proc_id
 
 
-
    from_attribute: proc_id
 
 
-
    action: upsert
-
 
 
    - key: proc_id
 
 
-
    action: delete
-
 
 
    - key: syslog.version
 
 
-
    from_attribute: version
 
 
-
    action: upsert
-
 
 
    - key: version
 
 
-
    action: delete
-
 
 
    - key: syslog.appname
 
 
-
    from_attribute: appname
-
 
 
    action: upsert
 
 
-
    - key: appname
 
 
-
    action: delete
-
 
 
    - key: message
 
 
-
    action: delete
-
 
 
    service:
 
 
-
    telemetry:
-
 
 
    metrics:
 
 
-
    level: none
-
 
 
    pipelines:
 
 
-
    logs/udp:
-
 
 
    receivers: [syslog/udp]
 
 
-
    processors: [transform, attributes, batch]
 
 
-
    exporters: [otlp_http/syslog]
-
 
 
    logs/tcp:
 
 
-
    receivers: [syslog/tcp]
-
 
 
    processors: [transform, attributes, batch]
 
 
-
    exporters: [otlp_http/syslog]
-
 
 
    #    logs/tcp_tls:
 
 
-
    #      receivers: [syslog/tcp_tls]
 
 
-
    #      processors: [transform, attributes, batch]
-
 
 
    #      exporters: [otlp_http/syslog]
@@ -2815,65 +2460,49 @@ To enable syslog ingestion
    [otelSyslog][otelSyslog][37448][err]LogRecord #3
 
 
-
    [otelSyslog][oteiSyslog][37448][err]ObservedTimestamp: 2024-05-06 @9:52:10.6748723 +8000 UTC
-
 
 
    [otelSyslog][otelSyslog][37448][err]Timestamp: 2624-05-@6 11:52:16 +90e0 UTC
 
 
-
    [otelSyslog][otelsyslog][37448][err]SeverityText: info
-
 
 
    [otelSyslog][otelSyslog][37443][err]SeverityNumber: Info(9)
 
 
-
    [otelSyslog][otelSyslog][37448][err]Body: Str(<30>May 6 11:52:10 SOME-HOST systemd[1]: Finished    Load Kernel Module fuse.)
-
 
 
    [otelSyslog][otelSyslog][37448][err]Attributes:
 
 
-
    [otelSyslog][otelSyslog][37448][err]    -> priority: Int(3)
-
 
 
    [otelSyslog][otelSyslog][37448][err]    -> facility: Int(3)
 
 
-
    [otelSyslog][otelSyslog][37448][err]    -> appname: Str(systemd)
-
 
 
    [otelSyslog][otelSyslog][37448][err]    -> proc_id: Str(1)
 
 
-
    [otelSyslog][otelSyslog][37443][err]    -> log: Map({âsource": âsyslog"})
-
 
 
    [otelSyslog][otelSyslog][37443][err]    -> hostname: Str(SOME-HOST)
 
 
-
    [otelSyslog][otelSyslog][37443][err]    -> message: Str(Finished Load Kernel Module fuse.)
-
 
 
    [otelSyslog][otelSyslog][37448][err]Trace ID:
 
 
-
    [otelSyslog][otelSyslog][37448][err]Span ID:
-
 
 
    [otelSyslog][otelSyslog][37443][err]Flags: 0
@@ -2901,21 +2530,16 @@ To mask a credit card number, add the following configuration under the [process
 processors:
 
 
-
 transform/redact_credict_cart:
-
 
 
 log_statements:
 
 
-
 - context: log
 
 
-
 statements:
-
 
 
 - replace_pattern(body, "\\d{15,16}", "REDACTED")
@@ -2926,120 +2550,91 @@ The `replace_pattern` function replaces the credit card number with the `REDACTE
 ## Add custom attributes
 
 
-
 You can also modify the default syslog receiver configuration if you want to group a set of various devices by configuring them to use a specific port. For example, using very generic log messages, you can enrich your syslog events sent to specific TCP ports with custom attributes using the configuration as in the example below.
 
 ```
 receivers:
 
 
-
 syslog/f5:
 
 
-
 tcp:
-
 
 
 listen_address: "0.0.0.0:54526"
 
 
-
 protocol: rfc5424
-
 
 
 operators:
 
 
-
 - type: add
-
 
 
 field: attributes.log.source
 
 
-
 value: syslog
 
 
-
 - type: add
-
 
 
 field: attributes.dt.ip_addresses
 
 
-
 value: "1xx.xx.xx.xx1"
 
 
-
 - type: add
-
 
 
 field: attributes.instance.name
 
 
-
 value: "ip-1xx-xx-x-xx9.ec2.internal"
-
 
 
 - type: add
 
 
-
 field: attributes.device.type
-
 
 
 value: "f5bigip"
 
 
-
 syslog/host:
-
 
 
 tcp:
 
 
-
 listen_address: "0.0.0.0:54527"
-
 
 
 protocol: rfc5424
 
 
-
 operators:
 
 
-
 - type: add
-
 
 
 field: attributes.log.source
 
 
-
 value: syslog
-
 
 
 - type: add
 
 
-
 field: attributes.device.type
-
 
 
 value: "ubuntu-syslog"
@@ -3056,17 +2651,13 @@ For example, if you can read the `net.peer.port` attribute, its value is used fo
 attributes:
 
 
-
 actions:
-
 
 
 - key: custom.remote.port
 
 
-
 from_attribute: net.peer.port
-
 
 
 action: upsert
@@ -3090,13 +2681,10 @@ Add the following filter to the `syslog.yaml` file. For details, see the **Edit 
 filter/mail:
 
 
-
 logs:
 
 
-
 log_record:
-
 
 
 - attributes["syslog.facility"] == 21
@@ -3186,7 +2774,6 @@ scraped: 2026-03-06T21:25:57.009301
 
 # Ingest JSON and TXT logs
 
-# Ingest JSON and TXT logs
 
 * Latest Dynatrace
 * Explanation
@@ -3286,7 +2873,6 @@ The first attribute from the supported content attributes list is selected for t
 The `_raw` attribute is used as `content` only if no higher-priority supported content attribute is present.
 
 ### Flattened data model
-
 
 
 The flattened data model provides direct access to attribute values through simple key paths.
@@ -3398,7 +2984,6 @@ scraped: 2026-03-06T21:29:26.252310
 
 # Automatic log enrichment
 
-# Automatic log enrichment
 
 * Latest Dynatrace
 * Explanation
@@ -3444,7 +3029,6 @@ scraped: 2026-03-06T21:28:26.746272
 
 # Log ingestion API
 
-# Log ingestion API
 
 * Latest Dynatrace
 * Overview
@@ -3501,9 +3085,7 @@ You can customize the log data queue properties by editing the `custom.propertie
 [generic_ingest]
 
 
-
 #disk_queue_path=<custom_path> # defaults to temp folder
-
 
 
 #disk_queue_max_size_mb=<limit> # defaults to 300 MB
@@ -3527,45 +3109,34 @@ The response contains response code `204`.
 curl -X POST \
 
 
-
 https://environment.activegate.domain.com:9999/e/abc123a/api/v2/logs/ingest \
-
 
 
 -H 'Content-Type: application/json; charset=utf-8' \
 
 
-
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
-
 
 
 -d '[
 
 
-
 {
-
 
 
 "content": "Exception: Custom error log sent via Log ingestion API",
 
 
-
 "status": "error",
-
 
 
 "service.name": "log-monitoring-tenant",
 
 
-
 "service.namespace": "dev-stage-cluster"
 
 
-
 }
-
 
 
 ]'
@@ -3613,7 +3184,6 @@ scraped: 2026-03-06T21:20:04.360187
 
 # Custom log source
 
-# Custom log source
 
 * Latest Dynatrace
 * Tutorial
@@ -3765,7 +3335,6 @@ You can add a maximum of 1000 custom log source rules per scope, with a maximum 
 ## Log file matching
 
 
-
 When configuring a custom log source, follow these rules:
 
 * Custom log paths must be absolute; relative paths are rejected. An absolute path has the following pattern:
@@ -3833,7 +3402,6 @@ scraped: 2026-03-03T21:26:02.452904
 
 # Stream Kubernetes logs with Fluent Bit
 
-# Stream Kubernetes logs with Fluent Bit
 
 * Latest Dynatrace
 * Tutorial
@@ -3869,613 +3437,460 @@ Follow the step-by-step guide to prepare the configuration for Fluent Bit.
    openShift:
 
 
-
    # set to true for OpenShift
-
 
 
    enabled: false
 
 
-
    securityContext:
-
 
 
    capabilities:
 
 
-
    drop:
-
 
 
    - ALL
 
 
-
    readOnlyRootFilesystem: true
-
 
 
    # uncomment the line below for OpenShift
 
 
-
    #privileged: true
-
 
 
    rbac:
 
 
-
    nodeAccess: true
-
 
 
    config:
 
 
-
    inputs: |
-
 
 
    [INPUT]
 
 
-
    Name tail
-
 
 
    Tag kube.*
 
 
-
    Path /var/log/containers/*.log
-
 
 
    DB /fluent-bit/tail/kube.db
 
 
-
    DB.Sync Normal
-
 
 
    multiline.parser cri
 
 
-
    Mem_Buf_Limit 15MB
-
 
 
    Skip_Long_Lines On
 
 
-
    filters: |
 
 
-
    [FILTER]
-
 
 
    Name kubernetes
 
 
-
    Match kube.*
-
 
 
    Merge_Log On
 
 
-
    Keep_Log Off
-
 
 
    K8S-Logging.Parser Off
 
 
-
    K8S-Logging.Exclude Off
-
 
 
    Labels Off
 
 
-
    Annotations On
-
 
 
    Use_Kubelet On
 
 
-
    Kubelet_Host ${NODE_IP}
-
 
 
    tls.verify Off
 
 
-
    Buffer_Size 0
-
 
 
    # Only include logs from pods with the annotation
 
 
-
    #[FILTER]
-
 
 
    #    Name grep
 
 
-
    #    Match kube.*
-
 
 
    #    Regex $kubernetes['annotations']['logs.dynatrace.com/ingest'] ^true$
 
 
-
    # Only include logs from specific namespaces, remove the whole filter section to get all logs
-
 
 
    #[FILTER]
 
 
-
    #    Name grep
-
 
 
    #    Match kube.*
 
 
-
    #    Logical_Op or
-
 
 
    #    Regex $kubernetes['namespace_name'] ^my-namespace-a$
 
 
-
    #    Regex $kubernetes['namespace_name'] ^my-namespace-b$
-
 
 
    [FILTER]
 
 
-
    Name nest
-
 
 
    Match kube.*
 
 
-
    Operation lift
-
 
 
    Nested_under kubernetes
 
 
-
    Add_prefix kubernetes.
-
 
 
    [FILTER]
 
 
-
    Name nest
-
 
 
    Match kube.*
 
 
-
    Operation lift
-
 
 
    Nested_under kubernetes.annotations
 
 
-
    Add_prefix kubernetes.annotations.
-
 
 
    [FILTER]
 
 
-
    Name nest
 
 
-
    Match kube.*
-
 
 
    Operation nest
 
 
-
    Nest_under dt.metadata
-
 
 
    Wildcard kubernetes.annotations.metadata.dynatrace.com/*
 
 
-
    [FILTER]
-
 
 
    Name parser
 
 
-
    Match kube.*
-
 
 
    Key_name kubernetes.annotations.metadata.dynatrace.com
 
 
-
    Parser docker
-
 
 
    Preserve_Key false
 
 
-
    Reserve_Data true
 
 
-
    [FILTER]
-
 
 
    Name nest
 
 
-
    Match kube.*
-
 
 
    Operation lift
 
 
-
    Nested_under dt.metadata
-
 
 
    Remove_prefix kubernetes.annotations.metadata.dynatrace.com/
 
 
-
    [FILTER]
-
 
 
    Name modify
 
 
-
    Match kube.*
-
 
 
    # Map data to Dynatrace log format
 
 
-
    Rename time timestamp
-
 
 
    Rename log content
 
 
-
    Rename kubernetes.host k8s.node.name
-
 
 
    Rename kubernetes.namespace_name k8s.namespace.name
 
 
-
    Rename kubernetes.pod_id k8s.pod.uid
-
 
 
    Rename kubernetes.pod_name k8s.pod.name
 
 
-
    Rename kubernetes.container_name k8s.container.name
-
 
 
    Add k8s.cluster.name ${K8S_CLUSTER_NAME}
 
 
-
    Add k8s.cluster.uid ${K8S_CLUSTER_UID}
-
 
 
    # deprecated, but still in use
 
 
-
    Add dt.kubernetes.cluster.name ${K8S_CLUSTER_NAME}
-
 
 
    Add dt.kubernetes.cluster.id ${K8S_CLUSTER_UID}
 
 
-
    Remove_wildcard kubernetes.
-
 
 
    outputs: |
 
 
-
    # Send data to Dynatrace log ingest API
-
 
 
    [OUTPUT]
 
 
-
    Name http
-
 
 
    Match kube.*
 
 
-
    host ${DT_INGEST_HOST}
-
 
 
    port 443
 
 
-
    tls On
-
 
 
    tls.verify On
 
 
-
    uri /api/v2/logs/ingest
-
 
 
    format json
 
 
-
    allow_duplicated_headers false
-
 
 
    header Authorization Api-Token ${DT_INGEST_TOKEN}
 
 
-
    header Content-Type application/json; charset=utf-8
-
 
 
    json_date_key timestamp
 
 
-
    json_date_format iso8601
-
 
 
    log_response_payload false
 
 
-
    daemonSetVolumes:
 
 
-
    - hostPath:
-
 
 
    path: /var/lib/fluent-bit/
 
 
-
    name: positions
 
 
-
    - hostPath:
-
 
 
    path: /var/log/containers
 
 
-
    name: containers
-
 
 
    - hostPath:
 
 
-
    path: /var/log/pods
 
 
-
    name: pods
-
 
 
    daemonSetVolumeMounts:
 
 
-
    - mountPath: /fluent-bit/tail
-
 
 
    name: positions
 
 
-
    - mountPath: /var/log/containers
-
 
 
    name: containers
 
 
-
    readOnly: true
-
 
 
    - mountPath: /var/log/pods
 
 
-
    name: pods
-
 
 
    readOnly: true
 
 
-
    podAnnotations:
-
 
 
    dynatrace.com/inject: "false"
 
 
-
    #  Uncomment this to collect Fluent Bit Prometheus metrics
-
 
 
    #  metrics.dynatrace.com/path: "/api/v1/metrics/prometheus"
 
 
-
    #  metrics.dynatrace.com/port: "2020"
-
 
 
    #  metrics.dynatrace.com/scrape: "true"
 
 
-
    envWithTpl:
-
 
 
    - name: K8S_CLUSTER_UID
 
 
-
    value: '{{ (lookup "v1" "Namespace" "" "kube-system").metadata.uid }}'
-
 
 
    env:
 
 
-
    - name: K8S_CLUSTER_NAME
-
 
 
    value: "{ENTER_YOUR_CLUSTER_NAME}"
 
 
-
    - name: DT_INGEST_HOST
-
 
 
    value: "{your-environment-id}.live.dynatrace.com"
 
 
-
    - name: DT_INGEST_TOKEN
-
 
 
    value: "{ENTER_YOUR_INGEST_TOKEN}"
 
 
-
    - name: NODE_IP
-
 
 
    valueFrom:
 
 
-
    fieldRef:
 
 
-
    apiVersion: v1
-
 
 
    fieldPath: status.hostIP
@@ -4529,13 +3944,10 @@ kubectl get pods -n dynatrace-fluent-bit
 NAME               READY   STATUS              RESTARTS    AGE
 
 
-
 fluent-bit-5jzlr   0/1     CrashLoopBackOff    1 (7s ago)  11s
 
 
-
 fluent-bit-8zfr4   1/1     Running             0           38s
-
 
 
 fluent-bit-qxjzh   1/1     Running             0           39s
@@ -4550,7 +3962,6 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 ### Check Fluent Bit health and metrics
 
 
-
 [Fluent Bit metricsï»¿](https://dt-url.net/nh43pqz) give you insights into how the logs are being collected (`fluentbit_input_*`), filtered (`fluentbit_filter_*`) and sent to Dynatrace (`fluentbit_output_*`).
 
 1. Find the node on which the pod you are troubleshooting is running.
@@ -4561,7 +3972,6 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 
    ```
    NAME            READY   STATUS    RESTARTS   AGE   IP           NODE                       NOMINATED NODE   READINESS GATES
-
 
 
    pod-with-logs   1/1     Running   0          31m   10.28.2.41   some-node-782e86b8-mnoz    <none>           <none>
@@ -4576,13 +3986,10 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
    NAME               READY   STATUS    RESTARTS   AGE   IP           NODE                       NOMINATED NODE   READINESS GATES
 
 
-
    fluent-bit-5jzlr   1/1     Running   0          30m   10.28.3.44   some-node-782e86b8-zdb1    <none>           <none>
 
 
-
    fluent-bit-8zfr4   1/1     Running   0          30m   10.28.4.23   some-node-782e86b8-mkjw    <none>           <none>
-
 
 
    fluent-bit-qxjzh   1/1     Running   0          30m   10.28.2.42   some-node-782e86b8-mnoz    <none>           <none>
@@ -4614,7 +4021,6 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
    2024-06-11T07:05:37.257418778Z fluentbit_output_proc_records_total{name="http.0"} = 767
 
 
-
    2024-06-11T07:05:37.257418778Z fluentbit_output_proc_bytes_total{name="http.0"} = 359630
    ```
 6. When `fluentbit_output_errors_total` or `fluentbit_output_retries_failed_total` metrics indicate problems, a potential reason is that you have reached [log monitoring limitsï»¿](https://dt-url.net/ml03pfu).
@@ -4635,7 +4041,6 @@ scraped: 2026-03-06T21:23:02.358716
 
 # Automatic log enrichment
 
-# Automatic log enrichment
 
 * Latest Dynatrace
 * Tutorial
@@ -4765,7 +4170,6 @@ scraped: 2026-03-06T21:19:59.231616
 
 # Log ingest rules
 
-# Log ingest rules
 
 * Latest Dynatrace
 * Tutorial
@@ -4913,7 +4317,6 @@ To list all entities (hosts and host groups) to which more specific log storage 
 ### Configuration limits
 
 
-
 You can add a maximum of 1000 ingest rules per scope, with a maximum of 2000 matchers.
 
 ## Example upload
@@ -4972,113 +4375,85 @@ To create a log ingest rule using the API:
    [
 
 
-
    {
-
 
 
    "insertAfter":"uAAZ0ZW5hbnQABnRlbmFudAAkMGUzYmY2ZmYtMDc2ZC0zNzFmLhXaq0",
 
 
-
    "schemaId": "builtin:logmonitoring.log-storage-settings",
-
 
 
    "schemaVersion": "0.1.0",
 
 
-
    "scope": "tenant",
-
 
 
    "value": {
 
 
-
    "config-item-title": "Added from REST API",
-
 
 
    "send-to-storage": true,
 
 
-
    "matchers": [
 
 
-
    {
-
 
 
    "attribute": "dt.entity.process_group",
 
 
-
    "operator": "MATCHES",
 
 
-
    "values": [
-
 
 
    "PROCESS_GROUP-05F00CBACF39EBD1"
 
 
-
    ]
-
 
 
    },
 
 
-
    {
-
 
 
    "attribute": "log.source",
 
 
-
    "operator": "MATCHES",
-
 
 
    "values": [
 
 
-
    "Windows System Log",
-
 
 
    "Windows Security Log"
 
 
+   ]
+
+
+   }
+
 
    ]
 
 
-
    }
 
 
-
-   ]
-
-
-
    }
-
-
-
-   }
-
 
 
    ]
@@ -5107,117 +4482,88 @@ Results: `access.log` is not sent, `error.log` (of Apache) is sent, and `error.l
 {
 
 
-
 "send-to-storage": false,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "/path/to/access.log"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
-
 
 
 "enabled": true
 
 
-
 },
 
 
-
 {
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
-
 
 
 "values": [
 
 
-
 "PROCESS_GROUP-APACHEID"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -5231,69 +4577,52 @@ This task requires setting one rule with two matchers.
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "values": [
-
 
 
 "*ERROR*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -5307,93 +4636,70 @@ This task requires setting two rules with one matcher each.
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "values": [
-
 
 
 "*ERROR*"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 },
 
 
-
 {
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
-
 
 
 "values": [
 
 
-
 "PROCESS_GROUP-APACHEID"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -5407,93 +4713,70 @@ This task requires setting one rule with three matchers, with one value each.
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "values": [
-
 
 
 "*ERROR*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "values": [
-
 
 
 "*Customer*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -5507,93 +4790,70 @@ This task requires setting one rule with two matchers: a matcher with the proces
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "values": [
-
 
 
 "*ERROR*", "*Customer*"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 },
 
 
-
 {
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
-
 
 
 "values": [
 
 
-
 "PROCESS_GROUP-APACHEID"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -5610,93 +4870,70 @@ Setting two rules:
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-MYSQL"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 },
 
 
-
 {
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
-
 
 
 "values": [
 
 
-
 "PROCESS_GROUP-APACHEID"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -5708,45 +4945,34 @@ Setting one rule with one matcher having two values:
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID", "PROCESS_GROUP-MYSQL"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -5760,21 +4986,16 @@ This task requires setting a rule without any matchers.
 {
 
 
-
 "send-to-storage": true,
-
 
 
 "matchers": [
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -5793,76 +5014,58 @@ The rules have to be executed in the order indicated below.
 {
 
 
-
 "send-to-storage": false,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID", "PROCESS_GROUP-MYSQL"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 },
 
 
-
 {
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
 ```
 
 ## FAQ
-
 
 
 Is the log ingest rules configuration the same as/part of the autodiscovery process?
@@ -5916,7 +5119,6 @@ scraped: 2026-03-06T21:25:49.968543
 
 # Stream Kubernetes logs with Dynatrace Log Module
 
-# Stream Kubernetes logs with Dynatrace Log Module
 
 * Latest Dynatrace
 * Tutorial
@@ -5994,7 +5196,6 @@ You can now analyze the logs in the log viewer or notebooks after fitering the p
 ### Ingest logs from a specific namespace and container
 
 
-
 1. Go to **Settings** and select **Log Monitoring** > **Log ingest rules**.
 2. Select **Add rule** and provide the name for your configuration in the **Rule name** field.  
    Make sure that the **Include in storage** button is turned on, so logs matching this configuration will be stored in Dynatrace.
@@ -6065,121 +5266,91 @@ To create a log ingest rule using the API:
    {
 
 
-
    "items": [
 
 
-
    {
-
 
 
    "objectId": "vu9U3hXa3q0AAAABACpidWlsdGluOmxvZ21vbml0b3JpbmcubG9nLXN0b3JhZ2Utc2V0dGluZ3MABEhPU1QAEEFEMDVFRDZGQUUxNjQ2MjMAJDZkZGU3YzY5LTMzZjEtMzNiZC05ZTAwLWZlNDFmMjUxNzUzY77vVN4V2t6t",
 
 
-
    "value": {
-
 
 
    "enabled": true,
 
 
-
    "config-item-title": "Send kube-system logs",
-
 
 
    "send-to-storage": true,
 
 
-
    "matchers": [
 
 
-
    {
-
 
 
    "attribute": "k8s.container.name",
 
 
-
    "operator": "MATCHES",
 
 
-
    "values": [
-
 
 
    "kubedns",
 
 
-
    "kube-proxy"
 
 
-
    ]
-
 
 
    },
 
 
-
    {
-
 
 
    "attribute": "k8s.namespace.name",
 
 
-
    "operator": "MATCHES",
-
 
 
    "values": [
 
 
-
    "kube-system"
 
 
+   ]
+
+
+   }
+
 
    ]
 
 
-
    }
 
 
-
-   ]
-
-
-
    }
-
-
-
-   }
-
 
 
    ],
 
 
-
    "totalCount": 1,
 
 
-
    "pageSize": 100
-
 
 
    }
@@ -6197,69 +5368,52 @@ This task requires setting one rule with one matcher.
 [{
 
 
-
 "schemaId": "builtin:logmonitoring.log-storage-settings",
-
 
 
 "scope": "tenant",
 
 
-
 "value": {
-
 
 
 "enabled": true,
 
 
-
 "config-item-title": "All logs from kube-system namespace",
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "k8s.namespace.name",
-
 
 
 "operator": "MATCHES",
 
 
-
 "values": [
-
 
 
 "kube-system"
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
 
 
-
 }
-
 
 
 }]
@@ -6273,129 +5427,97 @@ This task requires setting one rule with three matchers.
 [{
 
 
-
 "schemaId": "builtin:logmonitoring.log-storage-settings",
-
 
 
 "scope": "tenant",
 
 
-
 "value": {
-
 
 
 "enabled": true,
 
 
-
 "config-item-title": "Error logs from kube-proxy and kube-dns containers",
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "k8s.namespace.name",
 
 
-
 "operator": "MATCHES",
 
 
-
 "values": [
-
 
 
 "kube-system"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "k8s.container.name",
 
 
-
 "operator": "MATCHES",
 
 
-
 "values": [
-
 
 
 "kubedns",
 
 
-
 "kube-proxy"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "log.content",
 
 
-
 "operator": "MATCHES",
-
 
 
 "values": [
 
 
-
 "*ERROR*"
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
 
 
-
 }
-
 
 
 }]
@@ -6409,137 +5531,103 @@ This task requires setting two rules.
 [{
 
 
-
 "schemaId": "builtin:logmonitoring.log-storage-settings",
-
 
 
 "scope": "HOST_GROUP-1D91E46493049D07",
 
 
-
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "config-item-title": "Exclude logs from kube-system namespace",
 
 
-
 "send-to-storage": false,
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "k8s.namespace.name",
 
 
-
 "operator": "MATCHES",
 
 
-
 "values": [
-
 
 
 "kube-system"
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
 
 
-
 }
-
 
 
 },{
 
 
-
 "schemaId": "builtin:logmonitoring.log-storage-settings",
-
 
 
 "scope": "HOST_GROUP-1D91E46493049D07",
 
 
-
 "value": {
-
 
 
 "enabled": true,
 
 
-
 "config-item-title": "All Kubernetes logs",
-
 
 
 "send-to-storage": true,
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "k8s.namespace.name",
-
 
 
 "operator": "MATCHES",
 
 
-
 "values": [
-
 
 
 "*"
 
 
-
 ]
-
 
 
 }
 
 
-
 ]
 
 
-
 }
-
 
 
 }]
@@ -6566,7 +5654,6 @@ scraped: 2026-03-06T21:20:06.328362
 
 # Sensitive data masking in OneAgent
 
-# Sensitive data masking in OneAgent
 
 * Latest Dynatrace
 * Tutorial
@@ -6699,89 +5786,67 @@ To create a sensitive data masking configuration using the API
 [
 
 
-
 {
-
 
 
 "schemaId":"builtin:logmonitoring.sensitive-data-masking-settings",
 
 
-
 "scope":"tenant",
-
 
 
 "value":{
 
 
-
 "config-item-title":"Added from REST API",
-
 
 
 "masking":{
 
 
-
 "expression":"run (\\d+?)",
-
 
 
 "type":"STRING",
 
 
-
 "replacement":"testing"
-
 
 
 },
 
 
-
 "matchers":[
-
 
 
 {
 
 
-
 "attribute":"log.source",
-
 
 
 "operator":"MATCHES",
 
 
-
 "values":[
-
 
 
 "/var/log/syslog"
 
 
+]
+
+
+}
+
 
 ]
 
 
-
 }
 
 
-
-]
-
-
-
 }
-
-
-
-}
-
 
 
 ]
@@ -6824,7 +5889,6 @@ Username: John Doe, CreditCardNumber: 7e938e089861f3975b38cff3a93cc3aa659f7779
 ### Mask phone number
 
 
-
 In this example, you will configure a sensitive data masking rule that targets all phone numbers in the following log record for all log files.
 
 ```
@@ -6857,73 +5921,55 @@ To mask all credit card numbers and emails in your content, you need to create t
 {
 
 
-
 "masking": {
-
 
 
 "expression": "(\\d{4}-\\d{4}-\\d{4}-\\d{4})",
 
 
-
 "type": "STRING",
-
 
 
 "replacement": "MaskedCreditCardNumber"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 ],
-
 
 
 "enabled": true
 
 
-
 },
-
 
 
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA256"
-
 
 
 },
 
 
-
 "matchers": [
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -6937,81 +5983,61 @@ To mask logs that are written by Apache AND whose log filename is `error.log`, y
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA256"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "/path/to/error.log"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -7023,117 +6049,88 @@ To mask logs that are written by Apache OR whose log filename is `error.log`, yo
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA256"
-
 
 
 },
 
 
-
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "/path/to/error.log"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
-
 
 
 "enabled": true
 
 
-
 },
 
 
-
 {
-
 
 
 "masking": {
 
 
-
 "expression": "email: (.*),",
-
 
 
 "type": "SHA256"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -7145,105 +6142,79 @@ To mask logs that are written by Apache and whose log filename starts with `erro
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA256"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "/path/to/error*"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "*log"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -7255,81 +6226,61 @@ To mask logs that Apache writes and whose log filename starts with `error` OR en
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA256"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "log.source",
 
 
-
 "values": [
-
 
 
 "/path/to/error*", "*log"
 
 
-
 ]
-
 
 
 },
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -7345,117 +6296,88 @@ The scenario with two rules:
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA256"
-
 
 
 },
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-MYSQL"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
-
 
 
 "enabled": true
 
 
-
 },
 
 
-
 {
-
 
 
 "masking": {
 
 
-
 "expression": "email: (.*),",
-
 
 
 "type": "SHA256"
 
 
-
 },
-
 
 
 "matchers": [
 
 
-
 {
-
 
 
 "attribute": "dt.entity.process_group",
 
 
-
 "values": [
-
 
 
 "PROCESS_GROUP-APACHEID"
 
 
-
 ]
-
 
 
 }
 
 
-
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -7467,57 +6389,43 @@ The scenario with one rule with a matcher that has two values:
 {
 
 
-
 "masking": {
-
 
 
 "expression": "email: (.*),",
 
 
-
 "type": "SHA256"
-
 
 
 },
 
 
-
 "matchers": [
-
 
 
 {
 
 
-
 "attribute": "dt.entity.process_group",
-
 
 
 "values": [
 
 
-
 "PROCESS_GROUP-APACHEID", "PROCESS_GROUP-MYSQL"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "enabled": true
-
 
 
 }
@@ -7569,7 +6477,6 @@ scraped: 2026-03-06T21:20:09.868600
 
 # Timestamp/splitting configuration
 
-# Timestamp/splitting configuration
 
 * Latest Dynatrace
 * Tutorial
@@ -7650,9 +6557,7 @@ See the code block below for an example.
 Log entry 1: Pattern 1, Pattern 2
 
 
-
 Log entry 2: Pattern 2
-
 
 
 Log entry 3: Pattern 1, Pattern 2
@@ -7701,7 +6606,6 @@ The Kubernetes cluster scope can be accessed via the **Kubernetes** page.
 5. Configure storage upload by adding rules with a set of attributes that matches the log data to be stored by Dynatrace.
 
 ### Host group scope
-
 
 
 The host group scope can be accessed via the **Host** page.
@@ -7819,117 +6723,88 @@ To create a timestamp configuration using the API
    [
 
 
-
    {
-
 
 
    "insertAfter":"uAAZ0ZW5hbnQABnRlbmFudAAkMGUzYmY2ZmYtMDc2ZC0zNzFmLhXaq0",
 
 
-
    "schemaId": "builtin:logmonitoring.timestamp-configuration",
-
 
 
    "schemaVersion": "0.1.0",
 
 
-
    "scope": "tenant",
-
 
 
    "value": {
 
 
-
    "config-item-title": "Added from REST API",
-
 
 
    "date-time-pattern": "%Y-%m-%d %H:%M:%S",
 
 
-
    "timezone": "CET",
-
 
 
    "matchers": [
 
 
-
    {
-
 
 
    "attribute": "dt.entity.process_group",
 
 
-
    "operator": "MATCHES",
 
 
-
    "values": [
-
 
 
    "PROCESS_GROUP-05F00CBACF39EBD1"
 
 
-
    ]
-
 
 
    },
 
 
-
    {
-
 
 
    "attribute": "log.source",
 
 
-
    "operator": "MATCHES",
-
 
 
    "values": [
 
 
-
    "Windows System Log",
-
 
 
    "Windows Security Log"
 
 
+   ]
+
+
+   }
+
 
    ]
 
 
-
    }
 
 
-
-   ]
-
-
-
    }
-
-
-
-   }
-
 
 
    ]
@@ -7952,7 +6827,6 @@ scraped: 2026-03-04T21:36:40.493360
 
 # Windows event logs
 
-# Windows event logs
 
 * Latest Dynatrace
 * Tutorial
@@ -8050,17 +6924,13 @@ Event log raw data:
 - <EventData>
 
 
-
 <Data Name="CallerProcessId">16548</Data>
-
 
 
 <Data Name="CallerProcessImageName">vctip</Data>
 
 
-
 <Data Name="Type">client</Data>
-
 
 
 </EventData>
@@ -8072,9 +6942,7 @@ Parsed attributes:
 AttributeKey: winlog.data.CallerProcessId, AttributeValue: 16548
 
 
-
 AttributeKey: winlog.data.CallerProcessImageName, AttributeValue: vctip
-
 
 
 AttributeKey: winlog.data.Type, AttributeValue: client
@@ -8088,25 +6956,19 @@ Event log raw data:
 - <UserData>
 
 
-
 -   <CbsPackageChangeState xmlns="http://manifests.microsoft.com/win/2004/08/windows/setup_provider">
-
 
 
 <PackageIdentifier>KB5058405</PackageIdentifier>
 
 
-
 <IntendedPackageState>5112</IntendedPackageState>
-
 
 
 <IntendedPackageStateTextized></IntendedPackageStateTextized>
 
 
-
 </CbsPackageChangeState>
-
 
 
 </UserData>
@@ -8118,9 +6980,7 @@ Parsed attributes:
 AttributeKey: winlog.data.CbsPackageChangeState.<xmlattr>.xmlns, AttributeValue: http://manifests.microsoft.com/win/2004/08/windows/setup_provider
 
 
-
 AttributeKey: winlog.data.CbsPackageChangeState.PackageIdentifier, AttributeValue: KB5058405
-
 
 
 AttributeKey: winlog.data.CbsPackageChangeState.IntendedPackageState, AttributeValue: 5112
@@ -8134,29 +6994,22 @@ Event log raw data:
 - <EventData>
 
 
-
 <Data>WinRT Intellisense PPI - en-us</Data>
-
 
 
 <Data>10.1.19041.685</Data>
 
 
-
 <Data>(NULL)</Data>
-
 
 
 <Data />
 
 
-
 <Binary>7B31354532394146462D434231392D413230422D394138312D4230373635413633313135467D3030303063306133616532343933363166643732376335306533653966623534363139633030303030393034</Binary>
 
 
-
 <Data>Test</Data>
-
 
 
 </EventData>
@@ -8168,13 +7021,10 @@ Parsed attributes:
 AttributeKey: winlog.data.Data1, AttributeValue: WinRT Intellisense PPI - en-us
 
 
-
 AttributeKey: winlog.data.Data2, AttributeValue: 10.1.19041.685
 
 
-
 AttributeKey: winlog.data.Data3, AttributeValue: (NULL)
-
 
 
 AttributeKey: winlog.data.Data5, AttributeValue: Test
@@ -8192,7 +7042,6 @@ scraped: 2026-03-06T21:32:33.082076
 
 # Log ingestion via OneAgent
 
-# Log ingestion via OneAgent
 
 * Latest Dynatrace
 * Overview
@@ -8242,53 +7091,40 @@ Find below an example of ingested logs attributes.
 "timestamp": "2024-05-23T15:46:23.000000000+02:00",
 
 
-
 "content": "2024-05-23 15:46:23 WebLaunche ERROR [HeadlessVisitRunnable] DriverEntry shutDown. [com.dynatrace.diagnostics.uemload.headless.DriverEntry@647129f3  useCnt: [4] drv: [ChromeDriver: chrome on LINUX (01b4aedd5176375e9712d60df153d6a2) http://localhost:17828] proxy: [org.littleshoot.proxy.impl.DefaultHttpProxyServer@4598e617 /127.0.0.1:45875] chrome_driver: [http://localhost:17828] debug port: [33787] ip: [91.172.93.134] healthy: [true]]",
-
 
 
 "dt.entity.host": "HOST-9A17CDBA8FF4FCBB",
 
 
-
 "dt.source_entity": "HOST-9A17CDBA8FF4FCBB",
-
 
 
 "event.type": "LOG",
 
 
-
 "host.name": "demodev-master",
-
 
 
 "log.source": "/home/labuser/.dynaTrace/easyTravel 2.0.0/easyTravel/log/WebLauncher.log",
 
 
-
 "loglevel": "ERROR",
-
 
 
 "process.technology": [
 
 
-
 "Apache Tomcat",
-
 
 
 "Java"
 
 
-
 ],
 
 
-
 "status": "ERROR",
-
 
 
 "date_ingested": "2024-05-22T22:14:42.079000000Z"
@@ -8304,165 +7140,124 @@ Find below an example of ingested logs attributes.
 {
 
 
-
 "timestamp": "2024-05-23T15:55:23.000000000+02:00",
-
 
 
 "content": "2024/05/23 13:55:23 Failed to export to Stackdriver: rpc error: code = PermissionDenied desc = The caller does not have permission",
 
 
-
 "dt.entity.cloud_application": "CLOUD_APPLICATION-63AACD91ADBAB15F",
-
 
 
 "dt.entity.cloud_application_instance": "CLOUD_APPLICATION_INSTANCE-F731124830922265",
 
 
-
 "dt.entity.cloud_application_namespace": "CLOUD_APPLICATION_NAMESPACE-0A4EA744229201C9",
-
 
 
 "dt.entity.container_group": "CONTAINER_GROUP-4F1B012F9B098D9F",
 
 
-
 "dt.entity.container_group_instance": "CONTAINER_GROUP_INSTANCE-D8EF90CDA84B35F2",
-
 
 
 "dt.entity.gcp_zone": "GCP_ZONE-4E0474C4AFCCC79A",
 
 
-
 "dt.entity.host": "HOST-C4E8984646B39EBE",
-
 
 
 "dt.entity.kubernetes_cluster": "KUBERNETES_CLUSTER-324E5954D86018E3",
 
 
-
 "dt.entity.kubernetes_node": "KUBERNETES_NODE-4B5BC37280D9BFD6",
-
 
 
 "dt.entity.process_group": "PROCESS_GROUP-B6AA568F4AD316D7",
 
 
-
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-8E2A55B6CF37CF42",
-
 
 
 "dt.kubernetes.cluster.name": "gke",
 
 
-
 "dt.kubernetes.node.system_uuid": "592f7b67-a340-e136-a9a2-488969f9fe34",
-
 
 
 "dt.process.name": "server frontend-*",
 
 
-
 "dt.source_entity": "PROCESS_GROUP_INSTANCE-8E2A55B6CF37CF42",
-
 
 
 "event.type": "LOG",
 
 
-
 "gcp.instance.id": "7994835647533846587",
-
 
 
 "gcp.project.id": "dynatrace-demoability",
 
 
-
 "gcp.region": "us-central1",
-
 
 
 "host.name": "gke-keptn-demo1-e2-custom-4-8192-08f6a08a-1xvo.c.dynatrace-demoability.internal",
 
 
-
 "k8s.container.name": "server",
-
 
 
 "k8s.deployment.name": "frontend-*",
 
 
-
 "k8s.namespace.name": "online-boutique",
-
 
 
 "k8s.pod.name": "frontend-7cc5676659-j2n5l",
 
 
-
 "k8s.pod.uid": "776226ff-4a33-4ea5-807e-2c930759d6eb",
-
 
 
 "log.source": "Container Output",
 
 
-
 "loglevel": "ERROR",
-
 
 
 "process.technology": [
 
 
-
 "C-Library",
-
 
 
 "Containerd",
 
 
-
 "Go"
-
 
 
 ],
 
 
-
 "status": "ERROR",
-
 
 
 "OperatorVersion": "v1.1.0",
 
 
-
 "gcp.zone": "us-central1-c",
-
 
 
 "k8s.cluster.uid": "74d7702f-11bf-445f-8fbc-2998804007ab",
 
 
-
 "k8s.node.name": "gke-keptn-demo1-e2-custom-4-8192-08f6a08a-1xvo",
 
 
-
 "log.iostream": "stderr"
-
 
 
 },
@@ -8479,7 +7274,6 @@ The only required step after OneAgent installation is to review default ingest r
 ![LMA - OneAgent log ingestion and processing configurations at capture](https://dt-cdn.net/images/lma-oneagent-log-ingestion-and-processing-configurations-at-capture-02-2500-66c4cfd087.png)
 
 ### Log ingest rules
-
 
 
 Required
@@ -8590,7 +7384,6 @@ scraped: 2026-03-06T21:29:58.548826
 
 # Push logs with Cloudflare
 
-# Push logs with Cloudflare
 
 * Latest Dynatrace
 * Tutorial
@@ -8680,41 +7473,31 @@ An example request using `cURL` is shown in the code block below:
 $ curl -s https://api.cloudflare.com/client/v4/zones/<ZONE_TAG>/logpush/jobs -X \
 
 
-
 -H "X-Auth-Email: <CLOUDFLARE_EMAIL>" \
-
 
 
 -H "X-Auth-Key: <CLOUDFLARE_API_KEY>" \
 
 
-
 POST -d '{
-
 
 
 "name": "dynatrace",
 
 
-
 "logpull_options": "fields=ClientIP,EdgeStartTimestamp,EdgeResponseStatus,EdgeResponseBytes,ClientRequestURI,ClientRequestHost,ClientRequestMethod,ClientRequestPath&timestamps=rfc3339",
-
 
 
 "destination_conf": "https://<DYNATRACE_BASE_URL>/api/v2/logs/ingest?header_Authorization=Api-Token%20<DYNATRACE API_TOKEN>&header_accept=application/json&header_content-type=application/json&dt.ingest.origin=cloudflare",
 
 
-
 "dataset": "http_requests",
-
 
 
 "enabled": true,
 
 
-
 "output_options": { "output_type": "ndjson", "batch_prefix": "[", "batch_suffix": "]", "record_delimiter": ","}
-
 
 
 }'
@@ -8742,73 +7525,55 @@ An example JSON response is shown in the code block below.
 {
 
 
-
 "errors": [],
-
 
 
 "messages": [],
 
 
-
 "result": {
-
 
 
 "id": <JOB_ID>,
 
 
-
 "dataset": "http_requests",
-
 
 
 "enabled": false,
 
 
-
 "name": "<DOMAIN_NAME>",
-
 
 
 "output_options": {
 
 
-
 "field_names": [ "ClientIP", "ClientRequestHost", "ClientRequestMethod", "ClientRequestURI", "ClientRequestPath", "EdgeEndTimestamp", "EdgeResponseBytes", "EdgeResponseStatus", "EdgeStartTimestamp", "RayID"],
-
 
 
 "timestamp_format": "rfc3339"
 
 
-
 },
-
 
 
 "destination_conf": "https://<DYNATRACE_BASE_URL>/api/v2/logs/ingest?header_Authorization=Api-Token%20<DYNATRACE API_TOKEN>&header_accept=application/json&header_content-type=application/json&dt.ingest.origin=cloudflare",
 
 
-
 "last_complete": null,
-
 
 
 "last_error": null,
 
 
-
 "error_message": null
-
 
 
 },
 
 
-
 "success": true
-
 
 
 }
@@ -8827,29 +7592,22 @@ An example request using `cURL` is shown in the code block below.
 $ curl --request PUT \
 
 
-
 https://api.cloudflare.com/client/v4/zones/{ZONE_ID}/logpush/jobs/{JOB_ID} \
-
 
 
 --header "X-Auth-Email: <CLOUDFLARE_EMAIL>" \
 
 
-
 --header "X-Auth-Key: <CLOUDFLARE_API_KEY>" \
-
 
 
 --header "Content-Type: application/json" \
 
 
-
 --data '{
 
 
-
 "enabled": true
-
 
 
 }'
@@ -8861,69 +7619,52 @@ An example JSON response is shown in the code block below.
 {
 
 
-
 "errors": [],
-
 
 
 "messages": [],
 
 
-
 "result": {
-
 
 
 "id": <JOB_ID>,
 
 
-
 "dataset": "http_requests",
-
 
 
 "enabled": true,
 
 
-
 "name": "<DOMAIN_NAME>",
-
 
 
 "output_options": {
 
 
-
 "field_names": [ "ClientIP", "ClientRequestHost", "ClientRequestMethod", "ClientRequestURI", "ClientRequestPath", "EdgeEndTimestamp", "EdgeResponseBytes", "EdgeResponseStatus", "EdgeStartTimestamp", "RayID"],
-
 
 
 "timestamp_format": "rfc3339"
 
 
-
 },
-
 
 
 "destination_conf": "https://<YOUR_DYNATRACE_ENVIRONMENT>.live.dynatrace.com/api/v2/logs/ingest?header_Authorization=Api-Token%20<DYNATRACE_API_TOKEN>&header_accept=application/json&header_content-type=application/json&dt.ingest.origin=cloudflare",
 
 
-
 "last_error": null,
-
 
 
 "error_message": null
 
 
-
 },
 
 
-
 "success": true
-
 
 
 }
@@ -8941,7 +7682,6 @@ scraped: 2026-03-03T21:27:46.123119
 
 # Stream syslog to Dynatrace with Fluentd
 
-# Stream syslog to Dynatrace with Fluentd
 
 * Latest Dynatrace
 * Tutorial
@@ -9015,45 +7755,34 @@ The syslog message often needs additional context to differentiate sources durin
 <source>
 
 
-
 @type syslog
-
 
 
 port 5140
 
 
-
 bind 0.0.0.0
-
 
 
 tag system-linux
 
 
-
 </source>
-
 
 
 <source>
 
 
-
 @type syslog
-
 
 
 port 5141
 
 
-
 bind 0.0.0.0
 
 
-
 tag system-f5
-
 
 
 </source>
@@ -9065,45 +7794,34 @@ You need to add `log.source` attribute based on the fluentd tag.
 <filter system-linux.**>
 
 
-
 @type record_transformer
 
 
-
 <record>
-
 
 
 log.source "linux syslogs"
 
 
-
 </record>
-
 
 
 </filter>
 
 
-
 <filter system-f5.**>
-
 
 
 @type record_transformer
 
 
-
 <record>
-
 
 
 log.source "f5 syslogs"
 
 
-
 </record>
-
 
 
 </filter>
@@ -9123,7 +7841,6 @@ scraped: 2026-03-06T21:16:24.238689
 
 # Stream logs to Dynatrace with Fluentd on Kubernetes
 
-# Stream logs to Dynatrace with Fluentd on Kubernetes
 
 * Latest Dynatrace
 * Explanation
@@ -9168,7 +7885,6 @@ scraped: 2026-03-06T21:27:17.743091
 
 # Stream Logs with Cribl
 
-# Stream Logs with Cribl
 
 * Latest Dynatrace
 * How-to guide
@@ -9245,7 +7961,6 @@ scraped: 2026-03-06T21:36:44.146131
 
 # Stream logs to Dynatrace with Fluent Bit
 
-# Stream logs to Dynatrace with Fluent Bit
 
 * Latest Dynatrace
 * Tutorial
@@ -9273,53 +7988,40 @@ The Fluent Bit `http output` plugin allows you to stream your logs to the Dynatr
 [OUTPUT]
 
 
-
 name  http
-
 
 
 match *
 
 
-
 header Content-Type application/json; charset=utf-8
-
 
 
 header Authorization Api-Token {your-API-token-here}
 
 
-
 allow_duplicated_headers false
-
 
 
 host  {your-environment-id}.live.dynatrace.com
 
 
-
 Port  443
-
 
 
 URI   /api/v2/logs/ingest
 
 
-
 Format json
-
 
 
 json_date_format iso8601
 
 
-
 json_date_key timestamp
 
 
-
 tls On
-
 
 
 tls.verify On
@@ -9358,37 +8060,28 @@ The settings for the log driver should point to the log ingest API of your SaaS 
 Name: http
 
 
-
 TLS: on
-
 
 
 Format: json
 
 
-
 Header: Authorization Api-Token {your-API-token-here}
-
 
 
 Host: {your-environment-id}.live.dynatrace.com
 
 
-
 Port: 443
-
 
 
 URI: /api/v2/logs/ingest?Content-Type=application/json
 
 
-
 Allow_Duplicated_Headers": "false"
 
 
-
 Json_Date_Format": "iso8601"
-
 
 
 Json_Date_Key": "timestamp"
@@ -9419,7 +8112,6 @@ scraped: 2026-03-06T21:15:18.200005
 
 # Log ingestion
 
-# Log ingestion
 
 * Latest Dynatrace
 * Overview
@@ -9531,7 +8223,6 @@ You can use the local `http://localhost:<port>/v2/logs/ingest` API endpoint to p
 ## Related topics
 
 
-
 * [Log ingestion via OneAgent](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
 * [Log ingestion API](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
 * [OneAgent log ingest API](../ru/ingest-from/extend-dynatrace/extend-logs/oneagent-log-ingest-api.md "Use the Dynatrace API to push locally retrieved logs to Dynatrace.")
@@ -9550,7 +8241,6 @@ scraped: 2026-03-05T21:33:12.923279
 
 # Automatic log processing at ingestion
 
-# Automatic log processing at ingestion
 
 * Latest Dynatrace
 * Explanation
@@ -9620,7 +8310,6 @@ scraped: 2026-03-06T21:10:01.169544
 
 # Log processing with OpenPipeline
 
-# Log processing with OpenPipeline
 
 * Latest Dynatrace
 * Explanation
@@ -9721,7 +8410,6 @@ scraped: 2026-03-06T21:28:23.371162
 
 # JSON log processing with unescaped nested JSON strings
 
-# JSON log processing with unescaped nested JSON strings
 
 * Latest Dynatrace
 * Explanation
@@ -9758,29 +8446,22 @@ JSON log pre-processing performs the following steps.
    {
 
 
-
    "content": {
-
 
 
    "loglevel": "ERROR",
 
 
-
    "event": "{\\\"type\\\":\\\"db_error\\\",\\\"code\\\":\\\"CONN_FAIL\\\"}"
-
 
 
    },
 
 
-
    "source": "fluentbit",
 
 
-
    "host.name": "app-server-01"
-
 
 
    }
@@ -9792,41 +8473,31 @@ JSON log pre-processing performs the following steps.
    {
 
 
-
    "content": {
-
 
 
    "loglevel": "ERROR",
 
 
-
    "event": {
-
 
 
    "type": "db_error",
 
 
-
    "code": "CONN_FAIL"
-
 
 
    }
 
 
-
    },
-
 
 
    "source": "fluentbit",
 
 
-
    "host.name": "app-server-01"
-
 
 
    }
@@ -9844,9 +8515,7 @@ You can query the unescaped JSON field for precise extraction and filtering log 
   fetch logs
 
 
-
   | fieldsAdd logLevel = jsonField(content, "loglevel")
-
 
 
   | filter logLevel == "ERROR"
@@ -9859,9 +8528,7 @@ You can query the unescaped JSON field for precise extraction and filtering log 
   fetch logs
 
 
-
   | fieldsAdd eventType = jsonPath(content, "$.event.type")
-
 
 
   | filter eventType == "db_error"
@@ -9887,7 +8554,6 @@ scraped: 2026-03-06T21:36:23.662335
 
 # Log pre-processing with OpenPipeline with ready-made bundles
 
-# Log pre-processing with OpenPipeline with ready-made bundles
 
 * Latest Dynatrace
 * Explanation
@@ -9942,7 +8608,6 @@ scraped: 2026-03-06T21:15:13.168025
 
 # Log processing
 
-# Log processing
 
 * Latest Dynatrace
 * Explanation
@@ -9997,7 +8662,6 @@ scraped: 2026-03-06T21:11:24.814119
 
 # Filter with facets
 
-# Filter with facets
 
 * Latest Dynatrace
 * How-to guide
@@ -10074,7 +8738,6 @@ scraped: 2026-03-06T21:11:33.237702
 
 # Limits in Logs
 
-# Limits in Logs
 
 * Latest Dynatrace
 * Reference
@@ -10121,7 +8784,6 @@ scraped: 2026-03-06T21:11:31.603365
 
 # Spot trends with the log distribution chart
 
-# Spot trends with the log distribution chart
 
 * Latest Dynatrace
 * How-to guide
@@ -10184,7 +8846,6 @@ scraped: 2026-03-06T21:11:28.183710
 
 # Adjust the log message
 
-# Adjust the log message
 
 * Latest Dynatrace
 * How-to guide
@@ -10285,7 +8946,6 @@ scraped: 2026-03-06T21:11:29.840932
 
 # Query and filter logs
 
-# Query and filter logs
 
 * Latest Dynatrace
 * How-to guide
@@ -10399,7 +9059,6 @@ scraped: 2026-03-06T21:11:23.170852
 
 # View surrounding logs
 
-# View surrounding logs
 
 * Latest Dynatrace
 * How-to guide
@@ -10436,7 +9095,6 @@ scraped: 2026-03-06T21:09:41.161992
 
 # Logs app
 
-# Logs app
 
 * Latest Dynatrace
 * App
@@ -10586,7 +9244,6 @@ scraped: 2026-03-06T21:31:38.206815
 
 # Log ingestion warnings
 
-# Log ingestion warnings
 
 * Latest Dynatrace
 * 2-min read
@@ -10608,7 +9265,6 @@ scraped: 2026-03-05T21:36:06.993002
 
 # Troubleshooting Log Management and Analytics
 
-# Troubleshooting Log Management and Analytics
 
 * Latest Dynatrace
 * Troubleshooting
@@ -10660,7 +9316,6 @@ scraped: 2026-03-02T21:29:49.893436
 
 # Set up alerts based on events extracted from logs
 
-# Set up alerts based on events extracted from logs
 
 * Latest Dynatrace
 * Tutorial
@@ -10694,9 +9349,7 @@ You can find alerts by opening ![Logs](https://dt-cdn.net/images/logs-256-ae0a9c
 fetch logs
 
 
-
 | filter matchesPhrase(content, "Dropping data because sending_queue is full")
-
 
 
 | sort timestamp desc
@@ -10789,7 +9442,6 @@ scraped: 2026-03-06T21:33:43.409363
 
 # Set up custom alerts based on metrics extracted from logs
 
-# Set up custom alerts based on metrics extracted from logs
 
 * Latest Dynatrace
 * Tutorial
@@ -10825,9 +9477,7 @@ You can find alerts by opening ![Logs](https://dt-cdn.net/images/logs-256-ae0a9c
 fetch logs
 
 
-
 | filter matchesPhrase(content, "Dropping data because sending_queue is full")
-
 
 
 | sort timestamp desc
@@ -10918,7 +9568,6 @@ scraped: 2026-03-04T21:35:39.748570
 
 # Detect problems with Logs
 
-# Detect problems with Logs
 
 * Latest Dynatrace
 * Tutorial
@@ -11016,9 +9665,7 @@ To add new dynamic routing
      isNotNull(alertmessage) and
 
 
-
      isNotNull(priority) and
-
 
 
      priority == "1"
@@ -11043,7 +9690,6 @@ To access the Problems app
 ![Problems app Errors-only list](https://dt-cdn.net/images/problems-app-errors-1918-89ccc3de72.png)
 
 ### Step 4 View logs through the problem records
-
 
 
 A problem record shows you the number of events, SLOs, affected users, and affected entities. By default, the record shows you the affected deployment and a chart illustrating the problem. You can switch between **Chart** and **Properties**, as well as display **Deployment**, **Events**, or **Logs** connected to the problem.
@@ -11123,7 +9769,6 @@ scraped: 2026-03-06T21:23:16.645715
 
 # Create log metric
 
-# Create log metric
 
 * Latest Dynatrace
 * Tutorial
@@ -11148,9 +9793,7 @@ To build and run your query:
    fetch logs
 
 
-
    | filter matchesPhrase(content, "Connection refused")
-
 
 
    | sort timestamp desc
@@ -11202,9 +9845,7 @@ To build and run your query
    fetch logs
 
 
-
    | filter matchesValue(dt.entity.kubernetes_cluster, "KUBERNETES_CLUSTER-92233333")
-
 
 
    | summarize count(), by:status
@@ -11251,7 +9892,6 @@ scraped: 2026-03-06T21:15:25.252177
 
 # Observe your logs in real time
 
-# Observe your logs in real time
 
 * Latest Dynatrace
 * Tutorial
@@ -11334,7 +9974,6 @@ scraped: 2026-03-06T21:37:57.469012
 
 # Optimize performance and costs of dashboards running log queries
 
-# Optimize performance and costs of dashboards running log queries
 
 * Latest Dynatrace
 * Tutorial
@@ -11358,13 +9997,10 @@ This dashboard uses two types of log queries:
     fetch logs
 
 
-
     | filter k8s.namespace.name == "obslab-log-problem-detection"
 
 
-
     | filter status == "ERROR"
-
 
 
     | makeTimeseries  count = count()
@@ -11377,13 +10013,10 @@ This dashboard uses two types of log queries:
     fetch logs
 
 
-
     | filter k8s.namespace.name == "obslab-log-problem-detection"
 
 
-
     | filter status == "ERROR"
-
 
 
     | summarize count = count(), by: { k8s.deployment.name } | sort count desc
@@ -11396,9 +10029,7 @@ This dashboard uses two types of log queries:
   fetch logs
 
 
-
   | filter k8s.namespace.name == "obslab-log-problem-detection"
-
 
 
   | filter status == "ERROR"
@@ -11469,17 +10100,13 @@ Looking at our query we can also filter early and set fields.
 fetch logs
 
 
-
 | filter dt.system.bucket == "default_logs"
-
 
 
 | filter k8s.namespace.name == "obslab-log-problem-detection"
 
 
-
 | filter status == "ERROR"
-
 
 
 | fields timestamp, content, k8s.workload.name
@@ -11560,7 +10187,6 @@ scraped: 2026-03-06T21:15:16.527467
 
 # Log Management and Analytics use cases
 
-# Log Management and Analytics use cases
 
 * Latest Dynatrace
 * Overview
@@ -11659,7 +10285,6 @@ scraped: 2026-03-06T21:15:20.149749
 
 # Log on Grail examples
 
-# Log on Grail examples
 
 * Latest Dynatrace
 * Overview
@@ -11689,7 +10314,6 @@ The proxy server logs HTTP response status codes. You need to see the response c
    fetch logs
 
 
-
    | filter contains(content, "haproxy")
    ```
 
@@ -11697,7 +10321,6 @@ The proxy server logs HTTP response status codes. You need to see the response c
 
    ```
    fetch logs
-
 
 
    | filter dt.entity.process_group=="PROCESS_GROUP-123F4A56BCDA0EA9"
@@ -11715,9 +10338,7 @@ The proxy server logs HTTP response status codes. You need to see the response c
    fetch logs
 
 
-
    | filter dt.entity.process_group=="PROCESS_GROUP-123F4A56BCDA0EA9"
-
 
 
    | parse content, "LD 'HTTP_STATUS ' INT:httpstatus"
@@ -11731,13 +10352,10 @@ The proxy server logs HTTP response status codes. You need to see the response c
    fetch logs
 
 
-
    | filter dt.entity.process_group=="PROCESS_GROUP-802F3A32CECA0EA9"
 
 
-
    | parse content, "LD 'HTTP_STATUS ' INT:httpstatus"
-
 
 
    | filter httpstatus >= 400
@@ -11749,17 +10367,13 @@ The proxy server logs HTTP response status codes. You need to see the response c
    fetch logs
 
 
-
    | filter dt.entity.process_group=="PROCESS_GROUP-802F3A32CECA0EA9"
-
 
 
    | parse content, "LD 'HTTP_STATUS ' INT:httpstatus"
 
 
-
    | filter httpstatus >= 400
-
 
 
    | summarize count(), by:{httpstatus}
@@ -11768,7 +10382,6 @@ The proxy server logs HTTP response status codes. You need to see the response c
    **Results table**
 
 ### Example 2: Average cart size
-
 
 
 In this example, you will define an average cart size based on logs.
@@ -11782,7 +10395,6 @@ Your application logs context data that is relevant to your business. You need t
    fetch logs, from:now()-3h
 
 
-
    | filter dt.process.name=="cartservice cartservice-*"
    ```
 
@@ -11794,13 +10406,10 @@ Your application logs context data that is relevant to your business. You need t
    fetch logs, from:now()-3h
 
 
-
    | filter dt.process.name=="cartservice cartservice-*"
 
 
-
    | filter contains(content, "AddItemAsync")
-
 
 
    | fields timestamp, content
@@ -11825,17 +10434,13 @@ Your application logs context data that is relevant to your business. You need t
    fetch logs, from:now()-3h
 
 
-
    | filter dt.process.name=="cartservice cartservice-*"
-
 
 
    | filter contains(content, "AddItemAsync")
 
 
-
    | fields timestamp, content
-
 
 
    | parse content, "LD 'userId=' LD:userId ', productId=' LD:productId ', quantity=' INT:productQuantity"
@@ -11849,21 +10454,16 @@ Your application logs context data that is relevant to your business. You need t
    fetch logs, from:now()-3h
 
 
-
    | filter dt.process.name=="cartservice cartservice-*"
-
 
 
    | filter contains(content, "AddItemAsync")
 
 
-
    | fields timestamp, content
 
 
-
    | parse content, "LD 'userId=' LD:userId ', productId=' LD:productId ', quantity=' INT:productQuantity"
-
 
 
    | fields productId , productQuantity
@@ -11877,25 +10477,19 @@ Your application logs context data that is relevant to your business. You need t
    fetch logs, from:now()-3h
 
 
-
    | filter dt.process.name=="cartservice cartservice-*"
-
 
 
    | filter contains(content, "AddItemAsync")
 
 
-
    | fields timestamp, content
-
 
 
    | parse content, "LD 'userId=' LD:userId ', productId=' LD:productId ', quantity=' INT:productQuantity"
 
 
-
    | fields productId , productQuantity
-
 
 
    | summarize sum(productQuantity), by:{productId}
@@ -11909,33 +10503,25 @@ Your application logs context data that is relevant to your business. You need t
    fetch logs, from:now()-3h
 
 
-
    | filter dt.process.name=="cartservice cartservice-*"
-
 
 
    | filter contains(content, "AddItemAsync")
 
 
-
    | fields timestamp, content
-
 
 
    | parse content, "LD 'userId=' LD:userId ', productId=' LD:productId ', quantity=' INT:productQuantity"
 
 
-
    | fields productId , productQuantity
-
 
 
    | summarize averageProductQuantity = avg(productQuantity), by:{productId}
 
 
-
    | sort averageProductQuantity desc
-
 
 
    | limit 5
@@ -11954,7 +10540,6 @@ In this example, you track user changes with audit logs. You want to track the t
 
    ```
    fetch logs, from:now()-5m
-
 
 
    | filter endsWith(log.source,"change.log")
@@ -11977,25 +10562,19 @@ In this example, you track user changes with audit logs. You want to track the t
    fetch logs, from:now()-5m
 
 
-
    | filter endsWith(log.source,"change.log")
-
 
 
    | limit 1
 
 
-
    | parse content, "TIMESTAMP('yyyy-MM-dd HH:mm:ss'):ts LD JSON:settings"
-
 
 
    | fields ts, settings
 
 
-
    | fieldsAdd type = settings[eventType], tenant = settings[tenantId], user = settings[userId]
-
 
 
    | fieldsRemove settings
@@ -12012,25 +10591,19 @@ In this example, you track user changes with audit logs. You want to track the t
    fetch logs, from:now()-5m
 
 
-
    | filter endsWith(log.source,"change.log")
-
 
 
    | parse content, "TIMESTAMP('yyyy-MM-dd HH:mm:ss'):ts LD JSON:settings"
 
 
-
    | fields ts, settings
-
 
 
    | fieldsAdd type = settings[eventType], tenant = settings[tenantId], user = settings[userId]
 
 
-
    | fieldsRemove settings
-
 
 
    | filter in(type,array("UPDATE","DELETE"))
@@ -12044,29 +10617,22 @@ In this example, you track user changes with audit logs. You want to track the t
    fetch logs, from:now()-5m
 
 
-
    | filter endsWith(log.source,"change.log")
-
 
 
    | parse content, "TIMESTAMP('yyyy-MM-dd HH:mm:ss'):ts LD JSON:settings"
 
 
-
    | fields ts, settings
-
 
 
    | fieldsAdd type = settings[eventType], tenant = settings[tenantId], user = settings[userId]
 
 
-
    | fieldsRemove settings
 
 
-
    | filter in(type,array("UPDATE","DELETE"))
-
 
 
    | summarize count(), by:{user,type}
@@ -12080,29 +10646,22 @@ In this example, you track user changes with audit logs. You want to track the t
    fetch logs, from:now()-5m
 
 
-
    | filter endsWith(log.source,"change.log")
-
 
 
    | parse content, "TIMESTAMP('yyyy-MM-dd HH:mm:ss'):ts LD JSON:settings"
 
 
-
    | fields ts, settings
-
 
 
    | fieldsAdd type = settings[eventType], tenant = settings[tenantId], user = settings[userId]
 
 
-
    | fieldsRemove settings
 
 
-
    | filter in(type,array("UPDATE","DELETE"))
-
 
 
    | summarize {countIf(type=="CREATE"), countIf(type=="UPDATE"), countIf(type=="DELETE")}, by:{tenant, user}
@@ -12144,7 +10703,6 @@ scraped: 2026-03-05T21:34:52.597060
 
 # Upgrade Log Monitoring Classic to Log Management and Analytics
 
-# Upgrade Log Monitoring Classic to Log Management and Analytics
 
 * Classic
 * 5-min read
@@ -12210,7 +10768,6 @@ However we recommend to [convert your LQL matchers](analyze-explore-automate/log
 ### User access
 
 
-
 The user access granting process depends on whether you are a new or existing user.
 
 * Assign policy to existing users  
@@ -12266,21 +10823,16 @@ The user access granting process depends on whether you are a new or existing us
      {
 
 
-
      "scope": "iam:policies:read iam:policies:write",
-
 
 
      "token_type": "Bearer",
 
 
-
      "expires_in": 300,
 
 
-
      "access_token": "123(...)ABC"
-
 
 
      }
@@ -12294,21 +10846,16 @@ The user access granting process depends on whether you are a new or existing us
      {
 
 
-
      "name": "Storage Events Read",
-
 
 
      "description": "Storage Events Read",
 
 
-
      "tags": [
 
 
-
      ],
-
 
 
      "statementQuery": "ALLOW storage:events:read;"
@@ -12322,25 +10869,19 @@ The user access granting process depends on whether you are a new or existing us
      {
 
 
-
      "name": "Storage Logs Read",
-
 
 
      "description": "Storage Logs Read",
 
 
-
      "tags": [
-
 
 
      ]  ,
 
 
-
      "statementQuery": "ALLOW storage:logs:read;"
-
 
 
      }
@@ -12365,7 +10906,6 @@ scraped: 2026-03-06T21:10:16.285435
 
 # Log Analytics
 
-# Log Analytics
 
 * Latest Dynatrace
 * Explanation

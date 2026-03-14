@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:38:14.267785
 
 # Мониторинг Google Cloud reCAPTCHA Enterprise
 
-# Мониторинг Google Cloud reCAPTCHA Enterprise
 
 * Latest Dynatrace
 * How-to guide

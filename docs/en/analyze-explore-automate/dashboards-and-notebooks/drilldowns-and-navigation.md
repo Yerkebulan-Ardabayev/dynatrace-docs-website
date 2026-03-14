@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:09.059757
 
 # Drilldowns and navigation
 
-# Drilldowns and navigation
 
 * Latest Dynatrace
 * How-to guide
@@ -227,13 +226,10 @@ Dynamic placeholders are not automatically encoded. If your placeholder values m
 fetch logs
 
 
-
 | summarize occurences=count(), by:{content}
 
 
-
 | fieldsAdd contentEncoded = replaceString(escape(encodeUrl(content)), "+", "%20")
-
 
 
 | fields contentEncoded, occurences
@@ -281,7 +277,6 @@ To enable link detection:
    data record(website="Dynatrace main page", link="http://www.dynatrace.com"),
 
 
-
    record(website="Dynatrace community", link="https://community.dynatrace.com/")
    ```
 
@@ -305,9 +300,7 @@ To provide user-friendly links:
    data record(website="Dynatrace main page", link="http://www.dynatrace.com"),
 
 
-
    record(website="Dynatrace community", link="https://community.dynatrace.com/")
-
 
 
    | fieldsAdd markdownLink = concat("[", website, "](", link, ")")
@@ -333,13 +326,10 @@ To create intent-based links
    fetch logs
 
 
-
    | filter matchesPhrase(content, "failed to complete the order: rpc error: code") and status == "ERROR"
 
 
-
    | parse content, """DATA 'desc = ' LD:errorCode '    '"""
-
 
 
    | summarize total = count(), by:{errorCode}
@@ -361,9 +351,7 @@ To create intent-based links
       | fieldsAdd QueryPart1 = """{"version":0,"data":{"queryConfig":{"query":"fetch logs\n| filter matchesPhrase(content,\"\"\""""
 
 
-
       | fieldsAdd QueryPart1 = encodeUrl(QueryPart1)
-
 
 
       | fieldsAdd QueryPart1 = replaceString(QueryPart1, "+", "%20")
@@ -374,9 +362,7 @@ To create intent-based links
       | fieldsAdd QueryPart2 = escape(errorCode)
 
 
-
       | fieldsAdd QueryPart2 = encodeUrl(QueryPart2)
-
 
 
       | fieldsAdd QueryPart2 = replaceString(QueryPart2, "+", "%20")
@@ -390,7 +376,6 @@ To create intent-based links
 
       ```
       | fieldsAdd errorCodeLink = concat("[", errorCode, "](", LogAppURL, QueryPart1, QueryPart2, QueryTimeFrame, ")")
-
 
 
       | fields errorCodeLink, total

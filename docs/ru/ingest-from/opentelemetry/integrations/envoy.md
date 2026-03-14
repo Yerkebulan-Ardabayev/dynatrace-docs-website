@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:56.336075
 
 # Настройка трассировки OpenTelemetry с Envoy
 
-# Настройка трассировки OpenTelemetry с Envoy
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -66,73 +65,55 @@ Envoy 1.29
 tracing:
 
 
-
 provider:
-
 
 
 name: envoy.tracers.opentelemetry
 
 
-
 typed_config:
-
 
 
 "@type": type.googleapis.com/envoy.config.trace.v3.OpenTelemetryConfig
 
 
-
 service_name: your-service-name
-
 
 
 http_service:
 
 
-
 http_uri:
-
 
 
 uri: "{your-environment-id}.live.dynatrace.com/api/v2/otlp/v1/traces"
 
 
-
 cluster: dynatrace
-
 
 
 timeout: 10s
 
 
-
 request_headers_to_add:
-
 
 
 - header:
 
 
-
 key: "Authorization"
-
 
 
 value: "Api-Token {API_TOKEN_HERE}"
 
 
-
 resource_detectors:
-
 
 
 - name: envoy.tracers.opentelemetry.resource_detectors.dynatrace
 
 
-
 typed_config:
-
 
 
 "@type": type.googleapis.com/envoy.extensions.tracers.opentelemetry.resource_detectors.v3.DynatraceResourceDetectorConfig

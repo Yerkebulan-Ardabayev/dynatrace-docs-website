@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:18.711771
 
 # Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)
 
-# Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)
 
 * Latest Dynatrace
 * Explanation

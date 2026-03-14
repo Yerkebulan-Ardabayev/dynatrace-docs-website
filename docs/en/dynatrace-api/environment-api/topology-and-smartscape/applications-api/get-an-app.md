@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:16.489433
 
 # Applications API - GET an application
 
-# Applications API - GET an application
 
 * Reference
 * Updated on Mar 22, 2023
@@ -117,141 +116,106 @@ A list of constraint violations
 {
 
 
-
 "applicationMatchTarget": "DOMAIN",
-
 
 
 "applicationType": "AGENTLESS_MONITORING",
 
 
-
 "customizedName": "string",
-
 
 
 "discoveredName": "string",
 
 
-
 "displayName": "string",
-
 
 
 "entityId": "string",
 
 
-
 "firstSeenTimestamp": 1,
-
 
 
 "fromRelationships": {
 
 
-
 "calls": [
-
 
 
 "string"
 
 
-
 ]
-
 
 
 },
 
 
-
 "lastSeenTimestamp": 1,
-
 
 
 "managementZones": [
 
 
-
 {
-
 
 
 "description": "Dynatrace entity for the REST API example",
 
 
-
 "id": "6a98d7bc-abb9-44f8-ae6a-73e68e71812a",
-
 
 
 "name": "Dynatrace entity"
 
 
-
 }
 
 
-
 ],
-
 
 
 "ruleAppliedMatchType": "ALL_URLS_AND_DOMAINS",
 
 
-
 "ruleAppliedPattern": "string",
-
 
 
 "tags": [
 
 
-
 {
-
 
 
 "context": "AWS",
 
 
-
 "key": "string",
-
 
 
 "value": "string"
 
 
-
 }
 
 
-
 ],
-
 
 
 "toRelationships": {
 
 
-
 "monitors": [
-
 
 
 "string"
 
 
-
 ]
 
 
-
 }
-
 
 
 }
@@ -259,55 +223,42 @@ A list of constraint violations
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -325,9 +276,7 @@ The API token is passed in the **Authorization** header.
 curl --request GET \
 
 
-
 --url https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications/MOBILE_APPLICATION-752C288D59734C79 \
-
 
 
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -345,169 +294,127 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications/MOBILE_APPLICA
 {
 
 
-
 "entityId": "MOBILE_APPLICATION-752C288D59734C79",
-
 
 
 "displayName": "easyTravel Demo",
 
 
-
 "customizedName": "easyTravel Demo",
-
 
 
 "discoveredName": "752c288d-5973-4c79-b7d1-3a49d4d42ea0",
 
 
-
 "firstSeenTimestamp": 1469613941393,
-
 
 
 "lastSeenTimestamp": 1538656560201,
 
 
-
 "tags": [
-
 
 
 {
 
 
-
 "context": "CONTEXTLESS",
-
 
 
 "key": "portal"
 
 
-
 },
 
 
-
 {
-
 
 
 "context": "CONTEXTLESS",
 
 
-
 "key": "easyTravel"
-
 
 
 }
 
 
-
 ],
-
 
 
 "fromRelationships": {
 
 
-
 "calls": [
-
 
 
 "SERVICE-ED0B103392AC86BF"
 
 
-
 ]
 
 
-
 },
-
 
 
 "toRelationships": {},
 
 
-
 "mobileOsFamily": [
-
 
 
 "ANDROID",
 
 
-
 "IOS",
-
 
 
 "WINDOWS"
 
 
-
 ],
-
 
 
 "managementZones": [
 
 
-
 {
-
 
 
 "id": "-6239538939987181652",
 
 
-
 "name": "allTypes"
-
 
 
 },
 
 
-
 {
-
 
 
 "id": "6518151499932123858",
 
 
-
 "name": "mobile app name exists"
-
 
 
 },
 
 
-
 {
-
 
 
 "id": "-4085081632192243904",
 
 
-
 "name": "easyTravel"
-
 
 
 }
 
 
-
 ]
-
 
 
 }

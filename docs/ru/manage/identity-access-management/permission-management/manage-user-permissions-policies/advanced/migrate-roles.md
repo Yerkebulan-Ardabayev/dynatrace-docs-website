@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:52.290524
 
 # Переход с разрешений на основе ролей на политики IAM Dynatrace
 
-# Переход с разрешений на основе ролей на политики IAM Dynatrace
 
 * Latest Dynatrace
 * Время чтения: 11 мин
@@ -175,7 +174,6 @@ ALLOW environment:roles:viewer WHERE environment:management-zone="mgmt-eu"
 
 ```
 ALLOW  environment:roles:replay-sessions-with-masking, environment:roles:replay-sessions-without-masking, environment:roles:manage-settings, environment:roles:view-sensitive-request-data , environment:roles:manage-security-problems, environment:roles:logviewer
-
 
 
 WHERE environment:management-zone startsWith "mgmt_na";

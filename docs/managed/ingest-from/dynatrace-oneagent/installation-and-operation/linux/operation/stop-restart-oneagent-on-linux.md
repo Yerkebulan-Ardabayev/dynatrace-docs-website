@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Stop/restart OneAgent on Linux
 
-# Stop/restart OneAgent on Linux
 
 * 1-min read
 * Published Sep 19, 2018

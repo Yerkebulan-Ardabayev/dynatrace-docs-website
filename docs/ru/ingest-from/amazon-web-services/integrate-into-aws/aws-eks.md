@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:10.912555
 
 # Amazon EKS (Elastic Kubernetes Service)
 
-# Amazon EKS (Elastic Kubernetes Service)
 
 * Classic
 * Практическое руководство

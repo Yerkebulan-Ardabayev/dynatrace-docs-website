@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:29:31.056016
 
 # Manage private Synthetic locations
 
-# Manage private Synthetic locations
 
 * How-to guide
 * 10-min read
@@ -158,9 +157,7 @@ If you've installed Chromium manually, there's no need at the time of the update
    sudo yum -y install yum-plugin-versionlock
 
 
-
    sudo yum versionlock chromium
-
 
 
    sudo yum versionlock chromium-common
@@ -187,9 +184,7 @@ When migrating from the snap Chromium distribution, first update ActiveGate, the
    sudo rm -rf /usr/lib/chrome_for_testing/chrome-linux64
 
 
-
    sudo unzip /tmp/chrome.zip -d /usr/lib/chrome_for_testing
-
 
 
    rm /tmp/chrome.zip
@@ -212,7 +207,6 @@ If you've enabled a [custom, local repository for the browser installation](crea
 
    ```
    [synthetic]
-
 
 
    chromium_repo = https://172.18.0.100/chromium-repo

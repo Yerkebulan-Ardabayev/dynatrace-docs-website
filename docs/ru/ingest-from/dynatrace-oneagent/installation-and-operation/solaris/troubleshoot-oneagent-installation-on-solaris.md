@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:18.314953
 
 # Устранение неполадок при установке OneAgent на Solaris
 
-# Устранение неполадок при установке OneAgent на Solaris
 
 * Latest Dynatrace
 * 3-min read
@@ -22,17 +21,13 @@ scraped: 2026-03-06T21:20:18.314953
 Releasing 0x0000000239ae1890 (new refcount 1).
 
 
-
 Initiating SSL handshake.
-
 
 
 SSL handshake failed.
 
 
-
 Closed fd 5
-
 
 
 Unable to establish SSL connection.
@@ -46,9 +41,7 @@ Unable to establish SSL connection.
 wget --secure-protocol=tlsv1_2
 
 
-
 -O Dynatrace-OneAgent-Solaris-xxx-1.xxx.xxx.zip
-
 
 
 "https://xxx/xxx/api/v1/deployment/installer/agent/solaris/paas/latest?Api-Token=xxx&arch=x86"
@@ -84,7 +77,6 @@ LD\_PRELOAD\_64: параметр не установлен
 Info: using DT_HOME: /opt/dynatrace/oneagent
 
 
-
 .profile[33] LD_PRELOAD_64: parameter not set
 ```
 
@@ -94,17 +86,13 @@ Info: using DT_HOME: /opt/dynatrace/oneagent
 # avoid error
 
 
-
 set +u
-
 
 
 DT_HOME=/opt/dynatrace/oneagent
 
 
-
 export DT_HOME
-
 
 
 . $DT_HOME/dynatrace-agent64.sh
@@ -143,17 +131,13 @@ ld.so.1: sudo: warning: /opt/dynatrace/oneagent/agent/lib/liboneagentproc.so: op
    DT_HOME="/opt/dynatrace/oneagent"
 
 
-
    export DT_HOME
-
 
 
    source "$DT_HOME/dynatrace-env.sh"
 
 
-
    LD_PRELOAD="$DT_HOME/agent/lib/liboneagentproc.so"
-
 
 
    export LD_PRELOAD
@@ -168,7 +152,6 @@ ld.so.1: sudo: warning: /opt/dynatrace/oneagent/agent/lib/liboneagentproc.so: op
 
    ```
    aabb@aaaabbb01a:/apps/wldomains/wls-aabb-1a$pargs -e 26531 |grep LD
-
 
 
    envp[27]: envp[28]: LD_PRELOAD=/opt/dynatrace/oneagent/agent/lib/liboneagentproc.so

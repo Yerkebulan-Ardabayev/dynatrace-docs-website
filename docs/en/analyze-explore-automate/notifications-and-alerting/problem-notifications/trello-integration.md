@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:43.353925
 
 # Send Dynatrace notifications to Trello
 
-# Send Dynatrace notifications to Trello
 
 * Classic
 * 2-min read

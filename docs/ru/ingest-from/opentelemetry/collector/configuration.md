@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:05.347807
 
 # Настройка OpenTelemetry Collector
 
-# Настройка OpenTelemetry Collector
 
 * Latest Dynatrace
 * Практическое руководство
@@ -29,117 +28,88 @@ Dynatrace Collector
 receivers:
 
 
-
 otlp:
-
 
 
 protocols:
 
 
-
 grpc:
-
 
 
 endpoint: 0.0.0.0:4317
 
 
-
 http:
-
 
 
 endpoint: 0.0.0.0:4318
 
 
-
 processors:
-
 
 
 cumulativetodelta:
 
 
-
 max_staleness: 25h
-
 
 
 exporters:
 
 
-
 otlp_http:
-
 
 
 endpoint: "${env:DT_ENDPOINT}"
 
 
-
 logs_endpoint: "${env:DT_ENDPOINT}/v1/logs?structure=flattened"
-
 
 
 headers:
 
 
-
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
-
 
 
 service:
 
 
-
 pipelines:
-
 
 
 traces:
 
 
-
 receivers: [otlp]
-
 
 
 processors: []
 
 
-
 exporters: [otlp_http]
-
 
 
 metrics:
 
 
-
 receivers: [otlp]
-
 
 
 processors: [cumulativetodelta]
 
 
-
 exporters: [otlp_http]
-
 
 
 logs:
 
 
-
 receivers: [otlp]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]

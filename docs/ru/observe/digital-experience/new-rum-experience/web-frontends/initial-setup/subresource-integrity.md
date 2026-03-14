@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:25:12.585695
 
 # Использование Subresource Integrity (SRI) в новом интерфейсе RUM
 
-# Использование Subresource Integrity (SRI) в новом интерфейсе RUM
 
 * Latest Dynatrace
 * How-to guide

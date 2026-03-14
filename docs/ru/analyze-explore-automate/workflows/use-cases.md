@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:55.552697
 
 # Варианты использования Workflows
 
-# Варианты использования Workflows
 
 * Latest Dynatrace
 * Overview

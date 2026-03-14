@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:26:26.266335
 
 # Customize web frontend monitoring using the JavaScript API
 
-# Customize web frontend monitoring using the JavaScript API
 
 * Latest Dynatrace
 * Reference

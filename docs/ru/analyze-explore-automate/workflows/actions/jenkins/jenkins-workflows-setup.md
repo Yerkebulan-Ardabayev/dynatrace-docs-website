@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:30:53.886389
 
 # Настройка Jenkins Connector
 
-# Настройка Jenkins Connector
 
 * Latest Dynatrace
 * How-to guide

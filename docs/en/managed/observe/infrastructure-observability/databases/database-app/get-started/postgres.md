@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:31:47.373622
 
 # Monitor PostgreSQL database
 
-# Monitor PostgreSQL database
 
 * Latest Dynatrace
 * How-to guide

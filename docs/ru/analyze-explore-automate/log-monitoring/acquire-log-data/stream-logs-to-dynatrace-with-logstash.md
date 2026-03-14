@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:31:54.309034
 
 # Передача журналов в Dynatrace с помощью Logstash (Logs Classic)
 
-# Передача журналов в Dynatrace с помощью Logstash (Logs Classic)
 
 * Classic
 * Объяснение
@@ -46,25 +45,19 @@ scraped: 2026-03-04T21:31:54.309034
 output {
 
 
-
 dynatrace?
-
 
 
 id => "dynatrace_output"
 
 
-
 ingest_endpoint_url => "${ACTIVE_GATE_URL}/api/v2/logs/ingest"
-
 
 
 api_key => "${API_KEY}"
 
 
-
 ?
-
 
 
 }

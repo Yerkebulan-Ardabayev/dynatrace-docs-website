@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:16.381453
 
 # Business Insights
 
-# Business Insights
 
 * Latest Dynatrace
 * Приложение

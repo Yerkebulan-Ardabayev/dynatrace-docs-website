@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:18.937696
 
 # Поле фильтрации
 
-# Поле фильтрации
 
 * Latest Dynatrace
 * Reference

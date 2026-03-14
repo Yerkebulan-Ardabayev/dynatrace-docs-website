@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:10.619868
 
 # Distributed Tracing app
 
-# Distributed Tracing app
 
 * Latest Dynatrace
 * Explanation

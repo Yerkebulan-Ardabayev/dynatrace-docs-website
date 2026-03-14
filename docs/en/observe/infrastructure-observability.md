@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:29.766809
 
 # Infrastructure Observability
 
-# Infrastructure Observability
 
 * Latest Dynatrace
 * Overview

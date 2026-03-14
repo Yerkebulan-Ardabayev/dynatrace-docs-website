@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:02.237729
 
 # Execute synthetic monitors from private locations
 
-# Execute synthetic monitors from private locations
 
 * Latest Dynatrace
 * 2-min read

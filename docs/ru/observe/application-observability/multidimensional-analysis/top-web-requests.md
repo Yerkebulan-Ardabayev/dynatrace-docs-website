@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:41.702134
 
 # Top web requests
 
-# Top web requests
 
 * Classic
 * How-to guide

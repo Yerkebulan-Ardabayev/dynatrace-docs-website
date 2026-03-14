@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:02.482232
 
 # Visualize and analyze security findings
 
-# Visualize and analyze security findings
 
 * Latest Dynatrace
 * Tutorial

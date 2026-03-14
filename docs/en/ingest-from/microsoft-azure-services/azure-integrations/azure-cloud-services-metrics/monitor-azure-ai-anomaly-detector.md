@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:33:01.155227
 
 # Azure AI - Anomaly Detector monitoring
 
-# Azure AI - Anomaly Detector monitoring
 
 * Latest Dynatrace
 * How-to guide

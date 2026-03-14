@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:56.797299
 
 # Dynatrace Operator support and known issues
 
-# Dynatrace Operator support and known issues
 
 * Latest Dynatrace
 * 5-min read
@@ -146,9 +145,7 @@ When switching from using the CSI driver without `codeModulesImage` to using it 
   > find /data -name latest-codemodule
 
 
-
   /data/_dynakubes/my-dynakube-1/latest-codemodule
-
 
 
   /data/_dynakubes/my-dynakube-2/latest-codemodule

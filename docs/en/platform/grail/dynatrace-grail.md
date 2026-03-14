@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:53.544675
 
 # What is Dynatrace Grail?
 
-# What is Dynatrace Grail?
 
 * Latest Dynatrace
 * Explanation

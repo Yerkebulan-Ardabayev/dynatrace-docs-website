@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:19.578189
 
 # Network configurations
 
-# Network configurations
 
 * Latest Dynatrace
 * 4-min read
@@ -37,33 +36,25 @@ For proxies without credential requirements, provide your proxy URL in the `valu
 apiVersion: dynatrace.com/v1beta5
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: dynatrace
 
 
-
 spec:
-
 
 
 apiUrl: https://<activegate-host>:9999/e/<environment-id>/api
 
 
-
 proxy:
-
 
 
 value: http://<my-super-proxy>
@@ -101,33 +92,25 @@ For proxies requiring credentials.
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    apiUrl: https://<activegate-host>:9999/e/<environment-id>/api
 
 
-
    proxy:
-
 
 
    valueFrom: my-proxy-secret
@@ -147,17 +130,13 @@ To set the list of URLs to exclude from the proxy configuration, add the followi
 apiVersion: dynatrace.com/v1beta5
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 annotations:
-
 
 
 feature.dynatrace.com/no-proxy: "some.url.com,other.url.com"
@@ -177,29 +156,22 @@ To add trusted CA certificates to ActiveGate, OneAgent and/or Dynatrace Operator
    apiVersion: v1
 
 
-
    kind: ConfigMap
-
 
 
    metadata:
 
 
-
    name: mycaconfigmap
-
 
 
    namespace: dynatrace
 
 
-
    data:
 
 
-
    certs: |
-
 
 
    <ca-certificates>
@@ -211,133 +183,100 @@ To add trusted CA certificates to ActiveGate, OneAgent and/or Dynatrace Operator
    data:
 
 
-
    certs: |
-
 
 
    -----BEGIN CERTIFICATE-----
 
 
-
    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
-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
 
 
-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
-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
 
 
-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
-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
 
 
-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
-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
 
 
-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
-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
 
 
-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
-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
 
 
-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
-
 
 
    2ySy5GH6Q6RIJ6JFOYtaHqYQg/VsLT55uRJzqgVNaOjDffYlaoNBdiBaQfzt+Nxk
 
 
-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
-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
 
 
-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
-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
 
 
-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
-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
 
 
-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
-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
 
 
-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
-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
 
 
-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
-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
 
 
-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
-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
 
 
-
    goCos2lkkJcV/LDBNE2X5+IS/3q3v0Esq90prl9wXH83CVtG4lJVpm42TccCwRID
 
 
-
    j4xHGOuWrdmKRafgeohGIsH1ZhckkPc4Vcri2232dRPUAXziS+Yp3Ef9xdov
-
 
 
    -----END CERTIFICATE-----
@@ -353,29 +292,22 @@ To add trusted CA certificates to ActiveGate, OneAgent and/or Dynatrace Operator
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    spec:
 
 
-
    apiUrl: https://<activegate-host>:9999/e/<environment-id>/api
-
 
 
    trustedCAs: mycaconfigmap
@@ -396,29 +328,22 @@ In Dynatrace Operator version 1.0.0 and earlier, the `skipCertCheck` setting was
 apiVersion: dynatrace.com/v1beta5
 
 
-
 kind: DynaKube
-
 
 
 metadata:
 
 
-
 name: dynakube
-
 
 
 namespace: dynatrace
 
 
-
 spec:
 
 
-
 apiUrl: https://<activegate-host>:9999/e/<environment-id>/api
-
 
 
 skipCertCheck: true
@@ -449,37 +374,28 @@ To configure a server TLS certificate for the ActiveGate:
    apiVersion: dynatrace.com/v1beta5
 
 
-
    kind: DynaKube
-
 
 
    metadata:
 
 
-
    name: dynakube
-
 
 
    namespace: dynatrace
 
 
-
    spec:
-
 
 
    ...
 
 
-
    activeGate:
 
 
-
    tlsSecretName: <mytlssecret>
-
 
 
    ...

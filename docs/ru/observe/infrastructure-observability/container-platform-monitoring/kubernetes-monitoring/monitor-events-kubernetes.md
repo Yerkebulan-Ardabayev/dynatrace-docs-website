@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:56.612300
 
 # Мониторинг событий Kubernetes/OpenShift
 
-# Мониторинг событий Kubernetes/OpenShift
 
 * Classic
 * Чтение: 8 мин
@@ -67,7 +66,6 @@ scraped: 2026-03-06T21:21:56.612300
 
 ```
 fetch events
-
 
 
 | filter event.provider == "KUBERNETES_EVENT"

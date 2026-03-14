@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:41.264166
 
 # Обзор Configuration as Code
 
-# Обзор Configuration as Code
 
 * Последняя версия Dynatrace
 * Обзор

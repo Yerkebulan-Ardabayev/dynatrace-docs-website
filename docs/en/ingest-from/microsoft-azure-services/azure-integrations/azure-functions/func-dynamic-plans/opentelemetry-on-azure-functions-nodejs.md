@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:47.614506
 
 # Trace Azure Functions written in Node.js
 
-# Trace Azure Functions written in Node.js
 
 * Latest Dynatrace
 * How-to guide
@@ -57,73 +56,55 @@ To export traces to Dynatrace from Azure Functions developed with [programming m
    import { Resource } from "@opentelemetry/resources";
 
 
-
    import { NodeTracerProvider } from "@opentelemetry/sdk-trace-node";
-
 
 
    import { DtSpanExporter, DtSpanProcessor, DtTextMapPropagator, DtSampler } from "@dynatrace/opentelemetry-azure-functions";
 
 
-
    // tracing setup
-
 
 
    const exporter = new DtSpanExporter();
 
 
-
    const processor = new DtSpanProcessor(exporter);
-
 
 
    const provider = new NodeTracerProvider({
 
 
-
    resource: new Resource({
-
 
 
    "my.resource.attribute": "My Resource"
 
 
-
    }),
-
 
 
    sampler: new DtSampler(),
 
 
-
    // for @opentelemetry/sdk-trace-node versions lower than 1.29.0 use `provider.addSpanProcessor(processor)` instead
-
 
 
    spanProcessors: [processor]
 
 
-
    // ...other configurations
-
 
 
    });
 
 
-
    provider.register({
-
 
 
    propagator: new DtTextMapPropagator(),
 
 
-
    // ...other configurations
-
 
 
    });
@@ -135,57 +116,43 @@ To export traces to Dynatrace from Azure Functions developed with [programming m
    import { Resource } from "@opentelemetry/resources";
 
 
-
    import { NodeSDK } from "@opentelemetry/sdk-node";
-
 
 
    import { DtSpanExporter, DtSpanProcessor, DtTextMapPropagator, DtSampler } from "@dynatrace/opentelemetry-azure-functions";
 
 
-
    const sdk = new NodeSDK({
-
 
 
    resource: new Resource({
 
 
-
    "my.resource.attribute": "My Resource"
-
 
 
    }),
 
 
-
    sampler: new DtSampler(),
-
 
 
    spanProcessor: new DtSpanProcessor(new DtSpanExporter()),
 
 
-
    textMapPropagator: new DtTextMapPropagator(),
-
 
 
    // ...other configurations
 
 
-
    });
-
 
 
    sdk.start().then(() => {
 
 
-
    // Resources have been detected and SDK is started
-
 
 
    });
@@ -196,65 +163,49 @@ To export traces to Dynatrace from Azure Functions developed with [programming m
    import type { AzureFunction, Context, HttpRequest } from "@azure/functions"
 
 
-
    // Import the wrapHandler function.
-
 
 
    import { wrapHandler } from "@dynatrace/opentelemetry-azure-functions";
 
 
-
    const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
-
 
 
    // The created span is set as active by the OpenTelemetry ContextManager here
 
 
-
    context.log("HTTP trigger function processed a request.");
-
 
 
    const name = (req.query.name || (req.body && req.body.name));
 
 
-
    const responseMessage = name
-
 
 
    ? "Hello, " + name + ". This HTTP triggered function executed successfully."
 
 
-
    : "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.";
-
 
 
    context.res = {
 
 
-
    status: 200,
-
 
 
    body: responseMessage
 
 
-
    };
 
 
-
    };
-
 
 
    // Export the wrapped handler function.
-
 
 
    export default wrapHandler(httpTrigger);
@@ -283,21 +234,16 @@ You can do this either with or without the OpenTelemetry setup:
   import { initDynatrace } from "@dynatrace/opentelemetry-azure-functions";
 
 
-
   // initialize instrumentation with tracing setup
-
 
 
   const provider = initDynatrace(true, {
 
 
-
   "my.resource.attribute": "My Resource"
 
 
-
   });
-
 
 
   // azure functions registration goes here
@@ -310,89 +256,67 @@ You can do this either with or without the OpenTelemetry setup:
   import { initDynatrace } from "@dynatrace/opentelemetry-azure-functions";
 
 
-
   import { Resource } from "@opentelemetry/resources";
-
 
 
   import { NodeTracerProvider } from "@opentelemetry/sdk-trace-node";
 
 
-
   import { DtSpanExporter, DtSpanProcessor, DtTextMapPropagator, DtSampler } from "@dynatrace/opentelemetry-azure-functions";
-
 
 
   // tracing setup
 
 
-
   const exporter = new DtSpanExporter();
-
 
 
   const processor = new DtSpanProcessor(exporter);
 
 
-
   const provider = new NodeTracerProvider({
-
 
 
   resource: new Resource({
 
 
-
   "my.resource.attribute": "My Resource"
-
 
 
   }),
 
 
-
   sampler: new DtSampler(),
-
 
 
   // for @opentelemetry/sdk-trace-node versions lower than 1.29.0 use `provider.addSpanProcessor(processor)` instead
 
 
-
   spanProcessors: [processor]
-
 
 
   // ...other configurations
 
 
-
   });
-
 
 
   provider.register({
 
 
-
   propagator: new DtTextMapPropagator(),
-
 
 
   // ...other configurations
 
 
-
   });
-
 
 
   // initialize instrumentation
 
 
-
   initDynatrace();
-
 
 
   // azure functions registration goes here
@@ -404,29 +328,22 @@ You can do this either with or without the OpenTelemetry setup:
   import { configureDynatrace, initDynatrace } from "@dynatrace/opentelemetry-azure-functions";
 
 
-
   // tracing setup
-
 
 
   const provider = configureDynatrace({
 
 
-
   "my.resource.attribute": "My Resource"
-
 
 
   });
 
 
-
   // initialize instrumentation
 
 
-
   initDynatrace();
-
 
 
   // azure functions registration goes here
@@ -451,65 +368,49 @@ To order hooks as needed, you can use the `registerTraceStartHook` and `register
 import { app, PreInvocationContext, PostInvocationContext } from "@azure/functions";
 
 
-
 import { configureDynatrace, registerTraceStartHook, registerTraceEndHook } from "@dynatrace/opentelemetry-azure-functions";
-
 
 
 // setup tracing with configureDynatrace or manually
 
 
-
 const provider = configureDynatrace();
-
 
 
 // register Dynatrace Trace Start hook
 
 
-
 registerTraceStartHook();
-
 
 
 // register other user's pre-invocation hooks
 
 
-
 app.hook.preInvocation(async (context: PreInvocationContext) => {
-
 
 
 // hook code
 
 
-
 });
-
 
 
 // register other user's post-invocation hooks
 
 
-
 app.hook.postInvocation(async (context: PostInvocationContext) => {
-
 
 
 // hook code
 
 
-
 });
-
 
 
 // register Dynatrace Trace End hook
 
 
-
 registerTraceEndHook();
-
 
 
 // azure functions registration goes here
@@ -549,29 +450,22 @@ Example:
 {
 
 
-
 "dependencies": {
-
 
 
 "@dynatrace/opentelemetry-azure-functions": "1.327.0"
 
 
-
 },
-
 
 
 "overrides": {
 
 
-
 "@dynatrace/opentelemetry-core": "1.327.0"
 
 
-
 }
-
 
 
 }

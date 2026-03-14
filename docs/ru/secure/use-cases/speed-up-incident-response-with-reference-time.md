@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:59.052662
 
 # Ускорение реагирования на инциденты с помощью эталонного времени Dynatrace Investigations
 
-# Ускорение реагирования на инциденты с помощью эталонного времени Dynatrace Investigations
 
 * Latest Dynatrace
 * Tutorial
@@ -87,21 +86,16 @@ scraped: 2026-03-06T21:27:59.052662
    fetch logs, timeframe: "05:00:00Z/06:00:00Z"
 
 
-
    | filter k8s.cluster.name == "prod.cupid.cluster"
-
 
 
    | filter k8s.container.name == "istio-proxy"
 
 
-
    | parse content, "json{JSONTIMESTAMP:start_time, INT:response_code}(flat=true)"
 
 
-
    | filter start_time < toTimestamp("2025-05-12T05:32:01.000Z")
-
 
 
    | sort timestamp desc

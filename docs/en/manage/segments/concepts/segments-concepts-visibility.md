@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:12.081320
 
 # Visibility of segments
 
-# Visibility of segments
 
 * Latest Dynatrace
 * Explanation

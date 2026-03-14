@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:32:35.758185
 
 # Преобразование OTLP gRPC в HTTP с помощью OpenTelemetry Collector
 
-# Преобразование OTLP gRPC в HTTP с помощью OpenTelemetry Collector
 
 * Latest Dynatrace
 * How-to guide
@@ -33,93 +32,70 @@ scraped: 2026-03-03T21:32:35.758185
 receivers:
 
 
-
 otlp:
-
 
 
 protocols:
 
 
-
 grpc:
-
 
 
 endpoint: 0.0.0.0:4317
 
 
-
 exporters:
-
 
 
 otlp_http:
 
 
-
 endpoint: ${env:DT_ENDPOINT}
-
 
 
 headers:
 
 
-
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
-
 
 
 service:
 
 
-
 pipelines:
-
 
 
 traces:
 
 
-
 receivers: [otlp]
-
 
 
 processors: []
 
 
-
 exporters: [otlp_http]
-
 
 
 metrics:
 
 
-
 receivers: [otlp]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]
 
 
-
 logs:
-
 
 
 receivers: [otlp]
 
 
-
 processors: []
-
 
 
 exporters: [otlp_http]

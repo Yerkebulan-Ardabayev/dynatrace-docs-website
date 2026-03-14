@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:28:43.872463
 
 # Detect threats in cloud-native environments using workflows
 
-# Detect threats in cloud-native environments using workflows
 
 * Latest Dynatrace
 * Tutorial

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:37.693611
 
 # Log Management and Analytics best practices
 
-# Log Management and Analytics best practices
 
 * Latest Dynatrace
 * Tutorial
@@ -254,7 +253,6 @@ There are two ways that you can verify data is ingested and retained.
   fetch logs
 
 
-
   | filter dt.system.bucket == "default_logs"
   ```
 
@@ -325,7 +323,6 @@ To verify the configuration, go to ![Logs](https://dt-cdn.net/images/logs-256-ae
 
 ```
 fetch logs
-
 
 
 | filter dt.openpipeline == {pipeline_AWS_cloudfront_logs_5498}

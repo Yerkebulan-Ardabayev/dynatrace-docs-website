@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:00.972445
 
 # Process availability
 
-# Process availability
 
 * Classic
 * How-to guide

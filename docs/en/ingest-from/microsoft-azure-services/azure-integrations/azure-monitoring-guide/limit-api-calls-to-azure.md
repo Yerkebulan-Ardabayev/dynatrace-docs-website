@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:32:29.510104
 
 # Limit API calls to Azure
 
-# Limit API calls to Azure
 
 * Latest Dynatrace
 * Explanation

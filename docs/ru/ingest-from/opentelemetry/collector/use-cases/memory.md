@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:22:50.574157
 
 # Применение ограничений памяти к OpenTelemetry Collector
 
-# Применение ограничений памяти к OpenTelemetry Collector
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -39,121 +38,91 @@ scraped: 2026-03-02T21:22:50.574157
 receivers:
 
 
-
 otlp:
-
 
 
 protocols:
 
 
-
 grpc:
-
 
 
 endpoint: 0.0.0.0:4317
 
 
-
 http:
-
 
 
 endpoint: 0.0.0.0:4318
 
 
-
 processors:
-
 
 
 memory_limiter:
 
 
-
 check_interval: 1s
-
 
 
 limit_percentage: 90
 
 
-
 spike_limit_percentage: 20
-
 
 
 exporters:
 
 
-
 otlp_http:
-
 
 
 endpoint: ${env:DT_ENDPOINT}
 
 
-
 headers:
-
 
 
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
 
 
-
 service:
-
 
 
 pipelines:
 
 
-
 traces:
-
 
 
 receivers: [otlp]
 
 
-
 processors: [memory_limiter]
 
 
-
 exporters: [otlp_http]
-
 
 
 metrics:
 
 
-
 receivers: [otlp]
 
 
-
 processors: [memory_limiter]
-
 
 
 exporters: [otlp_http]
 
 
-
 logs:
-
 
 
 receivers: [otlp]
 
 
-
 processors: [memory_limiter]
-
 
 
 exporters: [otlp_http]

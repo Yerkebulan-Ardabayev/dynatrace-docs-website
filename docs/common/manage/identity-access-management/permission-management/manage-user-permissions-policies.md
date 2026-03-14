@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Working with policies
 
-# Working with policies
 
 * Latest Dynatrace
 * Explanation

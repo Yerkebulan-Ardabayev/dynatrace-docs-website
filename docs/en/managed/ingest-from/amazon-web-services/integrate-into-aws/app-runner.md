@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:49.528383
 
 # Monitor AWS App Runner
 
-# Monitor AWS App Runner
 
 * Classic
 * How-to guide
@@ -49,7 +48,6 @@ To use this option you need:
    COPY --from=<your-environment-url>/linux/oneagent-codemodules:<technology> / /
 
 
-
    ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
    ```
 
@@ -69,7 +67,6 @@ Dynatrace OneAgent supports Alpine Linux-based environments. Use this syntax:
 
 ```
 COPY --from=<your-activegate>/linux/oneagent-codemodules-musl:<technology> / /
-
 
 
 ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
@@ -107,37 +104,28 @@ Valid options here are `all`, `go`, `java`, `apache`, `nginx`, and `nodejs`.
    ARG DT_API_URL="https://<your-environment-id>.live.dynatrace.com/api"
 
 
-
    ARG DT_API_TOKEN="<your-paas-token>"
-
 
 
    ARG DT_ONEAGENT_OPTIONS="flavor=default&include=<technology1>&include=<technology2>"
 
 
-
    ENV DT_HOME="/opt/dynatrace/oneagent"
-
 
 
    RUN mkdir -p "$DT_HOME" && \
 
 
-
    wget -O "$DT_HOME/oneagent.zip" "$DT_API_URL/v1/deployment/installer/agent/unix/paas/latest?Api-Token=$DT_API_TOKEN&$DT_ONEAGENT_OPTIONS" && \
-
 
 
    unzip -d "$DT_HOME" "$DT_HOME/oneagent.zip" && \
 
 
-
    rm "$DT_HOME/oneagent.zip"
 
 
-
    ENTRYPOINT [ "/opt/dynatrace/oneagent/dynatrace-agent64.sh" ]
-
 
 
    CMD [ "executable", "param1", "param2" ] # the command of your application, for example, Java

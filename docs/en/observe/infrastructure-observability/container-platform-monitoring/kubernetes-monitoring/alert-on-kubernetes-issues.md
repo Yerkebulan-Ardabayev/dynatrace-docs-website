@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:05.276956
 
 # Alert on common Kubernetes/OpenShift issues
 
-# Alert on common Kubernetes/OpenShift issues
 
 * Classic
 * 18-min read

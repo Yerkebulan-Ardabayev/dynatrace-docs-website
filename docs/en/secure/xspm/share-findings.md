@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:36:42.257441
 
 # Collaborate with apps and share findings
 
-# Collaborate with apps and share findings
 
 * Latest Dynatrace
 * How-to guide

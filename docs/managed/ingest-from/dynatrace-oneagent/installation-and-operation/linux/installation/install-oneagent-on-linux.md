@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Install OneAgent on Linux
 
-# Install OneAgent on Linux
 
 * How-to guide
 * 5-min read

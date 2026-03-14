@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:30:30.226479
 
 # Release monitoring Classic
 
-# Release monitoring Classic
 
 * Classic
 * Обзор

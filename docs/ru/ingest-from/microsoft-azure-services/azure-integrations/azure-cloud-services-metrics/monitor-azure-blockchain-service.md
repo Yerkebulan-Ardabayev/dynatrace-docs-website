@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:23:09.817428
 
 # Мониторинг Azure Blockchain
 
-# Мониторинг Azure Blockchain
 
 * Последняя версия Dynatrace
 * Практическое руководство

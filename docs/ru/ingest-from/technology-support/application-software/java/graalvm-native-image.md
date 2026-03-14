@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:41.068826
 
 # GraalVM Native Image
 
-# GraalVM Native Image
 
 * Latest Dynatrace
 * 8 мин. чтения
@@ -48,105 +47,79 @@ Dynatrace обеспечивает сквозную распределённую
    <profile>
 
 
-
    <id>dynatrace-native</id>
-
 
 
    <build>
 
 
-
    <plugins>
-
 
 
    <plugin>
 
 
-
    <groupId>com.dynatrace.buildtools.graalnative</groupId>
-
 
 
    <artifactId>dynatrace-native-maven-plugin</artifactId>
 
 
-
    <version>2.1.0</version>
-
 
 
    <executions>
 
 
-
    <execution>
-
 
 
    <goals>
 
 
-
    <goal>setup-build-agent</goal>
-
 
 
    <goal>copy-runtime-agent</goal>
 
 
-
    </goals>
-
 
 
    <configuration>
 
 
-
    <agentDownload>
-
 
 
    <environmentUrl>ENVIRONMENT_URL</environmentUrl>
 
 
-
    <apiToken>API_TOKEN</apiToken>
-
 
 
    </agentDownload>
 
 
-
    </configuration>
-
 
 
    </execution>
 
 
-
    </executions>
-
 
 
    <extensions>true</extensions>
 
 
-
    </plugin>
-
 
 
    </plugins>
 
 
-
    </build>
-
 
 
    </profile>
@@ -165,9 +138,7 @@ Dynatrace обеспечивает сквозную распределённую
    <configuration>
 
 
-
    <agentZip>PATH_TO_DOWNLOADED_ZIP</agentZip>
-
 
 
    </configuration>
@@ -193,17 +164,13 @@ Dynatrace обеспечивает сквозную распределённую
    pluginManagement {
 
 
-
    repositories {
-
 
 
    mavenCentral()
 
 
-
    }
-
 
 
    }
@@ -214,33 +181,25 @@ Dynatrace обеспечивает сквозную распределённую
    plugins {
 
 
-
    id 'com.dynatrace.buildtools.graalnative' version '2.1.0'
 
 
-
    }
-
 
 
    dynatrace {
 
 
-
    agentDownload {
-
 
 
    environmentUrl = "ENVIRONMENT_URL"
 
 
-
    apiToken = "API_TOKEN"
 
 
-
    }
-
 
 
    }
@@ -259,9 +218,7 @@ Dynatrace обеспечивает сквозную распределённую
    dynatrace {
 
 
-
    agentZip = "PATH_TO_DOWNLOADED_ZIP"
-
 
 
    }
@@ -299,13 +256,10 @@ curl -X GET "$DT_TENANT_URL/api/v1/deployment/installer/agent/$OS_TYPE/paas/late
 export DT_TENANT=$DT_TENANT_ID
 
 
-
 export DT_TENANTTOKEN=$DT_TENANTTOKEN
 
 
-
 export DT_CONNECTION_POINT=$DT_CONNECTION_POINT
-
 
 
 ./$YOUR_APP_NAME
@@ -329,25 +283,19 @@ export DT_CONNECTION_POINT=$DT_CONNECTION_POINT
 <configuration>
 
 
-
 <agentDownload>
-
 
 
 <environmentUrl>${env.DT_TENANT_URL}</environmentUrl>
 
 
-
 <apiToken>${env.DT_API_TOKEN}</apiToken>
-
 
 
 </agentDownload>
 
 
-
 <agentOptions>loglevelcon=info</agentOptions>
-
 
 
 </configuration>
@@ -376,25 +324,19 @@ export DT_CONNECTION_POINT=$DT_CONNECTION_POINT
 dynatrace {
 
 
-
 agentDownload {
-
 
 
 environmentUrl = System.getenv("DT_TENANT_URL")
 
 
-
 apiToken = System.getenv("DT_API_TOKEN")
-
 
 
 }
 
 
-
 agentOptions="loglevelcon=info"
-
 
 
 }
@@ -425,17 +367,13 @@ agentOptions="loglevelcon=info"
 {
 
 
-
 "enabledSensors": [
-
 
 
 "servlet"
 
 
-
 ]
-
 
 
 }
@@ -486,17 +424,13 @@ agentOptions="loglevelcon=info"
 <jvmArgs>
 
 
-
 <arg>--add-opens=java.base/sun.net.www.protocol.http=ALL-UNNAMED</arg>
-
 
 
 <arg>--add-opens=java.base/java.net=ALL-UNNAMED</arg>
 
 
-
 <arg>--add-exports=java.base/sun.net.www=ALL-UNNAMED</arg>
-
 
 
 </jvmArgs>
@@ -512,41 +446,31 @@ agentOptions="loglevelcon=info"
 graalvmNative {
 
 
-
 binaries {
-
 
 
 main {
 
 
-
 jvmArgs.addAll(
-
 
 
 '--add-opens', 'java.base/sun.net.www.protocol.http=ALL-UNNAMED',
 
 
-
 '--add-opens', 'java.base/java.net=ALL-UNNAMED',
-
 
 
 '--add-exports', 'java.base/sun.net.www=ALL-UNNAMED'
 
 
-
 )
 
 
-
 }
 
 
-
 }
-
 
 
 }

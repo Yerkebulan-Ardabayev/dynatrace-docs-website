@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:32.537603
 
 # Удаление OneAgent на AIX
 
-# Удаление OneAgent на AIX
 
 * Latest Dynatrace
 * How-to guide

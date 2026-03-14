@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:34.918585
 
 # Send Dynatrace notifications to Jira
 
-# Send Dynatrace notifications to Jira
 
 * Classic
 * 3-min read

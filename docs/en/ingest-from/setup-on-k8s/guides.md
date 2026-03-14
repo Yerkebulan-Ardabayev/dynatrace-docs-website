@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:51.653745
 
 # Guides
 
-# Guides
 
 * Latest Dynatrace
 * 3-min read

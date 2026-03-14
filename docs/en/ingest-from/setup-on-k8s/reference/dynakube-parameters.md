@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:41.255882
 
 # DynaKube parameters for Dynatrace Operator
 
-# DynaKube parameters for Dynatrace Operator
 
 * Latest Dynatrace
 * 57-min read
@@ -225,217 +224,163 @@ On OpenShift, using volumes of type `hostPath` is prohibited by default SCC and 
 apiVersion: v1
 
 
-
 kind: ServiceAccount
-
 
 
 metadata:
 
 
-
 labels:
-
 
 
 app.kubernetes.io/component: dynatrace-sql-extension-executor
 
 
-
 app.kubernetes.io/name: dynatrace-operator
-
 
 
 name: custom-sql-extension-executor-sa
 
 
-
 namespace: dynatrace
 
 
-
 ---
-
 
 
 apiVersion: rbac.authorization.k8s.io/v1
 
 
-
 kind: Role
-
 
 
 metadata:
 
 
-
 labels:
-
 
 
 app.kubernetes.io/component: dynatrace-sql-extension-executor
 
 
-
 app.kubernetes.io/name: dynatrace-operator
-
 
 
 name: custom-sql-extension-executor-role
 
 
-
 namespace: dynatrace
-
 
 
 rules:
 
 
-
 - apiGroups:
-
 
 
 - ""
 
 
-
 resources:
-
 
 
 - pods
 
 
-
 verbs:
-
 
 
 - list
 
 
-
 - apiGroups:
-
 
 
 - security.openshift.io
 
 
-
 resourceNames:
-
 
 
 - nonroot-v2
 
 
-
 resources:
-
 
 
 - securitycontextconstraints
 
 
-
 verbs:
-
 
 
 - use
 
 
-
 ---
-
 
 
 kind: RoleBinding
 
 
-
 metadata:
-
 
 
 labels:
 
 
-
 app.kubernetes.io/component: dynatrace-sql-extension-executor
-
 
 
 app.kubernetes.io/name: dynatrace-operator
 
 
-
 name: custom-sql-extension-executor-rolebinding
 
 
-
 namespace: dynatrace
-
 
 
 roleRef:
 
 
-
 apiGroup: rbac.authorization.k8s.io
-
 
 
 kind: Role
 
 
-
 name: custom-sql-extension-executor-role
-
 
 
 subjects:
 
 
-
 - kind: ServiceAccount
-
 
 
 name: custom-sql-extension-executor-sa
 
 
-
 namespace: dynatrace
-
 
 
 ---
 
 
-
 kind: Dynakube
-
 
 
 spec:
 
 
-
 extensions:
-
 
 
 databases:
 
 
-
 - id: my-sql-db
-
 
 
 serviceAccountName: custom-sql-extension-executor-sa
@@ -480,37 +425,28 @@ This field is immutable. Once set, it will no longer be updated.
 ingestRuleMatchers:
 
 
-
 - attribute: "k8s.namespace.name"
 
 
-
 values:
-
 
 
 - "kube-system"
 
 
-
 - "dynatrace"
-
 
 
 - "default"
 
 
-
 - attribute: "k8s.pod.annotation"
-
 
 
 values:
 
 
-
 - "logs.dynatrace.com/ingest=true"
-
 
 
 - "category=security"
@@ -869,37 +805,28 @@ This field is immutable. Once set, it will no longer be updated.
 ingestRuleMatchers:
 
 
-
 - attribute: "k8s.namespace.name"
 
 
-
 values:
-
 
 
 - "kube-system"
 
 
-
 - "dynatrace"
-
 
 
 - "default"
 
 
-
 - attribute: "k8s.pod.annotation"
-
 
 
 values:
 
 
-
 - "logs.dynatrace.com/ingest=true"
-
 
 
 - "category=security"
@@ -1213,37 +1140,28 @@ This field is immutable. Once set, it will no longer be updated.
 ingestRuleMatchers:
 
 
-
 - attribute: "k8s.namespace.name"
 
 
-
 values:
-
 
 
 - "kube-system"
 
 
-
 - "dynatrace"
-
 
 
 - "default"
 
 
-
 - attribute: "k8s.pod.annotation"
-
 
 
 values:
 
 
-
 - "logs.dynatrace.com/ingest=true"
-
 
 
 - "category=security"
@@ -1551,37 +1469,28 @@ This field is immutable. Once set, it will no longer be updated.
 ingestRuleMatchers:
 
 
-
 - attribute: "k8s.namespace.name"
 
 
-
 values:
-
 
 
 - "kube-system"
 
 
-
 - "dynatrace"
-
 
 
 - "default"
 
 
-
 - attribute: "k8s.pod.annotation"
-
 
 
 values:
 
 
-
 - "logs.dynatrace.com/ingest=true"
-
 
 
 - "category=security"

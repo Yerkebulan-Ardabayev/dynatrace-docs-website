@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:27:00.225748
 
 # Data Observability
 
-# Data Observability
 
 * Latest Dynatrace
 * Explanation

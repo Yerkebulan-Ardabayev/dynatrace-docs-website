@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:29:53.332620
 
 # Azure Mesh Application monitoring
 
-# Azure Mesh Application monitoring
 
 * Latest Dynatrace
 * How-to guide

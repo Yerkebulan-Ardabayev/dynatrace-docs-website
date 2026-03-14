@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:09.202223
 
 # ActiveGate on Windows
 
-# ActiveGate on Windows
 
 * Последняя версия Dynatrace
 * 1 мин. чтения

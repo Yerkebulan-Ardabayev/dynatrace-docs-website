@@ -14,7 +14,6 @@ scraped: 2026-02-06T16:29:00.184458
 
 # Amazon Web Services monitoring
 
-# Amazon Web Services monitoring
 
 * Latest Dynatrace
 * Explanation
@@ -69,7 +68,6 @@ scraped: 2026-02-06T16:29:13.189649
 
 # Microsoft Azure monitoring
 
-# Microsoft Azure monitoring
 
 * Latest Dynatrace
 * Explanation
@@ -118,7 +116,6 @@ scraped: 2026-03-06T21:24:56.840993
 
 # Create a new AWS connection
 
-# Create a new AWS connection
 
 * Latest Dynatrace
 * How-to guide
@@ -166,7 +163,6 @@ scraped: 2026-03-06T21:24:55.181464
 
 # Create a new Azure connection
 
-# Create a new Azure connection
 
 * Latest Dynatrace
 * How-to guide
@@ -207,7 +203,6 @@ scraped: 2026-03-06T21:12:43.905190
 
 # Clouds app
 
-# Clouds app
 
 * Latest Dynatrace
 * App
@@ -337,7 +332,6 @@ The **Overview New** tab is the landing page, where you can start discovering ![
 ### Explorer (New connections)
 
 
-
 Use the **Explorer New** tab to analyze your AWS cloud services and environments. You can explore, filter, and analyze data using various features in ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 
 * In the sidebar on the left, you can select a specific service category (such as  **Containers** or  **Functions**) or analyze all services. In addition, you can quickly filter by predefined attributes that are relevant for the selected category. Select any attribute in the facets sidebar and select **Update** to get results. The filter field is updated with your selection.
@@ -464,7 +458,6 @@ In the **Health** perspective, you can see each cloud service's health and custo
 ### Ready-made dashboards (New connections)
 
 
-
 You have access to the ready-made dashboards for the new AWS Cloud Platform Monitoring and Azure Cloud Platform Monitoring (Preview).
 
 The ready-made dashboards can be accessed through:
@@ -535,7 +528,6 @@ scraped: 2026-02-06T16:29:02.800414
 
 # Google Cloud monitoring
 
-# Google Cloud monitoring
 
 * Latest Dynatrace
 * Explanation
@@ -568,7 +560,6 @@ scraped: 2026-03-05T21:31:07.446265
 
 # Use cases
 
-# Use cases
 
 * Latest Dynatrace
 * Overview
@@ -601,7 +592,6 @@ scraped: 2026-02-06T16:28:51.845671
 
 # Cloud Foundry monitoring
 
-# Cloud Foundry monitoring
 
 * Latest Dynatrace
 * 1-min read
@@ -642,7 +632,6 @@ scraped: 2026-03-06T21:16:48.623627
 
 # Monitor container groups
 
-# Monitor container groups
 
 * Classic
 * How-to guide
@@ -717,7 +706,6 @@ scraped: 2026-03-06T21:16:57.097581
 
 # Container monitoring rules
 
-# Container monitoring rules
 
 * Classic
 * How-to guide
@@ -798,7 +786,6 @@ scraped: 2026-02-06T16:28:55.999404
 
 # Heroku monitoring
 
-# Heroku monitoring
 
 * Reference
 * 2-min read
@@ -848,7 +835,6 @@ scraped: 2026-02-06T16:19:46.615282
 
 # Включить Kubernetes для существующих кластеров.
 
-# Включить Kubernetes для существующих кластеров.
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -886,7 +872,6 @@ scraped: 2026-02-06T16:19:47.983316
 
 # Предварительный просмотр расширенной видимости объектов Kubernetes
 
-# Предварительный просмотр расширенной видимости объектов Kubernetes
 
 * Последняя версия Dynatrace
 * Обзор
@@ -955,113 +940,85 @@ scraped: 2026-02-06T16:19:47.983316
 apiVersion: rbac.authorization.k8s.io/v1
 
 
-
 kind: ClusterRoleBinding
-
 
 
 metadata:
 
 
-
 name: dynatrace-kubernetes-monitoring-sensitive
-
 
 
 roleRef:
 
 
-
 apiGroup: rbac.authorization.k8s.io
-
 
 
 kind: ClusterRole
 
 
-
 name: dynatrace-kubernetes-monitoring-sensitive
-
 
 
 subjects:
 
 
-
 - kind: ServiceAccount
-
 
 
 name: dynatrace-kubernetes-monitoring
 
 
-
 namespace: dynatrace
-
 
 
 ---
 
 
-
 apiVersion: rbac.authorization.k8s.io/v1
-
 
 
 kind: ClusterRole
 
 
-
 metadata:
-
 
 
 name: dynatrace-kubernetes-monitoring-sensitive
 
 
-
 labels:
-
 
 
 rbac.dynatrace.com/aggregate-to-monitoring: "true"
 
 
-
 rules:
-
 
 
 - apiGroups:
 
 
-
 - ""
-
 
 
 resources:
 
 
-
 - configmaps
-
 
 
 - secrets
 
 
-
 verbs:
-
 
 
 - list
 
 
-
 - watch
-
 
 
 - get
@@ -1135,7 +1092,6 @@ scraped: 2026-02-06T16:19:43.850239
 
 # Разрешения
 
-# Разрешения
 
 * Последняя версия Dynatrace
 * Ссылка
@@ -1164,17 +1120,13 @@ Dynatrace IAM позволяет очень подробно и гибко оп�
 ALLOW hub:catalog:read;
 
 
-
 ALLOW storage:buckets:read, storage:entities:read, storage:events:read, storage:logs:read, storage:metrics:read;
-
 
 
 ALLOW environment-api:api-tokens:write, environment-api:entities:read, environment-api:entities:write, environment-api:metrics:read, environment-api:security-problems:read, environment-api:slo:read;
 
 
-
 ALLOW settings:objects:read, settings:objects:write, state:user-app-states:read, state:user-app-states:write;
-
 
 
 ALLOW davis:analyzers:execute, unified-analysis:screen-definition:read;
@@ -1192,7 +1144,6 @@ scraped: 2026-02-06T16:18:49.950622
 
 # Кубернетес
 
-# Кубернетес
 
 * Последняя версия Dynatrace
 * Приложение
@@ -1393,7 +1344,6 @@ scraped: 2026-03-06T21:22:05.276956
 
 # Alert on common Kubernetes/OpenShift issues
 
-# Alert on common Kubernetes/OpenShift issues
 
 * Classic
 * 18-min read
@@ -1548,7 +1498,6 @@ Namespace metric and DQL expressions
 ### Node alerts
 
 
-
 Node metric and DQL expressions
 
 #### Detect node CPU-request saturation
@@ -1607,7 +1556,6 @@ Persistent volume claims metric and DQL expressions
 | DQL | `timeseries {avg(dt.kubernetes.persistentvolumeclaim.available)}, by: {k8s.namespace.name,k8s.persistent_volume_claim.name}` |
 
 ### Workload alerts
-
 
 
 Workload metric and DQL expressions
@@ -1732,7 +1680,6 @@ scraped: 2026-03-06T21:21:49.803705
 
 # Global default monitoring settings for Kubernetes/OpenShift
 
-# Global default monitoring settings for Kubernetes/OpenShift
 
 * Classic
 * 2-min read
@@ -1804,7 +1751,6 @@ scraped: 2026-03-06T21:21:53.164758
 
 # Organize Kubernetes/OpenShift deployments by tags
 
-# Organize Kubernetes/OpenShift deployments by tags
 
 * Classic
 * How-to guide
@@ -1876,93 +1822,70 @@ Create the following `Role` and `RoleBinding`, which allow the `default` service
 # dynatrace-oneagent-metadata-viewer.yaml
 
 
-
 kind: Role
-
 
 
 apiVersion: rbac.authorization.k8s.io/v1
 
 
-
 metadata:
-
 
 
 namespace: namespace1
 
 
-
 name: dynatrace-oneagent-metadata-viewer
-
 
 
 rules:
 
 
-
 - apiGroups: [""]
-
 
 
 resources: ["pods"]
 
 
-
 verbs: ["get"]
-
 
 
 ---
 
 
-
 kind: RoleBinding
-
 
 
 apiVersion: rbac.authorization.k8s.io/v1
 
 
-
 metadata:
-
 
 
 name: dynatrace-oneagent-metadata-viewer-binding
 
 
-
 namespace: namespace1
-
 
 
 subjects:
 
 
-
 - kind: ServiceAccount
-
 
 
 name: default
 
 
-
 apiGroup: ""
-
 
 
 roleRef:
 
 
-
 kind: Role
 
 
-
 name: dynatrace-oneagent-metadata-viewer
-
 
 
 apiGroup: ""
@@ -1984,39 +1907,28 @@ Create the following `Role`, which will allow a service account to view the nece
 # dynatrace-oneagent-metadata-viewer.yaml
 
 
-
-
-
 kind: Role
-
 
 
 apiVersion: rbac.authorization.k8s.io/v1
 
 
-
 metadata:
-
 
 
 namespace: project1
 
 
-
 name: dynatrace-oneagent-metadata-viewer
-
 
 
 rules:
 
 
-
 - apiGroups: [""]
 
 
-
 resources: ["pods"]
-
 
 
 verbs: ["get"]
@@ -2057,7 +1969,6 @@ scraped: 2026-02-06T16:26:39.711082
 
 # Monitor Kubernetes/OpenShift cluster utilization
 
-# Monitor Kubernetes/OpenShift cluster utilization
 
 * 2-min read
 * Updated on Apr 29, 2024
@@ -2117,7 +2028,6 @@ scraped: 2026-03-06T21:21:56.612300
 
 # Monitor Kubernetes/OpenShift events
 
-# Monitor Kubernetes/OpenShift events
 
 * Classic
 * 8-min read
@@ -2178,7 +2088,6 @@ If the environment is platform enabled the events are stored in Grail. The follo
 
 ```
 fetch events
-
 
 
 | filter event.provider == "KUBERNETES_EVENT"
@@ -2294,7 +2203,6 @@ Kubernetes events are made available in the **Kubernetes: Event count** (`builti
 ## Licensing
 
 
-
 To estimate the number of events that consume DDUs, you can query the `dsfm:active_gate.kubernetes.events.processed` metric, which provides information about the number of events that are being ingested into Dynatrace per Kubernetes cluster.
 
 Example query for a 24-hour timeframe:
@@ -2319,7 +2227,6 @@ scraped: 2026-03-06T21:21:54.871292
 
 # Istio/Envoy proxy metrics
 
-# Istio/Envoy proxy metrics
 
 * Classic
 * 1-min read
@@ -2374,7 +2281,6 @@ scraped: 2026-03-06T21:22:00.078051
 
 # Monitor Kubernetes/OpenShift metrics
 
-# Monitor Kubernetes/OpenShift metrics
 
 * Classic
 * 2-min read
@@ -2430,7 +2336,6 @@ scraped: 2026-03-06T21:21:44.712888
 
 # Monitor Prometheus metrics
 
-# Monitor Prometheus metrics
 
 * Classic
 * 14-min read
@@ -2569,85 +2474,64 @@ This example shows how to use the filter syntax in a pod definition with annotat
 apiVersion: v1
 
 
-
 kind: Pod
-
 
 
 metadata:
 
 
-
 name: mypod
-
 
 
 annotations:
 
 
-
 metrics.dynatrace.com/scrape: 'true'
-
 
 
 metrics.dynatrace.com/path: '/path/to-metrics'
 
 
-
 metrics.dynatrace.com/port: '9001'
-
 
 
 metrics.dynatrace.com/secure: 'false'
 
 
-
 metrics.dynatrace.com/filter: |
-
 
 
 {
 
 
-
 "mode": "include",
-
 
 
 "names": [
 
 
-
 "redis_db_keys",
-
 
 
 "*insights*",
 
 
-
 "*bytes"
-
 
 
 ]
 
 
-
 }
-
 
 
 spec:
 
 
-
 containers:
 
 
-
 - name: mycontainer
-
 
 
 image: myregistry/myimage:mytag
@@ -2656,7 +2540,6 @@ image: myregistry/myimage:mytag
 The values of `metrics.dynatrace.com/path`, `metrics.dynatrace.com/port`, and `metrics.dynatrace.com/secure` depend on the exporter being used; adapt them to your requirements. To determine the port value, see [Default port allocationsï»¿](https://github.com/prometheus/prometheus/wiki/Default-port-allocations) for a list of common ports for known exporters.
 
 ### Client authentication Optional
-
 
 
 **Requirements:** Add the permissions to access `secrets` and `configmaps` for the `dynatrace-kubernetes-monitoring` ClusterRole.
@@ -2676,61 +2559,46 @@ For example, the annotations could look as follows:
 apiVersion: v1
 
 
-
 kind: Pod
-
 
 
 metadata:
 
 
-
 name: mypod
-
 
 
 annotations:
 
 
-
 metrics.dynatrace.com/scrape: 'true'
-
 
 
 metrics.dynatrace.com/path: '/path/to-metrics'
 
 
-
 metrics.dynatrace.com/port: '9001'
-
 
 
 metrics.dynatrace.com/secure: 'false'
 
 
-
 metrics.dynatrace.com/tls.ca.crt: 'configmap:kubernetes-config:etcd-metric-serving-ca:ca-bundle.crt'
-
 
 
 metrics.dynatrace.com/tls.crt: 'secret:kubernetes-config:etcd-metric-client:tls.crt'
 
 
-
 metrics.dynatrace.com/tls.key: 'secret:kubernetes-config:etcd-metric-client:tls.key'
-
 
 
 spec:
 
 
-
 containers:
 
 
-
 - name: mycontainer
-
 
 
 image: myregistry/myimage:mytag
@@ -2754,49 +2622,37 @@ The aforementioned annotations are then used on a pod, with the secrets referenc
 apiVersion: v1
 
 
-
 kind: Secret
 
 
-
 metadata:
-
 
 
 name: user-secret
 
 
-
 data:
-
 
 
 username: bXktdXNlcm5hbWUtc2VjcmV0Cg==
 
 
-
 ---
-
 
 
 apiVersion: v1
 
 
-
 kind: Secret
-
 
 
 metadata:
 
 
-
 name: password-secret
 
 
-
 data:
-
 
 
 password: bXktcGFzc3dvcmQtc2VjcmV0Cg==
@@ -2806,57 +2662,43 @@ password: bXktcGFzc3dvcmQtc2VjcmV0Cg==
 apiVersion: v1
 
 
-
 kind: Pod
-
 
 
 metadata:
 
 
-
 name: mypod
-
 
 
 annotations:
 
 
-
 metrics.dynatrace.com/scrape: 'true'
-
 
 
 metrics.dynatrace.com/path: '/path/to-metrics'
 
 
-
 metrics.dynatrace.com/port: '9001'
-
 
 
 metrics.dynatrace.com/secure: 'false'
 
 
-
 metrics.dynatrace.com/http.auth.basic.username: 'secret:default:user-secret:username'
-
 
 
 metrics.dynatrace.com/http.auth.basic.password: 'secret:default:password-secret:password'
 
 
-
 spec:
-
 
 
 containers:
 
 
-
 - name: mycontainer
-
 
 
 image: myregistry/myimage:mytag
@@ -2879,21 +2721,16 @@ The following example shows a secret called `token-secret` created in the `defau
 apiVersion: v1
 
 
-
 kind: Secret
-
 
 
 metadata:
 
 
-
 name: token-secret
 
 
-
 data:
-
 
 
 bearer: bXktYmVhcmVyLXRva2VuCg==
@@ -2905,53 +2742,40 @@ The annotation is then used on a pod, with the secret referenced in the annotati
 apiVersion: v1
 
 
-
 kind: Pod
-
 
 
 metadata:
 
 
-
 name: mypod
-
 
 
 annotations:
 
 
-
 metrics.dynatrace.com/scrape: 'true'
-
 
 
 metrics.dynatrace.com/path: '/path/to-metrics'
 
 
-
 metrics.dynatrace.com/port: '9001'
-
 
 
 metrics.dynatrace.com/secure: 'false'
 
 
-
 metrics.dynatrace.com/http.auth: 'secret:default:token-secret:bearer'
-
 
 
 spec:
 
 
-
 containers:
 
 
-
 - name: mycontainer
-
 
 
 image: myregistry/myimage:mytag
@@ -3005,65 +2829,49 @@ If you don't have full control over the pod template, you have the following opt
   kind: Service
 
 
-
   apiVersion: v1
-
 
 
   metadata:
 
 
-
   name: dynatrace-monitoring-node-exporter
-
 
 
   namespace: kubernetes-monitoring
 
 
-
   annotations:
-
 
 
   metrics.dynatrace.com/port: '12071'
 
 
-
   metrics.dynatrace.com/scrape: 'true'
-
 
 
   metrics.dynatrace.com/secure: 'true'
 
 
-
   metrics.dynatrace.com/path: '/metrics'
-
 
 
   spec:
 
 
-
   ports:
-
 
 
   - name: dynatrace-monitoring-node-exporter-port
 
 
-
   port: 9100
-
 
 
   targetPort: 12071
 
 
-
   selector:
-
 
 
   app.kubernetes.io/name: node-exporter
@@ -3079,65 +2887,49 @@ If you don't have full control over the pod template, you have the following opt
   kind: Service
 
 
-
   apiVersion: v1
-
 
 
   metadata:
 
 
-
   name: dynatrace-monitoring-node-exporter
-
 
 
   namespace: kubernetes-monitoring
 
 
-
   annotations:
-
 
 
   metrics.dynatrace.com/port: '12071'
 
 
-
   metrics.dynatrace.com/scrape: 'true'
-
 
 
   metrics.dynatrace.com/secure: 'true'
 
 
-
   metrics.dynatrace.com/path: '/metrics'
-
 
 
   spec:
 
 
-
   ports:
-
 
 
   - name: dynatrace-monitoring-node-exporter-port
 
 
-
   port: 12071
-
 
 
   selector:
 
 
-
   app.kubernetes.io/name: node-exporter
-
 
 
   clusterIP: None
@@ -3158,7 +2950,6 @@ Metrics from Prometheus exporters are available in Data Explorer for custom char
 You can simply search for metric keys of all available metrics and define how youâd like to analyze and chart your metrics. After that you can pin your charts on a dashboard.
 
 ## Metric alerts
-
 
 
 You can also create custom alerts based on the Prometheus scraped metrics. Go to **Settings** > **Anomaly detection** > **Metric events** and select **Add metric event**. In the **Add metric event** page, search for a Prometheus metric using its key and define your alert. For more information, see [Metric events for alerting](../ru/dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace").
@@ -3232,7 +3023,6 @@ scraped: 2026-03-06T21:21:48.124731
 
 # Monitor persistent volume claims on Kubernetes/OpenShift
 
-# Monitor persistent volume claims on Kubernetes/OpenShift
 
 * Classic
 * 2-min read
@@ -3294,7 +3084,6 @@ scraped: 2026-03-06T21:21:46.421691
 
 # Monitor Kubernetes/OpenShift services
 
-# Monitor Kubernetes/OpenShift services
 
 * Classic
 * 3-min read
@@ -3373,7 +3162,6 @@ scraped: 2026-03-06T21:22:03.440195
 
 # Monitor service-level objectives in Kubernetes/OpenShift
 
-# Monitor service-level objectives in Kubernetes/OpenShift
 
 * Classic
 * 2-min read
@@ -3438,7 +3226,6 @@ scraped: 2026-03-06T21:22:01.751523
 
 # Monitor vulnerabilities in Kubernetes/OpenShift
 
-# Monitor vulnerabilities in Kubernetes/OpenShift
 
 * Classic
 * 1-min read
@@ -3493,7 +3280,6 @@ scraped: 2026-03-06T21:21:51.483367
 
 # Monitor Kubernetes/OpenShift workloads
 
-# Monitor Kubernetes/OpenShift workloads
 
 * Classic
 * 5-min read
@@ -3601,7 +3387,6 @@ scraped: 2026-03-06T21:11:55.255187
 
 # Kubernetes Classic
 
-# Kubernetes Classic
 
 * Classic
 * 1-min read
@@ -3654,7 +3439,6 @@ scraped: 2026-02-06T16:29:09.689987
 
 # Use cases
 
-# Use cases
 
 * Latest Dynatrace
 * 1-min read
@@ -3700,7 +3484,6 @@ scraped: 2026-03-06T21:17:04.380827
 
 # Container platform monitoring
 
-# Container platform monitoring
 
 * Classic
 * Explanation
@@ -3743,7 +3526,6 @@ scraped: 2026-03-06T21:24:19.816559
 
 # Data collected with Dynatrace database monitoring
 
-# Data collected with Dynatrace database monitoring
 
 * Latest Dynatrace
 * Reference
@@ -3776,7 +3558,6 @@ For example:
 
 ```
 SELECT * FROM customers WHERE email = 'john.doe@example.com';
-
 
 
 SELECT * FROM customers WHERE email = 'J.I.Jane@other_example.com';
@@ -3853,7 +3634,6 @@ scraped: 2026-03-06T21:27:36.645522
 
 # Monitor IBM DB2 database
 
-# Monitor IBM DB2 database
 
 * Latest Dynatrace
 * How-to guide
@@ -3898,7 +3678,6 @@ scraped: 2026-03-06T21:31:29.356055
 
 # Monitor MariaDB database
 
-# Monitor MariaDB database
 
 * Latest Dynatrace
 * How-to guide
@@ -3944,7 +3723,6 @@ scraped: 2026-03-03T21:22:02.020530
 
 # Monitor Microsoft SQL database
 
-# Monitor Microsoft SQL database
 
 * Latest Dynatrace
 * How-to guide
@@ -4014,7 +3792,6 @@ scraped: 2026-03-06T21:32:05.181395
 
 # Monitor MySQL database
 
-# Monitor MySQL database
 
 * Latest Dynatrace
 * How-to guide
@@ -4050,7 +3827,6 @@ scraped: 2026-03-03T21:30:38.216751
 
 # Monitor Oracle database
 
-# Monitor Oracle database
 
 * Latest Dynatrace
 * How-to guide
@@ -4094,7 +3870,6 @@ scraped: 2026-03-06T21:35:07.028567
 
 # Monitor SAP HANA database
 
-# Monitor SAP HANA database
 
 * Latest Dynatrace
 * How-to guide
@@ -4144,7 +3919,6 @@ scraped: 2026-03-06T21:37:21.566752
 
 # Monitor Snowflake database
 
-# Monitor Snowflake database
 
 * Latest Dynatrace
 * How-to guide
@@ -4190,7 +3964,6 @@ scraped: 2026-03-06T21:24:14.737474
 
 # Get started with database monitoring
 
-# Get started with database monitoring
 
 * Latest Dynatrace
 * How-to guide
@@ -4248,7 +4021,6 @@ scraped: 2026-03-06T21:30:06.945538
 
 # Troubleshooting
 
-# Troubleshooting
 
 * Latest Dynatrace
 * Troubleshooting
@@ -4266,7 +4038,6 @@ scraped: 2026-03-06T21:12:38.609532
 
 # Databases app
 
-# Databases app
 
 * Latest Dynatrace
 * App
@@ -4450,7 +4221,6 @@ Insights highlight patterns, anomalies, and trends based on built-in domain expe
 ### Deployment flexibility
 
 
-
 ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") **Databases** supports diverse deployment models:
 
 * **On-premises**: Monitor traditional database setups.
@@ -4516,7 +4286,6 @@ scraped: 2026-03-05T21:31:30.344039
 
 # Analyze database services (new page)
 
-# Analyze database services (new page)
 
 * Classic
 * Explanation
@@ -4670,7 +4439,6 @@ scraped: 2026-03-04T21:37:36.126300
 
 # Improve database performance
 
-# Improve database performance
 
 * Classic
 * How-to guide
@@ -4799,7 +4567,6 @@ Most often, over-stressed processes start dropping packets when resources are de
 ## Related topics
 
 
-
 * [Host monitoring with Dynatrace](observe/infrastructure-observability/hosts/monitoring/host-monitoring.md "Monitor hosts with Dynatrace.")
 
 ---
@@ -4814,7 +4581,6 @@ scraped: 2026-03-06T21:31:11.357794
 
 # Support for SQL bind variables
 
-# Support for SQL bind variables
 
 * Classic
 * How-to guide
@@ -4901,7 +4667,6 @@ scraped: 2026-03-05T21:25:45.341800
 
 # Varnish Cache extension
 
-# Varnish Cache extension
 
 * Latest Dynatrace
 * Extension
@@ -5231,7 +4996,6 @@ sma
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
 
-
 ### Explore in Dynatrace Hub
 
 Monitor the statistics of your Varnish Cache instances.](https://www.dynatrace.com/hub/detail/varnish-cache-1/)
@@ -5248,7 +5012,6 @@ scraped: 2026-03-06T21:36:04.473139
 
 # Cisco UCS C-Series extension
 
-# Cisco UCS C-Series extension
 
 * Latest Dynatrace
 * Extension
@@ -5341,65 +5104,49 @@ The extension package contains:
 ((2 * # of CPUs)
 
 
-
 + (1 * # of External Interfaces)
-
 
 
 + (5 * # of Fan Modules)
 
 
-
 + (5 * # of Fans)
-
 
 
 + (5 * # of Local Disks)
 
 
-
 + (4 * # of Memory Arrays)
-
 
 
 + (2 * # of Memory Units)
 
 
-
 + (1 * # of Network Adapters)
-
 
 
 + (5 * # of Power Supplies)
 
 
-
 + (4 * # of Raid Batteries)
-
 
 
 + (1 * # of Storage Controllers)
 
 
-
 + (1 * # of VIC Adapters)
-
 
 
 + (1 * # of VIC External Interfaces)
 
 
-
 + (1 * # of VIC vHBAs)
-
 
 
 + (1 * # of VIC vNICs)
 
 
-
 + (2 * # of Virtual Drives))
-
 
 
 * 525,600 metric data points/year
@@ -5424,7 +5171,6 @@ scraped: 2026-03-06T21:26:37.150221
 
 # Cisco UCS M-Series extension
 
-# Cisco UCS M-Series extension
 
 * Latest Dynatrace
 * Extension
@@ -5521,73 +5267,55 @@ The extension package contains:
 (2 * # of CPUs)
 
 
-
 + (1 * # of Fan Modules)
-
 
 
 + (1 * # of Fans)
 
 
-
 + (1 * # of Local Disks)
-
 
 
 + (1 * # of Memory Arrays)
 
 
-
 + (1 * # of Power Supplies)
-
 
 
 + (1 * # of Storage Controllers)
 
 
-
 + (38 * # of Ethernet Ports)
-
 
 
 + (12 * # of Ethernet Port Pools)
 
 
-
 + (12 * # of Network Port Pools)
-
 
 
 + (12 * # of Server Port Pools)
 
 
-
 + (45 * # of Fabric Interconnects)
-
 
 
 + (34 * # of Fabric Ethernet LAN PCs)
 
 
-
 + (20 * # of Host Ethernet Interfaces)
-
 
 
 + (1 * # of Organizations)
 
 
-
 + (1 * # of Racks)
-
 
 
 + (20 * # of Service Profiles)
 
 
-
 + (1 * # of Switch Cards)
-
 
 
 * 525,600 metric data points/year
@@ -5612,7 +5340,6 @@ scraped: 2026-03-06T21:20:11.540618
 
 # Disk Analytics extension
 
-# Disk Analytics extension
 
 * Latest Dynatrace
 * Extension
@@ -5719,7 +5446,6 @@ scraped: 2026-03-06T21:36:13.602335
 
 # OpenTelemetry Host Monitoring extension
 
-# OpenTelemetry Host Monitoring extension
 
 * Latest Dynatrace
 * Extension
@@ -5801,7 +5527,6 @@ scraped: 2026-03-06T21:31:00.869391
 
 # Radware Alteon Load Balancer extension
 
-# Radware Alteon Load Balancer extension
 
 * Latest Dynatrace
 * Extension
@@ -5992,7 +5717,6 @@ Virtual\_Server\_Utilization\_Virtual
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
 
-
 ### Explore in Dynatrace Hub
 
 Monitor your Radware Alteon Network Load Balancers through SNMP.](https://www.dynatrace.com/hub/detail/radware-alteon-load-balancer/)
@@ -6009,7 +5733,6 @@ scraped: 2026-03-04T21:39:18.259271
 
 # SNMP generic server extension
 
-# SNMP generic server extension
 
 * Latest Dynatrace
 * Extension
@@ -6066,13 +5789,10 @@ To estimate the metrics ingested you can use a formula such as:
 Scalar OIDs: 1 metric per OID
 
 
-
 #metric_keys_in_fs
 
 
-
 Table OIDs: 1 metric per each table entry (e.g., sensor, disk, process, file):
-
 
 
 #metric_keys_in_fs * #entries_in_table
@@ -6090,7 +5810,6 @@ scraped: 2026-03-05T21:38:08.442249
 
 # Stonebranch Universal Automation Center extension
 
-# Stonebranch Universal Automation Center extension
 
 * Latest Dynatrace
 * Extension
@@ -6247,33 +5966,25 @@ License consumption is based on the number of metric data points ingested. A rou
 (
 
 
-
 (
-
 
 
 ( 1 * number of UC Cluster Nodes )
 
 
-
 + ( 46 * number of Universal Controllers )
-
 
 
 + ( 1 * number of OMS )
 
 
-
 + ( 4 * number of Universal Agents )
-
 
 
 + ( 5 * number of unique Task Names )
 
 
-
 )
-
 
 
 ) * 60 minutes * 24 hours * 365 days per year
@@ -6310,7 +6021,6 @@ scraped: 2026-03-06T21:17:01.611559
 
 # Extensions
 
-# Extensions
 
 * Latest Dynatrace
 * Reference
@@ -6321,11 +6031,6 @@ Extensions help you gain deeper insights into your environment and enhance your 
 
 Explore available extensions, narrow results using the filters (data source, category, technology, and vendor), and select an extension to view its detailed documentation, configuration steps, and use cases.
 
-Filter by
-
-Select an option
-
-Type to filter
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -6353,7 +6058,6 @@ scraped: 2026-03-06T21:27:41.661234
 
 # Exclude disks and network traffic from host monitoring
 
-# Exclude disks and network traffic from host monitoring
 
 * Classic
 * How-to guide
@@ -6456,7 +6160,6 @@ scraped: 2026-03-06T21:13:27.489539
 
 # Organize your environment using host groups
 
-# Organize your environment using host groups
 
 * Classic
 * How-to guide
@@ -6554,7 +6257,6 @@ scraped: 2026-03-06T21:10:55.107115
 
 # Host-level settings
 
-# Host-level settings
 
 * Classic
 * How-to guide
@@ -6703,7 +6405,6 @@ The **Detected processes** page is a read-only table of processes detected on th
 For details, see [Process deep monitoring](../ru/observe/infrastructure-observability/process-groups/configuration/pg-monitoring.md "Ways to customize process-group monitoring").
 
 ## Process group monitoring
-
 
 
 To enable or disable deep monitoring for a certain process group on a host
@@ -6878,7 +6579,6 @@ Use the **Log Monitoring** page to configure host-specific settings for log moni
 ## Crash dump analytics
 
 
-
 Use **Crash dump analytics** to manage the automatic detection of application crashes.
 
 1. On the **Host settings** page, select **Crash dump analytics**.
@@ -6899,7 +6599,6 @@ scraped: 2026-03-06T21:28:41.098256
 
 # Host availability
 
-# Host availability
 
 * Classic
 * How-to guide
@@ -7003,7 +6702,6 @@ scraped: 2026-03-06T21:19:55.370527
 
 # OS services monitoring
 
-# OS services monitoring
 
 * Classic
 * How-to guide
@@ -7035,7 +6733,6 @@ With the service status property in ![Smartscape](https://dt-cdn.net/images/smar
 fetch `dt.entity.os:service`
 
 
-
 | fieldsAdd status
 ```
 
@@ -7057,9 +6754,7 @@ Advanced alerting provides access to the service status and the service availabi
 timeseries count(dt.osservice.availability),
 
 
-
 by:{dt.osservice.display_name, dt.osservice.status}
-
 
 
 | filter dt.osservice.display_name=="apache2"
@@ -7328,7 +7023,6 @@ Optional
 2. Select **Save changes**.
 
 
-
 ## Manage monitored OS services
 
 To manage the OS services
@@ -7411,7 +7105,6 @@ scraped: 2026-03-06T21:20:00.972445
 
 # Process availability
 
-# Process availability
 
 * Classic
 * How-to guide
@@ -7539,7 +7232,6 @@ scraped: 2026-02-06T16:20:45.488376
 
 # Infrastructure and Discovery monitoring modes
 
-# Infrastructure and Discovery monitoring modes
 
 * Explanation
 * 12-min read
@@ -7620,7 +7312,6 @@ The following built-in metrics are available in Discovery mode:
 | builtin:host.kernelThreads.running | AIX Kernel threads runnable Number of runnable threads (running or waiting for run time) (threads ready). The average number of runnable threads is seen in the first column of the vmstat command output | Count | autoavgmaxmin |
 
 ### Memory
-
 
 
 | Metric key | Name and description | Unit | Aggregations |
@@ -7704,7 +7395,6 @@ OneAgent in Infrastructure Monitoring mode automatically injects into processes 
 While Full-Stack mode provides complete application performance monitoring, code-level visibility, deep process monitoring, and Infrastructure Monitoring (including PaaS platforms) for use cases where less visibility is required, OneAgent can be configured for Infrastructure Monitoring mode, which provides physical and virtual infrastructure-centric monitoring, along with log monitoring and AIOps.
 
 ### Enable Infrastructure Monitoring mode
-
 
 
 You turn on Infrastructure Monitoring mode at the host level, either during or after OneAgent installation.
@@ -7839,7 +7529,6 @@ Run the [OneAgent on a host - GET a list of hosts with OneAgent details](../ru/d
 ## Virtualization monitoring
 
 
-
 Dynatrace supports [virtualization monitoring](../ru/observe/infrastructure-observability/vmware-vsphere-monitoring.md "Monitor VMware vSphere with Dynatrace."). To monitor the virtual components in your environment, you need to complete an extra step beyond the initial setup. For full details, see [Set up virtualization monitoring](../ru/observe/infrastructure-observability/vmware-vsphere-monitoring.md "Monitor VMware vSphere with Dynatrace.").
 
 ## FAQ
@@ -7876,7 +7565,6 @@ scraped: 2026-03-05T21:36:56.739400
 
 # Host metrics
 
-# Host metrics
 
 * Classic
 * Reference
@@ -8033,7 +7721,6 @@ scraped: 2026-02-06T16:29:11.779328
 
 # Hosts
 
-# Hosts
 
 * Latest Dynatrace
 * Overview
@@ -8116,7 +7803,6 @@ scraped: 2026-03-06T21:16:59.898065
 
 # Containers
 
-# Containers
 
 * Latest Dynatrace
 * Explanation
@@ -8178,7 +7864,6 @@ scraped: 2026-03-06T21:16:58.775446
 
 # Data centers
 
-# Data centers
 
 * Latest Dynatrace
 * Explanation
@@ -8228,7 +7913,6 @@ scraped: 2026-03-06T21:17:02.728334
 
 # Hosts
 
-# Hosts
 
 * Latest Dynatrace
 * Explanation
@@ -8293,7 +7977,6 @@ scraped: 2026-03-06T21:16:45.289692
 
 # Network devices
 
-# Network devices
 
 * Latest Dynatrace
 * Explanation
@@ -8340,7 +8023,6 @@ scraped: 2026-03-01T21:10:49.079167
 
 # Networks
 
-# Networks
 
 * Latest Dynatrace
 * Explanation
@@ -8387,7 +8069,6 @@ scraped: 2026-03-06T21:16:52.044078
 
 # Processes
 
-# Processes
 
 * Latest Dynatrace
 * Explanation
@@ -8447,7 +8128,6 @@ scraped: 2026-03-06T21:10:46.597387
 
 # Infrastructure & Operations
 
-# Infrastructure & Operations
 
 * Latest Dynatrace
 * App
@@ -8609,7 +8289,6 @@ After selecting a process from the list, the data is presented in a dedicated ta
 ### Monitor incoming and outgoing connections
 
 
-
 In the full-page view of a host, under **Connections**, you can see a quick overview of each type of connection, the total number of connected entities, and the number of problems. Expand the panel to see a list of connected entities and possible problems for each of them. You can also see which processes from the current host communicate with other processes or services that aren't part of the host.
 
 The **Connections** table allows you to identify potential sources of problems that don't happen directly on the host. Select the connected entity marked with  to navigate to its details page and investigate the issue.
@@ -8760,7 +8439,6 @@ scraped: 2026-03-06T21:12:00.286290
 
 # Enable Kubernetes experience for existing clusters
 
-# Enable Kubernetes experience for existing clusters
 
 * Latest Dynatrace
 * How-to guide
@@ -8800,7 +8478,6 @@ scraped: 2026-03-06T21:26:38.879293
 
 # Kubernetes Enhanced Object Visibility Preview
 
-# Kubernetes Enhanced Object Visibility Preview
 
 * Latest Dynatrace
 * Explanation
@@ -8869,113 +8546,85 @@ Apply the following YAML with `kubectl` to enable these objects:
 apiVersion: rbac.authorization.k8s.io/v1
 
 
-
 kind: ClusterRoleBinding
-
 
 
 metadata:
 
 
-
 name: dynatrace-kubernetes-monitoring-sensitive
-
 
 
 roleRef:
 
 
-
 apiGroup: rbac.authorization.k8s.io
-
 
 
 kind: ClusterRole
 
 
-
 name: dynatrace-kubernetes-monitoring-sensitive
-
 
 
 subjects:
 
 
-
 - kind: ServiceAccount
-
 
 
 name: dynatrace-kubernetes-monitoring
 
 
-
 namespace: dynatrace
-
 
 
 ---
 
 
-
 apiVersion: rbac.authorization.k8s.io/v1
-
 
 
 kind: ClusterRole
 
 
-
 metadata:
-
 
 
 name: dynatrace-kubernetes-monitoring-sensitive
 
 
-
 labels:
-
 
 
 rbac.dynatrace.com/aggregate-to-monitoring: "true"
 
 
-
 rules:
-
 
 
 - apiGroups:
 
 
-
 - ""
-
 
 
 resources:
 
 
-
 - configmaps
-
 
 
 - secrets
 
 
-
 verbs:
-
 
 
 - list
 
 
-
 - watch
-
 
 
 - get
@@ -9014,7 +8663,6 @@ Please note, that labels and annotation are not part of this field, but are stor
 ## How can I fix missing `ClusterRole` permissions?
 
 
-
 The newly added Kubernetes object types require additional ActiveGate permissions. These permissions (except for ConfigMaps and Secrets [1](#fn-1-1-def)) are automatically granted when Dynatrace Operator is updated to [version 1.7.0](../ru/whats-new/dynatrace-operator/dto-fix-1-7-0.md "Release notes for Dynatrace Operator, version 1.7.0"). Customers using older Dynatrace Operator versions, or those who manually have overwritten the ActiveGate permissions, may lack access to the new Kubernetes endpoints. If permissions are missing, a warning message appears above the table (for example `Missing "ConfigMap" ClusterRole permission for cluster(s): aks-playground-dev.`):
 
 ![How can I fix missing ClusterRole permissions?](https://dt-cdn.net/images/image-20250909-123859-2305-e1ca79056f.png)
@@ -9051,7 +8699,6 @@ scraped: 2026-03-06T21:11:58.626956
 
 # Permissions
 
-# Permissions
 
 * Latest Dynatrace
 * Reference
@@ -9080,17 +8727,13 @@ Example policy
 ALLOW hub:catalog:read;
 
 
-
 ALLOW storage:buckets:read, storage:entities:read, storage:events:read, storage:logs:read, storage:metrics:read;
-
 
 
 ALLOW environment-api:api-tokens:write, environment-api:entities:read, environment-api:entities:write, environment-api:metrics:read, environment-api:security-problems:read, environment-api:slo:read;
 
 
-
 ALLOW settings:objects:read, settings:objects:write, state:user-app-states:read, state:user-app-states:write;
-
 
 
 ALLOW davis:analyzers:execute, unified-analysis:screen-definition:read;
@@ -9108,7 +8751,6 @@ scraped: 2026-03-04T21:33:23.983363
 
 # Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics
 
-# Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics
 
 * Classic
 * Tutorial
@@ -9166,7 +8808,6 @@ scraped: 2026-03-04T21:32:29.858245
 
 # Predictive Kubernetes operations
 
-# Predictive Kubernetes operations
 
 * Latest Dynatrace
 * Tutorial
@@ -9238,7 +8879,6 @@ With [ownership](../ru/deliver/ownership.md "Map team ownership to monitored ent
 ### 3. Set up a workflow
 
 
-
 Use the configuration retrieval on the alert to trigger the workflow. The workflow is composed of the following steps:
 
 1. Identify the host with the disk that needs your attention.
@@ -9265,89 +8905,67 @@ Use the configuration retrieval on the alert to trigger the workflow. The workfl
    import { execution } from '@dynatrace-sdk/automation-utils';
 
 
-
    export default async function () {
-
 
 
    const ex = await execution();
 
 
-
    // In this demo workflow we use a previous grail query to get a valid host ID.
-
 
 
    // Usually this would come from a Davis event
 
 
-
    const res = await ex.result("analyze_with_davis_1");
-
 
 
    let prediction = 0.0;
 
 
-
    let validPrediction = true;
-
 
 
    try {
 
 
-
    const points = res.result.output[0].timeSeriesDataWithPredictions.records[0]["dt.davis.forecast:point"];
-
 
 
    console.log("Got these prediction: %s", points);
 
 
-
    const floatPoints = points.map(p => Number(p));
-
 
 
    prediction = Math.max(...floatPoints);
 
 
-
    console.log("Max value is: %s", prediction);
-
 
 
    } catch (e) {
 
 
-
    console.error("Unable to predict: %s", e instanceof Error ? e.message : JSON.stringify(e));
-
 
 
    validPrediction = false;
 
 
-
    }
-
 
 
    return {
 
 
-
    prediction,
-
 
 
    validPrediction,
 
 
-
    };
-
 
 
    }
@@ -9364,241 +8982,181 @@ Use the configuration retrieval on the alert to trigger the workflow. The workfl
      import {
 
 
-
      monitoredEntitiesClient
-
 
 
      } from "@dynatrace-sdk/client-classic-environment-v2";
 
 
-
      import {
-
 
 
      execution
 
 
-
      } from '@dynatrace-sdk/automation-utils';
-
 
 
      async function getEntityName(entityId) {
 
 
-
      const data = await monitoredEntitiesClient.getEntity({
-
 
 
      entityId: entityId,
 
 
-
      });
-
 
 
      return data.displayName;
 
 
-
      }
-
 
 
      function isKafkaEntity(entityName) {
 
 
-
      return entityName.match(/(\[a-z0-9-]+)-grail kafka/) !== null;
 
 
-
      }
-
 
 
      async function getKafkaConfigURL(ex, entityName) {
 
 
-
      const owners = (await ex.result("get\_owners")).owners;
-
 
 
      let repoLink = undefined;
 
 
-
      // Go though all the owners and figure out which one as a REPOSITORY link type set.
-
 
 
      // We assume that is the correct one and will just use it later for building the URL
 
 
-
      for (const owner of owners) {
-
 
 
      for (const link of owner.links) {
 
 
-
      if (link.linkType === "REPOSITORY") {
-
 
 
      repoLink = link.url;
 
 
-
      break;
 
 
-
      }
 
 
-
      }
-
 
 
      if (repoLink !== undefined) {
 
 
-
      break;
 
 
-
      }
 
 
-
      }
-
 
 
      // "Gracefully" fail and tell the user that no owner had the required link type set;
 
 
-
      // Helps with debugging since otherwise we would build a URL undefined/... which can
-
 
 
      // cause more problems down the line.
 
 
-
      if (repoLink === undefined) {
-
 
 
      throw new Error('No REPOSITORY link was provided for any tagged owner!')
 
 
-
      }
-
 
 
      const baseUrl = repoLink;
 
 
-
      const file = "app//kafka-worker/kafka-configuration/values-scoped.yaml";
-
 
 
      const cluster = entityName.match(/(\[a-z0-9-]+)-grail kafka/)\[1];
 
 
-
      return `${baseUrl}/${cluster}/${file}`;
-
 
 
      }
 
 
-
      export default async function() {
-
 
 
      const ex = await execution();
 
 
-
      // In this demo workflow we use a previous grail query to get a valid host ID.
-
 
 
      // Usually this would come from a Davis event
 
 
-
      const queryResults = await ex.result("query\_grail\_kafka\_hosts");
-
 
 
      const records = queryResults.records;
 
 
-
      // Only have a look at the first element because an event likely only
-
 
 
      // contains one element:
 
 
-
      const {
-
 
 
      id
 
 
-
      } = records\[0];
-
 
 
      // Use the following DQL to query host IDs for grail kafka entities
 
 
-
      // >>> fetch dt.entity.host | filter like(entity.name, "%-grail kafka")
-
 
 
      const name = await getEntityName(id);
 
 
-
      // name should be used here, but only if isKafkaEntity is true!
-
 
 
      return {
 
 
-
      isKafkaHost: isKafkaEntity(name),
 
 
-
      url: await getKafkaConfigURL(ex, name)
-
 
 
      };
@@ -9613,153 +9171,115 @@ Use the configuration retrieval on the alert to trigger the workflow. The workfl
    apiVersion: batch/v1
 
 
-
    kind: Job
-
 
 
    metadata:
 
 
-
    name: {{ "demo-job-resize-%s" % result('disk_from_host').records[0].id | lower }}
-
 
 
    labels:
 
 
-
    joblabel: "test"
 
 
-
    spec:
-
 
 
    ttlSecondsAfterFinished: 300
 
 
-
    backoffLimit: 0
-
 
 
    activeDeadlineSeconds: 60
 
 
-
    podFailurePolicy:
-
 
 
    rules:
 
 
-
    - action: FailJob
-
 
 
    onExitCodes:
 
 
-
    operator: NotIn
-
 
 
    values: [0]
 
 
-
    template:
-
 
 
    spec:
 
 
-
    restartPolicy: Never
-
 
 
    containers:
 
 
-
    - name: main
-
 
 
    image: docker.io/library/bash:5
 
 
-
    command: ["bash"]
-
 
 
    args:
 
 
-
    - -c
-
 
 
    - echo "Computing..."; sleep 10; echo $PATH_URL; echo $IS_KAFKA_HOST; echo $PREDICTION; echo $VALID_PREDICTION; test $VALID_PREDICTION = 'True'; exit $?
 
 
-
    resources:
-
 
 
    limits:
 
 
-
    memory: 10Mi
-
 
 
    cpu: 1m
 
 
-
    env:
-
 
 
    - name: PATH_URL
 
 
-
    value: "{{result('repository_url').url}}"
-
 
 
    - name: IS_KAFKA_HOST
 
 
-
    value: "{{result('repository_url').isKafkaHost}}"
-
 
 
    - name: PREDICTION
 
 
-
    value: "{{result('extract_prediction').prediction}}"
 
 
-
    - name: VALID_PREDICTION
-
 
 
    value: "{{result('extract_prediction').validPrediction}}"
@@ -9798,7 +9318,6 @@ scraped: 2026-03-06T21:09:44.668198
 
 # Kubernetes
 
-# Kubernetes
 
 * Latest Dynatrace
 * App
@@ -9929,7 +9448,6 @@ In this example, you can see that 8 nodes out of 24 are currently considered unh
 ### Health alerts and warning signals
 
 
-
 Health alerts and warning signals help you monitor your infrastructure by providing clear, actionable insights. These features reduce the noise from infrastructure issues and improve alerting capabilities, so you can focus on what matters most. This is achieved through better categorization of detected malfunctions.
 
 * For critical events, a Health alert is raised, triggering a [Dynatrace Problems](../ru/dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.") investigation.
@@ -10017,7 +9535,6 @@ scraped: 2026-03-02T21:20:28.336015
 
 # Ingest NetFlow records into Dynatrace
 
-# Ingest NetFlow records into Dynatrace
 
 * How-to guide
 * 2-min read
@@ -10053,113 +9570,85 @@ In this example, we deploy using Docker to keep the demonstration simple. For pr
    receivers:
 
 
-
    netflow:
-
 
 
    scheme: netflow
 
 
-
    port: 2055
-
 
 
    sockets: 16
 
 
-
    workers: 32
-
 
 
    netflow/sflow:
 
 
-
    scheme: sflow
-
 
 
    port: 6343
 
 
-
    sockets: 16
-
 
 
    workers: 32
 
 
-
    processors:
-
 
 
    batch:
 
 
-
    send_batch_size: 2000
-
 
 
    timeout: 30s
 
 
-
    exporters:
-
 
 
    otlp_http:
 
 
-
    endpoint: "${env:DT_ENDPOINT}"
-
 
 
    headers:
 
 
-
    Authorization: "Api-Token ${env:DT_API_TOKEN}"
-
 
 
    service:
 
 
-
    pipelines:
 
 
-
    logs:
-
 
 
    receivers: [netflow, netflow/sflow]
 
 
-
    processors: [batch]
-
 
 
    exporters: [otlp_http]
 
 
-
    telemetry:
 
 
-
    logs:
-
 
 
    level: debug
@@ -10218,17 +9707,13 @@ Using this DQL query, you can get a summary of the bytes by destination IP and p
 fetch logs
 
 
-
 | filter matchesValue(flow.type, "netflow_v9")
-
 
 
 | summarize {totalBytes= sum(toLong(flow.io.bytes)),totalPackets=sum(toLong(flow.io.packets))}, by: {destination.address,destination.port}
 
 
-
 | sort totalBytes desc
-
 
 
 | limit 10
@@ -10252,7 +9737,6 @@ scraped: 2026-03-02T21:24:43.347828
 
 # Extended network monitoring
 
-# Extended network monitoring
 
 * How-to guide
 * 5-min read
@@ -10386,7 +9870,6 @@ scraped: 2026-03-02T21:21:25.495350
 
 # Troubleshooting network monitoring
 
-# Troubleshooting network monitoring
 
 * Troubleshooting
 * 1-min read
@@ -10411,7 +9894,6 @@ scraped: 2026-03-06T21:25:43.577365
 
 # Ingest NetFlow records into Dynatrace
 
-# Ingest NetFlow records into Dynatrace
 
 * Classic
 * How-to guide
@@ -10448,113 +9930,85 @@ In this example, we deploy using Docker to keep the demonstration simple. For pr
    receivers:
 
 
-
    netflow:
-
 
 
    scheme: netflow
 
 
-
    port: 2055
-
 
 
    sockets: 16
 
 
-
    workers: 32
-
 
 
    netflow/sflow:
 
 
-
    scheme: sflow
-
 
 
    port: 6343
 
 
-
    sockets: 16
-
 
 
    workers: 32
 
 
-
    processors:
-
 
 
    batch:
 
 
-
    send_batch_size: 2000
-
 
 
    timeout: 30s
 
 
-
    exporters:
-
 
 
    otlp_http:
 
 
-
    endpoint: "${env:DT_ENDPOINT}"
-
 
 
    headers:
 
 
-
    Authorization: "Api-Token ${env:DT_API_TOKEN}"
-
 
 
    service:
 
 
-
    pipelines:
 
 
-
    logs:
-
 
 
    receivers: [netflow, netflow/sflow]
 
 
-
    processors: [batch]
-
 
 
    exporters: [otlp_http]
 
 
-
    telemetry:
 
 
-
    logs:
-
 
 
    level: debug
@@ -10613,17 +10067,13 @@ Using this DQL query, you can get a summary of the bytes by destination IP and p
 fetch logs
 
 
-
 | filter matchesValue(flow.type, "netflow_v9")
-
 
 
 | summarize {totalBytes= sum(toLong(flow.io.bytes)),totalPackets=sum(toLong(flow.io.packets))}, by: {destination.address,destination.port}
 
 
-
 | sort totalBytes desc
-
 
 
 | limit 10
@@ -10647,7 +10097,6 @@ scraped: 2026-03-06T21:20:02.660098
 
 # Extended network monitoring
 
-# Extended network monitoring
 
 * Classic
 * How-to guide
@@ -10782,7 +10231,6 @@ scraped: 2026-03-06T21:28:39.385292
 
 # Troubleshooting network monitoring
 
-# Troubleshooting network monitoring
 
 * Classic
 * Troubleshooting
@@ -10808,7 +10256,6 @@ scraped: 2026-02-06T16:29:04.150090
 
 # Networks
 
-# Networks
 
 * Overview
 * 2-min read
@@ -10874,7 +10321,6 @@ scraped: 2026-03-06T21:13:05.291736
 
 # Which are the most important processes?
 
-# Which are the most important processes?
 
 * Classic
 * How-to guide
@@ -10932,7 +10378,6 @@ scraped: 2026-03-06T21:13:32.671349
 
 # Process group detection
 
-# Process group detection
 
 * Classic
 * How-to guide
@@ -11020,7 +10465,6 @@ To create an advanced detection rule in the Dynatrace web UI
 ### Standalone rules
 
 
-
 #### When to enable this option
 
 Suppose you have a process group with multiple processes. Each process simultaneously performs the same function for different customers who are using your application at the same time. While each process instance has the same name, each instance runs off a unique customer-specific configuration about which Dynatrace doesnât have any information. Dynatrace therefore aggregates all related processes into a single process group in order to facilitate monitoring.
@@ -11071,49 +10515,37 @@ To use the Settings API
      [
 
 
-
      {
-
 
 
      "schemaId": "builtin:process-group.simple-detection-rule"
 
 
-
      "scope": "environment"
-
 
 
      "value": {
 
 
-
      "enabled": true,
-
 
 
      "ruleType": "env",
 
 
-
      "groupIdentifier": "MY_PG_NAME",
-
 
 
      "instanceIdentifier": "MY_INSTANCE_NAME",
 
 
-
      "processType": "PROCESS_TYPE_APACHE_HTTPD"
 
 
-
      }
 
 
-
      }
-
 
 
      ]
@@ -11127,93 +10559,70 @@ To use the Settings API
      [
 
 
-
      {
-
 
 
      "schemaId": "builtin:process-group.advanced-detection-rule"
 
 
-
      "scope": "environment"
-
 
 
      "value": {
 
 
-
      "enabled": true,
-
 
 
      "processDetection": {
 
 
-
      "property": "JBOSS_SERVER_NAME",
-
 
 
      "containedString": "MyJBossServer",
 
 
-
      "restrictToProcessType": "PROCESS_TYPE_JBOSS"
 
 
-
      },
-
 
 
      "groupExtraction": {
 
 
-
      "property": "COMMAND_LINE_ARGS",
-
 
 
      "delimiter": {
 
 
-
      "from": "-environment=",
-
 
 
      "to": "-",
 
 
-
      "removeIds": true
 
 
-
      },
-
 
 
      "standaloneRule": false
 
 
-
      },
-
 
 
      "instanceExtraction": {}
 
 
-
      }
 
 
-
      }
-
 
 
      ]
@@ -11227,113 +10636,85 @@ To use the Settings API
      [
 
 
-
      {
-
 
 
      "schemaId": "builtin:declarativegrouping"
 
 
-
      "scope": "environment"
-
 
 
      "value": {
 
 
-
      "name": "keepalived",
-
 
 
      "detection": [
 
 
-
      {
-
 
 
      "id": "keepalived",
 
 
-
      "processGroupName": "keepalived",
-
 
 
      "rules": [
 
 
-
      {
-
 
 
      "property": "executable",
 
 
-
      "condition": "$eq(keepalived)"
-
 
 
      },
 
 
-
      {
-
 
 
      "property": "executablePath",
 
 
-
      "condition": "$prefix(/usr/sbin/keepalived)"
-
 
 
      },
 
 
-
      {
-
 
 
      "property": "commandLine",
 
 
-
      "condition": "$eq(-d)"
 
 
-
      }
-
 
 
      ]
 
 
-
      }
-
 
 
      ]
 
 
-
      }
 
 
-
      }
-
 
 
      ]
@@ -11348,69 +10729,52 @@ You can also attach your current configuration to your [Extensions 2.0](../ru/in
 ---
 
 
-
 name: custom:my-extension
-
 
 
 version: 1.0.0
 
 
-
 minDynatraceVersion: "1.218"
-
 
 
 author:
 
 
-
 name: Joe Doe
-
 
 
 processes:
 
 
-
 - name: keepalived
-
 
 
 detection:
 
 
-
 - id: ext.keepalived
-
 
 
 processGroupName: keepalived
 
 
-
 rules:
-
 
 
 - property: executable
 
 
-
 condition: "$eq(keepalived)"
-
 
 
 - property: executablePath
 
 
-
 condition: "$prefix(/usr/sbin/keepalived)"
 
 
-
 - property: commandLine
-
 
 
 condition: "$eq(-d)"
@@ -11428,7 +10792,6 @@ scraped: 2026-03-06T21:20:08.014873
 
 # Process deep monitoring
 
-# Process deep monitoring
 
 * Classic
 * How-to guide
@@ -11585,7 +10948,6 @@ scraped: 2026-03-06T21:16:55.383877
 
 # Process groups
 
-# Process groups
 
 * Classic
 * Explanation
@@ -11674,7 +11036,6 @@ scraped: 2026-03-05T21:39:29.621233
 
 # Analyze queues
 
-# Analyze queues
 
 * Classic
 * How-to guide
@@ -11765,7 +11126,6 @@ scraped: 2026-03-06T21:26:53.183725
 
 # IBM MQ tracing
 
-# IBM MQ tracing
 
 * Classic
 * How-to guide
@@ -11855,153 +11215,115 @@ The ID of the queue manager schema is `builtin:ibmmq.queue-managers`.
    [
 
 
-
    {
-
 
 
    "schemaId": "builtin:ibmmq.queue-managers",
 
 
-
    "scope": "environment",
-
 
 
    "value": {
 
 
-
    "name": "Queue Manager 1",
-
 
 
    "clusters": [
 
 
-
    "Name of the cluster this Queue Manager 1 is part of"
 
 
-
    ],
-
 
 
    "aliasQueues": [
 
 
-
    {
-
 
 
    "aliasQueue": "Alias Queue",
 
 
-
    "baseQueue": "Base queue which the Alias Queue should point to",
 
 
-
    "clusterVisibility": [
-
 
 
    "Name of a cluster this Alias Queue should be visible in (the queue manager must be part of this cluster)"
 
 
-
    ]
-
 
 
    }
 
 
-
    ],
-
 
 
    "remoteQueues": [
 
 
-
    {
-
 
 
    "localQueue": "Local definition of the Remote Queue",
 
 
-
    "remoteQueue": "Remote Queue",
-
 
 
    "remoteQueueManager": "Remote Queue Manager",
 
 
-
    "clusterVisibility": [
-
 
 
    "Name of a cluster this local definition of the Remote Queue should be visible in (the queue manager must be part of this cluster)"
 
 
-
    ]
 
 
-
    }
-
 
 
    ],
 
 
-
    "clusterQueues": [
-
 
 
    {
 
 
-
    "localQueue": "Local Queue",
-
 
 
    "clusterVisibility": [
 
 
-
    "Name of a cluster this Local Queue should be visible in (the queue manager must be part of this cluster)"
 
 
+   ]
+
+
+   }
+
 
    ]
 
 
-
    }
 
 
-
-   ]
-
-
-
    }
-
-
-
-   }
-
 
 
    ]
@@ -12020,65 +11342,49 @@ The ID of the queue sharing group schema is `builtin:ibmmq.queue-sharing-group`.
    [
 
 
-
    {
-
 
 
    "schemaId": "builtin:ibmmq.queue-sharing-group",
 
 
-
    "scope": "environment",
-
 
 
    "value": {
 
 
-
    "name": "Queue Sharing Group",
-
 
 
    "queueManagers": [
 
 
-
    "Queue Manager 1",
-
 
 
    "Queue Manager 2"
 
 
-
    ],
-
 
 
    "sharedQueues": [
 
 
-
    "Shared Queue 1",
-
 
 
    "Shared Queue 2"
 
 
-
    ]
 
 
-
    }
 
 
-
    }
-
 
 
    ]
@@ -12097,69 +11403,52 @@ The ID of the IMS bridge schema is `builtin:ibmmq.ims-bridges`.
    [
 
 
-
    {
-
 
 
    "schemaId": "builtin:ibmmq.ims-bridges",
 
 
-
    "scope": "environment",
-
 
 
    "value": {
 
 
-
    "name": "IMS Bridge",
-
 
 
    "queueManagers": [
 
 
-
    {
-
 
 
    "name": "Queue Manager",
 
 
-
    "queueManagerQueue": [
-
 
 
    "Queue 1",
 
 
-
    "Queue 2"
 
 
+   ]
+
+
+   }
+
 
    ]
 
 
-
    }
 
 
-
-   ]
-
-
-
    }
-
-
-
-   }
-
 
 
    ]
@@ -12167,7 +11456,6 @@ The ID of the IMS bridge schema is `builtin:ibmmq.ims-bridges`.
 2. Use the [POST an object](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 ### Update queue manager
-
 
 
 The ID of the queue manager schema is `builtin:ibmmq.queue-managers`.
@@ -12186,141 +11474,106 @@ The `aliasQueues` object can be a local queue owned by this queue manager, a loc
      {
 
 
-
      "updateToken": "vu9U3hXY3q0ATAAkMG",
-
 
 
      "value": {
 
 
-
      "name": "Queue Manager A",
-
 
 
      "clusters": [
 
 
-
      "Name of a cluster this Queue Manager A is part of"
 
 
-
      ],
-
 
 
      "aliasQueues": [
 
 
-
      {
-
 
 
      "aliasQueue": "Alias Queue",
 
 
-
      "baseQueue": "Base queue which the Alias Queue should point to",
 
 
-
      "clusterVisibility": [
-
 
 
      "Name of a cluster this Alias Queue should be visible in (the queue manager must be part of this cluster)"
 
 
-
      ]
-
 
 
      }
 
 
-
      ],
-
 
 
      "remoteQueues": [
 
 
-
      {
-
 
 
      "localQueue": "Local definition of the Remote Queue",
 
 
-
      "remoteQueue": "Remote Queue",
-
 
 
      "remoteQueueManager": "Remote Queue Manager",
 
 
-
      "clusterVisibility": [
-
 
 
      "Name of a cluster this local definition of the Remote Queue should be visible in (the queue manager must be part of this cluster)"
 
 
-
      ]
 
 
-
      }
-
 
 
      ],
 
 
-
      "clusterQueues": [
-
 
 
      {
 
 
-
      "localQueue": "Local Queue",
-
 
 
      "clusterVisibility": [
 
 
-
      "Name of a cluster this Local Queue should be visible in (the queue manager must be part of this cluster)"
 
 
-
      ]
-
 
 
      }
 
 
-
      ]
 
 
-
      }
-
 
 
      }
@@ -12342,53 +11595,40 @@ The ID of the queue sharing group schema is `builtin:ibmmq.queue-sharing-group`.
      {
 
 
-
      "updateToken": "vu9U3hXY3q0ATAAkMG",
-
 
 
      "value": {
 
 
-
      "name": "Queue Sharing Group",
-
 
 
      "queueManagers": [
 
 
-
      "Queue Manager A",
-
 
 
      "Queue Manager B"
 
 
-
      ],
-
 
 
      "sharedQueues": [
 
 
-
      "Shared Queue A",
-
 
 
      "Shared Queue B"
 
 
-
      ]
 
 
-
      }
-
 
 
      }
@@ -12411,57 +11651,43 @@ The ID of the IMS bridge schema is `builtin:ibmmq.ims-bridges`.
      {
 
 
-
      "updateToken": "vu9U3hXY3q0ATAAkMG",
-
 
 
      "value": {
 
 
-
      "name": "IMS Bridge",
-
 
 
      "queueManagers": [
 
 
-
      {
-
 
 
      "name": "Queue Manager",
 
 
-
      "queueManagerQueue": [
-
 
 
      "Queue A",
 
 
-
      "Queue B"
 
 
-
      ]
-
 
 
      }
 
 
-
      ]
 
 
-
      }
-
 
 
      }
@@ -12484,7 +11710,6 @@ scraped: 2026-03-01T21:16:56.958006
 
 # Queue tags and management zones
 
-# Queue tags and management zones
 
 * How-to guide
 * 2-min read
@@ -12602,7 +11827,6 @@ scraped: 2026-03-05T21:32:36.644435
 
 # Configure message queue monitoring
 
-# Configure message queue monitoring
 
 * Classic
 * How-to guide
@@ -12642,7 +11866,6 @@ scraped: 2026-03-06T21:38:09.609161
 
 # Queue concepts
 
-# Queue concepts
 
 * Classic
 * Explanation
@@ -12727,7 +11950,6 @@ scraped: 2026-03-06T21:16:50.344003
 
 # Message queues
 
-# Message queues
 
 * Classic
 * Explanation
@@ -12829,7 +12051,6 @@ scraped: 2026-03-05T21:36:25.316351
 
 # Limit VMware infrastructure monitoring using permissions
 
-# Limit VMware infrastructure monitoring using permissions
 
 * Classic
 * How-to guide
@@ -12918,7 +12139,6 @@ scraped: 2026-02-06T16:29:07.626668
 
 # VMware vSphere monitoring
 
-# VMware vSphere monitoring
 
 * Overview
 * Published Aug 12, 2021
@@ -13017,7 +12237,6 @@ scraped: 2026-03-06T21:10:29.766809
 
 # Infrastructure Observability
 
-# Infrastructure Observability
 
 * Latest Dynatrace
 * Overview

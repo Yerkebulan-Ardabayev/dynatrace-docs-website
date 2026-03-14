@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:57.484657
 
 # Network traffic
 
-# Network traffic
 
 * Latest Dynatrace
 * 3-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:03.640210
 
 # What is a monitoring environment?
 
-# What is a monitoring environment?
 
 * Latest Dynatrace
 * 4-min read

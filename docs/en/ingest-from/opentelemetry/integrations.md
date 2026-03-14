@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:21.702683
 
 # Integrate with Istio and Envoy
 
-# Integrate with Istio and Envoy
 
 * Latest Dynatrace
 * Overview

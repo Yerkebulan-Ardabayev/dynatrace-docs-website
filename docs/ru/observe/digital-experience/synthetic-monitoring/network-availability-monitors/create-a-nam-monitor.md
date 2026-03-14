@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:19:14.372926
 
 # Настройка монитора NAM
 
-# Настройка монитора NAM
 
 * Classic
 * Практическое руководство
@@ -268,25 +267,19 @@ NAM предлагает несколько способов решения эт
 {
 
 
-
 "type": "SUCCESS_RATE_PERCENT",
-
 
 
 "properties": {
 
 
-
 "value": "80",
-
 
 
 "operator": ">"
 
 
-
 }
-
 
 
 }
@@ -319,25 +312,19 @@ NAM предлагает несколько способов решения эт
 {
 
 
-
 "type": "ICMP_SUCCESS_RATE_PERCENT",
-
 
 
 "properties": {
 
 
-
 "value": "80",
-
 
 
 "operator": ">"
 
 
-
 }
-
 
 
 }
@@ -364,13 +351,10 @@ NAM предлагает несколько способов решения эт
 {
 
 
-
 "type": "TCP_PORT_UNREACHABLE",
 
 
-
 "properties": {}
-
 
 
 }
@@ -396,25 +380,19 @@ NAM предлагает несколько способов решения эт
 {
 
 
-
 "type": "DNS_STATUS_CODE",
-
 
 
 "properties": {
 
 
-
 "operator": "=",
-
 
 
 "statusCode": "0"
 
 
-
 }
-
 
 
 }
@@ -424,25 +402,19 @@ NAM предлагает несколько способов решения эт
 {
 
 
-
 "type": "DNS_STATUS_CODE",
-
 
 
 "properties": {
 
 
-
 "operator": "=",
-
 
 
 "status": "NOERROR"
 
 
-
 }
-
 
 
 }
@@ -464,33 +436,25 @@ NAM предлагает несколько способов решения эт
 {
 
 
-
 "type": "DNS_IP_ADDRESS",
-
 
 
 "properties": {
 
 
-
 "quantifier": "any",
-
 
 
 "recordType": "A",
 
 
-
 "operator": "=",
-
 
 
 "address": "54.208.9.71"
 
 
-
 }
-
 
 
 }
@@ -500,33 +464,25 @@ NAM предлагает несколько способов решения эт
 {
 
 
-
 "type": "DNS_IP_ADDRESS",
-
 
 
 "properties": {
 
 
-
 "quantifier": "all",
-
 
 
 "recordType": "A",
 
 
-
 "operator": "in",
-
 
 
 "subnet": "10.102.44.0/24"
 
 
-
 }
-
 
 
 }
@@ -546,29 +502,22 @@ NAM предлагает несколько способов решения эт
 {
 
 
-
 "type": "DNS_RECORD_COUNT",
-
 
 
 "properties": {
 
 
-
 "recordType": "A",
-
 
 
 "operator": ">",
 
 
-
 "value": "80"
 
 
-
 }
-
 
 
 }
@@ -589,33 +538,25 @@ NAM предлагает несколько способов решения эт
 {
 
 
-
 "type": "DNS_TIME_TO_LIVE",
-
 
 
 "properties": {
 
 
-
 "quantifier": "any",
-
 
 
 "recordType": "A",
 
 
-
 "operator": ">=",
-
 
 
 "value": "80"
 
 
-
 }
-
 
 
 }
@@ -639,33 +580,25 @@ NAM предлагает несколько способов решения эт
 {
 
 
-
 "type": "DNS_RECORD_VALUE",
-
 
 
 "properties": {
 
 
-
 "quantifier": "any",
-
 
 
 "recordType": "TXT",
 
 
-
 "operator": "contains",
-
 
 
 "sequence": "ms71815323"
 
 
-
 }
-
 
 
 }
@@ -675,33 +608,25 @@ NAM предлагает несколько способов решения эт
 {
 
 
-
 "type": "DNS_RECORD_VALUE",
-
 
 
 "properties": {
 
 
-
 "quantifier": "any",
-
 
 
 "recordType": "TXT",
 
 
-
 "operator": "matches",
-
 
 
 "pattern": "\"v=spf1 include:*"
 
 
-
 }
-
 
 
 }

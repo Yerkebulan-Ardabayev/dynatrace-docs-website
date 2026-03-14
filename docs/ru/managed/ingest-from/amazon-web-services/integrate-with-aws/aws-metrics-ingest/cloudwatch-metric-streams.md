@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:53.919137
 
 # Amazon CloudWatch Metric Streams
 
-# Amazon CloudWatch Metric Streams
 
 * Classic
 * Практическое руководство
@@ -65,13 +64,11 @@ scraped: 2026-03-06T21:33:53.919137
 name = "dt-url"
 
 
-
 value = <your_API_URL>
 ```
 
 ```
 name = "require-valid-certificate"
-
 
 
 value = "true"
@@ -105,25 +102,19 @@ CloudFormation позволяет развернуть клиент Metric Strea
 DYNATRACE_ENV_URL=<your_API_URL>
 
 
-
 DYNATRACE_API_KEY=<your_API_token>
-
 
 
 STACK_NAME=dynatrace-aws-metric-streams-client
 
 
-
 DELIVERY_ENDPOINT=https://aws.cloud.dynatrace.com/
-
 
 
 REQUIRE_VALID_CERTIFICATE=true
 
 
-
 wget -O dynatrace-aws-metric-streams-client.yaml  https://assets.cloud.dynatrace.com/awsmetricstreaming/dynatrace-aws-metric-streams-client.yaml && \
-
 
 
 aws cloudformation deploy --capabilities CAPABILITY_NAMED_IAM --template-file ./dynatrace-aws-metric-streams-client.yaml --stack-name $STACK_NAME --parameter-overrides DynatraceEnvironmentUrl=$DYNATRACE_ENV_URL DynatraceApiKey=$DYNATRACE_API_KEY RequireValidCertificate=$REQUIRE_VALID_CERTIFICATE FirehoseHttpDeliveryEndpoint=$DELIVERY_ENDPOINT

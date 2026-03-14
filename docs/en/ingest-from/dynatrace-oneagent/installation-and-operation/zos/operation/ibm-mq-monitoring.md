@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:49.354494
 
 # Set up IBM MQ tracing on z/OS
 
-# Set up IBM MQ tracing on z/OS
 
 * Latest Dynatrace
 * 1-min read

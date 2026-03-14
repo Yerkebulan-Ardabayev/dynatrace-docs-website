@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:18.576681
 
 # OpenTelemetry interoperability
 
-# OpenTelemetry interoperability
 
 * Classic
 * 1-min read
@@ -25,21 +24,16 @@ With Dynatrace interoperability for OpenTelemetry, you can use the instrumentati
   {
 
 
-
   ...other configuration properties...
-
 
 
   "OpenTelemetry": {
 
 
-
   "EnableIntegration": true
 
 
-
   }
-
 
 
   }

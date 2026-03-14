@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:20:45.488376
 
 # Режимы мониторинга Infrastructure и Discovery
 
-# Режимы мониторинга Infrastructure и Discovery
 
 * Пояснение
 * Чтение: 12 мин.

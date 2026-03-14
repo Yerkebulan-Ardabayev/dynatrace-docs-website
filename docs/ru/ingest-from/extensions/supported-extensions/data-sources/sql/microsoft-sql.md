@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:10.453218
 
 # Управление расширениями Microsoft SQL Server
 
-# Управление расширениями Microsoft SQL Server
 
 * Latest Dynatrace
 * How-to guide

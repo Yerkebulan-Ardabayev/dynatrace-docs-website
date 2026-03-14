@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:23:02.373988
 
 # Built-in classic metrics
 
-# Built-in classic metrics
 
 * Reference
 * 3-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:29:31.056016
 
 # Управление приватными локациями Synthetic Monitoring
 
-# Управление приватными локациями Synthetic Monitoring
 
 * Практическое руководство
 * Чтение: 10 мин
@@ -158,9 +157,7 @@ Amazon Linux 2023, Ubuntu и Oracle Linux 9 (Chrome for Testing)
    sudo yum -y install yum-plugin-versionlock
 
 
-
    sudo yum versionlock chromium
-
 
 
    sudo yum versionlock chromium-common
@@ -187,9 +184,7 @@ Ubuntu Server 20.04 и 22.04
    sudo rm -rf /usr/lib/chrome_for_testing/chrome-linux64
 
 
-
    sudo unzip /tmp/chrome.zip -d /usr/lib/chrome_for_testing
-
 
 
    rm /tmp/chrome.zip
@@ -212,7 +207,6 @@ Ubuntu Server 20.04 и 22.04
 
    ```
    [synthetic]
-
 
 
    chromium_repo = https://172.18.0.100/chromium-repo

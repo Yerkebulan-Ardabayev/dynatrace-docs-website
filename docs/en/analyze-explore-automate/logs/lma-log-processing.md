@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:13.168025
 
 # Log processing
 
-# Log processing
 
 * Latest Dynatrace
 * Explanation

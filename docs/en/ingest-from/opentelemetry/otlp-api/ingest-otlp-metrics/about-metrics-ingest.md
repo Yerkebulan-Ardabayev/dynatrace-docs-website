@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:31:11.078209
 
 # About OTLP metrics ingest
 
-# About OTLP metrics ingest
 
 * Latest Dynatrace
 * Explanation

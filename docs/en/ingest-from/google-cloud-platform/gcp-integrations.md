@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:47.009562
 
 # Google Cloud integrations
 
-# Google Cloud integrations
 
 * Latest Dynatrace
 * Overview

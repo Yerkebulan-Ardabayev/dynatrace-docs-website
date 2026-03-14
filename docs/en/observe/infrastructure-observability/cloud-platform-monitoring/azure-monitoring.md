@@ -6,7 +6,6 @@ scraped: 2026-02-06T16:29:13.189649
 
 # Microsoft Azure monitoring
 
-# Microsoft Azure monitoring
 
 * Latest Dynatrace
 * Explanation

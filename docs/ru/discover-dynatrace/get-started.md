@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:09:27.563916
 
 # Начало работы с Dynatrace
 
-# Начало работы с Dynatrace
 
 * Latest Dynatrace
 * How-to guide

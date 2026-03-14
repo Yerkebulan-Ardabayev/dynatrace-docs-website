@@ -14,7 +14,6 @@ scraped: 2026-03-05T21:31:21.874741
 
 # Create service-level objectives
 
-# Create service-level objectives
 
 * Latest Dynatrace
 * How-to guide
@@ -68,13 +67,10 @@ To create a new SLO with a predefined template
 timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }
 
 
-
 , by: { dt.entity.service }
 
 
-
 , filter: { in (dt.entity.service, { services }) }
-
 
 
 | fieldsAdd sli=(((total[]-failures[])/total[])*(100))
@@ -115,7 +111,6 @@ scraped: 2026-03-06T21:32:41.871210
 
 # Permissions for service-level objective (SLO) tiles in a dashboard
 
-# Permissions for service-level objective (SLO) tiles in a dashboard
 
 * Latest Dynatrace
 * 1-min read
@@ -149,7 +144,6 @@ scraped: 2026-03-05T21:34:17.198712
 
 # Add a service-level objective (SLO) tile to a dashboard
 
-# Add a service-level objective (SLO) tile to a dashboard
 
 * Latest Dynatrace
 * How-to guide
@@ -232,7 +226,6 @@ scraped: 2026-03-06T21:33:11.531334
 
 # Edit a service-level objective (SLO) tile in a dashboard
 
-# Edit a service-level objective (SLO) tile in a dashboard
 
 * Latest Dynatrace
 * How-to guide
@@ -343,7 +336,6 @@ scraped: 2026-03-03T21:23:32.190940
 
 # View the details of a service-level objective (SLO) tile in a dashboard
 
-# View the details of a service-level objective (SLO) tile in a dashboard
 
 * Latest Dynatrace
 * How-to guide
@@ -375,7 +367,6 @@ scraped: 2026-03-04T21:37:42.817794
 
 # Upgrade Classic SLOs
 
-# Upgrade Classic SLOs
 
 * Latest Dynatrace
 * How-to guide
@@ -476,14 +467,12 @@ The SLO DQL query is structured in a certain way to define the SLO and SLI. The 
   | fieldsAdd name = entityName(dt.entity.service)
 
 
-
   | filter in(name, "astroshop-checkoutservice", "astroshop-cartservice", "astroshop-paymentservice", "astroshop-shippingservice", "astroshop-currencyservice", "astroshop-frontend", "astroshop-recommendationservice")
   ```
 * Calculate the SLI.
 
   ```
   | fieldsAdd sli = (((total[] - failures[]) / total[]) * 100)
-
 
 
   | fields timeframe, interval, dt.entity.service, name, sli
@@ -524,7 +513,6 @@ To upgrade a Classic SLO to SLO
    * Use segments for dynamic entity scope
 
 ## Upgrade API integration
-
 
 
 To automate SLO management and evaluation, use the dedicated API endpoints. Reference the table below to upgrade your API integration for Classic SLO to SLO leveraging the SLO Service Public API.
@@ -569,7 +557,6 @@ scraped: 2026-03-06T21:30:36.060105
 
 # Service-Level Objectives
 
-# Service-Level Objectives
 
 * Latest Dynatrace
 * App
@@ -747,17 +734,13 @@ Dynatrace SLOs are defined using DQL, allowing you to determine the SLI based on
    | fieldsAdd sli = "YOUR SLI"
 
 
-
    | fieldsAdd target= "YOUR SLO-target" in percentage
-
 
 
    // Add the next line to calculate the error budget burn rate
 
 
-
    | fieldsAdd burnRate = ((100 - sli[]) / (100 - target))
-
 
 
    | fieldsRemove sli
@@ -773,17 +756,13 @@ Dynatrace SLOs are defined using DQL, allowing you to determine the SLI based on
    | fieldsAdd sli = "YOUR SLI"
 
 
-
    | fieldsAdd target= "YOUR SLO-target" in percentage
-
 
 
    // Add the next line to calculate the error budget burn rate
 
 
-
    | fieldsAdd burnRate = ((100 - sli[]) / (100 - target))
-
 
 
    | summarize sloBurnRate = avg(burnRate[]), timeframe = takeFirst(timeframe), interval = takeFirst(interval)
@@ -792,7 +771,6 @@ Dynatrace SLOs are defined using DQL, allowing you to determine the SLI based on
    You can see the burn rates in ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") Dashboards, where you can use it as input for regularly scheduled evaluations via ![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian") Site-Reliability Guardian, or you can set up automatic alerts using ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
 
 ### Raise SLO burn-rate events (alerts) automatically via the Anomaly Detection
-
 
 
 You can use ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** to automatically raise an event if the error budget burn rate exceeds a specific predefined limit.

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:54.689204
 
 # Пакетная обработка OTLP-запросов с помощью OpenTelemetry Collector
 
-# Пакетная обработка OTLP-запросов с помощью OpenTelemetry Collector
 
 * Latest Dynatrace
 * How-to guide
@@ -39,153 +38,115 @@ scraped: 2026-03-06T21:31:54.689204
 receivers:
 
 
-
 otlp:
-
 
 
 protocols:
 
 
-
 grpc:
-
 
 
 endpoint: 0.0.0.0:4317
 
 
-
 http:
-
 
 
 endpoint: 0.0.0.0:4318
 
 
-
 processors:
-
 
 
 batch/traces:
 
 
-
 send_batch_size: 5000
-
 
 
 send_batch_max_size: 5000
 
 
-
 timeout: 60s
-
 
 
 batch/metrics:
 
 
-
 send_batch_size: 3000
-
 
 
 send_batch_max_size: 3000
 
 
-
 timeout: 60s
-
 
 
 batch/logs:
 
 
-
 send_batch_size: 1800
-
 
 
 send_batch_max_size: 2000
 
 
-
 timeout: 60s
-
 
 
 exporters:
 
 
-
 otlp_http:
-
 
 
 endpoint: ${env:DT_ENDPOINT}
 
 
-
 headers:
-
 
 
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
 
 
-
 service:
-
 
 
 pipelines:
 
 
-
 traces:
 
 
-
 receivers: [otlp]
-
 
 
 processors: [batch/traces]
 
 
-
 exporters: [otlp_http]
-
 
 
 metrics:
 
 
-
 receivers: [otlp]
-
 
 
 processors: [batch/metrics]
 
 
-
 exporters: [otlp_http]
-
 
 
 logs:
 
 
-
 receivers: [otlp]
 
 
-
 processors: [batch/logs]
-
 
 
 exporters: [otlp_http]

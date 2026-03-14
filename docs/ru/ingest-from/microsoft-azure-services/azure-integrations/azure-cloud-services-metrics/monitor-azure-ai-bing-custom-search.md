@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:30:21.544854
 
 # Мониторинг Azure AI - Bing Custom Search
 
-# Мониторинг Azure AI - Bing Custom Search
 
 * Последняя версия Dynatrace
 * Практическое руководство

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:19.739905
 
 # Manage document versions
 
-# Manage document versions
 
 * Latest Dynatrace
 * How-to guide

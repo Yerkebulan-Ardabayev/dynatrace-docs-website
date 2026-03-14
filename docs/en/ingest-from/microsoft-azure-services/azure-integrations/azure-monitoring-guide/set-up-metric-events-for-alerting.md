@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:34:17.030619
 
 # Set up metric events for alerting
 
-# Set up metric events for alerting
 
 * Latest Dynatrace
 * How-to guide

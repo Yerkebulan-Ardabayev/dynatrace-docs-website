@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:27.232057
 
 # Data security controls
 
-# Data security controls
 
 * Latest Dynatrace
 * 10-min read

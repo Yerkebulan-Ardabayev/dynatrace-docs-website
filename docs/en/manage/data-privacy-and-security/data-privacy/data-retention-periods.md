@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:52.012656
 
 # Data retention periods
 
-# Data retention periods
 
 * Latest Dynatrace
 * 8-min read

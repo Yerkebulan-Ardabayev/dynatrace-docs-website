@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:50.344696
 
 # Ready-made documents
 
-# Ready-made documents
 
 * Latest Dynatrace
 * Reference

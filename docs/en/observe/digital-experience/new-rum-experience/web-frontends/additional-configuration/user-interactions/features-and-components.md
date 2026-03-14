@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:30:50.126179
 
 # Associate user interactions with features and UI components
 
-# Associate user interactions with features and UI components
 
 * Latest Dynatrace
 * How-to guide
@@ -39,41 +38,31 @@ Examples
 <!-- Single feature -->
 
 
-
 <div data-dt-features="search">
-
 
 
 <input type="text" placeholder="Search...">
 
 
-
 <button>Search</button>
-
 
 
 </div>
 
 
-
 <!-- Multiple features -->
-
 
 
 <nav data-dt-features="navigation,sidebar">
 
 
-
 <a href="/home">Home</a>
-
 
 
 <a href="/products">Products</a>
 
 
-
 <a href="/about">About</a>
-
 
 
 </nav>
@@ -89,65 +78,49 @@ Examples
 <div data-dt-features="shop,product-catalog">
 
 
-
 <div data-dt-features="filters">
-
 
 
 <button>Price</button>          <!-- ui_element.features: ["shop", "product-catalog", "filters"] -->
 
 
-
 <button>Brand</button>          <!-- ui_element.features: ["shop", "product-catalog", "filters"] -->
 
 
-
 </div>
-
 
 
 <div data-dt-features="results">
 
 
-
 <div>Product 1</div>            <!-- ui_element.features: ["shop", "product-catalog", "results"] -->
-
 
 
 <div>Product 2</div>            <!-- ui_element.features: ["shop", "product-catalog", "results"] -->
 
 
-
 </div>
 
 
-
 </div>
-
 
 
 <div data-dt-features="app,main">
 
 
-
 <div data-dt-features="sidebar,navigation">
-
 
 
 <div data-dt-features="menu,navigation">
 
 
-
 <button>Click</button>  <!-- ui_element.features: ["app", "main", "sidebar", "navigation", "menu"] -->
 
 
-
 </div>
 
 
-
 </div>
-
 
 
 </div>
@@ -161,13 +134,10 @@ The following DQL query generates a timeseries that shows, for each feature, the
 fetch user.events
 
 
-
 | filter isNotNull(ui_element.features)
 
 
-
 | expand ui_element.features
-
 
 
 | makeTimeseries countDistinct(dt.rum.session.id), by: {ui_element.features}, interval: 1d
@@ -196,53 +166,40 @@ Example (React JSX)
 <App data-dt-component="App">
 
 
-
 <Container data-dt-component="Container">
-
 
 
 <AuthProvider data-dt-component="AuthProvider">
 
 
-
 <Dashboard data-dt-component="Dashboard">
-
 
 
 <Container data-dt-component="Container">
 
 
-
 <Card data-dt-component="Card">
-
 
 
 <Button data-dt-component="Button">Save</Button>
 
 
-
 {/* ui_element.components: ["App", "Container", "AuthProvider", "Dashboard", "Container", "Card", "Button"] */}
-
 
 
 </Card>
 
 
-
 </Container>
-
 
 
 </Dashboard>
 
 
-
 </AuthProvider>
 
 
-
 </Container>
-
 
 
 </App>
@@ -256,13 +213,10 @@ The following DQL query generates a timeseries showing how many different users 
 fetch user.events
 
 
-
 | expand ui_element.components
 
 
-
 | filter ui_element.components == "TimeframeSelector"
-
 
 
 | makeTimeseries countDistinct(dt.rum.instance.id), by: {frontend.name}, interval: 1d

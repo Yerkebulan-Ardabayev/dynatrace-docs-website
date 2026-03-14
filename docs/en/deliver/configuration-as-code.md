@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:41.264166
 
 # Configuration as Code overview
 
-# Configuration as Code overview
 
 * Latest Dynatrace
 * Overview

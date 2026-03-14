@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:33:30.502530
 
 # Google Cloud Pub/Sub monitoring
 
-# Google Cloud Pub/Sub monitoring
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Identity and access management (IAM)
 
-# Identity and access management (IAM)
 
 * Overview
 * 1-min read

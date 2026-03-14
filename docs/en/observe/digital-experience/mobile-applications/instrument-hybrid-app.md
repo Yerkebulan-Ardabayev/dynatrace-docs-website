@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:32:53.595693
 
 # Instrument hybrid apps
 
-# Instrument hybrid apps
 
 * Classic
 * How-to guide
@@ -68,37 +67,28 @@ Here is the example configuration for the `easytravel.com` domain:
 dynatrace {
 
 
-
 configurations {
-
 
 
 sampleConfig {
 
 
-
 hybridWebView {
-
 
 
 enabled true
 
 
-
 domains '.easytravel.com'
 
 
+}
+
 
 }
 
 
-
 }
-
-
-
-}
-
 
 
 }
@@ -114,37 +104,28 @@ Here is the example configuration for the `easytravel.com` domain:
 <key>DTXHybridApplication</key>
 
 
-
 <true/>
-
 
 
 <key>DTXSetCookiesForDomain</key>
 
 
-
 <array>
-
 
 
 <string>.easytravel.com</string>
 
 
-
 </array>
-
 
 
 <key>DTXSetSecureCookiesForDomain</key>
 
 
-
 <array>
 
 
-
 <string>.example.com</string>
-
 
 
 </array>

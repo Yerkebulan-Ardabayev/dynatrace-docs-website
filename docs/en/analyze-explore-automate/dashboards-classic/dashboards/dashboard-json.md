@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:52.995561
 
 # Edit Dynatrace dashboard JSON
 
-# Edit Dynatrace dashboard JSON
 
 * Classic
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:35.608154
 
 # NAM monitors results reporting
 
-# NAM monitors results reporting
 
 * Latest Dynatrace
 * Reference

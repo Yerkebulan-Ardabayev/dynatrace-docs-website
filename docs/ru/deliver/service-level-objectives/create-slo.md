@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:31:21.874741
 
 # Создание целей уровня обслуживания
 
-# Создание целей уровня обслуживания
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -60,13 +59,10 @@ scraped: 2026-03-05T21:31:21.874741
 timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }
 
 
-
 , by: { dt.entity.service }
 
 
-
 , filter: { in (dt.entity.service, { services }) }
-
 
 
 | fieldsAdd sli=(((total[]-failures[])/total[])*(100))

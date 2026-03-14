@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:37.817709
 
 # Policy management API - POST a policy boundary
 
-# Policy management API - POST a policy boundary
 
 * Latest Dynatrace
 * Reference
@@ -47,17 +46,13 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "name": "string",
-
 
 
 "boundaryQuery": "string",
 
 
-
 "metadata": {}
-
 
 
 }
@@ -111,65 +106,49 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "uuid": "string",
-
 
 
 "levelType": "string",
 
 
-
 "levelId": "string",
 
 
-
 "name": "string",
-
 
 
 "boundaryQuery": "string",
 
 
-
 "boundaryConditions": [
 
 
-
 {
-
 
 
 "name": "string",
 
 
-
 "operator": "string",
-
 
 
 "values": [
 
 
-
 "string"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "metadata": {}
-
 
 
 }
@@ -179,17 +158,13 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "code": 1,
-
 
 
 "message": "string",
 
 
-
 "errorsMap": {}
-
 
 
 }
@@ -232,17 +207,13 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "name": "string",
-
 
 
 "boundaryQuery": "string",
 
 
-
 "metadata": {}
-
 
 
 }
@@ -258,37 +229,28 @@ In this example, the request creates a new policy boundary within a level. It a 
 curl --request POST \
 
 
-
 --url https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890/boundaries \
-
 
 
 --header 'accept: application/json' \
 
 
-
 --header 'Authorization: Bearer abcdefjhij1234567890' \
-
 
 
 --header 'Content-Type: application/json' \
 
 
-
 --data '{
-
 
 
 "name": "name_string",
 
 
-
 "boundaryQuery": "boundaryQuery",
 
 
-
 "metadata": {}
-
 
 
 }'
@@ -306,17 +268,13 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 {
 
 
-
 "name": "bnd_teamAA",
-
 
 
 "boundaryQuery": "storage:dt.security_context = \"TEAM-AA\";",
 
 
-
 "metadata": {}
-
 
 
 }
@@ -328,65 +286,49 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 {
 
 
-
 "uuid": "9a7b6c54-3d2e-4f10-a8b2-7cde9012f345",
-
 
 
 "levelType": "account",
 
 
-
 "levelId": "f1a2b3c4-d5e6-7890-ab12-34cd56ef7890",
-
 
 
 "name": "bnd_teamAA",
 
 
-
 "boundaryQuery": "storage:dt.security_context = \"TEAM-AA\";",
-
 
 
 "boundaryConditions": [
 
 
-
 {
-
 
 
 "name": "storage:dt.security_context",
 
 
-
 "operator": "EQ",
-
 
 
 "values": [
 
 
-
 "TEAM-AA"
-
 
 
 ]
 
 
-
 }
-
 
 
 ],
 
 
-
 "metadata": {}
-
 
 
 }

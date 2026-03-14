@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:25.334800
 
 # Google Cloud Firestore in Datastore mode monitoring
 
-# Google Cloud Firestore in Datastore mode monitoring
 
 * Latest Dynatrace
 * How-to guide

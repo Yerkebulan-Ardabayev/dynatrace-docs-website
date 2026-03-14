@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:45.606066
 
 # Dynatrace ActiveGate
 
-# Dynatrace ActiveGate
 
 * Latest Dynatrace
 * 3-min read

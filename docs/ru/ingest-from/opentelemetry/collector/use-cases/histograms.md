@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:18.282146
 
 # Вычисление сводных данных гистограмм с помощью OpenTelemetry Collector
 
-# Вычисление сводных данных гистограмм с помощью OpenTelemetry Collector
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -37,133 +36,100 @@ scraped: 2026-03-06T21:37:18.282146
 receivers:
 
 
-
 otlp:
-
 
 
 protocols:
 
 
-
 grpc:
-
 
 
 endpoint: 0.0.0.0:4317
 
 
-
 http:
-
 
 
 endpoint: 0.0.0.0:4318
 
 
-
 processors:
-
 
 
 transform:
 
 
-
 metric_statements:
-
 
 
 - context: metric
 
 
-
 statements:
-
 
 
 # Get count from the histogram. The new metric name will be <histogram_name>_count
 
 
-
 - extract_count_metric(true) where type == METRIC_DATA_TYPE_HISTOGRAM
-
 
 
 # Get sum from the histogram. The new metric name will be <histogram_name>_sum
 
 
-
 - extract_sum_metric(true) where type == METRIC_DATA_TYPE_HISTOGRAM
-
 
 
 # convert the <histogram_name>_sum metrics to gauges.
 
 
-
 - convert_sum_to_gauge() where IsMatch(name, ".*_sum")
-
 
 
 filter:
 
 
-
 metrics:
-
 
 
 metric:
 
 
-
 # Drop metrics of type histogram. The _count and _sum metrics will still be exported.
-
 
 
 - type == METRIC_DATA_TYPE_HISTOGRAM
 
 
-
 exporters:
-
 
 
 otlp_http:
 
 
-
 endpoint: ${env:DT_ENDPOINT}
-
 
 
 headers:
 
 
-
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
-
 
 
 service:
 
 
-
 pipelines:
-
 
 
 metrics:
 
 
-
 receivers: [otlp]
 
 
-
 processors: [transform,filter]
-
 
 
 exporters: [otlp_http]

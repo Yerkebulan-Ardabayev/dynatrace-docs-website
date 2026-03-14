@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:35:50.810381
 
 # Transform and filter data with the OpenTelemetry Collector
 
-# Transform and filter data with the OpenTelemetry Collector
 
 * Latest Dynatrace
 * How-to guide
@@ -35,257 +34,193 @@ See [Collector Deployment](../deployment.md "How to deploy Dynatrace OTel Collec
 receivers:
 
 
-
 otlp:
-
 
 
 protocols:
 
 
-
 grpc:
-
 
 
 endpoint: 0.0.0.0:4317
 
 
-
 http:
-
 
 
 endpoint: 0.0.0.0:4318
 
 
-
 processors:
-
 
 
 transform:
 
 
-
 trace_statements:
-
 
 
 - context: resource
 
 
-
 statements:
-
 
 
 # Only keep a certain set of resource attributes
 
 
-
 - keep_matching_keys(attributes, "^(aaa|bbb|ccc).*")
-
 
 
 - context: span
 
 
-
 statements:
-
 
 
 # Only keep a certain set of span attributes
 
 
-
 - keep_matching_keys(attributes, "(^xyz.pqr$)|(^(aaa|bbb|ccc).*)")
-
 
 
 # Set a static key
 
 
-
 - set(attributes["svc.marker"], "purchasing")
-
 
 
 # Delete a specific key
 
 
-
 - delete_key(attributes, "message")
-
 
 
 # Rewrite a key
 
 
-
 - set(attributes["purchase.id"], ConvertCase(attributes["purchase.id"], "upper"))
-
 
 
 # Apply regex replacement
 
 
-
 - replace_pattern(name, "^.*(DataSubmission-\d+).*$", "$$1")
-
 
 
 metric_statements:
 
 
-
 - context: metric
-
 
 
 statements:
 
 
-
 # Rename all metrics containing '_bad' suffix in their name with `_invalid`
-
 
 
 - replace_pattern(name, "(.*)_bad$", "$${1}_invalid")
 
 
-
 filter:
-
 
 
 error_mode: ignore
 
 
-
 traces:
-
 
 
 span:
 
 
-
 # Filter spans with resource attributes matching the provided regular expression
-
 
 
 - IsMatch(resource.attributes["k8s.pod.name"], "^my-pod-name.*")
 
 
-
 metrics:
-
 
 
 metric:
 
 
-
 # Filter metrics which contain at least one data point with a "bad.metric" attribute
-
 
 
 - 'HasAttrKeyOnDatapoint("bad.metric")'
 
 
-
 logs:
-
 
 
 log_record:
 
 
-
 # Filter logs with resource attributes matching the configured names
-
 
 
 - resource.attributes["service.name"] == "service1"
 
 
-
 - resource.attributes["service.name"] == "service2"
-
 
 
 exporters:
 
 
-
 otlp_http:
-
 
 
 endpoint: ${env:DT_ENDPOINT}
 
 
-
 headers:
-
 
 
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
 
 
-
 service:
-
 
 
 pipelines:
 
 
-
 traces:
 
 
-
 receivers: [otlp]
-
 
 
 processors: [filter,transform]
 
 
-
 exporters: [otlp_http]
-
 
 
 metrics:
 
 
-
 receivers: [otlp]
 
 
-
 processors: [filter]
-
 
 
 exporters: [otlp_http]
 
 
-
 logs:
-
 
 
 receivers: [otlp]
 
 
-
 processors: [filter]
-
 
 
 exporters: [otlp_http]

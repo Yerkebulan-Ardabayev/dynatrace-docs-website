@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:30:34.295751
 
 # End-of-life announcements
 
-# End-of-life announcements
 
 * Latest Dynatrace
 * Reference

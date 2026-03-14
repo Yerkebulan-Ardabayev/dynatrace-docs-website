@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:08.084731
 
 # Automate and orchestrate security findings
 
-# Automate and orchestrate security findings
 
 * Latest Dynatrace
 * Tutorial

@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:20:36.386068
 
 # Proxy for private locations
 
-# Proxy for private locations
 
 * Latest Dynatrace
 * How-to guide
@@ -32,25 +31,19 @@ These are the possible scenarios for your proxy configuration. Access to tested 
 [http.client]
 
 
-
 proxy-server=<proxy>
-
 
 
 proxy-port=8080
 
 
-
 proxy-user=username
-
 
 
 proxy-password=password
 
 
-
 [synthetic]
-
 
 
 proxy-off=true
@@ -62,17 +55,13 @@ proxy-off=true
 [http.client]
 
 
-
 proxy-server=<proxy>
-
 
 
 proxy-port=8080
 
 
-
 proxy-user=username
-
 
 
 proxy-password=password
@@ -86,17 +75,13 @@ proxy-password=password
   [http.client]
 
 
-
   proxy-server=<proxy>
-
 
 
   proxy-port=8080
 
 
-
   proxy-user=username
-
 
 
   proxy-password=password
@@ -107,17 +92,13 @@ proxy-password=password
   [synthetic]
 
 
-
   proxy-server=<proxy between AG and tested resource>
-
 
 
   proxy-port=9090
 
 
-
   proxy-user=username_two
-
 
 
   proxy-password=password_two
@@ -131,17 +112,13 @@ The Synthetic-enabled ActiveGate needs access to the Amazon S3 service to upload
 [synthetic]
 
 
-
 proxy-server=<proxy between AG and tested resource>
-
 
 
 proxy-port=8080
 
 
-
 proxy-user=username
-
 
 
 proxy-password=password
@@ -155,21 +132,16 @@ For more information, see [Proxy Auto-Configuration (PAC) files](#proxy-auto-con
 [synthetic]
 
 
-
 proxy-server=<proxy between AG and tested resource>
-
 
 
 proxy-port=8080
 
 
-
 proxy-user=username
 
 
-
 proxy-password=password
-
 
 
 proxy-non-proxy-hosts=my.corp.org|*.gdansk.dynatrace.com
@@ -201,9 +173,7 @@ A Proxy Auto-Configuration (PAC) file is a JavaScript function that determines w
    "proxy": {
 
 
-
    "pacUrl": "https://www.example.com/test.pac"
-
 
 
    }
@@ -256,17 +226,13 @@ In this example setup, we use the Squid proxy linked to the system's OpenSSL lib
    sudo mkdir /etc/squid/ssl_cert
 
 
-
    sudo mv ~/prepared_ca_cert.pem /etc/squid/ssl_cert/squid.pem
-
 
 
    sudo chown --recursive squid:squid /etc/squid/ssl_cert
 
 
-
    sudo chmod 700 /etc/squid/ssl_cert
-
 
 
    sudo chmod 600 /etc/squid/ssl_cert/squid.pem
@@ -276,17 +242,13 @@ In this example setup, we use the Squid proxy linked to the system's OpenSSL lib
    sudo mkdir /etc/squid/ssl_cert
 
 
-
    sudo mv ~/prepared_ca_cert.pem /etc/squid/ssl_cert/squid.pem
-
 
 
    sudo chown --recursive proxy:proxy /etc/squid/ssl_cert
 
 
-
    sudo chmod 700 /etc/squid/ssl_cert
-
 
 
    sudo chmod 600 /etc/squid/ssl_cert/squid.pem
@@ -303,13 +265,11 @@ In this example setup, we use the Squid proxy linked to the system's OpenSSL lib
    sudo /usr/lib64/squid/security_file_certgen -c -s /var/spool/squid/ssl_db -M 4MB
 
 
-
    sudo chown --recursive squid:squid /var/spool/squid/ssl_db
    ```
 
    ```
    sudo /usr/lib/squid/security_file_certgen -c -s /var/spool/squid/ssl_db -M 4MB
-
 
 
    sudo chown --recursive proxy:proxy /var/spool/squid/ssl_db
@@ -320,45 +280,34 @@ In this example setup, we use the Squid proxy linked to the system's OpenSSL lib
    acl SSL_ports port 443
 
 
-
    acl Safe_ports port 80 443 1025-65535
-
 
 
    acl CONNECT method CONNECT
 
 
-
    http_access deny !Safe_ports
-
 
 
    http_access deny CONNECT !SSL_ports
 
 
-
    http_access allow localhost
-
 
 
    http_access deny all
 
 
-
    http_port 3128 ssl-bump generate-host-certificates=on dynamic_cert_mem_cache_size=4MB cert=/etc/squid/ssl_cert/squid.pem
-
 
 
    acl step1 at_step SslBump1
 
 
-
    ssl_bump peek step1
 
 
-
    ssl_bump bump all
-
 
 
    cache deny all
@@ -367,7 +316,6 @@ In this example setup, we use the Squid proxy linked to the system's OpenSSL lib
 
    ```
    sudo systemctl enable squid
-
 
 
    sudo systemctl restart squid
@@ -406,49 +354,37 @@ If you're using a different proxy software, this might not be applicable to you.
    [Unit]
 
 
-
    Description=Squid with upstream proxy
-
 
 
    After=network.target network-online.target nss-lookup.target
 
 
-
    [Service]
-
 
 
    Type=notify
 
 
-
    LimitNOFILE=16384
-
 
 
    PIDFile=/run/squid2.pid
 
 
-
    ExecStart=/usr/sbin/squid --foreground -n squid2 -f "/etc/squid/squid2.conf"
-
 
 
    ExecReload=/usr/bin/kill -HUP $MAINPID
 
 
-
    KillMode=mixed
-
 
 
    NotifyAccess=all
 
 
-
    [Install]
-
 
 
    WantedBy=multi-user.target
@@ -460,57 +396,43 @@ If you're using a different proxy software, this might not be applicable to you.
    [Unit]
 
 
-
    Description=Squid with upstream proxy
-
 
 
    After=network.target network-online.target nss-lookup.target
 
 
-
    [Service]
-
 
 
    Type=notify
 
 
-
    PIDFile=/run/squid2.pid
-
 
 
    Group=proxy
 
 
-
    RuntimeDirectory=squid2
-
 
 
    RuntimeDirectoryMode=0775
 
 
-
    ExecStart=/usr/sbin/squid --foreground -sYC -n squid2 -f "/etc/squid/squid2.conf"
-
 
 
    ExecReload=/bin/kill -HUP $MAINPID
 
 
-
    KillMode=mixed
-
 
 
    NotifyAccess=all
 
 
-
    [Install]
-
 
 
    WantedBy=multi-user.target
@@ -521,57 +443,43 @@ If you're using a different proxy software, this might not be applicable to you.
    acl SSL_ports port 443
 
 
-
    acl Safe_ports port 80 443 1025-65535
-
 
 
    acl CONNECT method CONNECT
 
 
-
    http_access deny !Safe_ports
-
 
 
    http_access deny CONNECT !SSL_ports
 
 
-
    http_access allow localhost
-
 
 
    http_access deny all
 
 
-
    http_port 3129
-
 
 
    access_log daemon:/var/log/squid/access2.log squid
 
 
-
    cache_log /var/log/squid/cache2.log
-
 
 
    pid_filename /run/squid2.pid
 
 
-
    cache_peer upstream-proxy.example.com parent 443 0 default no-digest proxy-only login=proxyuser:proxypass tls tls-min-version=1.2 tls-options=NO_SSLv3
-
 
 
    never_direct allow all
 
 
-
    visible_hostname squid2
-
 
 
    cache deny all
@@ -582,9 +490,7 @@ If you're using a different proxy software, this might not be applicable to you.
    cache_peer localhost parent 3129 0 default no-digest proxy-only
 
 
-
    never_direct allow all
-
 
 
    visible_hostname squid1
@@ -595,13 +501,10 @@ If you're using a different proxy software, this might not be applicable to you.
    sudo systemctl daemon-reload
 
 
-
    sudo systemctl enable squid2
 
 
-
    sudo systemctl start squid2
-
 
 
    sudo systemctl restart squid

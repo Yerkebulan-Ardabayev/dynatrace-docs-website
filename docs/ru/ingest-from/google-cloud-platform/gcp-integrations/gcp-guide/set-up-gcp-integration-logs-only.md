@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:05.026071
 
 # Настройка интеграции Dynatrace с Google Cloud для сбора логов в контейнере Kubernetes (GKE)
 
-# Настройка интеграции Dynatrace с Google Cloud для сбора логов в контейнере Kubernetes (GKE)
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -69,193 +68,145 @@ dynatrace-gcp-monitor-helm-deployment-role.yaml
 title: Dynatrace GCP Monitor helm deployment role
 
 
-
 description: Role for Dynatrace GCP Monitor helm and pubsub deployment
-
 
 
 stage: GA
 
 
-
 includedPermissions:
-
 
 
 - container.clusters.get
 
 
-
 - container.configMaps.create
-
 
 
 - container.configMaps.delete
 
 
-
 - container.configMaps.get
-
 
 
 - container.configMaps.update
 
 
-
 - container.deployments.create
-
 
 
 - container.deployments.delete
 
 
-
 - container.deployments.get
-
 
 
 - container.deployments.update
 
 
-
 - container.namespaces.create
-
 
 
 - container.namespaces.get
 
 
-
 - container.pods.get
-
 
 
 - container.pods.list
 
 
-
 - container.secrets.create
-
 
 
 - container.secrets.delete
 
 
-
 - container.secrets.get
-
 
 
 - container.secrets.list
 
 
-
 - container.secrets.update
-
 
 
 - container.serviceAccounts.create
 
 
-
 - container.serviceAccounts.delete
-
 
 
 - container.serviceAccounts.get
 
 
-
 - iam.roles.create
-
 
 
 - iam.roles.list
 
 
-
 - iam.roles.update
-
 
 
 - iam.serviceAccounts.actAs
 
 
-
 - iam.serviceAccounts.create
-
 
 
 - iam.serviceAccounts.getIamPolicy
 
 
-
 - iam.serviceAccounts.list
-
 
 
 - iam.serviceAccounts.setIamPolicy
 
 
-
 - pubsub.subscriptions.create
-
 
 
 - pubsub.subscriptions.get
 
 
-
 - pubsub.subscriptions.list
-
 
 
 - pubsub.topics.attachSubscription
 
 
-
 - pubsub.topics.create
-
 
 
 - pubsub.topics.getIamPolicy
 
 
-
 - pubsub.topics.list
-
 
 
 - pubsub.topics.setIamPolicy
 
 
-
 - pubsub.topics.update
-
 
 
 - resourcemanager.projects.get
 
 
-
 - resourcemanager.projects.getIamPolicy
-
 
 
 - resourcemanager.projects.setIamPolicy
 
 
-
 - serviceusage.services.enable
-
 
 
 - serviceusage.services.get
 
 
-
 - serviceusage.services.list
-
 
 
 - serviceusage.services.use
@@ -294,9 +245,7 @@ gcloud iam roles create dynatrace_monitor.helm_deployment --project=<your_projec
 wget https://raw.githubusercontent.com/dynatrace-oss/dynatrace-gcp-monitor/master/scripts/deploy-pubsub.sh
 
 
-
 chmod +x deploy-pubsub.sh
-
 
 
 ./deploy-pubsub.sh --topic-name <your-topic-name> --subscription-name <your-subscription-name>
@@ -394,7 +343,6 @@ gcloud container clusters get-credentials <cluster> --region <region> --project 
 cd helm-deployment-package
 
 
-
 ./deploy-helm.sh
 ```
 
@@ -402,7 +350,6 @@ cd helm-deployment-package
 
 ```
 cd helm-deployment-package
-
 
 
 ./deploy-helm.sh [--role-name <role-to-be-created/updated>]
@@ -414,7 +361,6 @@ cd helm-deployment-package
 cd helm-deployment-package
 
 
-
 ./deploy-helm.sh --without-extensions-upgrade
 ```
 
@@ -422,7 +368,6 @@ cd helm-deployment-package
 
 ```
 cd helm-deployment-package
-
 
 
 ./deploy-helm.sh --create-autopilot-cluster
@@ -434,7 +379,6 @@ cd helm-deployment-package
 cd helm-deployment-package
 
 
-
 ./deploy-helm.sh --create-autopilot-cluster --autopilot-cluster-name <name-of-new-cluster>
 ```
 
@@ -442,7 +386,6 @@ cd helm-deployment-package
 
 ```
 cd helm-deployment-package
-
 
 
 ./deploy-helm.sh --create-autopilot-cluster --without-extensions-upgrade

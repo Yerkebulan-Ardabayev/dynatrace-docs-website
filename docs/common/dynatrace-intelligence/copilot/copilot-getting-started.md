@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Get started with Dynatrace Intelligence generative AI
 
-# Get started with Dynatrace Intelligence generative AI
 
 * Latest Dynatrace
 * How-to guide

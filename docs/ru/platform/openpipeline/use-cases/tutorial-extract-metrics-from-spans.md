@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:57.758999
 
 # Извлечение метрик из спанов и распределённых трассировок
 
-# Извлечение метрик из спанов и распределённых трассировок
 
 * Latest Dynatrace
 * Руководство
@@ -55,13 +54,10 @@ scraped: 2026-03-06T21:15:57.758999
    fetch spans
 
 
-
    | filter k8s.workload.name == "my-otel-demo-frontend" and span.kind == "server" and isNotNull(endpoint.name)
 
 
-
    | fields k8s.pod.name, dt.entity.service, endpoint.name, duration
-
 
 
    | limit 200
@@ -194,17 +190,13 @@ scraped: 2026-03-06T21:15:57.758999
 {
 
 
-
 "db.namespace": "books",
-
 
 
 "db.operation.name": "SELECT",
 
 
-
 "db.query.text": "select b1_0.id,b1_0.author,b1_0.title from books b1_0 where b1_0.title=?"
-
 
 
 }
@@ -216,21 +208,16 @@ scraped: 2026-03-06T21:15:57.758999
 {
 
 
-
 "db.query.group": "SELECT books",
-
 
 
 "db.namespace": "books",
 
 
-
 "db.operation.name": "SELECT",
 
 
-
 "db.query.text": "select b1_0.id,b1_0.author,b1_0.title from books b1_0 where b1_0.title=?"
-
 
 
 }

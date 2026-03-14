@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:13.983043
 
 # Prometheus data source
 
-# Prometheus data source
 
 * Последняя версия Dynatrace
 * Справочник

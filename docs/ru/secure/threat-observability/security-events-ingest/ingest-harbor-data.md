@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:46.892274
 
 # Загрузка результатов анализа уязвимостей, сканирований и журналов аудита Harbor
 
-# Загрузка результатов анализа уязвимостей, сканирований и журналов аудита Harbor
 
 * Latest Dynatrace
 * Extension
@@ -78,7 +77,6 @@ Harbor — это реестр контейнеров, который позво
      fetch logs
 
 
-
      | filter log.source=="Harbor"
      ```
    * Для событий обнаружения:
@@ -87,13 +85,10 @@ Harbor — это реестр контейнеров, который позво
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Harbor"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -104,13 +99,10 @@ Harbor — это реестр контейнеров, который позво
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Harbor"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"

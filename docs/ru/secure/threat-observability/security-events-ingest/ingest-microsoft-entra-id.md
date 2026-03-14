@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:43.477598
 
 # Приём логов входа Microsoft Entra ID
 
-# Приём логов входа Microsoft Entra ID
 
 * Latest Dynatrace
 * Руководство
@@ -52,7 +51,6 @@ scraped: 2026-03-06T21:23:43.477598
    matchesValue(cloud.provider, "azure") AND
 
 
-
    matchesPhrase(content, "\"SignInLogs\"")
    ```
 8. Выберите только что созданный конвейер, введите имя для динамического маршрута и нажмите **Add**.
@@ -65,13 +63,10 @@ scraped: 2026-03-06T21:23:43.477598
 fetch logs
 
 
-
 | filter cloud.provide == "azure"
 
 
-
 AND isNotNull(audit.action)
-
 
 
 AND isNotNull(authentication.is_multifactor)

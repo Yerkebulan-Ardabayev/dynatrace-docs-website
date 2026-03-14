@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Tags and metadata
 
-# Tags and metadata
 
 * Explanation
 * 1-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:59.893176
 
 # Monitor Azure Virtual Machines
 
-# Monitor Azure Virtual Machines
 
 * Latest Dynatrace
 * How-to guide
@@ -83,21 +82,16 @@ Replace all values marked with `<...>` with your actual values.
 az vm extension set
 
 
-
 --publisher dynatrace.ruxit
-
 
 
 -n "<Extension-Type>"
 
 
-
 -g "<Resource-Group>"
 
 
-
 --vm-name "<VM-Name>"
-
 
 
 --settings "{\"tenantId\":\"<Environment-ID>\",\"token\":\"<API-Token>\", \"server\":\"<Server-Url>\", \"enableLogAnalytics\":\"yes\", \"hostGroup\":\"<Host-Group>\"}"
@@ -135,33 +129,25 @@ Replace all values marked with `<...>` with your actual values.
 Set-AzureRmVmExtension
 
 
-
 -Name Dynatrace
-
 
 
 -Publisher dynatrace.ruxit
 
 
-
 -ResourceGroupName "<Resource-Group>"
-
 
 
 -Location "<Location>"
 
 
-
 -VMName "<VM-Name>"
-
 
 
 -ExtensionType "<Extension-Type>"
 
 
-
 -TypeHandlerVersion "<Extension-Version>"
-
 
 
 -Settings @{ "tenantId"="<Environment-ID>"; "token"="<API Token>";"server"="<Server-Url>"; "enableLogAnalytics"="yes"; "hostGroup"="<Host-Group>"; }
@@ -208,85 +194,64 @@ The JSON file for a virtual machine extension can be nested inside the virtual m
   {
 
 
-
   "type": "extensions",
-
 
 
   "name": "dynatrace",
 
 
-
   "apiVersion": "2018-06-01",
-
 
 
   "location": "[resourceGroup().location]",
 
 
-
   "dependsOn": [
-
 
 
   "[concat('Microsoft.Compute/virtualMachines/', <VM-Name>)]"
 
 
-
   ],
-
 
 
   "properties": {
 
 
-
   "publisher": "dynatrace.ruxit",
-
 
 
   "type": "<Extension-Type>",
 
 
-
   "typeHandlerVersion": "<Extension-Version>",
-
 
 
   "autoUpgradeMinorVersion": true,
 
 
-
   "settings": {
-
 
 
   "tenantId": "<Environment-ID>",
 
 
-
   "token": "<API-Token>",
-
 
 
   "server": "<Server-Url>",
 
 
-
   "enableLogAnalytics": "yes",
-
 
 
   "hostGroup": "<Host-Group>"
 
 
-
   },
 
 
-
   }
-
 
 
   }
@@ -297,85 +262,64 @@ The JSON file for a virtual machine extension can be nested inside the virtual m
   {
 
 
-
   "type": "Microsoft.Compute/virtualMachines/extensions",
-
 
 
   "name": "<Parent-VM-Resource>/dynatrace",
 
 
-
   "apiVersion": "2018-06-01",
-
 
 
   "location": "[resourceGroup().location]",
 
 
-
   "dependsOn": [
-
 
 
   "[concat('Microsoft.Compute/virtualMachines/', <VM-Name>)]"
 
 
-
   ],
-
 
 
   "properties": {
 
 
-
   "publisher": "dynatrace.ruxit",
-
 
 
   "type": "<Extension-Type>",
 
 
-
   "typeHandlerVersion": "<Extension-Version>",
-
 
 
   "autoUpgradeMinorVersion": true,
 
 
-
   "settings": {
-
 
 
   "tenantId": "<Environment-ID>",
 
 
-
   "token": "<API-Token>",
-
 
 
   "server": "<Server-Url>",
 
 
-
   "enableLogAnalytics": "yes",
-
 
 
   "hostGroup": "<Host-Group>"
 
 
-
   }
 
 
-
   }
-
 
 
   }
@@ -410,21 +354,16 @@ To configure network zones, use the installer arguments below.
 az vm extension set
 
 
-
 --publisher dynatrace.ruxit
-
 
 
 -n "oneAgentLinux"
 
 
-
 -g "yourresourcegroup"
 
 
-
 --vm-name "awesome-vm"
-
 
 
 --settings "{\"tenantId\":\"myawesometenant\",\"token\":\"nope123\", \"installerArguments\":\"--set-host-group=example_hostgroup --set-monitoring-mode=fullstack --set-network-zone=<your.network.zone>\"}"

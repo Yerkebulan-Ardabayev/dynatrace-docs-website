@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:18:41.584332
 
 # Define user action and user session properties for web applications
 
-# Define user action and user session properties for web applications
 
 * How-to guide
 * 8-min read

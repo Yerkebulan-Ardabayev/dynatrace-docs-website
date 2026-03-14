@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:18.989594
 
 # ActiveGate diagnostics
 
-# ActiveGate diagnostics
 
 * Latest Dynatrace
 * 9-min read
@@ -321,9 +320,7 @@ OpenShift
    $base64Data = Get-Content <encoded-file-path>
 
 
-
    $zipBytes = [Convert]::FromBase64String($base64Data)
-
 
 
    Set-Content -Value $zipBytes -Encoding Byte -Path <decoded-file-path>

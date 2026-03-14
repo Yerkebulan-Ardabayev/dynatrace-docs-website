@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:16.785131
 
 # Расширение встроенных унифицированных страниц анализа
 
-# Расширение встроенных унифицированных страниц анализа
 
 * Classic
 * Reference
@@ -23,49 +22,37 @@ scraped: 2026-03-06T21:34:16.785131
 detailsInjections:
 
 
-
 - type: CHART_GROUP
-
 
 
 key: my-host-feature-windows-only-chart
 
 
-
 conditions:
-
 
 
 - entityAttribute|osType=WINDOWS
 
 
-
 - type: CHART_GROUP
-
 
 
 key: my-host-feature-chart1
 
 
-
 - type: CHART_GROUP
-
 
 
 key: my-host-feature-chart2
 
 
-
 - type: CHART_GROUP
-
 
 
 key: my-host-feature-process-chart
 
 
-
 entitySelectorTemplate: type(PROCESS_GROUP_INSTANCE), fromRelationships.isProcessOf($(entityConditions))
-
 
 
 width: HALF_SIZE
@@ -105,125 +92,94 @@ width: HALF_SIZE
 name: custom:com.ua.example.extension
 
 
-
 version: 1.0.0
-
 
 
 minDynatraceVersion: 1.233.0
 
 
-
 author:
-
 
 
 name: StackEnterprise
 
 
-
 # Here comes your usual extension YAML content: data source, declarative metrics, topology, etc.
-
 
 
 screens:
 
 
-
 - entityType: HOST
-
 
 
 detailsInjections:
 
 
-
 - type: CHART_GROUP
-
 
 
 key: my-host-feature-windows-only-chart
 
 
-
 conditions:
-
 
 
 - entityAttribute|osType=WINDOWS
 
 
-
 - type: CHART_GROUP
-
 
 
 key: my-host-feature-chart1
 
 
-
 - type: CHART_GROUP
-
 
 
 key: my-host-feature-chart2
 
 
-
 - type: CHART_GROUP
-
 
 
 key: my-host-feature-process-chart
 
 
-
 entitySelectorTemplate: type(PROCESS_GROUP_INSTANCE), fromRelationships.isProcessOf($(entityConditions))
-
 
 
 width: HALF_SIZE
 
 
-
 chartsCards:
-
 
 
 - key: my-host-feature-windows-only-chart
 
 
-
 ...
-
 
 
 - key: my-host-feature-chart1
 
 
-
 ...
-
 
 
 - key: my-host-feature-chart2
 
 
-
 ...
-
 
 
 - entityType: PROCESS_GROUP_INSTANCE
 
 
-
 chartsCards:
 
 
-
 - key: my-host-feature-process-chart
-
 
 
 ...

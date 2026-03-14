@@ -6,7 +6,6 @@ scraped: 2026-03-03T21:22:02.020530
 
 # Мониторинг базы данных Microsoft SQL
 
-# Мониторинг базы данных Microsoft SQL
 
 * Latest Dynatrace
 * How-to guide

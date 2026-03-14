@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:13:08.672283
 
 # Segments in DQL queries
 
-# Segments in DQL queries
 
 * Latest Dynatrace
 * Explanation

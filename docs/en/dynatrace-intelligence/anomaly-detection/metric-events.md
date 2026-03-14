@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:20:48.129795
 
 # Metric events
 
-# Metric events
 
 * Classic
 * Overview
@@ -81,7 +80,6 @@ Example: revenue numbers measured for all retail shops per geographic region
 business.revenue,shop=shop111,city=NewYork 234
 
 
-
 business.revenue,shop=shop999,city=Atlanta 499
 ```
 
@@ -95,7 +93,6 @@ Example: batch job executions measured on a monitored host, where the measuremen
 batchjob.executions,dt.entity.host=HOST-1111111,hostname=hostA,ip=53.43.23.12 23
 
 
-
 batchjob.executions,dt.entity.host=HOST-2222222,hostname=hostB,ip=53.43.23.12 23
 ```
 
@@ -107,7 +104,6 @@ Example: the number of batch job runs measured for a process on a monitored host
 
 ```
 batchjob.executions,dt.entity.host=HOST-1,dt.entity.process_group_instance=PROCESS-GROUP-INSTANCE-1,hostname=hostA,ip=53.43.23.12 23
-
 
 
 batchjob.executions,dt.entity.host=HOST-2222222,dt.entity.process_group_instance=PROCESS-GROUP-INSTANCE-2,hostname=hostB,ip=53.43.23.12 23

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:32:34.979418
 
 # Log Monitoring configuration (Logs Classic)
 
-# Log Monitoring configuration (Logs Classic)
 
 * Classic
 * 5-min read
@@ -122,33 +121,25 @@ During installation, the OneAgent installer may create `_loganalyticsconf.ctl.js
 {
 
 
-
 "agent-configuration": [
-
 
 
 {
 
 
-
 "AppLogRemoteConfiguration": true,
-
 
 
 "AppLogContentAccess": true,
 
 
-
 "AppLogAutoDetection": true
-
 
 
 }
 
 
-
 ]
-
 
 
 }

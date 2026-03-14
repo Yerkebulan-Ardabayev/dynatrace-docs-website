@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:26.806158
 
 # Instrument your application
 
-# Instrument your application
 
 * Latest Dynatrace
 * How-to guide

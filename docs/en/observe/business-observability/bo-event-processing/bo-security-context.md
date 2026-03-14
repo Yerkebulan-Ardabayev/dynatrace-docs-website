@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:32.078862
 
 # Business events security context
 
-# Business events security context
 
 * Latest Dynatrace
 * How-to guide
@@ -45,7 +44,6 @@ To create a security context adjustment to your ingested business events data, y
 
    ```
    fetch bizevents
-
 
 
    | filter matchesValue(geo.city.name, "Brussels")
@@ -100,7 +98,6 @@ To create a new rule
 
    ```
    fetch bizevents
-
 
 
    | filter matchesValue(geo.city.name, "Brussels")
@@ -162,7 +159,6 @@ Your business events records contain the attribute `geo.city.name` with the valu
    fetch bizevents
 
 
-
    | filter matchesValue(geo.city.name, "Brussels")
    ```
 2. Copy the business events processing function of the DQL query: `matchesValue(geo.city.name, "Brussels")`.
@@ -183,7 +179,6 @@ Once new business events data arrives, it's processed by business event security
 
 ```
 fetch bizevents
-
 
 
 | filter matchesValue(dt.security_context, "team_EU")

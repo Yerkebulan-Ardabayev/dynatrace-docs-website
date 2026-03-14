@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:34:11.977745
 
 # Google Cloud Filestore monitoring
 
-# Google Cloud Filestore monitoring
 
 * Latest Dynatrace
 * How-to guide

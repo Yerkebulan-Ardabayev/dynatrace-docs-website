@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:38:13.871911
 
 # Azure Event Hubs (Clusters) monitoring
 
-# Azure Event Hubs (Clusters) monitoring
 
 * Latest Dynatrace
 * How-to guide

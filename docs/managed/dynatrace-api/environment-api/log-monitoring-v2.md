@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Log Monitoring API v2
 
-# Log Monitoring API v2
 
 * Reference
 * Updated on Nov 20, 2025

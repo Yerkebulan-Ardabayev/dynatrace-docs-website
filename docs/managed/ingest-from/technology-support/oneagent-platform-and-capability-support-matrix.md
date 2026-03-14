@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # OneAgent platform and capability support matrix
 
-# OneAgent platform and capability support matrix
 
 * 13-min read
 * Updated on Oct 15, 2025

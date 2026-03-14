@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:18.901123
 
 # Application and Infrastructure Monitoring (Host Units)
 
-# Application and Infrastructure Monitoring (Host Units)
 
 * Classic
 * 12-min read

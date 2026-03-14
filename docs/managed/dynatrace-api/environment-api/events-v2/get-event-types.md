@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Events API v2 - GET all event types
 
-# Events API v2 - GET all event types
 
 * Reference
 * Published Aug 06, 2021
@@ -98,105 +97,80 @@ A list of constraint violations
 {
 
 
-
 "eventTypeInfos": [
 
 
-
 {
-
 
 
 "description": "string",
 
 
-
 "displayName": "High CPU",
-
 
 
 "severityLevel": "PERFORMANCE",
 
 
-
 "type": "OSI_HIGH_CPU"
-
 
 
 }
 
 
-
 ],
-
 
 
 "nextPageKey": "AQAAABQBAAAABQ==",
 
 
-
 "pageSize": 1,
-
 
 
 "totalCount": 1
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -214,9 +188,7 @@ The API token is passed in the **Authorization** header.
 curl --request GET \
 
 
-
 --url 'https://mySampleEnv.live.dynatrace.com/api/v2/eventTypes?pageSize=3' \
-
 
 
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -234,93 +206,70 @@ https://mySampleEnv.live.dynatrace.com/api/v2/eventTypes?pageSize=3
 {
 
 
-
 "totalCount": 144,
-
 
 
 "pageSize": 3,
 
 
-
 "nextPageKey": "AQAAAGQBAAAAZA==",
-
 
 
 "eventTypeInfos": [
 
 
-
 {
-
 
 
 "type": "APPLICATION_UNEXPECTED_LOW_LOAD",
 
 
-
 "displayName": "Application low traffic",
-
 
 
 "severityLevel": "AVAILABILITY",
 
 
-
 "description": "Unexpected low traffic"
-
 
 
 },
 
 
-
 {
-
 
 
 "type": "MOBILE_APP_CRASH_RATE_INCREASED",
 
 
-
 "displayName": "Mobile app crash rate increase",
-
 
 
 "severityLevel": "ERROR"
 
 
-
 },
-
 
 
 {
 
 
-
 "type": "APPLICATION_SLOWDOWN",
-
 
 
 "displayName": "Application slowdown",
 
 
-
 "severityLevel": "PERFORMANCE",
-
 
 
 "description": "User action duration degradation"
 
 
-
 }
 
 
-
 ]
-
 
 
 }

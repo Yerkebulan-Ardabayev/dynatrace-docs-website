@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:32:21.031267
 
 # Manage PostgreSQL extensions
 
-# Manage PostgreSQL extensions
 
 * Latest Dynatrace
 * How-to guide

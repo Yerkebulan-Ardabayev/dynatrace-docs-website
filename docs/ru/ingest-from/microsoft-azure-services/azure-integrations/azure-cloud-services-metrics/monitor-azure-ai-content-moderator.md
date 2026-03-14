@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:36:50.391726
 
 # Мониторинг Azure AI Content Moderator
 
-# Мониторинг Azure AI Content Moderator
 
 * Последняя версия Dynatrace
 * Практическое руководство

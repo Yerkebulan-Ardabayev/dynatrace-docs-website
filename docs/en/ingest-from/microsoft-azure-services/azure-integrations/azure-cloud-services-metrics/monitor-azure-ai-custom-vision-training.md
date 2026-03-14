@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:46.087116
 
 # Azure AI - Custom Vision monitoring
 
-# Azure AI - Custom Vision monitoring
 
 * Latest Dynatrace
 * How-to guide

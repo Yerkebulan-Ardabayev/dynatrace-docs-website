@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:23.633190
 
 # World map view
 
-# World map view
 
 * Classic
 * How-to guide

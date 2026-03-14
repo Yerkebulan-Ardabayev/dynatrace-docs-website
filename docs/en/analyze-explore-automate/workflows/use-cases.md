@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:55.552697
 
 # Workflows use cases
 
-# Workflows use cases
 
 * Latest Dynatrace
 * Overview

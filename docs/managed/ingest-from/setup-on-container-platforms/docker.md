@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Set up Dynatrace on Docker
 
-# Set up Dynatrace on Docker
 
 * 1-min read
 * Published Jun 25, 2021

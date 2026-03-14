@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:35:56.822233
 
 # Discovery & Coverage
 
-# Discovery & Coverage
 
 * Последняя версия Dynatrace
 * Приложение

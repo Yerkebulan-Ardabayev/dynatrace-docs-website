@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:13.819056
 
 # Расчёт потребления Foundation & Discovery (DPS)
 
-# Расчёт потребления Foundation & Discovery (DPS)
 
 * Последняя версия Dynatrace
 * Пояснение

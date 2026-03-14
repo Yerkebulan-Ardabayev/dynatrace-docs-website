@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Change state of access request
 
-# Change state of access request
 
 * Published Feb 12, 2020
 
@@ -50,9 +49,7 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
-
 "state": "ACCEPTED"
-
 
 
 }
@@ -81,13 +78,10 @@ In this example you request to change the remote access permission to `rejected`
 curl -X PUT "https://myManaged.cluster.com/api/cluster/v2/remoteaccess/requests/7a397770-86b7-473b-b23e-4a07d79f2eff/state"
 
 
-
 -H  "accept: */*"
 
 
-
 -H  "Content-Type: */*"
-
 
 
 -d "{\"state\":\"ACCEPTED\"}"
@@ -105,9 +99,7 @@ https://myManaged.cluster.com/api/cluster/v2/remoteaccess/requests/7a397770-86b7
 {
 
 
-
 "state": "REJECTED"
-
 
 
 }

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:24.814119
 
 # Filter with facets
 
-# Filter with facets
 
 * Latest Dynatrace
 * How-to guide

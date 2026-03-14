@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:24.661965
 
 # Визуализация необработанных данных
 
-# Визуализация необработанных данных
 
 * Последняя версия Dynatrace
 * Практическое руководство
@@ -23,17 +22,13 @@ scraped: 2026-03-06T21:21:24.661965
 timeseries avg=avg(dt.host.cpu.load),
 
 
-
 max=max(dt.host.cpu.load),
-
 
 
 min=min(dt.host.cpu.load),
 
 
-
 by:dt.entity.host
-
 
 
 | limit 1
@@ -83,7 +78,6 @@ by:dt.entity.host
 
     ```
     fetch logs
-
 
 
     | limit 2000

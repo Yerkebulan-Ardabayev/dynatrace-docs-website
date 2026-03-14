@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:31:05.733511
 
 # Azure Database for MariaDB monitoring
 
-# Azure Database for MariaDB monitoring
 
 * Latest Dynatrace
 * How-to guide

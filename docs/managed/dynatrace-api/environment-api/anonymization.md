@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Anonymization API
 
-# Anonymization API
 
 * Reference
 * Published Sep 24, 2018

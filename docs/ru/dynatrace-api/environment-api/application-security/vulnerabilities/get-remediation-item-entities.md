@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:32.135216
 
 # Vulnerabilities API - GET remediation item entities
 
-# Vulnerabilities API - GET remediation item entities
 
 * Справочник
 * Обновлено 25 сентября 2024 г.
@@ -132,149 +131,112 @@ scraped: 2026-03-06T21:37:32.135216
 {
 
 
-
 "remediationProgressEntities": [
 
 
-
 {
-
 
 
 "assessment": {
 
 
-
 "vulnerableFunctionRestartRequired": true,
-
 
 
 "vulnerableFunctionUsage": "IN_USE",
 
 
-
 "vulnerableFunctionsInUse": [
 
 
-
 {
-
 
 
 "className": "string",
 
 
-
 "filePath": "string",
-
 
 
 "functionName": "string"
 
 
-
 }
 
 
-
 ],
-
 
 
 "vulnerableFunctionsNotAvailable": [
 
 
-
 {}
 
 
-
 ],
-
 
 
 "vulnerableFunctionsNotInUse": [
 
 
-
 {}
 
 
-
 ]
-
 
 
 },
 
 
-
 "firstAffectedTimestamp": 1,
 
 
-
 "id": "string",
-
 
 
 "name": "string",
 
 
-
 "state": "AFFECTED",
-
 
 
 "vulnerableComponents": [
 
 
-
 {
-
 
 
 "displayName": "string",
 
 
-
 "fileName": "string",
-
 
 
 "id": "string",
 
 
-
 "loadOrigins": [
-
 
 
 "string"
 
 
-
 ],
-
 
 
 "shortName": "string"
 
 
-
 }
-
 
 
 ]
 
 
-
 }
 
 
-
 ]
-
 
 
 }
@@ -282,55 +244,42 @@ scraped: 2026-03-06T21:37:32.135216
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -348,9 +297,7 @@ scraped: 2026-03-06T21:37:32.135216
 curl -X 'GET' 'https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/7412525767433554374/remediationItems/PROCESS_GROUP-F32C09AEDCB7A450/remediationProgressEntities?remediationProgressEntitySelector=state%28%22AFFECTED%22%29' \
 
 
-
 -H 'accept: application/json; charset=utf-8' \
-
 
 
 -H 'Authorization: Api-Token [your_token]'
@@ -368,93 +315,70 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/74125257674335543
 {
 
 
-
 "remediationProgressEntities": [
 
 
-
 {
-
 
 
 "id": "PROCESS_GROUP_INSTANCE-66B8C7F0FA77E541",
 
 
-
 "name": "app.js (frontend) unguard-frontend-* (unguard-frontend-696558fd77-cdkxp)",
-
 
 
 "firstAffectedTimestamp": 1725894871213,
 
 
-
 "state": "AFFECTED",
-
 
 
 "vulnerableComponents": [
 
 
-
 {
-
 
 
 "id": "SOFTWARE_COMPONENT-30CF12729DF87E61",
 
 
-
 "displayName": "minimatch:3.0.4",
-
 
 
 "shortName": "minimatch"
 
 
-
 }
-
 
 
 ],
 
 
-
 "assessment": {
-
 
 
 "vulnerableFunctionUsage": "NOT_AVAILABLE",
 
 
-
 "vulnerableFunctionRestartRequired": false,
-
 
 
 "vulnerableFunctionsInUse": [],
 
 
-
 "vulnerableFunctionsNotInUse": [],
-
 
 
 "vulnerableFunctionsNotAvailable": []
 
 
-
 }
 
 
-
 }
-
 
 
 ]
-
 
 
 }

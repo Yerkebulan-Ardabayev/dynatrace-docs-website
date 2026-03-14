@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # OneAgent on Windows
 
-# OneAgent on Windows
 
 * Latest Dynatrace
 * 1-min read

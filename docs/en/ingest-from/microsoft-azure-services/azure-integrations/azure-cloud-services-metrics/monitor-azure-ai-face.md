@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:38:17.684422
 
 # Azure AI - Face monitoring
 
-# Azure AI - Face monitoring
 
 * Latest Dynatrace
 * How-to guide

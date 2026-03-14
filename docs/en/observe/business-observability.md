@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:10:11.811730
 
 # Business Observability
 
-# Business Observability
 
 * Latest Dynatrace
 * Overview

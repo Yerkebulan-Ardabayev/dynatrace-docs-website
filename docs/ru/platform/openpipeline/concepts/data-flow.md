@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:54.139751
 
 # Поток данных в OpenPipeline
 
-# Поток данных в OpenPipeline
 
 * Latest Dynatrace
 * Пояснение

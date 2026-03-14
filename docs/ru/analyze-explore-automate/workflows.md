@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:15:26.954952
 
 # Workflows
 
-# Workflows
 
 * Последняя версия Dynatrace
 * Приложение

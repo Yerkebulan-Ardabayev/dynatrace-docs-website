@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:40:30.301955
 
 # Мониторинг Azure Key Vault
 
-# Мониторинг Azure Key Vault
 
 * Latest Dynatrace
 * How-to guide

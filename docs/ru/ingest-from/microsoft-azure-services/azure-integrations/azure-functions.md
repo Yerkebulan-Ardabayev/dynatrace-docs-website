@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:25.804495
 
 # Мониторинг Azure Functions с использованием Azure App Service (встроенный)
 
-# Мониторинг Azure Functions с использованием Azure App Service (встроенный)
 
 * Последняя версия Dynatrace
 * Практическое руководство

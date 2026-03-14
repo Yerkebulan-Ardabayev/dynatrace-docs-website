@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:53.759111
 
 # Ingest Qualys vulnerability findings, scan events, and audit logs
 
-# Ingest Qualys vulnerability findings, scan events, and audit logs
 
 * Latest Dynatrace
 * Extension
@@ -74,7 +73,6 @@ To authenticate with a username and password, the user account must have the fol
      fetch logs
 
 
-
      | filter log.source=="Qualys"
      ```
    * For finding events:
@@ -83,13 +81,10 @@ To authenticate with a username and password, the user account must have the fol
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Qualys"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -100,13 +95,10 @@ To authenticate with a username and password, the user account must have the fol
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Qualys"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"

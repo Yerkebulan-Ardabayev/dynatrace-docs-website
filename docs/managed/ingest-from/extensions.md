@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Extensions
 
-# Extensions
 
 * Overview
 * 2-min read

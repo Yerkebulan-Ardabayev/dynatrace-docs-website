@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # VMware vSphere monitoring
 
-# VMware vSphere monitoring
 
 * How-to guide
 * Published Aug 12, 2021

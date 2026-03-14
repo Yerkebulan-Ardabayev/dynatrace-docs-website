@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:37:43.036318
 
 # Oracle Database monitoring configuration
 
-# Oracle Database monitoring configuration
 
 * Latest Dynatrace
 * Reference
@@ -25,121 +24,91 @@ Example payload to activate an Oracle SQL extension:
 [
 
 
-
 {
-
 
 
 "value": {
 
 
-
 "enabled": true,
-
 
 
 "description": "My Oracle SQL extension",
 
 
-
 "version": "0.1.1",
-
 
 
 "featureSets": [
 
 
-
 "io",
-
 
 
 "cpu",
 
 
-
 ],
-
 
 
 "sqlOracleRemote": {
 
 
-
 "licenseAccepted": true,
-
 
 
 "endpoints": [
 
 
-
 {
-
 
 
 "host": "sqlserver.org",
 
 
-
 "port": 1521,
-
 
 
 "databaseIdentifier": "serviceName",
 
 
-
 "authentication": {
-
 
 
 "scheme": "basic",
 
 
-
 "username": "admin",
-
 
 
 "password": "password"
 
 
-
 },
-
 
 
 "serviceName": "some-serviceName"
 
 
-
 "ssl": false
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 },
 
 
-
 "scope": "ag_group-default"
 
 
-
 }
-
 
 
 ]
@@ -159,9 +128,7 @@ Issue the following request:
 curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/{extension-name}/{extension-version}/schema" \
 
 
-
 -H "accept: application/json; charset=utf-8" \
-
 
 
 -H "Authorization: Api-Token {api-token}"
@@ -203,69 +170,52 @@ You can define up to 20,000 endpoints in a single monitoring configuration in th
 "sqlOracleRemote": {
 
 
-
 "licenseAccepted": true,
-
 
 
 "endpoints": [
 
 
-
 {
-
 
 
 "host": "sqlserver.org",
 
 
-
 "port": 1521,
-
 
 
 "databaseIdentifier": "serviceName",
 
 
-
 "authentication": {
-
 
 
 "scheme": "basic",
 
 
-
 "username": "admin",
-
 
 
 "password": "password"
 
 
-
 },
-
 
 
 "serviceName": "some-serviceName"
 
 
-
 "ssl": false
 
 
-
 }
-
 
 
 ]
 
 
-
 }
-
 
 
 }
@@ -300,17 +250,13 @@ The credential vault authentication type provides a more secure approach to usin
 "authentication": {
 
 
-
 "scheme": "basic",
-
 
 
 "useCredentialVault": true,
 
 
-
 "credentialVaultId": "some-credential-vault-id"
-
 
 
 }
@@ -324,13 +270,10 @@ Add a list of feature sets you want to monitor. To report all feature sets, add 
 "featureSets": [
 
 
-
 "cpu",
 
 
-
 "io"
-
 
 
 ]
@@ -344,9 +287,7 @@ The feature set `topN` enables monitoring of the most resource-intensive queries
 "featureSets": [
 
 
-
 "topN"
-
 
 
 ]
@@ -362,9 +303,7 @@ The feature set `multitenancy` enhances the monitoring capabilities by querying 
 "featureSets": [
 
 
-
 "multitenancy"
-
 
 
 ]
@@ -396,9 +335,7 @@ Add the `long-running-query-timeout` parameter to configure the timeout duration
 "vars": {
 
 
-
 "long-running-query-timeout": null
-
 
 
 }

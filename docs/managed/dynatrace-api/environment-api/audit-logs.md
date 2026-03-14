@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Audit logs API
 
-# Audit logs API
 
 * Reference
 * Published Dec 10, 2019

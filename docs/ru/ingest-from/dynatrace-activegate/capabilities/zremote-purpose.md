@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:15.913103
 
 # Установка модуля zRemote для мониторинга z/OS
 
-# Установка модуля zRemote для мониторинга z/OS
 
 * Latest Dynatrace
 * 1-min read

@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # ActiveGate auto-update jobs API
 
-# ActiveGate auto-update jobs API
 
 * Reference
 * Published Jul 02, 2020

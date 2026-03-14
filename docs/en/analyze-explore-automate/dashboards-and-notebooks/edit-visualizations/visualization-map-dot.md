@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:21:06.636827
 
 # Dot map visualization
 
-# Dot map visualization
 
 * Latest Dynatrace
 * How-to guide
@@ -38,41 +37,31 @@ The map above is based on the following data.
 data
 
 
-
 record(geo.location.latitude = 51.509865, geo.location.longitude = -0.118092),  // London, UK
-
 
 
 record(geo.location.latitude = 40.712776, geo.location.longitude = -74.005974),  // New York, USA
 
 
-
 record(geo.location.latitude = 35.689487, geo.location.longitude = 139.691711),  // Tokyo, Japan
-
 
 
 record(geo.location.latitude = -33.868820, geo.location.longitude = 151.209290),  // Sydney, Australia
 
 
-
 record(geo.location.latitude = 48.856613, geo.location.longitude = 2.352222),  // Paris, France
-
 
 
 record(geo.location.latitude = 55.755825, geo.location.longitude = 37.617298),  // Moscow, Russia
 
 
-
 record(geo.location.latitude = 34.052235, geo.location.longitude = -118.243683),  // Los Angeles, USA
-
 
 
 record(geo.location.latitude = 19.432608, geo.location.longitude = -99.133209),  // Mexico City, Mexico
 
 
-
 record(geo.location.latitude = 39.904202, geo.location.longitude = 116.407394),  // Beijing, China
-
 
 
 record(geo.location.latitude = 52.520008, geo.location.longitude = 13.404954)  // Berlin, Germany
@@ -88,41 +77,31 @@ The map above is based on the following data.
 data
 
 
-
 record(geo.location.latitude = 51.509865, geo.location.longitude = -0.118092, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 48.864716, geo.location.longitude = 2.349014, revenue = toLong(random() * 10000000)),
 
 
-
 record(geo.location.latitude = 41.902782, geo.location.longitude = 12.496366, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 52.520008, geo.location.longitude = 13.404954, revenue = toLong(random() * 10000000)),
 
 
-
 record(geo.location.latitude = 40.416775, geo.location.longitude = -3.70379, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 51.9225, geo.location.longitude = 4.47917, revenue = toLong(random() * 10000000)),
 
 
-
 record(geo.location.latitude = 59.329323, geo.location.longitude = 18.068581, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 50.075538, geo.location.longitude = 14.4378, revenue = toLong(random() * 10000000)),
 
 
-
 record(geo.location.latitude = 37.98381, geo.location.longitude = 23.727539, revenue = toLong(random() * 10000000)),
-
 
 
 record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, revenue = toLong(random() * 10000000))
@@ -140,41 +119,31 @@ The map above is based on the following data.
 data
 
 
-
 record(geo.location.latitude = 51.509865, geo.location.longitude = -0.118092, bearing = toLong(random() * 1000 % 360)),
-
 
 
 record(geo.location.latitude = 48.864716, geo.location.longitude = 2.349014, bearing = toLong(random() * 1000 % 360)),
 
 
-
 record(geo.location.latitude = 41.902782, geo.location.longitude = 12.496366, bearing = toLong(random() * 1000 % 360)),
-
 
 
 record(geo.location.latitude = 52.520008, geo.location.longitude = 13.404954, bearing = toLong(random() * 1000 % 360)),
 
 
-
 record(geo.location.latitude = 40.416775, geo.location.longitude = -3.70379, bearing = toLong(random() * 1000 % 360)),
-
 
 
 record(geo.location.latitude = 51.9225, geo.location.longitude = 4.47917, bearing = toLong(random() * 1000 % 360)),
 
 
-
 record(geo.location.latitude = 59.329323, geo.location.longitude = 18.068581, bearing = toLong(random() * 1000 % 360)),
-
 
 
 record(geo.location.latitude = 50.075538, geo.location.longitude = 14.4378, bearing = toLong(random() * 1000 % 360)),
 
 
-
 record(geo.location.latitude = 37.98381, geo.location.longitude = 23.727539, bearing = toLong(random() * 1000 % 360)),
-
 
 
 record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, bearing = toLong(random() * 1000 % 360))
@@ -192,41 +161,31 @@ The map above is based on the following data.
 data
 
 
-
 record(geo.location.latitude = 51.509865, geo.location.longitude = -0.118092, Lab = "London"),
-
 
 
 record(geo.location.latitude = 48.864716, geo.location.longitude = 2.349014, Lab = "Paris"),
 
 
-
 record(geo.location.latitude = 41.902782, geo.location.longitude = 12.496366, Lab = "Rome"),
-
 
 
 record(geo.location.latitude = 52.520008, geo.location.longitude = 13.404954, Lab = "Berlin"),
 
 
-
 record(geo.location.latitude = 40.416775, geo.location.longitude = -3.70379, Lab = "Madrid"),
-
 
 
 record(geo.location.latitude = 51.9225, geo.location.longitude = 4.47917, Lab = "Rotterdam"),
 
 
-
 record(geo.location.latitude = 59.329323, geo.location.longitude = 18.068581, Lab = "Stockholm"),
-
 
 
 record(geo.location.latitude = 50.075538, geo.location.longitude = 14.4378, Lab = "Prague"),
 
 
-
 record(geo.location.latitude = 37.98381, geo.location.longitude = 23.727539, Lab = "Athens"),
-
 
 
 record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, Lab = "Copenhagen")
@@ -415,7 +374,6 @@ Dashboard tiles and notebook sections created in Dynatrace earlier than version 
 
     ```
     fetch logs
-
 
 
     | limit 2000

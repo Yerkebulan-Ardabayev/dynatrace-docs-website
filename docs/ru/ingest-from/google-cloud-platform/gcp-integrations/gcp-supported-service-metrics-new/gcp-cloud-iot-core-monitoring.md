@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:11.678099
 
 # Мониторинг Google Cloud IoT Core (устарело)
 
-# Мониторинг Google Cloud IoT Core (устарело)
 
 * Последняя версия Dynatrace
 * Практическое руководство

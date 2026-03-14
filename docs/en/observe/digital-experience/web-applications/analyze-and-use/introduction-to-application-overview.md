@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:27:35.018091
 
 # Introduction to application overview page
 
-# Introduction to application overview page
 
 * Classic
 * Explanation

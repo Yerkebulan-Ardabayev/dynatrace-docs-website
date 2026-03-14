@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:31:32.532091
 
 # OpenTelemetry interoperability in Node.js
 
-# OpenTelemetry interoperability in Node.js
 
 * Classic
 * How-to guide
@@ -52,81 +51,61 @@ The following code example shows how to instrument [PostgreSQLï»¿](https://ww
 const { registerInstrumentations } = require('@opentelemetry/instrumentation');
 
 
-
 const { PgInstrumentation } = require('@opentelemetry/instrumentation-pg');
-
 
 
 // You must create the PgInstrumentation (and other instrumentations)
 
 
-
 // before loading any corresponding modules, such as `require('pg')`.
-
 
 
 registerInstrumentations({
 
 
-
 instrumentations: [
-
 
 
 new PgInstrumentation(),
 
 
-
 ],
-
 
 
 });
 
 
-
 const { Client } = require('pg');
-
 
 
 exports.handler = async function myHandler(event, context) {
 
 
-
 let client;
-
 
 
 try {
 
 
-
 client = new Client(/* DB connection information */);
-
 
 
 await client.connect();
 
 
-
 const result = await client.query('SELECT * FROM users;');
-
 
 
 return result.rows;
 
 
-
 } finally {
-
 
 
 client?.end();
 
 
-
 }
-
 
 
 }
@@ -142,93 +121,70 @@ The following code example shows how the [`opentelemetry/instrumentation-aws-sdk
 const AWS = require('aws-sdk');
 
 
-
 const { registerInstrumentations } = require('@opentelemetry/instrumentation');
-
 
 
 const { AwsInstrumentation } = require('@opentelemetry/instrumentation-aws-sdk');
 
 
-
 registerInstrumentations({
-
 
 
 instrumentations: [
 
 
-
 new AwsInstrumentation()
-
 
 
 ]
 
 
-
 });
-
 
 
 exports.handler = function(event, context) {
 
 
-
 const ddb = new AWS.DynamoDB();
-
 
 
 const dbParamsGetDelete = {
 
 
-
 TableName: 'E2E_test_table',
-
 
 
 Key: {
 
 
-
 'svnr': { N: '1234'}
 
 
-
 }
-
 
 
 };
 
 
-
 ddb.getItem(dbParamsGetDelete, function(err, data) {
-
 
 
 if (err) {
 
 
-
 console.error('Error', err);
-
 
 
 } else {
 
 
-
 console.log('Success', data.Item);
-
 
 
 }
 
 
-
 });
-
 
 
 };
@@ -246,53 +202,40 @@ After running the above code snippet, the DynamoDB service page looks as follows
 const opentelemetry = require('@opentelemetry/api');
 
 
-
 const tracer = opentelemetry.trace.getTracer('my-package-name');
-
 
 
 exports.handler = function(event, context) {
 
 
-
 // create a span using the OTel API
-
 
 
 const span = tracer.startSpan('do some work');
 
 
-
 span.setAttribute('foo', 'bar');
-
 
 
 span.end();
 
 
-
 // ...
-
 
 
 const response = {
 
 
-
 statusCode: 200,
-
 
 
 body: JSON.stringify('Hello from Node.js'),
 
 
-
 };
 
 
-
 return response;
-
 
 
 };
@@ -328,37 +271,28 @@ Use the following code to set up tracing for sending SQS messages to an SQS queu
 const { AwsInstrumentation } = require('@opentelemetry/instrumentation-aws-sdk');
 
 
-
 const { registerInstrumentations } = require('@opentelemetry/instrumentation');
-
 
 
 // The instrumentation must be registered before importing the aws-sdk module!
 
 
-
 registerInstrumentations({
-
 
 
 instrumentations: [
 
 
-
 new AwsInstrumentation()
-
 
 
 ]
 
 
-
 });
 
 
-
 // You can now import the aws-sdk module if needed:
-
 
 
 const AWS = require('aws-sdk');
@@ -378,149 +312,112 @@ const AWS = require('aws-sdk');
   const http = require("http");
 
 
-
   const AWS = require('aws-sdk');
-
 
 
   const sqs = new AWS.SQS();
 
 
-
   const sns = new AWS.SNS();
-
 
 
   const server = http.createServer((req, res) => {
 
 
-
   const messageSendCallback = function (err, message) {
-
 
 
   if (err) {
 
 
-
   console.log("failed to send a message: " + err);
-
 
 
   res.writeHead(500);
 
 
-
   res.end("failure");
 
 
-
   } else {
-
 
 
   console.log("Success", message.MessageId);
 
 
-
   res.writeHead(200);
-
 
 
   res.end("success");
 
 
-
   }
 
 
-
   }
-
 
 
   if (req.url === "/send-sqs-message") {
 
 
-
   const params = {
-
 
 
   DelaySeconds: 10,
 
 
-
   MessageBody: "[your payload]",
-
 
 
   QueueUrl: "[your SQS-queue URL]"
 
 
-
   };
-
 
 
   sqs.sendMessage(params, messageSendCallback);
 
 
-
   } else if (req.url === "/send-sns-message") {
-
 
 
   const params = {
 
 
-
   Message: "[your payload]",
-
 
 
   TopicArn: "[your SNS-topic ARN]"
 
 
-
   };
-
 
 
   sns.publish(params, messageSendCallback);
 
 
-
   } else {
-
 
 
   res.writeHead(404);
 
 
-
   res.end("not found");
-
 
 
   }
 
 
-
   });
-
 
 
   server.on("close", () => { console.log("Closing server") });
 
 
-
   server.listen(8004, () => {
 
 
-
   console.log("server started!");
-
 
 
   });
@@ -545,89 +442,67 @@ const AWS = require('aws-sdk');
   const AWS = require('aws-sdk');
 
 
-
   exports.handler = function (event, context, callback) {
-
 
 
   const sqs = new AWS.SQS();
 
 
-
   const params = {
-
 
 
   DelaySeconds: 10,
 
 
-
   MessageBody: "[your payload]",
-
 
 
   QueueUrl: "[your SQS-queue URL]"
 
 
-
   };
-
 
 
   sqs.sendMessage(params, function (err, data) {
 
 
-
   if (err) {
 
 
-
   context.succeed({
-
 
 
   statusCode: 500,
 
 
-
   body: err,
 
 
-
   });
-
 
 
   } else {
 
 
-
   console.log("SQS-Success", data.MessageId);
-
 
 
   context.succeed({
 
 
-
   statusCode: 200,
-
 
 
   body: "SQS-Success",
 
 
-
   });
-
 
 
   }
 
 
-
   });
-
 
 
   }
@@ -641,85 +516,64 @@ const AWS = require('aws-sdk');
   const AWS = require('aws-sdk');
 
 
-
   exports.handler = function (event, context, callback) {
-
 
 
   const sns = new AWS.SNS();
 
 
-
   const params = {
-
 
 
   Message: "[your payload]",
 
 
-
   TopicArn: "[your SNS-topic ARN]"
-
 
 
   };
 
 
-
   sns.publish(params, function (err, data) {
-
 
 
   if (err) {
 
 
-
   context.succeed({
-
 
 
   statusCode: 500,
 
 
-
   body: err,
 
 
-
   });
-
 
 
   } else {
 
 
-
   console.log("SNS-Success", data.MessageId);
-
 
 
   context.succeed({
 
 
-
   statusCode: 200,
-
 
 
   body: "SNS-Success",
 
 
-
   });
-
 
 
   }
 
 
-
   });
-
 
 
   }
@@ -750,21 +604,16 @@ You can trace SQS messages forwarded from
     {
 
 
-
     ...other configuration properties...
-
 
 
     "OpenTelemetry": {
 
 
-
     "AllowExplicitParent": "true"
 
 
-
     }
-
 
 
     }
@@ -778,257 +627,193 @@ You can trace SQS messages forwarded from
   const { propagation, ROOT_CONTEXT, trace, SpanKind } = require("@opentelemetry/api");
 
 
-
   const { MessagingOperationValues, SemanticAttributes } = require("@opentelemetry/semantic-conventions");
-
 
 
   const AWS = require("aws-sdk");
 
 
-
   const queueUrl = "[sqs queue url]";
-
 
 
   const tracer = trace.getTracer("my-receiver");
 
 
-
   exports.handler = async (event) => {
-
 
 
   const sqs = new AWS.SQS();
 
 
-
   await new Promise((resolve, reject) => {
-
 
 
   const receiveParams = {
 
 
-
   MaxNumberOfMessages: 10,
 
 
-
   QueueUrl: queueUrl,
-
 
 
   // MessageAttributeNames not needed if @opentelemetry/instrumentation-aws-sdk is used
 
 
-
   MessageAttributeNames: propagation.fields()
 
 
-
   };
-
 
 
   sqs.receiveMessage(receiveParams, function (err, data) {
 
 
-
   if (err) {
-
 
 
   console.log("ERROR: ", err);
 
 
-
   reject(err);
-
 
 
   } else if (data.Messages?.length) {
 
 
-
   data.Messages.forEach((msg) => {
-
 
 
   console.log("message received:", msg.MessageId)
 
 
-
   // manual span creation
-
 
 
   const ctx = extractParent(msg, /*fromSnsPayload=*/ false);
 
 
-
   const spanAttributes = {
-
 
 
   [SemanticAttributes.MESSAGING_MESSAGE_ID]: msg.MessageId,
 
 
-
   [SemanticAttributes.MESSAGING_URL]: queueUrl,
-
 
 
   [SemanticAttributes.MESSAGING_SYSTEM]: "aws.sqs",
 
 
-
   [SemanticAttributes.MESSAGING_OPERATION]: MessagingOperationValues.PROCESS,
 
 
-
   };
-
 
 
   const span = tracer.startSpan("received message", { kind: SpanKind.CONSUMER, attributes: spanAttributes }, ctx);
 
 
-
   // ... Here your actual processing would go...
-
 
 
   span.end();
 
 
-
   const deleteParams = {
-
 
 
   QueueUrl: queueUrl,
 
 
-
   ReceiptHandle: msg.ReceiptHandle
 
 
-
   };
-
 
 
   sqs.deleteMessage(deleteParams, function (err, data) {
 
 
-
   if (err) {
-
 
 
   console.log("Delete Error", err);
 
 
-
   } else {
-
 
 
   console.log("Message Deleted", data);
 
 
-
   }
-
 
 
   });
 
 
-
   });
 
 
-
   }
-
 
 
   resolve();
 
 
-
   });
 
 
-
   });
-
 
 
   };
 
 
-
   function extractParent(msg, fromSnsPayload=false) {
-
 
 
   let valueKey = "StringValue"
 
 
-
   if (fromSnsPayload) {
-
 
 
   valueKey = "Value";
 
 
-
   try {
-
 
 
   msg = JSON.parse(msg.Body)
 
 
-
   } catch {
-
 
 
   msg = {}
 
 
-
   }
 
 
-
   }
-
 
 
   const carrier = {};
 
 
-
   Object.keys(msg.MessageAttributes || {}).forEach((attrKey) => {
-
 
 
   carrier[attrKey] = msg.MessageAttributes[attrKey]?.[valueKey];
 
 
-
   });
 
 
-
   return propagation.extract(ROOT_CONTEXT, carrier)
-
 
 
   };

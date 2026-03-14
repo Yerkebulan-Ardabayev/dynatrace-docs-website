@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:23:25.157293
 
 # Dynatrace OTel Collector
 
-# Dynatrace OTel Collector
 
 * Последняя версия Dynatrace
 * Обзор

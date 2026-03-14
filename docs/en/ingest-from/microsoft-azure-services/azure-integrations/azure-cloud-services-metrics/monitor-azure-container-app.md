@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:54.227234
 
 # Azure Container App monitoring
 
-# Azure Container App monitoring
 
 * Latest Dynatrace
 * How-to guide

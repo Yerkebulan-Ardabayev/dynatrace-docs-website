@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:17.382325
 
 # JMX extensions
 
-# JMX extensions
 
 * Latest Dynatrace
 * 7-min read
@@ -121,101 +120,76 @@ The following sample shows how to define a metric that provides multiple timeser
 "metrics": [
 
 
-
 {
-
 
 
 "timeseries": {
 
 
-
 "key": "XY.Size",
-
 
 
 "unit": "Count",
 
 
-
 "displayname": "Queue Consumer Count",
-
 
 
 "dimensions": [
 
 
-
 "rx_pid",
-
 
 
 "name"
 
 
-
 ]
 
 
-
 }
-
 
 
 "source": {
 
 
-
 "domain": "com.sample",
-
 
 
 "keyProperties": {
 
 
-
 "type": "XY",
-
 
 
 "name": "*"
 
 
-
 },
-
 
 
 "attribute": "Size",
 
 
-
 "splitting": {
-
 
 
 "name": "name",
 
 
-
 "type": "keyProperty",
-
 
 
 "keyProperty": "name"
 
 
+}
+
 
 }
 
 
-
 }
-
-
-
-}
-
 
 
 ]

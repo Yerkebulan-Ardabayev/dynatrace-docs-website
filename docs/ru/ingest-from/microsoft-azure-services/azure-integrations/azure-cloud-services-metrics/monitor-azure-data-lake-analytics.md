@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:06.162984
 
 # Мониторинг Azure Data Lake Analytics
 
-# Мониторинг Azure Data Lake Analytics
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:24:13.097220
 
 # Приём результатов анализа уязвимостей, сканирований и журналов аудита Snyk
 
-# Приём результатов анализа уязвимостей, сканирований и журналов аудита Snyk
 
 * Latest Dynatrace
 * Расширение
@@ -66,7 +65,6 @@ scraped: 2026-03-06T21:24:13.097220
      fetch logs
 
 
-
      | filter log.source=="Snyk"
      ```
    * Для событий обнаружения уязвимостей:
@@ -75,13 +73,10 @@ scraped: 2026-03-06T21:24:13.097220
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Snyk"
-
 
 
      AND event.type=="VULNERABILITY_FINDING"
@@ -92,13 +87,10 @@ scraped: 2026-03-06T21:24:13.097220
      fetch security.events
 
 
-
      | filter dt.system.bucket == "default_securityevents"
 
 
-
      | filter event.provider=="Snyk"
-
 
 
      AND event.type=="VULNERABILITY_SCAN"

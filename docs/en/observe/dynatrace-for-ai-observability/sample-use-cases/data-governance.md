@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:33.344954
 
 # AI data governance with Amazon Bedrock
 
-# AI data governance with Amazon Bedrock
 
 * Latest Dynatrace
 * Tutorial
@@ -147,25 +146,19 @@ Afterward, add the following code at the beginning of your main file:
 from traceloop.sdk import Traceloop
 
 
-
 headers = { "Authorization": "Api-Token <YOUR_DT_API_TOKEN>" }
-
 
 
 Traceloop.init(
 
 
-
 app_name="<your-service>",
-
 
 
 api_endpoint="https://<YOUR_ENV>.live.dynatrace.com/api/v2/otlp",
 
 
-
 headers=headers
-
 
 
 )

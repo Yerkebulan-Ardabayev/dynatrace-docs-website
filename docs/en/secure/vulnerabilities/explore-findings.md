@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:28.649050
 
 # Explore findings
 
-# Explore findings
 
 * Latest Dynatrace
 * How-to guide

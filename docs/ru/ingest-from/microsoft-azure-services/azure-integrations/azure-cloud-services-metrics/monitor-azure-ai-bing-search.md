@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:34:46.561297
 
 # Мониторинг Azure AI - Bing Search
 
-# Мониторинг Azure AI - Bing Search
 
 * Latest Dynatrace
 * How-to guide

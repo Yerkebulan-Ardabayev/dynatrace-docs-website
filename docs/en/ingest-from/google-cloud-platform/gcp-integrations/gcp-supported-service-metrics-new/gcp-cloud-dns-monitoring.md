@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:35:23.930808
 
 # Google Cloud DNS monitoring
 
-# Google Cloud DNS monitoring
 
 * Latest Dynatrace
 * How-to guide

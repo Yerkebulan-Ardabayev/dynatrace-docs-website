@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:34:38.792173
 
 # Enhance your account security with MFA TOTP
 
-# Enhance your account security with MFA TOTP
 
 * Latest Dynatrace
 * How-to guide

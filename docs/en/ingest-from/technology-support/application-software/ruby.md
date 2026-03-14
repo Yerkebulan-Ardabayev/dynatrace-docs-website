@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:26:27.945131
 
 # Ruby
 
-# Ruby
 
 * Latest Dynatrace
 * Reference

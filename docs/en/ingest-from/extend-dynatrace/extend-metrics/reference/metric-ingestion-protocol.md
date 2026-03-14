@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:37:09.371667
 
 # Metric ingestion protocol
 
-# Metric ingestion protocol
 
 * Latest Dynatrace
 * 6-min read
@@ -126,7 +125,6 @@ The general syntax of metric ingestion is the following:
 metric.key,dimensions payload
 
 
-
 #metric.key <payload-format> dt.meta.<property1>="<value>", dt.meta.<property2>="<value>"
 ```
 
@@ -150,7 +148,6 @@ Gauge is the default data, so you can keep the data type optional in case you wa
 
 ```
 cpu.temperature,hostname=hostA,cpu=1 55
-
 
 
 cpu.temperature,hostname=hostA,cpu=2 45
@@ -182,7 +179,6 @@ For a count type of metric, the delta is calculated and provided by the client t
 
 ```
 new_user_count,region=EAST count,delta=50
-
 
 
 new_user_count,region=WEST count,delta=150

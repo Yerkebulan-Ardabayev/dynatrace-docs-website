@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:27:17.743091
 
 # Stream Logs with Cribl
 
-# Stream Logs with Cribl
 
 * Latest Dynatrace
 * How-to guide

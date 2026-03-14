@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:45.312965
 
 # Metric selector events
 
-# Metric selector events
 
 * Classic
 * How-to guide

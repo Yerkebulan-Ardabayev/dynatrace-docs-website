@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:54.227234
 
 # Мониторинг Azure Container App
 
-# Мониторинг Azure Container App
 
 * Latest Dynatrace
 * How-to guide

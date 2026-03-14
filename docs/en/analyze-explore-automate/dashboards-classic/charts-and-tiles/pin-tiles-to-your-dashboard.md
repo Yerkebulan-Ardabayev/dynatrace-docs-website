@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:20:52.180811
 
 # Pin tiles to your dashboard
 
-# Pin tiles to your dashboard
 
 * How-to guide
 * 5-min read

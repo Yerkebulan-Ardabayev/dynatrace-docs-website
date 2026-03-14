@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:28:02.411095
 
 # Configure the RUM cookie domain for web applications
 
-# Configure the RUM cookie domain for web applications
 
 * Classic
 * How-to guide

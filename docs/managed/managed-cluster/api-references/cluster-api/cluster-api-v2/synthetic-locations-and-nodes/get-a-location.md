@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Synthetic locations API v2 - GET a location (Dynatrace Managed)
 
-# Synthetic locations API v2 - GET a location (Dynatrace Managed)
 
 * Published Jul 26, 2019
 
@@ -92,109 +91,83 @@ A list of constraint violations
 {
 
 
-
 "city": "string",
-
 
 
 "countryCode": "string",
 
 
-
 "countryName": "string",
-
 
 
 "entityId": "string",
 
 
-
 "geoLocationId": "string",
-
 
 
 "latitude": 1,
 
 
-
 "longitude": 1,
-
 
 
 "name": "string",
 
 
-
 "regionCode": "string",
-
 
 
 "regionName": "string",
 
 
-
 "status": "DISABLED",
-
 
 
 "type": "CLUSTER"
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -268,109 +241,83 @@ A list of constraint violations
 {
 
 
-
 "city": "string",
-
 
 
 "countryCode": "string",
 
 
-
 "countryName": "string",
-
 
 
 "entityId": "string",
 
 
-
 "geoLocationId": "string",
-
 
 
 "latitude": 1,
 
 
-
 "longitude": 1,
-
 
 
 "name": "string",
 
 
-
 "regionCode": "string",
-
 
 
 "regionName": "string",
 
 
-
 "status": "DISABLED",
-
 
 
 "type": "CLUSTER"
 
 
-
 }
 ```
 
 ```
 {
-
 
 
 "error": {
 
 
-
 "code": 1,
-
 
 
 "constraintViolations": [
 
 
-
 {
-
 
 
 "location": "string",
 
 
-
 "message": "string",
-
 
 
 "parameterLocation": "HEADER",
 
 
-
 "path": "string"
 
 
-
 }
-
 
 
 ],
 
 
-
 "message": "string"
 
 
-
 }
-
 
 
 }
@@ -386,9 +333,7 @@ In this example, the request gets the details of the **Amazon US East (N. Virgin
 curl -X GET \
 
 
-
 https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations/SYNTHETIC_LOCATION-0000000000000064 \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -406,105 +351,79 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations/SYNTHETIC_LOCA
 {
 
 
-
 "entityId": "SYNTHETIC_LOCATION-0000000000000064",
-
 
 
 "type": "PUBLIC",
 
 
-
 "name": "GdaÅsk",
-
 
 
 "countryCode": "PL",
 
 
-
 "regionCode": "EU",
-
 
 
 "city": "GdaÅsk",
 
 
-
 "latitude": 54.399078,
-
 
 
 "longitude": 18.576557,
 
 
-
 "status": "ENABLED",
-
 
 
 "cloudPlatform": "OTHER",
 
 
-
 "ips": [
-
 
 
 "120.157.221.247",
 
 
-
 "172.158.6.93",
-
 
 
 "197.136.70.30",
 
 
-
 "227.53.205.237",
-
 
 
 "131.123.197.12"
 
 
-
 ],
-
 
 
 "stage": "GA",
 
 
-
 "browserType": "Chrome",
-
 
 
 "browserVersion": "83.0.4103.61",
 
 
-
 "capabilities": [
-
 
 
 "BROWSER",
 
 
-
 "HTTP"
-
 
 
 ],
 
 
-
 "geoLocationId": "GEOLOCATION-0A41430434C388A9"
-
 
 
 }
@@ -524,9 +443,7 @@ In this example, the request gets the details of the **Linz HTTP** private locat
 curl -X GET \
 
 
-
 https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations/SYNTHETIC_LOCATION-BB5EE23C1D48AFF5 \
-
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -544,69 +461,52 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations/SYNTHETIC_LOCA
 {
 
 
-
 "entityId": "SYNTHETIC_LOCATION-BB5EE23C1D48AFF5",
-
 
 
 "type": "PRIVATE",
 
 
-
 "name": "Linz HTTP",
-
 
 
 "countryCode": "AT",
 
 
-
 "regionCode": "04",
-
 
 
 "city": "Linz",
 
 
-
 "latitude": 48.306351,
-
 
 
 "longitude": 14.287399,
 
 
-
 "status": "ENABLED",
-
 
 
 "nodes": [
 
 
-
 "137829320"
-
 
 
 ],
 
 
-
 "availabilityLocationOutage": false,
-
 
 
 "availabilityNodeOutage": false,
 
 
-
 "locationNodeOutageDelayInMillis": 3000,
 
 
-
 "geoLocationId": "GEOLOCATION-427705B3488A4C45"
-
 
 
 }

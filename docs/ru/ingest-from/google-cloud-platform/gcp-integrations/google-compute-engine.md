@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:20.555137
 
 # Мониторинг Google Compute Engine
 
-# Мониторинг Google Compute Engine
 
 * Последняя версия Dynatrace
 * Практическое руководство

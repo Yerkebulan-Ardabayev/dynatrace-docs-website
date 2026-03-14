@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:17:32.546778
 
 # Monitor key requests
 
-# Monitor key requests
 
 * Classic
 * How-to guide
@@ -100,41 +99,31 @@ Follow the steps below to create a new key request configuration. Note that this
    [
 
 
-
    {
-
 
 
    "schemaId": "builtin:settings.subscriptions.service",
 
 
-
    "scope": "SERVICE-123456789",
-
 
 
    "value": {
 
 
-
    "keyRequestNames": [
-
 
 
    "/cart/checkout"
 
 
-
    ]
 
 
-
    }
 
 
-
    }
-
 
 
    ]
@@ -156,33 +145,25 @@ Follow the steps below to create a new key request configuration. Note that this
       {
 
 
-
       "updateToken": "vu9U3hXY3q0ATAAkMG",
-
 
 
       "value": {
 
 
-
       "keyRequestNames": [
-
 
 
       "/cart/checkout",
 
 
-
       "/cart"
-
 
 
       ]
 
 
-
       }
-
 
 
       }

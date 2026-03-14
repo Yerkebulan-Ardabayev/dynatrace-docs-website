@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:27:21.119513
 
 # Руководство по написанию DQL для Anomaly Detection
 
-# Руководство по написанию DQL для Anomaly Detection
 
 * Latest Dynatrace
 * How-to guide
@@ -39,17 +38,13 @@ scraped: 2026-03-04T21:27:21.119513
 timeseries cpu_usage = avg(dt.host.cpu.usage), by:{dt.entity.host}
 
 
-
 | fieldsAdd tags = entityAttr(dt.entity.host, "tags")
-
 
 
 | filter iAny(tags[] ==  "Windows")
 
 
-
 | fieldsAdd entityName(dt.entity.host)
-
 
 
 | fieldsAdd average_usage = arrayAvg(cpu_usage)
@@ -80,13 +75,10 @@ timeseries cpu_usage = avg(dt.host.cpu.usage), by:{dt.entity.host}
 timeseries cpu_usage = avg(dt.host.cpu.usage), by:{dt.entity.host}
 
 
-
 | fieldsAdd tags = entityAttr(dt.entity.host, "tags")
 
 
-
 | filter iAny(tags[] ==  "Windows")
-
 
 
 | fieldsKeep cpu_usage, dt.entity.host, timeframe, interval
@@ -110,9 +102,7 @@ timeseries {cpu_usage = avg(dt.host.cpu.usage), value.A = avg(dt.host.cpu.usage,
   timeseries sum(dt.service.request.failure_count),
 
 
-
   by:{http.response.status_code},
-
 
 
   from:now()-1h, to:now() // удалите эти параметры
@@ -123,9 +113,7 @@ timeseries {cpu_usage = avg(dt.host.cpu.usage), value.A = avg(dt.host.cpu.usage,
   fetch bizevents
 
 
-
   | makeTimeseries count(), time:timestamp
-
 
 
   | fieldsAdd timeframe = timeframe(duration(5, "min")) // присваивает новое значение полю timeframe
@@ -139,9 +127,7 @@ timeseries {cpu_usage = avg(dt.host.cpu.usage), value.A = avg(dt.host.cpu.usage,
   timeseries avg(dt.host.cpu.usage), by: { dt.entity.host }
 
 
-
   | sort `avg(dt.host.cpu.usage)` desc // удалите это
-
 
 
   | filter dt.entity.host == "HOST-1234"
@@ -150,7 +136,6 @@ timeseries {cpu_usage = avg(dt.host.cpu.usage), value.A = avg(dt.host.cpu.usage,
 
   ```
   timeseries avg(dt.host.cpu.usage), by: { dt.entity.host }
-
 
 
   | limit 10 // удалите это; для выбора конкретных хостов рекомендуется использовать filter

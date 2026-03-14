@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:32:15.430515
 
 # Proof of Concept для действующих подписок DPS
 
-# Proof of Concept для действующих подписок DPS
 
 * Latest Dynatrace
 * Tutorial

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:16:07.099440
 
 # OpenPipeline limits
 
-# OpenPipeline limits
 
 * Latest Dynatrace
 * Reference

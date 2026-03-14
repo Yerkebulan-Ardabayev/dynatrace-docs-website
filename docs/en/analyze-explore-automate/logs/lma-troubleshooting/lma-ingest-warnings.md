@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:31:38.206815
 
 # Log ingestion warnings
 
-# Log ingestion warnings
 
 * Latest Dynatrace
 * 2-min read

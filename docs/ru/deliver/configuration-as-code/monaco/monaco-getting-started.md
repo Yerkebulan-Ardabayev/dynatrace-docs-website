@@ -6,7 +6,6 @@ scraped: 2026-03-02T21:28:22.074262
 
 # Управление конфигурациями с помощью Monaco
 
-# Управление конфигурациями с помощью Monaco
 
 * Latest Dynatrace
 * Explanation
@@ -40,7 +39,6 @@ scraped: 2026-03-02T21:28:22.074262
    mkdir -p monaco-getting-started/project-example/slo
 
 
-
    cd monaco-getting-started/project-example/slo
    ```
 2. Создайте два файла.
@@ -50,17 +48,13 @@ scraped: 2026-03-02T21:28:22.074262
    # Linux
 
 
-
    touch slo.json slo.yaml
-
 
 
    # Windows
 
 
-
    New-Item slo.json
-
 
 
    New-Item slo.yaml
@@ -73,61 +67,46 @@ scraped: 2026-03-02T21:28:22.074262
    {
 
 
-
    "name": "{{ .name }}",
-
 
 
    "description": "Measures the proportion of successful service requests over time.",
 
 
-
    "tags": {{ .tags }},
-
 
 
    "criteria": [
 
 
-
    {
-
 
 
    "target": 95,
 
 
-
    "timeframeFrom": "now-7d",
-
 
 
    "timeframeTo": "now"
 
 
-
    }
-
 
 
    ],
 
 
-
    "customSli": {
-
 
 
    "filterSegments": [],
 
 
-
    "indicator": "timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }\n  , by: { dt.entity.service }\n  | fieldsAdd sli=(((total[]-failures[])/total[])*(100))\n | fieldsRemove total, failures"
 
 
-
    }
-
 
 
    }
@@ -143,45 +122,34 @@ scraped: 2026-03-02T21:28:22.074262
    configs:
 
 
-
    - id: my-sample-slo
-
 
 
    config:
 
 
-
    name: mySampleSLO
-
 
 
    parameters:
 
 
-
    tags:
-
 
 
    type: list
 
 
-
    values: ["service:myService",
-
 
 
    "dt.owner:myTeam"]
 
 
-
    template: slo.json
 
 
-
    skip: false
-
 
 
    type: slo-v2
@@ -195,21 +163,16 @@ scraped: 2026-03-02T21:28:22.074262
    # Linux
 
 
-
    cd ../..
-
 
 
    touch manifest.yaml
 
 
-
    # Windows
 
 
-
    cd ../..
-
 
 
    New-Item manifest.yaml
@@ -222,57 +185,43 @@ scraped: 2026-03-02T21:28:22.074262
    manifestVersion: 1.0
 
 
-
    projects:
-
 
 
    - name: my-slo-project
 
 
-
    path: project-example
-
 
 
    environmentGroups:
 
 
-
    - name: development
-
 
 
    environments:
 
 
-
    - name: development-environment
-
 
 
    url:
 
 
-
    type: environment
-
 
 
    value: DT_ENV_URL
 
 
-
    auth:
-
 
 
    platformToken:
 
 
-
    type: environment
-
 
 
    name: PLATFORM_TOKEN
@@ -284,21 +233,16 @@ scraped: 2026-03-02T21:28:22.074262
    # Linux
 
 
-
    export DT_ENV_URL="https://<your-dynatrace-environment>.apps.dynatrace.com"
-
 
 
    export PLATFORM_TOKEN="YourPlatformTokenValue"
 
 
-
    # Windows
 
 
-
    $env:DT_ENV_URL="https://<your-dynatrace-environment>.apps.dynatrace.com"
-
 
 
    $env:PLATFORM_TOKEN="YourTokenValue"
@@ -315,41 +259,31 @@ scraped: 2026-03-02T21:28:22.074262
    time=2025-09-01T09:06:23.506+02:00 level=INFO msg="Monaco version 2.24.0"
 
 
-
    time=2025-09-01T09:06:23.507+02:00 level=INFO msg="Loading manifest \"{your full path to the file}\manifest.yaml\". Restrictions: groups=[], environments=[]" manifestPath="{your full path to the file}\manifest.yaml"
-
 
 
    time=2025-09-01T09:06:23.535+02:00 level=INFO msg="Projects to be deployed (1):"
 
 
-
    time=2025-09-01T09:06:23.536+02:00 level=INFO msg="  - my-slo-project"
-
 
 
    time=2025-09-01T09:06:23.536+02:00 level=INFO msg="Environments to deploy to (1):"
 
 
-
    time=2025-09-01T09:06:23.537+02:00 level=INFO msg="  - development-environment"
-
 
 
    time=2025-09-01T09:06:23.537+02:00 level=INFO msg="Deploying configurations to environment \"development-environment\"..." environment.name=default environment.group=group
 
 
-
    time=2025-09-01T09:06:23.556+02:00 level=INFO msg="Deploying config" deploymentStatus=deploying environment.name=development-environment environment.group=group coordinate.reference=my-slo-project:slo-v2:my-sample-slo coordinate.project=my-slo-project coordinate.type=slo-v2 coordinate.configId=my-sample-slo gid=0
-
 
 
    time=2025-09-01T09:06:23.557+02:00 level=INFO msg="Deployment successful" deploymentStatus=deployed environment.name=development-environment environment.group=group coordinate.reference=my-slo-project:slo-v2:my-sample-slo coordinate.project=my-slo-project coordinate.type=slo-v2 coordinate.configId=my-sample-slo gid=0
 
 
-
    time=2025-09-01T09:06:23.557+02:00 level=INFO msg="Deployment successful for environment 'development-environment'" environment.group=group environment.name=development-environment environment.name=development-environment environment.group=group
-
 
 
    time=2025-09-01T09:06:23.557+02:00 level=INFO msg="Validation finished without errors"
@@ -374,41 +308,31 @@ monaco deploy manifest.yaml
 time=2025-09-01T09:08:23.506+02:00 level=INFO msg="Monaco version 2.24.0"
 
 
-
 time=2025-09-01T09:08:23.507+02:00 level=INFO msg="Loading manifest \"{your full path to the file}\manifest.yaml\". Restrictions: groups=[], environments=[]" manifestPath="{your full path to the file}\manifest.yaml"
-
 
 
 time=2025-09-01T09:08:23.535+02:00 level=INFO msg="Projects to be deployed (1):"
 
 
-
 time=2025-09-01T09:08:23.536+02:00 level=INFO msg="  - my-slo-project"
-
 
 
 time=2025-09-01T09:08:23.536+02:00 level=INFO msg="Environments to deploy to (1):"
 
 
-
 time=2025-09-01T09:08:23.537+02:00 level=INFO msg="  - development-environment"
-
 
 
 time=2025-09-01T09:08:23.537+02:00 level=INFO msg="Deploying configurations to environment \"development-environment\"..." environment.name=default environment.group=group
 
 
-
 time=2025-09-01T09:08:23.556+02:00 level=INFO msg="Deploying config" deploymentStatus=deploying environment.name=development-environment environment.group=group coordinate.reference=my-slo-project:slo-v2:my-sample-slo coordinate.project=my-slo-project coordinate.type=slo-v2 coordinate.configId=my-sample-slo gid=0
-
 
 
 time=2025-09-01T09:08:23.557+02:00 level=INFO msg="Deployment successful" deploymentStatus=deployed environment.name=development-environment environment.group=group coordinate.reference=my-slo-project:slo:my-sample-slo coordinate.project=my-slo-project coordinate.type=slo-v2 coordinate.configId=my-sample-slo gid=0
 
 
-
 time=2025-09-01T09:08:23.557+02:00 level=INFO msg="Deployment successful for environment 'development-environment'" environment.group=group environment.name=development-environment environment.name=development-environment environment.group=group
-
 
 
 time=2025-09-01T09:08:23.557+02:00 level=INFO msg="Deployment finished without errors"
@@ -434,13 +358,10 @@ time=2025-09-01T09:08:23.557+02:00 level=INFO msg="Deployment finished without e
    # Linux
 
 
-
    touch delete.yaml
 
 
-
    # Windows
-
 
 
    New-Item delete.yaml
@@ -452,13 +373,10 @@ time=2025-09-01T09:08:23.557+02:00 level=INFO msg="Deployment finished without e
    delete:
 
 
-
    - project: my-slo-project
 
 
-
    type: slo-v2
-
 
 
    id: my-sample-slo
@@ -477,13 +395,10 @@ time=2025-09-01T09:08:23.557+02:00 level=INFO msg="Deployment finished without e
    time=2025-09-01T09:10:23.506+02:00 level=INFO msg="Monaco version 2.24.0"
 
 
-
    time=2025-09-01T09:10:23.751+02:00 level=INFO msg="Loading manifest \"{your full path to the file}\manifest.yaml\". Restrictions: groups=[], environments=[]" manifestPath="{your full path to the file}\manifest.yaml"
 
 
-
    time=2025-09-01T09:11:24.140+02:00 level=INFO msg="Deleting configs for environment \"development-environment\"..." environment.name=development-environment environment.group=group
-
 
 
    time=2025-09-01T09:11:24.140+02:00 level=INFO msg="Deleting 1 config(s) of type \"slo-v2\"..." type=slo-v2 environment.name=development-environment environment.group=group

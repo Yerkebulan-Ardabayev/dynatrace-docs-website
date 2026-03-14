@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:36:20.275000
 
 # Geographic regions API
 
-# Geographic regions API
 
 * Reference
 * Updated on May 02, 2022

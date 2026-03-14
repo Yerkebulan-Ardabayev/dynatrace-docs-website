@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:25:37.194989
 
 # Instrument your Ruby application with OpenTelemetry
 
-# Instrument your Ruby application with OpenTelemetry
 
 * Latest Dynatrace
 * How-to guide
@@ -58,14 +57,12 @@ It's a good idea to start with automatic instrumentation and add manual instrume
    gem 'opentelemetry-sdk'
 
 
-
    gem 'opentelemetry-exporter-otlp'
    ```
 2. Add the following `require` declaration.
 
    ```
    require 'opentelemetry/sdk'
-
 
 
    require 'opentelemetry/exporter/otlp'
@@ -76,97 +73,73 @@ It's a good idea to start with automatic instrumentation and add manual instrume
    DT_API_URL = ENV['DT_API_URL']
 
 
-
    DT_API_TOKEN = ENV['DT_API_TOKEN']
-
 
 
    def init_opentelemetry
 
 
-
    OpenTelemetry::SDK.configure do |c|
-
 
 
    c.service_name = 'ruby-quickstart' #TODO Replace with the name of your application
 
 
-
    c.service_version = '1.0.1' #TODO Replace with the version of your application
-
 
 
    # TODO: add automatic instrumentation here (step 3 - optional)
 
 
-
    for name in ["dt_metadata_e617c525669e072eebe3d0f08212e8f2.properties", "/var/lib/dynatrace/enrichment/dt_metadata.properties", "/var/lib/dynatrace/enrichment/dt_host_metadata.properties"] do
-
 
 
    begin
 
 
-
    c.resource = OpenTelemetry::SDK::Resources::Resource.create(Hash[*File.read(name.start_with?("/var") ? name : File.read(name)).split(/[=\n]+/)])
-
 
 
    rescue
 
 
-
    end
 
 
-
    end
-
 
 
    c.add_span_processor(
 
 
-
    OpenTelemetry::SDK::Trace::Export::BatchSpanProcessor.new(
-
 
 
    OpenTelemetry::Exporter::OTLP::Exporter.new(
 
 
-
    endpoint: DT_API_URL + "/v1/traces",
-
 
 
    headers: {
 
 
-
    "Authorization": "Api-Token " + DT_API_TOKEN
-
 
 
    }
 
 
+   )
+
 
    )
 
 
-
    )
-
-
-
-   )
-
 
 
    end
-
 
 
    end
@@ -214,45 +187,34 @@ It's a good idea to start with automatic instrumentation and add manual instrume
    span = tracer.start_span("Call to /myendpoint", kind: :internal)
 
 
-
    OpenTelemetry::Trace.with_span(span) do |span, context|
-
 
 
    span.set_attribute("http.method", "GET")
 
 
-
    span.set_attribute("net.protocol.version", "1.1")
-
 
 
    # TODO your code goes here
 
 
-
    end
-
 
 
    rescue Exception => e
 
 
-
    span&.record_exception(e)
-
 
 
    span&.status = OpenTelemetry::Trace::Status.error("Unhandled exception of type: #{e.class}")
 
 
-
    raise e
 
 
-
    ensure
-
 
 
    span&.finish
@@ -299,45 +261,34 @@ The following example uses the default propagator's `extract()` method to extrac
 parent_context = OpenTelemetry.propagation.extract(
 
 
-
 env,
-
 
 
 getter: OpenTelemetry::Common::Propagation.rack_env_getter
 
 
-
 )
-
 
 
 span = tracer.start_span("hello world", with_parent: parent_context)
 
 
-
 OpenTelemetry::Trace.with_span(span) do |span, context|
-
 
 
 span.set_attribute("my-key-1", "my-value-1")
 
 
-
 # ... expansive query
-
 
 
 end
 
 
-
 ensure
 
 
-
 span&.finish
-
 
 
 end
@@ -351,9 +302,7 @@ The following example uses Ruby's standard [Net:HTTPï»¿](https://ruby-doc.org
 request = Net::HTTP::Get.new(uri.request_uri)
 
 
-
 OpenTelemetry.propagation.inject(request)
-
 
 
 response = http.request(request)

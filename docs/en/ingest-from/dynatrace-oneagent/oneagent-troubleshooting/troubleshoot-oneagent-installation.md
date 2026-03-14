@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:18:46.855136
 
 # Troubleshooting OneAgent installation
 
-# Troubleshooting OneAgent installation
 
 * Latest Dynatrace
 * Troubleshooting
@@ -179,7 +178,6 @@ If you are using a system with SELinux in enforcing mode and injected OneAgents 
    # grep type=AVC /var/log/audit/audit.log
 
 
-
    # journalctl --utc -a -t "audit"
    ```
 2. If you find a denial for the process in question, for example:
@@ -323,13 +321,10 @@ OneAgent Windows installer utilizes the Windows Installer Cache, which is locate
 MSI (s) (C0:E4) [09:27:14:308]: Warning: Local cached package 'C:\Windows\Installer\312c0.msi' is missing.
 
 
-
 ...
 
 
-
 Error 1714. The older version of Dynatrace OneAgent cannot be removed.  Contact your technical support group.  System Error 1612.
-
 
 
 MSI (s) (C0:54) [09:27:56:489]: Product: Dynatrace OneAgent -- Error 1714. The older version of Dynatrace OneAgent cannot be removed.  Contact your technical support group.  System Error 1612.
@@ -366,7 +361,6 @@ You may encounter an error like this when you use `dynatrace-agentXX.sh` in a sh
 Info: using DT_HOME: /opt/dynatrace/oneagent
 
 
-
 .profile[33] LDR_PRELOAD64: parameter not set
 ```
 
@@ -376,13 +370,10 @@ This happens if you use `set -u` to treat unset variables and parameters as erro
 # avoid error
 
 
-
 set +u
 
 
-
 export DT_HOME=/opt/dynatrace/oneagent
-
 
 
 . $DT_HOME/dynatrace-agent64.sh

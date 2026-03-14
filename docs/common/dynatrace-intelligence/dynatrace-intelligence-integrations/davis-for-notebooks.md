@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dynatrace Intelligence for Notebooks
 
-# Dynatrace Intelligence for Notebooks
 
 * Latest Dynatrace
 * How-to guide

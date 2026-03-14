@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:25:12.561851
 
 # ActiveGate purposes and functionality
 
-# ActiveGate purposes and functionality
 
 * Latest Dynatrace
 * 4-min read

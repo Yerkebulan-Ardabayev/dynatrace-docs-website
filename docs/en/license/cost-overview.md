@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:22:22.047906
 
 # Access your DPS cost overview
 
-# Access your DPS cost overview
 
 * Latest Dynatrace
 * How-to guide

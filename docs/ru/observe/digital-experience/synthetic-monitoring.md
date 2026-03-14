@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:11.591598
 
 # Synthetic Monitoring
 
-# Synthetic Monitoring
 
 * Classic
 * Overview

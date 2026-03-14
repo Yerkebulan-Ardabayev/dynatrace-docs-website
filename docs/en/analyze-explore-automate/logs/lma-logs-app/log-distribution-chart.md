@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:11:31.603365
 
 # Spot trends with the log distribution chart
 
-# Spot trends with the log distribution chart
 
 * Latest Dynatrace
 * How-to guide

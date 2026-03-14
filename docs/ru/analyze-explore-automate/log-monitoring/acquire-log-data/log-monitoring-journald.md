@@ -6,7 +6,6 @@ scraped: 2026-02-27T21:29:30.085699
 
 # Мониторинг журналов из Journald (Logs Classic)
 
-# Мониторинг журналов из Journald (Logs Classic)
 
 * Tutorial
 * 4-min read

@@ -6,7 +6,6 @@ scraped: 2026-03-05T21:36:10.353685
 
 # Мониторинг Azure NetApp Files
 
-# Мониторинг Azure NetApp Files
 
 * Latest Dynatrace
 * How-to guide

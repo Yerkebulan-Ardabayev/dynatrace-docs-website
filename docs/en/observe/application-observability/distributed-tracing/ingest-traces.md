@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:12:03.627298
 
 # Ingest traces
 
-# Ingest traces
 
 * Latest Dynatrace
 * How-to guide

@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:33:17.179876
 
 # Azure Time Series Insights (Environment, Event Source) monitoring
 
-# Azure Time Series Insights (Environment, Event Source) monitoring
 
 * Latest Dynatrace
 * How-to guide

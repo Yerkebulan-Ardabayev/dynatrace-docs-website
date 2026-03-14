@@ -6,7 +6,6 @@ scraped: 2026-03-06T21:14:08.788123
 
 # Effective customer support with session segmentation
 
-# Effective customer support with session segmentation
 
 * Classic
 * Tutorial

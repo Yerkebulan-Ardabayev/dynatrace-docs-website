@@ -6,7 +6,6 @@ scraped: 2026-03-04T21:37:39.481282
 
 # Мониторинг Google Cloud Firebase
 
-# Мониторинг Google Cloud Firebase
 
 * Последняя версия Dynatrace
 * Практическое руководство

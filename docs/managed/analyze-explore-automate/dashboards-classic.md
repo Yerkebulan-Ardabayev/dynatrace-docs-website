@@ -6,7 +6,6 @@ updated: 2026-02-09
 
 # Dashboards
 
-# Dashboards
 
 * Reference
 * 7-min read
