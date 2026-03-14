@@ -1,5 +1,5 @@
 ---
-title: Azure Private DNS Zone monitoring
+title: Мониторинг Azure Private DNS Zone
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-private-dns-zone
 scraped: 2026-03-04T21:38:53.246659
 ---

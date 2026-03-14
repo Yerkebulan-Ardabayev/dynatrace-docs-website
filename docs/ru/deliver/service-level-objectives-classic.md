@@ -1,5 +1,5 @@
 ---
-title: Service-Level Objectives Classic
+title: Цели уровня обслуживания Classic
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives-classic
 scraped: 2026-03-04T21:33:40.088795
 ---

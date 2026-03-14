@@ -1,5 +1,5 @@
 ---
-title: Log processing with classic pipeline
+title: Обработка журналов с классической конвейерной обработкой
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-classic-log-processing
 scraped: 2026-03-06T21:13:44.771782
 ---

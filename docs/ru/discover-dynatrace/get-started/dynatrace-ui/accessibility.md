@@ -1,5 +1,5 @@
 ---
-title: Accessibility
+title: Доступность
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/accessibility
 scraped: 2026-03-04T21:30:00.075945
 ---

@@ -1,5 +1,5 @@
 ---
-title: Use cases
+title: Варианты использования
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/use-cases
 scraped: 2026-02-06T16:29:09.689987
 ---

@@ -1,5 +1,5 @@
 ---
-title: DevSecOps Lifecycle Coverage with Snyk
+title: Покрытие жизненного цикла DevSecOps с Snyk
 source: https://www.dynatrace.com/docs/secure/devsecops-lifecycle-coverage
 scraped: 2026-02-18T05:48:18.936133
 ---

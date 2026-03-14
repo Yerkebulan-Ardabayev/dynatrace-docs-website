@@ -1,5 +1,5 @@
 ---
-title: Ingest custom security events via API
+title: Прием пользовательских событий безопасности через API
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-custom-data
 scraped: 2026-03-06T21:24:11.399509
 ---

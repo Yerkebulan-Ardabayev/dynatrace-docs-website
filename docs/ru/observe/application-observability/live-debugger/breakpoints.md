@@ -1,5 +1,5 @@
 ---
-title: Live Debugger breakpoints
+title: Точки останова Live Debugger
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/breakpoints
 scraped: 2026-03-06T21:32:45.256610
 ---

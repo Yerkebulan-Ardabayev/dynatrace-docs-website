@@ -1,5 +1,5 @@
 ---
-title: Cloud Foundry monitoring
+title: Мониторинг Cloud Foundry
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring
 scraped: 2026-02-06T16:28:51.845671
 ---

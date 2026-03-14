@@ -1,5 +1,5 @@
 ---
-title: Change user experience score thresholds for web applications
+title: Изменение пороговых значений оценки пользовательского опыта для веб-приложений
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/configure-user-experience-score-web
 scraped: 2026-03-03T21:23:52.409334
 ---

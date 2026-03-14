@@ -1,221 +1,221 @@
 ---
-title: Leverage enhanced endpoints for SDv1
+title: Использование расширенных эндпоинтов для SDv1
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1
 scraped: 2026-03-06T21:17:29.123598
 ---
 
-# Leverage enhanced endpoints for SDv1
+# Использование расширенных эндпоинтов для SDv1
 
-# Leverage enhanced endpoints for SDv1
+# Использование расширенных эндпоинтов для SDv1
 
-* Latest Dynatrace
-* How-to guide
-* 8-min read
-* Updated on Feb 24, 2026
+* Актуальная версия Dynatrace
+* Практическое руководство
+* Чтение: 8 мин
+* Обновлено 24 февраля 2026 г.
 
-With the **Enhanced endpoints for Service Detection v1 (SDv1)** feature, you can get full endpoint visibility for SDv1 services. When this feature is turned on, all endpoints are shown in [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](../../services-app.md "Maintain centralized control over service health, performance, and resources with the Services app.") without requiring you to configure [key requests](../../services-concepts.md#key-requests "Understand application observability, services, and distributed tracing concepts."). This is consistent with the behavior already in place for [SDv2](../service-detection-v2.md "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.") services.
+С помощью функции **Enhanced endpoints for Service Detection v1 (SDv1)** вы можете получить полную видимость эндпоинтов для сервисов SDv1. Когда эта функция включена, все эндпоинты отображаются в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](../../services-app.md "Централизованный контроль за состоянием, производительностью и ресурсами сервисов с помощью приложения Services.") без необходимости настройки [ключевых запросов](../../services-concepts.md#key-requests "Понимание концепций наблюдаемости приложений, сервисов и распределённой трассировки."). Это согласуется с поведением, уже реализованным для сервисов [SDv2](../service-detection-v2.md "Узнайте, как обнаруживать, именовать и разделять сервисы из спанов OpenTelemetry и OneAgent.").
 
-No endpoints are created for [external services](../../../../../discover-dynatrace/get-started/glossary.md#glossary-externalservice "Get acquainted with Dynatrace terminology.") and for the following SDv1 service types: [Background activity services](service-types.md#background-activity-services "Understand the different types of services that can be detected and monitored in your environment."), [Queue listener services](service-types.md#queue-listener-services "Understand the different types of services that can be detected and monitored in your environment."), and Key value store.
+Эндпоинты не создаются для [внешних сервисов](../../../../../discover-dynatrace/get-started/glossary.md#glossary-externalservice "Ознакомьтесь с терминологией Dynatrace.") и для следующих типов сервисов SDv1: [Сервисы фоновой активности](service-types.md#background-activity-services "Понимание различных типов сервисов, которые могут быть обнаружены и отслежены в вашей среде."), [Сервисы прослушивания очередей](service-types.md#queue-listener-services "Понимание различных типов сервисов, которые могут быть обнаружены и отслежены в вашей среде.") и Key value store.
 
-## Availability and state
+## Доступность и состояние
 
-The availability and default state of the **Enhanced endpoints for SDv1** feature depend on when your Dynatrace environment was created.
+Доступность и состояние по умолчанию функции **Enhanced endpoints for SDv1** зависят от того, когда была создана ваша среда Dynatrace.
 
-| Environment created in | Available in | Default | Possible to control? |
+| Среда создана в | Доступно в | По умолчанию | Можно управлять? |
 | --- | --- | --- | --- |
-| Dynatrace version 1.329 and earlier | Dynatrace version 1.333+ | Off | Yes |
-| Dynatrace version 1.330 â Dynatrace version 1.332 | Dynatrace version 1.330+ | On | Yes |
-| Dynatrace version 1.333+ | Dynatrace version 1.330+ | On | No |
+| Dynatrace версии 1.329 и ранее | Dynatrace версии 1.333+ | Выключено | Да |
+| Dynatrace версии 1.330 — Dynatrace версии 1.332 | Dynatrace версии 1.330+ | Включено | Да |
+| Dynatrace версии 1.333+ | Dynatrace версии 1.330+ | Включено | Нет |
 
-## Benefits
+## Преимущества
 
-* **Complete endpoint visibility in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services****: Gain a complete list of endpoints for SDv1 services in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**.
+* **Полная видимость эндпоинтов в ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services****: Получите полный список эндпоинтов для сервисов SDv1 в ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**.
 
-  If you don't enable the **Enhanced endpoints for SDv1** feature, the **Endpoints** section in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** either remains empty or only shows key requests.
-* **Improved service insights**: The list of endpoints enhances visibility into the service's behavior, enabling quick identification and resolution of issues.
-* **Dedicated metrics for endpoints**: Detected endpoints feature [dedicated metrics](#metrics), which you can add to [dashboards](../../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and analyze for long-term endpoint history.
+  Если вы не включите функцию **Enhanced endpoints for SDv1**, раздел **Endpoints** в ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** останется пустым или будет отображать только ключевые запросы.
+* **Улучшенная информация о сервисах**: Список эндпоинтов улучшает видимость поведения сервиса, обеспечивая быструю идентификацию и решение проблем.
+* **Выделенные метрики для эндпоинтов**: Обнаруженные эндпоинты имеют [выделенные метрики](#metrics), которые можно добавить в [дашборды](../../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создание интерактивных, настраиваемых представлений для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") и анализировать для долгосрочной истории эндпоинтов.
 
-## Endpoint metrics
+## Метрики эндпоинтов
 
-When the **Enhanced endpoints for SDv1** feature is turned on, Dynatrace starts collecting metrics for all detected endpoints of an SDv1 service in Grail.
+Когда функция **Enhanced endpoints for SDv1** включена, Dynatrace начинает собирать метрики для всех обнаруженных эндпоинтов сервиса SDv1 в Grail.
 
-The following metrics are collected for each endpoint:
+Для каждого эндпоинта собираются следующие метрики:
 
-* Failure count
-* Response time
-* Throughput
+* Количество ошибок
+* Время отклика
+* Пропускная способность
 
-These endpoint metrics are available not only in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** but also in other Dynatrace apps, such as [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+Эти метрики эндпоинтов доступны не только в ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, но и в других приложениях Dynatrace, таких как [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь выводами из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") или [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создание интерактивных, настраиваемых представлений для визуализации, анализа и обмена данными наблюдаемости в реальном времени.").
 
-## Enable enhanced endpoints for SDv1
+## Включение расширенных эндпоинтов для SDv1
 
-You can activate the **Enhanced endpoints for SDv1** feature for the entire environment or for a specific host group, Kubernetes namespace, and cluster.
+Вы можете активировать функцию **Enhanced endpoints for SDv1** для всей среды или для конкретной группы хостов, пространства имён Kubernetes и кластера.
 
-Environment
+Среда
 
-1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **Services**.
-2. Under **Service detection v1**, select **Enhanced endpoints for SDv1**.
-3. Turn on **Enable enhanced endpoints for SDv1**.
-4. Recommended Turn on **Resolve request attributes for SDv1 request naming rules**. For details, see [Request attribute values in SDv1 endpoint names](#request-attribute-values-in-endpoint-names).
+1. Перейдите в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **Services**.
+2. В разделе **Service detection v1** выберите **Enhanced endpoints for SDv1**.
+3. Включите **Enable enhanced endpoints for SDv1**.
+4. Рекомендуется Включите **Resolve request attributes for SDv1 request naming rules**. Подробности см. в [Значения атрибутов запросов в именах эндпоинтов SDv1](#request-attribute-values-in-endpoint-names).
 
-Host group
+Группа хостов
 
-1. Go to ![Deployment Status](https://dt-cdn.net/images/deploy-status-512-c91e319ae5.png "Deployment Status") **Deployment Status** > **OneAgents**.
-2. On the **OneAgent deployment** page, turn off **Show new OneAgent deployments**.
-3. In the **Filter by** field, enter **Host group**, and then select the host group you want to configure from the dropdown list.
+1. Перейдите в ![Deployment Status](https://dt-cdn.net/images/deploy-status-512-c91e319ae5.png "Deployment Status") **Deployment Status** > **OneAgents**.
+2. На странице **OneAgent deployment** отключите **Show new OneAgent deployments**.
+3. В поле **Filter by** введите **Host group**, затем выберите группу хостов, которую хотите настроить, из выпадающего списка.
 
-   The host list is now filtered by the selected host group. Each listed host has a **Host group:** `<group name>` link, where `<group name>` is the name of the host group that you want to configure.
+   Список хостов теперь отфильтрован по выбранной группе хостов. У каждого перечисленного хоста есть ссылка **Host group:** `<group name>`, где `<group name>` — это имя группы хостов, которую вы хотите настроить.
 
-   The **Host group** property is not displayed when the selected host doesn't belong to any host group.
-4. Select the host group name in any row.
+   Свойство **Host group** не отображается, если выбранный хост не принадлежит ни одной группе хостов.
+4. Выберите имя группы хостов в любой строке.
 
-   As you have filtered by host group, all displayed hosts go to the same host group.
+   Поскольку вы отфильтровали по группе хостов, все отображаемые хосты относятся к одной и той же группе.
 
-5. Close the overlay with the host group settings.
-6. Go to **Process and contextualize** > **Services** > **Enhanced endpoints for SDv1**.
-7. Turn on **Enable enhanced endpoints for SDv1**.
-8. Recommended Turn on **Resolve request attributes for SDv1 request naming rules**. For details, see [Request attribute values in SDv1 endpoint names](#request-attribute-values-in-endpoint-names).
+5. Закройте оверлей с настройками группы хостов.
+6. Перейдите в **Process and contextualize** > **Services** > **Enhanced endpoints for SDv1**.
+7. Включите **Enable enhanced endpoints for SDv1**.
+8. Рекомендуется Включите **Resolve request attributes for SDv1 request naming rules**. Подробности см. в [Значения атрибутов запросов в именах эндпоинтов SDv1](#request-attribute-values-in-endpoint-names).
 
-Kubernetes namespace or cluster
+Пространство имён или кластер Kubernetes
 
-1. Go to ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**.
-2. Select the required namespace or cluster.
-3. In the upper-right corner of the namespace or cluster details pane, select  (**Actions menu**) > **Service detection settings**.
-4. Go to **Process and contextualize** > **Services** > **Enhanced endpoints for SDv1**.
-5. Turn on **Enable enhanced endpoints for SDv1**.
-6. Recommended Turn on **Resolve request attributes for SDv1 request naming rules**. For details, see [Request attribute values in SDv1 endpoint names](#request-attribute-values-in-endpoint-names).
+1. Перейдите в ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**.
+2. Выберите необходимое пространство имён или кластер.
+3. В правом верхнем углу панели деталей пространства имён или кластера выберите  (**Actions menu**) > **Service detection settings**.
+4. Перейдите в **Process and contextualize** > **Services** > **Enhanced endpoints for SDv1**.
+5. Включите **Enable enhanced endpoints for SDv1**.
+6. Рекомендуется Включите **Resolve request attributes for SDv1 request naming rules**. Подробности см. в [Значения атрибутов запросов в именах эндпоинтов SDv1](#request-attribute-values-in-endpoint-names).
 
-Settings page not available for all environments
+Страница настроек доступна не для всех сред
 
-The **Enhanced endpoints for SDv1** settings page is not available for the environments created in Dynatrace version 1.333+.
+Страница настроек **Enhanced endpoints for SDv1** недоступна для сред, созданных в Dynatrace версии 1.333+.
 
-Endpoint names changed
+Изменены имена эндпоинтов
 
-Enabling the **Enhanced endpoints for SDv1** feature changes some request names and their associated endpoint names. For this reason, your existing API metric queries, dashboards, and configured alerts for the changed endpoints might be impacted, so you should reconfigure them. See [Changes to endpoint names](#changes-to-endpoint-names) for the details.
+Включение функции **Enhanced endpoints for SDv1** изменяет некоторые имена запросов и связанные с ними имена эндпоинтов. По этой причине ваши существующие запросы метрик API, дашборды и настроенные оповещения для изменённых эндпоинтов могут быть затронуты, поэтому вам следует перенастроить их. Подробности см. в [Изменения в именах эндпоинтов](#changes-to-endpoint-names).
 
-## View service endpoints
+## Просмотр эндпоинтов сервиса
 
-Service endpoints as well as the [related metrics](#metrics) are displayed in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, in the **Endpoints** section.
+Эндпоинты сервиса, а также [связанные метрики](#metrics) отображаются в ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, в разделе **Endpoints**.
 
-1. Go to ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** > **Explorer**.
-2. Find and select the service for which you want to explore the endpoints.
-3. On the **Overview** tab, scroll down to the **Endpoints** section.
+1. Перейдите в ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** > **Explorer**.
+2. Найдите и выберите сервис, для которого вы хотите изучить эндпоинты.
+3. На вкладке **Overview** прокрутите вниз до раздела **Endpoints**.
 
-From there, you can view the service endpoints, check the related endpoint metrics, view traces for each endpoint, and more. Select  (**Actions menu**) for the endpoint to view the available options.
+Оттуда вы можете просматривать эндпоинты сервиса, проверять связанные метрики эндпоинтов, просматривать трассировки для каждого эндпоинта и многое другое. Выберите  (**Actions menu**) для эндпоинта, чтобы увидеть доступные параметры.
 
-![Services app showing the Endpoints section with four different endpoints and their metrics](https://dt-cdn.net/images/service-app-endpoints-section-3840-6f62930eb6.png)
+![Приложение Services, показывающее раздел Endpoints с четырьмя различными эндпоинтами и их метриками](https://dt-cdn.net/images/service-app-endpoints-section-3840-6f62930eb6.png)
 
-Edit auto-detected endpoints
+Редактирование автоматически обнаруженных эндпоинтов
 
-Dynatrace auto-detects endpoints for your services. However, you can edit the detected endpoints, for example, to monitor a specific HTTP path that was not caught by the default endpoint detection rules.
+Dynatrace автоматически обнаруживает эндпоинты для ваших сервисов. Однако вы можете редактировать обнаруженные эндпоинты, например, для мониторинга определённого HTTP-пути, который не был обнаружен стандартными правилами обнаружения эндпоинтов.
 
-To modify auto-detected endpoints, create custom [request naming rules](set-up-request-naming.md#create-request-naming-rule "Adjust request naming and define the operations your services offer.").
+Для изменения автоматически обнаруженных эндпоинтов создайте пользовательские [правила именования запросов](set-up-request-naming.md#create-request-naming-rule "Настройка именования запросов и определение операций, которые предлагают ваши сервисы.").
 
-Identify services with most endpoints
+Определение сервисов с наибольшим количеством эндпоинтов
 
-Use the **Endpoint Cardinality Dashboard** to see which services have the most endpoints and act accordingly. For more information, see [Dashboard with endpoint-heavy services](#dashboard-endpoint-heavy-service).
+Используйте **Endpoint Cardinality Dashboard** для просмотра сервисов с наибольшим количеством эндпоинтов и принятия соответствующих мер. Для получения дополнительной информации см. [Дашборд с сервисами с большим количеством эндпоинтов](#dashboard-endpoint-heavy-service).
 
-## Dashboard with endpoint-heavy services
+## Дашборд с сервисами с большим количеством эндпоинтов
 
 
 
-The **Endpoint Cardinality Dashboard** displays services with the most endpoints (SDv1 and SDv2 services).
+**Endpoint Cardinality Dashboard** отображает сервисы с наибольшим количеством эндпоинтов (сервисы SDv1 и SDv2).
 
-This dashboard allows you to quickly identify endpoint-heavy services for which you could adjust the [request naming rules (SDv1)](set-up-request-naming.md "Adjust request naming and define the operations your services offer.") or [endpoint detection rules (SDv2)](../service-detection-v2/endpoint-detection-v2.md "Find out how to detect endpoints that are entry points into your service.").
+Этот дашборд позволяет быстро определить сервисы с большим количеством эндпоинтов, для которых можно скорректировать [правила именования запросов (SDv1)](set-up-request-naming.md "Настройка именования запросов и определение операций, которые предлагают ваши сервисы.") или [правила обнаружения эндпоинтов (SDv2)](../service-detection-v2/endpoint-detection-v2.md "Узнайте, как обнаруживать эндпоинты, являющиеся точками входа в ваш сервис.").
 
-To view services with the most endpoints
+Для просмотра сервисов с наибольшим количеством эндпоинтов
 
-1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
-2. In the **Dashboards** panel on the left, select  **All dashboards**.
-3. In **Search by name**, enter **Endpoint Cardinality Dashboard**.
-4. Select the dashboard to open it.
+1. Перейдите в ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
+2. На панели **Dashboards** слева выберите  **All dashboards**.
+3. В поле **Search by name** введите **Endpoint Cardinality Dashboard**.
+4. Выберите дашборд, чтобы открыть его.
 
-To display additional endpoint-heavy services, [duplicate this dashboard](../../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-duplicate "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and edit the DQL query behind the service list (for example, change `100` in `limit 100` to the required value). Alternatively, you can add this query to [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and modify it there.
+Для отображения дополнительных сервисов с большим количеством эндпоинтов [дублируйте этот дашборд](../../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-duplicate "Создание интерактивных, настраиваемых представлений для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") и отредактируйте DQL-запрос за списком сервисов (например, измените `100` в `limit 100` на нужное значение). В качестве альтернативы можно добавить этот запрос в [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь выводами из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") и изменить его там.
 
-## Changes to endpoint names
+## Изменения в именах эндпоинтов
 
-Enabling the **Enhanced endpoints for SDv1** feature changes some request names and their associated endpoint names. Check the flowchart and textual description below for the details.
+Включение функции **Enhanced endpoints for SDv1** изменяет некоторые имена запросов и связанные с ними имена эндпоинтов. Ознакомьтесь с блок-схемой и текстовым описанием ниже для получения подробностей.
 
-Pre-existing key requests and request naming rules remain in effect
+Существующие ключевые запросы и правила именования запросов остаются в силе
 
-For all service types, the already existing [key requests](../../../services-classic/monitor-key-requests.md "Discover how to closely monitor requests that are critical to your business.") and [request naming rules](set-up-request-naming.md "Adjust request naming and define the operations your services offer.") continue to apply.
+Для всех типов сервисов уже существующие [ключевые запросы](../../../services-classic/monitor-key-requests.md "Узнайте, как внимательно отслеживать запросы, критически важные для вашего бизнеса.") и [правила именования запросов](set-up-request-naming.md "Настройка именования запросов и определение операций, которые предлагают ваши сервисы.") продолжают действовать.
 
-If you have set up key requests, the associated endpoints have the same names as their key requests. If you have configured request naming rules, they are also applied to the related endpoint names.
+Если вы настроили ключевые запросы, связанные эндпоинты имеют те же имена, что и их ключевые запросы. Если вы настроили правила именования запросов, они также применяются к соответствующим именам эндпоинтов.
 
-![Diagram - Changes to endpoint names](https://dt-cdn.net/images/enhanced-endpoints-sdv1-changes-to-endpoint-names-6993-563d8740fc.png)
+![Диаграмма — Изменения в именах эндпоинтов](https://dt-cdn.net/images/enhanced-endpoints-sdv1-changes-to-endpoint-names-6993-563d8740fc.png)
 
-When the **Enhanced endpoints for SDv1** feature is on, some endpoint names for [web request services](service-types.md#web-request-service "Understand the different types of services that can be detected and monitored in your environment.") and other service types are changed. This depends on whether there's an associated [request naming rule](set-up-request-naming.md "Adjust request naming and define the operations your services offer.") and whether [volatile placeholder attributes](#volatile-placeholder-attributes) are used in these rules.
+Когда функция **Enhanced endpoints for SDv1** включена, некоторые имена эндпоинтов для [сервисов веб-запросов](service-types.md#web-request-service "Понимание различных типов сервисов, которые могут быть обнаружены и отслежены в вашей среде.") и других типов сервисов изменяются. Это зависит от наличия связанного [правила именования запросов](set-up-request-naming.md "Настройка именования запросов и определение операций, которые предлагают ваши сервисы.") и использования [изменчивых атрибутов-заполнителей](#volatile-placeholder-attributes) в этих правилах.
 
 1
 
-For example, if the spans have no `{http.route}`, the endpoint name is `GET /*`.
+Например, если у спанов нет `{http.route}`, имя эндпоинта будет `GET /*`.
 
 2
 
-For example, the `{HTTP-Method} - {Request:IsKeyRequest} - user authentication endpoint` template results in the `GET - yes - user authentication endpoint` endpoint name. Note that both `{HTTP-Method}` and `{Request:IsKeyRequest}` are replaced with their corresponding values (that is, `GET` and `yes`), as these are non-volatile placeholder attributes.
+Например, шаблон `{HTTP-Method} - {Request:IsKeyRequest} - user authentication endpoint` приводит к имени эндпоинта `GET - yes - user authentication endpoint`. Обратите внимание, что и `{HTTP-Method}`, и `{Request:IsKeyRequest}` заменяются соответствующими значениями (т.е. `GET` и `yes`), так как это неизменчивые атрибуты-заполнители.
 
 3
 
-For example, the `{HTTP-Method} - {URL} - user authentication endpoint` template results in the `GET - {URL} - user authentication endpoint` endpoint name. Note that `{HTTP-Method}` (non-volatile placeholder attribute) is replaced with `GET` , while `{URL}` (volatile placeholder attribute) is not replaced and is used as is.
+Например, шаблон `{HTTP-Method} - {URL} - user authentication endpoint` приводит к имени эндпоинта `GET - {URL} - user authentication endpoint`. Обратите внимание, что `{HTTP-Method}` (неизменчивый атрибут-заполнитель) заменяется на `GET`, тогда как `{URL}` (изменчивый атрибут-заполнитель) не заменяется и используется как есть.
 
-You can modify endpoint names by creating [custom naming rules](set-up-request-naming.md#create-request-naming-rule "Adjust request naming and define the operations your services offer.").
+Вы можете изменить имена эндпоинтов, создав [пользовательские правила именования](set-up-request-naming.md#create-request-naming-rule "Настройка именования запросов и определение операций, которые предлагают ваши сервисы.").
 
-### Volatile placeholder attributes
+### Изменчивые атрибуты-заполнители
 
-The volatile placeholder attributes are as follows:
+Изменчивые атрибуты-заполнители следующие:
 
-* `{OneAgentAttribute:}` except `http.route`
+* `{OneAgentAttribute:}` кроме `http.route`
 * `{Relative-URL}`
 * `{URL:Path}`
 * `{URL:Query}`
 * `{URL}`
-* Customer-defined patterns based on one of the above-stated patterns
+* Пользовательские шаблоны, основанные на одном из вышеуказанных шаблонов
 
-### Required actions
+### Необходимые действия
 
-As some request names and their associated endpoint names change after you enable the **Enhanced endpoints for SDv1** feature, your existing API metric queries, dashboards, and configured alerts for the changed endpoints might be impacted. For this reason, you should reconfigure the affected entities.
+Поскольку некоторые имена запросов и связанные с ними имена эндпоинтов изменяются после включения функции **Enhanced endpoints for SDv1**, ваши существующие запросы метрик API, дашборды и настроенные оповещения для изменённых эндпоинтов могут быть затронуты. По этой причине вам следует перенастроить затронутые сущности.
 
-## Request attribute values in SDv1 endpoint names
+## Значения атрибутов запросов в именах эндпоинтов SDv1
 
-When the **Resolve request attributes for SDv1 request naming rules** feature is turned on, the `{RequestAttribute:_}` non-volatile placeholder attribute (used in [SDv1 request naming rules](set-up-request-naming.md "Adjust request naming and define the operations your services offer.")) is replaced with the corresponding value, resulting in endpoints that contain explicit request attribute values.
+Когда функция **Resolve request attributes for SDv1 request naming rules** включена, неизменчивый атрибут-заполнитель `{RequestAttribute:_}` (используемый в [правилах именования запросов SDv1](set-up-request-naming.md "Настройка именования запросов и определение операций, которые предлагают ваши сервисы.")) заменяется соответствующим значением, что приводит к эндпоинтам, содержащим явные значения атрибутов запросов.
 
-This is the standard behavior, and we recommend turning on the **Resolve request attributes for SDv1 request naming rules** feature when it's not activated by default. This way, you can see separate endpoints per request attribute value. To verify your setup, see [Enable enhanced endpoints for SDv1](#enable-enhanced-endpoints).
+Это стандартное поведение, и мы рекомендуем включить функцию **Resolve request attributes for SDv1 request naming rules**, если она не активирована по умолчанию. Таким образом, вы сможете видеть отдельные эндпоинты для каждого значения атрибута запроса. Чтобы проверить настройку, см. [Включение расширенных эндпоинтов для SDv1](#enable-enhanced-endpoints).
 
-The availability and default state of the **Resolve request attributes for SDv1 request naming rules** feature depend on when your Dynatrace environment was created.
+Доступность и состояние по умолчанию функции **Resolve request attributes for SDv1 request naming rules** зависят от того, когда была создана ваша среда Dynatrace.
 
-| Environment created in | Available in | Default | Possible to control? |
+| Среда создана в | Доступно в | По умолчанию | Можно управлять? |
 | --- | --- | --- | --- |
-| Dynatrace version 1.333+ | Dynatrace version 1.333+ | On | No |
-| Dynatrace version 1.332 and earlier | Dynatrace version 1.333+ | Off | Yes |
+| Dynatrace версии 1.333+ | Dynatrace версии 1.333+ | Включено | Нет |
+| Dynatrace версии 1.332 и ранее | Dynatrace версии 1.333+ | Выключено | Да |
 
-Highâcardinality request attributes
+Атрибуты запросов с высокой кардинальностью
 
-If your requests contain highâcardinality request attributes and you've used the `{RequestAttribute:_}` placeholder attribute in request naming rules, you might get an excessive number of endpoints. In this case, deactivating the **Resolve request attributes for SDv1 request naming rules** feature should solve this issue. Complete the instructions in [Enable enhanced endpoints for SDv1](#enable-enhanced-endpoints), but turn off **Resolve request attributes for SDv1 request naming rules**.
+Если ваши запросы содержат атрибуты запросов с высокой кардинальностью и вы использовали атрибут-заполнитель `{RequestAttribute:_}` в правилах именования запросов, вы можете получить чрезмерное количество эндпоинтов. В этом случае отключение функции **Resolve request attributes for SDv1 request naming rules** должно решить эту проблему. Выполните инструкции в [Включение расширенных эндпоинтов для SDv1](#enable-enhanced-endpoints), но отключите **Resolve request attributes for SDv1 request naming rules**.
 
-## Static resource requests
+## Запросы статических ресурсов
 
-Static resource requests include `Image`, `Binary`, `CSS`, and `JavaScript`.
+Запросы статических ресурсов включают `Image`, `Binary`, `CSS` и `JavaScript`.
 
-When the **Enhanced endpoints for SDv1** feature is turned on, all static resource requests are unmuted and grouped into a single **Static resources** endpoint that has the same [metrics](#metrics) as other regular endpoints.
+Когда функция **Enhanced endpoints for SDv1** включена, все запросы статических ресурсов разглушаются и группируются в единый эндпоинт **Static resources**, который имеет те же [метрики](#metrics), что и другие обычные эндпоинты.
 
-However, you can mute your static resource requests.
+Однако вы можете заглушить запросы статических ресурсов.
 
-Whether the **Static resources** endpoint is muted or not, you can always go to [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](../../../distributed-tracing/distributed-tracing-app.md "Discover the functionalities of the new Distributed Tracing app.") to view and analyze spans like CSS, images, or binary.
+Независимо от того, заглушен эндпоинт **Static resources** или нет, вы всегда можете перейти в [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](../../../distributed-tracing/distributed-tracing-app.md "Откройте для себя функциональность нового приложения Distributed Tracing.") для просмотра и анализа спанов, таких как CSS, изображения или бинарные файлы.
 
-### Mute static resource requests
+### Заглушение запросов статических ресурсов
 
-To mute static resource requests, follow the steps described in [Mute monitoring of service requests](service-monitoring-mute.md "Mute the monitoring of certain service requests so that you can focus on the performance of requests that affect your customers.").
+Чтобы заглушить запросы статических ресурсов, выполните шаги, описанные в [Заглушение мониторинга запросов сервиса](service-monitoring-mute.md "Заглушите мониторинг определённых запросов сервиса, чтобы сосредоточиться на производительности запросов, влияющих на ваших клиентов.").
 
-After you mute your static resource requests, the **Static resources** endpoint is not displayed in the endpoint list in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, and these requests don't count toward the overall service metrics.
+После заглушения запросов статических ресурсов эндпоинт **Static resources** не отображается в списке эндпоинтов в ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, и эти запросы не учитываются в общих метриках сервиса.
 
-### Manage resource request detection
+### Управление обнаружением запросов ресурсов
 
-You can add or edit filename extensions that count towards the **Static resources** endpoint. For details, see [Configure resource request detection](set-up-request-naming.md#resource-request-detection "Adjust request naming and define the operations your services offer.").
+Вы можете добавлять или редактировать расширения имён файлов, которые учитываются для эндпоинта **Static resources**. Подробности см. в [Настройка обнаружения запросов ресурсов](set-up-request-naming.md#resource-request-detection "Настройка именования запросов и определение операций, которые предлагают ваши сервисы.").
 
-Your existing configuration for resource request detection is still applicable, so if you have already added additional filename extensions, the corresponding requests should also become a part of the **Static resources** endpoint.
+Ваша существующая конфигурация обнаружения запросов ресурсов по-прежнему применяется, поэтому если вы уже добавили дополнительные расширения имён файлов, соответствующие запросы также должны стать частью эндпоинта **Static resources**.
 
-## Licensing considerations
+## Вопросы лицензирования
 
-When you activate the **Enhanced endpoints for SDv1** feature, Dynatrace starts collecting [metrics](#metrics) for a larger set of distinct endpoint names. For example, separate metrics are collected for endpoints `A`, `B`, `C`, and `D` instead of a single aggregated `NON_KEY_REQUEST` entry.
+Когда вы активируете функцию **Enhanced endpoints for SDv1**, Dynatrace начинает собирать [метрики](#metrics) для большего набора уникальных имён эндпоинтов. Например, отдельные метрики собираются для эндпоинтов `A`, `B`, `C` и `D` вместо единой агрегированной записи `NON_KEY_REQUEST`.
 
-This richer "endpoint name" dimension provides significantly better visibility into service behavior and troubleshooting. It also means that more individual metric datapoints are stored in Grail and contribute to your overall [metrics consumption](../../../../../license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model."), while providing additional insight into your services.
+Более богатое измерение «имя эндпоинта» обеспечивает значительно лучшую видимость поведения сервиса и устранение неполадок. Это также означает, что в Grail хранится больше отдельных точек данных метрик, что вносит вклад в общее [потребление метрик](../../../../../license/capabilities/metrics.md "Узнайте, как рассчитывается потребление Dynatrace Metrics powered by Grail с использованием модели Dynatrace Platform Subscription."), предоставляя при этом дополнительную информацию о ваших сервисах.

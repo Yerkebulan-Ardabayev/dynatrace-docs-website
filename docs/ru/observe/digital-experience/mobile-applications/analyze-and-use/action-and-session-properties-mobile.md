@@ -1,5 +1,5 @@
 ---
-title: Leverage user action and user session properties for mobile applications
+title: Использование свойств действий пользователя и сеансов для мобильных приложений
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/analyze-and-use/action-and-session-properties-mobile
 scraped: 2026-03-06T21:25:38.421195
 ---

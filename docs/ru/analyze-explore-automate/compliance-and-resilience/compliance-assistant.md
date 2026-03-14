@@ -1,5 +1,5 @@
 ---
-title: Compliance Assistant
+title: Помощник соответствия
 source: https://www.dynatrace.com/docs/analyze-explore-automate/compliance-and-resilience/compliance-assistant
 scraped: 2026-03-05T21:30:24.955360
 ---

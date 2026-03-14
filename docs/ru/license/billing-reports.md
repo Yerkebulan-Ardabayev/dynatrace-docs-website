@@ -1,5 +1,5 @@
 ---
-title: Billing report
+title: Отчет о выставлении счетов
 source: https://www.dynatrace.com/docs/license/billing-reports
 scraped: 2026-03-06T21:22:08.648425
 ---

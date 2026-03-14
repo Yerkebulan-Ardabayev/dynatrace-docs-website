@@ -1,5 +1,5 @@
 ---
-title: OneAgent health overview
+title: Обзор состояния работоспособности OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-health
 scraped: 2026-03-06T21:13:30.839577
 ---

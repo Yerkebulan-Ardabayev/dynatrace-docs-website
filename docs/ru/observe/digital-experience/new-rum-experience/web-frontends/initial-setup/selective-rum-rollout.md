@@ -1,5 +1,5 @@
 ---
-title: Roll out RUM selectively for your frontends in the New RUM Experience
+title: Выборочное развёртывание RUM для фронтендов в новом опыте RUM
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/selective-rum-rollout
 scraped: 2026-03-05T21:37:59.716367
 ---

@@ -1,5 +1,5 @@
 ---
-title: Metric ingestion protocol
+title: Протокол приёма метрик
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol
 scraped: 2026-03-06T21:37:09.371667
 ---

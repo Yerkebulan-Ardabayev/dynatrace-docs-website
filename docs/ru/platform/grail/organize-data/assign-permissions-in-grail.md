@@ -1,5 +1,5 @@
 ---
-title: Permissions in Grail
+title: Права доступа в Grail
 source: https://www.dynatrace.com/docs/platform/grail/organize-data/assign-permissions-in-grail
 scraped: 2026-03-06T21:13:24.120446
 ---

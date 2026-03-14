@@ -1,5 +1,5 @@
 ---
-title: Queue concepts
+title: Концепции очередей
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues/queue-concepts
 scraped: 2026-03-06T21:38:09.609161
 ---

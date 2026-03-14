@@ -1,5 +1,5 @@
 ---
-title: Process logs with technology bundle parsers
+title: Обработка логов с помощью парсеров технологического пакета
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-technology-processor
 scraped: 2026-03-06T21:13:36.221723
 ---

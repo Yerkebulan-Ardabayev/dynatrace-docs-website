@@ -1,5 +1,5 @@
 ---
-title: RUM metrics migration
+title: Миграция метрик RUM
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/upgrade/rum-metric-migration
 scraped: 2026-03-05T21:37:58.010413
 ---
@@ -8,19 +8,19 @@ scraped: 2026-03-05T21:37:58.010413
 
 # Миграция метрик RUM
 
-* Latest Dynatrace
-* Reference
-* 5-min read
-* Updated on Jan 23, 2026
+* Последнее Dynatrace
+* Справочник
+* 5-минутное чтение
+* Обновлено 23 января 2026 г.
 
-Ищете документацию по метрикам нового RUM Experience?
+Ищете документацию по метрикам New RUM Experience?
 
-Вы можете получить доступ к полному списку доступных метрик и их описаний непосредственно в последней версии Dynatrace. Нажмите **CTRL**/**CMD**+**K**, введите `dt.frontend` и выберите **Show more**.
+Вы можете получить доступ к полному списку доступных метрик и их подробной информации напрямую в последнем Dynatrace. Нажмите **CTRL**/**CMD**+**K**, введите `dt.frontend` и выберите **Показать больше**.
 
-[Новый RUM Experience](../../../observe/digital-experience/new-rum-experience.md "Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance."), который переносит RUM в Grail, вводит многочисленные встроенные метрики с префиксом `dt.frontend`. Поскольку используется другая модель данных, в отличие от RUM Classic, прямых эквивалентов [метрикам RUM Classic](../../metrics-classic/built-in-metrics.md#applications "Explore the complete list of built-in Dynatrace metrics.") с префиксом `builtin:apps` не существует. Тем не менее многие метрики имеют замены, выполняющие аналогичную функцию, как показано в таблице ниже. Обратите внимание, что метрики с префиксом `builtin:apps`, отсутствующие в таблице, замен не имеют.
+[New RUM Experience](../../../observe/digital-experience/new-rum-experience.md "Откройте для себя New RUM Experience для беспрецедентной видимости пользовательского поведения и производительности frontend."), который приносит RUM к Grail, вводит многочисленные встроенные метрики с префиксом `dt.frontend`. Поскольку он использует другую модель данных, чем RUM Classic, прямых аналогов для [метрик RUM Classic](../../metrics-classic/built-in-metrics.md#applications "Изучите полный список встроенных метрик Dynatrace.") нет, которые используют префикс `builtin:apps`. Однако многие метрики имеют замену, служащую аналогичной цели, как показано в таблице ниже. Обратите внимание, что метрики с префиксом `builtin:apps`, которые не появляются в таблице, не имеют замены.
 
-Различия в значениях метрик между метриками `builtin:apps` и их заменами ожидаемы и обусловлены изменениями в базовой модели данных.
+Различия в значениях метрик между метриками `builtin:apps` и их заменами ожидаемы и являются результатом изменений в базовой модели данных.
 
 ## Связанные темы
 
-* [Новый опыт Real User Monitoring](../../../observe/digital-experience/new-rum-experience.md "Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance.")
+* [New Real User Monitoring Experience](../../../observe/digital-experience/new-rum-experience.md "Откройте для себя New RUM Experience для беспрецедентной видимости пользовательского поведения и производительности frontend.")

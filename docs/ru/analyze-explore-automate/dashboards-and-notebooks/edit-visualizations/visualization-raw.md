@@ -1,5 +1,5 @@
 ---
-title: Raw visualization
+title: Сырая визуализация
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-raw
 scraped: 2026-03-06T21:21:24.661965
 ---

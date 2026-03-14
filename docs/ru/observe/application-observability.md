@@ -1,5 +1,5 @@
 ---
-title: Application Observability
+title: Наблюдаемость приложений
 source: https://www.dynatrace.com/docs/observe/application-observability
 scraped: 2026-03-06T21:10:32.743972
 ---

@@ -1,5 +1,5 @@
 ---
-title: Create and configure a browser monitor
+title: Создание и настройка браузерного монитора
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/create-configure-browser-monitors
 scraped: 2026-02-06T16:33:21.611413
 ---

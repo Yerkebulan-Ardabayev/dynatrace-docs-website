@@ -1,5 +1,5 @@
 ---
-title: Navigate the Dynatrace platform
+title: Навигация по платформе Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui
 scraped: 2026-03-05T21:39:57.477430
 ---

@@ -1,5 +1,5 @@
 ---
-title: Segment requests to improve response time degradation
+title: Сегментация запросов для улучшения деградации времени ответа
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/use-cases/segment-request
 scraped: 2026-03-06T21:12:14.538129
 ---

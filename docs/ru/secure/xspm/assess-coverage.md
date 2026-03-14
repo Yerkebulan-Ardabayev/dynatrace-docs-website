@@ -1,5 +1,5 @@
 ---
-title: Assess coverage
+title: Оценка покрытия
 source: https://www.dynatrace.com/docs/secure/xspm/assess-coverage
 scraped: 2026-03-03T21:21:59.541148
 ---

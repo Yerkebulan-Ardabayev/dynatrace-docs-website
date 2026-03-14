@@ -1,5 +1,5 @@
 ---
-title: Create custom user action names for mobile applications
+title: Создание пользовательских имён действий пользователя для мобильных приложений
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/additional-configuration/naming-rules-mobile
 scraped: 2026-03-06T21:30:50.604966
 ---

@@ -1,5 +1,5 @@
 ---
-title: Configure data privacy settings for web frontends
+title: Настройка параметров конфиденциальности данных для веб-фронтендов
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/data-privacy-web
 scraped: 2026-03-04T21:29:27.363043
 ---

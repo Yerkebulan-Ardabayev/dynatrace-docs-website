@@ -26,9 +26,9 @@ Dynatrace собирает метрики для множества предва
   Для ролевого доступа в развертывании [SaaS](../cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") вам необходим [Environment ActiveGate](../../../dynatrace-activegate/installation.md "Learn how to configure ActiveGate") установленный на хосте Amazon EC2.
 
 * Dynatrace version 1.200+
-* An updated [AWS monitoring policy](../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.
+* Обновлённая [политика мониторинга AWS](../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.
 
-To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+Чтобы [обновить политику AWS IAMï»¿](https://dt-url.net/8q038eb), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
 Предопределенная политика JSON для всех поддерживаемых сервисов
 
@@ -688,7 +688,7 @@ To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), использ
 
 ## Включение мониторинга
 
-Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, смотрите [Включение мониторинга сервиса](../aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
 
 ## Просмотр метрик сервиса
 
@@ -698,7 +698,7 @@ Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-
 
 Для доступа к странице обзора пользовательского устройства
 
-1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
 2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
 3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
 4. **Страница обзора группы пользовательских устройств** отображает все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
@@ -711,9 +711,9 @@ Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-
 
 Для существующих мониторируемых сервисов может потребоваться повторное сохранение ваших учетных данных, чтобы предустановленная панель мониторинга появилась на странице **Dashboards**. Для повторного сохранения учетных данных перейдите в **Settings** > **Cloud and virtualization** > **AWS**, выберите нужный экземпляр AWS и нажмите **Save**.
 
-You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.
+Вы не можете вносить изменения в предустановленную панель мониторинга напрямую, но можете клонировать и отредактировать её. Чтобы клонировать панель мониторинга, откройте меню (**...**) и выберите **Clone**.
 
-To remove a dashboard from the dashboards page, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+Чтобы убрать панель мониторинга со страницы панелей мониторинга, вы можете скрыть её. Чтобы скрыть панель мониторинга, откройте меню (**...**) и выберите **Hide**.
 
 Скрытие панели мониторинга не влияет на других пользователей.
 
@@ -839,85 +839,85 @@ To remove a dashboard from the dashboards page, you can hide it. To hide a dashb
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуется |
 | --- | --- | --- | --- | --- | --- |
-| CDCChangesDiskSource | Amount of rows accumulating on disk and waiting to be committed from the source | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier |  |
-| CDCChangesDiskTarget | Amount of rows accumulating on disk and waiting to be committed to the target | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier |  |
-| CDCChangesMemorySource | Amount of rows accumulating in memory and waiting to be committed from the source | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier |  |
-| CDCChangesMemoryTarget | Amount of rows accumulating in memory and waiting to be committed to the target | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier |  |
-| CDCIncomingChanges | The total number of change events at a point in time that are waiting to be applied to the target | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| CDCLatencySource | The gap, in seconds, between the last event captured from the source endpoint and the current system timestamp of the AWS DMS instance. CDCLatencySource represents the latency between source and replication instance. | Seconds | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| CDCLatencyTarget | The gap, in seconds, between the first event timestamp waiting to commit on the target and the current timestamp of the AWS DMS instance. CDCLatencyTarget represents the latency between replication instance and target. | Seconds | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| CDCThroughputBandwidthSource | Incoming data received for the source in KB per second | Kilobytes/Second | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| CDCThroughputBandwidthTarget | Outgoing data transmitted for the target in KB per second | Kilobytes/Second | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| CDCThroughputRowsSource | Incoming task changes from the source in rows per second | Count/Second | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| CDCThroughputRowsTarget | Outgoing task changes for the target in rows per second | Count/Second | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| CPUAllocated | The percentage of CPU maximally allocated for the task (0 means no limit) | Percent | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier |  |
-| CPUUtilization | The amount of CPU used | Percent | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| CDCChangesDiskSource | Количество строк, накапливающихся на диске и ожидающих фиксации из источника | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier |  |
+| CDCChangesDiskTarget | Количество строк, накапливающихся на диске и ожидающих фиксации в целевой базе данных | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier |  |
+| CDCChangesMemorySource | Количество строк, накапливающихся в памяти и ожидающих фиксации из источника | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier |  |
+| CDCChangesMemoryTarget | Количество строк, накапливающихся в памяти и ожидающих фиксации в целевой базе данных | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier |  |
+| CDCIncomingChanges | Общее количество событий изменений в определённый момент времени, ожидающих применения к целевой базе данных | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| CDCLatencySource | Разрыв в секундах между последним событием, захваченным из конечной точки источника, и текущей системной меткой времени экземпляра AWS DMS. CDCLatencySource представляет задержку между источником и экземпляром репликации. | Seconds | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| CDCLatencyTarget | Разрыв в секундах между меткой времени первого события, ожидающего фиксации в целевой базе данных, и текущей меткой времени экземпляра AWS DMS. CDCLatencyTarget представляет задержку между экземпляром репликации и целевой базой данных. | Seconds | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| CDCThroughputBandwidthSource | Входящие данные, полученные из источника, в КБ в секунду | Kilobytes/Second | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| CDCThroughputBandwidthTarget | Исходящие данные, переданные в целевую базу данных, в КБ в секунду | Kilobytes/Second | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| CDCThroughputRowsSource | Входящие изменения задачи из источника в строках в секунду | Count/Second | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| CDCThroughputRowsTarget | Исходящие изменения задачи для целевой базы данных в строках в секунду | Count/Second | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| CPUAllocated | Процент CPU, максимально выделенный для задачи (0 означает отсутствие ограничения) | Percent | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier |  |
+| CPUUtilization | Объём использования CPU | Percent | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
 | CPUUtilization |  | Percent | Multi | ReplicationInstanceIdentifier | Применимо |
 | CPUUtilization |  | Percent | Multi | Region, ReplicationInstanceExternalResourceId | Применимо |
 | CPUUtilization |  | Percent | Multi | Region | Применимо |
 | CPUUtilization |  | Percent | Multi | Region, InstanceClass |  |
-| DiskQueueDepth | The number of outstanding I/Os (read/write requests) waiting to access the disk | Count | Multi | Region, ReplicationInstanceExternalResourceId |  |
+| DiskQueueDepth | Количество невыполненных операций ввода-вывода (запросов чтения/записи), ожидающих доступа к диску | Count | Multi | Region, ReplicationInstanceExternalResourceId |  |
 | DiskQueueDepth |  | Count | Multi | Region |  |
 | DiskQueueDepth |  | Count | Multi | Region, InstanceClass |  |
 | DiskQueueDepth |  | Count | Multi | ReplicationInstanceIdentifier |  |
-| FreeStorageSpace | The amount of available storage space | Bytes | Multi | ReplicationInstanceIdentifier | Применимо |
+| FreeStorageSpace | Объём доступного дискового пространства | Bytes | Multi | ReplicationInstanceIdentifier | Применимо |
 | FreeStorageSpace |  | Bytes | Multi | Region, ReplicationInstanceExternalResourceId |  |
 | FreeStorageSpace |  | Bytes | Multi | Region |  |
 | FreeStorageSpace |  | Bytes | Multi | Region, InstanceClass |  |
-| FreeableMemory | The amount of available RAM | Bytes | Multi | ReplicationInstanceIdentifier | Применимо |
+| FreeableMemory | Объём доступной оперативной памяти | Bytes | Multi | ReplicationInstanceIdentifier | Применимо |
 | FreeableMemory |  | Bytes | Multi | Region, ReplicationInstanceExternalResourceId |  |
 | FreeableMemory |  | Bytes | Multi | Region |  |
 | FreeableMemory |  | Bytes | Multi | Region, InstanceClass |  |
-| FullLoadThroughputBandwidthSource | Incoming data received from a full load from the source in kilobytes (KB) per second | Kilobytes/Second | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| FullLoadThroughputBandwidthTarget | Outgoing data transmitted from a full load for the target in kilobytes (KB) per second | Kilobytes/Second | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| FullLoadThroughputRowsSource | Incoming changes from a full load from the source in rows per second | Count/Second | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| FullLoadThroughputRowsTarget | Outgoing changes from a full load for the target in rows per second | Count/Second | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| MemoryAllocated | The maximum allocation of memory for the task (0 means no limits) | Megabytes | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier |  |
-| MemoryUsage | The resident set size (RSS) occupied by a task. It indicates the portion of memory occupied by a task held in main memory (RAM). | Megabytes | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| NetworkReceiveThroughput | The incoming (receive) network traffic on the replication instance, including both customer database traffic and AWS DMS traffic used for monitoring and replication | Bytes/Second | Multi | ReplicationInstanceIdentifier | Применимо |
+| FullLoadThroughputBandwidthSource | Входящие данные при полной загрузке из источника в килобайтах (КБ) в секунду | Kilobytes/Second | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| FullLoadThroughputBandwidthTarget | Исходящие данные при полной загрузке для целевой базы данных в килобайтах (КБ) в секунду | Kilobytes/Second | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| FullLoadThroughputRowsSource | Входящие изменения при полной загрузке из источника в строках в секунду | Count/Second | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| FullLoadThroughputRowsTarget | Исходящие изменения при полной загрузке для целевой базы данных в строках в секунду | Count/Second | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| MemoryAllocated | Максимальное выделение памяти для задачи (0 означает отсутствие ограничений) | Megabytes | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier |  |
+| MemoryUsage | Размер резидентного набора (RSS), занимаемый задачей. Указывает долю памяти, занимаемую задачей в основной памяти (RAM). | Megabytes | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| NetworkReceiveThroughput | Входящий сетевой трафик на экземпляре репликации, включая как трафик клиентской базы данных, так и трафик AWS DMS, используемый для мониторинга и репликации | Bytes/Second | Multi | ReplicationInstanceIdentifier | Применимо |
 | NetworkReceiveThroughput |  | Bytes/Second | Multi | Region, ReplicationInstanceExternalResourceId |  |
 | NetworkReceiveThroughput |  | Bytes/Second | Multi | Region |  |
 | NetworkReceiveThroughput |  | Bytes/Second | Multi | Region, InstanceClass |  |
-| NetworkTransmitThroughput | The outgoing (transmit) network traffic on the replication instance, including both customer database traffic and AWS DMS traffic used for monitoring and replication | Bytes/Second | Multi | ReplicationInstanceIdentifier | Применимо |
+| NetworkTransmitThroughput | Исходящий сетевой трафик на экземпляре репликации, включая как трафик клиентской базы данных, так и трафик AWS DMS, используемый для мониторинга и репликации | Bytes/Second | Multi | ReplicationInstanceIdentifier | Применимо |
 | NetworkTransmitThroughput |  | Bytes/Second | Multi | Region, ReplicationInstanceExternalResourceId |  |
 | NetworkTransmitThroughput |  | Bytes/Second | Multi | Region |  |
 | NetworkTransmitThroughput |  | Bytes/Second | Multi | Region, InstanceClass |  |
-| ReadIOPS | The average number of disk read I/O operations per second | Count/Second | Multi | ReplicationInstanceIdentifier | Применимо |
+| ReadIOPS | Среднее количество операций чтения ввода-вывода с диска в секунду | Count/Second | Multi | ReplicationInstanceIdentifier | Применимо |
 | ReadIOPS |  | Count/Second | Multi | Region, ReplicationInstanceExternalResourceId |  |
 | ReadIOPS |  | Count/Second | Multi | Region |  |
 | ReadIOPS |  | Count/Second | Multi | Region, InstanceClass |  |
-| ReadLatency | The average amount of time taken per disk I/O (input) operation | Seconds | Multi | ReplicationInstanceIdentifier | Применимо |
+| ReadLatency | Среднее время, затраченное на одну операцию ввода-вывода (чтение) с диска | Seconds | Multi | ReplicationInstanceIdentifier | Применимо |
 | ReadLatency |  | Seconds | Multi | Region, ReplicationInstanceExternalResourceId |  |
 | ReadLatency |  | Seconds | Multi | Region |  |
 | ReadLatency |  | Seconds | Multi | Region, InstanceClass |  |
-| ReadThroughput | The average number of bytes read from disk per second | Bytes/Second | Multi | ReplicationInstanceIdentifier | Применимо |
+| ReadThroughput | Среднее количество байтов, прочитанных с диска в секунду | Bytes/Second | Multi | ReplicationInstanceIdentifier | Применимо |
 | ReadThroughput |  | Bytes/Second | Multi | Region, ReplicationInstanceExternalResourceId |  |
 | ReadThroughput |  | Bytes/Second | Multi | Region |  |
 | ReadThroughput |  | Bytes/Second | Multi | Region, InstanceClass |  |
 | RecoveryCount |  | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
 | RunCounter |  | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| SwapUsage | The amount of swap space used on the replication instance | Bytes | Multi | ReplicationInstanceIdentifier | Применимо |
+| SwapUsage | Объём использованного пространства подкачки на экземпляре репликации | Bytes | Multi | ReplicationInstanceIdentifier | Применимо |
 | SwapUsage |  | Bytes | Multi | Region, ReplicationInstanceExternalResourceId |  |
 | SwapUsage |  | Bytes | Multi | Region |  |
 | SwapUsage |  | Bytes | Multi | Region, InstanceClass |  |
-| ValidationAttemptedRecordCount | Number of rows that validation was attempted, per minute | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| ValidationBulkQuerySourceLatency | AWS DMS can do data validation in bulk, especially in certain scenarios during a full-load or ongoing replication when there are many changes. This metric indicates the latency required to read a bulk set of data from the source endpoint. | Milliseconds | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| ValidationBulkQueryTargetLatency | AWS DMS can do data validation in bulk, especially in certain scenarios during a full-load or ongoing replication when there are many changes. This metric indicates the latency required to read a bulk set of data on the target endpoint. | Milliseconds | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| ValidationFailedOverallCount | Number of rows where validation failed | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| ValidationItemQuerySourceLatency | During ongoing replication, data validation can identify ongoing changes and validate those changes. This metric indicates the latency in reading those changes from the source. | Milliseconds | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier |  |
-| ValidationItemQueryTargetLatency | During ongoing replication, data validation can identify ongoing changes and validate the changes row by row. This metric gives us the latency in reading those changes from the target. | Milliseconds | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier |  |
-| ValidationPendingOverallCount | Number of rows where the validation is still pending | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| ValidationSucceededRecordCount | Number of rows that AWS DMS validated, per minute | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| ValidationSuspendedOverallCount | Number of rows where validation was suspended | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
-| WriteIOPS | The average number of disk write I/O operations per second | Count/Second | Multi | ReplicationInstanceIdentifier | Применимо |
+| ValidationAttemptedRecordCount | Количество строк, для которых была предпринята попытка валидации, в минуту | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| ValidationBulkQuerySourceLatency | AWS DMS может выполнять массовую валидацию данных, особенно в определённых сценариях при полной загрузке или текущей репликации с большим количеством изменений. Эта метрика указывает задержку, необходимую для чтения массового набора данных из конечной точки источника. | Milliseconds | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| ValidationBulkQueryTargetLatency | AWS DMS может выполнять массовую валидацию данных, особенно в определённых сценариях при полной загрузке или текущей репликации с большим количеством изменений. Эта метрика указывает задержку, необходимую для чтения массового набора данных на целевой конечной точке. | Milliseconds | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| ValidationFailedOverallCount | Количество строк, для которых валидация завершилась неудачей | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| ValidationItemQuerySourceLatency | Во время текущей репликации валидация данных может выявлять текущие изменения и проверять их. Эта метрика указывает задержку при чтении этих изменений из источника. | Milliseconds | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier |  |
+| ValidationItemQueryTargetLatency | Во время текущей репликации валидация данных может выявлять текущие изменения и проверять их построчно. Эта метрика показывает задержку при чтении этих изменений из целевой базы данных. | Milliseconds | Multi | ReplicationInstanceIdentifier, ReplicationTaskIdentifier |  |
+| ValidationPendingOverallCount | Количество строк, для которых валидация ещё не завершена | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| ValidationSucceededRecordCount | Количество строк, прошедших валидацию AWS DMS, в минуту | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| ValidationSuspendedOverallCount | Количество строк, для которых валидация была приостановлена | Count | Sum | ReplicationInstanceIdentifier, ReplicationTaskIdentifier | Применимо |
+| WriteIOPS | Среднее количество операций записи ввода-вывода на диск в секунду | Count/Second | Multi | ReplicationInstanceIdentifier | Применимо |
 | WriteIOPS |  | Count/Second | Multi | Region, ReplicationInstanceExternalResourceId |  |
 | WriteIOPS |  | Count/Second | Multi | Region |  |
 | WriteIOPS |  | Count/Second | Multi | Region, InstanceClass |  |
-| WriteLatency | The average amount of time taken per disk I/O (output) operation | Seconds | Multi | ReplicationInstanceIdentifier | Применимо |
+| WriteLatency | Среднее время, затраченное на одну операцию ввода-вывода (запись) на диск | Seconds | Multi | ReplicationInstanceIdentifier | Применимо |
 | WriteLatency |  | Seconds | Multi | Region, ReplicationInstanceExternalResourceId |  |
 | WriteLatency |  | Seconds | Multi | Region |  |
 | WriteLatency |  | Seconds | Multi | Region, InstanceClass |  |
-| WriteThroughput | The average number of bytes written to disk per second | Bytes/Second | Multi | ReplicationInstanceIdentifier | Применимо |
+| WriteThroughput | Среднее количество байтов, записанных на диск в секунду | Bytes/Second | Multi | ReplicationInstanceIdentifier | Применимо |
 | WriteThroughput |  | Bytes/Second | Multi | Region, ReplicationInstanceExternalResourceId |  |
 | WriteThroughput |  | Bytes/Second | Multi | Region |  |
 | WriteThroughput |  | Bytes/Second | Multi | Region, InstanceClass |  |

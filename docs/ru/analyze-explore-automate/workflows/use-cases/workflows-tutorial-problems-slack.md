@@ -1,5 +1,5 @@
 ---
-title: Send Slack notifications for problems
+title: Отправка уведомлений Slack для __KEEP000__
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-slack
 scraped: 2026-02-18T05:48:39.343910
 ---

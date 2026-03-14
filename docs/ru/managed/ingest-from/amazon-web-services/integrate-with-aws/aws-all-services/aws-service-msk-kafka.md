@@ -622,8 +622,8 @@ Dynatrace собирает метрики для множества предва
 
 В этом примере из полного списка разрешений необходимо выбрать
 
-* `"apigateway:GET"` for **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"apigateway:GET"` для **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
 ### Конечные точки AWS, которые должны быть доступны из ActiveGate с соответствующими сервисами AWS
 
@@ -837,150 +837,150 @@ Dynatrace собирает метрики для множества предва
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
-| ActiveControllerCount | Only one controller per cluster should be active at any given time. | Count | Multi | Cluster Name | Доступна |
+| ActiveControllerCount | В каждый момент времени только один контроллер на кластер должен быть активным. | Count | Multi | Cluster Name | Доступна |
 | ActiveControllerCount |  | Count | Sum | Cluster Name | Доступна |
-| BytesInPerSec | The number of bytes per second received from clients | Bytes/Second | Multi | Cluster Name, Broker ID |  |
+| BytesInPerSec | Количество байт в секунду, полученных от клиентов | Bytes/Second | Multi | Cluster Name, Broker ID |  |
 | BytesInPerSec |  | Bytes/Second | Multi | Cluster Name, Broker ID, Topic |  |
 | BytesInPerSec |  | Bytes/Second | Sum | Cluster Name, Broker ID |  |
 | BytesInPerSec |  | Bytes/Second | Sum | Cluster Name, Broker ID, Topic |  |
-| BytesOutPerSec | The number of bytes per second sent to clients | Bytes/Second | Multi | Cluster Name, Broker ID |  |
+| BytesOutPerSec | Количество байт в секунду, отправленных клиентам | Bytes/Second | Multi | Cluster Name, Broker ID |  |
 | BytesOutPerSec |  | Bytes/Second | Multi | Cluster Name, Broker ID, Topic |  |
 | BytesOutPerSec |  | Bytes/Second | Sum | Cluster Name, Broker ID |  |
 | BytesOutPerSec |  | Bytes/Second | Sum | Cluster Name, Broker ID, Topic |  |
-| CPUCreditBalance | The number of earned credits | Count | Multi | Cluster Name, Broker ID |  |
+| CPUCreditBalance | Количество заработанных кредитов | Count | Multi | Cluster Name, Broker ID |  |
 | CPUCreditBalance |  | Count | Sum | Cluster Name, Broker ID |  |
-| CPUCreditUsage | The number of used credits | Count | Multi | Cluster Name, Broker ID |  |
+| CPUCreditUsage | Количество использованных кредитов | Count | Multi | Cluster Name, Broker ID |  |
 | CPUCreditUsage |  | Count | Sum | Cluster Name, Broker ID |  |
-| CpuIdle | The percentage of CPU idle time | Percent | Multi | Cluster Name, Broker ID | Доступна |
+| CpuIdle | Процент времени простоя ЦПУ | Percent | Multi | Cluster Name, Broker ID | Доступна |
 | CpuIdle |  | Percent | Sum | Cluster Name, Broker ID | Доступна |
-| CpuSystem | The percentage of CPU in kernel space | Percent | Multi | Cluster Name, Broker ID | Доступна |
+| CpuSystem | Процент использования ЦПУ в пространстве ядра | Percent | Multi | Cluster Name, Broker ID | Доступна |
 | CpuSystem |  | Percent | Sum | Cluster Name, Broker ID | Доступна |
-| CpuUser | The percentage of CPU in user space | Percent | Multi | Cluster Name, Broker ID | Доступна |
+| CpuUser | Процент использования ЦПУ в пользовательском пространстве | Percent | Multi | Cluster Name, Broker ID | Доступна |
 | CpuUser |  | Percent | Sum | Cluster Name, Broker ID | Доступна |
-| FetchConsumerLocalTimeMsMean | The mean time in milliseconds that the consumer request is processed at the leader | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| FetchConsumerLocalTimeMsMean | Среднее время в миллисекундах обработки запроса потребителя на лидере | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | FetchConsumerLocalTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| FetchConsumerRequestQueueTimeMsMean | The mean time in milliseconds that the consumer request waits in the request queue | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| FetchConsumerRequestQueueTimeMsMean | Среднее время в миллисекундах ожидания запроса потребителя в очереди запросов | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | FetchConsumerRequestQueueTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| FetchConsumerResponseQueueTimeMsMean | The mean time in milliseconds that the consumer request waits in the response queue | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| FetchConsumerResponseQueueTimeMsMean | Среднее время в миллисекундах ожидания запроса потребителя в очереди ответов | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | FetchConsumerResponseQueueTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
 | FetchConsumerResponseSendTimeMsMean |  | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | FetchConsumerResponseSendTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| FetchConsumerTotalTimeMsMean | The mean total time in milliseconds that consumers spend on fetching data from the broker | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| FetchConsumerTotalTimeMsMean | Среднее общее время в миллисекундах, затрачиваемое потребителями на получение данных от брокера | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | FetchConsumerTotalTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| FetchFollowerLocalTimeMsMean | The mean time in milliseconds that the follower request is processed at the leader | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| FetchFollowerLocalTimeMsMean | Среднее время в миллисекундах обработки запроса ведомого на лидере | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | FetchFollowerLocalTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| FetchFollowerRequestQueueTimeMsMean | The mean time in milliseconds that the follower request waits in the request queue | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| FetchFollowerRequestQueueTimeMsMean | Среднее время в миллисекундах ожидания запроса ведомого в очереди запросов | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | FetchFollowerRequestQueueTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| FetchFollowerResponseQueueTimeMsMean | The mean time in milliseconds that the follower request waits in the response queue | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| FetchFollowerResponseQueueTimeMsMean | Среднее время в миллисекундах ожидания запроса ведомого в очереди ответов | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | FetchFollowerResponseQueueTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| FetchFollowerResponseSendTimeMsMean | The mean time in milliseconds for the follower to send a response | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| FetchFollowerResponseSendTimeMsMean | Среднее время в миллисекундах отправки ответа ведомым | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | FetchFollowerResponseSendTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| FetchFollowerTotalTimeMsMean | The mean total time in milliseconds that followers spend on fetching data from the broker | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| FetchFollowerTotalTimeMsMean | Среднее общее время в миллисекундах, затрачиваемое ведомыми на получение данных от брокера | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | FetchFollowerTotalTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| FetchMessageConversionsPerSec | The number of fetch message conversions per second for the broker | Count/Second | Multi | Cluster Name, Broker ID |  |
+| FetchMessageConversionsPerSec | Количество преобразований сообщений при получении в секунду для брокера | Count/Second | Multi | Cluster Name, Broker ID |  |
 | FetchMessageConversionsPerSec |  | Count/Second | Multi | Cluster Name, Broker ID, Topic |  |
 | FetchMessageConversionsPerSec |  | Count/Second | Sum | Cluster Name, Broker ID |  |
 | FetchMessageConversionsPerSec |  | Count/Second | Sum | Cluster Name, Broker ID, Topic |  |
-| FetchMessageConversionsTimeMsMean | The mean total time in milliseconds that messages being fetched spend converting | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| FetchMessageConversionsTimeMsMean | Среднее общее время в миллисекундах, затрачиваемое на преобразование получаемых сообщений | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | FetchMessageConversionsTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| FetchThrottleByteRate | The number of throttled bytes per second | Bytes/Second | Multi | Cluster Name, Broker ID |  |
+| FetchThrottleByteRate | Количество ограниченных байт в секунду | Bytes/Second | Multi | Cluster Name, Broker ID |  |
 | FetchThrottleByteRate |  | Bytes/Second | Sum | Cluster Name, Broker ID |  |
-| FetchThrottleQueueSize | The number of messages in the throttle queue | Count | Multi | Cluster Name, Broker ID |  |
+| FetchThrottleQueueSize | Количество сообщений в очереди ограничения скорости | Count | Multi | Cluster Name, Broker ID |  |
 | FetchThrottleQueueSize |  | Count | Sum | Cluster Name, Broker ID |  |
-| FetchThrottleTime | The average fetch throttle time in milliseconds | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| FetchThrottleTime | Среднее время ограничения скорости получения в миллисекундах | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | FetchThrottleTime |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| GlobalPartitionCount | Total number of partitions across all brokers in the cluster | Count | Multi | Cluster Name | Доступна |
+| GlobalPartitionCount | Общее количество разделов на всех брокерах кластера | Count | Multi | Cluster Name | Доступна |
 | GlobalPartitionCount |  | Count | Sum | Cluster Name | Доступна |
-| GlobalTopicCount | Total number of topics across all brokers in the cluster | Count | Multi | Cluster Name | Доступна |
+| GlobalTopicCount | Общее количество топиков на всех брокерах кластера | Count | Multi | Cluster Name | Доступна |
 | GlobalTopicCount |  | Count | Sum | Cluster Name | Доступна |
-| KafkaAppLogsDiskUsed | The percentage of disk space used for application logs | Percent | Multi | Cluster Name, Broker ID | Доступна |
+| KafkaAppLogsDiskUsed | Процент дискового пространства, используемого для журналов приложений | Percent | Multi | Cluster Name, Broker ID | Доступна |
 | KafkaAppLogsDiskUsed |  | Percent | Sum | Cluster Name, Broker ID | Доступна |
-| KafkaDataLogsDiskUsed | The percentage of disk space used for data logs | Percent | Multi | Cluster Name, Broker ID | Доступна |
+| KafkaDataLogsDiskUsed | Процент дискового пространства, используемого для журналов данных | Percent | Multi | Cluster Name, Broker ID | Доступна |
 | KafkaDataLogsDiskUsed |  | Percent | Sum | Cluster Name, Broker ID | Доступна |
-| LeaderCount | The number of leader replicas | Count | Multi | Cluster Name, Broker ID |  |
+| LeaderCount | Количество лидерских реплик | Count | Multi | Cluster Name, Broker ID |  |
 | LeaderCount |  | Count | Sum | Cluster Name, Broker ID |  |
-| MemoryBuffered | The size in bytes of buffered memory for the broker | Bytes | Multi | Cluster Name, Broker ID | Доступна |
+| MemoryBuffered | Размер буферизованной памяти брокера в байтах | Bytes | Multi | Cluster Name, Broker ID | Доступна |
 | MemoryBuffered |  | Bytes | Sum | Cluster Name, Broker ID | Доступна |
-| MemoryCached | The size in bytes of cached memory for the broker | Bytes | Multi | Cluster Name, Broker ID | Доступна |
+| MemoryCached | Размер кэшированной памяти брокера в байтах | Bytes | Multi | Cluster Name, Broker ID | Доступна |
 | MemoryCached |  | Bytes | Sum | Cluster Name, Broker ID | Доступна |
-| MemoryFree | The size in bytes of memory that is free and available for the broker | Bytes | Multi | Cluster Name, Broker ID | Доступна |
+| MemoryFree | Размер свободной и доступной памяти брокера в байтах | Bytes | Multi | Cluster Name, Broker ID | Доступна |
 | MemoryFree |  | Bytes | Sum | Cluster Name, Broker ID | Доступна |
-| MemoryUsed | The size in bytes of memory that is in use for the broker | Bytes | Multi | Cluster Name, Broker ID | Доступна |
+| MemoryUsed | Размер используемой памяти брокера в байтах | Bytes | Multi | Cluster Name, Broker ID | Доступна |
 | MemoryUsed |  | Bytes | Sum | Cluster Name, Broker ID | Доступна |
-| MessagesInPerSec | The number of incoming messages per second for the broker | Count/Second | Multi | Cluster Name, Broker ID |  |
-| MaxOffsetLag | The maximum offset lag across all partitions in a topic | Count | Multi | Cluster Name, Consumer Group, Topic |  |
-| MaxOffsetLag | The maximum offset lag across all partitions in a topic | Count | Sum | Cluster Name, Consumer Group, Topic |  |
+| MessagesInPerSec | Количество входящих сообщений в секунду для брокера | Count/Second | Multi | Cluster Name, Broker ID |  |
+| MaxOffsetLag | Максимальное отставание смещения по всем разделам в топике | Count | Multi | Cluster Name, Consumer Group, Topic |  |
+| MaxOffsetLag | Максимальное отставание смещения по всем разделам в топике | Count | Sum | Cluster Name, Consumer Group, Topic |  |
 | MessagesInPerSec |  | Count/Second | Multi | Cluster Name, Broker ID, Topic |  |
 | MessagesInPerSec |  | Count/Second | Sum | Cluster Name, Broker ID |  |
 | MessagesInPerSec |  | Count/Second | Sum | Cluster Name, Broker ID, Topic |  |
-| NetworkProcessorAvgIdlePercent | The average percentage of the time the network processors are idle | Percent | Multi | Cluster Name, Broker ID |  |
+| NetworkProcessorAvgIdlePercent | Средний процент времени простоя сетевых процессоров | Percent | Multi | Cluster Name, Broker ID |  |
 | NetworkProcessorAvgIdlePercent |  | Percent | Sum | Cluster Name, Broker ID |  |
-| NetworkRxDropped | The number of dropped receive packages | Count | Multi | Cluster Name, Broker ID | Доступна |
+| NetworkRxDropped | Количество потерянных входящих пакетов | Count | Multi | Cluster Name, Broker ID | Доступна |
 | NetworkRxDropped |  | Count | Sum | Cluster Name, Broker ID | Доступна |
-| NetworkRxErrors | The number of network receive errors for the broker | Count | Multi | Cluster Name, Broker ID | Доступна |
+| NetworkRxErrors | Количество ошибок приёма данных по сети для брокера | Count | Multi | Cluster Name, Broker ID | Доступна |
 | NetworkRxErrors |  | Count | Sum | Cluster Name, Broker ID | Доступна |
-| NetworkRxPackets | The number of packets received by the broker | Count | Multi | Cluster Name, Broker ID | Доступна |
+| NetworkRxPackets | Количество пакетов, полученных брокером | Count | Multi | Cluster Name, Broker ID | Доступна |
 | NetworkRxPackets |  | Count | Sum | Cluster Name, Broker ID | Доступна |
-| NetworkTxDropped | The number of dropped transmit packages | Count | Multi | Cluster Name, Broker ID | Доступна |
+| NetworkTxDropped | Количество потерянных исходящих пакетов | Count | Multi | Cluster Name, Broker ID | Доступна |
 | NetworkTxDropped |  | Count | Sum | Cluster Name, Broker ID | Доступна |
-| NetworkTxErrors | The number of network transmit errors for the broker | Count | Multi | Cluster Name, Broker ID | Доступна |
+| NetworkTxErrors | Количество ошибок передачи данных по сети для брокера | Count | Multi | Cluster Name, Broker ID | Доступна |
 | NetworkTxErrors |  | Count | Sum | Cluster Name, Broker ID | Доступна |
-| NetworkTxPackets | The number of packets transmitted by the broker | Count | Multi | Cluster Name, Broker ID | Доступна |
+| NetworkTxPackets | Количество пакетов, переданных брокером | Count | Multi | Cluster Name, Broker ID | Доступна |
 | NetworkTxPackets |  | Count | Sum | Cluster Name, Broker ID | Доступна |
-| OfflinePartitionsCount | Total number of partitions that are offline in the cluster | Count | Multi | Cluster Name | Доступна |
+| OfflinePartitionsCount | Общее количество офлайн-разделов в кластере | Count | Multi | Cluster Name | Доступна |
 | OfflinePartitionsCount |  | Count | Sum | Cluster Name | Доступна |
-| PartitionCount | The number of partitions for the broker | Count | Multi | Cluster Name, Broker ID |  |
+| PartitionCount | Количество разделов для брокера | Count | Multi | Cluster Name, Broker ID |  |
 | PartitionCount |  | Count | Sum | Cluster Name, Broker ID |  |
-| ProduceLocalTimeMsMean | The mean time in milliseconds for the follower to send a response | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| ProduceLocalTimeMsMean | Среднее время в миллисекундах отправки ответа ведомым | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | ProduceLocalTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| ProduceMessageConversionsPerSec | The number of produce message conversions per second for the broker | Count/Second | Multi | Cluster Name, Broker ID |  |
+| ProduceMessageConversionsPerSec | Количество преобразований сообщений при записи в секунду для брокера | Count/Second | Multi | Cluster Name, Broker ID |  |
 | ProduceMessageConversionsPerSec |  | Count/Second | Multi | Cluster Name, Broker ID, Topic |  |
 | ProduceMessageConversionsPerSec |  | Count/Second | Sum | Cluster Name, Broker ID |  |
 | ProduceMessageConversionsPerSec |  | Count/Second | Sum | Cluster Name, Broker ID, Topic |  |
-| ProduceMessageConversionsTimeMsMean | The mean time in milliseconds spent on message format conversions | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| ProduceMessageConversionsTimeMsMean | Среднее время в миллисекундах, затрачиваемое на преобразование формата сообщений | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | ProduceMessageConversionsTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| ProduceRequestQueueTimeMsMean | The mean time in milliseconds that request messages spend in the queue | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| ProduceRequestQueueTimeMsMean | Среднее время в миллисекундах нахождения сообщений запросов в очереди | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | ProduceRequestQueueTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| ProduceResponseQueueTimeMsMean | The mean time in milliseconds that response messages spend in the queue | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| ProduceResponseQueueTimeMsMean | Среднее время в миллисекундах нахождения сообщений ответов в очереди | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | ProduceResponseQueueTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| ProduceResponseSendTimeMsMean | The mean time in milliseconds spent on sending response messages | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| ProduceResponseSendTimeMsMean | Среднее время в миллисекундах, затрачиваемое на отправку сообщений ответов | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | ProduceResponseSendTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| ProduceThrottleByteRate | The number of throttled bytes per second | Bytes/Second | Multi | Cluster Name, Broker ID |  |
+| ProduceThrottleByteRate | Количество ограниченных байт в секунду | Bytes/Second | Multi | Cluster Name, Broker ID |  |
 | ProduceThrottleByteRate |  | Bytes/Second | Sum | Cluster Name, Broker ID |  |
-| ProduceThrottleQueueSize | The number of messages in the throttle queue | Count | Multi | Cluster Name, Broker ID |  |
+| ProduceThrottleQueueSize | Количество сообщений в очереди ограничения скорости | Count | Multi | Cluster Name, Broker ID |  |
 | ProduceThrottleQueueSize |  | Count | Sum | Cluster Name, Broker ID |  |
-| ProduceThrottleTime | The average produce throttle time in milliseconds | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| ProduceThrottleTime | Среднее время ограничения скорости записи в миллисекундах | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | ProduceThrottleTime |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| ProduceTotalTimeMsMean | The mean produce time in milliseconds | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| ProduceTotalTimeMsMean | Среднее общее время записи в миллисекундах | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | ProduceTotalTimeMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| RequestBytesMean | The mean number of request bytes for the broker | Bytes | Multi | Cluster Name, Broker ID |  |
+| RequestBytesMean | Среднее количество байт запроса для брокера | Bytes | Multi | Cluster Name, Broker ID |  |
 | RequestBytesMean |  | Bytes | Sum | Cluster Name, Broker ID |  |
-| RequestExemptFromThrottleTime | The average time in milliseconds spent in broker network and I/O threads to process requests that are exempt from throttling | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| RequestExemptFromThrottleTime | Среднее время в миллисекундах, затрачиваемое сетевыми потоками и потоками ввода-вывода брокера на обработку запросов, освобождённых от ограничения скорости | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | RequestExemptFromThrottleTime |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| RequestHandlerAvgIdlePercent | The average percentage of the time the request handler threads are idle | Percent | Multi | Cluster Name, Broker ID |  |
+| RequestHandlerAvgIdlePercent | Средний процент времени простоя потоков обработки запросов | Percent | Multi | Cluster Name, Broker ID |  |
 | RequestHandlerAvgIdlePercent |  | Percent | Sum | Cluster Name, Broker ID |  |
-| RequestThrottleQueueSize | The number of messages in the throttle queue | Count | Multi | Cluster Name, Broker ID |  |
+| RequestThrottleQueueSize | Количество сообщений в очереди ограничения скорости | Count | Multi | Cluster Name, Broker ID |  |
 | RequestThrottleQueueSize |  | Count | Sum | Cluster Name, Broker ID |  |
-| RequestThrottleTime | The average request throttle time in milliseconds | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| RequestThrottleTime | Среднее время ограничения скорости запросов в миллисекундах | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | RequestThrottleTime |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| RequestTime | The average time in milliseconds spent in broker network and I/O threads to process requests | Milliseconds | Multi | Cluster Name, Broker ID |  |
+| RequestTime | Среднее время в миллисекундах, затрачиваемое сетевыми потоками и потоками ввода-вывода брокера на обработку запросов | Milliseconds | Multi | Cluster Name, Broker ID |  |
 | RequestTime |  | Milliseconds | Sum | Cluster Name, Broker ID |  |
-| RootDiskUsed | The percentage of the root disk used by the broker | Percent | Multi | Cluster Name, Broker ID | Доступна |
+| RootDiskUsed | Процент корневого диска, используемого брокером | Percent | Multi | Cluster Name, Broker ID | Доступна |
 | RootDiskUsed |  | Percent | Sum | Cluster Name, Broker ID | Доступна |
-| SumOffsetLag | The aggregated offset lag for all the partitions in a topic | Count | Multi | Cluster Name, Consumer Group, Topic |  |
-| SwapFree | The size in bytes of swap memory that is available for the broker | Bytes | Multi | Cluster Name, Broker ID | Доступна |
+| SumOffsetLag | Суммарное отставание смещения по всем разделам в топике | Count | Multi | Cluster Name, Consumer Group, Topic |  |
+| SwapFree | Размер доступной памяти подкачки для брокера в байтах | Bytes | Multi | Cluster Name, Broker ID | Доступна |
 | SwapFree |  | Bytes | Sum | Cluster Name, Broker ID | Доступна |
-| SwapUsed | The size in bytes of swap memory that is in use for the broker | Bytes | Multi | Cluster Name, Broker ID | Доступна |
+| SwapUsed | Размер используемой памяти подкачки для брокера в байтах | Bytes | Multi | Cluster Name, Broker ID | Доступна |
 | SwapUsed |  | Bytes | Sum | Cluster Name, Broker ID | Доступна |
-| UnderMinIsrPartitionCount | The number of under minIsr partitions for the broker | Count | Multi | Cluster Name, Broker ID |  |
+| UnderMinIsrPartitionCount | Количество разделов ниже minIsr для брокера | Count | Multi | Cluster Name, Broker ID |  |
 | UnderMinIsrPartitionCount |  | Count | Sum | Cluster Name, Broker ID |  |
-| UnderReplicatedPartitions | The number of under-replicated partitions for the broker | Count | Multi | Cluster Name, Broker ID |  |
+| UnderReplicatedPartitions | Количество недореплицированных разделов для брокера | Count | Multi | Cluster Name, Broker ID |  |
 | UnderReplicatedPartitions |  | Count | Sum | Cluster Name, Broker ID |  |
-| ZooKeeperRequestLatencyMsMean | Mean latency in milliseconds for ZooKeeper requests from broker | Milliseconds | Multi | Cluster Name, Broker ID | Доступна |
+| ZooKeeperRequestLatencyMsMean | Средняя задержка в миллисекундах для запросов ZooKeeper от брокера | Milliseconds | Multi | Cluster Name, Broker ID | Доступна |
 | ZooKeeperRequestLatencyMsMean |  | Milliseconds | Multi | Cluster Name | Доступна |
 | ZooKeeperRequestLatencyMsMean |  | Milliseconds | Sum | Cluster Name, Broker ID | Доступна |
 | ZooKeeperRequestLatencyMsMean |  | Milliseconds | Sum | Cluster Name | Доступна |
-| ZooKeeperSessionState | Connection status of broker's ZooKeeper session which may be one of the following: `NOT_CONNECTED`: `0.0`, `ASSOCIATING`: `0.1`, `CONNECTING`: `0.5`, `CONNECTEDREADONLY`: `0.8`, `CONNECTED`: `1.0`, `CLOSED`: `5.0`, `AUTH_FAILED`: `10.0`. | Count | Multi | Cluster Name, Broker ID | Доступна |
+| ZooKeeperSessionState | Статус подключения сессии ZooKeeper брокера, может принимать одно из следующих значений: `NOT_CONNECTED`: `0.0`, `ASSOCIATING`: `0.1`, `CONNECTING`: `0.5`, `CONNECTEDREADONLY`: `0.8`, `CONNECTED`: `1.0`, `CLOSED`: `5.0`, `AUTH_FAILED`: `10.0`. | Count | Multi | Cluster Name, Broker ID | Доступна |
 | ZooKeeperSessionState |  | Count | Multi | Cluster Name | Доступна |
 | ZooKeeperSessionState |  | Count | Sum | Cluster Name, Broker ID |  |
 | ZooKeeperSessionState |  | Count | Sum | Cluster Name |  |

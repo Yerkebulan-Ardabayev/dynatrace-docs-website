@@ -1,5 +1,5 @@
 ---
-title: Sensitive data masking in OneAgent
+title: Маскирование конфиденциальных данных в OneAgent
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking
 scraped: 2026-03-06T21:20:06.328362
 ---

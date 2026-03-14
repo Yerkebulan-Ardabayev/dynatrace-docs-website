@@ -1,5 +1,5 @@
 ---
-title: Response time analysis
+title: Анализ времени ответа
 source: https://www.dynatrace.com/docs/observe/application-observability/services/response-time-analysis
 scraped: 2026-03-06T21:10:37.879847
 ---

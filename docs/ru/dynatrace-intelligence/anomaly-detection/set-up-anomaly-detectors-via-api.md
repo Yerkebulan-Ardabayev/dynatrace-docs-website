@@ -1,5 +1,5 @@
 ---
-title: Automate alerts with API
+title: Автоматизация оповещений с помощью API
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/set-up-anomaly-detectors-via-api
 scraped: 2026-03-06T21:20:44.696000
 ---

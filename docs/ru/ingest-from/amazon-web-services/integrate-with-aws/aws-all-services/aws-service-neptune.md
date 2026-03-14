@@ -1,5 +1,5 @@
 ---
-title: Amazon Neptune monitoring
+title: Мониторинг Amazon Neptune
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-neptune
 scraped: 2026-03-06T21:35:21.675210
 ---

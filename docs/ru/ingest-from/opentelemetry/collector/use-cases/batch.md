@@ -1,5 +1,5 @@
 ---
-title: Batch OTLP requests with the OpenTelemetry Collector
+title: Пакетная обработка OTLP-запросов с помощью OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/batch
 scraped: 2026-03-06T21:31:54.689204
 ---

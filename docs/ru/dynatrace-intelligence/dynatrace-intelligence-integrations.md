@@ -1,5 +1,5 @@
 ---
-title: Dynatrace Intelligence integrations
+title: Интеграции Dynatrace Intelligence
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations
 scraped: 2026-03-06T21:14:51.943719
 ---

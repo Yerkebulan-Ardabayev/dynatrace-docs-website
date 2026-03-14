@@ -1,5 +1,5 @@
 ---
-title: Infrastructure Observability
+title: Наблюдаемость инфраструктуры
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability
 scraped: 2026-03-06T21:10:29.766809
 ---

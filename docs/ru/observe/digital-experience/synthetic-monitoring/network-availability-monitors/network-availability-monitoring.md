@@ -1,5 +1,5 @@
 ---
-title: Network availability monitoring
+title: Мониторинг доступности сети
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/network-availability-monitoring
 scraped: 2026-03-05T21:37:22.043515
 ---

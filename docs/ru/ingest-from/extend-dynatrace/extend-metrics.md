@@ -1,5 +1,5 @@
 ---
-title: Extend metric observability
+title: Расширение наблюдаемости метрик
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics
 scraped: 2026-03-06T21:29:17.802394
 ---

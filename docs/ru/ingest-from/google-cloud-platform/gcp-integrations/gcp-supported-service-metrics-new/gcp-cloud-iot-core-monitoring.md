@@ -1,5 +1,5 @@
 ---
-title: Google Cloud IoT Core monitoring (deprecated)
+title: Мониторинг Google Cloud IoT Core (устарело)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-iot-core-monitoring
 scraped: 2026-03-06T21:34:11.678099
 ---

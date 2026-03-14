@@ -1,5 +1,5 @@
 ---
-title: Custom applications
+title: Пользовательские приложения
 source: https://www.dynatrace.com/docs/observe/digital-experience/custom-applications
 scraped: 2026-03-06T21:14:00.392814
 ---

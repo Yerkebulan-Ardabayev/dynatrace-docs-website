@@ -8,10 +8,10 @@ scraped: 2026-03-05T21:26:19.421268
 
 # Erlang/Elixir
 
-* Latest Dynatrace
-* Reference
-* 1-min read
-* Published Dec 20, 2022
+* Последняя версия Dynatrace
+* Справочник
+* 1 мин. чтения
+* Опубликовано 20 декабря 2022 г.
 
 Вы можете отправлять данные из вашего приложения на Erlang/Elixir в Dynatrace через OpenTelemetry. Смотрите также
 

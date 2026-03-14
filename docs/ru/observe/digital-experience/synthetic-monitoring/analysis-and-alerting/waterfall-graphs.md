@@ -1,5 +1,5 @@
 ---
-title: Waterfall graphs
+title: Графики водопада
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/waterfall-graphs
 scraped: 2026-03-04T21:33:00.345852
 ---

@@ -1,5 +1,5 @@
 ---
-title: Meter bar chart
+title: Гистограмма счетчика
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar
 scraped: 2026-03-06T21:21:10.264221
 ---

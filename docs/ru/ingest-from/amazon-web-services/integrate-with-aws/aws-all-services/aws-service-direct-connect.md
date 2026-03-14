@@ -25,9 +25,9 @@ Dynatrace собирает метрики для множества предва
 Для ролевого доступа в развертывании [SaaS](../cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") вам необходим [Environment ActiveGate](../../../dynatrace-activegate/installation.md "Learn how to configure ActiveGate") установленный на хосте Amazon EC2.
 
 * Dynatrace version 1.201+
-* An updated [AWS monitoring policy](../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.
+* Обновлённая [политика мониторинга AWS](../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.
 
-To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+Чтобы [обновить политику AWS IAMï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
 Предопределенная политика JSON для всех поддерживаемых сервисов
 
@@ -687,7 +687,7 @@ To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/User
 
 ## Включение мониторинга
 
-Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, смотрите [Включение мониторинга сервиса](../aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
 
 ## Просмотр метрик сервиса
 
@@ -697,7 +697,7 @@ Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-
 
 Для доступа к странице обзора пользовательского устройства
 
-1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
 2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
 3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
 4. **Страница обзора группы пользовательских устройств** отображает все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
@@ -710,9 +710,9 @@ Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-
 
 Для существующих мониторируемых сервисов может потребоваться повторное сохранение ваших учетных данных, чтобы предустановленная панель мониторинга появилась на странице **Dashboards**. Для повторного сохранения учетных данных перейдите в **Settings** > **Cloud and virtualization** > **AWS**, выберите нужный экземпляр AWS и нажмите **Save**.
 
-You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.
+Вы не можете вносить изменения в предустановленную панель мониторинга напрямую, но можете клонировать и отредактировать её. Чтобы клонировать панель мониторинга, откройте меню (**...**) и выберите **Clone**.
 
-To remove a dashboard from the dashboards page, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+Чтобы убрать панель мониторинга со страницы панелей мониторинга, вы можете скрыть её. Чтобы скрыть панель мониторинга, откройте меню (**...**) и выберите **Hide**.
 
 Скрытие панели мониторинга не влияет на других пользователей.
 
@@ -838,15 +838,15 @@ To remove a dashboard from the dashboards page, you can hide it. To hide a dashb
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуется |
 | --- | --- | --- | --- | --- | --- |
-| ConnectionBpsEgress | The bitrate for outbound data from the AWS side of the connection | Bits/Second | Multi | ConnectionId | Применимо |
-| ConnectionBpsIngress | The bitrate for inbound data to the AWS side of the connection | Bits/Second | Multi | ConnectionId | Применимо |
-| ConnectionErrorCount | The total error count for all types of MAC level errors on the AWS device | Count | Sum | ConnectionId | Применимо |
-| ConnectionLightLevelRx | The health of the fiber connection for inbound (ingress) traffic to the AWS side of the connection | DecibelMilliWatts | Multi | ConnectionId, OpticalLaneNumber | Применимо |
-| ConnectionLightLevelTx | The health of the fiber connection for outbound (egress) traffic from the AWS side of the connection | DecibelMilliWatts | Multi | ConnectionId, OpticalLaneNumber | Применимо |
-| ConnectionPpsEgress | The packet rate for outbound data from the AWS side of the connection | Count/Second | Multi | ConnectionId |  |
-| ConnectionPpsIngress | The packet rate for inbound data to the AWS side of the connection | Count/Second | Multi | ConnectionId |  |
-| ConnectionState | The state of the connection (up or down) | None | Multi | ConnectionId | Применимо |
-| VirtualInterfaceBpsEgress | The bitrate for outbound data from the AWS side of the virtual interface | Bits/Second | Multi | ConnectionId, VirtualInterfaceId | Применимо |
-| VirtualInterfaceBpsIngress | The bitrate for inbound data to the AWS side of the virtual interface | Bits/Second | Multi | ConnectionId, VirtualInterfaceId | Применимо |
-| VirtualInterfacePpsEgress | The packet rate for outbound data from the AWS side of the virtual interface | Count/Second | Multi | ConnectionId, VirtualInterfaceId |  |
-| VirtualInterfacePpsIngress | The packet rate for inbound data to the AWS side of the virtual interface | Count/Second | Multi | ConnectionId, VirtualInterfaceId |  |
+| ConnectionBpsEgress | Скорость передачи исходящих данных со стороны AWS соединения | Bits/Second | Multi | ConnectionId | Применимо |
+| ConnectionBpsIngress | Скорость передачи входящих данных на сторону AWS соединения | Bits/Second | Multi | ConnectionId | Применимо |
+| ConnectionErrorCount | Общее количество ошибок всех типов на уровне MAC на устройстве AWS | Count | Sum | ConnectionId | Применимо |
+| ConnectionLightLevelRx | Состояние оптоволоконного соединения для входящего трафика на сторону AWS соединения | DecibelMilliWatts | Multi | ConnectionId, OpticalLaneNumber | Применимо |
+| ConnectionLightLevelTx | Состояние оптоволоконного соединения для исходящего трафика со стороны AWS соединения | DecibelMilliWatts | Multi | ConnectionId, OpticalLaneNumber | Применимо |
+| ConnectionPpsEgress | Скорость передачи пакетов исходящих данных со стороны AWS соединения | Count/Second | Multi | ConnectionId |  |
+| ConnectionPpsIngress | Скорость передачи пакетов входящих данных на сторону AWS соединения | Count/Second | Multi | ConnectionId |  |
+| ConnectionState | Состояние соединения (активно или неактивно) | None | Multi | ConnectionId | Применимо |
+| VirtualInterfaceBpsEgress | Скорость передачи исходящих данных со стороны AWS виртуального интерфейса | Bits/Second | Multi | ConnectionId, VirtualInterfaceId | Применимо |
+| VirtualInterfaceBpsIngress | Скорость передачи входящих данных на сторону AWS виртуального интерфейса | Bits/Second | Multi | ConnectionId, VirtualInterfaceId | Применимо |
+| VirtualInterfacePpsEgress | Скорость передачи пакетов исходящих данных со стороны AWS виртуального интерфейса | Count/Second | Multi | ConnectionId, VirtualInterfaceId |  |
+| VirtualInterfacePpsIngress | Скорость передачи пакетов входящих данных на сторону AWS виртуального интерфейса | Count/Second | Multi | ConnectionId, VirtualInterfaceId |  |

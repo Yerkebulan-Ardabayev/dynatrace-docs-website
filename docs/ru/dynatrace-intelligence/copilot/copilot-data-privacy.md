@@ -1,5 +1,5 @@
 ---
-title: Dynatrace Intelligence agentic and generative AI data privacy and security
+title: Конфиденциальность и безопасность данных агентного и генеративного ИИ Dynatrace Intelligence
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-data-privacy
 scraped: 2026-03-04T21:31:24.088421
 ---

@@ -1,5 +1,5 @@
 ---
-title: Assign ownership teams to monitored entities
+title: Назначение команд владельцев отслеживаемым объектам
 source: https://www.dynatrace.com/docs/deliver/ownership/assign-ownership
 scraped: 2026-03-05T21:31:36.084206
 ---

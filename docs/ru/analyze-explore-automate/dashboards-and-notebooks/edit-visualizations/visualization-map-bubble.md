@@ -1,5 +1,5 @@
 ---
-title: Bubble map visualization
+title: Визуализация карты пузырей
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble
 scraped: 2026-03-06T21:21:01.139093
 ---

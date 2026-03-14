@@ -1,5 +1,5 @@
 ---
-title: Top web requests
+title: Наиболее частые веб-запросы
 source: https://www.dynatrace.com/docs/observe/application-observability/multidimensional-analysis/top-web-requests
 scraped: 2026-03-06T21:33:41.702134
 ---

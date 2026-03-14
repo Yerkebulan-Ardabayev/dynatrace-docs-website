@@ -1,5 +1,5 @@
 ---
-title: AI Observability
+title: Наблюдаемость ИИ
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-observability-app
 scraped: 2026-03-02T21:23:22.538566
 ---

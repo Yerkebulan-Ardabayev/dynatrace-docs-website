@@ -1,5 +1,5 @@
 ---
-title: Instrument mobile apps with Dynatrace Flutter plugin
+title: Инструментирование мобильных приложений с помощью плагина Dynatrace Flutter
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/flutter
 scraped: 2026-03-05T21:26:16.084658
 ---

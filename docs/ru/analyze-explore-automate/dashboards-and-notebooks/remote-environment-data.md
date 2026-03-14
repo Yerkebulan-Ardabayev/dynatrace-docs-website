@@ -1,90 +1,90 @@
 ---
-title: Remote environment data
+title: Данные удаленной среды
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/remote-environment-data
 scraped: 2026-03-03T21:23:07.840378
 ---
 
-# Данные удалённого окружения
+# Данные удаленной среды
 
-# Данные удалённого окружения
+# Данные удаленной среды
 
-* Актуальная версия Dynatrace
-* Руководство
-* Время чтения: 9 мин
-* Обновлено 02 декабря 2024
+* Последнее Dynatrace
+* Руководство по началу работы
+* 9-минутное чтение
+* Обновлено 02 декабря 2024 г.
 
-С помощью [плиток кода](dashboards-new/components/dashboard-component-code.md "Добавление кода на дашборды Dynatrace.") (в Dashboards) и [секций кода](notebooks.md#code "Анализируйте, визуализируйте и делитесь выводами из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") (в Notebooks) вы можете консолидировать данные из нескольких окружений Dynatrace.
+Используя [кодовые плитки](dashboards-new/components/dashboard-component-code.md "Добавьте код в свои Dynatrace-панели.") (в Панелях) и [кодовые разделы](notebooks.md#code "Анализируйте, визуализируйте и делитесь идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве."), вы можете консолидировать данные из нескольких Dynatrace-сред.
 
-Доступны два механизма аутентификации для получения данных из удалённых окружений:
+Существуют два механизма аутентификации для получения данных из удаленных сред:
 
-* **Аутентификация с помощью платформенного токена**: предназначена для личного использования. Используйте для быстрого тестирования и оперативного получения данных из удалённых окружений.
-* **Аутентификация через OAuth-клиент**: предназначена для совместного использования. Используйте для обеспечения согласованной видимости данных для всех пользователей.
+* **Аутентификация с помощью токена платформы**: Предназначена для личного использования. Используйте, когда вам нужно быстрое тестирование и быстрое получение данных из удаленных сред.
+* **Аутентификация клиента OAuth**: Предназначена для обмена. Используйте, чтобы обеспечить последовательную видимость данных для всех пользователей.
 
-Новое! Начните со сниппета в Dashboards или Notebooks
+Новое! Начните с фрагмента в Панелях или Тетрадях
 
-Dashboards версии 1.310+ Notebooks версии 1.310+
+Панели версии 1.310+ Тетради версии 1.310+
 
-Теперь вы можете начать со сниппета при создании дашборда или ноутбука, использующего данные из удалённого окружения Dynatrace.
+Теперь вы можете начать с фрагмента при создании панели или тетради, которая использует данные из удаленной Dynatrace-среды.
 
-* > **Fetch external data**
-* > **Remote environment data via Platform token**
-* > **Remote environment data via OAuth**
+* > **Получить внешние данные**
+* > **Данные удаленной среды через токен платформы**
+* > **Данные удаленной среды через OAuth**
 
-## Аутентификация с помощью платформенного токена
+## Аутентификация с помощью токена платформы
 
-Получение данных из удалённых окружений с помощью платформенного токена предназначено для личного использования. Этот метод идеален, когда нужно быстро протестировать и оперативно получить данные из удалённых окружений перед тем, как делиться ими с другими.
+Получение данных из удаленных сред через токен платформы предназначено для личного использования. Этот метод идеален, когда вам нужно быстро протестировать и быстро получить данные из удаленных сред, прежде чем поделиться ими с другими.
 
-Пример JavaScript-кода, описанный ниже, использует хранилище учётных данных для безопасного хранения токенов и платформенный токен для аутентификации, обеспечивая надёжный и безопасный способ получения данных из удалённого окружения Dynatrace.
+Пример кода на JavaScript, описанный ниже, использует хранилище учетных данных для безопасного хранения токена и токен платформы для аутентификации, чтобы предложить надежный и безопасный способ получения данных из удаленной Dynatrace-среды.
 
-### Предварительные требования
+### Предварительные условия
 
-Перед созданием кода для плитки дашборда или секции ноутбука:
+Прежде чем создать код для своей плитки панели или раздела тетради:
 
-* Создайте платформенный токен Dynatrace в окружении, из которого вы хотите получать данные. Подробнее см. в разделе [Платформенные токены](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Создание персонализированных платформенных токенов для доступа к сервисам Dynatrace через API в контексте вашего пользователя.").
-* Создайте запись в хранилище учётных данных Dynatrace в основном окружении для хранения платформенного токена, который затем будет использоваться в плитке кода или секции для аутентификации. Подробнее см. в разделе [Хранилище учётных данных](../../../common/manage/credential-vault.md "Хранение и управление учётными данными в хранилище учётных данных.").
+* Создайте токен платформы Dynatrace в среде, из которой вы хотите получить данные. Подробности см. в разделе [Токены платформы](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Создайте персонализированные токены платформы для доступа к службам Dynatrace через API в вашем пользовательском контексте.").
+* Создайте запись хранилища учетных данных Dynatrace в основной среде для хранения токена платформы, который позже будет использоваться в кодовой плитке или разделе для аутентификации. Подробности см. в разделе [Хранилище учетных данных](../../../common/manage/credential-vault.md "Храните и управляйте учетными данными в хранилище учетных данных.").
 * Разрешите внешние запросы
 
-  Внешние запросы обеспечивают исходящие сетевые подключения из вашего окружения Dynatrace к внешним сервисам. Они позволяют контролировать доступ к публичным конечным точкам из AppEngine с функциями приложений и функциями в Dashboards, Notebooks и Automations.
+  Внешние запросы включают исходящие сетевые подключения из вашей Dynatrace-среды к внешним службам. Они позволяют вам контролировать доступ к публичным конечным точкам из AppEngine с помощью функций приложений и функций в Панелях, Тетрадях и Автоматизациях.
 
-  1. Перейдите в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** >  **General** > **External requests**.
-  2. Выберите  **New host pattern**.
-  3. Добавьте доменные имена.
-  4. Выберите **Add**.
+  1. Перейдите в ![Настройки](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Настройки") **Настройки** >  **Общие** > **Внешние запросы**.
+  2. Выберите  **Новый шаблон хоста**.
+  3. Добавьте имена доменов.
+  4. Выберите **Добавить**.
 
-  Таким образом вы можете детально контролировать веб-сервисы, к которым могут подключаться ваши функции.
+  Таким образом, вы можете детально контролировать веб-сервисы, к которым могут подключаться ваши функции.
 
-  Например, вы можете добавить `myenv8132.apps.dynatrace.com`, чтобы разрешить только это окружение, или использовать подстановочный знак `*.apps.dynatrace.com`, чтобы разрешить все ваши окружения Dynatrace сразу.
+  Например, вы можете добавить `myenv8132.apps.dynatrace.com`, чтобы разрешить только эту среду, или использовать подстановочный знак, такой как `*.apps.dynatrace.com`, чтобы разрешить все свои Dynatrace-среды одновременно.
 
-Подробнее о добавлении в белый список см. [Разрешение IP-диапазонов для доступа к окружению](../../manage/account-management/settings/ip-allowlist.md "Разрешение IP-диапазонов для доступа к окружению с использованием нотации CIDR.")
+Более подробную информацию о разрешении IP-диапазонов см. в разделе [Разрешить IP-диапазоны, которые могут получить доступ к вашей среде](../../manage/account-management/settings/ip-allowlist.md "Разрешить IP-диапазоны, которые могут получить доступ к вашей среде, используя запись CIDR.").
 
 ### Код
 
-Перед началом написания кода ознакомьтесь с тем, как используются функции.
+Прежде чем начать программировать, ознакомьтесь с тем, как используются функции.
 
 1. `async function()`
 
    Это основная функция. Она вызывает `fetchFromDynatrace` (см. выше) с необходимыми параметрами.
 2. `fetchFromDynatrace(credentialId = "", url = "", query = "")`
 
-   Для получения данных из Dynatrace эта функция:
+   Чтобы получить данные из Dynatrace, эта функция:
 
-   1. Извлекает учётные данные из записи хранилища учётных данных в основном тенанте на основе указанного credentialId.
-   2. Выполняет вызов API на API вторичного/удалённого тенанта на основе учётных данных, а также параметров `url` и `query`, предоставленных основной функцией.
+   1. Извлекает учетные данные из записи хранилища учетных данных основной среды на основе заданного идентификатора учетных данных.
+   2. Выполняет вызов API в API удаленной среды на основе учетных данных, а также параметров `url` и `query`, предоставленных основной функцией.
 
-Теперь, когда вы выполнили [предварительные требования](#prerequisites) и ознакомились с функциями, вы готовы к написанию кода.
+Теперь, когда вы выполнили [предварительные условия](#предварительные-условия) и ознакомились с функциями, вы готовы программировать.
 
-* Используйте приведённый ниже пример в качестве основы для своего кода.
-* Прочитайте комментарии в примере кода для получения подробностей.
-* Замените `CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX` на ваш собственный идентификатор учётных данных.
-* Замените `https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute?enrich:metric-metadata` на ваш собственный URL.
+* Основывайте свой код на примере ниже.
+* Читайте комментарии в примере кода, чтобы получить подробную информацию о коде.
+* Замените `CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX` своим собственным идентификатором хранилища учетных данных.
+* Замените `https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute?enrich:metric-metadata` своим собственным URL-адресом.
 * Настройте запрос `"fetch logs | limit 1"` в соответствии с вашими потребностями.
-* Выполните код в [плитке кода](dashboards-new/components/dashboard-component-code.md "Добавление кода на дашборды Dynatrace.") (Dashboards) или [секции кода](notebooks.md#code "Анализируйте, визуализируйте и делитесь выводами из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") (Notebooks).
+* Запустите свой код в [кодовой плитке](dashboards-new/components/dashboard-component-code.md "Добавьте код в свои Dynatrace-панели.") (Панели) или [кодовом разделе](notebooks.md#code "Анализируйте, визуализируйте и делитесь идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.") (Тетради).
 
-  Если при выполнении кода возникнут ошибки, они будут перехвачены и залогированы с префиксами `[DynatraceAuthError]`, `[CredentialVaultError]` или `[ExecutionError]` для упрощения отладки.
+  Если вы столкнетесь с ошибками при запуске кода, они будут перехвачены и записаны с префиксами `[DynatraceAuthError]`, `[CredentialVaultError]` или `[ExecutionError]` для более легкой отладки.
 
-Начните со сниппета
+Начните с фрагмента
 
-Вы можете начать со сниппета (**Remote environment data via Platform token**) при создании дашборда или ноутбука, использующего данные из удалённого окружения Dynatrace.
+Вы можете начать с фрагмента (**Данные удаленной среды через токен платформы**) при создании панели или тетради, которая использует данные из удаленной Dynatrace-среды.
 
 ```
 import { credentialVaultClient } from "@dynatrace-sdk/client-classic-environment-v2";
@@ -95,27 +95,27 @@ import { credentialVaultClient } from "@dynatrace-sdk/client-classic-environment
 
 
 
-* Execute a query against a Dynatrace API with token retrieval inlined.
+* Выполните запрос против Dynatrace API с получением токена.
 
 
 
-* @param {string} credentialId - The ID of the credential vault entry.
+* @param {string} credentialId - Идентификатор записи хранилища учетных данных.
 
 
 
-* @param {string} url - The API endpoint URL.
+* @param {string} url - URL-адрес конечной точки API.
 
 
 
-* @param {string} query - The query to execute.
+* @param {string} query - Запрос на выполнение.
 
 
 
-* @returns {Promise<any>} - The API response data.
+* @returns {Promise<any>} - Данные ответа API.
 
 
 
-* @throws Will throw an error if any step fails.
+* @throws Будет выброшена ошибка, если любой шаг не удался.
 
 
 
@@ -131,7 +131,7 @@ if (!credentialId || !url || !query) {
 
 
 
-throw new Error("[ValidationError] Missing required parameters: credentialId, url, or query.");
+throw new Error("[ValidationError] Отсутствуют обязательные параметры: credentialId, url или query.");
 
 
 
@@ -139,11 +139,11 @@ throw new Error("[ValidationError] Missing required parameters: credentialId, ur
 
 
 
-try {
+try 
 
 
 
-// Retrieve the platform token from the credential vault.
+// Извлеките токен платформы из хранилища учетных данных.
 
 
 
@@ -155,39 +155,39 @@ id: credentialId,
 
 
 
-}).catch((error) => {
+}).catch((error) => 
 
 
 
-console.error(`[CredentialVaultError] Failed to retrieve token: ${error.message}`);
+console.error(`[CredentialVaultError] Не удалось получить токен: ${error.message}`);
 
 
 
-throw new Error("Unable to fetch platform token.");
+throw new Error("Не удалось получить токен платформы.");
 
 
 
-});
+ });
 
 
 
-if (!token) {
+if (!token) 
 
 
 
-throw new Error("[CredentialVaultError] Token is undefined or empty.");
+throw new Error("[CredentialVaultError] Токен не определен или пуст.");
 
 
 
-}
+// Выполните запрос API.
 
 
 
-// Perform the API request.
+const response = await fetch(url, 
 
 
 
-const response = await fetch(url, {
+{
 
 
 
@@ -195,7 +195,11 @@ method: "POST",
 
 
 
-headers: {
+headers: 
+
+
+
+{
 
 
 
@@ -239,15 +243,11 @@ enablePreview: true,
 
 
 
-if (!response.ok) {
+if (!response.ok) 
 
 
 
-throw new Error(`[HTTPError] API call failed with status ${response.status}: ${response.statusText}`);
-
-
-
-}
+throw new Error(`[HTTPError] API-вызов не удался со статусом ${response.status}: ${response.statusText}`);
 
 
 
@@ -255,19 +255,15 @@ return await response.json();
 
 
 
-} catch (error) {
+} catch (error) 
 
 
 
-console.error(`[FetchError] Query execution failed: ${error.message}`);
+console.error(`[FetchError] Выполнение запроса не удалось: ${error.message}`);
 
 
 
-throw new Error("Unable to execute query.");
-
-
-
-}
+throw new Error("Не удалось выполнить запрос.");
 
 
 
@@ -279,11 +275,11 @@ throw new Error("Unable to execute query.");
 
 
 
-* Main function to fetch and return results from Dynatrace.
+* Основная функция для получения и возврата результатов из Dynatrace.
 
 
 
-* @returns {Promise<any>} - The query result.
+* @returns {Promise<any>} - Результат запроса.
 
 
 
@@ -291,23 +287,23 @@ throw new Error("Unable to execute query.");
 
 
 
-export default async function() {
+export default async function() 
 
 
 
-const credentialId = "CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX"; // Replace with your credential vault ID.
+const credentialId = "CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX"; // Замените на свой идентификатор хранилища учетных данных.
 
 
 
-const url = "https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute"; // Replace with API URL.
+const url = "https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute"; // Замените на URL-адрес API.
 
 
 
-const query = "fetch logs | limit 1"; // Replace with your query.
+const query = "fetch logs | limit 1"; // Замените на свой запрос.
 
 
 
-try {
+try 
 
 
 
@@ -319,7 +315,7 @@ return result;
 
 
 
-} catch (error) {
+} catch (error) 
 
 
 
@@ -327,7 +323,7 @@ console.error(`[MainFunctionError] ${error.message}`);
 
 
 
-return null; // Or handle as needed.
+return null; // Или обработайте как необходимо.
 
 
 
@@ -335,74 +331,71 @@ return null; // Or handle as needed.
 
 
 
-}
-```
+## Аутентификация клиента OAuth
 
-## Аутентификация через OAuth-клиент
+Получение данных из удаленных сред через OAuth предназначено для обмена. Этот метод обеспечивает последовательную видимость данных для всех пользователей.
 
-Получение данных из удалённых окружений через OAuth предназначено для совместного использования. Этот метод обеспечивает согласованную видимость данных для всех пользователей.
+Пример кода на JavaScript, описанный ниже, использует хранилище учетных данных для безопасного хранения токена и OAuth для аутентификации, чтобы предложить надежный и безопасный способ получения данных из удаленной Dynatrace-среды.
 
-Пример JavaScript-кода, описанный ниже, использует хранилище учётных данных для безопасного хранения токенов и OAuth для аутентификации, обеспечивая надёжный и безопасный способ получения данных из удалённого окружения Dynatrace.
+### Предварительные условия
 
-### Предварительные требования
+Прежде чем создать код для своей плитки панели или раздела тетради:
 
-Перед созданием кода для плитки дашборда или секции ноутбука:
-
-* Создайте OAuth-клиент. Подробнее см. в разделе [OAuth-клиенты](../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Управление аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.").
-* Создайте запись в хранилище учётных данных Dynatrace в основном окружении для хранения OAuth-токена, который затем будет использоваться в плитке кода или секции для аутентификации. Подробнее см. в разделе [Хранилище учётных данных](../../../common/manage/credential-vault.md "Хранение и управление учётными данными в хранилище учётных данных.").
+* Создайте клиент OAuth. Подробности см. в разделе [Клиенты OAuth](../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Управляйте аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
+* Создайте запись хранилища учетных данных Dynatrace в основной среде для хранения токена OAuth, который позже будет использоваться в кодовой плитке или разделе для аутентификации. Подробности см. в разделе [Хранилище учетных данных](../../../common/manage/credential-vault.md "Храните и управляйте учетными данными в хранилище учетных данных.").
 * Разрешите внешние запросы
 
-  Внешние запросы обеспечивают исходящие сетевые подключения из вашего окружения Dynatrace к внешним сервисам. Они позволяют контролировать доступ к публичным конечным точкам из AppEngine с функциями приложений и функциями в Dashboards, Notebooks и Automations.
+  Внешние запросы включают исходящие сетевые подключения из вашей Dynatrace-среды к внешним службам. Они позволяют вам контролировать доступ к публичным конечным точкам из AppEngine с помощью функций приложений и функций в Панелях, Тетрадях и Автоматизациях.
 
-  1. Перейдите в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** >  **General** > **External requests**.
-  2. Выберите  **New host pattern**.
-  3. Добавьте доменные имена.
-  4. Выберите **Add**.
+  1. Перейдите в ![Настройки](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Настройки") **Настройки** >  **Общие** > **Внешние запросы**.
+  2. Выберите  **Новый шаблон хоста**.
+  3. Добавьте имена доменов.
+  4. Выберите **Добавить**.
 
-  Таким образом вы можете детально контролировать веб-сервисы, к которым могут подключаться ваши функции.
+  Таким образом, вы можете детально контролировать веб-сервисы, к которым могут подключаться ваши функции.
 
-  Например, вы можете добавить `myenv8132.apps.dynatrace.com`, чтобы разрешить только это окружение, или использовать подстановочный знак `*.apps.dynatrace.com`, чтобы разрешить все ваши окружения Dynatrace сразу.
+  Например, вы можете добавить `myenv8132.apps.dynatrace.com`, чтобы разрешить только эту среду, или использовать подстановочный знак, такой как `*.apps.dynatrace.com`, чтобы разрешить все свои Dynatrace-среды одновременно.
 
-Подробнее о добавлении в белый список см. [Разрешение IP-диапазонов для доступа к окружению](../../manage/account-management/settings/ip-allowlist.md "Разрешение IP-диапазонов для доступа к окружению с использованием нотации CIDR.")
+Более подробную информацию о разрешении IP-диапазонов см. в разделе [Разрешить IP-диапазоны, которые могут получить доступ к вашей среде](../../manage/account-management/settings/ip-allowlist.md "Разрешить IP-диапазоны, которые могут получить доступ к вашей среде, используя запись CIDR.").
 
 ### Код
 
-Перед началом написания кода ознакомьтесь с тем, как используются функции.
+Прежде чем начать кодирование, просмотрите, как используются функции.
 
 1. `async function()`
 
    Это основная функция. Она вызывает `fetchFromDynatrace` (см. выше) с необходимыми параметрами.
 2. `fetchFromDynatrace(credentialId = "", url = "", query = "")`
 
-   Для получения данных из Dynatrace эта функция:
+   Чтобы получить данные из Dynatrace, эта функция:
 
-   1. Извлекает учётные данные из записи хранилища учётных данных в основном тенанте на основе указанного credentialId.
-   2. Получает токен доступа для вторичного тенанта через SSO, вызывая функцию authenticateToDynatrace.
-   3. Выполняет вызов API на API вторичного/удалённого тенанта на основе ранее полученного значения `accessToken`, а также параметров `url` и `query`, предоставленных основной функцией.
+   1. Извлекает учетные данные из записи хранилища учетных данных на основном клиенте на основе заданного `credentialId`.
+   2. Получает токен доступа для вторичного клиента через SSO, вызывая функцию `authenticateToDynatrace`.
+   3. Выполняет вызов API на API вторичного/удаленного клиента на основе ранее полученного значения `accessToken`, а также параметров `url` и `query`, предоставленных основной функцией.
 3. `authenticateToDynatrace(clientId = '', clientSecret = '')`
 
-   Для аутентификации через SSO эта функция:
+   Чтобы аутентифицироваться против SSO, эта функция:
 
    1. Принимает два параметра: `clientId` и `clientSecret`.
-   2. Запрашивает токен доступа на основе начальных параметров функции и набора областей доступа, определённых внутри функции.
-   3. В случае успеха возвращает полученный токен доступа от конечной точки SSO Dynatrace.
+   2. Запрашивает токен доступа на основе начальных параметров функции и набора областей, определенных внутри функции.
+   3. При успехе возвращает полученный токен доступа из конечной точки SSO Dynatrace.
 
-Теперь, когда вы выполнили [предварительные требования](#prerequisites) и ознакомились с функциями, вы готовы к написанию кода.
+Теперь, когда вы выполнили [предварительные условия](#prerequisites) и просмотрели функции, вы готовы приступить к кодированию.
 
-* Используйте приведённый ниже пример в качестве основы для своего кода.
-* Прочитайте комментарии в примере кода для получения подробностей.
-* Замените `CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX` на ваш собственный идентификатор учётных данных.
-* Замените `https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute?enrich:metric-metadata` на ваш собственный URL.
+* Основывайте свой код на примере ниже.
+* Читайте комментарии в примере кода для получения подробной информации о коде.
+* Замените `CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX` своим собственным идентификатором учетных данных.
+* Замените `https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute?enrich:metric-metadata` своим собственным URL-адресом.
 * Настройте запрос `"fetch logs | limit 1"` в соответствии с вашими потребностями.
-* Выполните код в [плитке кода](dashboards-new/components/dashboard-component-code.md "Добавление кода на дашборды Dynatrace.") (Dashboards) или [секции кода](notebooks.md#code "Анализируйте, визуализируйте и делитесь выводами из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") (Notebooks).
+* Запустите свой код в [блоке кода](dashboards-new/components/dashboard-component-code.md "Добавьте код в свои панели управления Dynatrace.") (Панели управления) или [разделе кода](notebooks.md#code "Анализируйте, визуализируйте и делитесь идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.") (Тетради).
 
-  Если при выполнении кода возникнут ошибки, они будут перехвачены и залогированы с префиксами `[DynatraceAuthError]`, `[CredentialVaultError]` или `[ExecutionError]` для упрощения отладки.
+  Если вы столкнетесь с ошибками при запуске своего кода, они будут пойманы и записаны с префиксами `[DynatraceAuthError]`, `[CredentialVaultError]` или `[ExecutionError]` для более простой отладки.
 
-Начните со сниппета
+Начните с фрагмента
 
-Вы можете начать со сниппета (**Remote environment data via OAuth**) при создании дашборда или ноутбука, использующего данные из удалённого окружения Dynatrace.
+Вы можете начать с фрагмента (**Данные удаленной среды через OAuth**) при создании панели управления или тетради, которая использует данные из удаленной среды Dynatrace.
 
-```
+```javascript
 import { credentialVaultClient } from "@dynatrace-sdk/client-classic-environment-v2";
 
 
@@ -411,23 +404,23 @@ import { credentialVaultClient } from "@dynatrace-sdk/client-classic-environment
 
 
 
-* Authenticate to Dynatrace SSO using client credentials.
+* Аутентифицируйтесь в Dynatrace SSO, используя учетные данные клиента.
 
 
 
-* @param {string} clientId - The client ID for authentication.
+* @param {string} clientId - Идентификатор клиента для аутентификации.
 
 
 
-* @param {string} clientSecret - The client secret for authentication.
+* @param {string} clientSecret - Секрет клиента для аутентификации.
 
 
 
-* @returns {Promise<string>} - The access token.
+* @returns {Promise<string>} - Токен доступа.
 
 
 
-* @throws Will throw an error if authentication fails.
+* @throws Будет бросать ошибку, если аутентификация не удалась.
 
 
 
@@ -443,7 +436,7 @@ if (!clientId || !clientSecret) {
 
 
 
-throw new Error("[ValidationError] Missing clientId or clientSecret for SSO authentication.");
+throw new Error("[ValidationError] Отсутствует clientId или clientSecret для аутентификации SSO.");
 
 
 
@@ -511,7 +504,7 @@ if (!response.ok) {
 
 
 
-throw new Error(`[HTTPError] SSO authentication failed with status ${response.status}: ${response.statusText}`);
+throw new Error(`[HTTPError] Аутентификация SSO не удалась со статусом ${response.status}: ${response.statusText}`);
 
 
 
@@ -527,7 +520,7 @@ if (!accessToken) {
 
 
 
-throw new Error("[SSOError] Access token not received.");
+throw new Error("[SSOError] Токен доступа не получен.");
 
 
 
@@ -555,7 +548,7 @@ throw error;
 
 
 
-}
+)
 
 
 
@@ -563,27 +556,27 @@ throw error;
 
 
 
-* Fetch data from Dynatrace using a query.
+* Получите данные из Dynatrace, используя запрос.
 
 
 
-* @param {string} credentialId - The credential vault ID.
+* @param {string} credentialId - Идентификатор учетных данных.
 
 
 
-* @param {string} url - The API endpoint URL.
+* @param {string} url - URL-адрес конечной точки API.
 
 
 
-* @param {string} query - The query to execute.
+* @param {string} query - Запрос на выполнение.
 
 
 
-* @returns {Promise<any>} - The API response data.
+* @returns {Promise<any>} - Данные ответа API.
 
 
 
-* @throws Will throw an error if any step fails.
+* @throws Будет бросать ошибку, если любой шаг не удался.
 
 
 
@@ -599,7 +592,7 @@ if (!credentialId || !url || !query) {
 
 
 
-throw new Error("[ValidationError] Missing one or more required parameters: credentialId, url, or query.");
+throw new Error("[ValidationError] Отсутствует один или несколько обязательных параметров: credentialId, url или query.");
 
 
 
@@ -607,11 +600,11 @@ throw new Error("[ValidationError] Missing one or more required parameters: cred
 
 
 
-try {
+try 
 
 
 
-// Retrieve credentials from the credential vault.
+// Извлеките учетные данные из хранилища учетных данных.
 
 
 
@@ -623,35 +616,35 @@ id: credentialId,
 
 
 
-}).catch(error => {
+}).catch(error => 
 
 
 
-console.error(`[CredentialVaultError] Failed to retrieve credentials: ${error.message}`);
+console.error(`[CredentialVaultError] Не удалось получить учетные данные: ${error.message}`);
 
 
 
-throw new Error("Unable to fetch credentials from the vault.");
+throw new Error("Невозможно получить учетные данные из хранилища.");
 
 
 
-});
+)
 
 
 
-if (!clientId || !clientSecret) {
+if (!clientId || !clientSecret) 
 
 
 
-throw new Error("[CredentialVaultError] Missing clientId or clientSecret from the retrieved credentials.");
+throw new Error("[CredentialVaultError] Отсутствует clientId или clientSecret из полученных учетных данных.");
 
 
 
-}
+)
 
 
 
-// Authenticate and get an access token.
+// Аутентифицируйтесь и получите токен доступа.
 
 
 
@@ -659,11 +652,11 @@ const accessToken = await authenticateToDynatrace(clientId, clientSecret);
 
 
 
-// Perform the API request.
+// Выполните запрос API.
 
 
 
-const response = await fetch(url, {
+const response = await fetch(url, 
 
 
 
@@ -671,7 +664,7 @@ method: "POST",
 
 
 
-headers: {
+headers: 
 
 
 
@@ -711,43 +704,43 @@ enablePreview: true,
 
 
 
-});
+)
 
 
 
-if (!response.ok) {
+if (!response.ok) 
 
 
 
-throw new Error(`[HTTPError] API call failed with status ${response.status}: ${response.statusText}`);
+throw new Error(`[HTTPError] Вызов API не удался со статусом ${response.status}: ${response.statusText}`)
 
 
 
-}
+)
 
 
 
-return await response.json();
+return await response.json()
 
 
 
-} catch (error) {
+} catch (error) 
 
 
 
-console.error(`[FetchError] ${error.message}`);
+console.error(`[FetchError] ${error.message}`)
 
 
 
-throw error;
+throw error
 
 
 
-}
+)
 
 
 
-}
+)
 
 
 
@@ -755,11 +748,11 @@ throw error;
 
 
 
-* Main function to execute a query and return results from Dynatrace.
+* Основная функция для выполнения запроса и возврата результатов из Dynatrace.
 
 
 
-* @returns {Promise<any>} - The query result.
+* @returns {Promise<any>} - Результат запроса.
 
 
 
@@ -767,49 +760,48 @@ throw error;
 
 
 
-export default async function fetchDynatraceData() {
+export default async function fetchDynatraceData() 
 
 
 
-const credentialId = "CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX"; // Replace with your credential vault ID.
+const credentialId = "CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX"; // Замените на свой идентификатор учетных данных.
 
 
 
-const url = "https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute"; // Replace with API URL.
+const url = "https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute"; // Замените на URL-адрес API.
 
 
 
-const query = "fetch logs | limit 1"; // Replace with your query.
+const query = "fetch logs | limit 1"; // Замените на свой запрос.
 
 
 
-try {
+try 
 
 
 
-const { result } = await fetchFromDynatrace(credentialId, url, query);
+const { result } = await fetchFromDynatrace(credentialId, url, query)
 
 
 
-return result;
+return result
 
 
 
-} catch (error) {
+} catch (error) 
 
 
 
-console.error(`[MainFunctionError] ${error.message}`);
+console.error(`[MainFunctionError] ${error.message}`)
 
 
 
-return null; // Return null or handle gracefully.
+return null // Верните null или обработайте благополучно.
 
 
 
-}
+)
 
 
 
-}
 ```

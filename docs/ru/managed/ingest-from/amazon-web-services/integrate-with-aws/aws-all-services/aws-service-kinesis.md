@@ -623,8 +623,8 @@ Dynatrace собирает метрики для множества предва
 
 В этом примере из полного списка разрешений необходимо выбрать
 
-* `"apigateway:GET"` for **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"apigateway:GET"` для **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
 ## Включение мониторинга
 
@@ -767,101 +767,101 @@ Dynatrace собирает метрики для множества предва
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
-| Bytes | The number of bytes read (per input stream) or written (per output stream). | Bytes | Sum | Application, Flow, Id | Доступна |
-| InputProcessing.DroppedRecords | The number of records returned by a Lambda function that were marked with `Dropped` status. | Count | Sum | Application, Flow, Id |  |
-| InputProcessing.Duration | The time taken for each AWS Lambda function invocation performed by Kinesis Data Analytics. | Milliseconds | Multi | Application, Flow, Id |  |
-| InputProcessing.OkBytes | The sum of bytes of the records returned by a Lambda function that were marked with `OK` status. | Bytes | Sum | Application, Flow, Id |  |
-| InputProcessing.OkRecords | The number of records returned by a Lambda function that were marked with `OK` status. | Count | Sum | Application, Flow, Id |  |
-| InputProcessing.ProcessingFailedRecords | The number of records returned by a Lambda function that were marked with `ProcessingFailed` status. | Count | Sum | Application, Flow, Id |  |
-| InputProcessing.Success | The number of successful Lambda invocations by Kinesis Data Analytics. | Count | Sum | Application, Flow, Id |  |
-| KPUs | The number of Kinesis Processing Units that are used to run your stream processing application. | Count | Count | Application |  |
+| Bytes | Количество байт, прочитанных (на входной поток) или записанных (на выходной поток). | Bytes | Sum | Application, Flow, Id | Доступна |
+| InputProcessing.DroppedRecords | Количество записей, возвращённых функцией Lambda со статусом `Dropped`. | Count | Sum | Application, Flow, Id |  |
+| InputProcessing.Duration | Время, затраченное на каждый вызов функции AWS Lambda, выполненный Kinesis Data Analytics. | Milliseconds | Multi | Application, Flow, Id |  |
+| InputProcessing.OkBytes | Сумма байт записей, возвращённых функцией Lambda со статусом `OK`. | Bytes | Sum | Application, Flow, Id |  |
+| InputProcessing.OkRecords | Количество записей, возвращённых функцией Lambda со статусом `OK`. | Count | Sum | Application, Flow, Id |  |
+| InputProcessing.ProcessingFailedRecords | Количество записей, возвращённых функцией Lambda со статусом `ProcessingFailed`. | Count | Sum | Application, Flow, Id |  |
+| InputProcessing.Success | Количество успешных вызовов Lambda, выполненных Kinesis Data Analytics. | Count | Sum | Application, Flow, Id |  |
+| KPUs | Количество единиц обработки Kinesis (KPU), используемых для запуска приложения потоковой обработки. | Count | Count | Application |  |
 | KPUs |  | Count | Multi | Application |  |
 | KPUs |  | Count | Sum | Application | Доступна |
-| LambdaDelivery.DeliveryFailedRecords | The number of successful Lambda invocations by Kinesis Data Analytics. | Count | Sum | Application, Flow, Id |  |
-| LambdaDelivery.Duration | The time taken for each Lambda function invocation performed by Kinesis Data Analytics. | Milliseconds | Multi | Application, Flow, Id |  |
-| LambdaDelivery.OkRecords | The number of records returned by a Lambda function that were marked with `OK` status. | Count | Sum | Application, Flow, Id |  |
-| MillisBehindLatest | Indicates how far behind from the current time an application is reading from the streaming source. | Milliseconds | Multi | Application; Application, Flow, Id |  |
-| Records | The number of records read (per input stream) or written (per output stream). | Count | Sum | Application, Flow, Id | Доступна |
-| Success | The number of successful deliveries. Every successful delivery attempt to the destination configured for your application is marked with `1`. Every failed delivery attempt is marked with `0`. | Count | Average | Application, Flow, Id | Доступна |
-| backPressuredTimeMsPerSecond | The time (in milliseconds) this task or operator is back pressured per second. | Milliseconds | Count | Application |  |
+| LambdaDelivery.DeliveryFailedRecords | Количество неудачных вызовов Lambda в Kinesis Data Analytics. | Count | Sum | Application, Flow, Id |  |
+| LambdaDelivery.Duration | Время, затраченное на каждый вызов функции Lambda, выполненный Kinesis Data Analytics. | Milliseconds | Multi | Application, Flow, Id |  |
+| LambdaDelivery.OkRecords | Количество записей, возвращённых функцией Lambda со статусом `OK`. | Count | Sum | Application, Flow, Id |  |
+| MillisBehindLatest | Показывает, насколько приложение отстаёт от текущего времени при чтении из потокового источника. | Milliseconds | Multi | Application; Application, Flow, Id |  |
+| Records | Количество записей, прочитанных (на входной поток) или записанных (на выходной поток). | Count | Sum | Application, Flow, Id | Доступна |
+| Success | Количество успешных доставок. Каждая успешная попытка доставки в настроенное назначение приложения отмечается значением `1`. Каждая неудачная попытка доставки отмечается значением `0`. | Count | Average | Application, Flow, Id | Доступна |
+| backPressuredTimeMsPerSecond | Время (в миллисекундах) противодавления на задачу или оператор в секунду. | Milliseconds | Count | Application |  |
 | backPressuredTimeMsPerSecond |  | Milliseconds | Multi | Application |  |
 | backPressuredTimeMsPerSecond |  | Milliseconds | Sum | Application |  |
-| busyTimeMsPerSecond | The time (in milliseconds) this task or operator is busy (neither idle nor back pressured) per second. Can be NaN, if the value could not be calculated. | Milliseconds | Count | Application |  |
+| busyTimeMsPerSecond | Время (в миллисекундах), в течение которого задача или оператор занят (не простаивает и не испытывает противодавления) в секунду. Может быть NaN, если значение не удалось вычислить. | Milliseconds | Count | Application |  |
 | busyTimeMsPerSecond |  | Milliseconds | Multi | Application |  |
 | busyTimeMsPerSecond |  | Milliseconds | Sum | Application |  |
-| bytes\_consumed\_rate | The average number of bytes consumed per second for a topic. | Bytes | Count | Application |  |
+| bytes\_consumed\_rate | Среднее количество байт, потребляемых в секунду для топика. | Bytes | Count | Application |  |
 | bytes\_consumed\_rate |  | Bytes | Multi | Application |  |
 | bytes\_consumed\_rate |  | Bytes | Sum | Application |  |
-| commitsFailed | The total number of offset commit failures to Kafka, if offset committing and checkpointing are enabled. | Count | Count | Application |  |
+| commitsFailed | Общее количество неудачных фиксаций смещения в Kafka, если фиксация смещений и контрольные точки включены. | Count | Count | Application |  |
 | commitsFailed |  | Count | Multi | Application |  |
 | commitsFailed |  | Count | Sum | Application |  |
-| commitsSucceeded | The total number of successful offset commits to Kafka, if offset committing and checkpointing are enabled. | Count | Count | Application |  |
+| commitsSucceeded | Общее количество успешных фиксаций смещения в Kafka, если фиксация смещений и контрольные точки включены. | Count | Count | Application |  |
 | commitsSucceeded |  | Count | Multi | Application |  |
 | commitsSucceeded |  | Count | Sum | Application |  |
-| committedOffsets | The last successfully committed offsets to Kafka, for each partition. A particular partition's metric can be specified by topic name and partition id. | Count | Count | Application |  |
+| committedOffsets | Последние успешно зафиксированные смещения в Kafka для каждого раздела. Метрику конкретного раздела можно указать по имени топика и идентификатору раздела. | Count | Count | Application |  |
 | committedOffsets |  | Count | Multi | Application |  |
 | committedOffsets |  | Count | Sum | Application |  |
-| containerCPUUtilization | Overall percentage of CPU utilization across task manager containers in Flink application cluster. | Percent | Count | Application |  |
+| containerCPUUtilization | Общий процент использования ЦПУ по всем контейнерам менеджеров задач в кластере приложения Flink. | Percent | Count | Application |  |
 | containerCPUUtilization |  | Percent | Multi | Application |  |
 | containerCPUUtilization |  | Percent | Sum | Application |  |
-| containerDiskUtilization | Overall percentage of disk utilization across task manager containers in Flink application cluster. | Percent | Count | Application |  |
+| containerDiskUtilization | Общий процент использования диска по всем контейнерам менеджеров задач в кластере приложения Flink. | Percent | Count | Application |  |
 | containerDiskUtilization |  | Percent | Multi | Application |  |
 | containerDiskUtilization |  | Percent | Sum | Application |  |
-| containerMemoryUtilization | Overall percentage of memory utilization across task manager containers in Flink application cluster. | Percent | Count | Application |  |
+| containerMemoryUtilization | Общий процент использования памяти по всем контейнерам менеджеров задач в кластере приложения Flink. | Percent | Count | Application |  |
 | containerMemoryUtilization |  | Percent | Multi | Application |  |
 | containerMemoryUtilization |  | Percent | Sum | Application |  |
-| cpuUtilization | Overall percentage of CPU utilization across task managers. | Percent | Count | Application |  |
+| cpuUtilization | Общий процент использования ЦПУ по всем менеджерам задач. | Percent | Count | Application |  |
 | cpuUtilization |  | Percent | Multi | Application |  |
 | cpuUtilization |  | Percent | Sum | Application |  |
-| currentInputWatermark | The last watermark this application/operator/task/thread has received. | Milliseconds | Count | Application |  |
+| currentInputWatermark | Последний водяной знак, полученный этим приложением/оператором/задачей/потоком. | Milliseconds | Count | Application |  |
 | currentInputWatermark |  | Milliseconds | Multi | Application |  |
 | currentInputWatermark |  | Milliseconds | Sum | Application |  |
-| currentOffsets | The consumer's current read offset, for each partition. A particular partition's metric can be specified by topic name and partition id. | Count | Count | Application |  |
+| currentOffsets | Текущее смещение чтения потребителя для каждого раздела. Метрику конкретного раздела можно указать по имени топика и идентификатору раздела. | Count | Count | Application |  |
 | currentOffsets |  | Count | Multi | Application |  |
 | currentOffsets |  | Count | Sum | Application |  |
-| currentOutputWatermark | The last watermark this application/operator/task/thread has emitted. | Milliseconds | Count | Application |  |
+| currentOutputWatermark | Последний водяной знак, отправленный этим приложением/оператором/задачей/потоком. | Milliseconds | Count | Application |  |
 | currentOutputWatermark |  | Milliseconds | Multi | Application |  |
 | currentOutputWatermark |  | Milliseconds | Sum | Application |  |
-| downtime | For jobs currently in a failing/recovering situation, the time elapsed during this outage. | Milliseconds | Count | Application |  |
+| downtime | Для заданий, находящихся в состоянии сбоя/восстановления, время, прошедшее с начала простоя. | Milliseconds | Count | Application |  |
 | downtime |  | Milliseconds | Multi | Application |  |
 | downtime |  | Milliseconds | Sum | Application |  |
-| fullRestarts | The total number of times this job has fully restarted since it was submitted. This metric does not measure fine-grained restarts. | Count | Count | Application |  |
+| fullRestarts | Общее количество полных перезапусков задания с момента его отправки. Эта метрика не измеряет частичные перезапуски. | Count | Count | Application |  |
 | fullRestarts |  | Count | Multi | Application |  |
 | fullRestarts |  | Count | Sum | Application |  |
-| heapMemoryUtilization | Overall heap memory utilization across task managers. | Percent | Count | Application |  |
+| heapMemoryUtilization | Общее использование памяти кучи по всем менеджерам задач. | Percent | Count | Application |  |
 | heapMemoryUtilization |  | Percent | Multi | Application |  |
 | heapMemoryUtilization |  | Percent | Sum | Application |  |
-| idleTimeMsPerSecond | The time (in milliseconds) this task or operator is idle (has no data to process) per second. Idle time excludes back pressured time, so if the task is back pressured it is not idle. | Milliseconds | Count | Application |  |
+| idleTimeMsPerSecond | Время (в миллисекундах) простоя задачи или оператора (нет данных для обработки) в секунду. Время простоя исключает время противодавления, поэтому если задача испытывает противодавление, она не считается простаивающей. | Milliseconds | Count | Application |  |
 | idleTimeMsPerSecond |  | Milliseconds | Multi | Application |  |
 | idleTimeMsPerSecond |  | Milliseconds | Sum | Application |  |
-| lastCheckpointDuration | The time it took to complete the last checkpoint. | Milliseconds | Count | Application |  |
+| lastCheckpointDuration | Время, затраченное на завершение последней контрольной точки. | Milliseconds | Count | Application |  |
 | lastCheckpointDuration |  | Milliseconds | Multi | Application |  |
 | lastCheckpointDuration |  | Milliseconds | Sum | Application |  |
-| lastCheckpointSize | The total size of the last checkpoint | Bytes | Count | Application |  |
+| lastCheckpointSize | Общий размер последней контрольной точки | Bytes | Count | Application |  |
 | lastCheckpointSize |  | Bytes | Multi | Application |  |
 | lastCheckpointSize |  | Bytes | Sum | Application |  |
-| numRecordsInPerSecond | The total number of records this application, operator or task has received per second. | Count/Second | Count | Application |  |
+| numRecordsInPerSecond | Общее количество записей, полученных этим приложением, оператором или задачей в секунду. | Count/Second | Count | Application |  |
 | numRecordsInPerSecond |  | Count/Second | Multi | Application |  |
 | numRecordsInPerSecond |  | Count/Second | Sum | Application |  |
-| numRecordsIn | The total number of records this application, operator, or task has received. | Count | Count | Application |  |
+| numRecordsIn | Общее количество записей, полученных этим приложением, оператором или задачей. | Count | Count | Application |  |
 | numRecordsIn |  | Count | Multi | Application |  |
 | numRecordsIn |  | Count | Sum | Application |  |
-| numRecordsOutPerSecond | The total number of records this application, operator or task has emitted per second. | Count/Second | Count | Application |  |
+| numRecordsOutPerSecond | Общее количество записей, отправленных этим приложением, оператором или задачей в секунду. | Count/Second | Count | Application |  |
 | numRecordsOutPerSecond |  | Count/Second | Multi | Application |  |
 | numRecordsOutPerSecond |  | Count/Second | Sum | Application |  |
-| numRecordsOut | The total number of records this application, operator or task has emitted. | Count | Count | Application |  |
+| numRecordsOut | Общее количество записей, отправленных этим приложением, оператором или задачей. | Count | Count | Application |  |
 | numRecordsOut |  | Count | Multi | Application |  |
 | numRecordsOut |  | Count | Sum | Application |  |
 | numRestarts |  | Count | Count | Application |  |
 | numRestarts |  | Count | Multi | Application |  |
 | numRestarts |  | Count | Sum | Application |  |
-| numberOfFailedCheckpoints | The number of times checkpointing has failed. | Count | Count | Application |  |
+| numberOfFailedCheckpoints | Количество неудачных контрольных точек. | Count | Count | Application |  |
 | numberOfFailedCheckpoints |  | Count | Multi | Application |  |
 | numberOfFailedCheckpoints |  | Count | Sum | Application |  |
-| oldGenerationGCCount | The total number of old garbage collection operations that have occurred across all task managers. | Count | Count | Application |  |
+| oldGenerationGCCount | Общее количество операций сборки мусора старого поколения по всем менеджерам задач. | Count | Count | Application |  |
 | oldGenerationGCCount |  | Count | Multi | Application |  |
 | oldGenerationGCCount |  | Count | Sum | Application |  |
-| oldGenerationGCTime | The total time spent performing old garbage collection operations. | Milliseconds | Count | Application |  |
+| oldGenerationGCTime | Общее время, затраченное на операции сборки мусора старого поколения. | Milliseconds | Count | Application |  |
 | oldGenerationGCTime |  | Milliseconds | Multi | Application |  |
 | oldGenerationGCTime |  | Milliseconds | Sum | Application |  |
 | processElementavg |  | Count | Count | Application, Service |  |
@@ -870,7 +870,7 @@ Dynatrace собирает метрики для множества предва
 | readDocsavg |  | Count | Count | Application, Service |  |
 | readDocsavg |  | Count | Multi | Application, Service |  |
 | readDocsavg |  | Count | Sum | Application, Service |  |
-| records\_lag\_max | The maximum lag in terms of number of records for any partition in this window | Count | Count | Application |  |
+| records\_lag\_max | Максимальное отставание по количеству записей для любого раздела в данном окне | Count | Count | Application |  |
 | records\_lag\_max |  | Count | Multi | Application |  |
 | records\_lag\_max |  | Count | Sum | Application |  |
 | threadsCount |  | Count | Count | Application |  |
@@ -879,7 +879,7 @@ Dynatrace собирает метрики для множества предва
 | updatesavg |  | Count | Count | Application, Service |  |
 | updatesavg |  | Count | Multi | Application, Service |  |
 | updatesavg |  | Count | Sum | Application, Service |  |
-| uptime | The time that the job has been running without interruption. | Milliseconds | Count | Application |  |
+| uptime | Время непрерывной работы задания. | Milliseconds | Count | Application |  |
 | uptime |  | Milliseconds | Multi | Application |  |
 | uptime |  | Milliseconds | Sum | Application |  |
 
@@ -889,101 +889,101 @@ Dynatrace собирает метрики для множества предва
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
-| BackupToS3.Bytes | The number of bytes delivered to Amazon S3 for backup over the specified time period. Amazon Data Firehose emits this metric when backup to Amazon S3 is enabled. | Bytes | Sum | Region |  |
+| BackupToS3.Bytes | Количество байт, доставленных в Amazon S3 для резервного копирования за указанный период. Amazon Data Firehose отправляет эту метрику при включённом резервном копировании в Amazon S3. | Bytes | Sum | Region |  |
 | BackupToS3.Bytes |  | Bytes | Sum | DeliveryStreamName |  |
-| BackupToS3.DataFreshness | Age (from getting into Amazon Data Firehose to now) of the oldest record in Amazon Data Firehose. Any record older than this age has been delivered to the Amazon S3 bucket for backup. Amazon Data Firehose emits this metric when backup to Amazon S3 is enabled. | Seconds | Maximum | Region |  |
+| BackupToS3.DataFreshness | Возраст (от поступления в Amazon Data Firehose до текущего момента) самой старой записи в Amazon Data Firehose. Записи старше этого возраста доставлены в корзину Amazon S3 для резервного копирования. Amazon Data Firehose отправляет эту метрику при включённом резервном копировании в Amazon S3. | Seconds | Maximum | Region |  |
 | BackupToS3.DataFreshness |  | Seconds | Maximum | DeliveryStreamName |  |
-| BackupToS3.Records | The number of records delivered to Amazon S3 for backup over the specified time period. Amazon Data Firehose emits this metric when backup to Amazon S3 is enabled. | Count | Sum | Region |  |
+| BackupToS3.Records | Количество записей, доставленных в Amazon S3 для резервного копирования за указанный период. Amazon Data Firehose отправляет эту метрику при включённом резервном копировании в Amazon S3. | Count | Sum | Region |  |
 | BackupToS3.Records |  | Count | Sum | DeliveryStreamName |  |
-| BackupToS3.Success | Sum of successful Amazon S3 put commands for backup over sum of all Amazon S3 backup put commands. Amazon Data Firehose emits this metric when backup to Amazon S3 is enabled. | Count | Count | Region |  |
+| BackupToS3.Success | Сумма успешных команд put в Amazon S3 для резервного копирования относительно суммы всех команд put для резервного копирования в Amazon S3. Amazon Data Firehose отправляет эту метрику при включённом резервном копировании в Amazon S3. | Count | Count | Region |  |
 | BackupToS3.Success |  | Count | Count | DeliveryStreamName |  |
-| DataReadFromKinesisStream.Bytes | When the data source is a Kinesis data stream, this metric indicates the number of bytes read from that data stream. This number includes rereads due to failovers. | Bytes | Sum | Region |  |
+| DataReadFromKinesisStream.Bytes | Когда источником данных является поток Kinesis, эта метрика показывает количество байт, прочитанных из этого потока. Это число включает повторные чтения из-за отказов. | Bytes | Sum | Region |  |
 | DataReadFromKinesisStream.Bytes |  | Bytes | Sum | DeliveryStreamName |  |
-| DataReadFromKinesisStream.Records | When the data source is a Kinesis data stream, this metric indicates the number of records read from that data stream. This number includes rereads due to failovers. | Count | Sum | Region |  |
+| DataReadFromKinesisStream.Records | Когда источником данных является поток Kinesis, эта метрика показывает количество записей, прочитанных из этого потока. Это число включает повторные чтения из-за отказов. | Count | Sum | Region |  |
 | DataReadFromKinesisStream.Records |  | Count | Sum | DeliveryStreamName |  |
-| DeliveryToElasticsearch.Bytes | The number of bytes indexed to Amazon ES over the specified time period | Bytes | Sum | Region |  |
+| DeliveryToElasticsearch.Bytes | Количество байт, индексированных в Amazon ES за указанный период | Bytes | Sum | Region |  |
 | DeliveryToElasticsearch.Bytes |  | Bytes | Sum | DeliveryStreamName |  |
-| DeliveryToElasticsearch.Records | The number of records indexed to Amazon ES over the specified time period | Count | Sum | Region |  |
+| DeliveryToElasticsearch.Records | Количество записей, индексированных в Amazon ES за указанный период | Count | Sum | Region |  |
 | DeliveryToElasticsearch.Records |  | Count | Sum | DeliveryStreamName |  |
-| DeliveryToElasticsearch.Success | The sum of the successfully indexed records over the sum of records that were attempted | Count | Count | Region |  |
+| DeliveryToElasticsearch.Success | Сумма успешно индексированных записей относительно суммы всех попыток индексирования | Count | Count | Region |  |
 | DeliveryToElasticsearch.Success |  | Count | Count | DeliveryStreamName |  |
-| DeliveryToRedshift.Bytes | The number of bytes copied to Amazon Redshift over the specified time period | Bytes | Sum | Region |  |
+| DeliveryToRedshift.Bytes | Количество байт, скопированных в Amazon Redshift за указанный период | Bytes | Sum | Region |  |
 | DeliveryToRedshift.Bytes |  | Bytes | Sum | DeliveryStreamName |  |
-| DeliveryToRedshift.Records | The number of records copied to Amazon Redshift over the specified time period | Count | Sum | Region |  |
+| DeliveryToRedshift.Records | Количество записей, скопированных в Amazon Redshift за указанный период | Count | Sum | Region |  |
 | DeliveryToRedshift.Records |  | Count | Sum | DeliveryStreamName |  |
-| DeliveryToRedshift.Success | The sum of successful Amazon Redshift `COPY` commands over the sum of all Amazon Redshift `COPY` commands | Count | Count | Region |  |
+| DeliveryToRedshift.Success | Сумма успешных команд Amazon Redshift `COPY` относительно суммы всех команд Amazon Redshift `COPY` | Count | Count | Region |  |
 | DeliveryToRedshift.Success |  | Count | Count | DeliveryStreamName |  |
-| DeliveryToS3.Bytes | The number of bytes delivered to Amazon S3 over the specified time period | Bytes | Sum | Region |  |
+| DeliveryToS3.Bytes | Количество байт, доставленных в Amazon S3 за указанный период | Bytes | Sum | Region |  |
 | DeliveryToS3.Bytes |  | Bytes | Sum | DeliveryStreamName |  |
-| DeliveryToS3.DataFreshness | The age (from getting into Amazon Data Firehose to now) of the oldest record in Amazon Data Firehose. Any record older than this age has been delivered to the S3 bucket. | Seconds | Maximum | Region |  |
+| DeliveryToS3.DataFreshness | Возраст (от поступления в Amazon Data Firehose до текущего момента) самой старой записи в Amazon Data Firehose. Записи старше этого возраста доставлены в корзину S3. | Seconds | Maximum | Region |  |
 | DeliveryToS3.DataFreshness |  | Seconds | Maximum | DeliveryStreamName |  |
-| DeliveryToS3.Records | The number of records delivered to Amazon S3 over the specified time period | Count | Sum | Region |  |
+| DeliveryToS3.Records | Количество записей, доставленных в Amazon S3 за указанный период | Count | Sum | Region |  |
 | DeliveryToS3.Records |  | Count | Sum | DeliveryStreamName |  |
-| DeliveryToS3.Success | The sum of successful Amazon S3 put commands over the sum of all Amazon S3 put commands | Count | Count | Region |  |
+| DeliveryToS3.Success | Сумма успешных команд put в Amazon S3 относительно суммы всех команд put в Amazon S3 | Count | Count | Region |  |
 | DeliveryToS3.Success |  | Count | Count | DeliveryStreamName |  |
-| DeliveryToSplunk.Bytes | The number of bytes delivered to Splunk over the specified time period | Bytes | Sum | Region |  |
+| DeliveryToSplunk.Bytes | Количество байт, доставленных в Splunk за указанный период | Bytes | Sum | Region |  |
 | DeliveryToSplunk.Bytes |  | Bytes | Sum | DeliveryStreamName |  |
-| DeliveryToSplunk.DataAckLatency | The approximate duration it takes to receive an acknowledgment from Splunk after Amazon Data Firehose sends it data | Seconds | Average | Region |  |
+| DeliveryToSplunk.DataAckLatency | Приблизительное время получения подтверждения от Splunk после отправки данных Amazon Data Firehose | Seconds | Average | Region |  |
 | DeliveryToSplunk.DataAckLatency |  | Seconds | Average | DeliveryStreamName |  |
-| DeliveryToSplunk.DataFreshness | Age (from getting into Amazon Data Firehose to now) of the oldest record in Amazon Data Firehose. Any record older than this age has been delivered to Splunk. | Seconds | Maximum | Region |  |
+| DeliveryToSplunk.DataFreshness | Возраст (от поступления в Amazon Data Firehose до текущего момента) самой старой записи в Amazon Data Firehose. Записи старше этого возраста доставлены в Splunk. | Seconds | Maximum | Region |  |
 | DeliveryToSplunk.DataFreshness |  | Seconds | Maximum | DeliveryStreamName |  |
-| DeliveryToSplunk.Records | The number of records delivered to Splunk over the specified time period | Count | Sum | Region |  |
+| DeliveryToSplunk.Records | Количество записей, доставленных в Splunk за указанный период | Count | Sum | Region |  |
 | DeliveryToSplunk.Records |  | Count | Sum | DeliveryStreamName |  |
-| DeliveryToSplunk.Success | The sum of the successfully indexed records over the sum of records that were attempted | Count | Count | Region |  |
+| DeliveryToSplunk.Success | Сумма успешно индексированных записей относительно суммы всех попыток индексирования | Count | Count | Region |  |
 | DeliveryToSplunk.Success |  | Count | Count | DeliveryStreamName |  |
-| DescribeDeliveryStream.Latency | The time taken per `DescribeDeliveryStream` operation, measured over the specified time period | Milliseconds | Multi | Region |  |
+| DescribeDeliveryStream.Latency | Время, затраченное на каждую операцию `DescribeDeliveryStream`, измеренное за указанный период | Milliseconds | Multi | Region |  |
 | DescribeDeliveryStream.Latency |  | Milliseconds | Multi | DeliveryStreamName |  |
-| DescribeDeliveryStream.Requests | The total number of `DescribeDeliveryStream` requests | Count | Sum | Region |  |
+| DescribeDeliveryStream.Requests | Общее количество запросов `DescribeDeliveryStream` | Count | Sum | Region |  |
 | DescribeDeliveryStream.Requests |  | Count | Sum | DeliveryStreamName |  |
-| ExecuteProcessing.Duration | The time it takes for each Lambda function invocation performed by Amazon Data Firehose | Milliseconds | Multi | Region |  |
+| ExecuteProcessing.Duration | Время, затраченное на каждый вызов функции Lambda, выполненный Amazon Data Firehose | Milliseconds | Multi | Region |  |
 | ExecuteProcessing.Duration |  | Milliseconds | Multi | DeliveryStreamName |  |
-| ExecuteProcessing.Success | The sum of the successful Lambda function invocations over the sum of the total Lambda function invocations | Count | Count | Region |  |
+| ExecuteProcessing.Success | Сумма успешных вызовов функций Lambda относительно суммы всех вызовов функций Lambda | Count | Count | Region |  |
 | ExecuteProcessing.Success |  | Count | Count | DeliveryStreamName |  |
-| FailedConversion.Bytes | The size of the records that could not be converted | Bytes | Sum | Region |  |
+| FailedConversion.Bytes | Размер записей, которые не удалось преобразовать | Bytes | Sum | Region |  |
 | FailedConversion.Bytes |  | Bytes | Sum | DeliveryStreamName |  |
-| FailedConversion.Records | The number of records that could not be converted | Count | Sum | Region |  |
+| FailedConversion.Records | Количество записей, которые не удалось преобразовать | Count | Sum | Region |  |
 | FailedConversion.Records |  | Count | Sum | DeliveryStreamName |  |
-| IncomingBytes | The number of bytes ingested successfully into the delivery stream over the specified time period after throttling | Bytes | Sum | Region |  |
+| IncomingBytes | Количество байт, успешно принятых в поток доставки за указанный период после ограничения скорости | Bytes | Sum | Region |  |
 | IncomingBytes |  | Bytes | Sum | DeliveryStreamName | Доступна |
-| IncomingRecords | The number of records ingested successfully into the delivery stream over the specified time period after throttling | Count | Sum | Region |  |
+| IncomingRecords | Количество записей, успешно принятых в поток доставки за указанный период после ограничения скорости | Count | Sum | Region |  |
 | IncomingRecords |  | Count | Sum | DeliveryStreamName | Доступна |
-| KinesisMillisBehindLatest | When the data source is a Kinesis data stream, this metric indicates the number of milliseconds that the last read record is behind the newest record in the Kinesis data stream | Milliseconds | Average | Region |  |
+| KinesisMillisBehindLatest | Когда источником данных является поток Kinesis, эта метрика показывает количество миллисекунд, на которое последняя прочитанная запись отстаёт от самой новой записи в потоке Kinesis | Milliseconds | Average | Region |  |
 | KinesisMillisBehindLatest |  | Milliseconds | Average | DeliveryStreamName |  |
-| ListDeliveryStreams.Latency | The time taken per `ListDeliveryStream` operation, measured over the specified time period | Milliseconds | Multi | Region |  |
+| ListDeliveryStreams.Latency | Время, затраченное на каждую операцию `ListDeliveryStream`, измеренное за указанный период | Milliseconds | Multi | Region |  |
 | ListDeliveryStreams.Latency |  | Milliseconds | Multi | DeliveryStreamName |  |
-| ListDeliveryStreams.Requests | The total number of `ListFirehose` requests | Count | Sum | Region |  |
+| ListDeliveryStreams.Requests | Общее количество запросов `ListFirehose` | Count | Sum | Region |  |
 | ListDeliveryStreams.Requests |  | Count | Sum | DeliveryStreamName |  |
-| PutRecordBatch.Bytes | The number of bytes put to the Amazon Data Firehose delivery stream using `PutRecordBatch` over the specified time period | Bytes | Sum | Region |  |
+| PutRecordBatch.Bytes | Количество байт, отправленных в поток доставки Amazon Data Firehose с помощью `PutRecordBatch` за указанный период | Bytes | Sum | Region |  |
 | PutRecordBatch.Bytes |  | Bytes | Sum | DeliveryStreamName |  |
-| PutRecordBatch.Latency | The time taken per `PutRecordBatch` operation, measured over the specified time period | Milliseconds | Multi | Region |  |
+| PutRecordBatch.Latency | Время, затраченное на каждую операцию `PutRecordBatch`, измеренное за указанный период | Milliseconds | Multi | Region |  |
 | PutRecordBatch.Latency |  | Milliseconds | Multi | DeliveryStreamName |  |
-| PutRecordBatch.Records | The total number of records from `PutRecordBatch` operations | Count | Sum | Region |  |
+| PutRecordBatch.Records | Общее количество записей из операций `PutRecordBatch` | Count | Sum | Region |  |
 | PutRecordBatch.Records |  | Count | Sum | DeliveryStreamName |  |
-| PutRecordBatch.Requests | The total number of `PutRecordBatch` requests | Count | Sum | Region |  |
+| PutRecordBatch.Requests | Общее количество запросов `PutRecordBatch` | Count | Sum | Region |  |
 | PutRecordBatch.Requests |  | Count | Sum | DeliveryStreamName |  |
-| PutRecord.Bytes | The number of bytes put to the Amazon Data Firehose delivery stream using `PutRecord` over the specified time period | Bytes | Sum | Region |  |
+| PutRecord.Bytes | Количество байт, отправленных в поток доставки Amazon Data Firehose с помощью `PutRecord` за указанный период | Bytes | Sum | Region |  |
 | PutRecord.Bytes |  | Bytes | Sum | DeliveryStreamName |  |
-| PutRecord.Latency | The time taken per `PutRecord` operation, measured over the specified time period | Milliseconds | Multi | Region |  |
+| PutRecord.Latency | Время, затраченное на каждую операцию `PutRecord`, измеренное за указанный период | Milliseconds | Multi | Region |  |
 | PutRecord.Latency |  | Milliseconds | Multi | DeliveryStreamName |  |
-| PutRecord.Requests | The total number of `PutRecord` requests, which is equal to the total number of records from `PutRecord` operations | Count | Sum | Region |  |
+| PutRecord.Requests | Общее количество запросов `PutRecord`, равное общему количеству записей из операций `PutRecord` | Count | Sum | Region |  |
 | PutRecord.Requests |  | Count | Sum | DeliveryStreamName |  |
-| SucceedConversion.Bytes | The size of the successfully converted records | Bytes | Sum | Region |  |
+| SucceedConversion.Bytes | Размер успешно преобразованных записей | Bytes | Sum | Region |  |
 | SucceedConversion.Bytes |  | Bytes | Sum | DeliveryStreamName |  |
-| SucceedConversion.Records | The number of successfully converted records | Count | Sum | Region |  |
+| SucceedConversion.Records | Количество успешно преобразованных записей | Count | Sum | Region |  |
 | SucceedConversion.Records |  | Count | Sum | DeliveryStreamName |  |
-| SucceedProcessing.Bytes | The number of successfully processed bytes over the specified time period | Bytes | Sum | Region |  |
+| SucceedProcessing.Bytes | Количество успешно обработанных байт за указанный период | Bytes | Sum | Region |  |
 | SucceedProcessing.Bytes |  | Bytes | Sum | DeliveryStreamName |  |
-| SucceedProcessing.Records | The number of successfully processed records over the specified time period | Count | Sum | Region |  |
+| SucceedProcessing.Records | Количество успешно обработанных записей за указанный период | Count | Sum | Region |  |
 | SucceedProcessing.Records |  | Count | Sum | DeliveryStreamName |  |
-| ThrottledDescribeStream | The total number of times the `DescribeStream` operation is throttled when the data source is a Kinesis data stream | Count | Average | Region |  |
+| ThrottledDescribeStream | Общее количество ограничений операции `DescribeStream`, когда источником данных является поток Kinesis | Count | Average | Region |  |
 | ThrottledDescribeStream |  | Count | Average | DeliveryStreamName |  |
-| ThrottledGetRecords | The total number of times the `GetRecords` operation is throttled when the data source is a Kinesis data stream | Count | Average | Region |  |
+| ThrottledGetRecords | Общее количество ограничений операции `GetRecords`, когда источником данных является поток Kinesis | Count | Average | Region |  |
 | ThrottledGetRecords |  | Count | Average | DeliveryStreamName |  |
-| ThrottledGetShardIterator | The total number of times the `GetShardIterator` operation is throttled when the data source is a Kinesis data stream | Count | Average | Region |  |
+| ThrottledGetShardIterator | Общее количество ограничений операции `GetShardIterator`, когда источником данных является поток Kinesis | Count | Average | Region |  |
 | ThrottledGetShardIterator |  | Count | Average | DeliveryStreamName |  |
-| UpdateDeliveryStream.Latency | The time taken per `UpdateDeliveryStream` operation, measured over the specified time period | Milliseconds | Multi | Region |  |
+| UpdateDeliveryStream.Latency | Время, затраченное на каждую операцию `UpdateDeliveryStream`, измеренное за указанный период | Milliseconds | Multi | Region |  |
 | UpdateDeliveryStream.Latency |  | Milliseconds | Multi | DeliveryStreamName |  |
-| UpdateDeliveryStream.Requests | The total number of `UpdateDeliveryStream` requests | Count | Sum | Region |  |
+| UpdateDeliveryStream.Requests | Общее количество запросов `UpdateDeliveryStream` | Count | Sum | Region |  |
 | UpdateDeliveryStream.Requests |  | Count | Sum | DeliveryStreamName |  |
 
 ### Amazon Kinesis Data Streams (KDS)

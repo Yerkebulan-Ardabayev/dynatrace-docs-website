@@ -1,5 +1,5 @@
 ---
-title: Host-level settings
+title: Настройки на уровне хоста
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration
 scraped: 2026-03-06T21:10:55.107115
 ---

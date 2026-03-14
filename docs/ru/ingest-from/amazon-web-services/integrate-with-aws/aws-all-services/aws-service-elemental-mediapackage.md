@@ -23,7 +23,7 @@ Dynatrace собирает метрики для нескольких предв
 * Для AWS Elemental MediaPackage Live — Dynatrace версии 1.203+
 * Для AWS Elemental MediaPackage Video on Demand — Dynatrace версии 1.204+
 * Обновлённая [политика мониторинга AWS](../cloudwatch-metrics.md#monitoring-policy "Интеграция метрик из Amazon CloudWatch.") для включения дополнительных AWS сервисов.
-  Для [обновления политики AWS IAMï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте JSON ниже.
+  Для [обновления политики AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте JSON ниже.
 
 Предопределённая политика в формате JSON
 
@@ -415,13 +415,13 @@ Dynatrace собирает метрики для нескольких предв
 
 | Конечная точка | Сервис |
 | --- | --- |
-| `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (built-in), Amazon EC2 Auto Scaling |
-| `lambda.<REGION>.amazonaws.com` | AWS Lambda (built-in), AWS Lambda |
-| `elasticloadbalancing.<REGION>.amazonaws.com` | Amazon Application and Network Load Balancer (built-in), Amazon Elastic Load Balancer (ELB) (built-in) |
-| `dynamodb.<REGION>.amazonaws.com` | Amazon DynamoDB (built-in), Amazon DynamoDB |
-| `ec2.<REGION>.amazonaws.com` | Amazon EBS (built-in), Amazon EC2 (built-in), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN |
-| `rds.<REGION>.amazonaws.com` | Amazon RDS (built-in), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS |
-| `s3.<REGION>.amazonaws.com` | Amazon S3 (built-in) |
+| `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (встроенный), Amazon EC2 Auto Scaling |
+| `lambda.<REGION>.amazonaws.com` | AWS Lambda (встроенный), AWS Lambda |
+| `elasticloadbalancing.<REGION>.amazonaws.com` | Amazon Application and Network Load Balancer (встроенный), Amazon Elastic Load Balancer (ELB) (встроенный) |
+| `dynamodb.<REGION>.amazonaws.com` | Amazon DynamoDB (встроенный), Amazon DynamoDB |
+| `ec2.<REGION>.amazonaws.com` | Amazon EBS (встроенный), Amazon EC2 (встроенный), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN |
+| `rds.<REGION>.amazonaws.com` | Amazon RDS (встроенный), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS |
+| `s3.<REGION>.amazonaws.com` | Amazon S3 (встроенный) |
 | `acm-pca.<REGION>.amazonaws.com` | AWS Certificate Manager Private Certificate Authority |
 | `apigateway.<REGION>.amazonaws.com` | Amazon API Gateway |
 | `apprunner.<REGION>.amazonaws.com` | AWS App Runner |
@@ -509,15 +509,15 @@ Dynatrace собирает метрики для нескольких предв
 
 | Сервис AWS | Предустановленная панель |
 | --- | --- |
-| Amazon EC2 Auto Scaling (built-in) | Неприменимо |
-| AWS Lambda (built-in) | Неприменимо |
-| Amazon Application and Network Load Balancer (built-in) | Неприменимо |
-| Amazon DynamoDB (built-in) | Неприменимо |
-| Amazon EBS (built-in) | Неприменимо |
-| Amazon EC2 (built-in) | Неприменимо |
-| Amazon Elastic Load Balancer (ELB) (built-in) | Неприменимо |
-| Amazon RDS (built-in) | Неприменимо |
-| Amazon S3 (built-in) | Неприменимо |
+| Amazon EC2 Auto Scaling (встроенный) | Неприменимо |
+| AWS Lambda (встроенный) | Неприменимо |
+| Amazon Application and Network Load Balancer (встроенный) | Неприменимо |
+| Amazon DynamoDB (встроенный) | Неприменимо |
+| Amazon EBS (встроенный) | Неприменимо |
+| Amazon EC2 (встроенный) | Неприменимо |
+| Amazon Elastic Load Balancer (ELB) (встроенный) | Неприменимо |
+| Amazon RDS (встроенный) | Неприменимо |
+| Amazon S3 (встроенный) | Неприменимо |
 | AWS Certificate Manager Private Certificate Authority | Неприменимо |
 | Все отслеживаемые сервисы Amazon | Неприменимо |
 | Amazon API Gateway | Неприменимо |

@@ -1,5 +1,5 @@
 ---
-title: Permissions for service-level objective (SLO) tiles in a dashboard
+title: Разрешения для плиток целевого показателя обслуживания (SLO) на панели мониторинга
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-permissions
 scraped: 2026-03-06T21:32:41.871210
 ---

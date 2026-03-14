@@ -1,5 +1,5 @@
 ---
-title: Monitor Azure Functions using Azure App Service (built-in)
+title: Мониторинг Azure Functions с использованием Azure App Service (встроенный)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions
 scraped: 2026-03-06T21:18:25.804495
 ---

@@ -1,5 +1,5 @@
 ---
-title: Manage SNMP extensions
+title: Управление расширениями SNMP
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/snmp
 scraped: 2026-03-06T21:16:12.258749
 ---

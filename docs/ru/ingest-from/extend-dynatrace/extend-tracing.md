@@ -1,5 +1,5 @@
 ---
-title: Extend distributed tracing
+title: Расширение распределённой трассировки
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-tracing
 scraped: 2026-03-06T21:12:33.553012
 ---
@@ -16,10 +16,10 @@ scraped: 2026-03-06T21:12:33.553012
 
 ### OpenTelemetry
 
-Узнайте, как расширить возможности наблюдаемости распределённой трассировки с помощью трассировки OpenTelemetry.](../dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel.md "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.")[![Opentracing](https://dt-cdn.net/images/techn-icon-opentracing-936f2ba1cd.svg "Opentracing")
+Узнайте, как расширить возможности наблюдаемости распределённой трассировки с помощью трассировки OpenTelemetry.](../dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel.md "Узнайте, как отправлять данные OpenTelemetry в Dynatrace OneAgent.")[![Opentracing](https://dt-cdn.net/images/techn-icon-opentracing-936f2ba1cd.svg "Opentracing")
 
 ### OpenTracing
 
-Узнайте, как расширить возможности наблюдаемости распределённой трассировки в Dynatrace с помощью OpenTracing.](extend-tracing/opentracing.md "Learn how to integrate OpenTracing with Dynatrace.")[### OneAgent SDK
+Узнайте, как расширить возможности наблюдаемости распределённой трассировки в Dynatrace с помощью OpenTracing.](extend-tracing/opentracing.md "Узнайте, как интегрировать OpenTracing с Dynatrace.")[### OneAgent SDK
 
-Узнайте, как расширить возможности наблюдаемости распределённой трассировки в Dynatrace с помощью OneAgent SDK.](extend-tracing/oneagent-sdk.md "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.")
+Узнайте, как расширить возможности наблюдаемости распределённой трассировки в Dynatrace с помощью OneAgent SDK.](extend-tracing/oneagent-sdk.md "Dynatrace OneAgent SDK позволяет вручную инструментировать ваше приложение для расширения сквозной видимости фреймворков и технологий, для которых ещё нет доступного модуля кода.")

@@ -623,8 +623,8 @@ Dynatrace собирает метрики для множества предва
 
 В этом примере из полного списка разрешений необходимо выбрать
 
-* `"apigateway:GET"` for **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"apigateway:GET"` для **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
 ### Конечные точки AWS, которые должны быть доступны из ActiveGate с соответствующими сервисами AWS
 
@@ -824,23 +824,23 @@ Dynatrace собирает метрики для множества предва
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
-| NumberOfMessagesPublished | The number of messages published to the Amazon SNS topics | Count | Sum | Application, Region |  |
+| NumberOfMessagesPublished | Количество сообщений, опубликованных в топиках Amazon SNS | Count | Sum | Application, Region |  |
 | NumberOfMessagesPublished |  | Count | Sum | Country, Region, SMSType |  |
 | NumberOfMessagesPublished |  | Count | Sum | Platform, Region |  |
 | NumberOfMessagesPublished |  | Count | Sum | TopicName | Доступна |
-| NumberOfNotificationsDelivered | The number of messages successfully delivered from the Amazon SNS topics to subscribing endpoints | Count | Sum | Application, Region |  |
+| NumberOfNotificationsDelivered | Количество сообщений, успешно доставленных из топиков Amazon SNS подписанным конечным точкам | Count | Sum | Application, Region |  |
 | NumberOfNotificationsDelivered |  | Count | Sum | Country, Region, SMSType |  |
 | NumberOfNotificationsDelivered |  | Count | Sum | Platform, Region |  |
 | NumberOfNotificationsDelivered |  | Count | Sum | TopicName | Доступна |
-| NumberOfNotificationsFailed | The number of messages that Amazon SNS failed to deliver | Count/Minute | Sum | Application, Region |  |
+| NumberOfNotificationsFailed | Количество сообщений, которые Amazon SNS не удалось доставить | Count/Minute | Sum | Application, Region |  |
 | NumberOfNotificationsFailed |  | Count/Minute | Sum | Country, Region, SMSType |  |
-| NumberOfNotificationsFailed | The number of messages that Amazon SNS failed to deliver | Count/Minute | Sum | Platform, Region |  |
+| NumberOfNotificationsFailed | Количество сообщений, которые Amazon SNS не удалось доставить | Count/Minute | Sum | Platform, Region |  |
 | NumberOfNotificationsFailed |  | Count/Minute | Sum | TopicName | Доступна |
 | NumberOfNotificationsFailed |  | Count/Second | Average | Application, Region |  |
 | NumberOfNotificationsFailed |  | Count/Second | Average | Country, Region, SMSType |  |
 | NumberOfNotificationsFailed |  | Count/Second | Average | Platform, Region |  |
 | NumberOfNotificationsFailed |  | Count/Second | Average | TopicName | Доступна |
-| NumberOfNotificationsFilteredOut-InvalidAttributes | The number of messages rejected by subscription filter policies because the message attributes are invalid | Count | Average | Application, Region |  |
+| NumberOfNotificationsFilteredOut-InvalidAttributes | Количество сообщений, отклонённых политиками фильтрации подписки из-за недопустимых атрибутов сообщения | Count | Average | Application, Region |  |
 | NumberOfNotificationsFilteredOut-InvalidAttributes |  | Count | Average | Country, Region, SMSType |  |
 | NumberOfNotificationsFilteredOut-InvalidAttributes |  | Count | Average | Platform, Region |  |
 | NumberOfNotificationsFilteredOut-InvalidAttributes |  | Count | Average | TopicName |  |
@@ -848,7 +848,7 @@ Dynatrace собирает метрики для множества предва
 | NumberOfNotificationsFilteredOut-InvalidAttributes |  | Count | Sum | Country, Region, SMSType |  |
 | NumberOfNotificationsFilteredOut-InvalidAttributes |  | Count | Sum | Platform, Region |  |
 | NumberOfNotificationsFilteredOut-InvalidAttributes |  | Count | Sum | TopicName |  |
-| NumberOfNotificationsFilteredOut-NoMessageAttributes | The number of messages rejected by subscription filter policies because the messages have no attributes | Count | Average | Application, Region |  |
+| NumberOfNotificationsFilteredOut-NoMessageAttributes | Количество сообщений, отклонённых политиками фильтрации подписки из-за отсутствия атрибутов у сообщений | Count | Average | Application, Region |  |
 | NumberOfNotificationsFilteredOut-NoMessageAttributes |  | Count | Average | Country, Region, SMSType |  |
 | NumberOfNotificationsFilteredOut-NoMessageAttributes |  | Count | Average | Platform, Region |  |
 | NumberOfNotificationsFilteredOut-NoMessageAttributes |  | Count | Average | TopicName |  |
@@ -856,7 +856,7 @@ Dynatrace собирает метрики для множества предва
 | NumberOfNotificationsFilteredOut-NoMessageAttributes |  | Count | Sum | Country, Region, SMSType |  |
 | NumberOfNotificationsFilteredOut-NoMessageAttributes |  | Count | Sum | Platform, Region |  |
 | NumberOfNotificationsFilteredOut-NoMessageAttributes |  | Count | Sum | TopicName |  |
-| NumberOfNotificationsFilteredOut | The number of messages rejected by subscription filter policies | Count | Average | Application, Region |  |
+| NumberOfNotificationsFilteredOut | Количество сообщений, отклонённых политиками фильтрации подписки | Count | Average | Application, Region |  |
 | NumberOfNotificationsFilteredOut |  | Count | Average | Country, Region, SMSType |  |
 | NumberOfNotificationsFilteredOut |  | Count | Average | Platform, Region |  |
 | NumberOfNotificationsFilteredOut |  | Count | Average | TopicName |  |
@@ -864,11 +864,11 @@ Dynatrace собирает метрики для множества предва
 | NumberOfNotificationsFilteredOut |  | Count | Sum | Country, Region, SMSType |  |
 | NumberOfNotificationsFilteredOut |  | Count | Sum | Platform, Region |  |
 | NumberOfNotificationsFilteredOut |  | Count | Sum | TopicName |  |
-| PublishSize | The size of published messages | Bytes | Multi | Application, Region |  |
+| PublishSize | Размер опубликованных сообщений | Bytes | Multi | Application, Region |  |
 | PublishSize |  | Bytes | Multi | Country, Region, SMSType |  |
 | PublishSize |  | Bytes | Multi | Platform, Region |  |
 | PublishSize |  | Bytes | Multi | TopicName |  |
-| SMSMonthToDateSpentUSD | The charges accrued since the start of the current calendar month for sending SMS messages | Count | Maximum | Application, Region |  |
+| SMSMonthToDateSpentUSD | Расходы, накопленные с начала текущего календарного месяца за отправку SMS-сообщений | Count | Maximum | Application, Region |  |
 | SMSMonthToDateSpentUSD |  | Count | Maximum | Country, Region, SMSType |  |
 | SMSMonthToDateSpentUSD |  | Count | Maximum | Platform, Region |  |
 | SMSMonthToDateSpentUSD |  | Count | Maximum | Region [1](#fn-1-1-def) |  |
@@ -877,11 +877,11 @@ Dynatrace собирает метрики для множества предва
 | SMSSuccessRate |  | Count | Average | Country, Region, SMSType |  |
 | SMSSuccessRate |  | Count | Average | Platform, Region |  |
 | SMSSuccessRate |  | Count | Average | TopicName |  |
-| SMSSuccessRate | The rate of successful SMS message deliveries | Count | Sum | Application, Region |  |
+| SMSSuccessRate | Доля успешных доставок SMS-сообщений | Count | Sum | Application, Region |  |
 | SMSSuccessRate |  | Count | Sum | Country, Region, SMSType |  |
 | SMSSuccessRate |  | Count | Sum | Platform, Region |  |
 | SMSSuccessRate |  | Count | Sum | TopicName |  |
 
 1
 
-When CloudWatch displays your `SMSMonthToDateSpentUSD` metric as `Metrics with no dimensions`, enable the metric with a single `Region` dimension.
+Когда CloudWatch отображает вашу метрику `SMSMonthToDateSpentUSD` как `Metrics with no dimensions`, включите метрику с одним измерением `Region`.

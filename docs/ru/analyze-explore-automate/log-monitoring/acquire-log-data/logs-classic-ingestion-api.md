@@ -1,33 +1,33 @@
 ---
-title: Log ingestion API (Logs Classic)
+title: Приём журналов API (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api
 scraped: 2026-03-06T21:16:13.984280
 ---
 
-# Log ingestion API (Logs Classic)
+# Приём журналов API (Logs Classic)
 
-# Log ingestion API (Logs Classic)
+# Приём журналов API (Logs Classic)
 
 * Classic
-* Overview
-* 3-min read
-* Updated on Jan 30, 2026
+* Обзор
+* 3-минутное чтение
+* Обновлено 30 января 2026 г.
 
-Log Monitoring Classic
+Мониторинг журналов Classic
 
-Для новейшей версии Dynatrace см. [Log ingestion API](../../logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Передавайте данные логов в Dynatrace через API и позвольте Dynatrace преобразовывать их в понятные сообщения логов.").
+Для самой новой версии Dynatrace см. [Приём журналов API](../../logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Прямая передача данных журнала в Dynatrace с помощью API и преобразование их в осмысленные сообщения журнала.").
 
-Dynatrace автоматически собирает данные логов и событий из широкого спектра технологий. С помощью Log ingestion API можно передавать записи логов в систему, а Dynatrace будет преобразовывать поток в понятные сообщения логов.
+Dynatrace автоматически собирает данные журналов и событий из широкого спектра технологий. С помощью приёма журналов API вы можете передавать записи журнала в систему и преобразовывать поток в осмысленные сообщения журнала.
 
-Log ingestion API позволяет передавать записи логов в систему. Он доступен через [Ingest JSON and TXT logs (Logs Classic)](logs-classic-ingestion-api/log-classic-ingest-json-txt-logs.md "Узнайте, как обрабатываются JSON и TXT логи.") или через [Ingest OTLP logs](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.").
+Приём журналов API позволяет передавать записи журнала в систему. Он доступен через [Приём JSON и журналов TXT (Logs Classic)](logs-classic-ingestion-api/log-classic-ingest-json-txt-logs.md "Понимание того, как обрабатываются журналы JSON и TXT.") или через [Приём журналов OTLP](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Изучение того, как Dynatrace принимает записи журнала OpenTelemetry и какие ограничения применяются.").
 
-* Для Dynatrace SaaS конечная точка Log ingestion доступна в вашей среде.
+* Для Dynatrace SaaS конечная точка приёма журналов доступна в вашей среде.
 
-* Если в качестве конечной точки в локальной среде выбран Environment ActiveGate, установите экземпляр ActiveGate:
+* Если Environment ActiveGate является вашим выбором для конечной точки в вашей локальной среде, установите экземпляр ActiveGate:
 
-В Dynatrace Hub выберите **ActiveGate** > **Set up**.
+В Dynatrace Hub выберите **ActiveGate** > **Настройка**.
 
-Log ingestion API v2 автоматически включается на ActiveGate. ActiveGate отвечает за обслуживание конечной точки, сбор данных и их пакетную пересылку в Dynatrace.
+Приём журналов API v2 автоматически включен на ActiveGate. ActiveGate отвечает за обслуживание конечной точки, сбор данных и передачу их в Dynatrace пакетами.
 
 * Конечные точки SaaS:
 
@@ -39,33 +39,33 @@ Log ingestion API v2 автоматически включается на Active
   + `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/logs/ingest`
   + `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/otlp/v1/logs`
 
-## Очередь данных логов на Environment ActiveGate
+## Очередь данных журнала на Environment ActiveGate
 
-Свойства очереди данных логов можно настроить, отредактировав файл `custom.properties` (см. [Свойства конфигурации и параметры ActiveGate](../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md#generic-ingest "Узнайте, какие свойства ActiveGate можно настроить в соответствии с вашими потребностями и требованиями.")) на вашем ActiveGate, задав следующие значения:
+Вы можете настроить свойства очереди данных журнала, редактируя файл `custom.properties` (см. [Свойства конфигурации и параметры ActiveGate](../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md#generic-ingest "Изучение свойств ActiveGate, которые можно настроить в соответствии с вашими потребностями и требованиями.")) на вашем ActiveGate, чтобы задать следующие значения:
 
 ```
 [generic_ingest]
 
 
 
-#disk_queue_path=<custom_path> # defaults to temp folder
+#disk_queue_path=<custom_path> # по умолчанию временная папка
 
 
 
-#disk_queue_max_size_mb=<limit> # defaults to 300 MB
+#disk_queue_max_size_mb=<limit> # по умолчанию 300 МБ
 ```
 
-503 Usable space limit reached
+503 Достигнут предел использования пространства
 
-API приёма данных логов возвращает ошибку `503 Usable space limit reached`, когда принятые данные логов превышают настроенный размер очереди. Как правило, это временная ситуация, возникающая только при пиковых нагрузках. Если эта ошибка не исчезает, увеличьте значение `disk_queue_max_size_mb` в `custom.properties`, чтобы обеспечить возможность постановки в очередь пиков приёма логов.
+Приём данных журнала API возвращает ошибку `503 Достигнут предел использования пространства`, когда принятые данные журнала превышают настроенный размер очереди. Обычно это временная ситуация, которая возникает только во время пиков. Если эта ошибка сохраняется, увеличьте значение `disk_queue_max_size_mb` в `custom.properties`, чтобы разрешить очереди приёма журналов во время пиков.
 
 ## Пример
 
-В данном примере API-запрос принимает данные логов, которые создадут событие лога с заданными атрибутами `content`, `status`, `service.name` и `service.namespace`.
+В этом примере запрос API принимает данные журнала, которые создадут событие журнала с определёнными атрибутами журнала `content`, `status`, `service.name` и `service.namespace`.
 
-API-токен передаётся в заголовке Authorization.
+Токен API передается в заголовке Authorization.
 
-Ответ содержит код `204`.
+Ответ содержит код ответа `204`.
 
 #### Curl
 
@@ -94,11 +94,11 @@ https://environment.activegate.domain.com:9999/e/abc123a/api/v2/logs/ingest \
 
 
 
-"content": "Exception: Custom error log sent via Log ingestion API",
+"content": "Исключение: пользовательский журнал ошибок, переданный через приём журналов API",
 
 
 
-"status": "error",
+"status": "ошибка",
 
 
 
@@ -123,10 +123,10 @@ https://environment.activegate.domain.com:9999/e/abc123a/api/v2/logs/ingest \
 https://environment.activegate.domain.com:9999/e/abc123a/api/v2/logs/ingest
 ```
 
-#### Содержимое ответа
+#### Содержание ответа
 
 ```
-Success
+Успех
 ```
 
 #### Код ответа
@@ -135,11 +135,11 @@ Success
 
 ## Устранение неполадок
 
-Посетите Dynatrace Community для получения руководств по устранению неполадок, а также см. [Устранение неполадок Log Monitoring (Logs Classic)](../lmc-troubleshooting.md "Исправляйте проблемы, связанные с настройкой и конфигурацией Log Monitoring Classic.").
+Посетите сообщество Dynatrace, чтобы получить руководства по устранению неполадок, а также см. [Устранение неполадок мониторинга журналов (Logs Classic)](../lmc-troubleshooting.md "Исправление проблем, связанных с настройкой и конфигурацией мониторинга журналов Classic.").
 
-* [Troubleshooting log Ingestion via API - POST ingest logs](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
+* [Устранение неполадок приёма журналов через API - POST принять журналы](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
 
 ## Связанные темы
 
-* [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Отправляйте пользовательские логи в Dynatrace через Log Monitoring API v2.")
-* [Ingest OTLP logs](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.")
+* [Мониторинг журналов API v2 - POST принять журналы](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Передача пользовательских журналов в Dynatrace через мониторинг журналов API v2.")
+* [Приём журналов OTLP](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Изучение того, как Dynatrace принимает записи журнала OpenTelemetry и какие ограничения применяются.")

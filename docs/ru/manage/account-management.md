@@ -1,5 +1,5 @@
 ---
-title: Account Management
+title: Управление аккаунтом
 source: https://www.dynatrace.com/docs/manage/account-management
 scraped: 2026-03-05T21:27:53.146235
 ---

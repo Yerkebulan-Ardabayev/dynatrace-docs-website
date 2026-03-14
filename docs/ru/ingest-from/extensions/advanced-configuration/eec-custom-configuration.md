@@ -1,5 +1,5 @@
 ---
-title: Extension Execution Controller custom configuration
+title: Пользовательская конфигурация Extension Execution Controller
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/eec-custom-configuration
 scraped: 2026-03-06T21:29:48.202555
 ---

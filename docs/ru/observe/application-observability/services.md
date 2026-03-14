@@ -1,5 +1,5 @@
 ---
-title: Services
+title: Сервисы
 source: https://www.dynatrace.com/docs/observe/application-observability/services
 scraped: 2026-03-06T21:10:36.219731
 ---

@@ -11,23 +11,23 @@ scraped: 2026-03-05T21:33:30.502530
 * Последняя версия Dynatrace
 * Практическое руководство
 * 3 мин. чтения
-* Опубликовано 17 января 2022 г.
+* Опубликовано 17 янв. 2022 г.
 
-Интеграция Dynatrace с Google Cloud использует данные, собранные из Google Operation API, для постоянного мониторинга работоспособности и производительности сервисов Google Cloud. Объединяя все важные данные на дашбордах, интеграция также обеспечивает оповещения и отслеживание событий.
+Интеграция Dynatrace с Google Cloud использует данные, собранные из Google Operations API, для непрерывного мониторинга работоспособности и производительности сервисов Google Cloud. Помимо объединения всех релевантных данных в дашборды, она также обеспечивает оповещения и отслеживание событий.
 
 ## Предварительные требования
 
-[Настройка интеграции](../gcp-guide/deploy-k8.md "Настройка мониторинга журналов и метрик для сервисов GCP на новом кластере GKE Autopilot.")
+[Настройка интеграции](../gcp-guide/deploy-k8.md "Настройка мониторинга логов и метрик для сервисов GCP в новом кластере GKE Autopilot.")
 
-## Добавление сервисов и наборов функций (необязательно)
+## Добавление сервисов и наборов функций Необязательно
 
-После интеграции Dynatrace автоматически начинает мониторинг ряда предустановленных сервисов Google Cloud и наборов функций (метрик). Помимо них, можно добавить дополнительные сервисы или наборы функций для мониторинга. Подробнее см. [Добавление или удаление сервисов](../gcp-guide/deploy-k8.md#manage "Настройка мониторинга журналов и метрик для сервисов GCP на новом кластере GKE Autopilot.").
+После интеграции Dynatrace автоматически начинает мониторинг ряда предустановленных сервисов Google Cloud и наборов функций (метрик). Помимо них, вы можете добавить дополнительные сервисы или наборы функций для мониторинга. Подробнее см. в разделе [Добавление и удаление сервисов](../gcp-guide/deploy-k8.md#manage "Настройка мониторинга логов и метрик для сервисов GCP в новом кластере GKE Autopilot.").
 
-Список наборов функций, доступных для этого сервиса, см. в [таблице метрик](#table).
+Список наборов функций, доступных для данного сервиса, см. в разделе [Таблица метрик](#table).
 
 ## Просмотр метрик
 
-После развёртывания интеграции вы можете просматривать метрики из отслеживаемых сервисов в [браузере метрик](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Просмотр метрик с помощью браузера метрик Dynatrace."), [Data Explorer](../../../../analyze-explore-automate/explorer.md "Запрос метрик и преобразование результатов для получения необходимых данных.") и тайлах дашборда.
+После развёртывания интеграции вы можете просматривать метрики отслеживаемых сервисов в [браузере метрик](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Просмотр метрик с помощью браузера метрик Dynatrace."), [Data Explorer](../../../../analyze-explore-automate/explorer.md "Запрашивайте метрики и преобразуйте результаты для получения нужных данных."), а также в плитках дашбордов.
 
 ## Таблица метрик
 
@@ -35,59 +35,59 @@ scraped: 2026-03-05T21:33:30.502530
 
 | Набор функций | Название | Единица | Идентификатор метрики GCP |
 | --- | --- | --- | --- |
-| pubsub\_snapshot/default\_metrics | Snapshot backlog bytes | Byte | pubsub.googleapis.com/snapshot/backlog\_bytes |
-| pubsub\_snapshot/default\_metrics | Snapshot backlog bytes by region | Byte | pubsub.googleapis.com/snapshot/backlog\_bytes\_by\_region |
-| pubsub\_snapshot/default\_metrics | Snapshot updates | Count | pubsub.googleapis.com/snapshot/config\_updates\_count |
-| pubsub\_snapshot/default\_metrics | Snapshot messages | Count | pubsub.googleapis.com/snapshot/num\_messages |
-| pubsub\_snapshot/default\_metrics | Snapshot messages by region | Count | pubsub.googleapis.com/snapshot/num\_messages\_by\_region |
-| pubsub\_snapshot/default\_metrics | Oldest snapshot message age | Second | pubsub.googleapis.com/snapshot/oldest\_message\_age |
-| pubsub\_snapshot/default\_metrics | Oldest snapshot message age by region | Second | pubsub.googleapis.com/snapshot/oldest\_message\_age\_by\_region |
-| pubsub\_subscription/default\_metrics | Ack message count | Count | pubsub.googleapis.com/subscription/ack\_message\_count |
-| pubsub\_subscription/default\_metrics | Backlog size | Byte | pubsub.googleapis.com/subscription/backlog\_bytes |
-| pubsub\_subscription/default\_metrics | Subscription byte cost | Byte | pubsub.googleapis.com/subscription/byte\_cost |
-| pubsub\_subscription/default\_metrics | Subscription updates | Count | pubsub.googleapis.com/subscription/config\_updates\_count |
-| pubsub\_subscription/default\_metrics | Dead letter message count | Count | pubsub.googleapis.com/subscription/dead\_letter\_message\_count |
-| pubsub\_subscription/default\_metrics | Mod ack deadline message count | Count | pubsub.googleapis.com/subscription/mod\_ack\_deadline\_message\_count |
-| pubsub\_subscription/default\_metrics | ModifyAckDeadline message operations | Count | pubsub.googleapis.com/subscription/mod\_ack\_deadline\_message\_operation\_count |
-| pubsub\_subscription/default\_metrics | ModifyAckDeadline requests | Count | pubsub.googleapis.com/subscription/mod\_ack\_deadline\_request\_count |
-| pubsub\_subscription/default\_metrics | Outstanding push messages | Count | pubsub.googleapis.com/subscription/num\_outstanding\_messages |
-| pubsub\_subscription/default\_metrics | Retained acked messages | Count | pubsub.googleapis.com/subscription/num\_retained\_acked\_messages |
-| pubsub\_subscription/default\_metrics | Retained acked messages by region | Count | pubsub.googleapis.com/subscription/num\_retained\_acked\_messages\_by\_region |
-| pubsub\_subscription/default\_metrics | Unacked messages by region | Count | pubsub.googleapis.com/subscription/num\_unacked\_messages\_by\_region |
-| pubsub\_subscription/default\_metrics | Unacked messages | Count | pubsub.googleapis.com/subscription/num\_undelivered\_messages |
-| pubsub\_subscription/default\_metrics | Oldest retained acked message age | Second | pubsub.googleapis.com/subscription/oldest\_retained\_acked\_message\_age |
-| pubsub\_subscription/default\_metrics | Oldest retained acked message age by region | Second | pubsub.googleapis.com/subscription/oldest\_retained\_acked\_message\_age\_by\_region |
-| pubsub\_subscription/default\_metrics | Oldest unacked message age | Second | pubsub.googleapis.com/subscription/oldest\_unacked\_message\_age |
-| pubsub\_subscription/default\_metrics | Oldest unacked message age by region | Second | pubsub.googleapis.com/subscription/oldest\_unacked\_message\_age\_by\_region |
-| pubsub\_subscription/default\_metrics | Acknowledge message operations | Count | pubsub.googleapis.com/subscription/pull\_ack\_message\_operation\_count |
-| pubsub\_subscription/default\_metrics | Acknowledge requests | Count | pubsub.googleapis.com/subscription/pull\_ack\_request\_count |
-| pubsub\_subscription/default\_metrics | Pull operations | Count | pubsub.googleapis.com/subscription/pull\_message\_operation\_count |
-| pubsub\_subscription/default\_metrics | Pull requests | Count | pubsub.googleapis.com/subscription/pull\_request\_count |
-| pubsub\_subscription/default\_metrics | Push requests | Count | pubsub.googleapis.com/subscription/push\_request\_count |
-| pubsub\_subscription/default\_metrics | Push latency | MicroSecond | pubsub.googleapis.com/subscription/push\_request\_latencies |
-| pubsub\_subscription/default\_metrics | Retained acked bytes | Byte | pubsub.googleapis.com/subscription/retained\_acked\_bytes |
-| pubsub\_subscription/default\_metrics | Retained acked bytes by region | Byte | pubsub.googleapis.com/subscription/retained\_acked\_bytes\_by\_region |
-| pubsub\_subscription/default\_metrics | Seek requests | Count | pubsub.googleapis.com/subscription/seek\_request\_count |
-| pubsub\_subscription/default\_metrics | Sent message count | Count | pubsub.googleapis.com/subscription/sent\_message\_count |
-| pubsub\_subscription/default\_metrics | StreamingPull Acknowledge message operations | Count | pubsub.googleapis.com/subscription/streaming\_pull\_ack\_message\_operation\_count |
-| pubsub\_subscription/default\_metrics | StreamingPull Acknowledge requests | Count | pubsub.googleapis.com/subscription/streaming\_pull\_ack\_request\_count |
-| pubsub\_subscription/default\_metrics | StreamingPull message operations | Count | pubsub.googleapis.com/subscription/streaming\_pull\_message\_operation\_count |
-| pubsub\_subscription/default\_metrics | StreamingPull ModifyAckDeadline message operations | Count | pubsub.googleapis.com/subscription/streaming\_pull\_mod\_ack\_deadline\_message\_operation\_count |
-| pubsub\_subscription/default\_metrics | StreamingPull ModifyAckDeadline requests | Count | pubsub.googleapis.com/subscription/streaming\_pull\_mod\_ack\_deadline\_request\_count |
-| pubsub\_subscription/default\_metrics | StreamingPull responses | Count | pubsub.googleapis.com/subscription/streaming\_pull\_response\_count |
-| pubsub\_subscription/default\_metrics | Unacked bytes by region | Byte | pubsub.googleapis.com/subscription/unacked\_bytes\_by\_region |
-| pubsub\_topic/default\_metrics | Topic byte cost | Byte | pubsub.googleapis.com/topic/byte\_cost |
-| pubsub\_topic/default\_metrics | Topic updates | Count | pubsub.googleapis.com/topic/config\_updates\_count |
-| pubsub\_topic/default\_metrics | Publish message size | Byte | pubsub.googleapis.com/topic/message\_sizes |
-| pubsub\_topic/default\_metrics | Retained acked messages by region | Count | pubsub.googleapis.com/topic/num\_retained\_acked\_messages\_by\_region |
-| pubsub\_topic/default\_metrics | Unacked messages by region | Count | pubsub.googleapis.com/topic/num\_unacked\_messages\_by\_region |
-| pubsub\_topic/default\_metrics | Oldest retained acked message age by region | Second | pubsub.googleapis.com/topic/oldest\_retained\_acked\_message\_age\_by\_region |
-| pubsub\_topic/default\_metrics | Oldest unacked message age by region | Second | pubsub.googleapis.com/topic/oldest\_unacked\_message\_age\_by\_region |
-| pubsub\_topic/default\_metrics | Retained acked bytes by region | Byte | pubsub.googleapis.com/topic/retained\_acked\_bytes\_by\_region |
-| pubsub\_topic/default\_metrics | Publish message operations | Count | pubsub.googleapis.com/topic/send\_message\_operation\_count |
-| pubsub\_topic/default\_metrics | Publish requests | Count | pubsub.googleapis.com/topic/send\_request\_count |
-| pubsub\_topic/default\_metrics | Unacked bytes by region | Byte | pubsub.googleapis.com/topic/unacked\_bytes\_by\_region |
+| pubsub\_snapshot/default\_metrics | Байты бэклога снимка | Byte | pubsub.googleapis.com/snapshot/backlog\_bytes |
+| pubsub\_snapshot/default\_metrics | Байты бэклога снимка по регионам | Byte | pubsub.googleapis.com/snapshot/backlog\_bytes\_by\_region |
+| pubsub\_snapshot/default\_metrics | Обновления снимка | Count | pubsub.googleapis.com/snapshot/config\_updates\_count |
+| pubsub\_snapshot/default\_metrics | Сообщения снимка | Count | pubsub.googleapis.com/snapshot/num\_messages |
+| pubsub\_snapshot/default\_metrics | Сообщения снимка по регионам | Count | pubsub.googleapis.com/snapshot/num\_messages\_by\_region |
+| pubsub\_snapshot/default\_metrics | Возраст самого старого сообщения снимка | Second | pubsub.googleapis.com/snapshot/oldest\_message\_age |
+| pubsub\_snapshot/default\_metrics | Возраст самого старого сообщения снимка по регионам | Second | pubsub.googleapis.com/snapshot/oldest\_message\_age\_by\_region |
+| pubsub\_subscription/default\_metrics | Количество подтверждённых сообщений | Count | pubsub.googleapis.com/subscription/ack\_message\_count |
+| pubsub\_subscription/default\_metrics | Размер бэклога | Byte | pubsub.googleapis.com/subscription/backlog\_bytes |
+| pubsub\_subscription/default\_metrics | Стоимость подписки в байтах | Byte | pubsub.googleapis.com/subscription/byte\_cost |
+| pubsub\_subscription/default\_metrics | Обновления подписки | Count | pubsub.googleapis.com/subscription/config\_updates\_count |
+| pubsub\_subscription/default\_metrics | Количество сообщений dead letter | Count | pubsub.googleapis.com/subscription/dead\_letter\_message\_count |
+| pubsub\_subscription/default\_metrics | Количество сообщений Mod ack deadline | Count | pubsub.googleapis.com/subscription/mod\_ack\_deadline\_message\_count |
+| pubsub\_subscription/default\_metrics | Операции ModifyAckDeadline | Count | pubsub.googleapis.com/subscription/mod\_ack\_deadline\_message\_operation\_count |
+| pubsub\_subscription/default\_metrics | Запросы ModifyAckDeadline | Count | pubsub.googleapis.com/subscription/mod\_ack\_deadline\_request\_count |
+| pubsub\_subscription/default\_metrics | Ожидающие push-сообщения | Count | pubsub.googleapis.com/subscription/num\_outstanding\_messages |
+| pubsub\_subscription/default\_metrics | Удержанные подтверждённые сообщения | Count | pubsub.googleapis.com/subscription/num\_retained\_acked\_messages |
+| pubsub\_subscription/default\_metrics | Удержанные подтверждённые сообщения по регионам | Count | pubsub.googleapis.com/subscription/num\_retained\_acked\_messages\_by\_region |
+| pubsub\_subscription/default\_metrics | Неподтверждённые сообщения по регионам | Count | pubsub.googleapis.com/subscription/num\_unacked\_messages\_by\_region |
+| pubsub\_subscription/default\_metrics | Неподтверждённые сообщения | Count | pubsub.googleapis.com/subscription/num\_undelivered\_messages |
+| pubsub\_subscription/default\_metrics | Возраст самого старого удержанного подтверждённого сообщения | Second | pubsub.googleapis.com/subscription/oldest\_retained\_acked\_message\_age |
+| pubsub\_subscription/default\_metrics | Возраст самого старого удержанного подтверждённого сообщения по регионам | Second | pubsub.googleapis.com/subscription/oldest\_retained\_acked\_message\_age\_by\_region |
+| pubsub\_subscription/default\_metrics | Возраст самого старого неподтверждённого сообщения | Second | pubsub.googleapis.com/subscription/oldest\_unacked\_message\_age |
+| pubsub\_subscription/default\_metrics | Возраст самого старого неподтверждённого сообщения по регионам | Second | pubsub.googleapis.com/subscription/oldest\_unacked\_message\_age\_by\_region |
+| pubsub\_subscription/default\_metrics | Операции подтверждения сообщений | Count | pubsub.googleapis.com/subscription/pull\_ack\_message\_operation\_count |
+| pubsub\_subscription/default\_metrics | Запросы подтверждения | Count | pubsub.googleapis.com/subscription/pull\_ack\_request\_count |
+| pubsub\_subscription/default\_metrics | Операции Pull | Count | pubsub.googleapis.com/subscription/pull\_message\_operation\_count |
+| pubsub\_subscription/default\_metrics | Запросы Pull | Count | pubsub.googleapis.com/subscription/pull\_request\_count |
+| pubsub\_subscription/default\_metrics | Запросы Push | Count | pubsub.googleapis.com/subscription/push\_request\_count |
+| pubsub\_subscription/default\_metrics | Задержка Push | MicroSecond | pubsub.googleapis.com/subscription/push\_request\_latencies |
+| pubsub\_subscription/default\_metrics | Удержанные подтверждённые байты | Byte | pubsub.googleapis.com/subscription/retained\_acked\_bytes |
+| pubsub\_subscription/default\_metrics | Удержанные подтверждённые байты по регионам | Byte | pubsub.googleapis.com/subscription/retained\_acked\_bytes\_by\_region |
+| pubsub\_subscription/default\_metrics | Запросы Seek | Count | pubsub.googleapis.com/subscription/seek\_request\_count |
+| pubsub\_subscription/default\_metrics | Количество отправленных сообщений | Count | pubsub.googleapis.com/subscription/sent\_message\_count |
+| pubsub\_subscription/default\_metrics | Операции подтверждения StreamingPull | Count | pubsub.googleapis.com/subscription/streaming\_pull\_ack\_message\_operation\_count |
+| pubsub\_subscription/default\_metrics | Запросы подтверждения StreamingPull | Count | pubsub.googleapis.com/subscription/streaming\_pull\_ack\_request\_count |
+| pubsub\_subscription/default\_metrics | Операции сообщений StreamingPull | Count | pubsub.googleapis.com/subscription/streaming\_pull\_message\_operation\_count |
+| pubsub\_subscription/default\_metrics | Операции ModifyAckDeadline StreamingPull | Count | pubsub.googleapis.com/subscription/streaming\_pull\_mod\_ack\_deadline\_message\_operation\_count |
+| pubsub\_subscription/default\_metrics | Запросы ModifyAckDeadline StreamingPull | Count | pubsub.googleapis.com/subscription/streaming\_pull\_mod\_ack\_deadline\_request\_count |
+| pubsub\_subscription/default\_metrics | Ответы StreamingPull | Count | pubsub.googleapis.com/subscription/streaming\_pull\_response\_count |
+| pubsub\_subscription/default\_metrics | Неподтверждённые байты по регионам | Byte | pubsub.googleapis.com/subscription/unacked\_bytes\_by\_region |
+| pubsub\_topic/default\_metrics | Стоимость топика в байтах | Byte | pubsub.googleapis.com/topic/byte\_cost |
+| pubsub\_topic/default\_metrics | Обновления топика | Count | pubsub.googleapis.com/topic/config\_updates\_count |
+| pubsub\_topic/default\_metrics | Размер публикуемого сообщения | Byte | pubsub.googleapis.com/topic/message\_sizes |
+| pubsub\_topic/default\_metrics | Удержанные подтверждённые сообщения по регионам | Count | pubsub.googleapis.com/topic/num\_retained\_acked\_messages\_by\_region |
+| pubsub\_topic/default\_metrics | Неподтверждённые сообщения по регионам | Count | pubsub.googleapis.com/topic/num\_unacked\_messages\_by\_region |
+| pubsub\_topic/default\_metrics | Возраст самого старого удержанного подтверждённого сообщения по регионам | Second | pubsub.googleapis.com/topic/oldest\_retained\_acked\_message\_age\_by\_region |
+| pubsub\_topic/default\_metrics | Возраст самого старого неподтверждённого сообщения по регионам | Second | pubsub.googleapis.com/topic/oldest\_unacked\_message\_age\_by\_region |
+| pubsub\_topic/default\_metrics | Удержанные подтверждённые байты по регионам | Byte | pubsub.googleapis.com/topic/retained\_acked\_bytes\_by\_region |
+| pubsub\_topic/default\_metrics | Операции публикации сообщений | Count | pubsub.googleapis.com/topic/send\_message\_operation\_count |
+| pubsub\_topic/default\_metrics | Запросы публикации | Count | pubsub.googleapis.com/topic/send\_request\_count |
+| pubsub\_topic/default\_metrics | Неподтверждённые байты по регионам | Byte | pubsub.googleapis.com/topic/unacked\_bytes\_by\_region |
 
 ## Связанные темы
 
-* [Интеграции Google Cloud](../../gcp-integrations.md "Настройка и конфигурирование Dynatrace в Google Cloud.")
+* [Интеграции Google Cloud](../../gcp-integrations.md "Настройка и конфигурирование Dynatrace на Google Cloud.")

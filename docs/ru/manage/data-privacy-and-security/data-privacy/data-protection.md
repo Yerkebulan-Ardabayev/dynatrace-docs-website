@@ -1,5 +1,5 @@
 ---
-title: Data protection at Dynatrace
+title: Защита данных в Dynatrace
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/data-protection
 scraped: 2026-03-05T21:36:32.071097
 ---

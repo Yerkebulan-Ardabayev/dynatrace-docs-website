@@ -1,5 +1,5 @@
 ---
-title: Policy boundaries
+title: Границы политик
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries
 scraped: 2026-03-05T21:40:49.400146
 ---

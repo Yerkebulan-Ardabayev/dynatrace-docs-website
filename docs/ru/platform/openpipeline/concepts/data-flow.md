@@ -1,5 +1,5 @@
 ---
-title: Data flow in OpenPipeline
+title: Поток данных в OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/data-flow
 scraped: 2026-03-06T21:15:54.139751
 ---

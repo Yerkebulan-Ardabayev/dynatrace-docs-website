@@ -1,5 +1,5 @@
 ---
-title: Extract metrics from spans and distributed traces
+title: Извлечение метрик из span и распределённых трассировок
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans
 scraped: 2026-03-06T21:15:57.758999
 ---

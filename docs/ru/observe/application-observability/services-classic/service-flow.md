@@ -1,5 +1,5 @@
 ---
-title: Service flow
+title: Поток сервиса
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-flow
 scraped: 2026-03-06T21:17:45.732646
 ---

@@ -1,5 +1,5 @@
 ---
-title: Dynatrace Intelligence
+title: Dynatrace Интеллект
 source: https://www.dynatrace.com/docs/dynatrace-intelligence
 scraped: 2026-03-06T21:10:12.940403
 ---

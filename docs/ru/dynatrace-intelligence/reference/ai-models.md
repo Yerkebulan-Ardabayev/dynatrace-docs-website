@@ -1,5 +1,5 @@
 ---
-title: AI models
+title: Модели ИИ
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models
 scraped: 2026-03-06T21:14:53.620919
 ---

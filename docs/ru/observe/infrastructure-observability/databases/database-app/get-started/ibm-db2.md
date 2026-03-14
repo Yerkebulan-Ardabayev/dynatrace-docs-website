@@ -1,5 +1,5 @@
 ---
-title: Monitor IBM DB2 database
+title: Мониторинг базы данных IBM DB2
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/ibm-db2
 scraped: 2026-03-06T21:27:36.645522
 ---

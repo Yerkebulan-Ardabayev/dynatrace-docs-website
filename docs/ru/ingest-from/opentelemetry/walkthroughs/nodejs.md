@@ -1,5 +1,5 @@
 ---
-title: Instrument your JavaScript application on Node.js with OpenTelemetry
+title: Инструментирование приложения JavaScript на Node.js с помощью OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/nodejs
 scraped: 2026-03-06T21:30:37.921494
 ---

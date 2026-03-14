@@ -1,5 +1,5 @@
 ---
-title: Configure the beacon origin allowlist
+title: Настройка списка разрешённых источников маяка
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/configure-beacon-origin-allowlist
 scraped: 2026-03-06T21:29:05.716000
 ---

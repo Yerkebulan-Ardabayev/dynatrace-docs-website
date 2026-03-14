@@ -1,90 +1,90 @@
 ---
-title: Predict and autoscale Kubernetes workloads
+title: Прогнозирование и автомасштабирование рабочих нагрузок Kubernetes
 source: https://www.dynatrace.com/docs/deliver/self-service-kubernetes-use-case
 scraped: 2026-03-06T21:35:42.123501
 ---
 
-# Predict and autoscale Kubernetes workloads
+# Прогнозирование и автомасштабирование рабочих нагрузок Kubernetes
 
-# Predict and autoscale Kubernetes workloads
+# Прогнозирование и автомасштабирование рабочих нагрузок Kubernetes
 
-* Latest Dynatrace
-* Tutorial
-* 25-min read
-* Updated on Jan 28, 2026
+* Последняя версия Dynatrace
+* Руководство
+* Чтение: 25 минут
+* Обновлено 28 января 2026 г.
 
-Are you struggling to keep up with the demands of dynamic Kubernetes environments? Manual scaling is not only time-consuming and reactive, but also prone to errors.
+Испытываете трудности с поддержанием динамических сред Kubernetes? Ручное масштабирование не только трудоёмко и реактивно, но и подвержено ошибкам.
 
-You can harness the power of Dynatrace Automation and Dynatrace Intelligence to predict resource bottlenecks and automatically open pull requests to scale applications. This proactive approach minimizes downtime, helps optimize resource utilization, and ensures your applications perform at their best.
+Вы можете использовать возможности Dynatrace Automation и Dynatrace Intelligence для прогнозирования узких мест в ресурсах и автоматического создания запросов на слияние (pull request) для масштабирования приложений. Этот проактивный подход минимизирует простои, помогает оптимизировать использование ресурсов и обеспечивает наилучшую производительность ваших приложений.
 
-You achieve this by combining predictive AI to forecast resource limitations with generative AI to suggest modifying your Kubernetes manifests on Git (GitHub and GitLab) by creating pull requests for scaling adjustments.
+Это достигается путём сочетания предсказательного ИИ для прогнозирования ограничений ресурсов с генеративным ИИ для предложений по изменению манифестов Kubernetes в Git (GitHub и GitLab) путём создания pull request для корректировки масштабирования.
 
-The following animation shows the end-to-end workflow. As an engineer, you can enable a deployment for predictive scaling recommendations through annotations. Workflows will then predict resource consumption for those enabled deployments and create a pull request to support the engineer in making the proper adjustments. Using a combination of Dynatrace Intelligence and Workflows is true AI-assisted predictive scaling, as code integrates well into the Git workflow.
+Следующая анимация демонстрирует сквозной рабочий процесс. Как инженер, вы можете включить для развёртывания рекомендации по предиктивному масштабированию через аннотации. Workflows будут прогнозировать потребление ресурсов для включённых развёртываний и создавать pull request для помощи инженеру в выполнении необходимых корректировок. Использование комбинации Dynatrace Intelligence и Workflows — это настоящее ИИ-ассистируемое предиктивное масштабирование, которое хорошо интегрируется в рабочий процесс Git.
 
-![Enable a deployment for predictive scaling recommendations through annotations.](https://dt-cdn.net/images/k8sscaling-obslab-overview-animated-7ef05a83f5.gif)
+![Включение развёртывания для рекомендаций предиктивного масштабирования через аннотации.](https://dt-cdn.net/images/k8sscaling-obslab-overview-animated-7ef05a83f5.gif)
 
-## What will you learn
+## Чему вы научитесь
 
-The goal of this tutorial is to teach you how to annotate your deployments and build two interconnecting workflows that will identify Kubernetes workloads that should be scaled. It will also create pull requests, including the suggested new limits, as a self-service for the engineering teams.
+Цель данного руководства — научить вас аннотировать развёртывания и создавать два взаимосвязанных workflow, которые будут выявлять рабочие нагрузки Kubernetes, требующие масштабирования. Также будут создаваться pull request с предлагаемыми новыми лимитами в режиме самообслуживания для инженерных команд.
 
-In this tutorial, you'll learn how to
+В этом руководстве вы узнаете, как
 
-* Annotate your Kubernetes Deployments
-* Create two Dynatrace workflows: one for prediction, one for opening a pull request
+* Аннотировать развёртывания Kubernetes
+* Создать два Dynatrace workflow: один для прогнозирования, другой для открытия pull request
 
-Alternatively, follow our [Observability Lab: Predictive Auto-Scaling for Kubernetes workloadsï»¿](https://dt-url.net/obslab-predictive-kubernetes-scaling). This lab has a GitHub Codespaces configuration that allows you to fully automate this use case.
+В качестве альтернативы следуйте нашей [Лаборатории наблюдаемости: Предиктивное автомасштабирование рабочих нагрузок Kubernetes](https://dt-url.net/obslab-predictive-kubernetes-scaling). В этой лаборатории используется конфигурация GitHub Codespaces, позволяющая полностью автоматизировать данный сценарий.
 
-## Before you begin
+## Прежде чем начать
 
-### Prerequisites
+### Предварительные требования
 
-* Installed [AI in Workflows - Predictive maintenance of cloud disks](../dynatrace-intelligence/use-cases/davis-for-workflows.md "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.").
-* [Set up Kubernetes Connector](../analyze-explore-automate/workflows/actions/kubernetes-automation/kubernetes-workflows-setup.md "Learn how to set up Kubernetes Connector").
-* Access to your GitHub account, a GitHub Repository, and a GitHub Personal Access Token (PAT).
-* Access to your Kubernetes environment that is monitored with Dynatrace.
-* A Kubernetes Deployment that you can annotate to enable predictive scaling pull requests.
-* A Dynatrace Platform API token to execute Dynatrace Intelligence.
-* [Set up GitHub Connector](../analyze-explore-automate/workflows/actions/github/github-workflows-setup.md "Learn how to set up GitHub Connector.")
+* Установлено [ИИ в Workflows — Предиктивное обслуживание облачных дисков](../dynatrace-intelligence/use-cases/davis-for-workflows.md "Автоматизация предиктивного обслуживания облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.").
+* [Настроен Kubernetes Connector](../analyze-explore-automate/workflows/actions/kubernetes-automation/kubernetes-workflows-setup.md "Узнайте, как настроить Kubernetes Connector").
+* Доступ к вашей учётной записи GitHub, репозиторию GitHub и персональному токену доступа GitHub (PAT).
+* Доступ к вашей среде Kubernetes, которая мониторируется с помощью Dynatrace.
+* Развёртывание Kubernetes, которое можно аннотировать для включения pull request предиктивного масштабирования.
+* Токен API платформы Dynatrace для выполнения Dynatrace Intelligence.
+* [Настроен GitHub Connector](../analyze-explore-automate/workflows/actions/github/github-workflows-setup.md "Узнайте, как настроить GitHub Connector.")
 
-### Annotate your Kubernetes Deployments
+### Аннотирование развёртываний Kubernetes
 
-The workflows that provide the predictive scaling suggestions will only operate on Kubernetes Deployments annotated with use-caseâspecific metadata. You need to add the following annotations to your Deployment.
+Workflow, предоставляющие предложения по предиктивному масштабированию, будут работать только с развёртываниями Kubernetes, аннотированными метаданными, специфичными для данного сценария использования. Вам необходимо добавить следующие аннотации в ваше развёртывание.
 
-For a complete example, see the [horizontal scalingï»¿](https://dt-url.net/d723u3m) and [vertical scalingï»¿](https://dt-url.net/vf43uri) deployment example from the [Observability Lab GitHub Tutorialï»¿](https://dt-url.net/ms63uam).
+Полный пример см. в примерах развёртывания [горизонтального масштабирования](https://dt-url.net/d723u3m) и [вертикального масштабирования](https://dt-url.net/vf43uri) из [руководства на GitHub Observability Lab](https://dt-url.net/ms63uam).
 
-## Steps
+## Шаги
 
-You're going to create two workflows.
+Вам предстоит создать два workflow.
 
-* The first workflow uses Dynatrace Intelligence to predict which Kubernetes workloads need scaling based on predicated memory and CPU utilization.
-* The second workflow uses Dynatrace Intelligence generative AI to create a pull request using the predicted values suggested by Dynatrace Intelligence generative AI to update the manifest files.
+* Первый workflow использует Dynatrace Intelligence для прогнозирования того, каким рабочим нагрузкам Kubernetes требуется масштабирование, исходя из прогнозируемого использования памяти и CPU.
+* Второй workflow использует генеративный ИИ Dynatrace Intelligence для создания pull request с использованием прогнозируемых значений, предложенных генеративным ИИ Dynatrace Intelligence, для обновления файлов манифестов.
 
-While we leverage Dynatrace Intelligence capabilities for prediction and updating manifest, you, as the user, decide whether to commit the suggested changes as part of the pull request.
+Хотя мы используем возможности Dynatrace Intelligence для прогнозирования и обновления манифестов, именно вы, как пользователь, принимаете решение о принятии предложенных изменений в рамках pull request.
 
-[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+[![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Predict Kubernetes resources usage**](#predict-resource-usage)[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Прогнозирование использования ресурсов Kubernetes**](#predict-resource-usage)[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Commit Dynatrace Intelligence prediction workflow**](#commit-prediction)
+**Фиксация workflow прогноза Dynatrace Intelligence**](#commit-prediction)
 
-### Step 1 Predict Kubernetes resources usage workflow
+### Шаг 1: Workflow прогнозирования использования ресурсов Kubernetes
 
-1. On the **Workflows** overview page, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Workflow**.
-2. Select the default title **Untitled Workflow**, and copy and paste the workflow title **Predict Resource Usage**.
-3. In the **Select trigger** section, select the trigger type **On demand**.
+1. На странице обзора **Workflows** выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Workflow**.
+2. Выберите заголовок по умолчанию **Untitled Workflow** и скопируйте и вставьте название workflow **Predict Resource Usage**.
+3. В разделе **Select trigger** выберите тип триггера **On demand**.
 
-   We recommend using a **Time interval trigger** in a real-life scenario.
+   В реальном сценарии рекомендуем использовать **Time interval trigger**.
 
-   ![Use case: Predictive Autoscaling for Kubernetes Workloads - Predict Kubernetes resources usage workflow trigger](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-6-3736-cc5a1c4868.png)
+   ![Сценарий использования: Предиктивное автомасштабирование рабочих нагрузок Kubernetes — триггер workflow прогнозирования использования ресурсов Kubernetes](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-6-3736-cc5a1c4868.png)
 
-   In the first workflow task, you identify the Kubernetes workloads your automation workflow will manage for scaling. While theoretically, you could include all workloads, that might lead to lengthy workflow execution times. Instead, you focus on Kubernetes workloads where the annotation `predictive-kubernetes-scaling.observability-labs.dynatrace.com/enabled` is set to `true`. This annotation is a good best practice, allowing developers to opt-in for predictive scaling recommendations.
-4. Add the `find_workloads_to_scale` task.
+   В первой задаче workflow вы определяете рабочие нагрузки Kubernetes, которыми будет управлять ваш workflow автоматизации для масштабирования. Теоретически можно включить все рабочие нагрузки, но это может привести к длительному времени выполнения workflow. Вместо этого сосредоточьтесь на рабочих нагрузках Kubernetes, где аннотация `predictive-kubernetes-scaling.observability-labs.dynatrace.com/enabled` установлена в `true`. Эта аннотация является хорошей практикой, позволяя разработчикам явно подписаться на рекомендации предиктивного масштабирования.
+4. Добавьте задачу `find_workloads_to_scale`.
 
-   1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the trigger node. This task adjusts the **CPU** and **Memory limit** based on the `HorizontalPodAutoscaler` specification.
-   2. In the **Choose action** section, select the **Execute DQL query** action type. The task details pane on the right shows the task inputs.
-   3. In the **Input** tab, copy the following DQL query and paste it into the **DQL query** box.
+   1. Выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Add task** на узле триггера. Эта задача корректирует **ограничения CPU** и **памяти** на основе спецификации `HorizontalPodAutoscaler`.
+   2. В разделе **Choose action** выберите тип действия **Execute DQL query**. На панели сведений о задаче справа отображаются входные данные задачи.
+   3. На вкладке **Input** скопируйте следующий DQL-запрос и вставьте его в поле **DQL query**.
 
-      Show me code
+      Показать код
 
       ```
       fetch dt.entity.cloud_application, from:now() - 5m, to:now()
@@ -110,23 +110,23 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
       fields: { clusterName = entity.name }
       ```
 
-      Show me a screenshot of task settings
+      Показать скриншот настроек задачи
 
-      ![Use case: Predictive Autoscaling for Kubernetes Workloads - Predict Kubernetes resources usage workflow find workloads task](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-task-find-workloads-to-scale-3720-0b07d668fa.png)
+      ![Сценарий использования: Предиктивное автомасштабирование рабочих нагрузок Kubernetes — задача поиска рабочих нагрузок](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-task-find-workloads-to-scale-3720-0b07d668fa.png)
 
-   Once you identify your target workloads, you'll use Dynatrace Intelligence to forecast their CPU and memory consumption. This will help you determine whether they will likely exceed their defined Kubernetes resource limits.
-5. Add the `predict_resource_usage` task.
+   После определения целевых рабочих нагрузок вы будете использовать Dynatrace Intelligence для прогнозирования их потребления CPU и памяти. Это поможет определить, вероятно ли превышение ими заданных ограничений ресурсов Kubernetes.
+5. Добавьте задачу `predict_resource_usage`.
 
-   1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the task node. This task loops over all workloads that the `predict_resource_usage` task has found and uses Dynatrace Intelligence to predict how much of each resource a pod will need.
-   2. In the **Choose action** section, select the **Analyze data** action type.
-   3. In the **Input** tab, set the **Analyzers** to **Generic forecast analysis**.
+   1. Выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Add task** на узле задачи. Эта задача проходит по всем рабочим нагрузкам, найденным задачей `predict_resource_usage`, и использует Dynatrace Intelligence для прогнозирования объёма каждого ресурса, необходимого поду.
+   2. В разделе **Choose action** выберите тип действия **Analyze data**.
+   3. На вкладке **Input** установите **Analyzers** в значение **Generic forecast analysis**.
 
-      1. Set the **Start time** to **now-1h**. We recommend adjusting the time interval to your user environment in a real-life scenario.
-      2. Set the **End time** to **now**.
-      3. Leave **Resolve data** as it is.
-   4. Copy the following DQL query and paste it into the **Time series data** box.
+      1. Установите **Start time** в **now-1h**. В реальном сценарии рекомендуем скорректировать временной интервал под вашу среду.
+      2. Установите **End time** в **now**.
+      3. Оставьте **Resolve data** без изменений.
+   4. Скопируйте следующий DQL-запрос и вставьте его в поле **Time series data**.
 
-      Show me code
+      Показать код
 
       ```
       timeseries {
@@ -211,25 +211,25 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
       cpuUsage
       ```
-   5. On the **Options** tab for the **Loop task**, set the **Item variable name** to **workload**.
-   6. In the **List** box, copy the following:
+   5. На вкладке **Options** для **Loop task** установите **Item variable name** в значение **workload**.
+   6. В поле **List** скопируйте следующее:
 
       ```
       {{ result("find_workloads_to_scale")["records"] }}
       ```
 
-   Show me a screenshot of task settings
+   Показать скриншот настроек задачи
 
-   ![Use case: Predictive Autoscaling for Kubernetes Workloads - Predict Kubernetes resources usage workflow](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-task-predict-resource-usage-6-3662-c1475e4179.png)
+   ![Сценарий использования: Предиктивное автомасштабирование рабочих нагрузок Kubernetes — workflow прогнозирования использования ресурсов](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-task-predict-resource-usage-6-3662-c1475e4179.png)
 
-   Now that you have the predicted CPU and memory utilization, limits, and time, you can parse and calculate the recommended changes for the workloads. This is done in its task, which iterates through all the predictions and considers whether the workloads are marked for horizontal or vertical scaling.
-6. Add the `parse_predictions` task.
+   Теперь, когда у вас есть прогнозируемые использование CPU и памяти, ограничения и время, вы можете анализировать и вычислять рекомендуемые изменения для рабочих нагрузок. Это выполняется в отдельной задаче, которая перебирает все прогнозы и учитывает, помечены ли рабочие нагрузки для горизонтального или вертикального масштабирования.
+6. Добавьте задачу `parse_predictions`.
 
-   1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the task node. This task gets a list of all prediction results as input and then converts/parses those results into a list for the following workflow tasks.
-   2. In the **Choose action** section, select the **Run JavaScrip** action type.
-   3. On the **Input** tab, copy the following code and paste it into the **Source code** box:
+   1. Выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Add task** на узле задачи. Эта задача получает список всех результатов прогнозирования в качестве входных данных и затем преобразует/анализирует эти результаты в список для следующих задач workflow.
+   2. В разделе **Choose action** выберите тип действия **Run JavaScript**.
+   3. На вкладке **Input** скопируйте следующий код и вставьте его в поле **Source code**:
 
-      Show me code
+      Показать код
 
       ```
       import {execution} from '@dynatrace-sdk/automation-utils';
@@ -563,22 +563,22 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
       }
       ```
 
-      Show me a screenshot of task settings
+      Показать скриншот настроек задачи
 
-      ![Use case: Predictive Autoscaling for Kubernetes Workloads - Predict Kubernetes resources usage workflow - parse prediction task](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-task-parse-predictions-3674-cdc4d95e7e.png)
-7. After running the Predict Kubernetes resource usage workflow, you have a list of workloads with forecasts in a format that's suitable as input for the following workflow. Next, you need to check if the highest predicted value of the resource usage exceeds or stays below (if downscaling is enabled) the configured CPU or **Memory range**. If yes, generate a Davis event that contains a prompt that can be used to adjust the manifest.
+      ![Сценарий использования: Предиктивное автомасштабирование рабочих нагрузок Kubernetes — задача анализа прогнозов](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-task-parse-predictions-3674-cdc4d95e7e.png)
+7. После запуска workflow прогнозирования использования ресурсов Kubernetes у вас будет список рабочих нагрузок с прогнозами в формате, подходящем в качестве входных данных для следующего workflow. Далее необходимо проверить, превышает ли наибольшее прогнозируемое значение использования ресурса (или остаётся ниже него при включённом понижающем масштабировании) настроенный диапазон CPU или **памяти**. Если да, сгенерировать событие Davis, содержащее запрос, который можно использовать для корректировки манифеста.
 
-   This workflow has two branches: vertical and horizontal scaling. In these branches, you evaluate whether scaling is necessary. If required, a Davis event is created for both branches.
+   Этот workflow имеет две ветки: вертикальное и горизонтальное масштабирование. В этих ветках оценивается необходимость масштабирования. При необходимости для обеих ветвей создаётся событие Davis.
 
-   First, you build the vertical scaling branch. It contains a task called `add_vertical_scaling_suggestions`, where you compare the workload limits with the predicted values. Secondly, you build the horizontal scaling branch. This has three tasks, `get_hpa_manifests` , `adjust_limits`, and `add_horizontal_scaling_suggestions`, because you need to get the `maxReplicas` property of the `HorizontalPodAutoscaler` manifest and multiply the pod limit with the maximum replicas to get the absolute upper limit.
+   Сначала создадим ветку вертикального масштабирования. Она содержит задачу `add_vertical_scaling_suggestions`, где сравниваются ограничения рабочей нагрузки с прогнозируемыми значениями. Затем создаём ветку горизонтального масштабирования. Она содержит три задачи: `get_hpa_manifests`, `adjust_limits` и `add_horizontal_scaling_suggestions`, поскольку необходимо получить свойство `maxReplicas` манифеста `HorizontalPodAutoscaler` и умножить ограничение пода на максимальное количество реплик для получения абсолютного верхнего предела.
 
-   Let's build the vertical scaling branch of the workflow first.
+   Давайте сначала создадим ветку вертикального масштабирования workflow.
 
-   1. To build the vertical scaling branch, you add the `add_vertical_scaling_suggestions` task. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the trigger node. This task adds scaling suggestions to each workload that needs vertical scaling and parses the given Dynatrace Intelligence predictions and returns all Kubernetes workloads with their predictions.
-   2. In the **Choose action** section, select the **Run JavaScrip** action type.
-   3. On the **Input** tab, copy the following code and paste it into the **Source code** box:
+   1. Для создания ветки вертикального масштабирования добавьте задачу `add_vertical_scaling_suggestions`. Выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Add task** на узле триггера. Эта задача добавляет предложения по масштабированию для каждой рабочей нагрузки, требующей вертикального масштабирования, и анализирует заданные прогнозы Dynatrace Intelligence, возвращая все рабочие нагрузки Kubernetes с их прогнозами.
+   2. В разделе **Choose action** выберите тип действия **Run JavaScript**.
+   3. На вкладке **Input** скопируйте следующий код и вставьте его в поле **Source code**:
 
-      Show me code
+      Показать код
 
       ```
       import {actionExecution} from "@dynatrace-sdk/automation-utils";
@@ -745,11 +745,11 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-      ? `- â¬ï¸ **${resourceName}**: Scale up to \`${newLimit}\` (predicted to exceed its target range of ${range} at \`${prediction.date.toString()}\`)`
+      ? `- â¬ï¸ **${resourceName}**: Scale up to \`${newLimit}\` (predicted to exceed its target range of ${range} at \`${prediction.date.toString()}\`)`
 
 
 
-      : `- â¬ï¸ **${resourceName}**: Scale down to \`${newLimit}\` (predicted to stay below its target range of ${range} until \`${prediction.predictedUntil.toString()}\`)`
+      : `- â¬ï¸ **${resourceName}**: Scale down to \`${newLimit}\` (predicted to stay below its target range of ${range} until \`${prediction.predictedUntil.toString()}\`)`
 
 
 
@@ -757,7 +757,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-      description = `- â ï¸ **${resourceName}**: Scale up to \`${newLimit}\` (predicted to exceed its ${resourceName} limit at \`${prediction.date.toString()}\`)`
+      description = `- â ï¸ **${resourceName}**: Scale up to \`${newLimit}\` (predicted to exceed its ${resourceName} limit at \`${prediction.date.toString()}\`)`
 
 
 
@@ -867,8 +867,8 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
       }
       ```
-   4. On the **Options** tab for the **Loop task**, set the **Item variable name** to **workload**.
-   5. In the **List** box, copy and paste the following:
+   4. На вкладке **Options** для **Loop task** установите **Item variable name** в значение **workload**.
+   5. В поле **List** скопируйте и вставьте следующее:
 
       ```
       [{% for workload in result("parse_predictions") %}
@@ -890,26 +890,26 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
       {% endfor %}]
       ```
 
-      It loops over all Kubernetes workloads and checks whether the limit will be exceeded. If yes, it adds a `scalingSuggestion` property to the workload that includes the prompt and the description of what will happen.
+      Задача перебирает все рабочие нагрузки Kubernetes и проверяет, будет ли превышено ограничение. Если да, добавляет свойство `scalingSuggestion` к рабочей нагрузке, включающее запрос и описание предстоящих действий.
 
-   Show me a screenshot of task settings
+   Показать скриншот настроек задачи
 
-   ![Use case: Predictive Autoscaling for Kubernetes Workloads - Predict Kubernetes resources usage workflow - add vertical scaling suggestions task](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-task-add-vertical-scaling-suggestions-3648-0d5400892a.png)
-8. Let's build the horizontal scaling branch of our workflow. It consists of three tasks: `get_hpa_manifests`, `adjust_limits`, and `add_horizontal_scaling_suggestions`.
+   ![Сценарий использования: Предиктивное автомасштабирование рабочих нагрузок Kubernetes — задача добавления предложений вертикального масштабирования](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-task-add-vertical-scaling-suggestions-3648-0d5400892a.png)
+8. Создадим ветку горизонтального масштабирования нашего workflow. Она состоит из трёх задач: `get_hpa_manifests`, `adjust_limits` и `add_horizontal_scaling_suggestions`.
 
-   1. To add the `get_hpa_manifests` task, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the task node. This task adjusts the **CPU** and **Memory limit** based on the `HorizontalPodAutoscaler` specification.
-   2. In the **Choose action** section, select the Kubernetes **Get resource** action type.
-   3. On the **Input** tab
+   1. Для добавления задачи `get_hpa_manifests` выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Add task** на узле задачи. Эта задача корректирует **ограничения CPU** и **памяти** на основе спецификации `HorizontalPodAutoscaler`.
+   2. В разделе **Choose action** выберите тип действия Kubernetes **Get resource**.
+   3. На вкладке **Input**
 
-      1. Select the **Connection** you previously created.
-      2. Set the **Namespace** to `{{ _.workload.namespace }}`.
-      3. Set the **Resource Type** to `horizontalpodautoscalers.autoscaling`.
-      4. Set the **Name** to `{{ _.workload.name }}`.
-   4. On the **Options** tab
+      1. Выберите ранее созданное **Connection**.
+      2. Установите **Namespace** в `{{ _.workload.namespace }}`.
+      3. Установите **Resource Type** в `horizontalpodautoscalers.autoscaling`.
+      4. Установите **Name** в `{{ _.workload.name }}`.
+   4. На вкладке **Options**
 
-      1. Toggle the **Loop task**. It loops over all workloads where horizontal scaling is enabled.
-      2. Set the **Item variable name** to `workload`.
-      3. In the **List** box, copy and paste the following:
+      1. Включите **Loop task**. Перебирает все рабочие нагрузки, где включено горизонтальное масштабирование.
+      2. Установите **Item variable name** в `workload`.
+      3. В поле **List** скопируйте и вставьте следующее:
 
          ```
          [{% for workload in result("parse_predictions") %}
@@ -931,16 +931,16 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
          {% endfor %}]
          ```
 
-         Show me a screenshot of task settings
+         Показать скриншот настроек задачи
 
-         ![Use case: Predictive Autoscaling for Kubernetes Workloads - Predict Kubernetes resources usage workflow - get HPA manifests](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-task-get-hpa-manifests-3665-0cf99a219a.png)
-9. Add the `adjust_limits` task.
+         ![Сценарий использования: Предиктивное автомасштабирование рабочих нагрузок Kubernetes — получение манифестов HPA](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-task-get-hpa-manifests-3665-0cf99a219a.png)
+9. Добавьте задачу `adjust_limits`.
 
-   1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the task node. This task adjusts the **CPU** and **Memory limit** based on the `HorizontalPodAutoscaler` specification.
-   2. In the **Choose action** section, select the **Run JavaScript** action type.
-   3. In the **Input** tab, copy the following code and paste it into the **Source code** box:
+   1. Выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Add task** на узле задачи. Эта задача корректирует **ограничения CPU** и **памяти** на основе спецификации `HorizontalPodAutoscaler`.
+   2. В разделе **Choose action** выберите тип действия **Run JavaScript**.
+   3. На вкладке **Input** скопируйте следующий код и вставьте его в поле **Source code**:
 
-      Show me code
+      Показать код
 
       ```
       import {execution, actionExecution} from "@dynatrace-sdk/automation-utils";
@@ -959,7 +959,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-      // Get matching HPA manifest
+      // Получение соответствующего манифеста HPA
 
 
 
@@ -991,7 +991,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-      // Adjust limits
+      // Корректировка ограничений
 
 
 
@@ -1041,8 +1041,8 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
       }
       ```
-   4. On the **Options** tab for the **Loop task**, set the **Item variable name** to **workload**.
-   5. In the **List** box, copy and paste the following:
+   4. На вкладке **Options** для **Loop task** установите **Item variable name** в значение **workload**.
+   5. В поле **List** скопируйте и вставьте следующее:
 
       ```
       [{% for workload in result("parse_predictions") %}
@@ -1064,18 +1064,18 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
       {% endfor %}]
       ```
 
-      It combines all workloads where horizontal scaling is enabled with the HPA (HorizontalPodAutoscaler) manifests from the previous step and then adjusts the limits by multiplying them by the HPA's `maxReplicas`.
+      Объединяет все рабочие нагрузки, где включено горизонтальное масштабирование, с манифестами HPA (HorizontalPodAutoscaler) из предыдущего шага, а затем корректирует ограничения путём умножения на `maxReplicas` HPA.
 
-      Show me a screenshot of task settings
+      Показать скриншот настроек задачи
 
-      ![Use case: Predictive Autoscaling for Kubernetes Workloads - Predict Kubernetes resources usage workflow -adjust limits task](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-task-adjust-limits-3652-8953c9893d.png)
-10. Add the `add_horizontal_scaling_suggestions` task.
+      ![Сценарий использования: Предиктивное автомасштабирование рабочих нагрузок Kubernetes — задача корректировки ограничений](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-task-adjust-limits-3652-8953c9893d.png)
+10. Добавьте задачу `add_horizontal_scaling_suggestions`.
 
-    1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the trigger node. This task adds scaling suggestions to each workload that needs horizontal scaling.
-    2. In the **Choose action** section, select the **Run JavaScript** action type.
-    3. In the **Input** tab, copy the following code and paste it into the **Source code** box:
+    1. Выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Add task** на узле триггера. Эта задача добавляет предложения по масштабированию для каждой рабочей нагрузки, требующей горизонтального масштабирования.
+    2. В разделе **Choose action** выберите тип действия **Run JavaScript**.
+    3. На вкладке **Input** скопируйте следующий код и вставьте его в поле **Source code**:
 
-       Show me code
+       Показать код
 
        ```
        import {actionExecution} from "@dynatrace-sdk/automation-utils";
@@ -1134,7 +1134,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-       // Calculate new max replicas
+       // Вычисление нового максимального количества реплик
 
 
 
@@ -1146,7 +1146,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-       // Get description
+       // Получение описания
 
 
 
@@ -1162,7 +1162,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-       `  - â ï¸ **CPU**: Predicted to exceed its CPU limit of \`${workload.scalingConfig.horizontalScaling.hpa.limits.cpu}m\` ` +
+       `  - â ï¸ **CPU**: Predicted to exceed its CPU limit of \`${workload.scalingConfig.horizontalScaling.hpa.limits.cpu}m\` ` +
 
 
 
@@ -1182,7 +1182,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-       descriptions.push(`  - â¬ï¸ **CPU**: Predicted to exceed its target range of ${range} at \`${prediction.date.toString()}\`)`)
+       descriptions.push(`  - â¬ï¸ **CPU**: Predicted to exceed its target range of ${range} at \`${prediction.date.toString()}\`)`)
 
 
 
@@ -1198,7 +1198,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-       // Calculate new max replicas
+       // Вычисление нового максимального количества реплик
 
 
 
@@ -1210,7 +1210,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-       // Get description
+       // Получение описания
 
 
 
@@ -1246,7 +1246,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-       `  - â ï¸ **Memory**: Predicted to exceed its Memory limit of \`${limit * workload.scalingConfig.horizontalScaling.hpa.maxReplicas}Mi\` ` +
+       `  - â ï¸ **Memory**: Predicted to exceed its Memory limit of \`${limit * workload.scalingConfig.horizontalScaling.hpa.maxReplicas}Mi\` ` +
 
 
 
@@ -1266,7 +1266,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-       descriptions.push(`  - â¬ï¸ **Memory**: Predicted to exceed its target range of ${range} at \`${prediction.date.toString()}\`)`)
+       descriptions.push(`  - â¬ï¸ **Memory**: Predicted to exceed its target range of ${range} at \`${prediction.date.toString()}\`)`)
 
 
 
@@ -1306,7 +1306,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-       `- ${exceedsLimits ? 'â ï¸' : 'â¬ï¸'} **HorizontalPodAutoscaler**: Scale the maximum number of replicas to \`${newMaxReplicas}\`:`,
+       `- ${exceedsLimits ? 'â ï¸' : 'â¬ï¸'} **HorizontalPodAutoscaler**: Scale the maximum number of replicas to \`${newMaxReplicas}\`:`,
 
 
 
@@ -1420,25 +1420,25 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
        }
        ```
-    4. On the **Options** tab for the **Loop task**, set the **Item variable name** to **workload**.
-    5. In the **List** box, copy and paste the following `{{ result("adjust_limits") }}`. It loops over all workloads and checks if the limits will be exceeded. If yes, it adds a `scalingSuggestion` property to the workload including the prompt and the description of what will happen.
+    4. На вкладке **Options** для **Loop task** установите **Item variable name** в значение **workload**.
+    5. В поле **List** скопируйте и вставьте следующее `{{ result("adjust_limits") }}`. Перебирает все рабочие нагрузки и проверяет, будут ли превышены ограничения. Если да, добавляет свойство `scalingSuggestion` к рабочей нагрузке, включающее запрос и описание предстоящих действий.
 
-       Show me a screenshot of task settings
+       Показать скриншот настроек задачи
 
-       ![Use case: Predictive Autoscaling for Kubernetes Workloads - Predict Kubernetes resources usage workflow - add horizontal scaling suggestions task](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-task-add-horizontal-scaling-suggestions-3695-e2eb82d32b.png)
+       ![Сценарий использования: Предиктивное автомасштабирование рабочих нагрузок Kubernetes — задача добавления предложений горизонтального масштабирования](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-task-add-horizontal-scaling-suggestions-3695-e2eb82d32b.png)
 
-       Now, you have a list of workloads with scaling suggestions from vertical and horizontal scaling. You need to get both lists and create events for the workloads that require scaling.
+       Теперь у вас есть список рабочих нагрузок с предложениями по масштабированию от вертикального и горизонтального масштабирования. Необходимо получить оба списка и создать события для рабочих нагрузок, требующих масштабирования.
 
-       Show me a notebook with horizontal and vertical scaling
+       Показать notebook с горизонтальным и вертикальным масштабированием
 
-       ![Use case: Predictive Autoscaling for Kubernetes Workloads - Predict Kubernetes resources usage Notebook with vertical and horizontal scaling](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-notebooks-notebook-e76d37d8-6355-429c-95d8-e91582e2b699-8-2893-70d613b5f6.png)
-11. Add the `create_scaling_events` task.
+       ![Сценарий использования: Предиктивное автомасштабирование рабочих нагрузок Kubernetes — notebook с вертикальным и горизонтальным масштабированием](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-notebooks-notebook-e76d37d8-6355-429c-95d8-e91582e2b699-8-2893-70d613b5f6.png)
+11. Добавьте задачу `create_scaling_events`.
 
-    1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the trigger node. This task triggers a custom Davis event for each workload needing scaling and lets other automations react to it.
-    2. In the **Choose action** section, select the **Run JavaScrip** action type.
-    3. On the **Input** tab, copy the following code and paste it into the **Source code** box:
+    1. Выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Add task** на узле триггера. Эта задача инициирует пользовательское событие Davis для каждой рабочей нагрузки, требующей масштабирования, и позволяет другим автоматизациям реагировать на него.
+    2. В разделе **Choose action** выберите тип действия **Run JavaScript**.
+    3. На вкладке **Input** скопируйте следующий код и вставьте его в поле **Source code**:
 
-       Show me code
+       Показать код
 
        ```
        import {actionExecution} from "@dynatrace-sdk/automation-utils";
@@ -1581,7 +1581,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-       // Workload
+       // Рабочая нагрузка
 
 
 
@@ -1617,7 +1617,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-       // Prediction
+       // Прогноз
 
 
 
@@ -1637,7 +1637,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-       // Target Utilization
+       // Целевое использование
 
 
 
@@ -1665,7 +1665,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-       // Target
+       // Цель
 
 
 
@@ -1695,56 +1695,56 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
        }
        ```
-    4. On the **Options** tab for the **Loop task**, set the **Item variable name** to **workload**.
-    5. In the **List** box, copy and paste the following
+    4. На вкладке **Options** для **Loop task** установите **Item variable name** в значение **workload**.
+    5. В поле **List** скопируйте и вставьте следующее
 
        ```
        {{ result("add_horizontal_scaling_suggestions") + result("add_vertical_scaling_suggestions") }}
        ```
 
-       It loops over all workloads and checks if it has scaling suggestions. If yes, it creates an event with all vital information.
+       Перебирает все рабочие нагрузки и проверяет наличие предложений по масштабированию. Если они есть, создаёт событие со всей необходимой информацией.
 
-       Show me a screenshot of task settings
+       Показать скриншот настроек задачи
 
-       ![Use case: Predictive Autoscaling for Kubernetes Workloads - Predict Kubernetes resources usage workflow - create scaling event](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-task-create-scaling-events-3647-8f46325f52.png)
-12. Select **Save**.
-13. Select **Run**.
+       ![Сценарий использования: Предиктивное автомасштабирование рабочих нагрузок Kubernetes — задача создания событий масштабирования](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-d4923ede-d1d8-4219-9342-5aaaaac89fe4-task-create-scaling-events-3647-8f46325f52.png)
+12. Выберите **Save**.
+13. Выберите **Run**.
 
-    The result of the first workflow is an event that will trigger the Commit Dynatrace Intelligence prediction workflow you're creating in our next step. Decoupling scaling detection and the actual scaling action is good practice.
+    Результатом первого workflow является событие, которое запустит workflow фиксации прогноза Dynatrace Intelligence, создаваемый на следующем шаге. Разделение обнаружения масштабирования и фактического действия масштабирования является хорошей практикой.
 
-    If your workflow doesn't identify any workloads or predictions, double-check your annotations on your workloads. Give it smaller targets so that that prediction target is reached faster. Remember, this is a sample use case, and it's OK to change your settings to see how the workflow behaves.
+    Если ваш workflow не определяет никаких рабочих нагрузок или прогнозов, проверьте аннотации на ваших рабочих нагрузках. Задайте меньшие целевые показатели, чтобы целевой прогноз достигался быстрее. Помните, что это пример сценария использования, и вполне нормально изменять настройки, чтобы увидеть, как ведёт себя workflow.
 
-### Step 2 Commit Dynatrace Intelligence prediction workflow
+### Шаг 2: Workflow фиксации прогноза Dynatrace Intelligence
 
-This workflow is triggered every time the first workflow detects a Kubernetes workload that should be scaled and emits a Davis event.
+Этот workflow запускается каждый раз, когда первый workflow обнаруживает рабочую нагрузку Kubernetes, которую необходимо масштабировать, и генерирует событие Davis.
 
-#### Prerequisite
+#### Предварительное требование
 
-In this workflow a task uses JavaScript to call the GitHub API to create the pull request. While some of the GitHub Connector actions use the connection you set up when you followed the [Set up GitHub Connector](../analyze-explore-automate/workflows/actions/github/github-workflows-setup.md "Learn how to set up GitHub Connector."), your custom steps need to use the same Personal Access Token (PAT) that you query from the credential vault. Another token you need is a Dynatrace Platform API token to interact with the Dynatrace Intelligence agentic and generative AI API.
+В этом workflow задача использует JavaScript для вызова API GitHub для создания pull request. Хотя некоторые действия GitHub Connector используют соединение, настроенное при выполнении [настройки GitHub Connector](../analyze-explore-automate/workflows/actions/github/github-workflows-setup.md "Узнайте, как настроить GitHub Connector."), пользовательские шаги должны использовать тот же персональный токен доступа (PAT), который запрашивается из хранилища учётных данных. Ещё один необходимый токен — это токен API платформы Dynatrace для взаимодействия с агентным и генеративным ИИ API Dynatrace Intelligence.
 
-As a prerequisite, you need to create new credential vault entries in Dynatrace that store the GitHub PAT and the Dynatrace Platform API token. You'll need the credential vault IDs, and you should replace the placeholders in the code snippets with your credential vault ID.
+В качестве предварительного условия необходимо создать новые записи в хранилище учётных данных Dynatrace, хранящие PAT GitHub и токен API платформы Dynatrace. Вам понадобятся идентификаторы хранилища учётных данных; в фрагментах кода следует заменить соответствующие заглушки на ваши идентификаторы хранилища учётных данных.
 
-To create the second workflow
+Для создания второго workflow
 
-1. On the **Workflows** overview page, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Workflow**.
-2. Select the default title **Untitled Workflow**, and copy and paste the workflow title **Commit Dynatrace Intelligence Prediction**.
-3. In the **Select trigger** section
+1. На странице обзора **Workflows** выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Workflow**.
+2. Выберите заголовок по умолчанию **Untitled Workflow** и скопируйте и вставьте название workflow **Commit Dynatrace Intelligence Prediction**.
+3. В разделе **Select trigger**
 
-   1. Select trigger type **Event trigger**.
-   2. In **Filter query**, copy and paste the following
+   1. Выберите тип триггера **Event trigger**.
+   2. В поле **Filter query** скопируйте и вставьте следующее
 
       ```
       kubernetes.predictivescaling.type == "DETECT_SCALING"
       ```
-4. Add the `find_manifest` task.
+4. Добавьте задачу `find_manifest`.
 
-   1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the task node. This task searches for the workload manifest on GitHub.
+   1. Выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Add task** на узле задачи. Эта задача выполняет поиск манифеста рабочей нагрузки на GitHub.
 
-      Replace the `CREDENTIALS_VAULT-ID_FOR_GITLAB_PAT_TOKEN` with your credential vault ID as created in the pre-requisite of this step.
-   2. In the **Choose action** section, select the **Run JavaScript** action type.
-   3. On the **Input** tab, copy the following code and paste it into the **Source code** box:
+      Замените `CREDENTIALS_VAULT-ID_FOR_GITLAB_PAT_TOKEN` на ваш идентификатор хранилища учётных данных, созданный в предварительном требовании этого шага.
+   2. В разделе **Choose action** выберите тип действия **Run JavaScript**.
+   3. На вкладке **Input** скопируйте следующий код и вставьте его в поле **Source code**:
 
-      Show me code
+      Показать код
 
       ```
       import {execution} from '@dynatrace-sdk/automation-utils';
@@ -1779,7 +1779,7 @@ To create the second workflow
 
 
 
-      // Search for file
+      // Поиск файла
 
 
 
@@ -1827,7 +1827,7 @@ To create the second workflow
 
 
 
-      // Get default branch
+      // Получение ветки по умолчанию
 
 
 
@@ -1882,34 +1882,34 @@ To create the second workflow
       }
       ```
 
-      Show me a screenshot of task settings
+      Показать скриншот настроек задачи
 
-      ![Use case: Predictive Autoscaling for Kubernetes Workloads - Commit Davis Prediction workflow - find manifest task](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-1cf51d5c-0235-49da-8e46-66c3b7811573-task-find-manifest-3654-1f73e68fed.png)
-5. Add the `fetch_manifest` task.
+      ![Сценарий использования: Предиктивное автомасштабирование рабочих нагрузок Kubernetes — задача поиска манифеста](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-1cf51d5c-0235-49da-8e46-66c3b7811573-task-find-manifest-3654-1f73e68fed.png)
+5. Добавьте задачу `fetch_manifest`.
 
-   1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the task node. This task gets the content of the manifest.
-   2. In the **Choose action** section, select the GitHub **Get content** action type.
-   3. On the **Input** tab
+   1. Выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Add task** на узле задачи. Эта задача получает содержимое манифеста.
+   2. В разделе **Choose action** выберите тип действия GitHub **Get content**.
+   3. На вкладке **Input**
 
-      1. Set the **Connection**.
-      2. Set the **Owner** to `find.manifest.owner`.
-      3. Set the **Repository** `find.manifest.repository`.
-      4. Set the **File path** `find.manifest.filePath`.
-      5. Set the **Reference** `find.manifest.defaultBranch`.
-   4. On the **Options** tab, toggle the **Adapt timeout** and set **Timeout this task (seconds)** to `900`.
+      1. Установите **Connection**.
+      2. Установите **Owner** в `find.manifest.owner`.
+      3. Установите **Repository** в `find.manifest.repository`.
+      4. Установите **File path** в `find.manifest.filePath`.
+      5. Установите **Reference** в `find.manifest.defaultBranch`.
+   4. На вкладке **Options** включите **Adapt timeout** и установите **Timeout this task (seconds)** в `900`.
 
-      Show me a screenshot of task settings
+      Показать скриншот настроек задачи
 
-      ![Use case: Predictive Autoscaling for Kubernetes Workloads - Commit Davis Prediction workflow - fetch manifest task](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-1cf51d5c-0235-49da-8e46-66c3b7811573-task-fetch-manifest-3657-da62d61d33.png)
-6. Add the `apply_suggestions` task.
+      ![Сценарий использования: Предиктивное автомасштабирование рабочих нагрузок Kubernetes — задача получения манифеста](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-1cf51d5c-0235-49da-8e46-66c3b7811573-task-fetch-manifest-3657-da62d61d33.png)
+6. Добавьте задачу `apply_suggestions`.
 
-   1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the task node. This task uses the Dynatrace Assist to apply all suggestions to the manifest.
+   1. Выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Add task** на узле задачи. Эта задача использует Dynatrace Assist для применения всех предложений к манифесту.
 
-      Replace the `CREDENTIALS_VAULT-ID_FOR_DYNATRACE_COPILOT_TOKEN` with your credential vault ID as created in the pre-requisite of this step.
-   2. In the **Choose action** section, select the **Run JavaScript** action type.
-   3. In the **Input** tab, copy the following code and paste it into the **Source code** box:
+      Замените `CREDENTIALS_VAULT-ID_FOR_DYNATRACE_COPILOT_TOKEN` на ваш идентификатор хранилища учётных данных, созданный в предварительном требовании этого шага.
+   2. В разделе **Choose action** выберите тип действия **Run JavaScript**.
+   3. На вкладке **Input** скопируйте следующий код и вставьте его в поле **Source code**:
 
-      Show me code
+      Показать код
 
       ```
       import {execution} from '@dynatrace-sdk/automation-utils';
@@ -2019,51 +2019,51 @@ To create the second workflow
       }
       ```
 
-      Show me a screenshot of task settings
+      Показать скриншот настроек задачи
 
-      ![Use case: Predictive Autoscaling for Kubernetes Workloads - Commit Davis Prediction workflow -apply suggestions](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-1cf51d5c-0235-49da-8e46-66c3b7811573-task-apply-suggestions-3702-3c3ae50427.png)
-7. Add the `update_manifest` task.
+      ![Сценарий использования: Предиктивное автомасштабирование рабочих нагрузок Kubernetes — задача применения предложений](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-1cf51d5c-0235-49da-8e46-66c3b7811573-task-apply-suggestions-3702-3c3ae50427.png)
+7. Добавьте задачу `update_manifest`.
 
-   1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the task node. This task updates the manifest and pushes it to a new branch on GitHub.
-   2. In the **Choose action** section, select the GitHub **Create or replace file** action type.
-   3. In the **Input** tab
+   1. Выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Add task** на узле задачи. Эта задача обновляет манифест и отправляет его в новую ветку на GitHub.
+   2. В разделе **Choose action** выберите тип действия GitHub **Create or replace file**.
+   3. На вкладке **Input**
 
-      1. Set the **Connection**.
-      2. Set the **Owner** to `find.manifest.owner`.
-      3. Set the **Repository** `find.manifest.repository`.
-      4. Set the **Source branch** to `apply-davis-predictions-{{result("apply_suggestions").time}}`.
-      5. Set the **Target branch** to `find_manifest.defaultBranch`.
-      6. Set the **Pull request title** to `Apply suggestions predicted by Dynatrace Intelligence`.
-      7. Set the **Pull request description** to `apply_suggestions.description`.
+      1. Установите **Connection**.
+      2. Установите **Owner** в `find.manifest.owner`.
+      3. Установите **Repository** в `find.manifest.repository`.
+      4. Установите **Source branch** в `apply-davis-predictions-{{result("apply_suggestions").time}}`.
+      5. Установите **Target branch** в `find_manifest.defaultBranch`.
+      6. Установите **Pull request title** в `Apply suggestions predicted by Dynatrace Intelligence`.
+      7. Установите **Pull request description** в `apply_suggestions.description`.
 
-      Show me a screenshot of task settings
+      Показать скриншот настроек задачи
 
-      ![Use case: Predictive Autoscaling for Kubernetes Workloads - Commit Davis Prediction workflow - update manifest task](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-1cf51d5c-0235-49da-8e46-66c3b7811573-task-update-manifest-3658-77cbd2fdc1.png)
-8. Add the `create_pull_request` task.
+      ![Сценарий использования: Предиктивное автомасштабирование рабочих нагрузок Kubernetes — задача обновления манифеста](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-1cf51d5c-0235-49da-8e46-66c3b7811573-task-update-manifest-3658-77cbd2fdc1.png)
+8. Добавьте задачу `create_pull_request`.
 
-   1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the task node. This task creates a pull request (PR) that includes all suggested changes.
-   2. In the **Choose action** section, select the GitHub **Create pull request** action type.
-   3. In the **Input** tab, set the **Connection**.
+   1. Выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Add task** на узле задачи. Эта задача создаёт pull request (PR), включающий все предложенные изменения.
+   2. В разделе **Choose action** выберите тип действия GitHub **Create pull request**.
+   3. На вкладке **Input** установите **Connection**.
 
-      1. Set the **Owner** to `find.manifest.owner`.
-      2. Toggle **Commit on a new branch**.
-      3. Set the **Source branch** to `find.manifest.defaultBranch`.
-      4. Set the **Branch** to `apply-davis-predictions-{{result("apply_suggestions").time}}`.
-      5. Set the **File path** `find_manifest.filePath`.
-      6. Set the **File content** `apply_suggestions.manifest`.
-      7. Set the **Commit message** to `Apply suggestions predicted by Dynatrace Intelligence: {{ result("apply_suggestions").description }}`.
-   4. In the **Options** tab, toggle the **Adapt timeout** and set **Timeout this task (seconds)** to `900`.
+      1. Установите **Owner** в `find.manifest.owner`.
+      2. Включите **Commit on a new branch**.
+      3. Установите **Source branch** в `find.manifest.defaultBranch`.
+      4. Установите **Branch** в `apply-davis-predictions-{{result("apply_suggestions").time}}`.
+      5. Установите **File path** в `find_manifest.filePath`.
+      6. Установите **File content** в `apply_suggestions.manifest`.
+      7. Установите **Commit message** в `Apply suggestions predicted by Dynatrace Intelligence: {{ result("apply_suggestions").description }}`.
+   4. На вкладке **Options** включите **Adapt timeout** и установите **Timeout this task (seconds)** в `900`.
 
-      Show me a screenshot of task settings
+      Показать скриншот настроек задачи
 
-      ![Use case: Predictive Autoscaling for Kubernetes Workloads - Commit Davis Prediction workflow - create pull request task](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-1cf51d5c-0235-49da-8e46-66c3b7811573-task-create-pull-request-3665-b4e5d835cc.png)
-9. Add the `create_suggestion_applied_event` task.
+      ![Сценарий использования: Предиктивное автомасштабирование рабочих нагрузок Kubernetes — задача создания pull request](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-1cf51d5c-0235-49da-8e46-66c3b7811573-task-create-pull-request-3665-b4e5d835cc.png)
+9. Добавьте задачу `create_suggestion_applied_event`.
 
-   1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the task node. This task triggers an event of type `Custom Info` and lets other components react to it.
-   2. In the **Choose action** section, select the **Run JavaScrip** action type.
-   3. In the **Input** tab, copy the following code and paste it into the **Source code** box:
+   1. Выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Add task** на узле задачи. Эта задача инициирует событие типа `Custom Info` и позволяет другим компонентам реагировать на него.
+   2. В разделе **Choose action** выберите тип действия **Run JavaScript**.
+   3. На вкладке **Input** скопируйте следующий код и вставьте его в поле **Source code**:
 
-      Show me code
+      Показать код
 
       ```
       import {execution} from '@dynatrace-sdk/automation-utils';
@@ -2122,7 +2122,7 @@ To create the second workflow
 
 
 
-      // Workload
+      // Рабочая нагрузка
 
 
 
@@ -2158,7 +2158,7 @@ To create the second workflow
 
 
 
-      // Prediction
+      // Прогноз
 
 
 
@@ -2178,7 +2178,7 @@ To create the second workflow
 
 
 
-      // Target Utilization
+      // Целевое использование
 
 
 
@@ -2206,7 +2206,7 @@ To create the second workflow
 
 
 
-      // Target
+      // Цель
 
 
 
@@ -2249,16 +2249,16 @@ To create the second workflow
       }
       ```
 
-      Show me a screenshot of task settings
+      Показать скриншот настроек задачи
 
-      ![Use case: Predictive Autoscaling for Kubernetes Workloads - Commit Davis Prediction workflow - create suggestion applied event task](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-1cf51d5c-0235-49da-8e46-66c3b7811573-task-create-suggestion-applied-event-3689-89a748c667.png)
+      ![Сценарий использования: Предиктивное автомасштабирование рабочих нагрузок Kubernetes — задача создания события применения предложения](https://dt-cdn.net/images/ypd98635-sprint-apps-dynatracelabs-com-ui-apps-dynatrace-automations-workflows-1cf51d5c-0235-49da-8e46-66c3b7811573-task-create-suggestion-applied-event-3689-89a748c667.png)
 
-## Summary
+## Итог
 
-Now, you have two Dynatrace workflows that will provide AI-assisted predictive scaling as code. All you need to do is annotate your Kubernetes Deployments and wait for Dynatrace to open pull requests using Dynatrace Intelligence generative AI to apply the forecasted memory and CPU limits to your manifests.
+Теперь у вас есть два Dynatrace workflow, которые обеспечивают ИИ-ассистируемое предиктивное масштабирование как код. Всё, что вам нужно сделать — аннотировать ваши развёртывания Kubernetes и ждать, когда Dynatrace откроет pull request с помощью генеративного ИИ Dynatrace Intelligence для применения прогнозируемых ограничений памяти и CPU к вашим манифестам.
 
-## Related topics
+## Связанные темы
 
-* [Explore our sample dashboards on the Dynatrace Playgroundï»¿](https://dt-url.net/playground-obslab-predictive-kubernetes-scaling)
-* [Get hands-on and delploy our demo using GitHub Codespaceï»¿](https://dt-url.net/obslab-predictive-kubernetes-scaling)
-* [Watch our Youtube videoï»¿](https://dt-url.net/predictive-autoscaling-k8s)
+* [Изучите наши примеры дашбордов на Dynatrace Playground](https://dt-url.net/playground-obslab-predictive-kubernetes-scaling)
+* [Получите практический опыт и разверните наш демонстрационный проект с помощью GitHub Codespace](https://dt-url.net/obslab-predictive-kubernetes-scaling)
+* [Смотрите наше видео на YouTube](https://dt-url.net/predictive-autoscaling-k8s)

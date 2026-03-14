@@ -1,5 +1,5 @@
 ---
-title: Failure Analysis
+title: Анализ сбоев
 source: https://www.dynatrace.com/docs/observe/application-observability/services/failure-analysis
 scraped: 2026-03-06T21:10:41.458675
 ---

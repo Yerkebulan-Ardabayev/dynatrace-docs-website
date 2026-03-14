@@ -1,5 +1,5 @@
 ---
-title: Data collected with Dynatrace database monitoring
+title: Данные, собираемые при мониторинге баз данных Dynatrace
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/data-collected
 scraped: 2026-03-06T21:24:19.816559
 ---

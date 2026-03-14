@@ -1,5 +1,5 @@
 ---
-title: Resource attributes
+title: Атрибуты ресурсов
 source: https://www.dynatrace.com/docs/platform/oneagent/resource-attributes
 scraped: 2026-03-04T21:30:32.246175
 ---

@@ -27,7 +27,7 @@ Dynatrace собирает метрики для нескольких предв
 
 * Dynatrace версии 1.199+
 * Обновлённая [политика мониторинга AWS](../cloudwatch-metrics.md#monitoring-policy "Интеграция метрик из Amazon CloudWatch.") для включения дополнительных AWS сервисов.
-  Для [обновления политики AWS IAMï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте JSON ниже, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+  Для [обновления политики AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте JSON ниже, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
 Предопределённая политика JSON для всех поддерживаемых сервисов
 
@@ -441,7 +441,7 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon Athena | `athena:ListWorkGroups` |
 | Amazon Aurora | `rds:DescribeDBClusters` |
 | Amazon EC2 Auto Scaling | `autoscaling:DescribeAutoScalingGroups` |
-| Amazon EC2 Auto Scaling (built-in) | `autoscaling:DescribeAutoScalingGroups` |
+| Amazon EC2 Auto Scaling (встроенный) | `autoscaling:DescribeAutoScalingGroups` |
 | AWS Billing |  |
 | Amazon Keyspaces |  |
 | AWS Chatbot |  |
@@ -458,11 +458,11 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon DocumentDB | `rds:DescribeDBClusters` |
 | AWS Direct Connect | `directconnect:DescribeConnections` |
 | Amazon DynamoDB | `dynamodb:ListTables` |
-| Amazon DynamoDB (built-in) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
+| Amazon DynamoDB (встроенный) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
 | Amazon EBS | `ec2:DescribeVolumes` |
-| Amazon EBS (built-in) | `ec2:DescribeVolumes` |
+| Amazon EBS (встроенный) | `ec2:DescribeVolumes` |
 | Amazon EC2 API |  |
-| Amazon EC2 (built-in) | `ec2:DescribeInstances` |
+| Amazon EC2 (встроенный) | `ec2:DescribeInstances` |
 | Amazon EC2 Spot Fleet | `ec2:DescribeSpotFleetRequests` |
 | Amazon Elastic Container Service (ECS) | `ecs:ListClusters` |
 | Amazon ECS Container Insights | `ecs:ListClusters` |
@@ -473,7 +473,7 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon Elastic Map Reduce (EMR) | `elasticmapreduce:ListClusters` |
 | Amazon Elasticsearch Service (ES) | `es:ListDomainNames` |
 | Amazon Elastic Transcoder | `elastictranscoder:ListPipelines` |
-| Amazon Elastic Load Balancer (ELB) (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon Elastic Load Balancer (ELB) (встроенный) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
 | Amazon EventBridge | `events:ListEventBuses` |
 | Amazon FSx | `fsx:DescribeFileSystems` |
 | Amazon GameLift | `gamelift:ListFleets` |
@@ -487,9 +487,9 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon Kinesis Data Streams | `kinesis:ListStreams` |
 | Amazon Kinesis Video Streams | `kinesisvideo:ListStreams` |
 | AWS Lambda | `lambda:ListFunctions` |
-| AWS Lambda (built-in) | `lambda:ListFunctions`, `lambda:ListTags` |
+| AWS Lambda (встроенный) | `lambda:ListFunctions`, `lambda:ListTags` |
 | Amazon Lex | `lex:GetBots` |
-| Amazon Application and Network Load Balancer (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon Application and Network Load Balancer (встроенный) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
 | Amazon CloudWatch Logs | `logs:DescribeLogGroups` |
 | AWS Elemental MediaConnect | `mediaconnect:ListFlows` |
 | AWS Elemental MediaConvert | `mediaconvert:DescribeEndpoints` |
@@ -502,14 +502,14 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon Polly |  |
 | Amazon QLDB | `qldb:ListLedgers` |
 | Amazon RDS | `rds:DescribeDBInstances` |
-| Amazon RDS (built-in) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
+| Amazon RDS (встроенный) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
 | Amazon Redshift | `redshift:DescribeClusters` |
 | Amazon Rekognition |  |
 | AWS RoboMaker | `robomaker:ListSimulationJobs` |
 | Amazon Route 53 | `route53:ListHostedZones` |
 | Amazon Route 53 Resolver | `route53resolver:ListResolverEndpoints` |
 | Amazon S3 | `s3:ListAllMyBuckets` |
-| Amazon S3 (built-in) | `s3:ListAllMyBuckets` |
+| Amazon S3 (встроенный) | `s3:ListAllMyBuckets` |
 | Amazon SageMaker Batch Transform Jobs |  |
 | Amazon SageMaker Endpoint Instances | `sagemaker:ListEndpoints` |
 | Amazon SageMaker Endpoints | `sagemaker:ListEndpoints` |
@@ -630,13 +630,13 @@ Dynatrace собирает метрики для нескольких предв
 
 | Конечная точка | Сервис |
 | --- | --- |
-| `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (built-in), Amazon EC2 Auto Scaling |
-| `lambda.<REGION>.amazonaws.com` | AWS Lambda (built-in), AWS Lambda |
-| `elasticloadbalancing.<REGION>.amazonaws.com` | Amazon Application and Network Load Balancer (built-in), Amazon Elastic Load Balancer (ELB) (built-in) |
-| `dynamodb.<REGION>.amazonaws.com` | Amazon DynamoDB (built-in), Amazon DynamoDB |
-| `ec2.<REGION>.amazonaws.com` | Amazon EBS (built-in), Amazon EC2 (built-in), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN |
-| `rds.<REGION>.amazonaws.com` | Amazon RDS (built-in), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS |
-| `s3.<REGION>.amazonaws.com` | Amazon S3 (built-in) |
+| `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (встроенный), Amazon EC2 Auto Scaling |
+| `lambda.<REGION>.amazonaws.com` | AWS Lambda (встроенный), AWS Lambda |
+| `elasticloadbalancing.<REGION>.amazonaws.com` | Amazon Application and Network Load Balancer (встроенный), Amazon Elastic Load Balancer (ELB) (встроенный) |
+| `dynamodb.<REGION>.amazonaws.com` | Amazon DynamoDB (встроенный), Amazon DynamoDB |
+| `ec2.<REGION>.amazonaws.com` | Amazon EBS (встроенный), Amazon EC2 (встроенный), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN |
+| `rds.<REGION>.amazonaws.com` | Amazon RDS (встроенный), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS |
+| `s3.<REGION>.amazonaws.com` | Amazon S3 (встроенный) |
 | `acm-pca.<REGION>.amazonaws.com` | AWS Certificate Manager Private Certificate Authority |
 | `apigateway.<REGION>.amazonaws.com` | Amazon API Gateway |
 | `apprunner.<REGION>.amazonaws.com` | AWS App Runner |
@@ -727,15 +727,15 @@ Dynatrace собирает метрики для нескольких предв
 
 | Сервис AWS | Предустановленная панель |
 | --- | --- |
-| Amazon EC2 Auto Scaling (built-in) | Неприменимо |
-| AWS Lambda (built-in) | Неприменимо |
-| Amazon Application and Network Load Balancer (built-in) | Неприменимо |
-| Amazon DynamoDB (built-in) | Неприменимо |
-| Amazon EBS (built-in) | Неприменимо |
-| Amazon EC2 (built-in) | Неприменимо |
-| Amazon Elastic Load Balancer (ELB) (built-in) | Неприменимо |
-| Amazon RDS (built-in) | Неприменимо |
-| Amazon S3 (built-in) | Неприменимо |
+| Amazon EC2 Auto Scaling (встроенный) | Неприменимо |
+| AWS Lambda (встроенный) | Неприменимо |
+| Amazon Application and Network Load Balancer (встроенный) | Неприменимо |
+| Amazon DynamoDB (встроенный) | Неприменимо |
+| Amazon EBS (встроенный) | Неприменимо |
+| Amazon EC2 (встроенный) | Неприменимо |
+| Amazon Elastic Load Balancer (ELB) (встроенный) | Неприменимо |
+| Amazon RDS (встроенный) | Неприменимо |
+| Amazon S3 (встроенный) | Неприменимо |
 | AWS Certificate Manager Private Certificate Authority | Неприменимо |
 | Все отслеживаемые сервисы Amazon | Неприменимо |
 | Amazon API Gateway | Неприменимо |
@@ -860,4 +860,4 @@ Dynatrace собирает метрики для нескольких предв
 
 ## Ограничения
 
-Amazon EventBridge отправляет метрики `Invocations` в CloudWatch только при ненулевом значении. Для получения дополнительных сведений см. [документацию AWSï»¿](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-monitoring-cloudwatch-metrics.html).
+Amazon EventBridge отправляет метрики `Invocations` в CloudWatch только при ненулевом значении. Для получения дополнительных сведений см. [документацию AWS](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-monitoring-cloudwatch-metrics.html).

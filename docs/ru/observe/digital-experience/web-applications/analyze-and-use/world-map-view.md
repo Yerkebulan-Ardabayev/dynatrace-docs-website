@@ -1,5 +1,5 @@
 ---
-title: World map view
+title: Представление карты мира
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/analyze-and-use/world-map-view
 scraped: 2026-03-05T21:27:23.633190
 ---

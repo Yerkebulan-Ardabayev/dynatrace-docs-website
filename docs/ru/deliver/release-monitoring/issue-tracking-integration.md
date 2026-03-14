@@ -1,5 +1,5 @@
 ---
-title: Issue-tracking integration
+title: Интеграция с системой отслеживания задач
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/issue-tracking-integration
 scraped: 2026-03-04T21:34:00.535138
 ---

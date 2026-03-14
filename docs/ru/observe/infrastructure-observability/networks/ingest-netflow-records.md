@@ -1,5 +1,5 @@
 ---
-title: Ingest NetFlow records into Dynatrace
+title: Прием записей NetFlow в Dynatrace
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks/ingest-netflow-records
 scraped: 2026-03-02T21:20:28.336015
 ---

@@ -1,5 +1,5 @@
 ---
-title: Summarize open problems with Workflows
+title: Сводка открытых проблем с помощью Workflows
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples
 scraped: 2026-03-03T21:26:45.029733
 ---

@@ -1,5 +1,5 @@
 ---
-title: Subscription or license overview
+title: Обзор подписки или лицензии
 source: https://www.dynatrace.com/docs/manage/account-management/license-subscription
 scraped: 2026-03-03T21:23:51.134431
 ---

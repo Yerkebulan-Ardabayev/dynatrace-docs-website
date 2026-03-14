@@ -1,5 +1,5 @@
 ---
-title: Supported data types in segments
+title: Поддерживаемые типы данных в сегментах
 source: https://www.dynatrace.com/docs/manage/segments/reference/segments-reference-data-types
 scraped: 2026-03-06T21:13:20.535483
 ---

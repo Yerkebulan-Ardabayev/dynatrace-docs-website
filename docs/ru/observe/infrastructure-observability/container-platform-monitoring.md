@@ -1,5 +1,5 @@
 ---
-title: Container platform monitoring
+title: Мониторинг контейнерных платформ
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring
 scraped: 2026-03-06T21:17:04.380827
 ---
@@ -9,9 +9,9 @@ scraped: 2026-03-06T21:17:04.380827
 # Мониторинг контейнерных платформ
 
 * Classic
-* Explanation
-* 1-min read
-* Published Jun 25, 2021
+* Описание
+* Чтение: 1 мин
+* Опубликовано 25 июня 2021 г.
 
 [![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")
 

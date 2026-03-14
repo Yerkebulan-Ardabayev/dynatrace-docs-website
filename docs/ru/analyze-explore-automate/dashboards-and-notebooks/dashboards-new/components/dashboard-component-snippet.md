@@ -1,5 +1,5 @@
 ---
-title: Add a snippet to a dashboard
+title: Добавить фрагмент на панель управления
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet
 scraped: 2026-03-06T21:11:10.713197
 ---

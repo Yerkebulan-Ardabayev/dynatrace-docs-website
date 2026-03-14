@@ -10,8 +10,8 @@ scraped: 2026-03-06T21:14:18.770492
 
 * Classic
 * Практическое руководство
-* 2-min read
-* Published Jul 23, 2020
+* Чтение: 2 мин
+* Опубликовано 23 июля 2020 г.
 
 Dynatrace собирает метрики для множества предварительно выбранных пространств имен, включая Amazon Elastic Inference. Вы можете просматривать графики для каждого экземпляра сервиса с набором измерений и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
 
@@ -19,16 +19,16 @@ Dynatrace собирает метрики для множества предва
 
 Для включения мониторинга этого сервиса вам необходимо
 
-* ActiveGate version 1.197+
+* ActiveGate версии 1.197+
 
-* Для развертываний Dynatrace SaaS вам необходим Environment ActiveGate или Multi-environment ActiveGate.
+* Для развёртываний Dynatrace SaaS вам необходим Environment ActiveGate или Multi-environment ActiveGate.
 
-  Для ролевого доступа в развертывании [SaaS](../cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") вам необходим [Environment ActiveGate](../../../dynatrace-activegate/installation.md "Learn how to configure ActiveGate") установленный на хосте Amazon EC2.
+  Для доступа на основе ролей в развёртывании [SaaS](../cloudwatch-metrics.md#role-based-access "Интеграция метрик из Amazon CloudWatch.") вам необходим [Environment ActiveGate](../../../dynatrace-activegate/installation.md "Узнайте, как настроить ActiveGate"), установленный на хосте Amazon EC2.
 
-* Dynatrace version 1.200+
-* An updated [AWS monitoring policy](../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.
+* Dynatrace версии 1.200+
+* Обновлённая [политика мониторинга AWS](../cloudwatch-metrics.md#monitoring-policy "Интеграция метрик из Amazon CloudWatch.") для включения дополнительных сервисов AWS.
 
-To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+Для [обновления политики AWS IAM](https://dt-url.net/8q038eb) используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
 Предопределенная политика JSON для всех поддерживаемых сервисов
 
@@ -416,7 +416,7 @@ To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), использ
 }
 ```
 
-Если вы не хотите добавлять разрешения для всех сервисов и хотите выбрать разрешения только для определенных сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для [All AWS cloud services](../aws-all-services.md "Monitor all AWS cloud services with Dynatrace and view available metrics.") и для каждого поддерживаемого сервиса список необязательных разрешений, специфичных для этого сервиса.
+Если вы не хотите добавлять разрешения для всех сервисов и хотите выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для [всех облачных сервисов AWS](../aws-all-services.md "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик."), и для каждого поддерживаемого сервиса список необязательных разрешений, специфичных для этого сервиса.
 
 Разрешения, необходимые для интеграции мониторинга AWS:
 
@@ -432,7 +432,7 @@ To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), использ
 
 | Название | Разрешения |
 | --- | --- |
-| All monitored Amazon services Required | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
+| Все мониторируемые сервисы Amazon (обязательные) | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
 | AWS Certificate Manager Private Certificate Authority | `acm-pca:ListCertificateAuthorities` |
 | Amazon MQ |  |
 | Amazon API Gateway | `apigateway:GET` |
@@ -442,7 +442,7 @@ To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), использ
 | Amazon Athena | `athena:ListWorkGroups` |
 | Amazon Aurora | `rds:DescribeDBClusters` |
 | Amazon EC2 Auto Scaling | `autoscaling:DescribeAutoScalingGroups` |
-| Amazon EC2 Auto Scaling (built-in) | `autoscaling:DescribeAutoScalingGroups` |
+| Amazon EC2 Auto Scaling (встроенный) | `autoscaling:DescribeAutoScalingGroups` |
 | AWS Billing |  |
 | Amazon Keyspaces |  |
 | AWS Chatbot |  |
@@ -459,11 +459,11 @@ To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), использ
 | Amazon DocumentDB | `rds:DescribeDBClusters` |
 | AWS Direct Connect | `directconnect:DescribeConnections` |
 | Amazon DynamoDB | `dynamodb:ListTables` |
-| Amazon DynamoDB (built-in) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
+| Amazon DynamoDB (встроенный) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
 | Amazon EBS | `ec2:DescribeVolumes` |
-| Amazon EBS (built-in) | `ec2:DescribeVolumes` |
+| Amazon EBS (встроенный) | `ec2:DescribeVolumes` |
 | Amazon EC2 API |  |
-| Amazon EC2 (built-in) | `ec2:DescribeInstances` |
+| Amazon EC2 (встроенный) | `ec2:DescribeInstances` |
 | Amazon EC2 Spot Fleet | `ec2:DescribeSpotFleetRequests` |
 | Amazon Elastic Container Service (ECS) | `ecs:ListClusters` |
 | Amazon ECS Container Insights | `ecs:ListClusters` |
@@ -474,7 +474,7 @@ To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), использ
 | Amazon Elastic Map Reduce (EMR) | `elasticmapreduce:ListClusters` |
 | Amazon Elasticsearch Service (ES) | `es:ListDomainNames` |
 | Amazon Elastic Transcoder | `elastictranscoder:ListPipelines` |
-| Amazon Elastic Load Balancer (ELB) (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon Elastic Load Balancer (ELB) (встроенный) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
 | Amazon EventBridge | `events:ListEventBuses` |
 | Amazon FSx | `fsx:DescribeFileSystems` |
 | Amazon GameLift | `gamelift:ListFleets` |
@@ -488,9 +488,9 @@ To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), использ
 | Amazon Kinesis Data Streams | `kinesis:ListStreams` |
 | Amazon Kinesis Video Streams | `kinesisvideo:ListStreams` |
 | AWS Lambda | `lambda:ListFunctions` |
-| AWS Lambda (built-in) | `lambda:ListFunctions`, `lambda:ListTags` |
+| AWS Lambda (встроенный) | `lambda:ListFunctions`, `lambda:ListTags` |
 | Amazon Lex | `lex:GetBots` |
-| Amazon Application and Network Load Balancer (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon Application and Network Load Balancer (встроенный) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
 | Amazon CloudWatch Logs | `logs:DescribeLogGroups` |
 | AWS Elemental MediaConnect | `mediaconnect:ListFlows` |
 | AWS Elemental MediaConvert | `mediaconvert:DescribeEndpoints` |
@@ -503,14 +503,14 @@ To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), использ
 | Amazon Polly |  |
 | Amazon QLDB | `qldb:ListLedgers` |
 | Amazon RDS | `rds:DescribeDBInstances` |
-| Amazon RDS (built-in) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
+| Amazon RDS (встроенный) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
 | Amazon Redshift | `redshift:DescribeClusters` |
 | Amazon Rekognition |  |
 | AWS RoboMaker | `robomaker:ListSimulationJobs` |
 | Amazon Route 53 | `route53:ListHostedZones` |
 | Amazon Route 53 Resolver | `route53resolver:ListResolverEndpoints` |
 | Amazon S3 | `s3:ListAllMyBuckets` |
-| Amazon S3 (built-in) | `s3:ListAllMyBuckets` |
+| Amazon S3 (встроенный) | `s3:ListAllMyBuckets` |
 | Amazon SageMaker Batch Transform Jobs |  |
 | Amazon SageMaker Endpoint Instances | `sagemaker:ListEndpoints` |
 | Amazon SageMaker Endpoints | `sagemaker:ListEndpoints` |
@@ -625,11 +625,11 @@ To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), использ
 В этом примере из полного списка разрешений необходимо выбрать
 
 * `"apigateway:GET"` для **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
 ## Включение мониторинга
 
-Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](../aws-metrics-ingest/aws-enable-service-monitoring.md "Включение мониторинга AWS в Dynatrace.").
 
 ## Просмотр метрик сервиса
 
@@ -639,7 +639,7 @@ Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-
 
 Для доступа к странице обзора пользовательского устройства
 
-1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
 2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
 3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
 4. **Страница обзора группы пользовательских устройств** отображает все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
@@ -652,9 +652,9 @@ Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-
 
 Для существующих мониторируемых сервисов может потребоваться повторное сохранение ваших учетных данных, чтобы предустановленная панель мониторинга появилась на странице **Dashboards**. Для повторного сохранения учетных данных перейдите в **Settings** > **Cloud and virtualization** > **AWS**, выберите нужный экземпляр AWS и нажмите **Save**.
 
-You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.
+Вы не можете вносить изменения в предустановленный дашборд напрямую, но можете клонировать и редактировать его. Чтобы клонировать дашборд, откройте меню обзора (**...**) и выберите **Clone**.
 
-To remove a dashboard from the dashboards page, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+Чтобы удалить дашборд со страницы дашбордов, вы можете его скрыть. Чтобы скрыть дашборд, откройте меню обзора (**...**) и выберите **Hide**.
 
 Скрытие панели мониторинга не влияет на других пользователей.
 
@@ -666,17 +666,17 @@ To remove a dashboard from the dashboards page, you can hide it. To hide a dashb
 
 | Сервис AWS | Предустановленная панель |
 | --- | --- |
-| Amazon EC2 Auto Scaling (built-in) | Неприменимо |
-| AWS Lambda (built-in) | Неприменимо |
-| Amazon Application and Network Load Balancer (built-in) | Неприменимо |
-| Amazon DynamoDB (built-in) | Неприменимо |
-| Amazon EBS (built-in) | Неприменимо |
-| Amazon EC2 (built-in) | Неприменимо |
-| Amazon Elastic Load Balancer (ELB) (built-in) | Неприменимо |
-| Amazon RDS (built-in) | Неприменимо |
-| Amazon S3 (built-in) | Неприменимо |
+| Amazon EC2 Auto Scaling (встроенный) | Неприменимо |
+| AWS Lambda (встроенный) | Неприменимо |
+| Amazon Application and Network Load Balancer (встроенный) | Неприменимо |
+| Amazon DynamoDB (встроенный) | Неприменимо |
+| Amazon EBS (встроенный) | Неприменимо |
+| Amazon EC2 (встроенный) | Неприменимо |
+| Amazon Elastic Load Balancer (ELB) (встроенный) | Неприменимо |
+| Amazon RDS (встроенный) | Неприменимо |
+| Amazon S3 (встроенный) | Неприменимо |
 | AWS Certificate Manager Private Certificate Authority | Неприменимо |
-| All monitored Amazon services | Неприменимо |
+| Все мониторируемые сервисы Amazon | Неприменимо |
 | Amazon API Gateway | Неприменимо |
 | AWS App Runner | Неприменимо |
 | Amazon AppStream | Применимо |
@@ -785,17 +785,17 @@ To remove a dashboard from the dashboards page, you can hide it. To hide a dashb
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуется |
 | --- | --- | --- | --- | --- | --- |
-| AcceleratorHealthCheckFailed | Reports whether the Elastic Inference accelerator has passed a status health check in the last minute | Count | Sum | InstanceId, ElasticInferenceAcceleratorId | Применимо |
+| AcceleratorHealthCheckFailed | Показывает, прошёл ли ускоритель Elastic Inference проверку состояния за последнюю минуту | Count | Sum | InstanceId, ElasticInferenceAcceleratorId | Применимо |
 | AcceleratorHealthCheckFailed |  | Count | Multi | InstanceId, ElasticInferenceAcceleratorId |  |
-| AcceleratorInferenceWithClientErrorCount | The number of inference requests reaching the Elastic Inference accelerator in the last minute that resulted in a 4xx error | Count | Sum | InstanceId, ElasticInferenceAcceleratorId | Применимо |
+| AcceleratorInferenceWithClientErrorCount | Количество запросов вывода, достигших ускорителя Elastic Inference за последнюю минуту и завершившихся ошибкой 4xx | Count | Sum | InstanceId, ElasticInferenceAcceleratorId | Применимо |
 | AcceleratorInferenceWithClientErrorCount |  | Count | Multi | InstanceId, ElasticInferenceAcceleratorId |  |
-| AcceleratorInferenceWithServerErrorCount | The number of inference requests reaching the Elastic Inference accelerator in the last minute that resulted in a 5xx error | Count | Sum | InstanceId, ElasticInferenceAcceleratorId | Применимо |
+| AcceleratorInferenceWithServerErrorCount | Количество запросов вывода, достигших ускорителя Elastic Inference за последнюю минуту и завершившихся ошибкой 5xx | Count | Sum | InstanceId, ElasticInferenceAcceleratorId | Применимо |
 | AcceleratorInferenceWithServerErrorCount |  | Count | Multi | InstanceId, ElasticInferenceAcceleratorId |  |
-| AcceleratorMemoryUsage | The memory of the Elastic Inference accelerator used in the last minute | Bytes | Multi | InstanceId, ElasticInferenceAcceleratorId | Применимо |
-| AcceleratorSuccessfulInferenceCount | The number of successful inference requests reaching the Elastic Inference accelerator in the last minute | Count | Sum | InstanceId, ElasticInferenceAcceleratorId | Применимо |
+| AcceleratorMemoryUsage | Объём памяти ускорителя Elastic Inference, использованной за последнюю минуту | Bytes | Multi | InstanceId, ElasticInferenceAcceleratorId | Применимо |
+| AcceleratorSuccessfulInferenceCount | Количество успешных запросов вывода, достигших ускорителя Elastic Inference за последнюю минуту | Count | Sum | InstanceId, ElasticInferenceAcceleratorId | Применимо |
 | AcceleratorSuccessfulInferenceCount |  | Count | Multi | InstanceId, ElasticInferenceAcceleratorId |  |
-| AcceleratorTotalInferenceCount | The number of inference requests reaching the Elastic Inference accelerator in the last minute | Count | Sum | InstanceId, ElasticInferenceAcceleratorId | Применимо |
+| AcceleratorTotalInferenceCount | Общее количество запросов вывода, достигших ускорителя Elastic Inference за последнюю минуту | Count | Sum | InstanceId, ElasticInferenceAcceleratorId | Применимо |
 | AcceleratorTotalInferenceCount |  | Count | Multi | InstanceId, ElasticInferenceAcceleratorId |  |
-| AcceleratorUtilization | The percentage of the Elastic Inference accelerator used for computation in the last minute | Percent | Multi | InstanceId, ElasticInferenceAcceleratorId | Применимо |
-| ConnectivityCheckFailed | Reports whether connectivity to the Elastic Inference accelerator is active or has failed in the last minute | Count | Sum | InstanceId, ElasticInferenceAcceleratorId | Применимо |
+| AcceleratorUtilization | Процент использования ускорителя Elastic Inference для вычислений за последнюю минуту | Percent | Multi | InstanceId, ElasticInferenceAcceleratorId | Применимо |
+| ConnectivityCheckFailed | Показывает, активно ли подключение к ускорителю Elastic Inference или произошёл сбой за последнюю минуту | Count | Sum | InstanceId, ElasticInferenceAcceleratorId | Применимо |
 | ConnectivityCheckFailed |  | Count | Multi | InstanceId, ElasticInferenceAcceleratorId |  |

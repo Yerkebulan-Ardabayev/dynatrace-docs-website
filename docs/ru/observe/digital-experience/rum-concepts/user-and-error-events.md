@@ -1,5 +1,5 @@
 ---
-title: User and error events
+title: События пользователя и ошибки
 source: https://www.dynatrace.com/docs/observe/digital-experience/rum-concepts/user-and-error-events
 scraped: 2026-03-06T21:26:34.294869
 ---

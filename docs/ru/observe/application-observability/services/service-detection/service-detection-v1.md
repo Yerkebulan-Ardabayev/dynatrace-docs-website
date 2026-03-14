@@ -1,5 +1,5 @@
 ---
-title: Service Detection v1
+title: Обнаружение сервисов v1
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1
 scraped: 2026-03-06T21:12:01.948608
 ---

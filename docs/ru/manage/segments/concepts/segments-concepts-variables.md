@@ -1,5 +1,5 @@
 ---
-title: Variables in segments
+title: Переменные в сегментах
 source: https://www.dynatrace.com/docs/manage/segments/concepts/segments-concepts-variables
 scraped: 2026-03-06T21:13:15.473875
 ---

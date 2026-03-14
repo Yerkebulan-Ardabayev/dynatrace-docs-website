@@ -1,5 +1,5 @@
 ---
-title: Explore findings
+title: Исследование результатов
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/explore-findings
 scraped: 2026-03-06T21:37:28.649050
 ---

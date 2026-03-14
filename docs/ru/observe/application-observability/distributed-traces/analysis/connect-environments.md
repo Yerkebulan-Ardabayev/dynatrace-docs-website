@@ -1,5 +1,5 @@
 ---
-title: Set up cross-environment tracing
+title: Настройка меж-environment трассировки
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/analysis/connect-environments
 scraped: 2026-03-06T21:34:56.682759
 ---

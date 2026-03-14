@@ -1,5 +1,5 @@
 ---
-title: Email
+title: Электронная почта
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/email
 scraped: 2026-03-05T21:40:37.061485
 ---

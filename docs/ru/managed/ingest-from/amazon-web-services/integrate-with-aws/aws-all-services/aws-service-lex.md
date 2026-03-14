@@ -624,8 +624,8 @@ Dynatrace собирает метрики для множества предва
 
 В этом примере из полного списка разрешений необходимо выбрать
 
-* `"apigateway:GET"` for **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"apigateway:GET"` для **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
 ### Конечные точки AWS, которые должны быть доступны из ActiveGate с соответствующими сервисами AWS
 
@@ -839,15 +839,15 @@ Dynatrace собирает метрики для множества предва
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
-| MissedUtteranceCount | The number of utterances that were not recognized in the specified period | Count | Sum | BotName, BotVersion, InputMode, Operation |  |
+| MissedUtteranceCount | Количество высказываний, которые не были распознаны за указанный период | Count | Sum | BotName, BotVersion, InputMode, Operation |  |
 | MissedUtteranceCount |  | Count | Sum | BotName, BotAlias, InputMode, Operation | Доступна |
 | MissedUtteranceCount |  | Count | Sum | BotName, BotAlias, Operation | Доступна |
 | MissedUtteranceCount |  | Count | Sum | BotName, BotVersion, Operation |  |
-| RuntimeRequestCount | The number of runtime requests in the specified period | Count | Sum | BotName, BotVersion, InputMode, Operation |  |
+| RuntimeRequestCount | Количество запросов среды выполнения за указанный период | Count | Sum | BotName, BotVersion, InputMode, Operation |  |
 | RuntimeRequestCount |  | Count | Sum | BotName, BotAlias, Operation | Доступна |
 | RuntimeRequestCount |  | Count | Sum | BotName, BotAlias, InputMode, Operation | Доступна |
 | RuntimeRequestCount |  | Count | Sum | BotName, BotVersion, Operation |  |
-| RuntimeSuccessfulRequestLatency | The latency for successful requests between the time that the request was made and the response was passed back | Milliseconds | Multi | BotName, BotVersion, InputMode, Operation |  |
+| RuntimeSuccessfulRequestLatency | Задержка для успешных запросов — время между отправкой запроса и получением ответа | Milliseconds | Multi | BotName, BotVersion, InputMode, Operation |  |
 | RuntimeSuccessfulRequestLatency |  | Milliseconds | Multi | BotName, BotAlias, Operation | Доступна |
 | RuntimeSuccessfulRequestLatency |  | Milliseconds | Multi | BotName, BotAlias, InputMode, Operation | Доступна |
 | RuntimeSuccessfulRequestLatency |  | Milliseconds | Multi | BotName, BotVersion, Operation |  |

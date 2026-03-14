@@ -1,49 +1,49 @@
 ---
-title: Automatic log enrichment (Logs Classic)
+title: Автоматическое обогащение журналов (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/lm-log-data-transformation
 scraped: 2026-03-06T21:33:08.142213
 ---
 
-# Автоматическое обогащение логов (Logs Classic)
+# Автоматическое обогащение журналов (Logs Classic)
 
-# Автоматическое обогащение логов (Logs Classic)
+# Автоматическое обогащение журналов (Logs Classic)
 
 * Classic
-* Explanation
-* 3-min read
-* Updated on Apr 07, 2023
+* Объяснение
+* 3-минутное чтение
+* Обновлено 07 апреля 2023 г.
 
-Log Monitoring Classic
+Мониторинг журналов Classic
 
-Для новейшей версии Dynatrace см. [Автоматическое обогащение логов](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.").
+Для самой новой версии Dynatrace см. [Автоматическое обогащение журналов](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md "Общее получение журналов автоматически преобразует журнальные данные в выходные значения для атрибута loglevel.").
 
-Dynatrace позволяет преобразовывать логи, принятые как через OneAgent, так и через API.
+Dynatrace позволяет преобразовывать журналы, полученные как через OneAgent, так и через API.
 
-## Преобразование логов, принятых через API
+## Преобразование журналов, полученных через API
 
-API приёма логов автоматически преобразует ключи серьёзности `status`, `severity`, `level` и `syslog.severity` в атрибут `loglevel`.
+Получение журналов API автоматически преобразует ключи严重ности `status`, `severity`, `level` и `syslog.severity` в атрибут `loglevel`.
 
-Входные значения ключей серьёзности `status`, `severity`, `level` и `syslog.severity` преобразуются (преобразование не чувствительно к регистру) в выходные значения атрибута `loglevel` согласно приведённому ниже сопоставлению:
+Входные значения для ключей严重ности `status`, `severity`, `level` и `syslog.severity` преобразуются (преобразование не зависит от регистра) в выходные значения для атрибута `loglevel` на основе приведенной ниже сопоставления:
 
-## Преобразование всех типов логов
+## Преобразование всех типов журналов
 
-Это преобразование применяется как к логам, принятым через OneAgent, так и к логам, принятым через API.
+Это преобразование применяется как к журналам, полученным через OneAgent, так и к журналам, полученным через API.
 
-Кроме того, для каждого события лога создаётся атрибут `status` со значением, являющимся суммой значений `loglevel` на основе следующей группировки:
+Кроме того, для каждого события журнала создается атрибут `status` со значением, которое представляет собой сумму значений `loglevel` на основе следующей группировки:
 
 Например:
-Ключ серьёзности `level` в параметре запроса API приёма логов содержит значение `serious`.
+Ключ严重ности `level` в параметре запроса получения журналов API содержит значение `serious`.
 
-1. Ключ серьёзности `level` преобразуется в атрибут `loglevel`, при этом значение `serious` сопоставляется с `SEVERE` согласно приведённой выше таблице.
-2. Атрибут `loglevel` со значением `SEVERE` группируется в атрибут `status`. Согласно таблице группировки выше, атрибут `status` будет содержать значение `ERROR`.
-3. В сведениях о событии лога просмотрщик логов сообщит следующее:
+1. Ключ严重ности `level` преобразуется в атрибут `loglevel` со значением `serious`, сопоставленным с `SEVERE` на основе таблицы выше.
+2. Атрибут `loglevel` со значением `SEVERE` группируется в атрибут `status`. На основе таблицы группировки выше атрибут `status` будет содержать значение `ERROR`.
+3. Для деталей события журнала просмотрщик журналов отчетывает следующее:
 
 * **status** - `ERROR`
 * **loglevel** - `SEVERE`
 
-## Атрибуты, добавляемые при приёме логов через OneAgent
+## Атрибуты, добавленные во время получения журнала через OneAgent
 
-В процессе приёма логов через OneAgent автоматически добавляются следующие атрибуты:
+Во время получения журнала через OneAgent добавляются следующие атрибуты автоматически:
 
 ### Общие атрибуты (через OneAgent)
 
@@ -90,5 +90,5 @@ API приёма логов автоматически преобразует к
 
 ## Связанные темы
 
-* [API приёма логов](../../logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
-* [Приём логов через OneAgent](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+* [Получение журналов API](../../logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Потоковое получение журнальных данных в Dynatrace с помощью API и преобразование его в осмысленные сообщения журнала.")
+* [Получение журналов через OneAgent](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Получение журнальных данных в Dynatrace с помощью OneAgent и преобразование его в осмысленные сообщения журнала.")

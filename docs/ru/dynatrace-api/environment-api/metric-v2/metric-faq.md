@@ -1,5 +1,5 @@
 ---
-title: Metrics API - FAQ
+title: Metrics API - часто задаваемые вопросы
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/metric-faq
 scraped: 2026-03-04T21:34:23.609587
 ---

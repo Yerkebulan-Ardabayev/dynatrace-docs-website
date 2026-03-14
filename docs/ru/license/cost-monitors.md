@@ -1,5 +1,5 @@
 ---
-title: Customize cost alerts
+title: Настройка оповещений о расходах
 source: https://www.dynatrace.com/docs/license/cost-monitors
 scraped: 2026-03-06T21:22:10.318160
 ---

@@ -1,45 +1,45 @@
 ---
-title: Stream Kubernetes logs with Fluent Bit (Logs Classic)
+title: Передача журналов Kubernetes с помощью Fluent Bit (Классические журналы)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/lm-fluent-bit-logs-k8s
 scraped: 2026-03-05T21:35:44.907456
 ---
 
-# Потоковая передача логов Kubernetes с помощью Fluent Bit (Logs Classic)
+# Передача журналов Kubernetes с помощью Fluent Bit (Классические журналы)
 
-# Потоковая передача логов Kubernetes с помощью Fluent Bit (Logs Classic)
+# Передача журналов Kubernetes с помощью Fluent Bit (Классические журналы)
 
-* Classic
-* Руководство
-* Время чтения: 5 мин
-* Обновлено 8 октября 2025 г.
+* Классический
+* Учебник
+* 5-минутное чтение
+* Обновлено 08 октября 2025 г.
 
-Log Monitoring Classic
+Мониторинг журналов Classic
 
-Для новейшей версии Dynatrace см. [Потоковая передача логов Kubernetes с помощью Fluent Bit](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s.md "Интегрируйте Fluent Bit в Kubernetes для потоковой передачи логов в Dynatrace.").
+Для самой новой версии Dynatrace см. [Передача журналов Kubernetes с помощью Fluent Bit](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s.md "Интегрируйте Fluent Bit в Kubernetes, чтобы передавать журналы в Dynatrace.").
 
-На этой странице представлены инструкции по развёртыванию и настройке Fluent Bit в вашей среде Kubernetes для сбора логов.
+Эта страница предоставляет инструкции по развертыванию и настройке Fluent Bit в вашей среде Kubernetes для сбора журналов.
 
-## Предварительные требования
+## Предварительные условия
 
-* Правильно настроены [ограничения контекста безопасности (SCC)](https://dt-url.net/fb02ljw), если вы используете OpenShift.
-* Требуется Helm. Используйте [Helm версии 3](https://dt-url.net/n5036j1).
-* Должен быть разрешён исходящий трафик из пространства имён, в котором установлен Fluent Bit (`dynatrace-fluent-bit`), в Dynatrace.
-* Для обогащения информацией о рабочих нагрузках требуется Dynatrace Operator версии 1.1.0+.
+* Настройте [ограничения контекста безопасности (SCC)](https://dt-url.net/fb02ljw) правильно, если вы используете OpenShift.
+* Helm является обязательным. Используйте [версию Helm 3](https://dt-url.net/n5036j1).
+* Исходящий трафик должен быть разрешен из пространства имен, в котором установлен Fluent Bit (`dynatrace-fluent-bit`), в Dynatrace.
+* Для обогащения рабочей нагрузки требуется версия 1.1.0+ оператора Dynatrace.
 
 ## Настройка конфигурации Fluent Bit
 
-Следуйте пошаговому руководству для подготовки конфигурации Fluent Bit.
+Следуйте пошаговому руководству, чтобы подготовить конфигурацию для Fluent Bit.
 
-1. Скопируйте образец файла `values.yaml` и откройте его в предпочтительном редакторе.
+1. Скопируйте образец файла `values.yaml` и откройте его в вашем предпочитаемом редакторе.
 
-   Пример логов контейнеров (values.yaml)
+   Пример журналов контейнеров (values.yaml)
 
    ```
    openShift:
 
 
 
-   # set to true for OpenShift
+   # установите значение true для OpenShift
 
 
 
@@ -67,7 +67,7 @@ Log Monitoring Classic
 
 
 
-   # uncomment the line below for OpenShift
+   # раскомментируйте строку ниже для OpenShift
 
 
 
@@ -183,7 +183,7 @@ Log Monitoring Classic
 
 
 
-   # Only include logs from pods with the annotation
+   # Только включайте журналы из подов с аннотацией
 
 
 
@@ -203,7 +203,7 @@ Log Monitoring Classic
 
 
 
-   # Only include logs from specific namespaces, remove the whole filter section to get all logs
+   # Только включайте журналы из определенных пространств имен, удалите весь раздел фильтра, чтобы получить все журналы
 
 
 
@@ -367,7 +367,7 @@ Log Monitoring Classic
 
 
 
-   # Map data to Dynatrace log format
+   # Отображайте данные в формат журнала Dynatrace
 
 
 
@@ -399,23 +399,23 @@ Log Monitoring Classic
 
 
 
-   Add k8s.cluster.name ${K8S_CLUSTER_NAME}
+   Add k8s.cluster.name ${K8S_CLUSTER_NAME)
 
 
 
-   Add k8s.cluster.uid ${K8S_CLUSTER_UID}
+   Add k8s.cluster.uid ${K8S_CLUSTER_UID)
 
 
 
-   # deprecated, but still in use
+   # устарело, но все еще используется
 
 
 
-   Add dt.kubernetes.cluster.name ${K8S_CLUSTER_NAME}
+   Add dt.kubernetes.cluster.name ${K8S_CLUSTER_NAME)
 
 
 
-   Add dt.kubernetes.cluster.id ${K8S_CLUSTER_UID}
+   Add dt.kubernetes.cluster.id ${K8S_CLUSTER_UID)
 
 
 
@@ -427,7 +427,7 @@ Log Monitoring Classic
 
 
 
-   # Send data to Dynatrace log ingest API
+   # Отправьте данные в Dynatrace лог ингест API
 
 
 
@@ -443,7 +443,7 @@ Log Monitoring Classic
 
 
 
-   host ${DT_INGEST_HOST}
+   host ${DT_INGEST_HOST)
 
 
 
@@ -471,7 +471,7 @@ Log Monitoring Classic
 
 
 
-   header Authorization Api-Token ${DT_INGEST_TOKEN}
+   header Authorization Api-Token ${DT_INGEST_TOKEN)
 
 
 
@@ -575,7 +575,7 @@ Log Monitoring Classic
 
 
 
-   #  Uncomment this to collect Fluent Bit Prometheus metrics
+   #  Раскомментируйте это, чтобы собирать метрики Prometheus для Fluent Bit
 
 
 
@@ -649,10 +649,10 @@ Log Monitoring Classic
 
    fieldPath: status.hostIP
    ```
-2. Получите [API-токен Dynatrace](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования API Dynatrace.") с областью действия `logs.ingest` (Ingest Logs) для переменной окружения `DT_INGEST_TOKEN`.
-3. Обновите переменные окружения `K8S_CLUSTER_NAME`, `DT_INGEST_HOST` и `DT_INGEST_TOKEN` в файле `values.yaml`. Используйте то же имя кластера, которое вы настроили в Dynatrace для `K8S_CLUSTER_NAME`, и укажите конечную точку SaaS или Managed в качестве `DT_INGEST_HOST`.
-4. Необязательно Адаптируйте раздел фильтров в файле `values.yaml` для нацеливания на определённые пространства имён или поды, как описано в разделе [Fluent Bit Filter](https://dt-url.net/m903n8q) для подробностей.
-5. Необязательно Убедитесь, что вы удалили или замаскировали любую конфиденциальную информацию в логах.
+2. Получите [токен Dynatrace API](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как аутентифицироваться, чтобы использовать Dynatrace API.") с областью `logs.ingest` (Ingest Logs) для переменной среды `DT_INGEST_TOKEN`.
+3. Обновите переменные среды `K8S_CLUSTER_NAME`, `DT_INGEST_HOST` и `DT_INGEST_TOKEN` в файле `values.yaml`. Используйте одно и то же имя кластера, которое вы настроили в Dynatrace для `K8S_CLUSTER_NAME`, и укажите ваш конечный пункт SaaS или Managed в качестве `DT_INGEST_HOST`.
+4. Необязательно. Адаптируйте раздел фильтра в файле `values.yaml`, чтобы нацелиться на определенные пространства имен или поды, как описано в разделе [Фильтр Fluent Bit](https://dt-url.net/m903n8q) для получения подробной информации.
+5. Необязательно. Обеспечьте удаление или маскировку любой конфиденциальной информации в журналах.
 6. Сохраните файл.
 
 ## Установка и настройка Fluent Bit с помощью Helm
@@ -675,21 +675,21 @@ Log Monitoring Classic
 
 ## Удаление Fluent Bit
 
-Удалите Fluent Bit из вашей среды Kubernetes с помощью следующей команды:
+Удалите Fluent Bit из вашей среды Kubernetes, используя следующую команду:
 
 ```
 helm uninstall fluent-bit
 ```
 
-## Просмотр принятых логов
+## Просмотр ингестируемых журналов
 
-Контролируемые логи доступны на уровнях кластера, пространства имён, рабочей нагрузки и пода и могут быть просмотрены на страницах деталей каждой сущности.
+Отслеживаемые журналы доступны на уровне кластера, пространства имен, рабочей нагрузки и подов и могут быть просмотрены на страницах подробной информации каждой сущности.
 
-![Логи подов](https://dt-cdn.net/images/podlogsfromfluentbitclassic-1920-32cea17fc9.png)
+![Журналы подов](https://dt-cdn.net/images/podlogsfromfluentbitclassic-1920-32cea17fc9.png)
 
-В качестве альтернативы вы можете перейти в ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**, где фильтрация может осуществляться в простом или расширенном режиме.
+Альтернативно, вы можете перейти к ![Журналы и события](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Журналы и события") **Журналы и события Classic**, где фильтрация может быть выполнена в простом или расширенном режиме.
 
-![Логи](https://dt-cdn.net/images/view-ingested-logs-1920-4339b9537f.png)
+![Журналы](https://dt-cdn.net/images/view-ingested-logs-1920-4339b9537f.png)
 
 ## Ограничения
 
@@ -698,9 +698,9 @@ helm uninstall fluent-bit
 
 ## Устранение неполадок
 
-Посетите раздел [Устранение неполадок логов, принятых через Fluent Bit](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718) в сообществе Dynatrace, а также см. [Устранение неполадок Log Monitoring (Logs Classic)](../lmc-troubleshooting.md "Устранение проблем, связанных с настройкой и конфигурацией Log Monitoring Classic.").
+Посетите [Устранение неполадок журналов, ингестируемых через Fluent Bit](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718) в сообществе Dynatrace, а также см. [Устранение неполадок мониторинга журналов (Классические журналы)](../lmc-troubleshooting.md "Исправьте проблемы, связанные с настройкой и конфигурацией мониторинга журналов Classic.").
 
-### Проверка работы подов Fluent Bit
+### Проверьте, что поды Fluent Bit запущены
 
 ```
 kubectl get pods -n dynatrace-fluent-bit
@@ -722,17 +722,17 @@ fluent-bit-8zfr4   1/1     Running             0           38s
 fluent-bit-qxjzh   1/1     Running             0           39s
 ```
 
-Если поды находятся в состоянии ошибки, файл значений helm может содержать ошибки. Проверьте логи неработающих подов для получения подробностей.
+Если поды находятся в состоянии ошибки, то файл значений helm может содержать ошибки. Проверьте журналы неработающих подов для получения подробной информации.
 
 ```
 kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 ```
 
-### Проверка состояния и метрик Fluent Bit
+### Проверьте здоровье и метрики Fluent Bit
 
-[Метрики Fluent Bit](https://dt-url.net/nh43pqz) предоставляют информацию о том, как логи собираются (`fluentbit_input_*`), фильтруются (`fluentbit_filter_*`) и отправляются в Dynatrace (`fluentbit_output_*`).
+[Метрики Fluent Bit](https://dt-url.net/nh43pqz) дают вам представление о том, как журналы собираются (`fluentbit_input_*`), фильтруются (`fluentbit_filter_*`) и отправляются в Dynatrace (`fluentbit_output_*`).
 
-1. Найдите узел, на котором работает исследуемый под.
+1. Найдите узел, на котором запущен под, который вы отлаживаете.
 
    ```
    kubectl get pod pod-with-logs -o wide -n dms
@@ -745,7 +745,7 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 
    pod-with-logs   1/1     Running   0          31m   10.28.2.41   some-node-782e86b8-mnoz    <none>           <none>
    ```
-2. Найдите под Fluent Bit, работающий на том же узле.
+2. Найдите под Fluent Bit, который запускается на том же узле.
 
    ```
    kubectl get pods -o wide -n dynatrace-fluent-bit
@@ -766,12 +766,12 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 
    fluent-bit-qxjzh   1/1     Running   0          30m   10.28.2.42   some-node-782e86b8-mnoz    <none>           <none>
    ```
-3. Настройте проброс портов метрик пода Fluent Bit на ваш localhost.
+3. Настройте перенаправление порта метрик пода Fluent Bit на ваш localhost.
 
    ```
    kubectl port-forward fluent-bit-qxjzh 2020:2020 -n dynatrace-fluent-bit
    ```
-4. Проверьте конечную точку состояния.
+4. Проверьте конечную точку здоровья.
 
    ```
    curl http://127.0.0.1:2020/api/v1/health
@@ -782,8 +782,8 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
    ```
 5. Изучите метрики.
 
-   * Метрики `fluentbit_output_proc_*` показывают, сколько логов принимается
-   * Метрики `fluentbit_*` дают больше информации о том, что происходит до этого
+   * Метрики `fluentbit_output_proc_*` указывают на количество журналов, которые обрабатываются
+   * Метрики `fluentbit_*` дают вам более подробную информацию о том, что происходит до этого
 
    ```
    curl http://127.0.0.1:2020/api/v2/metrics | grep fluentbit_output_proc
@@ -796,8 +796,8 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 
    2024-06-11T07:05:37.257418778Z fluentbit_output_proc_bytes_total{name="http.0"} = 359630
    ```
-6. Когда метрики `fluentbit_output_errors_total` или `fluentbit_output_retries_failed_total` указывают на проблемы, возможной причиной является то, что вы достигли [лимитов мониторинга логов](https://dt-url.net/vj23poy).
+6. Когда метрики `fluentbit_output_errors_total` или `fluentbit_output_retries_failed_total` указывают на проблемы, потенциальной причиной может быть то, что вы достигли [лимитов мониторинга журналов](https://dt-url.net/vj23poy).
 
 ## Связанные темы
 
-* [Потоковая передача логов в Dynatrace с помощью Fluent Bit (Logs Classic)](stream-logs-with-fluent-bit.md "Интегрируйте Fluent Bit для потоковой передачи логов в Dynatrace.")
+* [Передача журналов в Dynatrace с помощью Fluent Bit (Классические журналы)](stream-logs-with-fluent-bit.md "Интеграция Fluent Bit для передачи журналов в Dynatrace.")

@@ -1,5 +1,5 @@
 ---
-title: Metrics browser
+title: Обзор метрик
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/metrics-browser
 scraped: 2026-03-06T21:34:08.300543
 ---

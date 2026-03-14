@@ -1,5 +1,5 @@
 ---
-title: Analyze individual user actions
+title: Анализ отдельных действий пользователя
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/analyze-and-use/analyze-individual-user-actions
 scraped: 2026-03-05T21:27:33.326633
 ---

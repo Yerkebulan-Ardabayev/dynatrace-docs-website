@@ -1,5 +1,5 @@
 ---
-title: Create log metric
+title: Создание метрики журнала
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric
 scraped: 2026-03-06T21:23:16.645715
 ---

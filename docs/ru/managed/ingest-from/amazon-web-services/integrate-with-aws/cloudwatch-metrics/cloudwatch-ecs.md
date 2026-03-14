@@ -11,25 +11,25 @@ scraped: 2026-03-06T21:37:07.665788
 * Classic
 * Практическое руководство
 * Чтение: 1 мин
-* Опубликовано Oct 15, 2020
+* Опубликовано 15 октября 2020 г.
 
-Dynatrace собирает метрики для множества предварительно выбранных пространств имён, включая Amazon Elastic Container Service (ECS). Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
+Dynatrace получает метрики для множества предварительно выбранных пространств имён, включая Amazon Elastic Container Service (ECS). Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
 
 ## Предварительные требования
 
-Для включения мониторинга данного сервиса вам необходимо
+Для включения мониторинга этого сервиса вам необходимо
 
 * ActiveGate версии 1.181+, а именно:
 
-  + Для развертываний Dynatrace SaaS вам потребуется Environment ActiveGate или Multi-environment ActiveGate.
-  + Для развертываний Dynatrace Managed можно использовать любой тип ActiveGate.
+  + Для развёртываний Dynatrace SaaS требуется Environment ActiveGate или Multi-environment ActiveGate.
+  + Для развёртываний Dynatrace Managed можно использовать любой тип ActiveGate.
 
-    Для доступа на основе ролей (как в развертывании [SaaS](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#role-based-access "Интеграция метрик из Amazon CloudWatch.") так и [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) развертывании) вам потребуется [Environment ActiveGate](../../../../../ingest-from/dynatrace-activegate/installation.md "Узнайте, как настроить ActiveGate"), установленный на хосте Amazon EC2.
+    Для доступа на основе ролей (будь то в [SaaS](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) развёртывании) требуется [Environment ActiveGate](../../../../../ingest-from/dynatrace-activegate/installation.md "Learn how to configure ActiveGate") установленный на хосте Amazon EC2.
 * Dynatrace версии 1.182+
-* Обновленная [политика мониторинга AWS](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#aws-policy-and-authentication "Интеграция метрик из Amazon CloudWatch.") для включения дополнительных сервисов AWS.  
-  Для [обновления политики AWS IAMï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+* Обновлённая [AWS monitoring policy](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#aws-policy-and-authentication "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.  
+  To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
-Предопределённая политика JSON для всех поддерживаемых сервисов
+Предопределённая JSON-политика для всех поддерживаемых сервисов
 
 ```
 {
@@ -415,7 +415,7 @@ Dynatrace собирает метрики для множества предва
 }
 ```
 
-Если вы не хотите добавлять разрешения для всех сервисов, а хотите выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для [всех облачных сервисов AWS](../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-all-services.md "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик."), а также для каждого поддерживаемого сервиса список дополнительных разрешений, специфичных для этого сервиса.
+Если вы не хотите добавлять разрешения для всех сервисов и хотите выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для [All AWS cloud services](../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-all-services.md "Monitor all AWS cloud services with Dynatrace and view available metrics.") а также для каждого поддерживаемого сервиса — список необязательных разрешений, специфичных для этого сервиса.
 
 Разрешения, необходимые для интеграции мониторинга AWS:
 
@@ -537,9 +537,9 @@ Dynatrace собирает метрики для множества предва
 | Amazon WorkMail | `workmail:ListOrganizations` |
 | Amazon WorkSpaces | `workspaces:DescribeWorkspaces` |
 
-Пример политики JSON для одного отдельного сервиса.
+Пример JSON-политики для одного сервиса.
 
-Политика JSON для Amazon API Gateway
+JSON-политика для Amazon API Gateway
 
 ```
 {
@@ -621,14 +621,14 @@ Dynatrace собирает метрики для множества предва
 }
 ```
 
-В этом примере из полного списка разрешений необходимо выбрать
+В этом примере из полного списка разрешений вам необходимо выбрать
 
-* `"apigateway:GET"` for **Amazon API Gateway**
+* `"apigateway:GET"` для **Amazon API Gateway**
 * `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
-### Конечные точки AWS, которые должны быть доступны из ActiveGate с соответствующими сервисами AWS
+### Эндпоинты AWS, которые должны быть доступны из ActiveGate, с соответствующими сервисами AWS
 
-| Конечная точка | Сервис |
+| Эндпоинт | Сервис |
 | --- | --- |
 | `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (built-in), Amazon EC2 Auto Scaling |
 | `lambda.<REGION>.amazonaws.com` | AWS Lambda (built-in), AWS Lambda |
@@ -687,26 +687,26 @@ Dynatrace собирает метрики для множества предва
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring.md "Включение мониторинга AWS в Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. [Enable service monitoring](../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
 
 ## Просмотр метрик сервиса
 
-Вы можете просматривать метрики сервиса в вашей среде Dynatrace либо на **странице обзора пользовательского устройства**, либо на странице **Панели мониторинга**.
+Вы можете просматривать метрики сервиса в вашем окружении Dynatrace на странице **обзора пользовательского устройства** или на странице **Панели мониторинга**.
 
 ### Просмотр метрик на странице обзора пользовательского устройства
 
 Для доступа к странице обзора пользовательского устройства
 
-1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Технологии и процессы (Classic)**.
 2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
-3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
-4. На **странице обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
+3. После выбора группы пользовательских устройств вы окажетесь на странице **обзора группы пользовательских устройств**.
+4. На странице **обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр, чтобы перейти на страницу **обзора пользовательского устройства**.
 
 ### Просмотр метрик на панели мониторинга
 
-Вы также можете просматривать метрики в веб-интерфейсе Dynatrace на панелях мониторинга. Для данного сервиса предустановленная панель мониторинга недоступна, но вы можете [создать собственную панель мониторинга](../../../../../analyze-explore-automate/dashboards-classic/dashboards/create-dashboards.md "Узнайте, как создавать и редактировать панели мониторинга Dynatrace.").
+Также вы можете просматривать метрики в веб-интерфейсе Dynatrace на панелях мониторинга. Для этого сервиса нет предустановленной панели мониторинга, но вы можете [create your own dashboard](../../../../../analyze-explore-automate/dashboards-classic/dashboards/create-dashboards.md "Learn how to create and edit Dynatrace dashboards.").
 
-Для проверки доступности предустановленных панелей мониторинга для каждого сервиса AWS см. список ниже.
+Чтобы проверить доступность предустановленных панелей мониторинга для каждого сервиса AWS, см. список ниже.
 
 ### Список доступности предустановленных панелей мониторинга
 
@@ -822,9 +822,9 @@ Dynatrace собирает метрики для множества предва
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
-| CPUReservation | The percentage of CPU units that are reserved by running tasks in the cluster | Percent | Multi | ClusterName | Доступна |
-| CPUUtilization | The percentage of CPU units that are used in the cluster or service | Percent | Multi | ClusterName |  |
+| CPUReservation | Процент единиц процессора, зарезервированных выполняющимися задачами в кластере | Percent | Multi | ClusterName | Доступна |
+| CPUUtilization | Процент единиц процессора, используемых в кластере или сервисе | Percent | Multi | ClusterName |  |
 | CPUUtilization |  | Percent | Multi | ClusterName, ServiceName | Доступна |
-| MemoryReservation | The percentage of memory that is reserved by running tasks in the cluster | Percent | Multi | ClusterName | Доступна |
-| MemoryUtilization | The percentage of memory that is used in the cluster or service | Percent | Multi | ClusterName |  |
+| MemoryReservation | Процент памяти, зарезервированной выполняющимися задачами в кластере | Percent | Multi | ClusterName | Доступна |
+| MemoryUtilization | Процент памяти, используемой в кластере или сервисе | Percent | Multi | ClusterName |  |
 | MemoryUtilization |  | Percent | Multi | ClusterName, ServiceName | Доступна |

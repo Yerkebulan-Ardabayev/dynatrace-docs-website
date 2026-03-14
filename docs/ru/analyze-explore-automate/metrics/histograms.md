@@ -1,5 +1,5 @@
 ---
-title: Histogram metrics
+title: Гистограмма метрик
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/histograms
 scraped: 2026-03-06T21:26:32.533433
 ---

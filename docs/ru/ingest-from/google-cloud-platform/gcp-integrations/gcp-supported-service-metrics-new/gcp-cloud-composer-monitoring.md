@@ -11,23 +11,23 @@ scraped: 2026-03-04T21:37:01.937241
 * Последняя версия Dynatrace
 * Практическое руководство
 * 1 мин. чтения
-* Опубликовано 17 января 2022 г.
+* Опубликовано 17 янв. 2022 г.
 
-Интеграция Dynatrace с Google Cloud использует данные, собранные из Google Operation API, для постоянного мониторинга работоспособности и производительности сервисов Google Cloud. Объединяя все важные данные на дашбордах, интеграция также обеспечивает оповещения и отслеживание событий.
+Интеграция Dynatrace с Google Cloud использует данные, собранные из Google Operations API, для непрерывного мониторинга работоспособности и производительности сервисов Google Cloud. Помимо объединения всех релевантных данных в дашборды, она также обеспечивает оповещения и отслеживание событий.
 
 ## Предварительные требования
 
-[Настройка интеграции](../gcp-guide/deploy-k8.md "Настройка мониторинга журналов и метрик для сервисов GCP на новом кластере GKE Autopilot.")
+[Настройка интеграции](../gcp-guide/deploy-k8.md "Настройка мониторинга логов и метрик для сервисов GCP в новом кластере GKE Autopilot.")
 
-## Добавление сервисов и наборов функций (необязательно)
+## Добавление сервисов и наборов функций Необязательно
 
-После интеграции Dynatrace автоматически начинает мониторинг ряда предустановленных сервисов Google Cloud и наборов функций (метрик). Помимо них, можно добавить дополнительные сервисы или наборы функций для мониторинга. Подробнее см. [Добавление или удаление сервисов](../gcp-guide/deploy-k8.md#manage "Настройка мониторинга журналов и метрик для сервисов GCP на новом кластере GKE Autopilot.").
+После интеграции Dynatrace автоматически начинает мониторинг ряда предустановленных сервисов Google Cloud и наборов функций (метрик). Помимо них, вы можете добавить дополнительные сервисы или наборы функций для мониторинга. Подробнее см. в разделе [Добавление и удаление сервисов](../gcp-guide/deploy-k8.md#manage "Настройка мониторинга логов и метрик для сервисов GCP в новом кластере GKE Autopilot.").
 
-Список наборов функций, доступных для этого сервиса, см. в [таблице метрик](#table).
+Список наборов функций, доступных для данного сервиса, см. в разделе [Таблица метрик](#table).
 
 ## Просмотр метрик
 
-После развёртывания интеграции вы можете просматривать метрики из отслеживаемых сервисов в [браузере метрик](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Просмотр метрик с помощью браузера метрик Dynatrace."), [Data Explorer](../../../../analyze-explore-automate/explorer.md "Запрос метрик и преобразование результатов для получения необходимых данных.") и тайлах дашборда.
+После развёртывания интеграции вы можете просматривать метрики отслеживаемых сервисов в [браузере метрик](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Просмотр метрик с помощью браузера метрик Dynatrace."), [Data Explorer](../../../../analyze-explore-automate/explorer.md "Запрашивайте метрики и преобразуйте результаты для получения нужных данных."), а также в плитках дашбордов.
 
 ## Таблица метрик
 
@@ -35,24 +35,24 @@ scraped: 2026-03-04T21:37:01.937241
 
 | Набор функций | Название | Единица | Идентификатор метрики GCP |
 | --- | --- | --- | --- |
-| cloud\_composer\_environment/default\_metrics | API Requests | Count | composer.googleapis.com/environment/api/request\_count |
-| cloud\_composer\_environment/default\_metrics | API Latency | MilliSecond | composer.googleapis.com/environment/api/request\_latencies |
-| cloud\_composer\_environment/default\_metrics | Parse Error Count | Count | composer.googleapis.com/environment/dag\_processing/parse\_error\_count |
-| cloud\_composer\_environment/default\_metrics | DAG parsing processes | Count | composer.googleapis.com/environment/dag\_processing/processes |
-| cloud\_composer\_environment/default\_metrics | Processors Timeout Count | Count | composer.googleapis.com/environment/dag\_processing/processor\_timeout\_count |
-| cloud\_composer\_environment/default\_metrics | Total Parse Time | Second | composer.googleapis.com/environment/dag\_processing/total\_parse\_time |
-| cloud\_composer\_environment/default\_metrics | Dag Bag Size | Count | composer.googleapis.com/environment/dagbag\_size |
-| cloud\_composer\_environment/default\_metrics | Database Healthy | Unspecified | composer.googleapis.com/environment/database\_health |
-| cloud\_composer\_environment/default\_metrics | Executor Open Slots | Count | composer.googleapis.com/environment/executor/open\_slots |
-| cloud\_composer\_environment/default\_metrics | Executor Running Tasks | Count | composer.googleapis.com/environment/executor/running\_tasks |
-| cloud\_composer\_environment/default\_metrics | Task Instance Count | Count | composer.googleapis.com/environment/finished\_task\_instance\_count |
-| cloud\_composer\_environment/default\_metrics | Healthy | Unspecified | composer.googleapis.com/environment/healthy |
-| cloud\_composer\_environment/default\_metrics | Celery Workers | Count | composer.googleapis.com/environment/num\_celery\_workers |
-| cloud\_composer\_environment/default\_metrics | Scheduler Heartbeats | Count | composer.googleapis.com/environment/scheduler\_heartbeat\_count |
-| cloud\_composer\_environment/default\_metrics | Task Queue Length | Count | composer.googleapis.com/environment/task\_queue\_length |
-| cloud\_composer\_environment/default\_metrics | Worker Pod Eviction Count | Count | composer.googleapis.com/environment/worker/pod\_eviction\_count |
-| cloud\_composer\_environment/default\_metrics | Zombie Tasks Killed | Count | composer.googleapis.com/environment/zombie\_task\_killed\_count |
+| cloud\_composer\_environment/default\_metrics | API-запросы | Count | composer.googleapis.com/environment/api/request\_count |
+| cloud\_composer\_environment/default\_metrics | Задержка API | MilliSecond | composer.googleapis.com/environment/api/request\_latencies |
+| cloud\_composer\_environment/default\_metrics | Количество ошибок разбора | Count | composer.googleapis.com/environment/dag\_processing/parse\_error\_count |
+| cloud\_composer\_environment/default\_metrics | Процессы разбора DAG | Count | composer.googleapis.com/environment/dag\_processing/processes |
+| cloud\_composer\_environment/default\_metrics | Количество таймаутов процессоров | Count | composer.googleapis.com/environment/dag\_processing/processor\_timeout\_count |
+| cloud\_composer\_environment/default\_metrics | Суммарное время разбора | Second | composer.googleapis.com/environment/dag\_processing/total\_parse\_time |
+| cloud\_composer\_environment/default\_metrics | Размер Dag Bag | Count | composer.googleapis.com/environment/dagbag\_size |
+| cloud\_composer\_environment/default\_metrics | База данных работоспособна | Unspecified | composer.googleapis.com/environment/database\_health |
+| cloud\_composer\_environment/default\_metrics | Свободные слоты исполнителя | Count | composer.googleapis.com/environment/executor/open\_slots |
+| cloud\_composer\_environment/default\_metrics | Задачи исполнителя в работе | Count | composer.googleapis.com/environment/executor/running\_tasks |
+| cloud\_composer\_environment/default\_metrics | Количество экземпляров задач | Count | composer.googleapis.com/environment/finished\_task\_instance\_count |
+| cloud\_composer\_environment/default\_metrics | Работоспособен | Unspecified | composer.googleapis.com/environment/healthy |
+| cloud\_composer\_environment/default\_metrics | Рабочие Celery | Count | composer.googleapis.com/environment/num\_celery\_workers |
+| cloud\_composer\_environment/default\_metrics | Сигналы жизнеспособности планировщика | Count | composer.googleapis.com/environment/scheduler\_heartbeat\_count |
+| cloud\_composer\_environment/default\_metrics | Длина очереди задач | Count | composer.googleapis.com/environment/task\_queue\_length |
+| cloud\_composer\_environment/default\_metrics | Количество вытеснений подов воркеров | Count | composer.googleapis.com/environment/worker/pod\_eviction\_count |
+| cloud\_composer\_environment/default\_metrics | Уничтоженных зомби-задач | Count | composer.googleapis.com/environment/zombie\_task\_killed\_count |
 
 ## Связанные темы
 
-* [Интеграции Google Cloud](../../gcp-integrations.md "Настройка и конфигурирование Dynatrace в Google Cloud.")
+* [Интеграции Google Cloud](../../gcp-integrations.md "Настройка и конфигурирование Dynatrace на Google Cloud.")

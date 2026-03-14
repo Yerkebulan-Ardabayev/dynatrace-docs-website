@@ -1,5 +1,5 @@
 ---
-title: Process group detection
+title: Обнаружение групп процессов
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection
 scraped: 2026-03-06T21:13:32.671349
 ---

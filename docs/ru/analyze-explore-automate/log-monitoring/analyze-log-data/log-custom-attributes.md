@@ -1,5 +1,5 @@
 ---
-title: Log custom attributes (Logs Classic)
+title: Журналы пользовательских атрибутов (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-custom-attributes
 scraped: 2026-03-03T21:21:55.698101
 ---

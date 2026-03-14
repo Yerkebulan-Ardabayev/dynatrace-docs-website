@@ -1,5 +1,5 @@
 ---
-title: All AWS cloud services
+title: Все облачные сервисы AWS
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services
 scraped: 2026-03-06T21:18:24.141243
 ---
@@ -23,7 +23,7 @@ ActiveGate версии 1.245+
 
 В результате [интеграции мониторинга AWS](cloudwatch-metrics.md "Интеграция метрик из Amazon CloudWatch.") некоторые сервисы отслеживаются автоматически. Такие сервисы отмечены как классические.
 
-[Amazon Dynamo Database (classic)](aws-all-services/aws-service-dynamo-db-builtin.md) [Amazon EC2 (classic)](cloudwatch-metrics/cloudwatch-ec2/ec2-builtin.md) [Amazon EC2 Auto Scaling (classic)](cloudwatch-metrics/cloudwatch-ec2/ec2-auto-scaling-builltin.md) [AWS Lambda (classic)](cloudwatch-metrics/aws-lambda-cloudwatch-metrics/lambda-builtin.md) [AWS Application and Network Load Balancer (classic)](aws-all-services/aws-service-application-and-network-load-balancer-builtin.md) [Elastic Load Balancer (classic)](aws-all-services/aws-service-elastic-load-balancer-builtin.md) [Amazon S3 (classic)](aws-all-services/aws-service-simple-storage-service-s3-builtin.md) [Amazon RDS (classic)](aws-all-services/aws-service-relational-database-service-rds-builtin.md) [Amazon EBS (classic)](aws-all-services/aws-service-elastic-block-store-ebs-builtin.md)
+[Amazon Dynamo Database (классический)](aws-all-services/aws-service-dynamo-db-builtin.md) [Amazon EC2 (классический)](cloudwatch-metrics/cloudwatch-ec2/ec2-builtin.md) [Amazon EC2 Auto Scaling (классический)](cloudwatch-metrics/cloudwatch-ec2/ec2-auto-scaling-builltin.md) [AWS Lambda (классический)](cloudwatch-metrics/aws-lambda-cloudwatch-metrics/lambda-builtin.md) [AWS Application and Network Load Balancer (классический)](aws-all-services/aws-service-application-and-network-load-balancer-builtin.md) [Elastic Load Balancer (классический)](aws-all-services/aws-service-elastic-load-balancer-builtin.md) [Amazon S3 (классический)](aws-all-services/aws-service-simple-storage-service-s3-builtin.md) [Amazon RDS (классический)](aws-all-services/aws-service-relational-database-service-rds-builtin.md) [Amazon EBS (классический)](aws-all-services/aws-service-elastic-block-store-ebs-builtin.md)
 
 Информацию о различиях между классическими сервисами и другими сервисами см. в разделе [Миграция с классических (ранее «встроенных») сервисов AWS на облачные сервисы](cloudwatch-metrics/aws-migration-guide.md "Миграция классических сервисов AWS на новые версии.").
 
@@ -43,14 +43,14 @@ ActiveGate версии 1.245+
 
 | Сервис | Облачный экземпляр | Мониторинг и фильтрация тегов | Тип сущности Dynatrace |
 | --- | --- | --- | --- |
-| Amazon EC2 Auto Scaling (built-in) | AutoScalingGroupName | Да | AUTO\_SCALING\_GROUP |
-| AWS Lambda (built-in) | FunctionName | Да | AWS\_LAMBDA\_FUNCTION |
-| Amazon Application and Network Load Balancer (built-in) | LoadBalancer | Да | AWS\_APPLICATION\_LOAD\_BALANCER |
-| Amazon Application and Network Load Balancer (built-in) | LoadBalancer | Да | AWS\_NETWORK\_LOAD\_BALANCER |
-| Amazon EBS (built-in) | VolumeId | Да | EBS\_VOLUME |
-| Amazon EC2 (built-in) | InstanceId | Да | EC2\_INSTANCE |
-| Amazon Elastic Load Balancer (ELB) (built-in) | LoadBalancerName | Да | ELASTIC\_LOAD\_BALANCER |
-| Amazon RDS (built-in) | DBInstanceIdentifier | Да | RELATIONAL\_DATABASE\_SERVICE |
+| Amazon EC2 Auto Scaling (встроенный) | AutoScalingGroupName | Да | AUTO\_SCALING\_GROUP |
+| AWS Lambda (встроенный) | FunctionName | Да | AWS\_LAMBDA\_FUNCTION |
+| Amazon Application and Network Load Balancer (встроенный) | LoadBalancer | Да | AWS\_APPLICATION\_LOAD\_BALANCER |
+| Amazon Application and Network Load Balancer (встроенный) | LoadBalancer | Да | AWS\_NETWORK\_LOAD\_BALANCER |
+| Amazon EBS (встроенный) | VolumeId | Да | EBS\_VOLUME |
+| Amazon EC2 (встроенный) | InstanceId | Да | EC2\_INSTANCE |
+| Amazon Elastic Load Balancer (ELB) (встроенный) | LoadBalancerName | Да | ELASTIC\_LOAD\_BALANCER |
+| Amazon RDS (встроенный) | DBInstanceIdentifier | Да | RELATIONAL\_DATABASE\_SERVICE |
 | AWS Certificate Manager Private Certificate Authority | PrivateCAArn | Да | cloud:aws:acmprivateca |
 | Amazon API Gateway | ApiName | Да | cloud:aws:api\_gateway |
 | AWS App Runner | ServiceName | Да | cloud:aws:app\_runner |
@@ -113,7 +113,7 @@ ActiveGate версии 1.245+
 | Amazon WorkMail | OrganizationId | Да | cloud:aws:workmail |
 | Amazon WorkSpaces | WorkspaceId | Да | cloud:aws:workspaces |
 
-## Configuration API
+## API конфигурации
 
 Для получения списка всех поддерживаемых сервисов AWS в вашем кластере текущей версии используйте [API поддерживаемых сервисов AWS](../../../dynatrace-api/configuration-api/aws-supported-services.md "Получение списка поддерживаемых сервисов AWS через Dynatrace API.").
 

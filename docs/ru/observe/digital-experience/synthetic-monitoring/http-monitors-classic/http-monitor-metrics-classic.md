@@ -1,5 +1,5 @@
 ---
-title: HTTP monitor metrics
+title: Метрики HTTP монитора
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/http-monitor-metrics-classic
 scraped: 2026-03-05T21:34:57.630725
 ---

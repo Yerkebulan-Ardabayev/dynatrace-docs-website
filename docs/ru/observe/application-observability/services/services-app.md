@@ -1,5 +1,5 @@
 ---
-title: Services app
+title: Приложение Services
 source: https://www.dynatrace.com/docs/observe/application-observability/services/services-app
 scraped: 2026-03-06T21:09:35.629907
 ---

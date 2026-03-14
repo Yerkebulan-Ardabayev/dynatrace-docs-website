@@ -1,5 +1,5 @@
 ---
-title: Configure advanced permissions with security context
+title: Настройка расширенных прав доступа с помощью контекста безопасности
 source: https://www.dynatrace.com/docs/platform/grail/organize-data/advanced-permission-setup
 scraped: 2026-03-06T21:27:14.199849
 ---

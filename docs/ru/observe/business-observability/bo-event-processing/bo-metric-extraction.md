@@ -1,5 +1,5 @@
 ---
-title: Business event metric extraction via classic pipeline
+title: Извлечение метрик бизнес-событий через классический конвейер
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing/bo-metric-extraction
 scraped: 2026-03-03T21:28:39.896650
 ---

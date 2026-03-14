@@ -1,5 +1,5 @@
 ---
-title: API for Dashboards and Notebooks
+title: API для панелей мониторинга и ноутбуков
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-api
 scraped: 2026-03-06T21:31:09.703615
 ---

@@ -1,5 +1,5 @@
 ---
-title: Google Cloud Tasks monitoring
+title: Мониторинг Google Cloud Tasks
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-tasks-monitoring
 scraped: 2026-03-03T21:26:16.765189
 ---

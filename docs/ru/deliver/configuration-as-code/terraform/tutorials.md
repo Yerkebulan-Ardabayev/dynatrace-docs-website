@@ -1,5 +1,5 @@
 ---
-title: Terraform tutorials overview
+title: Terraform обзор учебных пособий
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials
 scraped: 2026-03-05T21:40:31.962704
 ---

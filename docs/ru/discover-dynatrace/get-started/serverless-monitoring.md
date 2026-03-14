@@ -1,5 +1,5 @@
 ---
-title: Serverless monitoring
+title: Мониторинг бессерверных сред
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/serverless-monitoring
 scraped: 2026-03-06T21:16:46.945923
 ---

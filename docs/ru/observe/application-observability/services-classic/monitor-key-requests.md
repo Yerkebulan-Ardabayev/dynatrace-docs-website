@@ -1,5 +1,5 @@
 ---
-title: Monitor key requests
+title: Мониторинг ключевых запросов
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/monitor-key-requests
 scraped: 2026-03-06T21:17:32.546778
 ---

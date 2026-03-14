@@ -623,8 +623,8 @@ Dynatrace собирает метрики для множества предва
 
 В этом примере из полного списка разрешений необходимо выбрать
 
-* `"apigateway:GET"` for **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"apigateway:GET"` для **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
 ### Конечные точки AWS, которые должны быть доступны из ActiveGate с соответствующими сервисами AWS
 
@@ -824,19 +824,19 @@ Dynatrace собирает метрики для множества предва
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
-| CPUUtilization | The percentage of CPU utilization. For clusters, this metric represents an aggregation of all nodes (leader and compute) CPU utilization values. | Percent | Multi | ClusterIdentifier | Доступна |
+| CPUUtilization | Процент использования ЦПУ. Для кластеров эта метрика представляет агрегированное значение использования ЦПУ всех узлов (лидера и вычислительных). | Percent | Multi | ClusterIdentifier | Доступна |
 | CPUUtilization |  | Percent | Multi | ClusterIdentifier, NodeID | Доступна |
-| DatabaseConnections | The number of database connections to a cluster | Count | Multi | ClusterIdentifier, NodeID |  |
+| DatabaseConnections | Количество подключений к базе данных кластера | Count | Multi | ClusterIdentifier, NodeID |  |
 | DatabaseConnections |  | Count | Multi | ClusterIdentifier |  |
 | DatabaseConnections |  | Count | Sum | ClusterIdentifier, NodeID |  |
 | DatabaseConnections |  | Count | Sum | ClusterIdentifier |  |
-| HealthStatus | Indicates the health of the cluster. Every minute the cluster connects to its database and performs a simple query. If it's able to perform this operation successfully, the cluster is considered healthy. Otherwise, the cluster is unhealthy. An unhealthy status can occur when the cluster database is under extremely heavy load or if there's a configuration problem with a database on the cluster. | Count | Average | ClusterIdentifier | Доступна |
+| HealthStatus | Указывает на состояние работоспособности кластера. Каждую минуту кластер подключается к своей базе данных и выполняет простой запрос. Если операция выполняется успешно, кластер считается работоспособным. В противном случае кластер считается неработоспособным. Статус неработоспособности может возникнуть при чрезмерно высокой нагрузке на базу данных кластера или при наличии проблем с конфигурацией базы данных в кластере. | Count | Average | ClusterIdentifier | Доступна |
 | Healthstatus |  | Count | Average | ClusterIdentifier, NodeID |  |
-| MaintenanceMode | Indicates whether the cluster is in maintenance mode. | Count | Multi | ClusterIdentifier, NodeID |  |
+| MaintenanceMode | Указывает, находится ли кластер в режиме обслуживания. | Count | Multi | ClusterIdentifier, NodeID |  |
 | MaintenanceMode |  | Count | Multi | ClusterIdentifier |  |
-| NetworkReceiveThroughput | The rate at which the node or cluster receives data. | Bytes/Second | Multi | ClusterIdentifier | Доступна |
+| NetworkReceiveThroughput | Скорость получения данных узлом или кластером. | Bytes/Second | Multi | ClusterIdentifier | Доступна |
 | NetworkReceiveThroughput |  | Bytes/Second | Multi | ClusterIdentifier, NodeID | Доступна |
-| NetworkTransmitThroughput | The rate at which the node or cluster writes data. | Bytes/Second | Multi | ClusterIdentifier, NodeID |  |
+| NetworkTransmitThroughput | Скорость отправки данных узлом или кластером. | Bytes/Second | Multi | ClusterIdentifier, NodeID |  |
 | NetworkTransmitThroughput |  | Bytes/Second | Multi | ClusterIdentifier |  |
-| PercentageDiskSpaceUsed | The percent of disk space used | Percent | Multi | ClusterIdentifier | Доступна |
+| PercentageDiskSpaceUsed | Процент использованного дискового пространства | Percent | Multi | ClusterIdentifier | Доступна |
 | PercentageDiskSpaceUsed |  | Percent | Multi | ClusterIdentifier, NodeID |  |

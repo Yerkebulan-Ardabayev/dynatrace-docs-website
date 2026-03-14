@@ -1,5 +1,5 @@
 ---
-title: Access workflow management functionality
+title: Управление функциональностью рабочего процесса доступа
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-access-management
 scraped: 2026-03-06T21:30:23.206905
 ---
@@ -32,9 +32,9 @@ scraped: 2026-03-06T21:30:23.206905
 
 ## Связанные темы
 
-* [Upload a workflow or a workflow template](workflows-upload.md "Upload your workflow or your template.")
-* [Download a workflow or template](workflows-download.md "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
-* [Change ownership of a workflow](workflows-change-owner.md "Change ownership of your workflow.")
-* [Manage live or draft workflows](workflows-manage-live-mode.md "Undeploy your workflow or download as Workflow or as a template.")
-* [Get notified about workflow changes](workflows-notifications.md "Get workflow notifications about changes to your workflow, such as edits, deletions, and failures.")
-* [Compare and restore versions of a workflow](workflows-versioning.md "Compare and restore every version of your workflow.")
+* [Загрузка рабочего процесса или шаблона рабочего процесса](workflows-upload.md "Upload your workflow or your template.")
+* [Скачивание рабочего процесса или шаблона](workflows-download.md "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
+* [Смена владельца рабочего процесса](workflows-change-owner.md "Change ownership of your workflow.")
+* [Управление активными и черновыми рабочими процессами](workflows-manage-live-mode.md "Undeploy your workflow or download as Workflow or as a template.")
+* [Получение уведомлений об изменениях рабочего процесса](workflows-notifications.md "Get workflow notifications about changes to your workflow, such as edits, deletions, and failures.")
+* [Сравнение и восстановление версий рабочего процесса](workflows-versioning.md "Compare and restore every version of your workflow.")

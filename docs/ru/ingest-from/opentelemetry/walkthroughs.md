@@ -1,5 +1,5 @@
 ---
-title: Instrument your application
+title: Инструментирование вашего приложения
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs
 scraped: 2026-03-06T21:23:26.806158
 ---

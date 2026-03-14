@@ -1,5 +1,5 @@
 ---
-title: ClusterRole aggregation for Kubernetes monitoring
+title: Агрегация ClusterRole для мониторинга Kubernetes
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation
 scraped: 2026-03-05T21:35:12.026761
 ---

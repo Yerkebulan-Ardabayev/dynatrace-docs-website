@@ -1,5 +1,5 @@
 ---
-title: Test pipeline observability
+title: Наблюдаемость конвейера тестирования
 source: https://www.dynatrace.com/docs/deliver/test-pipeline-observability
 scraped: 2026-03-06T21:27:43.528580
 ---

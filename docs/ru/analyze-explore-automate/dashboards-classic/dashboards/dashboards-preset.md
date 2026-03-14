@@ -1,5 +1,5 @@
 ---
-title: Preset Dynatrace dashboards
+title: Предустановленные Dynatrace панели мониторинга
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-preset
 scraped: 2026-03-06T21:37:38.897755
 ---

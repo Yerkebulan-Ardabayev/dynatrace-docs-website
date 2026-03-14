@@ -1,27 +1,27 @@
 ---
-title: Dynatrace Platform Subscription API - Cost allocation
+title: Dynatrace Платформа Подписки API - Распределение затрат
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation
 scraped: 2026-03-04T21:27:43.541975
 ---
 
-# Dynatrace Platform Subscription API - Cost allocation
+# Dynatrace Платформа Подписки API - Распределение затрат
 
-# Dynatrace Platform Subscription API - Cost allocation
+# Dynatrace Платформа Подписки API - Распределение затрат
 
-* Актуальная версия Dynatrace
+* Последнее Dynatrace
 * Справочник
 * Опубликовано 18 октября 2024 г.
 
-[![cost-allocation](https://cdn.bfldr.com/B686QPH3/at/9vhmq6x4kh88sq7hq4qbwg9t/DT0634.svg?auto=webp&width=72&height=72 "cost-allocation")
+[![cost-allocation](https://cdn.bfldr.com/B686QPH3/at/9vhmq6x4kh88sq7hq4qbwg9t/DT0634.svg?auto=webp&width=72&height=72 "распределение затрат")
 
 ### Просмотр распределения затрат
 
-Узнайте, как затраты и потребление по подписке Dynatrace Platform Subscription распределяются по продуктам и центрам затрат.](cost-allocation/get-cost-allocation.md "Узнайте, как затраты и потребление по подписке Dynatrace Platform Subscription распределяются по продуктам и центрам затрат.")[![cost-allocation](https://cdn.bfldr.com/B686QPH3/at/9vhmq6x4kh88sq7hq4qbwg9t/DT0634.svg?auto=webp&width=72&height=72 "cost-allocation")
+Посмотрите, как стоимость и использование Dynatrace Платформы Подписки распределены по продуктам и центрам затрат.](cost-allocation/get-cost-allocation.md "Посмотрите, как стоимость и использование Dynatrace Платформы Подписки распределены по продуктам и центрам затрат.")[![cost-allocation](https://cdn.bfldr.com/B686QPH3/at/9vhmq6x4kh88sq7hq4qbwg9t/DT0634.svg?auto=webp&width=72&height=72 "распределение затрат")
 
 ### Управление распределением затрат
 
-Управляйте распределением затрат и потребления по подписке Dynatrace Platform Subscription между продуктами и центрами затрат.](cost-allocation/manage-cost-allocation.md "Управляйте распределением затрат и потребления по подписке Dynatrace Platform Subscription между продуктами и центрами затрат.")
+Управляйте распределением стоимости и использования Dynatrace Платформы Подписки по продуктам и центрам затрат.](cost-allocation/manage-cost-allocation.md "Управляйте распределением стоимости и использования Dynatrace Платформы Подписки по продуктам и центрам затрат.")
 
 ## Связанные темы
 
-* [Распределение затрат DPS](../../../license/cost-allocation.md "Узнайте, как распределять затраты по центрам затрат и продуктам.")
+* [Распределите затраты DPS](../../../license/cost-allocation.md "Узнайте, как распределить затраты по центрам затрат и продуктам.")

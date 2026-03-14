@@ -1,5 +1,5 @@
 ---
-title: Troubleshooting RUM for mobile applications
+title: Устранение неполадок RUM для мобильных приложений
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/troubleshooting
 scraped: 2026-03-06T21:35:25.181485
 ---
@@ -9,9 +9,9 @@ scraped: 2026-03-06T21:35:25.181485
 # Устранение неполадок RUM для мобильных приложений
 
 * Classic
-* Troubleshooting
-* 1-min read
-* Published Jul 18, 2019
+* Устранение неполадок
+* Чтение: 1 мин
+* Опубликовано Jul 18, 2019
 
 На этой странице вы найдёте решения проблем, связанных с мониторингом мобильных приложений.
 
@@ -28,7 +28,7 @@ scraped: 2026-03-06T21:35:25.181485
 
 ## Передача журналов для устранения неполадок
 
-Для мобильных приложений iOS Dynatrace предоставляет API `shareLogsFile`, который позволяет легко делиться локально сохранёнными файлами журналов через панель общего доступа iOS (`UIActivityViewController`). Дополнительные сведения см. в разделе [Передача журналов](../../../manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace.md#log-sharing "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.").
+Для мобильных приложений iOS Dynatrace предоставляет API `shareLogsFile`, который позволяет легко делиться локально сохранёнными файлами журналов через панель общего доступа iOS (`UIActivityViewController`). Дополнительные сведения см. в разделе [Передача журналов](../../../manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace.md#log-sharing "Узнайте, какие типы данных конечных пользователей могут собираться при мониторинге Dynatrace и какие методы доступны для маскировки персональных данных.").
 
 ## Устранение неполадок для конкретных технологий
 

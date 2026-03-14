@@ -1,5 +1,5 @@
 ---
-title: Adjust the sensitivity of anomaly detection
+title: Настройка чувствительности обнаружения аномалий
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection
 scraped: 2026-03-06T21:20:54.757825
 ---

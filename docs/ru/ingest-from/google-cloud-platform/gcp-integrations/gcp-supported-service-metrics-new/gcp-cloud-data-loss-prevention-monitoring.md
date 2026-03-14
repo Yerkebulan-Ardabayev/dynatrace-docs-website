@@ -1,33 +1,33 @@
 ---
-title: Google Cloud Data Loss Prevention monitoring
+title: Мониторинг Google Cloud Data Loss Prevention
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-data-loss-prevention-monitoring
 scraped: 2026-03-03T21:28:51.746646
 ---
 
-# Google Cloud Data Loss Prevention monitoring
+# Мониторинг Google Cloud Data Loss Prevention
 
-# Google Cloud Data Loss Prevention monitoring
+# Мониторинг Google Cloud Data Loss Prevention
 
 * Последняя версия Dynatrace
 * Практическое руководство
-* Чтение: 1 мин
-* Опубликовано 17 января 2022 г.
+* 1 мин. чтения
+* Опубликовано 17 янв. 2022 г.
 
-Интеграция Dynatrace с Google Cloud использует данные, собираемые из Google Operation API, для постоянного мониторинга состояния и производительности сервисов Google Cloud. Объединяя все релевантные данные на дашбордах, она также обеспечивает оповещение и отслеживание событий.
+Интеграция Dynatrace с Google Cloud использует данные, собранные из Google Operations API, для непрерывного мониторинга работоспособности и производительности сервисов Google Cloud. Помимо объединения всех релевантных данных в дашборды, она также обеспечивает оповещения и отслеживание событий.
 
 ## Предварительные требования
 
-[Настройка интеграции](../gcp-guide/deploy-k8.md "Настройте мониторинг журналов и метрик для сервисов GCP в новом кластере GKE Autopilot.")
+[Настройка интеграции](../gcp-guide/deploy-k8.md "Настройка мониторинга логов и метрик для сервисов GCP в новом кластере GKE Autopilot.")
 
 ## Добавление сервисов и наборов функций Необязательно
 
-После интеграции Dynatrace автоматически начинает мониторинг ряда предустановленных сервисов Google Cloud и наборов функций (метрик). Помимо этого, вы можете добавить в мониторинг дополнительные сервисы или наборы функций. Подробнее см. в разделе [Добавление или удаление сервисов](../gcp-guide/deploy-k8.md#manage "Настройте мониторинг журналов и метрик для сервисов GCP в новом кластере GKE Autopilot.").
+После интеграции Dynatrace автоматически начинает мониторинг ряда предустановленных сервисов Google Cloud и наборов функций (метрик). Помимо них, вы можете добавить дополнительные сервисы или наборы функций для мониторинга. Подробнее см. в разделе [Добавление и удаление сервисов](../gcp-guide/deploy-k8.md#manage "Настройка мониторинга логов и метрик для сервисов GCP в новом кластере GKE Autopilot.").
 
-Список наборов функций, доступных для данного сервиса, см. в [таблице метрик](#table).
+Список наборов функций, доступных для данного сервиса, см. в разделе [Таблица метрик](#table).
 
 ## Просмотр метрик
 
-После развёртывания интеграции вы можете видеть метрики отслеживаемых сервисов в [обозревателе метрик](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Просматривайте метрики с помощью обозревателя метрик Dynatrace."), [Data Explorer](../../../../analyze-explore-automate/explorer.md "Запрашивайте метрики и преобразуйте результаты для получения нужных данных.") и плитках дашборда.
+После развёртывания интеграции вы можете просматривать метрики отслеживаемых сервисов в [браузере метрик](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Просмотр метрик с помощью браузера метрик Dynatrace."), [Data Explorer](../../../../analyze-explore-automate/explorer.md "Запрашивайте метрики и преобразуйте результаты для получения нужных данных."), а также в плитках дашбордов.
 
 ## Таблица метрик
 
@@ -35,14 +35,14 @@ scraped: 2026-03-03T21:28:51.746646
 
 | Набор функций | Название | Единица | Идентификатор метрики GCP |
 | --- | --- | --- | --- |
-| cloud\_dlp\_project/default\_metrics | Content bytes inspected | Байт | dlp.googleapis.com/content\_bytes\_inspected\_count |
-| cloud\_dlp\_project/default\_metrics | Content bytes transformed | Байт | dlp.googleapis.com/content\_bytes\_transformed\_count |
-| cloud\_dlp\_project/default\_metrics | Findings | Количество | dlp.googleapis.com/finding\_count |
-| cloud\_dlp\_project/default\_metrics | Job results | Количество | dlp.googleapis.com/job\_result\_count |
-| cloud\_dlp\_project/default\_metrics | Job trigger runs | Количество | dlp.googleapis.com/job\_trigger\_run\_count |
-| cloud\_dlp\_project/default\_metrics | Storage bytes inspected | Байт | dlp.googleapis.com/storage\_bytes\_inspected\_count |
-| cloud\_dlp\_project/default\_metrics | Storage bytes transformed | Байт | dlp.googleapis.com/storage\_bytes\_transformed\_count |
+| cloud\_dlp\_project/default\_metrics | Проинспектированных байт контента | Byte | dlp.googleapis.com/content\_bytes\_inspected\_count |
+| cloud\_dlp\_project/default\_metrics | Преобразованных байт контента | Byte | dlp.googleapis.com/content\_bytes\_transformed\_count |
+| cloud\_dlp\_project/default\_metrics | Обнаружения | Count | dlp.googleapis.com/finding\_count |
+| cloud\_dlp\_project/default\_metrics | Результаты заданий | Count | dlp.googleapis.com/job\_result\_count |
+| cloud\_dlp\_project/default\_metrics | Запуски триггеров заданий | Count | dlp.googleapis.com/job\_trigger\_run\_count |
+| cloud\_dlp\_project/default\_metrics | Проинспектированных байт хранилища | Byte | dlp.googleapis.com/storage\_bytes\_inspected\_count |
+| cloud\_dlp\_project/default\_metrics | Преобразованных байт хранилища | Byte | dlp.googleapis.com/storage\_bytes\_transformed\_count |
 
 ## Связанные темы
 
-* [Интеграции Google Cloud](../../gcp-integrations.md "Настройте и сконфигурируйте Dynatrace в Google Cloud.")
+* [Интеграции Google Cloud](../../gcp-integrations.md "Настройка и конфигурирование Dynatrace на Google Cloud.")

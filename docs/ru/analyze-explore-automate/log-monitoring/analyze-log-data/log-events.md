@@ -1,5 +1,5 @@
 ---
-title: Log events (Logs Classic)
+title: События журнала (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events
 scraped: 2026-03-04T21:31:19.072781
 ---

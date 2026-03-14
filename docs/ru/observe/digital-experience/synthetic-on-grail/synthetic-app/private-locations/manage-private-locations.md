@@ -1,5 +1,5 @@
 ---
-title: Manage private locations
+title: Управление частными локациями
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/manage-private-locations
 scraped: 2026-03-03T21:32:38.245044
 ---

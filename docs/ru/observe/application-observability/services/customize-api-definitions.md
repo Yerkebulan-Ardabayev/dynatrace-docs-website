@@ -1,5 +1,5 @@
 ---
-title: Custom API definitions
+title: Пользовательские определения API
 source: https://www.dynatrace.com/docs/observe/application-observability/services/customize-api-definitions
 scraped: 2026-03-06T21:26:01.503322
 ---

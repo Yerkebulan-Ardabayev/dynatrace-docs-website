@@ -1,5 +1,5 @@
 ---
-title: Segment data by Kubernetes clusters
+title: Сегментация данных по кластерам Kubernetes
 source: https://www.dynatrace.com/docs/manage/segments/use-cases/segments-use-cases-kubernetes-clusters
 scraped: 2026-03-06T21:13:18.908578
 ---

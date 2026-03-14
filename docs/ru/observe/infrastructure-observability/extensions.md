@@ -1,17 +1,17 @@
 ---
-title: Extensions
+title: Расширения
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions
 scraped: 2026-03-06T21:17:01.611559
 ---
 
-# Extensions
+# Расширения
 
-# Extensions
+# Расширения
 
-* Latest Dynatrace
-* Reference
-* 5-min read
-* Published Nov 28, 2025
+* Последняя версия Dynatrace
+* Справочник
+* Чтение: 5 мин
+* Опубликовано 28 ноября 2025 г.
 
 Расширения помогают получить более глубокое представление о вашей среде и расширить возможности мониторинга.
 
@@ -25,7 +25,7 @@ scraped: 2026-03-06T21:17:01.611559
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
-### Explore in Dynatrace Hub
+### Обзор в Dynatrace Hub
 
 Раскройте весь потенциал Dynatrace, находя, активируя и запуская расширения, отвечающие вашим конкретным потребностям в наблюдаемости.
 
@@ -33,6 +33,6 @@ scraped: 2026-03-06T21:17:01.611559
 
 ### Приложение Extensions
 
-Latest Dynatrace
+Последняя версия Dynatrace
 
-С помощью ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions** Dynatrace позволяет управлять вашими расширениями, включая установку, настройку и мониторинг.](../../ingest-from/extensions/manage-extensions.md "Learn how to manage extensions.")
+С помощью ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions** Dynatrace позволяет управлять вашими расширениями, включая установку, настройку и мониторинг.](../../ingest-from/extensions/manage-extensions.md "Узнайте, как управлять расширениями.")

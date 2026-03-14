@@ -1,5 +1,5 @@
 ---
-title: Extend Dynatrace with domain-specific web UI
+title: Расширение Dynatrace с помощью предметно-ориентированного веб-интерфейса
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-ui
 scraped: 2026-03-06T21:16:15.682232
 ---

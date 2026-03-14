@@ -623,8 +623,8 @@ Dynatrace собирает метрики для множества предва
 
 В этом примере из полного списка разрешений необходимо выбрать
 
-* `"apigateway:GET"` for **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"apigateway:GET"` для **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
 ### Конечные точки AWS, которые должны быть доступны из ActiveGate с соответствующими сервисами AWS
 
@@ -824,17 +824,17 @@ Dynatrace собирает метрики для множества предва
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
-| ActiveConnectionCount | The total number of concurrent active TCP connections through the NAT gateway | Count | Maximum | NatGatewayId | Доступна |
-| BytesInFromDestination | The number of bytes received by the NAT gateway from the destination | Bytes | Sum | NatGatewayId |  |
-| BytesInFromSource | The number of bytes received by the NAT gateway from clients in your VPC | Bytes | Sum | NatGatewayId |  |
-| BytesOutToDestination | The number of bytes sent out through the NAT gateway to the destination | Bytes | Sum | NatGatewayId |  |
-| BytesOutToSource | The number of bytes sent through the NAT gateway to the clients in your VPC | Bytes | Sum | NatGatewayId |  |
-| ConnectionAttemptCount | The number of connection attempts made through the NAT gateway | Count | Sum | NatGatewayId | Доступна |
-| ConnectionEstablishedCount | The number of connections established through the NAT gateway | Count | Sum | NatGatewayId | Доступна |
-| ErrorPortAllocation | The number of times the NAT gateway could not allocate a source port | Count | Sum | NatGatewayId | Доступна |
-| IdleTimeoutCount | The number of connections that transitioned from the active state to the idle state | Count | Sum | NatGatewayId | Доступна |
-| PacketsDropCount | The number of packets dropped by the NAT gateway | Count | Sum | NatGatewayId | Доступна |
-| PacketsInFromDestination | The number of packets received by the NAT gateway from the destination | Count | Sum | NatGatewayId |  |
-| PacketsInFromSource | The number of packets received by the NAT gateway from clients in your VPC | Count | Sum | NatGatewayId |  |
-| PacketsOutToDestination | The number of packets sent out through the NAT gateway to the destination | Count | Sum | NatGatewayId |  |
-| PacketsOutToSource | The number of packets sent through the NAT gateway to the clients in your VPC | Count | Sum | NatGatewayId |  |
+| ActiveConnectionCount | Общее количество одновременных активных TCP-соединений через NAT-шлюз | Count | Maximum | NatGatewayId | Доступна |
+| BytesInFromDestination | Количество байтов, полученных NAT-шлюзом от назначения | Bytes | Sum | NatGatewayId |  |
+| BytesInFromSource | Количество байтов, полученных NAT-шлюзом от клиентов в вашем VPC | Bytes | Sum | NatGatewayId |  |
+| BytesOutToDestination | Количество байтов, отправленных через NAT-шлюз к назначению | Bytes | Sum | NatGatewayId |  |
+| BytesOutToSource | Количество байтов, отправленных через NAT-шлюз клиентам в вашем VPC | Bytes | Sum | NatGatewayId |  |
+| ConnectionAttemptCount | Количество попыток соединения через NAT-шлюз | Count | Sum | NatGatewayId | Доступна |
+| ConnectionEstablishedCount | Количество установленных соединений через NAT-шлюз | Count | Sum | NatGatewayId | Доступна |
+| ErrorPortAllocation | Количество раз, когда NAT-шлюз не смог выделить исходный порт | Count | Sum | NatGatewayId | Доступна |
+| IdleTimeoutCount | Количество соединений, перешедших из активного состояния в состояние ожидания | Count | Sum | NatGatewayId | Доступна |
+| PacketsDropCount | Количество пакетов, отброшенных NAT-шлюзом | Count | Sum | NatGatewayId | Доступна |
+| PacketsInFromDestination | Количество пакетов, полученных NAT-шлюзом от назначения | Count | Sum | NatGatewayId |  |
+| PacketsInFromSource | Количество пакетов, полученных NAT-шлюзом от клиентов в вашем VPC | Count | Sum | NatGatewayId |  |
+| PacketsOutToDestination | Количество пакетов, отправленных через NAT-шлюз к назначению | Count | Sum | NatGatewayId |  |
+| PacketsOutToSource | Количество пакетов, отправленных через NAT-шлюз клиентам в вашем VPC | Count | Sum | NatGatewayId |  |

@@ -1,5 +1,5 @@
 ---
-title: Optimize engineering flow metrics using Jira data
+title: Оптимизация метрик потока инженерии с помощью данных Jira
 source: https://www.dynatrace.com/docs/deliver/pipeline-observability-sdlc-events/tutorials/pipeline-observability-tutorial-jira
 scraped: 2026-03-02T21:30:16.892113
 ---

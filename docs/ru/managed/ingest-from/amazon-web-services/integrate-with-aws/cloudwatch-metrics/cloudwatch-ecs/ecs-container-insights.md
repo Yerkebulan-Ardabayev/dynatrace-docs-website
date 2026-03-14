@@ -1,35 +1,35 @@
 ---
-title: Метрики CloudWatch для Amazon ECS Container Insights
+title: Метрики Amazon ECS Container Insights CloudWatch
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ecs/ecs-container-insights
 scraped: 2026-03-05T21:34:49.077417
 ---
 
-# Метрики CloudWatch для Amazon ECS Container Insights
+# Метрики Amazon ECS Container Insights CloudWatch
 
-# Метрики CloudWatch для Amazon ECS Container Insights
+# Метрики Amazon ECS Container Insights CloudWatch
 
 * Classic
 * Практическое руководство
 * Чтение: 8 мин
-* Обновлено Jun 20, 2022
+* Обновлено 20 июня 2022 г.
 
-Dynatrace собирает метрики для множества предварительно выбранных пространств имён, включая Amazon ECS Container Insights. Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
+Dynatrace получает метрики для множества предварительно выбранных пространств имён, включая Amazon ECS Container Insights. Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
 
 ## Предварительные требования
 
-Для включения мониторинга данного сервиса вам необходимо
+Для включения мониторинга этого сервиса вам необходимо
 
-* ActiveGate версии 1.197+
+* ActiveGate version 1.197+
 
-  + Для развертываний Dynatrace SaaS вам потребуется Environment ActiveGate или Multi-environment ActiveGate.
-  + Для развертываний Dynatrace Managed можно использовать любой тип ActiveGate.
+  + Для развёртываний Dynatrace SaaS требуется Environment ActiveGate или Multi-environment ActiveGate.
+  + Для развёртываний Dynatrace Managed можно использовать любой тип ActiveGate.
 
-    Для доступа на основе ролей (как в развертывании [SaaS](../../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#role-based-access "Интеграция метрик из Amazon CloudWatch.") так и [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) развертывании) вам потребуется [Environment ActiveGate](../../../../../../ingest-from/dynatrace-activegate/installation.md "Узнайте, как настроить ActiveGate"), установленный на хосте Amazon EC2.
-* Dynatrace версии 1.203+
-* Обновленная [политика мониторинга AWS](../../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#monitoring-policy "Интеграция метрик из Amazon CloudWatch.") для включения дополнительных сервисов AWS.  
-  Для [обновления политики AWS IAMï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+    Для доступа на основе ролей (будь то в [SaaS](../../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) развёртывании) требуется [Environment ActiveGate](../../../../../../ingest-from/dynatrace-activegate/installation.md "Learn how to configure ActiveGate") установленный на хосте Amazon EC2.
+* Dynatrace version 1.203+
+* Обновлённая [AWS monitoring policy](../../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.  
+  To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
-Предопределённая политика JSON для всех поддерживаемых сервисов
+Предопределённая JSON-политика для всех поддерживаемых сервисов
 
 ```
 {
@@ -415,7 +415,7 @@ Dynatrace собирает метрики для множества предва
 }
 ```
 
-Если вы не хотите добавлять разрешения для всех сервисов, а хотите выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для [всех облачных сервисов AWS](../../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-all-services.md "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик."), а также для каждого поддерживаемого сервиса список дополнительных разрешений, специфичных для этого сервиса.
+Если вы не хотите добавлять разрешения для всех сервисов и хотите выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для [All AWS cloud services](../../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-all-services.md "Monitor all AWS cloud services with Dynatrace and view available metrics.") а также для каждого поддерживаемого сервиса — список необязательных разрешений, специфичных для этого сервиса.
 
 Разрешения, необходимые для интеграции мониторинга AWS:
 
@@ -537,9 +537,9 @@ Dynatrace собирает метрики для множества предва
 | Amazon WorkMail | `workmail:ListOrganizations` |
 | Amazon WorkSpaces | `workspaces:DescribeWorkspaces` |
 
-Ниже приведён пример политики JSON для одного отдельного сервиса.
+See the example of JSON policy for one single service below.
 
-Политика JSON для Amazon API Gateway
+JSON-политика для Amazon API Gateway
 
 ```
 {
@@ -621,17 +621,17 @@ Dynatrace собирает метрики для множества предва
 }
 ```
 
-В этом примере из полного списка разрешений необходимо выбрать
+В этом примере из полного списка разрешений вам необходимо выбрать
 
-* `"apigateway:GET"` for **Amazon API Gateway**
+* `"apigateway:GET"` для **Amazon API Gateway**
 * `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
 * A [CloudWatch Agentï»¿](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy-container-insights-ECS-instancelevel.html)
 * [Set up Container Insights on Amazon ECS for clusterï»¿](https://dt-url.net/lb03sq2).
 
-### Конечные точки AWS, которые должны быть доступны из ActiveGate с соответствующими сервисами AWS
+### Эндпоинты AWS, которые должны быть доступны из ActiveGate, с соответствующими сервисами AWS
 
-| Конечная точка | Сервис |
+| Эндпоинт | Сервис |
 | --- | --- |
 | `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (built-in), Amazon EC2 Auto Scaling |
 | `lambda.<REGION>.amazonaws.com` | AWS Lambda (built-in), AWS Lambda |
@@ -694,38 +694,38 @@ Cluster name configured for Container Insights agent has to be the same as your 
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](../../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring.md "Включение мониторинга AWS в Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. [Enable service monitoring](../../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
 
 ## Просмотр метрик сервиса
 
-Вы можете просматривать метрики сервиса в вашей среде Dynatrace либо на **странице обзора пользовательского устройства**, либо на странице **Панели мониторинга**.
+Вы можете просматривать метрики сервиса в вашем окружении Dynatrace на странице **обзора пользовательского устройства** или на странице **Панели мониторинга**.
 
 ### Просмотр метрик на странице обзора пользовательского устройства
 
 Для доступа к странице обзора пользовательского устройства
 
-1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Технологии и процессы (Classic)**.
 2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
-3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
-4. На **странице обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
+3. После выбора группы пользовательских устройств вы окажетесь на странице **обзора группы пользовательских устройств**.
+4. На странице **обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр, чтобы перейти на страницу **обзора пользовательского устройства**.
 
 ### Просмотр метрик на панели мониторинга
 
-После добавления сервиса в мониторинг предустановленная панель мониторинга, содержащая все рекомендуемые метрики, автоматически появится на странице **Панели мониторинга**. Для поиска конкретных панелей мониторинга фильтруйте по **Preset** и затем по **Name**.
+After you add the service to monitoring, a preset dashboard containing all recommended metrics is automatically listed on your **Dashboards** page. To look for specific dashboards, filter by **Preset** and then by **Name**.
 
 ![AWS presets](https://dt-cdn.net/images/image-26-1645-389f58aa89.png)
 
-Для уже отслеживаемых сервисов может потребоваться повторное сохранение учётных данных, чтобы предустановленная панель мониторинга появилась на странице **Панели мониторинга**. Для повторного сохранения учётных данных перейдите в **Settings** > **Cloud and virtualization** > **AWS**, выберите нужный экземпляр AWS и нажмите **Save**.
+For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **AWS**, select the desired AWS instance, and then select **Save**.
 
-Вы не можете вносить изменения в предустановленную панель мониторинга напрямую, но можете клонировать и редактировать её. Для клонирования панели мониторинга откройте меню обзора (**â¦**) и выберите **Clone**.
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.
 
-Для удаления панели мониторинга со страницы панелей мониторинга вы можете скрыть её. Для скрытия панели мониторинга откройте меню обзора (**â¦**) и выберите **Hide**.
+To remove a dashboard from the dashboards page, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
 
-Скрытие панели мониторинга не влияет на других пользователей.
+Hiding a dashboard doesn't affect other users.
 
 ![Clone hide AWS](https://dt-cdn.net/images/2020-12-10-15-04-09-1502-b899a29d73.png)
 
-Для проверки доступности предустановленных панелей мониторинга для каждого сервиса AWS см. список ниже.
+Чтобы проверить доступность предустановленных панелей мониторинга для каждого сервиса AWS, см. список ниже.
 
 ### Список доступности предустановленных панелей мониторинга
 
@@ -841,7 +841,7 @@ Cluster name configured for Container Insights agent has to be the same as your 
 
 ## Доступные метрики
 
-`ClusterName` является основным измерением.
+`ClusterName` is the main dimension.
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
@@ -868,7 +868,7 @@ Cluster name configured for Container Insights agent has to be the same as your 
 | DeploymentCount |  | Count | Sum | ClusterName, ServiceName |  |
 | DesiredTaskCount | The desired number of tasks for an Amazon ECS service | Count | Multi | ClusterName, ServiceName |  |
 | DesiredTaskCount |  | Count | Sum | ClusterName, ServiceName |  |
-| MemoryReserved | The memory that is reserved by tasks in the resource that is specified by the dimension set that you're using | Megabytes | Multi | ClusterName |  |
+| MemoryReserved | Память, зарезервированная задачами в ресурсе, указанном в используемом наборе измерений | Megabytes | Multi | ClusterName |  |
 | MemoryReserved |  | Megabytes | Multi | ClusterName, TaskDefinitionFamily |  |
 | MemoryReserved |  | Megabytes | Multi | ClusterName, ServiceName |  |
 | MemoryReserved |  | Megabytes | Sum | ClusterName |  |
@@ -877,7 +877,7 @@ Cluster name configured for Container Insights agent has to be the same as your 
 | MemoryReserved |  | Megabytes | Count | ClusterName |  |
 | MemoryReserved |  | Megabytes | Count | ClusterName, TaskDefinitionFamily |  |
 | MemoryReserved |  | Megabytes | Count | ClusterName, ServiceName |  |
-| MemoryUtilized | The memory being used by tasks in the resource that is specified by the dimension set that you're using | Megabytes | Multi | ClusterName | Доступна |
+| MemoryUtilized | Память, используемая задачами в ресурсе, указанном в используемом наборе измерений | Megabytes | Multi | ClusterName | Доступна |
 | MemoryUtilized |  | Megabytes | Multi | ClusterName, TaskDefinitionFamily |  |
 | MemoryUtilized |  | Megabytes | Multi | ClusterName, ServiceName | Доступна |
 | MemoryUtilized |  | Megabytes | Sum | ClusterName |  |
@@ -886,10 +886,10 @@ Cluster name configured for Container Insights agent has to be the same as your 
 | MemoryUtilized |  | Megabytes | Count | ClusterName |  |
 | MemoryUtilized |  | Megabytes | Count | ClusterName, TaskDefinitionFamily |  |
 | MemoryUtilized |  | Megabytes | Count | ClusterName, ServiceName |  |
-| NetworkRxBytes | The number of bytes received by the resource that is specified by the dimensions that you're using | Bytes/Second | Multi | ClusterName | Доступна |
+| NetworkRxBytes | Количество байт, полученных ресурсом, указанным в используемых измерениях | Bytes/Second | Multi | ClusterName | Доступна |
 | NetworkRxBytes |  | Bytes/Second | Multi | ClusterName, ServiceName | Доступна |
 | NetworkRxBytes |  | Bytes/Second | Multi | ClusterName, TaskDefinitionFamily |  |
-| NetworkTxBytes | The number of bytes transmitted by the resource that is specified by the dimensions that you're using | Bytes/Second | Multi | ClusterName, ServiceName | Доступна |
+| NetworkTxBytes | Количество байт, переданных ресурсом, указанным в используемых измерениях | Bytes/Second | Multi | ClusterName, ServiceName | Доступна |
 | NetworkTxBytes |  | Bytes/Second | Multi | ClusterName, TaskDefinitionFamily |  |
 | NetworkTxBytes |  | Bytes/Second | Multi | ClusterName | Доступна |
 | PendingTaskCount | The number of tasks currently in `Pending` state | Count | Multi | ClusterName, ServiceName |  |

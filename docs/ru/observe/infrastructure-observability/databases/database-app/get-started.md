@@ -1,5 +1,5 @@
 ---
-title: Get started with database monitoring
+title: Начало работы с мониторингом баз данных
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started
 scraped: 2026-03-06T21:24:14.737474
 ---

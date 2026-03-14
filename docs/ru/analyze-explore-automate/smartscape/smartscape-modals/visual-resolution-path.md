@@ -1,5 +1,5 @@
 ---
-title: Visual Resolution Path
+title: Визуальный путь разрешения
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals/visual-resolution-path
 scraped: 2026-03-03T21:23:15.794747
 ---

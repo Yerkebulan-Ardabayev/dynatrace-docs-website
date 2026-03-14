@@ -1,5 +1,5 @@
 ---
-title: Prioritize vulnerabilities
+title: Приоритизация уязвимостей
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/prioritize
 scraped: 2026-03-06T21:34:48.320869
 ---

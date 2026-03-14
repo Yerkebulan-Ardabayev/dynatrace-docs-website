@@ -1,5 +1,5 @@
 ---
-title: Enrich threat observables with VirusTotal
+title: Обогащение наблюдаемых угроз данными VirusTotal
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/virustotal-enrich
 scraped: 2026-03-06T21:23:48.585892
 ---

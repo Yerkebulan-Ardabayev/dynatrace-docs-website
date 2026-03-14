@@ -1,5 +1,5 @@
 ---
-title: Use cases
+title: Варианты использования
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/use-cases
 scraped: 2026-03-05T21:31:07.446265
 ---

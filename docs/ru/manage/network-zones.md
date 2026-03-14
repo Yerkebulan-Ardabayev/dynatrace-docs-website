@@ -1,58 +1,58 @@
 ---
-title: Network zones
+title: Сетевые зоны
 source: https://www.dynatrace.com/docs/manage/network-zones
 scraped: 2026-03-06T21:30:21.458865
 ---
 
-# Network zones
+# Сетевые зоны
 
-# Network zones
+# Сетевые зоны
 
 * Classic
-* Overview
-* 1-min read
-* Updated on Dec 10, 2025
+* Обзор
+* 1 мин. чтения
+* Обновлено 10 декабря 2025 г.
 
 [#### Начало работы с сетевыми зонами
 
 Узнайте, как начать работу с сетевыми зонами.
 
-* Tutorial
+* Руководство
 
 Читать это руководство](network-zones/network-zones-basic-info.md)[#### Миграция
 
 Начните использовать сетевые зоны в существующей среде Dynatrace.
 
-* How-to guide
+* Практическое руководство
 
 Читать это руководство](network-zones/migration.md)[#### Новая установка
 
 Начните использовать сетевые зоны при новой установке Dynatrace.
 
-* How-to guide
+* Практическое руководство
 
 Читать это руководство](network-zones/new-installation.md)[#### Переименование сетевой зоны
 
 Узнайте, как переименовать сетевую зону.
 
-* How-to guide
+* Практическое руководство
 
 Читать это руководство](network-zones/rename-network-zone.md)[#### Удаление сетевой зоны
 
 Узнайте, как удалить сетевую зону.
 
-* How-to guide
+* Практическое руководство
 
 Читать это руководство](network-zones/delete-network-zones.md)[#### Подключение OneAgent в сетевых зонах
 
 Узнайте, как сетевые зоны определяют приоритет ActiveGates для подключения OneAgent.
 
-* Explanation
+* Объяснение
 
 Читать это объяснение](network-zones/oneagent-connectivity.md)[#### Подключение ActiveGate в сетевых зонах
 
 Узнайте, как сетевые зоны определяют приоритет ActiveGates для подключения среды ActiveGate.
 
-* Explanation
+* Объяснение
 
 Читать это объяснение](network-zones/activegate-connectivity.md)

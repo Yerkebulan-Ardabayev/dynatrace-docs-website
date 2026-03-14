@@ -1,5 +1,5 @@
 ---
-title: Ownership
+title: Владение
 source: https://www.dynatrace.com/docs/deliver/ownership-app
 scraped: 2026-03-06T21:26:47.952622
 ---

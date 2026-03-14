@@ -1,5 +1,5 @@
 ---
-title: Proof of Concept for existing DPS subscriptions
+title: Пробная версия для существующих подписок DPS
 source: https://www.dynatrace.com/docs/license/proof-of-concept
 scraped: 2026-03-06T21:32:15.430515
 ---

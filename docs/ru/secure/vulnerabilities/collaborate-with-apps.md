@@ -1,5 +1,5 @@
 ---
-title: Integrate vulnerability insights across Dynatrace and external apps
+title: Интеграция аналитики уязвимостей в Dynatrace и внешние приложения
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/collaborate-with-apps
 scraped: 2026-03-01T21:19:36.163432
 ---
