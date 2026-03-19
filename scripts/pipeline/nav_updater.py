@@ -64,6 +64,8 @@ class NavUpdater:
     def upgrade_to_russian(self, dry_run: bool = True) -> List[Dict[str, str]]:
         """
         Replace en/ paths with ru/ paths in nav where translations exist.
+        Uses YAML-value-aware replacement to avoid replacing en/ in comments or URLs.
+        Creates a backup before writing.
         Returns list of changes made.
         """
         upgradeable = self.find_untranslated_nav_entries()
@@ -75,8 +77,22 @@ class NavUpdater:
         with open(self.config_path, "r", encoding="utf-8") as f:
             content = f.read()
 
+        # Create backup before modification
+        backup_path = self.config_path.with_suffix(".yml.bak")
+        with open(backup_path, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        # Replace only exact YAML values (path must be preceded by ": " or "- ")
+        # This avoids replacing "en/" in URLs, comments, or other contexts
         for entry in upgradeable:
-            content = content.replace(entry["en_path"], entry["ru_path"])
+            en_path = entry["en_path"]
+            ru_path = entry["ru_path"]
+            # Match ": en/path" or "- en/path" patterns (YAML value context)
+            for prefix in [": ", "- "]:
+                content = content.replace(
+                    f"{prefix}{en_path}",
+                    f"{prefix}{ru_path}",
+                )
 
         with open(self.config_path, "w", encoding="utf-8") as f:
             f.write(content)

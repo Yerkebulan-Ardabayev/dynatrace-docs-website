@@ -1,4 +1,4 @@
-name: Update & Translate Documentation
+name: Sync Dynatrace Documentation
 
 on:
   schedule:
@@ -6,35 +6,26 @@ on:
     - cron: '0 21 * * *'
   workflow_dispatch:
     inputs:
-      force_retranslate:
-        description: 'Force re-translate all pages'
-        type: boolean
-        default: false
       max_pages:
-        description: 'Max pages to scrape'
+        description: 'Max pages to scrape (0 = unlimited)'
         type: number
         default: 1000
       skip_scrape:
-        description: 'Skip scraping, only translate'
+        description: 'Skip scraping, only detect changes'
         type: boolean
         default: false
 
 concurrency:
-  group: update-docs
+  group: sync-docs
   cancel-in-progress: false
 
 jobs:
-  # ===== UNIFIED PIPELINE =====
-  # All stages run in a single job to share the filesystem.
-  # This fixes the critical bug where scraped files were lost
-  # between separate jobs (each job = fresh runner).
-  pipeline:
+  sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 30
     permissions:
       contents: write
-      pages: write
-      id-token: write
+      issues: write
 
     steps:
       - name: Checkout repository
@@ -53,7 +44,7 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      # ---------- STAGE 1: Scrape ----------
+      # ---------- STAGE 1: Scrape English docs ----------
       - name: Scrape documentation
         id: scrape
         if: ${{ !inputs.skip_scrape }}
@@ -70,76 +61,85 @@ jobs:
             python scripts/organize_docs.py
           fi
 
-      - name: Check for changes
-        id: check
+      # ---------- STAGE 2: Detect changes ----------
+      - name: Detect new and updated articles
+        id: detect
         run: |
-          if git diff --quiet docs/en/ 2>/dev/null && [ "${{ inputs.force_retranslate }}" != "true" ] && [ "${{ inputs.skip_scrape }}" != "true" ]; then
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "No new content found"
+          echo "=== Stage 2: Detecting changes ==="
+          python scripts/detect_changes.py \
+            --source-dir docs/en \
+            --target-dir docs/ru \
+            --repo ${{ github.repository }} \
+            --report changes_report.json \
+            --markdown changes_report.md
+
+          # Read counts from report
+          if [ -f changes_report.json ]; then
+            NEW_COUNT=$(python -c "import json; r=json.load(open('changes_report.json')); print(r['new_count'])")
+            UPDATED_COUNT=$(python -c "import json; r=json.load(open('changes_report.json')); print(r['updated_count'])")
+            TOTAL=$(python -c "import json; r=json.load(open('changes_report.json')); print(r['total_changes'])")
+            echo "new_count=$NEW_COUNT" >> $GITHUB_OUTPUT
+            echo "updated_count=$UPDATED_COUNT" >> $GITHUB_OUTPUT
+            echo "total_changes=$TOTAL" >> $GITHUB_OUTPUT
           else
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-            CHANGED=$(git diff --name-only docs/en/ 2>/dev/null | wc -l)
-            echo "changed_files=$CHANGED" >> $GITHUB_OUTPUT
-            echo "New/changed content detected: $CHANGED files"
+            echo "total_changes=0" >> $GITHUB_OUTPUT
           fi
 
-      # ---------- STAGE 2: Translate ----------
-      - name: Translate to Russian
-        id: translate
-        if: steps.check.outputs.has_changes == 'true' || inputs.force_retranslate
-        run: |
-          echo "=== Stage 2: Translating documentation ==="
-          # Pipeline exits 0 even on quota exhaustion — translates what it can,
-          # remaining files will be picked up on the next run.
-          python scripts/pipeline/run_pipeline.py translate --target-lang ru || true
-          echo "translate_done=true" >> $GITHUB_OUTPUT
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-        timeout-minutes: 40
-
-      # ---------- STAGE 3: Nav Update ----------
-      - name: Update navigation (en -> ru)
-        if: steps.check.outputs.has_changes == 'true' || inputs.force_retranslate
-        run: |
-          echo "=== Stage 3: Updating navigation ==="
-          python scripts/pipeline/run_pipeline.py nav-upgrade --apply
-
-      # ---------- STAGE 4: Validate ----------
-      - name: Validate translations
-        if: steps.check.outputs.has_changes == 'true' || inputs.force_retranslate
-        run: |
-          echo "=== Stage 4: Validation ==="
-          python scripts/pipeline/run_pipeline.py validate
-
-      - name: Sanitize secrets
-        run: |
-          if [ -f scripts/sanitize_secrets.py ]; then
-            python scripts/sanitize_secrets.py
-          fi
-
-      - name: Clean expired cache
-        run: python scripts/pipeline/run_pipeline.py cache-clean
-
-      # ---------- STAGE 5: Commit & Deploy ----------
-      - name: Commit changes
+      # ---------- STAGE 3: Commit English docs ----------
+      - name: Commit English docs update
         id: commit
+        if: steps.detect.outputs.total_changes != '0'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/ scripts/.translation_cache/ mkdocs.yml
+          git add docs/en/ scripts/dynatrace-docs/
           if git diff --staged --quiet; then
             echo "committed=false" >> $GITHUB_OUTPUT
             echo "No changes to commit"
           else
             CHANGED=$(git diff --staged --stat | tail -1)
-            git commit -m "docs: auto-update $(date +%Y-%m-%d)
+            git commit -m "docs(en): sync from docs.dynatrace.com $(date +%Y-%m-%d)
 
           $CHANGED"
             git push
             echo "committed=true" >> $GITHUB_OUTPUT
           fi
+
+      # ---------- STAGE 4: Create GitHub Issue ----------
+      - name: Create translation issue
+        if: steps.detect.outputs.total_changes != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NEW=${{ steps.detect.outputs.new_count }}
+          UPDATED=${{ steps.detect.outputs.updated_count }}
+          TOTAL=${{ steps.detect.outputs.total_changes }}
+          DATE=$(date +%Y-%m-%d)
+
+          # Read the markdown report
+          BODY=""
+          if [ -f changes_report.md ]; then
+            BODY=$(cat changes_report.md)
+          else
+            BODY="Обнаружено $TOTAL изменений: $NEW новых, $UPDATED обновлённых статей."
+          fi
+
+          gh issue create \
+            --title "📝 Перевод: $TOTAL статей требуют перевода ($DATE)" \
+            --body "$BODY" \
+            --label "translation,documentation"  \
+            || echo "::warning::Could not create issue (labels may not exist). Creating without labels..."
+
+          # Retry without labels if failed
+          if [ $? -ne 0 ]; then
+            gh issue create \
+              --title "📝 Перевод: $TOTAL статей требуют перевода ($DATE)" \
+              --body "$BODY"
+          fi
+
+      # ---------- STAGE 5: Build & Deploy ----------
+      - name: Validate docs
+        run: python scripts/quality/test_docs.py
 
       - name: Build MkDocs
         if: steps.commit.outputs.committed == 'true'
@@ -154,20 +154,26 @@ jobs:
           publish_branch: gh-pages
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'deploy: auto-update documentation'
+          commit_message: 'deploy: sync English docs update'
 
       # ---------- Summary ----------
       - name: Pipeline summary
         if: always()
         run: |
-          echo "# Documentation Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+          echo "# Documentation Sync Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Stage | Status |" >> $GITHUB_STEP_SUMMARY
-          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Scrape | ${{ steps.scrape.outcome || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Changes detected | ${{ steps.check.outputs.has_changes }} (${{ steps.check.outputs.changed_files || 0 }} files) |" >> $GITHUB_STEP_SUMMARY
-          echo "| Translate | ${{ steps.translate.outcome || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| New articles | ${{ steps.detect.outputs.new_count || 0 }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Updated articles | ${{ steps.detect.outputs.updated_count || 0 }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Total changes | ${{ steps.detect.outputs.total_changes || 0 }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Committed | ${{ steps.commit.outputs.committed || 'false' }} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Date:** $(date -u)" >> $GITHUB_STEP_SUMMARY
           echo "**Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.detect.outputs.total_changes }}" != "0" ]; then
+            echo "⚠️ **Требуется перевод!** Проверьте GitHub Issues для списка статей." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ Нет новых изменений. Все статьи актуальны." >> $GITHUB_STEP_SUMMARY
+          fi
