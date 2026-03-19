@@ -51,13 +51,17 @@ jobs:
           nav_issues = nv.validate()
 
           errors = [i for i in issues + nav_issues if i.severity == 'error']
-          print(f'Validation: {len(errors)} errors, {len(issues) + len(nav_issues) - len(errors)} warnings')
+          warnings = [i for i in issues + nav_issues if i.severity == 'warning']
+          print(f'Validation: {len(errors)} errors, {len(warnings)} warnings')
 
-          for e in errors[:10]:
+          for e in errors[:20]:
               print(f'  ERROR: {e}')
 
           if errors:
-              print('WARNING: Errors found but continuing deploy')
+              print(f'FAILED: {len(errors)} validation errors found. Deployment blocked.')
+              sys.exit(1)
+          else:
+              print('Validation passed.')
           "
 
   deploy:
