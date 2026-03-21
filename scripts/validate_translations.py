@@ -79,7 +79,7 @@ class TranslationValidator:
         return issues
 
     def validate_headings(self, content: str, en_content: str, filepath: str) -> list:
-        """Проверяет, что количество заголовков совпадает с оригиналом"""
+        """Проверяет, что количество заголовков совпадает с оригиналом (порог 15%)"""
         issues = []
 
         ru_headings = len(re.findall(r'^#{1,6}\s', content, re.MULTILINE))
@@ -87,9 +87,9 @@ class TranslationValidator:
 
         if ru_headings == 0 and en_headings > 0:
             issues.append(f"[HEADINGS] Все заголовки потеряны (EN: {en_headings}, RU: 0) в {filepath}")
-        elif en_headings > 0 and abs(ru_headings - en_headings) > en_headings * 0.3:
+        elif en_headings > 0 and abs(ru_headings - en_headings) > en_headings * 0.15:
             issues.append(
-                f"[HEADINGS] Расхождение заголовков (EN: {en_headings}, RU: {ru_headings}) в {filepath}"
+                f"[HEADINGS] Расхождение заголовков >15% (EN: {en_headings}, RU: {ru_headings}) в {filepath}"
             )
 
         return issues
@@ -154,9 +154,27 @@ class TranslationValidator:
             except Exception:
                 pass
 
-        # Пустой файл
-        if len(ru_content.strip()) < 10:
-            file_issues.append(f"[EMPTY] Файл почти пустой (<10 символов): {filepath}")
+        # Пустой файл (порог 50 символов — голый frontmatter без контента)
+        if len(ru_content.strip()) < 50:
+            file_issues.append(f"[EMPTY] Файл почти пустой (<50 символов): {filepath}")
+
+        # Проверка соотношения длин (если есть оригинал)
+        if en_file.exists():
+            try:
+                en_len = len(en_content.strip()) if 'en_content' in dir() else len(en_file.read_text(encoding='utf-8').strip())
+                ru_len = len(ru_content.strip())
+                if en_len > 100 and ru_len > 0:
+                    ratio = ru_len / en_len
+                    if ratio < 0.4:
+                        file_issues.append(
+                            f"[LENGTH] Перевод подозрительно короткий ({ratio:.0%} от оригинала): {filepath}"
+                        )
+                    elif ratio > 2.0:
+                        file_issues.append(
+                            f"[LENGTH] Перевод подозрительно длинный ({ratio:.0%} от оригинала): {filepath}"
+                        )
+            except Exception:
+                pass
 
         if file_issues:
             self.errors.extend(file_issues)
