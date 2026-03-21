@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/problem
 updated: 2026-02-09
 ---
 
-# Problems API v2
-
-
-* Reference
-* Published Oct 12, 2020
-
 [### Fetch the list of problems
 
 Gain high-level overview of problems.](/managed/dynatrace-api/environment-api/problems-v2/problems/get-problems-list "Fetch the list of problems via Problems v2 API.")[### Get the problem details

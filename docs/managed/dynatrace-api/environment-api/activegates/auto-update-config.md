@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activeg
 updated: 2026-02-09
 ---
 
-# ActiveGate auto-update configuration API
-
-
-* Reference
-* Published Mar 15, 2021
-
 [### View global configuration
 
 Get an overview of the global auto-update configuration of Environment ActiveGates.](/managed/dynatrace-api/environment-api/activegates/auto-update-config/get-global "View the global auto-update configuration of your Environment ActiveGates via the Dynatrace API.")[### Edit global configuration

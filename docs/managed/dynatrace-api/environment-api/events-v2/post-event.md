@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/events-
 updated: 2026-02-09
 ---
 
-# Events API v2 - POST an event
-
-
-* Reference
-* Published Nov 05, 2021
-
 Ingests a custom event to Dynatrace.
 
 The request consumes an `application/json` payload.
@@ -42,9 +36,9 @@ The configuration of an event to be ingested.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | endTime | integer | The end time of the event, in UTC milliseconds.  If not set, the start time plus timeout is used. | Optional |
-| entitySelector | string | The [entity selectorï»¿](https://dt-url.net/apientityselector), defining a set of Dynatrace entities to be associated with the event.  Only entities that have been active within the last 24 hours can be selected. Note that the `entityId` filter bypasses this time constraint, allowing events to be ingested for entities that have been inactive for more than 24 hours.  If not set, the event is associated with the environment (`dt.entity.environment`) entity. | Optional |
+| entitySelector | string | The [entity selector](https://dt-url.net/apientityselector), defining a set of Dynatrace entities to be associated with the event.  Only entities that have been active within the last 24 hours can be selected. Note that the `entityId` filter bypasses this time constraint, allowing events to be ingested for entities that have been inactive for more than 24 hours.  If not set, the event is associated with the environment (`dt.entity.environment`) entity. | Optional |
 | eventType | string | The type of the event. The element can hold these values * `AVAILABILITY_EVENT` * `CUSTOM_ALERT` * `CUSTOM_ANNOTATION` * `CUSTOM_CONFIGURATION` * `CUSTOM_DEPLOYMENT` * `CUSTOM_INFO` * `ERROR_EVENT` * `MARKED_FOR_TERMINATION` * `PERFORMANCE_EVENT` * `RESOURCE_CONTENTION_EVENT` * `WARNING` | Required |
-| properties | object | A map of event properties.  * To set event properties with predefined behavior, use classic `dt.event.*` and `dt.davis.*` properties. To check which properties belong to classic API, see [Events API v2 - GET all event propertiesï»¿](https://dt-url.net/9622g1w). * To attach entity information to an event, use `dt.entity.*` keys. * To provide additional info, you can use any key outside of the `dt.*` namespace.  Values of event properties with predefined behavior must fulfill the requirements of the respective property.  A maximum of 100 properties can be specified. A property key is allowed to contain up to 100 characters. A property value is allowed to contain up to 4096 characters. | Optional |
+| properties | object | A map of event properties.  * To set event properties with predefined behavior, use classic `dt.event.*` and `dt.davis.*` properties. To check which properties belong to classic API, see [Events API v2 - GET all event properties](https://dt-url.net/9622g1w). * To attach entity information to an event, use `dt.entity.*` keys. * To provide additional info, you can use any key outside of the `dt.*` namespace.  Values of event properties with predefined behavior must fulfill the requirements of the respective property.  A maximum of 100 properties can be specified. A property key is allowed to contain up to 100 characters. A property value is allowed to contain up to 4096 characters. | Optional |
 | startTime | integer | The start time of the event, in UTC milliseconds.  If not set, the current timestamp is used.  Depending on the event type, the start time must not lie in the past more than 6 hours for problem-opening events and 30 days for info events.  Depending on the event type, the start time must not lie in the future more than 5 minutes for problem-opening events and 7 days for info events.  Events that can be sent up to 7 days in the future:  * `CUSTOM_ANNOTATION` * `CUSTOM_CONFIGURATION` * `CUSTOM_DEPLOYMENT` * `CUSTOM_INFO` * `MARKED_FOR_TERMINATION` | Optional |
 | timeout | integer | The timeout of the event, in minutes.  If not set, 15 is used.  The timeout will automatically be capped to a maximum of 360 minutes (6 hours).  Problem-opening events can be refreshed and therefore kept open by sending the same payload again. | Optional |
 | title | string | The title of the event. | Required |

@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/cluster
 updated: 2026-02-09
 ---
 
-# Cluster information API
-
-
-* Reference
-* Published Sep 24, 2018
-
 The **Cluster information** API enables you to check the version and internal time of your Dynatrace environment.
 
 ## GET cluster time

@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/applica
 updated: 2026-02-09
 ---
 
-# Attacks API
-
-
-* Reference
-* Published Aug 30, 2023
-
 [### List attacks](/managed/dynatrace-api/environment-api/application-security/attacks/get-attacks "View the list of attacks via Dynatrace API.")[### View attack details](/managed/dynatrace-api/environment-api/application-security/attacks/get-attack-details "View details of an attack via Dynatrace API.")
 
 ## Related topics

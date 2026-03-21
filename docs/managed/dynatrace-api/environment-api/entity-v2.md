@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/entity-
 updated: 2026-02-09
 ---
 
-# Monitored entities API
-
-
-* Reference
-* Published May 28, 2020
-
 [### List entities
 
 Get an overview of entities you're monitoring with Dynatrace.](/managed/dynatrace-api/environment-api/entity-v2/get-entities-list "View a list of monitored entities via Dynatrace API.")[### View an entity

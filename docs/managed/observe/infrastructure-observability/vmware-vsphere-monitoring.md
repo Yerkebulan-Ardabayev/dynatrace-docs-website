@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 updated: 2026-02-09
 ---
 
-# VMware vSphere monitoring
-
-
 * How-to guide
-* Published Aug 12, 2021
 
 Setting up Dynatrace monitoring of a VMware platform is easy using ActiveGate as a communication gateway.
 
@@ -80,9 +76,9 @@ After you set up VMware monitoring, you might want to limit which infrastructura
 
 ## Troubleshoot VMware connection
 
-* Option 1 - [vCentre Event Consoleï»¿](https://dt-url.net/mh238c4)
-* Option 2 - [VMware PowerCLIï»¿](https://dt-url.net/ni038yh) Windows only
-* [Monitoring invalid credentialsï»¿](https://dt-url.net/fi038fn)
+* Option 1 - [vCentre Event Console](https://dt-url.net/mh238c4)
+* Option 2 - [VMware PowerCLI](https://dt-url.net/ni038yh) Windows only
+* [Monitoring invalid credentials](https://dt-url.net/fi038fn)
 
 ## Configure vSphere monitoring using Settings API
 

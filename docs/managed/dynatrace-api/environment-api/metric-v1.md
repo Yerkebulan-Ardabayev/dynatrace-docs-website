@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-
 updated: 2026-02-09
 ---
 
-# Timeseries API v1
-
-
-* Reference
-* Published Jul 19, 2017
-
 This API is deprecated. It will be removed in the future. Use [Metrics API v2](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.") instead.
 
 The **Timeseries v1** API enables you to manage metrics that Dynatrace collects from the different monitored entities over time.

@@ -4,16 +4,11 @@ source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform
 updated: 2026-02-09
 ---
 
-# Set up Dynatrace on Google Cloud
-
-
-* Overview
 * 1-min read
-* Published Mar 12, 2021
 
 Dynatrace automatically discovers, baselines, and intelligently monitors Google Cloud environments to provide fault domain isolation and infrastructure and end-user visibility in real time.
 
-For more reasons to monitor Google Cloud with Dynatrace, see [Google Cloudï»¿](https://www.dynatrace.com/hub/detail/google-cloud-platform/) in Dynatrace Hub.
+For more reasons to monitor Google Cloud with Dynatrace, see [Google Cloud](https://www.dynatrace.com/hub/detail/google-cloud-platform/) in Dynatrace Hub.
 
 ## Full-stack monitoring for Google Cloud Compute and serverless services
 

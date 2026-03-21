@@ -4,12 +4,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-c
 updated: 2026-02-09
 ---
 
-# Available tiles
-
-
-* Reference
 * 33-min read
-* Updated on May 16, 2022
 
 [Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
 

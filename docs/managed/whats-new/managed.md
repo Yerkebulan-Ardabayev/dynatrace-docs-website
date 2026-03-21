@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/whats-new/managed
 updated: 2026-02-09
 ---
 
-# Dynatrace Managed release notes
-
-
 * Release notes
-* Updated on Feb 04, 2026
 
 New versions are rolled out within configurable [maintenance windows](/managed/managed-cluster/operation/update-dynatrace-managed "Learn how to schedule automatic updates or perform manual updates of Dynatrace Managed.").
 
@@ -18,11 +14,11 @@ New versions are rolled out within configurable [maintenance windows](/managed/m
 | [Version 1.330](/managed/whats-new/managed/sprint-330 "Release notes for Dynatrace Managed, version 1.330") | Jan 19, 2026 | Yes |
 | [Version 1.328](/managed/whats-new/managed/sprint-328 "Release notes for Dynatrace Managed, version 1.328") | Dec 2, 2025 | Yes |
 | [Version 1.326](/managed/whats-new/managed/sprint-326 "Release notes for Dynatrace Managed, version 1.326") | Oct 27, 2025 | Yes |
-| [Version 1.324](/managed/whats-new/managed/sprint-324 "Release notes for Dynatrace Managed, version 1.324") | Sep 29, 2025 | Only with [Enterprise Success and Supportï»¿](https://dt-url.net/qt03zwg) |
+| [Version 1.324](/managed/whats-new/managed/sprint-324 "Release notes for Dynatrace Managed, version 1.324") | Sep 29, 2025 | Only with [Enterprise Success and Support](https://dt-url.net/qt03zwg) |
 
 Show previous versions
 
-|  | Rollout start | Standard support ended | [Enterprise Success and Supportï»¿](https://dt-url.net/qt03zwg) ended |
+|  | Rollout start | Standard support ended | [Enterprise Success and Support](https://dt-url.net/qt03zwg) ended |
 | --- | --- | --- | --- |
 | [Version 1.320](/managed/whats-new/managed/sprint-320 "Release notes for Dynatrace Managed release 1.320") | Aug 4, 2025 | Oct 27, 2025 | Dec 2, 2025 |
 | [Version 1.318](/managed/whats-new/managed/sprint-318 "Release notes for Dynatrace Managed release 1.318") | Jul 7, 2025 | Sep 29, 2025 | Oct 27, 2025 |

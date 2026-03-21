@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 updated: 2026-02-09
 ---
 
-# Container platform monitoring
-
-
 * Explanation
 * 1-min read
-* Published Jun 25, 2021
 
 [![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")
 

@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/remote-
 updated: 2026-02-09
 ---
 
-# OneAgent remote configuration management API
-
-
-* Reference
-* Published Jun 01, 2022
-
 [### Start a job
 
 Start a new configuration job for OneAgents.](/managed/dynatrace-api/environment-api/remote-configuration/oneagent/post-config-job "Start a new configuration job for OneAgents remotely using the Dynatrace API.")[### Preview a job

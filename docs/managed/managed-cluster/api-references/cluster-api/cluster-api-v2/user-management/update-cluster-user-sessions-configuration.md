@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Update cluster user sessions configuration
-
-
-* Published Feb 12, 2020
-
 This API call updates a cluster user sessions configuration. You can modify the user sessions configuration by specifying new concurrent user session limits for cluster admin accounts and regular users. Set limits to `0` for unlimited concurrent user sessions. If you choose to set any of the limits to `0`, the limit for the other account type also must be set to `0`.
 
 You can use this request to update automatic logout policy. By default, there's no auto logout of users who stay on auto-refreshable page. Use below payload to turn automatic logout on and set the session timeout to `900` seconds (15 minutes).

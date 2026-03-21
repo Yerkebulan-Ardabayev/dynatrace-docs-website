@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 updated: 2026-02-09
 ---
 
-# Third-party synthetic API
-
-
-* Reference
-* Published May 15, 2020
-
 The **third-party** endpoints of the **Synthetic API** enable you to push third-party synthetic data to Dynatrace.
 
 [### Push data

@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api
 updated: 2026-02-09
 ---
 
-# Environment API
-
-
-* Reference
-* Published Apr 01, 2019
-
 ## Basics
 
 [Authentication](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.")

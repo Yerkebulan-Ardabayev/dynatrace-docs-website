@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/dashb
 updated: 2026-02-09
 ---
 
-# Dashboards API
-
-
-* Reference
-* Published Jan 24, 2019
-
 The **Dashboards Classic** API enables you to manage the configurations of your dashboards.
 
 [### List all dashboards

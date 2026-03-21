@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Delete user sessions of a given user
-
-
-* Published Apr 02, 2020
-
 This API call enables you to terminate all sessions of a specific user.
 
 ## Authentication

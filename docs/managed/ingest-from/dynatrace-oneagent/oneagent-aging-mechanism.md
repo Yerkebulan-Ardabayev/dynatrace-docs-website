@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneage
 updated: 2026-02-09
 ---
 
-# OneAgent file aging mechanism
-
-
 * 6-min read
-* Updated on Sep 08, 2022
 
 OneAgent in the installer-based deployment uses a built-in aging mechanism that makes sure the OneAgent files are kept within a reasonable size.
 

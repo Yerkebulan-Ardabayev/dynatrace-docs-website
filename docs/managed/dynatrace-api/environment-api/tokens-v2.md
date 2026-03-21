@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-
 updated: 2026-02-09
 ---
 
-# Tokens API v2
-
-
-* Reference
-* Published Feb 23, 2021
-
 [### Access tokens
 
 Manage your access tokens.](/managed/dynatrace-api/environment-api/tokens-v2/api-tokens "Manage Dynatrace API authentication tokens.")[### ActiveGate tokens

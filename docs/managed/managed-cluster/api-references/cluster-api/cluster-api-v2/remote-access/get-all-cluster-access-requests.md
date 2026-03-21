@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Get all cluster access requests
-
-
-* Published Apr 02, 2020
-
 This API call gets a list of all current cluster access requests, including user, access role, access duration, and state of the request.
 
 ## Authentication

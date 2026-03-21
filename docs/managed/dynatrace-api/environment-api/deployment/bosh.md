@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deploym
 updated: 2026-02-09
 ---
 
-# Deployment API - BOSH tarballs
-
-
-* Reference
-* Published Apr 02, 2021
-
 [### Download specific version
 
 Download a specific version of BOSH release tarballs.](/managed/dynatrace-api/environment-api/deployment/bosh/download-bosh-version "Download the OneAgent BOSH tarball of the specific version via Dynatrace API.")[### List available versions

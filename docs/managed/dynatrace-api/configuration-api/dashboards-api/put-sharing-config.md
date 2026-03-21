@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/dashb
 updated: 2026-02-09
 ---
 
-# Dashboards API - PUT sharing configuration
-
-
-* Reference
-* Published Mar 29, 2021
-
 Updates the sharing configuration of the specified dashboard.
 
 The request consumes an `application/json` payload.
@@ -44,7 +38,7 @@ Sharing configuration of the dashboard.
 | id | string | The Dynatrace entity ID of the dashboard. | Required |
 | permissions | [DashboardSharePermissions[]](#openapi-definition-DashboardSharePermissions) | A list of permissions to access the dashboard. | Required |
 | preset | boolean | If `true` the dashboard will be marked as preset. | Optional |
-| publicAccess | [DashboardAnonymousAccess](#openapi-definition-DashboardAnonymousAccess) | Configuration of the [anonymous accessï»¿](https://dt-url.net/ov03sf1) to the dashboard. | Required |
+| publicAccess | [DashboardAnonymousAccess](#openapi-definition-DashboardAnonymousAccess) | Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard. | Required |
 
 #### The `DashboardSharePermissions` object
 
@@ -58,7 +52,7 @@ Access permissions of the dashboard.
 
 #### The `DashboardAnonymousAccess` object
 
-Configuration of the [anonymous accessï»¿](https://dt-url.net/ov03sf1) to the dashboard.
+Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |

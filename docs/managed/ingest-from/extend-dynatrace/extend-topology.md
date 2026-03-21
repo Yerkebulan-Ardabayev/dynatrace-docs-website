@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-t
 updated: 2026-02-09
 ---
 
-# Custom topology model
-
-
 * 4-min read
-* Updated on Jan 28, 2026
 
 The Dynatrace software intelligence platform and its Davis AI engine depend on context-rich, high-quality data that is provided by OneAgent, cloud integrations, or technology monitoring extensions.
 

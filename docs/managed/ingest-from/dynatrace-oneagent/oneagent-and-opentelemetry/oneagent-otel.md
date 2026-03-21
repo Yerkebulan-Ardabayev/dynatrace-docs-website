@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneage
 updated: 2026-02-09
 ---
 
-# Use OneAgent with OpenTelemetry data
-
-
 * How-to guide
 * 3-min read
-* Published Sep 30, 2025
 
 There are two ways to use OneAgent with OpenTelemetry:
 
@@ -30,7 +26,7 @@ This is shown in the figure above, where the application uses the local-only OTL
 
 Content encoding support
 
-OneAgent does not support content compression using the HTTP header [`Content-Encoding`ï»¿](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Encoding) yet. Pay particular attention to that when [instrumenting a Ruby application](/managed/ingest-from/opentelemetry/walkthroughs/ruby "Learn how to instrument your Ruby application using OpenTelemetry and Dynatrace.") as the OpenTelemetry SDK for Ruby uses by default `Content-Encoding: gzip`.
+OneAgent does not support content compression using the HTTP header [`Content-Encoding`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Encoding) yet. Pay particular attention to that when [instrumenting a Ruby application](/managed/ingest-from/opentelemetry/walkthroughs/ruby "Learn how to instrument your Ruby application using OpenTelemetry and Dynatrace.") as the OpenTelemetry SDK for Ruby uses by default `Content-Encoding: gzip`.
 
 If you need to use content compression, please export to SaaS, the Collector, or ActiveGate.
 

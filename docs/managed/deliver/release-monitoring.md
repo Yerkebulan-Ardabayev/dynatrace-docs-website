@@ -4,12 +4,7 @@ source: https://docs.dynatrace.com/managed/deliver/release-monitoring
 updated: 2026-02-09
 ---
 
-# Release monitoring
-
-
-* Overview
 * 1-min read
-* Published Sep 14, 2020
 
 The software product lifecycle of a release requires careful management of release risks. Also, as more and more components and versions are deployed, the frequency of releases in your organization increases, and manually collecting release-relevant data can easily become a bottleneck in your release automation pipeline and automated software lifecycle.
 

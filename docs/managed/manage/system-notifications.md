@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/manage/system-notifications
 updated: 2026-02-09
 ---
 
-# System notifications
-
-
 * Explanation
 * 2-min read
-* Published Feb 23, 2022
 
 The **Notifications** table displays notifications of Dynatrace system updates.
 

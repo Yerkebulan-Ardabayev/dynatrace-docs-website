@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Synthetic nodes API v2 - GET a node (Dynatrace Managed)
-
-
-* Published Oct 30, 2020
-
 This API call gets all parameters of the specified synthetic node. The request produces an `application/json` payload.
 
 ## Authentication

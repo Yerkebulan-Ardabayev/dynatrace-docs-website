@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/manage/tags-and-metadata
 updated: 2026-02-09
 ---
 
-# Tags and metadata
-
-
 * Explanation
 * 1-min read
-* Published Jul 19, 2017
 
 [Dynatrace OneAgent](/managed/platform/oneagent "Learn the monitoring capabilities of OneAgent.") automatically discovers components in your environment, such as process groups, services and real user applications. Not only can these entities be auto-discovered, their underlying technologies can also be accurately identified (for example, Apache HTTP server, IBM WebSphere, and much more). As part of this auto-detection, Dynatrace discovers network topology as well. Once traffic is monitored, Dynatrace detects also load balancers and proxies. Moreover, Dynatrace supports 3rd party integrations, thus augmenting this data with topology and monitoring information from AWS, VMware, Azure, OpenStack, and more.
 

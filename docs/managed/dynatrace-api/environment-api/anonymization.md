@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/anonymi
 updated: 2026-02-09
 ---
 
-# Anonymization API
-
-
-* Reference
-* Published Sep 24, 2018
-
 The General Data Protection Act of the European Union guarantees consumers the right to erasure of personal data ("the right to be forgotten")âusers might want their data to be deleted. This endpoint provides you the means to fulfill such requests.
 
 [### Start anonymization job

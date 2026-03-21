@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/observe/application-observability/ser
 updated: 2026-02-09
 ---
 
-# Service flow
-
-
 * How-to guide
 * 2-min read
-* Published Jul 19, 2017
 
 Dynatrace understands your applicationsâ transactions from end to end. This transactional insight is visualized through **Service flow**, which illustrates the sequence of service calls that are triggered by each service request in your environment. Within a service flow, you see the flow of service calls from the perspective of a single service, request or their filtered subset. Along with the specific services that are triggered, you can also see how each component of a request contributes to the overall response time.
 

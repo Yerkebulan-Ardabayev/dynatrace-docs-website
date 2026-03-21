@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/custom-
 updated: 2026-02-09
 ---
 
-# Custom tags API
-
-
-* Reference
-* Published May 29, 2020
-
 [### View tags
 
 Get an overview of custom tags of the specified monitored entities.](/managed/dynatrace-api/environment-api/custom-tags/get-tags "View custom tags of monitored entities via Dynatrace API.")[### Assign tags

@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activeg
 updated: 2026-02-09
 ---
 
-# ActiveGate auto-update jobs API
-
-
-* Reference
-* Published Jul 02, 2020
-
 [### List auto-update jobs
 
 Get an overview of all auto-update jobs on an ActiveGate.](/managed/dynatrace-api/environment-api/activegates/auto-update-jobs/get-all-jobs "List all update jobs for the specified ActiveGate via the Dynatrace API.")[### View an auto-update job

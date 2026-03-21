@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security
 updated: 2026-02-09
 ---
 
-# Data privacy and security
-
-
 * Explanation
 * 2-min read
-* Updated on Jan 20, 2023
 
 Privacy laws around the globe are improving the protection of personal data in response to an evolving technology landscape, increased globalization, and complex international data flows. Companies are held accountable for transparency, fairness, and accuracy in how they collect, store, use, and protect personal data.
 
@@ -17,7 +13,7 @@ At Dynatrace, we take our responsibility to safeguard your data seriously. Have 
 
 ### Data privacy overview
 
-[Dynatrace policies in Trust Centerï»¿](https://www.dynatrace.com/company/trust-center/#general-data-protection-regulation-gdpr)
+[Dynatrace policies in Trust Center](https://www.dynatrace.com/company/trust-center/#general-data-protection-regulation-gdpr)
 
 [Data protection at Dynatrace](/managed/manage/data-privacy-and-security/data-privacy/data-protection "Find out how Dynatrace ensures that your data is secured.")
 

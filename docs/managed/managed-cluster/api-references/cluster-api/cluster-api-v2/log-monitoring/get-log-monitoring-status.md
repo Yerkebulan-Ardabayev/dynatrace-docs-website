@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Get Log Monitoring status
-
-
-* Published Oct 18, 2021
-
 This API call retrieves the Log Monitoring status for the specified environment.
 
 ## Authentication

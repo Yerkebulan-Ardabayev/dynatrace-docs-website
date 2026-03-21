@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/deliver/test-automation
 updated: 2026-02-09
 ---
 
-# Dynatrace and load testing tools integration
-
-
-* Published Jun 14, 2018
-
 By integrating Dynatrace into your existing load testing process, you can stop broken builds in your delivery pipeline earlier.
 
 ![Load Testing process](https://dt-cdn.net/images/dynatrace-loadtesting-process-1785-bf9e8cf86f.png)
@@ -25,7 +20,7 @@ Test automation involves the use of special software (separate from the software
 
 ### Tag tests with HTTP headers
 
-While executing a load test from your load testing tool of choice ([JMeter](/managed/deliver/test-automation/dynatrace-and-jmeter-integration "Learn how you can add custom HTTP headers in JMeter to tag distributed traces and requests in Dynatrace for targeted diagnostics and analysis of your load tests."), [Neotysï»¿](https://www.neotys.com/resources/whitepaper/dynatrace-integration-neoload), LoadRunner, etc) each simulated HTTP request can be tagged with additional HTTP headers that contain test-transaction information (for example, script name, test step name, and virtual user ID). Dynatrace can analyze incoming HTTP headers and extract such contextual information from the header values and tag the captured requests with [request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."). Request attributes enable you to [filter your monitoring data based on defined tags](/managed/observe/application-observability/services/request-attributes/filter-monitoring-data-via-request-attributes "Use request attributes to filter your monitoring data and narrow down service analysis scope.").
+While executing a load test from your load testing tool of choice ([JMeter](/managed/deliver/test-automation/dynatrace-and-jmeter-integration "Learn how you can add custom HTTP headers in JMeter to tag distributed traces and requests in Dynatrace for targeted diagnostics and analysis of your load tests."), [Neotys](https://www.neotys.com/resources/whitepaper/dynatrace-integration-neoload), LoadRunner, etc) each simulated HTTP request can be tagged with additional HTTP headers that contain test-transaction information (for example, script name, test step name, and virtual user ID). Dynatrace can analyze incoming HTTP headers and extract such contextual information from the header values and tag the captured requests with [request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."). Request attributes enable you to [filter your monitoring data based on defined tags](/managed/observe/application-observability/services/request-attributes/filter-monitoring-data-via-request-attributes "Use request attributes to filter your monitoring data and narrow down service analysis scope.").
 
 ![Load Testing HTTP header](https://dt-cdn.net/images/dynatrace-loadtesting-httptagging-1186-cfea1a2702.png)
 
@@ -71,7 +66,7 @@ Load test events are also displayed on associated services pages (see example be
 
 You can also push specific metrics from your load testing tool (throughput, user load, etc.) to Dynatrace via the [custom metrics API](/managed/dynatrace-api/environment-api/metric-v1/custom-metrics "Manage custom metrics via the Timeseries v1 API.").
 
-For JMeter, there is a new [open-source pluginï»¿](https://github.com/dynatrace-oss/jmeter-dynatrace-plugin) you can use to push the metrics directly to Dynatrace via the Metrics API.
+For JMeter, there is a new [open-source plugin](https://github.com/dynatrace-oss/jmeter-dynatrace-plugin) you can use to push the metrics directly to Dynatrace via the Metrics API.
 
 ## Compare & analyze
 
@@ -100,7 +95,7 @@ You can use data captured via request attributes to build your own [multidimensi
 
 ### Comparison
 
-* [Compare viewï»¿](https://www.dynatrace.com/news/blog/compare-service-request-performance-behavior-time/) enables you to compare critical service-request metrics (Response time, Failures, CPU, and Load) between two load tests.
+* [Compare view](https://www.dynatrace.com/news/blog/compare-service-request-performance-behavior-time/) enables you to compare critical service-request metrics (Response time, Failures, CPU, and Load) between two load tests.
 
   ![Load testing compare](https://dt-cdn.net/images/dynatrace-loadtesting-compare-2217-2d06c0115c.png)
 * [Response time analysis and Failure analysis views](/managed/observe/application-observability/services-classic/response-time-distribution-and-outlier-analysis "Gain insights into the distribution of response times across all requests, including those that are either unusually high or unusually low.") can be used to better understand performance changes in detail.fail
@@ -109,7 +104,7 @@ You can use data captured via request attributes to build your own [multidimensi
 
 ### Diagnostics
 
-The [top web requestsï»¿](https://www.dynatrace.com/news/blog/analyze-the-top-web-requests-across-all-your-services/) diagnostic tool can be used to analyze the top web requests across all services. Use the request attributes you've defined to filter the load test requests.
+The [top web requests](https://www.dynatrace.com/news/blog/analyze-the-top-web-requests-across-all-your-services/) diagnostic tool can be used to analyze the top web requests across all services. Use the request attributes you've defined to filter the load test requests.
 
 ## Report results
 
@@ -127,5 +122,5 @@ Alternatively, if you have a dedicated load testing environment and want to leve
 
 ## Related topics
 
-* [[Blog] Load testing redefined: From KPI reporting to AI-supported performance engineeringï»¿](https://www.dynatrace.com/news/blog/load-testing-redefined-a-guide-from-kpi-reporting-to-ai-supported-performance-engineering)
-* [[Blog] Unbreakable DevOps Pipeline: Shift-Left, Shift-Right & Self-Healingï»¿](https://www.dynatrace.com/news/blog/unbreakable-devops-pipeline-shift-left-shift-right-self-healing)
+* [[Blog] Load testing redefined: From KPI reporting to AI-supported performance engineering](https://www.dynatrace.com/news/blog/load-testing-redefined-a-guide-from-kpi-reporting-to-ai-supported-performance-engineering)
+* [[Blog] Unbreakable DevOps Pipeline: Shift-Left, Shift-Right & Self-Healing](https://www.dynatrace.com/news/blog/unbreakable-devops-pipeline-shift-left-shift-right-self-healing)

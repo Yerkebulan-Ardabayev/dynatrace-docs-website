@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metrics
 updated: 2026-02-09
 ---
 
-# Metric units API - GET convert units
-
-
-* Reference
-* Published Mar 25, 2022
-
 Converts a source unit into a target unit.
 
 If no target unit is set, the request finds an appropriate target unit automatically, taking into account the preferred number format (if specified).

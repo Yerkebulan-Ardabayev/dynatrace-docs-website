@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 updated: 2026-02-09
 ---
 
-# How to enable deep monitoring for applications confined by AppArmor
-
-
 * 2-min read
-* Published Aug 08, 2017
 
 AppArmor is a mandatory access control system that restricts applications to a limited set of resources. For each confined application, a profile exists that specifies what operations the application is allowed to perform as well as the paths in the file system that the application is allowed to access. In order to enable deep monitoring of applications confined by AppArmor, a custom rule set for OneAgent must be included in the profiles of these applications.
 

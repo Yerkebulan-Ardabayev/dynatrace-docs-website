@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-t
 updated: 2026-02-09
 ---
 
-# Define custom topology
-
-
 * 5-min read
-* Published Apr 09, 2021
 
 We continue with our [Easy Shipping LTD logistics example](/managed/ingest-from/extend-dynatrace/extend-topology#custom-topology-model-in-action "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to."), in which trucks and truck-mounted containers send telemetry data to Dynatrace.
 

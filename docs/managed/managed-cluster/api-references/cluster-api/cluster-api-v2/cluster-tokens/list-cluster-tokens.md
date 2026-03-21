@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# List available Cluster tokens
-
-
-* Published Feb 12, 2020
-
 This API call lists available tokens in your environment.
 
 You can narrow down the output by adding parameters. The token has to match all the specified parameters.

@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-
 updated: 2026-02-09
 ---
 
-# Metrics API - Metric expressions
-
-
-* Reference
-* Updated on Jul 29, 2022
-
 Metric expressions enable you to use simple arithmetic operations right in the metric selector.
 
 For example, this expression calculates the ratio (as a percentage) of two metrics:
@@ -1031,7 +1025,7 @@ Average GC duration
 }
 ```
 
-For more examples, see the ['Metric Expressions by Example' Github pageï»¿](https://dt-url.net/metric-expressions-by-example).
+For more examples, see the ['Metric Expressions by Example' Github page](https://dt-url.net/metric-expressions-by-example).
 
 ## Introductory video
 

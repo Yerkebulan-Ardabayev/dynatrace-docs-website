@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/remote-
 updated: 2026-02-09
 ---
 
-# ActiveGate remote configuration management API
-
-
-* Reference
-* Published Jun 01, 2022
-
 [### Start a job
 
 Start a new configuration job for ActiveGates.](/managed/dynatrace-api/environment-api/remote-configuration/activegate/post-config-job "Start a new configuration job for ActiveGates remotely using the Dynatrace API.")[### Preview a job

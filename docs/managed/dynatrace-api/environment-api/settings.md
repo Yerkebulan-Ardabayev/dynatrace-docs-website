@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 updated: 2026-02-09
 ---
 
-# Settings API
-
-
-* Reference
-* Published Feb 24, 2021
-
 [### List schemas
 
 Get an overview of all settings schemas in your environment.](/managed/dynatrace-api/environment-api/settings/schemas/get-all "View all settings schemas of your monitoring environment via the Dynatrace API.")[### View a schema

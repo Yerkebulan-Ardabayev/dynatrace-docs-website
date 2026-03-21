@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/discover-dynatrace/get-started/dynatr
 updated: 2026-02-09
 ---
 
-# Navigate the Dynatrace Managed platform
-
-
 * Explanation
 * 8-min read
-* Published Dec 19, 2025
 
 ## Dynatrace menu
 

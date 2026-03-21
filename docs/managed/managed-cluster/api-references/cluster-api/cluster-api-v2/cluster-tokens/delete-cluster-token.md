@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Delete Cluster token
-
-
-* Published Feb 12, 2020
-
 This API call deletes a cluster token. It can be used to delete any token, including tokens not owned by the user who owns the token used to authenticate the call.
 
 ## Authentication

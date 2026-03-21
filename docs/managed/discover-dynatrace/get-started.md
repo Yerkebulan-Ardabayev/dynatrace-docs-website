@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/discover-dynatrace/get-started
 updated: 2026-02-09
 ---
 
-# Get started with Dynatrace Managed
-
-
 * How-to guide
 * 3-min read
-* Published Dec 19, 2025
 
 Dynatrace Managed is an on-premises observability platform that enables you to analyze, automate, and innovate with the power of AI. Get started with Dynatrace Managed in just a few steps.
 
@@ -17,7 +13,7 @@ Dynatrace Managed is an on-premises observability platform that enables you to a
 
 ### Step 1 Obtain a Dynatrace Managed license
 
-To obtain a license for Dynatrace Managed, contact [Dynatrace Salesï»¿](https://dt-url.net/c901yj9). Your sales representative will provide you with further details. Dynatrace monitoring is licensed based on the consumption of various types of monitoring units, which you purchase and consume based on your monitoring needs. For details, see [License Dynatrace](/managed/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+To obtain a license for Dynatrace Managed, contact [Dynatrace Sales](https://dt-url.net/c901yj9). Your sales representative will provide you with further details. Dynatrace monitoring is licensed based on the consumption of various types of monitoring units, which you purchase and consume based on your monitoring needs. For details, see [License Dynatrace](/managed/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
 
 Once an agreement is reached, you will receive an email that includes your license details and instructions on how to get started.
 
@@ -34,7 +30,7 @@ Install [Cluster ActiveGates](/managed/managed-cluster/installation/how-to-insta
 ### Step 4 Ingest observability data
 
 * [Install OneAgent](/managed/ingest-from/dynatrace-oneagent/installation-and-operation "Install OneAgent on a server for the very first time.") on a host to automatically monitor and analyze the performance and health of your entire IT infrastructure,
-* or [Ingest data from OpenTelemetryï»¿](https://www.dynatrace.com/news/blog/send-opentelemetry-data-to-dynatrace/#configure-the-otel-collector-for-dynatrace) for a more hybrid infrastructure.
+* or [Ingest data from OpenTelemetry](https://www.dynatrace.com/news/blog/send-opentelemetry-data-to-dynatrace/#configure-the-otel-collector-for-dynatrace) for a more hybrid infrastructure.
 
 ### Step 5 Verify you receive data
 

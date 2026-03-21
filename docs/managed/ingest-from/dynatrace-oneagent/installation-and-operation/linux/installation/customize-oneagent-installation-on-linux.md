@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 updated: 2026-02-09
 ---
 
-# Customize OneAgent installation on Linux
-
-
 * 7-min read
-* Published Sep 19, 2018
 
 The Linux installer can be used with command line parameters when you can't use the default settings. Note that all parameters listed below are optional.
 
@@ -494,7 +490,7 @@ In either case, the Dynatrace installer checks whether a required user (`dtuser`
 * Can contain only alphanumeric characters, hyphen `-`, underscore `_`, and dot `.`
 * Minimum length is 3 characters
 * Maximum length is 32 characters
-* Can't be a [user identifierï»¿](https://man7.org/linux/man-pages/man7/credentials.7.html) string
+* Can't be a [user identifier](https://man7.org/linux/man-pages/man7/credentials.7.html) string
 
 ### **`GROUP`**
 
@@ -507,7 +503,7 @@ Can only be used in conjunction with the `USER` parameter and is used to specify
 * Can contain only alphanumeric characters, hyphen `-`, underscore `_`, and dot `.`
 * Minimum length is 3 characters
 * Maximum length is 32 characters
-* Can't be a [group identifierï»¿](https://man7.org/linux/man-pages/man7/credentials.7.html) string
+* Can't be a [group identifier](https://man7.org/linux/man-pages/man7/credentials.7.html) string
 
 ## Skipping operating system support check
 

@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-e
 updated: 2026-02-09
 ---
 
-# WMI tutorial - custom topology
-
-
 * How-to guide
 * 2-min read
-* Published Mar 30, 2022
 
 Having a well-defined topology model helps make sense of all the metrics and data ingested in Dynatrace.
 

@@ -4,8 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster
 updated: 2026-03-07
 ---
 
-# Кластер Dynatrace Managed
-
 Управление кластером Dynatrace Managed — установка узлов, настройка высокой доступности и мониторинг состояния кластера.
 
 ## Основные разделы

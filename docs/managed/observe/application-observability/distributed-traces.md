@@ -4,12 +4,7 @@ source: https://docs.dynatrace.com/managed/observe/application-observability/dis
 updated: 2026-02-09
 ---
 
-# Distributed Traces
-
-
-* Overview
 * 1-min read
-* Updated on May 17, 2024
 
 Distributed tracing is an essential monitoring, debugging, and optimizing tool for distributed software architectures. By visualizing how different services are connected and how your requests travel through various tiers of an application, it helps teams to quickly understand the performance of each microservice.
 

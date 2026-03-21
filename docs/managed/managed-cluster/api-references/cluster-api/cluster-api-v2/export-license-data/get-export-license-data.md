@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Export license data
-
-
-* Updated on Nov 25, 2025
-
 This API call exports aggregated hourly license usage of all your environments as a ZIP file.
 
 This API is only compatible with [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.") and does not contain billed usage.

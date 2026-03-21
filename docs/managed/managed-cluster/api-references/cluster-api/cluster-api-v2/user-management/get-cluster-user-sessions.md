@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Get cluster user sessions
-
-
-* Published Apr 02, 2020
-
 This API call gets users sessions based on a specific user ID. You can request a list of user sessions for a specific user ID in a specific environment.
 
 ## Authentication

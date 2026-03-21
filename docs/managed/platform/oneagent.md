@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/platform/oneagent
 updated: 2026-02-09
 ---
 
-# OneAgent
-
-
 * 1-min read
-* Published Mar 29, 2019
 
 [### Capabilities
 

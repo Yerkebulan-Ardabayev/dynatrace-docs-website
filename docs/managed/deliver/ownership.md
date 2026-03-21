@@ -4,12 +4,7 @@ source: https://docs.dynatrace.com/managed/deliver/ownership
 updated: 2026-02-09
 ---
 
-# Ownership
-
-
-* Overview
 * 2-min read
-* Updated on Nov 07, 2023
 
 Assigning team owners to monitored entities in Dynatrace drives effective DevSecOps collaboration and swift, smart resolution of incidents and service degradations.
 

@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 updated: 2026-02-09
 ---
 
-# Install OneAgent on Linux
-
-
 * How-to guide
 * 5-min read
-* Updated on Jan 22, 2026
 
 This page describes how to download and install Dynatrace OneAgent on Linux.
 
@@ -48,7 +44,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 4. **Select installer type**
    OneAgent supports the following CPU architectures:
 
-   * `Linux ARM` - ARM64 (AARch64) including [AWS Graviton processorsï»¿](https://aws.amazon.com/ec2/graviton/)
+   * `Linux ARM` - ARM64 (AARch64) including [AWS Graviton processors](https://aws.amazon.com/ec2/graviton/)
    * `PowerPC (BE)` - 64-bit PowerPC (ppc64be) [Learn more](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-ppc-be-linux "Learn how to download and install Dynatrace OneAgent on PPC BE Linux.")
    * `PowerPC (LE)` - 64-bit PowerPC (ppc64le)
    * `s390` - 64-bit IBM Z mainframe (s390) [Learn more](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos "Install, configure, and manage Dynatrace modules on z/OS.")
@@ -103,7 +99,7 @@ During the installation process, the installer:
 * Checks for a connection to Dynatrace Server or ActiveGate (if you installed ActiveGate and downloaded the OneAgent installer after ActiveGate was connected to Dynatrace).
 * Detects all SELinux-aware applications and adjusts the SELinux security policy accordingly.
 * Allows Dynatrace OneAgent to inject its own libraries into monitored processes.
-* Modifies the core pattern configuration so that OneAgent can detect and report process crashes. The original core\_pattern configuration will still work following installation and will be preserved in `/opt/dynatrace/oneagent/agent/conf/original_core_pattern`, where you can define your own core settings using the format as specified in [Linux Programmer's Manualï»¿](https://man7.org/linux/man-pages/man5/core.5.html).
+* Modifies the core pattern configuration so that OneAgent can detect and report process crashes. The original core\_pattern configuration will still work following installation and will be preserved in `/opt/dynatrace/oneagent/agent/conf/original_core_pattern`, where you can define your own core settings using the format as specified in [Linux Programmer's Manual](https://man7.org/linux/man-pages/man5/core.5.html).
 
 For a summary of the changes made to your system by OneAgent installation, see [OneAgent security on Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
 

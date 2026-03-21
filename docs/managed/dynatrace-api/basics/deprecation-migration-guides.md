@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/basics/deprecation-migr
 updated: 2026-02-09
 ---
 
-# Migration guides for deprecated APIs
-
-
-* Reference
-* Updated on Nov 20, 2025
-
 The following APIs have been deprecated. For backward compatibility, the endpoints remain functional until further notice, but we recommend that you use the new options instead.
 
 Every deprecated endpoint will eventually reach end of life (EOL) and be disabled. You won't be able to use them afterward. We provide enough time to switch to the new option before shutting down the old one. Even if the EOL date is not defined, you still should adapt your integrations to the new options.
@@ -82,7 +76,7 @@ End of 2025
 
 Log Monitoring API v1
 
-Log Management and Analytics: [Grail Query APIï»¿](https://developer.dynatrace.com/platform-services/services/storage/#grail-query-api)
+Log Management and Analytics: [Grail Query API](https://developer.dynatrace.com/platform-services/services/storage/#grail-query-api)
 
 Log Monitoring Classic: [Log Monitoring API](/managed/dynatrace-api/environment-api/log-monitoring-v2 "Find out what you can do with the Log Monitoring API v2.")
 
@@ -150,7 +144,7 @@ Managed 1.190
 
 SaaS 1.275
 
-[Timeseries v1 to Metrics v2ï»¿](https://docs.dynatrace.com/docs/shortlink/api-migration-timeseries)
+[Timeseries v1 to Metrics v2](https://docs.dynatrace.com/docs/shortlink/api-migration-timeseries)
 
 ## Migrated to Settings 2.0 framework
 

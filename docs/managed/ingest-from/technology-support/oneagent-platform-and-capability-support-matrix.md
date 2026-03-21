@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/oneage
 updated: 2026-02-09
 ---
 
-# OneAgent platform and capability support matrix
-
-
 * 13-min read
-* Updated on Oct 15, 2025
 
 This page describes which capabilities are supported by OneAgent on different operating systems and platforms.
 
@@ -187,7 +183,7 @@ The tables below contain information about the supported OneAgent capabilities f
 
 1
 
-Both 64-bit ARM ([AWS Graviton2 processorsï»¿](https://aws.amazon.com/ec2/graviton/)) and 64-bit x86 architectures are supported.
+Both 64-bit ARM ([AWS Graviton2 processors](https://aws.amazon.com/ec2/graviton/)) and 64-bit x86 architectures are supported.
 
 2
 

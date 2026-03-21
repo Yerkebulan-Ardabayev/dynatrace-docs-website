@@ -4,24 +4,17 @@ source: https://docs.dynatrace.com/managed/observe/application-observability
 updated: 2026-02-09
 ---
 
-# Application Observability
-
-
-* Overview
 * 1-min read
-* Published Feb 06, 2023
 
 [#### Services
 
 Learn how to monitor and analyze your services, define and use request attributes, and more.
 
-* Overview
 
 See the overview](/managed/observe/application-observability/services)[#### Distributed Traces
 
 Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.
 
-* Overview
 
 See the overview](/managed/observe/application-observability/distributed-traces)[#### Multidimensional analysis
 
@@ -33,13 +26,11 @@ Read this guide](/managed/observe/application-observability/multidimensional-ana
 
 Learn how to use Dynatrace diagnostic tools for crash analysis, memory dump analysis, and more.
 
-* Overview
 
 See the overview](/managed/observe/application-observability/profiling-and-optimization)[#### Services
 
 Learn about Dynatrace's classic service monitoring
 
-* Overview
 
 See the overview](/managed/observe/application-observability/services-classic)
 

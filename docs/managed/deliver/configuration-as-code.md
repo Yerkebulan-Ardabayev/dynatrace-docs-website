@@ -4,12 +4,7 @@ source: https://docs.dynatrace.com/managed/deliver/configuration-as-code
 updated: 2026-02-09
 ---
 
-# Configuration as Code overview
-
-
-* Overview
 * 2-min read
-* Updated on Jul 27, 2025
 
 ![Configuration as Code](https://dt-cdn.net/images/configuration-as-code-highresolution-1025-29c909e912.png "Configuration as Code") **Configuration as Code** (CaC) provides Observability as Code and Security as Code to fully automate the configuration of the Dynatrace platform at any scale for:
 
@@ -44,7 +39,7 @@ Manage any Dynatrace configuration side-by-side with any source code, from withi
 * Remediation and problem notification automations
 
 You can manage any Dynatrace configuration side-by-side with any source code, from within YAML files organized in Git repositories.
-Check out our [samples on GitHubï»¿](https://github.com/Dynatrace/dynatrace-configuration-as-code-samples).
+Check out our [samples on GitHub](https://github.com/Dynatrace/dynatrace-configuration-as-code-samples).
 
 Examples of what can be configured in code:
 
@@ -129,4 +124,4 @@ Monaco provides a third-party independent solution, operating in standalone mode
 
 * [Configuration as Code via Terraform overview](/managed/deliver/configuration-as-code/terraform "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform.")
 * [Configuration as Code via Monaco overview](/managed/deliver/configuration-as-code/monaco "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco.")
-* [[Blog] Automated observability, security, and reliability at scaleï»¿](https://www.dynatrace.com/news/blog/automated-observability-security-and-reliability-at-scale/)
+* [[Blog] Automated observability, security, and reliability at scale](https://www.dynatrace.com/news/blog/automated-observability-security-and-reliability-at-scale/)

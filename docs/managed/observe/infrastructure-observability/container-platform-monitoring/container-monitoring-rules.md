@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 updated: 2026-02-09
 ---
 
-# Container monitoring rules
-
-
 * How-to guide
 * 2-min read
-* Published Jun 25, 2021
 
 To manage all container-related settings, follow the instructions below.
 

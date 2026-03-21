@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-
 updated: 2026-02-09
 ---
 
-# Metrics API - Metric selector
-
-
-* Reference
-* Updated on Oct 31, 2025
-
 The metric selector is a powerful instrument for specifying which metrics you want to read via the [GET metric data points](/managed/dynatrace-api/environment-api/metric-v2/get-data-points "Read data points of one or multiple metrics via Metrics v2 API.") request or in the [**Advanced mode** of Data Explorer](/managed/analyze-explore-automate/explorer/explorer-advanced-query-editor "Build advanced queries using the Data Explorer advanced mode.").
 
 In addition, you can transform the resulting set of data points. These transformations modify the plain metric data.
@@ -3343,4 +3337,4 @@ You must apply an [aggregation transformation](#aggregation) before using the un
 
 * [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.")
 * [Environment API v2 - Entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.")
-* [[GitHub] Examples of metric selector queriesï»¿](https://dt-url.net/metric-selector-by-example)
+* [[GitHub] Examples of metric selector queries](https://dt-url.net/metric-selector-by-example)

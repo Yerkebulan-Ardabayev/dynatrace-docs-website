@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/use
 updated: 2026-02-09
 ---
 
-# User sessions API
-
-
-* Reference
-* Updated on May 02, 2022
-
 The **User Sessions** API enables you to obtain data about user sessions. The API uses [User Sessions Query Language (USQL)](/managed/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") to query the required data. Both calls return the same data, differing only in how it's represented.
 
 [### GET table

@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/basics/preview-early-ac
 updated: 2026-02-09
 ---
 
-# Preview and Early Adopter releases for Dynatrace API
-
-
-* Reference
-* Published Feb 07, 2020
-
 Some API requests are available as Early Adopter features or as part of a Preview. These requests are identified with "Early Adopter" and "Preview" notes on corresponding pages in Dynatrace Documentation and in the API explorer (see examples below).
 
 ## Early Adopter

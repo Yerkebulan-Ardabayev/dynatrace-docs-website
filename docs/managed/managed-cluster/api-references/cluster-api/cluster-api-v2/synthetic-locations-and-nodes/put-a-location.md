@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Synthetic locations API v2 - PUT a location (Dynatrace Managed)
-
-
-* Published Jul 26, 2019
-
 This API call:
 
 * Private locations Updates an existing location.

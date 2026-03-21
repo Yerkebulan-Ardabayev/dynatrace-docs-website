@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Create new Cluster token
-
-
-* Published Feb 12, 2020
-
 This API call creates a new cluster token.
 
 ## Authentication

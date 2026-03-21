@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Delete specific environment
-
-
-* Published Mar 09, 2021
-
 This API call deletes the specified environment. An environment must be disabled before it can be deleted.
 
 ## Authentication

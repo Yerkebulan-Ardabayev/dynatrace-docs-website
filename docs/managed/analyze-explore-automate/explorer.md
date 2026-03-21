@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/explorer
 updated: 2026-02-09
 ---
 
-# Data Explorer
-
-
 * 7-min read
-* Updated on Oct 03, 2025
 
 Data Explorer greatly enhances your abilities to query and visualize metrics.
 

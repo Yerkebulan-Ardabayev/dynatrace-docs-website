@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Grant remote access permission
-
-
-* Published Feb 12, 2020
-
 This API call grants remote access permission to a specific user. You can specify the user role, duration, and reason for remote access request. The request consumes and produces an `application/json` payload.
 
 ## Authentication

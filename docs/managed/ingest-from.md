@@ -4,8 +4,6 @@ source: https://docs.dynatrace.com/managed/ingest-from
 updated: 2026-03-07
 ---
 
-# Источники данных
-
 Dynatrace обеспечивает мониторинг инфраструктуры и полный мониторинг приложений через автоматическую инструментацию с помощью OneAgent. Узнайте, как развернуть Dynatrace на [поддерживаемых платформах](/managed/ingest-from/technology-support).
 
 ## Облачные платформы
