@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-moni
 scraped: 2026-03-05T21:37:22.043515
 ---
 
-# Мониторинг доступности сети
-
-
-* Classic
 * Описание
-* Чтение: 4 мин
-* Обновлено 8 августа 2024 г.
 
 Dynatrace версии 1.296+ ActiveGate версии 1.295+
 

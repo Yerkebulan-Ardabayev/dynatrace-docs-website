@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:32:54.227234
 ---
 
-# Мониторинг Azure Container App
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Aug 31, 2023
 
 Dynatrace принимает метрики из Azure Metrics API для Azure Container App. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на дашбордах.
 

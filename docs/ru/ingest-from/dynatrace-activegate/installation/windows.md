@@ -7,9 +7,7 @@ scraped: 2026-03-06T21:25:09.202223
 # ActiveGate on Windows
 
 
-* Последняя версия Dynatrace
 * 1 мин. чтения
-* Обновлено 26 февр. 2025 г.
 
 Dynatrace поддерживает установку ActiveGate на Windows.
 

@@ -4,19 +4,15 @@ source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/mo
 scraped: 2026-03-06T21:14:15.056939
 ---
 
-# OpenAI
-
-
 * Latest Dynatrace
 * Explanation
 * 1-min read
-* Updated on Jan 28, 2026
 
 Мониторинг ваших запросов OpenAI через Dynatrace позволяет получить анализ затрат и оценку прогноза через Dynatrace Intelligence, запись промптов и ответов (completions), отслеживание ошибок, метрики производительности ваших AI-сервисов и многое другое.
 
 ![OpenAI Observability](https://dt-cdn.net/images/openai-dashboard-4102-e844fa80f9.png)
 
-[Explore the sample dashboard on the Dynatrace Playground.ï»¿](https://wkf10640.apps.dynatrace.com/ui/document/dynatrace.genai.observability.openai)
+[Explore the sample dashboard on the Dynatrace Playground.](https://wkf10640.apps.dynatrace.com/ui/document/dynatrace.genai.observability.openai)
 
 ## Спаны
 

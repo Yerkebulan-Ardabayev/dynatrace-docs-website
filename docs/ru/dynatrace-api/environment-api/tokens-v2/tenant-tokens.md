@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/tokens-v2/t
 scraped: 2026-03-03T21:22:17.477131
 ---
 
-# Tenant tokens API
-
-
-* Справочник
-* Опубликовано 23 февр. 2021 г.
-
 [### Начать ротацию
 
 Инициировать ротацию токена арендатора.](tenant-tokens/post-start.md "Инициировать ротацию токена арендатора Dynatrace.")[### Завершить ротацию

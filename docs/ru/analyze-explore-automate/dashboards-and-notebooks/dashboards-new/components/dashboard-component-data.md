@@ -3,12 +3,12 @@ title: Добавление данных на панель управления
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data
 scraped: 2026-03-06T21:11:21.483222
 ---
+
 # Добавление данных на панель мониторинга
 
 * Последнее Dynatrace
 * Руководство по действию
 * 10-минутное чтение
-* Обновлено 27 мая 2025 г.
 
 Эта страница описывает, как добавить данные с помощью запроса Grail, и как указать пользовательский временной интервал и сегмент.
 

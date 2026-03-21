@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kube
 scraped: 2026-03-06T21:09:44.668198
 ---
 
-# Kubernetes
-
-
 * Latest Dynatrace
-* App
 * 7 мин. чтения
-* Обновлено 30 января 2026
 
 Новейший [Kubernetes-интерфейс](https://dt-url.net/k1038uw) оптимизирован для инженеров DevOps-платформ и инженеров по надёжности сайтов (SRE), с акцентом на здоровье и оптимизацию производительности мультиоблачных Kubernetes-сред. Центральным элементом этого интерфейса является [![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**](https://dt-url.net/mx238j5).
 
@@ -50,7 +45,6 @@ scraped: 2026-03-06T21:09:44.668198
 
 [01 Включение Kubernetes-интерфейса для существующих кластеров
 
-* Руководство
 * Включение существующих кластеров для нового Kubernetes-интерфейса.](kubernetes-app/enable-k8s-experience/existing-clusters.md)
 
 ## Explorer

@@ -7,11 +7,6 @@ scraped: 2026-03-05T21:37:41.264166
 # Обзор Configuration as Code
 
 
-* Последняя версия Dynatrace
-* Обзор
-* Чтение: 2 мин
-* Обновлено 27 июля 2025 г.
-
 ![Configuration as Code](https://dt-cdn.net/images/configuration-as-code-highresolution-1025-29c909e912.png "Configuration as Code") **Configuration as Code** (CaC) обеспечивает подход Observability as Code и Security as Code для полной автоматизации конфигурации платформы Dynatrace в любом масштабе:
 
 * Автоматизация и стандартизация конфигураций наблюдаемости.

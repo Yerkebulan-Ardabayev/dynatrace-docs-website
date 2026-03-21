@@ -8,9 +8,6 @@ scraped: 2026-03-06T21:27:38.315462
 
 
 * Latest Dynatrace
-* Справочник
-* Чтение: 5 мин
-* Обновлено 17 февраля 2025 г.
 
 ## Разрешения для Workflows и AutomationEngine API
 

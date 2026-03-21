@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:29:53.332620
 ---
 
-# Мониторинг Azure Mesh Application
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Время чтения: 1 мин
-* Опубликовано 10 сент. 2020 г.
-
 Эта служба была выведена из эксплуатации компанией Microsoft. Подробнее см. в [объявлении Microsoft](https://azure.microsoft.com/en-us/updates/azure-service-fabric-mesh-preview-retirement/).
 
 Dynatrace получает метрики из Azure Metrics API для Azure Mesh Application. Вы можете просматривать метрики для каждого экземпляра службы, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.

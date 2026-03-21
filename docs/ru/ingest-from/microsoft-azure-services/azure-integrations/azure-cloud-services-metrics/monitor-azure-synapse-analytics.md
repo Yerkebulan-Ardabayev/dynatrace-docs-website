@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:26:29.714702
 ---
 
-# Мониторинг Azure Synapse Analytics (Synapse Workspace, Apache Spark pool, SQL pool)
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 4 мин
-* Опубликовано 23 сент. 2020
-
 Dynatrace получает метрики из Azure Metrics API для Azure Analytics (Synapse Workspace, Apache Spark pool, SQL pool). Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на дашбордах.
 
 ## Предварительные требования

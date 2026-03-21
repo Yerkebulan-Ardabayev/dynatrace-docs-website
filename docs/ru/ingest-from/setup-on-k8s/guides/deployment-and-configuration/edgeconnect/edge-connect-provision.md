@@ -6,11 +6,7 @@ scraped: 2026-03-05T21:40:06.355493
 
 # Provision EdgeConnect for Dynatrace environment
 
-# Подготовка EdgeConnect для среды Dynatrace
-
 * Latest Dynatrace
-* Чтение: 1 мин
-* Опубликовано 20 декабря 2023 г.
 
 EdgeConnect обеспечивает безопасное взаимодействие между приложениями, рабочими процессами и внутренними системами в среде Kubernetes. В этом руководстве приведены подробные инструкции по подготовке EdgeConnect для среды Dynatrace.
 

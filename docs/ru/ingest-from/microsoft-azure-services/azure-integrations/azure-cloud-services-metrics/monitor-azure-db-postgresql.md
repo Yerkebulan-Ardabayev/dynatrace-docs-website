@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:25:58.699675
 ---
 
-# Мониторинг Azure Database for PostgreSQL (Single Server, Hyperscale, Flexible Server)
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Время чтения: 6 мин
-* Опубликовано 25 июня 2020 г.
-
 На страницах обзора Azure Database for PostgreSQL (Single Server, Hyperscale, Flexible Server) вы получаете информацию о различных аспектах производительности базы данных, включая использование ЦП и памяти, активные подключения, дисковое пространство и многое другое.
 
 ## Предварительные требования

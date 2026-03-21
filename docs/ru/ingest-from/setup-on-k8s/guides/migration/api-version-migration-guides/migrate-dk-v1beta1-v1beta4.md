@@ -8,9 +8,6 @@ scraped: 2026-03-05T21:32:55.534393
 
 
 * Latest Dynatrace
-* Reference
-* Время чтения: 10 мин
-* Обновлено 22 октября 2025 г.
 
 В этом руководстве показано, как вручную мигрировать с `apiVersion: dynatrace.com/v1beta1` на `apiVersion: dynatrace.com/v1beta4` для `DynaKube`.
 

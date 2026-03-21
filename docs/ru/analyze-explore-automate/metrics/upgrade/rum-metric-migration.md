@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/upgrade/
 scraped: 2026-03-05T21:37:58.010413
 ---
 
-# Миграция метрик RUM
-
-
 * Последнее Dynatrace
-* Справочник
 * 5-минутное чтение
-* Обновлено 23 января 2026 г.
 
 Ищете документацию по метрикам New RUM Experience?
 

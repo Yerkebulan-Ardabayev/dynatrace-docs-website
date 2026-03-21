@@ -8,9 +8,6 @@ scraped: 2026-03-03T21:26:45.029733
 
 
 * Latest Dynatrace
-* Руководство
-* Чтение: 4 мин
-* Обновлено 5 февраля 2026 г.
 * Preview
 
 С помощью [Dynatrace Intelligence (Preview)](../dynatrace-intelligence-integrations/copilot-for-workflows.md "Узнайте, как автоматизировать действия и ответы генеративного ИИ Dynatrace Intelligence с помощью workflows.") вы можете автоматизировать суммирование проблем и попросить генеративный ИИ Dynatrace Intelligence предложить шаги по исправлению, которые будут отправлены на вашу электронную почту.

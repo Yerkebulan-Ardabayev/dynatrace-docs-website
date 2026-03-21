@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deploymen
 scraped: 2026-03-06T21:21:58.424568
 ---
 
-# Мониторинг Kubernetes API
-
-
 * Latest Dynatrace
-* Чтение: 8 мин
-* Обновлено 9 декабря 2025 г.
 
 Dynatrace получает информацию о сущностях и метаданных Kubernetes, опрашивая Kubernetes API. Эта информация используется для [предустановленных оповещений Kubernetes](../../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues.md "Настройка оповещений на уровне кластера, узла, пространства имён или рабочей нагрузки Kubernetes/OpenShift.") и для предоставления всех сигналов наблюдаемости в надлежащем контексте Kubernetes в платформе Dynatrace, например, путём создания связей между приложениями, (микро-)сервисами, базами данных и сущностями Kubernetes, такими как поды, пространства имён и узлы.
 

@@ -7,8 +7,6 @@ scraped: 2026-03-06T21:32:36.491296
 # API тегов ручной вставки RUM
 
 
-* Reference
-
 **API тегов ручной вставки RUM** позволяет получать JavaScript для RUM в двух различных сценариях ручной вставки:
 
 * [Мониторинг без агента](../../../observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring.md "Set up agentless monitoring for your web applications.") и

@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-int
 scraped: 2026-03-06T21:38:14.267785
 ---
 
-# Мониторинг Google Cloud reCAPTCHA Enterprise
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Jan 17, 2022
 
 Интеграция Dynatrace с Google Cloud использует данные, собранные из Google Operation API, для постоянного мониторинга работоспособности и производительности сервисов Google Cloud. Объединяя все актуальные данные на дашбордах, она также обеспечивает оповещение и отслеживание событий.
 

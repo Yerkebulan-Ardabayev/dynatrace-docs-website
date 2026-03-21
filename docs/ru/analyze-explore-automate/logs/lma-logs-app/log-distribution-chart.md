@@ -11,7 +11,6 @@ scraped: 2026-03-06T21:11:31.603365
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Published Jul 02, 2025
 
 Используйте график распределения логов, доступный в ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**, чтобы выявлять тенденции в ваших логах. Вы можете:
 

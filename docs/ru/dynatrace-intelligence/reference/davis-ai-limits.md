@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/davis-ai
 scraped: 2026-03-06T21:27:19.411859
 ---
 
-# Ограничения Dynatrace Intelligence
-
-
-* Последняя версия Dynatrace
-* Справочник
-* Чтение: 5 мин
-* Обновлено 4 февраля 2026 г.
-
 На этой странице перечислены ограничения по умолчанию для компонентов Dynatrace Intelligence.
 
 ## Проблемы и события

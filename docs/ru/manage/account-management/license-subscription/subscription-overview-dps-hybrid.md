@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/manage/account-management/license-subscri
 scraped: 2026-03-04T21:32:07.873486
 ---
 
-# Обзор подписки (DPS для Hybrid)
-
-
 * Последняя Dynatrace
 * Описание
 * 3 мин. чтения
-* Опубликовано 24 ноября 2025 г.
 
 Эта страница предназначена специально для клиентов с конфигурацией DPS для Hybrid, см. [DPS для Hybrid](../../../license/dps-for-hybrid.md "DPS для Hybrid позволяет использовать одну подписку на несколько аккаунтов.").
 

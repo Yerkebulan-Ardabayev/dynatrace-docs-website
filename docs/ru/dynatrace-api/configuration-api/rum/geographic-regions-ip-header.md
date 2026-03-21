@@ -7,9 +7,6 @@ scraped: 2026-03-05T21:40:40.325738
 # API геогравических регионов — заголовков сопоставления IP-адресов
 
 
-* Reference
-* Published Sep 24, 2020
-
 API **Geographic regions - IP mapping headers** позволяет управлять конфигурацией сопоставления IP-адресов с географическими местоположениями. Ту же конфигурацию можно настроить в пользовательском интерфейсе Dynatrace: **Settings > Web and mobile monitoring > IP determination**.
 
 [### Просмотр конфигурации

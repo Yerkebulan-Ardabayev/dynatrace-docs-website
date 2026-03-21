@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:18:39.737550
 ---
 
-# Установка OneAgent на AIX
-
-
-* Последняя версия Dynatrace
-* Руководство
-* Чтение: 7 мин
-* Обновлено 07.11.2025
-
 На этой странице описано, как загрузить и установить Dynatrace OneAgent на AIX.
 
 Для начала войдите в вашу среду Dynatrace SaaS через веб-сайт [Dynatrace.com](https://www.dynatrace.com), используя учётные данные, предоставленные при регистрации. Затем продолжите выполнение описанных ниже шагов установки.

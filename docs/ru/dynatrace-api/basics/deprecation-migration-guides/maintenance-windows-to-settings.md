@@ -7,9 +7,6 @@ scraped: 2026-03-03T21:32:05.233768
 # Миграция с API окон обслуживания на Settings API
 
 
-* Справочник
-* Опубликовано 21 декабря 2022
-
 [API окон обслуживания](../../configuration-api/maintenance-windows-api.md "Узнайте, что предлагает API конфигурации окон обслуживания Dynatrace.") был объявлен устаревшим в [Dynatrace версии 1.240](../../../whats-new/dynatrace-api/sprint-240.md "Журнал изменений Dynatrace API версии 1.240"). Его заменой является [Settings API](../../environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.") со схемой **Maintenance windows** (`builtin:alerting.maintenance-window`). Мы рекомендуем выполнить миграцию на новый API при первой возможности.
 
 Миграция затрагивает URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также область действия токена для аутентификации запросов.

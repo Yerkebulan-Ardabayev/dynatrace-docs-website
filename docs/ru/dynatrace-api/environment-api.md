@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api
 scraped: 2026-03-06T21:20:59.328501
 ---
 
-# Environment API
-
-
-* Справочник
-* Опубликовано 1 апреля 2019
-
 ## Основы
 
 [Аутентификация](basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.")

@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/exte
 scraped: 2026-03-04T21:39:18.259271
 ---
 
-# Расширение SNMP Generic Server
-
-
 * Последняя Dynatrace
 * Расширение
-* Опубликовано 19 февраля 2026 г.
 
 Мониторинг состояния и производительности серверной инфраструктуры с использованием протокола SNMP в средах, где невозможно развернуть OneAgent.
 

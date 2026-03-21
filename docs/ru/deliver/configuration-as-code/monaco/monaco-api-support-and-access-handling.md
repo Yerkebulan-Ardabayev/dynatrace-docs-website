@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/mona
 scraped: 2026-03-06T21:29:49.923198
 ---
 
-# Поддержка API и управление правами доступа Monaco
-
-
 * Последняя Dynatrace
-* Справочник
 * 1 мин. чтения
-* Обновлено 27 октября 2025 г.
 
 Dynatrace предлагает различные варианты аутентификации API-вызовов. Dynatrace Monaco поддерживает следующие варианты аутентификации:
 

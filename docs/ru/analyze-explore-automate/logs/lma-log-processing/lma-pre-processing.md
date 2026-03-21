@@ -10,7 +10,6 @@ scraped: 2026-03-06T21:36:23.662335
 * Latest Dynatrace
 * Explanation
 * 3-min read
-* Published Dec 12, 2025
 
 Dynatrace SaaS версия 1.330+
 

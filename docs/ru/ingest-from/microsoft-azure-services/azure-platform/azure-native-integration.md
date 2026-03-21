@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-05T21:35:50.024995
 ---
 
-# Встроенный сервис Dynatrace для Azure
-
-
-* Последняя версия Dynatrace
 * Описание
-* Время чтения: 17 мин
-* Обновлено 23 июля 2024 г.
 
 Интеграция с Azure Marketplace позволяет создать единый процесс покупки, настройки и управления Dynatrace непосредственно в портале Azure. После настройки интеграции Dynatrace отображается как нативный сервис Azure, и вы можете управлять его конфигурацией из портала Azure.
 

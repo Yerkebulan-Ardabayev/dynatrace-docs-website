@@ -6,12 +6,7 @@ scraped: 2026-03-06T21:14:35.723933
 
 # Business event bucket assignment via classic pipeline
 
-# Назначение бакетов бизнес-событий через классический конвейер
-
 * Latest Dynatrace
-* Справочник
-* Чтение: 2 мин
-* Обновлено 28 ноября 2025 г.
 
 Бизнес-события могут храниться в бакетах с различными периодами хранения. Вы создаёте правила с матчер-специфичными запросами [DQL](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") для назначения совпадающих бизнес-событий в определённый бакет. Период хранения по умолчанию для встроенного бакета бизнес-событий (`default_bizevents`) составляет 35 дней. Вы также можете создавать [пользовательские бакеты](../../../platform/grail/organize-data/assign-permissions-in-grail.md#custom-grail-buckets "Find out how to assign permissions to buckets and tables in Grail.") с определённым периодом хранения.
 

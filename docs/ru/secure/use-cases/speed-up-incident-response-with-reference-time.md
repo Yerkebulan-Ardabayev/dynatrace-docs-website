@@ -9,7 +9,6 @@ scraped: 2026-03-06T21:27:59.052662
 
 * Latest Dynatrace
 * Tutorial
-* Опубликовано 13 мая 2025 г.
 
 Эффективное реагирование на инциденты и анализ корневых причин зависят от точности временных данных и контекста. С помощью [эталонного времени](../investigations/concepts.md#reference "Key concepts for using Dynatrace Investigations across security, operations, and performance analysis.") в ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations** вы можете улучшить расследования, основанные на данных, получив более глубокое понимание последовательности событий.
 В этой статье рассмотрено, как максимально эффективно использовать привязку к временным меткам в [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.").

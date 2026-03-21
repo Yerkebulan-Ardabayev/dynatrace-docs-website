@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:18:10.162845
 ---
 
-# Мониторинг Azure Service Fabric
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
 * 1 минута чтения
-* Опубликовано 19 июля 2017 г.
 
 ## Возможности
 

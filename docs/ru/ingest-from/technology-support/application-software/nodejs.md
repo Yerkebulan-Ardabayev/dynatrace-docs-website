@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/technology-support/applicatio
 scraped: 2026-03-05T21:25:49.885344
 ---
 
-# Node.js
-
-
 * Актуальная версия Dynatrace
-* Справочник
-* Чтение: 4 мин
-* Обновлено 21 ноября 2025
 
 [Node.js](https://nodejs.org) — это серверный фреймворк на основе [движка JavaScript V8](https://developers.google.com/v8/) от Google. Node.js использует асинхронную модель выполнения и часто применяется в качестве связующего компонента или прокси-уровня в корпоративных средах.
 

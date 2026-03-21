@@ -9,7 +9,6 @@ scraped: 2026-03-06T21:15:45.746356
 
 * Latest Dynatrace
 * 1-min read
-* Published Aug 03, 2018
 
 Dynatrace поддерживает полноуровневый мониторинг для Cloud Foundry через Dynatrace OneAgent BOSH Release, что позволяет развёртывать OneAgent на виртуальных машинах кластера Cloud Foundry, включая Diego cells, Cloud Controller, router и другие компоненты.
 
@@ -52,5 +51,5 @@ Dynatrace поддерживает полноуровневый монитори
 
 ## Связанные темы
 
-* [Мониторинг Cloud Foundryï»¿](https://www.dynatrace.com/technologies/cloud-foundry-monitoring/)
+* [Мониторинг Cloud Foundry](https://www.dynatrace.com/technologies/cloud-foundry-monitoring/)
 * [Мониторинг Cloud Foundry](../../observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring.md "Monitor Cloud Foundry with Dynatrace.")

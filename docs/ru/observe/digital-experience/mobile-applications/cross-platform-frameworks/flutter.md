@@ -7,10 +7,7 @@ scraped: 2026-03-05T21:26:16.084658
 # Instrument mobile apps with Dynatrace Flutter plugin
 
 
-* Classic
-* Практическое руководство
 * 1 мин. чтения
-* Обновлено 26 нояб. 2024 г.
 
 Плагин Dynatrace Flutter добавляет Dynatrace OneAgent для Android и iOS в ваше Flutter-приложение и предоставляет API для ручной инструментации при захвате данных Flutter/Dart.
 

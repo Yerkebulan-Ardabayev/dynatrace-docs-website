@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/aws-priva
 scraped: 2026-03-06T21:33:22.321378
 ---
 
-# AWS PrivateLink API
-
-
-* Справочник
-* Опубликовано 19 ноября 2020 г.
-
 [### Просмотр конфигурации
 
 Обзор AWS PrivateLink.](aws-privatelink/get-configuration.md "Чтение конфигурации AWS PrivateLink через API Dynatrace.")[### Обновить конфигурацию

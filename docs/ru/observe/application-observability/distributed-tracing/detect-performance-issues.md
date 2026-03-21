@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/observe/application-observability/distrib
 scraped: 2026-03-06T21:12:30.239053
 ---
 
-# Обнаружение проблем с производительностью
-
-
 * Latest Dynatrace
 * Tutorial
 * 5-min read
-* Published Oct 28, 2024
 
 Понимание того, какие запросы выполняются медленно и почему это происходит, может быть сложной задачей в современных облачных распределенных системах. Приложение [Distributed Tracing ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing")](https://dt-url.net/vc23u9n) предназначено для быстрого получения ответов на эти вопросы с помощью исследовательского подхода.
 

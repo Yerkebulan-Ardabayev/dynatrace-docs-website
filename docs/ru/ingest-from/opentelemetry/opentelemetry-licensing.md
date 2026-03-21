@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/opentelemetry-l
 scraped: 2026-03-06T21:23:28.479475
 ---
 
-# Лицензирование OpenTelemetry
-
-
-* Последняя версия Dynatrace
-* Обзор
-* Чтение: 2 минуты
-* Опубликовано 25 августа 2025 г.
-
 Последняя версия Dynatrace
 
 Узнайте, как рассчитывается приём данных OpenTelemetry в модели лицензирования Dynatrace Platform Subscription (DPS).

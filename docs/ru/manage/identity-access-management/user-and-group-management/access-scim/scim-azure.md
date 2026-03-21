@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/manage/identity-access-management/user-an
 scraped: 2026-03-06T21:33:48.651906
 ---
 
-# Настройка Azure SCIM для Dynatrace
-
-
 * Latest Dynatrace
 * How-to guide
 * 4-min read
-* Updated on Aug 06, 2024
 
 На этой странице описывается настройка на стороне IdP (**Azure**) для конфигурации SSO с использованием **SCIM**, а не на стороне Dynatrace. Используйте данное руководство как часть полной [процедуры настройки SCIM](../access-scim.md "SCIM") для Dynatrace SaaS, если вы используете Azure.
 

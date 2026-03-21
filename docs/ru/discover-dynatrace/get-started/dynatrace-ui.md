@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-
 scraped: 2026-03-05T21:39:57.477430
 ---
 
-# Навигация по платформе Dynatrace
-
-
 * Latest Dynatrace
-* Справочник
-* Чтение: 11 мин
-* Обновлено 28 января 2026 г.
 
 Узнайте, как ориентироваться в веб-интерфейсе Dynatrace.
 

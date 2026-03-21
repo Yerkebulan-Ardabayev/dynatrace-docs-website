@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/clou
 scraped: 2026-02-06T16:29:00.184458
 ---
 
-# Мониторинг Amazon Web Services
-
-
 * Latest Dynatrace
 * Explanation
 * 2-min read
-* Updated on Jan 28, 2026
 
 Dynatrace автоматически обнаруживает, устанавливает базовые показатели и интеллектуально отслеживает облачные среды Amazon Web Services.
 

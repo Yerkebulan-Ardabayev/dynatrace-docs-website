@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:36:28.724701
 ---
 
-# Мониторинг Azure Network Watcher (Connection Monitor, Connection Monitor Preview)
-
-
 * Актуальная версия Dynatrace
-* Практическое руководство
-* Чтение: 2 мин
-* Опубликовано 23 сен. 2020 г.
 
 Dynatrace получает метрики из Azure Metrics API для Azure Network Watcher (Connection Monitor, Connection Monitor Preview). Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на дашбордах.
 

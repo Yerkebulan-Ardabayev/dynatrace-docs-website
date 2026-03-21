@@ -9,7 +9,6 @@ scraped: 2026-03-06T21:19:27.656584
 
 * Latest Dynatrace
 * 1-min read
-* Published Sep 19, 2018
 
 У OneAgent есть специальная программа удаления. Вам потребуется запустить её, чтобы удалить OneAgent из системы.
 

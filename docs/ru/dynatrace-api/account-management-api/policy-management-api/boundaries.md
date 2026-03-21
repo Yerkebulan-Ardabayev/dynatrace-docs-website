@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/poli
 scraped: 2026-03-06T21:28:30.431018
 ---
 
-# Policy management API - Boundaries
-
-
-* Последняя версия Dynatrace
-* Справочник
-* Опубликовано 20 нояб. 2025 г.
-
 [### Список всех границ политик
 
 Получить обзор всех границ политик на уровне.](boundaries/get-all-boundaries.md "Просмотреть все границы политик уровня через Policy management API.")[### Просмотр границы политики

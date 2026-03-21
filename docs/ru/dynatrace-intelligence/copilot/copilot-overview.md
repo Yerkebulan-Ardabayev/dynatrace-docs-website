@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-ov
 scraped: 2026-03-06T21:13:22.200079
 ---
 
-# Обзор агентного и генеративного ИИ Dynatrace Intelligence
-
-
 * Latest Dynatrace
 * Описание
-* Чтение: 5 мин
-* Обновлено 4 февраля 2026 г.
 
 Агентный и генеративный ИИ Dynatrace Intelligence предназначен для повышения продуктивности, помощи при адаптации и позволяет исследовать данные с помощью естественного языка.
 

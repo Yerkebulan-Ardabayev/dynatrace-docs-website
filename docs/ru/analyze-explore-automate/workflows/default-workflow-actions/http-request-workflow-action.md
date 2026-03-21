@@ -8,9 +8,7 @@ scraped: 2026-03-06T21:34:27.419257
 
 
 * Latest Dynatrace
-* Reference
 * 1-min read
-* Published Apr 02, 2024
 
 Действие **HTTP Request** для Workflows позволяет отправлять HTTP-запросы к любому API.
 

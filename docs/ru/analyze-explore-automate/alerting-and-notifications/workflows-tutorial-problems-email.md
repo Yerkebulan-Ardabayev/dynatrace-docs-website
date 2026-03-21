@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/alerting-and-not
 scraped: 2026-03-04T21:35:46.557548
 ---
 
-# Отправка email-уведомлений о проблемах
-
-
 * Последняя Dynatrace
 * Учебное пособие
 * 4 мин. чтения
-* Обновлено 19 октября 2025 г.
 
 Проблемы автоматически создаются в Dynatrace при обнаружении аномалий или условий оповещения в вашей среде.
 В ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Рабочих процессах** создайте простой рабочий процесс, который отслеживает проблемы и автоматически отправляет оповещения по ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") электронной почте.

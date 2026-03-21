@@ -7,9 +7,7 @@ scraped: 2026-03-06T21:22:03.440195
 # Мониторинг целевых показателей уровня сервиса в Kubernetes/OpenShift
 
 
-* Classic
 * 2-min read
-* Published Jan 19, 2023
 
 Вы можете отслеживать текущие [целевые показатели уровня сервиса](../../../../deliver/service-level-objectives-classic.md "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic."), связанные с рабочей нагрузкой Kubernetes/OpenShift, на страницах сведений о **рабочей нагрузке Kubernetes**.
 

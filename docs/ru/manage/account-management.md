@@ -9,8 +9,6 @@ scraped: 2026-03-05T21:27:53.146235
 
 * Latest Dynatrace
 * Описание
-* Чтение: 5 мин.
-* Обновлено 24 июня 2025 г.
 
 Dynatrace Account Management предоставляет единое место для:
 

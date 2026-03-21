@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:29:35.062567
 ---
 
-# Мониторинг Azure IoT Hub
-
-
 * Latest Dynatrace
-* Практическое руководство
 * 10 мин. чтения
-* Обновлено 15 ноября 2023
 
 Для получения информации о различиях между классическими сервисами и другими сервисами см. [Миграция с классических (ранее «встроенных») сервисов Azure на облачные сервисы](../azure-monitoring-guide/azure-migration-guide.md "Миграция классических сервисов Azure на их новые версии.").
 

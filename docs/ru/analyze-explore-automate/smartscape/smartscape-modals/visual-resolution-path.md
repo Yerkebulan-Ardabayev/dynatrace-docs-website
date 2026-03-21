@@ -10,7 +10,6 @@ scraped: 2026-03-03T21:23:15.794747
 * Latest Dynatrace
 * Explanation
 * 2-min read
-* Published Jan 28, 2026
 
 Visual Resolution Path (VRP) -- это модальное окно ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**, которое позволяет вам получить доступ к пути разрешения проблемы непосредственно из любого приложения на платформе Dynatrace. В представлении Visual Resolution Path вы можете увидеть путь разрешения проблемы и получить немедленное представление о проблеме, не покидая текущий контекст и не переходя в ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**.
 

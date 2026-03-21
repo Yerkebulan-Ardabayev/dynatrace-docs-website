@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/business-observability/extensions
 scraped: 2026-03-06T21:14:50.262778
 ---
 
-# Microsoft Power BI
-
-
 * Latest Dynatrace
-* Overview
 * 2-min read
-* Published Mar 17, 2025
 * Preview
 
 Preview
@@ -42,7 +37,7 @@ ALLOW storage:bizevents:read;
 
 Чтобы подключиться к экземпляру Dynatrace SaaS из Power Query Desktop, выполните следующие шаги.
 
-1. Выберите **Dynatrace Grail DQL** в интерфейсе **Get Data**. Дополнительные сведения см. в разделе [Where to get data | Power Queryï»¿](https://dt-url.net/x203wmh).
+1. Выберите **Dynatrace Grail DQL** в интерфейсе **Get Data**. Дополнительные сведения см. в разделе [Where to get data | Power Query](https://dt-url.net/x203wmh).
 2. Введите вашу среду Dynatrace. Эта среда должна быть последней версии Dynatrace с включённым Grail. DQL-запрос на данном этапе не является обязательным, но рекомендуется для более сложных запросов, выходящих за рамки встроенных запросов по умолчанию.
 3. Войдите в свою среду для аутентификации ваших разрешений.
 4. Введите свои учётные данные во всплывающем окне.
@@ -55,4 +50,4 @@ ALLOW storage:bizevents:read;
 
 ## Связанные темы
 
-* [Microsoft Power BI extensionï»¿](https://dt-url.net/go03wp3)
+* [Microsoft Power BI extension](https://dt-url.net/go03wp3)

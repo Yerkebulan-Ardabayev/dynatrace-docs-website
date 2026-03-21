@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/manage/identity-access-management/permiss
 scraped: 2026-03-06T21:15:30.427207
 ---
 
-# Управление политиками IAM
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение 7 мин
-* Обновлено 20 августа 2025 г.
-
 Используйте описанные здесь процедуры в веб-интерфейсе Dynatrace для управления политиками [IAM](../manage-user-permissions-policies.md "Working with policies") Dynatrace.
 
 Альтернатива через API

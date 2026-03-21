@@ -10,7 +10,6 @@ scraped: 2026-03-06T21:32:50.601348
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Updated on Mar 06, 2026
 
 ## Рекомендуемые конфигурации
 

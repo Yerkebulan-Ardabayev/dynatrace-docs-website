@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dyna
 scraped: 2026-03-04T21:27:43.541975
 ---
 
-# Dynatrace Платформа Подписки API - Распределение затрат
-
-
 * Последнее Dynatrace
-* Справочник
-* Опубликовано 18 октября 2024 г.
 
 [![cost-allocation](https://cdn.bfldr.com/B686QPH3/at/9vhmq6x4kh88sq7hq4qbwg9t/DT0634.svg?auto=webp&width=72&height=72 "распределение затрат")
 

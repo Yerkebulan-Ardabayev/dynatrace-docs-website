@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-06T21:31:18.636411
 ---
 
-# Мониторинг Amazon Elastic Transcoder
-
-
-* Classic
-* Практическое руководство
 * 2-min read
-* Published Jul 21, 2020
 
 Dynatrace собирает метрики для множества предварительно выбранных пространств имен, включая Amazon Elastic Transcoder. Вы можете просматривать графики для каждого экземпляра сервиса с набором измерений и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
 
@@ -26,7 +20,7 @@ Dynatrace собирает метрики для множества предва
 
 * Dynatrace version 1.199+
 * Обновлённая [политика мониторинга AWS](../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.  
-  Чтобы [обновить политику AWS IAMï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+  Чтобы [обновить политику AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
 Предопределенная политика JSON для всех поддерживаемых сервисов
 

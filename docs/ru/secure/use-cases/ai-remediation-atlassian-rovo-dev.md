@@ -9,7 +9,6 @@ scraped: 2026-03-01T21:24:59.058380
 
 * Latest Dynatrace
 * Tutorial
-* Опубликовано 29 января 2026 г.
 * Preview
 
 ## Обзор

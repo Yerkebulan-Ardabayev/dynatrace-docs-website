@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cont
 scraped: 2026-03-06T21:21:44.712888
 ---
 
-# Мониторинг метрик Prometheus
-
-
-* Classic
-* Чтение: 14 мин.
-* Обновлено 29 янв. 2026 г.
-
 Prometheus — это набор инструментов мониторинга и оповещения с открытым исходным кодом, широко используемый в сообществе Kubernetes. Prometheus собирает метрики из ряда конечных точек HTTP(S), предоставляющих метрики в формате OpenMetrics.
 См. список доступных [экспортёров](https://dt-url.net/vd03n1m) в документации Prometheus.
 

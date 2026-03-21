@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/technology-support/support-mo
 scraped: 2026-03-05T21:25:56.797299
 ---
 
-# Поддержка Dynatrace Operator и известные проблемы
-
-
 * Latest Dynatrace
-* Время чтения: 5 мин.
-* Обновлено 10 февраля 2026
 
 Dynatrace предоставляет поддержку Kubernetes вскоре после выхода новой версии Kubernetes или OpenShift. Как только становятся доступны версии-кандидаты Kubernetes/OpenShift, Dynatrace тестирует эти версии, включая последние версии OneAgent, ActiveGate и Dynatrace Operator.
 

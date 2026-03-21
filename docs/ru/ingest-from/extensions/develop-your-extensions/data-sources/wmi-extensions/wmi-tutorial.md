@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-exten
 scraped: 2026-03-04T21:28:59.832907
 ---
 
-# Руководство по источнику данных WMI
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 1 мин
-* Опубликовано 30 марта 2022 г.
-
 Это пошаговое руководство по созданию расширения на основе источника данных WMI. Вы создадите расширение WMI, которое работает на OneAgent и выполняет мониторинг хоста Windows.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")

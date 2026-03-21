@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:26:51.285498
 ---
 
-# Мониторинг Azure AI — Language Understanding (LUIS)
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Время чтения: 2 мин
-* Опубликовано 22 сентября 2020 г.
-
 Dynatrace принимает метрики из Azure Metrics API для Language Understanding (LUIS). Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на дашбордах.
 
 ## Предварительные требования

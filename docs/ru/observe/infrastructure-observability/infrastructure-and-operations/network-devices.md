@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infr
 scraped: 2026-03-06T21:16:45.289692
 ---
 
-# Сетевые устройства
-
-
 * Последняя Dynatrace
 * Описание
 * 2 мин. чтения
-* Опубликовано 25 ноября 2025 г.
 
 Представление **Сетевые устройства** в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** предоставляет информацию о сетевых компонентах и их доступности с аналитикой на базе [Dynatrace Intelligence](../../../dynatrace-intelligence.md "Ознакомьтесь с возможностями Dynatrace Intelligence."). Dynatrace предлагает гибкий мониторинг сетевых устройств, позволяя выбрать уровень мониторинга и процесс подключения, подходящий для ваших потребностей.
 

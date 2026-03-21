@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:36:06.162984
 ---
 
-# Мониторинг Azure Data Lake Analytics
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Jul 27, 2020
 
 Dynatrace получает метрики из Azure Metrics API для Azure Data Lake Analytics. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на дашбордах.
 

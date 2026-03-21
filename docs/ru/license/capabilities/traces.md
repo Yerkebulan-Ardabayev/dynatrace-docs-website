@@ -7,11 +7,6 @@ scraped: 2026-03-06T21:13:53.688477
 # Обзор Traces powered by Grail (DPS)
 
 
-* Последняя версия Dynatrace
-* Обзор
-* Чтение: 9 минут
-* Обновлено 23 июня 2025 г.
-
 Возможность Traces powered by Grail DPS предоставляет клиентам доступ к:
 
 * Приёму распределённых трассировок для OpenTelemetry через OTLP API.

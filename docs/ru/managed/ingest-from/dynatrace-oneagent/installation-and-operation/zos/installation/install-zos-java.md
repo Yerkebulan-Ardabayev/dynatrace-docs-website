@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-05T21:29:54.594551
 ---
 
-# Установка модуля z/OS Java
-
-
 * Latest Dynatrace
-* Время чтения: 15 мин
-* Обновлено 18 ноября 2025 г.
 
 С помощью модуля z/OS Java вы можете получить наблюдаемость для ваших Java-приложений, включая вызовы IBM MQ и базы данных.
 

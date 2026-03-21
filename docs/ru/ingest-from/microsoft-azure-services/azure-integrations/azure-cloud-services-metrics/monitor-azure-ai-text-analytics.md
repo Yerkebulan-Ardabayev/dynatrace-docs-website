@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:28:00.758573
 ---
 
-# Мониторинг Azure AI - Text Analytics
-
-
 * Latest Dynatrace
-* Практическое руководство
-* Чтение: 1 мин
-* Опубликовано 22 сент. 2020 г.
 
 Dynatrace получает метрики из Azure Metrics API для Text Analytics. Вы можете просматривать метрики для каждого экземпляра службы, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на ваших дашбордах.
 

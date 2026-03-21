@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/exte
 scraped: 2026-03-05T21:38:08.442249
 ---
 
-# Расширение Stonebranch Universal Automation Center
-
-
 * Latest Dynatrace
 * Расширение
-* Опубликовано 12 декабря 2025
 
 Мониторинг Stonebranch Universal Automation Center (UAC) через OpenTelemetry.
 

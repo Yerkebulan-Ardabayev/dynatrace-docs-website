@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ing
 scraped: 2026-03-06T21:28:26.746272
 ---
 
-# Прием журналов API
-
 * Последние Dynatrace
-* Обзор
 * 3 мин. на чтение
-* Обновлено 08 октября 2025 г.
 
 ## Прием через Прием журналов API
 
@@ -125,7 +121,7 @@ Success
 
 Посетите Сообщество Dynatrace для получения руководств по устранению неполадок, а также ознакомьтесь с [Устранение неполадок управления журналами и аналитики](../lma-troubleshooting.md "Устранение проблем, связанных с настройкой и конфигурацией управления журналами и аналитики.").
 
-* [Устранение неполадок приема журналов через API - POST ingest logsï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
+* [Устранение неполадок приема журналов через API - POST ingest logs](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
 
 ## Связанные темы
 

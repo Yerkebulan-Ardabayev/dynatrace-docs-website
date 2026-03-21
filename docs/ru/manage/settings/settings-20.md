@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/manage/settings/settings-20
 scraped: 2026-03-06T21:26:14.018111
 ---
 
-# Фреймворк настроек Dynatrace
-
-
 * Latest Dynatrace
 * Объяснение
-* Чтение: 4 мин
-* Опубликовано 18 января 2023 г.
 
 Фреймворк Settings 2.0 предоставляет унифицированный инструмент для управления различными конфигурациями в Dynatrace. Независимо от того, используете ли вы веб-интерфейс Dynatrace или [Settings API](../../dynatrace-api/environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API."), вы задаёте одни и те же конфигурации с одинаковым эффектом.
 

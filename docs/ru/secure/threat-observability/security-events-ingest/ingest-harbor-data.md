@@ -9,7 +9,6 @@ scraped: 2026-03-06T21:23:46.892274
 
 * Latest Dynatrace
 * Extension
-* Updated on Oct 07, 2025
 
 Эта страница обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список изменений и необходимых действий для выполнения миграции описан в [руководстве по миграции таблиц безопасности Grail](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 

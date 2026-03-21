@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migratio
 scraped: 2026-03-06T21:31:20.594704
 ---
 
-# Миграция с Events API v1 на Events API v2
-
-
-* Справочник
-* Опубликовано 25 ноября 2022 г.
-
 [Events API v1](../../environment-api/events-v1.md "Узнайте, что можно делать с помощью Dynatrace Events API.") был объявлен устаревшим в [Dynatrace версии 1.243](../../../whats-new/dynatrace-api/sprint-243.md "Журнал изменений Dynatrace API версии 1.243"). Его заменой является [Events API v2](../../environment-api/events-v2.md "Узнайте, что можно делать с помощью Dynatrace Events API v2."). Мы рекомендуем перейти на новый API при первой возможности.
 
 Миграция затрагивает URL конечных точек, параметры запросов, параметры тела запроса/ответа, а также область действия токена для аутентификации запросов.

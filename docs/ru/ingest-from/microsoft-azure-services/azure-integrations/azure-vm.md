@@ -8,9 +8,7 @@ scraped: 2026-03-06T21:17:59.893176
 
 
 * Latest Dynatrace
-* Практическое руководство
 * 8 мин. чтения
-* Опубликовано 19 июл. 2017
 
 Dynatrace предоставляет [расширение VM](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/overview) для установки OneAgent на виртуальные машины Azure. Это позволяет использовать встроенные средства автоматизации развертывания с помощью Azure Resource Manager (ARM). Расширение Dynatrace VM доступно для Windows и Linux во всех публичных регионах Azure (включая поддержку классических виртуальных машин).
 

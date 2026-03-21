@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infr
 scraped: 2026-03-06T21:10:46.597387
 ---
 
-# Infrastructure & Operations
-
-
-* Последняя версия Dynatrace
-* Приложение
-* Чтение: 13 мин
-* Обновлено 29 января 2026 г.
-
 Приложение ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** упрощает мониторинг состояния инфраструктуры и облегчает анализ первопричин проблем.
 
 * Индикаторы состояния на базе [Dynatrace Intelligence](../../dynatrace-intelligence.md "Ознакомьтесь с возможностями Dynatrace Intelligence.") помогают обнаруживать ранние признаки снижения производительности, чтобы быстро определить, какие области вашей среды требуют внимания.

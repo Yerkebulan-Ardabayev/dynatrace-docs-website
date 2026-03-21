@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/session-replay
 scraped: 2026-03-05T21:37:06.750651
 ---
 
-# Настройка Session Replay для iOS
-
-
-* Classic
 * How-to guide
 * 8-min read
-* Updated on Sep 25, 2025
 
 На этой странице описано, как включить и настроить Session Replay для ваших iOS-приложений.
 

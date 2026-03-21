@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-moni
 scraped: 2026-03-06T21:27:16.073735
 ---
 
-# Интеграция с внешним хранилищем секретов
-
-
-* Classic
 * How-to guide
 * 22-min read
-* Updated on Jan 17, 2024
 
 Учётные данные Synthetic Monitoring типа [имя пользователя-пароль](../../../../../common/manage/credential-vault.md#uid-password "Хранение и управление учётными данными в хранилище учётных данных.") и [токен](../../../../../common/manage/credential-vault.md#token "Хранение и управление учётными данными в хранилище учётных данных.") в [хранилище учётных данных](../../../../../common/manage/credential-vault.md "Хранение и управление учётными данными в хранилище учётных данных.") Dynatrace могут быть синхронизированы с внешним хранилищем — [Azure Key Vault](#azure-key-vault), [HashiCorp Vault](#hashicorp) или [CyberArk Vault](#cyberark) (только учётные данные типа имя пользователя-пароль). Синхронизированные учётные данные содержат ключи внешних пар ключ-значение, которые хранят необходимые значения.
 

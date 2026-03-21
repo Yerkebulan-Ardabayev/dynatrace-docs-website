@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/m
 scraped: 2026-03-04T21:38:44.998874
 ---
 
-# Metrics API — Селектор метрик
-
-
-* Справочник
-* Обновлено 31 октября 2025 г.
-
 Селектор метрик — это мощный инструмент для указания того, какие метрики вы хотите прочитать через запрос [GET metric data points](get-data-points.md "Чтение точек данных одной или нескольких метрик через Metrics v2 API.") или в [**Расширенном режиме** Data Explorer](../../../analyze-explore-automate/explorer/explorer-advanced-query-editor.md "Создание расширенных запросов с помощью расширенного режима Data Explorer.").
 
 Кроме того, вы можете преобразовывать полученный набор точек данных. Эти преобразования модифицируют необработанные данные метрик.

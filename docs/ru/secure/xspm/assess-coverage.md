@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/secure/xspm/assess-coverage
 scraped: 2026-03-03T21:21:59.541148
 ---
 
-# Оценка покрытия
-
-
 * Latest Dynatrace
 * How-to guide
-* Обновлено 13 января 2026 г.
 
 Доступны следующие варианты оценки покрытия.
 

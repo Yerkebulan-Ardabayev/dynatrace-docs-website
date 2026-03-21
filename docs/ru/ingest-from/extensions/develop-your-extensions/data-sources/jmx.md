@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-exten
 scraped: 2026-03-06T21:36:35.777912
 ---
 
-# Источник данных JMX
-
-
 * Latest Dynatrace
-* Reference
 * 2-min read
-* Published May 15, 2023
 
 Dynatrace предоставляет фреймворк для создания метрик из [JMX MBeans](https://en.wikipedia.org/wiki/Java_Management_Extensions). Каждый процесс, отслеживаемый модулем кода Java для OneAgent, способен обрабатывать расширения JMX 2.0.
 

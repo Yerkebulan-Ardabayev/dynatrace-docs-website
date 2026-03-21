@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/conte
 scraped: 2026-03-06T21:35:26.941059
 ---
 
-# Content resources API
-
-
-* Reference
-* Published Sep 23, 2020
-
 API **Content resources** позволяет управлять конфигурацией поставщиков контента. Эту же конфигурацию можно настроить в пользовательском интерфейсе Dynatrace по пути **Settings > Web and mobile monitoring > Content resources**.
 
 [### Просмотр конфигурации

@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-int
 scraped: 2026-02-06T16:24:08.961664
 ---
 
-# Мониторинг Google App Engine
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 2 мин
-* Опубликовано 23 июн. 2020 г.
-
 Стандартная среда Google App Engine поддерживает приложения на Java, .NET, Node.js, Golang и других платформах. Для пользовательских образов Docker Google App Engine предоставляет поддержку гибкой среды.
 
 ## Предварительные требования

@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/application-observability/service
 scraped: 2026-03-04T21:38:13.805559
 ---
 
-# Настройка разделения сервисов в Service Detection v2
-
-
-* Classic
 * How-to guide
 * 2-min read
-* Updated on Nov 24, 2025
 
 Service Detection v2 (SDv2) позволяет разделять [обнаруженные сервисы](service-detection-v2.md "Узнайте, как обнаруживать сервисы на основе атрибутов ресурсов OpenTelemetry.") на основе атрибутов ресурсов.
 Вы можете использовать правила обнаружения по умолчанию Dynatrace, а также определять собственные пользовательские правила.

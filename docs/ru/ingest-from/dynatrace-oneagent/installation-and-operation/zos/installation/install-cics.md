@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-05T21:29:30.899274
 ---
 
-# Установка модуля CICS
-
-
-* Последняя версия Dynatrace
 * 14 минут чтения
-* Обновлено 28 января 2026 г.
 
 С помощью модуля CICS можно получить возможность наблюдаемости транзакций и программ CICS, включая вызовы DB2, DLI и VSAM.
 

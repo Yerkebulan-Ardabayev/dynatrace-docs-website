@@ -4,11 +4,7 @@ source: https://www.dynatrace.com/docs/whats-new/technology/end-of-support-news
 scraped: 2026-03-06T21:12:47.590220
 ---
 
-# Объявления об окончании поддержки
-
-
 * Latest Dynatrace
-* Updated on Jun 11, 2025
 
 Dynatrace OneAgent
 
@@ -179,7 +175,7 @@ Dynatrace, как правило, поддерживает технологии 
 
   + Дата окончания поддержки вендором: 2025-01-16
 
-For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability (Envoy >=1.30, Istio >= 1.22)ï»¿](https://community.dynatrace.com/t5/Product-news/Heads-Up-Upcoming-changes-in-Istio-Envoy-observability-Envoy-gt/ba-p/232535)
+For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability (Envoy >=1.30, Istio >= 1.22)](https://community.dynatrace.com/t5/Product-news/Heads-Up-Upcoming-changes-in-Istio-Envoy-observability-Envoy-gt/ba-p/232535)
 
 ### 2025-12-31 Окончание поддержки
 
@@ -282,7 +278,7 @@ For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability 
   + Последняя поддерживаемая версия OneAgent: 1.309
 * Dynatrace Extension Framework 1.0
 
-  + [General guidance and how to migrateï»¿](https://www.dynatrace.com/news/blog/unmatched-scalability-and-security-of-dynatrace-extensions-now-available-for-all-supported-technologies-7-reasons-to-migrate-your-jmx-and-python-plugins/)
+  + [General guidance and how to migrate](https://www.dynatrace.com/news/blog/unmatched-scalability-and-security-of-dynatrace-extensions-now-available-for-all-supported-technologies-7-reasons-to-migrate-your-jmx-and-python-plugins/)
 
 Обратите внимание, что JMX и PMI Extensions Framework 1.0 поддерживаются после марта 2025 года, но являются устаревшими. Если вы планируете продолжать использовать расширения JMX и PMI EF1.0, обратитесь в Dynatrace.
 
@@ -334,15 +330,15 @@ For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability 
 
 * Dynatrace Extension Framework 1.0 (Python 3.8)
 
-  + [General guidance and how to migrateï»¿](https://www.dynatrace.com/news/blog/unmatched-scalability-and-security-of-dynatrace-extensions-now-available-for-all-supported-technologies-7-reasons-to-migrate-your-jmx-and-python-plugins/)
+  + [General guidance and how to migrate](https://www.dynatrace.com/news/blog/unmatched-scalability-and-security-of-dynatrace-extensions-now-available-for-all-supported-technologies-7-reasons-to-migrate-your-jmx-and-python-plugins/)
   + Пользовательские расширения:
 
-    - Python: migration available, [conversion guideï»¿](https://developer.dynatrace.com/develop/dynatrace-extensions-vscode/guides/migrate/python-migrate/)
-  + Dynatrace extensions: most of the technologies already have a migration path to Extension Framework 2.0. Check [Hubï»¿](https://www.dynatrace.com/hub/?filter=all&type=extension) for availability.
+    - Python: migration available, [conversion guide](https://developer.dynatrace.com/develop/dynatrace-extensions-vscode/guides/migrate/python-migrate/)
+  + Dynatrace extensions: most of the technologies already have a migration path to Extension Framework 2.0. Check [Hub](https://www.dynatrace.com/hub/?filter=all&type=extension) for availability.
     The following technologies will be removed in Oct 2024 or available on-demand (details below):
 
     - Deprecated: Hikari, Netflix OSS, Apache HTTP Server Workers, PowerDNS, AWS Managed Prometheus, Apache Cassandra (remote), Apache Storm, Generic Linux Commands, IBM Event Streams, PHP-FPM, Synthetic checks (LDAP, DNS, ping, port, SSH, SFTP), ActiveDirectory replication, Siebel, SolarWinds, Windows Server File System Quotas, Zabbix, VMware Horizon.
-* Envoy (envoyproxy) 1.26 and earlier (Envoy module). For details, see this [Dynatrace Community announcementï»¿](https://dt-url.net/ei03n96).
+* Envoy (envoyproxy) 1.26 and earlier (Envoy module). For details, see this [Dynatrace Community announcement](https://dt-url.net/ei03n96).
 
   + Дата окончания поддержки вендором: 2024-04-18
 * Ubuntu 14.04 LTS (OS module)
@@ -372,7 +368,7 @@ For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability 
 
 ### 2024-08-31 Окончание поддержки
 
-* Any version of the [OneAgent SDK for Pythonï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) on Python 3.7
+* Any version of the [OneAgent SDK for Python](https://github.com/Dynatrace/OneAgent-SDK-for-Python) on Python 3.7
 * IBM JVM 6, 7, 8 on PPCBE (Java module)
 
   + Последняя поддерживаемая версия OneAgent: 1.297
@@ -412,9 +408,9 @@ For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability 
 
 ### 2024-05-31 Окончание поддержки
 
-* [OneAgent SDK for Pythonï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) 1.4
+* [OneAgent SDK for Python](https://github.com/Dynatrace/OneAgent-SDK-for-Python) 1.4
 
-  + Any version of the [OneAgent SDK for Pythonï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) on Python 3.4, 3.5, 3.6
+  + Any version of the [OneAgent SDK for Python](https://github.com/Dynatrace/OneAgent-SDK-for-Python) on Python 3.4, 3.5, 3.6
 
 ### 2024-04-30 Окончание поддержки
 
@@ -454,7 +450,7 @@ For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability 
 * SUSE Linux Enterprise Server 12.4 on x86-64, PPCLE (OS module)
 
   + Дата окончания поддержки вендором: 2023-06-30
-* Envoy (envoyproxy) 1.29+ (Envoy module). [Announcementï»¿](https://community.dynatrace.com/t5/Container-platforms/Heads-Up-Upcoming-changes-in-Istio-Envoy-observability-Envoy-gt/m-p/232535#M2120)
+* Envoy (envoyproxy) 1.29+ (Envoy module). [Announcement](https://community.dynatrace.com/t5/Container-platforms/Heads-Up-Upcoming-changes-in-Istio-Envoy-observability-Envoy-gt/m-p/232535#M2120)
 
   + Дата окончания поддержки вендором: 2024-01-16 (expected Envoy 1.29 release date)
 
@@ -503,11 +499,11 @@ For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability 
 
   + Дата окончания поддержки вендором: 2022-04-30
   + Последняя поддерживаемая версия OneAgent: 1.271
-* [OneAgent SDK for Javaï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Java) 1.0, 1.1, 1.2, 1.3, 1.4, 1.6, 1.7. [Announcementï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Java/releases/tag/v1.9.0)
+* [OneAgent SDK for Java](https://github.com/Dynatrace/OneAgent-SDK-for-Java) 1.0, 1.1, 1.2, 1.3, 1.4, 1.6, 1.7. [Announcement](https://github.com/Dynatrace/OneAgent-SDK-for-Java/releases/tag/v1.9.0)
 
 ### 2023-07-31 Окончание поддержки
 
-* [OneAgent SDK for Node.jsï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Nodejs/) 1.0, 1.1, 1.2, 1.3. [Announcementï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-NodeJs/releases/tag/v1.5.0)
+* [OneAgent SDK for Node.js](https://github.com/Dynatrace/OneAgent-SDK-for-Nodejs/) 1.0, 1.1, 1.2, 1.3. [Announcement](https://github.com/Dynatrace/OneAgent-SDK-for-NodeJs/releases/tag/v1.5.0)
 * Red Hat Enterprise Linux CoreOS 4.8 (OS module)
 
   + Дата окончания поддержки вендором: 2023-01-27
@@ -525,10 +521,10 @@ For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability 
 
 * RabbitMQ client 3.3.5 - 4.0 (.NET module)
 * Microsoft Azure Service Fabric Reliable Services 2.5 - 3.4 (.NET module)
-* [OneAgent SDK for C/C++ï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-C) 1.0.0, 1.1.0, 1.2.0, 1.3.1, 1.3.2, 1.4.1, 1.5.1. [Announcementï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-C/releases/tag/v1.7.1)
-* [OneAgent SDK for Pythonï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) 1.0, 1.1, 1.2, 1.3. [Announcementï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Python/releases/tag/v1.5.0)
+* [OneAgent SDK for C/C++](https://github.com/Dynatrace/OneAgent-SDK-for-C) 1.0.0, 1.1.0, 1.2.0, 1.3.1, 1.3.2, 1.4.1, 1.5.1. [Announcement](https://github.com/Dynatrace/OneAgent-SDK-for-C/releases/tag/v1.7.1)
+* [OneAgent SDK for Python](https://github.com/Dynatrace/OneAgent-SDK-for-Python) 1.0, 1.1, 1.2, 1.3. [Announcement](https://github.com/Dynatrace/OneAgent-SDK-for-Python/releases/tag/v1.5.0)
 
-  + Any version of the [OneAgent SDK for Pythonï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) on Python 2.7
+  + Any version of the [OneAgent SDK for Python](https://github.com/Dynatrace/OneAgent-SDK-for-Python) on Python 2.7
 
 ### 2023-05-31 Окончание поддержки
 
@@ -556,7 +552,7 @@ For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability 
 * Ext JS 3.4, 4, 5, 6 (RUM JavaScript)
 * ICEfaces 1.8, 2, 3 (RUM JavaScript)
 * jQuery 1.3 - 1.12, 2.0 - 2.2, 3.0 - 3.6 (RUM JavaScript)
-* Microsoft Internet Explorer 10 (RUM JavaScript). [Announcementï»¿](https://community.dynatrace.com/t5/Real-User-Monitoring/Support-ending-for-MS-Internet-Explorer-versions-7-10-and-older/td-p/208226)
+* Microsoft Internet Explorer 10 (RUM JavaScript). [Announcement](https://community.dynatrace.com/t5/Real-User-Monitoring/Support-ending-for-MS-Internet-Explorer-versions-7-10-and-older/td-p/208226)
 
   + Дата окончания поддержки вендором: 2020-01-31
 * MooTools 1.4.5 - 1.6.0 (RUM JavaScript)
@@ -815,145 +811,145 @@ Ubuntu 21.10 (модуль ОС)
 * Windows: Windows 10
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 июня 2026
 
 * Linux: Oracle Linux 9.6, 10.0
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.6, 10.0
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement](https://endoflife.date/rocky-linux)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 июля 2026
 
 * Linux: SUSE Enterprise Linux 15.6
 
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement](https://www.suse.com/lifecycle/)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 ноября 2026
 
 * Linux: Red Hat Enterprise Linux 9.4
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Ubuntu 16.04
 
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement](https://ubuntu.com/about/release-cycle)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 декабря 2026
 
 * Linux: Red Hat Enterprise Linux 9.7, 10.1
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 9.7, 10.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.7, 10.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement](https://endoflife.date/rocky-linux)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 января 2027
 
 * Linux: Amazon Linux 2
 
   + x86-64, ARM64 (AArch64)
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement](https://aws.amazon.com/linux/)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 августа 2027
 
 * Windows: Windows Server 2016
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 декабря 2027
 
 * Linux: Red Hat Enterprise Linux 9.6, 10.0
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement](https://access.redhat.com/support/policy/updates/errata)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 октября 2028
 
 * Linux: Amazon Linux 2023
 
   + x86-64, ARM64 (AArch64)
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement](https://aws.amazon.com/linux/)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 ноября 2028
 
 * Linux: Ubuntu 18.04
 
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement](https://ubuntu.com/about/release-cycle)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 августа 2029
 
 * Windows: Windows Server 2019
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 ноября 2029
 
 * Linux: Ubuntu 24.04
 
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement](https://ubuntu.com/about/release-cycle)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 декабря 2029
 
 * Linux: Red Hat Enterprise Linux 8.10
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement](https://access.redhat.com/support/policy/updates/errata)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 февраля 2030
 
 * Linux: Oracle Linux 8.10
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 ноября 2030
 
 * Linux: Ubuntu 20.04
 
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement](https://ubuntu.com/about/release-cycle)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 февраля 2032
 
 * Linux: SUSE Enterprise Linux 15.7
 
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement](https://www.suse.com/lifecycle/)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 мая 2032
 
 * Windows: Windows Server 2022
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 ноября 2032
 
 * Linux: Ubuntu 22.04
 
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement](https://ubuntu.com/about/release-cycle)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 декабря 2032
 
 * Linux: Rocky Linux 8.10
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement](https://endoflife.date/rocky-linux)
 
 ##### Следующие операционные системы перестанут поддерживаться с 01 мая 2035
 
 * Windows: Windows Server 2025
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
 
 ### Прошедшие изменения в поддержке операционных систем Dynatrace ActiveGate
 
@@ -962,17 +958,17 @@ Ubuntu 21.10 (модуль ОС)
 * Linux: CentOS 6.x
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.centos.org/FAQ/General)
+  + [Vendor announcement](https://wiki.centos.org/FAQ/General)
   + Последняя совместимая версия: 1.215
 * Windows: Windows Server 2008, 2008 R2
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
   + Последняя совместимая версия: 1.215
 * Windows: Windows 7, 8
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
   + Последняя совместимая версия: 1.215
 
 ##### Следующие операционные системы не поддерживаются с 01 июля 2022
@@ -980,22 +976,22 @@ Ubuntu 21.10 (модуль ОС)
 * Linux: CentOS 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 8.0, 8.1, 8.2, 8.3, 8.4
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.centos.org/FAQ/General)
+  + [Vendor announcement](https://wiki.centos.org/FAQ/General)
 * Linux: Red Hat Enterprise Linux 6.x, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 8.0, 8.1, 8.3
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement](https://access.redhat.com/support/policy/updates/errata)
 
 ##### Следующие операционные системы не поддерживаются с 01 ноября 2022
 
 * Linux: Red Hat Enterprise Linux 8.2
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement](https://access.redhat.com/support/policy/updates/errata)
 
 ##### Следующие операционные системы не поддерживаются с 01 февраля 2023
 
 * Linux: Ubuntu 14.04
 
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement](https://ubuntu.com/about/release-cycle)
   + Последняя совместимая версия: 1.257
 
 ##### Следующие операционные системы не поддерживаются с 01 сентября 2023
@@ -1003,118 +999,118 @@ Ubuntu 21.10 (модуль ОС)
 * Windows: Windows 8.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
   + Последняя совместимая версия: 1.271
 
 ##### Следующие операционные системы не поддерживаются с 01 ноября 2023
 
 * Linux: SUSE Enterprise Linux 15.1, 15.2, 15.3
 
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement](https://www.suse.com/lifecycle/)
 
 ##### Следующие операционные системы не поддерживаются с 01 декабря 2023
 
 * Linux: Red Hat Enterprise Linux 8.4, 8.7, 9.1
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 8.4, 8.7, 9.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement](https://endoflife.date/rocky-linux)
 
 ##### Следующие операционные системы не поддерживаются с 01 января 2024
 
 * Linux: Amazon Linux AMI 2018.3
 
   + x86-64, ARM64 (AArch64)
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement](https://aws.amazon.com/linux/)
 
 ##### Следующие операционные системы не поддерживаются с 01 мая 2024
 
 * Windows: Windows Server 2012, 2012 R2
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
 
 ##### Следующие операционные системы не поддерживаются с 01 июня 2024
 
 * Linux: Oracle Linux 8.8, 9.2
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.2
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement](https://endoflife.date/rocky-linux)
 
 ##### Следующие операционные системы не поддерживаются с 01 июля 2024
 
 * Linux: SUSE Enterprise Linux 15.4
 
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement](https://www.suse.com/lifecycle/)
 
 ##### Следующие операционные системы не поддерживаются с 01 декабря 2024
 
 * Linux: Red Hat Enterprise Linux 8.6, 8.9, 9.0, 9.3
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 8.9, 9.3
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 8.9, 9.3
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement](https://endoflife.date/rocky-linux)
 
 ##### Следующие операционные системы не поддерживаются с 01 января 2025
 
 * Linux: CentOS 7.9
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.centos.org/FAQ/General)
+  + [Vendor announcement](https://wiki.centos.org/FAQ/General)
 * Linux: Red Hat Enterprise Linux 7.9
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement](https://access.redhat.com/support/policy/updates/errata)
 
 ##### Следующие операционные системы не поддерживаются с 01 июня 2025
 
 * Linux: Oracle Linux 9.4
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.4
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement](https://endoflife.date/rocky-linux)
 
 ##### Следующие операционные системы не поддерживаются с 01 июля 2025
 
 * Linux: Oracle Linux 7.9
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: SUSE Enterprise Linux 15.5
 
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement](https://www.suse.com/lifecycle/)
 
 ##### Следующие операционные системы не поддерживаются с 01 декабря 2025
 
 * Linux: Red Hat Enterprise Linux 8.8, 9.2, 9.5
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement](https://endoflife.date/rocky-linux)
 
 ## Поддержка Dynatrace Operator
 

@@ -9,7 +9,6 @@ scraped: 2026-03-05T21:29:56.255357
 
 * Latest Dynatrace
 * 1-min read
-* Published Jan 13, 2023
 
 С помощью Dynatrace вы можете отслеживать вызовы доступа к файлам VSAM и BDAM из ваших CICS-приложений с использованием модуля CICS. Каждый файл, к которому осуществляется доступ в регионе CICS, представлен как сервис базы данных на странице [Databases](../../../../../observe/infrastructure-observability/databases.md "Track the database performance and resources to create and maintain a high performing and available application infrastructure."), включая такие метрики, как время отклика, частота сбоев и пропускная способность.
 

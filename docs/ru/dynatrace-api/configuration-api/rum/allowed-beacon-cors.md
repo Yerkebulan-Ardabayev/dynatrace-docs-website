@@ -7,9 +7,6 @@ scraped: 2026-03-06T21:25:51.626363
 # API разрешённых доменов маяков
 
 
-* Reference
-* Published Sep 23, 2020
-
 API **Allowed beacon domains** позволяет управлять списком источников RUM-маяков, которые должны приниматься OneAgent и ActiveGate.
 
 Для управления списком источников RUM-маяков в веб-интерфейсе Dynatrace перейдите в **Settings** > **Web and mobile monitoring** > **Beacon origins for CORS**.

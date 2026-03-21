@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/configur
 scraped: 2026-03-06T21:29:19.498721
 ---
 
-# Обратный прокси или балансировщик нагрузки для OneAgent
-
-
 * Latest Dynatrace
 * 1-min read
-* Published Sep 20, 2022
 
 Обратный прокси или балансировщик нагрузки может быть размещён на пути от OneAgent до ActiveGate. Вам необходимо настроить URL балансировщика нагрузки на ActiveGate, чтобы OneAgent мог использовать эту конечную точку для подключения к ActiveGate.
 

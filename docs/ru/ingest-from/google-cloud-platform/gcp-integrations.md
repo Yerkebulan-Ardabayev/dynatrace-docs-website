@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-int
 scraped: 2026-03-05T21:25:47.009562
 ---
 
-# Интеграции Google Cloud
-
-
 * Последняя Dynatrace
-* Обзор
 * 1 мин. чтения
-* Опубликовано 12 августа 2021 г.
 
 Dynatrace OneAgent обеспечивает полноценный мониторинг стека на Google Compute Engine и Google Kubernetes Engine, а также мониторинг на уровне контейнеров и приложений. Dynatrace поддерживает Google App Engine в режиме мониторинга только на уровне приложений.
 

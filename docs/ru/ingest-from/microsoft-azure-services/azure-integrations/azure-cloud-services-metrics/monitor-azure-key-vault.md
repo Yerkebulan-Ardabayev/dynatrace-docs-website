@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-05T21:40:30.301955
 ---
 
-# Мониторинг Azure Key Vault
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Jun 25, 2020
 
 Dynatrace принимает метрики из Azure Metrics API для Azure Key Vault. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские диаграммы, которые можно закрепить на дашбордах.
 

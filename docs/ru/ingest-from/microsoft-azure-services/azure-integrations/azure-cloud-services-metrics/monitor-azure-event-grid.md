@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:26:06.933213
 ---
 
-# Мониторинг Azure Event Grid (Domain Topics, Topics, System Topics)
-
-
 * Latest Dynatrace
 * How-to guide
 * 4-min read
-* Published Jul 27, 2020
 
 Dynatrace получает метрики из Azure Metrics API для Azure Event Grid (Domain Topics, Topics, System Topics). Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закреплять на дашбордах.
 

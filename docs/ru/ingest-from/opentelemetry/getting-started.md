@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/getting-started
 scraped: 2026-03-06T21:12:28.596172
 ---
 
-# Начало работы с OpenTelemetry и Dynatrace
-
-
 * Latest Dynatrace
-* Overview
 * 3-min read
-* Updated on Oct 15, 2025
 
 Найдите информацию, необходимую для начала приёма журналов, метрик и трассировок OpenTelemetry в Dynatrace.
 

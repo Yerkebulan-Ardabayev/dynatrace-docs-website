@@ -8,9 +8,7 @@ scraped: 2026-03-06T21:30:34.295751
 
 
 * Latest Dynatrace
-* Reference
 * 1-min read
-* Updated on Jan 15, 2026
 
 ## Общая политика
 

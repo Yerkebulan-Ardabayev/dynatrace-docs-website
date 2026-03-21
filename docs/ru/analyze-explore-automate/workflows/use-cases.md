@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/use-ca
 scraped: 2026-03-06T21:33:55.552697
 ---
 
-# Варианты использования Workflows
-
-
 * Latest Dynatrace
-* Overview
 * 1-min read
-* Updated on Feb 05, 2026
 
 Следующие варианты использования демонстрируют некоторые из способов применения ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** для настройки уведомлений, реагирования на инциденты и многого другого.
 

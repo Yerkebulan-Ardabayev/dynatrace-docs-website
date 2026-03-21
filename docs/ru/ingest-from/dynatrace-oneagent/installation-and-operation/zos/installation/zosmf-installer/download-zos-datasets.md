@@ -9,7 +9,6 @@ scraped: 2026-03-04T21:28:44.483728
 
 * Latest Dynatrace
 * 5-min read
-* Updated on Nov 03, 2023
 
 Вы можете загрузить PAX-файл, содержащий модули CICS, IMS, z/OS Java и zDC, двумя способами:
 

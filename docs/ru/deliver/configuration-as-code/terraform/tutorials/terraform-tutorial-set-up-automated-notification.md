@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/t
 scraped: 2026-03-06T21:28:19.838321
 ---
 
-# Настройка автоматических уведомлений с помощью Terraform и Configuration as Code
-
-
 * Последняя Dynatrace
-* Руководство
 * 2 мин. чтения
-* Обновлено 5 ноября 2025 г.
 
 В этом руководстве объясняется, как настроить уведомление о событиях с помощью последней версии Dynatrace.
 

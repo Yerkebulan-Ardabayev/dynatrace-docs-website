@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/adaptive-t
 scraped: 2026-03-06T21:22:40.096399
 ---
 
-# Adaptive Traffic Management для распределённой трассировки
-
-
 * Latest Dynatrace
-* Overview
 * 1-min read
-* Published Dec 15, 2022
 
 Adaptive Traffic Management — это интеллектуальный механизм выборки в Dynatrace. Он гарантирует, что объём данных трассировки, захватываемых OneAgent, не превышает лимит, включённый в мониторинг Full-Stack, при этом сохраняя статистически достоверный набор данных.
 

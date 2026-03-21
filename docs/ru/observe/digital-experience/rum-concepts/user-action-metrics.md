@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/rum-concepts/u
 scraped: 2026-03-05T21:27:36.932998
 ---
 
-# Метрики действий пользователя
-
-
-* Classic
 * Explanation
 * 8-min read
-* Updated on Mar 20, 2023
 
 Для веб-приложений Dynatrace вычисляет множество метрик [действий пользователя](user-actions.md "Узнайте, что такое действия пользователя и как они помогают понять, что пользователи делают с вашим приложением.").
 

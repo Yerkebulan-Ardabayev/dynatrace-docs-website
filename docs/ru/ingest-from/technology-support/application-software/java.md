@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/technology-support/applicatio
 scraped: 2026-03-05T21:26:24.102960
 ---
 
-# Java
-
-
-* Последняя версия Dynatrace
-* Справочник
-* Чтение: 1 минута
-* Обновлено 23 октября 2025 г.
-
 Предупреждение о несовместимости
 
 Одновременное использование [SAP Introscope Agent](https://dt-url.net/ut039c3) и Dynatrace OneAgent в одной JVM не поддерживается. Dynatrace OneAgent при активности на одном хосте может незаметно блокировать работу Introscope Agent, препятствуя его нормальному функционированию.

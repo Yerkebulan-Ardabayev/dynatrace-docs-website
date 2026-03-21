@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sa
 scraped: 2026-03-05T21:31:04.024459
 ---
 
-# Наблюдаемость OpenAI
-
-
-* Последняя версия Dynatrace
-* Руководство
 * 6 мин. чтения
-* Обновлено 28 января 2026 г.
 
 Dynatrace позволяет предприятиям автоматически собирать, визуализировать и получать оповещения о потреблении запросов OpenAI Agent и API, задержках и информации о стабильности в сочетании со всеми другими сервисами, используемыми для создания их AI-приложений. Сюда входят сервисы [OpenAI](https://openai.com/) и [Azure OpenAI](https://azure.microsoft.com/en-us/products/cognitive-services/openai-service), такие как GPT-5.2, Codex, DALL-E и ChatGPT.
 

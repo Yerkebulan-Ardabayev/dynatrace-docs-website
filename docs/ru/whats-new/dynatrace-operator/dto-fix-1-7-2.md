@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-
 scraped: 2026-03-06T21:34:34.185741
 ---
 
-# Примечания к выпуску Dynatrace Operator версии 1.7.2
-
-
 * Latest Dynatrace
 * Примечания к выпуску
-* Обновлено 22 янв. 2026 г.
 
 Дата выпуска: 12 ноября 2025 г.
 

@@ -6,11 +6,7 @@ scraped: 2026-03-06T21:22:46.951929
 
 # Instrument ingress-nginx
 
-# Инструментирование ingress-nginx
-
 * Latest Dynatrace
-* Чтение: 1 мин
-* Опубликовано 02 сентября 2021 г.
 
 Приведённые ниже инструкции применимы только к [официальной реализации контроллера Kubernetes ingress от Google](https://dt-url.net/xr03xh3).
 

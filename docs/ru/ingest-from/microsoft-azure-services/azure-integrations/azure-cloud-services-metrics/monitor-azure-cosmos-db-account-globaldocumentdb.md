@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-04T21:39:13.305924
 ---
 
-# Мониторинг Azure Cosmos DB Account (GlobalDocumentDB)
-
-
 * Latest Dynatrace
-* Практическое руководство
-* Чтение: 9 мин
-* Обновлено 15 ноября 2023 г.
 
 Информацию о различиях между классическими сервисами и другими сервисами см. в разделе [Миграция с классических (ранее «встроенных») сервисов Azure на облачные сервисы](../azure-monitoring-guide/azure-migration-guide.md "Миграция классических сервисов Azure на их новые версии.").
 

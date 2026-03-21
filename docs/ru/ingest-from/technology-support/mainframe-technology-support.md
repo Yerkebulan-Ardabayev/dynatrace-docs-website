@@ -7,10 +7,6 @@ scraped: 2026-03-06T21:19:51.815419
 # Поддержка мейнфреймовых технологий
 
 
-* Последняя версия Dynatrace
-* Чтение: 3 мин
-* Обновлено 1 марта 2026 г.
-
 Dynatrace поддерживает мониторинг технологий и версий, перечисленных ниже, на IBM z/OS.
 
 Поддерживаемые операционные системы модуля zRemote см. в разделе [Системные требования](../dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote.md#system-requirements "Подготовка и установка zRemote для мониторинга z/OS.").

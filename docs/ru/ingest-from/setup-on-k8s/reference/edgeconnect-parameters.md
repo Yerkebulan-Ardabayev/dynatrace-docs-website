@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/edgeco
 scraped: 2026-03-04T21:30:01.817464
 ---
 
-# Параметры EdgeConnect для Dynatrace Operator
-
-
 * Latest Dynatrace
 * 7-min read
-* Updated on Dec 22, 2025
 
 [EdgeConnect](../../edgeconnect.md "Use EdgeConnect to control how your apps and workflows interact with your internal systems.") позволяет приложениям и рабочим процессам Dynatrace безопасно взаимодействовать с вашими системами. EdgeConnect доступен в виде контейнера Docker и может работать в любой среде выполнения контейнеров. В этом справочном руководстве представлена подробная информация о настройке [пользовательского ресурса](https://dt-url.net/b60397m) EdgeConnect в вашей среде Kubernetes.
 

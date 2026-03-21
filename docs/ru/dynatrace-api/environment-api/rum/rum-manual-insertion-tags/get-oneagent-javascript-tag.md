@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-man
 scraped: 2026-03-02T21:19:10.698775
 ---
 
-# GET OneAgent JavaScript tag
-
-
-* Reference
-* Updated on Sep 18, 2025
-
 Возвращает наиболее актуальный [тег JavaScript OneAgent](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#oneagent-js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") для ручной вставки в код вашего веб-приложения. Включает конфигурацию и ссылку на код мониторинга.
 
 |  |  |  |

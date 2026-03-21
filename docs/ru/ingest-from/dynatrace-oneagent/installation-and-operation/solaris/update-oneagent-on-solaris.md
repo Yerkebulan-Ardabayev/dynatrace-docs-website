@@ -9,7 +9,6 @@ scraped: 2026-03-06T21:20:19.993240
 
 * Latest Dynatrace
 * 1-min read
-* Published Sep 19, 2018
 
 Чтобы обновить установленный экземпляр OneAgent на Solaris (x86 и SPARC), выполните следующие инструкции:
 

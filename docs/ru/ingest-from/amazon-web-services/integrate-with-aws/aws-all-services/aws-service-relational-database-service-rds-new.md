@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-03T21:30:57.407028
 ---
 
-# Мониторинг Amazon RDS (Relational Database Service)
-
-
-* Руководство
 * 31 мин. чтения
-* Обновлено 15 ноября 2023 г.
 
 Для получения информации о различиях между классическими сервисами и другими сервисами см. раздел [Миграция с классических AWS-сервисов (ранее «встроенных») на облачные сервисы](../cloudwatch-metrics/aws-migration-guide.md "Миграция классических AWS-сервисов на новые версии.").
 

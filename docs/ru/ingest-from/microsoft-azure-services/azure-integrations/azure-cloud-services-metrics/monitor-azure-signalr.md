@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-05T21:34:40.449334
 ---
 
-# Мониторинг Azure SignalR
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Aug 19, 2020
 
 Dynatrace получает метрики для нескольких предварительно выбранных пространств имён, включая Azure SignalR. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики на несколько измерений и создавать пользовательские диаграммы, которые можно закреплять на дашбордах.
 

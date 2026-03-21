@@ -7,9 +7,6 @@ scraped: 2026-03-06T21:28:21.680541
 # Events API v2 - Отправка события (POST)
 
 
-* Reference
-* Published Nov 05, 2021
-
 Загружает пользовательское событие в Dynatrace.
 
 Запрос принимает полезную нагрузку `application/json`.

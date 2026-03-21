@@ -10,7 +10,6 @@ scraped: 2026-03-06T21:30:23.206905
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Oct 15, 2025
 
 Для доступа к различным командам управления рабочими процессами:
 

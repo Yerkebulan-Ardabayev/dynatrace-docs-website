@@ -7,10 +7,6 @@ scraped: 2026-03-06T21:27:03.952660
 # Вопросы и ответы по Data Explorer
 
 
-* Classic
-* Время чтения: 1 мин
-* Опубликовано 10 марта 2022 г.
-
 Эта страница относится к Data Explorer — классической функции Dynatrace, тесно интегрированной с классическими информационными панелями, созданными с помощью [![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**](../dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic."). [Перейдите на последнюю версию Dynatrace](../../platform/upgrade.md "Используйте возможности Grail, AppEngine и AutomationEngine для хранения и анализа данных наблюдаемости и безопасности."), чтобы воспользоваться новейшими возможностями изучения данных.
 
 Почему я вижу не все серии своей метрики?
@@ -51,7 +47,7 @@ scraped: 2026-03-06T21:27:03.952660
 4. Выберите и отредактируйте временной диапазон. Например, измените `-2h` на `-2h-2m`.
 5. Нажмите **Done**.
 
-Обсуждение этой проблемы см. в записи [Correction required on Dashboard Charts showing dip at current timeï»¿](https://community.dynatrace.com/t5/Dynatrace-product-ideas/RFE-Correction-required-onDashboard-Charts-showing-dip-at/idi-p/144070) в сообществе Dynatrace.
+Обсуждение этой проблемы см. в записи [Correction required on Dashboard Charts showing dip at current time](https://community.dynatrace.com/t5/Dynatrace-product-ideas/RFE-Correction-required-onDashboard-Charts-showing-dip-at/idi-p/144070) в сообществе Dynatrace.
 
 Для получения дополнительной информации о временных диапазонах см. раздел [Настройки временного диапазона и зоны управления информационных панелей Dynatrace](../dashboards-classic/dashboards/dashboard-timeframe.md "Информация о настройках временного диапазона и зоны управления информационных панелей Dynatrace.").
 

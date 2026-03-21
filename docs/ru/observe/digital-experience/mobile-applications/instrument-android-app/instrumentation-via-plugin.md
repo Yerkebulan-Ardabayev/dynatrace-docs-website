@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applica
 scraped: 2026-03-05T21:26:36.781022
 ---
 
-# Dynatrace Android Gradle plugin
-
-
-* Classic
-* Overview
 * 6 мин. чтения
-* Обновлено 21 января 2026 г.
 
 Вы можете использовать Dynatrace Android Gradle plugin только для Android-проектов, которые используют [Android Gradle plugin](https://developer.android.com/studio/build/index.html) для сборки приложения. Dynatrace Android Gradle plugin следует применять к [файлу сборки верхнего уровня](https://dt-url.net/top-level-build-file) (`build.gradle` или `build.gradle.kts`), который расположен в корневой директории проекта. Такой подход позволяет плагину правильно настроить дочерние проекты Android и интегрировать процесс автоинструментирования в процесс сборки Android.
 

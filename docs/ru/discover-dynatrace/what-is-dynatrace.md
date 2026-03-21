@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/discover-dynatrace/what-is-dynatrace
 scraped: 2026-03-06T21:09:33.956733
 ---
 
-# Что такое Dynatrace
-
-
-* Последняя версия Dynatrace
 * Описание
-* Чтение: 2 мин
-* Обновлено 15 октября 2025 г.
 
 Dynatrace -- это платформа наблюдаемости для анализа, автоматизации и инноваций с использованием возможностей ИИ.
 

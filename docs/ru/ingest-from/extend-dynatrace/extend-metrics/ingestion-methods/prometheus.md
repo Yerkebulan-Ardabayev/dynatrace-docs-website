@@ -4,18 +4,14 @@ source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metri
 scraped: 2026-03-06T21:16:30.428379
 ---
 
-# Prometheus
-
-
 * Latest Dynatrace
 * 1-min read
-* Published Feb 01, 2022
 
 Prometheus — это набор инструментов с открытым исходным кодом для мониторинга и оповещения, широко используемый в сообществе Kubernetes. Prometheus собирает метрики из ряда конечных точек HTTP(s), предоставляющих метрики в формате OpenMetrics.
 
 Dynatrace предоставляет вам фреймворк для удобного приёма данных от Prometheus в Dynatrace в масштабе и в контексте всех остальных данных.
 
-Для начала работы проверьте [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/), чтобы узнать, охвачена ли ваша технология существующим расширением.
+Для начала работы проверьте [Dynatrace Hub](https://www.dynatrace.com/hub/), чтобы узнать, охвачена ли ваша технология существующим расширением.
 
 Если расширение, отвечающее вашим потребностям, отсутствует, Dynatrace в настоящее время предлагает три подхода к получению данных Prometheus в зависимости от среды.
 
@@ -23,7 +19,7 @@ Dynatrace предоставляет вам фреймворк для удобн
 * Prometheus вне Kubernetes
 * Prometheus через OpenTelemetry Collector
 
-Dynatrace интегрирует метрики gauge и counter из экспортёров и серверов Prometheus. Эти метрики затем доступны для построения графиков, оповещения и анализа в Dynatrace. Список доступных экспортёров Prometheus см. в [документации Prometheusï»¿](https://prometheus.io/docs/instrumenting/exporters/) или в [списке, поддерживаемом сообществомï»¿](https://github.com/prometheus/prometheus/wiki/Default-port-allocations).
+Dynatrace интегрирует метрики gauge и counter из экспортёров и серверов Prometheus. Эти метрики затем доступны для построения графиков, оповещения и анализа в Dynatrace. Список доступных экспортёров Prometheus см. в [документации Prometheus](https://prometheus.io/docs/instrumenting/exporters/) или в [списке, поддерживаемом сообществом](https://github.com/prometheus/prometheus/wiki/Default-port-allocations).
 
 ## Prometheus в Kubernetes
 

@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/plat
 scraped: 2026-03-06T21:34:18.452864
 ---
 
-# API токенов платформы
-
-
-* Последняя версия Dynatrace
-* Справочник
-* Обновлено 3 марта 2026 г.
-
 [### Список всех токенов платформы
 
 Обзор всех токенов платформы в вашем аккаунте Dynatrace.](platform-tokens-api/get-all-platform-tokens.md "Обзор токенов платформы в вашем аккаунте Dynatrace через API Dynatrace.")[### Создать токен платформы

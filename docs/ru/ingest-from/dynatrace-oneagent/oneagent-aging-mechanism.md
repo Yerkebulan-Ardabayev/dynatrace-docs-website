@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-a
 scraped: 2026-03-06T21:18:50.225002
 ---
 
-# Механизм устаревания файлов OneAgent
-
-
 * Latest Dynatrace
-* Чтение: 6 мин
-* Обновлено 25 февраля 2026 г.
 
 OneAgent в режиме развертывания на основе установщика использует встроенный механизм устаревания, который обеспечивает поддержание разумного размера файлов OneAgent.
 

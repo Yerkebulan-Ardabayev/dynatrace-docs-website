@@ -10,7 +10,6 @@ scraped: 2026-03-06T21:21:04.757177
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Published Mar 03, 2025
 
 Когда использовать визуализацию в виде шкалы
 

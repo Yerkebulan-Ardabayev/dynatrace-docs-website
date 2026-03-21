@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/secure/investigations
 scraped: 2026-03-06T21:38:04.563947
 ---
 
-# Investigations
-
-
 * Latest Dynatrace
-* App
-* Обновлено 09 янв. 2026
 
 О приложении
 
@@ -77,37 +72,26 @@ scraped: 2026-03-06T21:38:04.563947
 
 [01Выполнение запросов
 
-* Практическое руководство
 * Запускайте расследования с использованием Dynatrace Query Language в Investigations.](investigations/execute-queries.md)[02Фильтрация логов
 
-* Практическое руководство
 * Сужайте данные до релевантных записей в Investigations.](investigations/filter-logs.md)[03Извлечение полей с помощью DPL Architect
 
-* Практическое руководство
 * Извлекайте определенные точки данных из логов в Investigations.](investigations/extract-fields.md)[04Управление временем
 
-* Практическое руководство
 * Настраивайте временные диапазоны для анализа данных и корреляции событий в Investigations.](investigations/define-timeframes.md)[05Управление результатами
 
-* Практическое руководство
 * Организуйте и интерпретируйте результаты запросов в рамках расследований --- от анализа производительности до обнаружения угроз.](investigations/enhance-results.md)[06Управление деревом запросов
 
-* Практическое руководство
 * Визуализируйте и структурируйте сложные запросы в Investigations.](investigations/query-tree.md)[07Управление доказательствами
 
-* Практическое руководство
 * Собирайте и сохраняйте артефакты расследования в Investigations.](investigations/manage-evidence.md)[08Управление расследованиями
 
-* Практическое руководство
 * Делитесь, дублируйте и контролируйте доступ к расследованиям между командами в Dynatrace Investigations.](investigations/case-sharing.md)[09Управление шаблонами
 
-* Практическое руководство
 * Повторно используйте типовые запросы и рабочие процессы в Investigations.](investigations/manage-templates.md)[10Ускорение анализа первопричин
 
-* Практическое руководство
 * Выявляйте причины быстрее и эффективнее в Investigations.](investigations/accelerate-root-cause-analysis.md)[11Совместная работа с другими приложениями
 
-* Практическое руководство
 * Делитесь аналитическими данными и интегрируйте Investigations с другими приложениями и инструментами Dynatrace для более глубокого анализа.](investigations/collaborate-with-apps.md)
 
 ### Поиск угроз и криминалистика

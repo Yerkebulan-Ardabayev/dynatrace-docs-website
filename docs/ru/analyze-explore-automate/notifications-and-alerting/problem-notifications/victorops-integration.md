@@ -7,9 +7,7 @@ scraped: 2026-03-06T21:11:48.414954
 # Отправка уведомлений Dynatrace в VictorOps
 
 
-* Classic
 * 2-min read
-* Updated on Oct 10, 2022
 
 Dynatrace предлагает готовую интеграцию с VictorOps, которая автоматически передаёт уведомления о проблемах Dynatrace в вашу среду VictorOps.
 

@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-04T21:30:11.553276
 ---
 
-# Мониторинг Azure Automation Account
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Jul 27, 2020
 
 Dynatrace принимает метрики из Azure Metrics API для Azure Automation Account. Вы можете просматривать метрики для каждого экземпляра службы, разбивать метрики на несколько измерений и создавать пользовательские диаграммы, которые можно закрепить на своих дашбордах.
 

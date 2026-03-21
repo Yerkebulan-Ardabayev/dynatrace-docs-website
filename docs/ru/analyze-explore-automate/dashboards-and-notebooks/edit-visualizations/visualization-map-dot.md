@@ -3,12 +3,12 @@ title: Визуализация карты точек
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot
 scraped: 2026-03-06T21:21:06.636827
 ---
+
 # Визуализация точечной карты
 
 * Последнее Dynatrace
 * Руководство по настройке
 * 5-минутное чтение
-* Опубликовано 3 апреля 2025 г.
 
 Версия панелей управления 1.311+ Версия тетрадей 1.311+
 

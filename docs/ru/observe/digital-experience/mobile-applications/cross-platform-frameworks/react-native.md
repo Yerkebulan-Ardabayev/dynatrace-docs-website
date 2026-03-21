@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applica
 scraped: 2026-03-05T21:25:22.621291
 ---
 
-# Инструментирование мобильных приложений с помощью плагина Dynatrace React Native
-
-
-* Classic
 * How-to guide
 * 4-min read
-* Updated on Nov 26, 2024
 
 Наш плагин React Native позволяет вам автоматически инструментировать ваши приложения React Native с помощью Dynatrace OneAgent для Android и iOS. Плагин предоставляет API для добавления ручного инструментирования и совместим с обычными, извлечёнными проектами React Native.
 

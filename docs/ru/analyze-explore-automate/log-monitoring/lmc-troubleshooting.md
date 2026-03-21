@@ -7,10 +7,8 @@ scraped: 2026-03-06T21:30:45.299016
 # Troubleshooting Log Monitoring (Logs Classic)
 
 
-* Classic
 * Устранение неполадок
 * 2 мин. чтения
-* Обновлено 08 окт. 2025 г.
 
 Log Monitoring Classic
 

@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/data
 scraped: 2026-03-06T21:31:29.356055
 ---
 
-# Мониторинг базы данных MariaDB
-
-
 * Latest Dynatrace
 * How-to guide
-* Published Jan 20, 2026
 
 Используйте фреймворк расширений Dynatrace, чтобы расширить наблюдаемость вашего приложения за счёт данных, получаемых непосредственно с уровня базы данных MariaDB, и отслеживать влияние задач сервера базы данных на ваше приложение.
 

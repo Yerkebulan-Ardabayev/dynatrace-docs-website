@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/application-observability/service
 scraped: 2026-03-06T21:25:53.313434
 ---
 
-# Настройка обнаружения сбоев в Service Detection v2
-
-
 * Latest Dynatrace
 * How-to guide
-* Время чтения: 3 мин
-* Обновлено 24 ноября 2025 г.
 
 Service Detection v2 (SDv2) позволяет обнаруживать сбои на основе атрибутов span, которые имеют отношение к обнаружению сбоев.
 Эти релевантные span включают, например, корневые span [запросов](../../../../../semantic-dictionary/fields.md#request "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").

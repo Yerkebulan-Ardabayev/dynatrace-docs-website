@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings
 scraped: 2026-03-06T21:19:39.805071
 ---
 
-# Settings API
-
-
-* Reference
-* Published Feb 24, 2021
-
 [### Список схем
 
 Получите обзор всех схем настроек в вашей среде.](settings/schemas/get-all.md "Просмотр всех схем настроек вашей среды мониторинга через Dynatrace API.")[### Просмотр схемы

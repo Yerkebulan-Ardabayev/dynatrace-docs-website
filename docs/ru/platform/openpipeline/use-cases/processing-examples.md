@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/processin
 scraped: 2026-03-06T21:13:48.584554
 ---
 
-# Примеры обработки OpenPipeline
-
-
 * Latest Dynatrace
 * Tutorial
 * 13-min read
-* Updated on Jun 23, 2025
 
 Эта статья посвящена сценариям обработки данных и содержит отдельные примеры настройки процессоров OpenPipeline для достижения результата.
 

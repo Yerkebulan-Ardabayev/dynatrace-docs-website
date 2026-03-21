@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-moni
 scraped: 2026-03-03T21:29:31.056016
 ---
 
-# Управление приватными локациями Synthetic Monitoring
-
-
-* Практическое руководство
-* Чтение: 10 мин
-* Обновлено 11 фев 2026
-
 [Добавьте приватную локацию Synthetic Monitoring](create-a-private-synthetic-location.md#add "Узнайте, как создать приватную локацию для синтетического мониторинга."), а также анализируйте и управляйте использованием ёмкости на странице глобальных настроек **Приватные локации синтетического мониторинга** (выберите страницу настроек **Private synthetic locations** из результатов поиска).
 
 Early Adopter

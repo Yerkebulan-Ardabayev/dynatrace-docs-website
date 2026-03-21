@@ -4,11 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-an
 scraped: 2026-03-05T21:27:16.489433
 ---
 
-# Applications API - GET an application
-
-
-* Reference
-* Updated on Mar 22, 2023
 * Deprecated
 
 Этот API является устаревшим. Вместо него используйте [Monitored entities API](../../entity-v2.md "Узнайте о Dynatrace Monitored entities API."). Дополнительную информацию о переходе на новый API см. в [руководстве по миграции](../../../basics/deprecation-migration-guides/topology-v1-to-entity-v2.md "Перенесите вашу автоматизацию на Monitored entities API.").

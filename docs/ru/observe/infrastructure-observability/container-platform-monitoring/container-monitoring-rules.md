@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cont
 scraped: 2026-03-06T21:16:57.097581
 ---
 
-# Правила мониторинга контейнеров
-
-
-* Classic
 * How-to guide
 * 2-min read
-* Published Jun 25, 2021
 
 Для управления всеми настройками, связанными с контейнерами, следуйте приведённым ниже инструкциям.
 

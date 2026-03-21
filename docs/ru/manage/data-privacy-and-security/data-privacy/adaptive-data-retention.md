@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-pri
 scraped: 2026-03-06T21:29:40.158562
 ---
 
-# Адаптивное хранение данных
-
-
 * Latest Dynatrace
 * 6-min read
-* Updated on Jan 18, 2023
 
 Адаптивное хранение данных не применяется к развёртываниям с поддержкой Grail.
 

@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-05T21:36:10.353685
 ---
 
-# Мониторинг Azure NetApp Files
-
-
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Published Aug 19, 2020
 
 Dynatrace принимает метрики для нескольких предварительно выбранных пространств имён, включая Azure NetApp Files. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
 

@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/application-observability/service
 scraped: 2026-03-05T21:34:37.084360
 ---
 
-# Унифицированные сервисы
-
-
-* Classic
 * How-to guide
 * 6-min read
-* Updated on Oct 13, 2025
 
 Dynatrace version 1.274
 
@@ -38,4 +33,4 @@ Dynatrace version 1.274
 
 Это касается только **span:services** (сервисов, принятых через OTLP API), но не **span (default) services**, обнаруженных OneAgent с датчиком OpenTelemetry, которые останутся без изменений.
 
-Подробнее см. в записи [Обзор Service Detection V2 (SDv2)ï»¿](https://dt-url.net/b4030ff) в сообществе Dynatrace.
+Подробнее см. в записи [Обзор Service Detection V2 (SDv2)](https://dt-url.net/b4030ff) в сообществе Dynatrace.

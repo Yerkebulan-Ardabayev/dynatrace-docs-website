@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:17:36.115344
 ---
 
-# Логи Azure
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
 * 17 минут чтения
-* Обновлено 17 октября 2025 г.
 
 Потребление DDU для Log Monitoring
 

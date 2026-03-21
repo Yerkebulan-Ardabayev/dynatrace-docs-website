@@ -8,9 +8,7 @@ scraped: 2026-03-02T21:25:53.405162
 
 
 * Latest Dynatrace
-* Reference
 * 2-min read
-* Updated on Sep 04, 2025
 
 На этой странице описаны системные требования для дистрибутива Dynatrace OpenTelemetry Collector для различных сценариев использования.
 

@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-c
 scraped: 2026-03-05T21:40:09.842786
 ---
 
-# Сбор метрик Prometheus с помощью OpenTelemetry Collector
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 2 минуты
-* Обновлено 9 декабря 2025 г.
-
 Следующий пример конфигурации показывает, как настроить экземпляр Collector для сбора данных из существующей установки Prometheus и импорта их как OTLP-запрос в Dynatrace.
 
 ## Предварительные требования

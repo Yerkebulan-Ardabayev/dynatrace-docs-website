@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:18:06.853367
 ---
 
-# Мониторинг Azure App Service
-
-
 * Последняя Dynatrace
-* Обзор
 * 1 мин. чтения
-* Опубликовано 16 января 2023 г.
 
 Azure App Service предоставляет множество различных вариантов размещения для Windows, Linux и контейнеров с общей инфраструктурой ([App Service plan](https://dt-url.net/f4031wl)) или полностью изолированной и выделенной инфраструктурой ([Azure App Service Environment](https://dt-url.net/u0231c3)).
 

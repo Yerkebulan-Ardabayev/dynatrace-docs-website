@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/capabili
 scraped: 2026-03-06T21:25:15.913103
 ---
 
-# Установка модуля zRemote для мониторинга z/OS
-
-
 * Latest Dynatrace
 * 1-min read
-* Updated on Jul 25, 2020
 
 Модуль zRemote обрабатывает двоичные данные, полученные от [zLocal](../../dynatrace-oneagent/installation-and-operation/zos.md "Install, configure, and manage Dynatrace modules on z/OS."), и передаёт эти данные в сжатом и зашифрованном виде через локальный ActiveGate в Dynatrace. Таким образом, модуль zRemote снимает большую часть вычислительной нагрузки с [модулей CICS, IMS и z/OS Java](../../dynatrace-oneagent/installation-and-operation/zos.md "Install, configure, and manage Dynatrace modules on z/OS."), возникающей при инструментировании подсистем и приложений, и переносит её на открытую систему.
 

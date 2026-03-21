@@ -7,9 +7,6 @@ scraped: 2026-03-06T21:13:29.191127
 # API отслеживаемых сущностей
 
 
-* Reference
-* Published May 28, 2020
-
 [### Список сущностей
 
 Получите обзор сущностей, которые вы отслеживаете с помощью Dynatrace.](entity-v2/get-entities-list.md "View a list of monitored entities via Dynatrace API.")[### Просмотр сущности

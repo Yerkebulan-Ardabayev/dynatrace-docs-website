@@ -9,8 +9,6 @@ scraped: 2026-03-06T21:33:25.840613
 
 * Latest Dynatrace
 * How-to guide
-* Время чтения: 7 мин
-* Опубликовано 23 января 2026 г.
 
 Dynatrace SaaS версии 1.330+
 

@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/t
 scraped: 2026-03-05T21:37:34.807717
 ---
 
-# Поддержка Terraform API и обработка разрешений доступа
-
-
 * Последнее Dynatrace
 * Справка
 * 3-минутное чтение
-* Обновлено 20 ноября 2025 г.
 
 Dynatrace предлагает различные варианты аутентификации вызовов API. Поставщик Terraform Dynatrace поддерживает следующие варианты аутентификации.
 

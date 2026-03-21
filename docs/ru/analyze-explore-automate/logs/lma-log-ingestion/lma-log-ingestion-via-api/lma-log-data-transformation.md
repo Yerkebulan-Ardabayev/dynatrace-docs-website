@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ing
 scraped: 2026-03-06T21:29:26.252310
 ---
 
-# Автоматическое обогащение логов
-
-
 * Latest Dynatrace
 * Explanation
 * 2-min read
-* Updated on Apr 07, 2025
 
 Dynatrace автоматически обогащает логи, принятые через API.
 

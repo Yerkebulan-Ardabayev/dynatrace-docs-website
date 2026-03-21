@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/conf
 scraped: 2026-03-06T21:30:43.612602
 ---
 
-# Конфигурационный YAML-файл Monaco - список полей type
-
-
 * Latest Dynatrace
-* Справочник
 * 11 мин чтения
-* Обновлено 15 янв. 2026
 
 Поле [`type`](yaml-configuration-saas.md#type-field "Структура конфигурационного YAML-файла Monaco.") в YAML-файле `configs` определяет тип конфигурации Dynatrace.
 

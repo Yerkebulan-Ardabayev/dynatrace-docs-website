@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ing
 scraped: 2026-03-06T21:36:44.146131
 ---
 
-# Передача журналов в Dynatrace с помощью Fluent Bit
-
-
 * Последняя Dynatrace
 * Учебник
 * 3-минутное чтение
-* Обновлено 22 января 2026 г.
 
 Вы можете отправлять журналы в Dynatrace с помощью Fluent Bit. Настройте Fluent Bit для отправки журналов в общий конечный пункт приема API Dynatrace.
 

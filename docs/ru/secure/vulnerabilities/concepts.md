@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/secure/vulnerabilities/concepts
 scraped: 2026-03-05T21:39:40.339379
 ---
 
-# Концепции уязвимостей
-
-
-* Последняя версия Dynatrace
 * Объяснение
-* Обновлено 18 декабря 2025 г.
 
 Изучите основные концепции и ключевые термины для ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**.
 

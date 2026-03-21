@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/application-observability/service
 scraped: 2026-03-06T21:36:34.058448
 ---
 
-# Настройка обнаружения сервисов в Service Detection v2
-
-
-* Classic
 * How-to guide
 * 2-min read
-* Updated on Nov 24, 2025
 
 Service Detection v2 (SDv2) позволяет определять сервисы на основе атрибутов ресурсов span.
 Вы можете использовать правила обнаружения Dynatrace по умолчанию, а также определять собственные правила.

@@ -7,9 +7,6 @@ scraped: 2026-03-05T21:38:03.339161
 # Vulnerabilities API - PUT заглушить или снять заглушение элемента устранения
 
 
-* Reference
-* Updated on May 03, 2022
-
 Установка состояния заглушения для группы процессов [отслеживания устранения](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Отслеживание хода устранения уязвимостей.") или, в случае уязвимостей Kubernetes, для узла Kubernetes отслеживания устранения, в значение `mute` (заглушить) или `unmute` (снять заглушение).
 
 Запрос принимает полезную нагрузку в формате `application/json`.

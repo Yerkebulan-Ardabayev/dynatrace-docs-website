@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-traci
 scraped: 2026-03-06T21:12:33.553012
 ---
 
-# Расширение распределённой трассировки
-
-
 * Latest Dynatrace
-* Чтение: 1 мин
-* Опубликовано 04 февр. 2022
 
 [![OpenTelemetry](https://dt-cdn.net/images/techn-icon-opentelemetry-345d0f8b0e.svg "OpenTelemetry")
 

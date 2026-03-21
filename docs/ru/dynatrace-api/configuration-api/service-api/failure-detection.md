@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-a
 scraped: 2026-03-05T21:31:58.735333
 ---
 
-# Failure detection API
-
-
-* Reference
-* Published Jan 11, 2021
-
 [### Список всех наборов параметров
 
 Получить обзор всех наборов параметров для правил обнаружения сбоев.](failure-detection/parameter-set/get-all.md "View all failure detection parameter sets of your monitoring environment via the Dynatrace API.")[### Просмотр набора параметров

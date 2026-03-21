@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/calculate
 scraped: 2026-03-06T21:23:05.737095
 ---
 
-# API вычисляемых метрик
-
-
-* Справочник
-* Опубликовано 16 апреля 2020 г.
-
 ### Мобильные приложения
 
 * [Просмотр всех метрик мобильных приложений](calculated-metrics/mobile-app-metrics/get-all.md "Просмотр всех вычисляемых метрик мобильных приложений вашей среды через API Dynatrace.")

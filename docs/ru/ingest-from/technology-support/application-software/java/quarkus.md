@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/technology-support/applicatio
 scraped: 2026-03-04T21:28:08.700183
 ---
 
-# Мониторинг нативных приложений Red Hat Quarkus
-
-
 * Latest Dynatrace
 * 3 мин чтения
-* Обновлено 28 января 2026 г.
 
 [Red Hat Quarkus](https://www.redhat.com/en/topics/cloud-native-apps/what-is-quarkus) — это Java-фреймворк с открытым исходным кодом, оптимизированный для нативных образов GraalVM, который делает Java полноценным участником мира микросервисов. Quarkus относится к семейству полнофункциональных фреймворков, разработанных для Kubernetes. Он включает современные библиотеки Java и соответствует последним стандартам Java.
 

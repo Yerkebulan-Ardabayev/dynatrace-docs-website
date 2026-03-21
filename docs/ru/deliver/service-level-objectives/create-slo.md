@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/deliver/service-level-objectives/create-s
 scraped: 2026-03-05T21:31:21.874741
 ---
 
-# Создание целей уровня обслуживания
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 4 мин
-* Опубликовано 5 ноября 2024 г.
-
 С помощью ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives** вы можете настраивать новые цели уровня обслуживания (SLO) на основе шаблонов, предоставляемых Dynatrace.
 Вы также можете определить свои SLO на основе пользовательского запроса [DQL](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.").
 

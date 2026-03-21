@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-pro
 scraped: 2026-03-06T21:15:13.168025
 ---
 
-# Обработка логов
-
-
 * Latest Dynatrace
 * Explanation
 * 4-min read
-* Updated on Dec 11, 2025
 
 Dynatrace может преобразовывать входящие данные логов для лучшего понимания, анализа или дальнейшей трансформации.
 

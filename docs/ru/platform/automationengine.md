@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/platform/automationengine
 scraped: 2026-03-06T21:10:17.944567
 ---
 
-# AutomationEngine
-
-
 * Latest Dynatrace
 * 1-min read
-* Published Apr 20, 2023
 
 Dynatrace AutomationEngine позволяет объединять данные наблюдаемости, безопасности и бизнес-данные с каузальным ИИ для простой автоматизации рабочих процессов BizDevSecOps в корпоративном масштабе.
 

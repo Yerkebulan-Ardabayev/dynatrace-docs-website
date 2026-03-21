@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infr
 scraped: 2026-03-06T21:17:02.728334
 ---
 
-# Хосты
-
-
-* Последняя версия Dynatrace
 * Пояснение
 * 3 мин. чтения
-* Опубликовано 25 нояб. 2025 г.
 
 Представление **Hosts** в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** обеспечивает комплексный мониторинг хостов вашей инфраструктуры на физических машинах, виртуальных машинах и облачных экземплярах. Используйте этот инструмент для отслеживания состояния хостов, метрик производительности и использования ресурсов, чтобы обеспечить оптимальную работу инфраструктуры.
 
@@ -54,6 +49,5 @@ scraped: 2026-03-06T21:17:02.728334
 
 Узнайте, как включить режимы мониторинга при использовании OneAgent.
 
-* Практическое руководство
 
 Читать это руководство](../../../platform/oneagent/monitoring-modes/enable-monitoring-modes.md)

@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/clou
 scraped: 2026-03-06T21:24:55.181464
 ---
 
-# Создание нового подключения Azure
-
-
 * Последняя Dynatrace
-* Практическое руководство
 * 1 мин. чтения
-* Опубликовано 19 августа 2025 г.
 * Предварительная версия
 
 Если вы впервые создаёте подключение, сначала ознакомьтесь с [инструкциями по подключению](../../../../ingest-from/microsoft-azure-services/create-an-azure-connection/azure-connection-app-settings.md "Подключение сред Azure и создание подключений Azure через приложение Settings.") и предварительными требованиями.

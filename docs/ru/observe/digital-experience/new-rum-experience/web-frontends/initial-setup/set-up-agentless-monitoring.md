@@ -9,7 +9,6 @@ scraped: 2026-03-06T21:35:10.443740
 
 * Latest Dynatrace
 * How-to guide
-* Updated on Feb 03, 2026
 
 Как описано в разделе [Выбор подходящего подхода к инструментированию](../initial-setup.md#find-suitable-instrumentation-approach "Learn how to set up the New RUM Experience for web frontends."), безагентный RUM является подходящим выбором для сценариев, где:
 

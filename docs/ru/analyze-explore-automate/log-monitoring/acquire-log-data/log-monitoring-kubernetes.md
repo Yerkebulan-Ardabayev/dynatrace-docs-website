@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/a
 scraped: 2026-03-06T21:37:52.324824
 ---
 
-# Мониторинг журналов в Kubernetes (Logs Classic)
-
-* Classic
 * Tutorial
 * 10-минутное чтение
-* Обновлено 08 октября 2025 г.
 
 Мониторинг журналов Classic
 

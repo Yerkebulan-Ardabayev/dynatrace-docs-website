@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/secure/threat-observability/dql-examples
 scraped: 2026-03-06T21:20:31.345755
 ---
 
-# Примеры DQL для данных безопасности
-
-
 * Latest Dynatrace
 * How-to guide
-* Обновлено 22 октября 2025 г.
 
 Эта страница была обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список изменений и действий, необходимых для выполнения миграции, см. в [руководстве по миграции таблицы безопасности Grail](migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 

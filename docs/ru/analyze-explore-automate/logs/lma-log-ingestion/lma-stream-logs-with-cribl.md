@@ -10,7 +10,6 @@ scraped: 2026-03-06T21:27:17.743091
 * Latest Dynatrace
 * How-to guide
 * 3-min read
-* Published Jun 12, 2025
 
 Вы можете отправлять журналы, метрики и трассировки в Dynatrace с помощью Cribl Stream через OpenTelemetry Protocol (OTLP) или отправлять только журналы с помощью Cribl Stream через HTTP и приём по API.
 
@@ -45,7 +44,7 @@ scraped: 2026-03-06T21:27:17.743091
    * Обогащайте и контекстуализируйте данные.
    * Извлекайте метрики или создавайте бизнес-события из журналов, метрик и трассировок.
 
-Дополнительные сведения о конфигурации см. в [документации по продукту Criblï»¿](https://docs.cribl.io/stream/destinations-dynatrace-otlp/).
+Дополнительные сведения о конфигурации см. в [документации по продукту Cribl](https://docs.cribl.io/stream/destinations-dynatrace-otlp/).
 
 ## Развёртывание интеграции с использованием HTTP и API
 
@@ -68,4 +67,4 @@ scraped: 2026-03-06T21:27:17.743091
    * Обогащайте и контекстуализируйте данные.
    * Извлекайте метрики или создавайте бизнес-события из журналов.
 
-Дополнительные сведения о конфигурации см. в [документации по продукту Criblï»¿](https://docs.cribl.io/stream/destinations-dynatrace-http/).
+Дополнительные сведения о конфигурации см. в [документации по продукту Cribl](https://docs.cribl.io/stream/destinations-dynatrace-http/).

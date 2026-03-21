@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/web-applicatio
 scraped: 2026-03-06T21:13:06.981371
 ---
 
-# Анализ производительности
-
-
-* Classic
-* Руководство
-* Чтение: 6 мин
-* Опубликовано 19 июля 2017
-
 Раздел **Performance analysis** отображает ряд метрик производительности вашего приложения. Просто разверните раздел **Performance analysis** инфографики на [странице обзора приложения](introduction-to-application-overview.md "Ознакомьтесь с обзором опций анализа, доступных на странице обзора приложения."), чтобы увидеть параметры анализа производительности.
 
 ![Performance analysis](https://dt-cdn.net/images/performance-analysis-2346-018950fbc4.png)

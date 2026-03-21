@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-05T21:37:08.478436
 ---
 
-# Мониторинг Azure HDInsight
-
-
 * Latest Dynatrace
 * How-to guide
 * 4-min read
-* Updated on Jan 22, 2026
 
 Dynatrace получает метрики из Azure Metrics API для Azure HDInsight. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по различным измерениям и создавать пользовательские графики, которые можно закрепить на ваших дашбордах.
 На дашборде Azure HDInsight вы получаете целостное представление о ваших ресурсах Hadoop, Spark и Kafka и можете охватить все аспекты мониторинга больших данных в одном месте.

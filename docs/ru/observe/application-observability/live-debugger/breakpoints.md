@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/observe/application-observability/live-de
 scraped: 2026-03-06T21:32:45.256610
 ---
 
-# Точки останова Live Debugger
-
-
 * Latest Dynatrace
 * Explanation
 * 8-min read
-* Published May 07, 2024
 
 **Неблокирующие точки останова** Dynatrace позволяют OneAgent, развёрнутому в вашем приложении, получать данные из любого места в вашем коде, давая возможность наблюдать текущее состояние приложения и быстро находить ошибки в продакшене без остановки приложения.
 

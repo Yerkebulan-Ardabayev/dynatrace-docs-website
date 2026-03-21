@@ -10,7 +10,6 @@ scraped: 2026-02-23T21:26:20.516474
 * Latest Dynatrace
 * Explanation
 * 1-min read
-* Updated on Jan 23, 2026
 
 Новый RUM Experience в настоящее время опирается на определённые функции RUM Classic. Вот что это означает для вас.
 

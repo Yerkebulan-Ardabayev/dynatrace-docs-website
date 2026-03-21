@@ -9,7 +9,6 @@ scraped: 2026-03-03T21:26:06.299326
 
 * Latest Dynatrace
 * Explanation
-* Updated on Dec 01, 2025
 
 Ознакомьтесь с основными концепциями и ключевыми терминами для ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**.
 

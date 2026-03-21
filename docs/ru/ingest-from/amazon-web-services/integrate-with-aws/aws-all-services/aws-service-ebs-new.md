@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-02T21:24:23.371307
 ---
 
-# Мониторинг Amazon EBS (Elastic Block Store)
-
-
-* Практическое руководство
 * 4-min read
-* Updated on Apr 08, 2025
 
 Информацию о различиях между классическими сервисами и другими сервисами смотрите в разделе [Миграция с классических сервисов AWS (ранее называвшихся 'встроенными') на облачные сервисы](../cloudwatch-metrics/aws-migration-guide.md "Migrate AWS classic services to their new versions.").
 
@@ -28,7 +23,7 @@ Dynatrace собирает метрики для множества предва
 * Dynatrace version 1.200+
 * Обновлённая [политика мониторинга AWS](../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.
 
-Чтобы [обновить политику AWS IAMï»¿](https://dt-url.net/8q038eb), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+Чтобы [обновить политику AWS IAM](https://dt-url.net/8q038eb), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
 Предопределенная политика JSON для всех поддерживаемых сервисов
 

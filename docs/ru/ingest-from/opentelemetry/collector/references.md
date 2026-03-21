@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/refer
 scraped: 2026-03-03T21:23:06.237162
 ---
 
-# Справочники Collector
-
-
 * Последняя Dynatrace
-* Справочник
 * 1 мин. чтения
-* Опубликовано 11 октября 2023 г.
 
 ## Конфигурация
 

@@ -7,10 +7,7 @@ scraped: 2026-03-06T21:15:20.149749
 # Примеры работы с логами в Grail
 
 
-* Последняя версия Dynatrace
-* Обзор
 * 17 мин. чтения
-* Обновлено 15 октября 2025 г.
 
 Log Management and Analytics на основе Grail позволяет точно находить и извлекать любые данные логов с помощью [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language."). Ознакомившись с [основами запросов DQL](../../platform/grail/dynatrace-query-language/dql-guide.md "Узнайте, как работает DQL и каковы ключевые концепции DQL."), используйте примеры на этой странице, чтобы начать получать ответы из данных ваших логов.
 

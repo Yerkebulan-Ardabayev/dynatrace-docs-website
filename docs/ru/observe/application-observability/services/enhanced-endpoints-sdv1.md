@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/application-observability/service
 scraped: 2026-02-23T21:35:46.464742
 ---
 
-# Использование расширенных конечных точек для SDv1
-
-
 * Latest Dynatrace
-* Практическое руководство
 * 7 мин. чтения
-* Опубликовано 19 января 2026
 
 С функцией **Enhanced endpoints for Service Detection v1 (SDv1)** вы можете получить полную видимость конечных точек для сервисов SDv1. Когда эта функция включена, все конечные точки отображаются в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](services-app.md "Поддерживайте централизованный контроль над состоянием, производительностью и ресурсами сервисов с помощью приложения Services.") без необходимости настраивать [ключевые запросы](services-concepts.md#key-requests "Понимание наблюдаемости приложений, сервисов и концепций распределённой трассировки."). Это согласуется с поведением, уже реализованным для сервисов [SDv2](service-detection/service-detection-v2.md "Узнайте, как обнаруживать, именовать и разделять сервисы из span OpenTelemetry и OneAgent.").
 

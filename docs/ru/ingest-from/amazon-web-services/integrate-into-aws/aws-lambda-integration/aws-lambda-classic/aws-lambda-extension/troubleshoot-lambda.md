@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-04T21:30:20.410674
 ---
 
-# Проверка интеграции
-
-
-* Classic
 * Troubleshooting
 * 1-min read
-* Published Aug 30, 2021
 
 Этот раздел посвящён классической интеграции AWS Lambda. Ознакомьтесь с разделом [Трассировка функций Lambda](../../trace-lambda-functions.md "Monitor AWS Lambda functions.") для получения актуальных сведений.
 

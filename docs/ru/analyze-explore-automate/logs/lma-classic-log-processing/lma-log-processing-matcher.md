@@ -8,9 +8,7 @@ scraped: 2026-03-05T21:30:59.143327
 
 
 * Latest Dynatrace
-* Reference
 * 1-min read
-* Updated on Oct 15, 2025
 
 С [Dynatrace на Grail](../../../platform/grail/dynatrace-grail.md "Grail — это хранилище данных Dynatrace, специально разработанное для данных наблюдаемости и безопасности. Оно служит единым унифицированным хранилищем для логов, метрик, трейсов, событий и многого другого.") вы можете использовать функции и логические операторы [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.") (DQL) в матчерах.
 

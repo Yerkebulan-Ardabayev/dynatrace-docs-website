@@ -7,10 +7,8 @@ scraped: 2026-03-04T21:36:47.023440
 # Объединённые сервисы
 
 
-* Classic
 * How-to guide
 * 3-min read
-* Updated on Oct 04, 2022
 
 **Settings** > **Merged service monitoring** устарело.
 

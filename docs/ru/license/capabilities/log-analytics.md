@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/license/capabilities/log-analytics
 scraped: 2026-03-06T21:15:21.899416
 ---
 
-# Log Analytics (DPS)
-
-
 * Latest Dynatrace
-* Overview
 * 10-min read
-* Updated on Nov 25, 2025
 
 На этой странице описаны возможности наблюдаемости журналов и функции, которые они предоставляют в рамках подписки DPS.
 

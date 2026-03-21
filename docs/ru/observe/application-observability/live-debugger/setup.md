@@ -10,7 +10,6 @@ scraped: 2026-03-04T21:33:29.156035
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Published Nov 22, 2025
 
 ## Разрешения пользователей
 

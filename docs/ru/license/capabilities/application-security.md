@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/license/capabilities/application-security
 scraped: 2026-03-04T21:39:06.594397
 ---
 
-# Обзор Application Security (DPS)
-
-
 * Latest Dynatrace
-* Overview
 * 13-min read
-* Updated on Jun 05, 2025
 
 [Application Security](../../secure/application-security.md "Access the Dynatrace Application Security functionalities.") помогает обеспечить безопасность облачных и локальных приложений во время выполнения с помощью интеллектуальной автоматизации.
 Это включает визуализацию, анализ и мониторинг уязвимостей безопасности в вашей среде, а также блокировку обнаруженных атак на ваши приложения.
@@ -48,4 +43,4 @@ scraped: 2026-03-04T21:39:06.594397
 * [Runtime Vulnerability Analytics](../../secure/application-security/vulnerability-analytics.md "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
 * [Runtime Application Protection](../../secure/application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
 * [Security Posture Management](../../secure/application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
-* [Цены Dynatrace ï»¿](https://www.dynatrace.com/pricing/)
+* [Цены Dynatrace ](https://www.dynatrace.com/pricing/)

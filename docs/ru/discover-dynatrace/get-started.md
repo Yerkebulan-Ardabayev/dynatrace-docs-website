@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/discover-dynatrace/get-started
 scraped: 2026-03-06T21:09:27.563916
 ---
 
-# Начало работы с Dynatrace
-
-
 * Latest Dynatrace
 * How-to guide
 * 3-min read
-* Published Feb 09, 2023
 
 Dynatrace — это платформа мониторинга на основе программного интеллекта, которая упрощает управление сложными корпоративными облачными средами и ускоряет цифровую трансформацию. Подробнее см. в разделе [Что такое Dynatrace](what-is-dynatrace.md "Dynatrace is an observability platform for analyzing, automating, and innovating with the power of AI. Learn how it helps deliver more secure software faster.").
 

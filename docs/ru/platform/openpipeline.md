@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/platform/openpipeline
 scraped: 2026-03-06T21:10:24.659240
 ---
 
-# OpenPipeline
-
-
-* Последняя версия Dynatrace
-* Обзор
-* Время чтения: 1 мин
-* Обновлено 19 декабря 2025 г.
-
 Dynatrace версии 1.295+
 
 OpenPipeline --- это решение Dynatrace для обработки данных, обеспечивающее бесшовный прием и обработку данных из различных источников, любого масштаба и в любом формате в Dynatrace Platform.

@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-05T21:25:31.997001
 ---
 
-# Интеграция OneAgent на Azure App Service для Windows
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
 * 9 минут чтения
-* Опубликовано 16 октября 2018 г.
 
 Azure App Service предоставляет множество вариантов размещения для Windows, Linux и контейнеров с общей инфраструктурой ([тарифный план App Service](https://dt-url.net/f4031wl)) или полностью изолированной и выделенной инфраструктурой ([Azure App Service Environment](https://dt-url.net/u0231c3)).
 

@@ -10,7 +10,6 @@ scraped: 2026-03-06T21:36:47.888698
 * Latest Dynatrace
 * Explanation
 * 5-min read
-* Published Oct 24, 2025
 
 В Dynatrace источник данных — это предопределённый, специфичный для технологии метод сбора данных мониторинга из внешних систем или сервисов с использованием фреймворка расширений Dynatrace Extensions: либо [расширений, предоставляемых Dynatrace](../supported-extensions.md "Learn more about the supported extensions."), либо [пользовательских расширений, разработанных вами](../develop-your-extensions.md "Develop your own Extensions in Dynatrace.").
 

@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/a
 scraped: 2026-03-05T21:32:29.846836
 ---
 
-# Передача журналов в Dynatrace с помощью Fluent Bit (Logs Classic)
-
-* Classic
 * Учебник
 * 3-минутное чтение
-* Обновлено 22 января 2026 г.
 
 Мониторинг журналов Classic
 

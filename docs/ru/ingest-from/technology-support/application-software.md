@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/technology-support/applicatio
 scraped: 2026-03-06T21:25:19.358737
 ---
 
-# Среды выполнения
-
-
-* Последняя версия Dynatrace
 * 1 мин. чтения
-* Опубликовано 29 марта 2019 г.
 
 Следующие среды выполнения могут быть отслеживаемы в Dynatrace.
 

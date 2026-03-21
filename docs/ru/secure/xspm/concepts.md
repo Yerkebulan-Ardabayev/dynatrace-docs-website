@@ -9,7 +9,6 @@ scraped: 2026-03-04T21:32:43.387274
 
 * Latest Dynatrace
 * Explanation
-* Updated on Sep 23, 2025
 
 ## Результаты
 

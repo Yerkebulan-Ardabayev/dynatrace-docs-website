@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/hub
 scraped: 2026-03-06T21:33:36.507157
 ---
 
-# API элементов Hub
-
-
-* Справочник
-* Опубликовано 7 февраля 2023 г.
-
 [### Список категорий
 
 Просмотр категорий элементов Hub.](hub/get-categories.md "Просмотр категорий элементов Hub через API возможностей Hub.")[### Список элементов

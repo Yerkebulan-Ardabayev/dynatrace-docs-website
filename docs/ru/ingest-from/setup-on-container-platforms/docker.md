@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/
 scraped: 2026-03-06T21:15:44.080621
 ---
 
-# Настройка Dynatrace в Docker
-
-
 * Latest Dynatrace
 * 1-min read
-* Published Jun 25, 2021
 
 Dynatrace предлагает полнофункциональный мониторинг Docker, а также универсальный мониторинг контейнеров для containerd и CRI-O, предоставляя все те же возможности глубокого мониторинга контейнеризованных приложений, что и для неконтейнеризованных приложений.
 

@@ -6,12 +6,7 @@ scraped: 2026-03-06T21:24:56.840993
 
 # Create a new AWS connection
 
-# Создание нового подключения AWS
-
 * Latest Dynatrace
-* Практическое руководство
-* Чтение: 1 мин
-* Опубликовано 19 августа 2025 г.
 * Preview
 
 Если вы впервые создаёте подключение, сначала ознакомьтесь с [инструкциями по первоначальной настройке](../../../../ingest-from/amazon-web-services/create-an-aws-connection.md "See the differences between creating your AWS connections via API or ::app-settings::.") и её предварительными требованиями.

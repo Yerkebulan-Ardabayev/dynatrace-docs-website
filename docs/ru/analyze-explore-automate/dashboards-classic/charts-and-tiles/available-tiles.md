@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-class
 scraped: 2026-03-02T21:29:13.586579
 ---
 
-# Доступные плитки
-
-
 * Справка
 * 33-минутное чтение
-* Обновлено 16 мая 2022 г.
 
 [Классические панели](../../dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Классические панели.")
 

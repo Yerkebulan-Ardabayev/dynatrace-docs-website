@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-int
 scraped: 2026-03-03T21:28:51.746646
 ---
 
-# Мониторинг Google Cloud Data Loss Prevention
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
 * 1 мин. чтения
-* Опубликовано 17 янв. 2022 г.
 
 Интеграция Dynatrace с Google Cloud использует данные, собранные из Google Operations API, для непрерывного мониторинга работоспособности и производительности сервисов Google Cloud. Помимо объединения всех релевантных данных в дашборды, она также обеспечивает оповещения и отслеживание событий.
 

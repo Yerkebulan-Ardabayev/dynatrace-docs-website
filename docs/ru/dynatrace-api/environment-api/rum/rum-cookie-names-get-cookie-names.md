@@ -7,9 +7,6 @@ scraped: 2026-03-06T21:28:53.298305
 # RUM cookie names API — GET: получение имён cookie
 
 
-* Reference
-* Published Jun 25, 2024
-
 Возвращает список имён cookie RUM.
 
 Запрос возвращает полезную нагрузку типа `application/json`.

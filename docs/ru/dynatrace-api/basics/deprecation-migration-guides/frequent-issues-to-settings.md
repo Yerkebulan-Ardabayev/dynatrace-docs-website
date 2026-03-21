@@ -7,9 +7,6 @@ scraped: 2026-03-05T21:39:01.543097
 # Миграция с API обнаружения частых проблем на Settings API
 
 
-* Reference
-* Published Dec 22, 2022
-
 [API обнаружения частых проблем](../../configuration-api/frequent-issue-detection-api.md "Управление конфигурацией обнаружения частых проблем через Dynatrace API.") был объявлен устаревшим в [Dynatrace версии 1.249](../../../whats-new/dynatrace-api/sprint-249.md "Список изменений для Dynatrace API версии 1.249"). Его замена — [Settings API](../../environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.") со схемой **Frequent issue detection** (`builtin:anomaly-detection.frequent-issues`). Мы рекомендуем выполнить миграцию на новый API при первой возможности.
 
 Миграция затрагивает URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также область действия токена для аутентификации запросов.

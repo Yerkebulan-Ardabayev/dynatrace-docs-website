@@ -9,8 +9,6 @@ scraped: 2026-02-18T05:48:39.343910
 
 * Latest Dynatrace
 * Tutorial
-* Время чтения: 4 мин
-* Обновлено 19 октября 2025 г.
 
 Проблемы автоматически создаются Dynatrace при обнаружении аномалий или выполнении условий оповещений в вашей среде.
 В ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** создайте простой рабочий процесс, который отслеживает проблемы и автоматически отправляет уведомления в ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector") Slack при возникновении новой проблемы.

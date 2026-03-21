@@ -9,7 +9,6 @@ scraped: 2026-03-05T21:32:50.462070
 
 * Latest Dynatrace
 * How-to guide
-* Updated on Jan 08, 2026
 
 Свойства событий и сессий позволяют прикреплять пользовательские пары ключ-значение к пользовательским событиям и пользовательским сессиям с помощью пространств имён [`event_properties`](../../../../../semantic-dictionary/model/rum/user-events.md#event-properties "Пользовательские события обеспечивают глубокую видимость и понимание опыта, поведения, производительности и ошибок ваших клиентов и конечных пользователей в режиме реального времени.") и [`session_properties`](../../../../../semantic-dictionary/model/rum/user-sessions.md#user-session-properties "Пользовательские сессии предоставляют сводку пользовательских событий одного клиента или конечного пользователя вашего приложения за ограниченный период времени.").
 
@@ -32,8 +31,8 @@ scraped: 2026-03-05T21:32:50.462070
 
 Свойства событий и сессий можно отправлять через JavaScript API:
 
-* Для добавления свойств события используйте [`addEventModifier`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc-latest/functions/Types.dynatrace.addEventModifier.html).
-* Для отправки свойства сессии используйте [`sendSessionPropertyEvent`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc-latest/functions/Types.dynatrace.sendSessionPropertyEvent.html).
+* Для добавления свойств события используйте [`addEventModifier`](https://www.dynatrace.com/support/doc/javascriptapi/doc-latest/functions/Types.dynatrace.addEventModifier.html).
+* Для отправки свойства сессии используйте [`sendSessionPropertyEvent`](https://www.dynatrace.com/support/doc/javascriptapi/doc-latest/functions/Types.dynatrace.sendSessionPropertyEvent.html).
 
 ## Ограничения
 

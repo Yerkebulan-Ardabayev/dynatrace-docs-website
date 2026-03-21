@@ -7,10 +7,7 @@ scraped: 2026-03-05T21:33:12.923279
 # Автоматическая обработка логов при приёме
 
 
-* Последняя версия Dynatrace
 * Пояснение
-* Чтение: 2 минуты
-* Опубликовано 08 декабря 2025 г.
 
 Автоматически принимайте и обрабатывайте логи с помощью [OneAgent](../lma-log-ingestion/lma-log-ingestion-via-oa.md "Принимайте данные логов в Dynatrace с помощью OneAgent и преобразуйте их в понятные сообщения журнала."), [приёма JSON и TXT логов](../lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Узнайте, как обрабатываются JSON и TXT логи — в плоском или необработанном режиме.") или [конечных точек Dynatrace OTLP API](../../../ingest-from/opentelemetry/otlp-api.md "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") для удобного управления логами.
 

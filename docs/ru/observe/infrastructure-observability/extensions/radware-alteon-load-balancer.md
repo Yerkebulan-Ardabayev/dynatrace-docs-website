@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/exte
 scraped: 2026-03-06T21:31:00.869391
 ---
 
-# Расширение Radware Alteon Load Balancer
-
-
-* Последняя версия Dynatrace
 * Расширение
-* Обновлено 25 февраля 2026 г.
 
 Мониторинг устройств и интерфейсов балансировщика нагрузки Radware Alteon через SNMP.
 

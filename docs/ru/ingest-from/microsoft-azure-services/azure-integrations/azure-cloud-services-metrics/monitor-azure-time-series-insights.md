@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:33:17.179876
 ---
 
-# Мониторинг Azure Time Series Insights (Environment, Event Source)
-
-
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Published Sep 23, 2020
 
 Dynatrace принимает метрики из Azure Metrics API для Azure Time Series Insights (Environment, Event Source). Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики на несколько измерений и создавать пользовательские графики, которые можно закрепить на дашбордах.
 

@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:19:08.954506
 ---
 
-# Удаление OneAgent на Linux
-
-
-* Последняя версия Dynatrace
-* Время чтения: 1 мин
-* Обновлено 20 октября 2025 г.
-
 OneAgent имеет специальную программу удаления. Для удаления OneAgent из системы необходимо её запустить.
 
 Перейдите в каталог `/opt/dynatrace/oneagent/agent` и запустите скрипт `uninstall.sh` с правами суперпользователя (root).

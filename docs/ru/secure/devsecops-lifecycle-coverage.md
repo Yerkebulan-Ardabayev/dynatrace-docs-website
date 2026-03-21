@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/secure/devsecops-lifecycle-coverage
 scraped: 2026-02-18T05:48:18.936133
 ---
 
-# Покрытие жизненного цикла DevSecOps с Snyk
-
-
 * Latest Dynatrace
-* Приложение
-* Обновлено 13 декабря 2023 г.
 
 Объединяя аналитику среды выполнения приложений на базе ИИ Dynatrace с информацией о безопасности до развёртывания от Snyk, ![DevSecOps](https://dt-cdn.net/images/dev-sec-ops-logo-c5208e654c.svg "DevSecOps") **DevSecOps Lifecycle Coverage with Snyk** предоставляет целостное представление всего жизненного цикла DevSecOps, позволяя устранять «слепые зоны», снижать риски безопасности и обеспечивать сквозное согласованное покрытие безопасности от разработки до продакшена.
 

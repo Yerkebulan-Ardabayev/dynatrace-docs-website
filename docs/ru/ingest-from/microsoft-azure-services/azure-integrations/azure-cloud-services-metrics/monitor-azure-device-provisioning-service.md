@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:31:02.598112
 ---
 
-# Мониторинг Azure Device Provisioning Service
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Sep 22, 2020
 
 Dynatrace получает метрики из Azure Metrics API для Azure Device Provisioning Service. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на дашбордах.
 

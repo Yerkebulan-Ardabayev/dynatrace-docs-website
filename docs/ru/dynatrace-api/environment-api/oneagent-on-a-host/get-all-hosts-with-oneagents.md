@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/oneagent-on
 scraped: 2026-02-06T16:31:11.346773
 ---
 
-# OneAgent на хосте — GET-запрос списка хостов с информацией о OneAgent
-
-
-* Справочник
-* Опубликовано 3 февраля 2020
-
 API **OneAgent на хосте** позволяет проверять конфигурацию экземпляров OneAgent на ваших хостах.
 
 Запрос возвращает данные в формате `application/json`.

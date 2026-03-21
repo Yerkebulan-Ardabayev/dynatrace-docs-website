@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/metadata-
 scraped: 2026-03-06T21:23:38.378350
 ---
 
-# Настройка директории обогащения
-
-
 * Latest Dynatrace
 * 2-min read
-* Published Jul 28, 2023
 
 Обогащение метаданными — это необязательная функция, которая улучшает сигналы мониторинга за счёт добавления дополнительных метаданных.
 

@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migratio
 scraped: 2026-03-06T21:34:32.542628
 ---
 
-# Миграция с Alerting profiles API на Settings API
-
-
-* Справочник
-* Опубликовано 20 декабря 2022 г.
-
 [Alerting profiles API](../../configuration-api/alerting-profiles-api.md "Узнайте, что предлагает Dynatrace Alerting profiles API.") объявлен устаревшим в [Dynatrace версии 1.249](../../../whats-new/dynatrace-api/sprint-249.md "Список изменений Dynatrace API версии 1.249"). Его заменой является [Settings API](../../environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.") со схемой **Problem alerting profiles** (`builtin:alerting.profile`). Мы рекомендуем выполнить миграцию на новый API при первой возможности.
 
 Миграция затрагивает URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также область действия токена для аутентификации запросов.

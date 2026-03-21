@@ -8,9 +8,6 @@ scraped: 2026-03-06T21:35:59.966349
 
 
 * Latest Dynatrace
-* Справочник
-* Время чтения: 1 мин
-* Обновлено 30 января 2026 г.
 
 Приложения Dynatrace, такие как ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**, ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**, ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**, ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**, ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") **Databases** и ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**, позволяют запускать предопределённый контекстный запрос Dynatrace Assist для повышения вашей производительности и эффективности диалога.
 

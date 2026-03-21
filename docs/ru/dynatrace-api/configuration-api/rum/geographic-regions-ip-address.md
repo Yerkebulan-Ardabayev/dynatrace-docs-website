@@ -7,9 +7,6 @@ scraped: 2026-03-05T21:39:43.708179
 # API правил сопоставления IP-адресов с географическими регионами
 
 
-* Reference
-* Published Sep 24, 2020
-
 API **Geographic regions - IP address mapping rules** позволяет управлять конфигурацией сопоставления IP-адресов с географическими местоположениями. Ту же конфигурацию можно настроить в интерфейсе Dynatrace: **Settings > Web and mobile monitoring > Map IP addresses to locations**.
 
 [### Просмотр конфигурации

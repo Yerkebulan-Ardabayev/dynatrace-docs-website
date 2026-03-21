@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-moni
 scraped: 2026-02-06T16:33:26.124355
 ---
 
-# Результаты отчётов мониторов браузера
-
-
 * Новейшая версия Dynatrace
-* Справочник
-* Чтение: 15 мин
-* Обновлено 23 янв 2026
 
 Отчёты мониторов браузера предоставляют:
 

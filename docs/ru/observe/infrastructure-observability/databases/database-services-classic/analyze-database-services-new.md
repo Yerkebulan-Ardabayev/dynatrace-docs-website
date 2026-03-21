@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/data
 scraped: 2026-03-05T21:31:30.344039
 ---
 
-# Анализ сервисов баз данных (новая страница)
-
-
-* Classic
 * Explanation
 * 5-min read
-* Published Jun 20, 2023
 
 Мы обновили дизайн страницы обзора базы данных.
 

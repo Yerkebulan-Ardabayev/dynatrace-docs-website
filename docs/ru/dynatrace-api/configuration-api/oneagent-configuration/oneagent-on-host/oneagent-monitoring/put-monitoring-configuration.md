@@ -4,11 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/oneagent-
 scraped: 2026-02-06T16:31:13.607418
 ---
 
-# OneAgent мониторинговая конфигурация API - PUT конфигурация
-
-
-* Ссылка
-* Обновлено 23 июня 2022 г.
 * Устаревшее
 
 Эта API устарела. Вместо нее используйте [Настройки API](../../../../environment-api/settings.md "Узнайте, что предлагает Настройки API.") с схемой **Мониторинг** (`builtin:host.monitoring`).

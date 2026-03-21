@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/web-applicatio
 scraped: 2026-03-06T21:30:24.896704
 ---
 
-# Захват дополнительных типов взаимодействий для веб-приложений
-
-
-* Classic
 * How-to guide
 * 2-min read
-* Updated on Mar 20, 2023
 
 Для [XHR-действий](../../rum-concepts/user-actions.md#xhr-action "Learn what user actions are and how they help you understand what users do with your application.") Real User Monitoring обнаруживает следующие типы взаимодействий:
 

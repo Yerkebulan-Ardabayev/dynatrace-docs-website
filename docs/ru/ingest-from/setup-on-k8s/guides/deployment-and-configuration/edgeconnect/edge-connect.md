@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deploymen
 scraped: 2026-03-06T21:35:56.082307
 ---
 
-# Настройка EdgeConnect
-
-
 * Latest Dynatrace
 * 2-min read
-* Published Oct 11, 2023
 
 EdgeConnect обеспечивает безопасное взаимодействие между приложениями, рабочими процессами и внутренними системами в среде Kubernetes. Это руководство содержит информацию о том, как развернуть и настроить EdgeConnect с использованием Dynatrace.
 

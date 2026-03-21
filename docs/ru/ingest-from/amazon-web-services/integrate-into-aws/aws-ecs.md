@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-06T21:18:11.880580
 ---
 
-# Мониторинг Amazon Elastic Container Service (ECS)
-
-
-* Classic
-* Практическое руководство
-* Чтение: 1 мин
-* Опубликовано 16 января 2023
-
 Чтобы развернуть OneAgent в кластерах AWS Elastic Container Service (ECS) с типом запуска EC2, следуйте приведённым ниже инструкциям.
 
 ## Предварительные требования

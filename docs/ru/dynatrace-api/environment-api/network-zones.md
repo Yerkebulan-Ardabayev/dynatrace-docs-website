@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/network-zon
 scraped: 2026-03-05T21:32:47.149564
 ---
 
-# API сетевых зон
-
-
-* Справочник
-* Опубликовано 5 марта 2020 г.
-
 [### Список всех сетевых зон
 
 Обзор всех сетевых зон, доступных в вашей среде Dynatrace.](network-zones/get-all.md "Список всех сетевых зон вашей среды мониторинга через API Dynatrace.")[### Просмотр сетевой зоны

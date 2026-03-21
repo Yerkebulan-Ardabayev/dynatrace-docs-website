@@ -4,11 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-an
 scraped: 2026-03-05T21:27:10.445414
 ---
 
-# Services API - POST tags
-
-
-* Справочник
-* Обновлено 22 марта 2023 г.
 * Устарело
 
 Назначает [пользовательские теги](../../../../../common/manage/tags-and-metadata.md "Используйте теги и метаданные для организации данных в вашей среде Dynatrace.") указанному сервису. Необходимо указать только значение тега. Контекст `CONTEXTLESS` будет назначен автоматически.

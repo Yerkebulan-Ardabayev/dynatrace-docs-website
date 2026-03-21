@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/secure/vulnerabilities/prioritize
 scraped: 2026-03-06T21:34:48.320869
 ---
 
-# Приоритизация уязвимостей
-
-
 * Latest Dynatrace
 * How-to guide
-* Updated on Dec 18, 2025
 
 Далее вы узнаете, как приоритизировать уязвимости сторонних компонентов, уровня кода и среды выполнения на основе
 

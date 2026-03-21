@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-exten
 scraped: 2026-03-06T21:32:00.044917
 ---
 
-# Dynatrace Extensions Python SDK
-
-
 * Latest Dynatrace
-* Reference
 * 1-min read
-* Updated on Mar 04, 2026
 
 Dynatrace Extensions Python SDK предоставляет фреймворк для загрузки данных в Dynatrace из любой технологии, предоставляющей соответствующий интерфейс.
 

@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applica
 scraped: 2026-03-04T21:32:53.595693
 ---
 
-# Инструментирование гибридных приложений
-
-
-* Classic
 * How-to guide
 * 4-min read
-* Published Aug 10, 2021
 
 С помощью Dynatrace вы можете настроить Real User Monitoring для различных типов гибридных и кросс-платформенных мобильных приложений.
 

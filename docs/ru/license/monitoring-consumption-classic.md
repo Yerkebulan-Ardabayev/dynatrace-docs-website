@@ -6,11 +6,6 @@ scraped: 2026-03-06T21:17:17.183082
 
 # Dynatrace classic licensing
 
-# Классическое лицензирование Dynatrace
-
-* Classic
-* Чтение: 1 мин
-* Опубликовано 30 марта 2021 г.
 
 Потребление мониторинга при классическом лицензировании Dynatrace основано на различных единицах мониторинга, которые потребляет ваша среда Dynatrace по мере использования возможностей платформы Dynatrace вашей организацией. Если у вас есть подписка Dynatrace Platform Subscription, обратитесь к [документации Dynatrace Platform Subscription (DPS)](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
 

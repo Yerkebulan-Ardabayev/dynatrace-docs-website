@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/platform/oneagent
 scraped: 2026-03-06T21:10:22.998134
 ---
 
-# OneAgent
-
-
-* Последняя версия Dynatrace
-* Чтение: 1 мин
-* Опубликовано 29 марта 2019 г.
-
 [### Возможности
 
 Узнайте о возможностях мониторинга, которые предоставляет OneAgent.](oneagent/supported-monitoring-types.md "Ознакомьтесь с обзором всех возможностей мониторинга, предоставляемых OneAgent.")[### Как это работает

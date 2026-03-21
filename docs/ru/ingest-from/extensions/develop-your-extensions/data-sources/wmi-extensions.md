@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-exten
 scraped: 2026-03-03T21:24:12.065610
 ---
 
-# Источник данных WMI
-
-
 * Latest Dynatrace
-* Руководство
-* Чтение: 3 мин.
-* Опубликовано 21 апреля 2021 г.
 
 Dynatrace предоставляет фреймворк, который вы можете использовать для расширения наблюдаемости с помощью данных, получаемых непосредственно от устройств, мониторимых через Windows Management Instrumentation (WMI).
 

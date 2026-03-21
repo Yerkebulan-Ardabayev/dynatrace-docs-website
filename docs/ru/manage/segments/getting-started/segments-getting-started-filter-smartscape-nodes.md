@@ -9,7 +9,6 @@ scraped: 2026-03-06T21:24:58.481368
 
 * Latest Dynatrace
 * Tutorial
-* Published Jul 03, 2025
 * Preview
 
 В Smartscape на Grail можно фильтровать отслеживаемые объекты с помощью рекомендуемого блока включения `Data (all types)` или блока включения для конкретного типа объектов.

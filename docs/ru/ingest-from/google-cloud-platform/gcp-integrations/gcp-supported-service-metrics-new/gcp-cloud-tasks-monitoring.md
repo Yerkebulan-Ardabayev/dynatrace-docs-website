@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-int
 scraped: 2026-03-03T21:26:16.765189
 ---
 
-# Мониторинг Google Cloud Tasks
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Jan 17, 2022
 
 Интеграция Dynatrace с Google Cloud использует данные, собранные из Google Operation API, для постоянного мониторинга работоспособности и производительности сервисов Google Cloud. Объединяя все актуальные данные в дашборды, она также обеспечивает оповещения и отслеживание событий.
 

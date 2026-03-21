@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/license
 scraped: 2026-03-06T21:11:56.963126
 ---
 
-# Лицензия Dynatrace
-
-
 * Последнее Dynatrace
-* Обзор
 * 3-минутное чтение
-* Обновлено 03 сентября 2025 г.
 
 Узнайте, как рассчитывается потребление Dynatrace с помощью модели подписки Dynatrace Platform Subscription.
 

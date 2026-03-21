@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/remote-conf
 scraped: 2026-03-06T21:33:06.466677
 ---
 
-# API удалённого управления конфигурацией
-
-
-* Справочник
-* Опубликовано 6 октября 2022 г.
-
 ### OneAgent
 
 [Запустить задание](remote-configuration/oneagent/post-config-job.md "Запуск нового задания конфигурации для OneAgent удалённо с помощью API Dynatrace.")

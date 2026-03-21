@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/deployment/
 scraped: 2026-03-06T21:32:18.857315
 ---
 
-# Deployment API — Просмотр ARN для слоёв AWS Lambda
-
-
-* Справочник
-* Опубликовано 29 июл. 2022 г.
-
 Этот API предназначен для использования с последней реализацией AWS Lambda. Подробнее см. в разделе [AWS Lambda](../../../../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration.md "Возможности AWS Lambda и варианты интеграции").
 
 Получение Amazon Resource Names (ARN) последней версии OneAgent для слоёв AWS Lambda для поддерживаемых сред выполнения AWS Lambda.

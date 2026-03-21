@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:10:44.799206
 ---
 
-# OneAgent на Linux
-
-
 * Latest Dynatrace
 * 1-min read
-* Published Jul 19, 2017
 
 Dynatrace поддерживает установку OneAgent на Linux. Аналитическую информацию о поддерживаемых возможностях OneAgent для Linux см. в [матрице поддержки платформ и возможностей OneAgent](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). Список поддерживаемых дистрибутивов Linux см. в разделе [поддерживаемых технологий и версий OneAgent](../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 

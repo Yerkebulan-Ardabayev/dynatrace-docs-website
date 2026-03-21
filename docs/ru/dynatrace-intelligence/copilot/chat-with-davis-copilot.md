@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-
 scraped: 2026-03-06T21:33:52.070519
 ---
 
-# Dynatrace Assist
-
-
-* Последняя версия Dynatrace
-* Приложение
-* Время чтения: 2 мин
-* Обновлено 03 марта 2026 г.
-
 **Dynatrace Assist** позволяет общаться с Dynatrace Intelligence и задавать вопросы о данных в вашей среде, а также общие вопросы, которые помогут вам освоить Dynatrace и понять основные концепции.
 
 ### Разрешения
@@ -128,10 +120,8 @@ davis:analyzers:read
 
 [01Встроенные стартеры диалогов
 
-* Справочник
 * Узнайте, как запускать предопределенные запросы в различных приложениях Dynatrace.](chat-with-davis-copilot/copilot-conv-starters.md)[02Примеры запросов Dynatrace Assist
 
-* Справочник
 * Узнайте, какие запросы хорошо работают в Dynatrace Assist.](chat-with-davis-copilot/dynatrace-assist-prompts.md)
 
 ## Сценарии использования

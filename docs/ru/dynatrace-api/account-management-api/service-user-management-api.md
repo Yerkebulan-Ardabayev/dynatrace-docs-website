@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/serv
 scraped: 2026-03-03T21:29:46.801922
 ---
 
-# API управления сервисными пользователями
-
-
-* Последняя версия Dynatrace
-* Справочник
-* Опубликовано 4 декабря 2025 г.
-
 [### Список всех сервисных пользователей
 
 Обзор всех сервисных пользователей в вашем аккаунте Dynatrace.](service-user-management-api/get-all-service-users.md "Обзор сервисных пользователей в вашем аккаунте Dynatrace через API Dynatrace.")[### Создать сервисного пользователя

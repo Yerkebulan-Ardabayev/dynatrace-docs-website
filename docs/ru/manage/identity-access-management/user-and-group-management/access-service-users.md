@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/manage/identity-access-management/user-an
 scraped: 2026-03-04T21:39:01.387067
 ---
 
-# Сервисные пользователи
-
-
 * Latest Dynatrace
-* Руководство
 * 3 мин. чтения
-* Обновлено 05 дек. 2025 г.
 
 Администратор или пользователь, входящий в группу с разрешением `View and manage users and groups`, может выполнять перечисленные здесь операции по управлению сервисными пользователями.
 

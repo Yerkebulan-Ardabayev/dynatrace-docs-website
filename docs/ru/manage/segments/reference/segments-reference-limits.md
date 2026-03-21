@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/manage/segments/reference/segments-refere
 scraped: 2026-03-06T21:13:10.363454
 ---
 
-# Ограничения сегментов
-
-
 * Latest Dynatrace
-* Reference
 * 1-min read
-* Updated on Oct 21, 2025
 
 ## Общие сведения
 

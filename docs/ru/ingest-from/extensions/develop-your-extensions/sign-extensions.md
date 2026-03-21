@@ -10,7 +10,6 @@ scraped: 2026-03-05T21:36:26.987234
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Updated on Oct 07, 2025
 
 Каждое расширение, загружаемое в среду Dynatrace, должно быть подписано, чтобы Dynatrace мог проверить подлинность и целостность расширения. После подписания расширения каждый хост, запускающий это расширение — будь то OneAgent или ActiveGate — должен иметь корневой сертификат, сохранённый в специальном каталоге.
 
@@ -21,7 +20,7 @@ scraped: 2026-03-05T21:36:26.987234
 
 В зависимости от ваших потребностей выберите один из следующих методов для подписания и сборки расширения:
 
-* [`dt-extensions-sdk`ï»¿](https://dynatrace-extensions.github.io/dt-extensions-python-sdk/cli/sign.html) — универсальный инструмент командной строки Рекомендуется
+* [`dt-extensions-sdk`](https://dynatrace-extensions.github.io/dt-extensions-python-sdk/cli/sign.html) — универсальный инструмент командной строки Рекомендуется
 * [VSCode Extension](addon-for-vscode.md "Introduction to the Dynatrace Extensions add-on for VS Code") — универсальный инструмент на основе редактора Рекомендуется
 * [Использование OpenSSL](sign-extensions/manually-openssl.md "Sign an extension manually with OpenSSL.") — стандартная криптографическая библиотека для ручного управления
 
@@ -29,7 +28,7 @@ Dynatrace CLI
 
 Вы также можете использовать Dynatrace CLI (`dt-cli`) для подписания расширения. Поскольку его функции полностью входят в состав `dt-extensions-sdk` CLI, используйте его только как более лёгкую альтернативу для сред CI/CD.
 
-Подробнее о [`dt-cli` на GitHubï»¿](https://github.com/dynatrace-oss/dt-cli).
+Подробнее о [`dt-cli` на GitHub](https://github.com/dynatrace-oss/dt-cli).
 
 ## Загрузка корневого сертификата
 

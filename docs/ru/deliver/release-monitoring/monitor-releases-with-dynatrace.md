@@ -7,11 +7,6 @@ scraped: 2026-03-06T21:33:50.318161
 # Мониторинг релизов с помощью Dynatrace
 
 
-* Classic
-* Практическое руководство
-* Чтение: 4 мин
-* Обновлено 11 августа 2025 г.
-
 После того как вы [настроите переменные окружения для определения версий](version-detection-strategies.md "Metadata for version detection in different technologies") и, при необходимости, [интегрируете свою систему отслеживания задач и настроите динамические запросы](issue-tracking-integration.md "Integrate your issue tracker into Dynatrace to pull statistics for monitored entities."), вы можете приступить к анализу данных, связанных с каждой версией релиза вашего программного обеспечения.
 
 ## Список релизов

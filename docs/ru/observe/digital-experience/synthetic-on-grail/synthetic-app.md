@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-g
 scraped: 2026-03-06T21:12:42.033714
 ---
 
-# Приложение Synthetic
-
-
 * Latest Dynatrace
-* Приложение
-* Чтение: 7 мин
-* Обновлено 10 июля 2025 г.
 
 С помощью приложения ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic** вы можете создавать и управлять синтетическими мониторами.
 
@@ -210,28 +204,20 @@ document:documents:delete
 
 [01 Отчёты HTTP-мониторов
 
-* Справочник
 * Узнайте о странице Synthetic details для HTTP-мониторов.](synthetic-app/synthetic-details-for-http-monitors.md)[02 Отчёты браузерных мониторов
 
-* Справочник
 * Узнайте о странице Browser details для браузерных мониторов.](synthetic-app/browser-monitors-results-reporting.md)[03 Создание и настройка браузерного монитора
 
-* Практическое руководство
 * Узнайте, как создать и настроить браузерный монитор для проверки производительности и доступности вашего сайта.](synthetic-app/create-configure-browser-monitors.md)[04 Отчёты NAM-мониторов
 
-* Справочник
 * Просмотрите синтетические мониторы в вашей среде, найдите мониторы и получите краткий обзор выбранного монитора.](synthetic-app/nam-monitors-results-reporting-synthetic-app.md)[05 Выполнение мониторов по требованию
 
-* Практическое руководство
 * Узнайте о выполнении мониторов по требованию.](synthetic-app/on-demand-executions.md)[06 Приватные синтетические локации
 
-* Практическое руководство
 * Узнайте, как управлять приватными локациями в приложении Synthetic.](synthetic-app/private-locations.md)[07 Создание и настройка HTTP-монитора
 
-* Практическое руководство
 * Узнайте, как настроить и редактировать HTTP-монитор для проверки производительности и доступности вашего сайта.](synthetic-app/create-and-configure-an-http-monitor.md)[08 Создание NAM-монитора
 
-* Практическое руководство
 * Узнайте, как настроить NAM-монитор для проверки производительности и доступности вашего сайта.](synthetic-app/create-a-nam-monitor-synthetic-app.md)
 
 ## Сценарии использования

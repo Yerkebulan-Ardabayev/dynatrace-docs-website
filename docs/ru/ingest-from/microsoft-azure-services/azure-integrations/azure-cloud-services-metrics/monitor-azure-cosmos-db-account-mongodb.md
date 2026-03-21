@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:28:04.102554
 ---
 
-# Мониторинг Azure Cosmos DB Account (MongoDB)
-
-
 * Latest Dynatrace
 * How-to guide
 * 5-min read
-* Updated on Nov 15, 2023
 
 Информацию о различиях между классическими сервисами и другими сервисами см. в разделе [Миграция с классических сервисов Azure (ранее «встроенных») на облачные сервисы](../azure-monitoring-guide/azure-migration-guide.md "Migrate Azure classic services to their new versions.").
 

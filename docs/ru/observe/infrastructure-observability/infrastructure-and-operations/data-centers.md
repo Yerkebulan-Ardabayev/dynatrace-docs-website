@@ -10,7 +10,6 @@ scraped: 2026-03-06T21:16:58.775446
 * Latest Dynatrace
 * Explanation
 * 2-min read
-* Published Nov 26, 2025
 
 Представление **Data centers** в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** отслеживает работоспособность и производительность ваших центров обработки данных и зон доступности.
 

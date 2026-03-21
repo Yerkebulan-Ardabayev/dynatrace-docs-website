@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/other
 scraped: 2026-03-06T21:32:57.570952
 ---
 
-# Настройка мониторинга OpenShift через OperatorHub
-
-
-* Последняя версия Dynatrace
 * 2 минуты на чтение
-* Опубликовано 15 июня 2020 г.
 
 OperatorHub — это интерфейс, с помощью которого администраторы кластера обнаруживают и устанавливают операторы. Он доступен через веб-консоль OpenShift Container Platform.
 

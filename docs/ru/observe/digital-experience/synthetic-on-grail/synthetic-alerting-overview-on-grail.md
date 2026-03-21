@@ -8,9 +8,7 @@ scraped: 2026-03-04T21:38:54.851437
 
 
 * Latest Dynatrace
-* Reference
 * 2-min read
-* Published Sep 04, 2025
 
 Синтетический монитор создаёт [проблему](../../../dynatrace-intelligence.md "Ознакомьтесь с возможностями Dynatrace Intelligence."), когда выполняется одно из следующих условий:
 

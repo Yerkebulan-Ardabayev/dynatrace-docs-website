@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cont
 scraped: 2026-03-06T21:21:49.803705
 ---
 
-# Глобальные настройки мониторинга по умолчанию для Kubernetes/OpenShift
-
-
-* Classic
 * 2-min read
-* Updated on Jun 15, 2023
 
 Dynatrace версии 1.270+
 

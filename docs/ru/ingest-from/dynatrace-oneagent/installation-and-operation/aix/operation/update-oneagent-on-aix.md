@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:18:41.434597
 ---
 
-# Обновление Dynatrace OneAgent на AIX
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 1 мин
-* Опубликовано 19 сентября 2018 г.
-
 OneAgent, установленный в режиме full-stack, имеет встроенный настраиваемый механизм автообновления.
 
 Обзор обновления OneAgent, включая мониторинг обновлений и создание окон обновления, см. в разделе [Обновление OneAgent](../../../oneagent-update.md "Узнайте, как обновить OneAgent.").

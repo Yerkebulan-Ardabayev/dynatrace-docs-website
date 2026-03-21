@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-moni
 scraped: 2026-03-06T21:24:46.338930
 ---
 
-# Публичные точки Synthetic-мониторинга
-
-
-* Classic
-* Справочник
-* Чтение: 8 мин
-* Обновлено Feb 08, 2024
-
 Dynatrace предлагает глобальную сеть публичных точек Synthetic Monitoring, доступных сразу после установки. С помощью Dynatrace Synthetic Monitoring вы можете запускать мониторы из публичных точек, расположенных на инфраструктуре следующих крупных облачных провайдеров: Alibaba Cloud, Amazon AWS, Google Cloud и Microsoft Azure.
 
 Обратите внимание, что вы также можете [создавать приватные точки Synthetic-мониторинга](../private-synthetic-locations/create-a-private-synthetic-location.md "Узнайте, как создать приватную точку для Synthetic-мониторинга.") в рамках собственной сетевой инфраструктуры. Все публичные и приватные точки Synthetic-мониторинга поддерживают как [браузерные, так и HTTP-мониторы](types-of-synthetic-monitors.md "Узнайте о типах синтетических мониторов Dynatrace.").

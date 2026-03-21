@@ -7,11 +7,6 @@ scraped: 2026-03-04T21:37:13.983043
 # Prometheus data source
 
 
-* Последняя версия Dynatrace
-* Справочник
-* Чтение: 2 мин
-* Обновлено 11 сентября 2023 г.
-
 Dynatrace предоставляет фреймворк, который можно использовать для расширения наблюдаемости приложений и сервисов с помощью данных, получаемых непосредственно из Prometheus. Фреймворк расширений Dynatrace может извлекать метрики Prometheus из конечной точки `/metrics`, конечной точки Prometheus API или экспортёра данных (цели Prometheus).
 
 Обратите внимание, что Dynatrace предоставляет встроенную поддержку для приёма метрик от [экспортёров Prometheus в Kubernetes](../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics.md "Приём метрик от конечных точек Prometheus в Kubernetes, оповещения о метриках и потребление мониторинга.").

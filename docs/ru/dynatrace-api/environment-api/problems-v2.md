@@ -7,9 +7,6 @@ scraped: 2026-03-06T21:27:31.608688
 # Problems API v2
 
 
-* Reference
-* Published Oct 12, 2020
-
 [### Получение списка проблем
 
 Получите общий обзор проблем.](problems-v2/problems/get-problems-list.md "Получение списка проблем через Problems v2 API.")[### Получение сведений о проблеме

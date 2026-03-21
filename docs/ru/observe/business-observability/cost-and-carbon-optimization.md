@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/business-observability/cost-and-c
 scraped: 2026-03-06T21:14:41.254324
 ---
 
-# Оптимизация стоимости и углеродного следа
-
-
-* Последняя версия Dynatrace
-* Приложение
 * 8 мин чтения
-* Обновлено 21 дек. 2025 г.
 
 О приложении
 
@@ -242,10 +236,8 @@ Kubernetes — это динамическая среда, и количеств
 
 [01 Настройка Cost & Carbon Optimization
 
-* Практическое руководство
 * Установите и настройте Cost & Carbon Optimization.](cost-and-carbon-optimization/install-cost-and-carbon-optimization.md)[02 Расширенная аналитика с блокнотами
 
-* Справочник
 * Используйте блокноты для анализа данных об углеродном следе.](cost-and-carbon-optimization/advanced-analytics-with-notebooks.md)
 
 ### Методология оценки потребления электроэнергии

@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-sec
 scraped: 2026-03-05T21:37:27.232057
 ---
 
-# Средства контроля безопасности данных
-
-
 * Latest Dynatrace
-* Чтение: 10 мин
-* Обновлено 29 сентября 2025 г.
 
 ## Обзор средств контроля безопасности данных
 

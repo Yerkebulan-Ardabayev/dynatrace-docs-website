@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/configur
 scraped: 2026-03-06T21:27:26.606529
 ---
 
-# Пользовательский SSL-сертификат для ActiveGate
-
-
 * Latest Dynatrace
-* Время чтения: 6 мин.
-* Опубликовано 11 апреля 2019
 
 Не применимо к Cluster ActiveGate
 

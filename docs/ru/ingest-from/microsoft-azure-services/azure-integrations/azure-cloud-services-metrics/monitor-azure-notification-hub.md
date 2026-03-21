@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-03T21:25:28.391388
 ---
 
-# Мониторинг Azure Notification Hub
-
-
 * Latest Dynatrace
 * How-to guide
 * 7-min read
-* Published Sep 10, 2020
 
 Dynatrace загружает метрики из Azure Metrics API для Azure Notification Hub. Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на дашбордах.
 

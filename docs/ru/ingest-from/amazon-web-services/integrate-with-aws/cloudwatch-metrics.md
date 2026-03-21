@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-06T21:32:27.989679
 ---
 
-# Мониторинг Amazon Web Services с метриками CloudWatch
-
-
-* Classic
-* Практическое руководство
 * 23 минуты чтения
-* Обновлено 04 марта 2026 г.
 
 Следуйте этому руководству, чтобы начать удалённый приём данных из Amazon CloudWatch.
 

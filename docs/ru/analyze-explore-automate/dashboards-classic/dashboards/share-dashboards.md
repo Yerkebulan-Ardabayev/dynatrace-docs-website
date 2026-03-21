@@ -7,10 +7,6 @@ scraped: 2026-02-27T21:26:39.808422
 # Совместное использование панелей мониторинга Dynatrace
 
 
-* Практическое руководство
-* Время чтения: 7 мин.
-* Опубликовано 19 июля 2017
-
 [Dashboards Classic](../../dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic.")
 
 Эта страница относится к классическим панелям мониторинга, созданным с помощью функциональности ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**, интегрированной с Dynatrace Classic.

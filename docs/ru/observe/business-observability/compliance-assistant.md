@@ -7,10 +7,7 @@ scraped: 2026-03-06T21:14:30.942740
 # Compliance Assistant
 
 
-* Последняя версия Dynatrace
-* Приложение
 * 3 мин. чтения
-* Обновлено 4 февраля 2026 г.
 * Предварительная версия
 
 ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** поддерживает и помогает вам:

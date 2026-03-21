@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activega
 scraped: 2026-03-02T21:29:57.548368
 ---
 
-# Тома контейнеризованного ActiveGate
-
-
 * Latest Dynatrace
 * 3-min read
-* Published Sep 01, 2023
 
 Во время работы контейнер ActiveGate записывает данные в определённые каталоги корневой файловой системы.
 

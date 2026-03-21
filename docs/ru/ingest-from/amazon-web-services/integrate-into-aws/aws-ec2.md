@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-06T21:17:42.722106
 ---
 
-# Мониторинг Amazon Elastic Compute Cloud (EC2)
-
-
-* Classic
 * How-to guide
 * 1-min read
-* Published Jan 16, 2023
 
 ## Возможности
 

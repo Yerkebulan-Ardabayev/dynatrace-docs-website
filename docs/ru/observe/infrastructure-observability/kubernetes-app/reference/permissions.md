@@ -8,9 +8,7 @@ scraped: 2026-03-06T21:11:58.626956
 
 
 * Latest Dynatrace
-* Reference
 * 1-min read
-* Published Jan 19, 2024
 
 Это руководство описывает необходимые разрешения для ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** и объясняет, как адаптировать их под конкретные роли и требования.
 

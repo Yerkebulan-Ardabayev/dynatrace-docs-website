@@ -8,7 +8,6 @@ scraped: 2026-03-06T21:36:30.633862
 
 
 * Latest Dynatrace
-* Опубликовано 24 ноября 2025
 
 Dynatrace Operator версии 1.8.0+
 

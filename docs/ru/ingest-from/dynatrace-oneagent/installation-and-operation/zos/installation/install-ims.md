@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-05T21:29:49.679843
 ---
 
-# Установка модуля IMS
-
-
 * Latest Dynatrace
-* Время чтения: 21 мин
-* Обновлено 18 нояб. 2025
 
 С помощью модуля IMS вы можете получить наблюдаемость для ваших транзакций и программ IMS, включая вызовы IBM MQ и баз данных.
 

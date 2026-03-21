@@ -7,9 +7,6 @@ scraped: 2026-03-06T21:35:47.089943
 # API конфигурации веб-приложений
 
 
-* Справочник
-* Опубликовано 24 января 2019 г.
-
 **API конфигурации веб-приложений** позволяет управлять конфигурацией [веб-приложений](../../../discover-dynatrace/get-started/glossary.md#app "Get acquainted with Dynatrace terminology.").
 
 Этот API поддерживает только веб-приложения. Для мобильных и пользовательских приложений см. [API для мобильных и пользовательских приложений](mobile-custom-app-configuration.md "Learn what the Dynatrace mobile and custom app config API offers.").

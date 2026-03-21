@@ -10,7 +10,6 @@ scraped: 2026-03-05T21:34:38.792173
 * Latest Dynatrace
 * How-to guide
 * 4-min read
-* Published Dec 05, 2025
 
 **Нефедеративные пользователи** могут самостоятельно повысить безопасность своего аккаунта, включив MFA Time-based One-Time Password (TOTP) с помощью предпочтительного приложения-аутентификатора. После включения при каждом обращении к любой среде им будет предложено ввести код подтверждения из зарегистрированного приложения-аутентификатора.
 
@@ -22,7 +21,7 @@ scraped: 2026-03-05T21:34:38.792173
 
 Чтобы включить MFA TOTP
 
-1. Перейдите в [Account Managementï»¿](https://myaccount.dynatrace.com/accounts) **My profile** > вкладка **Security options** и выберите **Add authenticator app**.
+1. Перейдите в [Account Management](https://myaccount.dynatrace.com/accounts) **My profile** > вкладка **Security options** и выберите **Add authenticator app**.
 2. Введите код подтверждения, отправленный на зарегистрированный адрес электронной почты.
 3. Отсканируйте QR-код с помощью камеры телефона в предпочтительном приложении-аутентификаторе. При необходимости можно ввести код вручную, выбрав **Can't scan the QR code?**.
 4. Введите сгенерированный код в поле **One-Time Password** и выберите **Add**.
@@ -33,7 +32,7 @@ scraped: 2026-03-05T21:34:38.792173
 
 Чтобы удалить MFA TOTP
 
-1. Перейдите в [Account Managementï»¿](https://myaccount.dynatrace.com/accounts) **My profile** > вкладка **Security options** и выберите **Add authenticator app**.
+1. Перейдите в [Account Management](https://myaccount.dynatrace.com/accounts) **My profile** > вкладка **Security options** и выберите **Add authenticator app**.
 2. Откройте меню и выберите **Delete**.
 3. Введите сгенерированный код в поле **One-Time Password** и выберите **Delete**.
 

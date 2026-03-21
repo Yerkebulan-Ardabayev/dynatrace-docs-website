@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-p
 scraped: 2026-03-06T21:23:32.078862
 ---
 
-# Контекст безопасности бизнес-событий
-
-
 * Latest Dynatrace
-* Руководство
-* Чтение: 4 мин
-* Обновлено 20 ноября 2025
 
 Dynatrace имеет [модель разрешений для Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначать разрешения для бакетов и таблиц в Grail."). Это относится ко всем данным телеметрии, таким как метрики, события, спаны и логи.
 

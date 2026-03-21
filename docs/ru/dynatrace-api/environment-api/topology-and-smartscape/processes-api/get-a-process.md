@@ -7,8 +7,6 @@ scraped: 2026-03-05T21:27:00.159340
 # Processes API — GET процесса
 
 
-* Справочник
-* Обновлено 22 марта 2023 г.
 * Устаревший
 
 Этот API устарел. Используйте вместо него [API мониторинга сущностей](../../entity-v2.md "Learn about the Dynatrace Monitored entities API."). Дополнительную информацию о переходе на новый API можно найти в [руководстве по миграции](../../../basics/deprecation-migration-guides/topology-v1-to-entity-v2.md "Migrate your automation to the Monitored entities API.").

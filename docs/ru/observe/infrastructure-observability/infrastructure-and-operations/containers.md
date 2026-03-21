@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infr
 scraped: 2026-03-06T21:16:59.898065
 ---
 
-# Контейнеры
-
-
 * Latest Dynatrace
 * Explanation
 * 2-min read
-* Published Nov 25, 2025
 
 Представление **Containers** в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** предоставляет специализированный инвентарь для просмотра, фильтрации и изучения контейнеров как самостоятельно, так и в связи с хостами и процессами. Перемещайтесь между сущностями, чтобы увидеть, как они взаимосвязаны.
 

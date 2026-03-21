@@ -7,9 +7,6 @@ scraped: 2026-03-01T21:25:54.381923
 # GET тег OneAgent JavaScript с SRI
 
 
-* Справочник
-* Обновлено 18 сентября 2025 г.
-
 Возвращает самую актуальную версию [тега OneAgent JavaScript с SRI](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#oneagent-js-tag-sri "Выберите формат фрагмента RUM JavaScript, который наилучшим образом соответствует вашему конкретному варианту использования") для ручного встраивания в код вашего веб-приложения. Он включает конфигурацию, ссылку на код мониторинга и хэш целостности. Дополнительные сведения о поддержке SRI для RUM см. в разделе [Использование Subresource Integrity (SRI) для кода мониторинга реальных пользователей](../../../../observe/digital-experience/web-applications/initial-setup/subresource-integrity.md "Используйте функцию браузера Subresource Integrity (SRI), чтобы обеспечить целостность кода мониторинга реальных пользователей.").
 
 |  |  |  |

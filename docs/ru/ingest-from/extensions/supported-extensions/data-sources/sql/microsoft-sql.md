@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensio
 scraped: 2026-03-06T21:16:10.453218
 ---
 
-# Управление расширениями Microsoft SQL Server
-
-
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Published Sep 05, 2022
 
 Dynatrace предоставляет фреймворк, который позволяет расширить наблюдаемость вашего приложения до данных, получаемых непосредственно с уровня Microsoft SQL Database, чтобы вы могли отслеживать влияние задач сервера баз данных на ваше приложение.
 

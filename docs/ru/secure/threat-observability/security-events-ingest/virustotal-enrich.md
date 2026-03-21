@@ -9,7 +9,6 @@ scraped: 2026-03-06T21:23:48.585892
 
 * Latest Dynatrace
 * How-to guide
-* Updated on Feb 23, 2026
 
 Обогащайте индикаторы угроз с помощью VirusTotal и анализируйте их в Dynatrace.
 

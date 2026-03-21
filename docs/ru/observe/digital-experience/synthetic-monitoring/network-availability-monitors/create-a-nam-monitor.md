@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-moni
 scraped: 2026-03-06T21:19:14.372926
 ---
 
-# Настройка монитора NAM
-
-
-* Classic
-* Практическое руководство
-* Чтение: 1 мин
-* Обновлено 19 января 2026 г.
-
 С помощью мониторов доступности сети (NAM) можно проверять доступность хостов, устройств и служб.
 
 Существует три типа мониторов NAM: ICMP, TCP и DNS. Подробнее о них см. в разделе [Типы NAM](network-availability-monitoring.md#NAM-types "Синтетические мониторы ICMP, TCP и DNS").

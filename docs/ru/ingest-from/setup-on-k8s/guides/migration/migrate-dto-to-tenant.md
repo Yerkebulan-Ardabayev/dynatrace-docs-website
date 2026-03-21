@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration
 scraped: 2026-03-06T21:30:30.280689
 ---
 
-# Миграция Dynatrace Operator в новую среду
-
-
 * Latest Dynatrace
-* Чтение займёт 2 минуты
-* Обновлено 05 сентября 2025 г.
 
 Если вы в настоящее время осуществляете мониторинг кластера Kubernetes с помощью Dynatrace OneAgent, развёрнутого через Dynatrace Operator, и вам необходимо перейти на другую среду Dynatrace, выберите один из следующих вариантов в соответствии с используемым методом развёртывания.
 

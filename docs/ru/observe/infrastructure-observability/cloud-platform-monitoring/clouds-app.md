@@ -4,15 +4,7 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/clou
 scraped: 2026-03-06T21:12:43.905190
 ---
 
-# Приложение Clouds
-
-
-* Последняя версия Dynatrace
-* Приложение
-* Чтение — 4 мин
-* Обновлено 27 февраля 2026 г.
-
-Новый [облачный интерфейсï»¿](https://www.dynatrace.com/platform/cloud-monitoring/) оптимизирован для команд облачных (платформенных) операций и инженеров по надёжности (SRE) и ориентирован на сценарии мониторинга состояния, устранения неполадок и оптимизации производительности (мульти-)облачных сред.
+Новый [облачный интерфейс](https://www.dynatrace.com/platform/cloud-monitoring/) оптимизирован для команд облачных (платформенных) операций и инженеров по надёжности (SRE) и ориентирован на сценарии мониторинга состояния, устранения неполадок и оптимизации производительности (мульти-)облачных сред.
 
 Центральный элемент этого интерфейса — ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 
@@ -112,10 +104,8 @@ document:documents:read
 
 [01Создание нового подключения AWS
 
-* Руководство
 * Узнайте, как создать новое подключение AWS в приложении Clouds.](clouds-app/create-aws-connection.md)[02Создание нового подключения Azure
 
-* Руководство
 * Узнайте, как создать новое подключение Azure в приложении Clouds.](clouds-app/create-azure-connection.md)
 
 В ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** используйте панель заголовка приложения и выберите  **Create connection** > **AWS (Classic connections)** или  **Create connection** > **Azure (Classic connections)** или  **Create connection** > **GCP (Classic connections)**.

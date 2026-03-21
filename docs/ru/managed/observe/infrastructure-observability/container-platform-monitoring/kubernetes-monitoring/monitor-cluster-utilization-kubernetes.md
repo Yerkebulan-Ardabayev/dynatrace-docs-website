@@ -7,9 +7,7 @@ scraped: 2026-03-06T21:22:06.993281
 # Monitor Kubernetes/OpenShift cluster utilization
 
 
-* Classic
 * 2-min read
-* Updated on Apr 29, 2024
 
 Dynatrace version 1.232+
 

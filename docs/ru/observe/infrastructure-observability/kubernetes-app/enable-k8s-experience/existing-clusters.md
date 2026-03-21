@@ -10,7 +10,6 @@ scraped: 2026-03-06T21:12:00.286290
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Jan 19, 2024
 
 У вас есть возможность включить новый Kubernetes experience для всех или отдельных кластеров Kubernetes.
 

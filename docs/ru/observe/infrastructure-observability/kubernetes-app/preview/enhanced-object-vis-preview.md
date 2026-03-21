@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kube
 scraped: 2026-03-06T21:26:38.879293
 ---
 
-# Предварительный просмотр расширенной видимости объектов Kubernetes
-
-
 * Latest Dynatrace
 * Объяснение
-* Обновлено 28 января 2026 г.
 
 Завершённый предварительный просмотр
 

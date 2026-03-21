@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/conf
 scraped: 2026-03-06T21:28:37.690091
 ---
 
-# Структура YAML-файла конфигурации Monaco
-
-
 * Latest Dynatrace
-* Справочник
-* Чтение: 14 мин
-* Обновлено 15 декабря 2025 г.
 
 YAML-файл `configs` содержит список конфигураций для развёртывания.
 

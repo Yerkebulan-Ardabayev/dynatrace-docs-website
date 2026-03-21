@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metri
 scraped: 2026-03-06T21:29:17.802394
 ---
 
-# Расширение наблюдаемости метрик
-
-
-* Последняя версия Dynatrace
-* Чтение: 4 мин
-* Опубликовано 4 февраля 2022 г.
-
 Вы можете расширить данные, собираемые по умолчанию, данными, предоставляемыми следующими фреймворками и стандартами:
 
 [![OpenTelemetry](https://dt-cdn.net/images/techn-icon-opentelemetry-345d0f8b0e.svg "OpenTelemetry")

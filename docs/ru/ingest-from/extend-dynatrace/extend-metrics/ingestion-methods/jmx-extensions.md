@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metri
 scraped: 2026-03-06T21:16:17.382325
 ---
 
-# Расширения JMX
-
-
 * Latest Dynatrace
-* Чтение: 7 мин.
-* Опубликовано 19 июля 2017 г.
 
 JMX ([Java Management Extensions](https://www.oracle.com/technetwork/java/javase/tech/javamanagement-140525.html)) идеально подходит для мониторинга приложений, созданных на Java. С помощью Dynatrace вы можете отслеживать любую метрику в вашей JVM, которая доступна через MBean.
 

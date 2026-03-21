@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cont
 scraped: 2026-03-06T21:21:46.421691
 ---
 
-# Мониторинг сервисов Kubernetes/OpenShift
-
-
-* Classic
 * 3 мин. чтения
-* Опубликовано 28 сен. 2022 г.
 
 Dynatrace версии 1.251+
 

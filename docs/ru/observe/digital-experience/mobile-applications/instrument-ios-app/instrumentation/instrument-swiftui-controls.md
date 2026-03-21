@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applica
 scraped: 2026-03-05T21:25:19.171690
 ---
 
-# Инструментирование элементов управления SwiftUI
-
-
-* Classic
-* Практическое руководство
 * 13 мин чтения
-* Обновлено 18 февр. 2026 г.
 
 OneAgent для iOS версии 8.249+
 

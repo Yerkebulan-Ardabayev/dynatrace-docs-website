@@ -7,10 +7,8 @@ scraped: 2026-03-06T21:26:03.242201
 # Потоковая передача логов в Dynatrace с помощью Fluentd в Kubernetes (Logs Classic)
 
 
-* Classic
 * Explanation
 * 1-min read
-* Updated on Jan 18, 2023
 
 Log Monitoring Classic
 
@@ -18,7 +16,7 @@ Log Monitoring Classic
 
 Рекомендуемый способ потоковой передачи логов из узлов и подов Kubernetes в Dynatrace описан в разделе [Log Monitoring в Kubernetes (Logs Classic)](log-monitoring-kubernetes.md "Learn how to monitor logs in Kubernetes.").
 
-В качестве альтернативы вы можете использовать [плагин Dynatrace Fluentdï»¿](https://dt-url.net/gb23475) — модуль с открытым исходным кодом — для потоковой передачи логов.
+В качестве альтернативы вы можете использовать [плагин Dynatrace Fluentd](https://dt-url.net/gb23475) — модуль с открытым исходным кодом — для потоковой передачи логов.
 
 Архитектура показана ниже.
 
@@ -36,7 +34,7 @@ Log Monitoring Classic
 
 ## Развёртывание интеграции
 
-Инструкции по развёртыванию интеграции Fluentd см. в [документации на GitHubï»¿](https://github.com/dynatrace-oss/fluent-plugin-dynatrace/tree/main/example).
+Инструкции по развёртыванию интеграции Fluentd см. в [документации на GitHub](https://github.com/dynatrace-oss/fluent-plugin-dynatrace/tree/main/example).
 
 ## Связанные темы
 

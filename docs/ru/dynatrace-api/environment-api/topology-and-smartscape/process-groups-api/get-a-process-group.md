@@ -7,8 +7,6 @@ scraped: 2026-03-05T21:27:02.504672
 # Process groups API — получение группы процессов
 
 
-* Справочник
-* Обновлено 22 марта 2023
 * Устарело
 
 Этот API устарел. Используйте вместо него [Monitored entities API](../../entity-v2.md "Узнайте о Dynatrace Monitored entities API."). Дополнительную информацию о переходе на новый API можно найти в [руководстве по миграции](../../../basics/deprecation-migration-guides/topology-v1-to-entity-v2.md "Миграция вашей автоматизации на Monitored entities API.").

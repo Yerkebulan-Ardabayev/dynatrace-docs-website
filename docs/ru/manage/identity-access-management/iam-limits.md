@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/manage/identity-access-management/iam-lim
 scraped: 2026-03-06T21:32:29.646374
 ---
 
-# Ограничения Identity and Access Management
-
-
-* Последняя версия Dynatrace
-* Справочник
-* Чтение: 1 мин
-* Обновлено 12 ноября 2025 г.
-
 В следующей таблице указаны текущие ограничения ресурсов IAM по умолчанию.
 
 О столбце «Настраиваемые»

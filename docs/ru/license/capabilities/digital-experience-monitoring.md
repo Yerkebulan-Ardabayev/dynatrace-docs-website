@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/license/capabilities/digital-experience-m
 scraped: 2026-03-04T21:27:41.938129
 ---
 
-# Обзор Digital Experience Monitoring (DEM) (DPS)
-
-
 * Актуальная версия Dynatrace
-* Обзор
-* Чтение: 7 мин
-* Обновлено 16 мая 2025 г.
 
 Dynatrace Digital Experience Monitoring (DEM) обеспечивает мониторинг доступности и производительности, помогая гарантировать, что ваши приложения и сервисы доступны, функциональны, быстры и эффективны по всем каналам, включая мобильные устройства, веб, IoT и API.
 

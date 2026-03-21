@@ -7,11 +7,6 @@ scraped: 2026-03-06T21:15:26.954952
 # Workflows
 
 
-* Последняя версия Dynatrace
-* Приложение
-* Чтение: 4 мин
-* Обновлено 18 ноября 2024 г.
-
 ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** -- это мощный инструмент, позволяющий автоматически реагировать на данные мониторинга.
 
 Workflow не предназначен для массового приёма или массового экспорта данных. Для крупномасштабной обработки данных рассмотрите использование [OpenPipeline](../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") или создание собственных решений с помощью [Dynatrace Extensions](../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.").
@@ -157,37 +152,26 @@ Workflows позволяет:
 
 [01Краткое руководство по Workflows
 
-* Практическое руководство
 * Создайте и запустите свой первый workflow.](workflows/quickstart.md)[02Создание workflow в Dynatrace Workflows
 
-* Практическое руководство
 * Создание и редактирование workflow в Dynatrace Workflows.](workflows/building.md)[03Создание простого workflow в Dynatrace Workflows
 
-* Практическое руководство
 * Создайте и запустите простой workflow.](workflows/simple-workflow.md)[04Триггеры workflow
 
-* Обзор
 * Введение в триггеры автоматизации для workflow.](workflows/trigger.md)[05Запуск и мониторинг workflow, созданных в Dynatrace Workflows
 
-* Практическое руководство
 * Запуск и мониторинг workflow, созданных в Dynatrace Workflows.](workflows/running.md)[06Пользовательские разрешения для workflow
 
-* Справочник
 * Руководство по аспектам безопасности автоматизации workflow в Dynatrace Workflows](workflows/security.md)[07Действия Workflows
 
-* Обзор
 * Используйте готовые действия Dynatrace для ваших workflow.](workflows/default-workflow-actions.md)[08Коннекторы Workflows
 
-* Обзор
 * Используйте готовые действия Dynatrace для ваших workflow и интегрируйте Dynatrace со сторонними системами.](workflows/actions.md)[09Управление workflow
 
-* Обзор
 * Управляйте вашими workflow](workflows/manage-workflows.md)[10Справочник по выражениям
 
-* Справочник
 * Познакомьтесь с выражениями workflow](workflows/reference.md)[11Сценарии использования Workflows
 
-* Обзор
 * Изучите распространённые сценарии использования Workflows в развёртываниях Dynatrace.](workflows/use-cases.md)
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")

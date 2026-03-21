@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/action
 scraped: 2026-03-06T21:36:02.786540
 ---
 
-# Обработка текста
-
-
 * Latest Dynatrace
-* Overview
 * 1-min read
-* Published Oct 08, 2025
 
 Обработка текста предоставляет действия `set` и `get`, с помощью которых можно создавать, изменять или получать свойства из содержимого в формате JSON или YAML.
 Действия для YAML поддерживают многодокументные YAML-файлы через необязательный параметр индекса документа.

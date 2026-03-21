@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/proc
 scraped: 2026-03-06T21:20:08.014873
 ---
 
-# Глубокий мониторинг процессов
-
-
-* Classic
 * How-to guide
 * 6 мин. чтения
-* Обновлено 07 августа 2023 г.
 
 Установка OneAgent предоставляет вам возможности мониторинга групп процессов, такие как:
 

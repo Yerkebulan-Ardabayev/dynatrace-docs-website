@@ -9,8 +9,6 @@ scraped: 2026-03-04T21:32:46.793171
 
 * Latest Dynatrace
 * Пояснение
-* Чтение: 8 мин
-* Опубликовано 28 января 2026 г.
 
 Эта страница является введением в концепции, специфичные для Smartscape, а также в общие концепции и их использование в ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**.
 

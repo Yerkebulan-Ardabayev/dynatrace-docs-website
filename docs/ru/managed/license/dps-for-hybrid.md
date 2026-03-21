@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/license/dps-for-hybrid
 scraped: 2026-03-06T21:22:18.711771
 ---
 
-# Dynatrace Platform Subscription для гибридных конфигураций (DPS для Hybrid)
-
-
 * Последняя Dynatrace
 * Описание
 * 2 мин. чтения
-* Опубликовано 28 января 2026 г.
 
 С DPS для Hybrid вы можете использовать одну лицензию Dynatrace Platform Subscription (DPS) для любой комбинации Managed и SaaS аккаунтов.
 Единственное требование — аккаунты должны принадлежать одному клиенту.

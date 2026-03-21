@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-moni
 scraped: 2026-03-04T21:29:54.840473
 ---
 
-# Метрики монитора NAM
-
-
-* Classic
 * Пояснение
-* Чтение: 12 мин
-* Опубликовано 19 июня 2024 г.
 
 ## Метрики и измерения
 

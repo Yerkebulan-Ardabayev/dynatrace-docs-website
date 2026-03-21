@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/l
 scraped: 2026-03-04T21:37:54.164145
 ---
 
-# Обработка журналов (Logs Classic)
-
-
-* Classic
 * Описание
 * 3 мин. чтения
-* Обновлено 18 янв. 2023 г.
 
 Log Monitoring Classic
 

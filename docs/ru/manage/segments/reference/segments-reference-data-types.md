@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/manage/segments/reference/segments-refere
 scraped: 2026-03-06T21:13:20.535483
 ---
 
-# Поддерживаемые типы данных в сегментах
-
-
-* Последняя версия Dynatrace
-* Справочник
 * 1 минута чтения
-* Опубликовано 29 марта 2023 г.
 
 Предварительные знания
 

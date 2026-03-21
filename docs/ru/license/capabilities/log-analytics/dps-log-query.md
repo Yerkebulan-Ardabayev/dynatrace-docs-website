@@ -10,7 +10,6 @@ scraped: 2026-03-06T21:11:26.513950
 * Latest Dynatrace
 * Explanation
 * 6-min read
-* Updated on Nov 04, 2025
 
 Обзор функции Log — Query
 

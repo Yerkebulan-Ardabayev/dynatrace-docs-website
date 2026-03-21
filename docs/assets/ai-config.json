@@ -1,7 +1,8 @@
 {
-  "_comment": "AI Chat configuration for GitHub Pages (static hosting). On local server, proxy mode is used automatically.",
-  "_setup_worker": "Deploy cloudflare-worker/worker.js to Cloudflare Workers (FREE: 100K req/day). Then paste your Worker URL below.",
-  "_setup_direct": "Alternative: Get free API key at https://console.groq.com (WARNING: key will be public!)",
+  "_comment": "AI Chat configuration for GitHub Pages. Gemini Flash — free tier, fast responses.",
+  "_setup_worker": "For production: deploy Cloudflare Worker to hide API key. FREE: 100K req/day.",
+  "_setup_direct": "Current: direct Gemini API (key is public in this file — use Worker for production).",
   "worker_url": "",
+  "gemini_api_key": "AIzaSyCuoQeGivp0sQMYEMDAtnl5DeB4yICE-7s",
   "groq_api_key": ""
 }

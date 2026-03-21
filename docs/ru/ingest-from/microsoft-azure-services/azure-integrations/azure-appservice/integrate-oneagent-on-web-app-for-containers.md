@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:26:42.608656
 ---
 
-# Интеграция OneAgent в Azure App Service для Linux и контейнеров
-
-
 * Latest Dynatrace
-* Практическое руководство
 * 11 мин. чтения
-* Обновлено 17 декабря 2025
 
 Только Linux
 

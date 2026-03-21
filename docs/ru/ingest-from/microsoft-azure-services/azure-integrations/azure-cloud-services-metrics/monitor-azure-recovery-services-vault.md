@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-04T21:31:42.502593
 ---
 
-# Azure Recovery Services Vault
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Mar 07, 2024
 
 Dynatrace версии 1.281+ Environment ActiveGate версии 1.195+
 

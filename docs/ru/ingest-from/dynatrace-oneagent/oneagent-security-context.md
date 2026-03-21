@@ -10,7 +10,6 @@ scraped: 2026-03-06T21:23:33.828725
 * Latest Dynatrace
 * How-to guide
 * 3-min read
-* Published Aug 19, 2025
 
 В Dynatrace существует [модель разрешений для Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail."). Она применяется ко всем данным телеметрии: метрикам, событиям, спанам и журналам.
 

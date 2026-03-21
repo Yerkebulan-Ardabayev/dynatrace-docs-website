@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/secure/use-cases
 scraped: 2026-03-06T21:34:30.748153
 ---
 
-# Сценарии использования
-
-
 * Последняя Dynatrace
-* Обзор
-* Обновлено 29 января 2026 г.
 
 Благодаря возможностям [Grail](../platform/grail.md "Информация о том, какие данные Dynatrace и как можно запрашивать.") и [данным безопасности](threat-observability/concepts.md#security-data "Основные концепции, связанные с Threat Observability"), поступающим в него, можно реализовать различные сценарии анализа данных, отчётности и автоматизации.
 

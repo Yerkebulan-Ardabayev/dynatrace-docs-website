@@ -8,9 +8,6 @@ scraped: 2026-02-18T05:43:42.904107
 
 
 * Latest Dynatrace
-* Руководство
-* Чтение: 4 мин
-* Обновлено 19 октября 2025 г.
 
 Проблемы автоматически создаются Dynatrace при обнаружении аномалий или срабатывании условий оповещений в вашей среде.
 В ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** создайте простой рабочий процесс, который отслеживает проблемы и автоматически отправляет оповещения по ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") электронной почте.

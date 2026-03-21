@@ -7,8 +7,6 @@ scraped: 2026-03-06T21:29:16.110902
 # API отслеживаемых сущностей — контекст безопасности
 
 
-* Справочник
-* Обновлено 6 июня 2025 г.
 * Устарело
 
 Этот API устарел. Используйте схему [Management zones](../settings/schemas/builtin-management-zones.md "Просмотр схемы настроек builtin:management-zones вашей среды мониторинга через API Dynatrace.") (`builtin:management-zones`) из Settings API.

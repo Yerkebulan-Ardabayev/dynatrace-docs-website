@@ -7,10 +7,6 @@ scraped: 2026-03-06T21:19:57.272076
 # Data Explorer
 
 
-* Classic
-* Чтение: 7 мин
-* Обновлено 3 октября 2025 г.
-
 Эта страница относится к Data Explorer — классической функции Dynatrace, тесно интегрированной с классическими дашбордами, созданными с помощью [![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**](dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic."). [Обновитесь до последней версии Dynatrace](../platform/upgrade.md "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data."), чтобы воспользоваться нашими новейшими возможностями исследования данных.
 
 Data Explorer значительно расширяет ваши возможности по запросу и визуализации метрик.

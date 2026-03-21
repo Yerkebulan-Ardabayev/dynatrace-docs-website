@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/
 scraped: 2026-03-06T21:14:57.037010
 ---
 
-# Приложение Anomaly Detection
-
-
-* Последняя версия Dynatrace
-* Приложение
-* Чтение: 3 мин
-* Обновлено 26 марта 2025 г.
-
 ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** предоставляет единый обзор всех конфигураций обнаружения аномалий в вашей среде Dynatrace.
 
 Предварительные требования
@@ -99,16 +91,12 @@ davis:analyzers:execute
 
 [01Руководство по написанию DQL для Anomaly Detection
 
-* Практическое руководство
 * Лучшие практики создания DQL-запросов для пользовательских оповещений Anomaly Detection.](anomaly-detection-app/davis-ad-dql-best-practice.md)[02Руководство по оптимизации DQL для Anomaly Detection
 
-* Практическое руководство
 * Лучшие практики оптимизации DQL-запросов Anomaly Detection.](anomaly-detection-app/davis-ad-dql-optimization.md)[03Настройка простого пользовательского оповещения
 
-* Практическое руководство
 * Узнайте, как создавать и редактировать простые пользовательские оповещения в приложении Anomaly Detection.](anomaly-detection-app/configure-a-simple-ad.md)[04Настройка расширенного пользовательского оповещения
 
-* Практическое руководство
 * Узнайте, как создавать и редактировать расширенные пользовательские оповещения в приложении Anomaly Detection](../../../common/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-an-advanced-ad.md)[05Типы статусов Anomaly Detection
 
 * Описание

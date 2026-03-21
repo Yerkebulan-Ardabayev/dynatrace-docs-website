@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/data
 scraped: 2026-03-03T21:22:02.020530
 ---
 
-# Мониторинг базы данных Microsoft SQL
-
-
 * Latest Dynatrace
 * How-to guide
-* Published Jan 20, 2026
 
 В Dynatrace поддерживаются три расширения Microsoft SQL:
 

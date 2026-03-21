@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-05T21:40:02.914135
 ---
 
-# Мониторинг AWS Elemental MediaPackage (Live, Video on Demand)
-
-
-* Classic
-* Практическое руководство
 * 5 минут чтения
-* Опубликовано 06 июля 2020 г.
 
 Dynatrace собирает метрики для нескольких предварительно выбранных пространств имён, включая AWS Elemental MediaPackage (Live, Video on Demand). Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
 

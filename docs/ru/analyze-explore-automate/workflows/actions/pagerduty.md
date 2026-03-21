@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/action
 scraped: 2026-03-06T21:27:05.600890
 ---
 
-# PagerDuty
-
-
 * Latest Dynatrace
 * 5-min read
-* Updated on May 07, 2025
 
 Ваша среда Dynatrace может интегрироваться со средой PagerDuty с помощью PagerDuty Connector ![PagerDuty](https://dt-cdn.net/images/pagerduty-for-workflows-257-0cd4ce0d3a.png "PagerDuty"), что позволяет автоматически создавать инциденты на основе ваших данных мониторинга.
 

@@ -7,9 +7,6 @@ scraped: 2026-03-05T21:33:07.529890
 # Vulnerabilities API — GET элементов исправления
 
 
-* Справочник
-* Обновлено 3 мая 2022 г.
-
 Возвращает список групп процессов [отслеживания исправлений](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Track the remediation progress of vulnerabilities.") для сторонней уязвимости (или, в случае уязвимостей Kubernetes, узлов Kubernetes для отслеживания исправлений).
 
 Запрос возвращает данные в формате `application/json`.

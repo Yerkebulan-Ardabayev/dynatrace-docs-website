@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-exten
 scraped: 2026-03-06T21:36:59.952480
 ---
 
-# Конфигурация мониторинга SAP Hana Database
-
-
 * Latest Dynatrace
-* Справочник
-* Время чтения: 2 мин
-* Опубликовано 19 апр. 2023
 
 После определения области конфигурации необходимо определить следующее:
 

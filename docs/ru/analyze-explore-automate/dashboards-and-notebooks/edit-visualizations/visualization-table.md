@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-n
 scraped: 2026-03-06T21:20:27.327638
 ---
 
-# Визуализация таблицы
-
-
 * Latest Dynatrace
-* Практическое руководство
-* Чтение: 5 мин
-* Обновлено 24 сентября 2025 г.
 
 Когда использовать визуализацию таблицы
 

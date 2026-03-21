@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-int
 scraped: 2026-03-06T21:35:30.359364
 ---
 
-# Миграция на версию 1.0 интеграции с Google Cloud
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 5 мин
-* Опубликовано 17 января 2022 г.
-
 Dynatrace версии 1.230+
 
 Новая версия интеграции с Google Cloud (v.1.0) использует [Extensions 2.0](../../../extensions.md "Узнайте, как создавать и управлять расширениями Dynatrace.") и вводит [пользовательскую топологию](../../../extend-dynatrace/extend-topology/custom-topology.md "Узнайте, как создать пользовательскую модель топологии, подходящую для ваших телеметрических данных.") для ряда сервисов Google Cloud.

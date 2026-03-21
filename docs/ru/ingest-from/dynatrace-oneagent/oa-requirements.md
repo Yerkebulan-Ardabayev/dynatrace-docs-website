@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oa-require
 scraped: 2026-03-06T21:23:40.075406
 ---
 
-# Требования OneAgent
-
-
 * Latest Dynatrace
-* Чтение: 3 мин
-* Обновлено 2 июля 2025 г.
 
 ## Требования OneAgent к процессору для архитектуры x86-64
 

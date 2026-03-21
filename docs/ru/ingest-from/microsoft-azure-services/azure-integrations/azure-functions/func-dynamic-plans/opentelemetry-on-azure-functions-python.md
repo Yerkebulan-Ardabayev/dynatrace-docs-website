@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-05T21:29:47.819803
 ---
 
-# Трассировка Azure Functions, написанных на Python
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 4 мин
-* Опубликовано 13 июля 2022 г.
-
 Пакет [`dynatrace-opentelemetry-azure-functions`](https://pypi.org/project/dynatrace-opentelemetry-azure-functions) предоставляет API для трассировки Python Azure Functions.
 
 ## Предварительные требования

@@ -8,10 +8,6 @@ scraped: 2026-03-05T21:35:41.303232
 
 # Структура событий Site Reliability guardian
 
-* Последняя версия Dynatrace
-* Справочник
-* Чтение: 4 мин
-* Опубликовано 24 октября 2025 г.
 
 В зависимости от типа [guardian](../site-reliability-guardian.md#guardian "Автоматически проверяйте цели производительности, доступности и емкости ваших критически важных сервисов для принятия правильного решения о релизе.") — [Lifecycle guardian](../site-reliability-guardian.md#lifecycle-guardian "Автоматически проверяйте цели производительности, доступности и емкости ваших критически важных сервисов для принятия правильного решения о релизе.") или [Business guardian](../site-reliability-guardian.md#business-guardian "Автоматически проверяйте цели производительности, доступности и емкости ваших критически важных сервисов для принятия правильного решения о релизе.") — базовая структура событий различается.
 Количество событий, записываемых Site Reliability guardian, одинаково, независимо от типа.
@@ -25,9 +21,7 @@ scraped: 2026-03-05T21:35:41.303232
 fetch events
 
 
-
 | filter event.kind == "SDLC_EVENT"
-
 
 
 | filter event.provider == "dynatrace.site.reliability.guardian"
@@ -48,17 +42,13 @@ validation.objective
 fetch events
 
 
-
 | filter event.kind == "SDLC_EVENT"
-
 
 
 | filter event.provider == "dynatrace.site.reliability.guardian"
 
 
-
 | filter event.type == "validation"
-
 
 
 | filter event.status == "started"
@@ -70,17 +60,13 @@ fetch events
 fetch events
 
 
-
 | filter event.kind == "SDLC_EVENT"
-
 
 
 | filter event.provider == "dynatrace.site.reliability.guardian"
 
 
-
 | filter event.type == "validation"
-
 
 
 | filter event.status == "finished"
@@ -92,13 +78,10 @@ fetch events
 fetch events
 
 
-
 | filter event.kind == "SDLC_EVENT"
 
 
-
 | filter event.provider == "dynatrace.site.reliability.guardian"
-
 
 
 | filter event.type == "validation.objective"
@@ -120,7 +103,6 @@ fetch events
 fetch bizevents
 
 
-
 | filter event.provider == "dynatrace.site.reliability.guardian"
 ```
 
@@ -138,9 +120,7 @@ guardian.validation.objective
 fetch bizevents
 
 
-
 | filter event.provider == "dynatrace.site.reliability.guardian"
-
 
 
 | filter event.type == "guardian.validation.started"
@@ -152,9 +132,7 @@ fetch bizevents
 fetch bizevents
 
 
-
 | filter event.provider == "dynatrace.site.reliability.guardian"
-
 
 
 | filter event.type == "guardian.validation.finished"
@@ -166,9 +144,7 @@ fetch bizevents
 fetch bizevents
 
 
-
 | filter event.provider == "dynatrace.site.reliability.guardian"
-
 
 
 | filter event.type == "guardian.validation.objective"

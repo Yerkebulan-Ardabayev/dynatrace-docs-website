@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-06T21:30:41.656075
 ---
 
-# Мониторинг AWS AppSync
-
-
-* Classic
-* Практическое руководство
 * 3-min read
-* Опубликовано Jul 06, 2020
 
 Dynatrace собирает метрики для множества предварительно выбранных пространств имен, включая AWS AppSync. Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
 
@@ -27,7 +21,7 @@ Dynatrace собирает метрики для множества предва
 * Dynatrace version 1.200+
 * An updated [AWS monitoring policy](../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.
 
-To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+To [update the AWS IAM policy](https://dt-url.net/8q038eb), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
 Предопределенная политика JSON для всех поддерживаемых сервисов
 

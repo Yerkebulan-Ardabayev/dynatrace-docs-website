@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/application-observability/service
 scraped: 2026-03-06T21:17:23.936481
 ---
 
-# Services Classic
-
-
-* Classic
-* Overview
 * 4-min read
-* Updated on Jun 12, 2025
 
 Страница **Services** — это сводная страница, на которой отображаются все сервисы, обнаруженные Dynatrace в вашей среде.
 
@@ -26,7 +20,6 @@ scraped: 2026-03-06T21:17:23.936481
 
 Узнайте об удобной навигации и фильтрации для анализа сервисов.
 
-* Reference
 
 Читать этот справочник](services-classic/context-specific-drill-down.md)[#### Анализ отдельных экземпляров сервисов
 
@@ -38,7 +31,6 @@ scraped: 2026-03-06T21:17:23.936481
 
 Узнайте, что означает каждое время в анализе сервисов.
 
-* Reference
 
 Читать этот справочник](services-classic/service-analysis-timing.md)[#### Распределение времени ответа и анализ выбросов
 

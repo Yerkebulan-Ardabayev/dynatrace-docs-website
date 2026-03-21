@@ -4,11 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-an
 scraped: 2026-03-06T21:12:56.066698
 ---
 
-# API топологии и Smartscape
-
-
-* Справочник
-* Обновлено 22 марта 2023 г.
 * Устарело
 
 Этот API устарел. Вместо него используйте [API отслеживаемых сущностей](entity-v2.md "Узнайте об API отслеживаемых сущностей Dynatrace."). Дополнительную информацию о переходе на новый API можно найти в [руководстве по миграции](../basics/deprecation-migration-guides/topology-v1-to-entity-v2.md "Перенесите автоматизацию на API отслеживаемых сущностей.").

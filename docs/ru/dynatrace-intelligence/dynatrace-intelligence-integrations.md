@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intellig
 scraped: 2026-03-06T21:14:51.943719
 ---
 
-# Интеграции Dynatrace Intelligence
-
-
-* Последняя версия Dynatrace
-* Обзор
-* Время чтения: 1 мин
-* Обновлено 28 января 2026 г.
-
 ## Notebooks
 
 [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")
@@ -20,7 +12,6 @@ scraped: 2026-03-06T21:14:51.943719
 
 Запуск анализа с помощью ИИ в Dynatrace Notebooks.
 
-* Практическое руководство
 
 [Читать руководство](dynatrace-intelligence-integrations/davis-for-notebooks.md)
 
@@ -32,7 +23,6 @@ scraped: 2026-03-06T21:14:51.943719
 
 Узнайте о Dynatrace MCP server и о том, как к нему подключиться.
 
-* Обзор
 
 [Перейти к обзору](../../common/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp.md)
 
@@ -44,18 +34,15 @@ scraped: 2026-03-06T21:14:51.943719
 
 Используйте Dynatrace Intelligence (Preview) для оптимизации стоимости ваших запросов.
 
-* Руководство
 
 [Читать руководство](use-cases/copilot-in-workflows-dql.md)[#### Обобщение открытых проблем с помощью Workflows
 
 Используйте Dynatrace Intelligence (Preview) для обобщения открытых проблем и предложения шагов по их устранению.
 
-* Руководство
 
 [Читать руководство](use-cases/copilot-in-workflows-examples.md)[#### ИИ в Workflows - Предиктивное обслуживание облачных дисков
 
 Автоматизируйте предиктивное обслуживание облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.
 
-* Руководство
 
 [Читать руководство](use-cases/davis-for-workflows.md)

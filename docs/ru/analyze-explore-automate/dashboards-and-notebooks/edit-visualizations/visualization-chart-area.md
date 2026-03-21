@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-n
 scraped: 2026-03-06T21:21:31.855169
 ---
 
-# Визуализация диаграммы с областями
-
-
 * Latest Dynatrace
-* Практическое руководство
-* Чтение 2 мин
-* Опубликовано 08 июля 2022
 
 Когда использовать визуализацию диаграммы с областями
 

@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configura
 scraped: 2026-03-06T21:29:48.202555
 ---
 
-# Пользовательская конфигурация Extension Execution Controller
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
 * 2 мин. чтения
-* Обновлено 22 сентября 2025 г.
 
 Extension Execution Controller (EEC) можно использовать автономно, без дополнительных настроек. В этом разделе описано, как изменить конфигурацию EEC.
 

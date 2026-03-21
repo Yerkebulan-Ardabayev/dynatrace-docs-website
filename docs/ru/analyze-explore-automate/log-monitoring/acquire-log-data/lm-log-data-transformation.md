@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/a
 scraped: 2026-03-06T21:33:08.142213
 ---
 
-# Автоматическое обогащение журналов (Logs Classic)
-
-
-* Classic
 * Объяснение
 * 3-минутное чтение
-* Обновлено 07 апреля 2023 г.
 
 Мониторинг журналов Classic
 

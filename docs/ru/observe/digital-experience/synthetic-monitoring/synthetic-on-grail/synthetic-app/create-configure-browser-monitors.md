@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-moni
 scraped: 2026-02-06T16:33:21.611413
 ---
 
-# Создание и настройка браузерного монитора
-
-
 * Latest Dynatrace
 * How-to guide
-* Updated on Jan 30, 2026
 
 Вы можете создавать синтетические браузерные мониторы для проверки доступности ваших веб-сайтов. Браузерные мониторы можно запускать из наших [глобальных публичных](../../general-information/public-synthetic-locations.md "Узнайте обо всех доступных в настоящее время публичных точках Synthetic Monitoring.") или [частных](private-locations.md "Узнайте, как управлять частными точками в приложении Synthetic.") синтетических точек.
 

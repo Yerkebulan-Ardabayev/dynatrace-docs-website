@@ -7,10 +7,6 @@ scraped: 2026-03-02T21:20:52.180811
 # Закрепление плиток на дашборде
 
 
-* Практическое руководство
-* Время чтения: 5 мин
-* Обновлено 16 мая 2022 г.
-
 [Dashboards Classic](../../dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic.")
 
 Эта страница относится к классическим дашбордам, созданным с помощью функциональности ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**, интегрированной с Dynatrace Classic.

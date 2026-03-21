@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queu
 scraped: 2026-03-06T21:26:53.183725
 ---
 
-# Трассировка IBM MQ
-
-
-* Classic
 * How-to guide
 * 6-min read
-* Updated on Jun 21, 2022
 
 Dynatrace может автоматически создавать непрерывный [поток сервисов](../../../application-observability/services-classic/service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") для IBM MQ, когда сервисы-производители и сервисы-потребители используют одно и то же имя очереди или темы. Если сервисы-производители и потребители обращаются к разным именам очередей или тем, для создания непрерывного потока сервисов может потребоваться настройка IBM MQ.
 

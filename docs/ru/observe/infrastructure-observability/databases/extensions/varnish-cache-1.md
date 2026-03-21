@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/data
 scraped: 2026-03-05T21:25:45.341800
 ---
 
-# Расширение Varnish Cache
-
-
-* Последняя версия Dynatrace
 * Расширение
-* Обновлено 04 дек. 2025 г.
 
 Мониторинг производительности Varnish Cache для оптимизации доставки контента и сокращения времени отклика.
 

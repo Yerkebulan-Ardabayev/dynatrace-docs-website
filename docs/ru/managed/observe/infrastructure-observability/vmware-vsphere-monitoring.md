@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/vmwa
 scraped: 2026-03-06T21:17:06.043244
 ---
 
-# Мониторинг VMware vSphere
-
-
-* Classic
-* Практическое руководство
-* Опубликовано 12 авг 2021
-
 Настройка мониторинга платформы VMware с помощью Dynatrace выполняется легко благодаря использованию ActiveGate в качестве коммуникационного шлюза.
 
 * ActiveGate получает данные от VMware и отправляет их в кластер Dynatrace.

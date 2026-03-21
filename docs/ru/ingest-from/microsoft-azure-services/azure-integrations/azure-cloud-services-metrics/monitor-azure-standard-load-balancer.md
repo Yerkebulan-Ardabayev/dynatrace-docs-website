@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:28:17.913970
 ---
 
-# Мониторинг Azure Standard Load Balancer
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
 * 2 мин. чтения
-* Обновлено 15 ноября 2023 г.
 
 Информацию о различиях между классическими и другими службами Azure см. в разделе [Переход с классических служб Azure (ранее — встроенных) на облачные службы](../azure-monitoring-guide/azure-migration-guide.md "Перенос классических служб Azure на новые версии.").
 

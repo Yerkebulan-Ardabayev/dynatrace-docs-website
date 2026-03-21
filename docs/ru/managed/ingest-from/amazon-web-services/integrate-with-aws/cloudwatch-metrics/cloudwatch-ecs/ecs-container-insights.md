@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-05T21:34:49.077417
 ---
 
-# Метрики Amazon ECS Container Insights CloudWatch
-
-
-* Classic
-* Практическое руководство
-* Чтение: 8 мин
-* Обновлено 20 июня 2022 г.
-
 Dynatrace получает метрики для множества предварительно выбранных пространств имён, включая Amazon ECS Container Insights. Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
 
 ## Предварительные требования
@@ -23,10 +15,10 @@ Dynatrace получает метрики для множества предва
   + Для развёртываний Dynatrace SaaS требуется Environment ActiveGate или Multi-environment ActiveGate.
   + Для развёртываний Dynatrace Managed можно использовать любой тип ActiveGate.
 
-    Для доступа на основе ролей (будь то в [SaaS](../../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) развёртывании) требуется [Environment ActiveGate](../../../../../../ingest-from/dynatrace-activegate/installation.md "Learn how to configure ActiveGate") установленный на хосте Amazon EC2.
+    Для доступа на основе ролей (будь то в [SaaS](../../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managed](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) развёртывании) требуется [Environment ActiveGate](../../../../../../ingest-from/dynatrace-activegate/installation.md "Learn how to configure ActiveGate") установленный на хосте Amazon EC2.
 * Dynatrace version 1.203+
 * Обновлённая [AWS monitoring policy](../../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.  
-  To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+  To [update the AWS IAM policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
 Предопределённая JSON-политика для всех поддерживаемых сервисов
 
@@ -511,8 +503,8 @@ JSON-политика для Amazon API Gateway
 * `"apigateway:GET"` для **Amazon API Gateway**
 * `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
-* A [CloudWatch Agentï»¿](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy-container-insights-ECS-instancelevel.html)
-* [Set up Container Insights on Amazon ECS for clusterï»¿](https://dt-url.net/lb03sq2).
+* A [CloudWatch Agent](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy-container-insights-ECS-instancelevel.html)
+* [Set up Container Insights on Amazon ECS for cluster](https://dt-url.net/lb03sq2).
 
 ### Эндпоинты AWS, которые должны быть доступны из ActiveGate, с соответствующими сервисами AWS
 
@@ -575,7 +567,7 @@ JSON-политика для Amazon API Gateway
 
 Container Insights needs to be set up on a cluster to have metrics reported.
 
-Cluster name configured for Container Insights agent has to be the same as your actual EKS cluster. For details, see the [AWS documentationï»¿](https://dt-url.net/ec230i0).
+Cluster name configured for Container Insights agent has to be the same as your actual EKS cluster. For details, see the [AWS documentation](https://dt-url.net/ec230i0).
 
 ## Включение мониторинга
 

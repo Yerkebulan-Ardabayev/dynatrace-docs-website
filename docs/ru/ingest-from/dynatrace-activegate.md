@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate
 scraped: 2026-03-06T21:12:45.606066
 ---
 
-# Dynatrace ActiveGate
-
-
 * Latest Dynatrace
 * 3-min read
-* Published Jul 23, 2018
 
 ### ActiveGate действует как безопасный прокси
 

@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activega
 scraped: 2026-03-06T21:24:16.455659
 ---
 
-# Группа ActiveGate
-
-
-* Последняя версия Dynatrace
-* Чтение займёт 2 минуты
-* Опубликовано 08 июл. 2022 г.
-
 Вы можете использовать группы ActiveGate для выполнения массовых операций над вашими ActiveGate, например для управления [расширениями](../extensions.md "Узнайте, как создавать расширения Dynatrace и управлять ими."), запущенными на ActiveGate, или для подключения [фундаментов Cloud Foundry](../setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace.md "Включите мониторинг для ваших фундаментов Cloud Foundry.").
 
 ## Требования

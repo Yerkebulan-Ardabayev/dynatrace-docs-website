@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-g
 scraped: 2026-03-03T21:32:38.245044
 ---
 
-# Управление частными локациями
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Обновлено 12 декабря 2025 г.
-
 Для просмотра и управления частными локациями перейдите на вкладку **Private locations** в ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**.
 
 ## Состояние работоспособности

@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-04T21:34:13.644856
 ---
 
-# Мониторинг Azure Virtual Network Gateway
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Время чтения: 1 мин
-* Опубликовано 25 июня 2020 г.
-
 На странице обзора Azure Virtual Network Gateway можно отслеживать подключённые рабочие нагрузки и производительность, чтобы убедиться в успешном подключении Azure Virtual Network Gateway.
 
 Dynatrace может отслеживать только шлюзы типа VPN. Шлюзы типа ExpressRoute не отслеживаются.
