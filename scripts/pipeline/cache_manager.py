@@ -4,8 +4,10 @@ Caches translations by content hash for efficient incremental updates.
 """
 import json
 import hashlib
+import os
+import tempfile
 from pathlib import Path
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional, Dict, Any
 
 
@@ -37,15 +39,35 @@ class CacheManager:
                 self._index = {}
 
     def _save_index(self):
-        """Save cache index to disk."""
-        with open(self.index_file, "w", encoding="utf-8") as f:
-            json.dump(self._index, f, indent=2, ensure_ascii=False)
+        """Save cache index to disk atomically (write to temp file, then rename)."""
+        self._atomic_json_write(self.index_file, self._index)
 
     def _save_stats(self):
         """Save cache statistics."""
         self._stats["total_cached"] = len(self._index)
-        with open(self.stats_file, "w", encoding="utf-8") as f:
-            json.dump(self._stats, f, indent=2)
+        self._atomic_json_write(self.stats_file, self._stats)
+
+    @staticmethod
+    def _atomic_json_write(target_path: Path, data: Any):
+        """Atomically write JSON data: write to temp file, then os.replace()."""
+        temp_fd = None
+        temp_path = None
+        try:
+            temp_fd, temp_path = tempfile.mkstemp(
+                dir=str(target_path.parent),
+                suffix=".tmp",
+            )
+            with os.fdopen(temp_fd, "w", encoding="utf-8") as f:
+                temp_fd = None  # os.fdopen takes ownership of fd
+                json.dump(data, f, indent=2, ensure_ascii=False)
+            os.replace(temp_path, str(target_path))
+            temp_path = None  # replaced successfully, no cleanup needed
+        except Exception:
+            if temp_fd is not None:
+                os.close(temp_fd)
+            if temp_path is not None and os.path.exists(temp_path):
+                os.unlink(temp_path)
+            raise
 
     @staticmethod
     def content_hash(content: str, lang: str = "ru") -> str:
@@ -75,7 +97,10 @@ class CacheManager:
 
         # Check TTL
         cached_time = datetime.fromisoformat(entry["timestamp"])
-        if datetime.now() - cached_time > timedelta(days=self.ttl_days):
+        # Ensure timezone-aware comparison
+        if cached_time.tzinfo is None:
+            cached_time = cached_time.replace(tzinfo=timezone.utc)
+        if datetime.now(timezone.utc) - cached_time > timedelta(days=self.ttl_days):
             self._stats["expired"] += 1
             return None
 
@@ -99,7 +124,7 @@ class CacheManager:
         self._index[h] = {
             "source_hash": source_h,
             "translated": translated,
-            "timestamp": datetime.now().isoformat(),
+            "timestamp": datetime.now(timezone.utc).isoformat(),
             "provider": provider,
             "quality_score": quality_score,
             "lang": lang,

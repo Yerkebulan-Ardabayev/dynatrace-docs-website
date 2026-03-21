@@ -7,6 +7,7 @@ import time
 import json
 import requests
 from pathlib import Path
+from datetime import datetime, timezone
 from typing import Optional, List, Dict, Tuple
 
 from .config import (
@@ -259,6 +260,7 @@ class TranslationPipeline:
         """
         Translate a single Markdown file.
         Returns True if successful.
+        Partial translations are cached per-chunk to avoid re-translating on retry.
         """
         try:
             content = source_path.read_text(encoding="utf-8")
@@ -266,7 +268,7 @@ class TranslationPipeline:
             print(f"[ERROR] Cannot read {source_path}: {e}")
             return False
 
-        # Check cache first
+        # Check full-file cache first
         cached = self.cache.get(content, target_lang)
         if cached:
             target_path.parent.mkdir(parents=True, exist_ok=True)
@@ -278,12 +280,21 @@ class TranslationPipeline:
 
         # Split into semantic chunks
         chunks = self._semantic_split(body)
+        total_chunks = len(chunks)
 
-        # Translate each chunk
+        # Translate each chunk (with per-chunk cache support)
         translated_chunks = []
         provider_used = None
+        file_key = str(source_path)
 
-        for chunk in chunks:
+        for ci, chunk in enumerate(chunks):
+            # Check per-chunk cache first
+            chunk_cache_key = f"chunk:{file_key}:{ci}:{self.cache.content_hash(chunk, target_lang)}"
+            cached_chunk = self.cache.get(chunk, target_lang)
+            if cached_chunk:
+                translated_chunks.append(cached_chunk)
+                continue
+
             # Protect terms
             protected, pmap = self.terminology.protect_terms(chunk)
 
@@ -296,11 +307,21 @@ class TranslationPipeline:
                     break
 
             if translated is None:
+                # Save partial progress: cache already-translated chunks
+                for prev_i, prev_chunk_src in enumerate(chunks[:ci]):
+                    if prev_i < len(translated_chunks):
+                        self.cache.put(
+                            prev_chunk_src,
+                            translated_chunks[prev_i],
+                            target_lang,
+                            provider_used or "unknown",
+                        )
+
                 # Check if ALL providers are exhausted (quota)
                 if all(p.exhausted for p in self.providers):
-                    print(f"[QUOTA] All providers exhausted. Stopping translation.")
+                    print(f"[QUOTA] All providers exhausted at chunk {ci}/{total_chunks} of {source_path}")
                     raise QuotaExhaustedError("All translation providers exhausted their quotas")
-                print(f"[ERROR] All providers failed for chunk in {source_path}")
+                print(f"[ERROR] All providers failed for chunk {ci}/{total_chunks} in {source_path}")
                 return False
 
             # Restore protected terms
@@ -308,18 +329,52 @@ class TranslationPipeline:
             translated = self.terminology.normalize_translation(translated)
             translated_chunks.append(translated)
 
-        # Combine result
-        translated_body = "\n".join(translated_chunks)
-        result = frontmatter + translated_body if frontmatter else translated_body
+            # Cache each chunk immediately after successful translation
+            self.cache.put(chunk, translated, target_lang, provider_used or "unknown")
+
+        # Combine result — use double newline to preserve Markdown block separation
+        translated_body = "\n\n".join(translated_chunks)
+        # Collapse triple+ newlines back to double
+        translated_body = re.sub(r"\n{3,}", "\n\n", translated_body)
+
+        # Add completeness metadata to frontmatter
+        meta_block = self._build_translation_meta(
+            total_chunks=total_chunks,
+            translated_chunks=len(translated_chunks),
+            provider=provider_used or "unknown",
+        )
+
+        if frontmatter:
+            # Insert metadata before closing --- of frontmatter
+            result = frontmatter.rstrip().rstrip("-").rstrip()
+            result += f"\n{meta_block}\n---\n{translated_body}"
+        else:
+            result = f"---\n{meta_block}\n---\n{translated_body}"
 
         # Write output
         target_path.parent.mkdir(parents=True, exist_ok=True)
         target_path.write_text(result, encoding="utf-8")
 
-        # Cache result
+        # Cache full-file result
         self.cache.put(content, result, target_lang, provider_used or "unknown")
 
         return True
+
+    @staticmethod
+    def _build_translation_meta(
+        total_chunks: int, translated_chunks: int, provider: str
+    ) -> str:
+        """Build YAML metadata block for translation completeness tracking."""
+        status = "complete" if translated_chunks == total_chunks else "partial"
+        now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        lines = [
+            f"translation_status: {status}",
+            f"translation_date: \"{now}\"",
+            f"translation_provider: {provider}",
+            f"chunks_total: {total_chunks}",
+            f"chunks_translated: {translated_chunks}",
+        ]
+        return "\n".join(lines)
 
     def _split_frontmatter(self, content: str) -> Tuple[str, str]:
         """Split frontmatter from body."""
@@ -331,7 +386,8 @@ class TranslationPipeline:
     def _semantic_split(self, text: str, max_size: int = TRANSLATION_MAX_CHUNK_SIZE) -> List[str]:
         """
         Split text into semantic chunks by Markdown structure.
-        Preserves code blocks, tables, and admonitions.
+        Preserves code blocks, tables, admonitions, and blockquotes.
+        Only splits at actual headers (not inside code blocks or blockquotes).
         """
         if len(text) <= max_size:
             return [text]
@@ -343,14 +399,25 @@ class TranslationPipeline:
 
         lines = text.split("\n")
         for line in lines:
-            # Track code blocks
-            if line.strip().startswith("```"):
+            stripped = line.strip()
+
+            # Track code block boundaries (``` or ~~~)
+            if stripped.startswith("```") or stripped.startswith("~~~"):
                 in_code_block = not in_code_block
 
-            # Split at headers (## or ###) when not in code block
-            if (
+            # Determine if this line is a real header:
+            # - Not inside a code block
+            # - Not inside a blockquote (line starts with >)
+            # - Matches Markdown header pattern
+            is_real_header = (
                 not in_code_block
+                and not line.lstrip().startswith(">")
                 and re.match(r"^#{1,3}\s", line)
+            )
+
+            # Split at real headers when current chunk exceeds max_size
+            if (
+                is_real_header
                 and current_size > 0
                 and current_size + len(line) > max_size
             ):
@@ -364,6 +431,10 @@ class TranslationPipeline:
         if current_chunk:
             chunks.append("\n".join(current_chunk))
 
+        # Safety: if code block tracking ended in open state, merge into single chunk
+        if in_code_block and len(chunks) > 1:
+            return [text]
+
         return chunks
 
     def translate_directory(
@@ -372,11 +443,12 @@ class TranslationPipeline:
         """
         Translate all Markdown files in a directory.
         Gracefully stops on quota exhaustion — already translated files are kept.
-        Returns stats dict.
+        Returns stats dict with coverage metrics.
         """
         stats = {
             "total": 0, "translated": 0, "cached": 0, "failed": 0,
             "skipped": 0, "quota_stopped": False, "remaining": 0,
+            "coverage_pct": 0.0,
         }
 
         md_files = list(source_dir.rglob("*.md"))
@@ -392,7 +464,7 @@ class TranslationPipeline:
                     stats["skipped"] += 1
                     continue
 
-            print(f"  Translating: {relative}")
+            print(f"  [{i+1}/{stats['total']}] Translating: {relative}")
             try:
                 if self.translate_file(source_file, target_file, target_lang):
                     stats["translated"] += 1
@@ -401,8 +473,18 @@ class TranslationPipeline:
             except QuotaExhaustedError:
                 stats["quota_stopped"] = True
                 stats["remaining"] = len(md_files) - i - 1
-                print(f"\n  [QUOTA] Stopping gracefully. {stats['translated']} files translated successfully.")
+                stats["failed"] += 1
+                print(f"\n  [QUOTA] Stopping gracefully. {stats['translated']} files translated.")
                 print(f"  [QUOTA] {stats['remaining']} files will be translated on the next run.")
                 break
+
+        # Calculate coverage: (translated + skipped) / total
+        done = stats["translated"] + stats["skipped"]
+        stats["coverage_pct"] = (done / stats["total"] * 100) if stats["total"] > 0 else 100.0
+
+        # Save cache stats
+        cache_stats = self.cache.get_stats()
+        stats["cache_hits"] = cache_stats.get("hits", 0)
+        stats["cache_misses"] = cache_stats.get("misses", 0)
 
         return stats

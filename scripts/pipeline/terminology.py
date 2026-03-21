@@ -37,6 +37,8 @@ class TerminologyEngine:
     def protect_terms(self, text: str) -> Tuple[str, Dict[str, str]]:
         """
         Replace protected terms with placeholders before translation.
+        Uses word-boundary matching to avoid partial replacements
+        (e.g., "Agent" inside "agentless" won't be matched).
         Returns (modified_text, placeholder_map).
         """
         placeholder_map = {}
@@ -44,10 +46,12 @@ class TerminologyEngine:
 
         for i, term in enumerate(self.keep_as_is):
             placeholder = f"{{{{TERM_{i:04d}}}}}"
-            # Case-sensitive replacement for product names
-            if term in result:
+            # Use word-boundary regex for accurate matching
+            # re.escape handles special chars in term names
+            pattern = re.compile(r"(?<!\w)" + re.escape(term) + r"(?!\w)")
+            if pattern.search(result):
                 placeholder_map[placeholder] = term
-                result = result.replace(term, placeholder)
+                result = pattern.sub(placeholder, result)
 
         self._placeholder_map = placeholder_map
         return result, placeholder_map
@@ -75,18 +79,21 @@ class TerminologyEngine:
     def validate_terminology(self, source: str, translated: str) -> List[str]:
         """
         Check that protected terms were not translated.
+        Uses word-boundary matching to reduce false positives.
         Returns list of issues found.
         """
         issues = []
 
         for term in self.keep_as_is:
-            if term in source and term not in translated:
-                # Check if it was partially translated
-                term_lower = term.lower()
-                if len(term) > 3:  # Skip very short terms
-                    issues.append(
-                        f"Protected term '{term}' missing in translation"
-                    )
+            if len(term) <= 2:
+                continue  # Skip very short terms (high false-positive risk)
+
+            pattern = re.compile(r"(?<!\w)" + re.escape(term) + r"(?!\w)")
+
+            if pattern.search(source) and not pattern.search(translated):
+                issues.append(
+                    f"Protected term '{term}' missing in translation"
+                )
 
         return issues
 
