@@ -8,13 +8,11 @@ scraped: 2026-03-06T21:14:23.826280
 
 
 * Latest Dynatrace
-* Overview
 * 1-min read
-* Published Mar 12, 2021
 
 Dynatrace автоматически обнаруживает, устанавливает базовые показатели и интеллектуально отслеживает среды Google Cloud, обеспечивая изоляцию доменов сбоев, а также видимость инфраструктуры и конечных пользователей в режиме реального времени.
 
-Дополнительные причины для мониторинга Google Cloud с помощью Dynatrace см. в разделе [Google Cloudï»¿](https://www.dynatrace.com/hub/detail/google-cloud-platform/) в Dynatrace Hub.
+Дополнительные причины для мониторинга Google Cloud с помощью Dynatrace см. в разделе [Google Cloud](https://www.dynatrace.com/hub/detail/google-cloud-platform/) в Dynatrace Hub.
 
 ## Полный стековый мониторинг для Google Cloud Compute и бессерверных сервисов
 

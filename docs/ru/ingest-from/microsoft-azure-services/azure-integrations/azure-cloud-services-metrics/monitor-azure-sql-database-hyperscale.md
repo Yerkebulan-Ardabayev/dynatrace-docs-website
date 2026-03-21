@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:37:05.677742
 ---
 
-# Мониторинг Azure SQL Database Hyperscale
-
-
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Published Apr 13, 2021
 
 Dynatrace принимает метрики из Azure Metrics API для Azure SQL Database Hyperscale. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики на несколько измерений и создавать пользовательские графики, которые можно закрепить на дашбордах.
 

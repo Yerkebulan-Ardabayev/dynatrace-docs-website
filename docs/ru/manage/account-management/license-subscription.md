@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/manage/account-management/license-subscri
 scraped: 2026-03-03T21:23:51.134431
 ---
 
-# Обзор подписки или лицензии
-
-
 * Latest Dynatrace
 * Explanation
 * 6-min read
-* Published Nov 24, 2025
 
 Администраторы лицензий могут использовать Account Management для просмотра сведений о подписке или использовании лицензии Dynatrace, включая потребление, бюджеты, анализ затрат и историю использования.
 

@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:18:32.537603
 ---
 
-# Удаление OneAgent на AIX
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Sep 19, 2018
 
 OneAgent поставляется с отдельной программой удаления. Для удаления OneAgent из системы необходимо запустить её. Перейдите в каталог `/opt/dynatrace/oneagent/agent` и запустите скрипт `uninstall.sh` с правами суперпользователя (root).
 

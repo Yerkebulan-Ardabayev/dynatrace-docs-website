@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/action
 scraped: 2026-03-01T21:25:46.175084
 ---
 
-# Действия для GitHub Connector
-
-
 * Latest Dynatrace
-* Справочник
-* Чтение: 6 мин
-* Обновлено 27 янв. 2025
 
 На этой странице описаны действия рабочих процессов GitHub, доступные для интеграции GitHub Connector ![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub").
 

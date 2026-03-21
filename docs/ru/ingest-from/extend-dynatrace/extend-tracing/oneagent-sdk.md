@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-traci
 scraped: 2026-03-06T21:16:36.669068
 ---
 
-# OneAgent SDK
-
-
 * Latest Dynatrace
 * 2-min read
-* Published Mar 01, 2018
 
 Dynatrace предоставляет широкие возможности мониторинга для практически всех популярных языков и технологий, включая Java, .NET, Node.js, PHP и Golang. Подробную информацию обо всех поддерживаемых технологиях см. на [странице поддерживаемых технологий](../../technology-support.md "Ознакомьтесь с техническими подробностями поддержки Dynatrace для конкретных платформ и фреймворков разработки.").
 

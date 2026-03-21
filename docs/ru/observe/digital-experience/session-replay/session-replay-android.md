@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/session-replay
 scraped: 2026-03-02T21:21:17.753446
 ---
 
-# Настройка Session Replay для Android
-
-
-* Практическое руководство
-* Время чтения: 7 мин.
-* Обновлено 18 февраля 2026
-
 На этой странице описано, как включить и настроить Session Replay для ваших Android-приложений.
 
 ## Полный Session Replay

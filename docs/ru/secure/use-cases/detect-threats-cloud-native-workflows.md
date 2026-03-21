@@ -9,7 +9,6 @@ scraped: 2026-03-03T21:28:43.872463
 
 * Latest Dynatrace
 * Tutorial
-* Updated on Sep 10, 2025
 
 В этом руководстве вы узнаете, как
 

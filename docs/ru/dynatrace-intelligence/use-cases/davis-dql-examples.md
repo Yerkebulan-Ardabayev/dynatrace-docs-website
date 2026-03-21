@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-dq
 scraped: 2026-03-06T21:20:33.076571
 ---
 
-# Примеры DQL для Dynatrace Intelligence
-
-
 * Latest Dynatrace
-* Reference
 * 7-min read
-* Updated on Jan 28, 2026
 
 Эти примеры демонстрируют, как создавать мощные и гибкие дашборды состояния здоровья среды, используя DQL для анализа и группировки всех проблем и событий, обнаруженных Dynatrace Intelligence.
 

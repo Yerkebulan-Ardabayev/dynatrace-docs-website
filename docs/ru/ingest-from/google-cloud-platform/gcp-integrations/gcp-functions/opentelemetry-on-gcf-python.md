@@ -10,7 +10,6 @@ scraped: 2026-03-05T21:29:32.606351
 * Latest Dynatrace
 * How-to guide
 * 3-min read
-* Updated on Jun 16, 2023
 
 [Пакет](https://pypi.org/project/dynatrace-opentelemetry-gcf) `dynatrace-opentelemetry-gcf` предоставляет API для трассировки функций Google Cloud Functions (GCF) на Python.
 

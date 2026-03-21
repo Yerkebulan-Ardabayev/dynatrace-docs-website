@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/extensions/concepts
 scraped: 2026-03-04T21:33:06.167215
 ---
 
-# О расширениях
-
-
 * Latest Dynatrace
 * Пояснение
-* Чтение: 2 мин
-* Обновлено 28 янв. 2026
 
 Концепции
 

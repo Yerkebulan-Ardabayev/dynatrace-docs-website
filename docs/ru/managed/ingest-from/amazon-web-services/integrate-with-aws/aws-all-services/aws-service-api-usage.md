@@ -7,11 +7,6 @@ scraped: 2026-03-04T21:36:35.168241
 # Мониторинг AWS API Usage
 
 
-* Classic
-* Практическое руководство
-* Время чтения: 1 мин
-* Опубликовано 11 августа 2020
-
 Dynatrace собирает метрики для нескольких предварительно выбранных пространств имён, включая AWS API Usage. Вы можете просматривать графики для каждого экземпляра сервиса с набором измерений и создавать пользовательские графики, которые можно закреплять на дашбордах.
 
 ## Предварительные требования
@@ -23,10 +18,10 @@ Dynatrace собирает метрики для нескольких предв
   + Для развёртывания Dynatrace SaaS требуется Environment ActiveGate или Multi-environment ActiveGate.
   + Для развёртывания Dynatrace Managed можно использовать любой тип ActiveGate.
 
-    Для доступа на основе ролей (как при развёртывании [SaaS](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#role-based-access "Интеграция метрик из Amazon CloudWatch."), так и [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment)) требуется [Environment ActiveGate](../../../../../ingest-from/dynatrace-activegate/installation.md "Узнайте, как настроить ActiveGate"), установленный на хосте Amazon EC2.
+    Для доступа на основе ролей (как при развёртывании [SaaS](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#role-based-access "Интеграция метрик из Amazon CloudWatch."), так и [Managed](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment)) требуется [Environment ActiveGate](../../../../../ingest-from/dynatrace-activegate/installation.md "Узнайте, как настроить ActiveGate"), установленный на хосте Amazon EC2.
 * Dynatrace версии 1.203+
 * Обновлённая [политика мониторинга AWS](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#monitoring-policy "Интеграция метрик из Amazon CloudWatch.") для включения дополнительных сервисов AWS.  
-  Чтобы [обновить политику AWS IAMï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех облачных сервисов.
+  Чтобы [обновить политику AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех облачных сервисов.
 
 Предопределённая JSON-политика для всех облачных сервисов
 

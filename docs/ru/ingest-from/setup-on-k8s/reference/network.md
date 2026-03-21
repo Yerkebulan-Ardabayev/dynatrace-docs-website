@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/networ
 scraped: 2026-03-06T21:30:57.484657
 ---
 
-# Сетевой трафик
-
-
 * Последняя Dynatrace
 * 3 мин. чтения
-* Обновлено 2 января 2026 г.
 
 Для корректной работы компонентов Dynatrace Operator в кластере Kubernetes они должны иметь возможность взаимодействовать как с кластером Dynatrace, так и с кластером Kubernetes.
 

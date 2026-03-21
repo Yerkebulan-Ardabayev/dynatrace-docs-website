@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/f
 scraped: 2026-03-06T21:20:42.968672
 ---
 
-# Функции DQL
-
-
-* Последняя версия Dynatrace
-* Справочник
-* Обновлено 02 февр. 2026 г.
-
 Функции DQL, сгруппированные по категориям. Для получения подробной информации о конкретной функции выберите её название.
 
 ## [Функции агрегации](functions/aggregation-functions.md "Список функций агрегации DQL.")

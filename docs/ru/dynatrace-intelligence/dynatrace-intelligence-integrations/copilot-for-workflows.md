@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intellig
 scraped: 2026-03-06T21:29:56.714019
 ---
 
-# Приложение Dynatrace Intelligence (Preview)
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 3 мин
-* Обновлено 4 февраля 2026 г.
 * Preview
 
 С помощью ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** вы можете автоматизировать запросы к генеративному ИИ Dynatrace Intelligence и настроить его реагирование на изменения в среде по мере их возникновения, обобщая события и ежедневные действия и предлагая оптимальные решения для открытых проблем и изменений в коде.

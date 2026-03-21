@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applica
 scraped: 2026-03-06T21:34:06.541220
 ---
 
-# Инструментирование мобильных приложений с помощью Dynatrace .NET MAUI NuGet пакета
-
-
-* Classic
-* Практическое руководство
-* Чтение: 10 мин
-* Обновлено 25 сентября 2024 г.
-
 Dynatrace версии 1.265+
 
 Dynatrace .NET MAUI NuGet пакет помогает автоматически инструментировать ваше мобильное приложение .NET MAUI с помощью OneAgent для Android и iOS, а также предоставляет API для [ручного инструментирования](#usage-mobile-agent).

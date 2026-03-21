@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/rum-concepts
 scraped: 2026-03-06T21:13:58.729143
 ---
 
-# Концепции Real User Monitoring
-
-
 * Классическая версия
-* Обзор
 * 1 мин. чтения
-* Опубликовано 18 июля 2019 г.
 
 Real User Monitoring (RUM) — одна из двух фундаментальных составляющих Digital Experience Monitoring (DEM). Второй составляющей является [Synthetic Monitoring](synthetic-monitoring.md "Узнайте о Synthetic Monitoring и о том, как создать одноадресный браузерный монитор, кликпас браузера или HTTP-монитор.").
 

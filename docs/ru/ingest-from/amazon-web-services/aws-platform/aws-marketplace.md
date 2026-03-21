@@ -7,10 +7,8 @@ scraped: 2026-03-05T21:37:10.170372
 # Частное предложение AWS Marketplace
 
 
-* Classic
 * How-to guide
 * 3-min read
-* Published May 26, 2025
 
 Платформенный сервис Dynatrace можно лицензировать через [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-si2angoettdnc?applicationId=AWSMPContessa) в рамках частного предложения.
 

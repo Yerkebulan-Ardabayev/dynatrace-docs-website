@@ -7,11 +7,6 @@ scraped: 2026-03-02T21:30:43.529124
 # Миграция DynaKube с v1beta5 на v1beta6
 
 
-* Последняя версия Dynatrace
-* Справочник
-* Чтение: 5 мин
-* Опубликовано 20 января 2026 г.
-
 Это руководство покажет, как вручную выполнить миграцию с `apiVersion: dynatrace.com/v1beta5` на `apiVersion: dynatrace.com/v1beta6` для DynaKube.
 
 ## Жизненный цикл поддержки

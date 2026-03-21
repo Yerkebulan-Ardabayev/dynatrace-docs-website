@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/license/subscription-history
 scraped: 2026-03-06T21:32:43.549341
 ---
 
-# Просмотр предыдущих периодов DPS через историю подписок
-
-
 * Latest Dynatrace
 * Tutorial
 * 4-min read
-* Updated on Jul 16, 2025
 
 Страница **Subscription history** содержит список ваших истёкших, активных и ожидающих подписок и лицензий Dynatrace.
 Вы можете просматривать сведения обо всех подписках Dynatrace, которые были активны в течение последних трёх лет.

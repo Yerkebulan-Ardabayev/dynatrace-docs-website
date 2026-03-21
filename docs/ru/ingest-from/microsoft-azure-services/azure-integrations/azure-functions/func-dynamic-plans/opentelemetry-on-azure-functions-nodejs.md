@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:37:47.614506
 ---
 
-# Трассировка Azure Functions, написанных на Node.js
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 6 мин
-* Обновлено 4 ноября 2025
-
 Модуль [`@dynatrace/opentelemetry-azure-functions`](https://dt-url.net/9603x96) предоставляет API для трассировки Node.js в Azure Functions.
 
 ## Предварительные требования

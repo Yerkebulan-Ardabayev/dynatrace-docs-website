@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-pri
 scraped: 2026-03-05T21:36:32.071097
 ---
 
-# Защита данных в Dynatrace
-
-
 * Latest Dynatrace
 * 4-min read
-* Published May 17, 2018
 
 Мы стремимся обеспечить безопасность, конфиденциальность и доступность платформы Dynatrace Software Intelligence Platform. Безопасность ваших данных и цифрового опыта является для нас ключевым приоритетом, и мы прилагаем все усилия для ответственной защиты и обработки ваших данных. Надлежащая забота о данных лежит в основе нашего бизнеса.
 

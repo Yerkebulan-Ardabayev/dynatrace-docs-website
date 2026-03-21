@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/integrations/is
 scraped: 2026-03-06T21:37:43.997109
 ---
 
-# Настройка трассировки OpenTelemetry с Istio
-
-
 * Latest Dynatrace
-* Практическое руководство
-* Чтение: 3 мин.
-* Обновлено 22 октября 2025 г.
 
 Заявление о поддержке
 

@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-moni
 scraped: 2026-02-06T16:33:30.435733
 ---
 
-# Создание и настройка HTTP-монитора
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
 * 10 минут чтения
-* Обновлено 06 ноября 2025 г.
 
 Вы можете создавать синтетические HTTP-мониторы для проверки доступности ваших ресурсов — веб-сайтов или конечных точек API. HTTP-мониторы можно запускать из наших [глобальных публичных](../../general-information/public-synthetic-locations.md "Узнайте обо всех доступных на данный момент публичных локациях Synthetic Monitoring.") или [частных](../../private-synthetic-locations/create-a-private-synthetic-location.md "Узнайте, как создать частную локацию для синтетического мониторинга.") локаций Synthetic.
 

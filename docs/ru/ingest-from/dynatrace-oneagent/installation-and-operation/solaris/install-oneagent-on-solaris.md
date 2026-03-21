@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:20:16.604221
 ---
 
-# Установка OneAgent на Solaris
-
-
-* Последняя версия Dynatrace
-* Время чтения: 7 мин
-* Обновлено 22 января 2026 г.
-
 На этой странице описывается, как загрузить и установить Dynatrace OneAgent на Solaris.
 
 Для начала войдите в свою среду Dynatrace SaaS через веб-сайт [Dynatrace.com](https://www.dynatrace.com), используя учётные данные, предоставленные при регистрации. Затем перейдите к описанным ниже шагам установки.

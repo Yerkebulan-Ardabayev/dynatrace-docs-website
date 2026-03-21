@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/business-insig
 scraped: 2026-03-05T21:33:16.381453
 ---
 
-# Business Insights
-
-
 * Latest Dynatrace
-* Приложение
-* Чтение: 6 мин
-* Опубликовано 11 июня 2025
 
 ![Business Insights](https://dt-cdn.net/images/business-insights-app-icon-530-14caea209d.png "Business Insights") **Business Insights** централизует наш лучший в своём классе сервис и аналитику непосредственно в платформе Dynatrace. Благодаря интегрированному общению (комментарии и обратная связь), контекстному взаимодействию в рамках полной платформы Dynatrace и всей аналитике в одном месте приложение оптимизирует предоставление Business Insights, помогая клиентам максимизировать ценность Digital Experience и Business Observability и понимать свой бизнес как никогда раньше.
 

@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/a
 scraped: 2026-03-05T21:35:44.907456
 ---
 
-# Передача журналов Kubernetes с помощью Fluent Bit (Классические журналы)
-
-
 * Классический
 * Учебник
 * 5-минутное чтение
-* Обновлено 08 октября 2025 г.
 
 Мониторинг журналов Classic
 

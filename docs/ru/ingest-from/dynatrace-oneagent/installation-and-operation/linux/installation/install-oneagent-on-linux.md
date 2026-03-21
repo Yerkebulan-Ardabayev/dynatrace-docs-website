@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:18:57.191682
 ---
 
-# Установка OneAgent на Linux
-
-
 * Latest Dynatrace
-* Практическое руководство
-* Чтение: 5 мин.
-* Обновлено 22 января 2026 г.
 
 На этой странице описывается, как скачать и установить Dynatrace OneAgent на Linux.
 

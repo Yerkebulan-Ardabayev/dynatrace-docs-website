@@ -7,9 +7,7 @@ scraped: 2026-03-06T21:11:39.929087
 # Отправка уведомлений Dynatrace по электронной почте
 
 
-* Classic
 * 2-min read
-* Updated on Apr 25, 2024
 
 Для расширенных возможностей и автоматизации рабочих процессов (например, для включения целевых уведомлений и устранения проблем) см. [Workflows Connectors](../../workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
 

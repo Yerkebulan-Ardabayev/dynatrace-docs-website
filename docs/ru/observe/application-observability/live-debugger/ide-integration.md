@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/observe/application-observability/live-de
 scraped: 2026-03-05T21:32:28.128008
 ---
 
-# Использование Live Debugger с вашей IDE
-
-
 * Latest Dynatrace
 * How-to guide
 * 4-min read
-* Updated on Dec 08, 2025
 
 Вы можете использовать ![Live Debugger](https://dt-cdn.net/images/live-debugger-256-b934a2bad5.png "Live Debugger") **Live Debugger** непосредственно из вашей интегрированной среды разработки (IDE). В настоящее время Dynatrace поддерживает Visual Studio Code и пакет JetBrains.
 

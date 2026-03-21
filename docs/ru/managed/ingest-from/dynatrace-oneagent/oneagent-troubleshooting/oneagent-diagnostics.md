@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-t
 scraped: 2026-03-04T21:32:36.436365
 ---
 
-# Диагностика OneAgent
-
-
-* Последняя версия Dynatrace
-* Время чтения: 7 мин
-* Опубликовано 22 октября 2020 г.
-
 Вы можете запустить полностью автоматизированное устранение неполадок OneAgent для сред Dynatrace SaaS и Managed, начиная с версии Dynatrace 1.208.
 
 Рабочий процесс позволяет вам:

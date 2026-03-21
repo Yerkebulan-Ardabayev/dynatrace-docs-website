@@ -7,9 +7,6 @@ scraped: 2026-03-05T21:38:23.051337
 # API токенов ActiveGate
 
 
-* Справочник
-* Опубликовано 02 дек. 2021
-
 [### Список всех токенов
 
 Получите обзор всех токенов ActiveGate, доступных в вашей среде.](activegate-tokens/get-all-activegate-tokens.md "List all ActiveGate tokens available for your monitoring environment via Dynatrace API.")[### Просмотр токена

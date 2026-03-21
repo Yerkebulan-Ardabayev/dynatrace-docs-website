@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/credential-
 scraped: 2026-03-06T21:28:46.163025
 ---
 
-# API хранилища учётных данных
-
-
-* Справочник
-* Опубликовано 14 октября 2019 г.
-
 **API хранилища учётных данных** позволяет управлять учётными данными для синтетических [браузерных](../../observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors.md "Узнайте о настройке браузерных мониторов и кликпатов.") и [HTTP-](../../observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic.md "Узнайте о настройке HTTP-мониторов.") мониторов.
 
 [### Список всех учётных данных

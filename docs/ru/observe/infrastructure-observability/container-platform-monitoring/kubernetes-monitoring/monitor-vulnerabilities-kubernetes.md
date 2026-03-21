@@ -6,11 +6,6 @@ scraped: 2026-03-06T21:22:01.751523
 
 # Monitor vulnerabilities in Kubernetes/OpenShift
 
-# Мониторинг уязвимостей в Kubernetes/OpenShift
-
-* Classic
-* Чтение: 1 мин
-* Опубликовано 24 августа 2022 г.
 
 Вы можете отслеживать уязвимости безопасности в ваших средах Kubernetes на страницах кластера и рабочих нагрузок.
 

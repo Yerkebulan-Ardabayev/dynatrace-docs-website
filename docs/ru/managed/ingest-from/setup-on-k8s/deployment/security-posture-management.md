@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/secur
 scraped: 2026-03-03T21:32:50.568498
 ---
 
-# Kubernetes Security Posture Management
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
 * 5 мин. чтения
-* Обновлено 3 ноября 2025 г.
 
 Dynatrace Kubernetes Security Posture Management позволяет обнаруживать, анализировать и отслеживать неправильные конфигурации, рекомендации по усилению безопасности и потенциальные нарушения соответствия в вашем развёртывании Kubernetes.
 

@@ -10,7 +10,6 @@ scraped: 2026-03-06T21:21:11.934524
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Updated on Jan 28, 2026
 
 Dynatrace Intelligence for Notebooks запускает ряд анализаторов непосредственно в Notebooks, предоставляя результаты на месте и позволяя точно настраивать конфигурации пользовательских оповещений.
 

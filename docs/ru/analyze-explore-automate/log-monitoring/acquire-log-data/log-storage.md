@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/a
 scraped: 2026-03-06T21:32:38.490851
 ---
 
-# Правила ингеста журналов (Logs Classic)
-
-* Classic
 * Tutorial
 * 16-минутное чтение
-* Обновлено 18 января 2023 г.
 
 Мониторинг журналов Classic
 

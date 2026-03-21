@@ -9,7 +9,6 @@ scraped: 2026-03-02T21:20:06.387958
 
 * How-to guide
 * 8-min read
-* Updated on Jan 12, 2024
 
 С помощью [AWS Systems Manager Distributor](https://docs.aws.amazon.com/systems-manager/latest/userguide/distributor.html) вы можете распространять и автоматически развёртывать OneAgent на ваших EC2-инстансах, используя AWS Systems Manager Distributor.
 

@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-06T21:18:01.703557
 ---
 
-# Мониторинг AWS Fargate
-
-
-* Classic
-* Практическое руководство
 * 1 мин. чтения
-* Обновлено 14 октября 2025 г.
 
 Для развёртывания OneAgent на AWS Fargate ознакомьтесь с инструкциями ниже.
 

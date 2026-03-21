@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/host
 scraped: 2026-03-05T21:36:56.739400
 ---
 
-# Метрики хостов
-
-
-* Classic
-* Справочник
-* Чтение: 7 мин
-* Опубликовано 4 ноября 2024 г.
-
 Это справочный список метрик, используемых для хостов, с информацией об их доступности в операционных системах Windows, Linux и AIX.
 
 Вы также можете проверить, доступны ли метрики в режиме мониторинга Discovery. Подробнее см. в разделе [Режим Discovery](../../../../platform/oneagent/monitoring-modes/monitoring-modes.md#discovery "Узнайте больше о доступных режимах мониторинга при использовании OneAgent.").

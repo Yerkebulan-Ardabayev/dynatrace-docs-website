@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-06T21:37:16.480308
 ---
 
-# Мониторинг AWS OpsWorks
-
-
-* Classic
-* Практическое руководство
 * 4 минуты чтения
-* Опубликовано 08 сентября 2020 г.
 
 Dynatrace собирает метрики для нескольких предварительно выбранных пространств имён, включая AWS OpsWorks. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
 
@@ -27,7 +21,7 @@ Dynatrace собирает метрики для нескольких предв
 * Dynatrace версии 1.201+
 * Обновлённая [политика мониторинга AWS](../cloudwatch-metrics.md#monitoring-policy "Интеграция метрик из Amazon CloudWatch.") для включения дополнительных AWS сервисов.
 
-Для [обновления политики AWS IAMï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте JSON ниже, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+Для [обновления политики AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте JSON ниже, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
 Предопределённая политика JSON для всех поддерживаемых сервисов
 

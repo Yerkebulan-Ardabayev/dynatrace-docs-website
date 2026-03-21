@@ -7,9 +7,7 @@ scraped: 2026-03-06T21:20:38.254143
 # Примеры DQL timeseries
 
 
-* Последняя версия Dynatrace
 * 8 мин. чтения
-* Обновлено 17 октября 2025 г.
 
 Метрики на Grail позволяют точно находить и извлекать любые данные метрик с помощью [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language."). Ознакомившись с [основами запросов DQL](../../platform/grail/dynatrace-query-language/dql-guide.md#metrics "Узнайте, как работает DQL и каковы ключевые концепции DQL.") и [командой timeseries](../../platform/grail/dynatrace-query-language/commands/metric-commands.md "Команды метрик DQL"), используйте примеры на этой странице, чтобы начать получать ответы из ваших метрик.
 

@@ -8,7 +8,6 @@ scraped: 2026-02-06T16:26:39.711082
 
 
 * 2-min read
-* Updated on Apr 29, 2024
 
 Dynatrace version 1.232+
 

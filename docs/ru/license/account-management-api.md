@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/license/account-management-api
 scraped: 2026-03-06T21:27:00.281504
 ---
 
-# Dynatrace Platform Subscription API
-
-
-* Последняя версия Dynatrace
 * Объяснение
-* Чтение: 1 мин
-* Опубликовано 3 сентября 2025 г.
 
 API позволяет легко интегрировать управление подпиской DPS в операционный рабочий процесс.
 Используйте Dynatrace Platform Subscription API для получения:

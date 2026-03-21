@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/observe/application-observability/distrib
 scraped: 2026-03-06T21:09:46.417540
 ---
 
-# Distributed Tracing
-
-
-* Последняя версия Dynatrace
-* Приложение
-* Чтение: 3 мин
-* Опубликовано 15 июля 2024
-
 ## Предварительные требования
 
 * [Подписка Dynatrace Platform Subscription (DPS)](../../license.md "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.")
@@ -83,16 +75,12 @@ Distributed Tracing на базе Grail помогает максимально 
 * Учебное пособие
 * Анализ исключений помогает более эффективно обнаруживать, расследовать и устранять исключения в Dynatrace.](distributed-tracing/exception-analysis.md)[02Приём трассировок
 
-* Практическое руководство
 * Инструментируйте ваши приложения с помощью OneAgent или OpenTelemetry, чтобы начать приём данных трассировки в Dynatrace.](distributed-tracing/ingest-traces.md)[03Настройка разрешений Grail для Distributed Tracing
 
-* Практическое руководство
 * Управление разрешениями для Distributed Tracing на базе Grail.](distributed-tracing/permissions.md)[04Настройка хранения и удержания данных для Distributed Tracing
 
-* Практическое руководство
 * Управление хранением и удержанием данных для Distributed Tracing на базе Grail.](distributed-tracing/storage.md)[05Распространение контекста спана и трассировки
 
-* Справочник
 * Понимание распространения контекста спана и трассировки в Dynatrace и способы их настройки.](distributed-tracing/tracking-transactions.md)[06Использование трассировок, DQL и логов для выявления закономерностей
 
 * Учебное пособие

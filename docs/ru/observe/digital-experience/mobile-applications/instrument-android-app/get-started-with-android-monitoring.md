@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applica
 scraped: 2026-03-06T21:28:16.242622
 ---
 
-# Начало работы с мониторингом Android
-
-
-* Classic
-* Руководство
-* Чтение: 2 мин
-* Обновлено 6 сент. 2023
-
 Для мониторинга вашего Android-приложения необходимо сначала создать мобильное приложение в Dynatrace, а затем инструментировать ваше Android-приложение.
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")

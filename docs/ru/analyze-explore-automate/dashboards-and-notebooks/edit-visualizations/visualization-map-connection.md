@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-n
 scraped: 2026-03-06T21:21:08.492041
 ---
 
-# Визуализация карты соединений
-
-
 * Latest Dynatrace
-* Практическое руководство
-* Чтение: 4 мин
-* Опубликовано 3 апреля 2025 г.
 
 Dashboards версия 1.311+ Notebooks версия 1.311+
 

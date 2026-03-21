@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/clou
 scraped: 2026-02-06T16:29:13.189649
 ---
 
-# Мониторинг Microsoft Azure
-
-
-* Последняя версия Dynatrace
 * Пояснение
-* Чтение: 2 мин
-* Обновлено 28 янв. 2026 г.
 
 Dynatrace автоматически обнаруживает, устанавливает базовые показатели и интеллектуально отслеживает облачные окружения Microsoft Azure.
 

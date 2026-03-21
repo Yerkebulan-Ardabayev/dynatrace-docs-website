@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:17:44.007967
 ---
 
-# Все облачные сервисы Azure
-
-
-* Последняя версия Dynatrace
-* Обзор
 * 19 минут чтения
-* Обновлено 12 февраля 2024 г.
 
 Dynatrace может получать метрики Azure Monitor для нескольких предварительно выбранных сервисов.
 

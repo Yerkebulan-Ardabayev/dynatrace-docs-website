@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api
 scraped: 2026-03-06T21:23:20.064492
 ---
 
-# Конечные точки Dynatrace OTLP API
-
-
 * Latest Dynatrace
 * Объяснение
-* Чтение: 8 мин.
-* Обновлено 9 января 2026 г.
 
 [OpenTelemetry Protocol (OTLP)](https://opentelemetry.io/docs/specs/otlp/) — это основной сетевой протокол для обмена телеметрическими данными между сервисами и приложениями, работающими на основе OpenTelemetry.
 

@@ -7,10 +7,6 @@ scraped: 2026-03-05T21:29:53.332272
 # Мониторинг JMX-метрик на z/OS
 
 
-* Последняя версия Dynatrace
-* Чтение: 5 мин
-* Опубликовано 6 сентября 2022
-
 JMX (Java Management Extensions) -- удобный инструмент для мониторинга приложений, написанных на Java. С помощью модуля кода OneAgent z/OS Java вы можете отслеживать любую метрику в вашей JVM, которая доступна через MBean.
 
 * Каждая пользовательская JMX-метрика, находящаяся под мониторингом, потребляет единицы данных Davis. Концепция [Включенных метрик на единицу хоста](../../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") не применима для мониторируемых LPAR на z/OS. Подробнее о единицах данных Davis см. [DDU для метрик](../../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").

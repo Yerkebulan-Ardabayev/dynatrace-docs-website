@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/clou
 scraped: 2026-03-05T21:31:07.446265
 ---
 
-# Варианты использования
-
-
 * Latest Dynatrace
-* Overview
 * 1-min read
-* Published Nov 26, 2024
 
 [### Настройка облака на основе данных
 

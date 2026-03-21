@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/adaptive-t
 scraped: 2026-03-06T21:34:53.354074
 ---
 
-# Концепции Adaptive Traffic Management
-
-
 * Latest Dynatrace
 * Explanation
 * 2-min read
-* Published Jan 26, 2026
 
 На этой странице описаны различные термины, связанные с Adaptive Traffic Management.
 

@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dyna
 scraped: 2026-03-06T21:30:05.309312
 ---
 
-# API управления подпиской Dynatrace Platform
-
-
-* Последняя версия Dynatrace
-* Справочник
-* Опубликовано 30 марта 2023 г.
-
 [### Список подписок
 
 Просмотр обзора ваших подписок.](dynatrace-platform-subscription-api/subscriptions/get-all.md "Список всех подписок Dynatrace Platform через API управления учётной записью.")[### Просмотр подписки

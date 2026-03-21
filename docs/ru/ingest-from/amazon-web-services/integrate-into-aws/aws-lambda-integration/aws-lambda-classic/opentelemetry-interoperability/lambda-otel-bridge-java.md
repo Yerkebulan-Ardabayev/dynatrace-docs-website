@@ -7,10 +7,7 @@ scraped: 2026-03-05T21:29:34.371827
 # Совместимость с OpenTelemetry в Java
 
 
-* Classic
-* Reference
 * 7 мин. чтения
-* Обновлено 19 сентября 2024 г.
 
 OneAgent версии 1.225+
 

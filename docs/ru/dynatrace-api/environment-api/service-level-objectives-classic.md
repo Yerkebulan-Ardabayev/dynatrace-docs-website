@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/service-lev
 scraped: 2026-03-05T21:30:11.623431
 ---
 
-# Классический API целей уровня обслуживания
-
-
-* Classic
-* Справочник
-* Обновлено 7 января 2025 г.
-
 Переключиться на SLO Service Public API
 
 Это классический API целей уровня обслуживания.

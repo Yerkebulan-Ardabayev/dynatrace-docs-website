@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/observe/application-observability/distrib
 scraped: 2026-03-06T21:12:10.619868
 ---
 
-# Приложение Distributed Tracing
-
-
 * Latest Dynatrace
 * Explanation
 * 6 мин. чтения
-* Обновлено 12 января 2026 г.
 
 ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing** расширяет возможности Dynatrace по анализу и фильтрации данных трассировки на уровне запросов и спанов. Благодаря расширенным параметрам фильтрации, таким как фасеты и функция группировки, вы можете легко исследовать данные и точно определять проблемы. Кроме того, ваш выбор сохраняется между взаимодействиями, что позволяет детализировать данные до информации об отдельной трассировке и выявлять первопричину, предотвращая сбои в ваших средах.
 

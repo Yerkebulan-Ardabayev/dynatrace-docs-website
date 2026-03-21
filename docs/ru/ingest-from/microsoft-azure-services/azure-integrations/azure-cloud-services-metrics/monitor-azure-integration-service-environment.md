@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-04T21:39:21.472534
 ---
 
-# Мониторинг Azure Integration Service Environment
-
-
 * Latest Dynatrace
-* Практическое руководство
-* Время чтения: 3 мин
-* Опубликовано 19 авг. 2020
 
 Dynatrace собирает метрики для нескольких предварительно выбранных пространств имён, включая Azure Integration Service Environment. Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на ваших дашбордах.
 

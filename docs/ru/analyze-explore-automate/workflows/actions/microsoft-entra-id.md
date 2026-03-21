@@ -9,7 +9,6 @@ scraped: 2026-03-05T21:39:12.282254
 
 * Latest Dynatrace
 * 5-min read
-* Updated on Jun 18, 2025
 
 Ваше окружение Dynatrace может интегрироваться с Microsoft Entra ID (ранее Azure Active Directory) в автоматизированных [рабочих процессах (workflows)](../../workflows.md "Automate IT processes with Dynatrace Workflows—react to events, schedule tasks, and connect services.").
 Microsoft Entra ID Connector ![Microsoft Entra ID Connector](https://dt-cdn.net/hub/app_icon_entra_id_new.png "Microsoft Entra ID Connector") позволяет использовать готовые действия в Workflows ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") для автоматизации импорта команд из Entra ID (по различным триггерам) для определения владения сущностями и других сценариев использования в Dynatrace.

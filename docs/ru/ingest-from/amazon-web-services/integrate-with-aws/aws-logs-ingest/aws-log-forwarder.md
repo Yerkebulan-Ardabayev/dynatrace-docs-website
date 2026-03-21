@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-06T21:32:20.716773
 ---
 
-# Мониторинг журналов с помощью AWS log forwarder
-
-
-* Classic
-* Практическое руководство
 * 13 минут чтения
-* Обновлено 08 мая 2024 г.
 * Устарело
 
 Прекращение поддержки AWS log forwarder

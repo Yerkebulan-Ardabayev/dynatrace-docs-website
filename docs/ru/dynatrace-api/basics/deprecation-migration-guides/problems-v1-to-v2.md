@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migratio
 scraped: 2026-03-06T21:38:12.631540
 ---
 
-# Миграция с Problems API v1 на Problems API v2
-
-
-* Справочник
-* Опубликовано 30 ноября 2022 г.
-
 [Problems API v1](../../environment-api/problems.md "Узнайте, что предлагает Dynatrace Problems v1 API.") был объявлен устаревшим в [версии Dynatrace 1.243](../../../whats-new/dynatrace-api/sprint-243.md "Список изменений для версии Dynatrace API 1.243"). Его заменой является [Problems API v2](../../environment-api/problems-v2.md "Узнайте, что предлагает Dynatrace Problems v2 API."). Мы рекомендуем выполнить миграцию на новый API при первой возможности.
 
 Миграция затрагивает URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также область действия токена для аутентификации запросов.

@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/observe/application-observability/distrib
 scraped: 2026-03-06T21:22:48.617165
 ---
 
-# Управление фасетами
-
-
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Published Jan 23, 2025
 
 Эта статья содержит информацию о том, как управлять фасетами, чтобы они соответствовали предпочтительному способу фильтрации в приложении Distributed Tracing.
 

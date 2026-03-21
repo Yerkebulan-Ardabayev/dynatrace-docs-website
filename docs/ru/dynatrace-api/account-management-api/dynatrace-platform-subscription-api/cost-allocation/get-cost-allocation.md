@@ -7,10 +7,6 @@ scraped: 2026-03-06T21:26:54.898889
 # Dynatrace Platform Subscription API — GET cost allocation
 
 
-* Последняя версия Dynatrace
-* Reference
-* Опубликовано 18 октября 2024 г.
-
 Возвращает данные об использовании Dynatrace Platform Subscription с разбивкой по полю распределения затрат.
 
 Запрос возвращает полезную нагрузку типа `application/json`.

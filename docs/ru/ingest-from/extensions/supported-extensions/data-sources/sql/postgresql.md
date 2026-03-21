@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensio
 scraped: 2026-03-04T21:32:21.031267
 ---
 
-# Управление расширениями PostgreSQL
-
-
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Updated on May 23, 2025
 
 Dynatrace предоставляет фреймворк, позволяющий расширить наблюдаемость вашего приложения за счёт данных, получаемых непосредственно со слоя сервера базы данных PostgreSQL, чтобы вы могли отслеживать влияние задач сервера базы данных на ваше приложение.
 

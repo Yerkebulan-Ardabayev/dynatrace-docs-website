@@ -7,10 +7,7 @@ scraped: 2026-03-06T21:22:13.621808
 # Управление подпиской и лицензией (DPS до апреля 2023 г.)
 
 
-* Последняя версия Dynatrace
 * Пояснение
-* Время чтения: 2 мин
-* Опубликовано 1 февраля 2022 г.
 
 Эта документация актуальна для лицензий Dynatrace Platform Subscription, заключённых до 26 апреля 2023 г.
 Информацию обо всех прочих лицензиях Dynatrace Platform Subscription см. в разделе [Лицензирование Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").

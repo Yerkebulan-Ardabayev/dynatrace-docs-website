@@ -10,7 +10,6 @@ scraped: 2026-03-05T21:30:55.602824
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Aug 31, 2023
 
 Dynatrace получает метрики из Azure Metrics API для Azure Container Apps Environment. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на своих дашбордах.
 

@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/manage/identity-access-management/permiss
 scraped: 2026-03-06T21:22:27.798228
 ---
 
-# Работа с политиками
-
-
 * Latest Dynatrace
 * Explanation
 * 9-min read
-* Updated on Aug 20, 2025
 
 Используйте управление идентификацией и доступом Dynatrace (IAM) для управления доступом пользователей к функциям Dynatrace.
 

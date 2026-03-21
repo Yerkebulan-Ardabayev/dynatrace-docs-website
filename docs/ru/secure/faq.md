@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/secure/faq
 scraped: 2026-03-06T21:17:07.976353
 ---
 
-# Часто задаваемые вопросы по Application Security
-
-
 * Latest Dynatrace
 * Troubleshooting
-* Обновлено 23 февраля 2026 г.
 
 Ниже вы найдёте ответы на наиболее часто задаваемые вопросы о Dynatrace Application Security, сгруппированные по темам.
 

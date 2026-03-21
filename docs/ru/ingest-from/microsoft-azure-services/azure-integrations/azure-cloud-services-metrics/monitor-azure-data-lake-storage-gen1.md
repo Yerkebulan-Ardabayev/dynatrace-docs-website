@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-04T21:34:32.031795
 ---
 
-# Мониторинг Azure Data Lake Storage Gen1
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Jul 27, 2020
 
 Dynatrace получает метрики из Azure Metrics API для Azure Data Lake Storage Gen1. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики на несколько измерений и создавать пользовательские диаграммы, которые можно закреплять на дашбордах.
 

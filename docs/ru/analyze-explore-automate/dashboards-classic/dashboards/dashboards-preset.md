@@ -7,11 +7,6 @@ scraped: 2026-03-06T21:37:38.897755
 # Предустановленные дашборды Dynatrace
 
 
-* Classic
-* Практическое руководство
-* Чтение: 4 мин
-* Опубликовано 4 февр. 2021
-
 [Dashboards Classic](../../dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic.")
 
 Эта страница относится к классическим дашбордам, созданным с помощью функциональности ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**, интегрированной с Dynatrace Classic.

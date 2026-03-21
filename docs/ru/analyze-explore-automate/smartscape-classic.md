@@ -7,10 +7,6 @@ scraped: 2026-03-06T21:09:51.745796
 # Визуализация вашей среды с помощью Smartscape Classic
 
 
-* Classic
-* Чтение: 8 мин
-* Опубликовано 19.07.2017
-
 ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic** — инструмент визуализации топологии среды, работающий практически в реальном времени, является одной из самых мощных возможностей Dynatrace.
 
 ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") **Smartscape Classic** с автоматическим обнаружением обеспечивает быструю и эффективную визуализацию всех топологических зависимостей в вашей инфраструктуре, процессах и сервисах:

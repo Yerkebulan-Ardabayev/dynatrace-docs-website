@@ -4,11 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-an
 scraped: 2026-03-05T21:27:08.699035
 ---
 
-# Process groups API - Получение всех групп процессов (GET)
-
-
-* Справочник
-* Обновлено 22 мар. 2023
 * Устаревший
 
 Этот API устарел. Используйте [Monitored entities API](../../entity-v2.md "Узнайте о Dynatrace Monitored entities API.") вместо него. Дополнительную информацию о переходе на новый API можно найти в [руководстве по миграции](../../../basics/deprecation-migration-guides/topology-v1-to-entity-v2.md "Перенесите вашу автоматизацию на Monitored entities API.").

@@ -10,7 +10,6 @@ scraped: 2026-03-06T21:28:23.371162
 * Latest Dynatrace
 * Explanation
 * 2-min read
-* Published Feb 02, 2026
 
 Предварительная обработка JSON-логов обнаруживает управляющие символы в строках JSON и преобразует их в структурированные объекты JSON для дальнейшей обработки и более глубокого анализа. Затем вы можете запрашивать неэкранированное JSON-поле с помощью функций DQL [jsonField](../../../../platform/grail/dynatrace-query-language/functions/string-functions.md#jsonField "A list of DQL string functions.") и [jsonPath](../../../../platform/grail/dynatrace-query-language/functions/string-functions.md#jsonPath "A list of DQL string functions.") для точного извлечения и фильтрации атрибутов логов.
 

@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:18:51.882688
 ---
 
-# Обновление OneAgent на PPC BE Linux
-
-
 * Latest Dynatrace
 * 1-min read
-* Published Aug 21, 2019
 
 Чтобы обновить установленный экземпляр OneAgent на PPC BE, следуйте приведённым ниже инструкциям:
 

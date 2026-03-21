@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/technology-support/known-solu
 scraped: 2026-03-05T21:25:51.745190
 ---
 
-# Известные решения и обходные пути
-
-
-* Последняя версия Dynatrace
-* Время чтения: 14 мин
-* Обновлено 26 фев. 2024
-
 На этой странице описаны решённые проблемы и решения проблем, о которых сообщалось в службу поддержки Dynatrace.
 
 ## OneAgent препятствует запуску Elasticsearch 8.18+

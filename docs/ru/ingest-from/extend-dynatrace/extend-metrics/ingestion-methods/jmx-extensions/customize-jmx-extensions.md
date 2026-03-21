@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metri
 scraped: 2026-03-03T21:25:03.690347
 ---
 
-# Настройка расширений JMX
-
-
 * Latest Dynatrace
-* Чтение: 10 мин
-* Опубликовано 16 февраля 2020 г.
 
 Расширения JMX определяются JSON-файлами.
 

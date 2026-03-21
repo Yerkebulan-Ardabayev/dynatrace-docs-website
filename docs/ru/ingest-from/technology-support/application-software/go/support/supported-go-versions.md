@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/technology-support/applicatio
 scraped: 2026-03-05T21:26:10.579111
 ---
 
-# Поддерживаемые версии Go
-
-
 * Latest Dynatrace
-* Чтение: 7 мин.
-* Обновлено 2 марта 2026 г.
 
 При выпуске каждой новой мажорной версии Go Dynatrace добавляет поддержку этой версии. Поддержка каждой минорной версии также добавляется -- подробнее см. в [Матрице версий](#go-version-matrix).
 

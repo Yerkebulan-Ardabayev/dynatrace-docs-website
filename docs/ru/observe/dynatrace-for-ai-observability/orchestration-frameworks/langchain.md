@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/or
 scraped: 2026-03-06T21:14:13.335634
 ---
 
-# LangChain
-
-
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Published Oct 22, 2024
 
 LangChain — это фреймворк, предназначенный для создания приложений, использующих большие языковые модели (LLM). Он предоставляет набор инструментов и компонентов, упрощающих интеграцию LLM в различные приложения и позволяющих разработчикам создавать сложные рабочие процессы и функциональные возможности.
 

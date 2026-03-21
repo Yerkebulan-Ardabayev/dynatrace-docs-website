@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/data-flow
 scraped: 2026-03-06T21:15:54.139751
 ---
 
-# Поток данных в OpenPipeline
-
-
 * Latest Dynatrace
 * Пояснение
-* Чтение: 6 мин
-* Обновлено 10 декабря 2025 г.
 
 С помощью OpenPipeline вы можете принимать данные на платформу Dynatrace из широкого разнообразия форматов и провайдеров через источники приема. Затем данные маршрутизируются в конвейеры для обработки и сохраняются в бакетах Grail.
 

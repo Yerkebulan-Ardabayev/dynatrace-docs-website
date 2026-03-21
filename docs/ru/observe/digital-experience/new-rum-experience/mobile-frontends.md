@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experi
 scraped: 2026-03-06T21:30:10.639111
 ---
 
-# Мобильные фронтенды
-
-
 * Latest Dynatrace
-* Overview
 * 1-min read
-* Updated on Jan 08, 2026
 
 Мобильные фронтенды — это нативные приложения для iOS и Android, а также кросс-платформенные приложения, созданные с помощью React Native, Flutter и .NET MAUI. Ниже вы найдёте всё необходимое для мониторинга вашего мобильного фронтенда — от руководств по настройке до расширенных параметров конфигурации.
 

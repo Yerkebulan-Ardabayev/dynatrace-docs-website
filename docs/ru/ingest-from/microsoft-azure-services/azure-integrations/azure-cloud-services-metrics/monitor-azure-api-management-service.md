@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-03T21:30:14.498339
 ---
 
-# Мониторинг Azure API Management Service
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 2 минуты
-* Обновлено 15 ноября 2023 г.
-
 Информацию о различиях между классическими сервисами и другими сервисами см. в разделе [Миграция с классических (ранее «встроенных») сервисов Azure на облачные сервисы](../azure-monitoring-guide/azure-migration-guide.md "Migrate Azure classic services to their new versions.").
 
 Dynatrace принимает метрики из Azure Metrics API для Azure API Management Service. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики на несколько измерений и создавать пользовательские диаграммы, которые можно закреплять на информационных панелях.

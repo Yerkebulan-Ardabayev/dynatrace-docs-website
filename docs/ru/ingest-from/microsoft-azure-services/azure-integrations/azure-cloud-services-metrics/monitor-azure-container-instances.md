@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:27:34.980862
 ---
 
-# Мониторинг Azure Container Instances
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Jul 27, 2020
 
 Dynatrace получает метрики из Azure Metrics API для Azure Container Instances. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики на несколько измерений и создавать пользовательские диаграммы, которые можно закреплять на дашбордах.
 

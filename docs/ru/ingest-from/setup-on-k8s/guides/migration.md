@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration
 scraped: 2026-03-02T21:23:33.445267
 ---
 
-# Руководства по миграции
-
-
 * Latest Dynatrace
 * 1-min read
-* Updated on Sep 05, 2025
 
 Изучите пошаговые руководства по миграции, которые помогут вам перейти между различными конфигурациями мониторинга Dynatrace.
 

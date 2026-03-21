@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/data
 scraped: 2026-03-04T21:31:47.373622
 ---
 
-# Мониторинг базы данных PostgreSQL
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Обновлено 23 февраля 2026 г.
-
 Мониторинг баз данных PostgreSQL с помощью Dynatrace Extension Framework для сбора данных о производительности и понимания влияния базы данных на ваши приложения.
 
 ## Предварительные требования

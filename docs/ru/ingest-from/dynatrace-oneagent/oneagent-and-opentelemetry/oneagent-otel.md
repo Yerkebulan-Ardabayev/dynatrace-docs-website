@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-a
 scraped: 2026-03-06T21:16:25.986356
 ---
 
-# Использование OneAgent с данными OpenTelemetry
-
-
 * Latest Dynatrace
 * How-to guide
 * 3-min read
-* Published Sep 30, 2025
 
 Существует два способа использования OneAgent с OpenTelemetry:
 

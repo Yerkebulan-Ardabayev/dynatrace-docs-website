@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/observe/application-observability/distrib
 scraped: 2026-03-06T21:12:03.627298
 ---
 
-# Приём трейсов
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 2 мин
-* Опубликовано 7 февраля 2025 г.
-
 Вы можете использовать OneAgent или интеграцию с OpenTelemetry для добавления трейсов в Dynatrace, включая данные трейсов из специальных расширений для сторонних систем, таких как Serverless-функции и Adobe Experience Manager (AEM) Cloud Service. Это обеспечивает сбор подробных данных трейсов для анализа поведения и производительности ваших приложений.
 
 * OneAgent

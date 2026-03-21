@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/deployment/
 scraped: 2026-03-05T21:38:44.834218
 ---
 
-# Deployment API — Просмотр конфигурации модуля процессов для OneAgent
-
-
-* Reference
-* Published Mar 25, 2022
-
 Запрос возвращает полезную нагрузку типа `application/json`.
 
 |  |  |  |

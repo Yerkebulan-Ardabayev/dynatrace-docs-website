@@ -10,7 +10,6 @@ scraped: 2026-03-06T21:27:46.855290
 * Latest Dynatrace
 * How-to guide
 * 3-min read
-* Updated on Mar 31, 2025
 
 Dynatrace version 1.240+ OneAgent version 1.193+
 

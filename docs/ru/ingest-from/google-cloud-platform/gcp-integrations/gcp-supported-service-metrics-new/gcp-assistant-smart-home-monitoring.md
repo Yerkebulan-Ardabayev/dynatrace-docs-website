@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-int
 scraped: 2026-03-06T21:27:53.858292
 ---
 
-# Мониторинг Google Cloud Assistant Smart Home
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Jan 17, 2022
 
 Интеграция Dynatrace с Google Cloud использует данные, собранные из Google Operation API, для непрерывного мониторинга работоспособности и производительности сервисов Google Cloud. Объединяя все актуальные данные в панелях мониторинга, она также обеспечивает оповещения и отслеживание событий.
 

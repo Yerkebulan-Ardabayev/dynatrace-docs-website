@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/secure/vulnerabilities
 scraped: 2026-03-06T21:34:35.874049
 ---
 
-# Уязвимости
-
-
 * Latest Dynatrace
-* Приложение
-* Обновлено 4 февраля 2026 г.
 
 О приложении
 
@@ -89,22 +84,17 @@ scraped: 2026-03-06T21:34:35.874049
 * Объяснение
 * Концепции, специфичные для приложения Dynatrace Vulnerabilities.](vulnerabilities/concepts.md)[02Управление результатами
 
-* Практическое руководство
 * Фильтрация, форматирование и сортировка для поиска релевантной информации об уязвимостях.](vulnerabilities/manage-results.md)[03Устранение уязвимостей
 
-* Практическое руководство
 * Устранение уязвимостей и оптимизация действий по устранению.](vulnerabilities/address-remediation.md)[04Приоритизация уязвимостей
 
-* Практическое руководство
 * Приоритизация уязвимостей сторонних компонентов, уровня кода и среды выполнения.](vulnerabilities/prioritize.md)[05Изучение результатов
 
-* Практическое руководство
 * Просмотр, фильтрация и анализ результатов обнаружения уязвимостей из Dynatrace и внешних инструментов безопасности.](vulnerabilities/explore-findings.md)[06Оценка охвата
 
 * Объяснение
 * Оцените процесс RVA и охват хостов в вашей среде с помощью панели мониторинга Vulnerability coverage.](vulnerabilities/assess-coverage.md)[07Интеграция аналитики уязвимостей с приложениями Dynatrace и внешними приложениями
 
-* Практическое руководство
 * Навигация между приложениями Dynatrace, обмен данными об уязвимостях с внешними системами и автоматизация рабочих процессов устранения.](vulnerabilities/collaborate-with-apps.md)
 
 * [Introducing the Dynatrace Vulnerability feed: Accurate, transparent, and threat-aware](https://www.dynatrace.com/news/blog/introducing-the-dynatrace-vulnerability-feed-accurate-transparent-and-threat-aware/)

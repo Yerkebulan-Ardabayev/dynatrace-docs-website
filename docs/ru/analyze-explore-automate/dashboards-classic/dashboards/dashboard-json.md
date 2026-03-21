@@ -7,11 +7,6 @@ scraped: 2026-03-06T21:31:52.995561
 # Редактирование JSON дашборда Dynatrace
 
 
-* Classic
-* Руководство
-* Чтение: 3 мин
-* Опубликовано 24 сент. 2020
-
 [Dashboards Classic](../../dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic.")
 
 Эта страница относится к классическим дашбордам, созданным с использованием функциональности ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**, интегрированной с Dynatrace Classic.

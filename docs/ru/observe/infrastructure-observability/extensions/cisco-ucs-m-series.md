@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/exte
 scraped: 2026-03-06T21:26:37.150221
 ---
 
-# Расширение Cisco UCS M-Series
-
-
 * Последняя Dynatrace
 * Расширение
-* Опубликовано 21 февраля 2025 г.
 
 Получите информацию о ваших устройствах Cisco UCS M-Series.
 

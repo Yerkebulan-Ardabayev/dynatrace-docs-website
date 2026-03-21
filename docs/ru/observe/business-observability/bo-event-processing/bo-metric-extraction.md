@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-p
 scraped: 2026-03-03T21:28:39.896650
 ---
 
-# Извлечение метрик бизнес-событий через классический конвейер
-
-
 * Latest Dynatrace
 * How-to guide
 * 3-min read
-* Updated on Sep 06, 2023
 
 С помощью извлечения метрик бизнес-событий через классический конвейер вы можете создавать собственные бизнес-метрики. Это позволяет:
 

@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:18:17.162329
 ---
 
-# Мониторинг Azure Spring Apps
-
-
 * Latest Dynatrace
-* Практическое руководство
-* Чтение: 4 мин
-* Опубликовано 16 июля 2021 г.
 
 ## Возможности
 

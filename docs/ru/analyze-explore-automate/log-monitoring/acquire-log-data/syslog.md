@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/a
 scraped: 2026-03-05T21:37:13.258846
 ---
 
-# Получение Syslog с помощью ActiveGate (Logs Classic)
-
-
-* Classic
-* Руководство
 * 4 мин на чтение
-* Обновлено 08 октября 2025 г.
 * Предварительная версия
 
 Предварительная версия ActiveGate версии 1.293+ Log Monitoring Classic
@@ -523,7 +517,7 @@ Syslog, сокращение от system logging protocol (протокол си
 
    `*.*` указывает демону пересылать все сообщения на указанный ActiveGate, прослушивающий указанный порт и IP-адрес. `<ActiveGate host IP>` должен указывать на IP-адрес ActiveGate с включенным syslog.
 
-   Для получения дополнительных примеров, обратитесь к [Syslog via OpenTelemetry Collectorï»¿](https://www.dynatrace.com/hub/detail/syslog-via-opentelemetry-collector/)
+   Для получения дополнительных примеров, обратитесь к [Syslog via OpenTelemetry Collector](https://www.dynatrace.com/hub/detail/syslog-via-opentelemetry-collector/)
 6. **Убедитесь, что ActiveGate получает события syslog**.
 
    После того, как ваши производители syslog начнут передавать записи журналов, откройте последний файл `dynatracesourceotelcollector.*.log` в `/var/lib/dynatrace/remotepluginmodule/agent/datasources/otelSyslog`.
@@ -582,7 +576,7 @@ Syslog, сокращение от system logging protocol (протокол си
    [otelSyslog][otelSyslog][37443][err]Flags: 0
    ```
 
-Для получения дополнительной информации об устранении неполадок приемника syslog, обратитесь к [Collector troubleshootingï»¿](https://opentelemetry.io/docs/collector/troubleshooting/).
+Для получения дополнительной информации об устранении неполадок приемника syslog, обратитесь к [Collector troubleshooting](https://opentelemetry.io/docs/collector/troubleshooting/).
 
 ## Следующие шаги
 
@@ -592,5 +586,5 @@ Syslog, сокращение от system logging protocol (протокол си
 
 Посетите Dynatrace Community для получения руководств по устранению неполадок, а также ознакомьтесь с [Устранение неполадок мониторинга журналов (Logs Classic)](../lmc-troubleshooting.md "Устраните проблемы, связанные с настройкой и конфигурацией Log Monitoring Classic.").
 
-* [Руководство по устранению неполадок приема Syslog через ActiveGateï»¿](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-via-ActiveGate-Troubleshooting-Guide/ta-p/282718)
-* [Устранение неполадок приема Syslogï»¿](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-Troubleshooting/ta-p/264112)
+* [Руководство по устранению неполадок приема Syslog через ActiveGate](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-via-ActiveGate-Troubleshooting-Guide/ta-p/282718)
+* [Устранение неполадок приема Syslog](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-Troubleshooting/ta-p/264112)

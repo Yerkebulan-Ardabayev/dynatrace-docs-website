@@ -7,8 +7,6 @@ scraped: 2026-03-05T21:27:14.657488
 # Hosts API — GET хоста
 
 
-* Справочник
-* Обновлено 22 марта 2023
 * Устарело
 
 Этот API устарел. Используйте [Monitored entities API](../../entity-v2.md "Узнайте о Dynatrace Monitored entities API.") вместо него. Более подробную информацию о переходе на новый API можно найти в [руководстве по миграции](../../../basics/deprecation-migration-guides/topology-v1-to-entity-v2.md "Перенос автоматизации на Monitored entities API.").

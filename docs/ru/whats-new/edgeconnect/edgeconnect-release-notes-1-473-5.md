@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/whats-new/edgeconnect/edgeconnect-release
 scraped: 2026-03-06T21:25:24.387263
 ---
 
-# Примечания к выпуску EdgeConnect версии 1.473.5
-
-
-* Последняя версия Dynatrace
 * Примечания к выпуску
-* Опубликовано 26 янв. 2026
 
 Дата выпуска: 26 янв. 2026
 

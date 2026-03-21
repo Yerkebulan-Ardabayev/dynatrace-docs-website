@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/manage/identity-access-management/access-
 scraped: 2026-03-05T21:27:58.397956
 ---
 
-# Классические токены доступа
-
-
-* Classic
-* Справочник
-* Чтение займёт 2 минуты
-* Обновлено 25 октября 2023 г.
-
 В этой статье рассматриваются токены доступа, используемые в предыдущих версиях Dynatrace для аутентификации в классических API конфигурации и окружения. Для работы с последней версией Dynatrace см. разделы [Токены платформы](platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.") и [OAuth-клиенты](oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
 
 Любой внешний доступ к вашей среде мониторинга Dynatrace основывается на двух элементах: [идентификаторе окружения](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") и *токене доступа*.

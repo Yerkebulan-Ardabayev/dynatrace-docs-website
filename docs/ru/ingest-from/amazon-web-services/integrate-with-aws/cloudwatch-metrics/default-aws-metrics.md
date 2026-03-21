@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-04T21:29:09.114692
 ---
 
-# Классические (ранее «встроенные») метрики AWS
-
-
-* Classic
-* Справочник
-* Чтение: 1 мин.
-* Обновлено 29 января 2024 г.
-
 Информацию о различиях между классическими сервисами и другими сервисами см. в разделе [Миграция с классических (ранее «встроенных») сервисов AWS на облачные сервисы](aws-migration-guide.md "Миграция классических сервисов AWS на их новые версии.").
 
 В таблице ниже перечислены все метрики AWS, которые Dynatrace собирает по умолчанию при включении [мониторинга AWS](../../../../observe/infrastructure-observability/cloud-platform-monitoring/aws-monitoring.md "Мониторинг AWS с помощью Dynatrace").

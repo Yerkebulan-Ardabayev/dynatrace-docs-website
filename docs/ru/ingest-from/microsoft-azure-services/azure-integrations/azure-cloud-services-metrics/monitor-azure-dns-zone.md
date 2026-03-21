@@ -6,12 +6,9 @@ scraped: 2026-03-04T21:36:09.114889
 
 # Azure DNS Zone monitoring
 
-# Мониторинг Azure DNS Zone
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Sep 22, 2020
 
 Dynatrace получает метрики из Azure Metrics API для Azure DNS Zone. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно прикреплять к своим дашбордам.
 

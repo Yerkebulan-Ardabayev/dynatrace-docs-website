@@ -4,11 +4,7 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application
 scraped: 2026-03-03T21:23:37.224696
 ---
 
-# Атаки API
-
-
 * Справка
-* Опубликовано 30 августа 2023 г.
 
 [### Список атак](attacks/get-attacks.md "Просмотр списка атак через Dynatrace API.")[### Просмотр деталей атаки](attacks/get-attack-details.md "Просмотр деталей атаки через Dynatrace API.")
 

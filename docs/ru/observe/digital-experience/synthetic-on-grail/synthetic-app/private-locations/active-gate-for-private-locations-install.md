@@ -7,10 +7,6 @@ scraped: 2026-03-06T21:27:09.113702
 # Установка ActiveGate с поддержкой Synthetic
 
 
-* Последняя версия Dynatrace
-* Практическое руководство
-* Обновлено 11 февраля 2026 г.
-
 ActiveGate с поддержкой Synthetic используется исключительно для запуска синтетических мониторов. При чистой установке ActiveGate для целей синтетического мониторинга все остальные функции ActiveGate отключаются, включая связь с OneAgent. Убедитесь, что хост, на котором устанавливается ActiveGate, имеет доступ к интернету.
 
 Установить ActiveGate с поддержкой Synthetic можно с помощью мастера **Install ActiveGate** в разделе ![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") **Discovery & Coverage**.

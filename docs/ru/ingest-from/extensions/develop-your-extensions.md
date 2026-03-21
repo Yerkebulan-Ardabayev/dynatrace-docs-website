@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-exten
 scraped: 2026-03-06T21:24:25.042127
 ---
 
-# Разработка собственных расширений
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
 * 2 минуты на чтение
-* Опубликовано 16 июня 2025 г.
 
 Dynatrace может принимать данные из [сотен инструментов](https://www.dynatrace.com/hub/), что означает:
 

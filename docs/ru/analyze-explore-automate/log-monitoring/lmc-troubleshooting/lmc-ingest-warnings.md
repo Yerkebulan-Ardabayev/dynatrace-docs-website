@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/l
 scraped: 2026-03-05T21:30:37.409638
 ---
 
-# Предупреждения при ингесте журналов (Logs Classic)
-
-
-* Classic
-* Обзор
 * 2-минутное чтение
-* Опубликовано 10 октября 2023 г.
 
 Мониторинг журналов Classic
 

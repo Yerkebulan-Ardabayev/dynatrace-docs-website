@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/observe/business-observability/end-to-end
 scraped: 2026-03-06T21:14:48.552772
 ---
 
-# Сквозной пример бизнес-событий
-
-
 * Latest Dynatrace
 * Tutorial
 * 7-min read
-* Updated on Jan 28, 2026
 
 Этот сценарий использования показывает, как можно захватить данные, настроить правило обработки и как эти данные можно далее анализировать и визуализировать.
 

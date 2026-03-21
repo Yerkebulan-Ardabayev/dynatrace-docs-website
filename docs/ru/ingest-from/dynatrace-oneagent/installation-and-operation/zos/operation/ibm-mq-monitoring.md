@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:37:49.354494
 ---
 
-# Настройка трассировки IBM MQ на z/OS
-
-
-* Последняя версия Dynatrace
-* Время чтения: 1 мин
-* Обновлено 16 мая 2022 г.
-
 С помощью Dynatrace вы можете обеспечить наблюдаемость для IBM MQ на z/OS:
 
 * Модули CICS, IMS и z/OS Java могут трассировать сообщения в ваших приложениях, инициированные клиентами IBM MQ, включая их сервисы-производители и сервисы-потребители на разных уровнях. Подробнее об очередях сообщений в Dynatrace см. в разделе [Очереди](../../../../../observe/infrastructure-observability/queues.md "Monitor and analyze your message queues with Dynatrace.").

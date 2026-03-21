@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace
 scraped: 2026-03-06T21:10:28.052302
 ---
 
-# Расширение Dynatrace
-
-
 * Latest Dynatrace
 * 3 мин чтения
-* Опубликовано 05 марта 2018
 
 Dynatrace — это открытая и расширяемая платформа. Вы можете дополнить данные наблюдаемости, собираемые из коробки, данными, предоставляемыми стандартами и фреймворками наблюдаемости, такими как OpenTelemetry и Prometheus. Кроме того, вы можете расширить аналитические возможности Dynatrace, [расширяя топологию Smartscape](extend-dynatrace/extend-topology.md "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to.") и [доменные рабочие процессы и экраны сущностей](extend-dynatrace/extend-ui.md "Extend the Dynatrace web UI using entity-tailored unified analysis pages.") с помощью [расширений](extensions.md "Learn how to create and manage Dynatrace Extensions."). Вы также можете экспортировать данные в сторонние системы через [API](../dynatrace-api.md "Find out what you need to use the Dynatrace API.") и [интеграции с системами уведомлений о проблемах](../analyze-explore-automate/notifications-and-alerting/problem-notifications.md "Learn how to integrate third-party problem notification systems with Dynatrace.").
 

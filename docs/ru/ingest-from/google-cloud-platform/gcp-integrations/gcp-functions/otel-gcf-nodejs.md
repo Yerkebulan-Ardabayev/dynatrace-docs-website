@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-int
 scraped: 2026-03-04T21:27:45.484805
 ---
 
-# Трассировка Google Cloud Functions с помощью OpenTelemetry JavaScript
-
-
 * Latest Dynatrace
-* Руководство
 * 8 мин. чтения
-* Обновлено 13 ноября 2023
 
 Это руководство показывает, как инструментировать Google Cloud Functions с помощью [OpenTelemetry JS](https://github.com/open-telemetry/opentelemetry-js) и экспортировать трейсы в Dynatrace. Чтобы узнать больше о том, как Dynatrace работает с OpenTelemetry, см. [OpenTelemetry и Dynatrace](../../../opentelemetry.md "Узнайте, как интегрировать и принимать данные OpenTelemetry (трейсы, метрики и логи) в Dynatrace.").
 

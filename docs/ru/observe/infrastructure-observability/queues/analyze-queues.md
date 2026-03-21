@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queu
 scraped: 2026-03-05T21:39:29.621233
 ---
 
-# Анализ очередей
-
-
-* Classic
 * How-to guide
 * 5-min read
-* Updated on Dec 28, 2022
 
 Используйте Dynatrace для получения полной видимости служб производителей и потребителей, подключённых к очередям и топикам, а также для упрощения устранения неполадок в асинхронных потоках коммуникации.
 

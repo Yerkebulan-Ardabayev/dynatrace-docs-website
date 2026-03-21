@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment
 scraped: 2026-03-06T21:18:13.543710
 ---
 
-# Развертывание
-
-
 * Latest Dynatrace
 * 6-min read
-* Updated on Jan 28, 2026
 
 Dynatrace предоставляет гибкий подход к наблюдаемости Kubernetes, позволяя выбирать необходимый уровень наблюдаемости для ваших кластеров Kubernetes. На этой странице представлен обзор и пошаговое руководство по рекомендуемым вариантам для обеспечения ваших потребностей в наблюдаемости Kubernetes.
 Все варианты развертывания на этой странице используют [Dynatrace Operator](https://github.com/Dynatrace/dynatrace-operator). Подробную документацию и варианты для основных дистрибутивов Kubernetes см. в разделе [Дистрибутивы](deployment/supported-technologies.md "Overview of different configurations for all major Kubernetes distributions.").

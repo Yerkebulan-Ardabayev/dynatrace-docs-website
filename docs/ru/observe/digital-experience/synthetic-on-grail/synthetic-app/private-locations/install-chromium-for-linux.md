@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-g
 scraped: 2026-03-06T21:31:26.009069
 ---
 
-# Установка и обновление Chromium для Linux
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Обновлено 11 февраля 2026 г.
-
 Если [управляемая установка через веб-интерфейс](active-gate-for-private-locations-install.md#ui-guided-browser-installation "Узнайте, как установить ActiveGate с поддержкой Synthetic.") завершается неудачей или вы предпочитаете самостоятельно подготовить хост для движка Synthetic, вы можете установить Chromium и другие зависимости [вручную](#manual) или из [пользовательского репозитория](#custom-repo).
 
 ## Установка браузера и зависимостей вручную из S3

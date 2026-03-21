@@ -10,7 +10,6 @@ scraped: 2026-03-04T21:37:03.569424
 * Latest Dynatrace
 * Explanation
 * 6-min read
-* Updated on May 22, 2025
 
 AppEngine Functions — это серверная часть вашего приложения.
 Они написаны на TypeScript и выполняются в [среде выполнения Dynatrace JavaScript](https://developer.dynatrace.com/reference/javascript-runtime/).

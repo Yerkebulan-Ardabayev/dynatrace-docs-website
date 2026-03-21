@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cas
 scraped: 2026-03-06T21:23:16.645715
 ---
 
-# Создание метрики журнала
-
-
 * Latest Dynatrace
 * Tutorial
 * 3-min read
-* Published Apr 24, 2023
 
 Dynatrace Log Management and Analytics даёт возможность не только просматривать и анализировать журналы, но и создавать метрики на основе данных журналов и использовать их в Dynatrace так же, как любые другие метрики. Вы можете добавлять их на панели управления, включать в анализ и даже создавать пользовательские оповещения.
 

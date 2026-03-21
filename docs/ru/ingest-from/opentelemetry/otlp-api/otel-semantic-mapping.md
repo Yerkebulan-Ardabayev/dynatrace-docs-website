@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api/otel-s
 scraped: 2026-03-06T21:35:37.469462
 ---
 
-# Семантическое сопоставление OpenTelemetry и Dynatrace
-
-
-* Последняя версия Dynatrace
-* Справочник
-* Чтение: 2 мин
-* Опубликовано 8 янв. 2026 г.
-
 Dynatrace автоматически сопоставляет семантические соглашения OpenTelemetry со [Словарём семантики Dynatrace](../../../semantic-dictionary.md "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.").
 
 Это сопоставление обеспечивает единообразную интерпретацию данных во всём стеке наблюдаемости и позволяет приложениям, аналитике и функциям визуализации Dynatrace работать с инструментацией OpenTelemetry.

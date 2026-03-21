@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/marke
 scraped: 2026-03-03T21:30:58.689094
 ---
 
-# Установка дополнения Dynatrace Operator для AWS Elastic Kubernetes Service (AWS EKS)
-
-
-* Последняя версия Dynatrace
-* Чтение: 3 минуты
-* Опубликовано 16 января 2024 г.
-
 Для использования дополнения Dynatrace Operator для AWS Elastic Kubernetes Service (AWS EKS) необходимо установить дополнение, а затем подключить EKS к вашей среде.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")

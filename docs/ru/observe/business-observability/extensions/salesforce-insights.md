@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/business-observability/extensions
 scraped: 2026-03-06T21:14:39.366787
 ---
 
-# Salesforce Insights
-
-
-* Последняя версия Dynatrace
 * Расширение
 * 12 мин чтения
-* Обновлено 06 окт. 2025 г.
 
 Salesforce Insights позволяет администраторам Salesforce и командам ИТ-операций отслеживать свою среду Salesforce.
 

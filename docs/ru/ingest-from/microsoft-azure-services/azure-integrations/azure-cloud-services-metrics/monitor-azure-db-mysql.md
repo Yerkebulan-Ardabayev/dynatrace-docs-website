@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:31:42.937574
 ---
 
-# Мониторинг Azure Database for MySQL
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение займёт 2 мин
-* Опубликовано 25 июня 2020 г.
-
 Уведомление об устаревании
 
 16 сентября 2024 года Azure Database for MySQL будет выведена из эксплуатации. Azure представила новый сервис, см. [Мониторинг Azure Database for MySQL Flexible Servers](monitor-azure-db-mysql-flexible-servers.md "Мониторинг Azure DB для MySQL Flexible Servers и просмотр доступных метрик.").

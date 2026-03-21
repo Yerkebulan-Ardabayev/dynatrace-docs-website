@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experi
 scraped: 2026-03-05T21:30:50.126179
 ---
 
-# Связь пользовательских взаимодействий с функциями и UI-компонентами
-
-
 * Последняя Dynatrace
-* Практическое руководство
-* Обновлено 3 марта 2026 г.
 
 Ранний доступ
 

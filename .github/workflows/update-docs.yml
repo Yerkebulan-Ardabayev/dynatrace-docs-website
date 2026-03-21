@@ -105,7 +105,16 @@ jobs:
             echo "committed=true" >> $GITHUB_OUTPUT
           fi
 
-      # ---------- STAGE 4: Create GitHub Issue ----------
+      # ---------- STAGE 4: Create GitHub Issue with notification ----------
+      - name: Ensure labels exist
+        if: steps.detect.outputs.total_changes != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create "translation" --description "Requires translation" --color "0e8a16" 2>/dev/null || true
+          gh label create "documentation" --description "Documentation changes" --color "0075ca" 2>/dev/null || true
+          gh label create "automated" --description "Created by CI pipeline" --color "d4c5f9" 2>/dev/null || true
+
       - name: Create translation issue
         if: steps.detect.outputs.total_changes != '0'
         env:
@@ -124,18 +133,25 @@ jobs:
             BODY="Обнаружено $TOTAL изменений: $NEW новых, $UPDATED обновлённых статей."
           fi
 
+          # Append notification footer
+          BODY="${BODY}
+
+          ---
+          🔔 **Уведомление:** Обнаружены изменения в английской документации.
+          📊 Новых: ${NEW} | Обновлённых: ${UPDATED} | Всего: ${TOTAL}
+          🕐 Дата синхронизации: ${DATE}
+          🤖 Создано автоматически пайплайном sync-docs."
+
+          # Create issue with labels and assign to repo owner
+          REPO_OWNER=$(echo "${{ github.repository }}" | cut -d'/' -f1)
           gh issue create \
             --title "📝 Перевод: $TOTAL статей требуют перевода ($DATE)" \
             --body "$BODY" \
-            --label "translation,documentation"  \
-            || echo "::warning::Could not create issue (labels may not exist). Creating without labels..."
-
-          # Retry without labels if failed
-          if [ $? -ne 0 ]; then
-            gh issue create \
+            --label "translation,documentation,automated" \
+            --assignee "$REPO_OWNER" \
+            || gh issue create \
               --title "📝 Перевод: $TOTAL статей требуют перевода ($DATE)" \
               --body "$BODY"
-          fi
 
       # ---------- STAGE 5: Build & Deploy ----------
       - name: Validate docs

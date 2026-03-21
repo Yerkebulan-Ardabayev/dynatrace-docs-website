@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-class
 scraped: 2026-03-05T21:27:29.970843
 ---
 
-# Настройки временного диапазона и зон управления панелей Dynatrace
-
-
 * Классическая версия
-* Практическое руководство
 * 2 мин. чтения
-* Опубликовано 19 июля 2017 г.
 
 [Dashboards Classic](../../dashboards-classic.md "Узнайте, как создавать, управлять и использовать классические панели Dynatrace.")
 

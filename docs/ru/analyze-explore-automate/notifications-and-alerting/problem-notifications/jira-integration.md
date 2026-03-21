@@ -7,10 +7,6 @@ scraped: 2026-03-06T21:11:34.918585
 # Отправка уведомлений Dynatrace в Jira
 
 
-* Classic
-* Чтение 3 мин
-* Обновлено 25 апреля 2024 г.
-
 Для расширенных возможностей и автоматизации рабочих процессов (например, для включения целевых уведомлений и устранения проблем) см. раздел [Workflows Connectors](../../workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
 
 Благодаря интеграции Dynatrace и Jira тикеты с задачами создаются автоматически для всех новых проблем, автоматически обнаруженных в ваших средах Dynatrace.

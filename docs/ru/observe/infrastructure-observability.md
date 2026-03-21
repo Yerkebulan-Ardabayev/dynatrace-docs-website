@@ -4,21 +4,12 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability
 scraped: 2026-03-06T21:10:29.766809
 ---
 
-# Наблюдаемость инфраструктуры
-
-
-* Последняя версия Dynatrace
-* Обзор
-* Время чтения: 1 мин.
-* Опубликовано 12 августа 2021 г.
-
 [![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations")
 
 #### Infrastructure & Operations
 
 Мониторинг хостов, виртуальных машин, процессов и сетей для обнаружения проблем и повышения производительности инфраструктуры.
 
-* Приложение
 
 [Перейти к приложению](infrastructure-observability/infrastructure-and-operations.md)[![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")
 
@@ -26,7 +17,6 @@ scraped: 2026-03-06T21:10:29.766809
 
 Мониторинг и оптимизация Kubernetes с помощью Dynatrace. Получайте информацию о состоянии кластеров и рабочих нагрузок в реальном времени.
 
-* Приложение
 
 [Перейти к приложению](infrastructure-observability/kubernetes-app.md)[![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases")
 
@@ -34,7 +24,6 @@ scraped: 2026-03-06T21:10:29.766809
 
 Приложение Databases предоставляет обзор всех баз данных, мониторинг которых осуществляется через Extensions Framework 2.0.
 
-* Приложение
 
 [Перейти к приложению](infrastructure-observability/databases/database-app.md)[![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds")
 
@@ -42,7 +31,6 @@ scraped: 2026-03-06T21:10:29.766809
 
 Мониторинг всех облачных платформ в одном месте.
 
-* Приложение
 
 [Перейти к приложению](infrastructure-observability/cloud-platform-monitoring/clouds-app.md)
 
@@ -82,7 +70,6 @@ scraped: 2026-03-06T21:10:29.766809
 
 Расширения, упорядоченные по категориям
 
-* Справочник
 
 [Читать справочник](infrastructure-observability/extensions.md)
 
@@ -110,7 +97,6 @@ scraped: 2026-03-06T21:10:29.766809
 
 Мониторинг VMware vSphere с помощью Dynatrace.
 
-* Практическое руководство
 
 [Читать руководство](infrastructure-observability/vmware-vsphere-monitoring.md)
 

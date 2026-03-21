@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration
 scraped: 2026-03-05T21:38:59.753270
 ---
 
-# Миграция с cloud-native full-stack на режим мониторинга приложений
-
-
 * Latest Dynatrace
 * 2-min read
-* Published Apr 09, 2024
 
 Dynatrace Operator версии 1.0.0 и выше
 

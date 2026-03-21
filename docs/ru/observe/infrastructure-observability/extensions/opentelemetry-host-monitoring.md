@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/exte
 scraped: 2026-03-06T21:36:13.602335
 ---
 
-# Расширение OpenTelemetry Host Monitoring
-
-
 * Последняя Dynatrace
 * Расширение
-* Обновлено 2 марта 2026 г.
 
 Генерация топологии и экранов для данных OpenTelemetry-хостов для более быстрого отображения и удобного анализа данных.
 

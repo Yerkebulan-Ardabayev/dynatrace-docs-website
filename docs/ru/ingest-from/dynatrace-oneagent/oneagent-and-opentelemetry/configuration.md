@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-a
 scraped: 2026-03-06T21:30:54.102654
 ---
 
-# Включение OpenTelemetry Span Sensor для OneAgent
-
-
 * Latest Dynatrace
-* Руководство
-* Чтение: 5 мин
-* Обновлено 9 февраля 2026 г.
 
 Помимо конфигурации на стороне приложения, несколько специфичных для Dynatrace настроек позволяют управлять тем, как данные OpenTelemetry используются в Dynatrace.
 

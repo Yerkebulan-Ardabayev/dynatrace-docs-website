@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:19:32.708456
 ---
 
-# Остановка/перезапуск OneAgent на Windows
-
-
 * Latest Dynatrace
 * 1-min read
-* Published Sep 19, 2018
 
 Если вы не хотите использовать OneAgent внутри конкретного Java (или другого) процесса, вы можете легко отключить мониторинг Dynatrace для отдельных хостов, групп процессов или приложений:
 

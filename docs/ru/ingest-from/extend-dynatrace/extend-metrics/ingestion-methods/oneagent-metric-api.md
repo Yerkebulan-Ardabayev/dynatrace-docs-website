@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metri
 scraped: 2026-03-06T21:16:38.345678
 ---
 
-# API метрик OneAgent
-
-
 * Latest Dynatrace
-* Чтение: 2 мин
-* Обновлено 28 янв. 2026
 
 Вы можете использовать локальную конечную точку API `http://localhost:<port>/metrics/ingest` для отправки локально полученных метрик в Dynatrace через защищённый и аутентифицированный канал. Эта конечная точка доступна только для локальных клиентов и не может быть достигнута с удалённых хостов.
 

@@ -3,12 +3,12 @@ title: Добавление Markdown к панели мониторинга __KE
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown
 scraped: 2026-03-06T21:11:16.280330
 ---
+
 # Добавление Markdown в панель управления
 
 * Последнее Dynatrace
 * Руководство по действию
 * 10-минутное чтение
-* Опубликовано 08 июля 2022 г.
 
 Плитка Markdown может быть чем угодно, от незначительной заметки о чем-то на панели управления до целой страницы отформатированной информации с ссылками и изображениями.
 

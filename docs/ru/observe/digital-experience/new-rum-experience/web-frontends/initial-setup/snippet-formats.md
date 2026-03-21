@@ -9,7 +9,6 @@ scraped: 2026-03-06T21:27:24.885857
 
 * Latest Dynatrace
 * How-to guide
-* Updated on Jan 08, 2026
 
 RUM JavaScript -- будь то [автоматически внедренный](set-up-auto-injected-frontend.md "Узнайте, как настроить автоматически внедряемый веб-фронтенд в New RUM Experience.") или [вручную вставленный](set-up-agentless-monitoring.md "Узнайте, как настроить безагентный RUM для веб-фронтендов в New RUM Experience.") в ваше веб-приложение -- состоит из двух ключевых компонентов:
 

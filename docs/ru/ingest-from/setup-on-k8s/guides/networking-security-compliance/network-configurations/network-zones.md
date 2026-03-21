@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/networkin
 scraped: 2026-03-03T21:30:28.434429
 ---
 
-# Использование сетевых зон в Kubernetes
-
-
 * Latest Dynatrace
-* Время чтения: 5 мин
-* Опубликовано 25 марта 2024 г.
 
 На этой странице описано, как эффективно использовать сетевые зоны в средах Kubernetes, с акцентом на их настройку через DynaKube.
 

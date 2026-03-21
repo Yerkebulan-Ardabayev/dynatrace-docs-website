@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/manage/segments/concepts/segments-concept
 scraped: 2026-03-06T21:13:12.081320
 ---
 
-# Видимость сегментов
-
-
 * Latest Dynatrace
 * Explanation
 * 1-min read
-* Published Mar 29, 2023
 
 Параметр **Visibility** определяет, кто видит сегмент в своём списке сегментов.
 

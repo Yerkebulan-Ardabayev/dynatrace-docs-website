@@ -8,9 +8,6 @@ scraped: 2026-03-06T21:25:49.968543
 
 
 * Latest Dynatrace
-* Руководство
-* Чтение: 13 мин
-* Обновлено 8 октября 2025 г.
 
 Dynatrace обеспечивает интегрированное управление и аналитику логов для сред Kubernetes. Мы рекомендуем собирать логи в Kubernetes с помощью полностью управляемого [модуля логирования Dynatrace](../../../../ingest-from/setup-on-k8s/deployment/k8s-log-monitoring.md "Управление логами Kubernetes с помощью Dynatrace."), либо интегрированного в OneAgent, развёрнутый на узле (модуль логирования OneAgent), либо без OneAgent в виде автономного развёртывания (модуль логирования Kubernetes). Dynatrace Operator настраивает и управляет модулем логирования Dynatrace для обоих подходов. Альтернативно вы можете передавать логи в Dynatrace с помощью коллекторов логов, таких как [Fluent Bit](lma-fluent-bit-logs-k8s.md "Интеграция Fluent Bit в Kubernetes для потоковой передачи логов в Dynatrace."), [Dynatrace OpenTelemetry Collector](../../../../ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich.md "Настройка OpenTelemetry Collector для обогащения OTLP-запросов данными Kubernetes."), [Logstash](../lma-stream-logs-with-logstash.md "Интеграция Logstash для потоковой передачи логов с узлов и подов в Dynatrace.") или [Fluentd](../lma-stream-logs-fluentd-k8s.md "Интеграция Fluentd с Dynatrace для потоковой передачи логов с узлов и подов в Dynatrace.").
 

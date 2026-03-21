@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cont
 scraped: 2026-02-06T16:29:09.689987
 ---
 
-# Варианты использования
-
-
 * Latest Dynatrace
 * 1-min read
-* Published Oct 11, 2023
 
 ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** расширяет возможности управления и мониторинга вашей среды Kubernetes. Это обеспечивает широкий набор функциональных возможностей.
 

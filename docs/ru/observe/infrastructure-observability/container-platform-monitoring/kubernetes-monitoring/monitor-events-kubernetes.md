@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cont
 scraped: 2026-03-06T21:21:56.612300
 ---
 
-# Мониторинг событий Kubernetes/OpenShift
-
-
-* Classic
-* Чтение: 8 мин
-* Обновлено 5 июля 2024
-
 ## Предварительные требования
 
 * ActiveGate версии 1.265+

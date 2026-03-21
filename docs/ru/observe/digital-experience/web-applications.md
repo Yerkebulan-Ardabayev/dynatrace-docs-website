@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/web-applicatio
 scraped: 2026-03-06T21:14:09.923490
 ---
 
-# Веб-приложения
-
-
-* Classic
-* Обзор
-* Чтение: 1 мин
-* Обновлено 03 апр. 2024
-
 Все HTML-страницы -- такие как статические веб-страницы или одностраничные приложения, работающие в браузере -- рассматриваются как веб-приложения.
 
 Поддержка Internet Explorer 11 прекращена начиная с RUM JavaScript версии 1.293. Подробнее см. [RUM JavaScript для Internet Explorer](web-applications/additional-configuration/rum-javascript-version.md#rum-javascript-for-ie "Управление версией RUM JavaScript, используемой для мониторинга ваших приложений").

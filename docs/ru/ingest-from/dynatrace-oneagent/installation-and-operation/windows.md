@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:10:48.224480
 ---
 
-# OneAgent на Windows
-
-
 * Latest Dynatrace
 * 1-min read
-* Published Sep 19, 2018
 
 Вы можете установить OneAgent на Windows с помощью установщика, поставляемого в виде самораспаковывающегося EXE-файла — для установки на одном сервере — а также в виде пакета MSI для развёртывания через групповые политики. Для получения аналитической информации о поддерживаемых возможностях OneAgent для Windows см. [матрицу поддержки платформ и возможностей OneAgent](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). Для получения информации о поддерживаемых версиях Windows ознакомьтесь с [поддерживаемыми технологиями и версиями OneAgent](../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 

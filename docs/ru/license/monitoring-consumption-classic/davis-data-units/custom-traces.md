@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/da
 scraped: 2026-03-06T21:37:37.198226
 ---
 
-# DDU для пользовательских трассировок (Trace API)
-
-
-* Classic
 * 2-min read
-* Published Mar 30, 2021
 
 Хотя интеграция данных спанов OpenTracing и OpenTelemetry в Dynatrace через OneAgent не влечёт дополнительных затрат и лицензирования, у вас есть возможность настроить Dynatrace Trace API для приёма спанов OpenTelemetry и OpenTracing; они называются «пользовательскими трассировками». Такой подход полезен для бесшовной интеграции данных трассировок OpenTelemetry, генерируемых сторонними сервисами. Приём спанов через конечную точку Trace API потребляет [единицы данных Davis](../davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU)."), поскольку этот подход требует большей вычислительной мощности и аналитических ресурсов, чем приём через OneAgent.
 

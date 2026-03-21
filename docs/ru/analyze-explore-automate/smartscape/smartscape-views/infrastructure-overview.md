@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smart
 scraped: 2026-03-05T21:35:17.082641
 ---
 
-# Обзор инфраструктуры
-
-
 * Latest Dynatrace
 * Пояснение
-* Чтение: 5 мин
-* Опубликовано 28 янв. 2026 г.
 
 **Infrastructure overview** предоставляет высокоуровневое визуальное представление вашей физической инфраструктуры.
 

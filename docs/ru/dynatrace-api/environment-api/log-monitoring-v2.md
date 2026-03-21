@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/log-monitor
 scraped: 2026-03-06T21:36:07.918496
 ---
 
-# Мониторинг журналов API v2
-
-
-* Справочник
-* Обновлено 20 ноября 2025 г.
-
 Устаревание Мониторинга журналов API v2
 
 Оконечные точки `search`, `export` и `aggregate` этого API устарели и будут удалены к концу 2027 года. Вместо этого используйте [Журналы на Grail API](https://dt-url.net/zb0381u).

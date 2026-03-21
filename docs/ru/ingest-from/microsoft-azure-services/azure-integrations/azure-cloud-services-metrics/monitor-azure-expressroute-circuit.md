@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-03T21:32:31.882413
 ---
 
-# Мониторинг Azure ExpressRoute Circuit
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Aug 19, 2020
 
 Dynatrace принимает метрики для нескольких предварительно выбранных пространств имён, включая Azure ExpressRoute Circuit. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские диаграммы, которые можно закрепить на дашбордах.
 

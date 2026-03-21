@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activega
 scraped: 2026-03-06T21:25:00.595701
 ---
 
-# Контейнерный образ ActiveGate
-
-
-* Последняя версия Dynatrace
-* Чтение 2 мин
-* Обновлено 9 мая 2025 г.
-
 Dynatrace поддерживает запуск ActiveGate в контейнере. В качестве примера контейнерного развертывания на этой странице описывается, как развернуть контейнерный ActiveGate с помощью StatefulSet в Kubernetes/OpenShift.
 
 ## Предварительные требования

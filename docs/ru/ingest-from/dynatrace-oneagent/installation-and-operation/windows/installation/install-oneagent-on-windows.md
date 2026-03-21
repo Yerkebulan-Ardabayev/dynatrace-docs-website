@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:19:24.255977
 ---
 
-# Установка OneAgent на Windows
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 7 мин
-* Обновлено 5 марта 2026
-
 На этой странице описано, как загрузить и установить Dynatrace OneAgent на Windows.
 
 Для начала войдите в вашу среду Dynatrace SaaS через веб-сайт [Dynatrace.com](https://www.dynatrace.com), используя учётные данные, полученные при регистрации. Затем продолжите выполнение шагов установки, описанных ниже.

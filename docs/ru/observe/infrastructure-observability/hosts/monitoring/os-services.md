@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/host
 scraped: 2026-03-06T21:19:55.370527
 ---
 
-# Мониторинг OS-сервисов
-
-
-* Classic
-* Практическое руководство
-* Чтение: 14 мин.
-* Обновлено 14 янв. 2026 г.
-
 Dynatrace предоставляет готовый мониторинг доступности OS-сервисов.
 
 Вы можете отслеживать хосты в режиме полного стека мониторинга или использовать облегчённые режимы мониторинга. Подробнее см. в разделе [Режимы мониторинга OneAgent](../../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").

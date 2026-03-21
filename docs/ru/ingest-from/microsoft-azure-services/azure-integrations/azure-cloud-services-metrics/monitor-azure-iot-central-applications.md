@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-05T21:34:22.288093
 ---
 
-# Мониторинг Azure IoT Central Applications
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение 1 мин
-* Опубликовано 10 сентября 2020 г.
-
 Dynatrace принимает метрики из Azure Metrics API для Azure IoT Central Applications. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские диаграммы, которые можно прикрепить к вашим дашбордам.
 
 ## Предварительные требования

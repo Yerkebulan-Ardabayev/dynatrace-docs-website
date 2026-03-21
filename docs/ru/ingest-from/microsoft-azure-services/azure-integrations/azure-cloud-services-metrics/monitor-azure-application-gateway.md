@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:33:27.529086
 ---
 
-# Мониторинг Azure Application Gateway
-
-
 * Latest Dynatrace
-* Руководство
-* Чтение: 4 мин.
-* Обновлено 15 ноября 2023 г.
 
 Информацию о различиях между классическими сервисами и другими сервисами см. в [Миграция с классических (ранее «встроенных») сервисов Azure на облачные сервисы](../azure-monitoring-guide/azure-migration-guide.md "Миграция классических сервисов Azure на новые версии.").
 

@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-traci
 scraped: 2026-03-06T21:16:20.837739
 ---
 
-# OpenTracing
-
-
 * Latest Dynatrace
 * 2-min read
-* Updated on Sep 23, 2022
 
 Early Adopter
 

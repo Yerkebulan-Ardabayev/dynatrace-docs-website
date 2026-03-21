@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-05T21:25:35.385200
 ---
 
-# Интеграции Microsoft Azure
-
-
 * Классическая версия
-* Обзор
 * 1 мин. чтения
-* Опубликовано 12 августа 2021 г.
 
 Dynatrace обеспечивает комплексную поддержку мониторинга сервисов Azure посредством интеграции как с OneAgent, так и с Azure Monitor.
 

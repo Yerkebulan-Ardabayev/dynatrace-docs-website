@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/technology-support/applicatio
 scraped: 2026-03-05T21:25:41.748811
 ---
 
-# NGINX
-
-
 * Актуальная версия Dynatrace
-* Справочник
-* Чтение: 3 мин
-* Обновлено 23 октября 2025 г.
 
 С помощью модуля кода NGINX в OneAgent вы можете получить наблюдаемость для ваших экземпляров NGINX и обрабатываемых веб-запросов.
 

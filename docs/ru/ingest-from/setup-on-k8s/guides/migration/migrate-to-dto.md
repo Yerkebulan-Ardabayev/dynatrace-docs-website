@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration
 scraped: 2026-03-06T21:29:22.920771
 ---
 
-# Миграция с OneAgent Operator на Dynatrace Operator
-
-
 * Latest Dynatrace
 * 5-min read
-* Published Apr 01, 2021
 
 ## Понимание и настройка пользовательского ресурса DynaKube
 

@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-int
 scraped: 2026-03-06T21:33:45.103383
 ---
 
-# Мониторинг Google Cloud Virtual Private Cloud (VPC)
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
 * 1 мин. чтения
-* Опубликовано 17 янв. 2022 г.
 
 Интеграция Dynatrace с Google Cloud использует данные, собранные из Google Operations API, для непрерывного мониторинга работоспособности и производительности сервисов Google Cloud. Объединяя все релевантные данные на дашбордах, она также обеспечивает оповещение и отслеживание событий.
 

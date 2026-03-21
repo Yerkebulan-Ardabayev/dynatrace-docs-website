@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:18:48.563032
 ---
 
-# Автоматическое внедрение глубокого мониторинга кода на AIX
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Updated on Jun 22, 2022
 
 На AIX Dynatrace поддерживает глубокий мониторинг кода для приложений Java, Apache, WebLogic и WebSphere. Начиная с версии OneAgent 1.189 достаточно лишь **разрешить расширение ядра AIX** на странице **Host settings** вашего AIX-хоста в Dynatrace. Для более ранних версий требуется выполнить дополнительную настройку на AIX — см. раздел [Установка OneAgent на AIX](../installation/install-oneagent-on-aix.md "Узнайте, как скачать и установить Dynatrace OneAgent на AIX.").
 

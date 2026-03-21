@@ -7,10 +7,7 @@ scraped: 2026-03-04T21:33:40.088795
 # Service-Level Objectives Classic
 
 
-* Classic
-* Overview
 * 1-min read
-* Published Sep 14, 2020
 
 Dynatrace поставляется с встроенной поддержкой мониторинга [целевых показателей уровня обслуживания (SLO)](service-level-objectives-classic/slo-basics.md "Basic terminology related to service-level objectives") в соответствии с [основами Site Reliability Engineering (SRE), опубликованными Google](https://dt-url.net/cv030av).
 

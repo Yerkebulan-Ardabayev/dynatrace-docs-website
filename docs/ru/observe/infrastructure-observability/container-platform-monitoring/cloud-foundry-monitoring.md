@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cont
 scraped: 2026-02-06T16:28:51.845671
 ---
 
-# Мониторинг Cloud Foundry
-
-
 * Latest Dynatrace
 * 1-min read
-* Published Aug 12, 2021
 
 Dynatrace поддерживает полностековый мониторинг для Cloud Foundry — от уровня приложения до уровня инфраструктуры.
 

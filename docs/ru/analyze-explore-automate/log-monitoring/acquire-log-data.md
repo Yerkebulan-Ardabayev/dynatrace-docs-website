@@ -7,10 +7,7 @@ scraped: 2026-03-06T21:37:45.649064
 # Приём и обработка журналов (Logs Classic)
 
 
-* Classic
-* Overview
 * 2-min read
-* Updated on Aug 11, 2023
 
 Log Monitoring Classic
 

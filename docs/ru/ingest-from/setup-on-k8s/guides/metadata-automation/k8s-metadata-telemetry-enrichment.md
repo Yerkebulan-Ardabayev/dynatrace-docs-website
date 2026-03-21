@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/metadata-
 scraped: 2026-03-06T21:23:30.344451
 ---
 
-# Обогащение метаданными всей телеметрии, поступающей из Kubernetes
-
-
 * Latest Dynatrace
-* Чтение: 7 мин
-* Обновлено 5 февраля 2026 г.
 
 ## Предварительные требования
 

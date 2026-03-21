@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/technology-support/applicatio
 scraped: 2026-03-05T21:26:12.292037
 ---
 
-# PHP
-
-
 * Latest Dynatrace
-* Reference
 * 1-min read
-* Published Jul 09, 2018
 
 PHP — серверный язык сценариев, особенно хорошо подходящий для веб-разработки, а также широко применяемый в программировании общего назначения. Первоначально созданный Расмусом Лердорфом в 1994 году, новые версии теперь выпускаются The PHP Group.
 

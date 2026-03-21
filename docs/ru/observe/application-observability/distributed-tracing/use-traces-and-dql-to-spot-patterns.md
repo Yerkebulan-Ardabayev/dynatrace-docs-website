@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/observe/application-observability/distrib
 scraped: 2026-03-06T21:12:23.534272
 ---
 
-# Использование трассировок, DQL и логов для выявления закономерностей
-
-
-* Последняя версия Dynatrace
-* Руководство
-* Чтение: 14 мин
-* Опубликовано 20 ноября 2025 г.
-
 Выявляйте аномальные закономерности в трассировках и логах с помощью [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Откройте для себя возможности нового приложения Distributed Tracing.") и [Dynatrace Query Language (DQL)](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.").
 
 ## Введение

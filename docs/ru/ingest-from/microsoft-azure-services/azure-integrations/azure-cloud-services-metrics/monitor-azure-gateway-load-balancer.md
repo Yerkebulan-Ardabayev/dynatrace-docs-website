@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:35:15.372108
 ---
 
-# Мониторинг Azure Gateway Load Balancer
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Время чтения: 1 мин
-* Обновлено 15 ноября 2023 г.
-
 Информацию о различиях между классическими сервисами и другими сервисами см. в разделе [Переход с классических сервисов Azure (ранее «встроенных») на облачные сервисы](../azure-monitoring-guide/azure-migration-guide.md "Migrate Azure classic services to their new versions.").
 
 Dynatrace принимает метрики из Azure Metrics API для Azure Gateway Load Balancer. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на дашбордах.

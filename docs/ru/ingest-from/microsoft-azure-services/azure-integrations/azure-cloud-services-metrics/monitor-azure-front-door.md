@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:27:23.128258
 ---
 
-# Мониторинг Azure Front Door (classic)
-
-
 * Latest Dynatrace
-* Руководство
 * 2 мин. чтения
-* Обновлено 27 сен. 2023 г.
 
 Страница обзора Azure Front Door (classic) предоставляет сведения о количестве обслуженных клиентских запросов, задержке и эффективности вашей маршрутизации.
 

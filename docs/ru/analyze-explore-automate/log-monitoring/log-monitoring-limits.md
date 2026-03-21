@@ -7,10 +7,6 @@ scraped: 2026-03-04T21:35:22.745317
 # Лимиты Log Monitoring по умолчанию (Logs Classic)
 
 
-* Classic
-* Чтение: 1 мин
-* Обновлено 2 фев. 2026
-
 Log Monitoring Classic
 
 На этой странице перечислены лимиты по умолчанию для последней версии Dynatrace Log Monitoring.

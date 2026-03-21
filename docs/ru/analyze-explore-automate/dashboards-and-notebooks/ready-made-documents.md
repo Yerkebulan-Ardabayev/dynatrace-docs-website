@@ -6,12 +6,8 @@ scraped: 2026-03-06T21:13:50.344696
 
 # Ready-made documents
 
-# Готовые документы
-
 * Latest Dynatrace
-* Reference
 * 1-min read
-* Published Jul 08, 2022
 
 Используйте готовые документы Dynatrace прямо из коробки.
 

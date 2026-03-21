@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installa
 scraped: 2026-03-06T21:25:10.882192
 ---
 
-# ActiveGate на Linux
-
-
 * Последняя Dynatrace
 * 1 мин. чтения
-* Опубликовано 9 апреля 2021 г.
 
 Dynatrace поддерживает установку ActiveGate на Linux.
 

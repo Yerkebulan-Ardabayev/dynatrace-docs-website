@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/business-observability/bo-events-
 scraped: 2026-03-03T21:30:52.600686
 ---
 
-# Обогащение бизнес-событий
-
-
 * Latest Dynatrace
-* Reference
 * 10-min read
-* Updated on Mar 19, 2024
 
 Dynatrace SaaS version 1.253+
 

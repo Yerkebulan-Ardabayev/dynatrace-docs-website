@@ -8,9 +8,6 @@ scraped: 2026-03-02T21:23:22.538566
 
 
 * Актуальная версия Dynatrace
-* Приложение
-* Время чтения: 4 мин
-* Обновлено 12 февраля 2026
 
 ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability** теперь общедоступно. Установите его прямо сейчас из платформенного HUB!
 

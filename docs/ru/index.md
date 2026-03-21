@@ -3,8 +3,6 @@ title: Документация Dynatrace
 source: https://www.dynatrace.com/support/help/
 ---
 
-# Документация Dynatrace
-
 Узнайте о Dynatrace и изучите ресурсы, которые помогут улучшить вашу наблюдаемость и безопасность.
 
 ### Начните работу с Dynatrace или узнайте, что нового

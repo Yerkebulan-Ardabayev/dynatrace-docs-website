@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:34:04.551751
 ---
 
-# Мониторинг Azure Data Factory (V1, V2)
-
-
 * Latest Dynatrace
-* Практическое руководство
-* Чтение: 3 мин
-* Опубликовано 27 июля 2020 г.
 
 Dynatrace получает метрики из Azure Metrics API для Azure Data Factory (V1, V2). Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закреплять на ваших панелях мониторинга.
 

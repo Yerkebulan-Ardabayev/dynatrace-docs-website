@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-int
 scraped: 2026-03-06T21:18:15.453486
 ---
 
-# Мониторинг управляемого Google Cloud Run
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 11 мин
-* Опубликовано 09 сентября 2022
-
 Управляемый Google [Cloud Run](https://cloud.google.com/run) — это вычислительная платформа для запуска контейнеров в бессерверной среде. Для мониторинга сервисов, работающих на управляемом Google Cloud Run, с помощью Dynatrace необходимо интегрировать OneAgent в ваше контейнеризированное приложение.
 
 Поддержка управляемого Cloud Run в средах выполнения [первого и второго поколения](https://cloud.google.com/run/docs/about-execution-environments) в настоящее время ограничена **Java** и **Node.js**.

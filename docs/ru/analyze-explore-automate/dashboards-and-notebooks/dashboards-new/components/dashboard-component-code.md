@@ -4,12 +4,9 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-n
 scraped: 2026-03-06T21:11:07.243073
 ---
 
-# Добавить код на панель мониторинга
-
 * Последнее Dynatrace
 * Руководство по действию
 * 10-минутное чтение
-* Опубликовано 08 июля 2022 г.
 
 Используйте плитку кода для запуска JavaScript, который может:
 

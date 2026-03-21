@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:19:22.490308
 ---
 
-# Настройка установки OneAgent на Windows
-
-
-* Последняя версия Dynatrace
 * 9 минут чтения
-* Обновлено 21 января 2026 г.
 
 Установщик OneAgent для Windows поставляется и используется в виде самораспаковывающегося EXE-файла. Установщик также можно извлечь и использовать напрямую — в виде пакета MSI. Этот подход в основном используется при [развёртывании через групповые политики](install-oneagent-on-windows.md#installation "Узнайте, как скачать и установить Dynatrace OneAgent на Windows.").
 

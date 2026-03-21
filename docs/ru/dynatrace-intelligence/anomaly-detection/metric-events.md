@@ -7,11 +7,6 @@ scraped: 2026-03-06T21:20:48.129795
 # Метрические события
 
 
-* Classic
-* Обзор
-* Чтение: 5 мин
-* Обновлено 4 марта 2024 г.
-
 Dynatrace Classic
 
 Мы рекомендуем попробовать [Anomaly Detection](anomaly-detection-app.md "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.") ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") для более расширенных возможностей конфигурации, таких как:

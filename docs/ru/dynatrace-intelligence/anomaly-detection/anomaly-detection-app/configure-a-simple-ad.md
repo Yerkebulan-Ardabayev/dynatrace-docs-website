@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/
 scraped: 2026-03-06T21:35:01.911530
 ---
 
-# Настройка простого пользовательского оповещения
-
-
 * Latest Dynatrace
 * How-to guide
 * 4-min read
-* Updated on Jan 28, 2026
 
 ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** позволяет создавать пользовательские оповещения, настраивать индивидуальные оповещения и преобразовывать конфигурации событий метрик. Вы также можете сэкономить время и создать пользовательское оповещение в ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** непосредственно во время работы с приложением.
 

@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/
 scraped: 2026-03-05T21:38:33.126042
 ---
 
-# Руководство по оптимизации DQL для обнаружения аномалий
-
-
 * Последняя Dynatrace
-* Практическое руководство
 * 15 мин. чтения
-* Обновлено 5 декабря 2025 г.
 
 На этой странице описаны лучшие практики оптимизации ваших DQL-запросов для пользовательских оповещений ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** для обеспечения стабильной производительности и минимизации потребления ресурсов и времени.
 

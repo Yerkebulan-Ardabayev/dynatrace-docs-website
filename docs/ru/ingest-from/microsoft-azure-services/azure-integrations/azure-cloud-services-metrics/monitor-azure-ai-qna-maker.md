@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-05T21:39:03.231423
 ---
 
-# Мониторинг Azure AI - QnA Maker
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Sep 22, 2020
 
 Dynatrace получает метрики из Azure Metrics API для QnA Maker. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закреплять на дашбордах.
 

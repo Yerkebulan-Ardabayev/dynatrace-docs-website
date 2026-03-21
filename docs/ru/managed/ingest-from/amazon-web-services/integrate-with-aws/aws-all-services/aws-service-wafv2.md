@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-06T21:34:02.834520
 ---
 
-# Мониторинг AWS WAF
-
-
-* Classic
 * How-to guide
 * 1-min read
-* Published Jul 06, 2020
 
 Dynatrace собирает метрики для множества предварительно выбранных пространств имён, включая AWS WAF. Вы можете просматривать графики для каждого экземпляра сервиса с набором измерений и создавать пользовательские графики, которые можно закрепить на ваших дашбордах.
 

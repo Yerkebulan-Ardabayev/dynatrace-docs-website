@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-pri
 scraped: 2026-03-04T21:28:24.209852
 ---
 
-# Создание запланированного сканирования в Sensitive Data Center
-
-
 * Latest Dynatrace
 * How-to guide
 * 4-min read
-* Published Dec 16, 2025
 * Preview
 
 Вы можете настроить запланированные сканирования в ![Sensitive Data Center](https://dt-cdn.net/images/privacy-rights-highresolution-1024-fa3477e788.png "Sensitive Data Center") **Sensitive Data Center** для непрерывного мониторинга вашей среды на наличие конфиденциальных данных. Вы можете выбрать конкретные бакеты или всю среду для мониторинга, выбрать типы конфиденциальных данных из встроенных правил и задать периодичность запуска сканирования.

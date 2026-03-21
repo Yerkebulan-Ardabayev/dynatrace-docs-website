@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/clou
 scraped: 2026-02-06T16:29:02.800414
 ---
 
-# Мониторинг Google Cloud
-
-
 * Latest Dynatrace
 * Пояснение
-* Чтение: 1 мин
-* Опубликовано 27 янв. 2023
 
 Dynatrace автоматически обнаруживает, устанавливает базовые показатели и интеллектуально отслеживает динамические рабочие нагрузки Google Cloud.
 

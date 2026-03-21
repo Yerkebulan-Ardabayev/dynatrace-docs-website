@@ -7,9 +7,6 @@ scraped: 2026-03-02T21:24:04.456847
 # Vulnerabilities API - POST ссылки отслеживания элементов исправления
 
 
-* Справочник
-* Обновлено 25 сентября 2024
-
 Добавляет, редактирует или удаляет ссылки отслеживания групп процессов [отслеживания исправлений](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Track the remediation progress of vulnerabilities.") для уязвимости сторонних компонентов (или, в случае уязвимостей Kubernetes, узлов Kubernetes для отслеживания исправлений).
 
 Запрос создаёт полезную нагрузку `application/json`.

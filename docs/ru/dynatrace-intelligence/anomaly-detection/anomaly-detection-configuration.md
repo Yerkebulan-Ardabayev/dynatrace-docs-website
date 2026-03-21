@@ -10,7 +10,6 @@ scraped: 2026-03-06T21:20:56.392646
 * Latest Dynatrace
 * Explanation
 * 7-min read
-* Updated on Feb 04, 2026
 
 Настройка обнаружения аномалий опирается на несколько компонентов:
 

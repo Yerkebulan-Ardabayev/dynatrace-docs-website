@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/secure/application-security
 scraped: 2026-03-06T21:10:31.053864
 ---
 
-# Безопасность приложений
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Обновлено 23 февраля 2026 г.
-
 Что вы найдёте на этой странице
 
 * [Обзор возможностей Application Security](#start)

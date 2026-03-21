@@ -95,10 +95,9 @@ function createChatWidget() {
                 <button id="chat-close">&times;</button>
             </div>
             <div id="chat-messages" class="chat-messages">
-                <div class="message bot-message">
-                    <p>👋 Привет! Я ваш супер-быстрый AI-помощник на базе <strong>Gemini Flash</strong>!</p>
-                    <p><em>Спрашивайте что угодно о Dynatrace - отвечу мгновенно! ⚡</em></p>
-                    <p style="font-size: 0.9em; opacity: 0.7;">Отвечаю на русском или английском.</p>
+                <div class="message bot-message" id="welcome-msg">
+                    <p>👋 Привет! Я AI-помощник по документации Dynatrace.</p>
+                    <p><em>Спрашивайте на русском или английском — отвечу мгновенно! ⚡</em></p>
                 </div>
             </div>
             <div class="chat-input-container">

@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynaku
 scraped: 2026-03-06T21:31:41.255882
 ---
 
-# Параметры DynaKube для Dynatrace Operator
-
-
-* Последняя версия Dynatrace
-* Чтение: 57 мин
-* Обновлено 24 февраля 2026 г.
-
 Эта страница поможет вам понять и настроить пользовательский ресурс DynaKube [Kubernetes Custom Resource](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/), что позволит оптимизировать настройку Dynatrace Operator в соответствии с вашими конкретными требованиями.
 
 В таблице ниже указаны необходимые версии Dynatrace Operator для каждой версии API DynaKube.

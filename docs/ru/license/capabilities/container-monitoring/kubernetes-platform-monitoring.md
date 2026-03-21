@@ -7,10 +7,7 @@ scraped: 2026-02-06T16:26:50.506651
 # Расчёт потребления Kubernetes Platform Monitoring (DPS)
 
 
-* Последняя версия Dynatrace
 * Пояснение
-* Чтение: 3 мин
-* Обновлено 12 ноября 2025 г.
 
 Обзор функции Kubernetes Platform Monitoring
 

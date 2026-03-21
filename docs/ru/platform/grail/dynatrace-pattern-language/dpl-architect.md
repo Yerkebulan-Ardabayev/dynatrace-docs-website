@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language
 scraped: 2026-03-05T21:36:08.666981
 ---
 
-# DPL Architect
-
-
-* Последняя версия Dynatrace
-* Справочник
-* Обновлено 28 февраля 2024 г.
-
 Последняя версия Dynatrace
 
 Инструмент DPL Architect помогает вам

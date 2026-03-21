@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:35:13.739557
 ---
 
-# Azure Machine - Azure Arc
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 1 мин
-* Опубликовано 07 мар 2024
-
 Dynatrace версии 1.281+ Environment ActiveGate версии 1.195+
 
 Информацию о различиях между классическими и другими сервисами см. в разделе [Миграция с классических (ранее «встроенных») сервисов Azure на облачные сервисы](../azure-monitoring-guide/azure-migration-guide.md "Перенос классических сервисов Azure в их новые версии.").

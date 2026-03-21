@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/observe/application-observability/service
 scraped: 2026-03-04T21:36:52.029410
 ---
 
-# Анализ сервисов
-
-
-* Classic
-* Практическое руководство
-* Время чтения: 6 мин.
-* Обновлено 13 июня 2025
-
 Эта тема посвящена странице ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic** и представляет обновленный дизайн классической страницы. Ознакомьтесь с приложением [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](../services/services-app.md "Контролируйте состояние, производительность и ресурсы сервисов с помощью приложения Services.") для получения новейшего опыта.
 
 Все сервисы, обнаруженные Dynatrace в вашей среде, отображаются на странице ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**. Вы можете проанализировать каждый сервис и получить информацию вплоть до уровня кода.

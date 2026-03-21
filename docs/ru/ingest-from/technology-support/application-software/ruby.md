@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/technology-support/applicatio
 scraped: 2026-03-05T21:26:27.945131
 ---
 
-# Ruby
-
-
-* Последняя версия Dynatrace
-* Справочник
 * 1 минута чтения
-* Опубликовано 01 февраля 2022 г.
 
 Вы можете отправлять данные из вашего приложения Ruby в Dynatrace через OpenTelemetry. Смотрите также
 

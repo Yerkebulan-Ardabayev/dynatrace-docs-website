@@ -4,15 +4,6 @@ source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/executi
 scraped: 2026-03-06T21:37:23.233559
 ---
 
-# Контекст выполнения Guardian
-
-# Контекст выполнения Guardian
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 2 мин
-* Опубликовано 29 сентября 2023 г.
-
 Ваш инструмент непрерывной интеграции (CI), например Jenkins, может [отправлять бизнес-события в Dynatrace](../../observe/business-observability/bo-api-ingest.md "Set up authentication for and ingest business events via API."). Эти события затем могут инициировать проверки Site Reliability Guardian в рамках рабочего процесса.
 
 Disclaimer
@@ -29,69 +20,52 @@ Disclaimer
 {
 
 
-
 "timeframe.to": "2023-03-08T06:29:08.809Z",
-
 
 
 "timeframe.from": "2023-03-08T05:29:08.809Z",
 
 
-
 "errors": "[]",
-
 
 
 "status": "fail",
 
 
-
 "event.id": "d08a70d8-f6de-4d0d-bd34-5d416a20ba6a",
-
 
 
 "timestamp": 1678256963078000000,
 
 
-
 "event.kind": "BIZ_EVENT",
-
 
 
 "event.type": "guardian.validation.triggered",
 
 
-
 "tag.stage": "hardening",
-
 
 
 "tag.service": "carts",
 
 
-
 "event.provider": "Jenkins",
-
 
 
 "dt.system.bucket": "default_bizevents_short"
 
 
-
 "execution_context": {
-
 
 
 "buildId": "4711",
 
 
-
 "version": "0.1.0"
 
 
-
 }
-
 
 
 }
@@ -107,13 +81,10 @@ Disclaimer
 fetch bizevents |
 
 
-
 filter event.type == "guardian.validation.objective" AND guardian.id == "vu9U3hXa3q0AAAABADFhcHA6ZHluYXRyYWNlLnNpdGUucmVsaWFiaWxpdHkuZ3VhcmRpYW46Z3VhcmRpYW5zAAZ0ZW5hbnQABnRlbmFudAAkMWNiZDVkYWYtZThhNi0zMDkxLWFkOGQtMmU5NDNmNWJmZWJmvu9U3hXa3q0" |
 
 
-
 limit 1 |
-
 
 
 parse execution_context, "JSON:parsed_execution_context"
@@ -125,13 +96,10 @@ parse execution_context, "JSON:parsed_execution_context"
 fetch bizevents
 
 
-
 | filter event.type == "guardian.validation.finished"
 
 
-
 | parse execution_context, "JSON:parsed_execution_context"
-
 
 
 | filter parsed_execution_context[buildId] == "4711"

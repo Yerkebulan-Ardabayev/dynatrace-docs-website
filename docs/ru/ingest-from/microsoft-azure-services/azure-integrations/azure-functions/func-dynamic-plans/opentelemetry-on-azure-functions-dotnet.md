@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:38:21.488936
 ---
 
-# Трассировка Azure Functions, написанных на .NET
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 10 мин
-* Обновлено 31 июля 2024 г.
-
 ## Предварительные требования
 
 Убедитесь, что вы выполнили **начальную настройку**, описанную в [Настройка мониторинга OpenTelemetry для Azure Functions на плане потребления](opentelemetry-on-azure-functions.md "Мониторинг Azure Functions на плане потребления с помощью OpenTelemetry и Dynatrace."), прежде чем использовать пакеты, описанные ниже.

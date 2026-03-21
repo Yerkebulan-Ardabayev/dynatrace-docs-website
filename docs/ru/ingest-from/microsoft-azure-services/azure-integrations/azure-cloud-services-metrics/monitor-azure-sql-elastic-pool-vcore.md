@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-02T21:30:20.627289
 ---
 
-# Мониторинг Azure SQL elastic pool (vCore)
-
-
 * Latest Dynatrace
 * How-to guide
 * 3-min read
-* Updated on Nov 15, 2023
 
 Сведения о различиях между классическими и другими службами см. в разделе [Переход с классических служб Azure (ранее «встроенных») на облачные службы](../azure-monitoring-guide/azure-migration-guide.md "Перенос классических служб Azure в их новые версии.").
 

@@ -10,7 +10,6 @@ scraped: 2026-03-06T21:31:08.025695
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Jun 23, 2025
 
 Чтобы получить доступ к различным командам управления рабочими процессами в режиме **Live** или **Draft**:
 

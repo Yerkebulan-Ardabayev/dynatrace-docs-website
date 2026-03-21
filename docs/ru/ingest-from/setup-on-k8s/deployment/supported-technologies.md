@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/suppo
 scraped: 2026-03-05T21:26:22.993785
 ---
 
-# Поддерживаемые дистрибутивы
-
-
-* Последняя версия Dynatrace
-* Чтение: 6 мин
-* Обновлено 7 сентября 2023 г.
-
 На этой странице представлен обзор и описаны различные конфигурации для всех основных дистрибутивов Kubernetes.
 
 Общую информацию о жизненном цикле поддержки Dynatrace для Kubernetes и Red Hat OpenShift, включая текущие поддерживаемые версии, см. в разделе [Жизненный цикл поддержки Dynatrace для Kubernetes и Red Hat OpenShift full stack Monitoring](../../technology-support/support-model-and-issues.md "Как Dynatrace поддерживает версии Kubernetes и Red Hat OpenShift, а также известные проблемы").

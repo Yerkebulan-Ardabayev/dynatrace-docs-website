@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/observe/application-observability/service
 scraped: 2026-03-06T21:10:34.460722
 ---
 
-# Концепции, связанные с сервисами
-
-
 * Latest Dynatrace
 * Explanation
 * 3-min read
-* Updated on Jan 28, 2026
 
 Концепции, связанные с сервисами, включая распределённые трассировки и спаны, являются ключевыми понятиями в наблюдаемости Dynatrace. Понимание этих концепций обеспечивает эффективный мониторинг и анализ распределённых систем.
 

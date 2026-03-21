@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experi
 scraped: 2026-03-06T21:25:59.818788
 ---
 
-# Переход с RUM Classic на новый функционал RUM Experience
-
-
 * Последняя Dynatrace
 * Описание
 * 1 мин. чтения
-* Обновлено 20 февраля 2026 г.
 
 Если вы уже мониторите ваши веб- и мобильные фронтенды с помощью RUM Classic, переход на новый функционал RUM Experience не составит труда. Узнайте, как новый RUM Experience соотносится с RUM Classic и как его включить.
 

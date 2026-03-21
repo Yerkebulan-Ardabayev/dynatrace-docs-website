@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:29:38.461964
 ---
 
-# Мониторинг Azure SQL Database (vCore)
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 4 мин
-* Обновлено 15 ноября 2023 г.
-
 Информацию о различиях между классическими и другими сервисами см. в разделе [Миграция с классических сервисов Azure (ранее «встроенных») на облачные сервисы](../azure-monitoring-guide/azure-migration-guide.md "Migrate Azure classic services to their new versions.").
 
 Dynatrace получает метрики из Azure Metrics API для Azure SQL Database (vCore). Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.

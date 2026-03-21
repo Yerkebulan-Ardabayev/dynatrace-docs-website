@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/web-applicatio
 scraped: 2026-03-05T21:33:02.016377
 ---
 
-# Real User Monitoring для групп процессов
-
-
-* Classic
 * How-to guide
 * 2-min read
-* Published Mar 21, 2022
 
 По умолчанию RUM включён для всех групп процессов. Для технологий, перечисленных в разделе [Technology support - Real User Monitoring - Web servers and applications](../../../../ingest-from/technology-support.md#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks."), это позволяет OneAgent выполнять следующее:
 

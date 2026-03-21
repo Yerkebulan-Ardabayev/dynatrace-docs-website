@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:19:43.227674
 ---
 
-# Расширение трассировок с помощью OpenTelemetry
-
-
 * Latest Dynatrace
 * 7-min read
-* Updated on Sep 23, 2022
 
 [OpenTelemetry](https://dt-url.net/y903u4j) — это набор инструментов, API и SDK, которые позволяют использовать данные телеметрии (распределённые трассировки, метрики и логи) для получения информации о производительности и поведении вашего приложения.
 

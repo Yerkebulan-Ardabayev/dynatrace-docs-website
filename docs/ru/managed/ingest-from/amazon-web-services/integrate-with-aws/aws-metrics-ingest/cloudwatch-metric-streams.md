@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-06T21:33:53.919137
 ---
 
-# Amazon CloudWatch Metric Streams
-
-
-* Classic
-* Практическое руководство
 * 10 мин. чтения
-* Обновлено 30 сентября 2025 г.
 
 Интеграция Dynatrace с Amazon CloudWatch Metric Streams предоставляет простой и безопасный способ приёма метрик AWS. Amazon CloudWatch Metric Streams позволяет передавать все метрики, выпущенные в заданном регионе AWS, через Firehose в Dynatrace API.
 

@@ -4,17 +4,13 @@ source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensio
 scraped: 2026-03-04T21:37:15.660573
 ---
 
-# Управление расширениями IBM Database
-
-
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Published Apr 19, 2023
 
 Dynatrace предоставляет фреймворк, с помощью которого можно расширить наблюдаемость приложений за счёт данных, получаемых непосредственно с уровня IBM Database, чтобы отслеживать влияние задач сервера базы данных на ваше приложение.
 
-Начните с проверки [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=ibm+db2), чтобы убедиться, что предоставляемое Dynatrace расширение IBM Database Server соответствует вашим требованиям.
+Начните с проверки [Dynatrace Hub](https://www.dynatrace.com/hub/?query=ibm+db2), чтобы убедиться, что предоставляемое Dynatrace расширение IBM Database Server соответствует вашим требованиям.
 
 ## Прежде чем начать
 

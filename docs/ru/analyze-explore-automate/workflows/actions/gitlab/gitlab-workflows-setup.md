@@ -6,12 +6,9 @@ scraped: 2026-03-06T21:36:42.472660
 
 # Set up GitLab Connector
 
-# Настройка GitLab Connector
-
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Updated on May 07, 2025
 
 Используйте GitLab Connector ![GitLab for Workflows](https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg "GitLab for Workflows") для интеграции вашей среды Dynatrace с репозиториями GitLab. Эта интеграция позволяет использовать действия GitLab Connector в вашем рабочем процессе для автоматического управления задачами и запросами на слияние на основе данных мониторинга и событий.
 

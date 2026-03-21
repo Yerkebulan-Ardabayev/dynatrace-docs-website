@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/business-observability/bo-basic-c
 scraped: 2026-03-06T21:14:46.759834
 ---
 
-# Основные концепции Dynatrace Business Observability
-
-
-* Последняя версия Dynatrace
 * Пояснение
-* Чтение: 3 мин
-* Опубликовано 24 октября 2022 г.
 
 Бизнес-события — важная концепция, лежащая в основе Dynatrace Business Observability. Бизнес-события генерируют данные бизнес-уровня для поддержки важных сценариев использования.
 

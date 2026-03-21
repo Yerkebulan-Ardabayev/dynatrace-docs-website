@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/manage/identity-access-management/permiss
 scraped: 2026-03-05T21:40:49.400146
 ---
 
-# Границы политик
-
-
 * Latest Dynatrace
-* Чтение: 6 мин
-* Опубликовано 01 сентября 2024
 
 С помощью границ политик вы можете назначать разрешения с детальными ограничениями на уровне данных.
 

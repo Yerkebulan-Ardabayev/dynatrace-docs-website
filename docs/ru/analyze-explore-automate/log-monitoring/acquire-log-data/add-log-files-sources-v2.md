@@ -7,9 +7,7 @@ scraped: 2026-03-06T21:26:49.610500
 # Источники и хранение логов (Logs Classic)
 
 
-* Classic
 * 2-min read
-* Updated on Jan 18, 2023
 
 Log Monitoring Classic
 

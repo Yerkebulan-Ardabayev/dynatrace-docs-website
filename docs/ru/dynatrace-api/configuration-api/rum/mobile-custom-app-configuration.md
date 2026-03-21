@@ -7,9 +7,6 @@ scraped: 2026-03-05T21:32:57.149887
 # API для мобильных и пользовательских приложений
 
 
-* Reference
-* Published Nov 05, 2020
-
 [### Список всех приложений
 
 Получить обзор всех мобильных и пользовательских приложений.](mobile-custom-app-configuration/apps/get-all.md "List all mobile and custom apps applications via the Dynatrace API.")[### Просмотр приложения

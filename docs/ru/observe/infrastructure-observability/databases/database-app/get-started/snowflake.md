@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/data
 scraped: 2026-03-06T21:37:21.566752
 ---
 
-# Мониторинг базы данных Snowflake
-
-
 * Latest Dynatrace
 * How-to guide
-* Published Jan 20, 2026
 
 Используйте фреймворк расширений Dynatrace, чтобы расширить наблюдаемость приложения за счёт данных, получаемых непосредственно с уровня базы данных Snowflake, и отслеживать влияние задач сервера баз данных на ваше приложение.
 

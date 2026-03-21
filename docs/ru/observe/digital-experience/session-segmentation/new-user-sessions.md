@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmen
 scraped: 2026-03-02T21:18:42.759294
 ---
 
-# Новинка: Анализ пользовательских сессий
-
-
 * How-to guide
 * 21-min read
-* Updated on Oct 12, 2023
 
 Dynatrace версия 1.224+
 

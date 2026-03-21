@@ -7,11 +7,6 @@ scraped: 2026-03-06T21:15:28.801417
 # Site Reliability Guardian
 
 
-* Последняя версия Dynatrace
-* Приложение
-* Чтение: 15 мин
-* Обновлено 28 янв. 2026
-
 ## Предварительные требования
 
 ### Разрешения
@@ -76,28 +71,20 @@ Site Reliability Guardian -- это приложение Dynatrace, которо
 
 [01Создание Site Reliability Guardian
 
-* Практическое руководство
 * Создайте guardian вручную или из предопределённого шаблона.](site-reliability-guardian/create-srg.md)[02Список и работа с вашими guardian
 
-* Практическое руководство
 * Просматривайте список guardian для просмотра, сравнения или массового удаления.](site-reliability-guardian/guardian-list.md)[03Добавление объектива Site Reliability Guardian
 
-* Справочник
 * Добавьте новый объектив Site Reliability Guardian.](site-reliability-guardian/reference.md)[04Добавление и доступ к ссылкам на аналитику валидации
 
-* Практическое руководство
 * Добавляйте и используйте ссылки на аналитику валидации для предоставления контекстной информации и ресурсов для объектива.](site-reliability-guardian/validation-insight-link.md)[05Контекст выполнения Guardian
 
-* Практическое руководство
 * Фильтруйте события валидации Site Reliability Guardian, инициированные внешним инструментом, используя контекстную информацию, предоставленную этим инструментом.](site-reliability-guardian/execution-context.md)[06Site Reliability Guardian как код
 
-* Практическое руководство
 * Примеры конфигурации как кода для guardian и его рабочего процесса.](site-reliability-guardian/config-as-code-srg.md)[07Разрешения ролей Site Reliability Guardian
 
-* Справочник
 * Настройте разрешения ролей для использования Site Reliability Guardian.](site-reliability-guardian/role-permissions.md)[08Структура событий Site Reliability Guardian
 
-* Справочник
 * Подробности о структуре событий Site Reliability Guardian.](site-reliability-guardian/event-structure.md)[09Валидация Site Reliability Guardian
 
 * Учебное пособие

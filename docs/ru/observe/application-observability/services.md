@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/application-observability/service
 scraped: 2026-03-06T21:10:36.219731
 ---
 
-# Сервисы
-
-
 * Latest Dynatrace
-* Overview
 * 4-min read
-* Updated on Oct 23, 2025
 
 Сервисы -- это фундаментальные строительные блоки приложений. С точки зрения наблюдаемости они предоставляют владельцам приложений критически важные метрики для мониторинга состояния приложений.
 

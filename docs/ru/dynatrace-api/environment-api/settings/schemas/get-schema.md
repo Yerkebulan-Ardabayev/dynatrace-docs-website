@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/sc
 scraped: 2026-03-06T21:19:38.146283
 ---
 
-# Settings API - Получение схемы (GET)
-
-
-* Справочник
-* Опубликовано 24 фев. 2021
-
 Получает параметры указанной схемы настроек.
 
 Запрос возвращает данные в формате `application/json`.

@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-moni
 scraped: 2026-03-03T21:28:56.720996
 ---
 
-# Запуск синтетических мониторов по требованию для CI/CD
-
-
 * Пояснение
-* Чтение: 17 мин
-* Обновлено 03 июля 2024 г.
 
 ActiveGate версии 1.233+
 

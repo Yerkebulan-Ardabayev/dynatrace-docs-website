@@ -7,9 +7,7 @@ scraped: 2026-03-06T21:21:54.871292
 # Метрики Istio/Envoy proxy
 
 
-* Classic
 * 1-min read
-* Updated on May 08, 2023
 
 Dynatrace version 1.255+
 
@@ -27,7 +25,7 @@ ActiveGate получает метрики Istio и отправляет их в
 
 На основе меток полученных метрик Dynatrace также определяет топологию Istio без OneAgent. Это поддерживается начиная с ActiveGate версии 1.261+.
 
-Подробнее об активации расширения Istio в вашей среде см. [Istio Service Meshï»¿](https://www.dynatrace.com/hub/detail/istio-and-envoy-service-mesh-prometheus/) в Dynatrace Hub. Рекомендуемая версия — 1.1.0 или выше.
+Подробнее об активации расширения Istio в вашей среде см. [Istio Service Mesh](https://www.dynatrace.com/hub/detail/istio-and-envoy-service-mesh-prometheus/) в Dynatrace Hub. Рекомендуемая версия — 1.1.0 или выше.
 
 ## Предварительные требования
 

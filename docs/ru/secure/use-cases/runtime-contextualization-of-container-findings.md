@@ -9,7 +9,6 @@ scraped: 2026-03-06T21:15:09.804438
 
 * Latest Dynatrace
 * Tutorial
-* Обновлено 30 сентября 2025 г.
 
 Сканирование образов контейнеров обычно выполняется в репозиториях артефактов, таких как [AWS Elastic Container Registry (ECR)](https://dt-url.net/mu03pcw), [GCP Artifact Registry](https://dt-url.net/9g03udo) и [Microsoft Azure Container Registry](https://dt-url.net/mn23u20). После развёртывания образов в продуктивной среде непрерывная переоценка образов контейнеров необходима для того, чтобы убедиться, что они не подвержены вновь появляющимся критическим уязвимостям.
 

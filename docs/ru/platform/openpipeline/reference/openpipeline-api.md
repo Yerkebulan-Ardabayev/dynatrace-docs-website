@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/platform/openpipeline/reference/openpipel
 scraped: 2026-03-06T21:16:08.786250
 ---
 
-# API OpenPipeline
-
-
-* Последняя версия Dynatrace
-* Справочник
-* Чтение: 1 мин
-* Обновлено 10 сентября 2025 г.
-
 ### API конфигураций
 
 Заменён на Settings API

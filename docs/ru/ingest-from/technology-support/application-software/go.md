@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/technology-support/applicatio
 scraped: 2026-03-05T21:25:20.925617
 ---
 
-# Go
-
-
 * Latest Dynatrace
-* Reference
 * 1-min read
-* Published Mar 19, 2018
 
 Go — это язык программирования, созданный Робертом Гризмером, Робом Пайком и Кеном Томпсоном. Go является предпочтительным языком программирования для облачных приложений во многих организациях.
 

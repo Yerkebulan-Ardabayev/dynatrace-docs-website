@@ -7,12 +7,10 @@ scraped: 2026-03-05T21:25:27.772573
 # Настройка CORS в Amazon S3
 
 
-* Classic
 * How-to guide
 * 3-min read
-* Published Jul 19, 2017
 
-Воспользуйтесь этими инструкциями для настройки CORS (межсайтовых HTTP-запросов) в AWS для бакетов в Amazon S3 (Simple Storage Service). Чтобы узнать больше о CORS и принципах его работы, см. [HTTP access control (CORS)ï»¿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
+Воспользуйтесь этими инструкциями для настройки CORS (межсайтовых HTTP-запросов) в AWS для бакетов в Amazon S3 (Simple Storage Service). Чтобы узнать больше о CORS и принципах его работы, см. [HTTP access control (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
 
 ## Введение
 
@@ -83,7 +81,7 @@ scraped: 2026-03-05T21:25:27.772573
    ]
    ```
 
-   Подробности см. в статье [Creating a cross-origin resource sharing (CORS) configurationï»¿](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManageCorsUsing.html).
+   Подробности см. в статье [Creating a cross-origin resource sharing (CORS) configuration](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManageCorsUsing.html).
 6. Выберите **Save changes** (Сохранить изменения), чтобы сохранить конфигурацию.
 
 ### Настройка CloudFront

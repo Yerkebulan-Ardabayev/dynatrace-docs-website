@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:18:25.804495
 ---
 
-# Мониторинг Azure Functions с использованием Azure App Service (встроенный)
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение 1 мин
-* Опубликовано 20 апреля 2022 г.
-
 Azure Functions предлагает широкий спектр возможностей для решения различных [сценариев и задач](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview#scenarios) Azure Functions:
 
 * Используйте предпочитаемый язык программирования

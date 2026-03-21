@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metri
 scraped: 2026-02-06T16:28:34.508791
 ---
 
-# Отправка метрик Telegraf в Dynatrace
-
-
 * Latest Dynatrace
-* Чтение: 2 мин.
-* Опубликовано 15 октября 2020 г.
 
 [Telegraf](https://github.com/influxdata/telegraf) — это серверный агент на основе плагинов для сбора, обработки, агрегации и записи метрик. Telegraf поставляется с плагином Dynatrace Output Plugin, который позволяет легко отправлять метрики Telegraf в Dynatrace.
 

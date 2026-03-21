@@ -9,7 +9,6 @@ scraped: 2026-03-06T21:15:52.450536
 
 * Latest Dynatrace
 * Tutorial
-* Updated on Mar 05, 2026
 
 OpenPipeline позволяет извлекать пользовательские метрики из [пользовательских сессий](../concepts/data-model.md#user-sessions "Ознакомьтесь с моделью данных, лежащей в основе New RUM Experience."), что обеспечивает долгосрочный анализ в ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** и ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, который выходит далеко за рамки стандартного мониторинга производительности. Комбинируя эти метрики со [свойствами пользовательских сессий](../concepts/data-model.md#event-and-session-properties "Ознакомьтесь с моделью данных, лежащей в основе New RUM Experience."), вы получаете гибкость для выявления инсайтов, максимально адаптированных к вашим бизнес-целям.
 

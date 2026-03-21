@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/basics/dynatrace-api-authen
 scraped: 2026-03-06T21:36:54.830279
 ---
 
-# Dynatrace API — токены и аутентификация
-
-
-* Справочник
-* Опубликовано 23 августа 2018 г.
-
 Для аутентификации при использовании Dynatrace API вам необходим действующий [токен доступа](../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md "Узнайте о концепции токена доступа и его областях действия.") или действующий [персональный токен доступа](../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token.md "Узнайте о концепции персонального токена доступа и его областях действия."). Доступ к API является детализированным, что означает, что токену также необходимо назначить соответствующие области действия (scopes). Описание каждого запроса содержит информацию о необходимых областях действия.
 
 Подробнее о клиентах OAuth см. [Клиенты OAuth](../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Управление аутентификацией и правами пользователей с помощью клиентов OAuth.").

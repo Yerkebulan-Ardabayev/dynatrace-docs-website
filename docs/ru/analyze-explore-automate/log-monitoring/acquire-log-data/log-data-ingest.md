@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/a
 scraped: 2026-02-06T16:28:21.884183
 ---
 
-# Ввод журналов API (Классические журналы)
-
-
-* Обзор
 * 3-минутное чтение
-* Обновлено 22 января 2026 г.
 
 Мониторинг журналов Classic
 

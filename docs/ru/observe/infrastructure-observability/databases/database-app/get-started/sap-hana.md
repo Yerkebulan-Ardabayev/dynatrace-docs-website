@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/data
 scraped: 2026-03-06T21:35:07.028567
 ---
 
-# Мониторинг базы данных SAP HANA
-
-
 * Latest Dynatrace
 * How-to guide
-* Published Jan 20, 2026
 
 Используйте фреймворк расширений Dynatrace, чтобы расширить наблюдаемость приложения на данные, получаемые непосредственно из уровня базы данных SAP HANA, и отслеживать влияние задач сервера базы данных на ваше приложение.
 

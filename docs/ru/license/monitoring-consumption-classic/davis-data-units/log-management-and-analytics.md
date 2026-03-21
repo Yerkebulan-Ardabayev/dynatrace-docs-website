@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/da
 scraped: 2026-03-06T21:26:35.434463
 ---
 
-# DDU для Log Management and Analytics
-
-
-* Classic
 * 12 мин. чтения
-* Обновлено 07 апреля 2025 г.
 
 Модель потребления DDU, описанная здесь для Log Management and Analytics, затрагивает только среды Dynatrace SaaS, которые активированы для Dynatrace Grail для управления данными логов. Потребление DDU для всех остальных типов возможностей DDU, включая [Log Monitoring для Dynatrace SaaS и Managed](log-monitoring-consumption.md "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Monitoring Classic."), остаётся без изменений. Для получения информации об активации Log Management and Analytics для вашей среды Dynatrace обратитесь к специалисту Dynatrace через чат в вашей среде Dynatrace.
 

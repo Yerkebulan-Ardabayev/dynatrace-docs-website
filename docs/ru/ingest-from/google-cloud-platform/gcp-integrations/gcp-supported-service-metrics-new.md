@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-int
 scraped: 2026-03-06T21:18:05.172973
 ---
 
-# Поддерживаемые сервисы Google Cloud
-
-
-* Последняя версия Dynatrace
-* Overview
-* Чтение: 3 мин
-* Обновлено 23 сентября 2024 г.
-
 Dynatrace версии 1.230+
 
 Данный раздел относится к метрикам сервисов Google Cloud, доступным при использовании интеграции Google Cloud версии 1.0.

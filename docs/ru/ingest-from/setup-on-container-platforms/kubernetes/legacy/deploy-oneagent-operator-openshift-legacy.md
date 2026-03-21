@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/
 scraped: 2026-03-06T21:32:01.892064
 ---
 
-# Развёртывание OneAgent Operator на OpenShift (устарело)
-
-
 * Последняя Dynatrace
 * 10 мин. чтения
-* Опубликовано 26 мая 2020 г.
 
 Эта процедура устарела.
 

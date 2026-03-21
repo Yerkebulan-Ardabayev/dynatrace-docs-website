@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migratio
 scraped: 2026-03-05T21:27:12.459284
 ---
 
-# Миграция с Topology and Smartscape API на Monitored entities API
-
-
-* Reference
-* Опубликовано 22 марта 2023 г.
-
 [Topology and Smartscape API](../../environment-api/topology-and-smartscape.md "Узнайте о Dynatrace Topology and Smartscape API.") устарел начиная с [Dynatrace версии 1.263](../../../whats-new/dynatrace-api/sprint-242.md "Журнал изменений Dynatrace API версии 1.242"). Его замена -- [Monitored entities API](../../environment-api/entity-v2.md "Узнайте о Dynatrace Monitored entities API."). Мы рекомендуем выполнить миграцию на новый API при первой возможности.
 
 Эта миграция затрагивает URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также область действия токена для аутентификации запросов.

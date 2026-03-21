@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/exte
 scraped: 2026-03-06T21:20:11.540618
 ---
 
-# Расширение Disk Analytics
-
-
 * Latest Dynatrace
 * Extension
-* Обновлено 18 декабря 2025 г.
 
 Получите детальную видимость локальных хранилищ данных на хостах Linux, где установлен OneAgent.
 

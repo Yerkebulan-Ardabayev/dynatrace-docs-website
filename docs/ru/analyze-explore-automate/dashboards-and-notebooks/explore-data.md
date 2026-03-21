@@ -7,11 +7,6 @@ scraped: 2026-03-06T21:10:58.587097
 # Исследование данных
 
 
-* Последняя версия Dynatrace
-* Практическое руководство
-* Время чтения: 15 мин.
-* Обновлено 17 февраля 2026 г.
-
 Dynatrace [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") и [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") предлагают следующие возможности для исследования данных:
 
 * Используйте [агентный и генеративный ИИ Dynatrace Intelligence](#copilot) и естественный язык для доступа к данным, хранящимся в Grail.

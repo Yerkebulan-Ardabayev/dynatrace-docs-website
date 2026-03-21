@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queu
 scraped: 2026-03-05T21:32:36.644435
 ---
 
-# Настройка мониторинга очередей сообщений
-
-
-* Classic
 * How-to guide
 * 3-min read
-* Updated on Dec 28, 2022
 
 Dynatrace автоматически определяет способ обработки сообщений в вашей среде. Однако в некоторых случаях требуется ручная настройка, чтобы Dynatrace мог корректно обнаруживать обработку сообщений.
 

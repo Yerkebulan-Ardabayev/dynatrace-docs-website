@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-c
 scraped: 2026-03-06T21:35:50.810381
 ---
 
-# Преобразование и фильтрация данных с помощью OpenTelemetry Collector
-
-
 * Latest Dynatrace
-* Практическое руководство
-* Чтение: 4 мин
-* Опубликовано 19 августа 2024 г.
 
 Следующий пример конфигурации показывает, как настроить экземпляр Collector для преобразования и манипулирования OTLP-запросами перед их пересылкой в Dynatrace.
 

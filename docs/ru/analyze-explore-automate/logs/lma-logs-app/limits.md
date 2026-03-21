@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-ap
 scraped: 2026-03-06T21:11:33.237702
 ---
 
-# Ограничения в Logs
-
-
 * Latest Dynatrace
-* Reference
 * 1-min read
-* Published Jan 19, 2026
 
 На этой странице описаны ограничения, применяемые при выполнении запросов и просмотре журналов в ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**, а также способы изменения ограничений по умолчанию.
 

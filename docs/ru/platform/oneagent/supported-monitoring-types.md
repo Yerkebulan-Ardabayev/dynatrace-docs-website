@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/platform/oneagent/supported-monitoring-ty
 scraped: 2026-03-06T21:15:42.340112
 ---
 
-# Возможности мониторинга OneAgent
-
-
-* Последняя версия Dynatrace
-* Чтение займёт 3 минуты
-* Опубликовано 12 октября 2018 г.
-
 OneAgent предлагает широкий набор возможностей мониторинга.
 
 ## Мониторинг реальных пользователей

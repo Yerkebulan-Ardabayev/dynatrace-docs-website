@@ -9,7 +9,6 @@ scraped: 2026-03-05T21:40:37.061485
 
 * Latest Dynatrace
 * 3-min read
-* Updated on Feb 05, 2026
 
 Вы можете автоматизировать отправку готовых электронных писем с помощью Email ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") на основе событий и расписаний, определённых вашими [рабочими процессами](../../workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 

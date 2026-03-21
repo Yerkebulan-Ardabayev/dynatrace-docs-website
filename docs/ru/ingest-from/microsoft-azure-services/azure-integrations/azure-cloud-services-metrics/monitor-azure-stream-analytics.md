@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-02T21:32:59.961251
 ---
 
-# Мониторинг Azure Stream Analytics
-
-
 * Актуальная версия Dynatrace
-* Практическое руководство
-* Чтение: 2 мин
-* Опубликовано 23 сен. 2020 г.
 
 Dynatrace получает метрики из Azure Metrics API для Azure Stream Analytics. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на дашбордах.
 

@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:26:12.325912
 ---
 
-# Мониторинг Azure SQL Managed Instance
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Jul 02, 2020
 
 На странице обзора Azure SQL Managed Instance вы получаете сведения о различных аспектах производительности базы данных: использование CPU, количество виртуальных ядер, дисковое пространство, количество байт ввода/вывода и многое другое.
 

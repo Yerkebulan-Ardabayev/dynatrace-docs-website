@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/a
 scraped: 2026-02-27T21:29:30.085699
 ---
 
-# Мониторинг журналов из Journald (Logs Classic)
-
-
 * Tutorial
 * 4-min read
-* Published Apr 22, 2025
 
 Log Monitoring Classic
 

@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infr
 scraped: 2026-03-06T21:16:52.044078
 ---
 
-# Процессы
-
-
-* Последняя версия Dynatrace
 * Explanation
-* Чтение: 2 мин
-* Опубликовано 25 ноября 2025 г.
 
 Представление **Processes** в разделе ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** предоставляет выделенный реестр для просмотра, фильтрации и изучения процессов как самостоятельно, так и в связи с хостами и контейнерами. Переходите между сущностями, чтобы увидеть, как они взаимосвязаны.
 

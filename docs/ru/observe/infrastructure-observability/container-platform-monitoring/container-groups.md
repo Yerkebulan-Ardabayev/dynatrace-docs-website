@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cont
 scraped: 2026-03-06T21:16:48.623627
 ---
 
-# Мониторинг групп контейнеров
-
-
-* Classic
 * How-to guide
 * 3-min read
-* Updated on Apr 21, 2024
 
 Страница обзора **Container groups** позволяет просматривать список всех контейнеров в вашей среде и фильтровать их по группе процессов, группе контейнеров или свойствам Kubernetes.
 

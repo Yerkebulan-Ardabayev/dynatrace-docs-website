@@ -8,8 +8,6 @@ scraped: 2026-03-05T21:39:17.344467
 
 
 * Latest Dynatrace
-* Reference
-* Published Nov 08, 2022
 
 ## Начало строки
 

@@ -10,7 +10,6 @@ scraped: 2026-03-05T21:29:51.504437
 * Latest Dynatrace
 * How-to guide
 * 4-min read
-* Updated on Sep 26, 2025
 
 Модуль [`@dynatrace/opentelemetry-gcf`](https://dt-url.net/zm03ye8) предоставляет API для трассировки Node.js в Google Cloud Functions (GCF).
 

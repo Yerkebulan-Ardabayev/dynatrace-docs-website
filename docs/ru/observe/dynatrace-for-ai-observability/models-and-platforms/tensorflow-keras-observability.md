@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/mo
 scraped: 2026-03-06T21:33:34.751016
 ---
 
-# Наблюдаемость TensorFlow Keras
-
-
 * Latest Dynatrace
-* Руководство
-* Чтение: 4 мин
-* Опубликовано 6 июня 2023 г.
 
 **TensorFlow** и его удобный **последовательный интерфейс Keras** представляют собой передовую технологию для обучения и запуска моделей глубокого обучения.
 

@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application
 scraped: 2026-03-04T21:39:09.965555
 ---
 
-# Vulnerabilities API — GET vulnerable functions
-
-
-* Справочник
-* Обновлено 25 сентября 2024 г.
-
 Выводит список уязвимых функций и информацию об их использовании.
 
 Запрос возвращает данные в формате `application/json`.

@@ -9,7 +9,6 @@ scraped: 2026-03-04T21:31:59.293255
 
 * Latest Dynatrace
 * 2-min read
-* Updated on Sep 05, 2025
 
 Dynatrace Operator управляет развёртыванием и обновлениями следующих компонентов в Kubernetes:
 

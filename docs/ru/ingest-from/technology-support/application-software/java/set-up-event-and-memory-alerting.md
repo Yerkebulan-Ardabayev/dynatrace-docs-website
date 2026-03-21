@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/technology-support/applicatio
 scraped: 2026-03-06T21:29:46.503655
 ---
 
-# События и оповещения о нехватке памяти (OOM) и нехватке потоков (OOT)
-
-
-* Последняя версия Dynatrace
-* Чтение: 2 мин
-* Обновлено 10 января 2024 г.
-
 Чтобы настроить события нехватки памяти (OOM) и нехватки потоков (OOT) для автономных/PaaS-сценариев и cloud-native Full-Stack инъекций, следуйте приведённым ниже инструкциям.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")

@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-int
 scraped: 2026-03-06T21:29:42.968498
 ---
 
-# Настройка мониторинга OpenTelemetry для Google Cloud Functions
-
-
 * Latest Dynatrace
 * How-to guide
-* Чтение: 2 мин
-* Обновлено 31 марта 2025 г.
 
 Dynatrace использует [OpenTelemetry](https://dt-url.net/y903u4j) для мониторинга вызовов Google Cloud Functions.
 

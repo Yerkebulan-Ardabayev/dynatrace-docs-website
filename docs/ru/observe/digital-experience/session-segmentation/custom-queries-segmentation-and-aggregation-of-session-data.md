@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmen
 scraped: 2026-03-06T21:23:09.934912
 ---
 
-# Пользовательские запросы, сегментация и агрегирование данных сессий
-
-
-* Classic
 * How-to guide
 * 37-min read
-* Updated on Apr 23, 2024
 
 Dynatrace захватывает подробные [данные пользовательских сессий](new-user-sessions.md "Learn about user session segmentation and filtering attributes.") каждый раз, когда пользователь взаимодействует с вашим отслеживаемым приложением. Эти данные включают все действия пользователя и высокоуровневые данные о производительности. Используя Dynatrace API или User Sessions Query Language (USQL), вы можете легко выполнять мощные запросы, сегментацию и агрегирование по этим данным. В данном разделе приведены подробности о ключевых словах и функциях, синтаксисе, работе с таблицами Real User Monitoring, автоматических запросах и многом другом.
 

@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/rum-concepts/s
 scraped: 2026-03-05T21:27:21.930906
 ---
 
-# Рейтинги Apdex
-
-
-* Classic
 * Описание
-* Чтение: 3 мин
-* Обновлено 27 января 2023
 
 Dynatrace рассчитывает [рейтинги Apdex](https://en.wikipedia.org/wiki/Apdex), чтобы предоставить вам единую метрику, которая характеризует производительность вашего приложения и ошибки, влияющие на пользовательский опыт.
 

@@ -4,12 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activega
 scraped: 2026-03-06T21:33:18.989594
 ---
 
-# Диагностика ActiveGate
-
-
 * Latest Dynatrace
-* Время чтения: 9 мин
-* Обновлено 20 октября 2025 г.
 
 Вы можете запустить полностью автоматизированное устранение неполадок ActiveGate для сред Dynatrace SaaS и Managed.
 

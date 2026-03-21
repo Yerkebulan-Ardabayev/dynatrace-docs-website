@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application
 scraped: 2026-03-06T21:37:32.135216
 ---
 
-# Vulnerabilities API - GET remediation item entities
-
-
-* Справочник
-* Обновлено 25 сентября 2024 г.
-
 Возвращает список процессов [отслеживания исправлений](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Track the remediation progress of vulnerabilities.") для уязвимости сторонней библиотеки.
 
 Запрос возвращает полезную нагрузку в формате `application/json`.

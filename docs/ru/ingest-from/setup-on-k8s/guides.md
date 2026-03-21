@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides
 scraped: 2026-03-06T21:34:51.653745
 ---
 
-# Руководства
-
-
 * Latest Dynatrace
 * 3-min read
-* Published Jul 28, 2023
 
 После установки Dynatrace Operator для Kubernetes у вас могут возникнуть специфические сценарии использования и требования, которые необходимо выполнить. В этом разделе содержатся руководства для ряда конкретных сценариев использования.
 

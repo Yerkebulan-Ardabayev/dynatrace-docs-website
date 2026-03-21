@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/technology-support/applicatio
 scraped: 2026-03-05T21:26:34.967295
 ---
 
-# Мониторинг Kong Gateway
-
-
 * Latest Dynatrace
 * 4-min read
-* Updated on Sep 04, 2024
 
 Для включения наблюдаемости Kong в Dynatrace доступны следующие варианты.
 

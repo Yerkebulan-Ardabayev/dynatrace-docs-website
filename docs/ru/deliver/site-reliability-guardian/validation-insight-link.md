@@ -4,14 +4,8 @@ source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/validat
 scraped: 2026-03-05T21:34:43.909572
 ---
 
-# Добавление и доступ к ссылкам аналитики валидации
-
-# Добавление и доступ к ссылкам аналитики валидации
-
 * Последняя Dynatrace
-* Практическое руководство
 * 2 мин. чтения
-* Опубликовано 17 февраля 2026 г.
 
 Добавляйте ссылки аналитики валидации для предоставления контекстной информации и ресурсов для цели.
 С помощью ссылок аналитики валидации вы можете перейти непосредственно к панелям, блокнотам или внешним инструментам, таким как SonarQube.
@@ -50,17 +44,13 @@ scraped: 2026-03-05T21:34:43.909572
   fetch events
 
 
-
   | filter event.kind == "SDLC_EVENT"
-
 
 
   | filter event.type == "validation.objective"
 
 
-
   | filter event.provider == "dynatrace.site.reliability.guardian"
-
 
 
   | fields dt.srg.objective
@@ -73,13 +63,10 @@ scraped: 2026-03-05T21:34:43.909572
   fetch bizevents
 
 
-
   | filter event.provider == "dynatrace.site.reliability.guardian"
 
 
-
   | filter event.type == "guardian.validation.objective"
-
 
 
   | fields guardian.objective

@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-04T21:35:27.635545
 ---
 
-# Мониторинг Elastic Container Service (ECS) с типом запуска EC2
-
-
-* Classic
-* Практическое руководство
-* Чтение: 3 мин
-* Опубликовано 18 мая 2020 г.
-
 Для развёртывания OneAgent в кластерах **AWS Elastic Container Service** (ECS) с типом запуска EC2 следуйте приведённым ниже инструкциям.
 
 ## Предварительные требования

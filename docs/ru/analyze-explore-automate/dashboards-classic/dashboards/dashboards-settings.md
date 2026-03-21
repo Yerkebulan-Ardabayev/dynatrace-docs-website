@@ -7,10 +7,8 @@ scraped: 2026-03-05T21:34:00.886805
 # Глобальные настройки дашбордов Dynatrace
 
 
-* Classic
 * How-to guide
 * 2-min read
-* Published Mar 05, 2021
 
 [Dashboards Classic](../../dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic.")
 

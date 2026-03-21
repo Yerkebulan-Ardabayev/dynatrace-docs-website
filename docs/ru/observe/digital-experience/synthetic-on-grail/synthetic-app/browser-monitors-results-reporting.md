@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-g
 scraped: 2026-03-06T21:24:32.142789
 ---
 
-# Отчёты о результатах браузерных мониторов
-
-
 * Latest Dynatrace
-* Справочник
-* Чтение: 15 мин
-* Обновлено 23 января 2026
 
 Отчёты браузерных мониторов предоставляют:
 

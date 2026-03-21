@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/action
 scraped: 2026-03-05T21:30:53.886389
 ---
 
-# Настройка Jenkins Connector
-
-
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Updated on May 07, 2025
 
 ### Шаг 1 Добавление нового шаблона хоста во внешние запросы
 

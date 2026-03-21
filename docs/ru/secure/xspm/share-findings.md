@@ -9,7 +9,6 @@ scraped: 2026-03-05T21:36:42.257441
 
 * Latest Dynatrace
 * How-to guide
-* Updated on Sep 23, 2025
 
 Dynatrace предоставляет вам гибкость для выполнения следующих задач:
 

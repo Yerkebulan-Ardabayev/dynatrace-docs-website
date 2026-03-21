@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:38:17.684422
 ---
 
-# Мониторинг Azure AI - Face
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Sep 22, 2020
 
 Dynatrace получает метрики из Azure Metrics API для Face. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закреплять на дашбордах.
 

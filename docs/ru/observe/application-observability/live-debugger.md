@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/application-observability/live-de
 scraped: 2026-03-06T21:17:25.680314
 ---
 
-# Live Debugger
-
-
 * Latest Dynatrace
-* App
 * 8 мин. чтения
-* Обновлено 1 декабря 2025 г.
 
 ![Live Debugger](https://dt-cdn.net/images/live-debugger-256-b934a2bad5.png "Live Debugger") **Live Debugger** -- это облачное приложение для сбора данных в реальном времени, которое обеспечивает мгновенный доступ к данным на уровне кода, необходимым для быстрого устранения неполадок и отладки в любой среде, от разработки до продакшена.
 

@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-03-05T21:33:00.374126
 ---
 
-# Мониторинг Amazon S3 (Simple Storage Service)
-
-
-* Classic
-* Практическое руководство
-* Чтение: 5 мин
-* Обновлено Jun 20, 2022
-
 Dynatrace собирает метрики для множества предварительно выбранных пространств имён, включая Amazon Simple Storage Service (Amazon S3). Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
 
 ## Предварительные требования
@@ -23,10 +15,10 @@ Dynatrace собирает метрики для множества предва
   + Для развертываний Dynatrace SaaS вам потребуется Environment ActiveGate или Multi-environment ActiveGate.
   + Для развертываний Dynatrace Managed можно использовать любой тип ActiveGate.
 
-    Для доступа на основе ролей (как в развертывании [SaaS](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#role-based-access "Интеграция метрик из Amazon CloudWatch.") так и [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) развертывании) вам потребуется [Environment ActiveGate](../../../../../ingest-from/dynatrace-activegate/installation.md "Узнайте, как настроить ActiveGate"), установленный на хосте Amazon EC2.
+    Для доступа на основе ролей (как в развертывании [SaaS](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#role-based-access "Интеграция метрик из Amazon CloudWatch.") так и [Managed](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) развертывании) вам потребуется [Environment ActiveGate](../../../../../ingest-from/dynatrace-activegate/installation.md "Узнайте, как настроить ActiveGate"), установленный на хосте Amazon EC2.
 * Dynatrace версии 1.182+
 * Обновленная [политика мониторинга AWS](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#aws-policy-and-authentication "Интеграция метрик из Amazon CloudWatch.") для включения дополнительных сервисов AWS.  
-  Для [обновления политики AWS IAMï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+  Для [обновления политики AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
 Предопределённая политика JSON для всех поддерживаемых сервисов
 
@@ -511,7 +503,7 @@ Dynatrace собирает метрики для множества предва
 * `"apigateway:GET"` для **Amazon API Gateway**
 * `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
-* Фильтр метрик запросов для корзин, которые вы хотите отслеживать. Подробнее см. [Создание фильтра метрик запросов для корзины S3ï»¿](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/configure-metrics.html) в [документации AWSï»¿](https://dt-url.net/aw030yi).
+* Фильтр метрик запросов для корзин, которые вы хотите отслеживать. Подробнее см. [Создание фильтра метрик запросов для корзины S3](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/configure-metrics.html) в [документации AWS](https://dt-url.net/aw030yi).
 
 Для мониторинга метрик S3 необходимо выбрать сервис **Amazon S3**, в противном случае Amazon S3 (built-in) будет предоставлять только базовый подсчёт корзин S3 в вашей учётной записи.
 

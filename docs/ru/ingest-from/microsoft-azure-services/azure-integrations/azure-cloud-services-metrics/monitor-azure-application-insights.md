@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-04T21:35:49.902914
 ---
 
-# Мониторинг Azure Application Insights
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 4 мин
-* Опубликовано 22 сент. 2020
-
 Dynatrace получает метрики из Azure Metrics API для Azure Application Insights. Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на дашбордах.
 
 ## Предварительные требования

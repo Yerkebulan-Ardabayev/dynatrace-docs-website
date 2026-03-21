@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/action
 scraped: 2026-03-06T21:21:42.823422
 ---
 
-# ServiceNow
-
-
 * Последняя Dynatrace
 * 7 мин. чтения
-* Обновлено 18 ноября 2025 г.
 
 Ваша среда Dynatrace может интегрироваться со средой ServiceNow с помощью коннектора ServiceNow ![ServiceNow for Workflows](https://dt-cdn.net/images/servicenow-for-workflows-257-9349ea0329.png "ServiceNow for Workflows"), позволяя автоматически создавать инциденты на основе данных мониторинга и событий.
 Кроме того, вы можете получать группы из ServiceNow и импортировать их как [команды владельцев](../../../deliver/ownership/ownership-teams.md#import-teams "Определение команд с идентификаторами, описаниями, обязанностями и маршрутизацией для владения сущностями.").
@@ -46,10 +42,6 @@ scraped: 2026-03-06T21:21:42.823422
 Разрешения пользователя ServiceNow:
 
 * Поиск, создание и обновление инцидентов (таблица incident)
-* Чтение категорий (таблица sys\_choice, элемент category)
-* Чтение подкатегорий (таблица sys\_choice, элемент subcategory)
-* Чтение групп назначения (таблица sys\_user\_group)
-* Чтение кодов решения (таблица sys\_choice, элемент close\_code)
 
 ### Шаг 3. Настройте подключение ServiceNow
 

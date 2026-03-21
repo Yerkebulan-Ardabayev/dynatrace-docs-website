@@ -8,9 +8,7 @@ scraped: 2026-03-06T21:24:35.608154
 
 
 * Latest Dynatrace
-* Reference
 * 2-min read
-* Updated on Nov 03, 2025
 
 Выполнение монитора по запросу
 

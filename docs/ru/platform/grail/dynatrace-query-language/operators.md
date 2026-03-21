@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/o
 scraped: 2026-03-06T21:20:22.400501
 ---
 
-# Операторы DQL
-
-
 * Latest Dynatrace
-* Справочник
 * 22 мин. чтения
-* Обновлено 28 окт. 2025
 
 В следующей таблице представлен список всех операторов DQL.
 

@@ -7,10 +7,6 @@ scraped: 2026-03-05T21:34:52.597060
 # Обновление Log Monitoring Classic до Log Management and Analytics
 
 
-* Classic
-* Чтение: 5 мин
-* Обновлено 20 ноября 2025 г.
-
 Log Management and Analytics — это новейшее решение Dynatrace для мониторинга логов. С появлением Dynatrace Platform и [Grail](../../../platform/grail/dynatrace-grail.md "Grail — это хранилище данных Dynatrace, специально разработанное для данных наблюдаемости и безопасности, которое выступает единым унифицированным хранилищем для логов, метрик, трассировок, событий и многого другого.") мы рекомендуем перейти на новейшее решение для мониторинга логов.
 
 ### Как обновиться с Log Monitoring Classic до Log Management and Analytics?

@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/service-a
 scraped: 2026-03-06T21:23:13.260097
 ---
 
-# Request attributes API
-
-
-* Reference
-* Published Dec 05, 2018
-
 API **Request attributes** позволяет управлять конфигурацией [атрибутов запросов](../../../observe/application-observability/services/request-attributes.md "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
 
 [### Просмотр всех атрибутов

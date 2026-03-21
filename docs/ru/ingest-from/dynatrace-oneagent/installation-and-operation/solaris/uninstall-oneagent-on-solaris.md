@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:20:14.876301
 ---
 
-# Удаление OneAgent на Solaris
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
 * 1 минута чтения
-* Опубликовано 13 ноября 2025 г.
 
 Чтобы удалить OneAgent на Solaris, откатите все изменения конфигурации, внесённые при [установке](install-oneagent-on-solaris.md "Узнайте, как настроить Dynatrace для мониторинга приложений различных технологий, работающих на Solaris (x86 и SPARC).") OneAgent.
 

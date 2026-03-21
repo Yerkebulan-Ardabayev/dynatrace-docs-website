@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:17:37.851510
 ---
 
-# Мониторинг Azure Virtual Machine Scale Set (VMSS)
-
-
 * Latest Dynatrace
-* Практическое руководство
-* Чтение: 6 мин.
-* Опубликовано 19 июля 2017 г.
 
 ## Возможности
 

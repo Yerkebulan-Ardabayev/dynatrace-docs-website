@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-05T21:38:21.291722
 ---
 
-# Мониторинг Azure Data Explorer
-
-
 * Latest Dynatrace
-* Руководство
-* Чтение: 3 мин.
-* Опубликовано 22 сентября 2020 г.
 
 Dynatrace получает метрики из Azure Metrics API для Azure Data Explorer. Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на ваших дашбордах.
 

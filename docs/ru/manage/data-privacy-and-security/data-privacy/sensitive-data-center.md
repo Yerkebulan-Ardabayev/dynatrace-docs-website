@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-pri
 scraped: 2026-03-05T21:34:45.103522
 ---
 
-# Центр конфиденциальных данных
-
-
-* Последняя версия Dynatrace
-* Приложение
-* Чтение: 9 мин
-* Обновлено 21 января 2026 г.
-
 ## Предварительные требования
 
 ### Разрешения
@@ -264,20 +256,14 @@ DENY iam:service-users:use WHERE iam:service-user-email = "YOUR-SERVICE-USER-EMA
 
 [01Создание политики в Sensitive Data Center
 
-* Руководство
 * Создание политики для обогащения или фильтрации результатов запросов с помощью Sensitive Data Center.](sensitive-data-center/create-policy.md)[02Экспорт персональных данных в Sensitive Data Center
 
-* Руководство
 * Экспорт персональных данных с помощью запросов на экспорт Sensitive Data Center.](sensitive-data-center/export-personal-data.md)[03Просмотр логов аудита в Sensitive Data Center
 
-* Руководство
 * Просмотр логов аудита Sensitive Data Center.](sensitive-data-center/review-audit-logs.md)[04Удаление персональных данных в Sensitive Data Center
 
-* Руководство
 * Удаление персональных данных с помощью запросов на удаление Sensitive Data Center.](sensitive-data-center/delete-personal-data.md)[05Очистка данных в Sensitive Data Center
 
-* Руководство
 * Очистка данных с помощью запросов на очистку Sensitive Data Center.](sensitive-data-center/cleanup-data.md)[06Создание запланированного сканирования в Sensitive Data Center
 
-* Руководство
 * Создание запланированного сканирования для поддержания персональных данных с помощью Sensitive Data Center.](sensitive-data-center/create-scheduled-scan.md)

@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate
 scraped: 2026-02-06T16:23:23.536585
 ---
 
-# Мониторинг AWS App Runner
-
-
-* Практическое руководство
-* Чтение: 3 мин
-* Опубликовано 16 января 2023 г.
-
 Для развёртывания OneAgent в App Runner следуйте приведённым ниже инструкциям.
 
 ## Предварительные требования

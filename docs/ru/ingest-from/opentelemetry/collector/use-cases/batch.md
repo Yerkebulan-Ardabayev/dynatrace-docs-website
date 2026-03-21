@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-c
 scraped: 2026-03-06T21:31:54.689204
 ---
 
-# Пакетная обработка OTLP-запросов с помощью OpenTelemetry Collector
-
-
 * Latest Dynatrace
 * How-to guide
 * 3-min read
-* Published Oct 11, 2023
 
 Следующий пример конфигурации показывает, как настроить экземпляр Collector и его встроенный пакетный процессор для постановки в очередь и пакетной обработки OTLP-запросов с целью повышения пропускной способности.
 

@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/deployment/
 scraped: 2026-03-06T21:28:44.533912
 ---
 
-# Deployment API — Просмотр последней версии OneAgent для AWS Lambda Classic
-
-
-* Reference
-* Updated on Aug 20, 2025
-
 Этот API предназначен для использования с реализацией AWS Lambda Classic. Подробности см. в разделе [AWS Lambda](../../../../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration.md "AWS Lambda capabilities and integration options").
 
 Получает названия последних версий кодовых модулей OneAgent для сред выполнения AWS Lambda Java, Node.js и Python, включая названия слоёв в комбинации с коллектором логов, а также названия автономного слоя коллектора логов.

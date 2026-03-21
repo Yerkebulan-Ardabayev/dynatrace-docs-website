@@ -7,10 +7,7 @@ scraped: 2026-03-05T21:29:29.015445
 # Интеграция с Google Cloud Functions .NET
 
 
-* Последняя версия Dynatrace
-* Практическое руководство
 * 3 мин. чтения
-* Опубликовано 25 июля 2023 г.
 
 NuGet-пакет `Dynatrace.OpenTelemetry.Instrumentation.GoogleCloudFunctions` предоставляет API для трассировки серверных вызовов .NET Google Cloud Function (GCF).
 

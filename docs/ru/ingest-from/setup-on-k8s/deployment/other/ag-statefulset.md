@@ -8,8 +8,6 @@ scraped: 2026-03-06T21:33:13.482217
 
 
 * Latest Dynatrace
-* Чтение: 5 мин
-* Обновлено 19 января 2025 г.
 
 Dynatrace Operator управляет жизненным циклом нескольких компонентов Dynatrace, включая ActiveGate. Если вы не можете использовать Dynatrace Operator, вы можете вручную развернуть ActiveGate как StatefulSet в вашем кластере Kubernetes. Ниже приведены инструкции.
 

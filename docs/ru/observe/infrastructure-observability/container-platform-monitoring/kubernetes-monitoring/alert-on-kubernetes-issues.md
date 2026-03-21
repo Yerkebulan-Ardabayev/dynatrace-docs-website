@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cont
 scraped: 2026-03-06T21:22:05.276956
 ---
 
-# Оповещения о распространённых проблемах Kubernetes/OpenShift
-
-
-* Classic
-* Чтение: 18 мин.
-* Обновлено 21 фев. 2025 г.
-
 Dynatrace версии 1.254+
 
 ActiveGate версии 1.253+

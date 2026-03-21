@@ -4,11 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-an
 scraped: 2026-03-05T21:26:49.944416
 ---
 
-# Hosts API — POST tags
-
-
-* Reference
-* Updated on Mar 22, 2023
 * Deprecated
 
 Назначает [пользовательские теги](../../../../../common/manage/tags-and-metadata.md "Use tags and metadata to organize data in your Dynatrace environment.") указанному хосту. Необходимо указать только значение тега. Контекст `CONTEXTLESS` будет назначен автоматически.

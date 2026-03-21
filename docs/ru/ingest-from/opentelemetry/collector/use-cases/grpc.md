@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-c
 scraped: 2026-03-03T21:32:35.758185
 ---
 
-# Преобразование OTLP gRPC в HTTP с помощью OpenTelemetry Collector
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Oct 11, 2023
 
 В следующем примере конфигурации показано, как настроить экземпляр Collector для преобразования gRPC OTLP-запроса в его HTTP-аналог.
 

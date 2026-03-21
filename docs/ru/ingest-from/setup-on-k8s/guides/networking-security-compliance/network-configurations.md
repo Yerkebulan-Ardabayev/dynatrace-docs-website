@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/networkin
 scraped: 2026-03-05T21:38:19.578189
 ---
 
-# Сетевые конфигурации
-
-
 * Latest Dynatrace
 * 4 мин. чтения
-* Опубликовано 25 марта 2024 г.
 
 Настройка Dynatrace в средах с сетевыми ограничениями с помощью сетевых конфигураций, параметров прокси и исключений URL.
 

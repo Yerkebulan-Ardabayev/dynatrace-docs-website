@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-int
 scraped: 2026-03-06T21:18:08.510400
 ---
 
-# Мониторинг Google Kubernetes Engine (GKE)
-
-
-* Последняя версия Dynatrace
-* Обзор
 * 1 мин. чтения
-* Опубликовано 26 сен. 2018 г.
 
 Dynatrace OneAgent обеспечивает расширенный мониторинг подов, узлов и кластеров Google Kubernetes Engine. Процесс развёртывания OneAgent не отличается от других дистрибутивов.
 

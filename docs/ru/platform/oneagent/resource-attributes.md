@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/platform/oneagent/resource-attributes
 scraped: 2026-03-04T21:30:32.246175
 ---
 
-# Атрибуты ресурсов
-
-
 * Latest Dynatrace
-* Reference
 * 6-min read
-* Updated on Jul 23, 2025
 
 ## Атрибуты ресурсов уровня хоста
 

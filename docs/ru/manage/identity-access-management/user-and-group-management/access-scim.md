@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/manage/identity-access-management/user-an
 scraped: 2026-03-06T21:27:10.828770
 ---
 
-# SCIM
-
-
 * Latest Dynatrace
-* Reference
 * 6-min read
-* Updated on Jun 30, 2025
 
 System for Cross-domain Identity Management (SCIM) -- это открытый стандарт для автоматизации обмена информацией об идентификации пользователей между доменами идентификации или ИТ-системами. Вы можете настроить Dynatrace SaaS для автоматического получения информации об идентификации пользователей от поставщика удостоверений (IdP) вашей организации через SCIM.
 

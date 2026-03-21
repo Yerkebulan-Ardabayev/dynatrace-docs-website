@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-p
 scraped: 2026-03-06T21:14:37.436435
 ---
 
-# Обработка бизнес-событий через классический конвейер
-
-
 * Latest Dynatrace
 * Tutorial
 * 5-min read
-* Published Oct 24, 2022
 
 Обработка бизнес-событий через классический конвейер позволяет определить, как ваши данные будут обрабатываться далее.
 

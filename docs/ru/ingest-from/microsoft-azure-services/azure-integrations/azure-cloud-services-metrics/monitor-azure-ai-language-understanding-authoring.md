@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:35:28.620671
 ---
 
-# Мониторинг Azure AI — Language Understanding (LUIS) Authoring
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
 * 1 минута на чтение
-* Опубликовано 22 сентября 2020 г.
 
 Dynatrace получает метрики через Azure Metrics API для Language Understanding (LUIS) Authoring. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские диаграммы, которые можно прикреплять к дашбордам.
 

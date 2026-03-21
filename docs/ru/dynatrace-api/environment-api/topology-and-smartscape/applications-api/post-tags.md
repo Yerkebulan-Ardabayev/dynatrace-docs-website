@@ -4,11 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-an
 scraped: 2026-03-05T21:27:04.307374
 ---
 
-# Applications API - POST tags
-
-
-* Reference
-* Updated on Mar 22, 2023
 * Deprecated
 
 Присваивает [пользовательские теги](../../../../../common/manage/tags-and-metadata.md "Используйте теги и метаданные для организации данных в вашей среде Dynatrace.") указанному приложению. Достаточно указать только значение тега. Контекст `CONTEXTLESS` будет присвоен автоматически.

@@ -4,12 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:20:18.314953
 ---
 
-# Устранение неполадок при установке OneAgent на Solaris
-
-
 * Latest Dynatrace
 * 3-min read
-* Published Sep 19, 2018
 
 Узнайте, как решить проблемы, связанные с установкой OneAgent на Solaris.
 

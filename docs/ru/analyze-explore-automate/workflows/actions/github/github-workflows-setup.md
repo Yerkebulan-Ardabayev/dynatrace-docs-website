@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/action
 scraped: 2026-03-05T21:36:46.023049
 ---
 
-# Настройка GitHub Connector
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение 2 мин
-* Обновлено 7 мая 2025 г.
-
 Ваша среда Dynatrace может интегрироваться с репозиториями GitHub с помощью GitHub Connector ![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub"). После настройки вы сможете использовать действия GitHub Connector в своём рабочем процессе для автоматического управления задачами и запросами на слияние на основе данных мониторинга и событий.
 
 ## Предварительное требование

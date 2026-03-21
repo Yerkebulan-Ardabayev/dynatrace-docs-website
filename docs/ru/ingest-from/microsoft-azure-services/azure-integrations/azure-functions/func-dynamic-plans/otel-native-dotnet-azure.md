@@ -10,7 +10,6 @@ scraped: 2026-03-05T21:39:19.122956
 * Latest Dynatrace
 * How-to guide
 * 4-min read
-* Published Mar 09, 2022
 
 Экспортёры OpenTelemetry Protocol (OTLP) для .NET в настоящее время поддерживают транспорты [gRPC и HTTP 1.1 с двоичными данными Protocol Buffers (Protobuf)](https://github.com/open-telemetry/opentelemetry-specification/blob/main/spec-compliance-matrix.md#exporters). Поддерживаемые соответствующие значения протоколов: `grpc` и `http/protobuf`. [Параметры конфигурации](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md#configuration-options) можно задать как через переменные среды, так и непосредственно в коде.
 

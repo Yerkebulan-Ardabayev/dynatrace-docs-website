@@ -10,7 +10,6 @@ scraped: 2026-03-06T21:19:44.937750
 * Latest Dynatrace
 * Explanation
 * 1-min read
-* Updated on Dec 10, 2025
 
 Dynatrace Mainframe Monitoring обеспечивает автоматический сквозной мониторинг производительности приложений для транзакций, регионов и приложений, развёрнутых на IBM z/OS.
 Он включает распределённую трассировку, метрики, топологию и анализ на уровне кода для [более чем 30 поддерживаемых технологий](../../../ingest-from/technology-support/mainframe-technology-support.md "Learn which technologies Dynatrace supports for Mainframe monitoring.").

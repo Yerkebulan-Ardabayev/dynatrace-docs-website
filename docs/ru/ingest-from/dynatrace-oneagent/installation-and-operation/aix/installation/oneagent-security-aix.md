@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-03-06T21:18:30.847920
 ---
 
-# Безопасность OneAgent на AIX
-
-
 * Latest Dynatrace
-* Reference
 * 3-min read
-* Published Nov 12, 2020
 
 Для полной автоматизации мониторинга операционных систем, процессов и сетевых интерфейсов Dynatrace требует привилегированного доступа к операционной системе как во время установки, так и во время работы.
 

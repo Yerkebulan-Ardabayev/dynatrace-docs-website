@@ -7,10 +7,7 @@ scraped: 2026-03-06T21:25:41.888368
 # Просмотр логов (Logs Classic)
 
 
-* Classic
 * Пояснение
-* Чтение: 9 мин
-* Обновлено 18 января 2023 г.
 
 Log Monitoring Classic
 

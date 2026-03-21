@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-exten
 scraped: 2026-03-03T21:31:20.683420
 ---
 
-# Конфигурация мониторинга MySQL
-
-
 * Latest Dynatrace
-* Справочник
-* Чтение: 2 мин
-* Опубликовано 19 апреля 2023
 
 После определения области действия конфигурации необходимо указать следующее:
 

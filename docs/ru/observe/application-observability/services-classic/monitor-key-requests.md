@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/observe/application-observability/service
 scraped: 2026-03-06T21:17:32.546778
 ---
 
-# Мониторинг ключевых запросов
-
-
-* Classic
-* Практическое руководство
-* Чтение: 5 мин
-* Обновлено 21 января 2026
-
 Переход на Enhanced endpoints для SDv1
 
 Настройка ключевых запросов недоступна для сред, созданных в Dynatrace версии 1.330+.

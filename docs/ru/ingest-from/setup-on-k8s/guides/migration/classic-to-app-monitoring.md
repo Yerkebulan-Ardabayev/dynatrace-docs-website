@@ -9,7 +9,6 @@ scraped: 2026-03-05T21:37:20.359464
 
 * Latest Dynatrace
 * 3-min read
-* Updated on Sep 05, 2025
 
 Dynatrace Operator версии 1.0.0+
 

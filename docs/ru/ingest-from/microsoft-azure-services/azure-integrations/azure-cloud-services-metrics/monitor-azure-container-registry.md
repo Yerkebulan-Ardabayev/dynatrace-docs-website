@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azur
 scraped: 2026-03-06T21:31:27.702564
 ---
 
-# Мониторинг Azure Container Registry
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published Jun 25, 2020
 
 Dynatrace принимает метрики из Azure Metrics API для Azure Container Registry. Вы можете просматривать метрики для каждого экземпляра службы, разбивать метрики на несколько измерений и создавать пользовательские диаграммы, которые можно закрепить на своих дашбордах.
 

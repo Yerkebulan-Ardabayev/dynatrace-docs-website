@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-n
 scraped: 2026-03-06T21:11:17.997326
 ---
 
-# Редактирование визуализаций для Notebooks и Dashboards
-
-
-* Последняя версия Dynatrace
-* Справочник
-* Чтение: 1 мин
-* Обновлено 23 октября 2025 г.
-
 Когда вы добавляете запрос из меню **Добавить** в приложении Dashboards или Notebooks, вы можете выбрать способ визуализации результатов. Dynatrace предлагает несколько типов визуализации для ваших [плиток дашборда](dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") и [секций ноутбука](notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 
 ## Выбор визуализации

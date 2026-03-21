@@ -4,11 +4,6 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-an
 scraped: 2026-03-05T21:27:18.380029
 ---
 
-# Создание пользовательского устройства через Dynatrace API
-
-
-* Справочник
-* Обновлено 22 марта 2023 г.
 * Устарело
 
 Эндпоинт **Custom device** API **Topology and Smartscape** позволяет создать пользовательское устройство с указанным именем в вашей среде Dynatrace.

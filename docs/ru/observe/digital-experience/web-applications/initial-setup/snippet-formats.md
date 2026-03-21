@@ -4,12 +4,6 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/web-applicatio
 scraped: 2026-03-02T21:21:35.206723
 ---
 
-# Выбор формата фрагмента кода
-
-
-* Практическое руководство
-* Опубликовано 01 июл. 2025 г.
-
 RUM JavaScript — будь то [автоматически внедрённый](rum-injection.md "Configure automatic injection of the RUM JavaScript into the pages of your applications") или [вставленный вручную](set-up-agentless-real-user-monitoring.md "Set up agentless monitoring for your web applications.") в ваше веб-приложение — состоит из двух ключевых компонентов:
 
 * **Код мониторинга**: JavaScript-код, предоставляющий возможности RUM, такие как захват действий пользователя.

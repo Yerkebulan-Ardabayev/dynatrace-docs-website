@@ -9,7 +9,6 @@ scraped: 2026-03-06T21:37:09.371667
 
 * Latest Dynatrace
 * 6-min read
-* Updated on Jul 08, 2025
 
 На этой странице описан протокол загрузки метрик в Dynatrace.
 

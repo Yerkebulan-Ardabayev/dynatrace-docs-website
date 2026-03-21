@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installati
 scraped: 2026-02-06T16:30:49.933952
 ---
 
-# Установка OneAgent на PPC BE Linux
-
-
-* Последняя версия Dynatrace
-* Чтение займёт 3 минуты
-* Обновлено 22 января 2026 г.
-
 Чтобы установить Dynatrace OneAgent при наличии развёртывания Dynatrace SaaS, перейдите на [Dynatrace.com](https://www.dynatrace.com) и выполните **Вход** с помощью имени пользователя и пароля, полученных от Dynatrace в письме с подтверждением регистрации. Если у вас развёртывание Dynatrace Managed, [откройте Cluster Management Console и выберите среду](https://docs.dynatrace.com/managed/shortlink/managed-monitoring-environment), которую хотите отслеживать. Затем выполните шаги установки, приведённые ниже.
 
 ## Требования

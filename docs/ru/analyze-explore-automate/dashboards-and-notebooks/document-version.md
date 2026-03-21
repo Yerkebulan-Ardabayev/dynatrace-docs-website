@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-n
 scraped: 2026-03-06T21:11:19.739905
 ---
 
-# Управление версиями документов
-
-
-* Последняя версия Dynatrace
-* Практическое руководство
-* Чтение: 4 мин
-* Опубликовано 08 июля 2022 г.
-
 Platform | Notebooks Platform | Dashboards
 
 Версии документов (notebook или dashboard) сохраняются автоматически.

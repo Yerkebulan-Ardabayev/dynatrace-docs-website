@@ -4,13 +4,7 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applica
 scraped: 2026-03-06T21:35:25.181485
 ---
 
-# Устранение неполадок RUM для мобильных приложений
-
-
-* Classic
 * Устранение неполадок
-* Чтение: 1 мин
-* Опубликовано Jul 18, 2019
 
 На этой странице вы найдёте решения проблем, связанных с мониторингом мобильных приложений.
 
@@ -18,12 +12,12 @@ scraped: 2026-03-06T21:35:25.181485
 
 Если у вас возникла общая проблема, связанная с мониторингом мобильных приложений, ознакомьтесь с одной из следующих страниц в сообществе Dynatrace.
 
-* [Mobile applications: Issues with mobile RUM | General Troubleshootingï»¿](https://dt-url.net/82038db)
-* [RUM: What does a 'Max. user actions per minute exceeded' message mean?ï»¿](https://dt-url.net/h92389d)
+* [Mobile applications: Issues with mobile RUM | General Troubleshooting](https://dt-url.net/82038db)
+* [RUM: What does a 'Max. user actions per minute exceeded' message mean?](https://dt-url.net/h92389d)
 
 ## Конкретные проблемы
 
-Для устранения конкретных проблем обратитесь к разделу [Mobile applications: Issues with mobile RUM | Specific issuesï»¿](https://dt-url.net/82038db) в сообществе Dynatrace.
+Для устранения конкретных проблем обратитесь к разделу [Mobile applications: Issues with mobile RUM | Specific issues](https://dt-url.net/82038db) в сообществе Dynatrace.
 
 ## Передача журналов для устранения неполадок
 
@@ -33,11 +27,11 @@ scraped: 2026-03-06T21:35:25.181485
 
 По проблемам, характерным для вашей технологии или операционной системы, обратитесь к одной из следующих страниц.
 
-* [Mobile applications: General issues with Dynatrace Android Gradle pluginï»¿](https://dt-url.net/b9238e6)
-* [Mobile applications: Build issues with Dynatrace Android Gradle pluginï»¿](https://dt-url.net/wd438of)
-* [Mobile applications: Issues with SwiftUI instrumentationï»¿](https://dt-url.net/yh638kl)
-* [Dynatrace Cordova Plugin | Troubleshooting and current restrictionsï»¿](https://www.npmjs.com/package/@dynatrace/cordova-plugin#troubleshooting-and-current-restrictions)
-* [Dynatrace Flutter Plugin | Troubleshootingï»¿](https://pub.dev/packages/dynatrace_flutter_plugin#troubleshooting)
-* [Dynatrace React Native Plugin | Troubleshootingï»¿](https://www.npmjs.com/package/@dynatrace/react-native-plugin#troubleshooting)
-* [Mobile applications: Issues with Dynatrace Xamarin NuGet packageï»¿](https://dt-url.net/xn638zc)
-* [Mobile applications: Issues with Dynatrace .NET MAUI NuGet packageï»¿](https://dt-url.net/sy038sw)
+* [Mobile applications: General issues with Dynatrace Android Gradle plugin](https://dt-url.net/b9238e6)
+* [Mobile applications: Build issues with Dynatrace Android Gradle plugin](https://dt-url.net/wd438of)
+* [Mobile applications: Issues with SwiftUI instrumentation](https://dt-url.net/yh638kl)
+* [Dynatrace Cordova Plugin | Troubleshooting and current restrictions](https://www.npmjs.com/package/@dynatrace/cordova-plugin#troubleshooting-and-current-restrictions)
+* [Dynatrace Flutter Plugin | Troubleshooting](https://pub.dev/packages/dynatrace_flutter_plugin#troubleshooting)
+* [Dynatrace React Native Plugin | Troubleshooting](https://www.npmjs.com/package/@dynatrace/react-native-plugin#troubleshooting)
+* [Mobile applications: Issues with Dynatrace Xamarin NuGet package](https://dt-url.net/xn638zc)
+* [Mobile applications: Issues with Dynatrace .NET MAUI NuGet package](https://dt-url.net/sy038sw)

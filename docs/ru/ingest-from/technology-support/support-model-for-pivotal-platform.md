@@ -4,13 +4,6 @@ source: https://www.dynatrace.com/docs/ingest-from/technology-support/support-mo
 scraped: 2026-03-05T21:26:38.490404
 ---
 
-# Модель поддержки Dynatrace для VMware Tanzu Application Service
-
-
-* Последняя версия Dynatrace
-* Чтение: 5 мин
-* Обновлено 10 мая 2024
-
 VMware поддерживает релизы N, N-1 и N-2 Tanzu Application Service. Подробности можно найти в [политике поддержки](https://tanzu.vmware.com/support/lifecycle_policy) VMware.
 
 Dynatrace придерживается той же [модели поддержки](https://d1fto35gcfffzn.cloudfront.net/support/PivotalLifecycleMatrix.pdf), что и VMware, обеспечивая согласованный цикл обновлений. Однако поддержка OneAgent и [Dynatrace Service Broker](../setup-on-container-platforms/cloud-foundry/install-the-service-broker-for-cloud-foundry-dashboard-tile.md "Установка и настройка Dynatrace Service Broker для плитки дашборда VMware Tanzu Platform.") для Tanzu может отставать от релизов VMware, чтобы обеспечить достаточное тестирование.

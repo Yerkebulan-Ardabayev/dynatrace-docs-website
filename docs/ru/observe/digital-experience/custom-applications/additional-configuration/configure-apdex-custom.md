@@ -4,13 +4,8 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/custom-applica
 scraped: 2026-03-05T21:33:03.715778
 ---
 
-# Настройка параметров Apdex для пользовательских приложений
-
-
-* Classic
 * How-to guide
 * 1-min read
-* Published Jan 30, 2023
 
 [Apdex](../../rum-concepts/scores-and-ratings/apdex-ratings.md "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.") — важный показатель, измеряющий производительность вашего приложения. Вы можете настроить пороговые значения Apdex (Удовлетворительно, Допустимо и Неудовлетворительно) для вашего приложения и его [ключевых действий пользователей](../../rum-concepts/user-actions.md#key-user-actions "Learn what user actions are and how they help you understand what users do with your application."), чтобы уточнить расчёты Apdex.
 

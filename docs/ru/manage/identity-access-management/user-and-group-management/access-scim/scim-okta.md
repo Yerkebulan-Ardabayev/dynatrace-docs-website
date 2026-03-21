@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/manage/identity-access-management/user-an
 scraped: 2026-03-06T21:31:30.983595
 ---
 
-# Настройка Okta SCIM для Dynatrace
-
-
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Published May 14, 2020
 
 На этой странице описывается сторона IdP (**Okta**) в конфигурации **SCIM** SSO, а не сторона Dynatrace. Используйте её как часть полной [процедуры настройки SCIM](../access-scim.md "SCIM") для Dynatrace SaaS при использовании Okta.
 

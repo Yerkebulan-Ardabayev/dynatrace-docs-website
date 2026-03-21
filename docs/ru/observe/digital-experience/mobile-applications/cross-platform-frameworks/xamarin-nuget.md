@@ -4,14 +4,6 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applica
 scraped: 2026-03-05T21:26:26.299483
 ---
 
-# Инструментирование мобильных приложений с помощью Dynatrace Xamarin NuGet пакета
-
-
-* Classic
-* Практическое руководство
-* Чтение: 12 мин
-* Обновлено 16 апреля 2024 г.
-
 Dynatrace Xamarin NuGet пакет помогает автоматически инструментировать ваше Xamarin приложение с помощью OneAgent для Android и iOS, а также предоставляет API для [ручного инструментирования](#usage-mobile-agent). Пакет совместим с проектами `Xamarin.iOS`, `Xamarin.Android` и `Xamarin.Forms`.
 
 Прекращение поддержки Dynatrace Xamarin NuGet пакета

@@ -4,13 +4,9 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-n
 scraped: 2026-03-06T21:27:45.177285
 ---
 
-# Сценарии использования Notebooks и Dashboards
-
-
 * Последнее Dynatrace
 * Руководство по использованию
 * 1-минутное чтение
-* Опубликовано 17 мая 2024 г.
 
 Следующие сценарии использования демонстрируют некоторые способы использования Notebooks и Dashboards для использования визуализации и анализа данных, поступающих в Grail.
 

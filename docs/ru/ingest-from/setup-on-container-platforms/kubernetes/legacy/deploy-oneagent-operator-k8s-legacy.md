@@ -9,7 +9,6 @@ scraped: 2026-03-06T21:29:44.845264
 
 * Latest Dynatrace
 * 10-min read
-* Published May 26, 2020
 
 Эта процедура устарела.
 
