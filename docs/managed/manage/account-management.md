@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/manage/account-management
 updated: 2026-02-09
 ---
 
-# Account Management
-
-
 * Explanation
 * 5-min read
-* Updated on Jun 24, 2025
 
 Dynatrace Account Management provides a single place to:
 
@@ -27,7 +23,7 @@ To open **Account Management** through the web UI, select the user icon in the u
 
 ### Browser address
 
-To access Account Management directly from your browser address line, go to [https://myaccount.dynatrace.com/ï»¿](https://myaccount.dynatrace.com/).
+To access Account Management directly from your browser address line, go to [https://myaccount.dynatrace.com/](https://myaccount.dynatrace.com/).
 
 ### Permissions
 

@@ -4,8 +4,6 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-c
 updated: 2026-02-09
 ---
 
-# Редактировать Dynatrace панель JSON
-
 [Панели Classic](/managed/analyze-explore-automate/dashboards-classic "Узнайте, как создавать, управлять и использовать Dynatrace Панели Classic.")
 
 Вы можете редактировать определение JSON своей панели в автономном режиме или, для небольших изменений, редактировать JSON непосредственно в Dynatrace.

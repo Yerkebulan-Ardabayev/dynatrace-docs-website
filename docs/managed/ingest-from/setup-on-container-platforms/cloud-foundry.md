@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platfo
 updated: 2026-02-09
 ---
 
-# Set up Dynatrace on Cloud Foundry
-
-
 * 1-min read
-* Published Aug 03, 2018
 
 Dynatrace supports full-stack monitoring for Cloud Foundry through the Dynatrace OneAgent BOSH Release, which allows you to deploy OneAgent to your Cloud Foundry cluster VMs, including Diego cells, Cloud Controller, router, and others.
 
@@ -51,5 +47,5 @@ If you don't have access to BOSH, Dynatrace provides two different approaches fo
 
 ## Related topics
 
-* [Cloud Foundry monitoringï»¿](https://www.dynatrace.com/technologies/cloud-foundry-monitoring/)
+* [Cloud Foundry monitoring](https://www.dynatrace.com/technologies/cloud-foundry-monitoring/)
 * [Cloud Foundry monitoring](/managed/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")

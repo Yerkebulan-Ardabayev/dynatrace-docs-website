@@ -4,12 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-u
 updated: 2026-02-09
 ---
 
-# Extend Dynatrace with domain-specific web UI
-
-
-* Overview
 * 1-min read
-* Updated on May 16, 2022
 
 The Dynatrace Extensions 2.0 framework enables you to tailor the Dynatrace web UI to the specific needs of the data ingested by your extension. You can define customized dashboards, create specialized unified analysis pages, and extend built-in unified analysis pages with data provided by your extension.
 

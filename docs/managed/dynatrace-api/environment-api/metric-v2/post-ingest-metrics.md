@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-
 updated: 2026-02-09
 ---
 
-# Metrics API - POST ingest data points
-
-
-* Reference
-* Published Aug 21, 2020
-
 Pushes custom data points to Dynatrace.
 
 You can access the ingested datapoints via:
@@ -48,7 +42,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| body | string | Data points, provided in the [line protocolï»¿](https://dt-url.net/5d63ic1). Each line represents a single data point. | body | Required |
+| body | string | Data points, provided in the [line protocol](https://dt-url.net/5d63ic1). Each line represents a single data point. | body | Required |
 
 ### Request body objects
 

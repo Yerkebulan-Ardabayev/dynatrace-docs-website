@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/dashb
 updated: 2026-02-09
 ---
 
-# Dashboards API - DELETE a dashboard
-
-
-* Reference
-* Published Aug 30, 2019
-
 Deletes the specified dashboard.
 
 |  |  |  |

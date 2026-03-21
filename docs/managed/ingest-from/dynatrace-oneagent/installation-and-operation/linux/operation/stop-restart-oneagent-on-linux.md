@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 updated: 2026-02-09
 ---
 
-# Stop/restart OneAgent on Linux
-
-
 * 1-min read
-* Published Sep 19, 2018
 
 In case you don't want to use OneAgent inside a particular Java (or other) process, you can easily disable Dynatrace monitoring for individual hosts, process groups, or applications:
 

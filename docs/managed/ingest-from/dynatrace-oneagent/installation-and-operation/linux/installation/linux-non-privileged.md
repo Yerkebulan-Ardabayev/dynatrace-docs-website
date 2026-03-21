@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 updated: 2026-02-09
 ---
 
-# OneAgent non-privileged mode on Linux
-
-
 * 7-min read
-* Published Jul 19, 2017
 
 By default, OneAgent is installed in the non-privileged mode, in which superuser privileges are used once to initiate the installation process.
 
@@ -18,7 +14,7 @@ OneAgent is then run under an unprivileged user, retaining the complete set of f
 
 To install OneAgent in non-privileged mode, your system must meet the following requirements:
 
-* The filesystem must support [extended attributesï»¿](https://man7.org/linux/man-pages/man7/xattr.7.html).
+* The filesystem must support [extended attributes](https://man7.org/linux/man-pages/man7/xattr.7.html).
 * The system must have `libcap2` installed. For example, the default Red Hat Enterprise Linux 5 installation doesn't have `libcap2`.
 * The filesystem must not be mounted as `noexec` or `nosuid`.
 * Linux Filesystem Capabilities must be enabled. For example, SUSE Linux Enterprise Server 11 has Linux Filesystem Capabilities disabled by default. For more information, see [Non-privileged mode and Linux Filesystem Capabilities](#cap) below.
@@ -49,7 +45,7 @@ Dynatrace OneAgent Watchdog starts and runs all other processes under an unprivi
 
 | Binary | Linux System Capabilities |
 | --- | --- |
-| oneagentwatchdog | `cap_sys_resource`[1](#fn-1-1-def)- for setting [system resource limitsï»¿](https://man7.org/linux/man-pages/man3/getrlimit.3p.html) when starting OneAgent processes |
+| oneagentwatchdog | `cap_sys_resource`[1](#fn-1-1-def)- for setting [system resource limits](https://man7.org/linux/man-pages/man3/getrlimit.3p.html) when starting OneAgent processes |
 | oneagentos | `cap_dac_override`[2](#fn-1-2-def) - for filesystem access `cap_chown`[2](#fn-1-2-def) [3](#fn-1-3-def) - for setting ownership of files replaced in the filesystem (e.g., `runc` binary) `cap_fowner` [2](#fn-1-2-def) - for setting ownership of files replaced in the filesystem `cap_sys_ptrace` - for reading data from `/proc` pseudo-filesystem and tracing processes `cap_sys_resource`[3](#fn-1-3-def) - for reading processes resource limits `cap_setuid`[4](#fn-1-4-def) - for temporary elevation of privileges to execute certain operations; for details, see [Automatic updates and operation](#autoupdate) `cap_kill` [3](#fn-1-3-def) [5](#fn-1-5-def) [6](#fn-1-6-def) `cap_setfcap` [3](#fn-1-3-def) [5](#fn-1-5-def) [6](#fn-1-6-def) `cap_fsetid` [3](#fn-1-3-def) [5](#fn-1-5-def) [6](#fn-1-6-def) |
 | oneagentnettracer | `cap_bpf` (kernel >=5.8)[7](#fn-1-7-def) `cap_perfmon` (kernel >=5.8)[7](#fn-1-7-def) `cap_sys_admin` (kernel <5.8, or when `cap_bpf` is explicitly blocked)[7](#fn-1-7-def) `cap_dac_override` `cap_sys_ptrace` `cap_sys_resource` |
 | oneagentnetwork | `cap_net_raw` - for opening raw sockets `cap_net_admin`[8](#fn-1-8-def)- for reading network interface information |
@@ -89,7 +85,7 @@ Only if ambient capabilities are supported.
 
 7
 
-Only for kernels 5.8 and newer, unless usage of unprivileged `cap_bpf` is [blocked by the OSï»¿](https://ubuntu.com/blog/whats-new-in-security-for-ubuntu-21-10), then it fallbacks to `cap_sys_admin`. For older kernel versions, `cap_sys_admin` is enabled instead.
+Only for kernels 5.8 and newer, unless usage of unprivileged `cap_bpf` is [blocked by the OS](https://ubuntu.com/blog/whats-new-in-security-for-ubuntu-21-10), then it fallbacks to `cap_sys_admin`. For older kernel versions, `cap_sys_admin` is enabled instead.
 
 8
 
@@ -115,7 +111,7 @@ cat /proc/cmdline
 
 If you find `file_caps=1` in the output, your setup is fine.
 
-To enable Linux Filesystem Capabilities, add `file_caps=1` to your kernel boot options. For example, on SUSE Linux Enterprise Server 11, use [YaSTï»¿](https://doc.opensuse.org/documentation/leap/reference/html/book-reference/cha-grub2.html#sec-grub2-yast2-config), edit kernel boot options, add `file_caps=1`, and reboot the machine.
+To enable Linux Filesystem Capabilities, add `file_caps=1` to your kernel boot options. For example, on SUSE Linux Enterprise Server 11, use [YaST](https://doc.opensuse.org/documentation/leap/reference/html/book-reference/cha-grub2.html#sec-grub2-yast2-config), edit kernel boot options, add `file_caps=1`, and reboot the machine.
 
 ## Privileges during automatic updates and operation
 

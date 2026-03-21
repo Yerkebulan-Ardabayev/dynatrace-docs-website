@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 updated: 2026-02-09
 ---
 
-# Synthetic monitor executions API v2
-
-
-* Reference
-* Published Apr 20, 2021
-
 [### HTTP monitor
 
 View the results of the most recent execution of an HTTP monitor.](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution/get-http-monitor "View the results of an HTTP Synthetic monitor execution via the Dynatrace API.")[### All on-demand executions

@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/extensi
 updated: 2026-02-09
 ---
 
-# Extensions 2.0 API
-
-
-* Reference
-* Published Jan 22, 2021
-
 [### View all extensions
 
 Get an overview of all Extensions 2.0 extensions available in your Dynatrace environment.](/managed/dynatrace-api/environment-api/extensions-20/extensions/get-all-extensions "Use the Dynatrace Extensions 2.0 API to view all extensions uploaded to your environment.")[### View all extension's versions

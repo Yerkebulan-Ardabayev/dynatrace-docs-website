@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/events-
 updated: 2026-02-09
 ---
 
-# Events API v2 - GET all event types
-
-
-* Reference
-* Published Aug 06, 2021
-
 Lists all types of events that might be raised in your environment.
 
 The request produces an `application/json` payload.

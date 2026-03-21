@@ -4,12 +4,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/metrics-clas
 updated: 2026-02-09
 ---
 
-# Metrics
-
-
-* Overview
 * 2-min read
-* Updated on Nov 09, 2023
 
 In Dynatrace, you have various types of metrics at your disposal:
 

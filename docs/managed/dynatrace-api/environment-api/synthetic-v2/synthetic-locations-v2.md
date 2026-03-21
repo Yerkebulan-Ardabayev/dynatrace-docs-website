@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthet
 updated: 2026-02-09
 ---
 
-# Synthetic locations API v2
-
-
-* Reference
-* Published Sep 25, 2018
-
 The **locations** endpoints of the **Synthetic API v2** enable you to retrieve information about synthetic locations.
 
 [### Fetch list

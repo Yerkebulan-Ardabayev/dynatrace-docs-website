@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/geo
 updated: 2026-02-09
 ---
 
-# Geographic regions API
-
-
-* Reference
-* Updated on May 02, 2022
-
 [### List countries
 
 Get an overview of countries and their codes.](/managed/dynatrace-api/environment-api/rum/geographic-regions/get-countries "View countries via Geographic regions API.")[### List regions

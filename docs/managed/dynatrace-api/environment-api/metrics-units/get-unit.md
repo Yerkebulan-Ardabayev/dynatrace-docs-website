@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metrics
 updated: 2026-02-09
 ---
 
-# Metric units API - GET a unit
-
-
-* Reference
-* Published Feb 11, 2022
-
 Gets properties of a metric unit.
 
 The request produces an `application/json` payload.

@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 updated: 2026-02-09
 ---
 
-# Update OneAgent on Linux
-
-
 * 1-min read
-* Published Sep 19, 2018
 
 OneAgent installed in full-stack mode has a built-in, configurable auto-update mechanism.
 

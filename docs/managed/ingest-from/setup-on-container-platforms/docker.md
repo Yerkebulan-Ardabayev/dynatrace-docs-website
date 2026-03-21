@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platfo
 updated: 2026-02-09
 ---
 
-# Set up Dynatrace on Docker
-
-
 * 1-min read
-* Published Jun 25, 2021
 
 Dynatrace offers full-featured Docker monitoring, as well as generic container monitoring for containerd and CRI-O, giving you all the same deep monitoring capabilities for containerized applications that are available for non-containerized applications.
 

@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/events-
 updated: 2026-02-09
 ---
 
-# Events API v2 - GET all event properties
-
-
-* Reference
-* Published Oct 07, 2021
-
 Lists all event properties that Dynatrace provides.
 
 The request produces an `application/json` payload.

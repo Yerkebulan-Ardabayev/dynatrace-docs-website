@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/hub
 updated: 2026-02-09
 ---
 
-# Hub items API
-
-
-* Reference
-* Published Feb 07, 2023
-
 [### List categories
 
 View categories of Hub items.](/managed/dynatrace-api/environment-api/hub/get-categories "View categories of Hub items via the Hub capabilities API.")[### List items

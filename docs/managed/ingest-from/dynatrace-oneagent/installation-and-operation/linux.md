@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 updated: 2026-02-09
 ---
 
-# OneAgent on Linux
-
-
 * 1-min read
-* Published Jul 19, 2017
 
 Dynatrace supports OneAgent installation on Linux. For analytical information about the supported OneAgent capabilities for Linux, see the [OneAgent platform and capability support matrix](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). For the supported Linux distributions, check the [OneAgent supported technologies and versions](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 

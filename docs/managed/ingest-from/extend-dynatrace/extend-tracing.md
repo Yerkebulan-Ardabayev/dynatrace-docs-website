@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-t
 updated: 2026-02-09
 ---
 
-# Extend distributed tracing
-
-
 * 1-min read
-* Published Feb 04, 2022
 
 [![OpenTelemetry](https://dt-cdn.net/images/techn-icon-opentelemetry-345d0f8b0e.svg "OpenTelemetry")
 

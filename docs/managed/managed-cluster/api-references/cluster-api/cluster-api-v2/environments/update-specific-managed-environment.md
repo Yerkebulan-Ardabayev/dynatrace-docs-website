@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Update specific environment
-
-
-* Published Mar 09, 2021
-
 This API call updates an existing environment or creates a new one.
 
 ## Authentication

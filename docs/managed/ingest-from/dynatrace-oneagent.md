@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent
 updated: 2026-02-09
 ---
 
-# Dynatrace OneAgent
-
-
 * 2-min read
-* Published Oct 09, 2018
 
 OneAgent is responsible for collecting all monitoring data within your monitored environment. A single OneAgent per host is required to collect all relevant monitoring dataâeven if your hosts are deployed within Docker containers, microservices architectures, or cloud-based infrastructure.
 

@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api
 updated: 2026-02-09
 ---
 
-# Configuration API
-
-
-* Reference
-* Published Oct 18, 2018
-
 Automation is the key to successful IT operations. Automation is also the key to successful monitoring and how you set up your monitoring environment or software intelligence platform.
 
 Managing your configuration is critically importantâyou probably wouldnât let anybody change the configuration of your production monitoring environment without proper staging tests.

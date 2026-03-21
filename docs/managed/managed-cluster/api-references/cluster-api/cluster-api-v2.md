@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Cluster API v2
-
-
-* Published Feb 10, 2020
-
 Dynatrace Managed exposes cluster-wide functionality via REST endpoints. This interactive documentation also acts as a REST client you can use to interact with Dynatrace Managed clusters.
 
 To access the Cluster API

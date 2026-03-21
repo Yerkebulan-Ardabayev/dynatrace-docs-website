@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/service
 updated: 2026-02-09
 ---
 
-# Service-level Objectives API
-
-
-* Reference
-* Updated on Jan 07, 2025
-
 [### List all SLOs
 
 Get an overview of all service-level objectives and their calculated values.](/managed/dynatrace-api/environment-api/service-level-objectives-classic/get-all "List all service-level objectives and their values via the Dynatrace API.")[### View an SLO

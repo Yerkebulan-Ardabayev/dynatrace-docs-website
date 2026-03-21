@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 updated: 2026-02-09
 ---
 
-# OneAgent on Windows
-
-
 * 1-min read
-* Published Sep 19, 2018
 
 You can install OneAgent on Windows using installer provided as a self-extracting EXE fileâfor single-server installationâand also as an MSI package, for Group Policy deployments. For analytical information about the supported OneAgent capabilities for Windows, see the [OneAgent platform and capability support matrix](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). For the supported Windows versions, check the [OneAgent supported technologies and versions](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 

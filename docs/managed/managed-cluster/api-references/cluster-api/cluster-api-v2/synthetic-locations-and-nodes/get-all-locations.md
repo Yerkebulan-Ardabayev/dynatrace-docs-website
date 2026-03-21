@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Synthetic locations API v2 - GET all locations (Dynatrace Managed)
-
-
-* Published Jul 25, 2019
-
 This API call lists all locations, public and private, and their parameters available for your environment. The request produces an `application/json` payload.
 
 ## Authentication
@@ -66,7 +61,7 @@ A synthetic location.
 | ips | string[] | The list of IP addresses assigned to the location.  Only applicable to `PUBLIC` locations. |
 | lastModificationTimestamp | integer | The timestamp of the last modification of the location. |
 | name | string | The name of the location. |
-| nodes | string[] | A list of synthetic nodes belonging to the location.  You can retrieve the list of available nodes with the [GET all nodesï»¿](https://dt-url.net/miy3rpl) call. |
+| nodes | string[] | A list of synthetic nodes belonging to the location.  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call. |
 | stage | string | The release stage of the location. The element can hold these values * `BETA` * `COMING_SOON` * `DELETED` * `GA` |
 | status | string | The status of the location. The element can hold these values * `DISABLED` * `ENABLED` * `HIDDEN` |
 | type | string | The type of the location. The element can hold these values * `CLUSTER` * `PRIVATE` * `PUBLIC` |

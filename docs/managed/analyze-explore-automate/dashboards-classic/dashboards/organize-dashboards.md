@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-c
 updated: 2026-02-09
 ---
 
-# Organize Dynatrace dashboards
-
-
 * How-to guide
 * 3-min read
-* Published Jan 18, 2019
 
 [Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
 

@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s
 updated: 2026-02-09
 ---
 
-# Set up Dynatrace on Kubernetes
-
-
 * 2-min read
-* Updated on Sep 01, 2025
 
 Dynatrace helps you monitor and manage the health, performance, and security of your Kubernetes clusters and workloads by consolidating metrics, traces, logs, and events in one place.
 
@@ -38,4 +34,4 @@ Dynatrace is the only Kubernetes observability platform on the market that integ
 
 ## Related topics
 
-* [Kubernetes cluster and workload monitoringï»¿](https://www.dynatrace.com/technologies/kubernetes-monitoring/)
+* [Kubernetes cluster and workload monitoring](https://www.dynatrace.com/technologies/kubernetes-monitoring/)

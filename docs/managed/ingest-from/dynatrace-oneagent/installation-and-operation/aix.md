@@ -4,12 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 updated: 2026-02-09
 ---
 
-# AIX
-
-
-* Overview
 * 1-min read
-* Published Jul 19, 2017
 
 Dynatrace supports full-stack OneAgent installation on IBM AIX. For analytical information about the supported OneAgent capabilities for AIX, see the [OneAgent platform and capability support matrix](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). For the supported AIX versions, check the [OneAgent supported technologies and versions](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
@@ -19,13 +14,11 @@ Dynatrace supports full-stack OneAgent installation on IBM AIX. For analytical i
 
 Find out what the disk space requirements are for OneAgent installation on AIX.
 
-* Reference
 
 Read this reference](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix)[#### OneAgent security on AIX
 
 Learn about Dynatrace OneAgent security and modifications to your AIX-based system.
 
-* Reference
 
 Read this reference](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix)
 
@@ -79,7 +72,6 @@ Read this guide](/managed/ingest-from/dynatrace-oneagent/installation-and-operat
 
 Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.
 
-* Reference
 
 Read this reference](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface)[#### Troubleshooting OneAgent installation
 

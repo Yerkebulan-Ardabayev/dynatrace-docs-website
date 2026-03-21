@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/basics/dynatrace-api-au
 updated: 2026-02-09
 ---
 
-# Dynatrace API - Tokens and authentication
-
-
-* Reference
-* Published Aug 23, 2018
-
 To be authenticated to use the Dynatrace API, you need a valid [access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") or a valid [personal access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token "Learn the concept of a personal access token and its scopes."). Access to the API is fine-grained, meaning that you also need the proper scopes assigned to the token. See the description of each request to find out which scopes are required to use it.
 
 For details on OAuth clients, see [OAuth clients](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").

@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Change state of access request
-
-
-* Published Feb 12, 2020
-
 This API call changes state of access request for a specific request ID. You can set the state access request to `PENDING`, `ACCEPTED`, `REJECTED` or `EXPIRED`. The request consumes an `application/json` payload.
 
 ## Authentication

@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# List all existing environments
-
-
-* Published Mar 09, 2021
-
 This API call lists all existing environments.
 
 ## Authentication

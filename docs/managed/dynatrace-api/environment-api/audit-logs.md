@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/audit-l
 updated: 2026-02-09
 ---
 
-# Audit logs API
-
-
-* Reference
-* Published Dec 10, 2019
-
 [### Fetch the list
 
 View the full audit log of your Dynatrace environment.](/managed/dynatrace-api/environment-api/audit-logs/get-log "View full audit log via Dynatrace API.")[### Get an entry

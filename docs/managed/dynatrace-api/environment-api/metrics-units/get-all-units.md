@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metrics
 updated: 2026-02-09
 ---
 
-# Metric units API - GET all units
-
-
-* Reference
-* Published Feb 11, 2022
-
 Lists all available metric units of your environment.
 
 The request produces an `application/json` payload.

@@ -4,12 +4,7 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability
 updated: 2026-02-09
 ---
 
-# Infrastructure Observability
-
-
-* Overview
 * 1-min read
-* Published Aug 12, 2021
 
 [#### Container platform monitoring
 

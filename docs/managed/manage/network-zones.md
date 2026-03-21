@@ -4,12 +4,7 @@ source: https://docs.dynatrace.com/managed/manage/network-zones
 updated: 2026-02-09
 ---
 
-# Network zones
-
-
-* Overview
 * 1-min read
-* Updated on Dec 10, 2025
 
 [#### Get started with network zones
 

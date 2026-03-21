@@ -4,21 +4,17 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platfo
 updated: 2026-02-09
 ---
 
-# Set up Dynatrace on Heroku
-
-
 * 6-min read
-* Updated on Jun 23, 2023
 
 Heroku is a cloud Platform as a Service (PaaS) that enables you to build and run applications in the cloud. Applications deployed to Heroku are usually run through one or more buildpacks that provide framework and runtime support.
 
 ## Capabilities
 
-The Heroku buildpack for Dynatrace OneAgent is language independent and can be used with any [Dynatrace supported language](/managed/ingest-from/technology-support#applications-services-and-databases "Find technical details related to Dynatrace support for specific platforms and development frameworks."), including Node.js-based applications. If youâve used the [Dynatrace NPM module for PaaS moduleï»¿](https://www.npmjs.com/package/@dynatrace/oneagent), you can remove it from your dependencies as the buildpack discovers and instruments your Node.js applications automatically.
+The Heroku buildpack for Dynatrace OneAgent is language independent and can be used with any [Dynatrace supported language](/managed/ingest-from/technology-support#applications-services-and-databases "Find technical details related to Dynatrace support for specific platforms and development frameworks."), including Node.js-based applications. If youâve used the [Dynatrace NPM module for PaaS module](https://www.npmjs.com/package/@dynatrace/oneagent), you can remove it from your dependencies as the buildpack discovers and instruments your Node.js applications automatically.
 
 You also no longer need to rely on releases of the Dynatrace OneAgent dependencies for NPM. The Heroku buildpack for Dynatrace OneAgent automatically fetches the latest version of Dynatrace OneAgent so that you can receive potential fixes as quickly and easily as possible. If youâve specified [a default OneAgent installation version for new hosts and applications in your OneAgent update settings](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux "Learn about the different ways to update OneAgent on Linux."), the Heroku buildpack for Dynatrace OneAgent will download the defined default version of Dynatrace OneAgent.
 
-The following guidelines explain how to enable Dynatrace monitoring for your [Herokuï»¿](https://www.dynatrace.com/technologies/heroku-monitoring/) applications by adding a [Dynatrace Heroku buildpackï»¿](https://github.com/Dynatrace/heroku-buildpack-dynatrace) to the Heroku configuration of your application.
+The following guidelines explain how to enable Dynatrace monitoring for your [Heroku](https://www.dynatrace.com/technologies/heroku-monitoring/) applications by adding a [Dynatrace Heroku buildpack](https://github.com/Dynatrace/heroku-buildpack-dynatrace) to the Heroku configuration of your application.
 
 The Dynatrace Heroku buildpack enables you to monitor all [supported languages on Linux systems](/managed/ingest-from/technology-support#applications-services-and-databases "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
@@ -26,7 +22,7 @@ The Dynatrace Heroku buildpack enables you to monitor all [supported languages o
 
 * Create a [PaaS Token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
 * Review the list of [supported applications and versions](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
-* The [OneAgent code module memory requirement](/managed/ingest-from/dynatrace-oneagent/oa-requirements#oneagent-code-module-memory-requirement "OneAgent code module requirements") is 200 MB of your [slug sizeï»¿](https://devcenter.heroku.com/articles/slug-compiler#slug-size).
+* The [OneAgent code module memory requirement](/managed/ingest-from/dynatrace-oneagent/oa-requirements#oneagent-code-module-memory-requirement "OneAgent code module requirements") is 200 MB of your [slug size](https://devcenter.heroku.com/articles/slug-compiler#slug-size).
 
 ## Installation
 
@@ -34,7 +30,7 @@ These guidelines explain how to integrate Dynatrace OneAgent into your Heroku dy
 
 ### Get the Heroku CLI
 
-To configure Heroku applications to use the Dynatrace Heroku buildpack, you can either use the [Heroku CLIï»¿](https://devcenter.heroku.com/articles/heroku-cli) or you can configure your applications using the [Heroku dashboardï»¿](https://dashboard.heroku.com).
+To configure Heroku applications to use the Dynatrace Heroku buildpack, you can either use the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) or you can configure your applications using the [Heroku dashboard](https://dashboard.heroku.com).
 
 ### Add the Dynatrace Heroku buildpack
 

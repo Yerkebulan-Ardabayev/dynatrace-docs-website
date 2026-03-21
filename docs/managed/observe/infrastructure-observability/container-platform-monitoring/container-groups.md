@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 updated: 2026-02-09
 ---
 
-# Monitor container groups
-
-
 * How-to guide
 * 3-min read
-* Updated on Apr 21, 2024
 
 The **Container groups** overview page allows you to list all the containers in your environment and filter them by the process group, container group, or Kubernetes properties.
 

@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-m
 updated: 2026-02-09
 ---
 
-# Extend metric observability
-
-
 * 4-min read
-* Published Feb 04, 2022
 
 You can extend the data collected out of the box with data provided by the following frameworks and standards:
 
@@ -85,7 +81,7 @@ Only limited custom metric ingestion and analysis is included in out-of-the-box 
 For details, see [DDUs for custom metrics](/managed/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
 * Each ingested metric that is subject to DDU consumption (in other words, not assigned to a host) generates one or more **metric data points**. These data points consume DDUs with a weight of 0.001. Therefore, a simple metric reported once each minute for a full year will consume 526 DDUs (`525,600 minutes Ã 0.001 â 526 DDUs`).
-* To check the DDU consumption of an environment, go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/) > **License** / **Subscription** > **Overview**.
+* To check the DDU consumption of an environment, go to [**Account Management**](https://myaccount.dynatrace.com/) > **License** / **Subscription** > **Overview**.
 
 ### Metric dimensions also affect DDU Consumption
 

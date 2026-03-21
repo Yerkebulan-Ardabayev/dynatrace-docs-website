@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-c
 updated: 2026-02-09
 ---
 
-# Share Dynatrace dashboards
-
-
 * How-to guide
 * 7-min read
-* Published Jul 19, 2017
 
 [Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
 

@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/manage/settings/settings-20
 updated: 2026-02-09
 ---
 
-# Dynatrace settings framework
-
-
 * Explanation
 * 4-min read
-* Published Jan 18, 2023
 
 The Settings 2.0 framework provides a unified instrument to control various configurations in Dynatrace. Whether you use the Dynatrace web UI or the [Settings API](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers."), you're setting the same configurations with the same effect.
 

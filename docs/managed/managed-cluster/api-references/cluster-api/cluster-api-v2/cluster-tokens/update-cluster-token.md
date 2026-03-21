@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Update Cluster token
-
-
-* Published Feb 12, 2020
-
 This API call updates the specified Dynatrace Cluster token. You can:
 
 * Change the token name.

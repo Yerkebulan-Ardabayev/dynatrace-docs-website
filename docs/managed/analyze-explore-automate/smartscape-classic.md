@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/smartscape-c
 updated: 2026-02-09
 ---
 
-# Visualize your environment through Smartscape
-
-
 * 8-min read
-* Published Jul 19, 2017
 
 Smartscape, our near real-time environment-topology visualization tool, is one of the most powerful features of Dynatrace.
 

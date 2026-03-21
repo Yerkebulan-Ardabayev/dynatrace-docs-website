@@ -4,12 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extensions
 updated: 2026-02-09
 ---
 
-# Extensions
-
-
-* Overview
 * 2-min read
-* Published Jun 16, 2025
 
 ## What are Extensions?
 

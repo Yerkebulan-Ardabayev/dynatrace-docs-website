@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Update log events per cluster for Log Monitoring
-
-
-* Published Oct 14, 2021
-
 This API call updates the total log events per cluster limit based on the cluster resources size.
 
 ## Authentication

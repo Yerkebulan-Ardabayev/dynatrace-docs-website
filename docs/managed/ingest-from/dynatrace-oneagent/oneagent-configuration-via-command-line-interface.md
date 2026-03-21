@@ -4,12 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneage
 updated: 2026-02-09
 ---
 
-# OneAgent configuration via command-line interface
-
-
-* Reference
 * 20-min read
-* Updated on Sep 17, 2025
 
 Use the `oneagentctl` command-line interface to perform some post-installation OneAgent configuration at the individual host level.
 
@@ -254,7 +249,7 @@ After you use this command to disable auto-updates, you won't be able to control
 
 ## Log monitoring
 
-For more information, see [Log Monitoringï»¿](https://docs.dynatrace.com/docs/shortlink/log-management-and-analytics).
+For more information, see [Log Monitoring](https://docs.dynatrace.com/docs/shortlink/log-management-and-analytics).
 
 ### Check if Log Monitoring is enabled
 

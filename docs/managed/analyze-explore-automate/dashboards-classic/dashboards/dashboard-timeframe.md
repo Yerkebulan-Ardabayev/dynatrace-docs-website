@@ -4,8 +4,6 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-c
 updated: 2026-02-09
 ---
 
-# Dynatrace панель временного интервала и настройки зоны управления
-
 [Панели Classic](/managed/analyze-explore-automate/dashboards-classic "Узнайте, как создавать, управлять и использовать Dynatrace Панели Classic.")
 
 Глобальные селекторы временного интервала и зоны управления доступны для использования на всех страницах и видах. Вы найдете их в правом верхнем углу.

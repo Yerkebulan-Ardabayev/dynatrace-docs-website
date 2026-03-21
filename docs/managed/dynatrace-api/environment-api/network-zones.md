@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/network
 updated: 2026-02-09
 ---
 
-# Network zones API
-
-
-* Reference
-* Published Mar 05, 2020
-
 [### List all network zones
 
 Get an overview of all network zones available in your Dynatrace environment.](/managed/dynatrace-api/environment-api/network-zones/get-all "List all network zones of your monitoring environment via the Dynatrace API.")[### View a network zone

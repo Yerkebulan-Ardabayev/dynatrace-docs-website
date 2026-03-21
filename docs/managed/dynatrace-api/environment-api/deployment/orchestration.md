@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deploym
 updated: 2026-02-09
 ---
 
-# Deployment API - Orchestration tarballs
-
-
-* Reference
-* Published Jun 29, 2021
-
 [### Download latest version
 
 Download the orchestration tarball for the latest version of OneAgent.](/managed/dynatrace-api/environment-api/deployment/orchestration/get-latest "Download the latest version of the OneAgent orchestration tarball via Dynatrace API.")[### Download latest signature

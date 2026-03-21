@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 updated: 2026-02-09
 ---
 
-# Process groups
-
-
 * Explanation
 * 3-min read
-* Published Jan 08, 2019
 
 Dynatrace automatically merges related processes into process groups. A âprocess groupâ is a logical cluster of processes that belong to the same application or deployment unit and perform the same function across multiple hosts. Process groups are key building blocks of most modern web-based applications.
 

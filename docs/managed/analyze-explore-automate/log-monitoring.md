@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitori
 updated: 2026-02-09
 ---
 
-# Log Monitoring
-
-
 * 2-min read
-* Updated on Nov 20, 2025
 
 With Log Monitoring as a part of the Dynatrace platform, you gain direct access to the log content of all your mission-critical applications, infrastructure and cloud platforms. You can create custom log metrics for smarter and faster troubleshooting. You will be able to understand log data in the context of your full stack, including real user impacts.
 
@@ -68,5 +64,5 @@ Use the Dynatrace API to send log data to Dynatrace and quickly search, aggregat
 
 ## Related topics
 
-* [Log monitoringï»¿](https://www.dynatrace.com/platform/log-monitoring/)
+* [Log monitoring](https://www.dynatrace.com/platform/log-monitoring/)
 * [DDUs for Log Monitoring Classic](/managed/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.")

@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/release
 updated: 2026-02-09
 ---
 
-# Releases API
-
-
-* Reference
-* Published Apr 20, 2021
-
 [### List releases
 
 Get an overview of releases in your environment.](/managed/dynatrace-api/environment-api/releaseapi/get-releaseall "Fetch the list of releases via the Dynatrace Releases API.")

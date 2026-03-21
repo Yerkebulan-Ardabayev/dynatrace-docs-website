@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/basics/access-limit
 updated: 2026-02-09
 ---
 
-# Dynatrace API - Access limit
-
-
-* Reference
-* Updated on Jan 09, 2026
-
 Read access to the Dynatrace API is free of charge on a fair use model. You're charged for defining and pushing new custom metrics through the Dynatrace API on a per-metric, per-month basis.
 
 For detailed information about custom metric ingestion and how this affects your consumption of Dynatrace monitoring, see the relevant page for your license model.

@@ -4,12 +4,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience
 updated: 2026-02-09
 ---
 
-# Digital Experience
-
-
-* Overview
 * 1-min read
-* Published Feb 06, 2023
 
 Digital Experience Monitoring (DEM) is defined by Gartner[1](#fn-1-1-def) as an availability and performance monitoring discipline that supports the optimization of the operational experience and behavior of a digital agent, human, or machine, as it interacts with enterprise applications and services.
 

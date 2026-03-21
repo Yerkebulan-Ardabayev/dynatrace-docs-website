@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Get cluster user sessions configuration
-
-
-* Published Apr 02, 2020
-
 This API call gets a cluster user sessions configuration.
 
 ## Authentication

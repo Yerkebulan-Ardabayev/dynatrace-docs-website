@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Get cluster access request
-
-
-* Published Apr 02, 2020
-
 This API call gets cluster access request information for a specific request access ID. The request produces an `application/json` payload.
 
 ## Authentication

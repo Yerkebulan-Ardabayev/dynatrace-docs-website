@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 updated: 2026-02-09
 ---
 
-# Solaris
-
-
 * 1-min read
-* Updated on Nov 18, 2025
 
 Dynatrace supports Oracle Solaris (x86 and SPARC) for Java, Apache HTTP server and IBM HTTP server. If your infrastructure is based on these technologies you can use Dynatrace OneAgent to effectively monitor your hosts, services, and user experience. For analytical information about the supported OneAgent capabilities for Solaris, see the [OneAgent platform and capability support matrix](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.").
 

@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/discover-dynatrace/get-started/server
 updated: 2026-02-09
 ---
 
-# Serverless monitoring
-
-
 * 3-min read
-* Published Jan 27, 2023
 
 The term **serverless** defines the cloud services that share common characteristics:
 
@@ -47,7 +43,7 @@ By providing deep integrations with the three major public cloud provider servic
 
 ![Unified serverless telemetry](https://dt-cdn.net/images/unified-service-descr-630-f2484fd514.png)
 
-With over [600+ integrations, extensions, and technology-specific supportï»¿](https://www.dynatrace.com/hub/), Dynatrace provides extensive monitoring support, including your [serverless technologies](/managed/ingest-from/technology-support/serverless-compute-services "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS).") running on AWS, Azure, or Google Cloud.
+With over [600+ integrations, extensions, and technology-specific support](https://www.dynatrace.com/hub/), Dynatrace provides extensive monitoring support, including your [serverless technologies](/managed/ingest-from/technology-support/serverless-compute-services "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS).") running on AWS, Azure, or Google Cloud.
 
 ## Getting started with serverless monitoring
 
@@ -71,7 +67,7 @@ With a single integration per cloud vendor, Dynatrace automatically discovers yo
 
 Several cloud compute services allow a simple integration without the need to redeploy your service. This makes it easy to add deep service instrumentation for additional visibility.
 
-Visit Dynatrace Hub to see all services with a [cloud-native integrationï»¿](https://www.dynatrace.com/hub/?query=cloud-extension).
+Visit Dynatrace Hub to see all services with a [cloud-native integration](https://www.dynatrace.com/hub/?query=cloud-extension).
 
 ### Step 3 Advanced visibility
 

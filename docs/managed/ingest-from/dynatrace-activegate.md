@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate
 updated: 2026-02-09
 ---
 
-# Dynatrace ActiveGate
-
-
 * 3-min read
-* Published Jul 23, 2018
 
 ### ActiveGate acts as a secure proxy
 

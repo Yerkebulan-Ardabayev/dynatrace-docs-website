@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/basics/dynatrace-api-re
 updated: 2026-02-09
 ---
 
-# Dynatrace API - Response codes
-
-
-* Reference
-* Published Sep 13, 2018
-
 Unless otherwise specified, the following response codes are used:
 
 | Code | Description |

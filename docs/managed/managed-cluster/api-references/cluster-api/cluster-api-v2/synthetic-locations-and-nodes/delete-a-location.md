@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# Synthetic locations API v2 - DELETE a location (Dynatrace Managed)
-
-
-* Published Jul 26, 2019
-
 This API call deletes an existing **private** Synthetic location. Deletion cannot be undone.
 
 ## Authentication

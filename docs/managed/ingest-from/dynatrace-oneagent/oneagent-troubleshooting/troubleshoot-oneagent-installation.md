@@ -4,12 +4,8 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneage
 updated: 2026-02-09
 ---
 
-# Troubleshooting OneAgent installation
-
-
 * Troubleshooting
 * 13-min read
-* Updated on Oct 17, 2025
 
 Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows.
 
@@ -19,7 +15,7 @@ Why doesn't OneAgent start to monitor Apache process after restart?
 
 Following installation of OneAgent, your Apache web server must be *completely* restarted to enable monitoring. To do this correctly, it's important to understand the difference between "partial" and "complete" restarts. In the case of partial restarts, the main Apache process re-reads its configuration files, re-opens its log files, and then restarts its worker processes. OneAgent however, requires a complete Apache web server restart in which all workers andâmost importantlyâthe main Apache process are shut down entirely and then restarted.
 
-See [Stopping and Restarting Apache HTTP Serverï»¿](https://httpd.apache.org/docs/2.4/stopping.html) for more information on the different types of available restarts.
+See [Stopping and Restarting Apache HTTP Server](https://httpd.apache.org/docs/2.4/stopping.html) for more information on the different types of available restarts.
 
 ## How to perform a complete restart
 
@@ -103,17 +99,17 @@ This information applies to all operating systems on which full-stack OneAgent i
 
 SDK initialization and error handling
 
-If the SDK stub encounters issues loading or initializing the OneAgent module (particularly if [`onesdk_initialize`ï»¿](https://dt-url.net/mp038qp) or [`onesdk_initalize_2`ï»¿](https://dt-url.net/dz238k4) returns an error code), enable logging for the SDK stub to diagnose the problem.
+If the SDK stub encounters issues loading or initializing the OneAgent module (particularly if [`onesdk_initialize`](https://dt-url.net/mp038qp) or [`onesdk_initalize_2`](https://dt-url.net/dz238k4) returns an error code), enable logging for the SDK stub to diagnose the problem.
 
 Use one of these options to enable logging:
 
 * Set the `DT_LOGLEVELSDK={level}` environment variable (the easiest option).
 * Call the `onesdk_stub_set_logging_level(ONESDK_LOGGING_LEVEL_{LEVEL})` function.
-* If your program passes command line arguments to the SDK ([`onesdk_stub_process_cmdline_args`ï»¿](https://dt-url.net/t50394g)), use the `--dt_loglevelsdk={level}` command line argument.
+* If your program passes command line arguments to the SDK ([`onesdk_stub_process_cmdline_args`](https://dt-url.net/t50394g)), use the `--dt_loglevelsdk={level}` command line argument.
 
 Whichever option you choose, be sure to apply it before calling `onesdk_initialize` or `onesdk_initalize_2`.
 
-By default, after logging is enabled, the stub's log output is directed to `stderr`. If you need an alternative method to process stub log messages, see the [`onesdk_stub_set_logging_callback`ï»¿](https://dt-url.net/hn03995) function documentation.
+By default, after logging is enabled, the stub's log output is directed to `stderr`. If you need an alternative method to process stub log messages, see the [`onesdk_stub_set_logging_callback`](https://dt-url.net/hn03995) function documentation.
 
 If initialization fails, the most frequently encountered error code is `ONESDK_ERROR_LOAD_AGENT` (numerical code `2952658951`, `-1342308345` or `0xaffe0007`, error message `"Could not load agent."`).
 
@@ -130,7 +126,7 @@ Post-initialization SDK troubleshooting
 
 After successfully initializing the SDK, you might still encounter issues, such as missing paths in the UI or unexpected error codes like `ONESDK_INVALID_HANDLE`. In such cases:
 
-* Check messages from the OneAgent logging callbacks. See the documentation for [`onesdk_agent_set_warning_callback`ï»¿](https://dt-url.net/2r43812) and [`onesdk_agent_set_verbose_callback`ï»¿](https://dt-url.net/8w6389l).
+* Check messages from the OneAgent logging callbacks. See the documentation for [`onesdk_agent_set_warning_callback`](https://dt-url.net/2r43812) and [`onesdk_agent_set_verbose_callback`](https://dt-url.net/8w6389l).
 * Examine the OneAgent log files.
 
   See the following pages for exact locations of log files:
@@ -141,7 +137,7 @@ After successfully initializing the SDK, you might still encounter issues, such 
   You can increase the OneAgent log level by setting the `DT_LOGLEVELFILE={level}` environment variable or passing the `--dt_loglevelfile={level}` command line argument to the SDK.
 
   Alternatively, you can use `DT_LOGLEVELCON={level}` or `--dt_loglevelcon={level}` if you want to receive OneAgent log output via `stderr`.
-* In certain scenarios, [`onesdk_agent_get_current_state`ï»¿](https://dt-url.net/l9838z9) can provide further insights.
+* In certain scenarios, [`onesdk_agent_get_current_state`](https://dt-url.net/l9838z9) can provide further insights.
 
 ## OS-specific troubleshooting
 
@@ -191,7 +187,7 @@ If you are using a system with SELinux in enforcing mode and injected OneAgents 
    # sesearch -AC -s httpd_t -t jboss_management_port_t
    ```
 
-   To interpret the command output, see [Using SELinux booleansï»¿](https://wiki.gentoo.org/wiki/SELinux/Tutorials/Using_SELinux_booleans).
+   To interpret the command output, see [Using SELinux booleans](https://wiki.gentoo.org/wiki/SELinux/Tutorials/Using_SELinux_booleans).
 3. To find out if the communication is not allowed, execute the following command:
 
    ```
@@ -233,7 +229,7 @@ The `splunkd` component of Splunk version 8.2+ crashes when OneAgent automatic i
 
 #### Problem
 
-According to [Splunk issue SPL-207550ï»¿](https://docs.splunk.com/Documentation/Splunk/8.2.1/ReleaseNotes/Knownissues) (external link), Splunk fails to start after installation on Linux if a Dynatrace OneAgent exists, with error `ERROR: pid XXXX terminated with signal 4 (core dumped)`, because there is a conflict between the splunk watchdog and Dynatrace OneAgent libraries.
+According to [Splunk issue SPL-207550](https://docs.splunk.com/Documentation/Splunk/8.2.1/ReleaseNotes/Knownissues) (external link), Splunk fails to start after installation on Linux if a Dynatrace OneAgent exists, with error `ERROR: pid XXXX terminated with signal 4 (core dumped)`, because there is a conflict between the splunk watchdog and Dynatrace OneAgent libraries.
 
 #### Workaround
 
@@ -272,7 +268,7 @@ Any one of the below options is sufficient:
   ```
   unshare -m -- sh -c 'mount --bind /dev/null /etc/ld.so.preload && [PATH-TO-DATABASE-EXECUTABLE]'
   ```
-* Set the `LD_AUDIT` environment variable so it applies to the Oracle Database at start up. For more information including specific steps, see [Preventing loading of the process module on Linuxï»¿](https://community.dynatrace.com/t5/Troubleshooting/Preventing-loading-of-the-process-module-on-Linux/ta-p/213303).
+* Set the `LD_AUDIT` environment variable so it applies to the Oracle Database at start up. For more information including specific steps, see [Preventing loading of the process module on Linux](https://community.dynatrace.com/t5/Troubleshooting/Preventing-loading-of-the-process-module-on-Linux/ta-p/213303).
 * Disable Process Agent injection via `builtin:host.monitoring.advanced` schema / UI. ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Warning This will disable all code modules on that host, including manually enabled code modules.
 
 If there are any processes on the hosts which require Code Module injection, they can be manually enabled via LD\_PRELOAD=/lib{64}/liboneagentproc.so environment variable.
@@ -334,11 +330,11 @@ Try the following steps to resolve the issue:
 1. Download and unpack the MSI package from the installer of the currently installed version by following the [Get MSI Package](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows#msi "Learn how to download and install Dynatrace OneAgent on Windows.") instructions.
 2. Copy the MSI package to `C:\Windows\Installer`, and rename it to match the name referenced in the log (in this example, `312c0.msi`).
 
-For more information, see [Missing Windows Installer cache requires a computer rebuildï»¿](https://dt-url.net/gs03u5l).
+For more information, see [Missing Windows Installer cache requires a computer rebuild](https://dt-url.net/gs03u5l).
 
 AI\_RecycleBin folder is filling up disk space
 
-This is a known issue with [Advanced Installerï»¿](https://dt-url.net/e303ta4). As a workaround, the OneAgent installer clears the `AI_RecycleBin` at the end of the installation. However, this cleanup might not work if the installation fails in an early stage, such as in the case of a [missing MSI package in Windows Installer Cache](/managed/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation#missing-msi "Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows."). For more details, see the discussion on [Advanced Installer forumsï»¿](https://dt-url.net/w503uks).
+This is a known issue with [Advanced Installer](https://dt-url.net/e303ta4). As a workaround, the OneAgent installer clears the `AI_RecycleBin` at the end of the installation. However, this cleanup might not work if the installation fails in an early stage, such as in the case of a [missing MSI package in Windows Installer Cache](/managed/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation#missing-msi "Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows."). For more details, see the discussion on [Advanced Installer forums](https://dt-url.net/w503uks).
 
 ### AIX
 

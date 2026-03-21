@@ -4,16 +4,11 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services
 updated: 2026-02-09
 ---
 
-# Set up Dynatrace on Microsoft Azure
-
-
-* Overview
 * 1-min read
-* Updated on Sep 02, 2022
 
 Dynatrace automatically discovers, baselines, and intelligently monitors Microsoft Azure cloud environments to provide fault domain isolation and infrastructure and end-user visibility in real time.
 
-For more reasons to monitor Azure with Dynatrace, see [Microsoft Azureï»¿](https://www.dynatrace.com/hub/detail/microsoft-azure/) in Dynatrace Hub.
+For more reasons to monitor Azure with Dynatrace, see [Microsoft Azure](https://www.dynatrace.com/hub/detail/microsoft-azure/) in Dynatrace Hub.
 
 ## Full-stack monitoring for Azure Compute and serverless services
 

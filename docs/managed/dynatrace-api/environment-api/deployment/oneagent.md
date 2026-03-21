@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deploym
 updated: 2026-02-09
 ---
 
-# Deployment API - OneAgent
-
-
-* Overview
-* Updated on Aug 26, 2025
-
 [### Download latest OneAgent
 
 Download the latest OneAgent installer via Dynatrace API.](/managed/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest "Download the latest OneAgent installer via Dynatrace API.")[### Download OneAgent of specific version

@@ -4,11 +4,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 updated: 2026-02-09
 ---
 
-# Dynatrace for z/OS
-
-
 * 8-min read
-* Updated on Nov 15, 2022
 
 With Dynatrace, you can get complete transactional insights into your workloads from the mobile frontend down to mainframe programs and everything in between so that you can troubleshoot anomalies on the code level. Furthermore, Dynatrace can accompany you in your hybrid cloud journey with end-to-end observability from the mainframe to the cloud.
 
@@ -26,7 +22,7 @@ All monitored LPARs, regions, and applications are contributing to this fault do
 
 Who is calling the mainframe and how often?
 
-Backtrace transactions using the [Service backtrace](/managed/observe/application-observability/services-classic/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.") to understand your mainframe workloads and benefit from potential IBM discounts (see for example the IBM [mobileï»¿](https://www.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/877/ENUSZP14-0280/index.html&lang=en&request_locale=en) and [public cloudï»¿](https://www.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=897/ENUS216-319&infotype=AN&subtype=CA) workload discounts to lower your monthly peak rolling 4-hour average MSU value).
+Backtrace transactions using the [Service backtrace](/managed/observe/application-observability/services-classic/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.") to understand your mainframe workloads and benefit from potential IBM discounts (see for example the IBM [mobile](https://www.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/877/ENUSZP14-0280/index.html&lang=en&request_locale=en) and [public cloud](https://www.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=897/ENUS216-319&infotype=AN&subtype=CA) workload discounts to lower your monthly peak rolling 4-hour average MSU value).
 
 The Service backtrace below shows how a CICS transaction interactions with both a mobile application and a web application. You can clearly see how often these applications call the CICS transaction, and also which of their requests failed.
 
@@ -58,7 +54,7 @@ Dynatrace provides code modules for CICS, IMS, and z/OS Java technologies so tha
 
 The CICS, IMS, and z/OS Java modules interact with the Dynatrace z/OS Data Collection (zDC) subsystem via a shared memory object (SMO) within an LPAR. The zDC subsystem manages this SMO, to which the modules write their monitoring data.
 
-The zLocal, hosted in the z/OS [Unix System Servicesï»¿](https://www.ibm.com/docs/en/zos/2.5.0?topic=zos-unix-system-services) (USS) environment, runs as part of the zDC. It manages the TCP/IP connection to the zRemote module, reads monitoring data from SMO, and transfers these data to the zRemote.
+The zLocal, hosted in the z/OS [Unix System Services](https://www.ibm.com/docs/en/zos/2.5.0?topic=zos-unix-system-services) (USS) environment, runs as part of the zDC. It manages the TCP/IP connection to the zRemote module, reads monitoring data from SMO, and transfers these data to the zRemote.
 
 The zRemote module processes monitoring data received from the zLocal and routes that data, compressed and encrypted, via its local ActiveGate to Dynatrace. Hence, the zRemote module offloads much of the processing work from the modules incurred in instrumenting subsystems and applications to an open system.
 
@@ -115,7 +111,7 @@ The CICS and IMS consume some general-purpose central processor (GCP) time while
 
 1
 
-Using the [Hardware Instrumentation Servicesï»¿](https://www.ibm.com/docs/en/zos/2.1.0?topic=aids-hardware-instrumentation-services) from IBM.
+Using the [Hardware Instrumentation Services](https://www.ibm.com/docs/en/zos/2.1.0?topic=aids-hardware-instrumentation-services) from IBM.
 
 * The GCP time overhead numbers are calculated relatively to the address spaces in which the modules are running. When you compare the GCP time overhead relatively to the LPAR, then these numbers are even lower.
 * For example, 2% GCP time overhead in CICS address spaces represents only 1% GCP time overhead per LPAR if the CICS workloads consume only 50% of the total GCP time on a given LPAR compared to other workloads (such as jobs and system tasks).
@@ -128,7 +124,7 @@ No, the CICS and IMS modules can only capture static SQL statements.
 
 Can I monitor the Servants of my WebSphere Application Server with the z/OS Java module?
 
-The WebSphere Application Server on z/OS allows you to spin up [Servantsï»¿](https://www.ibm.com/docs/en/was-zos/9.0.5?topic=zos-websphere-application-server-terminology) dynamically depending on the workload.
+The WebSphere Application Server on z/OS allows you to spin up [Servants](https://www.ibm.com/docs/en/was-zos/9.0.5?topic=zos-websphere-application-server-terminology) dynamically depending on the workload.
 
 In Dynatrace, you can use the **process identifier** on each metric to distinguish between different Servants, as shown in the image below.
 
@@ -170,8 +166,8 @@ With Dynatrace, you can get [Full-Stack Monitoring with Host monitoring (DPS)](/
 
 ## Related topics
 
-* [[Blog] Eliminate inefficiencies and innovate faster on IBM Zï»¿](https://www.dynatrace.com/news/blog/eliminate-inefficiencies-and-innovate-faster-by-optimizing-hybrid-mainframe-environments-on-ibm-z/ "Eliminate inefficiencies and innovate faster by optimizing hybrid mainframe environments on IBM Z.")
-* [[Blog] Transform z/OS Java applicationsï»¿](https://www.dynatrace.com/news/blog/transform-mainframe-applications-into-z-os-java-services-with-end-to-end-transaction-visibility-and-anomaly-detection-preview/ "Transform z/OS Java applications into microservices with end-to-end transaction visibility and anomaly detection.")
-* [[Blog] Managing hybrid cloud infrastructureï»¿](https://www.dynatrace.com/news/blog/managing-hybrid-cloud-infrastructure-with-an-observability-platform/ "Managing a mainframe-powered hybrid cloud infrastructure with Dynatrace as an observability platform.")
-* [[Video] Get insights for z/OS Connect apps with Dynatraceï»¿](https://youtu.be/6WuHzvQV7yk "Learn how to modernize for hybrid cloud with the Dynatrace z/OS Connect end-to-end observability.")
-* [[Video] Extend the Dynatrace value for z/OS ï»¿](https://youtu.be/XUw7YmpBx4E "Learn how to capture additional monitoring data of your z/OS business applications using the CICS/IMS SDK.")
+* [[Blog] Eliminate inefficiencies and innovate faster on IBM Z](https://www.dynatrace.com/news/blog/eliminate-inefficiencies-and-innovate-faster-by-optimizing-hybrid-mainframe-environments-on-ibm-z/ "Eliminate inefficiencies and innovate faster by optimizing hybrid mainframe environments on IBM Z.")
+* [[Blog] Transform z/OS Java applications](https://www.dynatrace.com/news/blog/transform-mainframe-applications-into-z-os-java-services-with-end-to-end-transaction-visibility-and-anomaly-detection-preview/ "Transform z/OS Java applications into microservices with end-to-end transaction visibility and anomaly detection.")
+* [[Blog] Managing hybrid cloud infrastructure](https://www.dynatrace.com/news/blog/managing-hybrid-cloud-infrastructure-with-an-observability-platform/ "Managing a mainframe-powered hybrid cloud infrastructure with Dynatrace as an observability platform.")
+* [[Video] Get insights for z/OS Connect apps with Dynatrace](https://youtu.be/6WuHzvQV7yk "Learn how to modernize for hybrid cloud with the Dynatrace z/OS Connect end-to-end observability.")
+* [[Video] Extend the Dynatrace value for z/OS ](https://youtu.be/XUw7YmpBx4E "Learn how to capture additional monitoring data of your z/OS business applications using the CICS/IMS SDK.")

@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/dashb
 updated: 2026-02-09
 ---
 
-# Dashboards API - GET a dashboard
-
-
-* Reference
-* Published Jan 23, 2019
-
 Gets parameters of the specified dashboard.
 
 The request produces an `application/json` payload.
@@ -123,7 +117,7 @@ Metadata useful for debugging
 
 Configuration of a tile.
 
-The actual set of fields depends on the type of the tile. Find the list of actual objects in the description of the **tileType** field or see [Dashboards API - Tile JSON modelsï»¿](https://dt-url.net/2wc3spx).
+The actual set of fields depends on the type of the tile. Find the list of actual objects in the description of the **tileType** field or see [Dashboards API - Tile JSON models](https://dt-url.net/2wc3spx).
 
 | Element | Type | Description |
 | --- | --- | --- |

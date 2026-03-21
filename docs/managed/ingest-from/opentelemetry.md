@@ -4,14 +4,9 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry
 updated: 2026-02-09
 ---
 
-# OpenTelemetry and Dynatrace
-
-
-* Overview
 * 2-min read
-* Updated on Aug 14, 2025
 
-[OpenTelemetry (OTel)ï»¿](https://www.opentelemetry.io) provides a standardized way of collecting and exporting telemetry data.
+[OpenTelemetry (OTel)](https://www.opentelemetry.io) provides a standardized way of collecting and exporting telemetry data.
 It allows applications and infrastructure to transmit telemetry to backends (such as Dynatrace) using vendor-agnostic formats.
 These backends can then aggregate and analyze the data.
 

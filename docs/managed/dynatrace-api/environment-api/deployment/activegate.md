@@ -4,12 +4,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deploym
 updated: 2026-02-09
 ---
 
-# Deployment API - ActiveGate
-
-
-* Reference
-* Published Apr 02, 2021
-
 [### Download latest ActiveGate
 
 Download the latest version of the ActiveGate installer.](/managed/dynatrace-api/environment-api/deployment/activegate/download-activegate-latest "Download the latest ActiveGate installer via Dynatrace API.")[### Download specific version

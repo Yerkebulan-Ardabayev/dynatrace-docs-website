@@ -4,11 +4,6 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-# List properties for specific environment
-
-
-* Published Mar 09, 2021
-
 This API call gets the properties of a specified environment.
 
 ## Authentication
