@@ -14,6 +14,24 @@ const GROQ_MODEL = 'llama-3.3-70b-versatile';
 // После деплоя worker — замените URL на свой:
 let GROQ_WORKER_URL = ''; // e.g. 'https://dynatrace-ai.yourname.workers.dev'
 
+// Auto-detect site base URL (fixes GitHub Pages subpath: /repo-name/)
+const ASSETS_BASE_URL = (() => {
+    const scripts = document.querySelectorAll('script[src*="groq-chat"]');
+    if (scripts.length > 0) {
+        return scripts[0].src.replace(/javascripts\/groq-chat\.js.*$/, '');
+    }
+    // Fallback: try canonical link
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+        const url = new URL(canonical.href);
+        const pathSegments = url.pathname.split('/').filter(Boolean);
+        if (pathSegments.length > 0) {
+            return url.origin + '/' + pathSegments[0] + '/assets/';
+        }
+    }
+    return '/assets/';
+})();
+
 // API ключ для GitHub Pages fallback (direct mode)
 let GROQ_MODE = 'detecting'; // 'proxy' | 'worker' | 'direct' | 'disabled'
 let GROQ_API_KEY_CLIENT = ''; // Будет загружен из конфига если нужно
@@ -51,7 +69,7 @@ async function detectMode() {
 
     // 2. Try loading config (may contain worker_url or direct key)
     try {
-        const resp = await fetch('/assets/ai-config.json', { signal: AbortSignal.timeout(2000) });
+        const resp = await fetch(ASSETS_BASE_URL + 'ai-config.json', { signal: AbortSignal.timeout(2000) });
         if (resp.ok) {
             const config = await resp.json();
 

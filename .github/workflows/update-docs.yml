@@ -49,14 +49,28 @@ jobs:
         id: scrape
         if: ${{ !inputs.skip_scrape }}
         run: |
+          set -e
           echo "=== Stage 1: Scraping Dynatrace documentation ==="
           cd scripts
           python scrape_docs.py --max-pages ${{ inputs.max_pages || 1000 }} 2>&1 | tail -30
           echo "scrape_done=true" >> $GITHUB_OUTPUT
 
+      - name: Verify scrape results
+        if: steps.scrape.outputs.scrape_done == 'true'
+        run: |
+          set -e
+          COUNT=$(find docs/en -name "*.md" 2>/dev/null | wc -l)
+          echo "Scraped files: $COUNT"
+          if [ "$COUNT" -lt 5 ]; then
+            echo "::error::Scrape returned only $COUNT files — possible scraper failure"
+            exit 1
+          fi
+          echo "scrape_verified=true" >> $GITHUB_OUTPUT
+
       - name: Organize files
         if: steps.scrape.outputs.scrape_done == 'true'
         run: |
+          set -e
           if [ -f scripts/organize_docs.py ]; then
             python scripts/organize_docs.py
           fi
@@ -65,6 +79,7 @@ jobs:
       - name: Detect new and updated articles
         id: detect
         run: |
+          set -e
           echo "=== Stage 2: Detecting changes ==="
           python scripts/detect_changes.py \
             --source-dir docs/en \
@@ -90,6 +105,7 @@ jobs:
         id: commit
         if: steps.detect.outputs.total_changes != '0'
         run: |
+          set -e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/en/ scripts/dynatrace-docs/
@@ -152,6 +168,44 @@ jobs:
             || gh issue create \
               --title "📝 Перевод: $TOTAL статей требуют перевода ($DATE)" \
               --body "$BODY"
+
+      # ---------- STAGE 4b: Telegram notification ----------
+      - name: Send Telegram notification
+        if: steps.detect.outputs.total_changes != '0'
+        env:
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          NEW=${{ steps.detect.outputs.new_count || 0 }}
+          UPDATED=${{ steps.detect.outputs.updated_count || 0 }}
+          TOTAL=${{ steps.detect.outputs.total_changes || 0 }}
+          DATE=$(date +%Y-%m-%d)
+          REPO_URL="https://github.com/${{ github.repository }}"
+
+          # Build message with Markdown
+          MSG="📝 *Dynatrace Docs — Перевод*
+
+📊 Обнаружено *${TOTAL}* статей для перевода:
+  • Новых: *${NEW}*
+  • Обновлённых: *${UPDATED}*
+
+🕐 Дата синхронизации: ${DATE}
+🔗 [Открыть Issues](${REPO_URL}/issues?q=label%3Atranslation+is%3Aopen)
+🤖 Автоматическое уведомление"
+
+          # Send via Telegram Bot API
+          if [ -n "$TG_BOT_TOKEN" ] && [ -n "$TG_CHAT_ID" ]; then
+            curl -s -X POST "https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage" \
+              -d chat_id="${TG_CHAT_ID}" \
+              -d text="${MSG}" \
+              -d parse_mode="Markdown" \
+              -d disable_web_page_preview="true" \
+              --connect-timeout 10 \
+              --max-time 15 \
+              || echo "WARNING: Telegram notification failed (non-blocking)"
+          else
+            echo "WARNING: TG_BOT_TOKEN or TG_CHAT_ID not set, skipping Telegram notification"
+          fi
 
       # ---------- STAGE 5: Build & Deploy ----------
       - name: Validate docs

@@ -149,6 +149,20 @@ def detect_changes(source_dir: Path, target_dir: Path) -> dict:
             article_info["type"] = "updated"
             article_info["prev_hash"] = prev_hash
             updated_articles.append(article_info)
+            continue
+
+        # Case 3: No previous hash record, but ru/ exists →
+        # Compare file modification times to catch updates between syncs
+        if not prev_hash and ru_file.exists():
+            try:
+                en_mtime = src_file.stat().st_mtime
+                ru_mtime = ru_file.stat().st_mtime
+                if en_mtime > ru_mtime:
+                    article_info["type"] = "updated"
+                    article_info["note"] = "no prev hash, detected via mtime"
+                    updated_articles.append(article_info)
+            except OSError:
+                pass
 
     # Save current hashes for next run
     save_hash_registry(current_hashes)

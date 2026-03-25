@@ -67,14 +67,14 @@ nav:
   # --- НАЧАЛО РАБОТЫ ---
   - Начало работы:
     - Документация Dynatrace: ru/index.md
-    - Начало работы: ru/getting-started.md
+    - Быстрый старт: ru/getting-started.md
     - Что такое Dynatrace: ru/discover-dynatrace/what-is-dynatrace.md
     - Приложения Dynatrace: ru/discover-dynatrace/dynatrace-apps.md
     - Семантический словарь: ru/semantic-dictionary.md
 
   # --- DYNATRACE MANAGED ---
   - Managed:
-    - Обзор: managed/index.md
+    - Обзор Managed: managed/index.md
     - Установка: managed/installation.md
     - Настройка: managed/configuration.md
     - Обслуживание: managed/operations.md
@@ -82,7 +82,7 @@ nav:
     - Безопасность: managed/security.md
     - Резервное копирование: managed/backup.md
     - Кластер: managed/managed-cluster.md
-    - Лицензия: managed/license.md
+    - Лицензия Managed: managed/license.md
 
   # --- ПЛАТФОРМА ---
   - Платформа:
@@ -96,7 +96,7 @@ nav:
   # --- НАБЛЮДАЕМОСТЬ ---
   - Наблюдаемость:
     - Инфраструктура:
-      - Обзор: ru/observe/infrastructure-observability.md
+      - Обзор инфраструктуры: ru/observe/infrastructure-observability.md
       - Хосты и операции: ru/observe/infrastructure-observability/infrastructure-and-operations.md
       - Облачный мониторинг: ru/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md
       - Kubernetes: ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app.md
@@ -106,14 +106,14 @@ nav:
       - Распределённая трассировка: ru/observe/application-observability/distributed-tracing.md
       - Сервисы: ru/observe/application-observability/services/services-app.md
     - Цифровой опыт:
-      - Обзор: ru/observe/digital-experience.md
+      - Обзор Digital Experience: ru/observe/digital-experience.md
       - Синтетическое приложение: ru/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app.md
     - AI и LLM мониторинг: ru/observe/dynatrace-for-ai-observability.md
 
   # --- DYNATRACE INTELLIGENCE ---
   - Dynatrace Intelligence:
     - Обнаружение аномалий:
-      - Обзор: ru/dynatrace-intelligence/anomaly-detection.md
+      - Обзор Anomaly Detection: ru/dynatrace-intelligence/anomaly-detection.md
       - Настройка чувствительности: ru/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection.md
       - Приложение Anomaly Detection: ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md
       - Конфигурация: ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md
@@ -123,15 +123,15 @@ nav:
       - Статические пороги: ru/dynatrace-intelligence/anomaly-detection/static-thresholds.md
       - Оптимизация DQL: ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization.md
     - Davis Copilot:
-      - Обзор: ru/dynatrace-intelligence/copilot.md
+      - Обзор Copilot: ru/dynatrace-intelligence/copilot.md
       - Dynatrace Assist: ru/dynatrace-intelligence/copilot/chat-with-davis-copilot.md
-      - Начало работы: ru/dynatrace-intelligence/copilot/copilot-getting-started.md
+      - Начало работы с Copilot: ru/dynatrace-intelligence/copilot/copilot-getting-started.md
       - Конфиденциальность: ru/dynatrace-intelligence/copilot/copilot-data-privacy.md
       - Запросы на естественном языке: ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql.md
     - Проблемы Davis: ru/dynatrace-intelligence/davis-problems-app.md
     - Анализ первопричин:
-      - Обзор: ru/dynatrace-intelligence/root-cause-analysis.md
-      - Концепции: ru/dynatrace-intelligence/root-cause-analysis/concepts.md
+      - Обзор RCA: ru/dynatrace-intelligence/root-cause-analysis.md
+      - Концепции RCA: ru/dynatrace-intelligence/root-cause-analysis/concepts.md
       - Анализ событий: ru/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md
     - Интеграции: ru/dynatrace-intelligence/dynatrace-intelligence-integrations.md
     - Справочник:
@@ -159,31 +159,31 @@ nav:
 
   # --- ИСТОЧНИКИ ДАННЫХ ---
   - Источники данных:
-    - Обзор: ru/ingest-from.md
+    - Обзор источников данных: ru/ingest-from.md
     - Расширения: ru/ingest-from/extensions.md
     - OneAgent — установка: ru/ingest-from/dynatrace-oneagent/installation-and-operation.md
 
   # --- DELIVER (CI/CD) ---
   - Deliver:
     - Configuration as Code:
-      - Обзор: ru/deliver/configuration-as-code.md
+      - Обзор CaC: ru/deliver/configuration-as-code.md
       - Monaco:
-        - API и разрешения: ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling.md
-        - Концепции: ru/deliver/configuration-as-code/monaco/monaco-concepts.md
-        - Начало работы: ru/deliver/configuration-as-code/monaco/monaco-getting-started.md
+        - Monaco API и разрешения: ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling.md
+        - Концепции Monaco: ru/deliver/configuration-as-code/monaco/monaco-concepts.md
+        - Начало работы с Monaco: ru/deliver/configuration-as-code/monaco/monaco-getting-started.md
       - Terraform:
-        - API и разрешения: ru/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling.md
+        - Terraform API и разрешения: ru/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling.md
         - CLI команды: ru/deliver/configuration-as-code/terraform/terraform-cli-commands.md
     - SLO:
-      - Обзор: ru/deliver/service-level-objectives.md
+      - Обзор SLO: ru/deliver/service-level-objectives.md
       - Создание SLO: ru/deliver/service-level-objectives/create-slo.md
     - Site Reliability Guardian:
-      - Обзор: ru/deliver/site-reliability-guardian.md
+      - Обзор SRG: ru/deliver/site-reliability-guardian.md
       - Структура событий: ru/deliver/site-reliability-guardian/event-structure.md
     - Ownership: ru/deliver/ownership-app.md
     - Мониторинг релизов:
-      - Обзор: ru/deliver/release-monitoring.md
-      - Мониторинг релизов: ru/deliver/release-monitoring/monitor-releases-with-dynatrace.md
+      - Обзор релизов: ru/deliver/release-monitoring.md
+      - Отслеживание релизов: ru/deliver/release-monitoring/monitor-releases-with-dynatrace.md
     - Валидация релизов: ru/deliver/quality-gates.md
 
   # --- БЕЗОПАСНОСТЬ ---
@@ -195,7 +195,7 @@ nav:
   - Управление:
     - Hub: ru/manage/hub.md
     - Лицензирование:
-      - Лицензия: ru/license.md
+      - Обзор лицензии: ru/license.md
       - Возможности DPS: ru/license/capabilities.md
       - Биллинг: ru/license/billing-reports.md
       - Бюджетные оповещения: ru/license/budget-alerts.md
@@ -209,9 +209,9 @@ nav:
 
   # --- ЧТО НОВОГО ---
   - Что нового:
-    - Обзор: ru/whats-new.md
+    - Все обновления: ru/whats-new.md
     - SaaS: ru/whats-new/saas.md
-    - OneAgent: ru/whats-new/oneagent.md
+    - Обновления OneAgent: ru/whats-new/oneagent.md
     - ActiveGate: ru/whats-new/activegate.md
 
   # --- AI ПОМОЩНИК ---
