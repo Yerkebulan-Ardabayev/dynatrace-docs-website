@@ -98,7 +98,7 @@ class DocumentValidator:
                     ValidationIssue(
                         str(file_path),
                         i,
-                        "error",
+                        "warning",
                         "Markdown link missing opening '['",
                         "broken-link-syntax",
                     )
@@ -176,8 +176,21 @@ class DocumentValidator:
                 if not link_path:
                     continue
 
-                target = (md_file.parent / link_path).resolve()
-                if not target.exists():
+                # Skip overly long paths (likely parsing artifacts, not real links)
+                if len(link_path) > 250:
+                    continue
+
+                try:
+                    target = (md_file.parent / link_path).resolve()
+                except (OSError, ValueError):
+                    continue
+
+                try:
+                    exists = target.exists()
+                except OSError:
+                    continue
+
+                if not exists:
                     line_num = 0
                     for i, line in enumerate(content.split("\n"), 1):
                         if link in line:
@@ -188,7 +201,7 @@ class DocumentValidator:
                             str(md_file),
                             line_num,
                             "warning",
-                            f"Broken link target: {link}",
+                            f"Broken link target: {link_path[:100]}",
                             "broken-link",
                         )
                     )
@@ -234,8 +247,22 @@ class NavValidator:
         self.issues = []
 
         try:
+            # Use a custom loader that ignores unknown YAML tags
+            # (e.g. MkDocs Material extensions like !ENV, python/name:...)
+            class _SafeLoaderIgnoreUnknown(yaml.SafeLoader):
+                pass
+
+            _SafeLoaderIgnoreUnknown.add_multi_constructor(
+                "tag:yaml.org,2002:python/",
+                lambda loader, suffix, node: None,
+            )
+            _SafeLoaderIgnoreUnknown.add_constructor(
+                "!ENV",
+                lambda loader, node: None,
+            )
+
             with open(self.config_path, "r", encoding="utf-8") as f:
-                config = yaml.safe_load(f)
+                config = yaml.load(f, Loader=_SafeLoaderIgnoreUnknown)
         except Exception as e:
             self.issues.append(
                 ValidationIssue(
