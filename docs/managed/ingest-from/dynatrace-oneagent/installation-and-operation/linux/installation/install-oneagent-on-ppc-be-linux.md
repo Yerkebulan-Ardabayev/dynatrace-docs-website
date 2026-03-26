@@ -1,22 +1,27 @@
 ---
-title: "Install OneAgent on PPC BE Linux"
-source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-ppc-be-linux
-updated: 2026-02-09
+title: Install OneAgent on PPC BE Linux
+source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-ppc-be-linux
+scraped: 2026-03-06T21:19:12.390171
 ---
 
-* 3-min read
+# Install OneAgent on PPC BE Linux
 
-To install Dynatrace OneAgent when you have a Dynatrace SaaS deployment, go to [Dynatrace.com](https://www.dynatrace.com) and **Login** using the username and password you received from Dynatrace in your signup confirmation email. If you have a Dynatrace Managed deployment, [access the Cluster Management Console and choose the environment](/managed/managed-cluster/operation/manage-your-monitoring-environments "Find out how to create, configure, access, delete, disable, and switch between monitoring environments.") you want to monitor. Then continue with the installation steps provided below.
+
+* Latest Dynatrace
+* 3-min read
+* Updated on Jan 22, 2026
+
+To install Dynatrace OneAgent when you have a Dynatrace SaaS deployment, go to [Dynatrace.comï»¿](https://www.dynatrace.com) and **Login** using the username and password you received from Dynatrace in your signup confirmation email. If you have a Dynatrace Managed deployment, [access the Cluster Management Console and choose the environmentï»¿](https://docs.dynatrace.com/managed/shortlink/managed-monitoring-environment) you want to monitor. Then continue with the installation steps provided below.
 
 ## Requirements
 
-* You need the [permissions](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Find out when Dynatrace OneAgent requires root privileges on Linux.") for the following actions:
+* You need the [permissions](../../../../../../ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged.md "Find out when Dynatrace OneAgent requires root privileges on Linux.") for the following actions:
 
   + To create a directory where you want to install OneAgent
   + To change firewall settings (necessary only if your internal routing policy may prevent Dynatrace software from reaching the Internet).
   + To restart your application services
-* You also need to check the [disk space requirements](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix "Find out what the disk space requirements are for OneAgent installation on AIX.").
-* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on whether your Dynatrace deployment is SaaS or Managed, and depending on your network layout and security settings, you may choose to either provide direct access to the Dynatrace cluster, or you can [set up an ActiveGate](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
+* You also need to check the [disk space requirements](../../../../../../ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix.md "Find out what the disk space requirements are for OneAgent installation on AIX.").
+* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on whether your Dynatrace deployment is SaaS or Managed, and depending on your network layout and security settings, you may choose to either provide direct access to the Dynatrace cluster, or you can [set up an ActiveGate](../../../../../../ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.").
 
 * On PPC BE Linux, OneAgent supports only Java and Apache/IHS.
 * You don't need root access to install OneAgent on PPC BE Linux.
@@ -29,8 +34,8 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 
 ## Installation
 
-1. Go to **Deploy Dynatrace**.
-2. Select **Start installation** > **Linux**.
+1. In Dynatrace Hub, select **OneAgent**.
+2. Select **Set up** > **Linux**.
 3. Choose the **PowerPC (BE)** installer type from the list. Copy the command provided in the **Use this command on the target host to download OneAgent for Linux PowerPC (BE)** text field
 4. Login to your PPC BE Linux host and execute the command you copied from Dynatrace.
 
@@ -52,9 +57,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 
    Great, the setup is complete! You can now take a look around your new monitoring environment.
 
-   You can access your monitoring environment through the [Cluster Management Console](/managed/managed-cluster/operation/manage-your-monitoring-environments "Find out how to create, configure, access, delete, disable, and switch between monitoring environments.").
-
-   ![Arrived](https://dt-cdn.net/images/arrive-1533-e7eb3573a6.png)
+   You can access your monitoring environment anytime by going to Dynatrace website and selecting **Login** in the upper-right corner.
 
    One last thing: to monitor your processes, you need to restart them. At any time, you can check which processes aren't monitored and need to be restarted. Just go to **Deployment Status**, switch to the **All hosts** or **Recently connected hosts** tab, and expand the host you are interested in.
 
@@ -80,4 +83,4 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 
    ## You've arrived!
 
-   Great, setup is complete! You can now take a look around your new monitoring environment. If you have a SaaS deployment, you can access your monitoring environment anytime by going to [Dynatrace.com](https://www.dynatrace.com) and clicking the **Login** button in the upper-right corner. If you have a Dynatrace Managed deployment, you can [access your monitoring environment through the Cluster Management Console](/managed/managed-cluster/operation/manage-your-monitoring-environments "Find out how to create, configure, access, delete, disable, and switch between monitoring environments.").
+   Great, setup is complete! You can now take a look around your new monitoring environment. If you have a SaaS deployment, you can access your monitoring environment anytime by going to [Dynatrace.comï»¿](https://www.dynatrace.com) and clicking the **Login** button in the upper-right corner. If you have a Dynatrace Managed deployment, you can [access your monitoring environment through the Cluster Management Consoleï»¿](https://docs.dynatrace.com/managed/shortlink/managed-monitoring-environment).

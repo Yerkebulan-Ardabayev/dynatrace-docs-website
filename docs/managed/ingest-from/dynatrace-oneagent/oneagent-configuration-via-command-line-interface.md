@@ -1,10 +1,16 @@
 ---
-title: "OneAgent configuration via command-line interface"
-source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface
-updated: 2026-02-09
+title: OneAgent configuration via command-line interface
+source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface
+scraped: 2026-03-06T21:18:43.374852
 ---
 
+# OneAgent configuration via command-line interface
+
+
+* Latest Dynatrace
+* Reference
 * 20-min read
+* Updated on Sep 17, 2025
 
 Use the `oneagentctl` command-line interface to perform some post-installation OneAgent configuration at the individual host level.
 
@@ -68,7 +74,7 @@ Run the following command to adjust OneAgent connection settings:
 
 To define multiple endpoints, separate them by semicolon and add the quotes. For example, `--set-server="https://server1;https://server2"`.
 
-These parameters require restart of OneAgent, as well as restart of all the applications monitored with deep code modules. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically (version 1.189+) or stop and start OneAgent process manually. For OS-specific instructions, see [Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux "Learn how to stop and restart OneAgent on Linux."), [Windows](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows "Learn how to stop and restart OneAgent on Windows."), or [AIX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix "Learn how to stop and restart OneAgent on AIX.").
+These parameters require restart of OneAgent, as well as restart of all the applications monitored with deep code modules. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically (version 1.189+) or stop and start OneAgent process manually. For OS-specific instructions, see [Linux](../../../ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux.md "Learn how to stop and restart OneAgent on Linux."), [Windows](../../../ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows.md "Learn how to stop and restart OneAgent on Windows."), or [AIX](../../../ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix.md "Learn how to stop and restart OneAgent on AIX.").
 
 This command will immediately change the OS module connection endpoint, but the code modules won't be able to read the new setting until the next restart.
 
@@ -106,18 +112,18 @@ For example:
 
 ### Set environment ID
 
-Use the `--set-tenant` parameter to set an [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments."). By default, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
+Use the `--set-tenant` parameter to set an [environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments."). By default, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
 
 * **Linux** or **AIX**:  
   `./oneagentctl --set-tenant=abc123456`
 * **Windows**:  
   `.\oneagentctl.exe --set-tenant=abc123456`
 
-Always use in combination with `--set-tenant-token`, which defines the [tenant token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Learn what a tenant token is and how to change it.") for internal authentication.
+Always use in combination with `--set-tenant-token`, which defines the [tenant token](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token.md "Learn what a tenant token is and how to change it.") for internal authentication.
 
 ### Show environment ID
 
-The Dynatrace [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") you received with your activation email.
+The Dynatrace [environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") you received with your activation email.
 
 Use the `--get-tenant` parameter to display the environment ID:
 
@@ -128,7 +134,7 @@ Use the `--get-tenant` parameter to display the environment ID:
 
 ### Set tenant token
 
-Use the `--set-tenant-token` parameter to set the [tenant token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Learn what a tenant token is and how to change it."), which is used to authenticate communication with the defined endpoint. Always use in combination with `--set-tenant`.
+Use the `--set-tenant-token` parameter to set the [tenant token](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token.md "Learn what a tenant token is and how to change it."), which is used to authenticate communication with the defined endpoint. Always use in combination with `--set-tenant`.
 
 * **Linux** or **AIX**:  
   `./oneagentctl --set-tenant-token=abcdefg123456790`
@@ -211,10 +217,10 @@ Starting with OneAgent version 1.301, OneAgent doesn't use the TCP ports for its
 Watchdog is a binary used for starting and monitoring OneAgent monitoring processes:
 
 * `oneagentos`âoperating system monitoring
-* `oneagentplugin`âmonitoring using [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
-* `oneagentextensions`âmonitoring using local [Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
-* `oneagentloganalytics`â[Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
-* `oneagentnetwork`â[network monitoring](/managed/observe/infrastructure-observability/networks "Learn how to monitor network communications.")
+* `oneagentplugin`âmonitoring using [OneAgent extensions](../../../ingest-from/extensions/develop-your-extensions.md#oneagent-extensions "Develop your own Extensions in Dynatrace.")
+* `oneagentextensions`âmonitoring using local [Extensions](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+* `oneagentloganalytics`â[Log Monitoring](../../../analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* `oneagentnetwork`â[network monitoring](../../../observe/infrastructure-observability/networks-classic.md "Learn how to monitor network communications.")
 
 Use the `--set-watchdog-portrange=arg` parameter to change the watchdog listening port range to `<arg>`. The `<arg>` must contain two port numbers separated by a colon (`:`). For example `50000:50100`. The maximum supported port range is from 1024 to 65535. The port range must cover at least 4 ports. The port number starting the range must be lower.
 
@@ -225,7 +231,7 @@ Use the `--set-watchdog-portrange=arg` parameter to change the watchdog listenin
 
 ## Automatic updates
 
-For more information, see update OneAgent topics for [Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux "Learn about the different ways to update OneAgent on Linux."), [Windows](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/update-oneagent-on-windows "Learn about the different ways to update Dynatrace OneAgent on Windows."), and [AIX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/update-oneagent-on-aix "Learn how you can update Dynatrace OneAgent on AIX.").
+For more information, see update OneAgent topics for [Linux](../../../ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux.md "Learn about the different ways to update OneAgent on Linux."), [Windows](../../../ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/update-oneagent-on-windows.md "Learn about the different ways to update Dynatrace OneAgent on Windows."), and [AIX](../../../ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/update-oneagent-on-aix.md "Learn how you can update Dynatrace OneAgent on AIX.").
 
 ### Check if auto-update is enabled
 
@@ -249,7 +255,7 @@ After you use this command to disable auto-updates, you won't be able to control
 
 ## Log monitoring
 
-For more information, see [Log Monitoring](https://docs.dynatrace.com/docs/shortlink/log-management-and-analytics).
+For more information, see [Log Monitoring](../../../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.").
 
 ### Check if Log Monitoring is enabled
 
@@ -273,7 +279,7 @@ Set the `--set-app-log-content-access` parameter to `true` or `false` to disable
 
 OneAgent version 1.225+
 
-If you don't have access to Dynatrace or you would like to script diagnostic data collection, you can use the `oneagentctl` command to collect a [subset](#contents) of the full [OneAgent diagnostics](/managed/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Learn how to run OneAgent diagnostics") data right on the host where OneAgent is installed. With the diagnostic data collected for OneAgent, you can:
+If you don't have access to Dynatrace or you would like to script diagnostic data collection, you can use the `oneagentctl` command to collect a [subset](#contents) of the full [OneAgent diagnostics](../../../ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics.md "Learn how to run OneAgent diagnostics") data right on the host where OneAgent is installed. With the diagnostic data collected for OneAgent, you can:
 
 * Easily collect the diagnostic data for a specific host
 * Directly provide Dynatrace Support the details they need to diagnose the issue
@@ -304,19 +310,7 @@ Archive saved as C:\data\support-archive\support_archive_agent_2021-09-07_121619
 
 ### Contents of diagnostic data
 
-All the collected diagnostic data is compressed into a `support_archive_agent_YYYY-MM-DD_hhmmss.zip` archive that includes the following subset of the full [OneAgent diagnostics](/managed/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Learn how to run OneAgent diagnostics") data:
-
-Folder or file
-
-Description
-
-`support_archive` (ZIP)
-
-Contains the local configuration of the OneAgent installed on the host or process where youâve run the troubleshooting, as well as the OneAgent-related log files.
-
-`diagnostic_files` (ZIP)
-
-Contains information about process group detection, auto-injection problems, and extension configuration.
+All the collected diagnostic data is compressed into a `support_archive_agent_YYYY-MM-DD_hhmmss.zip` archive that includes the following subset of the full [OneAgent diagnostics](../../../ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics.md "Learn how to run OneAgent diagnostics") data:
 
 ## Access to system logs for proactive support
 
@@ -347,7 +341,7 @@ Disabling system log access limits our ability to diagnose and solve issues proa
 
 ## Host ID
 
-Dynatrace assigns a unique ID to each host monitored in your environment. Host IDs can be used as parameters in Dynatrace API requests, for example [Topology and Smartscape API - Hosts API](/managed/dynatrace-api/environment-api/topology-and-smartscape/hosts-api "Learn how you can use the Dynatrace API to manage monitored hosts."). The host ID also constitutes the URL of the **Host overview** page, for example, `https://environment.org/#newhosts/hostdetails;id=HOST-6E56EE455C84E232`.
+Dynatrace assigns a unique ID to each host monitored in your environment. Host IDs can be used as parameters in Dynatrace API requests, for example [Topology and Smartscape API - Hosts API](../../../dynatrace-api/environment-api/topology-and-smartscape/hosts-api.md "Learn how you can use the Dynatrace API to manage monitored hosts."). The host ID also constitutes the URL of the **Host overview** page, for example, `https://environment.org/#newhosts/hostdetails;id=HOST-6E56EE455C84E232`.
 
 ### Display your host ID
 
@@ -383,7 +377,7 @@ For example, to set the host ID source to `ip-addresses` and assign it to a name
 * **Windows**:  
   `.\oneagentctl.exe --set-host-id-source="ip-addresses;namespace=test"`
 
-After you change the host ID source, you must restart all your monitored applications and then restart the OneAgent service to create the new host entity in your environment. You can use the `--restart-service` parameter with `oneagentctl` to restart OneAgent automatically or stop and start OneAgent process manually. For OS-specific instructions, see [Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux "Learn how to stop and restart OneAgent on Linux."), [Windows](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows "Learn how to stop and restart OneAgent on Windows."), or [AIX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix "Learn how to stop and restart OneAgent on AIX.").
+After you change the host ID source, you must restart all your monitored applications and then restart the OneAgent service to create the new host entity in your environment. You can use the `--restart-service` parameter with `oneagentctl` to restart OneAgent automatically or stop and start OneAgent process manually. For OS-specific instructions, see [Linux](../../../ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux.md "Learn how to stop and restart OneAgent on Linux."), [Windows](../../../ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows.md "Learn how to stop and restart OneAgent on Windows."), or [AIX](../../../ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix.md "Learn how to stop and restart OneAgent on AIX.").
 
 To **check the host ID source**, use the `--get-host-id-source` parameter:
 
@@ -400,9 +394,9 @@ ip-addresses;namespace=test
 
 ## Host groups
 
-For an overview of how to use host groups, see [Organize your environment using host groups](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
+For an overview of how to use host groups, see [Organize your environment using host groups](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
 
-Alternatively, to modify host group assignment centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host group** action).
+Alternatively, to modify host group assignment centrally from the Dynatrace Cluster, you can use [Remote configuration management](../../../ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host group** action).
 
 ### Change host group assignment
 
@@ -421,9 +415,9 @@ Host group string requirements:
 * Must not start with `dt.`
 * Maximum length is 100 characters
 
-Using `--set-host-group` requires restart of OneAgent, as well as restart of all the monitored services. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically (version 1.189+) or stop and start OneAgent process manually. For OS-specific instructions, see [Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux "Learn how to stop and restart OneAgent on Linux."), [Windows](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows "Learn how to stop and restart OneAgent on Windows."), or [AIX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix "Learn how to stop and restart OneAgent on AIX.").
+Using `--set-host-group` requires restart of OneAgent, as well as restart of all the monitored services. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically (version 1.189+) or stop and start OneAgent process manually. For OS-specific instructions, see [Linux](../../../ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux.md "Learn how to stop and restart OneAgent on Linux."), [Windows](../../../ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows.md "Learn how to stop and restart OneAgent on Windows."), or [AIX](../../../ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix.md "Learn how to stop and restart OneAgent on AIX.").
 
-Changing the host group assignments results in recalculation of process group IDs, which impacts data aggregation. To read more about the impact of host group changes on process group detection, see [Organize your environment using host groups](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups#how-host-groups-affect-your-monitoring-environment "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
+Changing the host group assignments results in recalculation of process group IDs, which impacts data aggregation. To read more about the impact of host group changes on process group detection, see [Organize your environment using host groups](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md#how-host-groups-affect-your-monitoring-environment "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
 
 ### Clear host group assignment
 
@@ -457,7 +451,7 @@ By default, the `oneagentos` process automatically detects cloud environments su
 
 Use the `oneagentctl` command-line tool with the `--set-host-name` parameter to override an automatically detected host name. A host name must not contain the `<`, `>`, `&`, `CR` (carriage return), or `LF` (line feed) characters. The maximum length is 256 characters.
 
-This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see [Set custom host names](/managed/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name.").
+This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see [Set custom host names](../../../observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Learn how to change a monitored host name.").
 
 To change the host name:
 
@@ -475,7 +469,7 @@ To revert to the auto-detected host name, set the `--set-host-name` parameter to
 
 The change might not be reflected in the Dynatrace web UI for up to 6 minutes.
 
-Using `--set-host-name` requires restart of OneAgent. Add `--restart-service` to the command to restart OneAgent automatically (version 1.189+) or stop and start the OneAgent process manually. For OS-specific instructions, see [Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux "Learn how to stop and restart OneAgent on Linux."), [Windows](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows "Learn how to stop and restart OneAgent on Windows."), or [AIX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix "Learn how to stop and restart OneAgent on AIX.").
+Using `--set-host-name` requires restart of OneAgent. Add `--restart-service` to the command to restart OneAgent automatically (version 1.189+) or stop and start the OneAgent process manually. For OS-specific instructions, see [Linux](../../../ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux.md "Learn how to stop and restart OneAgent on Linux."), [Windows](../../../ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows.md "Learn how to stop and restart OneAgent on Windows."), or [AIX](../../../ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix.md "Learn how to stop and restart OneAgent on AIX.").
 
 To show the host name:
 
@@ -488,9 +482,9 @@ To show the host name:
 
 Once configured, custom metadata is displayed as a set of properties at the bottom of the **Properties and tags** section of the host overview page. The property values must not contain an `=` character (unless used as a key-value delimiter) or whitespace characters. The maximum length is 256 characters, including the key-value delimiter. The key name must not start with a `#` character.
 
-Alternatively, to modify host metadata centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host properties** action).
+Alternatively, to modify host metadata centrally from the Dynatrace Cluster, you can use [Remote configuration management](../../../ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host properties** action).
 
-For versions earlier than 1.189, use a [host metadata configuration file](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#edit-the-host-metadata-configuration-file "Learn how to tag and set additional properties for a monitored host.").
+For versions earlier than 1.189, use a [host metadata configuration file](../../../observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md#edit-the-host-metadata-configuration-file "Learn how to tag and set additional properties for a monitored host.").
 
 To **add or change host properties**, run the following command:
 
@@ -509,6 +503,9 @@ To set a security context for your host, use the following command:
   `./oneagentctl --set-host-property=dt.security_context=easytrade_sec`
 * **Windows**  
   `.\oneagentctl.exe --set-host-property=dt.security_context=easytrade_sec`
+
+The `dt.security_context` is utilized by multiple features within Dynatrace, such as [Log security context](../../../analyze-explore-automate/logs/lma-security-context.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.") and [Business events security context](../../../observe/business-observability/bo-event-processing/bo-security-context.md "Use Dynatrace powered by Grail and DQL to reshape incoming business events data for better understanding, analysis, or further processing.").
+Additionally, if you're an account administrator looking to grant access to monitored entities based on their security context, see [Grant access to entities with security context](../../../manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context").
 
 To **remove host properties**, run the following command:
 
@@ -530,7 +527,7 @@ To **show all properties** configured for the host, run the following command:
 
 After you configure custom host tags, they are displayed at the top of the **Properties and tags** section of the host overview page. A property value must not contain `=` (unless used as a key-value delimiter) or whitespace characters. The maximum length is 256 characters, including the key-value delimiter. A key name must not start with `#`.
 
-Alternatively, to modify host tags centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host tags** action).
+Alternatively, to modify host tags centrally from the Dynatrace Cluster, you can use [Remote configuration management](../../../ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host tags** action).
 
 To **add or change host tags**, run the following command:
 
@@ -577,7 +574,7 @@ For example:
 --set-monitoring-mode=infra-only
 ```
 
-Use Infrastructure Monitoring mode or Discovery mode in place of Full-Stack Monitoring mode. With this approach, you receive infrastructure health data, with no application or user performance data. For details, see [Monitoring modes](/managed/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
+Use Infrastructure Monitoring mode or Discovery mode in place of Full-Stack Monitoring mode. With this approach, you receive infrastructure health data, with no application or user performance data. For details, see [Monitoring modes](../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
 
 ### Check which monitoring mode is enabled
 
@@ -594,7 +591,7 @@ The command returns one of the following:
 * `infra-only`: Infrastructure Monitoring mode
 * `discovery`: Discovery mode
 
-Changing the Infrastructure Monitoring mode requires restart of OneAgent, as well as restart of all monitored services. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically (version 1.189+) or stop and start the OneAgent process manually. For OS-specific instructions, see [Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux "Learn how to stop and restart OneAgent on Linux."), [Windows](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows "Learn how to stop and restart OneAgent on Windows."), or [AIX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix "Learn how to stop and restart OneAgent on AIX.").
+Changing the Infrastructure Monitoring mode requires restart of OneAgent, as well as restart of all monitored services. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically (version 1.189+) or stop and start the OneAgent process manually. For OS-specific instructions, see [Linux](../../../ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux.md "Learn how to stop and restart OneAgent on Linux."), [Windows](../../../ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows.md "Learn how to stop and restart OneAgent on Windows."), or [AIX](../../../ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix.md "Learn how to stop and restart OneAgent on AIX.").
 
 ## Automatic injection for Infrastructure Monitoring mode
 
@@ -602,7 +599,7 @@ OneAgent version 1.213
 
 Automatic OneAgent injection is enabled by default in Infrastructure Monitoring mode. It's required to collect JMX/PMI metrics and to handle Application Security in Infrastructure Monitoring mode.
 
-For more information, see [OneAgent monitoring modes](/managed/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
+For more information, see [OneAgent monitoring modes](../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
 
 ### Check if auto-injection is enabled
 
@@ -631,19 +628,19 @@ To disable auto-injections:
 * **Windows**:  
   `.\oneagentctl.exe --set-auto-injection-enabled=false`
 
-For more information, see [Disable auto-injection](/managed/platform/oneagent/monitoring-modes/monitoring-modes#disable-auto-injection "Find out more about the available monitoring modes when using OneAgent.").
+For more information, see [Disable auto-injection](../../../platform/oneagent/monitoring-modes/monitoring-modes.md#disable-auto-injection "Find out more about the available monitoring modes when using OneAgent.").
 
 ## Metric ingestion
 
 Local metric ingestion is currently supported only on Windows and Linux.
 
-You can use the `oneagentctl` command to check or change communication ports used for local metric ingestion using the [OneAgent metric API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities."), [Scripting integration](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe "Learn how to ingest metrics using local scripting integration."), [Telegraf](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf "Ingest Telegraf metrics into Dynatrace."), or [DynatraceStatsd](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd "Ingest metrics into Dynatrace using OneAgent and the ActiveGate StatsD client."). Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically.
+You can use the `oneagentctl` command to check or change communication ports used for local metric ingestion using the [OneAgent metric API](../../../ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api.md "Use the Dynatrace API to retrieve the metrics of monitored entities."), [Scripting integration](../../../ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe.md "Learn how to ingest metrics using local scripting integration."), [Telegraf](../../../ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf.md "Ingest Telegraf metrics into Dynatrace."), or [DynatraceStatsd](../../../ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd.md "Ingest metrics into Dynatrace using OneAgent and the ActiveGate StatsD client."). Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically.
 
-See [Metrics ingestion](/managed/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.") to learn more.
+See [Metrics ingestion](../../../ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.") to learn more.
 
 ### OneAgent API, scripting integration, and Telegraf
 
-The default metric ingestion port is `14499`. If necessary, you can use the [oneagentctl](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the port. Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
+The default metric ingestion port is `14499`. If necessary, you can use the [oneagentctl](../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the port. Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
 
 ### Check the ingestion port
 
@@ -671,7 +668,7 @@ Configure your host proxy to allow localhost traffic going to the metric ingesti
 
 ### OneAgent listener
 
-The default DynatraceStatsD UDP listening port for the OneAgent listener is `18125`. If necessary, you can use the [oneagentctl](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the metric ingestion port. Changing the port requires restart of OneAgent. Add [`--restart-service`](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
+The default DynatraceStatsD UDP listening port for the OneAgent listener is `18125`. If necessary, you can use the [oneagentctl](../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the metric ingestion port. Changing the port requires restart of OneAgent. Add [`--restart-service`](../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
 
 #### Check the ingestion port
 
@@ -708,13 +705,13 @@ StatsdPort=18126
 
 ## Network zones
 
-To learn about network zone naming rules and other reference information, see [Network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.").
+To learn about network zone naming rules and other reference information, see [Network zones](../../../manage/network-zones.md "Find out how network zones work in Dynatrace.").
 
-Alternatively, to modify network zone assignment centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
+Alternatively, to modify network zone assignment centrally from the Dynatrace Cluster, you can use [Remote configuration management](../../../ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
 
 ### Set a network zone
 
-Use the `--set-network-zone` parameter to instruct OneAgent to communicate via the specified network zone. The name of a network zone is a string of alphanumeric characters. You can also use hyphens (`-`), underscores (`_`), and a dot (`.`) as a seperator. The network zone name must not start with a dot. The length of the string is limited to 256 characters. Network zone names are not case-sensitive. Dynatrace stores these names in lowercase. For more information, see the section on [network zone naming](/managed/manage/network-zones/network-zones-basic-info#naming "Learn how to get started with network zones.")
+Use the `--set-network-zone` parameter to instruct OneAgent to communicate via the specified network zone. The name of a network zone is a string of alphanumeric characters. You can also use hyphens (`-`), underscores (`_`), and a dot (`.`) as a seperator. The network zone name must not start with a dot. The length of the string is limited to 256 characters. Network zone names are not case-sensitive. Dynatrace stores these names in lowercase. For more information, see the section on [network zone naming](../../../manage/network-zones/network-zones-basic-info.md#naming "Learn how to get started with network zones.")
 
 * On **Linux** or **AIX**:  
   `./oneagentctl --set-network-zone=<your.network.zone>`
@@ -810,7 +807,7 @@ OneAgent version 1.293+
 
 Enabling `cap_setuid` for OS Agent is required for GPFS monitoring.
 
-Following parameters are only available in [OneAgent non-privileged mode on Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Find out when Dynatrace OneAgent requires root privileges on Linux.").
+Following parameters are only available in [OneAgent non-privileged mode on Linux](../../../ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged.md "Find out when Dynatrace OneAgent requires root privileges on Linux.").
 
 * `get-osagent-cap-setuid-enabled`
 * `set-osagent-cap-setuid-enabled`
