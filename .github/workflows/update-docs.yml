@@ -182,16 +182,9 @@ jobs:
           DATE=$(date +%Y-%m-%d)
           REPO_URL="https://github.com/${{ github.repository }}"
 
-          # Build message with Markdown
-          MSG="📝 *Dynatrace Docs — Перевод*
-
-📊 Обнаружено *${TOTAL}* статей для перевода:
-  • Новых: *${NEW}*
-  • Обновлённых: *${UPDATED}*
-
-🕐 Дата синхронизации: ${DATE}
-🔗 [Открыть Issues](${REPO_URL}/issues?q=label%3Atranslation+is%3Aopen)
-🤖 Автоматическое уведомление"
+          # Build Telegram message
+          NL=$'\n'
+          MSG="📝 *Dynatrace Docs — Перевод*${NL}${NL}📊 Обнаружено *${TOTAL}* статей для перевода:${NL}  • Новых: *${NEW}*${NL}  • Обновлённых: *${UPDATED}*${NL}${NL}🕐 Дата синхронизации: ${DATE}${NL}🔗 [Открыть Issues](${REPO_URL}/issues?q=label%3Atranslation+is%3Aopen)${NL}🤖 Автоматическое уведомление"
 
           # Send via Telegram Bot API
           if [ -n "$TG_BOT_TOKEN" ] && [ -n "$TG_CHAT_ID" ]; then
