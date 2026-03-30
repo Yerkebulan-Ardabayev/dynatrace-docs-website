@@ -169,9 +169,9 @@ jobs:
               --title "📝 Перевод: $TOTAL статей требуют перевода ($DATE)" \
               --body "$BODY"
 
-      # ---------- STAGE 4b: Telegram notification ----------
+      # ---------- STAGE 4b: Telegram notification (ALWAYS sends) ----------
       - name: Send Telegram notification
-        if: steps.detect.outputs.total_changes != '0'
+        if: always()
         env:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
@@ -181,10 +181,51 @@ jobs:
           TOTAL=${{ steps.detect.outputs.total_changes || 0 }}
           DATE=$(date +%Y-%m-%d)
           REPO_URL="https://github.com/${{ github.repository }}"
-
-          # Build Telegram message
+          SITE_URL="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/"
           NL=$'\n'
-          MSG="📝 *Dynatrace Docs — Перевод*${NL}${NL}📊 Обнаружено *${TOTAL}* статей для перевода:${NL}  • Новых: *${NEW}*${NL}  • Обновлённых: *${UPDATED}*${NL}${NL}🕐 Дата синхронизации: ${DATE}${NL}🔗 [Открыть Issues](${REPO_URL}/issues?q=label%3Atranslation+is%3Aopen)${NL}🤖 Автоматическое уведомление"
+
+          if [ "$TOTAL" -gt 0 ] 2>/dev/null; then
+            # --- Есть обновления: подробное сообщение ---
+            MSG="📝 *Dynatrace Docs — Обновления*${NL}"
+            MSG="${MSG}${NL}📊 Обнаружено *${TOTAL}* изменений:${NL}"
+            MSG="${MSG}  • Новых статей: *${NEW}*${NL}"
+            MSG="${MSG}  • Обновлённых: *${UPDATED}*${NL}"
+
+            # Добавить описание изменений из отчёта
+            if [ -f changes_report.json ]; then
+              DETAILS=$(python3 -c "
+          import json
+          r = json.load(open('changes_report.json'))
+          sections = {}
+          for a in r.get('new_articles', []) + r.get('updated_articles', []):
+              sec = a.get('section', 'Другое')
+              sections.setdefault(sec, []).append(a)
+          lines = []
+          for sec, arts in sorted(sections.items()):
+              titles = [a.get('title', a['path']) for a in arts[:5]]
+              lines.append(f'*{sec}* ({len(arts)} шт.)')
+              for t in titles:
+                  lines.append(f'  — {t}')
+              if len(arts) > 5:
+                  lines.append(f'  — ...и ещё {len(arts)-5}')
+          print(chr(10).join(lines[:30]))
+          " 2>/dev/null || echo "")
+
+              if [ -n "$DETAILS" ]; then
+                MSG="${MSG}${NL}📋 *Что изменилось:*${NL}${DETAILS}${NL}"
+              fi
+            fi
+
+            MSG="${MSG}${NL}🕐 Синхронизация: ${DATE}${NL}"
+            MSG="${MSG}🔗 [Открыть Issues](${REPO_URL}/issues?q=label%3Atranslation+is%3Aopen)${NL}"
+            MSG="${MSG}🌐 [Сайт](${SITE_URL})"
+          else
+            # --- Нет обновлений: краткое сообщение ---
+            MSG="✅ *Dynatrace Docs — Синхронизация*${NL}${NL}"
+            MSG="${MSG}Проверка выполнена ${DATE}.${NL}"
+            MSG="${MSG}Изменений не обнаружено — все переводы актуальны.${NL}${NL}"
+            MSG="${MSG}🌐 [Сайт](${SITE_URL})"
+          fi
 
           # Send via Telegram Bot API
           if [ -n "$TG_BOT_TOKEN" ] && [ -n "$TG_CHAT_ID" ]; then
