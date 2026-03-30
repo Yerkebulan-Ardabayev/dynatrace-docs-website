@@ -29,14 +29,13 @@ theme:
         name: Тёмная тема
 
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.expand
     - navigation.top
     - navigation.instant
     - navigation.path
     - navigation.indexes
     - navigation.prune
+    - navigation.sections
     - search.suggest
     - search.highlight
     - search.share
