@@ -19,14 +19,14 @@ theme:
       primary: custom
       accent: custom
       toggle:
-        icon: material/weather-sunny
-        name: Светлая тема
+        icon: material/brightness-7
+        name: Переключить на светлую тему
     - scheme: default
       primary: custom
       accent: custom
       toggle:
-        icon: material/weather-night
-        name: Тёмная тема
+        icon: material/brightness-4
+        name: Переключить на тёмную тему
 
   features:
     - navigation.expand
@@ -77,7 +77,7 @@ nav:
   # --- НАЧАЛО РАБОТЫ ---
   - Начало работы:
     - Документация Dynatrace: ru/index.md
-    - Быстрый старт: ru/getting-started.md
+    - "\U0001F680 Быстрый старт": ru/getting-started.md
     - Что такое Dynatrace: ru/discover-dynatrace/what-is-dynatrace.md
     - Приложения Dynatrace: ru/discover-dynatrace/dynatrace-apps.md
     - Семантический словарь: ru/semantic-dictionary.md

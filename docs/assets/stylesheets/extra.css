@@ -1424,3 +1424,192 @@ body {
   font-size: 0.8125rem;
   color: var(--md-default-fg-color--lighter);
 }
+
+/* ==========================================================================
+   24. UX AUDIT FIXES — Active nav indicator, TOC, lists, progress bar
+   ========================================================================== */
+
+/* --- Fix #4: Active nav item — left accent bar + stronger highlight --- */
+.md-nav__item--active > .md-nav__link {
+  position: relative;
+  border-left: 3px solid var(--md-accent-fg-color) !important;
+  background: var(--md-accent-fg-color--transparent);
+  color: var(--md-accent-fg-color);
+  font-weight: 600;
+  padding-left: calc(0.75rem - 3px);
+}
+
+/* Active link in TOC sidebar */
+.md-sidebar--secondary .md-nav__link--active {
+  border-left-color: var(--md-accent-fg-color) !important;
+  border-left-width: 2px !important;
+  border-left-style: solid !important;
+  font-weight: 600;
+}
+
+/* --- Fix #3: TOC title — replace "Содержание" with "На этой странице" --- */
+.md-sidebar--secondary .md-nav__title {
+  font-size: 0 !important;
+  line-height: 0 !important;
+  overflow: hidden;
+}
+
+.md-sidebar--secondary .md-nav__title::before {
+  content: 'На этой странице';
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--md-default-fg-color--lighter);
+  display: block;
+  line-height: 1.6;
+  padding-top: 2rem;
+}
+
+.md-sidebar--secondary .md-nav__title .md-nav__icon {
+  display: none;
+}
+
+/* --- Fix #6: Managed section separator in left nav --- */
+.md-nav--primary > .md-nav__list > li:nth-child(3) {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--docflow-border);
+}
+
+/* Managed section label style */
+.md-nav--primary > .md-nav__list > li:nth-child(3) > .md-nav__link,
+.md-nav--primary > .md-nav__list > li:nth-child(3) > label {
+  position: relative;
+}
+
+/* --- Fix #8: Code blocks — enhanced border in dark theme --- */
+[data-md-color-scheme="slate"] .md-typeset pre {
+  border: 1px solid rgba(55, 65, 81, 0.6);
+  background: var(--md-code-bg-color);
+}
+
+[data-md-color-scheme="slate"] .md-typeset pre > code {
+  background: var(--md-code-bg-color);
+}
+
+/* --- Fix #10: Search Ctrl+K badge — inside input as ghost text --- */
+.md-search__form {
+  position: relative;
+}
+
+.md-search__form::after {
+  position: absolute !important;
+  right: 0.5rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+/* --- Fix #11: Reading progress bar --- */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--docflow-gradient);
+  z-index: 1001;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+/* --- Fix #12a: Ordered lists — step indicators --- */
+.md-typeset ol:not(.md-nav__list) {
+  counter-reset: step-counter;
+  list-style: none;
+  padding-left: 0;
+}
+
+.md-typeset ol:not(.md-nav__list) > li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1em;
+}
+
+.md-typeset ol:not(.md-nav__list) > li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--md-accent-fg-color--transparent);
+  border: 1.5px solid var(--md-accent-fg-color);
+  color: var(--md-accent-fg-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Nested ordered lists — revert to standard */
+.md-typeset ol:not(.md-nav__list) ol {
+  list-style: lower-alpha;
+  padding-left: 1.5rem;
+  counter-reset: none;
+}
+
+.md-typeset ol:not(.md-nav__list) ol > li {
+  padding-left: 0;
+  counter-increment: none;
+}
+
+.md-typeset ol:not(.md-nav__list) ol > li::before {
+  display: none;
+}
+
+/* --- Fix #12b: Unordered lists — accent-colored markers --- */
+.md-typeset ul:not(.md-nav__list):not(.grid):not(.tabbed-labels):not([hidden]) {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.md-typeset ul:not(.md-nav__list):not(.grid):not(.tabbed-labels):not([hidden]) > li {
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.md-typeset ul:not(.md-nav__list):not(.grid):not(.tabbed-labels):not([hidden]) > li::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--md-accent-fg-color);
+  opacity: 0.7;
+}
+
+/* --- Fix #14: Hide GitHub repo stats (stars/forks) --- */
+.md-source__facts {
+  display: none !important;
+}
+
+/* --- Fix #7: Managed version badge — clear non-interactive label --- */
+.docflow-version-select {
+  pointer-events: none !important;
+  cursor: default !important;
+  user-select: none;
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   25. RESPONSIVE — TOC collapse on small screens
+   ========================================================================== */
+
+@media (max-width: 1279px) {
+  .md-sidebar--secondary {
+    display: none;
+  }
+}
