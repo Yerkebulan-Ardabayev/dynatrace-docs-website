@@ -220,6 +220,26 @@ nav:
     - SaaS: ru/whats-new/saas.md
     - Обновления OneAgent: ru/whats-new/oneagent.md
     - ActiveGate: ru/whats-new/activegate.md
+    - Dynatrace Operator:
+      - Обзор: ru/whats-new/dynatrace-operator.md
+      - Версия 1.8.1: ru/whats-new/dynatrace-operator/dto-fix-1-8-1.md
+      - Версия 1.7.3: ru/whats-new/dynatrace-operator/dto-fix-1-7-3.md
+      - Версия 1.7.2: ru/whats-new/dynatrace-operator/dto-fix-1-7-2.md
+      - Версия 1.7.1: ru/whats-new/dynatrace-operator/dto-fix-1-7-1.md
+      - Версия 1.7.0: ru/whats-new/dynatrace-operator/dto-fix-1-7-0.md
+      - Версия 1.6.3: ru/whats-new/dynatrace-operator/dto-fix-1-6-3.md
+    - EdgeConnect:
+      - Обзор: ru/whats-new/edgeconnect.md
+      - Версия 1.473.5: ru/whats-new/edgeconnect/edgeconnect-release-notes-1-473-5.md
+      - Версия 1.473.2: ru/whats-new/edgeconnect/edgeconnect-release-notes-1-473-2.md
+      - Версия 1.473.0: ru/whats-new/edgeconnect/edgeconnect-release-notes-1-473-0.md
+      - Версия 1.416.14: ru/whats-new/edgeconnect/edgeconnect-release-notes-1-416-14.md
+      - Версия 1.330.2: ru/whats-new/edgeconnect/edgeconnect-release-notes-1-330-2.md
+    - Технологии:
+      - Новые технологии: ru/whats-new/technology.md
+      - Окончание жизненного цикла: ru/whats-new/technology/end-of-life-announcements.md
+      - Окончание поддержки: ru/whats-new/technology/end-of-support-news.md
+    - Новые статьи: ru/whats-new/documentation.md
 
   # --- AI ПОМОЩНИК ---
   - AI Помощник: ai/groq.md
