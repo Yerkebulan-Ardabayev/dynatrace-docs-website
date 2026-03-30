@@ -488,11 +488,13 @@ body {
   transition: transform 0.2s ease;
 }
 
-/* Sidebar scrollbar — force non-accent colors */
+/* Sidebar scrollbar — force non-accent colors (override Material theme hover/focus accent) */
 .md-sidebar,
 .md-sidebar__scrollwrap,
 .md-sidebar__inner,
-.md-nav--primary {
+.md-nav--primary,
+.md-sidebar__scrollwrap:hover,
+.md-sidebar__scrollwrap:focus-within {
   scrollbar-color: var(--docflow-border) transparent !important;
   scrollbar-width: thin !important;
 }
@@ -508,7 +510,9 @@ body {
 }
 
 .md-sidebar ::-webkit-scrollbar-thumb,
-.md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
+.md-sidebar__scrollwrap::-webkit-scrollbar-thumb,
+.md-sidebar__scrollwrap:hover::-webkit-scrollbar-thumb,
+.md-sidebar__scrollwrap:focus-within::-webkit-scrollbar-thumb {
   background: var(--docflow-border) !important;
   border-radius: 2px;
 }

@@ -53,12 +53,12 @@
       }
     }
 
-    /* Version selector in header */
+    /* Version badge in header (Managed only) */
     .docflow-version-select {
       display: none;
       align-items: center;
       margin-left: 0.5rem;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color--lighter);
@@ -66,28 +66,14 @@
       font-size: 0.75rem;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
+      pointer-events: none;
       -webkit-appearance: none;
       appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237e7c98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.4rem center;
-      padding-right: 1.5rem;
     }
     @media (min-width: 60em) {
       .docflow-version-select {
         display: flex;
       }
-    }
-    .docflow-version-select:hover {
-      border-color: var(--md-primary-fg-color--light);
-      color: var(--md-default-fg-color);
-    }
-    .docflow-version-select:focus {
-      outline: none;
-      border-color: var(--md-primary-fg-color);
-      box-shadow: 0 0 0 3px var(--docflow-glow-primary);
     }
   </style>
 {% endblock %}
@@ -109,7 +95,7 @@
       if (headerInner) {
         var select = document.createElement('select');
         select.className = 'docflow-version-select';
-        select.innerHTML = '<option value="managed" selected>Managed</option><option value="saas">SaaS</option>';
+        select.innerHTML = '<option value="managed" selected>Managed</option>';
         select.setAttribute('aria-label', 'Version selector');
 
         // Insert before the search or at the end
