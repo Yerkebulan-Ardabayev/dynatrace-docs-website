@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed
 ### Начните работу с Dynatrace или узнайте, что нового
 
 * Впервые в Dynatrace? Узнайте, как начать работу всего за несколько шагов.
-* Уже используете Dynatrace? Узнайте, что нового для SaaS, OneAgent или ActiveGate.
+* Уже используете Dynatrace? Узнайте, что нового для OneAgent или ActiveGate.
 
 ## Популярные страницы
 
