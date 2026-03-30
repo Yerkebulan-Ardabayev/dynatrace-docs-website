@@ -9,7 +9,7 @@ scraped: 2026-03-06T21:24:11.399509
 
 * Latest Dynatrace
 
-Эта страница обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и необходимых действий для выполнения миграции описан в [руководстве по миграции таблицы безопасности Grail](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+Эта страница обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и необходимых действий для выполнения миграции описан в руководстве по миграции таблицы безопасности Grail.
 
 Загрузка событий безопасности от пользовательских сторонних продуктов через API.
 
@@ -17,7 +17,7 @@ scraped: 2026-03-06T21:24:11.399509
 
 ### Обзор
 
-Далее вы узнаете, как загружать внешние события безопасности от пользовательских сторонних продуктов в [Grail](../../../platform/grail.md "Insights on what and how you can query Dynatrace data."), чтобы получать аналитику Dynatrace по результатам поиска уязвимостей из любого источника, поставщика или формата.
+Далее вы узнаете, как загружать внешние события безопасности от пользовательских сторонних продуктов в Grail, чтобы получать аналитику Dynatrace по результатам поиска уязвимостей из любого источника, поставщика или формата.
 
 **Пользовательский сторонний продукт** — это любой продукт, для которого Dynatrace не предоставляет готовую интеграцию.
 
@@ -26,9 +26,9 @@ scraped: 2026-03-06T21:24:11.399509
 С загруженными данными вы можете реализовать различные сценарии использования, такие как
 
 * [Генерация событий безопасности из приложения Dynatrace Investigations через OpenPipeline](https://dt-url.net/r703qjx)
-* [Загрузка и обработка пользовательских результатов сканирования безопасности](../../use-cases/ingest-and-process-custom-security-findings.md "Continuously ingest your container scan findings.")
-* [Автоматизация и оркестрация результатов сканирования безопасности](../../use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
-* [Визуализация и анализ результатов сканирования безопасности](../../use-cases/visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
+* Загрузка и обработка пользовательских результатов сканирования безопасности
+* Автоматизация и оркестрация результатов сканирования безопасности
+* Визуализация и анализ результатов сканирования безопасности
 
 ### Требования
 
@@ -412,12 +412,12 @@ scraped: 2026-03-06T21:24:11.399509
 
 ### Лицензирование и стоимость
 
-Информацию о биллинге см. в разделе [События на базе Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+Информацию о биллинге см. в разделе События на базе Grail.
 
 ## Связанные темы
 
-* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [События безопасности](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")
-* [OpenPipeline Ingest API — POST Пользовательская конечная точка событий безопасности (новая)](../../../platform/openpipeline/reference/openpipeline-ingest-api/security-events/security-events-custom-endpoint.md "Configure a custom security event endpoint via OpenPipeline Ingest API.")
-* [OpenPipeline Ingest API — POST Встроенные события безопасности (новая)](../../../platform/openpipeline/reference/openpipeline-ingest-api/security-events/security-events-builtin.md "Ingest security events from built-in endpoints via OpenPipeline Ingest API.")
+* OpenPipeline
+* Dynatrace Query Language
+* События безопасности
+* OpenPipeline Ingest API — POST Пользовательская конечная точка событий безопасности (новая)
+* OpenPipeline Ingest API — POST Встроенные события безопасности (новая)

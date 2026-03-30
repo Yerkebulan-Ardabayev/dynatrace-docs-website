@@ -105,4 +105,4 @@ Dynatrace Intelligence generative AI explanations are tailored to the nature of 
 
 ## Related topics
 
-* [Kubernetes Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.")
+* Kubernetes Security Posture Management

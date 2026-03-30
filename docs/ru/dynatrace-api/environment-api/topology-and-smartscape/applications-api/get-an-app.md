@@ -6,7 +6,7 @@ scraped: 2026-03-05T21:27:16.489433
 
 * Deprecated
 
-Этот API является устаревшим. Вместо него используйте [Monitored entities API](../../entity-v2.md "Узнайте о Dynatrace Monitored entities API."). Дополнительную информацию о переходе на новый API см. в [руководстве по миграции](../../../basics/deprecation-migration-guides/topology-v1-to-entity-v2.md "Перенесите вашу автоматизацию на Monitored entities API.").
+Этот API является устаревшим. Вместо него используйте Monitored entities API. Дополнительную информацию о переходе на новый API см. в руководстве по миграции.
 
 Получает параметры указанного приложения.
 
@@ -21,7 +21,7 @@ scraped: 2026-03-05T21:27:16.489433
 
 Для выполнения этого запроса необходим токен доступа с областью действия `DataExport`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+Чтобы узнать, как получить и использовать его, см. Токены и аутентификация.
 
 ## Параметры
 
@@ -421,4 +421,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications/MOBILE_APPLICA
 
 ## Связанные темы
 
-* [Real User Monitoring](../../../../observe/digital-experience/rum-concepts/rum-overview.md "Узнайте о мониторинге реальных пользователей, ключевых метриках производительности, мониторинге мобильных приложений и многом другом.")
+* Real User Monitoring

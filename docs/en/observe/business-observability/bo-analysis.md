@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:14:29.180885
 * 9-min read
 * Updated on Oct 30, 2023
 
-Once stored in Grail, you can query your business event data interactively and analyze it using [DQL](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). DQL is the starting point for analysis, whether you use [Notebooks](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), [Dashboards](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), or the DQL Query API (latest Dynatrace). You can use query results interactively or pin them to a dashboard as charts, tiles, or tables.
+Once stored in Grail, you can query your business event data interactively and analyze it using DQL. DQL is the starting point for analysis, whether you use Notebooks, Dashboards, or the DQL Query API (latest Dynatrace). You can use query results interactively or pin them to a dashboard as charts, tiles, or tables.
 
 ## Query and analyze your data
 
@@ -48,7 +48,7 @@ fetch bizevents, from:now()-24h, to:now()
 
 ### Total trading dollar volume in time intervals: Line chart
 
-You can create interval-based metrics. This example queries the total trading dollar volume in the last 24 hours in intervals of five minutes. This example uses the DQL [makeTimeseries command](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#makeTimeseries "DQL aggregation commands") to build a time series from a measure (the sum of dollar volume), which you can then use to leverage the power of charting in Notebooks or Dashboards.
+You can create interval-based metrics. This example queries the total trading dollar volume in the last 24 hours in intervals of five minutes. This example uses the DQL makeTimeseries command to build a time series from a measure (the sum of dollar volume), which you can then use to leverage the power of charting in Notebooks or Dashboards.
 
 * Assets sold through EasyTrade are captured by the `com.easytrade.nginx.quick-sell` event type.
 * Trading dollar volume is calculated as the number of assets sold multiplied by their price.
@@ -200,7 +200,7 @@ The image below shows query results displayed as a **Table** in Notebooks.
   | filter event.provider == "www.easytrade.com"
   ```
 
-  The [`filter` command](../../platform/grail/dynatrace-query-language/commands/filtering-commands.md#filter "DQL filter and search commands") provides the business event records based on the defined [event provider](bo-events-capturing.md#configure-sources "Capture business events for Dynatrace Business Observability.").
+  The `filter` command provides the business event records based on the defined [event provider](bo-events-capturing.md#configure-sources "Capture business events for Dynatrace Business Observability.").
 * **Line 3**
 
   ```
@@ -235,7 +235,7 @@ The image below shows query results displayed as a **Table** in Notebooks.
   | summarize {first_deposit_ts = takeFirst(deposit_ts), first_withdraw_ts = takeFirst(withdraw_ts)}, by:{`accountId`}
   ```
 
-  The [`summarize` command](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "DQL aggregation commands") groups by account:
+  The `summarize` command groups by account:
 
   + The first timestamp for a deposit event.
   + The first timestamp for a withdrawal event.
@@ -259,7 +259,7 @@ The image below shows query results displayed as a **Table** in Notebooks.
   | fields `accountId`, `Seconds From Deposit To Deposit`= timeDepositToDeposit
   ```
 
-  The [`fields` command](../../platform/grail/dynatrace-query-language/commands/selection-and-modification-commands.md#fields "DQL selection and modification commands") restricts the output to the account ID and the time elapsed between the first deposit and the first withdrawal.
+  The `fields` command restricts the output to the account ID and the time elapsed between the first deposit and the first withdrawal.
 
 ### Business events during office hours
 

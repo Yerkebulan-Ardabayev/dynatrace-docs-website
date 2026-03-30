@@ -17,7 +17,7 @@ Once OneAgent is deployed in full-stack monitoring mode on a host, it by default
 
 By default, injection follows a set of [built-in rules for automatic injection](#where-is-rum-js-injected), but there are scenarios where you may need to define a [custom injection rule](#custom-injection-rule) to achieve injection. Custom injection rules also support the [exclusion of specific pages from injection](#disable-injection), which allows you to set up [manual insertion for the pages of an auto-injected frontend](#manual-insertion-using-oneagent).
 
-The RUM JavaScript snippet injected into your application's HTML can have different formats, each designed to meet specific requirements as outlined in [Select a snippet format in the New RUM Experience](snippet-formats.md "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience.").
+The RUM JavaScript snippet injected into your application's HTML can have different formats, each designed to meet specific requirements as outlined in Select a snippet format in the New RUM Experience.
 To configure the format used for automatic injection, refer to [Configure the snippet format](#configure-snippet-format).
 
 OneAgent injects the RUM JavaScript into each page based on the current configuration whenever the instrumented web or application server delivers the page. However, the pageâs caching policy determines how frequently OneAgent has the opportunity to perform this injection. To address this, OneAgent includes a feature that optimizes cache control headers. For details on how this feature works and its limitations, see [Cache control header optimizations](#cache-header-optimization).
@@ -60,7 +60,7 @@ To disable injection for one or more pages within your frontend
 8. Under **Rule**, select **Do not inject**.
 9. Select **Save changes** to create the custom injection rule.
 
-This rule only disables injection and [cache control header optimizations](#cache-header-optimization); it does not fully disable RUM functionality. For instance, cookies may still be set. If you're looking for a way to selectively enable RUM, please refer to the instructions in [Roll out RUM selectively for your applications](../../../web-applications/initial-setup/selective-rum-rollout.md "Roll out RUM selectively after installing OneAgent in full-stack monitoring mode on your hosts").
+This rule only disables injection and [cache control header optimizations](#cache-header-optimization); it does not fully disable RUM functionality. For instance, cookies may still be set. If you're looking for a way to selectively enable RUM, please refer to the instructions in Roll out RUM selectively for your applications.
 
 ## Configure the snippet format
 
@@ -73,7 +73,7 @@ To configure the snippet format for automatic injection
 5. Under **Snippet format**, select the desired format.
 6. Select **Save**.
 
-To learn more about the different snippet formats, refer to [Select a snippet format in the New RUM Experience](snippet-formats.md "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience.").
+To learn more about the different snippet formats, refer to Select a snippet format in the New RUM Experience.
 
 ## Cache control header optimizations
 
@@ -164,9 +164,9 @@ First, you need to suppress automatic injection as described in [Disable injecti
 5. Scroll to the section for the snippet format you want to use and select  to copy the RUM JavaScript to the clipboard.
 6. Insert the snippet in your HTML before any other scripts.
 
-Alternatively, you can also retrieve the snippet via the [API](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags.md "Learn how you can download the RUM manual insertion tags via API"), which allows you to integrate its insertion into your build process. This ensures that your frontend consistently operates with the latest configuration.
+Alternatively, you can also retrieve the snippet via the API, which allows you to integrate its insertion into your build process. This ensures that your frontend consistently operates with the latest configuration.
 
 ## Related topics
 
-* [Set up an auto-injected frontend in the New RUM Experience](set-up-auto-injected-frontend.md "Learn how to set up an auto-injected web frontend in the New RUM Experience.")
-* [Select a snippet format in the New RUM Experience](snippet-formats.md "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience.")
+* Set up an auto-injected frontend in the New RUM Experience
+* Select a snippet format in the New RUM Experience

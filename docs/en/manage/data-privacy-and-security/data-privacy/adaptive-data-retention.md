@@ -15,7 +15,7 @@ Adaptive Data Retention doesn't apply to Grail-enabled deployments.
 
 Dynatrace periodically deletes transaction storage, Session Replay storage, and Log monitoring storage data that is older than the configured retention time. Adaptive Data Retention is a functionality according to which Dynatrace periodically increases or decreases the retention time of this data if the tenant environment storage quota is exceeded.
 
-Each data type stored on a disk has a default retention time, which specifies how long that data type can be stored on disk. See [Data retention periods](data-retention-periods.md "Check retention times for various data types.") for more details.
+Each data type stored on a disk has a default retention time, which specifies how long that data type can be stored on disk. See Data retention periods for more details.
 
 The maximum amount of a given data type that can be stored on disk is determined as follows:
 

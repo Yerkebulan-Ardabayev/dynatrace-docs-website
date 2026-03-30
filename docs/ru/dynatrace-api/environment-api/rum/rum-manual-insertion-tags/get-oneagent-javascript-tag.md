@@ -15,7 +15,7 @@ scraped: 2026-03-02T21:19:10.698775
 
 Для выполнения этого запроса требуется токен доступа с областью действия `rumManualInsertionTags.read`.
 
-Чтобы узнать, как получить и использовать токен, см. раздел [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+Чтобы узнать, как получить и использовать токен, см. раздел Tokens and authentication.
 
 ## Параметры
 

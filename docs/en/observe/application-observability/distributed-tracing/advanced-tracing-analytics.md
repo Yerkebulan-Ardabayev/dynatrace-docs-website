@@ -13,26 +13,26 @@ scraped: 2026-03-06T21:12:12.811038
 * Updated on Aug 28, 2025
 * Preview
 
-Advanced Tracing Analytics powered by Grail is designed for experienced users who require advanced tracing analysis that can be consumed via [Dashboards](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), [Notebooks](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), [Workflows](../../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), and via the [Dynatrace API](../../../dynatrace-api.md "Find out what you need to use the Dynatrace API.").
+Advanced Tracing Analytics powered by Grail is designed for experienced users who require advanced tracing analysis that can be consumed via Dashboards, Notebooks, Workflows, and via the Dynatrace API.
 
 ## Before you begin
 
 Prerequisites
 
-* Make sure your user has [permissions](permissions.md "Manage permissions for Distributed Tracing powered by Grail.") necessary to access trace data.
-* [Traces powered by Grail overview (DPS)](../../../license/capabilities/traces.md "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.").
+* Make sure your user has permissions necessary to access trace data.
+* Traces powered by Grail overview (DPS) model.").
 
 Prior knowledge
 
 * [Distributed Tracing concepts](../distributed-tracing.md#main-content--concepts "Trace and analyze in real time highly distributed systems with Grail.")
-* [Semantic model for Traces](../../../semantic-dictionary/model/trace.md "Get to know the Semantic Dictionary models related to traces.")
+* Semantic model for Traces
 
 ## Access spans and span attributes via DQL
 
-A span represents a logical unit of work within the trace and is described by span attributes. Span attributes are set by the instrumentation that creates the span and provides detailed information on the span, including the kind of operation it represents and context on its origin. The semantics of all the fields are documented in [Dynatrace Semantic Dictionary](../../../semantic-dictionary.md "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities."). With DQL you can
+A span represents a logical unit of work within the trace and is described by span attributes. Span attributes are set by the instrumentation that creates the span and provides detailed information on the span, including the kind of operation it represents and context on its origin. The semantics of all the fields are documented in Dynatrace Semantic Dictionary. With DQL you can
 
 * Access every single span via the command `fetch spans`. Combine it with DQL functions to query any span attribute stored in Grail without additional configuration.
-* Fully search any span attribute of type `string`, via [string function available in DQL](../../../platform/grail/dynatrace-query-language/functions/string-functions.md "A list of DQL string functions."), such as `startsWith`, `endsWith`, `contains`, or `matchesPhrase`.
+* Fully search any span attribute of type `string`, via string function available in DQL, such as `startsWith`, `endsWith`, `contains`, or `matchesPhrase`.
 
 Example: DQL access to all spans
 
@@ -1336,5 +1336,5 @@ For more examples, see the [Trace query usageï»¿](https://wkf10640.apps.dynat
 
 ## Related topics
 
-* [Distributed traces concepts](../distributed-traces/concepts.md "Learn more about distributed tracing core concepts and terminology.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* Distributed traces concepts
+* Dynatrace Query Language

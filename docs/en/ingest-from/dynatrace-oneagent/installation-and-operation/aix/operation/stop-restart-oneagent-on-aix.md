@@ -30,4 +30,4 @@ In case you don't want to use OneAgent inside a particular Java (or other) proce
 
   To start OneAgent, use root privileges and execute the `oneagent` service script with the `start` parameter.
 
-Learn more about [how OneAgent interacts with your OS](../installation/oneagent-security-aix.md "Learn about Dynatrace OneAgent security and modifications to your AIX-based system.").
+Learn more about how OneAgent interacts with your OS.

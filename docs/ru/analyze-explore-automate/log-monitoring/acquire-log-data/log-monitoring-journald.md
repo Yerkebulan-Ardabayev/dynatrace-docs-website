@@ -31,7 +31,7 @@ OneAgent версии 1.307+
 
 ## Настройка приёма журналов из Journald
 
-Вы можете включить приём журналов из Journald, либо настроив правило приёма Journald по умолчанию ([ingest rule](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.")), либо настроив загрузку в хранилище тенанта, например `kubelet.service` как `Journald.unit` из Journald.
+Вы можете включить приём журналов из Journald, либо настроив правило приёма Journald по умолчанию (ingest rule), либо настроив загрузку в хранилище тенанта, например `kubelet.service` как `Journald.unit` из Journald.
 
 ### Включение правила приёма по умолчанию
 

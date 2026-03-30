@@ -4,14 +4,14 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/custom-
 updated: 2026-02-09
 ---
 
-[### View tags
+### View tags
 
-Get an overview of custom tags of the specified monitored entities.](/managed/dynatrace-api/environment-api/custom-tags/get-tags "View custom tags of monitored entities via Dynatrace API.")[### Assign tags
+Get an overview of custom tags of the specified monitored entities.### Assign tags
 
-Add custom tags to the specified monitored entities.](/managed/dynatrace-api/environment-api/custom-tags/post-tags "Assign custom tags to monitored entities via Dynatrace API.")[### Delete tags
+Add custom tags to the specified monitored entities.### Delete tags
 
-Remove a custom tag from the specified monitored entities.](/managed/dynatrace-api/environment-api/custom-tags/del-tags "Remove custom tags from monitored entities via Dynatrace API.")
+Remove a custom tag from the specified monitored entities.
 
 ## Related topics
 
-* [Monitored entities API](/managed/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.")
+* Monitored entities API

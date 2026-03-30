@@ -22,7 +22,7 @@ For the operands of the expression, you can use metrics or numbers.
 
 * You need to use brackets to enforce order of operations.
 * All metrics with more than 1 data point involved in a metric expression must be of the same resolution.
-* You can use any metric as an operand, including metrics modified by any [transformation chain](metric-selector.md "Configure the metric selector for the Metric v2 API."), and you can apply transformations to the result of the expression.
+* You can use any metric as an operand, including metrics modified by any transformation chain, and you can apply transformations to the result of the expression.
 
 ## Limitations
 
@@ -129,7 +129,7 @@ eq("dt.entity.host","HOST-002")
 
 ### Do not convert units
 
-Do not use a metric expression to convert the unit of the data. Use the [**toUnit** transformation](metric-selector.md#to-unit "Configure the metric selector for the Metric v2 API.") instead. The only exception to this rule is for units that Dynatrace does not support. Use the [GET all units](../metrics-units/get-all-units.md "List all metrics that are available for your monitoring environment via the Dynatrace API.") request to fetch the list of supported units.
+Do not use a metric expression to convert the unit of the data. Use the [**toUnit** transformation](metric-selector.md#to-unit "Configure the metric selector for the Metric v2 API.") instead. The only exception to this rule is for units that Dynatrace does not support. Use the GET all units request to fetch the list of supported units.
 
 ### Limit transformation usage
 

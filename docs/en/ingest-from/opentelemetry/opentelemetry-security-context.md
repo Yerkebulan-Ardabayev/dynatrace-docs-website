@@ -12,11 +12,11 @@ scraped: 2026-03-06T21:23:34.936360
 * 2-min read
 * Updated on Nov 20, 2025
 
-Dynatrace has a [permission model for Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail."). This applies to all telemetry data, such as metrics, events, spans, and logs.
+Dynatrace has a permission model for Grail. This applies to all telemetry data, such as metrics, events, spans, and logs.
 
 We recommend setting up permissions along organizational lines and deployment scopes. Suitable concepts include host groups, Kubernetes clusters, and Kubernetes namespaces. These attributes are typically available for all telemetry data ingested via Dynatrace collection methods like OneAgent, OpenTelemetry, or Kubernetes operator. Hence, you can use these attributes to enable [record-level permissions](../../platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.").
 
-For Kubernetes-based deployments, make sure Dynatrace Operator has [metadata enrichment](../setup-on-k8s/guides/metadata-automation/metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") enabled.
+For Kubernetes-based deployments, make sure Dynatrace Operator has metadata enrichment enabled.
 
 If you only require a basic permission concept, setting up bucket-level permissions is the best option. You can then route your data to the correct bucket in OpenPipeline by matching one of the mentioned deployment-relevant primary Grail fields.
 
@@ -41,9 +41,9 @@ You can use your existing labels and tags to facilitate permissions in Dynatrace
 
 ### Security context via Kubernetes labels or annotations
 
-You can use [Kubernetes labels or annotations](../setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment.md "Guides for telemetry enrichment on Kubernetes") as a source for your `dt.security_context`. This is one of the most convenient ways of doing this.
+You can use Kubernetes labels or annotations as a source for your `dt.security_context`. This is one of the most convenient ways of doing this.
 
-Alternatively, you can [configure the OpenTelemetry Collector to enrich data in transit](collector/use-cases/kubernetes/k8s-enrich.md "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data."). If you do this, you might have to map your Kubernetes metadata to `dt.security_context` in OpenPipeline.
+Alternatively, you can configure the OpenTelemetry Collector to enrich data in transit. If you do this, you might have to map your Kubernetes metadata to `dt.security_context` in OpenPipeline.
 
 ### Security context via OpenTelemetry resource attributes
 

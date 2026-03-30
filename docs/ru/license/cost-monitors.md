@@ -96,7 +96,7 @@ scraped: 2026-03-06T21:22:10.318160
 
 Мониторы расходов могут уведомлять вас через API при возникновении событий прогноза и расходов.
 
-Документацию API, связанную с событиями прогноза и расходов, см. в [Dynatrace Platform Subscription API](../dynatrace-api/account-management-api/dynatrace-platform-subscription-api.md "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
+Документацию API, связанную с событиями прогноза и расходов, см. в Dynatrace Platform Subscription API.
 
 ### Триггеры уведомлений
 
@@ -168,7 +168,7 @@ scraped: 2026-03-06T21:22:10.318160
 
 ![cost management](https://dt-cdn.net/images/5-cost-and-usage-analysis-777-bd4db9cda3.png)
 
-В таких сценариях, если определённая функциональная возможность является причиной уведомления, обратитесь к [Get detailed consumption insights](consumption-insights.md "Get detailed consumption insights to identify increased usage and resolve issues with unwanted or excessive consumption.").
+В таких сценариях, если определённая функциональная возможность является причиной уведомления, обратитесь к Get detailed consumption insights.
 
 ## Часто задаваемые вопросы
 
@@ -193,5 +193,5 @@ scraped: 2026-03-06T21:22:10.318160
 
 ## Связанные темы
 
-* [Account Management](../manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
+* Account Management
 * [Dynatrace pricing](https://www.dynatrace.com/pricing/)

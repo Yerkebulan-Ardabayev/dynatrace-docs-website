@@ -4,7 +4,7 @@ source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/executi
 scraped: 2026-03-06T21:37:23.233559
 ---
 
-Ваш инструмент непрерывной интеграции (CI), например Jenkins, может [отправлять бизнес-события в Dynatrace](../../observe/business-observability/bo-api-ingest.md "Set up authentication for and ingest business events via API."). Эти события затем могут инициировать проверки Site Reliability Guardian в рамках рабочего процесса.
+Ваш инструмент непрерывной интеграции (CI), например Jenkins, может отправлять бизнес-события в Dynatrace. Эти события затем могут инициировать проверки Site Reliability Guardian в рамках рабочего процесса.
 
 Disclaimer
 

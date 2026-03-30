@@ -28,10 +28,10 @@ Enrichment is specific to non-container OneAgent environments. Configuring a con
   + OpenTelemetry [Contrib](../../collector.md#collector-contrib "Learn about the Dynatrace OTel Collector.")
   + A [custom Builder version](../../collector.md#collector-builder "Learn about the Dynatrace OTel Collector.")
 * A OneAgent running on the same host as the Collector, where the OneAgent monitors in either Full-Stack, Infrastructure, or Foundation & Discovery mode.
-* The [Dynatrace API endpoint URL](../../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported, configured as system environment variable
+* The Dynatrace API endpoint URL to which the data should be exported, configured as system environment variable
 * An [API token](../../otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate), configured as system environment variable
 
-See [Collector Deployment](../deployment.md "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](../configuration.md "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
+See Collector Deployment and Collector Configuration on how to set up your Collector with the configuration below.
 
 ## Demo configuration
 

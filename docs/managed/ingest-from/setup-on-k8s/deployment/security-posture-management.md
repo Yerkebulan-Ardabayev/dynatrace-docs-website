@@ -16,7 +16,7 @@ Dynatrace Kubernetes Security Posture Management enables you to detect, analyze,
 
 How it works
 
-Dynatrace ingests configuration data from your clusters and workloads into [Grail](../../../../platform/grail.md "Insights on what and how you can query Dynatrace data."), where it's formatted into [compliance events](../../../../semantic-dictionary/model/security-events.md#compliance-finding-events "Get to know the Semantic Dictionary models related to security events.") according to the [Semantic Dictionary](../../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.") conventions.
+Dynatrace ingests configuration data from your clusters and workloads into Grail, where it's formatted into compliance events according to the Semantic Dictionary conventions.
 
 The mechanism is described below.
 
@@ -41,9 +41,9 @@ ActiveGate processes all data received from the nodes and Kubernetes API and sen
 
 4. Data is mapped
 
-This section has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../../../../secure/threat-observability/migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This section has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the Grail security table migration guide.
 
-The cluster and workload configuration data is mapped as [compliance events](../../../../semantic-dictionary/model/security-events.md#compliance-finding-events "Get to know the Semantic Dictionary models related to security events.") according to the [Semantic Dictionary](../../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.") and stored in the `default_securityevents_builtin` bucket (for details, see [Built-in Grail buckets](../../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.")).
+The cluster and workload configuration data is mapped as compliance events according to the Semantic Dictionary and stored in the `default_securityevents_builtin` bucket (for details, see Built-in Grail buckets).
 
 5. Compliance results are ready to use
 
@@ -53,15 +53,15 @@ Once data is ingested into Grail, you can analyze your clusters' security postur
 
 Dynatrace version 1.305+ Dynatrace Operator version 1.5.0+ ActiveGate version 1.321+
 
-* [Security Posture Management](../../../../secure/application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") is licensed based on the consumption of [host-hours](../../../../license/capabilities/application-security/security-posture-management.md "Learn how your consumption of the Dynatrace Security Posture Management (SPM) DPS capability is billed and charged.") and requires the [Dynatrace Platform Subscription (DPS) licensing model](../../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+* Security Posture Management is licensed based on the consumption of host-hours DPS capability is billed and charged.") and requires the Dynatrace Platform Subscription (DPS) licensing model, the licensing model for all Dynatrace capabilities.").
 
-  If you're using [Dynatrace classic licensing](../../../../license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), or if you're on DPS but don't see the SPM capability enabled in your DPS rate card, please contact a Dynatrace product expert via live chat.
-* Review the [Supported compliance standards and technologies](../../../../secure/application-security/spm.md#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
-* [Set up Kubernetes monitoring](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes").
+  If you're using Dynatrace classic licensing, or if you're on DPS but don't see the SPM capability enabled in your DPS rate card, please contact a Dynatrace product expert via live chat.
+* Review the Supported compliance standards and technologies.
+* Set up Kubernetes monitoring.
 
 * Support is limited to compatibility with upstream Kubernetes and available for x86-64 CPU architectures only.
 * Amount of replicas of ActiveGate Pods needs to be set to 1 (default).
-* If you're using a Dynatrace Operator version earlier than 1.4.0, you need to [upgrade](../../../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator.md#helm "Upgrade and uninstallation procedures for Dynatrace Operator") before you can continue.
+* If you're using a Dynatrace Operator version earlier than 1.4.0, you need to upgrade before you can continue.
 
 ## Deploy
 
@@ -75,7 +75,7 @@ If you already created a secret with a token in a previous deployment of Dynatra
 
 1. Create a Dynatrace Operator token.
 
-   For instructions, see [Access tokens and permissions](../../../../ingest-from/setup-on-k8s/deployment/tokens-permissions.md "Configure tokens and permissions to monitor your Kubernetes cluster").
+   For instructions, see Access tokens and permissions.
 2. Create a secret to hold the access token that will be used by Dynatrace Operator to communicate with the Dynatrace environment.
 
    ```
@@ -88,7 +88,7 @@ If you already created a secret with a token in a previous deployment of Dynatra
 
    * Kubernetes Security Posture Management:
 
-     + `spec.kspm: {}`: Enables the KSPM Node Configuration Collector DaemonSet (for details, see [How it works](../../../../secure/application-security/spm.md#mechanism "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."))
+     + `spec.kspm: {}`: Enables the KSPM Node Configuration Collector DaemonSet (for details, see How it works)
 
      KSPM mounts the hosts root filesystem by default. If you want to limit that to specific paths, you can use the field `spec.kspm.mappedHostPaths`. The `spec.kspm.mappedHostPaths` field defines the host paths that are mounted to the container. For a list of suggested paths, see the [Dynatrace Operator repository sampleï»¿](https://dt-url.net/ky03zzm).
    * ActiveGate with Kubernetes monitoring and additional configuration:
@@ -140,9 +140,9 @@ If you already created a secret with a token in a previous deployment of Dynatra
 
      + `.spec.templates.kspmNodeConfigurationCollector.tolerations`
 
-   For guidelines on how to set properties, see [Add a custom properties file](../../../../ingest-from/setup-on-k8s/guides/metadata-automation/custom-properties-file.md "Add a custom properties file").
+   For guidelines on how to set properties, see Add a custom properties file.
 
-   For a list of all available parameters, see [DynaKube parameters for Dynatrace Operator](../../../../ingest-from/setup-on-k8s/reference/dynakube-parameters.md "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
+   For a list of all available parameters, see DynaKube parameters for Dynatrace Operator.
 
    **Example DynaKube**:
 
@@ -416,7 +416,7 @@ To enable Kubernetes Security Posture Management for a specific monitored cluste
 Once you set up Kubernetes Security Posture Management, you can use
 
 * [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](../../../../secure/xspm.md "Detect, manage, and take action on security and compliance findings.") to analyze your clusters' security posture and evaluate your compliance with industry standards
-* [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../../../secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to query [compliance events](../../../../semantic-dictionary/model/security-events.md#compliance-finding-events "Get to know the Semantic Dictionary models related to security events.") for further insights
+* [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../../../secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to query compliance events for further insights
 * [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") to share finding reports with stakeholders
 
 ## Limitations
@@ -425,11 +425,11 @@ Up to 100 nodes and 3,000 pods per Kubernetes cluster can be covered by Kubernet
 
 ## Further resources
 
-* For a use case scenario, see [Stay compliant with Security Posture Management](../../../../secure/use-cases/stay-compliant.md "Stay on top of your security measures, policies, and practices.").
-* For a list of frequently asked questions on Kubernetes Security Posture Management, see [FAQ](../../../../secure/application-security/spm.md#faq "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
-* For a list of DQL examples based on compliance events that you can use for further investigation or reporting, see [Query compliance events](../../../../secure/threat-observability/dql-examples.md#compliance "DQL examples for security data powered by Grail.").
-* For an overview of security data usage, see [Security data on Grail](../../../../secure/threat-observability/concepts.md#security-data "Basic concepts related to Threat Observability").
+* For a use case scenario, see Stay compliant with Security Posture Management.
+* For a list of frequently asked questions on Kubernetes Security Posture Management, see FAQ.
+* For a list of DQL examples based on compliance events that you can use for further investigation or reporting, see Query compliance events.
+* For an overview of security data usage, see Security data on Grail.
 
 ## Related topics
 
-* [Security Posture Management](../../../../secure/xspm.md "Detect, manage, and take action on security and compliance findings.")
+* Security Posture Management

@@ -27,14 +27,14 @@ scraped: 2026-02-06T16:29:09.689987
 
 Find detailed descriptions of various use cases below.
 
-[### Assess and troubleshoot cluster health
+### Assess and troubleshoot cluster health
 
-Understand and manage the health of your Kubernetes clusters.](use-cases/cluster-health.md "Understand and manage the health of your Kubernetes clusters with Dynatrace.")[### Optimize workload resource usage with Kubernetes (new) **Kubernetes** and Notebooks **Notebooks**
+Understand and manage the health of your Kubernetes clusters.### Optimize workload resource usage with Kubernetes (new) **Kubernetes** and Notebooks **Notebooks**
 
-Efficiently utilize your cluster's resources.](use-cases/resource-optimization.md "Efficiently utilize your cluster's resources by identifying workloads that don't fully utilize their allocated resources.")[### Troubleshooting common health problems of Kubernetes workloads
+Efficiently utilize your cluster's resources.### Troubleshooting common health problems of Kubernetes workloads
 
-Identify and resolve health problems in Kubernetes workloads.](use-cases/troubleshoot-health-problems.md "Identify and resolve health problems in Kubernetes workloads.")[### Predictive Kubernetes operations
+Identify and resolve health problems in Kubernetes workloads.### Predictive Kubernetes operations
 
-Manage disk space within Kubernetes environments.](use-cases/predictive-operations.md "Proactively manage disk space within Kubernetes environments")[### Alert on common misconfigurations and detect anomalies
+Manage disk space within Kubernetes environments.### Alert on common misconfigurations and detect anomalies
 
-Address Kubernetes issues using out-of-the-box alerting mechanisms.](use-cases/alert-use-case.md "Proactively address Kubernetes issues using out-of-the-box alerting mechanisms.")
+Address Kubernetes issues using out-of-the-box alerting mechanisms.

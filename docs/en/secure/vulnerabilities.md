@@ -19,7 +19,7 @@ About the app
 * Prioritize vulnerabilities based on Dynatrace Security Score, Dynatrace Assessment, affected and related entities, historical context, CISA KEV catalog.
 * Apply fixes, track remediation, drill down to the source of vulnerabilities, change the mute status of affected entities.
 * Interact with other apps and download results to share with others.
-* Gain insights into monitoring coverage and exposure trends with the [**Vulnerability coverage** dashboard](vulnerabilities/assess-coverage.md "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
+* Gain insights into monitoring coverage and exposure trends with the **Vulnerability coverage** dashboard.
 
 ### Target audience
 
@@ -32,11 +32,11 @@ Prerequisites
 
 Permissions
 
-An [admin user](../manage/identity-access-management/permission-management/default-policies.md#access "Dynatrace default policies reference") needs to assign the following IAM policies to the group of users that will access the [`vulnerability-service`](../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#vulnerability-service "Complete reference of IAM policies and corresponding conditions across all Dynatrace services."):
+An admin user needs to assign the following IAM policies to the group of users that will access the [`vulnerability-service`](../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#vulnerability-service "Complete reference of IAM policies and corresponding conditions across all Dynatrace services."):
 
 * `Read Entities`
 * `Read Security Events`
-* One of the following user policies: `Admin User`, `Pro User`, `Standard User` (for details, see [Default policies](../manage/identity-access-management/permission-management/default-policies.md#default-policies "Dynatrace default policies reference")).
+* One of the following user policies: `Admin User`, `Pro User`, `Standard User` (for details, see Default policies).
 
 See below for instructions.
 
@@ -66,7 +66,7 @@ Once added, the three policies should be displayed in your list of permissions.
 1. In **Account Management**, select **Identity & access management** > **People**.
 2. Select **Invite user** to invite users to the newly created group.
 
-For details on IAM policies, see [Working with policies](../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
+For details on IAM policies, see Working with policies.
 
 Get started
 
@@ -74,7 +74,7 @@ Related blogs
 
 ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities** detects if the applications in your Dynatrace environment use vulnerable libraries at runtime or vulnerable runtime to execute your code. It helps you prioritize based on context and impact, efficiently addressing remediation actions.
 
-For additional visibility into monitoring coverage and exposure, see [Assess coverage](vulnerabilities/assess-coverage.md "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
+For additional visibility into monitoring coverage and exposure, see Assess coverage.
 
 ![Vulnerability results table on the Prioritization page](https://dt-cdn.net/images/one-1920-3b90d3d40b.png)![Vulnerability details](https://dt-cdn.net/images/two-1920-2dec9771f5.png)![Process group overview related to a vulnerability](https://dt-cdn.net/images/three-1920-6b45726007.png)![Details of an affected process group](https://dt-cdn.net/images/four-1920-f0bf314049.png)![Findings overview page](https://dt-cdn.net/images/2025-12-17-14-29-30-1920-06cddbfea0.png)![Finding details](https://dt-cdn.net/images/2025-12-17-14-37-49-1920-1ecd920899.png)
 
@@ -87,10 +87,10 @@ Try ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-
 [01Vulnerabilities concepts
 
 * Explanation
-* Concepts that are specific to the Dynatrace Vulnerabilities app.](vulnerabilities/concepts.md)[02Manage results
+* Concepts that are specific to the Dynatrace Vulnerabilities app.](vulnerabilities/concepts.md)02Manage results
 
 * How-to guide
-* Filter, format, and sort to find relevant vulnerability information.](vulnerabilities/manage-results.md)[03Address remediation
+* Filter, format, and sort to find relevant vulnerability information.[03Address remediation
 
 * How-to guide
 * Address remediation and optimize remediation activities.](vulnerabilities/address-remediation.md)[04Prioritize vulnerabilities

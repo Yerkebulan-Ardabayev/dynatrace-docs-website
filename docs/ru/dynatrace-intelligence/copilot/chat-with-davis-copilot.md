@@ -60,7 +60,7 @@ davis:analyzers:read
 
 Остальные разрешения из таблицы необходимы только в том случае, если вы хотите использовать все агентные возможности Dynatrace Assist. Подробнее см. в разделе [Агентные разрешения Dynatrace Assist](copilot-getting-started.md#assist-agentic "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
-Подробнее см. в разделе [Начало работы с агентным и генеративным ИИ Dynatrace Intelligence](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+Подробнее см. в разделе Начало работы с агентным и генеративным ИИ Dynatrace Intelligence.
 
 ## Начало работы
 
@@ -74,7 +74,7 @@ davis:analyzers:read
 
 1. В Dynatrace выберите  **Dynatrace Assist**.
 2. Откроется новое окно с интерфейсом чата.
-3. Введите свой вопрос. Для вдохновения см. [примеры](chat-with-davis-copilot/dynatrace-assist-prompts.md "Learn what kind of prompts work well in Dynatrace Assist.").
+3. Введите свой вопрос. Для вдохновения см. примеры.
 4. Нажмите **Run** ![Run](https://dt-cdn.net/images/run-c2f8c2f63c.svg "Run") и дождитесь генерации ответа.
 
    * Вы можете задавать уточняющие вопросы.
@@ -89,7 +89,7 @@ davis:analyzers:read
 
 ### Использование агентных возможностей Dynatrace Assist
 
-При включенном агентном ИИ вы можете попросить **Dynatrace Assist** проанализировать данные и безопасность вашей среды и предоставить аналитические сведения. Примеры см. в разделе [Вопросы о данных вашей среды](chat-with-davis-copilot/dynatrace-assist-prompts.md#assist-ask-about-the-data "Learn what kind of prompts work well in Dynatrace Assist.").
+При включенном агентном ИИ вы можете попросить **Dynatrace Assist** проанализировать данные и безопасность вашей среды и предоставить аналитические сведения. Примеры см. в разделе Вопросы о данных вашей среды.
 
 Подробнее о начале работы с агентным **Dynatrace Assist** см. в разделе [Включение агентного ИИ для Dynatrace Assist](copilot-getting-started.md#assist-agentic "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
@@ -120,9 +120,9 @@ davis:analyzers:read
 
 [01Встроенные стартеры диалогов
 
-* Узнайте, как запускать предопределенные запросы в различных приложениях Dynatrace.](chat-with-davis-copilot/copilot-conv-starters.md)[02Примеры запросов Dynatrace Assist
+* Узнайте, как запускать предопределенные запросы в различных приложениях Dynatrace.](chat-with-davis-copilot/copilot-conv-starters.md)02Примеры запросов Dynatrace Assist
 
-* Узнайте, какие запросы хорошо работают в Dynatrace Assist.](chat-with-davis-copilot/dynatrace-assist-prompts.md)
+* Узнайте, какие запросы хорошо работают в Dynatrace Assist.
 
 ## Сценарии использования
 
@@ -136,7 +136,7 @@ davis:analyzers:read
 
 ## Связанные темы
 
-* [Начало работы с агентным и генеративным ИИ Dynatrace Intelligence](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Встроенные стартеры диалогов](chat-with-davis-copilot/copilot-conv-starters.md "Learn how to trigger predefined prompts in various Dynatrace applications.")
-* [Часто задаваемые вопросы об агентном и генеративном ИИ Dynatrace Intelligence](../../../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
-* [Dynatrace MCP server](../../../common/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp.md "Learn about the Dynatrace MCP server and how you can connect to it.")
+* Начало работы с агентным и генеративным ИИ Dynatrace Intelligence
+* Встроенные стартеры диалогов
+* Часто задаваемые вопросы об агентном и генеративном ИИ Dynatrace Intelligence
+* Dynatrace MCP server

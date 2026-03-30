@@ -13,11 +13,11 @@ scraped: 2026-03-06T21:19:07.272209
 
 To fully automate the monitoring of your operating systems, processes, and network interfaces, OneAgent performs the following changes to your system.
 
-OneAgent is tested extensively to ensure that it has minimal performance impact on your system and [conforms to the highest security standards](../../../../../../common/manage/data-privacy-and-security.md "Learn how Dynatrace applies various security measures required to protect private data.").
+OneAgent is tested extensively to ensure that it has minimal performance impact on your system and conforms to the highest security standards.
 
 ## Permissions
 
-By default, OneAgent is installed in non-privileged mode, in which superuser privileges are used once to initiate the installation process. OneAgent is then run under an unprivileged user, retaining the complete set of functionalities. For details and system requirements, see [OneAgent non-privileged mode on Linux](linux-non-privileged.md "Find out when Dynatrace OneAgent requires root privileges on Linux.")
+By default, OneAgent is installed in non-privileged mode, in which superuser privileges are used once to initiate the installation process. OneAgent is then run under an unprivileged user, retaining the complete set of functionalities. For details and system requirements, see OneAgent non-privileged mode on Linux
 
 ### Operation
 
@@ -62,7 +62,7 @@ The OneAgent installer modifies the following system files:
 
 OneAgent modifies the following files during its operation:
 
-* The OneAgent wrapper overwrites the `/var/vcap/packages/runc/bin/runc` file (Garden runc) to allow injection. This happens periodically during runtime. The original file is stored as `runc-original` and is restored by the [uninstall script](../operation/uninstall-oneagent-on-linux.md "Learn how you can remove OneAgent from your Linux-based system.").
+* The OneAgent wrapper overwrites the `/var/vcap/packages/runc/bin/runc` file (Garden runc) to allow injection. This happens periodically during runtime. The original file is stored as `runc-original` and is restored by the uninstall script.
 * On [CRI-Oï»¿](https://cri-o.io/) hosts (OCI-based implementation of Kubernetes Container Runtime Interface), the crio hook (`oneagent_crio_injection-0.1.0.json`) is copied to the path specified in the `hooks_dir` parameter of the CRI-O configuration file (`/etc/crio/crio.conf`). If the `hooks_dir` parameter is not set, one of the default paths is used, either `/etc/containers/oci/hooks.d/` or `/usr/share/containers/oci/hooks.d/`. The hook is removed by the uninstall script.
 
 ## Files added
@@ -106,11 +106,11 @@ OneAgent downloads certain system logs so that Dynatrace can diagnose issues tha
 Revoking access to system logs
 
 To revoke access to system logs, use the `oneagentctl` command with the `--set-system-logs-access-enabled` parameter set to `false`.  
-For more information, see [OneAgent configuration via command-line interface](../../../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
+For more information, see OneAgent configuration via command-line interface
 
 ## Globally writable directories
 
-The [OneAgent directory structure](disk-space-requirements-for-oneagent-installation-and-update-on-linux.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.") contains globally writable directories (`1777` permissions). Changing these permissions by users is not supported.
+The OneAgent directory structure contains globally writable directories (`1777` permissions). Changing these permissions by users is not supported.
 
 ### OneAgent injection mechanism
 

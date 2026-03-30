@@ -16,7 +16,7 @@ Log Monitoring Classic
 
 Dynatrace Log Monitoring gives you the ability to create log events based on log data and use them in problem detection.
 
-Log event pricing is based on the Davis data units (DDUs) model. Check [DDUs for custom Davis events](../../../license/monitoring-consumption-classic/davis-data-units/ddu-events.md "Understand how to calculate Davis data unit consumption and costs related to custom-configured and custom-ingested events.") to find out how you can estimate and track DDU consumption for log events.
+Log event pricing is based on the Davis data units (DDUs) model. Check DDUs for custom Davis events to find out how you can estimate and track DDU consumption for log events.
 
 When Dynatrace ingests log data, it applies the query specified in the log event definition. Every matched occurrence triggers a log event that can be configured to individually create a problem for each triggered log event or can be merged into one problem.
 
@@ -30,12 +30,12 @@ When Dynatrace ingests log data, it applies the query specified in the log event
 
    I switched to Grail
 
-   If you switched to [Dynatrace Grail](../../../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), you may begin using the [DQL](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") functions in your Log Monitoring queries. For details, see [Log processing with classic pipeline](../../logs/lma-classic-log-processing.md#dql-functions "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
+   If you switched to Dynatrace Grail, you may begin using the DQL functions in your Log Monitoring queries. For details, see [Log processing with classic pipeline](../../logs/lma-classic-log-processing.md#dql-functions "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
 4. Configure the **Event template**.
 
    * Provide the **Title** of the event to trigger. If this log event triggers a problem, this title will also be the title of the problem.
    * Provide the **Description** of the event. Note that you can have one or more placeholders in the description (see [Placeholders](#placeholders) below for details).
-   * Select the **Event Type**. Event types indicate the severity of the event. See [Settings API - Log events schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-events.md "View builtin:logmonitoring.log-events settings schema table of your monitoring environment via the Dynatrace API.").
+   * Select the **Event Type**. Event types indicate the severity of the event. See Settings API - Log events schema table.
 5. Choose whether to **Allow merge**.  
    If two or more events are triggered, Dynatrace could merge these events into a single problem. This option lets you choose to disable this behavior, which can result in more reported problems.
 
@@ -44,7 +44,7 @@ When Dynatrace ingests log data, it applies the query specified in the log event
    For example, to create a separate problem for each log line message, use `event.unique_identifier={content}`.
 6. Add **Properties**.
    A property is a key/value pair that is set on every triggered event. You can have one or more placeholders as a value that will be extracted from the log data. For example, a property with **Key** set to `PGI` and a **Value** of placeholder `{dt.entity.process_group_instance}` will extract the process group instance value from log data once the event is triggered. If the placeholder substitution fails, both the key and the value will not be available.  
-   To see how to get the full list of properties, go to [Events API v2 - GET all event properties](../../../dynatrace-api/environment-api/events-v2/get-event-properties.md "List all event properties via the Dynatrace API."). The `description` field in the API response body explains how each property works. For [example](../../../dynatrace-api/environment-api/events-v2/get-event-properties.md#exampledesc "List all event properties via the Dynatrace API."): In the `dt.event.allow_davis_merge`, the description says :`"Allow Davis AI to merge this event into existing problems (true) or force creating a new problem (false)"`.
+   To see how to get the full list of properties, go to Events API v2 - GET all event properties. The `description` field in the API response body explains how each property works. For example: In the `dt.event.allow_davis_merge`, the description says :`"Allow Davis AI to merge this event into existing problems (true) or force creating a new problem (false)"`.
 
 ### Set a timeout for a log event
 

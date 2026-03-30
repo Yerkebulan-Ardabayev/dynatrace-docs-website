@@ -143,5 +143,5 @@ When creating a custom alert:
 
 ## Related topics
 
-* [Anomaly Detection app](../anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* Anomaly Detection app
+* Dynatrace Query Language

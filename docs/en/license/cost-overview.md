@@ -25,7 +25,7 @@ You can get an overview of your Dynatrace Platform Subscription consumption in *
 * Cost and usage breakdown: A detailed cost and usage breakdown for the last 30 days.
 * Cost and usage analysis: A drilldown view with flexible filtering to view and compare costs and usage.
 
-For more information, see [Subscription overview (Dynatrace Platform Subscription)](../manage/account-management/license-subscription/subscription-overview-dps.md "View your Dynatrace Platform Subscription budget summary and cost analysis.").
+For more information, see Subscription overview (Dynatrace Platform Subscription).
 
 ## Billing report
 
@@ -34,7 +34,7 @@ Use this view to determine which Dynatrace monitoring costs were recognized and 
 
 Billing reports are available in **Account Management** > **Subscription** > **Billing report**.
 
-For more information, see [Billing report](billing-reports.md "View your billing to see details about accrued costs per booking date. Use this view to determine which Dynatrace monitoring costs were recognized and booked on which day.").
+For more information, see Billing report.
 
 ## Billing period
 
@@ -72,15 +72,15 @@ The applied currency code might not be displayed until after the first cost metr
 
 ### How can I view my usage from a previous license?
 
-The [View your previous DPS periods via subscription history](subscription-history.md "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.") page shows active and expired licenses and subscriptions, including POCs.
+The View your previous DPS periods via subscription history page shows active and expired licenses and subscriptions, including POCs.
 
 ### How can I see the consumption that is booked to a POC?
 
-The [View your previous DPS periods via subscription history](subscription-history.md "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.") page shows active and expired POCs.
+The View your previous DPS periods via subscription history page shows active and expired POCs.
 For a specific POC, select **View details** to get a breakdown of costs and usage at the environment or capability level.
 
 ## Related topics
 
-* [Account Management](../manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
-* [Allocate your DPS costs](cost-allocation.md "Learn how to allocate costs to cost centers and products.")
+* Account Management
+* Allocate your DPS costs
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

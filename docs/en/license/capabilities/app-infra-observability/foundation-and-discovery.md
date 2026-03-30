@@ -15,13 +15,13 @@ scraped: 2026-03-06T21:17:13.819056
 Dynatrace OneAgent can be configured for Foundation & Discovery mode, which provides basic monitoring for your hosts (for example, host health, disk status, and OS service status).
 Unlike other tools that provide basic monitoring, Foundation & Discovery leverages core OneAgent features: discovery and topology.
 
-Foundation & Discovery mode detects process-to-process communication and populates the [Smartscape topology](../../../analyze-explore-automate/smartscape-classic.md "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") accordingly.
-This provides important clues for AIOps that is included with OneAgent. For details, see [Dynatrace Intelligence AI automatic root cause analysis](../../../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.").
+Foundation & Discovery mode detects process-to-process communication and populates the Smartscape topology accordingly.
+This provides important clues for AIOps that is included with OneAgent. For details, see Dynatrace Intelligence AI automatic root cause analysis.
 
 Broad deployment of Foundation & Discovery mode enables you to select the right monitoring mode for each of your hosts.
 A hostâs criticality can be determined based on which processes, technologies, externally accessible services, and topological connections.
 
-OneAgent in all modes also includes automated [log ingestion](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages."), which consumes [Log Management and Analytics](../log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
+OneAgent in all modes also includes automated log ingestion, which consumes Log Management and Analytics.
 
 ### Host hours
 
@@ -95,6 +95,6 @@ These metrics are also available via the Environment API and your **Account Mana
 
 ## Related topics
 
-* [Dynatrace OneAgent](../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
-* [Application & Infrastructure Observability overview (DPS)](../app-infra-observability.md "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.")
+* Dynatrace OneAgent
+* Application & Infrastructure Observability overview (DPS) license.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

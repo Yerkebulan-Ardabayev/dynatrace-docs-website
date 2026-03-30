@@ -14,20 +14,20 @@ scraped: 2026-03-06T21:17:59.893176
 
 Dynatrace provides a [VM Extensionï»¿](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/overview) to install OneAgent on Azure Virtual Machines. This enables you to leverage the native deployment automation features using Azure Resource Manager (ARM). The Dynatrace VM extension is available for Windows and Linux in all public Azure regions (including support for Classic Virtual Machines).
 
-The Dynatrace OneAgent site extension doesn't include the OneAgent installer. Instead, the extension uses the Dynatrace REST API to download the installer from the cluster in the target version as set in [OneAgent updates](../../dynatrace-oneagent/oneagent-update.md#configure-oneagent-updates "Learn how to update OneAgent.").
+The Dynatrace OneAgent site extension doesn't include the OneAgent installer. Instead, the extension uses the Dynatrace REST API to download the installer from the cluster in the target version as set in OneAgent updates.
 
 ## Capabilities
 
 * Full-stack monitoring powered by OneAgent
 * [Extensions for easy deployment of OneAgent](#installation)
-* [Integration with Azure Monitor](../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
+* Integration with Azure Monitor
 * Enhanced support for Azure VM metadata such as Azure regions, scale sets and more
-* [Classic Virtual Machines](azure-vm/monitor-azure-virtual-machines-classic.md "Monitor Azure Virtual Machines (classic) and view available metrics.") are also supported
+* Classic Virtual Machines and view available metrics.") are also supported
 
 ## Prerequisites
 
 * Create a [PaaS token](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.").
-* Determine your [environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+* Determine your environment ID.
 * Determine your server URL if required.
 
   The server URL is required only if you use an ActiveGate for a Dynatrace SaaS endpoint. The URL is automatically generated from the environment ID.
@@ -55,7 +55,7 @@ PowerShell
 6. Select **Create** to add the extension.
 7. On the **Install extension** page, enter your **environment ID**, your **API token**, and your **server URL**. See [Prerequisites](#prerequisites) for details.
 8. Select whether you want to enable Log Monitoring.
-9. Optional Define the [host group](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs.
+9. Optional Define the host group to which the VM belongs.
 10. Select **OK**.
 11. To check the deployment status, go to **Deployment Status**.
 
@@ -68,7 +68,7 @@ After installation is complete, restart your applications on the VM. Immediately
 3. Select **Create**.
 4. On the **Install extension** page, enter your **environment ID**, your **API token**, and your **server URL**. See [Prerequisites](#prerequisites) for details.
 5. Select whether you want to enable Log Monitoring.
-6. Optional Define the [host group](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs.
+6. Optional Define the host group to which the VM belongs.
 7. Select **OK**.
 8. Continue VM configuration in the deployment wizard.
 9. Select **Review and create**.
@@ -112,7 +112,7 @@ When using the Azure CLI within PowerShell, the settings have to be formatted as
 | token | Required | The PaaS token as described in [Prerequisites](#prerequisites). |
 | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
 | enableLogsAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
-| hostGroup | Optional | Define the [host group](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
+| hostGroup | Optional | Define the host group to which the VM belongs. |
 | overrideDefaults [1](#fn-1-1-def) | Optional | Override the default value of the timeoutâ120 seconds. For example, if you want to set the timeout to 600 seconds, add `\"overrideDefaults\": {\"downloadInstallerRequestTimeoutInSeconds\": 600}` to the `-Settings` string, you can also leave it empty `\"overrideDefaults\": {}`, or `null`. In such cases, the 120 seconds default value will apply. |
 
 1
@@ -164,7 +164,7 @@ Set-AzureRmVmExtension
 | Extension-Version | Optional | Required version of the extension. |
 | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
 | enableLogsAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
-| hostGroup | Optional | Define the [host group](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
+| hostGroup | Optional | Define the host group to which the VM belongs. |
 | overrideDefaults [1](#fn-2-1-def) | Optional | Override the default value of the timeoutâ120 seconds. For example, if you want to set the timeout to 600 seconds, add `\"overrideDefaults\": {\"downloadInstallerRequestTimeoutInSeconds\": 600}` to the `-Settings` string, you can also leave it empty `\"overrideDefaults\": {}`, or `null`. In such cases, the 120 seconds default value will apply. |
 
 1
@@ -335,7 +335,7 @@ The JSON file for a virtual machine extension can be nested inside the virtual m
 | Extension-Version | Optional | Required version of the extension. |
 | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
 | enableLogsAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
-| hostGroup | Optional | Define the [host group](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
+| hostGroup | Optional | Define the host group to which the VM belongs. |
 | overrideDefaults [1](#fn-3-1-def) | Optional | Override the default value of the timeoutâ120 seconds. For example, if you want to set the timeout to 600 seconds, add `\"overrideDefaults\": {\"downloadInstallerRequestTimeoutInSeconds\": 600}` to the ARM template in the `settings` object, you can also leave it empty `\"overrideDefaults\": {}`, or `null`. In such cases, the 120 seconds default value will apply. |
 
 1
@@ -369,9 +369,9 @@ az vm extension set
 --settings "{\"tenantId\":\"myawesometenant\",\"token\":\"nope123\", \"installerArguments\":\"--set-host-group=example_hostgroup --set-monitoring-mode=fullstack --set-network-zone=<your.network.zone>\"}"
 ```
 
-See [network zones](../../../manage/network-zones.md "Find out how network zones work in Dynatrace.") for more information.
+See network zones for more information.
 
 ## Related topics
 
-* [Set up Dynatrace on Microsoft Azure](../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
-* [OneAgent platform and capability support matrix](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* Set up Dynatrace on Microsoft Azure
+* OneAgent platform and capability support matrix

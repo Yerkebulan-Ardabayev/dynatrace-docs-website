@@ -20,8 +20,8 @@ When you select a management zone in **Settings** > **Preferences** > **Manageme
 
 Read more about:
 
-* How log data can be ingested and automatically assigned to management zones in [Management zones and ingested log data (Logs Classic)](../../../../analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring.md "Find out how ingested log data is assigned to management zones.").
-* How to [add a service-level objective to a management zone](../../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#mz "Create, configure, and monitor service-level objectives with Dynatrace.") so users with access to the management zone can view SLO status and error budget in the **Service-level objectives** page.
+* How log data can be ingested and automatically assigned to management zones in Management zones and ingested log data (Logs Classic).
+* How to add a service-level objective to a management zone so users with access to the management zone can view SLO status and error budget in the **Service-level objectives** page.
 
 ## Rule types
 
@@ -38,15 +38,15 @@ For UI-based rules for dimensional log and metric data, you can define condition
 
 More information on the Metrics API v2
 
-Use the powerful [metric selector](../../../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.") of the [Metrics API v2](../../../../dynatrace-api/environment-api/metric-v2.md "Retrieve metric information via Metrics v2 API.") for metric and dimension keys and values:
+Use the powerful metric selector of the Metrics API v2 for metric and dimension keys and values:
 
-* [GET a list of all available metrics](../../../../dynatrace-api/environment-api/metric-v2/get-all-metrics.md "List all metrics available in your monitoring environment via Metrics v2 API.") in your environment.
-* [GET the details of a specified metric](../../../../dynatrace-api/environment-api/metric-v2/get-descriptor.md "View the descriptor of a metric via Metrics v2 API.") to check dimension keys.
-* [GET a list of data points](../../../../dynatrace-api/environment-api/metric-v2/get-data-points.md "Read data points of one or multiple metrics via Metrics v2 API.") to check dimension values.
+* GET a list of all available metrics in your environment.
+* GET the details of a specified metric to check dimension keys.
+* GET a list of data points to check dimension values.
 
 Note that users automatically get access to logs and metrics associated with entities that are included within their assigned management zones.
 
-**[Text-based rules](#text)** leverage the powerful [entity selector](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") for v2 Environment APIs to define entities. Text-based rules enable you to define entity access based on all the entity types, properties, values, and relationships exposed by the [Monitored entities API v2](../../../../dynatrace-api/environment-api/entity-v2.md "Learn about the Dynatrace Monitored entities API.").
+**[Text-based rules](#text)** leverage the powerful entity selector for v2 Environment APIs to define entities. Text-based rules enable you to define entity access based on all the entity types, properties, values, and relationships exposed by the Monitored entities API v2.
 
 There are several advantages of text-based rules.
 
@@ -61,15 +61,15 @@ Per monitoring environment, you can add:
 * 300 UI-based management-zone rules for dimensional data (150 for Dynatrace versions 1.323 and earlier).
 * 300 text-based entity selector rules for management zones (150 for Dynatrace versions 1.323 and earlier).
 * 100,000 conditions for all management-zone rules taken together (does not apply to [entity selector rules](management-zone-rules.md#text "Define rules to limit the entities accessible within a management zone.")).
-* Any individual entity to a maximum of 200 management zones (run the [GET an entity](../../../../dynatrace-api/environment-api/entity-v2/get-entity.md "View parameters of a monitored entity via Dynatrace API.") API call to see an entity's management zones).
+* Any individual entity to a maximum of 200 management zones (run the GET an entity API call to see an entity's management zones).
 
-Check our documentation on [how to optimize management-zone rule performance at scale](../../../tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
+Check our documentation on how to optimize management-zone rule performance at scale.
 
 ### Add a UI-based rule for entities
 
 See [Examples](#examples) for different rule types and implementations.
 
-1. [Select/create a management zone](set-up-management-zones.md "Create and assign access rights to management zones.") and then select **Add a new rule**.
+1. Select/create a management zone and then select **Add a new rule**.
 2. Select **Monitored entity** as the **Rule type**. (See also information on [rules for dimensional data](#logs-metrics) and [text-based rule definition](#text) via the **Entity selector**.)
 3. Select the entity type to which the rule should apply (**Rule applies to**), for example, **Web applications**.
 
@@ -96,7 +96,7 @@ See [Examples](#examples) for different rule types and implementations.
 
 See [Examples](#examples) for different rule types and implementations.
 
-1. [Select/create a management zone](set-up-management-zones.md "Create and assign access rights to management zones.") and then select **Add a new rule**.
+1. Select/create a management zone and then select **Add a new rule**.
 2. Select **Dimensional data** for **Rule type**. (See also information on [rules for entities](#ui) and [text-based rule definition](#text) via the **Entity selector**.)
 3. Select the data **Type** to which the rule should apply.
 
@@ -129,29 +129,29 @@ See [Examples](#examples) for different rule types and implementations.
 
 ### Add a text-based entity selector rule
 
-1. [Select/create a management zone](set-up-management-zones.md "Create and assign access rights to management zones.") and then select **Add a new rule**.
+1. Select/create a management zone and then select **Add a new rule**.
 2. In **Rule type**, select **Entity selector**.
-3. To fill out the **Entity Selector** text string, you might need to run [Monitored entities API v2 calls](../../../../dynatrace-api/environment-api/entity-v2.md "Learn about the Dynatrace Monitored entities API.") to fetch entity types, properties, values, and relationships. Consult [entity selector documentation](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") for details on how to construct an entity definition. See [Examples](#examples) for different rule types and implementations.
+3. To fill out the **Entity Selector** text string, you might need to run Monitored entities API v2 calls to fetch entity types, properties, values, and relationships. Consult entity selector documentation for details on how to construct an entity definition. See [Examples](#examples) for different rule types and implementations.
 
    **Important parts of the entity selector string**
 
    * `type(<entityType>)` defines the type of entity that is subject to the rule. For example, the entity type for hosts is `host` and for process groups is `process_group`. The entity type is not case sensitive. You can only provide a single entry in `<entityType>`.
 
-     Run the [GET all entity types](../../../../dynatrace-api/environment-api/entity-v2/get-all-entity-types.md "View all types of monitored entities in your environment via Dynatrace API.") API call for a list of all entity types in your environment (including custom entities) and their properties.
+     Run the GET all entity types API call for a list of all entity types in your environment (including custom entities) and their properties.
 
-     Alternatively, you can specify multiple individual entity IDs with the `entityId` criterion. You can run the [GET entities list](../../../../dynatrace-api/environment-api/entity-v2/get-entities-list.md "View a list of monitored entities via Dynatrace API.") API call for a list of actual entities in your environment and their properties.
+     Alternatively, you can specify multiple individual entity IDs with the `entityId` criterion. You can run the GET entities list API call for a list of actual entities in your environment and their properties.
    * Entity properties and values filter the entity list that your rule applies to. For example:
 
      + `entityName.startsWith("Book")` filters for entities whose name starts with `Book`.
      + `serviceType(WEB_REQUEST_SERVICE)` filters for web request services.
 
-     You can run the [GET entity type API call](../../../../dynatrace-api/environment-api/entity-v2/get-entity-type.md "View the details of a monitored entity type via Dynatrace API.") for any entity type (for example, `service`) to get a list of all its properties (for example, `serviceType`). You can also run the [GET entities list](../../../../dynatrace-api/environment-api/entity-v2/get-entities-list.md "View a list of monitored entities via Dynatrace API.") API call for a list of actual entities in your environment with their property values (for example, `WEB_REQUEST_SERVICE`).
+     You can run the GET entity type API call for any entity type (for example, `service`) to get a list of all its properties (for example, `serviceType`). You can also run the GET entities list API call for a list of actual entities in your environment with their property values (for example, `WEB_REQUEST_SERVICE`).
    * Relationships further refine entity selection by defining an entity in terms of its relationship to another. Relationships are of two kinds.
 
      + A `fromRelationship` implies that the direction of the relationship is **from the given entity** (that is, the entity being queried) to a related entity. When you query all the services that service A calls, this is a relationship âfrom (service A)â to other services.
      + A `toRelationship` implies that the direction of the relationship is from a related entity **to the given entity** (that is, the entity being queried). When you query all the services that call service A, this relationship is âto (service A).â
 
-     You can run the [GET entity type API call](../../../../dynatrace-api/environment-api/entity-v2/get-entity-type.md "View the details of a monitored entity type via Dynatrace API.") on any entity type to get a list of the entity's from/to relationships and the related entity types. You can also run the [GET entities list](../../../../dynatrace-api/environment-api/entity-v2/get-entities-list.md "View a list of monitored entities via Dynatrace API.") API call to get a list of the actual entities in your environment along with their relationship values (for example, a `service` entity type can have a `calls` "from relationship" to another `service`).
+     You can run the GET entity type API call on any entity type to get a list of the entity's from/to relationships and the related entity types. You can also run the GET entities list API call to get a list of the actual entities in your environment along with their relationship values (for example, a `service` entity type can have a `calls` "from relationship" to another `service`).
 4. Select **Preview** to see entities matching the rule that were active and online in the last 72 hours. (Of course, when you actually apply the management zone, all entities matching the rules for the given timeframe will be displayed.)
 
    ![Entity-selector rule preview](https://dt-cdn.net/images/mz-rules-6a-998-ebeb2f11bd.png)
@@ -168,8 +168,8 @@ See [Examples](#examples) for different rule types and implementations.
   In cases where such propagation isn't available, you need to explicitly create rules for the entities you wish to add to a management zone. For example, a management-zone rule that applies to **Host groups** does not automatically grant access to the hosts within those groups; you need to explicitly add rules for the **Hosts** you wish to include in the management zone, as shown in [Examples](#examples) below.
 
   Management zones are always implicitly propagated to the following related entities. However, this does not apply to entity selector based rules.
-* When you add an entity using tags to a management zone as part of entity creation via API, there might be a delay in management-zone assignment depending on the number and complexity of your tagging rules. See [Best practices for scaling tagging and management-zone rules](../../../tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.") for best practices to speed up the time taken to assign tags and management zones within your monitoring environments.
-* You cannot define management-zone rules where the entity selector for one management zone filters by another management zone. Management zone predicates such as `mzID` or `mzName` are not allowed in entity selector strings. This means, for example, that you cannot define management zone A as containing hosts belonging to management zone B. Management-zone rules based on other management zones increase the number of runs made by the conditional decision engine and can greatly delay management-zone assignment. See also [Best practices for scaling tagging and management-zone rules](../../../tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.") for related information.
+* When you add an entity using tags to a management zone as part of entity creation via API, there might be a delay in management-zone assignment depending on the number and complexity of your tagging rules. See Best practices for scaling tagging and management-zone rules for best practices to speed up the time taken to assign tags and management zones within your monitoring environments.
+* You cannot define management-zone rules where the entity selector for one management zone filters by another management zone. Management zone predicates such as `mzID` or `mzName` are not allowed in entity selector strings. This means, for example, that you cannot define management zone A as containing hosts belonging to management zone B. Management-zone rules based on other management zones increase the number of runs made by the conditional decision engine and can greatly delay management-zone assignment. See also Best practices for scaling tagging and management-zone rules for related information.
 
   As a workaround, use the same entity selector string in both management zones. For example, consider that:
 
@@ -233,7 +233,7 @@ Specify that the **Browser monitor name exists**. **Preview** the rule to see th
 
 Additionally, set up similar rules for HTTP and third-party monitors to cover all synthetic monitors in your environment.
 
-If you'd like your user to be able to create or edit synthetic monitors in a management zone, you need to provide the **Manage monitoring settings** [permission](../role-based-permissions.md "Role-based permissions") at the management-zone or environment level.
+If you'd like your user to be able to create or edit synthetic monitors in a management zone, you need to provide the **Manage monitoring settings** permission at the management-zone or environment level.
 
 Example 3: Management-zone rules providing access to specific measurements of specific ingested metrics
 
@@ -270,7 +270,7 @@ If your management zone already provides access to the host through which logs a
 
 Example 5: Entity selector rule based on entity relationships
 
-In order to filter for services that directly call a service with the name `JourneyService`, you can run the [GET all entity types](../../../../dynatrace-api/environment-api/entity-v2/get-all-entity-types.md "View all types of monitored entities in your environment via Dynatrace API.") API call to check the entity type and relationships for services.
+In order to filter for services that directly call a service with the name `JourneyService`, you can run the GET all entity types API call to check the entity type and relationships for services.
 
 From the information gathered, you can now construct an entity-selector rule for the entity type `service` that has a `calls` "from relationship" to the entity type `service` with the name `JourneyService`:
 
@@ -282,9 +282,9 @@ This can also be written as `type(SERVICE),fromRelationship.calls(type(SERVICE) 
 
 ## Related topics
 
-* [Monitored entities API](../../../../dynatrace-api/environment-api/entity-v2.md "Learn about the Dynatrace Monitored entities API.")
-* [Environment API v2 - Entity selector](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.")
-* [Metrics API v2](../../../../dynatrace-api/environment-api/metric-v2.md "Retrieve metric information via Metrics v2 API.")
-* [Metrics API - Metric selector](../../../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.")
-* [Management zones and ingested log data (Logs Classic)](../../../../analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring.md "Find out how ingested log data is assigned to management zones.")
-* [Best practices for scaling tagging and management-zone rules](../../../tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.")
+* Monitored entities API
+* Environment API v2 - Entity selector
+* Metrics API v2
+* Metrics API - Metric selector
+* Management zones and ingested log data (Logs Classic)
+* Best practices for scaling tagging and management-zone rules

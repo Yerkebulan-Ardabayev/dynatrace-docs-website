@@ -4,7 +4,7 @@ source: https://www.dynatrace.com/docs/observe/digital-experience/web-applicatio
 scraped: 2026-03-02T21:21:35.206723
 ---
 
-RUM JavaScript — будь то [автоматически внедрённый](rum-injection.md "Configure automatic injection of the RUM JavaScript into the pages of your applications") или [вставленный вручную](set-up-agentless-real-user-monitoring.md "Set up agentless monitoring for your web applications.") в ваше веб-приложение — состоит из двух ключевых компонентов:
+RUM JavaScript — будь то автоматически внедрённый или вставленный вручную в ваше веб-приложение — состоит из двух ключевых компонентов:
 
 * **Код мониторинга**: JavaScript-код, предоставляющий возможности RUM, такие как захват действий пользователя.
 * **Конфигурация**: Конфигурация приложения, изначально используемая кодом мониторинга. Она обновляется позднее через ответ RUM-маяка при изменении конфигурации.
@@ -78,7 +78,7 @@ OneAgent JavaScript tag with SRI
 5. В разделе **JavaScript tag** установите **Script execution attribute** на **async**, **defer** или **No attribute**.
 6. Скопируйте фрагмент и вставьте его на свою страницу.
 
-При получении JavaScript tag через API вы можете управлять выполнением скрипта, передав параметр. Подробнее см. в разделе [GET JavaScript tag](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag.md "Retrieve the most recent JavaScript tag for manual insertion.").
+При получении JavaScript tag через API вы можете управлять выполнением скрипта, передав параметр. Подробнее см. в разделе GET JavaScript tag.
 
 ##### Добавление атрибута `crossorigin="anonymous"`
 
@@ -95,7 +95,7 @@ OneAgent JavaScript tag with SRI
 5. В разделе **JavaScript tag** включите **Add the crossorigin=anonymous attribute**.
 6. Скопируйте фрагмент и вставьте его на свою страницу.
 
-При получении JavaScript tag через API вы можете управлять добавлением атрибута `crossorigin="anonymous"`, передав параметр. Подробнее см. в разделе [GET JavaScript tag](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag.md "Retrieve the most recent JavaScript tag for manual insertion.").
+При получении JavaScript tag через API вы можете управлять добавлением атрибута `crossorigin="anonymous"`, передав параметр. Подробнее см. в разделе GET JavaScript tag.
 
 **OneAgent JavaScript tag** включает конфигурацию и ссылку на внешний файл, содержащий код мониторинга. Доступен как для вставки вручную, так и для автоматического внедрения.
 
@@ -142,9 +142,9 @@ OneAgent JavaScript tag with SRI
 5. В разделе **OneAgent JavaScript tag** установите **Script execution attribute** на **async**, **defer** или **No attribute**.
 6. Скопируйте фрагмент и вставьте его на свою страницу.
 
-При получении OneAgent JavaScript tag через API вы можете управлять выполнением скрипта, передав параметр. Подробнее см. в разделе [GET OneAgent JavaScript tag](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag.md "Retrieve the most recent OneAgent JavaScript tag for manual insertion.").
+При получении OneAgent JavaScript tag через API вы можете управлять выполнением скрипта, передав параметр. Подробнее см. в разделе GET OneAgent JavaScript tag.
 
-**OneAgent JavaScript tag with SRI** позволяет воспользоваться функцией браузера «целостность подресурсов» (SRI) для обеспечения неизменности кода мониторинга, см. [Use Subresource Integrity (SRI) for Real User Monitoring code](subresource-integrity.md "Use the Subresource Integrity (SRI) browser feature to ensure the integrity of Real User Monitoring code."). Включает конфигурацию, ссылку на внешний файл с кодом мониторинга и хэш целостности для этого кода. Поддерживается как для автоматического внедрения, так и для вставки вручную.
+**OneAgent JavaScript tag with SRI** позволяет воспользоваться функцией браузера «целостность подресурсов» (SRI) для обеспечения неизменности кода мониторинга, см. Use Subresource Integrity (SRI) for Real User Monitoring code browser feature to ensure the integrity of Real User Monitoring code."). Включает конфигурацию, ссылку на внешний файл с кодом мониторинга и хэш целостности для этого кода. Поддерживается как для автоматического внедрения, так и для вставки вручную.
 
 [Получить OneAgent JavaScript tag with SRI через API](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri.md)
 
@@ -189,7 +189,7 @@ OneAgent JavaScript tag with SRI
 5. В разделе **OneAgent JavaScript tag with SRI** установите **Script execution attribute** на **async**, **defer** или **No attribute**.
 6. Скопируйте фрагмент и вставьте его на свою страницу.
 
-При получении OneAgent JavaScript tag with SRI через API вы можете управлять выполнением скрипта, передав параметр. Подробнее см. в разделе [GET OneAgent JavaScript tag with SRI](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri.md "Retrieve the most recent OneAgent JavaScript tag with SRI for manual insertion.").
+При получении OneAgent JavaScript tag with SRI через API вы можете управлять выполнением скрипта, передав параметр. Подробнее см. в разделе GET OneAgent JavaScript tag with SRI.
 
 **Встроенный код** содержит как конфигурацию, так и RUM-код мониторинга, сводя количество веб-запросов к минимуму. Обратите внимание, что код мониторинга Session Replay не встраивается, поэтому при использовании Session Replay будет выполняться дополнительный запрос. Если ваш сайт состоит из множества отдельных страниц, использование встроенного кода может быть нецелесообразным, так как он увеличивает размер каждого документа. Однако это может быть подходящим выбором для одностраничных приложений (SPA).
 
@@ -220,9 +220,9 @@ OneAgent JavaScript tag with SRI
 
 Внешний файл с полной функциональностью кода мониторинга можно настроить для загрузки синхронно или асинхронно с использованием атрибута `defer`, см. [Выполнение скрипта](#code-snippet-script-execution).
 
-[Получить фрагмент кода через API](../../../../dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code/get-snippet-sync.md)
+Получить фрагмент кода через API
 
-[Получить фрагмент кода в отложенном режиме через API](../../../../dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code/get-snippet-async.md)
+Получить фрагмент кода в отложенном режиме через API
 
 ##### Обновления
 

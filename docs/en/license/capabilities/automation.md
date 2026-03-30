@@ -17,11 +17,11 @@ Dynatrace Automation empowers you to digitally transform with cloud-native answe
 There are three types of Automation workflows in Dynatrace.
 
 * Standard workflows: These are automation workflows that trigger two or more tasks.
-* [Simple workflows](../../analyze-explore-automate/workflows/simple-workflow.md "Build and run a simple workflow."): Single-task workflows with restricted functionality.
-* [Draft-only workflows](../../analyze-explore-automate/workflows/building.md "Create and edit workflows in Dynatrace Workflows."): Workflows that are not yet deployed, or which have been un-deployed.
+* Simple workflows: Single-task workflows with restricted functionality.
+* Draft-only workflows: Workflows that are not yet deployed, or which have been un-deployed.
 
 ## Related topics
 
-* [Calculate your consumption of Automation Workflow (DPS)](automation/automation.md "Learn how your consumption of Dynatrace Automation Workflow DPS capability is billed and charged.")
-* [License Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* Calculate your consumption of Automation Workflow (DPS)
+* License Dynatrace, the licensing model for all Dynatrace capabilities.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

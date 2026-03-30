@@ -41,13 +41,13 @@ The following log line is an example of the raw data this article focuses on.
 
 Prior knowledge
 
-* [Dynatrace Query Language](../../grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](../concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* Dynatrace Query Language
+* Processing in OpenPipeline
 
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* Either [License Dynatrace](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that includes [Log Analytics (DPS)](../../../license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") capabilities or [DDUs for Log Management and Analytics](../../../license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics.md "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.").
+* Either License Dynatrace, the licensing model for all Dynatrace capabilities.") license that includes Log Analytics (DPS) capabilities or DDUs for Log Management and Analytics.
 
 ## Steps
 

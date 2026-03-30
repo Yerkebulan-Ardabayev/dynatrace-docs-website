@@ -32,5 +32,5 @@ API приёма логов автоматически преобразует к
 
 ## Связанные темы
 
-* [API приёма логов](../lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
-* [Приём логов через OneAgent](../lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+* API приёма логов
+* Приём логов через OneAgent

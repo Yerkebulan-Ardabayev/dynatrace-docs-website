@@ -12,7 +12,7 @@ updated: 2026-02-09
 * 1-min read
 * Published Nov 15, 2017
 
-Dynatrace provides infrastructure monitoring as well as full-stack monitoring of your applications and services through automatic instrumentation with our OneAgent technology. Learn how to deploy Dynatrace on the [supported platforms](ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+Dynatrace provides infrastructure monitoring as well as full-stack monitoring of your applications and services through automatic instrumentation with our OneAgent technology. Learn how to deploy Dynatrace on the supported platforms.
 
 ## Cloud platforms
 
@@ -60,17 +60,17 @@ Set up and configure Dynatrace on Mesos/Marathon.](ingest-from/setup-on-containe
 
 ## Servers
 
-[### AIX
+### AIX
 
-Install and use OneAgent on AIX.](ingest-from/dynatrace-oneagent/installation-and-operation/aix.md "Learn how to install OneAgent on AIX, how to customize installation, and more.")[### Linux
+Install and use OneAgent on AIX.### Linux
 
-Install and use OneAgent on Linux.](ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Learn how to install OneAgent on Linux, how to customize installation, and more.")[### Solaris
+Install and use OneAgent on Linux.### Solaris
 
-Install and use OneAgent on Solaris.](ingest-from/dynatrace-oneagent/installation-and-operation/solaris.md "Learn how to install, update and troubleshoot OneAgent on Solaris.")[### Windows
+Install and use OneAgent on Solaris.### Windows
 
-Install and use OneAgent on Windows.](ingest-from/dynatrace-oneagent/installation-and-operation/windows.md "Learn how to install OneAgent on Windows, how to customize installation, and more.")[### zOS
+Install and use OneAgent on Windows.### zOS
 
-Install and use OneAgent on zOS.](ingest-from/dynatrace-oneagent/installation-and-operation/zos.md "Install, configure, and manage Dynatrace modules on z/OS.")
+Install and use OneAgent on zOS.
 
 ## Other options
 

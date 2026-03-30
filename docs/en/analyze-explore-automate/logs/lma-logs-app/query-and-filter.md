@@ -28,7 +28,7 @@ Query logs by specifying a segment and filter statement with keys and values wit
 
 ![Filter field in Logs app](https://dt-cdn.net/images/untitled-001-1835-80e79a2919.png)
 
-[Filter with facets](facets.md "Filter with facets in the Dynatrace Logs app.") to add keys and and values to your filter automatically.
+Filter with facets to add keys and and values to your filter automatically.
 
 Use the date picker to apply the correct timeframe for your query.
 
@@ -43,7 +43,7 @@ Apply a segment filter to your query whenever possible.
 * Segments let you filter on logs and other observability data with a consistent filter.
 * Segments are convenient to limit your queries to only specific Grail buckets, which reduces the amount of data that you need to scan to get the relevant results.
 
-  For additional details, see [Segment logs by bucket](../../../manage/segments/use-cases/segments-use-cases-logs-by-bucket.md "Segment logs by bucket with segments") and the [best practices for logs](../lma-best-practices.md#use-bucket-filters "Best practices for setting up Log Management and Analytics with Dynatrace.").
+  For additional details, see Segment logs by bucket and the [best practices for logs](../lma-best-practices.md#use-bucket-filters "Best practices for setting up Log Management and Analytics with Dynatrace.").
 * Segments let you save and reuse commonly used filters, which are applicable in ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs** and across other Dynatrace apps.
 
 ## Explore recent filters and pin filters
@@ -64,7 +64,7 @@ Use `*` instead of a keyname and `~` as the comparator to search for your phrase
 
 For example, the `* ~ "failed to charge card"` filter matches logs that contain this phrase in any field.
 
-This is equivalent to using the [`search`](../../../platform/grail/dynatrace-query-language/commands/filtering-commands.md#search "DQL filter and search commands") DQL command.
+This is equivalent to using the `search` DQL command.
 
 ### Search from `content`
 
@@ -82,7 +82,7 @@ For example, the `content = "*card*"` filter matches logs that contain the `card
 
 This is equivalent to using the [`matchesValue`](../../../platform/grail/dynatrace-query-language/functions/string-functions.md#matchesValue "A list of DQL string functions.") DQL string function.
 
-For the full reference, see [Filter field](../../../discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
+For the full reference, see Filter field.
 
 ## Filter on a field with multiple values
 
@@ -102,7 +102,7 @@ Note that suggestions are presented based on actual values queried in the backgr
 
 ## Related topics
 
-* [Filter field](../../../discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.")
-* [Filter with facets](facets.md "Filter with facets in the Dynatrace Logs app.")
-* [Segment logs by bucket](../../../manage/segments/use-cases/segments-use-cases-logs-by-bucket.md "Segment logs by bucket with segments")
-* [Log Management and Analytics best practices](../lma-best-practices.md "Best practices for setting up Log Management and Analytics with Dynatrace.")
+* Filter field
+* Filter with facets
+* Segment logs by bucket
+* Log Management and Analytics best practices

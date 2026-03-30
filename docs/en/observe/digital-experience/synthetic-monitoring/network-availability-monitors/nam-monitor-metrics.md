@@ -103,9 +103,9 @@ scraped: 2026-03-04T21:29:54.840473
 
 ## DQL queries to extract data
 
-Use [DQL](../../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") queries to extract data with metrics and dimensions.
+Use DQL queries to extract data with metrics and dimensions.
 
-The following examples use [Notebooks](../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") to demonstrate how to work with the results of network availability monitors. They use result metrics as a starting point to explore possibilities of extracting and interpreting data with DQL.
+The following examples use Notebooks ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") to demonstrate how to work with the results of network availability monitors. They use result metrics as a starting point to explore possibilities of extracting and interpreting data with DQL.
 
 ### Host entity status for ICMP requests
 

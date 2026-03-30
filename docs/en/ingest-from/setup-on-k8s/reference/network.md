@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:30:57.484657
 
 To ensure Dynatrace Operator components work correctly in a Kubernetes cluster, they need to be able to communicate with both the Dynatrace Cluster and the Kubernetes cluster.
 
-Dynatrace Operator components are accessible through specific ports and access various resources inside and outside the Kubernetes cluster. For more details on which resources are accessed within the Kubernetes cluster, see the [Operator RBAC permissions](security.md "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require") reference page.
+Dynatrace Operator components are accessible through specific ports and access various resources inside and outside the Kubernetes cluster. For more details on which resources are accessed within the Kubernetes cluster, see the Operator RBAC permissions reference page.
 
 ## Ingress traffic
 
@@ -39,7 +39,7 @@ Depending on your setup, the port may differ from the default.
 
 2
 
-Communication with hosts must be allowed as configured in [DynaKube](dynakube-parameters.md "List the available parameters for setting up Dynatrace Operator on Kubernetes.") (`apiUrl`) or [EdgeConnect](edgeconnect-parameters.md "List of configuration parameters for EdgeConnect.") (`apiServer`) custom resources. Different communication endpoints may be used as fallback to ensure proper connection.
+Communication with hosts must be allowed as configured in DynaKube (`apiUrl`) or EdgeConnect (`apiServer`) custom resources. Different communication endpoints may be used as fallback to ensure proper connection.
 
 3
 
@@ -47,7 +47,7 @@ Only required when `codeModulesImage` field is used.
 
 4
 
-[Supported connectivity schemes for ActiveGates](../../dynatrace-activegate/supported-connectivity-schemes-for-activegates.md "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents.")
+Supported connectivity schemes for ActiveGates
 
 5
 

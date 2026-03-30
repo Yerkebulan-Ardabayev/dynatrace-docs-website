@@ -16,8 +16,8 @@ Dynatrace supports running ActiveGate in a container. As an example of a contain
 ## Prerequisites
 
 1. [Create an access token with `InstallerDownload`](../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.") scope
-2. [Create an authentication token](activegate-security.md#generate-individual "Secure ActiveGates with dedicated tokens.")
-3. Determine the ActiveGate communication endpoints and authentication. Use the [GET connectivity information for ActiveGate](../../dynatrace-api/environment-api/deployment/activegate/get-activegate-connectivity.md "View the connectivity information for ActiveGate via Dynatrace API.") API.
+2. Create an authentication token
+3. Determine the ActiveGate communication endpoints and authentication. Use the GET connectivity information for ActiveGate API.
 4. Get your kube-system namespace UUID
    How to extract the kube-system namespace UUID
 
@@ -37,7 +37,7 @@ Dynatrace supports running ActiveGate in a container. As an example of a contain
 
 ## System requirements
 
-A Dynatrace ActiveGate image is supported on a variety of Kubernetes and OpenShift versions. For a complete list, see [Technology support - Kubernetes](../technology-support/support-model-and-issues.md "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues").
+A Dynatrace ActiveGate image is supported on a variety of Kubernetes and OpenShift versions. For a complete list, see Technology support - Kubernetes.
 
 Images are available for the following architectures:
 
@@ -50,17 +50,17 @@ Images are available for the following architectures:
 
 To prioritize seamless integration with your tooling and adaptability to your needs, we offer our container images in various ways to maximize flexibility:
 
-* [Dynatrace built-in registry](../setup-on-k8s/guides/container-registries.md#default "Manage container registries with Dynatrace") default
-* [Public registries](../setup-on-k8s/guides/container-registries/use-public-registry.md#supported-public-registries "Use a public registry")
-* [Bring your own private registry](../setup-on-k8s/guides/container-registries/prepare-private-registry.md "Store Dynatrace images in private registries") Recommended
+* Dynatrace built-in registry default
+* Public registries
+* Bring your own private registry Recommended
 
-Please note that multi-arch Dynatrace container images, ensuring compatibility across various platforms are available from [public registries only](../setup-on-k8s/guides/container-registries/use-public-registry.md#supported-public-registries "Use a public registry"). Dynatrace built-in registry provides only x86-64 images.
+Please note that multi-arch Dynatrace container images, ensuring compatibility across various platforms are available from public registries only. Dynatrace built-in registry provides only x86-64 images.
 
 ## Deployment
 
 Dynatrace provides signed container images to ensure authenticity and integrity, along with SBOMs that list all included software components.
 Verifying the signatures and reviewing the SBOMs enables effective vulnerability management and risk mitigation.
-For verification details, see [Verify Software Bill of Materials (SBOM) Attestation](../setup-on-k8s/guides/container-registries/verify-image-signature.md#sbom-attestation-verification "Verify Dynatrace image signatures").
+For verification details, see Verify Software Bill of Materials (SBOM) Attestation.
 
 Private or public registry
 
@@ -589,7 +589,7 @@ Dynatrace built-in registry
    Add environment configuration details to the `ag-deployment-example.yaml` file, making sure to replace:
 
    * `CPU_ARCHITECTURE` with your CPU architecture. Possible values are `amd64`, `arm64`, `s390x`, and `ppcle64`
-   * `<REPOSITORY_URL>` with one of the [supported registries](../setup-on-k8s/guides/container-registries/use-public-registry.md#supported-public-registries "Use a public registry")
+   * `<REPOSITORY_URL>` with one of the supported registries
    * `<IMAGE_TAG>` with correct image tag ([examples](../setup-on-k8s/guides/container-registries/prepare-private-registry.md#image-tags "Store Dynatrace images in private registries"))
    * `<YOUR_ENVIRONMENT_ID>` with your environment ID
 
@@ -644,9 +644,9 @@ Dynatrace built-in registry
 
      Actual figures depend on your environment.
 
-     These limits should be taken as a guideline. They're designed to prevent ActiveGate startup process slowdown and excessive node resource usage. The default values cover a large range of different cluster sizes; you can modify them according to your needs, based on the ActiveGate [self-monitoring metrics](../../analyze-explore-automate/metrics-classic/self-monitoring-metrics.md#activegate-insights "Explore the complete list of self-monitoring Dynatrace metrics.").
+     These limits should be taken as a guideline. They're designed to prevent ActiveGate startup process slowdown and excessive node resource usage. The default values cover a large range of different cluster sizes; you can modify them according to your needs, based on the ActiveGate self-monitoring metrics.
 
-   For additional configuration options, see [Containerized ActiveGate configuration](activegate-in-container/configuration.md "Learn how to configure containerized ActiveGate.").
+   For additional configuration options, see Containerized ActiveGate configuration.
 5. Deploy ActiveGate.
 
    Kubernetes
@@ -1290,9 +1290,9 @@ Dynatrace built-in registry
 
      Actual figures depend on your environment.
 
-     These limits should be taken as a guideline. They're designed to prevent ActiveGate startup process slowdown and excessive node resource usage. The default values cover a large range of different cluster sizes; you can modify them according to your needs, based on the ActiveGate [self-monitoring metrics](../../analyze-explore-automate/metrics-classic/self-monitoring-metrics.md#activegate-insights "Explore the complete list of self-monitoring Dynatrace metrics.").
+     These limits should be taken as a guideline. They're designed to prevent ActiveGate startup process slowdown and excessive node resource usage. The default values cover a large range of different cluster sizes; you can modify them according to your needs, based on the ActiveGate self-monitoring metrics.
 
-   For additional configuration options, see [Containerized ActiveGate configuration](activegate-in-container/configuration.md "Learn how to configure containerized ActiveGate.").
+   For additional configuration options, see Containerized ActiveGate configuration.
 6. Deploy ActiveGate.
 
    Kubernetes
@@ -1334,12 +1334,12 @@ To achieve better performance, we highly recommend applying the steps above.
 
 * To monitor Kubernetes/Openshift, select one of the following:
 
-  + Use [Dynatrace Operator](../setup-on-k8s/deployment.md "Deploy Dynatrace Operator on Kubernetes")
-  + Deploy [ActiveGate directly as a StatefulSet](../setup-on-k8s/deployment/other/ag-statefulset.md "Install and configure ActiveGate in Kubernetes as a StatefulSet.")
-* To collect logs from Kubernetes, use [Log Monitoring](../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes.md "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.").
+  + Use Dynatrace Operator
+  + Deploy ActiveGate directly as a StatefulSet
+* To collect logs from Kubernetes, use Log Monitoring.
 
 ## FIPS-compliant images
 
 ActiveGate version 1.315+
 
-There is a dedicated, FIPS-compliant ActiveGate image available. See [ActiveGate FIPS compliance](activegate-fips-compliance.md "Learn about ActiveGate FIPS compliance") for information on requirements, limitations, where to get the image, and how to verify the deployment.
+There is a dedicated, FIPS-compliant ActiveGate image available. See ActiveGate FIPS compliance for information on requirements, limitations, where to get the image, and how to verify the deployment.

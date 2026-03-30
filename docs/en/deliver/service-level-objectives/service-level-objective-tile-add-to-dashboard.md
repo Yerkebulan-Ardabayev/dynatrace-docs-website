@@ -50,7 +50,7 @@ The SLO name is used as the title of your dashboard tile. You can edit the tile 
 
    ![Screenshot of Service-level objective panel with the Visual tab](https://dt-cdn.net/images/wtp95711-dev-apps-dynatracelabs-com-ui-apps-dynatrace-dashboards-dashboard-f8f0ee42-e4a3-4b63-a3af-ca753060d7f7-3-2400-a36ac46dc8.png)
 
-The tile won't be functional until you select an SLO. For more information, see [Edit a service-level objective (SLO) tile in a dashboard](service-level-objective-tile-edit-in-dashboard.md "Edit your service-level objective tiles directly in your dashboard.").
+The tile won't be functional until you select an SLO. For more information, see Edit a service-level objective (SLO) tile in a dashboard.
 
 You added your new SLO tile to your dashboard.
 

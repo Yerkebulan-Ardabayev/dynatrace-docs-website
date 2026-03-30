@@ -22,11 +22,11 @@ Log processing comprises the following steps.
 
 ### 1. Automatic log processing on ingest
 
-Dynatrace processes logs upon ingestion to ensure that your log lines are ready for automation, troubleshooting, and analysis. This unified approach allows you to switch between different [log ingest strategies](lma-log-ingestion.md "Stream log data to Dynatrace.") with zero or minimum configuration.
+Dynatrace processes logs upon ingestion to ensure that your log lines are ready for automation, troubleshooting, and analysis. This unified approach allows you to switch between different log ingest strategies with zero or minimum configuration.
 
 Automatic log processing on ingest includes timestamp extraction, severity extraction, and log payload parsing.
 
-For more details, see [Automatic log processing at ingestion](lma-log-processing/lma-automatic-processing.md "Ingest and process logs automatically with OneAgent, Log Monitoring API v2, or Dynatrace OTLP API.").
+For more details, see Automatic log processing at ingestion.
 
 ### 2. Pre-processing with OpenPipeline
 
@@ -34,16 +34,16 @@ Dynatrace applies log pre-processing to enrich, normalize, and prepare log data 
 
 Pre-processing with OpenPipeline ensures consistent log structure, improved queryability, and seamless integration with Dynatrace observability features.
 
-For more information, see [Log pre-processing with OpenPipeline with ready-made bundles](lma-log-processing/lma-pre-processing.md "Streamline log analysis by enriching and normalizing data using ready-made technology bundles for popular technologies before it enters OpenPipeline.").
+For more information, see Log pre-processing with OpenPipeline with ready-made bundles.
 
 ### 3. Log processing with OpenPipeline
 
-Log processing with OpenPipeline involves using the [OpenPipeline solution](../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to handle logs before they are stored in Grail. This step includes different stages, such as processing, metric and data extraction, permissions, and storage. See [Log processing with OpenPipeline](lma-log-processing/lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.") for the detailed overview of all the stages.
+Log processing with OpenPipeline involves using the OpenPipeline solution to handle logs before they are stored in Grail. This step includes different stages, such as processing, metric and data extraction, permissions, and storage. See Log processing with OpenPipeline for the detailed overview of all the stages.
 
-We recommend utilizing log processing with OpenPipeline as a scalable, powerful solution to manage, process, and analyze logs. If you don't have access to OpenPipeline, use the [classic log processing pipeline](lma-classic-log-processing.md "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
+We recommend utilizing log processing with OpenPipeline as a scalable, powerful solution to manage, process, and analyze logs. If you don't have access to OpenPipeline, use the classic log processing pipeline.
 
 ## Related topics
 
-* [OpenPipeline](../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Data flow in OpenPipeline](../../platform/openpipeline/concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
-* [Processing in OpenPipeline](../../platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* OpenPipeline
+* Data flow in OpenPipeline
+* Processing in OpenPipeline

@@ -19,7 +19,7 @@ To illustrate the process, this guide uses a travel booking site as an exampleâ
 
 In this tutorial, weâll use the [Dynatrace demo application easyTravelï»¿](https://dt-url.net/rj034fg) as an example. easyTravel lists available journeys, and when a user selects a journey, its details are displayed.
 
-The application is instrumented with the RUM JavaScript, and the captured data is mapped to a [frontend](../concepts/frontends.md "Learn about the frontend concept in the New RUM Experience.") named `easytravel`. Each time a user navigates from one page to anotherâfor example, from the home page to a specific journeyâa [navigation event](../web-frontends/concepts/pages-views-and-navigations.md#navigations "Understand how pages, views, and navigations are defined for web frontends the New RUM Experience.") is captured.
+The application is instrumented with the RUM JavaScript, and the captured data is mapped to a frontend named `easytravel`. Each time a user navigates from one page to anotherâfor example, from the home page to a specific journeyâa [navigation event](../web-frontends/concepts/pages-views-and-navigations.md#navigations "Understand how pages, views, and navigations are defined for web frontends the New RUM Experience.") is captured.
 
 Navigation events provide the information needed to analyze the number of views per journey. Each journey has a unique ID. When a soft navigation to a specific journey occurs, the URL path updates to include that journey IDâfor example, `/easytravel/journeys/24859438`. This value is captured in the `view.url.path` field of the navigation event.
 
@@ -56,12 +56,12 @@ While this query works well for short-term analysis, itâs not ideal for mon
 
 Prior knowledge
 
-* [Dynatrace Query Language](../../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](../../../../platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* Dynatrace Query Language
+* Processing in OpenPipeline
 
 Prerequisites
 
-Ensure you have the permissions described in [New RUM Experience permissions](../permissions.md "See what permissions you need to set up the New RUM Experience.").
+Ensure you have the permissions described in New RUM Experience permissions.
 
 ## How-to
 
@@ -136,5 +136,5 @@ timeseries count = sum(easytravel.journey_view_count), by: {journey_id}, interva
 
 ## Related topics
 
-* [Dynatrace Query Language](../../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](../../../../platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* Dynatrace Query Language
+* Processing in OpenPipeline

@@ -16,7 +16,7 @@ The [`dynatrace-opentelemetry-azure-functions` packageï»¿](https://pypi.org/p
 
 ## Prerequisites
 
-Ensure that you have followed the **initial configuration** steps described in [Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan](opentelemetry-on-azure-functions.md "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.") before using the packages below.
+Ensure that you have followed the **initial configuration** steps described in Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan before using the packages below.
 
 * dynatrace-opentelemetry-azure-functions version 1.245+
 
@@ -242,5 +242,5 @@ return func.HttpResponse("Hello world", status_code=200)
 
 ## Related topics
 
-* [Set up Dynatrace on Microsoft Azure](../../../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
+* Set up Dynatrace on Microsoft Azure
 * [Azure monitoringï»¿](https://www.dynatrace.com/technologies/azure-monitoring/)

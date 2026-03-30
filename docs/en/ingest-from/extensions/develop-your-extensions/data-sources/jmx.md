@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:36:35.777912
 
 Dynatrace provides a framework to create metrics from [JMX MBeansï»¿](https://en.wikipedia.org/wiki/Java_Management_Extensions). Every process monitored by OneAgent Java code module is capable of processing JMX 2.0 extensions.
 
-You need to enable the **Java Metric Extensions (JMX)** [OneAgent feature](../../../dynatrace-oneagent/oneagent-features.md "Manage OneAgent features globally and per process group.")
+You need to enable the **Java Metric Extensions (JMX)** OneAgent feature
 
 ## Background
 
@@ -31,7 +31,7 @@ Numeric attributes can be directly used to produce metrics in Dynatrace. It's al
 We assume the following:
 
 * You possess sufficient JMX subject matter expertise to create an extension.
-* You're familiar with [Extensions basic concepts](../../concepts.md "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](../extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework.").
+* You're familiar with Extensions basic concepts and the general structure of the extension YAML file.
 
 ## Supported Dynatrace versions
 
@@ -136,4 +136,4 @@ OneAgent will automatically add the following dimensions to your metric:
 * `dt.metrics.source`
 * `dt.extension.config.id`
 
-For more information, see [JMX data source reference](jmx/jmx-schema-reference.md "Learn about JMX extensions in the Extensions framework.").
+For more information, see JMX data source reference.

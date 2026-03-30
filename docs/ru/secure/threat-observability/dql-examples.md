@@ -7,9 +7,9 @@ scraped: 2026-03-06T21:20:31.345755
 * Latest Dynatrace
 * How-to guide
 
-Эта страница была обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список изменений и действий, необходимых для выполнения миграции, см. в [руководстве по миграции таблицы безопасности Grail](migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+Эта страница была обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список изменений и действий, необходимых для выполнения миграции, см. в руководстве по миграции таблицы безопасности Grail.
 
-Приведённые ниже примеры иллюстрируют, как разрезать [данные безопасности](concepts.md#security-data "Basic concepts related to Threat Observability") и создавать мощные и гибкие отчёты по безопасности с помощью [Dynatrace Query Language (DQL)](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.").
+Приведённые ниже примеры иллюстрируют, как разрезать [данные безопасности](concepts.md#security-data "Basic concepts related to Threat Observability") и создавать мощные и гибкие отчёты по безопасности с помощью Dynatrace Query Language (DQL).
 
 ## Запросы к событиям Dynatrace
 

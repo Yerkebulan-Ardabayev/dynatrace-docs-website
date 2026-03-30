@@ -17,7 +17,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `ReadConfig` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ## Parameters
 
@@ -194,4 +194,4 @@ Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashb
 
 ## Related topics
 
-* [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+* Dashboards

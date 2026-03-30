@@ -18,7 +18,7 @@ This article contains information on how to manage your facets to correspond to 
 
 Prerequisites
 
-* [Set up Grail permissions for Distributed Tracing](../permissions.md "Manage permissions for Distributed Tracing powered by Grail.").
+* Set up Grail permissions for Distributed Tracing.
 
 ## Manage all facets
 

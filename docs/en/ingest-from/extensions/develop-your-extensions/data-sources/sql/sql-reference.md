@@ -30,7 +30,7 @@ We recommend the following when developing custom SQL extensions:
 * Only one query can be executed at a time
 * Queries containing comments are rejected
 * To prevent data integrity violations (manipulating, changing, or deleting data), the SQL data source executes the queries in rolled-back transactions. For this reason, databases that don't support transactions are not supported as a SQL data source.
-* Make sure that the connection string used in the JDBC monitoring configuration doesn't expose any sensitive data. For more information, see [JDBC monitoring configuration](jdbc-monitoring.md "JDBC extensions in the Extensions framework.").
+* Make sure that the connection string used in the JDBC monitoring configuration doesn't expose any sensitive data. For more information, see JDBC monitoring configuration.
 
 ## Data scope
 
@@ -679,7 +679,7 @@ The Dynatrace Extensions framework supports metric payloads in the gauge (`gauge
 
 ## Metric metadata
 
-An Extension can define metadata for each metric available in Dynatrace. For example, you might want to add the metric display name and the unit, both of which can be used for filtering in the [Metrics browser](../../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser.").
+An Extension can define metadata for each metric available in Dynatrace. For example, you might want to add the metric display name and the unit, both of which can be used for filtering in the Metrics browser.
 
 Define all metric metadata in the `metrics` section of the extension's YAML file to ensure it's correctly associated with the metric configuration.
 
@@ -809,4 +809,4 @@ A metric inherits the feature set of a subgroup, which in turn inherits the feat
 
 After you define the scope of your configuration, you need to identify the network devices you'd like to collect data from and identify the ActiveGates that will execute the extension and connect to your devices.
 
-The monitoring configuration format depends on the database provider. For more information, see [Oracle Database monitoring configuration](oracle-monitoring.md "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.").
+The monitoring configuration format depends on the database provider. For more information, see Oracle Database monitoring configuration.

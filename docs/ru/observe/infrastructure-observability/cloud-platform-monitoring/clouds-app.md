@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:12:43.905190
 * Используйте свои (существующие) облачные теги для маршрутизации уведомлений, определения владельцев или распределения затрат.
 * Воспользуйтесь готовыми дашбордами для экономии времени и мгновенного получения аналитических данных.
 
-Базовые данные наблюдаемости обеспечиваются [Grail](../../../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), который поддерживает гибкую аналитику с помощью [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") в ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** и ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
+Базовые данные наблюдаемости обеспечиваются Grail, который поддерживает гибкую аналитику с помощью Dynatrace Query Language в ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** и ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
 
 ![Получите полное представление о ваших мультиоблачных средах и просмотрите полный инвентарь облачных ресурсов](https://cdn.hub.central.dynatrace.com/hub/console/drafts/170/media/clouds-app-overview-aws-and-azure.png)![Детали проблем, связанных с выбранными облачными ресурсами, легко анализировать](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/8822a738-a2bf-4d75-bdfa-beabbb150a0e.png)![Просмотр полных деталей конфигурации облачных сервисов](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/b96f7374-5a8e-4c7a-b256-d79f469803a4.png)![Начните работу сразу с готовыми дашбордами. Настройте их в соответствии с вашими потребностями.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/170/media/08-ready-made-dashboard-aws-lambda.png)![Используйте готовые оповещения о состоянии и предупреждающие сигналы, а также пользовательские шаблоны оповещений для оценки работоспособности облачных сервисов.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/d7350ea9-6129-4818-8798-27514232ca8f.png)![Легко и быстро настройте новое подключение AWS. Новые облачные подключения упрощают процесс подключения для пользователей.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/170/media/06-clouds-app-new-aws-connection_2.png)![Вы по-прежнему можете использовать Explorer (Classic connections) для классических облачных подключений](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/f743e7e6-ec1d-488c-b0ae-5d5a3a8c98e5.png)
 
@@ -31,14 +31,14 @@ scraped: 2026-03-06T21:12:43.905190
 Классические облачные подключения (AWS, Azure, GCP)
 
 * SaaS-среда Dynatrace на базе Grail и AppEngine, размещённая в любом регионе AWS или подходящем регионе Azure
-* Требуется [лицензия DPS](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") со следующими возможностями:
+* Требуется лицензия DPS, the licensing model for all Dynatrace capabilities.") со следующими возможностями:
 
-  + [Metrics powered by Grail](../../../license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
-  + [Logs powered by Grail](../../../license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.")
-  + [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+  + Metrics powered by Grail
+  + Logs powered by Grail
+  + Events powered by Grail
 
 * SaaS-среда Dynatrace на базе Grail и AppEngine
-* Доступно для [лицензии DPS](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") и [классической лицензии](../../../license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
+* Доступно для лицензии DPS, the licensing model for all Dynatrace capabilities.") и классической лицензии.
 
 См. [концепции](#concepts) для сравнения классических и новых облачных подключений.
 
@@ -129,7 +129,7 @@ document:documents:read
 * На боковой панели слева вы можете выбрать определённую категорию сервисов (например,  **Containers** или  **Functions**) или проанализировать все сервисы. Кроме того, вы можете быстро отфильтровать данные по предопределённым атрибутам, актуальным для выбранной категории. Выберите любой атрибут на боковой панели фасетов и нажмите **Update**, чтобы получить результаты. Поле фильтра обновится в соответствии с вашим выбором.
 * Также вы можете выбрать поле фильтра вверху для просмотра предложений и ввода параметров фильтрации. Добавьте дополнительные условия для сужения результатов. Критерии одного типа группируются по логике `OR`. Критерии разных типов группируются по логике `AND`. Вы можете фильтровать сервисы по тегам, статусу оповещений и атрибутам, таким как имя или регион. Это помогает сосредоточиться на конкретных подмножествах сервисов на основе ваших критериев.
 
-  Подробнее о синтаксисе поля фильтра см. в разделе [Поле фильтра](../../../discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
+  Подробнее о синтаксисе поля фильтра см. в разделе Поле фильтра.
 * Вы можете изучать данные в таблице, используя доступные перспективы:
 
   + **Health**
@@ -157,7 +157,7 @@ document:documents:read
 
   Оповещения о состоянии и предупреждающие сигналы отображаются в ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 
-Вы можете легко активировать готовые оповещения о состоянии и предупреждающие сигналы для своих учётных записей AWS либо при [подключении AWS](../../../ingest-from/amazon-web-services/create-an-aws-connection/aws-connection-app-settings.md "Onboard your AWS environments and create AWS connections via the Settings app."), либо в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**.
+Вы можете легко активировать готовые оповещения о состоянии и предупреждающие сигналы для своих учётных записей AWS либо при подключении AWS, либо в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**.
 
 Если вы хотите создать новые или обновить готовые оповещения о состоянии и предупреждающие сигналы, перейдите в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Analyze and alert** > **Alerts** > **Cloud services**, где вы можете создавать, обновлять и включать/отключать оповещения для ваших подключений.
 
@@ -180,7 +180,7 @@ document:documents:read
 
 Dynatrace предоставляет предопределённые шаблоны оповещений для настройки дополнительных пользовательских оповещений для популярных облачных сервисов. Эти шаблоны дополняют готовые оповещения о состоянии и предупреждающие сигналы.
 
-Вы можете легко создать новые [пользовательские оповещения](../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") непосредственно в ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**, выбрав шаблон и нажав  **New Alert**.
+Вы можете легко создать новые пользовательские оповещения непосредственно в ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**, выбрав шаблон и нажав  **New Alert**.
 
 Далее вы можете либо настроить оповещение в мастере обнаружения аномалий, либо создать оповещение одним нажатием.
 
@@ -241,7 +241,7 @@ Dynatrace предоставляет предопределённые шабло
 
 * Этот режим выделяет наиболее релевантные метрики, связанные с оповещением, и сужает временной интервал до времени начала и окончания выбранной проблемы.
 * Кроме того, он обеспечивает быстрый доступ к базовой проблеме, позволяя эффективно диагностировать и устранять неполадки.
-* Вы можете использовать [агентный и генеративный ИИ Dynatrace Intelligence](../../../dynatrace-intelligence/copilot.md "Learn about Dynatrace Intelligence agentic and generative AI.") для получения дополнительных сведений о проблеме и возможных шагах по её устранению.
+* Вы можете использовать агентный и генеративный ИИ Dynatrace Intelligence для получения дополнительных сведений о проблеме и возможных шагах по её устранению.
 
 **Режим проблемы** всегда активен, когда вы переходите от конкретной проблемы в [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](../../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.") в ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 
@@ -255,7 +255,7 @@ Dynatrace предоставляет предопределённые шабло
 
 * ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**
 
-  Откройте ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, выберите [Готовые дашборды](../../../analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards.md "Use ready-made dashboards to visualize your data right out of the box.") в левом меню и выполните поиск по запросу `aws`.
+  Откройте ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, выберите Готовые дашборды в левом меню и выполните поиск по запросу `aws`.
 * ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**
 
   + Откройте ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** и выберите вкладку **Overview New**. Затем вы можете выбрать один из наиболее популярных дашбордов (например, AWS Lambda) или нажать **Browse all dashboards**.
@@ -265,9 +265,9 @@ Dynatrace предоставляет предопределённые шабло
 
 ### Сегменты (Новые подключения)
 
-[Сегменты](../../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") позволяют логически структурировать и удобно фильтровать данные наблюдаемости в приложениях на платформе Dynatrace. Сегменты доступны на новой вкладке **Explorer New** и могут быть легко определены для новых облачных подключений, поскольку все данные (включая [узлы Smartscape](../../../platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.")) хранятся в Grail.
+Сегменты позволяют логически структурировать и удобно фильтровать данные наблюдаемости в приложениях на платформе Dynatrace. Сегменты доступны на новой вкладке **Explorer New** и могут быть легко определены для новых облачных подключений, поскольку все данные (включая узлы Smartscape) хранятся в Grail.
 
-Пошаговое руководство по определению сегментов для узлов Smartscape см. в разделе [Фильтрация узлов Smartscape с помощью сегментов](../../../manage/segments/getting-started/segments-getting-started-filter-smartscape-nodes.md "Learn how to filter Smartscape nodes by using segments in Dashboards."). Вы можете использовать любое первичное поле Grail (а в будущем также теги) для удобного определения простых сегментов для **всех данных**:
+Пошаговое руководство по определению сегментов для узлов Smartscape см. в разделе Фильтрация узлов Smartscape с помощью сегментов. Вы можете использовать любое первичное поле Grail (а в будущем также теги) для удобного определения простых сегментов для **всех данных**:
 
 * [Первичные поля Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.") (например, `aws.account.id`, `aws.region`)
 * Первичные теги Grail (в будущем)

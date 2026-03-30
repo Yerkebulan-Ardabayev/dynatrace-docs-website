@@ -1361,7 +1361,7 @@ Allows modifying vulnerability related information
 
 ## Related topics
 
-* [Working with policies](../../manage-user-permissions-policies.md "Working with policies")
-* [IAM policy statement syntax and examples](../iam-policystatement-syntax.md "IAM policy statement syntax.")
-* [Grant access to Settings](../../../use-cases/access-settings.md "Grant access to Settings")
-* [Account Management API](../../../../../dynatrace-api/account-management-api.md "Explore endpoints of the Account Management API.")
+* Working with policies
+* IAM policy statement syntax and examples
+* Grant access to Settings
+* Account Management API

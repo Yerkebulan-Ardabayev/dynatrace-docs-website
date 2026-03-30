@@ -243,8 +243,8 @@ The `delete` command is a convenient way to remove configurations from Dynatrace
 
 As input, the `delete` command requires two YAML files:
 
-* The [manifest file](../configuration.md#deployment-manifest "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.") that specifies the relevant Dynatrace environments.
-* The [deletefile](../configuration.md#file-structure-for-direct-reference "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.") that specifies the relevant configurations.
+* The manifest file that specifies the relevant Dynatrace environments.
+* The deletefile that specifies the relevant configurations.
 
 The deletefile itself is generated with `monaco generate deletefile`, see [Generate](commands-saas.md#generate-deletefile "How to use the Monaco CLI application, including arguments and options.").
 
@@ -321,7 +321,7 @@ type:
 api: app-detection-rule
 ```
 
-**Workaround:** Create the delete file manually or update the generated file to set the configuration name without references. See the [delete file format](../configuration.md#file-structure-for-direct-reference "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.") for the correct syntax.
+**Workaround:** Create the delete file manually or update the generated file to set the configuration name without references. See the delete file format for the correct syntax.
 
 #### graph
 

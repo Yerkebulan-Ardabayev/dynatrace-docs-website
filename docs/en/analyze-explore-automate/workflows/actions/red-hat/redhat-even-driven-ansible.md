@@ -249,7 +249,7 @@ To create a workflow that sends an event to Event-Driven Ansible
 4. On one of the information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add"), search for `Ansible`, and select **Send event to Event-Driven Ansible**.
 5. On each of the remaining information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") and drag the line to the **Send event to Event-Driven Ansible** action.
 6. In the **Send event to Event-Driven Ansible** action, select the [connection](#connection) to your **Red Hat Event-Driven Ansible Controller**.
-7. Configure the event data field as needed. To learn how to use the output of information-extracting notes, see [Expression reference](../../reference.md "Get to know the workflows expression").
+7. Configure the event data field as needed. To learn how to use the output of information-extracting notes, see Expression reference.
 
    The event data must be valid JSON.
 8. To test your workflow, select **Run**.

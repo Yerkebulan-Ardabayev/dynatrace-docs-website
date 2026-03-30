@@ -24,10 +24,10 @@ It serves as a central entry point to system-wide configurations. You can use it
 
 * To access ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**:
 
-  A user must belong to a group bound to the [Standard user](identity-access-management/permission-management/default-policies.md#DynatraceAccessStandardUser "Dynatrace default policies reference") default policy.
+  A user must belong to a group bound to the Standard user default policy.
 * To modify ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**:
 
-  A user must belong to a group bound to the [Pro user](identity-access-management/permission-management/default-policies.md#DynatraceAccessProUser "Dynatrace default policies reference") default policy.
+  A user must belong to a group bound to the Pro user default policy.
 
 See the minimum scope of permissions required to use ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** in case you want to create your own policy.
 
@@ -88,7 +88,7 @@ The most specific setting always takes precedence. For example, a configuration 
 
 ### Access to settings
 
-Access to settings is controlled via [IAM policies](identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies"). Policies enable you to create flexible and granular access to configurations, where users have access only to those settings where they have permissions assigned. No additional permissions are needed for policies to take effect. Policies grant access to configurations via both the ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** and the Settings API unless configured otherwise on the schema level.
+Access to settings is controlled via IAM policies. Policies enable you to create flexible and granular access to configurations, where users have access only to those settings where they have permissions assigned. No additional permissions are needed for policies to take effect. Policies grant access to configurations via both the ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** and the Settings API unless configured otherwise on the schema level.
 
 If you need to configure fine-grained access to certain entities, you can do so via for example, a host group or security context.
 
@@ -110,16 +110,16 @@ You can manage Dynatrace settings programmatically using the Settings API. This 
 
 The settings are passed to Dynatrace as the JSON payload for the settings object. The JSON structure depends on the particular feature and is determined by Settings schemas.
 
-For more information, see [Settings API](../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.").
+For more information, see Settings API.
 
 #### Monaco
 
 The Dynatrace Monaco CLI provides general support for any Settings 2.0 schema available in your environment. Monaco is the Dynatrace approach to configuration as code. It enables you to manage your monitoring environment through configuration files, offering a range of features to streamline the process.
 
-For more information, see [Configuration as Code via Monaco overview](../deliver/configuration-as-code/monaco.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco.").
+For more information, see Configuration as Code via Monaco overview.
 
 ## Related topics
 
-* [Dynatrace settings framework](settings/settings-20.md "Introduction to the Settings 2.0 framework")
-* [Settings 2.0 - Available schemas](../dynatrace-api/environment-api/settings/schemas.md "View the entire settings schemas table of your monitoring environment via the Dynatrace API.")
-* [Settings API](../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.")
+* Dynatrace settings framework
+* Settings 2.0 - Available schemas
+* Settings API

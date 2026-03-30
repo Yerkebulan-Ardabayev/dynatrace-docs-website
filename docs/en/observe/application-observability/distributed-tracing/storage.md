@@ -19,13 +19,13 @@ Distributed traces are stored in Grail buckets with a retention period from 10 d
 
 ## Who is this for
 
-This article contains information on how to configure trace data retention and storage for Distributed Tracing powered by Grail via [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline."). This article is intended for administrators controlling identity and access management.
+This article contains information on how to configure trace data retention and storage for Distributed Tracing powered by Grail via OpenPipeline. This article is intended for administrators controlling identity and access management.
 
 ## Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* Dynatrace Platform Subscription (DPS) with [Traces powered by Grail overview (DPS)](../../../license/capabilities/traces.md "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.") capabilities.
-* `openpipeline:configurations:write` and `openpipeline:configurations:read` permissions. To learn how to set up the permissions, see [Permissions in Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+* Dynatrace Platform Subscription (DPS) with Traces powered by Grail overview (DPS) model.") capabilities.
+* `openpipeline:configurations:write` and `openpipeline:configurations:read` permissions. To learn how to set up the permissions, see Permissions in Grail.
 
 ## Store trace data in a custom bucket
 
@@ -73,5 +73,5 @@ With this procedure, you skip storage of spans that match the route and the pipe
 
 ## Related topics
 
-* [Retain trace data for long periods](data-retention.md "Create and assign buckets with custom data retention for your trace data in Grail.")
-* [Data retention periods](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md "Check retention times for various data types.")
+* Retain trace data for long periods
+* Data retention periods

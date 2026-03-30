@@ -19,7 +19,7 @@ Dynatrace provides end-to-end distributed tracing for your native Java applicati
 
 For the supported distributed tracing technologies, see [Java Native Image](../../../technology-support.md#java-native-image "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
-Dynatrace GraalVM Native Image observability requires a [Full-Stack Monitoring](../../../../license/capabilities/app-infra-observability/full-stack-monitoring.md "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") license.
+Dynatrace GraalVM Native Image observability requires a Full-Stack Monitoring license.
 
 ## Get started
 
@@ -127,7 +127,7 @@ To integrate Dynatrace in a Maven project
 
    Replace `ENVIRONMENT_URL` and `API_TOKEN` according to your Dynatrace environment:
 
-   * `ENVIRONMENT_URL` is the Dynatrace environment URL of your [monitoring environment](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+   * `ENVIRONMENT_URL` is the Dynatrace environment URL of your monitoring environment.
    * `API_TOKEN` is your access token and can, for example, be provided with an environment variable by using `<apiToken>${env.DT_API_TOKEN}</apiToken>`. This access token requires the **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.").
 
    This will automatically download and use the latest GraalVM Native Image module version available in your environment. To use a specific GraalVM Native Image module version, add `<agentVersion>AGENT_VERSION</agentVersion>` to the `agentDownload` configuration.
@@ -207,7 +207,7 @@ To integrate Dynatrace in a Gradle project
 
    Replace `ENVIRONMENT_URL` and `API_TOKEN` according to your Dynatrace environment:
 
-   * `ENVIRONMENT_URL` is the Dynatrace environment URL of your [monitoring environment](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+   * `ENVIRONMENT_URL` is the Dynatrace environment URL of your monitoring environment.
    * `API_TOKEN` is your access token and can, for example, be provided with an environment variable by using `System.getenv("DT_API_TOKEN")`. This access token requires the **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.").
 
    This will automatically download and use the latest GraalVM Native Image module version available in your environment. To use a specific GraalVM Native Image module version, add `agentVersion = "AGENT_VERSION"` to the `agentDownload` configuration.
@@ -231,7 +231,7 @@ To integrate Dynatrace in a Gradle project
 
 #### Manually downloading the GraalVM Native Image module
 
-You can also manually download the GraalVM Native Image module from [Dynatrace OneAgent Deployment API](../../../../dynatrace-api/environment-api/deployment/oneagent.md "Download OneAgent installers via Dynatrace API.") for your target platform.
+You can also manually download the GraalVM Native Image module from Dynatrace OneAgent Deployment API for your target platform.
 
 An example API call using `curl`:
 
@@ -267,7 +267,7 @@ export DT_CONNECTION_POINT=$DT_CONNECTION_POINT
 
 Replace `$DT_TENANT_ID`, `$DT_TENANTTOKEN`, and `$DT_CONNECTION_POINT` with your Dynatrace connection details. Replace `$YOUR_APP_NAME` with your application name.
 
-You can retrieve your connection details via [View connectivity information for OneAgent](../../../../dynatrace-api/environment-api/deployment/oneagent/get-connectivity-info.md "View the connectivity information of OneAgent via Dynatrace API.") API call. You need the following fields of the response:
+You can retrieve your connection details via View connectivity information for OneAgent API call. You need the following fields of the response:
 
 * **tenantUUID** for `$DT_TENANT_ID`
 * **tenantToken** for `$DT_TENANTTOKEN`
@@ -305,7 +305,7 @@ You can configure the following properties:
 
 * `agentDownload` is used to configure the automatic GraalVM Native Image module download:
 
-  + `environmentUrl` specifies the Dynatrace environment URL of your [monitoring environment](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+  + `environmentUrl` specifies the Dynatrace environment URL of your monitoring environment.
   + `apiToken` specifies the access token with **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.").
   + `agentVersion` specifies the GraalVM Native Image module version. If not set, the latest GraalVM Native Image module version is used.
 * `agentZip` sets the absolute or relative path to the manually downloaded ZIP file.
@@ -346,7 +346,7 @@ You can configure the following properties:
 
 * `agentDownload` is used to configure the automatic GraalVM Native Image module download:
 
-  + `environmentUrl` specifies the Dynatrace environment URL of your [monitoring environment](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+  + `environmentUrl` specifies the Dynatrace environment URL of your monitoring environment.
   + `apiToken` specifies the access token with **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.").
   + `agentVersion` specifies the GraalVM Native Image module version. If not set, the latest GraalVM Native Image module version is used.
 * `agentZip` sets the absolute or relative path to the manually downloaded ZIP file.

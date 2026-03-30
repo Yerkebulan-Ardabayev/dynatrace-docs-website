@@ -12,11 +12,11 @@ Dynatrace offers full-featured Docker monitoring, as well as generic container m
 
 If you want to use Docker outside a container platform, there are two methods to monitor applications using OneAgent:
 
-* [Set up OneAgent for application-only](/managed/ingest-from/setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring "Install, update, and uninstall OneAgent on containers for application-only monitoring.")
-* [Set up Dynatrace as a Docker container](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container "Install and update Dynatrace OneAgent as a Docker container.")
+* Set up OneAgent for application-only
+* Set up Dynatrace as a Docker container
 
-In a typical scenario, container orchestration and management tools such as Kubernetes, OpenShift, and Cloud Foundry use Docker, containerd, or CRI-O as a container runtime. If you're running one of these platforms, follow the appropriate deployment instructions: [Kubernetes](/managed/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes"), [OpenShift](/managed/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes"), [Cloud Foundry](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry "Install OneAgent on Cloud Foundry with BOSH."), or [Fargate](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate "Install OneAgent on AWS Fargate."). Any platform that uses containers can also be monitored using the [application-only approach](/managed/ingest-from/setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring "Install, update, and uninstall OneAgent on containers for application-only monitoring.").
+In a typical scenario, container orchestration and management tools such as Kubernetes, OpenShift, and Cloud Foundry use Docker, containerd, or CRI-O as a container runtime. If you're running one of these platforms, follow the appropriate deployment instructions: Kubernetes, OpenShift, Cloud Foundry, or Fargate. Any platform that uses containers can also be monitored using the application-only approach.
 
 ## Related topics
 
-* [Monitor container groups](/managed/observe/infrastructure-observability/container-platform-monitoring/container-groups "Overview on container groups monitoring")
+* Monitor container groups

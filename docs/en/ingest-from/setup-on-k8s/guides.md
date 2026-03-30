@@ -13,16 +13,16 @@ scraped: 2026-03-06T21:34:51.653745
 
 After you have installed Dynatrace Operator for Kubernetes, you might have specific use-cases and requirements to fulfill. This section contains guided content for a set of specific use-cases.
 
-[### Migration
+### Migration
 
-Guides on how to migrate between different monitoring environments.](guides/migration.md "Guides on how to migrate between different monitoring environments.")[### Deployment and configuration
+Guides on how to migrate between different monitoring environments.### Deployment and configuration
 
-Guides and procedures for various operational tasks.](guides/deployment-and-configuration.md "Guides and procedures for various operational tasks")[### Network and security configurations
+Guides and procedures for various operational tasks.### Network and security configurations
 
-Explore various aspects of networking and security in your environment.](guides/networking-security-compliance.md "Explore various aspects of networking, security, and compliance in your environment.")[### Container registries
+Explore various aspects of networking and security in your environment.### Container registries
 
-Manage container registries with Dynatrace.](guides/container-registries.md "Manage container registries with Dynatrace")[### High availability
+Manage container registries with Dynatrace.### High availability
 
-Ensure high availability of your Dynatrace deployment.](guides/high-availability.md "Ensure high availability of your Dynatrace deployment")[### Metadata and automation
+Ensure high availability of your Dynatrace deployment.### Metadata and automation
 
-Automate and optimize your system's metadata management.](guides/metadata-automation.md "Automate and optimize your system's metadata management")
+Automate and optimize your system's metadata management.

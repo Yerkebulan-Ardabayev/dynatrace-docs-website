@@ -12,12 +12,12 @@ scraped: 2026-03-06T21:37:38.897755
 * 4-min read
 * Published Feb 04, 2021
 
-[Dashboards Classic](../../dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+Dashboards Classic
 
 This page refers to classic dashboards created using the ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** functionality integrated with Dynatrace Classic.
 
-* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see [Dashboards](../../dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") for related documentation.
-* If you're still using classic dashboards, we encourage you to [upgrade your dashboards](../dashboards-upgrade-classic-to-latest.md "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
+* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see Dashboards for related documentation.
+* If you're still using classic dashboards, we encourage you to upgrade your dashboards and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
 
 Preset dashboards are visible to all users by default.
 
@@ -85,7 +85,7 @@ Now that you have a copy of the dashboard, you can experiment with it.
    * **Name**âSelect  after the dashboard name to personalize the name of your clone.
    * **Tags**âUnder the dashboard name, add and delete tags as needed.
    * **Markdown** and **Header** tilesâSelect them to see how to use text and headers on your dashboard to label and explain elements of the dashboard.
-   * Other tilesâselect tiles to see the settings in the tile-specific pane on the right. See [Available tiles](../charts-and-tiles/available-tiles.md "Find out how to configure your dashboard to track business-critical user-actions and conversion goals.") for tile-specific help.
+   * Other tilesâselect tiles to see the settings in the tile-specific pane on the right. See Available tiles for tile-specific help.
 2. Select **Done** to save any changes and display the working dashboard.
 3. Try drilldowns from the tiles to see where they go.
 
@@ -106,7 +106,7 @@ You need one of the following permissions:
 
 To designate a dashboard as a preset dashboard
 
-1. [Create a dashboard](create-dashboards.md "Learn how to create and edit Dynatrace dashboards.") or display an existing dashboard for which you have editing rights.
+1. Create a dashboard or display an existing dashboard for which you have editing rights.
 2. Select **Edit**.
 3. Switch to the **Settings** tab and then select **Configure more**.
 4. On the **Manage access** tab, turn on **Publish as preset**.

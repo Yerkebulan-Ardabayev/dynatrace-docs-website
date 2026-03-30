@@ -46,9 +46,9 @@ Starting with OneAgent version 1.301, OneAgent doesn't use the TCP ports for its
 
 OneAgent consists of different processes that communicate via a TCP port with a watchdog. At startup, OneAgent watchdog attempts to open the first available port between port 50000 and 50100. In some cases you may need this port for your own applications that are started after OneAgent. In such cases, you can change the port range that the OneAgent watchdog uses by calling OneAgent command-line interface.
 
-You can change the watchdog listening port by using `set-watchdog-portrange` via [oneagentctl command-line tool](../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") :
+You can change the watchdog listening port by using `set-watchdog-portrange` via oneagentctl command-line tool :
 
-For example, to change port range to `50005:50105`, go to the [oneagentctl directory](../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") and run the following command:
+For example, to change port range to `50005:50105`, go to the oneagentctl directory and run the following command:
 
 * On **Linux** or **AIX**:  
   `./oneagentctl --set-watchdog-portrange 50005:50105`
@@ -64,13 +64,13 @@ OneAgent is shipped with trusted Dynatrace SSL certificates, which are used to v
 
 If your environment uses a proxy (thereby requiring an update to the remote server's SSL certificate) or you have an Environment ActiveGate with its own custom certificate, you might encounter a `Server certificate check failed` message during the initial connection check.
 
-To resolve this issue, see [OneAgent security](../oneagent-security.md#trusted-root-certificates "Manage OneAgent security").
+To resolve this issue, see OneAgent security.
 
 Processes not detected?
 
 One of the following may have occurred
 
-* The process isnât supported by our monitoring technology. You can always check which [process types Dynatrace supports](../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+* The process isnât supported by our monitoring technology. You can always check which process types Dynatrace supports.
 * The process isnât working on your server. Make sure your servers are running and that the processes are operational.
 * There is delay in communication between Dynatrace and your OneAgent. If this is the case, wait a few moments and try again.
 * Your OneAgent isnât working properly. Go to **Settings** > **Monitoring** > **Monitoring overview** to confirm that monitoring is enabled for the host running your software.
@@ -136,8 +136,8 @@ After successfully initializing the SDK, you might still encounter issues, such 
 
   See the following pages for exact locations of log files:
 
-  + [OneAgent security on Windows](../installation-and-operation/windows/installation/oneagent-security-windows.md "Learn about Dynatrace OneAgent security and modifications to your Windows-based system")
-  + [OneAgent security on Linux](../installation-and-operation/linux/installation/oneagent-security-linux.md "Learn about Dynatrace OneAgent security and modifications to your Linux-based system")
+  + OneAgent security on Windows
+  + OneAgent security on Linux
 
   You can increase the OneAgent log level by setting the `DT_LOGLEVELFILE={level}` environment variable or passing the `--dt_loglevelfile={level}` command line argument to the SDK.
 
@@ -300,7 +300,7 @@ Processes not detected?
 
 One of the following may have occurred
 
-* The process isnât supported by our monitoring technology. You can check which [process types Dynatrace supports](../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+* The process isnât supported by our monitoring technology. You can check which process types Dynatrace supports.
 * The process isnât working on your server. Make sure your servers are running and that the processes are operational.
 * There is delay in communication between Dynatrace and your OneAgent. If this is the case, wait a few moments and try again.
 * Your OneAgent isnât working properly. Go to **Settings** > **Monitoring** > **Monitoring overview** to confirm that monitoring is enabled for the host running your software.

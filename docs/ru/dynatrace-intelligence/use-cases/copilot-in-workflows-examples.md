@@ -10,7 +10,7 @@ scraped: 2026-03-03T21:26:45.029733
 * Latest Dynatrace
 * Preview
 
-С помощью [Dynatrace Intelligence (Preview)](../dynatrace-intelligence-integrations/copilot-for-workflows.md "Узнайте, как автоматизировать действия и ответы генеративного ИИ Dynatrace Intelligence с помощью workflows.") вы можете автоматизировать суммирование проблем и попросить генеративный ИИ Dynatrace Intelligence предложить шаги по исправлению, которые будут отправлены на вашу электронную почту.
+С помощью Dynatrace Intelligence (Preview) вы можете автоматизировать суммирование проблем и попросить генеративный ИИ Dynatrace Intelligence предложить шаги по исправлению, которые будут отправлены на вашу электронную почту.
 
 ## Целевая аудитория
 
@@ -65,7 +65,7 @@ scraped: 2026-03-03T21:26:45.029733
 2. Извлечение деталей проблемы
 
 1. Выберите Add task.
-2. В поле поиска введите `Run JavaScript` или выберите **Run JavaScript** из списка действий ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflow**. Дополнительную информацию о действии JavaScript в workflow см. в разделе [Действие Run JavaScript для Workflows](../../analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action.md "Выполнение действия JavaScript для ваших workflows.").
+2. В поле поиска введите `Run JavaScript` или выберите **Run JavaScript** из списка действий ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflow**. Дополнительную информацию о действии JavaScript в workflow см. в разделе Действие Run JavaScript для Workflows.
 3. Введите имя задачи workflow.
 4. На вкладке **Input** введите следующий **Source code**:
 
@@ -139,7 +139,7 @@ scraped: 2026-03-03T21:26:45.029733
 4. Отправка результатов генеративного ИИ Dynatrace Intelligence на электронную почту
 
 1. Выберите Add task.
-2. В поле поиска введите `Send email` или выберите ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") **Send email** из списка действий ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflow**. Дополнительную информацию о действиях Email в workflow см. в разделе [Email](../../analyze-explore-automate/workflows/actions/email.md "Автоматизируйте отправку готовых электронных писем на основе событий и расписаний, определённых для ваших workflows.").
+2. В поле поиска введите `Send email` или выберите ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") **Send email** из списка действий ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflow**. Дополнительную информацию о действиях Email в workflow см. в разделе Email.
 3. Введите имя задачи workflow.
 4. Настройте поля:
 
@@ -176,8 +176,8 @@ scraped: 2026-03-03T21:26:45.029733
 
 ## Связанные темы
 
-* [Dynatrace Assist](../copilot/chat-with-davis-copilot.md "Задавайте вопросы на естественном языке и получайте быстрые ответы от Dynatrace Assist, вашего помощника на основе генеративного ИИ.")
-* [Приложение Dynatrace Intelligence (Preview)](../dynatrace-intelligence-integrations/copilot-for-workflows.md "Узнайте, как автоматизировать действия и ответы генеративного ИИ Dynatrace Intelligence с помощью workflows.")
-* [Обзор генеративного ИИ Dynatrace Intelligence](../copilot/copilot-overview.md "Узнайте о безопасности данных и других аспектах генеративного ИИ Dynatrace Intelligence.")
-* [Workflows](../../analyze-explore-automate/workflows.md "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.")
-* [Приложение Dynatrace Intelligence (Preview)](../dynatrace-intelligence-integrations/copilot-for-workflows.md "Узнайте, как автоматизировать действия и ответы генеративного ИИ Dynatrace Intelligence с помощью workflows.")
+* Dynatrace Assist
+* Приложение Dynatrace Intelligence (Preview)
+* Обзор генеративного ИИ Dynatrace Intelligence
+* Workflows
+* Приложение Dynatrace Intelligence (Preview)

@@ -24,14 +24,14 @@ Kubernetes
 
 OpenTelemetry Collector
 
-Follow the [Set up Dynatrace on Kubernetes](../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes") guide to monitor your cluster.
+Follow the Set up Dynatrace on Kubernetes guide to monitor your cluster.
 
 Afterwards, add the following annotations to your NVIDIA NIM deployments:
 
 * `metrics.dynatrace.com/scrape: "true"`
 * `metrics.dynatrace.com/port: "8000"`
 
-Follow the [OpenTelemetry Collector installation guide](../../../ingest-from/opentelemetry/collector/deployment.md "How to deploy Dynatrace OTel Collector.") to deploy a collector.
+Follow the OpenTelemetry Collector installation guide to deploy a collector.
 With the following config, the collector will scrape AI metrics every 10 seconds from the `<NIM-endpoint>:8000` endpoint.
 
 ```
@@ -175,5 +175,5 @@ Additionally, the following metrics are reported.
 
 ## Related topics
 
-* [Dynatrace OTLP API endpoints](../../../ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
-* [About OTLP metrics ingest](../../../ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
+* Dynatrace OTLP API endpoints
+* About OTLP metrics ingest

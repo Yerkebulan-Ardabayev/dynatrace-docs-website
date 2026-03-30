@@ -76,7 +76,7 @@ Page
 
 of 1
 
-User permissions can only be changed by your Dynatrace administrator in **Account Management** > **Identity and Access Management**. To learn more about user groups and assigning permissions, see [Working with policies](../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
+User permissions can only be changed by your Dynatrace administrator in **Account Management** > **Identity and Access Management**. To learn more about user groups and assigning permissions, see Working with policies.
 
 ## Installation
 
@@ -103,7 +103,7 @@ Use cases
 
 When you open the app, you can see the information about your existing anomaly detection configurations, such as:
 
-* StatusâIf there's an error, the status is displayed as **Error**, select it to open the detailed report in a [notebook](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+* StatusâIf there's an error, the status is displayed as **Error**, select it to open the detailed report in a notebook.
 * Source
 * Type of anomaly prediction model
 
@@ -144,7 +144,7 @@ If you edit an existing custom alert created by a different actor, Dynatrace wil
 
 We recommend using service users as actors for custom alerts created for a department or organization use case. This makes the custom alert independent of the status of the user who maintains it.
 
-There are no specific authorization settings for a service user. The permissions granted to a service user should follow the least privilege principle. To learn more about managing service users, see [Service users](../../manage/identity-access-management/user-and-group-management/access-service-users.md "Service users").
+There are no specific authorization settings for a service user. The permissions granted to a service user should follow the least privilege principle. To learn more about managing service users, see Service users.
 
 ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -156,7 +156,7 @@ Detect anomalies in timeseries using ![Anomaly Detection - new](https://dt-cdn.n
 
 ## Related topics
 
-* [Anomaly Detection status types](anomaly-detection-app/anomaly-detection-status-types.md "An explanation of Anomaly Detection status types")
-* [Dynatrace Intelligence limits](../reference/davis-ai-limits.md "Reference limits of Dynatrace Intelligence components.")
+* Anomaly Detection status types
+* Dynatrace Intelligence limits
 * [[Video] Elevating Security with Anomaly Detectionï»¿](https://www.youtube.com/watch?v=WDZUus-VxCE)
 * [[Video] Anomaly Detection and Data Observabilityï»¿](https://www.youtube.com/watch?v=HPQi63mQg3w)

@@ -60,7 +60,7 @@ After you create a dashboard that uses your extension data, and you export the d
 
    â   device-health.dashboard.json
    ```
-3. Declare the JSON in the [extension YAML file](../develop-your-extensions/extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework.").
+3. Declare the JSON in the extension YAML file.
 
    For example,
 
@@ -91,22 +91,22 @@ You can also access the dashboard from ![Extensions](https://dt-cdn.net/images/d
 
 ## Dashboards Classic
 
-If you're using [Dashboards Classic](../../../analyze-explore-automate/dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic."), follow these procedures.
+If you're using Dashboards Classic, follow these procedures.
 
-After your extension starts sending data to Dynatrace, you can [create a custom dashboard](../../../analyze-explore-automate/dashboards-classic/dashboards/create-dashboards.md "Learn how to create and edit Dynatrace dashboards.") and then export its definition to a JSON file and add it to your extension archive. You can export a dashboard definition through the Dynatrace web UI or Dynatrace API.
+After your extension starts sending data to Dynatrace, you can create a custom dashboard and then export its definition to a JSON file and add it to your extension archive. You can export a dashboard definition through the Dynatrace web UI or Dynatrace API.
 
 ### Export dashboard JSON in web UI
 
 1. Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**.
 2. In the row for the dashboard you want to export, select **More** (**â¦**) > **Export**.  
    A JSON file with the dashboard's name is downloaded to your local machine.
-   For more information, see [Edit Dynatrace dashboard JSON](../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-json.md "Learn how to export, edit, and import the JSON for a Dynatrace dashboard.").
+   For more information, see Edit Dynatrace dashboard JSON.
 
 ### Export dashboard JSON using API
 
 1. Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** and display the dashboard.
 2. In the dashboard URL, find the `id` parameter (for example, `id=d996b25e-593c-4213-8ad3-c87319a8830a`) and save the parameter value.
-3. Use the [Get a dashboard](../../../dynatrace-api/configuration-api/dashboards-api/get-dashboard.md "View a dashboard via the Dynatrace Classic API.") API endpoint to get the dashboard JSON definition.
+3. Use the Get a dashboard API endpoint to get the dashboard JSON definition.
    Run the following command to get the dashboard definition. For this example, we use the Dynatrace SaaS URL:
 
    ```
@@ -121,8 +121,8 @@ After your extension starts sending data to Dynatrace, you can [create a custom 
 
    Replace:
 
-   * `{env-id}` with your [Environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
-   * `{api-token}` with an [API token](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](../manage-extensions.md#permissions "Learn how to manage extensions.").
+   * `{env-id}` with your Environment ID.
+   * `{api-token}` with an API token that has the required [permissions](../manage-extensions.md#permissions "Learn how to manage extensions.").
    * `{dashboard-id}` with the dashboard identifier you determined in the previous step.
 4. The call returns the JSON payload containing the dashboard definition. Save it as a JSON file.
 
@@ -157,7 +157,7 @@ extension.zip
 â   dashboard.json
 ```
 
-Use the following reference in the top level of your [YAML file](../develop-your-extensions/extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework."):
+Use the following reference in the top level of your YAML file:
 
 ```
 dashboards:

@@ -14,8 +14,8 @@ scraped: 2026-03-06T21:17:15.496882
 
 Dynatrace OneAgent can be configured for Infrastructure Monitoring mode, which provides comprehensive host monitoring for physical and virtual hosts.
 
-In addition to all features of [Foundation & Discovery](foundation-and-discovery.md "Learn how your consumption of the Dynatrace Foundation & Discovery DPS capability is billed and charged."), Infrastructure Monitoring also includes detailed process performance metrics, disk performance metrics, process-to-process network analysis, and per process memory analysis.
-Dynatrace Extensions can be enabled on hosts with Infrastructure Monitoring mode and may consume [custom metric data points](infrastructure-monitoring.md#infra-metrics "Learn how your consumption of the Dynatrace Infrastructure Monitoring DPS capability is billed and charged.") and [Log Analytics](../log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
+In addition to all features of Foundation & Discovery, Infrastructure Monitoring also includes detailed process performance metrics, disk performance metrics, process-to-process network analysis, and per process memory analysis.
+Dynatrace Extensions can be enabled on hosts with Infrastructure Monitoring mode and may consume [custom metric data points](infrastructure-monitoring.md#infra-metrics "Learn how your consumption of the Dynatrace Infrastructure Monitoring DPS capability is billed and charged.") and Log Analytics.
 
 ### Host hours
 
@@ -39,7 +39,7 @@ The figure below illustrates how host-hour consumption per host is calculated at
 This section assumes that you have followed the Dynatrace-recommended deployment options.
 If you implement a custom deployment, the charging of included metrics may still work as describedâbut this is not guaranteed by Dynatrace.
 
-Dynatrace Infrastructure Monitoring includes Infrastructure Monitoring metrics and [other built-in metrics](../metrics/dps-metrics-ingest.md#billable-and-non-billable-metrics "Learn how your consumption of the Metrics - Ingest & Process DPS capability is billed and charged.").
+Dynatrace Infrastructure Monitoring includes Infrastructure Monitoring metrics and other built-in metrics.
 These metrics are included and never produce any charge.
 
 Infrastructure Monitoring also includes a defined amount of custom metric data points.
@@ -50,16 +50,16 @@ This applies to custom metrics as described in the table below.
 
 Metric data points that exceed your included volume are charged as:
 
-* If Metrics powered by Grail exists on your rate card, these are charged as [Metrics powered by Grail](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
-* If Metrics powered by Grail does not exist on your rate card, these are charged as [Custom Metrics Classic](../platform-extensions/custom-metrics-classic.md "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
+* If Metrics powered by Grail exists on your rate card, these are charged as Metrics powered by Grail.
+* If Metrics powered by Grail does not exist on your rate card, these are charged as Custom Metrics Classic.
 
 1
 
-Metric data points sent via the Dynatrace Collector are included only if [Metrics powered by Grail overview (DPS)](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") exists on your rate card.
+Metric data points sent via the Dynatrace Collector are included only if Metrics powered by Grail overview (DPS) exists on your rate card.
 
 2
 
-Metric data points sent via the OpenTelemetry Collector are included only if [Metrics powered by Grail overview (DPS)](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") exists on your rate card and the OpenTelemetry Collector has been configured as described in [Enrich OTLP requests with Kubernetes data](../../../ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich.md "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.").
+Metric data points sent via the OpenTelemetry Collector are included only if Metrics powered by Grail overview (DPS) exists on your rate card and the OpenTelemetry Collector has been configured as described in Enrich OTLP requests with Kubernetes data.
 
 Looking at Figure 2 above, the included custom metric data point volume for the four 15-minute intervals is shown below.
 
@@ -182,6 +182,6 @@ The example below shows that one of the Infrastructure monitored hosts reported 
 
 ## Related topics
 
-* [Dynatrace OneAgent](../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
-* [Application & Infrastructure Observability overview (DPS)](../app-infra-observability.md "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.")
+* Dynatrace OneAgent
+* Application & Infrastructure Observability overview (DPS) license.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

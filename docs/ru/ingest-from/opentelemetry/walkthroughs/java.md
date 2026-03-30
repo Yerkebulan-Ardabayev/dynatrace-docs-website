@@ -11,8 +11,8 @@ scraped: 2026-03-05T21:40:35.333679
 
 В этих руководствах показано, как добавить наблюдаемость в Java-приложение с использованием библиотек и инструментов OpenTelemetry для Java.
 
-* [Автоматическое инструментирование Java-приложения с помощью OpenTelemetry](java/java-auto.md "Learn how to instrument your Java application using OpenTelemetry and Dynatrace.")
-* [Ручное инструментирование Java-приложения с помощью OpenTelemetry](java/java-manual.md "Learn how to instrument your Java application using OpenTelemetry and Dynatrace.")
+* Автоматическое инструментирование Java-приложения с помощью OpenTelemetry
+* Ручное инструментирование Java-приложения с помощью OpenTelemetry
 
 Следующие функции в настоящее время поддерживаются OpenTelemetry для Java.
 
@@ -25,4 +25,4 @@ scraped: 2026-03-05T21:40:35.333679
 
 ## Связанные темы
 
-* [Обогащение принятых данных полями, специфичными для Dynatrace](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
+* Обогащение принятых данных полями, специфичными для Dynatrace

@@ -32,6 +32,6 @@ scraped: 2026-03-03T21:29:11.693989
 
 ## Связанные темы
 
-* [Часто задаваемые вопросы о генеративном ИИ Dynatrace Intelligence](../../../common/dynatrace-intelligence/copilot/copilot-faq.md "Ознакомьтесь с часто задаваемыми вопросами и найдите ответы на них.")
-* [Запросы на естественном языке](../copilot/quick-analysis-copilot-dql.md "Используйте генеративный ИИ Dynatrace Intelligence для преобразования вопросов на естественном языке в DQL-запросы.")
-* [Генеративный ИИ Dynatrace Intelligence — советы по составлению более точных запросов](../copilot/quick-analysis-copilot-dql/copilot-tips.md "Узнайте о лучших практиках составления более точных запросов.")
+* Часто задаваемые вопросы о генеративном ИИ Dynatrace Intelligence
+* Запросы на естественном языке
+* Генеративный ИИ Dynatrace Intelligence — советы по составлению более точных запросов

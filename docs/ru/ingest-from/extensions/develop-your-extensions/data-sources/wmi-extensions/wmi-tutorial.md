@@ -29,7 +29,7 @@ scraped: 2026-03-04T21:28:59.832907
     pip install dt-cli
     ```
 
-    Дополнительные сведения см. в разделе [Подписание расширений](../../sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+    Дополнительные сведения см. в разделе Подписание расширений.
 * Ваш корневой сертификат, загруженный в Dynatrace и на хост OneAgent
 
 ## Шаг 1. Создание сертификата и ключа разработчика
@@ -70,4 +70,4 @@ dt extension generate-developer-pem -o developer.pem --ca-crt ca.pem --ca-key ca
 
 Ваша среда Dynatrace готова к созданию расширения WMI.
 
-**Следующий шаг**: [Пакет расширения](wmi-tutorial/wmi-tutorial-01.md "Learn about WMI extensions in the Extensions framework.")
+**Следующий шаг**: Пакет расширения

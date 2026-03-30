@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:16:25.986356
 
 There are two ways to use OneAgent with OpenTelemetry:
 
-* Send OpenTelemetry traces to the [Dynatrace OTLP API endpoints](../../opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+* Send OpenTelemetry traces to the Dynatrace OTLP API endpoints.
 * Detect OpenTelemetry spans from trace data, using the OneAgent code module's OpenTelemetry Span Sensor.
 
 ![OneAgent send data to Dynatrace](https://dt-cdn.net/images/screenshot-2025-09-30-at-12-44-35-2430-bc1bd03d62.png)
@@ -31,7 +31,7 @@ This is shown in the figure above, where the application uses the local-only OTL
 
 Content encoding support
 
-OneAgent does not support content compression using the HTTP header [`Content-Encoding`ï»¿](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Encoding) yet. Pay particular attention to that when [instrumenting a Ruby application](../../opentelemetry/walkthroughs/ruby.md "Learn how to instrument your Ruby application using OpenTelemetry and Dynatrace.") as the OpenTelemetry SDK for Ruby uses by default `Content-Encoding: gzip`.
+OneAgent does not support content compression using the HTTP header [`Content-Encoding`ï»¿](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Encoding) yet. Pay particular attention to that when instrumenting a Ruby application as the OpenTelemetry SDK for Ruby uses by default `Content-Encoding: gzip`.
 
 If you need to use content compression, please export to SaaS, the Collector, or ActiveGate.
 
@@ -74,7 +74,7 @@ OneAgent uses the TCP port 14499 as default port for this endpoint. You can chan
 
 EEC unavailable on container setups
 
-The EEC ingestion endpoint is only available with [Full-Stack and Infrastructure Monitoring](../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.") deployments. It is **not** available with [containerized setups](../../setup-on-k8s/deployment.md "Deploy Dynatrace Operator on Kubernetes"). Please use [ActiveGate](#export-to-saas-and-activegate) as export endpoint for container applications.
+The EEC ingestion endpoint is only available with Full-Stack and Infrastructure Monitoring deployments. It is **not** available with containerized setups. Please use [ActiveGate](#export-to-saas-and-activegate) as export endpoint for container applications.
 
 ### Export details
 
@@ -112,7 +112,7 @@ The feature described on this page provides the same functionality as the OneAge
 If you enable this feature while also exporting OTLP data, you will create duplicate spans.
 
 OpenTelemetry span data can be captured for Java, Go, Node.js, PHP, and .NET, on all platforms supported by OneAgent.
-For setup and configuration of the OneAgent Span Sensor, see [Enable the OpenTelemetry Span Sensor for OneAgent](configuration.md "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").
+For setup and configuration of the OneAgent Span Sensor, see Enable the OpenTelemetry Span Sensor for OneAgent.
 
 When the OneAgent OpenTelemetry Span Sensor is enabled, API calls like this example are automatically detected and included in the trace waterfall view.
 Since OneAgent captures these spans automatically, exporting them to an OTLP endpoint will create duplicate traces.

@@ -601,13 +601,13 @@ image: myregistry/myimage:mytag
 
 ## Просмотр метрик на дашборде
 
-Метрики из экспортёров Prometheus доступны в Data Explorer для создания пользовательских графиков. Выберите **Create custom chart** и нажмите **Try it out** в верхнем баннере. Подробнее см. в разделе [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.").
+Метрики из экспортёров Prometheus доступны в Data Explorer для создания пользовательских графиков. Выберите **Create custom chart** и нажмите **Try it out** в верхнем баннере. Подробнее см. в разделе Data Explorer.
 
 Вы можете просто искать ключи метрик всех доступных метрик и определять способы анализа и построения графиков. После этого можно закрепить графики на дашборде.
 
 ## Оповещения на основе метрик
 
-Вы также можете создавать пользовательские оповещения на основе метрик, собираемых Prometheus. Перейдите в **Settings** > **Anomaly detection** > **Metric events** и выберите **Add metric event**. На странице **Add metric event** найдите метрику Prometheus по её ключу и настройте оповещение. Подробнее см. в разделе [Metric events for alerting](../../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace").
+Вы также можете создавать пользовательские оповещения на основе метрик, собираемых Prometheus. Перейдите в **Settings** > **Anomaly detection** > **Metric events** и выберите **Add metric event**. На странице **Add metric event** найдите метрику Prometheus по её ключу и настройте оповещение. Подробнее см. в разделе Metric events for alerting.
 
 ## Ограничения
 
@@ -646,14 +646,14 @@ image: myregistry/myimage:mytag
 
 ## Потребление при мониторинге
 
-Если у вас лицензирование DPS, вы можете получить дополнительную информацию о потреблении пользовательских метрик в вашей среде из нашей [документации по лицензированию](../../../../license/capabilities/platform-extensions/custom-metrics-classic.md "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
+Если у вас лицензирование DPS, вы можете получить дополнительную информацию о потреблении пользовательских метрик в вашей среде из нашей документации по лицензированию.
 
 * Full-Stack Monitoring [включает фиксированное количество точек данных пользовательских метрик](../../../../license/capabilities/app-infra-observability/full-stack-monitoring.md#full-stack-metrics "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") для каждого ГиБ, учитываемого в потреблении ГиБ-часов вашей среды для контейнеров с кодовыми модулями.
 
-Если у вас классическое лицензирование Dynatrace, метрики Prometheus в средах Kubernetes подпадают под [потребление DDU](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+Если у вас классическое лицензирование Dynatrace, метрики Prometheus в средах Kubernetes подпадают под потребление DDU.
 
-* Метрики Prometheus из экспортёров, работающих на хостах, отслеживаемых OneAgent, сначала вычитаются из квоты [включённых метрик на единицу хоста](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). После превышения этой квоты любые дополнительные метрики потребляют [DDU](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
-* Метрики Prometheus из экспортёров, работающих на хостах, не отслеживаемых OneAgent, всегда потребляют [DDU](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+* Метрики Prometheus из экспортёров, работающих на хостах, отслеживаемых OneAgent, сначала вычитаются из квоты включённых метрик на единицу хоста. После превышения этой квоты любые дополнительные метрики потребляют DDU.
+* Метрики Prometheus из экспортёров, работающих на хостах, не отслеживаемых OneAgent, всегда потребляют DDU.
 
 ## Устранение неполадок
 
@@ -661,5 +661,5 @@ image: myregistry/myimage:mytag
 
 ## Связанные темы
 
-* [Metrics Classic](../../../../analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")
-* [Настройка Dynatrace в Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
+* Metrics Classic
+* Настройка Dynatrace в Kubernetes

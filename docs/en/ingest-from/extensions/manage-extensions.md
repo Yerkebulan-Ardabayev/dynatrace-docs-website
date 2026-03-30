@@ -60,7 +60,7 @@ Write user preferences
 
 ### Things to consider
 
-If you can't access ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**, make sure you have the required [permissions](#permissions), specifically those starting with `extensions:configuration` and `extensions:definitions`. For additional information, refer to [Working with policies](../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies") and [IAM Policy - Read and write permissions on extensions configurationsï»¿](https://community.dynatrace.com/t5/Dynatrace-tips/IAM-Policy-Read-and-write-permissions-on-extensions/m-p/220907) in the Dynatrace Community.
+If you can't access ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**, make sure you have the required [permissions](#permissions), specifically those starting with `extensions:configuration` and `extensions:definitions`. For additional information, refer to Working with policies and [IAM Policy - Read and write permissions on extensions configurationsï»¿](https://community.dynatrace.com/t5/Dynatrace-tips/IAM-Policy-Read-and-write-permissions-on-extensions/m-p/220907) in the Dynatrace Community.
 
 ## Overview
 
@@ -134,7 +134,7 @@ When you delete a version, Dynatrace Hub activates the latest available version.
 
 ### API permissions
 
-* You need an [API token](../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") with the following permissions to manage the extension lifecycle:
+* You need an API token with the following permissions to manage the extension lifecycle:
 
   + API v2
 
@@ -171,8 +171,8 @@ curl -X POST "https://{env-id}.live.dynatrace.com/api/v2/extensions" \
 
 Replace:
 
-* `{env-id}` with your [Environment ID](../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
-* `{api-token}` with an [API token](../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
+* `{env-id}` with your Environment ID.
+* `{api-token}` with an API token that has the required [permissions](#prerequisites).
 * `MyCustomExtension.zip` with the actual name of your extension package.
 
 After a successful upload, the Dynatrace API returns basic extension details, including the extension name, version, and minimum Dynatrace version required to run the extension:
@@ -244,8 +244,8 @@ curl -X PUT "https://{env-id}.live.dynatrace.com/api/v2/extensions/{extensionNam
 
 Replace:
 
-* `{env-id}` with your [Environment ID](../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
-* `{api-token}` with an [API token](../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
+* `{env-id}` with your Environment ID.
+* `{api-token}` with an API token that has the required [permissions](#prerequisites).
 * `{extensionName}` with the actual extension name.
 * `{version}` with the extension version you want to activate.
 
@@ -279,8 +279,8 @@ curl -X POST "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName>/moni
 
 Replace:
 
-* `{env-id}` with your [Environment ID](../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
-* `{api-token}` with an [API token](../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
+* `{env-id}` with your Environment ID.
+* `{api-token}` with an API token that has the required [permissions](#prerequisites).
 * `{extensionName}` with the actual extension name.
 * `{version}` with the extension version you want to activate.
 * `{monitoring-configuration}` with the filename containing the JSON payload with the monitoring configuration. For details on the format, see [SNMP](develop-your-extensions/data-sources/snmp-extensions.md#monitoring-configuration "Learn how to create an SNMP extension using the Extensions framework.").
@@ -297,7 +297,7 @@ After a successful call, the Dynatrace API returns the `MonitoringConfigurationR
 ]
 ```
 
-After a few minutes, go to [Metric browser](../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser.") and search for the metrics you defined for your extension.
+After a few minutes, go to Metric browser and search for the metrics you defined for your extension.
 
 ### Update extension with Dynatrace API
 
@@ -313,7 +313,7 @@ To enable the environment configuration version, you need to add the version par
 
 * After a successful upload, the Dynatrace API returns basic extension details, including the version.
 * Find the version in the `extension.yaml` file inside the extension package.
-* Run the [Get extension versions](../../dynatrace-api/environment-api/extensions-20/extensions/get-extension-versions.md "Use the Dynatrace Extensions 2.0 API to view all available versions of an extension.") API call.
+* Run the Get extension versions API call.
 
 Run the following command to activate the new version. For this example, we use the Dynatrace SaaS URL.
 
@@ -335,8 +335,8 @@ curl -X PUT "https://{env-id}.live.dynatrace.com/api/v2/extensions/{extensionNam
 
 Replace:
 
-* `{env-id}` with your [Environment ID](../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
-* `{api-token}` with an [API token](../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
+* `{env-id}` with your Environment ID.
+* `{api-token}` with an API token that has the required [permissions](#prerequisites).
 * `{extensionName}` with the actual extension name.
 * `{version}` with the extension version you want to activate.
 
@@ -350,11 +350,11 @@ If you need to revert activation to an earlier version, run the command above wi
 
 ### Delete extension with Dynatrace API
 
-If you uploaded a number of extension versions, you need to delete all the versions to completely remove the extension from your environment. You can use [GET extension versions](../../dynatrace-api/environment-api/extensions-20/extensions/get-extension-versions.md "Use the Dynatrace Extensions 2.0 API to view all available versions of an extension.") to list all the extension versions available in your environment.
+If you uploaded a number of extension versions, you need to delete all the versions to completely remove the extension from your environment. You can use GET extension versions to list all the extension versions available in your environment.
 
 #### Delete environment configuration with API
 
-To delete the currently active environment configuration, use [DELETE environment configuration](../../dynatrace-api/environment-api/extensions-20/environment-configurations/del-deactivate-env-config.md "Delete currently active environment configuration of an extension via the Dynatrace Extensions 2.0 API."). For this example, we use the Dynatrace SaaS URL.
+To delete the currently active environment configuration, use DELETE environment configuration. For this example, we use the Dynatrace SaaS URL.
 
 ```
 curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/environmentConfiguration" \
@@ -368,8 +368,8 @@ curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/en
 
 Replace:
 
-* `{env-id}` with your [Environment ID](../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
-* `{api-token}` with an [API token](../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
+* `{env-id}` with your Environment ID.
+* `{api-token}` with an API token that has the required [permissions](#prerequisites).
 * `{extensionName}` with the actual extension name.
 
 After a successful deactivation, the Dynatrace API returns the version of the deactivated extension. For example:
@@ -380,7 +380,7 @@ After a successful deactivation, the Dynatrace API returns the version of the de
 
 #### Delete extension version with API
 
-To delete an extension version, use [DELETE an extension version](../../dynatrace-api/environment-api/extensions-20/extensions/del-version.md "Delete an extension from your environment via the Dynatrace Extensions 2.0 API."). In this example, we use the Dynatrace SaaS URL.
+To delete an extension version, use DELETE an extension version. In this example, we use the Dynatrace SaaS URL.
 
 ```
 curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/{version}" \
@@ -394,8 +394,8 @@ curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/{v
 
 Replace:
 
-* `{env-id}` with your [Environment ID](../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
-* `{api-token}` with an [API token](../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
+* `{env-id}` with your Environment ID.
+* `{api-token}` with an API token that has the required [permissions](#prerequisites).
 * `{extensionName}` with the actual extension name.
 * `{version}` with the extension version you want to delete.
 

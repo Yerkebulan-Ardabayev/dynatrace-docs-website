@@ -18,12 +18,12 @@ This page describes the different Digital Experience Monitoring capabilities and
 
 For information about how usage of a specific DEM capability translates to consumption of your DPS license commit, see
 
-* [Real User Monitoring (RUM)](digital-experience-monitoring/real-user-monitoring.md "Learn how your consumption of the Dynatrace Real User Monitoring (RUM) DPS capability is billed and charged.")
-* [Real User Monitoring with Session Replay](digital-experience-monitoring/real-user-monitoring-session-replay.md "Learn how your consumption of the Dynatrace Real User Monitoring with Session Replay DPS capability is billed and charged.")
-* [Real User Monitoring Property](digital-experience-monitoring/real-user-monitoring-property.md "Learn how your consumption of the Dynatrace Real User Monitoring Property DPS capability is billed and charged.")
-* [Browser Monitor or Clickpath](digital-experience-monitoring/browser-monitor-clickpath.md "Learn how your consumption of the Browser Monitor or Clickpath DPS capability is billed and charged.")
-* [Third-Party Synthetic API Ingestion](digital-experience-monitoring/third-party-api.md "Learn how your consumption of the the Dynatrace Third-Party Synthetic API Integration DPS capability is billed and charged.")
-* [HTTP Monitor](digital-experience-monitoring/http-monitor.md "Learn how your consumption of the Dynatrace HTTP Monitor DPS capability is billed and charged.")
+* Real User Monitoring (RUM) DPS capability is billed and charged.")
+* Real User Monitoring with Session Replay
+* Real User Monitoring Property
+* Browser Monitor or Clickpath
+* Third-Party Synthetic API Ingestion
+* HTTP Monitor
 
 ## Real User Monitoring (RUM)
 
@@ -64,7 +64,7 @@ In addition, they can be used to check the availability of internal resources th
 
 ## Synthetic NAM Monitoring
 
-Network availability monitoring (NAM) monitors don't have a separate line on the Dynatrace rate card. Instead, you're billed based on the [number of metric data points](metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") generated during each execution of a NAM test. For more information, please contact your Dynatrace account manager.
+Network availability monitoring (NAM) monitors don't have a separate line on the Dynatrace rate card. Instead, you're billed based on the number of metric data points generated during each execution of a NAM test. For more information, please contact your Dynatrace account manager.
 
 Metric data point calculations
 
@@ -81,8 +81,8 @@ The following details apply to metric data points:
 
 ## Related topics
 
-* [Real User Monitoring](../../observe/digital-experience/rum-concepts/rum-overview.md "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.")
-* [Session Replay](../../observe/digital-experience/session-replay.md "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")
-* [Synthetic Monitoring](../../observe/digital-experience/synthetic-monitoring.md "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
-* [License Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* Real User Monitoring
+* Session Replay
+* Synthetic Monitoring
+* License Dynatrace, the licensing model for all Dynatrace capabilities.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

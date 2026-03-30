@@ -121,7 +121,7 @@ How are logs licensed?
 Querying logs works based on the same licensing as other Log Management and Analytics feature.
 
 * If you have **Retain** and **Query** as separate rate-card items, you only consume the license for queried log volume in bytes.
-  For more info, see [Calculate your consumption of Log Management & Analytics - Query (DPS)](../../license/capabilities/log-analytics/dps-log-query.md "Learn how your consumption of the Log Management & Analytics - Query DPS capability is billed and charged.").
+  For more info, see Calculate your consumption of Log Management & Analytics - Query (DPS).
 * If you have **Retain with Included Queries** on your rate card, there is no cost to for included queries.
   For more info, see [Log Analytics (DPS)](../../license/capabilities/log-analytics.md#log-retain-included-queries "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
 

@@ -4,7 +4,7 @@ source: https://www.dynatrace.com/docs/observe/application-observability/distrib
 scraped: 2026-03-06T21:12:23.534272
 ---
 
-Выявляйте аномальные закономерности в трассировках и логах с помощью [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Откройте для себя возможности нового приложения Distributed Tracing.") и [Dynatrace Query Language (DQL)](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.").
+Выявляйте аномальные закономерности в трассировках и логах с помощью [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Откройте для себя возможности нового приложения Distributed Tracing.") и Dynatrace Query Language (DQL).
 
 ## Введение
 
@@ -38,7 +38,7 @@ scraped: 2026-03-06T21:12:23.534272
 
 * Знакомство с последней версией Dynatrace
 * Хотя бы базовые знания DQL
-* Понимание того, что такое [Distributed Tracing](../distributed-tracing.md "Отслеживайте и анализируйте в реальном времени высокораспределённые системы с помощью Grail.")
+* Понимание того, что такое Distributed Tracing
 
   Для обзора посмотрите видео [Unleash the Power of Distributed Tracing](https://youtu.be/8QuBqPsqZlg?si=RKrl7MW6kODQgFDA) на YouTube.
 
@@ -353,7 +353,7 @@ fetch logs
 
 Наконец, давайте узнаем, сколько логов создаётся для каждой конечной точки сервиса.
 
-По умолчанию логи не содержат информации о конечной точке. Однако, [обогащая логи идентификатором трассировки](../../../analyze-explore-automate/logs/lma-log-enrichment.md "Свяжите входящие данные логов с трассировками для более точного анализа Dynatrace."), мы можем выполнить `join` логов и трассировок на основе их общего поля.
+По умолчанию логи не содержат информации о конечной точке. Однако, обогащая логи идентификатором трассировки, мы можем выполнить `join` логов и трассировок на основе их общего поля.
 
 Пояснение к DQL-запросу
 
@@ -410,12 +410,12 @@ fetch logs
 
 Вы узнали, как использовать ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing** для обнаружения паттернов запросов к базе данных. Кроме того, вы освоили множество примеров использования DQL для поиска сервисов с наибольшим количеством исключений, выявления «горячих» методов и даже объединения логов и трассировок для подсчёта количества логов, созданных для каждой конечной точки сервиса.
 
-Если вы считаете, что вам необходимо иметь определённую информацию под рукой, [добавьте результат DQL-запроса на дашборд](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md#edit-section-edit-controls "Анализируйте, визуализируйте и делитесь инсайтами из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве."). Вы также можете рассмотреть возможность [создания метрики](../../../analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric.md "Изучите сценарий использования Log Management and Analytics для создания метрики из логов."), которую можно извлекать из логов по мере их поступления в Dynatrace.
+Если вы считаете, что вам необходимо иметь определённую информацию под рукой, [добавьте результат DQL-запроса на дашборд](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md#edit-section-edit-controls "Анализируйте, визуализируйте и делитесь инсайтами из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве."). Вы также можете рассмотреть возможность создания метрики, которую можно извлекать из логов по мере их поступления в Dynatrace.
 
 ## Следующие шаги
 
 * Ознакомьтесь с этим [специальным ноутбуком](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.notebooks/notebook/94d1e2b0-0d81-4803-8b5e-5b9614598d86), созданным в нашей среде Dynatrace Playground, где мы делимся некоторыми советами и приёмами использования трассировок, логов и DQL для выявления необычных паттернов в вашей среде.
-* Погрузитесь глубже в мир DQL: посетите [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.") и [лучшие практики DQL](../../../platform/grail/dynatrace-query-language/dql-best-practices.md "Лучшие практики использования Dynatrace Query Language.").
+* Погрузитесь глубже в мир DQL: посетите Dynatrace Query Language и лучшие практики DQL.
 * Изучите следующие приложения Dynatrace:
 
   + [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Откройте для себя возможности нового приложения Distributed Tracing.")

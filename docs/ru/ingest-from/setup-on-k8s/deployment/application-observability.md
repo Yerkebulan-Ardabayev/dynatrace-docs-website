@@ -8,16 +8,16 @@ scraped: 2026-03-06T21:37:25.245616
 
 ## Сценарии использования
 
-* [Оценка и устранение неполадок в кластере и рабочих нагрузках Kubernetes](../../../observe/infrastructure-observability/kubernetes-app/use-cases/cluster-health.md "Анализ и управление состоянием ваших кластеров Kubernetes с помощью Dynatrace.")
-* [Оптимизация использования ресурсов рабочих нагрузок Kubernetes](../../../observe/infrastructure-observability/kubernetes-app/use-cases/resource-optimization.md "Эффективное использование ресурсов кластера путём определения рабочих нагрузок, которые не полностью используют выделенные ресурсы.")
-* [Получение оповещений и событий для обнаружения аномалий кластера и реагирования на них](../../../observe/infrastructure-observability/kubernetes-app/use-cases/alert-use-case.md "Проактивное решение проблем Kubernetes с использованием встроенных механизмов оповещения.")
-* [Изучение метрик, событий и логов ваших подов и узлов в едином интерфейсе](../../../observe/infrastructure-observability/kubernetes-app.md "Мониторинг и оптимизация Kubernetes с Dynatrace. Получение информации и состояния кластеров и рабочих нагрузок в реальном времени.")
-* [Устранение типичных проблем со здоровьем рабочих нагрузок Kubernetes](../../../observe/infrastructure-observability/kubernetes-app/use-cases/troubleshoot-health-problems.md "Выявление и устранение проблем со здоровьем рабочих нагрузок Kubernetes.")
-* [Автоматическая распределённая трассировка между контейнерами](../../../observe/application-observability/distributed-tracing/distributed-tracing-app.md "Откройте для себя возможности нового приложения для распределённой трассировки.")
-* [Инсайты на уровне кода и сервисов](../../../observe/application-observability/services/services-app.md "Централизованный контроль здоровья, производительности и ресурсов сервисов с помощью приложения Services.") в контейнерах приложений
-* [Профилирование и анализ потоков](../../../observe/application-observability/profiling-and-optimization.md "Узнайте, как использовать диагностические инструменты Dynatrace для анализа сбоев, дампов памяти и многого другого.")
+* Оценка и устранение неполадок в кластере и рабочих нагрузках Kubernetes
+* Оптимизация использования ресурсов рабочих нагрузок Kubernetes
+* Получение оповещений и событий для обнаружения аномалий кластера и реагирования на них
+* Изучение метрик, событий и логов ваших подов и узлов в едином интерфейсе
+* Устранение типичных проблем со здоровьем рабочих нагрузок Kubernetes
+* Автоматическая распределённая трассировка между контейнерами
+* Инсайты на уровне кода и сервисов в контейнерах приложений
+* Профилирование и анализ потоков
 
-Если вы хотите получить полное представление о вашей среде Kubernetes, ознакомьтесь с [обзором развёртывания](../deployment.md "Развёртывание Dynatrace Operator в Kubernetes"), чтобы узнать о [полной наблюдаемости Full-Stack](full-stack-observability.md "Развёртывание Dynatrace Operator в режиме cloud-native full-stack в Kubernetes"). Вы можете расширить наблюдаемость Kubernetes за счёт [аналитики логов](k8s-log-monitoring.md "Управляйте логами Kubernetes с помощью Dynatrace."), [цифрового опыта](../../../observe/digital-experience.md "Оптимизация пользовательского опыта с помощью мониторинга цифрового опыта для обеспечения производительности и доступности приложений по всем каналам.") и [безопасности приложений](../../../secure/application-security.md "Доступ к функционалу безопасности приложений Dynatrace.").
+Если вы хотите получить полное представление о вашей среде Kubernetes, ознакомьтесь с обзором развёртывания, чтобы узнать о полной наблюдаемости Full-Stack. Вы можете расширить наблюдаемость Kubernetes за счёт аналитики логов, цифрового опыта и безопасности приложений.
 
 Предварительные требования
 
@@ -36,9 +36,9 @@ scraped: 2026-03-06T21:37:25.245616
 
 ### Поддерживаемые версии
 
-См. поддерживаемые [версии платформ](../../technology-support/support-model-and-issues.md "Как Dynatrace поддерживает версии Kubernetes и Red Hat OpenShift и известные проблемы") и [дистрибутивы](supported-technologies.md "Обзор различных конфигураций для всех основных дистрибутивов Kubernetes.") Kubernetes/OpenShift.
+См. поддерживаемые версии платформ и дистрибутивы Kubernetes/OpenShift.
 
-[Настройка SCC](../guides/networking-security-compliance/security-configurations/openshift-configuration.md "Настройка Dynatrace Operator в средах OpenShift.") требуется для OpenShift при развёртывании `cloudNativeFullStack` и `applicationMonitoring` с CSI-драйвером Dynatrace Operator.
+Настройка SCC требуется для OpenShift при развёртывании `cloudNativeFullStack` и `applicationMonitoring` с CSI-драйвером Dynatrace Operator.
 
 Комбинация `hostMonitoring` и `applicationMonitoring` в кластере Kubernetes в одной среде не поддерживается.
 
@@ -111,10 +111,10 @@ helm repo remove dynatrace
    kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.8.1/dynatrace-operator-crd.yaml
    ```
 
-   VMware Tanzu Kubernetes (TKGI) и IBM Kubernetes Service (IKS) требуют [дополнительной конфигурации](supported-technologies.md "Обзор различных конфигураций для всех основных дистрибутивов Kubernetes.").
+   VMware Tanzu Kubernetes (TKGI) и IBM Kubernetes Service (IKS) требуют дополнительной конфигурации.
 2. Создайте секрет для токенов доступа
 
-   Создайте секрет с именем `dynakube` для токена Dynatrace Operator и токена приёма данных, полученных в разделе [Необходимые токены и разрешения](tokens-permissions.md "Настройка токенов и разрешений для мониторинга кластера Kubernetes").
+   Создайте секрет с именем `dynakube` для токена Dynatrace Operator и токена приёма данных, полученных в разделе Необходимые токены и разрешения.
 
    ```
    kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATOR_TOKEN>" --from-literal="dataIngestToken=<DATA_INGEST_TOKEN>"
@@ -123,7 +123,7 @@ helm repo remove dynatrace
 
    Пример пользовательского ресурса DynaKube для мониторинга приложений
 
-   Вы можете просмотреть [доступные параметры](../reference/dynakube-parameters.md "Список доступных параметров для настройки Dynatrace Operator в Kubernetes.") или [руководства](../guides.md "Подробное описание вариантов установки и конфигурации для конкретных сценариев использования") и адаптировать пользовательский ресурс DynaKube в соответствии с вашими требованиями.
+   Вы можете просмотреть доступные параметры или руководства и адаптировать пользовательский ресурс DynaKube в соответствии с вашими требованиями.
 
    ```
    apiVersion: dynatrace.com/v1beta5
@@ -270,7 +270,7 @@ helm repo remove dynatrace
    - get
    ```
 
-   Роль будет автоматически привязана к ClusterRole `dynatrace-kubernetes-monitoring` через правила агрегации. Для получения дополнительной информации об агрегации ClusterRole см. [документацию по агрегации ClusterRole](../guides/deployment-and-configuration/cluster-role-aggregation.md "Как Dynatrace Operator использует агрегацию ClusterRole для управления разрешениями мониторинга Kubernetes.").
+   Роль будет автоматически привязана к ClusterRole `dynatrace-kubernetes-monitoring` через правила агрегации. Для получения дополнительной информации об агрегации ClusterRole см. документацию по агрегации ClusterRole.
 5. Примените пользовательский ресурс DynaKube
 
    Выполните приведённую ниже команду для применения пользовательского ресурса DynaKube, убедившись, что вы заменили `<your-DynaKube-CR>` на фактическое имя файла вашего пользовательского ресурса DynaKube. Валидационный вебхук предоставит полезные сообщения об ошибках, если возникнет проблема.
@@ -347,7 +347,7 @@ OpenShift
    kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.8.1/kubernetes.yaml
    ```
 
-   VMware Tanzu Kubernetes (TKGI) и IBM Kubernetes Service (IKS) требуют [дополнительной конфигурации](supported-technologies.md "Обзор различных конфигураций для всех основных дистрибутивов Kubernetes.").
+   VMware Tanzu Kubernetes (TKGI) и IBM Kubernetes Service (IKS) требуют дополнительной конфигурации.
 
    Выполните следующую команду, чтобы увидеть, когда компоненты Dynatrace Operator завершат инициализацию:
 
@@ -356,7 +356,7 @@ OpenShift
    ```
 3. Создайте секрет для токенов доступа
 
-   Создайте секрет с именем `dynakube` для токена Dynatrace Operator и токена приёма данных, полученных в разделе [Необходимые токены и разрешения](tokens-permissions.md "Настройка токенов и разрешений для мониторинга кластера Kubernetes").
+   Создайте секрет с именем `dynakube` для токена Dynatrace Operator и токена приёма данных, полученных в разделе Необходимые токены и разрешения.
 
    ```
    kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATOR_TOKEN>" --from-literal="dataIngestToken=<DATA_INGEST_TOKEN>"
@@ -365,7 +365,7 @@ OpenShift
 
    Пример пользовательского ресурса DynaKube для мониторинга приложений
 
-   Вы можете просмотреть [доступные параметры](../reference/dynakube-parameters.md "Список доступных параметров для настройки Dynatrace Operator в Kubernetes.") или [руководства](../guides.md "Подробное описание вариантов установки и конфигурации для конкретных сценариев использования") и адаптировать пользовательский ресурс DynaKube в соответствии с вашими требованиями.
+   Вы можете просмотреть доступные параметры или руководства и адаптировать пользовательский ресурс DynaKube в соответствии с вашими требованиями.
 
    ```
    apiVersion: dynatrace.com/v1beta5
@@ -512,7 +512,7 @@ OpenShift
    - get
    ```
 
-   Роль будет автоматически привязана к ClusterRole `dynatrace-kubernetes-monitoring` через правила агрегации. Для получения дополнительной информации об агрегации ClusterRole см. [документацию по агрегации ClusterRole](../guides/deployment-and-configuration/cluster-role-aggregation.md "Как Dynatrace Operator использует агрегацию ClusterRole для управления разрешениями мониторинга Kubernetes.").
+   Роль будет автоматически привязана к ClusterRole `dynatrace-kubernetes-monitoring` через правила агрегации. Для получения дополнительной информации об агрегации ClusterRole см. документацию по агрегации ClusterRole.
 6. Примените пользовательский ресурс DynaKube
 
    Выполните приведённую ниже команду для применения пользовательского ресурса DynaKube, убедившись, что вы заменили `<your-DynaKube-CR>` на фактическое имя файла вашего пользовательского ресурса DynaKube. Валидационный вебхук предоставит полезные сообщения об ошибках, если возникнет проблема.
@@ -590,7 +590,7 @@ OpenShift
    ```
 3. Создайте секрет для токенов доступа
 
-   Создайте секрет с именем `dynakube` для токена Dynatrace Operator и токена приёма данных, полученных в разделе [Необходимые токены и разрешения](tokens-permissions.md "Настройка токенов и разрешений для мониторинга кластера Kubernetes").
+   Создайте секрет с именем `dynakube` для токена Dynatrace Operator и токена приёма данных, полученных в разделе Необходимые токены и разрешения.
 
    ```
    oc -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATOR_TOKEN>" --from-literal="dataIngestToken=<DATA_INGEST_TOKEN>"
@@ -599,7 +599,7 @@ OpenShift
 
    Пример пользовательского ресурса DynaKube для мониторинга приложений
 
-   Вы можете просмотреть [доступные параметры](../reference/dynakube-parameters.md "Список доступных параметров для настройки Dynatrace Operator в Kubernetes.") или [руководства](../guides.md "Подробное описание вариантов установки и конфигурации для конкретных сценариев использования") и адаптировать пользовательский ресурс DynaKube в соответствии с вашими требованиями.
+   Вы можете просмотреть доступные параметры или руководства и адаптировать пользовательский ресурс DynaKube в соответствии с вашими требованиями.
 
    ```
    apiVersion: dynatrace.com/v1beta5
@@ -746,7 +746,7 @@ OpenShift
    - get
    ```
 
-   Роль будет автоматически привязана к ClusterRole `dynatrace-kubernetes-monitoring` через правила агрегации. Для получения дополнительной информации об агрегации ClusterRole см. [документацию по агрегации ClusterRole](../guides/deployment-and-configuration/cluster-role-aggregation.md "Как Dynatrace Operator использует агрегацию ClusterRole для управления разрешениями мониторинга Kubernetes.").
+   Роль будет автоматически привязана к ClusterRole `dynatrace-kubernetes-monitoring` через правила агрегации. Для получения дополнительной информации об агрегации ClusterRole см. документацию по агрегации ClusterRole.
 6. Примените пользовательский ресурс DynaKube
    Выполните приведённую ниже команду для применения пользовательского ресурса DynaKube, убедившись, что вы заменили `<your-DynaKube-CR>` на фактическое имя файла вашего пользовательского ресурса DynaKube. Валидационный вебхук предоставит полезные сообщения об ошибках, если возникнет проблема.
 
@@ -801,32 +801,32 @@ OpenShift
 
 ## Лицензирование
 
-Мониторинг платформы Kubernetes + наблюдаемость приложений требует [подписку Dynatrace Platform Subscription (DPS)](../../../license.md "О подписке Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace."). Мониторинг платформы Kubernetes лицензируется по количеству подов в час ([под-часы](../../../license/capabilities/container-monitoring/kubernetes-platform-monitoring.md "Узнайте, как рассчитывается потребление возможности мониторинга платформы Kubernetes DPS.")), а наблюдаемость приложений — по сумме памяти контейнеров ([ГиБ-часы](../../../license/capabilities/app-infra-observability/full-stack-monitoring.md#gib-hour "Узнайте, как рассчитывается потребление возможности Full-Stack Monitoring DPS.")).
+Мониторинг платформы Kubernetes + наблюдаемость приложений требует подписку Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace."). Мониторинг платформы Kubernetes лицензируется по количеству подов в час (под-часы), а наблюдаемость приложений — по сумме памяти контейнеров ([ГиБ-часы](../../../license/capabilities/app-infra-observability/full-stack-monitoring.md#gib-hour "Узнайте, как рассчитывается потребление возможности Full-Stack Monitoring DPS.")).
 
 ## Дополнительные материалы
 
 После успешной установки Dynatrace Operator следующие ресурсы могут быть полезны для дальнейшего изучения и устранения неполадок.
 
-[### Получение практических ответов
+### Получение практических ответов
 
-Начните анализировать свои кластеры Kubernetes и контейнеризированные приложения с Dynatrace и получайте практические ответы.](../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md "Мониторинг Kubernetes/OpenShift с Dynatrace.")[### Руководства
+Начните анализировать свои кластеры Kubernetes и контейнеризированные приложения с Dynatrace и получайте практические ответы.### Руководства
 
-Узнайте, как настроить Dynatrace Operator для поддержки конкретных сценариев использования.](../guides.md "Подробное описание вариантов установки и конфигурации для конкретных сценариев использования")[### Устранение неполадок
+Узнайте, как настроить Dynatrace Operator для поддержки конкретных сценариев использования.### Устранение неполадок
 
-Устранение проблем, которые могут возникнуть при работе с Dynatrace Operator и его различными компонентами.](troubleshooting.md "Эта страница поможет вам решить проблемы, которые могут возникнуть при работе с Dynatrace Operator и его различными компонентами.")
+Устранение проблем, которые могут возникнуть при работе с Dynatrace Operator и его различными компонентами.
 
-[### Как это работает
+### Как это работает
 
-Хотите узнать больше о компонентах Dynatrace в вашем кластере Kubernetes?](../how-it-works.md "Подробное описание работы развёртывания в Kubernetes.")[### Справочник
+Хотите узнать больше о компонентах Dynatrace в вашем кластере Kubernetes?### Справочник
 
-Справочник по API и параметры конфигурации для всех компонентов Dynatrace в вашем кластере Kubernetes.](../reference.md "Справочная страница с параметрами конфигурации для каждого компонента Dynatrace")[### Примечания к выпуску Dynatrace Operator
+Справочник по API и параметры конфигурации для всех компонентов Dynatrace в вашем кластере Kubernetes.### Примечания к выпуску Dynatrace Operator
 
-Примечания к выпуску Dynatrace Operator.](../../../whats-new/dynatrace-operator.md "Примечания к выпуску Dynatrace Operator")[### Обновление или удаление
+Примечания к выпуску Dynatrace Operator.### Обновление или удаление
 
-На этой странице приведены подробные инструкции по обновлению и удалению Dynatrace Operator.](../guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator.md "Процедуры обновления и удаления Dynatrace Operator")[### Руководство по размеру Dynatrace ActiveGate
+На этой странице приведены подробные инструкции по обновлению и удалению Dynatrace Operator.### Руководство по размеру Dynatrace ActiveGate
 
-Руководство по выбору размера для компонентов Dynatrace ActiveGate](../guides/deployment-and-configuration/resource-management/ag-resource-limits.md "Установка лимитов ресурсов для Dynatrace ActiveGate")
+Руководство по выбору размера для компонентов Dynatrace ActiveGate
 
 ## Связанные темы
 
-* [Kubernetes Classic](../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md "Мониторинг Kubernetes/OpenShift с Dynatrace.")
+* Kubernetes Classic

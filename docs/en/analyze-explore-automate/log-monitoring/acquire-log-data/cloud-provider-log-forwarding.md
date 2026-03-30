@@ -16,11 +16,11 @@ Log Monitoring Classic
 
 Dynatrace version 1.230+
 
-For the newest Dynatrace version, see [Cloud provider log forwarding](../../logs/lma-log-ingestion/lma-cloud-provider-log-forwarding.md "Configure AWS, Azure and Google Cloud log forwarding to stream log data to Dynatrace using API.").
+For the newest Dynatrace version, see Cloud provider log forwarding.
 
 DDU consumption for Log Monitoring
 
-DDU pricing applies to cloud Log Monitoring. See [DDUs for Log Monitoring](../../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
+DDU pricing applies to cloud Log Monitoring. See DDUs for Log Monitoring for details.
 
 ## Amazon Web Services
 
@@ -37,7 +37,7 @@ To enable AWS log forwarding,
 3. Connect your CloudWatch log groups by creating a subscription filter or send logs directly to Firehose from services that support it (for example, VPC Flow Logs).
    Firehose and other created cloud resources incur AWS costs according to the standard AWS billing policy.
 
-To learn more, see [Stream logs via Amazon Data Firehose (Logs Classic)](../../../ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lm-stream-logs-with-firehose.md "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.").
+To learn more, see Stream logs via Amazon Data Firehose (Logs Classic).
 
 ### Log ingestion from Amazon S3
 
@@ -54,7 +54,7 @@ For detailed instructions on how to set up log ingestion from AWS S3, see [docum
 
 ### AWS Lambda log collection
 
-You can collect logs directly from your AWS Lambda functions and send them to Dynatrace for analysis. The solution is an alternative to the CloudWatch log forwarder with benefits in terms of cost and latency, and is also easier to set up, particularly if AWS Lambda tracing is already in place. As part of the OneAgent installation process, this feature provides a streamlined solution for collecting logs from your Lambda functions. For more information, see [AWS Lambda documentation page](../../../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector.md "Collect logs from AWS Lambda functions").
+You can collect logs directly from your AWS Lambda functions and send them to Dynatrace for analysis. The solution is an alternative to the CloudWatch log forwarder with benefits in terms of cost and latency, and is also easier to set up, particularly if AWS Lambda tracing is already in place. As part of the OneAgent installation process, this feature provides a streamlined solution for collecting logs from your Lambda functions. For more information, see AWS Lambda documentation page.
 
 ### AWS log monitoring using log forwarder Deprecated
 
@@ -93,8 +93,8 @@ For detailed instruction on how to set up Azure log forwarding see, [Azure Logs]
 
 To set up Google Cloud monitoring for metrics and logs, you'll run the deployment script in Google Cloud Shell. During setup, a new Pub/Sub subscription will be created. GKE will run two containers: a metric forwarder and a log forwarder. After installation, you'll get metrics, logs, dashboards, and alerts for your configured services in Dynatrace. Instructions will depend on the location where you want the deployment script to run:
 
-* [On a new GKE Autopilot cluster created automatically](../../../ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8.md "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster."). Recommended
-* [On an existing GKE standard or GKE Autopilot cluster](../../../ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster.md "Deploy log and metric monitoring for Google Cloud services on an existing standard GKE or GKE Autopilot cluster").
+* On a new GKE Autopilot cluster created automatically. Recommended
+* On an existing GKE standard or GKE Autopilot cluster.
 
 Depending on where you want log ingestion to be performed, you may need additional resources. For example, for Managed deployments, there is a possibility to use an AG for log ingestion. But you have to do it manually since the installation script does not deploy it.
 
@@ -102,4 +102,4 @@ For all log ingestion options, see [Log ingestion](../../../ingest-from/google-c
 
 ## Related topics
 
-* [DDUs for Log Monitoring Classic](../../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.")
+* DDUs for Log Monitoring Classic

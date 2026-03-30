@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:18:17.162329
 ## Capabilities
 
 * Full-stack java monitoring powered by OneAgent
-* Integration with [Azure Monitor](azure-spring/monitor-azure-spring-apps.md "Monitor Azure Spring Apps and view available metrics.")
+* Integration with Azure Monitor
 * Automatic service detection of services running in Azure Spring Apps
 
 Since Azure Spring Apps is a fully managed hosting platform, applications are deployed into a sandboxed environment that doesn't allow direct access to the underlying operating system.
@@ -58,15 +58,15 @@ To set up OneAgent integration with your Azure Spring Apps instance, you need to
 
 Before you begin, collect the following information:
 
-* Your [Dynatrace environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.")
+* Your Dynatrace environment ID
 * Authentication
 
   + **PaaS token** authenticates you as a Dynatrace user and is required to determine the tenant token.
   + **Tenant token** allows OneAgent to report data to Dynatrace.
-    For more information on tokens, see [Access tokens](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md "Learn the concept of an access token and its scopes.").
+    For more information on tokens, see Access tokens.
 
-1. The value for `DT_TENANT`is your [Dynatrace environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
-2. To determine the values for `DT_TENANTTOKEN` and `DT_CONNECTION_POINT`, make an API request to the [Deployment API - GET connectivity information for OneAgent](../../../dynatrace-api/environment-api/deployment/oneagent/get-connectivity-info.md "View the connectivity information of OneAgent via Dynatrace API.") endpoint. The values you need are returned as `tenantToken` and `communicationEndpoints`.
+1. The value for `DT_TENANT`is your Dynatrace environment ID.
+2. To determine the values for `DT_TENANTTOKEN` and `DT_CONNECTION_POINT`, make an API request to the Deployment API - GET connectivity information for OneAgent endpoint. The values you need are returned as `tenantToken` and `communicationEndpoints`.
 
    You can submit the call to your environment URL (SaaS or Managed) or an Environment ActiveGate URL.
 
@@ -78,7 +78,7 @@ Before you begin, collect the following information:
 
      Replace:
 
-     + `<your-environment-id>` with your [Dynatrace environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.")
+     + `<your-environment-id>` with your Dynatrace environment ID
      + `<your_PaaS_token>` with your [PaaS token](#prerequisites)
    * **Dynatrace Managed**:
 
@@ -89,7 +89,7 @@ Before you begin, collect the following information:
      Replace:
 
      + `<your-domain>` with your Managed deployment domain
-     + `<your-environment-id>` with your [Dynatrace environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.")
+     + `<your-environment-id>` with your Dynatrace environment ID
      + `<your_PaaS_token>` with your [PaaS token](#prerequisites)
    * **Environment ActiveGate**:
 
@@ -100,7 +100,7 @@ Before you begin, collect the following information:
      Replace
 
      + `<your-activegate-domain>` with your ActiveGate domain
-     + `<your-environment-id>` with your [Dynatrace environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.")
+     + `<your-environment-id>` with your Dynatrace environment ID
      + `<your_PaaS_token>` with your [PaaS token](#prerequisites)
 
 ### Step 3 Add the environment variables to your application
@@ -129,17 +129,17 @@ DT_TENANTTOKEN=<your-tenant-token> DT_CONNECTION_POINT=<your-communication-endpo
 
    | Key | Value |
    | --- | --- |
-   | `DT_TENANT` | [Your Dynatrace environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") |
+   | `DT_TENANT` | Your Dynatrace environment ID |
    | `DT_TENANTTOKEN` | Your tenant token. See [Determine the values for the required environment variables](#envvar) for details. |
    | `DT_CONNECTION_POINT` | Your communication endpoint. See [Determine the values for the required environment variables](#envvar) for details. |
 4. [Create a buildpack bindingï»¿](https://dt-url.net/nu036u6) for Dynatrace using the PaaS token (API token) and API url as properties.
 
    | Property | Value |
    | --- | --- |
-   | `api-url` | [Your Dynatrace environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") |
+   | `api-url` | Your Dynatrace environment ID |
    | `api-token` | [PaaS token](#prerequisites) |
 
-Optionally, you can customize the built-in rules for process group detection by setting another environment variable, `DT_CLUSTER_ID`. The value can be the name of the process group you want to see in Dynatrace. See [Process group detection](../../../observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection") for details.
+Optionally, you can customize the built-in rules for process group detection by setting another environment variable, `DT_CLUSTER_ID`. The value can be the name of the process group you want to see in Dynatrace. See Process group detection for details.
 
 ## View data in Dynatrace
 
@@ -168,5 +168,5 @@ Following a OneAgent update, you need to restart or redeploy your applications f
 
 ## Related topics
 
-* [Monitor Azure Spring Apps](azure-spring/monitor-azure-spring-apps.md "Monitor Azure Spring Apps and view available metrics.")
-* [OneAgent platform and capability support matrix](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* Monitor Azure Spring Apps
+* OneAgent platform and capability support matrix

@@ -27,18 +27,18 @@ With the key user action feature, you can [customize the Apdex thresholds](../..
 
 You can define up to 500 key user actions per environment across all your applications and up to 100 key user actions per application.
 
-When you reach the maximum key user action limit, consider using calculated metrics (available for your [web](../../web-applications/additional-configuration/rum-calculated-metrics-web.md "Create calculated metrics as well as custom charts based on calculated metrics for your web applications."), [mobile](rum-calculated-metrics-mobile.md "Create calculated metrics as well as custom charts based on calculated metrics for your mobile applications."), and [custom applications](../../custom-applications/additional-configuration/rum-calculated-metrics-custom.md "Create calculated metrics as well as custom charts based on calculated metrics for your custom applications.")), which offer similar capabilities.
+When you reach the maximum key user action limit, consider using calculated metrics (available for your web, mobile, and custom applications), which offer similar capabilities.
 
 ## Pin a key user action to dashboard
 
-[Dashboards Classic](../../../../analyze-explore-automate/dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+Dashboards Classic
 
 1. Go to **Frontend**.
 2. Select the application and scroll down to **Top 3 user actions** or **Top 3 actions**.
 3. Select **View full details** or **Analyze performance**.
 4. Search for the required key user action and select it.  
    The user action detail page opens.
-5. In the upper part of the user action detail page, select **Pin to dashboard**. For details, see [Pin tiles to your dashboard](../../../../analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard.md "Learn to pin tiles to your dashboards.").
+5. In the upper part of the user action detail page, select **Pin to dashboard**. For details, see Pin tiles to your dashboard.
 
 ## Customize Apdex rating for a key user action
 
@@ -57,4 +57,4 @@ To change the Apdex thresholds for a key user action
 
 ## Related topics
 
-* [User actions](../../rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.")
+* User actions

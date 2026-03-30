@@ -53,7 +53,7 @@ The **`INSTALL_PATH`** parameter allows installation to a different directory. F
 
 The installer creates the symbolic link `/opt/dynatrace/oneagent` > `/data/dynatrace/agent` and the OneAgent installation files are placed in the specified directory (in this example, `/data/dynatrace/agent`). Note that this symbolic link needs to be removed manually after OneAgent is uninstalled.
 
-The `INSTALL_PATH` parameter doesn't control the OneAgent [log and configuration files](disk-space-requirements-for-oneagent-installation-and-update-on-linux.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.") directories. To customize the log path, use the `LOG_PATH` parameter.
+The `INSTALL_PATH` parameter doesn't control the OneAgent log and configuration files directories. To customize the log path, use the `LOG_PATH` parameter.
 
 Additionally, the default installation paths should not be symbolic links. Specifically, `/var/lib/dynatrace` cannot be altered, except for the `/var/lib/dynatrace/oneagent/datastorage` part, which can be modified using the `DATA_STORAGE` option.
 
@@ -132,13 +132,13 @@ To set the communication endpoint, pass it as a parameter value:
 
 OneAgent and Dynatrace Cluster automatically maintain a working connection. If an endpoint detail changes, the cluster notifies OneAgent of the change and OneAgent automatically updates the endpoint you set using the `--set-server` to the new working value.
 
-To change the endpoint after installation, use `--set-server` in the [OneAgent command-line interface](../../../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change the endpoint after installation, use `--set-server` in the OneAgent command-line interface.
 
 ## Environment ID
 
 **Default value**: `environment specific`
 
-The Dynatrace [environment ID](../../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") you received with your activation email. If you install OneAgent using the Dynatrace **Deploy** page, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
+The Dynatrace environment ID you received with your activation email. If you install OneAgent using the Dynatrace **Deploy** page, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
 
 To set the environment ID, pass it as a parameter value:
 
@@ -146,7 +146,7 @@ To set the environment ID, pass it as a parameter value:
 --set-tenant=mySampleEnv
 ```
 
-To change the tenant after installation, use `--set-tenant` in the [OneAgent command-line interface](../../../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change the tenant after installation, use `--set-tenant` in the OneAgent command-line interface.
 
 ## Token
 
@@ -160,15 +160,15 @@ To set a token, pass it as a parameter value:
 --set-tenant-token=abcdefghij123456
 ```
 
-See [Access tokens](../../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token.md "Learn what a tenant token is and how to change it.") to learn how to obtain a token.
+See Access tokens to learn how to obtain a token.
 
-To change the tenant token after installation, use `--set-tenant-token` in the [OneAgent command-line interface](../../../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change the tenant token after installation, use `--set-tenant-token` in the OneAgent command-line interface.
 
 ## Network zones
 
 **Default value**: `unset`
 
-To learn about network zone naming rules and other reference information, see [Network zones](../../../../../manage/network-zones.md "Find out how network zones work in Dynatrace.").
+To learn about network zone naming rules and other reference information, see Network zones.
 
 Use the `--set-network-zone` parameter to instruct OneAgent to communicate via the specified network zone:
 
@@ -176,7 +176,7 @@ Use the `--set-network-zone` parameter to instruct OneAgent to communicate via t
 --set-network-zone=your.network.zone
 ```
 
-To change or clear the network zone assignment after installation, use [Remote configuration management](../../../../bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
+To change or clear the network zone assignment after installation, use Remote configuration management (select the **modify network zone** action).
 
 Alternatively, you can use `--set-network-zone` on the [OneAgent command-line interface](../../../oneagent-configuration-via-command-line-interface.md#nz "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
@@ -194,7 +194,7 @@ To set a proxy, pass it as a parameter value:
 
 Dynatrace also supports IPv6 addresses.
 
-To change or clear the proxy address after installation, use `--set-proxy` in the [OneAgent command-line interface](../../../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change or clear the proxy address after installation, use `--set-proxy` in the OneAgent command-line interface.
 
 ## Port range
 
@@ -208,9 +208,9 @@ Watchdog is a binary used for starting and monitoring OneAgent monitoring proces
 
 * `oneagentos`âoperating system monitoring
 * `oneagentplugin`âmonitoring using [OneAgent extensions](../../../../extensions/develop-your-extensions.md#oneagent-extensions "Develop your own Extensions in Dynatrace.")
-* `oneagentextensions`âmonitoring using local [Extensions](../../../../extensions.md "Learn how to create and manage Dynatrace Extensions.")
-* `oneagentloganalytics`â[Log Monitoring](../../../../../analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
-* `oneagentnetwork`â[network monitoring](../../../../../observe/infrastructure-observability/networks-classic.md "Learn how to monitor network communications.")
+* `oneagentextensions`âmonitoring using local Extensions
+* `oneagentloganalytics`âLog Monitoring
+* `oneagentnetwork`ânetwork monitoring
 
 Use the `--set-watchdog-portrange=<arg>` parameter to change the watchdog listening port range to `<arg>`. The `<arg>` must contain two port numbers separated by a colon (`:`). For example `50000:50100`. The maximum supported port range is from 1024 to 65535. The port range must cover at least 4 ports. The port number starting the range must be lower. For example:
 
@@ -234,7 +234,7 @@ After you set the parameter to `false`, you won't be able to control OneAgent au
 
 **Default value**: `unset`
 
-The name of a group you want to assign the host to. For details, see [Organize your environment using host groups](../../../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."). Host group string requirements:
+The name of a group you want to assign the host to. For details, see Organize your environment using host groups. Host group string requirements:
 
 * Can contain only alphanumeric characters, hyphens, underscores, and periods
 * Must not start with `dt.`
@@ -246,9 +246,9 @@ To assign a host to the host group, pass the host group name as a parameter valu
 --set-host-group=My.HostGroup_123-456
 ```
 
-To remove the host from a group, you need to [uninstall OneAgent](../operation/uninstall-oneagent-on-linux.md "Learn how you can remove OneAgent from your Linux-based system.") or pass an empty value `--set-host-group=""` when running a OneAgent update. You can't remove the host from a group using the `HOST_GROUP` parameter when updating OneAgent.
+To remove the host from a group, you need to uninstall OneAgent or pass an empty value `--set-host-group=""` when running a OneAgent update. You can't remove the host from a group using the `HOST_GROUP` parameter when updating OneAgent.
 
-To change or clear the host group assignment after installation, use [Remote configuration management](../../../../bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host group** action).
+To change or clear the host group assignment after installation, use Remote configuration management (select the **modify host group** action).
 
 Alternatively, you can use `--set-host-group` in the [OneAgent command-line interface](../../../oneagent-configuration-via-command-line-interface.md#host-groups "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
@@ -274,7 +274,7 @@ For example:
 --set-monitoring-mode=infra-only
 ```
 
-To change the monitoring mode after installation, use `--set-monitoring-mode` in the [OneAgent command-line interface](../../../oneagent-configuration-via-command-line-interface.md#infrastructure-monitoring "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") or set it using the [Host settings](../../../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.") page.
+To change the monitoring mode after installation, use `--set-monitoring-mode` in the [OneAgent command-line interface](../../../oneagent-configuration-via-command-line-interface.md#infrastructure-monitoring "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") or set it using the Host settings page.
 
 ## Custom host name
 
@@ -282,7 +282,7 @@ To change the monitoring mode after installation, use `--set-monitoring-mode` in
 
 Use the `--set-host-name` to override an automatically detected host name. The host name value must not contain the `<`, `>`, `&`, `CR` (carriage return), and `LF` (line feed) characters and the maximum length is 256 characters.
 
-This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see [Set custom host names](../../../../../observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Learn how to change a monitored host name.").
+This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see Set custom host names.
 
 To set the host name:
 
@@ -290,7 +290,7 @@ To set the host name:
 --set-host-name=myhostname
 ```
 
-To change the host name after installation, use `--set-host-name` in the [OneAgent command-line interface](../../../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change the host name after installation, use `--set-host-name` in the OneAgent command-line interface.
 
 ## Custom host metadata
 
@@ -306,9 +306,9 @@ To add or change host properties:
 
 You can add or change more than one property in the same command.
 
-To change the host metadata after installation, use [Remote configuration management](../../../../bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select **modify host properties** action).
+To change the host metadata after installation, use Remote configuration management (select **modify host properties** action).
 
-Alternatively, you can use `--set-host-property` in the [OneAgent command-line interface](../../../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Alternatively, you can use `--set-host-property` in the OneAgent command-line interface.
 
 ## Custom host tags
 
@@ -324,9 +324,9 @@ To add or change host tags:
 
 You can add or change more than one tag in the same command. It is allowed to define tags with the same key but different values.
 
-To change the host tags after installation, use [Remote configuration management](../../../../bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host tags** action).
+To change the host tags after installation, use Remote configuration management (select the **modify host tags** action).
 
-Alternatively, you can use `--set-host-tag` in the [OneAgent command-line interface](../../../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Alternatively, you can use `--set-host-tag` in the OneAgent command-line interface.
 
 ## Host ID source
 
@@ -397,20 +397,20 @@ To enable access to logs:
 --set-system-logs-access-enabled=true
 ```
 
-If you need to change this access after installation, use the [OneAgent command-line interface](../../../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent."):
+If you need to change this access after installation, use the OneAgent command-line interface:
 
-Note that this is a self-diagnostics setting and is not related to [Log Monitoring](../../../../../analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
+Note that this is a self-diagnostics setting and is not related to Log Monitoring.
 
 ## Log Monitoring
 
 **Default value**: `true`
 
-When set to `true`, allows OneAgent to access log files for the purpose of Log Monitoring. Accepted values are (`true`, `false`) or (`1`, `0`). This option can alternatively be [enabled/disabled through the Web UI](../../../../../analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
+When set to `true`, allows OneAgent to access log files for the purpose of Log Monitoring. Accepted values are (`true`, `false`) or (`1`, `0`). This option can alternatively be enabled/disabled through the Web UI.
 
 For example:
 `--set-app-log-content-access=true`
 
-If you need to enable or disable Log Monitoring after installation, use `-set-app-log-content-access` in [OneAgent command-line interface](../../../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+If you need to enable or disable Log Monitoring after installation, use `-set-app-log-content-access` in OneAgent command-line interface.
 
 ## Automatic injection
 
@@ -426,17 +426,17 @@ For more information, see [Automatic injection](../../../oneagent-configuration-
 
 **Default value**: `14449`
 
-You can use the `--set-extensions-ingest-port=<arg>` parameter to change the default communication port used for local metric ingestion. The port is used by [OneAgent REST API](../../../../extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api.md "Use the Dynatrace API to retrieve the metrics of monitored entities."), [Scripting integration](../../../../extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe.md "Learn how to ingest metrics using local scripting integration.") (`dynatrace_ingest`), and [Telegraf](../../../../extend-dynatrace/extend-metrics/ingestion-methods/telegraf.md "Ingest Telegraf metrics into Dynatrace.").
+You can use the `--set-extensions-ingest-port=<arg>` parameter to change the default communication port used for local metric ingestion. The port is used by OneAgent REST API, Scripting integration (`dynatrace_ingest`), and Telegraf.
 
-For more information, see [Metric ingestion](../../../../extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.").
+For more information, see Metric ingestion.
 
 ## StatsD metric ingest
 
 **Default value**: `18125`
 
-You can use the `--set-extensions-statsd-port=<arg>` parameter to change the default [DynatraceStatsD](../../../../extend-dynatrace/extend-metrics/ingestion-methods/statsd.md "Ingest metrics into Dynatrace using OneAgent and the ActiveGate StatsD client.") UDP listening port.
+You can use the `--set-extensions-statsd-port=<arg>` parameter to change the default DynatraceStatsD UDP listening port.
 
-For more information, see [Metric ingestion](../../../../extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.").
+For more information, see Metric ingestion.
 
 ## Non-privileged mode
 
@@ -456,7 +456,7 @@ Note that non-privileged mode requires Linux kernel capabilities that are availa
 
 * Linux kernel version 2.6.26+ for OneAgent installation without root privileges.
 * Linux kernel version 4.3+ (recommended systemd version 221+) for OneAgent automatic updates and full operation without root privileges.
-  For more information, see [Linux non-privileged mode](linux-non-privileged.md "Find out when Dynatrace OneAgent requires root privileges on Linux.")
+  For more information, see Linux non-privileged mode
 
 ### **`DISABLE_ROOT_FALLBACK`**
 
@@ -468,7 +468,7 @@ Used in conjunction with the `NON_ROOT_MODE` parameter to block the superuser pe
 
 To switch the installer back to use the superuser permission level for subsequent updates, run it with `DISABLE_ROOT_FALLBACK=0`.
 
-For more information, see the [permission requirements for OneAgent installation and operation on Linux](linux-non-privileged.md "Find out when Dynatrace OneAgent requires root privileges on Linux.").
+For more information, see the permission requirements for OneAgent installation and operation on Linux.
 
 * The uninstall process doesn't delete the unprivileged user from the system (whether or not it's `dtuser` or specified by the `USER parameter`).
 * The unprivileged `username` is preserved during upgrades, unless a new username is specified during upgrade.
@@ -516,7 +516,7 @@ Setting this parameter to `true` will enable OneAgent installation on an otherwi
 
 This parameter is not preserved across automatic updates.
 
-For information about the OneAgent auto-update mechanism, see [Update OneAgent on Linux](../operation/update-oneagent-on-linux.md "Learn about the different ways to update OneAgent on Linux.").
+For information about the OneAgent auto-update mechanism, see Update OneAgent on Linux.
 
 **Default value**: `false`
 

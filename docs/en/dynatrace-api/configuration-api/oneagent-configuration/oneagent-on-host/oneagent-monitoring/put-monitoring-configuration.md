@@ -11,7 +11,7 @@ scraped: 2026-02-06T16:31:13.607418
 * Updated on Jun 23, 2022
 * Deprecated
 
-This API is deprecated. Use the [Settings API](../../../../environment-api/settings.md "Find out what the Dynatrace Settings API offers.") with the **Monitoring** (`builtin:host.monitoring`) schema instead.
+This API is deprecated. Use the Settings API with the **Monitoring** (`builtin:host.monitoring`) schema instead.
 
 Updates the monitoring configuration of OneAgent on the specified host.
 
@@ -26,7 +26,7 @@ The request consumes an `application/json` payload.
 
 To execute this request, you need an access token with `WriteConfig` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](../../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ## Parameters
 
@@ -211,7 +211,7 @@ The request consumes an `application/json` payload.
 
 To execute this request, you need an access token with `WriteConfig` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](../../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ### Response
 

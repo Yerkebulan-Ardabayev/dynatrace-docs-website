@@ -7,7 +7,7 @@ scraped: 2026-03-05T21:35:36.655664
 # API уязвимостей - POST отключение элементов исправления
 
 
-Отключает несколько групп процессов [отслеживания исправлений](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Отслеживание прогресса исправления уязвимостей.") или, в случае уязвимостей Kubernetes, несколько узлов Kubernetes для отслеживания исправлений.
+Отключает несколько групп процессов отслеживания исправлений или, в случае уязвимостей Kubernetes, несколько узлов Kubernetes для отслеживания исправлений.
 
 Запрос принимает полезную нагрузку `application/json`.
 
@@ -20,7 +20,7 @@ scraped: 2026-03-05T21:35:36.655664
 
 Для выполнения этого запроса необходим токен доступа с областью действия `securityProblems.write`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+Чтобы узнать, как получить и использовать его, см. Токены и аутентификация.
 
 ## Параметры
 
@@ -296,6 +296,6 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 
 ## Связанные темы
 
-* [Application Security](../../../../secure/application-security.md "Доступ к функциям Dynatrace Application Security.")
-* [Davis Security Advisor API](../davis-security-advice.md "Просмотр рекомендаций Davis Security Advisor через Dynatrace API.")
-* [Отслеживание исправлений](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Отслеживание прогресса исправления уязвимостей.")
+* Application Security
+* Davis Security Advisor API
+* Отслеживание исправлений

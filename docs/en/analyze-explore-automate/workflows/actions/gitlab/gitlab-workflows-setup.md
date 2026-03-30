@@ -63,5 +63,5 @@ Refer to the GitLab documentation for details on which scope is needed for which
 
 ## Related topics
 
-* [Actions for GitLab Connector](gitlab-workflows-actions.md "List of available actions in GitLab Connector.")
-* [GitLab Connector](../gitlab.md "Integrate Workflows with GitLab.")
+* Actions for GitLab Connector
+* GitLab Connector

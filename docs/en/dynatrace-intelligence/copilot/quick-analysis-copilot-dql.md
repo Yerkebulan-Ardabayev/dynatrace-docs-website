@@ -16,7 +16,7 @@ You can use Dynatrace Intelligence generative AI in Dashboards and Notebooks to 
 
 ## Prerequisites
 
-We assume that you have completed the setup described in [Getting started with Dynatrace Intelligence agentic and generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+We assume that you have completed the setup described in Getting started with Dynatrace Intelligence agentic and generative AI.
 
 ## Use generative AI in Notebooks
 
@@ -39,7 +39,7 @@ We assume that you have completed the setup described in [Getting started with D
 
      + If a prompt has been edited, the DQL will first be regenerated and then run.
      + If no prompts have been edited, the existing generated DQL will simply be run.
-7. Optional Select the  **Options** in the section header to change the visualization (refer to the [visualization-specific documentation](../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
+7. Optional Select the  **Options** in the section header to change the visualization (refer to the visualization-specific documentation for more information).
 
    Automatically select visualization
 
@@ -75,7 +75,7 @@ We assume that you have completed the setup described in [Getting started with D
 
      + If a prompt has been edited, the DQL will first be regenerated and then run.
      + If no prompts have been edited, the existing generated DQL will simply be run.
-8. Optional Select the **Visual** tab to change the visualization (refer to the [visualization-specific documentation](../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
+8. Optional Select the **Visual** tab to change the visualization (refer to the visualization-specific documentation for more information).
 
 Even though Dynatrace Intelligence generative AI is not charged for, all queries that are executed by generative AI are subject to licensing consumption according to your existing licensing agreement.
 
@@ -144,7 +144,7 @@ Since Dynatrace Intelligence generative AI respects user privileges, it may prov
 Dynatrace Intelligence generative AI NL2DQL response process can be summarized in 4 steps.
 
 1. Dynatrace Intelligence generative AI receives a request from a user.
-2. If the request is well-formulated and recognized (see [Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts](quick-analysis-copilot-dql/copilot-tips.md "Learn best practices for writing more accurate prompts.") for more information), Dynatrace Intelligence generative AI matches the user request with the Dynatrace-owned content, such as documentation and curated query examples, and passes the prompt to LLM.
+2. If the request is well-formulated and recognized (see Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts for more information), Dynatrace Intelligence generative AI matches the user request with the Dynatrace-owned content, such as documentation and curated query examples, and passes the prompt to LLM.
 
    If you have enabled environment-aware queries, the relevant data fragments will be used enrich the prompt alongside Dynatrace-owned content.
 3. The LLM generates a response and checks if the DQL is valid.
@@ -161,8 +161,8 @@ Do not share personal or confidential information in your feedback.
 
 ## Related topics
 
-* [Dynatrace Intelligence agentic and generative AI overview](copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
-* [Get started with Dynatrace Intelligence agentic and generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Dynatrace Intelligence agentic and generative AI FAQ](../../../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
-* [Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts](quick-analysis-copilot-dql/copilot-tips.md "Learn best practices for writing more accurate prompts.")
-* [Generative AI quick analysis examples](../use-cases/copilot-examples.md "Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.")
+* Dynatrace Intelligence agentic and generative AI overview
+* Get started with Dynatrace Intelligence agentic and generative AI
+* Dynatrace Intelligence agentic and generative AI FAQ
+* Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts
+* Generative AI quick analysis examples

@@ -25,4 +25,4 @@ To create a user action naming rule
 
 ## Related topics
 
-* [User actions](../../rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.")
+* User actions

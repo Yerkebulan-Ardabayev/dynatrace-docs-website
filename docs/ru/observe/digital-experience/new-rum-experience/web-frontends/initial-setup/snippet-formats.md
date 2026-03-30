@@ -10,7 +10,7 @@ scraped: 2026-03-06T21:27:24.885857
 * Latest Dynatrace
 * How-to guide
 
-RUM JavaScript -- будь то [автоматически внедренный](set-up-auto-injected-frontend.md "Узнайте, как настроить автоматически внедряемый веб-фронтенд в New RUM Experience.") или [вручную вставленный](set-up-agentless-monitoring.md "Узнайте, как настроить безагентный RUM для веб-фронтендов в New RUM Experience.") в ваше веб-приложение -- состоит из двух ключевых компонентов:
+RUM JavaScript -- будь то автоматически внедренный или вручную вставленный в ваше веб-приложение -- состоит из двух ключевых компонентов:
 
 * **Код мониторинга**: JavaScript-код, обеспечивающий возможности RUM, такие как захват пользовательских событий.
 * **Конфигурация**: конфигурация приложения, которая изначально используется кодом мониторинга. Позднее она обновляется через ответ RUM-маяка в случае изменений конфигурации.
@@ -84,7 +84,7 @@ Inline code
 5. В разделе **JavaScript tag** установите **Script execution attribute** на **async**, **defer** или **No attribute**.
 6. Скопируйте сниппет и вставьте его в вашу страницу.
 
-При получении JavaScript tag через API вы можете управлять выполнением скрипта, передав параметр. Подробнее см. [GET JavaScript tag](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag.md "Получение последнего JavaScript tag для ручной вставки.").
+При получении JavaScript tag через API вы можете управлять выполнением скрипта, передав параметр. Подробнее см. GET JavaScript tag.
 
 ##### Добавление атрибута `crossorigin="anonymous"`
 
@@ -101,7 +101,7 @@ Inline code
 5. В разделе **JavaScript tag** включите **Add crossorigin=anonymous attribute**.
 6. Скопируйте сниппет и вставьте его в вашу страницу.
 
-При получении JavaScript tag через API вы можете управлять добавлением атрибута `crossorigin="anonymous"`, передав параметр. Подробнее см. [GET JavaScript tag](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag.md "Получение последнего JavaScript tag для ручной вставки.").
+При получении JavaScript tag через API вы можете управлять добавлением атрибута `crossorigin="anonymous"`, передав параметр. Подробнее см. GET JavaScript tag.
 
 **OneAgent JavaScript tag** включает конфигурацию и ссылается на внешний файл, содержащий код мониторинга. Он доступен как для ручной вставки, так и для автоматического внедрения.
 
@@ -148,9 +148,9 @@ Inline code
 5. В разделе **OneAgent JavaScript tag** установите **Script execution attribute** на **async**, **defer** или **No attribute**.
 6. Скопируйте сниппет и вставьте его в вашу страницу.
 
-При получении OneAgent JavaScript tag через API вы можете управлять выполнением скрипта, передав параметр. Подробнее см. [GET OneAgent JavaScript tag](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag.md "Получение последнего OneAgent JavaScript tag для ручной вставки.").
+При получении OneAgent JavaScript tag через API вы можете управлять выполнением скрипта, передав параметр. Подробнее см. GET OneAgent JavaScript tag.
 
-**OneAgent JavaScript tag with SRI** позволяет использовать функцию браузера Subresource Integrity (SRI) для проверки того, что код мониторинга не был изменён, см. [Использование Subresource Integrity (SRI) в New RUM Experience](subresource-integrity.md "Использование функции браузера Subresource Integrity (SRI) в New RUM Experience для обеспечения целостности кода Real User Monitoring."). Он включает конфигурацию, ссылку на внешний файл с кодом мониторинга и хэш целостности для этого кода мониторинга. Он поддерживается как для автоматического внедрения, так и для ручной вставки.
+**OneAgent JavaScript tag with SRI** позволяет использовать функцию браузера Subresource Integrity (SRI) для проверки того, что код мониторинга не был изменён, см. Использование Subresource Integrity (SRI) в New RUM Experience в New RUM Experience для обеспечения целостности кода Real User Monitoring."). Он включает конфигурацию, ссылку на внешний файл с кодом мониторинга и хэш целостности для этого кода мониторинга. Он поддерживается как для автоматического внедрения, так и для ручной вставки.
 
 [Получить OneAgent JavaScript tag with SRI через API](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri.md)
 
@@ -195,7 +195,7 @@ Inline code
 5. В разделе **OneAgent JavaScript tag with SRI** установите **Script execution attribute** на **async**, **defer** или **No attribute**.
 6. Скопируйте сниппет и вставьте его в вашу страницу.
 
-При получении OneAgent JavaScript tag with SRI через API вы можете управлять выполнением скрипта, передав параметр. Подробнее см. [GET OneAgent JavaScript tag with SRI](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri.md "Получение последнего OneAgent JavaScript tag with SRI для ручной вставки.").
+При получении OneAgent JavaScript tag with SRI через API вы можете управлять выполнением скрипта, передав параметр. Подробнее см. GET OneAgent JavaScript tag with SRI.
 
 **Inline code** содержит как конфигурацию, так и код мониторинга RUM, сводя к минимуму количество веб-запросов. Обратите внимание, что код мониторинга Session Replay Classic не встраивается, поэтому при использовании Session Replay Classic будет выполняться дополнительный запрос. Если ваш сайт состоит из множества отдельных страниц, использование встроенного кода может быть нецелесообразным, так как увеличивает размер каждого документа. Однако это может быть подходящим выбором для одностраничных приложений (SPA).
 
@@ -221,8 +221,8 @@ Inline code
 
 ## Связанные темы
 
-* [API тегов ручной вставки RUM](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags.md "Узнайте, как загрузить теги ручной вставки RUM через API")
-* [Использование Subresource Integrity (SRI) в New RUM Experience](subresource-integrity.md "Использование функции браузера Subresource Integrity (SRI) в New RUM Experience для обеспечения целостности кода Real User Monitoring.")
-* [Настройка безагентного RUM в New RUM Experience](set-up-agentless-monitoring.md "Узнайте, как настроить безагентный RUM для веб-фронтендов в New RUM Experience.")
-* [Настройка автоматически внедряемого фронтенда в New RUM Experience](set-up-auto-injected-frontend.md "Узнайте, как настроить автоматически внедряемый веб-фронтенд в New RUM Experience.")
-* [Настройка автоматического внедрения в New RUM Experience](configure-auto-injection.md "Настройка автоматического внедрения RUM JavaScript в страницы ваших фронтендов в New RUM Experience.")
+* API тегов ручной вставки RUM
+* Использование Subresource Integrity (SRI) в New RUM Experience в New RUM Experience для обеспечения целостности кода Real User Monitoring.")
+* Настройка безагентного RUM в New RUM Experience
+* Настройка автоматически внедряемого фронтенда в New RUM Experience
+* Настройка автоматического внедрения в New RUM Experience

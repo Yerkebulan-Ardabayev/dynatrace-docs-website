@@ -11,9 +11,9 @@ scraped: 2026-03-06T21:10:28.052302
 * 3-min read
 * Published Mar 05, 2018
 
-Dynatrace is an open and extensible platform. You can extend the observability data collected out of the box with data provided by observability standards and frameworks such as OpenTelemetry and Prometheus. And you can also extend Dynatrace analytics capabilities by [extending its Smartscape topology](extend-dynatrace/extend-topology.md "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to.") and its [domain workflows and entity screens](extend-dynatrace/extend-ui.md "Extend the Dynatrace web UI using entity-tailored unified analysis pages.") via [extensions](extensions.md "Learn how to create and manage Dynatrace Extensions."). You can also export data to third-party systems via the [APIs](../dynatrace-api.md "Find out what you need to use the Dynatrace API.") and [integrations with problem notification systems](../analyze-explore-automate/notifications-and-alerting/problem-notifications.md "Learn how to integrate third-party problem notification systems with Dynatrace.").
+Dynatrace is an open and extensible platform. You can extend the observability data collected out of the box with data provided by observability standards and frameworks such as OpenTelemetry and Prometheus. And you can also extend Dynatrace analytics capabilities by extending its Smartscape topology and its domain workflows and entity screens via extensions. You can also export data to third-party systems via the APIs and integrations with problem notification systems.
 
-This section focuses on extending telemetry data and creating [extensions](extensions.md "Learn how to create and manage Dynatrace Extensions.") to centralize and automate the configuration of the data you collect.
+This section focuses on extending telemetry data and creating extensions to centralize and automate the configuration of the data you collect.
 
 [![Dynatrace Developer](https://dt-cdn.net/images/developer-logo-1288bebd8d.svg "Dynatrace Developer")
 
@@ -43,9 +43,9 @@ Send StatsD metrics to Dynatrace](extend-dynatrace/extend-metrics/ingestion-meth
 
 ### Telegraf
 
-Send Telegraf metrics to Dynatrace](extend-dynatrace/extend-metrics/ingestion-methods/telegraf.md "Ingest Telegraf metrics into Dynatrace.")[### Oracle Database
+Send Telegraf metrics to Dynatrace](extend-dynatrace/extend-metrics/ingestion-methods/telegraf.md "Ingest Telegraf metrics into Dynatrace.")### Oracle Database
 
-Extend your application observability into data acquired directly from your Oracle Database layer.](extensions/supported-extensions/data-sources/sql/oraclesql.md "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Microsoft SQL Server](https://dt-cdn.net/images/techn-icon-microsoft-sqlserver-60740bd3fa.svg "Microsoft SQL Server")
+Extend your application observability into data acquired directly from your Oracle Database layer.[![Microsoft SQL Server](https://dt-cdn.net/images/techn-icon-microsoft-sqlserver-60740bd3fa.svg "Microsoft SQL Server")
 
 ### Microsoft SQL Server Database
 
@@ -61,11 +61,11 @@ Learn how to monitor your devices exposing Windows Management Instrumentation us
 
 ### JMX
 
-Extend observability of your Java applications with JMX metrics.](extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions.md "Learn how to extend Dynatrace monitoring to include applications you've instrumented with JMX.")[### Scripting integration
+Extend observability of your Java applications with JMX metrics.](extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions.md "Learn how to extend Dynatrace monitoring to include applications you've instrumented with JMX.")### Scripting integration
 
-Extend metric observability via Dynatrace' scripting integration.](extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe.md "Learn how to ingest metrics using local scripting integration.")[### Metric ingestion API
+Extend metric observability via Dynatrace' scripting integration.### Metric ingestion API
 
-Extend metric observability via Dynatrace's open Metric APIs.](extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api.md "Use the Dynatrace API to retrieve the metrics of monitored entities.")
+Extend metric observability via Dynatrace's open Metric APIs.
 
 ## Logs
 
@@ -77,9 +77,9 @@ Learn how to extend log observability in Dynatrace with Fluentd as an alternativ
 
 ### Logstash
 
-Learn how to extend log observability in Dynatrace with Logstash as an alternative to OneAgent-based log collection.](https://github.com/dynatrace-oss/logstash-output-dynatrace)[### Log ingestion API
+Learn how to extend log observability in Dynatrace with Logstash as an alternative to OneAgent-based log collection.](https://github.com/dynatrace-oss/logstash-output-dynatrace)### Log ingestion API
 
-Extend log observability via Dynatrace open Log APIs.](../analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api.md "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
+Extend log observability via Dynatrace open Log APIs.
 
 ## Distributed traces
 
@@ -91,39 +91,39 @@ Learn how to extend observability with OpenTelemetry tracing.](dynatrace-oneagen
 
 ### OpenTracing
 
-Learn how to extend observability in Dynatrace with OpenTracing.](extend-dynatrace/extend-tracing/opentracing.md "Learn how to integrate OpenTracing with Dynatrace.")[### OneAgent SDK
+Learn how to extend observability in Dynatrace with OpenTracing.](extend-dynatrace/extend-tracing/opentracing.md "Learn how to integrate OpenTracing with Dynatrace.")### OneAgent SDK
 
-Learn how to extend observability in Dynatrace with the OneAgent SDK.](extend-dynatrace/extend-tracing/oneagent-sdk.md "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.")
+Learn how to extend observability in Dynatrace with the OneAgent SDK.
 
 ## Extensions
 
 By leveraging the observability standards and frameworks listed below, you can send metrics, traces, logs, and user experience data to Dynatrace.
 
-Thanks to the declarative manner and the centralized and automated deployment and distribution of the [extensions](extensions.md "Learn how to create and manage Dynatrace Extensions."), you can now ingest this data more easily at scale and derive the topological context along with the topology definition. You can use [extensions](extensions.md "Learn how to create and manage Dynatrace Extensions.") to start monitoring a new technology that is not yet covered by Dynatrace or introduce a new configuration in your environment (for example, organize data into dashboards, create new alerts, and introduce complex metrics).
+Thanks to the declarative manner and the centralized and automated deployment and distribution of the extensions, you can now ingest this data more easily at scale and derive the topological context along with the topology definition. You can use extensions to start monitoring a new technology that is not yet covered by Dynatrace or introduce a new configuration in your environment (for example, organize data into dashboards, create new alerts, and introduce complex metrics).
 
-[### Extensions 2.0
+### Extensions 2.0
 
-Learn how to extend observability using a declarative Extensions 2.0 framework.](extensions.md "Learn how to create and manage Dynatrace Extensions.")
+Learn how to extend observability using a declarative Extensions 2.0 framework.
 
 ## User experience and behavior
 
-[### Dynatrace OpenKit
+### Dynatrace OpenKit
 
-Learn how to extend observability into your mobile and web application with Dynatrace OpenKit.](extend-dynatrace/openkit.md "Learn how you can instrument your application using OpenKit, how you can use Dynatrace OpenKit API methods, and more.")
+Learn how to extend observability into your mobile and web application with Dynatrace OpenKit.
 
 ## OpenTelemetry
 
 OpenTelemetry is an observability framework for cloud-native software used for instrumenting frameworks and components and exporting telemetry data (traces, metrics and logs). [Dynatrace is a key contributorï»¿](https://www.dynatrace.com/news/blog/dynatrace-joins-the-opentelemetry-project/) to this open source project.
 
-You can use [OpenTelemetry in Dynatrace](opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") to:
+You can use OpenTelemetry in Dynatrace into Dynatrace.") to:
 
 * Extend Dynatrace technology coverage for technologies that are not supported out of the box by OneAgent
 * Enrich telemetry data with additional spans and metrics
 
-[### Basics
+### Basics
 
-Understand how OpenTelemetry makes observability possible across today's complex architectures and technologies.](opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.")[### Metrics
+Understand how OpenTelemetry makes observability possible across today's complex architectures and technologies. into Dynatrace.")### Metrics
 
-Learn how to extend observability into metrics ingested from OpenTelemetry.](opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.")[### Traces
+Learn how to extend observability into metrics ingested from OpenTelemetry. into Dynatrace.")### Traces
 
-Learn how to extend observability into traces ingested from OpenTelemetry.](opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.")
+Learn how to extend observability into traces ingested from OpenTelemetry. into Dynatrace.")

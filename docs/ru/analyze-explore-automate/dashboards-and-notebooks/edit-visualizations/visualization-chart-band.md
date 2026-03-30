@@ -39,7 +39,7 @@ by:dt.entity.host
 | limit 1
 ```
 
-В общем случае для создания ленточного графика, аналогичного приведённому выше, используйте [timeseries](../../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "Команды метрик DQL") для формирования запроса DQL, содержащего следующее:
+В общем случае для создания ленточного графика, аналогичного приведённому выше, используйте timeseries для формирования запроса DQL, содержащего следующее:
 
 * `max` (или `upper`) для определения верхней границы полосы
 * `min` (или `lower`) для определения нижней границы полосы
@@ -66,7 +66,7 @@ by:dt.entity.host
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Перейти к хосту** — открытие выбранного элемента в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   В общем случае, если для открытия выбранного элемента существуют рекомендуемые приложения, меню предлагает прямые ссылки на эти приложения, а затем параметр **Открыть в**, чтобы выбрать другое целевое приложение.
-* **Открыть в** — подробнее см. [Переходы и навигация](../drilldowns-and-navigation.md "Переход из Dashboards и Notebooks с помощью ссылок на основе интентов или URL.").
+* **Открыть в** — подробнее см. Переходы и навигация.
 
 ## Заголовок
 
@@ -115,7 +115,7 @@ by:dt.entity.host
 
 Ленточный график отображает значение во времени с верхней и нижней границами полосы.
 
-В общем случае используйте [timeseries](../../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "Команды метрик DQL") для формирования запроса DQL, содержащего следующее:
+В общем случае используйте timeseries для формирования запроса DQL, содержащего следующее:
 
 * `max` (или `upper`) для определения верхней границы полосы.
 * `min` (или `lower`) для определения нижней границы полосы.

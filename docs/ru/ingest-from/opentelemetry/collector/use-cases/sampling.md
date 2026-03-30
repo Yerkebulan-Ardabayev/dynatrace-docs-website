@@ -33,10 +33,10 @@ scraped: 2026-03-04T21:37:07.307900
   + [Dynatrace Collector](../../collector.md#dt-collector-dist "Узнайте о Dynatrace OTel Collector.")
   + Дистрибутив OpenTelemetry [Contrib](../../collector.md#collector-contrib "Узнайте о Dynatrace OTel Collector.")
   + [Пользовательская сборка через Builder](../../collector.md#collector-builder "Узнайте о Dynatrace OTel Collector.")
-* [URL конечной точки Dynatrace API](../../otlp-api.md "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."), куда должны экспортироваться данные
+* URL конечной точки Dynatrace API, куда должны экспортироваться данные
 * [API-токен](../../otlp-api.md#authentication-export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа (требуется только для SaaS и ActiveGate)
 
-См. [Развёртывание Collector](../deployment.md "Как развернуть Dynatrace OTel Collector.") и [Конфигурация Collector](../configuration.md "Как настроить OpenTelemetry Collector.") для настройки вашего Collector с приведённой ниже конфигурацией.
+См. Развёртывание Collector и Конфигурация Collector для настройки вашего Collector с приведённой ниже конфигурацией.
 
 ## Демонстрационная конфигурация
 
@@ -234,16 +234,16 @@ OpenTelemetry и OneAgent используют несовместимые под
 
 ## Лимиты и ограничения
 
-Данные загружаются с использованием протокола OpenTelemetry (OTLP) через [Dynatrace OTLP API](../../otlp-api.md "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") и подчиняются лимитам и ограничениям API.
+Данные загружаются с использованием протокола OpenTelemetry (OTLP) через Dynatrace OTLP API и подчиняются лимитам и ограничениям API.
 Подробнее см.:
 
-* [Ограничения метрик OpenTelemetry](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Узнайте, как Dynatrace загружает метрики OpenTelemetry и какие ограничения применяются.")
+* Ограничения метрик OpenTelemetry
 * [Сопоставление метрик Dynatrace](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md#dynatrace-mapping "Узнайте, как Dynatrace загружает метрики OpenTelemetry и какие ограничения применяются.")
-* [Загрузка логов OpenTelemetry](../../otlp-api/ingest-logs.md "Узнайте, как Dynatrace загружает записи логов OpenTelemetry и какие ограничения применяются.")
+* Загрузка логов OpenTelemetry
 
 ## Связанные темы
 
-* [Пакетная обработка OTLP-запросов с OpenTelemetry Collector](batch.md "Настройте OpenTelemetry Collector для отправки данных пакетами на бэкенд Dynatrace.")
-* [Вычисление сводок гистограмм с OpenTelemetry Collector](histograms.md "Настройте OpenTelemetry Collector для вычисления сводок гистограмм.")
-* [Применение лимитов памяти к OpenTelemetry Collector](memory.md "Настройте OpenTelemetry Collector для соблюдения лимитов памяти и предотвращения чрезмерного использования системных ресурсов.")
-* [Отправка данных OpenTelemetry на несколько бэкендов](multi-export.md "Настройте OpenTelemetry Collector для отправки данных на более чем один бэкенд.")
+* Пакетная обработка OTLP-запросов с OpenTelemetry Collector
+* Вычисление сводок гистограмм с OpenTelemetry Collector
+* Применение лимитов памяти к OpenTelemetry Collector
+* Отправка данных OpenTelemetry на несколько бэкендов

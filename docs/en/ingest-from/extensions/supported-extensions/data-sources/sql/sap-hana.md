@@ -98,7 +98,7 @@ You can obtain the `ngdbc.jar` file from the SAP Hana Client installation direct
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](../../../manage-extensions.md "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See Manage Extensions to learn how to use it to activate an extension using the Dynatrace API.
 
 ## Related topics
 

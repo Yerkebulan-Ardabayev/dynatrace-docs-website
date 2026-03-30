@@ -17,8 +17,8 @@ To ensure a seamless setup process, we strongly advise you to thoroughly review 
 
 We assume a foundational understanding of network zones. See the following links for background information:
 
-* [Network zones introduction](../../../../../manage/network-zones.md "Find out how network zones work in Dynatrace.") and [basic information](../../../../../manage/network-zones/network-zones-basic-info.md#activate "Learn how to get started with network zones.")
-* [OneAgent](../../../../../manage/network-zones/oneagent-connectivity.md "Find out how network zones prioritize ActiveGates for OneAgent connectivity.") and [ActiveGate](../../../../../manage/network-zones/activegate-connectivity.md "Find out how network zones prioritize ActiveGates for Environment ActiveGate connectivity.") connectivity
+* Network zones introduction and basic information
+* OneAgent and ActiveGate connectivity
 
 ## Network zones in Kubernetes environments
 
@@ -94,7 +94,7 @@ The adoption of network zones is therefore widely recommended for optimal traffi
 
    After applying, the Dynatrace Operator will roll out Dynatrace components according the DynaKube configuration. As part of the rollout, ActiveGates and OneAgents receive available endpoints according to the specified network zone (with fallback mode *Any ActiveGate*) and can start communicating independently of each other's rollout status.
 
-   In this scenario, it is not required to manually create the network zone before applying the DynaKube custom resource, as network egress is not restricted. Creation of the network zone happens implicitly when the ActiveGate registers itself with the Dynatrace cluster, with *Any ActiveGate* configured as [fallback mode](../../../../../manage/network-zones/network-zones-basic-info.md#fallback-mode "Learn how to get started with network zones.").
+   In this scenario, it is not required to manually create the network zone before applying the DynaKube custom resource, as network egress is not restricted. Creation of the network zone happens implicitly when the ActiveGate registers itself with the Dynatrace cluster, with *Any ActiveGate* configured as fallback mode.
 
 ### Kubernetes cluster with restricted egress
 
@@ -106,7 +106,7 @@ Dynatrace Operator version 0.14.0+ postpones OneAgent rollout and injection unti
 
 Additionally, it may be necessary to also [configure a proxy](../network-configurations.md#configure-proxy "Configure Dynatrace in network-restricted environments, network-related settings and proxy configurations.") to facilitate controlled network access in Kubernetes clusters with restricted egress.
 
-1. Run the following command to create a network zone in fallback mode *None* using the [Dynatrace API](../../../../../dynatrace-api/environment-api/network-zones/put-network-zone.md "Update a network zone via the Dynatrace API.").
+1. Run the following command to create a network zone in fallback mode *None* using the Dynatrace API.
 
    ```
    curl -X PUT https://<environment-fqdn>/api/v2/networkZones/<network-zone-name> \
@@ -204,5 +204,5 @@ Additionally, it may be necessary to also [configure a proxy](../network-configu
 
 ## Related topics
 
-* [Get started with network zones](../../../../../manage/network-zones/network-zones-basic-info.md "Learn how to get started with network zones.")
-* [Network zones](../../../../../manage/network-zones.md "Find out how network zones work in Dynatrace.")
+* Get started with network zones
+* Network zones

@@ -11,7 +11,7 @@ scraped: 2026-02-06T16:19:46.615282
 
 У вас есть возможность включить все или определенные кластеры Kubernetes для использования новых возможностей Kubernetes.
 
-Это можно сделать с помощью API настроек с помощью [Таблица схемы приложения Kubernetes](../../../../../dynatrace-api/environment-api/settings/schemas/builtin-app-transition-kubernetes.md "View builtin:app-transition.kubernetes settings schema table of your monitoring environment via the Dynatrace API.") или, альтернативно, настроив параметр, как описано ниже.
+Это можно сделать с помощью API настроек с помощью Таблица схемы приложения Kubernetes или, альтернативно, настроив параметр, как описано ниже.
 
 ## Включить все кластеры
 

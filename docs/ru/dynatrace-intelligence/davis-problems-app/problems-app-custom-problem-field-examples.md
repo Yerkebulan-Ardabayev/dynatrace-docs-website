@@ -30,7 +30,7 @@ scraped: 2026-03-06T21:10:06.876707
 1. Перейдите в ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
 2. Выберите ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **New alert** > **Create your own custom alert**.
 3. Дайте конфигурации понятное **название**.
-4. Разверните **Configure your query** и укажите [DQL-запрос](../../platform/grail/dynatrace-query-language/dql-guide.md "Узнайте, как работает DQL и каковы ключевые концепции DQL.") для получения данных.
+4. Разверните **Configure your query** и укажите DQL-запрос для получения данных.
 
    Рекомендуется использовать параметр `interval: 1m` для обеспечения правильного разрешения данных при анализе.
 5. Разверните **Customize parameters** и определите анализатор и его параметры. Подробнее см. в разделе [Тип и параметры анализатора](../anomaly-detection/anomaly-detection-configuration.md#analyzer "Как настроить оповещение для отсутствующих измерений.").

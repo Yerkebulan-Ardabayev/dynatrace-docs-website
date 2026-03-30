@@ -19,11 +19,11 @@ This page describes the different platform extensions and the features that they
 
 For information about how usage of a specific capability translates to consumption of your DPS license commit, see
 
-* [Custom Events Classic](platform-extensions/custom-events-classic.md "Learn how your consumption of the Dynatrace Custom Events Classic DPS capability is billed and charged.")
-* [Custom Metrics Classic](platform-extensions/custom-metrics-classic.md "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.")
-* [Custom Traces Classic](platform-extensions/custom-traces-classic.md "Learn how your consumption of the Dynatrace Custom Traces Classic DPS capability is billed and charged.")
-* [Log Monitoring Classic](platform-extensions/log-monitoring-classic.md "Learn how your consumption of the Dynatrace Log Monitoring Classic DPS capability is billed and charged.")
-* [Serverless Functions Classic](platform-extensions/serverless-functions-classic.md "Learn how your consumption of the Dynatrace Serverless Functions Classic DPS capability is billed and charged.")
+* Custom Events Classic
+* Custom Metrics Classic
+* Custom Traces Classic
+* Log Monitoring Classic
+* Serverless Functions Classic
 
 Learn how consumption of Dynatrace platform extensions is calculated using the Dynatrace Platform Subscription model.
 
@@ -49,8 +49,8 @@ A log record is recognized in one of the following ways:
 
 ## Custom Traces Classic feature overview
 
-You can [ingest traces](../../ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") into Dynatrace using [OpenTelemetry exporters](../../ingest-from/opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") for applications running on hosts that don't have OneAgent installed.
-These distributed traces are sent via the [Trace Ingest API](../../ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+You can ingest traces into Dynatrace using OpenTelemetry exporters into Dynatrace.") for applications running on hosts that don't have OneAgent installed.
+These distributed traces are sent via the Trace Ingest API.
 
 ## Custom Events Classic feature overview
 
@@ -58,7 +58,7 @@ You have the option to configure custom events and/or event-ingestion channels.
 
 Custom created/ingested or subscribed events that might be configured for an environment include:
 
-* Any custom event sent to Dynatrace using the [Events API v2](../../dynatrace-api/environment-api/events-v2.md "Find out what you can do with the Dynatrace Events API v2.").
+* Any custom event sent to Dynatrace using the Events API v2.
 * Any custom event (such as a Kubernetes event) created from log messages by a [log processing rule](../../analyze-explore-automate/logs/lma-classic-log-processing.md#lmc-log-processing-rules "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
 
 ## Serverless Functions Classic feature overview

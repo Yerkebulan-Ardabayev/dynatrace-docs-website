@@ -14,11 +14,11 @@ scraped: 2026-03-06T21:17:20.534941
 
 Distributed tracing is an essential monitoring, debugging, and optimizing tool for distributed software architectures. By visualizing how different services are connected and how your requests travel through various tiers of an application, it helps teams to quickly understand the performance of each microservice.
 
-[### Concepts
+### Concepts
 
-Learn the core concepts and terminology of distributed tracing in Dynatrace.](distributed-traces/concepts.md "Learn more about distributed tracing core concepts and terminology.")[### Context propagation
+Learn the core concepts and terminology of distributed tracing in Dynatrace.### Context propagation
 
-Understand span and trace context propagation in Dynatrace and how to set them up.](distributed-traces/context-propagation.md "Understand span and trace context propagation in Dynatrace and how to set them up.")[![Distributed Traces Classic](https://dt-cdn.net/images/distributed-traces-classic-7197cdacfb.svg "Distributed Traces Classic")
+Understand span and trace context propagation in Dynatrace and how to set them up.[![Distributed Traces Classic](https://dt-cdn.net/images/distributed-traces-classic-7197cdacfb.svg "Distributed Traces Classic")
 
 ### Analyze
 
@@ -32,4 +32,4 @@ Upgrade Distributed Traces Classic ![Distributed Traces Classic](https://dt-cdn.
 
 ## Related topics
 
-* [Application Observability](../application-observability.md "Get familiar with application observability capabilities in Dynatrace.")
+* Application Observability

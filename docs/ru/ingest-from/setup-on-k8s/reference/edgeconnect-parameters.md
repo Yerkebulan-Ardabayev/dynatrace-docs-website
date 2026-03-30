@@ -7,7 +7,7 @@ scraped: 2026-03-04T21:30:01.817464
 * Latest Dynatrace
 * 7-min read
 
-[EdgeConnect](../../edgeconnect.md "Use EdgeConnect to control how your apps and workflows interact with your internal systems.") позволяет приложениям и рабочим процессам Dynatrace безопасно взаимодействовать с вашими системами. EdgeConnect доступен в виде контейнера Docker и может работать в любой среде выполнения контейнеров. В этом справочном руководстве представлена подробная информация о настройке [пользовательского ресурса](https://dt-url.net/b60397m) EdgeConnect в вашей среде Kubernetes.
+EdgeConnect позволяет приложениям и рабочим процессам Dynatrace безопасно взаимодействовать с вашими системами. EdgeConnect доступен в виде контейнера Docker и может работать в любой среде выполнения контейнеров. В этом справочном руководстве представлена подробная информация о настройке [пользовательского ресурса](https://dt-url.net/b60397m) EdgeConnect в вашей среде Kubernetes.
 
 В следующей таблице перечислены минимально необходимые версии Dynatrace Operator для каждой версии API EdgeConnect.
 

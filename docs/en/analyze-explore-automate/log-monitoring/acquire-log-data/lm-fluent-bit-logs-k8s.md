@@ -14,7 +14,7 @@ scraped: 2026-03-05T21:35:44.907456
 
 Log Monitoring Classic
 
-For the newest Dynatrace version, see [Stream Kubernetes logs with Fluent Bit](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s.md "Integrate Fluent Bit in Kubernetes to stream logs to Dynatrace.").
+For the newest Dynatrace version, see Stream Kubernetes logs with Fluent Bit.
 
 This page provides instructions for deploying and configuring Fluent Bit in your Kubernetes environment for log collection.
 
@@ -495,7 +495,7 @@ Follow the step-by-step guide to prepare the configuration for Fluent Bit.
 
    fieldPath: status.hostIP
    ```
-2. Get a [Dynatrace API token](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") with the `logs.ingest` (Ingest Logs) scope for the `DT_INGEST_TOKEN` environment variable.
+2. Get a Dynatrace API token with the `logs.ingest` (Ingest Logs) scope for the `DT_INGEST_TOKEN` environment variable.
 3. Update the `K8S_CLUSTER_NAME`, `DT_INGEST_HOST`, and `DT_INGEST_TOKEN` environment variables in the `values.yaml` file. Use the same cluster name that you have configured in Dynatrace for `K8S_CLUSTER_NAME`, and specify your SaaS or Managed endpoint as `DT_INGEST_HOST`.
 4. Optional Adapt the filter section in the `values.yaml` file to target specific namespaces or pods, as described in the [Fluent Bit Filter sectionï»¿](https://dt-url.net/m903n8q) for details.
 5. Optional Ensure to remove or mask any sensitive information in the logs.
@@ -544,7 +544,7 @@ Alternatively, you can navigate to ![Logs and Events](https://dt-cdn.net/images/
 
 ## Troubleshooting
 
-Visit [Troubleshooting logs ingested via Fluent Bitï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718) in the Dynatrace Community, as well as see [Troubleshooting Log Monitoring (Logs Classic)](../lmc-troubleshooting.md "Fix issues related to the setup and configuration of Log Monitoring Classic.").
+Visit [Troubleshooting logs ingested via Fluent Bitï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718) in the Dynatrace Community, as well as see Troubleshooting Log Monitoring (Logs Classic).
 
 ### Check that Fluent Bit pods are running
 
@@ -638,4 +638,4 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 
 ## Related topics
 
-* [Stream logs to Dynatrace with Fluent Bit (Logs Classic)](stream-logs-with-fluent-bit.md "Integrate Fluent Bit to stream logs to Dynatrace.")
+* Stream logs to Dynatrace with Fluent Bit (Logs Classic)

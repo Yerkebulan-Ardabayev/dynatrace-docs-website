@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:11:21.483222
 
 This page describes how to add data with a Grail query, and how to specify a custom timeframe and a segment.
 
-The fastest and easiest way to explore your data is with our new [Explore](../../explore-data.md "Explore your data with our point-and-click interface.") tiles and sections. In a few seconds, you can find and analyze your logs, metrics, or business events. No DQL required!
+The fastest and easiest way to explore your data is with our new Explore tiles and sections. In a few seconds, you can find and analyze your logs, metrics, or business events. No DQL required!
 
 Deprecated: `dt.entity.*` fields
 
@@ -40,9 +40,9 @@ To Query Grail
 
    * **Data**
    * **Visual**
-2. On the **Data** tab, use the [Dynatrace Query Language (DQL)](../../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") to define your query.
+2. On the **Data** tab, use the Dynatrace Query Language (DQL) to define your query.
 3. Select **Run** to execute the query.
-4. On the **Visual** tab, choose a [visualization](../../edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") format for your results.
+4. On the **Visual** tab, choose a visualization format for your results.
 
    * means the visualization type is unavailable for your query.
 5. Under the **Visualization** selector, expand the options sections to adjust visualization settings as needed.
@@ -90,8 +90,8 @@ If you need more control over how a filter is applied, however, you might want t
 * Variables allow you to fully control the underlying query or within your Explore section or tile, determining where and how they are applied. For example, you can specify how they connect with other filters applied (**AND**, **OR**) and you can control which operator is used for your filter (such as `equals`, `contains`, `startsWith`, and `endsWith`).
 * Additionally, use variables when you need fine-grained control over how filters are interdependent.
 
-* For details on segments, see [Segments](../../../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.")
-* For a ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**-specific segments use case, see [Analyze monitoring data with segments](../../../../manage/segments/getting-started/segments-getting-started-analyze-monitoring-data.md "Learn how to analyze monitoring data more efficiently by using segments in Dashboards.")
+* For details on segments, see Segments
+* For a ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**-specific segments use case, see Analyze monitoring data with segments
 
 To select tile-level segments
 

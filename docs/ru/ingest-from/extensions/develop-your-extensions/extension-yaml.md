@@ -11,21 +11,21 @@ scraped: 2026-03-06T21:35:32.192927
 
 В этом разделе описаны основные элементы файла `extension.yaml`, применимые к любому типу расширения из фреймворка Dynatrace Extensions. Для элементов, специфичных для конкретных типов источников данных, см.:
 
-* [Расширение SNMP](data-sources/snmp-extensions.md "Узнайте, как создать расширение SNMP с помощью фреймворка Extensions.")
-* [Расширение WMI](data-sources/wmi-extensions.md "Узнайте, как создать расширение WMI с помощью фреймворка Extensions.")
-* [Расширение Prometheus](data-sources/prometheus-extensions.md "Узнайте, как создать расширение Prometheus с помощью фреймворка Extensions.")
-* [Расширение JMX](data-sources/jmx.md "Узнайте, как создать расширение JMX с помощью фреймворка Extensions.")
-* [Расширение SQL](data-sources/sql.md "Узнайте, как создать расширение на основе источника данных SQL с помощью фреймворка Extensions.")
+* Расширение SNMP
+* Расширение WMI
+* Расширение Prometheus
+* Расширение JMX
+* Расширение SQL
 
 ## Схемы
 
-При создании файла `extension.yaml` обязательно используйте схемы, предоставляемые через [Extensions API](../../../dynatrace-api/environment-api/extensions-20.md "Узнайте, как управлять расширениями с помощью Dynatrace Extensions 2.0 API."). Мы рекомендуем использовать редактор, поддерживающий валидацию схем и сниппеты, что значительно упрощает редактирование `extension.yaml`.
+При создании файла `extension.yaml` обязательно используйте схемы, предоставляемые через Extensions API. Мы рекомендуем использовать редактор, поддерживающий валидацию схем и сниппеты, что значительно упрощает редактирование `extension.yaml`.
 
 Мы рекомендуем использовать дополнение Dynatrace Extensions для VS Code, предоставляемое Dynatrace. Подробнее см. [Дополнение для VS Code](https://dt-url.net/tx03uks/).
 
 Для загрузки схем Extensions:
 
-1. Проверьте доступные версии схем с помощью эндпоинта [GET all schemas](../../../dynatrace-api/environment-api/extensions-20/schemas/get-all-schemas.md "Просмотр доступных версий схем расширений через Dynatrace Extensions 2.0 API."). Версии схем соответствуют версиям кластера Dynatrace.
+1. Проверьте доступные версии схем с помощью эндпоинта GET all schemas. Версии схем соответствуют версиям кластера Dynatrace.
 
    ```
    curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/schemas" \
@@ -57,7 +57,7 @@ scraped: 2026-03-06T21:35:32.192927
 
    }
    ```
-2. Используйте эндпоинт [GET all files](../../../dynatrace-api/environment-api/extensions-20/schemas/get-all-files.md "Просмотр доступных файлов схем в версии схемы через Dynatrace Extensions 2.0 API.") для получения списка всех доступных схем для конкретной версии Dynatrace.
+2. Используйте эндпоинт GET all files для получения списка всех доступных схем для конкретной версии Dynatrace.
    Например:
 
    ```
@@ -108,7 +108,7 @@ scraped: 2026-03-06T21:35:32.192927
 
    }
    ```
-3. Используйте эндпоинт [GET a file](../../../dynatrace-api/environment-api/extensions-20/schemas/get-file.md "Просмотр файла схемы расширения через Dynatrace Extensions 2.0 API.") для загрузки конкретного файла определённой версии. Например, чтобы загрузить `extension.schema.json` версии `1.215`:
+3. Используйте эндпоинт GET a file для загрузки конкретного файла определённой версии. Например, чтобы загрузить `extension.schema.json` версии `1.215`:
 
    ```
    curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/schemas/1.215/extension.schema.json" \
@@ -444,4 +444,4 @@ filter: var:ifNameFilter
     filter: const:$not(<expr>)
     ```
 
-Логика фильтрации отличается для расширений WMI, где вы передаёте условие в виде запроса. Подробнее см. [Фильтрация извлечённых измерений](data-sources/wmi-extensions/wmi-schema-reference.md#filter-extracted-dimensions "Узнайте о расширениях WMI в фреймворке Extensions.").
+Логика фильтрации отличается для расширений WMI, где вы передаёте условие в виде запроса. Подробнее см. Фильтрация извлечённых измерений.

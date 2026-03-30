@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:37:13.258846
 
 Это предварительная версия. Ваша текущая конфигурация полностью совместима с будущими версиями, но вы можете ожидать более высокой устойчивости к пикам трафика и лучшей обработки разрывов соединения, когда функция станет общедоступной.
 
-Для самой новой Dynatrace версии, смотрите [Получение Syslog с помощью ActiveGate](../../logs/lma-log-ingestion/lma-log-ingestion-syslog.md "Получайте данные журналов syslog в Dynatrace с помощью ActiveGate и позволяйте Dynatrace преобразовывать их в значимые сообщения журнала.").
+Для самой новой Dynatrace версии, смотрите Получение Syslog с помощью ActiveGate.
 
 Syslog, сокращение от system logging protocol (протокол системного журналирования), — это механизм журналирования, который позволяет системным администраторам контролировать и управлять файлами журналов от различных системных компонентов, таких как сетевые устройства, syslog хоста Linux, syslog-серверы или другие производители syslog.
 
@@ -21,7 +21,7 @@ Syslog, сокращение от system logging protocol (протокол си
 
 ## Необходимые условия
 
-* Environment ActiveGate версии 1.293+ на Linux, установленный для [мониторинга удаленных технологий](../../../ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose.md "Узнайте о возможностях маршрутизации и мониторинга и областях применения ActiveGate.").
+* Environment ActiveGate версии 1.293+ на Linux, установленный для мониторинга удаленных технологий.
 * На ваших сетевых устройствах включен syslog или у вас настроены другие производители syslog в вашей сети. Обратитесь к RFC3164 и RFC5424 для получения подробностей. Dynatrace поддерживает широкий спектр реализаций syslog, включая RSysLog, Syslog-NG, NXLog и другие.
 
 ## Для кого это предназначено?
@@ -38,7 +38,7 @@ Syslog, сокращение от system logging protocol (протокол си
 
 1. **Разверните Environment ActiveGate**.
 
-   Ознакомьтесь с инструкциями по [Linux](../../../ingest-from/dynatrace-activegate/installation/linux.md "Узнайте, как установить ActiveGate на Windows, настроить установку и многое другое."). Используйте назначение [мониторинга удаленных технологий](../../../ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose.md "Узнайте о возможностях маршрутизации и мониторинга и областях применения ActiveGate.").
+   Ознакомьтесь с инструкциями по Linux. Используйте назначение мониторинга удаленных технологий.
 2. **Включите прием журналов syslog на вашем ActiveGate**.
 
    Отредактируйте файл `/var/lib/dynatrace/remotepluginmodule/agent/conf/extensionsuser.conf` и добавьте следующий флаг:
@@ -481,7 +481,7 @@ Syslog, сокращение от system logging protocol (протокол си
 
    **Примечание**: НЕ изменяйте конфигурацию экспортера. Конфигурация по умолчанию указывает на встроенный Collector.
 
-   Для получения дополнительной информации о конфигурации приемника syslog, обратитесь к [Прием данных syslog с помощью OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector/use-cases/syslog.md "Настройте OpenTelemetry Collector для приема данных syslog в Dynatrace.").
+   Для получения дополнительной информации о конфигурации приемника syslog, обратитесь к Прием данных syslog с помощью OpenTelemetry Collector.
 4. **Убедитесь, что включен прием журналов syslog**.
 
    После включения приема журналов syslog проверьте следующие файлы журналов, чтобы убедиться в этом:
@@ -584,7 +584,7 @@ Syslog, сокращение от system logging protocol (протокол си
 
 ## Устранение неполадок
 
-Посетите Dynatrace Community для получения руководств по устранению неполадок, а также ознакомьтесь с [Устранение неполадок мониторинга журналов (Logs Classic)](../lmc-troubleshooting.md "Устраните проблемы, связанные с настройкой и конфигурацией Log Monitoring Classic.").
+Посетите Dynatrace Community для получения руководств по устранению неполадок, а также ознакомьтесь с Устранение неполадок мониторинга журналов (Logs Classic).
 
 * [Руководство по устранению неполадок приема Syslog через ActiveGate](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-via-ActiveGate-Troubleshooting-Guide/ta-p/282718)
 * [Устранение неполадок приема Syslog](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-Troubleshooting/ta-p/264112)

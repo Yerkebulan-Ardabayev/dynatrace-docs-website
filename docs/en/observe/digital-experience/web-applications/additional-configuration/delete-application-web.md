@@ -24,9 +24,9 @@ To delete an application via Dynatrace web UI
 
 ## Delete an application via API
 
-You can also delete your applications from Dynatrace via the Configuration API. For details, see [Delete a web application](../../../../dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/del-web-application.md "Delete a web application via the Dynatrace API.").
+You can also delete your applications from Dynatrace via the Configuration API. For details, see Delete a web application.
 
 ## Related topics
 
-* [Web application configuration API - DELETE a web application](../../../../dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/del-web-application.md "Delete a web application via the Dynatrace API.")
-* [Applications](../../rum-concepts/applications.md "Learn about monitored applications in Real User Monitoring and the different application types supported by Dynatrace.")
+* Web application configuration API - DELETE a web application
+* Applications

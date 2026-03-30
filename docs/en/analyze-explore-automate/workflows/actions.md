@@ -92,15 +92,15 @@ Ownership workflow actions are available directly within Workflows after you ins
 
 ### Site Reliability Guardian
 
-Site Reliability Guardian workflow action is available directly within Workflows after you install the **Site Reliability Guardian** app. It enables you to execute a guardian directly in workflows.](../../deliver/site-reliability-guardian.md#automation "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.")[### Dynatrace Intelligence (Preview)
+Site Reliability Guardian workflow action is available directly within Workflows after you install the **Site Reliability Guardian** app. It enables you to execute a guardian directly in workflows.](../../deliver/site-reliability-guardian.md#automation "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.")### Dynatrace Intelligence (Preview)
 
-Automate AI analysis such as to forecast and remediate capacity shortages.](../../dynatrace-intelligence/use-cases/davis-for-workflows.md "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Synthetic Classic](https://dt-cdn.net/images/synthetic-512-83ec796e54.png "Synthetic Classic")
+Automate AI analysis such as to forecast and remediate capacity shortages.[![Synthetic Classic](https://dt-cdn.net/images/synthetic-512-83ec796e54.png "Synthetic Classic")
 
 ### Synthetic for Workflows
 
-Enhance your automation capabilities with Synthetic Monitoring. **Synthetic for Workflows** allows you to execute synthetic monitors on demand at selected locations within your workflows.](../../observe/digital-experience/synthetic-on-grail/synthetic-for-workflows.md "Enhance your automation capabilities with Synthetic Monitoring.")[### Business Observability
+Enhance your automation capabilities with Synthetic Monitoring. **Synthetic for Workflows** allows you to execute synthetic monitors on demand at selected locations within your workflows.](../../observe/digital-experience/synthetic-on-grail/synthetic-for-workflows.md "Enhance your automation capabilities with Synthetic Monitoring.")### Business Observability
 
-Generate business events from automated tasks to connect monitoring and observability data with business information.](../../observe/business-observability/bo-events-capturing.md "Capture business events for Dynatrace Business Observability.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
+Generate business events from automated tasks to connect monitoring and observability data with business information.[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
 ### Text Processing
 

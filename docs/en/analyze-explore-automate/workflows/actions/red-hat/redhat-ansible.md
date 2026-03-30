@@ -101,7 +101,7 @@ To create a workflow that launches a job template
 4. On one of the information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add"), search for `Ansible`, and select **Launch job template**.
 5. On each of the remaining information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") and drag the line to the **Launch job template** action.
 6. In the **Launch job template** action, select the [connection](#connection) to your **Red Hat Ansible Automation Controller**.
-7. Configure the input fields as needed. To learn how to use the output of information-extracting notes, see [Expression reference](../../reference.md "Get to know the workflows expression").
+7. Configure the input fields as needed. To learn how to use the output of information-extracting notes, see Expression reference.
 8. To test your workflow, select **Run**.
 
 ## Troubleshooting

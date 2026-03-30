@@ -60,7 +60,7 @@ fetch logs
 | sort timestamp desc
 ```
 
-Создание оповещения журнала не требует доступа к ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**. Вам нужно только **Logs** ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events"). Подробнее о создании оповещений через **Logs** ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") см. в разделе [Настройка оповещения журнала](../../analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events.md "Как создать и настроить проблемы и оповещения Davis на основе событий из журналов.").
+Создание оповещения журнала не требует доступа к ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**. Вам нужно только **Logs** ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events"). Подробнее о создании оповещений через **Logs** ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") см. в разделе Настройка оповещения журнала.
 
 ## Создание оповещения журнала на основе сводки данных журналов за период времени
 
@@ -73,7 +73,7 @@ fetch logs
 
 Создание выделенной метрики журнала позволяет повторно использовать метрику журнала в приложениях, таких как **Dashboards** ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") и **Notebooks** ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks"), а также создавать оповещения без дополнительных затрат.
 
-Чтобы узнать, как создавать метрики журналов, см. [Метрики журналов](../../analyze-explore-automate/logs/lma-log-processing/lma-log-metrics.md "Создавайте метрики на основе данных журналов и используйте их в Dynatrace как любую другую метрику.").
+Чтобы узнать, как создавать метрики журналов, см. Метрики журналов.
 
 Предположим, вы создали метрику журнала `log.conn_refused_count`, которая собирает каждую запись журнала с ошибкой `Connection refused`.
 
@@ -106,7 +106,7 @@ fetch logs
 4. Необязательно: выберите **Run**, чтобы протестировать и убедиться, что ваша команда работает правильно.
 5. Выберите **Options** и выберите **Analyze and alert**.
 6. Включите анализатор данных Dynatrace Intelligence, если он не активен.
-7. Выберите необходимый анализатор и настройте его. Подробности см. в разделе [Конфигурация обнаружения аномалий](../anomaly-detection/anomaly-detection-configuration.md "Как настроить оповещение для пропущенных измерений.").
+7. Выберите необходимый анализатор и настройте его. Подробности см. в разделе Конфигурация обнаружения аномалий.
 8. Выберите **Run analysis**.
 9. Когда вы будете удовлетворены результатом, выберите ![More actions](https://dt-cdn.net/images/dashboards-app-menu-kebab-c39eda426b.svg "More actions") > ![Open with](https://dt-cdn.net/images/open-with-003fc82dcd.svg "Open with") **Open with** и выберите **Anomaly Detection**.
    Это действие перенесет вас в ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
@@ -117,7 +117,7 @@ fetch logs
 
 Извлечение данных из бакета `default_logs` может повлечь дополнительные расходы. Если ваши журналы доступны в определенном бакете, мы рекомендуем использовать `filter dt.system.bucket == "{your bucket}"` для повышения эффективности.
 
-Если у вас нет доступа к бакету вашей команды или отдела, вы можете создать приватный бакет, следуя документации по [назначению бакетов](../../analyze-explore-automate/logs/lma-bucket-assignment.md "Данные ваших журналов могут храниться в бакетах хранения данных на основе определенных сроков хранения.").
+Если у вас нет доступа к бакету вашей команды или отдела, вы можете создать приватный бакет, следуя документации по назначению бакетов.
 
 ## Заключение
 
@@ -130,6 +130,6 @@ fetch logs
 
 ## Связанные темы
 
-* [Приложение Anomaly Detection](../anomaly-detection/anomaly-detection-app.md "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.")
+* Приложение Anomaly Detection
 * [[Видео] Повышение безопасности с помощью Anomaly Detection](https://www.youtube.com/watch?v=WDZUus-VxCE)
 * [[Видео] Anomaly Detection и наблюдаемость данных](https://www.youtube.com/watch?v=HPQi63mQg3w)

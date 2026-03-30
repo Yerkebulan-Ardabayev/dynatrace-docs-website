@@ -31,7 +31,7 @@ The top panel shows overall monitor [availability](#availability) and [performan
 
 Use the  filter bar at the top of the page to filter all HTTP details by one or more locations.
 
-In the upper-right corner of the page, you can access [**Analyze executions**](#analyze-executions), [**On-demand execution**](on-demand-executions.md "Learn about how to perform on-demand executions."), and more HTTP monitor settings:
+In the upper-right corner of the page, you can access [**Analyze executions**](#analyze-executions), **On-demand execution**, and more HTTP monitor settings:
 
 * **Edit**
 * for more options ( **Disable** and  **Delete**)
@@ -67,7 +67,7 @@ Not only can you see the details of the last failed or successful execution, but
 
 On-demand executions
 
-You can trigger an execution on-demand. For details, see [On-demand monitor executions](on-demand-executions.md "Learn about how to perform on-demand executions.").
+You can trigger an execution on-demand. For details, see On-demand monitor executions.
 
 ## Availability
 
@@ -75,7 +75,7 @@ The Availability section displays the monitor's availability for the selected ti
 
 Also, the panel shows reasons for discarded tests. The bar above the time frame indicates when a downtime occurred. Hover over the bar to see why the tests were discarded. The possible reasons can be:
 
-* **Maintenance window** - the monitor execution was deliberately [made inactive](../../../../analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window.md#disable-synthetic "Create maintenance windows and define their scope.") due to maintenance. For details, see the maintenance window.
+* **Maintenance window** - the monitor execution was deliberately made inactive due to maintenance. For details, see the maintenance window.
 
   How to see the maintenance window, and what happens if the monitor execution is on/off
 
@@ -87,7 +87,7 @@ Also, the panel shows reasons for discarded tests. The bar above the time frame 
   4. Select **Settings Classic**.
 
   + When the **Disable synthetic monitor execution** option is on in the maintenance window, the tests are suppressed during the maintenance period so there are no tests results for this period.
-  + When the **Disable synthetic monitor execution** option is on in the maintenance window, the scheduled automatic tests are suppressed during the maintenance period, but the [on-demand](../../synthetic-monitoring/general-information/on-demand-executions.md "Execute synthetic monitors on demand from public or private locations") tests are not suppressed.
+  + When the **Disable synthetic monitor execution** option is on in the maintenance window, the scheduled automatic tests are suppressed during the maintenance period, but the on-demand tests are not suppressed.
   + When the **Disable synthetic monitor execution** option is off in the maintenance window, the tests are executed during the maintenance period, but, due to maintenance, the test results may differ from those observed under the normal conditions.
 
 * **No result** - the execution started but the results were not delivered. Reach out to the Dynatrace support team.
@@ -135,7 +135,7 @@ Suppose we have 5 down executions within a 35-minute timeframe.
 
 #### Exclude maintenance period executions from metrics calculations
 
-You can set up a [maintenance window](../../../../analyze-explore-automate/notifications-and-alerting/maintenance-windows.md "Understand when to use a maintenance window. Read about the supported maintenance window types.") so [test executions are not suppressed](../../../../analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window.md#disable-synthetic "Create maintenance windows and define their scope.") during maintenance periods. Then, if outages happen during the maintenance period, down executions are included in the metrics calculations.
+You can set up a maintenance window so test executions are not suppressed during maintenance periods. Then, if outages happen during the maintenance period, down executions are included in the metrics calculations.
 
 In the example below, the availability is less than 100% because the down executions are included in the metric calculation by default.
 
@@ -231,7 +231,7 @@ View problem details
 
 The **Problems** card shows performance (threshold violation) and availability (local or global outage) problems when you enable the respective thresholds in [monitor settings](create-and-configure-an-http-monitor.md#outage-and-performance "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.").
 
-See [Create and configure an HTTP monitor](create-and-configure-an-http-monitor.md "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.") for information on defining performance and thresholds availability outage rules. See the [Synthetic alerting overview](../../synthetic-monitoring/analysis-and-alerting/synthetic-alerting-overview.md "Learn about synthetic alerting concepts and workflow.") for alerting workflow and concepts, including setting up notification profiles and templates.
+See Create and configure an HTTP monitor for information on defining performance and thresholds availability outage rules. See the Synthetic alerting overview for alerting workflow and concepts, including setting up notification profiles and templates.
 
 There are three main problem types for HTTP monitors:
 
@@ -250,7 +250,7 @@ Problems, along with their constituent [events](#events) and any corresponding [
 
 ## HTTP requests
 
-An HTTP monitor can consist of one or multiple HTTP requests. The **HTTP requests** card overviews all executed requests, their order, name, request URL, and the HTTP method used. For each request, the **HTTP requests** card splits performance (**Response time**) by the following metrics (see more in [HTTP monitor metrics](../../synthetic-monitoring/http-monitors-classic/http-monitor-metrics-classic.md "Learn about the performance metrics collected for HTTP monitors.")):
+An HTTP monitor can consist of one or multiple HTTP requests. The **HTTP requests** card overviews all executed requests, their order, name, request URL, and the HTTP method used. For each request, the **HTTP requests** card splits performance (**Response time**) by the following metrics (see more in HTTP monitor metrics):
 
 * **DNS lookup time**
 * **TCP connect time**
@@ -280,7 +280,7 @@ Hover over a time slot in the event timeline to see the type and number of event
 
 Select an event type, for example, **HTTP monitor location slowdown**, to see the list of events. One slowdown event is always created per location where your monitor violates request- or monitor-level performance thresholds. Select an individual event to see details.
 
-The [`api.fail()` method](../../synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#end "Learn how to apply pre and post scripts to your requests") can be used to define a custom **Failure message** that appears in the Events card in case of failure. Custom log messages also appear in the `customLogs` attribute in [HTTP monitor execution details](#analyze-last-execution).
+The `api.fail()` method can be used to define a custom **Failure message** that appears in the Events card in case of failure. Custom log messages also appear in the `customLogs` attribute in [HTTP monitor execution details](#analyze-last-execution).
 
 ## Changes
 

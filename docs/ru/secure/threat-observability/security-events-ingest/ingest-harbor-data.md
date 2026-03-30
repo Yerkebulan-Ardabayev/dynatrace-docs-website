@@ -10,7 +10,7 @@ scraped: 2026-03-06T21:23:46.892274
 * Latest Dynatrace
 * Extension
 
-Эта страница обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список изменений и необходимых действий для выполнения миграции описан в [руководстве по миграции таблиц безопасности Grail](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+Эта страница обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список изменений и необходимых действий для выполнения миграции описан в руководстве по миграции таблиц безопасности Grail.
 
 Загрузка результатов анализа уязвимостей, сканирований и журналов аудита Harbor в Dynatrace в виде событий безопасности.
 
@@ -26,9 +26,9 @@ Harbor — это реестр контейнеров, который позво
 
 С загруженными данными вы можете реализовать различные сценарии использования, например:
 
-* [Визуализация и анализ результатов безопасности](../../use-cases/visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
-* [Выявление пробелов в охвате сканированием безопасности](../../use-cases/discover-coverage-gaps-in-security-scans.md "Unveil blind spots in your Software Development Lifecycle (SDLC).")
-* [Автоматизация и оркестрация обработки результатов безопасности](../../use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* Визуализация и анализ результатов безопасности
+* Выявление пробелов в охвате сканированием безопасности.")
+* Автоматизация и оркестрация обработки результатов безопасности
 * Анализ и обнаружение аномальной пользовательской активности Coming soon
 
 ### Требования
@@ -62,7 +62,7 @@ Harbor — это реестр контейнеров, который позво
   + Для запросов к загруженным данным: `storage:security.events:read`.
 * Токены:
 
-  + Сгенерируйте токен доступа с областью `openpipeline.events_security` и сохраните его для дальнейшего использования. Подробнее см. в разделе [Dynatrace API — Токены и аутентификация](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+  + Сгенерируйте токен доступа с областью `openpipeline.events_security` и сохраните его для дальнейшего использования. Подробнее см. в разделе Dynatrace API — Токены и аутентификация.
 
 ## Активация и настройка
 
@@ -106,7 +106,7 @@ Harbor — это реестр контейнеров, который позво
 
      AND event.type=="VULNERABILITY_SCAN"
      ```
-4. После установки и запуска расширения вы можете получить доступ к нему и управлять им в Dynatrace через ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. Подробнее см. [Об Extensions](../../../ingest-from/extensions/concepts.md "Learn more about the concept of Dynatrace Extensions.").
+4. После установки и запуска расширения вы можете получить доступ к нему и управлять им в Dynatrace через ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. Подробнее см. Об Extensions.
 
 ## Подробности
 
@@ -114,7 +114,7 @@ Harbor — это реестр контейнеров, который позво
 
 ![ingest mechanism](https://dt-cdn.net/images/image-20250210-114352-2221-6c1861c4fb.png)
 
-Интеграция Dynatrace с Harbor — это [расширение](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions."), работающее на Dynatrace ActiveGate. После включения и настройки расширения Dynatrace Harbor:
+Интеграция Dynatrace с Harbor — это расширение, работающее на Dynatrace ActiveGate. После включения и настройки расширения Dynatrace Harbor:
 
 1. Оно периодически обращается к продуктам Harbor и загружает новые результаты анализа уязвимостей, сканирования и журналы аудита.
 2. Загруженные данные поступают в Dynatrace и сопоставляются с [Dynatrace Semantic Dictionary](https://dt-url.net/z1c3xsm).
@@ -122,7 +122,7 @@ Harbor — это реестр контейнеров, который позво
 
 ### Лицензирование и стоимость
 
-Информацию о тарификации см. в разделе [События на базе Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+Информацию о тарификации см. в разделе События на базе Grail.
 
 ## Наборы функций
 
@@ -144,9 +144,9 @@ API Harbor предоставляют только статус последне
 
 ### Какая модель данных используется для журналов безопасности и событий, поступающих из Harbor?
 
-* [**События обнаружения уязвимостей**](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.") хранят отдельные результаты обнаружения уязвимостей, сообщённые Harbor для каждого образа контейнера и компонента.
-* [**События сканирования уязвимостей**](../../../semantic-dictionary/model/security-events.md#vulnerability-scan-events "Get to know the Semantic Dictionary models related to security events.") указывают на охват сканирования для отдельных образов контейнеров.
-* [**Журналы аудита**](../../../semantic-dictionary/model/log.md#audit-logs "Get to know the Semantic Dictionary models related to Log Analytics.") представляют журналы активности пользователей в Harbor.
+* **События обнаружения уязвимостей** хранят отдельные результаты обнаружения уязвимостей, сообщённые Harbor для каждого образа контейнера и компонента.
+* **События сканирования уязвимостей** указывают на охват сканирования для отдельных образов контейнеров.
+* **Журналы аудита** представляют журналы активности пользователей в Harbor.
 
 ### Какие поля расширения добавляются поверх основных полей событий, загруженных из Harbor?
 
@@ -186,6 +186,6 @@ Dynatrace нормализует уровни серьёзности и оцен
 
 ## Связанные темы
 
-* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [События безопасности](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")
+* OpenPipeline
+* Dynatrace Query Language
+* События безопасности

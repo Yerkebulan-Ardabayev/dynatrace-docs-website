@@ -170,9 +170,9 @@ API Queries (SOQL)
 
 Platform Events
 
-Capture [real-time eventsï»¿](https://dt-url.net/fj03qyl) from Salesforce and send them as [Business Events](../bo-basic-concepts.md "Basic concepts of Dynatrace Business Observability.") to Dynatrace.
+Capture [real-time eventsï»¿](https://dt-url.net/fj03qyl) from Salesforce and send them as Business Events to Dynatrace.
 
-[RUM ingest](../../digital-experience/rum-concepts/rum-overview.md "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.") should only be used on Managed Environments.
+RUM ingest should only be used on Managed Environments.
 
 1. Enable **Real-time event Streaming**.
 2. In **Setup** > **Event Manager**, enable **Streaming Data** for the events you want to capture.
@@ -311,7 +311,7 @@ The data is sent to the Frontend application that you created, so you can access
 * **Sessions Details**
 * The individual properties, by selecting **User Action** > **Perform waterfall analysis**
 
-To use these properties in [User Sessions Query Language](../../digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Learn how you can access and query user session data based on keywords, syntax, functions, and more."):
+To use these properties in User Sessions Query Language:
 
 1. In the application settings, go to **Session and user action properties**.
 2. Create a property.
@@ -331,7 +331,7 @@ SELECT useraction.name, SUM(longProperties.rowsprocessed) FROM useraction WHERE 
 
 ## EventLogFile
 
-Capture [event log filesï»¿](https://dt-url.net/0a03q0q) from Salesforce and ingest them as [logs](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.") to Dynatrace.
+Capture [event log filesï»¿](https://dt-url.net/0a03q0q) from Salesforce and ingest them as logs to Dynatrace.
 
 * EventLogFile needs to be enabled in [Salesforceï»¿](https://dt-url.net/27u3qmr).
 * The user must have set permissions to read event log files.
@@ -382,7 +382,7 @@ Visualization of a query result
 
 ## API Queries (SOQL)
 
-Run [SOQL queriesï»¿](https://dt-url.net/ox23q6n) against Salesforce and ingest the data as [logs](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.") or Business Events.
+Run [SOQL queriesï»¿](https://dt-url.net/ox23q6n) against Salesforce and ingest the data as logs or Business Events.
 The user must have permissions to query the Salesforce API, and read the **Objects** that are being queried.
 
 #### Details
@@ -465,7 +465,7 @@ Visualization of a query result
 
 ## Platform Events
 
-Subscribe to custom [Salesforce Platform Eventsï»¿](https://developer.salesforce.com/docs/atlas.en-us.250.0.platform_events.meta/platform_events/platform_events_intro.htm) and ingest them as [Business Events](../bo-basic-concepts.md "Basic concepts of Dynatrace Business Observability.") to Dynatrace.
+Subscribe to custom [Salesforce Platform Eventsï»¿](https://developer.salesforce.com/docs/atlas.en-us.250.0.platform_events.meta/platform_events/platform_events_intro.htm) and ingest them as Business Events to Dynatrace.
 
 Platform Events provide a powerful way to send and receive custom event notifications within Salesforce and to external systems. This configuration allows you to capture real-time event data from custom platform events, standard platform events, and change data capture events.
 
@@ -518,14 +518,14 @@ Each Platform Event will include all custom fields defined on the event, making 
 
 ## Extend the retention period for Salesforce Insights data
 
-By default, your ingested data is stored for 30 days. You can adjust the retention time by creating a custom [bucket](../bo-event-processing/bo-bucket-assignment.md "Assign a retention period to business event data in Dynatrace via the classic pipeline.").
+By default, your ingested data is stored for 30 days. You can adjust the retention time by creating a custom bucket.
 
 To create a custom bucket for a Salesforce event
 
 1. In Dynatrace, go to **Settings** > **Business Observability** > **Bucket assignment**.
 2. On the **Business event bucket assignment** page, select **Add rule** and name your rule.
 3. In the **Bucket** field, choose your retention period.
-4. Add a **Matcher** to your rule by typing or pasting your [matcher-specific DQL query](../bo-event-processing/bo-events-processing-matcher.md "This is the DQL matcher in events in the classic pipeline ."). Events that match your rule will be assigned to your selected bucket. If no rules match, events will be assigned to the default bucket. To assign all your Salesforce events to your bucket, you need to use the matcher containing the `matchesValue` function and your Salesforce URL, as in the example below.
+4. Add a **Matcher** to your rule by typing or pasting your matcher-specific DQL query. Events that match your rule will be assigned to your selected bucket. If no rules match, events will be assigned to the default bucket. To assign all your Salesforce events to your bucket, you need to use the matcher containing the `matchesValue` function and your Salesforce URL, as in the example below.
 
    ```
    matchesValue(event.provider, "https://environment.my.salesforce.com")
@@ -536,4 +536,4 @@ To create a custom bucket for a Salesforce event
 
 Error logs can be obtained via Dynatrace, by navigating to the Extension page, and selecting **Status** for each monitoring configuration.
 
-Detailed logs can be obtained by creating an [ActiveGate Diagnosis](../../../ingest-from/dynatrace-activegate/activegate-diagnostics.md "Learn how to run ActiveGate diagnostics").
+Detailed logs can be obtained by creating an ActiveGate Diagnosis.

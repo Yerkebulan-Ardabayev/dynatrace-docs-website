@@ -11,9 +11,9 @@ scraped: 2026-03-05T21:25:53.393313
 * 3-min read
 * Published Oct 31, 2024
 
-Application observability focuses on monitoring application-level metrics by injecting code modules into application Pods. This mode offers multiple injection strategies (automatic, runtime, and build-time) to collect application-specific metrics. For infrastructure-level insights, combine it with [Kubernetes platform monitoring](../../../../ingest-from/setup-on-k8s/how-it-works/kubernetes-monitoring.md "In-depth description of Kubernetes platform monitoring using Dynatrace Operator.").
+Application observability focuses on monitoring application-level metrics by injecting code modules into application Pods. This mode offers multiple injection strategies (automatic, runtime, and build-time) to collect application-specific metrics. For infrastructure-level insights, combine it with Kubernetes platform monitoring.
 
-See [`.spec.oneAgent.applicationMonitoring`](../../../../ingest-from/setup-on-k8s/reference/dynakube-parameters.md "List the available parameters for setting up Dynatrace Operator on Kubernetes.") section of DynaKube for additional information.
+See `.spec.oneAgent.applicationMonitoring` section of DynaKube for additional information.
 
 ## Automatic injection
 
@@ -24,12 +24,12 @@ You can use the automatic injection strategy for application Pods. Dynatrace inj
 * Dynatrace injects code modules into Pods using the Kubernetes admission controller.
 * Get granular control over the instrumented Pods using namespaces and annotations.
 * Route Pod metrics to different Dynatrace environments within the same Kubernetes cluster.
-* [Enable data enrichment for Kubernetes environments](../../../../ingest-from/extend-dynatrace/extend-data.md#dynatrace-kubernetes-operator "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+* Enable data enrichment for Kubernetes environments.
 
 ### Current limitations
 
 * Diagnostic files (support archives) for application Pods aren't yet supported.
-* [Go static monitoring](../../../../ingest-from/technology-support/application-software/go/support/go-known-limitations.md#static-monitoring "Learn the limitations for Go support and their workarounds.") is partially supported.
+* Go static monitoring is partially supported.
 
 When deployed in application monitoring, Dynatrace code modules monitor processes within the container, including disk, CPU, and networking metrics. Host metrics are not monitored. Without [Kubernetes Platform Monitoring](#kubernetes-monitoring), topology is limited to Pods and containers.
 
@@ -37,13 +37,13 @@ When deployed in application monitoring, Dynatrace code modules monitor processe
 
 The following components are deployed via Helm/Manifests as part of the core installation. For more information, go to their respective sections:
 
-* [Dynatrace Operator](../../../../ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator.md#operator "Components of Dynatrace Operator") manages the automated rollout, configuration, and lifecycle of Dynatrace components in your Kubernetes environment.
-* [Dynatrace Operator webhook](../../../../ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator.md#webhook "Components of Dynatrace Operator") validates DynaKube definitions, converts definitions with older API versions, and injects configurations into Pods.
-* [Dynatrace Operator CSI Driver](../../../../ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator.md#csidriver "Components of Dynatrace Operator") Optional, deployed as a DaemonSet, provides writable volume storage for OneAgent binaries to minimize network and storage usage.
+* Dynatrace Operator manages the automated rollout, configuration, and lifecycle of Dynatrace components in your Kubernetes environment.
+* Dynatrace Operator webhook validates DynaKube definitions, converts definitions with older API versions, and injects configurations into Pods.
+* Dynatrace Operator CSI Driver Optional, deployed as a DaemonSet, provides writable volume storage for OneAgent binaries to minimize network and storage usage.
 
 The following component is deployed by applying a DynaKube with Application observability:
 
-* [Dynatrace ActiveGate](../../../../ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.") routes observability data to the Dynatrace cluster.
+* Dynatrace ActiveGate routes observability data to the Dynatrace cluster.
 * Dynatrace code modules are injected into your application to enable deep monitoring and observability.
 
 ![auto-injection](https://dt-cdn.net/images/screenshot-2024-01-31-at-3-23-56-pm-2358-6db693bc75.png)

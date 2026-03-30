@@ -22,11 +22,11 @@ This article is intended for security engineers and site reliability engineers w
 ## Prerequisites
 
 * Create an [Amazon CloudWatch log groupï»¿](https://dt-url.net/r8c3wk1) for the Amazon API Gateway access logs
-* [Set up Amazon Data Firehose](../../ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose.md "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.") for the log group to send the logs to Dynatrace
+* Set up Amazon Data Firehose for the log group to send the logs to Dynatrace
 * Knowledge of
 
-  + [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") and [how to use DQL queries](../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.")
-  + [Dynatrace Pattern Language](../../platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.")
+  + Dynatrace Query Language and how to use DQL queries
+  + Dynatrace Pattern Language
 
 ## Before you begin
 
@@ -141,7 +141,7 @@ Follow the steps below to analyze and discover the services with the highest lat
 
    | filter aws.log_group == "/aws/apigateway/my-gateway-demo"
    ```
-2. In the query results table, right-click on a field and select **View field details** to [view the log record in the original format](../investigations/enhance-results.md#view-details "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
+2. In the query results table, right-click on a field and select **View field details** to view the log record in the original format.
 
    Example JSON-formatted log record:
 
@@ -193,13 +193,13 @@ Follow the steps below to analyze and discover the services with the highest lat
 
    }
    ```
-3. Add the following [parse command](../../platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands.md "DQL extraction commands") to the DQL query to extract the `path` and `integrationLatency` properties from the JSON record.
+3. Add the following parse command to the DQL query to extract the `path` and `integrationLatency` properties from the JSON record.
 
    ```
    | parse content, "JSON{ STRING:path, INT:integrationLatency }(flat=true)"
    ```
 
-   This example uses [Dynatrace Pattern Language](../../platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.") and the [JSON matcher](../../platform/grail/dynatrace-pattern-language/log-processing-json-object.md "Explore DPL syntax for handling JSON Objects.") to extract [selected matchers](../../platform/grail/dynatrace-pattern-language/log-processing-json-object.md#parse-selected "Explore DPL syntax for handling JSON Objects.") to separate fields.
+   This example uses Dynatrace Pattern Language and the JSON matcher to extract selected matchers to separate fields.
 
    DPL pattern used:
 
@@ -217,7 +217,7 @@ Follow the steps below to analyze and discover the services with the highest lat
    ```
 
    After running the query, you can see two new columns called **path** and **integrationLatency** in the results table.
-4. To simplify viewing the results, add the following [`makeTimeseries` command](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#makeTimeseries "DQL aggregation commands") to the DQL query to create a metric from the API Gateway logs. The metric should have the path as a dimension and average latency per minute as the metric values.
+4. To simplify viewing the results, add the following `makeTimeseries` command to the DQL query to create a metric from the API Gateway logs. The metric should have the path as a dimension and average latency per minute as the metric values.
 
    ```
    | makeTimeseries {
@@ -266,7 +266,7 @@ Follow the steps below to analyze and discover the services with the highest lat
 
 Follow the steps below to dig deeper into the response codes.
 
-1. Extract the response codes as an additional column with an [INT matcher](../../platform/grail/dynatrace-pattern-language/log-processing-numeric.md#int "Explore DPL syntax for handling numeric data."), as you're expecting to get an integer value from the field.
+1. Extract the response codes as an additional column with an INT matcher, as you're expecting to get an integer value from the field.
 
    DPL pattern used:
 
@@ -420,8 +420,8 @@ Follow the steps below to continue debugging integration errors.
    It turns out that timeout errors are the most frequent.
 5. To see how the error messages distribute over the same period, create a metric based on the timeout errors as follows:
 
-* Add a [`filterOut` command](../../platform/grail/dynatrace-query-language/commands/filtering-commands.md#filterOut "DQL filter and search commands") to remove the successful events
-* Add the `timestamp` field to the [`fields` command](../../platform/grail/dynatrace-query-language/commands/selection-and-modification-commands.md#fields "DQL selection and modification commands")
+* Add a `filterOut` command to remove the successful events
+* Add the `timestamp` field to the `fields` command
 * Construct the `makeTimeseries` command to aggregate errors by count in one-minute interval.
 
   Your final query should look like this:
@@ -458,8 +458,8 @@ Follow the steps below to continue debugging integration errors.
 
 ## Related topics
 
-* [Analyze AWS CloudTrail logs with Investigations](analyze-aws-cloudtrail-logs-with-security-investigator.md "Analyze CloudTrail logs and find potential security issues with Dynatrace.")
-* [Detect threats against your AWS Secrets with Investigations](detect-threats-against-aws-secrets-with-security-investigator.md "Monitor and identify potential threats against your AWS Secrets with Dynatrace.")
-* [Threat hunting and forensics](threat-hunting.md "Use case scenario for threat hunting and forensics with Investigations.")
-* [Operationalize DQL query results with Investigations](operationalize-query-results.md "Build DQL queries from your query results faster and more conveniently with Dynatrace Investigations.")
-* [Resolve incidents faster with Investigations templates](resolve-incidents-faster-with-templates.md "Speed up your log-related investigations with Investigations templates.")
+* Analyze AWS CloudTrail logs with Investigations
+* Detect threats against your AWS Secrets with Investigations
+* Threat hunting and forensics
+* Operationalize DQL query results with Investigations
+* Resolve incidents faster with Investigations templates

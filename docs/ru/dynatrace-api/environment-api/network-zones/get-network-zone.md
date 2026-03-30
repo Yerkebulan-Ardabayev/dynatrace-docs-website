@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:13:34.444969
 
 ## Аутентификация
 
-Для выполнения этого запроса необходимо назначить токену API разрешение **Read network zones** (`networkZones.read`). Чтобы узнать, как получить и использовать токен, см. раздел [Аутентификация](../../basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+Для выполнения этого запроса необходимо назначить токену API разрешение **Read network zones** (`networkZones.read`). Чтобы узнать, как получить и использовать токен, см. раздел Аутентификация.
 
 ## Параметры
 
@@ -165,4 +165,4 @@ scraped: 2026-03-06T21:13:34.444969
 
 ## Связанные темы
 
-* [Сетевые зоны](../../../manage/network-zones.md "Find out how network zones work in Dynatrace.")
+* Сетевые зоны

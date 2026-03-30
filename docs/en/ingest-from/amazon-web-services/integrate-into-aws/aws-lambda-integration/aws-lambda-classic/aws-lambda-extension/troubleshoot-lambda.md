@@ -12,7 +12,7 @@ scraped: 2026-03-04T21:30:20.410674
 * 1-min read
 * Published Aug 30, 2021
 
-This topic is about the classic AWS Lambda integration. Check out [Trace Lambda functions](../../trace-lambda-functions.md "Monitor AWS Lambda functions.") for the latest experience.
+This topic is about the classic AWS Lambda integration. Check out Trace Lambda functions for the latest experience.
 
 To address the issues regarding Dynatrace AWS Lambda extension integration, start with the logs and error messages.
 

@@ -12,7 +12,7 @@ scraped: 2026-03-05T21:32:03.786138
 * 2-min read
 * Updated on Jan 10, 2024
 
-When you can't use the [Dynatrace Android Gradle plugin](../instrumentation-via-plugin.md "Learn how the Dynatrace Android Gradle plugin can auto-instrument your Android application project.") due to certain technical limitations, opt for standalone manual instrumentation with OneAgent SDK for Android.
+When you can't use the Dynatrace Android Gradle plugin due to certain technical limitations, opt for standalone manual instrumentation with OneAgent SDK for Android.
 
 Follow the steps below to manually instrument your application using OneAgent SDK for Android.
 
@@ -167,7 +167,7 @@ When you use standalone manual instrumentation, nothing is done automatically. E
 
    To get the correct application identification keys (`applicationId` and `beaconUrl`), access the [mobile instrumentation wizard](../get-started-with-android-monitoring.md#instrumentation-wizard "Learn the steps you need to perform to instrument your Android app for monitoring with Dynatrace.") for your application.
 
-   If your application supports Direct Boot, never call the `Dynatrace.startup` API method from a Direct Boot aware component. Also, check [Adjust communication with OneAgent SDK for Android](adjust-oneagent-communication.md "Configure communication with OneAgent to report the user experience data to Dynatrace.") to make sure that OneAgent can transmit data to Dynatrace.
-4. Capture additional data via [OneAgent SDK for Android](oneagent-sdk-for-android.md "Learn how to enrich mobile user experience monitoring in Android using OneAgent SDK.").
+   If your application supports Direct Boot, never call the `Dynatrace.startup` API method from a Direct Boot aware component. Also, check Adjust communication with OneAgent SDK for Android to make sure that OneAgent can transmit data to Dynatrace.
+4. Capture additional data via OneAgent SDK for Android.
 
    For instance, you can create custom actions, report errors, tag specific users, and more.

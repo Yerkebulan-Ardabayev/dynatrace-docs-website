@@ -18,7 +18,7 @@ The following use cases show how to reduce cardinality in three different views 
 
 * [Outbound calls](#outbound-calls)
 * [Database queries](#database-queries): This tab shows aggregated metrics for database calls made by your service.
-* [Message processing](../../../observe/application-observability/services/monitor-service-message-processing.md "Monitor service message processing")
+* Message processing
 
 ## Outbound calls
 

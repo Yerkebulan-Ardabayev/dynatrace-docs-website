@@ -14,13 +14,13 @@ scraped: 2026-03-06T21:28:05.793494
 
 The New RUM Experience and the tools of the Dynatrace platform help you tackle your key use cases. This section brings together guides that show you how to make the most of them.
 
-[#### DQL examples
+#### DQL examples
 
 Analyze and explore RUM data in depth by leveraging DQL.
 
 * Reference
 
-Read this reference](use-cases/dql-examples.md)[#### Extract a metric from user events
+Read this reference[#### Extract a metric from user events
 
 Turn user events into actionable insights by extracting custom metrics for long-term analysis.
 

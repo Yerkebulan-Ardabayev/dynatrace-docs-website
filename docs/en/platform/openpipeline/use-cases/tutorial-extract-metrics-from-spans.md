@@ -26,23 +26,23 @@ How to set up OpenPipeline to extract a metric from a captured span via five exa
 
 Prior knowledge
 
-* [Dynatrace Query Language](../../grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](../concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* Dynatrace Query Language
+* Processing in OpenPipeline
 
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* Dynatrace Platform Subscription (DPS) with [Traces powered by Grail (DPS)](../../../license/capabilities/traces.md "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.") capabilities.
-* OpenPipeline permissions: `settings:objects:read` and `settings:objects:write`. To learn how to set up the permissions, see [Permissions in Grail](../../grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+* Dynatrace Platform Subscription (DPS) with Traces powered by Grail (DPS) model.") capabilities.
+* OpenPipeline permissions: `settings:objects:read` and `settings:objects:write`. To learn how to set up the permissions, see Permissions in Grail.
 * [Distributed Tracing permissions](../../../observe/application-observability/distributed-tracing/permissions.md#user-permissions-for-distributed-tracing "Manage permissions for Distributed Tracing powered by Grail.")
 
 ## Examples
 
 ### Requests to a workload split by Kubernetes pod
 
-This example shows the new, recommended way to get [service instance-level insights](../../../observe/application-observability/services-classic/analyze-individual-service-instances.md "Find out how you can perform a service-instance analysis."), a concept that is going away. Extract metrics from spans and split by real deployment dimensions like Kubernetes workload, pod, host, and more.
+This example shows the new, recommended way to get service instance-level insights, a concept that is going away. Extract metrics from spans and split by real deployment dimensions like Kubernetes workload, pod, host, and more.
 
-For common splits such as namespace, cluster or cloud region, use the out-of-the-box [primary Grail fields](../../../semantic-dictionary/tags/primary-fields.md) already available in service metrics; you don't need a new metric.
+For common splits such as namespace, cluster or cloud region, use the out-of-the-box primary Grail fields already available in service metrics; you don't need a new metric.
 
 1. Find the condition for the relevant spans in Notebooks
 
@@ -85,7 +85,7 @@ Understanding the filter conditions
    * The new metric keyâfor example, `span.my-otel-demo-frontend.requests_by_pod.count`
    * The metric dimensions:
 
-     1. Select **Pre-defined** and choose `k8s.pod.name` and `k8s.pod.uid` from the [pre-defined dimensions](../../../semantic-dictionary/model/dt-system-events.md#audit-event "Get to know the Semantic Dictionary models related to system events."). These dimensions identify the pods where the workload is running. Other dimensions have also been pre-selected, such as `dt.entity.service`.
+     1. Select **Pre-defined** and choose `k8s.pod.name` and `k8s.pod.uid` from the pre-defined dimensions. These dimensions identify the pods where the workload is running. Other dimensions have also been pre-selected, such as `dt.entity.service`.
      2. Select **Save**.
 
 You successfully created a new pipeline to extract a metric containing information about how many requests there were for the `my-otel-demo-frontend` workload and, because the metric has the pod as a dimension, you'll be able to split the requests by pod. The new pipeline is visible in the pipelines list.
@@ -129,7 +129,7 @@ In this example, we describe the creation of the pipeline and the metric-extract
 
 Assumptions for the example
 
-The number of books sold is captured as a [request attribute](../../../observe/application-observability/services/request-attributes.md "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."), for example, `request_attribute.book_orders_count`. Request attributes are exposed under [`request_attribute.__attribute_name__`](../../../semantic-dictionary/fields.md#request-attributes "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
+The number of books sold is captured as a request attribute, for example, `request_attribute.book_orders_count`. Request attributes are exposed under [`request_attribute.__attribute_name__`](../../../semantic-dictionary/fields.md#request-attributes "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
 
 1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **OpenPipeline** > **System events** > **Pipelines**.
 2. Select an existing pipeline or create a new one. To create a new pipeline, select  **Pipeline** and enter a nameâfor example, `TeamA Span metrics from Services`.
@@ -273,7 +273,7 @@ In this example, we describe the creation of the pipeline and the metric-extract
    * The new metric keyâfor example, `span.request.cpu_time`.
    * The metric dimensions:
 
-     1. Select **Pre-defined** and choose `endpoint.name` from the [pre-defined dimensions](../../../semantic-dictionary/model/dt-system-events.md#audit-event "Get to know the Semantic Dictionary models related to system events."). Other dimensions also get pre-selected, such as `dt.entity.service`.
+     1. Select **Pre-defined** and choose `endpoint.name` from the pre-defined dimensions. Other dimensions also get pre-selected, such as `dt.entity.service`.
      2. Select **Save**.
 
 You successfully created a new processor to extract a metric containing information about the CPU time consumed per endpoint. The CPU-time field is measured in nanoseconds.
@@ -284,7 +284,7 @@ Upcoming features
 
 Histogram metric extraction support is coming soon.
 
-Later in 2026, Dynatrace will provide out-of-the-box metrics for third-party calls, as part of the modernization of [Monitor third-party services](../../../observe/application-observability/services/service-detection/service-detection-v1/monitor-3rd-party-services.md "Configure how Dynatrace should monitor third-party services.").
+Later in 2026, Dynatrace will provide out-of-the-box metrics for third-party calls, as part of the modernization of Monitor third-party services.
 
 In this example, we describe the creation of the pipeline and the metric-extraction processor. For detailed steps, follow the approach of the [workload split by Kubernetes pod example](#workload-requests-pod), but adapt the filter queries and routing.
 

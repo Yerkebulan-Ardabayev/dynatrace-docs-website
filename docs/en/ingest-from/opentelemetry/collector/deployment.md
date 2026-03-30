@@ -53,7 +53,7 @@ For Kubernetes, the Dynatrace Collector can be deployed in the following ways:
 
 Before you deploy the Collector, you need to set up the necessary Kubernetes secrets for the Dynatrace access details.
 
-Use kubectl to create Kuberenetes secrets for the Dynatrace export details. Replace the placeholders (indicated by curly brackets) with the actual values for [the export URL and the API token](../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+Use kubectl to create Kuberenetes secrets for the Dynatrace export details. Replace the placeholders (indicated by curly brackets) with the actual values for the export URL and the API token.
 
 ```
 kubectl create secret generic dynatrace-otelcol-dt-api-credentials --from-literal=DT_ENDPOINT={ENDPOINT_URL_HERE} --from-literal=DT_API_TOKEN={API_TOKEN_HERE}
@@ -1097,7 +1097,7 @@ name: dynatrace-otel-collector-config
 
 Service account
 
-In Kubernetes, it is common to enrich OpenTelemetry signals using the [Kubernetes Attributes processor](use-cases/kubernetes/k8s-enrich.md "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data."). This requires a Kubernetes service account, which is automatically configured when using Operator or Helm.
+In Kubernetes, it is common to enrich OpenTelemetry signals using the Kubernetes Attributes processor. This requires a Kubernetes service account, which is automatically configured when using Operator or Helm.
 
 For raw manifests, this needs to be configured manually by adding a `spec.serviceAccountName: collector` entry to the deployment manifest.
 
@@ -1109,7 +1109,7 @@ Run the following command to download the image of the Dynatrace Collector:
 docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0
 ```
 
-Next, ensure that the [Collector configuration file](configuration.md "How to configure the OpenTelemetry Collector.") exists in the current working directory and run the Collector image with the following command:
+Next, ensure that the Collector configuration file exists in the current working directory and run the Collector image with the following command:
 
 ```
 docker run -v $(pwd)/otel-collector-config.yaml:/etc/otelcol/otel-collector-config.yaml ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0 --config=/etc/otelcol/otel-collector-config.yaml
@@ -1204,7 +1204,7 @@ rpm -ivh dynatrace-otel-collector_<VERSION>_Linux_<ARCH>.rpm
 
 #### Service configuration
 
-When first starting the service, it may fail to start if there is no [configuration file](configuration.md "How to configure the OpenTelemetry Collector.") in place yet. By default, the Collector attempts to find the file at `/etc/dynatrace-otel-collector/config.yaml`.
+When first starting the service, it may fail to start if there is no configuration file in place yet. By default, the Collector attempts to find the file at `/etc/dynatrace-otel-collector/config.yaml`.
 
 Custom configuration location
 

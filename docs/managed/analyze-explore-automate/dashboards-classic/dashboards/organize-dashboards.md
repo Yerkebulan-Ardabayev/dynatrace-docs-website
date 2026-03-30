@@ -7,7 +7,7 @@ updated: 2026-02-09
 * How-to guide
 * 3-min read
 
-[Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+Dashboards Classic
 
 When you have a lot of dashboards, you need to manage them.
 
@@ -43,7 +43,7 @@ You can apply the following filters to the **Dashboards** table:
 * **Owner**: Filters by the name or user ID of the owner
 * **Tag**: Filters by [dashboard tag](#tag)
 * **Hidden**: Set to `Yes` to display your hidden dashboards
-* **Preset**: Whether to list only [preset dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboards-preset "Learn about out-of-the-box Dynatrace dashboards and how to create your own preset dashboards.")
+* **Preset**: Whether to list only preset dashboards
 
 If you set more than one filter, only dashboards that match all of the filters are shown.
 
@@ -137,9 +137,9 @@ You can filter the **Dashboards** list by **Tag**.
 
 ## Management zones
 
-[Management zones](/managed/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") are used to partition monitoring data based on team ownership and responsibility. Dashboard content is automatically filtered whenever a management zone is selected.
+Management zones are used to partition monitoring data based on team ownership and responsibility. Dashboard content is automatically filtered whenever a management zone is selected.
 
-You can set a default timeframe and management zone for each dashboard; these are selected every time you open the dashboard. They're also used when you [share](/managed/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards "Learn how to share your Dynatrace dashboards with others.") the dashboard.
+You can set a default timeframe and management zone for each dashboard; these are selected every time you open the dashboard. They're also used when you share the dashboard.
 
 To configure the default timeframe and management zone, edit the dashboard, switch to the **Settings** tab, and configure either or both settings:
 
@@ -148,7 +148,7 @@ To configure the default timeframe and management zone, edit the dashboard, swit
 
 Team members who view a zone-specific dashboard without having the required management zone permissions are presented with a dashboard that has no content. They must select a management zone that they have permission to view before data is displayed on the dashboard.
 
-For more on dashboards and management zones, see [Dashboard timeframe and management zone](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.").
+For more on dashboards and management zones, see Dashboard timeframe and management zone.
 
 ## More dashboard management procedures
 
@@ -157,12 +157,12 @@ Create a new (empty) dashboard
 1. Go to **Dashboards**.
 2. Select **Create Dashboard**.
 3. Enter a name for your dashboard and select **Create**. The new dashboard opens in edit mode.
-4. Optional To add a tile, drag it from the **Tiles** pane to the dashboard, or [pin a tile to the dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+4. Optional To add a tile, drag it from the **Tiles** pane to the dashboard, or pin a tile to the dashboard.
 5. Optional To configure dashboard-specific settings, select the **Settings** tile.
 6. Select **Done**.  
-   The new dashboard is displayed as it will appear to you and people with whom you [share](/managed/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards "Learn how to share your Dynatrace dashboards with others.") it, though other people will not see the **Edit** button if you don't give them edit permission.
+   The new dashboard is displayed as it will appear to you and people with whom you share it, though other people will not see the **Edit** button if you don't give them edit permission.
 
-For details on creating dashboards, see [Create and edit Dynatrace dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.")
+For details on creating dashboards, see Create and edit Dynatrace dashboards
 
 Clone an existing dashboard
 
@@ -172,7 +172,7 @@ Clone an existing dashboard
    * The copy opens in edit mode.
    * The original dashboard is unaffected.
 
-For details on creating dashboards, see [Create and edit Dynatrace dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.")
+For details on creating dashboards, see Create and edit Dynatrace dashboards
 
 Edit an existing dashboard
 
@@ -203,4 +203,4 @@ Delete a dashboard
 
 ## Related topics
 
-* [Dashboards API](/managed/dynatrace-api/configuration-api/dashboards-api "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.")
+* Dashboards API

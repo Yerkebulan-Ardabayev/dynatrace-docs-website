@@ -16,7 +16,7 @@ scraped: 2026-03-06T21:18:10.162845
 
 * Full-stack monitoring powered by OneAgent
 * [Extensions for easy deployment of OneAgent](#installation)
-* [Integration with Azure Monitor](../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
+* Integration with Azure Monitor
 * Enhanced support for Azure VM Metadata such as Azure regions, scale sets and more
 * Automatic instrumentation including containerized applications
 
@@ -24,9 +24,9 @@ Note that we don't have an OOTB instrumentation for the Azure Service Fabric Pro
 
 ## Installation
 
-To deploy OneAgent on Azure Service Fabric, follow the same procedure as for [Azure Virtual Machines Scale Set](azure-vmss.md "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure VM Scale Set using a VM extension.").
+To deploy OneAgent on Azure Service Fabric, follow the same procedure as for Azure Virtual Machines Scale Set.
 
 ## Related topics
 
-* [Set up Dynatrace on Microsoft Azure](../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
-* [OneAgent platform and capability support matrix](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* Set up Dynatrace on Microsoft Azure
+* OneAgent platform and capability support matrix

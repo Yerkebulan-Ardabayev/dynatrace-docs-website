@@ -16,4 +16,4 @@ You can send data from your Ruby application to Dynatrace via OpenTelemetry. See
 
 * [OpenTelemetry supportï»¿](https://github.com/open-telemetry/opentelemetry-ruby/) for capturing traces.
 
-  + [Instrument your Ruby application with OpenTelemetry](../../opentelemetry/walkthroughs/ruby.md "Learn how to instrument your Ruby application using OpenTelemetry and Dynatrace.")
+  + Instrument your Ruby application with OpenTelemetry

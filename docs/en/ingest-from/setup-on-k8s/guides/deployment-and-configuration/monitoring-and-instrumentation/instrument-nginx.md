@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:22:46.951929
 
 The instructions below are relevant only for the [official Kubernetes ingress controller implementation from Googleï»¿](https://dt-url.net/xr03xh3).
 
-* Derivatives from the official project, such as the [Bitnami ingress controllerï»¿](https://dt-url.net/ns03xjt), are not supported. However, you may instrument them manually by using the [Manual runtime instrumentation](../../../../technology-support/application-software/nginx/manual-runtime-instrumentation.md "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.") for NGINX.
+* Derivatives from the official project, such as the [Bitnami ingress controllerï»¿](https://dt-url.net/ns03xjt), are not supported. However, you may instrument them manually by using the Manual runtime instrumentation for NGINX.
 * The [ingress controller implementation from F5 NGINXï»¿](https://dt-url.net/ph43xrd) can be instrumented automatically; no manual steps are required.
 
 The NGINX process of the official Kubernetes ingress-nginx controller container image can't be instrumented automatically. To manually instrument ingress-nginx on Kubernetes, follow the instructions below.

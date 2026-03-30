@@ -15,8 +15,8 @@ Log Monitoring Classic
 
 By default, Log Monitoring is activated in your Dynatrace environment. To start ingesting logs, depending on your use case, you need to either configure log storage rules on OneAgents or send logs to ingest APIs.
 
-* [Log ingest rules (Logs Classic)](acquire-log-data/log-storage.md "Configure storage of log files that are already known to OneAgent.")
-* [Log ingestion API (Logs Classic)](acquire-log-data/logs-classic-ingestion-api.md "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
+* Log ingest rules (Logs Classic)
+* Log ingestion API (Logs Classic)
 
 You can confirm that Log Monitoring is enabled or you can enable it globally or on a host level, but checking the status and enabling or disabling Log Monitoring is optional in most cases. If you plan to use Log Monitoring, you can focus on OneAgent settings that directly affect how Log Monitoring is operating.
 
@@ -61,7 +61,7 @@ Similarly to checking Log Monitoring status, you can enable or disable Log Monit
 
 ## OneAgent settings
 
-Dynatrace Log Monitoring uses the [OneAgent log module](../../discover-dynatrace/get-started/glossary.md#glossary-oneagent-log-module "Get acquainted with Dynatrace terminology.") enabled by default with all OneAgent installations. While Log Monitoring does not require any specific configuration, you can modify some of the options available for the OneAgent log module.
+Dynatrace Log Monitoring uses the OneAgent log module enabled by default with all OneAgent installations. While Log Monitoring does not require any specific configuration, you can modify some of the options available for the OneAgent log module.
 
 You can adjust:
 

@@ -16,7 +16,7 @@ Dynatrace automatically merges related processes into process groups. A âpr
 
 Show moreâ¦
 
-Dynatrace automatically [detects application types](process-groups/basic-concepts/what-technologies-underlie-individual-processes.md "The technologies and versions behind a process") such as Tomcat, JBoss, Apache HTTP Server, MongoDB, and many others technologies. To create process groups, Dynatrace uses specific process properties. For Tomcat, Dynatrace uses `CATALINA_HOME` and `CATALINA_BASE` to distinguish between different Tomcat clusters. For JBoss, Dynatrace uses `JBOSS_HOME` and the JBoss cluster configuration. For generic Java processes, Dynatrace uses the JAR file or the main class used to start the process. There are also many specialized detection mechanisms. For example, Dynatrace can detect:
+Dynatrace automatically detects application types such as Tomcat, JBoss, Apache HTTP Server, MongoDB, and many others technologies. To create process groups, Dynatrace uses specific process properties. For Tomcat, Dynatrace uses `CATALINA_HOME` and `CATALINA_BASE` to distinguish between different Tomcat clusters. For JBoss, Dynatrace uses `JBOSS_HOME` and the JBoss cluster configuration. For generic Java processes, Dynatrace uses the JAR file or the main class used to start the process. There are also many specialized detection mechanisms. For example, Dynatrace can detect:
 
 * IBM WebSphere clusters and domains
 * Oracle WebLogic clusters and domains
@@ -40,9 +40,9 @@ If you instruct Dynatrace to merge two separate process groups into a single pro
 
 To serve your particular needs when monitoring your processes, Dynatrace allows you to:
 
-* [Customize the name of process groups](process-groups/configuration/pg-naming.md "Ways to customize process-group naming").
-* [Adapt the composition of default process groups](process-groups/configuration/pg-detection.md "Ways to customize process-group detection").
-* [Create new process groups in cases where the technology of processes isn't recognized by Dynatrace](process-groups/configuration/pg-detection.md "Ways to customize process-group detection").
+* Customize the name of process groups.
+* Adapt the composition of default process groups.
+* Create new process groups in cases where the technology of processes isn't recognized by Dynatrace.
 
 ## Basic concepts
 
@@ -50,34 +50,34 @@ To serve your particular needs when monitoring your processes, Dynatrace allows 
 
 ### What technologies underlie individual processes?
 
-Technologies and versions behind a process.](process-groups/basic-concepts/what-technologies-underlie-individual-processes.md "The technologies and versions behind a process")[### Which are the most important processes?
+Technologies and versions behind a process.](process-groups/basic-concepts/what-technologies-underlie-individual-processes.md "The technologies and versions behind a process")### Which are the most important processes?
 
-Display the most important processes for monitoring and process grouping.](process-groups/basic-concepts/which-are-the-most-important-processes.md "Display the most important processes for monitoring and process grouping.")
+Display the most important processes for monitoring and process grouping.
 
 ## Configuration
 
-[### Cloud application and workload detection
+### Cloud application and workload detection
 
-Detect cloud applications and workloads, and define rules to merge similar Kubernetes workloads into process groups.](process-groups/configuration/cloud-app-and-workload-detection.md "Detect cloud applications and workloads, and define rules to merge similar Kubernetes workloads into process groups.")[### Define your own process group metadata
+Detect cloud applications and workloads, and define rules to merge similar Kubernetes workloads into process groups.### Define your own process group metadata
 
-Configure your own process-related metadata based on the unique needs of your organization or environment.](process-groups/configuration/define-your-own-process-group-metadata.md "Configure your own process-related metadata based on the unique needs of your organization or environment.")[### Process group detection
+Configure your own process-related metadata based on the unique needs of your organization or environment.### Process group detection
 
-Customize process-group detection.](process-groups/configuration/pg-detection.md "Ways to customize process-group detection")[### Process deep monitoring
+Customize process-group detection.### Process deep monitoring
 
-Customize process-group monitoring.](process-groups/configuration/pg-monitoring.md "Ways to customize process-group monitoring")[### Process group naming
+Customize process-group monitoring.### Process group naming
 
-Customize process-group naming.](process-groups/configuration/pg-naming.md "Ways to customize process-group naming")
+Customize process-group naming.
 
 ## Monitoring
 
-[### Analyze process responsiveness
+### Analyze process responsiveness
 
-Leverage responsiveness to assess process performance.](process-groups/monitoring/analyze-process-responsiveness.md "Use responsiveness to assess process performance.")[### Analyze processes
+Leverage responsiveness to assess process performance.### Analyze processes
 
-Analyze processes, including information on process metrics, vulnerabilities, and availability.](process-groups/monitoring/analyze-processes.md "The Dynatrace approach to process monitoring and process grouping")[### Monitor process-specific network connections
+Analyze processes, including information on process metrics, vulnerabilities, and availability.### Monitor process-specific network connections
 
-Analyze process-specific network connections.](process-groups/monitoring/monitor-process-specific-network-connections.md "Analyze process-specific network connections.")[### Overview of all technologies running in your environment
+Analyze process-specific network connections.### Overview of all technologies running in your environment
 
-Get a performance summary of all the technologies in your environment.](process-groups/monitoring/overview-of-all-technologies-running-in-my-environment.md "Get a summary of the performance of all the technologies in your environment.")[### Process group availability monitoring and alerting
+Get a performance summary of all the technologies in your environment.### Process group availability monitoring and alerting
 
-Enable process-group availability monitoring to get alerts if processes go offline or crash.](process-groups/monitoring/process-group-availability-monitoring-and-alerting.md "Enable process-group availability monitoring to get alerts if processes go offline or crash.")
+Enable process-group availability monitoring to get alerts if processes go offline or crash.

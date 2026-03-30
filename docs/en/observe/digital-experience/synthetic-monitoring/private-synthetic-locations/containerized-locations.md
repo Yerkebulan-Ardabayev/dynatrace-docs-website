@@ -27,9 +27,9 @@ Kubernetes and OpenShift aren't just additional supported ActiveGate platforms a
 * Can be deployed faster while minimizing downtime.
 * Are automatically tracked for resource utilization as a part of auto-scaling operations.
 
-You can manage Kubernetes/OpenShift locations via the Dynatrace web UI and the existing [Synthetic - Locations, nodes, and configuration API v2](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2.md "Manage synthetic locations via the Synthetic v2 API."). Additional Early Adopter endpoints in this API facilitate the deployment of Kubernetes locations; the new endpoints help you generate the commands that need to be executed on the Kubernetes cluster.
+You can manage Kubernetes/OpenShift locations via the Dynatrace web UI and the existing Synthetic - Locations, nodes, and configuration API v2. Additional Early Adopter endpoints in this API facilitate the deployment of Kubernetes locations; the new endpoints help you generate the commands that need to be executed on the Kubernetes cluster.
 
-You can execute scheduled as well as [on-demand](../general-information/on-demand-executions.md "Execute synthetic monitors on demand from public or private locations") executions of all [types of synthetic monitors](../general-information/types-of-synthetic-monitors.md "Learn about Dynatrace synthetic monitor types.") on containerized locations.
+You can execute scheduled as well as on-demand executions of all types of synthetic monitors on containerized locations.
 
 ## Architecture
 
@@ -73,7 +73,7 @@ The **ActiveGate hardware requirements** below are listed by size.
 
 * CPU and RAM requests refer to the resources reserved by pods upon creation.
 * CPU and RAM limits refer to the maximum resource consumption per pod.
-* If the location is monitored by [OneAgent](../../../../ingest-from/dynatrace-oneagent/oa-requirements.md "OneAgent code module requirements") or another deep monitoring solution, memory (RAM) requirements will increase.
+* If the location is monitored by OneAgent or another deep monitoring solution, memory (RAM) requirements will increase.
 * Browserless pod in FIPS mode has the same requirements as ordinary browserless pod.
 
 XS node
@@ -132,7 +132,7 @@ M node
 * We recommend installing each location in its own namespace.
 * If deploying more than one location per namespace, use different names for the respective ActiveGate resourcesâsee [Install a containerized location](#install) below.
 * Locations that share a single Kubernetes namespace must be connected to the same Dynatrace environment as the Synthetic metric adapter in order to be auto-scalable. For example, assume that Location A and the metric adapter are configured for Environment X. However, Location A shares a namespace with Location B, which is configured for Environment Y. In such a case, Location A is auto-scalable; Location B is not auto-scalable.
-* If you want to install a location in the same namespace as other Dynatrace resources such as [Dynatrace Operator](../../../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/dto-resource-limits.md "Set resource limits for Dynatrace Operator components."), be aware of the more demanding [hardware and system requirements](#requirements) for containerized Synthetic-enabled ActiveGates.
+* If you want to install a location in the same namespace as other Dynatrace resources such as Dynatrace Operator, be aware of the more demanding [hardware and system requirements](#requirements) for containerized Synthetic-enabled ActiveGates.
 
 #### Synthetic metric adapter
 
@@ -301,7 +301,7 @@ This procedure generates a separate template for the Synthetic metric adapter. Y
 * You need to deploy the Synthetic metric adapter just once per Kubernetes cluster.
 * Installing a Synthetic metric adapter requires a [Kubernetes super-user roleï»¿](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles) to create ClusterRoles and ClusterRoleBindings.
 
-1. In the **Deployment** section, create a **Metrics token** (**Create token**) or paste an existing token. The metric token is an [access token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md "Learn the concept of an access token and its scopes.") for fetching utilization data from Dynatrace. Existing tokens are listed on the **Access tokens** page.
+1. In the **Deployment** section, create a **Metrics token** (**Create token**) or paste an existing token. The metric token is an access token for fetching utilization data from Dynatrace. Existing tokens are listed on the **Access tokens** page.
 2. Provide a **Metric adapter namespace** name or use the default. (Leave the **Location namespace** and **ActiveGate name** as is. These fields are only necessary for generating the [template for the location](#deploy-location).)
 
    The **Download synthetic-adapter.yaml** button is enabled after you provide a metric token and metric adapter namespace name.
@@ -323,10 +323,10 @@ This procedure generates a separate template for the Synthetic metric adapter. Y
 
 1. Set location to FIPS mode
 
-   Currently this is only possible using the [REST API](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2.md "Manage synthetic locations via the Synthetic v2 API."), by setting the `fipsMode` property in the request JSON.
+   Currently this is only possible using the REST API, by setting the `fipsMode` property in the request JSON.
 
-   * To create a new location, use a [POST location](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/post-a-location.md "Create a private synthetic location via the Synthetic v2 API.") call
-   * To update an existing location, use a [PUT location](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/put-a-location.md "Update a private synthetic location via the Synthetic v2 API.") call
+   * To create a new location, use a POST location call
+   * To update an existing location, use a PUT location call
 2. Perform additional configuration
 
    Browser-supporting
@@ -335,18 +335,18 @@ This procedure generates a separate template for the Synthetic metric adapter. Y
 
    Browserless
 
-   Provide a certificate for re-signing HTTPS requests (explained in [FIPS mode](setting-up-proxy-for-private-synthetic.md#fips-proxy "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.")):
+   Provide a certificate for re-signing HTTPS requests (explained in FIPS mode):
 
    ```
    kubectl -n $NAMESPACE create secret tls synthetic-fips-proxy-cert --cert=squid.crt --key=squid.key
    ```
 
-   1. Provide a certificate for re-signing HTTPS requests (explained in [FIPS mode](setting-up-proxy-for-private-synthetic.md#fips-proxy "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.")):
+   1. Provide a certificate for re-signing HTTPS requests (explained in FIPS mode):
 
       ```
       kubectl -n $NAMESPACE create secret tls synthetic-fips-proxy-cert --cert=squid.crt --key=squid.key
       ```
-   2. Provide configuration of corporate proxy to Squid (explained in [FIPS mode with corporate proxy](setting-up-proxy-for-private-synthetic.md#fips-corporate-proxy "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.")):
+   2. Provide configuration of corporate proxy to Squid (explained in FIPS mode with corporate proxy):
 
       ```
       kubectl -n $NAMESPACE create secret generic synthetic-fips-proxy-peer --from-literal='peer.conf=cache_peer proxy.example.com parent 443 0 default no-digest proxy-only login=proxyuser:proxypass tls tls-min-version=1.2 tls-options=NO_SSLv3'
@@ -1038,7 +1038,7 @@ Auto-scalable locations become non-scalable for any of the following reasons.
 
 ## API: Synthetic - Locations, nodes, and configuration API v2
 
-You can automate the deployment of and manage containerized locations via the existing [Synthetic - Locations, nodes, and configuration API v2](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2.md "Manage synthetic locations via the Synthetic v2 API."). Early Adopter endpoints added to this API to facilitate the deployment of Kubernetes locations. The new endpoints help generate the commands you need to execute on the Kubernetes cluster.
+You can automate the deployment of and manage containerized locations via the existing Synthetic - Locations, nodes, and configuration API v2. Early Adopter endpoints added to this API to facilitate the deployment of Kubernetes locations. The new endpoints help generate the commands you need to execute on the Kubernetes cluster.
 
 ![New endpoints for Kubernetes location deployment](https://dt-cdn.net/images/k8s-locations-endpoints-3168-a8f5b7f158.png)
 
@@ -1048,6 +1048,6 @@ You can automate the deployment of and manage containerized locations via the ex
 
 ## Related topics
 
-* [Synthetic locations API v2](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2.md "Manage synthetic locations via the Synthetic v2 API.")
-* [Set up Dynatrace on Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
-* [Kubernetes Classic](../../../infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md "Monitor Kubernetes/OpenShift with Dynatrace.")
+* Synthetic locations API v2
+* Set up Dynatrace on Kubernetes
+* Kubernetes Classic

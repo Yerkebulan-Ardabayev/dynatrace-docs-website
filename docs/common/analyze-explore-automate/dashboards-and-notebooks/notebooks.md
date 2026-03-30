@@ -99,11 +99,11 @@ A notebook can consist of multiple sections:
 
 You can use the Explore options to explore your logs, metrics, business events, and more with our point-and-click interface. With zero knowledge of DQL or coding, you can create and start using notebook sections in minutes.
 
-For more information, we have a whole [Explore data](../../../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md "Explore your data with our point-and-click interface.") page that shows you how to create Explore sections.
+For more information, we have a whole Explore data page that shows you how to create Explore sections.
 
 ### Query section
 
-The query sections allow you to easily query data from Grail and [visualize](../../../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") the result in different ways.
+The query sections allow you to easily query data from Grail and visualize the result in different ways.
 
 ![Query section](https://dt-cdn.net/images/notebooks-query-section-select-685-01cd3782b4.png)
 
@@ -135,7 +135,7 @@ To insert queries from your notebook with autocomplete, use **Ctrl**+**Space**.
 
 You can link to other places in your notebook and elsewhere.
 
-A link in Markdown is a label and link of the form `[label](address)`, where:
+A link in Markdown is a label and link of the form `label`, where:
 
 * The `label` is freeform text to display on the link in your Markdown tile or section
 * The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
@@ -153,7 +153,7 @@ Website
 Notebooks app
 
 ```
-[My label](/ui/apps/dynatrace.notebooks/notebooks)
+My label
 ```
 
 Specific notebook
@@ -161,13 +161,13 @@ Specific notebook
 **Syntax**:
 
 ```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
+label
 ```
 
 **Example**:
 
 ```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
+My label
 ```
 
 To get the address
@@ -181,13 +181,13 @@ Specific notebook section
 **Syntax**:
 
 ```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
+label
 ```
 
 **Example**:
 
 ```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
+My label
 ```
 
 To get the address
@@ -200,7 +200,7 @@ To get the address
 Dashboards app
 
 ```
-[My label](/ui/apps/dynatrace.dashboards/)
+My label
 ```
 
 Specific dashboard
@@ -208,13 +208,13 @@ Specific dashboard
 **Syntax**:
 
 ```
-[label](/ui/apps/dynatrace.dashboards/<dashboardid>)
+label
 ```
 
 **Example**:
 
 ```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
+My label
 ```
 
 To get the address
@@ -228,13 +228,13 @@ Specific dashboard tile
 **Syntax**:
 
 ```
-[label](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
+label
 ```
 
 **Example**:
 
 ```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
+My label
 ```
 
 To include a specific tile ID in the link
@@ -376,7 +376,7 @@ To list all ready-made notebooks
 
    ![Notebooks: Select "Ready-made" tab](https://dt-cdn.net/images/notebooks-select-ready-made-tab-466-f52a4b69b3.png)
 
-For more about ready-made documents, see [Ready-made documents](../../../ru/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents.md "Use ready-made documents right out of the box.").
+For more about ready-made documents, see Ready-made documents.
 
 ### Find a notebook
 
@@ -436,7 +436,7 @@ Every notebook needs one or more sections.
 
 ### Create a Prompt section
 
-To create a notebook section using [Dynatrace Intelligence generative AI](../../dynatrace-intelligence/copilot/copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence generative AI.") to translate your natural language questions into DQL queries
+To create a notebook section using Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries
 
 1. Go to ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and open or create a notebook you can edit.
 2. Open the  **Add** menu and select  **Prompt**. A new Generative AI notebook section is created with an empty prompt box.
@@ -457,7 +457,7 @@ To create a notebook section using [Dynatrace Intelligence generative AI](../../
 
      + If a prompt has been edited, the DQL will first be regenerated and then run.
      + If no prompts have been edited, the existing generated DQL will simply be run.
-7. Optional Select the  **Options** in the section header to change the visualization (refer to the [visualization-specific documentation](../../../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
+7. Optional Select the  **Options** in the section header to change the visualization (refer to the visualization-specific documentation for more information).
 
    Automatically select visualization
 
@@ -470,7 +470,7 @@ To create a notebook section using [Dynatrace Intelligence generative AI](../../
 
 The Explore sections offer the easiest way to get started.
 
-* To learn more about Explore sections first, see [Explore data](../../../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md "Explore your data with our point-and-click interface.").
+* To learn more about Explore sections first, see Explore data.
 * To dive right in, just display a notebook, open the  **Add** menu, and select an Explore option such as **Logs**, **Metrics**, **Events**, **Problems**, or **Business Events**.
 
 ### Create a Grail query section
@@ -501,7 +501,7 @@ To add data to a notebook
 
    ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** automatically visualizes the result.
 4. Select **Add title** to add the title header to this notebook section.
-5. Select a [visualization](../../../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to display your results in your preferred format. Adjust visualization settings as needed.
+5. Select a visualization to display your results in your preferred format. Adjust visualization settings as needed.
 
    Automatically select visualization
 
@@ -527,7 +527,7 @@ To add code fetching data for your notebook using Dynatrace functions
 3. Edit the section as needed.
 
    * To change the code, edit it directly in the edit box above the result. For details, see [App functionsï»¿](https://dt-url.net/functions-help).
-   * To configure the visualization, select  **Options**. For details, see [Edit visualizations for Notebooks and Dashboards](../../../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.").
+   * To configure the visualization, select  **Options**. For details, see Edit visualizations for Notebooks and Dashboards.
 
 To try an example code section
 
@@ -611,7 +611,7 @@ To add a Markdown-formatted annotation to a notebook
 * **Special characters**: you can use any printable characters, including emojis such as ð and ð and â¤ï¸.
 * **Links**: You can link to other places in your notebook and elsewhere.
 
-  A link in Markdown is a label and link of the form `[label](address)`, where:
+  A link in Markdown is a label and link of the form `label`, where:
 
   + The `label` is freeform text to display on the link in your Markdown tile or section
   + The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
@@ -629,7 +629,7 @@ To add a Markdown-formatted annotation to a notebook
   Notebooks app
 
   ```
-  [My label](/ui/apps/dynatrace.notebooks/notebooks)
+  My label
   ```
 
   Specific notebook
@@ -637,13 +637,13 @@ To add a Markdown-formatted annotation to a notebook
   **Syntax**:
 
   ```
-  [label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
+  label
   ```
 
   **Example**:
 
   ```
-  [My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
+  My label
   ```
 
   To get the address
@@ -657,13 +657,13 @@ To add a Markdown-formatted annotation to a notebook
   **Syntax**:
 
   ```
-  [label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
+  label
   ```
 
   **Example**:
 
   ```
-  [My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
+  My label
   ```
 
   To get the address
@@ -676,7 +676,7 @@ To add a Markdown-formatted annotation to a notebook
   Dashboards app
 
   ```
-  [My label](/ui/apps/dynatrace.dashboards/)
+  My label
   ```
 
   Specific dashboard
@@ -684,13 +684,13 @@ To add a Markdown-formatted annotation to a notebook
   **Syntax**:
 
   ```
-  [label](/ui/apps/dynatrace.dashboards/<dashboardid>)
+  label
   ```
 
   **Example**:
 
   ```
-  [My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
+  My label
   ```
 
   To get the address
@@ -704,13 +704,13 @@ To add a Markdown-formatted annotation to a notebook
   **Syntax**:
 
   ```
-  [label](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
+  label
   ```
 
   **Example**:
 
   ```
-  [My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
+  My label
   ```
 
   To include a specific tile ID in the link
@@ -779,12 +779,12 @@ To see the edit commands for a section, select the section. If you have edit per
 * displays timeframe options.
 * and  decrement and increment the timeframe.
 * and  hide and show the input.
-* opens the options panel, where you can select and adjust the [visualization](../../../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.").
+* opens the options panel, where you can select and adjust the visualization.
 * opens a menu of further options:
 
   + **Copy section** copies the selected section to the clipboard.
   + **Duplicate section** creates a copy of the selected section.
-  + **Create DQL section** creates a DQL section from the selected [Explore](../../../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md "Explore your data with our point-and-click interface.") section.
+  + **Create DQL section** creates a DQL section from the selected Explore section.
   + **Move section up** and  **Move section down** move the section up or down one row.  
     Alternative: use  to drag the section into a new position.
   + **Clear result** clears the result. Select  **Run** (or Ctrl+Enter) again to get new results.
@@ -794,7 +794,7 @@ To see the edit commands for a section, select the section. If you have edit per
   + **Copy query link** copies a link to the clipboard. If you open the link in a browser, the query will be opened in a new or existing notebook.
   + **Download result** downloads (exports) the result of the current notebook section.
   + ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Add to dashboard** opens the selected section in a dashboard.
-  + **Open with** opens the section in another document. For details, see [Drilldowns and navigation](../../../ru/analyze-explore-automate/dashboards-and-notebooks/open-with.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+  + **Open with** opens the section in another document. For details, see Drilldowns and navigation.
 
 You can select multiple sections and then apply the same command to all of them at once. For details, see [Manage multiple sections](#edit-manage-multiple-sections).
 
@@ -805,7 +805,7 @@ The available edit options will vary depending on the type of section you're edi
 * Prompt section: type a plain-text prompt in the edit box and select  **Run** (or Ctrl+Enter) to get an answer.
 
   ![Editing the generative AI prompt section in the Notebooks app.](https://dt-cdn.net/images/notebooks-dynatrace-intelligence-prompt-edit-2262-06425469c6.png)
-* Explore data section: These sections are a great shortcut to results. To learn more about Explore sections, see [Explore data](../../../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md "Explore your data with our point-and-click interface.").
+* Explore data section: These sections are a great shortcut to results. To learn more about Explore sections, see Explore data.
 * DQL section
 
   ![Example: Notebooks: edit DQL section](https://dt-cdn.net/images/notebooks-dql-edit-1156-a4d71cda36.png)
@@ -818,7 +818,7 @@ The available edit options will vary depending on the type of section you're edi
 
 ### Select section segments
 
-To filter data for a section, you can specify [segments](../../manage/segments.md "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") for a section.
+To filter data for a section, you can specify segments for a section.
 
 1. In the action bar for that section, select  and, in **Filter by segments**, select a segment.
 2. If the segment requires an additional value selection, select it now.
@@ -831,7 +831,7 @@ To filter data for a section, you can specify [segments](../../manage/segments.m
 
 ### Set section options
 
-To open the **Options** panel (where you can select and customize a [visualization](../../../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for your section)
+To open the **Options** panel (where you can select and customize a visualization for your section)
 
 1. Select the section.
 2. Select **Options**.
@@ -982,7 +982,7 @@ When you select multiple sections, the available commands include:
   + **Clear results** clears the results of the selected sections. Select  **Run** again to get new results.
   + **Delete sections** removes the selected sections from the notebook.
   + ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Add to dashboard** opens the selected sections in a dashboard.
-  + **Open with** opens the selected sections in another document. For details, see [Drilldowns and navigation](../../../ru/analyze-explore-automate/dashboards-and-notebooks/open-with.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+  + **Open with** opens the selected sections in another document. For details, see Drilldowns and navigation.
 
 ## Run a section
 
@@ -1048,7 +1048,7 @@ These methods are not mutually exclusive. For example, you can maintain a focuse
 
 In any case, you control whether people can edit the document or only view it.
 
-For details on sharing documents, see [Share documents](../../../ru/discover-dynatrace/get-started/dynatrace-ui/share.md "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
+For details on sharing documents, see Share documents with other Dynatrace users in your company.").
 
 You can also export a notebook as a JSON file and send the JSON to others, and then they can import the JSON.
 
@@ -1096,7 +1096,7 @@ To print a notebook or export it to PDF
 
    * Select **Run** to get the latest result before printing
    * Select **Hide input** to hide a section query and display only the result
-   * Set [visualization options](../../../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks."), such as hiding sensitive or irrelevant table columns that you don't want to print and distribute
+   * Set visualization options, such as hiding sensitive or irrelevant table columns that you don't want to print and distribute
 3. From the notebook menu, select **Print view**.
 
    ![Open notebook menu from current notebook](https://dt-cdn.net/images/notebook-menu-from-notebook-411-119580207f.png)
@@ -1148,10 +1148,10 @@ To analyze data using Dynatrace Intelligence Data Analyzers
    ![The initial panel for the Analyze and alert settings in the Dashboards app.](https://dt-cdn.net/images/dashboards-analyze-and-alert-details-746-8d503491c8.png)
 4. On the **Davis AI** panel, set **Analyzers** to the analyzer you want to use, and then configure the analyzer.
 
-   * For an overview of anomaly detection, see [Anomaly detection](../../dynatrace-intelligence/anomaly-detection.md "How Dynatrace detects anomalies in your environment.")
+   * For an overview of anomaly detection, see Anomaly detection
    * For details on anomaly detection settings, see [Anomaly detection configuration](../../../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#analyzer "How to set up an alert for missing measurements.")
 
-   * For details on forecast analyzer settings, [Dynatrace Intelligence predictive AI analysis](../../../ru/dynatrace-intelligence/reference/ai-models/forecast-analysis.md "Learn how Dynatrace Intelligence predictive AI generates forecasts.")
+   * For details on forecast analyzer settings, Dynatrace Intelligence predictive AI analysis
 
    Anomaly Detection: Auto adaptive threshold anomaly detection
 
@@ -1181,7 +1181,7 @@ To analyze data using Dynatrace Intelligence Data Analyzers
    * **Data points to predict**âthe total steps the time series is forecasted. More steps generally results in less reliable forecasts and longer analyzer runtimes.
    * **Forecast offset**âan offset for the start of the forecast. For example, if the offset is set to `2`, the last two data points are ignored and a forecast for these points is returned as well.
 
-   For details, see [Dynatrace Intelligence predictive AI analysis](../../../ru/dynatrace-intelligence/reference/ai-models/forecast-analysis.md "Learn how Dynatrace Intelligence predictive AI generates forecasts.").
+   For details, see Dynatrace Intelligence predictive AI analysis.
 
    Advanced settings (for anomaly detection)
 
@@ -1283,7 +1283,7 @@ and then run a forecast for a time series selected in the results.
 
    ![Filter and forecast: results](https://dt-cdn.net/images/filter-and-forecase-results-1117-910a185d8a.png)
 
-For details, see [Dynatrace Intelligence predictive AI analysis](../../../ru/dynatrace-intelligence/reference/ai-models/forecast-analysis.md "Learn how Dynatrace Intelligence predictive AI generates forecasts.").
+For details, see Dynatrace Intelligence predictive AI analysis.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

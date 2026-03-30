@@ -50,12 +50,12 @@ Dynatrace версии 1.270+
 
 ## Настройка через API
 
-Вы также можете настроить параметры мониторинга через [Settings API](../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers."), используя [схему параметров мониторинга](../../../../dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes-monitoring.md "View builtin:cloud.kubernetes.monitoring settings schema table of your monitoring environment via the Dynatrace API.").
+Вы также можете настроить параметры мониторинга через Settings API, используя схему параметров мониторинга.
 
 Чтобы изменить значения по умолчанию для среды, установите свойство `scope` в запросе равным `environment`.
 
-Чтобы использовать настройки по умолчанию при подключении кластера, [схема параметров подключения](../../../../dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes.md "View builtin:cloud.kubernetes settings schema table of your monitoring environment via the Dynatrace API.") должна иметь версию `3.0.0` или выше. Использование более старых версий автоматически переопределит настройки мониторинга по умолчанию для этого кластера.
+Чтобы использовать настройки по умолчанию при подключении кластера, схема параметров подключения должна иметь версию `3.0.0` или выше. Использование более старых версий автоматически переопределит настройки мониторинга по умолчанию для этого кластера.
 
 ## Связанные темы
 
-* [Настройка Dynatrace на Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
+* Настройка Dynatrace на Kubernetes

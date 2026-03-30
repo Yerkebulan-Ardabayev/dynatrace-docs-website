@@ -29,13 +29,13 @@ In this article you will learn how to create a custom bucket with a 5-year data 
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* Dynatrace Platform Subscription (DPS) with [Traces powered by Grail overview (DPS)](../../../../ru/license/capabilities/traces.md "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.") capabilities.
-* `openpipeline:configurations:write` and `openpipeline:configurations:read` permissions. To learn how to set up the permissions, see [Permissions in Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+* Dynatrace Platform Subscription (DPS) with Traces powered by Grail overview (DPS) model.") capabilities.
+* `openpipeline:configurations:write` and `openpipeline:configurations:read` permissions. To learn how to set up the permissions, see Permissions in Grail.
 
 Prior knowledge
 
-* [Organize data](../../../platform/grail/organize-data.md "Insights on the Grail data model consisting of buckets, tables, and views.")
-* [Data retention periods](../../../../ru/manage/data-privacy-and-security/data-privacy/data-retention-periods.md "Check retention times for various data types.")
+* Organize data
+* Data retention periods
 
 Key terms
 
@@ -98,5 +98,5 @@ You created a new bucket with a custom retention period of 5 years. The new buck
 
 ## Related topics
 
-* [OpenPipeline](../../../../ru/platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Data retention periods](../../../../ru/manage/data-privacy-and-security/data-privacy/data-retention-periods.md "Check retention times for various data types.")
+* OpenPipeline
+* Data retention periods

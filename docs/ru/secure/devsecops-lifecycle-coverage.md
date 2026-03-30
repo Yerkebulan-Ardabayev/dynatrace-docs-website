@@ -28,7 +28,7 @@ scraped: 2026-02-18T05:48:18.936133
 
 * Dynatrace версии 1.272+
 * OneAgent версии 1.239+
-* [Настройте Dynatrace Runtime Vulnerability Analytics](application-security/vulnerability-analytics.md "Отслеживайте, визуализируйте, анализируйте и устраняйте уязвимости сторонних библиотек и кода, отслеживайте прогресс устранения и создавайте правила мониторинга.")
+* Настройте Dynatrace Runtime Vulnerability Analytics
 * Убедитесь, что **External request** к Snyk разрешён.
 
   Как это сделать
@@ -45,7 +45,7 @@ scraped: 2026-02-18T05:48:18.936133
   2. Выберите вкладку **Technical Information**.
   3. Проверьте раздел **User Permissions** для списка всех разрешений, которые необходимо включить в политики, привязанные к группам пользователей, которым разрешено использовать ![DevSecOps](https://dt-cdn.net/images/dev-sec-ops-logo-c5208e654c.svg "DevSecOps") **DevSecOps Lifecycle Coverage with Snyk**.
 
-  Подробнее см. [Управление разрешениями пользователей с помощью политик IAM](../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Работа с политиками") и [Настройки авторизации рабочих процессов](../analyze-explore-automate/workflows/running.md "Запуск и мониторинг рабочих процессов, созданных в Dynatrace Workflows.").
+  Подробнее см. Управление разрешениями пользователей с помощью политик IAM и Настройки авторизации рабочих процессов.
 
 ### Требования Snyk
 
@@ -218,7 +218,7 @@ scraped: 2026-02-18T05:48:18.936133
 * Убедитесь, что все [требования Dynatrace](#dt-requirements) выполнены.
 * [Включите Third-party Vulnerability Analytics](application-security/vulnerability-analytics.md#enable-tpva "Отслеживайте, визуализируйте, анализируйте и устраняйте уязвимости сторонних библиотек и кода, отслеживайте прогресс устранения и создавайте правила мониторинга.") глобально.
 * Включите все [поддерживаемые технологии](application-security/vulnerability-analytics.md#tech-tpv "Отслеживайте, визуализируйте, анализируйте и устраняйте уязвимости сторонних библиотек и кода, отслеживайте прогресс устранения и создавайте правила мониторинга."), которые вы хотите, чтобы Dynatrace покрывал.
-* Убедитесь, что ваши [правила мониторинга](application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv.md "Создание, изменение и удаление пользовательских правил мониторинга для процессов, отслеживаемых Dynatrace.") не исключают никаких сущностей.
+* Убедитесь, что ваши правила мониторинга не исключают никаких сущностей.
 
 ## Часто задаваемые вопросы
 

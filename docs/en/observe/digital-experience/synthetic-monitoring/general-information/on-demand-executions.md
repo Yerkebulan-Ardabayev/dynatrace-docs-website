@@ -13,7 +13,7 @@ scraped: 2026-03-03T21:28:56.720996
 
 ActiveGate version 1.233+
 
-In addition to scheduling synthetic monitor executions at regular intervals (in **Frequency and locations** settings), you can also trigger on-demand executions for [browser](../browser-monitors/configure-browser-monitors.md "Learn about configuring browser monitors and clickpaths.") as well as [HTTP](../http-monitors-classic/configure-http-monitors-classic.md "Learn about configuring HTTP monitors.") monitors. You can even trigger on-demand executions of [autocreated HTTP monitors for credential synchronization](external-vault-integration.md "Synchronize Synthetic Monitoring credentials with external vaults."). In the [Dynatrace web UI](#ui), select **On-demand execution** at the top of a monitor's details page.
+In addition to scheduling synthetic monitor executions at regular intervals (in **Frequency and locations** settings), you can also trigger on-demand executions for browser as well as HTTP monitors. You can even trigger on-demand executions of autocreated HTTP monitors for credential synchronization. In the [Dynatrace web UI](#ui), select **On-demand execution** at the top of a monitor's details page.
 
 ![Trigger on-demand executions](https://dt-cdn.net/images/on-demand-execution-ui-2174-b5b18ea2b7.png)
 
@@ -36,7 +36,7 @@ These executions can validate that a new deployment of your software is successf
 
 On-demand executions are also very valuable as quick monitor tests, for example, to test a monitor after developing a complex script. Likewise, such executions can verify that a fix for a Dynatrace-detected problem was effective, for example, if you added host memory or reverted to an older application version.
 
-With their ability to be included or excluded from overall monitor results and problem detection, on-demand executions offer many more options than [local playback of browser clickpaths](../browser-monitors/record-a-browser-clickpath.md#playback "Learn how to record a browser clickpath to monitor the availability and performance of your application.").
+With their ability to be included or excluded from overall monitor results and problem detection, on-demand executions offer many more options than local playback of browser clickpaths.
 
 ## UI-based on-demand executions
 
@@ -48,13 +48,13 @@ The **On-demand execution** button on synthetic monitor details pages allows you
 
 Any user with the **View environment** permission at the environment or management-zone level can trigger an execution via the UI.
 
-Even if you [disable scheduled synthetic monitor execution during maintenance windows](../../../../analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window.md#disable-synthetic "Create maintenance windows and define their scope."), you can still execute monitors on demand.
+Even if you disable scheduled synthetic monitor execution during maintenance windows, you can still execute monitors on demand.
 
 1. Select **On-demand execution** at the top of the monitor's details page.
 2. You are directed to the **On-demand execution** page. Select **All assigned locations** or any assigned or unassigned public or private location.
 3. Select a **Processing mode**ânote that this applies to all executions if you select all locations.
 
-   * **Standard** (default)âthe executions contribute to problem detection and availability and performance statistics. For browser monitors, you can view data points on the [**Multidimensional analysis** page](../analysis-and-alerting/multidimensional-analysis-for-browser-monitors.md "Learn how to analyze browser-monitor data points."). For HTTP monitors, you can access execution results when you [**Analyze execution details**](../analysis-and-alerting/synthetic-details-for-http-monitors-classic.md "Learn about the Synthetic details page for HTTP monitors.").
+   * **Standard** (default)âthe executions contribute to problem detection and availability and performance statistics. For browser monitors, you can view data points on the **Multidimensional analysis** page. For HTTP monitors, you can access execution results when you **Analyze execution details**.
    * **Disable problem detection**âthe executions contribute to availability and performance statistics but not to problem detection. For browser monitors, data points appear on the **Multidimensional analysis** page; for HTTP monitors, you can view execution results when you **Analyze execution details**.
    * **Execution details only**âthe executions do not contribute to availability and performance statistics or to problem detection. For HTTP monitors, you can still access results when you **Analyze execution details**; for browser monitors, these data points appear on the **Multidimensional analysis** page.
 
@@ -62,7 +62,7 @@ Even if you [disable scheduled synthetic monitor execution during maintenance wi
 4. **Fail on performance threshold violation**âby default, on-demand executions fail when they violate a performance threshold, given that their main purpose is to validate new software versions in your CI/CD pipeline. However, you can disable this setting so that on-demand executions behave like regularly scheduled executions (that is, performance threshold violations do not cause monitors to fail).
 5. HTTP monitors only **Fail on missing or expiring SSL certificate**âfail the monitor if one or more of its requests encounters an expired, missing, or expiring SSL certificate.
 
-   This setting only works if **SSL expiration date verification** has already been enabled for an HTTP request in [monitor settings](../http-monitors-classic/configure-http-monitors-classic.md "Learn about configuring HTTP monitors."); it uses the request-level setting to check for SSL certificate validity within the specified number of days.
+   This setting only works if **SSL expiration date verification** has already been enabled for an HTTP request in monitor settings; it uses the request-level setting to check for SSL certificate validity within the specified number of days.
 
    If your monitor has multiple requests with different settings for SSL certificate validity, **Fail on missing or expiring SSL certificate** checks and honors each setting.
 6. Browser monitors only **Take screenshot on successful execution**âcapture screenshots upon success from public or private locations; this setting is disabled by default. When you enable this setting, screenshots upon success are captured even if the monitor exceeds a performance threshold. If you trigger executions from all locations, screenshots upon success are captured from the first location. You can also capture screenshots upon success for executions triggered via the API.
@@ -127,13 +127,13 @@ The list of executions shows all on-demand executions (triggered by any user via
 
 When the **Execution stage** in the [list of executions](#list) changes to `Data retrieved`, you can follow the **execution details** link to view detailed results for the browser or HTTP monitor that was executed.
 
-For browser monitors, you're directed to the **Multidimensional analysis** page with the data point selected in the scatter plot. On-demand executions are identifiable by shape in the [scatter plot](../analysis-and-alerting/multidimensional-analysis-for-browser-monitors.md#scatter-plot "Learn how to analyze browser-monitor data points.") as well as by an annotation in the list of [data points](../analysis-and-alerting/multidimensional-analysis-for-browser-monitors.md#data-points "Learn how to analyze browser-monitor data points.").
+For browser monitors, you're directed to the **Multidimensional analysis** page with the data point selected in the scatter plot. On-demand executions are identifiable by shape in the scatter plot as well as by an annotation in the list of data points.
 
 ![Scatter plot](https://dt-cdn.net/images/scatterplotondemandexecution-2164-393f41dda4.jpg)
 
 Screenshot collection for on-demand browser monitor executions is the same as for [scheduled executions](../analysis-and-alerting/synthetic-details-for-browser-monitors.md#screenshots "Analyze browser monitor and clickpath results on the Synthetic details page."). However, you can enable screenshot collection upon success [via the UI](#trigger-ui) as well as POST requests [via API](#api).
 
-For HTTP monitors, you're directed to the **On-demand execution** tab of the **Analyze execution details** page. You can also access this tab by selecting **Analyze execution details** from the [HTTP monitor details page](../analysis-and-alerting/synthetic-details-for-http-monitors-classic.md "Learn about the Synthetic details page for HTTP monitors."). Select an on-demand **Execution** from the dropdown list to view its details.
+For HTTP monitors, you're directed to the **On-demand execution** tab of the **Analyze execution details** page. You can also access this tab by selecting **Analyze execution details** from the HTTP monitor details page. Select an on-demand **Execution** from the dropdown list to view its details.
 
 ![On-demand executions tab](https://dt-cdn.net/images/analyze-last-execution-filters2-1600-0085726604.png)
 
@@ -143,7 +143,7 @@ The **On-demand execution** tab is overwritten with each on-demand execution. If
 
 Check the section on [throttling](#throttling) above for on-demand execution limits via the web UI and API.
 
-For more information, check documentation on the [Synthetic monitor executions API v2](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution.md "View the results of Synthetic monitor executions via the Synthetic v2 API."). You can [trigger a batch execution](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution/post-batch-execution.md "Trigger a batch execution of synthetic monitors via the Dynatrace API."), [list on-demand executions](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution/get-all-executions.md "List all on-demand executions of synthetic monitors via the Dynatrace API."), check [basic](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution/get-execution-basic.md "View basic information about an on-demand execution of a synthetic monitor via the Dynatrace API.") as well as [detailed results](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution/get-execution-full.md "View full information about an on-demand execution of a synthetic monitor via the Dynatrace API.") of a single execution, and check [batch execution results](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution/get-batch-summary.md "View the summary of a batch execution of synthetic monitors via the Dynatrace API.").
+For more information, check documentation on the Synthetic monitor executions API v2. You can trigger a batch execution, list on-demand executions, check basic as well as detailed results of a single execution, and check batch execution results.
 
 API-based on-demand executions offer greater flexibility and scalability than the UI. The **Synthetic - On-demand monitor executions** API offers:
 
@@ -413,4 +413,4 @@ API-based on-demand executions offer greater flexibility and scalability than th
 
 ## Related topics
 
-* [Synthetic monitor executions API v2](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution.md "View the results of Synthetic monitor executions via the Synthetic v2 API.")
+* Synthetic monitor executions API v2

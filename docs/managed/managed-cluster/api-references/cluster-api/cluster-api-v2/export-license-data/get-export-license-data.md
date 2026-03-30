@@ -6,11 +6,11 @@ updated: 2026-02-09
 
 This API call exports aggregated hourly license usage of all your environments as a ZIP file.
 
-This API is only compatible with [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.") and does not contain billed usage.
+This API is only compatible with Dynatrace classic licensing and does not contain billed usage.
 
 ## Authentication
 
-To execute this request, you need the **Service Provider API** (`ServiceProviderAPI`) permission assigned to your API token. Generate your API token via Cluster Management Console (CMC). To learn how to obtain and use it, see [Cluster API - Authentication](/managed/managed-cluster/api-references/cluster-api/basics/cluster-api-authentication "How to get authenticated to use the Dynatrace Cluster API.").
+To execute this request, you need the **Service Provider API** (`ServiceProviderAPI`) permission assigned to your API token. Generate your API token via Cluster Management Console (CMC). To learn how to obtain and use it, see Cluster API - Authentication.
 
 The request produces an `application/octet-stream` payload.
 
@@ -59,7 +59,7 @@ https://myManaged.cluster.com/api/cluster/v2/license/consumption?startTs=1584594
 
 #### Response body
 
-ZIP file containing license data files in JSON format. For details on the JSON format, see [Export license data](/managed/managed-cluster/operation/export-license-data "Learn how to export license data from the Cluster Management Console.").
+ZIP file containing license data files in JSON format. For details on the JSON format, see Export license data.
 
 #### Response code
 

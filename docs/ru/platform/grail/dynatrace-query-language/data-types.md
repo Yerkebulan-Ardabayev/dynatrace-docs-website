@@ -239,9 +239,9 @@ fetch       logs
 
 Вы можете использовать следующие функции DQL для создания данных типа `UID`:
 
-* [uid64](functions/conversion-and-casting-functions.md#uid64 "A list of DQL conversion and casting functions.")
-* [uid128](functions/conversion-and-casting-functions.md#uid128 "A list of DQL conversion and casting functions.")
-* [toUid](functions/conversion-and-casting-functions.md#toUid "A list of DQL conversion and casting functions.")
+* uid64
+* uid128
+* toUid
 
 ## Составные типы
 
@@ -351,11 +351,11 @@ fetch       logs
 
 ## Связанные темы
 
-* [Dynatrace Query Language](../dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Использование запросов DQL](dql-guide.md "Find out how DQL works and what are DQL key concepts.")
-* [Сравнение DQL с SQL и другими языками](dql-comparison.md "See how DQL compares to other query languages.")
-* [Справочник по языку DQL](dql-reference.md "Dynatrace Query Language syntax reference.")
-* [Команды DQL](commands.md "A list of DQL commands.")
-* [Функции DQL](functions.md "A list of DQL functions.")
-* [Операторы DQL](operators.md "A list of DQL Operators.")
-* [Лучшие практики DQL](dql-best-practices.md "Best practices for using Dynatrace Query Language.")
+* Dynatrace Query Language
+* Использование запросов DQL
+* Сравнение DQL с SQL и другими языками
+* Справочник по языку DQL
+* Команды DQL
+* Функции DQL
+* Операторы DQL
+* Лучшие практики DQL

@@ -11,7 +11,7 @@ scraped: 2026-03-05T21:32:50.462070
 * How-to guide
 * Updated on Jan 08, 2026
 
-Event and session properties let you attach custom-defined key-value pairs to user events and user sessions, using the namespaces [`event_properties`](../../../../../semantic-dictionary/model/rum/user-events.md#event-properties "User events provide deep visibility and insights into experience, behavior, performance, and errors of your customers and end-users in real-time.") and [`session_properties`](../../../../../semantic-dictionary/model/rum/user-sessions.md#user-session-properties "User sessions provide a summary of the user events from the same customer or end-user of your application during a limited period of time.").
+Event and session properties let you attach custom-defined key-value pairs to user events and user sessions, using the namespaces `event_properties` and `session_properties`.
 
 ## Before you start sending event or session properties
 

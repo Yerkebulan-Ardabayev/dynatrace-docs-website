@@ -31,7 +31,7 @@ Use OneAgent for direct installation on the host with StatsD. For more details, 
 
 If OneAgent cannot be installed on the host, use ActiveGate as a remote listener to collect StatsD metrics. For more details, go to [Remote StatsD](#remote-statsd).
 
-For distributed environments or when using Kubernetes, OpenTelemetry Collector provides a solution to ingest StatsD metrics into Dynatrace. For more details, see [Ingest data from StatsD](../../../opentelemetry/collector/use-cases/statsd.md "Configure the OpenTelemetry Collector to ingest StatsD data.").
+For distributed environments or when using Kubernetes, OpenTelemetry Collector provides a solution to ingest StatsD metrics into Dynatrace. For more details, see Ingest data from StatsD.
 
 ## Enable DynatraceStatsD
 
@@ -165,7 +165,7 @@ StatsdPort=18126
 
 ## Topology awareness
 
-Using DynatraceStatsD with OneAgent, the host ID and host name context are added as dimensions to each metric automatically. For more information, see [Metric ingestion](../../extend-metrics.md "Learn how to extend metric observability in Dynatrace."). Note that we're already working on more automatic metric enrichments. For remote ingestion, no extra enrichment is added. If you want to add context to your metrics, you'll need to add dimensions of your choice to your StatsD metrics.
+Using DynatraceStatsD with OneAgent, the host ID and host name context are added as dimensions to each metric automatically. For more information, see Metric ingestion. Note that we're already working on more automatic metric enrichments. For remote ingestion, no extra enrichment is added. If you want to add context to your metrics, you'll need to add dimensions of your choice to your StatsD metrics.
 
 ## Security
 

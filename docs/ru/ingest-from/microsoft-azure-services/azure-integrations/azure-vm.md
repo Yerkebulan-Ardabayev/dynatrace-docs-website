@@ -12,20 +12,20 @@ scraped: 2026-03-06T21:17:59.893176
 
 Dynatrace предоставляет [расширение VM](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/overview) для установки OneAgent на виртуальные машины Azure. Это позволяет использовать встроенные средства автоматизации развертывания с помощью Azure Resource Manager (ARM). Расширение Dynatrace VM доступно для Windows и Linux во всех публичных регионах Azure (включая поддержку классических виртуальных машин).
 
-Расширение сайта Dynatrace OneAgent не включает программу установки OneAgent. Вместо этого расширение использует REST API Dynatrace для загрузки программы установки из кластера в целевой версии, установленной в [обновлениях OneAgent](../../dynatrace-oneagent/oneagent-update.md#configure-oneagent-updates "Узнайте, как обновить OneAgent.").
+Расширение сайта Dynatrace OneAgent не включает программу установки OneAgent. Вместо этого расширение использует REST API Dynatrace для загрузки программы установки из кластера в целевой версии, установленной в обновлениях OneAgent.
 
 ## Возможности
 
 * Полностековый мониторинг на основе OneAgent
 * [Расширения для простого развертывания OneAgent](#installation)
-* [Интеграция с Azure Monitor](../../microsoft-azure-services.md "Настройка и конфигурация мониторинга для Microsoft Azure.")
+* Интеграция с Azure Monitor
 * Расширенная поддержка метаданных Azure VM, таких как регионы Azure, наборы масштабирования и другие
-* [Классические виртуальные машины](azure-vm/monitor-azure-virtual-machines-classic.md "Мониторинг классических виртуальных машин Azure и просмотр доступных метрик.") также поддерживаются
+* Классические виртуальные машины также поддерживаются
 
 ## Предварительные требования
 
 * Создайте [PaaS-токен](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Узнайте о концепции токена доступа и его областях действия.").
-* Определите ваш [идентификатор среды](../../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа со средами мониторинга.").
+* Определите ваш идентификатор среды.
 * При необходимости определите URL сервера.
 
   URL сервера требуется только при использовании ActiveGate для конечной точки Dynatrace SaaS. URL автоматически генерируется на основе идентификатора среды.
@@ -53,7 +53,7 @@ PowerShell
 6. Выберите **Create**, чтобы добавить расширение.
 7. На странице **Install extension** введите ваш **environment ID**, ваш **API token** и ваш **server URL**. Подробности см. в разделе [Предварительные требования](#prerequisites).
 8. Выберите, хотите ли вы включить мониторинг логов.
-9. Необязательно: Определите [группу хостов](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов."), к которой принадлежит VM.
+9. Необязательно: Определите группу хостов, к которой принадлежит VM.
 10. Выберите **OK**.
 11. Для проверки статуса развертывания перейдите в **Deployment Status**.
 
@@ -66,7 +66,7 @@ PowerShell
 3. Выберите **Create**.
 4. На странице **Install extension** введите ваш **environment ID**, ваш **API token** и ваш **server URL**. Подробности см. в разделе [Предварительные требования](#prerequisites).
 5. Выберите, хотите ли вы включить мониторинг логов.
-6. Необязательно: Определите [группу хостов](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов."), к которой принадлежит VM.
+6. Необязательно: Определите группу хостов, к которой принадлежит VM.
 7. Выберите **OK**.
 8. Продолжите настройку VM в мастере развертывания.
 9. Выберите **Review and create**.
@@ -110,7 +110,7 @@ az vm extension set
 | token | Обязательный | PaaS-токен, как описано в разделе [Предварительные требования](#prerequisites). |
 | server | Необязательный | URL сервера, если вы хотите настроить альтернативную конечную точку связи, как описано в разделе [Предварительные требования](#prerequisites). |
 | enableLogsAnalytics | Необязательный | Установите значение `yes`, если вы хотите включить мониторинг логов. |
-| hostGroup | Необязательный | Определите [группу хостов](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов."), к которой принадлежит VM. |
+| hostGroup | Необязательный | Определите группу хостов, к которой принадлежит VM. |
 | overrideDefaults [1](#fn-1-1-def) | Необязательный | Переопределение значения таймаута по умолчанию --- 120 секунд. Например, если вы хотите установить таймаут в 600 секунд, добавьте `\"overrideDefaults\": {\"downloadInstallerRequestTimeoutInSeconds\": 600}` в строку `-Settings`, также можно оставить пустым `\"overrideDefaults\": {}` или `null`. В таких случаях будет применяться значение по умолчанию --- 120 секунд. |
 
 1
@@ -162,7 +162,7 @@ Set-AzureRmVmExtension
 | Extension-Version | Необязательный | Требуемая версия расширения. |
 | server | Необязательный | URL сервера, если вы хотите настроить альтернативную конечную точку связи, как описано в разделе [Предварительные требования](#prerequisites). |
 | enableLogsAnalytics | Необязательный | Установите значение `yes`, если вы хотите включить мониторинг логов. |
-| hostGroup | Необязательный | Определите [группу хостов](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов."), к которой принадлежит VM. |
+| hostGroup | Необязательный | Определите группу хостов, к которой принадлежит VM. |
 | overrideDefaults [1](#fn-2-1-def) | Необязательный | Переопределение значения таймаута по умолчанию --- 120 секунд. Например, если вы хотите установить таймаут в 600 секунд, добавьте `\"overrideDefaults\": {\"downloadInstallerRequestTimeoutInSeconds\": 600}` в строку `-Settings`, также можно оставить пустым `\"overrideDefaults\": {}` или `null`. В таких случаях будет применяться значение по умолчанию --- 120 секунд. |
 
 1
@@ -333,7 +333,7 @@ JSON-файл для расширения виртуальной машины м
 | Extension-Version | Необязательный | Требуемая версия расширения. |
 | server | Необязательный | URL сервера, если вы хотите настроить альтернативную конечную точку связи, как описано в разделе [Предварительные требования](#prerequisites). |
 | enableLogsAnalytics | Необязательный | Установите значение `yes`, если вы хотите включить мониторинг логов. |
-| hostGroup | Необязательный | Определите [группу хостов](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов."), к которой принадлежит VM. |
+| hostGroup | Необязательный | Определите группу хостов, к которой принадлежит VM. |
 | overrideDefaults [1](#fn-3-1-def) | Необязательный | Переопределение значения таймаута по умолчанию --- 120 секунд. Например, если вы хотите установить таймаут в 600 секунд, добавьте `\"overrideDefaults\": {\"downloadInstallerRequestTimeoutInSeconds\": 600}` в объект `settings` ARM-шаблона, также можно оставить пустым `\"overrideDefaults\": {}` или `null`. В таких случаях будет применяться значение по умолчанию --- 120 секунд. |
 
 1
@@ -367,9 +367,9 @@ az vm extension set
 --settings "{\"tenantId\":\"myawesometenant\",\"token\":\"nope123\", \"installerArguments\":\"--set-host-group=example_hostgroup --set-monitoring-mode=fullstack --set-network-zone=<your.network.zone>\"}"
 ```
 
-Дополнительную информацию см. в разделе [Сетевые зоны](../../../manage/network-zones.md "Узнайте, как работают сетевые зоны в Dynatrace.").
+Дополнительную информацию см. в разделе Сетевые зоны.
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Microsoft Azure](../../microsoft-azure-services.md "Настройка и конфигурация мониторинга для Microsoft Azure.")
-* [Матрица поддержки платформ и возможностей OneAgent](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах.")
+* Настройка Dynatrace в Microsoft Azure
+* Матрица поддержки платформ и возможностей OneAgent

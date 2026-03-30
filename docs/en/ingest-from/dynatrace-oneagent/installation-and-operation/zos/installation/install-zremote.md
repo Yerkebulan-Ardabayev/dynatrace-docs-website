@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:25:07.541300
 
 The zRemote module processes monitoring data received from the zLocal and routes that data, compressed and encrypted, via its local ActiveGate to Dynatrace. Hence, the zRemote module offloads much of the processing work from the CICS, IMS, and z/OS Java code modules incurred in instrumenting subsystems and applications to an open system.
 
-You can [customize the zRemote module](install-zremote/customize-zremote.md "Customize the zRemote module for your needs.") to enable optional features like **Host groups** and **Db2 SQL statement fetch**.
+You can customize the zRemote module to enable optional features like **Host groups** and **Db2 SQL statement fetch**.
 
 ## Hardware requirements
 
@@ -24,7 +24,7 @@ The hardware requirements of the machine where the zRemote module runs depend on
 * For z/OS Java environments: a small or medium-sized machine.
 
 * The hardware requirements are for the case when the zRemote module and its ActiveGate are used for mainframe monitoring only.
-* Multiple [zDC subsystems](install-zdc.md "Set up the z/OS Data Collection subsystem (zDC).") can be connected to a single zRemote as long as the number of monitored transactions matches the hardware requirements.
+* Multiple zDC subsystems.") can be connected to a single zRemote as long as the number of monitored transactions matches the hardware requirements.
 
 ## System requirements
 
@@ -34,8 +34,8 @@ We recommend installing the zRemote module on an IBM Z or LinuxONE mainframe, on
 
   + The zRemote will write a warning to its logs after a connection latency of 3 seconds.
   + The zRemote will drop the connection after a connection latency of 10 seconds.
-* The zRemote only supports a [host-based ActiveGate installation](../../../../dynatrace-activegate/capabilities.md "Learn the capabilities and uses of ActiveGate.") configured for a single environment.
-* Monitoring of the host running the zRemote with OneAgent is only supported in [full-stack monitoring mode](../../../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
+* The zRemote only supports a host-based ActiveGate installation configured for a single environment.
+* Monitoring of the host running the zRemote with OneAgent is only supported in full-stack monitoring mode.
 
 ### Supported operating systems
 
@@ -80,11 +80,11 @@ Base path: `C:/Program Files/dynatrace/zremote`
 
 All of the following directories are not retained during zRemote update or uninstallation. If you make changes here, they will be overwritten or deleted.
 
-The following directories are retained in case of update or uninstallation. You can make changes here. For more details, see [Customize the zRemote module](install-zremote/customize-zremote.md "Customize the zRemote module for your needs.").
+The following directories are retained in case of update or uninstallation. You can make changes here. For more details, see Customize the zRemote module.
 
 ## Installation
 
-The zRemote module is downloaded and installed automatically during the ActiveGate installation procedure on [Linux](../../../../dynatrace-activegate/installation/linux/linux-install-an-environment-activegate.md "Read the step-by-step procedure for installing an Environment ActiveGate on Linux.") or [Windows](../../../../dynatrace-activegate/installation/windows/windows-install-an-environment-activegate.md "Read the step-by-step procedure for installing an Environment ActiveGate on Windows.").
+The zRemote module is downloaded and installed automatically during the ActiveGate installation procedure on Linux or Windows.
 
 1. In Dynatrace Hub, select **ActiveGate** > **Set up**.
 2. On the **Install Environment ActiveGate** page, select **Linux** or **Windows**.
@@ -94,13 +94,13 @@ The zRemote module is downloaded and installed automatically during the ActiveGa
 
    By default, the zRemote module listens on port 8898 for connections from the zLocal running as part of the zDC. To listen on a different port, set the `zdclistenerport` parameter to your port in the `zremoteagentuserconfig.conf` file. Make sure this port is not blocked by a firewall.
 
-For details on the default installation settings, see ActiveGate default installation settings for [Linux](../../../../dynatrace-activegate/installation/linux/linux-default-settings.md "Learn about the default settings with which ActiveGate is installed on Linux") or [Windows](../../../../dynatrace-activegate/installation/windows/windows-default-settings.md "Learn about the default settings with which ActiveGate is installed on Windows.").
+For details on the default installation settings, see ActiveGate default installation settings for Linux or Windows.
 
-For details on customizing the installation, see customize ActiveGate installation on [Linux](../../../../dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate.md "Learn about the command-line parameters that you can use with ActiveGate on Linux.") or [Windows](../../../../dynatrace-activegate/installation/windows/windows-customize-installation-for-activegate.md "Learn about the parameters that you can use with ActiveGate on Windows.").
+For details on customizing the installation, see customize ActiveGate installation on Linux or Windows.
 
 ## Logging
 
-The zRemote logs are created on the machine where the zRemote module is installed, in the default directories for [Linux](../../../../dynatrace-activegate/installation/linux/linux-default-settings.md "Learn about the default settings with which ActiveGate is installed on Linux") and [Windows](../../../../dynatrace-activegate/installation/windows/windows-default-settings.md "Learn about the default settings with which ActiveGate is installed on Windows."). You can view the zRemote logs either directly on the machine hosting the zRemote or by requesting them from Dynatrace via the [OneAgent diagnostics](../../../oneagent-troubleshooting/oneagent-diagnostics.md "Learn how to run OneAgent diagnostics") workflow.
+The zRemote logs are created on the machine where the zRemote module is installed, in the default directories for Linux and Windows. You can view the zRemote logs either directly on the machine hosting the zRemote or by requesting them from Dynatrace via the OneAgent diagnostics workflow.
 
 The actual zRemote log should contain the following messages:
 
@@ -109,7 +109,7 @@ The actual zRemote log should contain the following messages:
 
 ## Update and maintenance
 
-To stay current, you can update the zRemote module automatically to a newer version by using the [ActiveGate auto-update procedure](../../../../dynatrace-activegate/operation/update-activegate.md "Learn how to find out which version of ActiveGate you have installed and how you can download and install the latest version.").
+To stay current, you can update the zRemote module automatically to a newer version by using the ActiveGate auto-update procedure.
 
 To manually update the zRemote module
 
@@ -131,7 +131,7 @@ Windows
 
 1. If you have customized the installation, back up the `zremoteagentuserconfig.conf` file of the zRemote module and the `custom.properties` file of the ActiveGate. The installer should not overwrite these files, but we recommended backing them up for safety.
 2. Uninstall the zRemote module via the Windows Control Panel.
-3. [Install the zRemote module](../../../../dynatrace-activegate/installation/windows/windows-install-an-environment-activegate.md "Read the step-by-step procedure for installing an Environment ActiveGate on Windows.") by executing the installer.
+3. Install the zRemote module by executing the installer.
 
 ### Operations
 

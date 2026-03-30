@@ -13,15 +13,15 @@ Dynatrace version 1.255+
 
 Istio — это независимая от платформы сервисная сетка, пользующаяся большой популярностью в сообществе Kubernetes. Dynatrace OneAgent и ActiveGate могут осуществлять мониторинг Istio со следующими возможностями наблюдаемости:
 
-* Распределённая трассировка и метрики уровня сервиса: OneAgent с [code modules](../../../../ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* Распределённая трассировка и метрики уровня сервиса: OneAgent с code modules
 * Метрики и топология Istio: ActiveGate
-* Логи Istio: модуль логов OneAgent [log module](../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+* Логи Istio: модуль логов OneAgent log module
 
-В качестве альтернативы, [Unified services](../../../application-observability/services/service-detection/service-detection-v1/service-types/unified-service.md "Define services on observability signals ingested via Trace ingest APIs.") обеспечивают безагентную поддержку сервисных сеток Istio.
+В качестве альтернативы, Unified services обеспечивают безагентную поддержку сервисных сеток Istio.
 
 ## Принцип работы
 
-ActiveGate получает метрики Istio и отправляет их в Dynatrace. Поскольку Istio предоставляет метрики через экспортеры Prometheus, вам нужно лишь [задать аннотации](monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
+ActiveGate получает метрики Istio и отправляет их в Dynatrace. Поскольку Istio предоставляет метрики через экспортеры Prometheus, вам нужно лишь задать аннотации.
 
 На основе меток полученных метрик Dynatrace также определяет топологию Istio без OneAgent. Это поддерживается начиная с ActiveGate версии 1.261+.
 
@@ -31,7 +31,7 @@ ActiveGate получает метрики Istio и отправляет их в
 
 ### ActiveGate
 
-* Требования к приёму данных см. в разделе [Prometheus metrics](monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.")
+* Требования к приёму данных см. в разделе Prometheus metrics
 * Определение топологии: ActiveGate версии 1.261+
 * Извлечение суммы и количества из гистограммных метрик: ActiveGate версии 1.261+
 
@@ -40,8 +40,8 @@ ActiveGate получает метрики Istio и отправляет их в
 * Карточка метрик Istio на страницах сервисов, рабочих нагрузок и пространств имён Kubernetes: Dynatrace версии 1.255+
 * Топология (вызывающие и вызываемые связанные сущности) на страницах сервисов, рабочих нагрузок и пространств имён Kubernetes: Dynatrace версии 1.263+
 
-Мониторинг Istio через OneAgent поддерживается для классического полного стека, облачного полного стека и только-приложение [вариантов развёртывания](../../../../ingest-from/setup-on-k8s/how-it-works.md "In-depth description on how the deployment on Kubernetes works.") начиная с Operator версии 0.11.0+. Более ранние версии поддерживают только классический полный стек.
+Мониторинг Istio через OneAgent поддерживается для классического полного стека, облачного полного стека и только-приложение вариантов развёртывания начиная с Operator версии 0.11.0+. Более ранние версии поддерживают только классический полный стек.
 
 ## Связанные темы
 
-* [Monitor Prometheus metrics](monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.")
+* Monitor Prometheus metrics

@@ -13,7 +13,7 @@ scraped: 2026-03-04T21:30:25.620961
 
 For many companies, ensuring the privacy of their customers' personal data is an important component of the digital business success. Dynatrace provides numerous privacy enhancements that you can use to configure the data privacy settings of your apps. When you properly set up these settings, this helps to protect your customers' personal data and to ensure your organization's compliance with the General Data Protection Regulation (GDPR), data disclosure requirements of app stores, and other data protection laws and regulations.
 
-While Dynatrace offers numerous data privacy settings configurable both on the [environment](../../../../manage/data-privacy-and-security/configuration/configure-global-privacy-settings.md "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.") and application levels, it's only your responsibility to properly set up these settings and take precautions that protect your customers' personal data.
+While Dynatrace offers numerous data privacy settings configurable both on the environment and application levels, it's only your responsibility to properly set up these settings and take precautions that protect your customers' personal data.
 
 ## User opt-in mode
 
@@ -49,14 +49,14 @@ To activate the opt-in mode for mobile applications
 3. Select the frontend you want to configure.
 4. On the **Settings** tab, select **Data privacy**.
 5. Turn on **Enable user opt-in mode**.
-6. Update your application's configuration file (build file for Android, [`Info.plist`](../../mobile-applications/instrument-ios-app/instrumentation/info-plist-file.md "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.") for iOS, and `dynatrace.config.<extension>` for cross-platform frameworks) by adding a special flag or key that enables opt-in mode.
+6. Update your application's configuration file (build file for Android, `Info.plist` for iOS, and `dynatrace.config.<extension>` for cross-platform frameworks) by adding a special flag or key that enables opt-in mode.
 
    Check the instrumentation wizard for the updated configuration code snippet.
 7. Rebuild your application so that the new configuration takes effect.
 
 Check the sections below for detailed instructions on how to set up the mobile user opt-in mode for your applications.
 
-[Android SDK](../../mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android.md#data-privacy) [iOS SDK](../../mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios.md#privacy) [Cordova](https://www.npmjs.com/package/@dynatrace/cordova-plugin#user-privacy-options) [Flutter](https://pub.dev/packages/dynatrace_flutter_plugin#useroptin) [React Native](https://www.npmjs.com/package/@dynatrace/react-native-plugin#user-opt-in-mode) [Xamarin](../../mobile-applications/cross-platform-frameworks/xamarin-nuget.md#useroptin) [![.NET MAUI](https://dt-cdn.net/images/dotnetmaui-aea483621e.svg ".NET MAUI").NET MAUI](../../mobile-applications/cross-platform-frameworks/maui.md#useroptin) 
+Android SDK iOS SDK [Cordova](https://www.npmjs.com/package/@dynatrace/cordova-plugin#user-privacy-options) [Flutter](https://pub.dev/packages/dynatrace_flutter_plugin#useroptin) [React Native](https://www.npmjs.com/package/@dynatrace/react-native-plugin#user-opt-in-mode) [Xamarin](../../mobile-applications/cross-platform-frameworks/xamarin-nuget.md#useroptin) [![.NET MAUI](https://dt-cdn.net/images/dotnetmaui-aea483621e.svg ".NET MAUI").NET MAUI](../../mobile-applications/cross-platform-frameworks/maui.md#useroptin) 
 
 ### Data collection levels
 
@@ -78,7 +78,7 @@ For hybrid applications, the `dtAdk` cookie allows to join a session from OneAge
 
 ## User action masking
 
-If you want to avoid capturing personal information for all user actions in your mobile app, check the related sections on user action masking for [Android](../../mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities.md#mask-user-actions "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.") or [iOS](../../mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios.md#mask-user-actions "Enrich mobile user experience monitoring using OneAgent SDK for iOS.").
+If you want to avoid capturing personal information for all user actions in your mobile app, check the related sections on user action masking for Android or iOS.
 
 After you enable user action masking for your mobile app, OneAgent replaces all `Touch on <control title>` action names with the class name or type of the control that the user touched. For example, `Touch on Account 123456` is changed to `Touch on Button`.
 
@@ -86,5 +86,5 @@ After you enable user action masking for your mobile app, OneAgent replaces all 
 
 To learn what data OneAgent captures and complete the data privacy questionnaire in Google Play Console or App Store Connect, see the following pages:
 
-* [Data safety guidance for Android](../../../../manage/data-privacy-and-security/data-privacy/user-privacy-for-android.md "Information on types of data that OneAgent for Android collects. You can use this page when filling out the Data safety form in Google Play Console.")
-* [User privacy for iOS](../../../../manage/data-privacy-and-security/data-privacy/user-privacy-for-ios.md "Learn about what kind of data OneAgent collects when you need to report your app privacy to Apple.")
+* Data safety guidance for Android
+* User privacy for iOS

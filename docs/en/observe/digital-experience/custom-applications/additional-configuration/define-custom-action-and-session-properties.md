@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:33:31.236151
 
 Dynatrace captures a lot of information about the performance of your applications. You can enrich this information with valuable metadata and then convert the metadata into user action and user session properties.
 
-Action and session properties are metadata key-value pairs that you can filter across Dynatrace analysis views. These properties come in handy when you need to create powerful queries, segmentations, or aggregations on the captured metadata. You can use these properties on the **User sessions** and **User sessions query** pages. For a deeper understanding of how to leverage these properties, see [Leverage user action and user session properties for custom applications](../analyze-and-use/action-and-session-properties-custom.md "User action and session properties, which are metadata key-value pairs, provide added visibility and deeper analysis of your end users' experience. Using these properties for your applications, you can filter user sessions, add calculated metrics, create charts, and more.").
+Action and session properties are metadata key-value pairs that you can filter across Dynatrace analysis views. These properties come in handy when you need to create powerful queries, segmentations, or aggregations on the captured metadata. You can use these properties on the **User sessions** and **User sessions query** pages. For a deeper understanding of how to leverage these properties, see Leverage user action and user session properties for custom applications.
 
 Below you can find the information on how to configure such properties as well as related configuration examples. To exploit action and session properties, you first need to send the required metadata to Dynatrace and then [add properties in the Dynatrace web UI](#add-properties).
 
@@ -27,7 +27,7 @@ Before you can define action and session properties, you first need to start tra
 
 ### Report a value via SDK
 
-You can report metadata key-value pairs in the source code of your custom app via an API call. For details, see [Dynatrace OpenKit API methods | Report a value](../../../../ingest-from/extend-dynatrace/openkit/dynatrace-openkit-api-methods.md#report-values "Read how Dynatrace OpenKit can be used from the developer's point of view.").
+You can report metadata key-value pairs in the source code of your custom app via an API call. For details, see Dynatrace OpenKit API methods | Report a value.
 
 To check if the data that you report in your app's code reaches Dynatrace, go to the details of the user action that should contain the data, and scroll down to the **Reported values** section.
 
@@ -39,7 +39,7 @@ Additionally, you can add the required metadata to server-side requests, define 
 
 Request attributes are derived from web request URLs, HTTP request headers, and other request metadata. These attributes represent key-value pairs that you can filter across many Dynatrace analysis and distributed tracing views.
 
-For more details, see [Request attributes](../../../application-observability/services/request-attributes.md "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
+For more details, see Request attributes.
 
 ## Add action and session properties
 
@@ -66,10 +66,10 @@ To define an action or session property
    | --- | --- |
    | Name Request attribute name | For the SDK-reported value type, it's the name of the reported value from your application's code. **Name** is case-sensitive, so it must exactly match the entry from your code. For the server-side request attribute type, it's the name of the request attribute set in **Settings** > **Server-side service monitoring** > **Request attributes**. |
    | Display name | The name of the property that is used in the Dynatrace web UI, for example, on the session details page or user action details page. |
-   | Key | The name of the property that is used to identify and later locate the property in [USQL](../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Learn how you can access and query user session data based on keywords, syntax, functions, and more."). |
+   | Key | The name of the property that is used to identify and later locate the property in USQL. |
 6. Choose at least one [storage type](#storage-levels)âuser action property, session property, or both.
 7. For the session property storage type, select one of the aggregation types.
-8. Optional To restrict the captured values, enable **Apply cleanup rule**, and specify a [regular expression](../../../../manage/tags-and-metadata/reference/regular-expressions-in-dynatrace.md "Learn how to use regular expressions in the context of Dynatrace.").
+8. Optional To restrict the captured values, enable **Apply cleanup rule**, and specify a regular expression.
 
 ## Examples of action and session properties
 
@@ -105,7 +105,7 @@ The **Credit card type** is an example of how we've "promoted" a server-side req
 * You can define a maximum of 20 action properties per application.
 * Action and session properties of the `String` data type are limited to 100 characters after applying the cleanup rule.
 * You can use up to 20 properties per application free of charge. Additional properties consume DEM units.
-  See [DEM units](../../../../license/monitoring-consumption-classic/digital-experience-monitoring-units.md#dem-units "Understand how Dynatrace Digital Experience Monitoring consumption is calculated based on DEM units.") (pay attention to the **Session property** and **Action property** entries in the table) and [Free tier of action and session properties](../../../../license/monitoring-consumption-classic/digital-experience-monitoring-units.md#free-action-and-session-properties "Understand how Dynatrace Digital Experience Monitoring consumption is calculated based on DEM units.") for more information.
+  See DEM units (pay attention to the **Session property** and **Action property** entries in the table) and Free tier of action and session properties for more information.
 
 ## Notes
 
@@ -114,5 +114,5 @@ The **Credit card type** is an example of how we've "promoted" a server-side req
 
 ## Related topics
 
-* [Leverage user action and user session properties for custom applications](../analyze-and-use/action-and-session-properties-custom.md "User action and session properties, which are metadata key-value pairs, provide added visibility and deeper analysis of your end users' experience. Using these properties for your applications, you can filter user sessions, add calculated metrics, create charts, and more.")
+* Leverage user action and user session properties for custom applications
 * [Mastering session and user action properties for enhanced analyticsï»¿](https://www.youtube.com/watch?v=b8Vj0EoaDeM)

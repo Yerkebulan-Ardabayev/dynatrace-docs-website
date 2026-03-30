@@ -37,7 +37,7 @@ To successfully develop an Extensions extension and be able to complete this tut
     pip install dt-cli
     ```
 
-    For more information, see [Sign extensions](../../sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+    For more information, see Sign extensions.
 * Your root certificate uploaded to Dynatrace and on the OneAgent host
 
 ## Step 1 Generate a developer certificate and key
@@ -78,4 +78,4 @@ The command generates the following files:
 
 Your Dynatrace environment is ready to start creating your WMI extension.
 
-**Next step**: [Extension package](wmi-tutorial/wmi-tutorial-01.md "Learn about WMI extensions in the Extensions framework.")
+**Next step**: Extension package

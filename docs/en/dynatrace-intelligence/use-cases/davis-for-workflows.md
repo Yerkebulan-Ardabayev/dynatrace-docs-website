@@ -86,7 +86,7 @@ A successful Dynatrace Intelligence analysis requires proper access rights.
 
 ### Step 2 Explore capacity measurements in a notebook
 
-Predictive capacity management starts within [**Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") where you need to configure your capacity indicators. The image below shows an example of the free disk percentage indicator for an operations team.
+Predictive capacity management starts within **Notebooks** where you need to configure your capacity indicators. The image below shows an example of the free disk percentage indicator for an operations team.
 
 ![An example of an AI data analysis forecast.](https://dt-cdn.net/images/notebooks-data-analyzer-forecast-1891-28bee08431.png)
 
@@ -94,7 +94,7 @@ Once you have the required indicators, it's time to build the workflow that trig
 
 ### Step 3 Define a trigger schedule
 
-In ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, configure the required schedule to trigger the forecast. To learn how, see [Workflow schedule trigger](../../analyze-explore-automate/workflows/trigger/schedules.md "Guide to creating workflow automation schedule triggers in Dynatrace Workflows."). The image below shows the workflow that runs at 8:00 AM to trigger the forecast of all the disks that are likely to run out of space in the next week.
+In ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, configure the required schedule to trigger the forecast. To learn how, see Workflow schedule trigger. The image below shows the workflow that runs at 8:00 AM to trigger the forecast of all the disks that are likely to run out of space in the next week.
 
 ![Example of a Dynatrace Intelligence trigger in the Workflows app.](https://dt-cdn.net/images/workflows-forecast-trigger-1920-652d16e024.png)
 
@@ -243,7 +243,7 @@ To send a message
 
 1. Add a new **Send message** action.
 2. Set the name of the action as `send_message`.
-3. Configure the message. To learn how, see [Slack Connector](../../analyze-explore-automate/workflows/actions/slack.md "Send messages to Slack Workspaces").
+3. Configure the message. To learn how, see Slack Connector.
 4. Open the **Conditions** tab.
 5. Select the `success` condition for the **check\_prediction** action.
 6. Add the following custom condition:
@@ -336,5 +336,5 @@ Raising a problem is an optional remediation step that you can skip completely, 
 
 ## Related topics
 
-* [Workflows](../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
-* [Notebooks](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+* Workflows
+* Notebooks

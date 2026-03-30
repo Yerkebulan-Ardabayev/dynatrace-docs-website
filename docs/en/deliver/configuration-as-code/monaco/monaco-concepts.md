@@ -34,7 +34,7 @@ Deployment manifest
     The manifest is saved as a YAML file.
 
 Projects
-:   Monaco projects are directories (folders) that logically group API configurations. An example of a project could be a service where all configurations regarding this service are present in the folder. Projects can consist of multiple files and directories. For more information, see [Manage a Monaco project](configuration/projects.md "Manage a project folder with Dynatrace Configuration as Code via Monaco.").
+:   Monaco projects are directories (folders) that logically group API configurations. An example of a project could be a service where all configurations regarding this service are present in the folder. Projects can consist of multiple files and directories. For more information, see Manage a Monaco project.
 
     The projects directories group configuration files that are deployed to the same target environment.
 

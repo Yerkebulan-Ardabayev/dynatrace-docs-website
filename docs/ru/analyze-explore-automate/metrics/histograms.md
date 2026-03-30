@@ -62,8 +62,8 @@ timeseries percentile(http_request_duration_seconds_bucket, 99)
 
 * Dynatrace в настоящее время отображает метрики гистограмм **в виде персентилей с линейными диаграммами по времени** (с использованием команды `timeseries`). Визуализация распределения вхождений по корзинам за определённый период времени (обычно с использованием столбчатой диаграммы) в данный момент **НЕ** поддерживается.
 
-Дополнительную информацию см. в разделе [Редактирование визуализаций для Notebooks и Dashboards](../dashboards-and-notebooks/edit-visualizations.md "Создавайте, редактируйте и просматривайте визуализации на ваших дашбордах и в ноутбуках Dynatrace.").
+Дополнительную информацию см. в разделе Редактирование визуализаций для Notebooks и Dashboards.
 
 ## Лицензирование и тарификация
 
-Функция [timeseries percentile](../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries_percentile "Команды метрик DQL"), необходимая для запроса гистограмм, доступна только клиентам DPS с тарифным планом **Metrics powered by Grail**. Дополнительную информацию см. в разделе [Обзор метрик Metrics powered by Grail (DPS)](../../license/capabilities/metrics.md "Узнайте, как рассчитывается потребление Dynatrace Metrics powered by Grail по модели Dynatrace Platform Subscription.").
+Функция timeseries percentile, необходимая для запроса гистограмм, доступна только клиентам DPS с тарифным планом **Metrics powered by Grail**. Дополнительную информацию см. в разделе Обзор метрик Metrics powered by Grail (DPS).

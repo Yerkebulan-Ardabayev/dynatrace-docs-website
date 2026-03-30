@@ -87,7 +87,7 @@ Learn how to trigger predefined prompts in various Dynatrace applications.
 
 Read this reference](copilot/chat-with-davis-copilot/copilot-conv-starters.md)
 
-For more information about what kind of prompts work well in  **Dynatrace Assist**, see [prompt examples](copilot/chat-with-davis-copilot/dynatrace-assist-prompts.md "Learn what kind of prompts work well in Dynatrace Assist.").
+For more information about what kind of prompts work well in  **Dynatrace Assist**, see prompt examples.
 
 ## Vector-based document matching
 

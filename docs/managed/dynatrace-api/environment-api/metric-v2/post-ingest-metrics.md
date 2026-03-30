@@ -8,18 +8,18 @@ Pushes custom data points to Dynatrace.
 
 You can access the ingested datapoints via:
 
-* [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.")
-* [GET metric data points](/managed/dynatrace-api/environment-api/metric-v2/get-data-points "Read data points of one or multiple metrics via Metrics v2 API.") request of the Metric v2 API.
+* Data Explorer
+* GET metric data points request of the Metric v2 API.
 
-Provided data points must follow the [Metrics ingestion protocol](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works."). You don't have to register the metric first. After Dynatrace has ingested and processed the data, you can use it just like any other metrics in Dynatrace, such as in [charts](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") or [metric events](/managed/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace"). You can also provide [metadata](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata "Provide metadata for your custom metric.") for the ingested metric via the Settings API.
+Provided data points must follow the Metrics ingestion protocol. You don't have to register the metric first. After Dynatrace has ingested and processed the data, you can use it just like any other metrics in Dynatrace, such as in charts or metric events. You can also provide metadata for the ingested metric via the Settings API.
 
 Prefer to ingest metrics right on the host?
 
 You can also push the data points directly from a OneAgent-monitored host to the Extensions Execution Controller (EEC) OneAgent module over a secure channel using the local `http://localhost:<port>/metrics/ingest` endpoint, which doesn't require token authentication. The default port is `14499`. Using this method, the Dynatrace reserved `dt.entity.host=<host-ID>` dimension is added to each metric.
 
-You can use the dimension `dt.process.id=<PID>` to add a process group identifier dimension. When the process group identifier is provided, `dt.entity.process_group_instance` dimension will be added to a given metric. It works on OneAgent metrics ingest only via [`dynatrace_ingest`](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe "Learn how to ingest metrics using local scripting integration.") API.
+You can use the dimension `dt.process.id=<PID>` to add a process group identifier dimension. When the process group identifier is provided, `dt.entity.process_group_instance` dimension will be added to a given metric. It works on OneAgent metrics ingest only via `dynatrace_ingest` API.
 
-For more information, see [OneAgent metric API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.").
+For more information, see OneAgent metric API.
 
 You can't ingest metrics with key prefix of `dt.`âthese are reserved for usage by Dynatrace.
 
@@ -36,7 +36,7 @@ There's no limit on the number of metrics.
 
 To execute this request, you need an access token with `metrics.ingest` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ## Parameters
 
@@ -190,5 +190,5 @@ curl -L -X POST 'https://mySampleEnv.live.dynatrace.com/api/v2/metrics/ingest' \
 
 ## Related topics
 
-* [Metric ingestion protocol](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-* [Custom metric metadata](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata "Provide metadata for your custom metric.")
+* Metric ingestion protocol
+* Custom metric metadata

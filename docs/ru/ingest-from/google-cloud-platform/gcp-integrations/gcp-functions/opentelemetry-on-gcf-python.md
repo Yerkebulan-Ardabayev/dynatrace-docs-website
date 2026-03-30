@@ -15,7 +15,7 @@ scraped: 2026-03-05T21:29:32.606351
 
 ## Предварительные требования
 
-Убедитесь, что вы выполнили шаги **начальной настройки**, описанные в [Настройка мониторинга OpenTelemetry для Google Cloud Functions](opentelemetry-on-gcf.md "Мониторинг Google Cloud Functions с помощью OpenTelemetry и Dynatrace."), прежде чем использовать пакеты, описанные ниже.
+Убедитесь, что вы выполнили шаги **начальной настройки**, описанные в Настройка мониторинга OpenTelemetry для Google Cloud Functions, прежде чем использовать пакеты, описанные ниже.
 
 * dynatrace-opentelemetry-gcf версии 1.247+
 * Версия продукта Cloud Functions: 1-е поколение, 2-е поколение
@@ -195,5 +195,5 @@ return flask.Response("Hello World", 200)
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Google Cloud](../../../google-cloud-platform.md "Мониторинг Google Cloud с помощью Dynatrace.")
+* Настройка Dynatrace в Google Cloud
 * [Мониторинг Google Cloud](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

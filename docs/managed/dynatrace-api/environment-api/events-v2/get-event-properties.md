@@ -17,7 +17,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `events.read` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ## Parameters
 
@@ -282,4 +282,4 @@ https://mySampleEnv.live.dynatrace.com/api/v2/eventProperties?pageSize=3
 
 ## Related topics
 
-* [Event analysis and correlation](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")
+* Event analysis and correlation

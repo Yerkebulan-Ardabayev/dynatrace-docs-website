@@ -114,7 +114,7 @@ The optional `groupOverrides` and `environmentOverrides` fields allow for this.
 ## `id` field
 
 The `id` field identifies a `config` within the configurations.
-It must be unique for the same [configType](../reference/commands-saas.md "How to use the Monaco CLI application, including arguments and options.") and [project](monaco-manage-resources.md#projects "This a list of Monaco resources.").
+It must be unique for the same configType and [project](monaco-manage-resources.md#projects "This a list of Monaco resources.").
 This field is needed to reference the [parameters](../monaco-api-support-and-access-handling.md#supported-api-types "This is a list of the Monaco API support and access permission handling.") and describe dependencies between single configs.
 
 It is possible to have, for example, two dashboards with the same `id` but in two different projects.
@@ -125,7 +125,7 @@ The `id` field is only local to the Dynatrace Monaco CLI and does not correspond
 
 The `type` field defines the type of Dynatrace configuration.
 
-For a detailed list, see [Monaco configuration YAML file - list of type fields](yaml-configuration-saas-type-fields.md "This is a list of type fields in the Monaco configuration YAML file.").
+For a detailed list, see Monaco configuration YAML file - list of type fields.
 
 The types and subcategories
 
@@ -141,11 +141,11 @@ The types and subcategories
   + Optional `insertAfter`
 
     Not all **Settings** schemas support permission. Only applicable for objects based on schemas with ordered objects. Schema's ordered parameter is set to `true`.
-    For more information, see [SettingsObjectUpdate object](../../../../dynatrace-api/environment-api/settings/objects/put-object.md#openapi-parameter-body-objects-openapienv2 "Edit a settings object via the Dynatrace API.").
+    For more information, see SettingsObjectUpdate object.
   + Optional `permission`
 
     Not all **Settings** schemas support permission. Only applicable for objects based on schemas with ordered objects. Schema's ordered parameter is set to `true`.
-    For more information, see [SettingsObjectUpdate object](../../../../dynatrace-api/environment-api/settings/objects/put-object.md#openapi-parameter-body-objects-openapienv2 "Edit a settings object via the Dynatrace API.").
+    For more information, see SettingsObjectUpdate object.
 * `Automation` defines a workflow.
 
   + `resource`
@@ -159,7 +159,7 @@ The types and subcategories
 
   + `kind`
 
-Dynatrace version 1.323+ OpenPipeline Configurations API is replaced by dedicated Settings API schemas. To avoid the following limitations, migrate to the new format, see [Migrate OpenPipeline configurations to Settings API](../../../../platform/openpipeline/migration-settings.md "Understand how to migrate your OpenPipeline configurations to new Settings API."). If you already use the new Settings API schemas, refer to [Type - Settings](#type-setting) instead.
+Dynatrace version 1.323+ OpenPipeline Configurations API is replaced by dedicated Settings API schemas. To avoid the following limitations, migrate to the new format, see Migrate OpenPipeline configurations to Settings API. If you already use the new Settings API schemas, refer to [Type - Settings](#type-setting) instead.
 
 * `Segment` defines the data segments and filter masks.
 * `Service-level objectives (SLOs)` sets up a Dynatrace slo.
@@ -175,7 +175,7 @@ Configuration `type` fields
 * `scope`: applicable for the types `api` and `settings`.
   It allows for specifying dependencies and relationships.
 * `schema` and `schemaVersion`: applicable for the `settings` type.
-  It defines the specific settings schema, such as [custom alerts](../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.").
+  It defines the specific settings schema, such as custom alerts.
 * `permission`: applicable for the type `settings`.
   It allows fine-grained access control to settings objects, based on IAM permissions.
 * `insertAfter`: applicable for the type `settings`.
@@ -188,7 +188,7 @@ Configuration `type` fields
   It specifies the accessibility/visibility of the document in the environment, for example, public versus private.
 * `id`: applicable for the type `document`.
   It specifies a user-defined ID for the document.
-  If it's specified, it also needs to be directly referenced in the [deletefile](../configuration.md#file-structure-for-direct-reference "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest."), if you wish to delete the document later.
+  If it's specified, it also needs to be directly referenced in the deletefile, if you wish to delete the document later.
   For document creation, if this field is not set, Monaco generates a custom ID.
   On download, the `id` field is populated, if a custom ID was used to create the document.
 
@@ -248,7 +248,7 @@ If the specified configuration is an [api type](yaml-configuration-saas-type-fie
 
 For this, the `name` needs to be used in the JSON template to fill the configuration's specific `name` property.
 Usually, this is also just a `name`, but for some configurations, this may differ.
-For more information, see the exceptional cases described for JSON templates [Work with Dynatrace Monaco CLI commands for Latest Dynatrace](../reference/commands-saas.md "How to use the Monaco CLI application, including arguments and options.") and refer to the API documentation if in doubt.
+For more information, see the exceptional cases described for JSON templates Work with Dynatrace Monaco CLI commands for Latest Dynatrace and refer to the API documentation if in doubt.
 
 When [downloading](../reference/commands-saas.md#download "How to use the Monaco CLI application, including arguments and options."), the names are automatically extracted and placed in the YAML for you.
 
@@ -965,4 +965,4 @@ skip: true
 
 ## Related topics
 
-* [Monaco configuration YAML file - list of type fields](yaml-configuration-saas-type-fields.md "This is a list of type fields in the Monaco configuration YAML file.")
+* Monaco configuration YAML file - list of type fields

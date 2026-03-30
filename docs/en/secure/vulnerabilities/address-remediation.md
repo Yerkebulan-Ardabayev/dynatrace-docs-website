@@ -119,7 +119,7 @@ You can also view vulnerable components on the overview page of process groups o
 
 * [FAQ: Why is a fixed vulnerability still showing as open?](../faq.md#open "Frequently asked questions about Dynatrace Application Security.")
 * [Concepts: Vulnerable component](concepts.md#vulnerable-component "Concepts that are specific to the Dynatrace Vulnerabilities app.")
-* [Vulnerability evaluation: Third-party vulnerabilities](../application-security/vulnerability-analytics/vulnerability-evaluation.md#tpv "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
+* Vulnerability evaluation: Third-party vulnerabilities
 
 ### Examine entry points
 
@@ -176,7 +176,7 @@ In bulk
 6. Enter the new status and select **Save**.
 
 Mute status and remediation decisions depend on vulnerability monitoring scope. Vulnerabilities on hosts or processes excluded from monitoring rules won't appear here.  
-For visibility into overall monitoring coverage and exposure trends, see [Assess coverage](assess-coverage.md "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
+For visibility into overall monitoring coverage and exposure trends, see Assess coverage.
 
 ## Initiate deeper analysis with Dynatrace Intelligence generative AI
 

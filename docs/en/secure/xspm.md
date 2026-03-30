@@ -36,7 +36,7 @@ Key use cases include:
 Prerequisites
 
 * Review the [supported compliance standards and technologies](application-security/spm.md#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
-* To take full advantage of the [Security Posture Management functionality](application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."), you need to [deploy Kubernetes Security Posture Management](../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.").
+* To take full advantage of the Security Posture Management functionality, you need to deploy Kubernetes Security Posture Management.
 * Permissions: For a list of permissions required, go to  **Hub**, select ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**, and display **Technical information**.
 * Prior knowledge: Understand Kubernetes.
 
@@ -52,14 +52,14 @@ To get started, follow the steps below.
 
 ### 1. Install app
 
-1. In Dynatrace, open  [**Hub**](../manage/hub.md "See the information about Dynatrace Hub.").
+1. In Dynatrace, open  **Hub**.
 2. Look for ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management** and select **Install**.
 
 ### 2. Configure SPM coverage
 
 Optional
 
-You can configure which of your systems (or clusters, in the case of [Kubernetes Security Posture Management](../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.")) monitored by Dynatrace is covered by [Security Posture Management](application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+You can configure which of your systems (or clusters, in the case of Kubernetes Security Posture Management) monitored by Dynatrace is covered by Security Posture Management.
 
 1. Open ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**.
 2. On the **Overview** page, in the **My systems** table, enable or disable the desired systems.
@@ -128,7 +128,7 @@ FAQ
 
 Related blogs
 
-[Stay compliant with Security Posture Management](use-cases/stay-compliant.md "Stay on top of your security measures, policies, and practices.")
+Stay compliant with Security Posture Management
 
 For a list of frequently asked questions regarding Security Posture Management, see [FAQ](application-security/spm.md#faq "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 
@@ -144,4 +144,4 @@ For a list of frequently asked questions regarding Security Posture Management, 
 
 ## Related topics
 
-* [Kubernetes Security Posture Management](../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.")
+* Kubernetes Security Posture Management

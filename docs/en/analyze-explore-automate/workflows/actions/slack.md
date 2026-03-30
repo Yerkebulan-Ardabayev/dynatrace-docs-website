@@ -11,7 +11,7 @@ scraped: 2026-03-03T21:22:08.797257
 * 5-min read
 * Updated on Jan 23, 2026
 
-Your Dynatrace environment can integrate with a Slack workspace using Slack Connector ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector"). You can automate sending messages to Slack based on the events and schedules defined for your [workflow](../../workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+Your Dynatrace environment can integrate with a Slack workspace using Slack Connector ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector"). You can automate sending messages to Slack based on the events and schedules defined for your workflow.
 
 ## Set up Slack integration
 
@@ -361,7 +361,7 @@ in Dynatrace Workflows using workflow expressions.
 
 Slack doesn't have a built-in templating language.
 Use our templating functionality.
-For more information, see [Dynatrace expressions](../reference.md "Get to know the workflows expression").
+For more information, see Dynatrace expressions.
 Expressions will be resolved at execution time, creating a static card payload that will be sent.
 
 #### Example 2: Dynamic messages with Expressions
@@ -672,7 +672,7 @@ To replicate this behavior, you can use expressions instead. The same example ab
 * `{% if condition %}` - Conditional blocks.
 * `{% for item in data %}` - Iterate over arrays.
 
-For more expression capabilities, see [Expression reference](../reference.md "Get to know the workflows expression").
+For more expression capabilities, see Expression reference.
 
 ## Use Workflows with Slack
 
@@ -687,7 +687,7 @@ For more expression capabilities, see [Expression reference](../reference.md "Ge
 
    We recommend using the Slack channel ID. You can also use a Slack channel name or Slack channel ID; however, not all features of the **Send Message** action will be available.
 7. Provide a message body.
-   Format your message using [Slack Markdownï»¿](https://api.slack.com/reference/surfaces/formatting#basics). It is also possible to use [workflow expressions](../reference.md "Get to know the workflows expression") as input.
+   Format your message using [Slack Markdownï»¿](https://api.slack.com/reference/surfaces/formatting#basics). It is also possible to use workflow expressions as input.
 8. To test your workflow, select **Run**.
 
 ## Troubleshooting
@@ -702,4 +702,4 @@ The following are solutions to problems some people had with Slack integration.
 
 ## Related topics
 
-* [Send Slack notifications for problems](../../alerting-and-notifications/workflows-tutorial-problems-slack.md "Learn how to send Slack notifications for problems using a simple workflow.")
+* Send Slack notifications for problems

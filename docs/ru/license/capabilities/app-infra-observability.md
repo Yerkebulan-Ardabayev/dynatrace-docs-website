@@ -11,12 +11,12 @@ Dynatrace OneAgent предлагает четыре способа монито
 Некоторые режимы обеспечивают полный доступ к данным наблюдаемости, тогда как другие собирают более ограниченный объём информации.
 Для каждого установленного в вашей инфраструктуре OneAgent вы можете выбрать режим мониторинга, наилучшим образом соответствующий вашим потребностям — см. [настройку OneAgent](../../ingest-from/dynatrace-oneagent/installation-and-operation.md#oneagent-setup "Установка OneAgent на сервер впервые.").
 
-* [Мониторинг Full-Stack](app-infra-observability/full-stack-monitoring.md "Узнайте, как тарифицируется потребление возможности Dynatrace Full-Stack Monitoring DPS.")
-* [Мониторинг инфраструктуры](app-infra-observability/infrastructure-monitoring.md "Узнайте, как тарифицируется потребление возможности Dynatrace Infrastructure Monitoring DPS.")
-* [Foundation & Discovery](app-infra-observability/foundation-and-discovery.md "Узнайте, как тарифицируется потребление возможности Dynatrace Foundation & Discovery DPS.")
-* [Мониторинг мейнфреймов](app-infra-observability/mainframe.md "Узнайте, как тарифицируется потребление возможности Dynatrace Mainframe Monitoring DPS.")
+* Мониторинг Full-Stack
+* Мониторинг инфраструктуры
+* Foundation & Discovery
+* Мониторинг мейнфреймов
 
 ## Связанные темы
 
-* [Dynatrace OneAgent](../../ingest-from/dynatrace-oneagent.md "Ознакомьтесь с важными концепциями OneAgent и узнайте, как установить и эксплуатировать OneAgent на различных платформах.")
+* Dynatrace OneAgent
 * [Тарифы Dynatrace](https://www.dynatrace.com/pricing/)

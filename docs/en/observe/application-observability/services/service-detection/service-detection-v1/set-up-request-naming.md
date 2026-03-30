@@ -16,7 +16,7 @@ You can use request naming rules to adjust how your requests are tracked and to 
 
 By using request attributes in combination with naming rules, you can capture even more context around your requests and use these additional details to slice and dice your monitoring data.
 
-Because request naming rules produce distinct service requests, each request is [independently baselined](../../../../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining.md "Learn how Dynatrace AI automatically calculates baselines based on a multi-dimensional baselining scheme.") and monitored for performance anomalies. The performance metrics captured for these requests are also separately accessible via the [Timeseries API v1](../../../../../dynatrace-api/environment-api/metric-v1.md "Retrieve metric information via Timeseries v1 API.") endpoint.
+Because request naming rules produce distinct service requests, each request is independently baselined and monitored for performance anomalies. The performance metrics captured for these requests are also separately accessible via the Timeseries API v1 endpoint.
 
 ## Before you start
 
@@ -76,7 +76,7 @@ To create a request naming rule for your service
 
 ## Global request naming rules
 
-[Service request naming API](../../../../../dynatrace-api/configuration-api/service-api/request-naming-api.md "Learn what the Dynatrace request naming config API offers.") enables you to consolidate or refine requests across multiple services. Additionally, you can synchronize these rules across multiple Dynatrace environments. To learn how to create a global request naming rule via API, see [this use case](../../../../../dynatrace-api/configuration-api/service-api/request-naming-api/create-a-new-request-naming-rule.md "Learn how to create a request naming rule via the Dynatrace API.").
+Service request naming API enables you to consolidate or refine requests across multiple services. Additionally, you can synchronize these rules across multiple Dynatrace environments. To learn how to create a global request naming rule via API, see this use case.
 
 ## Configure resource request detection
 
@@ -156,10 +156,10 @@ Accessing **Service settings** > **Web request naming**, you can:
 
   This action normalizes URL paths containing UUIDs, IP addresses, and IBANs by replacing specific values with content-related static strings, such as `UUID`, `IPv4`, and `IBAN`.
 
-  This option is not available for environments where the [**Enhanced endpoints for SDv1** feature](enhanced-endpoints-sdv1.md "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.") is enabled.
+  This option is not available for environments where the **Enhanced endpoints for SDv1** feature is enabled.
 * **Create clean URL rule**.
 
-  Define the [regular expressions](../../../../../manage/tags-and-metadata/reference/regular-expressions-in-dynatrace.md "Learn how to use regular expressions in the context of Dynatrace.") to remove parts of a web request service URL path, such as IDs.
+  Define the regular expressions to remove parts of a web request service URL path, such as IDs.
 
 Custom service request names are never masked.
 
@@ -175,7 +175,7 @@ In the above example, a new rule, `Booking {RequestAttribute:easyTravel destinat
 
 You can choose to display unmasked data for specific requests by selecting the checkbox **Access unmasked data**.
 
-This will potentially expose [personal data](../../../../../manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace.md#service-request-monitoring "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.") before it is stored and displayed.
+This will potentially expose personal data before it is stored and displayed.
 
 ## Service analysis
 
@@ -203,7 +203,7 @@ Because request naming rules produce distinct service requests, you have even fu
 
 ![Request attributes in multidimensional analysis](https://dt-cdn.net/images/multidimen-analysis-request-attributes-2020-b78f22fb23.png)
 
-You can also leverage this functionality in combination with [powerful hierarchical filtering](../../../services-classic/service-flow/service-flow-filtering.md "Understand how service filtering works and how it can be exploited.").
+You can also leverage this functionality in combination with powerful hierarchical filtering.
 In this example, we analyze booking requests that are in the `finish` stage, with a destination of `shizunai`, response time range 1s-2s, and Platinum loyalty status.
 
 ![Filter traces by request](https://dt-cdn.net/images/multidim-analysis-traces-2014-6fc5fb8941.png)
@@ -212,12 +212,12 @@ While this has been possible using request attributes alone, request naming make
 
 ## Limitations
 
-[Atomic groups](../../../../../manage/tags-and-metadata/reference/regular-expressions-in-dynatrace.md#capture-groups-are-not-allowed-for-simple-matches "Learn how to use regular expressions in the context of Dynatrace.") are not allowed in regular expressions for global request naming rules.
+Atomic groups are not allowed in regular expressions for global request naming rules.
 
 ## Related topics
 
-* [Capture request attributes based on web request data](../../request-attributes/capture-request-attributes-based-on-web-request-data.md "Create request attributes based on web request data.")
-* [Capture request attributes based on method arguments](../../request-attributes/capture-request-attributes-based-on-method-arguments.md "Learn how to create request attributes based on Java, .NET, or PHP method arguments and how to use them on the serviceâs overview page. Also find out how you can aggregate the captured values of request attributes as well as how you can access objects, in case the value to be captured is a complex object.")
-* [Request attributes API](../../../../../dynatrace-api/configuration-api/service-api/request-attributes-api.md "Learn what the Dynatrace request attribute config API offers.")
-* [Calculated metrics for services](../../calculated-service-metric.md "Learn how to create a calculated metric based on web requests.")
-* [Monitor key requests](../../../services-classic/monitor-key-requests.md "Discover how to closely monitor requests that are critical to your business.")
+* Capture request attributes based on web request data
+* Capture request attributes based on method arguments
+* Request attributes API
+* Calculated metrics for services
+* Monitor key requests

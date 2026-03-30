@@ -65,7 +65,7 @@ Select a value to display a menu of value-specific options. The available option
   + **Extract fields**
   + **Add entity names** adds a lookup (result is added in a separate field called `dt.entity.<entity>.name`) of the actual entity name associated to a given entity ID.
   + **Expand**
-  + **Reduce to single value** makes your results suitable for certain visualizations such as [Single value](visualization-chart-single-value.md "Create and edit single value visualizations on your Dynatrace dashboards and notebooks."), [Table](visualization-table.md "Create and edit table visualizations on your Dynatrace dashboards and notebooks."), or [Categorical bar chart](visualization-chart-bar-categorical.md "Create and edit categorical chart visualizations on your Dynatrace dashboards and notebooks.").
+  + **Reduce to single value** makes your results suitable for certain visualizations such as Single value, Table, or Categorical bar chart.
 
 * A recommended appâfor example, ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **View Kubernetes workload**âmay be listed for quick access.
 * **Open with** passes the whole record to the **Open with** dialog, not taking into account which value you selected.

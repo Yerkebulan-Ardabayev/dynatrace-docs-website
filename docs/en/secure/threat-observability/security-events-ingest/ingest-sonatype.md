@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:24:09.563425
 * Extension
 * Updated on Oct 07, 2025
 
-This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the Grail security table migration guide.
 
 Ingest Sonatype Lifecycle security events and audit logs into Dynatrace as security events.
 
@@ -27,9 +27,9 @@ Sonatype offers a range of products to help developers improve their productivit
 
 With the ingested data, you can accomplish various use cases, such as
 
-* [Visualize and analyze security findings](../../use-cases/visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
-* [Discover coverage gaps in security findings](../../use-cases/discover-coverage-gaps-in-security-scans.md "Unveil blind spots in your Software Development Lifecycle (SDLC).")
-* [Automate and orchestrate security findings](../../use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* Visualize and analyze security findings
+* Discover coverage gaps in security findings.")
+* Automate and orchestrate security findings
 
 ### Requirements
 
@@ -62,7 +62,7 @@ To ensure successful data collection, the authenticated user must have the follo
   + Run Extensions 2.0 framework
   + Reach the Sonatype API endpoints
 * Permissions: For a list of permissions required, go to  **Hub**, select ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**, and display **Technical information**.
-* Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see [Dynatrace API - Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+* Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see Dynatrace API - Tokens and authentication.
 
 ## Activation and setup
 
@@ -106,7 +106,7 @@ To ensure successful data collection, the authenticated user must have the follo
 
      AND event.type=="VULNERABILITY_SCAN"
      ```
-4. Once the extension is installed and working, you can access and manage it in Dynatrace via ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. For details, see [About Extensions](../../../ingest-from/extensions/concepts.md "Learn more about the concept of Dynatrace Extensions.").
+4. Once the extension is installed and working, you can access and manage it in Dynatrace via ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. For details, see About Extensions.
 
 ## Details
 
@@ -114,23 +114,23 @@ To ensure successful data collection, the authenticated user must have the follo
 
 ![how it works - sonatype](https://dt-cdn.net/images/architechture-diagram-2560-277696e6e1.png)
 
-Dynatrace integration with Sonatype Lifecycle is an [extension](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") running on Dynatrace ActiveGate. Once you enable and configure the Dynatrace Sonatype Lifecycle extension
+Dynatrace integration with Sonatype Lifecycle is an extension running on Dynatrace ActiveGate. Once you enable and configure the Dynatrace Sonatype Lifecycle extension
 
 1. It periodically collects security findings and audit logs using [Sonatype REST APIï»¿](https://help.sonatype.com/en/rest-apis.html).
-2. The fetched data is ingested into Dynatrace and mapped to the [Dynatrace Semantic Dictionary](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.").
+2. The fetched data is ingested into Dynatrace and mapped to the Dynatrace Semantic Dictionary.
 3. Data is stored in a bucket called `default_securityevents` (for details, see [Built-in Grail buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.")).
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see Events powered by Grail.
 
 ## FAQ
 
 ### Which data model is used for the security logs and events coming from Sonatype Lifecycle?
 
-* [Vulnerability finding events](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.") store the individual vulnerability findings reported by Sonatype Lifecycle per affected artifacts and component.
-* [**Vulnerability scan events**](../../../semantic-dictionary/model/security-events.md#vulnerability-scan-events "Get to know the Semantic Dictionary models related to security events.") indicate coverage of scans for individual artifacts.
-* [**Audit logs**](../../../semantic-dictionary/model/log.md#audit-logs "Get to know the Semantic Dictionary models related to Log Analytics.") represent user activity logs in Sonatype Lifecycle.
+* Vulnerability finding events store the individual vulnerability findings reported by Sonatype Lifecycle per affected artifacts and component.
+* **Vulnerability scan events** indicate coverage of scans for individual artifacts.
+* **Audit logs** represent user activity logs in Sonatype Lifecycle.
 
 ### Which Sonatype Lifecycle security findings are imported into Dynatrace?
 
@@ -184,6 +184,6 @@ Ingest Sonatype vulnerability findings, scans, and audit logs.](https://www.dyna
 
 ## Related topics
 
-* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Security events](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")
+* OpenPipeline
+* Dynatrace Query Language
+* Security events

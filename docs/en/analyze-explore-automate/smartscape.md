@@ -60,7 +60,7 @@ Necessary to read segment variables
 
 ## Get started
 
-![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** is an interactive map of your digital ecosystem powered by [**Smartscape on Grail**](../platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL."). Use it to visually analyze topology and relationships between all of your entities in real time with the help of customized ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** views and modals.
+![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** is an interactive map of your digital ecosystem powered by **Smartscape on Grail**. Use it to visually analyze topology and relationships between all of your entities in real time with the help of customized ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** views and modals.
 
 ![Get the full picture with a real-time representation of all your digital systems.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/197/media/ScreenShot_Hub_-_Image_1.png)![Instant, domain-specific insights, with no configuration required.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/114/media/Smartscape_Hub_-_Image_2.png)![Discover hidden patterns through multidimensional, visual analytics.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/114/media/Smartscape_Hub_-_Image_3.png)![Assess and visualize impact and blast radius of problems.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/114/media/Smartscape_Hub_-_Image_4.png)
 
@@ -68,7 +68,7 @@ Necessary to read segment variables
 
 ## Concepts
 
-Go through the following topics to gain a better understanding of [Smartscape concepts](smartscape/smartscape-concepts.md "Learn about Smartscape-specific concepts and UI capabilities.") and ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** features.
+Go through the following topics to gain a better understanding of Smartscape concepts and ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** features.
 
 [01Smartscape concepts
 

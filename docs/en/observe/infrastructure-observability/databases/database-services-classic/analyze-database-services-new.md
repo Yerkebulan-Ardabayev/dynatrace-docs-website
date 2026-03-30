@@ -15,7 +15,7 @@ scraped: 2026-03-05T21:31:30.344039
 We have redesigned the database overview page.
 
 * This documentation describes the new design.
-* If you want to revert to the classic database page, on the database overview page select **More** (**â¦**) > **Return to classic page** and then refer to the [documentation for the classic database page](analyze-database-services.md "Analyze your database services with Dynatrace (classic page).").
+* If you want to revert to the classic database page, on the database overview page select **More** (**â¦**) > **Return to classic page** and then refer to the documentation for the classic database page.").
 
 All databases detected by Dynatrace in your environment are displayed on the **Databases** page. You can analyze each database and drill down to code-level information.
 
@@ -48,16 +48,16 @@ Select **Properties and tags** on the notifications bar to display the **Propert
 * Select **Problems** on the notifications bar to display the **Problems** panel, which lists the problems.
 
   + Select a problem to display details.
-  + Select **Go to problems** to go to the [Problems](../../../../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.") page filtered by the selected database.
+  + Select **Go to problems** to go to the Problems page filtered by the selected database.
 
 ### SLOs
 
-* On the notifications bar, **SLOs** indicates the current number of [SLOs](../../../../deliver/service-level-objectives-classic.md "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.") related to the selected database.
+* On the notifications bar, **SLOs** indicates the current number of SLOs related to the selected database.
 * Select **SLOs** on the notifications bar to display the **Service-level objectives** panel, which lists SLOs that are directly or indirectly connected to the database.
 
 #### Directly connected SLOs
 
-* An SLO is directly connected to a service when the [entity selector](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") of an SLO meets the following criteria:
+* An SLO is directly connected to a service when the entity selector of an SLO meets the following criteria:
 
   + The entity type is set to `"DATABASE"`.
   + The entity ID is set to the database ID.
@@ -65,7 +65,7 @@ Select **Properties and tags** on the notifications bar to display the **Propert
 
 #### Indirectly connected SLOs
 
-* An SLO isn't directly connected to a database when, in the [entity selector](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") of an SLO, no entity ID is provided.
+* An SLO isn't directly connected to a database when, in the entity selector of an SLO, no entity ID is provided.
 
   Example: When generic values such as `type("DATABASE"),tag("slo")` are provided, the query results in all SLOs for all databases, including the current database.
 * To see SLOs that are not directly connected to the database, turn off **Show only directly connected SLOs**.
@@ -75,11 +75,11 @@ Select **Properties and tags** on the notifications bar to display the **Propert
 * Expand **Details** to view a chart of the respective SLO metrics.
 * In **Actions**, select
 
-  + **View in Data Explorer** to [see SLO metrics in Data Explorer](../../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#explorer "Create, configure, and monitor service-level objectives with Dynatrace.").
-  + **Pin to Dashboard** to [pin the SLO to your dashboard](../../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#dash "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **View in Data Explorer** to see SLO metrics in Data Explorer.
+  + **Pin to Dashboard** to pin the SLO to your dashboard.
   + **SLO definition** to edit the SLO in **Service-level objective definitions**.
-  + **Clone** to [clone the SLO](../../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#clone "Create, configure, and monitor service-level objectives with Dynatrace.").
-  + **Create alert** to [create an alert for the SLO](../../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#alerts "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Clone** to clone the SLO.
+  + **Create alert** to create an alert for the SLO.
 
 #### No SLOs
 
@@ -88,7 +88,7 @@ If no SLOs are found, you can
 * Select a different timeframe in the upper-right corner.
 
   ![Timeframe selector: menu bar](https://dt-cdn.net/images/timeframe-selector-menu-bar-264-8193110c8c.png)
-* Select **Add SLO** to create an SLO in the [SLO wizard](../../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#wizard "Create, configure, and monitor service-level objectives with Dynatrace.").
+* Select **Add SLO** to create an SLO in the SLO wizard.
 
 ### Database availability
 
@@ -96,7 +96,7 @@ Select **Database availability** on the notifications bar to display a chart sum
 
 ### Owners
 
-Select **Owners** on the notifications bar to display the **Ownership** panel, which lists [owners](../../../../deliver/ownership.md "Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.") of the selected database.
+Select **Owners** on the notifications bar to display the **Ownership** panel, which lists owners of the selected database.
 
 * Select  to learn more about the current ownership.
 * To add an ownership tag, select **Add Ownership tag**.
@@ -109,14 +109,14 @@ You can configure the **Database service overview** section to focus on various 
 
 * Analyze the metric in Data Explorer.
 * Create a metric event.
-* Pin the metric to a classic dashboard. For details, see [Pin tiles to your dashboard](../../../../analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard.md "Learn to pin tiles to your dashboards.").
+* Pin the metric to a classic dashboard. For details, see Pin tiles to your dashboard.
 
 ### Topology
 
 In the **Topology** section, you can learn
 
 * The services that are calling the database and the services that are called by the database.  
-  Select **Related services** to understand the service relation. Expand **Details** to view a chart of the respective service metrics. To proceed with your analysis, you can select [**View backtrace**](../../../application-observability/services-classic/service-backtrace.md "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
+  Select **Related services** to understand the service relation. Expand **Details** to view a chart of the respective service metrics. To proceed with your analysis, you can select **View backtrace**.
 * The processes and hosts on which the service is running.  
   Expand **Details** to view a chart of the respective process metrics. Select the name of the process to analyze it.
 
@@ -130,19 +130,19 @@ Contains an overview of statement types found for the database in the selected t
 
 ### Distributed traces
 
-The **Distributed traces** section provides an overview of the most recent traces for the selected timeframe. Select **Full search** to go to the [distributed traces overview for the database](../../../application-observability/distributed-traces/analysis/get-started.md "Get started with distributed trace analysis in Dynatrace.").
+The **Distributed traces** section provides an overview of the most recent traces for the selected timeframe. Select **Full search** to go to the distributed traces overview for the database.
 
 ### Events
 
-Lists [events](../../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md "Gain an understanding of the Events section on each host, process, and service overview page.") that affect the database in the current timeframe.
+Lists events that affect the database in the current timeframe.
 
 ### Related logs
 
-Lists [logs](../../../../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") related to the database in the current timeframe.
+Lists logs related to the database in the current timeframe.
 
 * To analyze all the logs for the related database, select **Go to logs** .
 * To analyze a specific log, expand **Details**. If a trace or a user session is found for the log line, you can directly access it from this view.
 
 ## Related topics
 
-* [Unified analysis pages](../../../../ingest-from/extend-dynatrace/extend-ui/unified-analysis.md "Extend the Dynatrace web UI using entity-tailored unified analysis pages.")
+* Unified analysis pages

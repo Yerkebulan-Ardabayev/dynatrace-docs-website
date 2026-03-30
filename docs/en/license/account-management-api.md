@@ -21,8 +21,8 @@ Use the Dynatrace Platform Subscription API to get:
 * Forecasts and cost events.
 * Cost Allocation information.
 
-Complete documentation of the Dynatrace Platform Subscription API is available at [Dynatrace Platform Subscription API](../dynatrace-api/account-management-api/dynatrace-platform-subscription-api.md "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
+Complete documentation of the Dynatrace Platform Subscription API is available at Dynatrace Platform Subscription API.
 
 ## Related topics
 
-* [License Dynatrace](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* License Dynatrace, the licensing model for all Dynatrace capabilities.")

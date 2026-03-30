@@ -16,7 +16,7 @@ To view the most important processes running on a specific host, go to ![Hosts](
 
 Within the **Process analysis** section, you can also see various process group instances categorized by technology type.
 
-For more details, refer to [Process analysis](../../hosts/monitoring/host-monitoring.md#process-analysis "Monitor hosts with Dynatrace.").
+For more details, refer to Process analysis.
 
 For processes to be visible in this section, they have to meet at least one of the following criteria:
 
@@ -29,7 +29,7 @@ For processes to be visible in this section, they have to meet at least one of t
   + **Network Traffic > 5%**.
 * Processes that have been defined by a user as important, for example, by enabling Log Monitoring for a process.
 
-Dynatrace provides also the option of [monitoring specific processes that fall into neither of these categories](../configuration/pg-detection.md "Ways to customize process-group detection").
+Dynatrace provides also the option of monitoring specific processes that fall into neither of these categories.
 
 Any processes that do not meet the above criteria, and therefore are not considered important processes, are aggregated and labeled as **Other processes**.
 

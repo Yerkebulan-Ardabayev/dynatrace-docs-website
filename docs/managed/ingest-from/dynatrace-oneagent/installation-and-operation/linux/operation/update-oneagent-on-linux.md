@@ -8,7 +8,7 @@ updated: 2026-02-09
 
 OneAgent installed in full-stack mode has a built-in, configurable auto-update mechanism.
 
-See [OneAgent update](/managed/ingest-from/dynatrace-oneagent/oneagent-update "Learn how to update OneAgent.") for an overview of OneAgent update, including how to monitor updates and how to create update windows.
+See OneAgent update for an overview of OneAgent update, including how to monitor updates and how to create update windows.
 
 ## Configure OneAgent updates
 
@@ -114,7 +114,7 @@ To control which version of OneAgent is automatically installed on all new hosts
 1. Go to **Settings** > **Updates** > **OneAgent updates**.
 2. In **Update mode**, select **No automatic updates** to disable automatic OneAgent updates.
 
-   For details on how to disable OneAgent automatic updates on Paas/Kubernetes, see [DynaKube parameters for Dynatrace Operator on Kubernetes/OpenShift](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
+   For details on how to disable OneAgent automatic updates on Paas/Kubernetes, see DynaKube parameters for Dynatrace Operator on Kubernetes/OpenShift.
 3. In **Target version**, select the version of OneAgent to install on all new hosts.
 
 The selected OneAgent version is also used for PaaS integrations.
@@ -156,7 +156,7 @@ If you select an older version than a currently deployed version, you won't be a
 
 ### Disk space
 
-For details, see [OneAgent files and disk space requirements](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.")
+For details, see OneAgent files and disk space requirements
 
 ### Free memory
 

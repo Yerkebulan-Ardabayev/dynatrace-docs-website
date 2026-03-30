@@ -17,7 +17,7 @@ Cloudflare Logpush поддерживает прямую отправку лог
 Перед настройкой Cloudflare Logpush вам потребуется следующее:
 
 * Токен API Dynatrace с областью действия `logs.ingest`.
-  Подробнее о токенах, их генерации и областях действия см. [Dynatrace API — токены и аутентификация](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.").
+  Подробнее о токенах, их генерации и областях действия см. Dynatrace API — токены и аутентификация.
 * Базовый URL-адрес для приёма HTTP-логов Dynatrace.
   Пример базового URL-адреса: `https://abc123.live.dynatrace.com`.
 
@@ -25,7 +25,7 @@ Cloudflare Logpush поддерживает прямую отправку лог
 * Роль Cloudflare с правами редактирования **Log Share**.
   Подробнее см. [Roles](https://developers.cloudflare.com/logs/logpush/permissions/#roles).
 
-Подробнее об API приёма логов Dynatrace см. [Log Monitoring API v2 — POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Отправляйте пользовательские логи в Dynatrace через Log Monitoring API v2.").
+Подробнее об API приёма логов Dynatrace см. Log Monitoring API v2 — POST ingest logs.
 
 ## Шаги
 

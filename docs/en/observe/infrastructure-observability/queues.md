@@ -12,27 +12,27 @@ scraped: 2026-03-06T21:16:50.344003
 * 4-min read
 * Updated on Jul 15, 2022
 
-Message queues in the form of a queue or a topic provide lightweight storage for messages. They offer endpoints that allow applications to send messages to them and endpoints that allow applications to retrieve messages from them asynchronously or to subscribe to topics. For full details, see [Queue concepts](queues/queue-concepts.md "Basic concepts of message queue monitoring in Dynatrace.").
+Message queues in the form of a queue or a topic provide lightweight storage for messages. They offer endpoints that allow applications to send messages to them and endpoints that allow applications to retrieve messages from them asynchronously or to subscribe to topics. For full details, see Queue concepts.
 
 Decoupled services are standard in applications built with microservices, and events are used to communicate between services, making it essential to observe the performance of message queues. With Dynatrace, you can get full observability into your producer and consumer services and simplify troubleshooting in asynchronous communication flows.
 
-[### Queue concepts
+### Queue concepts
 
-Learn the most important concepts of queue monitoring.](queues/queue-concepts.md "Basic concepts of message queue monitoring in Dynatrace.")[### Configuration
+Learn the most important concepts of queue monitoring.### Configuration
 
-Configure monitoring, tracing for IBM MQ, tags, and management zones.](queues/configuration.md "Configure Dynatrace to monitor message queues.")[### Analysis
+Configure monitoring, tracing for IBM MQ, tags, and management zones.### Analysis
 
-Analyze queues and topics in your environment.](queues/analyze-queues.md "Get insight into message queue-related anomalies with analytics views.")
+Analyze queues and topics in your environment.
 
 ## Queues and topics in Dynatrace
 
-OneAgent automatically detects queues and topics as part of distributed traces when monitored applications use the endpoints of compatible messaging clients to send or retrieve messages. To check the compatible clients, see [Technology support](../../ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+OneAgent automatically detects queues and topics as part of distributed traces when monitored applications use the endpoints of compatible messaging clients to send or retrieve messages. To check the compatible clients, see Technology support.
 
 To get an overview of all detected queues and topics, go to **Message Queues**.
 
 * For all queues and topics, OneAgent measures the number of **Incoming messages** and **Outgoing messages**.  
   By monitoring these metrics, you can catch unbalanced message processing that could result in severe problems (such as queue overflows) and prevent them by scaling queues quickly or maintaining failover processes.
-* Select the **Name** of a specific queue or topic to display its [analytic view](queues/analyze-queues.md "Get insight into message queue-related anomalies with analytics views."), with enhanced troubleshooting capabilities to gain additional insight into related anomalies.
+* Select the **Name** of a specific queue or topic to display its analytic view, with enhanced troubleshooting capabilities to gain additional insight into related anomalies.
 
 ![Message queues table](https://dt-cdn.net/images/queues-table-1857-49308cb749.png)
 
@@ -49,11 +49,11 @@ In Dynatrace, both a queue and a topic result in a **Queue** entity.
 
 Is a specific license required for OneAgent to detect queues and topics?
 
-No. Queues and topics are detected as part of distributed traces when OneAgent is running in [Full-Stack Monitoring](../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.") mode.
+No. Queues and topics are detected as part of distributed traces when OneAgent is running in Full-Stack Monitoring mode.
 
 Can OneAgent detect queues and topics in Infrastructure Monitoring mode?
 
-No. Queues and topics are detected as part of distributed traces only when OneAgent is running in [Full-Stack Monitoring](../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.") mode.
+No. Queues and topics are detected as part of distributed traces only when OneAgent is running in Full-Stack Monitoring mode.
 
 When are queues and topics visible?
 
@@ -79,7 +79,7 @@ Dynatrace applies this logic to prevent monitoring of too many queues or topics.
 
 Which messaging clients are compatible with OneAgent?
 
-OneAgent supports various messaging clients. To find out the compatible clients, see [Technology support](../../ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+OneAgent supports various messaging clients. To find out the compatible clients, see Technology support.
 
 Why is my ActiveMQ broker not detected?
 

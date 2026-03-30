@@ -65,7 +65,7 @@ fetch bizevents
 
 The histogram visualization above is based on the following query. This shows the distribution of risk scores for open security events.
 
-The query below has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../../../secure/threat-observability/migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+The query below has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the Grail security table migration guide.
 
 ```
 fetch security.events
@@ -83,7 +83,7 @@ fetch security.events
 
 The histogram visualization above is based on the following query. This is a variation on the previous example that shows an additional split by the security event status.
 
-The query below has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../../../secure/threat-observability/migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+The query below has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the Grail security table migration guide.
 
 ```
 fetch security.events
@@ -113,7 +113,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](../drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see Drilldowns and navigation.
 
 ## Title
 

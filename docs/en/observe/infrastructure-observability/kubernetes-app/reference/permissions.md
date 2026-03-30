@@ -26,7 +26,7 @@ To manage permissions within ![Kubernetes (new)](https://dt-cdn.net/images/kuber
 
 Dynatrace IAM allows for a highly detailed and flexible definition and assignment of permissions. These permissions can be grouped into policies and then assigned to users or groups. Additionally, permissions can be targeted to specific subsets of Kubernetes objects by using conditions, such as for particular clusters and/or namespaces.
 
-For more information, see [Identity and access management (IAM)](../../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
+For more information, see Identity and access management (IAM).
 
 Example policy
 

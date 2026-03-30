@@ -13,13 +13,13 @@ scraped: 2026-03-06T21:28:10.855487
 * Published Feb 16, 2022
 
 You can control access to the SLOs in your environment by setting write and/or read permissions to users or user groups at the environment or management-zone level.
-For details on how to set permissions, see [Role-based permissions](../../manage/identity-access-management/permission-management/role-based-permissions.md "Role-based permissions").
+For details on how to set permissions, see Role-based permissions.
 
 Permission checks are based only on the global entity selector.
 
 ## Read access based on permission levels
 
-* At the environment level, a user with **View environment** permission can view any SLO. To manage group permissions, you can [create policies](../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
+* At the environment level, a user with **View environment** permission can view any SLO. To manage group permissions, you can create policies.
 
   **Example policy:** `ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = "builtin:monitoring.slo";`
 * On a management-zone level, a user with **View environment** permission can read all global SLOs and all SLOs belonging to the respective management zone.
@@ -28,7 +28,7 @@ Permission checks are based only on the global entity selector.
 
 ## Write access based on permission levels
 
-* At the environment level, a user with **Change monitoring settings** permissions can create and update any SLO, including global SLOs without management zones specified. To manage group permissions, you can [create policies](../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
+* At the environment level, a user with **Change monitoring settings** permissions can create and update any SLO, including global SLOs without management zones specified. To manage group permissions, you can create policies.
 
   **Example policy:** `ALLOW settings:objects:read, settings:schemas:read, settings:objects:write WHERE settings:schemaId = "builtin:monitoring.slo";`.
 * On a management-zone level, a user with **Change monitoring settings** permissions can create and update any SLO for the respective management zone, but can't create or update global SLOs.

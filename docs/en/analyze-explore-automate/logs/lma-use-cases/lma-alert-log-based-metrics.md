@@ -14,20 +14,20 @@ scraped: 2026-03-06T21:33:43.409363
 
 Ingested logs can be triggers for opening new Davis problems.
 
-Using a combination of metrics based on logs and [custom alerts](../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app."), you can use the power of different Dynatrace Intelligence data analyzers to address use cases from simple threshold-based alerting to seasonal baselines, for example:
+Using a combination of metrics based on logs and custom alerts, you can use the power of different Dynatrace Intelligence data analyzers to address use cases from simple threshold-based alerting to seasonal baselines, for example:
 
 * Alert when the average count of matching records exceeds a specific number within a defined time period.
 * Alert when the value of a metric is abnormal, without setting a static threshold.
 
 Follow this guide to learn more about alerting with metrics based on logs.
 
-If you don't need to set thresholds, you should follow the instructions in [Set up alerts based on events extracted from logs](lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.").
+If you don't need to set thresholds, you should follow the instructions in Set up alerts based on events extracted from logs.
 
 ## Prerequisites
 
-* You have set up [log ingestion](../lma-log-ingestion.md "Stream log data to Dynatrace.").
+* You have set up log ingestion.
 * You are using OpenPipeline.
-* You have the necessary permissions to configure the custom alert, within [Anomaly Detection app](../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.").
+* You have the necessary permissions to configure the custom alert, within Anomaly Detection app.
 
 ## Steps
 
@@ -61,7 +61,7 @@ Add metric extraction configuration in OpenPipeline.
 5. Set
 
    * The metric name and ID.
-   * The [DQL matcher](../../../platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.").
+   * The DQL matcher.
      A matcher sets the condition for the event that is to be extracted.
      It is a subset of filtering conditions in a single DQL statement.
 
@@ -74,7 +74,7 @@ Add metric extraction configuration in OpenPipeline.
 If you use Segments or your permissions are set at the record level, you should include those conditions in the matcher.
 
 There are situations when a matcher can't be easily extracted from a DQL statement.
-In these cases, you can [create log alerts for a log event or summary of log data](../../../dynatrace-intelligence/use-cases/create-alert-in-logs.md "Create log alerts for a specific log event or summary of log data").
+In these cases, you can create log alerts for a log event or summary of log data.
 
 3. Add dimensions.
    For most logs, you can add automated correlation to entities in Dynatrace Intelligence root cause analysis.
@@ -111,11 +111,11 @@ Here's when to use a custom alert with metrics based on logs:
 * Metric analyzers are triggered every minute so itâs not a real-time alerting method.
 * Metric dimensions have low cardinality.
 
-Detected anomalies can trigger automations using simple workflows as described in [Create a simple workflow in Dynatrace Workflows](../../workflows/simple-workflow.md "Build and run a simple workflow.").
+Detected anomalies can trigger automations using simple workflows as described in Create a simple workflow in Dynatrace Workflows.
 
 ## Related topics
 
-* [Set up alerts based on events extracted from logs](lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.")
-* [Log metrics (Logs Classic)](../../log-monitoring/analyze-log-data/log-metrics.md "Learn how to create and use Dynatrace log metrics to analyze log data.")
-* [Log events (Logs Classic)](../../log-monitoring/analyze-log-data/log-events.md "Learn how to create and use Dynatrace log events to analyze log data.")
-* [Alerting and notifications](../../alerting-and-notifications.md "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
+* Set up alerts based on events extracted from logs
+* Log metrics (Logs Classic)
+* Log events (Logs Classic)
+* Alerting and notifications

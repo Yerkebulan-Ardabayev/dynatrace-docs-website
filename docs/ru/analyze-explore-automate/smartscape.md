@@ -52,7 +52,7 @@ storage:entities:read
 
 ## Начало работы
 
-![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** -- это интерактивная карта вашей цифровой экосистемы, работающая на основе [**Smartscape on Grail**](../platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL."). Используйте её для визуального анализа топологии и взаимосвязей между всеми вашими сущностями в реальном времени с помощью настраиваемых представлений и модальных окон ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**.
+![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** -- это интерактивная карта вашей цифровой экосистемы, работающая на основе **Smartscape on Grail**. Используйте её для визуального анализа топологии и взаимосвязей между всеми вашими сущностями в реальном времени с помощью настраиваемых представлений и модальных окон ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**.
 
 ![Получите полную картину с представлением всех ваших цифровых систем в реальном времени.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/197/media/ScreenShot_Hub_-_Image_1.png)![Мгновенная аналитика по предметным областям без необходимости настройки.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/114/media/Smartscape_Hub_-_Image_2.png)![Обнаруживайте скрытые закономерности с помощью многомерной визуальной аналитики.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/114/media/Smartscape_Hub_-_Image_3.png)![Оценивайте и визуализируйте влияние и зону поражения проблем.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/114/media/Smartscape_Hub_-_Image_4.png)
 
@@ -60,7 +60,7 @@ storage:entities:read
 
 ## Концепции
 
-Ознакомьтесь со следующими темами, чтобы лучше понять [концепции Smartscape](smartscape/smartscape-concepts.md "Learn about Smartscape-specific concepts and UI capabilities.") и возможности ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**.
+Ознакомьтесь со следующими темами, чтобы лучше понять концепции Smartscape и возможности ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**.
 
 [01Концепции Smartscape
 

@@ -139,15 +139,15 @@ settings:objects:write
 
 Пройдите следующие процессы, чтобы научиться использовать ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow**:
 
-[01 Настройка Business Flow
+01 Настройка Business Flow
 
-* Следуйте инструкциям по успешной настройке Business Flow.](business-flow/set-up-business-flow.md)[02 Подробности Business Flow
-
-* Объяснение
-* Изучите подробности Business Flow.](business-flow/business-flow-details.md)[03 KPI Business Flow
+* Следуйте инструкциям по успешной настройке Business Flow.02 Подробности Business Flow
 
 * Объяснение
-* Узнайте, как ключевые показатели эффективности могут помочь вам отслеживать производительность и выявлять возможности для улучшения в приложении Business Flow.](business-flow/reported-kpis.md)
+* Изучите подробности Business Flow.03 KPI Business Flow
+
+* Объяснение
+* Узнайте, как ключевые показатели эффективности могут помочь вам отслеживать производительность и выявлять возможности для улучшения в приложении Business Flow.
 
 ## Возможности
 
@@ -171,7 +171,7 @@ settings:objects:write
 
   Безлимитный режим конфигурации можно отключить в режиме редактирования.
 
-  См. [лучшие практики DQL](../../platform/grail/dynatrace-query-language/dql-best-practices.md "Лучшие практики использования Dynatrace Query Language."), чтобы узнать больше о лимитах данных.
+  См. лучшие практики DQL, чтобы узнать больше о лимитах данных.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

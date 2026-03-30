@@ -61,11 +61,11 @@ Available on request. Talk to your Dynatrace sales contact.
 
 Available on request. Talk to your Dynatrace sales contact.
 
-Also see [Data retention periods](../data-privacy/data-retention-periods.md "Check retention times for various data types.").
+Also see Data retention periods.
 
 ## Dynatrace components
 
-[Dynatrace OneAgent](../../../platform/oneagent.md "Learn the monitoring capabilities of OneAgent.") collects all monitoring data within your monitored environment. Optionally, all data collected by OneAgent can be routed through a [Dynatrace ActiveGate](../../../ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate."), which works as a proxy between Dynatrace OneAgent and the Dynatrace Cluster. In the absence of an ActiveGate, data collected by OneAgent is sent directly to the Dynatrace Cluster.
+Dynatrace OneAgent collects all monitoring data within your monitored environment. Optionally, all data collected by OneAgent can be routed through a Dynatrace ActiveGate, which works as a proxy between Dynatrace OneAgent and the Dynatrace Cluster. In the absence of an ActiveGate, data collected by OneAgent is sent directly to the Dynatrace Cluster.
 
 ![saas-dynatrace-components](https://dt-cdn.net/images/saas-dynatrace-components-2690-a37591adb1.png)
 
@@ -73,7 +73,7 @@ Also see [Data retention periods](../data-privacy/data-retention-periods.md "Che
 
 Dynatrace SaaS uses a multi-tenant, high-availability architecture. Dynatrace allocates a tenant, a so-called Dynatrace environment, to each customer. Customers can also manage multiple environments within the Dynatrace account management system. Each environment gets its own individual domain.
 
-With the latest Dynatrace, all Dynatrace platform data at rest, including data from Grail, AppEngine, and AutomationEngine, is stored in a separate, dedicated storage space. One single Dynatrace SaaS environment hosted on AWS uses a dedicated AWS S3 bucket as storage space. Environments hosted on Azure use dedicated Azure storage accounts. Other data, such as [Dynatrace Credential vault data](../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault.") or [Dynatrace account data](../../account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health."), is stored in databases using logical data separation.
+With the latest Dynatrace, all Dynatrace platform data at rest, including data from Grail, AppEngine, and AutomationEngine, is stored in a separate, dedicated storage space. One single Dynatrace SaaS environment hosted on AWS uses a dedicated AWS S3 bucket as storage space. Environments hosted on Azure use dedicated Azure storage accounts. Other data, such as Dynatrace Credential vault data or Dynatrace account data, is stored in databases using logical data separation.
 
 The application layer, in which the data is processed before it is stored at rest, is hosted on a highly scalable shared cloud infrastructure.
 
@@ -99,7 +99,7 @@ Dynatrace SaaS supports TLS 1.2 and TLS 1.3 (SSL Labs Grade A+).
 
 ## User authentication
 
-You can manage your users by setting up [user groups and permissions](../../identity-access-management/permission-management/role-based-permissions.md "Role-based permissions") and [SAML](../../identity-access-management/user-and-group-management/access-saml.md "SAML").
+You can manage your users by setting up user groups and permissions and SAML.
 
 ![dynatrace-data-security-user-authentication](https://dt-cdn.net/images/dynatrace-data-security-user-authentication-2690-9a645c42f8.png)
 
@@ -141,13 +141,13 @@ New features are delivered every two weeks. Updates of Dynatrace ActiveGates and
 
 ## Audit logs
 
-Dynatrace logs security-relevant events such as configuration changes and access to the environment. You can view these audit logs in [Dynatrace](../configuration/audit-logs-api.md "Learn how to manage audit logs using an API.") or download them for further use via the [GET audit log](../../../dynatrace-api/environment-api/audit-logs/get-log.md "View full audit log via Dynatrace API.") API call.
+Dynatrace logs security-relevant events such as configuration changes and access to the environment. You can view these audit logs in Dynatrace or download them for further use via the GET audit log API call.
 
 ![dynatrace-data-security-audit-logs](https://dt-cdn.net/images/dynatrace-data-security-audit-logs-2635-7349637e51.png)
 
 ## Data access for Dynatrace support
 
-Access to Dynatrace SaaS environments is role-based. Role changes require justification and approval by the Dynatrace ACE (Autonomous Cloud Enablement) team. Access is restricted to the Dynatrace corporate network and requires multi-factor authentication when accessed remotely. Every access and all changes are [audit logged](../configuration/audit-logs-api.md "Learn how to manage audit logs using an API.") and fully accessible.
+Access to Dynatrace SaaS environments is role-based. Role changes require justification and approval by the Dynatrace ACE (Autonomous Cloud Enablement) team. Access is restricted to the Dynatrace corporate network and requires multi-factor authentication when accessed remotely. Every access and all changes are audit logged and fully accessible.
 
 ![dynatrace-data-security-data-access-support](https://dt-cdn.net/images/dynatrace-data-security-data-access-support-2791-ebcc4e889e.png)
 
@@ -155,7 +155,7 @@ Access to Dynatrace SaaS environments is role-based. Role changes require justif
 
 Dynatrace can detect and prevent the leakage of Dynatrace secrets in source code repositories on GitHub. These secrets may include platform or API tokens that were inadvertently pushed to a source code repository. If a secret leak is detected, we will reach out to you and aid with remediation measures.
 
-For details on reporting a security issue, see [Report a security-related concern](report-a-security-related-concern.md "Find out how to report vulnerabilities and whom to contact in case of security concerns.").
+For details on reporting a security issue, see Report a security-related concern.
 
 ![dynatrace-data-security-secret-leak-prevention](https://dt-cdn.net/images/dynatrace-data-security-secret-leak-prevention-2575-f100e468bf.png)
 
@@ -173,8 +173,8 @@ For the full list of certifications, see [Trust Centerï»¿](https://www.dynatr
 
 Dynatrace SaaS is protected using [Dynatrace Application Securityï»¿](https://www.dynatrace.com/platform/application-security/).
 
-Malicious activity is blocked using Dynatrace's [Runtime Application Protection](../../../secure/application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.") feature.
+Malicious activity is blocked using Dynatrace's Runtime Application Protection feature.
 
-Third party and code level vulnerabilities are [detected in real time and automatically reported](../../../secure/application-security/vulnerability-analytics.md "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") to the Dynatrace Security team.
+Third party and code level vulnerabilities are detected in real time and automatically reported to the Dynatrace Security team.
 
 ![Data security Dynatrace protection](https://dt-cdn.net/images/data-security-dynatrace-protection-1915-5d93f4245d.png)

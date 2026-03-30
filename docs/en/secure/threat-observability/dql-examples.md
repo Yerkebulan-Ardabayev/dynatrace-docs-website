@@ -11,9 +11,9 @@ scraped: 2026-03-06T21:20:31.345755
 * How-to guide
 * Updated on Oct 22, 2025
 
-This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the Grail security table migration guide.
 
-The examples below illustrate how to slice and dice [security data](concepts.md#security-data "Basic concepts related to Threat Observability") and build powerful and flexible security reports with [Dynatrace Query Language (DQL)](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.").
+The examples below illustrate how to slice and dice [security data](concepts.md#security-data "Basic concepts related to Threat Observability") and build powerful and flexible security reports with Dynatrace Query Language (DQL).
 
 ## Query Dynatrace events
 

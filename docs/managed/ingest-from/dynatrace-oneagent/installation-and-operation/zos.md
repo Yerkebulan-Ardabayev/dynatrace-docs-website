@@ -22,7 +22,7 @@ All monitored LPARs, regions, and applications are contributing to this fault do
 
 Who is calling the mainframe and how often?
 
-Backtrace transactions using the [Service backtrace](/managed/observe/application-observability/services-classic/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.") to understand your mainframe workloads and benefit from potential IBM discounts (see for example the IBM [mobile](https://www.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/877/ENUSZP14-0280/index.html&lang=en&request_locale=en) and [public cloud](https://www.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=897/ENUS216-319&infotype=AN&subtype=CA) workload discounts to lower your monthly peak rolling 4-hour average MSU value).
+Backtrace transactions using the Service backtrace to understand your mainframe workloads and benefit from potential IBM discounts (see for example the IBM [mobile](https://www.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/877/ENUSZP14-0280/index.html&lang=en&request_locale=en) and [public cloud](https://www.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=897/ENUS216-319&infotype=AN&subtype=CA) workload discounts to lower your monthly peak rolling 4-hour average MSU value).
 
 The Service backtrace below shows how a CICS transaction interactions with both a mobile application and a web application. You can clearly see how often these applications call the CICS transaction, and also which of their requests failed.
 
@@ -30,11 +30,11 @@ The Service backtrace below shows how a CICS transaction interactions with both 
 
 What transactions are expensive or slow?
 
-Analyze the performance of your transactions using via the [service flow](/managed/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") to verify if they fulfill the defined SLOs with service-level metrics. The request count for example can indicate when a transaction is called too often from an open-system, which could result in additional costs.
+Analyze the performance of your transactions using via the service flow to verify if they fulfill the defined SLOs with service-level metrics. The request count for example can indicate when a transaction is called too often from an open-system, which could result in additional costs.
 
 ![z/OS use case](https://dt-cdn.net/images/zos-usecase-1-2558-21736786aa.png)
 
-Use the [PurePath distributed traces](/managed/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") code-level insights to optimize your programs.
+Use the PurePath distributed traces code-level insights to optimize your programs.
 
 ![z/OS use case](https://dt-cdn.net/images/zos-usecase-6-2072-233541ed1b.png)
 
@@ -48,7 +48,7 @@ See the end-to-end trace from z/OS Connect EE down to an IMS DL/I database below
 
 ## Set up monitoring
 
-Dynatrace provides code modules for CICS, IMS, and z/OS Java technologies so that you can achieve seamless observability with trace and metric insights. To learn more about the supported technologies, see [Mainframe technology support](/managed/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.").
+Dynatrace provides code modules for CICS, IMS, and z/OS Java technologies so that you can achieve seamless observability with trace and metric insights. To learn more about the supported technologies, see Mainframe technology support.
 
 ![z/OS monitoring architecture](https://dt-cdn.net/images/zos-architecture-1745-8d165d1510.png)
 
@@ -58,25 +58,25 @@ The zLocal, hosted in the z/OS [Unix System Services](https://www.ibm.com/docs/e
 
 The zRemote module processes monitoring data received from the zLocal and routes that data, compressed and encrypted, via its local ActiveGate to Dynatrace. Hence, the zRemote module offloads much of the processing work from the modules incurred in instrumenting subsystems and applications to an open system.
 
-To get started, see [z/OS installation overview](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation "Installation overview of Dynatrace z/OS modules.").
+To get started, see z/OS installation overview.
 
 ## Licensing
 
 Monitoring of the CICS, IMS, and z/OS Java modules are consumed based on million service units (MSUs).
 
-Dynatrace Platform Subscription, see [Mainframe Monitoring](/managed/license/capabilities/app-infra-observability/mainframe "Learn how your consumption of the Dynatrace Mainframe Monitoring DPS capability is billed and charged.").
+Dynatrace Platform Subscription, see Mainframe Monitoring.
 
-Dynatrace classic licensing, see [Mainframe Monitoring on IBM z/OS](/managed/license/monitoring-consumption-classic/application-and-infrastructure-monitoring#mainframe-msu "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
+Dynatrace classic licensing, see Mainframe Monitoring on IBM z/OS.
 
 ## FAQ
 
 Who needs to be involved in a typical Dynatrace for z/OS installation?
 
-To find the procedure and the people involved people, see [z/OS installation overview](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation "Installation overview of Dynatrace z/OS modules.").
+To find the procedure and the people involved people, see z/OS installation overview.
 
 Can I use host groups to organize multiple LPARs?
 
-Yes, you can organize multiple LPARs using host groups. For more information, see [Define host groups to organize multiple LPARs](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote#host-groups "Customize the zRemote module for your needs.").
+Yes, you can organize multiple LPARs using host groups. For more information, see Define host groups to organize multiple LPARs.
 
 What does a volatile service mean and how can I solve related problems?
 
@@ -146,23 +146,23 @@ Can I merge process groups created by the z/OS Java module into a single process
 
 No, process groups created by the z/OS Java module can't be modified or merged.
 
-As an alternative you can organize your process groups by [defining metadata](/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") or [defining tags](/managed/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.") based on environmental variables. Both concepts apply to z/OS Java as well. Note that you can define environment variables only on the process level, not on the host level.
+As an alternative you can organize your process groups by defining metadata or defining tags based on environmental variables. Both concepts apply to z/OS Java as well. Note that you can define environment variables only on the process level, not on the host level.
 
 Can I tag processes created by the z/OS Java module?
 
-Yes. You can tag processes created by the z/OS Java module by [defining metadata](/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") or [defining tags](/managed/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.") based on environmental variables. Note that you can define environment variables only on the process level, not on the host level.
+Yes. You can tag processes created by the z/OS Java module by defining metadata or defining tags based on environmental variables. Note that you can define environment variables only on the process level, not on the host level.
 
 Can I define custom services using the z/OS Java module?
 
-The z/OS Java module does not support custom services purely via configuration. Instead, you can create custom traces using the z/OS Java module's [OpenTelemetry interoperability](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-opentelemetry "Use OpenTelemetry to close observability gaps in your Java applications on z/OS.").
+The z/OS Java module does not support custom services purely via configuration. Instead, you can create custom traces using the z/OS Java module's OpenTelemetry interoperability.
 
 Can I use span attributes captured by the z/OS Java module as a request attribute?
 
-Yes. To learn how to set up a request attribute for any captured span attribute, see [Define a request attribute for span attributes](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-opentelemetry#request-attribute "Use OpenTelemetry to close observability gaps in your Java applications on z/OS.").
+Yes. To learn how to set up a request attribute for any captured span attribute, see Define a request attribute for span attributes.
 
 ## Linux on Z
 
-With Dynatrace, you can get [Full-Stack Monitoring with Host monitoring (DPS)](/managed/license/capabilities/app-infra-observability/full-stack-monitoring "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") for Linux on Z using [OneAgent on Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more."). To learn more about the supported technologies on the s390 architecture, see [Technology support](/managed/ingest-from/technology-support#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+With Dynatrace, you can get Full-Stack Monitoring with Host monitoring (DPS) for Linux on Z using OneAgent on Linux. To learn more about the supported technologies on the s390 architecture, see [Technology support](/managed/ingest-from/technology-support#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ## Related topics
 

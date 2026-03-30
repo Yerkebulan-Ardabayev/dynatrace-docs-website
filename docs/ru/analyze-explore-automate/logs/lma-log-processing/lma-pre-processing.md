@@ -45,4 +45,4 @@ Dynatrace SaaS версия 1.330+
 
 ## Связанные темы
 
-* [Обработка логов с помощью OpenPipeline](lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.")
+* Обработка логов с помощью OpenPipeline

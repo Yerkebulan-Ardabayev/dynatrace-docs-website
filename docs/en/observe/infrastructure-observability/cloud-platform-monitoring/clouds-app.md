@@ -22,7 +22,7 @@ The centerpiece of this experience is ![Clouds](https://dt-cdn.net/images/clouds
 * Leverage your (existing) cloud tags to route notifications, define ownership, or allocate costs.
 * Take advantage of ready-made dashboards to save time and get instant insights.
 
-The underlying observability data is all powered by [Grail](../../../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), which supports flexible analytics through the [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, and ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
+The underlying observability data is all powered by Grail, which supports flexible analytics through the Dynatrace Query Language in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, and ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
 
 ![Get a comprehensive view of your multi-cloud environments and see your full cloud inventory](https://cdn.hub.central.dynatrace.com/hub/console/drafts/170/media/clouds-app-overview-aws-and-azure.png)![Details of problems associated with selected cloud resources are easy to analyze](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/8822a738-a2bf-4d75-bdfa-beabbb150a0e.png)![See full configuration details of cloud services](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/b96f7374-5a8e-4c7a-b256-d79f469803a4.png)![Get started immediately with ready-made dashboards. Customize them according to your needs.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/170/media/08-ready-made-dashboard-aws-lambda.png)![Use ready-made health alerts and warning signals and custom alert templates to assess health of your cloud services.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/d7350ea9-6129-4818-8798-27514232ca8f.png)![Easily and seamlessly set up a new AWS connection. New Cloud Connections simplifies the onboarding experience for customers.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/170/media/06-clouds-app-new-aws-connection_2.png)![You can still use Explorer Classic for classic cloud connections](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/f743e7e6-ec1d-488c-b0ae-5d5a3a8c98e5.png)
 
@@ -39,14 +39,14 @@ New cloud connections (AWS, Azure)
 Classic cloud connections (AWS, Azure, GCP)
 
 * Dynatrace SaaS environment powered by Grail and AppEngine hosted in any AWS region or an eligible Azure region
-* [DPS license](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") is required with the following capabilities:
+* DPS license, the licensing model for all Dynatrace capabilities.") is required with the following capabilities:
 
-  + [Metrics powered by Grail](../../../license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
-  + [Logs powered by Grail](../../../license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.")
-  + [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+  + Metrics powered by Grail
+  + Logs powered by Grail
+  + Events powered by Grail
 
 * Dynatrace SaaS environment powered by Grail and AppEngine
-* Available for [DPS license](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") and [classic licensing](../../../license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
+* Available for DPS license, the licensing model for all Dynatrace capabilities.") and classic licensing.
 
 See [concepts](#concepts) for the comparison between classic and new cloud connections.
 
@@ -139,7 +139,7 @@ Use the **Explorer New** tab to analyze your AWS cloud services and environments
 * In the sidebar on the left, you can select a specific service category (such as  **Containers** or  **Functions**) or analyze all services. In addition, you can quickly filter by predefined attributes that are relevant for the selected category. Select any attribute in the facets sidebar and select **Update** to get results. The filter field is updated with your selection.
 * Alternatively, select the filter field at the top to view suggestions and enter filtering options. Add more statements to narrow down the results. Criteria of the same type are grouped by `OR` logic. Criteria of different types are grouped by `AND` logic. You can filter services using tags, alert status, and attributes like name or region. This helps you focus on specific subsets of services based on your criteria.
 
-  For more details on the filter field syntax, see [Filter field](../../../discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
+  For more details on the filter field syntax, see Filter field.
 * You can explore data in the table using the available perspectives:
 
   + **Health**
@@ -167,7 +167,7 @@ Health alerts and warning signals are provided and maintained out of the box by 
 
   Health alerts and warning signals are both surfaced in ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 
-You can easily adopt ready-made health alerts and warning signals for your AWS accounts either upon your [AWS connection onboarding](../../../ingest-from/amazon-web-services/create-an-aws-connection/aws-connection-app-settings.md "Onboard your AWS environments and create AWS connections via the Settings app.") or in ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**.
+You can easily adopt ready-made health alerts and warning signals for your AWS accounts either upon your AWS connection onboarding or in ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**.
 
 If you want to create new or update ready-made health alerts and warning signals, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Analyze and alert** > **Alerts** > **Cloud services**, where you can create, update, and enable/disable alerts for your connections.
 
@@ -190,7 +190,7 @@ If you want to create new or update ready-made health alerts and warning signals
 
 Dynatrace provides predefined alert templates to allow for additional custom alerts on popular cloud services. These alert templates are complementary to ready-made health alerts and warning signals.
 
-You can easily create new [custom alerts](../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") directly in ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** by selecting a template and  **New Alert**.
+You can easily create new custom alerts directly in ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** by selecting a template and  **New Alert**.
 
 Next, you can either customize the alert in the Anomaly Detection wizard or create the alert with one click.
 
@@ -251,7 +251,7 @@ In the **Health** perspective, you can see each cloud service's health and custo
 
 * This mode highlights the most relevant metrics associated with the alert and narrows down the timeframe to the start and end times of the selected problem.
 * Additionally, it offers quick access to the underlying problem, allowing you to efficiently diagnose and resolve issues.
-* You can use [Dynatrace Intelligence agentic and generative AI](../../../dynatrace-intelligence/copilot.md "Learn about Dynatrace Intelligence agentic and generative AI.") to get additional insights about the problem and potential remediation steps.
+* You can use Dynatrace Intelligence agentic and generative AI to get additional insights about the problem and potential remediation steps.
 
 **Problem mode** is always active when you navigate from a specific problem in [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](../../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.") to ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 
@@ -265,7 +265,7 @@ The ready-made dashboards can be accessed through:
 
 * ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**
 
-  Open ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, select [Ready-made dashboards](../../../analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards.md "Use ready-made dashboards to visualize your data right out of the box.") in the left menu, and search for `aws`.
+  Open ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, select Ready-made dashboards in the left menu, and search for `aws`.
 * ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**
 
   + Open ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** and select the **Overview New** tab. You can then either select one of the more popular dashboards directly (for example, AWS Lambda) or select **Browse all dashboards**.
@@ -275,9 +275,9 @@ The ready-made dashboards can be accessed through:
 
 ### Segments (New connections)
 
-[Segments](../../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") allow you to logically structure and conveniently filter observability data across apps on the Dynatrace platform. Segments are available within the new **Explorer New** tab and can be defined easily for new cloud connections, since all data (including [Smartscape nodes](../../../platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.")) is stored in Grail.
+Segments allow you to logically structure and conveniently filter observability data across apps on the Dynatrace platform. Segments are available within the new **Explorer New** tab and can be defined easily for new cloud connections, since all data (including Smartscape nodes) is stored in Grail.
 
-For a step-by-step guide on how to define segments for Smartscape nodes, see [Filter Smartscape nodes with segments](../../../manage/segments/getting-started/segments-getting-started-filter-smartscape-nodes.md "Learn how to filter Smartscape nodes by using segments in Dashboards."). You can use any primary Grail field (and, in the future, also tags) to conveniently define simple segments across **All data**:
+For a step-by-step guide on how to define segments for Smartscape nodes, see Filter Smartscape nodes with segments. You can use any primary Grail field (and, in the future, also tags) to conveniently define simple segments across **All data**:
 
 * [Primary Grail fields](../../../platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.") (for example, `aws.account.id`, `aws.region`)
 * Primary Grail tags (future)

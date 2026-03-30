@@ -37,7 +37,7 @@ Variable values can be configured dynamically or statically. The following examp
 
 ![segments variable configuration](https://dt-cdn.net/images/segments-11-2142-785fbf7a08.png)
 
-A similar result can be achieved by using DQL's [data command](../../../platform/grail/dynatrace-query-language/commands/data-source-commands.md#data "DQL data source commands") to form a static list of values as shown below.
+A similar result can be achieved by using DQL's data command to form a static list of values as shown below.
 
 ```
 data

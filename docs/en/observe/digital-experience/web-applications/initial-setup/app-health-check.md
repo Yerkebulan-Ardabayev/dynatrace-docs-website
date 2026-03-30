@@ -57,4 +57,4 @@ When a diagnostics run is finished, the following information is available:
 
 Select **Show more** to view the injection failure reasons and the top five URLs for each issue.
 
-You won't see the **RUM JavaScript injection diagnostics** section if your application is not an automatically injected applicationâspecifically, if you [manually inserted the RUM JavaScript](set-up-agentless-real-user-monitoring.md "Set up agentless monitoring for your web applications.") into your application's pages.
+You won't see the **RUM JavaScript injection diagnostics** section if your application is not an automatically injected applicationâspecifically, if you manually inserted the RUM JavaScript into your application's pages.

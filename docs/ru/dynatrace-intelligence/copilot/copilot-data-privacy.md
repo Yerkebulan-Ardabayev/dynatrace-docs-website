@@ -45,6 +45,6 @@ Dynatrace версии 1.305+
 
 ## Связанные темы
 
-* [Обзор агентного и генеративного ИИ Dynatrace Intelligence](copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
-* [Начало работы с агентным и генеративным ИИ Dynatrace Intelligence](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Часто задаваемые вопросы об агентном и генеративном ИИ Dynatrace Intelligence](../../../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
+* Обзор агентного и генеративного ИИ Dynatrace Intelligence
+* Начало работы с агентным и генеративным ИИ Dynatrace Intelligence
+* Часто задаваемые вопросы об агентном и генеративном ИИ Dynatrace Intelligence

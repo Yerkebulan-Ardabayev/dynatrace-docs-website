@@ -128,4 +128,4 @@ scraped: 2026-03-04T21:37:36.126300
 
 ## Связанные темы
 
-* [Мониторинг хостов с помощью Dynatrace](../../hosts/monitoring/host-monitoring.md "Monitor hosts with Dynatrace.")
+* Мониторинг хостов с помощью Dynatrace

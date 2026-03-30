@@ -26,7 +26,7 @@ To manually create a simple custom alert configuration
 2. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **New alert** > **Create your own custom alert** to create a new alert. To edit an existing custom alert, select any custom alert from the list.
 3. On the **Simple** tab, expand **Set scope**.
 4. Optional In **Segments**, choose one or more segments you want to filter by.
-5. In **Query**, provide the [DQL query](../../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.") to fetch your data.
+5. In **Query**, provide the DQL query to fetch your data.
 
    We recommend that you use the `interval: 1m` parameter to ensure proper data resolution for the analysis.
 6. Expand **Define alert condition**.
@@ -62,7 +62,7 @@ With Dynatrace Intelligence for Notebooks, you can preview your custom alert con
 5. Optional Select , then select one or more segments you want to filter by.
 6. Select **Options** > **Analyze and alert**.
 7. Activate the analyzer.
-8. Select the required analyzer and configure it. For details, see [Anomaly detection configuration](../anomaly-detection-configuration.md "How to set up an alert for missing measurements.").
+8. Select the required analyzer and configure it. For details, see Anomaly detection configuration.
 9. Select **Run analysis**.
 10. Once you're satisfied with the result, select ![More actions](https://dt-cdn.net/images/dashboards-app-menu-kebab-c39eda426b.svg "More actions") > ![Open with](https://dt-cdn.net/images/open-with-003fc82dcd.svg "Open with") **Open with** and select **Anomaly Detection**.  
     This action takes you back to ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
@@ -74,7 +74,7 @@ With Dynatrace Intelligence for Notebooks, you can preview your custom alert con
 
 ## Transform a metric event configuration
 
-[Metric events](../metric-events.md "Learn about metric events in Dynatrace") enhance anomaly detection, expanding them beyond out-of-the-box use cases into metric-based events. With the power of DQL, you can extend this reach further.
+Metric events enhance anomaly detection, expanding them beyond out-of-the-box use cases into metric-based events. With the power of DQL, you can extend this reach further.
 
 To convert a metric event to the custom alert configuration
 
@@ -93,8 +93,8 @@ To convert a metric event to the custom alert configuration
 
 ## Related topics
 
-* [Anomaly Detection app](../anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.")
-* [Configure an advanced custom alert](../../../../common/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-an-advanced-ad.md "Learn how to create and edit advanced custom alerts in the Anomaly Detection app")
-* [Anomaly Detection status types](anomaly-detection-status-types.md "An explanation of Anomaly Detection status types")
+* Anomaly Detection app
+* Configure an advanced custom alert
+* Anomaly Detection status types
 * [[Video] Elevating Security with Anomaly Detectionï»¿](https://www.youtube.com/watch?v=WDZUus-VxCE)
 * [[Video] Anomaly Detection and Data Observabilityï»¿](https://www.youtube.com/watch?v=HPQi63mQg3w)

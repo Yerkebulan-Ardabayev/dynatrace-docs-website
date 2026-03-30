@@ -20,7 +20,7 @@ scraped: 2026-03-06T21:34:50.006629
 * Вы должны включить агентный и генеративный ИИ Dynatrace Intelligence в вашей среде.
 * Вы должны назначить разрешения соответствующим пользователям или группам пользователей.
 
-Подробности см. в разделе [Начало работы с генеративным ИИ](../../../dynatrace-intelligence/copilot/copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+Подробности см. в разделе Начало работы с генеративным ИИ.
 
 Доступен ли агентный и генеративный ИИ Dynatrace Intelligence для SaaS и Managed?
 
@@ -34,19 +34,19 @@ scraped: 2026-03-06T21:34:50.006629
 
 Будет ли агентный и генеративный ИИ Dynatrace Intelligence лицензироваться?
 
-Нет. С нашей текущей функциональностью генеративного ИИ не связано лицензирование. Однако, несмотря на то что агентный и генеративный ИИ Dynatrace Intelligence не тарифицируется, все запросы, выполняемые генеративным ИИ, подлежат потреблению лицензии в соответствии с вашим существующим лицензионным соглашением. Если вас беспокоит стоимость автоматического выполнения сгенерированных запросов, вы можете выбрать генерацию только DQL без его выполнения. Подробнее см. в разделе [Запросы на естественном языке](../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries").
+Нет. С нашей текущей функциональностью генеративного ИИ не связано лицензирование. Однако, несмотря на то что агентный и генеративный ИИ Dynatrace Intelligence не тарифицируется, все запросы, выполняемые генеративным ИИ, подлежат потреблению лицензии в соответствии с вашим существующим лицензионным соглашением. Если вас беспокоит стоимость автоматического выполнения сгенерированных запросов, вы можете выбрать генерацию только DQL без его выполнения. Подробнее см. в разделе Запросы на естественном языке.
 
 Как агентный и генеративный ИИ Dynatrace Intelligence повлияет на потребление моей лицензии?
 
-Сам по себе агентный и генеративный ИИ Dynatrace Intelligence не влияет на потребление вашей лицензии. Однако все запросы, выполняемые генеративным ИИ, подлежат потреблению лицензии в соответствии с вашим существующим лицензионным соглашением. Подробнее см. в разделе [Будет ли агентный и генеративный ИИ Dynatrace Intelligence лицензироваться?](../../../../common/dynatrace-intelligence/copilot/copilot-faq.md#davis-copilot-license "Learn about frequently asked questions and find your answers.").
+Сам по себе агентный и генеративный ИИ Dynatrace Intelligence не влияет на потребление вашей лицензии. Однако все запросы, выполняемые генеративным ИИ, подлежат потреблению лицензии в соответствии с вашим существующим лицензионным соглашением. Подробнее см. в разделе Будет ли агентный и генеративный ИИ Dynatrace Intelligence лицензироваться?.
 
 ## Агентный и генеративный ИИ Dynatrace Intelligence и данные клиентов
 
 Используются ли мои данные для обучения генеративного ИИ Dynatrace Intelligence?
 
-Нет. Данные клиентов и запросы клиентов не используются для обучения. Генеративный ИИ Dynatrace Intelligence основан на подходе [генерации с дополнением извлечением](../../../dynatrace-intelligence/copilot/copilot-overview.md#copilot-what-to-expect "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.") (RAG), что означает, что данные и дополнительный контекст используются только для обогащения запросов. Модель на этом не обучается. Данные клиентов не используются для автоматической тонкой настройки, обучения или улучшения каких-либо моделей или сервисов ни со стороны Dynatrace, ни со стороны корпоративных поставщиков, размещающих LLM.
+Нет. Данные клиентов и запросы клиентов не используются для обучения. Генеративный ИИ Dynatrace Intelligence основан на подходе генерации с дополнением извлечением (RAG), что означает, что данные и дополнительный контекст используются только для обогащения запросов. Модель на этом не обучается. Данные клиентов не используются для автоматической тонкой настройки, обучения или улучшения каких-либо моделей или сервисов ни со стороны Dynatrace, ни со стороны корпоративных поставщиков, размещающих LLM.
 
-Агентный **Dynatrace Assist** передает некоторую дополнительную информацию, такую как результаты вызовов инструментов, корпоративным поставщикам, размещающим LLM, на которых основан агентный и генеративный ИИ Dynatrace. Подробнее о третьих сторонах см. в разделе [Используются ли мои данные для обучения генеративного ИИ Dynatrace Intelligence?](../../../../common/dynatrace-intelligence/copilot/copilot-faq.md#copilot-training-on-data "Learn about frequently asked questions and find your answers.").
+Агентный **Dynatrace Assist** передает некоторую дополнительную информацию, такую как результаты вызовов инструментов, корпоративным поставщикам, размещающим LLM, на которых основан агентный и генеративный ИИ Dynatrace. Подробнее о третьих сторонах см. в разделе Используются ли мои данные для обучения генеративного ИИ Dynatrace Intelligence?.
 
 Используются ли мои данные для обучения модели агентного и генеративного ИИ Dynatrace Intelligence для других клиентов?
 
@@ -73,7 +73,7 @@ scraped: 2026-03-06T21:34:50.006629
 
 Как я могу оставить отзыв?
 
-Вы можете оставить отзыв непосредственно в приложениях Notebooks или Dashboards. Чтобы узнать, как оставить отзыв через Dashboards и Notebooks, см. [Запросы на естественном языке](../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries").
+Вы можете оставить отзыв непосредственно в приложениях Notebooks или Dashboards. Чтобы узнать, как оставить отзыв через Dashboards и Notebooks, см. Запросы на естественном языке.
 
 Может ли агентный и генеративный ИИ Dynatrace Intelligence обрабатывать вопросы на иностранных языках?
 
@@ -98,9 +98,9 @@ scraped: 2026-03-06T21:34:50.006629
 
 ## Связанные темы
 
-* [Обзор агентного и генеративного ИИ Dynatrace Intelligence](../../../dynatrace-intelligence/copilot/copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
-* [Начало работы с агентным и генеративным ИИ Dynatrace Intelligence](../../../dynatrace-intelligence/copilot/copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Запросы на естественном языке](../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
-* [Агентный и генеративный ИИ Dynatrace Intelligence -- советы по написанию лучших запросов](../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips.md "Learn best practices for writing more accurate prompts.")
-* [Примеры быстрого анализа с генеративным ИИ](../../../dynatrace-intelligence/use-cases/copilot-examples.md "Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.")
-* [Конфиденциальность и безопасность данных агентного и генеративного ИИ Dynatrace Intelligence](../../../dynatrace-intelligence/copilot/copilot-data-privacy.md "Learn about Dynatrace Intelligence agentic and generative AI data privacy and security policy.")
+* Обзор агентного и генеративного ИИ Dynatrace Intelligence
+* Начало работы с агентным и генеративным ИИ Dynatrace Intelligence
+* Запросы на естественном языке
+* Агентный и генеративный ИИ Dynatrace Intelligence -- советы по написанию лучших запросов
+* Примеры быстрого анализа с генеративным ИИ
+* Конфиденциальность и безопасность данных агентного и генеративного ИИ Dynatrace Intelligence

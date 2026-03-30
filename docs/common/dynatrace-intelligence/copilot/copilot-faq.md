@@ -22,7 +22,7 @@ What are the prerequisites for using Dynatrace Intelligence generative AI?
 * You must enable Dynatrace Intelligence generative AI on your environment.
 * You must assign permission to the relevant users or user groups.
 
-For details, see [Getting started with generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence generative AI.").
+For details, see Getting started with generative AI.
 
 Is Dynatrace Intelligence generative AI available on SaaS and Managed?
 
@@ -36,7 +36,7 @@ No. Dynatrace Intelligence generative AI is available on any SaaS environment ru
 
 Will Dynatrace Intelligence generative AI be licensed?
 
-No. There is no licensing associated with our current generative AI functionality. However, even though Dynatrace Intelligence generative AI is not charged for, all queries that are executed by generative AI are subject to licensing consumption according to your existing licensing agreement. If you are concerned about the cost of auto-executing generated queries, you can choose to generate DQL only, without executing it. For more information, see [Query with natural language](quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries").
+No. There is no licensing associated with our current generative AI functionality. However, even though Dynatrace Intelligence generative AI is not charged for, all queries that are executed by generative AI are subject to licensing consumption according to your existing licensing agreement. If you are concerned about the cost of auto-executing generated queries, you can choose to generate DQL only, without executing it. For more information, see Query with natural language.
 
 How will Dynatrace Intelligence generative AI impact my license consumption?
 
@@ -73,7 +73,7 @@ The Dynatrace Intelligence generative AI functionality currently allows you to c
 
 How can I provide feedback?
 
-You can provide feedback directly in the Notebooks or Dashboards apps. To learn how to give feedback through Dashboards and Notebooks, see [Query with natural language](quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries").
+You can provide feedback directly in the Notebooks or Dashboards apps. To learn how to give feedback through Dashboards and Notebooks, see Query with natural language.
 
 Can Dynatrace Intelligence generative AI handle questions in foreign languages?
 
@@ -98,9 +98,9 @@ All interactions with Dynatrace Intelligence generative AI are logged in Grail a
 
 ## Related topics
 
-* [Dynatrace Intelligence generative AI overview](copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Get started with Dynatrace Intelligence generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence generative AI.")
-* [Query with natural language](quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
-* [Dynatrace Intelligence generative AI - Tips for writing better prompts](quick-analysis-copilot-dql/copilot-tips.md "Learn best practices for writing more accurate prompts.")
-* [Generative AI quick analysis examples](../use-cases/copilot-examples.md "Learn more about what kind of prompts work well in Dynatrace Intelligence generative AI.")
-* [Dynatrace Intelligence generative AI data privacy and security](copilot-data-privacy.md "Learn about Dynatrace Intelligence generative AI data privacy and security policy.")
+* Dynatrace Intelligence generative AI overview
+* Get started with Dynatrace Intelligence generative AI
+* Query with natural language
+* Dynatrace Intelligence generative AI - Tips for writing better prompts
+* Generative AI quick analysis examples
+* Dynatrace Intelligence generative AI data privacy and security

@@ -14,8 +14,8 @@ scraped: 2026-03-06T21:25:45.312965
 
 The metric selector is a powerful instrument for specifying which data you want to read for the metric event evaluation. It provides you with two major possibilities:
 
-* [Metric transformations](../../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.") for transforming the data you're reading.
-* [Metric expressions](../../../dynatrace-api/environment-api/metric-v2/metric-expressions.md "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.") for combining one or more metrics into a different result using simple mathematics.
+* Metric transformations for transforming the data you're reading.
+* Metric expressions for combining one or more metrics into a different result using simple mathematics.
 
 With the metric selector, Davis can access the historic data of the metric and can learn the normal behavior of your environment, enabling you to use auto-adaptive thresholds in your metric event. However, some limitations apply:
 
@@ -71,7 +71,7 @@ If there are sparse counts across many entities (for example, an error count acr
 
    * `{alert_condition}`âthe condition of the alert (above/below the threshold).
    * `{baseline}`âthe violated value of the baseline.
-   * `{dims}`âa list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the [GET metric descriptor](../../../dynatrace-api/environment-api/metric-v2/get-descriptor.md "View the descriptor of a metric via Metrics v2 API.") request.
+   * `{dims}`âa list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the GET metric descriptor request.
    * `{entityname}`âthe name of the affected entity.
    * `{metricname}`âthe name of the metric that violated the threshold.
    * `{missing_data_samples}`âthe number of samples with missing data. Only available if missing data alert is enabled.
@@ -89,6 +89,6 @@ If there are sparse counts across many entities (for example, an error count acr
 
 ## Related topics
 
-* [Metrics API - Metric selector](../../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.")
-* [Metrics API - Metric expressions](../../../dynatrace-api/environment-api/metric-v2/metric-expressions.md "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.")
-* [Metrics Classic](../../../analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")
+* Metrics API - Metric selector
+* Metrics API - Metric expressions
+* Metrics Classic

@@ -131,7 +131,7 @@ You can use any printable characters, including emojis such as ð and ð
 
 You can link to other places in your dashboard and elsewhere.
 
-A link in Markdown is a label and link of the form `[label](address)`, where:
+A link in Markdown is a label and link of the form `label`, where:
 
 * The `label` is freeform text to display on the link in your Markdown tile or section
 * The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
@@ -151,7 +151,7 @@ Here are some of the people who started [Dynatrace](https://www.dynatrace.com).
 
 ### Variables
 
-To reference a [variable](dashboard-component-variable.md "Add variables to your Dynatrace dashboards.") in an annotation, use the variable name prefixed by a `$` character. For example:
+To reference a variable in an annotation, use the variable name prefixed by a `$` character. For example:
 
 ```
 The status is $Status.
@@ -159,4 +159,4 @@ The status is $Status.
 
 If the dashboard has a variable named `Status` and the current value of `Status` is `Good`, the above example would appear in your tile as "The status is Good." and it would be updated when the value of `Status` changes.
 
-For details on variables, see [Add a variable to a dashboard](dashboard-component-variable.md "Add variables to your Dynatrace dashboards.").
+For details on variables, see Add a variable to a dashboard.

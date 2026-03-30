@@ -35,19 +35,19 @@ The latest Dynatrace is a combination of intertwined new features that provide i
 
 One of the major changes is the introduction of Grail as a new unified data lakehouse. Grail gives you significant improvements in data ingestion, retention, and analytics. Later on, you'll learn how to configure data retention and data access control on Grail.
 
-For more information, see [Grail](grail.md "Insights on what and how you can query Dynatrace data.").
+For more information, see Grail.
 
 ### Dynatrace Query Language
 
 Grail not only stores all the observability and security data but also enables access to that data with Dynatrace Query Language (DQL). Access to all data through the query language is new to Dynatrace and goes far beyond data access through APIs and UIs we have offered up to now.
 
-For more information, see [Dynatrace Query Language](grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+For more information, see Dynatrace Query Language
 
 ### Multiple ways to access and analyze data
 
 Together with the introduction of Grail, Dynatrace has also released a set of major improvements to user interfaces, APIs, and services.
 
-The introduction of the [Notebooks](../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), [Workflows](../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), and new [Dashboards](../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") enables you to access data in Grail in various ways. This ranges from consuming views sourced from Dynatrace or peers to constructing highly specialized views. Moreover, you can implement your own logic using [fully customized appsï»¿](https://developer.dynatrace.com/) running on the [AppEngine](appengine.md "Develop feature-rich Dynatrace apps for you and the world!"). Every conceivable operation on Dynatrace data becomes possible.
+The introduction of the Notebooks, Workflows, and new Dashboards enables you to access data in Grail in various ways. This ranges from consuming views sourced from Dynatrace or peers to constructing highly specialized views. Moreover, you can implement your own logic using [fully customized appsï»¿](https://developer.dynatrace.com/) running on the AppEngine. Every conceivable operation on Dynatrace data becomes possible.
 
 Before non-admin users can use the latest Dynatrace functionalities, however, a few administrative steps are needed to manage data access. These are explained below.
 
@@ -71,11 +71,11 @@ While management zones are a very versatile tool for setting up complex permissi
 
 Out-of-the-box permission-relevant fields can be used in most cases for access control. Additionally, we've added the `dt.security_context` field, which is reserved for environment-specific details. All Dynatrace components will ensure that these table-relevant permission fields are available on each record (event, log, span) or metric. This allows for a consistent permission concept for the entire environment.
 
-For more information, see [Identity and access management (IAM)](../../common/manage/identity-access-management.md "Configure users, groups and permissions.").
+For more information, see Identity and access management (IAM).
 
 ## Data in Grail
 
-The [Grail data model](grail/organize-data.md "Insights on the Grail data model consisting of buckets, tables, and views.") consists of Grail buckets, tables, and views.
+The Grail data model consists of Grail buckets, tables, and views.
 
 * Tables describe the observability data type.
 * Grail buckets are the storage containers, like a folder on a file system.
@@ -90,7 +90,7 @@ The ingestion of data to Grail starts with OneAgent or one of our ingest APIs:
 
 ### Access Grail-stored data via DQL
 
-Data stored in Grail can be accessed via [DQL](grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). The easiest way to take a first look at your data is by using [Notebooks](../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+Data stored in Grail can be accessed via DQL. The easiest way to take a first look at your data is by using Notebooks.
 
 #### Logs, Events, and Business Events
 
@@ -132,7 +132,7 @@ fetch dt.entity.host
 
 #### Metrics
 
-Many metrics are already [by default stored in Grail](../analyze-explore-automate/metrics/built-in-metrics-on-grail.md "Get to know the equivalents of the classic built-in metrics supported on Grail."). The list will grow every month. Metrics are retained for 15 months. You can access them easily via the notebook metric explorer or using the timeseries command as in the examples below:
+Many metrics are already by default stored in Grail. The list will grow every month. Metrics are retained for 15 months. You can access them easily via the notebook metric explorer or using the timeseries command as in the examples below:
 
 ```
 timeseries avg(dt.host.cpu.load)
@@ -238,7 +238,7 @@ For example, log files might contain the details in their content. In these case
 
 ![Security context](https://dt-cdn.net/images/log-security-context-2068-47060f9f12.webp)
 
-For more information, see [Set up Grail permissions for logs](../analyze-explore-automate/logs/lma-security-context.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.").
+For more information, see Set up Grail permissions for logs.
 
 #### Step 3 Control access details through custom details
 
@@ -290,7 +290,7 @@ Most of your log data might be needed for troubleshooting, and you don't want to
    ![Custom bucket](https://dt-cdn.net/images/image9-1300-4b50870c54.png)
 2. Send the data.
 
-   After the Grail bucket is created, it's time to bring data in. You need to create or adjust a [log bucket assignment rule](../analyze-explore-automate/logs/lma-bucket-assignment.md "Your log data can be stored in data retention buckets based on specific retention periods.") to store troubleshooting logs in that new bucket. You have two possibilities:
+   After the Grail bucket is created, it's time to bring data in. You need to create or adjust a log bucket assignment rule to store troubleshooting logs in that new bucket. You have two possibilities:
 
    * Send only specific logs to the new log bucket by adding bucket assignment rules.
    * Send all logs by default to the 14-day bucket and add assignment rules for other retentions.
@@ -376,13 +376,13 @@ After having organized monitoring data in Grail buckets and mastered the setup o
 
 Segments mirror management zones in some ways, in that they allow you to abstract complex filter conditions and perform lookups to the monitored entity model. Segments, however, are no longer precalculated attributes, but query-time filter conditions instead. This solves the performance bottleneck of management zones, making it possible to both ingest and analyze several orders of magnitude higher volumes of monitoring data in the latest Dynatrace.
 
-For more information, see [Segments](../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.").
+For more information, see Segments.
 
 ## FAQ
 
 When we store our data now in four buckets, how does this affect my users? Do they need to know the buckets?
 
-As described in the [Grail Data Model](grail/organize-data.md "Insights on the Grail data model consisting of buckets, tables, and views.") reference, buckets are assigned to tables. Because our four custom buckets with log data are assigned to the log table, you can access all data in this table via `fetch logs`. There is no need for a user to select a bucket (or, as in other products, an index). Developers will of course get only data from the buckets `log_sec_dev_analytics_1y`,`log_sec_dev_troubleshoot_14d`, and `default_logs`, and not from `log_sec_high_3y` because of our policy definitions.
+As described in the Grail Data Model reference, buckets are assigned to tables. Because our four custom buckets with log data are assigned to the log table, you can access all data in this table via `fetch logs`. There is no need for a user to select a bucket (or, as in other products, an index). Developers will of course get only data from the buckets `log_sec_dev_analytics_1y`,`log_sec_dev_troubleshoot_14d`, and `default_logs`, and not from `log_sec_high_3y` because of our policy definitions.
 
 Is there a value in filtering on a bucket, and how can it be done?
 
@@ -418,7 +418,7 @@ Data can't be moved between buckets. Keep this in mind if:
 
 To ensure that data ingestion from unit A does not affect the query costs or performance of unit B, set up dedicated buckets for each business unit.
 
-You should not use Grail buckets for data separation on dynamic dimensions, such as creating buckets for host groups or teams. You can filter the data on other [dimensions](grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.").
+You should not use Grail buckets for data separation on dynamic dimensions, such as creating buckets for host groups or teams. You can filter the data on other dimensions.
 
 If you need to restrict access within buckets, you can use record-level permissions.
 
@@ -428,7 +428,7 @@ Is there a way to restrict access within buckets or even tables?
 
 If you look back at our examples, we defined a policy that allows every developer to access logs stored in the default bucket and buckets starting with the naming pattern: `log_sec_dev`.
 
-Suppose a new external team will work for the next 18 months on a project and you only want to expose logs that are tagged with their team name: `extDev`. To do so, make sure that the `dt.security_context` is [set on their log](../analyze-explore-automate/logs/lma-security-context.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.") lines, and create an additional statement:
+Suppose a new external team will work for the next 18 months on a project and you only want to expose logs that are tagged with their team name: `extDev`. To do so, make sure that the `dt.security_context` is set on their log lines, and create an additional statement:
 
 ```
 ALLOW storage:buckets:read WHERE storage:bucket-name STARTSWITH "log_sec_dev";
@@ -443,7 +443,7 @@ ALLOW storage:logs:read;
 ALLOW storage:logs:read WHERE storage:dt.security_context=`"extDev";
 ```
 
-You can use [OneAgentCtl](../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to set `dt.security_context` as a host tag on OneAgent-monitored hosts:
+You can use OneAgentCtl to set `dt.security_context` as a host tag on OneAgent-monitored hosts:
 
 ```
 ./oneagentctl --set-host-tag=dt.security_context=my_security_context
@@ -463,7 +463,7 @@ After your environment is set up and ready for your teams, start exploring the n
 ### Dynatrace UI
 
 * [Navigate the latest Dynatrace](../discover-dynatrace/get-started/dynatrace-ui.md#navigate-the-latest-dynatrace "Navigate the latest Dynatrace")
-* [New data visualizations](../discover-dynatrace/get-started/dynatrace-ui/interact-visualizations.md "Use and control Dynatrace data visualizations")
+* New data visualizations
 
 ### Apps
 
@@ -471,9 +471,9 @@ After your environment is set up and ready for your teams, start exploring the n
 
 ### Upgrade
 
-* [Upgrade Dashboards Classic to Dashboards](../analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest.md "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.")
-* [Upgrade Log Monitoring Classic to Log Management and Analytics](../analyze-explore-automate/logs/logs-upgrade/logs-upgrade-to-lma.md "Log Management and Analytics is the latest Dynatrace log monitoring solution. We encourage you to upgrade to this latest log monitoring offer.")
-* [Conversion to DQL for Logs](../analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion.md "Convert your current log monitoring rules to DQL.")
+* Upgrade Dashboards Classic to Dashboards
+* Upgrade Log Monitoring Classic to Log Management and Analytics
+* Conversion to DQL for Logs
 
 ## Additional resources
 

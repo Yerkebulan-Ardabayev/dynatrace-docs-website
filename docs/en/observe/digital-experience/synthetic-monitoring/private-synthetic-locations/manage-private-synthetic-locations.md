@@ -31,7 +31,7 @@ You can select multiple locations for bulk management of [outage handling](#outa
 
 ![Private Synthetic location settings](https://dt-cdn.net/images/pvtsyntheticlocations-1400-8d3260f571.png)
 
-The colored status indicator for each location shows if it's overloaded in terms of capacity usage, enabling you to make educated decisions about adding more ActiveGates to run additional monitors. (Also check [system and hardware requirements for private Synthetic locations](system-and-hardware-requirements-for-private-synthetic.md "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations").)
+The colored status indicator for each location shows if it's overloaded in terms of capacity usage, enabling you to make educated decisions about adding more ActiveGates to run additional monitors. (Also check system and hardware requirements for private Synthetic locations.)
 
 For usage calculations on each ActiveGate, Dynatrace allocates CPU and RAM resources for running each type of monitor. Resource allocation per monitor type is resolved into the maximum number of simultaneous monitor executions that may take place at any given point in time. Actual capacity usage calculation per monitor type (see [Location details](#location-details) below) is based on the number of concurrently executed monitors compared to the maximum allowed simultaneous executions over the preceding 30 minutes.
 
@@ -58,7 +58,7 @@ The ActiveGates assigned to the location are listed and displayed in red when a 
 
 ![Private location details in previous Dynatrace](https://dt-cdn.net/images/screenshot-2025-10-22-171901-1356-64e2b3b050.png)
 
-Metrics for the health status of each monitor type are available for charting and alerting. For example, choose the **Synthetic - Browser - Engine Utilization** metric in the [Metrics browser](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser.") or [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights."). We strongly recommend splitting these metrics by location to get an accurate view of location health.
+Metrics for the health status of each monitor type are available for charting and alerting. For example, choose the **Synthetic - Browser - Engine Utilization** metric in the Metrics browser or Data Explorer. We strongly recommend splitting these metrics by location to get an accurate view of location health.
 
 ![Synthetic monitors metrics in Data Explorer Classic](https://dt-cdn.net/images/screenshot-2025-10-22-174729-1400-717532af10.png)
 
@@ -135,7 +135,7 @@ Amazon Linux 2023, Ubuntu, and Oracle Linux 9 (Chrome for Testing)
 
 This section is only relevant for releases 1.329 and earlier for Ubuntu Server 20.04 and 22.04.
 
-1. If your ActiveGate and Chromium versions are out of support or have not been updated for several releases, review the Synthetic Engine and Chromium dependencies, and reinstall them if necessary. See the [manual installation instructions for Ubuntu Server](create-a-private-synthetic-location.md#ubuntu20_22 "Learn how to create a private location for synthetic monitoring.") in [Create a private Synthetic location](create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.").
+1. If your ActiveGate and Chromium versions are out of support or have not been updated for several releases, review the Synthetic Engine and Chromium dependencies, and reinstall them if necessary. See the [manual installation instructions for Ubuntu Server](create-a-private-synthetic-location.md#ubuntu20_22 "Learn how to create a private location for synthetic monitoring.") in Create a private Synthetic location.
 2. Download the snap (Ubuntu Server 20.04 and 22.04) package archive. This is a safe and verified archive hosted by Dynatrace at `https://synthetic-packages.s3.amazonaws.com`. Be sure to use the specific command provided for your ActiveGate and Ubuntu Server versions in the [manual installation instructions for Ubuntu Server](create-a-private-synthetic-location.md#ubuntu20_22 "Learn how to create a private location for synthetic monitoring.").
 3. Extract and install the downloaded packages. Be sure to use the correct installation command for your Ubuntu Server version (check the [manual installation instructions for Ubuntu Server](create-a-private-synthetic-location.md#ubuntu20_22 "Learn how to create a private location for synthetic monitoring.")).
 4. Verify Chromium update by running the following command from the default installation directory. Command output should match the Chromium version you installed.
@@ -148,7 +148,7 @@ Updating Chromium manually is identical on Red Hat Enterprise Linux and CentOS, 
 
 If you've installed Chromium manually, there's no need at the time of the update to register the Red Hat instance in the subscription manager or to enable the Red Hat repositories or EPEL packages.
 
-1. If your ActiveGate and Chromium versions haven't been updated in a while, you might want to install Synthetic engine dependencies again. See the [manual installation instructions for Red Hat Enterprise Linux and CentOS](create-a-private-synthetic-location.md#redhat "Learn how to create a private location for synthetic monitoring.") in [Create a private Synthetic location](create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.").
+1. If your ActiveGate and Chromium versions haven't been updated in a while, you might want to install Synthetic engine dependencies again. See the [manual installation instructions for Red Hat Enterprise Linux and CentOS](create-a-private-synthetic-location.md#redhat "Learn how to create a private location for synthetic monitoring.") in Create a private Synthetic location.
 2. Download the rpm package archive. This is a safe and verified archive hosted by Dynatrace at `https://synthetic-packages.s3.amazonaws.com`. Be sure to use the specific command provided for your ActiveGate and OS versions in the [manual installation instructions for Red Hat Enterprise Linux and CentOS](create-a-private-synthetic-location.md#redhat "Learn how to create a private location for synthetic monitoring.").
 3. Extract and install the downloaded packages. Check the [manual installation instructions for Red Hat Enterprise Linux and CentOS](create-a-private-synthetic-location.md#redhat "Learn how to create a private location for synthetic monitoring.").
 4. If necessary, disable the automatic update of Chromium packages. Note that for Red Hat Enterprise Linux and CentOS, packing locking, once performed, remains persistent across all future updates.
@@ -176,7 +176,7 @@ Ubuntu Server 20.04 and 22.04
 
 When migrating from the snap Chromium distribution, first update ActiveGate, then install Chrome for Testing and optionally remove the Chromium snap installation.
 
-1. If your ActiveGate and Chrome for Testing versions haven't been updated in a while, you might want to check and install Synthetic engine and Chrome for Testing dependencies again. See the [manual installation instructions for Chrome for Testing](create-a-private-synthetic-location.md#chrome-for-testing "Learn how to create a private location for synthetic monitoring.") in [Create a private Synthetic location](create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.").
+1. If your ActiveGate and Chrome for Testing versions haven't been updated in a while, you might want to check and install Synthetic engine and Chrome for Testing dependencies again. See the [manual installation instructions for Chrome for Testing](create-a-private-synthetic-location.md#chrome-for-testing "Learn how to create a private location for synthetic monitoring.") in Create a private Synthetic location.
 2. Download the Chrome for Testing package archive to a temporary location. This is a safe and verified archive hosted by Dynatrace at `https://synthetic-packages.s3.amazonaws.com`. Be sure to use the specific command provided for your ActiveGate version in the [manual installation instructions for Chrome for Testing](create-a-private-synthetic-location.md#chrome-for-testing "Learn how to create a private location for synthetic monitoring."), but modify the output path to `/tmp/chrome.zip`.
 3. Remove the old Chrome for Testing directory, extract the new version, and clean up:
 

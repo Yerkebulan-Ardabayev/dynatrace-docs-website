@@ -6,7 +6,7 @@ scraped: 2026-03-05T21:26:22.993785
 
 На этой странице представлен обзор и описаны различные конфигурации для всех основных дистрибутивов Kubernetes.
 
-Общую информацию о жизненном цикле поддержки Dynatrace для Kubernetes и Red Hat OpenShift, включая текущие поддерживаемые версии, см. в разделе [Жизненный цикл поддержки Dynatrace для Kubernetes и Red Hat OpenShift full stack Monitoring](../../technology-support/support-model-and-issues.md "Как Dynatrace поддерживает версии Kubernetes и Red Hat OpenShift, а также известные проблемы").
+Общую информацию о жизненном цикле поддержки Dynatrace для Kubernetes и Red Hat OpenShift, включая текущие поддерживаемые версии, см. в разделе Жизненный цикл поддержки Dynatrace для Kubernetes и Red Hat OpenShift full stack Monitoring.
 
 ## AWS Elastic Kubernetes Service (EKS)
 
@@ -14,14 +14,14 @@ cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
 
 Для EKS не требуется специальная конфигурация.
 
-Dynatrace поддерживает различные варианты AWS EKS. Для EKS на EC2 или bare metal вы можете установить Dynatrace в [любом доступном варианте развёртывания](#installation-k8s) без дополнительных изменений конфигурации. Для EKS на Fargate вы можете [установить Dynatrace для наблюдаемости приложений](../../amazon-web-services/integrate-into-aws/aws-fargate.md "Установка OneAgent на AWS Fargate.").
+Dynatrace поддерживает различные варианты AWS EKS. Для EKS на EC2 или bare metal вы можете установить Dynatrace в [любом доступном варианте развёртывания](#installation-k8s) без дополнительных изменений конфигурации. Для EKS на Fargate вы можете установить Dynatrace для наблюдаемости приложений.
 
 ### AWS Bottlerocket OS
 
 applicationMonitoring
 
 Для AWS Bottlerocket OS на узлах EKS требуется дополнительная конфигурация.
-Вы можете развернуть Dynatrace для наблюдаемости приложений и настроить наблюдаемость платформы через ActiveGate (мониторинг API Kubernetes). Наблюдаемость платформы через Dynatrace OneAgent не поддерживается. Начиная с версии Dynatrace Operator 0.12.0 и до версии Dynatrace Operator 1.7.0 поддерживается CSI-драйвер, который необходимо настроить в [режиме только для чтения для Bottlerocket OS](../guides/networking-security-compliance/advanced-security-configurations/injection-readonly-volume.md "Настройка томов CSI только для чтения для инъекции OneAgent с целью повышения безопасности данных."):
+Вы можете развернуть Dynatrace для наблюдаемости приложений и настроить наблюдаемость платформы через ActiveGate (мониторинг API Kubernetes). Наблюдаемость платформы через Dynatrace OneAgent не поддерживается. Начиная с версии Dynatrace Operator 0.12.0 и до версии Dynatrace Operator 1.7.0 поддерживается CSI-драйвер, который необходимо настроить в режиме только для чтения для Bottlerocket OS:
 
 ```
 apiVersion: dynatrace.com/v1beta5
@@ -140,7 +140,7 @@ value: "true"
 
 applicationMonitoring
 
-Для GKE Autopilot вы можете [установить Dynatrace для наблюдаемости приложений](application-observability.md "Развёртывание Dynatrace Operator в режиме мониторинга приложений в Kubernetes"). CSI-драйвер Dynatrace Operator поддерживается для всех кластеров GKE Autopilot с Kubernetes версии 1.26+. Кроме того, поддерживаются только образы из следующих репозиториев, которые необходимо указать при установке:
+Для GKE Autopilot вы можете установить Dynatrace для наблюдаемости приложений. CSI-драйвер Dynatrace Operator поддерживается для всех кластеров GKE Autopilot с Kubernetes версии 1.26+. Кроме того, поддерживаются только образы из следующих репозиториев, которые необходимо указать при установке:
 
 * `gcr.io/dynatrace-marketplace-prod/dynatrace-operator`
 * `docker.io/dynatrace/dynatrace-operator`
@@ -229,7 +229,7 @@ cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
 
 Classic full-stack поддерживается только на узлах Kubernetes, использующих Red Hat Enterprise Linux (RHEL) в качестве операционной системы.
 
-Для OpenShift необходимо [настроить Security Context Constraints (SCC)](../guides/networking-security-compliance/security-configurations/openshift-configuration.md "Настройка Dynatrace Operator в средах OpenShift.") для всех развёртываний, использующих CSI-драйвер Dynatrace Operator (`cloudNativeFullStack`, `applicationMonitoring`/`hostMonitoring` с CSI). Кроме того, начиная с OpenShift 4.13, необходимо [настроить плагин допуска CSI Inline Ephemeral Volume](../guides/networking-security-compliance/security-configurations/openshift-configuration.md "Настройка Dynatrace Operator в средах OpenShift.").
+Для OpenShift необходимо настроить Security Context Constraints (SCC) для всех развёртываний, использующих CSI-драйвер Dynatrace Operator (`cloudNativeFullStack`, `applicationMonitoring`/`hostMonitoring` с CSI). Кроме того, начиная с OpenShift 4.13, необходимо настроить плагин допуска CSI Inline Ephemeral Volume.
 
 Для управляемых реализаций OpenShift, таких как AWS ROSA и Azure Red Hat OpenShift (ARO), Dynatrace поддерживает те же функции, что и для выделенного OpenShift.
 

@@ -24,7 +24,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `DataExport` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ## Parameters
 
@@ -273,4 +273,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [Real User Monitoring](../../../../observe/digital-experience/rum-concepts/rum-overview.md "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.")
+* Real User Monitoring

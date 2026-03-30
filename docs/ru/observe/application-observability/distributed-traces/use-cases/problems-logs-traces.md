@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:22:41.769050
 
 ## Перед началом
 
-Свяжите данные логов с трассировками для [Logs](../../../../analyze-explore-automate/logs/lma-log-enrichment.md "Свяжите входящие данные логов с трассировками для более точного анализа Dynatrace.") или [Logs Classic](../../../../analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment.md "Узнайте, как связать входящие данные логов с трассировками для более точного анализа Dynatrace."),
+Свяжите данные логов с трассировками для Logs или Logs Classic,
 
 * Автоматически через функции OneAgent для поддерживаемых фреймворков логирования.
 * Вручную через соответствующую контекстную информацию открытых стандартов для технологий, которые не отслеживаются OneAgent или ещё не поддерживаются из коробки.
@@ -28,7 +28,7 @@ scraped: 2026-03-06T21:22:41.769050
 
 ### Шаги
 
-Мы начинаем анализ с затронутого сервиса Go и проверяем его [динамические запросы](../../../../discover-dynatrace/get-started/glossary.md#request "Ознакомьтесь с терминологией Dynatrace.").
+Мы начинаем анализ с затронутого сервиса Go и проверяем его динамические запросы.
 
 ![Анализ логов распределённой трассировки - 7](https://dt-cdn.net/images/pp-log-analysis-11-1505-1fd6fd3e99.png)
 
@@ -144,10 +144,10 @@ scraped: 2026-03-06T21:22:41.769050
 
 Могу ли я использовать эти данные для пользовательских сеансов?
 
-Да. Чтобы узнать как, см. [Свяжите данные логов с пользовательскими сеансами и Session Replays](../../../../whats-new/saas/sprint-244.md#connect-your-log-data-to-user-sessions-and-session-replays "Примечания к выпуску Dynatrace SaaS, версия 1.244").
+Да. Чтобы узнать как, см. Свяжите данные логов с пользовательскими сеансами и Session Replays.
 
 ## Связанные темы
 
-* [Средство просмотра логов (Logs Classic)](../../../../analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer.md "Узнайте, как использовать средство просмотра логов Dynatrace для анализа данных логов.")
-* [Dynatrace Intelligence](../../../../dynatrace-intelligence.md "Ознакомьтесь с возможностями Dynatrace Intelligence.")
+* Средство просмотра логов (Logs Classic)
+* Dynatrace Intelligence
 * [[Блог] Автоматическое связывание логов и трассировок ускоряет облачную аналитику на базе ИИ](https://www.dynatrace.com/news/blog/automatic-connection-of-logs-and-traces-accelerates-ai-driven-cloud-analytics/)

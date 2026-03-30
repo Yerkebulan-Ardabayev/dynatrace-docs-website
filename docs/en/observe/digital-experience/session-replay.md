@@ -18,7 +18,7 @@ You can record your customers' interactions with your application and replay eac
 
 Session Replay helps identify errors that should be fixed immediately and other problems such as malformed pages and infinite spinners. You can also use Session Replay to identify and analyze areas of struggle in your application and improve its overall usability.
 
-Session Replay is currently available for [web applications](session-replay/configure-session-replay-web.md "Configure monitoring consumption and data privacy settings for Session Replay."), [Android](session-replay/session-replay-android.md "Set up Session Replay for your Android apps to learn which actions your users perform."), and [iOS](session-replay/session-replay-ios.md "Prerequisites and the procedure for enabling Session Replay for your iOS apps.").
+Session Replay is currently available for web applications, Android, and iOS.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -41,11 +41,11 @@ With Session Replay, you can drill down further into the details of detected err
 
 Developers can use Session Replay to view, analyze, reproduce, and fix errors.
 
-For error drill-down, you don't need to have all sessions recorded. You can use [cost and traffic control for web applications](session-replay/configure-session-replay-web.md#cost-traffic-control "Configure monitoring consumption and data privacy settings for Session Replay.") to record only a subset of sessions. If the error to be analyzed isn't too sporadic, it can be detected even if only 20% of sessions are recorded.
+For error drill-down, you don't need to have all sessions recorded. You can use cost and traffic control for web applications to record only a subset of sessions. If the error to be analyzed isn't too sporadic, it can be detected even if only 20% of sessions are recorded.
 
-The default [data retention](../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md "Check retention times for various data types.") timeframe is applied to these sessions.
+The default data retention timeframe is applied to these sessions.
 
-The ability to play back recorded user sessions with or without playback [masking](session-replay/configure-session-replay-web.md#sr-masking "Configure monitoring consumption and data privacy settings for Session Replay.") settings is permission controlled. Permissions are available at the environment level as well as the management-zone level. Read more in [Manage user groups and permissions](../../manage/identity-access-management/permission-management/role-based-permissions.md#permissions "Role-based permissions").
+The ability to play back recorded user sessions with or without playback masking settings is permission controlled. Permissions are available at the environment level as well as the management-zone level. Read more in Manage user groups and permissions.
 
 ### Complaint resolution
 
@@ -67,16 +67,16 @@ You can use Session Replay to detect and analyze the following issues:
 * The application doesn't work as expected on all browsers or devices.
 * The application prompts the user to change the orientation of their device, but the user doesn't understand the prompt.
 
-The default [data retention](../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md "Check retention times for various data types.") time is applied to these sessions.
+The default data retention time is applied to these sessions.
 
 ## Technical restrictions for web applications
 
-For web applications, Session Replay is compatible with page-based applications, single-page applications, and applications that use iFrames. However, [certain restrictions](session-replay/session-replay-restrictions-web.md "Learn which restrictions apply to Session Replay.") apply.
+For web applications, Session Replay is compatible with page-based applications, single-page applications, and applications that use iFrames. However, certain restrictions apply.
 
 ## Related topics
 
-* [Enable Session Replay for web applications](session-replay/enable-session-replay-web.md "Learn the prerequisites and the procedure for enabling Session Replay.")
-* [Configure Session Replay for web applications](session-replay/configure-session-replay-web.md "Configure monitoring consumption and data privacy settings for Session Replay.")
-* [Technical restrictions for Session Replay for web applications](session-replay/session-replay-restrictions-web.md "Learn which restrictions apply to Session Replay.")
-* [Configure Session Replay for iOS](session-replay/session-replay-ios.md "Prerequisites and the procedure for enabling Session Replay for your iOS apps.")
-* [Configure Session Replay for Android](session-replay/session-replay-android.md "Set up Session Replay for your Android apps to learn which actions your users perform.")
+* Enable Session Replay for web applications
+* Configure Session Replay for web applications
+* Technical restrictions for Session Replay for web applications
+* Configure Session Replay for iOS
+* Configure Session Replay for Android

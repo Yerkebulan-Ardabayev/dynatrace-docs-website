@@ -16,17 +16,17 @@ Dynatrace Application Security обеспечивает защиту в реал
 
 Dynatrace предоставляет следующие интегрированные возможности Application Security для защиты ваших приложений. Выберите любую, чтобы начать.
 
-Если вы используете [классическое лицензирование Dynatrace](../license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), обратитесь к эксперту Dynatrace через онлайн-чат, чтобы **активировать Application Security** перед началом работы.
+Если вы используете классическое лицензирование Dynatrace, обратитесь к эксперту Dynatrace через онлайн-чат, чтобы **активировать Application Security** перед началом работы.
 
-* [**Dynatrace Runtime Vulnerability Analytics (RVA)**](application-security/vulnerability-analytics.md "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."): Мгновенно выявляйте критические уязвимости с помощью автоматической оценки рисков и воздействия благодаря глубокому анализу путей доступа к данным и производственному выполнению.
-* [**Dynatrace Runtime Application Protection (RAP)**](application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities."): Защищайте приложения в реальном времени, обнаруживая и блокируя атаки с помощью передовых анализа на уровне кода и анализа транзакций.
-* [**Dynatrace Security Posture Management (SPM)**](application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."): Поддерживайте надёжный уровень безопасности путём эффективной оценки, приоритизации и устранения неправильных конфигураций и нарушений соответствия требованиям.
+* **Dynatrace Runtime Vulnerability Analytics (RVA)**: Мгновенно выявляйте критические уязвимости с помощью автоматической оценки рисков и воздействия благодаря глубокому анализу путей доступа к данным и производственному выполнению.
+* **Dynatrace Runtime Application Protection (RAP)**: Защищайте приложения в реальном времени, обнаруживая и блокируя атаки с помощью передовых анализа на уровне кода и анализа транзакций.
+* **Dynatrace Security Posture Management (SPM)**: Поддерживайте надёжный уровень безопасности путём эффективной оценки, приоритизации и устранения неправильных конфигураций и нарушений соответствия требованиям.
 
 ## Охват режимами мониторинга
 
 Эффективность и глубина анализа Application Security зависят от развёрнутого режима мониторинга. В этом разделе описывается, как каждый режим влияет на сбор и анализ данных.
 
-[**Dynatrace Security Posture Management (SPM)**](application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") работает независимо от режимов мониторинга. Подробнее см. в разделе [FAQ](application-security/spm.md#monitoring "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+**Dynatrace Security Posture Management (SPM)** работает независимо от режимов мониторинга. Подробнее см. в разделе [FAQ](application-security/spm.md#monitoring "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 
 ### Обзор поддержки
 
@@ -34,7 +34,7 @@ Dynatrace предоставляет следующие интегрирован
 | --- | --- | --- | --- |
 | [Обнаружение уязвимостей в сторонних компонентах](application-security/vulnerability-analytics.md#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") | Зелёный фон с галочкой | [ограниченно](#tpv-infra) | [ограниченно](#clv-infra) |
 | [Обнаружение уязвимостей на уровне кода](application-security/vulnerability-analytics.md#clv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") | Зелёный фон с галочкой | [ограниченно](#tpv-disco) | [ограниченно](#clv-disco) |
-| [Runtime Application Protection](application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.") | Зелёный фон с галочкой | Зелёный фон с галочкой | Зелёный фон с галочкой |
+| Runtime Application Protection | Зелёный фон с галочкой | Зелёный фон с галочкой | Зелёный фон с галочкой |
 
 Доступность в публичном интернете
 
@@ -53,7 +53,7 @@ Dynatrace предоставляет следующие интегрирован
 * Системные метрики (использование CPU, памяти, дискового пространства)
 * [Обнаружение уязвимостей в сторонних компонентах](application-security/vulnerability-analytics.md#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
 * [Обнаружение уязвимостей на уровне кода](application-security/vulnerability-analytics.md#clv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
-* [Runtime Application Protection](application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
+* Runtime Application Protection
 
 #### Характеристики
 
@@ -85,8 +85,8 @@ Dynatrace предоставляет следующие интегрирован
 
 #### Потребление
 
-* Если вы используете [модель лицензирования Dynatrace Platform Subscription (DPS)](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."), см. [Мониторинг хостов (DPS): Infrastructure Monitoring](../license/capabilities/app-infra-observability/infrastructure-monitoring.md "Learn how your consumption of the Dynatrace Infrastructure Monitoring DPS capability is billed and charged.").
-* Если вы используете [классическое лицензирование Dynatrace](../license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), см. [Мониторинг приложений и инфраструктуры (Host Units)](../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
+* Если вы используете модель лицензирования Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."), см. Мониторинг хостов (DPS): Infrastructure Monitoring.
+* Если вы используете классическое лицензирование Dynatrace, см. Мониторинг приложений и инфраструктуры (Host Units).
 
 ### Режим обнаружения
 
@@ -95,7 +95,7 @@ Dynatrace предоставляет следующие интегрирован
 * Системные метрики (использование CPU, памяти, дискового пространства)
 * [Обнаружение уязвимостей в сторонних компонентах](application-security/vulnerability-analytics.md#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
 * [Обнаружение уязвимостей на уровне кода](application-security/vulnerability-analytics.md#clv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
-* [Runtime Application Protection](application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
+* Runtime Application Protection
 
 Для работы Application Security в режиме обнаружения после [включения режима обнаружения](../platform/oneagent/monitoring-modes/monitoring-modes.md#enable-discovery-mode "Find out more about the available monitoring modes when using OneAgent.") также необходимо [включить внедрение кодового модуля](../platform/oneagent/monitoring-modes/monitoring-modes.md#code-module-injection "Find out more about the available monitoring modes when using OneAgent.").
 
@@ -137,9 +137,9 @@ Dynatrace предоставляет следующие интегрирован
 
 #### Потребление
 
-Режим обнаружения доступен только для [модели лицензирования Dynatrace Platform Subscription (DPS)](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+Режим обнаружения доступен только для модели лицензирования Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
 
-Информацию о потреблении при мониторинге см. в разделе [Мониторинг хостов (DPS): Foundation & Discovery](../license/capabilities/app-infra-observability/foundation-and-discovery.md "Learn how your consumption of the Dynatrace Foundation & Discovery DPS capability is billed and charged.").
+Информацию о потреблении при мониторинге см. в разделе Мониторинг хостов (DPS): Foundation & Discovery.
 
 ## Дополнительные ресурсы
 
@@ -223,7 +223,7 @@ FAQ
 * [Покрытие жизненного цикла DevSecOps Dynatrace со Snyk устраняет слепые зоны в безопасности](https://www.dynatrace.com/news/blog/dynatrace-and-snyk-to-unify-security-insights/)
 * [Что такое безопасность приложений? И почему нужен новый подход](https://www.dynatrace.com/news/blog/davis-security-advisor-extends-dynatrace-application-security/)
 
-[FAQ по Application Security](faq.md "Frequently asked questions about Dynatrace Application Security.")
+FAQ по Application Security
 
 По статьям для решения проблем, связанных с Application Security, посетите [Сообщество Dynatrace](https://dt-url.net/dy122xtf).
 

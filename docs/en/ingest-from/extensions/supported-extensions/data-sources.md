@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:36:47.888698
 * 5-min read
 * Published Oct 24, 2025
 
-In Dynatrace, a data source is a predefined, technology-specific method for collecting monitoring data from external systems or services using Dynatrace Extensions framework, either by [exensions provided by Dynatrace](../supported-extensions.md "Learn more about the supported extensions.") or [custom extensions developed by you](../develop-your-extensions.md "Develop your own Extensions in Dynatrace.").
+In Dynatrace, a data source is a predefined, technology-specific method for collecting monitoring data from external systems or services using Dynatrace Extensions framework, either by exensions provided by Dynatrace or custom extensions developed by you.
 
 The extensions data source simplifies monitoring by providing a declarative, technology-specific way to ingest data.
 
@@ -36,7 +36,7 @@ Used to collect metrics or query results from relational databases.
 
 Declaratively configured to run SQL queries against a database and retrieve structured data (for example, query performance, table sizes, connection pools).
 
-See [SQL extensions](data-sources/sql.md "Extend observability in Dynatrace with declarative metrics ingested from SQL-based extensions.").
+See SQL extensions.
 
 ### WMI data source
 
@@ -44,7 +44,7 @@ Leverages Windows Management Instrumentation (WMI) to monitor Windows systems.
 
 Provides access to performance counters, system metrics, and hardware details in a standardized way.
 
-See [Manage WMI extensions](data-sources/wmi.md "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.").
+See Manage WMI extensions.
 
 ### Prometheus data source
 
@@ -60,7 +60,7 @@ Dynatrace provides you with a framework that you can use to extend your observab
 
 You can also extend your insights into data related to SNMP traps issued in your infrastructure.
 
-See [Manage SNMP extensions](data-sources/snmp.md "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.").
+See Manage SNMP extensions.
 
 ### Python data source (the flexible option)
 

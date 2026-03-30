@@ -12,7 +12,7 @@ scraped: 2026-03-05T21:34:24.324026
 * 10-min read
 * Updated on Feb 19, 2026
 
-OpenTelemetry interoperability connects the [Dynatrace AWS Lambda extension](../aws-lambda-extension.md "Monitor Lambda functions written in Python, Node.js, and Java.") to the OpenTelemetry Python instrumentation to use the instrumentation packages and extensions. You can then monitor technologies like databases or messaging frameworks that aren't supported by Dynatrace AWS Lambda extension out of the box.
+OpenTelemetry interoperability connects the Dynatrace AWS Lambda extension to the OpenTelemetry Python instrumentation to use the instrumentation packages and extensions. You can then monitor technologies like databases or messaging frameworks that aren't supported by Dynatrace AWS Lambda extension out of the box.
 
 ## Before you start
 
@@ -504,7 +504,7 @@ You can trace SQS messages forwarded from
 
   This example uses the boto3sqs instrumentation. If you don't want to use it, you need to uncomment the `MessageAttributeNames` argument in the `receive_message` function, otherwise, SQS will omit data required to link the message to its sender from the retrieved data.
 
-  This code can also be used outside a Lambda function and [monitored with OpenTelemetry](../../../../../opentelemetry/walkthroughs/python.md "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.") without the Dynatrace AWS Lambda extension.
+  This code can also be used outside a Lambda function and monitored with OpenTelemetry without the Dynatrace AWS Lambda extension.
 
   ```
   from opentelemetry.instrumentation.boto3sqs import Boto3SQSInstrumentor
@@ -686,5 +686,5 @@ For details, see how to [receive an SQS message](#receive-sqs-python).
 
 ## Related topics
 
-* [OpenTelemetry interoperability](../opentelemetry-interoperability.md "Enable and use OpenTelemetry interoperability in AWS Lambda.")
-* [Trace Python, Node.js, and Java Lambda functions](../aws-lambda-extension.md "Monitor Lambda functions written in Python, Node.js, and Java.")
+* OpenTelemetry interoperability
+* Trace Python, Node.js, and Java Lambda functions

@@ -1694,4 +1694,4 @@ Configuration of a User session query visualization tile.
 
 ## Related topics
 
-* [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+* Dashboards

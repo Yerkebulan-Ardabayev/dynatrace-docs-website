@@ -15,11 +15,11 @@ Log Monitoring Classic
 
 Timestampâincluding date, time, timezone, and offsetâis searched for in the first 64 characters of the log content (this value is configurable via **Log Monitoring** > **Timestamp/Splitting patterns**). If an offset or timezone is not found, the local timezone of a host is used.
 
-For the newest Dynatrace version, see [Supported timestamp formats](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format.md "Supported timestamps for the latest version of Log Management and Analytics.").
+For the newest Dynatrace version, see Supported timestamp formats.
 
 During log processing, each line where a supported timestamp is detected starts a new log record. A line without a timestamp is considered to be a continuation of an existing log record and appended to a line that contains a timestamp.  
 If no timestamp is present in a log file or a timestamp is not recognized due to unsupported format, each line not starting with whitespace characters, such as `space` or `tab`, starts a new log record. Each line starting with whitespace characters, such as `space` or `tab`, is treated as a log record continuation.  
-Due to multiple formats of incoming log data, Log Monitoring also enables you to define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record. For more details on defining date format, see [Log timestamp configuration](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration.md "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record.").
+Due to multiple formats of incoming log data, Log Monitoring also enables you to define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record. For more details on defining date format, see Log timestamp configuration.
 
 The supported [timestamp formatsï»¿](https://dt-url.net/6e034iy) include:
 

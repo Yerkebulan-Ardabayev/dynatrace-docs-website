@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:23:45.187175
 * How-to guide
 * Updated on Aug 25, 2025
 
-This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the Grail security table migration guide.
 
 Ingest compliance findings from Runecast Analyzer and analyze them on the Dynatrace platform.
 
@@ -44,7 +44,7 @@ See below for the [Runecast](#runecast) and [Dynatrace](#dt) requirements.
   + To query ingested data: `storage:security.events:read`.
 * Tokens:
 
-  + Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see [Dynatrace API - Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+  + Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see Dynatrace API - Tokens and authentication.
 * To visualize findings in our ready-made dashboard, make sure [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management** is installed](../../xspm.md#start "Detect, manage, and take action on security and compliance findings.").
 
 ## Activation and setup
@@ -90,7 +90,7 @@ After you deploy and configure Runecast Analyzer, it continuously runs configura
 
 2. Analysis results are ingested into Dynatrace
 
-When Dynatrace integration is configured for a monitored environment, all compliance results are ingested into Dynatrace via a dedicated [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") security events ingest endpoint with every analysis.
+When Dynatrace integration is configured for a monitored environment, all compliance results are ingested into Dynatrace via a dedicated OpenPipeline security events ingest endpoint with every analysis.
 
 3. Security compliance findings are processed and stored in Grail
 
@@ -118,16 +118,16 @@ Once you set up the Runecast Analyzer integration, you can
 
     - Via ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** (in the **Dashboards** panel, select **Ready-made**)
     - Via  **Hub** (select ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**, then look for the dashboard in the **Contents** tab table)
-* Query [compliance events](../../../semantic-dictionary/model/security-events.md#compliance-finding-events "Get to know the Semantic Dictionary models related to security events.") with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+* Query compliance events with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 
   + For a list of DQL examples based on compliance events that you can use for further investigation or reporting, see [Query compliance events](../dql-examples.md#compliance "DQL examples for security data powered by Grail.").
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see Events powered by Grail.
 
 ## Related topics
 
-* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Security events](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")
+* OpenPipeline
+* Dynatrace Query Language
+* Security events

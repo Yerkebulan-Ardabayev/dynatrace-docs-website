@@ -16,11 +16,11 @@ To deploy OneAgent on App Runner, read the instructions provided below.
 
 ## Prerequisites
 
-* [Create an API token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.") in your Dynatrace environment and enable the following permissions:
+* Create an API token in your Dynatrace environment and enable the following permissions:
 
   + **Access problem and event feed, metrics, and topology** (`DataExport`) (API v1)
   + **PaaS integration - Installer download** (`InstallerDownload`)
-* Review the list of [supported applications and versions](../../../../ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+* Review the list of supported applications and versions.
 
 ## Integrate OneAgent into your application image
 
@@ -172,11 +172,11 @@ You can configure network zones as an environment variable:
 
 * `DT_NETWORK_ZONE`: equals `your.network.zone`
 
-See [network zones](../../../../manage/network-zones.md "Find out how network zones work in Dynatrace.") for more information.
+See network zones for more information.
 
 ## Monitoring Consumption
 
-For AWS App Runner, monitoring consumption is based on host units. See [Application and Infrastructure Monitoring (Host Units)](../../../../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
+For AWS App Runner, monitoring consumption is based on host units. See Application and Infrastructure Monitoring (Host Units) for details.
 
 ## Troubleshooting
 
@@ -184,4 +184,4 @@ For AWS App Runner, monitoring consumption is based on host units. See [Applicat
 
 ## Related topics
 
-* [OneAgent platform and capability support matrix](../../../../ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* OneAgent platform and capability support matrix

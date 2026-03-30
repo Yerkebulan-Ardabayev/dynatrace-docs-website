@@ -23,7 +23,7 @@ To enable Dynatrace Intelligence generative AI on your environment
 
 ![Enable generative AI in your settings](https://dt-cdn.net/images/generative-ai-settings-1913-24ab3b085b.png)
 
-If you can't see the settings page, make sure you have `Setting Reader` and `Setting Writer` policies assigned. For more information, see [read and write permission](../../manage/identity-access-management/use-cases/access-settings.md#example-read-and-write-permissions "Grant access to Settings").
+If you can't see the settings page, make sure you have `Setting Reader` and `Setting Writer` policies assigned. For more information, see read and write permission.
 
 ### User permissions
 
@@ -33,7 +33,7 @@ After enabling Dynatrace Intelligence generative AI on the environment level, yo
 * **DQL translation to natural language** (`ALLOW davis-copilot:dql2nl:execute;`)
 * **Conversational recommender** (`ALLOW davis-copilot:conversations:execute;`)
 
-For more information on managing your policies, see [Manage IAM policies](../../manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt.md "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
+For more information on managing your policies, see Manage IAM policies.
 
 ## Enable agentic AI for Dynatrace Assist
 
@@ -50,7 +50,7 @@ To use the agentic  **Dynatrace Assist**, you need to
   2. Ensure that **Enable generative AI** is turned on.
   3. Turn on **Enable agentic AI**.
 
-Agentic  **Dynatrace Assist** might not be available for you if you don't meet the prerequisites mentioned above or if you access  **Dynatrace Assist** from the [Embedded conversation starters](chat-with-davis-copilot/copilot-conv-starters.md "Learn how to trigger predefined prompts in various Dynatrace applications.").
+Agentic  **Dynatrace Assist** might not be available for you if you don't meet the prerequisites mentioned above or if you access  **Dynatrace Assist** from the Embedded conversation starters.
 
 ### **Dynatrace Assist** agentic permissions
 
@@ -77,7 +77,7 @@ Document suggestion is a Dynatrace Intelligence agentic and generative AI skill 
 
 If you want Dynatrace Intelligence agentic and generative AI to suggest troubleshooting guides for similar or repeatedly occurring problem, you'll need to allow it to search through and index documents created in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** and shared with all users in your environment. To ensure you have full control over the security of your data, this functionality is opt-in and is turned off by default.
 
-In order for Dynatrace Intelligence agentic and generative AI to index and suggest your document, it has to be shared with all users in your environment. Dynatrace Intelligence agentic and generative AI won't index or suggest any private documents or documents shared only with specific users. To learn more about sharing documents, see [Share documents](../../discover-dynatrace/get-started/dynatrace-ui/share.md "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
+In order for Dynatrace Intelligence agentic and generative AI to index and suggest your document, it has to be shared with all users in your environment. Dynatrace Intelligence agentic and generative AI won't index or suggest any private documents or documents shared only with specific users. To learn more about sharing documents, see Share documents with other Dynatrace users in your company.").
 
 To enable document suggestion
 
@@ -121,6 +121,6 @@ To configure your data access
 
 ## Related topics
 
-* [Dynatrace Intelligence agentic and generative AI FAQ](../../../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
-* [Query with natural language](quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
-* [Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts](quick-analysis-copilot-dql/copilot-tips.md "Learn best practices for writing more accurate prompts.")
+* Dynatrace Intelligence agentic and generative AI FAQ
+* Query with natural language
+* Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts

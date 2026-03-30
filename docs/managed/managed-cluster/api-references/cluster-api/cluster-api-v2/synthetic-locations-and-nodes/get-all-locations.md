@@ -8,7 +8,7 @@ This API call lists all locations, public and private, and their parameters avai
 
 ## Authentication
 
-To execute this request, you need the **Service Provider API** (`ServiceProviderAPI`) permission assigned to your API token. Generate your API token via Cluster Management Console (CMC). To learn how to obtain and use it, see [Cluster API - Authentication](/managed/managed-cluster/api-references/cluster-api/basics/cluster-api-authentication "How to get authenticated to use the Dynatrace Cluster API.").
+To execute this request, you need the **Service Provider API** (`ServiceProviderAPI`) permission assigned to your API token. Generate your API token via Cluster Management Console (CMC). To learn how to obtain and use it, see Cluster API - Authentication.
 
 ## Endpoint
 
@@ -412,4 +412,4 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations
 
 ## Related topics
 
-* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
+* Synthetic Monitoring

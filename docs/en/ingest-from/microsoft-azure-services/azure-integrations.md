@@ -16,24 +16,24 @@ Dynatrace provides comprehensive monitoring support for Azure services, by integ
 
 ## Integrate on Azure compute- and serverless services
 
-[Monitor Azure App Service](azure-integrations/azure-appservice.md "Monitor Azure App Service")
+Monitor Azure App Service
 
-[Microsoft Azure Arc-enabled servers](azure-integrations/azure-arc-enabled-servers.md "Azure integration with ARC servers")
+Microsoft Azure Arc-enabled servers
 
-[Monitor Azure Functions using Azure App Service (built-in)](azure-integrations/azure-functions.md "Monitor Azure Functions")
+Monitor Azure Functions using Azure App Service (built-in)
 
-[Monitor Azure Spring Apps](azure-integrations/azure-spring.md "Learn how to configure OneAgent for monitoring Azure Spring Apps.")
+Monitor Azure Spring Apps
 
-[Azure Kubernetes Service (AKS)](azure-integrations/azure-aks.md "Learn how to deploy, operate, and maintain OneAgent on Azure Kubernetes Service.")
+Azure Kubernetes Service (AKS)
 
-[Monitor Azure Service Fabric](azure-integrations/azure-servicefabric.md "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure Service Fabric using a VM extension.")
+Monitor Azure Service Fabric
 
-[Monitor Azure Virtual Machines](azure-integrations/azure-vm.md "Learn how to install and configure OneAgent for monitoring Azure Virtual Machines using a VM extension.")
+Monitor Azure Virtual Machines
 
-[Monitor Azure Virtual Machine Scale Set (VMSS)](azure-integrations/azure-vmss.md "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure VM Scale Set using a VM extension.")
+Monitor Azure Virtual Machine Scale Set (VMSS)
 
 ## Azure Monitor integration
 
 In addition to monitoring your Azure workloads using OneAgent, you can integrate Dynatrace with Azure Monitor to monitor infrastructure and gain insight even in serverless application scenarios.
 
-For more information, see [Monitor Azure services with Azure Monitor metrics](azure-integrations/azure-monitoring-guide.md "Set up and configure Azure monitoring in Dynatrace.")
+For more information, see Monitor Azure services with Azure Monitor metrics

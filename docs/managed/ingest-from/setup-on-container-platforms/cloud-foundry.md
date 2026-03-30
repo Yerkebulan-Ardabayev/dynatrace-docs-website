@@ -10,7 +10,7 @@ Dynatrace supports full-stack monitoring for Cloud Foundry through the Dynatrace
 
 ## Integrations
 
-There are two approaches in deploying the OneAgent BOSH release, [immutable](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry#immutable "Install OneAgent on Cloud Foundry with BOSH.") and [lightweight](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry#lightweight "Install OneAgent on Cloud Foundry with BOSH."). The differences between these approaches are described below.
+There are two approaches in deploying the OneAgent BOSH release, immutable and lightweight. The differences between these approaches are described below.
 
 Immutable release
 
@@ -26,26 +26,26 @@ The lightweight OneAgent BOSH release downloads and installs a pre-configured On
 
 If you don't have access to BOSH, Dynatrace provides two different approaches for application-only monitoring:
 
-* [OneAgent on Cloud Foundry](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring "Install OneAgent on Cloud Foundry.")
-* [OneAgent on SAP Business Technology Platform](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-sap-cloud-platform-for-application-only-monitoring "Install OneAgent on SAP Business Technology Platform.")
+* OneAgent on Cloud Foundry
+* OneAgent on SAP Business Technology Platform
 
 ## Configuration
 
-[Connect your Cloud Foundry clusters with Dynatrace](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace "Enable monitoring on your Cloud Foundry foundations.")
+Connect your Cloud Foundry clusters with Dynatrace
 
-[Install the Dynatrace Service Broker for Cloud Foundry dashboard tile](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/install-the-service-broker-for-cloud-foundry-dashboard-tile "Install and configure the Dynatrace Service Broker for VMware Tanzu Platform dashboard tile.")
+Install the Dynatrace Service Broker for Cloud Foundry dashboard tile
 
 ## Maintenance
 
-[Update OneAgent on Cloud Foundry](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/update-oneagent-on-cloud-foundry "Update OneAgent on Cloud Foundry based on different deployment strategies.")
+Update OneAgent on Cloud Foundry
 
-[Uninstall OneAgent from Cloud Foundry](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/uninstall-oneagent-from-cloud-foundry "Uninstall OneAgent from Cloud Foundry for BOSH add-ons.").
+Uninstall OneAgent from Cloud Foundry.
 
 ## Troubleshooting
 
-[Troubleshoot OneAgent deployment issues on Cloud Foundry](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/troubleshoot-cf "Troubleshoot deployment problems on Cloud Foundry.")
+Troubleshoot OneAgent deployment issues on Cloud Foundry
 
 ## Related topics
 
 * [Cloud Foundry monitoring](https://www.dynatrace.com/technologies/cloud-foundry-monitoring/)
-* [Cloud Foundry monitoring](/managed/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")
+* Cloud Foundry monitoring

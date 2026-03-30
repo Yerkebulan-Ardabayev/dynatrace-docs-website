@@ -73,7 +73,7 @@ timeseries avg(dt.host.cpu.usage)
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Перейти к хосту** — открывает выбранный элемент в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   В целом, если есть рекомендуемые приложения для открытия выбранного элемента, меню предлагает прямые ссылки на эти приложения, а затем опцию **Open with** для выбора другого целевого приложения.
-* **Open with** — подробнее см. в разделе [Детализация и навигация](../drilldowns-and-navigation.md "Детализация из Dashboards и Notebooks с использованием ссылок на основе интентов или URL.").
+* **Open with** — подробнее см. в разделе Детализация и навигация.
 
 ## Заголовок
 

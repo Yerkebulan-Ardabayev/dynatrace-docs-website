@@ -24,28 +24,28 @@ scraped: 2026-03-06T21:36:13.602335
 
 ### Требования
 
-Это расширение зависит от данных телеметрии, отправляемых в Dynatrace из OpenTelemetry через [OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector.md "Узнайте о Dynatrace OTel Collector.").
+Это расширение зависит от данных телеметрии, отправляемых в Dynatrace из OpenTelemetry через OpenTelemetry Collector.
 
 ## Активация и настройка
 
 1. Разверните OpenTelemetry Collector.
 
-   1. Следуйте инструкциям на странице [OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector/deployment.md "Как развернуть Dynatrace OTel Collector.") для развёртывания Collector.
+   1. Следуйте инструкциям на странице OpenTelemetry Collector для развёртывания Collector.
    2. Используйте [эталонную конфигурацию](https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/host-metrics.yaml).
    3. Убедитесь, что Collector работает и данные телеметрии корректно отправляются в Dynatrace.
 2. Активируйте расширение OpenTelemetry Host Monitoring.
 
 ## Подробности
 
-[OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector.md "Узнайте о Dynatrace OTel Collector.") захватывает данные телеметрии из вашей инфраструктуры и отправляет метрики в Dynatrace через OTel API.
+OpenTelemetry Collector захватывает данные телеметрии из вашей инфраструктуры и отправляет метрики в Dynatrace через OTel API.
 
 Расширение отображает данные телеметрии, захваченные OpenTelemetry Collector, и обеспечивает быстрый анализ и понятное представление данных, добавляя специфичный для Dynatrace контекст ко всем сигналам (метрики, логи и спаны).
 
-Информацию о том, как использовать расширение в Dynatrace, см. в разделе [Мониторинг хостов, отправляющих данные OpenTelemetry в Dynatrace](../../../ingest-from/opentelemetry/collector/use-cases/host-monitoring.md "Как мониторить хосты, использующие Collectors для отправки данных OpenTelemetry в Dynatrace.").
+Информацию о том, как использовать расширение в Dynatrace, см. в разделе Мониторинг хостов, отправляющих данные OpenTelemetry в Dynatrace.
 
 ### Лицензирование и стоимость
 
-Все принимаемые данные OpenTelemetry (логи, метрики и спаны) тарифицируются согласно вашей тарифной карте, см. [Dynatrace Platform Subscription](../../../license/capabilities.md "Как работают различные возможности DPS и как рассчитывается и выставляется счёт за потребление.") или [классическое лицензирование Dynatrace](../../../license/monitoring-consumption-classic.md "Понимание расчёта потребления мониторинга Dynatrace для классического лицензирования.").
+Все принимаемые данные OpenTelemetry (логи, метрики и спаны) тарифицируются согласно вашей тарифной карте, см. Dynatrace Platform Subscription или классическое лицензирование Dynatrace.
 
 Использование этого расширения само по себе не влечёт дополнительных затрат.
 

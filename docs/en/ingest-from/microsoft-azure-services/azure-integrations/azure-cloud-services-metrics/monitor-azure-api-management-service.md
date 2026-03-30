@@ -12,7 +12,7 @@ scraped: 2026-03-03T21:30:14.498339
 * 2-min read
 * Updated on Nov 15, 2023
 
-For information about differences between classic services and other services, see [Migrate from Azure classic (formerly 'built-in') services to cloud services](../azure-monitoring-guide/azure-migration-guide.md "Migrate Azure classic services to their new versions.").
+For information about differences between classic services and other services, see Migrate from Azure classic (formerly 'built-in') services to cloud services.
 
 Dynatrace ingests metrics from Azure Metrics API for Azure API Management Service. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
 
@@ -23,7 +23,7 @@ Dynatrace ingests metrics from Azure Metrics API for Azure API Management Servic
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see [Enable service monitoring](../azure-monitoring-guide/azure-enable-service-monitoring.md "Enable Azure monitoring in Dynatrace.").
+To learn how to enable service monitoring, see Enable service monitoring.
 
 ## View service metrics
 

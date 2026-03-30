@@ -9,7 +9,7 @@ scraped: 2026-03-05T21:26:48.257759
 
 * Устарело
 
-Этот API устарел. Используйте вместо него [Monitored entities API](../../entity-v2.md "Узнайте о Dynatrace Monitored entities API."). Дополнительную информацию о переходе на новый API можно найти в [руководстве по миграции](../../../basics/deprecation-migration-guides/topology-v1-to-entity-v2.md "Перенесите автоматизацию на Monitored entities API.").
+Этот API устарел. Используйте вместо него Monitored entities API. Дополнительную информацию о переходе на новый API можно найти в руководстве по миграции.
 
 Получает список всех сервисов в вашей среде Dynatrace вместе с их параметрами и связями.
 
@@ -31,7 +31,7 @@ scraped: 2026-03-05T21:26:48.257759
 
 Для выполнения этого запроса вам нужен токен доступа с областью действия `DataExport`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+Чтобы узнать, как получить и использовать его, см. Токены и аутентификация.
 
 ## Параметры
 
@@ -682,4 +682,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/services?relativeTime=5mins
 
 ## Связанные темы
 
-* [Сервисы](../../../../observe/application-observability/services.md "Узнайте, как отслеживать и анализировать сервисы, определять и использовать атрибуты запросов и многое другое.")
+* Сервисы

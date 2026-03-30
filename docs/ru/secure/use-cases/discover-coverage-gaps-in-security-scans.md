@@ -34,7 +34,7 @@ scraped: 2026-03-06T21:15:11.474257
 
 ## Предварительные требования
 
-[Загрузите результаты проверок безопасности](../threat-observability/security-events-ingest.md "Ingest external security data into Grail.") из вашего стороннего продукта.
+Загрузите результаты проверок безопасности из вашего стороннего продукта.
 
 ## Начало работы
 
@@ -49,6 +49,6 @@ scraped: 2026-03-06T21:15:11.474257
 
 2. Анализ
 
-Откройте [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability data — all in one collaborative, customizable workspace.") для [выполнения запросов](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") к результатам проверок безопасности, используя формат данных из [Semantic Dictionary](https://dt-url.net/3q03pb0).
+Откройте [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability data — all in one collaborative, customizable workspace.") для выполнения запросов к результатам проверок безопасности, используя формат данных из [Semantic Dictionary](https://dt-url.net/3q03pb0).
 
 Для лучшего понимания того, как строить запросы, см. раздел [Примеры DQL-запросов для принятых событий](../threat-observability/dql-examples.md#ingested "DQL examples for security data powered by Grail.").

@@ -22,7 +22,7 @@ scraped: 2026-03-06T21:19:32.708456
 .\oneagentctl.exe --set-proxy=my-proxy.com --restart-service
 ```
 
-Дополнительные сведения см. в разделе [Настройка OneAgent с помощью интерфейса командной строки](../../../oneagent-configuration-via-command-line-interface.md "Узнайте, как выполнять некоторые задачи настройки OneAgent без необходимости его переустановки.").
+Дополнительные сведения см. в разделе Настройка OneAgent с помощью интерфейса командной строки.
 
 ## Остановка OneAgent с помощью командной строки
 
@@ -36,4 +36,4 @@ scraped: 2026-03-06T21:19:32.708456
 
 `net start "Dynatrace OneAgent"`, где `Dynatrace OneAgent` — имя службы для OneAgent.
 
-Узнайте больше о том, [как Dynatrace взаимодействует с вашей ОС](../installation/oneagent-security-windows.md "Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей системе на базе Windows.").
+Узнайте больше о том, как Dynatrace взаимодействует с вашей ОС.

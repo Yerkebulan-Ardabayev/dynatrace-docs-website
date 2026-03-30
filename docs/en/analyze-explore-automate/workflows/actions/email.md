@@ -11,7 +11,7 @@ scraped: 2026-03-05T21:40:37.061485
 * 3-min read
 * Updated on Feb 05, 2026
 
-You can automate sending out-of-the-box emails using Email ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") based on the events and schedules defined by your [workflows](../../workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+You can automate sending out-of-the-box emails using Email ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") based on the events and schedules defined by your workflows.
 
 ## Grant permissions to Workflows
 
@@ -26,7 +26,7 @@ To fine-tune permissions granted to Workflows
 
      + `email:emails:send`
 
-For more on general Workflows user permissions, see [Expression reference](../reference.md#user-permission "Get to know the workflows expression").
+For more on general Workflows user permissions, see Expression reference.
 
 Trial environments are prohibited to send emails with **Email**.
 
@@ -144,7 +144,7 @@ To link to a website, use this format:
 `[Example text label](https://www.example.com)`
 
 ```
-Here's a link to the [Dynatrace website](www.dynatrace.com).
+Here's a link to the Dynatrace website.
 ```
 
 When using markdown links in email messages, only certain protocols are supported and are transformed to HTML links:
@@ -182,7 +182,7 @@ Email formatting is disabled for messages with a size greater than or equal to 2
 | **Content** | The content of the email. | Required |
 
 You must enter at least one and a maximum of ten recipients in one of the fields (to, cc, bcc).
-If you are using [expressions](../reference.md "Get to know the workflows expression") for the recipients, the expressions must be evaluated as a list of email addresses, for example, `["user1@domain.com", "user2@domain.com"]`.
+If you are using expressions for the recipients, the expressions must be evaluated as a list of email addresses, for example, `["user1@domain.com", "user2@domain.com"]`.
 
 ## Action result
 
@@ -203,10 +203,10 @@ The recommended approach is to wrap your input in an expression and convert it t
 {{ result("run_javascript_1") | to_json }}
 ```
 
-This approach ensures your data is properly formatted for transmission. For more information, see [Expression reference](../reference.md#any-object "Get to know the workflows expression").
+This approach ensures your data is properly formatted for transmission. For more information, see Expression reference.
 
 The message size is limited to 256 KiB. Larger payloads will result in an action failure.
 
 ## Related topics
 
-* [Send email notifications for problems](../../alerting-and-notifications/workflows-tutorial-problems-email.md "Learn how to send email notifications for problems using a simple workflow.")
+* Send email notifications for problems

@@ -62,11 +62,11 @@ The tool location depends on whether or not you've customized the OneAgent insta
 
 ## Topology awareness
 
-Using the `dynatrace_ingest` based scripting integration, the host ID and host name context are added to each metric as dimensions automatically. Learn how to [enrich your metrics with other Dynatrace-specific dimensions](../../extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") and apply Dynatrace-AI causation details to your ingested data.
+Using the `dynatrace_ingest` based scripting integration, the host ID and host name context are added to each metric as dimensions automatically. Learn how to enrich your metrics with other Dynatrace-specific dimensions and apply Dynatrace-AI causation details to your ingested data.
 
 ## Metric format
 
-Provided data points must follow the [Metrics ingestion protocol](../reference/metric-ingestion-protocol.md "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+Provided data points must follow the Metrics ingestion protocol.
 
 ## Usage
 
@@ -76,7 +76,7 @@ The basic usage is:
 dynatrace_ingest [Options] [Metrics]
 ```
 
-Both `[Options]` and `[Metrics]` are optional. The syntax of metrics passed to the `[Metrics]` arguments must comply with the [Metrics ingestion protocol](../reference/metric-ingestion-protocol.md "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+Both `[Options]` and `[Metrics]` are optional. The syntax of metrics passed to the `[Metrics]` arguments must comply with the Metrics ingestion protocol.
 
 There two basic ways to pass metrics with `dynatrace_ingest`: (1) by piping another process output to `dynatrace_ingest`, or (2) using the call arguments.
 

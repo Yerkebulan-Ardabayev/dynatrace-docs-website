@@ -14,12 +14,12 @@ The **Allowed beacon domains** API enables you to manage the list of RUM beacon 
 
 To manage the RUM beacon origins list in the Dynatrace web UI, go to **Settings** > **Web and mobile monitoring** > **Beacon origins for CORS**.
 
-[### View configuration
+### View configuration
 
-Get an overview of allowed beacon origins.](allowed-beacon-cors/get-configuration.md "Read allowed beacon domains list via the Dynatrace API.")[### Update configuration
+Get an overview of allowed beacon origins.### Update configuration
 
-Update configuration of allowed beacon origins.](allowed-beacon-cors/put-configuration.md "Update allowed beacon domains list via the Dynatrace API.")
+Update configuration of allowed beacon origins.
 
 ## Related topics
 
-* [Configure beacon origin allowlist for web applications](../../../observe/digital-experience/web-applications/additional-configuration/configure-beacon-domain-allowlist.md "Specify the origins from which cross-origin RUM beacons should be accepted.")
+* Configure beacon origin allowlist for web applications

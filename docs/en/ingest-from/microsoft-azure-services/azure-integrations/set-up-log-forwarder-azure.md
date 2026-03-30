@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:17:36.115344
 
 DDU consumption for Log Monitoring
 
-DDU pricing applies to cloud Log Monitoring. See [DDUs for Log Monitoring](../../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
+DDU pricing applies to cloud Log Monitoring. See DDUs for Log Monitoring for details.
 
 Azure log forwarding allows you to stream Azure logs from Azure Event Hubs into Dynatrace logs via an Azure Function App instance. It supports Azure resource logs, activity logs, and Entra ID sign-in logs.
 
@@ -49,8 +49,8 @@ If you're using an earlier version of Dynatrace, see [Alternative deployments](#
 
 * Dynatrace version 1.217+
 
-* [Enable generic log ingestion](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
-* [Enable log monitoring (latest version)](../../../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
+* Enable generic log ingestion
+* Enable log monitoring (latest version)
 
 * [Create an API token](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.") and enable the **Ingest logs** permission. The API token applies to both versions.
 
@@ -86,7 +86,7 @@ You can run Azure log forwarding deployment using Azure Portal Cloud Shell (Bash
 
      **Note:** The name needs to be globally uniqueâit is appended to the created Azure resources.
 
-* For `TARGET_URL`, enter your environment URL: `https://<your_environment_ID>.live.dynatrace.com`. To learn how to determine your environment ID for the SaaS deployment, see [environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+* For `TARGET_URL`, enter your environment URL: `https://<your_environment_ID>.live.dynatrace.com`. To learn how to determine your environment ID for the SaaS deployment, see environment ID.
 
 * For `TARGET_API_TOKEN`, enter your API token. See [Dynatrace requirements](#dynatrace) for details.
 * For `RESOURCE_GROUP`, enter the name of the Azure resource group in which deployment will run. See [Azure requirements](#azure) for details.
@@ -127,7 +127,7 @@ Go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadb
 * If you see logs coming in, you managed to deploy Azure log forwarder successfully.
 * If there are no logs within 10 minutes checkout the **Verification** guide section of the page.
 
-You can use [DQL](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") to filter for Azure logs.
+You can use DQL to filter for Azure logs.
 As an example, you could add the following line to a DQL query:
 
 ```
@@ -326,7 +326,7 @@ Dynatrace version 1.217+
 1. Set the following environment variables, making sure to replace the placeholders (`<...>`) with your own values.
 
    * For `DEPLOYMENT_NAME`, enter your deployment name (lowercase only).
-   * For `TARGET_URL`, enter the API URL of your ActiveGate endpoint: `https://<your_activegate_IP_or_hostname>:9999/e/<your_environment_ID>`. To learn how to determine your environment ID, see [environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+   * For `TARGET_URL`, enter the API URL of your ActiveGate endpoint: `https://<your_activegate_IP_or_hostname>:9999/e/<your_environment_ID>`. To learn how to determine your environment ID, see environment ID.
    * For `TARGET_API_TOKEN`, enter your API token. For details, see the prerequisites above.
    * For `RESOURCE_GROUP`, enter the name of the Azure resource group in which deployment will run. See [Azure requirements](#azure) for details.
    * For `EVENT_HUB_CONNECTION_STRING`, enter the connection string for the Azure Event Hubs instances configured for receiving logs. See [Azure requirements](#azure) for details.
@@ -423,7 +423,7 @@ Add Event Hubs roles in the user-assigned managed identity. For the event hub tr
 
    * For `DEPLOYMENT_NAME`, enter your deployment name (lowercase only).
 
-* For `TARGET_URL`, enter your environment URL: `https://<your_environment_ID>.live.dynatrace.com`. To learn how to determine your environment ID for a SaaS deployment, see [environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+* For `TARGET_URL`, enter your environment URL: `https://<your_environment_ID>.live.dynatrace.com`. To learn how to determine your environment ID for a SaaS deployment, see environment ID.
 
 * For `TARGET_API_TOKEN`, enter your API token. For details, see the prerequisites above.
 * For `RESOURCE_GROUP`, enter the name of the Azure resource group in which deployment will run. See [Azure requirements](#azure) for details.
@@ -529,5 +529,5 @@ To uninstall the Dynatrace Azure log forwarder
 
 ## Related topics
 
-* [Microsoft Azure Integrations](../azure-integrations.md "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")
+* Microsoft Azure Integrations
 * [Azure Log Forwarder Troubleshootingï»¿](https://community.dynatrace.com/t5/Troubleshooting/Azure-Log-Forwarder-Troubleshooting/ta-p/243797)

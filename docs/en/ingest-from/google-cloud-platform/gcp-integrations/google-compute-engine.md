@@ -14,13 +14,13 @@ scraped: 2026-03-06T21:18:20.555137
 
 ## Deploy OneAgent
 
-Monitoring Google Compute Engine instances works out-of-the-box by just running the regular [Linux](../../dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux.md "Learn how to download and install Dynatrace OneAgent on Linux.") and [Windows](../../dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows.md "Learn how to download and install Dynatrace OneAgent on Windows.") OneAgent installers. Youâll get full-stack visibility, from hosts to processes and services layer.
+Monitoring Google Compute Engine instances works out-of-the-box by just running the regular Linux and Windows OneAgent installers. Youâll get full-stack visibility, from hosts to processes and services layer.
 
 ## Update OneAgent
 
-You can update OneAgent by running regular [Linux](../../dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux.md "Learn about the different ways to update OneAgent on Linux.") and [Windows](../../dynatrace-oneagent/installation-and-operation/windows/operation/update-oneagent-on-windows.md "Learn about the different ways to update Dynatrace OneAgent on Windows.") OneAgent update.
+You can update OneAgent by running regular Linux and Windows OneAgent update.
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
-* [OneAgent platform and capability support matrix](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* Set up Dynatrace on Google Cloud
+* OneAgent platform and capability support matrix

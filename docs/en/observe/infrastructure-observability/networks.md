@@ -23,19 +23,19 @@ Network monitoring in Dynatrace introduces minimal overhead, which varies depend
 * Dynatrace doesn't store the packets on a drive, either on monitored hosts or in the Dynatrace cluster.
 * Dynatrace analyzes packet headers only, not the payload.
 
-[#### Monitor network communications
+#### Monitor network communications
 
 Learn the basics of Dynatrace network monitoring, including how to analyze network health and recognize common network issues.
 
 * How-to guide
 
-Read this guide](networks/how-to-monitor-network-communication.md)[#### Detect network errors
+Read this guide#### Detect network errors
 
 Learn how errors such as dropped packets and retransmissions on the network level can affect the performance and connectivity of your services.
 
 * How-to guide
 
-Read this guide](networks/detect-network-errors.md)[#### Extended network monitoring
+Read this guide[#### Extended network monitoring
 
 Extend network monitoring with network traffic metrics in containerized Linux hosts using NetTracer.
 

@@ -23,4 +23,4 @@ Dynatrace автоматически создаёт имена для больш
 
 ## Связанные темы
 
-* [Действия пользователей](../../rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.")
+* Действия пользователей

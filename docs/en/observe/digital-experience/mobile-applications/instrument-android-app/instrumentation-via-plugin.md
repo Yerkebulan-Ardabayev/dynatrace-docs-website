@@ -16,9 +16,9 @@ You can use the Dynatrace Android Gradle plugin only for Android projects that u
 
 The Dynatrace Android Gradle plugin is hosted on [Maven Centralï»¿](https://central.sonatype.com/artifact/com.dynatrace.tools.android/gradle-plugin/overview), and the technical documentation is available as [DSL referenceï»¿](https://www.dynatrace.com/support/doc/javadoc/oneagent/android/gradle-plugin/dsl/).
 
-In a couple of months, we'll stop setting cookies to file scheme domains for hybrid applications. See [Disable cookies for file domains](instrumentation-via-plugin/adjust-oneagent-configuration.md#file-domain-cookies "Learn how to configure the Dynatrace Android Gradle plugin to modify the OneAgent SDK configuration.") for more details and action items.
+In a couple of months, we'll stop setting cookies to file scheme domains for hybrid applications. See Disable cookies for file domains for more details and action items.
 
-[Jetpack Compose auto-instrumentation](instrumentation-via-plugin/monitoring-capabilities.md#compose-instrumentation "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.") is enabled by default starting with Dynatrace Android Gradle plugin version 8.271.
+Jetpack Compose auto-instrumentation is enabled by default starting with Dynatrace Android Gradle plugin version 8.271.
 
 ## Requirements
 
@@ -69,43 +69,43 @@ The Dynatrace Android Gradle plugin supports Gradle build-specific capabilities,
 ### Build-specific limitations
 
 * **Android library projects**: The Dynatrace Android Gradle plugin auto-instruments only Android application projects. It doesn't support the auto-instrumentation of stand-alone Android library projects. Our plugin auto-instruments the internal libraries if you add them as a dependency to your Android application project.
-* **Android Gradle plugin `excludes` property**: With the [`excludes`ï»¿](https://developer.android.com/reference/tools/gradle-api/7.4/com/android/build/api/variant/Instrumentation#excludes()) property of the Android Gradle plugin, you can disable instrumentation for specific classes. This property is similar to the [`exclude`](instrumentation-via-plugin/configure-plugin-for-instrumentation.md#exclude-classes-and-methods "Learn how to configure the Dynatrace Android Gradle plugin to adjust the auto-instrumentation process.") property of the Dynatrace Android Gradle plugin. However, when you use the Dynatrace property, our plugin still instruments some very important classes to ensure that instrumentation is always valid. With the Android `excludes` property, all the specified classes aren't instrumented, which might negatively affect the instrumentation.
+* **Android Gradle plugin `excludes` property**: With the [`excludes`ï»¿](https://developer.android.com/reference/tools/gradle-api/7.4/com/android/build/api/variant/Instrumentation#excludes()) property of the Android Gradle plugin, you can disable instrumentation for specific classes. This property is similar to the `exclude` property of the Dynatrace Android Gradle plugin. However, when you use the Dynatrace property, our plugin still instruments some very important classes to ensure that instrumentation is always valid. With the Android `excludes` property, all the specified classes aren't instrumented, which might negatively affect the instrumentation.
 
 ## Configuration
 
 The Android Gradle plugin provides a wide range of configuration options to customize your Android application build and the monitored mobile user experience data.
 
-The Gradle snippet from the **Instrumentation** page and the Gradle snippets from the documentation contain sample names for variant-specific configuration, such as `sampleConfig`. To understand this better, see how [variant-specific configurations](instrumentation-via-plugin/configure-plugin-for-instrumentation.md#variant-specific-configs "Learn how to configure the Dynatrace Android Gradle plugin to adjust the auto-instrumentation process.") are used.
+The Gradle snippet from the **Instrumentation** page and the Gradle snippets from the documentation contain sample names for variant-specific configuration, such as `sampleConfig`. To understand this better, see how variant-specific configurations are used.
 
 ### Configure monitoring capabilities
 
 The following options can be used to customize OneAgent SDK for Android monitoring capabilities and fine-tune the auto-instrumentation process.
 
-* [User action monitoring](instrumentation-via-plugin/monitoring-capabilities.md#user-action-monitoring "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.")
-* [User action monitoring for Jetpack Compose](instrumentation-via-plugin/monitoring-capabilities.md#compose-instrumentation "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.")
-* [Web request monitoring](instrumentation-via-plugin/monitoring-capabilities.md#web-request-monitoring "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.")
-* [Lifecycle monitoring](instrumentation-via-plugin/monitoring-capabilities.md#lifecycle-monitoring "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.")
-* [Crash reporting](instrumentation-via-plugin/monitoring-capabilities.md#crash-reporting "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.")
-* [Rage tap detection](instrumentation-via-plugin/monitoring-capabilities.md#rage-tap-detection "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.")
-* [Location monitoring](instrumentation-via-plugin/monitoring-capabilities.md#location-monitoring "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.")
+* User action monitoring
+* User action monitoring for Jetpack Compose
+* Web request monitoring
+* Lifecycle monitoring
+* Crash reporting
+* Rage tap detection
+* Location monitoring
 
 ### Configure instrumentation processes
 
 The plugin also provides additional configuration options to customize the instrumentation process:
 
-* [Variant-specific configurations](instrumentation-via-plugin/configure-plugin-for-instrumentation.md#variant-specific-configs "Learn how to configure the Dynatrace Android Gradle plugin to adjust the auto-instrumentation process.")
-* [Auto-instrumentation deactivation](instrumentation-via-plugin/configure-plugin-for-instrumentation.md#deactivate-auto-instrumentation "Learn how to configure the Dynatrace Android Gradle plugin to adjust the auto-instrumentation process.")
-* [Automatic OneAgent startup](instrumentation-via-plugin/configure-plugin-for-instrumentation.md#auto-startup "Learn how to configure the Dynatrace Android Gradle plugin to adjust the auto-instrumentation process.")
-* [Exclusion of certain classes and methods](instrumentation-via-plugin/configure-plugin-for-instrumentation.md#exclude-certain-classes-and-methods "Learn how to configure the Dynatrace Android Gradle plugin to adjust the auto-instrumentation process.")
-* [Adjusting test case instrumentation](instrumentation-via-plugin/configure-plugin-for-instrumentation.md#adjust-test-case-instrumentation "Learn how to configure the Dynatrace Android Gradle plugin to adjust the auto-instrumentation process.")
+* Variant-specific configurations
+* Auto-instrumentation deactivation
+* Automatic OneAgent startup
+* Exclusion of certain classes and methods
+* Adjusting test case instrumentation
 
 ### Adjust OneAgent configuration
 
 The following configuration options can be used to adjust the default OneAgent configuration:
 
-* [Data privacy](instrumentation-via-plugin/adjust-oneagent-configuration.md#data-privacy "Learn how to configure the Dynatrace Android Gradle plugin to modify the OneAgent SDK configuration.")
-* [Hybrid apps that use RUM JavaScript inside `WebView`](instrumentation-via-plugin/adjust-oneagent-configuration.md#hybrid-apps "Learn how to configure the Dynatrace Android Gradle plugin to modify the OneAgent SDK configuration.")
-* [Adjust OneAgent behavior](instrumentation-via-plugin/adjust-oneagent-configuration.md#adjust-oneagent-behavior "Learn how to configure the Dynatrace Android Gradle plugin to modify the OneAgent SDK configuration.")
+* Data privacy
+* Hybrid apps that use RUM JavaScript inside `WebView`
+* Adjust OneAgent behavior
 
 These options are especially helpful when used along with the automatic OneAgent startup. They can also be used to adjust the OneAgent configuration when approached with the manual startup, but you need to be careful because the settings can easily be overridden with `ConfigurationBuilder`.
 
@@ -113,8 +113,8 @@ These options are especially helpful when used along with the automatic OneAgent
 
 Our plugin scans all subprojects and configures the auto-instrumentation process for your application modules. Other modules are unaffected by the plugin. In this case, you might need to adjust the instrumentation process for an Android project with:
 
-* [Library modules](instrumentation-via-plugin/configure-multi-module-projects.md#library-modules "Use the Dynatrace Android Gradle plugin for less common project architectures.")
-* [Feature modules](instrumentation-via-plugin/configure-multi-module-projects.md#feature-modules "Use the Dynatrace Android Gradle plugin for less common project architectures.")
-* [Multiple application modules](instrumentation-via-plugin/configure-multi-module-projects.md#multiple-application-modules "Use the Dynatrace Android Gradle plugin for less common project architectures.")
-* [Multiple application modules and feature modules](instrumentation-via-plugin/configure-multi-module-projects.md#application-and-feature-modules "Use the Dynatrace Android Gradle plugin for less common project architectures.")
-* [One build file](instrumentation-via-plugin/configure-multi-module-projects.md#one-build-file "Use the Dynatrace Android Gradle plugin for less common project architectures.")
+* Library modules
+* Feature modules
+* Multiple application modules
+* Multiple application modules and feature modules
+* One build file

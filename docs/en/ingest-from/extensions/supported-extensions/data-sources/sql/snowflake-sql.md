@@ -85,7 +85,7 @@ Required permission: **Change monitoring settings**
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. To learn how to use it to activate an extension using the Dynatrace API, see [Manage Extensions](../../../manage-extensions.md "Learn how to manage extensions.").
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. To learn how to use it to activate an extension using the Dynatrace API, see Manage Extensions.
 
 ## Related topics
 

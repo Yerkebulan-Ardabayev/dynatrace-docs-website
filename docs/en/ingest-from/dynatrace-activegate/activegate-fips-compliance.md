@@ -29,7 +29,7 @@ ActiveGate deployed in FIPS-compliant mode uses FIPS-certified cryptographic lib
 
 1
 
-excluding [Extension Execution Controller module](capabilities/routing-monitoring-purpose.md#extn "Learn about the routing and monitoring capabilities and uses of ActiveGate.") (same as regular, non-FIPS ActiveGate).
+excluding Extension Execution Controller module (same as regular, non-FIPS ActiveGate).
 
 2
 
@@ -37,7 +37,7 @@ refer to [Requirements and limitations](../../observe/digital-experience/synthet
 
 ### Host-based ActiveGate deployment
 
-FIPS-compliant mode can be enabled during ActiveGate installation. For details, see [Customize ActiveGate installation on Linux](installation/linux/linux-customize-installation-for-activegate.md#fips-compliant-mode "Learn about the command-line parameters that you can use with ActiveGate on Linux.").
+FIPS-compliant mode can be enabled during ActiveGate installation. For details, see Customize ActiveGate installation on Linux.
 
 #### Requirements
 
@@ -56,11 +56,11 @@ Containerized ActiveGate deployments rely on FIPS-compliant images, which are av
 
 #### Container registries
 
-FIPS-compliant ActiveGate images are available in our [supported public registries](../setup-on-k8s/guides/container-registries/use-public-registry.md#supported-public-registries "Use a public registry") with the image tag suffix `-fips`.
+FIPS-compliant ActiveGate images are available in our supported public registries with the image tag suffix `-fips`.
 
 Example: `public.ecr.aws/dynatrace/dynatrace-activegate:1.315.70.20241127-162512-fips`
 
-See [Configure DynaKube to use images from public registry](../setup-on-k8s/guides/container-registries/use-public-registry.md#configure-dynakube-to-use-images-from-public-registry "Use a public registry") for details on how to instruct Dynatrace Operator to use images from the public registry.
+See Configure DynaKube to use images from public registry for details on how to instruct Dynatrace Operator to use images from the public registry.
 
 ### Verification of FIPS-compliant mode
 
@@ -82,9 +82,9 @@ To list all ActiveGates running in FIPS-compliant mode
 
 ### REST API
 
-To use the Dynatrace API to check whether a specific ActiveGate is running in FIPS-compliant mode, use [GET an ActiveGate](../../dynatrace-api/environment-api/activegates/activegate-info/get-activegate.md "View the configuration of the specified ActiveGate via the Dynatrace API.") to check the value of the `fipsMode` field.
+To use the Dynatrace API to check whether a specific ActiveGate is running in FIPS-compliant mode, use GET an ActiveGate to check the value of the `fipsMode` field.
 
-To use the Dynatrace API to list all ActiveGates running in FIPS-compliant mode, use [GET all ActiveGates](../../dynatrace-api/environment-api/activegates/activegate-info/get-all.md "List all ActiveGates currently or recently connected to the environment.") with the `fipsMode` query parameter.
+To use the Dynatrace API to list all ActiveGates running in FIPS-compliant mode, use GET all ActiveGates with the `fipsMode` query parameter.
 
 ### Logs
 
@@ -106,7 +106,7 @@ Additionally, a log line describes the specific reason causing the initializatio
 
 #### Accessing logs in host-based deployment
 
-ActiveGate log files have the pattern `dynatracegateway.0.<number>.log` and can be found in the ActiveGate logs directory (see [ActiveGate directories](configuration/where-can-i-find-activegate-files.md#default-activegate-directories "Find out where ActiveGate files are stored on Windows and Linux systems.")).
+ActiveGate log files have the pattern `dynatracegateway.0.<number>.log` and can be found in the ActiveGate logs directory (see ActiveGate directories).
 
 #### Accessing logs in containerized deployment
 

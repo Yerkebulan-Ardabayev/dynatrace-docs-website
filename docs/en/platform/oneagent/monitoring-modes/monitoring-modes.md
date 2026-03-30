@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:10:51.621843
 * 5-min read
 * Updated on Nov 26, 2025
 
-Using [OneAgent](../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") to collect performance and health data from your environment gives you deep observability across applications, services, and infrastructure. To accommodate different use cases and resource requirements, OneAgent supports multiple monitoring modes.
+Using OneAgent to collect performance and health data from your environment gives you deep observability across applications, services, and infrastructure. To accommodate different use cases and resource requirements, OneAgent supports multiple monitoring modes.
 
 If you don't need full-stack monitoring, you can choose one of the two lightweight modes that focus on essential infrastructure metrics:
 
@@ -128,7 +128,7 @@ Network
 
 ## Virtualization monitoring
 
-Dynatrace supports [virtualization monitoring](../../../observe/infrastructure-observability/vmware-vsphere-monitoring.md "Monitor VMware vSphere with Dynatrace."). To monitor the virtual components in your environment, you need to complete an extra step beyond the initial setup. For full details, see [Set up virtualization monitoring](../../../observe/infrastructure-observability/vmware-vsphere-monitoring.md "Monitor VMware vSphere with Dynatrace.").
+Dynatrace supports virtualization monitoring. To monitor the virtual components in your environment, you need to complete an extra step beyond the initial setup. For full details, see Set up virtualization monitoring.
 
 ## FAQ
 

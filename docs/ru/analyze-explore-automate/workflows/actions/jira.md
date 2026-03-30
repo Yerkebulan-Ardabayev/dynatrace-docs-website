@@ -9,7 +9,7 @@ scraped: 2026-03-06T21:33:38.177057
 
 * 1 мин. чтения
 
-Ваша среда Dynatrace может интегрироваться с экземпляром Jira Cloud или Server с помощью Jira Connector ![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows"). Благодаря этой интеграции вы можете автоматизировать создание задач Jira, добавление комментариев и назначение исполнителей на основе событий и расписаний, заданных для ваших [рабочих процессов](../../workflows.md "Automate IT processes with Dynatrace Workflows—react to events, schedule tasks, and connect services.").
+Ваша среда Dynatrace может интегрироваться с экземпляром Jira Cloud или Server с помощью Jira Connector ![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows"). Благодаря этой интеграции вы можете автоматизировать создание задач Jira, добавление комментариев и назначение исполнителей на основе событий и расписаний, заданных для ваших рабочих процессов.
 
 [![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
 
@@ -35,6 +35,6 @@ scraped: 2026-03-06T21:33:38.177057
 
 ## Связанные темы
 
-* [Настройка Jira Connector](jira/automation-workflows-jira-setup.md "Learn how to set up Jira Connector.")
-* [Начало работы с Jira Connector](jira/automation-workflows-jira-get-started.md "Learn how to get started with Jira Connector actions.")
-* [Действия для Jira Connector](jira/automation-workflows-jira-actions.md "Integrate with the Jira instance to utilize a wide range of Jira Connector actions.")
+* Настройка Jira Connector
+* Начало работы с Jira Connector
+* Действия для Jira Connector

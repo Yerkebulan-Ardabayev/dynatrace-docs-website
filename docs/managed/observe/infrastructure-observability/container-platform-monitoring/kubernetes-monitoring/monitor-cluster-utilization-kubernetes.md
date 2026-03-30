@@ -52,4 +52,4 @@ By selecting a specific node, you can access the host details at the top of the 
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](../../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
+* Set up Dynatrace on Kubernetes

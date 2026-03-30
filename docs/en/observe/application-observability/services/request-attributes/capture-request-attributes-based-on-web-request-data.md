@@ -51,7 +51,7 @@ Request attribute data sources for web requests include
 * Technology-independent sources, such as:
 
   + HTTP POST parameters
-  + [Client IP addresses](../../../digital-experience/rum-concepts/detection-of-ip-addresses-locations-and-user-agents.md#ip-addresses "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")  
+  + Client IP addresses  
     The value of the first matching header is reported.
   + HTTP request and response headers
   + Web request URL or one of its constituents, like the path or a query parameter
@@ -91,4 +91,4 @@ Step 3 removes whitespaces.
 
 Step 4 enables you to filter out captured values that don't fit the provided criterion.
 
-Step 5 enables you to extract something from the resulting string based a [regular expression](../../../../manage/tags-and-metadata/reference/regular-expressions-in-dynatrace.md "Learn how to use regular expressions in the context of Dynatrace.").
+Step 5 enables you to extract something from the resulting string based a regular expression.

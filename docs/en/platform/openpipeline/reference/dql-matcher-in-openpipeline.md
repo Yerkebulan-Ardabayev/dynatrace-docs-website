@@ -12,9 +12,9 @@ scraped: 2026-03-06T21:13:46.603842
 * 8-min read
 * Updated on Dec 15, 2025
 
-With [Dynatrace powered by Grail](../../grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), you can use [Dynatrace Query Language](../../grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") (DQL) functions and logical operators in matchers.
+With Dynatrace powered by Grail, you can use Dynatrace Query Language (DQL) functions and logical operators in matchers.
 
-The matcher filters the ingested data and reduces the scope of data processed by the processor that you create. You can use the matcher in [OpenPipeline](../../openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to:
+The matcher filters the ingested data and reduces the scope of data processed by the processor that you create. You can use the matcher in OpenPipeline to:
 
 * Filter records containing a specified phrase.
 * Search data for a specific value in a given attribute.
@@ -197,7 +197,7 @@ With DQL matcher in OpenPipeline, you can use the following numerical operators:
 
 #### Strict equality
 
-[Logical operator](../../grail/dynatrace-query-language/operators.md "A list of DQL Operators.") (`==`) indicating an exact match.
+Logical operator (`==`) indicating an exact match.
 
 Configuration scopes need to be identical. However, if the decimal value is `0`, floating numbers can be compared with integer data. For example, `1==1.0`.
 For strings, the search is case-sensitive.
@@ -210,6 +210,6 @@ Contrary to `matchesValue` function, `strict equality` operator performs case-se
 
 ## Related topics
 
-* [DQL Functions in OpenPipeline](openpipeline-dql-functions.md "A list of DQL functions available in OpenPipeline.")
-* [DQL Commands](openpipeline-dql-commands.md "A list of DQL commands available in OpenPipeline.")
-* [DQL Operators in OpenPipeline DQL processor](openpipeline-dql-operators.md "A list of DQL operators available in OpenPipeline DQL processor.")
+* DQL Functions in OpenPipeline
+* DQL Commands
+* DQL Operators in OpenPipeline DQL processor

@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:25:31.373291
 * 4-min read
 * Updated on Jul 12, 2023
 
-You can filter metric data by [management zone](../../manage/identity-access-management/permission-management/management-zones.md "Learn about management zones concepts, how to define management zones, and how to make the most of them.") in two ways.
+You can filter metric data by management zone in two ways.
 
 * First, you can set up [entity-based rules](#entity-based-rules) for a management zone to match metrics with an associated entity type.
 * Second, you can set up [dimensional rules](#dimensional-rules) for a management zone to match metric series by metric or dimension keys.
@@ -29,8 +29,8 @@ You can check the entity type of a metric using:
 * The metric information side panel in [Data Explorer](../explorer.md#metric-name "Query for metrics and transform results to gain desired insights.").
 
   ![Metric entity type in Data Explorer](https://dt-cdn.net/images/data-explorer-entity-type-1122-6a93ade8f2.png)
-* The [Metric browser](../dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser.").
-* The [GET metric descriptor endpoint of the Metrics API](../../dynatrace-api/environment-api/metric-v2/get-descriptor.md "View the descriptor of a metric via Metrics v2 API."); check the [`entityType` element](../../dynatrace-api/environment-api/metric-v2/get-descriptor.md#response "View the descriptor of a metric via Metrics v2 API.").
+* The Metric browser.
+* The GET metric descriptor endpoint of the Metrics API; check the `entityType` element.
 
 Alternatively, you can explicitly configure the entity type for **ingested custom metrics** by setting the **Source entity type** on the [**Metric metadata** page](../dashboards-classic/metrics-browser.md#configuration-ui "Browse metrics with the Dynatrace metrics browser.").
 
@@ -71,7 +71,7 @@ Due to this limitation, users who shouldn't have access to these metric series c
 
 ### Metric-selector transformations
 
-The [metric-selector transformations](../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.") `parents` and `names` add information to metric data queries, which can expose the ID of the parent monitored entity (such as the ID of a host that is parent to a process) or the display name of the entity in the case of the `names` transformation.
+The metric-selector transformations `parents` and `names` add information to metric data queries, which can expose the ID of the parent monitored entity (such as the ID of a host that is parent to a process) or the display name of the entity in the case of the `names` transformation.
 
 ### Impact
 
@@ -81,4 +81,4 @@ We recommend special care in deciding which dimensions are sent as part of the d
 
 ## Related topics
 
-* [Management zones](../../manage/identity-access-management/permission-management/management-zones.md "Learn about management zones concepts, how to define management zones, and how to make the most of them.")
+* Management zones

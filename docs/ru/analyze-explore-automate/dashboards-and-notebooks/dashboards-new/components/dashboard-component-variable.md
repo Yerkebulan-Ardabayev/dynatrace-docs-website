@@ -136,7 +136,7 @@ scraped: 2026-03-06T21:11:14.517870
 
 ### Использование с плиткой Explore
 
-Чтобы использовать переменную в плитке [Explore data](../../explore-data.md "Explore your data with our point-and-click interface.")
+Чтобы использовать переменную в плитке Explore data
 
 1. Откройте меню  и выберите **Logs**.
 2. Выберите  и затем выберите **host.name** из **Available filters**.
@@ -233,7 +233,7 @@ scraped: 2026-03-06T21:11:14.517870
    * Оно будет отображаться в верхней части дашборда, в списке на панели **Variables** и использоваться в коде.
    * Может содержать только буквы (верхнего или нижнего регистра) и цифры (например, `status`, `myHosts` или `Variable01`) и не может начинаться с `dt_`.
 2. Установите **Type** в `DQL`.
-3. В **Data** введите запрос. Обязательно используйте [`summarize`](../../../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "DQL aggregation commands") и [`collectDistinct`](../../../../platform/grail/dynatrace-query-language/functions/aggregation-functions.md#collectDistinct "A list of DQL aggregation functions.") для получения уникальных значений из источников данных, таких как логи.
+3. В **Data** введите запрос. Обязательно используйте `summarize` и `collectDistinct` для получения уникальных значений из источников данных, таких как логи.
 4. Выберите **Run** и проверьте результаты в разделе **Preview**, чтобы убедиться, что всё работает как ожидается.
 5. Если хотите иметь возможность выбирать более одного значения одновременно, включите **Multi-select**.
 
@@ -429,7 +429,7 @@ fetch logs
 | summarize count(), by: {loglevel, bin(timestamp, $resolution)}
 ```
 
-В качестве обходного решения можно использовать функцию [duration](../../../../platform/grail/dynatrace-query-language/functions/time-functions.md#duration "A list of DQL time functions.") вместе с функцией [конвертации](../../../../platform/grail/dynatrace-query-language/functions.md#conversion-and-casting-functions "A list of DQL functions.") DQL. Это обеспечивает требуемый вывод на основе значения `$resolution`.
+В качестве обходного решения можно использовать функцию duration вместе с функцией [конвертации](../../../../platform/grail/dynatrace-query-language/functions.md#conversion-and-casting-functions "A list of DQL functions.") DQL. Это обеспечивает требуемый вывод на основе значения `$resolution`.
 
 ```
 fetch logs
@@ -443,7 +443,7 @@ fetch logs
 
 ### Преобразование значений переменных в другие типы данных
 
-Если вы хотите отфильтровать числовое значение, но сравнить его со строковым представлением, можно использовать нативную функцию [конвертации](../../../../platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions.md#conversion-and-casting-functions "A list of DQL conversion and casting functions.") DQL, такую как [toString](../../../../platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions.md#toString "A list of DQL conversion and casting functions.").
+Если вы хотите отфильтровать числовое значение, но сравнить его со строковым представлением, можно использовать нативную функцию конвертации DQL, такую как toString.
 
 ```
 fetch logs
@@ -485,5 +485,5 @@ fetch logs
 
 ## Связанные темы
 
-* [Команды DQL](../../../../platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
-* [Функции DQL](../../../../platform/grail/dynatrace-query-language/functions.md "A list of DQL functions.")
+* Команды DQL
+* Функции DQL

@@ -18,7 +18,7 @@ OneAgent for iOS version 8.323 or later is required for applications compiled wi
 
 ## Full Session Replay
 
-[Session Replay](../session-replay.md "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") on iOS enables you to capture your customers' interactions with your mobile and replay each tap, swipe, screen rotation in a movie-like experience.
+Session Replay on iOS enables you to capture your customers' interactions with your mobile and replay each tap, swipe, screen rotation in a movie-like experience.
 
 ## Session Replay on crashes
 
@@ -47,10 +47,10 @@ Make sure that your system meets the following requirements:
 * For a hybrid app, Session Replay is supported only for the native part of the app. For the browser part, Session Replay only supports webpage load events.
 * We recommend not using other crash reporting tools together with Dynatrace Session Replay.
 * Session Replay can capture only certain events. However, if you need to track a specific view or event that is not supported by default, you can [capture a custom event](#capture-custom-events).
-* You can only play back the user sessions recorded with Session Replay in [certain browsers](../../../discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements.md#session-replay "Find out which browsers Dynatrace applications can run on.").
+* You can only play back the user sessions recorded with Session Replay in certain browsers.
 * For iOS 26 applications generated with Xcode 26, masking functionality is only available with OneAgent for iOS version 8.323+.
 
-See [Technical restrictions for Session Replay for web applications](session-replay-restrictions-web.md "Learn which restrictions apply to Session Replay.") for more information.
+See Technical restrictions for Session Replay for web applications for more information.
 
 Session Replay is a video-like reconstruction of the user interactions with mobile applications that use captured events and data. Because of this approach, replayed sessions can differ from the actual user experience. Known issues
 
@@ -145,7 +145,7 @@ You can also mask a view by adding the data-dtrum-mask masking tag to the view's
 
 ## Enable Session Replay logs
 
-You can enable Session Replay logs the same way as for OneAgent. See [OneAgent for iOS debug logging](../mobile-applications/instrument-ios-app/customization/logging-for-ios.md "Turn on debug logging for OneAgent.") for more information
+You can enable Session Replay logs the same way as for OneAgent. See OneAgent for iOS debug logging for more information
 
 ## Capture custom events
 
@@ -229,5 +229,5 @@ To enable the Session Replay screenshot debugger:
 
 ## Related topics
 
-* [Session Replay](../session-replay.md "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")
-* [View crash reports for mobile applications](../mobile-applications/analyze-and-use/crash-reports-mobile.md "Check the latest crash reports for your mobile applications.")
+* Session Replay
+* View crash reports for mobile applications

@@ -38,13 +38,13 @@ scraped: 2026-03-06T21:13:39.739379
 
 Необходимые знания
 
-* [Dynatrace Query Language](../../grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
-* [Обработка в OpenPipeline](../concepts/processing.md "Основные концепции обработки в Dynatrace OpenPipeline.")
+* Dynatrace Query Language
+* Обработка в OpenPipeline
 
 Предварительные условия
 
 * Среда Dynatrace SaaS на базе Grail и AppEngine.
-* Либо лицензия [Dynatrace](../../../license.md "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace."), включающая возможности [Log Analytics (DPS)](../../../license/capabilities/log-analytics.md "Узнайте, как рассчитывается потребление Dynatrace Log Analytics с использованием модели Dynatrace Platform Subscription."), либо [DDU для Log Management and Analytics](../../../license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics.md "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Management and Analytics.").
+* Либо лицензия Dynatrace — модели лицензирования для всех возможностей Dynatrace."), включающая возможности Log Analytics (DPS), либо DDU для Log Management and Analytics.
 
 ## Шаги
 

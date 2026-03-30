@@ -18,15 +18,15 @@ The main advantages of OpenKit are:
 
 With Dynatrace OpenKit, you can:
 
-* Track [user sessions](/managed/observe/digital-experience/rum-concepts/user-session "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.") and [user actions](/managed/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")
+* Track user sessions and user actions
 * Report events, errors, and crashes
-* Trace web requests to [server-side distributed traces](/managed/observe/application-observability/distributed-traces/use-cases/segment-request "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.")
+* Trace web requests to server-side distributed traces
 * Tag user sessions with user tags
 * Maintain compatibility with Dynatrace
 
 With Dynatrace OpenKit, you can't:
 
 * Create server-side distributed traces. This functionality is provided by the Dynatrace OneAgent SDK.
-* Create metrics. However, you can use the [Topology and Smartscape API](/managed/dynatrace-api/environment-api/topology-and-smartscape/custom-device-api/report-custom-device-metric-via-rest-api "Learn how you can use the Dynatrace API to send a custom metric data point to a custom device.") and [Metrics API](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.") to report metrics.
+* Create metrics. However, you can use the Topology and Smartscape API and Metrics API to report metrics.
 
 As of April 2022, Dynatrace no longer supports TLS 1.0 and TLS 1.1 for Dynatrace SaaS Real User Monitoring (RUM) data. Now Dynatrace SaaS only supports TLS 1.2+. For this reason, using a .NET Framework version lower than 4.7 might require [additional configuration](https://docs.microsoft.com/en-us/dotnet/framework/network-programming/tls#if-your-app-targets-a-net-framework-version-earlier-than-47).

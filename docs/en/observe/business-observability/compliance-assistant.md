@@ -89,29 +89,29 @@ To maximize the value of risk management insights, set up data sources for [secu
 2. Select **Set up framework**.
 3. To choose the compliance framework you want to monitor, select the relevant framework. Currently, **DORA** is the only available framework in ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**.
 4. Select **Next**.
-5. To select critical or important functions (CIFs), select all compliance-critical business processes. If no CIFs are available, create a new [business process with configuration as an entity](business-flow/set-up-business-flow.md#set-a-business-flow-configuration-as-an-entity "Follow the instructions on how to successfully set up Business Flow.") in ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow**.
+5. To select critical or important functions (CIFs), select all compliance-critical business processes. If no CIFs are available, create a new business process with configuration as an entity in ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow**.
 6. Select **Next**.
 7. To take full advantage of the ICT risk management capabilities, verify whether data sources for [security events](../../secure/threat-observability/concepts.md#security-data "Basic concepts related to Threat Observability") are properly configured in your environment.
 
 #### If vulnerabilities aren't enabled
 
-1. Select **Set up RVA** to go to **Vulnerability Analytics: General settings** and enable [Runtime Vulnerabilities Analytics](../../secure/application-security/vulnerability-analytics.md "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."). There are two tabs: **Third-party Vulnerability Analytics** and **Code-level Vulnerability Analytics**. You can enable one or more options there.
+1. Select **Set up RVA** to go to **Vulnerability Analytics: General settings** and enable Runtime Vulnerabilities Analytics. There are two tabs: **Third-party Vulnerability Analytics** and **Code-level Vulnerability Analytics**. You can enable one or more options there.
 2. To monitor third-party vulnerabilities, [enable third-party vulnerability detection](../../secure/application-security/vulnerability-analytics.md#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
 3. To monitor code-level vulnerabilities, [enable code-level vulnerability detection](../../secure/application-security/vulnerability-analytics.md#clv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
-4. To integrate external security data into [Grail](../../platform/grail.md "Insights on what and how you can query Dynatrace data."), you can ingest [vulnerability events](../../secure/threat-observability/concepts.md#vuln-events "Basic concepts related to Threat Observability") from third-party products. For a list of supported integrations, see [Security integrations](../../secure/threat-observability/security-events-ingest.md "Ingest external security data into Grail.").
+4. To integrate external security data into Grail, you can ingest [vulnerability events](../../secure/threat-observability/concepts.md#vuln-events "Basic concepts related to Threat Observability") from third-party products. For a list of supported integrations, see Security integrations.
 5. Select **Done**.
 
 #### If security detection findings aren't enabled
 
 1. Select **Set up RAP** to go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Analyze and alert** > **Application security** > **Application protection** and [enable Runtime Application Protection](../../secure/application-security/application-protection.md#start "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.").
-2. To integrate external security data into Grail, you can ingest [detection finding events](../../secure/threat-observability/concepts.md#detection "Basic concepts related to Threat Observability") from third-party products. For a list of supported integrations, see [Security integrations](../../secure/threat-observability/security-events-ingest.md "Ingest external security data into Grail.").
+2. To integrate external security data into Grail, you can ingest [detection finding events](../../secure/threat-observability/concepts.md#detection "Basic concepts related to Threat Observability") from third-party products. For a list of supported integrations, see Security integrations.
 3. Select **Done**.
 
 #### If ICT asset configuration rules aren't enabled
 
-1. Select **Set up KSPM** to go to **Security Posture Management: Kubernetes** and [enable Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md#enable "Configure and enable Security Posture Management in Kubernetes.").
+1. Select **Set up KSPM** to go to **Security Posture Management: Kubernetes** and enable Security Posture Management.
 2. To get started with Security Posture Management and configure the assessment scope, see [Get started with Security Posture Management](../../secure/xspm.md#get-started "Detect, manage, and take action on security and compliance findings."). To include DORA as a supported compliance standard in the assessment scope, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Analyze and alert** > **Application security** > **Security Posture Management** and enable DORA.
-3. To integrate with external security data to ingest compliance findings, see [Security integrations](../../secure/threat-observability/security-events-ingest.md "Ingest external security data into Grail.").
+3. To integrate with external security data to ingest compliance findings, see Security integrations.
 4. Select **Done**.
 
 ### Remove a compliance framework
@@ -122,7 +122,7 @@ To maximize the value of risk management insights, set up data sources for [secu
 
 ### Manage compliance-critical business processes
 
-![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** allows you to map compliance-relevant IT assets to end-to-end business processes. ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** integrates with [![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow**](business-flow.md "Monitor and analyze critical business process flows. Track business key performance indicators (KPI), detect process anomalies, and prioritize optimization opportunities to improve business outcomes.") to identify compliance-critical [business process with configuration as an entity](business-flow/set-up-business-flow.md#set-a-business-flow-configuration-as-an-entity "Follow the instructions on how to successfully set up Business Flow.").
+![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** allows you to map compliance-relevant IT assets to end-to-end business processes. ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** integrates with [![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow**](business-flow.md "Monitor and analyze critical business process flows. Track business key performance indicators (KPI), detect process anomalies, and prioritize optimization opportunities to improve business outcomes.") to identify compliance-critical business process with configuration as an entity.
 
 #### To add a critical or important function (CIF)
 
@@ -190,15 +190,15 @@ According to the [EU DORA Regulationï»¿](https://eur-lex.europa.eu/eli/reg/20
 
 ### Unclassified problems
 
-[IT-detected incidents](../../../common/semantic-dictionary/model/davis.md "Get to know the Semantic Dictionary models related to Davis AI.") are affecting any of the business processes configured as CIFs that ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow** is monitoring. Incidents are considered unclassified problems when less than one of the materiality thresholds for the classification of major incidents is breached. In line with the EU DORA Regulation, it must be assessed whether an incident affects or has affected ICT services or network and information systems that support CIFs [(RTS on the classification of ICT-related incidents and cyber threats)ï»¿](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401772).
+IT-detected incidents are affecting any of the business processes configured as CIFs that ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow** is monitoring. Incidents are considered unclassified problems when less than one of the materiality thresholds for the classification of major incidents is breached. In line with the EU DORA Regulation, it must be assessed whether an incident affects or has affected ICT services or network and information systems that support CIFs [(RTS on the classification of ICT-related incidents and cyber threats)ï»¿](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401772).
 
 ### Potential major incidents
 
-[IT-detected incidents](../../../common/semantic-dictionary/model/davis.md "Get to know the Semantic Dictionary models related to Davis AI.") are affecting any of the business processes configured as CIFs that ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow** is monitoring. Incidents are considered potential major incidents when two or more of the monitored materiality thresholds for the classification of major incidents are breached. In line with the EU DORA Regulation, an incident is considered major when two or more of the materiality thresholds are met ([RTS on the classification of ICT-related incidents and cyber threatsï»¿](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401772)).
+IT-detected incidents are affecting any of the business processes configured as CIFs that ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow** is monitoring. Incidents are considered potential major incidents when two or more of the monitored materiality thresholds for the classification of major incidents are breached. In line with the EU DORA Regulation, an incident is considered major when two or more of the materiality thresholds are met ([RTS on the classification of ICT-related incidents and cyber threatsï»¿](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401772)).
 
 ### Classified major incidents
 
-[IT-detected incidents](../../../common/semantic-dictionary/model/davis.md "Get to know the Semantic Dictionary models related to Davis AI.") are affecting any of the business processes configured as CIFs that ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow** is monitoring and have been manually classified as major in line with the EU DORA Regulation. Once an incident is classified as major, Dynatrace automatically generates a business event with a snapshot of the compliance incident. Learn more about [Compliance incident classification events](../../semantic-dictionary/model/business-analytics.md "Get to know the Semantic Dictionary models related to Business Observability.").
+IT-detected incidents are affecting any of the business processes configured as CIFs that ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow** is monitoring and have been manually classified as major in line with the EU DORA Regulation. Once an incident is classified as major, Dynatrace automatically generates a business event with a snapshot of the compliance incident. Learn more about Compliance incident classification events.
 
 ### Vulnerabilities
 
@@ -227,8 +227,8 @@ How can I improve the Dynatrace score in the compliance snapshot?
 The Dynatrace score is a real-time indicator based on your current ICT risk posture and impacted by the severity of findings. To improve your score:
 
 * Address potential major incidents and unclassified problems promptly.
-* Remediate security detection findings and vulnerabilities. To review security detection findings and initiate deeper analysis, see [Gain insights](../../secure/threats-and-exploits/gain-insights.md "Drill into detection findings for detailed information."). To learn more on how to fix detected vulnerabilities, see [How do I fix detected vulnerabilities?](../../secure/faq.md#fix "Frequently asked questions about Dynatrace Application Security.").
-* Fix ICT asset misconfigurations identified by Security Posture Management. For guidelines on how to fix findings, see [Stay compliant with Security Posture Management](../../secure/use-cases/stay-compliant.md "Stay on top of your security measures, policies, and practices.").
+* Remediate security detection findings and vulnerabilities. To review security detection findings and initiate deeper analysis, see Gain insights. To learn more on how to fix detected vulnerabilities, see [How do I fix detected vulnerabilities?](../../secure/faq.md#fix "Frequently asked questions about Dynatrace Application Security.").
+* Fix ICT asset misconfigurations identified by Security Posture Management. For guidelines on how to fix findings, see Stay compliant with Security Posture Management.
 * Ensure proper monitoring and real-time protection are enabled across your critical or important functions (CIFs).
 
 How often are insights on critical or important functions (CIFs) updated in ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**?
@@ -239,11 +239,11 @@ To ensure reliable KPI evaluation and avoid missing data from longârunning 
 
 Why are the configured critical or important functions (CIFs) not updating?
 
-If you have recently edited or added [business processes configured as entity](business-flow/set-up-business-flow.md#set-a-business-flow-configuration-as-an-entity "Follow the instructions on how to successfully set up Business Flow.") and selected any of those as a CIF in ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**, it may take up to the maximum defined frequency for the monitoring KPIs of those business processes to be updated in ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**. You can adjust the monitoring frequency in the business flow configuration.
+If you have recently edited or added business processes configured as entity and selected any of those as a CIF in ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**, it may take up to the maximum defined frequency for the monitoring KPIs of those business processes to be updated in ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**. You can adjust the monitoring frequency in the business flow configuration.
 
 ## Related topics
 
-* [Business process monitoring](business-process-monitoring.md "Discover how to monitor business processes.")
-* [Runtime Application Protection](../../secure/application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
-* [Security Posture Management](../../secure/application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
-* [Runtime Vulnerability Analytics](../../secure/application-security/vulnerability-analytics.md "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
+* Business process monitoring
+* Runtime Application Protection
+* Security Posture Management
+* Runtime Vulnerability Analytics

@@ -22,15 +22,15 @@ Manage user and group lifecycle operations and implement automated authenticatio
 
 ### Concepts
 
-Discover the IAM user types, identity federation, and user repositories.](user-and-group-management/identity-concepts.md "Understand the key identity concepts in Dynatrace IAM")[### Local users
+Discover the IAM user types, identity federation, and user repositories.](user-and-group-management/identity-concepts.md "Understand the key identity concepts in Dynatrace IAM")### Local users
 
-Dynatrace serves as your identity store.](user-and-group-management/identity-concepts.md#users "Understand the key identity concepts in Dynatrace IAM")[### Service users
+Dynatrace serves as your identity store.### Service users
 
-Non-human identities interacting with services and resources.](user-and-group-management/identity-concepts.md#service-users "Understand the key identity concepts in Dynatrace IAM")[### SAML federation
+Non-human identities interacting with services and resources.### SAML federation
 
-Delegate authentication through your IdP.](user-and-group-management/access-saml.md "SAML")[### SCIM
+Delegate authentication through your IdP.### SCIM
 
-Keep your identity repositories in sync.](user-and-group-management/access-scim.md "SCIM")
+Keep your identity repositories in sync.
 
 ## Access management
 
@@ -40,19 +40,19 @@ Define granular user access in Dynatrace, controlling permissions to safeguard s
 
 ### Concepts
 
-Discover how Dynatrace manages groups and policies.](permission-management/access-concepts.md "Understand the key access concepts in Dynatrace IAM")[### Groups
+Discover how Dynatrace manages groups and policies.](permission-management/access-concepts.md "Understand the key access concepts in Dynatrace IAM")### Groups
 
-Collectively manage your access configurations.](permission-management/access-concepts.md#groups "Understand the key access concepts in Dynatrace IAM")[### Policies
+Collectively manage your access configurations.### Policies
 
-Define tailored permissions to access resources.](permission-management/access-concepts.md#policies "Understand the key access concepts in Dynatrace IAM")[### Policy boundaries
+Define tailored permissions to access resources.### Policy boundaries
 
-Scale, refine, and simplify access permissions.](permission-management/access-concepts.md#policy-boundaries "Understand the key access concepts in Dynatrace IAM")[### Policy templates
+Scale, refine, and simplify access permissions.### Policy templates
 
-Reusable policies to regulate access control.](permission-management/access-concepts.md#policy-templates "Understand the key access concepts in Dynatrace IAM")[### Default policies
+Reusable policies to regulate access control.### Default policies
 
-Get started with Dynatrace default policies.](permission-management/default-policies.md "Dynatrace default policies reference")[### Default groups
+Get started with Dynatrace default policies.### Default groups
 
-Get started with Dynatrace default groups.](user-and-group-management/default-groups.md "Dynatrace default groups reference")
+Get started with Dynatrace default groups.
 
 ## Tokens and OAuth clients
 
@@ -62,8 +62,8 @@ Externalize and automate the access to Dynatrace using secure tokens.
 
 ### Concepts
 
-Discover how Dynatrace handles API tokens and access automation.](access-tokens-and-oauth-clients/token-concepts.md "Understand the key API access and automation in Dynatrace IAM")[### Platform tokens
+Discover how Dynatrace handles API tokens and access automation.](access-tokens-and-oauth-clients/token-concepts.md "Understand the key API access and automation in Dynatrace IAM")### Platform tokens
 
-Allow interactions with the Dynatrace platform.](access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.")[### OAuth tokens
+Allow interactions with the Dynatrace platform.### OAuth tokens
 
-Access Dynatrace through OAuth clients.](access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.")
+Access Dynatrace through OAuth clients.

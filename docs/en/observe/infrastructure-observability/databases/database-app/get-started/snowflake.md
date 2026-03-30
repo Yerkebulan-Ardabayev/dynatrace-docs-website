@@ -15,11 +15,11 @@ Use Dynatrace Extension framework to extend your application observability into 
 
 ## Prerequisites
 
-Ensure your system meets these [requirements](../../extensions/snowflake.md#requirements "Expand visibility to improve health and performance monitoring of your Snowflake database.") for full feature support.
+Ensure your system meets these requirements for full feature support.
 
 ## Set up Snowflake extension for monitoring
 
-To set up and activate the extension, follow the [detailed activation steps](../../extensions/snowflake.md#activation-and-setup "Expand visibility to improve health and performance monitoring of your Snowflake database.").
+To set up and activate the extension, follow the detailed activation steps.
 
 1. Add the database instance.
 2. Select the hosting type.
@@ -29,12 +29,12 @@ To set up and activate the extension, follow the [detailed activation steps](../
 
 ## Use cases
 
-You can benefit from Snowflake monitoring in these [use cases](../../extensions/snowflake.md#use-cases "Expand visibility to improve health and performance monitoring of your Snowflake database.").
+You can benefit from Snowflake monitoring in these use cases.
 
 ## Feature sets
 
-[Feature sets](../../extensions/snowflake.md#feature-sets "Expand visibility to improve health and performance monitoring of your Snowflake database.") restrict which metrics are collected when you activate the extension.
+Feature sets restrict which metrics are collected when you activate the extension.
 
 ## Related topics
 
-* [Snowflake extension](../../extensions/snowflake.md "Expand visibility to improve health and performance monitoring of your Snowflake database.")
+* Snowflake extension

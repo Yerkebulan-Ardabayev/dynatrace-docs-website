@@ -20,7 +20,7 @@ With the power of Grail primary fields, tags, and segments, you can customize th
 
 ## Constituent entities overview
 
-The **Smartscape on Grail** view visualizes entities as a flat structure consisting of nodes and edges. Nodes and edges can be represented by an entity of any type permitted by [**Smartscape on Grail**](../../../platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
+The **Smartscape on Grail** view visualizes entities as a flat structure consisting of nodes and edges. Nodes and edges can be represented by an entity of any type permitted by **Smartscape on Grail**.
 
 ### Nodes
 
@@ -50,4 +50,4 @@ To use the **Smartscape on Grail** view effectively, we recommend that you:
 
 ## Related topics
 
-* [Smartscape](../../smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* Smartscape

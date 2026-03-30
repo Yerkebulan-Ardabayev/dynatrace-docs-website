@@ -53,7 +53,7 @@ To explore data such as logs, metrics, or business events with our point-and-cli
    * Add an operator and a search string right after.
 
      + Only operators relevant to the data type are suggested.
-     + Read more on [how the filter field works](../../discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.") in the dedicated documentation.
+     + Read more on how the filter field works in the dedicated documentation.
 
      Note: Combining `=` with a wildcard in before `*`, after, or both, before your search term will resolve to a starts with, ends with, or contains filter respectively.
    * The  on the bottom of the definition opens a menu of additional commands you can add.
@@ -89,11 +89,11 @@ this indicates that the `dt.entity.*` fields will eventually be removed.
 
 ### Learn more
 
-For more information about the benefits of Smartscape nodes and how they work, see [Smartscape on Grail](../../platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
+For more information about the benefits of Smartscape nodes and how they work, see Smartscape on Grail.
 
 ## Prompt
 
-You can create a notebook section or dashboard tile using [Dynatrace Intelligence agentic and generative AI](../../dynatrace-intelligence/copilot/copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.") to translate your natural language questions into DQL queries.
+You can create a notebook section or dashboard tile using Dynatrace Intelligence agentic and generative AI to translate your natural language questions into DQL queries.
 
 ### Generative AI in your dashboard
 
@@ -124,7 +124,7 @@ To create a dashboard tile using Dynatrace Intelligence agentic and generative A
 
      + If a prompt has been edited, the DQL will first be regenerated and then run.
      + If no prompts have been edited, the existing generated DQL will simply be run.
-8. Optional Select the **Visual** tab to change the visualization (refer to the [visualization-specific documentation](edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
+8. Optional Select the **Visual** tab to change the visualization (refer to the visualization-specific documentation for more information).
 
 ### Generative AI in your notebook
 
@@ -149,7 +149,7 @@ To create a notebook section using Dynatrace Intelligence agentic and generative
 
      + If a prompt has been edited, the DQL will first be regenerated and then run.
      + If no prompts have been edited, the existing generated DQL will simply be run.
-7. Optional Select the  **Options** in the section header to change the visualization (refer to the [visualization-specific documentation](edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
+7. Optional Select the  **Options** in the section header to change the visualization (refer to the visualization-specific documentation for more information).
 
    Automatically select visualization
 
@@ -398,7 +398,7 @@ To visualize the rate at which a metric is changing
 
 ### Reduce to single value
 
-To make your results suitable for certain visualizations such as [Single value](edit-visualizations/visualization-chart-single-value.md "Create and edit single value visualizations on your Dynatrace dashboards and notebooks."), [Table](edit-visualizations/visualization-table.md "Create and edit table visualizations on your Dynatrace dashboards and notebooks."), or [Categorical bar chart](edit-visualizations/visualization-chart-bar-categorical.md "Create and edit categorical chart visualizations on your Dynatrace dashboards and notebooks.")
+To make your results suitable for certain visualizations such as Single value, Table, or Categorical bar chart
 
 1. Select the metric-specific  menu and then select **Reduce to single value**.
 2. Use the **Reduce to single value** menu to select the value.
@@ -446,7 +446,7 @@ Add expressions to apply arithmetic based on your selected metrics.
 3. Define your expression by combining references from
 
    * Defined metrics such as `A`, `B`, and `C`
-   * Supported mathematical and logical [operators](../../platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.") such as `+`, `-`, `/`, `*`, `(`, and `)`
+   * Supported mathematical and logical operators such as `+`, `-`, `/`, `*`, `(`, and `)`
 
    For example, to calculate the total disk capacity, we simply add both metrics together using `A+B`
 4. Select **Run** and inspect the results.
@@ -479,7 +479,7 @@ If you add multiple metrics to your query, the interval applies to all of them, 
 1. Select  **Interval** to add an **Interval** selector to your query.
 2. Select an interval.
 
-For details on how an interval is used in DQL, see [timeseries](../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "DQL metric commands").
+For details on how an interval is used in DQL, see timeseries.
 
 ## Business events
 
@@ -593,7 +593,7 @@ From that point, you can apply what you've learned from the previous examples to
 
 ## Query Grail
 
-When you're exploring data, you're automatically creating a [DQL](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") query that you can view, copy, and use as the basis of more complex queries.
+When you're exploring data, you're automatically creating a DQL query that you can view, copy, and use as the basis of more complex queries.
 
 ### Show DQL
 

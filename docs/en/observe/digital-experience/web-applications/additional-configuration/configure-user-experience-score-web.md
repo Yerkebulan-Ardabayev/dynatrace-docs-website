@@ -11,7 +11,7 @@ scraped: 2026-03-03T21:23:52.409334
 * 1-min read
 * Published Jan 27, 2023
 
-A [user experience score](../../rum-concepts/scores-and-ratings/user-experience-score.md "User experience score is a metric used to categorize user sessions as Frustrating, Tolerable, or Satisfying.") is an important metric that reflects the overall performance, usability, and detected errors of each session. You can adjust the user experience score thresholds for your applications.
+A user experience score is an important metric that reflects the overall performance, usability, and detected errors of each session. You can adjust the user experience score thresholds for your applications.
 
 To set up the user experience score thresholds
 
@@ -25,4 +25,4 @@ To set up the user experience score thresholds
 
 ## Related topics
 
-* [User experience score](../../rum-concepts/scores-and-ratings/user-experience-score.md "User experience score is a metric used to categorize user sessions as Frustrating, Tolerable, or Satisfying.")
+* User experience score

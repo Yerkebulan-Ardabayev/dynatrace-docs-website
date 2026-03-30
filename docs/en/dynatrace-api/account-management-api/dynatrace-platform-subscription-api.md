@@ -11,35 +11,35 @@ scraped: 2026-03-06T21:30:05.309312
 * Reference
 * Published Mar 30, 2023
 
-[### List subscriptions
+### List subscriptions
 
-Get an overview of your subscriptions.](dynatrace-platform-subscription-api/subscriptions/get-all.md "List all Dynatrace Platform Subscriptions via the Account Management API.")[### View subscription
+Get an overview of your subscriptions.### View subscription
 
-Check the details of a subscription.](dynatrace-platform-subscription-api/subscriptions/get-subscription.md "View info about a Dynatrace Platform Subscription via the Account Management API.")
+Check the details of a subscription.
 
 ## Usage
 
-[### View usage
+### View usage
 
-Get an overview of how your Dynatrace Platform Subscription is used.](dynatrace-platform-subscription-api/usage/get-usage.md "Check how your Dynatrace Platform Subscription is used via the Account Management API.")[### View usage per environment
+Get an overview of how your Dynatrace Platform Subscription is used.### View usage per environment
 
-See how every monitoring environment consumes your Dynatrace Platform Subscription.](dynatrace-platform-subscription-api/usage/get-usage-environment.md "Check how every monitoring environment consumes your Dynatrace Platform Subscription via the Account Management API.")
+See how every monitoring environment consumes your Dynatrace Platform Subscription.
 
 ## Cost
 
-[### View cost
+### View cost
 
-Get an overview of the costs of your Dynatrace Platform Subscription.](dynatrace-platform-subscription-api/cost/get-cost.md "Check the cost of your Dynatrace Platform Subscription via the Account Management API.")[### View cost per environment
+Get an overview of the costs of your Dynatrace Platform Subscription.### View cost per environment
 
-See how much every monitoring environment contributes to the cost of your Dynatrace Platform Subscription.](dynatrace-platform-subscription-api/cost/get-cost-environment.md "Check the cost of your Dynatrace Platform Subscription per environment via the Account Management API.")
+See how much every monitoring environment contributes to the cost of your Dynatrace Platform Subscription.
 
 ## Cost monitor
 
-[### View cost forecast
+### View cost forecast
 
-Get a forecasted cost of your Dynatrace Platform Subscription.](dynatrace-platform-subscription-api/cost-monitors/get-forecast.md "Automate the management of your Dynatrace Platform Subscription via our API.")[### View cost events
+Get a forecasted cost of your Dynatrace Platform Subscription.### View cost events
 
-Get cost and forecast events detected by Account Management.](dynatrace-platform-subscription-api/cost-monitors/get-events.md "Automate the management of your Dynatrace Platform Subscription via our API.")
+Get cost and forecast events detected by Account Management.
 
 ## Cost allocation
 

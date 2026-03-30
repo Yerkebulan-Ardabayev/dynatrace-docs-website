@@ -80,4 +80,4 @@ To assign users read-only permission to a VM
 
 ## Related topics
 
-* [VMware vSphere monitoring](../vmware-vsphere-monitoring.md "Monitor VMware vSphere with Dynatrace.")
+* VMware vSphere monitoring

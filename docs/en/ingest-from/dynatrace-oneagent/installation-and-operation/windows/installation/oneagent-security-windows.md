@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:19:25.957588
 
 To fully automate the monitoring of your operating systems, processes, and network interfaces, Dynatrace requires privileged access to your operating system during both installation and operation.
 
-OneAgent is tested extensively to ensure that it has minimal performance impact on your system and [conforms to the highest security standards](../../../../../../common/manage/data-privacy-and-security.md "Learn how Dynatrace applies various security measures required to protect private data.").
+OneAgent is tested extensively to ensure that it has minimal performance impact on your system and conforms to the highest security standards.
 
 ## Permissions
 
@@ -26,7 +26,7 @@ OneAgent installer requires admin privileges to:
 * Create the OneAgent service.
 * Modify certain registry keys.
 * Install packet capture driver (Npcap or WinPcap) for network metrics collection. For more information, see [Packet capture driver (pcap)](customize-oneagent-installation-on-windows.md#packet_capture_driver "Learn how to use the OneAgent installer for Windows.").
-* Install [oneagentmon device](../../../../../discover-dynatrace/get-started/glossary.md#o "Get acquainted with Dynatrace terminology.").
+* Install oneagentmon device.
 
 ### Operation
 
@@ -95,11 +95,11 @@ OneAgent downloads Security, System, and Application system logs from the last 1
 Revoking access to system logs
 
 To revoke access to system logs, use the `oneagentctl` command with the `--set-system-logs-access-enabled` parameter set to `false`.  
-For more information, see [OneAgent configuration via command-line interface](../../../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
+For more information, see OneAgent configuration via command-line interface
 
 ## Globally writable directories
 
-The [OneAgent directory structure](disk-space-requirements-for-oneagent-installation-and-update-on-windows.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.") contains globally writable directories (directories where the `Everyone` user group can write, modify, or execute). Changing these permissions by users is not supported.
+The OneAgent directory structure contains globally writable directories (directories where the `Everyone` user group can write, modify, or execute). Changing these permissions by users is not supported.
 
 ### OneAgent injection mechanism
 

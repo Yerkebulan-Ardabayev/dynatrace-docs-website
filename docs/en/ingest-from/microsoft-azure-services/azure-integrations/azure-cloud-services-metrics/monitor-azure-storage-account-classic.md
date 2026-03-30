@@ -25,7 +25,7 @@ To monitor resources of the `Microsoft.Storage/storageAccounts` (including Stora
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see [Enable service monitoring](../azure-monitoring-guide/azure-enable-service-monitoring.md "Enable Azure monitoring in Dynatrace.").
+To learn how to enable service monitoring, see Enable service monitoring.
 
 ## View service metrics
 

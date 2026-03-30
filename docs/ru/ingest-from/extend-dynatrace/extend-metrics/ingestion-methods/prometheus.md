@@ -25,14 +25,14 @@ Dynatrace интегрирует метрики gauge и counter из экспо
 
 В Kubernetes Dynatrace поддерживает сбор данных с любых конечных точек HTTP(s), предоставляющих метрики в формате OpenMetrics (например, экспортёры Prometheus). С помощью специальных аннотаций Dynatrace вы можете указать, с каких подов или сервисов выполнять сбор данных.
 
-* Узнайте, как собирать [метрики Prometheus в Kubernetes](../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
+* Узнайте, как собирать метрики Prometheus в Kubernetes.
 
 ## Prometheus вне Kubernetes
 
 Dynatrace предоставляет масштабируемый способ приёма метрик Prometheus непосредственно из источника без Kubernetes. Это работает полностью автоматически и наиболее эффективно, если OneAgent установлен на хосте, где генерируются метрики Prometheus, но также может быть реализовано полностью без агента, если установить OneAgent на хосте невозможно.
 
-* Узнайте, как собирать метрики Prometheus без Kubernetes с помощью [источника данных Prometheus для Extensions 2.0](../../../extensions/develop-your-extensions/data-sources/prometheus-extensions.md "Learn how to create a Prometheus extension using the Extensions framework.").
+* Узнайте, как собирать метрики Prometheus без Kubernetes с помощью источника данных Prometheus для Extensions 2.0.
 
 ## Prometheus через OpenTelemetry Collector
 
-Для сред, требующих большей гибкости настройки, Dynatrace позволяет принимать метрики Prometheus с помощью OpenTelemetry Collector. Для начала работы см. [Сбор данных из Prometheus](../../../opentelemetry/collector/use-cases/prometheus.md "Configure the OpenTelemetry Collector to scrape your Prometheus data.").
+Для сред, требующих большей гибкости настройки, Dynatrace позволяет принимать метрики Prometheus с помощью OpenTelemetry Collector. Для начала работы см. Сбор данных из Prometheus.

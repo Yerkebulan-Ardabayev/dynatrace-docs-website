@@ -12,11 +12,11 @@ scraped: 2026-03-05T21:30:28.462282
 * 2-min read
 * Updated on Nov 20, 2025
 
-Dynatrace has a [permission model for Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail."). This applies to all telemetry data, such as metrics, events, spans, and logs.
+Dynatrace has a permission model for Grail. This applies to all telemetry data, such as metrics, events, spans, and logs.
 
 We recommend setting up permissions along organizational lines and deployment scopes. Suitable concepts include host groups, Kubernetes clusters, and Kubernetes namespaces. These attributes are typically available for all telemetry data ingested via Dynatrace collection methods like OneAgent, OpenTelemetry, or Kubernetes operator. Hence, you can use these attributes to enable [record-level permissions](../../platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.").
 
-For Kubernetes-based deployments, make sure Dynatrace Operator has [metadata enrichment](../../ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") enabled.
+For Kubernetes-based deployments, make sure Dynatrace Operator has metadata enrichment enabled.
 
 If you only require a basic permission concept, setting up bucket-level permissions is the best option. You can then route your data to the correct bucket in OpenPipeline by matching one of the mentioned deployment-relevant primary Grail fields.
 
@@ -37,7 +37,7 @@ To use `dt.security_context` and other attributes for permissions, make sure the
 
 ### Leverage existing tags at the source
 
-You can define the security context at the source via [OneAgent](../../ingest-from/dynatrace-oneagent/oneagent-security-context.md "Learn how to set up Grail permissions for OneAgent."), [OpenTelemetry](../../ingest-from/opentelemetry/opentelemetry-security-context.md "Set up Grail permissions for OpenTelemetry."), or [Kubernetes labels or annotations](../../ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment.md "Guides for telemetry enrichment on Kubernetes"). This allows you to use your existing labels and tags to facilitate permissions in Dynatrace.
+You can define the security context at the source via OneAgent, OpenTelemetry, or Kubernetes labels or annotations. This allows you to use your existing labels and tags to facilitate permissions in Dynatrace.
 
 ## Set up the security context in OpenPipeline
 
@@ -63,8 +63,8 @@ Based on the created attribute, you can enforce security-related user and group 
 
 ## Related topics
 
-* [Set up Grail permissions for OneAgent](../../ingest-from/dynatrace-oneagent/oneagent-security-context.md "Learn how to set up Grail permissions for OneAgent.")
-* [Metadata enrichment of all telemetry originating from Kubernetes](../../ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment.md "Guides for telemetry enrichment on Kubernetes")
-* [Set up Grail permissions for logs](../logs/lma-security-context.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")
-* [Set up Grail permissions for Distributed Tracing](../../observe/application-observability/distributed-tracing/permissions.md "Manage permissions for Distributed Tracing powered by Grail.")
-* [OpenPipeline processing examples](../../platform/openpipeline/use-cases/processing-examples.md "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
+* Set up Grail permissions for OneAgent
+* Metadata enrichment of all telemetry originating from Kubernetes
+* Set up Grail permissions for logs
+* Set up Grail permissions for Distributed Tracing
+* OpenPipeline processing examples

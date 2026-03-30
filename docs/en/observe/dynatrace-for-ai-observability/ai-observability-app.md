@@ -24,11 +24,11 @@ It provides out-of-the-box support for 20+ technologies, including OpenAI, Amazo
 Prerequisites
 
 * ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability** needs to be installed from the platform HUB. Go ahead and install it now!
-* To use ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability**, you need a [DPS license](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") with the following capabilities on your [rate cardï»¿](https://www.dynatrace.com/pricing/):
+* To use ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability**, you need a DPS license, the licensing model for all Dynatrace capabilities.") with the following capabilities on your [rate cardï»¿](https://www.dynatrace.com/pricing/):
 
-  + [Metrics powered by Grail](../../license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
-  + [Traces powered by Grail](../../license/capabilities/traces.md "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.")
-  + [Logs powered by Grail](../../license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.")
+  + Metrics powered by Grail
+  + Traces powered by Grail model.")
+  + Logs powered by Grail
 
 Query and sampling cost for AI Observability dashboards
 
@@ -107,7 +107,7 @@ Get a unified view of the operational state of your AI services. **Service Healt
 Filter your results:
 
 * In the sidebar on the left, you can select a specific service category (such as  **Containers** or  **Functions**) or analyze all services. In addition, you can quickly filter by predefined attributes that are relevant for the selected category. Select any attribute in the facets sidebar and select **Update** to get results. The filter field is updated with your selection. This allows you to keep the same scoped context when switching between tabs (**Overview**, **Errors**, **Traffic and Latency**, **Cost**, **Guardrails**).
-* Alternatively, select the filter field at the top to view suggestions and enter filtering options. Add more statements to narrow down the results. Criteria of the same type are grouped by OR logic. Criteria of different types are grouped by AND logic. You can filter services using tags, alert status, and attributes like name or region. This helps you focus on specific subsets of services based on your criteria. For more details on the filter field syntax, see [Filter field](../../discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
+* Alternatively, select the filter field at the top to view suggestions and enter filtering options. Add more statements to narrow down the results. Criteria of the same type are grouped by OR logic. Criteria of different types are grouped by AND logic. You can filter services using tags, alert status, and attributes like name or region. This helps you focus on specific subsets of services based on your criteria. For more details on the filter field syntax, see Filter field.
 * **Overview** tab: See counts for Services, Models, and Agents, plus Model Requests, Token Usage, Average Request Duration, and Overall Cost. Each tile supports drillâdown and alert creation.
 * **Errors** tab: Track success/failure rate, number of problems, invocation error count, error rate over time, HTTP error types (4xx/5xx), and an error trend with forecast. Use the time brush to zoom into a spike and jump to traces.
 * **Traffic and Latency**: Monitor time to response (AVG, p50, p90, p95), response time per model, number of requests, time to first token, and invocation latency. Create alerts for latency regressions.
@@ -121,7 +121,7 @@ Filter your results:
 ### Create and manage Alerts
 
 * Create new alerts: Select **New alert** on metrics-based tiles (for example, Invocation error count, Invocation latency, Token count, Token usage forecast, Overall guardrail activation). The alert wizard is preâfilled with the current scope (time range, provider/model/service/agent filters) so you can fineâtune thresholds and notifications. Alerts appear in **Manage all alerts** for review and muting.
-* Manage all alerts: Use the **Manage all alerts** action from any tab to review, edit, or mute [custom alerts](../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") created from Service Health cards and charts. You can also create a new alert directly from most tiles.
+* Manage all alerts: Use the **Manage all alerts** action from any tab to review, edit, or mute custom alerts created from Service Health cards and charts. You can also create a new alert directly from most tiles.
 
 You can find all custom alerts and more information about capabilities and limits in [![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.").
 

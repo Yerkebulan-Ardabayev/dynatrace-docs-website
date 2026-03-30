@@ -8,7 +8,7 @@ scraped: 2026-03-04T21:30:33.891937
 
 ## Предварительные требования
 
-Предполагается, что вы выполнили настройку, описанную в разделе [Начало работы с агентным и генеративным ИИ Dynatrace Intelligence](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+Предполагается, что вы выполнили настройку, описанную в разделе Начало работы с агентным и генеративным ИИ Dynatrace Intelligence.
 
 ## Использование генеративного ИИ в Notebooks
 
@@ -31,7 +31,7 @@ scraped: 2026-03-04T21:30:33.891937
 
      + Если запрос был отредактирован, DQL сначала будет сгенерирован заново, а затем выполнен.
      + Если запросы не были отредактированы, будет просто выполнен существующий сгенерированный DQL.
-7. Необязательно: нажмите **Options** в заголовке раздела, чтобы изменить визуализацию (дополнительную информацию см. в [документации по визуализациям](../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.")).
+7. Необязательно: нажмите **Options** в заголовке раздела, чтобы изменить визуализацию (дополнительную информацию см. в документации по визуализациям).
 
    Автоматический выбор визуализации
 
@@ -67,7 +67,7 @@ scraped: 2026-03-04T21:30:33.891937
 
      + Если запрос был отредактирован, DQL сначала будет сгенерирован заново, а затем выполнен.
      + Если запросы не были отредактированы, будет просто выполнен существующий сгенерированный DQL.
-8. Необязательно: выберите вкладку **Visual**, чтобы изменить визуализацию (дополнительную информацию см. в [документации по визуализациям](../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.")).
+8. Необязательно: выберите вкладку **Visual**, чтобы изменить визуализацию (дополнительную информацию см. в документации по визуализациям).
 
 Хотя использование генеративного ИИ Dynatrace Intelligence не тарифицируется, все запросы, выполняемые генеративным ИИ, подлежат учету лицензионного потребления в соответствии с вашим действующим лицензионным соглашением.
 
@@ -136,7 +136,7 @@ timeseries avg(new_trip_booking_duration)
 Процесс генерации ответов NL2DQL генеративным ИИ Dynatrace Intelligence можно описать в 4 шага.
 
 1. Генеративный ИИ Dynatrace Intelligence получает запрос от пользователя.
-2. Если запрос хорошо сформулирован и распознан (дополнительную информацию см. в разделе [Агентный и генеративный ИИ Dynatrace Intelligence -- советы по написанию лучших запросов](quick-analysis-copilot-dql/copilot-tips.md "Learn best practices for writing more accurate prompts.")), генеративный ИИ Dynatrace Intelligence сопоставляет запрос пользователя с контентом Dynatrace, таким как документация и курируемые примеры запросов, и передает запрос в LLM.
+2. Если запрос хорошо сформулирован и распознан (дополнительную информацию см. в разделе Агентный и генеративный ИИ Dynatrace Intelligence -- советы по написанию лучших запросов), генеративный ИИ Dynatrace Intelligence сопоставляет запрос пользователя с контентом Dynatrace, таким как документация и курируемые примеры запросов, и передает запрос в LLM.
 
    Если у вас включены запросы с учетом среды, релевантные фрагменты данных будут использованы для обогащения запроса наряду с контентом Dynatrace.
 3. LLM генерирует ответ и проверяет корректность DQL.
@@ -153,8 +153,8 @@ timeseries avg(new_trip_booking_duration)
 
 ## Связанные темы
 
-* [Обзор агентного и генеративного ИИ Dynatrace Intelligence](copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
-* [Начало работы с агентным и генеративным ИИ Dynatrace Intelligence](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Часто задаваемые вопросы об агентном и генеративном ИИ Dynatrace Intelligence](../../../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
-* [Агентный и генеративный ИИ Dynatrace Intelligence -- советы по написанию лучших запросов](quick-analysis-copilot-dql/copilot-tips.md "Learn best practices for writing more accurate prompts.")
-* [Примеры быстрого анализа с генеративным ИИ](../use-cases/copilot-examples.md "Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.")
+* Обзор агентного и генеративного ИИ Dynatrace Intelligence
+* Начало работы с агентным и генеративным ИИ Dynatrace Intelligence
+* Часто задаваемые вопросы об агентном и генеративном ИИ Dynatrace Intelligence
+* Агентный и генеративный ИИ Dynatrace Intelligence -- советы по написанию лучших запросов
+* Примеры быстрого анализа с генеративным ИИ

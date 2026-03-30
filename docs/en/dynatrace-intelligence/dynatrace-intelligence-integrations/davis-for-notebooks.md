@@ -16,11 +16,11 @@ Dynatrace Intelligence for Notebooks runs a range of analyzers directly in Noteb
 
 ## Anomaly Detection
 
-With ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** combined with the power of [DQL](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."), you can custom-build powerful configurations to detect anomalies in metrics, logs, business data, or a combination of them. To preview and fine-tune your Anomaly Detection configuration before deploying it to action, use a Dynatrace Intelligence for Notebooks analysis option:
+With ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** combined with the power of DQL, you can custom-build powerful configurations to detect anomalies in metrics, logs, business data, or a combination of them. To preview and fine-tune your Anomaly Detection configuration before deploying it to action, use a Dynatrace Intelligence for Notebooks analysis option:
 
-* [Auto-adaptive threshold](../anomaly-detection/auto-adaptive-threshold.md "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.")âDynatrace calculates the threshold automatically and adapts it dynamically to your data's behavior.
-* [Seasonal baseline](../reference/ai-models/seasonal-baseline.md "How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.")âDynatrace creates a confidence band for data with seasonal patterns
-* [Static threshold](../anomaly-detection/static-thresholds.md "When to use a static threshold for your anomaly detection.")âthe threshold that doesn't change over time.
+* Auto-adaptive thresholdâDynatrace calculates the threshold automatically and adapts it dynamically to your data's behavior.
+* Seasonal baselineâDynatrace creates a confidence band for data with seasonal patterns
+* Static thresholdâthe threshold that doesn't change over time.
 
 For each of these options, you can configure a [missing data alert](../anomaly-detection/anomaly-detection-configuration.md#missing-data "How to set up an alert for missing measurements."). Missing data and threshold conditions are combined by the **OR** logic.
 
@@ -42,7 +42,7 @@ Dynatrace Intelligence analyses the data and shows potential alerts. Note that t
 
 ## Forecast analysis
 
-Dynatrace Intelligence predictive AI analysis foresees future values of any time series of numeric values based on the accumulated data. To trigger a [forecast analysis](../reference/ai-models/forecast-analysis.md "Learn how Dynatrace Intelligence predictive AI generates forecasts.")
+Dynatrace Intelligence predictive AI analysis foresees future values of any time series of numeric values based on the accumulated data. To trigger a forecast analysis
 
 1. Go to **Notebooks** ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks").
 2. Open your notebook or create a new one.
@@ -58,5 +58,5 @@ Dynatrace Intelligence calculates the forecast and shows it, extending your visu
 
 ## Related topics
 
-* [Notebooks](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+* Notebooks
 * [[Video] Introduction to Anomaly Detection based on DQLï»¿](https://www.youtube.com/watch?v=-GxLlr9oGGA)

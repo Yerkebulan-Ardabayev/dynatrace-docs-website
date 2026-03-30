@@ -11,7 +11,7 @@ scraped: 2026-03-04T21:37:41.171559
 * 4-min read
 * Published Apr 26, 2021
 
-Unlike automatic ingestion using OneAgent, data sent directly to an ActiveGate (for example, ingest APIs) is not automatically enriched with host-related information. This may incur additional charges, as it would not take into account possibly included [DDU quotas](../../license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+Unlike automatic ingestion using OneAgent, data sent directly to an ActiveGate (for example, ingest APIs) is not automatically enriched with host-related information. This may incur additional charges, as it would not take into account possibly included DDU quotas.").
 
 The different Dynatrace deployment options provide several Java-style properties and JSON files with sets of attributes that you can use to enrich your requests to Dynatrace and ensure Dynatrace can map the data to your infrastructure.
 
@@ -29,7 +29,7 @@ A standard OneAgent setup provides the following files with host-specific detail
 * `dt_host_metadata.json`
 * `dt_host_metadata.properties`
 
-Both files contain the same collection of host-level resource attributes that OneAgent uses to enrich monitoring artifacts for a given host. This also includes key-value tags and properties set via [oneagentctl](../../observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md "Learn how to tag and set additional properties for a monitored host.") or through [Remote configuration management](../bulk-configuration.md "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.").
+Both files contain the same collection of host-level resource attributes that OneAgent uses to enrich monitoring artifacts for a given host. This also includes key-value tags and properties set via oneagentctl or through Remote configuration management.
 
 If you supply telemetry data via different channels than OneAgent (for example, using OpenTelemetry), it is important you enrich your telemetry data manually with these attributes to ensure the proper host association.
 
@@ -46,9 +46,9 @@ The following files are available in the [enrichment directory](#enrichment-dire
 
 Both files contain the same data in different formats. For an example of how to load the JSON file, see the [Python example](#python-example) below.
 
-Please visit the [Configure enrichment directory](../setup-on-k8s/guides/metadata-automation/metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") guide for configuration instructions.
+Please visit the Configure enrichment directory guide for configuration instructions.
 
-To learn how to enrich all [telemetry data originating from Kubernetes workloads with Kubernetes labels and annotations](../setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment.md "Guides for telemetry enrichment on Kubernetes").
+To learn how to enrich all telemetry data originating from Kubernetes workloads with Kubernetes labels and annotations.
 
 ## OneAgent virtual files
 
@@ -79,7 +79,7 @@ If step 1 returns a file-not-found error, verify that your application is instru
 
 * Supported for full-stack and application-only deep-monitored processes.
 * The `stat` and other `if (exists)` checks fail for these files. These checks are not required for the mechanism to work.
-* `syscalls` used directly for file access aren't supported. This also means that the Go-based applications used for metric ingestion aren't supported unless you use the OneAgent SDK as explained in [Instrument your Go application with OpenTelemetry](../opentelemetry/walkthroughs/go.md "Learn how to instrument your Go application using OpenTelemetry and Dynatrace.").
+* `syscalls` used directly for file access aren't supported. This also means that the Go-based applications used for metric ingestion aren't supported unless you use the OneAgent SDK as explained in Instrument your Go application with OpenTelemetry.
 
 ## Python example
 

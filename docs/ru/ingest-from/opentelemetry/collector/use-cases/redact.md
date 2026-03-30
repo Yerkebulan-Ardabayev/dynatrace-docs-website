@@ -18,10 +18,10 @@ scraped: 2026-03-06T21:32:24.265515
   + [Dynatrace Collector](../../collector.md#dt-collector-dist "Узнайте о Dynatrace OTel Collector.")
   + [OpenTelemetry Contrib](../../collector.md#collector-contrib "Узнайте о Dynatrace OTel Collector.")
   + [Пользовательская версия через Builder](../../collector.md#collector-builder "Узнайте о Dynatrace OTel Collector.")
-* [URL конечной точки Dynatrace API](../../otlp-api.md "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."), на который должны экспортироваться данные
+* URL конечной точки Dynatrace API, на который должны экспортироваться данные
 * [Токен API](../../otlp-api.md#authentication-export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа (требуется только для SaaS и ActiveGate)
 
-Информацию о том, как настроить Collector с приведённой ниже конфигурацией, см. в разделах [Развёртывание Collector](../deployment.md "Как развернуть Dynatrace OTel Collector.") и [Конфигурация Collector](../configuration.md "Как настроить OpenTelemetry Collector.").
+Информацию о том, как настроить Collector с приведённой ниже конфигурацией, см. в разделах Развёртывание Collector и Конфигурация Collector.
 
 ## Процессор redaction и процессор transform
 
@@ -227,7 +227,7 @@ statements: *filter-statements
 
 ### Токены Dynatrace API
 
-С помощью процессора redaction мы используем регулярное выражение `dt0[a-z]0[1-9]\.[A-Za-z0-9]{24}\.([A-Za-z0-9]{64})` для маскирования всех вхождений [токенов Dynatrace API](../../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.") в наших телеметрических данных.
+С помощью процессора redaction мы используем регулярное выражение `dt0[a-z]0[1-9]\.[A-Za-z0-9]{24}\.([A-Za-z0-9]{64})` для маскирования всех вхождений токенов Dynatrace API в наших телеметрических данных.
 
 ```
 redaction:
@@ -312,10 +312,10 @@ trace_statements:
 statements: &filter-statements
 
 
-- replace_all_patterns(attributes, "value", "^3\\s*[47](\\s*[0-9]){9}((\\s*[0-9]){4})$", "<masked-pcard$$2-ot>") where IsValidLuhn(attributes["value"])
+- replace_all_patterns(attributes, "value", "^3\\s*47{9}((\\s*[0-9]){4})$", "<masked-pcard$$2-ot>") where IsValidLuhn(attributes["value"])
 
 
-- replace_all_patterns(attributes, "value", "^(5[1-5]([0-9]){2}|222[1-9]|22[3-9]\\d|2[3-6]\\d{2}|27[0-1]\\d|2720)(\\s*[0-9]){8}\\s*([0-9]{4})$", "<masked-pcard$$4-ot>") where IsValidLuhn(attributes["value"])
+- replace_all_patterns(attributes, "value", "^(51-5{2}|222[1-9]|22[3-9]\\d|2[3-6]\\d{2}|27[0-1]\\d|2720)(\\s*[0-9]){8}\\s*([0-9]{4})$", "<masked-pcard$$4-ot>") where IsValidLuhn(attributes["value"])
 
 
 - replace_all_patterns(attributes, "value", "^4(\\s*[0-9]){8,14}\\s*(([0-9]\\s*){4})$", "<masked-pcard$$2-ot>") where IsValidLuhn(attributes["value"])
@@ -445,4 +445,4 @@ statements:
 
 ## Связанные темы
 
-* [Обогащение полученных данных полями, специфичными для Dynatrace](../../../extend-dynatrace/extend-data.md "Узнайте, как автоматически обогащать ваши телеметрические данные полями, специфичными для Dynatrace.")
+* Обогащение полученных данных полями, специфичными для Dynatrace

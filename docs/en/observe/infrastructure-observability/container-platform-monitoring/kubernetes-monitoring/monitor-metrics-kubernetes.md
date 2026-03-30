@@ -43,8 +43,8 @@ To enable monitoring of workload and node resource metrics
    Monitoring **node resource metrics** requires ActiveGate version 1.271+.
 3. Optional Select **Test connection** to verify that the feature has been successfully activated.
 
-For a list of all available metrics, see [Workload metrics](../../../../analyze-explore-automate/metrics-classic/all-metrics.md#workload "Explore the complete list of Dynatrace metrics.") or [Node](../../../../analyze-explore-automate/metrics-classic/all-metrics.md#node "Explore the complete list of Dynatrace metrics.") for node resource metrics.
+For a list of all available metrics, see Workload metrics or Node for node resource metrics.
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
+* Set up Dynatrace on Kubernetes

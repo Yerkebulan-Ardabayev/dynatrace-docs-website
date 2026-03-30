@@ -31,8 +31,8 @@ The `DynatraceOneAgent` distributor package is supported on the following operat
 
 | Operating system | Version | Architecture |
 | --- | --- | --- |
-| Windows | [All OneAgent supported versions](../../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | x86-64, |
-| Amazon Linux | [All OneAgent supported versions](../../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | x86-64, ARM64 (AArch64[1](#fn-1-1-def)) |
+| Windows | All OneAgent supported versions | x86-64, |
+| Amazon Linux | All OneAgent supported versions | x86-64, ARM64 (AArch64[1](#fn-1-1-def)) |
 | Ubuntu | 16.04, 18.04, 22.04 | x86-64, ARM64 (AArch64[1](#fn-1-1-def)) |
 | Red Hat Enterprise Linux | 8.x, 9.x | x86-64 |
 | SUSE Enterprise Linux | 15.x | x86-64, ARM64 (AArch64[1](#fn-1-1-def)) |
@@ -267,7 +267,7 @@ To install the `DynatraceOneAgent` distributor package
 
 The `DynatraceOneAgent` distributor package provides a number of Dynatrace-specific parameters that map directly to the following OneAgent installation parameters.
 
-Learn more about customizing OneAgent installation on [Linux](../../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters.") and [Windows](../../../dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md "Learn how to use the OneAgent installer for Windows.").
+Learn more about customizing OneAgent installation on Linux and Windows.
 
 1
 
@@ -281,4 +281,4 @@ Remember that `SSM_DYNATRACE_TOKEN_PARAMETER_NAME` and `SSM_DYNATRACE_TOKEN_SECR
 
 ## Related topics
 
-* [OneAgent platform and capability support matrix](../../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* OneAgent platform and capability support matrix

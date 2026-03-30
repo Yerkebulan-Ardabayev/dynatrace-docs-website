@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:24:11.399509
 * How-to guide
 * Updated on Nov 06, 2025
 
-This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the Grail security table migration guide.
 
 Ingest security events from custom third-party products via API.
 
@@ -19,7 +19,7 @@ Ingest security events from custom third-party products via API.
 
 ### Overview
 
-In the following, you'll learn how to ingest external security events from custom third-party products into [Grail](../../../platform/grail.md "Insights on what and how you can query Dynatrace data."), so you can get insights from Dynatrace for vulnerability findings from any source, provider, or format.
+In the following, you'll learn how to ingest external security events from custom third-party products into Grail, so you can get insights from Dynatrace for vulnerability findings from any source, provider, or format.
 
 A **custom third-party product** is any product for which Dynatrace doesn't provide an out-of-the-box integration.
 
@@ -28,9 +28,9 @@ A **custom third-party product** is any product for which Dynatrace doesn't prov
 With the ingested data, you can accomplish various use cases, such as
 
 * [Generate security events from the Dynatrace Investigations app via OpenPipelineï»¿](https://dt-url.net/r703qjx)
-* [Ingest and process custom security findings](../../use-cases/ingest-and-process-custom-security-findings.md "Continuously ingest your container scan findings.")
-* [Automate and orchestrate security findings](../../use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
-* [Visualize and analyze security findings](../../use-cases/visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
+* Ingest and process custom security findings
+* Automate and orchestrate security findings
+* Visualize and analyze security findings
 
 ### Requirements
 
@@ -414,12 +414,12 @@ Custom API endpoint
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see Events powered by Grail.
 
 ## Related topics
 
-* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Security events](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")
-* [OpenPipeline Ingest API - POST Custom security event endpoint (new)](../../../platform/openpipeline/reference/openpipeline-ingest-api/security-events/security-events-custom-endpoint.md "Configure a custom security event endpoint via OpenPipeline Ingest API.")
-* [OpenPipeline Ingest API - POST Built-in security events (new)](../../../platform/openpipeline/reference/openpipeline-ingest-api/security-events/security-events-builtin.md "Ingest security events from built-in endpoints via OpenPipeline Ingest API.")
+* OpenPipeline
+* Dynatrace Query Language
+* Security events
+* OpenPipeline Ingest API - POST Custom security event endpoint (new)
+* OpenPipeline Ingest API - POST Built-in security events (new)

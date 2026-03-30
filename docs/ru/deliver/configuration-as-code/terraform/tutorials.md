@@ -12,4 +12,4 @@ scraped: 2026-03-05T21:40:31.962704
 
 Terraform — это многофункциональный инструмент, который можно сочетать с Configuration as Code для достижения отличных результатов.
 
-Мы предоставляем руководство, которое поможет вам [настроить автоматические уведомления с помощью Terraform и Configuration as Code](tutorials/terraform-tutorial-set-up-automated-notification.md "Настройка автоматических уведомлений с помощью Terraform и Configuration as Code.").
+Мы предоставляем руководство, которое поможет вам настроить автоматические уведомления с помощью Terraform и Configuration as Code.

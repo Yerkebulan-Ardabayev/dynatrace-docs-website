@@ -31,7 +31,7 @@ To set up Opsgenie problem-notification integration
      Placeholders
 
      The **Available placeholders** section of the configuration page lists placeholders you can use for this integration. Problem notifications automatically fill in the placeholder values and include them in the corresponding Opsgenie incidents. Opsgenie incidents are automatically created when problems are detected and closed when problems are resolved. Incident details contain the detailed problem information as well as a direct link to the problem in Dynatrace.
-5. Assign an [Alerting profile](../alerting-profiles.md "Learn how to create and manage alerting profiles.").
+5. Assign an Alerting profile.
 6. Select **Send test notification** to make sure your OspGenie integration is working.
 7. **Save changes**.
 

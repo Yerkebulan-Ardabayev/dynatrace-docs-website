@@ -25,8 +25,8 @@ Dynatrace provides extensive Node.js monitoring capabilities:
 * Insights into inbound and outbound HTTP calls
 * Dedicated support for a variety of databases (includes query capture)
 * [OpenTelemetry supportï»¿](https://github.com/open-telemetry/opentelemetry-js-api/) for capturing traces and ingesting metrics.  
-  For more information, see [Instrument your JavaScript application on Node.js with OpenTelemetry](../../opentelemetry/walkthroughs/nodejs.md "Learn how to instrument your JavaScript application on Node.js using OpenTelemetry and Dynatrace.")
-* [OneAgent SDK](../../extend-dynatrace/extend-tracing/oneagent-sdk.md "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing
+  For more information, see Instrument your JavaScript application on Node.js with OpenTelemetry
+* OneAgent SDK for custom tracing
 * [Continuous thread analysis for worker threads](#worker-threads)
 
 See [our supported technologies matrix](../../technology-support.md#nodejs "Find technical details related to Dynatrace support for specific platforms and development frameworks.") for details about supported technologies that will be used in conjunction with Node.js.
@@ -74,7 +74,7 @@ Not supported: Instrumentation is deprecated off by default on OneAgent version 
 
 Node.js version 12+ OneAgent version 1.251+ Dynatrace version 1.256+
 
-[Continuous thread analysis](../../../observe/application-observability/profiling-and-optimization/continuous-thread-analysis.md "Continuously analyze the state of your threads and their development to quickly identify and solve performance issues in Java and Node.js processes.") for [worker threadsï»¿](https://nodejs.org/api/worker_threads.html#worker-thread) can automatically identify CPU-intensive threads and pinpoint scalability issues when work is distributed across many threads so that you can solve performance bottlenecks before your end users are impacted.
+Continuous thread analysis for [worker threadsï»¿](https://nodejs.org/api/worker_threads.html#worker-thread) can automatically identify CPU-intensive threads and pinpoint scalability issues when work is distributed across many threads so that you can solve performance bottlenecks before your end users are impacted.
 
 Continuous thread analysis in action
 
@@ -86,7 +86,7 @@ CPU time consumed by the various `worker` threads:
 
 ![Node.js worker thread CPU times](https://dt-cdn.net/images/worker-thread-cpu-times-1815-7223ec5892.png)
 
-To get started with the continuous thread analysis for worker threads, activate the [OneAgent features](../../dynatrace-oneagent/oneagent-features.md "Manage OneAgent features globally and per process group.") **Node.js worker threads monitoring** and **Node.js code module preloading**.
+To get started with the continuous thread analysis for worker threads, activate the OneAgent features **Node.js worker threads monitoring** and **Node.js code module preloading**.
 
 Limitations
 
@@ -94,7 +94,7 @@ Node.js specific metrics (for example, memory, garbage collection, and event-loo
 
 Class browsing (required for the custom messaging services of kafkajs) is limited to the `main` thread.
 
-There is no automatic transaction tracing in place between the `main` and `worker` threads. For tracing transactions across threads, you can either use [OpenTelemetry tracing](../../dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel.md "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.") or the [OneAgent SDK](../../extend-dynatrace/extend-tracing/oneagent-sdk.md "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.").
+There is no automatic transaction tracing in place between the `main` and `worker` threads. For tracing transactions across threads, you can either use OpenTelemetry tracing or the OneAgent SDK.
 
 ## Known limitations
 
@@ -119,11 +119,11 @@ Parsers help you to improve filtering, troubleshooting, metrics, alerts, and das
 
 ![syslog-bundles](https://dt-cdn.net/images/env-syslogbundles-2589-90e4e38b45.png)
 
-For more information, see [Process logs with technology bundle parsers](../../../platform/openpipeline/use-cases/tutorial-technology-processor.md "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
+For more information, see Process logs with technology bundle parsers.
 
 ### Monitoring
 
-* [How do I monitor Cloud Foundry applications?](../../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring.md "Install OneAgent on Cloud Foundry.")
+* How do I monitor Cloud Foundry applications?
 
 ### See also
 

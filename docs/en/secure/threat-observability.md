@@ -33,43 +33,43 @@ Related blogs
 
 Analyze suspicious and malicious sign-in behaviors with Dynatrace.
 
-* [Monitor suspicious sign-in activity with Dynatrace](use-cases/monitor-sign-in-activity.md "Analyze suspicious and malicious sign-in behaviors with Dynatrace.")
+* Monitor suspicious sign-in activity with Dynatrace
 
 ### Automate and orchestrate security findings
 
 Regularly check for critical container vulnerabilities and get automatic Jira tickets or Slack alerts.
 
-* [Automate and orchestrate security findings](use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* Automate and orchestrate security findings
 
 ### Discover coverage gaps in security findings
 
 Gain visibility into the security validations during the Software Development Lifecycle (SDLC).
 
-* [Discover coverage gaps in security findings](use-cases/discover-coverage-gaps-in-security-scans.md "Unveil blind spots in your Software Development Lifecycle (SDLC).")
+* Discover coverage gaps in security findings.")
 
 ### Ingest and process custom security findings
 
 Continuously ingest your container scan findings into Dynatrace.
 
-* [Ingest and process custom security findings](use-cases/ingest-and-process-custom-security-findings.md "Continuously ingest your container scan findings.")
+* Ingest and process custom security findings
 
 ### Runtime contextualization of container findings
 
 Triage critical vulnerability findings in production applications on containers with vulnerable container images.
 
-* [Runtime contextualization of container findings](use-cases/runtime-contextualization-of-container-findings.md "Triage critical vulnerability findings in production applications on containers with vulnerable container images.")
+* Runtime contextualization of container findings
 
 ### Visualize and analyze security findings
 
 Effortlessly view and analyze security findings across products and tools.
 
-* [Visualize and analyze security findings](use-cases/visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
+* Visualize and analyze security findings
 
 ### CSPM Notification Automation
 
 Automatically process, triage, enrich, and classify incoming security alerts.
 
-* [CSPM Notification Automation](use-cases/notification-automation.md "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.")
+* CSPM Notification Automation
 
 * [Ingest, enrich, and deduplicate Qualys vulnerability findings with Dynatraceï»¿](https://www.dynatrace.com/news/blog/ingest-enrich-and-deduplicate-qualys-vulnerability-findings-with-dynatrace/)
 * [Smarter vulnerability remediation with Dynatrace and Atlassian Rovo Devï»¿](https://www.dynatrace.com/news/blog/smarter-vulnerability-remediation-with-dynatrace-and-atlassian-rovo-dev/)

@@ -10,7 +10,7 @@ scraped: 2026-03-05T21:33:02.016377
 По умолчанию RUM включён для всех групп процессов. Для технологий, перечисленных в разделе [Technology support - Real User Monitoring - Web servers and applications](../../../../ingest-from/technology-support.md#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks."), это позволяет OneAgent выполнять следующее:
 
 * Автоматически внедрять RUM JavaScript в каждую страницу, доставляемую данной группой процессов
-* Предоставлять необходимую информацию для связи пользовательских действий с [серверными распределёнными трассировками](../../../application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.")
+* Предоставлять необходимую информацию для связи пользовательских действий с серверными распределёнными трассировками
 * Доставлять RUM JavaScript
 * Пересылать маяки в кластер Dynatrace
 

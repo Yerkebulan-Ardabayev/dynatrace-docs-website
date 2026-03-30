@@ -21,7 +21,7 @@ With DPS for Hybrid:
 * Your order form contains all relevant rate card capabilities for your Managed and/or SaaS deployments.
 * On-demand consumption (ODC) is always enabled for all accounts.
 
-For more information about DPS in general, see [License Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+For more information about DPS in general, see License Dynatrace, the licensing model for all Dynatrace capabilities.").
 
 ## Why to use DPS for Hybrid
 
@@ -52,7 +52,7 @@ You can use forecasts, cost events, and budget alerts to manage your costs.
 ### Forecasts and cost events
 
 Forecasts and cost events help you manage your DPS for Hybrid budget at the account level.
-For more information, see [Customize cost alerts](../../license/cost-monitors.md "Learn how to use the Cost Monitors feature to make forecasts and cost events.").
+For more information, see Customize cost alerts.
 
 Note that the following considerations apply for DPS for Hybrid subscriptions:
 
@@ -67,7 +67,7 @@ Forecasts are based on statistical models and therefore be relied on with cautio
 ### Budget alerts
 
 Use the Account Management **Budgets** tab to customize your Dynatrace Platform Subscription (DPS) budgets.
-For general information about budgets, see [Set budget alerts](../../license/budget-alerts.md "Learn how to configure budgets in Dynatrace.").
+For general information about budgets, see Set budget alerts.
 
 Note that the following considerations apply for DPS for Hybrid subscriptions:
 
@@ -102,7 +102,7 @@ In case you haven't received an invite to the forum, reach out to your DT contac
 If I move from a classic license model to DPS for Hybrid, what changes for me?
 
 You will get all the benefits of our powerful Dynatrace Platform Subscription (DPS).
-For more information about DPS, see [License Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+For more information about DPS, see License Dynatrace, the licensing model for all Dynatrace capabilities.").
 
 Can I add additional accounts to a DPS for Hybrid, after setting it up?
 
@@ -110,12 +110,12 @@ Yes. You can add additional accounts at any time.
 
 Where can I see the data across all accounts?
 
-Once you're set up with DPS for Hybrid, you can see all license- and account-level information in Account Management, see [Subscription overview (DPS for Hybrid)](../../manage/account-management/license-subscription/subscription-overview-dps-hybrid.md "View your DPS for Hybrid budget summary and cost analysis.").
+Once you're set up with DPS for Hybrid, you can see all license- and account-level information in Account Management, see Subscription overview (DPS for Hybrid).
 This offers insights and information similar to the Subscription Overview for standard DPS licenses.
 
 How can I set up the dashboard?
 
-Please see [Explore your DPS for Hybrid subscription with dashboards](../../license/dps-for-hybrid/api-export-business-events.md "How to get the most out of your DPS for Hybrid license and accounts.") for setup information.
+Please see Explore your DPS for Hybrid subscription with dashboards for setup information.
 
 If you have any issues, contact your Dynatrace contact person.
 
@@ -152,5 +152,5 @@ This contains all relevant Managed and/or SaaS capabilities.
 
 ## Related topics
 
-* [Subscription overview (DPS for Hybrid)](../../manage/account-management/license-subscription/subscription-overview-dps-hybrid.md "View your DPS for Hybrid budget summary and cost analysis.")
-* [License Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* Subscription overview (DPS for Hybrid)
+* License Dynatrace, the licensing model for all Dynatrace capabilities.")

@@ -16,10 +16,10 @@ Dynatrace OneAgent provides extensive monitoring of Google Kubernetes Engine pod
 
 ## Integration
 
-[Kubernetes](../../setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
+Kubernetes
 
 Refer to the [Google Marketplaceï»¿](https://www.dynatrace.com/news/blog/60-seconds-to-self-upgrading-observability-on-google-kubernetes-engine/) for the OneAgent integration with Google Console.
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
+* Set up Dynatrace on Google Cloud

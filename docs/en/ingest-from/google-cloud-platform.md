@@ -20,21 +20,21 @@ For more reasons to monitor Google Cloud with Dynatrace, see [Google Cloudï»¿
 
 Learn how to integrate Dynatrace for full-stack monitoring of your Google Cloud services.
 
-[### Deep monitoring of Google Cloud compute services
+### Deep monitoring of Google Cloud compute services
 
-Set up full-stack monitoring of Google Cloud services by instrumenting them with our OneAgent technology.](google-cloud-platform/gcp-integrations.md "Set up and configure Dynatrace on Google Cloud.")[### Monitor Google Cloud Functions
+Set up full-stack monitoring of Google Cloud services by instrumenting them with our OneAgent technology.### Monitor Google Cloud Functions
 
-Monitor serverless Google Cloud Function applications.](google-cloud-platform/gcp-integrations/gcp-functions.md "Set up monitoring for Google Cloud Functions.")
+Monitor serverless Google Cloud Function applications.
 
 ## Infrastructure Monitoring
 
-[### End-to-end guide for monitoring Google Cloud services with metrics and logs
+### End-to-end guide for monitoring Google Cloud services with metrics and logs
 
-Set up Infrastructure Monitoring for Google Cloud services and ingest the data into Dynatrace remotely from Google Cloud Operations Suite.](google-cloud-platform/gcp-integrations/gcp-guide.md "Other options to set up log and/or metric monitoring for Google Cloud services")[### Google Cloud services
+Set up Infrastructure Monitoring for Google Cloud services and ingest the data into Dynatrace remotely from Google Cloud Operations Suite.### Google Cloud services
 
-Monitor additional Google Cloud services and view their specific metrics in Dynatrace.](google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new.md "Monitor Google Cloud services with Dynatrace and view available metrics.")
+Monitor additional Google Cloud services and view their specific metrics in Dynatrace.
 
 ## Related topics
 
-* [Google Cloud monitoring](../observe/infrastructure-observability/cloud-platform-monitoring/gcp-monitoring.md "Monitor Google Cloud with Dynatrace")
-* [Serverless monitoring](../discover-dynatrace/get-started/serverless-monitoring.md "Serverless observability with Dynatrace")
+* Google Cloud monitoring
+* Serverless monitoring

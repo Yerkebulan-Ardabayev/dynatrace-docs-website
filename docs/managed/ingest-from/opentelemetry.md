@@ -92,4 +92,4 @@ Licensing for OpenTelemetry data is fully integrated into the Dynatrace Platform
 
 ## Related topics
 
-* [Use OneAgent with OpenTelemetry data](/managed/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.")
+* Use OneAgent with OpenTelemetry data

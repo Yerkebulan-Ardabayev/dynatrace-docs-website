@@ -34,7 +34,7 @@ Kubernetes out-of-the-box (OOTB) alerts can be easily configured within the glob
 * **Direct navigation**: Navigate to the settings related to your namespace directly from Dynatrace and adapt everything to your needs without the need for external configurations.
 * **Default configurations**: Set up default alert configurations for all active and future Kubernetes clusters, namespaces, and workloads, ensuring consistent monitoring as your infrastructure grows.
 * **Granular customization**: Customize alert settings at various levels, allowing you to handle alerts differently for production and development clusters and adjust node alerts within each.
-* **Automation with Dynatrace API**: Leverage the Dynatrace API to automate configurations, ensuring that your alerting system evolves smoothly with your infrastructure changes. Moreover, with the Dynatrace API, you can adopt the [Configuration as Code](../../../../deliver/configuration-as-code.md "Use Dynatrace configuration as code via Monaco or Terraform.") approach to configure alerts, integrating them into a GitOps workflow.
+* **Automation with Dynatrace API**: Leverage the Dynatrace API to automate configurations, ensuring that your alerting system evolves smoothly with your infrastructure changes. Moreover, with the Dynatrace API, you can adopt the Configuration as Code approach to configure alerts, integrating them into a GitOps workflow.
 
 ## Getting started
 
@@ -49,4 +49,4 @@ To configure these settings
 1. Go to **Settings** > **Anomaly detection**.
 2. Under **Kubernetes**, select any option.
 
-For complete details on this feature, see [Alert on common Kubernetes/OpenShift issues](../../container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues.md "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.").
+For complete details on this feature, see Alert on common Kubernetes/OpenShift issues.

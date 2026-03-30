@@ -21,13 +21,13 @@ We recommend utilizing OpenPipeline as a scalable, powerful solution to manage a
 OpenPipeline is the Dynatrace Platform solution for managing and processing data from various sources. It enables effortless data handling at any scale and format on the Dynatrace platform. It provides the following benefits:
 
 * Contextual data transformation: OpenPipeline extracts data with context and transforms it into more efficient formats.
-* Unified processing language: [Dynatrace Query Language (DQL)](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") is used as a processing language, offering one syntax for all Dynatrace features and more advanced options for processing.
+* Unified processing language: Dynatrace Query Language (DQL) is used as a processing language, offering one syntax for all Dynatrace features and more advanced options for processing.
 * Pipeline concepts: You can split business event ingest traffic into different pipelines with dedicated processing, data and metric extraction, permissions, and storage.
 * Additional processors: You can use additional processors, for example, to add or remove fields.
 * Enhanced data extraction: Extract business events from logs with more data extraction options.
 * Improved performance and higher throughput.
 
-To get started, see [OpenPipeline](../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.").
+To get started, see OpenPipeline.
 
 ## Classic pipeline
 
@@ -35,7 +35,7 @@ Business event processing via the classic pipeline is the legacy solution to pro
 
 Even though the classic business events processing pipeline is still available for some environments, we recommend switching to business event processing with OpenPipeline. Business event processing with the classic pipeline will be deprecated at some point in the future.
 
-To learn more, see [Business event processing via classic pipeline](bo-event-processing/bo-processing-classic-pipeline.md "Process business event data in Dynatrace via the classic pipeline.").
+To learn more, see Business event processing via classic pipeline.
 
 ### Classic pipeline and OpenPipeline
 
@@ -43,12 +43,12 @@ If you created processing rules via the classic pipeline, we recommend that you 
 
 To migrate your business event processing rules to OpenPipeline
 
-1. In OpenPipeline, [create new custom pipelines and routes](../../platform/openpipeline/getting-started/tutorial-configure-processing.md "Configure ingest sources, routes, and processing for your data in OpenPipeline.").
+1. In OpenPipeline, create new custom pipelines and routes.
 2. In the classic pipeline, delete your processing rules.
 
 If you don't migrate your existing rules, it's still possible to use OpenPipeline in combination with the classic pipeline. The processing flow looks as follows:
 
-1. In OpenPipeline, [create new custom pipelines and routes](../../platform/openpipeline/getting-started/tutorial-configure-processing.md "Configure ingest sources, routes, and processing for your data in OpenPipeline.").
+1. In OpenPipeline, create new custom pipelines and routes.
 2. Data is processed by [custom pipelines](../../platform/openpipeline/concepts/processing.md#types "Learn the core concepts of Dynatrace OpenPipeline processing.").
 3. If data doesn't match any route, it's routed by the default route to the [classic pipeline](../../platform/openpipeline/concepts/processing.md#types "Learn the core concepts of Dynatrace OpenPipeline processing.").
 4. Business events are processed as defined by the classic pipeline.
@@ -62,5 +62,5 @@ If you don't migrate your existing rules, it's still possible to use OpenPipelin
 
 ## Related topics
 
-* [OpenPipeline processing examples](../../platform/openpipeline/use-cases/processing-examples.md "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
-* [DQL matcher in OpenPipeline](../../platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.")
+* OpenPipeline processing examples
+* DQL matcher in OpenPipeline

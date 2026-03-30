@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:26:53.183725
 * 6-min read
 * Updated on Jun 21, 2022
 
-Dynatrace can automatically create a continuous [service flow](../../../application-observability/services-classic/service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") for IBM MQ when the producer and consumer services use the same queue or topic name. If the producer and consumer services refer to different queue or topic names, IBM MQ configuration might be required to create a continuous service flow.
+Dynatrace can automatically create a continuous service flow for IBM MQ when the producer and consumer services use the same queue or topic name. If the producer and consumer services refer to different queue or topic names, IBM MQ configuration might be required to create a continuous service flow.
 
 Without IBM MQ configuration, Dynatrace can still trace all messages, but the service flow will be broken.
 
@@ -32,7 +32,7 @@ We recommend that you create the `MQRFH2` header for IBM MQ messages. The presen
 
 Benefits of creating the `MQRFH2` header for IBM MQ messages include:
 
-* Consistent [Adaptive Traffic Management](../../../../ingest-from/dynatrace-oneagent/adaptive-traffic-management.md "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.") across your monitoring environment, lowering the volume on IBM MQ traces.
+* Consistent Adaptive Traffic Management across your monitoring environment, lowering the volume on IBM MQ traces.
 * An accurate and continuous service flow without the need to configure IBM MQ mapping when the messages are solely processed by IBM App Connect Enterprise and IBM Integration Bus.
 
 How can I create the MQRFH2 header when it is not present in my IBM MQ messages?
@@ -55,7 +55,7 @@ Specifications
 
 ## Manage IBM MQ configuration
 
-You can manage an IBM MQ configuration automatically by installing an [IBM MQ extension](../../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") and activating **Retrieve topology for improved transaction tracing** to retrieve the IBM MQ configuration of your environment and send it to the Settings API. This can also be done manually via the web UI or the Settings API.
+You can manage an IBM MQ configuration automatically by installing an IBM MQ extension and activating **Retrieve topology for improved transaction tracing** to retrieve the IBM MQ configuration of your environment and send it to the Settings API. This can also be done manually via the web UI or the Settings API.
 
 ### Manual configuration via web UI
 
@@ -67,7 +67,7 @@ To manage the IBM MQ configuration via the Dynatrace web UI, go to **Settings** 
 
 ### Manual configuration via Settings API
 
-You can manage the IBM MQ configuration via the Dynatrace [Settings API](../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.").
+You can manage the IBM MQ configuration via the Dynatrace Settings API.
 
 To be able to use the API you need an access token with **Read settings** (`settings.read`) and **Write settings** (`settings.write`) scopes. To learn how to obtain it, see [Create an access token](../../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.").
 
@@ -75,7 +75,7 @@ To be able to use the API you need an access token with **Read settings** (`sett
 
 The table lists the available IBM MQ configuration items for queues and topics.
 
-Follow the procedures below to create or update a configuration item. Note that the scope of these items is always an environment. Before starting, learn the format of the settings object by querying its schema via the [GET a schema](../../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") call.
+Follow the procedures below to create or update a configuration item. Note that the scope of these items is always an environment. Before starting, learn the format of the settings object by querying its schema via the GET a schema call.
 
 Create a configuration item
 
@@ -208,7 +208,7 @@ The ID of the queue manager schema is `builtin:ibmmq.queue-managers`.
 
    ]
    ```
-2. Use the [POST an object](../../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
+2. Use the POST an object endpoint to send your configuration.
 
 ### New queue sharing group
 
@@ -269,7 +269,7 @@ The ID of the queue sharing group schema is `builtin:ibmmq.queue-sharing-group`.
 
    ]
    ```
-2. Use the [POST an object](../../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
+2. Use the POST an object endpoint to send your configuration.
 
 ### New IMS bridge
 
@@ -333,7 +333,7 @@ The ID of the IMS bridge schema is `builtin:ibmmq.ims-bridges`.
 
    ]
    ```
-2. Use the [POST an object](../../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
+2. Use the POST an object endpoint to send your configuration.
 
 ### Update queue manager
 
@@ -341,7 +341,7 @@ The ID of the queue manager schema is `builtin:ibmmq.queue-managers`.
 
 The `aliasQueues` object can be a local queue owned by this queue manager, a local definition of a remote queue, or a cluster queue visible by this queue manager but owned by another queue manager.
 
-1. Query the current configuration via the [GET objects](../../../../dynatrace-api/environment-api/settings/objects/get-objects.md "View multiple settings objects via the Dynatrace API.") call.
+1. Query the current configuration via the GET objects call.
 2. Create the JSON for your update.
 
    * Use the **updateToken** value from the previous step.
@@ -457,13 +457,13 @@ The `aliasQueues` object can be a local queue owned by this queue manager, a loc
 
      }
      ```
-3. Use the [PUT an object](../../../../dynatrace-api/environment-api/settings/objects/put-object.md "Edit a settings object via the Dynatrace API.") endpoint to send your configuration.
+3. Use the PUT an object endpoint to send your configuration.
 
 ### Update sharing group
 
 The ID of the queue sharing group schema is `builtin:ibmmq.queue-sharing-group`.
 
-1. Query the current configuration via the [GET objects](../../../../dynatrace-api/environment-api/settings/objects/get-objects.md "View multiple settings objects via the Dynatrace API.") call.
+1. Query the current configuration via the GET objects call.
 2. Create the JSON for your update.
 
    * Use the **updateToken** value from the previous step.
@@ -512,13 +512,13 @@ The ID of the queue sharing group schema is `builtin:ibmmq.queue-sharing-group`.
 
      }
      ```
-3. Use the [PUT an object](../../../../dynatrace-api/environment-api/settings/objects/put-object.md "Edit a settings object via the Dynatrace API.") endpoint to send your configuration.
+3. Use the PUT an object endpoint to send your configuration.
 
 ### Update IMS bridge
 
 The ID of the IMS bridge schema is `builtin:ibmmq.ims-bridges`.
 
-1. Query the current configuration via the [GET objects](../../../../dynatrace-api/environment-api/settings/objects/get-objects.md "View multiple settings objects via the Dynatrace API.") call.
+1. Query the current configuration via the GET objects call.
 2. Create the JSON for your update.
 
    * Use the **updateToken** value from the previous step.
@@ -571,8 +571,8 @@ The ID of the IMS bridge schema is `builtin:ibmmq.ims-bridges`.
 
      }
      ```
-3. Use the [PUT an object](../../../../dynatrace-api/environment-api/settings/objects/put-object.md "Edit a settings object via the Dynatrace API.") endpoint to send your configuration.
+3. Use the PUT an object endpoint to send your configuration.
 
 ## Related topics
 
-* [Set up IBM MQ tracing on z/OS](../../../../ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/ibm-mq-monitoring.md "Trace IBM MQ messages with Dynatrace on z/OS.")
+* Set up IBM MQ tracing on z/OS

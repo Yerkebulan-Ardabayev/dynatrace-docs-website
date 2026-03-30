@@ -122,7 +122,7 @@ mapped files:
 
 ## Защита конфиденциальных данных пользователей
 
-Отчёты о сбоях могут содержать конфиденциальную персональную информацию, которая не должна быть доступна всем пользователям. По этой причине ваш администратор Dynatrace должен включить [разрешение **View logs** в настройках безопасности учётной записи](../../../manage/identity-access-management/permission-management/role-based-permissions.md#environment "Разрешения на основе ролей") и разрешение [**View sensitive request data**](../../../manage/identity-access-management/permission-management/role-based-permissions.md#environment "Разрешения на основе ролей") в вашем профиле пользователя, прежде чем вы сможете просматривать персональные данные. Этот параметр отключён по умолчанию для всех пользователей без прав администратора и должен быть явно включён для получения доступа к содержимому логов.
+Отчёты о сбоях могут содержать конфиденциальную персональную информацию, которая не должна быть доступна всем пользователям. По этой причине ваш администратор Dynatrace должен включить разрешение **View logs** в настройках безопасности учётной записи и разрешение **View sensitive request data** в вашем профиле пользователя, прежде чем вы сможете просматривать персональные данные. Этот параметр отключён по умолчанию для всех пользователей без прав администратора и должен быть явно включён для получения доступа к содержимому логов.
 
 ## Обработка сбоев в Windows
 
@@ -161,7 +161,7 @@ Ubuntu и Red Hat обычно полагаются на собственные 
 
 Службы [ABRT](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/ch-abrt) (Red Hat) и [Apport](https://launchpad.net/ubuntu/+source/apport) (Debian) останавливаются и отключаются.
 
-Обе службы повторно включаются при [удалении OneAgent](../../../ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux.md "Узнайте, как удалить OneAgent из вашей системы на базе Linux.").
+Обе службы повторно включаются при удалении OneAgent.
 
 Подробнее см. [Безопасность OneAgent на Linux](../../../ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux.md#operating-system-changes "Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей системе на базе Linux").
 
@@ -217,6 +217,6 @@ Ubuntu и Red Hat обычно полагаются на собственные 
 
 ## Связанные темы
 
-* [Просмотр отчётов о сбоях для мобильных приложений](../../digital-experience/mobile-applications/analyze-and-use/crash-reports-mobile.md "Просмотр последних отчётов о сбоях для ваших мобильных приложений.")
-* [Просмотр отчётов о сбоях для пользовательских приложений](../../digital-experience/custom-applications/analyze-and-use/crash-reports-custom.md "Просмотр последних отчётов о сбоях для ваших пользовательских приложений.")
-* [Новое: Анализ сессий пользователей](../../digital-experience/session-segmentation/new-user-sessions.md "Узнайте о сегментации сессий пользователей и атрибутах фильтрации.")
+* Просмотр отчётов о сбоях для мобильных приложений
+* Просмотр отчётов о сбоях для пользовательских приложений
+* Новое: Анализ сессий пользователей

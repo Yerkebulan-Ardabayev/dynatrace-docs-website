@@ -11,14 +11,14 @@ scraped: 2026-03-02T21:20:52.180811
 * 5-min read
 * Updated on May 16, 2022
 
-[Dashboards Classic](../../dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+Dashboards Classic
 
 This page refers to classic dashboards created using the ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** functionality integrated with Dynatrace Classic.
 
-* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see [Dashboards](../../dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") for related documentation.
-* If you're still using classic dashboards, we encourage you to [upgrade your dashboards](../dashboards-upgrade-classic-to-latest.md "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
+* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see Dashboards for related documentation.
+* If you're still using classic dashboards, we encourage you to upgrade your dashboards and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
 
-You can automatically create a new dashboard tile from any Dynatrace page that includes a **Pin to dashboard** button. All you need is [edit permission](../dashboards/share-dashboards.md "Learn how to share your Dynatrace dashboards with others.") for the dashboard. In this example, we create a new dashboard, so you are guaranteed to have edit permission.
+You can automatically create a new dashboard tile from any Dynatrace page that includes a **Pin to dashboard** button. All you need is edit permission for the dashboard. In this example, we create a new dashboard, so you are guaranteed to have edit permission.
 
 ## Create a dashboard
 

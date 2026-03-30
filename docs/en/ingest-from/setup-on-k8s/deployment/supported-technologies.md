@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:26:22.993785
 
 This page gives an overview and documents the different configurations for all major Kubernetes distributions.
 
-For the overall Dynatrace support lifecycle for Kubernetes and Red Hat OpenShift, including the currently supported versions, see [Dynatrace support lifecycle for Kubernetes and Red Hat OpenShift full stack Monitoring](../../technology-support/support-model-and-issues.md "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues").
+For the overall Dynatrace support lifecycle for Kubernetes and Red Hat OpenShift, including the currently supported versions, see Dynatrace support lifecycle for Kubernetes and Red Hat OpenShift full stack Monitoring.
 
 ## AWS Elastic Kubernetes Service (EKS)
 
@@ -21,14 +21,14 @@ cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
 
 No specific configuration is required for EKS.
 
-Dynatrace supports a variety of different flavors of AWS EKS. For EKS on EC2 or bare metal, you can install Dynatrace in [any available deployment option](#installation-k8s) without any additional configuration changes. For EKS on Fargate, you can [install Dynatrace for App Observability](../../amazon-web-services/integrate-into-aws/aws-fargate.md "Install OneAgent on AWS Fargate.").
+Dynatrace supports a variety of different flavors of AWS EKS. For EKS on EC2 or bare metal, you can install Dynatrace in [any available deployment option](#installation-k8s) without any additional configuration changes. For EKS on Fargate, you can install Dynatrace for App Observability.
 
 ### AWS Bottlerocket OS
 
 applicationMonitoring
 
 Additional configuration is required for AWS Bottlerocket OS on EKS nodes.
-You can deploy Dynatrace for Application Observability and configure Platform Observability via ActiveGate (Kubernetes API Monitoring). Platform Observability via Dynatrace OneAgent is not supported. Starting with Dynatrace Operator version 0.12.0 and before Dynatrace Operator version 1.7.0, the CSI driver is supported and needs to be configured in [read-only mode for Bottlerocket OS](../guides/networking-security-compliance/advanced-security-configurations/injection-readonly-volume.md "Configure read-only CSI volumes for OneAgent injection to enhance data security."):
+You can deploy Dynatrace for Application Observability and configure Platform Observability via ActiveGate (Kubernetes API Monitoring). Platform Observability via Dynatrace OneAgent is not supported. Starting with Dynatrace Operator version 0.12.0 and before Dynatrace Operator version 1.7.0, the CSI driver is supported and needs to be configured in read-only mode for Bottlerocket OS:
 
 ```
 apiVersion: dynatrace.com/v1beta5
@@ -147,7 +147,7 @@ value: "true"
 
 applicationMonitoring
 
-For GKE Autopilot, you can [install Dynatrace for App Observability](application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"). Dynatrace Operator CSI driver is supported for all GKE Autopilot clusters running Kubernetes version 1.26+. Additionally, only images from the following repositories are supported and must be set during installation:
+For GKE Autopilot, you can install Dynatrace for App Observability. Dynatrace Operator CSI driver is supported for all GKE Autopilot clusters running Kubernetes version 1.26+. Additionally, only images from the following repositories are supported and must be set during installation:
 
 * `gcr.io/dynatrace-marketplace-prod/dynatrace-operator`
 * `docker.io/dynatrace/dynatrace-operator`
@@ -236,7 +236,7 @@ cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
 
 Classic full-stack is supported only on Kubernetes nodes that use Red Hat Enterprise Linux (RHEL) as their operating system.
 
-For OpenShift, you need to [configure Security Context Constraints (SCC)](../guides/networking-security-compliance/security-configurations/openshift-configuration.md "Configure Dynatrace Operator in OpenShift environments.") for all deployments using the Dynatrace Operator CSI driver (`cloudNativeFullStack`, `applicationMonitoring`/`hostMonitoring` with CSI). In addition, starting with Openshift 4.13, you need to [configure the CSI Inline Ephemeral Volume Admissing plugin](../guides/networking-security-compliance/security-configurations/openshift-configuration.md "Configure Dynatrace Operator in OpenShift environments.").
+For OpenShift, you need to configure Security Context Constraints (SCC) for all deployments using the Dynatrace Operator CSI driver (`cloudNativeFullStack`, `applicationMonitoring`/`hostMonitoring` with CSI). In addition, starting with Openshift 4.13, you need to configure the CSI Inline Ephemeral Volume Admissing plugin.
 
 For managed OpenShift implementations such as AWS ROSA and Azure Red Hat OpenShift (ARO), Dynatrace supports the same features as dedicated OpenShift.
 

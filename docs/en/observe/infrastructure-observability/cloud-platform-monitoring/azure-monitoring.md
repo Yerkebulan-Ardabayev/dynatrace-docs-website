@@ -40,4 +40,4 @@ Tracking of services and dependencies is not limited to Azure. Thanks to Dynatra
 
 ## Related topics
 
-* [Set up Dynatrace on Microsoft Azure](../../../ingest-from/microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
+* Set up Dynatrace on Microsoft Azure

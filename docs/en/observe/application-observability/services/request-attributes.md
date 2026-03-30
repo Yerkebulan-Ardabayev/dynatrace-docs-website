@@ -23,9 +23,9 @@ Multiple requests within a single distributed trace might have the same attribut
 
 You can capture request attributes based on:
 
-* [Web request data](request-attributes/capture-request-attributes-based-on-web-request-data.md "Create request attributes based on web request data.")
-* [Java, .NET, and PHP method arguments](request-attributes/capture-request-attributes-based-on-method-arguments.md "Learn how to create request attributes based on Java, .NET, or PHP method arguments and how to use them on the serviceâs overview page. Also find out how you can aggregate the captured values of request attributes as well as how you can access objects, in case the value to be captured is a complex object.")
-* Any data captured with the [OneAgent SDK](../../../ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk.md "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.")
+* Web request data
+* Java, .NET, and PHP method arguments
+* Any data captured with the OneAgent SDK
 
 ## Confidential request attributes
 
@@ -41,12 +41,12 @@ With this setting enabled, Dynatrace users who don't have access to confidential
 
 Here are some examples of how you can use request attributes:
 
-* [Filter your monitoring data](request-attributes/filter-monitoring-data-via-request-attributes.md "Use request attributes to filter your monitoring data and narrow down service analysis scope.")
-* [Define web-request naming rules](service-detection/service-detection-v1/set-up-request-naming.md "Adjust request naming and define the operations your services offer.")
+* Filter your monitoring data
+* Define web-request naming rules
 * [Set up detection of business-logic related errors](service-detection/service-detection-v1/configure-service-failure-detection.md#detection-of-business-logic-related-errors-using-request-attributes "Discover which service error types Dynatrace automatically detects and learn how to adjust failure detection settings to meet your specific requirements.")
-* [Enrich distributed traces analysis by adding metadata to distributed traces](../distributed-traces/use-cases/segment-request.md "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.")
-* [Create calculated metrics](../../../dynatrace-api/configuration-api/calculated-metrics.md "Learn what the Dynatrace calculated metrics config API offers.")
-* [Create custom queries, segmentation, and aggregation of session data with User Session Query Language](../../digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Learn how you can access and query user session data based on keywords, syntax, functions, and more.")
+* Enrich distributed traces analysis by adding metadata to distributed traces
+* Create calculated metrics
+* Create custom queries, segmentation, and aggregation of session data with User Session Query Language
 
 ## Limits
 
@@ -68,6 +68,6 @@ The maximum number of request attributes that can be captured by OneAgent for a 
 
 ## Related topics
 
-* [Request attributes API](../../../dynatrace-api/configuration-api/service-api/request-attributes-api.md "Learn what the Dynatrace request attribute config API offers.")
-* [Service flow filtering](../services-classic/service-flow/service-flow-filtering.md "Understand how service filtering works and how it can be exploited.")
-* [Set up request naming](service-detection/service-detection-v1/set-up-request-naming.md "Adjust request naming and define the operations your services offer.")
+* Request attributes API
+* Service flow filtering
+* Set up request naming

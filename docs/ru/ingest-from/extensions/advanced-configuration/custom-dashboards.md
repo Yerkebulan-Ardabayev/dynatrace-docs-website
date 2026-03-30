@@ -54,7 +54,7 @@ scraped: 2026-03-03T21:22:34.358051
 
    |   device-health.dashboard.json
    ```
-3. Объявите JSON в [YAML-файле расширения](../develop-your-extensions/extension-yaml.md "Узнайте, как создать YAML-файл расширения с помощью фреймворка расширений.").
+3. Объявите JSON в YAML-файле расширения.
 
    Например,
 
@@ -85,22 +85,22 @@ scraped: 2026-03-03T21:22:34.358051
 
 ## Dashboards Classic
 
-Если вы используете [Dashboards Classic](../../../analyze-explore-automate/dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic."), следуйте этим процедурам.
+Если вы используете Dashboards Classic, следуйте этим процедурам.
 
-После того как ваше расширение начнёт отправлять данные в Dynatrace, вы можете [создать пользовательский дашборд](../../../analyze-explore-automate/dashboards-classic/dashboards/create-dashboards.md "Узнайте, как создавать и редактировать дашборды Dynatrace."), а затем экспортировать его определение в JSON-файл и добавить в архив расширения. Вы можете экспортировать определение дашборда через веб-интерфейс Dynatrace или Dynatrace API.
+После того как ваше расширение начнёт отправлять данные в Dynatrace, вы можете создать пользовательский дашборд, а затем экспортировать его определение в JSON-файл и добавить в архив расширения. Вы можете экспортировать определение дашборда через веб-интерфейс Dynatrace или Dynatrace API.
 
 ### Экспорт JSON дашборда через веб-интерфейс
 
 1. Перейдите в ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**.
 2. В строке дашборда, который хотите экспортировать, выберите **More** (**...**) > **Export**.
    JSON-файл с именем дашборда будет загружен на ваш компьютер.
-   Для получения дополнительной информации см. [Редактирование JSON дашборда Dynatrace](../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-json.md "Узнайте, как экспортировать, редактировать и импортировать JSON дашборда Dynatrace.").
+   Для получения дополнительной информации см. Редактирование JSON дашборда Dynatrace.
 
 ### Экспорт JSON дашборда через API
 
 1. Перейдите в ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** и откройте дашборд.
 2. В URL дашборда найдите параметр `id` (например, `id=d996b25e-593c-4213-8ad3-c87319a8830a`) и сохраните значение параметра.
-3. Используйте конечную точку [Get a dashboard](../../../dynatrace-api/configuration-api/dashboards-api/get-dashboard.md "Просмотр дашборда через Dynatrace Classic API.") API для получения JSON-определения дашборда.
+3. Используйте конечную точку Get a dashboard API для получения JSON-определения дашборда.
    Выполните следующую команду для получения определения дашборда. В этом примере мы используем URL Dynatrace SaaS:
 
    ```
@@ -115,8 +115,8 @@ scraped: 2026-03-03T21:22:34.358051
 
    Замените:
 
-   * `{env-id}` на ваш [идентификатор среды](../../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа со средами мониторинга.").
-   * `{api-token}` на [API-токен](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с необходимыми [разрешениями](../manage-extensions.md#permissions "Узнайте, как управлять расширениями.").
+   * `{env-id}` на ваш идентификатор среды.
+   * `{api-token}` на API-токен с необходимыми [разрешениями](../manage-extensions.md#permissions "Узнайте, как управлять расширениями.").
    * `{dashboard-id}` на идентификатор дашборда, определённый на предыдущем шаге.
 4. Вызов вернёт JSON-полезную нагрузку с определением дашборда. Сохраните её как JSON-файл.
 
@@ -151,7 +151,7 @@ extension.zip
 |   dashboard.json
 ```
 
-Используйте следующую ссылку на верхнем уровне вашего [YAML-файла](../develop-your-extensions/extension-yaml.md "Узнайте, как создать YAML-файл расширения с помощью фреймворка расширений."):
+Используйте следующую ссылку на верхнем уровне вашего YAML-файла:
 
 ```
 dashboards:

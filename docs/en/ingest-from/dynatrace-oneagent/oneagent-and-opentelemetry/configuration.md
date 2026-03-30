@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:30:54.102654
 
 In addition to the application-side configuration, several Dynatrace-specific settings let you control how OpenTelemetry data is used in Dynatrace.
 
-To learn how to send OpenTelemetry data to a Dynatrace OneAgent, see [Use OneAgent with OpenTelemetry data](oneagent-otel.md "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.").
+To learn how to send OpenTelemetry data to a Dynatrace OneAgent, see Use OneAgent with OpenTelemetry data.
 
 ## Prerequisites
 
@@ -39,7 +39,7 @@ Python
 
 1
 
-Supported in [AWS Lambda](../../amazon-web-services/integrate-into-aws/aws-lambda-integration.md "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
 To enable OpenTelemetry Java
 
@@ -80,7 +80,7 @@ OneAgent version 1.217 and earlier The OpenTelemetry Go Sensor propagates Dynatr
 
 1
 
-Supported in [AWS Lambda](../../amazon-web-services/integrate-into-aws/aws-lambda-integration.md "AWS Lambda capabilities and integration options")
+Supported in AWS Lambda
 
 Opt-in
 
@@ -192,7 +192,7 @@ To configure attribute storage and masking settings for your environment
 
    1. On the **Attribute capturing** page, select **Attribute data masking**.
    2. Select **Add item** to add a new key to the masked attributed list.
-   3. Enter a stored value key and select an option from the **Masking** dropdown list. To learn more about masking options, see [OpenTelemetry traces](../../../manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace.md#otel-traces "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.").
+   3. Enter a stored value key and select an option from the **Masking** dropdown list. To learn more about masking options, see OpenTelemetry traces.
    4. Select **Save changes**.
 
 You can then find the attribute key on the **Distributed traces** page on the [**Summary** tab](../../../observe/application-observability/distributed-traces/use-cases/segment-request.md#summary-tab "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.").
@@ -293,7 +293,7 @@ The ID rewrite applies only to newly started traces (not context propagation) an
 ### All languages
 
 * OneAgent captures OpenTelemetry resource attributes only if they are provided via the `OTEL_SERVICE_NAME` and `OTEL_RESOURCE_ATTRIBUTES` environment variables. When using the OpenTelemetry trace ingest API, this limitation doesn't apply.
-* You can't create [request attributes](../../../observe/application-observability/services/request-attributes.md "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") (commonly used for trace searching and filtering) based on OpenTelemetry resource attributes.
+* You can't create request attributes (commonly used for trace searching and filtering) based on OpenTelemetry resource attributes.
 * OneAgent truncates attribute values exceeding 4,096 characters.
 
 ## Prevention of span duplication in Java

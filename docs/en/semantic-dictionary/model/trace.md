@@ -540,7 +540,7 @@ Currently sampling can happen two stages in the data processing. Independend whe
 
 If for example OneAgents samples with a probability of 25% the spans would contain the attributes `sampling.threshold=54043195528445952` and `supportability.atm_sampling_ratio=4`.
 
-Details about adaptive traffic management for distributed tracing can be found in the [documentation](../../ingest-from/dynatrace-oneagent/adaptive-traffic-management.md "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.").
+Details about adaptive traffic management for distributed tracing can be found in the documentation.
 
 ### Code attributes
 

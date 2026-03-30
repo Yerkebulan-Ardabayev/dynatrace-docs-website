@@ -19,4 +19,4 @@ Dynatrace OneAgent обеспечивает мониторинг полного 
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Google Cloud](../../../ingest-from/google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
+* Настройка Dynatrace в Google Cloud

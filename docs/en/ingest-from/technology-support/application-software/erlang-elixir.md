@@ -16,5 +16,5 @@ You can send data from your Erlang/Elixir application to Dynatrace via OpenTelem
 
 * [OpenTelemetry supportï»¿](https://github.com/open-telemetry/opentelemetry-erlang-contrib) for capturing traces.
 
-  + [Instrument your Erlang application with OpenTelemetry](../../opentelemetry/walkthroughs/erlang.md "Learn how to instrument your Erlang application using OpenTelemetry and Dynatrace.")
-  + [Instrument your Elixir application with OpenTelemetry](../../opentelemetry/walkthroughs/elixir.md "Learn how to instrument your Elixir application using OpenTelemetry and Dynatrace.")
+  + Instrument your Erlang application with OpenTelemetry
+  + Instrument your Elixir application with OpenTelemetry

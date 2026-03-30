@@ -490,7 +490,7 @@ Sample input for security findings - Trivy JSON scan report
 
 ## Prerequisites
 
-* Your [containers are deployed in Kubernetes and monitored by Dynatrace](../../ingest-from/setup-on-k8s/deployment.md "Deploy Dynatrace Operator on Kubernetes")
+* Your containers are deployed in Kubernetes and monitored by Dynatrace
 * Corresponding container images are scanned by a third-party tool (in this case, Trivy)
 
 ### Permissions
@@ -500,11 +500,11 @@ To add new sources and pipeline processing to OpenPipeline, you need both permis
 * `openpipeline:configurations:read`
 * `openpipeline:configurations:write`
 
-To learn how to set up the permissions, see [Permissions in Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+To learn how to set up the permissions, see Permissions in Grail.
 
 ## Get started
 
-For instructions on ingesting any type of event, see [How to ingest data (events)](../../platform/openpipeline/getting-started/how-to-ingestion.md "How to ingest data for a configuration scope in OpenPipeline.").
+For instructions on ingesting any type of event, see How to ingest data (events).
 
 1. Configure endpoint in Dynatrace
 
@@ -517,8 +517,8 @@ For instructions on ingesting any type of event, see [How to ingest data (events
      ![copy URL of builtin security events endpoint](https://dt-cdn.net/images/2024-08-28-19-48-19-1855-96c02de135.png)
    * Option 2 - Create a custom endpoint Select  **Source** to [create a custom ingest source](../../platform/openpipeline/getting-started/tutorial-configure-processing.md#ingest "Configure ingest sources, routes, and processing for your data in OpenPipeline."), then copy its URL.
 
-   For more information about the ingest options, see [Security events ingest](../threat-observability/security-events-ingest.md "Ingest external security data into Grail.").
-4. Generate an [access token](../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token.md "Learn the concept of a personal access token and its scopes.") with the required scope according to your ingest option selected in step 3.
+   For more information about the ingest options, see Security events ingest.
+4. Generate an access token with the required scope according to your ingest option selected in step 3.
 
    For details on the required scopes, see [Get started](../threat-observability/security-events-ingest/ingest-custom-data.md#start "Ingest security events from custom third-party products via API.").
 
@@ -857,7 +857,7 @@ To validate data, open [![Notebooks](https://dt-cdn.net/images/notebooks-768-046
 
 Sample DQL query:
 
-This query has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../threat-observability/migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This query has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the Grail security table migration guide.
 
 ```
 fetch security.events
@@ -1147,5 +1147,5 @@ In such complex cases, you need to manually map the ingested data to the Dynatra
 
 Now you can use the data to
 
-* [Visualize container vulnerability findings with a sample dashboard](visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
-* [Automate Jira ticket creation and Slack notifications with sample workflows](automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* Visualize container vulnerability findings with a sample dashboard
+* Automate Jira ticket creation and Slack notifications with sample workflows

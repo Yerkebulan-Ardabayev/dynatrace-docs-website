@@ -244,9 +244,9 @@ A data type that is used to represent 64-bit identifiers and 128-bit identifiers
 
 You can use the following DQL functions to create `UID` data:
 
-* [uid64](functions/conversion-and-casting-functions.md#uid64 "A list of DQL conversion and casting functions.")
-* [uid128](functions/conversion-and-casting-functions.md#uid128 "A list of DQL conversion and casting functions.")
-* [toUid](functions/conversion-and-casting-functions.md#toUid "A list of DQL conversion and casting functions.")
+* uid64
+* uid128
+* toUid
 
 ## Complex types
 
@@ -356,11 +356,11 @@ A set of key-value pair data whose value can be any DQL data type.
 
 ## Related topics
 
-* [Dynatrace Query Language](../dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Use DQL queries](dql-guide.md "Find out how DQL works and what are DQL key concepts.")
-* [DQL compared to SQL and more](dql-comparison.md "See how DQL compares to other query languages.")
-* [DQL language reference](dql-reference.md "Dynatrace Query Language syntax reference.")
-* [DQL commands](commands.md "A list of DQL commands.")
-* [DQL functions](functions.md "A list of DQL functions.")
-* [DQL operators](operators.md "A list of DQL Operators.")
-* [DQL best practices](dql-best-practices.md "Best practices for using Dynatrace Query Language.")
+* Dynatrace Query Language
+* Use DQL queries
+* DQL compared to SQL and more
+* DQL language reference
+* DQL commands
+* DQL functions
+* DQL operators
+* DQL best practices

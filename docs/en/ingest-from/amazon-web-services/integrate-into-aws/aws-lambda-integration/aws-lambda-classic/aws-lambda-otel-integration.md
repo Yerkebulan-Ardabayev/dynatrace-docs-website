@@ -16,7 +16,7 @@ Dynatrace uses [OpenTelemetryï»¿](https://dt-url.net/y903u4j) to monitor AWS 
 
 ## Prerequisites
 
-Ensure that you use a [supported AWS Lambda runtime](../../aws-lambda-integration.md#support-lifecycle "AWS Lambda capabilities and integration options") and that you have followed the **initial configuration** steps described in [Monitor AWS Lambda with OpenTelemetry](aws-lambda-otel-integration/aws-lambda-otel-setup.md "Prerequisites for monitoring AWS Lambda with OpenTelemetry") before using the packages below.
+Ensure that you use a [supported AWS Lambda runtime](../../aws-lambda-integration.md#support-lifecycle "AWS Lambda capabilities and integration options") and that you have followed the **initial configuration** steps described in Monitor AWS Lambda with OpenTelemetry before using the packages below.
 
 The following NuGet packages can be used to cover different aspects of AWS Lambda tracing:
 
@@ -793,4 +793,4 @@ op.FilterHttpRequestMessage = req => Activity.Current?.Parent?.IsAllDataRequeste
 
 ## Support of .NET Lambda functions with container images
 
-Starting from .NET 6, Lambda functions can be [built and deployed as container imagesï»¿](https://dt-url.net/yz038r7). Initialization and tracing for [Managed .NET runtime](../../../../technology-support/application-software/dotnet.md "Learn about all aspects of Dynatrace support for .NET application monitoring.") apply to container image functions without any changes.
+Starting from .NET 6, Lambda functions can be [built and deployed as container imagesï»¿](https://dt-url.net/yz038r7). Initialization and tracing for Managed .NET runtime apply to container image functions without any changes.

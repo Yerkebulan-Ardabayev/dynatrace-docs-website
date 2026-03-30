@@ -15,12 +15,12 @@ scraped: 2026-03-06T21:32:41.871210
 
 * `slo:slos:read` — требуется для чтения всех SLO и отображения их в раскрывающемся списке
 * `slo:slos:write` — требуется для отображения кнопки **Service-level objective**
-* `slo:slos:write`, `slo:slos:read` и разрешения Grail, необходимые для конкретного запроса. Дополнительные сведения см. в разделе [Разрешения в Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначить разрешения для бакетов и таблиц в Grail.").
+* `slo:slos:write`, `slo:slos:read` и разрешения Grail, необходимые для конкретного запроса. Дополнительные сведения см. в разделе Разрешения в Grail.
 
 Для оценки плитки SLO
 
-* `slo:slos:read` и разрешения Grail, необходимые для конкретного запроса. Дополнительные сведения см. в разделе [Разрешения в Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначить разрешения для бакетов и таблиц в Grail.").
+* `slo:slos:read` и разрешения Grail, необходимые для конкретного запроса. Дополнительные сведения см. в разделе Разрешения в Grail.
 
 Для детального просмотра SLO
 
-* `slo:slos:read`, `slo:objective-templates:read` и разрешения Grail, необходимые для конкретного запроса. Дополнительные сведения см. в разделе [Разрешения в Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначить разрешения для бакетов и таблиц в Grail.").
+* `slo:slos:read`, `slo:objective-templates:read` и разрешения Grail, необходимые для конкретного запроса. Дополнительные сведения см. в разделе Разрешения в Grail.

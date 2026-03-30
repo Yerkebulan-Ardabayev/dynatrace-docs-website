@@ -17,7 +17,7 @@ While running, the ActiveGate container writes data to certain directories withi
 
 ### Size requirements
 
-See [ActiveGate directories](../configuration/where-can-i-find-activegate-files.md "Find out where ActiveGate files are stored on Windows and Linux systems.") for estimated size requirements for each directory.
+See ActiveGate directories for estimated size requirements for each directory.
 
 ## Hardened security
 

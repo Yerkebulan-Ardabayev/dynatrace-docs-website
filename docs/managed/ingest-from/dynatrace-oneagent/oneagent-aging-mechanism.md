@@ -25,7 +25,7 @@ The maximum disk space occupied by OneAgent log files is very well managed by th
 
 Unlike log files, large runtime data files such as crash and memory dumps are generated ad hoc and can cause rapid spikes in disk usage. To mitigate this, use the `DATA_STORAGE` installation parameter to specify a custom directory for large runtime data. Locate the custom directory on a resource where tight disk size constraints are not as critical as they are on the disk where OneAgent is installed.
 
-For more information on customizing OneAgent installation, see the OS-specific help: [Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#data-storage "Learn how to use the Linux installer with command line parameters."), [Windows](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#data-storage "Learn how to use the OneAgent installer for Windows."), or [AIX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix#data-storage "Learn how you can use AIX installer with command line parameters.").
+For more information on customizing OneAgent installation, see the OS-specific help: [Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#data-storage "Learn how to use the Linux installer with command line parameters."), Windows, or AIX.
 
 ## Emergency cleanup
 
@@ -113,7 +113,7 @@ The OneAgent file aging mechanism checks the subdirectories starting with `0x`. 
 
 ## Aging mechanism for OneAgent in application-only monitoring mode
 
-If you don't have access to the infrastructure layer, Dynatrace also provides the option of application-only monitoring for [Kubernetes](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"), [OpenShift](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"), [CloudFoundry](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring "Install OneAgent on Cloud Foundry.") or [SAP Business Technology Platform](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-sap-cloud-platform-for-application-only-monitoring "Install OneAgent on SAP Business Technology Platform.").
+If you don't have access to the infrastructure layer, Dynatrace also provides the option of application-only monitoring for Kubernetes, OpenShift, CloudFoundry or SAP Business Technology Platform.
 
 The aging mechanism in application-only monitoring mode manages the logs of the OneAgent modules. All of them are located in the respective subdirectories of the default OneAgent log directory:
 

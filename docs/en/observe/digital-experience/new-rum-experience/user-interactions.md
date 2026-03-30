@@ -31,7 +31,7 @@ There are no additional charges during the User Interaction Early Access.
 
 What is the cost of querying user interactions?
 
-Raw DEM data queries are currently in Early Access. There are no additional charges during this period. For details, see [Calculate your consumption of Digital Experience Monitoring (DEM) - Query](../../../license/capabilities/digital-experience-monitoring-query-retain/queries-dem.md "Learn how your consumption of the DEM-related DQL queries is consumed and billed before and after Early Access.").
+Raw DEM data queries are currently in Early Access. There are no additional charges during this period. For details, see Calculate your consumption of Digital Experience Monitoring (DEM) - Query.
 
 What is the data retention period for user interactions?
 
@@ -39,7 +39,7 @@ Like other user events, user interactions have a [default data retention period]
 
 ## Types of user interactions
 
-The following table provides an overview of the available types of user interactions. For a detailed specification, see [User interaction](../../../semantic-dictionary/model/rum/user-events/user-interactions.md) in the Semantic Dictionary.
+The following table provides an overview of the available types of user interactions. For a detailed specification, see User interaction in the Semantic Dictionary.
 
 User interaction type
 
@@ -116,4 +116,4 @@ To capture user interactions for a web or mobile frontend
 There are two primary ways to analyze user interactions:
 
 * The [![Users & Sessions](https://dt-cdn.net/images/users-sessions-149-f84e0b9b20.png "Users & Sessions") **Users & Sessions**](users-and-sessions.md "The Users & Sessions app delivers insight into individual user journeys and behavior patterns.") app lets you view all user interactions that occurred during a user session. This is particularly helpful for customer support teams and developers who need to understand what happened when troubleshooting customer issues or bugs. After filtering sessions based on your criteria and selecting one, all related user interactions are listed and displayed in the timeline.
-* User interaction analysis via DQL supports a wide range of behavioral use cases for product managers and product owners. In these scenarios, user interactions often appear alongside navigation events. For examples of how to derive behavioral insights using DQL, see [DQL examples](use-cases/dql-examples.md#behavioral-insights "Analyze and explore RUM data in depth by leveraging DQL.").
+* User interaction analysis via DQL supports a wide range of behavioral use cases for product managers and product owners. In these scenarios, user interactions often appear alongside navigation events. For examples of how to derive behavioral insights using DQL, see DQL examples.

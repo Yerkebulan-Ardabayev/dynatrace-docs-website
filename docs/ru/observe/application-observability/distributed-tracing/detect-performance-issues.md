@@ -35,9 +35,9 @@ scraped: 2026-03-06T21:12:30.239053
 
 ## Предварительные требования
 
-* Вы знакомы с [концепциями распределенной трассировки](../distributed-traces/concepts.md "Узнайте больше об основных концепциях и терминологии распределенной трассировки.").
+* Вы знакомы с концепциями распределенной трассировки.
 * У вас есть подписка Dynatrace Platform Subscription (DPS).
-* Вы загружаете данные трассировок через [Dynatrace OneAgent](../../../ingest-from/dynatrace-oneagent.md "Узнайте о важных концепциях, связанных с OneAgent, и о том, как установить и использовать OneAgent на различных платформах.") или [OpenTelemetry](../../../ingest-from/opentelemetry/getting-started.md "Как отправить данные OpenTelemetry в Dynatrace."). Чтобы начать загрузку данных трассировок, перейдите в **Distributed Tracing** > **Traces** > выберите источник и следуйте инструкциям в продукте.
+* Вы загружаете данные трассировок через Dynatrace OneAgent или OpenTelemetry. Чтобы начать загрузку данных трассировок, перейдите в **Distributed Tracing** > **Traces** > выберите источник и следуйте инструкциям в продукте.
 * Убедитесь, что ваши трассировки доступны в приложении [Distributed Tracing ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing")](distributed-tracing-app.md "Откройте для себя функциональные возможности нового приложения Distributed Tracing.").
 
 ## Анализ и устранение проблем с производительностью

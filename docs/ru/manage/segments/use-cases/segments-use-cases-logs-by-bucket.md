@@ -21,14 +21,14 @@ scraped: 2026-03-06T21:13:17.215643
 
 Предварительные знания
 
-* [Включение данных в сегменты](../concepts/segments-concepts-includes.md "Узнайте, как данные различных типов могут включаться в сегменты.")
-* [Переменные в сегментах](../concepts/segments-concepts-variables.md "Узнайте, как переменные помогают формировать динамические сегменты и сокращать усилия по настройке и обслуживанию.")
-* [Сегменты в запросах DQL](../concepts/segments-concepts-queries.md "Узнайте, как Grail оценивает сегменты при выполнении запросов для возврата только соответствующих результатов.")
+* Включение данных в сегменты
+* Переменные в сегментах
+* Сегменты в запросах DQL
 
 Предварительные условия
 
 * Среда Dynatrace SaaS на базе Grail и AppEngine.
-* Наличие разрешений `storage:filter-segments:write` и `storage:filter-segments:read`. Сведения о настройке разрешений см. в разделе [Permissions in Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
+* Наличие разрешений `storage:filter-segments:write` и `storage:filter-segments:read`. Сведения о настройке разрешений см. в разделе Permissions in Grail.
 
 Ключевые термины
 

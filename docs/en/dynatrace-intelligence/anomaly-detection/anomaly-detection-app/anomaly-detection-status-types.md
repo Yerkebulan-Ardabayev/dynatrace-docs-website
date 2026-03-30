@@ -39,5 +39,5 @@ Some of the error messages might be more complicated than others. Here are some 
 
 ## Related topics
 
-* [Anomaly Detection app](../anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.")
-* [Examples of anomaly detection on Grail](../../use-cases/anomaly-detection-examples.md "Use the power of Grail and DQL to convert any data into time series for anomaly detection analyzers.")
+* Anomaly Detection app
+* Examples of anomaly detection on Grail

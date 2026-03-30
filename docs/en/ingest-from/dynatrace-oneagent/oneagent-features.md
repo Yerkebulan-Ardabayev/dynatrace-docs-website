@@ -16,7 +16,7 @@ When you create your environment, OneAgent comes with a big set of features that
 New OneAgent features are fully supported and tested as soon as theyâre available.
 
 * For new environments, you can activate or deactivate OneAgent features (opt-in) based on the specific use case.
-* For existing environments, newly added OneAgent features still require explicit activation from users with **Write settings** (`settings.write`) permission on the [Settings API - OneAgent features schema table](../../dynatrace-api/environment-api/settings/schemas/builtin-oneagent-features.md "View builtin:oneagent.features settings schema table of your monitoring environment via the Dynatrace API.").
+* For existing environments, newly added OneAgent features still require explicit activation from users with **Write settings** (`settings.write`) permission on the Settings API - OneAgent features schema table.
 
 ## Scope
 
@@ -25,12 +25,12 @@ New OneAgent features typically are enabled globally (for the entire environment
 ## Use cases
 
 * As new features are continuously added to OneAgent, you need to explicitly enable them within your existing monitoring environments to avoid unexpected changes.
-* You may choose to disable certain OneAgent features at a fine-grained level when resolving issues. This can be useful in identifying the root cause of a problem down to a specific feature. To learn more, see [Troubleshooting OneAgent deep-monitoring issues](oneagent-troubleshooting/troubleshoot-oneagent-deep-monitoring-issues.md "Work with the Dynatrace Support team to troubleshoot OneAgent deep-monitoring issues.").
+* You may choose to disable certain OneAgent features at a fine-grained level when resolving issues. This can be useful in identifying the root cause of a problem down to a specific feature. To learn more, see Troubleshooting OneAgent deep-monitoring issues.
 
 ## Web UI or API
 
 * You can enable or disable OneAgent features via the Dynatrace web UI on the **OneAgent features** page at the appropriate level (global or process group).
-* You can use the Dynatrace [Settings API](../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") to make the same settings via API calls.
+* You can use the Dynatrace Settings API to make the same settings via API calls.
 
 ### Configuration via web UI
 
@@ -65,7 +65,7 @@ To enable or disable a OneAgent feature for a process group
 
 ### Configuration via API
 
-Using the [Settings API](../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers."), you can:
+Using the Settings API, you can:
 
 * **Enable/disable** your OneAgent feature settings.
 * **Override the scope** of a OneAgent feature to have a different setting for a specific process group or process.
@@ -75,7 +75,7 @@ To be able to use the API you need an access token with **Read settings** (`sett
 
 To use the Settings API
 
-1. To learn the JSON format required to post your configuration, use the [Get a schema](../../dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") endpoint. The schema ID is `builtin:oneagent.features`.
+1. To learn the JSON format required to post your configuration, use the Get a schema endpoint. The schema ID is `builtin:oneagent.features`.
 
    Example: JSON payload to disable Java log-context enrichment for unstructured logs for a specific process group.
 
@@ -146,4 +146,4 @@ To use the Settings API
 
    ]
    ```
-2. To send your configuration, use the [Post an object](../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint.
+2. To send your configuration, use the Post an object endpoint.

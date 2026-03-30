@@ -18,9 +18,9 @@ scraped: 2026-03-06T21:16:01.329825
 
 ### Предварительные знания
 
-* [Как захватывать бизнес-события](../../../observe/business-observability/bo-events-capturing.md "Capture business events for Dynatrace Business Observability.")
+* Как захватывать бизнес-события
 * [Этап извлечения данных OpenPipeline](../concepts/processing.md#stage "Learn the core concepts of Dynatrace OpenPipeline processing.")
-* [DDU для бизнес-событий](../../../license/monitoring-consumption-classic/davis-data-units/ddus-for-business-events.md "Understand how the volume of DDU consumption is calculated for business events.")
+* DDU для бизнес-событий
 
 ### Источники загрузки данных
 
@@ -42,15 +42,15 @@ scraped: 2026-03-06T21:16:01.329825
 | Аутентификация | [OAuth](../../../observe/business-observability/bo-api-ingest.md#oauth "Set up authentication for and ingest business events via API.") [Токен доступа](../../../observe/business-observability/bo-api-ingest.md#access-token "Set up authentication for and ingest business events via API.") с областью действия токена **Ingest bizevents** (`bizevents.ingest`) |
 | Полезная нагрузка | `application/json` `application/cloudevent+json` `application/cloudevent-batch+json` |
 
-Подробнее см. [Загрузка бизнес-событий через API](../../../observe/business-observability/bo-api-ingest.md "Set up authentication for and ingest business events via API.").
+Подробнее см. Загрузка бизнес-событий через API.
 
 Логи
 
 ### Предварительные знания
 
-* [Как загружать логи](../../../analyze-explore-automate/logs/lma-log-ingestion.md "Stream log data to Dynatrace.")
-* [Потоковая передача логов через Amazon Data Firehose](../../../ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose.md "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.")
-* [DDU для управления и аналитики логов](../../../license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics.md "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.") или [Аналитика логов (DPS)](../../../license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.")
+* Как загружать логи
+* Потоковая передача логов через Amazon Data Firehose
+* DDU для управления и аналитики логов или Аналитика логов (DPS)
 
 ### Источники загрузки данных
 
@@ -73,7 +73,7 @@ scraped: 2026-03-06T21:16:01.329825
 | Аутентификация | [Токен доступа](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью действия **Ingest logs** (`logs.ingest`) |
 | Полезная нагрузка | `text/plain` `application/json` |
 
-Подробнее см. [Log Monitoring API v2 — POST загрузка логов](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+Подробнее см. Log Monitoring API v2 — POST загрузка логов.
 
 #### OpenTelemetry
 
@@ -86,13 +86,13 @@ scraped: 2026-03-06T21:16:01.329825
 | Аутентификация | [Токен доступа](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью действия токена **Ingest logs** (`logs.ingest`) |
 | Полезная нагрузка | `application/x-protobuf` |
 
-Подробнее см. [Загрузка логов OTLP](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
+Подробнее см. Загрузка логов OTLP.
 
 События (общие события)
 
 ### Предварительные знания
 
-* [Обзор событий на базе Grail (DPS)](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+* Обзор событий на базе Grail (DPS)
 
 ### Источники загрузки данных
 
@@ -112,7 +112,7 @@ scraped: 2026-03-06T21:16:01.329825
 | Аутентификация | [Токен доступа](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью действия токена **OpenPipeline - Ingest Events** (`openpipeline.events`) |
 | Полезная нагрузка | `application/json` |
 
-Подробнее см. [OpenPipeline Ingest API — POST встроенные общие события](openpipeline-ingest-api/generic-events/events-generic-builtin.md "Ingest generic events from built-in endpoints via OpenPipeline Ingest API.").
+Подробнее см. OpenPipeline Ingest API — POST встроенные общие события.
 
 #### Пользовательский API
 
@@ -125,15 +125,15 @@ scraped: 2026-03-06T21:16:01.329825
 | Аутентификация | [Токен доступа](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью действия токена **OpenPipeline - Ingest Events (Custom)** (`openpipeline.events.custom`) |
 | Полезная нагрузка | `application/json` |
 
-Подробнее см. [OpenPipeline Ingest API — POST пользовательская конечная точка общих событий](openpipeline-ingest-api/generic-events/events-generic-custom-endpoint.md "Configure a custom generic event endpoint via OpenPipeline Ingest API.").
+Подробнее см. OpenPipeline Ingest API — POST пользовательская конечная точка общих событий.
 
 События — события Davis
 
 ### Предварительные знания
 
-* [События Davis](../../../../common/semantic-dictionary/model/davis.md "Get to know the Semantic Dictionary models related to Davis AI.")
+* События Davis
 * [Этап извлечения данных OpenPipeline](../concepts/processing.md#stage "Learn the core concepts of Dynatrace OpenPipeline processing.")
-* [Обзор событий на базе Grail (DPS)](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+* Обзор событий на базе Grail (DPS)
 
 ### Источники загрузки данных
 
@@ -154,15 +154,15 @@ scraped: 2026-03-06T21:16:01.329825
 | Аутентификация | [Токен доступа](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью действия токена **Ingest Events** (`events.ingest`) |
 | Полезная нагрузка | `application/json` |
 
-Подробнее см. [Events API v2 — POST событие](../../../dynatrace-api/environment-api/events-v2/post-event.md "Ingests an event via the Dynatrace API.").
+Подробнее см. Events API v2 — POST событие.
 
 События — проблемы Davis
 
 ### Предварительные знания
 
-* [Проблемы Davis](../../../../common/semantic-dictionary/model/davis.md "Get to know the Semantic Dictionary models related to Davis AI.")
+* Проблемы Davis
 * [Классический анализ первопричин](../../../dynatrace-intelligence/root-cause-analysis/concepts.md#root-cause-analysis "Get acquainted with root cause analysis concepts.")
-* [Обзор событий на базе Grail (DPS)](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+* Обзор событий на базе Grail (DPS)
 
 ### Источники загрузки данных
 
@@ -174,8 +174,8 @@ scraped: 2026-03-06T21:16:01.329825
 
 ### Предварительные знания
 
-* [Как загружать события SDLC](../../../deliver/pipeline-observability-sdlc-events/sdlc-events.md "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.")
-* [Обзор событий на базе Grail (DPS)](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+* Как загружать события SDLC events which you can then ingest to use to generate analytics.")
+* Обзор событий на базе Grail (DPS)
 
 ### Источники загрузки данных
 
@@ -195,7 +195,7 @@ scraped: 2026-03-06T21:16:01.329825
 | Аутентификация | [Токен доступа](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью действия токена **OpenPipeline - Ingest Events, Security Development Lifecycle** (`openpipeline.sdlc`) |
 | Полезная нагрузка | `application/json` |
 
-Подробнее см. [OpenPipeline Ingest API — POST встроенные события SDLC](openpipeline-ingest-api/sdlc-events/events-sdlc-builtin.md "Ingest SDLC events from built-in endpoints via OpenPipeline Ingest API.").
+Подробнее см. OpenPipeline Ingest API — POST встроенные события SDLC.
 
 #### Пользовательская конечная точка для событий жизненного цикла разработки ПО
 
@@ -208,7 +208,7 @@ scraped: 2026-03-06T21:16:01.329825
 | Аутентификация | [Токен доступа](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью действия токена **OpenPipeline - Ingest Events, Security Development Lifecycle (Custom)** (`openpipeline.sdlc.custom`) |
 | Полезная нагрузка | `application/json` |
 
-Подробнее см. [OpenPipeline Ingest API — POST пользовательская конечная точка событий SDLC](openpipeline-ingest-api/sdlc-events/events-sdlc-custom-endpoint.md "Configure a custom SDLC event endpoint via OpenPipeline Ingest API.").
+Подробнее см. OpenPipeline Ingest API — POST пользовательская конечная точка событий SDLC.
 
 События — события безопасности
 
@@ -216,12 +216,12 @@ scraped: 2026-03-06T21:16:01.329825
 
 Конечные точки `events.security` планируется объявить устаревшими. Перенесите свои конфигурации на конечные точки `security.events` до **конца декабря 2025 г.**. Предыдущие конечные точки останутся доступными **до завершения миграции**.
 
-Полный обзор изменений и пошаговые инструкции по миграции см. в [Руководстве по миграции таблиц безопасности Grail](../../../secure/threat-observability/migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+Полный обзор изменений и пошаговые инструкции по миграции см. в Руководстве по миграции таблиц безопасности Grail.
 
 ### Предварительные знания
 
 * [Как загружать события безопасности](../../../secure/threat-observability/security-events-ingest.md#ingest "Ingest external security data into Grail.")
-* [Обзор событий на базе Grail (DPS)](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+* Обзор событий на базе Grail (DPS)
 
 | Источник загрузки | dt.openpipeline.source | Тип |
 | --- | --- | --- |
@@ -239,11 +239,11 @@ scraped: 2026-03-06T21:16:01.329825
 | Аутентификация | [Токен доступа](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью действия токена **OpenPipeline - Ingest Security Events (Built-in)** (`openpipeline.events_security`) |
 | Полезная нагрузка | `application/json` |
 
-Подробнее см. [OpenPipeline Ingest API — POST встроенные события безопасности (устаревшие)](openpipeline-ingest-api/security-events/events-security-builtin.md "Ingest security events from built-in endpoints via OpenPipeline Ingest API.").
+Подробнее см. OpenPipeline Ingest API — POST встроенные события безопасности (устаревшие).
 
 #### Пользовательский API событий безопасности (устаревший)
 
-Настраивает пользовательские конечные точки для загрузки событий безопасности. Подробнее см. [Загрузка пользовательских событий безопасности через API](../../../secure/threat-observability/security-events-ingest/ingest-custom-data.md "Ingest security events from custom third-party products via API.").
+Настраивает пользовательские конечные точки для загрузки событий безопасности. Подробнее см. Загрузка пользовательских событий безопасности через API.
 
 | Свойство | Спецификация |
 | --- | --- |
@@ -252,14 +252,14 @@ scraped: 2026-03-06T21:16:01.329825
 | Аутентификация | [Токен доступа](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью действия токена **OpenPipeline - Ingest Security Events (Custom)** (`openpipeline.events_security.custom`) |
 | Полезная нагрузка | `application/json` |
 
-Подробнее см. [OpenPipeline Ingest API — POST пользовательская конечная точка событий безопасности (устаревшая)](openpipeline-ingest-api/security-events/events-security-custom-endpoint.md "Configure a custom security event endpoint via OpenPipeline Ingest API.").
+Подробнее см. OpenPipeline Ingest API — POST пользовательская конечная точка событий безопасности (устаревшая).
 
 Метрики
 
 ### Предварительные знания
 
-* [Как загружать метрики](../../../analyze-explore-automate/metrics.md "Metrics powered by Grail offer a comprehensive solution to manage your metrics data, in integration with logs, spans, and events, providing a unified approach to data analysis.")
-* [Обзор метрик на базе Grail (DPS)](../../../license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+* Как загружать метрики
+* Обзор метрик на базе Grail (DPS)
 
 ### Источники загрузки данных
 
@@ -278,7 +278,7 @@ scraped: 2026-03-06T21:16:01.329825
 | Аутентификация | [Токен доступа](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью действия токена **Ingest metrics** (`metrics.ingest`) |
 | Полезная нагрузка | `text/plain` |
 
-Подробнее см. [Metrics API — POST загрузка точек данных](../../../dynatrace-api/environment-api/metric-v2/post-ingest-metrics.md "Ingest custom metrics to Dynatrace via Metrics v2 API.").
+Подробнее см. Metrics API — POST загрузка точек данных.
 
 #### OpenTelemetry
 
@@ -291,14 +291,14 @@ scraped: 2026-03-06T21:16:01.329825
 | Аутентификация | [Токен доступа](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью действия токена **Ingest metrics** (`metrics.ingest`) |
 | Полезная нагрузка | `application/x-protobuf` |
 
-Подробнее см. [API загрузки метрик OpenTelemetry](../../../dynatrace-api/environment-api/opentelemetry/post-metrics.md "Send OpenTelemetry metrics to Dynatrace via API.").
+Подробнее см. API загрузки метрик OpenTelemetry.
 
 События безопасности (новые)
 
 ### Предварительные знания
 
 * [Как загружать события безопасности](../../../secure/threat-observability/security-events-ingest.md#ingest "Ingest external security data into Grail.")
-* [Обзор событий на базе Grail (DPS)](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+* Обзор событий на базе Grail (DPS)
 
 ### Источники загрузки данных
 
@@ -318,7 +318,7 @@ scraped: 2026-03-06T21:16:01.329825
 | Аутентификация | [Токен доступа](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью действия токена **OpenPipeline - Ingest Security Events (Built-in)** (`openpipeline.events_security`) |
 | Полезная нагрузка | `application/json` |
 
-Подробнее см. [OpenPipeline Ingest API — POST встроенные события безопасности (новые)](openpipeline-ingest-api/security-events/security-events-builtin.md "Ingest security events from built-in endpoints via OpenPipeline Ingest API.").
+Подробнее см. OpenPipeline Ingest API — POST встроенные события безопасности (новые).
 
 #### Пользовательский API событий безопасности (новый)
 
@@ -331,14 +331,14 @@ scraped: 2026-03-06T21:16:01.329825
 | Аутентификация | [Токен доступа](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью действия токена **OpenPipeline - Ingest Security Events (Custom)** (`openpipeline.events_security.custom`) |
 | Полезная нагрузка | `application/json` |
 
-Подробнее см. [OpenPipeline Ingest API — POST пользовательская конечная точка событий безопасности (новая)](openpipeline-ingest-api/security-events/security-events-custom-endpoint.md "Configure a custom security event endpoint via OpenPipeline Ingest API.").
+Подробнее см. OpenPipeline Ingest API — POST пользовательская конечная точка событий безопасности (новая).
 
 Спаны
 
 ### Предварительные знания
 
-* [Как загружать трассировки](../../../observe/application-observability/distributed-tracing/ingest-traces.md "Instrument your applications with OneAgent or OpenTelemetry to start ingesting trace data into Dynatrace.")
-* [Обзор трассировок на базе Grail (DPS)](../../../license/capabilities/traces.md "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.")
+* Как загружать трассировки
+* Обзор трассировок на базе Grail (DPS) model.")
 
 ### Источники загрузки данных
 
@@ -358,14 +358,14 @@ scraped: 2026-03-06T21:16:01.329825
 | Аутентификация | [Токен доступа](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью действия токена **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`) |
 | Полезная нагрузка | `application/x-protobuf` |
 
-Подробнее см. [API загрузки трассировок OpenTelemetry](../../../dynatrace-api/environment-api/opentelemetry/post-traces.md "Send OpenTelemetry traces to Dynatrace via API..").
+Подробнее см. API загрузки трассировок OpenTelemetry.
 
 Системные события
 
 ### Предварительные знания
 
-* [Модели системных событий](../../../semantic-dictionary/model/dt-system-events.md "Get to know the Semantic Dictionary models related to system events.")
-* [Расширения](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+* Модели системных событий
+* Расширения
 * Поддерживаемые системные события в OpenPipeline ограничены следующими:
 
   + Уведомления о жизненном цикле приложений
@@ -406,10 +406,10 @@ scraped: 2026-03-06T21:16:01.329825
 
 ### Предварительные знания
 
-* [Пользовательские события](../../../observe/digital-experience/rum-concepts/user-and-error-events.md "Learn about user and error events and the types of user and error events captured by Dynatrace.")
-* [Пользовательские сессии](../../../observe/digital-experience/rum-concepts/user-session.md "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.")
-* Как захватывать пользовательские события и сессии на [Android](../../../observe/digital-experience/new-rum-experience/mobile-frontends/android/id-09-user-and-session.md "Identify users across sessions and devices, manage session lifecycle, and attach properties that apply to all events in a session."), [iOS](../../../observe/digital-experience/new-rum-experience/mobile-frontends/ios/id-09-user-and-session.md "Identify users, manage sessions, and report session properties in your iOS application."), [Flutter](../../../observe/digital-experience/new-rum-experience/mobile-frontends/flutter/id-09-user-and-session.md "Learn how to identify users, manage sessions, and report session properties in your Flutter application.") или [React Native](../../../observe/digital-experience/new-rum-experience/mobile-frontends/react-native/id-09-user-and-session.md "Learn how to identify users, manage sessions, and report session properties in your React Native application.")
-* [Обзор мониторинга цифрового опыта (DEM) (DPS)](../../../license/capabilities/digital-experience-monitoring.md "Learn how Dynatrace Digital Experience Monitoring (DEM) consumption is calculated using the Dynatrace Platform Subscription model.")
+* Пользовательские события
+* Пользовательские сессии
+* Как захватывать пользовательские события и сессии на Android, iOS, Flutter или React Native
+* Обзор мониторинга цифрового опыта (DEM) (DPS) consumption is calculated using the Dynatrace Platform Subscription model.")
 
 ### Источники загрузки данных
 
@@ -419,5 +419,5 @@ scraped: 2026-03-06T21:16:01.329825
 
 ## Связанные темы
 
-* [Поток данных в OpenPipeline](../concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
-* [Как загружать данные (события)](../getting-started/how-to-ingestion.md "How to ingest data for a configuration scope in OpenPipeline.")
+* Поток данных в OpenPipeline
+* Как загружать данные (события)

@@ -13,17 +13,17 @@ updated: 2026-02-09
 
 OneAgent is responsible for collecting all monitoring data within your monitored environment. A single OneAgent per host is required to collect all relevant monitoring dataâeven if your hosts are deployed within Docker containers, microservices architectures, or cloud-based infrastructure.
 
-A single instance of OneAgent can handle [monitoring for all types of entities](../platform/oneagent/supported-monitoring-types.md "Read an overview of all monitoring capabilities offered by OneAgent."), including servers, applications, services, databases, and more. OneAgent gives you all the operational and business performance metrics you need, from the frontend to the backend and everything in betweenâcloud instances, hosts, network health, processes, and services. OneAgent discovers all the processes you have running on your hosts. Based on what it finds, OneAgent automatically activates instrumentation specifically for your unique application stack. It also injects all tags required for user-experience monitoring into the HTML of your application pages. New components are auto-instrumented on the fly.
+A single instance of OneAgent can handle monitoring for all types of entities, including servers, applications, services, databases, and more. OneAgent gives you all the operational and business performance metrics you need, from the frontend to the backend and everything in betweenâcloud instances, hosts, network health, processes, and services. OneAgent discovers all the processes you have running on your hosts. Based on what it finds, OneAgent automatically activates instrumentation specifically for your unique application stack. It also injects all tags required for user-experience monitoring into the HTML of your application pages. New components are auto-instrumented on the fly.
 
-OneAgent is comprised of several code modules that enable OneAgent to work for most technologies out-of-the-box. To find out which code modules are supported for each platform, see the [OneAgent platform and capability support matrix](technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). To see which versions are supported for each code module, see [OneAgent supported technologies and versions](technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+OneAgent is comprised of several code modules that enable OneAgent to work for most technologies out-of-the-box. To find out which code modules are supported for each platform, see the OneAgent platform and capability support matrix. To see which versions are supported for each code module, see OneAgent supported technologies and versions.
 
 ### Requirements
 
-[OneAgent requirements](dynatrace-oneagent/oa-requirements.md "OneAgent code module requirements")
+OneAgent requirements
 
 ### See also
 
-[Adaptive Traffic Management](dynatrace-oneagent/adaptive-traffic-management.md "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.")
+Adaptive Traffic Management
 
 ### Installation and operation
 

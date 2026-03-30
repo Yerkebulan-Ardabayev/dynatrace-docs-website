@@ -36,5 +36,5 @@ The `level` severity key in the Log ingestion API request parameter contains the
 
 ## Related topics
 
-* [Log ingestion API](../lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
-* [Log ingestion via OneAgent](../lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+* Log ingestion API
+* Log ingestion via OneAgent

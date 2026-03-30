@@ -61,5 +61,5 @@ scraped: 2026-03-06T21:36:42.472660
 
 ## Связанные темы
 
-* [Действия для GitLab Connector](gitlab-workflows-actions.md "List of available actions in GitLab Connector.")
-* [GitLab Connector](../gitlab.md "Integrate Workflows with GitLab.")
+* Действия для GitLab Connector
+* GitLab Connector

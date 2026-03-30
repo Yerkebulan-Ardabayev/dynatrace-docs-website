@@ -15,11 +15,11 @@ Use Dynatrace Extension framework to extend your application observability into 
 
 ## Prerequisites
 
-Ensure your system meets these [requirements](../../extensions/mariadb-1.md#requirements "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details") for full feature support.
+Ensure your system meets these requirements for full feature support.
 
 ## Set up MariaDB extension for monitoring
 
-To set up and activate the extension, follow these [detailed activation steps](../../extensions/mariadb-1.md#activation-and-setup "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details").
+To set up and activate the extension, follow these detailed activation steps.
 
 1. Add the database instance.
 2. Select the hosting type.
@@ -29,12 +29,12 @@ To set up and activate the extension, follow these [detailed activation steps](.
 
 ## FAQ
 
-For complete details, go to the [FAQ](../../extensions/mariadb-1.md#faq "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details") section.
+For complete details, go to the FAQ section.
 
 ## Feature sets
 
-[Feature sets](../../extensions/mariadb-1.md#feature-sets "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details") restrict which metrics are collected when you activate the extension.
+Feature sets restrict which metrics are collected when you activate the extension.
 
 ## Related topics
 
-* [MariaDB extension](../../extensions/mariadb-1.md "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details")
+* MariaDB extension

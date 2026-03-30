@@ -26,9 +26,9 @@ Executing the Run JavaScript for Workflows action is similar to running the code
 
 ## Run JavaScript action security
 
-* The **Run JavaScript** action does not support [expressions](../reference.md "Get to know the workflows expression") in its input to avoid the possibility of code injection.
+* The **Run JavaScript** action does not support expressions in its input to avoid the possibility of code injection.
 * All HTTP calls are validated against the global allowlist.
-* If you import [third-party libraries](#third-party) for your JavaScript action, the allowlisted CDN domains provide access to the entire package portfolio. Dynatrace JavaScript runtime is robust against certain attack vectors, but you might accidentally allow malicious code. Make sure to mirror dependencies that you rely on in your internal infrastructure and monitor their security implications with [Dynatrace Application Security](../../../secure/application-security.md "Access the Dynatrace Application Security functionalities.") or third-party tools like Snyk.
+* If you import [third-party libraries](#third-party) for your JavaScript action, the allowlisted CDN domains provide access to the entire package portfolio. Dynatrace JavaScript runtime is robust against certain attack vectors, but you might accidentally allow malicious code. Make sure to mirror dependencies that you rely on in your internal infrastructure and monitor their security implications with Dynatrace Application Security or third-party tools like Snyk.
 
 We strictly advise against returning any secret as part of the result. Every result is accessible in the executions to anyone with read access to the workflow.
 

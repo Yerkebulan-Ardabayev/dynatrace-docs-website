@@ -22,19 +22,19 @@ Ingesting network flows into Dynatrace immediately puts this data in context. Th
 
 ## How does Dynatrace as a platform support NetFlow ingestion?
 
-Dynatrace supports network flow protocols such as NetFlow, sFlow, and IPFIX through a fully supported version of the [OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector.md "Learn about the Dynatrace OTel Collector."). A dedicated network flow receiver enables seamless ingestion of flow data into the Dynatrace platform for analysis and visualization.
+Dynatrace supports network flow protocols such as NetFlow, sFlow, and IPFIX through a fully supported version of the OpenTelemetry Collector. A dedicated network flow receiver enables seamless ingestion of flow data into the Dynatrace platform for analysis and visualization.
 
 ## Prerequisites
 
 * A [Dynatrace Collector](../../../ingest-from/opentelemetry/collector.md#dt-collector-dist "Learn about the Dynatrace OTel Collector.") distribution with [NetFlow receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.136.0/receiver/netflowreceiver).
-* The [Dynatrace API endpoint URL](../../../ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported.
-* An [API token](../../../ingest-from/opentelemetry/otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the **Ingest logs** (`logs.ingest`) and **Ingest metrics** (`metrics.ingest`) scopes. For details, see [OpenTelemetry Collector self-monitoring](../../../ingest-from/opentelemetry/collector/self-monitoring.md "How to monitor OpenTelemetry Collectors with Dynatrace dashboards.").
+* The Dynatrace API endpoint URL to which the data should be exported.
+* An [API token](../../../ingest-from/opentelemetry/otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the **Ingest logs** (`logs.ingest`) and **Ingest metrics** (`metrics.ingest`) scopes. For details, see OpenTelemetry Collector self-monitoring.
 
-See [Collector Deployment](../../../ingest-from/opentelemetry/collector/deployment.md "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](../../../ingest-from/opentelemetry/collector/configuration.md "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
+See Collector Deployment and Collector Configuration on how to set up your Collector with the configuration below.
 
 ## Steps
 
-In this example, we deploy using Docker to keep the demonstration simple. For production use cases, we recommend deploying as a gateway on a Kubernetes cluster. For details, see [Configure OpenTelemetry Collector for Kubernetes monitoring](../../../ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-monitoring.md "Configure the OpenTelemetry Collector to monitor your Kubernetes clusters.").
+In this example, we deploy using Docker to keep the demonstration simple. For production use cases, we recommend deploying as a gateway on a Kubernetes cluster. For details, see Configure OpenTelemetry Collector for Kubernetes monitoring.
 
 1. To configure a Dynatrace Collector instance, create a file called `otel-collector-config.yaml` and add the following configuration:
 
@@ -129,7 +129,7 @@ In this example, we deploy using Docker to keep the demonstration simple. For pr
    Check the [NetFlow receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.136.0/receiver/netflowreceiver#netflow-receiver) documentation for the available configuration options.
 2. Create an `.env` file to add the `DT_ENDPOINT` and `DT_API_TOKEN` variables.
 
-   * `DT_ENDPOINT` is the Dynatrace API server endpoint. It contains the [base URL of the Dynatrace API endpoint](../../../ingest-from/opentelemetry/otlp-api.md#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). For example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`. For more details, see [Integrate OneAgent on Azure App Service for Linux and containers](../../../ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers.md "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.").
+   * `DT_ENDPOINT` is the Dynatrace API server endpoint. It contains the [base URL of the Dynatrace API endpoint](../../../ingest-from/opentelemetry/otlp-api.md#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). For example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`. For more details, see Integrate OneAgent on Azure App Service for Linux and containers.
    * `DT_API_TOKEN` contains the [API token](../../../ingest-from/opentelemetry/otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
 
    Ensure your `.env` file is properly secured and not exposed to unauthorized access, as it contains sensitive information.
@@ -195,4 +195,4 @@ fetch logs
 
 ## Related topics
 
-* [Ingest NetFlow with the OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector/use-cases/netflow.md "Configure the OpenTelemetry Collector to ingest NetFlow data.")
+* Ingest NetFlow with the OpenTelemetry Collector

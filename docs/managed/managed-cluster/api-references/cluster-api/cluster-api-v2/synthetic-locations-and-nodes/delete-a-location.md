@@ -8,7 +8,7 @@ This API call deletes an existing **private** Synthetic location. Deletion canno
 
 ## Authentication
 
-To execute this request, you need the **Service Provider API** (`ServiceProviderAPI`) permission assigned to your API token. Generate your API token via Cluster Management Console (CMC). To learn how to obtain and use it, see [Cluster API - Authentication](/managed/managed-cluster/api-references/cluster-api/basics/cluster-api-authentication "How to get authenticated to use the Dynatrace Cluster API.").
+To execute this request, you need the **Service Provider API** (`ServiceProviderAPI`) permission assigned to your API token. Generate your API token via Cluster Management Console (CMC). To learn how to obtain and use it, see Cluster API - Authentication.
 
 ## Endpoint
 
@@ -104,7 +104,7 @@ A list of constraint violations
 
 ## Example
 
-In this example, the request deletes the private Synthetic location from the [POST request example](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/post-a-location#example "Create a private synthetic location via the Synthetic v2 API."). The response code of **204** indicates that the deletion was successful.
+In this example, the request deletes the private Synthetic location from the POST request example. The response code of **204** indicates that the deletion was successful.
 
 The API token is passed in the **Authorization** header.
 
@@ -132,4 +132,4 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations/SYNTHETIC_LOCA
 
 ## Related topics
 
-* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
+* Synthetic Monitoring

@@ -31,12 +31,12 @@ To configure detection sensitivity on the global level
 2. Expand **Anomaly detection**.
 3. Select the required entity type. For specific instructions, see one of the topics below.
 
-* [Applications](adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications.md "Learn how to adapt the sensitivity of problem detection for applications.")
-* [Services](adjust-sensitivity-anomaly-detection/adjust-sensitivity-services.md "Learn how to adapt the sensitivity of problem detection for services.")
-* [Database services](adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database.md "Learn how to adapt the sensitivity of problem detection for database services.")
-* [Infrastructure](adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure.md "Adjust problem detection sensitivity for infrastructure.")
-* [Extension events](adjust-sensitivity-anomaly-detection/adjust-sensitivity-extension.md "Learn how to adapt the sensitivity of problem detection for extension events.")
+* Applications
+* Services
+* Database services
+* Infrastructure
+* Extension events
 
 ## Related topics
 
-* [Anomaly detection API](../../dynatrace-api/configuration-api/anomaly-detection-api.md "Learn what the Dynatrace anomaly detection API offers.")
+* Anomaly detection API

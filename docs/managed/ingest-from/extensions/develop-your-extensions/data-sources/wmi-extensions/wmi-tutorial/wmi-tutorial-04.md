@@ -42,7 +42,7 @@ Navigate to `../ui/entity/list/{entity-type}` on your Dynatrace environment. For
 5. Package and upload a new version of your extension.
 6. Validate the new entities are created.
 
-For more information on extending the Dynatrace topology, see [Custom topology model](/managed/ingest-from/extend-dynatrace/extend-topology "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to.")
+For more information on extending the Dynatrace topology, see Custom topology model
 
 ```
 topology:
@@ -167,4 +167,4 @@ You should see new entities created for your generic host and generic network de
 
 ![network_devices](https://dt-cdn.net/images/wmi-tutorial-topology-nic-945-00a3fef761.png)
 
-**Next step**: [Unified analysis page](/managed/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial/wmi-tutorial-05 "Learn about WMI extensions in the Extensions framework.")
+**Next step**: Unified analysis page

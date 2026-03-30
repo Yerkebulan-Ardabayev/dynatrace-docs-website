@@ -31,9 +31,9 @@ Istio версий 1.21 и более ранних поставляется с E
 
 * При использовании детектора ресурсов и сэмплера Dynatrace:
 
-  + Классическое Full-Stack или облачно-нативное Full-Stack развёртывание: использование включено в [Full-Stack Monitoring (DPS)](../../../license/capabilities/app-infra-observability/full-stack-monitoring.md "Узнайте, как тарифицируется и взимается плата за потребление возможности Dynatrace Full-Stack Monitoring DPS.") и [Host Units (Dynatrace Classic License)](../../../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Узнайте, как рассчитывается потребление мониторинга приложений и инфраструктуры Dynatrace на основе единиц хостов.").
-  + Для развёртываний только с Application-Observability: использование влечёт потребление [Custom Traces Classic (DPS)](../../../license/capabilities/platform-extensions.md "Узнайте, как рассчитывается потребление расширений платформы Dynatrace с использованием модели подписки Dynatrace Platform.") или [DDU для пользовательских трассировок (Dynatrace Classic License)](../../../license/monitoring-consumption-classic/davis-data-units/custom-traces.md "Узнайте, как рассчитывается потребление DDU для спанов, принятых через Trace API.").
-* Без детектора ресурсов и сэмплера Dynatrace: использование влечёт потребление [Custom Traces Classic (DPS)](../../../license/capabilities/platform-extensions.md "Узнайте, как рассчитывается потребление расширений платформы Dynatrace с использованием модели подписки Dynatrace Platform.") или [DDU для пользовательских трассировок (Dynatrace Classic License)](../../../license/monitoring-consumption-classic/davis-data-units/custom-traces.md "Узнайте, как рассчитывается потребление DDU для спанов, принятых через Trace API.").
+  + Классическое Full-Stack или облачно-нативное Full-Stack развёртывание: использование включено в Full-Stack Monitoring (DPS) и Host Units (Dynatrace Classic License).
+  + Для развёртываний только с Application-Observability: использование влечёт потребление Custom Traces Classic (DPS) или DDU для пользовательских трассировок (Dynatrace Classic License).
+* Без детектора ресурсов и сэмплера Dynatrace: использование влечёт потребление Custom Traces Classic (DPS) или DDU для пользовательских трассировок (Dynatrace Classic License).
 
 ## Рекомендации по развёртыванию
 
@@ -41,7 +41,7 @@ Istio версий 1.21 и более ранних поставляется с E
 
 ### Развёртывание в сочетании с Dynatrace Operator (рекомендуется)
 
-Мы рекомендуем использовать интеграцию Istio OpenTelemetry в сочетании с развёртыванием Dynatrace Operator с включёнными [обогащением метаданных](../../setup-on-k8s/guides/metadata-automation/metadata-enrichment.md "Обогащение метаданных в Dynatrace Operator добавляет контекст к подам Kubernetes путём привязки соответствующих метаданных к сущностям, таким как поды, хосты и процессы, для улучшения наблюдаемости.") и [конечными точками приёма телеметрии](../../setup-on-k8s/extend-observability-k8s/telemetry-ingest.md "Включите конечные точки приёма телеметрии Dynatrace в Kubernetes для приёма данных внутри кластера."). Другие функции, такие как OneAgent или ActiveGate, не требуются.
+Мы рекомендуем использовать интеграцию Istio OpenTelemetry в сочетании с развёртыванием Dynatrace Operator с включёнными обогащением метаданных и конечными точками приёма телеметрии. Другие функции, такие как OneAgent или ActiveGate, не требуются.
 
 Это обеспечивает следующие преимущества по сравнению с автономным использованием:
 
@@ -79,10 +79,10 @@ Dynatrace Operator
 
 Автономно
 
-1. Dynatrace Operator [развёрнут](../../setup-on-k8s/deployment.md "Развёртывание Dynatrace Operator в Kubernetes").
+1. Dynatrace Operator развёрнут.
 
-   * Для оптимальной конфигурации следуйте руководству по [развёртыванию совместно с Istio](../../setup-on-k8s/guides/deployment-and-configuration/istio-deployment.md "Развёртывание Dynatrace Operator совместно с Istio в различных сценариях").
-2. [Конечные точки приёма телеметрии](../../setup-on-k8s/extend-observability-k8s/telemetry-ingest.md "Включите конечные точки приёма телеметрии Dynatrace в Kubernetes для приёма данных внутри кластера.") включены.
+   * Для оптимальной конфигурации следуйте руководству по развёртыванию совместно с Istio.
+2. Конечные точки приёма телеметрии включены.
 
 Либо Dynatrace Operator не развёрнут, либо `enableIstio` установлен в `false` в DynaKube.
 

@@ -74,7 +74,7 @@ Page
 
 of 1
 
-For more information, see [Getting started with Dynatrace Intelligence generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence generative AI.").
+For more information, see Getting started with Dynatrace Intelligence generative AI.
 
 Get started
 
@@ -163,6 +163,6 @@ We recommend that you start a new conversation for a new topic to improve Dynatr
 
 ## Related topics
 
-* [Get started with Dynatrace Intelligence generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence generative AI.")
-* [Embedded conversation starters](chat-with-davis-copilot/copilot-conv-starters.md "Learn how to trigger predefined prompts in various Dynatrace applications.")
-* [Dynatrace Intelligence generative AI FAQ](copilot-faq.md "Learn about frequently asked questions and find your answers.")
+* Get started with Dynatrace Intelligence generative AI
+* Embedded conversation starters
+* Dynatrace Intelligence generative AI FAQ

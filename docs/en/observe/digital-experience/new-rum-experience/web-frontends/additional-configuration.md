@@ -12,10 +12,10 @@ scraped: 2026-03-06T21:28:25.051728
 * 1-min read
 * Updated on Jan 08, 2026
 
-After completing the [initial setup](initial-setup.md "Learn how to set up the New RUM Experience for web frontends."), explore these guides to enhance and tailor the New RUM Experience with advanced configuration options.
+After completing the initial setup, explore these guides to enhance and tailor the New RUM Experience with advanced configuration options.
 
-* [Control the RUM JavaScript version in the New RUM Experience](additional-configuration/rum-javascript-version.md "Learn how to control the RUM JavaScript version used to monitor your frontends in the New RUM Experience.")
-* [Capture event and session properties for web frontends](additional-configuration/event-and-session-properties.md "Learn how to capture event and session properties for web frontends.")
-* [Configure data privacy settings for web frontends](additional-configuration/data-privacy-web.md "Learn about the available settings that help you ensure your web frontends comply with data privacy regulations.")
-* [Configure the beacon origin allowlist](additional-configuration/configure-beacon-origin-allowlist.md "Specify the origins from which cross-origin RUM beacons should be accepted.")
-* [Configure user interaction capturing for web frontends](additional-configuration/user-interactions.md "Learn how to configure and customize user interaction capturing for web frontends.")
+* Control the RUM JavaScript version in the New RUM Experience
+* Capture event and session properties for web frontends
+* Configure data privacy settings for web frontends
+* Configure the beacon origin allowlist
+* Configure user interaction capturing for web frontends

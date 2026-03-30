@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:31:51.312648
 
 For web applications, Dynatrace can show you all the sessions of an individual user, even when those sessions are anonymous or when a [user tag](../rum-concepts/user-and-error-events.md#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") has been changed or gone missing. User identification is achieved by storing a persistent cookie within each user's browser. This cookie contains a unique identifier for the user, which is marked as the **Internal user ID** in the Dynatrace web UI. Cookies enable Dynatrace to assign even anonymous user sessions to known users. As long as a user has logged into your application at least once, you can search for and identify that user, even when the user accesses the application in anonymous, unauthenticated sessions. This is particularly useful for analyzing periods of time when a user might not have been able to log into your application because of issues with your authentication service. Note that if a user disables persistent cookies or clears their cookies, the unique identifier is regenerated.
 
-For mobile applications, user identification is achieved by generating and storing a unique identifier when a user launches an application for the first time. This identifier, marked as the **Internal user ID** in the Dynatrace web UI, is regenerated when the user changes their [privacy settings](../mobile-applications/additional-configuration/configure-rum-privacy-mobile.md#opt-in-mode-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region."). It's only possible to view all sessions of a particular user when the [data collection level](../mobile-applications/additional-configuration/configure-rum-privacy-mobile.md#data-collection-levels "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.") is set to **User behavior**; when the data collection level is set to **Off** or **Performance**, the unique identifier is regenerated for every session, making it impossible to list several sessions of a particular user.
+For mobile applications, user identification is achieved by generating and storing a unique identifier when a user launches an application for the first time. This identifier, marked as the **Internal user ID** in the Dynatrace web UI, is regenerated when the user changes their privacy settings. It's only possible to view all sessions of a particular user when the data collection level is set to **User behavior**; when the data collection level is set to **Off** or **Performance**, the unique identifier is regenerated for every session, making it impossible to list several sessions of a particular user.
 
 ## Focus on the sessions of a single user
 
@@ -56,7 +56,7 @@ Analyze the sessions of a specific user
 
 ### Understand user behavior
 
-To understand how user behavior analysis relates to customer satisfaction, itâs helpful to look at the distribution of the [user experience score](../rum-concepts/scores-and-ratings/user-experience-score.md "User experience score is a metric used to categorize user sessions as Frustrating, Tolerable, or Satisfying.")).
+To understand how user behavior analysis relates to customer satisfaction, itâs helpful to look at the distribution of the user experience score).
 
 ![Score](https://dt-cdn.net/images/image009-1260-ce456bd0a5.png)
 

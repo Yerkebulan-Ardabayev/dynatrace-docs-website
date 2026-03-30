@@ -12,7 +12,7 @@ scraped: 2026-03-03T21:22:30.551812
 * 39-min read
 * Updated on Feb 10, 2026
 
-Metrics on Grail supports many of the existing [built-in metrics](../metrics-classic/built-in-metrics.md "Explore the complete list of built-in Dynatrace metrics.") as identified below.
+Metrics on Grail supports many of the existing built-in metrics as identified below.
 
 The expandable sections below describe differences in built-in metrics on Grail when compared to similar Metrics Classic metrics.
 
@@ -70,13 +70,13 @@ For details, see below.
 
 #### Type 1: Extension metrics with the `builtin:tech` prefix
 
-[Extension 1.0](../../ingest-from/extensions/develop-your-extensions.md "Develop your own Extensions in Dynatrace.") metrics appear in Metrics Classic metrics with the prefix `builtin:tech`. These metrics appear in Grail instead with a `legacy` prefix. For example:
+Extension 1.0 metrics appear in Metrics Classic metrics with the prefix `builtin:tech`. These metrics appear in Grail instead with a `legacy` prefix. For example:
 
 | Metric key (Grail) | Metric key (Classic) |
 | --- | --- |
 | legacy.cassandra.KeyCache.Hit.Rate | builtin:tech.cassandra.KeyCache.Hit.Rate |
 
-This renaming applies to all [Extension 1.0](../../ingest-from/extensions/develop-your-extensions.md "Develop your own Extensions in Dynatrace.") metrics with the prefix `builtin:tech`, except for the following:
+This renaming applies to all Extension 1.0 metrics with the prefix `builtin:tech`, except for the following:
 
 * [Generic process metrics](#processes), including all metrics with the prefix `builtin:tech.generic`.
 * [WebSphere metrics](#websphere-application-server), including all metrics with the prefix `builtin:tech.websphere`.
@@ -85,7 +85,7 @@ This renaming does not apply to Metrics Classic technology metrics, which can be
 
 #### Type 2: Extension metrics with the `ext:` prefix
 
-Extension metrics with the `ext:` prefix are either provided by OneAgent or ActiveGate extensions, or are [classic metrics for AWS integration](../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md "Integrate metrics from Amazon CloudWatch.").
+Extension metrics with the `ext:` prefix are either provided by OneAgent or ActiveGate extensions, or are classic metrics for AWS integration.
 Regardless of the source, they behave the same way.
 
 These can be found in Grail according to the following renaming rules:
@@ -126,7 +126,7 @@ Querying custom metrics on Grail
 
 If you can't find your custom metric in Grail, try querying your metric key without the `.count` suffix.
 
-You can query custom metrics with both [metric selectors](../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.") and DQL. However, your custom metric key might have a different name in DQL queries. For example, if you ingest a count metric with the `coffees.brewed` key, as shown below using the [metric ingest protocol](../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
+You can query custom metrics with both metric selectors and DQL. However, your custom metric key might have a different name in DQL queries. For example, if you ingest a count metric with the `coffees.brewed` key, as shown below using the metric ingest protocol
 
 ```
 coffees.brewing count,delta=2
@@ -153,8 +153,8 @@ Querying calculated metrics in Grail
 
 While [calculated service metrics](#calc-service) are supported, other calculated metrics are not yet supported on Grail.
 
-* [Calculated RUM metrics](../../observe/digital-experience/web-applications/additional-configuration/rum-calculated-metrics-web.md "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.") (metrics with the prefix `calc:apps`) are not supported on Grail.
-* Calculated Log v1 metrics (metrics with the prefix `calc:log`) are not supported on Grail. See [Upgrade Log Monitoring Classic to Log Management and Analytics](../logs/logs-upgrade/logs-upgrade-to-lma.md "Log Management and Analytics is the latest Dynatrace log monitoring solution. We encourage you to upgrade to this latest log monitoring offer.").
+* Calculated RUM metrics (metrics with the prefix `calc:apps`) are not supported on Grail.
+* Calculated Log v1 metrics (metrics with the prefix `calc:log`) are not supported on Grail. See Upgrade Log Monitoring Classic to Log Management and Analytics.
 
 ## Billing
 
@@ -662,7 +662,7 @@ Which Metrics Classic VMware metrics are not supported on Grail?
 
 ## Containers
 
-New container metrics are now available for [DPS](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")-enabled customers. The new metrics are subject to a new licensing model, as distinct from the current full-stack host units model.
+New container metrics are now available for DPS, the licensing model for all Dynatrace capabilities.")-enabled customers. The new metrics are subject to a new licensing model, as distinct from the current full-stack host units model.
 
 Metric availability:
 
@@ -671,7 +671,7 @@ Metric availability:
 
 More information:
 
-* [License Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* License Dynatrace, the licensing model for all Dynatrace capabilities.")
 * [Unlock the Power of DevSecOps with Newly Released Kubernetes Experience for Platform Engineeringï»¿](https://dt-url.net/c7038ec)
 * [Dynatrace Launches New Kubernetes Experience for Platform Engineering Teamsï»¿](https://dt-url.net/882385r)
 
@@ -688,7 +688,7 @@ Which Metrics Classic container metrics are not supported on Grail?
 * builtin:containers.memory.outOfMemoryKills
 * builtin:containers.memory.usagePercent
 
-Additionally, the following Classic [Extension 1.0](../../ingest-from/extensions/develop-your-extensions.md "Develop your own Extensions in Dynatrace.") metrics are deprecated and likewise not supported on Grail:
+Additionally, the following Classic Extension 1.0 metrics are deprecated and likewise not supported on Grail:
 
 * builtin:containers.bytes\_rx2
 * builtin:containers.bytes\_tx2
@@ -720,7 +720,7 @@ Additionally, the following Classic [Extension 1.0](../../ingest-from/extensions
 
 ## Infrastructure
 
-For a detailed list of the host metrics and their availability, refer to [Host metrics](../../observe/infrastructure-observability/hosts/reference/metrics.md "Metrics and metrics classic measured for host monitoring").
+For a detailed list of the host metrics and their availability, refer to Host metrics.
 
 ### CPU
 
@@ -890,20 +890,20 @@ The following Classic infrastructure metrics are not supported on Grail:
 
 ActiveGate version 1.279+
 
-New Kubernetes metrics are now available for [DPS](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")-enabled customers with the launch of the new Kubernetes app. The new metrics are subject to a new licensing model, as distinct from the current full-stack host units model.
+New Kubernetes metrics are now available for DPS, the licensing model for all Dynatrace capabilities.")-enabled customers with the launch of the new Kubernetes app. The new metrics are subject to a new licensing model, as distinct from the current full-stack host units model.
 
 Metric availability:
 
 * The old Kubernetes metrics are not available on Grail.
-* The new Kubernetes metrics are available as soon as you start monitoring your cluster with the [new Kubernetes app](../../observe/infrastructure-observability/kubernetes-app.md "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads."). For more information on enabling this for your Kubernetes clusters, see [Getting started with Kubernetes experience](../../observe/infrastructure-observability/kubernetes-app/enable-k8s-experience.md "Enable Kubernetes experience for existing clusters or start monitoring new clusters.").
+* The new Kubernetes metrics are available as soon as you start monitoring your cluster with the new Kubernetes app. For more information on enabling this for your Kubernetes clusters, see Getting started with Kubernetes experience.
 * Some of the new Kubernetes metrics are only available on Grail. They have no equivalent as Classic metrics.
 
 More information:
 
-* [License Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* License Dynatrace, the licensing model for all Dynatrace capabilities.")
 * [Unlock the Power of DevSecOps with Newly Released Kubernetes Experience for Platform Engineeringï»¿](https://dt-url.net/c7038ec)
 * [Dynatrace Launches New Kubernetes Experience for Platform Engineering Teamsï»¿](https://dt-url.net/882385r)
-* [Kubernetes metric migration guide](upgrade/kubernetes-metric-migration.md "Learn more about Kubernetes metrics migration from Classic to Grail.")
+* Kubernetes metric migration guide
 
 | Metric key (Grail) | Metric key (Classic) |
 | --- | --- |
@@ -1327,11 +1327,11 @@ The following dimensions are added to calculated service metrics in Grail. They 
 
 1
 
-Applicable to both full and external requests. To learn more about requests types, see [Glossary - request](../../discover-dynatrace/get-started/glossary.md#request "Get acquainted with Dynatrace terminology.").
+Applicable to both full and external requests. To learn more about requests types, see Glossary - request.
 
 #### Dimensions automatically converted from Classic metric placeholders
 
-In Grail, placeholders used in the [**Dimension value pattern**](../../observe/application-observability/services/calculated-service-metric.md#create "Learn how to create a calculated metric based on web requests.") are mapped to distinct dimension keys, allowing more flexibility and powerful querying. The following Grail dimension keys are automatically created from the placeholders contained in your Classic dimension, according to [Global field reference](../../semantic-dictionary/fields.md "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
+In Grail, placeholders used in the [**Dimension value pattern**](../../observe/application-observability/services/calculated-service-metric.md#create "Learn how to create a calculated metric based on web requests.") are mapped to distinct dimension keys, allowing more flexibility and powerful querying. The following Grail dimension keys are automatically created from the placeholders contained in your Classic dimension, according to Global field reference.
 
 **Metric dimension (Grail)**: **Metric placeholder (Classic)**
 
@@ -1576,4 +1576,4 @@ The following categories of Metrics Classic metrics are not supported on Grail:
 * **Classic Logs** metrics, including all metrics with the prefix `builtin:log`.
 * **NAM** metrics, including all metrics with the prefix `builtin:nam`.
 * **Span** metrics, including all metrics with the prefix `builtin:span`.
-* **RUM Classic** metrics, including all metrics with the prefix `builtin:apps`. For details, see [RUM metrics migration](upgrade/rum-metric-migration.md "See how RUM Classic metrics map to their logical equivalents in Grail.").
+* **RUM Classic** metrics, including all metrics with the prefix `builtin:apps`. For details, see RUM metrics migration.

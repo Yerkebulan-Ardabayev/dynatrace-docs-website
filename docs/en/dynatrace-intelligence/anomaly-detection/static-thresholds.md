@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:20:53.079076
 
 A static threshold represents a hard limit that a metric should not violate. Because static thresholds don't change over time, they are an important monitoring tool for defining critical boundaries of normal operation.
 
-It's important to choose between a static and an [adaptive threshold](auto-adaptive-threshold.md "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration."), depending on your use case.
+It's important to choose between a static and an adaptive threshold, depending on your use case.
 
 For example, you can use a static threshold to set a limit for total memory usage by a well-known process. In this case, a static threshold is superior to an adaptive threshold because if memory consumption slowly grows over time, the adaptive threshold simply changes with it, raising no problems and eventually leading to a hidden memory leak.
 
@@ -30,4 +30,4 @@ By default, any 3 minutes out of a sliding window of 5 minutes must violate your
 
 ## Related topics
 
-* [Metrics Classic](../../analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")
+* Metrics Classic

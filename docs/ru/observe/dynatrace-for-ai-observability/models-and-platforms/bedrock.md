@@ -45,5 +45,5 @@ Amazon Bedrock — это полностью управляемый сервис
 
 ## Связанные темы
 
-* [Конечные точки Dynatrace OTLP API](../../../ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
-* [О приёме метрик OTLP](../../../ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
+* Конечные точки Dynatrace OTLP API
+* О приёме метрик OTLP

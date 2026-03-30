@@ -42,7 +42,7 @@ scraped: 2026-03-06T21:38:16.007113
 
 Тип сущности, которую вы хотите запросить.
 
-Вы можете получить список доступных типов сущностей с помощью вызова [GET all entity types](get-all-entity-types.md "View all types of monitored entities in your environment via Dynatrace API.").
+Вы можете получить список доступных типов сущностей с помощью вызова GET all entity types.
 
 |  |  |
 | --- | --- |
@@ -57,7 +57,7 @@ scraped: 2026-03-06T21:38:16.007113
 
 Чтобы указать несколько идентификаторов, разделите их запятой (`,`). Все запрашиваемые сущности должны быть одного типа.
 
-Вы можете получить список доступных сущностей с помощью вызова [GET entities list](get-entities-list.md "View a list of monitored entities via Dynatrace API.").
+Вы можете получить список доступных сущностей с помощью вызова GET entities list.
 
 |  |  |
 | --- | --- |
@@ -70,7 +70,7 @@ scraped: 2026-03-06T21:38:16.007113
 
 Имя запрашиваемой сущности.
 
-Вы можете получить список доступных сущностей с помощью вызова [GET entities list](get-entities-list.md "View a list of monitored entities via Dynatrace API.").
+Вы можете получить список доступных сущностей с помощью вызова GET entities list.
 
 |  |  |
 | --- | --- |
@@ -125,7 +125,7 @@ scraped: 2026-03-06T21:38:16.007113
 
 Пара "имя атрибута -- значение атрибута", которой должна обладать запрашиваемая сущность.
 
-Чтобы получить список доступных атрибутов, выполните вызов [GET entity type](get-entity-type.md "View the details of a monitored entity type via Dynatrace API.") и проверьте поле **properties**. Вы можете использовать атрибуты со значениями, которые могут быть представлены в виде строки.
+Чтобы получить список доступных атрибутов, выполните вызов GET entity type и проверьте поле **properties**. Вы можете использовать атрибуты со значениями, которые могут быть представлены в виде строки.
 
 |  |  |
 | --- | --- |
@@ -150,7 +150,7 @@ scraped: 2026-03-06T21:38:16.007113
 
 Чтобы указать несколько тегов, разделите их запятой (`,`). Сущность с **любым** из указанных тегов включается в ответ.
 
-Вы можете получить список доступных тегов с помощью вызовов [GET custom tags](../custom-tags/get-tags.md "View custom tags of monitored entities via Dynatrace API.") и [GET auto-tags](../../configuration-api/automatically-applied-tags-api/get-all.md "View all automatically applied tags of your environment via the Dynatrace API.").
+Вы можете получить список доступных тегов с помощью вызовов GET custom tags и GET auto-tags.
 
 |  |  |
 | --- | --- |
@@ -165,7 +165,7 @@ scraped: 2026-03-06T21:38:16.007113
 
 Чтобы указать несколько идентификаторов, разделите их запятой (`,`).
 
-Вы можете получить список доступных зон управления с помощью вызова [GET all management zones](../../configuration-api/management-zones-api/get-all.md "View all management zones of your environment via the Dynatrace API.").
+Вы можете получить список доступных зон управления с помощью вызова GET all management zones.
 
 |  |  |
 | --- | --- |
@@ -180,7 +180,7 @@ scraped: 2026-03-06T21:38:16.007113
 
 Чтобы указать несколько имён, разделите их запятой (`,`).
 
-Вы можете получить список доступных зон управления с помощью вызова [GET all management zones](../../configuration-api/management-zones-api/get-all.md "View all management zones of your environment via the Dynatrace API.").
+Вы можете получить список доступных зон управления с помощью вызова GET all management zones.
 
 |  |  |
 | --- | --- |
@@ -222,7 +222,7 @@ scraped: 2026-03-06T21:38:16.007113
 
 Связи, которыми должна обладать запрашиваемая сущность.
 
-Чтобы получить список доступных связей, выполните вызов [GET entity type](get-entity-type.md "View the details of a monitored entity type via Dynatrace API.") и проверьте поля **fromRelationships** и **toRelationships**.
+Чтобы получить список доступных связей, выполните вызов GET entity type и проверьте поля **fromRelationships** и **toRelationships**.
 
 ## Инверсия критерия
 
@@ -238,7 +238,7 @@ scraped: 2026-03-06T21:38:16.007113
 
 ## Связанные темы
 
-* [Custom tags API](../custom-tags.md "Manage custom tags of the monitored entities via the Dynatrace API.")
-* [Metrics API v2](../metric-v2.md "Retrieve metric information via Metrics v2 API.")
-* [Monitored entities API](../entity-v2.md "Learn about the Dynatrace Monitored entities API.")
-* [Problems API v2](../problems-v2.md "Find out what the Dynatrace Problems v2 API offers.")
+* Custom tags API
+* Metrics API v2
+* Monitored entities API
+* Problems API v2

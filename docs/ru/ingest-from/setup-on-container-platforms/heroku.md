@@ -15,7 +15,7 @@ Heroku — это облачная платформа как услуга (PaaS)
 
 Билдпак Heroku для Dynatrace OneAgent не зависит от языка и может использоваться с любым [языком, поддерживаемым Dynatrace](../technology-support.md#applications-services-and-databases "Find technical details related to Dynatrace support for specific platforms and development frameworks."), включая приложения на основе Node.js. Если вы использовали [модуль Dynatrace NPM для PaaS](https://www.npmjs.com/package/@dynatrace/oneagent), вы можете удалить его из зависимостей, так как билдпак автоматически обнаруживает и инструментирует ваши приложения Node.js.
 
-Вам также больше не нужно полагаться на релизы зависимостей Dynatrace OneAgent для NPM. Билдпак Heroku для Dynatrace OneAgent автоматически загружает последнюю версию Dynatrace OneAgent, чтобы вы могли получать потенциальные исправления максимально быстро и легко. Если вы [указали версию OneAgent по умолчанию для установки на новые хосты и приложения в настройках обновления OneAgent](../dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux.md "Learn about the different ways to update OneAgent on Linux."), билдпак Heroku для Dynatrace OneAgent загрузит указанную версию Dynatrace OneAgent по умолчанию.
+Вам также больше не нужно полагаться на релизы зависимостей Dynatrace OneAgent для NPM. Билдпак Heroku для Dynatrace OneAgent автоматически загружает последнюю версию Dynatrace OneAgent, чтобы вы могли получать потенциальные исправления максимально быстро и легко. Если вы указали версию OneAgent по умолчанию для установки на новые хосты и приложения в настройках обновления OneAgent, билдпак Heroku для Dynatrace OneAgent загрузит указанную версию Dynatrace OneAgent по умолчанию.
 
 Следующие инструкции объясняют, как включить мониторинг Dynatrace для ваших приложений [Heroku](https://www.dynatrace.com/technologies/heroku-monitoring/), добавив [билдпак Dynatrace Heroku](https://github.com/Dynatrace/heroku-buildpack-dynatrace) в конфигурацию Heroku вашего приложения.
 
@@ -24,7 +24,7 @@ Heroku — это облачная платформа как услуга (PaaS)
 ## Предварительные условия
 
 * Создайте [PaaS-токен](../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.").
-* Ознакомьтесь со списком [поддерживаемых приложений и версий](../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+* Ознакомьтесь со списком поддерживаемых приложений и версий.
 * [Требования к памяти кодового модуля OneAgent](../dynatrace-oneagent/oa-requirements.md#oneagent-code-module-memory-requirement "OneAgent code module requirements") составляют 200 МБ от вашего [размера slug](https://devcenter.heroku.com/articles/slug-compiler#slug-size).
 
 ## Установка
@@ -69,16 +69,16 @@ git push heroku master
 
 | Переменная среды | Описание |
 | --- | --- |
-| DT\_TENANT | Идентификатор вашей среды Dynatrace. **Примечание:** Подробности о том, как определить идентификатор среды, см. в разделе [идентификатор среды](../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments."). |
+| DT\_TENANT | Идентификатор вашей среды Dynatrace. **Примечание:** Подробности о том, как определить идентификатор среды, см. в разделе идентификатор среды. |
 | DT\_API\_TOKEN | PaaS-токен для интеграции вашей среды Dynatrace с Heroku. |
-| DT\_API\_URL | - Для Dynatrace SaaS, когда OneAgent может подключаться к интернету: `https://<your-environment-ID>.live.dynatrace.com/api` - Для Dynatrace Managed: `https://<your-managed-cluster-domain>/e/<your-environment-ID>/api` - Для ActiveGate среды (SaaS или Managed), используйте следующее для загрузки OneAgent, а также для маршрутизации трафика OneAgent через ActiveGate: `https://<your-ActiveGate-IP-or-FQDN>:9999/e/<your-environment-ID>/api` **Примечание:** Подробности о том, как определить идентификатор среды, см. в разделе [идентификатор среды](../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments."). |
+| DT\_API\_URL | - Для Dynatrace SaaS, когда OneAgent может подключаться к интернету: `https://<your-environment-ID>.live.dynatrace.com/api` - Для Dynatrace Managed: `https://<your-managed-cluster-domain>/e/<your-environment-ID>/api` - Для ActiveGate среды (SaaS или Managed), используйте следующее для загрузки OneAgent, а также для маршрутизации трафика OneAgent через ActiveGate: `https://<your-ActiveGate-IP-or-FQDN>:9999/e/<your-environment-ID>/api` **Примечание:** Подробности о том, как определить идентификатор среды, см. в разделе идентификатор среды. |
 | DT\_DOWNLOAD\_URL | Необязательно. Прямой URL загрузки Dynatrace OneAgent. Если эта переменная среды установлена, билдпак загрузит OneAgent из этого расположения. |
 | SSL\_MODE | Необязательно. Установите значение `all`, если вы хотите принимать все самоподписанные SSL-сертификаты. |
 | DT\_TAGS | Не рекомендуется. Теги, которые вы хотите добавить к мониторируемым приложениям. |
 | DT\_CUSTOM\_PROP | Не рекомендуется. Применяйте, если хотите разделить по компоненту и/или среде. |
 | SKIP\_ERRORS | Необязательно. Если установлено значение `1`, развёртывание приложения не будет завершено ошибкой при ошибках загрузки установщика OneAgent. |
 
-Мы рекомендуем создавать переменные среды, специфичные для обнаружения процессов. Переменные среды, обслуживающие другие области, такие как [`DT_TAGS`](../../manage/tags-and-metadata/setup/define-tags-based-on-environment-variables.md#variables "Find out how Dynatrace enables you to define tags based on environment variables.") или [`DT_CUSTOM_PROP`](../../observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md#variables "Configure your own process-related metadata based on the unique needs of your organization or environment."), могут вызвать некорректное или непреднамеренное разделение, поскольку все значения переменных среды учитываются при обнаружении группы процессов.
+Мы рекомендуем создавать переменные среды, специфичные для обнаружения процессов. Переменные среды, обслуживающие другие области, такие как [`DT_TAGS`](../../manage/tags-and-metadata/setup/define-tags-based-on-environment-variables.md#variables "Find out how Dynatrace enables you to define tags based on environment variables.") или `DT_CUSTOM_PROP`, могут вызвать некорректное или непреднамеренное разделение, поскольку все значения переменных среды учитываются при обнаружении группы процессов.
 
 Как использовать билдпак Heroku для Dynatrace OneAgent вместо модуля Dynatrace NPM для PaaS
 
@@ -139,14 +139,14 @@ curl "https://<environmentID>.live.dynatrace.com/api/v1/deployment/installer/age
 heroku config:set DT_NETWORK_ZONE=<your.network.zone>
 ```
 
-Подробнее см. [сетевые зоны](../../manage/network-zones.md "Find out how network zones work in Dynatrace.").
+Подробнее см. сетевые зоны.
 
 ## Обновление OneAgent
 
 Когда становится доступна новая версия OneAgent, вам необходимо запустить повторное выполнение билдпака в Heroku. Билдпак Dynatrace автоматически загрузит последнюю версию OneAgent.
 
-Если вы указали версию OneAgent по умолчанию для установки на новые хосты и приложения в [настройках обновления OneAgent](../dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux.md "Learn about the different ways to update OneAgent on Linux."), билдпак Heroku автоматически загрузит указанную версию OneAgent по умолчанию.
+Если вы указали версию OneAgent по умолчанию для установки на новые хосты и приложения в настройках обновления OneAgent, билдпак Heroku автоматически загрузит указанную версию OneAgent по умолчанию.
 
 ## Связанные темы
 
-* [Матрица поддержки платформ и возможностей OneAgent](../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* Матрица поддержки платформ и возможностей OneAgent

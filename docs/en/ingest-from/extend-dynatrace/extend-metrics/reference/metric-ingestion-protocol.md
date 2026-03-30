@@ -36,7 +36,7 @@ The metric key ends either at the first comma (if you're specifying dimensions) 
 
 Your provided key may be suffixed automatically depending on the payload. For details, see [Payload](#payload).
 
-Avoid sections with non-alphabetical characters. You will need to escape these characters in the [metric selector](../../../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.") when you [query your metric](../../../../dynatrace-api/environment-api/metric-v2/get-data-points.md "Read data points of one or multiple metrics via Metrics v2 API.").
+Avoid sections with non-alphabetical characters. You will need to escape these characters in the metric selector when you query your metric.
 
 ### Dimension Optional
 
@@ -107,7 +107,7 @@ If no timestamp is provided, **the current timestamp of the server** is used.
 
 ### Metadata Optional
 
-You can provide custom metric metadata via the ingestion protocol. The ingestion protocol supports only creation of metadata. If metadata for the same metric is specified several times in the payload, only the first occurrence is used. To view or update metadata, use either [Metrics browser](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser.") or the Settings API (to learn how to compose an API payload, see [Set metric metadata](custom-metric-metadata.md#create "Provide metadata for your custom metric.")).
+You can provide custom metric metadata via the ingestion protocol. The ingestion protocol supports only creation of metadata. If metadata for the same metric is specified several times in the payload, only the first occurrence is used. To view or update metadata, use either Metrics browser or the Settings API (to learn how to compose an API payload, see [Set metric metadata](custom-metric-metadata.md#create "Provide metadata for your custom metric.")).
 
 ```
 #metric.key <payload-format> dt.meta.<property>="<value>"
@@ -171,7 +171,7 @@ You can also relate measurements to existing host entities by making use of the 
 cpu.temperature,dt.entity.host=HOST-4587AE40F95AD90D,cpu=1 gauge,min=17.1,max=17.3,sum=34.4,count=2
 ```
 
-You don't need to specify the `dt.entity.host` dimension when using local ingestion methods via OneAgent, that is [dynatrace\_ingest](../ingestion-methods/oneagent-pipe.md "Learn how to ingest metrics using local scripting integration.") and [local API](../ingestion-methods/oneagent-metric-api.md "Use the Dynatrace API to retrieve the metrics of monitored entities."), because for this ingestion methods, the host context is added automatically.
+You don't need to specify the `dt.entity.host` dimension when using local ingestion methods via OneAgent, that is dynatrace\_ingest and local API, because for this ingestion methods, the host context is added automatically.
 
 ### COUNT metric
 
@@ -198,4 +198,4 @@ See [POST ingest data points](../../../../dynatrace-api/environment-api/metric-v
 
 ## Related topics
 
-* [Metrics API - POST ingest data points](../../../../dynatrace-api/environment-api/metric-v2/post-ingest-metrics.md "Ingest custom metrics to Dynatrace via Metrics v2 API.")
+* Metrics API - POST ingest data points

@@ -16,7 +16,7 @@ Dynatrace Google Cloud integration leverages data collected from the Google Oper
 
 ## Prerequisites
 
-[Set up integration](../gcp-guide/deploy-k8.md "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+Set up integration
 
 ## Add services and feature sets Optional
 
@@ -26,7 +26,7 @@ For a list of feature sets available for this service, see [Metric table](#table
 
 ## View metrics
 
-After deploying the integration, you can see metrics from monitored services in the [Metrics browser](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser."), [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights."), and your dashboard tiles.
+After deploying the integration, you can see metrics from monitored services in the Metrics browser, Data Explorer, and your dashboard tiles.
 
 ## Metric table
 
@@ -55,4 +55,4 @@ The following feature sets are available for Google Cloud AI Platform.
 
 ## Related topics
 
-* [Google Cloud integrations](../../gcp-integrations.md "Set up and configure Dynatrace on Google Cloud.")
+* Google Cloud integrations

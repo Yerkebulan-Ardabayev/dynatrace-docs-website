@@ -15,15 +15,15 @@ Dynatrace version 1.255+
 
 Istio is a platform-independent service mesh that is very popular in the Kubernetes community. Dynatrace OneAgent and ActiveGate can monitor Istio with the following observability options:
 
-* Distributed tracing and service-level metrics: OneAgent with [code modules](../../../../ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* Distributed tracing and service-level metrics: OneAgent with code modules
 * Istio metrics and topology: ActiveGate
-* Istio logs: OneAgent [log module](../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+* Istio logs: OneAgent log module
 
-Alternatively, [Unified services](../../../application-observability/services/service-detection/service-detection-v1/service-types/unified-service.md "Define services on observability signals ingested via Trace ingest APIs.") provide agentless support for Istio service meshes.
+Alternatively, Unified services provide agentless support for Istio service meshes.
 
 ## How it works
 
-ActiveGate ingests Istio metrics and sends them to Dynatrace. Because Istio exposes metrics as Prometheus exporters, you just need to [provide annotations](monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
+ActiveGate ingests Istio metrics and sends them to Dynatrace. Because Istio exposes metrics as Prometheus exporters, you just need to provide annotations.
 
 Based on the labels of ingested metrics, Dynatrace also detects the Istio topology without OneAgent. This is supported with ActiveGate version 1.261+.
 
@@ -33,7 +33,7 @@ See [Istio Service Meshï»¿](https://www.dynatrace.com/hub/detail/istio-and-en
 
 ### ActiveGate
 
-* See [Prometheus metrics](monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.") for ingestion prerequisites
+* See Prometheus metrics for ingestion prerequisites
 * Topology detection: ActiveGate version 1.261+
 * Sum and count extraction from histogram metrics: ActiveGate version 1.261+
 
@@ -42,8 +42,8 @@ See [Istio Service Meshï»¿](https://www.dynatrace.com/hub/detail/istio-and-en
 * Istio metrics card on Kubernetes services, workload, and namespace pages: Dynatrace version 1.255+
 * Topology (calling and called corresponding entities) on Kubernetes services, workload, and namespace pages: Dynatrace version 1.263+
 
-Istio monitoring by OneAgent is supported for the classic full-stack, cloud-native full-stack, and application-only [deployment options](../../../../ingest-from/setup-on-k8s/how-it-works.md "In-depth description on how the deployment on Kubernetes works.") since Operator version 0.11.0+. Earlier versions support classic full-stack only.
+Istio monitoring by OneAgent is supported for the classic full-stack, cloud-native full-stack, and application-only deployment options since Operator version 0.11.0+. Earlier versions support classic full-stack only.
 
 ## Related topics
 
-* [Monitor Prometheus metrics](monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.")
+* Monitor Prometheus metrics

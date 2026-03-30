@@ -12,7 +12,7 @@ scraped: 2026-03-05T21:29:41.920596
 * 14-min read
 * Updated on Jan 23, 2026
 
-This page refers to the classic AWS Lambda integration. For the latest version, see [Trace Lambda functions](../trace-lambda-functions.md "Monitor AWS Lambda functions.").
+This page refers to the classic AWS Lambda integration. For the latest version, see Trace Lambda functions.
 
 Dynatrace provides you with a dedicated AWS Lambda layer that contains the Dynatrace extension for AWS Lambda. You need to add the publicly available layer for your runtime and region to your function. Then, based on your configuration method, Dynatrace provides a template or configuration for your AWS Lambda function.
 
@@ -188,7 +188,7 @@ Copy the configuration snippets into your deployment and use your deployment met
 AWS Lambda also supports [**non-proxy integration**ï»¿](https://dt-url.net/8u03rh3), whichâwithout some additional configurationâprevents Dynatrace from
 
 * Tracing calls from other monitored applications
-* [RUM](../../../../../observe/digital-experience/rum-concepts/rum-overview.md "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.") detection (web and mobile)
+* RUM detection (web and mobile)
 
 Node.jsPython To make tracing calls from other monitored applications/RUM detection work in this scenario, create a custom mapping template in the integration requests configuration.
 
@@ -259,7 +259,7 @@ A fetch accesses AWS Secrets Manager only once, during the Lambda function's ini
 
 The Node.js and Python layers use the AWS SDK version provided by the AWS Lambda runtime to access the secret.
 
-To [fetch the token for log collection](../collector.md#aws-secrets-manager "Collect logs from AWS Lambda functions"), set another fetch.
+To fetch the token for log collection, set another fetch.
 
 ### Filter cold starts
 
@@ -323,7 +323,7 @@ While not mandatory, we recommend that you set up Dynatrace Amazon CloudWatch in
 
 ## Known limitations
 
-* The Dynatrace AWS Lambda extension does not support the capture of [method-level request attributes](../../../../../observe/application-observability/services/request-attributes/capture-request-attributes-based-on-method-arguments.md "Learn how to create request attributes based on Java, .NET, or PHP method arguments and how to use them on the serviceâs overview page. Also find out how you can aggregate the captured values of request attributes as well as how you can access objects, in case the value to be captured is a complex object.").
+* The Dynatrace AWS Lambda extension does not support the capture of method-level request attributes.
 * Most Dynatrace AWS Lambda extensions don't capture IP addresses of outgoing HTTP requests. This results in **unmonitored hosts** if the called service isn't monitored with Dynatrace.
 * Getting auth token from AWS Secrets Manager is not supported if [Lambda SnapStartï»¿](https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html) is enabled.
 * **Outgoing requests to another AWS Lambda function:** In a monitored AWS Lambda function, the following libraries are supported for outgoing requests to another AWS Lambda function:
@@ -360,4 +360,4 @@ While not mandatory, we recommend that you set up Dynatrace Amazon CloudWatch in
 
 ## Related topics
 
-* [Limit API calls to AWS using tags](../../../integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags.md "Add and configure AWS tags to limit AWS resources.")
+* Limit API calls to AWS using tags

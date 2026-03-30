@@ -10,7 +10,7 @@ scraped: 2026-03-04T21:38:44.998874
 * Reference
 * Updated on Oct 31, 2025
 
-The metric selector is a powerful instrument for specifying which metrics you want to read via the [GET metric data points](get-data-points.md "Read data points of one or multiple metrics via Metrics v2 API.") request or in the [**Advanced mode** of Data Explorer](../../../analyze-explore-automate/explorer/explorer-advanced-query-editor.md "Build advanced queries using the Data Explorer advanced mode.").
+The metric selector is a powerful instrument for specifying which metrics you want to read via the GET metric data points request or in the **Advanced mode** of Data Explorer.
 
 In addition, you can transform the resulting set of data points. These transformations modify the plain metric data.
 
@@ -28,7 +28,7 @@ Many Dynatrace metrics can be referenced with finer granularity using dimensions
 * The primary dimension is **Host**
 * The secondary dimension is **Disk**
 
-Query a metric with the [GET metric descriptor](get-descriptor.md "View the descriptor of a metric via Metrics v2 API.") call to obtain information about available dimensionsâyou can find them in the **dimensionDefinitions** field of the metric descriptor.
+Query a metric with the GET metric descriptor call to obtain information about available dimensionsâyou can find them in the **dimensionDefinitions** field of the metric descriptor.
 
 Show descriptor example
 
@@ -103,9 +103,9 @@ The amount of raw data available in Dynatrace makes it challenging to present th
 
 Even if you don't specify any aggregation transformation, some aggregation applies nevertheless, using the *default transformation* of the metric. Applying the `auto` transformation has the same effect.
 
-Available aggregations vary for each metric. You can check the available aggregations (and the default aggregation) via the [GET metric descriptor](get-descriptor.md "View the descriptor of a metric via Metrics v2 API.") callâlook for the **aggregationTypes** and **defaultAggregation** fields.
+Available aggregations vary for each metric. You can check the available aggregations (and the default aggregation) via the GET metric descriptor callâlook for the **aggregationTypes** and **defaultAggregation** fields.
 
-The resolution of the resulting time series depends on factors such as the query timeframe and the age of the data. You can, to an extent, control the resolution via the **resolution** query parameter of the [GET metric data points](get-data-points.md "Read data points of one or multiple metrics via Metrics v2 API.") request. The finest available resolution is one minute. Additionally, you can aggregate all data points of a time series into a single data pointâuse the [**fold** transformation](#fold) for that.
+The resolution of the resulting time series depends on factors such as the query timeframe and the age of the data. You can, to an extent, control the resolution via the **resolution** query parameter of the GET metric data points request. The finest available resolution is one minute. Additionally, you can aggregate all data points of a time series into a single data pointâuse the [**fold** transformation](#fold) for that.
 
 #### Example
 
@@ -608,7 +608,7 @@ in(
 
 You need to specify a metric key to get the timeseries for it. You can also specify multiple metric keys separated by commas (for example, `metrickey1,metrickey2`).
 
-When using the [data explorer](../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights."), metric key sections beginning with special characters need to be escaped with quotes (`""`). For example,
+When using the data explorer, metric key sections beginning with special characters need to be escaped with quotes (`""`). For example,
 
 | Ingested Metric | Sample Metric Selector |
 | --- | --- |
@@ -1061,7 +1061,7 @@ The `:filter` transformation supports the following conditions.
 | `contains("<dimension>","<expected contained>")` | Matches if the value of the specified dimension contains the expected value. |
 | `eq("<dimension>","<expected value>")` | Matches if the value of the specified dimension equals the expected value. |
 | `ne("<dimension>","<value to be excluded>")` | The reverse of the `eq` condition. The dimension with the specified name is *excluded* from the response. |
-| `in("<dimension>",entitySelector("<selector>")` | Matches if the value of the specified dimension equals *any* of the expected values provided by the [entity selector](../entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints."). |
+| `in("<dimension>",entitySelector("<selector>")` | Matches if the value of the specified dimension equals *any* of the expected values provided by the entity selector. |
 | `existsKey("<dimension>")` | Matches if the specified dimension exists. |
 | `remainder("<dimension>")` | Matches if the specified dimension is part of the [remainder](#remainder). |
 | `series(<aggregation>,<operator>(<reference value>))` | The response contains only series with data points matching the provided criterion. |
@@ -2307,7 +2307,7 @@ The **rate** transformation converts a count-based metric (for example, bytes) i
 
 Any argument can be modified by an integer factor. For example, `5m` means **per 5 minutes** rate. If no argument is specified, the **per 1 minute** rate is used.
 
-You can use the rate transformation with any metric that supports the `VALUE` aggregation. Query a metric with the [GET metric descriptors](get-descriptor.md "View the descriptor of a metric via Metrics v2 API.") call to obtain information about available aggregations. If the metric doesn't support the `VALUE` aggregation, apply the [aggregation transformation](#aggregation) first and then the rate transformation.
+You can use the rate transformation with any metric that supports the `VALUE` aggregation. Query a metric with the GET metric descriptors call to obtain information about available aggregations. If the metric doesn't support the `VALUE` aggregation, apply the [aggregation transformation](#aggregation) first and then the rate transformation.
 
 * You must apply an [aggregation transformation](#aggregation) before using the rate transformation.
 * You can use the rate transformation only once in a single transformation chain.
@@ -3198,7 +3198,7 @@ Let's consider an example with a timeframe from `1615550400000` (March 12, 2021 
 |  |  |
 | --- | --- |
 | Syntax | `:setUnit(<unit>)` |
-| Argument | The desired unit.  To fetch the list of available units, use the [GET all units](../metrics-units/get-all-units.md "List all metrics that are available for your monitoring environment via the Dynatrace API.") API call. |
+| Argument | The desired unit.  To fetch the list of available units, use the GET all units API call. |
 
 The **setUnit** transformation sets the unit in the metric metadata.
 
@@ -3209,7 +3209,7 @@ This transformation **does not** affect data points.
 |  |  |
 | --- | --- |
 | Syntax | `:toUnit(<sourceUnit>,<targetUnit>)` |
-| Arguments | The source and the target unit of the transformation.  To fetch the list of available units, use the [GET all units](../metrics-units/get-all-units.md "List all metrics that are available for your monitoring environment via the Dynatrace API.") API call. |
+| Arguments | The source and the target unit of the transformation.  To fetch the list of available units, use the GET all units API call. |
 
 The **toUnit** transformation converts data points from the source unit to target unit. If specified units are incompatible, the original unit is persisted and a warning is included in the response.
 
@@ -3217,6 +3217,6 @@ You must apply an [aggregation transformation](#aggregation) before using the un
 
 ## Related topics
 
-* [Data Explorer](../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.")
-* [Environment API v2 - Entity selector](../entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.")
+* Data Explorer
+* Environment API v2 - Entity selector
 * [[GitHub] Examples of metric selector queriesï»¿](https://dt-url.net/metric-selector-by-example)

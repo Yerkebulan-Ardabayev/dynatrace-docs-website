@@ -31,7 +31,7 @@ OpenTracing с OneAgent позволяет вам:
 
 1
 
-Поддерживается в [AWS Lambda](../../amazon-web-services/integrate-into-aws/aws-lambda-integration.md "Возможности и варианты интеграции AWS Lambda").
+Поддерживается в AWS Lambda.
 
 ## Включение интеграции OpenTracing
 
@@ -131,7 +131,7 @@ OpenTracing с OneAgent позволяет вам:
    traced.getMap("map").put("key", "value");
    ```
 
-См. [Настройки спанов](span-settings.md "Узнайте, как настраивать параметры спанов для OpenTelemetry и OpenTracing.") для всех параметров конфигурации.
+См. Настройки спанов для всех параметров конфигурации.
 
 ## Ограничения
 

@@ -131,7 +131,7 @@ During OneAgent installation
 
 To turn on Discovery mode during OneAgent installation, use the `--set-monitoring-mode=discovery` parameter.
 
-For more information, see the [OneAgent installation](../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") documentation that's specific to your environment.
+For more information, see the OneAgent installation documentation that's specific to your environment.
 
 After OneAgent installation
 
@@ -144,11 +144,11 @@ To turn on Discovery mode after OneAgent installation, use one of these options:
   3. Select **Host monitoring**.
   4. Go to **Monitoring Mode** and in the drop-down menu select **Discovery**.
   5. Select **Save changes**.
-* Use the [OneAgent command-line interface](../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to set the `--set-monitoring-mode=discovery` parameter.
+* Use the OneAgent command-line interface to set the `--set-monitoring-mode=discovery` parameter.
 
 ### Code-module injection
 
-For [Application Security](../../../secure/application-security.md "Access the Dynatrace Application Security functionalities.") and [Live Debugger](../../application-observability/live-debugger.md "Get familiar with the Live Debugger capabilities in Dynatrace.") to work in Discovery mode, code-module injection is required. Code-module injection is disabled by default.
+For Application Security and Live Debugger to work in Discovery mode, code-module injection is required. Code-module injection is disabled by default.
 
 After [turning on Discovery mode](#enable-discovery-mode), you can turn on the code-module injection for a single host.
 
@@ -175,7 +175,7 @@ During OneAgent installation
 
 To turn on Infrastructure Monitoring mode during OneAgent installation, use the `--set-monitoring-mode=infra-only` parameter.
 
-For more information, see the [OneAgent installation](../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") documentation that's specific to your environment.
+For more information, see the OneAgent installation documentation that's specific to your environment.
 
 After OneAgent installation
 
@@ -188,9 +188,9 @@ To turn on Infrastructure Monitoring mode after OneAgent installation, use one o
   3. Select **Host monitoring**.
   4. Go to **Monitoring Mode** and in the drop-down menu select **Infrastructure**.
   5. Select **Save changes**.
-* Use the [OneAgent command-line interface](../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to set the `--set-monitoring-mode=infra-only` parameter.
-* Use the [Settings API](../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") to turn on Infrastructure Monitoring mode at scale.
-* To download the schema, use [GET a schema](../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") with `builtin:host.monitoring` as the schemaId and create your configuration object using [POST an object](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.").
+* Use the OneAgent command-line interface to set the `--set-monitoring-mode=infra-only` parameter.
+* Use the Settings API to turn on Infrastructure Monitoring mode at scale.
+* To download the schema, use GET a schema with `builtin:host.monitoring` as the schemaId and create your configuration object using POST an object.
 
 ### Process injection
 
@@ -198,7 +198,7 @@ Process injection provides you with additional data for Infrastructure Monitorin
 
 If you run your OneAgent as a container with Infrastructure Monitoring mode enabled, process injection will not be performed.
 
-Infrastructure Monitoring mode enables you to monitor any infrastructure component and backing service written in Java. You can monitor backing services supported by default (for example, Kafka or ActiveMQ), and you can also build your own custom [JMX and PMI extensions](../../../ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions.md "Learn how to extend Dynatrace monitoring to include applications you've instrumented with JMX.") for infrastructure components and use them in Infrastructure Monitoring mode.
+Infrastructure Monitoring mode enables you to monitor any infrastructure component and backing service written in Java. You can monitor backing services supported by default (for example, Kafka or ActiveMQ), and you can also build your own custom JMX and PMI extensions for infrastructure components and use them in Infrastructure Monitoring mode.
 
 Additionally, with process injection, Infrastructure Monitoring mode provides runtime metrics for:
 
@@ -211,7 +211,7 @@ Additionally, with process injection, Infrastructure Monitoring mode provides ru
 
 ### Disable process auto-injection
 
-We don't recommend turning off auto-injection, but if you're required to do so due to strict security requirements, you can choose among various options. Turning off auto-injection also prevents Dynatrace from discovering vulnerabilities or live debugging in your environment, even if you enable [Application Security](../../../secure/application-security.md "Access the Dynatrace Application Security functionalities.") or [Live Debugger](../../application-observability/live-debugger.md "Get familiar with the Live Debugger capabilities in Dynatrace."). You can turn off automatic injection at the host or environment level.
+We don't recommend turning off auto-injection, but if you're required to do so due to strict security requirements, you can choose among various options. Turning off auto-injection also prevents Dynatrace from discovering vulnerabilities or live debugging in your environment, even if you enable Application Security or Live Debugger. You can turn off automatic injection at the host or environment level.
 
 #### Disable auto-injection for a single host
 
@@ -226,9 +226,9 @@ After OneAgent installation with UI
 
 After OneAgent installation with command line
 
-Use the [OneAgent command line interface](../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to set the `--set-auto-injection-enabled=false` parameter.
+Use the OneAgent command line interface to set the `--set-auto-injection-enabled=false` parameter.
 
-If you use oneagentctl to turn off automatic injection, you won't be able to control auto-injection in Infrastructure Monitoring mode using the Dynatrace web UI at **Settings > Monitoring > Monitored technologies** or [OneAgent monitoring configuration API](../../../dynatrace-api/configuration-api/oneagent-configuration/oneagent-on-host/oneagent-monitoring/put-monitoring-configuration.md "Update the monitoring configuration of a OneAgent instance via the Dynatrace API.").
+If you use oneagentctl to turn off automatic injection, you won't be able to control auto-injection in Infrastructure Monitoring mode using the Dynatrace web UI at **Settings > Monitoring > Monitored technologies** or OneAgent monitoring configuration API.
 
 #### Disable auto-injection for an environment
 
@@ -276,7 +276,7 @@ You can also turn off selected extensions collecting the metrics at the environm
 
 ### Filter hosts by injection status
 
-When you turn off auto-injection, you can find such hosts using the **Auto-injection** filter on the **Deployment Status** page or [OneAgent on a host - GET a list of hosts with OneAgent details](../../../dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents.md "Check the configuration of OneAgent instances on your hosts via Dynatrace API.").
+When you turn off auto-injection, you can find such hosts using the **Auto-injection** filter on the **Deployment Status** page or OneAgent on a host - GET a list of hosts with OneAgent details.
 
 Use Dynatrace web UI
 
@@ -296,11 +296,11 @@ Use Dynatrace web UI
 
 Use Dynatrace API
 
-Run the [OneAgent on a host - GET a list of hosts with OneAgent details](../../../dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents.md "Check the configuration of OneAgent instances on your hosts via Dynatrace API.") call with the `autoInjection` parameter set to `DISABLED_MANUAL`. The returned payload contains the list of OneAgents with auto-injection disabled [after OneAgent installation](#after-install) via either the Dynatrace web UI or `oneagentctl`.
+Run the OneAgent on a host - GET a list of hosts with OneAgent details call with the `autoInjection` parameter set to `DISABLED_MANUAL`. The returned payload contains the list of OneAgents with auto-injection disabled [after OneAgent installation](#after-install) via either the Dynatrace web UI or `oneagentctl`.
 
 ## Virtualization monitoring
 
-Dynatrace supports [virtualization monitoring](../vmware-vsphere-monitoring.md "Monitor VMware vSphere with Dynatrace."). To monitor the virtual components in your environment, you need to complete an extra step beyond the initial setup. For full details, see [Set up virtualization monitoring](../vmware-vsphere-monitoring.md "Monitor VMware vSphere with Dynatrace.").
+Dynatrace supports virtualization monitoring. To monitor the virtual components in your environment, you need to complete an extra step beyond the initial setup. For full details, see Set up virtualization monitoring.
 
 ## FAQ
 

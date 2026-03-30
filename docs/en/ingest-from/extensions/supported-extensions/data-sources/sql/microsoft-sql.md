@@ -58,13 +58,13 @@ Activate the extension](microsoft-sql.md#activate-extension "Extend observabilit
    * Optional Port
    * Optional Instance name
    * Optional Database name
-   * Authentication scheme. You can choose from the following [authentication schemes](../../../develop-your-extensions/data-sources/sql/microsoft-sql-monitoring.md#authentication "Microsoft SQL extensions in the Extensions framework."):
+   * Authentication scheme. You can choose from the following authentication schemes:
 
      + Basic authentication
      + Kerberos authentication
      + NTLM authentication
-   * You can [enable SSL](../../../develop-your-extensions/data-sources/sql/microsoft-sql-monitoring.md#ssl "Microsoft SQL extensions in the Extensions framework.") to establish a secure connection for your configuration.
-   * You can [use credential vault](../../../develop-your-extensions/data-sources/sql/microsoft-sql-monitoring.md#credential-vault "Microsoft SQL extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
+   * You can enable SSL to establish a secure connection for your configuration.
+   * You can use credential vault to provide a more secure approach of storing and managing user credentials.
 2. Select **Next step**.
 
 ### Step 2 Select ActiveGates
@@ -79,7 +79,7 @@ Activate the extension](microsoft-sql.md#activate-extension "Extend observabilit
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. To learn how to use it to activate an extension using the Dynatrace API, see [Manage Extensions](../../../manage-extensions.md "Learn how to manage extensions.").
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. To learn how to use it to activate an extension using the Dynatrace API, see Manage Extensions.
 
 ## Related topics
 

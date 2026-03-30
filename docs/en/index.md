@@ -13,8 +13,8 @@ Learn about Dynatrace and explore resources to enhance your observability and se
 
 ### Get started with Dynatrace or discover whatâs new
 
-* New to Dynatrace? Learn how to [get started](discover-dynatrace/get-started.md "Learn about Dynatrace monitoring capabilities, concepts, and deployment models and find out how to get started with SaaS and Managed deployments.") in just a few steps.
-* Already on board? Discover whatâs new for [SaaS](whats-new/saas.md "Release notes for Dynatrace SaaS"), [OneAgent](whats-new/oneagent.md "Release notes for Dynatrace OneAgent"), or [ActiveGate](whats-new/activegate.md "Release notes for Dynatrace ActiveGate").
+* New to Dynatrace? Learn how to get started in just a few steps.
+* Already on board? Discover whatâs new for SaaS, OneAgent, or ActiveGate.
 
 ![Dynatrace Signet](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
 
@@ -27,7 +27,7 @@ Learn about Dynatrace and explore resources to enhance your observability and se
 
 ## Dynatrace apps
 
-Discover all [Dynatrace apps](discover-dynatrace/dynatrace-apps.md "Browse Dynatrace Apps.").
+Discover all Dynatrace apps.
 
 ## Still have questions?
 

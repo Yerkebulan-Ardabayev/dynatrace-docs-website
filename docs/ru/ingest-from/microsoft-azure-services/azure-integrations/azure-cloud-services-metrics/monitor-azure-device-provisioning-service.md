@@ -17,7 +17,7 @@ Dynatrace получает метрики из Azure Metrics API для Azure De
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. [Enable service monitoring](../azure-monitoring-guide/azure-enable-service-monitoring.md "Enable Azure monitoring in Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. Enable service monitoring.
 
 Экземпляр Device Provisioning Service необходимо привязать к IoT Hub для возможности создания групповых и индивидуальных регистраций.
 

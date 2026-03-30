@@ -836,14 +836,14 @@ scraped: 2026-03-06T21:24:53.493213
 
 Узнайте больше об основных концепциях:
 
-* [Пользователи, сервисные пользователи](../../../manage/identity-access-management/user-and-group-management/identity-concepts.md#users "Понимание ключевых концепций идентификации в Dynatrace IAM")
-* [Локальные группы, политики](../../../manage/identity-access-management/user-and-group-management/access-group-management.md "Управление группами Dynatrace и их разрешениями.")
+* Пользователи, сервисные пользователи
+* Локальные группы, политики
 * [Токены платформы для сервисных пользователей](../../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md#allow-users-to-generate-platform-tokens-against-service-users "Создание персонализированных токенов платформы для доступа к сервисам Dynatrace через API в контексте вашего пользователя.")
 
 В контексте данного раздела документации:
 
 Администратор учетной записи Dynatrace
-:   Встроенный [пользователь](../../../manage/identity-access-management/use-cases/access-platform.md#who "Предоставление доступа к Dynatrace") с разрешением `View and manage users and groups`.
+:   Встроенный пользователь с разрешением `View and manage users and groups`.
 
 CloudsAdmins
 :   Пользовательская IAM-группа, созданная клиентом, члены которой смогут создавать и управлять подключениями AWS в ![Настройки](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Настройки") **Настройки**.
@@ -866,7 +866,7 @@ CloudAdmin
 
 #### Интерактивная IAM-идентичность (IAM-пользователь)
 
-1. [Создайте](../../../manage/identity-access-management/user-and-group-management/access-group-management.md#account-management "Управление группами Dynatrace и их разрешениями.") группу `CloudsAdmins`.
+1. Создайте группу `CloudsAdmins`.
 
    После создания группы `CloudsAdmins` выберите **Permissions** > **Scope** и добавьте политики `Data-Acquisition AWS Integration App` и `Standard User`.
 
@@ -876,7 +876,7 @@ CloudAdmin
 
    * `Data-Acquisition AWS Integration App`
    * `Standard User`
-2. [Назначьте](../../../manage/identity-access-management/user-and-group-management/access-user-management.md#edit-existing-user "Управление пользователями") вашего IAM-пользователя CloudAdmin (или любого другого IAM-пользователя Dynatrace) членом группы `CloudsAdmins`.
+2. Назначьте вашего IAM-пользователя CloudAdmin (или любого другого IAM-пользователя Dynatrace) членом группы `CloudsAdmins`.
 
 ## Подключение
 
@@ -908,7 +908,7 @@ CloudAdmin
      + Топологию ресурсов учетной записи AWS, представленную в виде расширенных сущностей ресурсов с помощью ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** (для поддерживаемых сервисов AWS).
      + Опрос метрик Amazon CloudWatch API (для каждого включенного региона) для наших рекомендуемых сервисов (автоматически включены).
      + Регионы, которые были выбраны, позволяющие администратору AWS развернуть потоки Amazon Data Firehose для приема логов в виде наборов стеков в консоли AWS Organizations.
-   * **Advanced**: наиболее [детальный путь](../manage-aws-connections.md#customize "Узнайте, как управлять подключениями AWS.") конфигурации мониторинга. Позволяет полностью настроить любые параметры мониторинга для продвинутых сценариев.
+   * **Advanced**: наиболее детальный путь конфигурации мониторинга. Позволяет полностью настроить любые параметры мониторинга для продвинутых сценариев.
 
    Независимо от выбранного пути, настройка всех поддерживаемых параметров мониторинга возможна после подключения.
 
@@ -956,7 +956,7 @@ CloudAdmin
 
 Оповещения о состоянии и предупреждающие сигналы помогают мониторить вашу инфраструктуру, предоставляя четкие, действенные аналитические данные. Эти функции снижают шум от проблем инфраструктуры и улучшают возможности оповещения, чтобы вы могли сосредоточиться на самом важном. Это достигается за счет лучшей категоризации обнаруженных неисправностей.
 
-* Для критических событий создается оповещение о состоянии, запускающее расследование [проблем Dynatrace](../../../dynatrace-intelligence/davis-problems-app.md "Используйте приложение Problems для быстрого определения первопричины инцидентов в вашей среде.").
+* Для критических событий создается оповещение о состоянии, запускающее расследование проблем Dynatrace.
 * Для некритических ситуаций предупреждающий сигнал информирует вас о потенциальной проблеме.
 
 Успешное подключение включает два элемента:
@@ -967,8 +967,8 @@ CloudAdmin
 ## Что дальше?
 
 * Перейдите в [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**](../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md "Мониторинг всех облачных платформ в одном месте."). Ресурсы AWS с телеметрией должны скоро появиться.
-* См. [Управление подключениями AWS](../manage-aws-connections.md "Узнайте, как управлять подключениями AWS."), чтобы узнать, как управлять вновь созданным подключением.
-* Настройте [подписки на группы логов CloudWatch](../ingest-telemetry/cloudwatch-logs-private-preview/aws-subscribe-log-groups-pp.md "Узнайте, как настроить группы логов AWS для приема в Dynatrace.").
+* См. Управление подключениями AWS, чтобы узнать, как управлять вновь созданным подключением.
+* Настройте подписки на группы логов CloudWatch.
 
 ## Устранение неполадок
 

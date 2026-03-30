@@ -8,7 +8,7 @@ Ingests a custom event to Dynatrace.
 
 The request consumes an `application/json` payload.
 
-The ingestion of custom events consumes [Davis Data Units (DDUs)](/managed/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") from the events pool.
+The ingestion of custom events consumes Davis Data Units (DDUs).") from the events pool.
 
 |  |  |  |
 | --- | --- | --- |
@@ -19,7 +19,7 @@ The ingestion of custom events consumes [Davis Data Units (DDUs)](/managed/licen
 
 To execute this request, you need an access token with `events.ingest` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ## Parameters
 
@@ -603,5 +603,5 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 
 ## Related topics
 
-* [Event categories](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.")
-* [Event analysis and correlation](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")
+* Event categories
+* Event analysis and correlation

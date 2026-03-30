@@ -246,7 +246,7 @@ The `SERVICE` type:
 
 ### Settings 2.0 JSON
 
-The [Settings API](../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") has additional properties unrelated to the specific schemas.
+The Settings API has additional properties unrelated to the specific schemas.
 This requires Dynatrace Monaco CLI to set further parameters.
 
 The JSON templates for Settings should only include the actual configuration `value`.

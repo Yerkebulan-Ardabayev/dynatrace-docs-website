@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:35:27.364176
 
 Early Adopter
 
-In this tutorial you will learn how [Security Posture Management](../application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") can help you stay compliant with the [security hardening guidelines and regulatory compliance standards](../application-security/spm.md#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+In this tutorial you will learn how Security Posture Management can help you stay compliant with the [security hardening guidelines and regulatory compliance standards](../application-security/spm.md#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 
 ## Target audience
 
@@ -39,12 +39,12 @@ This tutorial is dedicated to Security Ops Engineers, DevOps, DevSecOps, and Sit
 
 ## Prerequisites
 
-* [Deploy Kubernetes Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.")
+* Deploy Kubernetes Security Posture Management
 * Install ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**
 
   1. Show me how
 
-  1. In Dynatrace, open  [**Hub**](../../manage/hub.md "See the information about Dynatrace Hub.").
+  1. In Dynatrace, open  **Hub**.
   2. Look for ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management** and select **Install**.
 
 ## Get started
@@ -61,11 +61,11 @@ Open [![xSPM](https://dt-cdn.net/images/security-posture-management-highresoluti
 
 2. Search for relevant information
 
-Use the [filtering and sorting](../xspm/review-findings.md "Search for relevant information to analyze security and compliance findings efficiently.") options to gather insights about problems in your environment.
+Use the filtering and sorting options to gather insights about problems in your environment.
 
 3. Gather insights
 
-Define which rules are relevant [based on contextual insights](../xspm/gain-insights.md "Drill into results that can help you fix misconfigurations and noncompliance.").
+Define which rules are relevant based on contextual insights.
 
 4. Define compliance strategy
 
@@ -97,14 +97,14 @@ Use [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c
 
 6. Create notifications
 
-[Create a workflow](../../analyze-explore-automate/workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.") to send an alert on your desired channel if the previously `Passed` rule turns into `Failed`.
+Create a workflow to send an alert on your desired channel if the previously `Passed` rule turns into `Failed`.
 
 ## Further resources
 
-[Security Posture Management](../application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
+Security Posture Management
 
-[Security Posture Management](../xspm.md "Detect, manage, and take action on security and compliance findings.")
+Security Posture Management
 
 ## Related topics
 
-* [Security Posture Management](../application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
+* Security Posture Management

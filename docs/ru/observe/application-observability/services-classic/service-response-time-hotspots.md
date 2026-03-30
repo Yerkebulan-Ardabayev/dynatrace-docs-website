@@ -70,7 +70,7 @@ scraped: 2026-03-06T21:23:00.695154
 
 Предварительные требования
 
-Убедитесь, что у вас есть [разрешение](../../../manage/identity-access-management/permission-management/role-based-permissions.md "Role-based permissions") **View sensitive request data** в вашем окружении.
+Убедитесь, что у вас есть разрешение **View sensitive request data** в вашем окружении.
 
 Ограничения
 
@@ -117,4 +117,4 @@ scraped: 2026-03-06T21:23:00.695154
 
 ## Связанные темы
 
-* [Тайминги анализа сервисов](service-analysis-timing.md "Find out what each time in service analysis means.")
+* Тайминги анализа сервисов

@@ -29,7 +29,7 @@ This tutorial is intended for Site Reliability Engineers (SREs) and architects w
 ## Prerequisites
 
 * Permissions to [manage custom Grail buckets](../../platform/grail/organize-data.md#managing-custom-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
-* `openpipeline:configurations:write` and `openpipeline:configurations:read` permissions. To learn how to set up the permissions, see [Permissions in Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+* `openpipeline:configurations:write` and `openpipeline:configurations:read` permissions. To learn how to set up the permissions, see Permissions in Grail.
 
 ## Example 1: Retain logs for three years
 
@@ -41,7 +41,7 @@ Using a custom log bucket, you can:
 * Store log data that needs to be queried and analyzed together.
 * Store log data that needs to be deleted at the same time.
 
-For more information, see [Log Management and Analytics best practices](lma-best-practices.md "Best practices for setting up Log Management and Analytics with Dynatrace.").
+For more information, see Log Management and Analytics best practices.
 
 ### 1. Create a custom bucket
 
@@ -72,13 +72,13 @@ For more information, see [Log Management and Analytics best practices](lma-best
 ### 3. Assign bucket permissions to users
 
 1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/), and select one of your accounts.
-2. Set up permissions and [assign bucket permissions](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.") to the right users.
+2. Set up permissions and assign bucket permissions to the right users.
 
 ## Example 2: Skip storage for selected logs
 
 With this example, you skip the storage of logs that match the route and pipeline conditions. Log records are not retained.
 
-This can be useful when you [parse log lines and extract metrics](../../platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md "Configure OpenPipeline processing for log lines."), and access to original records is not needed.
+This can be useful when you parse log lines and extract metrics, and access to original records is not needed.
 
 To skip storage for selected log records
 
@@ -100,18 +100,18 @@ There are two retention models that you can configure on a per-bucket basis:
 * **Usage-based**: Each query execution is charged separately.
 * **Retain with Included Queries**: Log data for the defined timeframe is included in the retention cost. Querying this data does not incur additional costs.
 
-For more information, see [Take control of log query costs using Retain with Included Queries](lma-use-cases/lma-e2e-included-log-queries.md "How to use the Retain with Included Queries capability to control and predict log consumption.").
+For more information, see Take control of log query costs using Retain with Included Queries.
 
 ## Call to action
 
 Buckets are the foundation of log managementâset them up right to avoid data silos and optimize retention. A few best practices can make a big difference in performance and cost.
 
-For more information, see [Log Management and Analytics best practices](lma-best-practices.md "Best practices for setting up Log Management and Analytics with Dynatrace.").
+For more information, see Log Management and Analytics best practices.
 
 ## Related topics
 
-* [Organize data](../../platform/grail/organize-data.md "Insights on the Grail data model consisting of buckets, tables, and views.")
-* [Data flow in OpenPipeline](../../platform/openpipeline/concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
-* [Working with policies](../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies")
-* [Log Management and Analytics best practices](lma-best-practices.md "Best practices for setting up Log Management and Analytics with Dynatrace.")
-* [Take control of log query costs using Retain with Included Queries](lma-use-cases/lma-e2e-included-log-queries.md "How to use the Retain with Included Queries capability to control and predict log consumption.")
+* Organize data
+* Data flow in OpenPipeline
+* Working with policies
+* Log Management and Analytics best practices
+* Take control of log query costs using Retain with Included Queries

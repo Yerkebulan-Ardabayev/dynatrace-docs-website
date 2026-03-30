@@ -36,6 +36,6 @@ Dynatrace предлагает готовую интеграцию с VictorOps,
      Заполнители
 
      В разделе **Available placeholders** на странице настройки перечислены заполнители, которые можно использовать для данной интеграции. Заполнители автоматически заменяются значениями в сообщении.
-   * Назначьте [Alerting profile](../alerting-profiles.md "Learn how to create and manage alerting profiles.").
+   * Назначьте Alerting profile.
 5. Нажмите **Send test notification**, чтобы убедиться, что интеграция с VictorOps работает.
 6. **Save changes**.

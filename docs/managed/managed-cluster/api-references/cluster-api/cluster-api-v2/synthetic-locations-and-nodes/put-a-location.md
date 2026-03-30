@@ -13,7 +13,7 @@ The request consumes an `application/json` payload.
 
 ## Authentication
 
-To execute this request, you need the **Service Provider API** (`ServiceProviderAPI`) permission assigned to your API token. Generate your API token via Cluster Management Console (CMC). To learn how to obtain and use it, see [Cluster API - Authentication](/managed/managed-cluster/api-references/cluster-api/basics/cluster-api-authentication "How to get authenticated to use the Dynatrace Cluster API.").
+To execute this request, you need the **Service Provider API** (`ServiceProviderAPI`) permission assigned to your API token. Generate your API token via Cluster Management Console (CMC). To learn how to obtain and use it, see Cluster API - Authentication.
 
 ## Endpoint
 
@@ -21,7 +21,7 @@ To execute this request, you need the **Service Provider API** (`ServiceProvider
 
 ## Parameters
 
-To find all model variations that depend on the type of the model, see [JSON models](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/json-models "Get synthetic nodes information via the Synthetic v2 API.").
+To find all model variations that depend on the type of the model, see JSON models.
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
@@ -136,13 +136,13 @@ A list of constraint violations
 
 ## Example - private location
 
-In this example, the request updates the **private** synthetic location from the [POST request example](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/post-a-location#example "Create a private synthetic location via the Synthetic v2 API."). It changes the name of the location to **Linz** and adds the synthetic node with the ID of **353074222**.
+In this example, the request updates the **private** synthetic location from the POST request example. It changes the name of the location to **Linz** and adds the synthetic node with the ID of **353074222**.
 
 The API token is passed in the **Authorization** header.
 
 The response code of **204** indicates that the update was successful.
 
-You can download or copy the example request body to try it out on your own. Be sure to replace the list of nodes with nodes available in your environment. You can fetch the list of available nodes with the [GET all nodes](/managed/dynatrace-api/environment-api/synthetic/synthetic-nodes/get-all "List all synthetic nodes via the Synthetic v1 API.") request.
+You can download or copy the example request body to try it out on your own. Be sure to replace the list of nodes with nodes available in your environment. You can fetch the list of available nodes with the GET all nodes request.
 
 #### Curl
 
@@ -324,4 +324,4 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations/SYNTHETIC_LOCA
 
 ## Related topics
 
-* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
+* Synthetic Monitoring

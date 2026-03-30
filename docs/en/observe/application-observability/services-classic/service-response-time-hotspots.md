@@ -75,7 +75,7 @@ Select the **View method hotspots** button and check all the classes and methods
 
 Prerequisites
 
-Ensure you have the **View sensitive request data** [permission](../../../manage/identity-access-management/permission-management/role-based-permissions.md "Role-based permissions") in your environment.
+Ensure you have the **View sensitive request data** permission in your environment.
 
 Limitations
 
@@ -122,4 +122,4 @@ Typically, web-request services have a wide range of response times. Analyzing a
 
 ## Related topics
 
-* [Service analysis timings](service-analysis-timing.md "Find out what each time in service analysis means.")
+* Service analysis timings

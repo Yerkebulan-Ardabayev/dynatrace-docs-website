@@ -11,43 +11,43 @@ scraped: 2026-03-06T21:10:44.799206
 * 1-min read
 * Published Jul 19, 2017
 
-Dynatrace supports OneAgent installation on Linux. For analytical information about the supported OneAgent capabilities for Linux, see the [OneAgent platform and capability support matrix](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). For the supported Linux distributions, check the [OneAgent supported technologies and versions](../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+Dynatrace supports OneAgent installation on Linux. For analytical information about the supported OneAgent capabilities for Linux, see the OneAgent platform and capability support matrix. For the supported Linux distributions, check the OneAgent supported technologies and versions.
 
 ### Installation
 
-[Disk space requirements](linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.")
+Disk space requirements
 
-[OneAgent security](linux/installation/oneagent-security-linux.md "Learn about Dynatrace OneAgent security and modifications to your Linux-based system")
+OneAgent security
 
-[OneAgent non-privileged mode on Linux](linux/installation/linux-non-privileged.md "Find out when Dynatrace OneAgent requires root privileges on Linux.")
+OneAgent non-privileged mode on Linux
 
-[Install OneAgent](linux/installation/install-oneagent-on-linux.md "Learn how to download and install Dynatrace OneAgent on Linux.")
+Install OneAgent
 
-[Install OneAgent on PPC BE Linux](linux/installation/install-oneagent-on-ppc-be-linux.md "Learn how to download and install Dynatrace OneAgent on PPC BE Linux.")
+Install OneAgent on PPC BE Linux
 
-[Customize installation](linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters.")
+Customize installation
 
-[How to pass a proxy address](linux/installation/how-to-pass-a-proxy-address-during-oneagent-installation-on-linux.md "Find out how to force Dynatrace OneAgent on Linux to use a proxy for communication with your environment.")
+How to pass a proxy address
 
 ### Operation
 
-[OneAgent files and logs](linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.")
+OneAgent files and logs
 
-[Update OneAgent](linux/operation/update-oneagent-on-linux.md "Learn about the different ways to update OneAgent on Linux.")
+Update OneAgent
 
-[Update OneAgent on PPC BE Linux](linux/operation/update-oneagent-on-ppc-be-linux.md "Learn about the different ways to update OneAgent on PPC BE Linux.")
+Update OneAgent on PPC BE Linux
 
-[Stop/restart OneAgent](linux/operation/stop-restart-oneagent-on-linux.md "Learn how to stop and restart OneAgent on Linux.")
+Stop/restart OneAgent
 
-[Uninstall OneAgent](linux/operation/uninstall-oneagent-on-linux.md "Learn how you can remove OneAgent from your Linux-based system.")
+Uninstall OneAgent
 
-[How to enable deep monitoring for applications confined by AppArmor](linux/operation/how-to-enable-deep-monitoring-for-applications-confined-by-apparmor.md "Read a step-by-step example of monitoring an application that's confined by AppArmor.")
-[Flatcar support on SELinux](linux/operation/flatcar-os.md "SELinux limitations and configuration")
+How to enable deep monitoring for applications confined by AppArmor
+Flatcar support on SELinux
 
 ### See also
 
-[OneAgent configuration via command-line interface](../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
+OneAgent configuration via command-line interface
 
-[OneAgent aging mechanism](../oneagent-aging-mechanism.md "Learn how OneAgent deletes old files to minimize disk space usage.")
+OneAgent aging mechanism
 
-[Troubleshoot](../oneagent-troubleshooting/troubleshoot-oneagent-installation.md "Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows.")
+Troubleshoot

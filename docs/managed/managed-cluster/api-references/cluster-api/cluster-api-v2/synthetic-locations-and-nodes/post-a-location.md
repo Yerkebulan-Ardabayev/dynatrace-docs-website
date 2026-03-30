@@ -4,11 +4,11 @@ source: https://docs.dynatrace.com/managed/managed-cluster/api-references/cluste
 updated: 2026-02-09
 ---
 
-This API call creates a new **private** synthetic location. For more details about synthetic location creation, see [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring."). The request consumes and produces an `application/json` payload.
+This API call creates a new **private** synthetic location. For more details about synthetic location creation, see Create a private Synthetic location. The request consumes and produces an `application/json` payload.
 
 ## Authentication
 
-To execute this request, you need the **Service Provider API** (`ServiceProviderAPI`) permission assigned to your API token. Generate your API token via Cluster Management Console (CMC). To learn how to obtain and use it, see [Cluster API - Authentication](/managed/managed-cluster/api-references/cluster-api/basics/cluster-api-authentication "How to get authenticated to use the Dynatrace Cluster API.").
+To execute this request, you need the **Service Provider API** (`ServiceProviderAPI`) permission assigned to your API token. Generate your API token via Cluster Management Console (CMC). To learn how to obtain and use it, see Cluster API - Authentication.
 
 ## Endpoint
 
@@ -16,7 +16,7 @@ To execute this request, you need the **Service Provider API** (`ServiceProvider
 
 ## Parameter
 
-To find all model variations that depend on the type of the model, see [JSON models](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/json-models "Get synthetic nodes information via the Synthetic v2 API.").
+To find all model variations that depend on the type of the model, see JSON models.
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
@@ -259,7 +259,7 @@ In this example, the request creates a new private Synthetic location. This loca
 
 The API token is passed in the **Authorization** header.
 
-You can download or copy the example request body to try it out on your own. Be sure to replace the list of nodes with nodes available in your environment. You can fetch the list of available nodes with the [GET all nodes](/managed/dynatrace-api/environment-api/synthetic/synthetic-nodes/get-all "List all synthetic nodes via the Synthetic v1 API.") request.
+You can download or copy the example request body to try it out on your own. Be sure to replace the list of nodes with nodes available in your environment. You can fetch the list of available nodes with the GET all nodes request.
 
 #### Curl
 
@@ -390,5 +390,5 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations
 
 ## Related topics
 
-* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
-* [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")
+* Synthetic Monitoring
+* Create a private Synthetic location

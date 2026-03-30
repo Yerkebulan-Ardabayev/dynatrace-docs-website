@@ -27,4 +27,4 @@ The API for the Dynatrace Platform Subscription allows access to the underlying 
 
 ## Related topics
 
-* [License Dynatrace](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* License Dynatrace, the licensing model for all Dynatrace capabilities.")

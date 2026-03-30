@@ -252,7 +252,7 @@ scraped: 2026-03-02T21:29:46.309494
 
 ## Потоковая передача логов в Dynatrace
 
-Самый простой способ приёма логов в Dynatrace — через [интеграцию Amazon Data Firehose](../../integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose.md "Интеграция Amazon Data Firehose позволяет принимать облачные логи напрямую, без дополнительной инфраструктуры, с более высокой пропускной способностью.").
+Самый простой способ приёма логов в Dynatrace — через интеграцию Amazon Data Firehose.
 
 Чтобы настроить это в AWS CloudShell, выполните следующие действия:
 

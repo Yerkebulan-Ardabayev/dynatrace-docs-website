@@ -11,11 +11,11 @@ scraped: 2026-03-06T21:25:15.913103
 * 1-min read
 * Updated on Jul 25, 2020
 
-The zRemote module processes binary data received from the [zLocal](../../dynatrace-oneagent/installation-and-operation/zos.md "Install, configure, and manage Dynatrace modules on z/OS.") and routes that data, compressed and encrypted, via its local ActiveGate to Dynatrace. Hence, the zRemote module offloads much of the processing work from the [CICS, IMS, and z/OS Java code modules](../../dynatrace-oneagent/installation-and-operation/zos.md "Install, configure, and manage Dynatrace modules on z/OS.") incurred in instrumenting subsystems and applications to an open system.
+The zRemote module processes binary data received from the zLocal and routes that data, compressed and encrypted, via its local ActiveGate to Dynatrace. Hence, the zRemote module offloads much of the processing work from the CICS, IMS, and z/OS Java code modules incurred in instrumenting subsystems and applications to an open system.
 
 ## zRemote functionality and module
 
-If the [zRemote module](../configuration/configure-activegate.md#zos_mod "Learn which ActiveGate properties you can configure based on your needs and requirements.") is enabled on an ActiveGate, no other functional module can be enabled. Note that the zRemote module is more demanding in terms of [hardware and system requirements](../../dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote.md#sizing "Prepare and install the zRemote for z/OS monitoring.").
+If the zRemote module is enabled on an ActiveGate, no other functional module can be enabled. Note that the zRemote module is more demanding in terms of [hardware and system requirements](../../dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote.md#sizing "Prepare and install the zRemote for z/OS monitoring.").
 
 ## z/OS monitoring
 
@@ -23,4 +23,4 @@ To monitor a z/OS LPAR, including technologies such as CICS, IMS, and Java, you 
 
 We recommend installing the zRemote module on an IBM Z or LinuxONE mainframe, on an supported [Linux operating system](../installation/linux/linux-activegate-hardware-and-system-requirements.md#supported-operating-systems "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Linux for routing and monitoring purposes."), to avoid performance or security issues in z/OS monitoring.
 
-For more details and configuration options, see [Install the zRemote module](../../dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote.md "Prepare and install the zRemote for z/OS monitoring.").
+For more details and configuration options, see Install the zRemote module.

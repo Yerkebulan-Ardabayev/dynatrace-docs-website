@@ -614,13 +614,13 @@ If you don't have full control over the pod template, you have the following opt
 
 ## View metrics on a dashboard
 
-Metrics from Prometheus exporters are available in Data Explorer for custom charting. Select **Create custom chart** and select **Try it out** in the top banner. For more information, see [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.").
+Metrics from Prometheus exporters are available in Data Explorer for custom charting. Select **Create custom chart** and select **Try it out** in the top banner. For more information, see Data Explorer.
 
 You can simply search for metric keys of all available metrics and define how youâd like to analyze and chart your metrics. After that you can pin your charts on a dashboard.
 
 ## Metric alerts
 
-You can also create custom alerts based on the Prometheus scraped metrics. Go to **Settings** > **Anomaly detection** > **Metric events** and select **Add metric event**. In the **Add metric event** page, search for a Prometheus metric using its key and define your alert. For more information, see [Metric events for alerting](../../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace").
+You can also create custom alerts based on the Prometheus scraped metrics. Go to **Settings** > **Anomaly detection** > **Metric events** and select **Add metric event**. In the **Add metric event** page, search for a Prometheus metric using its key and define your alert. For more information, see Metric events for alerting.
 
 ## Limitations
 
@@ -661,14 +661,14 @@ These two methods serve different contexts, work independently from each other, 
 
 ## Monitoring consumption
 
-If you have DPS licensing, you can get more information about your environment's custom metric consumption from our [licensing documentation](../../../../license/capabilities/platform-extensions/custom-metrics-classic.md "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
+If you have DPS licensing, you can get more information about your environment's custom metric consumption from our licensing documentation.
 
 * Full-Stack Monitoring [includes a fixed number of custom metric data points](../../../../license/capabilities/app-infra-observability/full-stack-monitoring.md#full-stack-metrics "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") for each GiB that contributes to your environment's GiB-hour consumption for containers with code-modules.
 
-If you have Dynatrace classic licensing, Prometheus metrics in Kubernetes environments are subject to [DDU consumption](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+If you have Dynatrace classic licensing, Prometheus metrics in Kubernetes environments are subject to DDU consumption.
 
-* Prometheus metrics from exporters running on hosts monitored by OneAgent are first deducted from your quota of [included metrics per host unit](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). After this quota is exceeded, any additional metrics consume [DDUs](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
-* Prometheus metrics from exporters running on hosts not monitored by OneAgent always consume [DDUs](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+* Prometheus metrics from exporters running on hosts monitored by OneAgent are first deducted from your quota of included metrics per host unit. After this quota is exceeded, any additional metrics consume DDUs.
+* Prometheus metrics from exporters running on hosts not monitored by OneAgent always consume DDUs.
 
 ## Troubleshooting
 
@@ -676,5 +676,5 @@ To troubleshoot Prometheus integration issues, download the [Kubernetes Monitori
 
 ## Related topics
 
-* [Metrics Classic](../../../../analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")
-* [Set up Dynatrace on Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
+* Metrics Classic
+* Set up Dynatrace on Kubernetes

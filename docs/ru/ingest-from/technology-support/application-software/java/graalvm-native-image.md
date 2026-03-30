@@ -18,7 +18,7 @@ Dynatrace обеспечивает сквозную распределённую
 
 Поддерживаемые технологии распределённой трассировки описаны в разделе [Java Native Image](../../../technology-support.md#java-native-image "Технические подробности о поддержке Dynatrace для конкретных платформ и фреймворков разработки.").
 
-Для наблюдаемости GraalVM Native Image в Dynatrace требуется лицензия [Full-Stack Monitoring](../../../../license/capabilities/app-infra-observability/full-stack-monitoring.md "Узнайте, как рассчитывается потребление возможностей Dynatrace Full-Stack Monitoring DPS.").
+Для наблюдаемости GraalVM Native Image в Dynatrace требуется лицензия Full-Stack Monitoring.
 
 ## Начало работы
 
@@ -126,7 +126,7 @@ Dynatrace обеспечивает сквозную распределённую
 
    Замените `ENVIRONMENT_URL` и `API_TOKEN` в соответствии с вашей средой Dynatrace:
 
-   * `ENVIRONMENT_URL` — это URL-адрес вашей [среды мониторинга](../../../../discover-dynatrace/get-started/monitoring-environment.md "Описание работы со средами мониторинга.") Dynatrace.
+   * `ENVIRONMENT_URL` — это URL-адрес вашей среды мониторинга Dynatrace.
    * `API_TOKEN` — это ваш токен доступа, который, например, можно предоставить через переменную окружения с помощью `<apiToken>${env.DT_API_TOKEN}</apiToken>`. Этот токен доступа требует области видимости **PaaS integration - Installer download**. Чтобы узнать, как сгенерировать токен, см. [Создание токена доступа](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Описание концепции токена доступа и его областей видимости.").
 
    Это автоматически загрузит и использует последнюю версию модуля GraalVM Native Image, доступную в вашей среде. Чтобы использовать конкретную версию модуля GraalVM Native Image, добавьте `<agentVersion>AGENT_VERSION</agentVersion>` в конфигурацию `agentDownload`.
@@ -206,7 +206,7 @@ Dynatrace обеспечивает сквозную распределённую
 
    Замените `ENVIRONMENT_URL` и `API_TOKEN` в соответствии с вашей средой Dynatrace:
 
-   * `ENVIRONMENT_URL` — это URL-адрес вашей [среды мониторинга](../../../../discover-dynatrace/get-started/monitoring-environment.md "Описание работы со средами мониторинга.") Dynatrace.
+   * `ENVIRONMENT_URL` — это URL-адрес вашей среды мониторинга Dynatrace.
    * `API_TOKEN` — это ваш токен доступа, который, например, можно предоставить через переменную окружения с помощью `System.getenv("DT_API_TOKEN")`. Этот токен доступа требует области видимости **PaaS integration - Installer download**. Чтобы узнать, как сгенерировать токен, см. [Создание токена доступа](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Описание концепции токена доступа и его областей видимости.").
 
    Это автоматически загрузит и использует последнюю версию модуля GraalVM Native Image, доступную в вашей среде. Чтобы использовать конкретную версию модуля GraalVM Native Image, добавьте `agentVersion = "AGENT_VERSION"` в конфигурацию `agentDownload`.
@@ -230,7 +230,7 @@ Dynatrace обеспечивает сквозную распределённую
 
 #### Ручная загрузка модуля GraalVM Native Image
 
-Вы также можете вручную загрузить модуль GraalVM Native Image через [Dynatrace OneAgent Deployment API](../../../../dynatrace-api/environment-api/deployment/oneagent.md "Загрузка установщиков OneAgent через Dynatrace API.") для вашей целевой платформы.
+Вы также можете вручную загрузить модуль GraalVM Native Image через Dynatrace OneAgent Deployment API для вашей целевой платформы.
 
 Пример вызова API с использованием `curl`:
 
@@ -266,7 +266,7 @@ export DT_CONNECTION_POINT=$DT_CONNECTION_POINT
 
 Замените `$DT_TENANT_ID`, `$DT_TENANTTOKEN` и `$DT_CONNECTION_POINT` вашими параметрами подключения к Dynatrace. Замените `$YOUR_APP_NAME` именем вашего приложения.
 
-Вы можете получить параметры подключения через вызов API [Просмотр информации о подключении OneAgent](../../../../dynatrace-api/environment-api/deployment/oneagent/get-connectivity-info.md "Просмотр информации о подключении OneAgent через Dynatrace API."). Вам потребуются следующие поля ответа:
+Вы можете получить параметры подключения через вызов API Просмотр информации о подключении OneAgent. Вам потребуются следующие поля ответа:
 
 * **tenantUUID** для `$DT_TENANT_ID`
 * **tenantToken** для `$DT_TENANTTOKEN`
@@ -304,7 +304,7 @@ export DT_CONNECTION_POINT=$DT_CONNECTION_POINT
 
 * `agentDownload` используется для настройки автоматической загрузки модуля GraalVM Native Image:
 
-  + `environmentUrl` указывает URL-адрес вашей [среды мониторинга](../../../../discover-dynatrace/get-started/monitoring-environment.md "Описание работы со средами мониторинга.") Dynatrace.
+  + `environmentUrl` указывает URL-адрес вашей среды мониторинга Dynatrace.
   + `apiToken` указывает токен доступа с областью видимости **PaaS integration - Installer download**. Чтобы узнать, как сгенерировать токен, см. [Создание токена доступа](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Описание концепции токена доступа и его областей видимости.").
   + `agentVersion` указывает версию модуля GraalVM Native Image. Если не задано, используется последняя версия модуля.
 * `agentZip` задаёт абсолютный или относительный путь к вручную загруженному ZIP-файлу.
@@ -345,7 +345,7 @@ agentOptions="loglevelcon=info"
 
 * `agentDownload` используется для настройки автоматической загрузки модуля GraalVM Native Image:
 
-  + `environmentUrl` указывает URL-адрес вашей [среды мониторинга](../../../../discover-dynatrace/get-started/monitoring-environment.md "Описание работы со средами мониторинга.") Dynatrace.
+  + `environmentUrl` указывает URL-адрес вашей среды мониторинга Dynatrace.
   + `apiToken` указывает токен доступа с областью видимости **PaaS integration - Installer download**. Чтобы узнать, как сгенерировать токен, см. [Создание токена доступа](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Описание концепции токена доступа и его областей видимости.").
   + `agentVersion` указывает версию модуля GraalVM Native Image. Если не задано, используется последняя версия модуля.
 * `agentZip` задаёт абсолютный или относительный путь к вручную загруженному ZIP-файлу.

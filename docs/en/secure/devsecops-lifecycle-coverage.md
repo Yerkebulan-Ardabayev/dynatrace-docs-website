@@ -33,7 +33,7 @@ See below for the [Dynatrace](#dt-requirements) and [Snyk](#workflow) requiremen
 
 * Dynatrace version 1.272+
 * OneAgent version 1.239+
-* [Set up Dynatrace Runtime Vulnerability Analytics](application-security/vulnerability-analytics.md "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
+* Set up Dynatrace Runtime Vulnerability Analytics
 * Make sure that an **External request** to Snyk is allowed.
 
   Show me how
@@ -50,7 +50,7 @@ See below for the [Dynatrace](#dt-requirements) and [Snyk](#workflow) requiremen
   2. Select the **Technical Information** tab.
   3. Check the **User Permissions** section for a list of all the permissions you need to include in the policies bound to user groups that are allowed to use ![DevSecOps](https://dt-cdn.net/images/dev-sec-ops-logo-c5208e654c.svg "DevSecOps") **DevSecOps Lifecycle Coverage with Snyk**.
 
-  For more information, see [Manage user permissions with IAM policies](../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies") and [Workflow authorization settings](../analyze-explore-automate/workflows/running.md "Run and monitor workflows created in Dynatrace Workflows.").
+  For more information, see Manage user permissions with IAM policies and Workflow authorization settings.
 
 ### Snyk requirements
 
@@ -223,7 +223,7 @@ A running container is considered covered if all its processes are monitored by 
 * Make sure all [Dynatrace requirements](#dt-requirements) are met.
 * [Enable Third-party Vulnerability Analytics](application-security/vulnerability-analytics.md#enable-tpva "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") globally.
 * Enable all the [supported technologies](application-security/vulnerability-analytics.md#tech-tpv "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") that you want Dynatrace to cover.
-* Make sure that your [monitoring rules](application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv.md "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.") don't exclude any entities.
+* Make sure that your monitoring rules don't exclude any entities.
 
 ## FAQ
 

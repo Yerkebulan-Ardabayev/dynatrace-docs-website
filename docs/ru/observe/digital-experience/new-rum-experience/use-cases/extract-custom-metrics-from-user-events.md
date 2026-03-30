@@ -12,7 +12,7 @@ OpenPipeline упрощает преобразование [пользовате
 
 В этом руководстве мы используем [демонстрационное приложение Dynatrace easyTravel](https://dt-url.net/rj034fg) в качестве примера. easyTravel отображает доступные маршруты, и когда пользователь выбирает маршрут, отображаются его детали.
 
-Приложение инструментировано JavaScript-кодом для RUM, и собранные данные сопоставляются с [фронтендом](../concepts/frontends.md "Узнайте о концепции фронтенда в новом опыте RUM.") с именем `easytravel`. Каждый раз, когда пользователь переходит с одной страницы на другую — например, с главной страницы на конкретный маршрут — фиксируется [событие навигации](../web-frontends/concepts/pages-views-and-navigations.md#navigations "Узнайте, как определяются страницы, представления и навигации для веб-фронтендов в новом опыте RUM.").
+Приложение инструментировано JavaScript-кодом для RUM, и собранные данные сопоставляются с фронтендом с именем `easytravel`. Каждый раз, когда пользователь переходит с одной страницы на другую — например, с главной страницы на конкретный маршрут — фиксируется [событие навигации](../web-frontends/concepts/pages-views-and-navigations.md#navigations "Узнайте, как определяются страницы, представления и навигации для веб-фронтендов в новом опыте RUM.").
 
 События навигации предоставляют информацию, необходимую для анализа количества просмотров по маршрутам. Каждый маршрут имеет уникальный ID. При мягкой навигации к конкретному маршруту путь URL обновляется и включает ID маршрута — например, `/easytravel/journeys/24859438`. Это значение фиксируется в поле `view.url.path` события навигации.
 
@@ -49,12 +49,12 @@ not matchesPhrase(view.url.path, "*book")
 
 Необходимые знания
 
-* [Dynatrace Query Language](../../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
-* [Обработка в OpenPipeline](../../../../platform/openpipeline/concepts/processing.md "Изучите основные концепции обработки данных в Dynatrace OpenPipeline.")
+* Dynatrace Query Language
+* Обработка в OpenPipeline
 
 Предварительные условия
 
-Убедитесь, что у вас есть разрешения, описанные в разделе [Разрешения нового опыта RUM](../permissions.md "Узнайте, какие разрешения необходимы для настройки нового опыта RUM.").
+Убедитесь, что у вас есть разрешения, описанные в разделе Разрешения нового опыта RUM.
 
 ## Инструкция
 
@@ -129,5 +129,5 @@ timeseries count = sum(easytravel.journey_view_count), by: {journey_id}, interva
 
 ## Связанные темы
 
-* [Dynatrace Query Language](../../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
-* [Обработка в OpenPipeline](../../../../platform/openpipeline/concepts/processing.md "Изучите основные концепции обработки данных в Dynatrace OpenPipeline.")
+* Dynatrace Query Language
+* Обработка в OpenPipeline

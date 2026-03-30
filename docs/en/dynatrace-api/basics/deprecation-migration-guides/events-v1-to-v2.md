@@ -10,7 +10,7 @@ scraped: 2026-03-06T21:31:20.594704
 * Reference
 * Published Nov 25, 2022
 
-[Events API v1](../../environment-api/events-v1.md "Find out what you can do with the Dynatrace Events API.") has been deprecated with [Dynatrace version 1.243](../../../whats-new/dynatrace-api/sprint-243.md "Changelog for Dynatrace API version 1.243"). Its replacement is [Events API v2](../../environment-api/events-v2.md "Find out what you can do with the Dynatrace Events API v2."). We recommend that you migrate to the new API at your earliest convenience.
+Events API v1 has been deprecated with Dynatrace version 1.243. Its replacement is Events API v2. We recommend that you migrate to the new API at your earliest convenience.
 
 The migration affects endpoint URLs, query parameters, and response/request body parameters, as well as the scope of the token for request authentication.
 
@@ -18,7 +18,7 @@ The migration affects endpoint URLs, query parameters, and response/request body
 
 Events API v2 offers you the following new features:
 
-* The [entity selector](../../environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") helps you to filter events in read requests and ingest events that affect multiple entities.
+* The entity selector helps you to filter events in read requests and ingest events that affect multiple entities.
 * Improved event filtering via an event selector.
 * Unified timeframe selector.
 * Event properties endpoints.
@@ -26,7 +26,7 @@ Events API v2 offers you the following new features:
 
 ## Licensing
 
-The [ingestion](../../environment-api/events-v2/post-event.md "Ingests an event via the Dynatrace API.") of custom events consumes [Davis Data Units (DDUs)](../../../license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") from the events pool.
+The ingestion of custom events consumes Davis Data Units (DDUs).") from the events pool.
 
 ## Base URL
 
@@ -42,7 +42,7 @@ The [ingestion](../../environment-api/events-v2/post-event.md "Ingests an event 
 
 ## Parameters
 
-To learn about new query/body parameters, see the documentation of individual requests in [Events API v2](../../environment-api/events-v2.md "Find out what you can do with the Dynatrace Events API v2.").
+To learn about new query/body parameters, see the documentation of individual requests in Events API v2.
 
 ## Examples
 
@@ -838,5 +838,5 @@ POST https://mySampleEnv.live.dynatrace.com/api/v1/events
 
 ## Related topics
 
-* [Events API v2](../../environment-api/events-v2.md "Find out what you can do with the Dynatrace Events API v2.")
-* [Events API v1](../../environment-api/events-v1.md "Find out what you can do with the Dynatrace Events API.")
+* Events API v2
+* Events API v1

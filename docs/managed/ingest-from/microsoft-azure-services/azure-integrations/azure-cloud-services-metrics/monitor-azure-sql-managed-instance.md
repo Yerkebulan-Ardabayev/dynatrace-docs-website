@@ -21,9 +21,9 @@ On the Azure SQL Managed Instance overview page you get insights into various as
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see [Enable service monitoring](../../../../../ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring.md "Enable Azure monitoring in Dynatrace.").
+To learn how to enable service monitoring, see Enable service monitoring.
 
-Optionally, for OneAgent integration, see [how database activity is monitored](../../../../../observe/infrastructure-observability/databases/database-services-classic/how-database-activity-is-monitored.md "Learn about automatic detection and monitoring of database services in your application environment.").
+Optionally, for OneAgent integration, see how database activity is monitored.
 
 ## View service metrics
 

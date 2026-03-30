@@ -18,8 +18,8 @@ The New Real User Monitoring (RUM) Experience brings RUM capabilities to the lat
 * Investigate individual user journeys and understand user behavior patterns through [user sessions](new-rum-experience/concepts/data-model.md#user-sessions "Get familiar with the data model at the heart of the New RUM Experience.").
 * Early Access Automatically capture [user interactions](new-rum-experience/concepts/data-model.md#user-interactions "Get familiar with the data model at the heart of the New RUM Experience.") such as clicks, taps, scrolls, and inputs to gain insights into user behavior.
 * Leverage platform apps such as ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, and preinstalled [RUM-specific apps](#new-rum-experience-apps).
-* Use [OpenPipeline](../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to customize ingested user events and sessions, and extract data and metrics.
-* Explore and analyze user events and sessions using the [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.").
+* Use OpenPipeline to customize ingested user events and sessions, and extract data and metrics.
+* Explore and analyze user events and sessions using the Dynatrace Query Language.
 
 ## Already using RUM Classic?
 
@@ -51,27 +51,27 @@ Error Inspector](new-rum-experience/error-inspector.md)
 
 ## New RUM Experience overview
 
-[#### Concepts of the New RUM Experience
+#### Concepts of the New RUM Experience
 
-Explore the key concepts behind the New RUM Experience.](new-rum-experience/concepts.md "Explore the key concepts behind the New RUM Experience.")[#### Web frontends
+Explore the key concepts behind the New RUM Experience.#### Web frontends
 
-Learn how to configure and use the New RUM Experience for your web frontends.](new-rum-experience/web-frontends.md "Discover the key concepts behind web frontends and learn how to configure them in the New RUM Experience.")[#### Mobile frontends
+Learn how to configure and use the New RUM Experience for your web frontends.#### Mobile frontends
 
-Learn how to configure and use the New RUM Experience for your mobile frontends.](new-rum-experience/mobile-frontends.md "Learn how to configure and use the New RUM Experience for your mobile frontends.")[#### New RUM Experience permissions
+Learn how to configure and use the New RUM Experience for your mobile frontends.#### New RUM Experience permissions
 
-See what permissions you need to set up the New RUM Experience.](new-rum-experience/permissions.md "See what permissions you need to set up the New RUM Experience.")[#### Data privacy
+See what permissions you need to set up the New RUM Experience.#### Data privacy
 
-Ensure that your RUM setup complies with the data privacy regulations of your region.](new-rum-experience/data-privacy.md "Learn how to ensure that your RUM setup complies with the data privacy regulations of your region.")[![Use cases](https://dt-cdn.net/images/icon-use-cases-9ac91e0c53.svg "Use cases")
+Ensure that your RUM setup complies with the data privacy regulations of your region.[![Use cases](https://dt-cdn.net/images/icon-use-cases-9ac91e0c53.svg "Use cases")
 
 #### Use cases
 
-Leverage the New RUM Experience and Dynatrace platform tools for your key use cases.](new-rum-experience/use-cases.md "Learn how the New RUM Experience helps you address your key scenarios.")[#### New RUM Experience metrics
+Leverage the New RUM Experience and Dynatrace platform tools for your key use cases.](new-rum-experience/use-cases.md "Learn how the New RUM Experience helps you address your key scenarios.")#### New RUM Experience metrics
 
-Explore the frontend metrics provided by the New RUM Experience.](../../analyze-explore-automate/metrics/upgrade/rum-metric-migration.md "See how RUM Classic metrics map to their logical equivalents in Grail.")
+Explore the frontend metrics provided by the New RUM Experience.
 
 ## Related topics
 
-* [User events](../../semantic-dictionary/model/rum/user-events.md "User events provide deep visibility and insights into experience, behavior, performance, and errors of your customers and end-users in real-time.")
-* [Grail](../../platform/grail.md "Insights on what and how you can query Dynatrace data.")
-* [OpenPipeline](../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* User events
+* Grail
+* OpenPipeline
+* Dynatrace Query Language

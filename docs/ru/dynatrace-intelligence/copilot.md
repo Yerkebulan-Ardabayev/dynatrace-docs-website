@@ -73,7 +73,7 @@ scraped: 2026-03-06T21:14:58.711515
 
 [Читать справочник](copilot/chat-with-davis-copilot/copilot-conv-starters.md)
 
-Для получения дополнительной информации о том, какие промпты хорошо работают в **Dynatrace Assist**, смотрите [примеры промптов](copilot/chat-with-davis-copilot/dynatrace-assist-prompts.md "Узнайте, какие промпты хорошо работают в Dynatrace Assist.").
+Для получения дополнительной информации о том, какие промпты хорошо работают в **Dynatrace Assist**, смотрите примеры промптов.
 
 ## Векторный поиск по документам
 

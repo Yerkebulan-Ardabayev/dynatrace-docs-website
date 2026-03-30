@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:32:31.355718
 
 Dynatrace automatically captures important metrics for services with no configuration required. You might need additional business or technical metrics that are specific to your application. These metrics can be calculated and derived based on a wide variety of available data within the captured distributed trace. You can also split these metrics by multiple dimensions, for example, a requests attribute or an HTTP method.
 
-[OpenPipeline metric extraction](../../../platform/openpipeline/use-cases/tutorial-system-events.md "Learn how to extract a metric to track system events with OpenPipeline.") now replaces calculated service metrics as the method to create additional service business or technical metrics. To read more about metric extraction, see [Extract metrics from spans and distributed traces](../../../platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans.md "Extract metrics directly from your spans and distributed traces via OpenPipeline.").
+OpenPipeline metric extraction now replaces calculated service metrics as the method to create additional service business or technical metrics. To read more about metric extraction, see Extract metrics from spans and distributed traces.
 If you're an existing customer, you can still use them until we deprecate them. If you're a new customer, you won't be able to create calculated service metrics anymore.
 
 ## Why start using OpenPipeline instead of classic calculated service metrics?
@@ -45,7 +45,7 @@ Limits
 3. Choose the metric source from the **Metric source** list.
 
    * If the source is a request attribute, select the required unit.
-   * Optional To exclude the data contribution of [muted requests](service-detection/service-detection-v1/service-monitoring-mute.md "Mute the monitoring of certain service requests so that you can focus on the performance of requests that affect your customers."), turn on **Ignore muted requests**.
+   * Optional To exclude the data contribution of muted requests, turn on **Ignore muted requests**.
 4. Optional Select the management zone. The new metric will be restricted to data from this zone.
 5. Provide conditions to define which requests are included in the calculation.
 
@@ -56,7 +56,7 @@ Limits
    3. Select the operator of the condition.
    4. If needed, specify the reference value.
 
-      * Classic metric Preview shows the list of services to be included to the custom metric and the estimation of [DDU consumption](../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+      * Classic metric Preview shows the list of services to be included to the custom metric and the estimation of DDU consumption.
 
         Preview only considers management zone and conditions based on service attributes. These attributes are marked with `[Service property]` in the attribute list.
 
@@ -89,7 +89,7 @@ Prior knowledge
 You have two methods to extract the value for a placeholder:
 
 * Delimiter-based. In this case, Dynatrace extracts the value by checking the value of the source against a reference value and specified delimiter kind and position.
-* Regex-based. In this case, Dynatrace uses regular expression extraction. To learn how Dynatrace uses regular expressions, see [Regular expressions in Dynatrace](../../../manage/tags-and-metadata/reference/regular-expressions-in-dynatrace.md "Learn how to use regular expressions in the context of Dynatrace.").
+* Regex-based. In this case, Dynatrace uses regular expression extraction. To learn how Dynatrace uses regular expressions, see Regular expressions in Dynatrace.
 
 ### Extraction method for request attributes
 
@@ -134,5 +134,5 @@ For a complete list of available dimensions see [Built-in Metrics on Grail - Cal
 
 ## Related topics
 
-* [Service metrics API](../../../dynatrace-api/configuration-api/calculated-metrics/service-metrics.md "Manage calculated service metrics via the Dynatrace configuration API.")
-* [Multidimensional analysis](../multidimensional-analysis.md "Configure a multidimensional analysis view and save it as a calculated metric.")
+* Service metrics API
+* Multidimensional analysis

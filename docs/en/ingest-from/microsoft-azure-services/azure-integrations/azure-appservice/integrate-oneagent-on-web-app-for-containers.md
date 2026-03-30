@@ -331,7 +331,7 @@ When an update is available, restart your application to update OneAgent.
 
 Each time you want to leverage a new version of Dynatrace OneAgent, you need to rebuild your local OneAgent code modules and application image. Any newly started pods from this application image will be monitored with the latest version of OneAgent.
 
-If you've specified a default OneAgent installation version for new hosts and applications using [OneAgent update settings](../../../dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux.md "Learn about the different ways to update OneAgent on Linux."), your web apps will be automatically monitored by the defined default version of OneAgent.
+If you've specified a default OneAgent installation version for new hosts and applications using OneAgent update settings, your web apps will be automatically monitored by the defined default version of OneAgent.
 
 ## Uninstall OneAgent
 
@@ -353,5 +353,5 @@ OneAgent may conflict with Azure Application Insights agents already instrumenti
 
 ## Related topics
 
-* [Set up Dynatrace on Microsoft Azure](../../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
-* [OneAgent platform and capability support matrix](../../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* Set up Dynatrace on Microsoft Azure
+* OneAgent platform and capability support matrix

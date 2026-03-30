@@ -15,7 +15,7 @@ This page is an overview of all security controls that are included in the Dynat
 
 ![secure-development-controls-overview](https://dt-cdn.net/images/secure-development-controls-overview-3982-7ad21ab60f.png)
 
-For more information about how Dynatrace secures customer data in production, see [Data security controls](data-security-controls.md "Learn about data security and operational security controls.").
+For more information about how Dynatrace secures customer data in production, see Data security controls.
 
 ## Threat modeling
 

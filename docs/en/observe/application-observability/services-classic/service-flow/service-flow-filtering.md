@@ -21,7 +21,7 @@ The general **Service flow** filtration procedure looks like this:
 2. Select the service you want to analyze.
 3. On the service overview page, under **Understand dependencies**, select **View service flow**.
 4. Within **Service flow**, select a called service to define the sequence of services you want to analyze.  
-   The [pane on the right](service-flow-metrics.md#side-pane "Learn about the service flow metrics that measure the performance of the service calls that are triggered by each service request in your environment.") directly opens to the **Passing transactions** tab.
+   The pane on the right directly opens to the **Passing transactions** tab.
 5. To create a filter for the selected service sequence, do one of the following:
 
    * Select **Filter service flow** in the top tile.
@@ -70,7 +70,7 @@ Each filter can contain multiple call sequences. This means that you can create 
 To add the new sequences to the existing filter
 
 1. While your current filter is still active, select an additional call sequence in **Service flow**.
-2. In the **Passing transactions** tab of the [pane on the right](service-flow-metrics.md#side-pane "Learn about the service flow metrics that measure the performance of the service calls that are triggered by each service request in your environment."), select **Filter service flow**.
+2. In the **Passing transactions** tab of the pane on the right, select **Filter service flow**.
 
 In the example below, the filter criteria are extended with calls from the `easyTravel Customer Frontend` service that call the `RMI server` service and subsequently call the `easyTravel-Business` database. Now the number of requests analyzed on `easyTravel Customer Frontend` has been reduced to **528**. Also, the `JourneyService` service is now responsible for **39%** of the response time.
 
@@ -103,11 +103,11 @@ Learn more about additional analysis options in topics listed below.
 
 * [Distributed traces](../../distributed-traces/use-cases/segment-request.md#pp-analysis "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.")  
   Analyze the detailed method-level chain of calls.
-* [Analyze backtrace](../service-backtrace.md "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.")  
+* Analyze backtrace  
   Explore the sequence of service calls that led up to the specific service request.
-* [View response time](../service-response-time-hotspots.md "Identify the activities that consume the most response time for each service.")  
+* View response time  
   View how the response time is distributed along different functions of the service (for example, database usage and code execution)
-* [Analyze outliers](../response-time-distribution-and-outlier-analysis.md "Gain insights into the distribution of response times across all requests, including those that are either unusually high or unusually low.")  
+* Analyze outliers  
   View the response time distribution of requests to the service within a specific timeframe.
 
 ## Related topics

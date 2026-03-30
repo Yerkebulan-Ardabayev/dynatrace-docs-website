@@ -27,7 +27,7 @@ To access Account Management directly from your browser address line, go to [htt
 
 ### Permissions
 
-For information on the permissions needed to access Account Management, see [Account Management permissions](/managed/manage/identity-access-management/permission-management/account-management-permissions "Dynatrace permissions required to access Account Management").
+For information on the permissions needed to access Account Management, see Account Management permissions.
 
 ## Top-level navigation
 
@@ -52,7 +52,7 @@ Use the **My profile** tab to update your user profile and notification options.
 
 * **My profile**âinformation about you, such as your name, job title, and location.
 
-  The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports "Learn how to subscribe to reports generated from Dynatrace dashboards.").
+  The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for dashboard subscriptions in Dashboards Classic.
 * **Environment notifications**âlists environments for which you can enable email-based notification for outages.
 
 To return to the **My profile** tab later, open  in the upper-right corner and select you account name.
@@ -61,7 +61,7 @@ To return to the **My profile** tab later, open  in the upper-right corner and s
 
 ![Account Management: My platform tokens](https://dt-cdn.net/images/account-management-my-platform-tokens-578-bcbc9af2e1.png)
 
-Platform tokens allow to interact with the Dynatrace platform via API for external integrations or scripting. For details, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+Platform tokens allow to interact with the Dynatrace platform via API for external integrations or scripting. For details, see Unavailable in Dynatrace Managed.
 
 To return to the **My platform tokens** tab later, open  in the upper-right corner and select **Platform tokens**.
 
@@ -112,7 +112,7 @@ For Dynatrace SaaS customers, and for Dynatrace Platform Subscription deployment
 * Users and groups with SCIM in Dynatrace SaaS
 * API OAuth tokens for the Account Management API
 
-IAM for Dynatrace Managed deployments is managed within each cluster. For details, see [User groups, permissions, and policies](/managed/manage/identity-access-management/user-and-group-management/user-groups-and-permissions "Learn about the supported permissions and policies, how you can assign them to groups, and how you can manage your users and groups.").
+IAM for Dynatrace Managed deployments is managed within each cluster. For details, see User groups, permissions, and policies.
 
 #### People
 
@@ -146,7 +146,7 @@ Use **Identity & access management** > **OAuth clients** to configure and manage
 
 The **Lens** feature of Account Management provides you with insights into platform adoption and health, helping you to understand how Dynatrace is used within your organization and recommend areas for optimization.
 
-For details on Lens, see [Lens](/managed/manage/account-management/lens "Get insights Dynatrace adoption and health.").
+For details on Lens, see Lens.
 
 #### Adoption
 
@@ -158,7 +158,7 @@ The **Lens** > **Adoption** page gives you insight into platform adoption and he
 * How many synthetic tests are running
 * How many problem notification integrations are defined
 
-For details, see [Adoption](/managed/manage/account-management/lens#adoption "Get insights Dynatrace adoption and health.").
+For details, see Adoption.
 
 #### Environments
 
@@ -170,13 +170,13 @@ For details, see [Adoption](/managed/manage/account-management/lens#adoption "Ge
 * A summary of how many public and private synthetic tests have been running across your environments.
 * A high-level summary of how many API tokens are defined, how many problem notification integrations are defined, how many PaaS integrations are in use, and how many session exports are defined.
 
-For details, see [Environments](/managed/manage/account-management/lens#environments "Get insights Dynatrace adoption and health.").
+For details, see Environments.
 
 ### Settings
 
 Use **Settings** to specify general account information.
 
-For details, see [Settings](/managed/manage/account-management/settings "Configure account contact, billing, and shipping information.").
+For details, see Settings.
 
 ### Contact information
 
@@ -186,7 +186,7 @@ Use **Settings** > **Contact information** to specify account contact, billing, 
 
 Use **Settings** > **Environments** to list environments and, with **Action** > **Edit environment**, change the selected environment's name or time zone.
 
-The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports "Learn how to subscribe to reports generated from Dynatrace dashboards.").
+The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for dashboard subscriptions in Dashboards Classic.
 
 ## Back to Account Settings
 

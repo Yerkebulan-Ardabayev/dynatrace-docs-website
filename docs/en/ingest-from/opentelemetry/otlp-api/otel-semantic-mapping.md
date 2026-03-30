@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:35:37.469462
 * 2-min read
 * Published Jan 08, 2026
 
-Dynatrace automatically maps OpenTelemetry semantic conventions to the [Dynatrace Semantic Dictionary](../../../semantic-dictionary.md "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.").
+Dynatrace automatically maps OpenTelemetry semantic conventions to the Dynatrace Semantic Dictionary.
 
 This mapping ensures consistent data interpretation across your observability stack and enables Dynatrace apps, analytics, and visualization features to work with OpenTelemetry instrumentation.
 

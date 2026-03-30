@@ -8,11 +8,11 @@ Dynatrace версии 1.230+
 
 Данный раздел относится к метрикам сервисов Google Cloud, доступным при использовании интеграции Google Cloud версии 1.0.
 
-* Метрики сервисов Google Cloud, доступные в более ранних версиях интеграции Google Cloud, см. в разделе [Метрики поддерживаемых сервисов Google Cloud (устаревшая версия)](../legacy/gcp-supported-service-metrics-legacy.md "Supported GCP service metrics, metrics configuration, DDU consumption, and preset dashboard availability").
+* Метрики сервисов Google Cloud, доступные в более ранних версиях интеграции Google Cloud, см. в разделе Метрики поддерживаемых сервисов Google Cloud (устаревшая версия).
 
 ## Предварительные требования
 
-[Развёртывание интеграции Dynatrace](gcp-guide/deploy-k8.md "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+Развёртывание интеграции Dynatrace
 
 ## Поддерживаемые сервисы для метрик
 
@@ -37,12 +37,12 @@ Dynatrace версии 1.230+
 
 ### Приём метрик
 
-Все облачные сервисы потребляют DDU. Объём потребления DDU на экземпляр сервиса зависит от количества отслеживаемых метрик и их измерений (каждое измерение метрики приводит к приёму 1 точки данных; 1 точка данных потребляет 0,001 DDU). Подробнее см. в разделе [Расширение Dynatrace (единицы данных Davis)](../../../license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+Все облачные сервисы потребляют DDU. Объём потребления DDU на экземпляр сервиса зависит от количества отслеживаемых метрик и их измерений (каждое измерение метрики приводит к приёму 1 точки данных; 1 точка данных потребляет 0,001 DDU). Подробнее см. в разделе Расширение Dynatrace (единицы данных Davis).").
 
 ### Приём журналов
 
-Потребление DDU распространяется на облачный Log Monitoring. Подробнее см. в разделе [DDU для Log Monitoring](../../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.").
+Потребление DDU распространяется на облачный Log Monitoring. Подробнее см. в разделе DDU для Log Monitoring.
 
 ## Связанные темы
 
-* [Интеграции Google Cloud](../gcp-integrations.md "Set up and configure Dynatrace on Google Cloud.")
+* Интеграции Google Cloud

@@ -30,46 +30,46 @@ Dynatrace is an all-in-one platform that's purpose-built for a wide range of use
 
 ![Dynatrace platform](https://dt-cdn.net/images/dynatrace-luminous-wave-marketecture-light-oct2025-3840-b37e81c38a.png)
 
-* [**Infrastructure Observability**](../observe/infrastructure-observability.md "The application infrastructure, including cloud and container platforms, that Dynatrace can monitor")
+* **Infrastructure Observability**
 
   Get automatic and intelligent infrastructure monitoring and observability across hybrid and cloud environments, with precise AI-powered answers.
-* [**Application Observability**](../observe/application-observability.md "Get familiar with application observability capabilities in Dynatrace.")
+* **Application Observability**
 
   Leverage best-in-class application performance monitoring (APM) to ensure optimal service performance and SLOs, innovate faster, collaborate more efficiently, and deliver more with less.
-* [**Digital Experience**](../observe/digital-experience.md "Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.")
+* **Digital Experience**
 
   Deliver flawless digital experiences and drive business results with AI-driven, automated, frontend-to-backend digital experience monitoring.
 
-* [**AI Observability**](../observe/dynatrace-for-ai-observability.md "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more.")
+* **AI Observability** models and AI SaaS services, and much more.")
 
   Monitor, optimize, and secure Generative AI applications, LLMs, and agentic workflows â improving performance, explainability, and compliance.
 
-* [**Log Analytics**](../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
+* **Log Analytics**
 
   Make smarter, faster decisions when troubleshooting and measuring the health of your application environments â all while eliminating the costly overhead of ingestion and management.
 
-* [**Application Security**](../secure/application-security.md "Access the Dynatrace Application Security functionalities.")
+* **Application Security**
 
   Get continuous application security posture insights and attack protection.
 
-* [**Threat Observability**](../secure/threat-observability.md "Quickly detect, investigate, and respond to threats with intelligent automation.")
+* **Threat Observability**
 
   Quickly detect, investigate, and respond to threats with intelligent automation.
 
-* [**Software Delivery**](../platform/automationengine.md "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale.")
+* **Software Delivery**
 
   Accelerate digital transformation with simple yet powerful automations driven by observability and security insights.
-* [**Business Observability**](../observe/business-observability.md "Basic concepts, setup and configuration, and use cases for Dynatrace Business Observability")
+* **Business Observability**
 
   Simplify critical, real-time business decisions with precision, speed, and context.
 
 * **Custom Solutions**
 
-  + [**Extend Dynatrace**](../ingest-from/extend-dynatrace.md "Learn what extension mechanisms are offered by Dynatrace.")
+  + **Extend Dynatrace**
 
     Dynatrace is open, extensible, and can easily integrate with all major cloud platforms and solutions.
 
-  + [**Dynatrace Hub**](../manage/hub.md "See the information about Dynatrace Hub.")
+  + **Dynatrace Hub**
 
     Unlock the full potential of Dynatrace by finding, activating, and running apps and extensions that address your specific observability needs. Dynatrace Hub is the central place to explore and activate all Dynatrace capabilities.
   + [**Dynatrace Developer**ï»¿](https://dt-url.net/meg36md)
@@ -88,9 +88,9 @@ Create and share custom apps that leverage insights from all your observability,
 
 ### AutomationEngine
 
-Accelerate digital transformation with simple yet powerful automations driven by observability and security insights.](../platform/automationengine.md "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale.")[### Dynatrace Intelligence
+Accelerate digital transformation with simple yet powerful automations driven by observability and security insights.](../platform/automationengine.md "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale.")### Dynatrace Intelligence
 
-Dynatrace Intelligence uniquely combines predictive AI, causal AI, and generative AI for observability, security, and business use cases.](../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.")[![Grail](https://cdn.bfldr.com/B686QPH3/at/kc3c7k476pbx2pb8cphzktf/Grail.svg?auto=webp&width=72&height=72 "Grail")
+Dynatrace Intelligence uniquely combines predictive AI, causal AI, and generative AI for observability, security, and business use cases.[![Grail](https://cdn.bfldr.com/B686QPH3/at/kc3c7k476pbx2pb8cphzktf/Grail.svg?auto=webp&width=72&height=72 "Grail")
 
 ### Grail
 

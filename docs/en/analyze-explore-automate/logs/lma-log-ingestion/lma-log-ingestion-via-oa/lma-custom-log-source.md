@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:20:04.360187
 * 6-min read
 * Updated on Jul 07, 2025
 
-Custom log source configuration enables you to manually add log sources that have not been autodetected. If you want to ingest them, you still need to configure it using the [log ingest configuration](lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.") The use cases when you need to use custom log sources include:
+Custom log source configuration enables you to manually add log sources that have not been autodetected. If you want to ingest them, you still need to configure it using the log ingest configuration The use cases when you need to use custom log sources include:
 
 * Autodiscovery might not identify a log source if a log file is not kept open for writing during a process.
 * It might also fail to find log sources that are not part of any processes or are part of short-lived processes.
@@ -20,11 +20,11 @@ Custom log source configuration enables you to manually add log sources that hav
 The entire process consists of two parts:
 
 1. Source definition (custom log source configuration), which is described on this page.
-2. Log acquisition (adding logs to storage), which is described on [Log ingest rules](lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.").
+2. Log acquisition (adding logs to storage), which is described on Log ingest rules.
 
 If you need to store your custom logs, you need to complete both steps.
 
-Each custom log source path you add needs to be validated by OneAgent and abide by its security rules. See [Security rules](lma-security-rules.md "Configure security rules for custom log sources to ensure data protection.") for configuration files and examples.
+Each custom log source path you add needs to be validated by OneAgent and abide by its security rules. See Security rules for configuration files and examples.
 
 ### Hosts
 

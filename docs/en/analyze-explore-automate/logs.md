@@ -12,9 +12,9 @@ scraped: 2026-03-06T21:10:16.285435
 * 6-min read
 * Updated on Jan 28, 2026
 
-Log Management and Analytics powered by [Grail](../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.") provides a unified approach to unlocking the value of log data in the Dynatrace platform.
+Log Management and Analytics powered by Grail provides a unified approach to unlocking the value of log data in the Dynatrace platform.
 
-Hassle-free management of your log data lets you [ingest](logs/lma-log-ingestion.md "Stream log data to Dynatrace.") petabytes of data without schemas, indexing, or rehydration. All of that data is usable at any time for any analytics task. Thanks to schema on-read and the [Dynatrace Query Language (DQL)](../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."), there's no need to decide what you want to query during data ingestion. Select the retention period for your data that suits your business and compliance needs, whether for debugging or audit purposes.
+Hassle-free management of your log data lets you ingest petabytes of data without schemas, indexing, or rehydration. All of that data is usable at any time for any analytics task. Thanks to schema on-read and the Dynatrace Query Language (DQL), there's no need to decide what you want to query during data ingestion. Select the retention period for your data that suits your business and compliance needs, whether for debugging or audit purposes.
 
 Put Dynatrace Log Management and Analytics into use:
 
@@ -62,7 +62,7 @@ You can analyze the ingested data in ![Logs](https://dt-cdn.net/images/logs-256-
 
 ## Consumption model
 
-The consumption model for Log Management and Analytics is based on three dimensions of data usage (Ingest & Process, Retain, and Query). The unit of measure for consumed data volume is gibibytes (GiB). In addition, **Retain with Included queries** is an available option combining the dimensions of Query and Retention. For details, see [Log Analytics (DPS)](../license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
+The consumption model for Log Management and Analytics is based on three dimensions of data usage (Ingest & Process, Retain, and Query). The unit of measure for consumed data volume is gibibytes (GiB). In addition, **Retain with Included queries** is an available option combining the dimensions of Query and Retention. For details, see Log Analytics (DPS).
 
 ## Availability and previous versions
 
@@ -76,7 +76,7 @@ Make smarter, faster decisions when troubleshooting and measuring the health of 
 
 ## Related topics
 
-* [Upgrade to Log Management and Analytics](log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma.md "Log Management and Analytics is the latest Dynatrace log monitoring solution. We encourage you to upgrade to this latest log monitoring offer.")
-* [Log Management and Analytics use cases](logs/lma-use-cases.md "Explore common Log Management and Analytics use cases in Dynatrace deployments.")
-* [Log on Grail examples](logs/logs-on-grail-examples.md "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.")
-* [Dynatrace Query Language](../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* Upgrade to Log Management and Analytics
+* Log Management and Analytics use cases
+* Log on Grail examples
+* Dynatrace Query Language

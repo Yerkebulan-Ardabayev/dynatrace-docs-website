@@ -26,7 +26,7 @@ scraped: 2026-03-05T21:37:10.170372
 :   Вычислительные сервисы, предоставляемые сторонним провайдером. Dynatrace может быть лицензирован через публичный облачный сервис.
 
 Среда Dynatrace
-:   [Среда Dynatrace](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") — это место, где выполняется весь анализ производительности Dynatrace. Среды имеют уникальный идентификатор в формате `abc12345`.
+:   Среда Dynatrace — это место, где выполняется весь анализ производительности Dynatrace. Среды имеют уникальный идентификатор в формате `abc12345`.
 
 ## Предварительные требования
 
@@ -72,7 +72,7 @@ scraped: 2026-03-05T21:37:10.170372
 Информация о подписке в **Account Management** отразит полностью оплаченную новую лицензию в течение трех дней.
 В это время вы можете начать использовать среду Dynatrace в соответствии с существующей лицензией учетной записи (если вы связали существующую учетную запись) или с пробной лицензией (если вы создали новую учетную запись).
 
-Выберите **Open Dynatrace**, чтобы начать использовать Dynatrace и [настроить Dynatrace в Amazon Web Services](../../amazon-web-services.md "Set up and configure monitoring for Amazon Web Services.").
+Выберите **Open Dynatrace**, чтобы начать использовать Dynatrace и настроить Dynatrace в Amazon Web Services.
 
 Если у вас еще нет учетной записи Dynatrace, следуйте приведенным ниже шагам, чтобы создать учетную запись и связать её с частным предложением AWS Marketplace.
 
@@ -97,8 +97,8 @@ Dynatrace создает новую учетную запись и среду в
 Информация о подписке в **Account Management** отразит полностью оплаченную новую лицензию в течение трех дней.
 В это время вы можете начать использовать среду Dynatrace в соответствии с существующей лицензией учетной записи (если вы связали существующую учетную запись) или с пробной лицензией (если вы создали новую учетную запись).
 
-Выберите **Open Dynatrace**, чтобы начать использовать Dynatrace и [настроить Dynatrace в Amazon Web Services](../../amazon-web-services.md "Set up and configure monitoring for Amazon Web Services.").
+Выберите **Open Dynatrace**, чтобы начать использовать Dynatrace и настроить Dynatrace в Amazon Web Services.
 
 ## Связанные темы
 
-* [Знакомство с Dynatrace](../../../discover-dynatrace.md "Discover Dynatrace")
+* Знакомство с Dynatrace

@@ -12,14 +12,14 @@ scraped: 2026-03-06T21:19:59.231616
 * 19-min read
 * Updated on Jul 07, 2025
 
-Dynatrace log ingest configuration allows you to remotely configure installed OneAgents to either include specific log sources for forwarding to Dynatrace or exclude them from upload. While log discovery refers to the [automatic detection](lma-autodiscovery.md "Dynatrace automatically discovers all new log files that meet specific requirements.") of log files so that no additional log source configuration effort is required on your environment, log ingestion involves the process of collecting logs and sending required log sources into Dynatrace.
+Dynatrace log ingest configuration allows you to remotely configure installed OneAgents to either include specific log sources for forwarding to Dynatrace or exclude them from upload. While log discovery refers to the automatic detection of log files so that no additional log source configuration effort is required on your environment, log ingestion involves the process of collecting logs and sending required log sources into Dynatrace.
 
-Log ingest configuration is based on rules that use matchers to target process groups, content, log levels, log paths, and other attributes described in this document. These rules determine which log files are ingested among those automatically detected by OneAgent or defined as [custom log sources](lma-custom-log-source.md "Configure custom log sources to manually add log data sources that have not been autodetected."). Log ingest rules are ordered configurations processed from top to bottom. For higher configuration granularity, log ingest rules can be defined at three scopes: host, host group, and environment, with host scope rules having the highest priority.
+Log ingest configuration is based on rules that use matchers to target process groups, content, log levels, log paths, and other attributes described in this document. These rules determine which log files are ingested among those automatically detected by OneAgent or defined as custom log sources. Log ingest rules are ordered configurations processed from top to bottom. For higher configuration granularity, log ingest rules can be defined at three scopes: host, host group, and environment, with host scope rules having the highest priority.
 
-The log ingest rules are based on the [Settings 2.0](../../../../manage/settings/settings-20.md "Introduction to the Settings 2.0 framework") framework, which provides a unified instrument to control various configurations in Dynatrace via the user interface and API.
-The access to the settings is controlled via [IAM policies](../../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies"). To learn how to configure access policies for Settings 2.0, review the documented [sample policies](../../../../manage/settings/settings-20.md#permissions-and-access "Introduction to the Settings 2.0 framework").
+The log ingest rules are based on the Settings 2.0 framework, which provides a unified instrument to control various configurations in Dynatrace via the user interface and API.
+The access to the settings is controlled via IAM policies. To learn how to configure access policies for Settings 2.0, review the documented [sample policies](../../../../manage/settings/settings-20.md#permissions-and-access "Introduction to the Settings 2.0 framework").
 
-To ingest Kubernetes logs, follow the configuration described in the [Stream Kubernetes logs with Dynatrace Log Module](lma-logs-from-kubernetes.md "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") page.
+To ingest Kubernetes logs, follow the configuration described in the Stream Kubernetes logs with Dynatrace Log Module page.
 
 ## Log ingest rule
 
@@ -54,7 +54,7 @@ OneAgent version 1.309+
 
 5
 
-[Manually or automatically applied tags](../../../../manage/tags-and-metadata/setup/how-to-define-tags.md#automatic "Find out how to define and apply tags manually and automatically.") are not visible to OneAgent.
+Manually or automatically applied tags are not visible to OneAgent.
 
 6
 
@@ -204,7 +204,7 @@ Log ingest rules can be configured for the following scopes:
 To create a log ingest rule using the API:
 
 1. [Create an access token](../../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) permissions.
-2. Use the [GET a schema](../../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The log ingest rules schema identifier (`schemaId`) is `builtin:logmonitoring.log-storage-settings`. Here is an example JSON payload with the log ingest rules:
+2. Use the GET a schema endpoint to learn the JSON format required to post your configuration. The log ingest rules schema identifier (`schemaId`) is `builtin:logmonitoring.log-storage-settings`. Here is an example JSON payload with the log ingest rules:
 
    ```
    [
@@ -293,7 +293,7 @@ To create a log ingest rule using the API:
 
    ]
    ```
-3. Use the [POST an object](../../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
+3. Use the POST an object endpoint to send your configuration.
 
 ## Examples
 
@@ -904,7 +904,7 @@ The rules have to be executed in the order indicated below.
 
 Is the log ingest rules configuration the same as/part of the autodiscovery process?
 
-No. Autodiscovery is a mechanism of OneAgent that detects logs, but it doesn't mean that log files are automatically ingested. It only refers to the automatic identification of log data. To learn more about autodiscovery, see [Log content autodiscovery (Logs Classic)](../../../log-monitoring/acquire-log-data/log-content-auto-discovery-v2.md "Learn about autodiscovery of log content and requirements for autodiscovery to occur.")
+No. Autodiscovery is a mechanism of OneAgent that detects logs, but it doesn't mean that log files are automatically ingested. It only refers to the automatic identification of log data. To learn more about autodiscovery, see Log content autodiscovery (Logs Classic)
 
 Is the order of configuration items important?
 
@@ -925,18 +925,18 @@ Yes. A content matcher narrows down the scope of log events (log entries) accord
 Where is filtering carried out, in Dynatrace and or in OneAgent?
 
 * Filtering (limiting the number of log recoreds ingested according to the criteria set) is carried out in OneAgent.
-* Log ingest characteristics [limits](../../lma-limits.md "Default limits for the latest version of Dynatrace Log Management and Analytics.") (for example, the log events per minute limit or the attribute values limit) is conducted in Dynatrace.
+* Log ingest characteristics limits (for example, the log events per minute limit or the attribute values limit) is conducted in Dynatrace.
 
 Does filtering the content reduce DDU cost and/or network usage?
 
 Yes. Content filtering conducted on OneAgent reduces both DDU costs and network usage. You can calculate the cost and network use reduction by determining your total data consumption and deducting the GB size of data that was filtered out. For details on how DDUs costs are calculated, see:
 
-* [Log Monitoring DDU calculation](../../../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.")
-* [Log Management and analytics powered by Grail DDU calculation](../../../../license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics.md "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.")
+* Log Monitoring DDU calculation
+* Log Management and analytics powered by Grail DDU calculation
 
 Will older OneAgents work with this solution?
 
 OneAgent versions earlier than `1.243` won't send any data.
-If you use a OneAgent version earlier than 1.243 and Dynatrace Cluster version earlier than `1.252`, go to [Log Sources and Storage](lma-add-log-file-sources.md "Learn how to include and exclude log sources for analysis.").
+If you use a OneAgent version earlier than 1.243 and Dynatrace Cluster version earlier than `1.252`, go to Log Sources and Storage.
 
 Starting with OneAgent version `1.249`, you can activate/inactivate your rules by turning on/off the **Active** toggle. To manage your rules effectively, we recommend that you upgrade your OneAgent to version `1.249`. If you have any rules set on the host with OneAgent version earlier than 249, you will not be able to inactivate them, in which case you need to remove such rules by selecting **Delete** on the rule level or via the REST API.

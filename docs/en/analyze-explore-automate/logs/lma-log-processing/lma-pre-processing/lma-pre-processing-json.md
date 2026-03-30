@@ -136,4 +136,4 @@ Unescapingâfor example, removing a forward slashâis skipped when the J
 
 ## Related topics
 
-* [Log processing with OpenPipeline](../lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.")
+* Log processing with OpenPipeline

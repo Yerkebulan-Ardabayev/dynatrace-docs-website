@@ -58,7 +58,7 @@ storage:user.events:read
 
 Read user events from Grail
 
-To read and write SLOs, you need the following [IAM](../../common/manage/identity-access-management.md "Configure users, groups and permissions.") permissions:
+To read and write SLOs, you need the following IAM permissions:
 
 * `ALLOW slo:slos:read, slo:objective-templates:read;`
 * `ALLOW slo:slos:write;`
@@ -73,7 +73,7 @@ Concepts
 
 Use cases
 
-Dynatrace provides support for service-level objectives (SLOs) leveraging Grail. With ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**, you can define and review your service-level objectives utilizing [Dynatrace Query Language (DQL)](../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.").
+Dynatrace provides support for service-level objectives (SLOs) leveraging Grail. With ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**, you can define and review your service-level objectives utilizing Dynatrace Query Language (DQL).
 
 ![SLO management and details view](https://dt-cdn.net/hub/mgmt_3kmKiTU.png)![UI-guided SLO creation wizard](https://dt-cdn.net/hub/wizard2_gDvLrMb.png)![Dynatrace supports dedicated dashboard tiles, where existing SLOs can be visualized and customized to display the most critical KPIs.](https://dt-cdn.net/hub/dashboard_GSOPSku_KlVeOFv.png)
 
@@ -155,7 +155,7 @@ We calculate the remaining error budget of an SLO by taking the difference betwe
 Working with error budgets allows an improved approach to monitoring and ensuring the system's health and serves as a quality gate for new deployments.
 
 Imagine that your availability SLO has 95% as a target over one week, and the current SLO status shows 96%, meaning you have only 1% of your error budget.
-You might want to improve your availability metrics before a new release that might impact availability. For more information, see [Service-level objective templates](service-level-objectives/service-level-objective-templates.md "Explore the out-of-the-box service-level objective templates.").
+You might want to improve your availability metrics before a new release that might impact availability. For more information, see Service-level objective templates.
 
 #### Error budget burn rate
 
@@ -229,7 +229,7 @@ You can use ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalyde
 2. Add the burn rate calculation.
 3. Optional If a burn rate violation event is raised for each contributing service entity or an aggregated one, add one of the DQL queries described above.
 
-Consider that the actor of the custom alert configurations needs to have the [necessary permissions](../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad.md "Learn how to create and edit simple custom alerts in the Anomaly Detection app.").
+Consider that the actor of the custom alert configurations needs to have the necessary permissions.
 
 ### Recommendations for configuring custom alerts for raising burn-rate alerts
 
@@ -247,7 +247,7 @@ We recommend adding the following event properties to the anomaly detection:
 * **slo.name** makes it easy to relate to the corresponding SLO, as the SLO names are unique within Dynatrace.
 * **dt.owner** is a team identifier that allows automatic routing and ticketing to the correct team in case of a burn rate alert event.
 
-After defining the custom alert, an event with the set event properties is raised. This event is automatically considered in case of detected problems via Dynatrace Intelligence. Furthermore, the events can be used as a trigger for [workflows](../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), such as automated and targeted notifications and ticketing.
+After defining the custom alert, an event with the set event properties is raised. This event is automatically considered in case of detected problems via Dynatrace Intelligence. Furthermore, the events can be used as a trigger for workflows, such as automated and targeted notifications and ticketing.
 
 ## Use cases
 
@@ -273,13 +273,13 @@ Go through the following process to learn using the Service-Level Objectives:
 * How-to guide
 * View your service-level objective (SLO) tile details directly in your dashboard.](service-level-objectives/service-level-objective-tile-view.md)[05Permissions for service-level objective (SLO) tiles in a dashboard
 
-* Set up permissions for service-level objective (SLO) tiles in your dashboard.](service-level-objectives/service-level-objective-permissions.md)[06Service-level objective templates
+* Set up permissions for service-level objective (SLO) tiles in your dashboard.](service-level-objectives/service-level-objective-permissions.md)06Service-level objective templates
 
 * Reference
-* Explore the out-of-the-box service-level objective templates.](service-level-objectives/service-level-objective-templates.md)[07Service-level objective examples
+* Explore the out-of-the-box service-level objective templates.07Service-level objective examples
 
 * Reference
-* Explore the out-of-the-box service-level objective definitions by way of examples.](service-level-objectives/service-level-objective-examples.md)[08Upgrade Classic SLOs
+* Explore the out-of-the-box service-level objective definitions by way of examples.[08Upgrade Classic SLOs
 
 * How-to guide
 * Upgrade your Classic service level objective (SLO) to latest SLO](service-level-objectives/service-level-objective-upgrade-classic.md)

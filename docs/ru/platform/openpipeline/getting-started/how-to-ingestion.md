@@ -27,7 +27,7 @@ scraped: 2026-03-06T21:15:55.878660
 Предварительные требования
 
 * Среда Dynatrace SaaS на основе Grail и AppEngine.
-* Лицензия [Dynatrace](../../../license.md "О подписке Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace."), включающая [обзор Events на основе Grail (DPS)](../../../license/capabilities/events.md "Узнайте, как рассчитывается потребление Dynatrace Events на основе Grail по модели Dynatrace Platform Subscription.").
+* Лицензия Dynatrace — модели лицензирования для всех возможностей Dynatrace."), включающая обзор Events на основе Grail (DPS).
 
 ## Шаги
 
@@ -118,9 +118,9 @@ OpenPipeline — это унифицированный компонент при
 3. Отправить запись.
 4. Проверить приём.
 
-Обзор доступных эндпоинтов см. в разделе [Источники приёма в OpenPipeline](../reference/api-ingestion-reference.md "Справочник по источникам приёма и API для областей конфигурации, поддерживаемых в OpenPipeline.").
+Обзор доступных эндпоинтов см. в разделе Источники приёма в OpenPipeline.
 
 ## Связанные темы
 
-* [Поток данных в OpenPipeline](../concepts/data-flow.md "Узнайте, как данные проходят через Dynatrace Platform: от приёма до хранения, через Dynatrace OpenPipeline.")
-* [Источники приёма в OpenPipeline](../reference/api-ingestion-reference.md "Справочник по источникам приёма и API для областей конфигурации, поддерживаемых в OpenPipeline.")
+* Поток данных в OpenPipeline
+* Источники приёма в OpenPipeline

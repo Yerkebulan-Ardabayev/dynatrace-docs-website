@@ -15,16 +15,16 @@ Use Dynatrace Extension framework to extend your application observability into 
 
 ## Prerequisites
 
-Ensure that your system meets the [requirements](../../extensions/mysql-remote-monitoring-v2.md#requirements "Monitor your MySQL instances remotely, collect key KPIs, and slow query details.") for full feature support.
+Ensure that your system meets the requirements for full feature support.
 
 ## Set up the MySQL extension for monitoring
 
-To set up and activate the extension, follow these [detailed activation steps](../../extensions/mysql-remote-monitoring-v2.md#activation-and-setup "Monitor your MySQL instances remotely, collect key KPIs, and slow query details.").
+To set up and activate the extension, follow these detailed activation steps.
 
 ## Feature sets
 
-[Feature sets](../../extensions/mysql-remote-monitoring-v2.md#feature-sets "Monitor your MySQL instances remotely, collect key KPIs, and slow query details.") restrict which metrics are collected when you activate the extension.
+Feature sets restrict which metrics are collected when you activate the extension.
 
 ## FAQ and troubleshooting
 
-For complete details, go to the [FAQ](../../extensions/mysql-remote-monitoring-v2.md#faq "Monitor your MySQL instances remotely, collect key KPIs, and slow query details.") section.
+For complete details, go to the FAQ section.

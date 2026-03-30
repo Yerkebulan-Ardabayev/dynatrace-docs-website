@@ -16,19 +16,19 @@ Dynatrace OneAgent provides full-stack monitoring on Google Compute Engine and G
 
 ## Integrations
 
-[Monitor Google Kubernetes Engine (GKE)](gcp-integrations/google-gke.md "Google GKE")
+Monitor Google Kubernetes Engine (GKE)
 
-[Google Cloud Functions monitoring](gcp-integrations/gcp-functions.md "Set up monitoring for Google Cloud Functions.")
+Google Cloud Functions monitoring
 
-[Monitor Google Cloud Run managed](gcp-integrations/cloudrun.md "Monitor Java application deployed on Google Cloud Run managed.")
+Monitor Google Cloud Run managed
 
-[Monitor Google App Engine](gcp-integrations/google-app-engine.md "Install OneAgent on Google App Engine clusters for application-only monitoring.")
+Monitor Google App Engine
 
-[Monitor Google Compute Engine](gcp-integrations/google-compute-engine.md "Install OneAgent on Google Compute Engine.")
+Monitor Google Compute Engine
 
-[End-to-end guide for monitoring Google Cloud services integrating Operations Suite](gcp-integrations/gcp-guide.md "Other options to set up log and/or metric monitoring for Google Cloud services")
+End-to-end guide for monitoring Google Cloud services integrating Operations Suite
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
+* Set up Dynatrace on Google Cloud
 * [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

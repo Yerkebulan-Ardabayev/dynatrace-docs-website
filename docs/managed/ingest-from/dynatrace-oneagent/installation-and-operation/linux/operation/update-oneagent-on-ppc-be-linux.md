@@ -8,7 +8,7 @@ updated: 2026-02-09
 
 To update an installed OneAgent instance on PPC BE follow the instructions below:
 
-1. Redo all steps of the [initial installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-ppc-be-linux "Learn how to download and install Dynatrace OneAgent on PPC BE Linux.") but install OneAgent to a new directory.
+1. Redo all steps of the initial installation but install OneAgent to a new directory.
 2. Stop all monitored processes.
 3. Rename the current OneAgent installation directory (for example, `/opt/dynatrace/oneagent` to `/opt/dynatrace/oneagent-old`) and use the following command:
 

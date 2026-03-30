@@ -16,11 +16,11 @@ To get you started with managing configurations, this section will guide you thr
 
 ## Prerequisites
 
-* [Install Monaco](installation.md "Download and install Dynatrace Configuration as Code via Monaco.") and make the executable available in your `PATH`.
-* Create a [platform token or OAuth client](monaco-api-support-and-access-handling.md "This is a list of the Monaco API support and access permission handling.") with the correct access permissions.
+* Install Monaco and make the executable available in your `PATH`.
+* Create a platform token or OAuth client with the correct access permissions.
   The correct permissions depend on which APIs you use.
 
-  For more info, see the API documentation or [IAM policy reference](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+  For more info, see the API documentation or IAM policy reference.
 
 In this example, we will make use of the SLO configuration, which requires the following permissions:
 
@@ -412,5 +412,5 @@ Verify that your Dynatrace config has been deleted from your Dynatrace environme
 
 ## Related topics
 
-* [Install Dynatrace Configuration as Code via Monaco](installation.md "Download and install Dynatrace Configuration as Code via Monaco.")
-* [Monaco API support and access permission handling](monaco-api-support-and-access-handling.md "This is a list of the Monaco API support and access permission handling.")
+* Install Dynatrace Configuration as Code via Monaco
+* Monaco API support and access permission handling

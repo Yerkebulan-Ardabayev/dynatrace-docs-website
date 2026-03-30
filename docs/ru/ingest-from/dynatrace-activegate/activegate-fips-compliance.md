@@ -28,7 +28,7 @@ ActiveGate, развёрнутый в режиме совместимости с
 
 1
 
-исключая [модуль Extension Execution Controller](capabilities/routing-monitoring-purpose.md#extn "Узнайте о возможностях маршрутизации и мониторинга ActiveGate.") (аналогично обычному ActiveGate без FIPS).
+исключая модуль Extension Execution Controller (аналогично обычному ActiveGate без FIPS).
 
 2
 
@@ -36,7 +36,7 @@ ActiveGate, развёрнутый в режиме совместимости с
 
 ### Развёртывание ActiveGate на хосте
 
-Режим совместимости с FIPS может быть включён во время установки ActiveGate. Подробности см. в разделе [Настройка установки ActiveGate на Linux](installation/linux/linux-customize-installation-for-activegate.md#fips-compliant-mode "Узнайте о параметрах командной строки, которые можно использовать с ActiveGate на Linux.").
+Режим совместимости с FIPS может быть включён во время установки ActiveGate. Подробности см. в разделе Настройка установки ActiveGate на Linux.
 
 #### Требования
 
@@ -55,11 +55,11 @@ ActiveGate, развёрнутый в режиме совместимости с
 
 #### Реестры контейнеров
 
-Образы ActiveGate, совместимые с FIPS, доступны в наших [поддерживаемых публичных реестрах](../setup-on-k8s/guides/container-registries/use-public-registry.md#supported-public-registries "Использование публичного реестра") с суффиксом тега образа `-fips`.
+Образы ActiveGate, совместимые с FIPS, доступны в наших поддерживаемых публичных реестрах с суффиксом тега образа `-fips`.
 
 Пример: `public.ecr.aws/dynatrace/dynatrace-activegate:1.315.70.20241127-162512-fips`
 
-См. раздел [Настройка DynaKube для использования образов из публичного реестра](../setup-on-k8s/guides/container-registries/use-public-registry.md#configure-dynakube-to-use-images-from-public-registry "Использование публичного реестра") для получения информации о том, как указать Dynatrace Operator использовать образы из публичного реестра.
+См. раздел Настройка DynaKube для использования образов из публичного реестра для получения информации о том, как указать Dynatrace Operator использовать образы из публичного реестра.
 
 ### Проверка режима совместимости с FIPS
 
@@ -81,9 +81,9 @@ ActiveGate, развёрнутый в режиме совместимости с
 
 ### REST API
 
-Чтобы использовать API Dynatrace для проверки того, работает ли конкретный ActiveGate в режиме совместимости с FIPS, используйте [GET an ActiveGate](../../dynatrace-api/environment-api/activegates/activegate-info/get-activegate.md "Просмотр конфигурации указанного ActiveGate через API Dynatrace.") для проверки значения поля `fipsMode`.
+Чтобы использовать API Dynatrace для проверки того, работает ли конкретный ActiveGate в режиме совместимости с FIPS, используйте GET an ActiveGate для проверки значения поля `fipsMode`.
 
-Чтобы использовать API Dynatrace для получения списка всех ActiveGate, работающих в режиме совместимости с FIPS, используйте [GET all ActiveGates](../../dynatrace-api/environment-api/activegates/activegate-info/get-all.md "Список всех ActiveGate, подключённых в данный момент или недавно подключавшихся к среде.") с параметром запроса `fipsMode`.
+Чтобы использовать API Dynatrace для получения списка всех ActiveGate, работающих в режиме совместимости с FIPS, используйте GET all ActiveGates с параметром запроса `fipsMode`.
 
 ### Логи
 
@@ -105,7 +105,7 @@ ActiveGate FIPS mode initialization failed
 
 #### Доступ к логам при развёртывании на хосте
 
-Файлы логов ActiveGate имеют шаблон имени `dynatracegateway.0.<number>.log` и находятся в каталоге логов ActiveGate (см. [Каталоги ActiveGate](configuration/where-can-i-find-activegate-files.md#default-activegate-directories "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux.")).
+Файлы логов ActiveGate имеют шаблон имени `dynatracegateway.0.<number>.log` и находятся в каталоге логов ActiveGate (см. Каталоги ActiveGate).
 
 #### Доступ к логам при контейнеризированном развёртывании
 

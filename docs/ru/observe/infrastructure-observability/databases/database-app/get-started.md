@@ -16,17 +16,17 @@ scraped: 2026-03-06T21:24:14.737474
 
 Ознакомьтесь с доступными SQL-расширениями ниже, чтобы узнать, как настроить каждое из них для мониторинга баз данных. Эти расширения обеспечивают метрики производительности, аналитику запросов и пользовательский SQL-мониторинг без необходимости установки агентов на хостах баз данных. Чтобы начать мониторинг экземпляров баз данных, следуйте шагам активации и настройки для каждого расширения.
 
-[### Oracle Database
+### Oracle Database
 
-Мониторинг экземпляров Oracle Database с метриками производительности и аналитикой запросов.](get-started/oracle.md "Как настроить мониторинг баз данных Oracle в Dynatrace.")[![Microsoft SQL Server](https://dt-cdn.net/images/techn-icon-microsoft-sqlserver-60740bd3fa.svg "Microsoft SQL Server")
+Мониторинг экземпляров Oracle Database с метриками производительности и аналитикой запросов.[![Microsoft SQL Server](https://dt-cdn.net/images/techn-icon-microsoft-sqlserver-60740bd3fa.svg "Microsoft SQL Server")
 
 ### Microsoft SQL Server Database
 
-Мониторинг экземпляров Microsoft SQL Server Database с метриками производительности и аналитикой запросов.](get-started/microsoft-sql.md "Как настроить мониторинг баз данных Microsoft SQL в Dynatrace.")[### PostgreSQL
+Мониторинг экземпляров Microsoft SQL Server Database с метриками производительности и аналитикой запросов.](get-started/microsoft-sql.md "Как настроить мониторинг баз данных Microsoft SQL в Dynatrace.")### PostgreSQL
 
-Мониторинг экземпляров PostgreSQL с метриками производительности и аналитикой запросов.](get-started/postgres.md "Как настроить мониторинг баз данных PostgreSQL в Dynatrace.")[### MySQL
+Мониторинг экземпляров PostgreSQL с метриками производительности и аналитикой запросов.### MySQL
 
-Мониторинг экземпляров MySQL с метриками производительности и аналитикой запросов.](get-started/mysql.md "Как настроить мониторинг баз данных MySQL в Dynatrace.")[![Snowflake](https://dt-cdn.net/images/snowflake-for-workflows-256-3d9ba2057b.png "Snowflake")
+Мониторинг экземпляров MySQL с метриками производительности и аналитикой запросов.[![Snowflake](https://dt-cdn.net/images/snowflake-for-workflows-256-3d9ba2057b.png "Snowflake")
 
 ### Snowflake
 

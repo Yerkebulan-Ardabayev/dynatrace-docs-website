@@ -10,7 +10,7 @@ scraped: 2026-03-04T21:35:27.635545
 
 * Создайте [PaaS-токен](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.").
 * Кластер ECS с **контейнерными экземплярами на базе Linux**.
-* Ознакомьтесь со списком [поддерживаемых приложений и версий](../../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+* Ознакомьтесь со списком поддерживаемых приложений и версий.
 * Создайте IAM-роль `ecsinstanceRole` в консоли ECS.
 
 ## Развёртывание OneAgent как сервиса-демона
@@ -47,9 +47,9 @@ scraped: 2026-03-04T21:35:27.635545
    Если вы подключаетесь через ActiveGate, вы можете пропустить проверку сертификата, добавив ключ `ONEAGENT_INSTALLER_SKIP_CERT_CHECK` со значением `true`.
 6. Необязательно: добавьте параметры установщика OneAgent.
 
-   Оставаясь в разделе **Environment variables**, вы можете [настроить установку OneAgent](../../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."), добавив несколько параметров установщика OneAgent в текстовое поле команды. Убедитесь, что каждый параметр отделён пробелом. Например, `--set-app-log-content-access=false --set-network-zone=<your.network.zone>`.
+   Оставаясь в разделе **Environment variables**, вы можете настроить установку OneAgent, добавив несколько параметров установщика OneAgent в текстовое поле команды. Убедитесь, что каждый параметр отделён пробелом. Например, `--set-app-log-content-access=false --set-network-zone=<your.network.zone>`.
 
-   Установите параметр `--set-network-zone=<your.network.zone>`, если хотите настроить сетевые зоны. Дополнительную информацию см. в разделе [сетевые зоны](../../../../manage/network-zones.md "Find out how network zones work in Dynatrace.").
+   Установите параметр `--set-network-zone=<your.network.zone>`, если хотите настроить сетевые зоны. Дополнительную информацию см. в разделе сетевые зоны.
 7. Перейдите в **Storage and logging** и введите следующие значения в **Mount point**:
 
    * **Source volume**: `oneagent`
@@ -86,16 +86,16 @@ scraped: 2026-03-04T21:35:27.635545
 
 ## Последствия для безопасности
 
-Подробности см. в разделе [Последствия для безопасности Docker](../../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#security "Install and update Dynatrace OneAgent as a Docker container.").
+Подробности см. в разделе Последствия для безопасности Docker.
 
 ## Ограничения
 
-Подробности см. в разделе [Ограничения Docker](../../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container.").
+Подробности см. в разделе Ограничения Docker.
 
 ## Потребление мониторинга
 
-Для Elastic Container Service потребление мониторинга основано на единицах хостов. Подробности см. в разделе [Мониторинг приложений и инфраструктуры (Host Units)](../../../../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
+Для Elastic Container Service потребление мониторинга основано на единицах хостов. Подробности см. в разделе Мониторинг приложений и инфраструктуры (Host Units).
 
 ## Связанные темы
 
-* [Матрица поддержки платформ и возможностей OneAgent](../../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* Матрица поддержки платформ и возможностей OneAgent

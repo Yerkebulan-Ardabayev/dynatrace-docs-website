@@ -35,7 +35,7 @@ metric.key,dimensions payload
 
 К предоставленному ключу может быть автоматически добавлен суффикс в зависимости от полезной нагрузки. Подробнее см. [Полезная нагрузка](#payload).
 
-Избегайте секций с неалфавитными символами. При [запросе метрики](../../../../dynatrace-api/environment-api/metric-v2/get-data-points.md "Read data points of one or multiple metrics via Metrics v2 API.") вам потребуется экранировать эти символы в [селекторе метрик](../../../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.").
+Избегайте секций с неалфавитными символами. При запросе метрики вам потребуется экранировать эти символы в селекторе метрик.
 
 ### Измерение (необязательное)
 
@@ -106,7 +106,7 @@ count
 
 ### Метаданные (необязательные)
 
-Вы можете предоставить пользовательские метаданные метрики через протокол загрузки. Протокол загрузки поддерживает только создание метаданных. Если метаданные для одной и той же метрики указаны несколько раз в полезной нагрузке, используется только первое вхождение. Для просмотра или обновления метаданных используйте [Metrics browser](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser.") или Settings API (чтобы узнать, как составить полезную нагрузку API, см. [Set metric metadata](custom-metric-metadata.md#create "Provide metadata for your custom metric.")).
+Вы можете предоставить пользовательские метаданные метрики через протокол загрузки. Протокол загрузки поддерживает только создание метаданных. Если метаданные для одной и той же метрики указаны несколько раз в полезной нагрузке, используется только первое вхождение. Для просмотра или обновления метаданных используйте Metrics browser или Settings API (чтобы узнать, как составить полезную нагрузку API, см. [Set metric metadata](custom-metric-metadata.md#create "Provide metadata for your custom metric.")).
 
 ```
 #metric.key <payload-format> dt.meta.<property>="<value>"
@@ -170,7 +170,7 @@ cpu.temperature,hostname=hostA,cpu=1 gauge,min=17.1,max=17.3,sum=34.4,count=2
 cpu.temperature,dt.entity.host=HOST-4587AE40F95AD90D,cpu=1 gauge,min=17.1,max=17.3,sum=34.4,count=2
 ```
 
-Вам не нужно указывать измерение `dt.entity.host` при использовании локальных методов загрузки через OneAgent, то есть [dynatrace\_ingest](../ingestion-methods/oneagent-pipe.md "Learn how to ingest metrics using local scripting integration.") и [local API](../ingestion-methods/oneagent-metric-api.md "Use the Dynatrace API to retrieve the metrics of monitored entities."), поскольку для этих методов загрузки контекст хоста добавляется автоматически.
+Вам не нужно указывать измерение `dt.entity.host` при использовании локальных методов загрузки через OneAgent, то есть dynatrace\_ingest и local API, поскольку для этих методов загрузки контекст хоста добавляется автоматически.
 
 ### Метрика COUNT
 
@@ -197,4 +197,4 @@ new_user_count,region=WEST count,delta=150
 
 ## Связанные темы
 
-* [Metrics API - POST ingest data points](../../../../dynatrace-api/environment-api/metric-v2/post-ingest-metrics.md "Ingest custom metrics to Dynatrace via Metrics v2 API.")
+* Metrics API - POST ingest data points

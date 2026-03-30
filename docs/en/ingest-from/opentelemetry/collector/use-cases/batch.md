@@ -27,10 +27,10 @@ If you use other processors, make sure the batch processor is configured last in
   + The [Dynatrace Collector](../../collector.md#dt-collector-dist "Learn about the Dynatrace OTel Collector.")
   + The OpenTelemetry [Core](../../collector.md#collector-core "Learn about the Dynatrace OTel Collector.") or [Contrib](../../collector.md#collector-contrib "Learn about the Dynatrace OTel Collector.") distribution
   + A [custom Builder version](../../collector.md#collector-builder "Learn about the Dynatrace OTel Collector.")
-* The [Dynatrace API endpoint URL](../../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported
+* The Dynatrace API endpoint URL to which the data should be exported
 * An [API token](../../otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate)
 
-See [Collector Deployment](../deployment.md "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](../configuration.md "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
+See Collector Deployment and Collector Configuration on how to set up your Collector with the configuration below.
 
 ## Demo configuration
 
@@ -190,7 +190,7 @@ Use the configuration values above as a starting point, but be sure to adapt the
 and comply with the Dynatrace API limits for each signal type ([traces](../../otlp-api/ingest-traces.md#ingestion-limits "Learn how Dynatrace ingests OpenTelemetry traces and what limitations apply."),
 [metrics](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md#limits "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply."), [logs](../../otlp-api/ingest-logs.md#ingestion-limits "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")) to avoid request rejections.
 
-You can use the [ActiveGate self-monitoring metrics](../../../dynatrace-activegate/activegate-sfm-metrics.md#rest "Explore ActiveGate self-monitoring  metrics.")
+You can use the ActiveGate self-monitoring metrics
 to troubleshoot rejected requests. For example, you can use: `dsfm:active_gate.rest.request_count` filtering for the `operation`
 dimension (`POST /otlp/v1/<...>` for OTLP ingest) and split by `response_code`. Large requests are rejected with HTTP status code `413`.
 
@@ -211,14 +211,14 @@ Under `service`, we assemble our receiver and exporter objects into pipelines fo
 
 ## Limits and limitations
 
-Data is ingested using the OpenTelemetry protocol (OTLP) via the [Dynatrace OTLP APIs](../../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") and is subject to the API's limits and restrictions.
+Data is ingested using the OpenTelemetry protocol (OTLP) via the Dynatrace OTLP APIs and is subject to the API's limits and restrictions.
 For more information see:
 
-* [OpenTelemetry metrics limitations](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
+* OpenTelemetry metrics limitations
 * [Dynatrace metrics mapping](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md#dynatrace-mapping "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
-* [Ingest OpenTelemetry logs](../../otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")
+* Ingest OpenTelemetry logs
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific fields](../../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
-* [Enrich OTLP requests with Kubernetes data](kubernetes/k8s-enrich.md "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")
+* Enrich ingested data with Dynatrace-specific fields
+* Enrich OTLP requests with Kubernetes data

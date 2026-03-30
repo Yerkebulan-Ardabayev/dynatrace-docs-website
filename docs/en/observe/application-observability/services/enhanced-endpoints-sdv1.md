@@ -12,11 +12,11 @@ scraped: 2026-02-23T21:35:46.464742
 * 7-min read
 * Published Jan 19, 2026
 
-With the **Enhanced endpoints for Service Detection v1 (SDv1)** feature, you can get full endpoint visibility for SDv1 services. When this feature is turned on, all endpoints are shown in [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](services-app.md "Maintain centralized control over service health, performance, and resources with the Services app.") without requiring you to configure [key requests](services-concepts.md#key-requests "Understand application observability, services, and distributed tracing concepts."). This is consistent with the behavior already in place for [SDv2](service-detection/service-detection-v2.md "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.") services.
+With the **Enhanced endpoints for Service Detection v1 (SDv1)** feature, you can get full endpoint visibility for SDv1 services. When this feature is turned on, all endpoints are shown in [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](services-app.md "Maintain centralized control over service health, performance, and resources with the Services app.") without requiring you to configure [key requests](services-concepts.md#key-requests "Understand application observability, services, and distributed tracing concepts."). This is consistent with the behavior already in place for SDv2 services.
 
 The **Enhanced endpoints for SDv1** feature is turned on by default for the environments created in Dynatrace version 1.330+. For existing environments, the feature is available in Dynatrace version 1.333+.
 
-No endpoints are created for [external services](../../../discover-dynatrace/get-started/glossary.md#glossary-externalservice "Get acquainted with Dynatrace terminology.") and for the following SDv1 service types: [Background activity services](service-detection/service-detection-v1/service-types.md#background-activity-services "Understand the different types of services that can be detected and monitored in your environment."), [Queue listener services](service-detection/service-detection-v1/service-types.md#queue-listener-services "Understand the different types of services that can be detected and monitored in your environment."), and Key value store.
+No endpoints are created for external services and for the following SDv1 service types: Background activity services, Queue listener services, and Key value store.
 
 ## Benefits
 
@@ -24,7 +24,7 @@ No endpoints are created for [external services](../../../discover-dynatrace/get
 
   If you don't enable the **Enhanced endpoints for SDv1** feature, the **Endpoints** section in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** either remains empty or only shows key requests.
 * **Improved service insights**: The list of endpoints enhances visibility into the service's behavior, enabling quick identification and resolution of issues.
-* **Dedicated metrics for endpoints**: Detected endpoints feature [dedicated metrics](#metrics), which you can add to [dashboards](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and analyze for long-term endpoint history.
+* **Dedicated metrics for endpoints**: Detected endpoints feature [dedicated metrics](#metrics), which you can add to dashboards and analyze for long-term endpoint history.
 
 ## Endpoint metrics
 
@@ -95,13 +95,13 @@ Enabling the **Enhanced endpoints for SDv1** feature changes some request names 
 
 Pre-existing key requests and request naming rules remain in effect
 
-For all service types, the already existing [key requests](../services-classic/monitor-key-requests.md "Discover how to closely monitor requests that are critical to your business.") and [request naming rules](service-detection/service-detection-v1/set-up-request-naming.md "Adjust request naming and define the operations your services offer.") continue to apply.
+For all service types, the already existing key requests and request naming rules continue to apply.
 
 If you have set up key requests, the associated endpoints have the same names as their key requests. If you have configured request naming rules, they are also applied to the related endpoint names.
 
 ![Diagram - Changes to endpoint names](https://dt-cdn.net/images/enhanced-endpoints-sdv1-changes-to-endpoint-names-6993-563d8740fc.png)
 
-When the **Enhanced endpoints for SDv1** feature is on, some endpoint names for [web request services](service-detection/service-detection-v1/service-types.md#web-request-service "Understand the different types of services that can be detected and monitored in your environment.") and other service types are changed. This depends on whether there's an associated [request naming rule](service-detection/service-detection-v1/set-up-request-naming.md "Adjust request naming and define the operations your services offer.") and whether [volatile placeholder attributes](#volatile-placeholder-attributes) are used in these rules.
+When the **Enhanced endpoints for SDv1** feature is on, some endpoint names for web request services and other service types are changed. This depends on whether there's an associated request naming rule and whether [volatile placeholder attributes](#volatile-placeholder-attributes) are used in these rules.
 
 Endpoint names for web request services
 
@@ -169,7 +169,7 @@ Whether the **Static resources** endpoint is muted or not, you can always go to 
 
 ### Mute static resource requests
 
-To mute static resource requests, follow the steps described in [Mute monitoring of service requests](service-detection/service-detection-v1/service-monitoring-mute.md "Mute the monitoring of certain service requests so that you can focus on the performance of requests that affect your customers.").
+To mute static resource requests, follow the steps described in Mute monitoring of service requests.
 
 After you mute your static resource requests, the **Static resources** endpoint is not displayed in the endpoint list in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, and these requests don't count toward the overall service metrics.
 

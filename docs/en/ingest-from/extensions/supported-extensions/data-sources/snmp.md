@@ -16,7 +16,7 @@ Dynatrace provides you with a framework that you can use to extend your observab
 
 You can also extend your insights into data related to SNMP traps issued in your infrastructure.
 
-First, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=snmp) to see if your device is covered by an existing extension. If it isn't, you can build your own [Dynatrace SNMP extension](../../develop-your-extensions/data-sources/snmp-extensions.md "Learn how to create an SNMP extension using the Extensions framework.") to cover your SNMP device.
+First, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=snmp) to see if your device is covered by an existing extension. If it isn't, you can build your own Dynatrace SNMP extension to cover your SNMP device.
 
 ## Before you begin
 
@@ -114,7 +114,7 @@ When done, select **Activate**.
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](../../manage-extensions.md "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See Manage Extensions to learn how to use it to activate an extension using the Dynatrace API.
 
 ## Custom MIB files
 

@@ -108,7 +108,7 @@ To create your data processing rule
 2. Select **Business Events** > **Pipelines** tab.
 3. To create a new pipeline, select  **Pipeline** and enter the nameâ`Process EasyTrade data`.
 4. In the **Processing** tab, select  **Processor** > **DQL** and name your processor `EasyTrade trade volume`.
-5. Set your rule's **Matching condition** to the following [matcher-specific DQL query](../../platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing."):
+5. Set your rule's **Matching condition** to the following matcher-specific DQL query:
 
    ```
    matchesValue(event.provider, "www.easytrade.com")
@@ -158,7 +158,7 @@ To add your business event metric
 3. Select the previously created `Process EasyTrade data` pipeline.
 4. Go to the **Metric Extraction** tab.
 5. Select  **Processor** > **Value metric** and name it `bizevents.EasyTrade.TradingVolume`.
-6. Add **Matching condition** to your rule by pasting your [matcher-specific DQL query](../../platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing."):
+6. Add **Matching condition** to your rule by pasting your matcher-specific DQL query:
 
    ```
    matchesValue(event.type, "com.easyTrade.quick-buy")
@@ -234,7 +234,7 @@ To see if your data was captured correctly
 
 6. Analyze your data with DQL
 
-At this point, you can start building your [DQL](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") queries to analyze the data loaded, define metrics, and create charts and dashboards.
+At this point, you can start building your DQL queries to analyze the data loaded, define metrics, and create charts and dashboards.
 
 You need to calculate:
 

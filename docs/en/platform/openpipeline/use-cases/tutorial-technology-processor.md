@@ -28,14 +28,14 @@ In this article, you will learn how to parse logs with technology bundle in Open
 
 Prior knowledge
 
-* [Syslog ingestion with ActiveGate](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog.md "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages.")
-* [Dynatrace Query Language](../../grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](../concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* Syslog ingestion with ActiveGate
+* Dynatrace Query Language
+* Processing in OpenPipeline
 
 Prerequisites
 
-* [Latest Dynatrace](../../../platform.md "Dynatrace is an all-in-one platform that's purpose-built for a wide range of use cases.") environment
-* [License Dynatrace](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license with [Log Analytics (DPS)](../../../license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") capabilities
+* Latest Dynatrace environment
+* License Dynatrace, the licensing model for all Dynatrace capabilities.") license with Log Analytics (DPS) capabilities
 
 ## Steps
 
@@ -67,11 +67,11 @@ You successfully configured a new pipeline with a processor to structure syslog 
 
 You successfully configured a new route. All syslog logs are routed to the pipeline for processing. The new route is in the route list.
 
-To learn more about dynamic routing, see [Route data](../getting-started/how-to-routing.md "Learn how to route data to an OpenPipeline processing pipeline.").
+To learn more about dynamic routing, see Route data.
 
 3. Analyze structured logs
 
-Once logs are processed according to the technology bundle, several attributes are extracted from the log content into new fields that match Dynatrace Semantic Dictionary. On top of that, technology bundles extract other attributes from logs so you can build your own [Custom alerts](../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/custom-alerts.md "Learn more about custom alerts and the logic behind raising them."), [Metrics](../../../analyze-explore-automate/metrics.md "Metrics powered by Grail offer a comprehensive solution to manage your metrics data, in integration with logs, spans, and events, providing a unified approach to data analysis."), and [Dashboards](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+Once logs are processed according to the technology bundle, several attributes are extracted from the log content into new fields that match Dynatrace Semantic Dictionary. On top of that, technology bundles extract other attributes from logs so you can build your own Custom alerts, Metrics, and Dashboards.
 
 Log enrichment
 
@@ -215,6 +215,6 @@ You successfully structured syslog logs according to pre-defined processing rule
 
 ## Related topics
 
-* [Semantic Dictionary](../../../semantic-dictionary.md "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.")
-* [Filter logs](../../../secure/investigations/filter-logs.md "Narrow down data to relevant entries in Investigations.")
-* [Notebooks](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+* Semantic Dictionary
+* Filter logs
+* Notebooks

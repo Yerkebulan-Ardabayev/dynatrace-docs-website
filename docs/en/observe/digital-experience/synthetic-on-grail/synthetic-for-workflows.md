@@ -20,7 +20,7 @@ With Synthetic for Workflows, you can choose which monitors you want to execute.
 * Monitors tagged with specific identifiers.
 * Monitors assigned to particular frontend applications.
 
-It is also possible to use [workflow expressions](../../../analyze-explore-automate/workflows/reference.md#expressions "Get to know the workflows expression") to extract the list of monitors and locations from incoming events, which enables you to create reusable workflows.
+It is also possible to use workflow expressions to extract the list of monitors and locations from incoming events, which enables you to create reusable workflows.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
@@ -35,7 +35,7 @@ To use Synthetic for Workflow actions, you first need to install **Synthetic for
 1. In Dynatrace Hub ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub"), search for **Synthetic for Workflows**.
 2. Select **Synthetic for Workflows** and select **Install**.
 
-After installation, `synthetic_for_workflows` actions appear automatically in the **Choose action** section of [**Workflows**](../../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").  
+After installation, `synthetic_for_workflows` actions appear automatically in the **Choose action** section of **Workflows**.  
 Before you begin, ensure that your monitors are properly defined. To create a new monitor, search for **Synthetic** in Dynatrace Hub ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub").
 
 ### Step 2 Grant permissions to Workflows
@@ -100,7 +100,7 @@ In **Select a synthetic location**
 
 1. Select **Visual** or **From event**.
 2. For **Visual** select a synthetic location from the dropdown list.
-3. For **From event**, you can define the list of synthetic monitors you want to execute in the workflow based on the incoming event. To do this, you need to create an [expression](../../../analyze-explore-automate/workflows/reference.md#expressions "Get to know the workflows expression") that enables the workflow to extract this information from the event and execute the selected monitors.
+3. For **From event**, you can define the list of synthetic monitors you want to execute in the workflow based on the incoming event. To do this, you need to create an expression that enables the workflow to extract this information from the event and execute the selected monitors.
 
 If you don't select any location, the monitor will be executed at the location defined in the monitor configuration.
 
@@ -111,7 +111,7 @@ With the **Add metadata** section you can enrich your synthetic result with exec
 To add metadata
 
 1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add")**Add metadata**.
-2. Fill in **Key** and **Value** fields. In these fields, you can use [workflow expressions](../../../analyze-explore-automate/workflows/reference.md#expressions "Get to know the workflows expression").
+2. Fill in **Key** and **Value** fields. In these fields, you can use workflow expressions.
 3. Your metadata saves automatically.
 
 ### Configure monitor execution
@@ -141,7 +141,7 @@ By default, this switch is off.
 
 ## Synthetic results in Grail
 
-Note that Synthetic does **not** generate Grail events for non-DPS tenants. All processing will rely solely on API data. To learn more about DPS licensing, see [License Dynatrace](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+Note that Synthetic does **not** generate Grail events for non-DPS tenants. All processing will rely solely on API data. To learn more about DPS licensing, see License Dynatrace, the licensing model for all Dynatrace capabilities.").
 
 Results from synthetic monitors executed on-demand are stored as events in Grail.
 
@@ -153,7 +153,7 @@ There are three types of events:
 
 ## Integrate Synthetic for Workflows with Site Reliability Guardian
 
-If you want to evaluate objectives based on the results from synthetic monitors, you can integrate [Site Reliability Guardian (SRG)](../../../deliver/site-reliability-guardian.md "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.") as the next action in your workflow.
+If you want to evaluate objectives based on the results from synthetic monitors, you can integrate Site Reliability Guardian (SRG) as the next action in your workflow.
 
 To do this
 
@@ -165,7 +165,7 @@ To do this
 6. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add variable**.
 7. Type in `batchId` in the **Name** field. In the **Value** field, provide the default value. Select the **Add** button to save your changes.
 8. On the right-hand side, fill in the **Guardian name**.
-9. Select the ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add new objective** and provide one of the following [DQL](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") queries.
+9. Select the ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add new objective** and provide one of the following DQL queries.
 
 Note that queries for synthetic events from outside the Synthetic application, such as those from Notebooks, Dashboards, and SRG, are **not** charged.
 
@@ -198,4 +198,4 @@ fetch dt.synthetic.events
 
 ## Related topics
 
-* [Updates to Synthetic attribute names](synthetic-for-workflows/synthetic-event-formats.md "Required updates for Synthetic event attribute names in Workflows.")
+* Updates to Synthetic attribute names

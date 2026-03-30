@@ -14,7 +14,7 @@ scraped: 2026-03-05T21:32:08.754245
 
 The following workflow actions are available for the GitLab Connector ![GitLab for Workflows](https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg "GitLab for Workflows") integration. Each action corresponds to an endpoint of the GitLab Connector API.
 
-For details on creating workflows, refer to [Create workflows in Dynatrace Workflows](../../building.md#create "Create and edit workflows in Dynatrace Workflows.").
+For details on creating workflows, refer to Create workflows in Dynatrace Workflows.
 
 The actions are listed under the following categories:
 
@@ -286,5 +286,5 @@ Returns fields as described in the [Jobs API - Run a jobï»¿](https://dt-url.n
 
 ## Related topics
 
-* [GitLab Connector](../gitlab.md "Integrate Workflows with GitLab.")
-* [Set up GitLab Connector](gitlab-workflows-setup.md "Set up GitLab Connector.")
+* GitLab Connector
+* Set up GitLab Connector

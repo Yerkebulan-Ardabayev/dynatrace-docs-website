@@ -10,12 +10,12 @@ Dynatrace provides an Identity and Access Management (IAM) solution that support
 
 Dynatrace supports most industry standards for authentication and authorization, such as OIDC and OAuth 2.0, as well as SAML and SCIM for user and group federation.
 
-[## Use cases
+## Use cases
 
-Learn how to manage access to Dynatrace using various available layers.](/managed/manage/identity-access-management/use-cases "Access control use cases")[## Identity management
+Learn how to manage access to Dynatrace using various available layers.## Identity management
 
-Manage your Dynatrace users and groups and integrate the authentication using your identity provider (IdP).](/managed/manage/identity-access-management/user-and-group-management "User and group management")[## Access management
+Manage your Dynatrace users and groups and integrate the authentication using your identity provider (IdP).## Access management
 
-Dynatrace lets you manage user permissions based on user account membership in user groups.](/managed/manage/identity-access-management/permission-management "Permission management")[## Tokens and OAuth clients
+Dynatrace lets you manage user permissions based on user account membership in user groups.## Tokens and OAuth clients
 
-Control external access to your Dynatrace monitoring and account management through API tokens and OAuth clients.](/managed/manage/identity-access-management/access-tokens-and-oauth-clients "Tokens and OAuth clients")
+Control external access to your Dynatrace monitoring and account management through API tokens and OAuth clients.

@@ -14,7 +14,7 @@ scraped: 2026-03-05T21:34:10.912555
 
 Dynatrace OneAgent provides extensive monitoring of Elastic Kubernetes Service pods, nodes, and clusters. The OneAgent deployment process is consistent with other distributions. For more information, see [What is Amazon EKS?ï»¿](https://dt-url.net/zn0388b).
 
-For Amazon Elastic Kubernetes Service, monitoring consumption is based on host units. See [Application and Infrastructure Monitoring (Host Units)](../../../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
+For Amazon Elastic Kubernetes Service, monitoring consumption is based on host units. See Application and Infrastructure Monitoring (Host Units) for details.
 
 ## Integration
 

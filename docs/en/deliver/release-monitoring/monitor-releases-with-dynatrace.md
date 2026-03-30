@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:33:50.318161
 * 4-min read
 * Updated on Aug 11, 2025
 
-Once you [configure environment variables for version detection](version-detection-strategies.md "Metadata for version detection in different technologies") and, optionally, [integrate your issue-tracking system and configure dynamic queries](issue-tracking-integration.md "Integrate your issue tracker into Dynatrace to pull statistics for monitored entities."), you can start analyzing data related to each release version of your software.
+Once you configure environment variables for version detection and, optionally, integrate your issue-tracking system and configure dynamic queries, you can start analyzing data related to each release version of your software.
 
 ## List releases
 
@@ -66,10 +66,10 @@ Shows a summary of captured metadata (process group name, version, stage, produc
 * **Throughput** shows how much traffic is routed to the selected release.
 * **Problems** shows the number of open impacted problems related to the process group instance of the release.
 
-  If Dynatrace detects problems in the release, **Problems** is displayed in red. Select it to display the **Problems** page and gather more information. See [Problem overview](../../dynatrace-intelligence/root-cause-analysis/concepts.md "Get acquainted with root cause analysis concepts.") for details.
+  If Dynatrace detects problems in the release, **Problems** is displayed in red. Select it to display the **Problems** page and gather more information. See Problem overview for details.
 * **Third-party vulnerabilities** shows the number of third-party vulnerabilities related to the selected release. This helps you check if, for example, a new release would introduce a known vulnerability and, based on this, decide on its impact on and relevance to your release schedule.
 
-  If Dynatrace detects vulnerabilities in the release, **Third-party vulnerabilities** is displayed in red. Select it to display the **Security** page and gather more information. See [Application Security monitoring](../../secure/application-security.md "Access the Dynatrace Application Security functionalities.") for details.
+  If Dynatrace detects vulnerabilities in the release, **Third-party vulnerabilities** is displayed in red. Select it to display the **Security** page and gather more information. See Application Security monitoring for details.
 
 ### Process details
 

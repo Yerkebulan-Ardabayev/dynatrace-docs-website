@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:31:42.937574
 
 Deprecation notice
 
-On 16 September 2024, Azure Database for MySQL will be retired. Azure introduced a new service, see [Azure Database for MySQL Flexible Servers monitoring](monitor-azure-db-mysql-flexible-servers.md "Monitor Azure DB for Database for MySQL Flexible Servers and view available metrics.").
+On 16 September 2024, Azure Database for MySQL will be retired. Azure introduced a new service, see Azure Database for MySQL Flexible Servers monitoring.
 
 The Azure Database for MySQL overview page serves as a comprehensive overview of your MySQL servers and database instances. From here you can gain full visibility and check if your database is healthy, under-performing, or if there are any failed connections.
 
@@ -25,9 +25,9 @@ The Azure Database for MySQL overview page serves as a comprehensive overview of
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see [Enable service monitoring](../azure-monitoring-guide/azure-enable-service-monitoring.md "Enable Azure monitoring in Dynatrace.").
+To learn how to enable service monitoring, see Enable service monitoring.
 
-Optionally, for OneAgent integration, see [how database activity is monitored](../../../../observe/infrastructure-observability/databases/database-services-classic/how-database-activity-is-monitored.md "Learn about automatic detection and monitoring of database services in your application environment.").
+Optionally, for OneAgent integration, see how database activity is monitored.
 
 ## View service metrics
 
@@ -59,7 +59,7 @@ Hiding a dashboard doesn't affect other users.
 
 ### Set up a management zone
 
-To import a dashboard for Azure Database for MySQL, you need to [set up a management zone](../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Create and assign access rights to management zones.") to limit the entities displayed on the dashboard to those relevant to this service.
+To import a dashboard for Azure Database for MySQL, you need to set up a management zone to limit the entities displayed on the dashboard to those relevant to this service.
 
 When you create a management zone for this dashboard:
 
@@ -73,7 +73,7 @@ Example
 
 ![Azure management zone](https://dt-cdn.net/images/azuredbformysqlmanagementzone-2662-467d58e129.webp)
 
-After you create the management zone, assign it to your dashboard (from the dashboard, select **Edit** > **Settings** > **Default management zone**). For more information, see [Dashboard timeframe and management zone](../../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe.md "Learn about Dynatrace dashboard timeframe and management zone settings.").
+After you create the management zone, assign it to your dashboard (from the dashboard, select **Edit** > **Settings** > **Default management zone**). For more information, see Dashboard timeframe and management zone.
 
 ## Available metrics
 

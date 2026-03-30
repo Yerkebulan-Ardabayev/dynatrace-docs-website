@@ -41,7 +41,7 @@ scraped: 2026-03-06T21:10:37.879847
 Чтобы выяснить, что работает медленно
 
 1. Перейдите в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](services-app.md "Maintain centralized control over service health, performance, and resources with the Services app.") и выберите вкладку **Response Time**.
-2. Примените [сегменты](../../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") и фильтры для фокусировки на нужных сервисах и конечных точках.
+2. Примените сегменты и фильтры для фокусировки на нужных сервисах и конечных точках.
 
    Для анализа отдельного сервиса вы также получаете разбивку вклада с классификацией вызовов по:
 

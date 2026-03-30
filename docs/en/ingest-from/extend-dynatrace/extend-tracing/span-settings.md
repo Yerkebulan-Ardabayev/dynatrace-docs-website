@@ -55,7 +55,7 @@ To configure attribute storage and masking settings for your environment
 
    1. On the **Attribute capturing** page, select **Attribute data masking**.
    2. Select **Add item** to add a new key to the masked attributed list.
-   3. Enter a stored value key and select an option from the **Masking** dropdown list. To learn more about masking options, see [OpenTelemetry traces](../../../manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace.md#otel-traces "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.").
+   3. Enter a stored value key and select an option from the **Masking** dropdown list. To learn more about masking options, see OpenTelemetry traces.
    4. Select **Save changes**.
 
 You can then find the attribute key on the **Distributed traces** page on the [**Summary** tab](../../../observe/application-observability/distributed-traces/use-cases/segment-request.md#summary-tab "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.").
@@ -64,7 +64,7 @@ You can then find the attribute key on the **Distributed traces** page on the [*
 
 All detected OpenTelemetry and OpenTracing spans are captured by default. This means that every detected span is added to distributed traces. This gives code-level visibility along with span attributes, even for technologies not supported by OneAgent out of the box.
 
-You can create [request attributes](../../../observe/application-observability/services/request-attributes.md "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") based on spans to segment the distributed traces.
+You can create request attributes based on spans to segment the distributed traces.
 
 We recommend that you exclude spans for technologies supported out of the box by OneAgent for [Java](../../technology-support.md#java "Find technical details related to Dynatrace support for specific platforms and development frameworks.") and [Go](../../technology-support.md#go "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 

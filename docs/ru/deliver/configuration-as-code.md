@@ -100,14 +100,14 @@ CaC позволяет:
 * Сократите время развертывания, интегрируя CaC для оптимизации процесса подключения приложений через Golden Paths.
 * Внедрите стандарты наблюдаемости и безопасности в вашей среде, интегрируя их в конвейеры CI/CD, например, через образы контейнеров, обеспечивая согласованность на всех этапах.
 * Предоставьте возможности самообслуживания, интегрируя наблюдаемость, автоматизацию и quality gates в ваш SDLC.
-  Дополнительную информацию см. в разделе [Platform Engineering](../discover-dynatrace/get-started/platform-engineering.md "Use observability and security to drive analytics and automation at scale.").
+  Дополнительную информацию см. в разделе Platform Engineering.
 
 ## Инструменты
 
 Для настройки и управления Dynatrace с помощью CaC у вас есть два варианта инструментов:
 
-* [Terraform](configuration-as-code/terraform.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform.") -- стандартный в отрасли программный инструмент CaC.
-* [Monaco](configuration-as-code/monaco.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco.") -- проприетарный CLI-инструмент CaC от Dynatrace.
+* Terraform -- стандартный в отрасли программный инструмент CaC.
+* Monaco -- проприетарный CLI-инструмент CaC от Dynatrace.
 
 Выбор инструмента зависит от стека технологий и требований.
 
@@ -123,6 +123,6 @@ Monaco предоставляет независимое от сторонних
 
 ## Связанные темы
 
-* [Обзор Configuration as Code через Terraform](configuration-as-code/terraform.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform.")
-* [Обзор Configuration as Code через Monaco](configuration-as-code/monaco.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco.")
+* Обзор Configuration as Code через Terraform
+* Обзор Configuration as Code через Monaco
 * [[Блог] Автоматизированная наблюдаемость, безопасность и надежность в масштабе](https://www.dynatrace.com/news/blog/automated-observability-security-and-reliability-at-scale/)

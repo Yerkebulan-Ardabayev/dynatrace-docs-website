@@ -57,11 +57,11 @@ To turn off notifications for workflow, select  > **Turn off notifications**.
 
 ## Related topics
 
-* [Workflows quick start guide](../quickstart.md "Build and run your first workflow.")
-* [Create workflows in Dynatrace Workflows](../building.md "Create and edit workflows in Dynatrace Workflows.")
-* [Manage workflows](../manage-workflows.md "Manage your workflows")
-* [Upload a workflow or a workflow template](workflows-upload.md "Upload your workflow or your template.")
-* [Download a workflow or template](workflows-download.md "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
-* [Change ownership of a workflow](workflows-change-owner.md "Change ownership of your workflow.")
-* [Manage live or draft workflows](workflows-manage-live-mode.md "Undeploy your workflow or download as Workflow or as a template.")
-* [Compare and restore versions of a workflow](workflows-versioning.md "Compare and restore every version of your workflow.")
+* Workflows quick start guide
+* Create workflows in Dynatrace Workflows
+* Manage workflows
+* Upload a workflow or a workflow template
+* Download a workflow or template
+* Change ownership of a workflow
+* Manage live or draft workflows
+* Compare and restore versions of a workflow

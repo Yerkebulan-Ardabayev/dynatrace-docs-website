@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:32:17.117243
 * 5-min read
 * Updated on Jan 28, 2026
 
-After [setting up Azure Monitor integration](../azure-monitoring-guide.md "Set up and configure Azure monitoring in Dynatrace."), you can start setting up monitoring notifications with Azure Monitor alerts.
+After setting up Azure Monitor integration, you can start setting up monitoring notifications with Azure Monitor alerts.
 
 Azure Monitor alerts is a unified notification hub for all types of important conditions found in Azure monitoring data. The integration of Azure Monitor alerts enables you to consume alerts, which are automatically transformed into events that are leveraged by Dynatrace Intelligence for deeper insights.
 
@@ -41,11 +41,11 @@ You can assign multiple permissions to a single token, or you can generate sever
 
 ## Step 2 Configure one or more designated ActiveGates
 
-The ActiveGate designated to consume Azure Monitor alerts doesnât have to be the same ActiveGate that runs the Azure Monitor integration. It can be any other [Azure monitoring-enabled ActiveGate](../../../dynatrace-activegate/configuration/configure-activegate.md#azure_mod "Learn which ActiveGate properties you can configure based on your needs and requirements.").
+The ActiveGate designated to consume Azure Monitor alerts doesnât have to be the same ActiveGate that runs the Azure Monitor integration. It can be any other Azure monitoring-enabled ActiveGate.
 
 To configure a designated ActiveGate to consume Azure Monitor alerts:
 
-1. Configure a valid TLS certificate (not a self-signed certificate) for the ActiveGate to communicate via HTTPS. Ensure that the root certificate is accepted by Azure. For details, see [how to configure custom SSL certificate for an ActiveGate](../../../dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate.md "Learn how to configure the SSL certificate on your ActiveGate.").
+1. Configure a valid TLS certificate (not a self-signed certificate) for the ActiveGate to communicate via HTTPS. Ensure that the root certificate is accepted by Azure. For details, see how to configure custom SSL certificate for an ActiveGate.
 2. Add the following lines to your ActiveGate `custom.properties` file and restart the ActiveGate after applying the configuration.
 
    ```
@@ -142,5 +142,5 @@ See [Create activity log alerts on service notifications using the Azure portal�
 
 ## Related topics
 
-* [Microsoft Azure Integrations](../../azure-integrations.md "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")
-* [Event categories](../../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories.md "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.")
+* Microsoft Azure Integrations
+* Event categories

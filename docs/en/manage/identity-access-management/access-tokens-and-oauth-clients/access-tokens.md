@@ -12,18 +12,18 @@ scraped: 2026-03-05T21:27:58.397956
 * 2-min read
 * Updated on Oct 25, 2023
 
-This article discusses access tokens used in previous Dynatrace to authenticate to classic Configuration and Environment APIs. For the latest Dynatrace access, see [Platform tokens](platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.") and [OAuth clients](oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
+This article discusses access tokens used in previous Dynatrace to authenticate to classic Configuration and Environment APIs. For the latest Dynatrace access, see Platform tokens and OAuth clients.
 
-All external access to your Dynatrace monitoring environment relies on two pieces of information: the [environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") and an *access token*.
+All external access to your Dynatrace monitoring environment relies on two pieces of information: the environment ID and an *access token*.
 
 Dynatrace uses several types of tokens:
 
 * Access tokens and personal access tokens grant access to:
 
-  + [Dynatrace API](../../../dynatrace-api.md "Find out what you need to use the Dynatrace API.")
+  + Dynatrace API
   + Download of OneAgent and ActiveGate installers
-* [Personal access tokens](access-tokens/personal-access-token.md "Learn the concept of a personal access token and its scopes.") grant access to some endpoints of Dynatrace API
-* [Tenant tokens](access-tokens/rotate-tenant-token.md "Learn what a tenant token is and how to change it.") allow OneAgent to report data to Dynatrace
+* Personal access tokens grant access to some endpoints of Dynatrace API
+* Tenant tokens allow OneAgent to report data to Dynatrace
 
 ## Token format
 
@@ -91,4 +91,4 @@ Access tokens have fine-grained scopes to limit access to specific product funct
 
 ## Related topics
 
-* [Tokens API v1](../../../dynatrace-api/environment-api/tokens-v1.md "Learn how to manage Dynatrace API authentication tokens in your environment.")
+* Tokens API v1

@@ -26,14 +26,14 @@ In this article, you'll learn how to create a new segment to function as a log b
 
 Prior knowledge
 
-* [Include data in segments](../concepts/segments-concepts-includes.md "Learn how data of different types can be included in segments.")
-* [Variables in segments](../concepts/segments-concepts-variables.md "Learn how variables help to form dynamic segments and reduce configuration effort and maintenance.")
-* [Segments in DQL queries](../concepts/segments-concepts-queries.md "Learn how Grail evaluates segments during query execution to return matching results only.")
+* Include data in segments
+* Variables in segments
+* Segments in DQL queries
 
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* You have both `storage:filter-segments:write` and `storage:filter-segments:read` permissions. To learn how to set up the permissions, see [Permissions in Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+* You have both `storage:filter-segments:write` and `storage:filter-segments:read` permissions. To learn how to set up the permissions, see Permissions in Grail.
 
 Key terms
 

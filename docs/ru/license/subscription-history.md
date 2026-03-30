@@ -16,7 +16,7 @@ scraped: 2026-03-06T21:32:43.549341
 Для просмотра истории подписок необходимо:
 
 * Активная подписка Dynatrace Platform Subscription, заключённая после 26 апреля 2023 года.
-* Учётная запись пользователя Dynatrace с одним или обоими из следующих [разрешений управления аккаунтом](../manage/identity-access-management/permission-management/account-management-permissions.md "Dynatrace permissions required to access Account Management"):
+* Учётная запись пользователя Dynatrace с одним или обоими из следующих разрешений управления аккаунтом:
 
   + **View account**
   + **View and manage account and billing information**
@@ -33,7 +33,7 @@ scraped: 2026-03-06T21:32:43.549341
 Информация о стоимости для подписок POC (обозначаются типом `DPS:POC`) предоставляется исключительно в информационных целях.
 Эти расходы фактически не взимаются, поскольку POC являются бесплатными согласно условиям вашей лицензии POC.
 
-Дополнительную информацию о POC см. в разделе [Proof of Concept for existing DPS subscriptions](proof-of-concept.md "Use Account Management tools to view consumption during your DPS Proof of Concept period.").
+Дополнительную информацию о POC см. в разделе Proof of Concept for existing DPS subscriptions.
 
 ![Account Management: Subscription history](https://dt-cdn.net/images/history-list-1600-dcce197542.png)
 
@@ -70,4 +70,4 @@ scraped: 2026-03-06T21:32:43.549341
 
 ## Связанные темы
 
-* [License Dynatrace](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* License Dynatrace, the licensing model for all Dynatrace capabilities.")

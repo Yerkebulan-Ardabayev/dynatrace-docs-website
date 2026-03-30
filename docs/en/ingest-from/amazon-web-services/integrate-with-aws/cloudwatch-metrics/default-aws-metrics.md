@@ -12,11 +12,11 @@ scraped: 2026-03-04T21:29:09.114692
 * 1-min read
 * Updated on Jan 29, 2024
 
-For information about differences between classic services and other services, see [Migrate from AWS classic (formerly 'built-in') services to cloud services](aws-migration-guide.md "Migrate AWS classic services to their new versions.").
+For information about differences between classic services and other services, see Migrate from AWS classic (formerly 'built-in') services to cloud services.
 
-The table below lists all AWS metrics that Dynatrace collects by default when you enable [AWS monitoring](../../../../observe/infrastructure-observability/cloud-platform-monitoring/aws-monitoring.md "Monitor AWS with Dynatrace").
+The table below lists all AWS metrics that Dynatrace collects by default when you enable AWS monitoring.
 
-For all other metrics collected by Dynatrace per configurable AWS service, see the [cloud services](../aws-all-services.md "Monitor all AWS cloud services with Dynatrace and view available metrics.") pages.
+For all other metrics collected by Dynatrace per configurable AWS service, see the cloud services pages.
 
 | Metric key | Name | Unit | Aggregations |
 | --- | --- | --- | --- |

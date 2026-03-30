@@ -142,7 +142,7 @@ Where `usr.sbin.tomcat-sysd` is the file that defines the AppArmor profile for T
    /proc/cgroups r,
    ```
 
-   If you used the [DATA\_STORAGE](../installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters.") installation parameter to define a custom directory dedicated to storing large runtime data, edit the following line and add your custom directory
+   If you used the DATA\_STORAGE installation parameter to define a custom directory dedicated to storing large runtime data, edit the following line and add your custom directory
 
    ```
    # This path must be adjusted if DATA_STORAGE installation parameter was used

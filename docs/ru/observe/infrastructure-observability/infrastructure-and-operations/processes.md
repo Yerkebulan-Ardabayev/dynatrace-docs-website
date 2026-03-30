@@ -18,7 +18,7 @@ scraped: 2026-03-06T21:16:52.044078
 
 * **Process**: Имя или идентификатор процесса. Выберите имя для полноэкранного просмотра с подробными метаданными, журналами, событиями и временными графиками.
 * **Process group name**: Группа, к которой принадлежит процесс.
-* **Health alerts**: Отображает оповещения о состоянии здоровья и предупредительные сигналы, предоставляемые [Dynatrace Intelligence](../../../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence."). Подробнее см. в разделе [Просмотр оповещений о состоянии и предупредительных сигналов](../infrastructure-and-operations.md#health-alerts "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.").
+* **Health alerts**: Отображает оповещения о состоянии здоровья и предупредительные сигналы, предоставляемые Dynatrace Intelligence. Подробнее см. в разделе [Просмотр оповещений о состоянии и предупредительных сигналов](../infrastructure-and-operations.md#health-alerts "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.").
 * **Custom alerts**: Перечисляет активные пользовательские оповещения, связанные с процессом.
 * **Availability**: Отображает текущий статус доступности процесса.
 * **Technologies**: Технологии, обнаруженные для данного процесса.

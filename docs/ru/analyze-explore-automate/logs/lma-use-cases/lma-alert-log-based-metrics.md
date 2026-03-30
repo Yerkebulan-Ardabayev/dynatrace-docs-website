@@ -11,20 +11,20 @@ scraped: 2026-03-06T21:33:43.409363
 
 Загруженные логи могут служить триггерами для создания новых проблем Davis.
 
-Используя комбинацию метрик на основе логов и [пользовательских оповещений](../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app."), вы можете применять различные анализаторы данных Dynatrace Intelligence для решения задач — от простых оповещений на основе пороговых значений до сезонных базовых линий, например:
+Используя комбинацию метрик на основе логов и пользовательских оповещений, вы можете применять различные анализаторы данных Dynatrace Intelligence для решения задач — от простых оповещений на основе пороговых значений до сезонных базовых линий, например:
 
 * Оповещение, когда среднее количество совпадающих записей превышает определённое число в заданный период времени.
 * Оповещение, когда значение метрики является аномальным, без установки статического порогового значения.
 
 Следуйте этому руководству, чтобы узнать больше об оповещениях с использованием метрик на основе логов.
 
-Если вам не нужно устанавливать пороговые значения, следуйте инструкциям в разделе [Настройка оповещений на основе событий, извлечённых из логов](lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.").
+Если вам не нужно устанавливать пороговые значения, следуйте инструкциям в разделе Настройка оповещений на основе событий, извлечённых из логов.
 
 ## Предварительные требования
 
-* Вы настроили [загрузку логов](../lma-log-ingestion.md "Stream log data to Dynatrace.").
+* Вы настроили загрузку логов.
 * Вы используете OpenPipeline.
-* У вас есть необходимые разрешения для настройки пользовательского оповещения в приложении [Anomaly Detection](../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.").
+* У вас есть необходимые разрешения для настройки пользовательского оповещения в приложении Anomaly Detection.
 
 ## Шаги
 
@@ -58,7 +58,7 @@ fetch logs
 5. Установите
 
    * Имя и идентификатор метрики.
-   * [DQL-матчер](../../../platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.").
+   * DQL-матчер.
      Матчер задаёт условие для события, которое должно быть извлечено.
      Это подмножество условий фильтрации в одном выражении DQL.
 
@@ -71,7 +71,7 @@ fetch logs
 Если вы используете сегменты или ваши разрешения установлены на уровне записи, вам следует включить эти условия в матчер.
 
 Бывают ситуации, когда матчер не может быть легко извлечён из выражения DQL.
-В таких случаях вы можете [создать оповещения логов для события или сводки данных логов](../../../dynatrace-intelligence/use-cases/create-alert-in-logs.md "Create log alerts for a specific log event or summary of log data").
+В таких случаях вы можете создать оповещения логов для события или сводки данных логов.
 
 3. Добавьте измерения.
    Для большинства логов вы можете добавить автоматическую корреляцию с сущностями в анализе первопричин Dynatrace Intelligence.
@@ -108,11 +108,11 @@ fetch logs
 * Анализаторы метрик срабатывают каждую минуту, поэтому это не метод оповещения в реальном времени.
 * Измерения метрик имеют низкую кардинальность.
 
-Обнаруженные аномалии могут запускать автоматизации с помощью простых рабочих процессов, как описано в разделе [Создание простого рабочего процесса в Dynatrace Workflows](../../workflows/simple-workflow.md "Build and run a simple workflow.").
+Обнаруженные аномалии могут запускать автоматизации с помощью простых рабочих процессов, как описано в разделе Создание простого рабочего процесса в Dynatrace Workflows.
 
 ## Связанные темы
 
-* [Настройка оповещений на основе событий, извлечённых из логов](lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.")
-* [Метрики логов (Logs Classic)](../../log-monitoring/analyze-log-data/log-metrics.md "Learn how to create and use Dynatrace log metrics to analyze log data.")
-* [События логов (Logs Classic)](../../log-monitoring/analyze-log-data/log-events.md "Learn how to create and use Dynatrace log events to analyze log data.")
-* [Оповещения и уведомления](../../alerting-and-notifications.md "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
+* Настройка оповещений на основе событий, извлечённых из логов
+* Метрики логов (Logs Classic)
+* События логов (Logs Classic)
+* Оповещения и уведомления

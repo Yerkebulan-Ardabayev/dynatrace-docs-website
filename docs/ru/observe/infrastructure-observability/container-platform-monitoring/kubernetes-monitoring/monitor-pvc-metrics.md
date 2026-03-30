@@ -47,8 +47,8 @@ Dynatrace предоставляет предварительно настрое
 
 ## Ограничения
 
-Эта функция доступна только в том случае, если ваш кластер Kubernetes [подключён к локальной конечной точке API Kubernetes](../../../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring.md "Мониторинг API Kubernetes с помощью Dynatrace").
+Эта функция доступна только в том случае, если ваш кластер Kubernetes подключён к локальной конечной точке API Kubernetes.
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Kubernetes](../../../../ingest-from/setup-on-k8s.md "Способы развёртывания и настройки Dynatrace в Kubernetes")
+* Настройка Dynatrace в Kubernetes

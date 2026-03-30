@@ -22,7 +22,7 @@ Grail provides:
 * Unified observability, security and business dataâcost effectively and at exabyte scale.
 * Any-question-any-time real-time analytics with always hydrated zero-latency cold/hot storage.
 * Increased productivity as no-index datawarping technology as well as schema-on-read drastically reduces data preparation efforts by magnitudes.
-* Simplified compliance as Grail securely integrates with [Dynatrace Intelligence hypermodal AI](../../../ru/dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence."), [AppEngine](../../../ru/platform/appengine.md "Develop feature-rich Dynatrace apps for you and the world!"), [AutomationEngine](../../../ru/platform/automationengine.md "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale."), and more as part of the Dynatrace platform.
+* Simplified compliance as Grail securely integrates with Dynatrace Intelligence hypermodal AI, AppEngine, AutomationEngine, and more as part of the Dynatrace platform.
 
 ## Contextual analytics
 
@@ -41,7 +41,7 @@ Contextual analytics leverages Dynatrace Intelligence causal AI to follow depend
 
 Grail breaks through the limits of common index-enabled databases and thus is uniquely capable of bringing all data types together into a single place and de-siloing information, while retaining full granularity. It does this by:
 
-* Processing and storing up to 1,000 TB of data per day, depending on the data ingestion channels (such as OneAgent or API) and the nature of the signals. To ensure optimal performance, a tailored scaling strategy is essential. To see the actual limits, see [OpenPipeline limits](../../../ru/platform/openpipeline/reference/limits.md "Reference limits of Dynatrace OpenPipeline.").
+* Processing and storing up to 1,000 TB of data per day, depending on the data ingestion channels (such as OneAgent or API) and the nature of the signals. To ensure optimal performance, a tailored scaling strategy is essential. To see the actual limits, see OpenPipeline limits.
 * Providing a Massive Parallel Processing (MPP) query engine, enabling rapid processing of any query any time, without requiring any upfront definitions.
 * Utilizing datawarping to retrieve data from always hydrated zero-latency cold/hot storage, while eliminating the overhead cost and scalability limits of indexes.
 
@@ -161,6 +161,6 @@ NoSQL databases like Cassandra, Redis, and Amazon DynamoDB are examples of stora
 
 ## Related topics
 
-* [Dynatrace Query Language](dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Log Analytics](../../../ru/analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
-* [Business Observability](../../../ru/observe/business-observability.md "Basic concepts, setup and configuration, and use cases for Dynatrace Business Observability")
+* Dynatrace Query Language
+* Log Analytics
+* Business Observability

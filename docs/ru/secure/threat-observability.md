@@ -27,43 +27,43 @@ Dynatrace Threat Observability предлагает платформу, кото
 
 Анализируйте подозрительные и вредоносные действия при входе в систему с помощью Dynatrace.
 
-* [Monitor suspicious sign-in activity with Dynatrace](use-cases/monitor-sign-in-activity.md "Analyze suspicious and malicious sign-in behaviors with Dynatrace.")
+* Monitor suspicious sign-in activity with Dynatrace
 
 ### Автоматизация и оркестрация результатов безопасности
 
 Регулярно проверяйте критические уязвимости контейнеров и получайте автоматические заявки Jira или оповещения Slack.
 
-* [Automate and orchestrate security findings](use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* Automate and orchestrate security findings
 
 ### Выявление пробелов в охвате результатов безопасности
 
 Получите видимость проверок безопасности в течение жизненного цикла разработки ПО (SDLC).
 
-* [Discover coverage gaps in security findings](use-cases/discover-coverage-gaps-in-security-scans.md "Unveil blind spots in your Software Development Lifecycle (SDLC).")
+* Discover coverage gaps in security findings.")
 
 ### Приём и обработка пользовательских результатов безопасности
 
 Непрерывно загружайте результаты сканирования контейнеров в Dynatrace.
 
-* [Ingest and process custom security findings](use-cases/ingest-and-process-custom-security-findings.md "Continuously ingest your container scan findings.")
+* Ingest and process custom security findings
 
 ### Контекстуализация результатов контейнеров в среде выполнения
 
 Сортируйте критические уязвимости в рабочих приложениях на контейнерах с уязвимыми образами.
 
-* [Runtime contextualization of container findings](use-cases/runtime-contextualization-of-container-findings.md "Triage critical vulnerability findings in production applications on containers with vulnerable container images.")
+* Runtime contextualization of container findings
 
 ### Визуализация и анализ результатов безопасности
 
 Легко просматривайте и анализируйте результаты безопасности по продуктам и инструментам.
 
-* [Visualize and analyze security findings](use-cases/visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
+* Visualize and analyze security findings
 
 ### Автоматизация уведомлений CSPM
 
 Автоматически обрабатывайте, сортируйте, обогащайте и классифицируйте входящие оповещения безопасности.
 
-* [CSPM Notification Automation](use-cases/notification-automation.md "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.")
+* CSPM Notification Automation
 
 * [Ingest, enrich, and deduplicate Qualys vulnerability findings with Dynatrace](https://www.dynatrace.com/news/blog/ingest-enrich-and-deduplicate-qualys-vulnerability-findings-with-dynatrace/)
 * [Smarter vulnerability remediation with Dynatrace and Atlassian Rovo Dev](https://www.dynatrace.com/news/blog/smarter-vulnerability-remediation-with-dynatrace-and-atlassian-rovo-dev/)

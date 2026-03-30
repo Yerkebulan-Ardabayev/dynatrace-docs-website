@@ -18,13 +18,13 @@ scraped: 2026-03-06T21:17:27.365659
 
 ## Предопределённые представления
 
-[### Top web requests
+### Top web requests
 
-Анализ наиболее частых и наиболее ресурсоёмких веб-запросов.](multidimensional-analysis/top-web-requests.md "Learn how to analyze all web requests across all of your services using Dynatrace.")[### Top database statements
+Анализ наиболее частых и наиболее ресурсоёмких веб-запросов.### Top database statements
 
-Анализ наиболее частых и наиболее ресурсоёмких запросов к базам данных.](multidimensional-analysis/top-database-statements.md "Understand the database activity across your environment with Dynatrace.")[### Exception analysis
+Анализ наиболее частых и наиболее ресурсоёмких запросов к базам данных.### Exception analysis
 
-Анализ и понимание всех исключений на уровне кода.](multidimensional-analysis/exception-analysis.md "Learn how Dynatrace can help you see which exceptions occurred in your environment during a selected analysis timeframe.")
+Анализ и понимание всех исключений на уровне кода.
 
 ## Источник данных
 
@@ -59,7 +59,7 @@ scraped: 2026-03-06T21:17:27.365659
 В столбце **Actions** таблицы вы можете выбрать:
 
 * **Filter** ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") для фильтрации представления по указанному измерению.
-* **More** (**...**) для доступа к дополнительным вариантам анализа из [меню **Analyze**](services-classic/context-specific-drill-down.md#analyze-menu "Learn about easy navigation and filtering for services analysis.").
+* **More** (**...**) для доступа к дополнительным вариантам анализа из меню **Analyze**.
 
 Для временных интервалов, содержащих данные старше 10 дней, вы можете включить **Show data retention**, чтобы лучше понять, какие данные доступны за какой период, непосредственно на диаграмме.
 
@@ -69,13 +69,13 @@ scraped: 2026-03-06T21:17:27.365659
 
 Dynatrace предоставляет несколько предустановленных представлений:
 
-* [Exception analysis](multidimensional-analysis/exception-analysis.md "Learn how Dynatrace can help you see which exceptions occurred in your environment during a selected analysis timeframe.")
-* [Top database statements](multidimensional-analysis/top-database-statements.md "Understand the database activity across your environment with Dynatrace.")
-* [Top web requests](multidimensional-analysis/top-web-requests.md "Learn how to analyze all web requests across all of your services using Dynatrace.")
+* Exception analysis
+* Top database statements
+* Top web requests
 
 ## Вычисляемая метрика сервиса
 
-Вы можете сохранить настроенное представление как вычисляемую метрику сервиса, которую можно использовать так же, как любую другую метрику Dynatrace, например, для [построения диаграмм](../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") или [экспорта данных через API](../../dynatrace-api/environment-api/metric-v2/get-data-points.md "Read data points of one or multiple metrics via Metrics v2 API.").
+Вы можете сохранить настроенное представление как вычисляемую метрику сервиса, которую можно использовать так же, как любую другую метрику Dynatrace, например, для построения диаграмм или экспорта данных через API.
 
 В вычисляемые метрики записываются только новые данные; ретроспективные данные не включаются.
 
@@ -100,10 +100,10 @@ Dynatrace предоставляет несколько предустановл
 7. Необязательно: при необходимости измените ключ метрики.
 
    После создания метрики её ключ изменить нельзя.
-8. Необязательно: если вы хотите более точно настроить метрику, выберите **Advanced options** для настройки дополнительных параметров метрики. Подробности см. в разделе [Вычисляемые метрики для сервисов](services/calculated-service-metric.md "Learn how to create a calculated metric based on web requests.").
+8. Необязательно: если вы хотите более точно настроить метрику, выберите **Advanced options** для настройки дополнительных параметров метрики. Подробности см. в разделе Вычисляемые метрики для сервисов.
 9. Выберите **Create metric**.
 
 ## Связанные темы
 
-* [API метрик сервиса](../../dynatrace-api/configuration-api/calculated-metrics/service-metrics.md "Manage calculated service metrics via the Dynatrace configuration API.")
-* [Вычисляемые метрики для сервисов](services/calculated-service-metric.md "Learn how to create a calculated metric based on web requests.")
+* API метрик сервиса
+* Вычисляемые метрики для сервисов

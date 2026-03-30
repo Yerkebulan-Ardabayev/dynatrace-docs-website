@@ -87,4 +87,4 @@ On the **Overview** and the **Assessment results** pages, select any of the colu
 
 ## Related topics
 
-* [Kubernetes Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.")
+* Kubernetes Security Posture Management

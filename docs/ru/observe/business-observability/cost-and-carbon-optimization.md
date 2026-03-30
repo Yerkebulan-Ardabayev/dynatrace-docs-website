@@ -62,7 +62,7 @@ storage:bizevents:read
 
 ### Предоставление разрешений рабочим процессам
 
-Убедитесь, что [Workflows](../../analyze-explore-automate/workflows.md "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.") имеет необходимые разрешения для запуска автоматизации: откройте ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, выберите **Settings** > **Authorization settings** в правом верхнем углу и убедитесь, что включены следующие настройки.
+Убедитесь, что Workflows имеет необходимые разрешения для запуска автоматизации: откройте ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, выберите **Settings** > **Authorization settings** в правом верхнем углу и убедитесь, что включены следующие настройки.
 
 * `app-engine:apps:run`
 * `app-engine:functions:run`
@@ -81,7 +81,7 @@ storage:bizevents:read
 * `storage:events:write`
 * `storage:metrics:read`
 
-Подробнее см. [Управление разрешениями пользователей с помощью политик IAM](../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Работа с политиками") и [Настройки авторизации рабочих процессов](../../analyze-explore-automate/workflows/running.md "Запуск и мониторинг рабочих процессов, созданных в Dynatrace Workflows.").
+Подробнее см. Управление разрешениями пользователей с помощью политик IAM и Настройки авторизации рабочих процессов.
 
 ### Установка
 
@@ -98,7 +98,7 @@ storage:bizevents:read
 
 * Для генерации стоимости облака по публичным прайс-листам необходимо активировать генерацию данных о выбросах углерода. Вы можете активировать её в настройках приложения.
 * Вам нужны инструментированные хосты с OneAgent и настроенным мониторингом облачного поставщика.
-  Расчёт стоимости по публичному прайс-листу требует сбора метаданных с хоста: облачного поставщика, облачного региона и типа экземпляра, настроенного у облачного поставщика. Эта информация предоставляется путём настройки мониторинга облачного поставщика для хостов, отслеживаемых с помощью OneAgent. Подробнее см. [Приём данных](../../ingest-from.md "Узнайте, как установить и настроить ActiveGate и OneAgent на различных платформах.").
+  Расчёт стоимости по публичному прайс-листу требует сбора метаданных с хоста: облачного поставщика, облачного региона и типа экземпляра, настроенного у облачного поставщика. Эта информация предоставляется путём настройки мониторинга облачного поставщика для хостов, отслеживаемых с помощью OneAgent. Подробнее см. Приём данных.
 * Включите **External requests** к облачным поставщикам, на которых работают ваши хосты, для сбора публичных прайс-листов в Grail.
 
   Внешние запросы разрешают исходящие сетевые соединения из вашей среды Dynatrace с внешними сервисами. Они позволяют контролировать доступ к публичным конечным точкам из AppEngine с функциями приложений, а также функциями в дашбордах, блокнотах и автоматизациях.
@@ -234,11 +234,11 @@ Kubernetes — это динамическая среда, и количеств
 
 Пройдите следующий процесс для изучения работы с ![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization**:
 
-[01 Настройка Cost & Carbon Optimization
+01 Настройка Cost & Carbon Optimization
 
-* Установите и настройте Cost & Carbon Optimization.](cost-and-carbon-optimization/install-cost-and-carbon-optimization.md)[02 Расширенная аналитика с блокнотами
+* Установите и настройте Cost & Carbon Optimization.02 Расширенная аналитика с блокнотами
 
-* Используйте блокноты для анализа данных об углеродном следе.](cost-and-carbon-optimization/advanced-analytics-with-notebooks.md)
+* Используйте блокноты для анализа данных об углеродном следе.
 
 ### Методология оценки потребления электроэнергии
 
@@ -339,7 +339,7 @@ Kubernetes — это динамическая среда, и количеств
 
 Используйте ![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** для измерения энергии и выбросов углерода вашей инфраструктуры Kubernetes.
 
-![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** рассчитывает потреблённую энергию (в ватт-часах) и выбросы углерода (в граммах эквивалентов углекислого газа) кластеров, пространств имён и узлов Kubernetes, отслеживаемых Dynatrace. Поддерживаются все режимы мониторинга Dynatrace Kubernetes, данные рассчитываются ежечасно и сохраняются как [события углерода Kubernetes](../../semantic-dictionary/model/business-analytics.md#carbon-kubernetes-cluster-events "Ознакомьтесь с моделями семантического словаря, связанными с Business Observability.").
+![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** рассчитывает потреблённую энергию (в ватт-часах) и выбросы углерода (в граммах эквивалентов углекислого газа) кластеров, пространств имён и узлов Kubernetes, отслеживаемых Dynatrace. Поддерживаются все режимы мониторинга Dynatrace Kubernetes, данные рассчитываются ежечасно и сохраняются как события углерода Kubernetes.
 
 Организации, использующие Kubernetes сегодня или планирующие перенести рабочие нагрузки в Kubernetes, должны рассмотреть возможность использования ![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** совместно с мониторингом Dynatrace Kubernetes по следующим причинам:
 

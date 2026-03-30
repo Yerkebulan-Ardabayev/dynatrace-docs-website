@@ -38,7 +38,7 @@ scraped: 2026-03-06T21:38:00.887786
 
 #### OneAgent `autoUpdate`
 
-Поле `spec.oneAgent.<mode>.autoUpdate: true/false` [устарело](../../deployment-and-configuration/updates-and-maintenance/auto-update-components.md "Настройка автоматических обновлений для компонентов, управляемых Dynatrace Operator (OneAgent, ActiveGate и EdgeConnect).") в `v1beta5`, поэтому его использование не рекомендуется.
+Поле `spec.oneAgent.<mode>.autoUpdate: true/false` устарело.") в `v1beta5`, поэтому его использование не рекомендуется.
 
 Рекомендуется следующее:
 

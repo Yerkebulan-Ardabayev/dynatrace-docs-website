@@ -16,11 +16,11 @@ scraped: 2026-03-06T21:27:28.297927
   + [Dynatrace Collector](../../collector.md#dt-collector-dist "Узнайте о Dynatrace OTel Collector.")
   + [OpenTelemetry Contrib](../../collector.md#collector-contrib "Узнайте о Dynatrace OTel Collector.")
   + [Пользовательская сборка с помощью Builder](../../collector.md#collector-builder "Узнайте о Dynatrace OTel Collector.")
-* [URL конечной точки Dynatrace API](../../otlp-api.md "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."), на которую должны экспортироваться данные.
+* URL конечной точки Dynatrace API, на которую должны экспортироваться данные.
 * [API-токен](../../otlp-api.md#authentication-export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с областью действия Ingest logs (`logs.ingest`).
 * Устройство с поддержкой NetFlow или sFlow, способное отправлять пакеты NetFlow на экземпляр Collector.
 
-См. [Развёртывание Collector](../deployment.md "Как развернуть Dynatrace OTel Collector.") и [Конфигурация Collector](../configuration.md "Как настроить OpenTelemetry Collector.") для получения информации о настройке вашего Collector с приведённой ниже конфигурацией.
+См. Развёртывание Collector и Конфигурация Collector для получения информации о настройке вашего Collector с приведённой ниже конфигурацией.
 
 ## Конфигурация Collector
 
@@ -176,11 +176,11 @@ exporters: [otlp_http]
 
 ## Ограничения и лимиты
 
-Логи передаются с использованием протокола OpenTelemetry (OTLP) через [Dynatrace OTLP API](../../otlp-api.md "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") и подчиняются ограничениям и лимитам API.
+Логи передаются с использованием протокола OpenTelemetry (OTLP) через Dynatrace OTLP API и подчиняются ограничениям и лимитам API.
 Дополнительная информация:
 
-* [Приём логов OpenTelemetry](../../otlp-api/ingest-logs.md "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения действуют.")
+* Приём логов OpenTelemetry
 
 ## Связанные темы
 
-* [Приём логов из файлов с помощью OpenTelemetry Collector](filelog.md "Настройка OpenTelemetry Collector для приёма данных логов в Dynatrace.")
+* Приём логов из файлов с помощью OpenTelemetry Collector

@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:12:14.538129
 * 3-min read
 * Updated on May 17, 2024
 
-In your environment, there are many thousands of requests, each with their relationships and context. To identify the root cause of inefficiencies, it's therefore necessary to narrow down the analysis to just the relevant requests. You can segment your requests by [filtering the service flow](../../services-classic/service-flow/service-flow-filtering.md "Understand how service filtering works and how it can be exploited.") or via [outlier analysis](../../services-classic/response-time-distribution-and-outlier-analysis.md "Gain insights into the distribution of response times across all requests, including those that are either unusually high or unusually low.").
+In your environment, there are many thousands of requests, each with their relationships and context. To identify the root cause of inefficiencies, it's therefore necessary to narrow down the analysis to just the relevant requests. You can segment your requests by filtering the service flow or via outlier analysis.
 
 ## Scenario
 
@@ -60,6 +60,6 @@ By segmenting the requests in `easyTravel Customer Frontend` service flow and dr
 
 You can extend your analysis:
 
-* To see where the request originated, select **More** (**â¦**) > [**Service backtrace**](../../services-classic/service-backtrace.md "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
+* To see where the request originated, select **More** (**â¦**) > **Service backtrace**.
 * To see the entire trace from the first fully monitored process group, select **Show full trace**.
   Each distributed trace tracks a request from start to finish. This means that the traces always start at the first fully monitored process group. With this option, you can change your perspective and focus only on a service.

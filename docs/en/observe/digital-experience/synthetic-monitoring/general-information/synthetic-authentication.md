@@ -16,7 +16,7 @@ Dynatrace Synthetic Monitoring offers various methods for monitoring web applica
 
 ## Browser monitors
 
-The [**HTTP authentication**](#http-bm) and [**certificate authentication**](#certificate-bm) methods are supported for both [single-URL browser monitors](../browser-monitors/create-a-single-url-browser-monitor.md "Learn how to set up a single-URL browser monitor to check the availability of your site.") and [browser clickpaths](../browser-monitors/record-a-browser-clickpath.md "Learn how to record a browser clickpath to monitor the availability and performance of your application.").
+The [**HTTP authentication**](#http-bm) and [**certificate authentication**](#certificate-bm) methods are supported for both single-URL browser monitors and browser clickpaths.
 
 The [**web form** (**HTML-based**)](#web-form-bm) is supported only for browser clickpaths.
 
@@ -26,19 +26,19 @@ The most common scenario is a webpage with web form (HTML-based) authentication,
 
 ![Web application with HTML-based authentication](https://dt-cdn.net/images/htmlbasedauthentication-2048-c9fcf36a82.png)
 
-You can monitor a transaction in a [browser clickpath](../browser-monitors/record-a-browser-clickpath.md "Learn how to record a browser clickpath to monitor the availability and performance of your application.") by recording credentials in a web form.
+You can monitor a transaction in a browser clickpath by recording credentials in a web form.
 
 1. Go to **Synthetic Classic** > **Create a synthetic monitor** > **Create a browser monitor**.
 2. Specify the monitor name, starting URL, and other options before selecting **Record clickpath** at the bottom of the page.
 3. While recording, manually enter the username and password for authentication; Dynatrace automatically captures the credentials.
-4. After recording, you have the option of storing the credentials to the [credential vault](../../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault.").
-5. [Complete the configuration](../browser-monitors/configure-browser-monitors.md "Learn about configuring browser monitors and clickpaths.") of your clickpath.
+4. After recording, you have the option of storing the credentials to the credential vault.
+5. Complete the configuration of your clickpath.
 
 #### Single-URL monitors with web form authentication
 
 Deprecated
 
-Web form authentication is no longer supported for the single-URL browser monitors. You can instead create [browser clickpath](../browser-monitors/record-a-browser-clickpath.md "Learn how to record a browser clickpath to monitor the availability and performance of your application.") monitors for the test scenarios that require web form login. Your previously configured single-URL monitors will run as before, but we recommend to re-record them as clickpaths to clearly separate each step of the login process.
+Web form authentication is no longer supported for the single-URL browser monitors. You can instead create browser clickpath monitors for the test scenarios that require web form login. Your previously configured single-URL monitors will run as before, but we recommend to re-record them as clickpaths to clearly separate each step of the login process.
 
 Re-recording is required if you want to modify any part of your monitor's configuration. You can no longer save changes in their current format.
 
@@ -69,16 +69,16 @@ Transaction in a recorded clickpath
 
      + Domain: User's domain name
      + Auth server allow list: List of allowed servers for Kerberos authentication. Wildcards can be used. Exact details are provided in the [Chrome Enterprise documentationï»¿](https://dt-url.net/p803wkm)
-4. Either use an existing credential from the [credential vault](../../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault.") (**Select credentials**) or **Create new credentials**.
-5. [Complete the configuration](../browser-monitors/configure-browser-monitors.md "Learn about configuring browser monitors and clickpaths.") of your single-URL browser monitor.
+4. Either use an existing credential from the credential vault (**Select credentials**) or **Create new credentials**.
+5. Complete the configuration of your single-URL browser monitor.
 
 1. Go to **Synthetic Classic** > **Create a synthetic monitor** > **Create a browser monitor**.
 2. Specify the monitor name, starting URL, and other options before selecting **Record clickpath** at the bottom of the page.
 3. While recording, manually enter the username and password in the browser-native dialog box.
-4. When done recording, open the first [Navigate event](../browser-monitors/browser-clickpath-events.md#navigate "Learn about the event types created when recording a browser clickpath.") of your clickpath and turn on **Enable HTTP authentication**.
+4. When done recording, open the first Navigate event of your clickpath and turn on **Enable HTTP authentication**.
 
    ![Navigate event HTTP authentication](https://dt-cdn.net/images/navigatehttpauthentication-652-d4048163be.png)
-5. Either use an existing credential from the [credential vault](../../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault.") (**Select credentials**) or **Create new credentials**.
+5. Either use an existing credential from the credential vault (**Select credentials**) or **Create new credentials**.
 
    Your clickpath will automatically use these credentials to authenticate via the browser-native login dialog.
 6. To use Kerberos authentication, select **Kerberos authentication**. Authentication will be done by receiving Kerberos tickets for provided credentials from the Kerberos Key Distribution Center.
@@ -87,7 +87,7 @@ Transaction in a recorded clickpath
 
    * Domain: User's domain name
    * Auth server allow list: List of allowed servers for Kerberos authentication. Wildcards can be used. Exact details are provided in the [Chrome Enterprise documentationï»¿](https://dt-url.net/p803wkm)
-7. [Complete the configuration](../browser-monitors/configure-browser-monitors.md "Learn about configuring browser monitors and clickpaths.") of your browser clickpath.
+7. Complete the configuration of your browser clickpath.
 
 Supported username formats
 
@@ -97,7 +97,7 @@ Supported username formats
 
 ### Client certificate authentication for web applications
 
-Certificate authentication is available for browser monitors executed from any [public location](public-synthetic-locations.md "Learn about all currently available public Synthetic Monitoring locations.") and on Linux-based [private locations](../private-synthetic-locations/create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring."). Once you set up your browser monitor, you need to specify client certificate details in the **Advanced setup** tab of monitor settings in edit mode.
+Certificate authentication is available for browser monitors executed from any public location and on Linux-based private locations. Once you set up your browser monitor, you need to specify client certificate details in the **Advanced setup** tab of monitor settings in edit mode.
 
 Monitor a single page
 
@@ -107,7 +107,7 @@ Transaction in a recorded clickpath
 2. Specify the monitor URL and name.
 
    You cannot specify a client certificate when initially setting up a single-URL browser monitor.
-3. [Complete the configuration](../browser-monitors/configure-browser-monitors.md "Learn about configuring browser monitors and clickpaths.") of your single-URL browser monitor.
+3. Complete the configuration of your single-URL browser monitor.
 
 1. Before first recording a clickpath on a website that requires certificate authentication, ensure that you have installed the required certificate in Chrome.
 2. Go to **Synthetic Classic** > **Create a synthetic monitor** > **Create a browser monitor**.
@@ -120,7 +120,7 @@ Next, in edit mode, add client certificates for browser monitor execution.
 2. Turn on **Use client certificates**.
 3. Select **Add client certificate**.
 4. Enter the **Domain** that the certificate is valid for.
-5. Select a credential from the list of certificate credentials displayed. Alternatively, select **Create new credential** to upload and use a new client certificate. Any certificate credential you create is automatically designated as [owner only](../../../../../common/manage/credential-vault.md#work-with-credentials "Store and manage credentials in the credential vault.") and stored in the [credential vault](../../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault.").
+5. Select a credential from the list of certificate credentials displayed. Alternatively, select **Create new credential** to upload and use a new client certificate. Any certificate credential you create is automatically designated as [owner only](../../../../../common/manage/credential-vault.md#work-with-credentials "Store and manage credentials in the credential vault.") and stored in the credential vault.
 
    You can specify and upload certificate files in PFX, P12, or PEM format.
 
@@ -139,7 +139,7 @@ HTTP monitors support basic, NTLM, token, OAuth 2.0, or certificate-based authen
 2. Select **Add HTTP request** and choose the **HTTP request** type.
 3. In the **Additional options** of the request, **Set authentication/authorization**.
 4. Select **Basic authentication** or **NTLM**.
-5. Either use an existing credential from the [credential vault](../../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault.") (**Select credentials**) or **Create new credentials**.
+5. Either use an existing credential from the credential vault (**Select credentials**) or **Create new credentials**.
 
    Dynatrace automatically generates the required `Authorization` header with the information you've provided.
 
@@ -148,7 +148,7 @@ HTTP monitors support basic, NTLM, token, OAuth 2.0, or certificate-based authen
    * Browser monitors: `<username>` and `<domain>\<username>`
    * HTTP monitors: `<username>`
    * **NTLM authentication** in browser and HTTP monitors: `<username>`
-6. Finish [configuring your HTTP monitor](../http-monitors-classic/configure-http-monitors-classic.md "Learn about configuring HTTP monitors.").
+6. Finish configuring your HTTP monitor.
 
 ### Bearer or token authentication for endpoints
 
@@ -167,7 +167,7 @@ HTTP monitors support basic, NTLM, token, OAuth 2.0, or certificate-based authen
    **Header name** = `Authorization`
 
    **Header value** = `Api-Token <your-token>`
-6. Finish [configuring your HTTP monitor](../http-monitors-classic/configure-http-monitors-classic.md "Learn about configuring HTTP monitors.").
+6. Finish configuring your HTTP monitor.
 
 ### OAuth 2.0 authorization for endpoints
 
@@ -189,9 +189,9 @@ You first need to set up an OAuth 2.0 request for an access token, which you the
    2. A **post-execution script** is automatically enabled, where:
 
       * The request fails if the returned status code is not `200`.
-      * The `api.fail()` method defines the **Failure message** that appears in case of failure in the **Events** card on the [HTTP monitor details page](../analysis-and-alerting/synthetic-details-for-http-monitors-classic.md "Learn about the Synthetic details page for HTTP monitors.") and in [execution details](../analysis-and-alerting/synthetic-details-for-http-monitors-classic.md#analyze-last-execution "Learn about the Synthetic details page for HTTP monitors.").
+      * The `api.fail()` method defines the **Failure message** that appears in case of failure in the **Events** card on the HTTP monitor details page and in [execution details](../analysis-and-alerting/synthetic-details-for-http-monitors-classic.md#analyze-last-execution "Learn about the Synthetic details page for HTTP monitors.").
       * If the request is successful, the response body, which is a JSON-formatted string, is stored in a JavaScript object (called `bearToken-2` in this example).
-      * The `api.info()` method sends information to a log file, which is accessible on [private Synthetic locations](../private-synthetic-locations/create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.").
+      * The `api.info()` method sends information to a log file, which is accessible on private Synthetic locations.
 
       Custom log messages also appear in the `customLogs` attribute in [HTTP monitor execution details](../analysis-and-alerting/synthetic-details-for-http-monitors-classic.md#analyze-last-execution "Learn about the Synthetic details page for HTTP monitors.").
 
@@ -211,14 +211,14 @@ For subsequent HTTP requests
    * As an alternative, set an HTTP `Authorization` header with the JavaScript object containing the OAuth token as the **Header value**.
 
      ![OAuth method in HTTP request](https://dt-cdn.net/images/oauthtokeninsert2-1214-783de8da93.png)
-3. Finish [configuring your HTTP monitor](../http-monitors-classic/configure-http-monitors-classic.md "Learn about configuring HTTP monitors.").
+3. Finish configuring your HTTP monitor.
 
 ### Client certificate authentication for endpoints
 
 1. Go to **Synthetic Classic** > **Create a synthetic monitor** > **Create an HTTP monitor** and provide a **Name**.
 2. Select **Add HTTP request** and choose the **HTTP request** type.
 3. In the **Additional options** of the request, **Add client certificate**.
-4. Either use an existing certificate from the [credential vault](../../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault.") (**Select credentials**) or **Create new credentials**.
-5. Finish [configuring your HTTP monitor](../http-monitors-classic/configure-http-monitors-classic.md "Learn about configuring HTTP monitors.").
+4. Either use an existing certificate from the credential vault (**Select credentials**) or **Create new credentials**.
+5. Finish configuring your HTTP monitor.
 
-To assure full mutual authentication, disable [**Accept any SSL certificate**](../http-monitors-classic/configure-http-monitors-classic.md#ssl-accept "Learn about configuring HTTP monitors.") when using certificate authentication.
+To assure full mutual authentication, disable **Accept any SSL certificate** when using certificate authentication.

@@ -11,7 +11,7 @@ scraped: 2026-03-04T21:32:00.912853
 * Overview
 * Updated on Mar 03, 2026
 
-Explore concepts in the New RUM Experience that are specific to web frontends and learn how [general concepts](../concepts.md "Explore the key concepts behind the New RUM Experience.") translate to the web.
+Explore concepts in the New RUM Experience that are specific to web frontends and learn how general concepts translate to the web.
 
 [#### User actions in web frontends
 
@@ -25,14 +25,14 @@ Understand how pages, views, and navigations are defined for web frontends the N
 
 * Explanation
 
-Read this explanation](concepts/pages-views-and-navigations.md)[#### User sessions in web frontends
+Read this explanation](concepts/pages-views-and-navigations.md)#### User sessions in web frontends
 
 Understand user sessions and their lifecycle for web frontends the New RUM Experience.
 
 * Explanation
 
-Read this explanation](concepts/user-sessions-web.md)
+Read this explanation
 
 ## Related topics
 
-* [Concepts of the New RUM Experience](../concepts.md "Explore the key concepts behind the New RUM Experience.")
+* Concepts of the New RUM Experience

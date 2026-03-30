@@ -24,4 +24,4 @@ scraped: 2026-03-05T21:33:57.535745
 
 ## Связанные темы
 
-* [Davis AI](../../../../../common/semantic-dictionary/model/davis.md "Узнайте о моделях Семантического словаря, связанных с Davis AI.")
+* Davis AI

@@ -16,7 +16,7 @@ The `Dynatrace.OpenTelemetry.Instrumentation.GoogleCloudFunctions` NuGet package
 
 ## Prerequisites
 
-* [Set up OpenTelemetry monitoring for Google Cloud Functions](opentelemetry-on-gcf.md "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.").
+* Set up OpenTelemetry monitoring for Google Cloud Functions.
 * Dynatrace.OpenTelemetry.Instrumentation.GoogleCloudFunctions version 1.273+
 * Cloud Functions product versions: 1st gen, 2nd gen
 
@@ -199,5 +199,5 @@ Because code running outside the function execution can be terminated at any tim
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](../../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
+* Set up Dynatrace on Google Cloud
 * [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

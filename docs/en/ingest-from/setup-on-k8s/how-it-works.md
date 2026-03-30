@@ -15,15 +15,15 @@ This section provides an in-depth look at how Dynatrace components are deployed 
 
 ## Deployment modes
 
-[#### Kubernetes platform monitoring
+#### Kubernetes platform monitoring
 
 In-depth description of Kubernetes platform monitoring using Dynatrace Operator.
 
-Kubernetes platform monitoring](how-it-works/kubernetes-monitoring.md)[#### Application observability
+Kubernetes platform monitoring#### Application observability
 
 In-depth description of Application observability using the Dynatrace Operator.
 
-Application observability](how-it-works/application-monitoring.md)[#### Full-stack observability
+Application observability[#### Full-stack observability
 
 In-depth description of full-stack observability using Dynatrace Operator.
 
@@ -35,16 +35,16 @@ Full-stack observability](how-it-works/cloud-native-fullstack.md)
 
 In-depth description of Classic Full-Stack monitoring using Dynatrace Operator.
 
-Classic Full-Stack monitoring](how-it-works/other-deployment-modes/classic-fullstack.md)[#### Host monitoring
+Classic Full-Stack monitoring](how-it-works/other-deployment-modes/classic-fullstack.md)#### Host monitoring
 
 In-depth description of Host monitoring using Dynatrace Operator.
 
-Host monitoring](how-it-works/other-deployment-modes/host-monitoring.md)
+Host monitoring
 
 ## Components
 
-[#### Dynatrace Operator
+#### Dynatrace Operator
 
 Components of Dynatrace Operator
 
-Dynatrace Operator](how-it-works/components/dynatrace-operator.md)
+Dynatrace Operator

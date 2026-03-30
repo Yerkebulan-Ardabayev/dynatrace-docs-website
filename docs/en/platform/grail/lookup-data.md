@@ -18,9 +18,9 @@ Storing lookup data in [Grail](#grail) enables you to enrich your observability 
 
 ![A diagram demonstrating how lookup data in Grail works. ](https://dt-cdn.net/images/diagram-spc-file-storage-in-grail-web-res-docs-1920-a87d521cbd.png)
 
-Dynatrace stores lookup data as tabular files in the Resource Store, which is part of Grail. You can upload and manage your lookup data through the [Resource Store API](#lookup-files-rest-api). Once stored in Grail, you can use your lookup files to enrich your data within [DQL](dynatrace-query-language.md "How to use Dynatrace Query Language.") queries.
+Dynatrace stores lookup data as tabular files in the Resource Store, which is part of Grail. You can upload and manage your lookup data through the [Resource Store API](#lookup-files-rest-api). Once stored in Grail, you can use your lookup files to enrich your data within DQL queries.
 
-You can define lookup tables in [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), which currently provides the only user interface for creating and managing lookup tables without using the API. For instructions, see [Create and use lookup tables](../../secure/investigations/enhance-results.md#lookup "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
+You can define lookup tables in [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), which currently provides the only user interface for creating and managing lookup tables without using the API. For instructions, see Create and use lookup tables.
 
 ## Lookup files
 
@@ -49,15 +49,15 @@ To upload lookup data to Grail via REST API or to delete it, the policy bound to
 * `storage:files:write`
 * `storage:files:delete`
 
-All permissions can be restricted to specific paths or prefixes, giving users access to only a limited set of files. To learn more about setting up the required permissions, see [Permissions in Grail](organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+All permissions can be restricted to specific paths or prefixes, giving users access to only a limited set of files. To learn more about setting up the required permissions, see Permissions in Grail.
 
 When creating an OAuth token or platform token to make API calls from an API client, ensure these permissions are also configured for the token. The user linked to that OAuth token or platform token must have these permissions assigned.
 
 Preview opt-in
 
-Customers with [Dynatrace Platform Subscription (DPS)](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") can join the preview for lookup data in Grail. During the preview phase, the `storage:files` permissions are not included in the default Grail policies. You can opt into the preview program by manually adding permissions to access lookup files to your custom policies.
+Customers with Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") can join the preview for lookup data in Grail. During the preview phase, the `storage:files` permissions are not included in the default Grail policies. You can opt into the preview program by manually adding permissions to access lookup files to your custom policies.
 
-You can configure permissions with [Account Management](../../manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health."). To grant full access to all lookup data in `/lookups/`, you can create a policy (**Identity & access management** > **Policy management** >  **Create policy**) with the following statements:
+You can configure permissions with Account Management. To grant full access to all lookup data in `/lookups/`, you can create a policy (**Identity & access management** > **Policy management** >  **Create policy**) with the following statements:
 
 ```
 ALLOW storage:files:read WHERE storage:file-path startsWith "/lookups/";
@@ -99,7 +99,7 @@ You can manage your lookup files in Grail via the Resource Store API. Dynatrace 
 
 To update a file's content, you need to reupload the whole file and overwrite the existing file.
 
-The Resource Store API uses the [Dynatrace Pattern Language](dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.") to parse uploaded data and convert it into a tabular storage format. This provides complete flexibility regarding the uploaded data, supporting various text-based formats, including `CSV`, `JSONL`, or `XML`.
+The Resource Store API uses the Dynatrace Pattern Language to parse uploaded data and convert it into a tabular storage format. This provides complete flexibility regarding the uploaded data, supporting various text-based formats, including `CSV`, `JSONL`, or `XML`.
 
 ### Access API documentation
 
@@ -107,7 +107,7 @@ To access the Swagger API documentation for the Resource Store API and to start 
 
 1. Search for and select **Dynatrace API**.
 2. In the **Select a definition** field, select **Grail - Resource Store**.
-3. Optional Authenticate with your API token if you want to use Swagger to execute your requests. For details, see [Authentication](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context."). Select the **Try it out** button to interact with the API directly from the documentation.
+3. Optional Authenticate with your API token if you want to use Swagger to execute your requests. For details, see Authentication. Select the **Try it out** button to interact with the API directly from the documentation.
 4. Perform one of the following actions.
 
 ### Parse lookup data
@@ -273,9 +273,9 @@ With DQL, you can fetch the `dt.system.files` table to get a list of all accessi
 fetch dt.system.files
 ```
 
-If you want to search for specific files, you can add the [search](dynatrace-query-language/commands/filtering-commands.md#search "DQL filter and search commands") or [filter](dynatrace-query-language/commands/filtering-commands.md#filter "DQL filter and search commands") commands to the above example. The autocomplete suggestions within the DQL Code Editor will also help you find your files.
+If you want to search for specific files, you can add the search or filter commands to the above example. The autocomplete suggestions within the DQL Code Editor will also help you find your files.
 
-Use the [load](dynatrace-query-language/commands/data-source-commands.md#load "DQL data source commands") command if you want to inspect the contents of a file:
+Use the load command if you want to inspect the contents of a file:
 
 ```
 load "/lookups/http_status_codes"
@@ -283,7 +283,7 @@ load "/lookups/http_status_codes"
 
 ## Enrich your data
 
-You can use the [load](dynatrace-query-language/commands/data-source-commands.md#load "DQL data source commands") command to retrieve the tabular data from your lookup files in DQL and combine it with commands such as [lookup](dynatrace-query-language/commands/correlation-and-join-commands.md#lookup "DQL correlation and join commands") or [join](dynatrace-query-language/commands/correlation-and-join-commands.md#join "DQL correlation and join commands") to add additional context to your observability data:
+You can use the load command to retrieve the tabular data from your lookup files in DQL and combine it with commands such as lookup or join to add additional context to your observability data:
 
 ```
 fetch spans

@@ -25,7 +25,7 @@ Ensure that you can connect to `https://synthetic-packages.s3.amazonaws.com` to 
 
 Also see [Install the browser from a custom repository](#custom-repo) below.
 
-See [how to update the browser manually](../../../synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations.md#browser-manual "Analyze and manage capacity usage at your private Synthetic locations.") in [Manage private Synthetic locations](../../../synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations.md "Analyze and manage capacity usage at your private Synthetic locations."). We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the [latest Dynatrace-supported version](../../../synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic.md#browser-linux "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for a specific ActiveGate release.
+See [how to update the browser manually](../../../synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations.md#browser-manual "Analyze and manage capacity usage at your private Synthetic locations.") in Manage private Synthetic locations. We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the [latest Dynatrace-supported version](../../../synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic.md#browser-linux "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for a specific ActiveGate release.
 
 ### Ubuntu Server 20.04 and 22.04
 
@@ -756,7 +756,7 @@ When migrating from Chromium snap, first update the ActiveGate, then install Chr
 
 ## Install the browser from a custom repository
 
-ActiveGate version 1.243+ In addition to [web UI-guided ActiveGate installation](active-gate-for-private-locations-install.md "Learn how to install Synthetic-enabled ActiveGates.") and [manual installation of the browser and dependencies](#manual), you can also **install ActiveGate by pointing to a custom, local repository for browser components**. As this repository is an HTTP server that you set up within your network, the advantage of this method is that it can be used in environments with intranet-only or limited network access.
+ActiveGate version 1.243+ In addition to web UI-guided ActiveGate installation and [manual installation of the browser and dependencies](#manual), you can also **install ActiveGate by pointing to a custom, local repository for browser components**. As this repository is an HTTP server that you set up within your network, the advantage of this method is that it can be used in environments with intranet-only or limited network access.
 
 This method of installing the browser broadly consists of:
 
@@ -767,7 +767,7 @@ This method of installing the browser broadly consists of:
 * A custom browser repository can be used only for browser components, not their dependencies. Installing the browser from a custom repository will only work if all dependencies have been resolved before installation.
 * Custom repositories can only be used for **browser installation and autoupdate**âsee [Browser autoupdate from a custom repository](install-chromium-for-linux.md#autoupdate-custom-repo "Learn how to install Chromium for Linux manually and from custom repositories.") for details.
 
-1. Download the browser componentsâthe package archive and signature fileâfrom the safe and verified archive hosted by Dynatrace. See [Requirements for private Synthetic locations](requirements-for-private-synthetic.md "Check system and hardware requirements for private Synthetic locations.") for links to the latest supported and provided browser versions.
+1. Download the browser componentsâthe package archive and signature fileâfrom the safe and verified archive hosted by Dynatrace. See Requirements for private Synthetic locations for links to the latest supported and provided browser versions.
 
    We recommend keeping your Linux-based Synthetic-enabled ActiveGates and browser versions up to date; choose the latest provided browser version for ActiveGate.
 

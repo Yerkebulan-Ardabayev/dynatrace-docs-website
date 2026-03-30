@@ -138,7 +138,7 @@ Replace the `repoURL`, `targetRevision`, and `path` source fields with meaningfu
 * Directly via *kubectl*
 * By [applying the App of Apps pattern](#applying-the-app-of-apps-pattern)
 
-For details on DynaKube CR configuration, see the [deployment modes](../../deployment.md "Deploy Dynatrace Operator on Kubernetes") documentation.
+For details on DynaKube CR configuration, see the deployment modes documentation.
 
 ### Apply the App of Apps pattern
 
@@ -310,8 +310,8 @@ Before applying, replace all placeholders with meaningful values and configure a
 
 ## Auto-update for Dynatrace Operator
 
-For configuring automatic updates for Dynatrace Operator, see [Auto-update of Dynatrace Operator](updates-and-maintenance/dto-auto-update.md "Enable automatic updates of Dynatrace Operator following a GitOps approach."), which explains integrating GitOps with dependency automation tools.
+For configuring automatic updates for Dynatrace Operator, see Auto-update of Dynatrace Operator, which explains integrating GitOps with dependency automation tools.
 
 ## Related topics
 
-* [Auto-update for Dynatrace Operator](updates-and-maintenance/dto-auto-update.md "Enable automatic updates of Dynatrace Operator following a GitOps approach.")
+* Auto-update for Dynatrace Operator

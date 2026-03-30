@@ -12,11 +12,11 @@ scraped: 2026-03-06T21:27:16.073735
 * 22-min read
 * Updated on Jan 17, 2024
 
-Synthetic Monitoring [username-password](../../../../../common/manage/credential-vault.md#uid-password "Store and manage credentials in the credential vault.") and [token](../../../../../common/manage/credential-vault.md#token "Store and manage credentials in the credential vault.") credentials in the Dynatrace [credential vault](../../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault.") can be synchronized with an external vaultâ[Azure Key Vault](#azure-key-vault), [HashiCorp Vault](#hashicorp), or [CyberArk Vault](#cyberark) (username-password credentials only). Synchronized credentials contain the keys of external key-value pairs that hold the required values.
+Synthetic Monitoring [username-password](../../../../../common/manage/credential-vault.md#uid-password "Store and manage credentials in the credential vault.") and [token](../../../../../common/manage/credential-vault.md#token "Store and manage credentials in the credential vault.") credentials in the Dynatrace credential vault can be synchronized with an external vaultâ[Azure Key Vault](#azure-key-vault), [HashiCorp Vault](#hashicorp), or [CyberArk Vault](#cyberark) (username-password credentials only). Synchronized credentials contain the keys of external key-value pairs that hold the required values.
 
-When you set up synchronized credentials in the credential vault, Dynatrace automatically creates [HTTP monitors](../http-monitors-classic/create-an-http-monitor-classic.md "Learn how to set up an HTTP monitor to check the performance and availability of your site.") specifically for the purpose of synchronization. You can also use the `api.saveCredential()` or `api.saveToken()` methods in [pre-and post-execution scripts](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") to create your own synchronization monitors.
+When you set up synchronized credentials in the credential vault, Dynatrace automatically creates HTTP monitors specifically for the purpose of synchronization. You can also use the `api.saveCredential()` or `api.saveToken()` methods in pre-and post-execution scripts to create your own synchronization monitors.
 
-Autocreated synchronization monitors are named with the credential ID of the synchronized credential and are executed hourly by default from the Amazon US East (N. Virginia) [public Synthetic location](public-synthetic-locations.md "Learn about all currently available public Synthetic Monitoring locations."). Note that the request and response bodies and headers of synchronization monitors are automatically hidden from execution details (**Analyze execution details**).
+Autocreated synchronization monitors are named with the credential ID of the synchronized credential and are executed hourly by default from the Amazon US East (N. Virginia) public Synthetic location. Note that the request and response bodies and headers of synchronization monitors are automatically hidden from execution details (**Analyze execution details**).
 
 Other synthetic monitors can call and use these synchronized credentials for testing API endpoints and websites. The monitors that call these credentials use the synchronized values obtained from the external vaults. Synchronization frequency determines how often these credentials are rotated within the synthetic monitors that call them.
 
@@ -28,7 +28,7 @@ Username-password or token credentials for use in synthetic monitors can be sync
 
 ### Prerequisites
 
-Before setting up credentials synchronized with Azure Key Vault, you need to define the required **client (application) ID** and **client secret** as [token credentials](../../../../../common/manage/credential-vault.md#token "Store and manage credentials in the credential vault.") stored in the Dynatrace [credential vault](../../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault."). We recommend naming such prerequisite tokens so that they're easily identifiable as companion credentials for synchronization. If your vault doesn't contain any tokens that you have access to, you'll see a warning.
+Before setting up credentials synchronized with Azure Key Vault, you need to define the required **client (application) ID** and **client secret** as [token credentials](../../../../../common/manage/credential-vault.md#token "Store and manage credentials in the credential vault.") stored in the Dynatrace credential vault. We recommend naming such prerequisite tokens so that they're easily identifiable as companion credentials for synchronization. If your vault doesn't contain any tokens that you have access to, you'll see a warning.
 
 ### Set up synchronized credentials
 
@@ -60,7 +60,7 @@ See also [Best practices](#best-practices) and what happens when you [edit or de
 
 ### Azure Key Vault synchronization monitors
 
-When you have [set up your synchronized username-password or token credential](#azure-set-up), Dynatrace automatically creates and executes an [HTTP monitor](../http-monitors-classic/create-an-http-monitor-classic.md "Learn how to set up an HTTP monitor to check the performance and availability of your site.") that synchronizes the credential with Azure Key Vault. This monitor is automatically associated with the synchronized username-password or token credential.
+When you have [set up your synchronized username-password or token credential](#azure-set-up), Dynatrace automatically creates and executes an HTTP monitor that synchronizes the credential with Azure Key Vault. This monitor is automatically associated with the synchronized username-password or token credential.
 
 See also [Best practices](#best-practices) and what happens when you [edit or delete synchronization credentials](#edit-delete-credential).
 
@@ -76,10 +76,10 @@ The synchronization monitor contains three requests. Azure Key Vault requires sp
    * The request URL references the tenant ID as an attribute of the [synchronized credential](#azure-set-up) defined above; the tenant ID is not displayed.
 
      ![Azure KV request 1 URL](https://dt-cdn.net/images/cvazurerequest1url-1446-eed3251a4d.png)
-   * The client ID and client secret, referenced as attributes of the synchronized credential, are passed as key-value pairs in the [request body](../http-monitors-classic/configure-http-monitors-classic.md#request-body "Learn about configuring HTTP monitors."); the client ID and client secret are not displayed.
+   * The client ID and client secret, referenced as attributes of the synchronized credential, are passed as key-value pairs in the request body; the client ID and client secret are not displayed.
 
      ![Azure KV request 1 request body](https://dt-cdn.net/images/cvazurerequest1requestbody-984-7631f538d2.png)
-   * A client token is returned in the response body. A [post-execution script](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") saves the token in a [global variable](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Learn how to apply pre and post scripts to your requests").
+   * A client token is returned in the response body. A post-execution script saves the token in a global variable.
 
      ![Azure KV request 1 post script](https://dt-cdn.net/images/cvazurerequest1postscript-962-26b361836f.png)
 2. The second request (GET) fetches the username value.
@@ -88,10 +88,10 @@ The synchronization monitor contains three requests. Azure Key Vault requires sp
    * The request URL references the vault URL as an attribute of the [synchronized credential](#azure-set-up) defined above; the vault URL is not displayed. The request URL also references the key mapped to the username value in Azure Key Vault.
 
      ![Azure KV request 2 URL](https://dt-cdn.net/images/cvazurerequest2url-1775-b114ec0406.png)
-   * The [Authorization header](../http-monitors-classic/configure-http-monitors-classic.md#headers "Learn about configuring HTTP monitors.") contains the access token retrieved in the first request.
+   * The Authorization header contains the access token retrieved in the first request.
 
      ![Azure KV request 2 request header](https://dt-cdn.net/images/cvazurerequest2authheader-964-9fb3850f7d.png)
-   * The username value is returned in the response body. A [post-execution script](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") saves the value in a [global variable](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Learn how to apply pre and post scripts to your requests").
+   * The username value is returned in the response body. A post-execution script saves the value in a global variable.
 
      ![Azure KV request 2 post script](https://dt-cdn.net/images/cvazurerequest2postscript-962-8bccc9e09c.png)
 3. The third request (GET) fetches the password value. It also uses `api.saveCredential()` in a post-execution script to write the fetched values to the [synchronized username-password credential](#azure-set-up) defined above.
@@ -100,8 +100,8 @@ The synchronization monitor contains three requests. Azure Key Vault requires sp
    * The request URL references the vault URL as an attribute of the [synchronized credential](#azure-set-up); the vault URL is not displayed. The request URL also references the key mapped to the password value in Azure Key Vault.
 
      ![Azure KV request 3 URL](https://dt-cdn.net/images/cvazurerequest3url-1777-8a113269d0.png)
-   * The [Authorization header](../http-monitors-classic/configure-http-monitors-classic.md#headers "Learn about configuring HTTP monitors.") contains the access token retrieved in the first request.
-   * The password value is returned in the response body. A [post-execution script](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") saves the value in a [global variable](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Learn how to apply pre and post scripts to your requests"). It also uses `api.saveCredential()` to write the retrieved values to the synchronized username-password credential.
+   * The Authorization header contains the access token retrieved in the first request.
+   * The password value is returned in the response body. A post-execution script saves the value in a global variable. It also uses `api.saveCredential()` to write the retrieved values to the synchronized username-password credential.
 
      ![Azure KV request 3 post script](https://dt-cdn.net/images/cvazurerequest3postscript-962-b44c6bda2a.png)
 
@@ -113,10 +113,10 @@ The synchronization monitor contains two requests.
    * The request URL references the tenant ID, which is stored as an attribute of the [synchronized credential](#azure-set-up) defined above; the tenant ID is not displayed.
 
      ![Azure KV request 1 URL](https://dt-cdn.net/images/cv-azure-token-request1-url-1446-9fd964d06c.png)
-   * The client ID and client secret, referenced as attributes of the synchronized credential, are passed as key-value pairs in the [request body](../http-monitors-classic/configure-http-monitors-classic.md#request-body "Learn about configuring HTTP monitors."); the client ID and client secret are not displayed.
+   * The client ID and client secret, referenced as attributes of the synchronized credential, are passed as key-value pairs in the request body; the client ID and client secret are not displayed.
 
      ![Azure KV request 1 request body](https://dt-cdn.net/images/cvazurerequest1requestbody-984-7631f538d2.png)
-   * A client token is returned in the response body. A [post-execution script](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") saves the token in a [global variable](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Learn how to apply pre and post scripts to your requests").
+   * A client token is returned in the response body. A post-execution script saves the token in a global variable.
 
      ![Azure KV request 1 post script](https://dt-cdn.net/images/cvazurerequest1postscript-962-26b361836f.png)
 2. The second request (GET) fetches the token value.
@@ -125,10 +125,10 @@ The synchronization monitor contains two requests.
    * The request URL references the vault URL as an attribute of the [synchronized credential](#azure-set-up) defined above; the vault URL is not displayed. The request URL also references the key mapped to the token value in Azure Key Vault.
 
      ![Azure KV request 2 URL](https://dt-cdn.net/images/cv-azure-token-request2-url-1770-f949f51173.png)
-   * The [Authorization header](../http-monitors-classic/configure-http-monitors-classic.md#headers "Learn about configuring HTTP monitors.") contains the access token retrieved in the first request.
+   * The Authorization header contains the access token retrieved in the first request.
 
      ![Azure KV request 2 request header](https://dt-cdn.net/images/cvazurerequest2authheader-964-9fb3850f7d.png)
-   * The token value is returned in the response body. A [post-execution script](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") saves the value in a variable. It also uses `api.saveToken()` in a post-execution script to write the retrieved value to the synchronized token credential.
+   * The token value is returned in the response body. A post-execution script saves the value in a variable. It also uses `api.saveToken()` in a post-execution script to write the retrieved value to the synchronized token credential.
 
      ![Azure KV request 2 post script](https://dt-cdn.net/images/cv-azure-token-request2-post-script-961-337899fa61.png)
 
@@ -138,8 +138,8 @@ The synchronization monitor contains two requests.
 
 ### Prerequisites
 
-* Before using [AppRole-based authentication](#app-role), you need to define the required **secret ID** as a [token credential](../../../../../common/manage/credential-vault.md#token "Store and manage credentials in the credential vault.") stored in the Dynatrace [credential vault](../../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault."); do not reuse other tokens as the secret ID. If your vault doesn't contain any tokens you have access to, you'll see a warning.
-* Before using [certificate authentication](#certificate), you need to store the required **TLS [certificate](../../../../../common/manage/credential-vault.md#certificate "Store and manage credentials in the credential vault.")** in the Dynatrace [credential vault](../../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault."). If your vault doesn't contain any certificates you have access to, you'll see a warning.
+* Before using [AppRole-based authentication](#app-role), you need to define the required **secret ID** as a [token credential](../../../../../common/manage/credential-vault.md#token "Store and manage credentials in the credential vault.") stored in the Dynatrace credential vault; do not reuse other tokens as the secret ID. If your vault doesn't contain any tokens you have access to, you'll see a warning.
+* Before using [certificate authentication](#certificate), you need to store the required **TLS [certificate](../../../../../common/manage/credential-vault.md#certificate "Store and manage credentials in the credential vault.")** in the Dynatrace credential vault. If your vault doesn't contain any certificates you have access to, you'll see a warning.
 
 We recommend naming such prerequisite tokens and certificates so that they're easily identifiable as companion credentials for synchronization.
 
@@ -187,7 +187,7 @@ We recommend naming such prerequisite tokens and certificates so that they're ea
 
 See also [Best practices](#best-practices) and what happens when you [edit or delete synchronized and companion credentials](#edit-delete-credential).
 
-When you have set up your synchronized credential, Dynatrace automatically creates and executes an [HTTP monitor](../http-monitors-classic/create-an-http-monitor-classic.md "Learn how to set up an HTTP monitor to check the performance and availability of your site.") that synchronizes the credential with HashiCorp Vault.
+When you have set up your synchronized credential, Dynatrace automatically creates and executes an HTTP monitor that synchronizes the credential with HashiCorp Vault.
 
 ### HashiCorp Vault AppRole synchronization monitors
 
@@ -203,13 +203,13 @@ Token credentials
    * The request URL references the vault URL as an attribute of the [synchronized credential](#hashicorp-set-up); the vault URL is not displayed. The request URL also contains the authentication method `approle`.
 
      ![HashiCorp AppRole request 1 URL](https://dt-cdn.net/images/cvhashiapprolerequest1url-1447-20b5ca2512.png)
-   * The vault namespace, referenced as an attribute of the synchronized credential, is passed as a [request header](../http-monitors-classic/configure-http-monitors-classic.md#headers "Learn about configuring HTTP monitors."); the vault namespace is not displayed.
+   * The vault namespace, referenced as an attribute of the synchronized credential, is passed as a request header; the vault namespace is not displayed.
 
      ![HashiCorp AppRole request 1 header](https://dt-cdn.net/images/cvhashiapprolerequest1requestheader-964-7efd88a7af.png)
-   * The role ID and secret ID, referenced as attributes of the synchronized credential, are passed as key-value pairs in the [request body](../http-monitors-classic/configure-http-monitors-classic.md#request-body "Learn about configuring HTTP monitors."); the role ID and secret ID are not displayed.
+   * The role ID and secret ID, referenced as attributes of the synchronized credential, are passed as key-value pairs in the request body; the role ID and secret ID are not displayed.
 
      ![HashiCorp AppRole request 1 body](https://dt-cdn.net/images/cvhashiapprolerequest1requestbody-966-5eb6ad4427.png)
-   * A client token is returned in the response body. A [post-execution script](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") saves the token in a [global variable](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Learn how to apply pre and post scripts to your requests").
+   * A client token is returned in the response body. A post-execution script saves the token in a global variable.
 
      ![HashiCorp AppRole request 1 post script](https://dt-cdn.net/images/cvhashiapprolerequest1postscript-964-48e414d846.png)
 2. The second request (GET) fetches the username and password values. It also uses `api.saveCredential()` in s post-execution script to write the fetched values to the [synchronized username-password credential](#hashicorp-set-up) defined above.
@@ -218,10 +218,10 @@ Token credentials
    * The request URL references the vault URL and the path to credentials as attributes of the synchronized credential; the vault URL and path to credentials are not displayed.
 
      ![HashiCorp AppRole request 2 URL](https://dt-cdn.net/images/cvhashiapprolerequest2url-1777-d33a680540.png)
-   * A [request header](../http-monitors-classic/configure-http-monitors-classic.md#headers "Learn about configuring HTTP monitors.") contains the client token retrieved in the first request. The vault namespace (not displayed, but referenced as an attribute of the synchronized credential) is also passed as a request header.
+   * A request header contains the client token retrieved in the first request. The vault namespace (not displayed, but referenced as an attribute of the synchronized credential) is also passed as a request header.
 
      ![HashiCorp AppRole request 2 headers](https://dt-cdn.net/images/cvhashiapprolerequest2requestheader-964-739c560649.png)
-   * The username and password values are returned in the JSON response. A [post-execution script](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") saves the values in [global variables](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Learn how to apply pre and post scripts to your requests"). It also uses `api.saveCredential()` to write the retrieved values to the synchronized username-password credential.
+   * The username and password values are returned in the JSON response. A post-execution script saves the values in global variables. It also uses `api.saveCredential()` to write the retrieved values to the synchronized username-password credential.
 
      ![HashiCorp AppRole request 2 post script](https://dt-cdn.net/images/cvhashiapprolerequest2postscript-964-828da84802.png)
 
@@ -231,13 +231,13 @@ Token credentials
    * The request URL references the vault URL as an attribute of the [synchronized credential](#hashicorp-set-up); the vault URL is not displayed. The request URL also contains the authentication method `approle`.
 
      ![HashiCorp AppRole request 1 URL](https://dt-cdn.net/images/cvhashiapprolerequest1url-1447-20b5ca2512.png)
-   * The vault namespace, referenced as an attribute of the synchronized credential, is passed as a [request header](../http-monitors-classic/configure-http-monitors-classic.md#headers "Learn about configuring HTTP monitors."); the vault namespace is not displayed.
+   * The vault namespace, referenced as an attribute of the synchronized credential, is passed as a request header; the vault namespace is not displayed.
 
      ![HashiCorp AppRole request 1 header](https://dt-cdn.net/images/cvhashiapprolerequest1requestheader-964-7efd88a7af.png)
-   * The role ID and secret ID, referenced as attributes of the synchronized credential, are passed as key-value pairs in the [request body](../http-monitors-classic/configure-http-monitors-classic.md#request-body "Learn about configuring HTTP monitors."); the role ID and secret ID are not displayed.
+   * The role ID and secret ID, referenced as attributes of the synchronized credential, are passed as key-value pairs in the request body; the role ID and secret ID are not displayed.
 
      ![HashiCorp AppRole request 1 body](https://dt-cdn.net/images/cvhashiapprolerequest1requestbody-966-5eb6ad4427.png)
-   * A client token is returned in the response body. A [post-execution script](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") saves the token in a [global variable](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Learn how to apply pre and post scripts to your requests").
+   * A client token is returned in the response body. A post-execution script saves the token in a global variable.
 
      ![HashiCorp AppRole request 1 post script](https://dt-cdn.net/images/cvhashiapprolerequest1postscript-964-48e414d846.png)
 2. The second request (GET) fetches the token value. It also uses `api.saveToken()` in a post-execution script to write the fetched values to the [synchronized token credential](#hashicorp-set-up) defined above.
@@ -246,10 +246,10 @@ Token credentials
    * The request URL references the vault URL and the path to the credentials as attributes of the synchronized credential; the vault URL and path to credentials are not displayed.
 
      ![HashiCorp AppRole request 2 URL](https://dt-cdn.net/images/cvhashiapprolerequest2url-1777-d33a680540.png)
-   * A [request header](../http-monitors-classic/configure-http-monitors-classic.md#headers "Learn about configuring HTTP monitors.") contains the client token retrieved in the first request. The vault namespace (not displayed, but referenced as an attribute of the synchronized credential) is also passed as a request header.
+   * A request header contains the client token retrieved in the first request. The vault namespace (not displayed, but referenced as an attribute of the synchronized credential) is also passed as a request header.
 
      ![HashiCorp AppRole request 2 headers](https://dt-cdn.net/images/cvhashiapprolerequest2requestheader-964-739c560649.png)
-   * The token value is returned in the JSON response. A [post-execution script](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") saves the value in a [global variable](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Learn how to apply pre and post scripts to your requests"). It also uses `api.saveToken()` to write the retrieved value to the synchronized token credential.
+   * The token value is returned in the JSON response. A post-execution script saves the value in a global variable. It also uses `api.saveToken()` to write the retrieved value to the synchronized token credential.
 
      ![HashiCorp AppRole request 2 post-script to save token](https://dt-cdn.net/images/cv-hashi-approle-request2-postscript-savetoken-936-a139146cec.png)
 
@@ -270,7 +270,7 @@ Token credentials
    * The request uses the TLS certificate for authentication.
 
      ![HashiCorp certificate request 1 certificate](https://dt-cdn.net/images/cvhashicertificaterequest1cert-964-996d51d92a.png)
-   * A client token is returned in the response body. A [post-execution script](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") saves the token in a [global variable](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Learn how to apply pre and post scripts to your requests").
+   * A client token is returned in the response body. A post-execution script saves the token in a global variable.
 
      ![HashiCorp certificate request 1 post script](https://dt-cdn.net/images/cvhashiapprolerequest1postscript-964-48e414d846.png)
 2. The second request (GET) fetches the username and password values. It also uses `api.saveCredential()` in a post-execution script to write the fetched values to the [synchronized username-password credential](#hashicorp-set-up) defined above.
@@ -279,10 +279,10 @@ Token credentials
    * The request URL references the vault URL and the path to credentials as attributes of the synchronized credential; the vault URL and path to credentials are not displayed.
 
      ![HashiCorp AppRole request 2 URL](https://dt-cdn.net/images/cvhashiapprolerequest2url-1777-d33a680540.png)
-   * A [request header](../http-monitors-classic/configure-http-monitors-classic.md#headers "Learn about configuring HTTP monitors.") contains the client token retrieved in the first request.
+   * A request header contains the client token retrieved in the first request.
 
      ![HashiCorp certificate request 2 header](https://dt-cdn.net/images/cvhashicertificaterequest2requestheader-964-230e35242e.png)
-   * The username and password values are returned in the JSON response. A [post-execution script](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") saves the values in [global variables](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Learn how to apply pre and post scripts to your requests"). It also uses `api.saveCredential()` to write the retrieved values to the synchronized username-password credential.
+   * The username and password values are returned in the JSON response. A post-execution script saves the values in global variables. It also uses `api.saveCredential()` to write the retrieved values to the synchronized username-password credential.
 
      ![HashiCorp certificate request 2 post script](https://dt-cdn.net/images/cvhashiapprolerequest2postscript-964-828da84802.png)
 
@@ -295,7 +295,7 @@ Token credentials
    * The request uses the TLS certificate for authentication.
 
      ![HashiCorp certificate request 1 certificate](https://dt-cdn.net/images/cvhashicertificaterequest1cert-964-996d51d92a.png)
-   * A client token is returned in the response body. A [post-execution script](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") saves the token in a [global variable](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Learn how to apply pre and post scripts to your requests").
+   * A client token is returned in the response body. A post-execution script saves the token in a global variable.
 
      ![HashiCorp certificate request 1 post script](https://dt-cdn.net/images/cvhashiapprolerequest1postscript-964-48e414d846.png)
 2. The second request (GET) fetches the token value. It also uses `api.saveToken()` in a post-execution script to write the fetched value to the [synchronized token credential](#hashicorp-set-up) defined above.
@@ -304,10 +304,10 @@ Token credentials
    * The request URL references the vault URL and the path to the credentials as attributes of the synchronized credential; the vault URL and path to credentials are not displayed.
 
      ![HashiCorp AppRole request 2 URL](https://dt-cdn.net/images/cvhashiapprolerequest2url-1777-d33a680540.png)
-   * A [request header](../http-monitors-classic/configure-http-monitors-classic.md#headers "Learn about configuring HTTP monitors.") contains the client token retrieved in the first request.
+   * A request header contains the client token retrieved in the first request.
 
      ![HashiCorp certificate request 2 header](https://dt-cdn.net/images/cvhashicertificaterequest2requestheader-964-230e35242e.png)
-   * The token value is returned in the JSON response. A [post-execution script](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") saves the value in a [global variable](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Learn how to apply pre and post scripts to your requests"). It also uses `api.saveToken()` to write the retrieved value to the synchronized token credential.
+   * The token value is returned in the JSON response. A post-execution script saves the value in a global variable. It also uses `api.saveToken()` to write the retrieved value to the synchronized token credential.
 
      ![HashiCorp certificate request 2 post-script to save token](https://dt-cdn.net/images/cv-hashi-approle-request2-postscript-savetoken-936-a139146cec.png)
 
@@ -317,8 +317,8 @@ Username-password credentials for use in synthetic monitors can be synchronized 
 
 ### Prerequisites
 
-* Before using [username and password authentication](#cyberark-monitor-uid-authentication), you need to define authentication credentials for CyberArk Vaultâa [username-password pair](../../../../../common/manage/credential-vault.md#uid-password "Store and manage credentials in the credential vault.") and, optionally, a [certificate credential](../../../../../common/manage/credential-vault.md#certificate "Store and manage credentials in the credential vault.") stored in the Dynatrace [credential vault](../../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault."). We recommend naming such prerequisite credentials so that they're easily identifiable as companion credentials for synchronization.
-* Before using [host-based authentication](#cyberark-monitor-allowed-machines), you need to define **Allowed Machines** by hostname or IP address in CyberArk Vault Application Details. These are the hosts that are allowed to access the synchronized credentials in CyberArk Vault and are the public or private Synthetic locations you select for synchronization monitor execution. Note that when defining allowed machines in CyberArk Vault, the application ID must be the same as provided when [you set up a synchronized credential in Dynatrace](#cyberak-set-up). Optionally, you can also define a [certificate credential](../../../../../common/manage/credential-vault.md#certificate "Store and manage credentials in the credential vault.") stored in the Dynatrace [credential vault](../../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault.") for authentication to CyberArk Vault. If your vault doesn't contain any certificates you have access to, you'll see a warning.
+* Before using [username and password authentication](#cyberark-monitor-uid-authentication), you need to define authentication credentials for CyberArk Vaultâa [username-password pair](../../../../../common/manage/credential-vault.md#uid-password "Store and manage credentials in the credential vault.") and, optionally, a [certificate credential](../../../../../common/manage/credential-vault.md#certificate "Store and manage credentials in the credential vault.") stored in the Dynatrace credential vault. We recommend naming such prerequisite credentials so that they're easily identifiable as companion credentials for synchronization.
+* Before using [host-based authentication](#cyberark-monitor-allowed-machines), you need to define **Allowed Machines** by hostname or IP address in CyberArk Vault Application Details. These are the hosts that are allowed to access the synchronized credentials in CyberArk Vault and are the public or private Synthetic locations you select for synchronization monitor execution. Note that when defining allowed machines in CyberArk Vault, the application ID must be the same as provided when [you set up a synchronized credential in Dynatrace](#cyberak-set-up). Optionally, you can also define a [certificate credential](../../../../../common/manage/credential-vault.md#certificate "Store and manage credentials in the credential vault.") stored in the Dynatrace credential vault for authentication to CyberArk Vault. If your vault doesn't contain any certificates you have access to, you'll see a warning.
 
 We recommend naming any prerequisite credentials so that they're easily identifiable as companion credentials for synchronization.
 
@@ -360,7 +360,7 @@ We recommend naming any prerequisite credentials so that they're easily identifi
 
 See also [Best practices](#best-practices) and what happens when you [edit or delete synchronized and companion credentials](#edit-delete-credential).
 
-When you have set up your synchronized credential, Dynatrace automatically creates and executes an [HTTP monitor](../http-monitors-classic/create-an-http-monitor-classic.md "Learn how to set up an HTTP monitor to check the performance and availability of your site.") that synchronizes the credential with CyberArk Vault.
+When you have set up your synchronized credential, Dynatrace automatically creates and executes an HTTP monitor that synchronizes the credential with CyberArk Vault.
 
 ### CyberArk Vault synchronization monitors (username-password authentication)
 
@@ -372,13 +372,13 @@ The autocreated HTTP monitor contains two requests and is automatically associat
    * The request URL references the **Central Credential Provider URL** as an attribute of the [synchronized credential](#cyberark-set-up) defined above; the central credential provider URL is not displayed.
 
      ![CyberArk Vault request 1 URL](https://dt-cdn.net/images/cv-cyberark-request1-url-1445-f352bc0566.png)
-   * The [request body](../http-monitors-classic/configure-http-monitors-classic.md#request-body "Learn about configuring HTTP monitors.") references the username-password credential selected for CyberArk Vault authentication (**Username and password for Central Credential Provider**); the authentication username and password are not displayed.
+   * The request body references the username-password credential selected for CyberArk Vault authentication (**Username and password for Central Credential Provider**); the authentication username and password are not displayed.
 
      ![CyberArk Vault request 1 request body](https://dt-cdn.net/images/cv-cyberark-request1-request-body-1409-efb85f9433.png)
    * Additionally, the first request contains any authentication certificate specified in **Certificate used for authentication to CyberArk**.
 
      ![CyberArk Vault request 1 certificate](https://dt-cdn.net/images/cv-cyberark-request1-certificate-962-8b7934f165.png)
-   * A token is returned in the response body. A [post-execution script](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") saves the token in a [global variable](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Learn how to apply pre and post scripts to your requests").
+   * A token is returned in the response body. A post-execution script saves the token in a global variable.
 
      ![CyberArk Vault request 1 post script](https://dt-cdn.net/images/cv-cyberark-request1-post-script-962-04c94bf083.png)
 2. The second request (GET) fetches the username and password values from CyberArk Vault. It also uses `api.saveCredential()` in a post-execution script to write the fetched values to the [synchronized username-password credential](#cyberark-set-up) defined above.
@@ -387,10 +387,10 @@ The autocreated HTTP monitor contains two requests and is automatically associat
    * The request URL references the **Central Credential Provider URL** as an attribute of the synchronized credential; the central credential provider URL is not displayed. The request URL also references (but doesn't display) the **Application ID**, **Safe name**, **Account name**, and **Folder name**.
 
      ![CyberArk Vault request 2 URL](https://dt-cdn.net/images/cv-cyberark-request2-url-1879-7911c0b652.png)
-   * The second request also contains any authentication certificate and the access token retrieved in the first request in the [Authorization header](../http-monitors-classic/configure-http-monitors-classic.md#headers "Learn about configuring HTTP monitors.").
+   * The second request also contains any authentication certificate and the access token retrieved in the first request in the Authorization header.
 
      ![CyberArk Vault request 2 token and certificate](https://dt-cdn.net/images/cv-cyberark-request2-certificate-auth-header-1269-b10aa9737b.png)
-   * The username and password values are returned in the response body. A [post-execution script](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") saves the values in [global variables](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Learn how to apply pre and post scripts to your requests"). It also uses `api.saveCredential()` to write the retrieved values to the synchronized username-password credential.
+   * The username and password values are returned in the response body. A post-execution script saves the values in global variables. It also uses `api.saveCredential()` to write the retrieved values to the synchronized username-password credential.
 
      ![CyberArk Vault request 2 post script](https://dt-cdn.net/images/cv-cyberark-request2-post-script-999-5b4607154b.png)
 
@@ -408,18 +408,18 @@ Request configuration details
 
 ![CyberArk Vault allowed machines authentication certificate](https://dt-cdn.net/images/cv-cyberark-allowed-machines-certificate-1415-568a21181f.jpg)
 
-* The username and password values are returned in the response body. A [post-execution script](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests") saves the values in [global variables](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Learn how to apply pre and post scripts to your requests"). It also uses `api.saveCredential()` to write the retrieved values to the synchronized username-password credential.
+* The username and password values are returned in the response body. A post-execution script saves the values in global variables. It also uses `api.saveCredential()` to write the retrieved values to the synchronized username-password credential.
 
 ![CyberArk Vault allowed machines post script](https://dt-cdn.net/images/cv-cyberark-allowed-machines-post-script-1415-5e3ea56704.jpg)
 
 ## Best practices and caveats
 
-If creating a synchronization monitor manually, be sure to select **Do not store and display request and response bodies and header values in execution details** in any requests that fetch client tokens or credential values from external vaults. Failing to do so will expose the sensitive information when you **Analyze execution details** in [HTTP monitor details](../analysis-and-alerting/synthetic-details-for-http-monitors-classic.md "Learn about the Synthetic details page for HTTP monitors.").
+If creating a synchronization monitor manually, be sure to select **Do not store and display request and response bodies and header values in execution details** in any requests that fetch client tokens or credential values from external vaults. Failing to do so will expose the sensitive information when you **Analyze execution details** in HTTP monitor details.
 
 * Automatically created synchronization monitors may be edited. To edit an autocreated synchronization monitor, you must have [access to the credentials](../../../../../common/manage/credential-vault.md#owner-shared-public "Store and manage credentials in the credential vault.") referenced in the monitor. You might need to make edits if the external vault vendor makes changes. For example, you might need to edit request URLs if Microsoft changes the API version for fetching client tokens from Azure Key Vault.
 
   + In general, however, we recommend that you limit your changes to execution frequency or locations.
-  + When changing location, be careful not to pick [private Synthetic locations](../private-synthetic-locations/create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.") that don't have external network access.
+  + When changing location, be careful not to pick private Synthetic locations that don't have external network access.
   + When changing location to a private Synthetic location, ensure that the proxy configuration isn't blocking access to required resources.
 * We recommend editing the default names of synchronized credentials, companion credentials (for example, TLS certificates for HashiCorp Vault), and synchronization monitors for easy identification.
 * We do not recommend reusing companion credentials (for example, for the HashiCorp secret ID token) required for synchronization monitors in other synthetic monitors for testing purposes.

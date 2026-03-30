@@ -10,15 +10,15 @@ scraped: 2026-03-01T21:24:07.443885
 * Reference
 * Published Feb 11, 2022
 
-[### List all units
+### List all units
 
-Get an overview of all units available in your environment.](metrics-units/get-all-units.md "List all metrics that are available for your monitoring environment via the Dynatrace API.")[### View a unit
+Get an overview of all units available in your environment.### View a unit
 
-Get the full descriptor of a unit.](metrics-units/get-unit.md "View metadata of a metric unit via the Dynatrace API.")[### Convert units
+Get the full descriptor of a unit.### Convert units
 
-Convert a metric value from one unit into another.](metrics-units/get-unit-convert.md "Convert a metric value from one unit into another via the Dynatrace API.")
+Convert a metric value from one unit into another.
 
 ## Related topics
 
-* [Metrics API v2](metric-v2.md "Retrieve metric information via Metrics v2 API.")
-* [Extend metric observability](../../ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.")
+* Metrics API v2
+* Extend metric observability

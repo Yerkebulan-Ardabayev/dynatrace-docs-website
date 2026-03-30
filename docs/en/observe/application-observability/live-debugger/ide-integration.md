@@ -41,7 +41,7 @@ Follow the steps below to set up and use the **Observability for Developers by D
 
 ### 2. Add a Live Debugging breakpoint
 
-You need to add a Live Debugging [breakpoint](breakpoints.md "Learn how to add breakpoints, view available statuses, set breakpoint levels, and more.") in Visual Studio Code.
+You need to add a Live Debugging breakpoint in Visual Studio Code.
 
 Right-click a code line number, and select **Add Live Debugging Breakpoint**. The breakpoint is applied to instances matching the filters and environment set in the previous steps.
 
@@ -79,7 +79,7 @@ Complete the steps below to configure and utilize the **Observability for Develo
 
 ### 2. Add a Live Debugging breakpoint
 
-You need to add a Live Debugging [breakpoint](breakpoints.md "Learn how to add breakpoints, view available statuses, set breakpoint levels, and more.") in your JetBrains IDE.
+You need to add a Live Debugging breakpoint in your JetBrains IDE.
 
 Select the required code line number, and then select **Live Debugging Breakpoint**. The breakpoint is applied to instances matching the filters and environment set in the previous steps.
 

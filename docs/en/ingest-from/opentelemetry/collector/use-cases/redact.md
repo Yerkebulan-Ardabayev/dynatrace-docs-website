@@ -23,10 +23,10 @@ This page shows sample Collector configurations for the redaction of specific se
   + The [Dynatrace Collector](../../collector.md#dt-collector-dist "Learn about the Dynatrace OTel Collector.")
   + [OpenTelemetry Contrib](../../collector.md#collector-contrib "Learn about the Dynatrace OTel Collector.")
   + A [custom Builder version](../../collector.md#collector-builder "Learn about the Dynatrace OTel Collector.")
-* The [Dynatrace API endpoint URL](../../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported
+* The Dynatrace API endpoint URL to which the data should be exported
 * An [API token](../../otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate)
 
-See [Collector Deployment](../deployment.md "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](../configuration.md "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
+See Collector Deployment and Collector Configuration on how to set up your Collector with the configuration below.
 
 ## Redaction processor versus transform processor
 
@@ -232,7 +232,7 @@ statements: *filter-statements
 
 ### Dynatrace API tokens
 
-Using the redaction processor, we use the regular expression `dt0[a-z]0[1-9]\.[A-Za-z0-9]{24}\.([A-Za-z0-9]{64})` to mask all occurrences of [Dynatrace API tokens](../../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") in our telemetry data.
+Using the redaction processor, we use the regular expression `dt0[a-z]0[1-9]\.[A-Za-z0-9]{24}\.([A-Za-z0-9]{64})` to mask all occurrences of Dynatrace API tokens in our telemetry data.
 
 ```
 redaction:
@@ -317,10 +317,10 @@ trace_statements:
 statements: &filter-statements
 
 
-- replace_all_patterns(attributes, "value", "^3\\s*[47](\\s*[0-9]){9}((\\s*[0-9]){4})$", "<masked-pcard$$2-ot>") where IsValidLuhn(attributes["value"])
+- replace_all_patterns(attributes, "value", "^3\\s*47{9}((\\s*[0-9]){4})$", "<masked-pcard$$2-ot>") where IsValidLuhn(attributes["value"])
 
 
-- replace_all_patterns(attributes, "value", "^(5[1-5]([0-9]){2}|222[1-9]|22[3-9]\\d|2[3-6]\\d{2}|27[0-1]\\d|2720)(\\s*[0-9]){8}\\s*([0-9]{4})$", "<masked-pcard$$4-ot>") where IsValidLuhn(attributes["value"])
+- replace_all_patterns(attributes, "value", "^(51-5{2}|222[1-9]|22[3-9]\\d|2[3-6]\\d{2}|27[0-1]\\d|2720)(\\s*[0-9]){8}\\s*([0-9]{4})$", "<masked-pcard$$4-ot>") where IsValidLuhn(attributes["value"])
 
 
 - replace_all_patterns(attributes, "value", "^4(\\s*[0-9]){8,14}\\s*(([0-9]\\s*){4})$", "<masked-pcard$$2-ot>") where IsValidLuhn(attributes["value"])
@@ -450,4 +450,4 @@ Under `service`, we eventually assemble all the configured objects into pipeline
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific fields](../../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
+* Enrich ingested data with Dynatrace-specific fields

@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:24:02.533373
 * How-to guide
 * Updated on Aug 25, 2025
 
-This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the Grail security table migration guide.
 
 Ingest Amazon ECR container image vulnerability findings and scan events and analyze them in Dynatrace.
 
@@ -19,14 +19,14 @@ Ingest Amazon ECR container image vulnerability findings and scan events and ana
 
 ### Overview
 
-In the following, you'll learn how to ingest container vulnerability findings and scan events from [AWS Elastic Container Registry (ECR)ï»¿](https://dt-url.net/mu03pcw) into [Grail](../../../platform/grail.md "Insights on what and how you can query Dynatrace data.") and analyze them on the Dynatrace platform, so you can gain insights into Amazon ECR container vulnerability findings and easily work with your data.
+In the following, you'll learn how to ingest container vulnerability findings and scan events from [AWS Elastic Container Registry (ECR)ï»¿](https://dt-url.net/mu03pcw) into Grail and analyze them on the Dynatrace platform, so you can gain insights into Amazon ECR container vulnerability findings and easily work with your data.
 
 ### Use cases
 
 With the ingested data, you can accomplish various use cases, such as
 
-* [Visualize and analyze security findings](../../use-cases/visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
-* [Automate and orchestrate security findings](../../use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* Visualize and analyze security findings
+* Automate and orchestrate security findings
 
 ### Requirements
 
@@ -50,15 +50,15 @@ With the ingested data, you can accomplish various use cases, such as
   2. Set your default region (for example, `us-east-1`).
 * **Permissions**:
 
-  + You need an Admin user to define a custom policy with the [`app-engine:apps:install` permission](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#app-engine-apps-install "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") to install the app. For details, see [Dynatrace access](../../../manage/identity-access-management/permission-management/default-policies.md#access "Dynatrace default policies reference").
+  + You need an Admin user to define a custom policy with the [`app-engine:apps:install` permission](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#app-engine-apps-install "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") to install the app. For details, see Dynatrace access.
   + To query ingested data: `storage:security.events:read`.
 * **Tokens**:
 
-  + Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see [Dynatrace API - Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+  + Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see Dynatrace API - Tokens and authentication.
 
 ## Activation and setup
 
-1. In Dynatrace, open  [**Hub**](../../../manage/hub.md "See the information about Dynatrace Hub.").
+1. In Dynatrace, open  **Hub**.
 2. Look for **Amazon ECR** and select **Install**.
 3. Select **Set up**, then select  **Configure new connection**.
 4. Follow the on-screen instructions to set up the ingestion.
@@ -71,7 +71,7 @@ With the ingested data, you can accomplish various use cases, such as
 
 1. Container image vulnerabilities are ingested into Dynatrace
 
-Container image vulnerabilities reported in Amazon ECR are ingested into Dynatrace via a dedicated [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") security events ingest endpoint, using an [Amazon EventBridgeï»¿](https://dt-url.net/qi03wtk) event forwarding set up with an [AWS CloudFormation templateï»¿](https://dt-url.net/e603poa).
+Container image vulnerabilities reported in Amazon ECR are ingested into Dynatrace via a dedicated OpenPipeline security events ingest endpoint, using an [Amazon EventBridgeï»¿](https://dt-url.net/qi03wtk) event forwarding set up with an [AWS CloudFormation templateï»¿](https://dt-url.net/e603poa).
 
 2. Vulnerability findings are processed and stored in Grail
 
@@ -96,7 +96,7 @@ You can view
 
 ### Visualize and analyze findings
 
-You can create your own [dashboards](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or use our templates to visualize and analyze container vulnerability findings.
+You can create your own dashboards or use our templates to visualize and analyze container vulnerability findings.
 
 To use a dashboard template
 
@@ -105,7 +105,7 @@ To use a dashboard template
 
 ### Automate and orchestrate findings
 
-You can create your own [workflows](../../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") or use our templates to automate and orchestrate container vulnerability findings.
+You can create your own workflows or use our templates to automate and orchestrate container vulnerability findings.
 
 To use a workflow template
 
@@ -134,7 +134,7 @@ This removes the Dynatrace resources created for this integration.
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see Events powered by Grail.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -144,6 +144,6 @@ Ingest Amazon Elastic Container Registry vulnerability findings and scan events.
 
 ## Related topics
 
-* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Security events](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")
+* OpenPipeline
+* Dynatrace Query Language
+* Security events

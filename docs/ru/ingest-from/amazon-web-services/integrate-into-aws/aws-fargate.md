@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:18:01.703557
 
   + **Access problem and event feed, metrics, and topology** (API v1)
   + **PaaS integration - Installer download**
-* Ознакомьтесь со списком [поддерживаемых приложений и версий](../../technology-support.md "Техническая информация о поддержке Dynatrace конкретных платформ и фреймворков разработки.").
+* Ознакомьтесь со списком поддерживаемых приложений и версий.
 
 ## Интеграция OneAgent в образ вашего приложения
 
@@ -51,7 +51,7 @@ Kubernetes версии 1.20+
    kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=<API_TOKEN>"
    ```
 5. Скачайте [предварительно настроенный пример пользовательского ресурса DynaKube с GitHub](https://dt-url.net/dynakube-applicationmonitoring).
-6. Ознакомьтесь с [доступными параметрами](../../setup-on-k8s/reference/dynakube-parameters.md "Список доступных параметров для настройки Dynatrace Operator в Kubernetes.") и адаптируйте пользовательский ресурс DynaKube в соответствии с вашими требованиями.
+6. Ознакомьтесь с доступными параметрами и адаптируйте пользовательский ресурс DynaKube в соответствии с вашими требованиями.
 7. Примените пользовательский ресурс DynaKube.
 
    ```
@@ -317,11 +317,11 @@ ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
 
 * `DT_NETWORK_ZONE`: равно `your.network.zone`
 
-Подробнее см. [сетевые зоны](../../../manage/network-zones.md "Узнайте, как работают сетевые зоны в Dynatrace.").
+Подробнее см. сетевые зоны.
 
 ## Потребление мониторинга
 
-Для AWS Fargate потребление мониторинга основано на единицах хостов. Чтобы узнать, как единицы хостов рассчитываются для мониторинга приложений и инфраструктуры Dynatrace, см. [Мониторинг приложений и инфраструктуры (Host Units)](../../../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Узнайте, как рассчитывается потребление мониторинга приложений и инфраструктуры Dynatrace на основе единиц хостов.").
+Для AWS Fargate потребление мониторинга основано на единицах хостов. Чтобы узнать, как единицы хостов рассчитываются для мониторинга приложений и инфраструктуры Dynatrace, см. Мониторинг приложений и инфраструктуры (Host Units).
 
 ## Устранение неполадок
 
@@ -329,4 +329,4 @@ ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
 
 ## Связанные темы
 
-* [Матрица поддержки платформ и возможностей OneAgent](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах.")
+* Матрица поддержки платформ и возможностей OneAgent

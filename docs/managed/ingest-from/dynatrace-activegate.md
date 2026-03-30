@@ -23,42 +23,42 @@ Diagram of ActiveGate Functions
 
 ### ActiveGate types, purposes and functional modules
 
-You will need different types of ActiveGatesâ**Environment ActiveGates** or **Cluster ActiveGates**âbased on the Dynatrace [deployment solution](/managed/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents.") you are using and also based on the [purpose](/managed/ingest-from/dynatrace-activegate/capabilities "Learn the capabilities and uses of ActiveGate.") for which you are using Dynatrace.
+You will need different types of ActiveGatesâ**Environment ActiveGates** or **Cluster ActiveGates**âbased on the Dynatrace deployment solution you are using and also based on the purpose for which you are using Dynatrace.
 
-Dynatrace [Managed deployments](/managed/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates#managed-scheme "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents.") typically require both ActiveGate types, though the most important type for Dynatrace Managed deployments is the [Cluster ActiveGate](/managed/managed-cluster/installation/how-to-install-a-cluster-activegate "Download and install a Cluster ActiveGate in a Dynatrace Managed deployment.").
+Dynatrace Managed deployments typically require both ActiveGate types, though the most important type for Dynatrace Managed deployments is the Cluster ActiveGate.
 
-To use specific ActiveGate functional featuresâreferred to as [modules](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#modules "Learn which ActiveGate properties you can configure based on your needs and requirements.")âyou need an ActiveGate with those modules installed or activated: When you install an ActiveGate, you select the main [purpose](/managed/ingest-from/dynatrace-activegate/capabilities "Learn the capabilities and uses of ActiveGate.") of the installation and thenâdepending on the purposeâyou can install or activate a different set of functional [modules](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#modules "Learn which ActiveGate properties you can configure based on your needs and requirements.").
+To use specific ActiveGate functional featuresâreferred to as modulesâyou need an ActiveGate with those modules installed or activated: When you install an ActiveGate, you select the main purpose of the installation and thenâdepending on the purposeâyou can install or activate a different set of functional modules.
 
 An ActiveGate can be deployed in the conventional mannerâon a physical or virtual hostâthis is **host-based ActiveGate deployment**.
 An ActiveGate packaged in a container is referred to as **containerized ActiveGate deployment**.
 
 ### ActiveGate purposes and functionality
 
-[Route OneAgent traffic](/managed/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose#route "Learn about the routing and monitoring capabilities and uses of ActiveGate.")
+Route OneAgent traffic
 
-[Monitor cloud environments and remote technologies](/managed/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose#monitor "Learn about the routing and monitoring capabilities and uses of ActiveGate.")
+Monitor cloud environments and remote technologies
 
-[Run synthetic monitors](/managed/ingest-from/dynatrace-activegate/capabilities/synthetic-purpose "ActiveGates purposed for synthetic monitoring of internal and external resources from private Synthetic locations")
+Run synthetic monitors
 
-[Route z/OS traffic](/managed/ingest-from/dynatrace-activegate/capabilities/zremote-purpose "Learn about installing the zRemote module for z/OS monitoring.")
+Route z/OS traffic
 
-[Dynatrace API](/managed/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose#api "Learn about the routing and monitoring capabilities and uses of ActiveGate.")
+Dynatrace API
 
-[Functionality per ActiveGate type](/managed/ingest-from/dynatrace-activegate/capabilities "Learn the capabilities and uses of ActiveGate.")
+Functionality per ActiveGate type
 
 ### System and hardware requirements
 
-[Routing/monitoring ActiveGate, on Linux](/managed/ingest-from/dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Linux for routing and monitoring purposes.")
+Routing/monitoring ActiveGate, on Linux
 
-[Routing/monitoring ActiveGate, on Windows](/managed/ingest-from/dynatrace-activegate/installation/windows/windows-activegate-hardware-and-system-requirements "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Windows for routing and monitoring.")
+Routing/monitoring ActiveGate, on Windows
 
-[Synthetic-enabled ActiveGate](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations")
+Synthetic-enabled ActiveGate
 
-[ActiveGate for routing z/OS traffic to Dynatrace](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote "Prepare and install the zRemote for z/OS monitoring.")
+ActiveGate for routing z/OS traffic to Dynatrace
 
 ### See also
 
-[ActiveGate connectivity schemes](/managed/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents.")
+ActiveGate connectivity schemes
 
 ## Installation
 
@@ -66,6 +66,6 @@ Operating systems
 
 Container platforms
 
-[Linux](/managed/ingest-from/dynatrace-activegate/installation/linux) [Windows](/managed/ingest-from/dynatrace-activegate/installation/windows)
+Linux Windows
 
-[Kubernetes](/managed/ingest-from/dynatrace-activegate/activegate-in-container) [OpenShift](/managed/ingest-from/dynatrace-activegate/activegate-in-container)
+Kubernetes OpenShift

@@ -25,7 +25,7 @@ Examples of supported use cases include:
 * Set a budget threshold of 10% of total subscription costs for a lower âsandboxâ environment.
 * Set a fixed threshold for a new capability and be notified when it reaches USD 1,000 in costs.
 
-Budgets complement the existing [Customize cost alerts](cost-monitors.md "Learn how to use the Cost Monitors feature to make forecasts and cost events.") by allowing you to define custom thresholds at the environment and capability level.
+Budgets complement the existing Customize cost alerts by allowing you to define custom thresholds at the environment and capability level.
 
 By default you have three budgets, which alert you when your consumption reaches 75%, 90%, and 100% of your license commitment.
 
@@ -117,5 +117,5 @@ To open **Notification center**, select  **Notifications** in the Account Manage
 
 ## Related topics
 
-* [Account Management](../manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
+* Account Management
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

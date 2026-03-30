@@ -8,7 +8,7 @@ Log Monitoring Classic
 
 Dynatrace может обогащать принимаемые лог-данные дополнительной информацией, которая помогает Dynatrace распознавать, коррелировать и оценивать данные. Обогащение логов приводит к более точному анализу ваших логов.
 
-Для новейшей версии Dynatrace см. [Связывание лог-данных с трассировками](../../logs/lma-log-enrichment.md "Свяжите входящие лог-данные с трассировками для более точного анализа Dynatrace.").
+Для новейшей версии Dynatrace см. Связывание лог-данных с трассировками.
 
 Обогащение логов позволяет:
 
@@ -355,7 +355,7 @@ Logback является преемником проекта log4j. Logstash Log
 
 ### Пример ручного обогащения лог-данных для winston (Node.js)
 
-Чтобы включить обогащение логов для winston, включите [функцию OneAgent](../../../ingest-from/dynatrace-oneagent/oneagent-features.md "Управление функциями OneAgent глобально и для каждой группы процессов.") **Node.js - Trace/span context enrichment for unstructured logs**. Вы можете адаптировать транспорт winston для управления точным местоположением, куда должно быть добавлено обогащение, как в примере кода ниже.
+Чтобы включить обогащение логов для winston, включите функцию OneAgent **Node.js - Trace/span context enrichment for unstructured logs**. Вы можете адаптировать транспорт winston для управления точным местоположением, куда должно быть добавлено обогащение, как в примере кода ниже.
 
 ```
 const winston = require("winston");
@@ -434,7 +434,7 @@ format: winston.format.simple()
 
 Вы можете обогатить логи, используя NGINX ingress с Kubernetes, в два шага:
 
-1. Выполните инструкции по инструментированию [ingress-nginx на Kubernetes](../../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx.md "Инструментирование ingress-nginx на Kubernetes").
+1. Выполните инструкции по инструментированию ingress-nginx на Kubernetes.
 2. Добавьте команду ниже в файл `configmap.yaml` для NGINX ingress.
 
    Добавление строки `main-snippet` включает прием данных OneAgent и является необязательным, если вы уже следовали инструкциям по ручному инструментированию.
@@ -826,7 +826,7 @@ log.Fatal(http.ListenAndServe(":8080", nil))
 }
 ```
 
-Подробнее о конфигурации см. [Логи AWS Lambda в контексте трассировок](../../../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment.md "Настройка обогащения сообщений логов с помощью OpenTelemetry в AWS Lambda.").
+Подробнее о конфигурации см. Логи AWS Lambda в контексте трассировок.
 
 Инструкции по получению этих атрибутов через OneAgent SDK:
 
@@ -934,8 +934,8 @@ endpoint="http://localhost:14499/otlp/v1/traces"
 
 Перейдите в **Settings** > **Preferences** > **Extension Execution Controller**. Переключатели **Enable Extension Execution Controller** и **Enable local PIPE/HTTP metric and Log Ingest API** должны быть активны.
 
-Подробнее о конфигурации см. [Инструментирование Python-приложения с помощью OpenTelemetry](../../../ingest-from/opentelemetry/walkthroughs/python.md "Узнайте, как инструментировать Python-приложение с помощью OpenTelemetry и Dynatrace.")
+Подробнее о конфигурации см. Инструментирование Python-приложения с помощью OpenTelemetry
 
 ## Связанные темы
 
-* [Использование обогащения логов для трассировок при решении проблем](../../../observe/application-observability/distributed-traces/use-cases/problems-logs-traces.md "Используйте обогащение логов для просмотра связанных записей логов в представлении распределенных трассировок и расширения возможностей анализа.")
+* Использование обогащения логов для трассировок при решении проблем

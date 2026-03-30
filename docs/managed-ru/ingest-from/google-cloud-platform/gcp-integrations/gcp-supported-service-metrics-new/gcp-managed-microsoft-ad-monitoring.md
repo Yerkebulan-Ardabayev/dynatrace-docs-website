@@ -12,17 +12,17 @@ scraped: 2026-03-04T21:35:21.063986
 
 ## Предварительные требования
 
-[Настройка интеграции](../../../../../ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8.md "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+Настройка интеграции
 
 ## Добавление сервисов и наборов функций (опционально)
 
-После интеграции Dynatrace автоматически начинает мониторинг ряда предустановленных сервисов Google Cloud и наборов функций (метрик). Помимо этого, вы можете добавить дополнительные сервисы или наборы функций в мониторинг. Подробнее см. в разделе [Добавление и удаление сервисов](../../../../../ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8.md#manage "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+После интеграции Dynatrace автоматически начинает мониторинг ряда предустановленных сервисов Google Cloud и наборов функций (метрик). Помимо этого, вы можете добавить дополнительные сервисы или наборы функций в мониторинг. Подробнее см. в разделе Добавление и удаление сервисов.
 
 Список наборов функций, доступных для данного сервиса, приведён в разделе [Таблица метрик](#table).
 
 ## Просмотр метрик
 
-После развёртывания интеграции метрики с отслеживаемых сервисов можно просматривать в [браузере метрик](../../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser."), [Data Explorer](../../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") и на плитках дашборда.
+После развёртывания интеграции метрики с отслеживаемых сервисов можно просматривать в браузере метрик, Data Explorer и на плитках дашборда.
 
 ## Таблица метрик
 
@@ -35,4 +35,4 @@ scraped: 2026-03-04T21:35:21.063986
 
 ## Связанные темы
 
-* [Интеграции Google Cloud](../../../../../ingest-from/google-cloud-platform/gcp-integrations.md "Set up and configure Dynatrace on Google Cloud.")
+* Интеграции Google Cloud

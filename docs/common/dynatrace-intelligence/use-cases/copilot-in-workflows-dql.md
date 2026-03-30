@@ -13,7 +13,7 @@ updated: 2026-02-09
 * Updated on Jan 28, 2026
 * Preview
 
-With [Dynatrace Intelligence (Preview)](../../../ru/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows.md "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows."), you can automate problem summarization and ask Dynatrace Intelligence generative AI to suggest remediation steps that can be sent to your email.
+With Dynatrace Intelligence (Preview), you can automate problem summarization and ask Dynatrace Intelligence generative AI to suggest remediation steps that can be sent to your email.
 
 ## Overview
 
@@ -125,7 +125,7 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
 4. Send Dynatrace Intelligence generative AI results to user's emails
 
 1. Select **+ Add task**.
-2. In the search field, enter **Send email**, or select **Send email** from the list of the Workflow actions. For more information about the Email workflow actions, see [Email Connector](../../../ru/analyze-explore-automate/workflows/actions/email.md "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
+2. In the search field, enter **Send email**, or select **Send email** from the list of the Workflow actions. For more information about the Email workflow actions, see Email Connector.
 3. Enter the workflow task name.
 4. Configure the fields:
 
@@ -187,7 +187,7 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
 
 ## Related topics
 
-* [Dynatrace Assist](../copilot/chat-with-davis-copilot.md "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.")
-* [Dynatrace Intelligence (Preview) app](../../../ru/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows.md "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.")
-* [Dynatrace Intelligence generative AI overview](../copilot/copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Workflows](../../../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
+* Dynatrace Assist
+* Dynatrace Intelligence (Preview) app
+* Dynatrace Intelligence generative AI overview
+* Workflows

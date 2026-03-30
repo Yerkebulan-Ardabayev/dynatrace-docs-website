@@ -26,8 +26,8 @@ In this article, you'll learn how to use segments to make analyzing monitoring d
 
 Prior knowledge
 
-* [Include data in segments](../concepts/segments-concepts-includes.md "Learn how data of different types can be included in segments.")
-* [Variables in segments](../concepts/segments-concepts-variables.md "Learn how variables help to form dynamic segments and reduce configuration effort and maintenance.")
+* Include data in segments
+* Variables in segments
 
 Dynatrace apps supporting segments:
 
@@ -43,7 +43,7 @@ Support for segments in further apps will follow. Watch for updates.
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* You have `storage:filter-segments:read` permission. To learn how to set up the permissions, see [Permissions in Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+* You have `storage:filter-segments:read` permission. To learn how to set up the permissions, see Permissions in Grail.
 
 ## Steps
 

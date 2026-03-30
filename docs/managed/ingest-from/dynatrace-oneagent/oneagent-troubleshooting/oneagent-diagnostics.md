@@ -22,7 +22,7 @@ The workflow enables you to:
 
 Command-line diagnostics
 
-If you don't have access to Dynatrace or you would like to script diagnostic data collection, you can use the `oneagentctl` command to collect a subset of full diagnostics data right on the host where OneAgent is installed. For more information, see [Create support archive](../../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#create-support-archive "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+If you don't have access to Dynatrace or you would like to script diagnostic data collection, you can use the `oneagentctl` command to collect a subset of full diagnostics data right on the host where OneAgent is installed. For more information, see Create support archive.
 
 ## Requirements
 
@@ -231,15 +231,15 @@ To comply with regional data protection and privacy regulations, Dynatrace does 
 
 * Masks some personal data before storing a support archive in Cassandra and uploading it to an AWS S3 bucket. For example, IBANs and URI credentials are replaced with `<masked>`. However, some personal data may not be masked.
 * Writes audit log messages when support archives are created, analyzed, accessed, and deleted to ensure transparency in the use of support archives.
-* Provides access to OneAgent support archives only to users that have the **View sensitive request data** [environment permission](../../../../manage/identity-access-management/permission-management/role-based-permissions.md#environment "Role-based permissions").
+* Provides access to OneAgent support archives only to users that have the **View sensitive request data** environment permission.
 * Automatically deletes all diagnostic data 30 days after its collection.
 
   This applies to the data in your Dynatrace environment. You can also choose to delete collected diagnostic data earlier.
 
 For related details on OneAgent diagnostics, check the following pages:
 
-* [Personal data captured by Dynatrace](../../../../manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace.md#oneagent-diagnostics "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.")
-* [Data retention periods](../../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#diagnostics "Check retention times for various data types.")
+* Personal data captured by Dynatrace
+* Data retention periods
 
 ## Troubleshooting
 

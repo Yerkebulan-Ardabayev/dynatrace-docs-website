@@ -29,17 +29,17 @@ scraped: 2026-03-06T21:29:04.027447
 
 ## Предварительные требования
 
-* [Настройка наблюдаемости Kubernetes с Dynatrace Operator](../../ingest-from/setup-on-k8s/deployment/other/classic-full-stack.md "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes")
+* Настройка наблюдаемости Kubernetes с Dynatrace Operator
 * Настройка логирования AWS в CloudWatch:
 
   + [Настройка логирования кластера EKS](https://dt-url.net/va038gi)
   + [Настройка логирования VPC Flow](https://dt-url.net/ya238ol)
-  + [Настройка логирования K8S DNS](../../ingest-from/amazon-web-services/integrate-into-aws/aws-eks/k8s-dns-logs.md "Learn how to ingest Kubernetes-related DNS logs from AWS to Dynatrace.")
-* [Потоковая передача логов через Amazon Data Firehose](../../ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose.md "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.")
+  + Настройка логирования K8S DNS
+* Потоковая передача логов через Amazon Data Firehose
 * Базовые знания
 
-  + [Dynatrace Query Language (DQL)](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-  + [Dynatrace Pattern Language (DPL)](../../platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.")
+  + Dynatrace Query Language (DQL)
+  + Dynatrace Pattern Language (DPL)
   + Как работает разрешение DNS-имён в кластерах Kubernetes
 
 ## Путь расследования 1: Анализ журналов аудита Kubernetes
@@ -49,13 +49,13 @@ scraped: 2026-03-06T21:29:04.027447
 
 1. Установите временной диапазон
 
-В [разделе временного диапазона](../investigations/define-timeframes.md#selector "Adjust time ranges for data analysis and event correlation in Investigations.") установите период с `2024-02-13 16:00:00` по `2024-02-13 18:59:59`, когда происходили несанкционированные запросы.
+В разделе временного диапазона установите период с `2024-02-13 16:00:00` по `2024-02-13 18:59:59`, когда происходили несанкционированные запросы.
 
 ![установка временного диапазона](https://dt-cdn.net/images/2024-03-06-08-15-45-1914-2f0de669a4.png)
 
 2. Получение журналов аудита кластера Kubernetes
 
-1. Журналы аудита Kubernetes перенаправляются в Dynatrace с прикреплёнными значениями `aws.log_group` и `log_stream`. Чтобы получить все уникальные группы логов AWS CloudWatch, загруженные в Dynatrace, скопируйте и вставьте следующий [DQL-запрос](../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.") в поле ввода запроса.
+1. Журналы аудита Kubernetes перенаправляются в Dynatrace с прикреплёнными значениями `aws.log_group` и `log_stream`. Чтобы получить все уникальные группы логов AWS CloudWatch, загруженные в Dynatrace, скопируйте и вставьте следующий DQL-запрос в поле ввода запроса.
 
    ```
    fetch logs
@@ -85,13 +85,13 @@ scraped: 2026-03-06T21:29:04.027447
 
 4. Проверка содержимого
 
-В таблице результатов запроса щёлкните правой кнопкой мыши на любой ячейке в поле **content** и выберите **View field details**, чтобы просмотреть необработанное содержимое поля. Подробности см. в разделе [Исследование данных в исходном формате](../investigations/enhance-results.md#view-details "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
+В таблице результатов запроса щёлкните правой кнопкой мыши на любой ячейке в поле **content** и выберите **View field details**, чтобы просмотреть необработанное содержимое поля. Подробности см. в разделе Исследование данных в исходном формате.
 
 ![Проверка содержимого](https://dt-cdn.net/images/2024-03-07-16-43-25-1546-aa18860a77.png)
 
 5. Извлечение полей из JSON
 
-1. В таблице результатов запроса щёлкните правой кнопкой мыши на любой ячейке в поле **Content** и выберите [**Extract fields**](../investigations/extract-fields.md#field "Pull specific data points from logs in Investigations.") для перехода в [DPL Architect](../../platform/grail/dynatrace-pattern-language/dpl-architect.md "Extract fields with Dynatrace Pattern Language Architect.").
+1. В таблице результатов запроса щёлкните правой кнопкой мыши на любой ячейке в поле **Content** и выберите **Extract fields** для перехода в DPL Architect.
 2. Выберите **Saved patterns**.
 3. В **Dynatrace patterns** выберите **k8s** > **audit**.
 
@@ -133,9 +133,9 @@ scraped: 2026-03-06T21:29:04.027447
 
 Чтобы выяснить, какие IP-адреса имеют несанкционированную активность, вам необходимо
 
-* [Развернуть](../../platform/grail/dynatrace-query-language/commands/structuring-commands.md#expand "DQL structuring commands") массив IP-адресов источника
-* [Суммировать](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "DQL aggregation commands") результаты с ранее извлечёнными релевантными полями
-* [Отфильтровать](../../platform/grail/dynatrace-query-language/commands/filtering-commands.md#filter "DQL filter and search commands") результаты, чтобы видеть только несанкционированные запросы (`401`) и запрещённые запросы (`403`)
+* Развернуть массив IP-адресов источника
+* Суммировать результаты с ранее извлечёнными релевантными полями
+* Отфильтровать результаты, чтобы видеть только несанкционированные запросы (`401`) и запрещённые запросы (`403`)
 
 1. В поле ввода запроса добавьте следующий фрагмент DQL, затем нажмите **Run** для выполнения запроса.
 
@@ -161,7 +161,7 @@ scraped: 2026-03-06T21:29:04.027447
 
 Оба IP-адреса требуют дальнейшего анализа, но тот, у которого ответ `403` и 2090 попыток, является более критическим и требует особого внимания.
 
-Чтобы сохранить IP-адреса как [доказательства](../investigations/manage-evidence.md "Collect and preserve investigation artifacts in Investigations."), вы можете добавить первый IP (`198.51.100.2`) в предустановленный список доказательств, а второй (`172.31.29.138`) — в новый пользовательский список доказательств:
+Чтобы сохранить IP-адреса как доказательства, вы можете добавить первый IP (`198.51.100.2`) в предустановленный список доказательств, а второй (`172.31.29.138`) — в новый пользовательский список доказательств:
 
 1. Щёлкните правой кнопкой мыши на `198.51.100.2`, затем выберите **Add to evidence list** > **Suspicious IPs**.
 2. Щёлкните правой кнопкой мыши на `172.31.29.138`, выберите **Add to evidence list** > **New evidence list** и введите имя, например, "Suspicious pod".
@@ -179,7 +179,7 @@ scraped: 2026-03-06T21:29:04.027447
 
    ![Логи VPC flow](https://dt-cdn.net/images/2024-03-06-16-11-40-1905-ed76689a2c.png)
 
-   Иконка узла в дереве запросов изменилась, что означает, что вы находитесь в процессе редактирования запроса. Вы можете либо вернуться к исходному запросу для обновления таблицы результатов, либо выполнить изменённый запрос. При выполнении изменённого запроса создаётся новый узел с соответствующим запросом и результатами. Вы можете [присвоить узлу отличительное имя и цвет](../investigations/query-tree.md "Visualize and structure complex queries in Investigations."), чтобы распознать его позже.
+   Иконка узла в дереве запросов изменилась, что означает, что вы находитесь в процессе редактирования запроса. Вы можете либо вернуться к исходному запросу для обновления таблицы результатов, либо выполнить изменённый запрос. При выполнении изменённого запроса создаётся новый узел с соответствующим запросом и результатами. Вы можете присвоить узлу отличительное имя и цвет, чтобы распознать его позже.
 3. В поле ввода запроса удалите команду `summarize`, затем нажмите **Run** для выполнения изменённого запроса.
 
    ![выполнение изменённого запроса](https://dt-cdn.net/images/2024-03-07-18-21-06-1913-6f988f1771.png)
@@ -292,7 +292,7 @@ scraped: 2026-03-06T21:29:04.027447
 
 Поскольку к этому конкретному домену направлены тысячи DNS-запросов, вы можете агрегировать данные, чтобы определить дальнейшие действия.
 
-1. В результатах запроса выберите заголовок столбца **type**, затем выберите [**Summarize**](../investigations/enhance-results.md#aggregate "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
+1. В результатах запроса выберите заголовок столбца **type**, затем выберите **Summarize**.
 2. Нажмите **Run** для выполнения запроса.
 
    ![Суммирование по типу](https://dt-cdn.net/images/2024-03-07-10-40-41-399-c7c4bf8285.png)
@@ -398,8 +398,8 @@ scraped: 2026-03-06T21:29:04.027447
 
 ## Связанные темы
 
-* [Анализ логов AWS CloudTrail с помощью расследований](analyze-aws-cloudtrail-logs-with-security-investigator.md "Analyze CloudTrail logs and find potential security issues with Dynatrace.")
-* [Анализ логов доступа Amazon API Gateway с помощью расследований](analyze-aws-api-gateway-access-logs-with-security-investigator.md "Monitor and identify errors in your Amazon API Gateway access logs with Dynatrace.")
-* [Обнаружение угроз для ваших секретов AWS с помощью расследований](detect-threats-against-aws-secrets-with-security-investigator.md "Monitor and identify potential threats against your AWS Secrets with Dynatrace.")
-* [Ускорение разрешения инцидентов с помощью шаблонов расследований](resolve-incidents-faster-with-templates.md "Speed up your log-related investigations with Investigations templates.")
-* [Операционализация результатов DQL-запросов с помощью расследований](operationalize-query-results.md "Build DQL queries from your query results faster and more conveniently with Dynatrace Investigations.")
+* Анализ логов AWS CloudTrail с помощью расследований
+* Анализ логов доступа Amazon API Gateway с помощью расследований
+* Обнаружение угроз для ваших секретов AWS с помощью расследований
+* Ускорение разрешения инцидентов с помощью шаблонов расследований
+* Операционализация результатов DQL-запросов с помощью расследований

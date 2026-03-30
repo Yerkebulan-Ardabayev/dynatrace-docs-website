@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:23:18.368123
 
 ### Сужайте временной диапазон запроса
 
-Более короткое окно анализа обеспечивает лучшую производительность на идентичных наборах данных. Используйте доступные селекторы временного диапазона, предоставляемые пользовательским интерфейсом, или напрямую укажите временной диапазон запроса в команде [fetch](commands.md "A list of DQL commands.").
+Более короткое окно анализа обеспечивает лучшую производительность на идентичных наборах данных. Используйте доступные селекторы временного диапазона, предоставляемые пользовательским интерфейсом, или напрямую укажите временной диапазон запроса в команде fetch.
 
 ```
 fetch bizevents, from:-10m
@@ -21,7 +21,7 @@ fetch bizevents, from:-10m
 
 ### Используйте доступные возможности выборки
 
-Grail выполняет выборку входящих данных при записи и позволяет выбирать эти разделы в команде DQL [fetch](commands.md "A list of DQL commands."). В зависимости от указанного значения возвращается доля (`1/<samplingRatio>`) всех доступных необработанных записей.
+Grail выполняет выборку входящих данных при записи и позволяет выбирать эти разделы в команде DQL fetch. В зависимости от указанного значения возвращается доля (`1/<samplingRatio>`) всех доступных необработанных записей.
 
 Допустимые значения для выборки:
 
@@ -45,7 +45,7 @@ fetch spans, samplingRatio:100
 
 ### Дополнительные возможности ограничения объёма сканируемых данных
 
-Команда DQL [fetch](commands.md "A list of DQL commands.") предоставляет дополнительные возможности для ограничения обработки данных:
+Команда DQL fetch предоставляет дополнительные возможности для ограничения обработки данных:
 
 * остановка обработки после указанного объёма данных
 
@@ -215,11 +215,11 @@ fetch logs, bucket:{"astroshop_log_*"}, from:-1d@d, samplingRatio:10
 
 ## Связанные темы
 
-* [Dynatrace Query Language](../dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Использование запросов DQL](dql-guide.md "Find out how DQL works and what are DQL key concepts.")
-* [Сравнение DQL с SQL и другими языками](dql-comparison.md "See how DQL compares to other query languages.")
-* [Справочник по языку DQL](dql-reference.md "Dynatrace Query Language syntax reference.")
-* [Команды DQL](commands.md "A list of DQL commands.")
-* [Функции DQL](functions.md "A list of DQL functions.")
-* [Операторы DQL](operators.md "A list of DQL Operators.")
-* [Типы данных DQL](data-types.md "A list of DQL data types.")
+* Dynatrace Query Language
+* Использование запросов DQL
+* Сравнение DQL с SQL и другими языками
+* Справочник по языку DQL
+* Команды DQL
+* Функции DQL
+* Операторы DQL
+* Типы данных DQL

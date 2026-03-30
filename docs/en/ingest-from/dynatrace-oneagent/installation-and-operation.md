@@ -75,11 +75,11 @@ To download and install OneAgent on a host:
 
     ![Infrastructure & Operations view of a newly added OneAgent on host](https://dt-cdn.net/images/screenshot-2025-02-04-at-13-32-36-2598-439524d1f9.png)
 
-OneAgent is now set up and monitoring your host. See [Get started with Dynatrace](../../discover-dynatrace/get-started.md "Learn about Dynatrace monitoring capabilities, concepts, and deployment models and find out how to get started with SaaS and Managed deployments.") to continue your first journey with Dynatrace.
+OneAgent is now set up and monitoring your host. See Get started with Dynatrace to continue your first journey with Dynatrace.
 
 ## Related topics
 
-* [OneAgent features](oneagent-features.md "Manage OneAgent features globally and per process group.")
-* [Infrastructure & Operations](../../observe/infrastructure-observability/infrastructure-and-operations.md "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
-* [Host-level settings](../../observe/infrastructure-observability/hosts/configuration.md "Host-level settings")
-* [OneAgent monitoring modes](../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.")
+* OneAgent features
+* Infrastructure & Operations
+* Host-level settings
+* OneAgent monitoring modes

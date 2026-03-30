@@ -126,20 +126,20 @@ value: 'dt.owner-1=my-team-1' # Ownership defined for the process
 #### Advantages and uses of tags
 
 * Tags are appropriate for assigning a **few stable entities** (for example, an application and the synthetic monitors running against it) to specific ownership teams.
-* [Manual tagging](../../manage/tags-and-metadata/setup/how-to-define-tags.md#manual "Find out how to define and apply tags manually and automatically.") or the [Custom tags API](../../dynatrace-api/environment-api/custom-tags.md "Manage custom tags of the monitored entities via the Dynatrace API.") are effective in applying ownership to **existing (already deployed) entities**.
-* [Automatic tagging rules](../../manage/tags-and-metadata/setup/how-to-define-tags.md#automatic "Find out how to define and apply tags manually and automatically.") have the advantage of capturing **new entities** that match your tagging rules. Automatically applied tags also can't be removed manually from individual services, process groups, process group instances, applications, or hosts.
-* While the Custom tags API and automatic tagging rules both use the powerful and flexible [**entity selector**](../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") for selecting entities, the **Custom tags API call is executed immediately**. This is a [major advantage over automatic tagging rules](../../manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md#custom-tags-api "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.") that are scheduled via the Dynatrace tagging process. This helps you speed up execution time when complex tagging rules are necessary.
+* Manual tagging or the Custom tags API are effective in applying ownership to **existing (already deployed) entities**.
+* Automatic tagging rules have the advantage of capturing **new entities** that match your tagging rules. Automatically applied tags also can't be removed manually from individual services, process groups, process group instances, applications, or hosts.
+* While the Custom tags API and automatic tagging rules both use the powerful and flexible **entity selector** for selecting entities, the **Custom tags API call is executed immediately**. This is a [major advantage over automatic tagging rules](../../manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md#custom-tags-api "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.") that are scheduled via the Dynatrace tagging process. This helps you speed up execution time when complex tagging rules are necessary.
 
 #### Important considerations when using tags for ownership
 
 * **Manual tagging** doesn't **scale** adequately for assigning ownership in large, dynamic monitoring environments. Manual tags can also be removed manually.
-* While (web UIâbased) **automatic tagging rules** are designed for complexity, automatic tagging runs can take a **long time** to be completed, depending on the complexity of your rules and the size of your environment. Meanwhile, a critical entity experiencing an issue could miss being tagged with ownership. Read more about optimizing tagging in [Best practices for scaling tagging and management-zone rules](../../manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
+* While (web UIâbased) **automatic tagging rules** are designed for complexity, automatic tagging runs can take a **long time** to be completed, depending on the complexity of your rules and the size of your environment. Meanwhile, a critical entity experiencing an issue could miss being tagged with ownership. Read more about optimizing tagging in Best practices for scaling tagging and management-zone rules.
 * While the **Custom tags API call** is executed immediately, the tradeoff is that it's a **one-time operation**. Depending on the frequency of your tagging runs, new or short-lived entities could miss being tagged with ownership information entirely, making it difficult to find owners in case of vulnerabilities or outages.
 * We **do not recommend** using tags to apply ownership to processes or process groups.
 
 ## Team information
 
-While only the **Team name** and **Team identifier** fields are required for creating an [ownership team](ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership."), here are some suggestions and best uses of other fields.
+While only the **Team name** and **Team identifier** fields are required for creating an ownership team, here are some suggestions and best uses of other fields.
 
 * When defining [custom keys](assign-ownership.md#custom-keys "Assign owners to entities using entity metadata like labels, environment variables, and tags.") for ownership identifiers, use specific, easily understandable names that are not likely to be used for other tagging needs.
 * Always add a team **Description**âthis is displayed along with the team name on the **Ownership teams** settings page and helps to differentiate teams at a glance. Teams with no description or a poor name (team 1) offer no clues as to their role in your organization. Teams with descriptions (2 and 3) are more identifiable.
@@ -163,4 +163,4 @@ While only the **Team name** and **Team identifier** fields are required for cre
 
 ## Related topics
 
-* [Best practices for scaling tagging and management-zone rules](../../manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.")
+* Best practices for scaling tagging and management-zone rules

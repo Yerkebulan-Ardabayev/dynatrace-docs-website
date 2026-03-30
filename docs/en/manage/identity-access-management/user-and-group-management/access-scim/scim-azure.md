@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:33:48.651906
 * 4-min read
 * Updated on Aug 06, 2024
 
-This page describes the IdP (**Azure**) end of your **SCIM** SSO configuration, not the Dynatrace end. Use it as part of the entire [SCIM configuration procedure](../access-scim.md "SCIM") for Dynatrace SaaS if you're using Azure.
+This page describes the IdP (**Azure**) end of your **SCIM** SSO configuration, not the Dynatrace end. Use it as part of the entire SCIM configuration procedure for Dynatrace SaaS if you're using Azure.
 
 While we do our best to provide you with current information, Dynatrace has no control over changes that may be made by third-party providers. Always refer to official third-party documentation from your IdP as your primary source of information for third-party products.
 

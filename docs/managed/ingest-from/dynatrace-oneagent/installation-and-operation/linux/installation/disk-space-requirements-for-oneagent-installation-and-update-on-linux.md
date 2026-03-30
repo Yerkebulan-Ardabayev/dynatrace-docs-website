@@ -48,21 +48,21 @@ The size depends on the number of ingested logs.
 
 6
 
-Applicable only if you use Dynatrace Extensions that [define the log metrics, events, or add their own log processing rules](/managed/ingest-from/extensions/advanced-configuration/extension-customize#log-metrics-events-and-processing-rules "Learn how to instrument your extensions to customize how the ingested data is handled by Dynatrace."). Can be changed via support request.
+Applicable only if you use Dynatrace Extensions that define the log metrics, events, or add their own log processing rules. Can be changed via support request.
 
 7
 
 The reliability mechanism does not work if the requirement is not met. For more information see [Persistence details](#persistence).
 
-For a complete list of files and directories added to your system by OneAgent, see [OneAgent security on Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
+For a complete list of files and directories added to your system by OneAgent, see OneAgent security on Linux.
 
 ## OneAgent files aging mechanism
 
-OneAgent in full-stack monitoring mode uses a built-in aging mechanism to ensure that the OneAgent files, including log files and runtime data, are kept within a reasonable size. For more information, see [OneAgent file aging mechanism](/managed/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism "Learn how OneAgent deletes old files to minimize disk space usage.").
+OneAgent in full-stack monitoring mode uses a built-in aging mechanism to ensure that the OneAgent files, including log files and runtime data, are kept within a reasonable size. For more information, see OneAgent file aging mechanism.
 
 ## Dynatrace Managed self-monitoring
 
-For OneAgent self-monitoring for Dynatrace Managed requirements on Linux, see [the directory structure of Dynatrace Managed](/managed/managed-cluster/installation/dynatrace-managed-hardware-and-system-requirements "Learn what hardware and operating system requirements need to be taken into account before installing your Dynatrace Managed cluster.").
+For OneAgent self-monitoring for Dynatrace Managed requirements on Linux, see the directory structure of Dynatrace Managed.
 
 ## Space required for updates
 

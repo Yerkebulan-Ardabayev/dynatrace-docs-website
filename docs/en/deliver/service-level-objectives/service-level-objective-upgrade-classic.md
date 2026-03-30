@@ -36,9 +36,9 @@ The table below highlights the new functionality and shows the many reasons you 
 | Capability | SLOs Classic **Service-Level Objectives Classic** | SLOs **Service-Level Objectives** | Business impact |
 | --- | --- | --- | --- |
 | Supported input for SLI definition | Limited to built-in or custom-calculated metrics | Supporting all data types in Grail, incl. biz-events, logs, spans, and time series | SLOs allow a finer granular configuration and tailored definition of the SLI. |
-| Segmenting, data filtering for SLO evaluation | ManagementZones | [Segments](../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") | [Segments](../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") allow detailed filtering of the dataset used for the SLO evaluation. |
+| Segmenting, data filtering for SLO evaluation | ManagementZones | Segments | Segments allow detailed filtering of the dataset used for the SLO evaluation. |
 | Adding SLO tags | â | SLO tags | Add SLO tags (key-value pairs) and then use them to filter SLOs when querying them via the API. |
-| Customized dashboard tiles | Classic dashboard tile | New [dashboard SLO tiles](service-level-objective-tile-view.md "View your service-level objective (SLO) tile details directly in your dashboard.") | New [dashboard SLO tiles](service-level-objective-tile-view.md "View your service-level objective (SLO) tile details directly in your dashboard.") allow more visual customization options, including what data should be shown and colorized. An additional SLO wizard overview allows for creating and editing SLOs in Dashboards **Dashboards**. |
+| Customized dashboard tiles | Classic dashboard tile | New dashboard SLO tiles tile details directly in your dashboard.") | New dashboard SLO tiles tile details directly in your dashboard.") allow more visual customization options, including what data should be shown and colorized. An additional SLO wizard overview allows for creating and editing SLOs in Dashboards **Dashboards**. |
 | Integration with other Dynatrace apps | Integrated with classic Dynatrace Apps | Integrated with latest Dynatrace Apps |  |
 
 ### Difference between SLO and Classic SLO
@@ -48,8 +48,8 @@ The DQL query allows extensive customization possibilities, unlike metric and en
 
 The benefits of DQL-based SLOs are as follows:
 
-* Use any telemetry data in Grail. For more information, see [Upgrading Metrics](../../analyze-explore-automate/metrics/upgrade.md "Upgrade classic metrics to metrics powered by Grail to continue using your data retrieved with metric selectors, but with the added power of Grail and DQL.").
-* Apply custom filters and advanced options [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.").
+* Use any telemetry data in Grail. For more information, see Upgrading Metrics.
+* Apply custom filters and advanced options Dynatrace Query Language.
 * Benefit from simplified ratio calculations for SLI.
 
 #### How core SLO components are defined in SLO and Classic SLO
@@ -73,7 +73,7 @@ It's possible to set the following parameters:
 * Evaluation period
 * SLO target (threshold)
 
-In ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**, the SLI is represented as a [DQL (Dynatrace Query Language)](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") query.
+In ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**, the SLI is represented as a DQL (Dynatrace Query Language) query.
 It's flexible and uses contextual data to represent the objectives.
 
 ### SLO Classic example using Metrics selectors
@@ -129,15 +129,15 @@ To upgrade a Classic SLO to SLO
 
 1. Map your Classic SLO metric expression to Grail.
 
-   1. Check the comprehensive list in [Upgrading Metrics](../../analyze-explore-automate/metrics/upgrade.md "Upgrade classic metrics to metrics powered by Grail to continue using your data retrieved with metric selectors, but with the added power of Grail and DQL.").
-   2. Use the [Metric selector conversion guide](../../analyze-explore-automate/metrics/upgrade/metric-selector-conversion.md "Learn about the various metrics that Dynatrace offers.").
+   1. Check the comprehensive list in Upgrading Metrics.
+   2. Use the Metric selector conversion guide.
 
    For complex metric expressions, you might need to adapt the DQL queries manually.
-2. Convert the entity selectors to the corresponding [DQL statement](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). For more information, see [DQL best practices](../../platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.").
+2. Convert the entity selectors to the corresponding DQL statement. For more information, see DQL best practices.
 
    The following table shows the typical entity selectors for Classic SLOs and their equivalent in DQL.
 
-   If you use management zones for permissions and access control, see [Grant access to entities with security context](../../manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context").
+   If you use management zones for permissions and access control, see Grant access to entities with security context.
 3. Enhance your SLI definition.
 
    While you can upgrade most Classic SLOs to a one-to-one match in Grail, consider enhancing your SLI definitions by leveraging options that are not available with traditional metric expressions.
@@ -157,7 +157,7 @@ To automate SLO management and evaluation, use the dedicated API endpoints. Refe
 
 ## Upgrade via Configuration as Code
 
-For scalable SLO management and evaluation, use [Configuration as Code overview](../configuration-as-code.md "Use Dynatrace configuration as code via Monaco or Terraform.") on top of the SLO Service Public API.
+For scalable SLO management and evaluation, use Configuration as Code overview on top of the SLO Service Public API.
 
 To access the SLO Service Public API on your tenant
 
@@ -167,8 +167,8 @@ To access the SLO Service Public API on your tenant
 4. In the upper right corner, go to **Select a definition**.
 5. From the drop-down list, choose the endpoint.
 
-* [Configuration as Code via Terraform overview](../configuration-as-code/terraform.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform.") support the SLO Service Public API since v1.78.0 and the Dynatrace Terraform provider can be found `dynatrace-oss/dynatrace | Terraform Registry`.
-* [Configuration as Code via Monaco overview](../configuration-as-code/monaco.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco.") supports the SLO Service Public API since v2.22.
+* Configuration as Code via Terraform overview support the SLO Service Public API since v1.78.0 and the Dynatrace Terraform provider can be found `dynatrace-oss/dynatrace | Terraform Registry`.
+* Configuration as Code via Monaco overview supports the SLO Service Public API since v2.22.
 
 ## Whatâs next?
 
@@ -179,6 +179,6 @@ For further optimization and guidance, contact your Dynatrace support team to ma
 
 ## Related topics
 
-* [Discover Dynatrace](../../discover-dynatrace.md "Discover Dynatrace")
-* [Service-level objective templates](service-level-objective-templates.md "Explore the out-of-the-box service-level objective templates.")
-* [Service-level objective examples](service-level-objective-examples.md "Explore the out-of-the-box service-level objective definitions by way of examples.")
+* Discover Dynatrace
+* Service-level objective templates
+* Service-level objective examples

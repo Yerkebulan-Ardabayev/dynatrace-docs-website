@@ -15,7 +15,7 @@ JMX ([Java Management Extensionsï»¿](https://www.oracle.com/technetwork/java/
 
 ## Infrastructure Monitoring mode
 
-JMX and PMI extensions are also available in [Infrastructure Monitoring mode](../../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.") You can use them to monitor any infrastructure component and backing service written in Java and have all the collected metrics reported by Dynatrace.
+JMX and PMI extensions are also available in Infrastructure Monitoring mode You can use them to monitor any infrastructure component and backing service written in Java and have all the collected metrics reported by Dynatrace.
 
 ## Create a JMX extension
 
@@ -82,9 +82,9 @@ After you add the metric, you can still edit or delete its definition. You must 
 
 ## Customizing your extension
 
-The Dynatrace JMX extensions are highly customizable beyond the capabilities of the editor. You can download your extension and edit its JSON file that describes your JMX metrics and how you want to display them. For reference and examples, see [Customizing JMX Plugins](jmx-extensions/customize-jmx-extensions.md "Learn how to further customize your JMX extensions.").
+The Dynatrace JMX extensions are highly customizable beyond the capabilities of the editor. You can download your extension and edit its JSON file that describes your JMX metrics and how you want to display them. For reference and examples, see Customizing JMX Plugins.
 
-You need to create a JSON file that describes your JMX metrics and how you want to display them. For reference and examples, see [Customizing JMX Plugins](jmx-extensions/customize-jmx-extensions.md "Learn how to further customize your JMX extensions.").
+You need to create a JSON file that describes your JMX metrics and how you want to display them. For reference and examples, see Customizing JMX Plugins.
 
 ## Upload a JMX extension
 
@@ -197,7 +197,7 @@ The following sample shows how to define a metric that provides multiple timeser
 
 In this example, MBeans `com.sample:type=XY,name=A` and `com.sample:type=XY,name=B` will result in two timeseries metrics (`A` and `B`).
 
-Since such values typically aren't known in advance, and are subject to change, this can lead to an unexpectedly high number of [consumed custom metrics](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). If the values of the property are known in advance, or if only some of the values are of interest, we recommend that you specify one metric for each value and not use splitting.
+Since such values typically aren't known in advance, and are subject to change, this can lead to an unexpectedly high number of consumed custom metrics. If the values of the property are known in advance, or if only some of the values are of interest, we recommend that you specify one metric for each value and not use splitting.
 
 ## Metrics limit per JMX extension
 

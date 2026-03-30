@@ -73,4 +73,4 @@ After the training is finished, Dynatrace uses the seasonal model to detect anom
 
 ## Related topics
 
-* [Metrics Classic](../../../analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")
+* Metrics Classic

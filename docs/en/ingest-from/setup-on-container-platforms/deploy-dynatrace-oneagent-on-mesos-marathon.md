@@ -176,8 +176,8 @@ This is your `ONEAGENT_INSTALLER_SCRIPT_URL`.
    ```
 2. Deploy OneAgent on Mesos master nodes.
 
-   Marathon doesn't allow you to deploy applications to master nodes (except for nodes that are tagged as both master and agent). This is why you must manually install OneAgent on all Mesos master nodes that aren't additionally configured as Mesos agents. For this, use the default [Linux installer](../dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.").
+   Marathon doesn't allow you to deploy applications to master nodes (except for nodes that are tagged as both master and agent). This is why you must manually install OneAgent on all Mesos master nodes that aren't additionally configured as Mesos agents. For this, use the default Linux installer.
 
 ## Related topics
 
-* [OneAgent platform and capability support matrix](../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* OneAgent platform and capability support matrix

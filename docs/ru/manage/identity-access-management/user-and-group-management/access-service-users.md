@@ -61,8 +61,8 @@ scraped: 2026-03-04T21:39:01.387067
 
 Это разрешение предоставляется следующими политиками по умолчанию:
 
-* [Dynatrace Pro User](../permission-management/default-policies.md#DynatraceAccessProUser "Справочник по политикам Dynatrace по умолчанию")
-* [Dynatrace Admin User](../permission-management/default-policies.md#DynatraceAccessAdminUser "Справочник по политикам Dynatrace по умолчанию")
+* Dynatrace Pro User
+* Dynatrace Admin User
 
 ## Создание политик на основе сервисного пользователя
 

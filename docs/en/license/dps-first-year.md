@@ -67,5 +67,5 @@ Usage is billed monthly at the same rates without any penalty-style overages.
 
 ## Related topics
 
-* [License Dynatrace](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
-* [View your previous DPS periods via subscription history](subscription-history.md "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.")
+* License Dynatrace, the licensing model for all Dynatrace capabilities.")
+* View your previous DPS periods via subscription history

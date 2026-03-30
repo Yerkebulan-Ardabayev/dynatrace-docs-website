@@ -49,7 +49,7 @@ OpenTelemetry
 
 ## Связанные темы
 
-* [Dynatrace OneAgent](../../../ingest-from/dynatrace-oneagent.md "Ознакомьтесь с основными концепциями OneAgent и узнайте, как установить и использовать OneAgent на различных платформах.")
-* [Начало работы с OpenTelemetry и Dynatrace](../../../ingest-from/opentelemetry/getting-started.md "Как отправить данные OpenTelemetry в Dynatrace.")
-* [Расширение распределённой трассировки](../../../ingest-from/extend-dynatrace/extend-tracing.md "Узнайте, как расширить возможности наблюдения за трейсами в Dynatrace.")
-* [Адаптивное управление трафиком для распределённой трассировки](../../../ingest-from/dynatrace-oneagent/adaptive-traffic-management.md "Адаптивное управление трафиком Dynatrace обеспечивает динамическую выборку для поддержания объёма собираемых трейсов в рамках лимита, включённого в Full-Stack Monitoring.")
+* Dynatrace OneAgent
+* Начало работы с OpenTelemetry и Dynatrace
+* Расширение распределённой трассировки
+* Адаптивное управление трафиком для распределённой трассировки

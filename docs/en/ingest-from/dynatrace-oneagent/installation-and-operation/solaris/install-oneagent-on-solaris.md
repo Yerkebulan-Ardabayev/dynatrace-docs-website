@@ -24,12 +24,12 @@ To get started, log in to your Dynatrace SaaS environment via the [Dynatrace.com
 
 ### Resources
 
-All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](../../../dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.").
+All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to set up an ActiveGate.
 
 ### Limitations
 
 * OneAgent installation isn't supported on networked storage mount points that are managed by standards such as NFS or iSCSI.
-* [Infrastructure Monitoring](../../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.") mode isn't supported on Solaris hosts.
+* Infrastructure Monitoring mode isn't supported on Solaris hosts.
 
 ### Allow connections through firewall
 

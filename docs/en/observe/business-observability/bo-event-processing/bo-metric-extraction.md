@@ -25,7 +25,7 @@ To add a business event metric
 
 1. Go to **Settings** > **Business Observability** > **Metric extraction**.
 2. Select **Add business event metric** and name your metric by adding a metric **Key** starting with the `bizevents.` prefix (for example, `bizevents.EasyTrade.TradingVolume`).
-3. Add a **Matcher** to your rule by pasting your [matcher-specific DQL query](../../../analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher.md "Examine specific DQL functions and logical operators for log processing."). In the above example, to calculate your trading volume metric, you need to extract only buy transactions, so the matcher query is as follows.
+3. Add a **Matcher** to your rule by pasting your matcher-specific DQL query. In the above example, to calculate your trading volume metric, you need to extract only buy transactions, so the matcher query is as follows.
 
    ```
    matchesValue(event.type, "com.easytrade.buy-assets")
@@ -63,13 +63,13 @@ See the example visualization below.
 
 ### Display metrics in Notebooks Notebooks
 
-You can also explore custom metrics based on business events in Grail, for example, by using the DQL [`timeseries` command](../../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "DQL metric commands"). The following is an example DQL `timeseries` query against the `bizevents.easyTrade.TradingVolume` metric.
+You can also explore custom metrics based on business events in Grail, for example, by using the DQL `timeseries` command. The following is an example DQL `timeseries` query against the `bizevents.easyTrade.TradingVolume` metric.
 
 ```
 timeseries avg(bizevents.easyTrade.TradingVolume), alias:avgTradingVolume, interval:1d, from:now()-30d, to:now()
 ```
 
-Run this query in [Notebooks](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (**Query Grail** > **Run query**) and view results using the recommended **Line chart** visualization option.
+Run this query in Notebooks (**Query Grail** > **Run query**) and view results using the recommended **Line chart** visualization option.
 
 ![Query Business Observability custom metrics through DQL with timeseries in Notebooks](https://dt-cdn.net/images/ba-event-metric-query-notebooks-2122-6c3ead0aef.webp)
 
@@ -88,4 +88,4 @@ If the event timestamp doesn't fall within the allowed [range](../../../ingest-f
 
 ## Related topics
 
-* [Metric ingestion protocol](../../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
+* Metric ingestion protocol

@@ -114,7 +114,7 @@ OneAgent в режиме развертывания на основе устан
 
 ## Механизм устаревания для OneAgent в режиме мониторинга только приложений
 
-Если у вас нет доступа к инфраструктурному уровню, Dynatrace также предоставляет возможность мониторинга только приложений для [Kubernetes](../setup-on-k8s/deployment/application-observability.md "Развертывание Dynatrace Operator в режиме мониторинга приложений в Kubernetes"), [OpenShift](../setup-on-k8s/deployment/application-observability.md "Развертывание Dynatrace Operator в режиме мониторинга приложений в Kubernetes"), [CloudFoundry](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring.md "Установка OneAgent в Cloud Foundry.") или [SAP Business Technology Platform](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-sap-cloud-platform-for-application-only-monitoring.md "Установка OneAgent в SAP Business Technology Platform.").
+Если у вас нет доступа к инфраструктурному уровню, Dynatrace также предоставляет возможность мониторинга только приложений для Kubernetes, OpenShift, CloudFoundry или SAP Business Technology Platform.
 
 Механизм устаревания в режиме мониторинга только приложений управляет журналами модулей OneAgent. Все они расположены в соответствующих подкаталогах каталога журналов OneAgent по умолчанию:
 

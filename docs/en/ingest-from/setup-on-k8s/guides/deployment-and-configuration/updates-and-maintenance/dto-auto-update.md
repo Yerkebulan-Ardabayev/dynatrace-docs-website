@@ -90,4 +90,4 @@ Renovate automates the updating of dependencies in Git repositories. Integrating
 
 ## Related topics
 
-* [Manage Dynatrace deployments using GitOps](../using-gitops.md "How to deploy Dynatrace Operator and DynaKube using GitOps.")
+* Manage Dynatrace deployments using GitOps

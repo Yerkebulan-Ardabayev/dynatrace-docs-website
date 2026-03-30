@@ -116,7 +116,7 @@ Read this guide](infrastructure-observability/vmware-vsphere-monitoring.md)
 
 ## Related topics
 
-* [Serverless monitoring](../discover-dynatrace/get-started/serverless-monitoring.md "Serverless observability with Dynatrace")
-* [Ingest data](../ingest-from.md "Learn how to install and configure ActiveGate and OneAgent on various platforms.")
-* [Monitor container groups](infrastructure-observability/container-platform-monitoring/container-groups.md "Overview on container groups monitoring")
-* [Container monitoring rules](infrastructure-observability/container-platform-monitoring/container-monitoring-rules.md "Define, enable and disable container monitoring rules")
+* Serverless monitoring
+* Ingest data
+* Monitor container groups
+* Container monitoring rules

@@ -29,14 +29,14 @@ To enable out-of-memory (OOM) and out-of-threads (OOT) detection
 
 ## Step 2 Set up high GC activity alerts
 
-If you've already set up alerts for [high GC activity](../../../../observe/infrastructure-observability/hosts/configuration/anomaly-detection.md#hosts "Configure host anomaly detection, including problem and event thresholds.") in your environment, alerts are automatically created for standalone/PaaS scenarios and cloud-native Full-Stack injections.
+If you've already set up alerts for high GC activity in your environment, alerts are automatically created for standalone/PaaS scenarios and cloud-native Full-Stack injections.
 
 To verify your setup
 
 1. Go to **Settings** > **Anomaly detection** and select **Hosts**.
 2. Make sure that **Detect high GC activity** is turned on.
 
-   If you're using a customized setup for [long garbage-collection times alerts](../../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/resource-events.md#long-garbage-collection-time "Learn more about resource events and the logic behind raising them."), note that, for standalone/PaaS scenarios and cloud-native Full-Stack injections, data collected in 10-second observation intervals is adjusted to one-minute observation intervals.
+   If you're using a customized setup for long garbage-collection times alerts, note that, for standalone/PaaS scenarios and cloud-native Full-Stack injections, data collected in 10-second observation intervals is adjusted to one-minute observation intervals.
 
 Alternatively, you can create alerts only for specific metric events.
 
@@ -47,5 +47,5 @@ Alternatively, you can create alerts only for specific metric events.
 
 ## Related topics
 
-* [Metric events](../../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace")
-* [Static thresholds for infrastructure monitoring](../../../../dynatrace-intelligence/anomaly-detection/static-thresholds-infrastructure.md "Learn about the fixed thresholds used by Dynatrace to determine when a detected slowdown or error-rate increase justifies the generation of a new problem event.")
+* Metric events
+* Static thresholds for infrastructure monitoring

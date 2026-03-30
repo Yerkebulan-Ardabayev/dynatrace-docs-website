@@ -27,10 +27,10 @@ DQL-based ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydete
 
 ### Prior knowledge
 
-* [Anomaly detection](../anomaly-detection.md "How Dynatrace detects anomalies in your environment.")
-* [Adjust the sensitivity of anomaly detection](adjust-sensitivity-anomaly-detection.md "Learn how to adapt the sensitivity of problem detection in Dynatrace.")
-* [AI models](../reference/ai-models.md "Learn about AI models that Dynatrace Intelligence uses.")
-* [OAuth clients](../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.") or [Platform tokens](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.")
+* Anomaly detection
+* Adjust the sensitivity of anomaly detection
+* AI models
+* OAuth clients or Platform tokens
 * [How to access platform APIsï»¿](https://developer.dynatrace.com/develop/access-platform-apis-from-outside/)
 
 ### Prerequisites
@@ -59,9 +59,9 @@ To authenticate API access with OAuth client, you need to
 1. Create an OAuth client with all the permissions listed in [Prerequisites](#api-prerequisites).
 2. Generate a bearer token from the created client.
 
-To learn more about creating an OAuth client and generating a bearer token, see [OAuth clients](../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
+To learn more about creating an OAuth client and generating a bearer token, see OAuth clients.
 
-If you want to use the platform token instead, create a platform token for a chosen user or environment. To learn more about creating and managing platform tokens, see [Platform tokens](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+If you want to use the platform token instead, create a platform token for a chosen user or environment. To learn more about creating and managing platform tokens, see Platform tokens.
 
 A platform token will only work within the limits of the assigned user's permissions. This means that a selected scope is only granting access if that user has the respective permissions.
 
@@ -75,7 +75,7 @@ https://{your-environment-id}.apps.dynatrace.com/platform/classic/environment-ap
 
 To create a custom alert configuration
 
-1. Get the platform token or the bearer token generated during the [Authentication](../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+1. Get the platform token or the bearer token generated during the Authentication.
 2. Call the app function via the endpoint URL.
 3. Create a new settings object using a schemaID for DQL-based custom alerts, `builtin:davis.anomaly-detectors`, and a platform token or an OAuth client. This will create a custom alert settings object. An example of the call for the new settings object can be seen below:
 
@@ -311,7 +311,7 @@ An anomaly detection configuration consists of the following fields:
 * `description`: a free-text parameter describing your custom alert configuration.
 * `source`: a free-text parameter that can be used to group and filter configs on the UI. For example, setting source as `kubernetes` on some configs can be used for filtering all `kubernetes` configs in the app. If `source` isn't set, a default value indicating that it comes from REST API will be used.
 * `executionSettings`: this object contains an optional field, `queryOffset`. When `queryOffset` is set to any value of type `integer`, it offsets the sliding evaluation window. This can be used to avoid evaluating the last few data points in metrics that are latency associated.
-* `analyzer`: this object indicates an anomaly detection model and associated parameters that will be used in the configuration. To learn more about anomaly detection models, see [AI models](../reference/ai-models.md "Learn about AI models that Dynatrace Intelligence uses.").
+* `analyzer`: this object indicates an anomaly detection model and associated parameters that will be used in the configuration. To learn more about anomaly detection models, see AI models.
 * `eventTemplate`: this object determines the content of the events generated when the configured anomaly is detected.
 
 #### `analyzer` object fields
@@ -353,7 +353,7 @@ The `eventTemplate` object has additional fields that need to be configured for 
   + Required `event.description`: a free-text parameter describing your custom alert configuration.
   + Required `event.type`: the type of the raised event, such as `CUSTOM_INFO`, `ERROR_EVENT`, `AVAILABILITY_EVENT`, `PERFORMANCE_EVENT`, `RESOURCE_CONTENTION_EVENT`, `CUSTOM_ALERT`, `CUSTOM_ANNOTATION`, `CUSTOM_CONFIGURATION`, `CUSTOM_DEPLOYMENT`, `MARKED_FOR_TERMINATION`.
 
-    To check all available event types, see [Dynatrace Intelligence Semantic Dictionary](../../../common/semantic-dictionary/model/davis.md "Get to know the Semantic Dictionary models related to Davis AI."). You can also include your custom events here.
+    To check all available event types, see Dynatrace Intelligence Semantic Dictionary. You can also include your custom events here.
 
 ## Conclusion
 
@@ -361,9 +361,9 @@ You have learned how to set up and configure a custom alert via API. Now you can
 
 ## Related topics
 
-* [Anomaly detection](../anomaly-detection.md "How Dynatrace detects anomalies in your environment.")
-* [AI models](../reference/ai-models.md "Learn about AI models that Dynatrace Intelligence uses.")
-* [Settings API - GET objects](../../dynatrace-api/environment-api/settings/objects/get-objects.md "View multiple settings objects via the Dynatrace API.")
-* [Settings API - POST an object](../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.")
-* [Settings API - PUT an object](../../dynatrace-api/environment-api/settings/objects/put-object.md "Edit a settings object via the Dynatrace API.")
-* [Settings API - DELETE an object](../../dynatrace-api/environment-api/settings/objects/del-object.md "Delete a settings object via the Dynatrace API.")
+* Anomaly detection
+* AI models
+* Settings API - GET objects
+* Settings API - POST an object
+* Settings API - PUT an object
+* Settings API - DELETE an object

@@ -14,13 +14,13 @@ updated: 2026-02-09
 
 Dynatrace Intelligence uses specialized AI models to analyze your environment and provide actionable insights. These models power different capabilities, from anomaly detection and root cause analysis to predictive analytics and performance optimization. Each model is designed for specific use cases and provides different types of intelligence to help you understand and improve your systems.
 
-[#### Dynatrace Intelligence causal correlation analysis
+#### Dynatrace Intelligence causal correlation analysis
 
 Learn how Dynatrace Intelligence causal correlation analysis finds related metrics across your environment.
 
 * Explanation
 
-Read this explanation](ai-models/causal-correlation-analysis.md)[#### Dynatrace Intelligence predictive AI analysis
+Read this explanation[#### Dynatrace Intelligence predictive AI analysis
 
 Learn how Dynatrace Intelligence predictive AI generates forecasts.
 

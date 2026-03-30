@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:23:57.288661
 * How-to guide
 * Updated on Aug 12, 2025
 
-This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the Grail security table migration guide.
 
 Ingest Microsoft Sentinel security events and analyze them in Dynatrace.
 
@@ -45,11 +45,11 @@ See below for the Microsoft Sentinel and Dynatrace requirements.
   + To query ingested data: `storage:security.events:read`.
 * Tokens:
 
-  + Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see [Dynatrace API - Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+  + Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see Dynatrace API - Tokens and authentication.
 
 ## Activation and setup
 
-1. In Dynatrace, open  [**Hub**](../../../manage/hub.md "See the information about Dynatrace Hub.").
+1. In Dynatrace, open  **Hub**.
 2. Look for **Microsoft Sentinel** and select **Install**.
 3. Select **Set up**, then select  **Configure new connection**.
 4. Follow the on-screen instructions to set up the ingestion.
@@ -74,12 +74,12 @@ See below for the Microsoft Sentinel and Dynatrace requirements.
 1. Events are ingested into Dynatrace
 
 1. Microsoft Sentinel exports security findings to [Azure Event Hubsï»¿](https://dt-url.net/zmc3wv9).
-2. An [Azure Functionï»¿](https://dt-url.net/b643w2v) app pre-processes the events and sends them to Dynatrace, taking advantage of the [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") dedicated [security events ingest endpoint](ingest-custom-data.md#default "Ingest security events from custom third-party products via API.").
+2. An [Azure Functionï»¿](https://dt-url.net/b643w2v) app pre-processes the events and sends them to Dynatrace, taking advantage of the OpenPipeline dedicated [security events ingest endpoint](ingest-custom-data.md#default "Ingest security events from custom third-party products via API.").
 
 2. Security findings are processed and stored in Grail
 
-1. The fetched data is mapped to the [Dynatrace Semantic Dictionary](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.").
-2. Data is stored in [Grail](../../../platform/grail.md "Insights on what and how you can query Dynatrace data.") in a unified format, in a default bucket called `default_securityevents`. For details, see [Built-in Grail buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
+1. The fetched data is mapped to the Dynatrace Semantic Dictionary.
+2. Data is stored in Grail in a unified format, in a default bucket called `default_securityevents`. For details, see [Built-in Grail buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
 
 ### Monitor data
 
@@ -98,14 +98,14 @@ You can view
 
 ### Visualize and analyze findings
 
-You can create your own [dashboards](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or use our templates to visualize and analyze container vulnerability findings.
+You can create your own dashboards or use our templates to visualize and analyze container vulnerability findings.
 
 1. In **Settings**, open **Microsoft Sentinel**.
 2. In the **Try our templates** section, select the desired dashboard template.
 
 ### Automate and orchestrate findings
 
-You can create your own [workflows](../../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") or use our templates to automate and orchestrate container vulnerability findings.
+You can create your own workflows or use our templates to automate and orchestrate container vulnerability findings.
 
 1. In **Settings**, open **Microsoft Sentinel**.
 2. In the **Try our templates** section, select the desired workflow template.
@@ -137,13 +137,13 @@ This removes the Dynatrace resources created for this integration.
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see Events powered by Grail.
 
 ## FAQ
 
 ### Which data model is used for the security logs and events coming from Microsoft Sentinel?
 
-[Detection finding events](../../../semantic-dictionary/model/security-events.md#detection-finding-events "Get to know the Semantic Dictionary models related to security events.") store the individual detection findings per affected object represented by an affected Azure resource.
+Detection finding events store the individual detection findings per affected object represented by an affected Azure resource.
 
 ### Which extension fields are added on top of the core fields of the events ingested from Microsoft Sentinel?
 
@@ -185,6 +185,6 @@ Ingest Microsoft Sentinel security findings.](https://www.dynatrace.com/hub/deta
 
 ## Related topics
 
-* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Security events](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")
+* OpenPipeline
+* Dynatrace Query Language
+* Security events

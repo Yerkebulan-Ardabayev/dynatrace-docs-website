@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:28:02.411095
 * 4-min read
 * Published Mar 21, 2022
 
-Dynatrace Real User Monitoring uses HTTP cookies to group user actions into sessions and link user actions with their corresponding [distributed traces](../../../application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time."). Browsers include a cookie in the `Cookie` request header only if the request URL lies within the scope of the cookie, which is specified by the `Domain` and `Path` cookie attributes.
+Dynatrace Real User Monitoring uses HTTP cookies to group user actions into sessions and link user actions with their corresponding distributed traces. Browsers include a cookie in the `Cookie` request header only if the request URL lies within the scope of the cookie, which is specified by the `Domain` and `Path` cookie attributes.
 
 Dynatrace always sets the `Path` attribute of the RUM cookies to `/` so that the cookie scope covers all URL paths within a domain. The `Domain` attribute is determined automatically by default, but you can also [configure it manually for each application](#configure-cookie-domain).
 

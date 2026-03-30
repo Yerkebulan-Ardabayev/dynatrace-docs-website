@@ -22,19 +22,19 @@ Learn about all the service monitoring details that Dynatrace can provide.
 
 * How-to guide
 
-Read this guide](services-classic/service-analysis-new.md)[#### Context-specific drill-down
+Read this guide](services-classic/service-analysis-new.md)#### Context-specific drill-down
 
 Learn about easy navigation and filtering for services analysis.
 
 * Reference
 
-Read this reference](services-classic/context-specific-drill-down.md)[#### Analyze individual service instances
+Read this reference#### Analyze individual service instances
 
 Find out how you can perform a service-instance analysis.
 
 * How-to guide
 
-Read this guide](services-classic/analyze-individual-service-instances.md)[#### Service analysis timings
+Read this guide[#### Service analysis timings
 
 Find out what each time in service analysis means.
 

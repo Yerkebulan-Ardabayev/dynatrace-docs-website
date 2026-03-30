@@ -7,12 +7,12 @@ scraped: 2026-03-06T21:27:03.952660
 # Вопросы и ответы по Data Explorer
 
 
-Эта страница относится к Data Explorer — классической функции Dynatrace, тесно интегрированной с классическими информационными панелями, созданными с помощью [![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**](../dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic."). [Перейдите на последнюю версию Dynatrace](../../platform/upgrade.md "Используйте возможности Grail, AppEngine и AutomationEngine для хранения и анализа данных наблюдаемости и безопасности."), чтобы воспользоваться новейшими возможностями изучения данных.
+Эта страница относится к Data Explorer — классической функции Dynatrace, тесно интегрированной с классическими информационными панелями, созданными с помощью [![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**](../dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic."). Перейдите на последнюю версию Dynatrace, чтобы воспользоваться новейшими возможностями изучения данных.
 
 Почему я вижу не все серии своей метрики?
 
 * *По умолчанию* на каждую метрику отображается `20` серий. Следовательно, некоторые серии могут отсутствовать в Data Explorer. Чтобы гарантировать отображение нужных данных серий, используйте более конкретные фильтры, например фильтр по зоне управления или имени сущности.
-* *Максимальное* количество отображаемых серий на метрику составляет `100`. Обратите внимание, что это ограничение действует, даже если вы удалите [преобразование **limit**](../../dynatrace-api/environment-api/metric-v2/metric-selector.md#limit "Настройка селектора метрик для Metric v2 API.") из селектора метрик на [вкладке **Code**](explorer-advanced-query-editor.md "Создание расширенных запросов с помощью расширенного режима Data Explorer.").
+* *Максимальное* количество отображаемых серий на метрику составляет `100`. Обратите внимание, что это ограничение действует, даже если вы удалите [преобразование **limit**](../../dynatrace-api/environment-api/metric-v2/metric-selector.md#limit "Настройка селектора метрик для Metric v2 API.") из селектора метрик на вкладке **Code**.
 
 Если данные серий для выражения метрики отсутствуют, см. раздел [Почему результат моего выражения метрики пуст?](../../dynatrace-api/environment-api/metric-v2/metric-faq.md#empty-result-metric-expression "Часто задаваемые вопросы об API метрик v2.").
 
@@ -49,8 +49,8 @@ scraped: 2026-03-06T21:27:03.952660
 
 Обсуждение этой проблемы см. в записи [Correction required on Dashboard Charts showing dip at current time](https://community.dynatrace.com/t5/Dynatrace-product-ideas/RFE-Correction-required-onDashboard-Charts-showing-dip-at/idi-p/144070) в сообществе Dynatrace.
 
-Для получения дополнительной информации о временных диапазонах см. раздел [Настройки временного диапазона и зоны управления информационных панелей Dynatrace](../dashboards-classic/dashboards/dashboard-timeframe.md "Информация о настройках временного диапазона и зоны управления информационных панелей Dynatrace.").
+Для получения дополнительной информации о временных диапазонах см. раздел Настройки временного диапазона и зоны управления информационных панелей Dynatrace.
 
 ## Связанные темы
 
-* [API метрик — FAQ](../../dynatrace-api/environment-api/metric-v2/metric-faq.md "Часто задаваемые вопросы об API метрик v2.")
+* API метрик — FAQ

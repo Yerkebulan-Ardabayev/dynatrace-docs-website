@@ -6,13 +6,13 @@ scraped: 2026-03-06T21:10:46.597387
 
 Приложение ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** упрощает мониторинг состояния инфраструктуры и облегчает анализ первопричин проблем.
 
-* Индикаторы состояния на базе [Dynatrace Intelligence](../../dynatrace-intelligence.md "Ознакомьтесь с возможностями Dynatrace Intelligence.") помогают обнаруживать ранние признаки снижения производительности, чтобы быстро определить, какие области вашей среды требуют внимания.
+* Индикаторы состояния на базе Dynatrace Intelligence помогают обнаруживать ранние признаки снижения производительности, чтобы быстро определить, какие области вашей среды требуют внимания.
 * Проверяйте метрики состояния хостов инфраструктуры, логи и события для всех объектов инфраструктуры.
 * Переходите из ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** к метрикам, логам или событиям любого объекта инфраструктуры.
 
 ## Предварительные требования
 
-1. Разверните [Dynatrace OneAgent](../../ingest-from/dynatrace-oneagent.md "Ознакомьтесь с основными концепциями OneAgent и узнайте, как установить и эксплуатировать OneAgent на различных платформах.") на ваших хостах — это оптимальный выбор для сбора наиболее детализированных метрик и сетевой аналитики.
+1. Разверните Dynatrace OneAgent на ваших хостах — это оптимальный выбор для сбора наиболее детализированных метрик и сетевой аналитики.
 2. Если вы используете облачные сервисы, интегрируйте вашу облачную инфраструктуру с Dynatrace. Следуйте соответствующим руководствам по интеграции для AWS, Azure, Google Cloud или других облачных провайдеров.
 
 ### Разрешения
@@ -89,7 +89,7 @@ settings:objects:write
 
 Вы можете добавить несколько условий для сужения результатов фильтрации. Например, `"Alert status" = Critical` `name != *1b*`. В этом случае поиск сужается до хостов с более чем 4 проблемами и именами, не содержащими `1b`.
 
-Для получения дополнительной информации об использовании фильтров см. [Поле фильтра](../../discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "Поле фильтра — это мощный инструмент, позволяющий быстро находить необходимую информацию или сужать результаты в приложениях.").
+Для получения дополнительной информации об использовании фильтров см. Поле фильтра.
 
 ### Сегменты
 
@@ -120,7 +120,7 @@ settings:objects:write
    * Добавьте сущности и топологию. Выберите из доступных вариантов в меню.
 6. Нажмите **Save**.
 
-Для получения дополнительной информации об управлении сегментами см. [Сегменты](../../manage/segments.md "Используйте сегменты для логической структуризации и удобной фильтрации данных наблюдаемости в приложениях.").
+Для получения дополнительной информации об управлении сегментами см. Сегменты.
 
 ### Анализ обзорных графиков
 
@@ -128,7 +128,7 @@ settings:objects:write
 
 #### Экспорт данных в Notebooks
 
-Для дальнейшего анализа данных из ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** в ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Notebooks](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь инсайтами из ваших данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве."):
+Для дальнейшего анализа данных из ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** в ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") Notebooks:
 
 1. Перейдите в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 2. Выберите объект для просмотра его деталей.
@@ -166,11 +166,11 @@ settings:objects:write
 
 ### Измерение доступности хоста или устройства
 
-Столбец **Reachability** на страницах **Hosts** и **Network devices** показывает, насколько легко вы можете получить доступ к устройству или хосту по сети из удалённого расположения. Подробнее см. [Synthetic Monitoring](../digital-experience/synthetic-monitoring.md "Узнайте о Synthetic Monitoring и о том, как создать одностраничный браузерный монитор, браузерный кликпас или HTTP-монитор.").
+Столбец **Reachability** на страницах **Hosts** и **Network devices** показывает, насколько легко вы можете получить доступ к устройству или хосту по сети из удалённого расположения. Подробнее см. Synthetic Monitoring.
 
 Значение представляет собой отношение полностью доступных мониторов сетевой доступности (NAM) (с 100% доступностью за выбранный период времени) ко всем настроенным мониторам для данного хоста или сетевого устройства.
 
-Для использования этой функции необходимо настроить NAM для нужного устройства или хоста. Подробнее см. [Настройка монитора NAM](../digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor.md "Узнайте, как настроить монитор NAM для проверки производительности и доступности вашего сайта.").
+Для использования этой функции необходимо настроить NAM для нужного устройства или хоста. Подробнее см. Настройка монитора NAM.
 
 ### Просмотр оповещений о состоянии и предупреждающих сигналов
 
@@ -178,7 +178,7 @@ settings:objects:write
 
 Оповещения о состоянии и предупреждающие сигналы помогают контролировать вашу инфраструктуру, предоставляя ясные и практичные данные. Эти функции снижают информационный шум от проблем инфраструктуры и улучшают возможности оповещения, позволяя сосредоточиться на самом важном. Это достигается за счёт улучшенной категоризации обнаруженных неисправностей.
 
-* Для критических событий создаётся оповещение о состоянии (Health alert), которое инициирует расследование в [Dynatrace Problems](../../dynatrace-intelligence/davis-problems-app.md "Используйте приложение Problems для быстрого определения первопричин инцидентов в вашей среде.").
+* Для критических событий создаётся оповещение о состоянии (Health alert), которое инициирует расследование в Dynatrace Problems.
 * Для некритических ситуаций предупреждающий сигнал (Warning signal) информирует вас о потенциальной проблеме.
 
 Чтобы воспользоваться этой функцией в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**, её необходимо включить. После включения определённые оповещения, ранее классифицированные как критические, будут переклассифицированы как предупреждения, поскольку они не считаются достаточно критичными для немедленного реагирования.
@@ -212,7 +212,7 @@ settings:objects:write
 1. Перейдите в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** > **Technologies**.
 2. Выберите расширение из списка для просмотра подробностей.
 
-Подробнее о настройке расширений см. [Расширения](../../ingest-from/extensions.md "Узнайте, как создавать и управлять расширениями Dynatrace.").
+Подробнее о настройке расширений см. Расширения.
 
 Минимальные необходимые версии расширений
 
@@ -230,7 +230,7 @@ settings:objects:write
 | Generic network device | 2.0.0 |
 | Fortigate | 1.2.21 |
 
-Ознакомьтесь с нашим подробным руководством [Общая сетевая топология](../../ingest-from/extend-dynatrace/extend-topology/network-topology.md "Используйте модель общей сетевой топологии, доступную в расширениях Dynatrace."), чтобы узнать, как отображать пользовательские расширения в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
+Ознакомьтесь с нашим подробным руководством Общая сетевая топология, чтобы узнать, как отображать пользовательские расширения в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
 ## Концепции
 

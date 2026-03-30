@@ -39,7 +39,7 @@ To enable the New RUM Experience for a web frontend
 5. Under **Enablement and cost control**, turn on **RUM**.
 6. Optionally, enable **User Interactions** to capture user interactions such as clicks and scrolls.
 
-If you use automatic injection, the new configuration is applied within 5 minutes. If you insert the RUM JavaScript manually, you may need to update the snippet, depending on the [snippet format](snippet-formats.md "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience.") youâre using:
+If you use automatic injection, the new configuration is applied within 5 minutes. If you insert the RUM JavaScript manually, you may need to update the snippet, depending on the snippet format youâre using:
 
 * **JavaScript tag**: The new configuration is applied automatically, but it may not take effect immediately due to caching. The file that contains the monitoring code and configuration is cached for one hour on the Dynatrace CDN. Additionally, browsers respect the [configured cache duration](snippet-formats.md#cache-duration "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience.").
 * **OneAgent JavaScript tag**, **OneAgent JavaScript tag with SRI** or **inline code**: As with any configuration change, you need to update the inserted snippet.
@@ -53,10 +53,10 @@ To enable the New RUM Experience for web frontends at the environment level
 
 ## Enable the New RUM Experience via API
 
-The Settings API allows you to enable the New RUM Experience either for a web frontend or at the environment level. For details, see [Settings API - Enablement and cost control schema table](../../../../../dynatrace-api/environment-api/settings/schemas/builtin-rum-web-enablement.md "View builtin:rum.web.enablement settings schema table of your monitoring environment via the Dynatrace API.").
+The Settings API allows you to enable the New RUM Experience either for a web frontend or at the environment level. For details, see Settings API - Enablement and cost control schema table.
 
-Unless you use the **JavaScript tag** snippet format, you need to update the snippet after you've enabled the New RUM Experience if it was manually inserted. For more information, see [Enable the New RUM Experience for a web frontend](#enable-new-rum-for-web-frontend). To retrieve the updated snippet, use the [RUM manual insertion tags API](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags.md "Learn how you can download the RUM manual insertion tags via API").
+Unless you use the **JavaScript tag** snippet format, you need to update the snippet after you've enabled the New RUM Experience if it was manually inserted. For more information, see [Enable the New RUM Experience for a web frontend](#enable-new-rum-for-web-frontend). To retrieve the updated snippet, use the RUM manual insertion tags API.
 
 ## Related topics
 
-* [Transition from RUM Classic to the New RUM Experience](../../transition-from-rum-classic.md "Learn how to transition from RUM Classic to the New RUM Experience.")
+* Transition from RUM Classic to the New RUM Experience

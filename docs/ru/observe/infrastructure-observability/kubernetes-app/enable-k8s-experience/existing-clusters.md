@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:12:00.286290
 
 У вас есть возможность включить новый Kubernetes experience для всех или отдельных кластеров Kubernetes.
 
-Это можно сделать с помощью Settings API с использованием [таблицы схем приложения Kubernetes](../../../../dynatrace-api/environment-api/settings/schemas/builtin-app-transition-kubernetes.md "View builtin:app-transition.kubernetes settings schema table of your monitoring environment via the Dynatrace API."), либо путём настройки параметра, описанного ниже.
+Это можно сделать с помощью Settings API с использованием таблицы схем приложения Kubernetes, либо путём настройки параметра, описанного ниже.
 
 Чтобы полностью отключить Kubernetes experience и прекратить мониторинг Kubernetes или связанное потребление лицензий, убедитесь, что параметр отключён как на уровне среды, так и на уровне кластера.
 

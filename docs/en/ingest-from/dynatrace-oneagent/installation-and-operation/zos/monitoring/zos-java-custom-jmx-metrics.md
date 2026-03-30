@@ -13,14 +13,14 @@ scraped: 2026-03-05T21:29:53.332272
 
 JMX (Java Management Extensions) is handy for monitoring applications built using Java. With the OneAgent z/OS Java code module, you can monitor any metric in your JVM that is exposed via an MBean.
 
-* Every monitored custom JMX metric consumes Davis data units. The concept of [Included metrics per host unit](../../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") isn't applicable for monitored LPARs on z/OS. To learn more about Davis data units, see [DDUs for metrics](../../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+* Every monitored custom JMX metric consumes Davis data units. The concept of Included metrics per host unit isn't applicable for monitored LPARs on z/OS. To learn more about Davis data units, see DDUs for metrics.
 * [PMI (Performance Monitoring Infrastructure)ï»¿](https://www.ibm.com/docs/en/was/9.0.5?topic=health-performance-monitoring-infrastructure-pmi) for the IBM WebSphere Application Server is currently not supported.
 
 ## Definition
 
 The `customJmxMetrics` attribute defines a list of [metrics](#metrics) to be monitored. To get started, add the `customJmxMetrics` attribute to your `dtconfig.json` file as shown in the following example.
 
-Typically, you've created the `dtconfig.json` file during the [z/OS Java code module installation](../installation/install-zos-java.md#download "Set up Java monitoring on z/OS using the Java module.") and have set the attributes `Tenant`, `ClusterID`, and `zdcName` to your environment.
+Typically, you've created the `dtconfig.json` file during the z/OS Java code module installation and have set the attributes `Tenant`, `ClusterID`, and `zdcName` to your environment.
 
 ```
 {
@@ -297,15 +297,15 @@ will result in a single metric in Dynatrace with two dimensions:
 
 ## Monitoring
 
-Go to [Data Explorer](../../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") to analyze and chart your custom JMX metrics. If needed, you can pin your charts to a dashboard. In the following example, you can see the `java.lang.MemoryPoolUsage` metric split by the dimension `memory_type`:
+Go to Data Explorer to analyze and chart your custom JMX metrics. If needed, you can pin your charts to a dashboard. In the following example, you can see the `java.lang.MemoryPoolUsage` metric split by the dimension `memory_type`:
 
 ![Data Explorer with z/OS JMX metrics](https://dt-cdn.net/images/data-explorer-1643-7696285fbf.png)
 
-To get a list of metrics available in your monitoring environment, Go to **Metrics** to open the [Metrics browser](../../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser."). In the following example, you can see the three metrics that we have created above:
+To get a list of metrics available in your monitoring environment, Go to **Metrics** to open the Metrics browser. In the following example, you can see the three metrics that we have created above:
 
 ![Metrics browser with z/OS JMX metrics](https://dt-cdn.net/images/metrics-browser-1636-1096adef93.png)
 
 ## Related topics
 
-* [Metrics browser](../../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser.")
-* [Data Explorer](../../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.")
+* Metrics browser
+* Data Explorer

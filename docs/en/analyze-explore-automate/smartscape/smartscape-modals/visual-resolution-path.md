@@ -16,7 +16,7 @@ The Visual Resolution Path (VRP) is a ![Smartscape](https://dt-cdn.net/images/sm
 
 From the Visual Resolution Path, you can trigger additional intents and drill-downs for deeper exploration. Alongside the visualized Visual Resolution Path entities, it includes a timeline of the underlying problem events. This provides a comprehensive, in-context view of the problem and its resolution journey.
 
-For more details about problems and problem resolution, see [Root Cause Analysis](../../../dynatrace-intelligence/root-cause-analysis.md "How Dynatrace analyzes problems to determine their root cause.").
+For more details about problems and problem resolution, see Root Cause Analysis.
 
 ## Visual Resolution Path support in Dynatrace apps
 
@@ -26,7 +26,7 @@ Some problems don't have a detected root cause. If the problem's root cause wasn
 
 You can find some examples of triggering Visual Resolution Path below:
 
-* [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**](../../smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities."): you can trigger Visual Resolution Path directly from a problem node within the [Problem graph view](../smartscape-views/problem-graph.md "Use Problem graph to visualize and quickly identify problems and nodes that require immediate attention.").
+* [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**](../../smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities."): you can trigger Visual Resolution Path directly from a problem node within the Problem graph view.
 * [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](../../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment."): you can trigger Visual Resolution Path by selecting  **Maximize** on the **Visual resolution path** in the overview tab.
 
   An example of triggering Visual Resolution Path from Problems app VRP overview tab
@@ -52,7 +52,7 @@ In the Visual Resolution Path, entities involved in the problem are located with
 
 Edges in the Visual Resolution Path graph represent the dependency tree and relationships between the entities. These visual connections can help you understand how different components and services are interlinked.
 
-For more information, see [Root Cause Analysis](../../../dynatrace-intelligence/root-cause-analysis.md "How Dynatrace analyzes problems to determine their root cause.").
+For more information, see Root Cause Analysis.
 
 ### Event Timeline
 
@@ -81,7 +81,7 @@ To maximize your efficiency when using ![Smartscape](https://dt-cdn.net/images/s
 
 ## Related topics
 
-* [Smartscape](../../smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
-* [Smartscape views](../smartscape-views.md "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.")
-* [Problem graph](../smartscape-views/problem-graph.md "Use Problem graph to visualize and quickly identify problems and nodes that require immediate attention.")
-* [Root cause analysis](../../../dynatrace-intelligence/root-cause-analysis.md "How Dynatrace analyzes problems to determine their root cause.")
+* Smartscape
+* Smartscape views
+* Problem graph
+* Root cause analysis

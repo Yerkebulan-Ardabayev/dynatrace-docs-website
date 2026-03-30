@@ -14,7 +14,7 @@ scraped: 2026-03-05T21:29:34.371827
 
 OneAgent version 1.225+
 
-OpenTelemetry interoperability connects the [Dynatrace AWS Lambda extension](../aws-lambda-extension.md "Monitor Lambda functions written in Python, Node.js, and Java.") to the OpenTelemetry Java API to use the instrumentation packages and extensions. You can then monitor technologies like databases or messaging frameworks that aren't supported by Dynatrace AWS Lambda extension out of the box.
+OpenTelemetry interoperability connects the Dynatrace AWS Lambda extension to the OpenTelemetry Java API to use the instrumentation packages and extensions. You can then monitor technologies like databases or messaging frameworks that aren't supported by Dynatrace AWS Lambda extension out of the box.
 
 ## Before you start
 
@@ -508,5 +508,5 @@ This structure is required to be prepared for batch receives. When you send mult
 
 ## Related topics
 
-* [OpenTelemetry interoperability](../opentelemetry-interoperability.md "Enable and use OpenTelemetry interoperability in AWS Lambda.")
-* [Trace Python, Node.js, and Java Lambda functions](../aws-lambda-extension.md "Monitor Lambda functions written in Python, Node.js, and Java.")
+* OpenTelemetry interoperability
+* Trace Python, Node.js, and Java Lambda functions

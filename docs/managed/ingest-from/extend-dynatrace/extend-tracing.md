@@ -14,6 +14,6 @@ Learn how to extend distributed tracing observability with OpenTelemetry tracing
 
 ### OpenTracing
 
-Learn how to extend distributed tracing observability in Dynatrace with OpenTracing.](/managed/ingest-from/extend-dynatrace/extend-tracing/opentracing "Learn how to integrate OpenTracing with Dynatrace.")[### OneAgent SDK
+Learn how to extend distributed tracing observability in Dynatrace with OpenTracing.](/managed/ingest-from/extend-dynatrace/extend-tracing/opentracing "Learn how to integrate OpenTracing with Dynatrace.")### OneAgent SDK
 
-Learn how to extend distributed tracing observability in Dynatrace with the OneAgent SDK.](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.")
+Learn how to extend distributed tracing observability in Dynatrace with the OneAgent SDK.

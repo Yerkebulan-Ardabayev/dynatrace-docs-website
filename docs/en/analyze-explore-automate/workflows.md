@@ -14,9 +14,9 @@ scraped: 2026-03-06T21:15:26.954952
 
 ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** is a powerful tool that lets you automatically act on monitoring data.
 
-A workflow is not intended for mass data ingestion or mass data export. For large-scale data processing, consider using [OpenPipeline](../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") or building custom solutions with [Dynatrace Extensions](../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.").
+A workflow is not intended for mass data ingestion or mass data export. For large-scale data processing, consider using OpenPipeline or building custom solutions with Dynatrace Extensions.
 
-For more information, see the [quickstart example](workflows/quickstart.md "Build and run your first workflow.").
+For more information, see the quickstart example.
 
 Prerequisites
 
@@ -68,7 +68,7 @@ You might need additional permissions to run certain tasks in ![Workflows](https
 
 For a complete list of permissions needed to use ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, go to **Hub**, find and select **Workflows**, and go to the **Technical information** tab.
 
-For more information about ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** security, see [User permissions for workflows](workflows/security.md "Guide on security aspects of workflow automation in Dynatrace Workflows").
+For more information about ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** security, see User permissions for workflows.
 
 ### Installation
 
@@ -135,7 +135,7 @@ To list executions of the workflow you are editing, select **Executions** in the
 
 EdgeConnect allows you to reach your non-public services in workflow tasks. HTTP requests happening within any type of action or platform function can be proxied via EdgeConnect into the target network.
 
-Any HTTP request (from your custom app, workflow, or an ad-hoc JavaScript code) that matches a defined host pattern is handled by an EdgeConnect instance you specify in the platform configuration. For more information, see [Configure and deploy EdgeConnect](../ingest-from/edgeconnect.md "Use EdgeConnect to control how your apps and workflows interact with your internal systems.").
+Any HTTP request (from your custom app, workflow, or an ad-hoc JavaScript code) that matches a defined host pattern is handled by an EdgeConnect instance you specify in the platform configuration. For more information, see Configure and deploy EdgeConnect.
 
 ## Use cases
 
@@ -155,22 +155,22 @@ Workflows allows you to:
 
 The following learning modules show how you can use ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** to automatically act on monitoring data.
 
-[01Workflows quick start guide
+01Workflows quick start guide
 
 * How-to guide
-* Build and run your first workflow.](workflows/quickstart.md)[02Create workflows in Dynatrace Workflows
+* Build and run your first workflow.02Create workflows in Dynatrace Workflows
 
 * How-to guide
-* Create and edit workflows in Dynatrace Workflows.](workflows/building.md)[03Create a simple workflow in Dynatrace Workflows
+* Create and edit workflows in Dynatrace Workflows.03Create a simple workflow in Dynatrace Workflows
 
 * How-to guide
-* Build and run a simple workflow.](workflows/simple-workflow.md)[04Workflow triggers
+* Build and run a simple workflow.04Workflow triggers
 
 * Overview
-* Introduction to workflow automation triggers for workflows.](workflows/trigger.md)[05Run and monitor workflows created in Dynatrace Workflows
+* Introduction to workflow automation triggers for workflows.05Run and monitor workflows created in Dynatrace Workflows
 
 * How-to guide
-* Run and monitor workflows created in Dynatrace Workflows.](workflows/running.md)[06User permissions for workflows
+* Run and monitor workflows created in Dynatrace Workflows.[06User permissions for workflows
 
 * Reference
 * Guide on security aspects of workflow automation in Dynatrace Workflows](workflows/security.md)[07Workflows actions
@@ -179,13 +179,13 @@ The following learning modules show how you can use ![Workflows](https://dt-cdn.
 * Use Dynatrace ready-made actions for your workflows.](workflows/default-workflow-actions.md)[08Workflows Connectors
 
 * Overview
-* Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.](workflows/actions.md)[09Manage workflows
+* Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.](workflows/actions.md)09Manage workflows
 
 * Overview
-* Manage your workflows](workflows/manage-workflows.md)[10Expression reference
+* Manage your workflows10Expression reference
 
 * Reference
-* Get to know the workflows expression](workflows/reference.md)[11Workflows use cases
+* Get to know the workflows expression[11Workflows use cases
 
 * Overview
 * Explore common Workflows use cases in Dynatrace deployments.](workflows/use-cases.md)

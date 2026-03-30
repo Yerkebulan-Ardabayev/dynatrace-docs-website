@@ -4,16 +4,16 @@ source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/tokens-v2/t
 scraped: 2026-03-03T21:22:17.477131
 ---
 
-[### Начать ротацию
+### Начать ротацию
 
-Инициировать ротацию токена арендатора.](tenant-tokens/post-start.md "Инициировать ротацию токена арендатора Dynatrace.")[### Завершить ротацию
+Инициировать ротацию токена арендатора.### Завершить ротацию
 
-Завершить ротацию токена арендатора.](tenant-tokens/post-finish.md "Завершить ротацию токена арендатора Dynatrace.")[### Отменить ротацию
+Завершить ротацию токена арендатора.### Отменить ротацию
 
-Отменить ротацию токена арендатора.](tenant-tokens/post-cancel.md "Отменить ротацию токена арендатора Dynatrace.")
+Отменить ротацию токена арендатора.
 
 ## Связанные темы
 
-* [Классический токен арендатора](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token.md "Узнайте, что такое токен арендатора и как его изменить.")
-* [Директории ActiveGate](../../../ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files.md "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux.")
-* [Настройка OneAgent через интерфейс командной строки](../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Узнайте, как выполнять некоторые задачи настройки OneAgent без необходимости его переустановки.")
+* Классический токен арендатора
+* Директории ActiveGate
+* Настройка OneAgent через интерфейс командной строки

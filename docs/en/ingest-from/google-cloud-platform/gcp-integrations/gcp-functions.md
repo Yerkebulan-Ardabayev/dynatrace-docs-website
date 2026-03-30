@@ -19,17 +19,17 @@ Google Cloud Functions lets you run your code without provisioning or managing s
 
 ## Integration
 
-* [Integrate on Google Cloud Functions Node.js](gcp-functions/opentelemetry-on-gcf-nodejs.md "Monitor Google Cloud Functions with OpenTelemetry for Node.js and Dynatrace.")
-* [Integrate on Google Cloud Functions Python](gcp-functions/opentelemetry-on-gcf-python.md "Monitor Google Cloud Functions with OpenTelemetry for Python and Dynatrace.")
-* [Integrate on Google Cloud Functions GoLang](gcp-functions/opentelemetry-on-gcf-go.md "Monitor Google Cloud Functions with OpenTelemetry for Go and Dynatrace.")
-* [Integrate on Google Cloud Functions .NET](gcp-functions/opentelemetry-on-gcf-dotnet.md "Monitor Google Cloud Functions with OpenTelemetry for .NET and Dynatrace.")
-* [Google Cloud Functions monitoring](gcp-functions/cloud-functions-monitoring.md "Monitor Google Cloud Functions and view available metrics.")
+* Integrate on Google Cloud Functions Node.js
+* Integrate on Google Cloud Functions Python
+* Integrate on Google Cloud Functions GoLang
+* Integrate on Google Cloud Functions .NET
+* Google Cloud Functions monitoring
 
 ## Monitoring consumption
 
-For Google Cloud Functions, monitoring consumption is based on Davis data units. See [Serverless monitoring](../../../license/monitoring-consumption-classic/davis-data-units/serverless-monitoring.md "Understand how serverless monitoring consumption is calculated.") for details.
+For Google Cloud Functions, monitoring consumption is based on Davis data units. See Serverless monitoring for details.
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
+* Set up Dynatrace on Google Cloud
 * [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

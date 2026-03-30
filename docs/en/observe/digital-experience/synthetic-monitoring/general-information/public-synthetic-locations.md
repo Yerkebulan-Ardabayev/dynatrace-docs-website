@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:24:46.338930
 
 Dynatrace offers a global network of public Synthetic Monitoring locations out of the box. With Dynatrace Synthetic Monitoring, you can run your monitors from public locations that are based on the infrastructure of these major cloud providers: Alibaba Cloud, Amazon AWS, Google Cloud, and Microsoft Azure.
 
-Note that you can also [create private Synthetic locations](../private-synthetic-locations/create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.") within your own network infrastructure. All public and private Synthetic locations can run [browser as well as HTTP monitors](types-of-synthetic-monitors.md "Learn about Dynatrace synthetic monitor types.").
+Note that you can also create private Synthetic locations within your own network infrastructure. All public and private Synthetic locations can run browser as well as HTTP monitors.
 
 ## Location release stages
 
@@ -32,7 +32,7 @@ Locations are released in one of these progressive stages: **Coming soon**, **Ea
 If your security policy requires you to add a location IP address to a list of allowed addresses or you need to know this information for other purposes, you can determine a location IP address in one of the following ways.
 
 * When you create or modify your monitors, all the locations and their IP addresses are displayed in the table on the **Frequency and locations** page. Select one or more locations, scroll to the bottom of the page, and select **Copy IPs to clipboard** or **Download IPs** to copy or download the associated IP addresses.
-* Use the [Synthetic locations API - GET all locations](../../../../dynatrace-api/environment-api/synthetic/synthetic-locations/get-all-locations.md "List all synthetic locations via the Synthetic v1 API.") API call, which returns all the locations available for your Environment along with their IP addresses.
+* Use the Synthetic locations API - GET all locations API call, which returns all the locations available for your Environment along with their IP addresses.
 
 ## Locations
 
@@ -63,7 +63,7 @@ If you have synthetic monitors assigned to the soon-to-be-deprecated Sydney (Ali
 4. Clear the **Sydney** (Alibaba) and **Mumbai** (Alibaba) checkboxes and select alternative locations.
 5. **Save changes**.
 
-You can also use the [Synthetic Monitors API](../../../../dynatrace-api/environment-api/synthetic/synthetic-monitors.md "Manage synthetic monitors via the Synthetic v1 API.") for configuration at scale.
+You can also use the Synthetic Monitors API for configuration at scale.
 
 Additional actions to update your firewall rules
 
@@ -197,5 +197,5 @@ See [Location change notice](#location-change).
 
 ## Related topics
 
-* [Create a private Synthetic location](../private-synthetic-locations/create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.")
-* [Synthetic locations API - GET all locations](../../../../dynatrace-api/environment-api/synthetic/synthetic-locations/get-all-locations.md "List all synthetic locations via the Synthetic v1 API.")
+* Create a private Synthetic location
+* Synthetic locations API - GET all locations

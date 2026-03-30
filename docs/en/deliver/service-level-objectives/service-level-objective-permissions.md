@@ -17,12 +17,12 @@ For **Edit**
 
 * `slo:slos:read` ârequired for reading all SLOs to show them in the dropdown selector
 * `slo:slos:write` ârequired for showing the  **Service-level objective** button
-* `slo:slos:write`, `slo:slos:read`, and the Grail permissions you need for your specific query. For more information, see [Permissions in Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+* `slo:slos:write`, `slo:slos:read`, and the Grail permissions you need for your specific query. For more information, see Permissions in Grail.
 
 For SLO tile evaluation
 
-* `slo:slos:read` and the Grail permissions you need for your specific query. For more information, see [Permissions in Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+* `slo:slos:read` and the Grail permissions you need for your specific query. For more information, see Permissions in Grail.
 
 For the SLO details view
 
-* `slo:slos:read`, `slo:objective-templates:read`, and the Grail permissions you need for your specific query. For more information, see [Permissions in Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+* `slo:slos:read`, `slo:objective-templates:read`, and the Grail permissions you need for your specific query. For more information, see Permissions in Grail.

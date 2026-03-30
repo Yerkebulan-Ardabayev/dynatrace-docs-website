@@ -12,11 +12,11 @@ scraped: 2026-03-06T21:23:32.078862
 * 4-min read
 * Updated on Nov 20, 2025
 
-Dynatrace has a [permission model for Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail."). This applies to all telemetry data, such as metrics, events, spans, and logs.
+Dynatrace has a permission model for Grail. This applies to all telemetry data, such as metrics, events, spans, and logs.
 
 We recommend setting up permissions along organizational lines and deployment scopes. Suitable concepts include host groups, Kubernetes clusters, and Kubernetes namespaces. These attributes are typically available for all telemetry data ingested via Dynatrace collection methods like OneAgent, OpenTelemetry, or Kubernetes operator. Hence, you can use these attributes to enable [record-level permissions](../../../platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.").
 
-For Kubernetes-based deployments, make sure Dynatrace Operator has [metadata enrichment](../../../ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") enabled.
+For Kubernetes-based deployments, make sure Dynatrace Operator has metadata enrichment enabled.
 
 If you only require a basic permission concept, setting up bucket-level permissions is the best option. You can then route your data to the correct bucket in OpenPipeline by matching one of the mentioned deployment-relevant primary Grail fields.
 
@@ -31,7 +31,7 @@ Dynatrace provides a comprehensive permission model for Grail that applies to al
 
 ## Set up security context
 
-Dynatrace allows you to tweak your ingested business events data by adding a `dt.security_context` attribute to specific business events records. This enables you to set additional options, for example, permissions for individual records. See, [Permissions in Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+Dynatrace allows you to tweak your ingested business events data by adding a `dt.security_context` attribute to specific business events records. This enables you to set additional options, for example, permissions for individual records. See, Permissions in Grail.
 
 You can set those permissions for individual records on specific attribute values or automatically enriched entities in a business event (hosts, process groups, process group instances) when OneAgent captures data.
 
@@ -40,7 +40,7 @@ For basic use cases, it's best to have the permission boundaries following the d
 To create a security context adjustment to your ingested business events data, you need to create rules that:
 
 1. Filter the records that have the `dt.security_context` attribute added to them.  
-   Go to ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and create a DQL query using a [business events processing function](bo-events-processing-matcher.md "This is the DQL matcher in events in the classic pipeline ."). For example:
+   Go to ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and create a DQL query using a business events processing function. For example:
 
    ```
    fetch bizevents
@@ -55,7 +55,7 @@ To create a security context adjustment to your ingested business events data, y
 
 ### Leverage existing tags at the source
 
-You can define the security context at the source via [OneAgent](../../../ingest-from/dynatrace-oneagent/oneagent-security-context.md "Learn how to set up Grail permissions for OneAgent."), [OpenTelemetry](../../../ingest-from/opentelemetry/opentelemetry-security-context.md "Set up Grail permissions for OpenTelemetry."), or [Kubernetes labels or annotations](../../../ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment.md "Guides for telemetry enrichment on Kubernetes"). This allows you to use your existing labels and tags to facilitate permissions in Dynatrace.
+You can define the security context at the source via OneAgent, OpenTelemetry, or Kubernetes labels or annotations. This allows you to use your existing labels and tags to facilitate permissions in Dynatrace.
 
 ## Create a business events security context rule via OpenPipeline
 
@@ -94,7 +94,7 @@ Your business events records contain attribute `geo.city.name` with a value of `
 
 To create a new rule
 
-1. Go to ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and execute a DQL query using a [business events processing function](bo-events-processing-matcher.md "This is the DQL matcher in events in the classic pipeline ."):
+1. Go to ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and execute a DQL query using a business events processing function:
 
    ```
    fetch bizevents
@@ -139,7 +139,7 @@ Expand **Details** to examine a rule definition. A business events processing se
 To add a business events security context rule:
 
 1. Select **Add rule** on the **Business event security context** page.
-2. Add a **Matcher** to your rule by pasting the [business events processing function](bo-events-processing-matcher.md "This is the DQL matcher in events in the classic pipeline .") from your DQL query.
+2. Add a **Matcher** to your rule by pasting the business events processing function from your DQL query.
 3. Select value source type.
 4. Provide the **Value** for the source type.
 
@@ -153,7 +153,7 @@ Your business events records contain the attribute `geo.city.name` with the valu
 * Filters all records that contain `Brussels` as a value of the `geo.city.name` attribute.
 * Adds a `dt.security_context` attribute with the `team_EU` value to all filtered business events records.
 
-1. Go to the **Logs and events** page and execute a DQL query using a [business events processing function](bo-events-processing-matcher.md "This is the DQL matcher in events in the classic pipeline ."):
+1. Go to the **Logs and events** page and execute a DQL query using a business events processing function:
 
    ```
    fetch bizevents
@@ -184,9 +184,9 @@ fetch bizevents
 | filter matchesValue(dt.security_context, "team_EU")
 ```
 
-Based on this attribute, you can now create security-related user and group policies. See, [Permissions in Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+Based on this attribute, you can now create security-related user and group policies. See, Permissions in Grail.
 
 ## Related topics
 
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [DQL matcher in business event in the classic pipeline](bo-events-processing-matcher.md "This is the DQL matcher in events in the classic pipeline .")
+* Dynatrace Query Language
+* DQL matcher in business event in the classic pipeline

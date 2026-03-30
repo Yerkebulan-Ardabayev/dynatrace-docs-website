@@ -242,10 +242,10 @@ fetch logs
   + Links are visible for each column, enabling interaction with individual data points while leveraging others. For example, selecting a link in the `Status` column might use another field's value when navigating.
 * **Unsupported visualizations**
 
-  + Map visualizations such as [Choropleth](edit-visualizations/visualization-map-choropleth.md "Create and edit choropleth map visualizations on your Dynatrace dashboards and notebooks."), [Dot](edit-visualizations/visualization-map-dot.md "Create and edit dot map visualizations on your Dynatrace dashboards and notebooks."), [Connection](edit-visualizations/visualization-map-connection.md "Create and edit connection map visualizations on your Dynatrace dashboards and notebooks."), and [Bubble](edit-visualizations/visualization-map-bubble.md "Create and edit bubble map visualizations on your Dynatrace dashboards and notebooks.")
-  + [Single value](edit-visualizations/visualization-chart-single-value.md "Create and edit single value visualizations on your Dynatrace dashboards and notebooks.")
-  + [Gauge chart](edit-visualizations/visualization-gauge.md "Create and edit gauge visualizations on your Dynatrace dashboards and notebooks.")
-  + [Meter bar chart](edit-visualizations/visualization-meterbar.md "Create and edit meter bar visualizations on your Dynatrace dashboards and notebooks.")
+  + Map visualizations such as Choropleth, Dot, Connection, and Bubble
+  + Single value
+  + Gauge chart
+  + Meter bar chart
 * **All other visualizations**
 
   + For visualizations with data splits (for example, line charts by host), links dynamically adjust based on the data series. For example, using the placeholder `{{:name}}` in a line chart segmented by host will replace the placeholder with the respective host name for each series (line).
@@ -288,7 +288,7 @@ To provide user-friendly links:
 
 1. Adjust your DQL to create a new column that formats links in Markdown syntax.
 
-   * Use the `fieldsAdd` function to generate a composite field, for example, `markdownLink`, in the format `[Display Name](URL)`.
+   * Use the `fieldsAdd` function to generate a composite field, for example, `markdownLink`, in the format `Display Name`.
    * Use the DQL `concat()` function to easily construct such a field (see the following example).
 2. Go to the **Visual** tab.
 3. In the **Columns** section, select  **Column type** to add a new column type. Select the column with the raw links and set the column type to **Markdown**. For example, `markdownLink`.
@@ -303,7 +303,7 @@ To provide user-friendly links:
    record(website="Dynatrace community", link="https://community.dynatrace.com/")
 
 
-   | fieldsAdd markdownLink = concat("[", website, "](", link, ")")
+   | fieldsAdd markdownLink = concat("", website, "")
    ```
 
 ### Advanced: intent-based links
@@ -375,7 +375,7 @@ To create intent-based links
    4. Create the final link. Combine the base URL, the query components, and Markdown formatting into a user-friendly link:
 
       ```
-      | fieldsAdd errorCodeLink = concat("[", errorCode, "](", LogAppURL, QueryPart1, QueryPart2, QueryTimeFrame, ")")
+      | fieldsAdd errorCodeLink = concat("", errorCode, "")
 
 
       | fields errorCodeLink, total

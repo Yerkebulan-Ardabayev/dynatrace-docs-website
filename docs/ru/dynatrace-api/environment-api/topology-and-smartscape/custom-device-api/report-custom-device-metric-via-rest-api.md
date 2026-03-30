@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:26:41.992599
 
 Метрика, которую вы отправляете, должна уже существовать в Dynatrace.
 
-См. [Create custom device via the Dynatrace API](create-custom-device-via-dynatrace-api.md "Learn how you can use the Dynatrace API to create a custom device."), чтобы узнать, как создать пользовательское устройство без отправки данных на него.
+См. Create custom device via the Dynatrace API, чтобы узнать, как создать пользовательское устройство без отправки данных на него.
 
 Вы можете отправлять данные на пользовательское устройство ретроспективно — эндпоинт **custom device** поддерживает отправку данных за период до одного часа в прошлое. Однако для обеспечения правильной работы анализа первопричин ИИ и оповещений на основе метрик мы рекомендуем отправлять данные в реальном времени.
 
@@ -30,7 +30,7 @@ scraped: 2026-03-05T21:26:41.992599
 
 Для выполнения этого запроса вам необходим токен доступа с областью действия `DataExport`.
 
-Чтобы узнать, как его получить и использовать, см. [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+Чтобы узнать, как его получить и использовать, см. Tokens and authentication.
 
 ## Параметры
 

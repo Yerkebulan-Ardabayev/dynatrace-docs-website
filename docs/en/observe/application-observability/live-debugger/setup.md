@@ -14,7 +14,7 @@ scraped: 2026-03-04T21:33:29.156035
 
 ## User permissions
 
-All supported values for each IAM permission and condition are listed below. Use them to define access policies based on a fine-grained set of permissions and conditions that can be enforced per service. For more information, see [Working with policies](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
+All supported values for each IAM permission and condition are listed below. Use them to define access policies based on a fine-grained set of permissions and conditions that can be enforced per service. For more information, see Working with policies.
 
 state:user-app-states:read
 

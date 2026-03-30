@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:18:30.847920
 
 To fully automate the monitoring of your operating systems, processes, and network interfaces, Dynatrace requires privileged access to your operating system during both installation and operation.
 
-OneAgent is tested extensively to ensure that it has minimal performance impact on your system and [conforms to the highest security standards](../../../../../../common/manage/data-privacy-and-security.md "Learn how Dynatrace applies various security measures required to protect private data.").
+OneAgent is tested extensively to ensure that it has minimal performance impact on your system and conforms to the highest security standards.
 
 ## Permissions
 
@@ -74,7 +74,7 @@ System logs downloaded by OneAgent on AIX are:
 Revoking access to system logs
 
 To revoke access to system logs, use the `oneagentctl` command with the `--set-system-logs-access-enabled` parameter set to `false`.  
-For more information, see [OneAgent configuration via command-line interface](../../../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
+For more information, see OneAgent configuration via command-line interface
 
 ## Globally writable directories
 

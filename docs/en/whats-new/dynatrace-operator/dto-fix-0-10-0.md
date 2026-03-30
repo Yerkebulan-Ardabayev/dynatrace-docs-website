@@ -20,7 +20,7 @@ Release date: Nov 30, 2022
   + An additional API token scope is required: `activeGateTokenManagement.create`
   + To disable it, set `feature.dynatrace.com/activegate-authtoken=false`
 * You can [configure build label propagation from pod to environment variables](../../ingest-from/setup-on-k8s/guides.md#propagation "Detailed description of installation and configuration options for specific use-cases").
-* You can [configure the CSI driver log garbage collection interval](../../ingest-from/setup-on-k8s/deployment/troubleshooting.md#limit-logs "This page will assist you in navigating any challenges you may encounter while working with the Dynatrace Operator and its various components.").
+* You can configure the CSI driver log garbage collection interval.
 * Recommended labels are added to the Dockerfile and release image.
 
 ### Troubleshoot subcommand

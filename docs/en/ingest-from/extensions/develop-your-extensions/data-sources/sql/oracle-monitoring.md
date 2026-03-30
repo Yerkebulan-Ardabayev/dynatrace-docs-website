@@ -14,7 +14,7 @@ scraped: 2026-03-05T21:37:43.036318
 
 After you define the scope of your configuration, you need to identify the databases you'd like to collect data from and identify the ActiveGates that will execute the extension and connect to your devices.
 
-Make sure that all the ActiveGates from the ActiveGate group you'll define as the scope can connect to a respective data source. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](../../../../dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
+Make sure that all the ActiveGates from the ActiveGate group you'll define as the scope can connect to a respective data source. You can assign an ActiveGate to a group during or after installation. For more information, see ActiveGate group.
 
 The monitoring configuration is a JSON payload defining the connection details, credentials, and feature sets that you want to monitor. For details, see [Start monitoring](../../../manage-extensions.md#start-monitoring "Learn how to manage extensions.").
 
@@ -114,13 +114,13 @@ Example payload to activate an Oracle SQL extension:
 ]
 ```
 
-When you have your initial extension YAML ready, package it, sign it, and upload it to your Dynatrace environment. For details, see [Manage extension lifecyle](../../../manage-extensions.md "Learn how to manage extensions.").
+When you have your initial extension YAML ready, package it, sign it, and upload it to your Dynatrace environment. For details, see Manage extension lifecyle.
 
 The Dynatrace Hub-based extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration
 
 You can also use the Dynatrace API to download the schema for your extension that will help you create the JSON payload for your monitoring configuration.
 
-Use the [GET an extension schema](../../../../../dynatrace-api/environment-api/extensions-20/extensions/get-schema.md "View the schema of an extension the Dynatrace Extensions 2.0 API.") endpoint.
+Use the GET an extension schema endpoint.
 
 Issue the following request:
 
@@ -138,9 +138,9 @@ Make sure to replace `{extension-name}` and `{extension-version}` with values fr
 
 ## Scope
 
-Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](../../sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see Sign extension.
 
-The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](../../../../dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
+The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see ActiveGate group.
 
 Use the following format when defining the ActiveGate group:
 

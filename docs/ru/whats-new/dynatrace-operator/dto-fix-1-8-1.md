@@ -9,7 +9,7 @@ scraped: 2026-03-06T21:37:12.752343
 
 Дата выпуска: 9 февраля 2026 года
 
-Данная страница содержит обзор патчей, включённых в Dynatrace Operator версии 1.8.1. Подробную информацию о новых функциях и других улучшениях см. в [примечаниях к выпуску версии 1.8](dto-fix-1-8-0.md "Примечания к выпуску Dynatrace Operator, версия 1.8.0.").
+Данная страница содержит обзор патчей, включённых в Dynatrace Operator версии 1.8.1. Подробную информацию о новых функциях и других улучшениях см. в примечаниях к выпуску версии 1.8.
 
 ## Исправленные проблемы
 
@@ -39,7 +39,7 @@ scraped: 2026-03-06T21:37:12.752343
 
 ## Обновление с Dynatrace Operator версии 1.7
 
-* Указание образа в `.spec.templates.otelCollector.imageRef` теперь является обязательным при включённом [получении телеметрии](../../ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest.md "Включите конечные точки получения телеметрии Dynatrace в Kubernetes для локального приёма данных в кластере.").
+* Указание образа в `.spec.templates.otelCollector.imageRef` теперь является обязательным при включённом получении телеметрии.
 * Устаревшие версии DynaKube API `v1beta1` и `v1beta2` были удалены из схемы CRD DynaKube.
 * Версия DynaKube API `v1beta3` больше не обслуживается и будет удалена в будущем выпуске Dynatrace Operator. См.: [Руководство по миграции версий DynaKube API](../../ingest-from/setup-on-k8s/guides/migration/dynakube.md#deprecation "Перенесите ваш DynaKube CR на более новые версии apiVersion в соответствии с используемой версией Operator.")
 * Обновление Dynatrace Operator может перезапустить ActiveGate, DaemonSet OneAgent (хостовый агент) и DaemonSet мониторинга логов.

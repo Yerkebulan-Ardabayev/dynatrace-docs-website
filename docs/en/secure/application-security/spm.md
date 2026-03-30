@@ -52,7 +52,7 @@ Security Posture Management supports a range of compliance standards through two
 
 The table below shows which standards are supported and how each one is provided.
 
-For detailed explanations of each compliance standard and how Dynatrace supports them, see [Security Posture Management compliance standards](spm/compliance-standards.md "Technical details about the supported compliance standards.").
+For detailed explanations of each compliance standard and how Dynatrace supports them, see Security Posture Management compliance standards.
 
 | **Compliance standards** | **Kubernetes[1](#fn-1-1-def)** | **AWS** | **Azure** | **GCP** | **vSphere[2](#fn-1-2-def)** | **NSX-T[3](#fn-1-3-def)** |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -86,9 +86,9 @@ NSX-T support is limited to version 3.2 and later.
 
 ## Get started
 
-* To get started with Kubernetes Security Posture Management, see [Kubernetes Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.").
+* To get started with Kubernetes Security Posture Management, see Kubernetes Security Posture Management.
 
-* To get started with Cloud Security Posture Management and/or VMware Security Posture Management, see [Ingest Runecast Analyzer compliance findings](../threat-observability/security-events-ingest/ingest-runecast-analyzer.md "Ingest compliance findings from Runecast Analyzer and analyze them on the Dynatrace platform.").
+* To get started with Cloud Security Posture Management and/or VMware Security Posture Management, see Ingest Runecast Analyzer compliance findings.
 
 ## What's next
 
@@ -97,7 +97,7 @@ NSX-T support is limited to version 3.2 and later.
 Once you set up Kubernetes Security Posture Management, you can
 
 * Detect, manage, and take action on security and compliance findings with [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](../xspm.md "Detect, manage, and take action on security and compliance findings.")
-* Query [compliance events](../../semantic-dictionary/model/security-events.md#compliance-finding-events "Get to know the Semantic Dictionary models related to security events.") with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+* Query compliance events with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
 
   + For a list of DQL examples based on compliance events that you can use for further investigation or reporting, see [Query compliance events](../threat-observability/dql-examples.md#compliance "DQL examples for security data powered by Grail.").
 
@@ -108,34 +108,34 @@ Try ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution
 Once you set up CSPM/VSPM, you can
 
 * Visualize data with our **Security Posture Overview** dashboard. For details, see [Next steps](../threat-observability/security-events-ingest/ingest-runecast-analyzer.md#next "Ingest compliance findings from Runecast Analyzer and analyze them on the Dynatrace platform.").
-* Query [compliance events](../../semantic-dictionary/model/security-events.md#compliance-finding-events "Get to know the Semantic Dictionary models related to security events.") with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+* Query compliance events with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 
   + For a list of DQL examples based on compliance events that you can use for further investigation or reporting, see [Query compliance events](../threat-observability/dql-examples.md#compliance "DQL examples for security data powered by Grail.").
 
 ## Use cases
 
-[Stay compliant with Security Posture Management](../use-cases/stay-compliant.md "Stay on top of your security measures, policies, and practices.")
+Stay compliant with Security Posture Management
 
 ## FAQ
 
 ### How can I check my Kubernetes cluster against security compliance standards?
 
 * To review the compliance status of your cluster, see [Review compliance status per system](../xspm/assess-coverage.md#systems "Review the Security Posture Management coverage of your systems at a glance.").
-* To review findings on your cluster, you can [filter and sort results](../xspm/review-findings.md "Search for relevant information to analyze security and compliance findings efficiently.").
-* For contextual information that can help you fix findings on your cluster, see [Gain insights](../xspm/gain-insights.md "Drill into results that can help you fix misconfigurations and noncompliance.").
+* To review findings on your cluster, you can filter and sort results.
+* For contextual information that can help you fix findings on your cluster, see Gain insights.
 
 ### Can I enable or disable compliance standards?
 
-* For [Dynatrace Kubernetes Security Posture Management (KSPM)](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes."), you can manage compliance standards in the Dynatrace **Settings**, see [Configure assessment scope](../xspm.md#configure-assessment "Detect, manage, and take action on security and compliance findings.").
+* For Dynatrace Kubernetes Security Posture Management (KSPM), you can manage compliance standards in the Dynatrace **Settings**, see [Configure assessment scope](../xspm.md#configure-assessment "Detect, manage, and take action on security and compliance findings.").
 * For Runecast Cloud Security Posture Management (CSPM) and Runecast VMware Security Posture Management (VSPM), adjust standard selection directly in the [Runecast Analyzerï»¿](https://www.dynatrace.com/platform/runecast-analyzer/).
 
 ### What can I do with the findings generated by Dynatrace?
 
-For an overview of how to use compliance findings, see [Stay compliant with Security Posture Management](../use-cases/stay-compliant.md "Stay on top of your security measures, policies, and practices.").
+For an overview of how to use compliance findings, see Stay compliant with Security Posture Management.
 
 ### How can I be compliant with the high-severity findings generated by Dynatrace?
 
-For guidelines on how to increase compliance, see [Stay compliant with Security Posture Management](../use-cases/stay-compliant.md "Stay on top of your security measures, policies, and practices.").
+For guidelines on how to increase compliance, see Stay compliant with Security Posture Management.
 
 ### How can I improve Security Posture Management coverage?
 
@@ -145,7 +145,7 @@ For instructions, see [Improve coverage](../xspm/assess-coverage.md#improve "Rev
 
 Resources on your system are assessed as `Failed` (not compliant) according to rules specified in the [supported standards](spm.md#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 
-* To better understand resource configuration and review the source of the rule, see [Gain insights](../xspm/gain-insights.md "Drill into results that can help you fix misconfigurations and noncompliance.").
+* To better understand resource configuration and review the source of the rule, see Gain insights.
 * To better understand result types, see [Concepts: Results](../xspm/concepts.md#concept-results "Concepts that are specific to the Dynatrace Security Posture Management app.").
 
 ### What happens if I don't fix my system based on the findings?
@@ -158,7 +158,7 @@ Ignoring compliance issues presents potential exposure risk or compliance failur
 
 ### How to fix the problems detected in my environment?
 
-For guidelines on how to fix findings, see [Stay compliant with Security Posture Management](../use-cases/stay-compliant.md "Stay on top of your security measures, policies, and practices.").
+For guidelines on how to fix findings, see Stay compliant with Security Posture Management.
 
 ### What environments can be monitored with Security Posture Management?
 
@@ -168,11 +168,11 @@ For a list of supported systems and their versions and distributions, see [Secur
 
 Running Security Posture Management on Kubernetes is entirely independent of OneAgent and thus independent of the [Monitoring modes](../application-security.md#monitoring-modes "Access the Dynatrace Application Security functionalities.").
 Analyzed data originates from the Kubernetes API Server and the Kubernetes Node Configuration Collector via ActiveGate.
-Therefore, you can use ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management** with [Kubernetes Platform Monitoring](../../ingest-from/setup-on-k8s/deployment/platform-observability.md "Deploy Dynatrace Operator for Kubernetes platform monitoring."), where OneAgent isn't deployed.
+Therefore, you can use ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management** with Kubernetes Platform Monitoring, where OneAgent isn't deployed.
 
 ### How can I set up Security Posture Management for cloud environments?
 
-Set up the Dynatrace [integration with Runecast Analyzer](../threat-observability/security-events-ingest/ingest-runecast-analyzer.md "Ingest compliance findings from Runecast Analyzer and analyze them on the Dynatrace platform.").
+Set up the Dynatrace integration with Runecast Analyzer.
 
 ## Further resources
 
@@ -188,4 +188,4 @@ Set up the Dynatrace [integration with Runecast Analyzer](../threat-observabilit
 
 ## Related topics
 
-* [Security Posture Management](../xspm.md "Detect, manage, and take action on security and compliance findings.")
+* Security Posture Management

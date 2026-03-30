@@ -26,14 +26,14 @@ Kubernetes
 
 OpenTelemetry Collector
 
-Follow the [Set up Dynatrace on Kubernetes](../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes") guide to monitor your cluster.
+Follow the Set up Dynatrace on Kubernetes guide to monitor your cluster.
 
 Afterwards, add the following annotations to your Kong Deployments:
 
 * `metrics.dynatrace.com/scrape: "true"`
 * `metrics.dynatrace.com/port: "8100"`
 
-Follow the [OpenTelemetry Collector installation guide](../../../ingest-from/opentelemetry/collector/deployment.md "How to deploy Dynatrace OTel Collector.") to deploy a collector.
+Follow the OpenTelemetry Collector installation guide to deploy a collector.
 With the following config, the collector will scrape AI LLM metrics every 10 seconds from the `kong-metrics.kong:8100` endpoint.
 
 ```

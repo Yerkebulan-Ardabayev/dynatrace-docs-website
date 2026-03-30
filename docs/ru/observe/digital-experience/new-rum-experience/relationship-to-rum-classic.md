@@ -32,10 +32,10 @@ scraped: 2026-02-23T21:26:20.516474
 
 #### Требования к инфраструктуре
 
-На данный момент новый RUM Experience опирается только на HTTP-заголовки и файлы cookie, уже охватываемые [ограничениями брандмауэра для RUM Classic](../web-applications/initial-setup/firewall-constraints-for-rum.md "Find out how to make sure that Real User Monitoring data passes through your firewall."). Если ваши брандмауэры и другие компоненты инфраструктуры уже настроены для пропуска этих заголовков и файлов cookie, при включении нового RUM Experience никаких дополнительных изменений не потребуется.
+На данный момент новый RUM Experience опирается только на HTTP-заголовки и файлы cookie, уже охватываемые ограничениями брандмауэра для RUM Classic. Если ваши брандмауэры и другие компоненты инфраструктуры уже настроены для пропуска этих заголовков и файлов cookie, при включении нового RUM Experience никаких дополнительных изменений не потребуется.
 
 ## Связанные темы
 
-* [Capture event and session properties for web frontends](web-frontends/additional-configuration/event-and-session-properties.md "Learn how to capture event and session properties for web frontends.")
-* [Capture event and session properties for mobile frontends](mobile-frontends/additional-configuration/event-and-session-properties.md "Learn how to capture event and session properties for mobile frontends.")
-* [Firewall constraints for RUM](../web-applications/initial-setup/firewall-constraints-for-rum.md "Find out how to make sure that Real User Monitoring data passes through your firewall.")
+* Capture event and session properties for web frontends
+* Capture event and session properties for mobile frontends
+* Firewall constraints for RUM

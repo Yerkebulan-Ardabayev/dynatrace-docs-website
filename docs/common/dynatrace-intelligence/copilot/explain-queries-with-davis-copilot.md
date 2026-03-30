@@ -27,14 +27,14 @@ Dynatrace Intelligence generative AI explanations are session-based and may vary
 
 ### Prior knowledge
 
-* [Dynatrace Intelligence generative AI overview](copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Getting started with Dynatrace Intelligence generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence generative AI.").
+* Dynatrace Intelligence generative AI overview
+* Getting started with Dynatrace Intelligence generative AI.
 
 ### Prerequisites
 
 * Dynatrace SaaS environment.
-* You have the `ALLOW davis-copilot:dql2nl:execute;` permission. To learn how to set up the permissions, see [Permissions in Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
-* You have completed the Dynatrace Intelligence generative AI setup described in [Getting started with Dynatrace Intelligence generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence generative AI.").
+* You have the `ALLOW davis-copilot:dql2nl:execute;` permission. To learn how to set up the permissions, see Permissions in Grail.
+* You have completed the Dynatrace Intelligence generative AI setup described in Getting started with Dynatrace Intelligence generative AI.
 
 ## Explain queries with generative AI in Notebooks
 
@@ -64,7 +64,7 @@ Do not share personal or confidential information in your feedback.
 
 ## Related topics
 
-* [Dynatrace Intelligence generative AI overview](copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Get started with Dynatrace Intelligence generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence generative AI.")
-* [Query with natural language](quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
-* [Dynatrace Intelligence generative AI FAQ](copilot-faq.md "Learn about frequently asked questions and find your answers.")
+* Dynatrace Intelligence generative AI overview
+* Get started with Dynatrace Intelligence generative AI
+* Query with natural language
+* Dynatrace Intelligence generative AI FAQ

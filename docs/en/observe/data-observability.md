@@ -92,7 +92,7 @@ Your data pipeline continuously pushes batches of data records into Grail. Those
 
 Dynatrace anomaly detection monitors these critical parameters and automatically raises alerts, promptly informing the data engineering teams when the ingestion pattern goes off the baseline.
 
-[Dynatrace Notebooks](../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") help you to explore all incoming data records. With a right [DQL query](../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."), you can filter and aggregate your data to focus on specific data subsets. You can even get a prognosis of the expected future load via [Dynatrace Intelligence forecast](../dynatrace-intelligence/reference/ai-models/forecast-analysis.md "Learn how Dynatrace Intelligence predictive AI generates forecasts."), which uses the current load and presents the lowest and the highest probabilistic level as well as the predicted value for the future.
+Dynatrace Notebooks help you to explore all incoming data records. With a right DQL query, you can filter and aggregate your data to focus on specific data subsets. You can even get a prognosis of the expected future load via Dynatrace Intelligence forecast, which uses the current load and presents the lowest and the highest probabilistic level as well as the predicted value for the future.
 
 The image below shows a forecast of the expected number of future records created by Davis.
 
@@ -116,17 +116,17 @@ An example here is a metric measurement of CPU on a host recorded at `12:00:00`.
 
 The distribution of data is essential in identifying patterns, outliers, or anomalies in the data. Deviation from the expected distribution can signal an issue in data collection or processing.
 
-Grail offers a dedicated DQL commandâ[`fieldsSummary`](../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#fieldsSummary "DQL aggregation commands")âthat enables you to explore the distribution of data record field values of any type. It calculates the cardinality of field values that the specified fields have.
+Grail offers a dedicated DQL commandâ`fieldsSummary`âthat enables you to explore the distribution of data record field values of any type. It calculates the cardinality of field values that the specified fields have.
 
 ## Use cases
 
-* [Detect data volume drops](data-observability/detect-data-volume-drops.md "Detect drops in incoming data pipelines with Dynatrace Workflows.")
-* [Alert on unexpected schema changes](data-observability/alert-unexpected-schema-change.md "Detect and alert unexpected changes in incoming data with Dynatrace Workflows.")
-* [Evaluate data freshness in Grail](data-observability/evaluate-data-freshness-grail.md "Evaluate the freshness of data stored in Grail with Dynatrace Notebooks.")
-* [Explore data distribution](data-observability/explore-data-distribution-dql.md "Get insight into data distribution in Grail with Dynatrace Notebooks.")
+* Detect data volume drops
+* Alert on unexpected schema changes
+* Evaluate data freshness in Grail
+* Explore data distribution
 
 ## Related topics
 
-* [Dynatrace Query Language](../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Notebooks](../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
-* [Dynatrace Intelligence predictive AI analysis](../dynatrace-intelligence/reference/ai-models/forecast-analysis.md "Learn how Dynatrace Intelligence predictive AI generates forecasts.")
+* Dynatrace Query Language
+* Notebooks
+* Dynatrace Intelligence predictive AI analysis

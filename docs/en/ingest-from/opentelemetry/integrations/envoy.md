@@ -24,7 +24,7 @@ If you're using Envoy versions 1.28 and earlier, you can still export traces to 
 
 ### Prerequisites
 
-* The [OTLP traces URL](../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") for the export.
+* The OTLP traces URL for the export.
 * The OneAgent Envoy code module is disabled.
   To do this:
 
@@ -121,7 +121,7 @@ typed_config:
 
 These values need to be adjusted to reflect your Dynatrace environment and the export configuration:
 
-* `uri`âSpecifies the desired [export URL with the trace path](../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). The value must not include the protocol scheme but start with hostname instead.
+* `uri`âSpecifies the desired export URL with the trace path. The value must not include the protocol scheme but start with hostname instead.
 * `cluster`âSpecifies the cluster name and has to match the value of `cluster_name` of the previous cluster definition.
 * `request_headers_to_add`âContains the HTTP headers to be included in the request. Necessary when exporting to ActiveGate (configured for the [API token](#prerequisites)).
 
@@ -133,5 +133,5 @@ Once the setup is complete and you have ingested your first data, you can verify
 
 ## Related topics
 
-* [Prometheus](../../extend-dynatrace/extend-metrics/ingestion-methods/prometheus.md "Learn how to extend observability in Dynatrace with Prometheus metrics.")
-* [Istio/Envoy proxy metrics](../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics.md "Istio metric ingestion and topology detection")
+* Prometheus
+* Istio/Envoy proxy metrics

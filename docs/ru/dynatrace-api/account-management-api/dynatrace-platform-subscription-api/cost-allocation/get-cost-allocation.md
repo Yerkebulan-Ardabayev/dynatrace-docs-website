@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:26:54.898889
 
 ## Аутентификация
 
-Для выполнения этого запроса вашему токену должна быть назначена область `account-uac-read` (**Allow read access for usage and consumption resources**). Подробнее о получении и использовании токена см. в разделе [OAuth-клиенты](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
+Для выполнения этого запроса вашему токену должна быть назначена область `account-uac-read` (**Allow read access for usage and consumption resources**). Подробнее о получении и использовании токена см. в разделе OAuth-клиенты.
 
 ## Параметры
 
@@ -79,4 +79,4 @@ scraped: 2026-03-06T21:26:54.898889
 
 ## Связанные темы
 
-* [Распределение ваших DPS-затрат](../../../../license/cost-allocation.md "Learn how to allocate costs to cost centers and products.")
+* Распределение ваших DPS-затрат

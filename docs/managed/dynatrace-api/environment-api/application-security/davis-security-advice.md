@@ -4,7 +4,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/applica
 updated: 2026-02-09
 ---
 
-The **Davis Security Advisor** API lists [Davis recommendations](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor "Get recommendations for security fixes from Davis Security Advisor.") related to open and unmuted [vulnerabilities](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries.").
+The **Davis Security Advisor** API lists Davis recommendations related to open and unmuted vulnerabilities.
 
 You can limit the output by using the pagination:
 
@@ -22,7 +22,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `securityProblems.read` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ## Parameters
 
@@ -228,5 +228,5 @@ A list of constraint violations
 
 ## Related topics
 
-* [Application Security](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.")
-* [Vulnerabilities API](/managed/dynatrace-api/environment-api/application-security/vulnerabilities "Find out what the vulnerabilities API offers.")
+* Application Security
+* Vulnerabilities API

@@ -14,7 +14,7 @@ scraped: 2026-03-05T21:27:21.930906
 
 Dynatrace calculates [Apdex ratingsï»¿](https://en.wikipedia.org/wiki/Apdex) to provide you with a single metric that tells you about the performance of your application and the errors that impact user experience.
 
-Apdex is calculated for each discrete [user action](../user-actions.md "Learn what user actions are and how they help you understand what users do with your application.") and each application overall. In this way, it provides quick insight into the user experience within your application.
+Apdex is calculated for each discrete user action and each application overall. In this way, it provides quick insight into the user experience within your application.
 
 Default Apdex ratings in Dynatrace are based on application-specific thresholds.
 
@@ -40,11 +40,11 @@ You can adjust the Apdex settings for your application and for its key user acti
 
 ### Configure Apdex settings for applications
 
-You can modify the Apdex thresholds for your [web](../../web-applications/additional-configuration/configure-apdex-web.md "Configure the user-satisfaction performance thresholds for your web application and its key user actions."), [mobile](../../mobile-applications/additional-configuration/configure-apdex-mobile.md "Configure the user-satisfaction performance thresholds for your mobile application and its key user actions."), and [custom applications](../../custom-applications/additional-configuration/configure-apdex-custom.md "Configure the user-satisfaction performance thresholds for your custom application and its key user actions.").
+You can modify the Apdex thresholds for your web, mobile, and custom applications.
 
 ### Configure Apdex settings for key user actions
 
-You can also change the Apdex thresholds for a particular key user action for your [web](../../web-applications/additional-configuration/configure-key-user-actions-web.md "Mark a user action as a key user action and configure Apdex rating for key user actions of your web applications."), [mobile](../../mobile-applications/additional-configuration/configure-key-user-actions-mobile.md "Mark a user action as a key user action and configure Apdex rating for key user actions of your mobile applications."), and [custom applications](../../custom-applications/additional-configuration/configure-key-user-actions-custom.md "Mark a user action as a key user action and configure Apdex rating for key user actions of your custom applications.").
+You can also change the Apdex thresholds for a particular key user action for your web, mobile, and custom applications.
 
 ## Error impact on Apdex
 
@@ -52,7 +52,7 @@ User actions with JavaScript [errors](../user-and-error-events.md#error "Learn a
 
 The same is true for request errors. An HTTP response code, CSP violation, or resource request that is configured in settings to be captured as an error leads to a **Frustrated** user action.
 
-You can exclude errors from Apdex calculations. See [Configure error detection for web applications](../../web-applications/additional-configuration/configure-errors.md "Configure your application to capture or ignore request, custom, and JavaScript errors."), [Adjust Apdex settings for mobile applications](../../mobile-applications/additional-configuration/configure-apdex-mobile.md "Configure the user-satisfaction performance thresholds for your mobile application and its key user actions."), and [Adjust Apdex settings for custom applications](../../custom-applications/additional-configuration/configure-apdex-custom.md "Configure the user-satisfaction performance thresholds for your custom application and its key user actions.") for more details.
+You can exclude errors from Apdex calculations. See Configure error detection for web applications, Adjust Apdex settings for mobile applications, and Adjust Apdex settings for custom applications for more details.
 
 Example: error rules
 
@@ -62,11 +62,11 @@ Example: error rules
 
 Dynatrace makes it easy for you to analyze your application's Apdex from a variety of dimensions. You can check the Apdex rating for a particular user action, location, and application as well as view the Apdex rating for each user action within one user session.
 
-For more details, see [Context-based Apdex analysis](../../session-segmentation/apdex-analysis.md "Check Apdex rating for a user action, location, and application.").
+For more details, see Context-based Apdex analysis.
 
 ## Related topics
 
-* [Adjust Apdex settings for web applications](../../web-applications/additional-configuration/configure-apdex-web.md "Configure the user-satisfaction performance thresholds for your web application and its key user actions.")
-* [Adjust Apdex settings for mobile applications](../../mobile-applications/additional-configuration/configure-apdex-mobile.md "Configure the user-satisfaction performance thresholds for your mobile application and its key user actions.")
-* [Adjust Apdex settings for custom applications](../../custom-applications/additional-configuration/configure-apdex-custom.md "Configure the user-satisfaction performance thresholds for your custom application and its key user actions.")
-* [Context-based Apdex analysis](../../session-segmentation/apdex-analysis.md "Check Apdex rating for a user action, location, and application.")
+* Adjust Apdex settings for web applications
+* Adjust Apdex settings for mobile applications
+* Adjust Apdex settings for custom applications
+* Context-based Apdex analysis

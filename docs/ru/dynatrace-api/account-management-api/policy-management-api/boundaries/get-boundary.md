@@ -13,7 +13,7 @@ scraped: 2026-03-03T21:29:45.609196
 
 ## Аутентификация
 
-Для выполнения этого запроса необходимо разрешение **Allow IAM policy configuration for environments** (`iam-policies-management`), назначенное вашему токену. Чтобы узнать, как его получить и использовать, см. раздел [OAuth clients](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
+Для выполнения этого запроса необходимо разрешение **Allow IAM policy configuration for environments** (`iam-policies-management`), назначенное вашему токену. Чтобы узнать, как его получить и использовать, см. раздел OAuth clients.
 
 ## Параметры
 

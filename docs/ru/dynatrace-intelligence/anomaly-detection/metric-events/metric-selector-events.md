@@ -9,8 +9,8 @@ scraped: 2026-03-06T21:25:45.312965
 
 Селектор метрик — это мощный инструмент для указания, какие данные вы хотите считывать для оценки событий метрик. Он предоставляет вам две основные возможности:
 
-* [Трансформации метрик](../../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.") для преобразования считываемых данных.
-* [Выражения метрик](../../../dynatrace-api/environment-api/metric-v2/metric-expressions.md "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.") для объединения одной или нескольких метрик в другой результат с помощью простой математики.
+* Трансформации метрик для преобразования считываемых данных.
+* Выражения метрик для объединения одной или нескольких метрик в другой результат с помощью простой математики.
 
 С помощью селектора метрик Davis может получить доступ к историческим данным метрики и изучить нормальное поведение вашей среды, что позволяет использовать автоадаптивные пороговые значения в событиях метрик. Однако действуют некоторые ограничения:
 
@@ -66,7 +66,7 @@ scraped: 2026-03-06T21:25:45.312965
 
    * `{alert_condition}` — условие оповещения (выше/ниже порога).
    * `{baseline}` — нарушенное значение базовой линии.
-   * `{dims}` — список всех измерений (и их значений) метрики, нарушившей порог. Вы также можете указать конкретное измерение: `{dims:dt.entity.<entity>}`. Чтобы получить список доступных измерений для вашей метрики, запросите его через запрос [GET metric descriptor](../../../dynatrace-api/environment-api/metric-v2/get-descriptor.md "View the descriptor of a metric via Metrics v2 API.").
+   * `{dims}` — список всех измерений (и их значений) метрики, нарушившей порог. Вы также можете указать конкретное измерение: `{dims:dt.entity.<entity>}`. Чтобы получить список доступных измерений для вашей метрики, запросите его через запрос GET metric descriptor.
    * `{entityname}` — имя затронутой сущности.
    * `{metricname}` — имя метрики, нарушившей порог.
    * `{missing_data_samples}` — количество сэмплов с отсутствующими данными. Доступно только при включённом оповещении об отсутствующих данных.
@@ -84,6 +84,6 @@ scraped: 2026-03-06T21:25:45.312965
 
 ## Связанные темы
 
-* [Metrics API - Селектор метрик](../../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.")
-* [Metrics API - Выражения метрик](../../../dynatrace-api/environment-api/metric-v2/metric-expressions.md "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.")
-* [Metrics Classic](../../../analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")
+* Metrics API - Селектор метрик
+* Metrics API - Выражения метрик
+* Metrics Classic

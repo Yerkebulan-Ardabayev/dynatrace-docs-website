@@ -376,7 +376,7 @@ Predefined policy in JSON
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see [Enable service monitoring](../aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
+To learn how to enable service monitoring, see Enable service monitoring.
 
 ## View service metrics
 

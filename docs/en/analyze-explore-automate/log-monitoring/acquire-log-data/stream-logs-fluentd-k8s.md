@@ -14,9 +14,9 @@ scraped: 2026-03-06T21:26:03.242201
 
 Log Monitoring Classic
 
-For the newest Dynatrace version, see [Stream logs to Dynatrace with Fluentd on Kubernetes](../../logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s.md "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.").
+For the newest Dynatrace version, see Stream logs to Dynatrace with Fluentd on Kubernetes.
 
-The recommended way of streaming logs from Kubernetes nodes and pods to Dynatrace is described at [Log Monitoring in Kubernetes (Logs Classic)](log-monitoring-kubernetes.md "Learn how to monitor logs in Kubernetes.").
+The recommended way of streaming logs from Kubernetes nodes and pods to Dynatrace is described at Log Monitoring in Kubernetes (Logs Classic).
 
 Alternatively, you can use the [Dynatrace Fluentd pluginï»¿](https://dt-url.net/gb23475), which is an open-source module, to stream logs.
 
@@ -27,7 +27,7 @@ The architecture is illustrated below.
 ## Capabilities
 
 * Supports streaming logs to different Dynatrace environments from the same Kubernetes cluster. For example, you can send application pod logs to a different environment than the Kubernetes node logs.
-* Supports streaming logs for [application-only integrations](../../../ingest-from/setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes").
+* Supports streaming logs for application-only integrations.
 * Can be configured to stream logs directly to Dynatrace.
 
 ## Limitations
@@ -40,4 +40,4 @@ For instructions on how to deploy Fluentd integration, see the [documentation on
 
 ## Related topics
 
-* [Kubernetes Classic](../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md "Monitor Kubernetes/OpenShift with Dynatrace.")
+* Kubernetes Classic

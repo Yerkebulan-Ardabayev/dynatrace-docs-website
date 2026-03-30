@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:35:30.359364
 
 Dynatrace version 1.230+
 
-The new version of the Google Cloud integration (v.1.0) uses [Extensions 2.0](../../../extensions.md "Learn how to create and manage Dynatrace Extensions.") and introduces [custom topology](../../../extend-dynatrace/extend-topology/custom-topology.md "Learn how to create a custom topology model that's suited to your telemetry data.") for a number of Google Cloud services.
+The new version of the Google Cloud integration (v.1.0) uses Extensions 2.0 and introduces custom topology for a number of Google Cloud services.
 
 List of services with custom topology
 
@@ -82,7 +82,7 @@ You need to manually remove any dashboards or alerts created manually during the
 
 ## Step 3 Install new Google Cloud deployment
 
-To install the new Google Cloud deployment, see [Set up the Dynatrace Google Cloud metric and log integration (v.1.0) on a new GKE Autopilot cluster](deploy-k8.md "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+To install the new Google Cloud deployment, see Set up the Dynatrace Google Cloud metric and log integration (v.1.0) on a new GKE Autopilot cluster.
 
 ## Step 4 Update dimensions
 
@@ -176,4 +176,4 @@ Alternatively, you can replace the dimensions by configuring each dashboard tile
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](../../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
+* Set up Dynatrace on Google Cloud

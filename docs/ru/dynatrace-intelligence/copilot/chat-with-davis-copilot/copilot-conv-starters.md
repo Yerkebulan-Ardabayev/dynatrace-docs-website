@@ -233,5 +233,5 @@ scraped: 2026-03-06T21:35:59.966349
 
 ## Связанные темы
 
-* [Начало работы с агентным и генеративным ИИ Dynatrace Intelligence](../copilot-getting-started.md "Узнайте, как настроить агентный и генеративный ИИ Dynatrace Intelligence.")
-* [Часто задаваемые вопросы по агентному и генеративному ИИ Dynatrace Intelligence](../../../../common/dynatrace-intelligence/copilot/copilot-faq.md "Узнайте о часто задаваемых вопросах и найдите ответы на них.")
+* Начало работы с агентным и генеративным ИИ Dynatrace Intelligence
+* Часто задаваемые вопросы по агентному и генеративному ИИ Dynatrace Intelligence

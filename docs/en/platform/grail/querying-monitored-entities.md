@@ -187,7 +187,7 @@ Take this information into account when working with different fields:
 * Most entity fields have the same names as in the API v2 environment (for example, gcpZone and oneAgentCustomName).
 * The first and last observation timestamp of an entity is stored in the lifetime field, represented as a timeframe type comprising a start and end timestamp. The lifetime of an entity needs to overlap with the query timeframe for the entity to be included in the query.
 * Several entity names are prefixed with 'entity.' (for example, `entity.conditional_name`)
-* Relationships are returned as records, to learn more about them, see [entity relationships](../../semantic-dictionary/model/dt-entities.md#entity-relationships "Get to know the Semantic Dictionary models related to topology.").
+* Relationships are returned as records, to learn more about them, see entity relationships.
 
 The `describe` command is a valuable tool to explore the Grail data schema.
 
@@ -242,7 +242,7 @@ This query has limitations, such as returning only 100 hosts per service entity,
 
 ### Filtering along relationships
 
-When your query evaluates relationships, we recommend using the [`classicEntitySelector`](dynatrace-query-language/functions/general-functions.md#classic-entity-selector "A list of DQL general functions.") function instead of native DQL queries.
+When your query evaluates relationships, we recommend using the `classicEntitySelector` function instead of native DQL queries.
 
 In the following examples, the native DQL query will be slower and might yield incomplete results compared to the `classicEntitySelector` query:
 
@@ -337,8 +337,8 @@ Entity relationships in the previous Dynatrace (for example, the environment API
 
 ## Related topics
 
-* [What is Dynatrace Grail?](dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")
-* [DQL commands](dynatrace-query-language/commands.md "A list of DQL commands.")
-* [IAM policy reference](../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.")
-* [Permissions in Grail](organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.")
-* [Environment API v2 - Entity selector](../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.")
+* What is Dynatrace Grail?
+* DQL commands
+* IAM policy reference
+* Permissions in Grail
+* Environment API v2 - Entity selector

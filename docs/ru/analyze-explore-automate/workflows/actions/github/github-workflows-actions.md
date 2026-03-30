@@ -268,4 +268,4 @@ scraped: 2026-03-01T21:25:46.175084
 
 ## Связанные темы
 
-* [Настройка GitHub Connector](github-workflows-setup.md "Узнайте, как настроить GitHub Connector.")
+* Настройка GitHub Connector

@@ -12,7 +12,7 @@ scraped: 2026-03-05T21:33:03.715778
 * 1-min read
 * Published Jan 30, 2023
 
-[Apdex](../../rum-concepts/scores-and-ratings/apdex-ratings.md "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.") is an important score that measures your application performance. You can adjust the Apdex thresholds (Satisfactory, Tolerable, and Frustrating) for your application and for its [key user actions](../../rum-concepts/user-actions.md#key-user-actions "Learn what user actions are and how they help you understand what users do with your application.") to refine the Apdex calculations.
+Apdex is an important score that measures your application performance. You can adjust the Apdex thresholds (Satisfactory, Tolerable, and Frustrating) for your application and for its [key user actions](../../rum-concepts/user-actions.md#key-user-actions "Learn what user actions are and how they help you understand what users do with your application.") to refine the Apdex calculations.
 
 ## Configure Apdex settings for your application
 
@@ -40,5 +40,5 @@ To change the Apdex thresholds for a key user action
 
 ## Related topics
 
-* [Apdex ratings](../../rum-concepts/scores-and-ratings/apdex-ratings.md "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.")
-* [Context-based Apdex analysis](../../session-segmentation/apdex-analysis.md "Check Apdex rating for a user action, location, and application.")
+* Apdex ratings
+* Context-based Apdex analysis

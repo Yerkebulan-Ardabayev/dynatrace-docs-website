@@ -34,7 +34,7 @@ For example, assigning "View Logs" permission to a group in Dynatrace grants use
 
 ABAC, on the other hand, determines user access by evaluating resource, data, user, and contextual attributes, along with the specific user action being requested. This provides for a flexible permissions framework that handles changes in access requirements in a more dynamic way, rather than relying on static RBAC roles. Furthermore, the access control granularity offered makes it possible to design common or complex access requirements.
 
-Dynatraceâs IAM permissions framework uses these core ABAC principles and further enhances them with features like [policy templating](iam-policy-templating.md "Policy templating"), [policy boundaries](../iam-policy-boundaries.md "Restrict security policies with policy boundaries to provide tailored access to your users."), and [default policies](../../default-policies.md#default-policies "Dynatrace default policies reference") to make our implementation of ABAC more flexible and user friendly.
+Dynatraceâs IAM permissions framework uses these core ABAC principles and further enhances them with features like policy templating, policy boundaries, and default policies to make our implementation of ABAC more flexible and user friendly.
 
 ### ABAC implementation in your Dynatrace
 
@@ -46,7 +46,7 @@ The following diagram captures the relationship between users, groups, policies,
 
 ![Users-Groups-Policies-Boundaries](https://dt-cdn.net/images/user-group-policy-boundary-812-75ea55d16b.png)
 
-[Policies](../../../permission-management.md "Permission management") leverage user, resource, data, and contextual attribution to enable you to configure access to your Dynatrace secure resources. You can secure individual data resources, apps, and services while optionally specifying business-specific access control conditions through the expressiveness of the [policy statements syntax](../iam-policystatement-syntax.md "IAM policy statement syntax.").
+Policies leverage user, resource, data, and contextual attribution to enable you to configure access to your Dynatrace secure resources. You can secure individual data resources, apps, and services while optionally specifying business-specific access control conditions through the expressiveness of the policy statements syntax.
 
 One or many policy statements can be combined into one policy. The policy can then be bound to one or many user groups, ultimately granting the users of those group the resource access defined by the policy.
 
@@ -84,14 +84,14 @@ Dynatraceâs ABAC permissions framework offers the following advantages:
 #### Flexibility
 
 * Policies are built to be adaptable to changes and future platform services
-* [default policies](../../default-policies.md "Dynatrace default policies reference") are managed by Dynatrace and automatically adapt to future platform changes
+* default policies are managed by Dynatrace and automatically adapt to future platform changes
 * Multiple policy statements can be combined to form one policy, allowing administrators to build policies that align with their access control business requirement
 
 #### Scalability
 
 * Policies allow for a concise expression of complex permissions
 * Policy boundaries offer further policy optimization and generalization
-* [Policy templating](iam-policy-templating.md "Policy templating") enables parameterization of policies through binding parameters
+* Policy templating enables parameterization of policies through binding parameters
 
 #### Granularity
 
@@ -100,7 +100,7 @@ Dynatraceâs ABAC permissions framework offers the following advantages:
 
 #### Usability
 
-[Policy boundaries](../iam-policy-boundaries.md "Restrict security policies with policy boundaries to provide tailored access to your users.") can be re-used in multiple policies.
+Policy boundaries can be re-used in multiple policies.
 
 * Default policies give a great starting point for common access scenarios
 
@@ -124,7 +124,7 @@ The general strategy is to:
 2. Define a mapping on how those RBAC permissions map to ABAC permissions that can be implemented in policies.
 
    * You can repeat doing this in batches until you cover all your groups.
-   * Where appropriate, consider using [default policies](../../default-policies.md "Dynatrace default policies reference") rather than building custom policies.
+   * Where appropriate, consider using default policies rather than building custom policies.
 
 You can use these sample [Dynatrace Notebook or this PowerShellï»¿](https://community.dynatrace.com/t5/Dynatrace-tips/RBAC-to-ABAC-migration-helper-scripts-Notebook-and-PowerShell/m-p/257807#M1447) scripts to give you an initial assessment and some recommendations to get you started. We will use the script output from our sample Dynatrace environment to illustrate some important concepts and best practices you should consider as you plan your RBAC upgrade to ABAC.
 
@@ -134,9 +134,9 @@ Note that any automation scripts that you might have built that use RBAC permiss
 
 An upgrade plan should start with an assessment of your current RBAC configuration. This means identifying existing RBAC roles assigned to your groups. We are interested in RBAC role assignments that are scoped to target environments or management zones.
 
-Consider the steps below to conduct an initial assessment. You can use the Account Management portal to complete the steps or [import](../../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and use the provided notebook to help you. Alternatively, you can also use the provided PowerShell script.
+Consider the steps below to conduct an initial assessment. You can use the Account Management portal to complete the steps or import and use the provided notebook to help you. Alternatively, you can also use the provided PowerShell script.
 
-1. Create the required OAuth client in the [Account Management](../../../../account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.") portal with permissions as instructed in the notebook.
+1. Create the required OAuth client in the Account Management portal with permissions as instructed in the notebook.
 2. Import the provided **RBAC Assessment** notebook into your Dynatrace or, if itâs more convenient for you, use the provided PowerShell script.
 3. Run the script.
 4. The output will be a table like the example below:
@@ -154,7 +154,7 @@ Consider the steps below to conduct an initial assessment. You can use the Accou
 
 ### Upgrade to ABAC
 
-With the inventory of assigned RBAC permissions already created, you can now map RBAC permissions to ABAC ones. You should give priority to existing [default policies](../../default-policies.md "Dynatrace default policies reference") whenever possible, as opposed to building your own custom policies.
+With the inventory of assigned RBAC permissions already created, you can now map RBAC permissions to ABAC ones. You should give priority to existing default policies whenever possible, as opposed to building your own custom policies.
 
 We will use âgroup\_na\_suppâ to help us illustrate some key best practices you should consider for your ABAC configuration.
 
@@ -179,11 +179,11 @@ ALLOW  environment:roles:replay-sessions-with-masking, environment:roles:replay-
 WHERE environment:management-zone startsWith "mgmt_na";
 ```
 
-We could then bind this policy to the `group_na_supp` group and remove the old RBAC role assignment from the group. To further optimize our new ABAC permission, we could use **Dynatrace Professional** rather than building a custom policy. Because [default policies](../../default-policies.md "Dynatrace default policies reference") are read-only, we would need a mechanism to append our `WHERE` condition above.
+We could then bind this policy to the `group_na_supp` group and remove the old RBAC role assignment from the group. To further optimize our new ABAC permission, we could use **Dynatrace Professional** rather than building a custom policy. Because default policies are read-only, we would need a mechanism to append our `WHERE` condition above.
 
-This is where [policy boundaries](../iam-policy-boundaries.md "Restrict security policies with policy boundaries to provide tailored access to your users.") come into play. We can store the condition `environment:management-zone startsWith "mgmt\_na";` in a policy boundary and then use it with our group, as we bind the group to the **Dynatrace Professional** policy, thus further restricting this permission assignment using the boundary we created.
+This is where policy boundaries come into play. We can store the condition `environment:management-zone startsWith "mgmt\_na";` in a policy boundary and then use it with our group, as we bind the group to the **Dynatrace Professional** policy, thus further restricting this permission assignment using the boundary we created.
 
-First, letâs create the policy boundary. In [Account Management](../../../../account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health."), under **Identity & Access management** > **Policy management**, we can create a policy boundary specific to North America management zones.
+First, letâs create the policy boundary. In Account Management, under **Identity & Access management** > **Policy management**, we can create a policy boundary specific to North America management zones.
 
 ![Boundaries](https://dt-cdn.net/images/boundaries-468-08355e2a83.png)
 
@@ -195,7 +195,7 @@ As may be obvious from this example, policy boundaries make it possible to extra
 
 Best practice
 
-Make use of [default policies](../../default-policies.md "Dynatrace default policies reference") whenever possible and define your business-specific access conditions in policy boundaries.
+Make use of default policies whenever possible and define your business-specific access conditions in policy boundaries.
 
 ### When should you create custom policies
 
@@ -253,5 +253,5 @@ Refer to our online documentation and Dynatrace Community forums for additional 
 
 ## Related topics
 
-* [Working with policies](../../manage-user-permissions-policies.md "Working with policies")
-* [IAM policy statement syntax and examples](../iam-policystatement-syntax.md "IAM policy statement syntax.")
+* Working with policies
+* IAM policy statement syntax and examples

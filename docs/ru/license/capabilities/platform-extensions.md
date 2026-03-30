@@ -14,11 +14,11 @@ scraped: 2026-03-06T21:36:49.590243
 
 Информация о том, как использование конкретной возможности переводится в потребление лицензионного коммита DPS, приведена в разделах:
 
-* [Custom Events Classic](platform-extensions/custom-events-classic.md "Узнайте, как рассчитывается и тарифицируется потребление возможности Dynatrace Custom Events Classic DPS.")
-* [Custom Metrics Classic](platform-extensions/custom-metrics-classic.md "Узнайте, как рассчитывается и тарифицируется потребление возможности Dynatrace Custom Metrics Classic DPS.")
-* [Custom Traces Classic](platform-extensions/custom-traces-classic.md "Узнайте, как рассчитывается и тарифицируется потребление возможности Dynatrace Custom Traces Classic DPS.")
-* [Log Monitoring Classic](platform-extensions/log-monitoring-classic.md "Узнайте, как рассчитывается и тарифицируется потребление возможности Dynatrace Log Monitoring Classic DPS.")
-* [Serverless Functions Classic](platform-extensions/serverless-functions-classic.md "Узнайте, как рассчитывается и тарифицируется потребление возможности Dynatrace Serverless Functions Classic DPS.")
+* Custom Events Classic
+* Custom Metrics Classic
+* Custom Traces Classic
+* Log Monitoring Classic
+* Serverless Functions Classic
 
 Узнайте, как рассчитывается потребление расширений платформы Dynatrace в рамках модели Dynatrace Platform Subscription.
 
@@ -44,8 +44,8 @@ Dynatrace может принимать записи журналов.
 
 ## Обзор возможностей Custom Traces Classic
 
-Вы можете [принимать трассировки](../../ingest-from/opentelemetry/otlp-api.md "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") в Dynatrace с помощью [экспортёров OpenTelemetry](../../ingest-from/opentelemetry.md "Узнайте, как интегрировать и принимать данные OpenTelemetry (трассировки, метрики и журналы) в Dynatrace.") для приложений, работающих на хостах без установленного OneAgent.
-Эти распределённые трассировки отправляются через [Trace Ingest API](../../ingest-from/opentelemetry/otlp-api.md "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.").
+Вы можете принимать трассировки в Dynatrace с помощью экспортёров OpenTelemetry в Dynatrace.") для приложений, работающих на хостах без установленного OneAgent.
+Эти распределённые трассировки отправляются через Trace Ingest API.
 
 ## Обзор возможностей Custom Events Classic
 
@@ -53,7 +53,7 @@ Dynatrace может принимать записи журналов.
 
 Пользовательские созданные/принятые или подписочные события, которые можно настроить для среды, включают:
 
-* Любое пользовательское событие, отправленное в Dynatrace с помощью [Events API v2](../../dynatrace-api/environment-api/events-v2.md "Узнайте, что можно сделать с помощью Dynatrace Events API v2.").
+* Любое пользовательское событие, отправленное в Dynatrace с помощью Events API v2.
 * Любое пользовательское событие (например, событие Kubernetes), созданное из сообщений журнала с помощью [правила обработки журналов](../../analyze-explore-automate/logs/lma-classic-log-processing.md#lmc-log-processing-rules "Используйте правила обработки журналов для преобразования входящих данных журналов с целью улучшения понимания, анализа или дальнейшего преобразования.").
 
 ## Обзор возможностей Serverless Functions Classic

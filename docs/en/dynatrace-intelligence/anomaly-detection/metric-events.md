@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:20:48.129795
 
 Dynatrace Classic
 
-We encourage you to try [Anomaly Detection](anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") for more advanced configuration options such as:
+We encourage you to try Anomaly Detection ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") for more advanced configuration options such as:
 
 * The ability to use DQL queries in addition to Grail records
 * Alerting on data such as logs, spans, and business events
@@ -24,14 +24,14 @@ You can easily migrate your metric event configurations to ![Anomaly Detection -
 
 Dynatrace DavisÂ® AI automatically analyzes abnormal situations within your IT infrastructure and attempts to identify any relevant impact and root cause. Davis relies on a broad spectrum of information sources, such as a transactional view of your services and applications, as well as all events raised on individual nodes within your SmartscapeÂ® topology. One of the sources for events in Dynatrace is metric events, that is, events based on metric data. They are configured in the global settings of your environment and are visible to all Dynatrace users in your environment. There are two types of metric events based on how the metric is queried for event evaluation:
 
-* [Metric key](metric-events/metric-key-events.md "Learn about metric events based on a metric key."). Metric key events evaluate the incoming measures of a single metric. You can use only static thresholds with this query type.
-* [Metric selector](metric-events/metric-selector-events.md "Learn about metric events based on a metric selector."). Metric selector events evaluate a complex query defined by the [selector](../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API."). This query type can include historical data and even [arithmetic operations](../../dynatrace-api/environment-api/metric-v2/metric-expressions.md "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.") with multiple metrics.
+* Metric key. Metric key events evaluate the incoming measures of a single metric. You can use only static thresholds with this query type.
+* Metric selector. Metric selector events evaluate a complex query defined by the selector. This query type can include historical data and even arithmetic operations with multiple metrics.
 
 Dynatrace uses three monitoring strategies for such events:
 
-* [Static threshold](static-thresholds.md "When to use a static threshold for your anomaly detection.")âthe threshold that doesn't change over time.
-* [Auto-adaptive threshold](auto-adaptive-threshold.md "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.")âDynatrace calculates the threshold automatically and adapts it dynamically to your metric's behavior.
-* [Seasonal baseline](../reference/ai-models/seasonal-baseline.md "How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.")âDynatrace calculates a confidence band for a metric with seasonal patterns.
+* Static thresholdâthe threshold that doesn't change over time.
+* Auto-adaptive thresholdâDynatrace calculates the threshold automatically and adapts it dynamically to your metric's behavior.
+* Seasonal baselineâDynatrace calculates a confidence band for a metric with seasonal patterns.
 
 * Auto-adaptive thresholds and seasonal baselining are available only for metric selector events.
 * The number of metric event configurations (both metric key and metric selector) is limited to **10,000**.
@@ -68,7 +68,7 @@ Topology awareness and context are the key themes of the Dynatrace observability
 
 When an anomaly detection configuration raises an event, Dynatrace automatically identifies the most relevant entity to map the event to. If multiple entity references are detected, the most relevant one is automatically selected. For example, if a metric with reference to both a host and a process leads to an event, the event is raised on the process.
 
-[Metric ingestion](../../ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.") enables you to submit all types of metric measurements, regardless of the number of entities they relate to. The following scenarios exist:
+Metric ingestion enables you to submit all types of metric measurements, regardless of the number of entities they relate to. The following scenarios exist:
 
 ### Measurements aren't related to any entity
 

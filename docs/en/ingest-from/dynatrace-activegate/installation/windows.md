@@ -15,16 +15,16 @@ Dynatrace supports ActiveGate installation on Windows.
 
 ### Requirements
 
-[ActiveGate hardware and system requirements for Windows](windows/windows-activegate-hardware-and-system-requirements.md "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Windows for routing and monitoring.")
+ActiveGate hardware and system requirements for Windows
 
 ### Defaults
 
-[Default installation settings](windows/windows-default-settings.md "Learn about the default settings with which ActiveGate is installed on Windows.")
+Default installation settings
 
 ### Installation
 
-[Install an Environment ActiveGate on Windows](windows/windows-install-an-environment-activegate.md "Read the step-by-step procedure for installing an Environment ActiveGate on Windows.")
+Install an Environment ActiveGate on Windows
 
 ### Customization of installation
 
-[Customize ActiveGate installation on Windows](windows/windows-customize-installation-for-activegate.md "Learn about the parameters that you can use with ActiveGate on Windows.")
+Customize ActiveGate installation on Windows

@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:37:26.951279
 
 ## Предварительные требования
 
-* Dynatrace версии 1.322 и более ранние: вы [перенесли конфигурации OpenPipeline на Settings API](../migration-settings.md "Узнайте, как перенести конфигурации OpenPipeline на новый Settings API.").
+* Dynatrace версии 1.322 и более ранние: вы перенесли конфигурации OpenPipeline на Settings API.
 * Убедитесь, что разрешения пользователя или группы пользователей достаточны для типа доступа, который вы хотите предоставить.
 * Для выполнения процедур через API убедитесь, что свойство `ownerBasedAccessControl` установлено в `true` для схемы Settings API OpenPipeline, которую вы намерены использовать.
 
@@ -28,45 +28,45 @@ scraped: 2026-03-06T21:37:26.951279
 
   Доступные схемы Settings API
 
-  + [builtin:openpipeline.bizevents.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-ingest-sources.md "Просмотр таблицы схемы настроек builtin:openpipeline.bizevents.ingest-sources вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.bizevents.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-pipelines.md "Просмотр таблицы схемы настроек builtin:openpipeline.bizevents.pipelines вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.bizevents.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-routing.md "Просмотр таблицы схемы настроек builtin:openpipeline.bizevents.routing вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.davis.events.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-ingest-sources.md "Просмотр таблицы схемы настроек builtin:openpipeline.davis.events.ingest-sources вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.davis.events.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-pipelines.md "Просмотр таблицы схемы настроек builtin:openpipeline.davis.events.pipelines вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.davis.events.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-routing.md "Просмотр таблицы схемы настроек builtin:openpipeline.davis.events.routing вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.davis.problems.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-ingest-sources.md "Просмотр таблицы схемы настроек builtin:openpipeline.davis.problems.ingest-sources вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.davis.problems.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-pipelines.md "Просмотр таблицы схемы настроек builtin:openpipeline.davis.problems.pipelines вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.davis.problems.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-routing.md "Просмотр таблицы схемы настроек builtin:openpipeline.davis.problems.routing вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.events.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-ingest-sources.md "Просмотр таблицы схемы настроек builtin:openpipeline.events.ingest-sources вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.events.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-pipelines.md "Просмотр таблицы схемы настроек builtin:openpipeline.events.pipelines вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.events.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-routing.md "Просмотр таблицы схемы настроек builtin:openpipeline.events.routing вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.events.sdlc.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-ingest-sources.md "Просмотр таблицы схемы настроек builtin:openpipeline.events.sdlc.ingest-sources вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.events.sdlc.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-pipelines.md "Просмотр таблицы схемы настроек builtin:openpipeline.events.sdlc.pipelines вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.events.sdlc.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-routing.md "Просмотр таблицы схемы настроек builtin:openpipeline.events.sdlc.routing вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.events.security.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-ingest-sources.md "Просмотр таблицы схемы настроек builtin:openpipeline.events.security.ingest-sources вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.events.security.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-pipelines.md "Просмотр таблицы схемы настроек builtin:openpipeline.events.security.pipelines вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.events.security.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-routing.md "Просмотр таблицы схемы настроек builtin:openpipeline.events.security.routing вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.logs.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-ingest-sources.md "Просмотр таблицы схемы настроек builtin:openpipeline.logs.ingest-sources вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.logs.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipelines.md "Просмотр таблицы схемы настроек builtin:openpipeline.logs.pipelines вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.logs.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-routing.md "Просмотр таблицы схемы настроек builtin:openpipeline.logs.routing вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.metrics.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-ingest-sources.md "Просмотр таблицы схемы настроек builtin:openpipeline.metrics.ingest-sources вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.metrics.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-pipelines.md "Просмотр таблицы схемы настроек builtin:openpipeline.metrics.pipelines вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.metrics.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-routing.md "Просмотр таблицы схемы настроек builtin:openpipeline.metrics.routing вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.security.events.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-ingest-sources.md "Просмотр таблицы схемы настроек builtin:openpipeline.security.events.ingest-sources вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.security.events.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-pipelines.md "Просмотр таблицы схемы настроек builtin:openpipeline.security.events.pipelines вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.security.events.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-routing.md "Просмотр таблицы схемы настроек builtin:openpipeline.security.events.routing вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.spans.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-ingest-sources.md "Просмотр таблицы схемы настроек builtin:openpipeline.spans.ingest-sources вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.spans.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-pipelines.md "Просмотр таблицы схемы настроек builtin:openpipeline.spans.pipelines вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.spans.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-routing.md "Просмотр таблицы схемы настроек builtin:openpipeline.spans.routing вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.system.events.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-ingest-sources.md "Просмотр таблицы схемы настроек builtin:openpipeline.system.events.ingest-sources вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.system.events.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-pipelines.md "Просмотр таблицы схемы настроек builtin:openpipeline.system.events.pipelines вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.system.events.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-routing.md "Просмотр таблицы схемы настроек builtin:openpipeline.system.events.routing вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.user.events.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-ingest-sources.md "Просмотр таблицы схемы настроек builtin:openpipeline.user.events.ingest-sources вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.user.events.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipelines.md "Просмотр таблицы схемы настроек builtin:openpipeline.user.events.pipelines вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.user.events.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-routing.md "Просмотр таблицы схемы настроек builtin:openpipeline.user.events.routing вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.user.sessions.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-ingest-sources.md "Просмотр таблицы схемы настроек builtin:openpipeline.usersessions.ingest-sources вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.user.sessions.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-pipelines.md "Просмотр таблицы схемы настроек builtin:openpipeline.usersessions.pipelines вашей среды мониторинга через Dynatrace API.")
-  + [builtin:openpipeline.user.sessions.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-routing.md "Просмотр таблицы схемы настроек builtin:openpipeline.usersessions.routing вашей среды мониторинга через Dynatrace API.")
+  + builtin:openpipeline.bizevents.ingest-sources
+  + builtin:openpipeline.bizevents.pipelines
+  + builtin:openpipeline.bizevents.routing
+  + builtin:openpipeline.davis.events.ingest-sources
+  + builtin:openpipeline.davis.events.pipelines
+  + builtin:openpipeline.davis.events.routing
+  + builtin:openpipeline.davis.problems.ingest-sources
+  + builtin:openpipeline.davis.problems.pipelines
+  + builtin:openpipeline.davis.problems.routing
+  + builtin:openpipeline.events.ingest-sources
+  + builtin:openpipeline.events.pipelines
+  + builtin:openpipeline.events.routing
+  + builtin:openpipeline.events.sdlc.ingest-sources
+  + builtin:openpipeline.events.sdlc.pipelines
+  + builtin:openpipeline.events.sdlc.routing
+  + builtin:openpipeline.events.security.ingest-sources
+  + builtin:openpipeline.events.security.pipelines
+  + builtin:openpipeline.events.security.routing
+  + builtin:openpipeline.logs.ingest-sources
+  + builtin:openpipeline.logs.pipelines
+  + builtin:openpipeline.logs.routing
+  + builtin:openpipeline.metrics.ingest-sources
+  + builtin:openpipeline.metrics.pipelines
+  + builtin:openpipeline.metrics.routing
+  + builtin:openpipeline.security.events.ingest-sources
+  + builtin:openpipeline.security.events.pipelines
+  + builtin:openpipeline.security.events.routing
+  + builtin:openpipeline.spans.ingest-sources
+  + builtin:openpipeline.spans.pipelines
+  + builtin:openpipeline.spans.routing
+  + builtin:openpipeline.system.events.ingest-sources
+  + builtin:openpipeline.system.events.pipelines
+  + builtin:openpipeline.system.events.routing
+  + builtin:openpipeline.user.events.ingest-sources
+  + builtin:openpipeline.user.events.pipelines
+  + builtin:openpipeline.user.events.routing
+  + builtin:openpipeline.user.sessions.ingest-sources
+  + builtin:openpipeline.user.sessions.pipelines
+  + builtin:openpipeline.user.sessions.routing
 
 ## Предоставление доступа
 
@@ -133,7 +133,7 @@ scraped: 2026-03-06T21:37:26.951279
 
 ## Дальнейшие шаги
 
-После того как администраторы установят разрешения, а владельцы настроят доступ, пользователи смогут управлять элементами и получать к ним доступ соответствующим образом. Команды разработки могут приступить к настройке обработки для своих сценариев использования. Подробнее об обработке см. [Настройка пайплайна обработки](tutorial-configure-processing.md "Настройка источников приёма данных, маршрутов и обработки для ваших данных в OpenPipeline.").
+После того как администраторы установят разрешения, а владельцы настроят доступ, пользователи смогут управлять элементами и получать к ним доступ соответствующим образом. Команды разработки могут приступить к настройке обработки для своих сценариев использования. Подробнее об обработке см. Настройка пайплайна обработки.
 
 ## Связанные темы
 

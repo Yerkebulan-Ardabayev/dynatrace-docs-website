@@ -25,14 +25,14 @@ Kubernetes
 
 OpenTelemetry Collector
 
-Следуйте руководству [Настройка Dynatrace в Kubernetes](../../../ingest-from/setup-on-k8s.md "Способы развёртывания и настройки Dynatrace в Kubernetes"), чтобы настроить мониторинг вашего кластера.
+Следуйте руководству Настройка Dynatrace в Kubernetes, чтобы настроить мониторинг вашего кластера.
 
 После этого добавьте следующие аннотации к вашим Deployment-ресурсам Kong:
 
 * `metrics.dynatrace.com/scrape: "true"`
 * `metrics.dynatrace.com/port: "8100"`
 
-Следуйте [руководству по установке OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector/deployment.md "Как развернуть Dynatrace OTel Collector.") для развёртывания коллектора.
+Следуйте руководству по установке OpenTelemetry Collector для развёртывания коллектора.
 С помощью следующей конфигурации коллектор будет собирать метрики AI LLM каждые 10 секунд с эндпоинта `kong-metrics.kong:8100`.
 
 ```

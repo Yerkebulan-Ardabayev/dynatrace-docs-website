@@ -15,13 +15,13 @@ To install Dynatrace OneAgent when you have a Dynatrace SaaS deployment, go to [
 
 ## Requirements
 
-* You need the [permissions](linux-non-privileged.md "Find out when Dynatrace OneAgent requires root privileges on Linux.") for the following actions:
+* You need the permissions for the following actions:
 
   + To create a directory where you want to install OneAgent
   + To change firewall settings (necessary only if your internal routing policy may prevent Dynatrace software from reaching the Internet).
   + To restart your application services
-* You also need to check the [disk space requirements](../../aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix.md "Find out what the disk space requirements are for OneAgent installation on AIX.").
-* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on whether your Dynatrace deployment is SaaS or Managed, and depending on your network layout and security settings, you may choose to either provide direct access to the Dynatrace cluster, or you can [set up an ActiveGate](../../../../dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.").
+* You also need to check the disk space requirements.
+* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on whether your Dynatrace deployment is SaaS or Managed, and depending on your network layout and security settings, you may choose to either provide direct access to the Dynatrace cluster, or you can set up an ActiveGate.
 
 * On PPC BE Linux, OneAgent supports only Java and Apache/IHS.
 * You don't need root access to install OneAgent on PPC BE Linux.

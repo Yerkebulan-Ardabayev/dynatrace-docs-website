@@ -30,7 +30,7 @@ Be sure to set the correct **Content-Type** header and encode payload with **UTF
 
 To execute this request, you need an access token with `logs.ingest` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ## Parameters
 
@@ -319,5 +319,5 @@ A list of constraint violations
 
 ## Related topics
 
-* [Log ingestion API](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
-* [Log Monitoring Classic](../../../analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* Log ingestion API
+* Log Monitoring Classic

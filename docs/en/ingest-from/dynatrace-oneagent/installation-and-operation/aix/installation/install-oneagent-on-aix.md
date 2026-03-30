@@ -20,20 +20,20 @@ To get started, log in to your Dynatrace SaaS environment via the [Dynatrace.com
 
 ### Permissions
 
-* You need [Download/install OneAgent](../../../../../manage/identity-access-management/permission-management/role-based-permissions.md#environment "Role-based permissions") permissions to download and install OneAgent.
+* You need Download/install OneAgent permissions to download and install OneAgent.
 * You need administrator rights for the servers where OneAgent will be installed as well as for changing firewall settings (necessary only if your internal routing policy may prevent Dynatrace software from reaching the internet).
 * You need permissions and credentials for restarting all your application services.
 
 ### Resources
 
-* Check the [disk space requirements](disk-space-requirements-for-oneagent-installation-and-update-on-aix.md "Find out what the disk space requirements are for OneAgent installation on AIX.").
+* Check the disk space requirements.
 * Your host requires 200 MB free memory to run OneAgent installation and update.
-* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](../../../../dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.").
+* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to set up an ActiveGate.
 
 ### Limitations
 
 * OneAgent installation isn't supported on networked storage mount points that are managed by standards such as NFS or iSCSI.
-* The support for [Log management and Analytics](../../../../../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") and [Log Monitoring Classic](../../../../../analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") on AIX hosts is limited:
+* The support for Log management and Analytics and Log Monitoring Classic on AIX hosts is limited:
 
   + log detection in log module is limited only to custom log sources.
 
@@ -60,15 +60,15 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 
    * Enable monitoring of [Virtual I/O Server](install-oneagent-on-aix.md#vios-installation "Learn how to download and install Dynatrace OneAgent on AIX.") logical partition.
    * Set a [network zone](../../../../../manage/network-zones.md#deploy-network-zones "Find out how network zones work in Dynatrace.") for this host.
-   * If your environment is segmented (for example, into development and production), consider [organizing your hosts into host groups](../../../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
-   * You can override the automatically detected [host name](../../../../../observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Learn how to change a monitored host name."). This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
-   * You can also apply [tags](../../../../../../common/manage/tags-and-metadata.md "Use tags and metadata to organize data in your Dynatrace environment.") to the host to organize your monitored environments in a meaningful way.
-   * Define [Properties](../../../../../observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md#host-metadata "Learn how to tag and set additional properties for a monitored host.") to the host to automatically add metadata.
-   * Change the OneAgent mode to Infrastructure Monitoring or Discovery in place of Full-Stack Monitoring. For more information, see [OneAgent monitoring modes](../../../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
+   * If your environment is segmented (for example, into development and production), consider organizing your hosts into host groups.
+   * You can override the automatically detected host name. This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
+   * You can also apply tags to the host to organize your monitored environments in a meaningful way.
+   * Define Properties to the host to automatically add metadata.
+   * Change the OneAgent mode to Infrastructure Monitoring or Discovery in place of Full-Stack Monitoring. For more information, see OneAgent monitoring modes.
 
      It is not available if the Virtual I/O Server monitoring option is enabled.
 
-   The OneAgent command-line installer provides more options to [customize your installation](../../linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters.").
+   The OneAgent command-line installer provides more options to customize your installation.
 8. Copy the command provided in the **Run the installer with root rights** text field.
 9. Run the installer.  
    Paste the command into your terminal and execute it.
@@ -77,7 +77,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    * You can use `su` or `sudo` to run the installation script. To do this, type the following command into the directory where you downloaded the installation script.  
      `sudo /bin/sh Dynatrace-OneAgent-AIX-1.0.0.sh`
 
-   For a summary of the changes made to your system by OneAgent installation, see [OneAgent security on AIX](oneagent-security-aix.md "Learn about Dynatrace OneAgent security and modifications to your AIX-based system.").
+   For a summary of the changes made to your system by OneAgent installation, see OneAgent security on AIX.
 10. On AIX, Dynatrace supports deep-code monitoring for Java, Apache, WebLogic, and Websphere applications. It's automated for OneAgent version 1.189+. For earlier releases, you need to perform some configuration on AIX, which can be easily done both for single applications as well as shell-wide.
 
     Automated injection of deep-code monitoring is enabled by default in Dynatrace version 1.195+ for fresh OneAgent 1.189+ installations.
@@ -159,8 +159,8 @@ apachectl -c "LoadModule oneagent_module /opt/dynatrace/oneagent/agent/bin/curre
 -k start
 ```
 
-* `tenantUUID` is the [environment](../../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") ID of your Dynatrace environment that should be pulled from `dynatrace-env.sh` (located in the OneAgent installation root directory). The `tenantUUID` parameter is represented in the script as `DT_TENANT`.
-* `tenantToken` is the [token](../../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token.md "Learn what a tenant token is and how to change it.") that OneAgent uses to send data Dynatrace. It should be pulled from `dynatrace-env.sh` (or `ruxitagent.conf`, depending on your OneAgent version), which is located in the OneAgent installation root directory. The `tenantToken` parameter is represented in the script as `DT_TENANTTOKEN`.
+* `tenantUUID` is the environment ID of your Dynatrace environment that should be pulled from `dynatrace-env.sh` (located in the OneAgent installation root directory). The `tenantUUID` parameter is represented in the script as `DT_TENANT`.
+* `tenantToken` is the token that OneAgent uses to send data Dynatrace. It should be pulled from `dynatrace-env.sh` (or `ruxitagent.conf`, depending on your OneAgent version), which is located in the OneAgent installation root directory. The `tenantToken` parameter is represented in the script as `DT_TENANTTOKEN`.
 
   This token should not be confused with Dynatrace API or PaaS tokens. Those tokens can't be used here.
 * `communicationEndpoints` corresponds to one or multiple HTTP addresses that represent Dynatrace Servers or ActiveGates. The `communicationEndpoints` parameter is represented in the script as `DT_CONNECTION_POINT`. For example, the `dynatrace-env.sh` (located in the OneAgent installation root directory) may contain the following:

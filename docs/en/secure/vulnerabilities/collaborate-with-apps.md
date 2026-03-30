@@ -33,13 +33,13 @@ This bidirectional navigation ensures you're always one click away from full sec
 
 ## Share and automate with external apps
 
-Use [Workflow connectors](../../analyze-explore-automate/workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.") to share vulnerability data with external platforms and automate remediation tasks.
+Use Workflow connectors to share vulnerability data with external platforms and automate remediation tasks.
 
 * **Examples**:
 
-  + Automatically create Jira issues when new vulnerabilities are detected or when thresholds are breached using [Jira Connector](../../analyze-explore-automate/workflows/actions/jira.md "Automate creating, transitioning, commenting, and assigning Jira issues on the events and schedules defined for your workflows.").
-  + Send real-time alerts to specific channels or people using [Slack Connector](../../analyze-explore-automate/workflows/actions/slack.md "Send messages to Slack Workspaces") or [Microsoft Teams Connector](../../analyze-explore-automate/workflows/actions/microsoft-teams.md "Send messages to Microsoft Teams").
-  + Trigger remediation workflows using [Red Hat Ansible Connector](../../analyze-explore-automate/workflows/actions/red-hat/redhat-ansible.md "Automate running of Ansible jobs based on your monitoring data and events.") or [Jenkins Connector](../../analyze-explore-automate/workflows/actions/jenkins.md "Automate pipelines in Jenkins.").
+  + Automatically create Jira issues when new vulnerabilities are detected or when thresholds are breached using Jira Connector.
+  + Send real-time alerts to specific channels or people using Slack Connector or Microsoft Teams Connector.
+  + Trigger remediation workflows using Red Hat Ansible Connector or Jenkins Connector.
 
 These integrations help ensure that the right teams receive timely, actionable information, without manual effort.
 

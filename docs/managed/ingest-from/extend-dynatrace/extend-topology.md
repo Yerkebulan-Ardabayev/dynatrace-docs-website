@@ -14,7 +14,7 @@ Context-rich observability means that each incoming observation (metric, trace, 
 
 ## Built-in topology model
 
-Using all these observations and the related entities, Dynatrace can extract and visualize the huge topological graph that we call [Smartscape](/managed/analyze-explore-automate/smartscape-classic "Learn how Smartscape visualizes all the entities and dependencies in your environment.").
+Using all these observations and the related entities, Dynatrace can extract and visualize the huge topological graph that we call Smartscape.
 
 Each OneAgent that is deployed within your IT landscape sends in its own observations. Dynatrace then extracts and auto-discovers all context-relevant topology information. As a result, your Smartscape topology visualization grows in size and detail.
 
@@ -28,7 +28,7 @@ Smartscape example
 
 ![Smartscape example](https://dt-cdn.net/images/smartscape-services-1621-d595e2d107.png)
 
-Another topological view is shown within [Service flow](/managed/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment."), which shows the real-time call relationships of services extracted from all incoming transactions and traces.
+Another topological view is shown within Service flow, which shows the real-time call relationships of services extracted from all incoming transactions and traces.
 
 Service flow example
 
@@ -42,7 +42,7 @@ Once you start to send in your own data sourcesâsuch as Telegraf metric str
 
 The extensibility of the topological model is especially interesting for IoT use cases, where you want to model your own device types (such as `cars`, `ships`, or `vending machines`) and connect them via well-defined relationships.
 
-See the topology-related step in the [WMI extension tutorial](/managed/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial/wmi-tutorial-04 "Learn about WMI extensions in the Extensions framework.") to learn more about extending the Dynatrace topology.
+See the topology-related step in the WMI extension tutorial to learn more about extending the Dynatrace topology.
 
 ## Custom topology model in action
 
@@ -113,4 +113,4 @@ The benefit of having a domain model on top of your telemetry data is:
 * **Single pane view**  
   Observed telemetry data no longer represents an isolated view but begins to shape a complete picture of your own domain topology.
 
-See [Define custom topology](/managed/ingest-from/extend-dynatrace/extend-topology/custom-topology "Learn how to create a custom topology model that's suited to your telemetry data.") to learn how to create a custom topology suited to your telemetry data.
+See Define custom topology to learn how to create a custom topology suited to your telemetry data.

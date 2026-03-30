@@ -26,4 +26,4 @@ su -c 'Dynatrace-OneAgent-Linux-0.5.0-20140217-175809.sh --set-proxy=10.1.1.5'
 
 ## Change proxy after installation
 
-If you need to change the proxy address after installation, use `--set-proxy` in the [OneAgent command-line interface](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+If you need to change the proxy address after installation, use `--set-proxy` in the OneAgent command-line interface.

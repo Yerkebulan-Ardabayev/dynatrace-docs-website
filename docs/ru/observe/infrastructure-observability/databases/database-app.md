@@ -14,7 +14,7 @@ Dynatrace ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe0828
 
 * Конфигурация ActiveGate
 
-  + Назначьте одну или несколько [групп ActiveGate](../../../ingest-from/dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.") для удаленного подключения к целевым серверам баз данных.
+  + Назначьте одну или несколько групп ActiveGate для удаленного подключения к целевым серверам баз данных.
 * Необходимые компоненты
 
   + Для баз данных, требующих дополнительных компонентов (например, драйверов JDBC), установите их на все назначенные ActiveGate в соответствии с [рекомендациями по расширениям](../../../ingest-from/extensions/concepts.md#ag "Learn more about the concept of Dynatrace Extensions.").
@@ -79,12 +79,12 @@ storage:metrics:read
 ALLOW storage:buckets:read WHERE storage:bucket-name = 'default_database_monitoring'
 ```
 
-Для получения дополнительной информации см. [Работа с политиками](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies") и [Предоставление доступа к Grail](../../../manage/identity-access-management/use-cases/access-grail.md "Grant access to Grail").
+Для получения дополнительной информации см. Работа с политиками и Предоставление доступа к Grail.
 
 ### Шаги установки
 
 1. Установите ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") **Databases** из Dynatrace **Hub**.
-2. Настройте приложение для мониторинга поддерживаемых экземпляров баз данных. Инструкции по настройке для конкретных поставщиков см. в разделе [Начало работы с мониторингом баз данных](database-app/get-started.md "Set up database monitoring and learn how to extend Dynatrace Databases monitoring.").
+2. Настройте приложение для мониторинга поддерживаемых экземпляров баз данных. Инструкции по настройке для конкретных поставщиков см. в разделе Начало работы с мониторингом баз данных.
 3. Добавьте необходимые конфигурации мониторинга (например, учетные данные, конечные точки) для каждого экземпляра.
 
 ## Начало работы
@@ -165,14 +165,14 @@ ALLOW storage:buckets:read WHERE storage:bucket-name = 'default_database_monitor
 
 Оповещения о состоянии и предупреждающие сигналы помогают отслеживать инфраструктуру, предоставляя четкую и практическую информацию. Эти функции снижают информационный шум от проблем инфраструктуры и улучшают возможности оповещения, позволяя сосредоточиться на самом важном. Это достигается за счет лучшей категоризации обнаруженных неисправностей.
 
-* Для критических событий создается оповещение о состоянии (Health alert), которое инициирует расследование [Dynatrace Problems](../../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.").
+* Для критических событий создается оповещение о состоянии (Health alert), которое инициирует расследование Dynatrace Problems.
 * Для некритических ситуаций предупреждающий сигнал (Warning signal) информирует вас о потенциальной проблеме.
 
 Вы можете настроить готовые оповещения о состоянии и предупреждающие сигналы через вкладку **Alert templates**.
 
 На вкладке **Alert templates** предоставлены предопределенные шаблоны оповещений для наиболее популярных поставщиков баз данных. Легко создайте новое оповещение, выбрав шаблон и нажав **New Alert**. Затем либо настройте оповещение в мастере **Anomaly Detection**, либо создайте оповещение в один шаг.
 
-Все пользовательские оповещения, подробное описание возможностей и ограничений см. в разделе [Anomaly Detection](../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.").
+Все пользовательские оповещения, подробное описание возможностей и ограничений см. в разделе Anomaly Detection.
 
 ### Инсайты
 

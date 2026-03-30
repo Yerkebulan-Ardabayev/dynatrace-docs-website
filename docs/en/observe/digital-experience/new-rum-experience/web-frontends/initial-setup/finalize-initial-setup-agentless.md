@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:26:15.702725
 * How-to guide
 * Updated on Mar 05, 2026
 
-After [setting up a new agentless frontend](set-up-agentless-monitoring.md "Learn how to set up agentless RUM for your web frontends in the New RUM Experience."), the charts in [![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals**](../../experience-vitals.md "The Experience Vitals app provides an entry point for monitoring web and mobile frontends.") should begin displaying data within ten minutes if your frontend is receiving traffic. If they don't, your setup may require further configuration steps. This guide walks you through a series of checks to help you identify the configuration needed.
+After setting up a new agentless frontend, the charts in [![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals**](../../experience-vitals.md "The Experience Vitals app provides an entry point for monitoring web and mobile frontends.") should begin displaying data within ten minutes if your frontend is receiving traffic. If they don't, your setup may require further configuration steps. This guide walks you through a series of checks to help you identify the configuration needed.
 
 ## Verify that the monitoring code downloads successfully
 
@@ -27,11 +27,11 @@ If you see CSP rule violations in the browser console associated with loading th
 
 ### Requests are blocked by infrastructure components
 
-Monitoring code requests may be blocked by infrastructure components such as firewalls and proxies. Ensure that your infrastructure allows these requests to pass; see [Firewall constraints for RUM](../../rum-firewall-latest.md "Find out how to make sure that Real User Monitoring data passes through your firewall.").
+Monitoring code requests may be blocked by infrastructure components such as firewalls and proxies. Ensure that your infrastructure allows these requests to pass; see Firewall constraints for RUM.
 
 ## Verify that RUM beacons are being sent to Dynatrace
 
-The RUM JavaScript sends beacons containing captured data to the [beacon endpoint](configure-beacon-endpoint.md "Learn how to configure the beacon endpoint for web frontends to meet your specific requirements."). By default, the beacon endpoint for an agentless frontend is a Cluster ActiveGate that is part of the Dynatrace SaaS infrastructure. If the New RUM Experience is active, beacons in a new format are sent alongside RUM Classic beacons to the same endpoint.
+The RUM JavaScript sends beacons containing captured data to the beacon endpoint. By default, the beacon endpoint for an agentless frontend is a Cluster ActiveGate that is part of the Dynatrace SaaS infrastructure. If the New RUM Experience is active, beacons in a new format are sent alongside RUM Classic beacons to the same endpoint.
 
 To identify RUM beacons in your browser's developer tools, look for requests with the URL path `/bf` or `/bf/<id>`. Beacons in the new format include the query string parameter `pv=4`.
 
@@ -67,8 +67,8 @@ Beacon requests may be blocked by infrastructure components such as firewalls an
 * Beacon requests that failed at the beacon endpoint return a JSON response containing the fields `status`, `handler`, `errorCode`, and `errorReason`.
 * Beacons intercepted by a firewall or similar component do not include this JSON response.
 
-The second scenario can be prevented by ensuring that your infrastructure complies with the [firewall constraints for RUM](../../rum-firewall-latest.md "Find out how to make sure that Real User Monitoring data passes through your firewall."). An exception is the error code `429 Too Many Requests`, which may also be returned by SaaS infrastructure; in this case, reach out to Dynatrace support.
+The second scenario can be prevented by ensuring that your infrastructure complies with the firewall constraints for RUM. An exception is the error code `429 Too Many Requests`, which may also be returned by SaaS infrastructure; in this case, reach out to Dynatrace support.
 
 ### No beacons in the new format are sent
 
-If beacons are being sent, but you cannot find any in the new format, the New RUM Experience may not have been activated. See [Enable the New RUM Experience for your RUM Classic web applications](enable-new-rum-for-web-apps.md "Learn how to enable the New RUM Experience for your RUM Classic web applications") to learn how to activate it.
+If beacons are being sent, but you cannot find any in the new format, the New RUM Experience may not have been activated. See Enable the New RUM Experience for your RUM Classic web applications to learn how to activate it.

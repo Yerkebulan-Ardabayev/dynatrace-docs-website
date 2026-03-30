@@ -19,7 +19,7 @@ scraped: 2026-03-05T21:26:57.818899
 
 Для выполнения этого запроса необходим токен доступа с областью действия `DataExport`.
 
-Сведения о получении и использовании токена см. в разделе [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+Сведения о получении и использовании токена см. в разделе Токены и аутентификация.
 
 ## Параметры
 
@@ -187,4 +187,4 @@ scraped: 2026-03-05T21:26:57.818899
 
 ## Связанные темы
 
-* [Сервисы](../../../../observe/application-observability/services.md "Learn how to monitor and analyze your services, define and use request attributes, and more.")
+* Сервисы

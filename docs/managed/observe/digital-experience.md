@@ -8,21 +8,21 @@ updated: 2026-02-09
 
 Digital Experience Monitoring (DEM) is defined by Gartner[1](#fn-1-1-def) as an availability and performance monitoring discipline that supports the optimization of the operational experience and behavior of a digital agent, human, or machine, as it interacts with enterprise applications and services.
 
-[### RUM concepts
+### RUM concepts
 
-Learn about applications, user actions, user sessions, metrics, and more.](/managed/observe/digital-experience/rum-concepts "Learn about the basic concepts of Dynatrace Real User Monitoring.")[### Web applications
+Learn about applications, user actions, user sessions, metrics, and more.### Web applications
 
-Traditional web applications or single-page applications running in a browser](/managed/observe/digital-experience/web-applications "Learn how to configure and use Real User Monitoring for your web applications.")[### Mobile applications
+Traditional web applications or single-page applications running in a browser### Mobile applications
 
-Native mobile apps on iOS or Android and hybrid applications accessed via browser](/managed/observe/digital-experience/mobile-applications "Configure and use Real User Monitoring for your mobile applications.")[### Custom applications
+Native mobile apps on iOS or Android and hybrid applications accessed via browser### Custom applications
 
-Traditional rich client applications, smart IoT applications, and even Alexa skills](/managed/observe/digital-experience/custom-applications "Learn how to configure and use Real User Monitoring for your custom applications.")[### Session segmentation
+Traditional rich client applications, smart IoT applications, and even Alexa skills### Session segmentation
 
-Slice, dice, and combine user sessions into meaningful segments based on shared characteristics.](/managed/observe/digital-experience/session-segmentation "Learn how to use Real User Monitoring to analyze user sessions across your applications.")[### Session Replay
+Slice, dice, and combine user sessions into meaningful segments based on shared characteristics.### Session Replay
 
-Capture and visually replay the complete digital experience of your application's users.](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")[### Synthetic Monitoring
+Capture and visually replay the complete digital experience of your application's users.### Synthetic Monitoring
 
-Monitor your application availability and performance as experienced by your customers around the world and around the clock.](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")[![Use cases](https://dt-cdn.net/images/icon-use-cases-9ac91e0c53.svg "Use cases")
+Monitor your application availability and performance as experienced by your customers around the world and around the clock.[![Use cases](https://dt-cdn.net/images/icon-use-cases-9ac91e0c53.svg "Use cases")
 
 ### Use cases
 

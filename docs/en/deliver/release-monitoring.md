@@ -27,9 +27,9 @@ Dynatrace offers a built-in release-analysis solution that helps you determine:
 
 ## Configure
 
-* Learn how to [configure environment variables for version detection](release-monitoring/version-detection-strategies.md "Metadata for version detection in different technologies").
-* Optionally, you can [integrate your issue-tracking systems and configure dynamic queries](release-monitoring/issue-tracking-integration.md "Integrate your issue tracker into Dynatrace to pull statistics for monitored entities.").
+* Learn how to configure environment variables for version detection.
+* Optionally, you can integrate your issue-tracking systems and configure dynamic queries.
 
 ## Analyze
 
-Once you configure your software/issue tracker, you can [analyze the software product lifecycle of your releases](release-monitoring/monitor-releases-with-dynatrace.md "Analyze data related to each release version of your software.").
+Once you configure your software/issue tracker, you can analyze the software product lifecycle of your releases.

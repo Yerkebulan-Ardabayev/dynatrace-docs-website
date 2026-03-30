@@ -6,5 +6,5 @@ scraped: 2026-03-06T21:31:58.402699
 
 После завершения начальной настройки изучите эти руководства, чтобы расширить и адаптировать New RUM Experience с помощью дополнительных параметров конфигурации.
 
-* [Capture event and session properties for mobile frontends](additional-configuration/event-and-session-properties.md "Узнайте, как фиксировать свойства событий и сеансов для мобильных фронтендов.")
-* [Configure user interaction capturing for mobile frontends](additional-configuration/user-interactions-mobile.md "Узнайте, как настроить захват пользовательских взаимодействий для мобильных фронтендов.")
+* Capture event and session properties for mobile frontends
+* Configure user interaction capturing for mobile frontends

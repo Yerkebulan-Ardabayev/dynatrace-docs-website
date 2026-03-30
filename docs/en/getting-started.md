@@ -35,7 +35,7 @@ Dynatrace offers two deployment options:
     - Full control over your data
     - Meets specific compliance requirements
     
-    [Learn more about Managed →](managed/index.md)
+    Learn more about Managed →
 
 ### 2. Install OneAgent
 
@@ -69,4 +69,4 @@ Once OneAgent is installed, Dynatrace automatically discovers and monitors:
 
 - 🤖 [Ask the AI Assistant](../ai/groq.md)
 - 📚 [Browse full documentation](index.md)
-- 🔬 [Deep dive with NotebookLM](../ai/notebooklm.md)
+- 🔬 Deep dive with NotebookLM

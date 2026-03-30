@@ -23,7 +23,7 @@ The request produces an `application/json` payload.
 
 ### Authentication
 
-To execute this request, you need the **Allow read access for usage and consumption resources** (`account-uac-read`) scope assigned to your token. To learn how to obtain and use it, see [OAuth clients](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
+To execute this request, you need the **Allow read access for usage and consumption resources** (`account-uac-read`) scope assigned to your token. To learn how to obtain and use it, see OAuth clients.
 
 ### Parameters
 
@@ -95,7 +95,7 @@ The request produces an `application/json` payload.
 
 ## Authentication
 
-To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
+To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see OAuth clients.
 
 ### Parameters
 
@@ -164,7 +164,7 @@ The request produces an `application/json` payload.
 
 ## Authentication
 
-To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
+To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see OAuth clients.
 
 ### Parameters
 
@@ -233,7 +233,7 @@ The request produces an `application/json` payload.
 
 ## Authentication
 
-To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
+To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see OAuth clients.
 
 ### Parameters
 
@@ -262,7 +262,7 @@ The request produces an `application/json` payload.
 
 ### Authentication
 
-To execute this request, you need the **Allow read access for usage and consumption resources** (`account-uac-read`) scope assigned to your token. To learn how to obtain and use it, see [OAuth clients](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
+To execute this request, you need the **Allow read access for usage and consumption resources** (`account-uac-read`) scope assigned to your token. To learn how to obtain and use it, see OAuth clients.
 
 ### Parameters
 
@@ -334,7 +334,7 @@ The request produces an `application/json` payload.
 
 ## Authentication
 
-To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
+To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see OAuth clients.
 
 ### Parameters
 
@@ -403,7 +403,7 @@ The request produces an `application/json` payload.
 
 ## Authentication
 
-To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
+To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see OAuth clients.
 
 ### Parameters
 
@@ -472,7 +472,7 @@ The request produces an `application/json` payload.
 
 ## Authentication
 
-To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
+To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see OAuth clients.
 
 ### Parameters
 
@@ -495,4 +495,4 @@ To execute this request, you need the **Allow write access for usage and consump
 
 ## Related topics
 
-* [Allocate your DPS costs](../../../../license/cost-allocation.md "Learn how to allocate costs to cost centers and products.")
+* Allocate your DPS costs

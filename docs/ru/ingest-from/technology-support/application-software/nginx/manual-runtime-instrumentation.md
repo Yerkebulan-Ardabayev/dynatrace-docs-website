@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:26:40.159355
 
 Notification
 
-* В этом процессе обнаружены несовместимые модули NGINX. Автоматическое инструментирование было отключено. Чтобы принудительно инструментировать NGINX, см. [Runtime instrumentation](manual-runtime-instrumentation.md "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.").
+* В этом процессе обнаружены несовместимые модули NGINX. Автоматическое инструментирование было отключено. Чтобы принудительно инструментировать NGINX, см. Runtime instrumentation.
 
 ## Инструментирование изменённого NGINX
 

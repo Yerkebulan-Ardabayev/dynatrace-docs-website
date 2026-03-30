@@ -61,4 +61,4 @@ RUM Classic also provides a user action concept, but it differs in several ways 
 
 ## Related topics
 
-* [Data model of the New RUM Experience](../../concepts/data-model.md "Get familiar with the data model at the heart of the New RUM Experience.")
+* Data model of the New RUM Experience

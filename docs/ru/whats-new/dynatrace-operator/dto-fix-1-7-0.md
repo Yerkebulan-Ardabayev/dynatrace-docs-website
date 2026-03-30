@@ -17,11 +17,11 @@ scraped: 2026-03-03T21:28:05.786009
 
 ### Сокращение количества монтируемых томов и бинарные файлы OneAgent в режиме только для чтения
 
-Количество монтируемых томов, необходимых для внедрения модулей кода в поды приложений, было сокращено. Кроме того, бинарные файлы OneAgent теперь монтируются в режиме только для чтения для повышения безопасности и стабильности. Подробнее см. обновлённую документацию по [мутации рабочих нагрузок](../../ingest-from/setup-on-k8s/reference/workload-mutation.md "Мутации подов приложений при включённых oneagent и/или metadata-enrichment.").
+Количество монтируемых томов, необходимых для внедрения модулей кода в поды приложений, было сокращено. Кроме того, бинарные файлы OneAgent теперь монтируются в режиме только для чтения для повышения безопасности и стабильности. Подробнее см. обновлённую документацию по мутации рабочих нагрузок.
 
 ### Управление размером эфемерных томов через аннотации рабочих нагрузок
 
-Теперь вы можете ограничивать размер эфемерных томов, подключаемых к внедрённым подам приложений, с помощью аннотаций рабочих нагрузок. Подробнее о настройке и рекомендациях по размеру см. наше [руководство по хранилищу](../../ingest-from/setup-on-k8s/reference/storage.md#application-pod-volumes "Полный обзор требований к хранилищу для различных режимов развёртывания Dynatrace Operator в средах Kubernetes").
+Теперь вы можете ограничивать размер эфемерных томов, подключаемых к внедрённым подам приложений, с помощью аннотаций рабочих нагрузок. Подробнее о настройке и рекомендациях по размеру см. наше руководство по хранилищу.
 
 ### Расширены разрешения ClusterRole `dynatrace-kubernetes-monitoring`
 
@@ -35,8 +35,8 @@ scraped: 2026-03-03T21:28:05.786009
 
 ## Новые функции и улучшения
 
-* Необходимые области действия для OAuth-клиента EdgeConnect в [режиме provisioner](../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/edgeconnect/edge-connect-provision.md "Предоставление EdgeConnect для среды Dynatrace.") были сокращены.
-  Области действия `settings:object:write` и `settings:object:read` теперь требуются только при использовании [автоматизации Kubernetes](../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/edgeconnect/kubernetes-automation/edge-connect-kubernetes-automation-operator-supported-setup.md "Настройка EdgeConnect с поддержкой оператора для Kubernetes Connector.").
+* Необходимые области действия для OAuth-клиента EdgeConnect в режиме provisioner были сокращены.
+  Области действия `settings:object:write` и `settings:object:read` теперь требуются только при использовании автоматизации Kubernetes.
 
 * Параметры `livenessProbe` серверного контейнера CSI-драйвера теперь можно настраивать в Helm. Добавлены следующие переключатели Helm:
 
@@ -46,9 +46,9 @@ scraped: 2026-03-03T21:28:05.786009
   + `.csidriver.server.livenessProbe.successThreshold`
   + `.csidriver.server.livenessProbe.timeoutSeconds`
 
-* Теперь вы получите предупреждение, если включите `.spec.telemetryIngest` без указания `.spec.templates.openTelemetryCollector.imageRef`. Dynatrace Operator продолжит использовать образ `latest` из публичного реестра Dynatrace ECR для [OpenTelemetry collector](../../ingest-from/opentelemetry/collector.md "Узнайте о Dynatrace OTel Collector."). Однако использование тегов `latest` является антипаттерном, которого следует избегать. Указание образа станет обязательным в будущей версии.
+* Теперь вы получите предупреждение, если включите `.spec.telemetryIngest` без указания `.spec.templates.openTelemetryCollector.imageRef`. Dynatrace Operator продолжит использовать образ `latest` из публичного реестра Dynatrace ECR для OpenTelemetry collector. Однако использование тегов `latest` является антипаттерном, которого следует избегать. Указание образа станет обязательным в будущей версии.
 
-* Dynatrace Operator использует API-токен с набором [областей действия](../../ingest-from/setup-on-k8s/deployment/tokens-permissions.md#operatorToken "Настройка токенов и разрешений для мониторинга вашего кластера Kubernetes") для взаимодействия с платформой Dynatrace. В этом выпуске внесены следующие изменения в требования к областям действия токена:
+* Dynatrace Operator использует API-токен с набором областей действия для взаимодействия с платформой Dynatrace. В этом выпуске внесены следующие изменения в требования к областям действия токена:
 
   + Область действия `entities.read` больше не требуется
   + `settings.read` и `settings.write` становятся необязательными
@@ -98,7 +98,7 @@ scraped: 2026-03-03T21:28:05.786009
 
 ## Уведомления об удалении и устаревании
 
-* Устаревший Dynatrace OneAgent Operator был удалён из каталога `operatorhub.io`. Используйте [Dynatrace Operator](../../ingest-from/setup-on-k8s/quickstart.md#deploy-dynatrace-operator "Развёртывание Dynatrace Operator в Kubernetes") вместо него.
+* Устаревший Dynatrace OneAgent Operator был удалён из каталога `operatorhub.io`. Используйте Dynatrace Operator вместо него.
 
 * Репозиторий Helm, расположенный в `dynatrace/helm-charts`, устарел и перестанет получать обновления в будущем выпуске! Если вы всё ещё используете его,
   обновите URL на `dynatrace/dynatrace-operator` или перейдите на подход на основе OCI-реестра. Обновите URL репозитория Helm следующими командами:
@@ -128,10 +128,10 @@ scraped: 2026-03-03T21:28:05.786009
   + Используйте поле `.spec.oneagent.(cloudNativeFullStack|classicFullStack|hostMonitoring).version` для фиксации версии на уровне отдельного DynaKube.
 
 * Сопутствующие бинарные файлы CSI, расположенные в `/usr/local/bin/csi-node-driver-registrar` и `/usr/local/bin/livenessprobe`, теперь устарели и будут удалены в будущей версии Dynatrace Operator.
-* [Поддержка OpenShift 4.10 и 4.11](../../ingest-from/technology-support/support-model-and-issues.md "Как Dynatrace поддерживает версии Kubernetes и Red Hat OpenShift, а также известные проблемы") завершилась в марте 2025 г. Вследствие этого Dynatrace Operator 1.7 больше не поддерживает эти версии.
+* Поддержка OpenShift 4.10 и 4.11 завершилась в марте 2025 г. Вследствие этого Dynatrace Operator 1.7 больше не поддерживает эти версии.
 
 * Событие "Mark for Termination" устарело и будет удалено в будущей версии Operator. Эта функциональность теперь избыточна, так как она была заменена событиями доступности хоста при завершении работы и перезагрузке, введёнными в OneAgent версии 1.301.
 
 ## Обновление с Dynatrace Operator версии 1.6
 
-Начиная с этой версии, больше невозможно развернуть DynaKube с API-версиями `v1beta1` или `v1beta2`. Пожалуйста, обновите ваш DynaKube до последней версии API, `v1beta5`, перед обновлением установки Dynatrace Operator. Подробнее см. [Руководство по миграции версий API DynaKube](../../ingest-from/setup-on-k8s/guides/migration/dynakube.md "Мигрируйте ваш DynaKube CR на более новые apiVersions в зависимости от используемой версии Operator.").
+Начиная с этой версии, больше невозможно развернуть DynaKube с API-версиями `v1beta1` или `v1beta2`. Пожалуйста, обновите ваш DynaKube до последней версии API, `v1beta5`, перед обновлением установки Dynatrace Operator. Подробнее см. Руководство по миграции версий API DynaKube.

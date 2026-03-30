@@ -17,9 +17,9 @@ To illustrate this process, this guide walks you through extracting a customer c
 
 ## Example scenario
 
-In this tutorial, weâll use a web shop as our example. The shop is instrumented with the RUM JavaScript, and the captured data is mapped to a [frontend](../concepts/frontends.md "Learn about the frontend concept in the New RUM Experience.") named `webshop`.
+In this tutorial, weâll use a web shop as our example. The shop is instrumented with the RUM JavaScript, and the captured data is mapped to a frontend named `webshop`.
 
-Instrumentation was customized to send a user session property `successful_checkout` whenever a customer successfully completes the checkout process. The property was configured as described in [Capture event and session properties for web frontends](../web-frontends/additional-configuration/event-and-session-properties.md "Learn how to capture event and session properties for web frontends.") and then sent via JavaScript API using [`sendSessionPropertyEvent`ï»¿](https://docs.dynatrace.com/javascriptapi/doc-latest/functions/Types.dynatrace.sendSessionPropertyEvent.html):
+Instrumentation was customized to send a user session property `successful_checkout` whenever a customer successfully completes the checkout process. The property was configured as described in Capture event and session properties for web frontends and then sent via JavaScript API using [`sendSessionPropertyEvent`ï»¿](https://docs.dynatrace.com/javascriptapi/doc-latest/functions/Types.dynatrace.sendSessionPropertyEvent.html):
 
 ```
 dynatrace.sendSessionPropertyEvent({
@@ -46,12 +46,12 @@ While this query works well for short-term analysis, itâs not ideal for unc
 
 Prior knowledge
 
-* [Dynatrace Query Language](../../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](../../../../platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* Dynatrace Query Language
+* Processing in OpenPipeline
 
 Prerequisites
 
-Ensure you have the permissions described in [New RUM Experience permissions](../permissions.md "See what permissions you need to set up the New RUM Experience.").
+Ensure you have the permissions described in New RUM Experience permissions.
 
 ## How-to
 
@@ -102,7 +102,7 @@ timeseries sum(easytravel.checkout_statistics), by: { successful_checkout }, int
 
 ## Related topics
 
-* [Dynatrace Query Language](../../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](../../../../platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
-* [Capture event and session properties for web frontends](../web-frontends/additional-configuration/event-and-session-properties.md "Learn how to capture event and session properties for web frontends.")
-* [Capture event and session properties for mobile frontends](../mobile-frontends/additional-configuration/event-and-session-properties.md "Learn how to capture event and session properties for mobile frontends.")
+* Dynatrace Query Language
+* Processing in OpenPipeline
+* Capture event and session properties for web frontends
+* Capture event and session properties for mobile frontends

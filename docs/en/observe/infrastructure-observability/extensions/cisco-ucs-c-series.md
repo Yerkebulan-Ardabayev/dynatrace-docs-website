@@ -92,7 +92,7 @@ The extension package contains:
 
 #### DPS licensing
 
-[DPS license consumption](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") is based on metric data points ingested. The following formula provides an approximate annual ingest amount if all feature sets are enabled and the extension runs every minute:
+DPS license consumption, the licensing model for all Dynatrace capabilities.") is based on metric data points ingested. The following formula provides an approximate annual ingest amount if all feature sets are enabled and the extension runs every minute:
 
 ```
 ((2 * # of CPUs)
@@ -148,7 +148,7 @@ The extension package contains:
 
 #### Classic licensing
 
-For [Dynatrace classic licenses](../../../license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), metric ingestion consumes Davis Data Units (DDUs) at a rate of 0.001 DDUs per metric data point.
-For details, see [DDUs for metrics](../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+For Dynatrace classic licenses, metric ingestion consumes Davis Data Units (DDUs) at a rate of 0.001 DDUs per metric data point.
+For details, see DDUs for metrics.
 
 To estimate annual DDU consumption, multiply the result of the formula above by 0.001.

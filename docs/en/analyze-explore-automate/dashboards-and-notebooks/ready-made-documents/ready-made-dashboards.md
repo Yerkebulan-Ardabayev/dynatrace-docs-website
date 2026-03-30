@@ -61,7 +61,7 @@ Offers a filterable diagnostic overview of ActiveGate with sections for:
 
 [Explore in Playgroundï»¿](https://dt-url.net/q143wbn).
 
-Related Dynatrace app:  [Dynatrace ActiveGate](../../../ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.")
+Related Dynatrace app:  Dynatrace ActiveGate
 
 ![Ready-made dashboard example: ActiveGate diagnostic overview](https://dt-cdn.net/images/activegate-diagnostic-overview-1433-31dccc87de.png)
 
@@ -71,7 +71,7 @@ Get broad visibility into the status of your monitored AWS Environments.
 
 [Explore in Playgroundï»¿](https://dt-url.net/qz2336h).
 
-Related Dynatrace app: ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") [Clouds](../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md "Monitor all cloud platforms at once.")
+Related Dynatrace app: ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") Clouds
 
 ![Ready-made dashboard example: AWS Overview](https://dt-cdn.net/images/ready-made-aws-overview-3834-c36f9921b4.png)
 
@@ -91,7 +91,7 @@ Display select key metrics for Cisco SNMP monitoring (health, interfaces, and BG
 
 [Explore in Playgroundï»¿](https://dt-url.net/vu6333f)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") Extensions
 
 ![Ready-made dashboard example: Cisco Device Overview](https://dt-cdn.net/images/ready-made-cisco-device-overview-1920-58959b879f.png)
 
@@ -101,7 +101,7 @@ Summary of vulnerability scan events from container image scans reported by vari
 
 [Explore in Playgroundï»¿](https://dt-url.net/9163wft).
 
-Related documentation: [Security integrations](../../../secure/threat-observability/security-events-ingest.md "Ingest external security data into Grail.")
+Related documentation: Security integrations
 
 ![Ready-made dashboard example: Container Scan Events Coverage](https://dt-cdn.net/images/container-scan-events-coverage-1438-2014fa781a.png)
 
@@ -111,7 +111,7 @@ Overview of the vulnerability findings in the artifact registries of your contai
 
 [Explore in Playgroundï»¿](https://dt-url.net/u083wwj)
 
-Related documentation: [Security integrations](../../../secure/threat-observability/security-events-ingest.md "Ingest external security data into Grail.")
+Related documentation: Security integrations
 
 ![Ready-made dashboard example: Container Vulnerability Findings](https://dt-cdn.net/images/container-vulnerability-findings-1438-e6133afd13.png)
 
@@ -131,7 +131,7 @@ A database overview by database type, database status, and, for Oracle databases
 
 [Explore in Playgroundï»¿](https://dt-url.net/x4a3wdv).
 
-Related Dynatrace app: ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") [Databases app](../../../observe/infrastructure-observability/databases/database-app.md "The Databases app gives you an overview of all your Extensions Framework 2.0-monitored databases.")
+Related Dynatrace app: ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") Databases app
 
 ![Ready-made dashboard example: Databases Overview](https://dt-cdn.net/images/databases-overview-1320-e01a99a799.png)
 
@@ -141,7 +141,7 @@ Control datapoints consumed by particular extensions.
 
 [Explore in Playgroundï»¿](https://dt-url.net/mja33bw)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") Extensions
 
 ![Ready-made dashboard example: Extension Data Consumption](https://dt-cdn.net/images/ready-made-extension-data-consumption-dark-1387-ab1f25ac38.png)
 
@@ -151,7 +151,7 @@ Display select metrics for IBM MQ queue managers, queues, channels, topics, and 
 
 [Explore in Playgroundï»¿](https://dt-url.net/ogc335g)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") Extensions
 
 ![Ready-made dashboard example: IBM MQ Monitoring Overview](https://dt-cdn.net/images/ready-made-ibm-mq-monitoring-overview-1920-56883c156c.png)
 
@@ -161,7 +161,7 @@ Offers an overview of host observability, with a breakdown by environment, impac
 
 [Explore in Playgroundï»¿](https://dt-url.net/gpc3wam).
 
-Related Dynatrace app: ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") [Infrastructure & Operations](../../../observe/infrastructure-observability/infrastructure-and-operations.md "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
+Related Dynatrace app: ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") Infrastructure & Operations
 
 ![Ready-made dashboard example: Infrastructure Observability Dashboard](https://dt-cdn.net/images/infrastructure-observability-dashboard-1432-35f83ede4a.png)
 
@@ -171,7 +171,7 @@ Display the most important metrics of the extension and as an entry point for th
 
 [Explore in Playgroundï»¿](https://dt-url.net/yie333z)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") Extensions
 
 ![Ready-made dashboard example: Kafka Overview](https://dt-cdn.net/images/ready-made-kafka-overview-3840-9bbd89d659.png)
 
@@ -181,7 +181,7 @@ Get broad visibility into the scale, status, and resource usage of your Kubernet
 
 [Explore in Playgroundï»¿](https://dt-url.net/0vg33tv)
 
-Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](../../../observe/infrastructure-observability/kubernetes-app.md "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
+Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") Kubernetes
 
 ![Ready-made dashboard example: Kubernetes Cluster](https://dt-cdn.net/images/ready-made-kubernetes-cluster-7680-ca562f4f97.png)
 
@@ -191,7 +191,7 @@ Analyze resource allocation of all pods within a namespace.
 
 [Explore in Playgroundï»¿](https://dt-url.net/zvi339y)
 
-Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](../../../observe/infrastructure-observability/kubernetes-app.md "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
+Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") Kubernetes
 
 ![Ready-made dashboard example: Kubernetes Namespace - Pods](https://dt-cdn.net/images/ready-made-kubernetes-namespace-pods-7680-84c7c1f4ba.png)
 
@@ -201,7 +201,7 @@ Explore the resource utilization distribution across workloads in your namespace
 
 [Explore in Playgroundï»¿](https://dt-url.net/f4m33vt)
 
-Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](../../../observe/infrastructure-observability/kubernetes-app.md "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
+Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") Kubernetes
 
 ![Ready-made dashboard example: Kubernetes Namespace - Workloads](https://dt-cdn.net/images/ready-made-kubernetes-namespace-workloads-7680-e811f53769.png)
 
@@ -211,7 +211,7 @@ Understand pod resource consumption on your Kubernetes nodes.
 
 [Explore in Playgroundï»¿](https://dt-url.net/1jo33ba)
 
-Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](../../../observe/infrastructure-observability/kubernetes-app.md "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
+Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") Kubernetes
 
 ![Ready-made dashboard example: Kubernetes Node - Pods](https://dt-cdn.net/images/ready-made-kubernetes-node-pods-7680-2fba73c7e9.png)
 
@@ -221,7 +221,7 @@ Inspect the utilization and size of your persistent volume claims.
 
 [Explore in Playgroundï»¿](https://dt-url.net/0vq330he)
 
-Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](../../../observe/infrastructure-observability/kubernetes-app.md "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
+Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") Kubernetes
 
 ![Ready-made dashboard example: Kubernetes Persistent Volumes](https://dt-cdn.net/images/ready-made-kubernetes-persistent-volumes-7680-a524779929.png)
 
@@ -231,7 +231,7 @@ Get an overview of the log ingest volume and status of the log ingest pipeline. 
 
 [Explore in Playgroundï»¿](https://dt-url.net/f6s33ic)
 
-Related Dynatrace app: ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") [Logs](../../logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
+Related Dynatrace app: ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") Logs
 
 ![Ready-made dashboard example: Log ingest overview](https://dt-cdn.net/images/ready-made-log-ingest-overview-7680-9aa180d1c0.png)
 
@@ -241,7 +241,7 @@ Get an overview of log query usage across the Dynatrace Platform and optimizatio
 
 [Explore in Playgroundï»¿](https://dt-url.net/kbu33w5)
 
-Related Dynatrace app: ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") [Logs](../../logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
+Related Dynatrace app: ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") Logs
 
 ![Ready-made dashboard example: Log query usage and costs](https://dt-cdn.net/images/ready-made-log-query-usage-and-costs-3840-27b2be0372.png)
 
@@ -251,7 +251,7 @@ Gain insights from synthetic monitoring using network availability monitors, whi
 
 [Explore in Playgroundï»¿](https://dt-url.net/rxw33oy)
 
-Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") [Synthetic](../../../observe/digital-experience/synthetic-on-grail/synthetic-app.md "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.")
+Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") Synthetic
 
 ![Ready-made dashboard example: Network availability monitoring](https://dt-cdn.net/images/network-availability-monitoring-1920-7e5215d39f.png)
 
@@ -259,7 +259,7 @@ Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-
 
 [Explore in Playgroundï»¿](https://dt-url.net/uyy33hp)
 
-Related Dynatrace app: ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") [Infrastructure & Operations](../../../observe/infrastructure-observability/infrastructure-and-operations.md "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
+Related Dynatrace app: ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") Infrastructure & Operations
 
 ![Ready-made dashboard example: Network devices](https://dt-cdn.net/images/network-devices-3654-e5556c192b.png)
 
@@ -269,7 +269,7 @@ Check the status of your Nutanix infrastructure, including performance, usage, a
 
 [Explore in Playgroundï»¿](https://dt-url.net/3b10337b)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") Extensions
 
 ![Ready-made dashboard example: Nutanix Overview](https://dt-cdn.net/images/ready-made-nutanix-overview-7680-bd44577062.png)
 
@@ -283,7 +283,7 @@ Offers an overview of your current usage of OpenPipeline (logs, metrics, spans, 
 
 [Explore in Playgroundï»¿](https://dt-url.net/ooe3w1m).
 
-Related Dynatrace app: ![OpenPipeline](https://dt-cdn.net/images/openpipeline-configurations-highresolution-1025-8c07f4c78c.webp "OpenPipeline") [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
+Related Dynatrace app: ![OpenPipeline](https://dt-cdn.net/images/openpipeline-configurations-highresolution-1025-8c07f4c78c.webp "OpenPipeline") OpenPipeline
 
 ![Ready-made dashboard example: OpenPipeline usage overview](https://dt-cdn.net/images/openpipeline-usage-overview-1441-d00df250d4.png)
 
@@ -293,7 +293,7 @@ Browse the most important Oracle DB extension metrics and drill down into additi
 
 [Explore in Playgroundï»¿](https://dt-url.net/tw1233r9)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") Extensions
 
 ![Ready-made dashboard example: Oracle DB Overview](https://dt-cdn.net/images/ready-made-oracle-db-overview-dark-1401-ef84afea7b.png)
 
@@ -303,7 +303,7 @@ Use this dashboard to reduce noise from container vulnerability findings using r
 
 [Explore in Playgroundï»¿](https://dt-url.net/lig3w5p).
 
-Related documentation: [Security integrations](../../../secure/threat-observability/security-events-ingest.md "Ingest external security data into Grail.")
+Related documentation: Security integrations
 
 ![Ready-made dashboard example: Runtime contextualization of container findings for alert reduction](https://dt-cdn.net/images/runtime-contextualization-of-container-findings-for-alert-reduction-1434-66d158782e.png)
 
@@ -313,7 +313,7 @@ Display basic information about ingest volume and available event types, with fi
 
 [Explore in Playgroundï»¿](https://dt-url.net/ab1433kh)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") Extensions
 
 This dashboard has been removed from ready-made dashboards. To use it in your environment.
 
@@ -331,7 +331,7 @@ Use this dashboard to help identify potential salesforce outages.
 
 [Explore in Playgroundï»¿](https://dt-url.net/3i1633rp)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") Extensions
 
 This dashboard has been removed from ready-made dashboards. To use it in your environment.
 
@@ -349,7 +349,7 @@ Get an overview of Salesforce Event Streaming performance and adoption metrics .
 
 [Explore in Playgroundï»¿](https://dt-url.net/lj1833fp)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") Extensions
 
 This dashboard has been removed from ready-made dashboards. To use it in your environment.
 
@@ -367,7 +367,7 @@ Use this dashboard to perform detailed analysis on pages with a load time of mor
 
 [Explore in Playgroundï»¿](https://dt-url.net/oo1a33ut)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") Extensions
 
 This dashboard has been removed from ready-made dashboards. To use it in your environment.
 
@@ -385,7 +385,7 @@ Details for performance and actions of a specific user for the Salesforce Event 
 
 [Explore in Playgroundï»¿](https://dt-url.net/gq1c33t8)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") Extensions
 
 This dashboard has been removed from ready-made dashboards. To use it in your environment.
 
@@ -403,7 +403,7 @@ Browse the most important SQL Server extension metrics and drill down into addit
 
 [Explore in Playgroundï»¿](https://dt-url.net/lz1e33cx)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") Extensions
 
 ![Ready-made dashboard example: SQL Server Overview](https://dt-cdn.net/images/ready-made-sql-server-overview-7680-636e4461f1.png)
 
@@ -413,7 +413,7 @@ Displays overview information about your VMware vCenter, including entity metric
 
 [Explore in Playgroundï»¿](https://dt-url.net/t51g33g2)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") Extensions
 
 ![Ready-made dashboard example: VMware Extension Overview](https://dt-cdn.net/images/ready-made-vmware-extension-overview-7680-b839d5c59d.png)
 
@@ -423,6 +423,6 @@ Gain insights into the health of critical APIs and front-ends to ensure seamless
 
 [Explore in Playgroundï»¿](https://dt-url.net/wv1i33mz)
 
-Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") [Synthetic](../../../observe/digital-experience/synthetic-on-grail/synthetic-app.md "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.")
+Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") Synthetic
 
 ![Ready-made dashboard example: Web availability and performance](https://dt-cdn.net/images/web-availability-and-performance-1920-da66ea8453.png)

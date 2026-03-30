@@ -16,7 +16,7 @@ OneAgent version 1.237+
 
 To monitor the availability of key processes on your hosts, you need to define monitoring rules. After you create a rule, when a matching process is missing on a host, Dynatrace issues an alerting event.
 
-You can analyze the latest activity of the processes defined for process availability in the [Process instance snapshots](host-monitoring.md#snapshots "Monitor hosts with Dynatrace.") section on the host overview page.
+You can analyze the latest activity of the processes defined for process availability in the Process instance snapshots section on the host overview page.
 
 ## Determine scope
 

@@ -99,7 +99,7 @@ receivers: [otlp]
 exporters: [otlp_http]
 ```
 
-For further details on configuration, see [OpenTelemetry and Dynatrace](../../../../opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
+For further details on configuration, see OpenTelemetry and Dynatrace into Dynatrace.").
 
 To ingest **HTTP** via the Dynatrace Trace API, you need to [configure the exporterï»¿](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md#configuration-options). The exporter will then directly send traces to the configured endpoint.
 

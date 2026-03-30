@@ -15,13 +15,13 @@ scraped: 2026-03-06T21:32:20.716773
 
 Deprecation and end of support for AWS log forwarder
 
-The Dynatrace AWS log forwarder is now deprecated in favor of the new [Stream logs via Amazon Data Firehose](lma-stream-logs-with-firehose.md "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput."), which allows ingesting cloud logs directly without any additional infrastructure and with increased throughput. To check the available alternative integrations, see [Set up Dynatrace on Amazon Web Services](../../../amazon-web-services.md "Set up and configure monitoring for Amazon Web Services.").
+The Dynatrace AWS log forwarder is now deprecated in favor of the new Stream logs via Amazon Data Firehose, which allows ingesting cloud logs directly without any additional infrastructure and with increased throughput. To check the available alternative integrations, see Set up Dynatrace on Amazon Web Services.
 
 End of support for the Dynatrace AWS log forwarder is planned for Dec 31, 2024.
 
 DDU consumption for Log Monitoring
 
-DDU pricing applies to cloud Log Monitoring. See [DDUs for Log Monitoring](../../../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
+DDU pricing applies to cloud Log Monitoring. See DDUs for Log Monitoring for details.
 
 AWS log forwarding allows you to stream logs from Amazon CloudWatch into Dynatrace logs via an ActiveGate.
 
@@ -60,7 +60,7 @@ If you're using an earlier version of Dynatrace, see [Alternative deployments](#
 
 ### Dynatrace
 
-* [Enable generic log ingestion](../../../../analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api.md "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
+* Enable generic log ingestion
 * [Create an API token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.") with **Ingest logs** (API v2) permission
 
 ### CLI
@@ -203,7 +203,7 @@ Permissions policy for deployment
 
 1. Set the following environment variables, making sure to replace the placeholders (`<...>`) with your own values.
 
-   * For `TARGET_URL`, enter your environment URL: `https://<your_environment_ID>.live.dynatrace.com`. To learn how to determine your environment ID for the SaaS or Managed deployment, see [environment ID](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+   * For `TARGET_URL`, enter your environment URL: `https://<your_environment_ID>.live.dynatrace.com`. To learn how to determine your environment ID for the SaaS or Managed deployment, see environment ID.
    * For `TARGET_API_TOKEN`, enter your API token. For instructions, see [Prerequisites](#dynatrace).
    * Optional For `STACK_NAME`, the default value is `dynatrace-aws-logs`. To provide another name for the CloudFormation stack where you want to deploy the resources, replace the default value with your own.
 
@@ -531,7 +531,7 @@ For a complete list of parameters, see the deploy table below.
 
 | **Command-line parameter** | **Environment variable** | **Description** | **Default value** |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `--target-url` | `TARGET_URL` | Required The API URL to your Dynatrace SaaS environment logs ingest target. If you choose to use an existing environment ActiveGate, set it to your ActiveGate endpoint: `https://<your_activegate_IP_or_hostname>:9999/e/<your_environment_ID>` **Note:** To determine `<your_environment_ID>`, see [environment ID](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments."). |  |  |  |  |  |
+| `--target-url` | `TARGET_URL` | Required The API URL to your Dynatrace SaaS environment logs ingest target. If you choose to use an existing environment ActiveGate, set it to your ActiveGate endpoint: `https://<your_activegate_IP_or_hostname>:9999/e/<your_environment_ID>` **Note:** To determine `<your_environment_ID>`, see environment ID. |  |  |  |  |  |
 | `--target-api-token` | `TARGET_API_TOKEN` | Required Your API token. For instructions, see [Prerequisites](#dynatrace). |  |  |  |  |  |
 | `--require-valid-certificate` | `REQUIRE_VALID_CERTIFICATE` | Optional If `true`, the log forwarder Lambda function verifies the SSL certificate of your Dynatrace environment URL. | `false` |  |  |  |  |
 | `--stack-name` | `STACK_NAME` | Optional The name of the CloudFormation stack where you want to deploy the resources. | `dynatrace-aws-logs` |  |  |  |  |

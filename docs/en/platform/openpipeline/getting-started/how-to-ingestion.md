@@ -35,7 +35,7 @@ This article is intended for development teams managing data ingestion.
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* [License Dynatrace](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that includes [Events powered by Grail overview (DPS)](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+* License Dynatrace, the licensing model for all Dynatrace capabilities.") license that includes Events powered by Grail overview (DPS).
 
 ## Steps
 
@@ -126,9 +126,9 @@ OpenPipeline is the unified ingestion component for the Dynatrace Platform. You 
 3. Send a record.
 4. Verify ingestion.
 
-For an overview of the available endpoints, refer to [Ingest sources in OpenPipeline](../reference/api-ingestion-reference.md "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.").
+For an overview of the available endpoints, refer to Ingest sources in OpenPipeline.
 
 ## Related topics
 
-* [Data flow in OpenPipeline](../concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
-* [Ingest sources in OpenPipeline](../reference/api-ingestion-reference.md "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.")
+* Data flow in OpenPipeline
+* Ingest sources in OpenPipeline

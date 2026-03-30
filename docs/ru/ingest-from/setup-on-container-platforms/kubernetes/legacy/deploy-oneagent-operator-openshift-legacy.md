@@ -9,8 +9,8 @@ scraped: 2026-03-06T21:32:01.892064
 
 Эта процедура устарела.
 
-* Если вы выполняете новую установку, следует [настроить мониторинг OpenShift с помощью Dynatrace Operator](../../../setup-on-k8s/deployment.md "Развёртывание Dynatrace Operator на Kubernetes").
-* Если у вас уже установлен OneAgent с помощью OneAgent Operator, см. [инструкции по миграции на Dynatrace Operator](../../../setup-on-k8s/guides/migration/migrate-to-dto.md "Подробные инструкции по миграции с устаревшего OneAgent Operator на Dynatrace Operator с помощью kubectl/oc").
+* Если вы выполняете новую установку, следует настроить мониторинг OpenShift с помощью Dynatrace Operator.
+* Если у вас уже установлен OneAgent с помощью OneAgent Operator, см. инструкции по миграции на Dynatrace Operator.
 
 Инструкции ниже также применимы к **OpenShift Dedicated**. Для OpenShift Dedicated вам потребуются [привилегии cluster-admin](https://docs.openshift.com/dedicated/4/administering_a_cluster/cluster-admin-role.html).
 
@@ -28,7 +28,7 @@ scraped: 2026-03-06T21:32:01.892064
 
   Убедитесь, что для API-токена включена настройка **Access problem and event feed, metrics, and topology**.
 * Поды должны разрешать исходящий трафик к вашей среде Dynatrace или к вашему Environment ActiveGate для корректной маршрутизации метрик.
-* См. [Жизненный цикл поддержки](../../../technology-support/support-model-and-issues.md "Как Dynatrace поддерживает версии Kubernetes и Red Hat OpenShift, и известные проблемы") для поддерживаемых версий OpenShift.
+* См. Жизненный цикл поддержки для поддерживаемых версий OpenShift.
 
 1. Добавьте новый проект.
 
@@ -97,11 +97,11 @@ scraped: 2026-03-06T21:32:01.892064
 | **Параметр** | **Описание** | **Значение по умолчанию** |
 | --- | --- | --- |
 | `apiUrl` | Обязательный Для **Dynatrace SaaS**, где OneAgent может подключиться к интернету, замените `ENVIRONMENTID` в `https://ENVIRONMENTID.live.dynatrace.com/api`. Для **Environment ActiveGates** (SaaS или Managed) используйте: `https://YourActiveGateIP` или `FQDN:9999/e/<ENVIRONMENTID>/api`. |  |
-| `useUnprivilegedMode` | Необязательный Установите `false`, если хотите пометить под как привилегированный. По умолчанию используются [возможности Linux для пода OneAgent](../../../dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged.md "Узнайте, когда Dynatrace OneAgent требует привилегий root на Linux.") | `true` |
+| `useUnprivilegedMode` | Необязательный Установите `false`, если хотите пометить под как привилегированный. По умолчанию используются возможности Linux для пода OneAgent | `true` |
 | `tokens` | Необязательный Имя секрета с API- и PaaS-токенами. | Имя пользовательского ресурса (`.metadata.name`), если не задано |
 | `useImmutableImage` | Необязательный Установите `true`, если хотите загружать образ Docker OneAgent из вашей среды Dynatrace. Используйте вместе с `agentVersion`. | `false` |
 | `agentVersion` | Необязательный Версия OneAgent в семантическом формате (`major.minor.patch`). Пример: `1.203.0` | последняя версия |
-| `args` | Необязательный Параметры для установщика OneAgent. Поддерживаются все [параметры командной строки установщика](../../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Узнайте, как использовать установщик Linux с параметрами командной строки."), за исключением `INSTALL_PATH`. |  |
+| `args` | Необязательный Параметры для установщика OneAgent. Поддерживаются все параметры командной строки установщика, за исключением `INSTALL_PATH`. |  |
 | `env` | Необязательный Переменные среды для контейнера OneAgent. |  |
 | `skipCertCheck` | Необязательный Отключить проверку сертификатов для загрузки установщика и коммуникации с API. Установите `true` для пропуска проверок. | `false` |
 | `nodeSelector` | Необязательный Оставьте пустым. Если хотите развернуть OneAgent на определённых узлах, укажите `nodeSelectors` здесь. См. [документацию Kubernetes](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector). |  |
@@ -249,7 +249,7 @@ scraped: 2026-03-06T21:32:01.892064
    - --set-network-zone=<your.network.zone>
    ```
 
-   См. [сетевые зоны](../../../../manage/network-zones.md "Узнайте, как работают сетевые зоны в Dynatrace.") для получения дополнительной информации.
+   См. сетевые зоны для получения дополнительной информации.
 
 Предварительные требования
 
@@ -257,7 +257,7 @@ scraped: 2026-03-06T21:32:01.892064
 
   Убедитесь, что для API-токена включена настройка **Access problem and event feed, metrics, and topology**.
 * Поды должны разрешать исходящий трафик к вашей среде Dynatrace или к вашему Environment ActiveGate для корректной маршрутизации метрик.
-* См. [Жизненный цикл поддержки](../../../technology-support/support-model-and-issues.md "Как Dynatrace поддерживает версии Kubernetes и Red Hat OpenShift, и известные проблемы") для поддерживаемых версий OpenShift.
+* См. Жизненный цикл поддержки для поддерживаемых версий OpenShift.
 * [Установите Helm версии 3](https://helm.sh/docs/intro/install/).
 * Мы рекомендуем устанавливать **последнюю версию** Helm chart.
 
@@ -376,7 +376,7 @@ scraped: 2026-03-06T21:32:01.892064
    - --set-network-zone=<your.network.zone>
    ```
 
-   См. [сетевые зоны](../../../../manage/network-zones.md "Узнайте, как работают сетевые зоны в Dynatrace.") для получения дополнительной информации.
+   См. сетевые зоны для получения дополнительной информации.
 
    Для версий OpenShift **ранее 3.11.188** необходимо **удалить строку** `type: object` **под обязательной валидацией spec в** `openshift.yaml` **перед развёртыванием** `CustomResourceDefinition` ([известная ошибка OpenShift](https://github.com/openshift/origin/pull/24540)).
 
@@ -416,16 +416,16 @@ scraped: 2026-03-06T21:32:01.892064
 
 ## Ограничения
 
-См. [ограничения Docker](../../docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Установка и обновление Dynatrace OneAgent как контейнера Docker.") для подробностей.
+См. ограничения Docker для подробностей.
 
 ## Устранение неполадок
 
-Узнайте, как [устранить неполадки](../../../setup-on-k8s/deployment/troubleshooting.md#deploy "Эта страница поможет вам справиться с проблемами при развёртывании Dynatrace Operator."), которые могут возникнуть при развёртывании OneAgent на OpenShift.
+Узнайте, как устранить неполадки, которые могут возникнуть при развёртывании OneAgent на OpenShift.
 
 ## Развёртывание ActiveGate и подключение Kubernetes API к Dynatrace
 
 Теперь, когда OneAgent работает на узлах OpenShift, вы можете мониторить эти узлы и приложения, работающие в OpenShift. Следующий шаг — развернуть ActiveGate и подключить Kubernetes API к Dynatrace для получения нативных метрик Kubernetes, таких как лимиты запросов и разница между запрошенными и работающими подами.
-Для дальнейших инструкций см. [Развёртывание ActiveGate в OpenShift как StatefulSet](../../../setup-on-k8s/deployment/other/ag-statefulset.md "Установка и настройка ActiveGate в Kubernetes как StatefulSet.").
+Для дальнейших инструкций см. Развёртывание ActiveGate в OpenShift как StatefulSet.
 
 ## Обновление OneAgent Operator с помощью oc
 
@@ -476,7 +476,7 @@ oc apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/la
    oc delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/latest/download/openshift.yaml
    ```
 2. Необязательно После удаления OneAgent Operator бинарник OneAgent остаётся на узле в неактивном состоянии. Для полного удаления запустите скрипт `uninstall.sh` и удалите логи и конфигурационные файлы.
-   См. [информацию по Linux](../../../dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux.md "Узнайте, как удалить OneAgent из вашей системы на базе Linux.").
+   См. информацию по Linux.
 
 Удалите пользовательские ресурсы OneAgent и очистите все оставшиеся объекты OneAgent Operator:
 
@@ -486,6 +486,6 @@ helm uninstall dynatrace-oneagent-operator -n dynatrace
 
 ## Связанные темы
 
-* [Kubernetes Classic](../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md "Мониторинг Kubernetes/OpenShift с помощью Dynatrace.")
-* [Хранение образов Dynatrace в частных реестрах](../../../setup-on-k8s/guides/container-registries/prepare-private-registry.md "Хранение образов Dynatrace в частных реестрах")
-* [Миграция Dynatrace Operator в новую среду](../../../setup-on-k8s/guides/migration/migrate-dto-to-tenant.md "Миграция мониторинга в новую среду Dynatrace на кластерах Kubernetes.")
+* Kubernetes Classic
+* Хранение образов Dynatrace в частных реестрах
+* Миграция Dynatrace Operator в новую среду

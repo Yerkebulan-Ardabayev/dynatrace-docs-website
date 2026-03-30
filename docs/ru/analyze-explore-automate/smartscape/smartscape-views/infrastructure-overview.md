@@ -64,4 +64,4 @@ scraped: 2026-03-05T21:35:17.082641
 
 ## Связанные темы
 
-* [Smartscape](../../smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* Smartscape

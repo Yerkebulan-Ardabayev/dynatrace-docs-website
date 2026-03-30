@@ -16,7 +16,7 @@ Dynatrace Operator manages the lifecycle of several Dynatrace components, includ
 ## Prerequisites
 
 * [Create an access token with `PaaS Integration - InstallerDownload`](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.") scope
-* [Create an authentication token](../../../dynatrace-activegate/activegate-security.md#generate-individual "Secure ActiveGates with dedicated tokens.")
+* Create an authentication token
 * Get your kube-system namespace UUID
 
   How to extract the kube-system namespace UUID
@@ -735,7 +735,7 @@ To deploy ActiveGate, follow the steps below.
    type: RollingUpdate
    ```
 
-   For more information about containerized ActiveGate configuration, see [Containerized ActiveGate configuration](../../../dynatrace-activegate/activegate-in-container/configuration.md "Learn how to configure containerized ActiveGate.").
+   For more information about containerized ActiveGate configuration, see Containerized ActiveGate configuration.
 
    ActiveGate limit sizing hints
 
@@ -752,8 +752,8 @@ To deploy ActiveGate, follow the steps below.
 
    Actual figures depend on your environment.
 
-   These limits should be taken as a guideline. They're designed to prevent ActiveGate startup process slowdown and excessive node resource usage. The default values cover a large range of different cluster sizes; you can modify them according to your needs, based on the ActiveGate [self-monitoring metrics](../../../../analyze-explore-automate/metrics-classic/self-monitoring-metrics.md#activegate-insights "Explore the complete list of self-monitoring Dynatrace metrics.").
-   For more information with regards to sizing guidelines refer to [Sizing guide for Dynatrace ActiveGate components](../../guides/deployment-and-configuration/resource-management/ag-resource-limits.md "Set resource limits for Dynatrace ActiveGates")
+   These limits should be taken as a guideline. They're designed to prevent ActiveGate startup process slowdown and excessive node resource usage. The default values cover a large range of different cluster sizes; you can modify them according to your needs, based on the ActiveGate self-monitoring metrics.
+   For more information with regards to sizing guidelines refer to Sizing guide for Dynatrace ActiveGate components
 
    For PPC64le architecture, additional configuration is required. For details, see [ActiveGate container image](../../../dynatrace-activegate/activegate-in-container.md#additional-configuration "Deploy a containerized ActiveGate.").
 6. Deploy ActiveGate.

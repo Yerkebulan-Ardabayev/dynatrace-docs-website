@@ -76,4 +76,4 @@ Example host view
 
 ## Связанные темы
 
-* [Мониторинг VMware vSphere](../vmware-vsphere-monitoring.md "Отслеживайте VMware vSphere с помощью Dynatrace.")
+* Мониторинг VMware vSphere

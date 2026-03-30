@@ -40,4 +40,4 @@ Use the **Run Workflow** action to modularize workflow usage.](default-workflow-
 
 ## Related topics
 
-* [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* Dynatrace Query Language

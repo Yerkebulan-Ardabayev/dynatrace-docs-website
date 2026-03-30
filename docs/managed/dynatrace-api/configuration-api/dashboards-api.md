@@ -6,26 +6,26 @@ updated: 2026-02-09
 
 The **Dashboards Classic** API enables you to manage the configurations of your dashboards.
 
-[### List all dashboards
+### List all dashboards
 
-Get an overview of all dashboards configured in your Dynatrace environment.](/managed/dynatrace-api/configuration-api/dashboards-api/get-all "View all dashboards of your environment via the Dynatrace Classic API.")[### View a dashboard
+Get an overview of all dashboards configured in your Dynatrace environment.### View a dashboard
 
-Get dashboard parameters by dashboard ID.](/managed/dynatrace-api/configuration-api/dashboards-api/get-dashboard "View a dashboard via the Dynatrace Classic API.")
+Get dashboard parameters by dashboard ID.
 
-[### Create a dashboard
+### Create a dashboard
 
-Create a dashboard with the exact parameters you need.](/managed/dynatrace-api/configuration-api/dashboards-api/post-dashboard "Create a dashboard via the Dynatrace Classic API.")[### Edit a dashboard
+Create a dashboard with the exact parameters you need.### Edit a dashboard
 
-Update the existing configuration of a dashboard.](/managed/dynatrace-api/configuration-api/dashboards-api/put-dashboard "Edit a dashboard via the Dynatrace Classic API.")[### Delete a dashboard
+Update the existing configuration of a dashboard.### Delete a dashboard
 
-Delete the configuration of a dashboard you no longer need.](/managed/dynatrace-api/configuration-api/dashboards-api/del-dashboard "Delete a dashboard via the Dynatrace Classic API.")
+Delete the configuration of a dashboard you no longer need.
 
-[### View sharing settings
+### View sharing settings
 
-Get an overview of sharing configuration of a dashboard.](/managed/dynatrace-api/configuration-api/dashboards-api/get-sharing-config "View the sharing configuration of a dashboard via the Dynatrace Classic API.")[### Update sharing settings
+Get an overview of sharing configuration of a dashboard.### Update sharing settings
 
-Update the sharing configuration of a dashboard.](/managed/dynatrace-api/configuration-api/dashboards-api/put-sharing-config "Update the sharing configuration of a dashboard via the Dynatrace Classic API.")
+Update the sharing configuration of a dashboard.
 
 ## Related topics
 
-* [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+* Dashboards

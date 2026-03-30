@@ -22,13 +22,13 @@ scraped: 2026-03-06T21:18:15.453486
 
 Перед началом работы необходимо выполнить следующее:
 
-* Получите **токен доступа** для загрузки Dynatrace OneAgent с областью действия `InstallerDownload`. Подробнее о токенах доступа см. [Dynatrace API — Токены и аутентификация](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+* Получите **токен доступа** для загрузки Dynatrace OneAgent с областью действия `InstallerDownload`. Подробнее о токенах доступа см. Dynatrace API — Токены и аутентификация.
 
   В приведённых ниже процедурах замените `<DT_TOKEN>` вашим реальным токеном доступа.
-* Получите **идентификатор среды**. Подробнее об идентификаторах сред см. [Что такое среда мониторинга?](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+* Получите **идентификатор среды**. Подробнее об идентификаторах сред см. Что такое среда мониторинга?.
 
   В приведённых ниже процедурах замените `<DT_ENV_ID>` вашим реальным идентификатором среды.
-* Получите конечную точку Dynatrace API, определённую вашим [URL среды](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") или альтернативно [адресом ActiveGate](../../dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.").
+* Получите конечную точку Dynatrace API, определённую вашим URL среды или альтернативно адресом ActiveGate.
 
   В приведённых ниже процедурах замените `<DT_ENV_FQDN>` реальной конечной точкой Dynatrace API.
 * Установите [gcloud CLI](https://cloud.google.com/sdk/docs/install)
@@ -542,15 +542,15 @@ gcloud run deploy <YOUR_SERVICE_NAME> --image gcr.io/<GCP_PROJECT_ID>/<YOUR_IMAG
 | Имя | Описание |
 | --- | --- |
 | **Сеть** |  |
-| `DT_NETWORK_ZONE` | Указывает использование сетевой зоны. Подробнее см. [Сетевые зоны](../../../manage/network-zones.md "Find out how network zones work in Dynatrace."). |
-| `DT_PROXY` | При использовании прокси-сервера используйте эту переменную окружения для передачи учётных данных прокси. Подробнее см. [Настройка OneAgent на контейнерах для мониторинга только приложений](../../setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring.md "Install, update, and uninstall OneAgent on containers for application-only monitoring.") |
+| `DT_NETWORK_ZONE` | Указывает использование сетевой зоны. Подробнее см. Сетевые зоны. |
+| `DT_PROXY` | При использовании прокси-сервера используйте эту переменную окружения для передачи учётных данных прокси. Подробнее см. Настройка OneAgent на контейнерах для мониторинга только приложений |
 | **Дополнительные метаданные для группировки процессов / обнаружения сервисов** |  |
 | `DT_LOCALTOVIRTUALHOSTNAME` | Несколько контейнеров иногда определяются как один экземпляр (localhost), что приводит к различным проблемам, например, в обнаружении сервисов или оповещениях о доступности. Используйте эту переменную окружения для определения уникального имени экземпляра контейнера. Подробнее см. [Обнаружение сервисов v1](../../../observe/application-observability/services/service-detection/service-detection-v1.md#adjusting-service-detection "Find out how Dynatrace Service Detection v1 detects and names different types of services.") |
 | `DT_APPLICATIONID` | Некоторые технологии не предоставляют уникальных имён приложений. В таких случаях используйте эту переменную окружения для указания уникального имени. Подробнее см. [Обнаружение сервисов v1](../../../observe/application-observability/services/service-detection/service-detection-v1.md#web-server-naming-issues "Find out how Dynatrace Service Detection v1 detects and names different types of services.") |
-| `DT_TAGS` | Применяет [пользовательские теги](../../../manage/tags-and-metadata/setup/define-tags-based-on-environment-variables.md "Find out how Dynatrace enables you to define tags based on environment variables.") к вашей группе процессов |
-| `DT_CUSTOM_PROP` | Применяет [пользовательские метаданные](../../../observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md "Configure your own process-related metadata based on the unique needs of your organization or environment.") к вашей группе процессов |
-| `DT_CLUSTER_ID` | Если [правила обнаружения групп процессов](../../../observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection") не подходят для вашего случая использования, используйте эту переменную окружения для **объединения всех процессов с одинаковым значением**. |
-| `DT_NODE_ID` | Если [правила обнаружения групп процессов](../../../observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection") не подходят для вашего случая использования, используйте эту переменную окружения для **разделения экземпляров групп процессов** |
+| `DT_TAGS` | Применяет пользовательские теги к вашей группе процессов |
+| `DT_CUSTOM_PROP` | Применяет пользовательские метаданные к вашей группе процессов |
+| `DT_CLUSTER_ID` | Если правила обнаружения групп процессов не подходят для вашего случая использования, используйте эту переменную окружения для **объединения всех процессов с одинаковым значением**. |
+| `DT_NODE_ID` | Если правила обнаружения групп процессов не подходят для вашего случая использования, используйте эту переменную окружения для **разделения экземпляров групп процессов** |
 | **Устранение неполадок** |  |
 | `DT_LOGSTREAM` | Установите эту переменную со значением `stdout`, чтобы настроить агент на вывод ошибок в консоль. Для просмотра дополнительных логов агента установите уровень логирования с помощью DT\_LOGLEVELCON, как описано ниже. |
 | `DT_LOGLEVELCON` | Используйте эту переменную окружения для определения уровня логирования консоли. Допустимые варианты: `NONE`, `INFO`, `WARNING`, `SEVERE` в порядке увеличения уровня логирования. |
@@ -577,7 +577,7 @@ gcloud run deploy <YOUR_SERVICE_NAME> --image gcr.io/<GCP_PROJECT_ID>/<YOUR_IMAG
   Первое поколение среды выполнения GCR, также называемое Gen1, имеет намеренно повышенные ограничения безопасности. В результате некоторые функции OneAgent не могут работать в этой среде выполнения и недоступны. Например, метрики на странице **Хосты**, такие как `CPU Usage` и `Memory Usage`, недоступны.
 * **Экземпляры GCR определяются как хосты**
 
-  Среды выполнения GCR в настоящее время отображаются на странице **Хосты** с правильным определением свойств GCP и ограничения памяти каждого из этих экземпляров среды выполнения (контейнера), а не на странице [**Группы контейнеров**](../../../observe/infrastructure-observability/container-platform-monitoring/container-groups.md "Overview on container groups monitoring"). Метрики контейнеров недоступны.
+  Среды выполнения GCR в настоящее время отображаются на странице **Хосты** с правильным определением свойств GCP и ограничения памяти каждого из этих экземпляров среды выполнения (контейнера), а не на странице **Группы контейнеров**. Метрики контейнеров недоступны.
 * **Возможные задержки при запуске**
 
   Поскольку каждая ревизия Google Cloud Run автоматически масштабируется до количества экземпляров контейнеров, необходимого для обработки входящих запросов, такие холодные запуски могут происходить чаще, чем в других средах, что увеличивает общие задержки при запуске.
@@ -586,7 +586,7 @@ gcloud run deploy <YOUR_SERVICE_NAME> --image gcr.io/<GCP_PROJECT_ID>/<YOUR_IMAG
 
 Каждый раз, когда вы хотите использовать новую версию Dynatrace OneAgent, необходимо выполнить повторную сборку и развёртывание.
 
-Если вы указали версию OneAgent по умолчанию для установки на новых хостах и в приложениях с помощью [настроек обновления OneAgent](../../dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux.md "Learn about the different ways to update OneAgent on Linux."), ваше приложение будет автоматически мониториться определённой версией OneAgent по умолчанию.
+Если вы указали версию OneAgent по умолчанию для установки на новых хостах и в приложениях с помощью настроек обновления OneAgent, ваше приложение будет автоматически мониториться определённой версией OneAgent по умолчанию.
 
 ## Удаление OneAgent
 
@@ -594,5 +594,5 @@ gcloud run deploy <YOUR_SERVICE_NAME> --image gcr.io/<GCP_PROJECT_ID>/<YOUR_IMAG
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Google Cloud](../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
-* [Матрица поддержки платформ и возможностей OneAgent](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* Настройка Dynatrace в Google Cloud
+* Матрица поддержки платформ и возможностей OneAgent

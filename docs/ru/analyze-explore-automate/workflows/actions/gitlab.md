@@ -9,7 +9,7 @@ scraped: 2026-03-02T21:21:04.457505
 
 * 1 мин. чтения
 
-GitLab Connector ![GitLab for Workflows](https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg "GitLab for Workflows") позволяет вашей среде Dynatrace интегрироваться с проектами GitLab. С помощью этой интеграции вы можете автоматизировать создание задач и запросов на слияние на основе данных мониторинга и событий, определённых в специальном [рабочем процессе](../../workflows.md "Автоматизируйте IT-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.").
+GitLab Connector ![GitLab for Workflows](https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg "GitLab for Workflows") позволяет вашей среде Dynatrace интегрироваться с проектами GitLab. С помощью этой интеграции вы можете автоматизировать создание задач и запросов на слияние на основе данных мониторинга и событий, определённых в специальном рабочем процессе.
 
 [![GitLab for Workflows](https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg "GitLab for Workflows")
 

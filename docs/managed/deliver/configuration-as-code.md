@@ -99,14 +99,14 @@ Applying CaC allows
 * Reduce deployment time by integrating CaC to streamline your application onboarding process via Golden Paths.
 * Introduce observability and security standards in your environment by integrating them into your CI/CD pipelines, for example, via container images, and ensuring consistency in all your stages.
 * Provide self-service possibilities, integrating observability, automation, and quality gates into your SDLC.
-  For more information, see [Platform Engineering](/managed/discover-dynatrace/get-started/platform-engineering "Use observability and security to drive analytics and automation at scale.").
+  For more information, see Platform Engineering.
 
 ## Tools
 
 To set up and manage Dynatrace with CaC you have two tool options:
 
-* [Terraform](/managed/deliver/configuration-as-code/terraform "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform."), the industry-standard CaC software tool.
-* [Monaco](/managed/deliver/configuration-as-code/monaco "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco."), the Dynatrace-proprietary CaC CLI tool.
+* Terraform, the industry-standard CaC software tool.
+* Monaco, the Dynatrace-proprietary CaC CLI tool.
 
 Deciding what to use depends on the tool stack and requirements.
 
@@ -122,6 +122,6 @@ Monaco provides a third-party independent solution, operating in standalone mode
 
 ## Related topics
 
-* [Configuration as Code via Terraform overview](/managed/deliver/configuration-as-code/terraform "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform.")
-* [Configuration as Code via Monaco overview](/managed/deliver/configuration-as-code/monaco "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco.")
+* Configuration as Code via Terraform overview
+* Configuration as Code via Monaco overview
 * [[Blog] Automated observability, security, and reliability at scale](https://www.dynatrace.com/news/blog/automated-observability-security-and-reliability-at-scale/)

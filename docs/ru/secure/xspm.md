@@ -32,7 +32,7 @@ scraped: 2026-03-06T21:29:55.059316
 Предварительные требования
 
 * Ознакомьтесь с [поддерживаемыми стандартами соответствия и технологиями](application-security/spm.md#support "Оценивайте, управляйте и принимайте меры по неправильным конфигурациям и нарушениям руководств по усилению безопасности и нормативных стандартов соответствия.").
-* Для полного использования [функциональности Security Posture Management](application-security/spm.md "Оценивайте, управляйте и принимайте меры по неправильным конфигурациям и нарушениям руководств по усилению безопасности и нормативных стандартов соответствия.") необходимо [развернуть Kubernetes Security Posture Management](../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Настройка и включение Security Posture Management в Kubernetes.").
+* Для полного использования функциональности Security Posture Management необходимо развернуть Kubernetes Security Posture Management.
 * Разрешения: для получения списка необходимых разрешений перейдите в **Hub**, выберите ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management** и откройте **Technical information**.
 * Предварительные знания: понимание Kubernetes.
 
@@ -48,14 +48,14 @@ scraped: 2026-03-06T21:29:55.059316
 
 ### 1. Установка приложения
 
-1. В Dynatrace откройте [**Hub**](../manage/hub.md "Информация о Dynatrace Hub.").
+1. В Dynatrace откройте **Hub**.
 2. Найдите ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management** и нажмите **Install**.
 
 ### 2. Настройка охвата SPM
 
 Необязательно
 
-Вы можете настроить, какие из ваших систем (или кластеров в случае [Kubernetes Security Posture Management](../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Настройка и включение Security Posture Management в Kubernetes.")), отслеживаемых Dynatrace, охватываются [Security Posture Management](application-security/spm.md "Оценивайте, управляйте и принимайте меры по неправильным конфигурациям и нарушениям руководств по усилению безопасности и нормативных стандартов соответствия.").
+Вы можете настроить, какие из ваших систем (или кластеров в случае Kubernetes Security Posture Management), отслеживаемых Dynatrace, охватываются Security Posture Management.
 
 1. Откройте ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**.
 2. На странице **Overview** в таблице **My systems** включите или отключите нужные системы.
@@ -120,7 +120,7 @@ Dynatrace оценивает данные, полученные от ваших 
 
 Связанные блоги
 
-[Поддержание соответствия с помощью Security Posture Management](use-cases/stay-compliant.md "Контролируйте ваши меры безопасности, политики и практики.")
+Поддержание соответствия с помощью Security Posture Management
 
 Список часто задаваемых вопросов по Security Posture Management см. в [FAQ](application-security/spm.md#faq "Оценивайте, управляйте и принимайте меры по неправильным конфигурациям и нарушениям руководств по усилению безопасности и нормативных стандартов соответствия.").
 
@@ -136,4 +136,4 @@ Dynatrace оценивает данные, полученные от ваших 
 
 ## Связанные темы
 
-* [Kubernetes Security Posture Management](../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Настройка и включение Security Posture Management в Kubernetes.")
+* Kubernetes Security Posture Management

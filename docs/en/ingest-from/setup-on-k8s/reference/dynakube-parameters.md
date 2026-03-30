@@ -51,8 +51,8 @@ Dynatrace Operator version 1.8.0+
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end. - For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID. - For Managed, change the `apiUrl` address. For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") | - | string |
-| `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment. Note: For the [node image pull feature](../guides/deployment-and-configuration/node-image-pull.md "Configure node image pull") without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See [node image pull prerequisites](../guides/deployment-and-configuration/node-image-pull.md#prerequisites "Configure node image pull") for more details. To define a custom pull secret and learn about the expected behavior, see [Configure `customPullSecret`](../guides/container-registries/use-private-registry.md#create-pull-secret "Use a private registry"). | - | string |
+| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end. - For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID. - For Managed, change the `apiUrl` address. For instructions on how to determine the environment ID and how to configure the apiUrl address, see Environment ID | - | string |
+| `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment. Note: For the node image pull feature without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See node image pull prerequisites for more details. To define a custom pull secret and learn about the expected behavior, see Configure `customPullSecret`. | - | string |
 | `dynatraceApiRequestThreshold` | Minimum minutes between Dynatrace API requests. | 15 | integer |
 | `enableIstio` | When enabled, and if Istio is installed on the Kubernetes environment, Dynatrace Operator will create the corresponding VirtualService and ServiceEntry objects to allow access to the Dynatrace Cluster from the OneAgent or ActiveGate. Disabled by default. | - | boolean |
 | `networkZone` | Sets a network zone for the OneAgent and ActiveGate Pods. | - | string |
@@ -76,7 +76,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. |  |  |
 | Not applicable | string |  |  |
 | `dnsPolicy` | Set the DNS policy for OneAgent pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
@@ -84,7 +84,7 @@ Recommended
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
 | `labels` | Your defined labels for OneAgent pods in order to structure workloads as desired. | Not applicable | map[string]string |
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | Not applicable | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | Not applicable | LabelSelector |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | Not applicable | map[string]string |
 | `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples). `resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | Not applicable | ResourceRequirements |
 | `priorityClassName` | Assign a priority class to the OneAgent pods. By default, no class is set. For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | Not applicable | string |
@@ -100,7 +100,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `dnsPolicy` | Set the DNS Policy for OneAgent pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent pods. | Not applicable | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. Defaults to the image from the Dynatrace cluster. | Name of the image. | string |
@@ -121,7 +121,7 @@ Recommended
 | --- | --- | --- | --- |
 | `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | Not applicable | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | - | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | - | LabelSelector |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.hostMonitoring`
@@ -131,7 +131,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `dnsPolicy` | Set the DNS Policy for OneAgent pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent pods. | Not applicable | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
@@ -153,11 +153,11 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom ActiveGate annotations. | Not applicable | map[string]string |
-| `capabilities` | Defines the ActiveGate pod capabilities: what functionality should be enabled. Possible values: - `routing` enables OneAgent routing. - `kubernetes-monitoring` enables Kubernetes API monitoring. - `metrics-ingest`[1](#fn-2-1-def) opens the metrics ingest endpoint on the DynaKube ActiveGate and redirects all pods to it. - `dynatrace-api`[1](#fn-2-1-def) enables calling the Dynatrace API via ActiveGate. - `debugging` enables the [Live Debugging module](../../dynatrace-activegate/configuration/configure-activegate.md#debugging "Learn which ActiveGate properties you can configure based on your needs and requirements.") in ActiveGate. | Not applicable | string |
-| `customProperties` | Add a custom properties file by providing it as a value or by referencing it from a secret. When referencing a custom properties file from a secret, make sure that the key is named `customProperties`. See [How to add a custom properties file](../guides/metadata-automation/custom-properties-file.md "Add a custom properties file") for details. | Not applicable | string |
+| `capabilities` | Defines the ActiveGate pod capabilities: what functionality should be enabled. Possible values: - `routing` enables OneAgent routing. - `kubernetes-monitoring` enables Kubernetes API monitoring. - `metrics-ingest`[1](#fn-2-1-def) opens the metrics ingest endpoint on the DynaKube ActiveGate and redirects all pods to it. - `dynatrace-api`[1](#fn-2-1-def) enables calling the Dynatrace API via ActiveGate. - `debugging` enables the Live Debugging module in ActiveGate. | Not applicable | string |
+| `customProperties` | Add a custom properties file by providing it as a value or by referencing it from a secret. When referencing a custom properties file from a secret, make sure that the key is named `customProperties`. See How to add a custom properties file for details. | Not applicable | string |
 | `dnsPolicy` | Set the DNS policy for ActiveGate pods. | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the ActiveGate pods. | Not applicable | []EnvVar |
-| `group` | Set activation group for ActiveGate. See [Customize ActiveGate properties](../../dynatrace-activegate/configuration/configure-activegate.md#collect "Learn which ActiveGate properties you can configure based on your needs and requirements.") for details. | Not applicable | string |
+| `group` | Set activation group for ActiveGate. See Customize ActiveGate properties for details. | Not applicable | string |
 | `image` | Use a custom ActiveGate image. Defaults to the latest ActiveGate image from the Dynatrace cluster. | Not applicable | string |
 | `labels` | Your defined labels for ActiveGate pods in order to structure workloads as desired. | Not applicable | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes ActiveGate will be deployed. | Not applicable | map[string]string |
@@ -182,7 +182,7 @@ A custom certificate is required for this capability. See the `tlsSecretName` pa
 | Parameter | Description | Default value | Data type |
 | --- | --- | --- | --- |
 | `enabled` | Enables MetadataEnrichment, `false` by default. | `false` | boolean |
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | Not applicable | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | Not applicable | LabelSelector |
 
 ## `.spec.extensions`
 
@@ -388,7 +388,7 @@ serviceAccountName: custom-sql-extension-executor-sa
 
 ## `.spec.kspm`
 
-Adding this section enables [Kubernetes Security Posture Management (KSPM)](../deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes."). To use KSPM
+Adding this section enables Kubernetes Security Posture Management (KSPM). To use KSPM
 
 * `kubernetes-monitoring` is mandatory and has to be added to the [list of ActiveGate capabilities](#active-gate) in `.spec.activeGate.capabilities` and
 * The feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` must not be set to `false`.
@@ -456,7 +456,7 @@ values:
 
 Dynatrace Operator version 1.6.0+
 
-Enable additional [telemetry ingest endpoints](../extend-observability-k8s/telemetry-ingest.md "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") in Kubernetes for cluster-local data ingest using 3rd-party protocols. Adding this section deploys the Dynatrace Collector workload to the cluster.
+Enable additional telemetry ingest endpoints in Kubernetes for cluster-local data ingest using 3rd-party protocols. Adding this section deploys the Dynatrace Collector workload to the cluster.
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
@@ -468,7 +468,7 @@ Enable additional [telemetry ingest endpoints](../extend-observability-k8s/telem
 
 Dynatrace Operator version 1.8.0+
 
-Enable automatic [OTLP exporter configuration](../extend-observability-k8s/otlp-auto-config.md "Automatically configure the OTLP exporter in applications instrumented with OpenTelemetry SDKs using Dynatrace Operator.") for application pods that are already instrumented with OpenTelemetry SDK.
+Enable automatic OTLP exporter configuration for application pods that are already instrumented with OpenTelemetry SDK.
 
 | Parameter | Description | Default value | Data type |
 | --- | --- | --- | --- |
@@ -622,8 +622,8 @@ Dynatrace Operator version 1.6.0+
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end. - For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID. - For Managed, change the `apiUrl` address. For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") | - | string |
-| `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment. Note: For the [node image pull feature](../guides/deployment-and-configuration/node-image-pull.md "Configure node image pull") without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See [node image pull prerequisites](../guides/deployment-and-configuration/node-image-pull.md#prerequisites "Configure node image pull") for more details. To define a custom pull secret and learn about the expected behavior, see [Configure `customPullSecret`](../guides/container-registries/use-private-registry.md#create-pull-secret "Use a private registry"). | - | string |
+| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end. - For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID. - For Managed, change the `apiUrl` address. For instructions on how to determine the environment ID and how to configure the apiUrl address, see Environment ID | - | string |
+| `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment. Note: For the node image pull feature without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See node image pull prerequisites for more details. To define a custom pull secret and learn about the expected behavior, see Configure `customPullSecret`. | - | string |
 | `dynatraceApiRequestThreshold` | Minimum minutes between Dynatrace API requests. | 15 | integer |
 | `enableIstio` | When enabled, and if Istio is installed on the Kubernetes environment, Dynatrace Operator will create the corresponding VirtualService and ServiceEntry objects to allow access to the Dynatrace Cluster from the OneAgent or ActiveGate. Disabled by default. | - | boolean |
 | `networkZone` | Sets a network zone for the OneAgent and ActiveGate Pods. | - | string |
@@ -647,7 +647,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](../guides/deployment-and-configuration/updates-and-maintenance/auto-update-components.md#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect)."). Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
 | `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | Not applicable | string |
 | `dnsPolicy` | Set the DNS policy for OneAgent pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
@@ -655,7 +655,7 @@ Recommended
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
 | `labels` | Your defined labels for OneAgent pods in order to structure workloads as desired. | Not applicable | map[string]string |
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | Not applicable | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | Not applicable | LabelSelector |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | Not applicable | map[string]string |
 | `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples). `resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | Not applicable | ResourceRequirements |
 | `priorityClassName` | Assign a priority class to the OneAgent pods. By default, no class is set. For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | Not applicable | string |
@@ -671,7 +671,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](../guides/deployment-and-configuration/updates-and-maintenance/auto-update-components.md#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect)."). Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
 | `dnsPolicy` | Set the DNS Policy for OneAgent pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent pods. | Not applicable | []EnvVar |
@@ -693,7 +693,7 @@ Recommended
 | --- | --- | --- | --- |
 | `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | Not applicable | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | - | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | - | LabelSelector |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.hostMonitoring`
@@ -703,7 +703,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](../guides/deployment-and-configuration/updates-and-maintenance/auto-update-components.md#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect)."). Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
 | `dnsPolicy` | Set the DNS Policy for OneAgent pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent pods. | Not applicable | []EnvVar |
@@ -726,11 +726,11 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom ActiveGate annotations. | Not applicable | map[string]string |
-| `capabilities` | Defines the ActiveGate pod capabilities: what functionality should be enabled. Possible values: - `routing` enables OneAgent routing. - `kubernetes-monitoring` enables Kubernetes API monitoring. - `metrics-ingest`[1](#fn-3-1-def) opens the metrics ingest endpoint on the DynaKube ActiveGate and redirects all pods to it. - `dynatrace-api`[1](#fn-3-1-def) enables calling the Dynatrace API via ActiveGate. - `debugging` enables the [Live Debugging module](../../dynatrace-activegate/configuration/configure-activegate.md#debugging "Learn which ActiveGate properties you can configure based on your needs and requirements.") in ActiveGate. | Not applicable | string |
-| `customProperties` | Add a custom properties file by providing it as a value or by referencing it from a secret. When referencing a custom properties file from a secret, make sure that the key is named `customProperties`. See [How to add a custom properties file](../guides/metadata-automation/custom-properties-file.md "Add a custom properties file") for details. | Not applicable | string |
+| `capabilities` | Defines the ActiveGate pod capabilities: what functionality should be enabled. Possible values: - `routing` enables OneAgent routing. - `kubernetes-monitoring` enables Kubernetes API monitoring. - `metrics-ingest`[1](#fn-3-1-def) opens the metrics ingest endpoint on the DynaKube ActiveGate and redirects all pods to it. - `dynatrace-api`[1](#fn-3-1-def) enables calling the Dynatrace API via ActiveGate. - `debugging` enables the Live Debugging module in ActiveGate. | Not applicable | string |
+| `customProperties` | Add a custom properties file by providing it as a value or by referencing it from a secret. When referencing a custom properties file from a secret, make sure that the key is named `customProperties`. See How to add a custom properties file for details. | Not applicable | string |
 | `dnsPolicy` | Set the DNS policy for ActiveGate pods. | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the ActiveGate pods. | Not applicable | []EnvVar |
-| `group` | Set activation group for ActiveGate. See [Customize ActiveGate properties](../../dynatrace-activegate/configuration/configure-activegate.md#collect "Learn which ActiveGate properties you can configure based on your needs and requirements.") for details. | Not applicable | string |
+| `group` | Set activation group for ActiveGate. See Customize ActiveGate properties for details. | Not applicable | string |
 | `image` | Use a custom ActiveGate image. Defaults to the latest ActiveGate image from the Dynatrace cluster. | Not applicable | string |
 | `labels` | Your defined labels for ActiveGate pods in order to structure workloads as desired. | Not applicable | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes ActiveGate will be deployed. | Not applicable | map[string]string |
@@ -755,7 +755,7 @@ A custom certificate is required for this capability. See the `tlsSecretName` pa
 | Parameter | Description | Default value | Data type |
 | --- | --- | --- | --- |
 | `enabled` | Enables MetadataEnrichment, `false` by default. | `false` | boolean |
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | Not applicable | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | Not applicable | LabelSelector |
 
 ## `.spec.extensions`
 
@@ -768,7 +768,7 @@ Adding this section enables extension support in Kubernetes. To use extensions
 
 ## `.spec.kspm`
 
-Adding this section enables [Kubernetes Security Posture Management (KSPM)](../deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes."). To use KSPM
+Adding this section enables Kubernetes Security Posture Management (KSPM). To use KSPM
 
 * `kubernetes-monitoring` is mandatory and has to be added to the [list of ActiveGate capabilities](#active-gate) in `.spec.activeGate.capabilities` and
 * The feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` must not be set to `false`.
@@ -836,7 +836,7 @@ values:
 
 Dynatrace Operator version 1.6.0+
 
-Enable Dynatrace [telemetry endpoints](../extend-observability-k8s/telemetry-ingest.md "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") in Kubernetes for cluster-local data ingest. Adding this section deploys the Dynatrace Collector by Dynatrace Operator.
+Enable Dynatrace telemetry endpoints in Kubernetes for cluster-local data ingest. Adding this section deploys the Dynatrace Collector by Dynatrace Operator.
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
@@ -962,8 +962,8 @@ Dynatrace Operator version 1.5.0+
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end. - For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID. - For Managed, change the `apiUrl` address. For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") | - | string |
-| `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment. Note: For the [node image pull feature](../guides/deployment-and-configuration/node-image-pull.md "Configure node image pull") without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See [node image pull prerequisites](../guides/deployment-and-configuration/node-image-pull.md#prerequisites "Configure node image pull") for more details. To define a custom pull secret and learn about the expected behavior, see [Configure `customPullSecret`](../guides/container-registries/use-private-registry.md#create-pull-secret "Use a private registry"). | - | string |
+| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end. - For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID. - For Managed, change the `apiUrl` address. For instructions on how to determine the environment ID and how to configure the apiUrl address, see Environment ID | - | string |
+| `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment. Note: For the node image pull feature without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See node image pull prerequisites for more details. To define a custom pull secret and learn about the expected behavior, see Configure `customPullSecret`. | - | string |
 | `dynatraceApiRequestThreshold` | Minimum minutes between Dynatrace API requests. | 15 | integer |
 | `enableIstio` | When enabled, and if Istio is installed on the Kubernetes environment, Dynatrace Operator will create the corresponding VirtualService and ServiceEntry objects to allow access to the Dynatrace Cluster from the OneAgent or ActiveGate. Disabled by default. | - | boolean |
 | `networkZone` | Sets a network zone for the OneAgent and ActiveGate Pods. | - | string |
@@ -987,7 +987,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](../guides/deployment-and-configuration/updates-and-maintenance/auto-update-components.md#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect)."). Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
 | `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | Not applicable | string |
 | `dnsPolicy` | Set the DNS Policy for OneAgent Pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
@@ -995,7 +995,7 @@ Recommended
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | Not applicable | map[string]string |
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | Not applicable | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | Not applicable | LabelSelector |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | Not applicable | map[string]string |
 | `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.8.1/assets/samples/dynakube). `resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | Not applicable | ResourceRequirements |
 | `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set. For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | Not applicable | string |
@@ -1011,7 +1011,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](../guides/deployment-and-configuration/updates-and-maintenance/auto-update-components.md#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect)."). Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
 | `dnsPolicy` | Set the DNS Policy for OneAgent Pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | Not applicable | []EnvVar |
@@ -1033,7 +1033,7 @@ Recommended
 | --- | --- | --- | --- |
 | `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | Not applicable | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | - | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | - | LabelSelector |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.hostMonitoring`
@@ -1043,7 +1043,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](../guides/deployment-and-configuration/updates-and-maintenance/auto-update-components.md#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect)."). Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
 | `dnsPolicy` | Set the DNS Policy for OneAgent Pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | Not applicable | []EnvVar |
@@ -1066,11 +1066,11 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom ActiveGate annotations. | Not applicable | map[string]string |
-| `capabilities` | Defines the ActiveGate pod capabilities: what functionality should be enabled. Possible values: - `routing` enables OneAgent routing. - `kubernetes-monitoring` enables Kubernetes API monitoring. - `metrics-ingest`[1](#fn-4-1-def) opens the metrics ingest endpoint on the DynaKube ActiveGate and redirects all pods to it. - `dynatrace-api`[1](#fn-4-1-def) enables calling the Dynatrace API via ActiveGate. - `debugging` enables the [Live Debugging module](../../dynatrace-activegate/configuration/configure-activegate.md#debugging "Learn which ActiveGate properties you can configure based on your needs and requirements.") in ActiveGate. | Not applicable | string |
-| `customProperties` | Add a custom properties file by providing it as a value or by referencing it from a secret. When referencing a custom properties file from a secret, make sure that the key is named `customProperties`. See [How to add a custom properties file](../guides/metadata-automation/custom-properties-file.md "Add a custom properties file") for details. | Not applicable | string |
+| `capabilities` | Defines the ActiveGate pod capabilities: what functionality should be enabled. Possible values: - `routing` enables OneAgent routing. - `kubernetes-monitoring` enables Kubernetes API monitoring. - `metrics-ingest`[1](#fn-4-1-def) opens the metrics ingest endpoint on the DynaKube ActiveGate and redirects all pods to it. - `dynatrace-api`[1](#fn-4-1-def) enables calling the Dynatrace API via ActiveGate. - `debugging` enables the Live Debugging module in ActiveGate. | Not applicable | string |
+| `customProperties` | Add a custom properties file by providing it as a value or by referencing it from a secret. When referencing a custom properties file from a secret, make sure that the key is named `customProperties`. See How to add a custom properties file for details. | Not applicable | string |
 | `dnsPolicy` | Set the DNS policy for ActiveGate pods. | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the ActiveGate pods. | Not applicable | []EnvVar |
-| `group` | Set activation group for ActiveGate. See [Customize ActiveGate properties](../../dynatrace-activegate/configuration/configure-activegate.md#collect "Learn which ActiveGate properties you can configure based on your needs and requirements.") for details. | Not applicable | string |
+| `group` | Set activation group for ActiveGate. See Customize ActiveGate properties for details. | Not applicable | string |
 | `image` | Use a custom ActiveGate image. Defaults to the latest ActiveGate image from the Dynatrace cluster. | Not applicable | string |
 | `labels` | Your defined labels for ActiveGate pods in order to structure workloads as desired. | Not applicable | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes ActiveGate will be deployed. | Not applicable | map[string]string |
@@ -1095,7 +1095,7 @@ A custom certificate is required for this capability. See the `tlsSecretName` pa
 | Parameter | Description | Default value | Data type |
 | --- | --- | --- | --- |
 | `enabled` | Enables MetadataEnrichment, `false` by default. | `false` | boolean |
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | Not applicable | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | Not applicable | LabelSelector |
 
 ## `.spec.extensions`
 
@@ -1108,7 +1108,7 @@ Adding this section enables extension support in Kubernetes. To use extensions
 
 ## `.spec.kspm`
 
-Adding this section enables [Kubernetes Security Posture Management (KSPM)](../deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes."). To use KSPM
+Adding this section enables Kubernetes Security Posture Management (KSPM). To use KSPM
 
 * `kubernetes-monitoring` is mandatory and has to be added to the [list of ActiveGate capabilities](#active-gate) in `.spec.activeGate.capabilities` and
 * The feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` must not be set to `false`.
@@ -1297,8 +1297,8 @@ Dynatrace Operator version 1.4.0+
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end. - For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID. - For Managed, change the `apiUrl` address. For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") | - | string |
-| `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment. Note: For the [node image pull feature](../guides/deployment-and-configuration/node-image-pull.md "Configure node image pull") without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See [node image pull prerequisites](../guides/deployment-and-configuration/node-image-pull.md#prerequisites "Configure node image pull") for more details. To define a custom pull secret and learn about the expected behavior, see [Configure `customPullSecret`](../guides/container-registries/use-private-registry.md#create-pull-secret "Use a private registry"). | - | string |
+| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end. - For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID. - For Managed, change the `apiUrl` address. For instructions on how to determine the environment ID and how to configure the apiUrl address, see Environment ID | - | string |
+| `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment. Note: For the node image pull feature without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See node image pull prerequisites for more details. To define a custom pull secret and learn about the expected behavior, see Configure `customPullSecret`. | - | string |
 | `dynatraceApiRequestThreshold` | Minimum minutes between Dynatrace API requests. | 15 | integer |
 | `enableIstio` | When enabled, and if Istio is installed on the Kubernetes environment, Dynatrace Operator will create the corresponding VirtualService and ServiceEntry objects to allow access to the Dynatrace Cluster from the OneAgent or ActiveGate. Disabled by default. | - | boolean |
 | `networkZone` | Sets a network zone for the OneAgent and ActiveGate Pods. | - | string |
@@ -1322,7 +1322,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](../guides/deployment-and-configuration/updates-and-maintenance/auto-update-components.md#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect)."). Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
 | `codeModulesImage` | The OneAgent image that is used to inject into Pods | Not applicable | string |
 | `dnsPolicy` | Set the DNS Policy for OneAgent Pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
@@ -1330,7 +1330,7 @@ Recommended
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | Not applicable | map[string]string |
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | Not applicable | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | Not applicable | LabelSelector |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | Not applicable | map[string]string |
 | `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples). `resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | Not applicable | ResourceRequirements |
 | `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set. For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | Not applicable | string |
@@ -1345,7 +1345,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](../guides/deployment-and-configuration/updates-and-maintenance/auto-update-components.md#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect)."). Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
 | `dnsPolicy` | Set the DNS Policy for OneAgent Pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | Not applicable | []EnvVar |
@@ -1366,7 +1366,7 @@ Recommended
 | --- | --- | --- | --- |
 | `codeModulesImage` | The OneAgent image that is used to inject into Pods | Not applicable | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | - | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | - | LabelSelector |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.hostMonitoring`
@@ -1376,7 +1376,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](../guides/deployment-and-configuration/updates-and-maintenance/auto-update-components.md#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect)."). Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
 | `dnsPolicy` | Set the DNS Policy for OneAgent Pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | Not applicable | []EnvVar |
@@ -1398,11 +1398,11 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom ActiveGate annotations. | Not applicable | map[string]string |
-| `capabilities` | Defines the ActiveGate pod capabilities: what functionality should be enabled. Possible values: - `routing` enables OneAgent routing. - `kubernetes-monitoring` enables Kubernetes API monitoring. - `metrics-ingest`[1](#fn-5-1-def) opens the metrics ingest endpoint on the DynaKube ActiveGate and redirects all pods to it. - `dynatrace-api`[1](#fn-5-1-def) enables calling the Dynatrace API via ActiveGate. - `debugging` enables the [Live Debugging module](../../dynatrace-activegate/configuration/configure-activegate.md#debugging "Learn which ActiveGate properties you can configure based on your needs and requirements.") in ActiveGate. | Not applicable | string |
-| `customProperties` | Add a custom properties file by providing it as a value or by referencing it from a secret. When referencing a custom properties file from a secret, make sure that the key is named `customProperties`. See [How to add a custom properties file](../guides/metadata-automation/custom-properties-file.md "Add a custom properties file") for details. | Not applicable | string |
+| `capabilities` | Defines the ActiveGate pod capabilities: what functionality should be enabled. Possible values: - `routing` enables OneAgent routing. - `kubernetes-monitoring` enables Kubernetes API monitoring. - `metrics-ingest`[1](#fn-5-1-def) opens the metrics ingest endpoint on the DynaKube ActiveGate and redirects all pods to it. - `dynatrace-api`[1](#fn-5-1-def) enables calling the Dynatrace API via ActiveGate. - `debugging` enables the Live Debugging module in ActiveGate. | Not applicable | string |
+| `customProperties` | Add a custom properties file by providing it as a value or by referencing it from a secret. When referencing a custom properties file from a secret, make sure that the key is named `customProperties`. See How to add a custom properties file for details. | Not applicable | string |
 | `dnsPolicy` | Set the DNS policy for ActiveGate pods. | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the ActiveGate pods. | Not applicable | []EnvVar |
-| `group` | Set activation group for ActiveGate. See [Customize ActiveGate properties](../../dynatrace-activegate/configuration/configure-activegate.md#collect "Learn which ActiveGate properties you can configure based on your needs and requirements.") for details. | Not applicable | string |
+| `group` | Set activation group for ActiveGate. See Customize ActiveGate properties for details. | Not applicable | string |
 | `image` | Use a custom ActiveGate image. Defaults to the latest ActiveGate image from the Dynatrace cluster. | Not applicable | string |
 | `labels` | Your defined labels for ActiveGate pods in order to structure workloads as desired. | Not applicable | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes ActiveGate will be deployed. | Not applicable | map[string]string |
@@ -1424,7 +1424,7 @@ A custom certificate is required for this capability. See the `tlsSecretName` pa
 | Parameter | Description | Default value | Data type |
 | --- | --- | --- | --- |
 | `enabled` | Enables MetadataEnrichment, `false` by default. | `false` | boolean |
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | Not applicable | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | Not applicable | LabelSelector |
 
 ## `.spec.extensions`
 
@@ -1437,7 +1437,7 @@ Adding this section enables extension support in Kubernetes. To use extensions
 
 ## `.spec.kspm`
 
-Adding this section enables [Kubernetes Security Posture Management (KSPM)](../deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes."). To use KSPM
+Adding this section enables Kubernetes Security Posture Management (KSPM). To use KSPM
 
 * `kubernetes-monitoring` is mandatory and has to be added to the [list of ActiveGate capabilities](#active-gate) in `.spec.activeGate.capabilities` and
 * The feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` must not be set to `false`.
@@ -1619,8 +1619,8 @@ DynaKube API version `v1beta2` is no longer available with Dynatrace Operator ve
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end. - For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID. - For Managed, change the `apiUrl` address. For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") | - | string |
-| `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment. Note: For the [node image pull feature](../guides/deployment-and-configuration/node-image-pull.md "Configure node image pull") without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See [node image pull prerequisites](../guides/deployment-and-configuration/node-image-pull.md#prerequisites "Configure node image pull") for more details. To define a custom pull secret and learn about the expected behavior, see [Configure `customPullSecret`](../guides/container-registries/use-private-registry.md#create-pull-secret "Use a private registry"). | - | string |
+| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end. - For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID. - For Managed, change the `apiUrl` address. For instructions on how to determine the environment ID and how to configure the apiUrl address, see Environment ID | - | string |
+| `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment. Note: For the node image pull feature without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See node image pull prerequisites for more details. To define a custom pull secret and learn about the expected behavior, see Configure `customPullSecret`. | - | string |
 | `dynatraceApiRequestThreshold` | Minimum minutes between Dynatrace API requests. | 15 | integer |
 | `enableIstio` | When enabled, and if Istio is installed on the Kubernetes environment, Dynatrace Operator will create the corresponding VirtualService and ServiceEntry objects to allow access to the Dynatrace Cluster from the OneAgent or ActiveGate. Disabled by default. | - | boolean |
 | `networkZone` | Sets a network zone for the OneAgent and ActiveGate Pods. | - | string |
@@ -1644,7 +1644,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](../guides/deployment-and-configuration/updates-and-maintenance/auto-update-components.md#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect)."). Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
 | `codeModulesImage` | The OneAgent image that is used to inject into Pods | Not applicable | string |
 | `dnsPolicy` | Set the DNS Policy for OneAgent Pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
@@ -1652,7 +1652,7 @@ Recommended
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | Not applicable | map[string]string |
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | Not applicable | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | Not applicable | LabelSelector |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | Not applicable | map[string]string |
 | `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples). `resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | Not applicable | ResourceRequirements |
 | `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set. For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | Not applicable | string |
@@ -1667,7 +1667,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](../guides/deployment-and-configuration/updates-and-maintenance/auto-update-components.md#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect)."). Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
 | `dnsPolicy` | Set the DNS Policy for OneAgent Pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | Not applicable | []EnvVar |
@@ -1688,7 +1688,7 @@ Recommended
 | --- | --- | --- | --- |
 | `codeModulesImage` | The OneAgent image that is used to inject into Pods | Not applicable | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | - | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | - | LabelSelector |
 | `useCSIDriver` | Set if you want to use the CSIDriver. Don't enable it if you do not have access to Kubernetes nodes or if you lack privileges. | `false` | boolean |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
@@ -1699,7 +1699,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](../guides/deployment-and-configuration/updates-and-maintenance/auto-update-components.md#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect)."). Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
 | `dnsPolicy` | Set the DNS Policy for OneAgent Pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | Not applicable | []EnvVar |
@@ -1721,11 +1721,11 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `annotations` | Add custom ActiveGate annotations. | Not applicable | map[string]string |
-| `capabilities` | Defines the ActiveGate pod capabilities: what functionality should be enabled. Possible values: - `routing` enables OneAgent routing. - `kubernetes-monitoring` enables Kubernetes API monitoring. - `metrics-ingest`[1](#fn-6-1-def) opens the metrics ingest endpoint on the DynaKube ActiveGate and redirects all pods to it. - `dynatrace-api`[1](#fn-6-1-def) enables calling the Dynatrace API via ActiveGate. - `debugging` enables the [Live Debugging module](../../dynatrace-activegate/configuration/configure-activegate.md#debugging "Learn which ActiveGate properties you can configure based on your needs and requirements.") in ActiveGate. | Not applicable | string |
-| `customProperties` | Add a custom properties file by providing it as a value or by referencing it from a secret. When referencing a custom properties file from a secret, make sure that the key is named `customProperties`. See [How to add a custom properties file](../guides/metadata-automation/custom-properties-file.md "Add a custom properties file") for details. | Not applicable | string |
+| `capabilities` | Defines the ActiveGate pod capabilities: what functionality should be enabled. Possible values: - `routing` enables OneAgent routing. - `kubernetes-monitoring` enables Kubernetes API monitoring. - `metrics-ingest`[1](#fn-6-1-def) opens the metrics ingest endpoint on the DynaKube ActiveGate and redirects all pods to it. - `dynatrace-api`[1](#fn-6-1-def) enables calling the Dynatrace API via ActiveGate. - `debugging` enables the Live Debugging module in ActiveGate. | Not applicable | string |
+| `customProperties` | Add a custom properties file by providing it as a value or by referencing it from a secret. When referencing a custom properties file from a secret, make sure that the key is named `customProperties`. See How to add a custom properties file for details. | Not applicable | string |
 | `dnsPolicy` | Set the DNS policy for ActiveGate pods. | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the ActiveGate pods. | Not applicable | []EnvVar |
-| `group` | Set activation group for ActiveGate. See [Customize ActiveGate properties](../../dynatrace-activegate/configuration/configure-activegate.md#collect "Learn which ActiveGate properties you can configure based on your needs and requirements.") for details. | Not applicable | string |
+| `group` | Set activation group for ActiveGate. See Customize ActiveGate properties for details. | Not applicable | string |
 | `image` | Use a custom ActiveGate image. Defaults to the latest ActiveGate image from the Dynatrace cluster. | Not applicable | string |
 | `labels` | Your defined labels for ActiveGate pods in order to structure workloads as desired. | Not applicable | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes ActiveGate will be deployed. | Not applicable | map[string]string |
@@ -1744,14 +1744,14 @@ A custom certificate is required for this capability. See the `tlsSecretName` pa
 
 * All parameters are Optional.
 
-See [Configure enrichment directory](../guides/metadata-automation/metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") for additional information
+See Configure enrichment directory for additional information
 
 | Parameter | Description | Default value | Data type |
 | --- | --- | --- | --- |
 | `enabled` | Enables MetadataEnrichment, `true` by default. | `true` | boolean |
 
 DynaKube API version `v1beta1` is no longer available with Dynatrace Operator version 1.6.0+.
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") | LabelSelector |
 
 Dynatrace Operator version <=1.6.0
 
@@ -1766,15 +1766,15 @@ DynaKube API version `v1beta1` is no longer available with Dynatrace Operator ve
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end. - For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID. - For Managed, change the `apiUrl` address. For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments."). | Not applicable | string |
+| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end. - For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID. - For Managed, change the `apiUrl` address. For instructions on how to determine the environment ID and how to configure the apiUrl address, see Environment ID. | Not applicable | string |
 | `tokens` | Name of the secret holding the tokens. | Name of custom resource (`.metadata.name`) if unset | string |
 | `skipCertCheck` | Disable certificate check for the connection between Dynatrace Operator and the Dynatrace Cluster. Set to `true` if you want to skip certification validation checks. | `false` | boolean |
 | `proxy` | Set custom proxy settings either directly or from a secret with the field `proxy`. Applies to Dynatrace Operator, ActiveGate, and OneAgents. | Not applicable | string |
 | `trustedCAs` | Adds custom RootCAs from a configmap. Put the certificate under `certs` within your configmap. This applies to Dynatrace Operator, OneAgent, and ActiveGate. | Not applicable | string |
 | `networkZone` | Sets a network zone for the OneAgent and ActiveGate Pods. | Not applicable | string |
-| `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment. Note: For the [node image pull feature](../guides/deployment-and-configuration/node-image-pull.md "Configure node image pull") without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See [node image pull prerequisites](../guides/deployment-and-configuration/node-image-pull.md#prerequisites "Configure node image pull") for more details. To define a custom pull secret and learn about the expected behavior, see [Configure `customPullSecret`](../guides/container-registries/use-private-registry.md#create-pull-secret "Use a private registry"). | Not applicable | string |
+| `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment. Note: For the node image pull feature without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See node image pull prerequisites for more details. To define a custom pull secret and learn about the expected behavior, see Configure `customPullSecret`. | Not applicable | string |
 | `enableIstio` | When enabled, and if Istio is installed on the Kubernetes environment, Dynatrace Operator will create the corresponding VirtualService and ServiceEntry objects to allow access to the Dynatrace Cluster from the OneAgent or ActiveGate. Disabled by default. | `false` | boolean |
-| `namespaceSelector` | Applicable only for `applicationMonitoring` or `cloudNativeFullStack` configuration types. The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | Not applicable | LabelSelector |
+| `namespaceSelector` | Applicable only for `applicationMonitoring` or `cloudNativeFullStack` configuration types. The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | Not applicable | LabelSelector |
 
 ## `.spec.oneAgent`
 
@@ -1802,9 +1802,9 @@ Recommended
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | Not applicable | map[string]string |
 | `env` | Set additional environment variables for the OneAgent Pods. | Not applicable | []EnvVar |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | Not applicable | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | Not applicable | LabelSelector |
 
 ## `.spec.oneAgent.classicFullStack`
 
@@ -1820,7 +1820,7 @@ Recommended
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | Not applicable | map[string]string |
 | `env` | Set additional environment variables for the OneAgent Pods. | Not applicable | []EnvVar |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | Not applicable | map[string]string |
 | `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set. For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | Not applicable | string |
 | `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples). `resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | Not applicable | ResourceRequirements |
@@ -1836,7 +1836,7 @@ Recommended
 | `useCSIDriver` | Set if you want to use the CSI driver. Don't enable it if you do not have access to Kubernetes nodes or if you lack privileges. | `false` | boolean |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
 | `hostGroup` | Specify the name of the group to which you want to assign the host. This method is preferred over the now obsolete `--set-host-group` argument. If both settings are used, this field takes precedence over the `--set-host-group` argument. | Not applicable | string |
-| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods"). | Not applicable | LabelSelector |
+| `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see Configure monitoring for namespaces and Pods. | Not applicable | LabelSelector |
 
 ## `.spec.oneAgent.hostMonitoring`
 
@@ -1855,7 +1855,7 @@ Recommended
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | Not applicable | map[string]string |
 | `env` | Set additional environment variables for the OneAgent Pods. | Not applicable | []EnvVar |
-| `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
+| `args` | Set additional arguments to the OneAgent installer. For available options, see Linux custom installation. For the list of limitations, see Limitations. | Not applicable | []string |
 
 ## `.spec.activeGate`
 
@@ -1865,7 +1865,7 @@ Recommended
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `capabilities` | Defines the ActiveGate pod capabilities: what functionality should be enabled. Possible values: - `routing` enables OneAgent routing. - `kubernetes-monitoring` enables Kubernetes API monitoring. - `metrics-ingest`[1](#fn-7-1-def) opens the metrics ingest endpoint on the DynaKube ActiveGate and redirects all pods to it. - `dynatrace-api`[1](#fn-7-1-def) enables calling the Dynatrace API via ActiveGate. - `debugging` enables the [Live Debugging module](../../dynatrace-activegate/configuration/configure-activegate.md#debugging "Learn which ActiveGate properties you can configure based on your needs and requirements.") in ActiveGate. | Not applicable | string |
+| `capabilities` | Defines the ActiveGate pod capabilities: what functionality should be enabled. Possible values: - `routing` enables OneAgent routing. - `kubernetes-monitoring` enables Kubernetes API monitoring. - `metrics-ingest`[1](#fn-7-1-def) opens the metrics ingest endpoint on the DynaKube ActiveGate and redirects all pods to it. - `dynatrace-api`[1](#fn-7-1-def) enables calling the Dynatrace API via ActiveGate. - `debugging` enables the Live Debugging module in ActiveGate. | Not applicable | string |
 | `image` | Use a custom ActiveGate image. Defaults to the latest ActiveGate image from the Dynatrace cluster. | Not applicable | string |
 | `replicas` | Number of replicas of ActiveGate pods. | 1 | int |
 | `tolerations` | Set tolerations for the ActiveGate pods. For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | Not applicable | []Toleration |
@@ -1873,8 +1873,8 @@ Recommended
 | `resources` | Resource settings for ActiveGate container. Consumption of the ActiveGate heavily depends on the workload to monitor; adjust values accordingly. | Not applicable | ResourceRequirements |
 | `labels` | Your defined labels for ActiveGate pods in order to structure workloads as desired. | Not applicable | map[string]string |
 | `env` | Set additional environment variables for the ActiveGate pods. | Not applicable | []EnvVar |
-| `group` | Set activation group for ActiveGate. See [Customize ActiveGate properties](../../dynatrace-activegate/configuration/configure-activegate.md#collect "Learn which ActiveGate properties you can configure based on your needs and requirements.") for details. | Not applicable | string |
-| `customProperties` | Add a custom properties file by providing it as a value or by referencing it from a secret. When referencing a custom properties file from a secret, make sure that the key is named `customProperties`. See [How to add a custom properties file](../guides/metadata-automation/custom-properties-file.md "Add a custom properties file") for details. | Not applicable | string |
+| `group` | Set activation group for ActiveGate. See Customize ActiveGate properties for details. | Not applicable | string |
+| `customProperties` | Add a custom properties file by providing it as a value or by referencing it from a secret. When referencing a custom properties file from a secret, make sure that the key is named `customProperties`. See How to add a custom properties file for details. | Not applicable | string |
 | `tlsSecretName` | Name of a secret containing ActiveGate TLS certificate, key, and password. If not set, a self-signed certificate is used. For details, see [How to add a custom certificate for ActiveGate](../guides/networking-security-compliance/network-configurations.md#tls-certificate "Configure Dynatrace in network-restricted environments, network-related settings and proxy configurations."). | Not applicable | string |
 | `dnsPolicy` | Set the DNS policy for ActiveGate pods. | `ClusterFirstWithHostNet` | string |
 | `priorityClassName` | Assign a priority class to the ActiveGate pods. By default, no class is set. For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | Not applicable | string |

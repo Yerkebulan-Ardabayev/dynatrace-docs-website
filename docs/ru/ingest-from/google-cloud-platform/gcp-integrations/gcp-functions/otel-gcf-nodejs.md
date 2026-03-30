@@ -7,7 +7,7 @@ scraped: 2026-03-04T21:27:45.484805
 * Latest Dynatrace
 * 8 мин. чтения
 
-Это руководство показывает, как инструментировать Google Cloud Functions с помощью [OpenTelemetry JS](https://github.com/open-telemetry/opentelemetry-js) и экспортировать трейсы в Dynatrace. Чтобы узнать больше о том, как Dynatrace работает с OpenTelemetry, см. [OpenTelemetry и Dynatrace](../../../opentelemetry.md "Узнайте, как интегрировать и принимать данные OpenTelemetry (трейсы, метрики и логи) в Dynatrace.").
+Это руководство показывает, как инструментировать Google Cloud Functions с помощью [OpenTelemetry JS](https://github.com/open-telemetry/opentelemetry-js) и экспортировать трейсы в Dynatrace. Чтобы узнать больше о том, как Dynatrace работает с OpenTelemetry, см. OpenTelemetry и Dynatrace в Dynatrace.").
 
 ## Предварительные требования
 

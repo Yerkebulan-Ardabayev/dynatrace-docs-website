@@ -17,7 +17,7 @@ scraped: 2026-03-06T21:35:54.405045
 
 Чтобы выполнить этот запрос, вам нужен токен доступа с областью `securityProblems.write`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+Чтобы узнать, как получить и использовать его, см. Токены и аутентификация.
 
 ## Параметры
 
@@ -293,6 +293,6 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 
 ## Связанные темы
 
-* [Безопасность приложений](../../../../secure/application-security.md "Доступ к функциям безопасности приложений Dynatrace.")
-* [Советник по безопасности Davis API](../davis-security-advice.md "Просмотр рекомендаций советника по безопасности Davis через Dynatrace API. ")
-* [Отслеживание исправления](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Отслеживание прогресса исправления уязвимостей.")
+* Безопасность приложений
+* Советник по безопасности Davis API
+* Отслеживание исправления

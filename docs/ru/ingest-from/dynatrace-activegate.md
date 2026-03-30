@@ -24,42 +24,42 @@ Dynatrace ActiveGate действует как безопасный прокси
 
 ### Типы, назначения и функциональные модули ActiveGate
 
-Вам потребуются различные типы ActiveGate — **Environment ActiveGate** или **Cluster ActiveGate** — в зависимости от [решения развёртывания](dynatrace-activegate/supported-connectivity-schemes-for-activegates.md "Узнайте о приоритетах подключения между типами ActiveGate, а также о приоритетах между ActiveGate и OneAgent.") Dynatrace, которое вы используете, а также от [назначения](dynatrace-activegate/capabilities.md "Узнайте о возможностях и применениях ActiveGate."), для которого вы используете Dynatrace.
+Вам потребуются различные типы ActiveGate — **Environment ActiveGate** или **Cluster ActiveGate** — в зависимости от решения развёртывания Dynatrace, которое вы используете, а также от назначения, для которого вы используете Dynatrace.
 
 Если вы используете [SaaS-решение](dynatrace-activegate/supported-connectivity-schemes-for-activegates.md#saas-scheme "Узнайте о приоритетах подключения между типами ActiveGate, а также о приоритетах между ActiveGate и OneAgent.") Dynatrace, вам нужно установить только Environment ActiveGate.
 
-Для использования определённых функциональных возможностей ActiveGate, называемых [модулями](dynatrace-activegate/configuration/configure-activegate.md#modules "Узнайте, какие свойства ActiveGate можно настроить в зависимости от ваших потребностей и требований."), вам необходим ActiveGate с установленными или активированными этими модулями. При установке ActiveGate вы выбираете основное [назначение](dynatrace-activegate/capabilities.md "Узнайте о возможностях и применениях ActiveGate.") установки, а затем, в зависимости от назначения, можете установить или активировать различный набор функциональных [модулей](dynatrace-activegate/configuration/configure-activegate.md#modules "Узнайте, какие свойства ActiveGate можно настроить в зависимости от ваших потребностей и требований.").
+Для использования определённых функциональных возможностей ActiveGate, называемых модулями, вам необходим ActiveGate с установленными или активированными этими модулями. При установке ActiveGate вы выбираете основное назначение установки, а затем, в зависимости от назначения, можете установить или активировать различный набор функциональных модулей.
 
 ActiveGate может быть развёрнут обычным способом — на физическом или виртуальном хосте — это **развёртывание ActiveGate на хосте**.
 ActiveGate, упакованный в контейнер, называется **контейнеризированным развёртыванием ActiveGate**.
 
 ### Назначения и функциональность ActiveGate
 
-[Маршрутизация трафика OneAgent](dynatrace-activegate/capabilities/routing-monitoring-purpose.md#route "Узнайте о возможностях маршрутизации и мониторинга ActiveGate.")
+Маршрутизация трафика OneAgent
 
-[Мониторинг облачных сред и удалённых технологий](dynatrace-activegate/capabilities/routing-monitoring-purpose.md#monitor "Узнайте о возможностях маршрутизации и мониторинга ActiveGate.")
+Мониторинг облачных сред и удалённых технологий
 
-[Запуск синтетических мониторов](dynatrace-activegate/capabilities/synthetic-purpose.md "ActiveGate для синтетического мониторинга внутренних и внешних ресурсов из приватных синтетических локаций")
+Запуск синтетических мониторов
 
-[Маршрутизация трафика z/OS](dynatrace-activegate/capabilities/zremote-purpose.md "Узнайте об установке модуля zRemote для мониторинга z/OS.")
+Маршрутизация трафика z/OS
 
-[Dynatrace API](dynatrace-activegate/capabilities/routing-monitoring-purpose.md#api "Узнайте о возможностях маршрутизации и мониторинга ActiveGate.")
+Dynatrace API
 
-[Функциональность по типу ActiveGate](dynatrace-activegate/capabilities.md "Узнайте о возможностях и применениях ActiveGate.")
+Функциональность по типу ActiveGate
 
 ### Системные и аппаратные требования
 
-[ActiveGate для маршрутизации/мониторинга, на Linux](dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements.md "Узнайте, какие аппаратные требования и требования к операционной системе необходимо учитывать перед установкой ActiveGate на Linux для маршрутизации и мониторинга.")
+ActiveGate для маршрутизации/мониторинга, на Linux
 
-[ActiveGate для маршрутизации/мониторинга, на Windows](dynatrace-activegate/installation/windows/windows-activegate-hardware-and-system-requirements.md "Узнайте, какие аппаратные требования и требования к операционной системе необходимо учитывать перед установкой ActiveGate на Windows для маршрутизации и мониторинга.")
+ActiveGate для маршрутизации/мониторинга, на Windows
 
-[ActiveGate с поддержкой синтетического мониторинга](../observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic.md "Поддерживаемые операционные системы, версии Chromium и аппаратные требования для запуска синтетических мониторов из приватных локаций")
+ActiveGate с поддержкой синтетического мониторинга
 
-[ActiveGate для маршрутизации трафика z/OS в Dynatrace](dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote.md "Подготовка и установка zRemote для мониторинга z/OS.")
+ActiveGate для маршрутизации трафика z/OS в Dynatrace
 
 ### См. также
 
-[Схемы подключения ActiveGate](dynatrace-activegate/supported-connectivity-schemes-for-activegates.md "Узнайте о приоритетах подключения между типами ActiveGate, а также о приоритетах между ActiveGate и OneAgent.")
+Схемы подключения ActiveGate
 
 ## Установка
 

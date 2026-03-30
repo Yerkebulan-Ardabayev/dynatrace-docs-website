@@ -25,29 +25,29 @@ Here's what you can do with templates:
 ### Create a workflow from template
 
 You can create a workflow based on a template.
-For more information, see [Create workflow from pre-made template](../building.md#pre-made-template "Create and edit workflows in Dynatrace Workflows.") or [Create workflow from YAML template](../building.md#yaml-template "Create and edit workflows in Dynatrace Workflows.").
+For more information, see Create workflow from pre-made template or Create workflow from YAML template.
 
 ### Create a template
 
 You can create your own workflow template.
 To do so, create or modify a workflow and then export it as a template.
-For more information, see [Download a template](workflows-download.md#download-workflow-template "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.").
+For more information, see Download a template.
 
 ### Create a workflow guide
 
 When you create a new workflow or template, you can include a guide that explains prerequisites and configuration steps.
 The guide will then be visible for anybody who uses the workflow or template.
-For more information, see [Workflow guide](../building.md#workflow-guide "Create and edit workflows in Dynatrace Workflows.").
+For more information, see Workflow guide.
 
 ## Next steps
 
 Now that you know how to use workflow templates:
 
-* Explore the  [**Hub**](../../../manage/hub.md "See the information about Dynatrace Hub.") to find apps that come with pre-made templates.
-* Use and modify workflow templates for your [use cases](../use-cases.md "Explore common Workflows use cases in Dynatrace deployments.").
+* Explore the  **Hub** to find apps that come with pre-made templates.
+* Use and modify workflow templates for your use cases.
 
 ## Related topics
 
-* [Workflows quick start guide](../quickstart.md "Build and run your first workflow.")
-* [Create workflows in Dynatrace Workflows](../building.md "Create and edit workflows in Dynatrace Workflows.")
-* [Manage workflows](../manage-workflows.md "Manage your workflows")
+* Workflows quick start guide
+* Create workflows in Dynatrace Workflows
+* Manage workflows

@@ -45,7 +45,7 @@ OneAgent, установленный на хосте HANA, может вмеши
 ./oneagentctl --set-monitoring-mode=infra-only --set-auto-injection-enabled=false --restart-service
 ```
 
-Для получения дополнительной информации см. [Конфигурация OneAgent через интерфейс командной строки](../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Узнайте, как выполнять некоторые задачи конфигурации OneAgent без необходимости переустановки OneAgent.")
+Для получения дополнительной информации см. Конфигурация OneAgent через интерфейс командной строки
 
 #### Веб-интерфейс Dynatrace
 
@@ -439,7 +439,7 @@ jQuery не предоставил исправление для этой про
 ## Мониторинг реальных пользователей, Salesforce
 
 **Проблема:**
-При [инъекции RUM](../../observe/digital-experience/web-applications/initial-setup/rum-injection.md "Настройте автоматическую инъекцию JavaScript RUM на страницы ваших приложений") в Salesforce вы можете столкнуться с зависанием приложения в состоянии «загрузка» при просмотре записей из результатов поиска. В этом случае отладка браузера показывает ошибку JavaScript: `Wrong number of arguments or invalid property assignment on b.b.open,arguments,b.b`.
+При инъекции RUM в Salesforce вы можете столкнуться с зависанием приложения в состоянии «загрузка» при просмотре записей из результатов поиска. В этом случае отладка браузера показывает ошибку JavaScript: `Wrong number of arguments or invalid property assignment on b.b.open,arguments,b.b`.
 
 Это происходит, когда JavaScript RUM не является первым JavaScript, загружаемым на странице. В заголовке может загружаться код JavaScript, негативно влияющий на JavaScript RUM.
 
@@ -449,7 +449,7 @@ jQuery не предоставил исправление для этой про
 **Проблема:**
 RUM Dynatrace не работает для приложений Salesforce, основанных на [Lightning Component Framework](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/intro_framework.htm).
 
-Причина в том, что многие приложения и продукты Salesforce основаны на [Lightning Component Framework](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/intro_framework.htm). Этот фреймворк имеет архитектуру безопасности под названием [Lightning Locker](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/security_code.htm), которая ограничивает доступ к элементам DOM и, следовательно, влияет на JavaScript RUM Dynatrace. Когда код Locker загружается и выполняется до JavaScript RUM Dynatrace, мониторинг не будет работать, независимо от того, добавляете ли вы [JavaScript RUM](../../observe/digital-experience/web-applications/initial-setup/rum-injection.md "Настройте автоматическую инъекцию JavaScript RUM на страницы ваших приложений").
+Причина в том, что многие приложения и продукты Salesforce основаны на [Lightning Component Framework](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/intro_framework.htm). Этот фреймворк имеет архитектуру безопасности под названием [Lightning Locker](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/security_code.htm), которая ограничивает доступ к элементам DOM и, следовательно, влияет на JavaScript RUM Dynatrace. Когда код Locker загружается и выполняется до JavaScript RUM Dynatrace, мониторинг не будет работать, независимо от того, добавляете ли вы JavaScript RUM.
 
 **Решение:**
 В настоящее время решения со стороны Dynatrace нет. Пожалуйста, обратитесь в поддержку Salesforce. Возможно, существует способ разрешить JavaScript RUM Dynatrace.
@@ -468,7 +468,7 @@ RUM Dynatrace не работает для приложений Salesforce, ос
 
 **Проблема:**
 
-Включение настройки приложения [**Visually complete**](../../observe/digital-experience/web-applications/analyze-and-use/how-to-use-visually-complete-and-speed-index-metrics.md "Узнайте, как использовать метрики 'Visually complete' и 'Speed index'.") при использовании Dynatrace с Internet Explorer 11 может привести к полному сбою или зависанию страницы в случаях, когда происходят интенсивные мутации DOM `<table>` или подобных таблице элементов (с атрибутом стиля `display:table`). Это чаще встречается в одностраничных приложениях. Простое наблюдение за мутациями с помощью MutationObserver, как это делается для Visually complete, может привести к сбою страницы после её загрузки. Вот [простое воспроизведение проблемы](https://jsfiddle.net/gd88q1n3/2/) с мутацией элемента, подобного таблице.
+Включение настройки приложения **Visually complete** при использовании Dynatrace с Internet Explorer 11 может привести к полному сбою или зависанию страницы в случаях, когда происходят интенсивные мутации DOM `<table>` или подобных таблице элементов (с атрибутом стиля `display:table`). Это чаще встречается в одностраничных приложениях. Простое наблюдение за мутациями с помощью MutationObserver, как это делается для Visually complete, может привести к сбою страницы после её загрузки. Вот [простое воспроизведение проблемы](https://jsfiddle.net/gd88q1n3/2/) с мутацией элемента, подобного таблице.
 
 #### Дополнительная информация о Visually complete и Speed index
 

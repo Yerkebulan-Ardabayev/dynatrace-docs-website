@@ -19,9 +19,9 @@ To enable monitoring for this service, you need:
 
 * An Environment or Cluster ActiveGate version 1.203+
 
-  For role-based access (whether in a [Dynatrace SaaS](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") or a [Dynatrace Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) deployment), you need an [Environment ActiveGate](../../../../../ingest-from/dynatrace-activegate/installation.md "Learn how to configure ActiveGate") installed on an Amazon EC2 host.
+  For role-based access (whether in a Dynatrace SaaS or a [Dynatrace Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) deployment), you need an Environment ActiveGate installed on an Amazon EC2 host.
 * Dynatrace version 1.204+
-* An updated [AWS monitoring policy](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.  
+* An updated AWS monitoring policy to include the additional AWS services.  
   To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all cloud services.
 
 JSON predefined policy for all cloud services
@@ -315,7 +315,7 @@ JSON predefined policy for all cloud services
 }
 ```
 
-If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [All AWS cloud services](../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-all-services.md "Monitor all AWS cloud services with Dynatrace and view available metrics.") and, for each cloud service, a list of optional permissions specific to that service.
+If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for All AWS cloud services and, for each cloud service, a list of optional permissions specific to that service.
 
 Permissions required for AWS monitoring integration:
 
@@ -515,7 +515,7 @@ To receive metrics, the admin of the AWS payer account needs to enable **Receive
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see [Enable service monitoring](../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
+To learn how to enable service monitoring, see Enable service monitoring.
 
 ## View service metrics
 

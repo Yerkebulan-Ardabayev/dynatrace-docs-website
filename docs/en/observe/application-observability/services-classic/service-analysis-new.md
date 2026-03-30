@@ -45,16 +45,16 @@ Select **Properties and tags** on the notifications bar to display the **Propert
 * Select **Problems** on the notifications bar to display the **Problems** panel, which lists the problems.
 
   + Select a problem to display details.
-  + Select **Go to problems** to go to the [Problems](../../../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.") page filtered by the selected service.
+  + Select **Go to problems** to go to the Problems page filtered by the selected service.
 
 ### SLOs
 
-* On the notifications bar, **SLOs** indicates the current number of [SLOs](../../../deliver/service-level-objectives-classic.md "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.") related to the selected service.
+* On the notifications bar, **SLOs** indicates the current number of SLOs related to the selected service.
 * Select **SLOs** on the notifications bar to display the **Service-level objectives** panel, which lists SLOs that are directly or indirectly connected to the service.
 
 #### Directly connected SLOs
 
-* An SLO is directly connected to a service when the [entity selector](../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") of an SLO meets the following criteria:
+* An SLO is directly connected to a service when the entity selector of an SLO meets the following criteria:
 
   + The entity type is set to `"SERVICE"`.
   + The entity ID is set to the service ID.
@@ -62,7 +62,7 @@ Select **Properties and tags** on the notifications bar to display the **Propert
 
 #### Indirectly connected SLOs
 
-* An SLO isn't directly connected to a service when, in the [entity selector](../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") of an SLO, no entity ID is provided.
+* An SLO isn't directly connected to a service when, in the entity selector of an SLO, no entity ID is provided.
 
   Example: When generic values, such as `type("SERVICE"),tag("slo")` are provided, the query results in all SLOs for all services, including the current service.
 * To see SLOs that are not directly connected to the service, turn off **Show only directly connected SLOs**.
@@ -72,11 +72,11 @@ Select **Properties and tags** on the notifications bar to display the **Propert
 * Expand **Details** to view a chart of the respective SLO metrics.
 * In **Actions**, select
 
-  + **View in Data Explorer** to [see SLO metrics in Data Explorer](../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#explorer "Create, configure, and monitor service-level objectives with Dynatrace.").
-  + **Pin to Dashboard** to [pin the SLO to your dashboard](../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#dash "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **View in Data Explorer** to see SLO metrics in Data Explorer.
+  + **Pin to Dashboard** to pin the SLO to your dashboard.
   + **SLO definition** to edit the SLO in **Service-level objective definitions**.
-  + **Clone** to [clone the SLO](../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#clone "Create, configure, and monitor service-level objectives with Dynatrace.").
-  + **Create alert** to [create an alert for the SLO](../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#alerts "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Clone** to clone the SLO.
+  + **Create alert** to create an alert for the SLO.
 
 #### No SLOs
 
@@ -85,11 +85,11 @@ If no SLOs are found, you can
 * Select a different timeframe in the upper-right corner.
 
   ![Timeframe selector: menu bar](https://dt-cdn.net/images/timeframe-selector-menu-bar-264-8193110c8c.png)
-* Select **Add SLO** to create an SLO in the [SLO wizard](../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#wizard "Create, configure, and monitor service-level objectives with Dynatrace.").
+* Select **Add SLO** to create an SLO in the SLO wizard.
 
 ### Owners
 
-Select **Owners** on the notifications bar to display the **Ownership** panel, which lists [owners](../../../deliver/ownership.md "Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.") of the selected service.
+Select **Owners** on the notifications bar to display the **Ownership** panel, which lists owners of the selected service.
 
 * Select  to learn more about a current ownership.
 * To add an ownership, select **Add a new Ownership tag**.
@@ -109,7 +109,7 @@ You can configure the **Service overview** card to focus on various metrics of t
 
   + Analyze the metric in Data Explorer.
   + Create a metric event.
-  + Pin the metric to a classic dashboard. For details, see [Pin tiles to your dashboard](../../../analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard.md "Learn to pin tiles to your dashboards.").
+  + Pin the metric to a classic dashboard. For details, see Pin tiles to your dashboard.
 
 ### Endpoints
 
@@ -126,14 +126,14 @@ Data availability depends on endpoint metrics, which consume DDUs. To get starte
 
 Unified service
 
-If a service mesh is detected in your application, service mesh metrics are displayed for the related service. [ISTIO logs and metrics](../../infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics.md "Istio metric ingestion and topology detection") are enriched with service mesh ID, putting data into context. Note that service mesh metrics are created from ingested service mesh traces.
+If a service mesh is detected in your application, service mesh metrics are displayed for the related service. ISTIO logs and metrics are enriched with service mesh ID, putting data into context. Note that service mesh metrics are created from ingested service mesh traces.
 
 ### Key requests
 
 The **Key requests** card offers an overview of the key requests found for the service in the selected timeframe. You can quickly access analysis for other requests related to the services such as:
 
 * [**View all requests**](../services-classic.md#charts "Learn about Dynatrace's classic service monitoring")
-* [**Top web requests**](../multidimensional-analysis/top-web-requests.md "Learn how to analyze all web requests across all of your services using Dynatrace.")
+* **Top web requests**
 * [**View outliers**](response-time-distribution-and-outlier-analysis.md#outlier-analysis "Gain insights into the distribution of response times across all requests, including those that are either unusually high or unusually low.")
 
 ### Topology
@@ -141,7 +141,7 @@ The **Key requests** card offers an overview of the key requests found for the s
 In the **Topology** card, you can learn
 
 * Which services are calling and which are called by the service.  
-  Select **Related services** to understand the service relation. Expand **Details** to view a chart of the respective service metrics. You can quickly access further analysis options such as [**View backtrace**](service-backtrace.md "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.") and [**Service flow**](service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.").
+  Select **Related services** to understand the service relation. Expand **Details** to view a chart of the respective service metrics. You can quickly access further analysis options such as **View backtrace** and **Service flow**.
 * On which processes and hosts the service is running on.  
   Expand **Details** to view a chart of the respective process metrics. Select the name of the process to analyze it deeper.
 * Which HTTP monitors and (mobile) applications are calling the service.  
@@ -151,19 +151,19 @@ In the **Topology** card, you can learn
 
 ### Distributed traces
 
-The **Distributed traces** card provides an overview of the most recent traces, depending on the selected timeframe. Select **Full search** to directly access the [distributed traces overview for the service](../distributed-traces/analysis/get-started.md "Get started with distributed trace analysis in Dynatrace.").
+The **Distributed traces** card provides an overview of the most recent traces, depending on the selected timeframe. Select **Full search** to directly access the distributed traces overview for the service.
 
 ### Events
 
-Contains a list of [events](../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md "Gain an understanding of the Events section on each host, process, and service overview page.") that affect the service in the current timeframe.
+Contains a list of events that affect the service in the current timeframe.
 
 ### Related logs
 
-Contains a list of [logs](../../../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") related to the service in the current timeframe.
+Contains a list of logs related to the service in the current timeframe.
 
 * To analyze all the logs for the related service, select **Go to logs** .
 * To analyze a specific log, expand **Details**. If a trace or a user session is found for the log line, you can directly access it from this view.
 
 ## Related topics
 
-* [Unified analysis pages](../../../ingest-from/extend-dynatrace/extend-ui/unified-analysis.md "Extend the Dynatrace web UI using entity-tailored unified analysis pages.")
+* Unified analysis pages

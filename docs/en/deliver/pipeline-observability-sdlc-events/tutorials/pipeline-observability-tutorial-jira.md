@@ -25,9 +25,9 @@ Below is a screenshot with highlights from the **Engineering Flow Metrics** dash
 ## Concepts
 
 Software Development Lifecycle (SDLC) events
-:   [SDLC events](../../pipeline-observability-sdlc-events.md#sdlc-events "With insights into your pipelines and processes, you can observe and analyze software engineering practices within an organization.") within the Software Development Lifecycle (SDLC) play a pivotal role in achieving effective pipeline observability.
+:   SDLC events within the Software Development Lifecycle (SDLC) play a pivotal role in achieving effective pipeline observability.
     They represent key actions that occur throughout the lifecycle â such as releasing a new software version, deploying that version, or successfully passing a performance test.
-    For more information, see [Semantic Dictionary SDLC events](../../../semantic-dictionary/model/sdlc-events.md "Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.")
+    For more information, see Semantic Dictionary SDLC events events.")
 
 ## Target audience
 
@@ -81,7 +81,7 @@ To find and copy the **Endpoints path**:
 
 Data is stored as events in Dynatrace.
 Thus, the data is charged as Events powered by Grail.
-For more information on the cost of Events powered by Grail, see [Events powered by Grail overview (DPS)](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For more information on the cost of Events powered by Grail, see Events powered by Grail overview (DPS).
 
 To populate Dynatrace with Jira data, set up a Jira automation.
 
@@ -315,7 +315,7 @@ To organize the data in Dynatrace, set up a [custom Grail bucket](../../../platf
 5. Set the **Retention period** to three years in days which is `1095` days.
 6. Select **Create**.
 
-If the data should be restricted, configure the [bucket permissions](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+If the data should be restricted, configure the bucket permissions.
 
 8. Route data
 
@@ -420,8 +420,8 @@ Below is a full screenshot of the **Engineering Flow Metrics** dashboard.
 
 ## Related topics
 
-* [Software development lifecycle (SDLC) events](../../../semantic-dictionary/model/sdlc-events.md "Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.")
-* [Ingest SDLC events](../sdlc-events.md "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.")
-* [Data flow in OpenPipeline](../../../platform/openpipeline/concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
-* [Ingest sources in OpenPipeline](../../../platform/openpipeline/reference/api-ingestion-reference.md "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.")
-* [Analyze SDLC events from your pipeline](../pipeline-observability-analyze.md "Analyze your pipeline using data from your software development lifecycle (SDLC) events  using our examples.")
+* Software development lifecycle (SDLC) events events.")
+* Ingest SDLC events events which you can then ingest to use to generate analytics.")
+* Data flow in OpenPipeline
+* Ingest sources in OpenPipeline
+* Analyze SDLC events from your pipeline events  using our examples.")

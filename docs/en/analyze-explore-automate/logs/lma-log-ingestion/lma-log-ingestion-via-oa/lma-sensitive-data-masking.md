@@ -50,7 +50,7 @@ You can configure sensitive data masking on the host, host group or environment 
 
    2
 
-   [Manually or automatically applied tags](../../../../manage/tags-and-metadata/setup/how-to-define-tags.md#automatic "Find out how to define and apply tags manually and automatically.") are not visible to OneAgent.
+   Manually or automatically applied tags are not visible to OneAgent.
 
    3
 
@@ -132,7 +132,7 @@ To check the current schema version for sensitive data masking configuration, li
 To create a sensitive data masking configuration using the API
 
 1. [Create an access token](../../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) permissions.
-2. Use the [GET a schema](../../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The sensitive data masking configuration schema identifier (`schemaId`) is `builtin:sensitive-data-masking-settings`. Here is an example JSON payload with the sensitive data masking configuration:
+2. Use the GET a schema endpoint to learn the JSON format required to post your configuration. The sensitive data masking configuration schema identifier (`schemaId`) is `builtin:sensitive-data-masking-settings`. Here is an example JSON payload with the sensitive data masking configuration:
 
 ```
 [
@@ -813,5 +813,5 @@ Be aware of the following limitations to sensitive data masking:
 
 ## Related topics
 
-* [Data privacy and security](../../../../../common/manage/data-privacy-and-security.md "Learn how Dynatrace applies various security measures required to protect private data.")
-* [Log Management and Analytics default limits](../../lma-limits.md "Default limits for the latest version of Dynatrace Log Management and Analytics.")
+* Data privacy and security
+* Log Management and Analytics default limits

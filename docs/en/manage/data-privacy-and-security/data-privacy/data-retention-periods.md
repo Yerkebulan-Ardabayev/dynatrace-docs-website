@@ -23,13 +23,13 @@ For active Dynatrace accounts, the following retention rates are set by default:
 
 ## Distributed tracing powered by Grail
 
-With [Distributed tracing powered by Grail](../../../observe/application-observability/distributed-tracing.md "Trace and analyze in real time highly distributed systems with Grail.") you can to ingest, process, retain, and analyze trace data stored in the Grail data lakehouse in SaaS environments.
+With Distributed tracing powered by Grail you can to ingest, process, retain, and analyze trace data stored in the Grail data lakehouse in SaaS environments.
 
-With Grail storage, you don't have to worry about managing data storage performance, availability, or free space. Select the desired retention period for your traces in the [bucket configuration](../../../observe/application-observability/distributed-tracing/storage.md "Manage data storage and retention for Distributed Tracing powered by Grail."). For span buckets, the available retention period ranges from 10 days to 10 years, with an additional week.
+With Grail storage, you don't have to worry about managing data storage performance, availability, or free space. Select the desired retention period for your traces in the bucket configuration. For span buckets, the available retention period ranges from 10 days to 10 years, with an additional week.
 
 ## Distributed traces Classic
 
-Dynatrace stores the complete details of every transaction for 10 days . This enables you to analyze individual transactions and get all the details available with your [instrumentation](../../../observe/application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.").
+Dynatrace stores the complete details of every transaction for 10 days . This enables you to analyze individual transactions and get all the details available with your instrumentation.
 
 For trial users, an additional storage-size limit applies, which might lead to shorter retention times.
 
@@ -41,7 +41,7 @@ After 10 days, session data is optimized for aggregated views. Non-aggregated an
 
 ## Services Classic: Requests and request attributes
 
-Short-term storage of the data related to service metrics used in [multidimensional analysis](../../../observe/application-observability/multidimensional-analysis.md "Configure a multidimensional analysis view and save it as a calculated metric.") and [request charting](../../../observe/application-observability/services-classic.md#charts "Learn about Dynatrace's classic service monitoring"). This data is available for 35 days with the following interval granularity levels:
+Short-term storage of the data related to service metrics used in multidimensional analysis and [request charting](../../../observe/application-observability/services-classic.md#charts "Learn about Dynatrace's classic service monitoring"). This data is available for 35 days with the following interval granularity levels:
 
 | Timeframe | Interval granularity |
 | --- | --- |
@@ -88,9 +88,9 @@ The default retention time for both user eventsâincluding user interactions
 
 ## Log Management and Analytics
 
-Log Management and Analytics enables you to ingest, process, retain and analyze log data stored in the [Grail](../../../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") data lakehouse in SaaS environments.
+Log Management and Analytics enables you to ingest, process, retain and analyze log data stored in the Grail data lakehouse in SaaS environments.
 
-With Grail storage, you don't have to worry about managing data storage performance, availability, or free space. Select the desired retention period for your logs in the [bucket configuration](../../../analyze-explore-automate/logs/lma-bucket-assignment.md "Your log data can be stored in data retention buckets based on specific retention periods."). For log buckets, the available retention period ranges from 1 day to 10 years, with an additional week.
+With Grail storage, you don't have to worry about managing data storage performance, availability, or free space. Select the desired retention period for your logs in the bucket configuration. For log buckets, the available retention period ranges from 1 day to 10 years, with an additional week.
 
 ## Log Monitoring Classic
 
@@ -104,7 +104,7 @@ Memory dumps are immediately deleted from the disk once they're uploaded to Acti
 
 ## Metrics powered by Grail
 
-Metrics powered by Grail provides a default 1-minute interval granularity for 15 months. Metrics with this granularity and retention can be accessed via Platform applications, such as [Dashboards and Notebooks](../../../analyze-explore-automate/dashboards-and-notebooks.md "Dashboards and Notebooks"). Learn more at [Metrics Limits](../../../analyze-explore-automate/metrics/limits.md "Reference of metrics powered by Grail").
+Metrics powered by Grail provides a default 1-minute interval granularity for 15 months. Metrics with this granularity and retention can be accessed via Platform applications, such as Dashboards and Notebooks. Learn more at Metrics Limits.
 
 ## Metrics Classic
 
@@ -138,7 +138,7 @@ Depending on the source of the data, Dynatrace stores [security events](../../..
 
 ### Vulnerabilities
 
-* Open [third-party vulnerabilities](../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities.md "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.") are stored as long as they are open, regardless of the timeframe.
+* Open third-party vulnerabilities are stored as long as they are open, regardless of the timeframe.
 * The storage time for resolved third-party vulnerabilities depends on when vulnerabilities are resolved:
 
   + If a vulnerability is resolved before 365 days since it was first opened, it's deleted after 365 days.

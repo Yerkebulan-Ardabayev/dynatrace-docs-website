@@ -24,15 +24,15 @@ OperatorHub — это интерфейс, с помощью которого а
 
 Варианты развёртывания, которые можно установить через OperatorHub:
 
-* [Мониторинг платформы Kubernetes](../platform-observability.md "Развёртывание Dynatrace Operator для мониторинга платформы Kubernetes.")
-* [Классический мониторинг Full-Stack](classic-full-stack.md "Развёртывание Dynatrace Operator в классическом режиме full-stack на Kubernetes")
-* [Наблюдаемость приложений](../application-observability.md "Развёртывание Dynatrace Operator в режиме мониторинга приложений на Kubernetes") без CSI-драйвера
+* Мониторинг платформы Kubernetes
+* Классический мониторинг Full-Stack
+* Наблюдаемость приложений без CSI-драйвера
 
 Варианты развёртывания, которые **нельзя** установить через OperatorHub (для них требуется установка с помощью Helm или манифестов):
 
-* [Полная наблюдаемость Full-Stack](../full-stack-observability.md "Развёртывание Dynatrace Operator в облачном режиме full-stack на Kubernetes")
-* [Наблюдаемость приложений](../application-observability.md "Развёртывание Dynatrace Operator в режиме мониторинга приложений на Kubernetes") с CSI-драйвером
-* [Мониторинг хоста](host-monitoring.md "Развёртывание Dynatrace Operator в режиме мониторинга хоста на Kubernetes")
+* Полная наблюдаемость Full-Stack
+* Наблюдаемость приложений с CSI-драйвером
+* Мониторинг хоста
 
 ## Установка
 
@@ -46,8 +46,8 @@ OperatorHub — это интерфейс, с помощью которого а
 6. Перейдите в **Operators** > **Installed Operators** и дождитесь появления сообщения **Install Succeeded**.
 7. Перейдите в **Workloads** > **Secrets** и создайте новый ключ с именем `dynakube`, содержащий два значения:
 
-   * `apiToken` — равен [токену Dynatrace Operator](../tokens-permissions.md "Настройка токенов и разрешений для мониторинга кластера Kubernetes") вашего кластера.
-   * `dataIngestToken` — равен [токену приёма данных](../tokens-permissions.md "Настройка токенов и разрешений для мониторинга кластера Kubernetes") вашего кластера.
+   * `apiToken` — равен токену Dynatrace Operator вашего кластера.
+   * `dataIngestToken` — равен токену приёма данных вашего кластера.
 8. Перейдите в **Operators** > **Installed Operators** в боковом меню и выберите **Dynatrace Operator**.
 9. Нажмите **Create instance**.
 10. Внесите следующие изменения:
@@ -63,7 +63,7 @@ OperatorHub — это интерфейс, с помощью которого а
       apiURL: 'https://ENVIRONMENTID.live.dynatrace.com/api'
       ```
 
-      Замените `ENVIRONMENTID` на ваш [идентификатор среды](../../../../discover-dynatrace/get-started/monitoring-environment.md "Узнайте, как работать со средами мониторинга.").
+      Замените `ENVIRONMENTID` на ваш идентификатор среды.
     * Установите `classicFullStack.enabled` в значение `true`.
     * Если вы используете файл пользовательского ресурса, задайте `namespace` — пространство имён, в котором установлен Dynatrace Operator.
 11. Нажмите **Create**.

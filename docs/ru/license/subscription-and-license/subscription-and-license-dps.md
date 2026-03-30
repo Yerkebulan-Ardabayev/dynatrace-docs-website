@@ -10,7 +10,7 @@ scraped: 2026-03-06T21:22:13.621808
 * Пояснение
 
 Эта документация актуальна для лицензий Dynatrace Platform Subscription, заключённых до 26 апреля 2023 г.
-Информацию обо всех прочих лицензиях Dynatrace Platform Subscription см. в разделе [Лицензирование Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+Информацию обо всех прочих лицензиях Dynatrace Platform Subscription см. в разделе Лицензирование Dynatrace, the licensing model for all Dynatrace capabilities.").
 
 Эта страница предоставляется исключительно в информационных целях.
 К любому использованию продуктов или сервисов Dynatrace применяются условия бесплатного пробного предложения Dynatrace и/или вашей лицензии Dynatrace.
@@ -32,7 +32,7 @@ scraped: 2026-03-06T21:22:13.621808
 1
 
 Размер хоста для целей лицензирования (определяется объёмом ОЗУ, предоставленного хостом).
-Подробная информация приведена в разделе [Application and Infrastructure Monitoring (Host Units)](../monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
+Подробная информация приведена в разделе Application and Infrastructure Monitoring (Host Units).
 
 2
 
@@ -54,8 +54,8 @@ scraped: 2026-03-06T21:22:13.621808
 
 Вы можете просматривать потребление лицензии в:
 
-* Account Management — см. [Обзор подписки (Dynatrace Platform Subscription до 2023 г.)](../../manage/account-management/license-subscription/subscription-overview-dps-la.md "View your Dynatrace Platform Subscription budget summary and cost analysis.").
-* API управления учётными записями — см. [API Dynatrace Platform Subscription](../../dynatrace-api/account-management-api/dynatrace-platform-subscription-api.md "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
+* Account Management — см. Обзор подписки (Dynatrace Platform Subscription до 2023 г.).
+* API управления учётными записями — см. API Dynatrace Platform Subscription.
 
 Доступная информация включает:
 

@@ -68,11 +68,11 @@ scraped: 2026-03-06T21:09:37.289101
 
     ![Представление Infrastructure & Operations с только что добавленным OneAgent на хосте](https://dt-cdn.net/images/screenshot-2025-02-04-at-13-32-36-2598-439524d1f9.png)
 
-OneAgent настроен и осуществляет мониторинг вашего хоста. См. [Начало работы с Dynatrace](../../discover-dynatrace/get-started.md "Learn about Dynatrace monitoring capabilities, concepts, and deployment models and find out how to get started with SaaS and Managed deployments."), чтобы продолжить ваше первое знакомство с Dynatrace.
+OneAgent настроен и осуществляет мониторинг вашего хоста. См. Начало работы с Dynatrace, чтобы продолжить ваше первое знакомство с Dynatrace.
 
 ## Связанные темы
 
-* [Функции OneAgent](oneagent-features.md "Manage OneAgent features globally and per process group.")
-* [Infrastructure & Operations](../../observe/infrastructure-observability/infrastructure-and-operations.md "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
-* [Настройки на уровне хоста](../../observe/infrastructure-observability/hosts/configuration.md "Host-level settings")
-* [Режимы мониторинга OneAgent](../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.")
+* Функции OneAgent
+* Infrastructure & Operations
+* Настройки на уровне хоста
+* Режимы мониторинга OneAgent

@@ -39,6 +39,6 @@ Dynatrace обеспечивает мониторинг инфраструкту
 
 ## Другие варианты
 
-- **[Agentless RUM](/managed/observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring)** — безагентный мониторинг веб-приложений
-- **[Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring)** — синтетический мониторинг доступности 24/7
+- **Agentless RUM** — безагентный мониторинг веб-приложений
+- **Synthetic Monitoring** — синтетический мониторинг доступности 24/7
 - **[Расширения](/managed/ingest-from/extend-dynatrace)** — расширение наблюдаемости через стандарты и фреймворки

@@ -28,7 +28,7 @@ Public cloud service
 :   Computing services offered by a third-party provider. Dynatrace can be licensed via a public cloud service.
 
 Dynatrace environment
-:   A [Dynatrace environment](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") is where all your Dynatrace performance analysis takes place. Environments have a unique identifier in the format `abc12345`.
+:   A Dynatrace environment is where all your Dynatrace performance analysis takes place. Environments have a unique identifier in the format `abc12345`.
 
 ## Prerequisites
 
@@ -74,7 +74,7 @@ When the **Congratulations!** window appears, your private offer is now linked t
 Your subscription information in **Account Management** will reflect the fully-credited new license within three days.
 In the meantime, you can start using your Dynatrace environment according to the account's existing license (if you linked an existing account) or with a trial license (if you created a new account).
 
-Select **Open Dynatrace** to start using Dynatrace and [Set up Dynatrace on Amazon Web Services](../../amazon-web-services.md "Set up and configure monitoring for Amazon Web Services.").
+Select **Open Dynatrace** to start using Dynatrace and Set up Dynatrace on Amazon Web Services.
 
 If you don't yet have a Dynatrace account, follow the steps below to create an account and link it to your AWS Marketplace private offer.
 
@@ -99,8 +99,8 @@ Your private offer is now linked to the Dynatrace account that you just created.
 Your subscription information in **Account Management** will reflect the fully-credited new license within three days.
 In the meantime, you can start using your Dynatrace environment according to the account's existing license (if you linked an existing account) or with a trial license (if you created a new account).
 
-Select **Open Dynatrace** to start using Dynatrace and [Set up Dynatrace on Amazon Web Services](../../amazon-web-services.md "Set up and configure monitoring for Amazon Web Services.").
+Select **Open Dynatrace** to start using Dynatrace and Set up Dynatrace on Amazon Web Services.
 
 ## Related topics
 
-* [Discover Dynatrace](../../../discover-dynatrace.md "Discover Dynatrace")
+* Discover Dynatrace

@@ -126,7 +126,7 @@ OpenShift
 
    kubectl delete namespace dynatrace
    ```
-2. [Настройте мониторинг с помощью Dynatrace Operator](../../deployment.md "Разверните Dynatrace Operator в Kubernetes").
+2. Настройте мониторинг с помощью Dynatrace Operator.
 
 1. Удалите OneAgent Operator и пространство имён/проект `dynatrace`.
 
@@ -136,7 +136,7 @@ OpenShift
 
    oc delete project dynatrace
    ```
-2. [Настройте мониторинг с помощью Dynatrace Operator](../../deployment.md "Разверните Dynatrace Operator в Kubernetes").
+2. Настройте мониторинг с помощью Dynatrace Operator.
 
 ### Миграция с Helm
 
@@ -161,7 +161,7 @@ OpenShift
 
    kubectl delete namespace dynatrace
    ```
-2. [Настройте мониторинг с помощью Dynatrace Operator](../../deployment.md "Разверните Dynatrace Operator в Kubernetes").
+2. Настройте мониторинг с помощью Dynatrace Operator.
 
 1. Удалите OneAgent Operator, репозиторий Helm и пространство имён/проект `dynatrace`.
 
@@ -180,4 +180,4 @@ OpenShift
 
    oc delete project dynatrace
    ```
-2. [Настройте мониторинг с помощью Dynatrace Operator](../../deployment.md "Разверните Dynatrace Operator в Kubernetes").
+2. Настройте мониторинг с помощью Dynatrace Operator.

@@ -64,8 +64,8 @@ To configure a connection
 
 Limit your personal access token permissions
 
-We strongly recommend that you limit the permissions of your personal access tokens to the necessary minimum. The necessary permissions for each action can be found on the [GitHub Actions page](github-workflows-actions.md "Integrate Workflows with GitHub services to utilize GitHub Connector actions."). For more information, see [Managing your personal access tokensï»¿](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) for information about limiting the access to a certain repository or permissions/scopes. This ensures that your personal access token can be used for accessing and changing only the permitted repositories.
+We strongly recommend that you limit the permissions of your personal access tokens to the necessary minimum. The necessary permissions for each action can be found on the GitHub Actions page. For more information, see [Managing your personal access tokensï»¿](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) for information about limiting the access to a certain repository or permissions/scopes. This ensures that your personal access token can be used for accessing and changing only the permitted repositories.
 
 ## Related topics
 
-* [Actions for GitHub Connector](github-workflows-actions.md "Integrate Workflows with GitHub services to utilize GitHub Connector actions.")
+* Actions for GitHub Connector

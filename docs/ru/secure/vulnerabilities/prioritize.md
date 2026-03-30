@@ -32,7 +32,7 @@ scraped: 2026-03-06T21:34:48.320869
 * Баллу DSS (выберите **Dynatrace Security Score** и введите балл)
 * Уровню риска (выберите **Dynatrace Risk Level** и выберите серьёзность)
 
-Подробности см. в разделе [Выражения фильтров](manage-results.md#expressions "Filter, format, and sort to find relevant vulnerability information.").
+Подробности см. в разделе Выражения фильтров.
 
 ### Подробности расчёта DSS
 
@@ -60,7 +60,7 @@ scraped: 2026-03-06T21:34:48.320869
 1. На странице **Prioritization** в поле фильтра выберите **Dynatrace Assessment**.
 2. Выберите интересующие вас параметры.
 
-Подробности см. в разделе [Выражения фильтров](manage-results.md#expressions "Filter, format, and sort to find relevant vulnerability information.").
+Подробности см. в разделе Выражения фильтров.
 
 ### Просмотр доступных активов данных
 
@@ -108,12 +108,12 @@ scraped: 2026-03-06T21:34:48.320869
 
 Уязвимости уровня кода
 
-Приоритизируйте уязвимости на основе наблюдаемой активности эксплуатации, чтобы лучше понимать воздействие и паттерны реагирования. Просматривайте, как часто уязвимость подвергалась атакам, какие действия были предприняты в ответ, и ключевые детали недавних попыток для руководства вашими усилиями по устранению. Настраивайте [временной диапазон](manage-results.md#timeframe "Filter, format, and sort to find relevant vulnerability information.") и [сегменты](manage-results.md#segments "Filter, format, and sort to find relevant vulnerability information."), а также открывайте эксплойты в [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts.") для получения дополнительной информации.
+Приоритизируйте уязвимости на основе наблюдаемой активности эксплуатации, чтобы лучше понимать воздействие и паттерны реагирования. Просматривайте, как часто уязвимость подвергалась атакам, какие действия были предприняты в ответ, и ключевые детали недавних попыток для руководства вашими усилиями по устранению. Настраивайте временной диапазон и сегменты, а также открывайте эксплойты в [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts.") для получения дополнительной информации.
 
 1. На странице **Prioritization** выберите уязвимость.
 2. На боковой панели перейдите в раздел **Exploit attempts**.
 
-Для обнаружения попыток эксплуатации необходимо [настроить Runtime Application Protection](../application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.").
+Для обнаружения попыток эксплуатации необходимо настроить Runtime Application Protection.
 
 ## Приоритизация по эволюции уязвимости
 
@@ -134,7 +134,7 @@ scraped: 2026-03-06T21:34:48.320869
 
 ### Фильтрация по CISA KEV
 
-На странице **Prioritization** используйте поле [фильтра](manage-results.md#filter "Filter, format, and sort to find relevant vulnerability information.") для
+На странице **Prioritization** используйте поле фильтра для
 
 * Отображения наличия уязвимости в каталоге CISA KEV (`CISA KEV` > `CISA KEV - In catalog` > `Yes`/`No`)
 * Просмотра срока устранения уязвимости из списка CISA KEV (`CISA KEV` > `CISA KEV - Due date`, затем введите целевую дату в формате `YYYY-MM-DD`)
@@ -154,4 +154,4 @@ scraped: 2026-03-06T21:34:48.320869
 
 Покрытие библиотечных уязвимостей показывает, насколько хорошо процессы и хосты вашей среды мониторятся с помощью Runtime Vulnerability Analytics (RVA). Анализируя покрытие, вы можете выявить пробелы в мониторинге, понять, какие сущности наиболее затронуты во время выполнения, и отслеживать тенденции воздействия с течением времени. Этот контекст помогает приоритизировать устранение уязвимостей там, где это наиболее важно.
 
-Подробности см. в разделе [Оценка покрытия](assess-coverage.md "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
+Подробности см. в разделе Оценка покрытия.

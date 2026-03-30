@@ -18,7 +18,7 @@ Dynatrace Operator
 
 ## Dynatrace OneAgent
 
-Dynatrace typically supports technologies and their versions six months longer than the vendor to give you enough time to upgrade your environment. [Runtimes](../../ingest-from/technology-support/application-software.md "Discover what runtimes can be monitored with Dynatrace.") may have an enhanced support lifecycle.
+Dynatrace typically supports technologies and their versions six months longer than the vendor to give you enough time to upgrade your environment. Runtimes may have an enhanced support lifecycle.
 
 End of support announcements are provided six months in advance.
 

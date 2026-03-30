@@ -346,11 +346,11 @@ events
 
 ## Связанные темы
 
-* [Dynatrace Query Language](../dynatrace-query-language.md "Использование Dynatrace Query Language.")
-* [Использование запросов DQL](dql-guide.md "Узнайте, как работает DQL и каковы ключевые концепции DQL.")
-* [Справочник по языку DQL](dql-reference.md "Справочник по синтаксису Dynatrace Query Language.")
-* [Команды DQL](commands.md "Список команд DQL.")
-* [Функции DQL](functions.md "Список функций DQL.")
-* [Операторы DQL](operators.md "Список операторов DQL.")
-* [Типы данных DQL](data-types.md "Список типов данных DQL.")
-* [Лучшие практики DQL](dql-best-practices.md "Лучшие практики использования Dynatrace Query Language.")
+* Dynatrace Query Language
+* Использование запросов DQL
+* Справочник по языку DQL
+* Команды DQL
+* Функции DQL
+* Операторы DQL
+* Типы данных DQL
+* Лучшие практики DQL

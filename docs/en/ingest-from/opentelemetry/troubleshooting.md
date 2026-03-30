@@ -91,7 +91,7 @@ See also:
 ### Ingestion issues
 
 * [Why does my OTLP export not work?ï»¿](https://dt-url.net/sb238k5)
-* [Dynatrace OTLP API endpoints](otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* Dynatrace OTLP API endpoints
 
 ### Vertical topology
 
@@ -101,9 +101,9 @@ See also:
 
 Specific information about ingesting each signal type is available at
 
-* [Ingest OTLP logs](otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")
-* [About OTLP metrics ingest](otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
-* [Ingest OTLP traces](otlp-api/ingest-traces.md "Learn how Dynatrace ingests OpenTelemetry traces and what limitations apply.")
+* Ingest OTLP logs
+* About OTLP metrics ingest
+* Ingest OTLP traces
 
 ### Traces
 

@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:24:07.806532
 * How-to guide
 * Updated on Aug 25, 2025
 
-This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the Grail security table migration guide.
 
 Ingest Amazon GuardDuty security findings and analyze them in Dynatrace.
 
@@ -27,8 +27,8 @@ GuardDuty detects suspicious activities in your AWS accounts, workloads, and dat
 
 With the ingested data, you can accomplish various use cases, such as
 
-* [Visualize and analyze security findings](../../use-cases/visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
-* [Automate and orchestrate security findings](../../use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* Visualize and analyze security findings
+* Automate and orchestrate security findings
 
 ### Requirements
 
@@ -55,11 +55,11 @@ See below for the [Amazon GuardDuty](#aws) and [Dynatrace](#dt) requirements.
   + To query ingested data: `storage:security.events:read`.
 * Tokens:
 
-  + Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see [Dynatrace API - Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+  + Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see Dynatrace API - Tokens and authentication.
 
 ## Activation and setup
 
-1. In Dynatrace, open  [**Hub**](../../../manage/hub.md "See the information about Dynatrace Hub.").
+1. In Dynatrace, open  **Hub**.
 2. Look for **Amazon GuardDuty** and select **Install**.
 3. Select **Set up**, then select  **Configure new connection**.
 4. Follow the on-screen instructions to set up the ingestion.
@@ -73,7 +73,7 @@ See below for the [Amazon GuardDuty](#aws) and [Dynatrace](#dt) requirements.
 1. Events are ingested into Dynatrace
 
 1. Amazon GuardDuty events are sent to [Amazon EventBridgeï»¿](https://dt-url.net/qi03wtk), which triggers an AWS Lambda function.
-2. The Lambda function pre-processes the events and sends them to Dynatrace via a dedicated [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") security ingest endpoint.
+2. The Lambda function pre-processes the events and sends them to Dynatrace via a dedicated OpenPipeline security ingest endpoint.
 
 2. Security findings are processed and stored in Grail
 
@@ -97,14 +97,14 @@ You can view
 
 ### Visualize and analyze findings
 
-You can create your own [dashboards](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or use our templates to visualize and analyze container vulnerability findings.
+You can create your own dashboards or use our templates to visualize and analyze container vulnerability findings.
 
 1. In **Settings**, open **Amazon GuardDuty**.
 2. In the **Try our templates** section, select the desired dashboard template.
 
 ### Automate and orchestrate findings
 
-You can create your own [workflows](../../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") or use our templates to automate and orchestrate container vulnerability findings.
+You can create your own workflows or use our templates to automate and orchestrate container vulnerability findings.
 
 1. In **Settings**, open **Amazon GuardDuty**.
 2. In the **Try our templates** section, select the desired workflow template.
@@ -136,7 +136,7 @@ This removes the Dynatrace resources created for this integration.
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see Events powered by Grail.
 
 ## FAQ
 
@@ -186,6 +186,6 @@ Ingest Amazon GuardDuty detection findings.](https://www.dynatrace.com/hub/detai
 
 ## Related topics
 
-* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Security events](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")
+* OpenPipeline
+* Dynatrace Query Language
+* Security events

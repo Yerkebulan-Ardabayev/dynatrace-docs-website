@@ -42,7 +42,7 @@ To explore services and see which are slowest, go to the **Response Time** tab i
 To find out what's slow
 
 1. Go to [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](services-app.md "Maintain centralized control over service health, performance, and resources with the Services app.") and select the **Response Time** tab.
-2. Apply [segments](../../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") and filters to focus on relevant services/endpoints.
+2. Apply segments and filters to focus on relevant services/endpoints.
 
    For single service analysis, you also get a contribution breakdown that classifies the calls to:
 

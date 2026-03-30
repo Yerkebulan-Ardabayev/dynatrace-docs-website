@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:29:42.968498
 
 Dynatrace uses [OpenTelemetryï»¿](https://dt-url.net/y903u4j) to monitor Google Cloud Functions invocations.
 
-For that purpose, Dynatrace provides language-specific packagesâsuch as [`@dynatrace/opentelemetry-gcf` for Node.js](opentelemetry-on-gcf-nodejs.md "Monitor Google Cloud Functions with OpenTelemetry for Node.js and Dynatrace."), [`dynatrace-opentelemetry-gcf` for Python](opentelemetry-on-gcf-python.md "Monitor Google Cloud Functions with OpenTelemetry for Python and Dynatrace."), and [`Dynatrace.OpenTelemetry.Instrumentation.GoogleCloudFunctions` for .NET](opentelemetry-on-gcf-dotnet.md "Monitor Google Cloud Functions with OpenTelemetry for .NET and Dynatrace.")âthat can be used in combination with default OpenTelemetry SDKs and APIs.
+For that purpose, Dynatrace provides language-specific packagesâsuch as `@dynatrace/opentelemetry-gcf` for Node.js, `dynatrace-opentelemetry-gcf` for Python, and `Dynatrace.OpenTelemetry.Instrumentation.GoogleCloudFunctions` for .NETâthat can be used in combination with default OpenTelemetry SDKs and APIs.
 
 ## Prerequisites
 
@@ -60,10 +60,10 @@ On **Enable Monitoring for Google Cloud Functions**, under **Use the following v
 
 Adding the required API calls to monitor function invocations via OpenTelemetry is specific to languages and their respective OpenTelemetry distribution:
 
-* **Node.js:** [Integrate on Google Cloud Functions Node.js](opentelemetry-on-gcf-nodejs.md "Monitor Google Cloud Functions with OpenTelemetry for Node.js and Dynatrace.")
-* **Python:** [Integrate on Google Cloud Functions Python](opentelemetry-on-gcf-python.md "Monitor Google Cloud Functions with OpenTelemetry for Python and Dynatrace.")
-* **Go:** [Integrate on Google Cloud Functions GoLang](opentelemetry-on-gcf-go.md "Monitor Google Cloud Functions with OpenTelemetry for Go and Dynatrace.")
-* **.NET:** [Integrate on Google Cloud Functions .NET](opentelemetry-on-gcf-dotnet.md "Monitor Google Cloud Functions with OpenTelemetry for .NET and Dynatrace.")
+* **Node.js:** Integrate on Google Cloud Functions Node.js
+* **Python:** Integrate on Google Cloud Functions Python
+* **Go:** Integrate on Google Cloud Functions GoLang
+* **.NET:** Integrate on Google Cloud Functions .NET
 
 ## Known limitations
 
@@ -71,6 +71,6 @@ The Dynatrace Google Cloud Functions integration doesn't capture the IP addresse
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](../../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
-* [OneAgent platform and capability support matrix](../../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* Set up Dynatrace on Google Cloud
+* OneAgent platform and capability support matrix
 * [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

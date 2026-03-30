@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:11:26.513950
 Обзор функции Log — Query
 
 На этой странице описывается, как потребляется и тарифицируется возможность Log Management & Analytics — Query DPS.
-Обзор возможности, включая её основные функции, см. в разделе [Log Analytics (DPS)](../log-analytics.md "Узнайте, как рассчитывается потребление Dynatrace Log Analytics с использованием модели подписки Dynatrace Platform Subscription.").
+Обзор возможности, включая её основные функции, см. в разделе Log Analytics (DPS).
 
 Использование ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing** и ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** включено в состав Dynatrace.
 Эти приложения не генерируют потребление.
@@ -108,12 +108,12 @@ startHour = bin(timestamp, 1d)
 
 ### Отслеживание потребления и расходов через API
 
-Вы можете запрашивать метрики через [Environment API — Metrics API v2](../../../dynatrace-api/environment-api/metric-v2.md "Получайте информацию о метриках через Metrics v2 API.").
+Вы можете запрашивать метрики через Environment API — Metrics API v2.
 
 ## Связанные темы
 
-* [Log Analytics (DPS)](../log-analytics.md "Узнайте, как рассчитывается потребление Dynatrace Log Analytics с использованием модели подписки Dynatrace Platform Subscription.")
-* [Что такое Dynatrace Grail?](../../../platform/grail/dynatrace-grail.md "Grail — это хранилище данных Dynatrace, специально разработанное для данных наблюдаемости и безопасности и выступающее единым унифицированным хранилищем журналов, метрик, трассировок, событий и многого другого.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
-* [Лицензирование Dynatrace](../../../license.md "О модели лицензирования Dynatrace Platform Subscription (DPS) для всех возможностей Dynatrace.")
+* Log Analytics (DPS)
+* Что такое Dynatrace Grail?
+* Dynatrace Query Language
+* Лицензирование Dynatrace для всех возможностей Dynatrace.")
 * [Ценообразование Dynatrace](https://www.dynatrace.com/pricing/)

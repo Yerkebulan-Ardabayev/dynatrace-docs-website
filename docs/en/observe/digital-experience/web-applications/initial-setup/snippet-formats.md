@@ -10,7 +10,7 @@ scraped: 2026-03-02T21:21:35.206723
 * How-to guide
 * Published Jul 01, 2025
 
-The RUM JavaScriptâwhether [automatically injected](rum-injection.md "Configure automatic injection of the RUM JavaScript into the pages of your applications") or [manually inserted](set-up-agentless-real-user-monitoring.md "Set up agentless monitoring for your web applications.") into your web applicationâconsists of two key components:
+The RUM JavaScriptâwhether automatically injected or manually inserted into your web applicationâconsists of two key components:
 
 * **Monitoring code**: The JavaScript code that provides RUM capabilities such as capturing user actions.
 * **Configuration**: The application configuration that is initially used by the monitoring code. It is updated later via the RUM beacon response in case of configuration changes.
@@ -84,7 +84,7 @@ To configure script execution
 5. In the **JavaScript tag** section, set **Script execution attribute** to **async**, **defer**, or **No attribute**.
 6. Copy the snippet and insert it into your page.
 
-When fetching the JavaScript tag via the API, you can control script execution by passing a parameter. For details, see [GET JavaScript tag](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag.md "Retrieve the most recent JavaScript tag for manual insertion.").
+When fetching the JavaScript tag via the API, you can control script execution by passing a parameter. For details, see GET JavaScript tag.
 
 ##### Addition of the `crossorigin="anonymous"` attribute
 
@@ -101,7 +101,7 @@ To enable the addition of the `crossorigin="anonymous"` attribute
 5. In the **JavaScript tag** section, enable **Add the crossorigin=anonymous attribute**.
 6. Copy the snippet and insert it into your page.
 
-When fetching the JavaScript tag via the API, you can control the addition of the `crossorigin="anonymous"` attribute by passing a parameter. For details, see [GET JavaScript tag](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag.md "Retrieve the most recent JavaScript tag for manual insertion.").
+When fetching the JavaScript tag via the API, you can control the addition of the `crossorigin="anonymous"` attribute by passing a parameter. For details, see GET JavaScript tag.
 
 **OneAgent JavaScript tag** includes the configuration and links to an external file containing the monitoring code. It's available for both manual insertion and automatic injection.
 
@@ -148,9 +148,9 @@ To configure script execution for manual insertion
 5. In the **OneAgent JavaScript tag** section, set **Script execution attribute** to **async**, **defer**, or **No attribute**.
 6. Copy the snippet and insert it into your page.
 
-When fetching the OneAgent JavaScript tag via the API, you can control script execution by passing a parameter. For details, see [GET OneAgent JavaScript tag](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag.md "Retrieve the most recent OneAgent JavaScript tag for manual insertion.").
+When fetching the OneAgent JavaScript tag via the API, you can control script execution by passing a parameter. For details, see GET OneAgent JavaScript tag.
 
-**OneAgent JavaScript tag with SRI** lets you take advantage of the subresource integrity (SRI) browser feature to ensure that the monitoring code hasn't been altered, see [Use Subresource Integrity (SRI) for Real User Monitoring code](subresource-integrity.md "Use the Subresource Integrity (SRI) browser feature to ensure the integrity of Real User Monitoring code."). It includes configuration, a reference to an external file containing the monitoring code, and an integrity hash for this monitoring code. It is supported for both automatic injection and manual insertion.
+**OneAgent JavaScript tag with SRI** lets you take advantage of the subresource integrity (SRI) browser feature to ensure that the monitoring code hasn't been altered, see Use Subresource Integrity (SRI) for Real User Monitoring code browser feature to ensure the integrity of Real User Monitoring code."). It includes configuration, a reference to an external file containing the monitoring code, and an integrity hash for this monitoring code. It is supported for both automatic injection and manual insertion.
 
 [Get OneAgent JavaScript tag with SRI via API](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri.md)
 
@@ -195,7 +195,7 @@ To configure script execution for manual insertion
 5. In the **OneAgent JavaScript tag with SRI** section, set **Script execution attribute** to **async**, **defer** or **No attribute**.
 6. Copy the snippet and insert it into your page.
 
-When fetching the OneAgent JavaScript tag with SRI via the API, you can control script execution by passing a parameter. For details, see [GET OneAgent JavaScript tag with SRI](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri.md "Retrieve the most recent OneAgent JavaScript tag with SRI for manual insertion.").
+When fetching the OneAgent JavaScript tag with SRI via the API, you can control script execution by passing a parameter. For details, see GET OneAgent JavaScript tag with SRI.
 
 **Inline code** contains both the configuration and the RUM monitoring code, keeping the number of web requests at a minimum. Note that the Session Replay monitoring code is not inlined, so there will still be an additional request if you use Session Replay. If your website consists of many individual pages, using inline code may not be beneficial, as it increases the size of each document. However, it can be a suitable choice for single-page applications (SPAs).
 
@@ -226,9 +226,9 @@ The monitoring code is loaded and evaluated synchronously by the browser.
 
 The external file containing the full functionality of the monitoring code can be configured to load either synchronously or asynchronously using the `defer` attribute, see [Script execution](#code-snippet-script-execution).
 
-[Get code snippet via API](../../../../dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code/get-snippet-sync.md)
+Get code snippet via API
 
-[Get code snippet in deferred mode via API](../../../../dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code/get-snippet-async.md)
+Get code snippet in deferred mode via API
 
 ##### Updates
 

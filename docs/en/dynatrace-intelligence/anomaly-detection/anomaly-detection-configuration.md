@@ -27,7 +27,7 @@ Once configured and activated, the configuration observes the data and triggers 
 
 Data source provides a time series that is evaluated by Dynatrace Intelligence:
 
-* Previous Dynatrace A metric defines the time series. It can be a single metric defined by a metric key or a [metric expression](../../dynatrace-api/environment-api/metric-v2/metric-expressions.md "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.").
+* Previous Dynatrace A metric defines the time series. It can be a single metric defined by a metric key or a metric expression.
 
 If your data has a latency, you need to offset it in your configuration via the **Query offset** parameter. Specify the value in minutes.
 
@@ -43,9 +43,9 @@ You can configure the **Delay** parameter using **Minutes** or **Seconds**, but 
 
 Analyzer parameters define how Dynatrace Intelligence evaluates the data provided by the data source. The exact set of parameters depends on the type of the analysis:
 
-* [Auto-adaptive threshold](auto-adaptive-threshold.md "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.")âDynatrace calculates the threshold automatically and adapts it dynamically to your data's behavior.
-* [Seasonal baseline](../reference/ai-models/seasonal-baseline.md "How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.")âDynatrace creates a confidence band for data with seasonal patterns.
-* [Static threshold](static-thresholds.md "When to use a static threshold for your anomaly detection.")âthe threshold that doesn't change over time.
+* Auto-adaptive thresholdâDynatrace calculates the threshold automatically and adapts it dynamically to your data's behavior.
+* Seasonal baselineâDynatrace creates a confidence band for data with seasonal patterns.
+* Static thresholdâthe threshold that doesn't change over time.
 
 | Parameter | Description |
 | --- | --- |
@@ -119,4 +119,4 @@ You can provide additional parameters as key-value pairs. For a list of possible
 
 ## Related topics
 
-* [Metric events](metric-events.md "Learn about metric events in Dynatrace")
+* Metric events

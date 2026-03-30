@@ -14,7 +14,7 @@ scraped: 2026-03-05T21:32:29.846836
 
 Log Monitoring Classic
 
-For the newest Dynatrace version, see [Stream logs to Dynatrace with Fluent Bit](../../logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit.md "Integrate Fluent Bit to stream logs to Dynatrace.").
+For the newest Dynatrace version, see Stream logs to Dynatrace with Fluent Bit.
 
 You can send logs to Dynatrace using Fluent Bit. Configure Fluent Bit to send logs to Dynatrace generic ingest API.
 
@@ -28,9 +28,9 @@ You can send logs to Dynatrace using Fluent Bit. Configure Fluent Bit to send lo
 
 The Fluent Bit `http output` plugin allows you to forward your logs to the Dynatrace Log ingestion endpoint.
 
-1. Get a [Dynatrace API token](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") with the `logs.ingest` (Ingest Logs) scope.
+1. Get a Dynatrace API token with the `logs.ingest` (Ingest Logs) scope.
 2. [Deploy Fluent Bitï»¿](https://dt-url.net/zd034je).
-3. To send logs into the Dynatrace [Log ingestion](logs-classic-ingestion-api.md "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") endpoint, configure the [http output pluginï»¿](https://dt-url.net/0z034x4) through the configuration file.
+3. To send logs into the Dynatrace Log ingestion endpoint, configure the [http output pluginï»¿](https://dt-url.net/0z034x4) through the configuration file.
 4. In your main Fluent Bit configuration file, append the Output section with the following parameters:
 
 ```
@@ -78,7 +78,7 @@ tls.verify On
 
 You can place your API token in the header or as `GET` variable in URI (see example below).
 
-* For Dynatrace SaaS, the [Log ingestion](logs-classic-ingestion-api.md "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") endpoint is available in your environment.
+* For Dynatrace SaaS, the Log ingestion endpoint is available in your environment.
 
 * If [Environment ActiveGate](../../../ingest-from/dynatrace-activegate.md#agtypes "Understand the basic concepts related to ActiveGate.") is your choice for an endpoint in local environment, install ActiveGate instance.
 
@@ -150,6 +150,6 @@ For more configuration details, see [Amazon ECS Developer Guideï»¿](https://d
 
 ## Troubleshooting
 
-Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Monitoring (Logs Classic)](../lmc-troubleshooting.md "Fix issues related to the setup and configuration of Log Monitoring Classic.").
+Visit Dynatrace Community for troubleshooting guides, as well as see Troubleshooting Log Monitoring (Logs Classic).
 
 * [Troubleshooting logs ingested via Fluent Bitï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718)

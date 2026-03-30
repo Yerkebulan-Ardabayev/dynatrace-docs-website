@@ -10,7 +10,7 @@ scraped: 2026-03-06T21:14:29.180885
 * Latest Dynatrace
 * 9 мин. чтения
 
-После сохранения в Grail вы можете интерактивно запрашивать данные бизнес-событий и анализировать их с помощью [DQL](../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language."). DQL является отправной точкой для анализа, независимо от того, используете ли вы [Notebooks](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь аналитическими данными наблюдаемости --- в едином совместном настраиваемом рабочем пространстве."), [Dashboards](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") или DQL Query API (latest Dynatrace). Вы можете использовать результаты запросов интерактивно или закрепить их на дашборде в виде графиков, плиток или таблиц.
+После сохранения в Grail вы можете интерактивно запрашивать данные бизнес-событий и анализировать их с помощью DQL. DQL является отправной точкой для анализа, независимо от того, используете ли вы Notebooks, Dashboards или DQL Query API (latest Dynatrace). Вы можете использовать результаты запросов интерактивно или закрепить их на дашборде в виде графиков, плиток или таблиц.
 
 ## Запрос и анализ ваших данных
 
@@ -46,7 +46,7 @@ fetch bizevents, from:now()-24h, to:now()
 
 ### Общий объем торговых операций в долларах по временным интервалам: Линейный график
 
-Вы можете создавать метрики на основе интервалов. Этот пример запрашивает общий объем торговых операций в долларах за последние 24 часа с интервалом в пять минут. В этом примере используется команда DQL [makeTimeseries](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#makeTimeseries "Команды агрегации DQL") для построения временного ряда из меры (суммы объема в долларах), который затем можно использовать для визуализации в Notebooks или Dashboards.
+Вы можете создавать метрики на основе интервалов. Этот пример запрашивает общий объем торговых операций в долларах за последние 24 часа с интервалом в пять минут. В этом примере используется команда DQL makeTimeseries для построения временного ряда из меры (суммы объема в долларах), который затем можно использовать для визуализации в Notebooks или Dashboards.
 
 * Продажи активов через EasyTrade фиксируются типом события `com.easytrade.nginx.quick-sell`.
 * Объем торговых операций в долларах рассчитывается как количество проданных активов, умноженное на их цену.
@@ -198,7 +198,7 @@ fetch bizevents, from:now()-30d, to:now()
   | filter event.provider == "www.easytrade.com"
   ```
 
-  Команда [`filter`](../../platform/grail/dynatrace-query-language/commands/filtering-commands.md#filter "Команды фильтрации и поиска DQL") предоставляет записи бизнес-событий на основе определенного [провайдера событий](bo-events-capturing.md#configure-sources "Сбор бизнес-событий для Dynatrace Business Observability.").
+  Команда `filter` предоставляет записи бизнес-событий на основе определенного [провайдера событий](bo-events-capturing.md#configure-sources "Сбор бизнес-событий для Dynatrace Business Observability.").
 * **Строка 3**
 
   ```
@@ -233,7 +233,7 @@ fetch bizevents, from:now()-30d, to:now()
   | summarize {first_deposit_ts = takeFirst(deposit_ts), first_withdraw_ts = takeFirst(withdraw_ts)}, by:{`accountId`}
   ```
 
-  Команда [`summarize`](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "Команды агрегации DQL") группирует по аккаунту:
+  Команда `summarize` группирует по аккаунту:
 
   + Первую временную метку события депозита.
   + Первую временную метку события вывода средств.
@@ -257,7 +257,7 @@ fetch bizevents, from:now()-30d, to:now()
   | fields `accountId`, `Seconds From Deposit To Deposit`= timeDepositToDeposit
   ```
 
-  Команда [`fields`](../../platform/grail/dynatrace-query-language/commands/selection-and-modification-commands.md#fields "Команды выборки и модификации DQL") ограничивает вывод идентификатором аккаунта и временем между первым депозитом и первым выводом средств.
+  Команда `fields` ограничивает вывод идентификатором аккаунта и временем между первым депозитом и первым выводом средств.
 
 ### Бизнес-события в рабочие часы
 

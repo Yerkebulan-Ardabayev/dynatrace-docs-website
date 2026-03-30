@@ -38,7 +38,7 @@ The table below lists the verified and tested release versions:
 
 1
 
-A new Go version used in Dynatrace Operator is incompatible with the CRI-O version of OpenShift 4.8 and Kubernetes 1.21. See the required manual workaround in [Dynatrace Operator release notes version 0.13.0](../../whats-new/dynatrace-operator/dto-fix-0-13-0.md "Release notes for Dynatrace Operator, version 0.13.0").
+A new Go version used in Dynatrace Operator is incompatible with the CRI-O version of OpenShift 4.8 and Kubernetes 1.21. See the required manual workaround in Dynatrace Operator release notes version 0.13.0.
 
 2
 
@@ -46,17 +46,17 @@ Dynatrace Operator version 1.0.1 is recommended for Kubernetes 1.22 and 1.23. Up
 
 3
 
-[Classic Full-Stack monitoring](../setup-on-k8s/how-it-works/other-deployment-modes/classic-fullstack.md "In-depth description of Classic Full-Stack monitoring using Dynatrace Operator.") is supported only on worker nodes that run Red Hat Enterprise Linux. If worker nodes run Red Hat Enterprise Linux CoreOS instead, only [Full-stack observability](../setup-on-k8s/how-it-works/cloud-native-fullstack.md "In-depth description of full-stack observability using Dynatrace Operator.") is supported.
+Classic Full-Stack monitoring is supported only on worker nodes that run Red Hat Enterprise Linux. If worker nodes run Red Hat Enterprise Linux CoreOS instead, only Full-stack observability is supported.
 
 4
 
-Only [Application observability](../setup-on-k8s/how-it-works/application-monitoring.md "In-depth description of Application observability using the Dynatrace Operator.") and [Full-stack observability](../setup-on-k8s/how-it-works/cloud-native-fullstack.md "In-depth description of full-stack observability using Dynatrace Operator.") are supported. This is because worker nodes can run only Red Hat Enterprise Linux CoreOS. To learn more, see [Red Hat release notes (1.5.13.2)ï»¿](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes#ocp-4-19-rhel-worker-nodes-removed_release-notes).
+Only Application observability and Full-stack observability are supported. This is because worker nodes can run only Red Hat Enterprise Linux CoreOS. To learn more, see [Red Hat release notes (1.5.13.2)ï»¿](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes#ocp-4-19-rhel-worker-nodes-removed_release-notes).
 
 Full support is provided until a Kubernetes or OpenShift version reaches end of life. After that, Dynatrace provides maintenance support for approximately one year. End-of-support dates are announced in [End-of-support announcements](../../whats-new/technology/end-of-support-news.md#dto "End of support announcements for technologies supported by Dynatrace.").
 
 The main distinction between full support and maintenance support is that Dynatrace reduces the daily testing activities during the maintenance support period.
 
-During the full support and maintenance support periods, each encountered bug undergoes a backport assessment. Depending on the severity and change risk, the fix is either backported and released with a patch version or fixed in the next version. For details, refer to the relevant [Dynatrace release notes](../../whats-new.md "Read the product news and the release notes and find out which Documentation topics are new.").
+During the full support and maintenance support periods, each encountered bug undergoes a backport assessment. Depending on the severity and change risk, the fix is either backported and released with a patch version or fixed in the next version. For details, refer to the relevant Dynatrace release notes.
 
 ## Dynatrace Operator support
 
@@ -69,13 +69,13 @@ The Dynatrace Operator is available on the following architectures:
 
 1
 
-Only the [cloud native full stack deployment](../setup-on-k8s/deployment/full-stack-observability.md "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes"), [application monitoring](../setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"), and [host monitoring](../setup-on-k8s/deployment/other/host-monitoring.md "Deploy Dynatrace Operator in host monitoring mode to Kubernetes") are supported.
+Only the cloud native full stack deployment, application monitoring, and host monitoring are supported.
 
 In cases where issues related to the Dynatrace Operator cannot be replicated by Dynatrace on x86 or ARM architectures and are identified as specific to ppc64le, you need to reach out to `dt-operator@ibm.com` for further support. Additional information can be found in the associated open-source pull request for the Dynatrace Operator on [GitHubï»¿](https://dt-url.net/ev034k3).
 
 Dynatrace Operator is responsible for rollout and lifecycle management of various Dynatrace components in Kubernetes and OpenShift (including ActiveGate and OneAgent). Dynatrace Operator is an open-source project maintained on [GitHubï»¿](https://dt-url.net/d7034gj). It follows the `major.minor.patch` [semantic versioningï»¿](https://semver.org/) schema, with a release cadence of minor versions being released roughly every 2â3 months.
 
-The three latest Dynatrace Operator versions are tested with the latest Kubernetes and OpenShift versions. Additionally, we perform a backport assessment for any bug or vulnerability to analyze the severity and change risk of the fix. We recommend that you use the latest patch version, as the newly implemented features increment the minor version. For details, see the [Dynatrace Operator release notes](../../whats-new/dynatrace-operator.md "Release notes for Dynatrace Operator").
+The three latest Dynatrace Operator versions are tested with the latest Kubernetes and OpenShift versions. Additionally, we perform a backport assessment for any bug or vulnerability to analyze the severity and change risk of the fix. We recommend that you use the latest patch version, as the newly implemented features increment the minor version. For details, see the Dynatrace Operator release notes.
 
 All Dynatrace Operator versions that are not considered end-of-life are treated as being in maintenance mode, which includes our regular customer support processes. Versions in maintenance mode do not receive bug fixes and vulnerability backports. See end-of-support announcements on [End-of-support announcements](../../whats-new/technology/end-of-support-news.md#dto "End of support announcements for technologies supported by Dynatrace.").
 
@@ -136,7 +136,7 @@ Dynatrace Operator version 1.5.0 Dynatrace Operator version 1.5.1 Dynatrace Oper
 
 #### Issue
 
-When switching from using the CSI driver without `codeModulesImage` to using it with [node image pull](../setup-on-k8s/guides/deployment-and-configuration/node-image-pull.md "Configure node image pull"), ensure that the CSI driverâs filesystem does not contain a code module for the specified DynaKube. If it does, the CSI driver will fail and require manual intervention to recover.
+When switching from using the CSI driver without `codeModulesImage` to using it with node image pull, ensure that the CSI driverâs filesystem does not contain a code module for the specified DynaKube. If it does, the CSI driver will fail and require manual intervention to recover.
 
 * If this issue is encountered, reverting back to not using the `codeModulesImage` will make the CSI driver operational again.
 * You can use the `find` command to check for the downloaded code module for a DynaKube in the filesystem of the CSI `server` container:

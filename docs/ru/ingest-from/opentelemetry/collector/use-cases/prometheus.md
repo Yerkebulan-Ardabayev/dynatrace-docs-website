@@ -14,10 +14,10 @@ scraped: 2026-03-05T21:40:09.842786
   + [Dynatrace Collector](../../collector.md#dt-collector-dist "Узнайте о Dynatrace OTel Collector.")
   + OpenTelemetry [Contrib](../../collector.md#collector-contrib "Узнайте о Dynatrace OTel Collector.")
   + [Пользовательская версия Builder](../../collector.md#collector-builder "Узнайте о Dynatrace OTel Collector.")
-* [URL эндпоинта Dynatrace API](../../otlp-api.md "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."), на который должны экспортироваться данные
+* URL эндпоинта Dynatrace API, на который должны экспортироваться данные
 * [API-токен](../../otlp-api.md#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа (требуется только для SaaS и ActiveGate)
 
-См. [Развёртывание Collector](../deployment.md "Как развернуть Dynatrace OTel Collector.") и [Конфигурация Collector](../configuration.md "Как настроить OpenTelemetry Collector.") для информации о настройке вашего Collector с приведённой ниже конфигурацией.
+См. Развёртывание Collector и Конфигурация Collector для информации о настройке вашего Collector с приведённой ниже конфигурацией.
 
 ## Демонстрационная конфигурация
 
@@ -243,10 +243,10 @@ exporters: [otlp_http]
 
 ## Ограничения
 
-Метрики принимаются по протоколу OpenTelemetry (OTLP) через [Dynatrace OTLP API](../../otlp-api.md "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") и подчиняются ограничениям API.
+Метрики принимаются по протоколу OpenTelemetry (OTLP) через Dynatrace OTLP API и подчиняются ограничениям API.
 Дополнительную информацию см. в:
 
-* [Ограничения метрик OpenTelemetry](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются.")
+* Ограничения метрик OpenTelemetry
 * [Маппинг метрик Dynatrace](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md#dynatrace-mapping "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются.")
 
 Чтобы избежать дублирования данных, убедитесь, что только один OpenTelemetry Collector собирает данные с заданного целевого объекта (например, брокера Kafka или эндпоинта Prometheus).
@@ -257,5 +257,5 @@ exporters: [otlp_http]
 
 ## Связанные темы
 
-* [Обогащение принятых данных полями Dynatrace](../../../extend-dynatrace/extend-data.md "Узнайте, как автоматически обогащать ваши телеметрические данные полями, специфичными для Dynatrace.")
-* [Обогащение OTLP-запросов данными Kubernetes](kubernetes/k8s-enrich.md "Настройте OpenTelemetry Collector для обогащения OTLP-запросов данными Kubernetes.")
+* Обогащение принятых данных полями Dynatrace
+* Обогащение OTLP-запросов данными Kubernetes

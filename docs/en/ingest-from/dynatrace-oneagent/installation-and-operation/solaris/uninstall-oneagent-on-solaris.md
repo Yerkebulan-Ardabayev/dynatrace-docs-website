@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:20:14.876301
 * 1-min read
 * Published Nov 13, 2025
 
-To uninstall OneAgent on Solaris, revert any configuration changes that were made when OneAgent was [installed](install-oneagent-on-solaris.md "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).").
+To uninstall OneAgent on Solaris, revert any configuration changes that were made when OneAgent was installed.").
 
 * Remove environment variables that are set.
   For example:
@@ -25,7 +25,7 @@ To uninstall OneAgent on Solaris, revert any configuration changes that were mad
   + `httpd.conf LoadModule`
 * Delete any downloaded files.
 
-Although these configuration options are common, your environment may require additional steps based on your configuration during install. For details specific to your setup, refer to the [installation guide](install-oneagent-on-solaris.md "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).") and reverse the steps you applied for your applications.
+Although these configuration options are common, your environment may require additional steps based on your configuration during install. For details specific to your setup, refer to the installation guide.") and reverse the steps you applied for your applications.
 
 Reinstalling OneAgent
 

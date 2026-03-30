@@ -13,11 +13,11 @@ scraped: 2026-03-05T21:39:34.642707
 
 Release date: September 20th, 2025
 
-This page provides an overview of the patches included in Dynatrace Operator version 1.7.1. For detailed information on new features and other enhancements, see the [release notes for version 1.7](dto-fix-1-7-0.md "Release notes for Dynatrace Operator, version 1.7.0").
+This page provides an overview of the patches included in Dynatrace Operator version 1.7.1. For detailed information on new features and other enhancements, see the release notes for version 1.7.
 
 ## Resolved issues
 
-* Reintroduced the `mark for termination` event, which was previously removed in [Dynatrace Operator version 1.6.0](dto-fix-1-6-0.md#removal-and-deprecation-notices "Release notes for Dynatrace Operator, version 1.6.0"), to address [challenges](dto-fix-1-7-0.md#known-issues "Release notes for Dynatrace Operator, version 1.7.0") in reliably detecting node terminations in setups facilitating auto-scaler. This feature requires your API token to have the `DataExport` token scope.
+* Reintroduced the `mark for termination` event, which was previously removed in Dynatrace Operator version 1.6.0, to address [challenges](dto-fix-1-7-0.md#known-issues "Release notes for Dynatrace Operator, version 1.7.0") in reliably detecting node terminations in setups facilitating auto-scaler. This feature requires your API token to have the `DataExport` token scope.
 
 ## Known issues
 
@@ -29,7 +29,7 @@ We have identified the following known issues with Dynatrace Operator versions 1
 
 ## Removal and deprecation notices
 
-* The deprecated Dynatrace OneAgent Operator has been removed from the operatorhub.io catalog. Please use our [Dynatrace Operator](../../ingest-from/setup-on-k8s/quickstart.md#deploy-dynatrace-operator "Deploy Dynatrace Operator on Kubernetes") instead.
+* The deprecated Dynatrace OneAgent Operator has been removed from the operatorhub.io catalog. Please use our Dynatrace Operator instead.
 
 * The Helm repository located in `dynatrace/helm-charts` is deprecated and will stop receiving updates in a future release! If you are still using it,
   please update the URL to `dynatrace/dynatrace-operator` or switch to the OCI registry-based approach. Update the Helm repository URL with the following commands:
@@ -59,8 +59,8 @@ We have identified the following known issues with Dynatrace Operator versions 1
   + Use the `.spec.oneagent.(cloudNativeFullStack|classicFullStack|hostMonitoring).version` field to pin the version on a per-DynaKube basis.
 
 * CSI sidecar binaries, located in `/usr/local/bin/csi-node-driver-registrar` and `/usr/local/bin/livenessprobe`, are now deprecated and will be removed in a future version of Dynatrace Operator.
-* [Support for OpenShift 4.10 and 4.11](../../ingest-from/technology-support/support-model-and-issues.md "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues") ended in March 2025. As a result, Dynatrace Operator 1.7 will no longer support these versions.
+* Support for OpenShift 4.10 and 4.11 ended in March 2025. As a result, Dynatrace Operator 1.7 will no longer support these versions.
 
 ## Upgrade from Dynatrace Operator version 1.6
 
-In Dynatrace Operator version 1.7, the DynaKube API versions `v1beta1` and `v1beta2` are no longer served. Applying DynaKube resources using these versions will fail. Update your DynaKube manifests to `v1beta5` before upgrading the Dynatrace Operator. For more information, see [Migration guide for DynaKube API versions](../../ingest-from/setup-on-k8s/guides/migration/dynakube.md "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.").
+In Dynatrace Operator version 1.7, the DynaKube API versions `v1beta1` and `v1beta2` are no longer served. Applying DynaKube resources using these versions will fail. Update your DynaKube manifests to `v1beta5` before upgrading the Dynatrace Operator. For more information, see Migration guide for DynaKube API versions.

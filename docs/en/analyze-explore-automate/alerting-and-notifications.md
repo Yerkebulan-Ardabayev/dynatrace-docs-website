@@ -18,7 +18,7 @@ This page explains key features such as anomaly detection, problem detection, an
 
 ## Alerting
 
-[Dynatrace Intelligence](../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.") automatically detects anomalies in your environment, generates Davis events for individual issues, and groups them into problems. These problems provide a clear, contextual overview that allows faster root cause analysis and resolution.
+Dynatrace Intelligence automatically detects anomalies in your environment, generates Davis events for individual issues, and groups them into problems. These problems provide a clear, contextual overview that allows faster root cause analysis and resolution.
 
 ### Automatic detection
 
@@ -28,7 +28,7 @@ Dynatrace uses AI-powered anomaly detection to continuously monitor your environ
 * Service downtime
 * Unusual metric patterns or behaviors
 
-You can adjust the sensitivity of anomaly detection to match your environment and reduce false positives or missed anomalies. For details, see [Adjust the sensitivity of anomaly detection](../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection.md "Learn how to adapt the sensitivity of problem detection in Dynatrace.").
+You can adjust the sensitivity of anomaly detection to match your environment and reduce false positives or missed anomalies. For details, see Adjust the sensitivity of anomaly detection.
 
 ### Custom alerts
 
@@ -67,7 +67,7 @@ The trigger defines when a workflow runs and sends a notification, for example, 
 
 You can configure trigger conditions to control which problems or events generate notifications. We recommend filtering based on the following attributes:
 
-* [Primary Grail fields](../semantic-dictionary/tags/primary-fields.md)
+* Primary Grail fields
 * Security context
 * Custom attributes
 
@@ -84,7 +84,7 @@ Dynatrace supports a wide range of integrations, including:
 * Microsoft Teams
 * ServiceNow
 
-For a complete list, see [Workflows Connectors](workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
+For a complete list, see Workflows Connectors.
 
 ### Simple workflows vs standard workflows
 
@@ -111,7 +111,7 @@ Examples include:
 
 ## Related topics
 
-* [Automated threat-alert triaging](../secure/use-cases/automated-threat-alert-triaging.md "Use case scenario for automating threat-alert triaging with Dynatrace.")
-* [CSPM Notification Automation](../secure/use-cases/notification-automation.md "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.")
-* [Set up alerts based on events extracted from logs](logs/lma-use-cases/lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.")
-* [Set up custom alerts based on metrics extracted from logs](logs/lma-use-cases/lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.")
+* Automated threat-alert triaging
+* CSPM Notification Automation
+* Set up alerts based on events extracted from logs
+* Set up custom alerts based on metrics extracted from logs

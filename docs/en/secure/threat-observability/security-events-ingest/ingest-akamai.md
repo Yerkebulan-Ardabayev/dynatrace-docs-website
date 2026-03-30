@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:23:55.514900
 * Extension
 * Updated on Aug 25, 2025
 
-This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the Grail security table migration guide.
 
 Ingest Akamai security logs and events into Dynatrace as security events.
 
@@ -27,8 +27,8 @@ Akamai products generate security events and detect suspicious network activity.
 
 With the ingested data, you can accomplish various use cases, such as
 
-* [Visualize and analyze security findings](../../use-cases/visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
-* [Automate and orchestrate security findings](../../use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* Visualize and analyze security findings
+* Automate and orchestrate security findings
 * Evaluate, triage, and investigate detection findings with [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../../threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts.")
 * Analyze network logs and detections Coming soon
 
@@ -50,7 +50,7 @@ See below for the [Akamai](#akamai) and [Dynatrace](#dt) requirements.
   + Optional To query the extracted security events: `storage:security.events:read`.
 * Tokens:
 
-  + Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see [Dynatrace API - Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+  + Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see Dynatrace API - Tokens and authentication.
 
 ## Activation and setup
 
@@ -77,7 +77,7 @@ See below for the [Akamai](#akamai) and [Dynatrace](#dt) requirements.
 
      | filter event.provider=="Akamai"
      ```
-4. Once the extension is installed and working, you can access and manage it in Dynatrace via ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. For details, see [About Extensions](../../../ingest-from/extensions/concepts.md "Learn more about the concept of Dynatrace Extensions.").
+4. Once the extension is installed and working, you can access and manage it in Dynatrace via ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. For details, see About Extensions.
 
 ## Details
 
@@ -85,7 +85,7 @@ See below for the [Akamai](#akamai) and [Dynatrace](#dt) requirements.
 
 ![how it works](https://dt-cdn.net/images/image-20250212-154515-3094-1f68916ee3.png)
 
-Dynatrace integration with Akamai is an [extension](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") running on Dynatrace ActiveGate. Once you enable and configure the Dynatrace Akamai extension
+Dynatrace integration with Akamai is an extension running on Dynatrace ActiveGate. Once you enable and configure the Dynatrace Akamai extension
 
 1. It periodically reaches out to [Akamai SIEM APIï»¿](https://dt-url.net/wbe3xyb) and fetches the security events.
 2. The raw data is ingested into Dynatrace as logs. If security event extraction is configured, detection events are ingested in addition to the logs mapped to the [Dynatrace Semantic Dictionaryï»¿](https://dt-url.net/z1c3xsm).
@@ -105,7 +105,7 @@ In addition to the extension, you have the following integration options:
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see Events powered by Grail.
 
 ## Feature sets
 
@@ -130,8 +130,8 @@ self-monitoring
 
 ### Which data model is used for the security logs and events coming from Akamai SIEM integration?
 
-* [Logs](../../../semantic-dictionary/model/log.md "Get to know the Semantic Dictionary models related to Log Analytics.") - all the Akamai SIEM data is ingested as logs. The log follows the basic schema for logs with a few relevant extensions of namespaces, such as [`geo`](../../../semantic-dictionary/fields.md#geolocation "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types."), [`http`](../../../semantic-dictionary/fields.md#http "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types."), and [`url`](../../../semantic-dictionary/fields.md#url "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
-* [Detection finding events](../../../semantic-dictionary/model/security-events.md#detection-finding-events "Get to know the Semantic Dictionary models related to security events.")
+* Logs - all the Akamai SIEM data is ingested as logs. The log follows the basic schema for logs with a few relevant extensions of namespaces, such as [`geo`](../../../semantic-dictionary/fields.md#geolocation "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types."), [`http`](../../../semantic-dictionary/fields.md#http "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types."), and [`url`](../../../semantic-dictionary/fields.md#url "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
+* Detection finding events
 
 ### Which extension fields are added on top of the core fields of the events ingested from Akamai?
 
@@ -166,6 +166,6 @@ Ingest logs and security events from Akamai products.](https://www.dynatrace.com
 
 ## Related topics
 
-* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Security events](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")
+* OpenPipeline
+* Dynatrace Query Language
+* Security events

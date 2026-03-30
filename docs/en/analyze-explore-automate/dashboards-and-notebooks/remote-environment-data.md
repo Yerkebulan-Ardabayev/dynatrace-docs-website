@@ -12,7 +12,7 @@ scraped: 2026-03-03T21:23:07.840378
 * 9-min read
 * Updated on Dec 02, 2024
 
-With [code tiles](dashboards-new/components/dashboard-component-code.md "Add code to your Dynatrace dashboards.") (in Dashboards) and [code sections](notebooks.md#code "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (in Notebooks), you can consolidate data from multiple Dynatrace environments.
+With code tiles (in Dashboards) and [code sections](notebooks.md#code "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (in Notebooks), you can consolidate data from multiple Dynatrace environments.
 
 There are two authentication mechanisms available for fetching data from remote environments:
 
@@ -39,8 +39,8 @@ The example JavaScript code described below uses the credential vault for secure
 
 Before you create the code for your dashboard tile or notebook section:
 
-* Create a Dynatrace platform token on the environment you want to fetch the data from. For details, see [Platform tokens](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
-* Create a Dynatrace credential vault entry on the primary environment to store the platform token that is later used in the code tile or section for authentication. For details, see [Credential vault](../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault.").
+* Create a Dynatrace platform token on the environment you want to fetch the data from. For details, see Platform tokens.
+* Create a Dynatrace credential vault entry on the primary environment to store the platform token that is later used in the code tile or section for authentication. For details, see Credential vault.
 * Allow external requests
 
   External requests enable outbound network connections from your Dynatrace environment to external services. They allow you to control access to public endpoints from the AppEngine with app functions and functions in Dashboards, Notebooks, and Automations.
@@ -54,7 +54,7 @@ Before you create the code for your dashboard tile or notebook section:
 
   For example, you could add `myenv8132.apps.dynatrace.com` to allow just that environment, or use a wildcard like `*.apps.dynatrace.com` to allow all your Dynatrace environments at once.
 
-For more about allowlisting, see [Allow IP ranges that can access your environment](../../manage/account-management/settings/ip-allowlist.md "Allow IP ranges that can access your environment using the CIDR notation.")
+For more about allowlisting, see Allow IP ranges that can access your environment
 
 ### Code
 
@@ -77,7 +77,7 @@ Now that you have completed the [prerequisites](#prerequisites) and reviewed the
 * Replace `CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX` with your own credential ID.
 * Replace `https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute?enrich:metric-metadata` with your own URL.
 * Customize the `"fetch logs | limit 1"` query according to your needs.
-* Run your code in a [code tile](dashboards-new/components/dashboard-component-code.md "Add code to your Dynatrace dashboards.") (Dashboards) or [code section](notebooks.md#code "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (Notebooks).
+* Run your code in a code tile (Dashboards) or [code section](notebooks.md#code "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (Notebooks).
 
   If you encounter errors when you run your code, they will be caught and logged with the prefixes `[DynatraceAuthError]`, `[CredentialVaultError]`, or `[ExecutionError]` for easier debugging.
 
@@ -285,8 +285,8 @@ The example JavaScript code described below uses the credential vault for secure
 
 Before you create the code for your dashboard tile or notebook section:
 
-* Create an OAuth client. For details, see [OAuth clients](../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
-* Create a Dynatrace credential vault entry on the primary environment to store the OAuth token that is later used in the code tile or section for authentication. For details, see [Credential vault](../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault.").
+* Create an OAuth client. For details, see OAuth clients.
+* Create a Dynatrace credential vault entry on the primary environment to store the OAuth token that is later used in the code tile or section for authentication. For details, see Credential vault.
 * Allow external requests
 
   External requests enable outbound network connections from your Dynatrace environment to external services. They allow you to control access to public endpoints from the AppEngine with app functions and functions in Dashboards, Notebooks, and Automations.
@@ -300,7 +300,7 @@ Before you create the code for your dashboard tile or notebook section:
 
   For example, you could add `myenv8132.apps.dynatrace.com` to allow just that environment, or use a wildcard like `*.apps.dynatrace.com` to allow all your Dynatrace environments at once.
 
-For more about allowlisting, see [Allow IP ranges that can access your environment](../../manage/account-management/settings/ip-allowlist.md "Allow IP ranges that can access your environment using the CIDR notation.")
+For more about allowlisting, see Allow IP ranges that can access your environment
 
 ### Code
 
@@ -331,7 +331,7 @@ Now that you have completed the [prerequisites](#prerequisites) and reviewed the
 * Replace `CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX` with your own credential ID.
 * Replace `https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute?enrich:metric-metadata` with your own URL.
 * Customize the `"fetch logs | limit 1"` query according to your needs.
-* Run your code in a [code tile](dashboards-new/components/dashboard-component-code.md "Add code to your Dynatrace dashboards.") (Dashboards) or [code section](notebooks.md#code "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (Notebooks).
+* Run your code in a code tile (Dashboards) or [code section](notebooks.md#code "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (Notebooks).
 
   If you encounter errors when you run your code, they will be caught and logged with the prefixes `[DynatraceAuthError]`, `[CredentialVaultError]`, or `[ExecutionError]` for easier debugging.
 

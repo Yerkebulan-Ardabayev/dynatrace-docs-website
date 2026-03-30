@@ -87,4 +87,4 @@ Access validation insight links using DQL:
 
 ## Next steps
 
-Take a look at [Guardian execution context](execution-context.md "Filter Site Reliability Guardian validation events triggered by an external tool using the context information provided by the tool."). Use events from your Continuous Integration (CI) tool to send them to Dynatrace, which, in turn, can trigger validation of your guardian in a workflow.
+Take a look at Guardian execution context. Use events from your Continuous Integration (CI) tool to send them to Dynatrace, which, in turn, can trigger validation of your guardian in a workflow.

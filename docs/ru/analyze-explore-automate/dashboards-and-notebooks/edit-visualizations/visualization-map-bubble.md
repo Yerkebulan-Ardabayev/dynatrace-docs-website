@@ -85,7 +85,7 @@ record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, re
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host** — открывает выбранный элемент в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   В общем случае, если есть рекомендованные приложения для открытия выбранного элемента, меню предлагает прямые ссылки на эти приложения, а затем опцию **Open with** для выбора другого целевого приложения.
-* **Open with** — подробнее см. в разделе [Переходы и навигация](../drilldowns-and-navigation.md "Детализация из Dashboards и Notebooks с помощью ссылок на основе намерений или URL-адресов.").
+* **Open with** — подробнее см. в разделе Переходы и навигация.
 
 ## Заголовок
 

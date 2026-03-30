@@ -193,6 +193,6 @@ fetch spans| filter span.events~"err"
 
 ## Связанные темы
 
-* [Приложение Anomaly Detection](../anomaly-detection-app.md "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
-* [Руководство по написанию DQL для обнаружения аномалий](davis-ad-dql-best-practice.md "Лучшие практики создания DQL-запросов для пользовательских оповещений Anomaly Detection.")
+* Приложение Anomaly Detection
+* Dynatrace Query Language
+* Руководство по написанию DQL для обнаружения аномалий

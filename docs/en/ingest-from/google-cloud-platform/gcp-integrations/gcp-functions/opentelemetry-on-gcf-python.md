@@ -16,7 +16,7 @@ The `dynatrace-opentelemetry-gcf` [packageï»¿](https://pypi.org/project/dynat
 
 ## Prerequisites
 
-Ensure that you have followed the **initial configuration** steps described in [Set up OpenTelemetry monitoring for Google Cloud Functions](opentelemetry-on-gcf.md "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.") before using the packages below.
+Ensure that you have followed the **initial configuration** steps described in Set up OpenTelemetry monitoring for Google Cloud Functions before using the packages below.
 
 * dynatrace-opentelemetry-gcf version 1.247+
 * Cloud Functions product version: 1st gen, 2nd gen
@@ -196,5 +196,5 @@ Because code running outside the function execution can be terminated at any tim
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](../../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
+* Set up Dynatrace on Google Cloud
 * [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

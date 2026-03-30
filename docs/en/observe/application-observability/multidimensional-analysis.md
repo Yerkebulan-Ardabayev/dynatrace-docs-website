@@ -23,13 +23,13 @@ To access the **Multidimensional analysis** page
 
 ## Pre-defined views
 
-[### Top web requests
+### Top web requests
 
-Analyze the most frequent and most expensive web requests.](multidimensional-analysis/top-web-requests.md "Learn how to analyze all web requests across all of your services using Dynatrace.")[### Top database statements
+Analyze the most frequent and most expensive web requests.### Top database statements
 
-Analyze the most frequent and most expensive database statements.](multidimensional-analysis/top-database-statements.md "Understand the database activity across your environment with Dynatrace.")[### Exception analysis
+Analyze the most frequent and most expensive database statements.### Exception analysis
 
-Understand and analyze all code-level exceptions.](multidimensional-analysis/exception-analysis.md "Learn how Dynatrace can help you see which exceptions occurred in your environment during a selected analysis timeframe.")
+Understand and analyze all code-level exceptions.
 
 ## Data source
 
@@ -64,7 +64,7 @@ The chart shows the top 15 dimensions (all other dimensions are aggregated into 
 In the **Actions** column of the table, you can select:
 
 * **Filter** ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") to filter the view for the specified dimension.
-* **More** (**â¦**) to access further analysis options from the [**Analyze** menu](services-classic/context-specific-drill-down.md#analyze-menu "Learn about easy navigation and filtering for services analysis.").
+* **More** (**â¦**) to access further analysis options from the **Analyze** menu.
 
 For timeframes containing data older than 10 days, you can turn on **Show data retention** to better understand which data is available for which period directly from the chart.
 
@@ -74,13 +74,13 @@ Once the view is configured, you can save it for quick access in the future. Jus
 
 Dynatrace provides several views out of the box:
 
-* [Exception analysis](multidimensional-analysis/exception-analysis.md "Learn how Dynatrace can help you see which exceptions occurred in your environment during a selected analysis timeframe.")
-* [Top database statements](multidimensional-analysis/top-database-statements.md "Understand the database activity across your environment with Dynatrace.")
-* [Top web requests](multidimensional-analysis/top-web-requests.md "Learn how to analyze all web requests across all of your services using Dynatrace.")
+* Exception analysis
+* Top database statements
+* Top web requests
 
 ## Calculated service metric
 
-You can save the configured view as a calculated service metric, which you can use just like any other Dynatrace metric, for example for [charting](../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") or [data export via API](../../dynatrace-api/environment-api/metric-v2/get-data-points.md "Read data points of one or multiple metrics via Metrics v2 API.").
+You can save the configured view as a calculated service metric, which you can use just like any other Dynatrace metric, for example for charting or data export via API.
 
 Only new data is written to calculated metrics; retrospective data is not included.
 
@@ -105,10 +105,10 @@ To create a calculated service metric from a multidimensional analysis view
 7. Optional If needed, customize the metric key.
 
    Once a metric is created, you can't change its key.
-8. Optional If you want to fine-tune your metric, select **Advanced options** to configure additional parameters of the metric. For details, see [Calculated metrics for services](services/calculated-service-metric.md "Learn how to create a calculated metric based on web requests.").
+8. Optional If you want to fine-tune your metric, select **Advanced options** to configure additional parameters of the metric. For details, see Calculated metrics for services.
 9. Select **Create metric**.
 
 ## Related topics
 
-* [Service metrics API](../../dynatrace-api/configuration-api/calculated-metrics/service-metrics.md "Manage calculated service metrics via the Dynatrace configuration API.")
-* [Calculated metrics for services](services/calculated-service-metric.md "Learn how to create a calculated metric based on web requests.")
+* Service metrics API
+* Calculated metrics for services

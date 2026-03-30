@@ -18,7 +18,7 @@ Dynatrace Operator can automatically configure the OpenTelemetry OTLP exporter f
 
 ### Provide a data ingest token
 
-You need to provide a [data ingest token](../deployment/tokens-permissions.md#dataIngestToken "Configure tokens and permissions to monitor your Kubernetes cluster") to the Dynatrace Operator. This token is passed to your application as part of the OTLP exporter configuration.
+You need to provide a data ingest token to the Dynatrace Operator. This token is passed to your application as part of the OTLP exporter configuration.
 
 ### Update your DynaKube resource
 
@@ -526,4 +526,4 @@ feature.dynatrace.com/otlp-exporter-configuration-set-no-proxy: "false"
 
 ## Related topics
 
-* [DynaKube parameters for Dynatrace Operator](../reference/dynakube-parameters.md "List the available parameters for setting up Dynatrace Operator on Kubernetes.")
+* DynaKube parameters for Dynatrace Operator

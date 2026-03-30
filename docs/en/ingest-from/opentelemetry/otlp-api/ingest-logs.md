@@ -52,8 +52,8 @@ Each log record from the ingested batch is mapped to a single Dynatrace log reco
 
 All attributes should preferably map to **semantic attributes** for Dynatrace to interpret them correctly.
 
-* Logs on Grail: All attributes can be used in queries, though Semantic Dictionary helps Dynatrace Intelligence AI in the interpretation of the logs. Refer to the [Semantic Dictionary](../../../semantic-dictionary.md "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.") for more details.
-* Log Monitoring Classic: Refer to the [Semantic attributes (Logs Classic)](../../../analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api/log-classic-semantic-attributes.md "Supported semantic attributes that are indexed in Log Monitoring Classic.") for more details.
+* Logs on Grail: All attributes can be used in queries, though Semantic Dictionary helps Dynatrace Intelligence AI in the interpretation of the logs. Refer to the Semantic Dictionary for more details.
+* Log Monitoring Classic: Refer to the Semantic attributes (Logs Classic) for more details.
 
 ## Data types
 
@@ -92,7 +92,7 @@ Map processing depends on the data model used. See [Log ingestion API processing
 
 ## Ingestion limits
 
-See [Log Management and Analytics default limits](../../../analyze-explore-automate/logs/lma-limits.md "Default limits for the latest version of Dynatrace Log Management and Analytics.") and [Log Monitoring default limits (Logs Classic)](../../../analyze-explore-automate/log-monitoring/log-monitoring-limits.md "Default limits for the latest version of Dynatrace Log Monitoring.") for the limits applied to ingested log requests, their attributes, and their attribute values.
+See Log Management and Analytics default limits and Log Monitoring default limits (Logs Classic) for the limits applied to ingested log requests, their attributes, and their attribute values.
 
 ## Log ingestion API processing
 
@@ -109,7 +109,7 @@ Escaping in output examples is for visualization purposes only. `\"` is billed a
 
 The raw data model transforms the content of structured logs as described in the sections below. All the following examples apply to Log ingestion API endpoints available on Environment ActiveGate and SaaS.
 
-When using log shippers such as [Fluentbit](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit.md "Integrate Fluent Bit to stream logs to Dynatrace."), [Fluentd](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s.md "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.") or [Logstash](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash.md "Integrate Logstash to stream logs from nodes and pods to Dynatrace."), avoid using JSON parsers on the shipper side and let Dynatrace handle the JSON parsing instead. This approach reduces processing overhead on your log shipper and ensures consistent parsing behavior.
+When using log shippers such as Fluentbit, Fluentd or Logstash, avoid using JSON parsers on the shipper side and let Dynatrace handle the JSON parsing instead. This approach reduces processing overhead on your log shipper and ensures consistent parsing behavior.
 
 #### Maps and arrays in attributes
 
@@ -205,7 +205,7 @@ These attributes are merged with those provided in the OpenTelemetry log request
 * All query parameters passed to the Log ingestion API endpoint are added to the log record attributes.
 * If a parameter key appears multiple times, all values are captured as an array attribute.
 * Keys and values follow the same attribute parsing rules as log request attributes.
-* Certain parameters are processed by the API for internal purposes and never appear as log record attributes, even if explicitly provided (such as those used in the **XâDynatraceâOptions** header). For the complete list of reserved parameter names and their processing behavior, see the [API documentation](../../../dynatrace-api/environment-api/opentelemetry/post-logs.md#parameters "Send OpenTelemetry logs to Dynatrace via API.").
+* Certain parameters are processed by the API for internal purposes and never appear as log record attributes, even if explicitly provided (such as those used in the **XâDynatraceâOptions** header). For the complete list of reserved parameter names and their processing behavior, see the API documentation.
 
 #### Example
 
@@ -259,4 +259,4 @@ For multi-value attributes, the attribute key contributes to billing only once, 
 
 ## Related topics
 
-* [OpenTelemetry logs ingest API](../../../dynatrace-api/environment-api/opentelemetry/post-logs.md "Send OpenTelemetry logs to Dynatrace via API.")
+* OpenTelemetry logs ingest API

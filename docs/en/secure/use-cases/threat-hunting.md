@@ -34,17 +34,17 @@ As a security analyst, you want to understand if this is related to malicious ac
 
 ## Prerequisites
 
-* [Set up Kubernetes observability with Dynatrace Operator](../../ingest-from/setup-on-k8s/deployment/other/classic-full-stack.md "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes")
+* Set up Kubernetes observability with Dynatrace Operator
 * Set up AWS logging to CloudWatch:
 
   + [Set up EKS Cluster loggingï»¿](https://dt-url.net/va038gi)
   + [Set up VPC Flow loggingï»¿](https://dt-url.net/ya238ol)
-  + [Set up K8S DNS logging](../../ingest-from/amazon-web-services/integrate-into-aws/aws-eks/k8s-dns-logs.md "Learn how to ingest Kubernetes-related DNS logs from AWS to Dynatrace.")
-* [Stream logs via Amazon Data Firehose](../../ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose.md "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.")
+  + Set up K8S DNS logging
+* Stream logs via Amazon Data Firehose
 * Basic knowledge of
 
-  + [Dynatrace Query Language (DQL)](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-  + [Dynatrace Pattern Language (DPL)](../../platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.")
+  + Dynatrace Query Language (DQL)
+  + Dynatrace Pattern Language (DPL)
   + How DNS name resolving works in Kubernetes clusters
 
 ## Investigation path 1: Analyze Kubernetes audit logs
@@ -54,13 +54,13 @@ Open [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6
 
 1. Set the timeframe
 
-In the [timeframe section](../investigations/define-timeframes.md#selector "Adjust time ranges for data analysis and event correlation in Investigations."), set the timeframe from `2024-02-13 16:00:00` to `2024-02-13 18:59:59`, when the unauthorized requests occurred.
+In the timeframe section, set the timeframe from `2024-02-13 16:00:00` to `2024-02-13 18:59:59`, when the unauthorized requests occurred.
 
 ![set the timeframe](https://dt-cdn.net/images/2024-03-06-08-15-45-1914-2f0de669a4.png)
 
 2. Fetch Kubernetes cluster audit logs
 
-1. Kubernetes audit logs are forwarded to Dynatrace with `aws.log_group` and `log_stream` values attached. To fetch all the unique AWS CloudWatch log groups that are ingested to Dynatrace, copy-paste the following [DQL query](../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.") in the query input.
+1. Kubernetes audit logs are forwarded to Dynatrace with `aws.log_group` and `log_stream` values attached. To fetch all the unique AWS CloudWatch log groups that are ingested to Dynatrace, copy-paste the following DQL query in the query input.
 
    ```
    fetch logs
@@ -90,13 +90,13 @@ In the [timeframe section](../investigations/define-timeframes.md#selector "Adju
 
 4. Inspect the content
 
-In the query results table, right-click on any cell in the **content** field and select **View field details** to view the raw content of the field. For details, see [Explore data in the original format](../investigations/enhance-results.md#view-details "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
+In the query results table, right-click on any cell in the **content** field and select **View field details** to view the raw content of the field. For details, see Explore data in the original format.
 
 ![Inspect the content](https://dt-cdn.net/images/2024-03-07-16-43-25-1546-aa18860a77.png)
 
 5. Extract fields from JSON
 
-1. In the query results table, right-click on any cell in the **Content** field and select [**Extract fields**](../investigations/extract-fields.md#field "Pull specific data points from logs in Investigations.") to navigate to [DPL Architect](../../platform/grail/dynatrace-pattern-language/dpl-architect.md "Extract fields with Dynatrace Pattern Language Architect.").
+1. In the query results table, right-click on any cell in the **Content** field and select **Extract fields** to navigate to DPL Architect.
 2. Select **Saved patterns**.
 3. In **Dynatrace patterns**, select **k8s** > **audit**.
 
@@ -138,9 +138,9 @@ In the query results table, right-click on any cell in the **content** field and
 
 To find out which IPs have unauthorized activity, you need to
 
-* [Expand](../../platform/grail/dynatrace-query-language/commands/structuring-commands.md#expand "DQL structuring commands") the source IP array
-* [Summarize](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "DQL aggregation commands") the results with the relevant fields extracted previously
-* [Filter](../../platform/grail/dynatrace-query-language/commands/filtering-commands.md#filter "DQL filter and search commands") the results to view only unauthorized requests (`401`) and forbidden requests (`403`)
+* Expand the source IP array
+* Summarize the results with the relevant fields extracted previously
+* Filter the results to view only unauthorized requests (`401`) and forbidden requests (`403`)
 
 1. In the query input, add the following DQL snippet, then select **Run** to execute the query.
 
@@ -166,7 +166,7 @@ It looks like you found the origin of your security notification:
 
 Both IP addresses need to be analyzed further, but the one with a `403` response and 2090 attempts is more critical and requires special attention.
 
-To save the IPs as [evidence](../investigations/manage-evidence.md "Collect and preserve investigation artifacts in Investigations."), you can add the first IP (`198.51.100.2`) to a preset evidence list and the second one (`172.31.29.138`) to a new customized evidence list:
+To save the IPs as evidence, you can add the first IP (`198.51.100.2`) to a preset evidence list and the second one (`172.31.29.138`) to a new customized evidence list:
 
 1. Right-click on `198.51.100.2`, then select **Add to evidence list** > **Suspicious IPs**.
 2. Right-click on `172.31.29.138`, select **Add to evidence list** > **New evidence list** and enter a name, for example, "Suspicious pod".
@@ -184,7 +184,7 @@ To understand what the pod did and which other service logs you need for your in
 
    ![VPC flow logs](https://dt-cdn.net/images/2024-03-06-16-11-40-1905-ed76689a2c.png)
 
-   The node in the query tree has changed its icon, which means youâre in the middle of editing the query. You can either revert to the original query to update the results table or execute the modified query. When you run the modified query, a new node is created with the respective query and its results. You can [give the node a distinctive name and color](../investigations/query-tree.md "Visualize and structure complex queries in Investigations.") to recognize it later.
+   The node in the query tree has changed its icon, which means youâre in the middle of editing the query. You can either revert to the original query to update the results table or execute the modified query. When you run the modified query, a new node is created with the respective query and its results. You can give the node a distinctive name and color to recognize it later.
 3. In the query input, remove the `summarize` command, then select **Run** to execute the modified query.
 
    ![execute modified query](https://dt-cdn.net/images/2024-03-07-18-21-06-1913-6f988f1771.png)
@@ -297,7 +297,7 @@ There could be quite a lot of DNS requests in the results table. For a better un
 
 As there are thousands of DNS requests towards that particular domain, you may want to aggregate the data to determine how to proceed further.
 
-1. In the query results, select the **type** column header, then select [**Summarize**](../investigations/enhance-results.md#aggregate "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
+1. In the query results, select the **type** column header, then select **Summarize**.
 2. Select **Run** to execute the query.
 
    ![Summarize by type](https://dt-cdn.net/images/2024-03-07-10-40-41-399-c7c4bf8285.png)
@@ -403,8 +403,8 @@ From here on, the complexity of the investigation will only grow, and the abilit
 
 ## Related topics
 
-* [Analyze AWS CloudTrail logs with Investigations](analyze-aws-cloudtrail-logs-with-security-investigator.md "Analyze CloudTrail logs and find potential security issues with Dynatrace.")
-* [Analyze Amazon API Gateway access logs with Investigations](analyze-aws-api-gateway-access-logs-with-security-investigator.md "Monitor and identify errors in your Amazon API Gateway access logs with Dynatrace.")
-* [Detect threats against your AWS Secrets with Investigations](detect-threats-against-aws-secrets-with-security-investigator.md "Monitor and identify potential threats against your AWS Secrets with Dynatrace.")
-* [Resolve incidents faster with Investigations templates](resolve-incidents-faster-with-templates.md "Speed up your log-related investigations with Investigations templates.")
-* [Operationalize DQL query results with Investigations](operationalize-query-results.md "Build DQL queries from your query results faster and more conveniently with Dynatrace Investigations.")
+* Analyze AWS CloudTrail logs with Investigations
+* Analyze Amazon API Gateway access logs with Investigations
+* Detect threats against your AWS Secrets with Investigations
+* Resolve incidents faster with Investigations templates
+* Operationalize DQL query results with Investigations

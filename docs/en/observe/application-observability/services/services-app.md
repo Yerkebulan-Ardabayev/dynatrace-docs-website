@@ -36,7 +36,7 @@ scraped: 2026-03-06T21:09:35.629907
 
 Overlay current failure patterns against baseline periods to immediately identify regressions. The visualization distinguishes between different failure types and severities, helping teams prioritize based on user impact.
 
-Also, refer to the [Failure Analysis](failure-analysis.md "Failure Analysis helps you quickly detect, investigate, and resolve service failures in Dynatrace.") use case.
+Also, refer to the Failure Analysis use case.
 
 ![Failure analysis comparing timeframes](https://dt-cdn.net/images/failure-analysis-comparing-timeframes-1174-f966ba23d7.png)
 
@@ -56,7 +56,7 @@ Filter service views across releases and dozens of facets, including Kubernetes 
 
 Track response time to understand typical behavior versus worst-case scenarios. Analyze performance trends across different periods to identify exactly when a degradation began and what was the reason for it. Correlate latency changes with deployment events or traffic pattern shifts to quickly pinpoint the cause of performance regressions.
 
-For details, see [Response time analysis](response-time-analysis.md "Response time analysis helps you quickly the key contributors to slow service performance in Dynatrace.").
+For details, see Response time analysis.
 
 ![Response time analysis comparisons](https://dt-cdn.net/images/response-time-analysis-comparisons-with-p-50-p-90-1062-916cc69f80.png)
 
@@ -123,11 +123,11 @@ Remember that a query executing thousands of times with a modest duration can im
 
 ![Outbound calls tab](https://dt-cdn.net/images/scr-20260204-oxkt-1998-bc116aaf86.png)
 
-URLs with variables in the path name still result in unusable data aggregations. For guidance on reducing cardinality in outbound calls, refer to the processing examples in [Reduce span-based and metric-based cardinality](../../../platform/openpipeline/use-cases/reduce-span-metric-cardinality.md "Leverage three different views in the Services app to normalize span and metric data, ensuring aggregations and analysis remain reliable and usable.").
+URLs with variables in the path name still result in unusable data aggregations. For guidance on reducing cardinality in outbound calls, refer to the processing examples in Reduce span-based and metric-based cardinality.
 
 ## Concepts
 
-Service-related concepts, including distributed traces and spans, are central concepts in Dynatrace observability. Understanding these concepts enables effective monitoring and analysis of distributed systems. See [Service-related concepts](services-concepts.md "Understand application observability, services, and distributed tracing concepts.").
+Service-related concepts, including distributed traces and spans, are central concepts in Dynatrace observability. Understanding these concepts enables effective monitoring and analysis of distributed systems. See Service-related concepts.
 
 ## Tutorials
 
@@ -143,6 +143,6 @@ Get a hands-on experience with ![Services](https://dt-cdn.net/hub/logos/services
 
 ## Related topics
 
-* [Services](../services.md "Learn how to monitor and analyze your services, define and use request attributes, and more.")
-* [Distributed Tracing](../distributed-tracing.md "Trace and analyze in real time highly distributed systems with Grail.")
-* [Failure Analysis](failure-analysis.md "Failure Analysis helps you quickly detect, investigate, and resolve service failures in Dynatrace.")
+* Services
+* Distributed Tracing
+* Failure Analysis

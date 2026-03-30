@@ -22,7 +22,7 @@ To install the Dynatrace IMS module:
 1. Install the IMS module into the Control Region of each IMS DB/DC and DCCTL system that you want to monitor. This is enough to cover all message processing regions associated with the Control Region.
    Note that installing the IMS module into a DBCTL only system is not supported.
 2. You need to add the Dynatrace exit to each IMS Connect that you want to monitor.
-3. You need to add the [z/OS Java module](install-zos-java.md#middleware "Set up Java monitoring on z/OS using the Java module.") to each IMS SOAP Gateway you want to monitor.
+3. You need to add the z/OS Java module to each IMS SOAP Gateway you want to monitor.
 
 IMS restart
 
@@ -39,7 +39,7 @@ Add the authorized Dynatrace dataset `<hlq>.SZDTAUTH` to the IMS Connect job STE
 * If you use IMS Connect Extensions, concatenate SZDTAUTH after the IMS Connect Extensions library.
 * If you use a locally developed HWSTECL0 exit, concatenate SZDTAUTH ahead of the dataset that contains the local exit.
 
-The IMS Connect exit can be enabled to create PurePath nodes in a distributed trace. Activate the required [OneAgent feature](../../../oneagent-features.md "Manage OneAgent features globally and per process group.") **z/OS IMS Connect**.
+The IMS Connect exit can be enabled to create PurePath nodes in a distributed trace. Activate the required OneAgent feature **z/OS IMS Connect**.
 
 * If the IMS Connect exit is configured to create PurePath nodes, the exit will connect to the default zDC subsystem name. The target zDC subsystem name can be overridden by specifying the following DDNAME and keyword parameter in the IMS Connect startup JCL:
 
@@ -624,7 +624,7 @@ ZDTI036W ZDTIII15 0000000 20221103 10.51 VER 1.255.0 ABEND at offset 007874.
 ZDTI033W Successful ABEND recovery, agent disabled.
 ```
 
-Different or additional messages might be issued if abnormal conditions are encountered by the recovery process (for example, when dynamic storage cannot be obtained, retry is not permitted, or no SDWA was passed). All of the messages related to the ABEND recovery process are documented in the [z/OS module messages](../operation/zos-code-module-messages.md "Messages that are created by the Dynatrace z/OS modules.") section.
+Different or additional messages might be issued if abnormal conditions are encountered by the recovery process (for example, when dynamic storage cannot be obtained, retry is not permitted, or no SDWA was passed). All of the messages related to the ABEND recovery process are documented in the z/OS module messages section.
 
 A Software (SFT) Error Record further describing the ABEND is usually written to the z/OS system SYS1.LOGREC data set. You should run the z/OS EREP utility program to print the Software (SFT) Error Record associated with the ABEND.
 

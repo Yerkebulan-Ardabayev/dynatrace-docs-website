@@ -22,9 +22,9 @@ If an ActiveGate is configured, then OneAgent automatically uploads the memory d
 
 ## Before you begin
 
-* To trigger memory dumps, you need the [**View sensitive request data**](../../../manage/identity-access-management/permission-management/role-based-permissions.md#environment "Role-based permissions") user permission.
+* To trigger memory dumps, you need the **View sensitive request data** user permission.
 * To store memory dumps, your application server must have adequate space.
-* To access persisted memory dumps via Dynatrace web UI, [configure an ActiveGate to store memory dumps in a centralized location](memory-dump-analysis/configure-an-activegate-for-memory-dump-storage.md "Learn how to enable storage of memory dumps on an ActiveGate."). To learn more about memory dump retention time, see [Data retention periods](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#memory-dumps "Check retention times for various data types.").
+* To access persisted memory dumps via Dynatrace web UI, configure an ActiveGate to store memory dumps in a centralized location. To learn more about memory dump retention time, see [Data retention periods](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#memory-dumps "Check retention times for various data types.").
 
 ## Trigger memory dumps
 
@@ -64,9 +64,9 @@ Node.js memory dumps can be opened in Google Chrome's integrated memory heap sna
 ## Limitations
 
 * .NET memory dumps are not supported in Alpine Linux based containers.
-* Memory dump uploads are not supported for both [Kubernetes Applicationâonly monitoring](../../../ingest-from/setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") and [Kubernetes Cloud Native Full Stack monitoring](../../../ingest-from/setup-on-k8s/deployment/full-stack-observability.md "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes").
+* Memory dump uploads are not supported for both Kubernetes Applicationâonly monitoring and Kubernetes Cloud Native Full Stack monitoring.
 
-  This is because OneAgent runs in a container with a readâonly filesystem (OneAgent binary directory `/opt/dynatrace/oneagent-paas` is mounted as readâonly), so Dynatrace cannot write the memory dump files it needs. At the same time, the `DATA_STORAGE` installer parameter used to override the dump directory is [not supported in containerâbased deployments](../../../ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). Therefore, it's not possible to change the dump location to a writable path. As a result, memory dump collection is not possible in Kubernetes environments monitored with Applicationâonly monitoring or Cloud Native Full Stack.
+  This is because OneAgent runs in a container with a readâonly filesystem (OneAgent binary directory `/opt/dynatrace/oneagent-paas` is mounted as readâonly), so Dynatrace cannot write the memory dump files it needs. At the same time, the `DATA_STORAGE` installer parameter used to override the dump directory is not supported in containerâbased deployments. Therefore, it's not possible to change the dump location to a writable path. As a result, memory dump collection is not possible in Kubernetes environments monitored with Applicationâonly monitoring or Cloud Native Full Stack.
 
 ## FAQ
 
@@ -93,15 +93,15 @@ Yes. Because from time to time an ActiveGate endpoint might not be accessible to
 * You can enable remote access to the ActiveGate by changing the public endpoints.  
   To learn how to configure a new endpoint, see:
 
-  + [Enable the memory dump module](../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md#mem_dump_mod "Learn which ActiveGate properties you can configure based on your needs and requirements.")
-  + [Configure ActiveGate for memory dump storage](memory-dump-analysis/configure-an-activegate-for-memory-dump-storage.md "Learn how to enable storage of memory dumps on an ActiveGate.")
+  + Enable the memory dump module
+  + Configure ActiveGate for memory dump storage
 * If remote access to the ActiveGate is not possible, you can download the memory dump file manually from the ActiveGate host.
 
   + To access the ActiveGate host, use a protocol that allows you to transfer files (such as sFTP or SSH).
-  + To download the memory dump file, you need to [learn the location of the file](memory-dump-analysis/configure-an-activegate-for-memory-dump-storage.md#specify-dedicated-dump-directory "Learn how to enable storage of memory dumps on an ActiveGate.").
+  + To download the memory dump file, you need to learn the location of the file.
   + To be able to identify the memory dump, unzip its file via a protocol that includes a `summary.json` (such as sFTP or SSH).
 
 ## Related topics
 
-* [Dynatrace ActiveGate](../../../ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.")
-* [Role-based permissions](../../../manage/identity-access-management/permission-management/role-based-permissions.md "Role-based permissions")
+* Dynatrace ActiveGate
+* Role-based permissions

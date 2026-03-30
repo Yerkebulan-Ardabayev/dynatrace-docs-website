@@ -15,7 +15,7 @@ The following options to assess coverage are available.
 
 ## Review system coverage
 
-On the **Overview** page, the **System coverage** donut chart helps you determine the percentage of monitored systems on which [Security Posture Management](../application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") is enabled.
+On the **Overview** page, the **System coverage** donut chart helps you determine the percentage of monitored systems on which Security Posture Management is enabled.
 
 ![system coverage](https://dt-cdn.net/images/2024-11-08-08-15-45-387-114cb209db.png)
 
@@ -25,7 +25,7 @@ If you later on disable Security Posture Management on your system, you keep the
 
 ### Improve system coverage
 
-To improve [Security Posture Management](../application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") coverage on your systems
+To improve Security Posture Management coverage on your systems
 
 1. On the **Overview** page, in the **My systems** table, search for systems labeled `Not enabled`.
 2. For each system you want to cover, select **Enable SPM**.
@@ -86,4 +86,4 @@ See below for the potential reasons why, on the **Overview** page, in **My syste
 
 ## Related topics
 
-* [Kubernetes Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.")
+* Kubernetes Security Posture Management

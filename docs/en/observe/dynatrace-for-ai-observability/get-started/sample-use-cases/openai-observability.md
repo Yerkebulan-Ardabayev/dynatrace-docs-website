@@ -98,7 +98,7 @@ Capturing request payload content with Dynatrace can be achieved by:
 
 * [Logging the information and capture the metrics and trace mapping directly from the log entries.](openai-observability.md#lplogs "Learn about Dynatrace for OpenAI Observability, how Dynatrace observes OpenAI SaaS services, and much more.")
 * [Sending custom metrics by using the OneAgent metric ingest channel.](openai-observability.md#lpcustom-metrics "Learn about Dynatrace for OpenAI Observability, how Dynatrace observes OpenAI SaaS services, and much more.")
-* [Capturing parts of the request payload using business events.](../../../business-observability/bo-event-processing/bo-processing-classic-pipeline.md "Process business event data in Dynatrace via the classic pipeline.")
+* Capturing parts of the request payload using business events.
 
 ## Observe OpenAI request cost using logs
 

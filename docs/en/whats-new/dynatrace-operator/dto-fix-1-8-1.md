@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:37:12.752343
 
 Release date: February 9th, 2026
 
-This page provides an overview of the patches included in Dynatrace Operator version 1.8.1. For detailed information on new features and other enhancements, please refer to the [release notes for version 1.8](dto-fix-1-8-0.md "Release notes for Dynatrace Operator, version 1.8.0").
+This page provides an overview of the patches included in Dynatrace Operator version 1.8.1. For detailed information on new features and other enhancements, please refer to the release notes for version 1.8.
 
 ## Resolved issues
 
@@ -43,7 +43,7 @@ This page provides an overview of the patches included in Dynatrace Operator ver
 
 ## Upgrade from Dynatrace Operator version 1.7
 
-* Specifying an image in `.spec.templates.otelCollector.imageRef` is now mandatory when [telemetry ingest](../../ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest.md "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") is enabled.
+* Specifying an image in `.spec.templates.otelCollector.imageRef` is now mandatory when telemetry ingest is enabled.
 * Deprecated DynaKube API versions `v1beta1` and `v1beta2` have been removed from the DynaKube CRD schema.
 * DynaKube API version `v1beta3` is no longer served and will be removed in a future Dynatrace Operator release. See: [Migration guide for DynaKube API versions](../../ingest-from/setup-on-k8s/guides/migration/dynakube.md#deprecation "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.")
 * Upgrading Dynatrace Operator may restart the ActiveGate, the OneAgent DaemonSet (host agent), and Log Monitoring DaemonSet.

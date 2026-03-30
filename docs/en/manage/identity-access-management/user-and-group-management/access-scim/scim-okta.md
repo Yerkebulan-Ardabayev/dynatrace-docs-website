@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:31:30.983595
 * 1-min read
 * Published May 14, 2020
 
-This page describes the IdP (**Okta**) end of your **SCIM** SSO configuration, not the Dynatrace end. Use it as part of the entire [SCIM configuration procedure](../access-scim.md "SCIM") for Dynatrace SaaS if you're using Okta.
+This page describes the IdP (**Okta**) end of your **SCIM** SSO configuration, not the Dynatrace end. Use it as part of the entire SCIM configuration procedure for Dynatrace SaaS if you're using Okta.
 
 While we do our best to provide you with current information, Dynatrace has no control over changes that may be made by third-party providers. Always refer to official third-party documentation from your IdP as your primary source of information for third-party products.
 

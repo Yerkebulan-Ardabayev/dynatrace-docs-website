@@ -11,16 +11,16 @@ updated: 2026-02-09
 * 1-min read
 * Updated on Nov 18, 2025
 
-Dynatrace supports Oracle Solaris (x86 and SPARC) for Java, Apache HTTP server and IBM HTTP server. If your infrastructure is based on these technologies you can use Dynatrace OneAgent to effectively monitor your hosts, services, and user experience. For analytical information about the supported OneAgent capabilities for Solaris, see the [OneAgent platform and capability support matrix](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.").
+Dynatrace supports Oracle Solaris (x86 and SPARC) for Java, Apache HTTP server and IBM HTTP server. If your infrastructure is based on these technologies you can use Dynatrace OneAgent to effectively monitor your hosts, services, and user experience. For analytical information about the supported OneAgent capabilities for Solaris, see the OneAgent platform and capability support matrix.
 
 ### Installation
 
-[Install OneAgent](../../../../ru/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris.md "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).")
+Install OneAgent.")
 
 ### Operation
 
-[Troubleshoot](../../../../ru/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/troubleshoot-oneagent-installation-on-solaris.md "Find out how to solve problems related to installing OneAgent on Solaris.")
+Troubleshoot
 
-[Update OneAgent](../../../../ru/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/update-oneagent-on-solaris.md "Learn how you can update Dynatrace OneAgent on Solaris.")
+Update OneAgent
 
-[Uninstall OneAgent](../../../../ru/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/uninstall-oneagent-on-solaris.md "Find out how to configure Dynatrace to stop monitoring applications of different technologies that run on Solaris (x86 and SPARC).")
+Uninstall OneAgent.")

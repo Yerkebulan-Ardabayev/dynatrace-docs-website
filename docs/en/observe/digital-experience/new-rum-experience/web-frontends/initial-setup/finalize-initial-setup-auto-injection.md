@@ -11,7 +11,7 @@ scraped: 2026-03-05T21:35:05.243068
 * How-to guide
 * Published Jan 29, 2026
 
-After [setting up a new auto-injected frontend](set-up-auto-injected-frontend.md "Learn how to set up an auto-injected web frontend in the New RUM Experience."), the charts in [![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals**](../../experience-vitals.md "The Experience Vitals app provides an entry point for monitoring web and mobile frontends.") should begin displaying data within ten minutes if your frontend is receiving traffic. If they don't, your setup may require further configuration steps. This guide walks you through a series of checks to help you identify whether further configuration is needed.
+After setting up a new auto-injected frontend, the charts in [![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals**](../../experience-vitals.md "The Experience Vitals app provides an entry point for monitoring web and mobile frontends.") should begin displaying data within ten minutes if your frontend is receiving traffic. If they don't, your setup may require further configuration steps. This guide walks you through a series of checks to help you identify whether further configuration is needed.
 
 ## Check whether RUM data is mapped to a different frontend
 
@@ -60,7 +60,7 @@ When RUM data is mapped to a different frontend than expected, it is typically d
 
 To verify that the RUM JavaScript is injected into the HTML of your page, look for a script element containing the attributes `data-config`, `data-envconfig`, and `data-appconfig`. If you find such an element, the RUM JavaScript has been injected, including the configuration for the New RUM Experience. In this case, continue to [Verify that the monitoring code downloads successfully](#monitoring-code).
 
-If no script element with these attributes is present, check instead for a script element that contains the string `data-dtconfig`. If you find it, injection was successful, but the New RUM Experience is not active. See [Enable the New RUM Experience for your RUM Classic web applications](enable-new-rum-for-web-apps.md "Learn how to enable the New RUM Experience for your RUM Classic web applications") to learn how to activate it.
+If no script element with these attributes is present, check instead for a script element that contains the string `data-dtconfig`. If you find it, injection was successful, but the New RUM Experience is not active. See Enable the New RUM Experience for your RUM Classic web applications to learn how to activate it.
 
 ![Injected RUM JavaScript](https://dt-cdn.net/images/injected-rum-javascript-1046-e0d0d44dec.png)
 
@@ -99,11 +99,11 @@ In this case, configure the URL path as described in [Modify the monitoring code
 
 Monitoring code requests may be blocked by infrastructure components such as firewalls and proxies.
 
-Depending on how the component is configured, it is often possible to prevent the requests from being blocked by choosing a different [configuration for the monitoring code source](configure-monitoring-code-source.md "Configure the Real User Monitoring code source in the New RUM Experience to meet your specific requirements."). Otherwise, ensure that your infrastructure allows monitoring code requests to pass; see [Firewall constraints for RUM](../../rum-firewall-latest.md "Find out how to make sure that Real User Monitoring data passes through your firewall.").
+Depending on how the component is configured, it is often possible to prevent the requests from being blocked by choosing a different configuration for the monitoring code source. Otherwise, ensure that your infrastructure allows monitoring code requests to pass; see Firewall constraints for RUM.
 
 ## Verify that RUM beacons are being sent to Dynatrace
 
-The RUM JavaScript sends beacons containing captured data to the [beacon endpoint](configure-beacon-endpoint.md "Learn how to configure the beacon endpoint for web frontends to meet your specific requirements."). By default, the beacon endpoint for an auto-injected frontend is the OneAgent that instruments the web or app server hosting the application. If the New RUM Experience is active, beacons in a new format are sent alongside RUM Classic beacons to the same endpoint.
+The RUM JavaScript sends beacons containing captured data to the beacon endpoint. By default, the beacon endpoint for an auto-injected frontend is the OneAgent that instruments the web or app server hosting the application. If the New RUM Experience is active, beacons in a new format are sent alongside RUM Classic beacons to the same endpoint.
 
 To identify RUM beacons in your browser's developer tools, look for requests where the last URL path segment has the prefix `rb_`. Beacons in the new format include the query string parameter `pv=4`.
 
@@ -130,4 +130,4 @@ In this case, configure the URL path as described in [Modify the beacon endpoint
 
 Beacon requests may be blocked by infrastructure components such as firewalls and proxies. You can determine where a beacon request was handled by looking at the response bodyâbeacon requests that failed at the beacon endpoint return a JSON response containing the fields `status`, `handler`, `errorCode`, and `errorReason`, while beacons intercepted by a firewall or similar component do not include this JSON response.
 
-Depending on the configuration of these components, you can often ensure that requests reach the beacon endpoint by selecting a different [beacon endpoint configuration](configure-monitoring-code-source.md "Configure the Real User Monitoring code source in the New RUM Experience to meet your specific requirements."). Otherwise, ensure that your infrastructure allows RUM beacons to pass; see [Firewall constraints for RUM](../../rum-firewall-latest.md "Find out how to make sure that Real User Monitoring data passes through your firewall.").
+Depending on the configuration of these components, you can often ensure that requests reach the beacon endpoint by selecting a different beacon endpoint configuration. Otherwise, ensure that your infrastructure allows RUM beacons to pass; see Firewall constraints for RUM.

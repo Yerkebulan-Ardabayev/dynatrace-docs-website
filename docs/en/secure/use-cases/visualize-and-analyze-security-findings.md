@@ -15,9 +15,9 @@ Organizations use multiple security products and tools that generate security fi
 
 In this context, you can
 
-* Ingest security findings from your security tools (see [Security integrations](../threat-observability/security-events-ingest.md "Ingest external security data into Grail.")) or vulnerability finding events from Dynatrace-monitored processes (see [Third-party library events](../vulnerabilities/concepts.md#tpv-events "Concepts that are specific to the Dynatrace Vulnerabilities app.")) and map them to the [Dynatrace Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0), which makes events from different tools uniformly accessible with DQL.
+* Ingest security findings from your security tools (see Security integrations) or vulnerability finding events from Dynatrace-monitored processes (see [Third-party library events](../vulnerabilities/concepts.md#tpv-events "Concepts that are specific to the Dynatrace Vulnerabilities app.")) and map them to the [Dynatrace Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0), which makes events from different tools uniformly accessible with DQL.
 * View and analyze security findings across products and tools with our dashboards, which can also be a good foundation for tailoring further visual customization to meet your organization's posture analysis and reporting requirements.
-* [Query](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") ingested data in our dedicated apps.
+* Query ingested data in our dedicated apps.
 
 ## Target audience
 
@@ -33,7 +33,7 @@ Key use cases include:
 
 Depending on the ingestion source, follow the appropriate setup:
 
-* **Third-party security products**: [Set up a supported integration](../threat-observability/security-events-ingest.md "Ingest external security data into Grail.").
+* **Third-party security products**: Set up a supported integration.
 * **Dynatrace-monitored environments**: [Enable third-party vulnerability detection](../application-security/vulnerability-analytics.md#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") to ingest vulnerability finding events from third-party libraries.
 
 ## Get started
@@ -51,6 +51,6 @@ Example result:
 
 2. Analyze
 
-Open [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to [query](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") ingested data, using the data format in [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
+Open [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to query ingested data, using the data format in [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
 
 For a better understanding of how to build your queries, see [DQL query examples for ingested events](../threat-observability/dql-examples.md#ingested "DQL examples for security data powered by Grail.").

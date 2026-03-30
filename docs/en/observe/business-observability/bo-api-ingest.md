@@ -386,7 +386,7 @@ Example CloudEvents batch payload
 
 When you report business events, Dynatrace enriches them by adding more context. For example, Dynatrace adds information about your application, geolocation, device, and more. This pertains only to data ingested via the Business events API.
 
-For details, see [Business event enrichment](bo-events-enrichment.md "Check what properties Dynatrace automatically adds to reported business events.").
+For details, see Business event enrichment.
 
 ### Practice using the Business events API endpoint
 
@@ -1057,7 +1057,7 @@ To set up the policy
 
 1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/). If you have more than one account, select the account you want to manage.
 2. From the top menu bar, select **Identity & access management** > **Policy management**.
-3. Select **Create policy** and set up the policy name and description. You'll need this information when you [bind this policy to a user group](#bind-policy) later. Read more about policy management in [Manage IAM policies](../../manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt.md "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
+3. Select **Create policy** and set up the policy name and description. You'll need this information when you [bind this policy to a user group](#bind-policy) later. Read more about policy management in Manage IAM policies.
 4. Add the following policy statements for writing and querying business events.
 
    ```

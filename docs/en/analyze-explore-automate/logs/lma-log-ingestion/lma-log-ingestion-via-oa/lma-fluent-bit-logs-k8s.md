@@ -18,7 +18,7 @@ changelog:
 
 ---
 
-We recommend [Stream Kubernetes logs with Dynatrace Log Module](lma-logs-from-kubernetes.md "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") for log ingestion as it provides improved log detection, streamlined configuration, and better support for Kubernetes environments.
+We recommend Stream Kubernetes logs with Dynatrace Log Module for log ingestion as it provides improved log detection, streamlined configuration, and better support for Kubernetes environments.
 
 This page provides instructions for deploying and configuring Fluent Bit in your Kubernetes environment for log collection.
 
@@ -499,7 +499,7 @@ Follow the step-by-step guide to prepare the configuration for Fluent Bit.
 
    fieldPath: status.hostIP
    ```
-2. Get a [Dynatrace API token](../../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") with the `logs.ingest` (Ingest Logs) scope for the `DT_INGEST_TOKEN` environment variable.
+2. Get a Dynatrace API token with the `logs.ingest` (Ingest Logs) scope for the `DT_INGEST_TOKEN` environment variable.
 3. Update the `K8S_CLUSTER_NAME`, `DT_INGEST_HOST`, and `DT_INGEST_TOKEN` environment variables in the `values.yaml` file. Use the same cluster name that you have configured in Dynatrace for `K8S_CLUSTER_NAME`, and specify your SaaS or Managed endpoint as `DT_INGEST_HOST`.
 4. Optional Adapt the filter section in the `values.yaml` file to target specific namespaces or pods.
 5. Optional Be sure to remove or mask any sensitive information in the logs.
@@ -536,7 +536,7 @@ Ingested logs are accessible at the cluster, namespace, workload, and pod levels
 
 ## Troubleshooting
 
-Visit [Troubleshooting logs ingested via Fluent Bitï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718) in the Dynatrace Community, as well as see [Troubleshooting Log Management and Analytics](../../lma-troubleshooting.md "Fix issues related to the setup and configuration of Log Management and Analytics.").
+Visit [Troubleshooting logs ingested via Fluent Bitï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718) in the Dynatrace Community, as well as see Troubleshooting Log Management and Analytics.
 
 ### Check that Fluent Bit pods are running
 
@@ -630,4 +630,4 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 
 ## Related topics
 
-* [Stream logs to Dynatrace with Fluent Bit](../lma-stream-logs-with-fluent-bit.md "Integrate Fluent Bit to stream logs to Dynatrace.")
+* Stream logs to Dynatrace with Fluent Bit

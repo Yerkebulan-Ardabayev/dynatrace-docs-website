@@ -150,9 +150,9 @@ The following filter categories (each with multiple options) allow you to search
 
 * **Type**âmonitor type
 * **Ongoing issues**âmonitors with and without availability or performance problems
-* **Frontend application**âassociated [RUM](../../../digital-experience.md "Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.") application
+* **Frontend application**âassociated RUM application
 * **Status**âwhether monitors are active or inactive (disabled)
-* **Locations**â[public](../general-information/public-synthetic-locations.md "Learn about all currently available public Synthetic Monitoring locations.") and [private](../private-synthetic-locations/create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.") monitoring locations
+* **Locations**âpublic and private monitoring locations
 * **Device profile**âfor example, `desktop`, `Apple iPhone 8`
 * **Last editor**âID of the user who last edited a monitor
 * **Tags**âvalues or key-value pairs applied to monitors; you can choose tags to include or exclude from your search.
@@ -191,18 +191,18 @@ To create a monitor:
 1. Select **+New monitor** in the upper-right corner of ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**.
 2. Choose one of the following:
 
-* Browserâchoosing this option will allow you to create a browser monitor in **Synthetic Classic**. Learn how to [Create a single-URL browser monitor](../browser-monitors/create-a-single-url-browser-monitor.md "Learn how to set up a single-URL browser monitor to check the availability of your site.").
-* HTTPâchoosing this option will allow you to create an HTTP monitor in ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**. Learn how to [Create and configure an HTTP monitor](synthetic-app/create-and-configure-an-http-monitor.md "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.").
-* Network availabilityâchoosing this option will allow you to create a NAM monitor in ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**. Learn how to [Configure a NAM monitor](../network-availability-monitors/create-a-nam-monitor.md "Learn how to set up a NAM monitor to check the performance and availability of your site.").
+* Browserâchoosing this option will allow you to create a browser monitor in **Synthetic Classic**. Learn how to Create a single-URL browser monitor.
+* HTTPâchoosing this option will allow you to create an HTTP monitor in ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**. Learn how to Create and configure an HTTP monitor.
+* Network availabilityâchoosing this option will allow you to create a NAM monitor in ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**. Learn how to Configure a NAM monitor.
 
 ### Reporting
 
 For each monitor type, you can display a reporting page. See
 
 * NAM monitor [reporting](../network-availability-monitors/network-availability-monitoring.md#reporting "ICMP, TCP, and DNS synthetic monitors") in **Synthetic**.
-* HTTP monitor [reporting](synthetic-app/synthetic-details-for-http-monitors.md "Learn about the Synthetic details page for HTTP monitors.") in **Synthetic**.
-* HTTP monitor [reporting](../analysis-and-alerting/synthetic-details-for-http-monitors-classic.md "Learn about the Synthetic details page for HTTP monitors (classic).") in **Synthetic Classic**.
-* Browser monitor [reporting](../analysis-and-alerting/synthetic-details-for-browser-monitors.md "Analyze browser monitor and clickpath results on the Synthetic details page.") in **Synthetic Classic**.
+* HTTP monitor reporting in **Synthetic**.
+* HTTP monitor reporting.") in **Synthetic Classic**.
+* Browser monitor reporting in **Synthetic Classic**.
 
 ### Total downtime calculation for synthetic monitors
 

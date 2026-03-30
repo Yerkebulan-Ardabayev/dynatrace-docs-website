@@ -7,7 +7,7 @@ scraped: 2026-03-06T21:10:43.059904
 * Latest Dynatrace
 * 1-min read
 
-Dynatrace поддерживает полную установку OneAgent на IBM AIX. Аналитическую информацию о поддерживаемых возможностях OneAgent для AIX см. в [матрице поддержки платформ и возможностей OneAgent](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). Сведения о поддерживаемых версиях AIX приведены в разделе [OneAgent supported technologies and versions](../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+Dynatrace поддерживает полную установку OneAgent на IBM AIX. Аналитическую информацию о поддерживаемых возможностях OneAgent для AIX см. в матрице поддержки платформ и возможностей OneAgent. Сведения о поддерживаемых версиях AIX приведены в разделе OneAgent supported technologies and versions.
 
 ### Установка
 

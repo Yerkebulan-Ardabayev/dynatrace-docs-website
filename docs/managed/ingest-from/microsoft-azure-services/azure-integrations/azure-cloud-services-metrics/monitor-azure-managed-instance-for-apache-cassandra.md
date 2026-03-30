@@ -12,14 +12,14 @@ scraped: 2026-03-06T21:36:09.966171
 * 11-min read
 * Published Apr 18, 2022
 
-From both a data and infrastructure perspective, this [Prometheus Extension 2.0](../../../../../ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions.md "Learn how to create a Prometheus extension using the Extensions framework.") allows you to monitors and analyze the activity of your Apache Cassandra clusters. It visualize your cluster's health and shows metrics like CPU, connectivity, request latency, suspension, and garbage collection time. Additionally, with [Dynatrace Intelligence](../../../../../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence."), it automatically detects performance problems and provides precise root cause analysis.
+From both a data and infrastructure perspective, this Prometheus Extension 2.0 allows you to monitors and analyze the activity of your Apache Cassandra clusters. It visualize your cluster's health and shows metrics like CPU, connectivity, request latency, suspension, and garbage collection time. Additionally, with Dynatrace Intelligence, it automatically detects performance problems and provides precise root cause analysis.
 
 ## Prerequisites
 
 * [Azure Managed Instance for Apache Cassandraï»¿](https://docs.microsoft.com/en-us/azure/managed-instance-apache-cassandra/) created and running.
 * An Ubuntu virtual machine deployed inside the Azure Virtual Network where the managed instance is present.
 * Prometheus server set up to scrape Cassandra nodes and with [relabelï»¿](https://github.com/datastax/metric-collector-for-apache-cassandra/blob/master/dashboards/prometheus/prometheus.yaml) config in place.
-* [Environment ActiveGate version 1.231+](../../../../../ingest-from/dynatrace-activegate/installation/linux/linux-install-an-environment-activegate.md "Read the step-by-step procedure for installing an Environment ActiveGate on Linux.") with access to the Prometheus server
+* Environment ActiveGate version 1.231+ with access to the Prometheus server
 
 ## Setup
 
@@ -882,8 +882,8 @@ action: labeldrop
 
    prom/prometheus
    ```
-5. If your virtual machine is not available from the internet, install a [Dynatrace Environment ActiveGate](../../../../../ingest-from/dynatrace-activegate/installation/linux/linux-install-an-environment-activegate.md "Read the step-by-step procedure for installing an Environment ActiveGate on Linux.") on your Ubuntu VM.  
-   **Recommended:** Set the `group` [property](../../../../../ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate.md#group "Learn about the command-line parameters that you can use with ActiveGate on Linux.") on the installation.
+5. If your virtual machine is not available from the internet, install a Dynatrace Environment ActiveGate on your Ubuntu VM.  
+   **Recommended:** Set the `group` property on the installation.
 
 ## Enable and configure extension
 
@@ -907,7 +907,7 @@ action: labeldrop
 
 Available metrics are listed below.
 
-* Metric metadata and dimensions are available using [Data Explorer](../../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") after the extension is enabled.
+* Metric metadata and dimensions are available using Data Explorer after the extension is enabled.
 * See [Apache Cassandra Monitoring Documentationï»¿](https://cassandra.apache.org/doc/latest/cassandra/operating/metrics.html) for more information about collected metrics.
 
 ### Cluster node metrics

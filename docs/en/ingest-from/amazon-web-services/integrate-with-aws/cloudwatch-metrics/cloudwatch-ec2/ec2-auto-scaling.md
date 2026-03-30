@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:28:55.302593
 * 1-min read
 * Updated on Nov 15, 2023
 
-For information about differences between classic services and other services, see [Migrate from AWS classic (formerly 'built-in') services to cloud services](../aws-migration-guide.md "Migrate AWS classic services to their new versions.").
+For information about differences between classic services and other services, see Migrate from AWS classic (formerly 'built-in') services to cloud services.
 
 Dynatrace ingests metrics for multiple preselected namespaces, including Amazon EC2 Auto Scaling. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
 
@@ -24,7 +24,7 @@ To enable monitoring for this service, you need
 
 * For Dynatrace SaaS deployments, you need an Environment ActiveGate or a Multi-environment ActiveGate.
 
-  For role-based access in [SaaS](../../cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") deployment, you need an [Environment ActiveGate](../../../../dynatrace-activegate/installation.md "Learn how to configure ActiveGate") installed on an Amazon EC2 host.
+  For role-based access in [SaaS](../../cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") deployment, you need an Environment ActiveGate installed on an Amazon EC2 host.
 
 * Dynatrace version 1.200+
 * An updated [AWS monitoring policy](../../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.
@@ -322,7 +322,7 @@ JSON predefined policy for all supporting services
 }
 ```
 
-If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [All AWS cloud services](../../aws-all-services.md "Monitor all AWS cloud services with Dynatrace and view available metrics.") and, for each supporting service, a list of optional permissions specific to that service.
+If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for All AWS cloud services and, for each supporting service, a list of optional permissions specific to that service.
 
 Permissions required for AWS monitoring integration:
 
@@ -575,13 +575,13 @@ In this example, from the complete list of permissions you need to select
 
 This service monitors Amazon EC2 Auto Scaling. For this service you can see only instances with metrics.
 
-Remember that if you have Amazon EC2 Auto Scaling service configured, you canât have [Amazon EC2 Auto Scaling (built-in)](ec2-auto-scaling-builltin.md "Monitor Amazon EC2 Auto Scaling and view available metrics.") service turned on. To monitor extended metrics, you need to select **Amazon EC2 Auto Scaling**, otherwise Amazon EC2 Auto Scaling (built-in) will provide only a basic count of EC2 instances in the scaling group.
+Remember that if you have Amazon EC2 Auto Scaling service configured, you canât have Amazon EC2 Auto Scaling (built-in) service turned on. To monitor extended metrics, you need to select **Amazon EC2 Auto Scaling**, otherwise Amazon EC2 Auto Scaling (built-in) will provide only a basic count of EC2 instances in the scaling group.
 
 By default, Auto Scaling Group metrics aren't reported. To have them reported, you need to enable them in the **AWS Auto Scaling Group** console.
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see [Enable service monitoring](../../aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
+To learn how to enable service monitoring, see Enable service monitoring.
 
 ## View service metrics
 

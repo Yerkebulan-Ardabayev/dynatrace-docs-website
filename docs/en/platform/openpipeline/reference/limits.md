@@ -18,7 +18,7 @@ The following page lists the default limits of Dynatrace OpenPipeline.
 
 Limitations specific to configuration scopes might override OpenPipeline generic limits. For limits specific to the configuration scope, see
 
-* [Log Management and Analytics default limits](../../../analyze-explore-automate/logs/lma-limits.md "Default limits for the latest version of Dynatrace Log Management and Analytics.") and [Schema validation for logs](#schema-validation-logs)
+* Log Management and Analytics default limits and [Schema validation for logs](#schema-validation-logs)
 * [Fields with limits for metrics](#fields-metrics)
 * [Fields with limits for spans](#fields-spans)
 
@@ -58,7 +58,7 @@ Limitations specific to configuration scopes might override OpenPipeline generic
 
   2
 
-  OneAgent version 1.309Dynatrace Operator version 1.4.2+The field is available before the Processing stage if [OneAgent Log module](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes.md "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") is running in standalone mode.
+  OneAgent version 1.309Dynatrace Operator version 1.4.2+The field is available before the Processing stage if OneAgent Log module is running in standalone mode.
 
 ### Fields with limits for metrics
 

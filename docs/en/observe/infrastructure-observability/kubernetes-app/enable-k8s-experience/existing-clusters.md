@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:12:00.286290
 
 You have the option to enable all or specific Kubernetes clusters to benefit from the new Kubernetes experience.
 
-You could accomplish this using the Settings API with the [Kubernetes app schema table](../../../../dynatrace-api/environment-api/settings/schemas/builtin-app-transition-kubernetes.md "View builtin:app-transition.kubernetes settings schema table of your monitoring environment via the Dynatrace API."), or alternatively, by configuring the setting as described next.
+You could accomplish this using the Settings API with the Kubernetes app schema table, or alternatively, by configuring the setting as described next.
 
 To fully disable the Kubernetes experience and stop Kubernetes monitoring or related license consumption, make sure the setting is turned off at both the environment and cluster level.
 

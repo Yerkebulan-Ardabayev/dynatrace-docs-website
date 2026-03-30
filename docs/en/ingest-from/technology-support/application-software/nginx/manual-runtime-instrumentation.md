@@ -17,7 +17,7 @@ To avoid such a scenario, the NGINX code module tries to detect patched NGINX da
 
 Notification
 
-* Incompatible NGINX modules were detected in this process. Automatic instrumentation was disabled. To force instrumenting NGINX, see [Runtime instrumentation](manual-runtime-instrumentation.md "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.").
+* Incompatible NGINX modules were detected in this process. Automatic instrumentation was disabled. To force instrumenting NGINX, see Runtime instrumentation.
 
 ## Instrument a patched NGINX
 

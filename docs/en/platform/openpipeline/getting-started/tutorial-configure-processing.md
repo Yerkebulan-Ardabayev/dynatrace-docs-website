@@ -26,15 +26,15 @@ In this article, you'll learn how to create a new configuration for data records
 
 Prior knowledge
 
-* [Dynatrace Query Language](../../grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Data flow in OpenPipeline](../concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
-* [Processing in OpenPipeline](../concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* Dynatrace Query Language
+* Data flow in OpenPipeline
+* Processing in OpenPipeline
 
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* You have both `openpipeline:configurations:write` and `openpipeline:configurations:read` permissions. To learn how to set up the permissions, see [Permissions in Grail](../../grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
-* If you already use the log processing pipeline, ensure the [matching conditions are converted to DQL](../../../analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion.md "Convert your current log monitoring rules to DQL.").
+* You have both `openpipeline:configurations:write` and `openpipeline:configurations:read` permissions. To learn how to set up the permissions, see Permissions in Grail.
+* If you already use the log processing pipeline, ensure the matching conditions are converted to DQL.
 
 Key terms
 
@@ -109,8 +109,8 @@ Successfully configured routes are displayed in the dynamic routing list. Select
 
 ## Conclusion
 
-You have configured ingest sources, routing, and processing for records of a configuration scope via OpenPipeline. Once you [start ingesting](how-to-ingestion.md "How to ingest data for a configuration scope in OpenPipeline."), your data is processed as configured, stored in a Grail bucket, and available for analysis via Grail capabilities.
+You have configured ingest sources, routing, and processing for records of a configuration scope via OpenPipeline. Once you start ingesting, your data is processed as configured, stored in a Grail bucket, and available for analysis via Grail capabilities.
 
 ## Related topics
 
-* [OpenPipeline processing examples](../use-cases/processing-examples.md "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
+* OpenPipeline processing examples

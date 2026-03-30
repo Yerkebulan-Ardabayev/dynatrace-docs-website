@@ -18,16 +18,16 @@ Dynatrace version 1.230+
 Dynatrace Google Cloud metric integration in Google Cloud Functions is **not** supported anymore.
 
 If you're using this kind of deployment, you should switch to k8s-based Google Cloud integration as soon as possible.
-See [Migrate from Google Cloud Functions 1.0 to Google Cloud k8s 1.0](migrate-gcp-function-1-to-k8s-1.md "Migrate from Google Cloud Functions v1.0 to Google Cloud k8s v1.0.").
+See Migrate from Google Cloud Functions 1.0 to Google Cloud k8s 1.0.
 
-As an alternative to the [main deployment](deploy-k8.md "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster."), that provides Google Cloud monitoring for both metrics and logs, and where the deployment takes place in a GKE cluster, you can choose to set up monitoring for metrics only, in Google Cloud Cloud Function. Note that the Google Cloud Cloud Function deployment isn't recommended for large environments and doesn't support log forwarding.
+As an alternative to the main deployment, that provides Google Cloud monitoring for both metrics and logs, and where the deployment takes place in a GKE cluster, you can choose to set up monitoring for metrics only, in Google Cloud Cloud Function. Note that the Google Cloud Cloud Function deployment isn't recommended for large environments and doesn't support log forwarding.
 In this scenario, you will be able run the deployment script either in Google Cloud Shell or in bash. After installation, you'll get metrics, dashboards, and alerts for your configured services in Dynatrace.
 
-For other deployment options, see [Alternative deployment scenarios](../gcp-guide.md "Other options to set up log and/or metric monitoring for Google Cloud services").
+For other deployment options, see Alternative deployment scenarios.
 
 This page describes how to deploy version 1.0 of the Dynatrace Google Cloud integration in Google Cloud Cloud Function.
 
-* If you already have an [earlier version](../../legacy/deploy-with-google-cloud-function-legacy.md "Set up monitoring for Google Cloud services using a Google Cloud Function.") of the Google Cloud Monitor installed, you need to [migrate](migrate-gcp-function.md "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.").
+* If you already have an earlier version of the Google Cloud Monitor installed, you need to migrate.
 
 ## Prerequisites
 
@@ -379,7 +379,7 @@ To add or remove services, or to update parameters, you need to redeploy the int
 To investigate potential deployment and connectivity issues
 
 1. [Verify installation](#verify)
-2. [Enable self-monitoring](deploy-k8/self-monitoring-gcp.md "Determine if your self-monitoring function is properly processing and sending logs to Dynatrace.") Optional
+2. Enable self-monitoring Optional
 3. Check the `dynatrace_gcp_<date_time>.log` log file created during the installation process.
 
 * This file will be created each time the installation script runs.
@@ -406,8 +406,8 @@ You can find and delete relevant extensions via Dynatrace Hub.
 
 ## Monitoring consumption
 
-All cloud services consume DDUs. The amount of DDU consumption per service instance depends on the number of monitored metrics and their dimensions (each metric dimension results in the ingestion of 1 data point; 1 data point consumes 0.001 DDUs). For details, see [Extending Dynatrace (Davis data units)](../../../../license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+All cloud services consume DDUs. The amount of DDU consumption per service instance depends on the number of monitored metrics and their dimensions (each metric dimension results in the ingestion of 1 data point; 1 data point consumes 0.001 DDUs). For details, see Extending Dynatrace (Davis data units).").
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](../../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
+* Set up Dynatrace on Google Cloud

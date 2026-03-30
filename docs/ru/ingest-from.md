@@ -9,7 +9,7 @@ scraped: 2026-03-06T21:16:53.695464
 * Последнее Dynatrace
 * 1-мин чтение
 
-Dynatrace обеспечивает мониторинг инфраструктуры, а также полноэкранный мониторинг ваших приложений и сервисов посредством автоматической инструментовки с помощью нашей технологии OneAgent. Узнайте, как развернуть Dynatrace на [поддерживаемых платформах](ingest-from/technology-support.md "Найдите технические подробности, связанные с поддержкой Dynatrace для конкретных платформ и фреймворков разработки.").
+Dynatrace обеспечивает мониторинг инфраструктуры, а также полноэкранный мониторинг ваших приложений и сервисов посредством автоматической инструментовки с помощью нашей технологии OneAgent. Узнайте, как развернуть Dynatrace на поддерживаемых платформах.
 
 ## Облачные платформы
 
@@ -17,15 +17,15 @@ Dynatrace обеспечивает мониторинг инфраструкту
 
 ### AWS
 
-[Настройте и.configure мониторинг для Amazon Web Services.](ingest-from/amazon-web-services.md "Настройте и.configure мониторинг для Amazon Web Services.")[![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure")
+Настройте и.configure мониторинг для Amazon Web Services.[![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure")
 
 ### Azure
 
-[Настройте и.configure мониторинг для Microsoft Azure.](ingest-from/microsoft-azure-services.md "Настройте и.configure мониторинг для Microsoft Azure.")[![Google Cloud](https://dt-cdn.net/images/gcp-512-db85a455ae.webp "Google Cloud")
+Настройте и.configure мониторинг для Microsoft Azure.[![Google Cloud](https://dt-cdn.net/images/gcp-512-db85a455ae.webp "Google Cloud")
 
 ### Google Cloud
 
-[Настройте и.configure мониторинг для Google Cloud.](ingest-from/google-cloud-platform.md "Монитор Google Cloud с помощью Dynatrace.")
+Настройте и.configure мониторинг для Google Cloud.
 
 ## Kubernetes
 
@@ -33,7 +33,7 @@ Dynatrace обеспечивает мониторинг инфраструкту
 
 ### Kubernetes
 
-[Настройте и.configure Dynatrace на Kubernetes.](ingest-from/setup-on-k8s.md "Способы развертывания и настройки Dynatrace на Kubernetes")
+Настройте и.configure Dynatrace на Kubernetes.
 
 ## Другие контейнерные и PaaS-платформы
 
@@ -41,15 +41,15 @@ Dynatrace обеспечивает мониторинг инфраструкту
 
 ### Cloud Foundry
 
-[Настройте и.configure Dynatrace на Cloud Foundry.](ingest-from/setup-on-container-platforms/cloud-foundry.md "Настройте и.configure Dynatrace на Cloud Foundry.")[![Docker](https://dt-cdn.net/images/docker-512-0c0977826e.webp "Docker")
+Настройте и.configure Dynatrace на Cloud Foundry.[![Docker](https://dt-cdn.net/images/docker-512-0c0977826e.webp "Docker")
 
 ### Docker
 
-[Настройте и.configure Dynatrace на Docker.](ingest-from/setup-on-container-platforms/docker.md "Разверните OneAgent на Docker.")[![Heroku](https://dt-cdn.net/images/heroku-512-984aa81b41.webp "Heroku")
+Настройте и.configure Dynatrace на Docker.[![Heroku](https://dt-cdn.net/images/heroku-512-984aa81b41.webp "Heroku")
 
 ### Heroku
 
-[Разверните OneAgent, чтобы отслеживать приложения, работающие на Heroku.](ingest-from/setup-on-container-platforms/heroku.md "Установите OneAgent, чтобы отслеживать приложения, работающие на Heroku.")[![Mesos](https://dt-cdn.net/images/mesos-512-0c28279189.webp "Mesos")
+Разверните OneAgent, чтобы отслеживать приложения, работающие на Heroku.[![Mesos](https://dt-cdn.net/images/mesos-512-0c28279189.webp "Mesos")
 
 ### Mesos
 
@@ -57,24 +57,24 @@ Dynatrace обеспечивает мониторинг инфраструкту
 
 ## Серверы
 
-[### AIX
+### AIX
 
-[Установите и используйте OneAgent на AIX.](ingest-from/dynatrace-oneagent/installation-and-operation/aix.md "Узнайте, как установить OneAgent на AIX, как настроить установку и многое другое.")[### Linux
+[Установите и используйте OneAgent на AIX.### Linux
 
-[Установите и используйте OneAgent на Linux.](ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Узнайте, как установить OneAgent на Linux, как настроить установку и многое другое.")[### Solaris
+[Установите и используйте OneAgent на Linux.### Solaris
 
-[Установите и используйте OneAgent на Solaris.](ingest-from/dynatrace-oneagent/installation-and-operation/solaris.md "Узнайте, как установить, обновить и устранить неполадки OneAgent на Solaris.")[### Windows
+[Установите и используйте OneAgent на Solaris.### Windows
 
-[Установите и используйте OneAgent на Windows.](ingest-from/dynatrace-oneagent/installation-and-operation/windows.md "Узнайте, как установить OneAgent на Windows, как настроить установку и многое другое.")[### zOS
+[Установите и используйте OneAgent на Windows.### zOS
 
-[Установите и используйте OneAgent на zOS.](ingest-from/dynatrace-oneagent/installation-and-operation/zos.md "Установите, настройте и управляйте модулями Dynatrace на z/OS.")
+[Установите и используйте OneAgent на zOS.
 ## Другие варианты
 
 [![Обнаружение и покрытие](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Обнаружение и покрытие")
 
 ### Обнаружение и покрытие
 
-[Обнаружьте слепые зоны и включите правильный уровень наблюдаемости в нужных местах легко и в большом масштабе.](ingest-from/discovery-coverage-app.md "Обнаружьте и устраните пробелы в покрытии мониторинга в большом масштабе.")
+Обнаружьте слепые зоны и включите правильный уровень наблюдаемости в нужных местах легко и в большом масштабе.
 
 [![Фронтенд](https://dt-cdn.net/images/frontend-512-e5705a0aec.png "Фронтенд")
 
@@ -88,4 +88,4 @@ Dynatrace обеспечивает мониторинг инфраструкту
 
 ### Расширить
 
-[Вы можете расширить данные наблюдаемости, собираемые по умолчанию, с помощью данных, предоставляемых стандартами и фреймворками наблюдаемости, а также фреймворками расширения, предоставляемыми Dynatrace.](ingest-from/extend-dynatrace.md "Узнайте, какие механизмы расширения предлагаются Dynatrace.")
+Вы можете расширить данные наблюдаемости, собираемые по умолчанию, с помощью данных, предоставляемых стандартами и фреймворками наблюдаемости, а также фреймворками расширения, предоставляемыми Dynatrace.

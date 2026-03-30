@@ -7,7 +7,7 @@ updated: 2026-02-09
 * How-to guide
 * 7-min read
 
-[Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+Dashboards Classic
 
 You can share your dashboards with anyone, even if they don't have their own accounts within the same Dynatrace environment.
 

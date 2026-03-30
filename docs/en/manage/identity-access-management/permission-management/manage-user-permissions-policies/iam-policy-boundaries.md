@@ -21,7 +21,7 @@ Policy boundaries allow you to bundle restrictions on the record and/or resource
 
 Whenever a boundary is selected in combination with a security policy, it further restricts the existing policy, which can also result in no access for the user.
 
-Policy boundaries support all conditions that are available in the [IAM reference](advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+Policy boundaries support all conditions that are available in the IAM reference.
 
 ## Boundaries and default policies
 
@@ -53,7 +53,7 @@ In other words, enable you to externalize the conditions to a separate object fo
 * **What** being the permissions part of the policy that defines which APIs you are allowed to use
 * **Where** being the service related fine granular permissions on record/resource-level expressed by the policy conditions.
 
-This mechanism is extremely useful in combination with the [default policies](../default-policies.md#default-policies "Dynatrace default policies reference").
+This mechanism is extremely useful in combination with the default policies.
 
 The default policies define a set of permissions to access features and data. As they are generic, they don't restrict the access to a specific records and resources.
 
@@ -115,7 +115,7 @@ A boundary that is used in policy bindings can not be deleted. Before you can de
 
 ### Assignment of a policy boundaries during permission assignment
 
-1. To assign a boundary please configure your group permissions as described in [Group management](../../user-and-group-management/access-group-management.md#manage-group-permissions "Manage Dynatrace groups and their permissions.").
+1. To assign a boundary please configure your group permissions as described in Group management.
 2. Select one or multiple boundaries that should be applied to your permission assignment.
 
    * To learn about how boundaries are applied to your policy permissions, see the [How are policy boundaries applied?](iam-policy-boundaries.md#apply-boundary "Restrict security policies with policy boundaries to provide tailored access to your users.") section below.
@@ -126,7 +126,7 @@ Policy boundaries can only be assigned to policies, they are not compatible with
 
 ## How are policy boundaries applied?
 
-Boundaries work for all services that are covered with the security policies and which are documented in the [IAM Policy reference](advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+Boundaries work for all services that are covered with the security policies and which are documented in the IAM Policy reference.
 
 When a policy binding contains boundaries the effective policy is calculated according to the following rules:
 
@@ -194,8 +194,8 @@ Grail does not support management zones but uses the `storage:` fields for recor
 
 ## Restrictions and limits of policy boundaries
 
-* Only 10 restrictions per boundary, to keep them manageable. If you need more restrictions for your use case, create more boundaries and [assign multiple boundaries](../../iam-limits.md "IAM limits for Dynatrace SaaS") to the policy.
+* Only 10 restrictions per boundary, to keep them manageable. If you need more restrictions for your use case, create more boundaries and assign multiple boundaries to the policy.
 * Boundaries are only compatible with security policies. No role-based support.
 * Boundaries don't support the AND operator, every line of a boundary can only consist of one condition.
 
-  + If you need logical operators and also want to re-use your policy definitions please take a look into [policy templating](advanced/iam-policy-templating.md "Policy templating").
+  + If you need logical operators and also want to re-use your policy definitions please take a look into policy templating.

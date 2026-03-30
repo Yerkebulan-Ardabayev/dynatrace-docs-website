@@ -10,28 +10,28 @@ scraped: 2026-03-06T21:27:31.608688
 * Reference
 * Published Oct 12, 2020
 
-[### Fetch the list of problems
+### Fetch the list of problems
 
-Gain high-level overview of problems.](problems-v2/problems/get-problems-list.md "Fetch the list of problems via Problems v2 API.")[### Get the problem details
+Gain high-level overview of problems.### Get the problem details
 
-When you find a problem you want to investigate, fetch details about it.](problems-v2/problems/get-problem-details.md "View details of a problem via Problems v2 API.")[### Close problem
+When you find a problem you want to investigate, fetch details about it.### Close problem
 
-When a problem is not a concern anymore, close it.](problems-v2/problems/post-close.md "Close a problem via Problems v2 API.")
+When a problem is not a concern anymore, close it.
 
-[### List comments
+### List comments
 
-View all comments on a problem.](problems-v2/comments/get-all.md "View all comments to a problem via Problems v2 API.")[### View a comment
+View all comments on a problem.### View a comment
 
-Check a particular comment on a specified problem.](problems-v2/comments/get-comment.md "View a comment to a problem via Problems v2 API.")
+Check a particular comment on a specified problem.
 
-[### Post comment
+### Post comment
 
-Post a comment on a specified problem.](problems-v2/comments/post-comment.md "Post a comment to a problem via Problems v2 API.")[### Edit comment
+Post a comment on a specified problem.### Edit comment
 
-Edit a comment on a specified problem.](problems-v2/comments/put-comment.md "Edit a comment to a problem via Problems v2 API.")[### Delete comment
+Edit a comment on a specified problem.### Delete comment
 
-Delete a comment from a specified problem.](problems-v2/comments/del-comment.md "Delete a comment to a problem via Problems v2 API.")
+Delete a comment from a specified problem.
 
 ## Related topics
 
-* [Dynatrace Intelligence](../../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.")
+* Dynatrace Intelligence

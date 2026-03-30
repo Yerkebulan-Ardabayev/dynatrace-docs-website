@@ -22,18 +22,18 @@ scraped: 2026-03-06T21:27:50.224051
 
 Вы можете задать до 500 ключевых действий пользователей на среду для всех ваших приложений и до 100 ключевых действий пользователей на приложение.
 
-При достижении максимального лимита ключевых действий пользователей рассмотрите использование вычисляемых метрик (доступных для ваших [веб-](rum-calculated-metrics-web.md "Create calculated metrics as well as custom charts based on calculated metrics for your web applications."), [мобильных](../../mobile-applications/additional-configuration/rum-calculated-metrics-mobile.md "Create calculated metrics as well as custom charts based on calculated metrics for your mobile applications.") и [пользовательских приложений](../../custom-applications/additional-configuration/rum-calculated-metrics-custom.md "Create calculated metrics as well as custom charts based on calculated metrics for your custom applications.")), которые предлагают аналогичные возможности.
+При достижении максимального лимита ключевых действий пользователей рассмотрите использование вычисляемых метрик (доступных для ваших веб-, мобильных и пользовательских приложений), которые предлагают аналогичные возможности.
 
 ## Закрепить ключевое действие пользователя на дашборде
 
-[Dashboards Classic](../../../../analyze-explore-automate/dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+Dashboards Classic
 
 1. Перейдите в раздел **Frontend**.
 2. Выберите приложение и прокрутите вниз до **Top 3 user actions** или **Top 3 actions**.
 3. Нажмите **View full details** или **Analyze performance**.
 4. Найдите нужное ключевое действие пользователя и выберите его.
    Откроется страница сведений о действии пользователя.
-5. В верхней части страницы сведений о действии пользователя нажмите **Pin to dashboard**. Подробнее см. в разделе [Закрепление плиток на дашборде](../../../../analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard.md "Learn to pin tiles to your dashboards.").
+5. В верхней части страницы сведений о действии пользователя нажмите **Pin to dashboard**. Подробнее см. в разделе Закрепление плиток на дашборде.
 
 ## Настройка рейтинга Apdex для ключевого действия пользователя
 
@@ -52,4 +52,4 @@ scraped: 2026-03-06T21:27:50.224051
 
 ## Связанные темы
 
-* [Действия пользователей](../../rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.")
+* Действия пользователей

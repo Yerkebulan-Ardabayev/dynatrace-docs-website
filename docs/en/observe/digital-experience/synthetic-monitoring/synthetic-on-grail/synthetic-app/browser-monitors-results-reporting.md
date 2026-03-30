@@ -42,7 +42,7 @@ Under the filter bar, you can see tiles for important information:
 * Total downtimeâthe total outage time for all locations in a specific timeframe.
 * Durationâthe average response time for all locations in a specific timeframe.
 
-In the upper-right corner of the page, you can access [**Analyze executions**](#analyze-executions), [**On-demand execution**](on-demand-executions.md "Learn about how to perform on-demand executions."), and more browser monitor settings:
+In the upper-right corner of the page, you can access [**Analyze executions**](#analyze-executions), **On-demand execution**, and more browser monitor settings:
 
 * **Edit**
 * for more options ( **Disable** and  **Delete**)
@@ -167,7 +167,7 @@ Also, the **Availability** card displays notifications over the availability cha
   3. Select **View maintenance window settings**.
   4. Select **Settings Classic**.
 
-  + When the **Disable synthetic monitor execution** option is on in the maintenance window, the scheduled automatic tests are suppressed during the maintenance period so there are no tests results for this period. Only [on-demand](on-demand-executions.md "Learn about how to perform on-demand executions.") tests are not suppressed.
+  + When the **Disable synthetic monitor execution** option is on in the maintenance window, the scheduled automatic tests are suppressed during the maintenance period so there are no tests results for this period. Only on-demand tests are not suppressed.
   + When the **Disable synthetic monitor execution** option is off in the maintenance window, the tests are executed during the maintenance period, but, due to maintenance, the test results may differ from those observed under the normal conditions.
 
 #### Not executed or finished tests

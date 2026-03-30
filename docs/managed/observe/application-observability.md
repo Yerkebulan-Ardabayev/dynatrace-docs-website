@@ -16,18 +16,18 @@ See the overview](/managed/observe/application-observability/services)[#### Dist
 Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.
 
 
-See the overview](/managed/observe/application-observability/distributed-traces)[#### Multidimensional analysis
+See the overview](/managed/observe/application-observability/distributed-traces)#### Multidimensional analysis
 
 Configure a multidimensional analysis view and save it as a calculated metric.
 
 * How-to guide
 
-Read this guide](/managed/observe/application-observability/multidimensional-analysis)[#### Profiling and optimization
+Read this guide#### Profiling and optimization
 
 Learn how to use Dynatrace diagnostic tools for crash analysis, memory dump analysis, and more.
 
 
-See the overview](/managed/observe/application-observability/profiling-and-optimization)[#### Services
+See the overview[#### Services
 
 Learn about Dynatrace's classic service monitoring
 

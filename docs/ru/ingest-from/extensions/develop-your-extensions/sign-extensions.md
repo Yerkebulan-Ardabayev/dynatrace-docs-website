@@ -21,8 +21,8 @@ scraped: 2026-03-05T21:36:26.987234
 В зависимости от ваших потребностей выберите один из следующих методов для подписания и сборки расширения:
 
 * [`dt-extensions-sdk`](https://dynatrace-extensions.github.io/dt-extensions-python-sdk/cli/sign.html) — универсальный инструмент командной строки Рекомендуется
-* [VSCode Extension](addon-for-vscode.md "Introduction to the Dynatrace Extensions add-on for VS Code") — универсальный инструмент на основе редактора Рекомендуется
-* [Использование OpenSSL](sign-extensions/manually-openssl.md "Sign an extension manually with OpenSSL.") — стандартная криптографическая библиотека для ручного управления
+* VSCode Extension — универсальный инструмент на основе редактора Рекомендуется
+* Использование OpenSSL — стандартная криптографическая библиотека для ручного управления
 
 Dynatrace CLI
 
@@ -39,7 +39,7 @@ Dynatrace CLI
 * Вы проверяете подлинность распространяемых расширений
 * Вы предотвращаете возможное распространение вредоносных расширений злоумышленником, который мог получить контроль над вашей средой
 
-Для расширений JMX достаточно добавить сертификат в [хранилище учётных данных](../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault.") Dynatrace.
+Для расширений JMX достаточно добавить сертификат в хранилище учётных данных Dynatrace.
 При добавлении сертификата выберите область **Extension validation**.
 
 ### Удалённые расширения

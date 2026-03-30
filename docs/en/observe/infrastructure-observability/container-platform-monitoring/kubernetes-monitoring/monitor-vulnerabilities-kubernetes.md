@@ -16,8 +16,8 @@ You can keep track of security vulnerabilities in your Kubernetes environments o
 ## Prerequisites
 
 * In Dynatrace, go to your Kubernetes cluster settings page and make sure that **Monitor Kubernetes namespaces, services, workloads, and pods** is turned on.
-* [Activate and enable Application Security](../../../../secure/application-security.md "Access the Dynatrace Application Security functionalities.")
-* To view code-level vulnerabilities [Activate and enable Runtime Application Protection](../../../../secure/application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
+* Activate and enable Application Security
+* To view code-level vulnerabilities Activate and enable Runtime Application Protection
 
 ## Vulnerability section
 
@@ -26,7 +26,7 @@ The **Vulnerabilities** section is displayed on the Kubernetes
 * Cluster details page
 * Workloads page
 
-It shows the five most severe related [third-party vulnerabilities](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities.md "Monitor the security issues of your third-party libraries.") and [code-level vulnerabilities](../../../../secure/vulnerabilities.md "Prioritize and efficiently manage vulnerabilities in your monitored environments.").
+It shows the five most severe related third-party vulnerabilities and code-level vulnerabilities.
 
 * Select a vulnerability to view the details and understand the severity and impact of a vulnerability within your environment.
 * For a complete list of the detected vulnerabilities for your Kubernetes environment, select **Show all third-party vulnerabilities**/**Show all code-level vulnerabilities**.
@@ -46,4 +46,4 @@ If you're missing the [security permissions](../../../../secure/application-secu
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
+* Set up Dynatrace on Kubernetes

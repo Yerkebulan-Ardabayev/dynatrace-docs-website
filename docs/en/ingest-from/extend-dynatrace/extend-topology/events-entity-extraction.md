@@ -13,11 +13,11 @@ scraped: 2026-03-06T21:32:48.904064
 
 Every event stored in Dynatrace is mapped to a monitored entity that it impacts. Dynatrace Intelligence uses this topological knowledge in its automated root cause analysis. An example of a topological context is a CPU usage spike that is mapped to the host where it was observed. However, once you start ingestion of your own data sources into Dynatrace, out-of-the-box topological mapping might not be sufficient anymore: you might need to map events to your custom entities.
 
-The [Events API v2](../../../dynatrace-api/environment-api/events-v2.md "Find out what you can do with the Dynatrace Events API v2.") enables you to include metadata in events you're ingesting into Dynatrace. With such enrichment, you can include topological context in the event itself. Dynatrace can extract this information and map an incoming event to the entity it belongs to.
+The Events API v2 enables you to include metadata in events you're ingesting into Dynatrace. With such enrichment, you can include topological context in the event itself. Dynatrace can extract this information and map an incoming event to the entity it belongs to.
 
 ## Map to predefined entity types
 
-To map an event to an entity of a predefined type, specify it in the **entitySelector** field. Note that you can map an event only to entities that have been active within the last 24 hours. If no entity matches your selector or the selector is omitted altogether, the event is mapped to the environment level. No additional configuration is needed. To learn the entity selector syntax, see [Entity selector](../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.").
+To map an event to an entity of a predefined type, specify it in the **entitySelector** field. Note that you can map an event only to entities that have been active within the last 24 hours. If no entity matches your selector or the selector is omitted altogether, the event is mapped to the environment level. No additional configuration is needed. To learn the entity selector syntax, see Entity selector.
 
 ## Map to generic entity types
 
@@ -37,7 +37,7 @@ You can't extract entities of predefined types and re-map events to them.
 
 ### Step 2 Provide event metadata
 
-To be able to extract generic entities from events, you need to provide the relevant information in the event configuration. The following elements of event properties control the feature. You can find descriptions on all event configuration fields in [**POST an event**](../../../dynatrace-api/environment-api/events-v2/post-event.md "Ingests an event via the Dynatrace API.").
+To be able to extract generic entities from events, you need to provide the relevant information in the event configuration. The following elements of event properties control the feature. You can find descriptions on all event configuration fields in **POST an event**.
 
 Show an example JSON
 
@@ -88,9 +88,9 @@ To assign an extraction rule to a generic entity type
 
 ## Troubleshooting
 
-If the remapping fails, you can retrieve the diagnostic information on an event overview page or via the [**GET an event**](../../../dynatrace-api/environment-api/events-v2/get-event.md "View parameters of an event via the Events API v2.") request. Look for the **Entity remapping failure information** (`dt.event.entity_remapping_failure_info`) field.
+If the remapping fails, you can retrieve the diagnostic information on an event overview page or via the **GET an event** request. Look for the **Entity remapping failure information** (`dt.event.entity_remapping_failure_info`) field.
 
 ## Related topics
 
-* [Root cause analysis concepts](../../../dynatrace-intelligence/root-cause-analysis/concepts.md "Get acquainted with root cause analysis concepts.")
-* [Events API v2](../../../dynatrace-api/environment-api/events-v2.md "Find out what you can do with the Dynatrace Events API v2.")
+* Root cause analysis concepts
+* Events API v2

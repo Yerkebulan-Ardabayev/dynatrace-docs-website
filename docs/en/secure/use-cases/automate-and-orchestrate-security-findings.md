@@ -17,8 +17,8 @@ While siloed products can provide localized automation, they often generate exce
 
 In this context, you can
 
-* [Ingest security findings](../threat-observability/security-events-ingest.md "Ingest external security data into Grail.") from various tools and map them to the [Dynatrace Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
-* Automate and orchestrate security findings across products and tools with our workflow automation samples, which you can further customize with the robust [Workflows](../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") capabilities for your organization's orchestration processes.
+* Ingest security findings from various tools and map them to the [Dynatrace Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
+* Automate and orchestrate security findings across products and tools with our workflow automation samples, which you can further customize with the robust Workflows capabilities for your organization's orchestration processes.
 
 ## Target audience
 
@@ -32,7 +32,7 @@ Key use cases include:
 
 ## Prerequisites
 
-[Ingest security findings](../threat-observability/security-events-ingest.md "Ingest external security data into Grail.") from your third-party product.
+Ingest security findings from your third-party product.
 
 ## Get started
 
@@ -47,7 +47,7 @@ Key use cases include:
      + [Slack workflow sampleï»¿](https://dt-url.net/a643qqd)
      + [Jira workflow sampleï»¿](https://dt-url.net/l103p3t)
 
-   For some integrations, such as [Amazon ECR](../threat-observability/security-events-ingest/ingest-aws-ecr-data.md "Ingest Amazon ECR container image vulnerability findings and scan events and analyze them in Dynatrace.") or [AWS Security Hub](../threat-observability/security-events-ingest/ingest-aws-security-hub.md "Ingest AWS Security Hub security findings and analyze them in Dynatrace."), workflow samples are available in the app in the **Try our templates** section (in **Settings**, search for and select the app).
+   For some integrations, such as Amazon ECR or AWS Security Hub, workflow samples are available in the app in the **Try our templates** section (in **Settings**, search for and select the app).
 2. Open [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), select ![Import](https://dt-cdn.net/images/dashboards-app-dashboards-page-import-6a06e645df.svg "Import") **Upload**, then select the downloaded file.
 
 Example result:

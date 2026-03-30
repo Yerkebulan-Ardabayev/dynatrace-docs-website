@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:28:47.854342
 
 If you're experiencing issues linking user actions to their corresponding traces, also refer to [Troubleshooting RUM correlation issues for web applicationsï»¿](https://dt-url.net/io63ls2).
 
-Dynatrace links user actions and their corresponding [distributed traces](../../../application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") to provide gapless end-to-end visibility. For example, this allows you to determine the [top 3 web requests contributors](../analyze-and-use/analyze-individual-user-actions.md#top-3-web-request-contributors "Understand how you can access user action detail pages and analyze user actions.") on the user action details page or to drill down from the [waterfall analysis chart](../analyze-and-use/waterfall-analysis.md#purepath-drilldown "Learn how to analyze all user action monitoring data through waterfall analysis.") to distributed traces.
+Dynatrace links user actions and their corresponding distributed traces to provide gapless end-to-end visibility. For example, this allows you to determine the [top 3 web requests contributors](../analyze-and-use/analyze-individual-user-actions.md#top-3-web-request-contributors "Understand how you can access user action detail pages and analyze user actions.") on the user action details page or to drill down from the waterfall analysis chart to distributed traces.
 
 Linking user actions and their distributed traces works out of the box when the following conditions are met:
 
@@ -33,7 +33,7 @@ By default, browsers do not include cookies in cross-origin requests due to the 
 For this approach, the following prerequisites must be met:
 
 * The technology used on the first instrumented tier is listed in [Technology support - Real User Monitoring - Web servers and applications](../../../../ingest-from/technology-support.md#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
-* The two domains involved have at least a common [effective top-level domain plus one (eTLD+1)ï»¿](https://web.dev/same-site-same-origin/) to allow the specification of a common [cookie domain](../additional-configuration/configure-the-cookie-domain.md "Learn when and how to configure the cookie domain.").
+* The two domains involved have at least a common [effective top-level domain plus one (eTLD+1)ï»¿](https://web.dev/same-site-same-origin/) to allow the specification of a common cookie domain.
 
 To include cookies in cross-origin XHR calls
 
@@ -66,6 +66,6 @@ To link cross-origin XHR user actions and their distributed traces using the `x-
 5. From the application settings, select **Capturing** > **Advanced setup**.
 6. Under **Enable Real User Monitoring for cross-origin XHR calls**, specify a regular expression that matches the XHR calls.
 
-If the `x-dtc` header is not added to the request after following the directions above, check your regular expression and ensure that [RUM is configured to capture XHR actions](configure-dynatrace-real-user-monitoring-to-capture-xhr-actions.md "Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring for XHR actions.").
+If the `x-dtc` header is not added to the request after following the directions above, check your regular expression and ensure that RUM is configured to capture XHR actions.
 
 Only the actual request can be linked not the preflight request.

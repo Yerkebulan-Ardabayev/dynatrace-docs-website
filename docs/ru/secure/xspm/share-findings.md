@@ -19,7 +19,7 @@ Dynatrace предоставляет вам гибкость для выполн
 
 ## Преобразование результатов в DQL-запросы
 
-Вы можете преобразовать результаты приложения в [DQL-запросы](../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.") и открыть их в других приложениях Dynatrace для продолжения расследования.
+Вы можете преобразовать результаты приложения в DQL-запросы и открыть их в других приложениях Dynatrace для продолжения расследования.
 
 1. На странице **Assessment results** выберите правило.
 2. В разделе **Assessed resources** у вас есть два варианта:
@@ -31,11 +31,11 @@ Dynatrace предоставляет вам гибкость для выполн
 
 ## Выполнение DQL-запросов для событий соответствия
 
-Вы можете выполнять [DQL-запросы](../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.") для [событий соответствия](../threat-observability/dql-examples.md#compliance "DQL examples for security data powered by Grail.") в [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") или [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability data—all in one collaborative, customizable workspace.") для получения дополнительных сведений или обмена результатами с другими пользователями.
+Вы можете выполнять DQL-запросы для [событий соответствия](../threat-observability/dql-examples.md#compliance "DQL examples for security data powered by Grail.") в [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") или [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability data—all in one collaborative, customizable workspace.") для получения дополнительных сведений или обмена результатами с другими пользователями.
 
-* Руководство по использованию DQL см. в разделе [Использование DQL-запросов](../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.").
+* Руководство по использованию DQL см. в разделе Использование DQL-запросов.
 * Список примеров DQL-запросов на основе событий соответствия см. в разделе [Примеры DQL для данных безопасности](../threat-observability/dql-examples.md#compliance "DQL examples for security data powered by Grail.").
-* Список полей событий соответствия, сопоставленных с Grail, см. в разделе [Dynatrace Semantic Dictionary](../../semantic-dictionary/model/security-events.md#compliance-finding-events "Get to know the Semantic Dictionary models related to security events.").
+* Список полей событий соответствия, сопоставленных с Grail, см. в разделе Dynatrace Semantic Dictionary.
 
 ## Поделиться URL-адресом
 
@@ -54,4 +54,4 @@ Dynatrace предоставляет вам гибкость для выполн
 
 ## Связанные темы
 
-* [Kubernetes Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.")
+* Kubernetes Security Posture Management

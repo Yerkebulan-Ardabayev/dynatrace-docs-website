@@ -13,7 +13,7 @@ Dynatrace принимает метрики из Azure Metrics API для Bing E
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг службы, см. раздел [Включение мониторинга службы](../azure-monitoring-guide/azure-enable-service-monitoring.md "Enable Azure monitoring in Dynatrace.").
+Чтобы узнать, как включить мониторинг службы, см. раздел Включение мониторинга службы.
 
 ## Просмотр метрик службы
 

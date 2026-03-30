@@ -19,9 +19,9 @@ scraped: 2026-03-06T21:17:25.680314
 
 ## Prerequisites
 
-* Dynatrace SaaS environment with a Dynatrace Platform Subscription (DPS) that includes [Code Monitoring](../../license/capabilities/container-monitoring.md#code-monitoring "Learn about the different container monitoring modes that are available with a Dynatrace Platform Subscription (DPS) license.")
-* OneAgent version 1.309+ with **Java Live-Debugger** and **Node.js Live-Debugger** [OneAgent features](../../ingest-from/dynatrace-oneagent/oneagent-features.md "Manage OneAgent features globally and per process group.") enabled
-* [Monitoring modes](../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent."): Full-Stack, Infrastructure, or Discovery (with container code-module injection)
+* Dynatrace SaaS environment with a Dynatrace Platform Subscription (DPS) that includes Code Monitoring license.")
+* OneAgent version 1.309+ with **Java Live-Debugger** and **Node.js Live-Debugger** OneAgent features enabled
+* Monitoring modes: Full-Stack, Infrastructure, or Discovery (with container code-module injection)
 * [Code modules](../../ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md#other-modules "Learn which capabilities are supported by OneAgent on different operating systems and platforms."): Java and Node.js
 
 ## Get started
@@ -92,7 +92,7 @@ To enable the Live Debugger module
    - debugging
    ```
 
-If you're using a proxy, configure it within the Environment ActiveGate as described in [Proxy for ActiveGate](../../ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate.md "Learn how to configure ActiveGate properties to set up a proxy.").
+If you're using a proxy, configure it within the Environment ActiveGate as described in Proxy for ActiveGate.
 
 ### Start live debugging an application
 
@@ -165,7 +165,7 @@ To get real-time code-level data
 2. Navigate to the file system.
 3. Set a non-breaking breakpoint on the line of code you want to debug.
 
-[Non-breaking breakpoints](live-debugger/breakpoints.md "Learn how to add breakpoints, view available statuses, set breakpoint levels, and more.") are reference breakpoints for the lines of code from which you want to collect debug data. These breakpoints don't stop your code from running. Instead, they carry the debug data collection request. Placing these breakpoints and receiving the derived snapshots don't affect your application or its users.
+Non-breaking breakpoints are reference breakpoints for the lines of code from which you want to collect debug data. These breakpoints don't stop your code from running. Instead, they carry the debug data collection request. Placing these breakpoints and receiving the derived snapshots don't affect your application or its users.
 
 After placing a non-breaking breakpoint, ensure your code has been triggered so that the data is collected and appears immediately in ![Live Debugger](https://dt-cdn.net/images/live-debugger-256-b934a2bad5.png "Live Debugger") **Live Debugger**.
 

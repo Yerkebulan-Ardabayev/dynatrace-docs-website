@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:36:18.576681
 
 With Dynatrace interoperability for OpenTelemetry, you can use the instrumentation packages available from OpenTelemetry to monitor technologies (like databases or messaging frameworks) that aren't supported by the Dynatrace AWS Lambda extension out-of-the box. The Dynatrace AWS Lambda extension automatically captures the additional span instrumentation and integrates it with any other telemetry captured without any need to configure additional OpenTelemetry exporters.
 
-[OpenTelemetryï»¿](https://dt-url.net/y903u4j) is a collection of tools, APIs, and SDKs. You can use it to instrument, generate, collect, and export telemetry data (metrics, logs, and traces) for analysis to get insights into your software's performance and behavior. OpenTelemetry interoperability connects [Dynatrace AWS Lambda extension](aws-lambda-extension.md "Monitor Lambda functions written in Python, Node.js, and Java.") to OpenTelemetry API for the respective instrumentation.
+[OpenTelemetryï»¿](https://dt-url.net/y903u4j) is a collection of tools, APIs, and SDKs. You can use it to instrument, generate, collect, and export telemetry data (metrics, logs, and traces) for analysis to get insights into your software's performance and behavior. OpenTelemetry interoperability connects Dynatrace AWS Lambda extension to OpenTelemetry API for the respective instrumentation.
 
 ## Enable OpenTelemetry interoperability
 
@@ -43,10 +43,10 @@ With Dynatrace interoperability for OpenTelemetry, you can use the instrumentati
 
 To learn more about how OpenTelemetry interoperability works, see
 
-* [OpenTelemetry interoperability in Python](opentelemetry-interoperability/lambda-otel-bridge-python.md "Connect Dynatrace AWS Lambda extension to the OpenTelemetry Python instrumentation via OpenTelemetry interoperability.")
-* [OpenTelemetry interoperability in Node.js](opentelemetry-interoperability/lambda-otel-bridge-nodejs.md "Connect Dynatrace AWS Lambda extension to the OpenTelemetry Node.js instrumentation via OpenTelemetry interoperability.")
-* [OpenTelemetry interoperability in Java](opentelemetry-interoperability/lambda-otel-bridge-java.md "Connect Dynatrace AWS Lambda extension to the OpenTelemetry Java API via OpenTelemetry interoperability.")
+* OpenTelemetry interoperability in Python
+* OpenTelemetry interoperability in Node.js
+* OpenTelemetry interoperability in Java
 
 ## Related topics
 
-* [Trace Python, Node.js, and Java Lambda functions](aws-lambda-extension.md "Monitor Lambda functions written in Python, Node.js, and Java.")
+* Trace Python, Node.js, and Java Lambda functions

@@ -66,8 +66,8 @@ A user who wants to use a service user as an actor of a workflow or custom alert
 
 That permission is granted with the following default policies:
 
-* [Dynatrace Pro User](../permission-management/default-policies.md#DynatraceAccessProUser "Dynatrace default policies reference")
-* [Dynatrace Admin User](../permission-management/default-policies.md#DynatraceAccessAdminUser "Dynatrace default policies reference")
+* Dynatrace Pro User
+* Dynatrace Admin User
 
 ## Create policies based on a service user
 

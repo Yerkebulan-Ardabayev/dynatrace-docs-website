@@ -82,7 +82,7 @@ scraped: 2026-03-06T21:20:22.400501
 
 Целочисленное деление
 
-При делении значения типа `long` на другое значение типа `long` с помощью оператора `/` результат также является значением типа `long`, и дробная часть отбрасывается. Чтобы получить результат с дробной частью (значение типа `double`), необходимо преобразовать хотя бы один из операндов в тип `double` (например, с помощью функции [toDouble](functions/conversion-and-casting-functions.md#toDouble "A list of DQL conversion and casting functions.")).
+При делении значения типа `long` на другое значение типа `long` с помощью оператора `/` результат также является значением типа `long`, и дробная часть отбрасывается. Чтобы получить результат с дробной частью (значение типа `double`), необходимо преобразовать хотя бы один из операндов в тип `double` (например, с помощью функции toDouble).
 
 | ДЕЛЕНИЕ | Long | Double | String | Boolean | Timestamp | Duration | Timeframe | Binary | IP | UID | Array | Record |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -151,10 +151,10 @@ scraped: 2026-03-06T21:20:22.400501
 Сравнения на равенство (`==`, `!=`) используют трехзначную булеву алгебру (`true`, `false`, `null`). Это означает, что если любая сторона сравнения на равенство равна `null`, общий результат сравнения также будет `null`.
 Существуют четыре функции DQL, которые охватывают сценарии, когда необходимо получить отсутствующие записи или записи со значением `null`:
 
-* [Функция `isTrueOrNull`](functions/boolean-functions.md#isTrueOrNull "A list of DQL boolean functions.")
-* [Функция `isFalseOrNull`](functions/boolean-functions.md#isFalseOrNull "A list of DQL boolean functions.")
-* [Функция `isNull`](functions/boolean-functions.md#isNull "A list of DQL boolean functions.")
-* [Функция `isNotNull`](functions/boolean-functions.md#isNotNull "A list of DQL boolean functions.")
+* Функция `isTrueOrNull`
+* Функция `isFalseOrNull`
+* Функция `isNull`
+* Функция `isNotNull`
 
 Например, приведенный ниже запрос с базовой фильтрацией не возвращает записи со значениями `null` или отсутствующими значениями:
 
@@ -398,11 +398,11 @@ timeseries avg(dt.host.cpu.usage), filter:dt.entity.host in [fetch dt.entity.hos
 
 ## Связанные темы
 
-* [Dynatrace Query Language](../dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Использование запросов DQL](dql-guide.md "Find out how DQL works and what are DQL key concepts.")
-* [Сравнение DQL с SQL и другими языками](dql-comparison.md "See how DQL compares to other query languages.")
-* [Справочник по языку DQL](dql-reference.md "Dynatrace Query Language syntax reference.")
-* [Команды DQL](commands.md "A list of DQL commands.")
-* [Функции DQL](functions.md "A list of DQL functions.")
-* [Типы данных DQL](data-types.md "A list of DQL data types.")
-* [Лучшие практики DQL](dql-best-practices.md "Best practices for using Dynatrace Query Language.")
+* Dynatrace Query Language
+* Использование запросов DQL
+* Сравнение DQL с SQL и другими языками
+* Справочник по языку DQL
+* Команды DQL
+* Функции DQL
+* Типы данных DQL
+* Лучшие практики DQL

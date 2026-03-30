@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:29:12.501368
 * How-to guide
 * Updated on Jan 08, 2026
 
-The host portion of the URL is essential for two specific RUM featuresâapplying [frontend detection rules](set-up-auto-injected-frontend.md "Learn how to set up an auto-injected web frontend in the New RUM Experience.") and automatically detecting the RUM cookie domain. However, in environments with components like reverse proxies or load balancers, the original host may be rewritten before reaching an instrumented tier using a [technology with RUM support](../../../../../ingest-from/technology-support.md#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks."). To resolve this, OneAgent provides a host name determination feature.
+The host portion of the URL is essential for two specific RUM featuresâapplying frontend detection rules and automatically detecting the RUM cookie domain. However, in environments with components like reverse proxies or load balancers, the original host may be rewritten before reaching an instrumented tier using a [technology with RUM support](../../../../../ingest-from/technology-support.md#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks."). To resolve this, OneAgent provides a host name determination feature.
 
 ## Add a host name determination header
 
@@ -38,4 +38,4 @@ If the original host name requested by the browser is `www.example.com` and your
 
 ## Related topics
 
-* [Set up an auto-injected frontend in the New RUM Experience](set-up-auto-injected-frontend.md "Learn how to set up an auto-injected web frontend in the New RUM Experience.")
+* Set up an auto-injected frontend in the New RUM Experience

@@ -140,4 +140,4 @@ VMware Security Configuration Guides предоставляет руководс
 
 ## Связанные темы
 
-* [Security Posture Management](../../xspm.md "Обнаружение, управление и принятие мер по результатам проверки безопасности и соответствия.")
+* Security Posture Management

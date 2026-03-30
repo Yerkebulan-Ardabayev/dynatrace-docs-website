@@ -15,7 +15,7 @@ This page describes how to enable and customize Session Replay for your Android 
 
 ## Full Session Replay
 
-[Session Replay](../session-replay.md "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") on Android enables you to capture your customers' interactions with your mobile application and replay each tap, swipe, screen rotation in a movie-like experience.
+Session Replay on Android enables you to capture your customers' interactions with your mobile application and replay each tap, swipe, screen rotation in a movie-like experience.
 
 ## Session Replay on crashes
 
@@ -44,8 +44,8 @@ Make sure that your system meets the following requirements:
 * Only AndroidX support libraries are supported. Classes such as Activity or Fragment in com.android.support are not supported.
 * We recommend not using other crash reporting tools together with Dynatrace Session Replay.
 * Session Replay can capture only certain events. However, if you need to track a specific view or event that is not supported by default, you can [capture a custom event](session-replay-android.md#capture-custom-events "Set up Session Replay for your Android apps to learn which actions your users perform.").
-* You can play back the user sessions recorded with Session Replay only in [certain browsers](../../../discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements.md#session-replay "Find out which browsers Dynatrace applications can run on.").
-* See [Technical restrictions for Session Replay for web applications](session-replay-restrictions-web.md "Learn which restrictions apply to Session Replay.") for more information.
+* You can play back the user sessions recorded with Session Replay only in certain browsers.
+* See Technical restrictions for Session Replay for web applications for more information.
 
 Session Replay is a video-like reconstruction of the user interaction with mobile application, that uses captured events and data. Because of this approach replayed session can differ from the actual user experience. Known issues
 
@@ -269,7 +269,7 @@ modifier = Modifier.dtMask()
 
 ## Enable Session Replay logs
 
-You can enable Session Replay logs the same way as for OneAgent. See [Enable debug logging for Dynatrace Android Gradle plugin or OneAgent SDK](../mobile-applications/instrument-android-app/debug-logging-oneagent.md "Activate the debug logs from OneAgent.") for more information.
+You can enable Session Replay logs the same way as for OneAgent. See Enable debug logging for Dynatrace Android Gradle plugin or OneAgent SDK for more information.
 
 ## Capture custom events
 
@@ -306,5 +306,5 @@ Configuration.builder()
 
 ## Related topics
 
-* [Session Replay](../session-replay.md "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")
-* [View crash reports for mobile applications](../mobile-applications/analyze-and-use/crash-reports-mobile.md "Check the latest crash reports for your mobile applications.")
+* Session Replay
+* View crash reports for mobile applications

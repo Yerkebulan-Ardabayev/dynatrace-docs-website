@@ -29,14 +29,14 @@ Dynatrace integrates gauge and counter metrics from Prometheus exporters and ser
 
 In Kubernetes, Dynatrace supports scraping of any HTTP(s) endpoint offering metrics in OpenMetrics format (for example, Prometheus exporters). Using Dynatrace-specific annotations, you can specify which pods or services to scrape.
 
-* Learn how to collect [Prometheus metrics in Kubernetes](../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
+* Learn how to collect Prometheus metrics in Kubernetes.
 
 ## Prometheus outside of Kubernetes
 
 Dynatrace provides a scalable means to ingest Prometheus metrics directly from the source, without Kubernetes. This works fully automatically and works best if OneAgent is installed on the box where the Prometheus metrics originate, but it can also be done in a fully agentless manner when OneAgent can't be installed on the box.
 
-* Learn how to collect Prometheus metrics without Kubernetes using [Extensions 2.0 Prometheus data source](../../../extensions/develop-your-extensions/data-sources/prometheus-extensions.md "Learn how to create a Prometheus extension using the Extensions framework.").
+* Learn how to collect Prometheus metrics without Kubernetes using Extensions 2.0 Prometheus data source.
 
 ## Prometheus via OpenTelemetry Collector
 
-For environments that require greater customization, Dynatrace allows the ingestion of Prometheus metrics using the OpenTelemetry Collector. To get started, see [Scrape data from Prometheus](../../../opentelemetry/collector/use-cases/prometheus.md "Configure the OpenTelemetry Collector to scrape your Prometheus data.").
+For environments that require greater customization, Dynatrace allows the ingestion of Prometheus metrics using the OpenTelemetry Collector. To get started, see Scrape data from Prometheus.

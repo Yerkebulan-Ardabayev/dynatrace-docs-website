@@ -16,7 +16,7 @@ Dynatrace integration with Amazon CloudWatch Metric Streams provides a simple an
 
 ### AWS default integration vs AWS Metric Streams
 
-Differences between [AWS default integration](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md "Integrate metrics from Amazon CloudWatch.") and AWS Metric Streams.
+Differences between AWS default integration and AWS Metric Streams.
 
 |  | AWS Default integration | AWS Metric Streams |
 | --- | --- | --- |
@@ -35,12 +35,12 @@ Differences between [AWS default integration](../../../../../ingest-from/amazon-
 
 1
 
-The `ext:` prefix is used by metrics from [OneAgent extensions](../../../../../ingest-from/extensions/develop-your-extensions.md "Develop your own Extensions in Dynatrace.") and [ActiveGate extensions](../../../../../ingest-from/extensions/develop-your-extensions.md "Develop your own Extensions in Dynatrace."), and also by [classic metrics for AWS integration](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md "Integrate metrics from Amazon CloudWatch.").
+The `ext:` prefix is used by metrics from OneAgent extensions and ActiveGate extensions, and also by classic metrics for AWS integration.
 Despite the naming similarities, AWS integration metrics are **not** based on extensions.
 
 ## Prerequisites
 
-* Create an [API token](../../../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") in your Dynatrace environment and enable the **Ingest metrics** permission.
+* Create an API token in your Dynatrace environment and enable the **Ingest metrics** permission.
 * Determine the API URL for your environment:
 
   + **For Dynatrace SaaS**  
@@ -50,7 +50,7 @@ Despite the naming similarities, AWS integration metrics are **not** based on ex
   + **For ActiveGate**  
     `https://<your_active_gate_IP_or_hostname>:9999/e/<your_environment_ID>`
 
-To determine `<your_environment_ID>`, see [environment ID](../../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+To determine `<your_environment_ID>`, see environment ID.
 
 To receive the AWS metrics, the previously selected endpoint needs to be open to incoming Internet traffic. Restrictive firewalls might block the streaming service.
 
@@ -235,7 +235,7 @@ Once you deploy the Metric Streams client, you can use the [predefined dashboard
 Prerequisites
 
 * Install [Python 3ï»¿](https://www.python.org/downloads/) (no additional libraries are required)
-* Enable the **Read configuration** and **Write configuration** permissions for your [API token](../../../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.")
+* Enable the **Read configuration** and **Write configuration** permissions for your API token
 
 To upload preset dashboards from GitHub
 

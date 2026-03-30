@@ -44,8 +44,8 @@ Dynatrace Operator версии 1.8.0+
 
 | **Параметр** | **Описание** | **Значение по умолчанию** | **Тип данных** |
 | --- | --- | --- | --- |
-| `apiUrl` | `apiUrl` Dynatrace, включая путь `/api` в конце. - Для SaaS установите `YOUR_ENVIRONMENT_ID` как ID вашей среды. - Для Managed измените адрес `apiUrl`. Инструкции по определению ID среды и настройке адреса apiUrl см. в разделе [ID среды](../../../discover-dynatrace/get-started/monitoring-environment.md "Узнайте о работе со средами мониторинга.") | - | string |
-| `customPullSecret` | Определяет пользовательский pull secret, если вы используете частный реестр при загрузке образов из среды Dynatrace. Примечание: для [функции загрузки образов узлов](../guides/deployment-and-configuration/node-image-pull.md "Настройка загрузки образов узлов") без CSI-драйвера необходимо вручную обеспечить доступность pull secrets в инжектированном поде. | - | string |
+| `apiUrl` | `apiUrl` Dynatrace, включая путь `/api` в конце. - Для SaaS установите `YOUR_ENVIRONMENT_ID` как ID вашей среды. - Для Managed измените адрес `apiUrl`. Инструкции по определению ID среды и настройке адреса apiUrl см. в разделе ID среды | - | string |
+| `customPullSecret` | Определяет пользовательский pull secret, если вы используете частный реестр при загрузке образов из среды Dynatrace. Примечание: для функции загрузки образов узлов без CSI-драйвера необходимо вручную обеспечить доступность pull secrets в инжектированном поде. | - | string |
 | `dynatraceApiRequestThreshold` | Минимальный интервал в минутах между запросами к API Dynatrace. | 15 | integer |
 | `enableIstio` | При включении, если Istio установлен в среде Kubernetes, Dynatrace Operator создаст соответствующие объекты VirtualService и ServiceEntry для обеспечения доступа к кластеру Dynatrace из OneAgent или ActiveGate. Отключено по умолчанию. | - | boolean |
 | `networkZone` | Устанавливает сетевую зону для подов OneAgent и ActiveGate. | - | string |
@@ -69,14 +69,14 @@ Dynatrace Operator версии 1.8.0+
 | **Параметр** | **Описание** | **Значение по умолчанию** | **Тип данных** |
 | --- | --- | --- | --- |
 | `annotations` | Добавление пользовательских аннотаций OneAgent. | Не применимо | map[string]string |
-| `args` | Установка дополнительных аргументов для установщика OneAgent. Доступные параметры см. в [Пользовательская установка Linux](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Узнайте, как использовать установщик Linux с параметрами командной строки."). | Не применимо | []string |
+| `args` | Установка дополнительных аргументов для установщика OneAgent. Доступные параметры см. в Пользовательская установка Linux. | Не применимо | []string |
 | `codeModulesImage` | Указывает образ OneAgent CodeModules, используемый для инжекции в поды приложений. Обновления применяются только при изменении ссылки на образ. | Не применимо | string |
 | `dnsPolicy` | Установка политики DNS для подов OneAgent. Подробнее см. [Pods DNS Policy](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Установка дополнительных переменных окружения для подов OneAgent. | Не применимо | []EnvVar |
 | `image` | Использование пользовательского образа Docker для OneAgent. | Образ из кластера Dynatrace. | string |
 | `initResources` | Определение запросов и лимитов ресурсов для initContainer. Подробнее см. [Управление ресурсами контейнеров](https://dt-url.net/atc371q). | Не применимо | ResourceRequirements |
 | `labels` | Пользовательские метки для подов OneAgent для структурирования рабочих нагрузок. | Не применимо | map[string]string |
-| `namespaceSelector` | Пространства имён, в которые Dynatrace Operator должен выполнять инжекцию. Подробнее см. [Настройка мониторинга для пространств имён и подов](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Настройка мониторинга для пространств имён и подов"). | Не применимо | LabelSelector |
+| `namespaceSelector` | Пространства имён, в которые Dynatrace Operator должен выполнять инжекцию. Подробнее см. Настройка мониторинга для пространств имён и подов. | Не применимо | LabelSelector |
 | `nodeSelector` | Указание селектора узлов, определяющего, на каких узлах будет развёрнут OneAgent. | Не применимо | map[string]string |
 | `oneAgentResources` | Настройки ресурсов для контейнера OneAgent. Потребление ресурсов OneAgent сильно зависит от рабочей нагрузки для мониторинга. | Не применимо | ResourceRequirements |
 | `priorityClassName` | Назначение класса приоритета подам OneAgent. По умолчанию класс не установлен. Подробнее см. [Pod Priority and Preemption](https://dt-url.net/n8437bl). | Не применимо | string |
@@ -104,7 +104,7 @@ Dynatrace Operator версии 1.8.0+
 | **Параметр** | **Описание** | **Значение по умолчанию** | **Тип данных** |
 | --- | --- | --- | --- |
 | `annotations` | Добавление пользовательских аннотаций ActiveGate. | Не применимо | map[string]string |
-| `capabilities` | Определяет возможности пода ActiveGate: какие функции должны быть включены. Возможные значения: - `routing` включает маршрутизацию OneAgent. - `kubernetes-monitoring` включает мониторинг Kubernetes API. - `metrics-ingest`[1](#fn-2-1-def) открывает конечную точку приёма метрик на DynaKube ActiveGate и перенаправляет все поды на неё. - `dynatrace-api`[1](#fn-2-1-def) включает вызов Dynatrace API через ActiveGate. - `debugging` включает [модуль Live Debugging](../../dynatrace-activegate/configuration/configure-activegate.md#debugging "Узнайте, какие свойства ActiveGate можно настроить.") в ActiveGate. | Не применимо | string |
+| `capabilities` | Определяет возможности пода ActiveGate: какие функции должны быть включены. Возможные значения: - `routing` включает маршрутизацию OneAgent. - `kubernetes-monitoring` включает мониторинг Kubernetes API. - `metrics-ingest`[1](#fn-2-1-def) открывает конечную точку приёма метрик на DynaKube ActiveGate и перенаправляет все поды на неё. - `dynatrace-api`[1](#fn-2-1-def) включает вызов Dynatrace API через ActiveGate. - `debugging` включает модуль Live Debugging в ActiveGate. | Не применимо | string |
 | `customProperties` | Добавление файла пользовательских свойств в виде значения или ссылки из секрета. При ссылке из секрета убедитесь, что ключ называется `customProperties`. | Не применимо | string |
 | `env` | Установка дополнительных переменных окружения для подов ActiveGate. | Не применимо | []EnvVar |
 | `group` | Установка группы активации для ActiveGate. | Не применимо | string |
@@ -126,7 +126,7 @@ Dynatrace Operator версии 1.8.0+
 | Параметр | Описание | Значение по умолчанию | Тип данных |
 | --- | --- | --- | --- |
 | `enabled` | Включает MetadataEnrichment, по умолчанию `false`. | `false` | boolean |
-| `namespaceSelector` | Пространства имён, в которые Dynatrace Operator должен выполнять инжекцию. Подробнее см. [Настройка мониторинга для пространств имён и подов](../guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Настройка мониторинга для пространств имён и подов"). | Не применимо | LabelSelector |
+| `namespaceSelector` | Пространства имён, в которые Dynatrace Operator должен выполнять инжекцию. Подробнее см. Настройка мониторинга для пространств имён и подов. | Не применимо | LabelSelector |
 
 ## `.spec.extensions`
 

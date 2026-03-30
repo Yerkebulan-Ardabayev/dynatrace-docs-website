@@ -4,10 +4,10 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/applica
 updated: 2026-02-09
 ---
 
-[### List attacks](/managed/dynatrace-api/environment-api/application-security/attacks/get-attacks "View the list of attacks via Dynatrace API.")[### View attack details](/managed/dynatrace-api/environment-api/application-security/attacks/get-attack-details "View details of an attack via Dynatrace API.")
+### List attacks### View attack details
 
 ## Related topics
 
-* [Application Security](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.")
-* [Davis Security Advisor API](/managed/dynatrace-api/environment-api/application-security/davis-security-advice "View the Davis Security Advisor recommendations via Dynatrace API.")
-* [Manage attacks](/managed/secure/application-security/application-protection/manage-attacks "Monitor the attacks on your application code.")
+* Application Security
+* Davis Security Advisor API
+* Manage attacks

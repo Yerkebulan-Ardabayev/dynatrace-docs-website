@@ -69,10 +69,10 @@ The identification of reference values is based, as explained above, on a baseli
 
 #### Service baselining dimensions
 
-* **Service method**: A service's individual service methods (for example, `getBookingPage` or `getReportPage`). In the case of database services, the service method represents the different SQL statements that are queried (for example, `call verify_location(?) select booking0_.id from Booking booking0_ where booking0_.user_name<>?`). A reference value is additionally calculated for the predefined service method groups, static requests, and [dynamic requests](../../discover-dynatrace/get-started/glossary.md#request "Get acquainted with Dynatrace terminology.").
+* **Service method**: A service's individual service methods (for example, `getBookingPage` or `getReportPage`). In the case of database services, the service method represents the different SQL statements that are queried (for example, `call verify_location(?) select booking0_.id from Booking booking0_ where booking0_.user_name<>?`). A reference value is additionally calculated for the predefined service method groups, static requests, and dynamic requests.
 * **Service method group**: Static or dynamic groups for web services, and for database services, groups that correspond to database operations like insert, update, select and so forth. For database services, a reference value is calculated for the predefined service method groups `inserts`, `updates`, and `selects`.
 
-Services of the `PROCESS` type don't support automated baselining. Use [anomaly detection](../../observe/infrastructure-observability/hosts/configuration/anomaly-detection.md "Configure host anomaly detection, including problem and event thresholds.") instead.
+Services of the `PROCESS` type don't support automated baselining. Use anomaly detection instead.
 
 ### How automated baselining works
 
@@ -98,7 +98,7 @@ Dynatrace application traffic anomaly detection is based on the assumption that 
 
 Following the learning period, Dynatrace forecasts the next weekâs traffic and then compares the actual incoming application traffic with the prediction. If Dynatrace detects a statistically significant deviation from forecasted traffic levels, it raises either an `Unexpected low traffic` or `Unexpected high traffic` problem.
 
-In general, newly detected anomalous events in an environment won't necessarily result in the immediate raising of an alert. Raised alerts always provide insight into the underlying root cause. To identify the root causes of problems, Dynatrace follows [a context-aware approach to detect interdependent events](../root-cause-analysis/concepts.md "Get acquainted with root cause analysis concepts.") across time, processes, hosts, services, applications, and both vertical and horizontal topological monitoring perspectives. By taking into account all these monitoring perspectives, Dynatrace pinpoints the root causes of problems. And only then will alerts be generated for a detected problem.
+In general, newly detected anomalous events in an environment won't necessarily result in the immediate raising of an alert. Raised alerts always provide insight into the underlying root cause. To identify the root causes of problems, Dynatrace follows a context-aware approach to detect interdependent events across time, processes, hosts, services, applications, and both vertical and horizontal topological monitoring perspectives. By taking into account all these monitoring perspectives, Dynatrace pinpoints the root causes of problems. And only then will alerts be generated for a detected problem.
 
 ### Default baseline event timeouts
 

@@ -14,18 +14,18 @@ scraped: 2026-03-05T21:37:05.026071
 
 Dynatrace version 1.230+
 
-As an alternative to the [main deployment](deploy-k8.md "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster."), that provides Google Cloud monitoring for both metrics and logs, you can choose to set up monitoring for logs only. In this scenario, you'll run the deployment script in Google Cloud Shell. Instructions will depend on the location where you want the deployment script to run:
+As an alternative to the main deployment, that provides Google Cloud monitoring for both metrics and logs, you can choose to set up monitoring for logs only. In this scenario, you'll run the deployment script in Google Cloud Shell. Instructions will depend on the location where you want the deployment script to run:
 
 * On a new GKE Autopilot cluster created automatically Recommended
 * On an existing GKE standard or GKE Autopilot cluster
 
 During setup, a new Pub/Sub subscription will be created. GKE will run a log forwarder container. After installation, you'll get logs, dashboards, and alerts for your configured services in Dynatrace.
 
-For other deployment options, see [Alternative deployment scenarios](../gcp-guide.md "Other options to set up log and/or metric monitoring for Google Cloud services").
+For other deployment options, see Alternative deployment scenarios.
 
 This page describes how to install version 1.0 of the Google Cloud integration on a GKE cluster.
 
-* If you already have an [earlier version](../../legacy/deployment-k8s-container-legacy.md "Set up log and metric monitoring for GCP services in a Kubernetes container.") installed, you need to [migrate](migrate-gcp-function.md "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.").
+* If you already have an earlier version installed, you need to migrate.
 
 ## Limitations
 
@@ -265,7 +265,7 @@ For more information, see [Route logs to supported destinationsï»¿](https://d
 * Determine where log ingestion will be performed, according to your deployment. This distinction is important when configuring the [parameters](#param) for this integration.
 
   + **For SaaS deployments:** SaaS log ingest, where log ingestion is performed directly through the Cluster API. Recommended
-  + **For Managed deployments:** You can use an existing ActiveGate for log ingestion. For information on how to deploy it, see [ActiveGate installation](../../../dynatrace-activegate/installation.md "Learn how to configure ActiveGate").
+  + **For Managed deployments:** You can use an existing ActiveGate for log ingestion. For information on how to deploy it, see ActiveGate installation.
 
 Because of GCP's implementation of Cloud Function 2nd gen, logs from those resources will be linked to the underlying Cloud Run instances. Both extensions will have to be enabled.
 
@@ -485,7 +485,7 @@ To change the deployment type (`all`, `metrics`, or `logs`)
 To investigate potential deployment and connectivity issues
 
 1. [Verify installation](#verify)
-2. [Enable self-monitoring](deploy-k8/self-monitoring-gcp.md "Determine if your self-monitoring function is properly processing and sending logs to Dynatrace.") Optional
+2. Enable self-monitoring Optional
 3. Check the `dynatrace_gcp_<date_time>.log` log file created during the installation process.
 
 * This file will be created each time the installation script runs.
@@ -496,7 +496,7 @@ To investigate potential deployment and connectivity issues
   + Provide version information.
 
     - For issues during installation, check the `version.txt` file.
-    - For issues during runtime, [check container logs](deploy-k8/self-monitoring-gcp.md "Determine if your self-monitoring function is properly processing and sending logs to Dynatrace.").
+    - For issues during runtime, check container logs.
 
 ## Scaling guide for logs
 
@@ -557,9 +557,9 @@ Make sure to uninstall the following resources manually:
 
 ## Monitoring consumption
 
-DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](../../../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
+DDU consumption applies to cloud Log Monitoring. See DDUs for Log Monitoring for details.
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](../../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
+* Set up Dynatrace on Google Cloud
 * [Google Cloud Monitor Troubleshootingï»¿](https://community.dynatrace.com/t5/Troubleshooting/Google-Cloud-Monitor-Troubleshooting/ta-p/243796)

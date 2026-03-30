@@ -20,7 +20,7 @@ Early Adopter requests have this mark in the API Explorer:
 
 A Preview provides you with access to new features so that we can hear your feedback and ultimately deliver features that exactly meet your needs. Preview requests aren't meant to be used in production environments.
 
-Preview requests aren't publicly availableâyou need to sign up for the respective Preview. See [Preview and Early Adopter releases](/managed/whats-new/preview-releases "Learn about our Preview releases and how you can participate in them.") to learn more about conditions and how to sign up.
+Preview requests aren't publicly availableâyou need to sign up for the respective Preview. See Preview and Early Adopter releases to learn more about conditions and how to sign up.
 
 Preview requests have this mark in the API Explorer:
 

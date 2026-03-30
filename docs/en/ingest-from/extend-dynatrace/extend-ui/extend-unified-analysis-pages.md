@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:34:16.785131
 * 2-min read
 * Published May 19, 2022
 
-If your extension supplies additional data for a default entity with its own unified analysis page, you can extend the page using card injections. Examples of built-in unified analysis pages are the [host overview page](../../../observe/infrastructure-observability/hosts/monitoring/host-monitoring.md "Monitor hosts with Dynatrace.") or any unified analysis Kubernetes page. Card injections are available since Dynatrace version 1.233.
+If your extension supplies additional data for a default entity with its own unified analysis page, you can extend the page using card injections. Examples of built-in unified analysis pages are the host overview page or any unified analysis Kubernetes page. Card injections are available since Dynatrace version 1.233.
 
 ## Define card injection
 
@@ -62,7 +62,7 @@ The following options are available for a card supplied by your extension:
 
 * `type`: Card type available to be supplied to a unified analysis page. Supported types include `CHART_GROUP`, `ENTITIES_LIST`, `EVENTS`, `LOGS`, and `MESSAGE`.
 * `key`: Unique card key used to reference the desired card configuration. Use a well-specified key prefix to ensure that related cards are placed properly on a page. Cards are sorted alphabetically based on key.
-* `entitySelectorTemplate`: An entity selector that is used to reference cards from another monitored entity type. For more information, see [Environment API v2 - Entity selector](../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.").
+* `entitySelectorTemplate`: An entity selector that is used to reference cards from another monitored entity type. For more information, see Environment API v2 - Entity selector.
 
   Details
 

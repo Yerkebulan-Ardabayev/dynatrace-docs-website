@@ -70,10 +70,10 @@ The contents of this user menu depend on your permissions.
 * [Environments](#environments)âDisplays the number of active environments. Links to [Environments](#environments).
 * [ActiveGates](#deployment-status-activegates)âDisplays the number of Cluster ActiveGates and Environment ActiveGates. Links to [Deployment status](#deployment-status).
 * [Cluster nodes](#deployment-status-cluster-nodes)âDisplays the number of Cluster nodes.
-* [Last backup](/managed/managed-cluster/operation/back-up-and-restore-a-cluster "Understand the steps and commands required to restore a Dynatrace Managed cluster.")âDisplays the date and storage location of the last backup.
+* Last backupâDisplays the date and storage location of the last backup.
 * [Events](#events)âDisplays the number of log events.
 * [Users](#user-authentication)âDisplays the number of users and user groups.
-* [Dynatrace Mission Control](/managed/managed-cluster/data-privacy/mission-control-proactive-support "Learn about how Mission Control proactive support works.")
+* Dynatrace Mission Control
 
 ### Deployment status
 
@@ -126,31 +126,31 @@ The contents of this user menu depend on your permissions.
 
 **User authentication** links to user-related settings.
 
-* **User accounts**âLists user accounts. Select a user to view details and group assignments and permissions. For details, see [User and group management](/managed/manage/identity-access-management/user-and-group-management "User and group management").
-* **User groups**âLists user groups. Select  for a group to configure the group name, permissions, and policies. For details, see [User and group management](/managed/manage/identity-access-management/user-and-group-management "User and group management").
+* **User accounts**âLists user accounts. Select a user to view details and group assignments and permissions. For details, see User and group management.
+* **User groups**âLists user groups. Select  for a group to configure the group name, permissions, and policies. For details, see User and group management.
 * **Policy management**âLists policies. Select in the **Actions** column to view or edit a policy.
-* **User sessions**âLists user sessions. For details, see [Configure and manage user sessions](/managed/managed-cluster/configuration/configure-manage-user-sessions "Learn how to define the maximum number of concurrent user sessions for Dynatrace Managed.").
-* **Password policy**âFor details, see [Password complexity rules](/managed/managed-cluster/configuration/password-complexity-rules "Learn how to configure password complexity rules for Dynatrace Managed.").
-* **User repository**âView and edit user repository settings. For details, see [Manage users and groups via LDAP](/managed/manage/identity-access-management/user-and-group-management/manage-users-and-groups-with-ldap "Learn how to connect your Dynatrace Server to an LDAP server to import user groups or accounts that need access to your Dynatrace Managed environment.").
-* **Single sign-on settings**âFor details, see [Manage users and groups with SAML in Dynatrace Managed](/managed/manage/identity-access-management/user-and-group-management/manage-users-and-groups-with-saml "Learn how to connect your Dynatrace Server to a SAML server to import user groups or accounts that need access to your Dynatrace Managed environment.") and [Manage users and groups with OpenID in Dynatrace Managed](/managed/manage/identity-access-management/user-and-group-management/manage-users-and-groups-with-openid "Learn how to use OpenID as an SSO IdP for the management of users and groups.").
-* **Login screen**âFor details, see [Sign-in page customization](/managed/managed-cluster/configuration/sign-in-customization "Learn how to customize the sign-in page in Dynatrace Managed.").
+* **User sessions**âLists user sessions. For details, see Configure and manage user sessions.
+* **Password policy**âFor details, see Password complexity rules.
+* **User repository**âView and edit user repository settings. For details, see Manage users and groups via LDAP.
+* **Single sign-on settings**âFor details, see Manage users and groups with SAML in Dynatrace Managed and Manage users and groups with OpenID in Dynatrace Managed.
+* **Login screen**âFor details, see Sign-in page customization.
 
 ### Settings
 
 **Settings** links to cluster-related settings.
 
 * **Public endpoints**
-* **Internet proxy**âFor details, see [Configure internet proxy for cluster](/managed/managed-cluster/configuration/internet-proxy "Configure a proxy connection for your Managed cluster if you do not have direct internet access.").
+* **Internet proxy**âFor details, see Configure internet proxy for cluster.
 * **Emails**
 
-  + **SMTP server**âConfigure how email notifications for the cluster are delivered. For details, see [Configure an SMTP server connection](/managed/managed-cluster/configuration/configure-smtp-server-connection "Learn how to configure an SMTP server connection and why this is recommended.").
+  + **SMTP server**âConfigure how email notifications for the cluster are delivered. For details, see Configure an SMTP server connection.
   + **Email notifications**âConfigure email notification recipients.
-* **Preferences**âFor details, see [Cluster preferences settings](/managed/managed-cluster/configuration/configure-cluster-preferences "Configure cluster preferences and privacy settings").
-* **Remote access permissions**âFor details, see [Cluster remote access](/managed/managed-cluster/configuration/cluster-remote-access "Learn how to grant permission for remote access.").
-* **API tokens**âFor details, see [Cluster API - Authentication](/managed/managed-cluster/api-references/cluster-api/basics/cluster-api-authentication "How to get authenticated to use the Dynatrace Cluster API.").
-* **Backup**âFor details, see [Backup and restore a cluster](/managed/managed-cluster/operation/back-up-and-restore-a-cluster "Understand the steps and commands required to restore a Dynatrace Managed cluster.").
+* **Preferences**âFor details, see Cluster preferences settings.
+* **Remote access permissions**âFor details, see Cluster remote access.
+* **API tokens**âFor details, see Cluster API - Authentication.
+* **Backup**âFor details, see Backup and restore a cluster.
 * **Service Providers**
-* **Automatic update**âFor details, see [Update Dynatrace Managed](/managed/managed-cluster/operation/update-dynatrace-managed "Learn how to schedule automatic updates or perform manual updates of Dynatrace Managed.").
+* **Automatic update**âFor details, see Update Dynatrace Managed.
 
 ### Licensing
 
@@ -168,10 +168,10 @@ The contents of this user menu depend on your permissions.
 * **License status**
 * **License key**
 
-To verify your connection to [Mission Control](/managed/managed-cluster/data-privacy/mission-control-proactive-support "Learn about how Mission Control proactive support works."), select ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") > **Check Mission Control connection** in the upper-right corner.
+To verify your connection to Mission Control, select ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") > **Check Mission Control connection** in the upper-right corner.
 
 ### Audit log
 
 **Audit log** lists events triggered by the cluster and selected configuration changes for all environments.
 
-This table shows only changes related to cluster-wide configuration, licensing, storage quota, and permissions. For all environment audit log entries, use the [Audit Log REST API](/managed/dynatrace-api/environment-api/audit-logs/get-log "View full audit log via Dynatrace API.").
+This table shows only changes related to cluster-wide configuration, licensing, storage quota, and permissions. For all environment audit log entries, use the Audit Log REST API.

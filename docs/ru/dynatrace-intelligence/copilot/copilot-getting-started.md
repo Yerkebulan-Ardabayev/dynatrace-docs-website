@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:13:25.807648
 
 ![Включение генеративного ИИ в настройках](https://dt-cdn.net/images/generative-ai-settings-1913-24ab3b085b.png)
 
-Если вы не видите страницу настроек, убедитесь, что вам назначены политики `Setting Reader` и `Setting Writer`. Для получения дополнительной информации см. [разрешения на чтение и запись](../../manage/identity-access-management/use-cases/access-settings.md#example-read-and-write-permissions "Grant access to Settings").
+Если вы не видите страницу настроек, убедитесь, что вам назначены политики `Setting Reader` и `Setting Writer`. Для получения дополнительной информации см. разрешения на чтение и запись.
 
 ### Разрешения пользователей
 
@@ -25,7 +25,7 @@ scraped: 2026-03-06T21:13:25.807648
 * **Перевод DQL в естественный язык** (`ALLOW davis-copilot:dql2nl:execute;`)
 * **Диалоговый рекомендатель** (`ALLOW davis-copilot:conversations:execute;`)
 
-Для получения дополнительной информации об управлении политиками см. [Управление политиками IAM](../../manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt.md "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
+Для получения дополнительной информации об управлении политиками см. Управление политиками IAM.
 
 ## Включение агентного ИИ для Dynatrace Assist
 
@@ -42,7 +42,7 @@ scraped: 2026-03-06T21:13:25.807648
   2. Убедитесь, что **Enable generative AI** включен.
   3. Включите **Enable agentic AI**.
 
-Агентный **Dynatrace Assist** может быть недоступен, если вы не выполняете указанные выше предварительные требования или если вы обращаетесь к **Dynatrace Assist** через [встроенные стартеры диалогов](chat-with-davis-copilot/copilot-conv-starters.md "Learn how to trigger predefined prompts in various Dynatrace applications.").
+Агентный **Dynatrace Assist** может быть недоступен, если вы не выполняете указанные выше предварительные требования или если вы обращаетесь к **Dynatrace Assist** через встроенные стартеры диалогов.
 
 ### Разрешения агентного режима **Dynatrace Assist**
 
@@ -69,7 +69,7 @@ scraped: 2026-03-06T21:13:25.807648
 
 Если вы хотите, чтобы агентный и генеративный ИИ Dynatrace Intelligence предлагал руководства по устранению неполадок для аналогичных или повторяющихся проблем, вам необходимо разрешить ему выполнять поиск и индексацию документов, созданных в ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** и ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** и доступных всем пользователям вашего окружения. Для обеспечения полного контроля над безопасностью ваших данных эта функциональность является опциональной и отключена по умолчанию.
 
-Чтобы агентный и генеративный ИИ Dynatrace Intelligence мог индексировать и предлагать ваш документ, он должен быть доступен всем пользователям вашего окружения. Агентный и генеративный ИИ Dynatrace Intelligence не будет индексировать или предлагать приватные документы или документы, доступные только определенным пользователям. Подробнее о совместном доступе к документам см. [Совместный доступ к документам](../../discover-dynatrace/get-started/dynatrace-ui/share.md "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
+Чтобы агентный и генеративный ИИ Dynatrace Intelligence мог индексировать и предлагать ваш документ, он должен быть доступен всем пользователям вашего окружения. Агентный и генеративный ИИ Dynatrace Intelligence не будет индексировать или предлагать приватные документы или документы, доступные только определенным пользователям. Подробнее о совместном доступе к документам см. Совместный доступ к документам with other Dynatrace users in your company.").
 
 Чтобы включить предложения документов
 
@@ -113,6 +113,6 @@ scraped: 2026-03-06T21:13:25.807648
 
 ## Связанные темы
 
-* [Часто задаваемые вопросы об агентном и генеративном ИИ Dynatrace Intelligence](../../../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
-* [Запросы на естественном языке](quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
-* [Агентный и генеративный ИИ Dynatrace Intelligence -- советы по написанию лучших промптов](quick-analysis-copilot-dql/copilot-tips.md "Learn best practices for writing more accurate prompts.")
+* Часто задаваемые вопросы об агентном и генеративном ИИ Dynatrace Intelligence
+* Запросы на естественном языке
+* Агентный и генеративный ИИ Dynatrace Intelligence -- советы по написанию лучших промптов

@@ -56,7 +56,7 @@ scraped: 2026-03-06T21:17:54.642583
 1. В Dynatrace Hub выберите **OneAgent**.
 2. Выберите **Set up** > **Windows** или **Linux**.
 
-Подробнее см. инструкции по установке OneAgent для [Windows](../../dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows.md "Узнайте, как скачать и установить Dynatrace OneAgent на Windows.") или [Linux](../../dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux.md "Узнайте, как скачать и установить Dynatrace OneAgent на Linux.").
+Подробнее см. инструкции по установке OneAgent для Windows или Linux.
 
 ## Настройка установки
 
@@ -127,7 +127,7 @@ Windows
    command: "service httpd restart"
    ```
 
-   Если вы хотите добавить дополнительные параметры, разделяйте их пробелами. Подробнее о параметрах установки см. в разделе [настройка установки OneAgent на Linux](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Узнайте, как использовать установщик Linux с параметрами командной строки.").
+   Если вы хотите добавить дополнительные параметры, разделяйте их пробелами. Подробнее о параметрах установки см. в разделе настройка установки OneAgent на Linux.
 
    Не используйте свойство `env` команды, так как оно перезаписывает, а не дополняет существующее окружение и приведёт к сбою установки OneAgent.
 4. Необязательно: расширьте вашу конфигурацию.
@@ -242,20 +242,20 @@ Windows
    command: "C:/OneAgent/Dynatrace-OneAgent-Installer.exe --quiet --set-proxy=172.1.1.128:8080"
    ```
 
-   Если вы хотите добавить дополнительные параметры, разделяйте их пробелами. Подробнее о параметрах установки см. в разделе [настройка установки OneAgent на Windows](../../dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md "Узнайте, как использовать установщик OneAgent для Windows.").
+   Если вы хотите добавить дополнительные параметры, разделяйте их пробелами. Подробнее о параметрах установки см. в разделе настройка установки OneAgent на Windows.
 
    Вам не нужно добавлять дополнительные команды после установки OneAgent. Amazon самостоятельно перезапустит IIS после успешной загрузки всех файлов приложения.
 
 ## Настройка сетевых зон (необязательно)
 
-Для настройки сетевых зон используйте следующий аргумент: `--set-network-zone=<your.network.zone>`. Подробнее см. в разделе [сетевые зоны](../../../manage/network-zones.md "Узнайте, как работают сетевые зоны в Dynatrace.").
+Для настройки сетевых зон используйте следующий аргумент: `--set-network-zone=<your.network.zone>`. Подробнее см. в разделе сетевые зоны.
 
 ## Потребление мониторинга
 
-Для AWS Elastic Beanstalk потребление мониторинга рассчитывается на основе единиц хостов. Подробности см. в разделе [Мониторинг приложений и инфраструктуры (единицы хостов)](../../../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Узнайте, как рассчитывается потребление мониторинга приложений и инфраструктуры Dynatrace на основе единиц хостов.").
+Для AWS Elastic Beanstalk потребление мониторинга рассчитывается на основе единиц хостов. Подробности см. в разделе Мониторинг приложений и инфраструктуры (единицы хостов).
 
 ## Связанные темы
 
-* [Dynatrace OneAgent](../../dynatrace-oneagent.md "Основные концепции OneAgent, а также установка и эксплуатация OneAgent на различных платформах.")
-* [Ограничение вызовов API к AWS с помощью тегов](../integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags.md "Добавление и настройка тегов AWS для ограничения ресурсов AWS.")
-* [Матрица поддержки платформ и возможностей OneAgent](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах.")
+* Dynatrace OneAgent
+* Ограничение вызовов API к AWS с помощью тегов
+* Матрица поддержки платформ и возможностей OneAgent

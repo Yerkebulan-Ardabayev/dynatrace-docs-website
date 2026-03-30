@@ -10,7 +10,7 @@ scraped: 2026-03-05T21:31:30.344039
 Мы обновили дизайн страницы обзора базы данных.
 
 * Эта документация описывает новый дизайн.
-* Если вы хотите вернуться к классической странице базы данных, на странице обзора базы данных выберите **More** (**...**) > **Return to classic page**, а затем обратитесь к [документации по классической странице базы данных](analyze-database-services.md "Analyze your database services with Dynatrace (classic page).").
+* Если вы хотите вернуться к классической странице базы данных, на странице обзора базы данных выберите **More** (**...**) > **Return to classic page**, а затем обратитесь к документации по классической странице базы данных.").
 
 Все базы данных, обнаруженные Dynatrace в вашей среде, отображаются на странице **Databases**. Вы можете анализировать каждую базу данных и углубляться до информации на уровне кода.
 
@@ -43,16 +43,16 @@ scraped: 2026-03-05T21:31:30.344039
 * Выберите **Problems** на панели уведомлений для отображения панели **Problems**, в которой перечислены проблемы.
 
   + Выберите проблему для отображения подробностей.
-  + Выберите **Go to problems**, чтобы перейти на страницу [Problems](../../../../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence."), отфильтрованную по выбранной базе данных.
+  + Выберите **Go to problems**, чтобы перейти на страницу Problems, отфильтрованную по выбранной базе данных.
 
 ### SLO
 
-* На панели уведомлений **SLOs** показывает текущее количество [SLO](../../../../deliver/service-level-objectives-classic.md "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic."), связанных с выбранной базой данных.
+* На панели уведомлений **SLOs** показывает текущее количество SLO, связанных с выбранной базой данных.
 * Выберите **SLOs** на панели уведомлений для отображения панели **Service-level objectives**, которая содержит SLO, прямо или косвенно связанные с базой данных.
 
 #### Прямо связанные SLO
 
-* SLO считается прямо связанным с сервисом, когда [селектор сущности](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") SLO соответствует следующим критериям:
+* SLO считается прямо связанным с сервисом, когда селектор сущности SLO соответствует следующим критериям:
 
   + Тип сущности установлен как `"DATABASE"`.
   + ID сущности установлен как ID базы данных.
@@ -60,7 +60,7 @@ scraped: 2026-03-05T21:31:30.344039
 
 #### Косвенно связанные SLO
 
-* SLO не является прямо связанным с базой данных, когда в [селекторе сущности](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") SLO не указан ID сущности.
+* SLO не является прямо связанным с базой данных, когда в селекторе сущности SLO не указан ID сущности.
 
   Пример: когда указаны общие значения, такие как `type("DATABASE"),tag("slo")`, запрос возвращает все SLO для всех баз данных, включая текущую.
 * Чтобы увидеть SLO, не связанные напрямую с базой данных, отключите **Show only directly connected SLOs**.
@@ -70,11 +70,11 @@ scraped: 2026-03-05T21:31:30.344039
 * Разверните **Details**, чтобы просмотреть график соответствующих метрик SLO.
 * В разделе **Actions** выберите:
 
-  + **View in Data Explorer**, чтобы [просмотреть метрики SLO в Data Explorer](../../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#explorer "Create, configure, and monitor service-level objectives with Dynatrace.").
-  + **Pin to Dashboard**, чтобы [закрепить SLO на вашем дашборде](../../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#dash "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **View in Data Explorer**, чтобы просмотреть метрики SLO в Data Explorer.
+  + **Pin to Dashboard**, чтобы закрепить SLO на вашем дашборде.
   + **SLO definition**, чтобы отредактировать SLO в **Service-level objective definitions**.
-  + **Clone**, чтобы [клонировать SLO](../../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#clone "Create, configure, and monitor service-level objectives with Dynatrace.").
-  + **Create alert**, чтобы [создать оповещение для SLO](../../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#alerts "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Clone**, чтобы клонировать SLO.
+  + **Create alert**, чтобы создать оповещение для SLO.
 
 #### Нет SLO
 
@@ -83,7 +83,7 @@ scraped: 2026-03-05T21:31:30.344039
 * Выбрать другой временной диапазон в правом верхнем углу.
 
   ![Timeframe selector: menu bar](https://dt-cdn.net/images/timeframe-selector-menu-bar-264-8193110c8c.png)
-* Выбрать **Add SLO**, чтобы создать SLO в [мастере SLO](../../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#wizard "Create, configure, and monitor service-level objectives with Dynatrace.").
+* Выбрать **Add SLO**, чтобы создать SLO в мастере SLO.
 
 ### Доступность базы данных
 
@@ -91,7 +91,7 @@ scraped: 2026-03-05T21:31:30.344039
 
 ### Владельцы
 
-Выберите **Owners** на панели уведомлений для отображения панели **Ownership**, в которой перечислены [владельцы](../../../../deliver/ownership.md "Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.") выбранной базы данных.
+Выберите **Owners** на панели уведомлений для отображения панели **Ownership**, в которой перечислены владельцы выбранной базы данных.
 
 * Выберите для получения дополнительной информации о текущем владении.
 * Чтобы добавить тег владельца, выберите **Add Ownership tag**.
@@ -104,14 +104,14 @@ scraped: 2026-03-05T21:31:30.344039
 
 * Проанализировать метрику в Data Explorer.
 * Создать событие метрики.
-* Закрепить метрику на классическом дашборде. Подробнее см. [Pin tiles to your dashboard](../../../../analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard.md "Learn to pin tiles to your dashboards.").
+* Закрепить метрику на классическом дашборде. Подробнее см. Pin tiles to your dashboard.
 
 ### Топология
 
 В секции **Topology** вы можете узнать:
 
 * Какие сервисы вызывают базу данных и какие сервисы вызываются базой данных.
-  Выберите **Related services**, чтобы понять взаимосвязи сервисов. Разверните **Details** для просмотра графика соответствующих метрик сервиса. Для продолжения анализа вы можете выбрать [**View backtrace**](../../../application-observability/services-classic/service-backtrace.md "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
+  Выберите **Related services**, чтобы понять взаимосвязи сервисов. Разверните **Details** для просмотра графика соответствующих метрик сервиса. Для продолжения анализа вы можете выбрать **View backtrace**.
 * Процессы и хосты, на которых работает сервис.
   Разверните **Details** для просмотра графика соответствующих метрик процесса. Выберите имя процесса для его анализа.
 
@@ -125,19 +125,19 @@ scraped: 2026-03-05T21:31:30.344039
 
 ### Распределённые трассировки
 
-Секция **Distributed traces** предоставляет обзор последних трассировок за выбранный временной диапазон. Выберите **Full search**, чтобы перейти к [обзору распределённых трассировок для базы данных](../../../application-observability/distributed-traces/analysis/get-started.md "Get started with distributed trace analysis in Dynatrace.").
+Секция **Distributed traces** предоставляет обзор последних трассировок за выбранный временной диапазон. Выберите **Full search**, чтобы перейти к обзору распределённых трассировок для базы данных.
 
 ### События
 
-Список [событий](../../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md "Gain an understanding of the Events section on each host, process, and service overview page."), влияющих на базу данных в текущем временном диапазоне.
+Список событий, влияющих на базу данных в текущем временном диапазоне.
 
 ### Связанные логи
 
-Список [логов](../../../../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace."), связанных с базой данных в текущем временном диапазоне.
+Список логов, связанных с базой данных в текущем временном диапазоне.
 
 * Для анализа всех логов связанной базы данных выберите **Go to logs**.
 * Для анализа конкретного лога разверните **Details**. Если для строки лога найдена трассировка или сеанс пользователя, вы можете перейти к ним непосредственно из этого представления.
 
 ## Связанные темы
 
-* [Unified analysis pages](../../../../ingest-from/extend-dynatrace/extend-ui/unified-analysis.md "Extend the Dynatrace web UI using entity-tailored unified analysis pages.")
+* Unified analysis pages

@@ -37,7 +37,7 @@ Here's what each column in the  **Hosts** view stands for.
   Analyze and compare CPU, memory, disk, and network usage metrics across hosts to optimize resource allocation.
 * Organize environments
 
-  Use [host groups](../../../../ru/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to configure hosts per group, roll out OneAgent versions selectively, and track service metrics differently depending on the platform they run on.
+  Use host groups to configure hosts per group, roll out OneAgent versions selectively, and track service metrics differently depending on the platform they run on.
 * Drill down into host details
 
   Select a host name to view detailed graphs, processes, logs, events, and connected services for troubleshooting.

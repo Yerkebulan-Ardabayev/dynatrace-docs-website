@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:14:45.059247
 
 About the app
 
-![Explore Business Events](https://dt-cdn.net/images/biz-events-512-68c4be09db.png "Explore Business Events") **Explore Business Events** is a central repository of resources related to business events, including blog posts, documentation, direct product links and other applications relevant to business analysis, such as [Notebooks](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and [Dashboards](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."). It was designed to:
+![Explore Business Events](https://dt-cdn.net/images/biz-events-512-68c4be09db.png "Explore Business Events") **Explore Business Events** is a central repository of resources related to business events, including blog posts, documentation, direct product links and other applications relevant to business analysis, such as Notebooks and Dashboards. It was designed to:
 
 * Take you through the Dynatrace business analysis process end-to-end, starting from business event capture, through processing, and analyzing, to displaying final results on dashboards.
 * Help you understand business analytics use cases and address your specific use case.
@@ -81,7 +81,7 @@ Use cases
 
 ## Process flow
 
-The Business event process in Dynatrace consists of three main steps: Capture and Process, Analyze, and Create Dashboards. To see a use case covering all steps, go to [Business events use case](end-to-end-example.md "How to capture and process business events.").
+The Business event process in Dynatrace consists of three main steps: Capture and Process, Analyze, and Create Dashboards. To see a use case covering all steps, go to Business events use case.
 
 ### Capture and process
 
@@ -91,7 +91,7 @@ Displays all links relevant to business event capture and processing. To see a r
 
 Provides you with links to two places where you can run your DQL queries: Notebooks and the **Logs and event viewer**.
 
-* To see examples of simple and advanced DQL queries for business analysis, go to [Analysis and examples](bo-analysis.md "Analyze and present business event data.").
+* To see examples of simple and advanced DQL queries for business analysis, go to Analysis and examples.
 * To see the analysis performed as part of the use case, go to [Use case analysis part](end-to-end-example.md#analyze-your-data-with-dql "How to capture and process business events.").
 
 ### Visualize
@@ -103,7 +103,7 @@ Provides you with links to places where dashboards can be created. To see an exa
 * Blog posts supplement the documentation with real-life examples, use cases and how-to guides.
 * Dynatrace live chat and the Dynatrace Community are interactive platforms that provide answers to your questions in real time and offer collaboration possibilities.
 * Direct product links save your time and help you arrive exactly in the place a certain process step takes place, for example at the **Capture business events with OneAgent** product page.
-* [Dynatrace Query Language (DQL)](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") is used to query and analyze your business events, in [Notebooks](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), and the **Logs and event viewer**.
+* Dynatrace Query Language (DQL) is used to query and analyze your business events, in Notebooks, and the **Logs and event viewer**.
 * Custom dashboards transform complex data from your queries into easy-to-follow visualizations.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
@@ -116,4 +116,4 @@ Understand the Dynatrace business analysis process end-to-end.](https://www.dyna
 
 * [View a blog post on business analytics.ï»¿](https://www.dynatrace.com/news/blog/dynatrace-enhances-business-observability/)
 * [View the Dynatrace website devoted to business analytics.ï»¿](https://www.dynatrace.com/platform/business-observability/)
-* [View the Dynatrace Query Language hub](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* View the Dynatrace Query Language hub

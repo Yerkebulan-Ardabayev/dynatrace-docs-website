@@ -51,6 +51,6 @@ Agentic  **Dynatrace Assist** doesn't provide any PII masking. In order to prote
 
 ## Related topics
 
-* [Dynatrace Intelligence agentic and generative AI overview](copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
-* [Get started with Dynatrace Intelligence agentic and generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Dynatrace Intelligence agentic and generative AI FAQ](../../../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
+* Dynatrace Intelligence agentic and generative AI overview
+* Get started with Dynatrace Intelligence agentic and generative AI
+* Dynatrace Intelligence agentic and generative AI FAQ

@@ -16,5 +16,5 @@ You can send data from your C++ application to Dynatrace via OpenTelemetry. See 
 
 * [OpenTelemetry supportï»¿](https://github.com/open-telemetry/opentelemetry-cpp) for capturing traces.
 
-  + [Instrument your C++ application with OpenTelemetry](../../opentelemetry/walkthroughs/cpp.md "Learn how to instrument your C++ application using OpenTelemetry and Dynatrace.")
-* [OneAgent SDK](../../extend-dynatrace/extend-tracing/oneagent-sdk.md "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing
+  + Instrument your C++ application with OpenTelemetry
+* OneAgent SDK for custom tracing

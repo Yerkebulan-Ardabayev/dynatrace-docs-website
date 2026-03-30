@@ -38,7 +38,7 @@ Key use cases include:
   5. Continue with your automation definition.
 
   ![workflow sample](https://dt-cdn.net/images/image-51-2526-e747d4a5ee.png)
-* [Automated threat-alert triaging](../../use-cases/automated-threat-alert-triaging.md "Use case scenario for automating threat-alert triaging with Dynatrace.")
+* Automated threat-alert triaging
 * Threat-informed security investigations Coming soon
 
 ### Requirements
@@ -68,7 +68,7 @@ To run the enrichment workflow action, all the permissions above need to be enab
 
 ## Activation and setup
 
-1. In Dynatrace, open  [**Hub**](../../../manage/hub.md "See the information about Dynatrace Hub.").
+1. In Dynatrace, open  **Hub**.
 2. Look for **VirusTotal** and select **Install**.
 3. Select **Set up** , then select  **Configure new connection**.
 4. Follow the on-screen instructions to set up the connection using the API key obtained in [Prerequisites](#prereq).
@@ -89,13 +89,13 @@ To run the enrichment workflow action, all the permissions above need to be enab
 
 1. Install and configure the app
 
-Dynatrace integration with VirusTotal is an app that you can install from  [**Hub**](../../../manage/hub.md "See the information about Dynatrace Hub.").
+Dynatrace integration with VirusTotal is an app that you can install from  **Hub**.
 
 The app delivers a workflow action for observable enrichment in ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
 
 To prevent accidental edits or deletions across environments, connection setup now includes owner-based access control. This ensures reliable automation, avoids unexpected configuration loss, and aligns with minimal access requirements.
 
-For details on sharing and permissions, see [Access control for Connectors](../../../analyze-explore-automate/workflows/actions/access-control.md "Display, view, create, and share connections for Dynatrace Connectors.").
+For details on sharing and permissions, see Access control for Connectors.
 
 2. Enrich observables
 
@@ -112,7 +112,7 @@ The threat intelligence context is displayed within the consumer apps or in ![Wo
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see Events powered by Grail.
 
 ## FAQ
 

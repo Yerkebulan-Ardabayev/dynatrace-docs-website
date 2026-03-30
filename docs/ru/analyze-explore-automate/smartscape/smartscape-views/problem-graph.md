@@ -31,7 +31,7 @@ scraped: 2026-03-03T21:23:24.583520
 
 Рёбра связывают затронутые и связанные узлы с проблемами, обеспечивая визуальное представление их взаимоотношений.
 
-Рёбра в представлении **Problem graph** ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** отличаются от рёбер [**Smartscape on Grail**](../../../platform/grail/smartscape-on-grail.md "Узнайте о функциях Smartscape on Grail и о том, как Smartscape использует возможности DQL."). Подробнее о рёбрах Smartscape и их отличиях см. в разделе [Концепции [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**](../../smartscape.md "Визуализируйте структуру ваших сред и понимайте взаимосвязи и зависимости между сущностями сервисов.")].
+Рёбра в представлении **Problem graph** ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** отличаются от рёбер **Smartscape on Grail**. Подробнее о рёбрах Smartscape и их отличиях см. в разделе [Концепции [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**](../../smartscape.md "Визуализируйте структуру ваших сред и понимайте взаимосвязи и зависимости между сущностями сервисов.")].
 
 ## Варианты использования
 
@@ -51,4 +51,4 @@ scraped: 2026-03-03T21:23:24.583520
 
 ## Связанные темы
 
-* [Smartscape](../../smartscape.md "Визуализируйте структуру ваших сред и понимайте взаимосвязи и зависимости между сущностями сервисов.")
+* Smartscape

@@ -27,7 +27,7 @@ To troubleshoot specific issues, refer to [Mobile applications: Issues with mobi
 
 ## Log sharing for troubleshooting
 
-For iOS mobile applications, Dynatrace provides the `shareLogsFile` API, which enables easy sharing of locally stored log files via an iOS sharing sheet (`UIActivityViewController`). For more information, see [Log sharing](../../../manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace.md#log-sharing "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.").
+For iOS mobile applications, Dynatrace provides the `shareLogsFile` API, which enables easy sharing of locally stored log files via an iOS sharing sheet (`UIActivityViewController`). For more information, see Log sharing.
 
 ## Technology-specific troubleshooting
 

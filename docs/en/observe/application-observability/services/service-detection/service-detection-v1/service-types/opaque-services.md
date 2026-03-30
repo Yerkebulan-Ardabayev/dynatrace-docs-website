@@ -35,7 +35,7 @@ Although deep monitoring isn't supported for such services, Dynatrace can still 
 
 Opaque services of unrecognized or unsupported technologies are included in Smartscape. This ensures a complete representation of your infrastructureâs topology, even when your environment includes opaque services.
 
-The [OneAgent SDK](../../../../../../ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk.md "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") enables you to instrument your application manually to extend end-to-end visibility for unrecognized or unsupported technologies.
+The OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for unrecognized or unsupported technologies.
 
 ## Other reasons services may be classified as opaque
 

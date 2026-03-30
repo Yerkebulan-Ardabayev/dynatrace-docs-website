@@ -44,7 +44,7 @@ To access this setting, select **Data Privacy** > **General**.
 
 The **Use persistent cookies for user tracking** setting allows you to enable or disable the use of persistent cookies for identifying returning users.
 
-When turned on, the RUM JavaScript sets a persistent cookie in end-user browsers that indicates that the browser has been used previously to access your frontend. When turned off, RUM Classic is no longer able to associate sessions with the same user across browser restarts. Learn [how we store this cookie](../../../../../manage/data-privacy-and-security/data-privacy/cookies.md#cookie-storage "Learn about first-party cookie usage in Dynatrace.").
+When turned on, the RUM JavaScript sets a persistent cookie in end-user browsers that indicates that the browser has been used previously to access your frontend. When turned off, RUM Classic is no longer able to associate sessions with the same user across browser restarts. Learn how we store this cookie.
 
 ## Data-collection and opt-in mode
 
@@ -54,9 +54,9 @@ To access this setting, select **Data Privacy** > **General**.
 
 To give your end users the ability to decide whether their activities should be tracked or not, enable opt-in mode.
 
-By default, RUM automatically creates [cookies](../../../../../manage/data-privacy-and-security/data-privacy/cookies.md#dynatrace-rum-cookies "Learn about first-party cookie usage in Dynatrace."). When **Data-collection and opt-in mode** is turned on, neither OneAgent nor the RUM JavaScript sets cookies, and the RUM JavaScript doesn't capture any data. After an end user accepts your cookie policy, you can activate RUM for that user via the [`dtrum.enable()`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc/types/dtrum.html#enable) JavaScript API call. Using the [`dtrum.disable()`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc/types/dtrum.html#disable) API call, you can implement a dialog that allows end users to stop sending monitoring data to Dynatrace even after they've previously agreed to it and `dtrum.enable()` has already been called.
+By default, RUM automatically creates cookies. When **Data-collection and opt-in mode** is turned on, neither OneAgent nor the RUM JavaScript sets cookies, and the RUM JavaScript doesn't capture any data. After an end user accepts your cookie policy, you can activate RUM for that user via the [`dtrum.enable()`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc/types/dtrum.html#enable) JavaScript API call. Using the [`dtrum.disable()`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc/types/dtrum.html#disable) API call, you can implement a dialog that allows end users to stop sending monitoring data to Dynatrace even after they've previously agreed to it and `dtrum.enable()` has already been called.
 
-Both API calls are effective for RUM Classic and the New RUM Experience, therefore the [new JavaScript API](../new-javascript-api.md "Learn how to customize web frontend monitoring in the New RUM Experience using the JavaScript API.") does not provide equivalents at this point.
+Both API calls are effective for RUM Classic and the New RUM Experience, therefore the new JavaScript API does not provide equivalents at this point.
 
 ## Comply with "Do not Track" browser settings
 
@@ -89,4 +89,4 @@ To access this setting, select **Data privacy** > **IP masking**.
 
 To determine the region from which end users access web and mobile frontends, Dynatrace captures their IP addresses. GPS coordinates are captured only for mobile frontends.
 
-When the **Mask end-user IP addresses and GPS coordinates** option is turned on, IP addresses are masked on the [beacon endpoint](../initial-setup/configure-beacon-endpoint.md "Learn how to configure the beacon endpoint for web frontends to meet your specific requirements."). The last octet of monitored IPv4 addresses and the last 80 bits of IPv6 addresses are replaced with zeros. [Geolocation lookups](../../../rum-concepts/detection-of-ip-addresses-locations-and-user-agents.md#geolocations "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.") are performed using masked IP addresses.
+When the **Mask end-user IP addresses and GPS coordinates** option is turned on, IP addresses are masked on the beacon endpoint. The last octet of monitored IPv4 addresses and the last 80 bits of IPv6 addresses are replaced with zeros. Geolocation lookups are performed using masked IP addresses.

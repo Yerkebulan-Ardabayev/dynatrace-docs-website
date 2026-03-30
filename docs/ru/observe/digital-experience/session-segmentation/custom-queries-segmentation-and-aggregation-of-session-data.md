@@ -7,7 +7,7 @@ scraped: 2026-03-06T21:23:09.934912
 * How-to guide
 * 37-min read
 
-Dynatrace захватывает подробные [данные пользовательских сессий](new-user-sessions.md "Learn about user session segmentation and filtering attributes.") каждый раз, когда пользователь взаимодействует с вашим отслеживаемым приложением. Эти данные включают все действия пользователя и высокоуровневые данные о производительности. Используя Dynatrace API или User Sessions Query Language (USQL), вы можете легко выполнять мощные запросы, сегментацию и агрегирование по этим данным. В данном разделе приведены подробности о ключевых словах и функциях, синтаксисе, работе с таблицами Real User Monitoring, автоматических запросах и многом другом.
+Dynatrace захватывает подробные данные пользовательских сессий каждый раз, когда пользователь взаимодействует с вашим отслеживаемым приложением. Эти данные включают все действия пользователя и высокоуровневые данные о производительности. Используя Dynatrace API или User Sessions Query Language (USQL), вы можете легко выполнять мощные запросы, сегментацию и агрегирование по этим данным. В данном разделе приведены подробности о ключевых словах и функциях, синтаксисе, работе с таблицами Real User Monitoring, автоматических запросах и многом другом.
 
 User Sessions Query Language — это не [SQL](https://en.wikipedia.org/wiki/SQL), и Dynatrace не хранит данные пользовательских сессий в реляционной базе данных. User Sessions Query Language — это специфичный для Dynatrace язык запросов, хотя он опирается на некоторые концепции SQL и имеет схожий синтаксис, что упрощает начало работы.
 
@@ -60,9 +60,9 @@ User Sessions Query Language — это не [SQL](https://en.wikipedia.org/wiki
 
 Dynatrace Environment API
 
-Вы можете выполнять вызовы API с помощью предпочтительного клиента. Соответствующую документацию по API см. в разделе [User sessions API](../../../dynatrace-api/environment-api/rum/user-sessions.md "Learn what the Dynatrace User Sessions Query language API offers.").
+Вы можете выполнять вызовы API с помощью предпочтительного клиента. Соответствующую документацию по API см. в разделе User sessions API.
 
-Для выполнения этих вызовов вам необходимо разрешение **User sessions** (`DTAQLAccess`), назначенное вашему токену API. Сведения о получении и использовании токена см. в разделе [Dynatrace API — Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+Для выполнения этих вызовов вам необходимо разрешение **User sessions** (`DTAQLAccess`), назначенное вашему токену API. Сведения о получении и использовании токена см. в разделе Dynatrace API — Tokens and authentication.
 
 ### Временные диапазоны в Environment API
 
@@ -175,8 +175,8 @@ FROM usersession
 
 Можно указать только одну таблицу. Таблицы для данных пользовательских сессий:
 
-* `usersession` содержит информацию о [пользовательских сессиях](../rum-concepts/user-session.md "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.").
-* `useraction` хранит данные о [действиях пользователей](../rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.").
+* `usersession` содержит информацию о пользовательских сессиях.
+* `useraction` хранит данные о действиях пользователей.
 * `userevent` предоставляет информацию о [событиях пользователей](../rum-concepts/user-and-error-events.md#user-events "Learn about user and error events and the types of user and error events captured by Dynatrace."), таких как изменения страниц или события ярости.
 * `usererror` содержит дополнительные данные о [событиях ошибок](../rum-concepts/user-and-error-events.md#error-events "Learn about user and error events and the types of user and error events captured by Dynatrace."), то есть об ошибках и сбоях.
 
@@ -746,7 +746,7 @@ ORDER BY usersession.continent
 
 #### KEYS(customProperty)
 
-Возвращает ключи [свойств действий пользователя или свойств пользовательской сессии](../web-applications/analyze-and-use/action-and-session-properties.md "User action and session properties, which are metadata key-value pairs, provide added visibility and deeper analysis of your end users' experience. Using these properties for your web applications, you can filter user sessions, add calculated metrics, create charts, and more.") в соответствии с типом данных свойства, определённым в аргументе.
+Возвращает ключи свойств действий пользователя или свойств пользовательской сессии в соответствии с типом данных свойства, определённым в аргументе.
 
 Изучите таблицу ниже, чтобы понять, какие ключи возвращаются — ключи свойств действий пользователя или ключи свойств пользовательской сессии.
 
@@ -1295,7 +1295,7 @@ SELECT name, duration, JSON
 FROM useraction LIMIT 5
 ```
 
-См. также [Экспорт пользовательских сессий](export-session-data.md "Set up Dynatrace to export user session data to a provided webhook endpoint.").
+См. также Экспорт пользовательских сессий.
 
 ### Экранирование строк
 
@@ -1367,20 +1367,20 @@ WHERE stringProperties.memberstatus="GOLD"
 
 Для данных пользовательских сессий доступны следующие таблицы.
 
-* `usersession` содержит информацию о [пользовательских сессиях](../rum-concepts/user-session.md "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.").
-* `useraction` хранит данные о [действиях пользователей](../rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.").
+* `usersession` содержит информацию о пользовательских сессиях.
+* `useraction` хранит данные о действиях пользователей.
 * `userevent` предоставляет информацию о [событиях пользователей](../rum-concepts/user-and-error-events.md#user-events "Learn about user and error events and the types of user and error events captured by Dynatrace."), таких как изменения страниц или события ярости.
 * `usererror` содержит дополнительные данные о [событиях ошибок](../rum-concepts/user-and-error-events.md#error-events "Learn about user and error events and the types of user and error events captured by Dynatrace."), то есть об ошибках и сбоях.
 
 [Вторичные таблицы для `usersession`, `useraction`, `userevent` и `usererror`](#usql-secondarytables) содержат описание того, как данные одной таблицы доступны в другой.
 
-Поля описаны в [User sessions API — User session structure](../../../dynatrace-api/environment-api/rum/user-sessions/user-session-structure.md "Learn the structure of a user session in the Dynatrace User Session Query language API.").
+Поля описаны в User sessions API — User session structure.
 
 Также можно проверить объект **UserSession** в [API Explorer](../../../dynatrace-api.md#api-explorer "Find out what you need to use the Dynatrace API.").
 
 ## Выполнение запросов USQL для пользовательских отчётов
 
-Интерфейс REST позволяет получать результаты пользовательских запросов. Всё, что нужно — создать уникальный [токен API](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") с привилегией **User session query language**. Возможность запрашивать данные пользовательских сессий таким образом полезна в автоматизированном тестировании, верификации данных и других автоматизированных функциях. Доступны следующие конечные точки:
+Интерфейс REST позволяет получать результаты пользовательских запросов. Всё, что нужно — создать уникальный токен API с привилегией **User session query language**. Возможность запрашивать данные пользовательских сессий таким образом полезна в автоматизированном тестировании, верификации данных и других автоматизированных функциях. Доступны следующие конечные точки:
 
 `/table`: возвращает данные в виде плоской таблицы, даже при группировке по различным элементам и выполнении иерархических агрегирований по данным пользовательских сессий.
 
@@ -1480,23 +1480,23 @@ curl --location --insecure -H "Content-Type: application/json" -H "Authorization
 }
 ```
 
-Подробнее о [user sessions API](../../../dynatrace-api/environment-api/rum/user-sessions.md "Learn what the Dynatrace User Sessions Query language API offers.").
+Подробнее о user sessions API.
 
 ## Преобразование запросов в пользовательские метрики USQL
 
-Некоторые запросы можно преобразовать в пользовательские метрики USQL для [веб-](../web-applications/additional-configuration/custom-metrics-from-user-sessions.md "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for web applications."), [мобильных](../mobile-applications/additional-configuration/custom-metrics-from-user-sessions-mobile-apps.md "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for mobile applications.") и [пользовательских приложений](../custom-applications/additional-configuration/custom-metrics-from-user-sessions-custom-apps.md "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for custom applications.").
+Некоторые запросы можно преобразовать в пользовательские метрики USQL для веб-, мобильных и пользовательских приложений.
 
 Пользовательские метрики USQL доступны как пользовательские метрики сессий (USCM) и пользовательские метрики действий (UACM). Пользовательские метрики действий поддерживаются начиная с версии Dynatrace 1.260.
 
 1. Перейдите в раздел ![Query user sessions](https://dt-cdn.net/images/query-user-sessions-512-77c5a8da9f.png "Query user sessions") **Query User Sessions**.
 2. Введите запрос и выберите **Run query**.
-   Список поддерживаемых полей см. в подробных руководствах для [веб-](../web-applications/additional-configuration/custom-metrics-from-user-sessions.md#properties-and-supported-values "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for web applications."), [мобильных](../mobile-applications/additional-configuration/custom-metrics-from-user-sessions-mobile-apps.md#properties-and-supported-values "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for mobile applications.") и [пользовательских приложений](../custom-applications/additional-configuration/custom-metrics-from-user-sessions-custom-apps.md#properties-and-supported-values "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for custom applications.").
+   Список поддерживаемых полей см. в подробных руководствах для [веб-](../web-applications/additional-configuration/custom-metrics-from-user-sessions.md#properties-and-supported-values "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for web applications."), мобильных и пользовательских приложений.
 3. Выберите **Create custom metric**.
 4. Введите имя метрики и проверьте предложенные настройки.
 
 ## Ограничения
 
-* Dynatrace хранит данные Real User Monitoring (действия и сессии пользователей) в течение ограниченного периода. Подробности см. в разделе [Сроки хранения данных](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md "Check retention times for various data types.").
+* Dynatrace хранит данные Real User Monitoring (действия и сессии пользователей) в течение ограниченного периода. Подробности см. в разделе Сроки хранения данных.
 * Набор результатов по умолчанию — 50, но количество результатов можно увеличить до максимума 5000 с помощью ключевого слова `LIMIT`.
 * Максимальное количество сегментированных результатов ограничено 100 000. По умолчанию — 10 000.
   Это влияет на применение `TOP()` при использовании `DISTINCT` или `GROUP BY`. Если `TOP()` не указан, 10 000 возможных результатов равномерно распределяются по указанным столбцам. Эти значения по умолчанию можно переопределить, указав `TOP()` для каждого столбца. Произведение значений `TOP()` не может превышать 100 000 результатов.

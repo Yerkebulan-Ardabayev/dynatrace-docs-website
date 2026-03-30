@@ -57,7 +57,7 @@ scraped: 2026-03-06T21:21:30.034479
   + **Extract fields**
   + **Add entity names** добавляет подстановку (результат добавляется в отдельное поле с именем `dt.entity.<entity>.name`) фактического имени сущности, связанной с данным идентификатором сущности.
   + **Expand**
-  + **Reduce to single value** приводит результаты к формату, подходящему для определённых визуализаций, таких как [Single value](visualization-chart-single-value.md "Create and edit single value visualizations on your Dynatrace dashboards and notebooks."), [Table](visualization-table.md "Create and edit table visualizations on your Dynatrace dashboards and notebooks.") или [Categorical bar chart](visualization-chart-bar-categorical.md "Create and edit categorical chart visualizations on your Dynatrace dashboards and notebooks.").
+  + **Reduce to single value** приводит результаты к формату, подходящему для определённых визуализаций, таких как Single value, Table или Categorical bar chart.
 
 * Рекомендуемое приложение — например, ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **View Kubernetes workload** — может быть отображено для быстрого доступа.
 * **Open with** передаёт всю запись в диалоговое окно **Open with**, не учитывая, какое значение вы выбрали.

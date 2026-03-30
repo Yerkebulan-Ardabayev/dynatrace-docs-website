@@ -41,7 +41,7 @@ Definition of the technology support version schema with examples:
 
 ## IBM z/OS
 
-To get started with monitoring, see [Dynatrace for z/OS](../dynatrace-oneagent/installation-and-operation/zos.md "Install, configure, and manage Dynatrace modules on z/OS.").
+To get started with monitoring, see Dynatrace for z/OS.
 
 | Operating system | Versions |
 | --- | --- |
@@ -49,7 +49,7 @@ To get started with monitoring, see [Dynatrace for z/OS](../dynatrace-oneagent/i
 
 ## IBM CICS
 
-To get started with monitoring, see [Install the CICS module](../dynatrace-oneagent/installation-and-operation/zos/installation/install-cics.md "Install the Dynatrace CICS module.").
+To get started with monitoring, see Install the CICS module.
 
 | IBM CICS | Versions |
 | --- | --- |
@@ -80,7 +80,7 @@ The database access method DL/I is supported.
 
 ## IBM IMS
 
-To get started with monitoring, see [Install the IMS module](../dynatrace-oneagent/installation-and-operation/zos/installation/install-ims.md "Install the Dynatrace IMS module.").
+To get started with monitoring, see Install the IMS module.
 
 | IBM IMS | Versions |
 | --- | --- |
@@ -113,7 +113,7 @@ The database access methods DL/I and Fast Path are supported.
 
 ## z/OS Java
 
-To get started with monitoring, see [Install the z/OS Java module](../dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md "Set up Java monitoring on z/OS using the Java module.").
+To get started with monitoring, see Install the z/OS Java module.
 
 | Java Runtime | Versions |
 | --- | --- |
@@ -174,4 +174,4 @@ Only the [Db2 JDBC driver typesï»¿](https://www.ibm.com/docs/en/sdi/7.2.0.3?t
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [JMX](../dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics.md "Learn how to set up JMX metrics monitoring for your Java applications on z/OS.") | 1.0+ |
+| JMX | 1.0+ |

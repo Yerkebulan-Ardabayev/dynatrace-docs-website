@@ -145,4 +145,4 @@ Supported version is vCenter Server 8.0 Update 3.
 
 ## Related topics
 
-* [Security Posture Management](../../xspm.md "Detect, manage, and take action on security and compliance findings.")
+* Security Posture Management

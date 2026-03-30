@@ -103,4 +103,4 @@ scraped: 2026-03-06T21:31:24.011274
 
 ## Связанные темы
 
-* [Kubernetes Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Настройка и включение Security Posture Management в Kubernetes.")
+* Kubernetes Security Posture Management

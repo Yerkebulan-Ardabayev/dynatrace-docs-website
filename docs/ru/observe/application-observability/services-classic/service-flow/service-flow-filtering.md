@@ -17,7 +17,7 @@ scraped: 2026-03-06T21:22:57.357175
 2. Выберите сервис, который хотите проанализировать.
 3. На странице обзора сервиса в разделе **Understand dependencies** выберите **View service flow**.
 4. В **Service flow** выберите вызываемый сервис, чтобы определить последовательность сервисов, которую вы хотите проанализировать.
-   [Панель справа](service-flow-metrics.md#side-pane "Learn about the service flow metrics that measure the performance of the service calls that are triggered by each service request in your environment.") сразу откроется на вкладке **Passing transactions**.
+   Панель справа сразу откроется на вкладке **Passing transactions**.
 5. Чтобы создать фильтр для выбранной последовательности сервисов, выполните одно из следующих действий:
 
    * Выберите **Filter service flow** в верхней плитке.
@@ -66,7 +66,7 @@ scraped: 2026-03-06T21:22:57.357175
 Чтобы добавить новые последовательности к существующему фильтру:
 
 1. Пока текущий фильтр все еще активен, выберите дополнительную последовательность вызовов в **Service flow**.
-2. На вкладке **Passing transactions** в [панели справа](service-flow-metrics.md#side-pane "Learn about the service flow metrics that measure the performance of the service calls that are triggered by each service request in your environment.") выберите **Filter service flow**.
+2. На вкладке **Passing transactions** в панели справа выберите **Filter service flow**.
 
 В примере ниже критерии фильтра дополнены вызовами от сервиса `easyTravel Customer Frontend`, которые обращаются к сервису `RMI server` и затем к базе данных `easyTravel-Business`. Теперь количество анализируемых запросов на `easyTravel Customer Frontend` сократилось до **528**. Кроме того, сервис `JourneyService` теперь отвечает за **39%** времени отклика.
 
@@ -99,11 +99,11 @@ scraped: 2026-03-06T21:22:57.357175
 
 * [Распределенные трейсы](../../distributed-traces/use-cases/segment-request.md#pp-analysis "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.")
   Анализ детальной цепочки вызовов на уровне методов.
-* [Анализ обратной трассировки](../service-backtrace.md "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.")
+* Анализ обратной трассировки
   Исследование последовательности вызовов сервисов, приведших к конкретному запросу сервиса.
-* [Просмотр времени отклика](../service-response-time-hotspots.md "Identify the activities that consume the most response time for each service.")
+* Просмотр времени отклика
   Просмотр распределения времени отклика по различным функциям сервиса (например, использование базы данных и выполнение кода).
-* [Анализ выбросов](../response-time-distribution-and-outlier-analysis.md "Gain insights into the distribution of response times across all requests, including those that are either unusually high or unusually low.")
+* Анализ выбросов
   Просмотр распределения времени отклика запросов к сервису в определенном временном диапазоне.
 
 ## Связанные темы

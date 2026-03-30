@@ -16,11 +16,11 @@ scraped: 2026-03-06T21:27:23.128258
 
 Этот сервис отслеживает предыдущую (классическую) версию [Azure Front Door](https://dt-url.net/rz0390g).
 
-Сведения о последней версии сервиса Microsoft [Azure Front Door Standard и Premium](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview) (`Front Door and CDN profile`) см. в разделе [Мониторинг Azure Front Door Standard/Premium и профилей CDN](monitor-azure-front-door-cdn-profiles.md "Мониторинг Azure Front Door Standard/Premium и профилей CDN и просмотр доступных метрик.").
+Сведения о последней версии сервиса Microsoft [Azure Front Door Standard и Premium](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview) (`Front Door and CDN profile`) см. в разделе Мониторинг Azure Front Door Standard/Premium и профилей CDN.
 
 ## Включение мониторинга
 
-Сведения о включении мониторинга сервиса см. в разделе [Включение мониторинга сервиса](../azure-monitoring-guide/azure-enable-service-monitoring.md "Включите мониторинг Azure в Dynatrace.").
+Сведения о включении мониторинга сервиса см. в разделе Включение мониторинга сервиса.
 
 ## Просмотр метрик сервиса
 

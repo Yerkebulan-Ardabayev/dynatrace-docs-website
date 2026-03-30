@@ -34,25 +34,25 @@ Dynatrace helps you comprehensively map the entire IT environment in real time. 
 
 ### Discovery & Coverage
 
-[Discovery & Coverage](../ingest-from/discovery-coverage-app.md "Discover and remediate monitoring coverage gaps at scale.") ![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") helps prevent unexpected outages by detecting and remediating monitoring coverage gaps across your entire enterprise.
+Discovery & Coverage ![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") helps prevent unexpected outages by detecting and remediating monitoring coverage gaps across your entire enterprise.
 
 ![Discovery & COverage](https://dt-cdn.net/images/image001-1432-0bb965c934.png)
 
 ### Smartscape
 
-[Smartscape](smartscape-classic.md "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") topology visualizes the relationships between applications, services, processes, hosts, and data centers, highlighting problems and vulnerabilities.
+Smartscape topology visualizes the relationships between applications, services, processes, hosts, and data centers, highlighting problems and vulnerabilities.
 
 ![Smartscape](https://dt-cdn.net/images/image002-1432-082bf6d3ac.png)
 
 ### Security Posture Management
 
-[Security Posture Management](../secure/application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") helps detect, visualize, analyze, and remediate security posture and compliance findings, including misconfigurations and regulatory compliance assessments.
+Security Posture Management helps detect, visualize, analyze, and remediate security posture and compliance findings, including misconfigurations and regulatory compliance assessments.
 
 ![Security Posture Management](https://dt-cdn.net/images/image003-1432-112de6ebf6.png)
 
 ### Compliance Assistant
 
-[Compliance Assistant](compliance-and-resilience/compliance-assistant.md "Consolidate insights from the Dynatrace observability and security platform in a unified dashboard.") ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") provides a dedicated view tailored for the European Union's Digital Operational Resilience Act (DORA).
+Compliance Assistant ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") provides a dedicated view tailored for the European Union's Digital Operational Resilience Act (DORA).
 
 ![Compliance Assistant](https://dt-cdn.net/images/image004-1429-db68e2e050.png)
 
@@ -62,7 +62,7 @@ Dynatrace helps you focus on preventing incidents before they occur, managing ri
 
 ### Problems
 
-[Problems](../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.") ![Problems](https://dt-cdn.net/images/problems-512-34e46d913e.png "Problems") uses Dynatrace Intelligence to automatically analyze your system and detect abnormal behavior, such as performance or stability issues. It also investigates an incident's impact and root cause and reduces the mean time to repair (MTTR).
+Problems ![Problems](https://dt-cdn.net/images/problems-512-34e46d913e.png "Problems") uses Dynatrace Intelligence to automatically analyze your system and detect abnormal behavior, such as performance or stability issues. It also investigates an incident's impact and root cause and reduces the mean time to repair (MTTR).
 
 ![Problems](https://dt-cdn.net/images/image005-1432-d25b248ded.png)
 
@@ -74,13 +74,13 @@ Dynatrace helps you focus on preventing incidents before they occur, managing ri
 
 ### Runtime Application Protection
 
-[Runtime Application Protection](../secure/application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.") helps you get a real-time overview of all the attacks in your environment. Leveraging code-level insights and transaction analysis, Dynatrace Runtime Application Protection automatically detects attacks on applications in your environment.
+Runtime Application Protection helps you get a real-time overview of all the attacks in your environment. Leveraging code-level insights and transaction analysis, Dynatrace Runtime Application Protection automatically detects attacks on applications in your environment.
 
 ![Attacks](https://dt-cdn.net/images/image007-1432-e9d4630b53.png)
 
 ### Site Reliability Guardian
 
-[Site Reliability Guardian](../deliver/site-reliability-guardian.md "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.") ![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian") provides an automated change impact analysis to validate service availability, performance, and capacity objectives across various systems. This enables DevOps platform engineers to make the right release decisions for new versions and empowers SREs to apply Service-Level Objectives (SLOs) for their critical services.
+Site Reliability Guardian ![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian") provides an automated change impact analysis to validate service availability, performance, and capacity objectives across various systems. This enables DevOps platform engineers to make the right release decisions for new versions and empowers SREs to apply Service-Level Objectives (SLOs) for their critical services.
 
 ![Site Reliability Guardian](https://dt-cdn.net/images/image008-1428-ba22e79c5e.png)
 
@@ -90,7 +90,7 @@ Automation in Dynatrace allows you to automate tasks in your IT landscape, remed
 
 ### Workflows
 
-[Workflows](workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") assembles a series of actions to build processes in graphical representations. Workflows can be triggered manually, on a schedule, or by events in Dynatrace, such as anomalies detected by Dynatrace Intelligence.
+Workflows ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") assembles a series of actions to build processes in graphical representations. Workflows can be triggered manually, on a schedule, or by events in Dynatrace, such as anomalies detected by Dynatrace Intelligence.
 
 ![Workflows](https://dt-cdn.net/images/image009-1428-01287f82a0.png)
 

@@ -126,7 +126,7 @@ OneAgent версии 1.281+
 
 Чтобы включить режим Discovery во время установки OneAgent, используйте параметр `--set-monitoring-mode=discovery`.
 
-Подробнее см. в документации по [установке OneAgent](../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms."), соответствующей вашей среде.
+Подробнее см. в документации по установке OneAgent, соответствующей вашей среде.
 
 После установки OneAgent
 
@@ -139,11 +139,11 @@ OneAgent версии 1.281+
   3. Выберите **Host monitoring**.
   4. Перейдите в **Monitoring Mode** и в раскрывающемся меню выберите **Discovery**.
   5. Нажмите **Save changes**.
-* Используйте [интерфейс командной строки OneAgent](../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") для установки параметра `--set-monitoring-mode=discovery`.
+* Используйте интерфейс командной строки OneAgent для установки параметра `--set-monitoring-mode=discovery`.
 
 ### Внедрение кодового модуля
 
-Для работы [Application Security](../../../secure/application-security.md "Access the Dynatrace Application Security functionalities.") и [Live Debugger](../../application-observability/live-debugger.md "Get familiar with the Live Debugger capabilities in Dynatrace.") в режиме Discovery требуется внедрение кодового модуля. По умолчанию внедрение кодового модуля отключено.
+Для работы Application Security и Live Debugger в режиме Discovery требуется внедрение кодового модуля. По умолчанию внедрение кодового модуля отключено.
 
 После [включения режима Discovery](#enable-discovery-mode) можно включить внедрение кодового модуля для отдельного хоста.
 
@@ -170,7 +170,7 @@ OneAgent в режиме Infrastructure Monitoring автоматически в
 
 Чтобы включить режим Infrastructure Monitoring во время установки OneAgent, используйте параметр `--set-monitoring-mode=infra-only`.
 
-Подробнее см. в документации по [установке OneAgent](../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms."), соответствующей вашей среде.
+Подробнее см. в документации по установке OneAgent, соответствующей вашей среде.
 
 После установки OneAgent
 
@@ -183,9 +183,9 @@ OneAgent в режиме Infrastructure Monitoring автоматически в
   3. Выберите **Host monitoring**.
   4. Перейдите в **Monitoring Mode** и в раскрывающемся меню выберите **Infrastructure**.
   5. Нажмите **Save changes**.
-* Используйте [интерфейс командной строки OneAgent](../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") для установки параметра `--set-monitoring-mode=infra-only`.
-* Используйте [Settings API](../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") для включения режима Infrastructure Monitoring в масштабе.
-* Для загрузки схемы используйте [GET a schema](../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") с `builtin:host.monitoring` в качестве schemaId и создайте объект конфигурации с помощью [POST an object](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.").
+* Используйте интерфейс командной строки OneAgent для установки параметра `--set-monitoring-mode=infra-only`.
+* Используйте Settings API для включения режима Infrastructure Monitoring в масштабе.
+* Для загрузки схемы используйте GET a schema с `builtin:host.monitoring` в качестве schemaId и создайте объект конфигурации с помощью POST an object.
 
 ### Внедрение в процессы
 
@@ -193,7 +193,7 @@ OneAgent в режиме Infrastructure Monitoring автоматически в
 
 Если вы запускаете OneAgent как контейнер с включённым режимом Infrastructure Monitoring, внедрение в процессы выполняться не будет.
 
-Режим Infrastructure Monitoring позволяет отслеживать любой компонент инфраструктуры и вспомогательный сервис, написанный на Java. Вы можете отслеживать вспомогательные сервисы, поддерживаемые по умолчанию (например, Kafka или ActiveMQ), а также создавать собственные [расширения JMX и PMI](../../../ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions.md "Learn how to extend Dynatrace monitoring to include applications you've instrumented with JMX.") для компонентов инфраструктуры и использовать их в режиме Infrastructure Monitoring.
+Режим Infrastructure Monitoring позволяет отслеживать любой компонент инфраструктуры и вспомогательный сервис, написанный на Java. Вы можете отслеживать вспомогательные сервисы, поддерживаемые по умолчанию (например, Kafka или ActiveMQ), а также создавать собственные расширения JMX и PMI для компонентов инфраструктуры и использовать их в режиме Infrastructure Monitoring.
 
 Кроме того, с внедрением в процессы режим Infrastructure Monitoring предоставляет метрики среды выполнения для:
 
@@ -206,7 +206,7 @@ OneAgent в режиме Infrastructure Monitoring автоматически в
 
 ### Отключение автоматического внедрения в процессы
 
-Мы не рекомендуем отключать автоматическое внедрение, но если это необходимо из-за строгих требований безопасности, можно выбрать один из нескольких вариантов. Отключение автоматического внедрения также предотвращает обнаружение Dynatrace уязвимостей или живую отладку в вашей среде, даже если вы включили [Application Security](../../../secure/application-security.md "Access the Dynatrace Application Security functionalities.") или [Live Debugger](../../application-observability/live-debugger.md "Get familiar with the Live Debugger capabilities in Dynatrace."). Автоматическое внедрение можно отключить на уровне хоста или среды.
+Мы не рекомендуем отключать автоматическое внедрение, но если это необходимо из-за строгих требований безопасности, можно выбрать один из нескольких вариантов. Отключение автоматического внедрения также предотвращает обнаружение Dynatrace уязвимостей или живую отладку в вашей среде, даже если вы включили Application Security или Live Debugger. Автоматическое внедрение можно отключить на уровне хоста или среды.
 
 #### Отключение автоматического внедрения для отдельного хоста
 
@@ -221,9 +221,9 @@ OneAgent в режиме Infrastructure Monitoring автоматически в
 
 После установки OneAgent через командную строку
 
-Используйте [интерфейс командной строки OneAgent](../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") для установки параметра `--set-auto-injection-enabled=false`.
+Используйте интерфейс командной строки OneAgent для установки параметра `--set-auto-injection-enabled=false`.
 
-Если вы используете oneagentctl для отключения автоматического внедрения, вы не сможете управлять автоматическим внедрением в режиме Infrastructure Monitoring через веб-интерфейс Dynatrace в разделе **Settings > Monitoring > Monitored technologies** или через [API конфигурации мониторинга OneAgent](../../../dynatrace-api/configuration-api/oneagent-configuration/oneagent-on-host/oneagent-monitoring/put-monitoring-configuration.md "Update the monitoring configuration of a OneAgent instance via the Dynatrace API.").
+Если вы используете oneagentctl для отключения автоматического внедрения, вы не сможете управлять автоматическим внедрением в режиме Infrastructure Monitoring через веб-интерфейс Dynatrace в разделе **Settings > Monitoring > Monitored technologies** или через API конфигурации мониторинга OneAgent.
 
 #### Отключение автоматического внедрения для среды
 
@@ -271,7 +271,7 @@ OneAgent в режиме Infrastructure Monitoring автоматически в
 
 ### Фильтрация хостов по статусу внедрения
 
-При отключении автоматического внедрения такие хосты можно найти с помощью фильтра **Auto-injection** на странице **Deployment Status** или через [OneAgent on a host - GET a list of hosts with OneAgent details](../../../dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents.md "Check the configuration of OneAgent instances on your hosts via Dynatrace API.").
+При отключении автоматического внедрения такие хосты можно найти с помощью фильтра **Auto-injection** на странице **Deployment Status** или через OneAgent on a host - GET a list of hosts with OneAgent details.
 
 Использование веб-интерфейса Dynatrace
 
@@ -291,11 +291,11 @@ OneAgent в режиме Infrastructure Monitoring автоматически в
 
 Использование Dynatrace API
 
-Выполните вызов [OneAgent on a host - GET a list of hosts with OneAgent details](../../../dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents.md "Check the configuration of OneAgent instances on your hosts via Dynatrace API.") с параметром `autoInjection`, установленным в `DISABLED_MANUAL`. Возвращаемые данные содержат список OneAgent с отключённым автоматическим внедрением [после установки OneAgent](#after-install) — через веб-интерфейс Dynatrace или `oneagentctl`.
+Выполните вызов OneAgent on a host - GET a list of hosts with OneAgent details с параметром `autoInjection`, установленным в `DISABLED_MANUAL`. Возвращаемые данные содержат список OneAgent с отключённым автоматическим внедрением [после установки OneAgent](#after-install) — через веб-интерфейс Dynatrace или `oneagentctl`.
 
 ## Мониторинг виртуализации
 
-Dynatrace поддерживает [мониторинг виртуализации](../vmware-vsphere-monitoring.md "Monitor VMware vSphere with Dynatrace."). Для мониторинга виртуальных компонентов в вашей среде необходимо выполнить дополнительный шаг помимо начальной настройки. Подробнее см. в разделе [Настройка мониторинга виртуализации](../vmware-vsphere-monitoring.md "Monitor VMware vSphere with Dynatrace.").
+Dynatrace поддерживает мониторинг виртуализации. Для мониторинга виртуальных компонентов в вашей среде необходимо выполнить дополнительный шаг помимо начальной настройки. Подробнее см. в разделе Настройка мониторинга виртуализации.
 
 ## Часто задаваемые вопросы
 

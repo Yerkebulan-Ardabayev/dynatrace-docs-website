@@ -129,7 +129,7 @@ If you already have an application that's set up for agentless monitoring, selec
 
 ### Step 2 optional Choose another RUM JavaScript snippet format Optional
 
-While the JavaScript tag format is the ideal choice for the majority of use cases, Dynatrace offers several snippet formats of the RUM JavaScript to meet a variety of requirements. Select the format that fits your application best and meets your requirements. For detailed descriptions of all formats, see [Select a snippet format](snippet-formats.md "Select a format for the RUM JavaScript snippet that best fits your specific use case").
+While the JavaScript tag format is the ideal choice for the majority of use cases, Dynatrace offers several snippet formats of the RUM JavaScript to meet a variety of requirements. Select the format that fits your application best and meets your requirements. For detailed descriptions of all formats, see Select a snippet format.
 
 To get a different snippet format of the RUM JavaScript
 
@@ -143,7 +143,7 @@ To get a different snippet format of the RUM JavaScript
 
 If you want the RUM JavaScript to be updated automatically, choose the [JavaScript tag snippet format](snippet-formats.md#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case"). For other snippet formats, you need to manually update the RUM JavaScript.
 
-Dynatrace offers a REST API that allows you to retrieve the latest RUM JavaScript for your application. You can automatically inject the latest RUM JavaScript during the build time of your application. To learn how to use the API, see [RUM manual insertion tags API](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags.md "Learn how you can download the RUM manual insertion tags via API").
+Dynatrace offers a REST API that allows you to retrieve the latest RUM JavaScript for your application. You can automatically inject the latest RUM JavaScript during the build time of your application. To learn how to use the API, see RUM manual insertion tags API.
 
 ## Things to consider
 
@@ -176,10 +176,10 @@ For example, the [Content Security Policy (CSP) standardï»¿](https://develope
 
 ### User action to distributed trace correlation
 
-For agentless monitoring, the ability to link user actions and [distributed traces](../../../application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") depends on the technologies that your application uses.
+For agentless monitoring, the ability to link user actions and distributed traces depends on the technologies that your application uses.
 
 * If your application is instrumented with OneAgent, but [Real User Monitoring is not supported for its technology](../../../../ingest-from/technology-support.md#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks."), then the distributed traces captured by this OneAgent can't be linked to user actions.
-* If your application issues XHR calls to [AWS Lambda](../../../../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension.md#lambda-cfg-rum "Monitor Lambda functions written in Python, Node.js, and Java.") or to another instrumented web or application server that uses the [supported technologies](../../../../ingest-from/technology-support.md#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks."), then it's possible to link user actions and distributed traces. However, these web requests are usually cross-origin requests, so additional configuration is required to achieve the user action to distributed trace correlation. See [Link cross-origin XHR user actions and their distributed traces](link-cross-origin-xhrs.md "Enable the correlation between cross-origin XHR actions and distributed traces.") for details.
+* If your application issues XHR calls to [AWS Lambda](../../../../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension.md#lambda-cfg-rum "Monitor Lambda functions written in Python, Node.js, and Java.") or to another instrumented web or application server that uses the [supported technologies](../../../../ingest-from/technology-support.md#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks."), then it's possible to link user actions and distributed traces. However, these web requests are usually cross-origin requests, so additional configuration is required to achieve the user action to distributed trace correlation. See Link cross-origin XHR user actions and their distributed traces for details.
 
 ### Use of tag managers
 

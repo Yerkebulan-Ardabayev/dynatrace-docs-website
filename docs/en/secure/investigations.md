@@ -22,10 +22,10 @@ About the app
 * Track your path, navigate to previous steps, view your investigation history.
 * Define the time range for your data queries.
 * Attach relevant findings as evidence, while preserving the investigation context.
-* Add reputation context to IP addresses with [IP enrichment](investigations/enhance-results.md#enrich "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.") powered by third-party threat intelligence.
+* Add reputation context to IP addresses with IP enrichment powered by third-party threat intelligence.
 * Collaborate with peers on investigations using controlled access.
 * Interact with compatible apps for further insights.
-* Create and use [lookup tables](investigations/enhance-results.md#lookup "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.") to enrich investigations with contextual data.
+* Create and use lookup tables to enrich investigations with contextual data.
 
 ### Target audience
 
@@ -43,12 +43,12 @@ It's ideal for:
 
 Prerequisites
 
-* To investigate ingested logs, you need to [set up log ingestion](../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.").
+* To investigate ingested logs, you need to set up log ingestion.
 * Permissions: For a list of permissions required, go to  **Hub**, select ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**, and display **Technical information**.
 * Basic knowledge of
 
-  + [Dynatrace Query Language (DQL)](../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-  + [Dynatrace Pattern Language (DPL)](../platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.")
+  + Dynatrace Query Language (DQL)
+  + Dynatrace Pattern Language (DPL)
 
 Get started
 
@@ -56,7 +56,7 @@ Use cases
 
 Further resources
 
-![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations** is designed to streamline evidence-driven investigations on data in [Grail](../platform/grail.md "Insights on what and how you can query Dynatrace data.") â whether you're resolving incidents, analyzing root causes, or conducting threat or fraud investigations, by
+![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations** is designed to streamline evidence-driven investigations on data in Grail â whether you're resolving incidents, analyzing root causes, or conducting threat or fraud investigations, by
 
 * Eliminating manual, repetitive tasks
 * Providing contextual enrichment without tool-switching
@@ -75,82 +75,82 @@ Try [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c
 
 ## Learning modules
 
-[01Execute queries
+01Execute queries
 
 * How-to guide
-* Run investigations using Dynatrace Query Language in Investigations.](investigations/execute-queries.md)[02Filter logs
+* Run investigations using Dynatrace Query Language in Investigations.02Filter logs
 
 * How-to guide
-* Narrow down data to relevant entries in Investigations.](investigations/filter-logs.md)[03Extract fields with DPL Architect
+* Narrow down data to relevant entries in Investigations.03Extract fields with DPL Architect
 
 * How-to guide
-* Pull specific data points from logs in Investigations.](investigations/extract-fields.md)[04Manage time
+* Pull specific data points from logs in Investigations.04Manage time
 
 * How-to guide
-* Adjust time ranges for data analysis and event correlation in Investigations.](investigations/define-timeframes.md)[05Manage results
+* Adjust time ranges for data analysis and event correlation in Investigations.05Manage results
 
 * How-to guide
-* Organize and interpret query outputs across investigations --- from performance analysis to threat detection.](investigations/enhance-results.md)[06Manage the query tree
+* Organize and interpret query outputs across investigations --- from performance analysis to threat detection.06Manage the query tree
 
 * How-to guide
-* Visualize and structure complex queries in Investigations.](investigations/query-tree.md)[07Manage evidence
+* Visualize and structure complex queries in Investigations.07Manage evidence
 
 * How-to guide
-* Collect and preserve investigation artifacts in Investigations.](investigations/manage-evidence.md)[08Manage investigations
+* Collect and preserve investigation artifacts in Investigations.08Manage investigations
 
 * How-to guide
-* Share, duplicate, and control access to investigations across teams in Dynatrace Investigations.](investigations/case-sharing.md)[09Manage templates
+* Share, duplicate, and control access to investigations across teams in Dynatrace Investigations.09Manage templates
 
 * How-to guide
-* Reuse common queries and workflows in Investigations.](investigations/manage-templates.md)[10Accelerate root cause analysis
+* Reuse common queries and workflows in Investigations.[10Accelerate root cause analysis
 
 * How-to guide
-* Identify causes faster and smarter in Investigations.](investigations/accelerate-root-cause-analysis.md)[11Collaborate with other apps
+* Identify causes faster and smarter in Investigations.](investigations/accelerate-root-cause-analysis.md)11Collaborate with other apps
 
 * How-to guide
-* Share insights and integrate Investigations with other Dynatrace apps and tools for deeper analysis.](investigations/collaborate-with-apps.md)
+* Share insights and integrate Investigations with other Dynatrace apps and tools for deeper analysis.
 
 ### Threat hunting and forensics
 
 Search for indicators of compromise (IoC) and perform forensic investigations and threat hunting activities.
 
-* [Threat hunting and forensics](use-cases/threat-hunting.md "Use case scenario for threat hunting and forensics with Investigations.")
+* Threat hunting and forensics
 
 ### Resolve incidents faster with templates
 
 Speed up your log-related investigations with ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations** templates.
 
-* [Resolve incidents faster with Investigations templates](use-cases/resolve-incidents-faster-with-templates.md "Speed up your log-related investigations with Investigations templates.")
+* Resolve incidents faster with Investigations templates
 
 ### Speed up incident response with reference time
 
 Enhance your log-related investigations with ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**'s reference time.
 
-* [Speed up incident response with Dynatrace Investigations reference time](use-cases/speed-up-incident-response-with-reference-time.md "Enhance your log-related investigations with Dynatrace Investigations reference time.")
+* Speed up incident response with Dynatrace Investigations reference time
 
 ### Operationalize DQL query results
 
 Build DQL queries from your query results faster and more conveniently with ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**.
 
-* [Operationalize DQL query results with Investigations](use-cases/operationalize-query-results.md "Build DQL queries from your query results faster and more conveniently with Dynatrace Investigations.")
+* Operationalize DQL query results with Investigations
 
 ### Analyze AWS CloudTrail logs
 
 Analyze CloudTrail logs and find potential security issues with ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**.
 
-* [Analyze AWS CloudTrail logs with Investigations](use-cases/analyze-aws-cloudtrail-logs-with-security-investigator.md "Analyze CloudTrail logs and find potential security issues with Dynatrace.")
+* Analyze AWS CloudTrail logs with Investigations
 
 ### Analyze Amazon API Gateway access logs
 
 Monitor and identify errors in your Amazon API Gateway access logs with ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**.
 
-* [Analyze Amazon API Gateway access logs with Investigations](use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator.md "Monitor and identify errors in your Amazon API Gateway access logs with Dynatrace.")
+* Analyze Amazon API Gateway access logs with Investigations
 
 ### Detect threats against your AWS Secrets
 
 Monitor and identify potential threats against your AWS Secrets with ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**.
 
-* [Detect threats against your AWS Secrets with Investigations](use-cases/detect-threats-against-aws-secrets-with-security-investigator.md "Monitor and identify potential threats against your AWS Secrets with Dynatrace.")
+* Detect threats against your AWS Secrets with Investigations
 
 Browse through some of the most relevant topics to get you started with ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**.
 
@@ -209,14 +209,14 @@ Dynatrace Community articles
 
 ## Related topics
 
-* [Threat hunting and forensics](use-cases/threat-hunting.md "Use case scenario for threat hunting and forensics with Investigations.")
-* [DPL Architect](../platform/grail/dynatrace-pattern-language/dpl-architect.md "Extract fields with Dynatrace Pattern Language Architect.")
-* [Notebooks](../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
-* [Dynatrace Query Language](../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Use DQL queries](../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.")
-* [DQL commands](../platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
-* [DQL functions](../platform/grail/dynatrace-query-language/functions.md "A list of DQL functions.")
-* [DQL operators](../platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.")
-* [DQL data types](../platform/grail/dynatrace-query-language/data-types.md "A list of DQL data types.")
-* [Conversion and casting functions](../platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions.md "A list of DQL conversion and casting functions.")
-* [DQL selection and modification commands](../platform/grail/dynatrace-query-language/commands/selection-and-modification-commands.md "DQL selection and modification commands")
+* Threat hunting and forensics
+* DPL Architect
+* Notebooks
+* Dynatrace Query Language
+* Use DQL queries
+* DQL commands
+* DQL functions
+* DQL operators
+* DQL data types
+* Conversion and casting functions
+* DQL selection and modification commands

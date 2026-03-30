@@ -22,10 +22,10 @@ The following configuration example shows how you configure a Collector instance
   + The [Dynatrace Collector](../../collector.md#dt-collector-dist "Learn about the Dynatrace OTel Collector.")
   + OpenTelemetry [Contrib](../../collector.md#collector-contrib "Learn about the Dynatrace OTel Collector.")
   + A [custom Builder version](../../collector.md#collector-builder "Learn about the Dynatrace OTel Collector.")
-* The [Dynatrace API endpoint URL](../../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported
+* The Dynatrace API endpoint URL to which the data should be exported
 * An [API token](../../otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate)
 
-See [Collector Deployment](../deployment.md "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](../configuration.md "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
+See Collector Deployment and Collector Configuration on how to set up your Collector with the configuration below.
 
 ## Demo configuration
 
@@ -252,10 +252,10 @@ Under `service`, we assemble our receiver, processor, and exporter objects into 
 
 ## Limits and limitations
 
-Metrics are ingested using the OpenTelemetry protocol (OTLP) via the [Dynatrace OTLP API](../../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") and are subject to the API's limits and restrictions.
+Metrics are ingested using the OpenTelemetry protocol (OTLP) via the Dynatrace OTLP API and are subject to the API's limits and restrictions.
 For more information see:
 
-* [OpenTelemetry metrics limitations](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
+* OpenTelemetry metrics limitations
 * [Dynatrace metrics mapping](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md#dynatrace-mapping "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
 
 To avoid data duplication, make sure that only one OpenTelemetry Collector scrapes a given target (for example, Kafka broker or Prometheus endpoint).
@@ -266,5 +266,5 @@ The [Target Allocatorï»¿](https://opentelemetry.io/docs/platforms/kubernetes/
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific fields](../../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
-* [Enrich OTLP requests with Kubernetes data](kubernetes/k8s-enrich.md "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")
+* Enrich ingested data with Dynatrace-specific fields
+* Enrich OTLP requests with Kubernetes data

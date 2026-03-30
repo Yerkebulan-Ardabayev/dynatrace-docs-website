@@ -28,7 +28,7 @@ If no **Accept** header is provided with the request, an `application/json` payl
 
 To execute this request, you need an access token with `metrics.read` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ## Parameters
 

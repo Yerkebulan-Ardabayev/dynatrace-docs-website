@@ -22,7 +22,7 @@ Before you begin, ensure the following:
 
 * ActiveGate configuration
 
-  + Assign one or more [ActiveGate group](../../../ingest-from/dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.") to connect to the target database servers remotely.
+  + Assign one or more ActiveGate group to connect to the target database servers remotely.
 * Required components
 
   + For databases requiring additional components (for example, JDBC drivers), install them on all designated ActiveGates according to the [extension guidelines](../../../ingest-from/extensions/concepts.md#ag "Learn more about the concept of Dynatrace Extensions.").
@@ -87,12 +87,12 @@ The `default_database_monitoring` bucket is where all the database extension-ret
 ALLOW storage:buckets:read WHERE storage:bucket-name = 'default_database_monitoring'
 ```
 
-For more information see, [Working with policies](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies") and [Grant access to Grail](../../../manage/identity-access-management/use-cases/access-grail.md "Grant access to Grail").
+For more information see, Working with policies and Grant access to Grail.
 
 ### Installation steps
 
 1. Install ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") **Databases** from the Dynatrace  **Hub**.
-2. Configure the app to monitor supported database instances. For vendor-specific setup instructions, see [Get started with database monitoring](database-app/get-started.md "Set up database monitoring and learn how to extend Dynatrace Databases monitoring.").
+2. Configure the app to monitor supported database instances. For vendor-specific setup instructions, see Get started with database monitoring.
 3. Add the required monitoring configurations (for example, credentials, endpoints) for each instance.
 
 ## Get started
@@ -173,14 +173,14 @@ A predefined, non-configurable metric evaluates availability, performance, confi
 
 Health alerts and warning signals help you monitor your infrastructure by providing clear, actionable insights. These features reduce the noise from infrastructure issues and improve alerting capabilities, so you can focus on what matters most. This is achieved through better categorization of detected malfunctions.
 
-* For critical events, a Health alert is raised, triggering a [Dynatrace Problems](../../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.") investigation.
+* For critical events, a Health alert is raised, triggering a Dynatrace Problems investigation.
 * For non-critical situations, a Warning signal informs you of a potential challenge.
 
 You can set up the ready-made health alerts and warning signals through the **Alert templates** tab.
 
 In the **Alert templates** tab, we provide pre-defined alert templates for the most popular DB vendors. Easily create a new alert by selecting a template and **New Alert**. Next, either customize the alert in the **Anomaly Detection** wizard or create the alert with one step.
 
-Find all the custom alerts, more details of capabilities, and limits in [Anomaly Detection](../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.").
+Find all the custom alerts, more details of capabilities, and limits in Anomaly Detection.
 
 ### Insights
 

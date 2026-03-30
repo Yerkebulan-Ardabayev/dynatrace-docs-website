@@ -37,7 +37,7 @@ If you've encountered an issue related to Log Monitoring, check one of the follo
 
 ### How much does Log Monitoring cost?
 
-Log Monitoring pricing is based on the Davis data units (DDUs) model. See [DDUs for Log Monitoring Classic](../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details on how DDU consumption is calculated for Log Monitoring.
+Log Monitoring pricing is based on the Davis data units (DDUs) model. See DDUs for Log Monitoring Classic for details on how DDU consumption is calculated for Log Monitoring.
 
 ### Who can increase the ingestion limit per tenant?
 

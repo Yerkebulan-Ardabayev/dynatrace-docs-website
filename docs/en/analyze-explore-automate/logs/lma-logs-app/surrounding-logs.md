@@ -25,7 +25,7 @@ The surrounding logs are shown for the context provided by the log record.
 
 * If `trace_id` parameter is present, you should see other records with the same trace ID.
 
-  For more information about automated correlation, see [Connect log data to traces](../lma-log-enrichment.md "Connect your incoming log data to traces for more precise Dynatrace analysis.").
+  For more information about automated correlation, see Connect log data to traces.
 * Alternatively, you can examine the surrounding logs for the same topology entity, for example, a host.
 
   Select **Run query for 15 logs before** or **Run query for 15 logs after** to expand the context by loading more data before or after the timestamp of the original.

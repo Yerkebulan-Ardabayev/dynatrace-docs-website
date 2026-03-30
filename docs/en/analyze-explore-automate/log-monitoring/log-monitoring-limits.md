@@ -78,7 +78,7 @@ Unique log data attributes (high-cardinality attributes) such as `span_id` and `
 
 ## Log ingestion API request objects
 
-In addition to the [generic Dynatrace API limitations](../../dynatrace-api/basics/access-limit.md "Find out about payload limits and request throttling that may affect your use of the Dynatrace API."), the following limits specific to the log ingestion API apply:
+In addition to the generic Dynatrace API limitations, the following limits specific to the log ingestion API apply:
 
 * `LogMessagePlain plain` text object.  
   The length of the message is limited to 8,192 characters. Any content exceeding the limit is trimmed.
@@ -90,7 +90,7 @@ In addition to the [generic Dynatrace API limitations](../../dynatrace-api/basic
   + Content. If the content key is not set, the whole JSON is parsed as the content.
   + Attributes. String, number, boolean values, or an array of these types are supported. Numbers and boolean values are transformed into string representation. Nested objects are flattened (for example, `host: {name: "host1"}` becomes `host.name`).
     Semantic attributes and custom attributes are indexed and can be used in queries. These are also displayed in aggregations (facets). If an unsupported key occurs, it is not indexed and cannot be used in queries and aggregations.
-    See [Semantic attributes (Logs Classic)](acquire-log-data/logs-classic-ingestion-api/log-classic-semantic-attributes.md "Supported semantic attributes that are indexed in Log Monitoring Classic.") for more details.
+    See Semantic attributes (Logs Classic) for more details.
 
   The length of the value is limited for all attributes. Any content exceeding the limit is trimmed. The default limits are as follows:
 

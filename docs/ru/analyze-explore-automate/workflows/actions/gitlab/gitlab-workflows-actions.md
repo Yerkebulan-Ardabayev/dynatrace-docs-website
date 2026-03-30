@@ -6,7 +6,7 @@ scraped: 2026-03-05T21:32:08.754245
 
 Следующие действия рабочих процессов доступны для интеграции GitLab Connector ![GitLab for Workflows](https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg "GitLab for Workflows"). Каждое действие соответствует конечной точке API GitLab Connector.
 
-Подробнее о создании рабочих процессов см. в разделе [Создание рабочих процессов в Dynatrace Workflows](../../building.md#create "Создание и редактирование рабочих процессов в Dynatrace Workflows.").
+Подробнее о создании рабочих процессов см. в разделе Создание рабочих процессов в Dynatrace Workflows.
 
 Действия сгруппированы по следующим категориям:
 
@@ -278,5 +278,5 @@ scraped: 2026-03-05T21:32:08.754245
 
 ## Связанные темы
 
-* [GitLab Connector](../gitlab.md "Интеграция Workflows с GitLab.")
-* [Настройка GitLab Connector](gitlab-workflows-setup.md "Настройка GitLab Connector.")
+* GitLab Connector
+* Настройка GitLab Connector

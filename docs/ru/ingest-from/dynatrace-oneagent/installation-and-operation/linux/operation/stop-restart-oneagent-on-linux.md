@@ -34,7 +34,7 @@ scraped: 2026-03-06T21:19:02.259999
 ./oneagentctl --set-proxy=my-proxy.com --restart-service
 ```
 
-Дополнительную информацию см. в разделе [Настройка OneAgent через интерфейс командной строки](../../../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Дополнительную информацию см. в разделе Настройка OneAgent через интерфейс командной строки.
 
 ## Остановка OneAgent с помощью командной строки
 
@@ -56,4 +56,4 @@ scraped: 2026-03-06T21:19:02.259999
 
 где `oneagent` — скрипт `init.d` для OneAgent.
 
-Узнайте больше о [взаимодействии Dynatrace с вашей операционной системой](../installation/oneagent-security-linux.md "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
+Узнайте больше о взаимодействии Dynatrace с вашей операционной системой.

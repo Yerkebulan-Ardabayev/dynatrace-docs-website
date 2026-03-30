@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:36:40.825058
 
 We continue with our [Easy Shipping LTD logistics example](../extend-topology.md#custom-topology-model-in-action "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to."), in which trucks and truck-mounted containers send telemetry data to Dynatrace.
 
-The example data stream conforms to the [Dynatrace metric line protocol format](../extend-metrics/reference/metric-ingestion-protocol.md "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+The example data stream conforms to the Dynatrace metric line protocol format.
 
 ```
 truck.fuel.total,trucknr=99,model=mac-granite 10234

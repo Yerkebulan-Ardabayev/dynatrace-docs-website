@@ -13,13 +13,13 @@ scraped: 2026-03-06T21:26:49.610500
 
 Log Monitoring Classic
 
-Starting with OneAgent version 1.243 and Dynatrace Cluster version 1.252, we strongly encourage you to switch to [Log Storage](log-storage.md "Configure storage of log files that are already known to OneAgent.").
+Starting with OneAgent version 1.243 and Dynatrace Cluster version 1.252, we strongly encourage you to switch to Log Storage.
 
-With the release of Dynatrace version 1.285 (March 2024), Dynatrace will automatically convert your [log source](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-add-log-files-manually.md "Learn how to manually add log files for analysis.") and [log storage](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-add-log-file-sources.md "Learn how to include and exclude log sources for analysis.") configurations to the latest version.
+With the release of Dynatrace version 1.285 (March 2024), Dynatrace will automatically convert your log source and log storage configurations to the latest version.
 
 You can also upgrade to the new configuration by selecting **Upgrade configuration**. All of your current settings will be fully upgraded.
 
-The upgraded configuration (see [Log ingest rules](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.")) defined on the **Custom log source configuration** and **Log sources and storage** pages will give you:
+The upgraded configuration (see Log ingest rules) defined on the **Custom log source configuration** and **Log sources and storage** pages will give you:
 
 * Greater flexibility in defining log sources (for example, log path, log level, Kubernetes namespace, Kubernetes deployment)
 * Flexibility in defining log sources (using environment, host group, and host scopes)

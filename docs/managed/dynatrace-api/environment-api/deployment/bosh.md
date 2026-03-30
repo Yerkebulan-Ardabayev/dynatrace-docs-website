@@ -4,10 +4,10 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deploym
 updated: 2026-02-09
 ---
 
-[### Download specific version
+### Download specific version
 
-Download a specific version of BOSH release tarballs.](/managed/dynatrace-api/environment-api/deployment/bosh/download-bosh-version "Download the OneAgent BOSH tarball of the specific version via Dynatrace API.")[### List available versions
+Download a specific version of BOSH release tarballs.### List available versions
 
-Get an overview of available versions of BOSH release tarballs.](/managed/dynatrace-api/environment-api/deployment/bosh/get-available-version "List available versions of OneAgent BOSH tarballs via Dynatrace API.")[### View checksum
+Get an overview of available versions of BOSH release tarballs.### View checksum
 
-View a checksum of a BOSH release tarball.](/managed/dynatrace-api/environment-api/deployment/bosh/get-bosh-checksum "View the checksum of the OneAgent BOSH tarball via Dynatrace API.")
+View a checksum of a BOSH release tarball.

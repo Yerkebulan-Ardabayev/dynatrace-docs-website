@@ -23,6 +23,6 @@ To access the **World map** view
 3. Select the **View geolocation breakdown** tile of the infographic.
 4. In the **Geolocation breakdown** section that appears on the left hand-side under the infographic, select **View full world map**.
 
-You can directly pin the world map view to a classic dashboard of your preference by selecting **Pin to dashboard** and selecting the specific dashboard. For details, see [Pin tiles to your dashboard](../../../../analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard.md "Learn to pin tiles to your dashboards.").
+You can directly pin the world map view to a classic dashboard of your preference by selecting **Pin to dashboard** and selecting the specific dashboard. For details, see Pin tiles to your dashboard.
 
-If you don't see data on the world map, you might need to [map your internal IP addresses to locations](../additional-configuration/map-internal-ip-addresses-to-locations-web.md "Configure Dynatrace to use local addresses to understand where the users of your web applications are.").
+If you don't see data on the world map, you might need to map your internal IP addresses to locations.

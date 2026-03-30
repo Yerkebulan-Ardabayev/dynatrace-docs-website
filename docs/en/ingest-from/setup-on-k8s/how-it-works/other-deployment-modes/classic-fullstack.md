@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:26:07.681929
 
 Classic Full-Stack monitoring integrates host and application monitoring for Kubernetes environments. Instrumented Pods maintain their relationship with hosts, enabling the collection of host metrics.
 
-See [`.spec.oneAgent.classicFullStack`](../../reference/dynakube-parameters.md "List the available parameters for setting up Dynatrace Operator on Kubernetes.") section of DynaKube for additional information.
+See `.spec.oneAgent.classicFullStack` section of DynaKube for additional information.
 
 ## Capabilities
 
@@ -30,15 +30,15 @@ Thereâs a startup dependency between the container where OneAgent is deploy
 
 The following components are deployed via Helm/Manifests as part of the core installation. For more information, go to their respective sections:
 
-* [Dynatrace Operator](../components/dynatrace-operator.md#operator "Components of Dynatrace Operator") manages the automated rollout, configuration, and lifecycle of Dynatrace components in your Kubernetes environment.
-* [Dynatrace Operator webhook](../components/dynatrace-operator.md#webhook "Components of Dynatrace Operator") validates DynaKube definitions, converts definitions with older API versions, and injects configurations into Pods.
+* Dynatrace Operator manages the automated rollout, configuration, and lifecycle of Dynatrace components in your Kubernetes environment.
+* Dynatrace Operator webhook validates DynaKube definitions, converts definitions with older API versions, and injects configurations into Pods.
 
 ### Operator-managed components
 
 The following components are deployed by applying a DynaKube with full-stack observability:
 
-* [Dynatrace OneAgent](../../../dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") collects host metrics from Kubernetes nodes.
-* [Dynatrace ActiveGate](../../../dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.") routes observability data to the Dynatrace cluster and monitors the Kubernetes API.
+* Dynatrace OneAgent collects host metrics from Kubernetes nodes.
+* Dynatrace ActiveGate routes observability data to the Dynatrace cluster and monitors the Kubernetes API.
 
 ![classic-full-stack](https://dt-cdn.net/images/screenshot-2024-01-31-at-2-37-54-pm-2354-6d55b949e0.png)
 

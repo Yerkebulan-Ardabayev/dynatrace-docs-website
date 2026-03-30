@@ -68,7 +68,7 @@ To use  **Dynatrace Assist** in the generative AI mode, you only need the follow
 
 You require the remaining permissions in the table only if you want to use the full extent of agentic Dynatrace Assist capabilities. For more information, see [Dynatrace Assist agentic permissions](copilot-getting-started.md#assist-agentic "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
-For more information, see [Getting started with Dynatrace Intelligence agentic and generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+For more information, see Getting started with Dynatrace Intelligence agentic and generative AI.
 
 ## Get started
 
@@ -82,7 +82,7 @@ After enabling Dynatrace Intelligence generative AI on your environment and sett
 
 1. In Dynatrace, select  **Dynatrace Assist**.
 2. A new window opens with the chat interface.
-3. Type your question. See [examples](chat-with-davis-copilot/dynatrace-assist-prompts.md "Learn what kind of prompts work well in Dynatrace Assist.") for inspiration.
+3. Type your question. See examples for inspiration.
 4. Select **Run** ![Run](https://dt-cdn.net/images/run-c2f8c2f63c.svg "Run") and wait for the response to be generated.
 
    * You can ask follow-up questions.
@@ -97,7 +97,7 @@ Answers are generated based on Dynatrace-related resources. If the model is unab
 
 ### Use Dynatrace Assist agentic capabilities
 
-With agentic AI enabled, you can ask  **Dynatrace Assist** to analyze and provide insights on the data and security of your environment. For examples, see [Ask about the data in your environment](chat-with-davis-copilot/dynatrace-assist-prompts.md#assist-ask-about-the-data "Learn what kind of prompts work well in Dynatrace Assist.").
+With agentic AI enabled, you can ask  **Dynatrace Assist** to analyze and provide insights on the data and security of your environment. For examples, see Ask about the data in your environment.
 
 For more information about getting started with agentic  **Dynatrace Assist**, see [Enable agentic AI for Dynatrace Assist](copilot-getting-started.md#assist-agentic "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
@@ -129,10 +129,10 @@ Go through the following process to learn using  **Dynatrace Assist**
 [01Embedded conversation starters
 
 * Reference
-* Learn how to trigger predefined prompts in various Dynatrace applications.](chat-with-davis-copilot/copilot-conv-starters.md)[02Dynatrace Assist prompt examples
+* Learn how to trigger predefined prompts in various Dynatrace applications.](chat-with-davis-copilot/copilot-conv-starters.md)02Dynatrace Assist prompt examples
 
 * Reference
-* Learn what kind of prompts work well in Dynatrace Assist.](chat-with-davis-copilot/dynatrace-assist-prompts.md)
+* Learn what kind of prompts work well in Dynatrace Assist.
 
 ## Use cases
 
@@ -146,7 +146,7 @@ You can use agentic  **Dynatrace Assist** to:
 
 ## Related topics
 
-* [Get started with Dynatrace Intelligence agentic and generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Embedded conversation starters](chat-with-davis-copilot/copilot-conv-starters.md "Learn how to trigger predefined prompts in various Dynatrace applications.")
-* [Dynatrace Intelligence agentic and generative AI FAQ](../../../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
-* [Dynatrace MCP server](../../../common/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp.md "Learn about the Dynatrace MCP server and how you can connect to it.")
+* Get started with Dynatrace Intelligence agentic and generative AI
+* Embedded conversation starters
+* Dynatrace Intelligence agentic and generative AI FAQ
+* Dynatrace MCP server

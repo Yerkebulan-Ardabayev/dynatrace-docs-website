@@ -4,12 +4,12 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activeg
 updated: 2026-02-09
 ---
 
-[### List ActiveGates
+### List ActiveGates
 
-Get an overview of all ActiveGates in your environment.](/managed/dynatrace-api/environment-api/activegates/activegate-info/get-all "List all ActiveGates currently or recently connected to the environment.")[### View an ActiveGate
+Get an overview of all ActiveGates in your environment.### View an ActiveGate
 
-View the configuration of an ActiveGate.](/managed/dynatrace-api/environment-api/activegates/activegate-info/get-activegate "View the configuration of the specified ActiveGate via the Dynatrace API.")
+View the configuration of an ActiveGate.
 
 ## Related topics
 
-* [Dynatrace ActiveGate](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.")
+* Dynatrace ActiveGate

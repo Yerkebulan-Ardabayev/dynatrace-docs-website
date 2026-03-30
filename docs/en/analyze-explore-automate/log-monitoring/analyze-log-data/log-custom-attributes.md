@@ -77,7 +77,7 @@ Then you will create a custom log attribute and use it for creating a log metric
 2. Create a custom attribute.
 
    ![Creating a custom log attribute.](https://dt-cdn.net/images/lm-custom-att-set-custom-att-1129-96179dda7e.png)
-3. View the attribute in log viewer. (See [Log viewer (Logs Classic)](log-viewer.md "Learn how to use Dynatrace log viewer to analyze log data.") for details.)
+3. View the attribute in log viewer. (See Log viewer (Logs Classic) for details.)
 
    * Check **Available attributes**
 

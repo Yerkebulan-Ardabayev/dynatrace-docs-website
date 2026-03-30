@@ -27,6 +27,6 @@ Monitor Heroku with Dynatrace.](/managed/observe/infrastructure-observability/co
 
 ## Related topics
 
-* [Set up Dynatrace on container and PaaS platforms](/managed/ingest-from/setup-on-container-platforms "Deploy Dynatrace on various container and PaaS platforms.")
-* [Monitor container groups](/managed/observe/infrastructure-observability/container-platform-monitoring/container-groups "Overview on container groups monitoring")
-* [Container monitoring rules](/managed/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules "Define, enable and disable container monitoring rules")
+* Set up Dynatrace on container and PaaS platforms
+* Monitor container groups
+* Container monitoring rules

@@ -16,21 +16,21 @@ Your `extension.yaml` file defines the generic scope of your extension and is th
 
 This topic describes core elements of the `extension.yaml` file applicable to any kind of extension from the Dynatrace Extensions framework. For elements specific to particular data source types, see:
 
-* [SNMP extension](data-sources/snmp-extensions.md "Learn how to create an SNMP extension using the Extensions framework.")
-* [WMI extension](data-sources/wmi-extensions.md "Learn how to create a WMI extension using the Extensions framework.")
-* [Prometheus extension](data-sources/prometheus-extensions.md "Learn how to create a Prometheus extension using the Extensions framework.")
-* [JMX extension](data-sources/jmx.md "Learn how to create a JMX extension using the Extensions framework.")
-* [SQL extension](data-sources/sql.md "Learn how to create an SQL data source-based extension using the Extensions framework.")
+* SNMP extension
+* WMI extension
+* Prometheus extension
+* JMX extension
+* SQL extension
 
 ## Schemas
 
-When you create the `extension.yaml` file, make sure to rely on the schemas provided through the [Extensions API](../../../dynatrace-api/environment-api/extensions-20.md "Learn how to manage extensions with the Dynatrace Extensions 2.0 API."). We recommend that you use an editor supporting schema validation and snippets, which significantly simplifies `extension.yaml` editing.
+When you create the `extension.yaml` file, make sure to rely on the schemas provided through the Extensions API. We recommend that you use an editor supporting schema validation and snippets, which significantly simplifies `extension.yaml` editing.
 
 We recommend using the Dynatrace Extensions VS Code add-on provided by Dynatrace. For more information, see [Add-on for VS Codeï»¿](https://dt-url.net/tx03uks/).
 
 To download Extensions schemas:
 
-1. Check available schema versions using the [GET all schemas](../../../dynatrace-api/environment-api/extensions-20/schemas/get-all-schemas.md "View available extension schema versions via the Dynatrace Extensions 2.0 API.") endpoint. Schema version relate to Dynatrace Cluster versions.
+1. Check available schema versions using the GET all schemas endpoint. Schema version relate to Dynatrace Cluster versions.
 
    ```
    curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/schemas" \
@@ -62,7 +62,7 @@ To download Extensions schemas:
 
    }
    ```
-2. Use the [GET all files](../../../dynatrace-api/environment-api/extensions-20/schemas/get-all-files.md "View available schema files in a schema version via the Dynatrace Extensions 2.0 API.") endpoint to list all available schemas for a specific Dynatrace version.
+2. Use the GET all files endpoint to list all available schemas for a specific Dynatrace version.
    For example:
 
    ```
@@ -113,7 +113,7 @@ To download Extensions schemas:
 
    }
    ```
-3. Use the [GET a file](../../../dynatrace-api/environment-api/extensions-20/schemas/get-file.md "View an extension schema file via the Dynatrace Extensions 2.0 API.") endpoint to download a specific file in a specific version. For example, to download `extension.schema.json`, version `1.215`:
+3. Use the GET a file endpoint to download a specific file in a specific version. For example, to download `extension.schema.json`, version `1.215`:
 
    ```
    curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/schemas/1.215/extension.schema.json" \
@@ -449,4 +449,4 @@ Define the filter based on a condition as follows:
     filter: const:$not(<expr>)
     ```
 
-The filtering logic is different for WMI extensions, where you pass the condition as a query. For more information, see [Filter extracted dimensions](data-sources/wmi-extensions/wmi-schema-reference.md#filter-extracted-dimensions "Learn about WMI extensions in the Extensions framework.").
+The filtering logic is different for WMI extensions, where you pass the condition as a query. For more information, see Filter extracted dimensions.

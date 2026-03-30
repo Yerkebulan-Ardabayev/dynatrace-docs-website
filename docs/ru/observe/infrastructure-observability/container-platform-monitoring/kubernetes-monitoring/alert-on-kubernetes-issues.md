@@ -319,4 +319,4 @@ ActiveGate версии 1.253+
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
+* Настройка Dynatrace в Kubernetes

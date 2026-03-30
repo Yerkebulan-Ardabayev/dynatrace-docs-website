@@ -19,14 +19,14 @@ Using both the [SAP Introscope Agentï»¿](https://dt-url.net/ut039c3) and Dyna
 Dynatrace fully supports Java as well as all major JVMs and JDKs, providing extensive Java monitoring capabilities:
 
 * [OpenTelemetry supportï»¿](https://github.com/open-telemetry/opentelemetry-java/) for capturing traces and ingesting metrics.  
-  For more information, see [Instrument your Java application with OpenTelemetry](../../opentelemetry/walkthroughs/java.md "Learn how to instrument your Java application using OpenTelemetry and Dynatrace.")
-* End-to-end [transaction tracing](../../../observe/application-observability/services.md "Learn how to monitor and analyze your services, define and use request attributes, and more.") of requests to web services, remoting services, JMS, and RabbitMQ
-* [OneAgent SDK](../../extend-dynatrace/extend-tracing/oneagent-sdk.md "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing
+  For more information, see Instrument your Java application with OpenTelemetry
+* End-to-end transaction tracing of requests to web services, remoting services, JMS, and RabbitMQ
+* OneAgent SDK for custom tracing
 * Insight into SQL databases (via JDBC) and NoSQL databases such as MongoDB, Cassandra, and Redis
 * Heap, garbage collection, thread, JMX, process metrics, and much more
-* Memory dump analysisâDynatrace supports [memory dumps](../../../observe/application-observability/profiling-and-optimization/memory-dump-analysis.md "Learn how Dynatrace enables you to trigger, download and analyze memory dumps for Java and Node.js.") for the Oracle JVM, OpenJDK, and IBM JVM
+* Memory dump analysisâDynatrace supports memory dumps for the Oracle JVM, OpenJDK, and IBM JVM
 * Always-on, 24/7, production-grade CPU profiling (including support for virtual threads)
-* [Continuous thread analysis](../../../observe/application-observability/profiling-and-optimization/continuous-thread-analysis.md "Continuously analyze the state of your threads and their development to quickly identify and solve performance issues in Java and Node.js processes.") for application, JVM, and agent threads (JVM thread analysis limited to Java 8 and Java 17+)
+* Continuous thread analysis for application, JVM, and agent threads (JVM thread analysis limited to Java 8 and Java 17+)
 
 Dynatrace also supports GraalVM Native Images, providing extensive Java monitoring capabilities:
 
@@ -44,13 +44,13 @@ Parsers help you to improve filtering, troubleshooting, metrics, alerts, and das
 
 ![syslog-bundles](https://dt-cdn.net/images/env-syslogbundles-2589-90e4e38b45.png)
 
-For more information, see [Process logs with technology bundle parsers](../../../platform/openpipeline/use-cases/tutorial-technology-processor.md "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
+For more information, see Process logs with technology bundle parsers.
 
 ### Topics
 
-* [Support for JVMs](java/support-for-jvms.md "Find out the major JVMs and JDKs that are supported by Dynatrace.")
-* [G1 Garbage Collector â Java 9](java/g1-garbage-collector-java-9.md "Learn how the G1 works compared to other collectors and why it can easily outperform other state-of-the-art garbage collectors on large heaps.")
-* [Top Java memory problems](java/top-java-memory-problems.md "Learn about Java memory issues such as memory leaks, high memory usage, class loader problems, and GC configuration.")
-* [Out-of-memory (OOM) and out-of-threads (OOT) events and alerting](java/set-up-event-and-memory-alerting.md "Set up out-of-memory (OOM) and out-of-threads (OOT) events and alerting in Dynatrace.")
-* [GraalVM Native Image](java/graalvm-native-image.md "Install, configure, and manage Dynatrace GraalVM Native Image module.")
-* [Red Hat Quarkus native applications monitoring](java/quarkus.md "Monitor Red Hat Quarkus native applications with Dynatrace on hosts that are monitored by OneAgent.")
+* Support for JVMs
+* G1 Garbage Collector â Java 9
+* Top Java memory problems
+* Out-of-memory (OOM) and out-of-threads (OOT) events and alerting and out-of-threads (OOT) events and alerting in Dynatrace.")
+* GraalVM Native Image
+* Red Hat Quarkus native applications monitoring

@@ -25,7 +25,7 @@ If ActiveGate can't connect to the Dynatrace environment or doesn't start, you m
 ## Requirements
 
 * **View sensitive request data** environment permission
-* For an ActiveGate configured for multi-environment support, you can run ActiveGate diagnostics only on the main environment, as defined in the [ActiveGate configuration](configuration/configure-an-environment-activegate-for-multi-environment-support.md "Read the step-by-step procedure for configuring a single Environment ActiveGate for multi-environment support.").
+* For an ActiveGate configured for multi-environment support, you can run ActiveGate diagnostics only on the main environment, as defined in the ActiveGate configuration.
 
 ## Analyze automatically
 
@@ -195,7 +195,7 @@ Windows
 
 #### Locations
 
-* `agctl` is located in [ActiveGate install directory](configuration/where-can-i-find-activegate-files.md "Find out where ActiveGate files are stored on Windows and Linux systems."). If you installed ActiveGate in a custom folder, the path to `agctl` will be different.
+* `agctl` is located in ActiveGate install directory. If you installed ActiveGate in a custom folder, the path to `agctl` will be different.
 * The diagnostic package is written in the current working directory by default.
 
   + To change this, use the `--directory=<path>` parameter.
@@ -203,7 +203,7 @@ Windows
 
 #### Permissions
 
-* `agctl` must be run with [the same user as ActiveGate process](installation/linux/linux-customize-installation-for-activegate.md#user-service "Learn about the command-line parameters that you can use with ActiveGate on Linux.") - by default `dtuserag`.
+* `agctl` must be run with the same user as ActiveGate process - by default `dtuserag`.
 * Make sure that `dtuserag` has write permission for the target directory.
 
 #### Data collected
@@ -221,7 +221,7 @@ sudo -u dtuserag /opt/dynatrace/gateway/agctl create-support-archive [--director
 
 #### Locations
 
-* `agctl.bat` is located in the [ActiveGate install directory](configuration/where-can-i-find-activegate-files.md "Find out where ActiveGate files are stored on Windows and Linux systems."). If you installed ActiveGate in a custom folder, the path to `agctl.bat` will be different.
+* `agctl.bat` is located in the ActiveGate install directory. If you installed ActiveGate in a custom folder, the path to `agctl.bat` will be different.
 * The diagnostic package is written in the current working directory by default.
 
   + To change this, use the `--directory=<path>` parameter.
@@ -229,7 +229,7 @@ sudo -u dtuserag /opt/dynatrace/gateway/agctl create-support-archive [--director
 
 #### Permissions
 
-* `agctl.bat` must be run with [the same user as ActiveGate process](installation/linux/linux-customize-installation-for-activegate.md#user-service "Learn about the command-line parameters that you can use with ActiveGate on Linux.") or as administrator.
+* `agctl.bat` must be run with the same user as ActiveGate process or as administrator.
 
 #### Data collected
 

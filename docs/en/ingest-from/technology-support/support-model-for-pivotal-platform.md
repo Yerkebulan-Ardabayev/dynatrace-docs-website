@@ -13,9 +13,9 @@ scraped: 2026-03-05T21:26:38.490404
 
 VMware supports N, N-1, and N-2 releases of Tanzu Application Service. You can find further details in the VMware [support policyï»¿](https://tanzu.vmware.com/support/lifecycle_policy).
 
-Dynatrace follows the same [support modelï»¿](https://d1fto35gcfffzn.cloudfront.net/support/PivotalLifecycleMatrix.pdf) as VMware, ensuring a consistent upgrade cadence. However, OneAgent and [Dynatrace Service Broker](../setup-on-container-platforms/cloud-foundry/install-the-service-broker-for-cloud-foundry-dashboard-tile.md "Install and configure the Dynatrace Service Broker for VMware Tanzu Platform dashboard tile.") support for Tanzu may trail behind VMware releases to allow for adequate testing.
+Dynatrace follows the same [support modelï»¿](https://d1fto35gcfffzn.cloudfront.net/support/PivotalLifecycleMatrix.pdf) as VMware, ensuring a consistent upgrade cadence. However, OneAgent and Dynatrace Service Broker support for Tanzu may trail behind VMware releases to allow for adequate testing.
 
-For details, see [end of support announcements](../../whats-new/technology/end-of-support-news.md "End of support announcements for technologies supported by Dynatrace.") for OneAgent.
+For details, see end of support announcements for OneAgent.
 
 | TAS version[1](#fn-1-1-def) | TAS release | End of support[2](#fn-1-2-def) |
 | --- | --- | --- |

@@ -41,7 +41,7 @@ The nodes and edges shown in the ![Smartscape](https://dt-cdn.net/images/smartsc
 
 The timeframe selector in the ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** app works slightly different compared to the other areas of the platform. The timeframe selector lets you view nodes whose lifetime overlaps with the selected timeframe. This ensures that you only see nodes relevant to the period you're analyzing.
 
-For more information about lifetime, see [**Smartscape on Grail**](../../platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
+For more information about lifetime, see **Smartscape on Grail**.
 
 ## Segments
 
@@ -53,7 +53,7 @@ Working with vast amounts of data such as thousands of nodes in a graph, and try
 
 In nested views, if your segment filters out a parent group, you won't be able to see the child nodes of that group even if those child nodes aren't directly affected by the segment filter.
 
-For more information about Segments, see [Segments](../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.").
+For more information about Segments, see Segments.
 
 ## Tooltips
 

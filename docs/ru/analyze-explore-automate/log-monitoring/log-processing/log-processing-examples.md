@@ -160,7 +160,7 @@ Log Monitoring Classic
 7. Перейдите в **Settings** > **Log Monitoring** > **Custom attributes** и выберите **Add custom attribute**.
 8. Создайте пользовательский атрибут на основе извлеченного идентификатора продукта (`my.product.id`).
    **Key**: `my.product.id`
-   Подробнее см. [Пользовательские атрибуты логов (Logs Classic)](../analyze-log-data/log-custom-attributes.md "Узнайте, как создавать и использовать пользовательские атрибуты при приеме лог-данных.").
+   Подробнее см. Пользовательские атрибуты логов (Logs Classic).
 9. Сохраните пользовательский атрибут.
 10. Теперь вы можете искать и фильтровать лог-данные по атрибуту `my.product.id` в просмотрщике логов.
 
@@ -303,7 +303,7 @@ Log Monitoring Classic
    **Query**: `cloud.provider="aws" and content="Billed Duration"`
    **Measure**: `Attribute value`
    **Attribute**: `aws.billed.duration`
-   Подробнее см. [Метрики логов (Logs Classic)](../analyze-log-data/log-metrics.md "Узнайте, как создавать и использовать метрики логов Dynatrace для анализа лог-данных.").
+   Подробнее см. Метрики логов (Logs Classic).
 9. Сохраните метрику лога.
 10. Метрика `log.aws.billed.duration` видна в Data Explorer, и вы можете использовать ее в Dynatrace как любую другую метрику. Вы можете добавить ее на панель мониторинга, включить в анализ и даже использовать для создания оповещений.
 

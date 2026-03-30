@@ -14,7 +14,7 @@ scraped: 2026-03-03T21:30:52.600686
 
 Dynatrace SaaS version 1.253+
 
-Dynatrace automatically enriches business events with additional context to enhance analysis and facilitate drill-down navigation. Specifically, Dynatrace adds certain properties to your business events, for example, information on geolocation, operating system, application, and more. You can then use [Dynatrace Query Language (DQL)](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") to analyze your business events.
+Dynatrace automatically enriches business events with additional context to enhance analysis and facilitate drill-down navigation. Specifically, Dynatrace adds certain properties to your business events, for example, information on geolocation, operating system, application, and more. You can then use Dynatrace Query Language (DQL) to analyze your business events.
 
 ## OneAgent and external business event enrichment
 

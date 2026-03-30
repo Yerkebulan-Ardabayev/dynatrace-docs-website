@@ -13,13 +13,13 @@ scraped: 2026-03-03T21:23:02.373988
 
 Each Dynatrace-supported technology offers multiple "built-in" metrics. Built-in metrics are included in the product out of the box, in some cases as part of built-in extensions.
 
-Metrics that are based on OneAgent or ActiveGate extensions (prefix `ext:`) and calculated metrics (prefix `calc:`) are custom metrics, not built-in metrics; [DDU consumption](../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") for these metrics can vary widely depending on how you use Dynatrace.
+Metrics that are based on OneAgent or ActiveGate extensions (prefix `ext:`) and calculated metrics (prefix `calc:`) are custom metrics, not built-in metrics; DDU consumption for these metrics can vary widely depending on how you use Dynatrace.
 
-The `ext:` prefix is used by metrics from [OneAgent extensions](../../ingest-from/extensions/develop-your-extensions.md "Develop your own Extensions in Dynatrace.") and [ActiveGate extensions](../../ingest-from/extensions/develop-your-extensions.md "Develop your own Extensions in Dynatrace."), and also by [classic metrics for AWS integration](../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md "Integrate metrics from Amazon CloudWatch.").
+The `ext:` prefix is used by metrics from OneAgent extensions and ActiveGate extensions, and also by classic metrics for AWS integration.
 
 Despite the naming similarities, AWS integration metrics are **not** based on extensions.
 
-To view all the metrics available in **your** environment, use the [GET metrics](../../dynatrace-api/environment-api/metric-v2/get-all-metrics.md "List all metrics available in your monitoring environment via Metrics v2 API.") API call. We recommend the following query parameters:
+To view all the metrics available in **your** environment, use the GET metrics API call. We recommend the following query parameters:
 
 * `pageSize=500`âto obtain the largest possible number of metrics in one response.
 * `fields=displayName,unit,aggregationTypes,dduBillable`âto obtain the same set of fields as you see in these tables.
@@ -65,15 +65,15 @@ Different measurement units are used for similar request duration metrics for mo
 
 Custom vs built-in metrics
 
-Custom metrics are defined or installed by the user, while built-in metrics are by default part of the product. Certain built-in metrics are disabled by default and, if turned on, will consume [DDUs](../../license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU)."). These metrics cover a wide range of supported technologies, including Apache Tomcat, NGINX, Couchbase, RabbitMQ, Cassandra, Jetty, and many others.
+Custom metrics are defined or installed by the user, while built-in metrics are by default part of the product. Certain built-in metrics are disabled by default and, if turned on, will consume DDUs."). These metrics cover a wide range of supported technologies, including Apache Tomcat, NGINX, Couchbase, RabbitMQ, Cassandra, Jetty, and many others.
 
-A custom metric is a new type of metric that offers a user-provided metric identifier and unit of measure. The semantics of custom metrics are defined by you and aren't included in the default OneAgent installation. Custom metrics are sent to Dynatrace through [various interfaces](../../ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace."). Following the definition of a custom metric, the metric can be reported for multiple monitored components. Each componentâs custom metric results in a separate timeseries.
+A custom metric is a new type of metric that offers a user-provided metric identifier and unit of measure. The semantics of custom metrics are defined by you and aren't included in the default OneAgent installation. Custom metrics are sent to Dynatrace through various interfaces. Following the definition of a custom metric, the metric can be reported for multiple monitored components. Each componentâs custom metric results in a separate timeseries.
 
 For example, if you define a new custom metric called `Files count` that counts the newly created files within a directory, this new metric can be collected either for one host or for two individual hosts. Collecting the same metric for two individual hosts results in two timeseries of the same custom metric type, as shown in the example below:
 
 ![Custom metrics](https://dt-cdn.net/images/custommetrics2-1329-59422c6592.png)
 
-For the purposes of [calculating monitoring consumption](../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."), collecting the same custom metric for two hosts counts as two separate custom metrics.
+For the purposes of calculating monitoring consumption, collecting the same custom metric for two hosts counts as two separate custom metrics.
 
 ## Applications
 

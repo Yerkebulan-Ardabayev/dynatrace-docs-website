@@ -44,7 +44,7 @@ scraped: 2026-03-06T21:16:46.945923
 
 ![Единая телеметрия бессерверных сред](https://dt-cdn.net/images/unified-service-descr-630-f2484fd514.png)
 
-Имея более [600 интеграций, расширений и поддержки технологий](https://www.dynatrace.com/hub/), Dynatrace обеспечивает широкую поддержку мониторинга, включая [бессерверные технологии](../../ingest-from/technology-support/serverless-compute-services.md "Узнайте, какие функции и возможности Dynatrace поддерживает для бессерверных вычислительных сервисов для функций (FaaS)."), работающих на AWS, Azure или Google Cloud.
+Имея более [600 интеграций, расширений и поддержки технологий](https://www.dynatrace.com/hub/), Dynatrace обеспечивает широкую поддержку мониторинга, включая бессерверные технологии."), работающих на AWS, Azure или Google Cloud.
 
 ## Начало работы с мониторингом бессерверных сред
 
@@ -60,9 +60,9 @@ scraped: 2026-03-06T21:16:46.945923
 
 С помощью одной интеграции на каждого облачного провайдера Dynatrace автоматически обнаруживает облачные сервисы и отслеживает их, предоставляя готовый мониторинг работоспособности и доступности сервисов:
 
-* [Интеграция Amazon CloudWatch](../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md "Интеграция метрик из Amazon CloudWatch.")
-* [Интеграция Azure Monitor](../../ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide.md "Настройка и конфигурация мониторинга Azure в Dynatrace.")
-* [Интеграция Google Cloud operations suite](../../ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new.md "Мониторинг сервисов Google Cloud с помощью Dynatrace и просмотр доступных метрик.")
+* Интеграция Amazon CloudWatch
+* Интеграция Azure Monitor
+* Интеграция Google Cloud operations suite
 
 ### Шаг 2: Включение расширений Dynatrace на облачных сервисах с нативным механизмом расширяемости
 
@@ -74,9 +74,9 @@ scraped: 2026-03-06T21:16:46.945923
 
 Инструкции по интеграции Dynatrace в образ контейнера, а также по использованию OpenTelemetry или расширенной видимости для включения дополнительных сведений через журналы и другие события телеметрии см. в специализированных руководствах нашей документации:
 
-* [Amazon Web Services](../../ingest-from/amazon-web-services.md "Настройка и конфигурация мониторинга для Amazon Web Services.")
-* [Azure Services](../../ingest-from/microsoft-azure-services/azure-integrations.md "Настройка глубокого мониторинга кода на Azure с помощью OneAgent или OpenTelemetry.")
-* [Google Cloud Services](../../ingest-from/google-cloud-platform/gcp-integrations.md "Настройка и конфигурация Dynatrace на Google Cloud.")
+* Amazon Web Services
+* Azure Services
+* Google Cloud Services
 
 Обязательно следите за рекомендациями в веб-интерфейсе Dynatrace по включению дополнительных источников телеметрии, которые улучшат наблюдаемость ваших сервисов. Например:
 

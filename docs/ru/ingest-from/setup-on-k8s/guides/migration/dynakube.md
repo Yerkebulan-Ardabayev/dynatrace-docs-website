@@ -20,10 +20,10 @@ scraped: 2026-03-04T21:38:46.599507
 | Версия API DynaKube | Введена | Устарела | Удалена [1](#fn-1-1-def) | Руководства по миграции |
 | --- | --- | --- | --- | --- |
 | v1beta5 | 1.6.0 |  |  |  |
-| v1beta4 | 1.5.0 |  |  | [до v1beta5](api-version-migration-guides/migrate-dk-v1beta4-v1beta5.md "Миграция v1beta4 DynaKube CR до apiVersion v1beta5.") |
-| v1beta3 | 1.3.0 | 1.7.0 |  | [до v1beta5](api-version-migration-guides/migrate-dk-v1beta3-v1beta5.md "Миграция v1beta3 DynaKube CR до apiVersion v1beta5."), [до v1beta4](api-version-migration-guides/migrate-dk-v1beta3-v1beta4.md "Миграция v1beta3 DynaKube CR до apiVersion v1beta4.") |
-| v1beta2 | 1.2.0 | 1.6.0 | 1.7.0 | [до v1beta5](api-version-migration-guides/migrate-dk-v1beta2-v1beta5.md "Миграция v1beta2 DynaKube CR до apiVersion v1beta5."), [до v1beta4](api-version-migration-guides/migrate-dk-v1beta2-v1beta4.md "Миграция v1beta2 DynaKube CR до apiVersion v1beta4.") |
-| v1beta1 | 0.3.0 | 1.6.0 | 1.7.0 | [до v1beta5](api-version-migration-guides/migrate-dk-v1beta1-v1beta5.md "Миграция v1beta1 DynaKube CR до apiVersion v1beta5."), [до v1beta4](api-version-migration-guides/migrate-dk-v1beta1-v1beta4.md "Миграция v1beta1 DynaKube CR до apiVersion v1beta4.") |
+| v1beta4 | 1.5.0 |  |  | до v1beta5 |
+| v1beta3 | 1.3.0 | 1.7.0 |  | до v1beta5, до v1beta4 |
+| v1beta2 | 1.2.0 | 1.6.0 | 1.7.0 | до v1beta5, до v1beta4 |
+| v1beta1 | 0.3.0 | 1.6.0 | 1.7.0 | до v1beta5, до v1beta4 |
 
 1
 

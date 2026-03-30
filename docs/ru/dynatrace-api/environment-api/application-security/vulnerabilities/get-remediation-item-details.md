@@ -7,7 +7,7 @@ scraped: 2026-03-06T21:35:17.504404
 # Vulnerabilities API - GET сведения об элементе исправления
 
 
-Возвращает сведения о группе процессов [отслеживания исправлений](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Отслеживайте прогресс исправления уязвимостей.") для сторонней уязвимости (или, в случае уязвимостей Kubernetes, параметры узла Kubernetes для отслеживания исправлений).
+Возвращает сведения о группе процессов отслеживания исправлений для сторонней уязвимости (или, в случае уязвимостей Kubernetes, параметры узла Kubernetes для отслеживания исправлений).
 
 Запрос возвращает данные в формате `application/json`.
 
@@ -20,7 +20,7 @@ scraped: 2026-03-06T21:35:17.504404
 
 Для выполнения этого запроса необходим токен доступа с областью действия `securityProblems.read`.
 
-Чтобы узнать, как получить и использовать токен, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+Чтобы узнать, как получить и использовать токен, см. Токены и аутентификация.
 
 ## Параметры
 
@@ -594,6 +594,6 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/74125257674335543
 
 ## Связанные темы
 
-* [Application Security](../../../../secure/application-security.md "Доступ к функциям Dynatrace Application Security.")
-* [Davis Security Advisor API](../davis-security-advice.md "Просмотр рекомендаций Davis Security Advisor через Dynatrace API.")
-* [Отслеживание исправлений](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Отслеживайте прогресс исправления уязвимостей.")
+* Application Security
+* Davis Security Advisor API
+* Отслеживание исправлений

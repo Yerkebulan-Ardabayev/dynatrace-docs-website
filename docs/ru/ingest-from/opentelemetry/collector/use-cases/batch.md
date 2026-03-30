@@ -23,10 +23,10 @@ scraped: 2026-03-06T21:31:54.689204
   + [Dynatrace Collector](../../collector.md#dt-collector-dist "Learn about the Dynatrace OTel Collector.")
   + Дистрибутив OpenTelemetry [Core](../../collector.md#collector-core "Learn about the Dynatrace OTel Collector.") или [Contrib](../../collector.md#collector-contrib "Learn about the Dynatrace OTel Collector.")
   + [Пользовательская версия Builder](../../collector.md#collector-builder "Learn about the Dynatrace OTel Collector.")
-* [URL конечной точки API Dynatrace](../../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."), куда должны экспортироваться данные
+* URL конечной точки API Dynatrace, куда должны экспортироваться данные
 * [API-токен](../../otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") с соответствующей областью доступа (требуется только для SaaS и ActiveGate)
 
-См. [Развёртывание Collector](../deployment.md "How to deploy Dynatrace OTel Collector.") и [Конфигурация Collector](../configuration.md "How to configure the OpenTelemetry Collector.") для настройки Collector с приведённой ниже конфигурацией.
+См. Развёртывание Collector и Конфигурация Collector для настройки Collector с приведённой ниже конфигурацией.
 
 ## Демонстрационная конфигурация
 
@@ -185,7 +185,7 @@ exporters: [otlp_http]
 и соответствие лимитам API Dynatrace для каждого типа сигнала ([трассировки](../../otlp-api/ingest-traces.md#ingestion-limits "Learn how Dynatrace ingests OpenTelemetry traces and what limitations apply."),
 [метрики](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md#limits "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply."), [логи](../../otlp-api/ingest-logs.md#ingestion-limits "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")), чтобы избежать отклонения запросов.
 
-Вы можете использовать [метрики самомониторинга ActiveGate](../../../dynatrace-activegate/activegate-sfm-metrics.md#rest "Explore ActiveGate self-monitoring  metrics.")
+Вы можете использовать метрики самомониторинга ActiveGate
 для устранения неполадок с отклонёнными запросами. Например, вы можете использовать: `dsfm:active_gate.rest.request_count` с фильтрацией по измерению `operation`
 (`POST /otlp/v1/<...>` для приёма OTLP) и разделением по `response_code`. Слишком большие запросы отклоняются с HTTP-кодом состояния `413`.
 
@@ -206,14 +206,14 @@ exporters: [otlp_http]
 
 ## Лимиты и ограничения
 
-Данные поступают с использованием протокола OpenTelemetry (OTLP) через [API Dynatrace OTLP](../../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") и подчиняются лимитам и ограничениям API.
+Данные поступают с использованием протокола OpenTelemetry (OTLP) через API Dynatrace OTLP и подчиняются лимитам и ограничениям API.
 Для получения дополнительной информации см.:
 
-* [Ограничения метрик OpenTelemetry](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
+* Ограничения метрик OpenTelemetry
 * [Сопоставление метрик Dynatrace](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md#dynatrace-mapping "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
-* [Приём логов OpenTelemetry](../../otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")
+* Приём логов OpenTelemetry
 
 ## Связанные темы
 
-* [Обогащение поступающих данных полями, специфичными для Dynatrace](../../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
-* [Обогащение OTLP-запросов данными Kubernetes](kubernetes/k8s-enrich.md "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")
+* Обогащение поступающих данных полями, специфичными для Dynatrace
+* Обогащение OTLP-запросов данными Kubernetes

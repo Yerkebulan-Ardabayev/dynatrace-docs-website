@@ -13,7 +13,7 @@ scraped: 2026-03-03T21:26:45.029733
 * Updated on Feb 05, 2026
 * Preview
 
-With [Dynatrace Intelligence (Preview)](../dynatrace-intelligence-integrations/copilot-for-workflows.md "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows."), you can automate problem summarization and ask Dynatrace Intelligence generative AI to suggest remediation steps that can be sent to your email.
+With Dynatrace Intelligence (Preview), you can automate problem summarization and ask Dynatrace Intelligence generative AI to suggest remediation steps that can be sent to your email.
 
 ## Target audience
 
@@ -68,7 +68,7 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
 2. Extract problem details
 
 1. Select  Add task.
-2. In the  search field, enter `Run JavaScript`, or select **Run JavaScript** from the list of the ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflow** actions. For more information about the JavaScript workflow action, see [Run JavaScript action for Workflows](../../analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action.md "Execute JavaScript action for your workflows.").
+2. In the  search field, enter `Run JavaScript`, or select **Run JavaScript** from the list of the ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflow** actions. For more information about the JavaScript workflow action, see Run JavaScript action for Workflows.
 3. Enter the workflow task name.
 4. In the **Input** tab, enter the following **Source code**:
 
@@ -142,7 +142,7 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
 4. Send Dynatrace Intelligence generative AI results to your email
 
 1. Select  Add task.
-2. In the  search field, enter `Send email`, or select ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") **Send email** from the list of the ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflow** actions. For more information about the Email workflow actions, see [Email](../../analyze-explore-automate/workflows/actions/email.md "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
+2. In the  search field, enter `Send email`, or select ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") **Send email** from the list of the ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflow** actions. For more information about the Email workflow actions, see Email.
 3. Enter the workflow task name.
 4. Configure the fields:
 
@@ -179,8 +179,8 @@ Once a new problem appears, you should receive an email from `no-reply@dev.apps.
 
 ## Related topics
 
-* [Dynatrace Assist](../copilot/chat-with-davis-copilot.md "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.")
-* [Dynatrace Intelligence (Preview) app](../dynatrace-intelligence-integrations/copilot-for-workflows.md "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.")
-* [Dynatrace Intelligence generative AI overview](../copilot/copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Workflows](../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
-* [Dynatrace Intelligence (Preview) app](../dynatrace-intelligence-integrations/copilot-for-workflows.md "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.")
+* Dynatrace Assist
+* Dynatrace Intelligence (Preview) app
+* Dynatrace Intelligence generative AI overview
+* Workflows
+* Dynatrace Intelligence (Preview) app

@@ -4,7 +4,7 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/built-in
 scraped: 2026-03-03T21:22:30.551812
 ---
 
-Метрики в Grail поддерживают многие из существующих [встроенных метрик](../metrics-classic/built-in-metrics.md "Ознакомьтесь с полным списком встроенных метрик Dynatrace."), перечисленных ниже.
+Метрики в Grail поддерживают многие из существующих встроенных метрик, перечисленных ниже.
 
 В раскрывающихся разделах ниже описаны различия встроенных метрик в Grail по сравнению с аналогичными метриками Metrics Classic.
 
@@ -62,13 +62,13 @@ timeseries avg(dt.host.net.nic.bytes_rx), by:{dt.entity.host}
 
 #### Тип 1: Метрики расширений с префиксом `builtin:tech`
 
-Метрики [Extension 1.0](../../ingest-from/extensions/develop-your-extensions.md "Разрабатывайте собственные расширения в Dynatrace.") отображаются в Metrics Classic с префиксом `builtin:tech`. В Grail эти метрики отображаются с префиксом `legacy`. Например:
+Метрики Extension 1.0 отображаются в Metrics Classic с префиксом `builtin:tech`. В Grail эти метрики отображаются с префиксом `legacy`. Например:
 
 | Metric key (Grail) | Metric key (Classic) |
 | --- | --- |
 | legacy.cassandra.KeyCache.Hit.Rate | builtin:tech.cassandra.KeyCache.Hit.Rate |
 
-Это переименование применяется ко всем метрикам [Extension 1.0](../../ingest-from/extensions/develop-your-extensions.md "Разрабатывайте собственные расширения в Dynatrace.") с префиксом `builtin:tech`, за исключением:
+Это переименование применяется ко всем метрикам Extension 1.0 с префиксом `builtin:tech`, за исключением:
 
 * [Метрик общих процессов](#processes), включая все метрики с префиксом `builtin:tech.generic`.
 * [Метрик WebSphere](#websphere-application-server), включая все метрики с префиксом `builtin:tech.websphere`.
@@ -77,7 +77,7 @@ timeseries avg(dt.host.net.nic.bytes_rx), by:{dt.entity.host}
 
 #### Тип 2: Метрики расширений с префиксом `ext:`
 
-Метрики расширений с префиксом `ext:` предоставляются расширениями OneAgent или ActiveGate, либо являются [классическими метриками для интеграции с AWS](../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md "Интеграция метрик из Amazon CloudWatch.").
+Метрики расширений с префиксом `ext:` предоставляются расширениями OneAgent или ActiveGate, либо являются классическими метриками для интеграции с AWS.
 Независимо от источника, они ведут себя одинаково.
 
 Их можно найти в Grail согласно следующим правилам переименования:
@@ -118,7 +118,7 @@ timeseries avg(`com.dynatrace.extension.snmp-generic-cisco-device.cpm.cpu.loadav
 
 Если вы не можете найти свою пользовательскую метрику в Grail, попробуйте запросить ключ метрики без суффикса `.count`.
 
-Вы можете запрашивать пользовательские метрики как с помощью [селекторов метрик](../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Настройте селектор метрик для Metric v2 API."), так и с помощью DQL. Однако ключ вашей пользовательской метрики может иметь другое имя в запросах DQL. Например, если вы отправляете метрику-счётчик с ключом `coffees.brewed`, как показано ниже с использованием [протокола отправки метрик](../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md "Узнайте, как работает протокол отправки данных для Dynatrace Metrics API.")
+Вы можете запрашивать пользовательские метрики как с помощью селекторов метрик, так и с помощью DQL. Однако ключ вашей пользовательской метрики может иметь другое имя в запросах DQL. Например, если вы отправляете метрику-счётчик с ключом `coffees.brewed`, как показано ниже с использованием протокола отправки метрик
 
 ```
 coffees.brewing count,delta=2
@@ -145,8 +145,8 @@ coffees.brewing.count:splitBy():value
 
 Хотя [вычисляемые метрики сервисов](#calc-service) поддерживаются, другие вычисляемые метрики пока не поддерживаются в Grail.
 
-* [Вычисляемые метрики RUM](../../observe/digital-experience/web-applications/additional-configuration/rum-calculated-metrics-web.md "Создание вычисляемых метрик и пользовательских диаграмм на основе вычисляемых метрик для веб-приложений.") (метрики с префиксом `calc:apps`) не поддерживаются в Grail.
-* Вычисляемые метрики Log v1 (метрики с префиксом `calc:log`) не поддерживаются в Grail. См. [Обновление Log Monitoring Classic до Log Management and Analytics](../logs/logs-upgrade/logs-upgrade-to-lma.md "Log Management and Analytics — новейшее решение Dynatrace для мониторинга логов.").
+* Вычисляемые метрики RUM (метрики с префиксом `calc:apps`) не поддерживаются в Grail.
+* Вычисляемые метрики Log v1 (метрики с префиксом `calc:log`) не поддерживаются в Grail. См. Обновление Log Monitoring Classic до Log Management and Analytics.
 
 ## Биллинг
 
@@ -178,7 +178,7 @@ coffees.brewing.count:splitBy():value
 
 ## Контейнеры
 
-Новые метрики контейнеров теперь доступны для клиентов с [DPS](../../license.md "О Dynatrace Platform Subscription (DPS), модели лицензирования для всех возможностей Dynatrace."). Новые метрики подчиняются новой модели лицензирования, отличной от текущей модели полного стека на основе хост-единиц.
+Новые метрики контейнеров теперь доступны для клиентов с DPS, модели лицензирования для всех возможностей Dynatrace."). Новые метрики подчиняются новой модели лицензирования, отличной от текущей модели полного стека на основе хост-единиц.
 
 Доступность метрик:
 
@@ -187,7 +187,7 @@ coffees.brewing.count:splitBy():value
 
 ## Инфраструктура
 
-Подробный список метрик хостов и их доступности см. в разделе [Метрики хостов](../../observe/infrastructure-observability/hosts/reference/metrics.md "Метрики и классические метрики для мониторинга хостов").
+Подробный список метрик хостов и их доступности см. в разделе Метрики хостов.
 
 ### CPU
 
@@ -209,12 +209,12 @@ coffees.brewing.count:splitBy():value
 
 ActiveGate версии 1.279+
 
-Новые метрики Kubernetes теперь доступны для клиентов с [DPS](../../license.md "О Dynatrace Platform Subscription (DPS), модели лицензирования для всех возможностей Dynatrace.") с запуском нового приложения Kubernetes.
+Новые метрики Kubernetes теперь доступны для клиентов с DPS, модели лицензирования для всех возможностей Dynatrace.") с запуском нового приложения Kubernetes.
 
 Доступность метрик:
 
 * Старые метрики Kubernetes недоступны в Grail.
-* Новые метрики Kubernetes доступны сразу после начала мониторинга вашего кластера с помощью [нового приложения Kubernetes](../../observe/infrastructure-observability/kubernetes-app.md "Мониторинг и оптимизация Kubernetes с Dynatrace.").
+* Новые метрики Kubernetes доступны сразу после начала мониторинга вашего кластера с помощью нового приложения Kubernetes.
 * Некоторые новые метрики Kubernetes доступны только в Grail. У них нет эквивалента в виде классических метрик.
 
 ## Мейнфрейм
@@ -331,4 +331,4 @@ OneAgent версии 1.283+
 * Метрики **Classic Logs**, включая все метрики с префиксом `builtin:log`.
 * Метрики **NAM**, включая все метрики с префиксом `builtin:nam`.
 * Метрики **Span**, включая все метрики с префиксом `builtin:span`.
-* Метрики **RUM Classic**, включая все метрики с префиксом `builtin:apps`. Подробнее см. [Миграция метрик RUM](upgrade/rum-metric-migration.md "Узнайте, как классические метрики RUM соответствуют их логическим эквивалентам в Grail.").
+* Метрики **RUM Classic**, включая все метрики с префиксом `builtin:apps`. Подробнее см. Миграция метрик RUM.

@@ -34,9 +34,9 @@ scraped: 2026-03-06T21:22:11.974601
 
 Ваша лицензия становится активной с даты ее начала.
 
-При наличии активной лицензии Dynatrace вы можете использовать сервисы Dynatrace в соответствии с [правилами потребления мониторинга](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") и условиями вашего контракта.
+При наличии активной лицензии Dynatrace вы можете использовать сервисы Dynatrace в соответствии с правилами потребления мониторинга, the licensing model for all Dynatrace capabilities.") и условиями вашего контракта.
 
-Вы можете просматривать информацию о потреблении и оставшихся квотах вашей лицензии в [Account Management](../manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.") или через [Dynatrace Platform Subscription API](../dynatrace-api/account-management-api/dynatrace-platform-subscription-api.md "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
+Вы можете просматривать информацию о потреблении и оставшихся квотах вашей лицензии в Account Management или через Dynatrace Platform Subscription API.
 
 ## Истекшие лицензии
 
@@ -65,4 +65,4 @@ scraped: 2026-03-06T21:22:11.974601
 ## Хранение данных
 
 Различные типы отслеживаемых данных хранятся в течение разных периодов времени.
-Для получения дополнительной информации см. [Сроки хранения данных](../manage/data-privacy-and-security/data-privacy/data-retention-periods.md "Check retention times for various data types.").
+Для получения дополнительной информации см. Сроки хранения данных.

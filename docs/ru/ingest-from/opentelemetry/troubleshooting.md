@@ -89,7 +89,7 @@ Latest Dynatrace
 ### Проблемы с загрузкой
 
 * [Почему мой OTLP-экспорт не работает?](https://dt-url.net/sb238k5)
-* [Эндпоинты Dynatrace OTLP API](otlp-api.md "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.")
+* Эндпоинты Dynatrace OTLP API
 
 ### Вертикальная топология
 
@@ -99,9 +99,9 @@ Latest Dynatrace
 
 Информация о загрузке каждого типа сигнала доступна по ссылкам:
 
-* [Загрузка логов OTLP](otlp-api/ingest-logs.md "Узнайте, как Dynatrace загружает записи логов OpenTelemetry и какие ограничения применяются.")
-* [О загрузке метрик OTLP](otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Узнайте, как Dynatrace загружает метрики OpenTelemetry и какие ограничения применяются.")
-* [Загрузка трассировок OTLP](otlp-api/ingest-traces.md "Узнайте, как Dynatrace загружает трассировки OpenTelemetry и какие ограничения применяются.")
+* Загрузка логов OTLP
+* О загрузке метрик OTLP
+* Загрузка трассировок OTLP
 
 ### Трассировки
 

@@ -49,4 +49,4 @@ To use **Service dependency graph** effectively, we recommend that you:
 
 ## Related topics
 
-* [Smartscape](../../smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* Smartscape

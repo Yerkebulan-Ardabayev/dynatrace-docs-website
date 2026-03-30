@@ -58,7 +58,7 @@ Make sure all of these are true before you start.
 
 * You have basic knowledge of Kubernetes architecture, including nodes, pods, and services.
 * You have experience with Kubernetes Disk Management: Understanding of disk utilization in Kubernetes and the challenges associated with managing disk space in dynamic environments.
-* You know how to set up automated workflows in Dynatrace for responding to disk space alerts. See [Workflows](../../../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
+* You know how to set up automated workflows in Dynatrace for responding to disk space alerts. See Workflows
 * You know how to set up monitoring and alerting mechanisms within Dynatrace for Kubernetes environments.
 * You understand GitOps principles, particularly for managing Kubernetes configurations through repository-based approaches.
 
@@ -68,11 +68,11 @@ To keep the internal systems up and running, create an automated workflow for Ku
 
 ### 1. Set up continuous monitoring
 
-[Set up Dynatrace on Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes") to continuously monitor all services within the Kubernetes infrastructure. When your monitoring is providing you with data, [set up an alert](../../container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues.md "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") for disk utilization exceeding a 60% threshold to ensure optimal performance without resource wastage. With this alert, you'll be able to model a workflow for solving a disk size shortage issue.
+Set up Dynatrace on Kubernetes to continuously monitor all services within the Kubernetes infrastructure. When your monitoring is providing you with data, set up an alert for disk utilization exceeding a 60% threshold to ensure optimal performance without resource wastage. With this alert, you'll be able to model a workflow for solving a disk size shortage issue.
 
 ### 2. Set up configuration file retrieval through ownership
 
-With [ownership](../../../../deliver/ownership.md "Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.") assigned to objects, you can store the repository information. On detecting an anomaly, the system identifies the impacted service and fetches its associated configuration file. This step ensures that any adaptation made aligns directly with the specific service configuration.
+With ownership assigned to objects, you can store the repository information. On detecting an anomaly, the system identifies the impacted service and fetches its associated configuration file. This step ensures that any adaptation made aligns directly with the specific service configuration.
 
 ### 3. Set up a workflow
 
@@ -500,5 +500,5 @@ Explore further how Dynatrace can transform your approach to Kubernetes manageme
 
 ## Related topics
 
-* [AI in Workflows - Predictive maintenance of cloud disks](../../../../dynatrace-intelligence/use-cases/davis-for-workflows.md "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")
-* [Dynatrace Intelligence DQL examples](../../../../dynatrace-intelligence/use-cases/davis-dql-examples.md "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")
+* AI in Workflows - Predictive maintenance of cloud disks
+* Dynatrace Intelligence DQL examples

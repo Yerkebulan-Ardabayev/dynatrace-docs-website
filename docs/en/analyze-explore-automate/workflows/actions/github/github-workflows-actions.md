@@ -274,4 +274,4 @@ The action returns the `workflowRun` property that contains the full response of
 
 ## Related topics
 
-* [Set up GitHub Connector](github-workflows-setup.md "Learn how to set up GitHub Connector.")
+* Set up GitHub Connector

@@ -14,8 +14,8 @@ scraped: 2026-02-06T16:33:23.757175
 
 On-demand monitor execution
 
-[On-demand monitor execution](on-demand-executions.md "Learn about how to perform on-demand executions.") via web UI is available as part of DPS license only. The retention period for data from monitor execution is 35 days.  
-For Non-DPS license users, monitor execution is possible via [API](../../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution.md "View the results of Synthetic monitor executions via the Synthetic v2 API."). You can access the results for the last 6 hours.
+On-demand monitor execution via web UI is available as part of DPS license only. The retention period for data from monitor execution is 35 days.  
+For Non-DPS license users, monitor execution is possible via API. You can access the results for the last 6 hours.
 
 To display a reporting page for your monitor, select **View details** in upper-right corner of the preview panel.
 

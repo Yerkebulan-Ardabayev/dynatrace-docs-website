@@ -6,172 +6,172 @@ updated: 2026-02-09
 
 ## Basics
 
-[Authentication](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.")
+Authentication
 
-[Response codes](/managed/dynatrace-api/basics/dynatrace-api-response-codes "Find out which HTTP response codes are used in the Dynatrace API.")
+Response codes
 
-[Access limit](/managed/dynatrace-api/basics/access-limit "Find out about payload limits and request throttling that may affect your use of the Dynatrace API.")
+Access limit
 
-[Preview and Early Adopter releases](/managed/dynatrace-api/basics/preview-early-access "How Preview and Early Adopter releases of Dynatrace API endpoints work")
+Preview and Early Adopter releases
 
-[Migration guides](/managed/dynatrace-api/basics/deprecation-migration-guides "Migrate your automation to newer endpoints of the Dynatrace API.")
+Migration guides
 
 ## Endpoints
 
 ### ActiveGate
 
-[Information](/managed/dynatrace-api/environment-api/activegates/activegate-info "List all ActiveGates currently or recently connected to the environment via the Dynatrace API.")
+Information
 
-[Auto-update configuration](/managed/dynatrace-api/environment-api/activegates/auto-update-config "Manage auto-update configuration of your Environment ActiveGates via the Dynatrace API.")
+Auto-update configuration
 
-[Auto-update jobs](/managed/dynatrace-api/environment-api/activegates/auto-update-jobs "Manage auto-update jobs of your ActiveGates via the Dynatrace API.")
+Auto-update jobs
 
 ### Anonymization
 
-[Anonymization](/managed/dynatrace-api/environment-api/anonymization "Find out how fulfill GDPR requirements by using the Dynatrace API to remove user data.")
+Anonymization
 
 ### Application Security
 
-[Vulnerabilities](/managed/dynatrace-api/environment-api/application-security/vulnerabilities "Find out what the vulnerabilities API offers.")
+Vulnerabilities
 
-[Davis Security Advisor](/managed/dynatrace-api/environment-api/application-security/davis-security-advice "View the Davis Security Advisor recommendations via Dynatrace API.")
-[Attacks](/managed/dynatrace-api/environment-api/application-security/attacks "Find out what the Dynatrace Attacks API offers.")
+Davis Security Advisor
+Attacks
 
 ### Audit logs
 
-[Audit logs](/managed/dynatrace-api/environment-api/audit-logs "Read Dynatrace audit logs via Dynatrace API.")
+Audit logs
 
 ### Cluster information
 
-[Cluster information](/managed/dynatrace-api/environment-api/cluster-information "Find out how to check the cluster version and time with Dynatrace API.")
+Cluster information
 
 ### Credential vault
 
-[Credential vault](/managed/dynatrace-api/environment-api/credential-vault "Learn what the Dynatrace API for credentials offers.")
+Credential vault
 
 ### Custom tags
 
-[Custom tags of monitored entities](/managed/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.")
+Custom tags of monitored entities
 
 ### Deployment
 
-[OneAgent](/managed/dynatrace-api/environment-api/deployment/oneagent "Download OneAgent installers via Dynatrace API.")
+OneAgent
 
-[ActiveGate](/managed/dynatrace-api/environment-api/deployment/activegate "Download ActiveGate installers via Dynatrace API.")
+ActiveGate
 
-[BOSH tarballs](/managed/dynatrace-api/environment-api/deployment/bosh "Download OneAgent installers as BOSH tarballs via Dynatrace API.")
+BOSH tarballs
 
-[Orchestration tarballs](/managed/dynatrace-api/environment-api/deployment/orchestration "Download OneAgent installers as orchestration tarballs via Dynatrace API.")
+Orchestration tarballs
 
 ### Events
 
-[List events](/managed/dynatrace-api/environment-api/events-v2/get-events "List events of your monitoring environment via the Dynatrace API.")
+List events
 
-[List event types](/managed/dynatrace-api/environment-api/events-v2/get-event-types "List event types via the Dynatrace API.")
+List event types
 
-[List event properties](/managed/dynatrace-api/environment-api/events-v2/get-event-properties "List all event properties via the Dynatrace API.")
+List event properties
 
-[Ingest events](/managed/dynatrace-api/environment-api/events-v2/post-event "Ingests an event via the Dynatrace API.")
+Ingest events
 
 ### Extensions 2.0
 
-[Extensions 2.0](/managed/dynatrace-api/environment-api/extensions-20 "Learn how to manage extensions with the Dynatrace Extensions 2.0 API.")
+Extensions 2.0
 
 ### Hub capabilities
 
-[Hub capabilities](/managed/dynatrace-api/environment-api/hub "Learn how to access Dynatrace Hub features via the Hub items API.")
+Hub capabilities
 
 ### Log Monitoring
 
-[Log Monitoring](/managed/dynatrace-api/environment-api/log-monitoring-v2 "Find out what you can do with the Log Monitoring API v2.")
+Log Monitoring
 
 ### Metrics
 
 #### Version 1
 
-[Basics](/managed/dynatrace-api/environment-api/metric-v1 "Retrieve metric information via Timeseries v1 API.")
+Basics
 
 #### Version 2
 
-[List metrics](/managed/dynatrace-api/environment-api/metric-v2/get-all-metrics "List all metrics available in your monitoring environment via Metrics v2 API.")
+List metrics
 
-[Get data points](/managed/dynatrace-api/environment-api/metric-v2/get-data-points "Read data points of one or multiple metrics via Metrics v2 API.")
+Get data points
 
-[Ingest data points](/managed/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API.")
+Ingest data points
 
-[Metric selector](/managed/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API.")
+Metric selector
 
-[Metric expressions](/managed/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.")
+Metric expressions
 
 ### Metric units
 
-[List units](/managed/dynatrace-api/environment-api/metrics-units/get-all-units "List all metrics that are available for your monitoring environment via the Dynatrace API.")
+List units
 
-[View a unit](/managed/dynatrace-api/environment-api/metrics-units/get-unit "View metadata of a metric unit via the Dynatrace API.")
+View a unit
 
-[Convert units](/managed/dynatrace-api/environment-api/metrics-units/get-unit-convert "Convert a metric value from one unit into another via the Dynatrace API.")
+Convert units
 
 ### Monitored entities
 
-[Monitored entities](/managed/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.")
+Monitored entities
 
 ### Network zones
 
-[Network zones](/managed/dynatrace-api/environment-api/network-zones "Manage network zones via the Dynatrace API.")
+Network zones
 
 ### OneAgent on a host
 
-[OneAgent on a host](/managed/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents "Check the configuration of OneAgent instances on your hosts via Dynatrace API.")
+OneAgent on a host
 
 ### Problems
 
-[Problems v2](/managed/dynatrace-api/environment-api/problems-v2 "Find out what the Dynatrace Problems v2 API offers.")
+Problems v2
 
 ### Releases
 
-[Releases](/managed/dynatrace-api/environment-api/releaseapi "Find out what the Dynatrace Releases API offers.")
+Releases
 
 ### Remote configuration
 
-[OneAgent](/managed/dynatrace-api/environment-api/remote-configuration/oneagent "Manage the configuration of OneAgents remotely at scale using the Dynatrace API.")
+OneAgent
 
-[ActiveGate](/managed/dynatrace-api/environment-api/remote-configuration/activegate "Manage the configuration of ActiveGates remotely at scale using the Dynatrace API.")
+ActiveGate
 
 ### RUM
 
-[Geographic regions](/managed/dynatrace-api/environment-api/rum/geographic-regions "View requests available through the Dynatrace Geographic regions API.")
+Geographic regions
 
-[User sessions](/managed/dynatrace-api/environment-api/rum/user-sessions "Learn what the Dynatrace User Sessions Query language API offers.")
+User sessions
 
-[Real User Monitoring JavaScript](/managed/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code "Learn how you can use the Dynatrace API to set up and maintain your manually injected applications using the Real User Monitoring JavaScript API.")
+Real User Monitoring JavaScript
 
 ### Settings
 
-[Settings](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.")
+Settings
 
 ### SLO
 
-[Service-Level Objectives Classic](/managed/dynatrace-api/environment-api/service-level-objectives-classic "Find out what the Dynatrace SLO API classic offers.")
+Service-Level Objectives Classic
 
 ### Synthetic
 
-[Monitors](/managed/dynatrace-api/environment-api/synthetic/synthetic-monitors "Manage synthetic monitors via the Synthetic v1 API.")
+Monitors
 
-[Monitor executions v2](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution "View the results of Synthetic monitor executions via the Synthetic v2 API.")
+Monitor executions v2
 
-[Locations v1](/managed/dynatrace-api/environment-api/synthetic/synthetic-locations "Manage synthetic locations via the Synthetic v1 API.")
+Locations v1
 
-[Locations v2](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2 "Manage synthetic locations via the Synthetic v2 API.")
+Locations v2
 
-[Nodes v1](/managed/dynatrace-api/environment-api/synthetic/synthetic-nodes "Get synthetic nodes information via the Synthetic v1 API.")
+Nodes v1
 
-[Nodes v2](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-nodes-v2 "Manage synthetic nodes via the Synthetic v2 API.")
+Nodes v2
 
-[Third-party synthetic](/managed/dynatrace-api/environment-api/synthetic/third-party-synthetic "Push third-party synthetic data to Dynatrace via API.")
+Third-party synthetic
 
 ### Tokens
 
-[Tokens v2](/managed/dynatrace-api/environment-api/tokens-v2 "Manage Dynatrace access tokens via Dynatrace API.")
+Tokens v2
 
 ## API Explorer
 

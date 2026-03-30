@@ -30,7 +30,7 @@ When you use the `set` parameters, you need to restart OneAgent service to apply
 ./oneagentctl --set-proxy=my-proxy.com --restart-service
 ```
 
-For more information, see [OneAgent configuration via command-line interface](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+For more information, see OneAgent configuration via command-line interface.
 
 ## Stop OneAgent using the command line
 
@@ -52,4 +52,4 @@ To start Dynatrace OneAgent again, use the following command:
 
 where `oneagent` is the `init.d` script for OneAgent.
 
-Learn more about [how Dynatrace interacts with your OS](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
+Learn more about how Dynatrace interacts with your OS.

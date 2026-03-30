@@ -15,13 +15,13 @@ scraped: 2026-03-06T21:29:19.498721
 
 Только для Linux
 
-На системах Linux вы можете настроить обратный прокси или балансировщик нагрузки для OneAgent, указав параметры установки во время установки ActiveGate. Подробности см. в разделе [Настройка установки ActiveGate в Linux](../installation/linux/linux-customize-installation-for-activegate.md#load-balancer-oneagent "Learn about the command-line parameters that you can use with ActiveGate on Linux.").
+На системах Linux вы можете настроить обратный прокси или балансировщик нагрузки для OneAgent, указав параметры установки во время установки ActiveGate. Подробности см. в разделе Настройка установки ActiveGate в Linux.
 
 ## Настройка после установки
 
 Чтобы указать адрес обратного прокси после установки ActiveGate
 
-1. Остановите ActiveGate и отредактируйте файл `custom.properties` в [каталоге конфигурации ActiveGate](where-can-i-find-activegate-files.md "Find out where ActiveGate files are stored on Windows and Linux systems.").
+1. Остановите ActiveGate и отредактируйте файл `custom.properties` в каталоге конфигурации ActiveGate.
 2. Настройте параметр `dnsEntryPoint` в разделе `[connectivity]`, используя следующий формат:
 
    `dnsEntryPoint = https://<DOMAIN>:<PORT>`
@@ -43,7 +43,7 @@ scraped: 2026-03-06T21:29:19.498721
 
    dnsEntryPoint = https://address.of.my.lb-1.com:9999,https://address.of.my.lb-2.com:9999
    ```
-3. Сохраните файл `custom.properties` и [перезапустите главную службу ActiveGate](../operation/stop-restart-activegate.md "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").
+3. Сохраните файл `custom.properties` и перезапустите главную службу ActiveGate.
 
 ## Проверка конфигурации
 

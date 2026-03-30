@@ -10,7 +10,7 @@ scraped: 2026-03-05T21:39:12.282254
 * Latest Dynatrace
 * 5-min read
 
-Ваше окружение Dynatrace может интегрироваться с Microsoft Entra ID (ранее Azure Active Directory) в автоматизированных [рабочих процессах (workflows)](../../workflows.md "Automate IT processes with Dynatrace Workflows—react to events, schedule tasks, and connect services.").
+Ваше окружение Dynatrace может интегрироваться с Microsoft Entra ID (ранее Azure Active Directory) в автоматизированных рабочих процессах (workflows).
 Microsoft Entra ID Connector ![Microsoft Entra ID Connector](https://dt-cdn.net/hub/app_icon_entra_id_new.png "Microsoft Entra ID Connector") позволяет использовать готовые действия в Workflows ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") для автоматизации импорта команд из Entra ID (по различным триггерам) для определения владения сущностями и других сценариев использования в Dynatrace.
 Microsoft Entra ID Connector подключается к Azure Cloud через [Microsoft Graph API](https://developer.microsoft.com/en-us/graph).
 
@@ -95,7 +95,7 @@ Microsoft Entra ID Connector требует секрет клиента из Mic
 4. В боковой панели **Choose action** найдите **Microsoft Entra ID** и выберите **Get groups**.
 5. Во входных данных действия (**Input**) вы можете указать конкретные группы в **$filter**, если хотите отфильтровать результаты. Аналогично, в **$select** укажите, какие поля вы хотите получить из Entra ID. Синтаксис основан на [документации Entra ID API](https://dt-url.net/azure-api-docs).
 
-   Важно для импорта групп Entra ID как [команд владения](../../../deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership."):
+   Важно для импорта групп Entra ID как команд владения:
 
    * Вы всегда должны включать `id` и `displayName` в `$select`; эти поля сопоставляются с **Team identifier** (идентификатор команды) и **Team name** (название команды) импортированной команды владения соответственно.
    * Мы рекомендуем всегда включать параметр `mailNickname` в `get_groups`. Это поле имеет уникальные значения в Entra ID и устанавливается как уникальный, человекочитаемый **Supplementary Identifier** (дополнительный идентификатор) для вашей импортированной команды владения в Dynatrace.
@@ -103,7 +103,7 @@ Microsoft Entra ID Connector требует секрет клиента из Mic
    * Параметр `mail` устанавливается как **Email** импортированной команды владения.
 
    ![Get groups input fields](https://dt-cdn.net/images/azure-connector-get-groups-input-698-0609c7d9dc.webp)
-6. При необходимости добавьте действие **Import teams** (предоставляемое приложением [Ownership](../../../deliver/ownership-app.md#import-teams "It provides custom actions to define workflows integrating entity owners and their contact information.") ![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership")), чтобы сохранить информацию о группах Entra ID как [команды владения](../../../deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") в **Settings** Dynatrace. Затем вы можете [назначить эти импортированные команды в качестве владельцев](../../../deliver/ownership/assign-ownership.md "Assign owners to entities using entity metadata like labels, environment variables, and tags.") любой отслеживаемой сущности в Dynatrace.
+6. При необходимости добавьте действие **Import teams** (предоставляемое приложением [Ownership](../../../deliver/ownership-app.md#import-teams "It provides custom actions to define workflows integrating entity owners and their contact information.") ![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership")), чтобы сохранить информацию о группах Entra ID как команды владения в **Settings** Dynatrace. Затем вы можете назначить эти импортированные команды в качестве владельцев любой отслеживаемой сущности в Dynatrace.
 7. Для тестирования рабочего процесса выберите **Run**.
 
 ### Результат действия

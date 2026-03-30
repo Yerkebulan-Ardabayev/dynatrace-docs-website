@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:21:58.424568
 * 8-min read
 * Updated on Dec 09, 2025
 
-Dynatrace obtains information about Kubernetes entities and metadata by querying the Kubernetes API. This information is used for [out-of-the-box alerting for Kubernetes](../../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues.md "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") and to provide all observability signals in a proper Kubernetes context within the Dynatrace platform, for example, by creating relationships among applications, (micro-)services, databases, and Kubernetes entities such as pods, namespaces, and nodes.
+Dynatrace obtains information about Kubernetes entities and metadata by querying the Kubernetes API. This information is used for out-of-the-box alerting for Kubernetes and to provide all observability signals in a proper Kubernetes context within the Dynatrace platform, for example, by creating relationships among applications, (micro-)services, databases, and Kubernetes entities such as pods, namespaces, and nodes.
 
 Dynatrace Operator manages the lifecycle of all Dynatrace components within a Kubernetes cluster and can be configured by deploying a DynaKube Custom Resource. Dynatrace ActiveGateâthe Dynatrace component required to monitor the Kubernetes APIâoffers a capability for Kubernetes API Monitoring.
 
@@ -27,7 +27,7 @@ Follow the steps below to enable Kubernetes API monitoring.
 
 ## Step 1 Install Dynatrace Operator
 
-[Install Dynatrace Operator in any deployment mode](../../../deployment.md "Deploy Dynatrace Operator on Kubernetes")
+Install Dynatrace Operator in any deployment mode
 
 ## Step 2 Configure DynaKube
 
@@ -80,7 +80,7 @@ This feature flag is deprecated and enabled by default starting from Dynatrace O
 
 To connect automatically to the local Kubernetes API endpoint
 
-1. Make sure to enable the **Read entities**, **Read settings**, and **Write settings** permissions (API v2) for your access token (see [Access tokens and permissions](../../../deployment/tokens-permissions.md "Configure tokens and permissions to monitor your Kubernetes cluster")).
+1. Make sure to enable the **Read entities**, **Read settings**, and **Write settings** permissions (API v2) for your access token (see Access tokens and permissions).
 2. Make sure that you have the `kubernetes-monitoring` capability enabled in your DynaKube custom resource.
 3. Add the following annotation (see example below).
 
@@ -364,8 +364,8 @@ To connect to the public Kubernetes API, follow the instructions that apply to y
 
 ## Other Options
 
-* If you can't use Dynatrace Operator, you can [deploy ActiveGate directly as a StatefulSet](../../../deployment/other/ag-statefulset.md "Install and configure ActiveGate in Kubernetes as a StatefulSet.") (not recommended).
-* If you want to monitor several Kubernetes clusters with one ActiveGate and don't need to separate networks for administrative or operational traffic, you can [install an ActiveGate on a virtual machine using a conventional installer](../../../deployment/other/ag-in-vm.md "Set up and configure an ActiveGate for Kubernetes platform monitoring in a virtual machine.").
+* If you can't use Dynatrace Operator, you can deploy ActiveGate directly as a StatefulSet (not recommended).
+* If you want to monitor several Kubernetes clusters with one ActiveGate and don't need to separate networks for administrative or operational traffic, you can install an ActiveGate on a virtual machine using a conventional installer.
 
 Dynatrace recommends to use the containerized ActiveGate for Kubernetes API monitoring
 

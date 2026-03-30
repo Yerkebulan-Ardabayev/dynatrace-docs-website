@@ -16,7 +16,7 @@ Dynatrace SaaS version 1.330+
 
 With the **URL pattern matching** feature, Service Detection v2 (SDv2) can generate better endpoint names by extracting URL path patterns from raw URL paths.
 
-Dynatrace can extract stable, lowâvolatility URL patterns from raw URL paths and write them to the `url.path.pattern` span attribute. The `url.path.pattern` attribute is derived beforehand and then used by [SDv2 endpoint detection](endpoint-detection-v2.md "Find out how to detect endpoints that are entry points into your service.") to name and group endpoints appropriately.
+Dynatrace can extract stable, lowâvolatility URL patterns from raw URL paths and write them to the `url.path.pattern` span attribute. The `url.path.pattern` attribute is derived beforehand and then used by SDv2 endpoint detection to name and group endpoints appropriately.
 
 The **URL pattern matching** feature is designed for situations where frameworks or servers don't provide route templates (for example, reverse proxies or libraries without `http.route`), so endpoint names remain meaningful and consistent, preserving correct granularity for critical performance metrics.
 
@@ -92,7 +92,7 @@ To create a URL path pattern matching rule
 
 1. Go to **Settings** (Dynatrace Classic) or **Settings Classic** > **Service detection** > **URL path pattern matching**.
 
-When the **Settings Classic** option is not available for you, use the [Settings API](../../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") to create URL pattern matching rules.
+When the **Settings Classic** option is not available for you, use the Settings API to create URL pattern matching rules.
 
 2. Select **Add rule**.
 3. Fill in the following optional and required fields.
@@ -105,7 +105,7 @@ When the **Settings Classic** option is not available for you, use the [Settings
      A human-readable descriptor of the rule.
    * **Matching condition**: Required
 
-     A [DQL matcher](../../../../../platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.").
+     A DQL matcher.
      If the matching condition applies, the rule is evaluated.
 4. Select **Add item** and specify a URL path pattern according to the [pattern syntax reference](#syntax-reference). Repeat if more path patterns should to be added.
 5. If required, use ![Drag handle](https://dt-cdn.net/images/drag-handle-turquoise-600-1aa0e5ea00.svg "Drag handle") to re-order the added URL path patterns, considering that the first matching pattern is used to determine the `url.path.pattern` attribute value.
@@ -117,7 +117,7 @@ You can edit, disable, or delete your URL pattern matching rules.
 
 1. Go to **Settings** (Dynatrace Classic) or **Settings Classic** > **Service detection** > **URL path pattern matching**.
 
-When the **Settings Classic** option is not available for you, use the [Settings API](../../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") to create URL pattern matching rules.
+When the **Settings Classic** option is not available for you, use the Settings API to create URL pattern matching rules.
 
 2. Make the required changes to your URL path pattern matching rules:
 
@@ -139,4 +139,4 @@ The **URL pattern matching** feature is particularly useful for the following us
 
 ## Related topics
 
-* [Customize endpoint detection in Service Detection v2](endpoint-detection-v2.md "Find out how to detect endpoints that are entry points into your service.")
+* Customize endpoint detection in Service Detection v2

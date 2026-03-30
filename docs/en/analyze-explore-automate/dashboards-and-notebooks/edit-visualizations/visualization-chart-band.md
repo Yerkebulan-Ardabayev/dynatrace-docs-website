@@ -41,7 +41,7 @@ by:dt.entity.host
 | limit 1
 ```
 
-In general, to create a band chart similar to the one above, use [timeseries](../../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "DQL metric commands") to specify a DQL query that has the following:
+In general, to create a band chart similar to the one above, use timeseries to specify a DQL query that has the following:
 
 * `max` (or `upper`) to define the upper limit of the band
 * `min` (or `lower`) to define the lower limit of the band
@@ -68,7 +68,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](../drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see Drilldowns and navigation.
 
 ## Title
 
@@ -117,7 +117,7 @@ Expand the  **Data mapping** section of your visualization settings to see how d
 
 A band chart graphs a value over time, with upper and lower limits of the band.
 
-In general, use [timeseries](../../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "DQL metric commands") to specify a DQL query that has the following:
+In general, use timeseries to specify a DQL query that has the following:
 
 * `max` (or `upper`) to define the upper limit of the band.
 * `min` (or `lower`) to define the lower limit of the band.

@@ -20,7 +20,7 @@ This guide shows you how to configure your Environment ActiveGate on Linux to co
 
 ## Prerequisites
 
-* Environment ActiveGate version 1.295+ on Linux installed to [monitor remote technologies](../../../ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose.md "Learn about the routing and monitoring capabilities and uses of ActiveGate.").
+* Environment ActiveGate version 1.295+ on Linux installed to monitor remote technologies.
 * Your network devices have syslog enabled, or you have other syslog producers configured in your network. Refer to RFC 3164 and RFC 5424 for details. Dynatrace supports a wide variety of syslog implementations, including RSysLog, Syslog-NG, NXLog, and others.
 * By default, the ingested syslogs must be in the format defined by RFC 3164 and RFC 5424. If your devices produce non-standard syslog entries, you need to transform them to the supported format using [Dynatrace OpenPipeline processing](#process-non-standard-syslog).
 
@@ -45,7 +45,7 @@ To enable syslog ingestion
 
 1. **Deploy Environment ActiveGate**.
 
-   Deploy Environment ActiveGate in a place ensuring connectivity between ActiveGate and the monitored devices. See instructions for [Linux](../../../ingest-from/dynatrace-activegate/installation/linux.md "Learn how to install ActiveGate on Windows, customize installation, and more."), and use the [remote technologies monitoring](../../../ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose.md "Learn about the routing and monitoring capabilities and uses of ActiveGate.") purpose.
+   Deploy Environment ActiveGate in a place ensuring connectivity between ActiveGate and the monitored devices. See instructions for Linux, and use the remote technologies monitoring purpose.
 2. **Enable syslog ingestion on your ActiveGate**.
 
    Add the following flag to the `/var/lib/dynatrace/remotepluginmodule/agent/conf/extensionsuser.conf` file:
@@ -61,7 +61,7 @@ To enable syslog ingestion
 
    If your syslog producers use the default ports per supported protocols, your syslog-enabled ActiveGate should receive syslog records right away.
 
-   If your syslog producers send events on custom ports or the syslog protocol is RFC 3164, modify the syslog receiver configuration. For details, see [Ingest syslog data with the OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector/use-cases/syslog.md "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.").
+   If your syslog producers send events on custom ports or the syslog protocol is RFC 3164, modify the syslog receiver configuration. For details, see Ingest syslog data with the OpenTelemetry Collector.
 
    Default syslog receiver configuration
 
@@ -396,7 +396,7 @@ To enable syslog ingestion
    #      exporters: [otlp_http/syslog]
    ```
 
-   Do not modify the [exporter configuration](../../../ingest-from/opentelemetry/collector/use-cases/syslog.md#exporters "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace."). It's preconfigured to forward your syslogs to the Dynatrace Environment.
+   Do not modify the exporter configuration. It's preconfigured to forward your syslogs to the Dynatrace Environment.
 4. **Verify syslog ingestion is enabled**.
 
    Open the newest `ruxit_extensionmodule_*.log` log file in the `/var/lib/dynatrace/remotepluginmodule/log/extensions` directory, and make sure it contains the following line:
@@ -500,7 +500,7 @@ Let's assume a credit card number is visible in a syslog as follows:
 <14>2 2024-07-19T14:53:55Z example-host 0OOButHPbR 1234 - - New operation for CreditCard 1234567891011124
 ```
 
-To mask a credit card number, add the following configuration under the [processors](../../../ingest-from/opentelemetry/collector/use-cases/syslog.md#processors "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.") node of the `syslog.yaml` file. For details, see the **Edit the syslog receiver configuration** step under [Enable syslog ingestion](#enable-syslog-ingestion).
+To mask a credit card number, add the following configuration under the processors node of the `syslog.yaml` file. For details, see the **Edit the syslog receiver configuration** step under [Enable syslog ingestion](#enable-syslog-ingestion).
 
 ```
 processors:
@@ -675,7 +675,7 @@ Parsers help you to improve filtering, troubleshooting, metrics, alerts, and das
 
 ![syslog-bundles](https://dt-cdn.net/images/env-syslogbundles-2589-90e4e38b45.png)
 
-For more information, see [Process logs with technology bundle parsers](../../../platform/openpipeline/use-cases/tutorial-technology-processor.md "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
+For more information, see Process logs with technology bundle parsers.
 
 ## Process non-standard syslogs
 
@@ -720,7 +720,7 @@ You successfully created a pipeline and configured it with a processor to struct
 
 You successfully configured a new dynamic route. All syslog logs are routed to the pipeline for processing. The new route is in the route list.
 
-To learn more about dynamic routing, see [Route data](../../../platform/openpipeline/getting-started/how-to-routing.md "Learn how to route data to an OpenPipeline processing pipeline.").
+To learn more about dynamic routing, see Route data.
 
 3. Add custom attributes
 
@@ -728,11 +728,11 @@ Optional
 
 You can enrich syslogs at ingest with custom attributes, allowing you to route different syslog streams to separate pipelines. For details, see [Add custom attributes](#add-custom-attributes).
 
-For additional instructions and information on analyzing structured logs, see [Process logs with technology bundle parsers](../../../platform/openpipeline/use-cases/tutorial-technology-processor.md "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
+For additional instructions and information on analyzing structured logs, see Process logs with technology bundle parsers.
 
 ## Troubleshooting
 
-Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](../lma-troubleshooting.md "Fix issues related to the setup and configuration of Log Management and Analytics.").
+Visit Dynatrace Community for troubleshooting guides, as well as see Troubleshooting Log Management and Analytics.
 
 * [Syslog Ingestion via ActiveGate Troubleshooting Guideï»¿](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-via-ActiveGate-Troubleshooting-Guide/ta-p/282718)
 * [Syslog Ingestion Troubleshootingï»¿](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-Troubleshooting/ta-p/264112)

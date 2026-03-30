@@ -25,4 +25,4 @@ scraped: 2026-03-06T21:19:48.285337
 
 ## Связанные темы
 
-* [Поддержка технологий](../../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.")
+* Поддержка технологий

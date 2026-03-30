@@ -38,8 +38,8 @@ Dynatrace version 1.264+ ActiveGate version 1.263+
    Для мониторинга **метрик ресурсов узлов** требуется ActiveGate версии 1.271+.
 3. Необязательно Выберите **Test connection**, чтобы убедиться, что функция успешно активирована.
 
-Полный список доступных метрик смотрите в разделе [Workload metrics](../../../../analyze-explore-automate/metrics-classic/all-metrics.md#workload "Ознакомьтесь с полным списком метрик Dynatrace.") или [Node](../../../../analyze-explore-automate/metrics-classic/all-metrics.md#node "Ознакомьтесь с полным списком метрик Dynatrace.") для метрик ресурсов узлов.
+Полный список доступных метрик смотрите в разделе Workload metrics или Node для метрик ресурсов узлов.
 
 ## Связанные темы
 
-* [Настройка Dynatrace на Kubernetes](../../../../ingest-from/setup-on-k8s.md "Способы развёртывания и настройки Dynatrace на Kubernetes.")
+* Настройка Dynatrace на Kubernetes

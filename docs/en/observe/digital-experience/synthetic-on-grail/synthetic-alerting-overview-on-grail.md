@@ -12,7 +12,7 @@ scraped: 2026-03-04T21:38:54.851437
 * 2-min read
 * Published Sep 04, 2025
 
-A synthetic monitor creates a [problem](../../../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.") when one of the following is true:
+A synthetic monitor creates a problem when one of the following is true:
 
 * A monitored system is not available. In this case, the monitor reports an availability problem. The problem is created after a [specified number of consecutive executions fail](synthetic-app/create-and-configure-an-http-monitor.md#outage-and-performance "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.").
 

@@ -27,7 +27,7 @@ You should use the Collector if:
 
 The Collector is a relatively lightweight component, so teams can deploy their own to avoid sharing the same configuration.
 
-The Collector is configured in a single YAML file. This eliminates the need to browse through multiple files and reduces maintenance. You can find more information on the configuration at [Configure the OpenTelemetry Collector](collector/configuration.md "How to configure the OpenTelemetry Collector.").
+The Collector is configured in a single YAML file. This eliminates the need to browse through multiple files and reduces maintenance. You can find more information on the configuration at Configure the OpenTelemetry Collector.
 
 ## Distributions
 
@@ -58,7 +58,7 @@ More information about further available container repositories can be found und
 Dynatrace Collector ships with specific components as described in the Dynatrace Collector's GitHub repo.
 For the full list, see [Componentsï»¿](https://github.com/Dynatrace/dynatrace-otel-collector#components).
 
-Take a look at [OpenTelemetry Collector use cases](collector/use-cases.md "Configure your Collector instance for different use cases.") for concrete use-case and configuration examples for the individual components.
+Take a look at OpenTelemetry Collector use cases for concrete use-case and configuration examples for the individual components.
 
 ### OpenTelemetry Distributions
 

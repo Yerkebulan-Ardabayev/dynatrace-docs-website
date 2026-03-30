@@ -18,7 +18,7 @@ Dynatrace получает метрики из Azure Metrics API для Azure HD
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](../../../../../ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring.md "Включите мониторинг Azure в Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. Включение мониторинга сервиса.
 
 ## Установка OneAgent (необязательно)
 
@@ -106,7 +106,7 @@ wget  -O Dynatrace-OneAgent-Linux-1.137.163.sh "https://YOURTENANT.live.dynatrac
 
 ### Настройка зоны управления
 
-Для импорта дашборда для Azure HDInsight необходимо [настроить зону управления](../../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Создание и назначение прав доступа к зонам управления.") для ограничения отображаемых на дашборде объектов только узлами кластера и исключения других хостов, не относящихся к сервису.
+Для импорта дашборда для Azure HDInsight необходимо настроить зону управления для ограничения отображаемых на дашборде объектов только узлами кластера и исключения других хостов, не относящихся к сервису.
 
 При создании зоны управления для этого дашборда:
 
@@ -126,7 +126,7 @@ wget  -O Dynatrace-OneAgent-Linux-1.137.163.sh "https://YOURTENANT.live.dynatrac
 
 ![Azure management zone](https://dt-cdn.net/images/hdinsightmanagementzone-2629-26e6039169.webp)
 
-После создания зоны управления назначьте её вашему дашборду (из дашборда выберите **Edit** > **Settings** > **Default management zone**). Дополнительную информацию см. в разделе [Временные рамки и зона управления дашборда](../../../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe.md "Узнайте о настройках временных рамок и зон управления дашбордов Dynatrace.").
+После создания зоны управления назначьте её вашему дашборду (из дашборда выберите **Edit** > **Settings** > **Default management zone**). Дополнительную информацию см. в разделе Временные рамки и зона управления дашборда.
 
 ## Доступные метрики
 

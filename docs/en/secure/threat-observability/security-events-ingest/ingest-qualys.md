@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:23:53.759111
 * Published Dec 15, 2025
 * Preview
 
-This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the Grail security table migration guide.
 
 Ingest Qualys vulnerability findings, scan events, and audit logs into Dynatrace as security events.
 
@@ -28,9 +28,9 @@ Dynatrace integration with Qualys allows users to unify and contextualize vulner
 
 With the ingested data, you can accomplish various use cases, such as
 
-* [Visualize and analyze security findings](../../use-cases/visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
-* [Discover coverage gaps in security findings](../../use-cases/discover-coverage-gaps-in-security-scans.md "Unveil blind spots in your Software Development Lifecycle (SDLC).")
-* [Automate and orchestrate security findings](../../use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* Visualize and analyze security findings
+* Discover coverage gaps in security findings.")
+* Automate and orchestrate security findings
 
 ### Requirements
 
@@ -59,7 +59,7 @@ To authenticate with a username and password, the user account must have the fol
   + Run Extensions 2.0 framework
   + Reach the Qualys API endpoints
 * Permissions: For a list of permissions required, go to  **Hub**, select ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**, and display **Technical information**.
-* Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see [Dynatrace API - Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+* Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see Dynatrace API - Tokens and authentication.
 
 ## Activation and setup
 
@@ -103,7 +103,7 @@ To authenticate with a username and password, the user account must have the fol
 
      AND event.type=="VULNERABILITY_SCAN"
      ```
-4. Once the extension is installed and working, you can access and manage it in Dynatrace via ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. For details, see [About Extensions](../../../ingest-from/extensions/concepts.md "Learn more about the concept of Dynatrace Extensions.").
+4. Once the extension is installed and working, you can access and manage it in Dynatrace via ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. For details, see About Extensions.
 
 ## Details
 
@@ -111,23 +111,23 @@ To authenticate with a username and password, the user account must have the fol
 
 ![how it works](https://dt-cdn.net/images/image-20251202-165058-2086-c9122593e9.png)
 
-Dynatrace integration with Qualys is an [extension](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") running on Dynatrace ActiveGate. Once you enable and configure the Dynatrace Qualys extension
+Dynatrace integration with Qualys is an extension running on Dynatrace ActiveGate. Once you enable and configure the Dynatrace Qualys extension
 
 1. It periodically collects security findings and audit logs using [Qualys REST APIï»¿](https://docs.qualys.com/en/vm/api/scans/index.htm#t=get_started%2Fget_started.htm).
-2. The fetched data is ingested into Dynatrace and mapped to the [Dynatrace Semantic Dictionary](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.").
+2. The fetched data is ingested into Dynatrace and mapped to the Dynatrace Semantic Dictionary.
 3. Data is stored in a bucket called `default_securityevents` (for details, see [Built-in Grail buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.")).
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see Events powered by Grail.
 
 ## FAQ
 
 ### Which data model is used for the security events and audit logs coming from Qualys integration?
 
-* [**Vulnerability finding events**](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.") store the individual vulnerability findings reported by Qualys per affected artifacts and component.
-* [**Vulnerability scan events**](../../../semantic-dictionary/model/security-events.md#vulnerability-scan-events "Get to know the Semantic Dictionary models related to security events.") indicate coverage of scans for individual artifacts.
-* [**Audit logs**](../../../semantic-dictionary/model/log.md#audit-logs "Get to know the Semantic Dictionary models related to Log Analytics.") represent user activity logs in Qualys.
+* **Vulnerability finding events** store the individual vulnerability findings reported by Qualys per affected artifacts and component.
+* **Vulnerability scan events** indicate coverage of scans for individual artifacts.
+* **Audit logs** represent user activity logs in Qualys.
 
 ### Which Qualys security findings are imported into Dynatrace?
 
@@ -175,6 +175,6 @@ The Qualys Detection Score (QDS) has a range from 1 to 100. To map this to the 1
 
 ## Related topics
 
-* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Security events](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")
+* OpenPipeline
+* Dynatrace Query Language
+* Security events

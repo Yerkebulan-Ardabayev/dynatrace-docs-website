@@ -20,7 +20,7 @@ Starting with OneAgent release 1.275, the PAX file will no longer be published o
 
 ## Download the PAX file
 
-You can download the latest or a specific PAX file version via web UI or the [Deployment API](../../../../../../dynatrace-api/environment-api/deployment/oneagent.md "Download OneAgent installers via Dynatrace API.") of OneAgent.
+You can download the latest or a specific PAX file version via web UI or the Deployment API of OneAgent.
 
 The PAX file version must be less than or equal to the zRemote module version.
 
@@ -52,7 +52,7 @@ You can download a specific PAX file version via web UI as follows:
 You can download the latest PAX file version via Deployment API as follows:
 
 1. Generate an [Access token](../../../../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with the scope **PaaS integration - Installer download** (`InstallerDownload`).
-2. Download the latest PAX file via [Deployment API - Download latest OneAgent](../../../../../../dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest.md "Download the latest OneAgent installer via Dynatrace API."):
+2. Download the latest PAX file via Deployment API - Download latest OneAgent:
 
    Below is a sample `curl` command for a SaaS environment that uses the Deployment API to download the latest PAX file version:
 
@@ -67,7 +67,7 @@ You can download the latest PAX file version via Deployment API as follows:
 You can download a specific PAX file version via Deployment API as follows:
 
 1. Generate an [Access token](../../../../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with the scope **PaaS integration - Installer download** (`InstallerDownload`).
-2. List all available PAX file versions via [Deployment API - List available versions of OneAgent](../../../../../../dynatrace-api/environment-api/deployment/oneagent/get-available-versions.md "List available versions of OneAgent via Dynatrace API.").
+2. List all available PAX file versions via Deployment API - List available versions of OneAgent.
 
    Below is a sample `curl` command for a SaaS environment that uses the Deployment API to list all available PAX file versions:
 
@@ -76,7 +76,7 @@ You can download a specific PAX file version via Deployment API as follows:
    ```
 
    Replace `<environment>` with your Dynatrace environment ID and `<accessToken>` with your generated access token.
-3. Download a specific PAX file version via [Deployment API - Download OneAgent of specific version](../../../../../../dynatrace-api/environment-api/deployment/oneagent/download-oneagent-version.md "Download the OneAgent installer of the specific version via Dynatrace API."):
+3. Download a specific PAX file version via Deployment API - Download OneAgent of specific version:
 
    Below is a sample `curl` command for a SaaS environment that uses the Deployment API to download a specific PAX file version:
 

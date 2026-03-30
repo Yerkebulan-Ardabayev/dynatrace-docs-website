@@ -89,4 +89,4 @@ Administrators can:
 
 ## Related topics
 
-* [Set access control in OpenPipeline](../getting-started/set-access-control.md "Distribute OpenPipeline ingest source and pipeline management via owner-based access control.")
+* Set access control in OpenPipeline

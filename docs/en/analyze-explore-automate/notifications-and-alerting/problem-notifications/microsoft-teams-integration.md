@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:11:51.891771
 * 2-min read
 * Updated on Jan 22, 2026
 
-For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](../../workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
+For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see Workflows Connectors.
 
 Deprecation
 

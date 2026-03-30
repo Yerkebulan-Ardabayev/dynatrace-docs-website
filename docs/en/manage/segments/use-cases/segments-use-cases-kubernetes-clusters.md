@@ -26,15 +26,15 @@ In this article, you'll learn how to create a segment to conveniently filter obs
 
 Prior knowledge
 
-* [Include data in segments](../concepts/segments-concepts-includes.md "Learn how data of different types can be included in segments.")
-* [Segments in DQL queries](../concepts/segments-concepts-queries.md "Learn how Grail evaluates segments during query execution to return matching results only.")
-* [Getting started with Kubernetes experience](../../../observe/infrastructure-observability/kubernetes-app/enable-k8s-experience.md "Enable Kubernetes experience for existing clusters or start monitoring new clusters.")
+* Include data in segments
+* Segments in DQL queries
+* Getting started with Kubernetes experience
 
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* You have both `storage:filter-segments:write` and `storage:filter-segments:read` permissions. To learn how to set up the permissions, see [Permissions in Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
-* You have licensed and set up [Kubernetes Platform Monitoring](../../../license/capabilities/container-monitoring/kubernetes-platform-monitoring.md "Learn how your consumption of the Dynatrace Kubernetes Platform Monitoring DPS capability is billed and charged.").
+* You have both `storage:filter-segments:write` and `storage:filter-segments:read` permissions. To learn how to set up the permissions, see Permissions in Grail.
+* You have licensed and set up Kubernetes Platform Monitoring.
 
 ## Steps
 

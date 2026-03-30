@@ -6,9 +6,9 @@ updated: 2026-02-09
 
 * 17-min read
 
-Dynatrace supports monitoring of the technologies and versions listed on this page. For serverless monitoring, see [Serverless compute support matrix](/managed/ingest-from/technology-support/serverless-compute-services "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS)."). For mainframe, see [Mainframe technology support](/managed/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.").
+Dynatrace supports monitoring of the technologies and versions listed on this page. For serverless monitoring, see Serverless compute support matrix."). For mainframe, see Mainframe technology support.
 
-See also, [End-of-support announcements](/managed/whats-new/technology/end-of-support-news "End of support announcements for technologies supported by Dynatrace.").
+See also, End-of-support announcements.
 
 Technology support version schema
 
@@ -36,11 +36,11 @@ Definition of the technology support version schema with examples:
 
 ## Operating systems
 
-You can install OneAgent on the following [Linux](#linux), [Unix](#unix), [Windows](#windows), and [z/OS](/managed/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.") operating systems.
+You can install OneAgent on the following [Linux](#linux), [Unix](#unix), [Windows](#windows), and z/OS operating systems.
 
 ### Linux
 
-Dynatrace only tests and provides support for installation of OneAgent on the [Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") distributions and versions listed below.
+Dynatrace only tests and provides support for installation of OneAgent on the Linux distributions and versions listed below.
 
 There are certain limitations when deploying OneAgent on a Linux host with Oracle Database Server 19c and/or mounted NFS drives. See [Troubleshoot OneAgent installation](/managed/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation#oracle-database-server-19c "Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows.").
 
@@ -53,22 +53,22 @@ Supported CPU architectures
 
 | Supported OS | Versions | CPU architectures |
 | --- | --- | --- |
-| [AlmaLinux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 8, 9, 10 | ARM64 (AArch64), PPCLE, s390, x86-64 |
-| [Alpine Linux (musl libc) for containers](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") | 3.10 - 3.21[1](#fn-supported-os-1-def) | x86-64 |
-| [Azure Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 2, 3 | x86-64 |
-| [Bottlerocket](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") | 1[2](#fn-supported-os-2-def) | ARM64 (AArch64), x86-64 |
-| [CentOS Stream](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 9 | ARM64 (AArch64), PPCLE, x86-64 |
-| [Debian](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 11, 12 | ARM64 (AArch64), x86-64 |
-| [Fedora](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 41, 42 | x86-64 |
-| [Oracle Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 7, 8, 9, 10 | x86-64 |
-| [Red Hat Enterprise Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 7, 8, 9, 10 | ARM64 (AArch64), PPCLE, s390, x86-64 |
-| [Red Hat Enterprise Linux CoreOS](/managed/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes") | 4.14[3](#fn-supported-os-3-def), 4.15[3](#fn-supported-os-3-def), 4.16[3](#fn-supported-os-3-def) | x86-64 |
-| [Rocky Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 8, 9, 10 | ARM64 (AArch64), x86-64 |
-| [SUSE Linux Enterprise Server](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 12.5, 15.3, 15.4, 15.5, 15.6, 15.7 | PPCLE, s390, x86-64 |
-| [SUSE Linux Enterprise Server](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 15.3, 15.4, 15.5, 15.6, 15.7 | ARM64 (AArch64) |
-| [Ubuntu](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 16.04 LTS, 18.04 LTS, 20.04 LTS, 22.04 LTS, 24.04 LTS | PPCLE, x86-64 |
-| [Ubuntu](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 18.04 LTS, 20.04 LTS, 22.04 LTS, 24.04 LTS | ARM64 (AArch64), s390 |
-| [openSUSE](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 15.6 | PPCLE, x86-64 |
+| AlmaLinux | 8, 9, 10 | ARM64 (AArch64), PPCLE, s390, x86-64 |
+| Alpine Linux (musl libc) for containers | 3.10 - 3.21[1](#fn-supported-os-1-def) | x86-64 |
+| Azure Linux | 2, 3 | x86-64 |
+| Bottlerocket | 1[2](#fn-supported-os-2-def) | ARM64 (AArch64), x86-64 |
+| CentOS Stream | 9 | ARM64 (AArch64), PPCLE, x86-64 |
+| Debian | 11, 12 | ARM64 (AArch64), x86-64 |
+| Fedora | 41, 42 | x86-64 |
+| Oracle Linux | 7, 8, 9, 10 | x86-64 |
+| Red Hat Enterprise Linux | 7, 8, 9, 10 | ARM64 (AArch64), PPCLE, s390, x86-64 |
+| Red Hat Enterprise Linux CoreOS | 4.14[3](#fn-supported-os-3-def), 4.15[3](#fn-supported-os-3-def), 4.16[3](#fn-supported-os-3-def) | x86-64 |
+| Rocky Linux | 8, 9, 10 | ARM64 (AArch64), x86-64 |
+| SUSE Linux Enterprise Server | 12.5, 15.3, 15.4, 15.5, 15.6, 15.7 | PPCLE, s390, x86-64 |
+| SUSE Linux Enterprise Server | 15.3, 15.4, 15.5, 15.6, 15.7 | ARM64 (AArch64) |
+| Ubuntu | 16.04 LTS, 18.04 LTS, 20.04 LTS, 22.04 LTS, 24.04 LTS | PPCLE, x86-64 |
+| Ubuntu | 18.04 LTS, 20.04 LTS, 22.04 LTS, 24.04 LTS | ARM64 (AArch64), s390 |
+| openSUSE | 15.6 | PPCLE, x86-64 |
 
 1
 
@@ -80,16 +80,16 @@ Only supported using application-only injection. Node metrics available using Ku
 
 3
 
-Supported for container-based rollout via Dynatrace Operator (see [OpenShift](/managed/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")).
+Supported for container-based rollout via Dynatrace Operator (see OpenShift).
 
 Full-Stack Monitoring compatibility with Red Hat OpenShift
 
-* OpenShift 4.19+: Only [Application observability](/managed/ingest-from/setup-on-k8s/how-it-works/application-monitoring "In-depth description of Application observability using the Dynatrace Operator.") and [Full-stack observability](/managed/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack "In-depth description of full-stack observability using Dynatrace Operator.") are supported. This is because worker nodes can run only Red Hat Enterprise Linux CoreOS. To learn more, see [Red Hat release notes (1.5.13.2)](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes#ocp-4-19-rhel-worker-nodes-removed_release-notes).
-* OpenShift 4.16â4.18: [Classic Full-Stack monitoring](/managed/ingest-from/setup-on-k8s/how-it-works/other-deployment-modes/classic-fullstack "In-depth description of Classic Full-Stack monitoring using Dynatrace Operator.") is supported only on worker nodes that run Red Hat Enterprise Linux. If worker nodes run Red Hat Enterprise Linux CoreOS instead, only cloud-native [Full-stack observability](/managed/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack "In-depth description of full-stack observability using Dynatrace Operator.") is supported.
+* OpenShift 4.19+: Only Application observability and Full-stack observability are supported. This is because worker nodes can run only Red Hat Enterprise Linux CoreOS. To learn more, see [Red Hat release notes (1.5.13.2)](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes#ocp-4-19-rhel-worker-nodes-removed_release-notes).
+* OpenShift 4.16â4.18: Classic Full-Stack monitoring is supported only on worker nodes that run Red Hat Enterprise Linux. If worker nodes run Red Hat Enterprise Linux CoreOS instead, only cloud-native Full-stack observability is supported.
 
 ### Unix
 
-Dynatrace tests and provides support for installation of OneAgent on the [AIX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix "Learn how to install OneAgent on AIX, how to customize installation, and more.") and [Solaris](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/solaris "Learn how to install, update and troubleshoot OneAgent on Solaris.") versions listed below.
+Dynatrace tests and provides support for installation of OneAgent on the AIX and Solaris versions listed below.
 
 Supported CPU architectures
 
@@ -101,8 +101,8 @@ Supported CPU architectures
 
 | UNIX System | Versions | CPU architectures |
 | --- | --- | --- |
-| [IBM AIX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix "Learn how to install OneAgent on AIX, how to customize installation, and more.") | 7.2 TL5[1](#fn-unix-system-1-def), 7.3 TL1[1](#fn-unix-system-1-def), 7.3 TL2[1](#fn-unix-system-1-def), 7.3 TL3[1](#fn-unix-system-1-def) | POWER10, POWER8, POWER9 |
-| [Solaris](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/solaris "Learn how to install, update and troubleshoot OneAgent on Solaris.") | 11.4 | SPARC, x86-64 |
+| IBM AIX | 7.2 TL5[1](#fn-unix-system-1-def), 7.3 TL1[1](#fn-unix-system-1-def), 7.3 TL2[1](#fn-unix-system-1-def), 7.3 TL3[1](#fn-unix-system-1-def) | POWER10, POWER8, POWER9 |
+| Solaris | 11.4 | SPARC, x86-64 |
 
 1
 
@@ -110,7 +110,7 @@ Installation on AIX WPARs is not supported.
 
 ### Windows
 
-Dynatrace only tests and provides support for installation of OneAgent on the [Windows](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows "Learn how to install OneAgent on Windows, how to customize installation, and more.") versions listed below.
+Dynatrace only tests and provides support for installation of OneAgent on the Windows versions listed below.
 
 Supported CPU architectures
 
@@ -118,10 +118,10 @@ Supported CPU architectures
 
 | Windows OS | Versions | CPU architectures |
 | --- | --- | --- |
-| [Windows Desktop 10](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows "Learn how to install OneAgent on Windows, how to customize installation, and more.") | 22H2[1](#fn-windows-os-1-def), 1507[2](#fn-windows-os-2-def), 1607[2](#fn-windows-os-2-def), 1809[2](#fn-windows-os-2-def), 21H2[2](#fn-windows-os-2-def) | x86-64 |
-| [Windows Desktop 11](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows "Learn how to install OneAgent on Windows, how to customize installation, and more.") | 22H2, 23H2, 24H2, 25H2 | x86-64 |
-| [Windows Server](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows "Learn how to install OneAgent on Windows, how to customize installation, and more.") | 2012 R2[3](#fn-windows-os-3-def), 2016[4](#fn-windows-os-4-def), 2019[4](#fn-windows-os-4-def), 2022[4](#fn-windows-os-4-def), 2025[4](#fn-windows-os-4-def) | x86-64 |
-| [Windows Server - Nano](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows "Learn how to install OneAgent on Windows, how to customize installation, and more.") | All versions supported[5](#fn-windows-os-5-def) | x86-64 |
+| Windows Desktop 10 | 22H2[1](#fn-windows-os-1-def), 1507[2](#fn-windows-os-2-def), 1607[2](#fn-windows-os-2-def), 1809[2](#fn-windows-os-2-def), 21H2[2](#fn-windows-os-2-def) | x86-64 |
+| Windows Desktop 11 | 22H2, 23H2, 24H2, 25H2 | x86-64 |
+| Windows Server | 2012 R2[3](#fn-windows-os-3-def), 2016[4](#fn-windows-os-4-def), 2019[4](#fn-windows-os-4-def), 2022[4](#fn-windows-os-4-def), 2025[4](#fn-windows-os-4-def) | x86-64 |
+| Windows Server - Nano | All versions supported[5](#fn-windows-os-5-def) | x86-64 |
 
 1
 
@@ -227,7 +227,7 @@ Please see [known limitations of Docker container monitoring](/managed/observe/i
 
 2
 
-Supported for OneAgent 1.267+ installed on the Podman node using [crun](https://github.com/containers/crun) container runtime, versions 0.17 - 1.15 Podman using the `runc` runtime isn't supported. For more details. see [OneAgent release notes version 1.267](/managed/whats-new/oneagent/sprint-267#podman-containers-support "Release notes for Dynatrace OneAgent version 1.267").
+Supported for OneAgent 1.267+ installed on the Podman node using [crun](https://github.com/containers/crun) container runtime, versions 0.17 - 1.15 Podman using the `runc` runtime isn't supported. For more details. see OneAgent release notes version 1.267.
 
 3
 
@@ -243,7 +243,7 @@ Podman containers started with `read-only=true` or `userns=keep-id` are not supp
 | Nutanix AHV[1](#fn-3-1-def) |
 | QEMU |
 | Xen |
-| [VMware](/managed/observe/infrastructure-observability/vmware-vsphere-monitoring "Monitor VMware vSphere with Dynatrace.") |
+| VMware |
 | AWS Nitro[1](#fn-3-1-def) |
 | OpenShift Virtualization |
 
@@ -269,7 +269,7 @@ Dynatrace detects the hypervisor, but no dedicated logic is applied.
 
 ## Cloud platforms
 
-### [AWS](/managed/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.")
+### AWS
 
 | Amazon Web Services (AWS) |
 | --- |
@@ -277,22 +277,22 @@ Dynatrace detects the hypervisor, but no dedicated logic is applied.
 | Elastic Block Store (EBS) |
 | Elastic Compute Cloud (EC2) |
 | Elastic Load Balancing (ELB) |
-| [Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/trace-lambda-functions "Monitor AWS Lambda functions.") |
-| [Relational Database Service (RDS)](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/view-aws-monitoring-results#relational-database-service-page "Display AWS monitoring results in Dynatrace on your home dashboard, AWS account page, host page, and more.") |
-| [Simple Storage Service (S3)](/managed/ingest-from/amazon-web-services/aws-platform/set-up-cors-in-amazon-s3 "Integrate CORS in Amazon Web Services for buckets within Amazon S3.") |
+| Lambda |
+| Relational Database Service (RDS) |
+| Simple Storage Service (S3) |
 
-### [Microsoft Azure](/managed/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")
+### Microsoft Azure
 
 | Compute service | Extension for deploying OneAgent | Integration of Dynatrace with Azure Monitor |
 | --- | --- | --- |
-| [Virtual Machines](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-vm "Learn how to install and configure OneAgent for monitoring Azure Virtual Machines using a VM extension.") | VM-Extension[1](#fn-4-1-def) | yes |
-| [Virtual Machine Scale Set](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-vmss "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure VM Scale Set using a VM extension.") | VM-Extension[1](#fn-4-1-def) | yes |
-| [Service Fabric](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-servicefabric "Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure Service Fabric using a VM extension.") | VM-Extension[1](#fn-4-1-def) | yes |
-| [Azure Kubernetes Service (AKS)](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-aks "Learn how to deploy, operate, and maintain OneAgent on Azure Kubernetes Service.") | Operator-rollout[2](#fn-4-2-def) | no |
+| Virtual Machines | VM-Extension[1](#fn-4-1-def) | yes |
+| Virtual Machine Scale Set | VM-Extension[1](#fn-4-1-def) | yes |
+| Service Fabric | VM-Extension[1](#fn-4-1-def) | yes |
+| Azure Kubernetes Service (AKS) | Operator-rollout[2](#fn-4-2-def) | no |
 | Cloud-Services (Classic) | [Startup script](https://github.com/dtPaTh/Dynatrace-Azure-CloudServices) | no |
 | [HDInsight](https://github.com/safia-habib/Azure/blob/master/HDInsights/Readme.md) | Startup-Script | yes |
-| [App Service](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-azure-app-service "Install, configure, update, uninstall, and troubleshoot OneAgent for monitoring Azure App Service on Windows using an Azure site extension.") (Windows based) | SiteExtension | yes |
-| [Azure Functions](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.") | SiteExtension (Early Adopter release) | yes |
+| App Service (Windows based) | SiteExtension | yes |
+| Azure Functions | SiteExtension (Early Adopter release) | yes |
 
 1
 
@@ -345,25 +345,25 @@ End-2-End tracing via [Trace Context](https://www.w3.org/TR/trace-context/)
 
 End-2-End tracing using [OneAgent SDK](https://github.com/Dynatrace/OneAgent-SDK)
 
-### [Google Cloud](/managed/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
+### Google Cloud
 
 | Google Cloud services |
 | --- |
-| [Google Kubernetes Engine](/managed/ingest-from/google-cloud-platform/gcp-integrations/google-gke "Google GKE") |
-| [GKE Autopilot](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed#automatic "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") (only for automatic `applicationMonitoring`) |
-| [Google App Engine](/managed/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine "Install OneAgent on Google App Engine clusters for application-only monitoring.") |
-| [Google Compute Engine](/managed/ingest-from/google-cloud-platform/gcp-integrations/google-compute-engine "Install OneAgent on Google Compute Engine.") |
+| Google Kubernetes Engine |
+| GKE Autopilot (only for automatic `applicationMonitoring`) |
+| Google App Engine |
+| Google Compute Engine |
 
-### [VMware](/managed/observe/infrastructure-observability/vmware-vsphere-monitoring "Monitor VMware vSphere with Dynatrace.")
+### VMware
 
 | VMware | Versions |
 | --- | --- |
 | ESXi host | 6.5, 6.7, 7, 8.0 |
 | vCenter server | 6.5, 6.7, 7, 8.0 |
 
-### [Kubernetes](/managed/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+### Kubernetes
 
-Dynatrace supports a variety of Kubernetes flavors according to our [support model for Kubernetes and Openshift](/managed/ingest-from/technology-support/support-model-and-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues").
+Dynatrace supports a variety of Kubernetes flavors according to our support model for Kubernetes and Openshift.
 
 | Distributions |
 | --- |
@@ -387,11 +387,11 @@ Dynatrace supports a variety of Kubernetes flavors according to our [support mod
 
 Limited support based on compatibility with upstream Kubernetes.
 
-Some distributions and hosted versions require additional configuration. See [Technology support](/managed/ingest-from/setup-on-k8s/deployment/supported-technologies "Overview of different configurations for all major Kubernetes distributions.") for more details.
+Some distributions and hosted versions require additional configuration. See Technology support for more details.
 
 ## Other container and PaaS platforms
 
-### [Cloud Foundry](/managed/ingest-from/setup-on-container-platforms/cloud-foundry "Set up and configure Dynatrace on Cloud Foundry.")
+### Cloud Foundry
 
 | Buildpacks | Versions |
 | --- | --- |
@@ -401,24 +401,24 @@ Some distributions and hosted versions require additional configuration. See [Te
 | Go buildpack | v1.8.41+ |
 | .NET Core on Linux buildpack | v3.1+ |
 | Node.js buildpack | v1.6.10+ (requires OneAgent version 1.131 or higher) |
-| IBM WebSphere Liberty buildpack | v3.9-20170419-1403+ [See known issue](/managed/ingest-from/technology-support/known-solutions-and-workarounds "Check the solutions for reported problems regarding various technologies.") |
+| IBM WebSphere Liberty buildpack | v3.9-20170419-1403+ See known issue |
 
-#### [IBM Cloud Foundry](/managed/ingest-from/setup-on-container-platforms/cloud-foundry "Set up and configure Dynatrace on Cloud Foundry.")
+#### IBM Cloud Foundry
 
 | Features | Versions |
 | --- | --- |
-| IBM WebSphere Liberty buildpack | v3.9-20170419-1403+ [See known issue](/managed/ingest-from/technology-support/known-solutions-and-workarounds "Check the solutions for reported problems regarding various technologies.") |
+| IBM WebSphere Liberty buildpack | v3.9-20170419-1403+ See known issue |
 
-#### [Cloud Foundry](/managed/ingest-from/technology-support/support-model-for-pivotal-platform "Read about Dynatrace support for VMware Tanzu Application Service.")
+#### Cloud Foundry
 
 | Features | Versions |
 | --- | --- |
 | Garden-runC | v1.0.0+ |
 | BOSH BPM for platform process isolation | v0.11.0+ |
 | Winc for Windows Server containers | Windows server 1709+ |
-| VMware Tanzu Application Service (via BOSH add-on) | [See support model for Tanzu Application Service](/managed/ingest-from/technology-support/support-model-for-pivotal-platform "Read about Dynatrace support for VMware Tanzu Application Service.") |
+| VMware Tanzu Application Service (via BOSH add-on) | See support model for Tanzu Application Service |
 
-### [Heroku](/managed/ingest-from/setup-on-container-platforms/heroku "Install OneAgent to monitor applications running on Heroku.")
+### Heroku
 
 | Features | Versions |
 | --- | --- |
@@ -431,9 +431,9 @@ For details, see [Supported technologies](/managed/secure/application-security#t
 
 ## Applications, services, and databases
 
-### [Java](/managed/ingest-from/technology-support/application-software/java "Learn about all aspects of Dynatrace support for Java application monitoring.")
+### Java
 
-See [Dynatrace support/desupport for Java versions](/managed/ingest-from/technology-support/application-software/java "Learn about all aspects of Dynatrace support for Java application monitoring.") for details.
+See Dynatrace support/desupport for Java versions for details.
 
 | Virtual machines | Versions | Platforms |
 | --- | --- | --- |
@@ -576,15 +576,15 @@ Java and Scala bindings are supported.
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
 3
 
-Only synchronous request-handling supported. Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Only synchronous request-handling supported. Supported in AWS Lambda.
 
 4
 
-Only HTTP/1.1 request-handling supported. Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Only HTTP/1.1 request-handling supported. Supported in AWS Lambda.
 
 5
 
@@ -620,7 +620,7 @@ Java and Scala 2 bindings are supported.
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
 | Web services | Versions |
 | --- | --- |
@@ -660,7 +660,7 @@ Wildfly 8,9,10
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
 | Messaging clients | Versions |
 | --- | --- |
@@ -681,7 +681,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Publishers supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Publishers supported in AWS Lambda.
 
 2
 
@@ -709,23 +709,23 @@ Tracing is only supported via JMS.
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Extended tracing support for all AWS service calls
+Supported in AWS Lambda. Extended tracing support for all AWS service calls
 
 3
 
-Only supported when Netty is used; not supported when using Artery. Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Only supported when Netty is used; not supported when using Artery. Supported in AWS Lambda.
 
 4
 
-gRPC client calls supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+gRPC client calls supported in AWS Lambda.
 
 5
 
-Only supported when classic-remoting is used; not supported when using Artery. Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Only supported when classic-remoting is used; not supported when using Artery. Supported in AWS Lambda.
 
 | Monitoring frameworks | Versions |
 | --- | --- |
@@ -734,7 +734,7 @@ Only supported when classic-remoting is used; not supported when using Artery. S
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
 | Logging frameworks | Versions |
 | --- | --- |
@@ -744,13 +744,13 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | [Logback (QOS)](https://logback.qos.ch/) | 1.x |
 | java.util.logging | All versions supported |
 
-See also [OneAgent SDK for Java](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing capabilities.
+See also OneAgent SDK for Java for custom tracing capabilities.
 
-### [Java Native Image](/managed/ingest-from/technology-support/application-software/java/graalvm-native-image "Install, configure, and manage Dynatrace GraalVM Native Image module.")
+### Java Native Image
 
 | Virtual machine | Versions | Platforms |
 | --- | --- | --- |
-| [GraalVM Native Image](/managed/ingest-from/technology-support/application-software/java/graalvm-native-image "Install, configure, and manage Dynatrace GraalVM Native Image module.") | GraalVM for JDK 17 version 23[1](#fn-virtual-machine-1-def), GraalVM for JDK 21 version 23[1](#fn-virtual-machine-1-def), GraalVM for JDK 22[1](#fn-virtual-machine-1-def), GraalVM for JDK 23[1](#fn-virtual-machine-1-def), GraalVM for JDK 24[1](#fn-virtual-machine-1-def) | Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
+| GraalVM Native Image | GraalVM for JDK 17 version 23[1](#fn-virtual-machine-1-def), GraalVM for JDK 21 version 23[1](#fn-virtual-machine-1-def), GraalVM for JDK 22[1](#fn-virtual-machine-1-def), GraalVM for JDK 23[1](#fn-virtual-machine-1-def), GraalVM for JDK 24[1](#fn-virtual-machine-1-def) | Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
 
 1
 
@@ -784,14 +784,14 @@ The Promise interface and related APIs are not supported.
 | --- | --- |
 | Spring Boot Starter Data MongoDB | 3 |
 
-### [.NET](/managed/ingest-from/technology-support/application-software/dotnet "Learn about all aspects of Dynatrace support for .NET application monitoring.")
+### .NET
 
 Dynatrace supports .NET applications written in C#. Limited support for .NET applications written in other languages is available, though not explicitly tested.
 
 | Runtime | Versions | Platforms |
 | --- | --- | --- |
-| [.NET and .NET Core](/managed/ingest-from/technology-support/application-software/dotnet "Learn about all aspects of Dynatrace support for .NET application monitoring.") | Core 2.1, Core 2.2, Core 3.0, Core 3.1 | Alpine Linux 64-bit (x86-64), Linux (x86-64), Windows (x86-64) |
-| [.NET and .NET Core](/managed/ingest-from/technology-support/application-software/dotnet "Learn about all aspects of Dynatrace support for .NET application monitoring.") | 5, 6, 7, 8, 9, 10 | Alpine Linux 64-bit (x86-64, ARM64 (AArch64)), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
+| .NET and .NET Core | Core 2.1, Core 2.2, Core 3.0, Core 3.1 | Alpine Linux 64-bit (x86-64), Linux (x86-64), Windows (x86-64) |
+| .NET and .NET Core | 5, 6, 7, 8, 9, 10 | Alpine Linux 64-bit (x86-64, ARM64 (AArch64)), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
 
 | Web framework | Versions |
 | --- | --- |
@@ -803,7 +803,7 @@ Dynatrace supports .NET applications written in C#. Limited support for .NET app
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
 | Web service | Versions |
 | --- | --- |
@@ -817,7 +817,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
 | Database framework | Versions |
 | --- | --- |
@@ -828,7 +828,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
 | Messaging client | Versions |
 | --- | --- |
@@ -844,7 +844,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
 | Monitoring framework | Versions |
 | --- | --- |
@@ -852,7 +852,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
 | Logging framework | Versions |
 | --- | --- |
@@ -862,17 +862,17 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
-See also [OneAgent SDK for .NET](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing capabilities.
+See also OneAgent SDK for .NET for custom tracing capabilities.
 
-### [.NET Framework](/managed/ingest-from/technology-support/application-software/dotnet "Learn about all aspects of Dynatrace support for .NET application monitoring.")
+### .NET Framework
 
 Dynatrace supports .NET applications written in C#. Limited support for .NET applications written in other languages is available, though not explicitly tested.
 
 | Runtime | Versions | Platforms |
 | --- | --- | --- |
-| [.NET Framework](/managed/ingest-from/technology-support/application-software/dotnet "Learn about all aspects of Dynatrace support for .NET application monitoring.") | 3.5 SP1, 4[1](#fn-runtime-1-def), 4.5[1](#fn-runtime-1-def), 4.5.1[1](#fn-runtime-1-def), 4.5.2 - 4.8 | Windows (x86-64) |
+| .NET Framework | 3.5 SP1, 4[1](#fn-runtime-1-def), 4.5[1](#fn-runtime-1-def), 4.5.1[1](#fn-runtime-1-def), 4.5.2 - 4.8 | Windows (x86-64) |
 
 1
 
@@ -936,14 +936,14 @@ The IAsyncResult pattern (APM) for .NET Framework 3.5 is supported in version 1.
 | [Serilog](https://serilog.net/) | 2.9+ |
 | [log4net](https://logging.apache.org/log4net/) | 2.0.6+ |
 
-### [Go](/managed/ingest-from/technology-support/application-software/go "Read an overview of Dynatrace support for Go applications.")
+### Go
 
 * Support for 64-bit Go binaries built with:
 
   + The [Golang.org toolchain](https://dt-url.net/go)
   + The [Golang.org toolchain](https://dt-url.net/go) with [openssl-fips](https://dt-url.net/golang-fips) modifications (OneAgent version 1.295+).
 * The [Go release policy](https://dt-url.net/uos3rmi) supports the last two major Go versions.
-* See [Supported Go versions](/managed/ingest-from/technology-support/application-software/go/support/supported-go-versions "Find out which Go versions are supported by Dynatrace.") for details.
+* See Supported Go versions for details.
 
 | Go toolchains | Versions | Platforms |
 | --- | --- | --- |
@@ -974,7 +974,7 @@ The IAsyncResult pattern (APM) for .NET Framework 3.5 is supported in version 1.
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
 | Remoting frameworks | Versions |
 | --- | --- |
@@ -983,7 +983,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Extended tracing support for all AWS service calls
+Supported in AWS Lambda. Extended tracing support for all AWS service calls
 
 | Monitoring frameworks | Versions |
 | --- | --- |
@@ -999,16 +999,16 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 Versions 1.7.0 and lower are not supported due to [a race condition problem](https://github.com/sirupsen/logrus/issues/1046) in the Logrus framework
 
-* [Support limited to stable Go releases](/managed/ingest-from/technology-support/application-software/go/support/go-known-limitations#go-official-stable-releases "Learn the limitations for Go support and their workarounds.").
-* On Linux systems, application binary must be dynamically linked unless you're using [Go static monitoring](/managed/ingest-from/technology-support/application-software/go/configuration-and-analysis/enable-go-monitoring#go-static-monitoring "Learn how you can enable Go monitoring in Dynatrace.").
+* Support limited to stable Go releases.
+* On Linux systems, application binary must be dynamically linked unless you're using Go static monitoring.
 
-### [Node.js](/managed/ingest-from/technology-support/application-software/nodejs "Read about Dynatrace support for Node.js applications.")
+### Node.js
 
-Node.js follows a Long Term Support (LTS) release schedule. The following table lists all fully supported versions. However, some end-of-life LTS versions have *limited* support. For details, see [Dynatrace support/desupport for Node.js versions](/managed/ingest-from/technology-support/application-software/nodejs#support-and-desupport "Read about Dynatrace support for Node.js applications.").
+Node.js follows a Long Term Support (LTS) release schedule. The following table lists all fully supported versions. However, some end-of-life LTS versions have *limited* support. For details, see Dynatrace support/desupport for Node.js versions.
 
 | Node.js versions | Versions | Platforms |
 | --- | --- | --- |
-| [Node.js](/managed/ingest-from/technology-support/application-software/nodejs "Read about Dynatrace support for Node.js applications.") | 18, 20, 22, 24 | Alpine Linux 64-bit (x86-64), Linux (ARM64 (AArch64), PPCLE, s390, x86-64), Windows (x86-64) |
+| Node.js | 18, 20, 22, 24 | Alpine Linux 64-bit (x86-64), Linux (ARM64 (AArch64), PPCLE, s390, x86-64), Windows (x86-64) |
 
 | Web frameworks | Versions |
 | --- | --- |
@@ -1025,7 +1025,7 @@ Node.js follows a Long Term Support (LTS) release schedule. The following table 
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in AWS Lambda
 
 2
 
@@ -1039,7 +1039,7 @@ Nest is supported implicitly via underlying Express or Fastify platforms.
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in AWS Lambda
 
 | Database frameworks | Versions |
 | --- | --- |
@@ -1057,11 +1057,11 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in AWS Lambda
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). The following APIs are not support: NoSQL, advanced queuing, two-phase commit, and continuous query notification.
+Supported in AWS Lambda. The following APIs are not support: NoSQL, advanced queuing, two-phase commit, and continuous query notification.
 
 3
 
@@ -1073,7 +1073,7 @@ Note that 5.0 versions are not supported
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Requires Dynatrace Cluster version 1.262+. Service failure detection is not supported.
+Supported in AWS Lambda. Requires Dynatrace Cluster version 1.262+. Service failure detection is not supported.
 
 | Messaging clients | Versions |
 | --- | --- |
@@ -1085,11 +1085,11 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in AWS Lambda
 
 2
 
-RabbitMQ publishers supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+RabbitMQ publishers supported in AWS Lambda
 
 | Remoting frameworks | Versions |
 | --- | --- |
@@ -1100,15 +1100,15 @@ RabbitMQ publishers supported in [AWS Lambda](/managed/ingest-from/amazon-web-se
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in AWS Lambda
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Extended tracing support for all AWS service calls
+Supported in AWS Lambda. Extended tracing support for all AWS service calls
 
 3
 
-gRPC client calls supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+gRPC client calls supported in AWS Lambda
 
 | Monitoring frameworks | Versions |
 | --- | --- |
@@ -1116,7 +1116,7 @@ gRPC client calls supported in [AWS Lambda](/managed/ingest-from/amazon-web-serv
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in AWS Lambda
 
 | Cache | Versions |
 | --- | --- |
@@ -1124,7 +1124,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in AWS Lambda
 
 | Logging frameworks | Versions |
 | --- | --- |
@@ -1135,9 +1135,9 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in AWS Lambda
 
-See also [OneAgent SDK for Node.js](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing capabilities.
+See also OneAgent SDK for Node.js for custom tracing capabilities.
 
 ### Python
 
@@ -1167,7 +1167,7 @@ Including Django REST framework based on supported Django versions.
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
 | Database frameworks | Versions |
 | --- | --- |
@@ -1181,7 +1181,7 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
 | Messaging libraries | Versions |
 | --- | --- |
@@ -1194,11 +1194,11 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
 2
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in AWS Lambda
 
 | Asynchronous execution libraries | Versions |
 | --- | --- |
@@ -1216,19 +1216,19 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in AWS Lambda.
 
-* See [OneAgent SDK for Python](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing capabilities.
-* See [Instrument your Python application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/python "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.") for OpenTelemetry support.
+* See OneAgent SDK for Python for custom tracing capabilities.
+* See Instrument your Python application with OpenTelemetry for OpenTelemetry support.
 
-### [PHP](/managed/ingest-from/technology-support/application-software/php "Read about Dynatrace support for PHP applications.")
+### PHP
 
 * Linux (mod\_php, FastCGI or PHP-FPM)
 * Windows (mod\_php and PHP CGI)
 
 | PHP versions | Versions | Platforms |
 | --- | --- | --- |
-| [PHP](/managed/ingest-from/technology-support/application-software/php "Read about Dynatrace support for PHP applications.") | 7.1 (Zend Engine 3.1), 7.2 (Zend Engine 3.2), 7.3 (Zend Engine 3.3), 7.4 (Zend Engine 3.4), 8.0 (Zend Engine 4.0), 8.1 (Zend Engine 4.1)[1](#fn-php-versions-1-def), 8.2 (Zend Engine 4.2)[2](#fn-php-versions-2-def), 8.3 (Zend Engine 4.3)[3](#fn-php-versions-3-def), 8.4 (Zend Engine 4.4)[4](#fn-php-versions-4-def), 8.5 (Zend Engine 4.5)[5](#fn-php-versions-5-def) | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
+| PHP | 7.1 (Zend Engine 3.1), 7.2 (Zend Engine 3.2), 7.3 (Zend Engine 3.3), 7.4 (Zend Engine 3.4), 8.0 (Zend Engine 4.0), 8.1 (Zend Engine 4.1)[1](#fn-php-versions-1-def), 8.2 (Zend Engine 4.2)[2](#fn-php-versions-2-def), 8.3 (Zend Engine 4.3)[3](#fn-php-versions-3-def), 8.4 (Zend Engine 4.4)[4](#fn-php-versions-4-def), 8.5 (Zend Engine 4.5)[5](#fn-php-versions-5-def) | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
 
 1
 
@@ -1250,7 +1250,7 @@ PHP 8.4 (from RC2 - before official PHP release up to 8.4.x) is supported.
 
 PHP 8.5 (from RC3 - before official PHP release up to 8.5.x) is supported.
 
-See [Dynatrace support model for PHP applications](/managed/ingest-from/technology-support/application-software/php "Read about Dynatrace support for PHP applications.") for support and desupport details.
+See Dynatrace support model for PHP applications for support and desupport details.
 
 | Database frameworks | Versions |
 | --- | --- |
@@ -1305,7 +1305,7 @@ Supported only for PHP NG Monitoring on Linux and Alpine Linux/MUSL
 | --- | --- |
 | [Monolog](https://github.com/Seldaek/monolog) | 2.3 - 2.4, 3.0 |
 
-See [OneAgent SDK for PHP](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing capabilities.
+See OneAgent SDK for PHP for custom tracing capabilities.
 
 ### IBM App Connect Enterprise / IBM Integration Bus
 
@@ -1329,22 +1329,22 @@ See [OneAgent SDK for PHP](/managed/ingest-from/extend-dynatrace/extend-tracing/
   + Database: DatabaseRetrieve, DatabaseRoute
   + CICS (OneAgent version 1.277+): CICSRequest
 
-### C / [C++](/managed/ingest-from/technology-support/application-software/cpp "Learn how to instrument your C++ application with OpenTelemetry as a data source for Dynatrace.")
+### C / C++
 
-* See [OneAgent SDK for C/C++](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing capabilities.
-* See [Instrument your C++ application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/cpp "Learn how to instrument your C++ application using OpenTelemetry and Dynatrace.") for OpenTelemetry support.
+* See OneAgent SDK for C/C++ for custom tracing capabilities.
+* See Instrument your C++ application with OpenTelemetry for OpenTelemetry support.
 
-### [Erlang/Elixir](/managed/ingest-from/technology-support/application-software/erlang-elixir "Learn how to instrument your Erlang/Elixir application with OpenTelemetry as a data source for Dynatrace.")
+### Erlang/Elixir
 
-See [Instrument your Erlang application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/erlang "Learn how to instrument your Erlang application using OpenTelemetry and Dynatrace.") for OpenTelemetry support.
+See Instrument your Erlang application with OpenTelemetry for OpenTelemetry support.
 
-### [Ruby](/managed/ingest-from/technology-support/application-software/ruby "Learn how to instrument your Ruby application with OpenTelemetry as a data source for Dynatrace.")
+### Ruby
 
-See [Instrument your Ruby application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/ruby "Learn how to instrument your Ruby application using OpenTelemetry and Dynatrace.") for OpenTelemetry support.
+See Instrument your Ruby application with OpenTelemetry for OpenTelemetry support.
 
-### [Rust](/managed/ingest-from/technology-support/application-software/rust "Learn how to instrument your Rust application with OpenTelemetry as a data source for Dynatrace monitoring.")
+### Rust
 
-See [Instrument your Rust application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/rust "Learn how to instrument your Rust application using OpenTelemetry and Dynatrace.") for OpenTelemetry support.
+See Instrument your Rust application with OpenTelemetry for OpenTelemetry support.
 
 ## Web servers
 
@@ -1387,17 +1387,17 @@ Data collection based on the Envoy OpenTracing API. Supported are statically con
 
 2
 
-As of version 1.29, Envoy exports data using [OpenTelemetry](/managed/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace."). See [Configure OpenTelemetry tracing with Envoy](/managed/ingest-from/opentelemetry/integrations/envoy "Learn how to configure Envoy to send OpenTelemetry traces to Dynatrace.") for details.
+As of version 1.29, Envoy exports data using OpenTelemetry into Dynatrace."). See Configure OpenTelemetry tracing with Envoy for details.
 
 ### NGINX
 
 | Servers | Versions | Platforms |
 | --- | --- | --- |
-| [Kong Gateway](/managed/ingest-from/technology-support/application-software/nginx/kong-gateway "Learn how to monitor the Kong Gateway with Dynatrace.") | 2.8 - 3.6[2](#fn-servers-2-def), 3.7 - 3.9[3](#fn-servers-3-def) | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64) |
-| [NGINX](/managed/ingest-from/technology-support/application-software/nginx#nginx-versions "Learn the details of Dynatrace support for NGINX.") | 1.11.5 - 1.13.8[1](#fn-servers-1-def), 1.13.9 - 1.14.0[1](#fn-servers-1-def), 1.14.1 - 1.15.8[1](#fn-servers-1-def), 1.15.9 - 1.15.10[1](#fn-servers-1-def), 1.15.11 - 1.16.0[1](#fn-servers-1-def), 1.16.1 - 1.17.3[1](#fn-servers-1-def), 1.17.4 - 1.17.6[1](#fn-servers-1-def), 1.17.7[1](#fn-servers-1-def), 1.17.8[1](#fn-servers-1-def), 1.17.9[1](#fn-servers-1-def), 1.17.10 - 1.18.0, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.19.6, 1.19.7, 1.19.8, 1.19.9, 1.19.10, 1.20.0, 1.20.1, 1.20.2, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.22.0, 1.22.1, 1.23.0, 1.23.1, 1.23.2, 1.23.3, 1.23.4, 1.24.0, 1.25.0, 1.25.1, 1.25.2, 1.25.3, 1.25.4, 1.25.5, 1.26.0, 1.26.1, 1.26.2, 1.26.3, 1.27.0, 1.27.1, 1.27.2, 1.27.3, 1.27.4, 1.27.5, 1.28.0, 1.29.0, 1.29.1, 1.29.2, 1.29.3, 1.29.4 | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64, PPCLE) |
-| [NGINX Plus](/managed/ingest-from/technology-support/application-software/nginx#nginx-plus-versions "Learn the details of Dynatrace support for NGINX.") | R11 - R14[1](#fn-servers-1-def), R15[1](#fn-servers-1-def), R16 - R17[1](#fn-servers-1-def), R18[1](#fn-servers-1-def), R19[1](#fn-servers-1-def), R20[1](#fn-servers-1-def), R21[1](#fn-servers-1-def), R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64), PPCLE) |
-| [OpenResty](/managed/ingest-from/technology-support/application-software/nginx#openresty-versions "Learn the details of Dynatrace support for NGINX.") | 1.13.6, 1.15.8, 1.17.8, 1.19.3, 1.19.9, 1.21.4.1, 1.21.4.2, 1.21.4.3, 1.25.3.1, 1.25.3.2, 1.27.1.1, 1.27.1.2 | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64) |
-| [Tengine](/managed/ingest-from/technology-support/application-software/nginx#tengineversions "Learn the details of Dynatrace support for NGINX.") | 1.4.2 - 2.2.3, 2.3.0 - 2.3.3, 2.3.4, 2.4.0, 2.4.1 | Alpine Linux 64-bit (x86-64), Linux (x86-64) |
+| Kong Gateway | 2.8 - 3.6[2](#fn-servers-2-def), 3.7 - 3.9[3](#fn-servers-3-def) | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64) |
+| NGINX | 1.11.5 - 1.13.8[1](#fn-servers-1-def), 1.13.9 - 1.14.0[1](#fn-servers-1-def), 1.14.1 - 1.15.8[1](#fn-servers-1-def), 1.15.9 - 1.15.10[1](#fn-servers-1-def), 1.15.11 - 1.16.0[1](#fn-servers-1-def), 1.16.1 - 1.17.3[1](#fn-servers-1-def), 1.17.4 - 1.17.6[1](#fn-servers-1-def), 1.17.7[1](#fn-servers-1-def), 1.17.8[1](#fn-servers-1-def), 1.17.9[1](#fn-servers-1-def), 1.17.10 - 1.18.0, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.19.6, 1.19.7, 1.19.8, 1.19.9, 1.19.10, 1.20.0, 1.20.1, 1.20.2, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.22.0, 1.22.1, 1.23.0, 1.23.1, 1.23.2, 1.23.3, 1.23.4, 1.24.0, 1.25.0, 1.25.1, 1.25.2, 1.25.3, 1.25.4, 1.25.5, 1.26.0, 1.26.1, 1.26.2, 1.26.3, 1.27.0, 1.27.1, 1.27.2, 1.27.3, 1.27.4, 1.27.5, 1.28.0, 1.29.0, 1.29.1, 1.29.2, 1.29.3, 1.29.4 | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64, PPCLE) |
+| NGINX Plus | R11 - R14[1](#fn-servers-1-def), R15[1](#fn-servers-1-def), R16 - R17[1](#fn-servers-1-def), R18[1](#fn-servers-1-def), R19[1](#fn-servers-1-def), R20[1](#fn-servers-1-def), R21[1](#fn-servers-1-def), R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64), PPCLE) |
+| OpenResty | 1.13.6, 1.15.8, 1.17.8, 1.19.3, 1.19.9, 1.21.4.1, 1.21.4.2, 1.21.4.3, 1.25.3.1, 1.25.3.2, 1.27.1.1, 1.27.1.2 | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64) |
+| Tengine | 1.4.2 - 2.2.3, 2.3.0 - 2.3.3, 2.3.4, 2.4.0, 2.4.1 | Alpine Linux 64-bit (x86-64), Linux (x86-64) |
 
 1
 
@@ -1405,11 +1405,11 @@ Support for the CPU architecture PPCLE was added with OneAgent version 1.169 and
 
 2
 
-Requires runtime instrumentation, see [NGINX runtime instrumentation](/managed/ingest-from/technology-support/application-software/nginx/manual-runtime-instrumentation "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.")
+Requires runtime instrumentation, see NGINX runtime instrumentation
 
 3
 
-Requires runtime instrumentation, see [NGINX runtime instrumentation](/managed/ingest-from/technology-support/application-software/nginx/manual-runtime-instrumentation "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime."). Reduced instrumentation overhead with agent versions >= 1.313.
+Requires runtime instrumentation, see NGINX runtime instrumentation. Reduced instrumentation overhead with agent versions >= 1.313.
 
 | Log enrichment | Versions |
 | --- | --- |
@@ -1433,7 +1433,7 @@ All modern browsers with JavaScript and cookies enabled are supported, but only 
 
 1
 
-If you don't want the RUM JavaScript to be injected into officially unsupported versions, [define appropriate browser exclusion rules](/managed/observe/digital-experience/web-applications/additional-configuration/exclude-browsers-robots-and-spiders-from-monitoring#exclude-browsers "Disable Real User Monitoring for certain IP addresses, browsers, bots, and spiders.") in your application settings.
+If you don't want the RUM JavaScript to be injected into officially unsupported versions, define appropriate browser exclusion rules in your application settings.
 
 ##### Browsers for session recording
 
@@ -1462,13 +1462,13 @@ Dynatrace offers generic support for every application via XHR or Fetch() API bu
 
 1
 
-Alternative configuration is required when Angular 17+ is used for your application. See [Activate support for Angular 17+](/managed/observe/digital-experience/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions#enable-angular-17-support "Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring for XHR actions.").
+Alternative configuration is required when Angular 17+ is used for your application. See Activate support for Angular 17+.
 
-We stopped offering special support for certain JavaScript frameworks starting with RUM JavaScript version 1.265 and Dynatrace version 1.266. For details, see [End of special support for certain JavaScript frameworks](/managed/observe/digital-experience/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions#desupported-frameworks-js-265 "Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring for XHR actions.").
+We stopped offering special support for certain JavaScript frameworks starting with RUM JavaScript version 1.265 and Dynatrace version 1.266. For details, see End of special support for certain JavaScript frameworks.
 
 #### Web servers and applications
 
-On the following web servers and applications, Dynatrace supports [RUM auto-injection](/managed/observe/digital-experience/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications"), [RUM JavaScript delivery](/managed/observe/digital-experience/web-applications/additional-configuration/configure-monitoring-code-source "Configure the Real User Monitoring code source for your specific requirements."), [RUM beacon forwarding](/managed/observe/digital-experience/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server."), and [user action to distributed trace correlation](/managed/observe/digital-experience/web-applications/initial-setup/link-cross-origin-xhrs "Enable the correlation between cross-origin XHR actions and distributed traces.").
+On the following web servers and applications, Dynatrace supports RUM auto-injection, RUM JavaScript delivery, RUM beacon forwarding, and user action to distributed trace correlation.
 
 | Web servers and applications |
 | --- |
@@ -1477,8 +1477,8 @@ On the following web servers and applications, Dynatrace supports [RUM auto-inje
 | Java servlet-based web applications |
 | Kestrel (ASP.NET Core applications)[1](#fn-9-1-def)[2](#fn-9-2-def) |
 | Microsoft IIS |
-| [NGINX](/managed/ingest-from/technology-support/application-software/nginx "Learn the details of Dynatrace support for NGINX.") |
-| [Node.js](/managed/ingest-from/technology-support/application-software/nodejs "Read about Dynatrace support for Node.js applications.") |
+| NGINX |
+| Node.js |
 | Oracle HTTP Server |
 
 1
@@ -1489,7 +1489,7 @@ Minimum required versions: .Net Core 3.1, .Net Standard 2.1, Microsoft.AspNetCor
 
 To enable this as a OneAgent feature, go to **Settings** > **Preferences** > **OneAgent features** and turn on **Enable Real User Monitoring (RUM) for ASP.NET Core**.
 
-On the following web servers and applications, Dynatrace supports [user action to distributed trace correlation](/managed/observe/digital-experience/web-applications/initial-setup/link-cross-origin-xhrs "Enable the correlation between cross-origin XHR actions and distributed traces.") for XHR requests.
+On the following web servers and applications, Dynatrace supports user action to distributed trace correlation for XHR requests.
 
 | Web servers and applications |
 | --- |
@@ -1509,9 +1509,9 @@ To enable this as a OneAgent feature, go to **Settings** > **Preferences** > **O
 
 | Operating systems | Versions |
 | --- | --- |
-| [Android](/managed/observe/digital-experience/mobile-applications/instrument-android-app "Learn how to instrument mobile application monitoring on Android, how to customize instrumentation and more.") | 5.0+ (API 21+) |
-| [iOS](/managed/observe/digital-experience/mobile-applications/instrument-ios-app "Instrument mobile application monitoring for iOS apps, customize the auto-instrumentation, and capture additional data via manual instrumentation.") | 12+ |
-| [tvOS](/managed/observe/digital-experience/mobile-applications/instrument-ios-app "Instrument mobile application monitoring for iOS apps, customize the auto-instrumentation, and capture additional data via manual instrumentation.") | 12+ |
+| Android | 5.0+ (API 21+) |
+| iOS | 12+ |
+| tvOS | 12+ |
 
 #### Frameworks
 
@@ -1519,15 +1519,15 @@ To enable this as a OneAgent feature, go to **Settings** > **Preferences** > **O
 | --- | --- |
 | AFNetworking | 3.3 |
 | Alamofire | 5+ |
-| [Apache Cordova](/managed/observe/digital-experience/mobile-applications/cross-platform-frameworks/apache-cordova "Set up Dynatrace to monitor hybrid mobile apps with the Cordova plugin.") | 9+ |
+| Apache Cordova | 9+ |
 | OkHttp | 3+[1](#fn-11-1-def), 4+[1](#fn-11-1-def), 5+[1](#fn-11-1-def) |
-| [Xamarin](/managed/observe/digital-experience/mobile-applications/cross-platform-frameworks/xamarin-nuget "Monitor Xamarin apps with Dynatrace OneAgent.")[2](#fn-11-2-def) | Xamarin.iOS, Xamarin.Android, Xamarin.Forms (.NET Standard 2.0+) |
-| [.NET MAUI](/managed/observe/digital-experience/mobile-applications/cross-platform-frameworks/maui "Monitor .NET MAUI applications with Dynatrace OneAgent.") | .NET 6.0+ |
-| [React Native](/managed/observe/digital-experience/mobile-applications/cross-platform-frameworks/react-native "Auto-instrument your React Native applications with OneAgent.") | 0.59+ |
-| [Flutter](/managed/observe/digital-experience/mobile-applications/cross-platform-frameworks/flutter "Learn how to auto-instrument your Flutter applications with OneAgent.") | 1.12+ |
+| Xamarin[2](#fn-11-2-def) | Xamarin.iOS, Xamarin.Android, Xamarin.Forms (.NET Standard 2.0+) |
+| .NET MAUI | .NET 6.0+ |
+| React Native | 0.59+ |
+| Flutter | 1.12+ |
 | UIKit | Supported |
-| [SwiftUI](/managed/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/instrument-swiftui-controls "Use the Dynatrace SwiftUI instrumentor to monitor your SwiftUI apps.") | 2+ |
-| [Jetpack Compose](/managed/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities#compose-instrumentation "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.") | 1.4 - 1.9 |
+| SwiftUI | 2+ |
+| Jetpack Compose | 1.4 - 1.9 |
 
 1
 
@@ -1535,7 +1535,7 @@ Including OkHttp-based libraries like Retrofit 2.
 
 2
 
-Dynatrace will deprecate the Dynatrace Xamarin NuGet package in May 2024 and desupport it in May 2025. For details, see [Deprecation and end of support for Dynatrace Xamarin NuGet package](/managed/observe/digital-experience/mobile-applications/cross-platform-frameworks/xamarin-nuget#deprecation-announcement "Monitor Xamarin apps with Dynatrace OneAgent.").
+Dynatrace will deprecate the Dynatrace Xamarin NuGet package in May 2024 and desupport it in May 2025. For details, see Deprecation and end of support for Dynatrace Xamarin NuGet package.
 
 #### OneAgent for iOS
 
@@ -1557,13 +1557,13 @@ We recommend migrating to a supported alternative like Swift Package Manager to 
 * Gradle version 7.0.2+
 * Android Gradle plugin version 7.0+
 
-For more details, check [Dynatrace Android Gradle plugin](/managed/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin "Learn how the Dynatrace Android Gradle plugin can auto-instrument your Android application project.").
+For more details, check Dynatrace Android Gradle plugin.
 
 ### Dynatrace OpenKit
 
 | Product | Versions |
 | --- | --- |
-| [Java](/managed/ingest-from/technology-support/application-software/java "Learn about all aspects of Dynatrace support for Java application monitoring.") | 7, 8, 11, 12 |
+| Java | 7, 8, 11, 12 |
 | .NET | Core 3.1, 5, 6 |
 | .NET Framework | 3.5, 4.6, 4.7, 4.8, 4.8.1 |
 | .NET Standard | 2.0 |
@@ -1583,13 +1583,13 @@ You can view more details on the following reference pages.
 
 ## Extensions
 
-See [Dynatrace Hub](https://www.dynatrace.com/hub/?filter=all&type=extension&internal_source=doc&internal_medium=link&internal_campaign=cross) for the complete list of technologies supported by [Dynatrace Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.").
+See [Dynatrace Hub](https://www.dynatrace.com/hub/?filter=all&type=extension&internal_source=doc&internal_medium=link&internal_campaign=cross) for the complete list of technologies supported by Dynatrace Extensions.
 
 ## Metric ingestion data sources
 
 | Technologies | Versions |
 | --- | --- |
-| [StatsD](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd "Ingest metrics into Dynatrace using OneAgent and the ActiveGate StatsD client.") | All versions supported[1](#fn-technologies-1-def) |
+| StatsD | All versions supported[1](#fn-technologies-1-def) |
 
 1
 
@@ -1597,7 +1597,7 @@ Requires OneAgent EEC. Supported on Windows and Linux and the x64 CPU architectu
 
 ## Private Synthetic locations
 
-See [Requirements for private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations").
+See Requirements for private Synthetic locations.
 
 ## Support Levels for 3rd Party Technologies
 

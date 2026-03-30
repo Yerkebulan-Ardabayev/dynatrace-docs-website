@@ -9,7 +9,7 @@ scraped: 2026-03-05T21:32:29.846836
 
 Мониторинг журналов Classic
 
-Для самой новой версии Dynatrace см. [Передача журналов в Dynatrace с помощью Fluent Bit](../../logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit.md "Интегрируйте Fluent Bit для передачи журналов в Dynatrace.").
+Для самой новой версии Dynatrace см. Передача журналов в Dynatrace с помощью Fluent Bit.
 
 Вы можете отправлять журналы в Dynatrace с помощью Fluent Bit. Настройте Fluent Bit для отправки журналов в универсальный приемник журналов API.
 
@@ -23,9 +23,9 @@ scraped: 2026-03-05T21:32:29.846836
 
 Плагин `http output` Fluent Bit позволяет передавать ваши журналы в конечную точку приемки журналов Dynatrace.
 
-1. Получите токен [Dynatrace API](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как аутентифицироваться для использования Dynatrace API.") с областью `logs.ingest` (Прием журналов).
+1. Получите токен Dynatrace API с областью `logs.ingest` (Прием журналов).
 2. [Разверните Fluent Bit](https://dt-url.net/zd034je).
-3. Чтобы отправить журналы в конечную точку [приемки журналов](logs-classic-ingestion-api.md "Узнайте, как Dynatrace принимает данные журналов и какие потенциальные ограничения такого приема.") Dynatrace, настройте плагин [http output](https://dt-url.net/0z034x4) через файл конфигурации.
+3. Чтобы отправить журналы в конечную точку приемки журналов Dynatrace, настройте плагин [http output](https://dt-url.net/0z034x4) через файл конфигурации.
 4. В вашем основном файле конфигурации Fluent Bit добавьте раздел вывода с следующими параметрами:
 
 ```
@@ -60,7 +60,7 @@ tls.verify On
 
 Вы можете разместить ваш токен API в заголовке или как переменную `GET` в URI (см. пример ниже).
 
-* Для Dynatrace SaaS конечная точка [приемки журналов](logs-classic-ingestion-api.md "Узнайте, как Dynatrace принимает данные журналов и какие потенциальные ограничения такого приема.") доступна в вашей среде.
+* Для Dynatrace SaaS конечная точка приемки журналов доступна в вашей среде.
 
 * Если [Environment ActiveGate](../../../ingest-from/dynatrace-activegate.md#agtypes "Поймите основные понятия, связанные с ActiveGate.") является вашим выбором для конечной точки в локальной среде, установите экземпляр ActiveGate.
 
@@ -121,6 +121,6 @@ Json_Date_Key": "timestamp"
 
 ## Устранение неполадок
 
-Посетите сообщество Dynatrace для руководств по устранению неполадок, а также см. [Устранение неполадок мониторинга журналов (Logs Classic)](../lmc-troubleshooting.md "Исправьте проблемы, связанные с настройкой и конфигурацией мониторинга журналов Classic.").
+Посетите сообщество Dynatrace для руководств по устранению неполадок, а также см. Устранение неполадок мониторинга журналов (Logs Classic).
 
 * [Устранение неполадок журналов, принятых через Fluent Bit](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718)

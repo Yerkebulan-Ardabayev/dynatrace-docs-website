@@ -15,7 +15,7 @@ Configure Dynatrace in network-restricted environments with network configuratio
 
 Network zones
 
-For details on setting up and managing network zones, initial endpoint setup, and advanced configurations in restricted environments, see [Using network zones in Kubernetes](network-configurations/network-zones.md "Set up and use network zones in Kubernetes environments with the Dynatrace Operator.").
+For details on setting up and managing network zones, initial endpoint setup, and advanced configurations in restricted environments, see Using network zones in Kubernetes.
 
 ## Configure proxy
 
@@ -351,7 +351,7 @@ skipCertCheck: true
 
 ## Configure a server TLS certificate for ActiveGate
 
-By default, ActiveGate uses a self-signed certificate, which can be replaced by a self-managed certificate as described in [Custom SSL certificate for ActiveGate](../../../dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate.md "Learn how to configure the SSL certificate on your ActiveGate.").
+By default, ActiveGate uses a self-signed certificate, which can be replaced by a self-managed certificate as described in Custom SSL certificate for ActiveGate.
 
 To configure a server TLS certificate for the ActiveGate:
 

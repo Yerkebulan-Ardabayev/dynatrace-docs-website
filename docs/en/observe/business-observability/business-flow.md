@@ -144,16 +144,16 @@ The Problem mode enables precise analysis of any IT problem that may affect a bu
 
 Go through the following processes to learn using ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow**:
 
-[01Set up Business Flow
+01Set up Business Flow
 
 * How-to guide
-* Follow the instructions on how to successfully set up Business Flow.](business-flow/set-up-business-flow.md)[02Business Flow Details
+* Follow the instructions on how to successfully set up Business Flow.02Business Flow Details
 
 * Explanation
-* Explore Business Flow Details.](business-flow/business-flow-details.md)[03Business Flow KPIs
+* Explore Business Flow Details.03Business Flow KPIs
 
 * Explanation
-* Discover how key performance indicators can help you track performance and identify improvement opportunities within the Business Flow app.](business-flow/reported-kpis.md)
+* Discover how key performance indicators can help you track performance and identify improvement opportunities within the Business Flow app.
 
 ## Capabilities
 
@@ -177,7 +177,7 @@ With ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png
 
   The limitless mode on a configuration can be switched off in the edit mode.
 
-  See [DQL best practices](../../platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language."), to learn more about data limits.
+  See DQL best practices, to learn more about data limits.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

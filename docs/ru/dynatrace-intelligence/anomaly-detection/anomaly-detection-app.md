@@ -52,7 +52,7 @@ davis:analyzers:execute
 
 Выполнение анализатора предложений пороговых значений
 
-Разрешения пользователей могут быть изменены только вашим администратором Dynatrace в разделе **Account Management** > **Identity and Access Management**. Чтобы узнать больше о группах пользователей и назначении разрешений, см. [Работа с политиками](../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
+Разрешения пользователей могут быть изменены только вашим администратором Dynatrace в разделе **Account Management** > **Identity and Access Management**. Чтобы узнать больше о группах пользователей и назначении разрешений, см. Работа с политиками.
 
 ### Установка
 
@@ -79,7 +79,7 @@ davis:analyzers:execute
 
 При открытии приложения вы можете увидеть информацию о существующих конфигурациях обнаружения аномалий, такую как:
 
-* Статус -- если есть ошибка, статус отображается как **Error**; выберите его, чтобы открыть подробный отчёт в [блокноте](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+* Статус -- если есть ошибка, статус отображается как **Error**; выберите его, чтобы открыть подробный отчёт в блокноте.
 * Источник
 * Тип модели прогнозирования аномалий
 
@@ -116,7 +116,7 @@ davis:analyzers:execute
 
 Мы рекомендуем использовать сервисных пользователей в качестве акторов для пользовательских оповещений, созданных для отдела или организации. Это делает пользовательское оповещение независимым от статуса пользователя, который его поддерживает.
 
-Для сервисного пользователя нет специальных настроек авторизации. Разрешения, предоставленные сервисному пользователю, должны следовать принципу минимальных привилегий. Чтобы узнать больше об управлении сервисными пользователями, см. [Сервисные пользователи](../../manage/identity-access-management/user-and-group-management/access-service-users.md "Service users").
+Для сервисного пользователя нет специальных настроек авторизации. Разрешения, предоставленные сервисному пользователю, должны следовать принципу минимальных привилегий. Чтобы узнать больше об управлении сервисными пользователями, см. Сервисные пользователи.
 
 ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -128,7 +128,7 @@ davis:analyzers:execute
 
 ## Связанные темы
 
-* [Типы статусов Anomaly Detection](anomaly-detection-app/anomaly-detection-status-types.md "An explanation of Anomaly Detection status types")
-* [Ограничения Dynatrace Intelligence](../reference/davis-ai-limits.md "Reference limits of Dynatrace Intelligence components.")
+* Типы статусов Anomaly Detection
+* Ограничения Dynatrace Intelligence
 * [[Видео] Повышение безопасности с помощью Anomaly Detection](https://www.youtube.com/watch?v=WDZUus-VxCE)
 * [[Видео] Anomaly Detection и наблюдаемость данных](https://www.youtube.com/watch?v=HPQi63mQg3w)

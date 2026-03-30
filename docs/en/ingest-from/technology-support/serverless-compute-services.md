@@ -23,10 +23,10 @@ Key to columns and cells
 | Logs | Dynatrace captures resource and/or application logs. |
 | Distributed tracing | Dynatrace supports distributed tracing for these services, either providing a dedicated integration or via OpenTelemetry. |
 | Automatic tracing | Dynatrace provides automatic out-of-the-box tracing without code changes. |
-| OpenTelemetry/Extend tracing | Dynatrace provides the ability to enhance tracing via [OpenTelemetry](../extend-dynatrace/extend-tracing/opentracing.md "Learn how to integrate OpenTracing with Dynatrace."), its own [SDKs](../extend-dynatrace/extend-tracing/oneagent-sdk.md "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available."), and [custom services](../../observe/application-observability/services/service-detection/service-detection-v1/service-types/custom-services.md "Define entry points (a method, class, or interface) for custom services that don't use standard protocols."). |
-| Custom metrics | Dynatrace provides the ability to add custom metrics via [API](../extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace."), [OpenTelemetry](../opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace."), [Spring Micrometerï»¿](https://micrometer.io/docs/registry/dynatrace), and many other means. |
+| OpenTelemetry/Extend tracing | Dynatrace provides the ability to enhance tracing via OpenTelemetry, its own SDKs, and custom services for custom services that don't use standard protocols."). |
+| Custom metrics | Dynatrace provides the ability to add custom metrics via API, OpenTelemetry into Dynatrace."), [Spring Micrometerï»¿](https://micrometer.io/docs/registry/dynatrace), and many other means. |
 | Automatic RUM | Dynatrace provides out-of-the-box real user monitoring with no code changes required. |
-| Agentless RUM | Dynatrace provides an [agentless integration](../../observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring.md "Set up agentless monitoring for your web applications.") for real user monitoring. |
+| Agentless RUM | Dynatrace provides an agentless integration for real user monitoring. |
 
 #### Cells
 
@@ -50,15 +50,15 @@ Both 64-bit ARM (AWS Graviton2 processors) and 64-bit x86 architectures are supp
 
 1
 
-[Requires integration of Dynatrace extension via Dynatrace Lambda Layer](../amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension.md "Monitor Lambda functions written in Python, Node.js, and Java."). To learn which runtimes are supported, see [Support lifecycle](../amazon-web-services/integrate-into-aws/aws-lambda-integration.md#support-lifecycle "AWS Lambda capabilities and integration options").
+Requires integration of Dynatrace extension via Dynatrace Lambda Layer. To learn which runtimes are supported, see [Support lifecycle](../amazon-web-services/integrate-into-aws/aws-lambda-integration.md#support-lifecycle "AWS Lambda capabilities and integration options").
 
 2
 
-[Requires integration of Dynatrace extension on container image](../amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension/deploy-oneagent-on-lambda-container-images.md "Deploy Dynatrace Lambda Layers when deployed via a container image.")
+Requires integration of Dynatrace extension on container image
 
 3
 
-[Trace AWS Lambda .Net Core](../amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration/lambda-otel-native.md "Learn how to use OpenTelemetry to trace AWS Lambda .NET Core functions.")
+Trace AWS Lambda .Net Core
 
 ### Azure Functions
 
@@ -66,19 +66,19 @@ Both 64-bit ARM (AWS Graviton2 processors) and 64-bit x86 architectures are supp
 
 1
 
-Requires integration of OneAgent via [Dynatrace Site-Extension for Azure App Services](../../observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring.md "Monitor Azure with Dynatrace")
+Requires integration of OneAgent via Dynatrace Site-Extension for Azure App Services
 
 #### Linux-based App Service plan or App Service Environment
 
 1
 
-Requires integration of [OneAgent on AppServices for Linux and Containers](../microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers.md "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")
+Requires integration of OneAgent on AppServices for Linux and Containers
 
 #### Consumption or Premium plan
 
 1
 
-[Trace Azure Functions on Azure Consumption Plan](../microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans.md "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions on serverless hosting plans")
+Trace Azure Functions on Azure Consumption Plan
 
 ### Runtime v1
 
@@ -114,11 +114,11 @@ Durable Functions SDK has [preview support for distributed tracingï»¿](https:
 
 1
 
-[Trace Google Functions written in Node.js](../google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs.md "Monitor Google Cloud Functions with OpenTelemetry for Node.js and Dynatrace.")
+Trace Google Functions written in Node.js
 
 ## Related topics
 
-* [Serverless monitoring](../../discover-dynatrace/get-started/serverless-monitoring.md "Serverless observability with Dynatrace")
-* [OneAgent platform and capability support matrix](oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
-* [Technology support](../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.")
-* [Known solutions and workarounds](known-solutions-and-workarounds.md "Check the solutions for reported problems regarding various technologies.")
+* Serverless monitoring
+* OneAgent platform and capability support matrix
+* Technology support
+* Known solutions and workarounds

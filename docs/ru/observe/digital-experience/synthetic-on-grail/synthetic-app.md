@@ -130,9 +130,9 @@ document:documents:delete
 
 * **Type** — тип монитора
 * **Ongoing issues** — мониторы с проблемами доступности или производительности и без них
-* **Frontend application** — связанное приложение [RUM](../../digital-experience.md "Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.")
+* **Frontend application** — связанное приложение RUM
 * **Status** — активны ли мониторы или неактивны (отключены)
-* **Locations** — [публичные](../synthetic-monitoring/general-information/public-synthetic-locations.md "Learn about all currently available public Synthetic Monitoring locations.") и [приватные](../synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.") локации мониторинга
+* **Locations** — публичные и приватные локации мониторинга
 * **Device profile** — например, `desktop`, `Apple iPhone 8`
 * **Last editor** — идентификатор пользователя, который последним редактировал монитор
 * **Tags** — значения или пары ключ-значение, применённые к мониторам; вы можете выбрать теги для включения или исключения из поиска.
@@ -171,18 +171,18 @@ document:documents:delete
 1. Выберите **+New monitor** в правом верхнем углу ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**.
 2. Выберите один из вариантов:
 
-* Browser — выбор этой опции позволит создать браузерный монитор в **Synthetic Classic**. Узнайте, как [создать одностраничный браузерный монитор](../synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor.md "Learn how to set up a single-URL browser monitor to check the availability of your site.").
-* HTTP — выбор этой опции позволит создать HTTP-монитор в приложении ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**. Узнайте, как [создать и настроить HTTP-монитор](synthetic-app/create-and-configure-an-http-monitor.md "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.").
-* Network availability — выбор этой опции позволит создать NAM-монитор в приложении ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**. Узнайте, как [настроить NAM-монитор](../synthetic-monitoring/network-availability-monitors/create-a-nam-monitor.md "Learn how to set up a NAM monitor to check the performance and availability of your site.").
+* Browser — выбор этой опции позволит создать браузерный монитор в **Synthetic Classic**. Узнайте, как создать одностраничный браузерный монитор.
+* HTTP — выбор этой опции позволит создать HTTP-монитор в приложении ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**. Узнайте, как создать и настроить HTTP-монитор.
+* Network availability — выбор этой опции позволит создать NAM-монитор в приложении ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**. Узнайте, как настроить NAM-монитор.
 
 ### Отчёты
 
 Для каждого типа монитора вы можете отобразить страницу отчётов. См.
 
 * [Отчёты](../synthetic-monitoring/network-availability-monitors/network-availability-monitoring.md#reporting "ICMP, TCP, and DNS synthetic monitors") NAM-мониторов в **Synthetic**.
-* [Отчёты](synthetic-app/synthetic-details-for-http-monitors.md "Learn about the Synthetic details page for HTTP monitors.") HTTP-мониторов в **Synthetic**.
-* [Отчёты](../synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic.md "Learn about the Synthetic details page for HTTP monitors.") HTTP-мониторов в **Synthetic Classic**.
-* [Отчёты](../synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors.md "Analyze browser monitor and clickpath results on the Synthetic details page.") браузерных мониторов в **Synthetic Classic**.
+* Отчёты HTTP-мониторов в **Synthetic**.
+* Отчёты HTTP-мониторов в **Synthetic Classic**.
+* Отчёты браузерных мониторов в **Synthetic Classic**.
 
 ### Расчёт общего времени простоя для синтетических мониторов
 

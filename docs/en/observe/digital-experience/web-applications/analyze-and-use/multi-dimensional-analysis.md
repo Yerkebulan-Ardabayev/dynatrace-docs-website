@@ -12,7 +12,7 @@ scraped: 2026-03-05T21:27:24.846990
 * 8-min read
 * Published Jun 28, 2019
 
-Dynatrace Real User Monitoring enables you to dig deep into your [user actions](../../rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.") and perform analysis across numerous dimensions. Multidimensional **User action analysis** pages can be accessed from many entry points throughout Dynatrace. Depending on where you begin your analysis, pre-selected filters can be applied and carried forward as your analysis progresses.
+Dynatrace Real User Monitoring enables you to dig deep into your user actions and perform analysis across numerous dimensions. Multidimensional **User action analysis** pages can be accessed from many entry points throughout Dynatrace. Depending on where you begin your analysis, pre-selected filters can be applied and carried forward as your analysis progresses.
 
 Following are the main entry scenarios for making use of the latest multidimensional **User action analysis** views.
 
@@ -43,7 +43,7 @@ To access multidimensional analysis based on user action type
 
    ![Multi-dimensional analysis](https://dt-cdn.net/images/specific-user-action-with-filters-applied-from-multi-dimensional-user-action-analytics1-1600-e9ba1dc253.png)
 
-   The applied filters and analysis timeframe are even carried over to the [**Waterfall analysis view**](waterfall-analysis.md "Learn how to analyze all user action monitoring data through waterfall analysis.") (see below).
+   The applied filters and analysis timeframe are even carried over to the **Waterfall analysis view** (see below).
 
    ![Multi-dimensional analysis](https://dt-cdn.net/images/specific-waterfall-for-user-action-with-filters-applied-from-multi-dimensional-user-action-analytics-screen3-1600-bc8c0f6bd6.png)
 
@@ -156,7 +156,7 @@ In the error detail card, you can find additional error information, such as whe
 
 ![Error details](https://dt-cdn.net/images/error-details-5093-27df9761b5.png)
 
-To further investigate the error you can conduct an in-depth session analysis of one of the affected sessions listed under **User sessions affected by the error** to find out more about where and how the error occurred. Features such as [Session Replay](../../session-replay.md "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") make it easy to find and communicate the errors of these users throughout your organization.
+To further investigate the error you can conduct an in-depth session analysis of one of the affected sessions listed under **User sessions affected by the error** to find out more about where and how the error occurred. Features such as Session Replay make it easy to find and communicate the errors of these users throughout your organization.
 
 ![User details page](https://dt-cdn.net/images/user-sessions-to-user-details-page-1637-f01f4b8bf0.png)
 

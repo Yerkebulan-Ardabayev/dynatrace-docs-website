@@ -10,7 +10,7 @@ scraped: 2026-03-06T21:17:37.851510
 
 * Полный мониторинг стека на базе OneAgent
 * [Расширения для простого развёртывания OneAgent](#installation)
-* [Интеграция с Azure Monitor](../../microsoft-azure-services.md "Настройка и конфигурация мониторинга для Microsoft Azure.")
+* Интеграция с Azure Monitor
 * Расширенная поддержка метаданных Azure VM: регионы Azure, обнаружение автомасштабирования и многое другое
 
 Dynatrace предоставляет расширение VM для установки OneAgent на Azure Virtual Machine Scale Set (VMSS). Расширение не включает установщик OneAgent. Вместо этого оно использует Dynatrace REST API для скачивания последней версии из кластера, если не настроена [версия OneAgent по умолчанию](https://www.dynatrace.com/news/blog/define-default-version-oneagent-new-installations/). Обновления OneAgent предоставляются автоматически.
@@ -18,7 +18,7 @@ Dynatrace предоставляет расширение VM для устано
 ## Предварительные условия
 
 * Создайте [PaaS-токен](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Узнайте о концепции токена доступа и его областях действия.").
-* Определите ваш [идентификатор среды](../../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа со средами мониторинга.").
+* Определите ваш идентификатор среды.
 * При необходимости определите URL сервера.
 
   URL сервера необходим только если вы используете ActiveGate для конечной точки Dynatrace SaaS. URL автоматически генерируется из идентификатора среды.
@@ -72,7 +72,7 @@ PowerShell
    | token | Обязательный | PaaS-токен, описанный в разделе [Предварительные условия](#prerequisites). |
    | server | Необязательный | URL сервера, если вы хотите настроить альтернативную конечную точку связи, описанную в разделе [Предварительные условия](#prerequisites). |
    | enableLogAnalytics | Необязательный | Установите значение `yes`, чтобы включить мониторинг логов. |
-   | hostGroup | Необязательный | Определите [группу хостов](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов."), к которой принадлежит VM. |
+   | hostGroup | Необязательный | Определите группу хостов, к которой принадлежит VM. |
 2. Обновите виртуальные машины VMSS.
 
    ```
@@ -118,7 +118,7 @@ PowerShell
    | token | Обязательный | PaaS-токен, описанный в разделе [Предварительные условия](#prerequisites). |
    | server | Необязательный | URL сервера, если вы хотите настроить альтернативную конечную точку связи, описанную в разделе [Предварительные условия](#prerequisites). |
    | enableLogAnalytics | Необязательный | Установите значение `yes`, чтобы включить мониторинг логов. |
-   | hostGroup | Необязательный | Определите [группу хостов](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов."), к которой принадлежит VM. |
+   | hostGroup | Необязательный | Определите группу хостов, к которой принадлежит VM. |
 2. Обновите виртуальные машины VMSS с новым определением.
 
    ```
@@ -310,7 +310,7 @@ PowerShell
    | Extension-Version | Необязательный | Необходимая версия[1](#fn-1-1-def) расширения. |
    | server | Необязательный | URL сервера, если вы хотите настроить альтернативную конечную точку связи, описанную в разделе [Предварительные условия](#prerequisites). |
    | enableLogAnalytics | Необязательный | Установите значение `yes`, чтобы включить мониторинг логов. |
-   | hostGroup | Необязательный | Определите [группу хостов](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов."), к которой принадлежит VM. |
+   | hostGroup | Необязательный | Определите группу хостов, к которой принадлежит VM. |
 
    1
 
@@ -340,5 +340,5 @@ Restart-AzureRmVmss -ResourceGroupName "<Resource-Group>" -VMScaleSetName "<VMSS
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Microsoft Azure](../../microsoft-azure-services.md "Настройка и конфигурация мониторинга для Microsoft Azure.")
-* [Матрица поддержки платформ и возможностей OneAgent](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах.")
+* Настройка Dynatrace в Microsoft Azure
+* Матрица поддержки платформ и возможностей OneAgent

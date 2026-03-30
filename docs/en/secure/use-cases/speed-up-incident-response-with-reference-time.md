@@ -25,7 +25,7 @@ You get a notification that your production environment has a high load of HTTP 
 ## Before you begin
 
 1. Open the [read-only shared investigation in Dynatrace Playgroundï»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.security.investigator/share/484db0e6-d7fa-48ec-97ce-6612260e0854).
-2. Duplicate the investigation to continue the investigation scenario and be able to execute queries. For instructions, see [Duplicate investigations](../investigations/case-sharing.md#duplicate "Share, duplicate, and control access to investigations across teams in Dynatrace Investigations.").
+2. Duplicate the investigation to continue the investigation scenario and be able to execute queries. For instructions, see Duplicate investigations.
 
 ## Get started
 
@@ -72,7 +72,7 @@ To find out what caused the service problems, let's examine the events that occu
 Using the reference time, let's look for the request that led to our service being unresponsive.
 
 1. Navigate to the second (orange) node to see the Istio logs. You notice that the reference time offset field is present in this results table as well.
-2. In the menu of the reference time box, select **Earlier than**. This [creates a timestamp filter](../investigations/filter-logs.md#reference "Narrow down data to relevant entries in Investigations.") to fetch logs written before the time of the reference timestamp value.
+2. In the menu of the reference time box, select **Earlier than**. This creates a timestamp filter to fetch logs written before the time of the reference timestamp value.
 
    ![timestamp filter](https://dt-cdn.net/images/2025-05-12-12-19-49-1920-3d859cdb64.png)
 3. Rename `timestamp` to `start_time` in the timestamp filter command.

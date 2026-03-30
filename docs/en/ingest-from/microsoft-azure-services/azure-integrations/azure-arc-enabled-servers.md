@@ -16,14 +16,14 @@ scraped: 2026-03-06T21:25:35.037946
 
 * Full-stack monitoring powered by OneAgent
 * [Extensions for easy deployment of OneAgent](#installation)
-* [Integration with Azure Monitor](../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
+* Integration with Azure Monitor
 * Enhanced support for Azure VM metadata such as Azure regions, scale sets and more
-* [Classic Virtual Machines](azure-vm/monitor-azure-virtual-machines-classic.md "Monitor Azure Virtual Machines (classic) and view available metrics.") are also supported
+* Classic Virtual Machines and view available metrics.") are also supported
 
 ## Prerequisites
 
 * Create a [PaaS token](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.").
-* Determine your [environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+* Determine your environment ID.
 * Determine your server URL if required.
 
   The server URL is required only if you use an ActiveGate for a Dynatrace SaaS endpoint. The URL is automatically generated from the environment ID.
@@ -89,7 +89,7 @@ az connectedmachine extension create
 | token | Required | The PaaS token as described in [Prerequisites](#prerequisites). |
 | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
 | enableLogsAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
-| hostGroup | Optional | Define the [host group](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
+| hostGroup | Optional | Define the host group to which the VM belongs. |
 
 Alternatively to the main installation methods, you can make the Dynatrace VM extension part of your ARM templates.
 

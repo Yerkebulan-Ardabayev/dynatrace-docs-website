@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:31:49.624600
 Dynatrace provides you with a framework that you can use to extend your observability into data acquired directly from a Prometheus endpoint. With it, you can bring the Prometheus data into Dynatrace at scale and in context with all other data.
 
 * To take full advantage of the Dynatrace Prometheus extension, you need a OneAgent on the monitored box, but it can also work in an agentless manner.
-* Check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=prometheus) to see if your technology is already covered by an existing extension. If this is not the case, you can easily build your own [Dynatrace Prometheus extension](../../../../extensions/develop-your-extensions/data-sources/prometheus-extensions.md "Learn how to create a Prometheus extension using the Extensions framework.").
+* Check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=prometheus) to see if your technology is already covered by an existing extension. If this is not the case, you can easily build your own Dynatrace Prometheus extension.
 
 ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions")
 
@@ -71,12 +71,12 @@ Decide how you want to monitor your host: local or remote.
 1. Select the host, host group or management zone for which you will run the extension, or choose to monitor the whole environment. The host needs to be running a OneAgent that is [enabled to run extensions](../../../../extensions/concepts.md#eec "Learn more about the concept of Dynatrace Extensions.").
 2. Select **Next step**.
 3. Select **Add endpoint**.
-4. Define the Prometheus endpoint providing metrics and authentication details. For more information on supported authentication schemes, see [Authentication](../../../../extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference.md#authentication "Learn about Prometheus extensions in the Extensions framework."). Authentication details passed to Dynatrace when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
+4. Define the Prometheus endpoint providing metrics and authentication details. For more information on supported authentication schemes, see Authentication. Authentication details passed to Dynatrace when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
 
 ### Remote monitoring
 
 1. Select **Monitor remotely**.
-2. Define the Prometheus endpoint providing metrics and authentication details. For more information on supported authentication schemes, see [Authentication](../../../../extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference.md#authentication "Learn about Prometheus extensions in the Extensions framework.")
+2. Define the Prometheus endpoint providing metrics and authentication details. For more information on supported authentication schemes, see Authentication
 3. Select **Next step**.
 4. Select the ActiveGate group to determine which ActiveGates will run the extension. When done, select **Next step**.
 
@@ -105,13 +105,13 @@ Provide final configuration details.
 * Description
   Text explaining details of this particular monitoring configuration. When troubleshooting monitoring, this can give your teams details of this particular monitoring configuration.
 * Feature sets
-  In highly segmented networks, feature sets can reflect the segments of your environment. You can use them to limit your monitoring to particular segments. Feature sets are predefined for each extension. For more information, see [Prometheus data source reference](../../../../extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference.md#featureset "Learn about Prometheus extensions in the Extensions framework.").
+  In highly segmented networks, feature sets can reflect the segments of your environment. You can use them to limit your monitoring to particular segments. Feature sets are predefined for each extension. For more information, see Prometheus data source reference.
 
 When done, select **Activate**.
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](../../../../extensions/manage-extensions.md "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See Manage Extensions to learn how to use it to activate an extension using the Dynatrace API.
 
 ## Related topics
 

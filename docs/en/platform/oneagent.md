@@ -11,17 +11,17 @@ scraped: 2026-03-06T21:10:22.998134
 * 1-min read
 * Published Mar 29, 2019
 
-[### Capabilities
+### Capabilities
 
-Find out the monitoring capabilities offered by OneAgent offers.](oneagent/supported-monitoring-types.md "Read an overview of all monitoring capabilities offered by OneAgent.")[### How it works
+Find out the monitoring capabilities offered by OneAgent offers.### How it works
 
-Understand how OneAgent works.](oneagent/how-one-agent-works.md "Understand how OneAgent works.")
+Understand how OneAgent works.
 
-[### OneAgent monitoring modes
+### OneAgent monitoring modes
 
-Find out about the available monitoring modes when using OneAgent.](oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.")[### Enable monitoring modes
+Find out about the available monitoring modes when using OneAgent.### Enable monitoring modes
 
-Learn how to enable monitoring modes when using OneAgent.](oneagent/monitoring-modes/enable-monitoring-modes.md "Learn how to enable monitoring modes when using OneAgent.")
+Learn how to enable monitoring modes when using OneAgent.
 
 ## Deploy OneAgent
 

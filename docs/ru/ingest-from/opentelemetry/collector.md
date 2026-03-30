@@ -19,7 +19,7 @@ Collector -- это сетевое сервисное приложение, ко
 
 Collector является относительно легковесным компонентом, поэтому команды могут развертывать собственные экземпляры, чтобы не использовать одну и ту же конфигурацию.
 
-Collector настраивается в одном YAML-файле. Это избавляет от необходимости просматривать несколько файлов и сокращает объем обслуживания. Подробнее о настройке см. [Настройка OpenTelemetry Collector](collector/configuration.md "How to configure the OpenTelemetry Collector.").
+Collector настраивается в одном YAML-файле. Это избавляет от необходимости просматривать несколько файлов и сокращает объем обслуживания. Подробнее о настройке см. Настройка OpenTelemetry Collector.
 
 ## Дистрибутивы
 
@@ -50,7 +50,7 @@ docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:
 Dynatrace Collector поставляется с определенными компонентами, описанными в репозитории Dynatrace Collector на GitHub.
 Полный список см. в разделе [Components](https://github.com/Dynatrace/dynatrace-otel-collector#components).
 
-Ознакомьтесь с [примерами использования OpenTelemetry Collector](collector/use-cases.md "Configure your Collector instance for different use cases.") для получения конкретных примеров сценариев и конфигураций для отдельных компонентов.
+Ознакомьтесь с примерами использования OpenTelemetry Collector для получения конкретных примеров сценариев и конфигураций для отдельных компонентов.
 
 ### Дистрибутивы OpenTelemetry
 

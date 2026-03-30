@@ -11,9 +11,9 @@ scraped: 2026-03-05T21:26:46.189276
 * Updated on Mar 22, 2023
 * Deprecated
 
-Assigns [custom tags](../../../../../common/manage/tags-and-metadata.md "Use tags and metadata to organize data in your Dynatrace environment.") to the specified [process group](../../../../observe/infrastructure-observability/process-groups.md "Analyze process groups and customize process group naming, detection, and monitoring."). You need only provide a tag value. The `CONTEXTLESS` context will be assigned automatically.
+Assigns custom tags to the specified process group. You need only provide a tag value. The `CONTEXTLESS` context will be assigned automatically.
 
-The usage of this API is limited to value-only tags. To assign key:value tags, use the [Custom tags API](../../custom-tags/post-tags.md "Assign custom tags to monitored entities via Dynatrace API.").
+The usage of this API is limited to value-only tags. To assign key:value tags, use the Custom tags API.
 
 The request produces an `application/json`
 
@@ -26,7 +26,7 @@ The request produces an `application/json`
 
 To execute this request, you need an access token with `DataExport` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ## Parameters
 
@@ -217,4 +217,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/process-grou
 
 ## Related topics
 
-* [Process groups](../../../../observe/infrastructure-observability/process-groups.md "Analyze process groups and customize process group naming, detection, and monitoring.")
+* Process groups

@@ -19,7 +19,7 @@ What youâll find on this page
 
 Dynatrace Runtime Application Protection rules allow you to
 
-* [Set up fine-grained monitoring rules to block, monitor, or ignore future attacks](#handling-rules), based on [resource attributes](../../../ingest-from/extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields."), and define multiple conditions for one rule. When creating a rule, you can check if conditions apply and how many process groups are affected.
+* [Set up fine-grained monitoring rules to block, monitor, or ignore future attacks](#handling-rules), based on resource attributes, and define multiple conditions for one rule. When creating a rule, you can check if conditions apply and how many process groups are affected.
   The rules you create override the global attack control settings for the selected technology.
 * [Add attacks that you don't consider harmful to the allowlist](#exception-rules), by source IPs or attack patterns.
 
@@ -38,7 +38,7 @@ To create an attack rule
      + `Monitor; incoming attacks detected only.`
      + `Block; incoming attacks detected and blocked.`
    * **Attack type**: Select the attack type to which current configuration applies.
-   * Optional **Specify where the rule is applied**: If you want the rule to apply only to a subset of your environment, select  **Add condition** and provide the resource attributes that should be used to identify that part of the environment (for example, `dt.entity.process_group`, `aws.region`). For details, see [Enrich ingested data with Dynatrace-specific fields](../../../ingest-from/extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+   * Optional **Specify where the rule is applied**: If you want the rule to apply only to a subset of your environment, select  **Add condition** and provide the resource attributes that should be used to identify that part of the environment (for example, `dt.entity.process_group`, `aws.region`). For details, see Enrich ingested data with Dynatrace-specific fields.
 4. Select **Create**.
 5. Restart processes.
 
@@ -66,7 +66,7 @@ Based on specific criteria, you can create an exception monitoring rule for the 
      + key: `actor.ip`, matcher: `is part of IP CIDR`
 
      To fully benefit from this functionality, make sure you're using the latest OneAgent version.
-   * Optional **Specify where the rule is applied**: If you want the rule to apply only to a subset of your environment, select  **Add condition** and provide the resource attributes that should be used to identify that part of the environment (for example, `dt.entity.process_group`, `aws.region`). For details, see [Enrich ingested data with Dynatrace-specific fields](../../../ingest-from/extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+   * Optional **Specify where the rule is applied**: If you want the rule to apply only to a subset of your environment, select  **Add condition** and provide the resource attributes that should be used to identify that part of the environment (for example, `dt.entity.process_group`, `aws.region`). For details, see Enrich ingested data with Dynatrace-specific fields.
 4. Select **Create**.
 
 You can edit, disable, enable, or remove rules at any time.
@@ -78,4 +78,4 @@ You can edit, disable, enable, or remove rules at any time.
 
 ## Related topics
 
-* [Application Security FAQ](../../faq.md "Frequently asked questions about Dynatrace Application Security.")
+* Application Security FAQ

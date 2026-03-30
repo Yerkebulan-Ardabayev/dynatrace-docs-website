@@ -13,7 +13,7 @@ changelog:
 
 ---
 
-Мы рекомендуем [потоковую передачу журналов Kubernetes с помощью модуля журналов Dynatrace](lma-logs-from-kubernetes.md "Dynatrace поддерживает сбор данных журналов из систем оркестрации контейнеров Kubernetes через модуль журналов OneAgent или модуль журналов Kubernetes.") для загрузки журналов, так как она обеспечивает улучшенное обнаружение журналов, упрощённую настройку и лучшую поддержку сред Kubernetes.
+Мы рекомендуем потоковую передачу журналов Kubernetes с помощью модуля журналов Dynatrace для загрузки журналов, так как она обеспечивает улучшенное обнаружение журналов, упрощённую настройку и лучшую поддержку сред Kubernetes.
 
 На этой странице приведены инструкции по развёртыванию и настройке Fluent Bit в вашей среде Kubernetes для сбора журналов.
 
@@ -494,7 +494,7 @@ changelog:
 
    fieldPath: status.hostIP
    ```
-2. Получите [API-токен Dynatrace](../../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с областью действия `logs.ingest` (Ingest Logs) для переменной окружения `DT_INGEST_TOKEN`.
+2. Получите API-токен Dynatrace с областью действия `logs.ingest` (Ingest Logs) для переменной окружения `DT_INGEST_TOKEN`.
 3. Обновите переменные окружения `K8S_CLUSTER_NAME`, `DT_INGEST_HOST` и `DT_INGEST_TOKEN` в файле `values.yaml`. Используйте то же имя кластера, которое вы настроили в Dynatrace для `K8S_CLUSTER_NAME`, и укажите вашу конечную точку SaaS или Managed в качестве `DT_INGEST_HOST`.
 4. Необязательно Адаптируйте раздел фильтров в файле `values.yaml` для нацеливания на определённые пространства имён или поды.
 5. Необязательно Убедитесь, что конфиденциальная информация в журналах удалена или замаскирована.
@@ -531,7 +531,7 @@ changelog:
 
 ## Устранение неполадок
 
-Посетите [Устранение неполадок с журналами, загруженными через Fluent Bit](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718) в сообществе Dynatrace, а также см. [Устранение неполадок управления и анализа журналов](../../lma-troubleshooting.md "Устранение проблем, связанных с настройкой и конфигурацией управления и анализа журналов.").
+Посетите [Устранение неполадок с журналами, загруженными через Fluent Bit](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718) в сообществе Dynatrace, а также см. Устранение неполадок управления и анализа журналов.
 
 ### Проверка работы подов Fluent Bit
 
@@ -625,4 +625,4 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 
 ## Связанные темы
 
-* [Потоковая передача журналов в Dynatrace с помощью Fluent Bit](../lma-stream-logs-with-fluent-bit.md "Интеграция Fluent Bit для потоковой передачи журналов в Dynatrace.")
+* Потоковая передача журналов в Dynatrace с помощью Fluent Bit

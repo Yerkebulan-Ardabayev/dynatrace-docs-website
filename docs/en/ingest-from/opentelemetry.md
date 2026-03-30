@@ -69,8 +69,8 @@ Licensing for OpenTelemetry data is fully integrated into the Dynatrace Platform
 The Dynatrace Semantic Dictionary provides standardized naming conventions for metrics, logs, and spans.
 Using these conventions ensures optimal integration with Dynatrace analytics capabilities.
 
-Learn more about the Semantic Dictionary at [Semantic Dictionary](../semantic-dictionary.md "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.").
+Learn more about the Semantic Dictionary at Semantic Dictionary.
 
 ## Related topics
 
-* [Use OneAgent with OpenTelemetry data](dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel.md "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.")
+* Use OneAgent with OpenTelemetry data

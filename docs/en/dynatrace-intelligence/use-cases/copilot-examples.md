@@ -34,6 +34,6 @@ See the selected pairs to understand what kind of DQL output you can expect from
 
 ## Related topics
 
-* [Dynatrace Intelligence generative AI FAQ](../../../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
-* [Query with natural language](../copilot/quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
-* [Dynatrace Intelligence generative AI - Tips for writing better prompts](../copilot/quick-analysis-copilot-dql/copilot-tips.md "Learn best practices for writing more accurate prompts.")
+* Dynatrace Intelligence generative AI FAQ
+* Query with natural language
+* Dynatrace Intelligence generative AI - Tips for writing better prompts

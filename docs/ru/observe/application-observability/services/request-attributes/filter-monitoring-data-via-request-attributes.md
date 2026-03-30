@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:23:07.407482
 * Чтобы проверить значения атрибута запроса, разверните его строку.
 
   Выбрав значение, вы можете отфильтровать страницу по запросам, содержащим указанное значение для выбранного атрибута запроса.
-* Применённый фильтр по атрибуту запроса или значению атрибута запроса сохраняется в дальнейших опциях анализа, таких как [**Service flow**](../../services-classic/service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") и [**Multidimensional analysis**](../../multidimensional-analysis.md "Configure a multidimensional analysis view and save it as a calculated metric.").
+* Применённый фильтр по атрибуту запроса или значению атрибута запроса сохраняется в дальнейших опциях анализа, таких как **Service flow** и **Multidimensional analysis**.
 
   Пример
 
@@ -30,11 +30,11 @@ scraped: 2026-03-06T21:23:07.407482
   Нажмите **Create analysis view**, чтобы визуализировать пользовательское представление многомерного анализа, отфильтрованное по выбранному значению атрибута запроса.
 
   ![Multidimensional analysis filtered by request attribute value](https://dt-cdn.net/images/request-attribute-filter-2-1423-91835f8d9f.png)
-* Для фильтрации [пользовательских графиков](../../../../analyze-explore-automate/dashboards-classic/dashboards-upgrade.md "Upgrade your Dynatrace custom charts to Data Explorer visualizations now.") по атрибуту запроса или значению атрибута запроса создайте [пользовательскую метрику](../calculated-service-metric.md "Learn how to create a calculated metric based on web requests.") на основе этих условий.
+* Для фильтрации пользовательских графиков по атрибуту запроса или значению атрибута запроса создайте пользовательскую метрику на основе этих условий.
 
   Без пользовательской метрики, если атрибут запроса обнаружен для сервиса, на пользовательских графиках отображаются все точки данных для метрики сервиса.
 
 ## Связанные темы
 
-* [Захват атрибутов запроса на основе данных веб-запроса](capture-request-attributes-based-on-web-request-data.md "Create request attributes based on web request data.")
-* [Захват атрибутов запроса на основе аргументов методов](capture-request-attributes-based-on-method-arguments.md "Learn how to create request attributes based on Java, .NET, or PHP method arguments and how to use them on the serviceâs overview page. Also find out how you can aggregate the captured values of request attributes as well as how you can access objects, in case the value to be captured is a complex object.")
+* Захват атрибутов запроса на основе данных веб-запроса
+* Захват атрибутов запроса на основе аргументов методов

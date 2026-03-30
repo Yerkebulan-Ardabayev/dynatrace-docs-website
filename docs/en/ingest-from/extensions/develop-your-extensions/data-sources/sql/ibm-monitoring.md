@@ -272,9 +272,9 @@ Enable this option when connecting to databases using custom certificates.
 
 ### Scope
 
-Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](../../sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see Sign extension.
 
-The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](../../../../dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
+The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see ActiveGate group.
 
 Use the following format when defining the ActiveGate group:
 

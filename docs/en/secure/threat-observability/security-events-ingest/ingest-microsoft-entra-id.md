@@ -21,14 +21,14 @@ In the following, you'll learn how to ingest sign-in logs from your [Microsoft E
 
 ### Use cases
 
-With the ingested data, you can leverage Dynatrace platform to monitor your Microsoft Entra ID sign-in activity and access to business-critical organization applications, spotting anomalies and staying ahead of potential threats. For details, see [Monitor suspicious sign-in activity with Dynatrace](../../use-cases/monitor-sign-in-activity.md "Analyze suspicious and malicious sign-in behaviors with Dynatrace.").
+With the ingested data, you can leverage Dynatrace platform to monitor your Microsoft Entra ID sign-in activity and access to business-critical organization applications, spotting anomalies and staying ahead of potential threats. For details, see Monitor suspicious sign-in activity with Dynatrace.
 
 ### Requirements
 
 * Enable Entra ID sign-in logs forwarding to Dynatrace via either of these options:
 
-  + **Option 1**: [Azure log forwarding](../../../ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure.md "Use Azure log forwarding to ingest Azure logs.")
-  + **Option 2**: [Azure Native Dynatrace Service](../../../ingest-from/microsoft-azure-services/azure-platform/azure-native-integration.md "Set and configure your Dynatrace SaaS environment using Azure Marketplace.")
+  + **Option 1**: Azure log forwarding
+  + **Option 2**: Azure Native Dynatrace Service
 * Permissions:
 
   + To query ingested logs: `storage:logs:read`.
@@ -83,8 +83,8 @@ AND isNotNull(authentication.is_multifactor)
 
 There are two ways to enable Entra ID sign-in logs forwarding to Dynatrace:
 
-* **Option 1**: Via [Azure log forwarding](../../../ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure.md "Use Azure log forwarding to ingest Azure logs.")
-* **Option 2**: Via [Azure Native Dynatrace Service](../../../ingest-from/microsoft-azure-services/azure-platform/azure-native-integration.md "Set and configure your Dynatrace SaaS environment using Azure Marketplace.")
+* **Option 1**: Via Azure log forwarding
+* **Option 2**: Via Azure Native Dynatrace Service
 
 See below for details.
 
@@ -97,12 +97,12 @@ Via Azure Native Dynatrace Service
 1. Logs are ingested into Dynatrace
 
 1. Microsoft Entra ID continuously exports sign-in logs to [Azure Event Hubsï»¿](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about).
-2. An [Azure Functionï»¿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview?pivots=programming-language-csharp) app pre-processes the logs and sends them to Dynatrace, taking advantage of the [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") dedicated [log ingest endpoint](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+2. An [Azure Functionï»¿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview?pivots=programming-language-csharp) app pre-processes the logs and sends them to Dynatrace, taking advantage of the OpenPipeline dedicated log ingest endpoint.
 
 2. Logs are processed and stored in Grail
 
-1. The fetched data is mapped to the [Dynatrace Semantic Dictionary](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.").
-2. Data is stored in [Grail](../../../platform/grail.md "Insights on what and how you can query Dynatrace data.") in a unified format, in a default bucket called `default_logs`. For details, see [Built-in Grail buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
+1. The fetched data is mapped to the Dynatrace Semantic Dictionary.
+2. Data is stored in Grail in a unified format, in a default bucket called `default_logs`. For details, see [Built-in Grail buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
 
 ![mechanism2](https://dt-cdn.net/images/image-20250508-154902-2731-fc140d187d.png)
 
@@ -112,15 +112,15 @@ Microsoft Entra ID sign-in logs are collected, processed, and sent to Dynatrace 
 
 2. Logs are processed and stored in Grail
 
-1. The fetched data is mapped to the [Dynatrace Semantic Dictionary](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.").
-2. Data is stored in [Grail](../../../platform/grail.md "Insights on what and how you can query Dynatrace data.") in a unified format, in a default bucket called `default_logs`. For details, see [Built-in Grail buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
+1. The fetched data is mapped to the Dynatrace Semantic Dictionary.
+2. Data is stored in Grail in a unified format, in a default bucket called `default_logs`. For details, see [Built-in Grail buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see Events powered by Grail.
 
 ## Related topics
 
-* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Security events](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")
+* OpenPipeline
+* Dynatrace Query Language
+* Security events

@@ -135,4 +135,4 @@ scraped: 2026-03-06T21:28:23.371162
 
 ## Связанные темы
 
-* [Обработка логов с OpenPipeline](../lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.")
+* Обработка логов с OpenPipeline

@@ -17,10 +17,10 @@ Dynatrace Pattern Language (DPL) is a pattern language that allows you to descri
 
 Use DPL to:
 
-* Parse a record field into multiple output fields with the [DQL parse command](dynatrace-query-language/commands/extraction-and-parsing-commands.md#parse "DQL extraction commands").
-* Reshape incoming data for better understanding, analysis, or further processing in [Log processing](../../../ru/analyze-explore-automate/logs/lma-log-processing.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.").
+* Parse a record field into multiple output fields with the DQL parse command.
+* Reshape incoming data for better understanding, analysis, or further processing in Log processing.
 
-For instant feedback on the effectiveness and coverage of your patterns for your specific use case, use [DPL Architect](../../../ru/platform/grail/dynatrace-pattern-language/dpl-architect.md "Extract fields with Dynatrace Pattern Language Architect.").
+For instant feedback on the effectiveness and coverage of your patterns for your specific use case, use DPL Architect.
 
 ## Pattern Structure
 
@@ -51,13 +51,13 @@ IPADDR:ip //followed by IPv4 or IPv6 address, extracted as a new field, `ip`
 EOL       //line is terminated with line feed character
 ```
 
-With [DPL Architect](../../../ru/platform/grail/dynatrace-pattern-language/dpl-architect.md "Extract fields with Dynatrace Pattern Language Architect."), you can use [preset patterns](../../../ru/platform/grail/dynatrace-pattern-language/dpl-architect.md#preset-patterns "Extract fields with Dynatrace Pattern Language Architect.") for the most popular technologies.
+With DPL Architect, you can use [preset patterns](../../../ru/platform/grail/dynatrace-pattern-language/dpl-architect.md#preset-patterns "Extract fields with Dynatrace Pattern Language Architect.") for the most popular technologies.
 
 ## Matching vs Parsing
 
 You don't necessarily need all data elements in the input data for analysis. For instance, field separators or end-of-record markers in a log line are useful only for parsing, but we don't need them when we run the queries. All matchers in a defined pattern must match, but only a subset of them may also extract (parse) data.
 
-A matcher will extract data only when it has been assigned an [export name](dynatrace-pattern-language/log-processing-modifiers.md#exportname "Explore DPL syntax for optional controlling elements (modifiers).") - this is an arbitrary name of your choice, which becomes the name of the field you use in query statements.
+A matcher will extract data only when it has been assigned an export name.") - this is an arbitrary name of your choice, which becomes the name of the field you use in query statements.
 
 In the following example, the pattern has:
 
@@ -68,27 +68,27 @@ In the following example, the pattern has:
 
 ## Matcher structure
 
-A DPL pattern consists of one or more matcher expressions. They can be separated by whitespace or commas or newlines. For a handy reference guide to all matchers, see the [DPL Grammar page](dynatrace-pattern-language/log-processing-grammar.md "Complete grammar list of Dynatrace Pattern Language (DPL) syntax.").
+A DPL pattern consists of one or more matcher expressions. They can be separated by whitespace or commas or newlines. For a handy reference guide to all matchers, see the DPL Grammar page syntax.").
 
 ### Matcher types
 
 In general, a matcher expression can be any of the following:
 
 * Built-in matchers for many frequently used data types (numeric, time, network, and so on)
-* [literal expressions](dynatrace-pattern-language/log-processing-literal-expression.md "Explore DPL syntax for handling literal expressions.")
-* [character groups](dynatrace-pattern-language/log-processing-lines-strings.md "Explore DPL syntax for handling lines and strings."), which are arbitrary set of characters to be matched (Regular Expression compatible)
-* [Reference to another pattern expression](dynatrace-pattern-language/log-processing-macros.md "Explore DPL syntax for creating a series of matcher expressions (subpatterns)."), to facilitate building complex patterns in a modular way
+* literal expressions
+* character groups, which are arbitrary set of characters to be matched (Regular Expression compatible)
+* Reference to another pattern expression."), to facilitate building complex patterns in a modular way
 
 ### Matcher grouping
 
 Matcher expressions can be grouped:
 
-* [sequence group](dynatrace-pattern-language/log-processing-sequence-group.md "Explore DPL syntax for sequence group matching where all its members must match.")âdefines an ordered sequence of matchers
-* [alternatives group](dynatrace-pattern-language/log-processing-alternatives-group.md "Explore DPL syntax for Alternatives group.")âdefines a list of matchers to choose from
-* [array](dynatrace-pattern-language/log-processing-array.md "The DPL ARRAY allows parsing repeated sequences of variable number data elements, specified by a pattern supplied as an argument.")âto parse repeated data elements
-* [structure](dynatrace-pattern-language/log-processing-structure.md "Explore DPL syntax for structuring data.")âto capture parsed data as composite type
-* [enum group](dynatrace-pattern-language/log-processing-enum.md "The DPL Enum constructor allows matching for a set of predefined strings and converts them into respectively assigned integer values.")âto match strings to numeric values
-* [JSON](dynatrace-pattern-language/log-processing-json-object.md "Explore DPL syntax for handling JSON Objects.")âto parse JSON structures
+* sequence groupâdefines an ordered sequence of matchers
+* alternatives groupâdefines a list of matchers to choose from
+* arrayâto parse repeated data elements
+* structureâto capture parsed data as composite type
+* enum groupâto match strings to numeric values
+* JSONâto parse JSON structures
 
 ### Matcher Expression Syntax
 
@@ -104,13 +104,13 @@ Note that whitespace characters and newlines are allowed between the elements. P
 
 Matcher expressions have `operators`:
 
-* Some matchers allow [configuration](dynatrace-pattern-language/log-processing-modifiers.md "Explore DPL syntax for optional controlling elements (modifiers).") specifying their behavior. For instance, a timestamp needs an expected format definition.
-* Most matchers and groupings can be added with a [quantifier](dynatrace-pattern-language/log-processing-modifiers.md "Explore DPL syntax for optional controlling elements (modifiers).") to tell the engine how many times it should try to match.
-* All matchers and groupings can be declared to be [optional](dynatrace-pattern-language/log-processing-modifiers.md "Explore DPL syntax for optional controlling elements (modifiers)."). If the element in the expected position is missing, the engine outputs NULL to the resultset and continues with the next matcher in the expression.
-* All matchers and groupings can be assigned an [export name](dynatrace-pattern-language/log-processing-modifiers.md "Explore DPL syntax for optional controlling elements (modifiers)."), which is the name of the field exposed to the query layer.
+* Some matchers allow configuration.") specifying their behavior. For instance, a timestamp needs an expected format definition.
+* Most matchers and groupings can be added with a quantifier.") to tell the engine how many times it should try to match.
+* All matchers and groupings can be declared to be optional."). If the element in the expected position is missing, the engine outputs NULL to the resultset and continues with the next matcher in the expression.
+* All matchers and groupings can be assigned an export name."), which is the name of the field exposed to the query layer.
 
   The sole purpose of pattern matching is to make data elements available for the query engine. However, not all matched elements are needed for queries (such as field separators in tabulated files), so an export name is a mechanism for the user to declare which data elements are exposed for queries (at the same time providing a name for the query fields). A matcher without an export name still does its job matching the pattern, but it's not visible in queries.
-* All matchers and groupings can ["look around"](dynatrace-pattern-language/log-processing-modifiers.md "Explore DPL syntax for optional controlling elements (modifiers).") (backward or forward), mainly to enable decision-making (conditional branching).
+* All matchers and groupings can "look around".") (backward or forward), mainly to enable decision-making (conditional branching).
 
 ## Example
 
@@ -163,7 +163,7 @@ The pattern matching engine tries to apply the pattern by utilizing matchers in 
 
 Next, the engine finds the byte to be a comma. This does not match with an integer, so the `INT:seq` matcher is completed by converting `1` to an integer and the next matcher in the pattern is selected: `','`. The engine tries it for a current position of data and finds a match.
 
-So the data pointer is moved on to the next byte (pointing to the first letter of `bob`). As the constant string matcher contained just one character, the matcher is considered complete and the engine takes the next one in the pattern: `[a-zA-Z0-9]*:uname`. The [quantifier](dynatrace-pattern-language/log-processing-modifiers.md "Explore DPL syntax for optional controlling elements (modifiers).") `*` forces `[a-zA-Z0-9]*:uname` to consume a variable number of bytes (zero or more), so it keeps matching until it finds a byte not matching its defined characters. This happens at the second comma (just after `bob`), where the engine considers the `[a-zA-Z0-9]*:uname` matcher complete and takes the next one: `','`. Again, it tries to match it to the byte at the current position and succeeds.
+So the data pointer is moved on to the next byte (pointing to the first letter of `bob`). As the constant string matcher contained just one character, the matcher is considered complete and the engine takes the next one in the pattern: `[a-zA-Z0-9]*:uname`. The quantifier.") `*` forces `[a-zA-Z0-9]*:uname` to consume a variable number of bytes (zero or more), so it keeps matching until it finds a byte not matching its defined characters. This happens at the second comma (just after `bob`), where the engine considers the `[a-zA-Z0-9]*:uname` matcher complete and takes the next one: `','`. Again, it tries to match it to the byte at the current position and succeeds.
 
 The data pointer is moved to the next byte, pointing to the beginning of `192.168.1.1`. As `','` is completed, the engine takes `IPV4ADDR:user_ip`. Trying it from the current position, a match is found and the data pointer is moved forward 11 bytes, now pointing to a newline character. The engine finds a match for it using the last matcher in the pattern: `[\n]`.
 
@@ -179,4 +179,4 @@ If the engine encounters data for which it is unable to find a match, it resets 
 
 ## Related topics
 
-* [Log processing (Logs Classic)](../../../ru/analyze-explore-automate/log-monitoring/log-processing.md "Create log processing rules that reshape your incoming log data for better analysis or further processing.")
+* Log processing (Logs Classic)

@@ -30,14 +30,14 @@ Purple bars above the availability or performance timelines indicate maintenance
 
 ![HTTP details with maintenance window](https://dt-cdn.net/images/httpdetailsmw1-1889-5247b78e7d.png)
 
-* Whether or not you see problems and receive alert notifications during maintenance windows depends on how you [configure the maintenance windows](../../../../analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window.md "Create maintenance windows and define their scope.").
+* Whether or not you see problems and receive alert notifications during maintenance windows depends on how you configure the maintenance windows.
 * [Maintenance windows may be excluded from availability calculations](../general-information/synthetic-calculations.md#m-windows-availability "Understand Synthetic Monitoring metric calculations.") by applying a global setting.
 
 ## Availability
 
 The availability infographics at the top of the page display the monitor's availability for the selected timeframe, with details of downtime and affected locations, if any. Outage (downtime) duration and affected locations infographics are displayed if the monitor is down (unavailable) at one or more locations. The number of affected locations is also displayed if there's no data from any locations for any reason.
 
-Note that a monitor can be down at one or all locations even if no [outage thresholds (global or local)](../http-monitors-classic/configure-http-monitors-classic.md#outage-handling "Learn about configuring HTTP monitors.") have been set up. The outage duration is the sum of all downtimes in the selected timeframe, not counting overlapping downtimes. See [Synthetic calculations](../general-information/synthetic-calculations.md "Understand Synthetic Monitoring metric calculations.") for details on how availability and downtime are calculated.
+Note that a monitor can be down at one or all locations even if no outage thresholds (global or local) have been set up. The outage duration is the sum of all downtimes in the selected timeframe, not counting overlapping downtimes. See Synthetic calculations for details on how availability and downtime are calculated.
 
 The **Availability** card shows overall availability across all monitor locations, with annotations for global/local outages and global/local missing data (as when the monitor is disabled).
 
@@ -57,17 +57,17 @@ The **Performance** card shows trend lines for minimum and maximum response time
 
 Optionally, view trend lines for the average sum of all requests **Response time by location** or average **Response time by request** across all locations.
 
-If the monitor violates a [performance threshold](../http-monitors-classic/configure-http-monitors-classic.md#performance-thresholds "Learn about configuring HTTP monitors."), whether for the sum of all requests or an individual request, a solid red line appears above the performance graph for the problem duration. Additionally, any threshold for the sum of all requests appears as a dotted red line. Select the solid red bar to display a link to the problem overview page.
+If the monitor violates a performance threshold, whether for the sum of all requests or an individual request, a solid red line appears above the performance graph for the problem duration. Additionally, any threshold for the sum of all requests appears as a dotted red line. Select the solid red bar to display a link to the problem overview page.
 
 ![HTTP monitor performance problem](https://dt-cdn.net/images/httpdetailsperformanceviolation2-2217-2a18a384e0.png)
 
 ## Analyze execution details
 
-Select **Analyze execution details** at the top of the details page or **Analyze last failed execution** in the **Failed requests** card to view the most recent successful, failed, and [on-demand executions](../general-information/on-demand-executions.md "Execute synthetic monitors on demand from public or private locations") of the HTTP monitor per location in JSON format. Select [**Executions difference**](#filters) to view the color-coded difference between the last successful, failed, or on-demand executions.
+Select **Analyze execution details** at the top of the details page or **Analyze last failed execution** in the **Failed requests** card to view the most recent successful, failed, and on-demand executions of the HTTP monitor per location in JSON format. Select [**Executions difference**](#filters) to view the color-coded difference between the last successful, failed, or on-demand executions.
 
-Any response body and captured [HTTP metrics](../http-monitors-classic/http-monitor-metrics-classic.md "Learn about the performance metrics collected for HTTP monitors.") are also displayed along with the HTTP status code per request. If the monitor contains [credentials](../../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault.") sent in the request URL, HTTP header values, or request body, the JSON only displays the credential ID in the corresponding element. (This feature requires ActiveGate version 1.229.)
+Any response body and captured HTTP metrics are also displayed along with the HTTP status code per request. If the monitor contains credentials sent in the request URL, HTTP header values, or request body, the JSON only displays the credential ID in the corresponding element. (This feature requires ActiveGate version 1.229.)
 
-You can limit the display of sensitive information (such as credentials returned in the response body) in execution details by selecting **Do not store and display request and response bodies, header values, and peer certificate details in execution details** in [monitor settings](../http-monitors-classic/configure-http-monitors-classic.md "Learn about configuring HTTP monitors.").
+You can limit the display of sensitive information (such as credentials returned in the response body) in execution details by selecting **Do not store and display request and response bodies, header values, and peer certificate details in execution details** in monitor settings.
 
 You need to do this for each request you wish to limit the display of. Request and response bodies, values of request and response headers, and peer certificate details are then replaced by placeholder text.
 
@@ -77,7 +77,7 @@ For successful or failed executions, the tabs hold JSON data for all locations. 
 
 ![Download JSON and API link](https://dt-cdn.net/images/http-analyze-execution-download-1889-126037a9ff.png)
 
-The `customLogs` attribute displays the timestamp, log level, and message for each custom log line defined using the `api.info()`, `api.warn()`, `api.fail()`, or `api.error()` [scripting methods](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Learn how to apply pre and post scripts to your requests"). (This feature requires Dynatrace version 1.255+ on public locations and ActiveGate version 1.255+ on private locations.)
+The `customLogs` attribute displays the timestamp, log level, and message for each custom log line defined using the `api.info()`, `api.warn()`, `api.fail()`, or `api.error()` scripting methods. (This feature requires Dynatrace version 1.255+ on public locations and ActiveGate version 1.255+ on private locations.)
 
 ![customLogs attribute](https://dt-cdn.net/images/http-analyze-execution-customlogs-2182-b4164106c0.png)
 
@@ -109,7 +109,7 @@ To track such differences, you can **Show response size breakdown per location**
 
 ## HTTP requests
 
-An HTTP monitor can consist of one or multiple HTTP requests. The **HTTP requests** card gives you an overview of all executed requests, their order, name, request URL, and the HTTP method used. For each request, the **HTTP requests** card splits performance (**Response time**) by the following metrics (see more in [HTTP monitor metrics](../http-monitors-classic/http-monitor-metrics-classic.md "Learn about the performance metrics collected for HTTP monitors.")):
+An HTTP monitor can consist of one or multiple HTTP requests. The **HTTP requests** card gives you an overview of all executed requests, their order, name, request URL, and the HTTP method used. For each request, the **HTTP requests** card splits performance (**Response time**) by the following metrics (see more in HTTP monitor metrics):
 
 * **DNS lookup time**
 * **TCP connect time**
@@ -125,7 +125,7 @@ Expand a request from the list to view all performance metrics in one chart. Sel
 
 The **Status codes** tab shows the timeline of returned HTTP status codes for a particular request. (The [HTTP status codes card](#status-codes) shows the returned HTTP status codes for your HTTP monitor as a whole.)
 
-When a request is in violation of its [event-specific performance threshold](../http-monitors-classic/configure-http-monitors-classic.md#performance-thresholds "Learn about configuring HTTP monitors."), it is highlighted in red. Expand the request to see the performance timings and the threshold violated. A solid red line appears above the stacked graph for the problem duration; the request threshold appears as a dotted red line. Select the solid red bar to display a link to the problem overview page.
+When a request is in violation of its event-specific performance threshold, it is highlighted in red. Expand the request to see the performance timings and the threshold violated. A solid red line appears above the stacked graph for the problem duration; the request threshold appears as a dotted red line. Select the solid red bar to display a link to the problem overview page.
 
 ![HTTP request performance violation](https://dt-cdn.net/images/httpdetailsrequestviolation2-1096-dbe95d7ef3.png)
 
@@ -143,21 +143,21 @@ The **Services** card displays any monitored services that are automatically ass
 
 ## Monitored applications
 
-HTTP monitors enable you to monitor internal resources and API endpoints, for example, for key backend APIs for login or search operations used by your mobile apps. You can link such HTTP monitors to the monitored mobile, web, or custom applications. Select **Assign monitor to application**. (You can link an application directly in [monitor settings](../http-monitors-classic/configure-http-monitors-classic.md#setup "Learn about configuring HTTP monitors.").)
+HTTP monitors enable you to monitor internal resources and API endpoints, for example, for key backend APIs for login or search operations used by your mobile apps. You can link such HTTP monitors to the monitored mobile, web, or custom applications. Select **Assign monitor to application**. (You can link an application directly in monitor settings.)
 
 ![Link an application](https://dt-cdn.net/images/httpdetailslinkapp2-1102-1f74517f99.png)
 
-If [Real User Monitoring (RUM)](../../rum-concepts/rum-overview.md "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.") is enabled for the applications your synthetic monitor runs against, Dynatrace automatically links the RUM applications to the monitor, and the **Monitored applications** card is displayed. You can see the key metrics of the application and jump directly to RUM data from here.
+If Real User Monitoring (RUM) is enabled for the applications your synthetic monitor runs against, Dynatrace automatically links the RUM applications to the monitor, and the **Monitored applications** card is displayed. You can see the key metrics of the application and jump directly to RUM data from here.
 
 After you've linked an HTTP monitor to an application, synthetic monitor availability is displayed directly in application details, and Davis automatically associates detected synthetic monitoring problems with the linked application.
 
-Note that you cannot block Synthetic Monitoring traffic for RUM applications by [excluding bots, spiders, or the IP addresses of Synthetic locations](../../web-applications/additional-configuration/exclude-browsers-robots-and-spiders-from-monitoring.md "Disable Real User Monitoring for certain IP addresses, browsers, bots, and spiders.").
+Note that you cannot block Synthetic Monitoring traffic for RUM applications by excluding bots, spiders, or the IP addresses of Synthetic locations.
 
 ## Problems
 
-The **Problems** card shows performance (threshold violation) and availability (local or global outage) problems when you enable the respective thresholds in [monitor settings](../http-monitors-classic/configure-http-monitors-classic.md "Learn about configuring HTTP monitors."). Expand the card to see active as well as resolved problems for the selected timeframe.
+The **Problems** card shows performance (threshold violation) and availability (local or global outage) problems when you enable the respective thresholds in monitor settings. Expand the card to see active as well as resolved problems for the selected timeframe.
 
-See [Configure HTTP monitors](../http-monitors-classic/configure-http-monitors-classic.md "Learn about configuring HTTP monitors.") for information on how to define performance and availability thresholds. See [Synthetic calculations](../general-information/synthetic-calculations.md "Understand Synthetic Monitoring metric calculations.") for how availability and performance are calculated and how problems are generated and dismissed. See the [Synthetic alerting overview](synthetic-alerting-overview.md "Learn about synthetic alerting concepts and workflow.") for alerting workflow and concepts, including setting up notification profiles and templates.
+See Configure HTTP monitors for information on how to define performance and availability thresholds. See Synthetic calculations for how availability and performance are calculated and how problems are generated and dismissed. See the Synthetic alerting overview for alerting workflow and concepts, including setting up notification profiles and templates.
 
 There are three main problem types for HTTP monitors:
 
@@ -186,7 +186,7 @@ Hover over a time slot in the event timeline to see the type and number of event
 
 Select an event type, for example, **HTTP monitor location slowdown**, to see the list of events. There is always one slowdown event created per location where your monitor violates request- or monitor-level performance thresholds. Select an individual event to see details.
 
-The [`api.fail()` method](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#end "Learn how to apply pre and post scripts to your requests") can be used to define a custom **Failure message** that appears in the Events card in case of failure. Custom log messages also appear in the `customLogs` attribute in [HTTP monitor execution details](#analyze-last-execution).
+The `api.fail()` method can be used to define a custom **Failure message** that appears in the Events card in case of failure. Custom log messages also appear in the `customLogs` attribute in [HTTP monitor execution details](#analyze-last-execution).
 
 ![Event type selected](https://dt-cdn.net/images/httpdetailseventtype2-1114-d6b38983d6.png)
 
@@ -194,7 +194,7 @@ The [`api.fail()` method](../http-monitors-classic/pre-and-post-scripting-for-ht
 
 The **Failed requests** card shows the count of every failed request in your HTTP monitor executions within the selected timeframe, broken down by request name and error code. The timeline graph shows the count of error codesâhover over any time slot to see the count of different status codes in that interval. Select an error code in the legend to hide/show it in the graph.
 
-Select a request name to edit it in [monitor settings](../http-monitors-classic/configure-http-monitors-classic.md "Learn about configuring HTTP monitors."). Select [**Analyze last failed execution**](#analyze-last-execution) to see the most recent failed and successful executions in JSON format.
+Select a request name to edit it in monitor settings. Select [**Analyze last failed execution**](#analyze-last-execution) to see the most recent failed and successful executions in JSON format.
 
 ![Failed requests card](https://dt-cdn.net/images/httpdetailsfailedrequests-945-1510d2a6e1.png)
 
@@ -210,4 +210,4 @@ Hover over any time slot in the timeline to see the count of different status co
 
 ## Related topics
 
-* [Monitored entities API](../../../../dynatrace-api/environment-api/entity-v2.md "Learn about the Dynatrace Monitored entities API.")
+* Monitored entities API

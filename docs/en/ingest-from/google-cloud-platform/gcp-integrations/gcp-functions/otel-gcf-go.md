@@ -12,9 +12,9 @@ scraped: 2026-03-06T21:30:26.919461
 * 9-min read
 * Updated on Nov 13, 2023
 
-This guide shows how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace. To learn more about how Dynatrace works with OpenTelemetry, see [OpenTelemetry and Dynatrace](../../../opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
+This guide shows how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace. To learn more about how Dynatrace works with OpenTelemetry, see OpenTelemetry and Dynatrace into Dynatrace.").
 
-To learn about how to monitor Google Cloud Functions with Dynatrace-enhanced OpenTelemetry traces, see [Integrate on Google Cloud Functions GoLang](opentelemetry-on-gcf-go.md "Monitor Google Cloud Functions with OpenTelemetry for Go and Dynatrace.").
+To learn about how to monitor Google Cloud Functions with Dynatrace-enhanced OpenTelemetry traces, see Integrate on Google Cloud Functions GoLang.
 
 ## Prerequisites
 

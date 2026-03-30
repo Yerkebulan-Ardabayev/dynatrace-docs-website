@@ -32,14 +32,14 @@ Terraform CLI предлагает широкий набор команд для
 
 ### Предварительные требования
 
-* [Установите Terraform CLI и настройте Configuration as Code через Terraform](terraform-cli.md "Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform."), а также убедитесь, что он доступен в вашем `PATH`.
-* Создайте [токен платформы или OAuth-клиент](terraform-api-support-access-permission-handling.md "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.") с необходимыми правами доступа.
+* Установите Terraform CLI и настройте Configuration as Code через Terraform, а также убедитесь, что он доступен в вашем `PATH`.
+* Создайте токен платформы или OAuth-клиент с необходимыми правами доступа.
   Необходимые разрешения зависят от того, какие API вы используете.
-  Для получения дополнительной информации ознакомьтесь с документацией по API или [справочником политик IAM](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+  Для получения дополнительной информации ознакомьтесь с документацией по API или справочником политик IAM.
 
 ### Использование утилиты экспорта
 
-1. Определите переменные окружения для идентификации тенанта Dynatrace, из которого будет извлечена конфигурация, в соответствии с разделом [Поддержка API и управление правами доступа](terraform-api-support-access-permission-handling.md "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
+1. Определите переменные окружения для идентификации тенанта Dynatrace, из которого будет извлечена конфигурация, в соответствии с разделом Поддержка API и управление правами доступа.
 
    При необходимости задайте переменную окружения `DYNATRACE_TARGET_FOLDER` для указания выходного каталога (папки экспорта). Если переменная не задана, используется каталог по умолчанию `.configuration`.
 2. Перейдите к исполняемому файлу Dynatrace Terraform Provider в терминале. Этот исполняемый файл не является универсальным, таким как `terraform.exe` или `./terraform`.

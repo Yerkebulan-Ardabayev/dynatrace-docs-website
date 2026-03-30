@@ -55,7 +55,7 @@ fetch logs
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host** — открытие выбранного элемента в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   В общем, если для выбранного элемента есть рекомендованные приложения, меню предлагает прямые ссылки на эти приложения, а затем опцию **Open with** для выбора другого целевого приложения.
-* **Open with** — подробнее см. [Детализация и навигация](../drilldowns-and-navigation.md "Детализация из Dashboards и Notebooks с использованием ссылок на основе намерений или URL.").
+* **Open with** — подробнее см. Детализация и навигация.
 
 ## Заголовок
 

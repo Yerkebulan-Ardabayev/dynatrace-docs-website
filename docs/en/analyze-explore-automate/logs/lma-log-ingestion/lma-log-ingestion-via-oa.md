@@ -20,7 +20,7 @@ OneAgent is a recommended, powerful tool that automatically finds log sources fr
 
 ![log-oneagents](https://dt-cdn.net/images/log-oneagents-1980-8ae52ce287.png)
 
-See the [OneAgent for logs ingestion](../lma-use-cases/lma-oa-logs-ingest.md "Set up log monitoring using OneAgent to automatically discover and ingest logs from your hosts.") use case to learn how to set up log monitoring using OneAgent to automatically discover and ingest logs from your hosts.
+See the OneAgent for logs ingestion use case to learn how to set up log monitoring using OneAgent to automatically discover and ingest logs from your hosts.
 
 We recommend using OneAgent for logs, as it provides the following advantages:
 
@@ -36,18 +36,18 @@ Check out the OneAgent platform and capability [support matrix](../../../ingest-
 
 ## Log data autodiscovery
 
-OneAgent automatically detects log files, ensuring that relevant logs are collected and analyzed for all monitored processes. OneAgent scans the file system and applications running on the host to detect log files and sources and identifies log files. Access the [Log content autodiscovery](lma-log-ingestion-via-oa/lma-autodiscovery.md "Dynatrace automatically discovers all new log files that meet specific requirements.") page to learn about the autodiscovery process.
+OneAgent automatically detects log files, ensuring that relevant logs are collected and analyzed for all monitored processes. OneAgent scans the file system and applications running on the host to detect log files and sources and identifies log files. Access the Log content autodiscovery page to learn about the autodiscovery process.
 
-Once log sources are detected, OneAgent applies relevant log ingestion rules. These rules define how the logs should be collected, parsed, and forwarded to the Dynatrace monitoring platform. The autodetection includes [log rotation patterns](lma-log-ingestion-via-oa/lma-log-rotation-patterns.md "Dynatrace monitors rotation patterns for log files and ensures the completeness of the file reading process, even if OneAgent is temporarily switched off or the log source is unavailable.").
+Once log sources are detected, OneAgent applies relevant log ingestion rules. These rules define how the logs should be collected, parsed, and forwarded to the Dynatrace monitoring platform. The autodetection includes log rotation patterns.
 
-OneAgent autodetects logs from hosts, and collects logs from [Kubernetes](lma-log-ingestion-via-oa/lma-logs-from-kubernetes.md "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") container orchestration systems and from [Docker](lma-log-ingestion-via-oa/lma-logs-in-docker.md "Dynatrace supports the collection of log data from non-orchestrated Docker environments via OneAgent.") containers.
+OneAgent autodetects logs from hosts, and collects logs from Kubernetes container orchestration systems and from Docker containers.
 
 A OneAgent starts ingesting logs as soon as its log module reads a log file for the first time. The actual start time may be affected by ingestion intervals and how long it takes to propagate the configuration from the environment to the log module.
 
 ### OneAgent for host logs
 
 OneAgent simplifies log management by automatically decorating logs based on infrastructure and log source context, and enabling one-click trace enrichment for enhanced troubleshooting. Installation and central log ingestion rules setup in Dynatrace are all it takes to start monitoring logs. OneAgent also offers advanced features for scalable log management, including filtering, masking sensitive data, custom log source definition, log rotation pattern detection, and centralized configuration for easier lifecycle management.
-Learn more by accessing the [Log ingestion via OneAgent](lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.").
+Learn more by accessing the Log ingestion via OneAgent.
 
 Find below an example of ingested logs attributes.
 
@@ -96,7 +96,7 @@ Find below an example of ingested logs attributes.
 
 ### Kubernetes logs via OneAgent
 
-Read more about configuring log ingest from Kubernetes by accessing the [Stream Kubernetes logs with Dynatrace Log Module](lma-log-ingestion-via-oa/lma-logs-from-kubernetes.md "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") page.
+Read more about configuring log ingest from Kubernetes by accessing the Stream Kubernetes logs with Dynatrace Log Module page.
 
 Find below an example of ingested logs attributes.
 
@@ -229,7 +229,7 @@ Find below an example of ingested logs attributes.
 
 ## Custom log sources
 
-Many applications generate logs in formats or locations not covered by the default autodiscovery mechanism. You can add custom log sources when automatic detection does not recognize specific log files or when you need to monitor logs from applications not covered by default settings. Configure custom log sources if you encounter challenges with the rotation pattern or when the log file does not meet the detector's requirements. To learn more, see [Custom log source](lma-log-ingestion-via-oa/lma-custom-log-source.md "Configure custom log sources to manually add log data sources that have not been autodetected.").
+Many applications generate logs in formats or locations not covered by the default autodiscovery mechanism. You can add custom log sources when automatic detection does not recognize specific log files or when you need to monitor logs from applications not covered by default settings. Configure custom log sources if you encounter challenges with the rotation pattern or when the log file does not meet the detector's requirements. To learn more, see Custom log source.
 
 ## OneAgent log configuration flow
 
@@ -243,21 +243,21 @@ Required
 
 Setting up the log ingest rules is the most important step in the configuration process. The rules allow you to specify which automatically discovered and custom logs are ingested, filtered, and stored. The log ingest rules allow customization according to specified matchers, such as process group or log source file. This ensures that the logs ingested from various sources are properly managed and integrated into the Dynatrace log monitoring system. (includes automatically discovered and custom logs).
 
-You can review log sources detected by OneAgent on the **Host** or **Process** page in Dynatrace. For new tenants, some built-in rules are enabled by default. Learn more by accessing the [Log ingest rules](lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.") page.
+You can review log sources detected by OneAgent on the **Host** or **Process** page in Dynatrace. For new tenants, some built-in rules are enabled by default. Learn more by accessing the Log ingest rules page.
 
 The log ingest rules apply exclusively to OneAgent. These rules do not extend to other log collection mechanisms.
 
 ### Sensitive data
 
-You can set up OneAgent to mask any information that you consider to be sensitive so it doesn't reach Dynatrace in plain text. To learn about this configuration, see [Sensitive data masking in OneAgent](lma-log-ingestion-via-oa/lma-sensitive-data-masking.md "Mask sensitive information in your log data using Log Management and Analytics.").
+You can set up OneAgent to mask any information that you consider to be sensitive so it doesn't reach Dynatrace in plain text. To learn about this configuration, see Sensitive data masking in OneAgent.
 
 ### Timestamps
 
-Learn how OneAgent supports [timestamps](lma-log-ingestion-via-oa/lma-supported-timestamp-format.md "Supported timestamps for the latest version of Log Management and Analytics."), or you can optionally [configure a custom timestamp pattern](lma-log-ingestion-via-oa/lma-timestamp-configuration.md "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record.") specific to your case.
+Learn how OneAgent supports timestamps, or you can optionally configure a custom timestamp pattern specific to your case.
 
 ## OneAgent settings
 
-Dynatrace Log Monitoring uses the [OneAgent log module](../../../discover-dynatrace/get-started/glossary.md#glossary-oneagent-log-module "Get acquainted with Dynatrace terminology.") enabled by default with all OneAgent installations. While Log Monitoring does not require any specific configuration, you can modify some of the options available for the OneAgent log module.
+Dynatrace Log Monitoring uses the OneAgent log module enabled by default with all OneAgent installations. While Log Monitoring does not require any specific configuration, you can modify some of the options available for the OneAgent log module.
 
 ### Enable Log Monitoring with `oneagentctl`
 
@@ -299,15 +299,15 @@ If this setting is disabled at the global level, you can enable **Dynatrace Log 
 
 ## Log enrichment
 
-As an out of the box feature, OneAgent automatically decorates logs by adding topology context, maintaining trace information, and identifying severity levels. To learn more, see [Automatic log enrichment](lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.").
+As an out of the box feature, OneAgent automatically decorates logs by adding topology context, maintaining trace information, and identifying severity levels. To learn more, see Automatic log enrichment.
 
 ## Alternative to ingestion via OneAgent
 
 You can use the following alternatives to OneAgent for monitoring your log data:
 
-* [Log ingestion API](lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages."): Collect logs via API when unable to install OneAgent.
-* [Dynatrace Extensions](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions."): Use customizable add-ons to ingest logs and extend observability.
-* [Syslog](lma-log-ingestion-syslog.md "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages."): Stream, oversee and control log files from various system components.
+* Log ingestion API: Collect logs via API when unable to install OneAgent.
+* Dynatrace Extensions: Use customizable add-ons to ingest logs and extend observability.
+* Syslog: Stream, oversee and control log files from various system components.
 
 ## Recent past logs ingestion when enabling the log module
 
@@ -327,10 +327,10 @@ Log files whose last modification time is older than 7 days are not tracked by O
 
 ## Troubleshooting
 
-Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](../lma-troubleshooting.md "Fix issues related to the setup and configuration of Log Management and Analytics.").
+Visit Dynatrace Community for troubleshooting guides, as well as see Troubleshooting Log Management and Analytics.
 
 * [Why my logs are not visible in Dynatrace?ï»¿](https://community.dynatrace.com/t5/Troubleshooting/Why-my-logs-are-not-visible-in-Dynatrace/ta-p/242716)
 
 ## Related topics
 
-* [OneAgent for logs ingestion](../lma-use-cases/lma-oa-logs-ingest.md "Set up log monitoring using OneAgent to automatically discover and ingest logs from your hosts.")
+* OneAgent for logs ingestion

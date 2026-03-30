@@ -122,4 +122,4 @@ Only Dynatrace extensions can be elevated, while custom ones cannot. In case an 
 
 ## Related topics
 
-* [Develop your own Extensions](../develop-your-extensions.md "Develop your own Extensions in Dynatrace.")
+* Develop your own Extensions

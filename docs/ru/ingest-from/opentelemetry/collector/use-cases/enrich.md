@@ -25,10 +25,10 @@ scraped: 2026-03-06T21:26:31.410651
   + OpenTelemetry [Contrib](../../collector.md#collector-contrib "Узнайте о Dynatrace OTel Collector.")
   + [Пользовательская версия Builder](../../collector.md#collector-builder "Узнайте о Dynatrace OTel Collector.")
 * OneAgent, работающий на том же хосте, что и Collector, где OneAgent осуществляет мониторинг в режиме Full-Stack, Infrastructure или Foundation & Discovery.
-* [URL-адрес конечной точки API Dynatrace](../../otlp-api.md "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."), на которую должны экспортироваться данные, настроенный как системная переменная окружения
+* URL-адрес конечной точки API Dynatrace, на которую должны экспортироваться данные, настроенный как системная переменная окружения
 * [Токен API](../../otlp-api.md#authentication-export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа (требуется только для SaaS и ActiveGate), настроенный как системная переменная окружения
 
-См. разделы [Развёртывание Collector](../deployment.md "Как развернуть Dynatrace OTel Collector.") и [Настройка Collector](../configuration.md "Как настроить OpenTelemetry Collector.") для получения информации о настройке вашего Collector с приведённой ниже конфигурацией.
+См. разделы Развёртывание Collector и Настройка Collector для получения информации о настройке вашего Collector с приведённой ниже конфигурацией.
 
 ## Демонстрационная конфигурация
 

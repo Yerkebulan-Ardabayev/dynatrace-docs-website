@@ -9,14 +9,14 @@ scraped: 2026-03-05T21:40:40.325738
 
 API **Geographic regions - IP mapping headers** позволяет управлять конфигурацией сопоставления IP-адресов с географическими местоположениями. Ту же конфигурацию можно настроить в пользовательском интерфейсе Dynatrace: **Settings > Web and mobile monitoring > IP determination**.
 
-[### Просмотр конфигурации
+### Просмотр конфигурации
 
-Получите обзор сопоставлений IP-адресов.](geographic-regions-ip-header/get-configuration.md "Read the configuration of IP mapping headers via the Dynatrace API.")[### Обновление конфигурации
+Получите обзор сопоставлений IP-адресов.### Обновление конфигурации
 
-Обновите конфигурацию сопоставлений IP-адресов.](geographic-regions-ip-header/put-configuration.md "Update the configuration of IP mapping headers via the Dynatrace API.")
+Обновите конфигурацию сопоставлений IP-адресов.
 
 ## Связанные разделы
 
-* [Настройка определения IP-адресов для веб-приложений](../../../observe/digital-experience/web-applications/additional-configuration/customize-ip-address-detection-web.md "Change the way Dynatrace determines client IP addresses for your web applications.")
-* [Настройка определения IP-адресов для мобильных приложений](../../../observe/digital-experience/mobile-applications/additional-configuration/customize-ip-address-detection-mobile.md "Change the way Dynatrace determines client IP addresses for your mobile applications.")
-* [Настройка определения IP-адресов для пользовательских приложений](../../../observe/digital-experience/custom-applications/additional-configuration/customize-ip-address-detectio-custom.md "Change the way Dynatrace determines client IP addresses for your custom applications.")
+* Настройка определения IP-адресов для веб-приложений
+* Настройка определения IP-адресов для мобильных приложений
+* Настройка определения IP-адресов для пользовательских приложений

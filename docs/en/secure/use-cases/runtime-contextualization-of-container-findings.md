@@ -50,9 +50,9 @@ Our solution allows you to
 
 ## Prerequisites
 
-* [Set up Kubernetes observability with Dynatrace Operator](../../ingest-from/setup-on-k8s/deployment/other/classic-full-stack.md "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes")
-* [Ingest Amazon ECR vulnerability findings and scan events](../threat-observability/security-events-ingest/ingest-aws-ecr-data.md "Ingest Amazon ECR container image vulnerability findings and scan events and analyze them in Dynatrace.")
-* [Use Dynatrace release product/stage tags](../../deliver/release-monitoring/version-detection-strategies.md "Metadata for version detection in different technologies") for your containers
+* Set up Kubernetes observability with Dynatrace Operator
+* Ingest Amazon ECR vulnerability findings and scan events
+* Use Dynatrace release product/stage tags for your containers
 
 ## Get started
 
@@ -78,11 +78,11 @@ Example dashboard:
 
 3. Automate
 
-You can adjust our automation workflow samples to enrich and filter external container image vulnerability findings for runtime context. For details, see [Automate and orchestrate security findings](automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.").
+You can adjust our automation workflow samples to enrich and filter external container image vulnerability findings for runtime context. For details, see Automate and orchestrate security findings.
 
 Example query to get new critical container image vulnerabilities with a list of the affected container images and running containers:
 
-This query has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../threat-observability/migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This query has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the Grail security table migration guide.
 
 ```
 // The query has a rolling window of 7 days and the last 24hrs.

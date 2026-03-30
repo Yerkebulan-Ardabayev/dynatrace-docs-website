@@ -20,7 +20,7 @@ Workflows Email Problems
 
 In this use case, you set up a  workflow to alert your team in real time by emailing the details of a new problem to a specific ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") email recipient.
 
-* [Send email notifications for problems](../alerting-and-notifications/workflows-tutorial-problems-email.md "Learn how to send email notifications for problems using a simple workflow.")
+* Send email notifications for problems
 
 ### Send Slack messages for problems using simple workflow
 
@@ -28,7 +28,7 @@ Workflows Slack Connector Problems
 
 In this use case, you set up a  workflow to alert your team in real time by messaging the details of a new problem to a specific ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector") Slack channel.
 
-* [Send Slack notifications for problems](../alerting-and-notifications/workflows-tutorial-problems-slack.md "Learn how to send Slack notifications for problems using a simple workflow.")
+* Send Slack notifications for problems
 
 ### Detect threats in cloud-native environments
 
@@ -36,7 +36,7 @@ Threat Observability
 
 Set up a workflow to detect and respond to threats across dynamic cloud workloads. Automatically ingest security events, correlate them with runtime context, and trigger targeted actions based on severityâensuring fast, precise responses in cloud-native environments.
 
-* [Detect threats in cloud-native environments using workflows](../../secure/use-cases/detect-threats-cloud-native-workflows.md "Monitor and identify threats in your cloud-native environments with Dynatrace.")
+* Detect threats in cloud-native environments using workflows
 
 ### Automate and orchestrate security findings
 
@@ -44,7 +44,7 @@ Threat Observability
 
 Build a workflow that processes security findings from multiple sources. Filter, enrich, and route findings based on severity, type, or impacted entitiesâstreamlining how your team handles incoming data and enabling faster decision-making across the security pipeline.
 
-* [Automate and orchestrate security findings](../../secure/use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* Automate and orchestrate security findings
 
 ### Automated threat-alert triaging
 
@@ -52,7 +52,7 @@ Threat Observability
 
 Create a workflow that intelligently triages threat alerts. Prioritize and enrich incoming alerts to surface the most critical issues, reduce noise, and ensure your security team focuses on what truly demands attention.
 
-* [Automated threat-alert triaging](../../secure/use-cases/automated-threat-alert-triaging.md "Use case scenario for automating threat-alert triaging with Dynatrace.")
+* Automated threat-alert triaging
 
 ### Reduce security event storm
 
@@ -60,4 +60,4 @@ Threat Observability
 
 Design a workflow to manage high-volume AWS alerts by filtering out noise and surfacing only the critical events from relevant accounts. This helps your team stay focused, avoid alert fatigue, and act quickly on what matters most.
 
-* [CSPM Notification Automation](../../secure/use-cases/notification-automation.md "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.")
+* CSPM Notification Automation

@@ -147,7 +147,7 @@ fetch bizevents
 
 ## Aggregations over time
 
-DQL provides dedicated commands such as [makeTimeseries](commands/aggregation-commands.md#makeTimeseries "DQL aggregation commands") to aggregate a list of raw event records into a chartable timeseries. Let's observe the logs grouped by the log level and a 5-minute aggregation interval:
+DQL provides dedicated commands such as makeTimeseries to aggregate a list of raw event records into a chartable timeseries. Let's observe the logs grouped by the log level and a 5-minute aggregation interval:
 
 ```
 fetch logs
@@ -165,11 +165,11 @@ You can learn DQL through hands-on experience with interactive tutorials in the 
 
 ## Related topics
 
-* [Dynatrace Query Language](../dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [DQL compared to SQL and more](dql-comparison.md "See how DQL compares to other query languages.")
-* [DQL language reference](dql-reference.md "Dynatrace Query Language syntax reference.")
-* [DQL commands](commands.md "A list of DQL commands.")
-* [DQL functions](functions.md "A list of DQL functions.")
-* [DQL operators](operators.md "A list of DQL Operators.")
-* [DQL data types](data-types.md "A list of DQL data types.")
-* [DQL best practices](dql-best-practices.md "Best practices for using Dynatrace Query Language.")
+* Dynatrace Query Language
+* DQL compared to SQL and more
+* DQL language reference
+* DQL commands
+* DQL functions
+* DQL operators
+* DQL data types
+* DQL best practices

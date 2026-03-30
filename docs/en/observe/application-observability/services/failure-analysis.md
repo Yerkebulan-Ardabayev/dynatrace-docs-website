@@ -97,9 +97,9 @@ While the new **Failure Analysis** experience introduces significant improvement
 
 To deepen your understanding of failure detection and troubleshooting in Dynatrace, explore the following resources:
 
-* [Configure service failure detection](service-detection/service-detection-v1/configure-service-failure-detection.md "Discover which service error types Dynatrace automatically detects and learn how to adjust failure detection settings to meet your specific requirements.")
-* [Root cause analysis concepts](../../../dynatrace-intelligence/root-cause-analysis/concepts.md "Get acquainted with root cause analysis concepts.")
-* [Triage and investigate incidents in the Problems app](../../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* Configure service failure detection
+* Root cause analysis concepts
+* Triage and investigate incidents in the Problems app
 
 ### Join the conversation
 

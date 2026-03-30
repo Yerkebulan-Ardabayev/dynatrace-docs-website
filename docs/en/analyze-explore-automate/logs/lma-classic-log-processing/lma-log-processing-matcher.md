@@ -12,7 +12,7 @@ scraped: 2026-03-05T21:30:59.143327
 * 1-min read
 * Updated on Oct 15, 2025
 
-With [Dynatrace on Grail](../../../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), you can use [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") (DQL) functions and logical operators in matchers.
+With Dynatrace on Grail, you can use Dynatrace Query Language (DQL) functions and logical operators in matchers.
 
 The matcher filters the ingested data and reduces the scope of data processed by the rule that you create. You can use the matcher in log and event processing, log metrics, log events, and log buckets to:
 
@@ -140,7 +140,7 @@ Logical negation.
 
 ### Strict equality
 
-[Logical operator](../../../platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.") (`==`) indicating an exact match.
+Logical operator (`==`) indicating an exact match.
 
 Data types need to be identical. However, if the decimal value is `0`, floating numbers can be compared with integer data. For example, `1==1.0`  
 For strings, the search is case-sensitive.
@@ -163,8 +163,8 @@ matchesValue(process.technology, "nginx") and ( matchesPhrase(content, "error") 
 
 ## Reuse expressions
 
-All the matcher expressions used in either log events, metrics, processing or bucket configurations are valid DQL. That means you can also use these expressions together with DQL filter command, for example, in the [log viewer](../../log-monitoring/analyze-log-data/log-viewer.md "Learn how to use Dynatrace log viewer to analyze log data.").
+All the matcher expressions used in either log events, metrics, processing or bucket configurations are valid DQL. That means you can also use these expressions together with DQL filter command, for example, in the log viewer.
 
 ## Related topics
 
-* [Conversion to DQL for Logs](../logs-upgrade/lma-dql-conversion.md "Convert your current log monitoring rules to DQL.")
+* Conversion to DQL for Logs

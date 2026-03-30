@@ -7,7 +7,7 @@ scraped: 2026-03-06T21:14:27.302891
 # Обновление до Log Management and Analytics
 
 
-Log Management and Analytics -- это новейшее решение Dynatrace для мониторинга логов. С появлением Dynatrace Platform и [Grail](../../../platform/grail/dynatrace-grail.md "Grail -- это хранилище данных Dynatrace, разработанное специально для данных наблюдаемости и безопасности, и выступающее единым хранилищем для логов, метрик, трассировок, событий и многого другого.") мы рекомендуем вам обновиться до последней версии системы мониторинга логов. Если вы используете Dynatrace SaaS на AWS, ваша среда будет активирована для Log Management and Analytics на базе [Grail](../../../platform/grail/dynatrace-grail.md "Grail -- это хранилище данных Dynatrace, разработанное специально для данных наблюдаемости и безопасности, и выступающее единым хранилищем для логов, метрик, трассировок, событий и многого другого.") в рамках поэтапного развертывания.
+Log Management and Analytics -- это новейшее решение Dynatrace для мониторинга логов. С появлением Dynatrace Platform и Grail мы рекомендуем вам обновиться до последней версии системы мониторинга логов. Если вы используете Dynatrace SaaS на AWS, ваша среда будет активирована для Log Management and Analytics на базе Grail в рамках поэтапного развертывания.
 
 Для получения дополнительной информации о поэтапном развертывании обратитесь к одному из членов вашей команды по работе с клиентами Dynatrace. Вы также можете обратиться напрямую к экспертам Dynatrace через чат в вашей среде Dynatrace. Наши эксперты свяжут вас с членами вашей команды по работе с клиентами и помогут ответить на любые другие вопросы.
 
@@ -41,15 +41,15 @@ Log Management and Analytics -- это новейшее решение Dynatrace
 
 * Поступающие данные логов
 
-  + Поступающие данные логов сохраняются в [базе данных Grail](../../../platform/grail/dynatrace-grail.md "Grail -- это хранилище данных Dynatrace, разработанное специально для данных наблюдаемости и безопасности, и выступающее единым хранилищем для логов, метрик, трассировок, событий и многого другого.").
-  + Поступающие данные логов могут быть направлены в корзины с различными [периодами хранения](../../logs/lma-bucket-assignment.md "Данные логов могут храниться в корзинах с различными периодами хранения.").
+  + Поступающие данные логов сохраняются в базе данных Grail.
+  + Поступающие данные логов могут быть направлены в корзины с различными периодами хранения.
 * Потребление DDU
 
-  + При активации Log Management and Analytics вы начинаете потреблять DDU по [новой модели с тремя измерениями: прием и обработка, хранение, запросы](../../../license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics.md "Узнайте, как рассчитывается объем потребления DDU для Dynatrace Log Management and Analytics.").
+  + При активации Log Management and Analytics вы начинаете потреблять DDU по новой модели с тремя измерениями: прием и обработка, хранение, запросы.
   + Если вы выберете **Wait 7 days**, вы все равно начнете потреблять DDU для приема и хранения по новой модели немедленно, а для запросов -- после выполнения первого DQL-запроса.
 * API
 
-  + [API экспорта логов](../../../dynatrace-api/environment-api/log-monitoring-v2/get-export-logs.md "Получение записей логов через Log Monitoring API v2.") будет недоступен. Мы рекомендуем прекратить использование [Log GET search](../../../dynatrace-api/environment-api/log-monitoring-v2/get-search-logs.md "Получение записей логов через Log Monitoring API v2.") и [Log GET aggregate](../../../dynatrace-api/environment-api/log-monitoring-v2/get-aggregate-logs.md "Получение агрегированных записей логов через Log Monitoring API v2."). Если вы продолжите их использовать, потребуется [токен OAuth2](../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Управление аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.") с правами `storage:logs:read` и `storage:buckets:read`.
+  + API экспорта логов будет недоступен. Мы рекомендуем прекратить использование Log GET search и Log GET aggregate. Если вы продолжите их использовать, потребуется токен OAuth2 с правами `storage:logs:read` и `storage:buckets:read`.
   + Мы рекомендуем перейти с существующих API на [Grail Query API](https://developer.dynatrace.com/platform-services/services/storage/).
 * Отсутствие поддержки зон управления
 
@@ -59,12 +59,12 @@ Log Management and Analytics -- это новейшее решение Dynatrace
 
 После активации Log Management and Analytics следующие аспекты останутся без изменений:
 
-* Конфигурация приема данных, включая [конфигурацию OneAgent](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Прием данных логов в Dynatrace с помощью OneAgent и их преобразование в осмысленные сообщения логов.") и [прием через общий API](../../logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Потоковая передача данных логов в Dynatrace с помощью API и их преобразование в осмысленные сообщения логов.").
+* Конфигурация приема данных, включая конфигурацию OneAgent и прием через общий API.
 * Обработка логов, включая [правила обработки](../../logs/lma-classic-log-processing.md#lmc-log-processing-rules "Используйте правила обработки логов для преобразования входящих данных логов для лучшего понимания, анализа или дальнейшей обработки.") с фильтрами на основе синтаксиса LQL.
-* Метрики логов, включая [запросы метрик](../../logs/lma-log-processing/lma-log-metrics.md "Создавайте метрики на основе данных логов и используйте их в Dynatrace как любую другую метрику.") на основе синтаксиса LQL.
-* События логов, включая [запросы событий](../../logs/lma-log-processing/lma-log-events.md "Создавайте события логов на основе данных логов и используйте их для обнаружения проблем.") на основе синтаксиса LQL.
+* Метрики логов, включая запросы метрик на основе синтаксиса LQL.
+* События логов, включая запросы событий на основе синтаксиса LQL.
 
-Тем не менее мы рекомендуем [преобразовать ваши фильтры LQL](../../logs/logs-upgrade/lma-dql-conversion.md "Преобразуйте текущие правила мониторинга логов в DQL.") для обработки логов, метрик и событий в высокопроизводительные [фильтры DQL](../../logs/lma-classic-log-processing/lma-log-processing-matcher.md "Изучите конкретные функции DQL и логические операторы для обработки логов.").
+Тем не менее мы рекомендуем преобразовать ваши фильтры LQL для обработки логов, метрик и событий в высокопроизводительные фильтры DQL.
 
 ### Доступ пользователей
 
@@ -105,13 +105,13 @@ Log Management and Analytics -- это новейшее решение Dynatrace
 
   1. Перейдите в [**Account Management**](https://myaccount.dynatrace.com/).
   2. Выберите **Identity & access management** > **Group management**.
-     Подробнее см. [Работа с политиками](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Работа с политиками").
+     Подробнее см. Работа с политиками.
   3. Отредактируйте группу, к которой вы хотите привязать политику (например, Logs and events). Убедитесь, что пользователям, которым необходимо использовать логи и события, назначена эта группа.
   4. Выберите вкладку **Policies**.
 
   Назначение политики через API
 
-  1. Получите токен [OAuth](../../../manage/account-management/identity-access-management/oauth.md "Управление аутентификацией и разрешениями пользователей для API управления учетными записями.")
+  1. Получите токен OAuth
      Выполните POST-запрос с параметрами формы к SSO.
 
      + client\_id = [client\_id]
@@ -140,7 +140,7 @@ Log Management and Analytics -- это новейшее решение Dynatrace
      }
      ```
   2. Создайте политику чтения событий хранилища
-     Выполните POST-запрос к [IAM](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Работа с политиками")
+     Выполните POST-запрос к IAM
 
      Тело запроса для политики:
 
@@ -163,7 +163,7 @@ Log Management and Analytics -- это новейшее решение Dynatrace
      "statementQuery": "ALLOW storage:events:read;"
      ```
   3. Создайте политику чтения логов хранилища
-     Выполните POST-запрос к [IAM](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Работа с политиками")
+     Выполните POST-запрос к IAM
 
      Тело запроса для политики:
 

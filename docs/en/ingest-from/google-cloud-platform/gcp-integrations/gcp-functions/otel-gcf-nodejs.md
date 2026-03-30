@@ -12,7 +12,7 @@ scraped: 2026-03-04T21:27:45.484805
 * 8-min read
 * Updated on Nov 13, 2023
 
-This guide shows how to instrument Google Cloud Functions with [OpenTelemetry JSï»¿](https://github.com/open-telemetry/opentelemetry-js) and export the traces to Dynatrace. To learn more about how Dynatrace works with OpenTelemetry, see [OpenTelemetry and Dynatrace](../../../opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
+This guide shows how to instrument Google Cloud Functions with [OpenTelemetry JSï»¿](https://github.com/open-telemetry/opentelemetry-js) and export the traces to Dynatrace. To learn more about how Dynatrace works with OpenTelemetry, see OpenTelemetry and Dynatrace into Dynatrace.").
 
 ## Prerequisites
 

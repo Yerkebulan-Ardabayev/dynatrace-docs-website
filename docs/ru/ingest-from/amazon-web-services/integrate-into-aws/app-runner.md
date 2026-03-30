@@ -12,7 +12,7 @@ scraped: 2026-02-06T16:23:23.536585
 
   + **Access problem and event feed, metrics, and topology** (`DataExport`) (API v1)
   + **PaaS integration - Installer download** (`InstallerDownload`)
-* Ознакомьтесь со списком [поддерживаемых приложений и версий](../../technology-support.md "Техническая информация о поддержке Dynatrace для конкретных платформ и фреймворков разработки.").
+* Ознакомьтесь со списком поддерживаемых приложений и версий.
 
 ## Интеграция OneAgent в образ вашего приложения
 
@@ -164,11 +164,11 @@ ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
 
 * `DT_NETWORK_ZONE`: равен `your.network.zone`
 
-Дополнительную информацию см. в разделе [Сетевые зоны](../../../manage/network-zones.md "Узнайте, как работают сетевые зоны в Dynatrace.").
+Дополнительную информацию см. в разделе Сетевые зоны.
 
 ## Потребление мониторинга
 
-Для AWS App Runner потребление мониторинга основано на единицах хостов. Подробности см. в разделе [Мониторинг приложений и инфраструктуры (единицы хостов)](../../../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Узнайте, как рассчитывается потребление мониторинга приложений и инфраструктуры Dynatrace на основе единиц хостов.").
+Для AWS App Runner потребление мониторинга основано на единицах хостов. Подробности см. в разделе Мониторинг приложений и инфраструктуры (единицы хостов).
 
 ## Устранение неполадок
 
@@ -176,4 +176,4 @@ ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
 
 ## Связанные темы
 
-* [Матрица поддержки платформ и возможностей OneAgent](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах.")
+* Матрица поддержки платформ и возможностей OneAgent

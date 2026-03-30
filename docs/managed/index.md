@@ -9,14 +9,14 @@ source: https://docs.dynatrace.com/managed
 
 ### Начните работу с Dynatrace или узнайте, что нового
 
-* Впервые в Dynatrace? Узнайте, как [начать работу](../ru/getting-started.md "Узнайте о возможностях мониторинга Dynatrace, концепциях и моделях развёртывания.") всего за несколько шагов.
-* Уже используете Dynatrace? Узнайте, что нового для [SaaS](../ru/whats-new/saas.md "Примечания к выпуску Dynatrace SaaS"), [OneAgent](../ru/whats-new/oneagent.md "Примечания к выпуску OneAgent") или [ActiveGate](../ru/whats-new/activegate.md "Примечания к выпуску ActiveGate").
+* Впервые в Dynatrace? Узнайте, как начать работу всего за несколько шагов.
+* Уже используете Dynatrace? Узнайте, что нового для SaaS, OneAgent или ActiveGate.
 
 ## Популярные страницы
 
-* [Установка OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation.md "Установка и настройка OneAgent") — развёртывание агента мониторинга
-* [Настройка ActiveGate](../ru/ingest-from/dynatrace-activegate.md "Установка и настройка ActiveGate") — шлюз для расширенного мониторинга
-* [Dynatrace API](../ru/dynatrace-api.md "Обзор Dynatrace API") — программный доступ к данным
+* Установка OneAgent — развёртывание агента мониторинга
+* Настройка ActiveGate — шлюз для расширенного мониторинга
+* Dynatrace API — программный доступ к данным
 
 ## Обучение
 
@@ -26,7 +26,7 @@ source: https://docs.dynatrace.com/managed
 
 ## Приложения Dynatrace
 
-Откройте для себя все [Приложения Dynatrace](../ru/discover-dynatrace/dynatrace-apps.md "Обзор приложений Dynatrace").
+Откройте для себя все Приложения Dynatrace.
 
 ## Остались вопросы?
 

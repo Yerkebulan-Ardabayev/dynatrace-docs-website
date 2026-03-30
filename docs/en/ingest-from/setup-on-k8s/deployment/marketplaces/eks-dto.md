@@ -63,7 +63,7 @@ To install the Dynatrace Operator add-on for AWS EKS through the CLI
 
 1. Create secret for access tokens.
 
-   Create a secret named `dynakube` for the Dynatrace Operator token and data ingest token obtained in [Tokens and permissions required](../tokens-permissions.md "Configure tokens and permissions to monitor your Kubernetes cluster").
+   Create a secret named `dynakube` for the Dynatrace Operator token and data ingest token obtained in Tokens and permissions required.
 
    ```
    kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATOR_TOKEN>" --from-literal="dataIngestToken=<DATA_INGEST_TOKEN>"
@@ -72,7 +72,7 @@ To install the Dynatrace Operator add-on for AWS EKS through the CLI
 
    Monitoring with `cloudNativeFullStack` or `appOnly` (with CSI driver) is only supported for Dynatrace Operator version 0.15.0+.
 
-   Download the [DynaKube custom resource sample for cloud-native full-stack mode on GitHubï»¿](https://dt-url.net/9n636jg). In addition, you can review the [available parameters](../../reference/dynakube-parameters.md "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to-guides](../../guides.md "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
+   Download the [DynaKube custom resource sample for cloud-native full-stack mode on GitHubï»¿](https://dt-url.net/9n636jg). In addition, you can review the available parameters or how-to-guides, and adapt the DynaKube custom resource according to your requirements.
 
    Run the command below to apply the DynaKube custom resource, making sure to replace `<your-DynaKube-CR>` with your actual DynaKube custom resource file name. A validation webhook will provide helpful error messages if there's a problem.
 

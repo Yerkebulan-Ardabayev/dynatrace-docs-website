@@ -34,10 +34,10 @@ The following configuration example shows how to configure a Collector instance 
   + The [Dynatrace Collector](../../collector.md#dt-collector-dist "Learn about the Dynatrace OTel Collector.")
   + The OpenTelemetry [Contrib](../../collector.md#collector-contrib "Learn about the Dynatrace OTel Collector.") distribution
   + A [custom Builder version](../../collector.md#collector-builder "Learn about the Dynatrace OTel Collector.")
-* The [Dynatrace API endpoint URL](../../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported
+* The Dynatrace API endpoint URL to which the data should be exported
 * An [API token](../../otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate)
 
-See [Collector Deployment](../deployment.md "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](../configuration.md "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
+See Collector Deployment and Collector Configuration on how to set up your Collector with the configuration below.
 
 ## Demo configuration
 
@@ -235,16 +235,16 @@ To mitigate this, if you want to sample OpenTelemetry traces, you should calcula
 
 ## Limits and limitations
 
-Data is ingested using the OpenTelemetry protocol (OTLP) via the [Dynatrace OTLP APIs](../../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") and is subject to the API's limits and restrictions.
+Data is ingested using the OpenTelemetry protocol (OTLP) via the Dynatrace OTLP APIs and is subject to the API's limits and restrictions.
 For more information see:
 
-* [OpenTelemetry metrics limitations](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
+* OpenTelemetry metrics limitations
 * [Dynatrace metrics mapping](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md#dynatrace-mapping "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
-* [Ingest OpenTelemetry logs](../../otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")
+* Ingest OpenTelemetry logs
 
 ## Related topics
 
-* [Batch OTLP requests with the OpenTelemetry Collector](batch.md "Configure the OpenTelemetry Collector to send data in batches to the Dynatrace backend.")
-* [Compute histogram summaries with the OpenTelemetry Collector](histograms.md "Configure the OpenTelemetry Collector to compute histogram summaries.")
-* [Apply memory limits to the OpenTelemetry Collector](memory.md "Configure the OpenTelemetry Collector to respect memory limits and not use excessive system resources.")
-* [Send OpenTelemetry data to multiple backends](multi-export.md "Configure the OpenTelemetry Collector to send data to more than one backend.")
+* Batch OTLP requests with the OpenTelemetry Collector
+* Compute histogram summaries with the OpenTelemetry Collector
+* Apply memory limits to the OpenTelemetry Collector
+* Send OpenTelemetry data to multiple backends

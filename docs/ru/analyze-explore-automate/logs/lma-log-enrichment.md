@@ -363,7 +363,7 @@ Logback — преемник проекта log4j. Logstash Logback — расш
 
 Вы можете обогащать журналы с помощью NGINX ingress с Kubernetes в два шага:
 
-1. Выполните инструкции по инструментированию [ingress-nginx на Kubernetes](../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx.md "Инструментирование ingress-nginx на Kubernetes").
+1. Выполните инструкции по инструментированию ingress-nginx на Kubernetes.
 2. Добавьте приведённую ниже команду в файл `configmap.yaml` для NGINX ingress.
 
    Добавление строки `main-snippet` включает приём данных OneAgent и является необязательным, если вы уже следовали инструкциям по ручному инструментированию.
@@ -755,7 +755,7 @@ log.Fatal(http.ListenAndServe(":8080", nil))
 }
 ```
 
-Подробнее о конфигурации см. в разделе [Журналы AWS Lambda в контексте трейсов](../../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment.md "Настройка обогащения сообщений журналов с помощью OpenTelemetry на AWS Lambda.").
+Подробнее о конфигурации см. в разделе Журналы AWS Lambda в контексте трейсов.
 
 Инструкции по получению этих атрибутов через OneAgent SDK:
 
@@ -863,7 +863,7 @@ endpoint="http://localhost:14499/otlp/v1/traces"
 
 Перейдите в **Settings** > **Preferences** > **Extension Execution Controller**. Переключатели **Enable Extension Execution Controller** и **Enable local PIPE/HTTP metric and Log Ingest API** должны быть активны.
 
-Подробнее о конфигурации см. в разделе [Инструментирование приложения Python с помощью OpenTelemetry](../../ingest-from/opentelemetry/walkthroughs/python.md "Узнайте, как инструментировать приложение Python с помощью OpenTelemetry и Dynatrace.")
+Подробнее о конфигурации см. в разделе Инструментирование приложения Python с помощью OpenTelemetry
 
 ## Ограничения
 
@@ -944,5 +944,5 @@ format: winston.format.simple()
 
 ## Связанные темы
 
-* [Использование обогащения журналов для трейсов при решении проблем](../../observe/application-observability/distributed-traces/use-cases/problems-logs-traces.md "Используйте обогащение журналов для просмотра связанных записей журналов в представлении распределённых трейсов и расширения аналитических возможностей.")
-* [Автоматическое обогащение журналов](lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md "Общий приём журналов автоматически преобразует данные журналов в выходные значения для атрибута loglevel.")
+* Использование обогащения журналов для трейсов при решении проблем
+* Автоматическое обогащение журналов

@@ -10,14 +10,14 @@ scraped: 2026-03-06T21:24:19.816559
 
 Для получения полного списка собираемых метрик выберите поставщика базы данных из приведённого ниже перечня.
 
-* [IBM DB2](../extensions/ibm-db2-for-luw-remote-monitoring.md#feature-sets "Remotely collect monitoring metrics from your DB2 databases.")
-* [MariaDB](../extensions/mariadb-1.md#feature-sets "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details")
+* IBM DB2
+* MariaDB
 * [Microsoft SQL Server](get-started/microsoft-sql.md#feature-sets "How to set up monitoring for Microsoft SQL databases in Dynatrace.")
-* [MySQL](../extensions/mysql-remote-monitoring-v2.md#feature-sets "Monitor your MySQL instances remotely, collect key KPIs, and slow query details.")
-* [Oracle](../extensions/oracle-database.md#feature-sets "Observe, analyze, and optimize the usage, health, and performance of your database.")
-* [PostgreSQL](../extensions/postgresdb-remote-monitoring.md#feature-sets "Observe, analyze, and optimize the usage, health, and performance of your PostgreSQL database.")
-* [SAP HANA](../extensions/sap-hana-database-remote-monitoring.md#feature-sets "Monitor SAP HANA databases remotely to analyze SQL performance and database health.")
-* [Snowflake](../extensions/snowflake.md#feature-sets "Expand visibility to improve health and performance monitoring of your Snowflake database.")
+* MySQL
+* Oracle
+* PostgreSQL
+* SAP HANA
+* Snowflake
 
 ## Подробности сбора данных
 

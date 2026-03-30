@@ -12,12 +12,12 @@ scraped: 2026-03-05T21:27:54.848020
 * 8-min read
 * Updated on Jun 04, 2024
 
-[Dashboards Classic](../../dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+Dashboards Classic
 
 This page refers to classic dashboards created using the ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** functionality integrated with Dynatrace Classic.
 
-* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see [Dashboards](../../dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") for related documentation.
-* If you're still using classic dashboards, we encourage you to [upgrade your dashboards](../dashboards-upgrade-classic-to-latest.md "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
+* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see Dashboards for related documentation.
+* If you're still using classic dashboards, we encourage you to upgrade your dashboards and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
 
 A Dynatrace dashboard can include monitoring artifacts (such as metrics, logs, events, user sessions, and server-side traces) from multiple Dynatrace environments and can even support remote management zones (for tiles that support custom management zones).
 
@@ -67,9 +67,9 @@ API equivalents
 
 The procedures that follow use the Dynatrace web UI. To carry out the equivalent tasks via API, see:
 
-* [Access tokens API](../../../dynatrace-api/environment-api/tokens-v2/api-tokens.md "Manage Dynatrace API authentication tokens.")âto create a token in the remote environment
-* [Remote environments API](../../../dynatrace-api/configuration-api/remote-environments.md "Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.")âto create a link to the remote environment from the local environment
-* [Dashboards Classic API](../../../dynatrace-api/configuration-api/dashboards-api.md "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.")âto configure a dashboard with tiles that query the remote environment
+* Access tokens APIâto create a token in the remote environment
+* Remote environments APIâto create a link to the remote environment from the local environment
+* Dashboards Classic APIâto configure a dashboard with tiles that query the remote environment
 
 ### Create an access token
 
@@ -182,6 +182,6 @@ You can of course add other tile types and point to additional remote environmen
 
 ## Related topics
 
-* [Dashboards Classic API](../../../dynatrace-api/configuration-api/dashboards-api.md "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.")
-* [Remote environments API](../../../dynatrace-api/configuration-api/remote-environments.md "Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.")
-* [What is a monitoring environment?](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.")
+* Dashboards Classic API
+* Remote environments API
+* What is a monitoring environment?

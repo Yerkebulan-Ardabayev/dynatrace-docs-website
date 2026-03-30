@@ -6,22 +6,22 @@ scraped: 2026-03-05T21:40:45.625171
 
 Dynatrace версии 1.230+
 
-В качестве альтернативы [основному развёртыванию](deploy-k8.md "Настройка мониторинга логов и метрик для сервисов GCP на новом кластере GKE Autopilot."), которое обеспечивает мониторинг Google Cloud как для метрик, так и для логов, вы можете настроить мониторинг только метрик. В этом сценарии вы запустите скрипт развёртывания в Google Cloud Shell. Инструкции зависят от того, где вы хотите запустить скрипт развёртывания:
+В качестве альтернативы основному развёртыванию, которое обеспечивает мониторинг Google Cloud как для метрик, так и для логов, вы можете настроить мониторинг только метрик. В этом сценарии вы запустите скрипт развёртывания в Google Cloud Shell. Инструкции зависят от того, где вы хотите запустить скрипт развёртывания:
 
 * На новом кластере GKE Autopilot, создаваемом автоматически Рекомендуется
 * На существующем стандартном кластере GKE или кластере GKE Autopilot
 
 Во время настройки GKE запустит контейнер для пересылки метрик. После установки вы получите метрики, дашборды и оповещения для настроенных сервисов в Dynatrace.
 
-Другие варианты развёртывания описаны в разделе [Альтернативные сценарии развёртывания](../gcp-guide.md "Другие варианты настройки мониторинга логов и/или метрик для сервисов Google Cloud").
+Другие варианты развёртывания описаны в разделе Альтернативные сценарии развёртывания.
 
 На этой странице описана установка версии 1.0 интеграции с Google Cloud на кластере GKE.
 
-* Если у вас уже установлена [более ранняя версия](../../legacy/deployment-k8s-container-legacy.md "Настройка мониторинга логов и метрик для сервисов GCP в контейнере Kubernetes."), необходимо выполнить [миграцию](migrate-gcp-function.md "Миграция с версии 0.1 интеграции Google Cloud на версию 1.0 для Kubernetes и Google Cloud Function.").
+* Если у вас уже установлена более ранняя версия, необходимо выполнить миграцию.
 
 ## Ограничения
 
-Интеграция Dynatrace с Google Cloud для сбора метрик поддерживает до 50 проектов Google Cloud при стандартном развёртывании. Для мониторинга более крупных сред необходимо включить область метрик. См. [Мониторинг нескольких проектов Google Cloud — крупные среды](monitor-multiple-projects.md "Отправка метрик в Dynatrace из нескольких проектов Google Cloud.").
+Интеграция Dynatrace с Google Cloud для сбора метрик поддерживает до 50 проектов Google Cloud при стандартном развёртывании. Для мониторинга более крупных сред необходимо включить область метрик. См. Мониторинг нескольких проектов Google Cloud — крупные среды.
 
 ## Предварительные требования
 
@@ -274,7 +274,7 @@ wget -q "https://github.com/dynatrace-oss/dynatrace-gcp-monitor/releases/latest/
    Рекомендуется сохранить этот файл для будущих обновлений, так как он понадобится при повторном развёртывании. Также учитывайте, что его схема может измениться. В этом случае следует использовать новый файл и скопировать в него только значения параметров.
 2. Выберите, какие сервисы вы хотите мониторить с помощью Dynatrace.
 
-   По умолчанию интеграция Dynatrace с Google Cloud начинает мониторинг набора выбранных сервисов. Список поддерживаемых сервисов см. в разделе [Поддерживаемые сервисы Google Cloud](../gcp-supported-service-metrics-new.md "Мониторинг сервисов Google Cloud с помощью Dynatrace и просмотр доступных метрик.").
+   По умолчанию интеграция Dynatrace с Google Cloud начинает мониторинг набора выбранных сервисов. Список поддерживаемых сервисов см. в разделе Поддерживаемые сервисы Google Cloud.
 
 Информацию о потреблении DDU см. в разделе [Потребление мониторинга](#ddu).
 
@@ -411,22 +411,22 @@ kubectl -n dynatrace logs -l app=dynatrace-gcp-monitor -c dynatrace-gcp-monitor-
 
 При развёртывании Google Cloud Monitor будет включён мониторинг следующих сервисов:
 
-* [Google APIs](../gcp-supported-service-metrics-new/gcp-apis-monitoring.md "Мониторинг Google Cloud APIs и просмотр доступных метрик.")
-* [Google App Engine](../google-app-engine/app-engine-monitoring.md "Мониторинг Google App Engine и просмотр доступных метрик.")
-* [Google BigQuery](../gcp-supported-service-metrics-new/gcp-bigquery-monitoring.md "Мониторинг Google BigQuery и просмотр доступных метрик.")
-* [Google Cloud Functions](../gcp-functions/cloud-functions-monitoring.md "Мониторинг Google Cloud Functions и просмотр доступных метрик.")
-* [Google Cloud Run](../cloudrun/cloud-run-monitoring.md "Мониторинг Google Cloud Run и просмотр доступных метрик.")
-* [Google Cloud Storage](../gcp-supported-service-metrics-new/gcp-cloud-storage-monitoring.md "Мониторинг Google Cloud Storage и просмотр доступных метрик.")
-* [Google Compute Engine](../google-compute-engine/compute-engine-monitoring.md "Мониторинг Google Compute Engine и просмотр доступных метрик.")
-* [Google Firestore в режиме Datastore](../gcp-supported-service-metrics-new/gcp-filestore-in-datastore-mode-monitoring.md "Мониторинг Google Cloud Firestore в режиме Datastore и просмотр доступных метрик.")
-* [Google Filestore](../gcp-supported-service-metrics-new/gcp-filestore-monitoring.md "Мониторинг Google Filestore и просмотр доступных метрик.")
-* [Google Kubernetes Engine](../google-gke/google-kubernetes-engine-monitoring.md "Мониторинг Google Kubernetes Engine и просмотр доступных метрик.")
-* [Google Cloud Load Balancing](../gcp-supported-service-metrics-new/gcp-cloud-load-balancing-monitoring.md "Мониторинг Google Cloud Load Balancing и просмотр доступных метрик.")
-* [Google Cloud Pub/Sub](../gcp-supported-service-metrics-new/gcp-pub-sub-monitoring.md "Мониторинг Google Cloud Pub/Sub и просмотр доступных метрик.")
-* [Google Cloud Pub/Sub Lite](../gcp-supported-service-metrics-new/gcp-pub-sub-lite-monitoring.md "Мониторинг Google Cloud Pub/Sub Lite и просмотр доступных метрик.")
-* [Google Cloud SQL](../gcp-supported-service-metrics-new/gcp-cloud-sql.md "Мониторинг Google Cloud SQL и просмотр доступных метрик.")
+* Google APIs
+* Google App Engine
+* Google BigQuery
+* Google Cloud Functions
+* Google Cloud Run
+* Google Cloud Storage
+* Google Compute Engine
+* Google Firestore в режиме Datastore
+* Google Filestore
+* Google Kubernetes Engine
+* Google Cloud Load Balancing
+* Google Cloud Pub/Sub
+* Google Cloud Pub/Sub Lite
+* Google Cloud SQL
 
-Доступны дополнительные интеграции сервисов, но их необходимо включить. Список поддерживаемых сервисов см. в разделе [Поддерживаемые сервисы Google Cloud](../gcp-supported-service-metrics-new.md "Мониторинг сервисов Google Cloud с помощью Dynatrace и просмотр доступных метрик."). В следующем разделе описано управление ими. Для альтернативного подхода рассмотрите использование [автообнаружения](deploy-k8/gcp-autodiscovery.md "Отправка любых метрик в Dynatrace из проектов Google Cloud.") для расширения охвата метрик.
+Доступны дополнительные интеграции сервисов, но их необходимо включить. Список поддерживаемых сервисов см. в разделе Поддерживаемые сервисы Google Cloud. В следующем разделе описано управление ими. Для альтернативного подхода рассмотрите использование автообнаружения для расширения охвата метрик.
 
 ### Управление включёнными сервисами
 
@@ -444,7 +444,7 @@ kubectl -n dynatrace logs -l app=dynatrace-gcp-monitor -c dynatrace-gcp-monitor-
 
 #### Наборы функций и доступные метрики
 
-Чтобы узнать, какие метрики включены для конкретного сервиса, см. [Поддерживаемые сервисы Google Cloud](../gcp-supported-service-metrics-new.md "Мониторинг сервисов Google Cloud с помощью Dynatrace и просмотр доступных метрик."). По умолчанию включён только набор функций `defaultMetrics`. Для включения дополнительных наборов функций необходимо раскомментировать их в файле `values.yaml` и повторно развернуть Google Cloud Monitor.
+Чтобы узнать, какие метрики включены для конкретного сервиса, см. Поддерживаемые сервисы Google Cloud. По умолчанию включён только набор функций `defaultMetrics`. Для включения дополнительных наборов функций необходимо раскомментировать их в файле `values.yaml` и повторно развернуть Google Cloud Monitor.
 
 Текущую конфигурацию наборов функций можно найти в ConfigMap кластера с именем `dynatrace-gcp-function-config`.
 
@@ -520,7 +520,7 @@ resource.labels.location = "us-central1-c" AND resource.labels.namespace_name = 
 Для исследования потенциальных проблем развёртывания и подключения
 
 1. [Проверьте установку](#verify)
-2. [Включите самомониторинг](deploy-k8/self-monitoring-gcp.md "Определите, правильно ли функция самомониторинга обрабатывает и отправляет логи в Dynatrace.") Необязательно
+2. Включите самомониторинг Необязательно
 3. Проверьте лог-файл `dynatrace_gcp_<date_time>.log`, созданный в процессе установки.
 
 * Этот файл создаётся при каждом запуске скрипта установки.
@@ -531,7 +531,7 @@ resource.labels.location = "us-central1-c" AND resource.labels.namespace_name = 
   + Предоставьте информацию о версии.
 
     - При проблемах во время установки проверьте файл `version.txt`.
-    - При проблемах во время выполнения [проверьте логи контейнера](deploy-k8/self-monitoring-gcp.md "Определите, правильно ли функция самомониторинга обрабатывает и отправляет логи в Dynatrace.").
+    - При проблемах во время выполнения проверьте логи контейнера.
 
 ## Удаление
 
@@ -563,9 +563,9 @@ kubectl delete namespace dynatrace
 
 ## Потребление мониторинга
 
-Все облачные сервисы потребляют DDU. Объём потребления DDU на экземпляр сервиса зависит от количества отслеживаемых метрик и их измерений (каждое измерение метрики приводит к загрузке 1 точки данных; 1 точка данных потребляет 0,001 DDU). Подробности см. в разделе [Расширение Dynatrace (единицы данных Davis)](../../../../license/monitoring-consumption-classic/davis-data-units.md "Узнайте, как рассчитывается потребление мониторинга Dynatrace на основе единиц данных Davis (DDU).").
+Все облачные сервисы потребляют DDU. Объём потребления DDU на экземпляр сервиса зависит от количества отслеживаемых метрик и их измерений (каждое измерение метрики приводит к загрузке 1 точки данных; 1 точка данных потребляет 0,001 DDU). Подробности см. в разделе Расширение Dynatrace (единицы данных Davis).").
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Google Cloud](../../../google-cloud-platform.md "Мониторинг Google Cloud с помощью Dynatrace.")
+* Настройка Dynatrace в Google Cloud
 * [Устранение неполадок Google Cloud Monitor](https://community.dynatrace.com/t5/Troubleshooting/Google-Cloud-Monitor-Troubleshooting/ta-p/243796)

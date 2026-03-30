@@ -924,7 +924,7 @@ punctuation(content, count: 2, withSpace: true)
 
 ## replacePattern
 
-Заменяет каждую подстроку строки, соответствующую шаблону DPL, указанной строкой. Шаблон должен быть определен как константное строковое выражение. Подробнее о синтаксисе шаблонов см. в [документации DPL](../../dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.").
+Заменяет каждую подстроку строки, соответствующую шаблону DPL, указанной строкой. Шаблон должен быть определен как константное строковое выражение. Подробнее о синтаксисе шаблонов см. в документации DPL.
 
 #### Синтаксис
 
@@ -1371,11 +1371,11 @@ record(content = "Dynatrace Query Language")
 
 ## Связанные темы
 
-* [Dynatrace Query Language](../../dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Использование запросов DQL](../dql-guide.md "Find out how DQL works and what are DQL key concepts.")
-* [Сравнение DQL с SQL и другими языками](../dql-comparison.md "See how DQL compares to other query languages.")
-* [Справочник по языку DQL](../dql-reference.md "Dynatrace Query Language syntax reference.")
-* [Команды DQL](../commands.md "A list of DQL commands.")
-* [Операторы DQL](../operators.md "A list of DQL Operators.")
-* [Типы данных DQL](../data-types.md "A list of DQL data types.")
-* [Лучшие практики DQL](../dql-best-practices.md "Best practices for using Dynatrace Query Language.")
+* Dynatrace Query Language
+* Использование запросов DQL
+* Сравнение DQL с SQL и другими языками
+* Справочник по языку DQL
+* Команды DQL
+* Операторы DQL
+* Типы данных DQL
+* Лучшие практики DQL

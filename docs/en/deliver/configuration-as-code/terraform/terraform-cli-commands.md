@@ -37,14 +37,14 @@ When exporting resources, consider appropriate permission scopes for fetching th
 
 ### Prerequisites
 
-* [Install Terraform CLI and set up Configuration as Code via Terraform](terraform-cli.md "Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform.") and make it available in your `PATH`.
-* Create a [platform token or OAuth client](terraform-api-support-access-permission-handling.md "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.") with the correct access permissions.
+* Install Terraform CLI and set up Configuration as Code via Terraform and make it available in your `PATH`.
+* Create a platform token or OAuth client with the correct access permissions.
   The correct permissions depends on which APIs you use.
-  For more info, see the API documentation or [IAM policy reference](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+  For more info, see the API documentation or IAM policy reference.
 
 ### Using the export utility
 
-1. Define the environment variables to identify the Dynatrace tenant for configuration retrieval, according to the [API support and access permission handling](terraform-api-support-access-permission-handling.md "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
+1. Define the environment variables to identify the Dynatrace tenant for configuration retrieval, according to the API support and access permission handling.
 
    Optionally, set the environment variable `DYNATRACE_TARGET_FOLDER` to designate an output directory (export folder). If not set, the default directory `.configuration` is used.
 2. Go to the Terraform Dynatrace Provider executable in the terminal. This executable isn't generic, such as `terraform.exe` or `./terraform`.

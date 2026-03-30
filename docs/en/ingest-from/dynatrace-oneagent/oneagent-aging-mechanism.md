@@ -119,7 +119,7 @@ The OneAgent file aging mechanism checks the subdirectories starting with `0x`. 
 
 ## Aging mechanism for OneAgent in application-only monitoring mode
 
-If you don't have access to the infrastructure layer, Dynatrace also provides the option of application-only monitoring for [Kubernetes](../setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"), [OpenShift](../setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"), [CloudFoundry](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring.md "Install OneAgent on Cloud Foundry.") or [SAP Business Technology Platform](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-sap-cloud-platform-for-application-only-monitoring.md "Install OneAgent on SAP Business Technology Platform.").
+If you don't have access to the infrastructure layer, Dynatrace also provides the option of application-only monitoring for Kubernetes, OpenShift, CloudFoundry or SAP Business Technology Platform.
 
 The aging mechanism in application-only monitoring mode manages the logs of the OneAgent modules. All of them are located in the respective subdirectories of the default OneAgent log directory:
 

@@ -4,11 +4,11 @@ source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queu
 scraped: 2026-03-01T21:16:56.958006
 ---
 
-Вы можете использовать теги и зоны управления для организации объектов очередей в вашей среде и упрощения их поиска. Теги и зоны управления применяются к объектам очередей так же, как и к другим объектам, однако их необходимо применять через [entity selector](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Настройте entity selector для конечных точек Environment API.").
+Вы можете использовать теги и зоны управления для организации объектов очередей в вашей среде и упрощения их поиска. Теги и зоны управления применяются к объектам очередей так же, как и к другим объектам, однако их необходимо применять через entity selector.
 
 ## Определение автоматически применяемого тега
 
-Выполните следующие шаги, чтобы автоматически применять тег к объектам очередей. Дополнительные сведения о тегах см. в разделе [Define and apply tags](../../../../manage/tags-and-metadata/setup/how-to-define-tags.md "Узнайте, как определять и применять теги вручную и автоматически.").
+Выполните следующие шаги, чтобы автоматически применять тег к объектам очередей. Дополнительные сведения о тегах см. в разделе Define and apply tags.
 
 1. Перейдите в **Settings** > **Tags** > **Automatically applied tags**.
 2. Выберите **Create tag** и введите имя нового тега в поле **Tag name**.
@@ -55,7 +55,7 @@ scraped: 2026-03-01T21:16:56.958006
 
 ## Добавление объектов очередей в существующие зоны управления
 
-Выполните следующие шаги, чтобы добавить объекты очередей в существующие зоны управления. Дополнительные сведения о зонах управления см. в разделе [Set up management zones](../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Создание зон управления и назначение прав доступа.").
+Выполните следующие шаги, чтобы добавить объекты очередей в существующие зоны управления. Дополнительные сведения о зонах управления см. в разделе Set up management zones.
 
 1. Перейдите в **Settings** > **Preferences** > **Management zones**.
 2. Отредактируйте существующую зону управления и выберите **Add a new rule**.
@@ -101,5 +101,5 @@ type(QUEUE),toRelationships.isInstanceOf(type(QUEUE_INSTANCE),fromRelationships.
 
 ## Смотрите также
 
-* [Define and apply tags](../../../../manage/tags-and-metadata/setup/how-to-define-tags.md "Узнайте, как определять и применять теги вручную и автоматически.")
-* [Set up management zones](../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Создание зон управления и назначение прав доступа.")
+* Define and apply tags
+* Set up management zones

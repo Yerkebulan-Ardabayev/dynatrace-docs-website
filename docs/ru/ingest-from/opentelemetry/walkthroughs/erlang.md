@@ -216,7 +216,7 @@ URL должен заканчиваться на `/api/v2/otlp`.
    make_tuples([], Acc) -> Acc.
    ```
 
-   Операции чтения файлов, разбирающие файлы `dt_metadata` в примере кода, пытаются прочитать [файлы данных OneAgent](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") для обогащения запроса OTLP и обеспечения доступности всей релевантной информации о топологии в Dynatrace.
+   Операции чтения файлов, разбирающие файлы `dt_metadata` в примере кода, пытаются прочитать файлы данных OneAgent для обогащения запроса OTLP и обеспечения доступности всей релевантной информации о топологии в Dynatrace.
 
 ## Шаг 3. Инструментирование вашего приложения
 
@@ -403,4 +403,4 @@ headers_list(Headers) ->
 
 ## Связанные темы
 
-* [Обогащение принятых данных полями, специфичными для Dynatrace](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
+* Обогащение принятых данных полями, специфичными для Dynatrace

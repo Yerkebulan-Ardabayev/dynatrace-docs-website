@@ -142,7 +142,7 @@ OpenTelemetry поддерживает для Ruby автоматическое 
    end
    ```
 
-   Операции чтения файлов, выполняющие разбор файлов `dt_metadata` в примере кода, пытаются прочитать [файлы данных OneAgent](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") для обогащения запроса OTLP и обеспечения доступности всей релевантной топологической информации в Dynatrace.
+   Операции чтения файлов, выполняющие разбор файлов `dt_metadata` в примере кода, пытаются прочитать файлы данных OneAgent для обогащения запроса OTLP и обеспечения доступности всей релевантной топологической информации в Dynatrace.
 
    Экспорт в OneAgent
 
@@ -232,7 +232,7 @@ OpenTelemetry поддерживает для Ruby автоматическое 
 
 ![syslog-bundles](https://dt-cdn.net/images/env-syslogbundles-2589-90e4e38b45.png)
 
-Для получения дополнительной информации см. [Обработка логов с помощью парсеров технологических пакетов](../../../platform/openpipeline/use-cases/tutorial-technology-processor.md "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
+Для получения дополнительной информации см. Обработка логов с помощью парсеров технологических пакетов.
 
 ### Сбор метрик
 
@@ -321,4 +321,4 @@ response = http.request(request)
 
 ## Связанные темы
 
-* [Обогащение принятых данных специфичными для Dynatrace полями](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
+* Обогащение принятых данных специфичными для Dynatrace полями

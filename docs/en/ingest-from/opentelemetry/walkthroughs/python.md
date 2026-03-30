@@ -14,8 +14,8 @@ scraped: 2026-03-06T21:22:45.224601
 
 These walkthroughs show how to add observability to your Python application using the OpenTelemetry Python libraries and tools.
 
-* [Automatically instrument your Python application with OpenTelemetry](python/python-auto.md "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.")
-* [Manually instrument your Python application with OpenTelemetry](python/python-manual.md "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.")
+* Automatically instrument your Python application with OpenTelemetry
+* Manually instrument your Python application with OpenTelemetry
 
 The following features are currently supported by OpenTelemetry Python.
 
@@ -28,5 +28,5 @@ The following features are currently supported by OpenTelemetry Python.
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific fields](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
-* [Get started](../../../observe/dynatrace-for-ai-observability/get-started.md "Get started with OpenLLMetry and OpenTelemetry for AI Observability.")
+* Enrich ingested data with Dynatrace-specific fields
+* Get started

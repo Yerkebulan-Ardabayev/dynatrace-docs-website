@@ -12,7 +12,7 @@ scraped: 2026-03-05T21:27:28.286023
 * 14-min read
 * Updated on Apr 23, 2024
 
-After [OneAgent](../../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") in full-stack monitoring mode is installed on a host, it monitors all applications running on that host. As a starting point, all monitoring data is encapsulated in a placeholder application called **My web application**. We offer this placeholder application to allow for more flexibilityâit's you who decides how to organize your applications.
+After OneAgent in full-stack monitoring mode is installed on a host, it monitors all applications running on that host. As a starting point, all monitoring data is encapsulated in a placeholder application called **My web application**. We offer this placeholder application to allow for more flexibilityâit's you who decides how to organize your applications.
 
 Dynatrace offers the following approaches to defining your application for RUM.
 
@@ -22,7 +22,7 @@ Dynatrace offers the following approaches to defining your application for RUM.
 | [Application detection rules approach](#application-detection-rules) | Auto-injection | When you want to create new applications or when dividing your traffic based on domains isn't sufficient. Use application detection rules to define more complex patterns to group your RUM monitoring traffic into applications. |
 | [Manual approach](#alternative-approach) (aka "agentless monitoring") | Manual insertion | When you don't have access to the host of your web application, but you have access to the application code. |
 
-You can choose the injection format for both auto-injected and manually inserted applications. For details, see [Select a snippet format](snippet-formats.md "Select a format for the RUM JavaScript snippet that best fits your specific use case").
+You can choose the injection format for both auto-injected and manually inserted applications. For details, see Select a snippet format.
 
 Java Servletâbased applications
 
@@ -145,15 +145,15 @@ The following factors might delay the effectiveness of the updated application d
 
 ## Agentless RUM approach
 
-When you don't have access to your web serverâand therefore can't install OneAgent on the hostâbut when you have access to your application code, opt for [agentless RUM](set-up-agentless-real-user-monitoring.md "Set up agentless monitoring for your web applications.").
+When you don't have access to your web serverâand therefore can't install OneAgent on the hostâbut when you have access to your application code, opt for agentless RUM.
 
-For some technologies, [automatic RUM JavaScript injection](rum-injection.md "Configure automatic injection of the RUM JavaScript into the pages of your applications") is not supported even when you can install OneAgent. For example, while OneAgent can monitor the server side of a Heroku application, it cannot inject the RUM JavaScript into the application's pages. If that's the case, you need to use agentless RUM and manually add the RUM JavaScript to your application's pages.
+For some technologies, automatic RUM JavaScript injection is not supported even when you can install OneAgent. For example, while OneAgent can monitor the server side of a Heroku application, it cannot inject the RUM JavaScript into the application's pages. If that's the case, you need to use agentless RUM and manually add the RUM JavaScript to your application's pages.
 
 For a list of technologies and servers that support automatic RUM JavaScript injection, see [Technology support - Real User Monitoring - Web servers and applications](../../../../ingest-from/technology-support.md#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ## Best practices and recommendations
 
-* Define your applications based on team ownership so that you can easily make use of [management zones](../../../../manage/identity-access-management/permission-management/management-zones.md "Learn about management zones concepts, how to define management zones, and how to make the most of them.") for access restrictions.
+* Define your applications based on team ownership so that you can easily make use of management zones for access restrictions.
 * It may make sense to define applications based on their technology stack so that the right settings are applied and the management of specific settings is easier. For example, activating support for specific XHR frameworks is typically required only for specific parts of a large application and for specific user action naming rules. It may help separate such large applications into smaller ones based on the technologies in use or team ownership.
 * **My web application** placeholder application
 
@@ -161,8 +161,8 @@ For a list of technologies and servers that support automatic RUM JavaScript inj
   + It's impossible to delete this placeholder application.
   + If you can't find the **My web application** placeholder application, someone might have renamed it. To locate it, open any other application and replace the application ID in the URL with `EA7C4B59F27D43EB`. You'll be redirected to **My web application**.
   + In new environments, youâll only see this placeholder application after the traffic from an auto-injected application starts coming.
-* Separating applications based on domains works best as Dynatrace cannot correlate user actions across domains with specific user sessions. This correlation is done via a cookie and therefore only works if the cookie can be set on the same domain. For example, user actions for `www.dynatrace.com` and `blog.dynatrace.com` can be captured in a single application as the cookie can be set to `dynatrace.com`. However, the traffic for `www.dynatrace.com` and `www.internal-dynatrace.com` cannot be captured in a single user session. You can still separate user actions based on the domain, but user sessions cannot include user actions from multiple domains. See [User sessions](../../rum-concepts/user-session.md "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.") for more details.
-* Group low-traffic applications. If you create an application based on a domain that has fewer than 10 actions per minute, Dynatrace won't automatically detect anomalies for this newly created application. Dynatrace depends on steady application traffic to correctly [learn multidimensional baselines and automatically report application problems](../../../../dynatrace-intelligence/anomaly-detection/static-thresholds-infrastructure.md "Learn about the fixed thresholds used by Dynatrace to determine when a detected slowdown or error-rate increase justifies the generation of a new problem event."). You can change your application anomaly detection settings on the **Anomaly detection** page within your application settings. Although this recommendation contradicts the one mentioned above, it may make sense to combine low-traffic applications.
+* Separating applications based on domains works best as Dynatrace cannot correlate user actions across domains with specific user sessions. This correlation is done via a cookie and therefore only works if the cookie can be set on the same domain. For example, user actions for `www.dynatrace.com` and `blog.dynatrace.com` can be captured in a single application as the cookie can be set to `dynatrace.com`. However, the traffic for `www.dynatrace.com` and `www.internal-dynatrace.com` cannot be captured in a single user session. You can still separate user actions based on the domain, but user sessions cannot include user actions from multiple domains. See User sessions for more details.
+* Group low-traffic applications. If you create an application based on a domain that has fewer than 10 actions per minute, Dynatrace won't automatically detect anomalies for this newly created application. Dynatrace depends on steady application traffic to correctly learn multidimensional baselines and automatically report application problems. You can change your application anomaly detection settings on the **Anomaly detection** page within your application settings. Although this recommendation contradicts the one mentioned above, it may make sense to combine low-traffic applications.
 * The application detection rules are processed in sequence for each request. More rules means more processing time, and as the rules are processed within OneAgents, you should try to have the rules for the applications with the most traffic at the top of the list. As soon as one rule matches, no further requests are processed.
 * The more specific application detection rules should be defined first, while the more generic rules should be at the bottom of the application detection rules list.  
   Let's assume that you want to create an application called `A` onto which the following two domains will be mapped:
@@ -176,4 +176,4 @@ For a list of technologies and servers that support automatic RUM JavaScript inj
 
   If you create a generic grouping rule based on the `shop` value, all three domains will be grouped into the same web application for monitoring. Therefore, you should first define a more specific rule, for example, "If the URL ends with `shop.html`" so that only the third URL is mapped to application `B`. Then you can safely define a generic rule based on the `shop` value, as the third URL will have already been mapped to the previous application and therefore won't be included in application `A`.
 * Depending on your requirements, you can adjust the monitoring consumption and configure Real User Monitoring accordingly.
-* To monitor traffic on a single application, you can opt to use [user actions and session properties](../additional-configuration/define-user-action-and-session-properties.md "Define custom string, numeric, and date properties for your monitored web applications."). To monitor separate applications and get complete insights into consumption per application, you can configure separate applications, use tagging to split the metrics, and define management zones.
+* To monitor traffic on a single application, you can opt to use user actions and session properties. To monitor separate applications and get complete insights into consumption per application, you can configure separate applications, use tagging to split the metrics, and define management zones.

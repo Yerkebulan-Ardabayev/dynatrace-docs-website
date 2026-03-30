@@ -25,10 +25,10 @@ scraped: 2026-03-06T21:20:44.696000
 
 ### Предварительные знания
 
-* [Обнаружение аномалий](../anomaly-detection.md "Как Dynatrace обнаруживает аномалии в вашей среде.")
-* [Настройка чувствительности обнаружения аномалий](adjust-sensitivity-anomaly-detection.md "Узнайте, как адаптировать чувствительность обнаружения проблем в Dynatrace.")
-* [Модели ИИ](../reference/ai-models.md "Узнайте о моделях ИИ, которые использует Dynatrace Intelligence.")
-* [Клиенты OAuth](../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Управляйте аутентификацией и правами пользователей с помощью клиентов OAuth.") или [Токены платформы](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Создавайте персонализированные токены платформы для доступа к сервисам Dynatrace через API в контексте вашего пользователя.")
+* Обнаружение аномалий
+* Настройка чувствительности обнаружения аномалий
+* Модели ИИ
+* Клиенты OAuth или Токены платформы
 * [Как получить доступ к API платформы](https://developer.dynatrace.com/develop/access-platform-apis-from-outside/)
 
 ### Предварительные требования
@@ -57,9 +57,9 @@ scraped: 2026-03-06T21:20:44.696000
 1. Создать клиент OAuth со всеми разрешениями, перечисленными в [Предварительных требованиях](#api-prerequisites).
 2. Сгенерировать bearer-токен из созданного клиента.
 
-Дополнительную информацию о создании клиента OAuth и генерации bearer-токена см. в разделе [Клиенты OAuth](../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Управляйте аутентификацией и правами пользователей с помощью клиентов OAuth.").
+Дополнительную информацию о создании клиента OAuth и генерации bearer-токена см. в разделе Клиенты OAuth.
 
-Если вы хотите использовать токен платформы, создайте токен платформы для выбранного пользователя или среды. Дополнительную информацию о создании и управлении токенами платформы см. в разделе [Токены платформы](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Создавайте персонализированные токены платформы для доступа к сервисам Dynatrace через API в контексте вашего пользователя.").
+Если вы хотите использовать токен платформы, создайте токен платформы для выбранного пользователя или среды. Дополнительную информацию о создании и управлении токенами платформы см. в разделе Токены платформы.
 
 Токен платформы будет работать только в пределах разрешений назначенного пользователя. Это означает, что выбранная область предоставляет доступ только в том случае, если у этого пользователя есть соответствующие разрешения.
 
@@ -73,7 +73,7 @@ https://{your-environment-id}.apps.dynatrace.com/platform/classic/environment-ap
 
 Чтобы создать конфигурацию пользовательского оповещения
 
-1. Получите токен платформы или bearer-токен, сгенерированный на этапе [Аутентификации](../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.").
+1. Получите токен платформы или bearer-токен, сгенерированный на этапе Аутентификации.
 2. Вызовите функцию приложения через URL конечной точки.
 3. Создайте новый объект настроек, используя schemaID для пользовательских оповещений на основе DQL, `builtin:davis.anomaly-detectors`, и токен платформы или клиент OAuth. Это создаст объект настроек пользовательского оповещения. Пример вызова для нового объекта настроек приведён ниже:
 
@@ -309,7 +309,7 @@ https://{your-environment-id}.apps.dynatrace.com/platform/classic/environment-ap
 * `description`: параметр свободного текста, описывающий вашу конфигурацию пользовательского оповещения.
 * `source`: параметр свободного текста, который можно использовать для группировки и фильтрации конфигураций в интерфейсе. Например, установка source как `kubernetes` для некоторых конфигураций позволяет фильтровать все конфигурации `kubernetes` в приложении. Если `source` не задан, используется значение по умолчанию, указывающее, что конфигурация создана через REST API.
 * `executionSettings`: этот объект содержит необязательное поле `queryOffset`. Когда `queryOffset` установлен в значение типа `integer`, он смещает скользящее окно оценки. Это можно использовать для исключения последних нескольких точек данных в метриках, связанных с задержкой.
-* `analyzer`: этот объект указывает модель обнаружения аномалий и связанные параметры, которые будут использоваться в конфигурации. Дополнительные сведения о моделях обнаружения аномалий см. в разделе [Модели ИИ](../reference/ai-models.md "Узнайте о моделях ИИ, которые использует Dynatrace Intelligence.").
+* `analyzer`: этот объект указывает модель обнаружения аномалий и связанные параметры, которые будут использоваться в конфигурации. Дополнительные сведения о моделях обнаружения аномалий см. в разделе Модели ИИ.
 * `eventTemplate`: этот объект определяет содержание событий, генерируемых при обнаружении настроенной аномалии.
 
 #### Поля объекта `analyzer`
@@ -351,7 +351,7 @@ https://{your-environment-id}.apps.dynatrace.com/platform/classic/environment-ap
   + Обязательно `event.description`: параметр свободного текста, описывающий вашу конфигурацию пользовательского оповещения.
   + Обязательно `event.type`: тип генерируемого события, например, `CUSTOM_INFO`, `ERROR_EVENT`, `AVAILABILITY_EVENT`, `PERFORMANCE_EVENT`, `RESOURCE_CONTENTION_EVENT`, `CUSTOM_ALERT`, `CUSTOM_ANNOTATION`, `CUSTOM_CONFIGURATION`, `CUSTOM_DEPLOYMENT`, `MARKED_FOR_TERMINATION`.
 
-    Все доступные типы событий см. в [Семантическом словаре Dynatrace Intelligence](../../../common/semantic-dictionary/model/davis.md "Познакомьтесь с моделями семантического словаря, связанными с Davis AI."). Вы также можете использовать здесь свои пользовательские события.
+    Все доступные типы событий см. в Семантическом словаре Dynatrace Intelligence. Вы также можете использовать здесь свои пользовательские события.
 
 ## Заключение
 
@@ -359,9 +359,9 @@ https://{your-environment-id}.apps.dynatrace.com/platform/classic/environment-ap
 
 ## Связанные темы
 
-* [Обнаружение аномалий](../anomaly-detection.md "Как Dynatrace обнаруживает аномалии в вашей среде.")
-* [Модели ИИ](../reference/ai-models.md "Узнайте о моделях ИИ, которые использует Dynatrace Intelligence.")
-* [Settings API — GET objects](../../dynatrace-api/environment-api/settings/objects/get-objects.md "Просмотр нескольких объектов настроек через Dynatrace API.")
-* [Settings API — POST an object](../../dynatrace-api/environment-api/settings/objects/post-object.md "Создание или проверка объекта настроек через Dynatrace API.")
-* [Settings API — PUT an object](../../dynatrace-api/environment-api/settings/objects/put-object.md "Редактирование объекта настроек через Dynatrace API.")
-* [Settings API — DELETE an object](../../dynatrace-api/environment-api/settings/objects/del-object.md "Удаление объекта настроек через Dynatrace API.")
+* Обнаружение аномалий
+* Модели ИИ
+* Settings API — GET objects
+* Settings API — POST an object
+* Settings API — PUT an object
+* Settings API — DELETE an object

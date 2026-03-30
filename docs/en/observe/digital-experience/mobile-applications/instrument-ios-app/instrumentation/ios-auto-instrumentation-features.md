@@ -12,17 +12,17 @@ scraped: 2026-03-06T21:34:10.008934
 * 4-min read
 * Updated on Feb 03, 2026
 
-Auto-instrumentation with OneAgent for iOS occurs during runtime. The resulting application is instrumented to the levels configured in the application's [`Info.plist` file](info-plist-file.md "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.").
+Auto-instrumentation with OneAgent for iOS occurs during runtime. The resulting application is instrumented to the levels configured in the application's `Info.plist` file.
 
-The following features are automatically instrumented when you [set up OneAgent](dynatrace-auto-instrumentation-for-ios.md "Set up user experience monitoring for iOS apps within Dynatrace.") for your project. These features are enabled by default, but you can disable or configure them by adding [configuration keys](../customization/ios-configuration-keys.md "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to your application's `Info.plist` file.
+The following features are automatically instrumented when you set up OneAgent for your project. These features are enabled by default, but you can disable or configure them by adding configuration keys to your application's `Info.plist` file.
 
-Use auto-instrumentation in combination with [manual instrumentation](../customization/oneagent-sdk-for-ios.md "Enrich mobile user experience monitoring using OneAgent SDK for iOS.") to capture additional data. For example, you might want to manually instrument certain actions, report values, or tag specific users.
+Use auto-instrumentation in combination with manual instrumentation to capture additional data. For example, you might want to manually instrument certain actions, report values, or tag specific users.
 
 ## Automatic OneAgent startup
 
 OneAgent for iOS is initialized automatically at library load timeâthis is when the binary for the OneAgent library is loaded into a mobile application at application startup. This happens before `applicationWillFinishLaunching`, where OneAgent can be started manually.
 
-Set the [`DTXAutoStart` configuration key](../customization/ios-configuration-keys.md#general "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to `false` to disable automatic OneAgent startup. In that case, you'll need to [start OneAgent manually](../customization/oneagent-sdk-for-ios.md#start-oneagent "Enrich mobile user experience monitoring using OneAgent SDK for iOS.").
+Set the [`DTXAutoStart` configuration key](../customization/ios-configuration-keys.md#general "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to `false` to disable automatic OneAgent startup. In that case, you'll need to start OneAgent manually.
 
 ## Lifecycle monitoring
 
@@ -31,7 +31,7 @@ OneAgent collects data on the following events.
 * `AppStart` (application start event)
 
   + Automatic OneAgent startup: Measures the timespan from when OneAgent starts to when the [`application(_:didFinishLaunchingWithOptions:)`ï»¿](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622921-application) method is called.
-  + Manual OneAgent startup: Measures the timespan from when the [OneAgent manual startup API](../customization/oneagent-sdk-for-ios.md#start-oneagent "Enrich mobile user experience monitoring using OneAgent SDK for iOS.") is called to when the `application(_:didFinishLaunchingWithOptions:)` method is called. When the manual startup API is called after `application(_:didFinishLaunchingWithOptions:)`, the `AppStart` event is not generated.
+  + Manual OneAgent startup: Measures the timespan from when the OneAgent manual startup API is called to when the `application(_:didFinishLaunchingWithOptions:)` method is called. When the manual startup API is called after `application(_:didFinishLaunchingWithOptions:)`, the `AppStart` event is not generated.
 * `Display`: Measures the timespan from loading a view to when the view appears on the screen. Timestamps of the `viewDidLoad`, `viewWillAppear`, and `viewDidAppear` calls of the `ViewController` classes are displayed in the user action waterfall analysis and are marked as a **Lifecycle event**.
 * `Redisplay`: Measures the timespan from loading a view to when the view reappears on the screen. Timestamps of the `viewWillAppear` and `viewDidAppear` calls of the `ViewController` classes are displayed in the user action waterfall analysis and are marked as a **Lifecycle event**.
 
@@ -53,13 +53,13 @@ OneAgent automatically instruments and tags your web requests. To track web requ
 
 Set the [`DTXInstrumentWebRequestTiming` configuration key](../customization/ios-configuration-keys.md#web-requests "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to `false` to disable web request monitoring. Also, check other keys in the [**Web requests**](../customization/ios-configuration-keys.md#web-requests "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") section to configure web request timing and tagging.
 
-To learn how to manually instrument web requests, see [Measure web requests](../customization/oneagent-sdk-for-ios.md#measure-web-requests "Enrich mobile user experience monitoring using OneAgent SDK for iOS.").
+To learn how to manually instrument web requests, see Measure web requests.
 
 ## Web request monitoring for requests passed to `WKWebView`
 
 OneAgent automatically instruments and tags web requests that are passed to `WKWebView`.
 
-Note that OneAgent does not monitor requests issued inside `WKWebView`. Such requests are handled by the [RUM JavaScript](../../../web-applications/additional-configuration/customize-rum.md "Find out how to customize Real User Monitoring using the JavaScript API.") if you've properly configured your [hybrid application monitoring](../../instrument-hybrid-app.md "Learn how you can instrument various types of hybrid and cross-platform mobile apps.") with Dynatrace.
+Note that OneAgent does not monitor requests issued inside `WKWebView`. Such requests are handled by the RUM JavaScript if you've properly configured your hybrid application monitoring with Dynatrace.
 
 Set the [`DTXInstrumentWebViewTiming` configuration key](../customization/ios-configuration-keys.md#hybrid "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to `false` to disable automatic web request timing and tagging for requests passed to `WKWebView`.
 
@@ -71,13 +71,13 @@ Set the [`DTXInstrumentAutoUserAction` configuration key](../customization/ios-c
 
 Using OneAgent for iOS, you can also perform the following actions related to user actions.
 
-* [Create custom actions](../customization/oneagent-sdk-for-ios.md#create-custom-user-action "Enrich mobile user experience monitoring using OneAgent SDK for iOS.")
-* [Cancel custom and autogenerated user action](../customization/oneagent-sdk-for-ios.md#cancel-action "Enrich mobile user experience monitoring using OneAgent SDK for iOS.")
-* [Use custom control titles](../customization/oneagent-sdk-for-ios.md#custom-control-names "Enrich mobile user experience monitoring using OneAgent SDK for iOS.")
-* [Modify autogenerated actions](../customization/oneagent-sdk-for-ios.md#modify-auto-actions "Enrich mobile user experience monitoring using OneAgent SDK for iOS.")
-* [Mask user actions](../customization/oneagent-sdk-for-ios.md#mask-user-actions "Enrich mobile user experience monitoring using OneAgent SDK for iOS.")
+* Create custom actions
+* Cancel custom and autogenerated user action
+* Use custom control titles
+* Modify autogenerated actions
+* Mask user actions
 
-To learn how OneAgent constructs user action names, see [User action naming](../customization/oneagent-sdk-for-ios.md#user-action-naming "Enrich mobile user experience monitoring using OneAgent SDK for iOS.").
+To learn how OneAgent constructs user action names, see User action naming.
 
 ## Rage tap detection
 

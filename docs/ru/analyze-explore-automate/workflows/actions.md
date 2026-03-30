@@ -86,15 +86,15 @@ scraped: 2026-03-06T21:21:39.365090
 
 ### Site Reliability Guardian
 
-Действие рабочего процесса Site Reliability Guardian доступно непосредственно в Workflows после установки приложения **Site Reliability Guardian**. Оно позволяет выполнять guardian непосредственно в рабочих процессах.](../../deliver/site-reliability-guardian.md#automation "Автоматически проверяйте цели по производительности, доступности и ёмкости критически важных сервисов для принятия правильных решений о релизах.")[### Dynatrace Intelligence (Preview)
+Действие рабочего процесса Site Reliability Guardian доступно непосредственно в Workflows после установки приложения **Site Reliability Guardian**. Оно позволяет выполнять guardian непосредственно в рабочих процессах.](../../deliver/site-reliability-guardian.md#automation "Автоматически проверяйте цели по производительности, доступности и ёмкости критически важных сервисов для принятия правильных решений о релизах.")### Dynatrace Intelligence (Preview)
 
-Автоматизируйте анализ с помощью ИИ, например прогнозирование и устранение нехватки ёмкости.](../../dynatrace-intelligence/use-cases/davis-for-workflows.md "Автоматизируйте предиктивное обслуживание облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.")[![Synthetic Classic](https://dt-cdn.net/images/synthetic-512-83ec796e54.png "Synthetic Classic")
+Автоматизируйте анализ с помощью ИИ, например прогнозирование и устранение нехватки ёмкости.[![Synthetic Classic](https://dt-cdn.net/images/synthetic-512-83ec796e54.png "Synthetic Classic")
 
 ### Synthetic для Workflows
 
-Расширьте возможности автоматизации с помощью синтетического мониторинга. **Synthetic для Workflows** позволяет запускать синтетические мониторы по требованию в выбранных локациях в рамках ваших рабочих процессов.](../../observe/digital-experience/synthetic-on-grail/synthetic-for-workflows.md "Расширьте возможности автоматизации с помощью синтетического мониторинга.")[### Business Observability
+Расширьте возможности автоматизации с помощью синтетического мониторинга. **Synthetic для Workflows** позволяет запускать синтетические мониторы по требованию в выбранных локациях в рамках ваших рабочих процессов.](../../observe/digital-experience/synthetic-on-grail/synthetic-for-workflows.md "Расширьте возможности автоматизации с помощью синтетического мониторинга.")### Business Observability
 
-Генерируйте бизнес-события из автоматизированных задач для связи данных мониторинга и наблюдаемости с бизнес-информацией.](../../observe/business-observability/bo-events-capturing.md "Захватывайте бизнес-события для Dynatrace Business Observability.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
+Генерируйте бизнес-события из автоматизированных задач для связи данных мониторинга и наблюдаемости с бизнес-информацией.[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
 ### Обработка текста
 

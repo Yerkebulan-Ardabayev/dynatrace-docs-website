@@ -47,7 +47,7 @@ scraped: 2026-02-23T21:25:08.031293
 
 ### Контекст
 
-Логи из вашей [мониторируемой Dynatrace среды](../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа с мониторируемыми средами.") поступают в [Grail](../../platform/grail.md "Информация о том, что и как можно запрашивать в данных Dynatrace.") через [приём логов](../../analyze-explore-automate/logs.md "Log Management and Analytics предоставляет унифицированный подход к контролю и изучению ваших данных логов в Dynatrace."). При обнаружении атаки создаётся проблема Dynatrace.
+Логи из вашей мониторируемой Dynatrace среды поступают в Grail через приём логов. При обнаружении атаки создаётся проблема Dynatrace.
 
 ### 1. Автоматизация уведомлений о вторжении
 
@@ -64,19 +64,19 @@ scraped: 2026-02-23T21:25:08.031293
 ## Предварительные требования
 
 * Dynatrace версии 1.283+
-* [Настройка приёма логов](../../analyze-explore-automate/logs.md "Log Management and Analytics предоставляет унифицированный подход к контролю и изучению ваших данных логов в Dynatrace.") (приём инцидентов безопасности в Grail).
-* [Настройка команд владения](../../deliver/ownership/ownership-teams.md "Определение команд с идентификаторами, описаниями, обязанностями и маршрутной информацией для владения объектами.") (позволяет рабочему процессу назначать инциденты безопасности на основе владения затронутым объектом).
-* [Настройка Jira Connector](../../analyze-explore-automate/workflows/actions/jira.md "Автоматизация создания, перехода, комментирования и назначения задач Jira на основе событий и расписаний, определённых для ваших рабочих процессов.") (позволяет рабочему процессу преобразовывать результаты в тикеты Jira).
-* [Настройка Slack Connector](../../analyze-explore-automate/workflows/actions/slack.md "Отправка сообщений в рабочие пространства Slack") (позволяет рабочему процессу отправлять результаты в каналы Slack).
+* Настройка приёма логов (приём инцидентов безопасности в Grail).
+* Настройка команд владения (позволяет рабочему процессу назначать инциденты безопасности на основе владения затронутым объектом).
+* Настройка Jira Connector (позволяет рабочему процессу преобразовывать результаты в тикеты Jira).
+* Настройка Slack Connector (позволяет рабочему процессу отправлять результаты в каналы Slack).
 
-  Хотя в текущем сценарии используются Slack и Jira в качестве каналов уведомлений, доступны и другие интеграции. Подробнее см. [Интеграции Workflows](../../analyze-explore-automate/workflows/actions.md "Используйте готовые действия Dynatrace для ваших рабочих процессов и интегрируйте Dynatrace с системами сторонних производителей.").
+  Хотя в текущем сценарии используются Slack и Jira в качестве каналов уведомлений, доступны и другие интеграции. Подробнее см. Интеграции Workflows.
 * Базовые знания о том, как:
 
-  + [Использовать Dynatrace Query Language (DQL)](../../platform/grail/dynatrace-query-language/dql-reference.md "Справочник по синтаксису Dynatrace Query Language.")
-  + [Создавать рабочие процессы](../../analyze-explore-automate/workflows/quickstart.md "Создание и запуск вашего первого рабочего процесса.")
+  + Использовать Dynatrace Query Language (DQL)
+  + Создавать рабочие процессы
 * Убедитесь, что включены следующие разрешения.
 
-  + **Grail**: `storage:logs:read`. Инструкции см. в разделе [Назначение разрешений в Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначать разрешения для корзин и таблиц в Grail.").
+  + **Grail**: `storage:logs:read`. Инструкции см. в разделе Назначение разрешений в Grail.
   + ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**: Разрешения на доступ, просмотр, запись и выполнение рабочих процессов. Подробнее см. [Авторизация](../../analyze-explore-automate/workflows.md#authorization "Автоматизация ИТ-процессов с помощью Dynatrace Workflows — реакция на события, планирование задач и подключение сервисов.").
 
     Для доступа к разрешениям перейдите в меню **Settings** в правом верхнем углу ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** и выберите **Authorization settings**.
@@ -89,7 +89,7 @@ scraped: 2026-02-23T21:25:08.031293
 
 Автоматизация должна запускаться при каждой атаке.
 
-В разделе **Select trigger** выберите и настройте **Davis Problem trigger**. Подробнее см. [Создание рабочих процессов в Dynatrace Workflows: Триггер](../../analyze-explore-automate/workflows/building.md#trigger "Создание и редактирование рабочих процессов в Dynatrace Workflows.").
+В разделе **Select trigger** выберите и настройте **Davis Problem trigger**. Подробнее см. Создание рабочих процессов в Dynatrace Workflows: Триггер.
 
 Показать релевантную последовательность задач рабочего процесса
 
@@ -351,8 +351,8 @@ fetch logs, scanLimitGBytes: -1
 
 ## Дополнительное чтение
 
-[Примеры логов на Grail](../../analyze-explore-automate/logs/logs-on-grail-examples.md "Изучите базовые примеры Log Management and Analytics по использованию данных логов в Dynatrace на базе Grail.")
+Примеры логов на Grail
 
-[Примеры DQL для Dynatrace Intelligence](../../dynatrace-intelligence/use-cases/davis-dql-examples.md "Создание мощных дашбордов здоровья путём разделения и анализа проблем и событий, обнаруженных Dynatrace Intelligence, с помощью DQL.")
+Примеры DQL для Dynatrace Intelligence
 
-[Примеры DQL для данных, связанных с безопасностью](../threat-observability/dql-examples.md "Примеры DQL для данных безопасности на базе Grail.")
+Примеры DQL для данных, связанных с безопасностью

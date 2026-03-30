@@ -130,7 +130,7 @@ mapped files:
 
 ## Protect sensitive user data
 
-Crash reports might include sensitive personal information that should not be viewed by all users. For this reason, your Dynatrace administrator must enable the [**View logs** account-security option](../../../manage/identity-access-management/permission-management/role-based-permissions.md#environment "Role-based permissions") and the [**View sensitive request data**](../../../manage/identity-access-management/permission-management/role-based-permissions.md#environment "Role-based permissions") permissions in your user profile before you can view personal data. This option is disabled by default for all non-admin users and must be explicitly enabled before you can access log contents.
+Crash reports might include sensitive personal information that should not be viewed by all users. For this reason, your Dynatrace administrator must enable the **View logs** account-security option and the **View sensitive request data** permissions in your user profile before you can view personal data. This option is disabled by default for all non-admin users and must be explicitly enabled before you can access log contents.
 
 ## Crash handling on Windows
 
@@ -169,7 +169,7 @@ OneAgent installer performs the following changes to your system to handle core 
 
 [ABRTï»¿](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/ch-abrt) (Red Hat) and [Apportï»¿](https://launchpad.net/ubuntu/+source/apport) (Debian) services are stopped and disabled.
 
-Both services are re-enabled during [OneAgent uninstallation](../../../ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux.md "Learn how you can remove OneAgent from your Linux-based system.").
+Both services are re-enabled during OneAgent uninstallation.
 
 For more information, see [OneAgent security on Linux](../../../ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux.md#operating-system-changes "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
 
@@ -225,6 +225,6 @@ The log and support alert directories are cleaned up automatically.
 
 ## Related topics
 
-* [View crash reports for mobile applications](../../digital-experience/mobile-applications/analyze-and-use/crash-reports-mobile.md "Check the latest crash reports for your mobile applications.")
-* [View crash reports for custom applications](../../digital-experience/custom-applications/analyze-and-use/crash-reports-custom.md "Check the latest crash reports for your custom applications.")
-* [New: User session analysis](../../digital-experience/session-segmentation/new-user-sessions.md "Learn about user session segmentation and filtering attributes.")
+* View crash reports for mobile applications
+* View crash reports for custom applications
+* New: User session analysis

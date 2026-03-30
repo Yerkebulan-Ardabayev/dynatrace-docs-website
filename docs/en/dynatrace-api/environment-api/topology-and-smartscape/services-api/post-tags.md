@@ -11,9 +11,9 @@ scraped: 2026-03-05T21:27:10.445414
 * Updated on Mar 22, 2023
 * Deprecated
 
-Assigns [custom tags](../../../../../common/manage/tags-and-metadata.md "Use tags and metadata to organize data in your Dynatrace environment.") to the specified service. You need to provide only a tag value. The `CONTEXTLESS` context will be assigned automatically.
+Assigns custom tags to the specified service. You need to provide only a tag value. The `CONTEXTLESS` context will be assigned automatically.
 
-The usage of this API is limited to value-only tags. To assign key:value tags, use the [Custom tags API](../../custom-tags/post-tags.md "Assign custom tags to monitored entities via Dynatrace API.").
+The usage of this API is limited to value-only tags. To assign key:value tags, use the Custom tags API.
 
 The request consumes an `application/json` payload.
 
@@ -26,7 +26,7 @@ The request consumes an `application/json` payload.
 
 To execute this request, you need an access token with `DataExport` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ## Parameters
 
@@ -217,4 +217,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/services/SERVICE-72503CBDD2
 
 ## Related topics
 
-* [Services](../../../../observe/application-observability/services.md "Learn how to monitor and analyze your services, define and use request attributes, and more.")
+* Services

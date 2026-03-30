@@ -32,11 +32,11 @@ scraped: 2026-03-06T21:22:26.150990
 
 Тег хоста
 :   Параметр, который назначает хост конкретному центру затрат или продукту.
-    Подробнее см. [Определение тегов и метаданных для хостов](../observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md "Узнайте, как помечать тегами и задавать дополнительные свойства для мониторируемого хоста.").
+    Подробнее см. Определение тегов и метаданных для хостов.
 
 Свойство хоста
 :   Иногда используется как синоним «тега хоста».
-    Подробнее см. [Определение тегов и метаданных для хостов](../observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md "Узнайте, как помечать тегами и задавать дополнительные свойства для мониторируемого хоста.").
+    Подробнее см. Определение тегов и метаданных для хостов.
 
 Продукт
 :   Отдельный продукт или группа продуктов, предлагаемых вашей организацией.
@@ -48,7 +48,7 @@ scraped: 2026-03-06T21:22:26.150990
 ## Необходимые разрешения
 
 Для просмотра или редактирования информации о распределении затрат вашей учётной записи Dynatrace необходимо хотя бы одно из разрешений, указанных в таблице ниже.
-Дополнительная информация об этих разрешениях доступна в разделе [Разрешения на основе ролей](../manage/identity-access-management/permission-management/role-based-permissions.md#permissions-account "Разрешения на основе ролей").
+Дополнительная информация об этих разрешениях доступна в разделе Разрешения на основе ролей.
 
 ### Разрешения управления учётной записью
 
@@ -112,32 +112,32 @@ ALLOW storage:system:read;
 
 #### Через API
 
-Оба списка разрешений центров затрат и продуктов можно настроить через API управления учётной записью, как описано в [Dynatrace Platform Subscription API — управление распределением затрат](../dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/manage-cost-allocation.md "Управление распределением затрат и использования Dynatrace Platform Subscription.").
+Оба списка разрешений центров затрат и продуктов можно настроить через API управления учётной записью, как описано в Dynatrace Platform Subscription API — управление распределением затрат.
 
 ### Настройка распределения затрат для развёртываний на основе хостов
 
-Для настройки распределения затрат в развёртывании на основе хостов настройте OneAgent в соответствии с инструкциями в разделе [Настройка распределения затрат для развёртываний OneAgent](../ingest-from/dynatrace-oneagent/oneagent-cost-allocation.md "Узнайте, как распределять затраты от OneAgent по центрам затрат и продуктам.").
+Для настройки распределения затрат в развёртывании на основе хостов настройте OneAgent в соответствии с инструкциями в разделе Настройка распределения затрат для развёртываний OneAgent.
 
 Распределение затрат настраивается на уровне хоста.
 Один хост может быть назначен максимум одному центру затрат и одному продукту.
 
 ### Настройка распределения затрат для развёртываний Kubernetes
 
-Для настройки распределения затрат в развёртывании на основе Kubernetes настройте Kubernetes в соответствии с инструкциями в разделе [Настройка распределения затрат для развёртываний Kubernetes](../ingest-from/setup-on-k8s/kubernetes-cost-allocation.md "Узнайте, как распределять затраты от развёртываний Kubernetes по центрам затрат и продуктам.").
+Для настройки распределения затрат в развёртывании на основе Kubernetes настройте Kubernetes в соответствии с инструкциями в разделе Настройка распределения затрат для развёртываний Kubernetes.
 
-Распределение затрат поддерживается для различных [моделей развёртывания Kubernetes](../ingest-from/setup-on-k8s/deployment.md "Развёртывание Dynatrace Operator в Kubernetes").
+Распределение затрат поддерживается для различных моделей развёртывания Kubernetes.
 
 ### Настройка распределения затрат для приёма телеметрии
 
 С помощью Dynatrace вы можете обогащать телеметрические данные атрибутами распределения затрат (`dt.cost.costcenter`, `dt.cost.product`) в виде метаданных.
 Обогащение телеметрии атрибутами распределения затрат возможно для всех поддерживаемых методов приёма — будь то логи, трассировки, метрики или события.
 
-Для принимаемых логов распределение затрат также доступно для сохранённых данных ([Log - Retain](capabilities/log-analytics/dps-log-retain.md "Узнайте, как рассчитывается потребление возможности Log Management & Analytics - Retain DPS.") и [Log - Retain with Included Queries](capabilities/log-analytics/dps-log-retain-included.md "Узнайте, как рассчитывается потребление возможности Log Management & Analytics - Retain with Included Queries DPS.")).
+Для принимаемых логов распределение затрат также доступно для сохранённых данных (Log - Retain и Log - Retain with Included Queries).
 
 Вы можете использовать эти атрибуты для распределения использования по вашим центрам затрат и продуктам.
 
-* Они хранятся в Grail и доступны через ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Дашборды**, ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, **Управление учётной записью** и [Dynatrace API](../dynatrace-api.md "Узнайте, что необходимо для использования Dynatrace API.").
-* Они определены в [Семантическом словаре](../semantic-dictionary/fields.md "Ознакомьтесь со списком глобальных полей с чётко определённой семантикой в Dynatrace.") Dynatrace.
+* Они хранятся в Grail и доступны через ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Дашборды**, ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, **Управление учётной записью** и Dynatrace API.
+* Они определены в Семантическом словаре Dynatrace.
 
 #### Как начать
 
@@ -158,11 +158,11 @@ ALLOW storage:system:read;
 В этом разделе описывается, как настроить распределение затрат для запросов, рабочих процессов и функций.
 Соответствующие категории тарифных карт:
 
-* [Log Analytics - Query](capabilities/log-analytics/dps-log-query.md "Узнайте, как рассчитывается потребление возможности Log Management & Analytics - Query DPS.")
-* [Traces - Query](capabilities/traces/dps-traces-query.md "Узнайте, как рассчитывается потребление возможности Traces - Query DPS.")
-* [Events - Query](capabilities/events/dps-events-query.md "Узнайте, как рассчитывается потребление возможности Events powered by Grail - Query DPS.")
-* [Automation Workflow](capabilities/automation.md "Узнайте, как рассчитывается потребление Dynatrace Automation Workflow.")
-* [AppEngine Functions](capabilities/appengine-functions.md "Узнайте, как рассчитывается потребление AppEngine Function.")
+* Log Analytics - Query
+* Traces - Query
+* Events - Query
+* Automation Workflow
+* AppEngine Functions
 
 Распределение затрат для запросов, рабочих процессов и функций в настоящее время поддерживается только на уровне среды.
 

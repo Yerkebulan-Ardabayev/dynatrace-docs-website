@@ -50,4 +50,4 @@ To select which interaction types Dynatrace should capture automatically
 
 ## Related topics
 
-* [User actions](../../rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.")
+* User actions

@@ -9,7 +9,7 @@ scraped: 2026-03-05T21:27:14.657488
 
 * Устарело
 
-Этот API устарел. Используйте [Monitored entities API](../../entity-v2.md "Узнайте о Dynatrace Monitored entities API.") вместо него. Более подробную информацию о переходе на новый API можно найти в [руководстве по миграции](../../../basics/deprecation-migration-guides/topology-v1-to-entity-v2.md "Перенос автоматизации на Monitored entities API.").
+Этот API устарел. Используйте Monitored entities API вместо него. Более подробную информацию о переходе на новый API можно найти в руководстве по миграции.
 
 Получает параметры указанного хоста.
 
@@ -24,7 +24,7 @@ scraped: 2026-03-05T21:27:14.657488
 
 Для выполнения этого запроса необходим токен доступа с областью `DataExport`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+Чтобы узнать, как получить и использовать его, см. Токены и аутентификация.
 
 ## Параметры
 
@@ -920,4 +920,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-B
 
 ## Связанные темы
 
-* [Hosts Classic](../../../../observe/infrastructure-observability/hosts.md "Узнайте, как начать мониторинг хостов, какие показатели определяют состояние хоста, как настроить пользовательские имена хостов и многое другое.")
+* Hosts Classic

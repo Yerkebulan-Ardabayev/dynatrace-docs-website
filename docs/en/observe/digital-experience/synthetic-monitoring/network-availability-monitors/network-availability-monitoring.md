@@ -16,12 +16,12 @@ Dynatrace version 1.296+ ActiveGate version 1.295+
 
 Network availability monitoring (NAM) allows you to monitor the availability of remote hosts or services over the network when an HTTP/HTTPS endpoint isn't available.
 
-You can use NAM for infrastructure-related use cases or to deepen the root cause analysis for [HTTP](../http-monitors-classic.md "Learn about HTTP monitors.") and [browser](../browser-monitors.md "Learn about browser monitors.") monitors.
+You can use NAM for infrastructure-related use cases or to deepen the root cause analysis for HTTP and browser monitors.
 
 You can create synthetic network availability monitors of **ICMP**, **TCP**, or **DNS** [type](network-availability-monitoring.md#nam-types "ICMP, TCP, and DNS synthetic monitors").
 
-You can configure NAM monitors and access their performance results in [Synthetic](../../synthetic-on-grail/synthetic-app.md "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.") in latest Dynatrace.
-See [create a NAM monitor](create-a-nam-monitor.md "Learn how to set up a NAM monitor to check the performance and availability of your site.") to learn how to set up your monitor in [Synthetic](../../synthetic-on-grail/synthetic-app.md "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.") or via [API](create-a-nam-monitor.md#nam-api "Learn how to set up a NAM monitor to check the performance and availability of your site.").
+You can configure NAM monitors and access their performance results in Synthetic in latest Dynatrace.
+See create a NAM monitor to learn how to set up your monitor in Synthetic or via [API](create-a-nam-monitor.md#nam-api "Learn how to set up a NAM monitor to check the performance and availability of your site.").
 
 ## NAM types
 
@@ -71,7 +71,7 @@ You can have up to 5,000 NAM monitors per environment. Other types of monitors d
 
 ### Deployment type
 
-Network availability monitors are supported only on [private Synthetic locations](../private-synthetic-locations/create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.").
+Network availability monitors are supported only on private Synthetic locations.
 
 Containerized locations
 
@@ -116,4 +116,4 @@ add: ["NET_RAW"]
 
 ### Use of proxy
 
-Network availability monitors do not support the use of [proxy servers](../private-synthetic-locations/setting-up-proxy-for-private-synthetic.md#proxy-connection-scenarios "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring."). Ensure that your network configuration allows direct access to the monitored endpoints without routing through a proxy.
+Network availability monitors do not support the use of proxy servers. Ensure that your network configuration allows direct access to the monitored endpoints without routing through a proxy.

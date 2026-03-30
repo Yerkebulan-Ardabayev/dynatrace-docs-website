@@ -16,10 +16,10 @@ Looking for the New RUM Experience metrics documentation?
 
 You can access the full list of available metrics and their details directly in the latest Dynatrace. Press **CTRL**/**CMD**+**K**, type `dt.frontend` and select **Show more**.
 
-The [New RUM Experience](../../../observe/digital-experience/new-rum-experience.md "Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance."), which brings RUM to Grail, introduces numerous built-in metrics with the prefix `dt.frontend`. Because it uses a different data model than RUM Classic, there are no direct equivalents for [RUM Classic metrics](../../metrics-classic/built-in-metrics.md#applications "Explore the complete list of built-in Dynatrace metrics."), which use the prefix `builtin:apps`. However, many metrics have replacements that serve an analogous purpose, as shown in the table below. Note that metrics with the prefix `builtin:apps` that do not appear in the table have no replacement.
+The New RUM Experience, which brings RUM to Grail, introduces numerous built-in metrics with the prefix `dt.frontend`. Because it uses a different data model than RUM Classic, there are no direct equivalents for [RUM Classic metrics](../../metrics-classic/built-in-metrics.md#applications "Explore the complete list of built-in Dynatrace metrics."), which use the prefix `builtin:apps`. However, many metrics have replacements that serve an analogous purpose, as shown in the table below. Note that metrics with the prefix `builtin:apps` that do not appear in the table have no replacement.
 
 Differences in metric values between the `builtin:apps` metrics and their replacements are expected and result from underlying data model changes.
 
 ## Related topics
 
-* [New Real User Monitoring Experience](../../../observe/digital-experience/new-rum-experience.md "Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance.")
+* New Real User Monitoring Experience

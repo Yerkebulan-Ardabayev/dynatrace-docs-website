@@ -326,4 +326,4 @@ The following expression returns the number of pending and running pods in the r
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
+* Set up Dynatrace on Kubernetes

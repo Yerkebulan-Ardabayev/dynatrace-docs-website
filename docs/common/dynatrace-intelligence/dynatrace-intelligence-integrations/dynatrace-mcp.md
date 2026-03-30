@@ -100,8 +100,8 @@ You can connect to an MCP server via a URL by using the following address:
 https://{tenant-name}.apps.dynatrace.com/platform-reserved/mcp-gateway/v0.1/servers/dynatrace-mcp/mcp
 ```
 
-* You need to provide a bearer token in the authorization header for the request to work. You can obtain the token from a Platform Token or from an OAuth client. Dynatrace doesn't support using OAuth client directly when connecting to the MCP server, so you must generate a token from the client. To learn more about generating and authorizing a bearer token, see [OAuth clients](../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
-* The token you created will only work within the scope of your user permissions. To use the Dynatrace MCP server, you need to have all of the necessary permissions. For more information, see [Platform tokens](../../../ru/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md#my-platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.") or [OAuth clients](../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients."), depending on the type of the token you use.
+* You need to provide a bearer token in the authorization header for the request to work. You can obtain the token from a Platform Token or from an OAuth client. Dynatrace doesn't support using OAuth client directly when connecting to the MCP server, so you must generate a token from the client. To learn more about generating and authorizing a bearer token, see OAuth clients.
+* The token you created will only work within the scope of your user permissions. To use the Dynatrace MCP server, you need to have all of the necessary permissions. For more information, see [Platform tokens](../../../ru/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md#my-platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.") or OAuth clients, depending on the type of the token you use.
 
 In addition to the tool permissions mentioned in [Server and server tools](#server), both the user and the token must have the following permissions to access and invoke server tools:
 
@@ -112,5 +112,5 @@ You can setup connections by using VS Code and its chat integration, or by using
 
 ## Related topics
 
-* [Dynatrace Intelligence generative AI overview](../copilot/copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Dynatrace Assist](../copilot/chat-with-davis-copilot.md "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.")
+* Dynatrace Intelligence generative AI overview
+* Dynatrace Assist

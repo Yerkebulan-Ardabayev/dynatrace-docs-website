@@ -11,7 +11,7 @@ scraped: 2026-02-06T16:33:14.869956
 * How-to guide
 * Updated on Dec 22, 2025
 
-The goal of private locations is to execute synthetic monitors. You need to use private locations to monitor applications and endpoints within corporate networks, which are unavailable from the public internet. Also, private locations are obligatory for executing [NAM](create-a-nam-monitor-synthetic-app.md "Learn how to set up a NAM monitor to check the performance and availability of your site.") monitors.
+The goal of private locations is to execute synthetic monitors. You need to use private locations to monitor applications and endpoints within corporate networks, which are unavailable from the public internet. Also, private locations are obligatory for executing NAM monitors.
 
 With monitors executed from a private location, you can bring the testing capabilities available in public locations right into your own environment. With private locations you can:
 
@@ -28,9 +28,9 @@ If you created a private location in previous Dynatrace, it remains available in
 
 ## System and hardware requirements for private locations
 
-Make sure the target host you plan to use for running synthetic monitors complies with [system and hardware requirements for private Synthetic locations](private-locations/requirements-for-private-synthetic.md "Check system and hardware requirements for private Synthetic locations."). Note that Synthetic-enabled ActiveGates have more demanding hardware and system requirements than a regular Environment or Cluster ActiveGate.
+Make sure the target host you plan to use for running synthetic monitors complies with system and hardware requirements for private Synthetic locations. Note that Synthetic-enabled ActiveGates have more demanding hardware and system requirements than a regular Environment or Cluster ActiveGate.
 
-Synthetic-enabled ActiveGate installed on Ubuntu 20.04 LTS and 22.04 LTS only You can use [`TEMP`](../../../../../ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate.md#temporary "Learn about the command-line parameters that you can use with ActiveGate on Linux.") to customize the [default temporary directory for private Synthetic files](../../../../../ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files.md#default-activegate-directories--linux "Find out where ActiveGate files are stored on Windows and Linux systems.")â`/var/tmp/dynatrace/synthetic`. However, the path must begin with `/var/tmp`, for example, `TEMP=/var/tmp/syn`. Dynatrace requires write access to `/var/tmp` for the installation of Chromium snap packages.
+Synthetic-enabled ActiveGate installed on Ubuntu 20.04 LTS and 22.04 LTS only You can use `TEMP` to customize the default temporary directory for private Synthetic filesâ`/var/tmp/dynatrace/synthetic`. However, the path must begin with `/var/tmp`, for example, `TEMP=/var/tmp/syn`. Dynatrace requires write access to `/var/tmp` for the installation of Chromium snap packages.
 
 End-of-support information
 
@@ -54,12 +54,12 @@ Additional support notes
   Additionally, with Dynatrace version 1.306, we have introduced mechanisms preventing Synthetic-enabled ActiveGates on Red Hat/CentOS 7 from being updated beyond version 1.305.
 
   + Since Red Hat Enterprise Linux 7 reached [End of Maintenanceï»¿](https://dt-url.net/af03uea) support on June 30, 2024, all of its packages have been archived. This means that it may not be possible to find the required dependencies for update. For more details, see the [Red Hat Enterprise Linux 7 statusï»¿](https://dt-url.net/e623zr1)
-* Check the latest [ActiveGate release notes](../../../../../whats-new/activegate.md "Release notes for Dynatrace ActiveGate") for the oldest supported ActiveGate versions.
+* Check the latest ActiveGate release notes for the oldest supported ActiveGate versions.
 
 ### Before you begin
 
-* You cannot execute synthetic monitors using an Environment ActiveGate configured for [multi-environment support](../../../../../ingest-from/dynatrace-activegate/configuration/configure-an-environment-activegate-for-multi-environment-support.md "Read the step-by-step procedure for configuring a single Environment ActiveGate for multi-environment support.").
-* You can create a private location using a clean-installed Synthetic-enabled Environment ActiveGate version 1.169+ or Cluster ActiveGate with Dynatrace Managed version 1.176+. If you want to use an existing ActiveGate host, [uninstall ActiveGate](../../../../../ingest-from/dynatrace-activegate/operation/uninstall-activegate.md "Learn how to remove ActiveGate from Windows or Linux-based systems.") first.
+* You cannot execute synthetic monitors using an Environment ActiveGate configured for multi-environment support.
+* You can create a private location using a clean-installed Synthetic-enabled Environment ActiveGate version 1.169+ or Cluster ActiveGate with Dynatrace Managed version 1.176+. If you want to use an existing ActiveGate host, uninstall ActiveGate first.
 * Synthetic-enabled ActiveGate is used exclusively to run synthetic monitors. A clean ActiveGate installation for the purpose of synthetic monitoring disables all other ActiveGate features, including communication with OneAgents.
 
 * Only IPv4 and DNS UDP are supported for network configuration.
@@ -74,7 +74,7 @@ To add a classic private location
 2. Select  **New private locations**  > **Classic**.
 3. Name your location.
 4. Map it from an existing geographic location or add a custom location defined by **Country**, **Region**, **City**, **Latitude**, and **Longitude**.
-5. Select **Existing ActiveGate** to add an existing Synthetic-enabled Activegate to the location or **Deploy new ActiveGate** to deploy a new one (deploying a new ActiveGate will redirect you to [![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") **Discovery & Coverage**](../../../../../ingest-from/discovery-coverage-app.md "Discover and remediate monitoring coverage gaps at scale.") from where you can [install an ActiveGate](private-locations/active-gate-for-private-locations-install.md "Learn how to install Synthetic-enabled ActiveGates.")).
+5. Select **Existing ActiveGate** to add an existing Synthetic-enabled Activegate to the location or **Deploy new ActiveGate** to deploy a new one (deploying a new ActiveGate will redirect you to [![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") **Discovery & Coverage**](../../../../../ingest-from/discovery-coverage-app.md "Discover and remediate monitoring coverage gaps at scale.") from where you can install an ActiveGate).
 
    Add multiple ActiveGates if you plan to run a large number of synthetic monitors.
    Additional ActiveGates are used for failover and load balancing.
@@ -86,19 +86,19 @@ To add a classic private location
 
    You can **Enable Chromium auto-update** at the location level, that is, for all ActiveGates assigned to a private location. Chromium autoupdate takes place during manual as well as automatic ActiveGate and Synthetic engine updates.
 
-   As we recommend using the [latest supported Chromium version](private-locations/requirements-for-private-synthetic.md#chromium-linux "Check system and hardware requirements for private Synthetic locations.") for the smooth and secure execution of browser monitors from your private location, Chromium autoupdate is turned on by default for locations with Linux-based ActiveGates. If you don't want Chromium to be updated automatically, for example, to use a specific version of Chromium, or if you have offline environments, turn off the switch **before triggering an ActiveGate update**.
+   As we recommend using the latest supported Chromium version for the smooth and secure execution of browser monitors from your private location, Chromium autoupdate is turned on by default for locations with Linux-based ActiveGates. If you don't want Chromium to be updated automatically, for example, to use a specific version of Chromium, or if you have offline environments, turn off the switch **before triggering an ActiveGate update**.
 
    This setting only applies to Linux-based ActiveGates; on Windows-based ActiveGates, Chromium is always updated during Synthetic engine updates. If your location has only Windows-based ActiveGates, the toggle is turned on but grayed out.
 
-   Successful Chromium autoupdate requires access to OS (system) repositories for Chromium dependencies and access to `https://synthetic-packages.s3.amazonaws.com` for Chromium components. If you've enabled a [custom local repository](private-locations/install-chromium-for-linux.md#custom-repo "Learn how to install Chromium for Linux manually and from custom repositories."), Chromium components (but not dependencies) need to be available at the specified HTTP server address. See [Chromium autoupdate from a custom repository](private-locations/install-chromium-for-linux.md#autoupdate-custom-repo "Learn how to install Chromium for Linux manually and from custom repositories.").
+   Successful Chromium autoupdate requires access to OS (system) repositories for Chromium dependencies and access to `https://synthetic-packages.s3.amazonaws.com` for Chromium components. If you've enabled a custom local repository, Chromium components (but not dependencies) need to be available at the specified HTTP server address. See Chromium autoupdate from a custom repository.
 
    You will see a message if Chromium autoupdate fails for this or other reasonsâwe recommend either meeting the requirements for autoupdate (such as access to repositories) or disabling Chromium autoupdate for your private location.
 
-   * We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and Chromium versions updatedâDynatrace supports Chromium versions that are no more than two versions behind the [latest Dynatrace-supported version](private-locations/requirements-for-private-synthetic.md#chromium-linux "Check system and hardware requirements for private Synthetic locations.") for a specific ActiveGate release. If you don't opt for Chromium autoupdate, you can [update Chromium manually](private-locations/install-chromium-for-linux.md#chromium-manual "Learn how to install Chromium for Linux manually and from custom repositories.").
-   * If you disable Chromium autoupdate, you can [manually update Chromium](private-locations/install-chromium-for-linux.md#chromium-manual "Learn how to install Chromium for Linux manually and from custom repositories.") per ActiveGate. However, Chromium autoupdate is required when using [custom repositories](private-locations/install-chromium-for-linux.md#custom-repo "Learn how to install Chromium for Linux manually and from custom repositories."). See [Chromium autoupdate from a custom repository](private-locations/install-chromium-for-linux.md#autoupdate-custom-repo "Learn how to install Chromium for Linux manually and from custom repositories.").
-   * Autoupdate works to update Chromium to the latest version that Dynatrace provides for an ActiveGate release. In some cases, this might be different from the [latest Dynatrace-supported Chromium version](private-locations/requirements-for-private-synthetic.md#chromium-linux "Check system and hardware requirements for private Synthetic locations.") for the ActiveGate release.
+   * We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and Chromium versions updatedâDynatrace supports Chromium versions that are no more than two versions behind the latest Dynatrace-supported version for a specific ActiveGate release. If you don't opt for Chromium autoupdate, you can update Chromium manually.
+   * If you disable Chromium autoupdate, you can manually update Chromium per ActiveGate. However, Chromium autoupdate is required when using custom repositories. See Chromium autoupdate from a custom repository.
+   * Autoupdate works to update Chromium to the latest version that Dynatrace provides for an ActiveGate release. In some cases, this might be different from the latest Dynatrace-supported Chromium version for the ActiveGate release.
 
-   Also, check our information on [installing Chromium and other dependencies manually (Linux only)](private-locations/install-chromium-for-linux.md#manual "Learn how to install Chromium for Linux manually and from custom repositories.").
+   Also, check our information on installing Chromium and other dependencies manually (Linux only).
 7. Optional If you have outage issues with your private location, use the **Location outage handling** options to receive related notifications. See the on-screen instructions for details.
 
    * You can configure the location to generate a problem when the entire private location is unavailable (all ActiveGates are offline), or if the location lacks the capability required for the monitor type to be executed.
@@ -171,18 +171,18 @@ ActiveGate version 1.315+
 
 #### Installation
 
-To install Synthetic-enabled ActiveGate in FIPS compliant mode, you need to add the `--fips-mode` flag. See also [customize ActiveGate installation for FIPS compliance](../../../../../ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate.md#fips-compliant-mode "Learn about the command-line parameters that you can use with ActiveGate on Linux.").
+To install Synthetic-enabled ActiveGate in FIPS compliant mode, you need to add the `--fips-mode` flag. See also customize ActiveGate installation for FIPS compliance.
 
 ```
 /bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic --fips-mode
 ```
 
 Please note that FIPS-compliant mode cannot be changed after installation. To change the mode, you need to uninstall ActiveGate and reinstall it with the desired settings.
-Additionally, if you intend to execute browser monitors, additional setup will be required as described in [Proxy configuration for FIPS mode](private-locations/proxy-for-private-locations.md#fips-proxy "Learn how to manage proxies for private Synthetic locations.") and [Proxy configuration for FIPS mode with corporate proxy](private-locations/proxy-for-private-locations.md#fips-corporate-proxy "Learn how to manage proxies for private Synthetic locations.").
+Additionally, if you intend to execute browser monitors, additional setup will be required as described in Proxy configuration for FIPS mode and Proxy configuration for FIPS mode with corporate proxy.
 
 #### Requirements and limitations
 
-* We require operating system with FIPS-compliant mode enabled, see also [ActiveGate FIPS compliance](../../../../../ingest-from/dynatrace-activegate/activegate-fips-compliance.md "Learn about ActiveGate FIPS compliance").
+* We require operating system with FIPS-compliant mode enabled, see also ActiveGate FIPS compliance.
 * Following operating systems are currently supported:
 
   + Ubuntu Pro 22.04
@@ -283,7 +283,7 @@ Each `zip` package archive is stored in the S3 bucket together with the `*.zip.s
 
 Can I use a proxy with the Synthetic-enabled ActiveGate?
 
-With ActiveGate version 1.175+, an ActiveGate executing synthetic monitors can connect through the proxy to both the Dynatrace Cluster and the tested resource. For more information, see [Setting up proxy for private synthetic monitoring](../../private-synthetic-locations/setting-up-proxy-for-private-synthetic.md "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.").
+With ActiveGate version 1.175+, an ActiveGate executing synthetic monitors can connect through the proxy to both the Dynatrace Cluster and the tested resource. For more information, see Setting up proxy for private synthetic monitoring.
 
 Can I update an earlier ActiveGate to version 1.169+ and configure it to use with private synthetic monitors?
 

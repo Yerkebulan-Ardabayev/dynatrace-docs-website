@@ -35,4 +35,4 @@ scraped: 2026-03-06T21:30:16.176752
 
 ## Связанные темы
 
-* [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* Dynatrace Query Language

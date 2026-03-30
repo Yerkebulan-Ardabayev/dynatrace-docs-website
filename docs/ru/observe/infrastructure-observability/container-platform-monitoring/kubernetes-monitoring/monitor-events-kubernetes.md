@@ -8,7 +8,7 @@ scraped: 2026-03-06T21:21:56.612300
 
 * ActiveGate версии 1.265+
 * В Dynatrace перейдите в **Monitoring settings** > **Kubernetes** и убедитесь, что параметр **Monitor Kubernetes namespaces, services, workloads, and pods** включён.
-* [Включите последнюю версию мониторинга логов Dynatrace](../../../../analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* Включите последнюю версию мониторинга логов Dynatrace
 
 ## Мониторинг событий Kubernetes для анализа и оповещений
 
@@ -55,7 +55,7 @@ scraped: 2026-03-06T21:21:56.612300
 
 Вы также можете просматривать события на странице **Log viewer** (в Dynatrace перейдите в ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**), которая позволяет выполнять расширенный поиск и фильтрацию.
 
-Если среда поддерживает платформу, события хранятся в Grail. Следующий запрос DQL можно использовать в качестве шаблона для запроса определённых событий в [**Notebooks**](../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") или [**Dashboards**](../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+Если среда поддерживает платформу, события хранятся в Grail. Следующий запрос DQL можно использовать в качестве шаблона для запроса определённых событий в **Notebooks** или **Dashboards**.
 
 ```
 fetch events
@@ -131,7 +131,7 @@ fetch events
 kubectl get events --all-namespaces --field-selector involvedObject.namespace=hipster-shop,type=Warning
 ```
 
-Вы можете определить полевые селекторы событий через [Dynatrace API](../../../../dynatrace-api/configuration-api/k8s-credentials-api-api.md "Manage Kubernetes credentials via the Dynatrace configuration API.").
+Вы можете определить полевые селекторы событий через Dynatrace API.
 
 Вы можете создать максимум 20 правил фильтрации событий на кластер Kubernetes.
 
@@ -168,8 +168,8 @@ kubectl get events --all-namespaces --field-selector involvedObject.namespace=hi
 
 События Kubernetes доступны в метрике **Kubernetes: Event count** (`builtin:kubernetes.events`). Для фильтрации метрики количества событий по нужным событиям используйте измерения `k8s.event.reason` и `k8s.event.type`.
 
-* Чтобы помочь вам понять распределение и развитие событий Kubernetes во времени, используйте [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") для создания графиков. Вы можете использовать графики для сравнения различных временных диапазонов, различных сущностей, фильтров событий и использования сложных выражений.
-* Чтобы активировать оповещения при возникновении событий Kubernetes (например, всегда оповещать в случае события `Evicted`), определите [события метрик](../../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace") на основе метрики **Kubernetes: Event count**.
+* Чтобы помочь вам понять распределение и развитие событий Kubernetes во времени, используйте Data Explorer для создания графиков. Вы можете использовать графики для сравнения различных временных диапазонов, различных сущностей, фильтров событий и использования сложных выражений.
+* Чтобы активировать оповещения при возникновении событий Kubernetes (например, всегда оповещать в случае события `Evicted`), определите события метрик на основе метрики **Kubernetes: Event count**.
 
 ## Лицензирование
 
@@ -179,8 +179,8 @@ kubectl get events --all-namespaces --field-selector involvedObject.namespace=hi
 
 `dsfm:active_gate.kubernetes.events.processed:splitBy("dt.entity.kubernetes_cluster"):sum:auto:sort(value(sum,descending)):limit(10)`
 
-Потребление DDU применяется к мониторингу событий Kubernetes. Подробности см. в [DDU для пользовательских событий Davis](../../../../license/monitoring-consumption-classic/davis-data-units/ddu-events.md "Understand how to calculate Davis data unit consumption and costs related to custom-configured and custom-ingested events.").
+Потребление DDU применяется к мониторингу событий Kubernetes. Подробности см. в DDU для пользовательских событий Davis.
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
+* Настройка Dynatrace в Kubernetes

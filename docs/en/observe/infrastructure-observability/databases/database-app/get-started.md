@@ -23,17 +23,17 @@ Dynatrace database monitoring starts with installing the ![Databases](https://dt
 
 Explore the available SQL extensions below to learn how to configure each one for database monitoring. These extensions provide performance metrics, query insights, and custom SQL monitoring without requiring agents on database hosts. To start monitoring your database instances, follow the activation and configuration steps for each extension.
 
-[### Oracle Database
+### Oracle Database
 
-Monitor Oracle Database instances with performance metrics and query insights.](get-started/oracle.md "How to set up monitoring for Oracle databases in Dynatrace.")[![Microsoft SQL Server](https://dt-cdn.net/images/techn-icon-microsoft-sqlserver-60740bd3fa.svg "Microsoft SQL Server")
+Monitor Oracle Database instances with performance metrics and query insights.[![Microsoft SQL Server](https://dt-cdn.net/images/techn-icon-microsoft-sqlserver-60740bd3fa.svg "Microsoft SQL Server")
 
 ### Microsoft SQL Server Database
 
-Monitor Microsoft SQL Server Database instances with performance metrics and query insights.](get-started/microsoft-sql.md "How to set up monitoring for Microsoft SQL databases in Dynatrace.")[### PostgreSQL
+Monitor Microsoft SQL Server Database instances with performance metrics and query insights.](get-started/microsoft-sql.md "How to set up monitoring for Microsoft SQL databases in Dynatrace.")### PostgreSQL
 
-Monitor PostgreSQL instances with performance metrics and query insights.](get-started/postgres.md "How to set up monitoring for PostgreSQL databases in Dynatrace.")[### MySQL
+Monitor PostgreSQL instances with performance metrics and query insights.### MySQL
 
-Monitor MySQL instances with performance metrics and query insights.](get-started/mysql.md "How to set up monitoring for MySQL databases in Dynatrace.")[![Snowflake](https://dt-cdn.net/images/snowflake-for-workflows-256-3d9ba2057b.png "Snowflake")
+Monitor MySQL instances with performance metrics and query insights.[![Snowflake](https://dt-cdn.net/images/snowflake-for-workflows-256-3d9ba2057b.png "Snowflake")
 
 ### Snowflake
 

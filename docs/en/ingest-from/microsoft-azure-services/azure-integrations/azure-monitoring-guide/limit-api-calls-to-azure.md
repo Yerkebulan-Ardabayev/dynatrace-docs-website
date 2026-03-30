@@ -100,4 +100,4 @@ To monitor resources based on tags
 
 ## Related topics
 
-* [Microsoft Azure monitoring](../../../../observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring.md "Monitor Azure with Dynatrace")
+* Microsoft Azure monitoring

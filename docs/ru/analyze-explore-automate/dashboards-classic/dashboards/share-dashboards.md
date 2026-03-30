@@ -7,12 +7,12 @@ scraped: 2026-02-27T21:26:39.808422
 # Совместное использование панелей мониторинга Dynatrace
 
 
-[Dashboards Classic](../../dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic.")
+Dashboards Classic
 
 Эта страница относится к классическим панелям мониторинга, созданным с помощью функциональности ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**, интегрированной с Dynatrace Classic.
 
-* Если вы уже используете приложение ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace, см. [Dashboards](../../dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") для соответствующей документации.
-* Если вы все еще используете классические панели мониторинга, мы рекомендуем вам [обновить ваши панели мониторинга](../dashboards-upgrade-classic-to-latest.md "Обновите классические панели мониторинга, созданные в предыдущей версии Dynatrace, до приложения Dashboards в последней версии Dynatrace.") и воспользоваться всеми новейшими возможностями, предоставляемыми приложением ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace.
+* Если вы уже используете приложение ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace, см. Dashboards для соответствующей документации.
+* Если вы все еще используете классические панели мониторинга, мы рекомендуем вам обновить ваши панели мониторинга и воспользоваться всеми новейшими возможностями, предоставляемыми приложением ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace.
 
 Вы можете делиться своими панелями мониторинга с кем угодно, даже если у них нет собственных учетных записей в той же среде Dynatrace.
 

@@ -10,7 +10,7 @@ scraped: 2026-03-05T21:35:44.907456
 
 Мониторинг журналов Classic
 
-Для самой новой версии Dynatrace см. [Передача журналов Kubernetes с помощью Fluent Bit](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s.md "Интегрируйте Fluent Bit в Kubernetes, чтобы передавать журналы в Dynatrace.").
+Для самой новой версии Dynatrace см. Передача журналов Kubernetes с помощью Fluent Bit.
 
 Эта страница предоставляет инструкции по развертыванию и настройке Fluent Bit в вашей среде Kubernetes для сбора журналов.
 
@@ -491,7 +491,7 @@ scraped: 2026-03-05T21:35:44.907456
 
    fieldPath: status.hostIP
    ```
-2. Получите [токен Dynatrace API](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как аутентифицироваться, чтобы использовать Dynatrace API.") с областью `logs.ingest` (Ingest Logs) для переменной среды `DT_INGEST_TOKEN`.
+2. Получите токен Dynatrace API с областью `logs.ingest` (Ingest Logs) для переменной среды `DT_INGEST_TOKEN`.
 3. Обновите переменные среды `K8S_CLUSTER_NAME`, `DT_INGEST_HOST` и `DT_INGEST_TOKEN` в файле `values.yaml`. Используйте одно и то же имя кластера, которое вы настроили в Dynatrace для `K8S_CLUSTER_NAME`, и укажите ваш конечный пункт SaaS или Managed в качестве `DT_INGEST_HOST`.
 4. Необязательно. Адаптируйте раздел фильтра в файле `values.yaml`, чтобы нацелиться на определенные пространства имен или поды, как описано в разделе [Фильтр Fluent Bit](https://dt-url.net/m903n8q) для получения подробной информации.
 5. Необязательно. Обеспечьте удаление или маскировку любой конфиденциальной информации в журналах.
@@ -540,7 +540,7 @@ helm uninstall fluent-bit
 
 ## Устранение неполадок
 
-Посетите [Устранение неполадок журналов, ингестируемых через Fluent Bit](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718) в сообществе Dynatrace, а также см. [Устранение неполадок мониторинга журналов (Классические журналы)](../lmc-troubleshooting.md "Исправьте проблемы, связанные с настройкой и конфигурацией мониторинга журналов Classic.").
+Посетите [Устранение неполадок журналов, ингестируемых через Fluent Bit](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718) в сообществе Dynatrace, а также см. Устранение неполадок мониторинга журналов (Классические журналы).
 
 ### Проверьте, что поды Fluent Bit запущены
 
@@ -634,4 +634,4 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 
 ## Связанные темы
 
-* [Передача журналов в Dynatrace с помощью Fluent Bit (Классические журналы)](stream-logs-with-fluent-bit.md "Интеграция Fluent Bit для передачи журналов в Dynatrace.")
+* Передача журналов в Dynatrace с помощью Fluent Bit (Классические журналы)

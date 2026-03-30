@@ -200,7 +200,7 @@ To manage your NAM monitors via REST API
 2. In the **Select a definition** field, select **Synthetic - Network availability monitors**.
 3. Authenticate with your API token.
 
-   For details, see [Authentication](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md "Learn the concept of an access token and its scopes.").
+   For details, see Authentication.
 4. Perform one of the following actions.
 
    | To do this | Go to **Synthetic - Network availability monitors** and select this |
@@ -211,7 +211,7 @@ To manage your NAM monitors via REST API
    | Get all synthetic monitor definition for the given monitor ID | **GET /synthetic/monitors/{monitorId}** |
    | Update a synthetic monitor definition for the given monitor ID. | **PUT /synthetic/monitors/{monitorId}** |
 
-See [Synthetic monitors API v2](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-network-availability-monitors.md "Create, read, update and delete synthetic monitors. Currently network availability monitors only.") for more details.
+See Synthetic monitors API v2 for more details.
 
 ## Available script configuration properties
 
@@ -634,4 +634,4 @@ Constraints process all records in a response, regardless of the section to whic
 
 ## Related topics
 
-* [Synthetic Monitors API](../../../../dynatrace-api/environment-api/synthetic/synthetic-monitors.md "Manage synthetic monitors via the Synthetic v1 API.")
+* Synthetic Monitors API

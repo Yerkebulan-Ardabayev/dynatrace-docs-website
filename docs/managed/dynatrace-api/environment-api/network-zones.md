@@ -4,18 +4,18 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/network
 updated: 2026-02-09
 ---
 
-[### List all network zones
+### List all network zones
 
-Get an overview of all network zones available in your Dynatrace environment.](/managed/dynatrace-api/environment-api/network-zones/get-all "List all network zones of your monitoring environment via the Dynatrace API.")[### View a network zone
+Get an overview of all network zones available in your Dynatrace environment.### View a network zone
 
-Get the numbers of OneAgents using the network zone by its ID.](/managed/dynatrace-api/environment-api/network-zones/get-network-zone "View the configuration of a network zone via the Dynatrace API.")
+Get the numbers of OneAgents using the network zone by its ID.
 
-[### Edit a network zone
+### Edit a network zone
 
-Update the existing configuration of a network zone.](/managed/dynatrace-api/environment-api/network-zones/put-network-zone "Update a network zone via the Dynatrace API.")[### Delete a network zone
+Update the existing configuration of a network zone.### Delete a network zone
 
-Delete the network zone you no longer need.](/managed/dynatrace-api/environment-api/network-zones/del-network-zone "Delete a network zone via the Dynatrace API.")[### View configuration
+Delete the network zone you no longer need.### View configuration
 
-Get an overview of the global network zones configuration.](/managed/dynatrace-api/environment-api/network-zones/get-global-config "Retrieve the global network zones configuration via the Dynatrace API.")[### Update configuration
+Get an overview of the global network zones configuration.### Update configuration
 
-Update the global configuration of network zones.](/managed/dynatrace-api/environment-api/network-zones/put-global-config "Edit the global network zones configuration via the Dynatrace API.")
+Update the global configuration of network zones.

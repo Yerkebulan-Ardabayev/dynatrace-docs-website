@@ -8,7 +8,7 @@ source: https://www.dynatrace.com/support/help/
 ### Начните работу с Dynatrace или узнайте, что нового
 
 * Впервые в Dynatrace? Узнайте, как [начать](getting-started.md) всего за несколько шагов.
-* Уже на борту? Узнайте, что нового для [SaaS](whats-new/saas.md), [OneAgent](whats-new/oneagent.md) или [ActiveGate](whats-new/activegate.md).
+* Уже на борту? Узнайте, что нового для [OneAgent](whats-new/oneagent.md) или [ActiveGate](whats-new/activegate.md).
 
 ## Приложения Dynatrace
 

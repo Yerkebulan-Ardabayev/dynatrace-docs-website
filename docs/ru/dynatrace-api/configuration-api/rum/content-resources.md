@@ -6,14 +6,14 @@ scraped: 2026-03-06T21:35:26.941059
 
 API **Content resources** позволяет управлять конфигурацией поставщиков контента. Эту же конфигурацию можно настроить в пользовательском интерфейсе Dynatrace по пути **Settings > Web and mobile monitoring > Content resources**.
 
-[### Просмотр конфигурации
+### Просмотр конфигурации
 
-Получите обзор конфигурации поставщиков контента.](content-resources/get-configuration.md "Read the configuration of content providers via the Dynatrace API.")[### Обновление конфигурации
+Получите обзор конфигурации поставщиков контента.### Обновление конфигурации
 
-Обновите конфигурацию поставщиков контента.](content-resources/put-configuration.md "Update the configuration of content providers via the Dynatrace API.")
+Обновите конфигурацию поставщиков контента.
 
 ## Связанные темы
 
-* [Настройка обнаружения ресурсов первой стороны, третьих сторон и CDN для веб-приложений](../../../observe/digital-experience/web-applications/additional-configuration/configure-third-party-and-cdn-content-detection-web.md "Manually define third-party and CDN providers along with auto-detected providers for your web applications.")
-* [Настройка обнаружения ресурсов первой стороны, третьих сторон и CDN для мобильных приложений](../../../observe/digital-experience/mobile-applications/additional-configuration/configure-third-party-and-cdn-content-detection-mobile.md "Manually define third-party and CDN providers along with auto-detected providers for your mobile applications.")
-* [Настройка обнаружения ресурсов первой стороны, третьих сторон и CDN для пользовательских приложений](../../../observe/digital-experience/custom-applications/additional-configuration/configure-third-party-and-cdn-content-detection-custom.md "Manually define third-party and CDN providers along with auto-detected providers for your custom applications.")
+* Настройка обнаружения ресурсов первой стороны, третьих сторон и CDN для веб-приложений
+* Настройка обнаружения ресурсов первой стороны, третьих сторон и CDN для мобильных приложений
+* Настройка обнаружения ресурсов первой стороны, третьих сторон и CDN для пользовательских приложений

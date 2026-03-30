@@ -20,7 +20,7 @@ Information can be logged in a very wide variety of formats depending on the app
 
 For example, you can extract numerical values from log line via log processing, turn these into metrics on Dynatrace Platform, and include them in dashboards and problem detection.
 
-Log processing does not affect [DDU](../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") consumption of log ingest.
+Log processing does not affect DDU consumption of log ingest.
 
 ## Log processing rules
 
@@ -56,7 +56,7 @@ To create a log processing rule
 5. Provide the processing rule definition.  
    The processing rule definition is a log processing instruction about how Dynatrace should transform or modify your log data narrowed down by the **Log query**.
 
-   The rule definition is created using log processing [commands](log-processing/log-processing-commands.md "Use log processing commands that reshape your incoming log data for better analysis or further processing."), [functions](log-processing/log-processing-functions.md "Use log processing data types that reshape your incoming log data for better analysis or further processing."), and pattern matching that allows you to add, transform, or remove incoming log records. This gives you total control over how your log data is presented to Dynatrace Log Monitoring.
+   The rule definition is created using log processing commands, functions, and pattern matching that allows you to add, transform, or remove incoming log records. This gives you total control over how your log data is presented to Dynatrace Log Monitoring.
 6. Test the log processing rule.  
    You can test the rule definition by either downloading the sample log or providing a fragment of the sample log manually in the **Log sample** text box.
 

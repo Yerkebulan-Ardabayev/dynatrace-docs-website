@@ -17,7 +17,7 @@ Dynatrace Operator может автоматически настраивать 
 
 ### Предоставление токена для загрузки данных
 
-Вам необходимо предоставить [токен для загрузки данных](../deployment/tokens-permissions.md#dataIngestToken "Настройте токены и разрешения для мониторинга вашего кластера Kubernetes") для Dynatrace Operator. Этот токен передаётся вашему приложению как часть конфигурации экспортёра OTLP.
+Вам необходимо предоставить токен для загрузки данных для Dynatrace Operator. Этот токен передаётся вашему приложению как часть конфигурации экспортёра OTLP.
 
 ### Обновление ресурса DynaKube
 
@@ -525,4 +525,4 @@ feature.dynatrace.com/otlp-exporter-configuration-set-no-proxy: "false"
 
 ## Связанные темы
 
-* [Параметры DynaKube для Dynatrace Operator](../reference/dynakube-parameters.md "Список доступных параметров для настройки Dynatrace Operator в Kubernetes.")
+* Параметры DynaKube для Dynatrace Operator

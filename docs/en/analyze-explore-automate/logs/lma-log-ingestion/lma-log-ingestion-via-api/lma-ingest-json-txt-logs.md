@@ -19,11 +19,11 @@ The Log ingestion API is responsible for collecting the data and forwarding it t
 * SaaS endpoints: `https://{your-environment-id}.live.dynatrace.com/api/v2/logs/ingest`.
   The Log ingestion API endpoint is available in your Dynatrace environment.
 * Environment ActiveGate endpoints: `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/logs/ingest`.
-  The Log ingestion API is automatically enabled after you [install an ActiveGate](../../../../ingest-from/dynatrace-activegate/installation.md "Learn how to configure ActiveGate")
+  The Log ingestion API is automatically enabled after you install an ActiveGate
 
-For details regarding supported payloads, authentication, parameters, and body objects, refer to [Log Monitoring API v2 - POST ingest logs](../../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+For details regarding supported payloads, authentication, parameters, and body objects, refer to Log Monitoring API v2 - POST ingest logs.
 
-For details regarding limitations, refer to [Log Management and Analytics default limits](../../lma-limits.md "Default limits for the latest version of Dynatrace Log Management and Analytics.").
+For details regarding limitations, refer to Log Management and Analytics default limits.
 
 ## Data transformation and automatic JSON parsing
 
@@ -52,7 +52,7 @@ The Log ingestion API collects and attempts to automatically transform log data.
 ### Attributes
 
 * Log attributes contain all other keys from the input JSON object except those used for `timestamp`, `loglevel`, and `content`.
-* First-level attributes should preferably map to semantic attributes for Dynatrace to map them to context. All attributes can be used in queries, though Semantic Dictionary helps Dynatrace Intelligence AI in the interpretation of the logs. See [Semantic Dictionary](../../../../semantic-dictionary.md "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.") for more details.
+* First-level attributes should preferably map to semantic attributes for Dynatrace to map them to context. All attributes can be used in queries, though Semantic Dictionary helps Dynatrace Intelligence AI in the interpretation of the logs. See Semantic Dictionary for more details.
 * Automatic attribute. The `dt.auth.origin` attribute is automatically added to every log record ingested via API. This attribute is the public part of the API key that the log source authorizes to connect to the generic log ingest API.
 
 Attribute processing differs depending on tenant and environment type:
@@ -77,7 +77,7 @@ The raw data model preserves the original log structure and context, maintaining
 
 We recommend using this approach for highly nested JSON logs, as it maintains the semantic meaning and relationships between data points.
 
-When using log shippers such as [Fluentbit](../lma-stream-logs-with-fluent-bit.md "Integrate Fluent Bit to stream logs to Dynatrace."), [Fluentd](../lma-stream-logs-fluentd-k8s.md "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.") or [Logstash](../lma-stream-logs-with-logstash.md "Integrate Logstash to stream logs from nodes and pods to Dynatrace."), avoid using JSON parsers on the shipper side and let Dynatrace handle the JSON parsing instead. This approach reduces processing overhead on your log shipper and ensures consistent parsing behavior.
+When using log shippers such as Fluentbit, Fluentd or Logstash, avoid using JSON parsers on the shipper side and let Dynatrace handle the JSON parsing instead. This approach reduces processing overhead on your log shipper and ensures consistent parsing behavior.
 
 The raw data model transforms the content of structured logs as described in the sections below.
 
@@ -200,5 +200,5 @@ For multi-value attributes, the attribute key contributes to billing only once, 
 
 ## Related topics
 
-* [Log Monitoring API v2 - POST ingest logs](../../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.")
-* [Automatic log enrichment](lma-log-data-transformation.md "Log ingestion API automatically transforms log data into output values for the loglevel attribute.")
+* Log Monitoring API v2 - POST ingest logs
+* Automatic log enrichment

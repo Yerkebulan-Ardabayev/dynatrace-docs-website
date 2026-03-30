@@ -21,7 +21,7 @@ scraped: 2026-03-04T21:32:53.595693
 
 Для гибридных приложений нативная часть мониторится через OneAgent for Mobile, а браузерная часть наблюдается с помощью Dynatrace RUM JavaScript.
 
-Для гибридных приложений пользовательская сессия тарифицируется только один раз. Подробности см. в разделе [Digital Experience Monitoring (DEM units)](../../../license/monitoring-consumption-classic/digital-experience-monitoring-units.md "Understand how Dynatrace Digital Experience Monitoring consumption is calculated based on DEM units.").
+Для гибридных приложений пользовательская сессия тарифицируется только один раз. Подробности см. в разделе Digital Experience Monitoring (DEM units).
 
 Также обратите внимание, что одна "гибридная" сессия может отображаться в Dynatrace как две отдельные сессии: одна как веб-сессия, а другая как мобильная сессия.
 
@@ -42,7 +42,7 @@ scraped: 2026-03-04T21:32:53.595693
 
    ![Monitor web view via Cordova wizard](https://dt-cdn.net/images/monitor-web-view-cordova-wizard-2440-449be51ccc.png)
 
-   Если инструментируемое приложение не является [приложением Cordova](cross-platform-frameworks/apache-cordova.md "Set up Dynatrace to monitor hybrid mobile apps with the Cordova plugin."), пропустите шаги, связанные с плагином Cordova.
+   Если инструментируемое приложение не является приложением Cordova, пропустите шаги, связанные с плагином Cordova.
 
 ## Шаг 2 Настройка OneAgent и его конфигурации
 
@@ -52,9 +52,9 @@ Android
 
 iOS
 
-Для автоматического инструментирования вашего Android-проекта используйте [плагин Dynatrace Android Gradle](instrument-android-app/instrumentation-via-plugin.md "Learn how the Dynatrace Android Gradle plugin can auto-instrument your Android application project.").
+Для автоматического инструментирования вашего Android-проекта используйте плагин Dynatrace Android Gradle.
 
-После этого [настройте конфигурацию по умолчанию](instrument-android-app/instrumentation-via-plugin/adjust-oneagent-configuration.md#hybrid-apps "Learn how to configure the Dynatrace Android Gradle plugin to modify the OneAgent SDK configuration."), чтобы OneAgent мог передавать cookies в WebView и домены, указанные в файле сборки верхнего уровня вашего приложения.
+После этого настройте конфигурацию по умолчанию, чтобы OneAgent мог передавать cookies в WebView и домены, указанные в файле сборки верхнего уровня вашего приложения.
 
 Ниже приведён пример конфигурации для домена `easytravel.com`:
 
@@ -89,9 +89,9 @@ domains '.easytravel.com'
 }
 ```
 
-Для мониторинга вашего iOS-приложения необходимо инструментировать [OneAgent for iOS](instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios.md "Set up user experience monitoring for iOS apps within Dynatrace.").
+Для мониторинга вашего iOS-приложения необходимо инструментировать OneAgent for iOS.
 
-После этого используйте [ключи конфигурации `DTXHybridApplication`, `DTXSetCookiesForDomain` и `DTXSetSecureCookiesForDomain`](instrument-ios-app/customization/ios-configuration-keys.md#hybrid "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps."), чтобы OneAgent мог передавать cookies в `WKWebView` и домены, указанные в файле [`Info.plist`](instrument-ios-app/instrumentation/info-plist-file.md "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.") вашего приложения.
+После этого используйте [ключи конфигурации `DTXHybridApplication`, `DTXSetCookiesForDomain` и `DTXSetSecureCookiesForDomain`](instrument-ios-app/customization/ios-configuration-keys.md#hybrid "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps."), чтобы OneAgent мог передавать cookies в `WKWebView` и домены, указанные в файле `Info.plist` вашего приложения.
 
 Ниже приведён пример конфигурации для домена `easytravel.com`:
 
@@ -132,13 +132,13 @@ Apple Pay не работает в WKWebView
 
 Для защиты безопасности транзакций в `WKWebView` Apple [запрещает использование Apple Pay с API инъекции скриптов](https://developer.apple.com/documentation/safari-release-notes/safari-13-release-notes#Payment-Request-API), такими как `WKUserScript` или `evaluateJavaScript`. Dynatrace использует `evaluateJavascript` для передачи корреляционных данных из нативного слоя в `WKWebView`, и этот процесс отключает Apple Pay.
 
-В качестве обходного решения установите ключ конфигурации `DTXHybridApplication` [configuration key](instrument-ios-app/customization/ios-configuration-keys.md "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") в `false`, чтобы прекратить инъекцию скрипта из OneAgent. Однако это также удалит корреляцию мобильных и веб-сессий для вашего гибридного приложения. Соответствующие мобильные и веб-сессии не будут объединены, что приведёт к тарификации двух сессий вместо одной.
+В качестве обходного решения установите ключ конфигурации `DTXHybridApplication` configuration key в `false`, чтобы прекратить инъекцию скрипта из OneAgent. Однако это также удалит корреляцию мобильных и веб-сессий для вашего гибридного приложения. Соответствующие мобильные и веб-сессии не будут объединены, что приведёт к тарификации двух сессий вместо одной.
 
-Важно добавить необходимые домены в файл сборки верхнего уровня (Android) или [файл `Info.plist`](instrument-ios-app/instrumentation/info-plist-file.md "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.") (iOS), чтобы Dynatrace мог идентифицировать мобильные и веб-сессии в вашем приложении и объединять эти сессии в одну "гибридную" сессию.
+Важно добавить необходимые домены в файл сборки верхнего уровня (Android) или файл `Info.plist` (iOS), чтобы Dynatrace мог идентифицировать мобильные и веб-сессии в вашем приложении и объединять эти сессии в одну "гибридную" сессию.
 
 ## Шаг 3 Вставка RUM JavaScript в HTML-источники
 
-Для захвата действий пользователя в веб-части вашего гибридного приложения используйте RUM JavaScript. Вам необходимо вручную вставить JavaScript-код или тег в ваши HTML-источники. Подробности см. в разделе [Настройка безагентного Real User Monitoring](../web-applications/initial-setup/set-up-agentless-real-user-monitoring.md "Set up agentless monitoring for your web applications."). Обратите внимание, что RUM JavaScript доступен в [нескольких форматах](../web-applications/initial-setup/snippet-formats.md "Select a format for the RUM JavaScript snippet that best fits your specific use case").
+Для захвата действий пользователя в веб-части вашего гибридного приложения используйте RUM JavaScript. Вам необходимо вручную вставить JavaScript-код или тег в ваши HTML-источники. Подробности см. в разделе Настройка безагентного Real User Monitoring. Обратите внимание, что RUM JavaScript доступен в нескольких форматах.
 
 После добавления RUM JavaScript в HTML-файлы действия пользователя из веб-представлений вашего гибридного приложения отправляются в веб-приложение, которое вы создали на шаге 1.
 
@@ -146,7 +146,7 @@ Apple Pay не работает в WKWebView
 
 ## Связанные темы
 
-* [Инструментирование мобильных приложений с помощью плагина Dynatrace Cordova](cross-platform-frameworks/apache-cordova.md "Set up Dynatrace to monitor hybrid mobile apps with the Cordova plugin.")
-* [Инструментирование мобильных приложений с помощью плагина Dynatrace Flutter](cross-platform-frameworks/flutter.md "Learn how to auto-instrument your Flutter applications with OneAgent.")
-* [Инструментирование мобильных приложений с помощью плагина Dynatrace React Native](cross-platform-frameworks/react-native.md "Auto-instrument your React Native applications with OneAgent.")
-* [Инструментирование мобильных приложений с помощью пакета Dynatrace Xamarin NuGet](cross-platform-frameworks/xamarin-nuget.md "Monitor Xamarin apps with Dynatrace OneAgent.")
+* Инструментирование мобильных приложений с помощью плагина Dynatrace Cordova
+* Инструментирование мобильных приложений с помощью плагина Dynatrace Flutter
+* Инструментирование мобильных приложений с помощью плагина Dynatrace React Native
+* Инструментирование мобильных приложений с помощью пакета Dynatrace Xamarin NuGet

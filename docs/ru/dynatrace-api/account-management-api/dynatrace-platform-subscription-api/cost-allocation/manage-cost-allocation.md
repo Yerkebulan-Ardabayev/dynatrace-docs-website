@@ -18,7 +18,7 @@ scraped: 2026-03-06T21:27:07.452068
 
 ### Аутентификация
 
-Для выполнения этого запроса вам необходима область действия **Allow read access for usage and consumption resources** (`account-uac-read`), назначенная вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Управляйте аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
+Для выполнения этого запроса вам необходима область действия **Allow read access for usage and consumption resources** (`account-uac-read`), назначенная вашему токену. Чтобы узнать, как получить и использовать его, см. Клиенты OAuth.
 
 ### Параметры
 
@@ -90,7 +90,7 @@ scraped: 2026-03-06T21:27:07.452068
 
 ## Аутентификация
 
-Для выполнения этого запроса вам необходимо разрешение **Allow write access for usage and consumption resources** (`account-uac-write`), назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Управляйте аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
+Для выполнения этого запроса вам необходимо разрешение **Allow write access for usage and consumption resources** (`account-uac-write`), назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. Клиенты OAuth.
 
 ### Параметры
 
@@ -159,7 +159,7 @@ scraped: 2026-03-06T21:27:07.452068
 
 ## Аутентификация
 
-Для выполнения этого запроса вам необходимо разрешение **Allow write access for usage and consumption resources** (`account-uac-write`), назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Управляйте аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
+Для выполнения этого запроса вам необходимо разрешение **Allow write access for usage and consumption resources** (`account-uac-write`), назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. Клиенты OAuth.
 
 ### Параметры
 
@@ -228,7 +228,7 @@ scraped: 2026-03-06T21:27:07.452068
 
 ## Аутентификация
 
-Для выполнения этого запроса вам необходимо разрешение **Allow write access for usage and consumption resources** (`account-uac-write`), назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Управляйте аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
+Для выполнения этого запроса вам необходимо разрешение **Allow write access for usage and consumption resources** (`account-uac-write`), назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. Клиенты OAuth.
 
 ### Параметры
 
@@ -257,7 +257,7 @@ scraped: 2026-03-06T21:27:07.452068
 
 ### Аутентификация
 
-Для выполнения этого запроса вам необходима область действия **Allow read access for usage and consumption resources** (`account-uac-read`), назначенная вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Управляйте аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
+Для выполнения этого запроса вам необходима область действия **Allow read access for usage and consumption resources** (`account-uac-read`), назначенная вашему токену. Чтобы узнать, как получить и использовать его, см. Клиенты OAuth.
 
 ### Параметры
 
@@ -329,7 +329,7 @@ scraped: 2026-03-06T21:27:07.452068
 
 ## Аутентификация
 
-Для выполнения этого запроса вам необходимо разрешение **Allow write access for usage and consumption resources** (`account-uac-write`), назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Управляйте аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
+Для выполнения этого запроса вам необходимо разрешение **Allow write access for usage and consumption resources** (`account-uac-write`), назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. Клиенты OAuth.
 
 ### Параметры
 
@@ -398,7 +398,7 @@ scraped: 2026-03-06T21:27:07.452068
 
 ## Аутентификация
 
-Для выполнения этого запроса вам необходимо разрешение **Allow write access for usage and consumption resources** (`account-uac-write`), назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Управляйте аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
+Для выполнения этого запроса вам необходимо разрешение **Allow write access for usage and consumption resources** (`account-uac-write`), назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. Клиенты OAuth.
 
 ### Параметры
 
@@ -467,7 +467,7 @@ scraped: 2026-03-06T21:27:07.452068
 
 ## Аутентификация
 
-Для выполнения этого запроса вам необходимо разрешение **Allow write access for usage and consumption resources** (`account-uac-write`), назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Управляйте аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
+Для выполнения этого запроса вам необходимо разрешение **Allow write access for usage and consumption resources** (`account-uac-write`), назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. Клиенты OAuth.
 
 ### Параметры
 
@@ -490,4 +490,4 @@ scraped: 2026-03-06T21:27:07.452068
 
 ## Связанные темы
 
-* [Распределение затрат DPS](../../../../license/cost-allocation.md "Узнайте, как распределять затраты по центрам затрат и продуктам.")
+* Распределение затрат DPS

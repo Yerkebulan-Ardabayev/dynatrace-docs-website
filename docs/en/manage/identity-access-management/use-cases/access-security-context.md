@@ -20,7 +20,7 @@ To control access to logs, metrics, and spans, you need to use the corresponding
 
 ## Who this is for
 
-This is for Dynatrace account administrators who are responsible for creating policies to grant users access to monitored entities such as hosts, through [DQL](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.").
+This is for Dynatrace account administrators who are responsible for creating policies to grant users access to monitored entities such as hosts, through DQL.
 
 ## What you'll learn
 
@@ -34,9 +34,9 @@ In this article, you'll learn:
 
 Prior knowledge
 
-* [Identity and access management (IAM)](../../../../common/manage/identity-access-management.md "Configure users, groups and permissions.")
-* [Grant access to Dynatrace](access-platform.md "Grant access to Dynatrace")
-* [User permissions in default groups](../user-and-group-management/default-groups.md "Dynatrace default groups reference")
+* Identity and access management (IAM)
+* Grant access to Dynatrace
+* User permissions in default groups
 
 Prerequisites
 
@@ -71,12 +71,12 @@ If you have already set up management zones, it's possible to map the management
 
 `managementZones` is the default value for the majority of entity types. With this option, the security context of entities is mapped from classic management zones.
 Logs, spans, metrics, and events powered by Grail that are sent from an entity do not inherit the management zones of that entity.
-This means [access controls](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.") on logs, spans, metrics and events powered by Grail must be handled separately.
+This means access controls on logs, spans, metrics and events powered by Grail must be handled separately.
 This option is useful if you have management zones already in place and you want to re-use those to control access on entities.
 
 #### Option 2: Host tags and properties
 
-You can set the security context using the `dt.security_context` host property set using automated rules or host properties set using [OneAgent configuration via command-line interface](../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+You can set the security context using the `dt.security_context` host property set using automated rules or host properties set using OneAgent configuration via command-line interface.
 
 After you set the security context on a host, it will be used to automatically determine the security context for all logs, spans, metrics, and events that are sent from this host.
 
@@ -118,7 +118,7 @@ If the entity types are not listed, we recommend creating those entity types.
 
 This API is deprecated.
 
-Set the security context via the [Monitored entities API](../../../dynatrace-api/environment-api/entity-v2/security-context.md "Create or delete security context via Dynatrace API.").
+Set the security context via the Monitored entities API.
 
 2. Create the policy
 
@@ -150,6 +150,6 @@ storage:dt.security_context = "mySecurityContext";
 
 ## Related topics
 
-* [Monitored entities API - security context](../../../dynatrace-api/environment-api/entity-v2/security-context.md "Create or delete security context via Dynatrace API.")
-* [IAM policy reference](../permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.")
-* [Working with policies](../permission-management/manage-user-permissions-policies.md "Working with policies")
+* Monitored entities API - security context
+* IAM policy reference
+* Working with policies

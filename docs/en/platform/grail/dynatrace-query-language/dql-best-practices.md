@@ -15,7 +15,7 @@ This page describes actions you can take to improve query performance.
 
 ### Narrow the query time range
 
-A shorter analysis window provides better performance based on identical data sets. Use available timeframe selectors provided by the user interface or directly specify the query time range within the [fetch command](commands.md "A list of DQL commands.").
+A shorter analysis window provides better performance based on identical data sets. Use available timeframe selectors provided by the user interface or directly specify the query time range within the fetch command.
 
 ```
 fetch bizevents, from:-10m
@@ -23,7 +23,7 @@ fetch bizevents, from:-10m
 
 ### Utilize available sampling options
 
-Grail samples incoming data on write and allows the selection of these partitions within the DQL [fetch command](commands.md "A list of DQL commands."). Depending on the specified value, a fraction (`1/<samplingRatio>`) of all available raw records is returned.
+Grail samples incoming data on write and allows the selection of these partitions within the DQL fetch command. Depending on the specified value, a fraction (`1/<samplingRatio>`) of all available raw records is returned.
 
 The applicable value ranges for sampling are:
 
@@ -47,7 +47,7 @@ fetch spans, samplingRatio:100
 
 ### Further options to limit the scanned amount of data
 
-The DQL [fetch command](commands.md "A list of DQL commands.") provides further options to limit data processing by
+The DQL fetch command provides further options to limit data processing by
 
 * stopping processing after a specified amount of data
 
@@ -217,11 +217,11 @@ Similarly, if you need to sort by a field named 'not':
 
 ## Related topics
 
-* [Dynatrace Query Language](../dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Use DQL queries](dql-guide.md "Find out how DQL works and what are DQL key concepts.")
-* [DQL compared to SQL and more](dql-comparison.md "See how DQL compares to other query languages.")
-* [DQL language reference](dql-reference.md "Dynatrace Query Language syntax reference.")
-* [DQL commands](commands.md "A list of DQL commands.")
-* [DQL functions](functions.md "A list of DQL functions.")
-* [DQL operators](operators.md "A list of DQL Operators.")
-* [DQL data types](data-types.md "A list of DQL data types.")
+* Dynatrace Query Language
+* Use DQL queries
+* DQL compared to SQL and more
+* DQL language reference
+* DQL commands
+* DQL functions
+* DQL operators
+* DQL data types

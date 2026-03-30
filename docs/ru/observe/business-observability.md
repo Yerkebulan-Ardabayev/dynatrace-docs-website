@@ -43,25 +43,25 @@ Explore Business Events — центральный репозиторий рес
 
 ## Обзор Business Observability
 
-[### Концепции
+### Концепции
 
-Ознакомьтесь с бизнес-событиями и данными бизнес-класса.](business-observability/bo-basic-concepts.md "Базовые концепции Dynatrace Business Observability.")[### Захват
+Ознакомьтесь с бизнес-событиями и данными бизнес-класса.### Захват
 
-Узнайте, как захватывать бизнес-события.](business-observability/bo-events-capturing.md "Захват бизнес-событий для Dynatrace Business Observability.")[### Приём
+Узнайте, как захватывать бизнес-события.### Приём
 
-Принимайте бизнес-события через API.](business-observability/bo-api-ingest.md "Настройка аутентификации и приём бизнес-событий через API.")[### Обработка
+Принимайте бизнес-события через API.### Обработка
 
-Узнайте, как обрабатываются данные бизнес-событий.](business-observability/bo-event-processing/bo-processing-classic-pipeline.md "Обработка данных бизнес-событий в Dynatrace через классический конвейер.")[### Хранение
+Узнайте, как обрабатываются данные бизнес-событий.### Хранение
 
-Задайте периоды хранения данных.](business-observability/bo-event-processing/bo-bucket-assignment.md "Назначение периода хранения данных бизнес-событий в Dynatrace через классический конвейер.")[### Анализ и примеры
+Задайте периоды хранения данных.### Анализ и примеры
 
-Анализируйте и представляйте данные бизнес-событий.](business-observability/bo-analysis.md "Анализ и представление данных бизнес-событий.")[### Сценарий использования
+Анализируйте и представляйте данные бизнес-событий.### Сценарий использования
 
-Пройдите сквозной сценарий использования.](business-observability/end-to-end-example.md "Как захватывать и обрабатывать бизнес-события.")
+Пройдите сквозной сценарий использования.
 
 Существующим пользователям Dynatrace
 
-Перед использованием бизнес-событий необходимо [выполнить миграцию на Grail](../analyze-explore-automate/log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma.md "Log Management and Analytics — последнее решение Dynatrace для мониторинга журналов. Рекомендуем перейти на это предложение.").
+Перед использованием бизнес-событий необходимо выполнить миграцию на Grail.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -71,4 +71,4 @@ Explore Business Events — центральный репозиторий рес
 
 ## Связанные темы
 
-* [Dynatrace Query Language](../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* Dynatrace Query Language

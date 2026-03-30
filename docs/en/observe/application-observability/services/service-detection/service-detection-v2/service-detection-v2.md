@@ -35,7 +35,7 @@ Additionally, custom rules can be created as described in [Create new rule](serv
 
 Any future default rule changes will be opt-in: new rules will be shipped as disabled; you can choose whether to activate them.
 
-The service ID is a unique identifier, such as `SERVICE-649B4E44CBA804F4`, that is the result of hashing the attribute values that are used as part of the name pattern, additional service detection attributes, and [service splitting attributes](service-splitting-v2.md "Find out how to split detected services based on resource attributes."), when applicable.
+The service ID is a unique identifier, such as `SERVICE-649B4E44CBA804F4`, that is the result of hashing the attribute values that are used as part of the name pattern, additional service detection attributes, and service splitting attributes, when applicable.
 
 ## Steps
 
@@ -54,7 +54,7 @@ Detection rules are customized in ![Settings](https://dt-cdn.net/images/settings
      A human-readable descriptor of the rule.
    * **Matching condition**: Required
 
-     A [DQL matcher](../../../../../platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.").
+     A DQL matcher.
      If the matching condition applies, the rule is evaluated.
    * **Service name template**: Required
 
@@ -107,4 +107,4 @@ Verify that all the attributes used as parts of the **Service name template** an
 
 ## Related topics
 
-* [Service Detection v2](../service-detection-v2.md "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.")
+* Service Detection v2

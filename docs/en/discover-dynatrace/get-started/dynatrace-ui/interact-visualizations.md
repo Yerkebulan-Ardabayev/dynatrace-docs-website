@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:30:17.899790
 
 Charts are one of the primary components used in data visualization. They're essential in visualizing complex data in a consumable and actionable manner. Get an overview of our chart types and insight into some of the most common interactions.
 
-This article presents all the visualizations and interaction options offered by the latest Dynatrace. Note that [Dashboards](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and [Notebooks](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") applications offer you a subset of available visualizations and interactions.
+This article presents all the visualizations and interaction options offered by the latest Dynatrace. Note that Dashboards and Notebooks applications offer you a subset of available visualizations and interactions.
 
 Are you an app creator?
 

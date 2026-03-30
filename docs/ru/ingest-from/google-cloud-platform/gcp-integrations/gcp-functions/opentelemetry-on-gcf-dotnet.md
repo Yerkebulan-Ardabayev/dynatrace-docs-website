@@ -13,7 +13,7 @@ NuGet-пакет `Dynatrace.OpenTelemetry.Instrumentation.GoogleCloudFunctions` 
 
 ## Предварительные условия
 
-* [Настройте мониторинг Google Cloud Functions с помощью OpenTelemetry](opentelemetry-on-gcf.md "Мониторинг Google Cloud Functions с помощью OpenTelemetry и Dynatrace.").
+* Настройте мониторинг Google Cloud Functions с помощью OpenTelemetry.
 * Dynatrace.OpenTelemetry.Instrumentation.GoogleCloudFunctions версии 1.273+
 * Версии Cloud Functions: 1-е поколение, 2-е поколение
 
@@ -194,5 +194,5 @@ TracerProvider = Sdk.CreateTracerProviderBuilder()
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Google Cloud](../../../google-cloud-platform.md "Мониторинг Google Cloud с помощью Dynatrace.")
+* Настройка Dynatrace в Google Cloud
 * [Мониторинг Google Cloud](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

@@ -135,67 +135,67 @@ logs
 
 storage:logs:read
 
-[fetch](../dynatrace-query-language/commands/data-source-commands.md#fetch "DQL data source commands")
+fetch
 
 events
 
 storage:events:read
 
-[fetch](../dynatrace-query-language/commands/data-source-commands.md#fetch "DQL data source commands")
+fetch
 
 security.events
 
 storage:security.events:read
 
-[fetch](../dynatrace-query-language/commands/data-source-commands.md#fetch "DQL data source commands")
+fetch
 
 metrics
 
 storage:metrics:read
 
-[timeseries](../dynatrace-query-language/commands/metric-commands.md#timeseries "DQL metric commands")
+timeseries
 
 bizevents
 
 storage:bizevents:read
 
-[fetch](../dynatrace-query-language/commands/data-source-commands.md#fetch "DQL data source commands")
+fetch
 
 spans
 
 storage:spans:read
 
-[fetch](../dynatrace-query-language/commands/data-source-commands.md#fetch "DQL data source commands")
+fetch
 
 entities
 
 storage:entities:read
 
-[fetch](../dynatrace-query-language/commands/data-source-commands.md#fetch "DQL data source commands"), [classicEntitySelector](../dynatrace-query-language/functions/general-functions.md#classic-entity-selector "A list of DQL general functions."), [entityAttr](../dynatrace-query-language/functions/general-functions.md#entity-attr "A list of DQL general functions."), [entityName](../dynatrace-query-language/functions/general-functions.md#entity-name "A list of DQL general functions.")
+fetch, classicEntitySelector, entityAttr, entityName
 
 smartscape
 
 storage:smartscape:read
 
-[smartscapeNodes](../dynatrace-query-language/commands/smartscape-commands.md#smartscapeNodes "DQL Smartscape commands"), [smartscapeEdges](../dynatrace-query-language/commands/smartscape-commands.md#smartscapeEdges "DQL Smartscape commands"), [getNodeName()](../dynatrace-query-language/functions/join-functions.md#getNodeName "A list of DQL join functions."), [getNodeField()](../dynatrace-query-language/functions/join-functions.md#getNodeField "A list of DQL join functions.")
+smartscapeNodes, smartscapeEdges, getNodeName(), getNodeField()
 
 dt.system.events
 
 storage:system:read
 
-[fetch](../dynatrace-query-language/commands/data-source-commands.md#fetch "DQL data source commands")
+fetch
 
 user.events
 
 storage:user.events:read
 
-[fetch](../dynatrace-query-language/commands/data-source-commands.md#fetch "DQL data source commands")
+fetch
 
 user.sessions
 
 storage:user.sessions:read
 
-[fetch](../dynatrace-query-language/commands/data-source-commands.md#fetch "DQL data source commands")
+fetch
 
 For more information, see [IAM policy reference](../../../../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#storage "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
@@ -424,7 +424,7 @@ Permissions for entities allow you to define IAM policies that control data acce
 
 In contrast to monitoring data, entity permissions only allow filtering for the `dt.security_context` field.
 
-For more information, see [Grant access to entities with security context](../../../../ru/manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context").
+For more information, see Grant access to entities with security context.
 
 ## Field permissions
 
@@ -454,7 +454,7 @@ You can manage your custom fieldsets via REST API
 1. In Dynatrace, search for and select **Dynatrace API**.
 2. In the **Select a definition** field, select **Grail - Fieldsets**.
 3. Authenticate with your API token.  
-   For details, see [Authentication](../../../../ru/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+   For details, see Authentication.
 4. Perform one of the following actions.
 
 To do this
@@ -687,10 +687,10 @@ ALLOW storage:system:read;
 * If there is an unconditional table permission in any other policy available for a user, the `WHERE` clause is irrelevant and the user will always be able to view all records from that table.
 * Use the `MATCH` operator to simplify your statements instead of combination of `=`, `IN` and `STARTSWITH`, as there is a 100-statement limit per policy.
 * When using the `MATCH` operator with wildcards (`*`) in record filters, it's best to place wildcards before or after word separators such as: `-`, `_`, `.`, or `/`. This is because `matchesValue` used in DQL queries, performs better when word separators are present. For example, `... WHERE storage:dt.host_group.id MATCH ("db-tech-*")` is more efficient than `... WHERE storage:dt.host_group.id MATCH ("db-tech*")`.
-* Make sure to combine logs, events and metrics where applicable (to further save on the 100 statement policy [IAM policy statement syntax and examples](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax.md#iam-example-statements-combined "IAM policy statement syntax."))
+* Make sure to combine logs, events and metrics where applicable (to further save on the 100 statement policy IAM policy statement syntax and examples)
 * When you create custom fieldsets, make sure to avoid including any essential fields in your fieldset (such as `timestamp`, `id`, `content`).
 
 ## Related topics
 
-* [Working with policies](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies")
-* [DQL best practices](../../../../ru/platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.")
+* Working with policies
+* DQL best practices

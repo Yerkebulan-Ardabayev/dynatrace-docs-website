@@ -12,18 +12,18 @@ scraped: 2026-03-06T21:31:52.995561
 * 3-min read
 * Published Sep 24, 2020
 
-[Dashboards Classic](../../dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+Dashboards Classic
 
 This page refers to classic dashboards created using the ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** functionality integrated with Dynatrace Classic.
 
-* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see [Dashboards](../../dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") for related documentation.
-* If you're still using classic dashboards, we encourage you to [upgrade your dashboards](../dashboards-upgrade-classic-to-latest.md "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
+* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see Dashboards for related documentation.
+* If you're still using classic dashboards, we encourage you to upgrade your dashboards and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
 
 You can edit the JSON definition of your dashboard offline or, for small changes, edit the JSON directly in Dynatrace.
 
 API alternative
 
-To manage dashboard JSON at scale, you need the [Dashboards API](../../../dynatrace-api/configuration-api/dashboards-api.md "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.").
+To manage dashboard JSON at scale, you need the Dashboards API.
 
 ## Edit offline
 
@@ -38,7 +38,7 @@ When you upload a dashboard using this procedure, you overwrite the dashboard wh
 5. On the **Dashboard JSON** page, select **Download**.  
    A JSON file with the dashboard's name is downloaded to your local machine.
 6. Edit the JSON in your preferred development environment.  
-   For JSON syntax details, see the [Dashboards API](../../../dynatrace-api/configuration-api/dashboards-api.md "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.") Documentation.
+   For JSON syntax details, see the Dashboards API Documentation.
 7. On the **Dashboard JSON** page, select **Upload**, browse for the edited JSON file, and upload it to Dynatrace.  
    The uploaded JSON is displayed on the **Dashboard JSON** page.
 8. Select **Save changes** to replace the old JSON with your edited JSON.
@@ -56,7 +56,7 @@ When you upload a dashboard using this procedure, you overwrite the dashboard wh
    * You can work directly in the edit window or copy and paste back and forth from another editor.
    * The **You have unsaved changes** message in the lower left of the page will remind you that you have work in progress. Be sure to save before you navigate away from the page.
    * Syntax is checked each time you save. You can work incrementally and use **Save changes** to verify that it still parses.
-   * For JSON syntax details, see the [Dashboards API](../../../dynatrace-api/configuration-api/dashboards-api.md "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.") Documentation.
+   * For JSON syntax details, see the Dashboards API Documentation.
 7. When you are finished, display the dashboard to verify your changes.
 
 ## Import dashboard
@@ -83,7 +83,7 @@ If you want to start from an existing dashboard definition
 
 ### Step 2 Edit the dashboard JSON file
 
-Edit the dashboard JSON in your preferred development environment. For JSON syntax details, see the [Dashboards API](../../../dynatrace-api/configuration-api/dashboards-api.md "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.") Documentation.
+Edit the dashboard JSON in your preferred development environment. For JSON syntax details, see the Dashboards API Documentation.
 
 ### Step 3 Import the dashboard
 

@@ -59,7 +59,7 @@ Two types of filters are available:
 
     * `{alert_condition}`âthe condition of the alert (above/below the threshold).
     * `{baseline}`âthe violated value of the baseline.
-    * `{dims}`âa list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the [GET metric descriptor](../../../dynatrace-api/environment-api/metric-v2/get-descriptor.md "View the descriptor of a metric via Metrics v2 API.") request.
+    * `{dims}`âa list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the GET metric descriptor request.
     * `{entityname}`âthe name of the affected entity.
     * `{metricname}`âthe name of the metric that violated the threshold.
     * `{missing_data_samples}`âthe number of samples with missing data. Only available if missing data alert is enabled.
@@ -77,4 +77,4 @@ Two types of filters are available:
 
 ## Related topics
 
-* [Metrics Classic](../../../analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")
+* Metrics Classic

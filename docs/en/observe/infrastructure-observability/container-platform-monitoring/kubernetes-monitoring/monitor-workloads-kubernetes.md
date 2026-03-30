@@ -49,7 +49,7 @@ To display the namespace unified analysis page, in Dynatrace, go to ![Kubernetes
 
 A workload consists of one or more pods. It's a way of describing a type of microservice that comprises an application. For instance, an application might have a frontend workload and a backend workload made up of a dozen pods, each across a Kubernetes cluster.
 
-The workload unified analysis page provides insights into resource utilization, problem detection, [vulnerabilities](monitor-vulnerabilities-kubernetes.md "Keep track of vulnerabilities in Kubernetes/OpenShift."), number of pods in the respective workload, number of services that are sending traffic to the pods, and events for all of the pods in a given workload. This information is valuable for analyzing the overall performance of a microservice rather than looking at specific problems in a pod instance.
+The workload unified analysis page provides insights into resource utilization, problem detection, vulnerabilities, number of pods in the respective workload, number of services that are sending traffic to the pods, and events for all of the pods in a given workload. This information is valuable for analyzing the overall performance of a microservice rather than looking at specific problems in a pod instance.
 
 To display the workload unified analysis page, in Dynatrace, go to ![Kubernetes Workloads](https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png "Kubernetes Workloads") **Kubernetes Workloads Classic** and select a workload.
 
@@ -99,4 +99,4 @@ You can use management zones to control user access to the monitoring data of sp
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
+* Set up Dynatrace on Kubernetes

@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:15:04.248703
 
 As organizations embrace cloud technologies, monitoring sign-in logs is crucial for detecting anomalies, investigating suspicious activities, and ensuring regulatory compliance. Real-time visibility into login behavior helps rapidly address security risks, protect user identities, and safeguard critical resources. It also provides actionable insights into compromised accounts, malicious insiders, and user behavior patterns, aiding strategic decisions on access management, device policies, and application usage.
 
-While the following scenario focuses on Microsoft Entra ID logs as an example, the described approach is universally applicable to any cloud, access, or identity provider integrated with Dynatrace. This is made possible through Semantic Dictionary and the standardized data mapping to the defined [semantic model](../../semantic-dictionary/model/log.md "Get to know the Semantic Dictionary models related to Log Analytics.").
+While the following scenario focuses on Microsoft Entra ID logs as an example, the described approach is universally applicable to any cloud, access, or identity provider integrated with Dynatrace. This is made possible through Semantic Dictionary and the standardized data mapping to the defined semantic model.
 
 As long as sign-in logs from a supported identity provider are ingested into Dynatrace, you can follow the steps outlined below to monitor these logs effectively.
 
@@ -40,11 +40,11 @@ As a security administrator, your responsibility is to
 
 ## Prerequisites
 
-* Knowledge of [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") and [how to use DQL queries](../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.").
+* Knowledge of Dynatrace Query Language and how to use DQL queries.
 * Send Microsoft Entra ID sign-in logs to Dynatrace. There are two options to stream logs:
 
-  + [Azure Native Dynatrace Service](../../ingest-from/microsoft-azure-services/azure-platform/azure-native-integration.md "Set and configure your Dynatrace SaaS environment using Azure Marketplace.")
-  + [Azure Log Forwarder](../../ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure.md "Use Azure log forwarding to ingest Azure logs.")
+  + Azure Native Dynatrace Service
+  + Azure Log Forwarder
 * Follow the instructions in [Create a pipeline for processing](../../platform/openpipeline/use-cases/tutorial-technology-processor.md#pipeline "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.") to configure the OpenPipeline environment. Select **Azure Entra ID Audit Logs** as the built-in processor.
 
 ## Get started

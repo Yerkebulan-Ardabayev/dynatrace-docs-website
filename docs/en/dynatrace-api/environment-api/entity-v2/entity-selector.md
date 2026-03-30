@@ -45,7 +45,7 @@ You can select only one type of entity per query.
 
 The type of the entity you want to query.
 
-You can fetch the list of available entity types with the [GET all entity types](get-all-entity-types.md "View all types of monitored entities in your environment via Dynatrace API.") call.
+You can fetch the list of available entity types with the GET all entity types call.
 
 |  |  |
 | --- | --- |
@@ -60,7 +60,7 @@ The Dynatrace entity ID of the requested entity.
 
 To specify several IDs, separate them by a comma (`,`). All requested entities must be of the same type.
 
-You can fetch the list of available entities with the [GET entities list](get-entities-list.md "View a list of monitored entities via Dynatrace API.") call.
+You can fetch the list of available entities with the GET entities list call.
 
 |  |  |
 | --- | --- |
@@ -73,7 +73,7 @@ You can fetch the list of available entities with the [GET entities list](get-en
 
 The name of the requested entity.
 
-You can fetch the list of available entities with the [GET entities list](get-entities-list.md "View a list of monitored entities via Dynatrace API.") call.
+You can fetch the list of available entities with the GET entities list call.
 
 |  |  |
 | --- | --- |
@@ -128,7 +128,7 @@ By default entity names evaluation disregards the case. You can make the criteri
 
 The attribute nameâattribute value pair that the requested entity should have.
 
-To fetch the list of available attributes, execute the [GET entity type](get-entity-type.md "View the details of a monitored entity type via Dynatrace API.") call and check the **properties** field. You can use attributes with values that can be represented by a string.
+To fetch the list of available attributes, execute the GET entity type call and check the **properties** field. You can use attributes with values that can be represented by a string.
 
 |  |  |
 | --- | --- |
@@ -153,7 +153,7 @@ The tag of the requested entities. Tags in `[context]key:value`, `key:value`, an
 
 To specify several tags, separate them by a comma (`,`). An entity with **any** of the specified tags is included to the response.
 
-You can fetch the list of available tags with the [GET custom tags](../custom-tags/get-tags.md "View custom tags of monitored entities via Dynatrace API.") and the [GET auto-tags](../../configuration-api/automatically-applied-tags-api/get-all.md "View all automatically applied tags of your environment via the Dynatrace API.") calls.
+You can fetch the list of available tags with the GET custom tags and the GET auto-tags calls.
 
 |  |  |
 | --- | --- |
@@ -168,7 +168,7 @@ The ID of the management zone to which the requested entities belong.
 
 To specify several IDs, separate them by a comma (`,`).
 
-You can fetch the list of available management zones with the [GET all management zones](../../configuration-api/management-zones-api/get-all.md "View all management zones of your environment via the Dynatrace API.") call.
+You can fetch the list of available management zones with the GET all management zones call.
 
 |  |  |
 | --- | --- |
@@ -183,7 +183,7 @@ The name of the management zone to which the requested entities belong.
 
 To specify several names, separate them by a comma (`,`).
 
-You can fetch the list of available management zones with the [GET all management zones](../../configuration-api/management-zones-api/get-all.md "View all management zones of your environment via the Dynatrace API.") call.
+You can fetch the list of available management zones with the GET all management zones call.
 
 |  |  |
 | --- | --- |
@@ -225,7 +225,7 @@ Include or exclude entities marked as deleted. Those are limited to the followin
 
 Relationships that the requested entity should have.
 
-To fetch the list of available relationships, issue the [GET entity type](get-entity-type.md "View the details of a monitored entity type via Dynatrace API.") call and check the **fromRelationships** and **toRelationships** fields.
+To fetch the list of available relationships, issue the GET entity type call and check the **fromRelationships** and **toRelationships** fields.
 
 ## Negate criterion
 
@@ -241,7 +241,7 @@ You can use the negated criteria as part of complicated selectors, just like any
 
 ## Related topics
 
-* [Custom tags API](../custom-tags.md "Manage custom tags of the monitored entities via the Dynatrace API.")
-* [Metrics API v2](../metric-v2.md "Retrieve metric information via Metrics v2 API.")
-* [Monitored entities API](../entity-v2.md "Learn about the Dynatrace Monitored entities API.")
-* [Problems API v2](../problems-v2.md "Find out what the Dynatrace Problems v2 API offers.")
+* Custom tags API
+* Metrics API v2
+* Monitored entities API
+* Problems API v2

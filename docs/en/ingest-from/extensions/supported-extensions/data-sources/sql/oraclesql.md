@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:16:43.613643
 
 Dynatrace provides you with a framework that you can use to extend your application observability into data acquired directly from your Oracle Database layer, so that you can monitor how database server tasks impact your app.
 
-To get started, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=oracle+sql) to see if the Dynatrace-provided Oracle Database extension satisfies your requirements. If this is not the case, you can build your own [Dynatrace Oracle Database extension](../../../develop-your-extensions/data-sources/sql.md "Learn how to create an SQL data source-based extension using the Extensions framework.").
+To get started, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=oracle+sql) to see if the Dynatrace-provided Oracle Database extension satisfies your requirements. If this is not the case, you can build your own Dynatrace Oracle Database extension.
 
 ## Before you begin
 
@@ -95,7 +95,7 @@ When done, select **Activate**.
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](../../../manage-extensions.md "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See Manage Extensions to learn how to use it to activate an extension using the Dynatrace API.
 
 ## Related topics
 

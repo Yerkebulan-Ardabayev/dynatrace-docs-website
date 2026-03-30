@@ -31,7 +31,7 @@ scraped: 2026-03-02T21:25:53.405162
 
 Если требуется дополнительная обработка данных (например, фильтрация или преобразование с помощью процессоров), системные требования возрастут.
 
-Рекомендации по масштабированию и архитектуре инфраструктуры см. в разделах [Развёртывание Dynatrace OTel Collector](deployment.md "How to deploy Dynatrace OTel Collector.") и [Как масштабировать OpenTelemetry Collector](scaling.md "How to scale the OpenTelemetry Collector.").
+Рекомендации по масштабированию и архитектуре инфраструктуры см. в разделах Развёртывание Dynatrace OTel Collector и Как масштабировать OpenTelemetry Collector.
 
 ### Специфические сценарии нагрузки
 

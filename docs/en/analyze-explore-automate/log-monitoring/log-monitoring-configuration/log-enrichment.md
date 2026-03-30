@@ -15,7 +15,7 @@ Log Monitoring Classic
 
 Dynatrace can enrich your ingested log data with additional information that helps Dynatrace to recognize, correlate, and evaluate the data. Log enrichment results in a more refined analysis of your logs.
 
-For the newest Dynatrace version, see [Connect log data to traces](../../logs/lma-log-enrichment.md "Connect your incoming log data to traces for more precise Dynatrace analysis.").
+For the newest Dynatrace version, see Connect log data to traces.
 
 Log enrichment enables you to:
 
@@ -362,7 +362,7 @@ The following is an example of manual enrichment using the Logstash encoder. Not
 
 ### Example of manually enriching log data for winston (Node.js)
 
-To enable log enrichment for winston, turn on the [OneAgent feature](../../../ingest-from/dynatrace-oneagent/oneagent-features.md "Manage OneAgent features globally and per process group.") **Node.js - Trace/span context enrichment for unstructured logs**. You can adapt the winston transport to control the exact location where the enrichment should be added, as in the code example below.
+To enable log enrichment for winston, turn on the OneAgent feature **Node.js - Trace/span context enrichment for unstructured logs**. You can adapt the winston transport to control the exact location where the enrichment should be added, as in the code example below.
 
 ```
 const winston = require("winston");
@@ -441,7 +441,7 @@ format: winston.format.simple()
 
 You can enrich your logs using NGINX ingress with Kubernetes in two steps:
 
-1. Execute the [ingress-nginx on Kubernetes](../../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx.md "Instrument ingress-nginx on Kubernetes") instrumentation instructions.
+1. Execute the ingress-nginx on Kubernetes instrumentation instructions.
 2. Add the command below to the `configmap.yaml` file for NGINX ingress.
 
    Adding the `main-snippet` line enables OneAgent ingestion and is optional if you have followed the manual instrumentation instructions already.
@@ -833,7 +833,7 @@ log.Fatal(http.ListenAndServe(":8080", nil))
 }
 ```
 
-For details on configuration, see [AWS Lambda logs in context of traces](../../../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment.md "Configure log message enrichment with OpenTelemetry on AWS Lambda.").
+For details on configuration, see AWS Lambda logs in context of traces.
 
 For instructions on how to source these attributes via OneAgent SDK:
 
@@ -941,8 +941,8 @@ When using OneAgent, make sure to enable the public [Extension Execution Control
 
 Go to **Settings** > **Preferences** > **Extension Execution Controller**. The toggles **Enable Extension Execution Controller** and **Enable local PIPE/HTTP metric and Log Ingest API** should be active.
 
-For details on configuration, see [Instrument your Python application with OpenTelemetry](../../../ingest-from/opentelemetry/walkthroughs/python.md "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.")
+For details on configuration, see Instrument your Python application with OpenTelemetry
 
 ## Related topics
 
-* [Leverage log enrichment for traces to resolve problems](../../../observe/application-observability/distributed-traces/use-cases/problems-logs-traces.md "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.")
+* Leverage log enrichment for traces to resolve problems

@@ -34,7 +34,7 @@ The edges in the **Problem graph** view connect problems, affected nodes, and re
 
 Edges link affected and related nodes together with problems to provide a visual representation of their relationships.
 
-Edges in the ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** **Problem graph** view are different from [**Smartscape on Grail**](../../../platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.") edges. For more details about Smartscape edges and how they differ, see [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** concepts](../../smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.").
+Edges in the ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** **Problem graph** view are different from **Smartscape on Grail** edges. For more details about Smartscape edges and how they differ, see [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** concepts](../../smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.").
 
 ## Use cases
 
@@ -54,4 +54,4 @@ To use ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "S
 
 ## Related topics
 
-* [Smartscape](../../smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* Smartscape

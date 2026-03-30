@@ -454,7 +454,7 @@ With a single definition, you've extracted the user identifier from different lo
 
 ### Use specialized DPL matchers
 
-A JSON file contains information that you want to parse out and create new dedicate fields for it, based on the format. You can use [Dynatrace Pattern Language (DPL) matchers](../../grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.") for easier pattern building.
+A JSON file contains information that you want to parse out and create new dedicate fields for it, based on the format. You can use Dynatrace Pattern Language (DPL) matchers for easier pattern building.
 
 ### Steps
 
@@ -756,7 +756,7 @@ Repetitive patterns
 
 Part of a field
 
-The following example uses the [`ipMask`](../../grail/dynatrace-query-language/functions/network-functions.md#ipMask "A list of DQL array functions.") function to set the last octet to the value `0`.
+The following example uses the `ipMask` function to set the last octet to the value `0`.
 
 ```
 fieldsAdd ip = ipMask(ip, 24)
@@ -788,7 +788,7 @@ Conclusion
 }
 ```
 
-The following example uses the [`replacePattern`](../../grail/dynatrace-query-language/functions/string-functions.md#replacePattern "A list of DQL string functions.") function together with DPL matchers and the [`Lookaround` behind modifier](../../grail/dynatrace-pattern-language/log-processing-modifiers.md#lookaround "Explore DPL syntax for optional controlling elements (modifiers).")(`<<`) to match a specific part (the last octet) of an IP address and set it to `xxx`.
+The following example uses the [`replacePattern`](../../grail/dynatrace-query-language/functions/string-functions.md#replacePattern "A list of DQL string functions.") function together with DPL matchers and the `Lookaround` behind modifier.")(`<<`) to match a specific part (the last octet) of an IP address and set it to `xxx`.
 
 ```
 fieldsAdd ip = replacePattern(ip, "<< (INT'.'INT'.'INT'.') INT", "xxx")
@@ -892,5 +892,5 @@ Conclusion
 
 ## Related topics
 
-* [Configure a processing pipeline](../getting-started/tutorial-configure-processing.md "Configure ingest sources, routes, and processing for your data in OpenPipeline.")
-* [Processing in OpenPipeline](../concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* Configure a processing pipeline
+* Processing in OpenPipeline

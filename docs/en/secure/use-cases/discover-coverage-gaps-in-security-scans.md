@@ -34,7 +34,7 @@ Key use cases include:
 
 ## Prerequisites
 
-[Ingest security findings](../threat-observability/security-events-ingest.md "Ingest external security data into Grail.") from your third-party product.
+Ingest security findings from your third-party product.
 
 ## Get started
 
@@ -49,6 +49,6 @@ Example result:
 
 2. Analyze
 
-Open [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") to [query](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") security findings, using the data format in [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
+Open [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") to query security findings, using the data format in [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
 
 For a better understanding of how to build your queries, see [DQL query examples for ingested events](../threat-observability/dql-examples.md#ingested "DQL examples for security data powered by Grail.").

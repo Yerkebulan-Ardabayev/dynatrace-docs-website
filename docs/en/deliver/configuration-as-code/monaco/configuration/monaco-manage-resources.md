@@ -255,7 +255,7 @@ Always define a `token` specifying the access token for general configuration an
 
 Access tokens for the Dynatrace Monaco CLI always require at least the "Access problem and event feed, metrics, and topology (`DataExport`)âAPI v1" permission to query general information about your environment.
 
-You need to configure each available configuration type with specific permissions. For more detailed information, see [Monaco API support and access permission handling](../monaco-api-support-and-access-handling.md "This is a list of the Monaco API support and access permission handling.").
+You need to configure each available configuration type with specific permissions. For more detailed information, see Monaco API support and access permission handling.
 
 In most cases, you require a token with at least these permissions:
 
@@ -265,7 +265,7 @@ In most cases, you require a token with at least these permissions:
 * "Read settings (`settings.read`)âAPI v2"
 * "Write settings (`settings.write`)âAPI v2"
 
-For general information on access token authentication, see [Dynatrace API - Tokens and authentication](../../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+For general information on access token authentication, see Dynatrace API - Tokens and authentication.
 
 You need an OAuth section specifying the OAuth client credentials.
 
@@ -290,7 +290,7 @@ The configuration folders finally contain the YAML files specifying what resourc
 
 The configuration files consist of
 
-* [configs YAML file](yaml-configuration-saas.md "The Monaco configuration YAML file is structure."), defining parameters, dependencies, name, and template
+* configs YAML file, defining parameters, dependencies, name, and template
 * JSON template file
 
 The Dynatrace Monaco CLI uses Go templates, which allow you to define more complex templates. Still, we recommend keeping templates simpleâreferencing variables via `{{ .PARAMETER_NAME }}` should be sufficient.

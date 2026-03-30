@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:20:36.484418
 * Reference
 * Updated on Nov 06, 2025
 
-A DQL query contains at least one or more [commands](commands.md "A list of DQL commands."), each of which returns tabular output containing records (lines or rows) and fields (columns). All commands are sequenced by a | (pipe). Data flows or is piped from one command to the next. The data is filtered or manipulated at each step and then streamed into the following step.
+A DQL query contains at least one or more commands, each of which returns tabular output containing records (lines or rows) and fields (columns). All commands are sequenced by a | (pipe). Data flows or is piped from one command to the next. The data is filtered or manipulated at each step and then streamed into the following step.
 
 ## DQL Syntax
 
@@ -86,7 +86,7 @@ Parameters can be:
 
 ### Parameter groups
 
-If several parameters, either mandatory or optional, belong together, you should group them with curly braces (`{}`). This is especially important if the group is named. Using curly braces doesn't affect the data type. If you choose to group your parameters, you won't be able to use [DQL operators](operators.md "A list of DQL Operators.") with them.
+If several parameters, either mandatory or optional, belong together, you should group them with curly braces (`{}`). This is especially important if the group is named. Using curly braces doesn't affect the data type. If you choose to group your parameters, you won't be able to use DQL operators with them.
 
 The below example shows two groups of parameters. The first group holds the aggregations (not named), while the second group holds the fields by which to summarize (`by:`).
 
@@ -106,7 +106,7 @@ The following DQL query uses seven pipeline steps to get from raw log data to an
   fetch       logs, from:now()-10m
   ```
 
-  You retrieve the log data using the [`fetch`](commands/data-source-commands.md#fetch "DQL data source commands") command. In addition, the optional `from:` parameter specifies the query start timestamp.
+  You retrieve the log data using the `fetch` command. In addition, the optional `from:` parameter specifies the query start timestamp.
 * **Line 2**
 
   ```
@@ -120,14 +120,14 @@ The following DQL query uses seven pipeline steps to get from raw log data to an
   | filter    endsWith(log.source, "pgi.log")
   ```
 
-  The [`filter`](commands/filtering-commands.md#filter "DQL filter and search commands") command filters the log records based on the [`endsWith`](functions/string-functions.md#endsWith "A list of DQL string functions.") function that retrieves log files whose names end with the predefined string (the `pgi.log` string).
+  The `filter` command filters the log records based on the [`endsWith`](functions/string-functions.md#endsWith "A list of DQL string functions.") function that retrieves log files whose names end with the predefined string (the `pgi.log` string).
 * **Line 4**
 
   ```
   | parse     content, "LD IPADDR:ip ':' LONG:payload SPACE LD 'HTTP_STATUS' SPACE INT:http_status  LD (EOL| EOS)"
   ```
 
-  We use the [`parse`](commands/extraction-and-parsing-commands.md#parse "DQL extraction commands") command to extract key-value pairs containing execution statistics out of the raw log text string. In this case, it adds the `IP address`, `payload` and `http_status` fields to the result and transforms their data types into required formats.
+  We use the `parse` command to extract key-value pairs containing execution statistics out of the raw log text string. In this case, it adds the `IP address`, `payload` and `http_status` fields to the result and transforms their data types into required formats.
 * **Line 5, 6, 7, 8**
 
   ```
@@ -143,7 +143,7 @@ The following DQL query uses seven pipeline steps to get from raw log data to an
   by:{ip, host.name}
   ```
 
-  The [`summarize`](commands/aggregation-commands.md#summarize "DQL aggregation commands") command is a key element of DQL as it allows multiple aggregations across one or more fields. This query groups the results by `ip` and `host.name`. The retrieved records include the total value of payload, calculated using the [`sum`](functions/aggregation-functions.md#sum "A list of DQL aggregation functions.") function, and two columns calculated using the [`countif`](functions/aggregation-functions.md#countIf "A list of DQL aggregation functions.") function:
+  The `summarize` command is a key element of DQL as it allows multiple aggregations across one or more fields. This query groups the results by `ip` and `host.name`. The retrieved records include the total value of payload, calculated using the `sum` function, and two columns calculated using the `countif` function:
 
   + a column with numbers of failed requests (defined as those having `http_status` >=400)
   + a column with numbers of successful requests (defined as those having `http_status` <400)  
@@ -161,31 +161,31 @@ The following DQL query uses seven pipeline steps to get from raw log data to an
   |fields    ip, host.name, failedRequests, successfulRequests, total_payload_MB
   ```
 
-  With the [`fields`](commands/selection-and-modification-commands.md#fields "DQL selection and modification commands") command, you can determine which fields you need to retrieve.
+  With the `fields` command, you can determine which fields you need to retrieve.
 * **Line 11**
 
   ```
   | sort  failedRequests desc
   ```
 
-  The [`sort`](commands/ordering-commands.md#sort "DQL ordering commands") command is used to finalize the result. In this case, the results are sorted according to the number of failed requests, from the highest to lowest.
+  The `sort` command is used to finalize the result. In this case, the results are sorted according to the number of failed requests, from the highest to lowest.
 
 ## DQL key building blocks
 
-* [Commands](commands.md "A list of DQL commands.")
-* [Functions](functions.md "A list of DQL functions.")  
-  Functions can be used to perform any desired computation on fields of [DQL commands](commands.md "A list of DQL commands.").
+* Commands
+* Functions  
+  Functions can be used to perform any desired computation on fields of DQL commands.
 
-* [Data types](data-types.md "A list of DQL data types.")  
+* Data types  
   The Dynatrace Query Language operates with strongly typed data: functions and operators accept only declared types of data. The type is assigned to data during parsing or by using casting functions. DQL also recognizes value types expressed in literal notation (for example, using constant values in functions).
 
 ## Related topics
 
-* [Dynatrace Query Language](../dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Use DQL queries](dql-guide.md "Find out how DQL works and what are DQL key concepts.")
-* [DQL compared to SQL and more](dql-comparison.md "See how DQL compares to other query languages.")
-* [DQL commands](commands.md "A list of DQL commands.")
-* [DQL functions](functions.md "A list of DQL functions.")
-* [DQL operators](operators.md "A list of DQL Operators.")
-* [DQL data types](data-types.md "A list of DQL data types.")
-* [DQL best practices](dql-best-practices.md "Best practices for using Dynatrace Query Language.")
+* Dynatrace Query Language
+* Use DQL queries
+* DQL compared to SQL and more
+* DQL commands
+* DQL functions
+* DQL operators
+* DQL data types
+* DQL best practices

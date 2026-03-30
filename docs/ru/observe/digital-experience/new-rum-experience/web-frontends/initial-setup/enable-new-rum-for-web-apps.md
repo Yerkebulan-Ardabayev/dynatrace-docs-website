@@ -35,7 +35,7 @@ scraped: 2026-03-05T21:39:52.367065
 5. В разделе **Включение и управление стоимостью** включите **RUM**.
 6. При необходимости включите **Пользовательские взаимодействия** для захвата взаимодействий пользователей, таких как клики и прокрутка.
 
-Если вы используете автоматическую инъекцию, новая конфигурация применяется в течение 5 минут. При ручной вставке RUM JavaScript может потребоваться обновить сниппет в зависимости от используемого [формата сниппета](snippet-formats.md "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience."):
+Если вы используете автоматическую инъекцию, новая конфигурация применяется в течение 5 минут. При ручной вставке RUM JavaScript может потребоваться обновить сниппет в зависимости от используемого формата сниппета:
 
 * **JavaScript tag**: Новая конфигурация применяется автоматически, но из-за кэширования может вступить в силу не сразу. Файл, содержащий код мониторинга и конфигурацию, кэшируется на один час в CDN Dynatrace. Кроме того, браузеры соблюдают [настроенную продолжительность кэширования](snippet-formats.md#cache-duration "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience.").
 * **OneAgent JavaScript tag**, **OneAgent JavaScript tag with SRI** или **встроенный код**: Как и при любом изменении конфигурации, необходимо обновить вставленный сниппет.
@@ -49,10 +49,10 @@ scraped: 2026-03-05T21:39:52.367065
 
 ## Включение нового RUM Experience через API
 
-API Settings позволяет включить новый RUM Experience либо для веб-интерфейса, либо на уровне среды. Подробнее см. в разделе [Settings API — таблица схемы включения и управления стоимостью](../../../../../dynatrace-api/environment-api/settings/schemas/builtin-rum-web-enablement.md "View builtin:rum.web.enablement settings schema table of your monitoring environment via the Dynatrace API.").
+API Settings позволяет включить новый RUM Experience либо для веб-интерфейса, либо на уровне среды. Подробнее см. в разделе Settings API — таблица схемы включения и управления стоимостью.
 
-Если вы не используете формат сниппета **JavaScript tag**, после включения нового RUM Experience необходимо обновить сниппет, если он был вставлен вручную. Дополнительные сведения см. в разделе [Включение нового RUM Experience для веб-интерфейса](#enable-new-rum-for-web-frontend). Для получения обновлённого сниппета используйте [API тегов ручной вставки RUM](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags.md "Learn how you can download the RUM manual insertion tags via API").
+Если вы не используете формат сниппета **JavaScript tag**, после включения нового RUM Experience необходимо обновить сниппет, если он был вставлен вручную. Дополнительные сведения см. в разделе [Включение нового RUM Experience для веб-интерфейса](#enable-new-rum-for-web-frontend). Для получения обновлённого сниппета используйте API тегов ручной вставки RUM.
 
 ## Связанные темы
 
-* [Переход с RUM Classic на новый RUM Experience](../../transition-from-rum-classic.md "Learn how to transition from RUM Classic to the New RUM Experience.")
+* Переход с RUM Classic на новый RUM Experience

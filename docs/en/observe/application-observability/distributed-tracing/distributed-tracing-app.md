@@ -37,7 +37,7 @@ To view all trace data by single operations, select **Spans** in the upper-left 
 
 ## Filter field
 
-By entering a query in the [filter field](../../../discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps."), you can quickly build DQL-based filtering options.
+By entering a query in the filter field, you can quickly build DQL-based filtering options.
 
 ```
 "Kubernetes namespace" = prod AND Endpoint = /cart/* AND "Response time" >= 5s
@@ -46,7 +46,7 @@ By entering a query in the [filter field](../../../discover-dynatrace/get-starte
 You can narrow your results by timeframe or segments.
 
 * To refresh the result for the selected timeframe, select  **Refresh**.
-* To choose [segments](../../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps."), select .
+* To choose segments, select .
 
 The filter field is automatically modified when you apply other filtering selections, such as [facets](#facets). To update the results after you change the filter field query, select  **Update**.
 
@@ -73,7 +73,7 @@ Granularity depends on the selected timeframe.
 
 Facets are quick filters for trace data. They correspond to span attribute key-value pairs detected in your environment and are grouped by facet categories. The most important DQL field IDs are grouped by default in predefined categories. You can define new facet categories and new facets for attributes that are important to you. Each facet category displays the most frequently detected attributes for the current filtering selection.
 
-For details how to manage your facets, see [Manage facets](distributed-tracing-app/facets.md "Manage your facets in the Distributed Tracing app.").
+For details how to manage your facets, see Manage facets.
 
 ### Use cases
 
@@ -158,4 +158,4 @@ Exception analysis provides:
 
 In addition to the **Exceptions** tab in [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Discover the functionalities of the new Distributed Tracing app."), you can analyze exceptions in context through service-specific drill-downs.
 
-To learn more about analyzing exceptions, see [Exception analysis](exception-analysis.md "Exception analysis helps you detect, investigate, and resolve exceptions more effectively in Dynatrace.").
+To learn more about analyzing exceptions, see Exception analysis.

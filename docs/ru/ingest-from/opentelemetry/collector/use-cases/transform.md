@@ -20,7 +20,7 @@ scraped: 2026-03-06T21:35:50.810381
 * [URL API](../../otlp-api.md#export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") вашей среды Dynatrace
 * [API-токен](../../otlp-api.md#authentication-export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа
 
-Информацию о настройке вашего Collector с приведенной ниже конфигурацией см. в разделах [Развертывание Collector](../deployment.md "Как развернуть Dynatrace OTel Collector.") и [Конфигурация Collector](../configuration.md "Как настроить OpenTelemetry Collector.").
+Информацию о настройке вашего Collector с приведенной ниже конфигурацией см. в разделах Развертывание Collector и Конфигурация Collector.
 
 ## Демонстрационная конфигурация
 
@@ -265,13 +265,13 @@ exporters: [otlp_http]
 
 ## Ограничения
 
-Данные принимаются с использованием протокола OpenTelemetry (OTLP) через [Dynatrace OTLP API](../../otlp-api.md "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") и подчиняются ограничениям и ограничениям API.
+Данные принимаются с использованием протокола OpenTelemetry (OTLP) через Dynatrace OTLP API и подчиняются ограничениям и ограничениям API.
 Дополнительную информацию см. в:
 
-* [Ограничения метрик OpenTelemetry](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются.")
+* Ограничения метрик OpenTelemetry
 * [Маппинг метрик Dynatrace](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md#dynatrace-mapping "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются.")
-* [Прием журналов OpenTelemetry](../../otlp-api/ingest-logs.md "Узнайте, как Dynatrace принимает записи журналов OpenTelemetry и какие ограничения применяются.")
+* Прием журналов OpenTelemetry
 
 ## Связанные темы
 
-* [Обогащение принимаемых данных полями, специфичными для Dynatrace](../../../extend-dynatrace/extend-data.md "Узнайте, как автоматически обогащать ваши телеметрические данные полями, специфичными для Dynatrace.")
+* Обогащение принимаемых данных полями, специфичными для Dynatrace

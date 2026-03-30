@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:10:36.219731
 
 Services are an application's fundamental building blocks. From an observability standpoint, they provide application owners with critical metrics to monitor application health.
 
-[![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](services/services-app.md "Maintain centralized control over service health, performance, and resources with the Services app.") provides detailed insights into the performance and health of your services and includes useful features like [Service flow](services-classic/service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") and [Backtrace](services-classic/service-backtrace.md "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
+[![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](services/services-app.md "Maintain centralized control over service health, performance, and resources with the Services app.") provides detailed insights into the performance and health of your services and includes useful features like Service flow and Backtrace.
 
 ## Prerequisites
 
@@ -76,7 +76,7 @@ In Dynatrace, go to ![Services](https://dt-cdn.net/hub/logos/services.png "Servi
 
 ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** provides detailed insights into the performance and health of your services. Use it to perform failure analysis, response times, query performance, and message processing. You can also utilize this app to filter by key attributes, for example, Kubernetes namespaces or HTTP endpoints, and examine relationships to Kubernetes, host, and cloud infrastructure. Moreover, you can view logs emitted by your services and jump directly to [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing/distributed-tracing-app.md "Discover the functionalities of the new Distributed Tracing app.") for deeper analysis of specific transactions.
 
-For more information, see [Services app](services/services-app.md "Maintain centralized control over service health, performance, and resources with the Services app.").
+For more information, see Services app.
 
 ## Add services to Dynatrace
 
@@ -134,5 +134,5 @@ Read this guide](services-classic/service-backtrace.md)
 
 ## Related topics
 
-* [Service flow](services-classic/service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.")
-* [Distributed Traces Classic](distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.")
+* Service flow
+* Distributed Traces Classic

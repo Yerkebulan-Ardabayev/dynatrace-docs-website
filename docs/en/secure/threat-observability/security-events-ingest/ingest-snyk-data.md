@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:24:13.097220
 * Extension
 * Updated on Oct 07, 2025
 
-This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the Grail security table migration guide.
 
 Ingest Snyk vulnerability findings, scans, and audit logs into Dynatrace as security events.
 
@@ -27,9 +27,9 @@ Snyk products ([Snyk Codeï»¿](https://dt-url.net/mr23x60), [Snyk Open Source�
 
 With the ingested data, you can accomplish various use cases, such as
 
-* [Visualize and analyze security findings](../../use-cases/visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
-* [Discover coverage gaps in security findings](../../use-cases/discover-coverage-gaps-in-security-scans.md "Unveil blind spots in your Software Development Lifecycle (SDLC).")
-* [Automate and orchestrate security findings](../../use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* Visualize and analyze security findings
+* Discover coverage gaps in security findings.")
+* Automate and orchestrate security findings
 * Analyze and detect anomalous user activity Coming soon
 
 ### Requirements
@@ -51,7 +51,7 @@ See below for the [Snyk](#snyk) and [Dynatrace](#dt) requirements.
   + To query ingested data: `storage:security.events:read`.
 * Tokens:
 
-  + Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see [Dynatrace API - Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+  + Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see Dynatrace API - Tokens and authentication.
 
 ## Activation and setup
 
@@ -95,7 +95,7 @@ See below for the [Snyk](#snyk) and [Dynatrace](#dt) requirements.
 
      AND event.type=="VULNERABILITY_SCAN"
      ```
-4. Once the extension is installed and working, you can access and manage it in Dynatrace via ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. For details, see [About Extensions](../../../ingest-from/extensions/concepts.md "Learn more about the concept of Dynatrace Extensions.").
+4. Once the extension is installed and working, you can access and manage it in Dynatrace via ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. For details, see About Extensions.
 
 ## Details
 
@@ -103,7 +103,7 @@ See below for the [Snyk](#snyk) and [Dynatrace](#dt) requirements.
 
 ![how it works](https://dt-cdn.net/images/image-20250210-114410-2266-9b907186a6.png)
 
-Dynatrace integration with Snyk is an [extension](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") running on Dynatrace ActiveGate. Once you enable and configure the Dynatrace Snyk extension
+Dynatrace integration with Snyk is an extension running on Dynatrace ActiveGate. Once you enable and configure the Dynatrace Snyk extension
 
 1. It periodically reaches out to Snyk products and fetches the new vulnerability findings, scans, and audit logs.
 2. The fetched data is ingested into Dynatrace and mapped to the [Dynatrace Semantic Dictionaryï»¿](https://dt-url.net/z1c3xsm).
@@ -111,7 +111,7 @@ Dynatrace integration with Snyk is an [extension](../../../ingest-from/extension
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see Events powered by Grail.
 
 ## Feature sets
 
@@ -127,9 +127,9 @@ A metric inherits the feature set of a subgroup, which in turn inherits the feat
 
 ### Which data model is used for the security logs and events coming from Snyk?
 
-* [**Vulnerability finding events**](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.") store the individual vulnerability findings reported by various Snyk products per affected artifacts and components.
-* [**Vulnerability scan events**](../../../semantic-dictionary/model/security-events.md#vulnerability-scan-events "Get to know the Semantic Dictionary models related to security events.") indicate coverage of scans for individual artifacts.
-* [**Audit logs**](../../../semantic-dictionary/model/log.md#audit-logs "Get to know the Semantic Dictionary models related to Log Analytics.") represent user activity logs in Snyk products.
+* **Vulnerability finding events** store the individual vulnerability findings reported by various Snyk products per affected artifacts and components.
+* **Vulnerability scan events** indicate coverage of scans for individual artifacts.
+* **Audit logs** represent user activity logs in Snyk products.
 
 ### Which extension fields are added to the core fields of the events ingested from Snyk?
 
@@ -191,6 +191,6 @@ Ingest Snyk vulnerability findings, scans, and audit logs.](https://www.dynatrac
 
 ## Related topics
 
-* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Security events](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")
+* OpenPipeline
+* Dynatrace Query Language
+* Security events

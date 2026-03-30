@@ -14,4 +14,4 @@ scraped: 2026-03-05T21:40:31.962704
 
 Terraform is an extensive tool that you can combine with Configuration as Code to achieve great results.
 
-We provide a tutorial to help you [Configure automated notifications using Terraform and Configuration as Code](tutorials/terraform-tutorial-set-up-automated-notification.md "Configure automated notifications using Terraform and Configuration as Code.").
+We provide a tutorial to help you Configure automated notifications using Terraform and Configuration as Code.

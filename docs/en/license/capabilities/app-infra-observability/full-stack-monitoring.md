@@ -18,14 +18,14 @@ Application performance monitoring includes: distributed tracing, code-level vis
 * Host-based Full-Stack Monitoring:
 
   + Consumption is based on host memory, see [GiB-hours](#gib-hour).
-  + Additionally offers all features of [Infrastructure Monitoring](infrastructure-monitoring.md "Learn how your consumption of the Dynatrace Infrastructure Monitoring DPS capability is billed and charged.").
+  + Additionally offers all features of Infrastructure Monitoring.
 
-  + Additionally offers all features of [Kubernetes Platform Monitoring](../container-monitoring.md#kubernetes-monitoring "Learn about the different container monitoring modes that are available with a Dynatrace Platform Subscription (DPS) license.")[1](#fn-1-1-def) [2](#fn-1-2-def).
+  + Additionally offers all features of Kubernetes Platform Monitoring license.")[1](#fn-1-1-def) [2](#fn-1-2-def).
 
-  + Dynatrace Extensions can be enabled on hosts with host-based Full-Stack Monitoring and may consume [Full-Stack custom metric data points](#full-stack-metrics) and [Log Analytics](../log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
+  + Dynatrace Extensions can be enabled on hosts with host-based Full-Stack Monitoring and may consume [Full-Stack custom metric data points](#full-stack-metrics) and Log Analytics.
 * Container-based application-only Full-Stack Monitoring: Consumption is based on container memory, see [GiB-hour calculation for application-only container monitoring](#app-only-gib-hour)[3](#fn-1-3-def).
 
-To learn more about supported platforms, see [OneAgent platform and capability support matrix](../../../ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.").
+To learn more about supported platforms, see OneAgent platform and capability support matrix.
 
 1
 
@@ -95,7 +95,7 @@ Memory-size calculations for containers monitored in an application-only approac
   + OneAgent version <1.275 (for Kubernetes containers)
   + OneAgent version <1.297 (for serverless containers)
 
-[Automatic container detection](../../../observe/infrastructure-observability/process-groups/configuration/cloud-app-and-workload-detection.md#automatic-container-detection "Detect cloud applications and workloads, and define rules to merge similar Kubernetes workloads into process groups.") needs to be enabled for existing tenants.
+Automatic container detection needs to be enabled for existing tenants.
 
 Certain monitoring scenarios have their own calculations for GiB-hour consumption, as described in the table below.
 
@@ -114,7 +114,7 @@ If you implement a custom deployment, the charging of included metrics may still
 
 For more information, see [Supported deployment options](#deployment-options).
 
-Full-Stack Monitoring includes all Infrastructure Monitoring metrics, application performance monitoring metrics, and [other built-in metrics](../metrics/dps-metrics-ingest.md#billable-and-non-billable-metrics "Learn how your consumption of the Metrics - Ingest & Process DPS capability is billed and charged.").
+Full-Stack Monitoring includes all Infrastructure Monitoring metrics, application performance monitoring metrics, and other built-in metrics.
 These metrics are included and never produce any charge.
 
 Full-Stack Monitoring also includes a defined amount of custom metric data points.
@@ -122,8 +122,8 @@ Every contributing GiB of host or application memory adds 900 custom metric data
 Included metric data points that are not consumed within the 15-minute interval in which they are granted do not roll over to subsequent intervals.
 Your environment's included metric data points are applied automatically to metrics that originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.
 
-All metric keys starting with `dt.service.*` are for [service monitoring](../../../observe/application-observability/services.md "Learn how to monitor and analyze your services, define and use request attributes, and more.") and consume included Full-Stack metric data points if the span data itself originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.
-If the span data originates at any other source, these metrics are charged as [Metrics powered by Grail](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+All metric keys starting with `dt.service.*` are for service monitoring and consume included Full-Stack metric data points if the span data itself originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.
+If the span data originates at any other source, these metrics are charged as Metrics powered by Grail.
 Such metric keys include, for example:
 
 * `dt.service.request.count`
@@ -139,23 +139,23 @@ Such metric keys include, for example:
 
 Metric data points that exceed your included volume are charged as:
 
-* If Metrics powered by Grail exists on your rate card, these are charged as [Metrics powered by Grail](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
-* If Metrics powered by Grail does not exist on your rate card, these are charged as [Custom Metrics Classic](../platform-extensions/custom-metrics-classic.md "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
+* If Metrics powered by Grail exists on your rate card, these are charged as Metrics powered by Grail.
+* If Metrics powered by Grail does not exist on your rate card, these are charged as Custom Metrics Classic.
 
 Your environment's included metric data points are applied automatically to metrics that originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.
 This applies to custom metrics as described in the table below.
 
 1
 
-Metric data points originating from Application Observability are included only if [Metrics powered by Grail overview (DPS)](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") exists on your rate card.
+Metric data points originating from Application Observability are included only if Metrics powered by Grail overview (DPS) exists on your rate card.
 
 2
 
-Metric data points sent via the Dynatrace Collector are included only if [Metrics powered by Grail overview (DPS)](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") exists on your rate card.
+Metric data points sent via the Dynatrace Collector are included only if Metrics powered by Grail overview (DPS) exists on your rate card.
 
 3
 
-Metric data points sent via the OpenTelemetry Collector are included only if [Metrics powered by Grail overview (DPS)](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") exists on your rate card and the OpenTelemetry Collector has been configured as described in [Enrich OTLP requests with Kubernetes data](../../../ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich.md "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.").
+Metric data points sent via the OpenTelemetry Collector are included only if Metrics powered by Grail overview (DPS) exists on your rate card and the OpenTelemetry Collector has been configured as described in Enrich OTLP requests with Kubernetes data.
 
 ### Included metric data point calculation example
 
@@ -178,7 +178,7 @@ An equal number of data points can be consumed:
 ## Distributed traces
 
 Full-Stack Monitoring includes a defined amount of trace data volume.
-Every contributing GiB of host or application memory adds 200 KiB of trace data per minute, for a total of 3000 KiB of trace data in each 15-minute interval of the [Monitoring environment](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+Every contributing GiB of host or application memory adds 200 KiB of trace data per minute, for a total of 3000 KiB of trace data in each 15-minute interval of the Monitoring environment.
 This volume addresses the majority of customer use cases.
 If necessary, customers can explicitly [extend the trace ingest](#extend-trace-ingest).
 
@@ -190,7 +190,7 @@ Full-Stack Monitoring trace data comes from two sources and takes one of two for
 
 * Trace data from the Dynatrace OneAgent: OneAgent automatically manages the volume of captured trace data via [Adaptive Traffic Management](../../../ingest-from/dynatrace-oneagent/adaptive-traffic-management.md#dps "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.").
   It automatically and continuously adjusts the sampling rate in an intelligent way and keeps the ingested trace data volume roughly within your included trace-data volume, which prevents any unexpected costs.
-* The second data source is trace data sent via the [OneAgent Trace API](../../../ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") or, more generally, OpenTelemetry traces that originate at a Full-Stack Monitoring host or application and are sent via the OTLP API.
+* The second data source is trace data sent via the OneAgent Trace API or, more generally, OpenTelemetry traces that originate at a Full-Stack Monitoring host or application and are sent via the OTLP API.
   Trace data sent this way may be sampled by an OpenTelemetry agent, the SDK, or Collector at a fixed rate.
   These mechanisms are not controlled by Dynatrace or by [Adaptive Traffic Management](../../../ingest-from/dynatrace-oneagent/adaptive-traffic-management.md#dps "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.").
   This means this trace data is not automatically kept below the included trace data volume.
@@ -227,14 +227,14 @@ For non-Grail enabled DPS:
 Dynatrace [retains all traces](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#purepath "Check retention times for various data types.") ingested from your environment for 10 days.
 
 Dynatrace provides the ability to extend trace retention on a selective basis for up to 10 years, regardless of the ingest method or volume.
-This is achieved by [creating custom buckets](../../../platform/grail/organize-data.md "Insights on the Grail data model consisting of buckets, tables, and views.") in Grail.
+This is achieved by creating custom buckets in Grail.
 The first 10 days of retention are always included.
 Any trace data retained longer than 10 days is charged on a per-gibibyte basis as [Traces - Retain](../traces.md#trace-retain-usage "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.").
 
 ### Extended Trace ingest for Full-Stack Monitoring
 
 Full-Stack Monitoring includes a defined amount of trace data volume.
-Every contributing GiB of host or application memory adds 200 KiB of trace data per minute, for a total of 3000 KiB of trace data in each 15-minute interval of the [Monitoring environment](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+Every contributing GiB of host or application memory adds 200 KiB of trace data per minute, for a total of 3000 KiB of trace data in each 15-minute interval of the Monitoring environment.
 
 Dynatrace provides the ability to extend the amount of trace data ingested with OneAgent.
 To do this you can request an increased Trace ingest limit beyond the 200 KiB of trace data included per memory-gibibyte.
@@ -254,7 +254,7 @@ During the 2 peak hours per day though about half the trace ingest volume will b
 
 ### CPU, memory, and thread profiling
 
-Full-Stack Monitoring includes [CPU](../../../observe/application-observability/profiling-and-optimization/cpu-profiling.md "Learn how you can use Dynatrace to perform enhanced code analysis."), [memory](../../../observe/application-observability/profiling-and-optimization/memory-profiling.md "Analyze memory allocation with Dynatrace."), and thread profiling for technologies like Java, .NET, Go, Node.js, and PHP.
+Full-Stack Monitoring includes CPU, memory, and thread profiling for technologies like Java, .NET, Go, Node.js, and PHP.
 OneAgent uses an intelligent patented mechanism to manage the volume of profiling data.
 Dynatrace [retains the total amount of ingested profiling data](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#purepath "Check retention times for various data types.") from your environment for 10 days.
 
@@ -266,11 +266,11 @@ Automatic telemetry enrichment is enabled for:
 
 * Custom metrics and OpenTelemetry spans that originate from any:
 
-  + Full-Stack monitored host or container, when you use OneAgent or follow the steps described in [Enrich ingested data with Dynatrace-specific fields](../../../ingest-from/extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
-  + Full-Stack monitored Kubernetes container, when you use Dynatrace Operator and [metadata enrichment is enabled](../../../ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.").
-  + Cloud-native Full-Stack monitored Kubernetes node, when you use Dynatrace Operator and [metadata enrichment is enabled](../../../ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.").
+  + Full-Stack monitored host or container, when you use OneAgent or follow the steps described in Enrich ingested data with Dynatrace-specific fields.
+  + Full-Stack monitored Kubernetes container, when you use Dynatrace Operator and metadata enrichment is enabled.
+  + Cloud-native Full-Stack monitored Kubernetes node, when you use Dynatrace Operator and metadata enrichment is enabled.
     This includes any containers running on the monitored Kubernetes node.
-* Custom metrics that are sent from any Full-Stack monitored host via the OneAgent local metric API. For more information, see [OneAgent metric API](../../../ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api.md "Use the Dynatrace API to retrieve the metrics of monitored entities.").
+* Custom metrics that are sent from any Full-Stack monitored host via the OneAgent local metric API. For more information, see OneAgent metric API.
 
 * OpenTelemetry traces that are sent from any Full-Stack monitored host via the OneAgent local trace API. For more information, see [Send OpenTelemetry traces to the OTLP endpoint exposed by OneAgent](../../../ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel.md#send-opentelemetry-traces-to-the-otlp-endpoint-exposed-by-oneagent "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.").
 
@@ -364,7 +364,7 @@ The respective number of memory-GiB-hours per host is displayed as well.
 
 ### Monitor memory-GiB-hour consumption for Full-Stack monitored containers
 
-Platform and cluster owners can monitor their Kubernetes clusters using [Kubernetes Platform Monitoring](../container-monitoring.md "Learn about the different container monitoring modes that are available with a Dynatrace Platform Subscription (DPS) license.").
+Platform and cluster owners can monitor their Kubernetes clusters using Kubernetes Platform Monitoring license.").
 Application owners can leverage container-based Full-Stack Monitoring to monitor applications running within Kubernetes clusters.
 
 To get consumption insights for monitored Kubernetes clusters or namespaces, you can query memory-GiB-hour consumption by leveraging the "(DPS) Full-Stack Monitoring billing usage per container" metric, as shown in the following query:
@@ -404,6 +404,6 @@ When using the metric "(DPS) Total metric data points billed for Full-Stack moni
 
 ## Related topics
 
-* [Dynatrace OneAgent](../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
-* [Application & Infrastructure Observability overview (DPS)](../app-infra-observability.md "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.")
+* Dynatrace OneAgent
+* Application & Infrastructure Observability overview (DPS) license.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

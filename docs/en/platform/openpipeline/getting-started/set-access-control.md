@@ -16,7 +16,7 @@ This guide explains how pipeline and custom ingest source owners, as well as adm
 
 ## Prerequistes
 
-* Dynatrace version 1.322 and earlierYou [migrated your OpenPipeline configurations to the Settings API](../migration-settings.md "Understand how to migrate your OpenPipeline configurations to new Settings API.").
+* Dynatrace version 1.322 and earlierYou migrated your OpenPipeline configurations to the Settings API.
 * Verify that the user or user group permissions are sufficient for the access type you want to grant.
 * To carry out the procedures via API, ensure `ownerBasedAccessControl` property is set to `true` for the OpenPipeline Settings API schema you intend to use.
 
@@ -31,45 +31,45 @@ This guide explains how pipeline and custom ingest source owners, as well as adm
 
   Available Settings API schemas
 
-  + [builtin:openpipeline.bizevents.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-ingest-sources.md "View builtin:openpipeline.bizevents.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.bizevents.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-pipelines.md "View builtin:openpipeline.bizevents.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.bizevents.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-routing.md "View builtin:openpipeline.bizevents.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.davis.events.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-ingest-sources.md "View builtin:openpipeline.davis.events.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.davis.events.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-pipelines.md "View builtin:openpipeline.davis.events.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.davis.events.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-routing.md "View builtin:openpipeline.davis.events.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.davis.problems.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-ingest-sources.md "View builtin:openpipeline.davis.problems.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.davis.problems.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-pipelines.md "View builtin:openpipeline.davis.problems.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.davis.problems.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-routing.md "View builtin:openpipeline.davis.problems.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-ingest-sources.md "View builtin:openpipeline.events.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-pipelines.md "View builtin:openpipeline.events.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-routing.md "View builtin:openpipeline.events.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.sdlc.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-ingest-sources.md "View builtin:openpipeline.events.sdlc.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.sdlc.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-pipelines.md "View builtin:openpipeline.events.sdlc.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.sdlc.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-routing.md "View builtin:openpipeline.events.sdlc.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.security.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-ingest-sources.md "View builtin:openpipeline.events.security.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.security.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-pipelines.md "View builtin:openpipeline.events.security.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.security.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-routing.md "View builtin:openpipeline.events.security.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.logs.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-ingest-sources.md "View builtin:openpipeline.logs.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.logs.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipelines.md "View builtin:openpipeline.logs.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.logs.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-routing.md "View builtin:openpipeline.logs.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.metrics.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-ingest-sources.md "View builtin:openpipeline.metrics.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.metrics.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-pipelines.md "View builtin:openpipeline.metrics.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.metrics.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-routing.md "View builtin:openpipeline.metrics.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.security.events.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-ingest-sources.md "View builtin:openpipeline.security.events.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.security.events.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-pipelines.md "View builtin:openpipeline.security.events.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.security.events.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-routing.md "View builtin:openpipeline.security.events.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.spans.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-ingest-sources.md "View builtin:openpipeline.spans.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.spans.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-pipelines.md "View builtin:openpipeline.spans.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.spans.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-routing.md "View builtin:openpipeline.spans.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.system.events.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-ingest-sources.md "View builtin:openpipeline.system.events.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.system.events.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-pipelines.md "View builtin:openpipeline.system.events.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.system.events.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-routing.md "View builtin:openpipeline.system.events.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.user.events.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-ingest-sources.md "View builtin:openpipeline.user.events.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.user.events.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipelines.md "View builtin:openpipeline.user.events.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.user.events.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-routing.md "View builtin:openpipeline.user.events.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.user.sessions.ingest-sources](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-ingest-sources.md "View builtin:openpipeline.usersessions.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.user.sessions.pipelines](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-pipelines.md "View builtin:openpipeline.usersessions.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.user.sessions.routing](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-routing.md "View builtin:openpipeline.usersessions.routing settings schema table of your monitoring environment via the Dynatrace API.")
+  + builtin:openpipeline.bizevents.ingest-sources
+  + builtin:openpipeline.bizevents.pipelines
+  + builtin:openpipeline.bizevents.routing
+  + builtin:openpipeline.davis.events.ingest-sources
+  + builtin:openpipeline.davis.events.pipelines
+  + builtin:openpipeline.davis.events.routing
+  + builtin:openpipeline.davis.problems.ingest-sources
+  + builtin:openpipeline.davis.problems.pipelines
+  + builtin:openpipeline.davis.problems.routing
+  + builtin:openpipeline.events.ingest-sources
+  + builtin:openpipeline.events.pipelines
+  + builtin:openpipeline.events.routing
+  + builtin:openpipeline.events.sdlc.ingest-sources
+  + builtin:openpipeline.events.sdlc.pipelines
+  + builtin:openpipeline.events.sdlc.routing
+  + builtin:openpipeline.events.security.ingest-sources
+  + builtin:openpipeline.events.security.pipelines
+  + builtin:openpipeline.events.security.routing
+  + builtin:openpipeline.logs.ingest-sources
+  + builtin:openpipeline.logs.pipelines
+  + builtin:openpipeline.logs.routing
+  + builtin:openpipeline.metrics.ingest-sources
+  + builtin:openpipeline.metrics.pipelines
+  + builtin:openpipeline.metrics.routing
+  + builtin:openpipeline.security.events.ingest-sources
+  + builtin:openpipeline.security.events.pipelines
+  + builtin:openpipeline.security.events.routing
+  + builtin:openpipeline.spans.ingest-sources
+  + builtin:openpipeline.spans.pipelines
+  + builtin:openpipeline.spans.routing
+  + builtin:openpipeline.system.events.ingest-sources
+  + builtin:openpipeline.system.events.pipelines
+  + builtin:openpipeline.system.events.routing
+  + builtin:openpipeline.user.events.ingest-sources
+  + builtin:openpipeline.user.events.pipelines
+  + builtin:openpipeline.user.events.routing
+  + builtin:openpipeline.user.sessions.ingest-sources
+  + builtin:openpipeline.user.sessions.pipelines
+  + builtin:openpipeline.user.sessions.routing
 
 ## Share access
 
@@ -136,7 +136,7 @@ Be aware that you will lose all access unless the new owner gives you permission
 
 ## Next steps
 
-Once administrators set permissions and owners set access, users can manage and access items accordingly. Development teams can start configuring processing for their use cases. To learn more about processing, see [Configure a processing pipeline](tutorial-configure-processing.md "Configure ingest sources, routes, and processing for your data in OpenPipeline.").
+Once administrators set permissions and owners set access, users can manage and access items accordingly. Development teams can start configuring processing for their use cases. To learn more about processing, see Configure a processing pipeline.
 
 ## Related topics
 

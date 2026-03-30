@@ -30,7 +30,7 @@ You can detect, analyze, and understand security risks in your applications usin
 deprecated
 
 * To detect and monitor third-party vulnerabilities, [enable third-party vulnerability detection](application-security/vulnerability-analytics.md#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."), then go to [![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**](application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities.md "Monitor the security issues of your third-party libraries.").
-* For a unified view of third-party and code-level vulnerabilities and information about host coverage, [enable Runtime Vulnerability Analytics](application-security/vulnerability-analytics.md "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."), then go to [![Security Overview](https://dt-cdn.net/images/security-overview-512-a310b17025.png "Security Overview") **Security Overview**](application-security/vulnerability-analytics/application-security-overview.md "Get an overview of the security issues of your third-party libraries.").
+* For a unified view of third-party and code-level vulnerabilities and information about host coverage, enable Runtime Vulnerability Analytics, then go to [![Security Overview](https://dt-cdn.net/images/security-overview-512-a310b17025.png "Security Overview") **Security Overview**](application-security/vulnerability-analytics/application-security-overview.md "Get an overview of the security issues of your third-party libraries.").
 
 ### What's the difference between the classic monitoring rules and the new monitoring rules?
 
@@ -50,7 +50,7 @@ The [classic monitoring rules](application-security/vulnerability-analytics/thir
 When you enable Application Security (Runtime Vulnerability Analytics or Runtime Application Protection), keep the following in mind:
 
 * **Consumption**:  
-  **Runtime Vulnerability Analytics and Runtime Application Protection** consume [GiB-hours](../license/capabilities/application-security.md "Learn how Dynatrace Application Security monitoring consumption is calculated using the Dynatrace Platform Subscription model.") if you're using the [Dynatrace Platform Subscription (DPS) licensing model](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."), or [Application Security units (ASUs)](../license/monitoring-consumption-classic/application-security-units.md "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.") if you're using the [Dynatrace classic licensing](../license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
+  **Runtime Vulnerability Analytics and Runtime Application Protection** consume GiB-hours if you're using the Dynatrace Platform Subscription (DPS) licensing model, the licensing model for all Dynatrace capabilities."), or Application Security units (ASUs) if you're using the Dynatrace classic licensing.
 * **Network bandwidth usage**:
 
   + **Codeâlevel vulnerability detection and attack detection**: Expect a slight increase in network usage, depending on the number of monitored applications. In most cases, this overhead is negligible.
@@ -90,13 +90,13 @@ To restrict specific users to view-only access, so they can view but not manage 
 
 Dynatrace does not remediate vulnerabilities. It identifies and monitors vulnerabilities in applications in your production and pre-production environments, and it helps you determine the root cause by providing rich context and information that helps you take the appropriate actions. For more information about capabilities, see
 
-* [Runtime Vulnerability Analytics: Capabilities](application-security/vulnerability-analytics.md "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
+* Runtime Vulnerability Analytics: Capabilities
 * Latest Dynatrace [![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**](vulnerabilities.md "Prioritize and efficiently manage vulnerabilities in your monitored environments.")
 
 Once the root cause is gone, the vulnerability is automatically resolved. For more information about vulnerability resolution, see:
 
-* [Third-party vulnerabilities: Resolution](application-security/vulnerability-analytics/vulnerability-evaluation.md#tpv-resolution "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
-* [Code-level vulnerabilities: Resolution](application-security/vulnerability-analytics/vulnerability-evaluation.md#clv-resolution "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
+* Third-party vulnerabilities: Resolution
+* Code-level vulnerabilities: Resolution
 
 ### How do I fix detected vulnerabilities?
 
@@ -118,8 +118,8 @@ deprecated
 
 In [![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**](application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities.md "Monitor the security issues of your third-party libraries."), you can:
 
-* Use the recommended [DSA fixes](application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor.md "Get recommendations for security fixes from Davis Security Advisor.") to upgrade to a non-vulnerable version of the vulnerable component
-* [Set up tracking links for affected entities and follow up with their remediation progress](application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Track the remediation progress of vulnerabilities.")
+* Use the recommended DSA fixes to upgrade to a non-vulnerable version of the vulnerable component
+* Set up tracking links for affected entities and follow up with their remediation progress
 
 ### When is a vulnerability marked as resolved?
 
@@ -148,8 +148,8 @@ No. A vulnerability is resolved if there are no longer any affected entities.
 
 A vulnerability is resolved automatically if the root cause is no longer present. To learn more, see
 
-* [Third-party vulnerability resolution](application-security/vulnerability-analytics/vulnerability-evaluation.md#tpv-resolution "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
-* [Code-level vulnerability resolution](application-security/vulnerability-analytics/vulnerability-evaluation.md#clv-resolution "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
+* Third-party vulnerability resolution
+* Code-level vulnerability resolution
 
 ### Why do some vulnerabilities keep being resolved and reopened?
 
@@ -158,7 +158,7 @@ A vulnerability keeps being resolved and reopened when a process using the vulne
 * When the process is terminated, the vulnerability is resolved.
 * When the process is restarted, the vulnerability is reopened.
 
-For details about the reasons why vulnerabilities are resolved and reopened, see [Resolution](application-security/vulnerability-analytics/vulnerability-evaluation.md#tpv-resolution "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.").
+For details about the reasons why vulnerabilities are resolved and reopened, see Resolution.
 
 To determine which processes are affected, see:
 
@@ -197,7 +197,7 @@ See below the restart requirements by functionality.
     - Enable Code-level Vulnerability Analytics
     - Configure the global code-level vulnerability detection control per technology
     - Enable OneAgent monitoring
-  + After you enable a [monitoring rule](application-security/vulnerability-analytics/code-level-vulnerabilities/define-monitoring-rules-clv.md "Define rules based on specific process groups")
+  + After you enable a monitoring rule
 * **Attacks**: An application process restart is required in the following cases:
 
   + After each step in [Get started with Runtime Application Protection](application-security/application-protection.md#start "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities."):
@@ -205,7 +205,7 @@ See below the restart requirements by functionality.
     - Enable Runtime Application Protection
     - Define the global attack control per technology
     - Enable OneAgent monitoring
-  + After you enable a [monitoring rule](application-security/application-protection/application-protection-rules.md "Create, modify, and delete rules for specific attacks.")
+  + After you enable a monitoring rule
 
 ### Why is there a "Restart required" notification on some Application Security pages?
 
@@ -221,13 +221,13 @@ See [How can I know if information about vulnerable functions is outdated and wh
 
 Latest Dynatrace
 
-You can [set up a workflow](../analyze-explore-automate/workflows/simple-workflow.md "Build and run a simple workflow.") to configure Dynatrace to send notifications for [vulnerabilities and vulnerability findings](vulnerabilities.md "Prioritize and efficiently manage vulnerabilities in your monitored environments.") through your preferred [channels](../analyze-explore-automate/workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems."). The configuration options give you fineâgrained control over when and how the notifications are triggered.
+You can set up a workflow to configure Dynatrace to send notifications for vulnerabilities and vulnerability findings through your preferred channels. The configuration options give you fineâgrained control over when and how the notifications are triggered.
 
-* For examples of how to configure a workflow, see [Workflows use cases](../analyze-explore-automate/workflows/use-cases.md "Explore common Workflows use cases in Dynatrace deployments.").
+* For examples of how to configure a workflow, see Workflows use cases.
 
 deprecated
 
-You can [set up notifications](application-security/vulnerability-analytics/security-notifications-rva.md "Integrate security notifications for vulnerabilities with Dynatrace.") through your preferred channels.
+You can set up notifications through your preferred channels.
 
 * For example, you can trigger alerts
 
@@ -238,9 +238,9 @@ You can [set up notifications](application-security/vulnerability-analytics/secu
 
 Latest Dynatrace
 
-You can [set up a workflow](../analyze-explore-automate/workflows/simple-workflow.md "Build and run a simple workflow.") to configure Dynatrace to send notifications for [detection findings](threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts.") through your preferred [channels](../analyze-explore-automate/workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems."). The configuration options give you fineâgrained control over when and how the notifications are triggered.
+You can set up a workflow to configure Dynatrace to send notifications for detection findings through your preferred channels. The configuration options give you fineâgrained control over when and how the notifications are triggered.
 
-* For examples of how to configure a workflow, see [Workflows use cases](../analyze-explore-automate/workflows/use-cases.md "Explore common Workflows use cases in Dynatrace deployments.").
+* For examples of how to configure a workflow, see Workflows use cases.
 
 ### How can I create reports and share them with others?
 
@@ -250,16 +250,16 @@ Latest Dynatrace
 
   + [Download the vulnerability data as a CSV file](vulnerabilities/collaborate-with-apps.md#dwld "Navigate between Dynatrace apps, share vulnerability data externally, and automate remediation workflows.")
   + [Download the vulnerability finding data as a CSV file](vulnerabilities/explore-findings.md#collaborate "View, filter, and analyze vulnerability findings from Dynatrace and external security tools.")
-* In [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts."), you can [download the detection finding data as a CSV file](threats-and-exploits/collaborate-with-apps.md#download "Interact with other apps for further insights and share results with stakeholders.").
-* In [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), you can generate reports for [security events](threat-observability/concepts.md#security-events "Basic concepts related to Threat Observability") with [Dynatrace Query Language (DQL)](../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."), and then create [dashboards](../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") based on the results.
+* In [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts."), you can download the detection finding data as a CSV file.
+* In [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), you can generate reports for [security events](threat-observability/concepts.md#security-events "Basic concepts related to Threat Observability") with Dynatrace Query Language (DQL), and then create dashboards based on the results.
 
   + For commonly used queries, see [DQL examples for security data](threat-observability/dql-examples.md#vulnerabilities-per-application "DQL examples for security data powered by Grail.").
-  + For a complete list of queryable fields, including descriptions and examples, see [Dynatrace Semantic Dictionary: Security events](../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.").
+  + For a complete list of queryable fields, including descriptions and examples, see Dynatrace Semantic Dictionary: Security events.
 
 deprecated
 
-* With the Dynatrace API, you can chart [Application Security metrics](application-security/vulnerability-analytics/app-sec-metrics.md "View available Application Security metrics for Dynatrace Runtime Vulnerability Analytics.") and [pin them to your dashboard](../analyze-explore-automate/dashboards-classic/metrics-browser.md#pin "Browse metrics with the Dynatrace metrics browser."). For example, you can retrieve [all security problems detected in your applications](../dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerabilities.md "View the list of vulnerabilities via Dynatrace API.") or the [vulnerable functions of a security problem](../dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerable-functions.md "View the vulnerable functions of a vulnerability via Dynatrace API.").
-* With [Data Explorer](../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights."), you can [share your metric results](../analyze-explore-automate/explorer.md#share "Query for metrics and transform results to gain desired insights.") and [export them to a CSV file](../analyze-explore-automate/explorer.md#csv "Query for metrics and transform results to gain desired insights.").
+* With the Dynatrace API, you can chart Application Security metrics and [pin them to your dashboard](../analyze-explore-automate/dashboards-classic/metrics-browser.md#pin "Browse metrics with the Dynatrace metrics browser."). For example, you can retrieve all security problems detected in your applications or the vulnerable functions of a security problem.
+* With Data Explorer, you can [share your metric results](../analyze-explore-automate/explorer.md#share "Query for metrics and transform results to gain desired insights.") and [export them to a CSV file](../analyze-explore-automate/explorer.md#csv "Query for metrics and transform results to gain desired insights.").
 
 ### How can I stop receiving notifications for an irrelevant vulnerability or entity?
 
@@ -281,13 +281,13 @@ deprecated
 A process that does not run all the time might be using a vulnerable library. For details, see [Why do some vulnerabilities keep being resolved and reopened?](#reopen).
 To stop receiving notifications for this vulnerability, you can:
 
-* Exclude the respective process from Application Security monitoring by setting up a [third-party monitoring rule](application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv.md "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.")/[code-level monitoring rule](application-security/vulnerability-analytics/code-level-vulnerabilities/define-monitoring-rules-clv.md "Define rules based on specific process groups").
+* Exclude the respective process from Application Security monitoring by setting up a third-party monitoring rule/code-level monitoring rule.
 * Latest Dynatrace Mute (silence) all the vulnerability's affected entities. This sets the vulnerability status to `Muted`. For instructions, see [Change the affected entity status](vulnerabilities/address-remediation.md#mute-entities "Address remediation and optimize remediation activities.").
 * deprecated Mute (silence) the vulnerability. For details, see [Change the third-party vulnerability status](application-security/vulnerability-analytics/third-party-vulnerabilities/filter-third-party-vulnerabilities.md#mute "Organize third-party vulnerabilities for easy management and to prioritize issues.").
 
 ### How can I fetch fix recommendation information for vulnerabilities?
 
-* Latest Dynatrace To retrieve remediation guidance for vulnerabilities, use [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") to run a [DQL](../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") query that includes the `vulnerability.remediation.description` field. Example:
+* Latest Dynatrace To retrieve remediation guidance for vulnerabilities, use [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") to run a DQL query that includes the `vulnerability.remediation.description` field. Example:
 
   ```
   fetch security.events
@@ -302,16 +302,16 @@ To stop receiving notifications for this vulnerability, you can:
   | fields vulnerability.risk.level, vulnerability.title, vulnerability.remediation.description
   ```
 
-  For a complete list of queryable fields, including descriptions and examples, see [Dynatrace Semantic Dictionary: Security events](../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.").
+  For a complete list of queryable fields, including descriptions and examples, see Dynatrace Semantic Dictionary: Security events.
 * deprecated To retrieve remediation guidance for a specific vulnerability, call the Dynatrace API endpoint for an individual vulnerability. Provide the vulnerability ID and request the `recommendationDescription` property in response.
 
-  For details, see [Vulnerabilities API - GET vulnerability details](../dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerability-details.md "View details of a vulnerability via Dynatrace API.").
+  For details, see Vulnerabilities API - GET vulnerability details.
 
 ## Coverage
 
 ### How can I gain insights into my environment's Runtime Vulnerability Analytics coverage?
 
-* Latest Dynatrace Evaluate your environment's Runtime Vulnerability Analytics process and host coverage with the ready-made [**Vulnerability coverage** dashboard](vulnerabilities/assess-coverage.md "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
+* Latest Dynatrace Evaluate your environment's Runtime Vulnerability Analytics process and host coverage with the ready-made **Vulnerability coverage** dashboard.
 * deprecated Go to ![Security Overview](https://dt-cdn.net/images/security-overview-512-a310b17025.png "Security Overview") **Security Overview**. In the **Host coverage** section, select **Monitored hosts** to go to the **Hosts** page filtered by monitored hosts. For details, see [Application Security overview: Host coverage](application-security/vulnerability-analytics/application-security-overview.md#host-coverage "Get an overview of the security issues of your third-party libraries.").
 
 ### Why do I see a vulnerability on one host but not on another?
@@ -336,8 +336,8 @@ fetch dt.entity.host
 
 You can:
 
-* [Create monitoring rules for third-party vulnerabilities](application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv.md "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.")
-* [Create monitoring rules for code-level vulnerabilities](application-security/vulnerability-analytics/code-level-vulnerabilities/define-monitoring-rules-clv.md "Define rules based on specific process groups")
+* Create monitoring rules for third-party vulnerabilities
+* Create monitoring rules for code-level vulnerabilities
 
 Your custom rules override the global third-party vulnerability detection control setting. Any entity that doesn't match one of your rules will follow the global thirdâparty vulnerability detection setting.
 
@@ -349,7 +349,7 @@ If you need guidance for setting up monitoring rules in common scenarios such as
 
 Content below refers to the classic ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities** app, which is deprecated.
 
-[Create a monitoring rule](application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv.md "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.") that says `Do not monitor` if the management zone does not equal `<your-management-zone>`. After you add, edit, or remove a rule, allow up to 15 minutes for your changes to take effect.
+Create a monitoring rule that says `Do not monitor` if the management zone does not equal `<your-management-zone>`. After you add, edit, or remove a rule, allow up to 15 minutes for your changes to take effect.
 
 ### How can I enable Runtime Vulnerability Analytics only for specific hosts or Kubernetes namespaces?
 
@@ -405,7 +405,7 @@ Content below refers to the classic ![Third Party Vulnerabilities](https://dt-cd
 
 ***In ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**, on the **Third-party vulnerabilities** list page, when I filter for resolved vulnerabilities over the last seven days, I get `3` vulnerabilities. When I use the metric query (`builtin:security.securityProblem.resolved.new.global`) in Data Explorer, I get `25`. Why are there different values on the vulnerabilities page versus Data Explorer?***
 
-The vulnerability list shows the current state (the total count of vulnerabilities that are currently resolved), while using the metric query in [Data Explorer](../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") shows the change over time.
+The vulnerability list shows the current state (the total count of vulnerabilities that are currently resolved), while using the metric query in Data Explorer shows the change over time.
 
 For example, if two vulnerabilities are open and resolved several times over a period of time, the Data Explorer chart shows only one spike (which is the maximum over the given timeframe) while the vulnerabilities page shows two (because there are currently two resolved vulnerabilities).
 
@@ -512,7 +512,7 @@ Example:
 
 ![load-origins-pg](https://dt-cdn.net/images/2023-08-21-15-09-46-1812-3f3a0b8200.png)
 
-For information on how to navigate there, see [Remediation tracking](application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Track the remediation progress of vulnerabilities.").
+For information on how to navigate there, see Remediation tracking.
 
 ## Vulnerable functions
 
@@ -593,7 +593,7 @@ In this case, a **Restart required** notification or symbol is displayed on
 
 To fetch data about vulnerabilities, Dynatrace Application Security uses either [Snykï»¿](https://snyk.io) or [NVDï»¿](https://nvd.nist.gov/vuln), depending on the vulnerable component.
 
-A vulnerability with a CVE that is listed in Snyk but that doesn't have any Snyk-related information in Dynatrace is using the NVD feed. For more information, see [Third-party vulnerability feeds](application-security/vulnerability-analytics/vulnerability-evaluation.md#vulnerability-feeds "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.").
+A vulnerability with a CVE that is listed in Snyk but that doesn't have any Snyk-related information in Dynatrace is using the NVD feed. For more information, see Third-party vulnerability feeds.
 
 ## Attack blocking mechanism
 
@@ -626,18 +626,18 @@ In Runtime Application Protection, to determine an attacker's IP, Dynatrace veri
 
 ### What's the data retention period for vulnerabilities, events, and attacks?
 
-For information about how security-related data is stored in Dynatrace, see [Data retention periods](../manage/data-privacy-and-security/data-privacy/data-retention-periods.md "Check retention times for various data types.").
+For information about how security-related data is stored in Dynatrace, see Data retention periods.
 
 ## Consumption
 
 ### How can I check how much my hosts consume?
 
-* If you're using [Dynatrace Platform Subscription](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."), see:
+* If you're using Dynatrace Platform Subscription, the licensing model for all Dynatrace capabilities."), see:
 
-  + [Calculate your consumption of Runtime Vulnerability Analytics](../license/capabilities/application-security/runtime-vulnerability-analytics.md "Learn how your consumption of the Dynatrace Runtime Vulnerability Analytics (RVA) DPS capability is billed and charged.")
-  + [Calculate your consumption of Runtime Application Protection](../license/capabilities/application-security/runtime-application-protection.md "Learn how how your consumption of the Runtime Application Protection (RAP) DPS capability is billed and charged.")
-  + [Calculate your consumption of Security Posture Management](../license/capabilities/application-security/security-posture-management.md "Learn how your consumption of the Dynatrace Security Posture Management (SPM) DPS capability is billed and charged.")
-* If you're using [Dynatrace classic licensing](../license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), see [How capabilities affect monitoring consumption](../license/monitoring-consumption-classic/application-security-units.md#how-capabilities-affect-monitoring-consumption "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.").
+  + Calculate your consumption of Runtime Vulnerability Analytics DPS capability is billed and charged.")
+  + Calculate your consumption of Runtime Application Protection DPS capability is billed and charged.")
+  + Calculate your consumption of Security Posture Management DPS capability is billed and charged.")
+* If you're using Dynatrace classic licensing, see How capabilities affect monitoring consumption.
 
 deprecated To see which hosts consume DPS/ASUs, in ![Security Overview](https://dt-cdn.net/images/security-overview-512-a310b17025.png "Security Overview") **Security Overview**, go to the **Host coverage** section for third-party and code-level vulnerabilities and select **Monitored hosts**. The resulting list of hosts are the hosts in your environment which consume DPS/ASUs.
 For more information, see [Host coverage](application-security/vulnerability-analytics/application-security-overview.md#host-coverage "Get an overview of the security issues of your third-party libraries.").
@@ -646,6 +646,6 @@ For more information, see [Host coverage](application-security/vulnerability-ana
 
 ***I disabled Thirdâparty and Codeâlevel Vulnerability Analytics. My host shows 'Not analyzed', yet usage is still appearing in my subscription. Why?***
 
-This behavior applies to both [Dynatrace classic licensing (ASU)](../license/monitoring-consumption-classic/application-security-units.md#how-capabilities-affect-monitoring-consumption "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.") and [Dynatrace Platform Subscription (DPS)](../license/capabilities/application-security/runtime-application-protection.md "Learn how how your consumption of the Runtime Application Protection (RAP) DPS capability is billed and charged.").
+This behavior applies to both Dynatrace classic licensing (ASU) and Dynatrace Platform Subscription (DPS) DPS capability is billed and charged.").
 
 Check whether Runtime Application Protection (RAP) is enabled. RAP depends on Runtime Vulnerability Assessment (RVA) to determine which vulnerability an attack attempts to exploit. Because RAP cannot operate without RVA, any host with RAP enabled will always consume ASUs/DPS for both RAP and RVAâeven if the global switches for thirdâparty or codeâlevel vulnerability detection are turned off.

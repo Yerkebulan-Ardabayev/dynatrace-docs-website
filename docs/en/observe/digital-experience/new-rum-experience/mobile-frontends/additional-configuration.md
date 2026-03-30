@@ -14,5 +14,5 @@ scraped: 2026-03-06T21:31:58.402699
 
 After completing the initial setup, explore these guides to enhance and tailor the New RUM Experience with advanced configuration options.
 
-* [Capture event and session properties for mobile frontends](additional-configuration/event-and-session-properties.md "Learn how to capture event and session properties for mobile frontends.")
-* [Configure user interaction capturing for mobile frontends](additional-configuration/user-interactions-mobile.md "Learn how to configure user interaction capturing for mobile frontends.")
+* Capture event and session properties for mobile frontends
+* Configure user interaction capturing for mobile frontends

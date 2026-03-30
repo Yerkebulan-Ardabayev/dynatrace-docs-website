@@ -10,7 +10,7 @@ Dynatrace Kubernetes Security Posture Management позволяет обнару
 
 Как это работает
 
-Dynatrace принимает конфигурационные данные из ваших кластеров и рабочих нагрузок в [Grail](../../../../platform/grail.md "Информация о том, что и как можно запрашивать в данных Dynatrace."), где они форматируются в [события соответствия](../../../../semantic-dictionary/model/security-events.md#compliance-finding-events "Ознакомьтесь с моделями Семантического словаря, связанными с событиями безопасности.") в соответствии с соглашениями [Семантического словаря](../../../../semantic-dictionary/model/security-events.md "Ознакомьтесь с моделями Семантического словаря, связанными с событиями безопасности.").
+Dynatrace принимает конфигурационные данные из ваших кластеров и рабочих нагрузок в Grail, где они форматируются в события соответствия в соответствии с соглашениями Семантического словаря.
 
 Механизм описан ниже.
 
@@ -35,9 +35,9 @@ ActiveGate обрабатывает все данные, полученные о
 
 4. Данные сопоставляются
 
-Этот раздел был обновлён в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и действий, необходимых для выполнения миграции, см. в [руководстве по миграции таблицы безопасности Grail](../../../../secure/threat-observability/migration.md "Узнайте об изменениях в новой таблице безопасности Grail и о том, как выполнить миграцию.").
+Этот раздел был обновлён в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и действий, необходимых для выполнения миграции, см. в руководстве по миграции таблицы безопасности Grail.
 
-Конфигурационные данные кластера и рабочих нагрузок сопоставляются как [события соответствия](../../../../semantic-dictionary/model/security-events.md#compliance-finding-events "Ознакомьтесь с моделями Семантического словаря, связанными с событиями безопасности.") в соответствии с [Семантическим словарём](../../../../semantic-dictionary/model/security-events.md "Ознакомьтесь с моделями Семантического словаря, связанными с событиями безопасности.") и хранятся в бакете `default_securityevents_builtin` (подробнее см. [Встроенные бакеты Grail](../../../../platform/grail/organize-data.md#built-in-grail-buckets "Информация о модели данных Grail, состоящей из бакетов, таблиц и представлений.")).
+Конфигурационные данные кластера и рабочих нагрузок сопоставляются как события соответствия в соответствии с Семантическим словарём и хранятся в бакете `default_securityevents_builtin` (подробнее см. Встроенные бакеты Grail).
 
 5. Результаты соответствия готовы к использованию
 
@@ -47,15 +47,15 @@ ActiveGate обрабатывает все данные, полученные о
 
 Dynatrace версии 1.305+ Dynatrace Operator версии 1.5.0+ ActiveGate версии 1.321+
 
-* [Security Posture Management](../../../../secure/application-security/spm.md "Оценка, управление и реагирование на неправильные конфигурации и нарушения стандартов безопасности и нормативного соответствия.") лицензируется на основе потребления [хост-часов](../../../../license/capabilities/application-security/security-posture-management.md "Узнайте, как рассчитывается потребление Dynatrace Security Posture Management (SPM) DPS.") и требует [модели лицензирования Dynatrace Platform Subscription (DPS)](../../../../license.md "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.").
+* Security Posture Management лицензируется на основе потребления хост-часов DPS.") и требует модели лицензирования Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.").
 
-  Если вы используете [классическое лицензирование Dynatrace](../../../../license/monitoring-consumption-classic.md "Узнайте, как рассчитывается потребление мониторинга Dynatrace при классическом лицензировании.") или если вы на DPS, но не видите возможность SPM в вашей тарифной карте DPS, пожалуйста, свяжитесь с экспертом Dynatrace через чат.
-* Ознакомьтесь с [поддерживаемыми стандартами соответствия и технологиями](../../../../secure/application-security/spm.md#support "Оценка, управление и реагирование на неправильные конфигурации и нарушения стандартов безопасности и нормативного соответствия.").
-* [Настройте мониторинг Kubernetes](../../../../ingest-from/setup-on-k8s.md "Способы развёртывания и настройки Dynatrace в Kubernetes").
+  Если вы используете классическое лицензирование Dynatrace или если вы на DPS, но не видите возможность SPM в вашей тарифной карте DPS, пожалуйста, свяжитесь с экспертом Dynatrace через чат.
+* Ознакомьтесь с поддерживаемыми стандартами соответствия и технологиями.
+* Настройте мониторинг Kubernetes.
 
 * Поддержка ограничена совместимостью с основной версией Kubernetes и доступна только для процессорных архитектур x86-64.
 * Количество реплик подов ActiveGate должно быть установлено в 1 (по умолчанию).
-* Если вы используете Dynatrace Operator версии ранее 1.4.0, необходимо [обновить](../../../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator.md#helm "Процедуры обновления и удаления Dynatrace Operator") перед продолжением.
+* Если вы используете Dynatrace Operator версии ранее 1.4.0, необходимо обновить перед продолжением.
 
 ## Развёртывание
 
@@ -69,7 +69,7 @@ Dynatrace версии 1.305+ Dynatrace Operator версии 1.5.0+ ActiveGate 
 
 1. Создайте токен Dynatrace Operator.
 
-   Инструкции см. в [Токены доступа и разрешения](../../../../ingest-from/setup-on-k8s/deployment/tokens-permissions.md "Настройка токенов и разрешений для мониторинга вашего кластера Kubernetes").
+   Инструкции см. в Токены доступа и разрешения.
 2. Создайте секрет для хранения токена доступа, который будет использоваться Dynatrace Operator для связи со средой Dynatrace.
 
    ```
@@ -82,7 +82,7 @@ Dynatrace версии 1.305+ Dynatrace Operator версии 1.5.0+ ActiveGate 
 
    * Kubernetes Security Posture Management:
 
-     + `spec.kspm: {}`: Включает DaemonSet KSPM Node Configuration Collector (подробнее см. [Как это работает](../../../../secure/application-security/spm.md#mechanism "Оценка, управление и реагирование на неправильные конфигурации и нарушения стандартов безопасности и нормативного соответствия."))
+     + `spec.kspm: {}`: Включает DaemonSet KSPM Node Configuration Collector (подробнее см. Как это работает)
 
      KSPM по умолчанию монтирует корневую файловую систему хоста. Если вы хотите ограничить это определёнными путями, используйте поле `spec.kspm.mappedHostPaths`. Поле `spec.kspm.mappedHostPaths` определяет пути хоста, которые монтируются в контейнер. Список рекомендуемых путей см. в [примере репозитория Dynatrace Operator](https://dt-url.net/ky03zzm).
    * ActiveGate с мониторингом Kubernetes и дополнительной конфигурацией:
@@ -134,9 +134,9 @@ Dynatrace версии 1.305+ Dynatrace Operator версии 1.5.0+ ActiveGate 
 
      + `.spec.templates.kspmNodeConfigurationCollector.tolerations`
 
-   Рекомендации по настройке свойств см. в [Добавление файла пользовательских свойств](../../../../ingest-from/setup-on-k8s/guides/metadata-automation/custom-properties-file.md "Добавление файла пользовательских свойств").
+   Рекомендации по настройке свойств см. в Добавление файла пользовательских свойств.
 
-   Список всех доступных параметров см. в [Параметры DynaKube для Dynatrace Operator](../../../../ingest-from/setup-on-k8s/reference/dynakube-parameters.md "Список доступных параметров для настройки Dynatrace Operator в Kubernetes.").
+   Список всех доступных параметров см. в Параметры DynaKube для Dynatrace Operator.
 
    **Пример DynaKube**:
 
@@ -410,7 +410,7 @@ Dynatrace версии 1.305+ Dynatrace Operator версии 1.5.0+ ActiveGate 
 После настройки Kubernetes Security Posture Management вы можете использовать:
 
 * [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](../../../../secure/xspm.md "Обнаружение, управление и реагирование на находки безопасности и соответствия.") для анализа состояния безопасности ваших кластеров и оценки соответствия отраслевым стандартам
-* [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../../../secure/investigations.md "Объединение функций Grail для расследований на основе фактов, включая разрешение инцидентов, анализ первопричин и поиск угроз.") для запроса [событий соответствия](../../../../semantic-dictionary/model/security-events.md#compliance-finding-events "Ознакомьтесь с моделями Семантического словаря, связанными с событиями безопасности.") для получения дополнительной аналитики
+* [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../../../secure/investigations.md "Объединение функций Grail для расследований на основе фактов, включая разрешение инцидентов, анализ первопричин и поиск угроз.") для запроса событий соответствия для получения дополнительной аналитики
 * [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь аналитическими данными наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") для обмена отчётами о находках с заинтересованными сторонами
 
 ## Ограничения
@@ -419,11 +419,11 @@ Kubernetes Security Posture Management может охватывать до 100 
 
 ## Дополнительные ресурсы
 
-* Пример сценария использования см. в [Соблюдение соответствия с Security Posture Management](../../../../secure/use-cases/stay-compliant.md "Контроль мер безопасности, политик и практик.").
-* Список часто задаваемых вопросов о Kubernetes Security Posture Management см. в [FAQ](../../../../secure/application-security/spm.md#faq "Оценка, управление и реагирование на неправильные конфигурации и нарушения стандартов безопасности и нормативного соответствия.").
-* Список примеров DQL на основе событий соответствия для дальнейшего расследования или отчётности см. в [Запрос событий соответствия](../../../../secure/threat-observability/dql-examples.md#compliance "Примеры DQL для данных безопасности на основе Grail.").
-* Обзор использования данных безопасности см. в [Данные безопасности в Grail](../../../../secure/threat-observability/concepts.md#security-data "Основные концепции Threat Observability").
+* Пример сценария использования см. в Соблюдение соответствия с Security Posture Management.
+* Список часто задаваемых вопросов о Kubernetes Security Posture Management см. в FAQ.
+* Список примеров DQL на основе событий соответствия для дальнейшего расследования или отчётности см. в Запрос событий соответствия.
+* Обзор использования данных безопасности см. в Данные безопасности в Grail.
 
 ## Связанные темы
 
-* [Security Posture Management](../../../../secure/xspm.md "Обнаружение, управление и реагирование на находки безопасности и соответствия.")
+* Security Posture Management

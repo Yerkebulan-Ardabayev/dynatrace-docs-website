@@ -46,11 +46,11 @@ For exponential histograms, Dynatrace ingests the histogram's `min|max|sum|count
 
 When ingesting OpenTelemetry metrics, limits and validations apply as described in the tables below.
 
-* When [Metrics powered by Grail overview (DPS)](../../../../license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") is on your rate card:
+* When Metrics powered by Grail overview (DPS) is on your rate card:
 
   + Latest Dynatrace If **Advanced OTLP metric dimensions** is configured, the limits in **Advanced OTLP Metric dimensions limits** apply.
   + If **Advanced OTLP metric dimensions** is not configured, the limits in **Default limits** apply.
-* When [Custom Metrics Classic (DPS)](../../../../license/capabilities/platform-extensions/custom-metrics-classic.md "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.") is on your rate card, the limits in **Default limits** apply
+* When Custom Metrics Classic (DPS) is on your rate card, the limits in **Default limits** apply
 
 For more information about advanced OTLP metric dimensions, see [Important: OTLP Metric Dimensions Changesï»¿](https://community.dynatrace.com/t5/Product-news/Important-OTLP-Metric-Dimensions-Changes/ba-p/293109) in the Dynatrace Community.
 
@@ -77,7 +77,7 @@ Similarly, if a scope and resource attribute share the same name, Dynatrace will
 The Dynatrace backend exclusively works with delta values and requires the respective aggregation temporality.
 Please ensure your metrics exporter is accordingly configured or set the [`OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE`ï»¿](https://opentelemetry.io/docs/specs/otel/metrics/sdk_exporters/otlp/) environment variable to `DELTA`.
 
-For examples on how to set the temporality under each individual language, see the [integration walkthroughs](../../walkthroughs.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
+For examples on how to set the temporality under each individual language, see the integration walkthroughs into Dynatrace.").
 
 ### Metric keys
 

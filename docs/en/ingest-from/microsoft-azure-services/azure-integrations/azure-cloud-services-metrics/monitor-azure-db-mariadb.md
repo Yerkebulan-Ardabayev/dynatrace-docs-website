@@ -21,9 +21,9 @@ On the Azure Database for MariaDB overview page you can see if youâre runni
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see [Enable service monitoring](../azure-monitoring-guide/azure-enable-service-monitoring.md "Enable Azure monitoring in Dynatrace.").
+To learn how to enable service monitoring, see Enable service monitoring.
 
-Optionally, for OneAgent integration, see [how database activity is monitored](../../../../observe/infrastructure-observability/databases/database-services-classic/how-database-activity-is-monitored.md "Learn about automatic detection and monitoring of database services in your application environment.").
+Optionally, for OneAgent integration, see how database activity is monitored.
 
 ## View service metrics
 
@@ -55,7 +55,7 @@ Hiding a dashboard doesn't affect other users.
 
 ### Set up a management zone
 
-To import a dashboard for Azure Database for MariaDB, you need to [set up a management zone](../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Create and assign access rights to management zones.") to limit the entities displayed on the dashboard to those relevant to this service.
+To import a dashboard for Azure Database for MariaDB, you need to set up a management zone to limit the entities displayed on the dashboard to those relevant to this service.
 
 When you create a management zone for this dashboard:
 
@@ -70,7 +70,7 @@ Example
 
 ![Azure management zone](https://dt-cdn.net/images/azuredbformariadbmanagementzone-2686-28aa52c965.png)
 
-After you create the management zone, select it from your dashboard (**Edit** > **Settings** > **Default management zone**). For more information, see [Dashboard timeframe and management zone](../../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe.md "Learn about Dynatrace dashboard timeframe and management zone settings.").
+After you create the management zone, select it from your dashboard (**Edit** > **Settings** > **Default management zone**). For more information, see Dashboard timeframe and management zone.
 
 ## Available metrics
 

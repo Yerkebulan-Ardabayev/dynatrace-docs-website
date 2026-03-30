@@ -16,7 +16,7 @@ The forecast analysis predicts future values of any time series of numeric value
 
 The analysis is agnostic to the distribution of the input data. The forecast is calculated without any assumption about specific data distribution and works for both symmetric and non-symmetric distributions.
 
-You can trigger a forecast analysis from your [notebook](../../dynatrace-intelligence-integrations/davis-for-notebooks.md "Run AI analysis in Dynatrace Notebooks.").
+You can trigger a forecast analysis from your notebook.
 
 ## Analyzer input
 
@@ -126,7 +126,7 @@ If the condition is satisfied, the forecast is assessed as valid. Otherwise, the
 
 ## Write DQL queries for forecasting
 
-When using the forecast analysis in one of your [notebooks](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), you can write any DQL query that returns time series data in the [time series record format](#time-series-record-format).
+When using the forecast analysis in one of your notebooks, you can write any DQL query that returns time series data in the [time series record format](#time-series-record-format).
 
 * If the data does not comply with one of the above formats, the forecast analysis fails.
 * Every numerical value in a data array must have at least one decimal point (for example, `1.0`).
@@ -135,8 +135,8 @@ When using the forecast analysis in one of your [notebooks](../../../analyze-exp
 
 The example DQL queries below yield valid responses.
 
-* The [`timeseries`](../../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "DQL metric commands") DQL command always returns a response in the time series record format.
-* You can also write queries using the [`fetch`](../../../platform/grail/dynatrace-query-language/commands/data-source-commands.md#fetch "DQL data source commands") command together with the [`summarize`](../../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "DQL aggregation commands") command. Those queries will return data in the [single value format](#single-value-format). All records must have the same distance (interval) between them. This is guaranteed when using the `summarize` command, as it will aggregate and group values for the defined time bins. Every record needs to have a field named `value` of type double (see [Single value format](#single-value-format) for more info).
+* The `timeseries` DQL command always returns a response in the time series record format.
+* You can also write queries using the `fetch` command together with the `summarize` command. Those queries will return data in the [single value format](#single-value-format). All records must have the same distance (interval) between them. This is guaranteed when using the `summarize` command, as it will aggregate and group values for the defined time bins. Every record needs to have a field named `value` of type double (see [Single value format](#single-value-format) for more info).
 
 #### DQL timeseries command
 
@@ -180,7 +180,7 @@ fetch events, from: -3d
 
 #### DQL data command
 
-You can use the DQL [`data`](../../../platform/grail/dynatrace-query-language/commands/data-source-commands.md#data "DQL data source commands") command to generate a forecast for your own data. Any data can be used, as long as it conforms to one of the two formats.
+You can use the DQL `data` command to generate a forecast for your own data. Any data can be used, as long as it conforms to one of the two formats.
 
 The following DQL `data` command returns a result in the [time series record format](#time-series-record-format).
 

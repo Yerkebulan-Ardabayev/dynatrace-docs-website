@@ -20,34 +20,34 @@ scraped: 2026-03-06T21:28:42.755901
 * Назначение уязвимостей ответственным членам команды.
 * Предоставление информации всем соответствующим заинтересованным сторонам.
 
-Вы можете [создавать информацию о владении](ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") в веб-интерфейсе, через API и с помощью [Configuration as Code](configuration-as-code.md "Use Dynatrace configuration as code via Monaco or Terraform."). Вы также можете импортировать команды владельцев из сторонних служб каталогов ([Microsoft Entra ID](../analyze-explore-automate/workflows/actions/microsoft-entra-id.md "Set up Microsoft Entra ID Connector to automate importing teams from Microsoft Entra ID via Workflows.")) через [Workflows](../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflows — react to events, schedule tasks, and connect services."). Для масштабируемости и полного охвата [назначайте владение](ownership/assign-ownership.md "Assign owners to entities using entity metadata like labels, environment variables, and tags.") в составе метаданных развёртывания. Для этих целей также можно использовать настройки и веб-интерфейсы объектов.
+Вы можете создавать информацию о владении в веб-интерфейсе, через API и с помощью Configuration as Code. Вы также можете импортировать команды владельцев из сторонних служб каталогов (Microsoft Entra ID) через Workflows. Для масштабируемости и полного охвата назначайте владение в составе метаданных развёртывания. Для этих целей также можно использовать настройки и веб-интерфейсы объектов.
 
-1. [Создавайте и поддерживайте команды владельцев](ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") с уникальными идентификаторами и соответствующей контактной информацией для упрощения маршрутизации проблем. См. также [Рекомендации по владению объектами](ownership/best-practices.md "Tips and best practices to ensure that entities have adequate ownership coverage").
+1. Создавайте и поддерживайте команды владельцев с уникальными идентификаторами и соответствующей контактной информацией для упрощения маршрутизации проблем. См. также Рекомендации по владению объектами.
 
    ![Ownership teams settings page](https://dt-cdn.net/images/ownership-teams-page-2212-be3abe3c7d.png)
-2. [Назначайте команды отслеживаемым объектам Dynatrace](ownership/assign-ownership.md "Assign owners to entities using entity metadata like labels, environment variables, and tags.") через метаданные хоста, метки и аннотации Kubernetes, переменные среды и теги. См. также [Рекомендации по владению объектами](ownership/best-practices.md "Tips and best practices to ensure that entities have adequate ownership coverage").
+2. Назначайте команды отслеживаемым объектам Dynatrace через метаданные хоста, метки и аннотации Kubernetes, переменные среды и теги. См. также Рекомендации по владению объектами.
 3. Просматривайте информацию о владении с маршрутизационными данными на страницах деталей объектов Dynatrace.
 
    ![Owner of a Kubernetes workload](https://dt-cdn.net/images/ownership-k8s-workload-2213-2217e57297.png)
 
 ### Основы
 
-* [Создание и управление командами для владения объектами](ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.")
-* [Назначение команд владельцев отслеживаемым объектам](ownership/assign-ownership.md "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
-* [Рекомендации по владению объектами](ownership/best-practices.md "Tips and best practices to ensure that entities have adequate ownership coverage")
+* Создание и управление командами для владения объектами
+* Назначение команд владельцев отслеживаемым объектам
+* Рекомендации по владению объектами
 
 ### Дополнительно
 
-[Определение тегов и метаданных для хостов](../observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md "Learn how to tag and set additional properties for a monitored host.")
+Определение тегов и метаданных для хостов
 
-[Определение собственных метаданных группы процессов](../observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md "Configure your own process-related metadata based on the unique needs of your organization or environment.")
+Определение собственных метаданных группы процессов
 
-[Обзор Configuration as Code](configuration-as-code.md "Use Dynatrace configuration as code via Monaco or Terraform.")
+Обзор Configuration as Code
 
-[Коннектор Microsoft Entra ID](../analyze-explore-automate/workflows/actions/microsoft-entra-id.md "Set up Microsoft Entra ID Connector to automate importing teams from Microsoft Entra ID via Workflows.")
+Коннектор Microsoft Entra ID
 
 ### API
 
-[Settings API (получение схемы и создание команд)](../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.")
+Settings API (получение схемы и создание команд)
 
-[Monitored entities — Custom tags API](../dynatrace-api/environment-api/custom-tags.md "Manage custom tags of the monitored entities via the Dynatrace API.")
+Monitored entities — Custom tags API

@@ -16,10 +16,10 @@ scraped: 2026-03-03T21:22:57.338777
   + [Dynatrace Collector](../../collector.md#dt-collector-dist "Узнайте о Dynatrace OTel Collector.")
   + [OpenTelemetry Contrib](../../collector.md#collector-contrib "Узнайте о Dynatrace OTel Collector.")
   + [Пользовательская версия Builder](../../collector.md#collector-builder "Узнайте о Dynatrace OTel Collector.")
-* [URL конечной точки Dynatrace API](../../otlp-api.md "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."), на которую должны экспортироваться данные
+* URL конечной точки Dynatrace API, на которую должны экспортироваться данные
 * [Токен API](../../otlp-api.md#authentication-export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа (требуется только для SaaS и ActiveGate)
 
-Подробнее о настройке Collector с приведённой ниже конфигурацией см. в разделах [Развёртывание Collector](../deployment.md "Как развернуть Dynatrace OTel Collector.") и [Конфигурация Collector](../configuration.md "Как настроить OpenTelemetry Collector.").
+Подробнее о настройке Collector с приведённой ниже конфигурацией см. в разделах Развёртывание Collector и Конфигурация Collector.
 
 ## Пример конфигурации
 
@@ -98,5 +98,5 @@ exporters: [otlp_http]
 
 ## Связанные темы
 
-* [Обогащение принятых данных полями, специфичными для Dynatrace](../../../extend-dynatrace/extend-data.md "Узнайте, как автоматически обогащать телеметрические данные полями, специфичными для Dynatrace.")
-* [Обогащение запросов OTLP данными Kubernetes](kubernetes/k8s-enrich.md "Настройте OpenTelemetry Collector для обогащения запросов OTLP данными Kubernetes.")
+* Обогащение принятых данных полями, специфичными для Dynatrace
+* Обогащение запросов OTLP данными Kubernetes

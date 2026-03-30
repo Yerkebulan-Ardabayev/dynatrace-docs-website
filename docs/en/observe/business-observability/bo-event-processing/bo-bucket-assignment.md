@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:14:35.723933
 * 2-min read
 * Updated on Nov 28, 2025
 
-Business events can be stored in buckets that can have different retention periods. You create rules with matcher-specific [DQL](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") queries to assign matching business events to a bucket. The default retention period for a built-in business events bucket (`default_bizevents`) is 35 days. You can also create [custom buckets](../../../platform/grail/organize-data/assign-permissions-in-grail.md#custom-grail-buckets "Find out how to assign permissions to buckets and tables in Grail.") with a specific retention period.
+Business events can be stored in buckets that can have different retention periods. You create rules with matcher-specific DQL queries to assign matching business events to a bucket. The default retention period for a built-in business events bucket (`default_bizevents`) is 35 days. You can also create [custom buckets](../../../platform/grail/organize-data/assign-permissions-in-grail.md#custom-grail-buckets "Find out how to assign permissions to buckets and tables in Grail.") with a specific retention period.
 
 For custom buckets, the possible retention period ranges from 1 day to 10 years, with an additional week.
 

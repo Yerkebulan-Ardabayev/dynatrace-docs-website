@@ -23,4 +23,4 @@ Manage Dynatrace Platform Subscription cost and usage are allocated to product a
 
 ## Related topics
 
-* [Allocate your DPS costs](../../../license/cost-allocation.md "Learn how to allocate costs to cost centers and products.")
+* Allocate your DPS costs

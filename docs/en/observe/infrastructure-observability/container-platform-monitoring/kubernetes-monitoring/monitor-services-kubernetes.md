@@ -20,7 +20,7 @@ The unified analysis view for Kubernetes services enables you to examine port de
 The Kubernetes services from Infrastructure Monitoring and the services from Applications & Microservices are two fundamentally different concepts.
 
 * A [Kubernetes serviceï»¿](https://dt-url.net/x3034x8) (entity type: `KUBERNETES_SERVICE`) is a Kubernetes-specific concept. It usually exposes a set of pods on the network level. Pods can be served by multiple Kubernetes services.
-* A [service](../../../application-observability/services.md "Learn how to monitor and analyze your services, define and use request attributes, and more.")(entity type: `SERVICE`) is automatically detected by Dynatrace based on the properties of your application deployment and configuration. Depending on technologies and configuration, Dynatrace can either detect multiple services per pod, or services that span across multiple pods.
+* A service(entity type: `SERVICE`) is automatically detected by Dynatrace based on the properties of your application deployment and configuration. Depending on technologies and configuration, Dynatrace can either detect multiple services per pod, or services that span across multiple pods.
 
 ## Prerequisites
 
@@ -70,4 +70,4 @@ Existing management zones need to be manually updated to cover Kubernetes servic
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
+* Set up Dynatrace on Kubernetes

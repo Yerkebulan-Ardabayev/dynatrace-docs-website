@@ -91,9 +91,9 @@ scraped: 2026-03-06T21:10:41.458675
 
 Чтобы углубить понимание обнаружения сбоев и устранения неполадок в Dynatrace, изучите следующие ресурсы:
 
-* [Настройка обнаружения сбоев сервиса](service-detection/service-detection-v1/configure-service-failure-detection.md "Discover which service error types Dynatrace automatically detects and learn how to adjust failure detection settings to meet your specific requirements.")
-* [Концепции анализа основных причин](../../../dynatrace-intelligence/root-cause-analysis/concepts.md "Get acquainted with root cause analysis concepts.")
-* [Сортировка и расследование инцидентов в приложении Problems](../../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* Настройка обнаружения сбоев сервиса
+* Концепции анализа основных причин
+* Сортировка и расследование инцидентов в приложении Problems
 
 ### Присоединяйтесь к обсуждению
 

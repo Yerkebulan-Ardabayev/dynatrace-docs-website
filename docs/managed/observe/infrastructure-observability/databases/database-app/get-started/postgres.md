@@ -18,10 +18,10 @@ Monitor PostgreSQL databases with the Dynatrace Extension Framework to collect p
 * Designate an ActiveGate group or groups that will remotely connect to your PostgreSQL database server to pull data. All ActiveGates in each group must connect to your PostgreSQL database server.
 * For self-hosted Postgres:
 
-  + Postgres [additional supplied modules](../../../../../../observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring.md#monitor-self-hosted-postgres "Observe, analyze, and optimize the usage, health, and performance of your PostgreSQL database.") must be installed.
+  + Postgres additional supplied modules must be installed.
 * For cloud-managed Postgres services:
 
-  + Ensure that [specific extensions and settings are enabled](../../../../../../observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring.md#setup-cloud-monitoring-capabilities "Observe, analyze, and optimize the usage, health, and performance of your PostgreSQL database.").
+  + Ensure that specific extensions and settings are enabled.
 * Create a dedicated database user in your database instance. Dynatrace uses this user to run monitoring queries against your PostgreSQL database.
 
   ```
@@ -51,7 +51,7 @@ Select a hosting type from the options. This choice determines which script gene
 
 ### Select an ActiveGate group
 
-1. Select the [ActiveGate group](../../../../../../ingest-from/dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.") to determine which ActiveGates run the extension.
+1. Select the ActiveGate group to determine which ActiveGates run the extension.
 2. Select **Next**.
 
 ### Create a connection
@@ -66,7 +66,7 @@ Set up the connection to your database instance. Provide the required credential
 3. Provide the **Authenticate** credentials for the `dynatrace` monitoring user you created directly or use secure alternatives.
 
    * Basic credentials: Authentication details passed to Dynatrace when activating monitoring configuration are masked to prevent them from being retrieved.
-   * Credential vault: Use [vault credentials](../../../../../../ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring.md#authentication "PostgreSQL extensions in the Extensions framework.") to securely store and retrieve database credentials.
+   * Credential vault: Use vault credentials to securely store and retrieve database credentials.
 4. Select **Next**.
 
 ### Install the instance
@@ -77,7 +77,7 @@ Run the provided script to create the necessary objects on the database instance
 2. Complete manual setup for required instances.
 3. Select **Create DB instance monitoring**.
 
-You must run this script to retrieve metrics from the database. To learn more, refer to the helper function details in the [install the instance](../../../../../../observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring.md#install-instance "Observe, analyze, and optimize the usage, health, and performance of your PostgreSQL database.") section.
+You must run this script to retrieve metrics from the database. To learn more, refer to the helper function details in the install the instance section.
 
 Recommended
 
@@ -91,16 +91,16 @@ After running the creation script, run the validation script to confirm all requ
 
 ## Use cases
 
-Learn more about PostgreSQL monitoring in these [use cases](../../../../../../observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring.md#use-cases "Observe, analyze, and optimize the usage, health, and performance of your PostgreSQL database.").
+Learn more about PostgreSQL monitoring in these use cases.
 
 ## Feature sets
 
-[Feature sets](../../../../../../observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring.md#feature-sets "Observe, analyze, and optimize the usage, health, and performance of your PostgreSQL database.") restrict which metrics are collected when you activate the extension.
+Feature sets restrict which metrics are collected when you activate the extension.
 
 ## FAQ and troubleshooting
 
-For complete details, go to the [FAQ](../../../../../../observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring.md#faq "Observe, analyze, and optimize the usage, health, and performance of your PostgreSQL database.") section.
+For complete details, go to the FAQ section.
 
 ## Related topics
 
-* [PostgreSQL extension](../../../../../../observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring.md "Observe, analyze, and optimize the usage, health, and performance of your PostgreSQL database.")
+* PostgreSQL extension

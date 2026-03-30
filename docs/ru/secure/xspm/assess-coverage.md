@@ -11,7 +11,7 @@ scraped: 2026-03-03T21:21:59.541148
 
 ## Просмотр покрытия систем
 
-На странице **Overview** кольцевая диаграмма **System coverage** помогает определить процент контролируемых систем, на которых включено [Security Posture Management](../application-security/spm.md "Оценка, управление и принятие мер в отношении ошибок конфигурации и нарушений руководств по обеспечению безопасности и стандартов соответствия нормативным требованиям.").
+На странице **Overview** кольцевая диаграмма **System coverage** помогает определить процент контролируемых систем, на которых включено Security Posture Management.
 
 ![system coverage](https://dt-cdn.net/images/2024-11-08-08-15-45-387-114cb209db.png)
 
@@ -21,7 +21,7 @@ scraped: 2026-03-03T21:21:59.541148
 
 ### Улучшение покрытия систем
 
-Для улучшения покрытия [Security Posture Management](../application-security/spm.md "Оценка, управление и принятие мер в отношении ошибок конфигурации и нарушений руководств по обеспечению безопасности и стандартов соответствия нормативным требованиям.") на ваших системах
+Для улучшения покрытия Security Posture Management на ваших системах
 
 1. На странице **Overview** в таблице **My systems** найдите системы с меткой `Not enabled`.
 2. Для каждой системы, которую вы хотите охватить, выберите **Enable SPM**.
@@ -82,4 +82,4 @@ Kubernetes Security Posture Management (KSPM)
 
 ## Связанные темы
 
-* [Kubernetes Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Настройка и включение Security Posture Management в Kubernetes.")
+* Kubernetes Security Posture Management

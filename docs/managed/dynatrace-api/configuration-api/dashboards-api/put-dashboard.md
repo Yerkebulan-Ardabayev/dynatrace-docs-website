@@ -17,11 +17,11 @@ The request consumes and produces an `application/json` payload.
 
 To execute this request, you need an access token with `WriteConfig` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ## Parameters
 
-Refer to [Tile JSON models](/managed/dynatrace-api/configuration-api/dashboards-api/dashboards-api-tile-models "Learn the variations of tile JSON models in the Dynatrace Dashboards Classic API.") to find JSON models for each tile type.
+Refer to Tile JSON models to find JSON models for each tile type.
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
@@ -536,7 +536,7 @@ The request consumes an `application/json` payload.
 
 To execute this request, you need an access token with `WriteConfig` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ### Response
 
@@ -549,7 +549,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 To execute this request, you need an access token with `WriteConfig` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ## Example
 
@@ -811,4 +811,4 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/dashboards/2768e6ca-e199-44
 
 ## Related topics
 
-* [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+* Dashboards

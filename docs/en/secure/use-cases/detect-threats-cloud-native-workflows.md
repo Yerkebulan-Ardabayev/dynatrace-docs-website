@@ -26,8 +26,8 @@ This article is intended for
 
 ## Prerequisites
 
-* Set up ingestion of Kubernetes audit logs, for example, through [Amazon Firehose](../../ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose.md "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput."). Firehose can be used to ship logs from Amazon Elastic Kubernetes Service (EKS), but the provided template is compatible with any Kubernetes distribution.
-* Generate an access token with the `openpipeline.events_security` scope to allow us to ingest detection findings. To later access the token securely from within a workflow, store the token in the [credential vault](../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault."). For details, see [Dynatrace API - Tokens and authentication](../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+* Set up ingestion of Kubernetes audit logs, for example, through Amazon Firehose. Firehose can be used to ship logs from Amazon Elastic Kubernetes Service (EKS), but the provided template is compatible with any Kubernetes distribution.
+* Generate an access token with the `openpipeline.events_security` scope to allow us to ingest detection findings. To later access the token securely from within a workflow, store the token in the credential vault. For details, see Dynatrace API - Tokens and authentication.
 
 ## Get started
 
@@ -80,13 +80,13 @@ Use [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png 
 
 ## Sample workflows for threat response
 
-Dynatrace provides ready-to-use workflow templates that automatically trigger on new Kubernetes threat detection findings and send notifications via [Slack](../../analyze-explore-automate/workflows/actions/slack.md#workflow "Send messages to Slack Workspaces"), [Microsoft Teams](../../analyze-explore-automate/workflows/actions/microsoft-teams.md#use "Send messages to Microsoft Teams"), or [Email](../../analyze-explore-automate/workflows/actions/email.md "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
+Dynatrace provides ready-to-use workflow templates that automatically trigger on new Kubernetes threat detection findings and send notifications via [Slack](../../analyze-explore-automate/workflows/actions/slack.md#workflow "Send messages to Slack Workspaces"), Microsoft Teams, or Email.
 Use these as starting points to build your own automated response workflows:
 
 * [Instant notification for critical Kubernetes detection findingsï»¿](https://dt-url.net/l9430ds): Triggers on high or critical findings and alerts the responsible team.
 * [Threat detection notification senderï»¿](https://dt-url.net/hs2301e): A reusable sub-workflow for centralized notification delivery.
 
-These templates show how to enrich findings with [ownership](../../deliver/ownership.md "Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.") context and integrate real-time alerting into your response workflows.
+These templates show how to enrich findings with ownership context and integrate real-time alerting into your response workflows.
 
 ## Conclusion
 

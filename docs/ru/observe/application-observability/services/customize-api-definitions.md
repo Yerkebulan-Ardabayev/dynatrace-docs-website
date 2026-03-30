@@ -28,4 +28,4 @@ scraped: 2026-03-06T21:26:01.503322
 
 ## Связанные темы
 
-* [Settings API](../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.")
+* Settings API

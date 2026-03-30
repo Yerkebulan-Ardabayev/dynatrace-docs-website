@@ -73,7 +73,7 @@ Grail organizes data in buckets. Buckets behave like folders in a file system an
 * Serves the same use case.
 * Needs to be deleted at the same time.
 
-For more about buckets, see [Configure data storage and retention for logs](lma-bucket-assignment.md "Your log data can be stored in data retention buckets based on specific retention periods.").
+For more about buckets, see Configure data storage and retention for logs.
 
 ## Best practices
 
@@ -126,7 +126,7 @@ If you intentionally use the default bucket for onboarding new data, a good prac
 
 For most use cases, try to keep the volume of daily retained data in a single bucket to around 2â3 TB. This is especially true for frequently queried buckets. (However, it is usually not possible for buckets used to address compliance use cases, where you'll likely retain petabytes worth of log records in a single bucket.)
 
-This will help to ensure the best user experience and performance, especially if users don't follow [DQL best practices](../../platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.") (such as applying specific filters for time spans or buckets, or increasing the query volume limit with the `scanLimitGBytes` parameter).
+This will help to ensure the best user experience and performance, especially if users don't follow DQL best practices (such as applying specific filters for time spans or buckets, or increasing the query volume limit with the `scanLimitGBytes` parameter).
 
 ### Configure bucket retention periods
 
@@ -141,7 +141,7 @@ Log records can be stored from one day up to 10 years. The retention period is d
 
 ### Filter logs on ingest
 
-You can filter logs so that non-relevant logs are either sent to a different bucket or deleted outright. To filter logs on ingest, use either OneAgent (see [Log ingest rules](lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.")) or OpenPipeline (see [OpenPipeline processing examples](../../platform/openpipeline/use-cases/processing-examples.md "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")).
+You can filter logs so that non-relevant logs are either sent to a different bucket or deleted outright. To filter logs on ingest, use either OneAgent (see Log ingest rules) or OpenPipeline (see OpenPipeline processing examples).
 
 ### Use bucket filters
 
@@ -149,9 +149,9 @@ Bucket filters are like permissions on the query level. By adding a bucket filte
 
 This reduces the amount of scanned data and the associated costs, especially with queries used in auto-refreshing dashboards.
 
-Additionally, you can use segments to provide easy filtering by bucket, see [Segment logs by bucket](../../manage/segments/use-cases/segments-use-cases-logs-by-bucket.md "Segment logs by bucket with segments").
+Additionally, you can use segments to provide easy filtering by bucket, see Segment logs by bucket.
 
-For more information about bucket filters, see [Query and filter logs](lma-logs-app/query-and-filter.md "Explore logs with DQL queries and filter statements in the Dynatrace Logs app.").
+For more information about bucket filters, see Query and filter logs.
 
 ### Set access permissions
 
@@ -167,19 +167,19 @@ For more information about access permissions, see the following page:
 
 * [Bucket permissions](../../platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-bucket "Find out how to assign permissions to buckets and tables in Grail.")
 * [Record-level permissions](../../platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.")
-* [Policy boundaries](../../manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries.md "Restrict security policies with policy boundaries to provide tailored access to your users.")
+* Policy boundaries
 
 ### Use log-based events and metrics
 
 You can create events and metrics from log records.
 
-To convert log queries to log-based metrics, see [Optimize performance and costs of dashboards running log queries](lma-use-cases/lma-log-query-dashboard.md "How to optimize performance and costs of dashboards running log queries."). After you've extracted metrics, you can delete the log recordsâthis is especially useful for aggregated information where access to the raw record isnât important.
+To convert log queries to log-based metrics, see Optimize performance and costs of dashboards running log queries. After you've extracted metrics, you can delete the log recordsâthis is especially useful for aggregated information where access to the raw record isnât important.
 
-You can use log-based events and metrics for alerting, instead of log queries. For more information, see [Set up alerts based on events extracted from logs](lma-use-cases/lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.") and [Set up custom alerts based on metrics extracted from logs](lma-use-cases/lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.").
+You can use log-based events and metrics for alerting, instead of log queries. For more information, see Set up alerts based on events extracted from logs and Set up custom alerts based on metrics extracted from logs.
 
 ### Use apps with logs in context
 
-Some apps, such as Kubernetes, let you see logs in context. This lets you scan only the logs that are relevant to a specific use case. For more information, see [Use logs in context to troubleshoot Kubernetes (K8s) issues](lma-use-cases/lma-e2e-troubleshooting.md "Faster troubleshooting with logs, metrics and traces on Kubernetes.").
+Some apps, such as Kubernetes, let you see logs in context. This lets you scan only the logs that are relevant to a specific use case. For more information, see Use logs in context to troubleshoot Kubernetes (K8s) issues.
 
 Viewing logs in context using the Dynatrace apps is zero rated and therefore free of charge. This includes features like surrounding logs (viewing related log entries) and drill-down views, for example, changing from a trace view to a topology view.
 
@@ -195,7 +195,7 @@ For your log records, you can additionally utilize the following Dynatrace apps:
 
 Since you use DQL to access log records, follow DQL best practices to create optimized queries.
 
-For more information, see [DQL best practices](../../platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.").
+For more information, see DQL best practices.
 
 ### Track adoption and usage
 
@@ -237,7 +237,7 @@ To start, first you need to set up log ingestion.
 
 ### 1. Set up log ingestion
 
-To set up log ingestion, follow the steps described in [Log ingestion](lma-log-ingestion.md "Stream log data to Dynatrace.").
+To set up log ingestion, follow the steps described in Log ingestion.
 
 By default, all log data is ingested into the `default_logs` bucket. Ideally, after you have implemented all the best practices, only admins should have access to this bucket. Bucket permissions should follow the principle of least privilege, in which individual users have access to just the buckets that they're required to query or visualize.
 
@@ -256,7 +256,7 @@ There are two ways that you can verify data is ingested and retained.
   | filter dt.system.bucket == "default_logs"
   ```
 
-If you don't see any log data, see [Troubleshooting Log Management and Analytics](lma-troubleshooting.md "Fix issues related to the setup and configuration of Log Management and Analytics.") for troubleshooting tips.
+If you don't see any log data, see Troubleshooting Log Management and Analytics for troubleshooting tips.
 
 ### Apply best practices
 
@@ -275,12 +275,12 @@ This step creates a dedicated bucket for certain data.
    For this example, set the type to `logs`.
 5. Optional Select **Retain with Included Queries** and define the included query retention period.
 
-   For more info about Retain with Included Queries, see [Take control of log query costs using Retain with Included Queries](lma-use-cases/lma-e2e-included-log-queries.md "How to use the Retain with Included Queries capability to control and predict log consumption.").
+   For more info about Retain with Included Queries, see Take control of log query costs using Retain with Included Queries.
 6. Select **Create** to save the bucket.
 
 ### 2. Filter logs on ingest
 
-[OpenPipeline](../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") handles log ingestion from all sources and allows processing, transformation and bucket assignment before logs are stored in Grail.
+OpenPipeline handles log ingestion from all sources and allows processing, transformation and bucket assignment before logs are stored in Grail.
 
 For this example, let's use OpenPipeline to filter logs on ingest. We'll configure a pipeline that processes CloudFront logs and stores them in the `access_logs` bucket.
 
@@ -380,8 +380,8 @@ This step grants users access to only specific buckets.
 
 ## Related topics
 
-* [Log ingestion via OneAgent](lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
-* [Log ingestion API](lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
-* [OneAgent log ingest API](../../ingest-from/extend-dynatrace/extend-logs/oneagent-log-ingest-api.md "Use the Dynatrace API to push locally retrieved logs to Dynatrace.")
+* Log ingestion via OneAgent
+* Log ingestion API
+* OneAgent log ingest API
 * [Explore Log Management and Analytics in Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?filter=log-management-and-analytics&internal_source=doc&internal_medium=link&internal_campaign=cross)
-* [Log processing with OpenPipeline](lma-log-processing/lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.")
+* Log processing with OpenPipeline

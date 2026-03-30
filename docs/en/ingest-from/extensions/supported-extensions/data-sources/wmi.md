@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:16:41.961961
 
 Dynatrace provides you with a framework that you can use to extend your observability into data acquired directly for WMI-monitored Windows services and components. To this end, Dynatrace offers the facility to bring WMI data into Dynatrace at scale and in the context to all other data. This works best if you have OneAgent on the monitored Windows box, but it also works in an agentless manner.
 
-First, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=wmi) to see if your technology is covered by an existing extension. If it isn't, you can build your own [Dynatrace WMI extension](../../develop-your-extensions/data-sources/wmi-extensions.md "Learn how to create a WMI extension using the Extensions framework.") to cover your Windows technology.
+First, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=wmi) to see if your technology is covered by an existing extension. If it isn't, you can build your own Dynatrace WMI extension to cover your Windows technology.
 
 ## Before you begin
 
@@ -22,7 +22,7 @@ First, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=wmi) to 
 2. WMI extensions can run locally on an OneAgent (recommended) or remotely on an ActiveGate.
 
    * When run locally on a Windows host, the extension will connect to the WMI interface automatically. Make sure Extension Execution Controller is enabled at the environment or selected host level. For more information, see [Extension Execution Controller](../../concepts.md#eec "Learn more about the concept of Dynatrace Extensions.")
-   * When monitored remotely, make sure your Windows-based ActiveGates belonging to the ActiveGate groups you designated for remote monitoring have remote permissions enabled. See [WMI data source](../../develop-your-extensions/data-sources/wmi-extensions.md "Learn how to create a WMI extension using the Extensions framework.") for more information.
+   * When monitored remotely, make sure your Windows-based ActiveGates belonging to the ActiveGate groups you designated for remote monitoring have remote permissions enabled. See WMI data source for more information.
 
 ## Manage WMI extensions
 
@@ -66,7 +66,7 @@ Next, perform the following steps.
 
 #### Remote monitoring
 
-1. Select **Monitor remotely** and choose the ActiveGate group to determine which ActiveGate or ActiveGates will run the extension. A Windows-based ActiveGate host needs to have remote permissions enabled. See [WMI data source](../../develop-your-extensions/data-sources/wmi-extensions.md "Learn how to create a WMI extension using the Extensions framework.") for more information
+1. Select **Monitor remotely** and choose the ActiveGate group to determine which ActiveGate or ActiveGates will run the extension. A Windows-based ActiveGate host needs to have remote permissions enabled. See WMI data source for more information
 2. Select **Next step**.
 3. Select **Add host** and provide connection details.
 
@@ -97,7 +97,7 @@ When done, select **Activate**.
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](../../manage-extensions.md "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See Manage Extensions to learn how to use it to activate an extension using the Dynatrace API.
 
 ## Explore WMI extensions
 

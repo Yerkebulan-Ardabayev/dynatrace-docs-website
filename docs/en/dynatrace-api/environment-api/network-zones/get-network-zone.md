@@ -16,7 +16,7 @@ The request produces an `application/json` payload.
 
 ## Authentication
 
-To execute this request, you need the **Read network zones** (`networkZones.read`) permission assigned to your API token. To learn how to obtain and use it, see [Authentication](../../basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+To execute this request, you need the **Read network zones** (`networkZones.read`) permission assigned to your API token. To learn how to obtain and use it, see Authentication.
 
 ## Parameters
 
@@ -168,4 +168,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [Network zones](../../../manage/network-zones.md "Find out how network zones work in Dynatrace.")
+* Network zones

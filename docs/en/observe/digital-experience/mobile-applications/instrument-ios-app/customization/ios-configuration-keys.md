@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:37:59.187376
 * 11-min read
 * Updated on Feb 27, 2026
 
-Configuration keys are essentially properties you can set to your preferences for auto-instrumentation. Add the keys to your app's [`Info.plist` file](../instrumentation/info-plist-file.md "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration."), as required to fine-tune auto-instrumentation.
+Configuration keys are essentially properties you can set to your preferences for auto-instrumentation. Add the keys to your app's `Info.plist` file, as required to fine-tune auto-instrumentation.
 
 The following tables include all configuration keys for iOS auto-instrumentation.
 

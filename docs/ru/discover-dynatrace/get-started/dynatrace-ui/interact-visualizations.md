@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:30:17.899790
 
 Графики — один из основных компонентов, используемых при визуализации данных. Они незаменимы для представления сложных данных в удобном и понятном виде. Ознакомьтесь с обзором доступных типов графиков и наиболее распространёнными способами взаимодействия с ними.
 
-В этой статье представлены все визуализации и варианты взаимодействия, предлагаемые последней версией Dynatrace. Обратите внимание, что приложения [Dashboards](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") и [Notebooks](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability data—all in one collaborative, customizable workspace.") предоставляют подмножество доступных визуализаций и возможностей взаимодействия.
+В этой статье представлены все визуализации и варианты взаимодействия, предлагаемые последней версией Dynatrace. Обратите внимание, что приложения Dashboards и Notebooks предоставляют подмножество доступных визуализаций и возможностей взаимодействия.
 
 Вы разработчик приложений?
 

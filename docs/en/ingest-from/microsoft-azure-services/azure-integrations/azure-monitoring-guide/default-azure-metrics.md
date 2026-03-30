@@ -12,11 +12,11 @@ scraped: 2026-03-06T21:31:33.010747
 * 1-min read
 * Updated on Jan 29, 2024
 
-For information about differences between classic services and other services, see [Migrate from Azure classic (formerly 'built-in') services to cloud services](azure-migration-guide.md "Migrate Azure classic services to their new versions.").
+For information about differences between classic services and other services, see Migrate from Azure classic (formerly 'built-in') services to cloud services.
 
-The table below lists all Azure metrics that Dynatrace collects by default when you enable [Microsoft Azure](../azure-monitoring-guide.md "Set up and configure Azure monitoring in Dynatrace.") monitoring.
+The table below lists all Azure metrics that Dynatrace collects by default when you enable Microsoft Azure monitoring.
 
-For all other metrics collected by Dynatrace per configurable Azure service, see [cloud services](../azure-cloud-services-metrics.md "Monitor Azure services with Dynatrace and view available metrics.") pages.
+For all other metrics collected by Dynatrace per configurable Azure service, see cloud services pages.
 
 | Metric key | Name | Unit | Aggregations |
 | --- | --- | --- | --- |

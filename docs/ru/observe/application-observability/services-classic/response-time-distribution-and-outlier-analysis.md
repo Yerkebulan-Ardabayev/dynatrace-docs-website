@@ -18,7 +18,7 @@ scraped: 2026-03-06T21:22:59.023258
 3. На странице обзора сервиса нажмите кнопку **View** (например, **View requests**, **View dynamic requests** или **View resource requests**).
 4. Выберите вкладку **Response time**.
 
-Диаграмма **Response time** показывает, как были распределены значения времени отклика запросов, инициированных этим сервисом, за [выбранный период](../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe.md "Learn about Dynatrace dashboard timeframe and management zone settings.") (см. пример ниже). Эта диаграмма также показывает среднее количество запросов за время, а также минимальное/максимальное время отклика каждого [экземпляра сервиса](analyze-individual-service-instances.md "Find out how you can perform a service-instance analysis."). Для анализа времени отклика вы можете просматривать перцентили `Median`, `Slowest 10%` или `Slowest 5%`.
+Диаграмма **Response time** показывает, как были распределены значения времени отклика запросов, инициированных этим сервисом, за выбранный период (см. пример ниже). Эта диаграмма также показывает среднее количество запросов за время, а также минимальное/максимальное время отклика каждого экземпляра сервиса. Для анализа времени отклика вы можете просматривать перцентили `Median`, `Slowest 10%` или `Slowest 5%`.
 
 ![Outlier 1](https://dt-cdn.net/images/outlier01-1650-3919f9c0c9.png)
 
@@ -84,5 +84,5 @@ scraped: 2026-03-06T21:22:59.023258
 
 ## Связанные темы
 
-* [Тайминги анализа сервисов](service-analysis-timing.md "Find out what each time in service analysis means.")
+* Тайминги анализа сервисов
 * [[Блог] Лучшее понимание различий времени отклика с помощью режима сравнения](https://www.dynatrace.com/news/blog/better-understand-response-time-differences-over-time-using-compare-mode/)

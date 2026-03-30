@@ -52,7 +52,7 @@ Combining the Dynatrace automation capabilities with insights into security-rela
 
 ### Context
 
-Logs from your [Dynatrace-monitored environment](../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") are ingested into [Grail](../../platform/grail.md "Insights on what and how you can query Dynatrace data.") via [log ingestion](../../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace."). When an attack is detected, a Dynatrace problem is created.
+Logs from your Dynatrace-monitored environment are ingested into Grail via log ingestion. When an attack is detected, a Dynatrace problem is created.
 
 ### 1. Intrusion notification automation
 
@@ -69,19 +69,19 @@ For details, see [Instant queries](#notebook).
 ## Prerequisites
 
 * Dynatrace version 1.283+
-* [Set up log ingestion](../../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") (ingests security incidents into Grail).
-* [Set up ownership teams](../../deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") (allows the workflow to assign security incidents based on ownership of the affected entity).
-* [Set up Jira Connector](../../analyze-explore-automate/workflows/actions/jira.md "Automate creating, transitioning, commenting, and assigning Jira issues on the events and schedules defined for your workflows.") (allows the workflow to convert resulting findings into Jira tickets).
-* [Set up Slack Connector](../../analyze-explore-automate/workflows/actions/slack.md "Send messages to Slack Workspaces") (allows the workflow to send resulting findings to Slack channels).
+* Set up log ingestion (ingests security incidents into Grail).
+* Set up ownership teams (allows the workflow to assign security incidents based on ownership of the affected entity).
+* Set up Jira Connector (allows the workflow to convert resulting findings into Jira tickets).
+* Set up Slack Connector (allows the workflow to send resulting findings to Slack channels).
 
-  While the current scenario uses Slack and Jira as notification channels, other integrations are also available. For details, see [Workflows integrations](../../analyze-explore-automate/workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
+  While the current scenario uses Slack and Jira as notification channels, other integrations are also available. For details, see Workflows integrations.
 * Basic knowledge of how to
 
-  + [Use Dynatrace Query Language (DQL)](../../platform/grail/dynatrace-query-language/dql-reference.md "Dynatrace Query Language syntax reference.")
-  + [Create workflows](../../analyze-explore-automate/workflows/quickstart.md "Build and run your first workflow.")
+  + Use Dynatrace Query Language (DQL)
+  + Create workflows
 * Make sure the following permissions are enabled.
 
-  + **Grail**: `storage:logs:read`. For instructions, see [Assign permissions in Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+  + **Grail**: `storage:logs:read`. For instructions, see Assign permissions in Grail.
   + ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**: Permissions to access, view, write, and execute workflows. For details, see [Authorization](../../analyze-explore-automate/workflows.md#authorization "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
     To access permissions, go to the **Settings** menu in the upper-right corner of ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** and select **Authorization settings**.
@@ -94,7 +94,7 @@ The following example illustrates how you can implement an attack notification a
 
 The automation needs to be triggered whenever an attack occurs.
 
-In the **Select trigger** section, select and configure **Davis Problem trigger**. For details, see [Create workflows in Dynatrace Workflows: Trigger](../../analyze-explore-automate/workflows/building.md#trigger "Create and edit workflows in Dynatrace Workflows.").
+In the **Select trigger** section, select and configure **Davis Problem trigger**. For details, see Create workflows in Dynatrace Workflows: Trigger.
 
 Show me the relevant workflow task sequence
 
@@ -356,8 +356,8 @@ You can use the above instructions as building blocks to automate common steps i
 
 ## Further reading
 
-[Log on Grail examples](../../analyze-explore-automate/logs/logs-on-grail-examples.md "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.")
+Log on Grail examples
 
-[Dynatrace Intelligence DQL examples](../../dynatrace-intelligence/use-cases/davis-dql-examples.md "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")
+Dynatrace Intelligence DQL examples
 
-[DQL examples for security-related data](../threat-observability/dql-examples.md "DQL examples for security data powered by Grail.")
+DQL examples for security-related data

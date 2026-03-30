@@ -39,15 +39,15 @@ scraped: 2026-03-06T21:35:10.443740
 4. На шаге **Select instrumentation method** выберите **Agentless**.
 5. Выберите **Create**.
 6. На шаге **Setup** проверьте в разделе **Select capability and settings**, включён ли **RUM**. Если он не включён, выберите  **Override** и включите его.
-7. Если вы хотите захватывать [пользовательские взаимодействия](../additional-configuration/user-interactions.md "Learn how to configure and customize user interaction capturing for web frontends."), такие как клики и прокрутки, включите **User Interactions**.
-8. Для обеспечения соответствия действующим нормативным требованиям по конфиденциальности данных настройте необходимые параметры в разделе **End users' data privacy**. Подробнее о доступных параметрах см. в разделе [Настройка конфиденциальности данных для веб-фронтендов](../additional-configuration/data-privacy-web.md "Learn about the available settings that help you ensure your web frontends comply with data privacy regulations.").
+7. Если вы хотите захватывать пользовательские взаимодействия, такие как клики и прокрутки, включите **User Interactions**.
+8. Для обеспечения соответствия действующим нормативным требованиям по конфиденциальности данных настройте необходимые параметры в разделе **End users' data privacy**. Подробнее о доступных параметрах см. в разделе Настройка конфиденциальности данных для веб-фронтендов.
 9. В разделе **Copy JavaScript tag** выберите  для копирования RUM JavaScript в буфер обмена.
 
 Предоставленный RUM JavaScript имеет [формат сниппета JavaScript tag](snippet-formats.md#js-tag "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience."). Этот формат рекомендуется для большинства сценариев, поскольку обеспечивает автоматическое обновление. С этим сниппетом код мониторинга загружается и выполняется синхронно.
 
 ## Шаг 2. Выбор и настройка формата сниппета (необязательно)
 
-New RUM Experience предоставляет несколько форматов сниппетов для удовлетворения различных требований. Подробнее о доступных форматах и их настройке см. в разделе [Выбор формата сниппета в New RUM Experience](snippet-formats.md "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience."). Для каждого формата сниппета доступна [конечная точка API](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags.md "Learn how you can download the RUM manual insertion tags via API").
+New RUM Experience предоставляет несколько форматов сниппетов для удовлетворения различных требований. Подробнее о доступных форматах и их настройке см. в разделе Выбор формата сниппета в New RUM Experience. Для каждого формата сниппета доступна конечная точка API.
 
 Для получения различных форматов сниппетов в интерфейсе:
 
@@ -179,16 +179,16 @@ Password: <input type="password" name="password"/><br/>
 
 Если ваш фронтенд получает трафик, графики в [![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals**](../../experience-vitals.md "The Experience Vitals app provides an entry point for monitoring web and mobile frontends.") должны начать отображать данные в течение десяти минут.
 
-Если данные пока не отображаются, вашей среде могут потребоваться дополнительные шаги настройки. Руководство [Завершение начальной настройки для безагентного фронтенда](finalize-initial-setup-agentless.md "Verify and complete the initial setup for your agentless frontend.") содержит серию проверок, которые помогут определить необходимую конфигурацию.
+Если данные пока не отображаются, вашей среде могут потребоваться дополнительные шаги настройки. Руководство Завершение начальной настройки для безагентного фронтенда содержит серию проверок, которые помогут определить необходимую конфигурацию.
 
 ## Шаг 5. Поддержание RUM JavaScript в актуальном состоянии
 
 Если вы вставили RUM JavaScript, используя формат сниппета [JavaScript tag](../../../web-applications/initial-setup/snippet-formats.md#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case"), код мониторинга и конфигурация обновляются автоматически. Для других форматов сниппетов вам необходимо обновлять RUM JavaScript при каждом изменении конфигурации.
 
-Рекомендуемый подход — интегрировать вставку сниппета в процесс сборки с помощью [API тегов ручной вставки RUM](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags.md "Learn how you can download the RUM manual insertion tags via API"). Это обеспечивает постоянную работу вашего приложения с актуальной конфигурацией.
+Рекомендуемый подход — интегрировать вставку сниппета в процесс сборки с помощью API тегов ручной вставки RUM. Это обеспечивает постоянную работу вашего приложения с актуальной конфигурацией.
 
 ## Связанные темы
 
-* [Выбор формата сниппета в New RUM Experience](snippet-formats.md "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience.")
-* [API тегов ручной вставки RUM](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags.md "Learn how you can download the RUM manual insertion tags via API")
-* [Завершение начальной настройки для безагентного фронтенда](finalize-initial-setup-agentless.md "Verify and complete the initial setup for your agentless frontend.")
+* Выбор формата сниппета в New RUM Experience
+* API тегов ручной вставки RUM
+* Завершение начальной настройки для безагентного фронтенда

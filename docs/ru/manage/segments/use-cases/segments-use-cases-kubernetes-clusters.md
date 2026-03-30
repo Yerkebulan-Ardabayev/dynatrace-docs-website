@@ -18,15 +18,15 @@ scraped: 2026-03-06T21:13:18.908578
 
 Необходимые знания
 
-* [Включение данных в сегменты](../concepts/segments-concepts-includes.md "Узнайте, как данные различных типов могут быть включены в сегменты.")
-* [Сегменты в DQL-запросах](../concepts/segments-concepts-queries.md "Узнайте, как Grail оценивает сегменты во время выполнения запроса для возврата только совпадающих результатов.")
-* [Начало работы с Kubernetes](../../../observe/infrastructure-observability/kubernetes-app/enable-k8s-experience.md "Включите Kubernetes для существующих кластеров или начните мониторинг новых кластеров.")
+* Включение данных в сегменты
+* Сегменты в DQL-запросах
+* Начало работы с Kubernetes
 
 Предварительные требования
 
 * Среда Dynatrace SaaS на базе Grail и AppEngine.
-* У вас есть разрешения `storage:filter-segments:write` и `storage:filter-segments:read`. Чтобы узнать, как настроить разрешения, см. [Разрешения в Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
-* У вас есть лицензия и настроен [Kubernetes Platform Monitoring](../../../license/capabilities/container-monitoring/kubernetes-platform-monitoring.md "Узнайте, как рассчитывается потребление возможности Dynatrace Kubernetes Platform Monitoring DPS.").
+* У вас есть разрешения `storage:filter-segments:write` и `storage:filter-segments:read`. Чтобы узнать, как настроить разрешения, см. Разрешения в Grail.
+* У вас есть лицензия и настроен Kubernetes Platform Monitoring.
 
 ## Шаги
 

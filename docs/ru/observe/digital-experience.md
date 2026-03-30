@@ -12,25 +12,25 @@ scraped: 2026-03-06T21:10:08.444180
 
 ### Новый опыт RUM
 
-[Откройте для себя новый опыт RUM, который привносит мониторинг реальных пользователей в новейшую версию Dynatrace.](digital-experience/new-rum-experience.md "Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance.")[### Концепции RUM
+Откройте для себя новый опыт RUM, который привносит мониторинг реальных пользователей в новейшую версию Dynatrace.### Концепции RUM
 
-[Узнайте о приложениях, действиях пользователей, пользовательских сессиях, метриках и многом другом.](digital-experience/rum-concepts.md "Learn about the basic concepts of Dynatrace Real User Monitoring.")[### Веб-приложения
+[Узнайте о приложениях, действиях пользователей, пользовательских сессиях, метриках и многом другом.### Веб-приложения
 
-[Традиционные веб-приложения или одностраничные приложения, работающие в браузере](digital-experience/web-applications.md "Learn how to configure and use Real User Monitoring for your web applications.")[### Мобильные приложения
+[Традиционные веб-приложения или одностраничные приложения, работающие в браузере### Мобильные приложения
 
-[Нативные мобильные приложения для iOS или Android и гибридные приложения, доступные через браузер](digital-experience/mobile-applications.md "Configure and use Real User Monitoring for your mobile applications.")[### Пользовательские приложения
+[Нативные мобильные приложения для iOS или Android и гибридные приложения, доступные через браузер### Пользовательские приложения
 
-[Традиционные приложения с функциональным клиентом, умные IoT-приложения и даже навыки Alexa](digital-experience/custom-applications.md "Learn how to configure and use Real User Monitoring for your custom applications.")[### Сегментация сессий
+[Традиционные приложения с функциональным клиентом, умные IoT-приложения и даже навыки Alexa### Сегментация сессий
 
-[Разделяйте, анализируйте и объединяйте пользовательские сессии в значимые сегменты на основе общих характеристик.](digital-experience/session-segmentation.md "Learn how to use Real User Monitoring to analyze user sessions across your applications.")[### Session Replay
+[Разделяйте, анализируйте и объединяйте пользовательские сессии в значимые сегменты на основе общих характеристик.### Session Replay
 
-[Записывайте и визуально воспроизводите полный цифровой опыт пользователей вашего приложения.](digital-experience/session-replay.md "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")[### Synthetic Monitoring
+[Записывайте и визуально воспроизводите полный цифровой опыт пользователей вашего приложения.### Synthetic Monitoring
 
-[Отслеживайте доступность и производительность вашего приложения так, как это воспринимают ваши клиенты по всему миру и круглосуточно.](digital-experience/synthetic-monitoring.md "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")[![Use cases](https://dt-cdn.net/images/icon-use-cases-9ac91e0c53.svg "Use cases")
+[Отслеживайте доступность и производительность вашего приложения так, как это воспринимают ваши клиенты по всему миру и круглосуточно.[![Use cases](https://dt-cdn.net/images/icon-use-cases-9ac91e0c53.svg "Use cases")
 
 ### Сценарии использования
 
-[Изучите сценарии использования для мониторинга реальных пользователей, Synthetic Monitoring, сегментации сессий и Session Replay.](digital-experience/dem-use-cases/customer-support-with-session-segmentation.md "Learn how to resolve customer complaints using session segmentation.")
+Изучите сценарии использования для мониторинга реальных пользователей, Synthetic Monitoring, сегментации сессий и Session Replay.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

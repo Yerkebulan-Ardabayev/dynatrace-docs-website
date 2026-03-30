@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:31:21.874741
 * Published Nov 05, 2024
 
 With ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**, you can configure new service-level objectives (SLO)s from templates provided by Dynatrace.
-You can also define your SLOs based on a custom [DQL](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") query.
+You can also define your SLOs based on a custom DQL query.
 
 ## Steps
 
@@ -53,7 +53,7 @@ To create a new SLO with a predefined template
 1. In **Dynatrace**, search for ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**.
 2. In the overview of **Service-Level Objectives**, select  **Service-level objective**.
 3. Select  **Custom SLO**.
-4. Provide your DQL query. Your query has to include an "sli" field like in the following example, to ensure consistent visualization, transformation, and aggregation across your SLOs. The "sli" field needs to return an array of `double` type. The DQL query can be based on any data type in Grail, such as events or logs. Using the [makeTimeseries](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#makeTimeseries "DQL aggregation commands") provides the possibility to create an sli time series that can be used for calculating the SLO status.
+4. Provide your DQL query. Your query has to include an "sli" field like in the following example, to ensure consistent visualization, transformation, and aggregation across your SLOs. The "sli" field needs to return an array of `double` type. The DQL query can be based on any data type in Grail, such as events or logs. Using the makeTimeseries provides the possibility to create an sli time series that can be used for calculating the SLO status.
 
 ```
 timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }
@@ -89,4 +89,4 @@ You can create, edit, list, delete, and evaluate your SLOs via API.
 3. Select **Dynatrace API** to access the Dynatrace API documentation. A new page opens with the Dynatrace API definitions.
 4. In the upper right corner, go to **Select a definition**.
 5. From the drop-down list, choose the endpoint.
-6. Authenticate with your API token. For more details, see [Authentication](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+6. Authenticate with your API token. For more details, see Authentication.

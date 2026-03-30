@@ -21,11 +21,11 @@ If you're running Dynatrace Operator version 1.7.0, we recommend upgrading to ve
 
 ### Reduced volume mounts and read-only OneAgent binaries
 
-The number of volume mounts required for injecting code modules into application pods has been reduced. Additionally, OneAgent binaries are now mounted as read-only to enhance security and stability. For more details, refer to the updated [workload mutation](../../ingest-from/setup-on-k8s/reference/workload-mutation.md "Application pod mutations when oneagent and/or metadata-enrichment is enabled.") documentation.
+The number of volume mounts required for injecting code modules into application pods has been reduced. Additionally, OneAgent binaries are now mounted as read-only to enhance security and stability. For more details, refer to the updated workload mutation documentation.
 
 ### Ephemeral volume size control via workload annotations
 
-You can now limit the size of ephemeral volumes attached to injected application pods using workload annotations. For configuration details and sizing recommendations, refer to our [storage guide](../../ingest-from/setup-on-k8s/reference/storage.md#application-pod-volumes "A comprehensive overview of the storage requirements for different Dynatrace Operator deployment mode in Kubernetes environments").
+You can now limit the size of ephemeral volumes attached to injected application pods using workload annotations. For configuration details and sizing recommendations, refer to our storage guide.
 
 ### Permissions of ClusterRole `dynatrace-kubernetes-monitoring` have been extended
 
@@ -39,8 +39,8 @@ As Dynatrace extends its coverage of Kubernetes objects, the ActiveGate requires
 
 ## New features and enhancements
 
-* The required scopes for the EdgeConnect OAuth client in [provisioner mode](../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/edgeconnect/edge-connect-provision.md "Provision EdgeConnect for a Dynatrace environment.") have been reduced.
-  The scopes `settings:object:write` and `settings:object:read` are now only required if [Kubernetes automation](../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/edgeconnect/kubernetes-automation/edge-connect-kubernetes-automation-operator-supported-setup.md "Set up the operator-supported EdgeConnect for Kubernetes Connector.") is used.
+* The required scopes for the EdgeConnect OAuth client in provisioner mode have been reduced.
+  The scopes `settings:object:write` and `settings:object:read` are now only required if Kubernetes automation is used.
 
 * The parameters of the `livenessProbe` of the CSI driver server container can now be configured in Helm. The following Helm switches have been added:
 
@@ -50,9 +50,9 @@ As Dynatrace extends its coverage of Kubernetes objects, the ActiveGate requires
   + `.csidriver.server.livenessProbe.successThreshold`
   + `.csidriver.server.livenessProbe.timeoutSeconds`
 
-* You will now receive a warning if you enable `.spec.telemetryIngest` without specifiying `.spec.templates.openTelemetryCollector.imageRef`. The Dynatrace Operator will continue to use the `latest` image from the Dynatrace public ECR registry for the [OpenTelemetry collector](../../ingest-from/opentelemetry/collector.md "Learn about the Dynatrace OTel Collector."). However, using `latest` tags is an anti-pattern that should be avoided. Specifying the image will become mandatory in a future version.
+* You will now receive a warning if you enable `.spec.telemetryIngest` without specifiying `.spec.templates.openTelemetryCollector.imageRef`. The Dynatrace Operator will continue to use the `latest` image from the Dynatrace public ECR registry for the OpenTelemetry collector. However, using `latest` tags is an anti-pattern that should be avoided. Specifying the image will become mandatory in a future version.
 
-* Dynatrace Operator uses an API token with a set of [scopes](../../ingest-from/setup-on-k8s/deployment/tokens-permissions.md#operatorToken "Configure tokens and permissions to monitor your Kubernetes cluster") to interact with the Dynatrace platform. With this release, the following changes have been made to the token scope requirements:
+* Dynatrace Operator uses an API token with a set of scopes to interact with the Dynatrace platform. With this release, the following changes have been made to the token scope requirements:
 
   + `entities.read` scope is no longer required
   + `settings.read` and `settings.write` become optional
@@ -102,7 +102,7 @@ We have identified the following known issues with Dynatrace Operator version 1.
 
 ## Removal and deprecation notices
 
-* The deprecated Dynatrace OneAgent Operator has been removed from the `operatorhub.io` catalog. Use [Dynatrace Operator](../../ingest-from/setup-on-k8s/quickstart.md#deploy-dynatrace-operator "Deploy Dynatrace Operator on Kubernetes") instead.
+* The deprecated Dynatrace OneAgent Operator has been removed from the `operatorhub.io` catalog. Use Dynatrace Operator instead.
 
 * The Helm repository located in `dynatrace/helm-charts` is deprecated and will stop receiving updates in a future release! If you are still using it,
   please update the URL to `dynatrace/dynatrace-operator` or switch to the OCI registry-based approach. Update the Helm repository URL with the following commands:
@@ -132,10 +132,10 @@ We have identified the following known issues with Dynatrace Operator version 1.
   + Use the `.spec.oneagent.(cloudNativeFullStack|classicFullStack|hostMonitoring).version` field to pin the version on a per-DynaKube basis.
 
 * CSI sidecar binaries, located in `/usr/local/bin/csi-node-driver-registrar` and `/usr/local/bin/livenessprobe`, are now deprecated and will be removed in a future version of Dynatrace Operator.
-* [Support for OpenShift 4.10 and 4.11](../../ingest-from/technology-support/support-model-and-issues.md "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues") ended in March 2025. As a result, Dynatrace Operator 1.7 no longer supports these versions.
+* Support for OpenShift 4.10 and 4.11 ended in March 2025. As a result, Dynatrace Operator 1.7 no longer supports these versions.
 
 * The âMark for Terminationâ event is deprecated and will be removed in a future Operator version. This functionality is now redundant, as it has been superseded by host availability events on host shutdown and reboot introduced in OneAgent version 1.301.
 
 ## Upgrade from Dynatrace Operator version 1.6
 
-Starting with this version, it is no longer possible to deploy a DynaKube with API versions `v1beta1` or `v1beta2`. Please update your DynaKube to the latest API version, `v1beta5`, before upgrading your Dynatrace Operator installation. For more information, see [Migration guide for DynaKube API versions](../../ingest-from/setup-on-k8s/guides/migration/dynakube.md "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.").
+Starting with this version, it is no longer possible to deploy a DynaKube with API versions `v1beta1` or `v1beta2`. Please update your DynaKube to the latest API version, `v1beta5`, before upgrading your Dynatrace Operator installation. For more information, see Migration guide for DynaKube API versions.

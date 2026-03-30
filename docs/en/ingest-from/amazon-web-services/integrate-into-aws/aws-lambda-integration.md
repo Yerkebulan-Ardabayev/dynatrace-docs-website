@@ -28,27 +28,27 @@ Trace AWS Lambda functions using a .NET runtime
 
 Read this guide](aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration.md)
 
-[#### AWS Lambda log collection
+#### AWS Lambda log collection
 
 Collect logs from AWS Lambda functions
 
 * How-to guide
 
-Read this guide](aws-lambda-integration/collector.md)[#### Monitor AWS Lambda (built-in)
+Read this guide#### Monitor AWS Lambda (built-in)
 
 Monitor AWS Lambda (built-in) and view available metrics.
 
 * How-to guide
 
-Read this guide](../integrate-with-aws/cloudwatch-metrics/aws-lambda-cloudwatch-metrics/lambda-builtin.md)
+Read this guide
 
-[#### Integrate Dynatrace Lambda Layer on container images
+#### Integrate Dynatrace Lambda Layer on container images
 
 Deploy Dynatrace Lambda Layers when deployed via a container image.
 
 * How-to guide
 
-Read this guide](aws-lambda-integration/deploy-oa-latest-lambda-container-images.md)
+Read this guide
 
 ## Integrations
 
@@ -66,12 +66,12 @@ AWS Lambda instrumentation is available for the following runtimes:
 
 Managed offline clusters are not supported.
 
-For more details, see [Technology support](../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+For more details, see Technology support.
 
 ## Monitoring consumption
 
-For AWS Lambda, monitoring consumption is based on Davis data units. See [Serverless monitoring](../../../license/monitoring-consumption-classic/davis-data-units/serverless-monitoring.md "Understand how serverless monitoring consumption is calculated.") for details.
+For AWS Lambda, monitoring consumption is based on Davis data units. See Serverless monitoring for details.
 
 ## Related topics
 
-* [Dynatrace OneAgent](../../dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
+* Dynatrace OneAgent

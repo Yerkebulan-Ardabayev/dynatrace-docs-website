@@ -6,65 +6,65 @@ updated: 2026-02-09
 
 * 1-min read
 
-Dynatrace supports full-stack OneAgent installation on IBM AIX. For analytical information about the supported OneAgent capabilities for AIX, see the [OneAgent platform and capability support matrix](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). For the supported AIX versions, check the [OneAgent supported technologies and versions](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+Dynatrace supports full-stack OneAgent installation on IBM AIX. For analytical information about the supported OneAgent capabilities for AIX, see the OneAgent platform and capability support matrix. For the supported AIX versions, check the OneAgent supported technologies and versions.
 
 ### Installation
 
-[#### OneAgent files and disk space requirements on AIX
+#### OneAgent files and disk space requirements on AIX
 
 Find out what the disk space requirements are for OneAgent installation on AIX.
 
 
-Read this reference](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix)[#### OneAgent security on AIX
+Read this reference#### OneAgent security on AIX
 
 Learn about Dynatrace OneAgent security and modifications to your AIX-based system.
 
 
-Read this reference](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix)
+Read this reference
 
-[#### Install OneAgent on AIX
+#### Install OneAgent on AIX
 
 Learn how to download and install Dynatrace OneAgent on AIX.
 
 * How-to guide
 
-Read this guide](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix)[#### Customize OneAgent installation on AIX
+Read this guide#### Customize OneAgent installation on AIX
 
 Learn how you can use AIX installer with command line parameters.
 
 * How-to guide
 
-Read this guide](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix)
+Read this guide
 
 ### Operation
 
-[#### Automated injection of deep-code monitoring on AIX
+#### Automated injection of deep-code monitoring on AIX
 
 Learn how to enable automated OneAgent injection of deep-code monitoring on AIX.
 
 * How-to guide
 
-Read this guide](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/enable-auto-injection)[#### Update Dynatrace OneAgent on AIX
+Read this guide#### Update Dynatrace OneAgent on AIX
 
 Learn how you can update Dynatrace OneAgent on AIX.
 
 * How-to guide
 
-Read this guide](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/update-oneagent-on-aix)
+Read this guide
 
-[#### Stop/restart OneAgent on AIX
+#### Stop/restart OneAgent on AIX
 
 Learn how to stop and restart OneAgent on AIX.
 
 * How-to guide
 
-Read this guide](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix)[#### Uninstall OneAgent on AIX
+Read this guide#### Uninstall OneAgent on AIX
 
 Learn how you can remove OneAgent from your AIX-based system.
 
 * How-to guide
 
-Read this guide](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/uninstall-oneagent-on-aix)
+Read this guide
 
 ### See also
 

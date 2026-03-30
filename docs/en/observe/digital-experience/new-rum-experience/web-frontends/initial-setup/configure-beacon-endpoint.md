@@ -19,14 +19,14 @@ By default, the beacon endpoint depends on the instrumentation method used for y
 
 ### Auto-injected frontends
 
-If the [RUM JavaScript is injected automatically](set-up-auto-injected-frontend.md "Learn how to set up an auto-injected web frontend in the New RUM Experience."), beacons are sent to your web or application server, where OneAgent provides a beacon endpoint that intercepts and forwards them. For this purpose, a root-relative URL is used, with the last path segment prefixed by `rb_`. The exact URL path depends on the technology:
+If the RUM JavaScript is injected automatically, beacons are sent to your web or application server, where OneAgent provides a beacon endpoint that intercepts and forwards them. For this purpose, a root-relative URL is used, with the last path segment prefixed by `rb_`. The exact URL path depends on the technology:
 
 * **Java or IIS:** The path segment is added to the context root if available, for example: `/myapplication/rb_bf12345abc`.
 * **Other technologies or when a context root is unavailable:** The path segment is added to the root, for example: `/rb_bf12345abc`. This is also the default if you manually insert the RUM JavaScript as described in [Use manual insertion for pages of an auto-injected frontend](configure-auto-injection.md#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your frontends in the New RUM Experience.").
 
 ### Agentless monitoring
 
-If you use [agentless monitoring](set-up-agentless-monitoring.md "Learn how to set up agentless RUM for your web frontends in the New RUM Experience."), data is sent to a Cluster ActiveGate that is part of the Dynatrace SaaS infrastructure.
+If you use agentless monitoring, data is sent to a Cluster ActiveGate that is part of the Dynatrace SaaS infrastructure.
 
 ## Configuration options
 
@@ -75,7 +75,7 @@ If you want the RUM beacons of an auto-injected frontend to be handled by Dynatr
 6. In the **Type** dropdown list, select **Cluster ActiveGate**.
 7. Select **Save changes**.
 
-With this configuration, Dynatrace applies the [beacon origin allowlist](../additional-configuration/configure-beacon-origin-allowlist.md "Specify the origins from which cross-origin RUM beacons should be accepted.") to the RUM beacons of your frontend.
+With this configuration, Dynatrace applies the beacon origin allowlist to the RUM beacons of your frontend.
 
 ### Auto-injected frontend Send beacons to a different web server
 
@@ -97,4 +97,4 @@ To send beacons of an auto-injected frontend to a different instrumented server
 10. Turn on **Send beacon data via CORS**.
 11. Select **Save changes**.
 
-With this configuration, Dynatrace applies the [beacon origin allowlist](../additional-configuration/configure-beacon-origin-allowlist.md "Specify the origins from which cross-origin RUM beacons should be accepted.") to the RUM beacons of your frontend.
+With this configuration, Dynatrace applies the beacon origin allowlist to the RUM beacons of your frontend.

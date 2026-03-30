@@ -99,11 +99,11 @@ In ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashbo
 
 You can use the Explore options to explore your logs, metrics, business events, and more with our point-and-click interface. With zero knowledge of DQL or coding, you can create and start using dashboard tiles in minutes.
 
-For more information, we have a whole [Explore data](../../../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md "Explore your data with our point-and-click interface.") page that shows you how to create Explore tiles.
+For more information, we have a whole Explore data page that shows you how to create Explore tiles.
 
 ### Query tile
 
-The query tiles allow you to easily query data from Grail and [visualize](../../../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") the result in different ways.
+The query tiles allow you to easily query data from Grail and visualize the result in different ways.
 
 A query tile consists of a query input where you can write a DQL query. In the query input, use **Ctrl**+**Space** to trigger autocompletion at any time.
 
@@ -126,7 +126,7 @@ You can link to other places in your dashboard and elsewhere.
 
 Markdown link syntax
 
-A link in Markdown is a label and link of the form `[label](address)`, where:
+A link in Markdown is a label and link of the form `label`, where:
 
 * The `label` is freeform text to display on the link in your Markdown tile or section
 * The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
@@ -144,7 +144,7 @@ Website
 Notebooks app
 
 ```
-[My label](/ui/apps/dynatrace.notebooks/notebooks)
+My label
 ```
 
 Specific notebook
@@ -152,13 +152,13 @@ Specific notebook
 **Syntax**:
 
 ```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
+label
 ```
 
 **Example**:
 
 ```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
+My label
 ```
 
 To get the address
@@ -172,13 +172,13 @@ Specific notebook section
 **Syntax**:
 
 ```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
+label
 ```
 
 **Example**:
 
 ```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
+My label
 ```
 
 To get the address
@@ -191,7 +191,7 @@ To get the address
 Dashboards app
 
 ```
-[My label](/ui/apps/dynatrace.dashboards/)
+My label
 ```
 
 Specific dashboard
@@ -199,13 +199,13 @@ Specific dashboard
 **Syntax**:
 
 ```
-[label](/ui/apps/dynatrace.dashboards/<dashboardid>)
+label
 ```
 
 **Example**:
 
 ```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
+My label
 ```
 
 To get the address
@@ -219,13 +219,13 @@ Specific dashboard tile
 **Syntax**:
 
 ```
-[label](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
+label
 ```
 
 **Example**:
 
 ```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
+My label
 ```
 
 To include a specific tile ID in the link
@@ -459,7 +459,7 @@ To review or change settings that apply to an entire dashboard
       The **Settings** panel is displayed.
    3. Select **Variables**.
 
-   For details about dashboard variables, see [Add a variable to a dashboard](../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.").
+   For details about dashboard variables, see Add a variable to a dashboard.
 
 The timeframe describes the *when* of the data on the dashboard.
 
@@ -539,8 +539,8 @@ If you need more control over how a filter is applied, however, you might want t
 * Variables allow you to fully control the underlying query or within your Explore section or tile, determining where and how they are applied. For example, you can specify how they connect with other filters applied (**AND**, **OR**) and you can control which operator is used for your filter (such as `equals`, `contains`, `startsWith`, and `endsWith`).
 * Additionally, use variables when you need fine-grained control over how filters are interdependent.
 
-* For details on segments, see [Segments](../../manage/segments.md "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.")
-* For a ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**-specific segments use case, see [Analyze monitoring data with segments](../../../ru/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data.md "Learn how to analyze monitoring data more efficiently by using segments in Dashboards.")
+* For details on segments, see Segments
+* For a ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**-specific segments use case, see Analyze monitoring data with segments
 
 #### Dashboard-level segments
 
@@ -618,7 +618,7 @@ To review or change settings that apply to an entire dashboard
       The **Settings** panel is displayed.
    3. Select **Variables**.
 
-   For details about dashboard variables, see [Add a variable to a dashboard](../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.").
+   For details about dashboard variables, see Add a variable to a dashboard.
 
 ### Run a code tile
 
@@ -717,7 +717,7 @@ These methods are not mutually exclusive. For example, you can maintain a focuse
 
 In any case, you control whether people can edit the document or only view it.
 
-For details on sharing documents, see [Share documents](../../../ru/discover-dynatrace/get-started/dynatrace-ui/share.md "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
+For details on sharing documents, see Share documents with other Dynatrace users in your company.").
 
 ### Manage dashboard versions
 
@@ -746,7 +746,7 @@ To view and manage dashboard versions
    * **Delete this version** deletes the selected version.
 4. To list and manage all versions of the dashboard in a separate window, go to the bottom of the **Versions** menu and select **Show all**.
 
-For details, see [Manage document versions](../../../ru/analyze-explore-automate/dashboards-and-notebooks/document-version.md "View and manage versions of documents created in Dynatrace Notebooks and Dashboards.").
+For details, see Manage document versions.
 
 ### Change dashboard owner
 
@@ -826,7 +826,7 @@ When creating or managing dashboards via API, these best practices can make your
 
 ### Create a dashboard
 
-The fastest and easiest way to explore your data is with our new [Explore](../../../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md "Explore your data with our point-and-click interface.") tiles and sections. In a few seconds, you can find and analyze your logs, metrics, or business events. No DQL required!
+The fastest and easiest way to explore your data is with our new Explore tiles and sections. In a few seconds, you can find and analyze your logs, metrics, or business events. No DQL required!
 
 To create a new dashboard
 
@@ -855,9 +855,9 @@ To Query Grail
 
    * **Data**
    * **Visual**
-2. On the **Data** tab, use the [Dynatrace Query Language (DQL)](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") to define your query.
+2. On the **Data** tab, use the Dynatrace Query Language (DQL) to define your query.
 3. Select **Run** to execute the query.
-4. On the **Visual** tab, choose a [visualization](../../../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") format for your results.
+4. On the **Visual** tab, choose a visualization format for your results.
 
    * means the visualization type is unavailable for your query.
 5. Under the **Visualization** selector, expand the options sections to adjust visualization settings as needed.
@@ -865,7 +865,7 @@ To Query Grail
 
    If you want to return to these settings, select your tile to display them.
 
-For details, see [Add data to a dashboard](../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data.md "Add data to your Dynatrace dashboards.").
+For details, see Add data to a dashboard.
 
 ### Add code
 
@@ -894,7 +894,7 @@ To add code to a dashboard
 
    Don't include the address prefix. For example, if the address is `https://some.service.org`, just add `some.service.org`.
 
-For details, see [Add code to a dashboard](../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code.md "Add code to your Dynatrace dashboards.").
+For details, see Add code to a dashboard.
 
 ### Add markdown
 
@@ -914,7 +914,7 @@ To add a markdown tile to a dashboard
    * While you're editing text, press Ctrl+Space to see options.
 3. Close the **Options** side panel when you're done.
 
-For details, see [Add Markdown to dashboard](../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown.md "Add Markdown-formatted annotations to your Dynatrace dashboards.").
+For details, see Add Markdown to dashboard.
 
 ### Add variable
 
@@ -967,7 +967,7 @@ Variables in dashboards can be defined to depend on other variables.
 
   For example, if the value of variable A depends on the value of variable B, the value of variable B can't depend on the value of variable A.
 
-For details, see [Add a variable to a dashboard](../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.").
+For details, see Add a variable to a dashboard.
 
 ### Add snippet
 
@@ -988,7 +988,7 @@ To get started based on a snippet
 5. Select **Run** to see results.
 6. Close the side panel when you're done.
 
-For details, see [Add a snippet to a dashboard](../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet.md "Start with a snippet").
+For details, see Add a snippet to a dashboard.
 
 ### Analyze data with AI
 
@@ -1024,10 +1024,10 @@ To analyze data using Dynatrace Intelligence Data Analyzers
    ![The initial panel for the Analyze and alert settings in the Dashboards app.](https://dt-cdn.net/images/dashboards-analyze-and-alert-details-746-8d503491c8.png)
 4. On the **Davis AI** panel, set **Analyzers** to the analyzer you want to use, and then configure the analyzer.
 
-   * For an overview of anomaly detection, see [Anomaly detection](../../dynatrace-intelligence/anomaly-detection.md "How Dynatrace detects anomalies in your environment.")
+   * For an overview of anomaly detection, see Anomaly detection
    * For details on anomaly detection settings, see [Anomaly detection configuration](../../../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#analyzer "How to set up an alert for missing measurements.")
 
-   * For details on forecast analyzer settings, [Dynatrace Intelligence predictive AI analysis](../../../ru/dynatrace-intelligence/reference/ai-models/forecast-analysis.md "Learn how Dynatrace Intelligence predictive AI generates forecasts.")
+   * For details on forecast analyzer settings, Dynatrace Intelligence predictive AI analysis
 
    Anomaly Detection: Auto adaptive threshold anomaly detection
 
@@ -1057,7 +1057,7 @@ To analyze data using Dynatrace Intelligence Data Analyzers
    * **Data points to predict**âthe total steps the time series is forecasted. More steps generally results in less reliable forecasts and longer analyzer runtimes.
    * **Forecast offset**âan offset for the start of the forecast. For example, if the offset is set to `2`, the last two data points are ignored and a forecast for these points is returned as well.
 
-   For details, see [Dynatrace Intelligence predictive AI analysis](../../../ru/dynatrace-intelligence/reference/ai-models/forecast-analysis.md "Learn how Dynatrace Intelligence predictive AI generates forecasts.").
+   For details, see Dynatrace Intelligence predictive AI analysis.
 
    Advanced settings (for anomaly detection)
 
@@ -1171,7 +1171,7 @@ To copy a dashboard tile to a notebook (as a notebook section)
 
 To copy a dashboard tile to a different app (not ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**), open the  menu and select  **Open with**, and then select the target app.
 
-For details, see [Drilldowns and navigation](../../../ru/analyze-explore-automate/dashboards-and-notebooks/open-with.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+For details, see Drilldowns and navigation.
 
 ### Edit a tile
 
@@ -1201,7 +1201,7 @@ Regardless of the title setting, a title bar is automatically created as needed 
 
    **Example:**
 
-   1. In your dashboard, define [variables](../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.") called `Status` and `Emoji`.
+   1. In your dashboard, define variables called `Status` and `Emoji`.
    2. Set the title to `Current $Emoji status is $Status`.
    3. Set variable `Status` to `Good`.
    4. Set variable `Emoji` to `ð`.
@@ -1214,7 +1214,7 @@ To remove a tile title, select the tile and  edit it, and then clear the title b
 
 Each visualization has visualization-specific settings.
 
-To edit a tile visualization, see the [visualization instructions](../../../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.").
+To edit a tile visualization, see the visualization instructions.
 
 ## Layout
 

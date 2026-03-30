@@ -6,7 +6,7 @@ scraped: 2026-03-06T21:35:30.359364
 
 Dynatrace версии 1.230+
 
-Новая версия интеграции с Google Cloud (v.1.0) использует [Extensions 2.0](../../../extensions.md "Узнайте, как создавать и управлять расширениями Dynatrace.") и вводит [пользовательскую топологию](../../../extend-dynatrace/extend-topology/custom-topology.md "Узнайте, как создать пользовательскую модель топологии, подходящую для ваших телеметрических данных.") для ряда сервисов Google Cloud.
+Новая версия интеграции с Google Cloud (v.1.0) использует Extensions 2.0 и вводит пользовательскую топологию для ряда сервисов Google Cloud.
 
 Список сервисов с пользовательской топологией
 
@@ -74,7 +74,7 @@ wget https://raw.githubusercontent.com/dynatrace-oss/dynatrace-gcp-monitor/maste
 
 ## Шаг 3 Установка нового развёртывания Google Cloud
 
-Для установки нового развёртывания Google Cloud см. [Настройка интеграции метрик и логов Dynatrace Google Cloud (v.1.0) на новом кластере GKE Autopilot](deploy-k8.md "Настройка мониторинга логов и метрик для сервисов GCP на новом кластере GKE Autopilot.").
+Для установки нового развёртывания Google Cloud см. Настройка интеграции метрик и логов Dynatrace Google Cloud (v.1.0) на новом кластере GKE Autopilot.
 
 ## Шаг 4 Обновление измерений
 
@@ -168,4 +168,4 @@ wget https://raw.githubusercontent.com/dynatrace-oss/dynatrace-gcp-monitor/maste
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Google Cloud](../../../google-cloud-platform.md "Мониторинг Google Cloud с помощью Dynatrace.")
+* Настройка Dynatrace в Google Cloud

@@ -1353,7 +1353,7 @@ Grail
 
 ## Связанные темы
 
-* [Работа с политиками](../../manage-user-permissions-policies.md "Working with policies")
-* [Синтаксис и примеры операторов политик IAM](../iam-policystatement-syntax.md "IAM policy statement syntax.")
-* [Предоставление доступа к настройкам](../../../use-cases/access-settings.md "Grant access to Settings")
-* [API управления учетной записью](../../../../../dynatrace-api/account-management-api.md "Explore endpoints of the Account Management API.")
+* Работа с политиками
+* Синтаксис и примеры операторов политик IAM
+* Предоставление доступа к настройкам
+* API управления учетной записью

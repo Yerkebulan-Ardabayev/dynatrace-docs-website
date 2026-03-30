@@ -21,11 +21,11 @@ With monitors executed from a private location, you can bring the testing capabi
 * Measure external resources with synthetic monitors run from internal locations.
 * Monitor APIs, both internal and external.
 
-Private Synthetic locations support all [types of Dynatrace synthetic monitors](../general-information/types-of-synthetic-monitors.md "Learn about Dynatrace synthetic monitor types.").
+Private Synthetic locations support all types of Dynatrace synthetic monitors.
 
 ## System and hardware requirements for private locations
 
-Make sure the target host you plan to use for running synthetic monitors complies with [system and hardware requirements for private Synthetic locations](system-and-hardware-requirements-for-private-synthetic.md "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations"). Note that Synthetic-enabled ActiveGates have more demanding hardware and system requirements than a regular Environment or Cluster ActiveGate.
+Make sure the target host you plan to use for running synthetic monitors complies with system and hardware requirements for private Synthetic locations. Note that Synthetic-enabled ActiveGates have more demanding hardware and system requirements than a regular Environment or Cluster ActiveGate.
 
 End-of-support information
 
@@ -43,17 +43,17 @@ End-of-support information
   Additionally, with Dynatrace version 1.306, we have introduced mechanisms preventing Synthetic-enabled ActiveGates on Red Hat/CentOS 7 from being updated beyond version 1.305.
 
   + Since Red Hat Enterprise Linux 7 reached [End of Maintenanceï»¿](https://dt-url.net/af03uea) support on June 30, 2024, all of its packages have been archived. This means that it may not be possible to find the required dependencies for update. For more details, see the [Red Hat Enterprise Linux 7 statusï»¿](https://dt-url.net/e623zr1)
-* Until version 1.329 Synthetic-enabled ActiveGates on Ubuntu 20 and Ubuntu 22 use Chromium snap. When customizing the [default temporary directory for private Synthetic files](../../../../ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files.md#default-activegate-directories--linux "Find out where ActiveGate files are stored on Windows and Linux systems.")â`/var/tmp/dynatrace/synthetic`, the path must begin with `/var/tmp`, for example, `TEMP=/var/tmp/syn`. Dynatrace requires write access to `/var/tmp` for the installation of Chromium snap packages.
+* Until version 1.329 Synthetic-enabled ActiveGates on Ubuntu 20 and Ubuntu 22 use Chromium snap. When customizing the default temporary directory for private Synthetic filesâ`/var/tmp/dynatrace/synthetic`, the path must begin with `/var/tmp`, for example, `TEMP=/var/tmp/syn`. Dynatrace requires write access to `/var/tmp` for the installation of Chromium snap packages.
   Since version 1.331, these restrictions no longer apply. The latest ActiveGate version on Ubuntu 20 and Ubuntu 22 uses Chrome for Testing, just like Ubuntu 24.
 
 ### Before you begin
 
-* You cannot execute synthetic monitors using an Environment ActiveGate configured for [multi-environment support](../../../../ingest-from/dynatrace-activegate/configuration/configure-an-environment-activegate-for-multi-environment-support.md "Read the step-by-step procedure for configuring a single Environment ActiveGate for multi-environment support.").
-* You can create a private location using a clean-installed Synthetic-enabled Environment ActiveGate version 1.169+ or Cluster ActiveGate with Dynatrace Managed version 1.176+. If you want to use an existing ActiveGate host, [uninstall ActiveGate](../../../../ingest-from/dynatrace-activegate/operation/uninstall-activegate.md "Learn how to remove ActiveGate from Windows or Linux-based systems.") first.
+* You cannot execute synthetic monitors using an Environment ActiveGate configured for multi-environment support.
+* You can create a private location using a clean-installed Synthetic-enabled Environment ActiveGate version 1.169+ or Cluster ActiveGate with Dynatrace Managed version 1.176+. If you want to use an existing ActiveGate host, uninstall ActiveGate first.
 * Synthetic-enabled ActiveGate is used exclusively to run synthetic monitors. A clean ActiveGate installation for the purpose of synthetic monitoring disables all other ActiveGate features, including communication with OneAgents.
-* Make sure that the ActiveGate can connect to other [Dynatrace components](../../../../ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates.md "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents.") as well as the resource you want to test. See [Set up a proxy for private synthetic monitoring](setting-up-proxy-for-private-synthetic.md "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.").
+* Make sure that the ActiveGate can connect to other Dynatrace components as well as the resource you want to test. See Set up a proxy for private synthetic monitoring.
 * Only IPv4 and DNS UDP are supported for network configuration.
-* Synthetic-enabled ActiveGate needs access to the Amazon S3 service to upload and access browser monitor screenshots from private locations. Ensure that your firewall configuration allows connections to `*.s3-accelerate.amazonaws.com` on port `443`. You can also [set up your proxy](setting-up-proxy-for-private-synthetic.md "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.") to connect to the Amazon S3 service. (Screenshots are stored in a different folder for each monitoring environment, but the S3 Bucket is the same (`ruxit-synth-screencap`). Data is encrypted by [Amazon S3-managed keyï»¿](https://dt-url.net/4a02xvx).)
+* Synthetic-enabled ActiveGate needs access to the Amazon S3 service to upload and access browser monitor screenshots from private locations. Ensure that your firewall configuration allows connections to `*.s3-accelerate.amazonaws.com` on port `443`. You can also set up your proxy to connect to the Amazon S3 service. (Screenshots are stored in a different folder for each monitoring environment, but the S3 Bucket is the same (`ruxit-synth-screencap`). Data is encrypted by [Amazon S3-managed keyï»¿](https://dt-url.net/4a02xvx).)
 * Both manual and automatic browser updates require access to `https://synthetic-packages.s3.amazonaws.com`. For security reasons, public access to the S3 bucket is enabled only for specific files; trying anything else will result in a 403 error.
 
 ## Install a Synthetic-enabled ActiveGate
@@ -72,7 +72,7 @@ If this web UI-guided installation fails, or you prefer to prepare the host for 
 
    For Cluster ActiveGate, go to the Dynatrace Cluster Management Console and select **More** ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") > **Add new Cluster ActiveGate**.
 2. Select the operating system to view instructions.
-3. Create a [**PaaS Token**](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md "Learn the concept of an access token and its scopes.") or enter an existing token. This token has the **Download OneAgent and ActiveGate installers** `InstallerDownload` token scope, which allows you to download the ActiveGate installer. Once provided, the token is automatically appended to download and installation commands, which are then displayed in the UI.
+3. Create a **PaaS Token** or enter an existing token. This token has the **Download OneAgent and ActiveGate installers** `InstallerDownload` token scope, which allows you to download the ActiveGate installer. Once provided, the token is automatically appended to download and installation commands, which are then displayed in the UI.
 
    You can find existing tokens listed on the **Access tokens** page. Note that a PaaS token is only displayed once upon creation, after which it's stored encrypted and cannot be revealed. We recommend that you store a PaaS token after creation in a password manager so that you can reuse it as needed.
 4. Linux only For **Choose installer type**, keep the default selection: `x86/64`.
@@ -81,7 +81,7 @@ If this web UI-guided installation fails, or you prefer to prepare the host for 
 7. Optional You can turn off support for browser monitors. If you do so, the Synthetic ActiveGate will be treated as [browserless](#browserless).
 
    ![Disabling support for browser monitors](https://dt-cdn.net/images/browserless-deploy-415-1d20a6159c.png)
-8. Optional **Set customized options** to assign the ActiveGate to a [**Network zone**](../../../../manage/network-zones.md "Find out how network zones work in Dynatrace.") and [**ActiveGate group**](../../../../ingest-from/dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
+8. Optional **Set customized options** to assign the ActiveGate to a **Network zone** and **ActiveGate group**.
 9. Download the installer to the target host.
 10. Linux only Recommended **Verify signature**ârun the displayed command on the target host to download a certificate file and verify the installer.
 11. Linux only Select a Linux distribution.
@@ -110,7 +110,7 @@ The instructions below describe how to add a private location in previous Dynatr
 
 ## Create a synthetic monitor
 
-Now, when you create your HTTP or browser monitor, select the location you've just created from the list of all available locations. For more information, see [Create an HTTP monitor](../http-monitors-classic/create-an-http-monitor-classic.md "Learn how to set up an HTTP monitor to check the performance and availability of your site."), [Create a single-URL browser monitor](../browser-monitors/create-a-single-url-browser-monitor.md "Learn how to set up a single-URL browser monitor to check the availability of your site."), or [Record a browser clickpath](../browser-monitors/record-a-browser-clickpath.md "Learn how to record a browser clickpath to monitor the availability and performance of your application.").
+Now, when you create your HTTP or browser monitor, select the location you've just created from the list of all available locations. For more information, see Create an HTTP monitor, Create a single-URL browser monitor, or Record a browser clickpath.
 
 ## Linux only Install the browser and dependencies manually from S3
 
@@ -124,7 +124,7 @@ If the [web UI-guided installation](#install) fails or you prefer to prepare the
 
 Also see [Install the browser from a custom repository](#custom-repo) below.
 
-See [how to update the browser manually](manage-private-synthetic-locations.md#browser-manual "Analyze and manage capacity usage at your private Synthetic locations.") in [Manage private Synthetic locations](manage-private-synthetic-locations.md "Analyze and manage capacity usage at your private Synthetic locations."). We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the [latest Dynatrace-supported version](system-and-hardware-requirements-for-private-synthetic.md#browser-linux "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for a specific ActiveGate release.
+See [how to update the browser manually](manage-private-synthetic-locations.md#browser-manual "Analyze and manage capacity usage at your private Synthetic locations.") in Manage private Synthetic locations. We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the [latest Dynatrace-supported version](system-and-hardware-requirements-for-private-synthetic.md#browser-linux "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for a specific ActiveGate release.
 
 ### Ubuntu Server 20.04 and 22.04
 
@@ -653,7 +653,7 @@ You can [verify the authenticity of the packages](#verify) using the signature f
 
 ### Amazon Linux 2023, Ubuntu, and Oracle Linux 9 (Chrome for Testing)
 
-See [how to update Chrome for Testing manually](manage-private-synthetic-locations.md#browser-manual "Analyze and manage capacity usage at your private Synthetic locations.") in [Manage private Synthetic locations](manage-private-synthetic-locations.md "Analyze and manage capacity usage at your private Synthetic locations."). We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and Chrome for Testing versions updatedâDynatrace supports Chrome for Testing versions that are no more than two versions behind the [latest Dynatrace-supported version](system-and-hardware-requirements-for-private-synthetic.md#browser-linux "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for a specific ActiveGate release.
+See [how to update Chrome for Testing manually](manage-private-synthetic-locations.md#browser-manual "Analyze and manage capacity usage at your private Synthetic locations.") in Manage private Synthetic locations. We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and Chrome for Testing versions updatedâDynatrace supports Chrome for Testing versions that are no more than two versions behind the [latest Dynatrace-supported version](system-and-hardware-requirements-for-private-synthetic.md#browser-linux "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for a specific ActiveGate release.
 
 Unlike Chromium on other distributions, Chrome for Testing updates do not use package managers. You manually manage the Chrome binaries while dependencies are managed by the system package manager.
 
@@ -777,7 +777,7 @@ This method of installing the browser broadly consists of:
 * A custom browser repository can be used only for the browser components, not their dependencies. Installing the browser from a custom repository will only work if all dependencies have been resolved before installation.
 * Custom repositories can only be used for **Browser installation and autoupdate**âsee [Browser autoupdate from a custom repository in Manage private Synthetic locations](manage-private-synthetic-locations.md#autoupdate-custom-repo "Analyze and manage capacity usage at your private Synthetic locations.") for details.
 
-1. Download the browser componentsâthe package archive and signature fileâfrom the safe and verified archive hosted by Dynatrace. See [Requirements for private Synthetic locations](system-and-hardware-requirements-for-private-synthetic.md "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for links to the latest supported and provided browser versions.
+1. Download the browser componentsâthe package archive and signature fileâfrom the safe and verified archive hosted by Dynatrace. See Requirements for private Synthetic locations for links to the latest supported and provided browser versions.
 
    We recommend keeping your Linux-based Synthetic-enabled ActiveGates and browser versions up to date; choose the latest provided browser version for ActiveGate.
 
@@ -876,18 +876,18 @@ ActiveGate version 1.315+
 
 ### Installation
 
-To install Synthetic-enabled ActiveGate in FIPS compliant mode you need to add `--fips-mode` flag, see also [customize ActiveGate installation for FIPS compliance](../../../../ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate.md#fips-compliant-mode "Learn about the command-line parameters that you can use with ActiveGate on Linux.").
+To install Synthetic-enabled ActiveGate in FIPS compliant mode you need to add `--fips-mode` flag, see also customize ActiveGate installation for FIPS compliance.
 
 ```
 /bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic --fips-mode
 ```
 
 Please note that FIPS-compliant mode cannot be changed after installation. To change the mode, you need to uninstall ActiveGate and reinstall it with the desired settings.
-Additionally, if you intend to execute browser monitors, additional setup will be required as described in [Proxy configuration for FIPS mode](setting-up-proxy-for-private-synthetic.md#fips-proxy "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.") and [Proxy configuration for FIPS mode with corporate proxy](setting-up-proxy-for-private-synthetic.md#fips-corporate-proxy "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.")
+Additionally, if you intend to execute browser monitors, additional setup will be required as described in Proxy configuration for FIPS mode and Proxy configuration for FIPS mode with corporate proxy
 
 ### Requirements and limitations
 
-* We require operating system with FIPS-compliant mode enabled, see also [ActiveGate FIPS compliance](../../../../ingest-from/dynatrace-activegate/activegate-fips-compliance.md "Learn about ActiveGate FIPS compliance").
+* We require operating system with FIPS-compliant mode enabled, see also ActiveGate FIPS compliance.
 * Following operating systems are currently supported:
 
   + Ubuntu Pro 22.04
@@ -896,7 +896,7 @@ Additionally, if you intend to execute browser monitors, additional setup will b
 
 ### Ensuring compliance
 
-To ensure the browser monitor traffic is FIPS compliant, it must be routed through a local intercepting proxy that encrypts traffic with a FIPS-certified crypto library. See [Proxy configuration for FIPS mode](setting-up-proxy-for-private-synthetic.md#fips-proxy "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.") for details.
+To ensure the browser monitor traffic is FIPS compliant, it must be routed through a local intercepting proxy that encrypts traffic with a FIPS-certified crypto library. See Proxy configuration for FIPS mode for details.
 
 For HTTP monitors, we use the [Amazon Corretto Crypto Providerï»¿](https://github.com/corretto/amazon-corretto-crypto-provider/) FIPS-certified cryptographic library that uses AWS-LC-FIPS 2.x as its cryptographic module. See [Certificate #4816ï»¿](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4816).
 
@@ -988,7 +988,7 @@ Each `zip` package archive is stored in the S3 bucket together with the `*.zip.s
 
 Can I use a proxy with the Synthetic-enabled ActiveGate?
 
-With ActiveGate version 1.175+, an ActiveGate executing synthetic monitors can connect through the proxy to both the Dynatrace Cluster and the tested resource. For more information, see [Setting up proxy for private synthetic monitoring](setting-up-proxy-for-private-synthetic.md "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.").
+With ActiveGate version 1.175+, an ActiveGate executing synthetic monitors can connect through the proxy to both the Dynatrace Cluster and the tested resource. For more information, see Setting up proxy for private synthetic monitoring.
 
 Can I update an earlier ActiveGate to version 1.169+ and configure it to use with private synthetic monitors?
 
@@ -1008,4 +1008,4 @@ Visit the [Troubleshooting forum in the Dynatrace Communityï»¿](https://dt-ur
 
 ## Related topics
 
-* [Synthetic locations API v2 - POST a location](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/post-a-location.md "Create a private synthetic location via the Synthetic v2 API.")
+* Synthetic locations API v2 - POST a location

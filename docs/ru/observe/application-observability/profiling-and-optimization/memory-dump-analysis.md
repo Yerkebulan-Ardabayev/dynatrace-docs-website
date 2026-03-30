@@ -14,9 +14,9 @@ Dynatrace может сохранять и анализировать дампы
 
 ## Прежде чем начать
 
-* Для запуска создания дампов памяти вам необходимо разрешение пользователя [**View sensitive request data**](../../../manage/identity-access-management/permission-management/role-based-permissions.md#environment "Role-based permissions").
+* Для запуска создания дампов памяти вам необходимо разрешение пользователя **View sensitive request data**.
 * Для хранения дампов памяти на сервере приложений должно быть достаточно свободного места.
-* Для доступа к сохраненным дампам памяти через веб-интерфейс Dynatrace [настройте ActiveGate для хранения дампов памяти в централизованном расположении](memory-dump-analysis/configure-an-activegate-for-memory-dump-storage.md "Learn how to enable storage of memory dumps on an ActiveGate."). Подробнее о сроках хранения дампов памяти см. в разделе [Сроки хранения данных](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#memory-dumps "Check retention times for various data types.").
+* Для доступа к сохраненным дампам памяти через веб-интерфейс Dynatrace настройте ActiveGate для хранения дампов памяти в централизованном расположении. Подробнее о сроках хранения дампов памяти см. в разделе [Сроки хранения данных](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#memory-dumps "Check retention times for various data types.").
 
 ## Запуск создания дампов памяти
 
@@ -56,9 +56,9 @@ Dynatrace может сохранять и анализировать дампы
 ## Ограничения
 
 * Дампы памяти .NET не поддерживаются в контейнерах на базе Alpine Linux.
-* Загрузка дампов памяти не поддерживается ни для [мониторинга только приложений в Kubernetes](../../../ingest-from/setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"), ни для [облачного мониторинга полного стека в Kubernetes](../../../ingest-from/setup-on-k8s/deployment/full-stack-observability.md "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes").
+* Загрузка дампов памяти не поддерживается ни для мониторинга только приложений в Kubernetes, ни для облачного мониторинга полного стека в Kubernetes.
 
-  Это связано с тем, что OneAgent работает в контейнере с файловой системой только для чтения (каталог двоичных файлов OneAgent `/opt/dynatrace/oneagent-paas` смонтирован в режиме только для чтения), поэтому Dynatrace не может записать необходимые файлы дампов памяти. В то же время параметр установки `DATA_STORAGE`, используемый для переопределения каталога дампов, [не поддерживается в контейнерных развертываниях](../../../ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container."). Таким образом, невозможно изменить расположение дампов на путь с правами на запись. В результате сбор дампов памяти невозможен в средах Kubernetes с мониторингом только приложений или облачным мониторингом полного стека.
+  Это связано с тем, что OneAgent работает в контейнере с файловой системой только для чтения (каталог двоичных файлов OneAgent `/opt/dynatrace/oneagent-paas` смонтирован в режиме только для чтения), поэтому Dynatrace не может записать необходимые файлы дампов памяти. В то же время параметр установки `DATA_STORAGE`, используемый для переопределения каталога дампов, не поддерживается в контейнерных развертываниях. Таким образом, невозможно изменить расположение дампов на путь с правами на запись. В результате сбор дампов памяти невозможен в средах Kubernetes с мониторингом только приложений или облачным мониторингом полного стека.
 
 ## Часто задаваемые вопросы
 
@@ -85,15 +85,15 @@ ActiveGate сначала удаляет устаревшие дампы. Есл
 * Вы можете включить удаленный доступ к ActiveGate, изменив публичные конечные точки.
   Чтобы узнать, как настроить новую конечную точку, см.:
 
-  + [Включение модуля дампов памяти](../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md#mem_dump_mod "Learn which ActiveGate properties you can configure based on your needs and requirements.")
-  + [Настройка ActiveGate для хранения дампов памяти](memory-dump-analysis/configure-an-activegate-for-memory-dump-storage.md "Learn how to enable storage of memory dumps on an ActiveGate.")
+  + Включение модуля дампов памяти
+  + Настройка ActiveGate для хранения дампов памяти
 * Если удаленный доступ к ActiveGate невозможен, вы можете скачать файл дампа памяти вручную с хоста ActiveGate.
 
   + Для доступа к хосту ActiveGate используйте протокол, позволяющий передавать файлы (например, sFTP или SSH).
-  + Чтобы скачать файл дампа памяти, вам необходимо [узнать расположение файла](memory-dump-analysis/configure-an-activegate-for-memory-dump-storage.md#specify-dedicated-dump-directory "Learn how to enable storage of memory dumps on an ActiveGate.").
+  + Чтобы скачать файл дампа памяти, вам необходимо узнать расположение файла.
   + Чтобы идентифицировать дамп памяти, распакуйте его файл через протокол, включающий `summary.json` (например, sFTP или SSH).
 
 ## Связанные темы
 
-* [Dynatrace ActiveGate](../../../ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.")
-* [Разрешения на основе ролей](../../../manage/identity-access-management/permission-management/role-based-permissions.md "Role-based permissions")
+* Dynatrace ActiveGate
+* Разрешения на основе ролей

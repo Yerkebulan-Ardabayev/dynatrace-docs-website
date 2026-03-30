@@ -98,7 +98,7 @@ receivers: [otlp]
 exporters: [otlp_http]
 ```
 
-Дополнительные сведения о конфигурации см. в разделе [OpenTelemetry и Dynatrace](../../../../opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
+Дополнительные сведения о конфигурации см. в разделе OpenTelemetry и Dynatrace into Dynatrace.").
 
 Для приёма данных через **HTTP** посредством Dynatrace Trace API необходимо [настроить экспортёр](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md#configuration-options). После этого экспортёр будет напрямую отправлять трассировки на настроенную конечную точку.
 

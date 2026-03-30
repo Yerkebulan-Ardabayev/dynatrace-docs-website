@@ -35,7 +35,7 @@ Additional support notes
   Additionally, with Dynatrace version 1.306, we have introduced mechanisms preventing Synthetic-enabled ActiveGates on Red Hat/CentOS 7 from being updated beyond version 1.305.
 
   + Since Red Hat Enterprise Linux 7 reached [End of Maintenanceï»¿](https://dt-url.net/af03uea) support on June 30, 2024, all of its packages have been archived. This means that it may not be possible to find the required dependencies for update. For more details, see the [Red Hat Enterprise Linux 7 statusï»¿](https://dt-url.net/e623zr1)
-* Check the latest [ActiveGate release notes](../../../../../whats-new/activegate.md "Release notes for Dynatrace ActiveGate") for the oldest supported ActiveGate versions.
+* Check the latest ActiveGate release notes for the oldest supported ActiveGate versions.
 
 ## Operating system requirements
 
@@ -49,7 +49,7 @@ To ensure proper stability and performance, consider adding the following direct
 
 **Directories:**
 
-* All directories with `synthetic` in their path. For an overview of directories in use, see [ActiveGate directories](../../../../../ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files.md#default-activegate-directories--windows "Find out where ActiveGate files are stored on Windows and Linux systems.").
+* All directories with `synthetic` in their path. For an overview of directories in use, see ActiveGate directories.
 
 **Processes:**
 
@@ -149,7 +149,7 @@ ActiveGate version 1.325 is the last Synthetic-enabled ActiveGate to support Red
 
 We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the latest Dynatrace-supported version for a specific ActiveGate release. For example, if the latest supported browser version is 103, Dynatrace supports up to browser version 101. If the provided browser version is significantly older for a specific OS, we support only the provided version. See information on updating browser [automatically](../../../synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations.md#browser "Analyze and manage capacity usage at your private Synthetic locations.") and [manually](../../../synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations.md#browser-manual "Analyze and manage capacity usage at your private Synthetic locations.").
 
-On Linux, the ActiveGate installer downloads the browser dependencies that are required by the Synthetic engine. On Red Hat and Rocky, you need to enable particular repositories from which the installer downloads the dependencies. The Dynatrace web UI provides you with all the required commands. For detailed instructions, see [Create a private synthetic location](../../../synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.").
+On Linux, the ActiveGate installer downloads the browser dependencies that are required by the Synthetic engine. On Red Hat and Rocky, you need to enable particular repositories from which the installer downloads the dependencies. The Dynatrace web UI provides you with all the required commands. For detailed instructions, see Create a private synthetic location.
 
 When [installing ActiveGate and the browser from a custom, local repository](../../../synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location.md#custom-repo "Learn how to create a private location for synthetic monitoring."), you need to resolve all dependencies and enable repositories as required; the custom repository can be used only for browser packages, not their dependencies. Place the browser package archive and the signature file in the custom repository for installation. If your package archive file is `https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip` (Chrome for Testing 143 for Ubuntu on ActiveGate version 1.333), you can find the signature file by appending `.sig` to the URL: `https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip.sig`.
 
@@ -204,7 +204,7 @@ File Access Policy Daemon framework can be run in debug mode where all denials a
 ### General considerations
 
 * Note that a Synthetic-enabled ActiveGate has more demanding hardware and system requirements than a regular Environment or Cluster ActiveGate. We strongly recommend using a Synthetic-enabled ActiveGate exclusively for synthetic monitoring purposes.
-* Any additional component running on the host should be taken into account when planning resources provisioning. For instance, if the location is monitored by [OneAgent](../../../../../ingest-from/dynatrace-oneagent/oa-requirements.md "OneAgent code module requirements") or another deep monitoring solution, memory (RAM) requirements will increase.
+* Any additional component running on the host should be taken into account when planning resources provisioning. For instance, if the location is monitored by OneAgent or another deep monitoring solution, memory (RAM) requirements will increase.
 * You need to uninstall and reinstall your Synthetic-enabled ActiveGate to change its size, for example, after increasing the resources of your S-sized ActiveGate to meet the requirements for a size M. Reinstallation is required before you can make use of the updated resources for synthetic monitoring; otherwise, your ActiveGate will continue to show up as size S (**Synthetic Node size**) in **Deployment Status** and will be subject to the execution limits of size S.
 
 ### Sizing guide
@@ -435,7 +435,7 @@ Publicly available DNS servers were used: Google (8.8.8.8 and 8.8.4.4) and Cloud
 
 ### Storage and file system permissions
 
-The table below shows the default installation locations (Linux and Windows) of various ActiveGate directories and the minimum size requirements. This information is compiled from details in [ActiveGate directories](../../../../../ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files.md "Find out where ActiveGate files are stored on Windows and Linux systems.").
+The table below shows the default installation locations (Linux and Windows) of various ActiveGate directories and the minimum size requirements. This information is compiled from details in ActiveGate directories.
 
 1
 
@@ -449,4 +449,4 @@ Ensure that the host environment provides sufficient access rights and available
 
 ## Related topics
 
-* [ActiveGate directories](../../../../../ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files.md "Find out where ActiveGate files are stored on Windows and Linux systems.")
+* ActiveGate directories

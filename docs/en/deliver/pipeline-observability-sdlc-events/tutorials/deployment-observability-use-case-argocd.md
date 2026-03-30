@@ -26,11 +26,11 @@ Below is an example of what your Argo CD dashboard could look like.
 ## Concepts
 
 Software Development Lifecycle (SDLC) events
-:   [SDLC events](../../pipeline-observability-sdlc-events.md#sdlc-events "With insights into your pipelines and processes, you can observe and analyze software engineering practices within an organization.")
+:   SDLC events
 
 Why were Argo CD notifications changed into SDLC events?
 :   The main benefits are data normalization, being tool-agnostic, and not relying on specific tools.
-    As a result, Dynatrace Dashboards, Apps, and Workflows can build on [SDLC events](../../pipeline-observability-sdlc-events.md#sdlc-events "With insights into your pipelines and processes, you can observe and analyze software engineering practices within an organization.") with well-defined properties rather than tool-specific details.
+    As a result, Dynatrace Dashboards, Apps, and Workflows can build on SDLC events with well-defined properties rather than tool-specific details.
 
 ## Target audience
 
@@ -49,13 +49,13 @@ If you prefer, you could follow the [Argo CD tutorial directly on GitHubï»¿](
 
 ## Prerequisites
 
-[Install Dynatrace Configuration as Code via Monaco](../../configuration-as-code/monaco/installation.md "Download and install Dynatrace Configuration as Code via Monaco.")
+Install Dynatrace Configuration as Code via Monaco
 
 ## How-to
 
 1. Setup: Prepare the Monaco configuration
 
-1. [Create an OAuth client for the Dynatrace Monaco CLI](../../configuration-as-code/monaco/guides/create-oauth-client.md "Create an OAuth client for Dynatrace Configuration as Code via Monaco.") with the following permissions
+1. Create an OAuth client for the Dynatrace Monaco CLI with the following permissions
 
    * Run apps: `app-engine:apps:run`
    * View OpenPipeline configurations: `openpipeline:configurations:read`
@@ -136,7 +136,7 @@ If you prefer, you could follow the [Argo CD tutorial directly on GitHubï»¿](
 
 2. Setup: Check the OpenPipeline configuration for SDLC events
 
-These steps modify the OpenPipeline configuration for [SDLC events](../sdlc-events.md "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.").
+These steps modify the OpenPipeline configuration for SDLC events events which you can then ingest to use to generate analytics.").
 If your OpenPipeline configuration contains only default/built-in values, you can directly apply the Monaco configuration.
 If you have any custom ingest sources, dynamic routes, or pipelines, you'll first need to download your configuration and manually merge it into the Monaco configuration.
 
@@ -163,7 +163,7 @@ Step 3 will indicate if a configuration merge is needed or if you can apply the 
    The configuration consists of
 
    * Dashboards to analyze Argo CD activities.
-   * OpenPipeline configuration to normalize [Argo CD notificationsï»¿](https://argo-cd.readthedocs.io/en/stable/operator-manual/notifications/) into [SDLC events](../sdlc-events.md "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.").
+   * OpenPipeline configuration to normalize [Argo CD notificationsï»¿](https://argo-cd.readthedocs.io/en/stable/operator-manual/notifications/) into SDLC events events which you can then ingest to use to generate analytics.").
 
    Run this command to apply the provided Monaco configuration:
 
@@ -343,11 +343,11 @@ To generate an access token:
 
 Argo CD exposes different sets of Prometheus metrics for different services.
 Configure your Argo CD services to expose this information so that it can be collected by Dynatrace.
-You can use either [Dynatrace ActiveGate](../../../ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate."), which is installed on the Kubernetes cluster that hosts Argo CD, or the [Dynatrace OTel Collector](../../../ingest-from/opentelemetry/collector.md#dt-collector-dist "Learn about the Dynatrace OTel Collector.").
+You can use either Dynatrace ActiveGate, which is installed on the Kubernetes cluster that hosts Argo CD, or the [Dynatrace OTel Collector](../../../ingest-from/opentelemetry/collector.md#dt-collector-dist "Learn about the Dynatrace OTel Collector.").
 
-To use [Dynatrace ActiveGate](../../../ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.")
+To use Dynatrace ActiveGate
 
-1. Enable [Prometheus metrics monitoring](../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
+1. Enable Prometheus metrics monitoring.
 
    1. Go to **Kubernetes** and select the monitored cluster with Argo CD installation.
    2. In the upper-right corner, go to  > **Connection settings**.
@@ -408,11 +408,11 @@ We highly value your insights on Argo CD observability. Your feedback is crucial
 ## Further reading
 
 * [Observability throughout the software development lifecycle increases delivery performanceï»¿](https://www.dynatrace.com/news/blog/observability-throughout-the-software-development-lifecycle/)
-* [Pipeline observability](../../pipeline-observability-sdlc-events.md "With insights into your pipelines and processes, you can observe and analyze software engineering practices within an organization.")
+* Pipeline observability
 
 ## Related topics
 
-* [How to ingest data (events)](../../../platform/openpipeline/getting-started/how-to-ingestion.md "How to ingest data for a configuration scope in OpenPipeline.")
-* [Software development lifecycle (SDLC) events](../../../semantic-dictionary/model/sdlc-events.md "Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.")
-* [Ingest SDLC events](../sdlc-events.md "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.")
-* [Auto-update for Dynatrace Operator](../../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/dto-auto-update.md "Enable automatic updates of Dynatrace Operator following a GitOps approach.")
+* How to ingest data (events)
+* Software development lifecycle (SDLC) events events.")
+* Ingest SDLC events events which you can then ingest to use to generate analytics.")
+* Auto-update for Dynatrace Operator

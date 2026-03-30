@@ -29,4 +29,4 @@ scraped: 2026-03-06T21:18:34.259197
 
   Для запуска OneAgent используйте права суперпользователя (root) и выполните сценарий службы `oneagent` с параметром `start`.
 
-Узнайте больше о том, [как OneAgent взаимодействует с вашей ОС](../installation/oneagent-security-aix.md "Learn about Dynatrace OneAgent security and modifications to your AIX-based system.").
+Узнайте больше о том, как OneAgent взаимодействует с вашей ОС.

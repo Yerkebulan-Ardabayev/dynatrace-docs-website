@@ -11,9 +11,9 @@ scraped: 2026-02-28T21:28:13.423587
 * 8-min read
 * Published May 19, 2021
 
-Automatic [tag](../setup/how-to-define-tags.md "Find out how to define and apply tags manually and automatically.") and [management zone](../../identity-access-management/permission-management/management-zones.md "Learn about management zones concepts, how to define management zones, and how to make the most of them.") assignment helps keep your monitoring environment organized and directs the focus of individual teams to the infrastructure they're responsible for.
+Automatic tag and management zone assignment helps keep your monitoring environment organized and directs the focus of individual teams to the infrastructure they're responsible for.
 
-Dynatrace offers powerful filters and conditional processing to select which parts of your monitored topology should display a certain tag or be assigned to a management zone. These filters are the conditions you specify when creating an automatic tagging or management-zone rule. While Dynatrace has some stability limits in place, the administrator of each monitoring environment is responsible for the performance of tagging and [management-zone rules](../../identity-access-management/permission-management/management-zones/management-zone-rules.md "Define rules to limit the entities accessible within a management zone.").
+Dynatrace offers powerful filters and conditional processing to select which parts of your monitored topology should display a certain tag or be assigned to a management zone. These filters are the conditions you specify when creating an automatic tagging or management-zone rule. While Dynatrace has some stability limits in place, the administrator of each monitoring environment is responsible for the performance of tagging and management-zone rules.
 
 Overly complex rule filters run slower than simple filters, and the total number of rule filters defines the speed of automatic tagging and management-zone assignment in your monitoring environment. For reference, it takes approximately one minute to complete a tagging run with a small number of tagging filters (say, 100); it can take several hours to complete a tagging run with thousands of complex tagging filters.
 
@@ -42,7 +42,7 @@ Additionally, per monitoring environment, you can set up:
 * 300 UI-based management-zone rules for dimensional data (150 for Dynatrace versions 1.323 and earlier).
 * 300 text-based entity selector rules for management zones (150 for Dynatrace versions 1.323 and earlier).
 * 100,000 conditions for all management-zone rules taken together (does not apply to [entity selector rules](../../identity-access-management/permission-management/management-zones/management-zone-rules.md#text "Define rules to limit the entities accessible within a management zone.")).
-* Any individual entity to a maximum of 200 management zones (run the [GET an entity](../../../dynatrace-api/environment-api/entity-v2/get-entity.md "View parameters of a monitored entity via Dynatrace API.") API call to see an entity's management zones).
+* Any individual entity to a maximum of 200 management zones (run the GET an entity API call to see an entity's management zones).
 
 ## Topology queries are slow
 
@@ -92,7 +92,7 @@ As manual tags can be used by an automatic management-zone rule, this shortcut c
 
 ### Custom tags API
 
-When there are too many entities to perform manual tagging efficiently, Dynatrace offers the Custom tags API to conveniently [assign a tag to a large group of entities within a single API call](../../../dynatrace-api/environment-api/custom-tags/post-tags.md "Assign custom tags to monitored entities via Dynatrace API."). What makes this approach powerful is the standardized [entity selector](../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.")âa powerful and flexible tool for selecting entities.
+When there are too many entities to perform manual tagging efficiently, Dynatrace offers the Custom tags API to conveniently assign a tag to a large group of entities within a single API call. What makes this approach powerful is the standardized entity selectorâa powerful and flexible tool for selecting entities.
 
 The entity selector can also contain a topology query, such as a query for all disks of a given set of hosts that can be filtered by any kind of entity attribute. See some examples of using the entity selector below.
 
@@ -114,7 +114,7 @@ The tradeoff of this approach is that it's a one-time tagging action, and newly 
 
 ### Environment tags
 
-OneAgent provides a convenient way of reading and [assigning tags from local system environment variables](../setup/define-tags-based-on-environment-variables.md "Find out how Dynatrace enables you to define tags based on environment variables."). Using environment tags over automatic tagging rules significantly improves tagging performance, as each OneAgent instance is responsible for assigning such tags in a highly distributed fashion. Moreover, this approach is fast and doesn't slow down the execution of server-side tagging rules at all.
+OneAgent provides a convenient way of reading and assigning tags from local system environment variables. Using environment tags over automatic tagging rules significantly improves tagging performance, as each OneAgent instance is responsible for assigning such tags in a highly distributed fashion. Moreover, this approach is fast and doesn't slow down the execution of server-side tagging rules at all.
 
 As most modern automatic deployment systems use deployment scripts and receipts anyway, such receipts can also be used to define Dynatrace tags through system environment variables.
 

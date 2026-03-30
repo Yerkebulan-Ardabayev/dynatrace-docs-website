@@ -38,7 +38,7 @@ This extension collects generally supported SNMP infrastructure metrics to monit
 ## Activation and setup
 
 Simply activate the extension in your environment using the in-product Hub and provide the required device connection configurations.
-This extension uses the [Dynatrace SNMP Data source](../../../ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions.md "Learn how to create an SNMP extension using the Extensions framework.").
+This extension uses the Dynatrace SNMP Data source.
 
 ## Details
 

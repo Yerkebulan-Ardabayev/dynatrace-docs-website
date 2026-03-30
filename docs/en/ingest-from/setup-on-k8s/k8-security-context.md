@@ -12,11 +12,11 @@ scraped: 2026-03-05T21:36:49.757968
 * 1-min read
 * Updated on Nov 20, 2025
 
-Dynatrace has a [permission model for Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail."). This applies to all telemetry data, such as metrics, events, spans, and logs.
+Dynatrace has a permission model for Grail. This applies to all telemetry data, such as metrics, events, spans, and logs.
 
 We recommend setting up permissions along organizational lines and deployment scopes. Suitable concepts include host groups, Kubernetes clusters, and Kubernetes namespaces. These attributes are typically available for all telemetry data ingested via Dynatrace collection methods like OneAgent, OpenTelemetry, or Kubernetes operator. Hence, you can use these attributes to enable [record-level permissions](../../platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.").
 
-For Kubernetes-based deployments, make sure Dynatrace Operator has [metadata enrichment](guides/metadata-automation/metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") enabled.
+For Kubernetes-based deployments, make sure Dynatrace Operator has metadata enrichment enabled.
 
 If you only require a basic permission concept, setting up bucket-level permissions is the best option. You can then route your data to the correct bucket in OpenPipeline by matching one of the mentioned deployment-relevant primary Grail fields.
 
@@ -31,7 +31,7 @@ Dynatrace provides a comprehensive permission model for Grail that applies to al
 
 ## Set up security context in Kubernetes
 
-You may already have defined your own security boundaries outside of Dynatrace and defined them as Kubernetes labels or annotations. Suppose the permissions for the Kubernetes cluster or namespace are not sufficient. In that case, Dynatrace allows you to set up more fine-grained permissions by leveraging your own Kubernetes labels or annotations as the source for your [security context](../../manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context") in Dynatrace.
+You may already have defined your own security boundaries outside of Dynatrace and defined them as Kubernetes labels or annotations. Suppose the permissions for the Kubernetes cluster or namespace are not sufficient. In that case, Dynatrace allows you to set up more fine-grained permissions by leveraging your own Kubernetes labels or annotations as the source for your security context in Dynatrace.
 
 This security context can represent your own security architecture and could even be hierarchical by encoding this into a string such as `department-A/department-AB/team-C`.
 
@@ -39,7 +39,7 @@ This security context can represent your own security architecture and could eve
 
 Via the Kubernetes metadata enrichment feature, you can use already existing namespace labels and annotations as source for your security context. Just choose an existing label, and it will be added as `dt.security_context` on your telemetry.
 
-To enable this functionality, make sure Dynatrace Operator has [metadata enrichment](guides/metadata-automation/metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") enabled.
+To enable this functionality, make sure Dynatrace Operator has metadata enrichment enabled.
 
 For details, see [Use settings to use existing labels and annotations](guides/metadata-automation/k8s-metadata-telemetry-enrichment.md#enrichment-options "Guides for telemetry enrichment on Kubernetes").
 

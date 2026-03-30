@@ -15,20 +15,20 @@ scraped: 2026-03-06T21:23:30.344451
 
 * Dynatrace Operator is installed and running in your Kubernetes cluster.
 * A valid DynaKube is applied to your cluster.
-* [Metadata enrichment](metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") is enabled.
+* Metadata enrichment is enabled.
 
 ## Use cases
 
 * Enhance your metrics, logs, trace data, events and entities with additional information using Kubernetes namespace annotations and labels.
 * Enhance your metrics, logs, trace data, events and entities with additional information using OpenTelemetry environment variables
-* Enriched data can be used for [defining access control to users](../../../../manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context"), or for solving [Cost Allocation](../../../../license/cost-allocation.md "Learn how to allocate costs to cost centers and products.") in DPS.
+* Enriched data can be used for defining access control to users, or for solving Cost Allocation in DPS.
 * Enriched data can be used for pipeline routing, bucket segmentation, segmentation, and filtering.
 
 ## Security context and Cost Allocation
 
-In Dynatrace, you can set up [policy boundaries](../../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries.md "Restrict security policies with policy boundaries to provide tailored access to your users.") for fine-grained restrictions on the data level. By default, you can use `k8s.namespace.name` and `k8s.cluster.name`, but sometimes this is not enough and you need a more fine grained way to set up your boundaries.
+In Dynatrace, you can set up policy boundaries for fine-grained restrictions on the data level. By default, you can use `k8s.namespace.name` and `k8s.cluster.name`, but sometimes this is not enough and you need a more fine grained way to set up your boundaries.
 
-You might already have defined such boundaries for yourself and defined them as Kubernetes labels or annotations. This feature enables you to use these at the source for your [security context](../../../../manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context") in Dynatrace. If you have not done so already, we recommend to either use cluster or namespace name or set up a dedicated annotation for your Kubernetes workloads that serves as your security context.
+You might already have defined such boundaries for yourself and defined them as Kubernetes labels or annotations. This feature enables you to use these at the source for your security context in Dynatrace. If you have not done so already, we recommend to either use cluster or namespace name or set up a dedicated annotation for your Kubernetes workloads that serves as your security context.
 
 Similarly Dynatrace provides a solution for [Cost Allocation](../../../../license/cost-allocation.md#assign-cost-centers-and-products-in-kubernetes-application-monitoring-deployments "Learn how to allocate costs to cost centers and products.") in DPS. You might already have the necessary data like department and product available in your existing Kubernetes labels or annotations. Even if not you might find it very convenient to setup up Cost Allocation as a Kubernetes annotation or label, which is what Dynatrace recommends. This feature then enables you to use these labels and annotations as the means to solving [Cost Allocation](../../../../license/cost-allocation.md#assign-cost-centers-and-products-in-kubernetes-application-monitoring-deployments "Learn how to allocate costs to cost centers and products.") in DPS.
 
@@ -127,11 +127,11 @@ For OTLP setups without OneAgent, additional steps for signal enrichment are req
 
 ### Enable automatic OpenTelemetry OTLP exporter configuration (recommended)
 
-[Automatic OpenTelemetry OTLP exporter configuration](../../extend-observability-k8s/otlp-auto-config.md "Automatically configure the OTLP exporter in applications instrumented with OpenTelemetry SDKs using Dynatrace Operator.") is the recommended option for OTLP setups without OneAgent injection, as it provides enrichment comparable to the OneAgent case. Enable it in your DynaKube to automatically enrich your telemetry with Dynatrace metadata. This feature is available for all OpenTelemetry supported languages.
+Automatic OpenTelemetry OTLP exporter configuration is the recommended option for OTLP setups without OneAgent injection, as it provides enrichment comparable to the OneAgent case. Enable it in your DynaKube to automatically enrich your telemetry with Dynatrace metadata. This feature is available for all OpenTelemetry supported languages.
 
 ### Enrich via code changes
 
-This option is suitable for standalone OTLP setups without OneAgent injection. For optimal results, enrich your OTLP telemetry by parsing Dynatrace metadata files and adding the metadata directly in your code, as outlined in [Enrich ingested data with Dynatrace-specific fields](../../../extend-dynatrace/extend-data.md#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields."). You can find code samples in our OpenTelemetry section, like here for [Java](../../../opentelemetry/walkthroughs/java/java-manual.md#add-telemetry-signals-manually "Learn how to instrument your Java application using OpenTelemetry and Dynatrace.").
+This option is suitable for standalone OTLP setups without OneAgent injection. For optimal results, enrich your OTLP telemetry by parsing Dynatrace metadata files and adding the metadata directly in your code, as outlined in [Enrich ingested data with Dynatrace-specific fields](../../../extend-dynatrace/extend-data.md#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields."). You can find code samples in our OpenTelemetry section, like here for Java.
 This approach provides enrichment comparable to the OneAgent case.
 
 ### Enrich via environment variable
@@ -564,6 +564,6 @@ k8s.namespace.label.domain: finance
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific fields](../../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
-* [Enrich OTLP requests with Kubernetes data](../../../opentelemetry/collector/use-cases/kubernetes/k8s-enrich.md "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")
-* [Configure enrichment directory](metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.")
+* Enrich ingested data with Dynatrace-specific fields
+* Enrich OTLP requests with Kubernetes data
+* Configure enrichment directory

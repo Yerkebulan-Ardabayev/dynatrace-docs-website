@@ -20,8 +20,8 @@ Set up Application Security capabilities
 
 Dynatrace provides the following integrated Application Security capabilities to help secure your applications. Select one to get started.
 
-* [**Dynatrace Runtime Vulnerability Analytics (RVA)**](/managed/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."): Identify critical vulnerabilities instantly with automated risk and impact assessments, thanks to in-depth analysis of data access paths and production execution.
-* [**Dynatrace Runtime Application Protection (RAP)**](/managed/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities."): Defend your applications in real time by detecting and blocking attacks through advanced code-level insights and transaction analysis.
+* **Dynatrace Runtime Vulnerability Analytics (RVA)**: Identify critical vulnerabilities instantly with automated risk and impact assessments, thanks to in-depth analysis of data access paths and production execution.
+* **Dynatrace Runtime Application Protection (RAP)**: Defend your applications in real time by detecting and blocking attacks through advanced code-level insights and transaction analysis.
 
 ## Monitoring modes coverage
 
@@ -33,7 +33,7 @@ The effectiveness and depth of Application Security insights depend on the deplo
 | --- | --- | --- | --- |
 | [Third-party vulnerability detection](/managed/secure/application-security/vulnerability-analytics#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") | Green background check mark | [limited](#tpv-infra) | [limited](#clv-infra) |
 | [Code-level vulnerability detection](/managed/secure/application-security/vulnerability-analytics#clv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") | Green background check mark | [limited](#tpv-disco) | [limited](#clv-disco) |
-| [Runtime Application Protection](/managed/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.") | Green background check mark | Green background check mark | Green background check mark |
+| Runtime Application Protection | Green background check mark | Green background check mark | Green background check mark |
 
 Public internet exposure
 
@@ -47,12 +47,12 @@ Full-Stack Monitoring mode provides complete application performance monitoring,
 
 ### Infrastructure Monitoring mode
 
-[Infrastructure Monitoring mode](/managed/platform/oneagent/monitoring-modes/monitoring-modes#infrastructure-only "Find out more about the available monitoring modes when using OneAgent."), where OneAgent is configured to provide physical and virtual infrastructure-centric monitoring, provides less complete monitoring than the Full-Stack Monitoring mode. The following functionalities are provided:
+Infrastructure Monitoring mode, where OneAgent is configured to provide physical and virtual infrastructure-centric monitoring, provides less complete monitoring than the Full-Stack Monitoring mode. The following functionalities are provided:
 
 * System metrics (CPU usage, memory usage, disk usage)
 * [Third-party vulnerability detection](/managed/secure/application-security/vulnerability-analytics#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
 * [Code-level vulnerability detection](/managed/secure/application-security/vulnerability-analytics#clv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
-* [Runtime Application Protection](/managed/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
+* Runtime Application Protection
 
 #### Characteristics
 
@@ -68,7 +68,7 @@ Code-level vulnerabilities
 
 Attacks
 
-* In an Infrastructure Monitoring deployment, DavisÂ® AI cannot [adapt the Davis Security Score](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-score#score "Calculate the Davis Security Score and predict potential vulnerability risks with Davis AI."). In this case, the vulnerability's risk value can't be reevaluated, as this can only happen based on the topology information extracted from your environment, and the DSS will be the same as the CVSS base score.
+* In an Infrastructure Monitoring deployment, DavisÂ® AI cannot adapt the Davis Security Score. In this case, the vulnerability's risk value can't be reevaluated, as this can only happen based on the topology information extracted from your environment, and the DSS will be the same as the CVSS base score.
 * Infrastructure Monitoring mode lacks environmental information, such as reachable data assets or public internet exposure, and limits information on related entities, such as databases and services. A full assessment can be performed only on vulnerabilities that have all related hosts under Full-Stack Monitoring.
 
   + If related hosts are running in Infrastructure Monitoring mode, there's not enough data sent by OneAgents to examine whether there's exposure or sensitive data affected, therefore the values for **public internet exposure** and **reachable data assets** are set to `Not available`.
@@ -84,19 +84,19 @@ Same capabilities as Full-Stack Monitoring mode.
 
 #### Consumption
 
-* If you're using the [Dynatrace Platform Subscription (DPS) licensing model](/managed/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."), see [Host monitoring (DPS): Infrastructure Monitoring](/managed/license/capabilities/app-infra-observability/infrastructure-monitoring "Learn how your consumption of the Dynatrace Infrastructure Monitoring DPS capability is billed and charged.").
-* If you're using the [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), see [Application and Infrastructure Monitoring (Host Units)](/managed/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
+* If you're using the Dynatrace Platform Subscription (DPS) licensing model, the licensing model for all Dynatrace capabilities."), see Host monitoring (DPS): Infrastructure Monitoring.
+* If you're using the Dynatrace classic licensing, see Application and Infrastructure Monitoring (Host Units).
 
 ### Discovery mode
 
-[Discovery mode](/managed/platform/oneagent/monitoring-modes/monitoring-modes#discovery "Find out more about the available monitoring modes when using OneAgent.") is a lightweight monitoring mode that provides basic monitoring. The following functionalities are provided:
+Discovery mode is a lightweight monitoring mode that provides basic monitoring. The following functionalities are provided:
 
 * System metrics (CPU usage, memory usage, disk usage)
 * [Third-party vulnerability detection](/managed/secure/application-security/vulnerability-analytics#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
 * [Code-level vulnerability detection](/managed/secure/application-security/vulnerability-analytics#clv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
-* [Runtime Application Protection](/managed/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
+* Runtime Application Protection
 
-For Application Security to work in Discovery mode, after [enabling Discovery mode](/managed/platform/oneagent/monitoring-modes/monitoring-modes#enable-discovery-mode "Find out more about the available monitoring modes when using OneAgent."), you also need to [enable code-module injection](/managed/platform/oneagent/monitoring-modes/monitoring-modes#code-module-injection "Find out more about the available monitoring modes when using OneAgent.").
+For Application Security to work in Discovery mode, after enabling Discovery mode, you also need to enable code-module injection.
 
 #### Characteristics
 
@@ -112,7 +112,7 @@ Code-level vulnerabilities
 
 Attacks
 
-* In a Discovery mode deployment, Davis AI cannot [adapt the Davis Security Score](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-score#score "Calculate the Davis Security Score and predict potential vulnerability risks with Davis AI."). In this case, the vulnerability's risk value can't be reevaluated, as this can only happen based on the topology information extracted from your environment, and the DSS will be the same as the CVSS base score.
+* In a Discovery mode deployment, Davis AI cannot adapt the Davis Security Score. In this case, the vulnerability's risk value can't be reevaluated, as this can only happen based on the topology information extracted from your environment, and the DSS will be the same as the CVSS base score.
 * Discovery mode lacks environmental information, such as reachable data assets or public internet exposure, and limits information on related entities, such as databases and services. A full assessment can be performed only on vulnerabilities that have all related hosts under Full-Stack Monitoring.
 
   + If related hosts are running in Discovery mode, not enough data is sent by OneAgents to examine whether there's exposure or sensitive data affected, so the values for **public internet exposure** and **reachable data assets** are set to `Not available`.
@@ -136,9 +136,9 @@ Same capabilities as Full-Stack Monitoring mode.
 
 #### Consumption
 
-Discovery mode is only available for the [Dynatrace Platform Subscription (DPS) licensing model](/managed/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+Discovery mode is only available for the Dynatrace Platform Subscription (DPS) licensing model, the licensing model for all Dynatrace capabilities.").
 
-For monitoring consumption information, see [Host monitoring (DPS): Foundation & Discovery](/managed/license/capabilities/app-infra-observability/foundation-and-discovery "Learn how your consumption of the Dynatrace Foundation & Discovery DPS capability is billed and charged.").
+For monitoring consumption information, see Host monitoring (DPS): Foundation & Discovery.
 
 ## Further resources
 
@@ -221,7 +221,7 @@ FAQ
 * [Dynatrace DevSecOps Lifecycle Coverage with Snyk eliminates security coverage blind spots](https://www.dynatrace.com/news/blog/dynatrace-and-snyk-to-unify-security-insights/)
 * [Davis Security Advisor extends Application Security](https://www.dynatrace.com/news/blog/davis-security-advisor-extends-dynatrace-application-security/)
 
-[Application Security FAQ](/managed/secure/faq "Frequently asked questions about Dynatrace Application Security.")
+Application Security FAQ
 
 For troubleshooting articles related to Application Security, visit [Dynatrace Community](https://dt-url.net/dy122xtf).
 

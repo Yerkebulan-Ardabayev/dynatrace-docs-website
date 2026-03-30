@@ -67,4 +67,4 @@ To change the order of manually added providers
 
 ## Related topics
 
-* [Content resources API](../../../../dynatrace-api/configuration-api/rum/content-resources.md "Learn what the Dynatrace configuration API for content resources offers.")
+* Content resources API

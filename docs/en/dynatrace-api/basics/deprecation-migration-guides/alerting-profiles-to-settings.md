@@ -10,7 +10,7 @@ scraped: 2026-03-06T21:34:32.542628
 * Reference
 * Published Dec 20, 2022
 
-[Alerting profiles API](../../configuration-api/alerting-profiles-api.md "Learn what the Dynatrace alerting profiles API offers.") has been deprecated with [Dynatrace version 1.249](../../../whats-new/dynatrace-api/sprint-249.md "Changelog for Dynatrace API version 1.249"). Its replacement is [Settings API](../../environment-api/settings.md "Find out what the Dynatrace Settings API offers.") with the **Problem alerting profiles** (`builtin:alerting.profile`) schema. We recommend that you migrate to the new API at your earliest convenience.
+Alerting profiles API has been deprecated with Dynatrace version 1.249. Its replacement is Settings API with the **Problem alerting profiles** (`builtin:alerting.profile`) schema. We recommend that you migrate to the new API at your earliest convenience.
 
 The migration affects endpoint URLs, query parameters, and response/request body parameters, as well as the scope of the token for request authentication.
 
@@ -28,9 +28,9 @@ The migration affects endpoint URLs, query parameters, and response/request body
 
 ## Parameters
 
-To learn about new query/body parameters, see the documentation of individual requests in [Settings API](../../environment-api/settings.md "Find out what the Dynatrace Settings API offers.").
+To learn about new query/body parameters, see the documentation of individual requests in Settings API.
 
-In the Settings 2.0 framework, each alerting profile is represented by a settings object. An object contains some metadata (like the scope or creation timestamp) and the configuration itself, encapsulated in the **value** object. The content of the **value** is essentially the same as the configuration in the deprecated Alerting profiles API. To learn about the parameters of the alerting profile configuration, query the **Problem alerting profiles** (`builtin:alerting.profile`) schema with the [GET a schema](../../environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") request.
+In the Settings 2.0 framework, each alerting profile is represented by a settings object. An object contains some metadata (like the scope or creation timestamp) and the configuration itself, encapsulated in the **value** object. The content of the **value** is essentially the same as the configuration in the deprecated Alerting profiles API. To learn about the parameters of the alerting profile configuration, query the **Problem alerting profiles** (`builtin:alerting.profile`) schema with the GET a schema request.
 
 ## Examples
 
@@ -42,7 +42,7 @@ Settings 2.0
 
 Alerting profiles
 
-To list all alerting profiles, you need the [GET objects](../../environment-api/settings/objects/get-objects.md "View multiple settings objects via the Dynatrace API.") request. In query parameters, set **schemaIds** to `builtin:alerting.profile` and **scope** to `environment`.
+To list all alerting profiles, you need the GET objects request. In query parameters, set **schemaIds** to `builtin:alerting.profile` and **scope** to `environment`.
 
 #### Request URL
 
@@ -299,7 +299,7 @@ Settings 2.0
 
 Alerting profiles
 
-To create an alerting profile, you need the [POST an object](../../environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") request. In the request body, set **schemaId** to `builtin:alerting.profile` and **scope** to `environment`. Provide the alerting profile configuration in the **value** object.
+To create an alerting profile, you need the POST an object request. In the request body, set **schemaId** to `builtin:alerting.profile` and **scope** to `environment`. Provide the alerting profile configuration in the **value** object.
 
 The response contains the ID of the object that you need to modify the settings.
 
@@ -449,7 +449,7 @@ Settings 2.0
 
 Alerting profiles
 
-To edit an alerting profile, you need the [PUT an object](../../environment-api/settings/objects/put-object.md "Edit a settings object via the Dynatrace API.") request.
+To edit an alerting profile, you need the PUT an object request.
 
 #### Request URL
 
@@ -600,5 +600,5 @@ PUT https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles/2640173c-e
 
 ## Related topics
 
-* [Settings API](../../environment-api/settings.md "Find out what the Dynatrace Settings API offers.")
-* [Alerting profiles API](../../configuration-api/alerting-profiles-api.md "Learn what the Dynatrace alerting profiles API offers.")
+* Settings API
+* Alerting profiles API

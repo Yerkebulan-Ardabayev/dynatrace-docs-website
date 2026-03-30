@@ -30,7 +30,7 @@ Before you begin, be sure to meet the following prerequisites:
 
 ## Dynatrace container images
 
-Dynatrace immutable and signed container images are available on various container registries. For more details on repositories and tag information, explore our [supported public registries](use-public-registry.md#supported-public-registries "Use a public registry").
+Dynatrace immutable and signed container images are available on various container registries. For more details on repositories and tag information, explore our supported public registries.
 
 We strongly recommend choosing one of our supported public registries from which to copy container images.
 
@@ -56,7 +56,7 @@ In all cases, version-based image tagging is employed with container images. Mut
 
 ### Image signature verification
 
-All of our immutable and signed container images adhere to best practices, enhancing security and shielding against supply chain attacks. To learn how to verify signatures and guarantee software integrity, see [Verify Dynatrace image signatures](verify-image-signature.md "Verify Dynatrace image signatures").
+All of our immutable and signed container images adhere to best practices, enhancing security and shielding against supply chain attacks. To learn how to verify signatures and guarantee software integrity, see Verify Dynatrace image signatures.
 
 ## Copy Dynatrace container images
 
@@ -72,7 +72,7 @@ Recommended
 
 Due to its support for easy copying of multi-arch images and signatures[1](#fn-2-1-def), we strongly recommend that you use the Skopeo CLI for copying container images. To learn more about the Skopeo CLI, see [Skopeo GitHub repositoryï»¿](https://github.com/containers/skopeo).
 
-In the following instructions, be sure to always replace `<tag>` with an available version (see the [Supported public registries](use-public-registry.md#supported-public-registries "Use a public registry") section).
+In the following instructions, be sure to always replace `<tag>` with an available version (see the Supported public registries section).
 
 #### Copy Dynatrace Operator image
 
@@ -156,7 +156,7 @@ Make sure you meet the following prerequisites:
 
 As the Dynatrace built-in registry requires authentication, you need to know your monitoring environment ID and provide a PaaS token for the login:
 
-* To determine `<your-environment-id>`, see [environment ID](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+* To determine `<your-environment-id>`, see environment ID.
 * To determine `<your-paas-token>`, see [PaaS token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.").
 
 Example login using *Skopeo* CLI:
@@ -184,8 +184,8 @@ For image replication, we recommend that you copy raw images (images with the ta
 
 To understand which OneAgent versions are available for replication, you can use the following Deployment APIs:
 
-* [List available versions of OneAgent](../../../../dynatrace-api/environment-api/deployment/oneagent/get-available-versions.md "List available versions of OneAgent via Dynatrace API.") to get an overview of available OneAgent versions.
-* [View the latest version of OneAgent](../../../../dynatrace-api/environment-api/deployment/oneagent/get-version-latest.md "View the latest version of OneAgent via Dynatrace API."), if you want to understand the OneAgent version behind `latest` or automate OneAgent image replication.
+* List available versions of OneAgent to get an overview of available OneAgent versions.
+* View the latest version of OneAgent, if you want to understand the OneAgent version behind `latest` or automate OneAgent image replication.
 
 The following examples show how OneAgent versions translate to image tags available in the Dynatrace built-in registry:
 
@@ -201,9 +201,9 @@ docker://<your_environment_domain_name>/linux/oneagent:<tag-with-raw-suffix> \
 docker://registry.my-company.com/dynatrace-oneagent-classic:<tag-with-raw-suffix>
 ```
 
-For more information on configuring a DynaKube custom resource, see our examples of how to [use private registries](use-private-registry.md "Use a private registry").
+For more information on configuring a DynaKube custom resource, see our examples of how to use private registries.
 
 ## Related topics
 
-* [Use a private registry](use-private-registry.md "Use a private registry")
-* [Verify Dynatrace image signatures](verify-image-signature.md "Verify Dynatrace image signatures")
+* Use a private registry
+* Verify Dynatrace image signatures

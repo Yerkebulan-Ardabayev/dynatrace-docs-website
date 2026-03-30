@@ -21,8 +21,8 @@ Dynatrace Operator версии 1.0.0 и выше
 ### Соображения и последствия
 
 * При переключении на мониторинг приложений ранее развёрнутые OneAgent будут деактивированы, и глубокий мониторинг приложений прекратится. Следовательно, обязательным становится перезапуск всех подов приложений, требующих глубокого мониторинга. Перезапуск этих подов обеспечивает повторное внедрение в приложения и возобновление глубокого мониторинга.
-* В режиме мониторинга приложений правила мониторинга контейнеров игнорируются. Вместо этого следует использовать [селекторы меток](../deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods") для точного управления внедрением OneAgent.
-* Мониторинг журналов требует [дополнительной настройки](../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s.md "Integrate Fluent Bit in Kubernetes to stream logs to Dynatrace.").
+* В режиме мониторинга приложений правила мониторинга контейнеров игнорируются. Вместо этого следует использовать селекторы меток для точного управления внедрением OneAgent.
+* Мониторинг журналов требует дополнительной настройки.
 
 ## Переход на режим мониторинга приложений
 
@@ -137,7 +137,7 @@ Dynatrace Operator версии 1.0.0 и выше
    - dynatrace-api
    ```
 
-   Дополнительную информацию о настройке DynaKube для режима мониторинга приложений см. в [руководстве по развёртыванию](../../deployment.md "Deploy Dynatrace Operator on Kubernetes") или [параметрах DynaKube](../../reference/dynakube-parameters.md#spec-oneagent-applicationmonitoring "List the available parameters for setting up Dynatrace Operator on Kubernetes."). Кроме того, вы можете загрузить [пример пользовательского ресурса DynaKube](https://dt-url.net/0w036dz) для мониторинга приложений с GitHub и адаптировать пользовательский ресурс DynaKube в соответствии с вашими требованиями.
+   Дополнительную информацию о настройке DynaKube для режима мониторинга приложений см. в руководстве по развёртыванию или [параметрах DynaKube](../../reference/dynakube-parameters.md#spec-oneagent-applicationmonitoring "List the available parameters for setting up Dynatrace Operator on Kubernetes."). Кроме того, вы можете загрузить [пример пользовательского ресурса DynaKube](https://dt-url.net/0w036dz) для мониторинга приложений с GitHub и адаптировать пользовательский ресурс DynaKube в соответствии с вашими требованиями.
 2. Примените пользовательский ресурс DynaKube:
 
    Выполните приведённую ниже команду для применения пользовательского ресурса DynaKube. Webhook валидации выдаст полезные сообщения об ошибках при возникновении проблем.

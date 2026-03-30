@@ -24,31 +24,31 @@ Segments are typically modeled to allow filtering monitored entities, logs, metr
 
 ## Concepts
 
-[### Includes
+### Includes
 
-Learn how data of different types can be included in segments.](segments/concepts/segments-concepts-includes.md "Learn how data of different types can be included in segments.")[### Variables
+Learn how data of different types can be included in segments.### Variables
 
-Learn how to leverage variables in segments.](segments/concepts/segments-concepts-variables.md "Learn how variables help to form dynamic segments and reduce configuration effort and maintenance.")[### Visibility
+Learn how to leverage variables in segments.### Visibility
 
-Learn how to control visibility of segments.](segments/concepts/segments-concepts-visibility.md "Learn how to control the visibility of segments.")[### Queries
+Learn how to control visibility of segments.### Queries
 
-Learn how Grail evaluates segments during query execution.](segments/concepts/segments-concepts-queries.md "Learn how Grail evaluates segments during query execution to return matching results only.")
+Learn how Grail evaluates segments during query execution.
 
 ## Getting started
 
-[### Analyze monitoring data
+### Analyze monitoring data
 
-How to work with segments in apps in the latest Dynatrace.](segments/getting-started/segments-getting-started-analyze-monitoring-data.md "Learn how to analyze monitoring data more efficiently by using segments in Dashboards.")
+How to work with segments in apps in the latest Dynatrace.
 
 ### Examples
 
-* [Segment logs by bucket](segments/use-cases/segments-use-cases-logs-by-bucket.md "Segment logs by bucket with segments")
-* [Segment data by Kubernetes clusters](segments/use-cases/segments-use-cases-kubernetes-clusters.md "Configure a segment for signals and monitored entities related to Kubernetes clusters")
+* Segment logs by bucket
+* Segment data by Kubernetes clusters
 
 ## Reference
 
-[### Data types
+### Data types
 
-Reference material on data types supported by segments.](segments/reference/segments-reference-data-types.md "Learn about data types in segments.")[### Limits
+Reference material on data types supported by segments.### Limits
 
-Reference material on limits for segments.](segments/reference/segments-reference-limits.md "Learn about limits in segments.")
+Reference material on limits for segments.

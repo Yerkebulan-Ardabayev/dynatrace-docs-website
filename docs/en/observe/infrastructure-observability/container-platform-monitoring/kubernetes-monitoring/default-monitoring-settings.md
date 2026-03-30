@@ -55,12 +55,12 @@ If you want to remove an override from a specific cluster
 
 ## Configuration via API
 
-You can also configure monitoring settings via the [Settings API](../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") using the [Monitoring settings schema](../../../../dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes-monitoring.md "View builtin:cloud.kubernetes.monitoring settings schema table of your monitoring environment via the Dynatrace API.").
+You can also configure monitoring settings via the Settings API using the Monitoring settings schema.
 
 To change the default values for the environment, set the `scope` property in the request to `environment`.
 
-To use the default settings when connecting a cluster, the [Connection settings schema](../../../../dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes.md "View builtin:cloud.kubernetes settings schema table of your monitoring environment via the Dynatrace API.") should be version `3.0.0` or higher. Using older versions will automatically override the default monitoring settings for this cluster.
+To use the default settings when connecting a cluster, the Connection settings schema should be version `3.0.0` or higher. Using older versions will automatically override the default monitoring settings for this cluster.
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
+* Set up Dynatrace on Kubernetes

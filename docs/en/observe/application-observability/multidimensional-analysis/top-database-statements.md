@@ -86,7 +86,7 @@ Select any execution in the list to access its distributed trace.
 
 ## Example: Understand SQL for Service flow
 
-While SQL analysis is available at multiple locations in the service-analysis workflow, it has been added as the primary analysis view for databases in the [**Service flow**](../services-classic/service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") view. The following example indicates a service flow that has already been filtered to focus on a particular chain of calls. You can see that, whenever the **Customer Frontend** service calls the **JourneyService**, **58%** of the **response time contribution** can be attributed to the **EasyTravel** SQL service.
+While SQL analysis is available at multiple locations in the service-analysis workflow, it has been added as the primary analysis view for databases in the **Service flow** view. The following example indicates a service flow that has already been filtered to focus on a particular chain of calls. You can see that, whenever the **Customer Frontend** service calls the **JourneyService**, **58%** of the **response time contribution** can be attributed to the **EasyTravel** SQL service.
 
 ![From service flow to database statement](https://dt-cdn.net/images/from-service-flow-to-database-statement-1748-bff9188259.png)
 

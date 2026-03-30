@@ -25,8 +25,8 @@ scraped: 2026-03-06T21:24:58.481368
 
 Предварительные знания
 
-* [Включение данных в сегменты](../concepts/segments-concepts-includes.md "Learn how data of different types can be included in segments.")
-* [Переменные в сегментах](../concepts/segments-concepts-variables.md "Learn how variables help to form dynamic segments and reduce configuration effort and maintenance.")
+* Включение данных в сегменты
+* Переменные в сегментах
 
 Приложения Dynatrace, поддерживающие сегменты:
 
@@ -42,7 +42,7 @@ scraped: 2026-03-06T21:24:58.481368
 Предварительные требования
 
 * Среда Dynatrace SaaS на основе Grail и AppEngine.
-* У вас есть разрешение `storage:filter-segments:read`. Сведения о настройке разрешений см. в разделе [Permissions in Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+* У вас есть разрешение `storage:filter-segments:read`. Сведения о настройке разрешений см. в разделе Permissions in Grail.
 
 ## Фильтрация узлов Smartscape с помощью блоков включения данных
 

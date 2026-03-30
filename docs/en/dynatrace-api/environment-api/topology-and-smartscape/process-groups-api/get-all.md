@@ -11,9 +11,9 @@ scraped: 2026-03-05T21:27:08.699035
 * Updated on Mar 22, 2023
 * Deprecated
 
-This API is deprecated. Use the [Monitored entities API](../../entity-v2.md "Learn about the Dynatrace Monitored entities API.") instead. You can find more information about switching to the new API in the [migration guide](../../../basics/deprecation-migration-guides/topology-v1-to-entity-v2.md "Migrate your automation to the Monitored entities API.").
+This API is deprecated. Use the Monitored entities API instead. You can find more information about switching to the new API in the migration guide.
 
-Gets the list of all [process groups](../../../../observe/infrastructure-observability/process-groups.md "Analyze process groups and customize process group naming, detection, and monitoring.") in your Dynatrace environment, along with their parameters and relationships.
+Gets the list of all process groups in your Dynatrace environment, along with their parameters and relationships.
 
 The full list can be lengthy, so you can narrow it down by specifying filter parameters, like tags. See the **Parameters** section for more details.
 
@@ -33,7 +33,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `DataExport` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ## Parameters
 
@@ -2079,4 +2079,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/process-grou
 
 ## Related topics
 
-* [Process groups](../../../../observe/infrastructure-observability/process-groups.md "Analyze process groups and customize process group naming, detection, and monitoring.")
+* Process groups

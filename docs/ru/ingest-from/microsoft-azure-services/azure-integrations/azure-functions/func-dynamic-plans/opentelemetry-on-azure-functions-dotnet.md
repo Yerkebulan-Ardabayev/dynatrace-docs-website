@@ -6,7 +6,7 @@ scraped: 2026-03-06T21:38:21.488936
 
 ## Предварительные требования
 
-Убедитесь, что вы выполнили **начальную настройку**, описанную в [Настройка мониторинга OpenTelemetry для Azure Functions на плане потребления](opentelemetry-on-azure-functions.md "Мониторинг Azure Functions на плане потребления с помощью OpenTelemetry и Dynatrace."), прежде чем использовать пакеты, описанные ниже.
+Убедитесь, что вы выполнили **начальную настройку**, описанную в Настройка мониторинга OpenTelemetry для Azure Functions на плане потребления, прежде чем использовать пакеты, описанные ниже.
 
 .NET версии 8 или более ранней
 
@@ -243,7 +243,7 @@ AzureFunctionsInstrumentation.AddIncomingHttpAzureFunctionCallInfo(Activity.Curr
 ```
 
 Дополнительно необходимо изменить `host.json`, чтобы разрешить логирование для `Dynatrace.OpenTelemetry`.
-Обратите внимание, что это не включает логирование, если оно не [настроено явно](opentelemetry-on-azure-functions.md "Мониторинг Azure Functions на плане потребления с помощью OpenTelemetry и Dynatrace."). См. [InitializeLogging](#initializelogging).
+Обратите внимание, что это не включает логирование, если оно не настроено явно. См. [InitializeLogging](#initializelogging).
 
 ```
 {
@@ -457,7 +457,7 @@ host.Run();
 
 ### `InitializeLogging`
 
-* Вызов `InitializeLogging` обязателен, даже если вы не планируете включать логирование, и фактические сообщения логов не будут записываться даже после вызова этого метода, если не выполнена [настройка](opentelemetry-on-azure-functions.md "Мониторинг Azure Functions на плане потребления с помощью OpenTelemetry и Dynatrace.").
+* Вызов `InitializeLogging` обязателен, даже если вы не планируете включать логирование, и фактические сообщения логов не будут записываться даже после вызова этого метода, если не выполнена настройка.
 * Если вы используете [среду выполнения `dotnet-isolated`](https://dt-url.net/2i23yrm) (out-of-process, worker-функции), вам необходимо вызвать `InitializeLogging` в методе `Main` перед вызовом `AddDynatrace`. Вы можете передать `null` в качестве `loggerFactory`, чтобы при включении логирование могло использовать `Console.Out`/`Console.Error`. Это автоматически перенаправляется в AppInsights для среды выполнения `dotnet-isolated`.
 * При наличии особых требований вы также можете передать любой пользовательский `LoggingFactory`.
 * Для [среды выполнения `dotnet`](https://dt-url.net/2r43yf7) (in-process, class-library) отправка логов в AppInsights требует использования `ILogger` или `ILoggerFactory`, внедрённых в функцию через механизм внедрения зависимостей. Поэтому не следует использовать `null` в качестве аргумента для параметра `loggerFactory`, а нужно вызвать `InitializeLogging` при первом вызове любой функции в вашем Function App. Чтобы получить `ILoggerFactory`, просто добавьте параметр этого типа.
@@ -493,7 +493,7 @@ host.Run();
 
 ### `AddDynatrace`
 
-* `AddDynatrace` — это метод расширения для `TracerProvider` из OpenTelemetry. Он требует `using Dynatrace.OpenTelemetry`. В настоящее время у этой функции нет дополнительных параметров, так как конфигурация считывается из переменных окружения и файла `dtconfig.json`. Подробнее см. [Настройка мониторинга OpenTelemetry для Azure Functions на плане потребления](opentelemetry-on-azure-functions.md "Мониторинг Azure Functions на плане потребления с помощью OpenTelemetry и Dynatrace.").
+* `AddDynatrace` — это метод расширения для `TracerProvider` из OpenTelemetry. Он требует `using Dynatrace.OpenTelemetry`. В настоящее время у этой функции нет дополнительных параметров, так как конфигурация считывается из переменных окружения и файла `dtconfig.json`. Подробнее см. Настройка мониторинга OpenTelemetry для Azure Functions на плане потребления.
 * `AddDynatrace` в основном добавляет `ActivityProcessor` к `TracerProvider`, который будет отправлять все активности в Dynatrace. Это расширение:
 
   + Устанавливает ресурсы, необходимые для Dynatrace. Из-за [проблемы в OpenTelemetry .NET SDK](https://github.com/open-telemetry/opentelemetry-dotnet/issues/2909) это переопределит любые существующие ресурсы. Если вам нужны пользовательские ресурсы, вы должны вызвать `SetResourceBuilder` для `TracerProvider` *после* `AddDynatrace`. Имейте в виду, что это переопределит ресурсы, настроенные `AddDynatrace`, и вам нужно будет добавить их заново в рамках того же вызова `SetResourceBuilder`. Это можно сделать, вызвав метод расширения `AddTelemetrySdk` из OpenTelemetry SDK для `ResourceBuilder`.
@@ -806,4 +806,4 @@ op.FilterHttpRequestMessage = req => Activity.Current?.Parent != null;
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Microsoft Azure](../../../../microsoft-azure-services.md "Настройка и конфигурация мониторинга для Microsoft Azure.")
+* Настройка Dynatrace в Microsoft Azure

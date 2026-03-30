@@ -35,7 +35,7 @@ scraped: 2026-03-06T21:27:33.344954
 
 ### Шаг 1 Настройка Dynatrace
 
-На этом шаге мы создаём токен Dynatrace и настраиваем [OpenPipeline](../../../platform/openpipeline.md "Масштабирование обработки данных платформы Dynatrace с помощью OpenPipeline.") для хранения данных на 5+ лет.
+На этом шаге мы создаём токен Dynatrace и настраиваем OpenPipeline для хранения данных на 5+ лет.
 
 #### Создание токена Dynatrace
 
@@ -164,6 +164,6 @@ headers=headers
 Теперь вы можете:
 
 * Получать все взаимодействия пользователя/ИИ, статус обучения и другую информацию по запросу.
-* Использовать [Notebooks](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь инсайтами из ваших данных наблюдаемости в едином совместном настраиваемом рабочем пространстве.")![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") или [Dashboards](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.")![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") для создания документов, основанных на данных, для пользовательской аналитики.
+* Использовать Notebooks![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") или Dashboards![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") для создания документов, основанных на данных, для пользовательской аналитики.
 
 ![Аудит соответствия GenAI](https://dt-cdn.net/images/gen-ai-auditing-7680-1f44c8a6bf.png)

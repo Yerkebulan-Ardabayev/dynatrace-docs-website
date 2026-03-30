@@ -350,11 +350,11 @@ events
 
 ## Related topics
 
-* [Dynatrace Query Language](../dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Use DQL queries](dql-guide.md "Find out how DQL works and what are DQL key concepts.")
-* [DQL language reference](dql-reference.md "Dynatrace Query Language syntax reference.")
-* [DQL commands](commands.md "A list of DQL commands.")
-* [DQL functions](functions.md "A list of DQL functions.")
-* [DQL operators](operators.md "A list of DQL Operators.")
-* [DQL data types](data-types.md "A list of DQL data types.")
-* [DQL best practices](dql-best-practices.md "Best practices for using Dynatrace Query Language.")
+* Dynatrace Query Language
+* Use DQL queries
+* DQL language reference
+* DQL commands
+* DQL functions
+* DQL operators
+* DQL data types
+* DQL best practices

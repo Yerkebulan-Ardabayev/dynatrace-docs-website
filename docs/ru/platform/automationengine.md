@@ -25,9 +25,9 @@ Dynatrace AutomationEngine позволяет объединять данные 
 * **Профилактические конфигурации безопасности**: блокировка вредоносных IP-адресов на основе известных шаблонов атак.
 * **Предиктивное управление ёмкостью**: прогнозирование нехватки ресурсов для предотвращения связанных с ними простоев.
 
-AutomationEngine не предназначен для массового приёма или массового экспорта данных. Для крупномасштабной обработки данных рассмотрите использование [OpenPipeline](openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") или создание пользовательских решений с помощью [Dynatrace Extensions](../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.").
+AutomationEngine не предназначен для массового приёма или массового экспорта данных. Для крупномасштабной обработки данных рассмотрите использование OpenPipeline или создание пользовательских решений с помощью Dynatrace Extensions.
 
-[Dynatrace Workflows](../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflows—react to events, schedule tasks, and connect services."), работающий на основе AutomationEngine, предоставляет варианты автоматизации в ваше распоряжение. Каждый автоматизированный рабочий процесс состоит из простой настройки, широких возможностей триггеров, готовых действий и интеграций, а также беспрецедентной расширяемости за счёт использования веб-хуков, кода JavaScript и действий приложений, работающих на основе [AppEngine](appengine.md "Develop feature-rich Dynatrace apps for you and the world!").
+Dynatrace Workflows, работающий на основе AutomationEngine, предоставляет варианты автоматизации в ваше распоряжение. Каждый автоматизированный рабочий процесс состоит из простой настройки, широких возможностей триггеров, готовых действий и интеграций, а также беспрецедентной расширяемости за счёт использования веб-хуков, кода JavaScript и действий приложений, работающих на основе AppEngine.
 
 ## Подробнее
 

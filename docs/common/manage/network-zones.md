@@ -11,46 +11,46 @@ updated: 2026-02-09
 * 1-min read
 * Updated on Dec 10, 2025
 
-[#### Get started with network zones
+#### Get started with network zones
 
 Learn how to get started with network zones.
 
 * Tutorial
 
-Read this tutorial](network-zones/network-zones-basic-info.md)[#### Migration
+Read this tutorial#### Migration
 
 Start using network zones in an existing Dynatrace environment.
 
 * How-to guide
 
-Read this guide](network-zones/migration.md)[#### New installation
+Read this guide#### New installation
 
 Start using network zones with a fresh Dynatrace installation.
 
 * How-to guide
 
-Read this guide](network-zones/new-installation.md)[#### Rename a network zone
+Read this guide#### Rename a network zone
 
 Learn how to rename a network zone.
 
 * How-to guide
 
-Read this guide](network-zones/rename-network-zone.md)[#### Delete a network zone
+Read this guide#### Delete a network zone
 
 Learn how to delete a network zone.
 
 * How-to guide
 
-Read this guide](network-zones/delete-network-zones.md)[#### OneAgent connectivity in network zones
+Read this guide#### OneAgent connectivity in network zones
 
 Find out how network zones prioritize ActiveGates for OneAgent connectivity.
 
 * Explanation
 
-Read this explanation](network-zones/oneagent-connectivity.md)[#### ActiveGate connectivity in network zones
+Read this explanation#### ActiveGate connectivity in network zones
 
 Find out how network zones prioritize ActiveGates for Environment ActiveGate connectivity.
 
 * Explanation
 
-Read this explanation](network-zones/activegate-connectivity.md)
+Read this explanation

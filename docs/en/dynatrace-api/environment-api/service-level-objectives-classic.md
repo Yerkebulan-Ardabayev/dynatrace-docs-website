@@ -15,22 +15,22 @@ Switch to SLO Service Public API
 
 This is the Service-level Objectives API classic.
 
-For the newest version, see [SLO Service Public API](service-level-objectives.md "Discover the API functionalities of the new Service-Level Objectives powered by Grail.").
+For the newest version, see SLO Service Public API.
 
-[### List all SLOs
+### List all SLOs
 
-Get an overview of all service-level objectives and their calculated values.](service-level-objectives-classic/get-all.md "List all service-level objectives and their values via the Dynatrace API.")[### View an SLO
+Get an overview of all service-level objectives and their calculated values.### View an SLO
 
-View the parameters and the calculated value of a service-level objective (SLO) by its ID.](service-level-objectives-classic/get-slo.md "View parameters of a service-level objective classic via the Dynatrace API.")[### Create an SLO
+View the parameters and the calculated value of a service-level objective (SLO) by its ID.### Create an SLO
 
-Create a new service-level objective (SLO) with the exact parameters you need.](service-level-objectives-classic/post-slo.md "Create a service-level objective (SLO) via the Dynatrace API.")[### Edit an SLO
+Create a new service-level objective (SLO) with the exact parameters you need. via the Dynatrace API.")### Edit an SLO
 
-Update the parameters of a service-level objective (SLO).](service-level-objectives-classic/put-slo.md "Updates a service-level objective (SLO) parameters via the Dynatrace API.")[### Delete an SLO
+Update the parameters of a service-level objective (SLO). parameters via the Dynatrace API.")### Delete an SLO
 
-Delete a service-level objective (SLO) you no longer need.](service-level-objectives-classic/delete-slo.md "Delete a service-level objective (SLO) via the Dynatrace API.")[### Create an alert for an SLO
+Delete a service-level objective (SLO) you no longer need. via the Dynatrace API.")### Create an alert for an SLO
 
-Create an alert for an SLO.](service-level-objectives-classic/post-slo-alert.md "Create a service-level objective (SLO) alert via the Dynatrace API.")
+Create an alert for an SLO. alert via the Dynatrace API.")
 
 ## Related topics
 
-* [Service-Level Objectives Classic](../../deliver/service-level-objectives-classic.md "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.")
+* Service-Level Objectives Classic

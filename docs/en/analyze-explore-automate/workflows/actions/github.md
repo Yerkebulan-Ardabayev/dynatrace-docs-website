@@ -12,7 +12,7 @@ scraped: 2026-03-04T21:32:31.513544
 * 1-min read
 * Updated on Feb 13, 2025
 
-GitHub Connector ![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub") enables your Dynatrace environment to integrate with GitHub repositories. With this integration, you can automate issues and pull requests based on monitoring data and events within a dedicated [workflow](../../workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+GitHub Connector ![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub") enables your Dynatrace environment to integrate with GitHub repositories. With this integration, you can automate issues and pull requests based on monitoring data and events within a dedicated workflow.
 
 [![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub")
 
@@ -26,5 +26,5 @@ Learn about available actions used by GitHub Connector integration for automatin
 
 ## Related topics
 
-* [Actions for GitHub Connector](github/github-workflows-actions.md "Integrate Workflows with GitHub services to utilize GitHub Connector actions.")
-* [Set up GitHub Connector](github/github-workflows-setup.md "Learn how to set up GitHub Connector.")
+* Actions for GitHub Connector
+* Set up GitHub Connector

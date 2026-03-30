@@ -35,7 +35,7 @@ Log Monitoring Classic
 
 ### Сколько стоит Log Monitoring?
 
-Тарификация Log Monitoring основана на модели единиц данных Davis (DDU). Подробнее о расчёте потребления DDU для Log Monitoring см. в разделе [DDU для Log Monitoring Classic](../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Monitoring Classic.").
+Тарификация Log Monitoring основана на модели единиц данных Davis (DDU). Подробнее о расчёте потребления DDU для Log Monitoring см. в разделе DDU для Log Monitoring Classic.
 
 ### Кто может увеличить лимит приёма данных для тенанта?
 

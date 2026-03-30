@@ -11,11 +11,11 @@ scraped: 2026-03-06T21:23:33.828725
 * How-to guide
 * 3-min read
 
-В Dynatrace существует [модель разрешений для Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail."). Она применяется ко всем данным телеметрии: метрикам, событиям, спанам и журналам.
+В Dynatrace существует модель разрешений для Grail. Она применяется ко всем данным телеметрии: метрикам, событиям, спанам и журналам.
 
 Рекомендуется выстраивать разрешения в соответствии с организационной структурой и областями развёртывания. Подходящими концепциями являются группы хостов, кластеры Kubernetes и пространства имён Kubernetes. Эти атрибуты, как правило, доступны для всех данных телеметрии, принятых через методы сбора Dynatrace, такие как OneAgent, OpenTelemetry или оператор Kubernetes. Поэтому их можно использовать для включения [разрешений на уровне записей](../../platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.").
 
-Для развёртываний на базе Kubernetes убедитесь, что оператор Dynatrace имеет включённое [обогащение метаданными](../setup-on-k8s/guides/metadata-automation/metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.").
+Для развёртываний на базе Kubernetes убедитесь, что оператор Dynatrace имеет включённое обогащение метаданными.
 
 Если вам требуется лишь базовая концепция разрешений, лучшим вариантом будет настройка разрешений на уровне бакета. Затем вы можете маршрутизировать данные в нужный бакет в OpenPipeline, сопоставляя одно из упомянутых первичных полей Grail, связанных с развёртыванием.
 

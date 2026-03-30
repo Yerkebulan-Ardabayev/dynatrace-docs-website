@@ -11,7 +11,7 @@ scraped: 2026-03-05T21:29:34.371827
 
 OneAgent версии 1.225+
 
-Совместимость с OpenTelemetry связывает [расширение Dynatrace AWS Lambda](../aws-lambda-extension.md "Мониторинг Lambda-функций, написанных на Python, Node.js и Java.") с OpenTelemetry Java API для использования пакетов инструментирования и расширений. Это позволяет отслеживать технологии, такие как базы данных или фреймворки обмена сообщениями, которые не поддерживаются расширением Dynatrace AWS Lambda по умолчанию.
+Совместимость с OpenTelemetry связывает расширение Dynatrace AWS Lambda с OpenTelemetry Java API для использования пакетов инструментирования и расширений. Это позволяет отслеживать технологии, такие как базы данных или фреймворки обмена сообщениями, которые не поддерживаются расширением Dynatrace AWS Lambda по умолчанию.
 
 ## Прежде чем начать
 
@@ -504,5 +504,5 @@ return messageAttribute == null ? null : messageAttribute.getStringValue();
 
 ## Связанные темы
 
-* [Совместимость с OpenTelemetry](../opentelemetry-interoperability.md "Включение и использование совместимости с OpenTelemetry в AWS Lambda.")
-* [Трассировка Lambda-функций на Python, Node.js и Java](../aws-lambda-extension.md "Мониторинг Lambda-функций, написанных на Python, Node.js и Java.")
+* Совместимость с OpenTelemetry
+* Трассировка Lambda-функций на Python, Node.js и Java

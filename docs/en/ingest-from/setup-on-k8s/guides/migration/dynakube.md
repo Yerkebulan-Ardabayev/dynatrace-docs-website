@@ -23,10 +23,10 @@ Starting with Dynatrace Operator version 1.8.0+, Dynatrace Operator emits a Kube
 | DynaKube API version | Introduced | Deprecated | Removed [1](#fn-1-1-def) | Migration guides |
 | --- | --- | --- | --- | --- |
 | v1beta5 | 1.6.0 |  |  |  |
-| v1beta4 | 1.5.0 |  |  | [to v1beta5](api-version-migration-guides/migrate-dk-v1beta4-v1beta5.md "Migrate your v1beta4 DynaKube CR to the v1beta5 apiVersions.") |
-| v1beta3 | 1.3.0 | 1.7.0 |  | [to v1beta5](api-version-migration-guides/migrate-dk-v1beta3-v1beta5.md "Migrate your v1beta3 DynaKube CR to the v1beta5 apiVersions."), [to v1beta4](api-version-migration-guides/migrate-dk-v1beta3-v1beta4.md "Migrate your v1beta3 DynaKube CR to the v1beta4 apiVersions.") |
-| v1beta2 | 1.2.0 | 1.6.0 | 1.7.0 | [to v1beta5](api-version-migration-guides/migrate-dk-v1beta2-v1beta5.md "Migrate your v1beta2 DynaKube CR to the v1beta5 apiVersions."), [to v1beta4](api-version-migration-guides/migrate-dk-v1beta2-v1beta4.md "Migrate your v1beta2 DynaKube CR to the v1beta4 apiVersions.") |
-| v1beta1 | 0.3.0 | 1.6.0 | 1.7.0 | [to v1beta5](api-version-migration-guides/migrate-dk-v1beta1-v1beta5.md "Migrate your v1beta1 DynaKube CR to the v1beta5 apiVersions."), [to v1beta4](api-version-migration-guides/migrate-dk-v1beta1-v1beta4.md "Migrate your v1beta1 DynaKube CR to the v1beta4 apiVersions.") |
+| v1beta4 | 1.5.0 |  |  | to v1beta5 |
+| v1beta3 | 1.3.0 | 1.7.0 |  | to v1beta5, to v1beta4 |
+| v1beta2 | 1.2.0 | 1.6.0 | 1.7.0 | to v1beta5, to v1beta4 |
+| v1beta1 | 0.3.0 | 1.6.0 | 1.7.0 | to v1beta5, to v1beta4 |
 
 1
 

@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:19:44.937750
 * Updated on Dec 10, 2025
 
 Dynatrace Mainframe Monitoring provides automatic end-to-end application performance monitoring for transactions, regions, and apps deployed on IBM z/OS.
-It includes distributed tracing, metrics, topology, and code-level insight for [30+ supported technologies](../../../ingest-from/technology-support/mainframe-technology-support.md "Learn which technologies Dynatrace supports for Mainframe monitoring.").
+It includes distributed tracing, metrics, topology, and code-level insight for 30+ supported technologies.
 
 With the DPS capability for Mainframe Monitoring:
 
@@ -26,8 +26,8 @@ With the DPS capability for Mainframe Monitoring:
 The technical prerequisites for DPS are:
 
 * Dynatrace Cluster version 1.279+
-* [zRemote module](../../../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote.md "Prepare and install the zRemote for z/OS monitoring.") version 1.265+
-* [zDC subsystem](../../../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc.md "Set up the z/OS Data Collection subsystem (zDC).") version 1.247+
+* zRemote module version 1.265+
+* zDC subsystem.") version 1.247+
 
 A monitored Logical Partition (LPAR) is represented as a host in Dynatrace.
 The billing for monitoring an LPAR depends on the partitionâs Million Service Unit (MSU) value and the duration of Dynatrace monitoring.
@@ -53,25 +53,25 @@ The sum of MSU hours of all monitored LPARs represents the total consumption.
 Dynatrace [retains the total amount of ingested trace volume](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#purepath "Check retention times for various data types.") from your environment for 10 days.
 
 Dynatrace provides the ability to extend trace retention on a selective basis for up to 10 years.
-This is achieved by [creating custom buckets](../../../platform/grail/organize-data.md "Insights on the Grail data model consisting of buckets, tables, and views.") in Grail.
+This is achieved by creating custom buckets in Grail.
 The first 10 days of retention are always included.
 Any trace data retained longer than 10 days is charged on a per-Gibibyte basis as [Trace Retain](../traces.md#trace-retain-usage "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.").
 
 ### Metrics
 
-Mainframe Monitoring includes application performance monitoring and related built-in metrics, except custom metrics, which are measured in metric data points and charged as [Metrics powered by Grail](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
-For example, [custom JMX metrics](../../../ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics.md "Learn how to set up JMX metrics monitoring for your Java applications on z/OS.") consume metric data points.
+Mainframe Monitoring includes application performance monitoring and related built-in metrics, except custom metrics, which are measured in metric data points and charged as Metrics powered by Grail.
+For example, custom JMX metrics consume metric data points.
 
 How are metrics charged in DPS prior to Metrics powered by Grail
 
-If [Metrics powered by Grail](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") does not exist on your rate card, metric data points are charged as [Custom Metrics Classic](../platform-extensions/custom-metrics-classic.md "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
+If Metrics powered by Grail does not exist on your rate card, metric data points are charged as Custom Metrics Classic.
 
 ## Consumption details: Mainframe
 
 Dynatrace provides a usage metric that helps you understand and analyze your MSU-hour consumption.
 To use this metric, in ![Data Explorer](https://dt-cdn.net/images/data-explorer-512-743267b1fc.png "Data Explorer") **Data Explorer**, enter the following metric key or name in the **Search** field.
 
-Alternatively, you can query this metric via the [Environment API - Metrics API v2](../../../dynatrace-api/environment-api/metric-v2.md "Retrieve metric information via Metrics v2 API.").
+Alternatively, you can query this metric via the Environment API - Metrics API v2.
 
 (DPS) Mainframe Monitoring billing usage
 :   Key: `builtin:billing.mainframe_monitoring.usage`
@@ -113,7 +113,7 @@ Notes:
 * Section **N7** has been available since IBM SCRT version 25.2.
   It was released by IBM in December 2017.
 
-Network availability monitoring (NAM) monitors don't have a separate line on the Dynatrace rate card. Instead, you're billed based on the [number of metric data points](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") generated during each execution of a NAM test. For more information, please contact your Dynatrace account manager.
+Network availability monitoring (NAM) monitors don't have a separate line on the Dynatrace rate card. Instead, you're billed based on the number of metric data points generated during each execution of a NAM test. For more information, please contact your Dynatrace account manager.
 
 Metric data point calculations
 
@@ -130,6 +130,6 @@ The following details apply to metric data points:
 
 ## Related topics
 
-* [Dynatrace OneAgent](../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
-* [Application & Infrastructure Observability overview (DPS)](../app-infra-observability.md "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.")
+* Dynatrace OneAgent
+* Application & Infrastructure Observability overview (DPS) license.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

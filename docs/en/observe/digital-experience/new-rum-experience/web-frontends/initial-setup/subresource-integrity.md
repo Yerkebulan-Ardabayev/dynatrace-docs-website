@@ -35,7 +35,7 @@ For auto-injected frontends, the Real User Monitoring code is, by default, deliv
 
 ## Agentless frontend Configure an agentless frontend to use SRI
 
-The optimal approach to using SRI for an agentless frontend is to integrate the insertion of the OneAgent JavaScript tag with SRI into your build process via the [API](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri.md "Retrieve the most recent OneAgent JavaScript tag with SRI for manual insertion."). This ensures that your frontend consistently operates with the latest configuration.
+The optimal approach to using SRI for an agentless frontend is to integrate the insertion of the OneAgent JavaScript tag with SRI into your build process via the API. This ensures that your frontend consistently operates with the latest configuration.
 
 To get the OneAgent JavaScript tag with SRI from the web UI
 
@@ -49,6 +49,6 @@ We don't recommend using the OneAgent JavaScript tag with SRI from the web UI un
 
 ## Related topics
 
-* [Select a snippet format in the New RUM Experience](snippet-formats.md "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience.")
-* [Configure automatic injection in the New RUM Experience](configure-auto-injection.md "Configure automatic injection of the RUM JavaScript into the pages of your frontends in the New RUM Experience.")
-* [Set up agentless RUM in the New RUM Experience](set-up-agentless-monitoring.md "Learn how to set up agentless RUM for your web frontends in the New RUM Experience.")
+* Select a snippet format in the New RUM Experience
+* Configure automatic injection in the New RUM Experience
+* Set up agentless RUM in the New RUM Experience

@@ -4,16 +4,16 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/log-mon
 updated: 2026-02-09
 ---
 
-[### Search
+### Search
 
-Fetch a limited number of log records matching your criteria.](/managed/dynatrace-api/environment-api/log-monitoring-v2/get-search-logs "Fetch log records via the Log Monitoring API v2.")[### Export
+Fetch a limited number of log records matching your criteria.### Export
 
-Fetch an unlimited number of log records matching your criteria.](/managed/dynatrace-api/environment-api/log-monitoring-v2/get-export-logs "Fetch log records via the Log Monitoring API v2.")[### Aggregate
+Fetch an unlimited number of log records matching your criteria.### Aggregate
 
-Fetch aggregated log records matching your criteria.](/managed/dynatrace-api/environment-api/log-monitoring-v2/get-aggregate-logs "Fetch the aggregated log records via the Log Monitoring API v2.")[### Ingest
+Fetch aggregated log records matching your criteria.### Ingest
 
-Push custom log records to Dynatrace.](/managed/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.")
+Push custom log records to Dynatrace.
 
 ## Related topics
 
-* [Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* Log Monitoring

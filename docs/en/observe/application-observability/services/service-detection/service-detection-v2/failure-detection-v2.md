@@ -60,7 +60,7 @@ To configure failure detection:
 
    * **Ruleset name**: Required A user-defined name for the ruleset.
    * **Description**: Optional A human-readable description of the rule.
-   * **Matching condition**: Required A [DQL matcher](../../../../../platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing."), which specifies the span and resource attributes that the ruleset applies to.
+   * **Matching condition**: Required A DQL matcher, which specifies the span and resource attributes that the ruleset applies to.
      If the matching condition applies, the ruleset is evaluated.
 3. To save, select **Save changes**.
 
@@ -110,7 +110,7 @@ They are defined with any key/value pair using DQL matchers.
 2. Fill in the following required fields.
 
    * **Rule name**: A descriptive name.
-   * **DQL condition**: A [DQL matcher](../../../../../platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.") that consists of one or more DQL functions.
+   * **DQL condition**: A DQL matcher that consists of one or more DQL functions.
      If the matching condition applies, the rule is triggered.
      If the matching condition does not apply, the rule is not triggered.
 
@@ -176,4 +176,4 @@ You can delete only custom rulesets and rules, not the built-in ones.
 
 ## Related topics
 
-* [Service Detection v2](../service-detection-v2.md "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.")
+* Service Detection v2

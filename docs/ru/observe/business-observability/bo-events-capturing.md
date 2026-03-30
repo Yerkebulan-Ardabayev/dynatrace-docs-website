@@ -18,7 +18,7 @@ scraped: 2026-03-06T21:14:32.902952
   Получайте бизнес-события RUM, используя специализированный метод JavaScript API RUM, OneAgent для мобильных устройств или OpenKit.
 * **Внешние источники**
 
-  Настройте внешние бизнес-системы или ИТ-системы для отправки бизнес-событий в формате JSON в [API бизнес-событий (конечная точка REST)](bo-api-ingest.md "Настройте аутентификацию и принимайте бизнес-события через API.").
+  Настройте внешние бизнес-системы или ИТ-системы для отправки бизнес-событий в формате JSON в API бизнес-событий (конечная точка REST).
 * [**Логи**](#logs)
 
   Используйте логи как дополнительный источник бизнес-событий через OpenPipeline.
@@ -386,13 +386,13 @@ OneAgent версии 1.253+
 
 Ознакомьтесь с разделами ниже для получения инструкций по отправке бизнес-событий для различных платформ.
 
-[#### RUM JavaScript](bo-events-capturing.md#send-business-event-rum-js "Захват бизнес-событий для Dynatrace Business Observability.")[#### Android](../digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android.md#report-business-event "Узнайте, как расширить возможности мониторинга мобильного пользовательского опыта на Android с помощью OneAgent SDK.")[#### iOS](../digital-experience/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios.md#report-business-event "Расширьте возможности мониторинга мобильного пользовательского опыта с помощью OneAgent SDK для iOS.")
+[#### RUM JavaScript](bo-events-capturing.md#send-business-event-rum-js "Захват бизнес-событий для Dynatrace Business Observability.")#### Android#### iOS
 
 #### Cordova[1](#fn-2-1-def)
 
 [#### Xamarin](../digital-experience/mobile-applications/cross-platform-frameworks/xamarin-nuget.md#report-business-event "Мониторинг приложений Xamarin с помощью Dynatrace OneAgent.")[#### Flutter](https://pub.dev/packages/dynatrace_flutter_plugin#businessevent)[![.NET MAUI](https://dt-cdn.net/images/dotnetmaui-aea483621e.svg ".NET MAUI")
 
-#### .NET MAUI](../digital-experience/mobile-applications/cross-platform-frameworks/maui.md#report-business-event "Мониторинг приложений .NET MAUI с помощью Dynatrace OneAgent.")[#### React Native](https://www.npmjs.com/package/@dynatrace/react-native-plugin#business-event-capturing)[#### OpenKit](../../ingest-from/extend-dynatrace/openkit/dynatrace-openkit-api-methods.md#report-business-event "Узнайте, как можно использовать Dynatrace OpenKit с точки зрения разработчика.")
+#### .NET MAUI](../digital-experience/mobile-applications/cross-platform-frameworks/maui.md#report-business-event "Мониторинг приложений .NET MAUI с помощью Dynatrace OneAgent.")[#### React Native](https://www.npmjs.com/package/@dynatrace/react-native-plugin#business-event-capturing)#### OpenKit
 
 1
 
@@ -443,7 +443,7 @@ let attributes = {
 dynatrace.sendBizEvent('com.easytravel.funnel.booking-finished', attributes);
 ```
 
-Бизнес-события захватываются только для отслеживаемых сессий. Если RUM JavaScript отключён с помощью специального метода или из-за [управления стоимостью и трафиком](../digital-experience/web-applications/additional-configuration/configure-cost-and-traffic-control-web.md "Используйте настройку управления стоимостью и трафиком в Dynatrace для снижения потребления сессий в веб-приложениях."), бизнес-события для таких сессий не отправляются. Обратите внимание, что это поведение может измениться в будущем, что потенциально позволит отправлять бизнес-события в Dynatrace независимо от мониторинга сессий.
+Бизнес-события захватываются только для отслеживаемых сессий. Если RUM JavaScript отключён с помощью специального метода или из-за управления стоимостью и трафиком, бизнес-события для таких сессий не отправляются. Обратите внимание, что это поведение может измениться в будущем, что потенциально позволит отправлять бизнес-события в Dynatrace независимо от мониторинга сессий.
 
 ## Из логов в бизнес-события
 
@@ -576,7 +576,7 @@ dynatrace.sendBizEvent('com.easytravel.funnel.booking-finished', attributes);
 
 Шаги рабочего процесса имеют ограниченное временное окно выполнения. Рекомендуется использовать отдельный шаг рабочего процесса **Execute DQL Query** для длительных сложных запросов DQL. После этого вы можете использовать возвращённые данные в **Ingest business event** с поддержкой параметризации (`{{ result("stepname" }}`).
 
-Для этого действия требуется разрешение `storage:events:write`, определённое в настройках авторизации рабочего процесса. Подробнее см. [Разрешения пользователей для рабочих процессов](../../analyze-explore-automate/workflows/security.md "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Workflows")
+Для этого действия требуется разрешение `storage:events:write`, определённое в настройках авторизации рабочего процесса. Подробнее см. Разрешения пользователей для рабочих процессов
 
 Если вы используете DQL, исполнитель вашего рабочего процесса должен иметь разрешения на выполнение оператора DQL для необходимых бакетов.
 

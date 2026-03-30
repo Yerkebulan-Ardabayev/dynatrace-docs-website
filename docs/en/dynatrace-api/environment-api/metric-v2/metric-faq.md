@@ -17,7 +17,7 @@ Why is the last timestamp of the result in the future?
 In Dynatrace, metric data points are stored in time slots of different resolutions. The finest granularity of a time slot is one minute.
 The timestamps returned by the metrics query endpoint are the *end times* of these time slots.
 
-For example, if the current time is 09:24 a.m. and you query the last 6 hours at a 1-hour resolution, the timestamp of the last data point will be today at 10:00 a.m. For details, see [Timeframe note](get-data-points.md#timeframe-note "Read data points of one or multiple metrics via Metrics v2 API.").
+For example, if the current time is 09:24 a.m. and you query the last 6 hours at a 1-hour resolution, the timestamp of the last data point will be today at 10:00 a.m. For details, see Timeframe note.
 
 Why do the returned values grow larger for a larger timeframe?
 
@@ -188,7 +188,7 @@ Why is my ingested data point unavailable?
 There are multiple reasons why a data point could be unavailable. Try the following solutions.
 
 * Make sure that you receive a response with the `202` HTTP status code for the ingest endpoint.
-* It may take a couple of minutes until an ingested data point becomes available via the Metrics REST API and in [Data Explorer](../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights."). The solution is to wait.
+* It may take a couple of minutes until an ingested data point becomes available via the Metrics REST API and in Data Explorer. The solution is to wait.
 * Use the **Metric & Dimension Usage + Rejections** dashboard to check whether the data point was rejected at a later stage. A data point could be accepted by the ingestion endpoint, but later rejected because an invariant was broken.
 * Check the filters you're using. The data point may be filtered out by a management zone or a timeframe filter.
 

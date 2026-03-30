@@ -167,7 +167,7 @@ In this example, you see the following log line in the log file (not stored in D
 7. Go to **Settings** > **Log Monitoring** > **Custom attributes** and select **Add custom attribute**.
 8. Create a custom attribute based on a parsed-out product identifier (`my.product.id`).  
    **Key**: `my.product.id`  
-   For details see, [Log custom attributes (Logs Classic)](../analyze-log-data/log-custom-attributes.md "Learn how to create and use custom attributes during log data ingestion.").
+   For details see, Log custom attributes (Logs Classic).
 9. Save your custom attribute.
 10. Now you can search and filter the log data by the `my.product.id` attribute in the log viewer.
 
@@ -310,7 +310,7 @@ Additionally, that log record contains the `cloud.provider` attribute with the `
    **Query**: `cloud.provider="aws" and content="Billed Duration"`  
    **Measure**: `Attribute value`  
    **Attribute**: `aws.billed.duration`  
-   For details see, [Log metrics (Logs Classic)](../analyze-log-data/log-metrics.md "Learn how to create and use Dynatrace log metrics to analyze log data.").
+   For details see, Log metrics (Logs Classic).
 9. Save your log metric.
 10. The `log.aws.billed.duration` metric is visible in Data Explorer, and you can use it throughout Dynatrace like any other metric. You can add it to your dashboard, include it in analysis, and even use it to create alerts.
 

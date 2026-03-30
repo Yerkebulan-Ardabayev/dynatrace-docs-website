@@ -11,8 +11,8 @@ scraped: 2026-03-06T21:30:00.295299
 
 Гибкость различных инструментов Dynatrace помогает оптимизировать процесс доставки. Основные компоненты:
 
-* [Site Reliability Guardian](site-reliability-guardian.md "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.") — приложение Dynatrace, которое автоматизирует валидацию релизов для проверки доступности, производительности, ёмкости и безопасности новой развёрнутой версии сервиса.
-* [Workflows](../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") — приложение Dynatrace, в котором последовательность действий собирается в процессы в графическом представлении. Эти рабочие процессы могут автоматически запускаться событиями в Dynatrace — по расписанию или вручную.
+* Site Reliability Guardian — приложение Dynatrace, которое автоматизирует валидацию релизов для проверки доступности, производительности, ёмкости и безопасности новой развёрнутой версии сервиса.
+* Workflows — приложение Dynatrace, в котором последовательность действий собирается в процессы в графическом представлении. Эти рабочие процессы могут автоматически запускаться событиями в Dynatrace — по расписанию или вручную.
 
 ## Введение
 
@@ -36,7 +36,7 @@ scraped: 2026-03-06T21:30:00.295299
 
 1. Настройте инструмент CI/CD
 
-   Ваш инструмент непрерывной интеграции (CI) или непрерывной доставки (CD), например Jenkins, может [отправлять бизнес-события в Dynatrace](../observe/business-observability/bo-api-ingest.md "Set up authentication for and ingest business events via API."). Эти события затем могут запускать валидации Site Reliability Guardian в рабочем процессе.
+   Ваш инструмент непрерывной интеграции (CI) или непрерывной доставки (CD), например Jenkins, может отправлять бизнес-события в Dynatrace. Эти события затем могут запускать валидации Site Reliability Guardian в рабочем процессе.
 
    Вы можете создать вспомогательную функцию, как в примере ниже, для вашего пайплайна, чтобы отправлять бизнес-события через API бизнес-событий.
 
@@ -229,12 +229,12 @@ scraped: 2026-03-06T21:30:00.295299
 
    ![Guardian example](https://dt-cdn.net/images/guardian-1077-6bdb4b505e.webp)
 
-   Подробнее см. в разделе [Create a Site Reliability guardian](site-reliability-guardian/create-srg.md "Create a guardian manually or from a predefined template.").
+   Подробнее см. в разделе Create a Site Reliability guardian.
 4. Создайте рабочий процесс
 
    Теперь, когда все данные на месте, вы можете создать рабочий процесс, который будет валидировать результаты тестов с помощью [действия guardian в рабочем процессе](site-reliability-guardian.md#automation "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.").
 
-   * Рабочий процесс запускается вашим пайплайном, отправляющим бизнес-событие. Для этого необходимо использовать [триггер по событию](../analyze-explore-automate/workflows/trigger.md#event-trigger "Introduction to workflow automation triggers for workflows."). Например, вы можете запустить рабочий процесс с помощью следующего фильтрующего запроса:
+   * Рабочий процесс запускается вашим пайплайном, отправляющим бизнес-событие. Для этого необходимо использовать триггер по событию. Например, вы можете запустить рабочий процесс с помощью следующего фильтрующего запроса:
 
      ```
      ((event.type == "guardian.validation.triggered") and stage == "dev")
@@ -403,7 +403,7 @@ scraped: 2026-03-06T21:30:00.295299
 
    limit 1 ,"timezone": "Europe/Warsaw", "enablePreview": true
    ```
-6. Если ваш пайплайн завершился успешно, вы можете запустить ещё один рабочий процесс, отправляющий уведомление члену вашей команды, который может одобрить продвижение. Для этого вы можете использовать один из [коннекторов Workflows](../analyze-explore-automate/workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems."), например Slack, Microsoft Teams или Jira.
+6. Если ваш пайплайн завершился успешно, вы можете запустить ещё один рабочий процесс, отправляющий уведомление члену вашей команды, который может одобрить продвижение. Для этого вы можете использовать один из коннекторов Workflows, например Slack, Microsoft Teams или Jira.
 
    Вот пример успешной сборки Jenkins, выполняющей описанные выше тесты.
 

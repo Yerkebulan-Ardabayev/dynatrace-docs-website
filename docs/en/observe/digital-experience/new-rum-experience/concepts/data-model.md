@@ -17,7 +17,7 @@ The New RUM Experience provides deep visibility into how end users interact with
 
 ## User Events
 
-In the New RUM Experience, all end-user data is captured as **user events**, which are stored in the `user.events` table. For details, see [User events](../../../../semantic-dictionary/model/rum/user-events.md "User events provide deep visibility and insights into experience, behavior, performance, and errors of your customers and end-users in real-time.") in the Semantic Dictionary.
+In the New RUM Experience, all end-user data is captured as **user events**, which are stored in the `user.events` table. For details, see User events in the Semantic Dictionary.
 
 Each event includes the following attributes:
 
@@ -37,11 +37,11 @@ The concept of **pages** applies only to web frontends, where it represents an H
 * On web, unlike pages, switching to a new view does not require a full page load.
 * On mobile, a view represents a specific screen presented to the user.
 
-Data collected for a page or viewâsuch as performance metrics and error countsâis aggregated in [page summary](../../../../semantic-dictionary/model/rum/user-events/navigation-related.md#page-summary) or [view summary](../../../../semantic-dictionary/model/rum/user-events/navigation-related.md#view-summary) events.
+Data collected for a page or viewâsuch as performance metrics and error countsâis aggregated in page summary or view summary events.
 
-[Navigations](../../../../semantic-dictionary/model/rum/user-events/navigation-related.md#navigation) describe the transitions from one view to another or from one page to another.
+Navigations describe the transitions from one view to another or from one page to another.
 
-To learn more about pages, views, and navigations in web frontends, see [Pages, views, and navigations in the New RUM Experience](../web-frontends/concepts/pages-views-and-navigations.md "Understand how pages, views, and navigations are defined for web frontends the New RUM Experience."). To learn more about views and navigations in mobile frontends, refer to [Concepts for mobile frontends](../mobile-frontends/mobile-rum-concepts.md "Learn about concepts for mobile frontends in the New RUM Experience.").
+To learn more about pages, views, and navigations in web frontends, see Pages, views, and navigations in the New RUM Experience. To learn more about views and navigations in mobile frontends, refer to Concepts for mobile frontends.
 
 ### User interactions
 
@@ -52,9 +52,9 @@ Early Access
 * For web applications, this includes events such as clicks, scrolls, and mouseover.
 * For mobile applications, it includes mobile touches.
 
-For a complete list of user interactions, see [User interactions](../../../../semantic-dictionary/model/rum/user-events/user-interactions.md) in the Semantic Dictionary.
+For a complete list of user interactions, see User interactions in the Semantic Dictionary.
 
-Capturing user interactions can be enabled as described in [Configure user interaction capturing for web frontends](../web-frontends/additional-configuration/user-interactions.md "Learn how to configure and customize user interaction capturing for web frontends.") and [Configure user interaction capturing for mobile frontends](../mobile-frontends/additional-configuration/user-interactions-mobile.md "Learn how to configure user interaction capturing for mobile frontends.").
+Capturing user interactions can be enabled as described in Configure user interaction capturing for web frontends and Configure user interaction capturing for mobile frontends.
 
 In RUM Classic, user interactions were only recorded when they were part of a user action involving a request. In the New RUM Experience, this restriction does not applyâinteractions can be captured independently of any request.
 
@@ -65,11 +65,11 @@ A user action represents a significant operation within the frontend and its imp
 * a click followed by an XHR request
 * a soft navigation followed by DOM mutations
 
-Currently, user actions are only available for web frontends. For details, see [User actions in web frontends](../web-frontends/concepts/user-actions.md "Learn about the user action concept for web frontends in the New RUM Experience.").
+Currently, user actions are only available for web frontends. For details, see User actions in web frontends.
 
 ### Requests
 
-[Request events](../../../../semantic-dictionary/model/rum/user-events/requests.md) capture requests issued by the browser or mobile app, such as HTTP calls. They include details like the URL, HTTP method, and status code for HTTP requests, along with performance metricsâfor example, values from the [W3C Resource Timingï»¿](https://www.w3.org/TR/resource-timing/) and [W3C Navigation Timingï»¿](https://www.w3.org/TR/navigation-timing-2/) APIs in web frontends.
+Request events capture requests issued by the browser or mobile app, such as HTTP calls. They include details like the URL, HTTP method, and status code for HTTP requests, along with performance metricsâfor example, values from the [W3C Resource Timingï»¿](https://www.w3.org/TR/resource-timing/) and [W3C Navigation Timingï»¿](https://www.w3.org/TR/navigation-timing-2/) APIs in web frontends.
 
 ### Errors
 
@@ -78,8 +78,8 @@ The New RUM Experience captures a wide range of error types, including:
 * Failed requests
 * Uncaught exceptions
 * CSP violations in web frontends
-* [Crashes](../mobile-frontends/mobile-rum-concepts.md#crashes "Learn about concepts for mobile frontends in the New RUM Experience.") in mobile frontends
-* [Application Not Responding (ANR) errors](../mobile-frontends/mobile-rum-concepts.md#anr "Learn about concepts for mobile frontends in the New RUM Experience.") in mobile frontends
+* Crashes in mobile frontends
+* Application Not Responding (ANR) errors in mobile frontends
 
 For the full specification of errors, see [Semantic DictionaryâGlobal field referenceâError](../../../../semantic-dictionary/fields.md#error "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
 
@@ -89,19 +89,19 @@ For the full specification of errors, see [Semantic DictionaryâGlobal field
 
 Unlike RUM Classic, there is no limit on the number of user actions per session.
 
-You can add a **user identifier** to each session via the [RUM JavaScript APIï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc-latest/functions/Types.dynatrace.identifyUser.html) or the [mobile RUM APIs](../mobile-frontends/new-rum-apis.md "Explore the new Real User Monitoring (RUM) APIs for mobile frontends, including startup configuration, event reporting, error handling, view tracking, and advanced features for Dynatrace on Grail.") to facilitate analysis based on user context. If your code already calls the RUM Classic API to identify a user, this call is also effective for the New RUM Experience.
+You can add a **user identifier** to each session via the [RUM JavaScript APIï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc-latest/functions/Types.dynatrace.identifyUser.html) or the mobile RUM APIs APIs for mobile frontends, including startup configuration, event reporting, error handling, view tracking, and advanced features for Dynatrace on Grail.") to facilitate analysis based on user context. If your code already calls the RUM Classic API to identify a user, this call is also effective for the New RUM Experience.
 
-To learn more about the user session lifecyle in web frontends, see [User sessions in web frontends](../web-frontends/concepts/user-sessions-web.md "Understand user sessions and their lifecycle for web frontends the New RUM Experience."). For the full specification of user sessions, see [User sessions](../../../../semantic-dictionary/model/rum/user-sessions.md "User sessions provide a summary of the user events from the same customer or end-user of your application during a limited period of time.") in the Semantic Dictionary.
+To learn more about the user session lifecyle in web frontends, see User sessions in web frontends. For the full specification of user sessions, see User sessions in the Semantic Dictionary.
 
 ## Event and session properties
 
 **Event and session properties** are custom key-value pairs you can define to enrich captured user events and sessions. These properties enable, for example, powerful queries, filtering, and the creation of custom metrics.
 
-To learn how to add event and session properties, see [Capture event and session properties for web frontends](../web-frontends/additional-configuration/event-and-session-properties.md "Learn how to capture event and session properties for web frontends.") and [Capture event and session properties for mobile frontends](../mobile-frontends/additional-configuration/event-and-session-properties.md "Learn how to capture event and session properties for mobile frontends.").
+To learn how to add event and session properties, see Capture event and session properties for web frontends and Capture event and session properties for mobile frontends.
 
 ## Related topics
 
-* [Concepts for web frontends](../web-frontends/concepts.md "Learn about concepts for web frontends in the New RUM Experience.")
-* [Concepts for mobile frontends](../mobile-frontends/mobile-rum-concepts.md "Learn about concepts for mobile frontends in the New RUM Experience.")
-* [User events](../../../../semantic-dictionary/model/rum/user-events.md "User events provide deep visibility and insights into experience, behavior, performance, and errors of your customers and end-users in real-time.")
-* [User sessions](../../../../semantic-dictionary/model/rum/user-sessions.md "User sessions provide a summary of the user events from the same customer or end-user of your application during a limited period of time.")
+* Concepts for web frontends
+* Concepts for mobile frontends
+* User events
+* User sessions

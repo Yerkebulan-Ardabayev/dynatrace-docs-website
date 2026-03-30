@@ -33,7 +33,7 @@ The recommended resources for this combined scenario are:
 
 If you need additional data processing (for example, filter or transform processors), system requirements will increase.
 
-For specific scaling and infrastructure architecture considerations, see [Deploy Dynatrace OTel Collector](deployment.md "How to deploy Dynatrace OTel Collector.") and [How to scale the OpenTelemetry Collector](scaling.md "How to scale the OpenTelemetry Collector.").
+For specific scaling and infrastructure architecture considerations, see Deploy Dynatrace OTel Collector and How to scale the OpenTelemetry Collector.
 
 ### Specific load scenarios
 

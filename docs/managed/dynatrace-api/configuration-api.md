@@ -18,131 +18,131 @@ Dynatrace configuration API helps you keep track of your Dynatrace monitoring en
 
 ## Basics
 
-[Authentication](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.")
+Authentication
 
-[Response codes](/managed/dynatrace-api/basics/dynatrace-api-response-codes "Find out which HTTP response codes are used in the Dynatrace API.")
+Response codes
 
-[Access limit](/managed/dynatrace-api/basics/access-limit "Find out about payload limits and request throttling that may affect your use of the Dynatrace API.")
+Access limit
 
-[Preview and Early Adopter releases](/managed/dynatrace-api/basics/preview-early-access "How Preview and Early Adopter releases of Dynatrace API endpoints work")
+Preview and Early Adopter releases
 
-[Migration guides](/managed/dynatrace-api/basics/deprecation-migration-guides "Migrate your automation to newer endpoints of the Dynatrace API.")
+Migration guides
 
 ## Endpoints
 
 ### Anomaly detection
 
-[Applications](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-applications "Learn what the Dynatrace Anomaly detection API for applications offers.")
+Applications
 
-[AWS](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-aws "Learn what the Dynatrace Anomaly detection API for AWS offers.")
+AWS
 
-[Database services](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-database "Learn what the Dynatrace Anomaly detection API for database services offers.")
+Database services
 
-[Disk events](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-disk-events "Learn what the Dynatrace Anomaly detection API for disk events offers.")
+Disk events
 
-[Hosts](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-hosts "Learn what the Dynatrace Anomaly detection API for hosts offers.")
+Hosts
 
-[Process groups](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-process-groups "Learn what the Dynatrace Anomaly detection API for process groups offers.")
+Process groups
 
-[Services](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-services "Learn what the Dynatrace Anomaly detection API for services offers.")
+Services
 
-[VMware](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-vmware "Learn what the Dynatrace Anomaly detection API for VMware offers.")
+VMware
 
 ### AWS
 
-[AWS credentials](/managed/dynatrace-api/configuration-api/aws-credentials-api "Learn what the Dynatrace AWS credentials config API offers.")
+AWS credentials
 
-[AWS PrivateLink](/managed/dynatrace-api/configuration-api/aws-privatelink "Learn what the Dynatrace AWS PrivateLink config API offers.")
+AWS PrivateLink
 
-[AWS supported services](/managed/dynatrace-api/configuration-api/aws-supported-services "Fetch a list of AWS supported services via the Dynatrace API.")
+AWS supported services
 
 ### Azure
 
-[Azure credentials](/managed/dynatrace-api/configuration-api/azure-credentials-api "Learn what the Dynatrace Azure credentials config API offers.")
+Azure credentials
 
-[Azure supported services](/managed/dynatrace-api/configuration-api/azure-supported-services "Fetch a list of Azure supported services via the Dynatrace API.")
+Azure supported services
 
 ### Calculated metrics
 
-[Mobile app metrics](/managed/dynatrace-api/configuration-api/calculated-metrics/mobile-app-metrics "Manage calculated metrics for mobile and custom apps via the Dynatrace configuration API.")
+Mobile app metrics
 
-[Service metrics](/managed/dynatrace-api/configuration-api/calculated-metrics/service-metrics "Manage calculated service metrics via the Dynatrace configuration API.")
+Service metrics
 
-[Synthetic metrics](/managed/dynatrace-api/configuration-api/calculated-metrics/synthetic-metrics "Manage calculated synthetic metrics via the Dynatrace configuration API.")
+Synthetic metrics
 
-[Web application metrics](/managed/dynatrace-api/configuration-api/calculated-metrics/rum-metrics "Manage calculated web application metrics via the Dynatrace configuration API.")
+Web application metrics
 
 ### Conditional naming
 
-[Conditional naming](/managed/dynatrace-api/configuration-api/conditional-naming "Learn what the Dynatrace configuration API for conditional naming offers.")
+Conditional naming
 
 ### Data privacy
 
-[Data privacy](/managed/dynatrace-api/configuration-api/data-privacy-api "Learn what the Dynatrace data privacy config API offers.")
+Data privacy
 
 ### Dashboards
 
-[Dashboards](/managed/dynatrace-api/configuration-api/dashboards-api "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.")
+Dashboards
 
 ### Extensions
 
-[Extensions](/managed/dynatrace-api/configuration-api/extensions-api "Learn what the Dynatrace Extension API offers.")
+Extensions
 
-[Plugins](/managed/dynatrace-api/configuration-api/plugins-api "Find out how to manage plugins via Dynatrace configuration API.")
+Plugins
 
 ### Mobile
 
-[Mobile and custom app configuration](/managed/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration "Learn what the Dynatrace mobile and custom app config API offers.")
+Mobile and custom app configuration
 
-[Mobile symbolication](/managed/dynatrace-api/configuration-api/mobile-symbolication-api "Manage mobile symbol files via the Dynatrace API.")
+Mobile symbolication
 
 ### OneAgent
 
-[OneAgent on a host](/managed/dynatrace-api/configuration-api/oneagent-configuration/oneagent-on-host "Manage the configuration of OneAgent instances on your hosts via the Dynatrace API.")
+OneAgent on a host
 
-[OneAgent in a host group](/managed/dynatrace-api/configuration-api/oneagent-configuration/oneagent-in-host-group "Manage the configuration of OneAgent instances in your host groups via the Dynatrace API.")
+OneAgent in a host group
 
-[Environment-wide configuration](/managed/dynatrace-api/configuration-api/oneagent-configuration/oneagent-environment-wide "Manage environment-wide configuration of OneAgent via the Dynatrace API.")
+Environment-wide configuration
 
 ### Remote environments
 
-[Remote environments](/managed/dynatrace-api/configuration-api/remote-environments "Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.")
+Remote environments
 
 ### Reports
 
-[Reports](/managed/dynatrace-api/configuration-api/reports-api "Manage reports via the Dynatrace configuration API.")
+Reports
 
 ### RUM
 
-[Allowed beacon origins for CORS](/managed/dynatrace-api/configuration-api/rum/allowed-beacon-cors "Learn what the Dynatrace configuration API for allowed beacon origins for Cross Origin Resource Sharing offers.")
+Allowed beacon origins for CORS
 
-[Applications detection configuration](/managed/dynatrace-api/configuration-api/rum/application-detection-configuration "Learn what the Dynatrace application detection API offers.")
+Applications detection configuration
 
-[Calculated web application metrics](/managed/dynatrace-api/configuration-api/calculated-metrics/rum-metrics "Manage calculated web application metrics via the Dynatrace configuration API.")
+Calculated web application metrics
 
-[Content resources](/managed/dynatrace-api/configuration-api/rum/content-resources "Learn what the Dynatrace configuration API for content resources offers.")
+Content resources
 
-[Geographic regions - IP address mapping rules](/managed/dynatrace-api/configuration-api/rum/geographic-regions-ip-address "Learn what the Dynatrace configuration API for IP address mapping rules offers.")
+Geographic regions - IP address mapping rules
 
-[Geographic regions - IP mapping headers](/managed/dynatrace-api/configuration-api/rum/geographic-regions-ip-header "Learn what the Dynatrace configuration API for IP mapping headers offers.")
+Geographic regions - IP mapping headers
 
-[Mobile and custom app configuration](/managed/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration "Learn what the Dynatrace mobile and custom app config API offers.")
+Mobile and custom app configuration
 
-[Web application configuration](/managed/dynatrace-api/configuration-api/rum/web-application-configuration-api "Learn what the Dynatrace web application config API offers.")
+Web application configuration
 
 ### Services
 
-[Calculated service metrics](/managed/dynatrace-api/configuration-api/calculated-metrics/service-metrics "Manage calculated service metrics via the Dynatrace configuration API.")
+Calculated service metrics
 
-[Custom services](/managed/dynatrace-api/configuration-api/service-api/custom-services-api "Learn what the Dynatrace custom services config API offers.")
+Custom services
 
-[Failure detection](/managed/dynatrace-api/configuration-api/service-api/failure-detection "Learn what the Dynatrace failure detection config API offers.")
+Failure detection
 
-[Request attributes](/managed/dynatrace-api/configuration-api/service-api/request-attributes-api "Learn what the Dynatrace request attribute config API offers.")
+Request attributes
 
-[Request naming](/managed/dynatrace-api/configuration-api/service-api/request-naming-api "Learn what the Dynatrace request naming config API offers.")
+Request naming
 
-[Service detection rules](/managed/dynatrace-api/configuration-api/service-api/detection-rules "Learn what the Dynatrace services detection rules config API offers.")
+Service detection rules
 
 ## API Explorer
 

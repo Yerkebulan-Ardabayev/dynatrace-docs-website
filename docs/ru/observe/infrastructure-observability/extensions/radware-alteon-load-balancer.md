@@ -34,7 +34,7 @@ scraped: 2026-03-06T21:31:00.869391
 
 Активируйте расширение в вашей среде через встроенный Hub, укажите необходимую конфигурацию устройства, и настройка завершена.
 
-Подробнее см. [документацию по источнику данных расширения SNMP](../../../ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions.md "Learn how to create an SNMP extension using the Extensions framework.").
+Подробнее см. документацию по источнику данных расширения SNMP.
 
 ## Подробности
 

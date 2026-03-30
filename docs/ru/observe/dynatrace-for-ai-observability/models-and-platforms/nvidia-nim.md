@@ -18,14 +18,14 @@ Kubernetes
 
 OpenTelemetry Collector
 
-Следуйте руководству [Настройка Dynatrace в Kubernetes](../../../ingest-from/setup-on-k8s.md "Способы развертывания и настройки Dynatrace в Kubernetes") для мониторинга вашего кластера.
+Следуйте руководству Настройка Dynatrace в Kubernetes для мониторинга вашего кластера.
 
 После этого добавьте следующие аннотации к вашим развертываниям NVIDIA NIM:
 
 * `metrics.dynatrace.com/scrape: "true"`
 * `metrics.dynatrace.com/port: "8000"`
 
-Следуйте [руководству по установке OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector/deployment.md "Как развернуть Dynatrace OTel Collector.") для развертывания коллектора.
+Следуйте руководству по установке OpenTelemetry Collector для развертывания коллектора.
 С помощью следующей конфигурации коллектор будет собирать метрики ИИ каждые 10 секунд с конечной точки `<NIM-endpoint>:8000`.
 
 ```
@@ -169,5 +169,5 @@ exporters: [otlp_http]
 
 ## Связанные темы
 
-* [Конечные точки Dynatrace OTLP API](../../../ingest-from/opentelemetry/otlp-api.md "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.")
-* [Об импорте метрик OTLP](../../../ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Узнайте, как Dynatrace импортирует метрики OpenTelemetry и какие ограничения применяются.")
+* Конечные точки Dynatrace OTLP API
+* Об импорте метрик OTLP

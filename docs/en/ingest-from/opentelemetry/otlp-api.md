@@ -19,7 +19,7 @@ Dynatrace provides native OTLP endpoints with the following services:
 * The Dynatrace SaaS platform.
 * ActiveGate instances.
 
-Alternatively, you can deploy the [Dynatrace Collector](collector.md "Learn about the Dynatrace OTel Collector.") as an intermediary service application to batch requests and improve network performance, or to transform requests before forwarding them to Dynatrace (for example, [mask sensitive data](collector/use-cases/redact.md "Configure the OpenTelemetry Collector to mask sensitive data before forwarding to Dynatrace.")).
+Alternatively, you can deploy the Dynatrace Collector as an intermediary service application to batch requests and improve network performance, or to transform requests before forwarding them to Dynatrace (for example, mask sensitive data).
 
 ## Default ingest paths
 
@@ -31,13 +31,13 @@ The ingest paths used by Dynatrace for the individual signal types follow the [s
 | Metrics | `/v1/metrics` |
 | Logs | `/v1/logs` |
 
-Depending on the configuration, you may need to append these paths individually to the base URLs of the following service endpoints when specifying the export URLs. This can happen either in-code, when using [manual instrumentation](walkthroughs.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace."), or using the standard [environment variablesï»¿](https://opentelemetry.io/docs/languages/sdk-configuration/otlp-exporter/#endpoint-configuration).
+Depending on the configuration, you may need to append these paths individually to the base URLs of the following service endpoints when specifying the export URLs. This can happen either in-code, when using manual instrumentation into Dynatrace."), or using the standard [environment variablesï»¿](https://opentelemetry.io/docs/languages/sdk-configuration/otlp-exporter/#endpoint-configuration).
 
 ## Export to Dynatrace
 
 ### Base URLs
 
-The following addresses provide the base URLs for your OTLP ingest configuration. Use the URL applicable to your type of environment and replace the relevant part with your [environment ID](../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+The following addresses provide the base URLs for your OTLP ingest configuration. Use the URL applicable to your type of environment and replace the relevant part with your environment ID.
 You will also use the base URL if you define the `OTEL_EXPORTER_OTLP_ENDPOINT` environment variable, see [Environment variables](#environment-variables).
 
 | API Type | Base URL |
@@ -52,7 +52,7 @@ Environment ActiveGates listen by default on port `9999`. If you changed that po
 
 2
 
-A [PVC](../setup-on-k8s/guides/deployment-and-configuration/activegate-pvc.md "Set up a persistent storage for containerized ActiveGate to be used as temporary storage for ingested data.") is required for this setup.
+A PVC is required for this setup.
 
 If you copy your environment ID from the browser's address bar, make sure to remove `.apps`.
 
@@ -77,7 +77,7 @@ Information enrichment
 
 Vanilla OTLP exports to ActiveGate require manual enrichment of Dynatrace host information to have the proper topology information.
 
-To do so, make sure your traces have the correct mapping resource attributes set. The list of applicable attributes can be found in (or imported from) the [enrichment files](../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+To do so, make sure your traces have the correct mapping resource attributes set. The list of applicable attributes can be found in (or imported from) the enrichment files.
 
 ### API limitations
 
@@ -85,7 +85,7 @@ Calls to Dynatrace API endpoints have the following limitations.
 
 * gRPC is not supported.
   API calls need to use HTTP.
-  You can use a Collector to transform a gRPC OTLP request to its HTTP counterpart, see [Transform OTLP gRPC to HTTP with the OpenTelemetry Collector](collector/use-cases/grpc.md "Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.").
+  You can use a Collector to transform a gRPC OTLP request to its HTTP counterpart, see Transform OTLP gRPC to HTTP with the OpenTelemetry Collector.
 * JSON is not supported for Protocol Buffers.
   Binary format must be used.
 
@@ -103,12 +103,12 @@ OTEL_EXPORTER_OTLP_HEADERS="Authorization=Api-Token [YOUR_TOKEN]"
 OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf
 ```
 
-For more information about language-specific configuration, see [Instrument your application](walkthroughs.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
+For more information about language-specific configuration, see Instrument your application into Dynatrace.").
 
 ### Authentication and access tokens
 
 For exports to SaaS and ActiveGate, authentication is handled using an API access token and the `Authorization` HTTP header.
-For more information on access tokens, see [Dynatrace API - Tokens and authentication](../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+For more information on access tokens, see Dynatrace API - Tokens and authentication.
 
 To create an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
 Use the appropriate access scopes for the signals that you want to export.
@@ -131,15 +131,15 @@ Verify that the following are true:
 
 ## Export to the Collector
 
-Using the Collector as an intermediate gateway allows you to streamline and optimize your telemetry data and requests centrally. See [OpenTelemetry Collector use cases](collector/use-cases.md "Configure your Collector instance for different use cases.") for more information and sample configurations for popular Collector use cases.
+Using the Collector as an intermediate gateway allows you to streamline and optimize your telemetry data and requests centrally. See OpenTelemetry Collector use cases for more information and sample configurations for popular Collector use cases.
 
-See [Dynatrace OTel Collector](collector.md "Learn about the Dynatrace OTel Collector.") for more details on how to configure a Collector instance.
+See Dynatrace OTel Collector for more details on how to configure a Collector instance.
 
 gRPC conversion
 
 As Dynatrace currently requires OTLP exports with HTTP, you can use the Collector to convert gRPC exports to HTTP.
 
-See [Transform OTLP gRPC to HTTP with the OpenTelemetry Collector](collector/use-cases/grpc.md "Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.") for more details.
+See Transform OTLP gRPC to HTTP with the OpenTelemetry Collector for more details.
 
 ### Authentication and TLS
 
@@ -157,4 +157,4 @@ Verify that the following are true:
 
 ## Related topics
 
-* [OpenTelemetry Protocol (OTLP) ingest API](../../dynatrace-api/environment-api/opentelemetry.md "Use Dynatrace API as a target for OpenTelemetry exporters to ingest OpenTelemetry metrics, logs, and traces.")
+* OpenTelemetry Protocol (OTLP) ingest API

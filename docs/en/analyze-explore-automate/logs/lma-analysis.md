@@ -18,7 +18,7 @@ Log Management and Analytics gives you direct access to the log content of all y
 
 The logs and events viewer enables you to present log data in a filterable table that is easy to work with and to browse log data within a certain timeframe using detected aspects of the log content. You can use **Available attributes** to narrow down your log view and focus on a specific aspect of the log content.
 
-* See [Logs and events viewer](lma-analysis/logs-and-events.md "Browse log data within a specified timeframe using DQL and elements that are automatically detected within the log content.")
+* See Logs and events viewer
 
 User rights for log monitoring
 
@@ -28,22 +28,22 @@ Logs often contain sensitive information that may not be appropriate for all use
 
 Once you create log events based on your log content, Dynatrace artificial intelligence will automatically correlate relevant log events with any problems that it detects in your environment. Relevant log events that are associated with problems are then factored into problem root-cause analysis.
 
-* See [Log events](lma-log-processing/lma-log-events.md "Create log events based on log data and use them in problem detection.")
+* See Log events
 
 ## Log metrics
 
 Dynatrace log monitoring gives you the ability not only to view and analyze logs but also to create metrics based on log data and use them throughout Dynatrace like any other metric. You can add them to your dashboard, include them in analysis, and even create custom alerts.
 
-* See [Log metrics](lma-log-processing/lma-log-metrics.md "Create metrics based on log data and use them throughout Dynatrace like any other metric.")
+* See Log metrics
 
 ## Log custom attributes
 
 In Dynatrace log monitoring, you can define your own custom log data attributes that suits your particular log data format. Similarly to the automatically detected log attributes, your custom log attributes are extracted from the log data during ingestion and become available within Dynatrace.
 
-* See [Log custom attributes](lma-analysis/logs-and-events/lma-log-custom-attributes.md "Create and use custom attributes during log data ingestion.")
+* See Log custom attributes
 
 ## Enriched log data analysis
 
 With enriched log data, you can check for the specific user inside your application. Use the log viewer and PurePathÂ® distributed traces link from a specific log record. You can view all logs for a particular user session to see how the user interacted with the application and, with the **Logs** tab in distributed traces, you can navigate through the trace and, based on logs associated with that trace, quickly see what happened.
 
-* See [Leverage log enrichment for traces to resolve problems](../../observe/application-observability/distributed-traces/use-cases/problems-logs-traces.md "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.")
+* See Leverage log enrichment for traces to resolve problems

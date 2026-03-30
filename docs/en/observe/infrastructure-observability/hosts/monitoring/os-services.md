@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:19:55.370527
 
 Dynatrace provides out-of-the-box availability monitoring of OS services.
 
-You can monitor hosts in full-stack monitoring mode or use lightweight monitoring modes. For more information, see [OneAgent monitoring modes](../../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
+You can monitor hosts in full-stack monitoring mode or use lightweight monitoring modes. For more information, see OneAgent monitoring modes.
 
 ## Requirements
 
@@ -29,7 +29,7 @@ Depending on your monitoring requirements, you can choose between basic or advan
 
 Basic alerting provides insight only into the service status. The system will monitor an OS service's current status and alert you when it changes from running to failed.
 
-With the service status property in ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") [Smartscape](../../../../analyze-explore-automate/smartscape-classic.md "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment."), you can query the current status of the service.
+With the service status property in ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") Smartscape, you can query the current status of the service.
 
 #### Example
 
@@ -42,7 +42,7 @@ fetch `dt.entity.os:service`
 
 ![Service status - Basic monitoring](https://dt-cdn.net/images/os-service-status-dashboard-example-light-919-5bd9bbe242.png)
 
-If the alert is enabled, events and problems are created when a service status changes, such as when a service goes from running to failed. For more details, refer to [Host availability](host-monitoring/host-availability.md "Check host availability, interpret host availability states, and see how maintenance windows are reflected in host availability charts.").
+If the alert is enabled, events and problems are created when a service status changes, such as when a service goes from running to failed. For more details, refer to Host availability.
 
 #### Failed service alert
 
@@ -123,7 +123,7 @@ The order of service monitoring policies is important. Policies that are higher 
 2. **System**: select your operating system.
 3. **Rule name**: enter the name that will be displayed in the **Summary** field.
 4. **Monitor**: decide whether you want to monitor service availability using the **OS service availability** (`builtin:osservice.availability`) metric. If available, the metric sends the service status every 10 seconds. The status is carried by the [**Service status**](#service-status) (`dt.osservice.status`) dimension.  
-   Note that the metric consumes data points. For more information, see [Metrics powered by Grail](../../../../license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+   Note that the metric consumes data points. For more information, see Metrics powered by Grail.
 5. **Alert**: decide whether you want alerting for your policy.
 6. OneAgent version 1.257+ **Alert if service is not installed**: whether you want to receive alerts about OS services that are not installed on the host.
 7. **Service status**: set the service status for which an alert should be triggered.
@@ -370,21 +370,21 @@ Dynatrace version 1.243+
 
 OneAgent version 1.243+
 
-The [Host overview](host-monitoring.md "Monitor hosts with Dynatrace.") page contains the **OS services analysis** section listing the OS services for which any policy (with active alerting or monitoring) is fulfilled.
+The Host overview page contains the **OS services analysis** section listing the OS services for which any policy (with active alerting or monitoring) is fulfilled.
 
 1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
 2. Select any host to go to its overview page.
 3. In the **OS services analysis** section, select the service name to open the **Service overview** page.
 
-For more information, see [OS services analysis](host-monitoring.md#os-services "Monitor hosts with Dynatrace.").
+For more information, see OS services analysis.
 
 ## Configure at scale using Settings API
 
-You can use the [Settings API](../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") to configure your service availability monitoring at scale.
+You can use the Settings API to configure your service availability monitoring at scale.
 
-1. To learn the schema, use [GET a schema](../../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") with `builtin:os-services-monitoring` as the schemaId.
+1. To learn the schema, use GET a schema with `builtin:os-services-monitoring` as the schemaId.
 2. Based on the `builtin:os-services-monitoring` schema, create your configuration object.
-3. To create your configuration, use [POST an object](../../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.").
+3. To create your configuration, use POST an object.
 
 ## Limitations
 

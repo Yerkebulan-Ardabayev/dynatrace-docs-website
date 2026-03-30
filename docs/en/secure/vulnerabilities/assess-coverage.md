@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:32:08.678905
 * Explanation
 * Published Dec 18, 2025
 
-To gain insights into your environment's [Runtime Vulnerability Analytics (RVA)](../application-security/vulnerability-analytics.md "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") coverage and pinpoint areas of exposure, you can use the readyâmade **Vulnerability coverage** dashboard.
+To gain insights into your environment's Runtime Vulnerability Analytics (RVA) coverage and pinpoint areas of exposure, you can use the readyâmade **Vulnerability coverage** dashboard.
 
 The dashboard currently addresses library vulnerability coverage in runtime. Support for additional types, such as codeâlevel vulnerabilities, Kubernetes, and runtime coverage, is planned for upcoming releases.
 
@@ -55,7 +55,7 @@ Host coverage is derived from process monitoring. A host is considered covered i
 The following explains how host coverage is determined for library vulnerabilities.
 
 1. Dynatrace first collects all monitored processes.
-2. Monitoring rules are applied to processes. If a process is excluded by your [monitoring rules](../application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv.md "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes."), the corresponding host is not considered covered, which decreases overall host coverage.
+2. Monitoring rules are applied to processes. If a process is excluded by your monitoring rules, the corresponding host is not considered covered, which decreases overall host coverage.
 
 ### Improve host coverage
 
@@ -65,7 +65,7 @@ Steps to improve coverage:
 
 1. [Enable Third-party Vulnerability Analytics](../application-security/vulnerability-analytics.md#enable-tpva "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") globally.
 2. Enable all the [supported technologies](../application-security/vulnerability-analytics.md#tech-tpv "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") you want Dynatrace to monitor. Only hosts running processes on listed and enabled technologies are reflected in coverage.
-3. Adjust your [monitoring rules](../application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv.md "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.") to include the processes you want monitored. Excluding processes reduces host coverage.
+3. Adjust your monitoring rules to include the processes you want monitored. Excluding processes reduces host coverage.
 
 ## Use cases
 

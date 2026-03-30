@@ -20,7 +20,7 @@ When the same problem is detected multiple times within these periods, Dynatrace
 
 ![Problem raised](https://dt-cdn.net/images/frequent-issues-1124-d6a429a551.png)
 
-Problems that are less severe and have a shorter duration than previous alerts are considered to be frequent issues and so alerts are suppressed for these. For details on event severities, see [event types](event-analysis-and-correlation/event-categories.md "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.").
+Problems that are less severe and have a shorter duration than previous alerts are considered to be frequent issues and so alerts are suppressed for these. For details on event severities, see event types.
 
 This intelligent approach to detection and handling of frequent issues guarantees that you receive alerts for problems that increase in severity over time while simultaneously avoiding alert spamming.
 
@@ -73,7 +73,7 @@ See the expandable section below for an example of the evaluation process.
 
 Example
 
-For the sake of simplicity, this example only considers the 24-hours set. In this example the event type is [CPU saturation](event-analysis-and-correlation/event-categories/resource-events.md#cpu-saturation "Learn more about resource events and the logic behind raising them.") on a host.
+For the sake of simplicity, this example only considers the 24-hours set. In this example the event type is CPU saturation on a host.
 
 Historic events for the last 24 hours have the following durations and severities:
 

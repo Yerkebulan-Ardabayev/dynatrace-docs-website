@@ -38,9 +38,9 @@ To streamline your process, you want to create a template to prepare these queri
 
 In ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**, select one of the three ways to start a template:
 
-* **Create it from an investigation**: You can make a template from an existing investigation, for example, if you want to use the queries from a previous investigation. For instructions, see [Save investigations as templates](../../../secure/investigations/manage-templates.md#create-template-from-case "Reuse common queries and workflows in Investigations.").
-* **Upload it**: You can upload a template downloaded from a blog post or provided by the community. For instructions, see [Download and upload templates](../../../secure/investigations/manage-templates.md#download-upload-template "Reuse common queries and workflows in Investigations.").
-* **Duplicate it**: You can copy a template that you own or clone and edit a template that has been shared with you. For instructions, see [Duplicate templates](../../../secure/investigations/manage-templates.md#duplicate-template "Reuse common queries and workflows in Investigations.").
+* **Create it from an investigation**: You can make a template from an existing investigation, for example, if you want to use the queries from a previous investigation. For instructions, see Save investigations as templates.
+* **Upload it**: You can upload a template downloaded from a blog post or provided by the community. For instructions, see Download and upload templates.
+* **Duplicate it**: You can copy a template that you own or clone and edit a template that has been shared with you. For instructions, see Duplicate templates.
 
 ## Work with your template
 
@@ -48,24 +48,24 @@ Once you created a template, the following options are available.
 
 1. Modify the template
 
-You can modify your template if, for example, you want to remove some queries and add production cluster names to the evidence list in the template for faster access. For instructions, see [Edit templates](../../../secure/investigations/manage-templates.md#edit-template "Reuse common queries and workflows in Investigations.").
+You can modify your template if, for example, you want to remove some queries and add production cluster names to the evidence list in the template for faster access. For instructions, see Edit templates.
 
 2. Create a case from the template
 
-You can start a new investigation based on the initial input from your template. For instructions, see [Create cases from templates](../../../secure/investigations/manage-templates.md#create-case-from-template "Reuse common queries and workflows in Investigations.").
+You can start a new investigation based on the initial input from your template. For instructions, see Create cases from templates.
 
 3. Duplicate the template
 
-You can create another similar template for yourself based on your template. For instructions, see [Duplicate templates](../../../secure/investigations/manage-templates.md#duplicate-template "Reuse common queries and workflows in Investigations.").
+You can create another similar template for yourself based on your template. For instructions, see Duplicate templates.
 
 4. Share the template with others
 
-You can share your template with others to increase productivity and empower collaboration between within you, your team, and your organization. This enables your team members to save time when kicking off an investigation. Templates can be shared in a similar way with cases. For instructions, see [Duplicate templates](../../../secure/investigations/manage-templates.md#share-template "Reuse common queries and workflows in Investigations.").
+You can share your template with others to increase productivity and empower collaboration between within you, your team, and your organization. This enables your team members to save time when kicking off an investigation. Templates can be shared in a similar way with cases. For instructions, see Duplicate templates.
 
 ## Related topics
 
-* [Threat hunting and forensics](../../../secure/use-cases/threat-hunting.md "Use case scenario for threat hunting and forensics with Investigations.")
-* [Analyze AWS CloudTrail logs with Investigations](../../../secure/use-cases/analyze-aws-cloudtrail-logs-with-security-investigator.md "Analyze CloudTrail logs and find potential security issues with Dynatrace.")
-* [Analyze Amazon API Gateway access logs with Investigations](../../../secure/use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator.md "Monitor and identify errors in your Amazon API Gateway access logs with Dynatrace.")
-* [Detect threats against your AWS Secrets with Investigations](../../../secure/use-cases/detect-threats-against-aws-secrets-with-security-investigator.md "Monitor and identify potential threats against your AWS Secrets with Dynatrace.")
-* [Operationalize DQL query results with Investigations](../../../secure/use-cases/operationalize-query-results.md "Build DQL queries from your query results faster and more conveniently with Dynatrace Investigations.")
+* Threat hunting and forensics
+* Analyze AWS CloudTrail logs with Investigations
+* Analyze Amazon API Gateway access logs with Investigations
+* Detect threats against your AWS Secrets with Investigations
+* Operationalize DQL query results with Investigations

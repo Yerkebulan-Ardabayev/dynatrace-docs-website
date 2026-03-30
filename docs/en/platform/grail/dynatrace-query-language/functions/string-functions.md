@@ -929,7 +929,7 @@ Query result:
 
 ## replacePattern
 
-Replaces each substring of a string that matches the DPL pattern with the given string. The pattern must be defined as a constant string expression. For additional details about pattern syntax, see the [DPL documentation](../../dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.").
+Replaces each substring of a string that matches the DPL pattern with the given string. The pattern must be defined as a constant string expression. For additional details about pattern syntax, see the DPL documentation.
 
 #### Syntax
 
@@ -1376,11 +1376,11 @@ Query result:
 
 ## Related topics
 
-* [Dynatrace Query Language](../../dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Use DQL queries](../dql-guide.md "Find out how DQL works and what are DQL key concepts.")
-* [DQL compared to SQL and more](../dql-comparison.md "See how DQL compares to other query languages.")
-* [DQL language reference](../dql-reference.md "Dynatrace Query Language syntax reference.")
-* [DQL commands](../commands.md "A list of DQL commands.")
-* [DQL operators](../operators.md "A list of DQL Operators.")
-* [DQL data types](../data-types.md "A list of DQL data types.")
-* [DQL best practices](../dql-best-practices.md "Best practices for using Dynatrace Query Language.")
+* Dynatrace Query Language
+* Use DQL queries
+* DQL compared to SQL and more
+* DQL language reference
+* DQL commands
+* DQL operators
+* DQL data types
+* DQL best practices

@@ -14,24 +14,24 @@ scraped: 2026-03-05T21:26:00.148955
 
 ### Инструментирование
 
-* [Начало работы с мониторингом iOS](instrument-ios-app/instrumentation/get-started-with-ios-monitoring.md "Узнайте о шагах, необходимых для инструментирования iOS-приложения для мониторинга в Dynatrace.")
-* [Настройка OneAgent для iOS-приложений](instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios.md "Настройте мониторинг пользовательского опыта iOS-приложений в Dynatrace.")
-* [Инструментирование элементов управления SwiftUI](instrument-ios-app/instrumentation/instrument-swiftui-controls.md "Используйте инструментатор Dynatrace SwiftUI для мониторинга SwiftUI-приложений.")
-* [Функции автоинструментирования OneAgent для iOS](instrument-ios-app/instrumentation/ios-auto-instrumentation-features.md "Изучите список функций, доступных после инструментирования приложения с помощью OneAgent.")
-* [Файл Info.plist](instrument-ios-app/instrumentation/info-plist-file.md "Файл Info.plist хранит ключи идентификации и конфигурации приложения. Используйте его для тонкой настройки конфигурации инструментирования.")
+* Начало работы с мониторингом iOS
+* Настройка OneAgent для iOS-приложений
+* Инструментирование элементов управления SwiftUI
+* Функции автоинструментирования OneAgent для iOS
+* Файл Info.plist
 
 ### Настройка
 
-* [Расширенная конфигурация OneAgent для iOS](instrument-ios-app/customization/configuration-settings.md "Настройте автоинструментирование iOS-приложений с помощью расширенных параметров.")
-* [Ключи конфигурации OneAgent для iOS](instrument-ios-app/customization/ios-configuration-keys.md "С помощью ключей конфигурации можно тонко настроить автоинструментирование iOS-приложений.")
-* [OneAgent SDK для iOS](instrument-ios-app/customization/oneagent-sdk-for-ios.md "Расширьте возможности мониторинга пользовательского опыта мобильных приложений с помощью OneAgent SDK для iOS.")
-* [Отладочное журналирование OneAgent для iOS](instrument-ios-app/customization/logging-for-ios.md "Включите отладочное журналирование для OneAgent.")
+* Расширенная конфигурация OneAgent для iOS
+* Ключи конфигурации OneAgent для iOS
+* OneAgent SDK для iOS
+* Отладочное журналирование OneAgent для iOS
 
 ### Конфиденциальность данных
 
-[Настройка параметров конфиденциальности данных для мобильных приложений](additional-configuration/configure-rum-privacy-mobile.md "Используйте параметры конфиденциальности, предоставляемые Dynatrace, чтобы обеспечить соответствие мобильных приложений нормативным требованиям по защите данных в вашем регионе.")
+Настройка параметров конфиденциальности данных для мобильных приложений
 
-[Конфиденциальность пользователей для iOS](../../../manage/data-privacy-and-security/data-privacy/user-privacy-for-ios.md "Узнайте, какие данные собирает OneAgent при необходимости сообщения о конфиденциальности приложения в Apple.")
+Конфиденциальность пользователей для iOS
 
 Начиная с OneAgent для iOS версии 8.335, Dynatrace прекратила поддержку Xcode 16. Поддерживается только Xcode 26 и выше.
 

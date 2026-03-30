@@ -29,9 +29,9 @@ Use cases include:
 * **Preventive security configurations**: Block malicious IPs based on known attack patterns.
 * **Predictive capacity management**: Forecast capacity shortages to avoid resource related outages.
 
-AutomationEngine is not intended for mass data ingestion or mass data export. For large-scale data processing, consider using [OpenPipeline](openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") or building custom solutions with [Dynatrace Extensions](../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.").
+AutomationEngine is not intended for mass data ingestion or mass data export. For large-scale data processing, consider using OpenPipeline or building custom solutions with Dynatrace Extensions.
 
-[Dynatrace Workflows](../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), powered by AutomationEngine, puts automation use cases at your fingertips. Every automated workflow consists of easy configuration, extensive trigger options, out-of-the-box actions and integrations, and unprecedented extensibility by leveraging webhooks, JavaScript code, and application actions powered by [AppEngine](appengine.md "Develop feature-rich Dynatrace apps for you and the world!").
+Dynatrace Workflows, powered by AutomationEngine, puts automation use cases at your fingertips. Every automated workflow consists of easy configuration, extensive trigger options, out-of-the-box actions and integrations, and unprecedented extensibility by leveraging webhooks, JavaScript code, and application actions powered by AppEngine.
 
 ## Learn more
 

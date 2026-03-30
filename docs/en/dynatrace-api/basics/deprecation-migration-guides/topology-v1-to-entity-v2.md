@@ -10,7 +10,7 @@ scraped: 2026-03-05T21:27:12.459284
 * Reference
 * Published Mar 22, 2023
 
-The [Topology and Smartscape API](../../environment-api/topology-and-smartscape.md "Learn about the Dynatrace Topology and Smartscape API.") has been deprecated with [Dynatrace version 1.263](../../../whats-new/dynatrace-api/sprint-242.md "Changelog for Dynatrace API version 1.242"). Its replacement is the [Monitored entities API](../../environment-api/entity-v2.md "Learn about the Dynatrace Monitored entities API."). We recommend that you migrate to the new API at your earliest convenience.
+The Topology and Smartscape API has been deprecated with Dynatrace version 1.263. Its replacement is the Monitored entities API. We recommend that you migrate to the new API at your earliest convenience.
 
 This migration affects endpoint URLs, query parameters, and response/request body parameters, as well as the scope of the token for request authentication.
 
@@ -19,7 +19,7 @@ This migration affects endpoint URLs, query parameters, and response/request bod
 The Monitored entities API offers you the following new features:
 
 * Entity type agnostic endpointâyou can query every type of entity via the same URL
-* Powerful [entity selector](../../environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") that helps you to filter entities you want to read
+* Powerful entity selector that helps you to filter entities you want to read
 * Unified timeframe selector
 * Customizable return valueâyou can control which entity properties are included in the response
 * Entity types endpoints
@@ -41,7 +41,7 @@ The Monitored entities API offers you the following new features:
 
 ## Parameters
 
-To learn about new query/body parameters, see the documentation of individual requests in [Monitored entities API](../../environment-api/entity-v2.md "Learn about the Dynatrace Monitored entities API.").
+To learn about new query/body parameters, see the documentation of individual requests in Monitored entities API.
 
 ## Changes in workflow
 
@@ -56,11 +56,11 @@ When you query entities in a bulk, pagination is used to reduce the payload size
 
 ### Create custom devices
 
-In the Monitored entities API, you can't assign tags to the custom device upon creation. If you need to assign tags to your custom device, use a separate request to the [POST custom tags](../../environment-api/custom-tags/post-tags.md "Assign custom tags to monitored entities via Dynatrace API.") endpoint.
+In the Monitored entities API, you can't assign tags to the custom device upon creation. If you need to assign tags to your custom device, use a separate request to the POST custom tags endpoint.
 
 ### Report data to custom devices
 
-In the Monitored entities API, you can't report data to custom devices. Use the [POST ingest data points](../../environment-api/metric-v2/post-ingest-metrics.md "Ingest custom metrics to Dynatrace via Metrics v2 API.") call instead.
+In the Monitored entities API, you can't report data to custom devices. Use the POST ingest data points call instead.
 
 ## Examples
 
@@ -680,7 +680,7 @@ Monitored entities API
 
 Topology and Smartscape API
 
-In the new Monitored entities API, you can assign tags to multiple entities at the same time by selecting them via the [entity selector](../../environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints."). In this example, we select hosts by their entity IDs.
+In the new Monitored entities API, you can assign tags to multiple entities at the same time by selecting them via the entity selector. In this example, we select hosts by their entity IDs.
 
 #### Request URL
 
@@ -954,5 +954,5 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/restE
 
 ## Related topics
 
-* [Access tokens API](../../environment-api/tokens-v2/api-tokens.md "Manage Dynatrace API authentication tokens.")
-* [Tokens API v1](../../environment-api/tokens-v1.md "Learn how to manage Dynatrace API authentication tokens in your environment.")
+* Access tokens API
+* Tokens API v1

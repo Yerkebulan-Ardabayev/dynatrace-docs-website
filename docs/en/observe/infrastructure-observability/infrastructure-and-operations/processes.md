@@ -24,7 +24,7 @@ The **Health** perspective includes the following default columns:
 
 * **Process**: The process name or identifier. Select the name for a comprehensive, full-page view with detailed metadata, logs, events, and time-series charts.
 * **Process group name**: The group to which the process belongs.
-* **Health alerts**: Displays health alerts and warning signals powered by [Dynatrace Intelligence](../../../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence."). For details, see [View health alerts and warning signals](../infrastructure-and-operations.md#health-alerts "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.").
+* **Health alerts**: Displays health alerts and warning signals powered by Dynatrace Intelligence. For details, see [View health alerts and warning signals](../infrastructure-and-operations.md#health-alerts "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.").
 * **Custom alerts**: Lists any active custom alerts associated with the process.
 * **Availability**: Shows the current availability status of the process.
 * **Technologies**: The technologies detected for this process.

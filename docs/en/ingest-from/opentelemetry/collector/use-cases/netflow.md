@@ -21,11 +21,11 @@ The following configuration example shows how to configure a Collector instance 
   + [The Dynatrace Collector](../../collector.md#dt-collector-dist "Learn about the Dynatrace OTel Collector.")
   + [OpenTelemetry Contrib](../../collector.md#collector-contrib "Learn about the Dynatrace OTel Collector.")
   + [A custom Builder version](../../collector.md#collector-builder "Learn about the Dynatrace OTel Collector.")
-* The [Dynatrace API endpoint URL](../../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported.
+* The Dynatrace API endpoint URL to which the data should be exported.
 * An [API token](../../otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the Ingest logs (`logs.ingest`) scope.
 * A NetFlow- or sFlow-capable device that can send NetFlow packets to the Collector instance.
 
-See [Collector Deployment](../deployment.md "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](../configuration.md "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
+See Collector Deployment and Collector Configuration on how to set up your Collector with the configuration below.
 
 ## Collector configuration
 
@@ -181,11 +181,11 @@ The logs records will be available in Dynatrace with fields documented in the [r
 
 ## Limits and limitations
 
-Logs are ingested using the OpenTelemetry protocol (OTLP) via the [Dynatrace OTLP API](../../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") and are subject to the API's limits and restrictions.
+Logs are ingested using the OpenTelemetry protocol (OTLP) via the Dynatrace OTLP API and are subject to the API's limits and restrictions.
 For more information see:
 
-* [Ingest OpenTelemetry logs](../../otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")
+* Ingest OpenTelemetry logs
 
 ## Related topics
 
-* [Ingest logs from files with the OpenTelemetry Collector](filelog.md "Configure the OpenTelemetry Collector to ingest log data into Dynatrace.")
+* Ingest logs from files with the OpenTelemetry Collector

@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:27:24.885857
 * How-to guide
 * Updated on Jan 08, 2026
 
-The RUM JavaScriptâwhether [automatically injected](set-up-auto-injected-frontend.md "Learn how to set up an auto-injected web frontend in the New RUM Experience.") or [manually inserted](set-up-agentless-monitoring.md "Learn how to set up agentless RUM for your web frontends in the New RUM Experience.") into your web applicationâconsists of two key components:
+The RUM JavaScriptâwhether automatically injected or manually inserted into your web applicationâconsists of two key components:
 
 * **Monitoring code**: The JavaScript code that provides RUM capabilities such as capturing user events.
 * **Configuration**: The application configuration that is initially used by the monitoring code. It is updated later via the RUM beacon response in case of configuration changes.
@@ -85,7 +85,7 @@ To configure script execution
 5. In the **JavaScript tag** section, set **Script execution attribute** to **async**, **defer**, or **No attribute**.
 6. Copy the snippet and insert it into your page.
 
-When fetching the JavaScript tag via the API, you can control script execution by passing a parameter. For details, see [GET JavaScript tag](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag.md "Retrieve the most recent JavaScript tag for manual insertion.").
+When fetching the JavaScript tag via the API, you can control script execution by passing a parameter. For details, see GET JavaScript tag.
 
 ##### Addition of the `crossorigin="anonymous"` attribute
 
@@ -102,7 +102,7 @@ To enable the addition of the `crossorigin="anonymous"` attribute
 5. In the **JavaScript tag** section, enable **Add crossorigin=anonymous attribute**.
 6. Copy the snippet and insert it into your page.
 
-When fetching the JavaScript tag via the API, you can control the addition of the `crossorigin="anonymous"` attribute by passing a parameter. For details, see [GET JavaScript tag](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag.md "Retrieve the most recent JavaScript tag for manual insertion.").
+When fetching the JavaScript tag via the API, you can control the addition of the `crossorigin="anonymous"` attribute by passing a parameter. For details, see GET JavaScript tag.
 
 **OneAgent JavaScript tag** includes the configuration and links to an external file containing the monitoring code. It's available for both manual insertion and automatic injection.
 
@@ -149,9 +149,9 @@ To configure script execution for manual insertion
 5. In the **OneAgent JavaScript tag** section, set **Script execution attribute** to **async**, **defer**, or **No attribute**.
 6. Copy the snippet and insert it into your page.
 
-When fetching the OneAgent JavaScript tag via the API, you can control script execution by passing a parameter. For details, see [GET OneAgent JavaScript tag](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag.md "Retrieve the most recent OneAgent JavaScript tag for manual insertion.").
+When fetching the OneAgent JavaScript tag via the API, you can control script execution by passing a parameter. For details, see GET OneAgent JavaScript tag.
 
-**OneAgent JavaScript tag with SRI** lets you take advantage of the subresource integrity (SRI) browser feature to ensure that the monitoring code hasn't been altered, see [Use Subresource Integrity (SRI) in the New RUM Experience](subresource-integrity.md "Use the Subresource Integrity (SRI) browser feature in the New RUM Experience to ensure the integrity of Real User Monitoring code."). It includes configuration, a reference to an external file containing the monitoring code, and an integrity hash for this monitoring code. It is supported for both automatic injection and manual insertion.
+**OneAgent JavaScript tag with SRI** lets you take advantage of the subresource integrity (SRI) browser feature to ensure that the monitoring code hasn't been altered, see Use Subresource Integrity (SRI) in the New RUM Experience browser feature in the New RUM Experience to ensure the integrity of Real User Monitoring code."). It includes configuration, a reference to an external file containing the monitoring code, and an integrity hash for this monitoring code. It is supported for both automatic injection and manual insertion.
 
 [Get OneAgent JavaScript tag with SRI via API](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri.md)
 
@@ -196,7 +196,7 @@ To configure script execution for manual insertion
 5. In the **OneAgent JavaScript tag with SRI** section, set **Script execution attribute** to **async**, **defer** or **No attribute**.
 6. Copy the snippet and insert it into your page.
 
-When fetching the OneAgent JavaScript tag with SRI via the API, you can control script execution by passing a parameter. For details, see [GET OneAgent JavaScript tag with SRI](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri.md "Retrieve the most recent OneAgent JavaScript tag with SRI for manual insertion.").
+When fetching the OneAgent JavaScript tag with SRI via the API, you can control script execution by passing a parameter. For details, see GET OneAgent JavaScript tag with SRI.
 
 **Inline code** contains both the configuration and the RUM monitoring code, keeping the number of web requests at a minimum. Note that the Session Replay Classic monitoring code is not inlined, so there will still be an additional request if you use Session Replay Classic. If your website consists of many individual pages, using inline code may not be beneficial, as it increases the size of each document. However, it can be a suitable choice for single-page applications (SPAs).
 
@@ -222,8 +222,8 @@ The monitoring code is loaded and evaluated synchronously by the browser.
 
 ## Related topics
 
-* [RUM manual insertion tags API](../../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags.md "Learn how you can download the RUM manual insertion tags via API")
-* [Use Subresource Integrity (SRI) in the New RUM Experience](subresource-integrity.md "Use the Subresource Integrity (SRI) browser feature in the New RUM Experience to ensure the integrity of Real User Monitoring code.")
-* [Set up agentless RUM in the New RUM Experience](set-up-agentless-monitoring.md "Learn how to set up agentless RUM for your web frontends in the New RUM Experience.")
-* [Set up an auto-injected frontend in the New RUM Experience](set-up-auto-injected-frontend.md "Learn how to set up an auto-injected web frontend in the New RUM Experience.")
-* [Configure automatic injection in the New RUM Experience](configure-auto-injection.md "Configure automatic injection of the RUM JavaScript into the pages of your frontends in the New RUM Experience.")
+* RUM manual insertion tags API
+* Use Subresource Integrity (SRI) in the New RUM Experience browser feature in the New RUM Experience to ensure the integrity of Real User Monitoring code.")
+* Set up agentless RUM in the New RUM Experience
+* Set up an auto-injected frontend in the New RUM Experience
+* Configure automatic injection in the New RUM Experience

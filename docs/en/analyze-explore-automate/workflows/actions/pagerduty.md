@@ -89,7 +89,7 @@ To create a workflow that raises a PagerDuty incident
 6. On one of the information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add"), search for `PagerDuty`, and select **Create an incident**.
 7. On each of the remaining information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") and drag the line to the **Create an incident** action.
 8. In the **Create an incident** action, select the [connection](#connection) to your PagerDuty environment.
-9. Configure the input fields as needed. To learn how to use the output of information-extracting notes, see [Expression reference](../reference.md "Get to know the workflows expression").
+9. Configure the input fields as needed. To learn how to use the output of information-extracting notes, see Expression reference.
 10. To test your workflow, select **Run**.
 
 ## Troubleshooting

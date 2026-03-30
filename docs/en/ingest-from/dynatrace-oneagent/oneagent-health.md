@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:13:30.839577
 * 4-min read
 * Updated on Jan 15, 2026
 
-The OneAgent health overview empowers you to discover all your deployed [OneAgent modules](../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") at scale and detect anomalies before they become problems. With the OneAgent health overview, for example, you can discover:
+The OneAgent health overview empowers you to discover all your deployed OneAgent modules at scale and detect anomalies before they become problems. With the OneAgent health overview, for example, you can discover:
 
 * Outdated OneAgent modules that require an update to continue full Dynatrace support.
 * Connectivity issues between OneAgent modules and your Dynatrace Cluster.
@@ -36,7 +36,7 @@ The **OneAgent health overview** comprises
 
   Above the data table, the lowest and highest compatible OneAgent versions for this Dynatrace cluster are displayed.
 
-  The environment permission [Install OneAgent](../../manage/identity-access-management/permission-management/role-based-permissions.md#environment "Role-based permissions") is required to visualize data in this table.
+  The environment permission Install OneAgent is required to visualize data in this table.
 
 Select a specific data point in the area chart to see the contributing OneAgent modules in the data table.
 

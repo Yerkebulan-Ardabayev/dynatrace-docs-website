@@ -256,7 +256,7 @@ Permissions for entities allow you to define IAM policies that control data acce
 
 In contrast to monitoring data, entity permissions only allow filtering for the `dt.security_context` field.
 
-For more information, see [Grant access to entities with security context](../../../manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context").
+For more information, see Grant access to entities with security context.
 
 ## Field permissions
 
@@ -286,7 +286,7 @@ You can manage your custom fieldsets via REST API
 1. In Dynatrace, search for and select **Dynatrace API**.
 2. In the **Select a definition** field, select **Grail - Fieldsets**.
 3. Authenticate with your API token.  
-   For details, see [Authentication](../../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+   For details, see Authentication.
 4. Perform one of the following actions.
 
 #### Example
@@ -495,10 +495,10 @@ ALLOW storage:system:read;
 * If there is an unconditional table permission in any other policy available for a user, the `WHERE` clause is irrelevant and the user will always be able to view all records from that table.
 * Use the `MATCH` operator to simplify your statements instead of combination of `=`, `IN` and `STARTSWITH`, as there is a 100-statement limit per policy.
 * When using the `MATCH` operator with wildcards (`*`) in record filters, it's best to place wildcards before or after word separators such as: `-`, `_`, `.`, or `/`. This is because `matchesValue` used in DQL queries, performs better when word separators are present. For example, `... WHERE storage:dt.host_group.id MATCH ("db-tech-*")` is more efficient than `... WHERE storage:dt.host_group.id MATCH ("db-tech*")`.
-* Make sure to combine logs, events and metrics where applicable (to further save on the 100 statement policy [IAM policy statement syntax and examples](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax.md#iam-example-statements-combined "IAM policy statement syntax."))
+* Make sure to combine logs, events and metrics where applicable (to further save on the 100 statement policy IAM policy statement syntax and examples)
 * When you create custom fieldsets, make sure to avoid including any essential fields in your fieldset (such as `timestamp`, `id`, `content`).
 
 ## Related topics
 
-* [Working with policies](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies")
-* [DQL best practices](../dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.")
+* Working with policies
+* DQL best practices

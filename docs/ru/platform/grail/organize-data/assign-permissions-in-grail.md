@@ -253,7 +253,7 @@ ALLOW storage:system:read WHERE storage:event.kind="BILLING_EVENT"
 
 В отличие от данных мониторинга, разрешения для сущностей поддерживают фильтрацию только по полю `dt.security_context`.
 
-Подробнее см. в [Предоставление доступа к сущностям с помощью контекста безопасности](../../../manage/identity-access-management/use-cases/access-security-context.md "Предоставление доступа к сущностям с помощью контекста безопасности").
+Подробнее см. в Предоставление доступа к сущностям с помощью контекста безопасности.
 
 ## Разрешения для полей
 
@@ -283,7 +283,7 @@ ALLOW storage:fieldsets:read WHERE storage:fieldset-name="builtin-sensitive-span
 1. В Dynatrace найдите и выберите **Dynatrace API**.
 2. В поле **Select a definition** выберите **Grail - Fieldsets**.
 3. Пройдите аутентификацию с помощью API-токена.
-   Подробности см. в [Аутентификация](../../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Создание персонализированных токенов платформы для доступа к сервисам Dynatrace через API.").
+   Подробности см. в Аутентификация.
 4. Выполните одно из следующих действий.
 
 #### Пример
@@ -465,10 +465,10 @@ ALLOW storage:system:read;
 * Если в любой другой доступной пользователю политике существует безусловное разрешение для таблицы, оператор `WHERE` не имеет значения и пользователь всегда сможет просматривать все записи из этой таблицы.
 * Используйте оператор `MATCH` для упрощения выражений вместо комбинации `=`, `IN` и `STARTSWITH`, так как существует ограничение в 100 выражений на политику.
 * При использовании оператора `MATCH` с подстановочными символами (`*`) в фильтрах записей рекомендуется размещать подстановочные символы перед или после разделителей слов, таких как: `-`, `_`, `.` или `/`. Это связано с тем, что `matchesValue`, используемый в DQL-запросах, работает лучше при наличии разделителей слов. Например, `... WHERE storage:dt.host_group.id MATCH ("db-tech-*")` более эффективен, чем `... WHERE storage:dt.host_group.id MATCH ("db-tech*")`.
-* Объединяйте logs, events и metrics, где это применимо (для экономии в рамках ограничения в 100 выражений на политику — [синтаксис и примеры выражений политик IAM](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax.md#iam-example-statements-combined "Синтаксис выражений политик IAM."))
+* Объединяйте logs, events и metrics, где это применимо (для экономии в рамках ограничения в 100 выражений на политику — синтаксис и примеры выражений политик IAM)
 * При создании пользовательских наборов полей избегайте включения в набор необходимых полей (таких как `timestamp`, `id`, `content`).
 
 ## Связанные темы
 
-* [Работа с политиками](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Работа с политиками")
-* [Лучшие практики DQL](../dynatrace-query-language/dql-best-practices.md "Лучшие практики использования Dynatrace Query Language.")
+* Работа с политиками
+* Лучшие практики DQL

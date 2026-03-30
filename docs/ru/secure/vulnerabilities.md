@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:34:35.874049
 * Приоритизация уязвимостей на основе Dynatrace Security Score, оценки Dynatrace, затронутых и связанных сущностей, исторического контекста, каталога CISA KEV.
 * Применение исправлений, отслеживание устранения, углублённый анализ источника уязвимостей, изменение статуса отключения для затронутых сущностей.
 * Взаимодействие с другими приложениями и скачивание результатов для совместного использования.
-* Получение аналитики по охвату мониторинга и тенденциям воздействия с помощью [панели мониторинга **Vulnerability coverage**](vulnerabilities/assess-coverage.md "Оцените процесс RVA и охват хостов в вашей среде с помощью панели мониторинга Vulnerability coverage.").
+* Получение аналитики по охвату мониторинга и тенденциям воздействия с помощью панели мониторинга **Vulnerability coverage**.
 
 ### Целевая аудитория
 
@@ -27,11 +27,11 @@ scraped: 2026-03-06T21:34:35.874049
 
 Разрешения
 
-[Пользователь-администратор](../manage/identity-access-management/permission-management/default-policies.md#access "Справочник стандартных политик Dynatrace") должен назначить следующие политики IAM группе пользователей, которые будут иметь доступ к [`vulnerability-service`](../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#vulnerability-service "Полный справочник политик IAM и соответствующих условий для всех сервисов Dynatrace."):
+Пользователь-администратор должен назначить следующие политики IAM группе пользователей, которые будут иметь доступ к [`vulnerability-service`](../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#vulnerability-service "Полный справочник политик IAM и соответствующих условий для всех сервисов Dynatrace."):
 
 * `Read Entities`
 * `Read Security Events`
-* Одна из следующих пользовательских политик: `Admin User`, `Pro User`, `Standard User` (подробнее см. [Стандартные политики](../manage/identity-access-management/permission-management/default-policies.md#default-policies "Справочник стандартных политик Dynatrace")).
+* Одна из следующих пользовательских политик: `Admin User`, `Pro User`, `Standard User` (подробнее см. Стандартные политики).
 
 Инструкции приведены ниже.
 
@@ -61,7 +61,7 @@ scraped: 2026-03-06T21:34:35.874049
 1. В **Account Management** выберите **Identity & access management** > **People**.
 2. Нажмите **Invite user**, чтобы пригласить пользователей в новую группу.
 
-Подробнее о политиках IAM см. [Работа с политиками](../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Работа с политиками").
+Подробнее о политиках IAM см. Работа с политиками.
 
 Начало работы
 
@@ -69,7 +69,7 @@ scraped: 2026-03-06T21:34:35.874049
 
 ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities** обнаруживает, используют ли приложения в вашей среде Dynatrace уязвимые библиотеки во время выполнения или уязвимую среду выполнения для исполнения вашего кода. Приложение помогает определять приоритеты на основе контекста и воздействия, эффективно планируя действия по устранению.
 
-Для дополнительной информации об охвате мониторинга и воздействии см. [Оценка охвата](vulnerabilities/assess-coverage.md "Оцените процесс RVA и охват хостов в вашей среде с помощью панели мониторинга Vulnerability coverage.").
+Для дополнительной информации об охвате мониторинга и воздействии см. Оценка охвата.
 
 ![Таблица результатов уязвимостей на странице приоритизации](https://dt-cdn.net/images/one-1920-3b90d3d40b.png)![Подробности уязвимости](https://dt-cdn.net/images/two-1920-2dec9771f5.png)![Обзор группы процессов, связанной с уязвимостью](https://dt-cdn.net/images/three-1920-6b45726007.png)![Подробности затронутой группы процессов](https://dt-cdn.net/images/four-1920-f0bf314049.png)![Страница обзора результатов](https://dt-cdn.net/images/2025-12-17-14-29-30-1920-06cddbfea0.png)![Подробности результата](https://dt-cdn.net/images/2025-12-17-14-37-49-1920-1ecd920899.png)
 
@@ -82,9 +82,9 @@ scraped: 2026-03-06T21:34:35.874049
 [01Концепции Vulnerabilities
 
 * Объяснение
-* Концепции, специфичные для приложения Dynatrace Vulnerabilities.](vulnerabilities/concepts.md)[02Управление результатами
+* Концепции, специфичные для приложения Dynatrace Vulnerabilities.](vulnerabilities/concepts.md)02Управление результатами
 
-* Фильтрация, форматирование и сортировка для поиска релевантной информации об уязвимостях.](vulnerabilities/manage-results.md)[03Устранение уязвимостей
+* Фильтрация, форматирование и сортировка для поиска релевантной информации об уязвимостях.[03Устранение уязвимостей
 
 * Устранение уязвимостей и оптимизация действий по устранению.](vulnerabilities/address-remediation.md)[04Приоритизация уязвимостей
 

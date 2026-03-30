@@ -34,7 +34,7 @@ Get familiar with the [Dynatrace Extensions concepts](concepts.md#concepts "Lear
 
 ## Security best practices
 
-Dynatrace applies [secure development controls](../../manage/data-privacy-and-security/data-security/secure-development-controls.md "Learn how we ensure complete security for all Dynatrace software components and development practices.") in its Security Development Lifecycle (SDL).
+Dynatrace applies secure development controls in its Security Development Lifecycle (SDL).
 
 Follow these best practices to ensure your extensions are secure, reliable, and compliant with your environmentâs security standards.
 

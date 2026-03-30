@@ -28,42 +28,42 @@ Diagram of ActiveGate Functions
 
 ### ActiveGate types, purposes and functional modules
 
-You will need different types of ActiveGatesâ**Environment ActiveGates** or **Cluster ActiveGates**âbased on the Dynatrace [deployment solution](dynatrace-activegate/supported-connectivity-schemes-for-activegates.md "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents.") you are using and also based on the [purpose](dynatrace-activegate/capabilities.md "Learn the capabilities and uses of ActiveGate.") for which you are using Dynatrace.
+You will need different types of ActiveGatesâ**Environment ActiveGates** or **Cluster ActiveGates**âbased on the Dynatrace deployment solution you are using and also based on the purpose for which you are using Dynatrace.
 
 If you are using the Dynatrace [SaaS solution](dynatrace-activegate/supported-connectivity-schemes-for-activegates.md#saas-scheme "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents."), you only need to install an Environment ActiveGate.
 
-To use specific ActiveGate functional featuresâreferred to as [modules](dynatrace-activegate/configuration/configure-activegate.md#modules "Learn which ActiveGate properties you can configure based on your needs and requirements.")âyou need an ActiveGate with those modules installed or activated: When you install an ActiveGate, you select the main [purpose](dynatrace-activegate/capabilities.md "Learn the capabilities and uses of ActiveGate.") of the installation and thenâdepending on the purposeâyou can install or activate a different set of functional [modules](dynatrace-activegate/configuration/configure-activegate.md#modules "Learn which ActiveGate properties you can configure based on your needs and requirements.").
+To use specific ActiveGate functional featuresâreferred to as modulesâyou need an ActiveGate with those modules installed or activated: When you install an ActiveGate, you select the main purpose of the installation and thenâdepending on the purposeâyou can install or activate a different set of functional modules.
 
 An ActiveGate can be deployed in the conventional mannerâon a physical or virtual hostâthis is **host-based ActiveGate deployment**.
 An ActiveGate packaged in a container is referred to as **containerized ActiveGate deployment**.
 
 ### ActiveGate purposes and functionality
 
-[Route OneAgent traffic](dynatrace-activegate/capabilities/routing-monitoring-purpose.md#route "Learn about the routing and monitoring capabilities and uses of ActiveGate.")
+Route OneAgent traffic
 
-[Monitor cloud environments and remote technologies](dynatrace-activegate/capabilities/routing-monitoring-purpose.md#monitor "Learn about the routing and monitoring capabilities and uses of ActiveGate.")
+Monitor cloud environments and remote technologies
 
-[Run synthetic monitors](dynatrace-activegate/capabilities/synthetic-purpose.md "ActiveGates purposed for synthetic monitoring of internal and external resources from private Synthetic locations")
+Run synthetic monitors
 
-[Route z/OS traffic](dynatrace-activegate/capabilities/zremote-purpose.md "Learn about installing the zRemote module for z/OS monitoring.")
+Route z/OS traffic
 
-[Dynatrace API](dynatrace-activegate/capabilities/routing-monitoring-purpose.md#api "Learn about the routing and monitoring capabilities and uses of ActiveGate.")
+Dynatrace API
 
-[Functionality per ActiveGate type](dynatrace-activegate/capabilities.md "Learn the capabilities and uses of ActiveGate.")
+Functionality per ActiveGate type
 
 ### System and hardware requirements
 
-[Routing/monitoring ActiveGate, on Linux](dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements.md "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Linux for routing and monitoring purposes.")
+Routing/monitoring ActiveGate, on Linux
 
-[Routing/monitoring ActiveGate, on Windows](dynatrace-activegate/installation/windows/windows-activegate-hardware-and-system-requirements.md "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Windows for routing and monitoring.")
+Routing/monitoring ActiveGate, on Windows
 
-[Synthetic-enabled ActiveGate](../observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic.md "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations")
+Synthetic-enabled ActiveGate
 
-[ActiveGate for routing z/OS traffic to Dynatrace](dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote.md "Prepare and install the zRemote for z/OS monitoring.")
+ActiveGate for routing z/OS traffic to Dynatrace
 
 ### See also
 
-[ActiveGate connectivity schemes](dynatrace-activegate/supported-connectivity-schemes-for-activegates.md "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents.")
+ActiveGate connectivity schemes
 
 ## Installation
 

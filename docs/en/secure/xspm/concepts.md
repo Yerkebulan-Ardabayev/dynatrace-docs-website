@@ -26,7 +26,7 @@ Learn below about each result type.
 
 | **Result type** | **Definition** |
 | --- | --- |
-| Failed | The assessed resource doesn't follow the recommendations specified in the rule. In this case, a reason for failure is provided, based on which you can fix the issue. For details, see [Gain insights](gain-insights.md "Drill into results that can help you fix misconfigurations and noncompliance."). |
+| Failed | The assessed resource doesn't follow the recommendations specified in the rule. In this case, a reason for failure is provided, based on which you can fix the issue. For details, see Gain insights. |
 | Passed | The assessed resource follows the recommendations specified in the rule (there are no misconfigurations violating the specified recommendations). |
 | Manual[1](#fn-1-1-def) | The resource cannot be automatically assessed, as Dynatrace can't determine whether the resource is compliant (for example, when, due to physical security, Dynatrace can't get the configuration data from the clusters and nodes). |
 | Not relevant | The assessed resource doesn't meet a specific criteria for assessment, such as a specific version. These results can be skipped. |
@@ -35,11 +35,11 @@ Learn below about each result type.
 
 Manual results aren't currently actionable.
 
-To increase the number of results based on automatic assessment, we recommend that you [deploy Kubernetes Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.").
+To increase the number of results based on automatic assessment, we recommend that you deploy Kubernetes Security Posture Management.
 
 ### View
 
-Results are displayed for all your monitored systems on which [Security Posture Management](../application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") is enabled.
+Results are displayed for all your monitored systems on which Security Posture Management is enabled.
 
 * The **Overview** page shows the total number of failed, manual, and passed rules per monitored system.
 * The **Assessment results** page shows a table with all results, sorted automatically in descending order, starting from the ones deserving the most attention (failed rules with critical severity) to those less important (not relevant rules with low severity).
@@ -55,7 +55,7 @@ See below the result calculation based on the aggregation of finding events into
 
 ### Categorize assessment results
 
-You can filter and sort results based on different criteria of interest. For details, see [Review findings](review-findings.md "Search for relevant information to analyze security and compliance findings efficiently.").
+You can filter and sort results based on different criteria of interest. For details, see Review findings.
 
 ### Explore
 
@@ -64,7 +64,7 @@ To view result details
 1. Go to the **Assessment results** page.
 2. Select a rule.
 
-   This opens a side window with more information that can help you understand the context and fix potential issues. For details, see [Gain insights](gain-insights.md "Drill into results that can help you fix misconfigurations and noncompliance.").
+   This opens a side window with more information that can help you understand the context and fix potential issues. For details, see Gain insights.
 
 ## Severity
 
@@ -80,4 +80,4 @@ Information regarding severity is provided by the compliance standards and mappe
 
 ### Categorize assessment results
 
-You can filter and sort results based on severity. For details, see [Review findings](review-findings.md "Search for relevant information to analyze security and compliance findings efficiently.").
+You can filter and sort results based on severity. For details, see Review findings.

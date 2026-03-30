@@ -314,7 +314,7 @@ namespaceSelector: ... # replaces spec.namespaceSelector
 
 #### OneAgent `autoUpdate`
 
-The `spec.oneAgent.<mode>.autoUpdate: true/false` field is [deprecated](../../deployment-and-configuration/updates-and-maintenance/auto-update-components.md "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).") in `v1beta5`, so it shouldn't be used.
+The `spec.oneAgent.<mode>.autoUpdate: true/false` field is deprecated.") in `v1beta5`, so it shouldn't be used.
 
 We recommend the following:
 

@@ -12,7 +12,7 @@ scraped: 2026-03-05T21:25:24.269087
 
 Полноуровневая наблюдаемость объединяет мониторинг инфраструктуры и приложений в средах Kubernetes. Эта конфигурация включает внедрение Dynatrace OneAgent и обеспечивает видимость как производительности кластера, так и поведения приложений.
 
-Дополнительную информацию смотрите в разделе [`.spec.oneAgent.cloudNativeFullStack`](../reference/dynakube-parameters.md "List the available parameters for setting up Dynatrace Operator on Kubernetes.") документации DynaKube.
+Дополнительную информацию смотрите в разделе `.spec.oneAgent.cloudNativeFullStack` документации DynaKube.
 
 ## Возможности
 
@@ -24,7 +24,7 @@ scraped: 2026-03-05T21:25:24.269087
 
 * Диагностические файлы (архивы поддержки) для Pod-ов приложений пока не поддерживаются.
 * Правила мониторинга контейнеров не поддерживаются (параметр выбора меток DynaKube предоставляет аналогичную функциональность).
-* [Статический мониторинг Go](../../technology-support/application-software/go/support/go-known-limitations.md#static-monitoring "Learn the limitations for Go support and their workarounds.") поддерживается частично.
+* Статический мониторинг Go поддерживается частично.
 * Архивы поддержки OneAgent, например журналы кодовых модулей, можно собирать из отслеживаемого процесса/Pod-а с помощью пункта меню **Run OneAgent Diagnostics** на странице конкретного процесса. Если архив поддержки OneAgent недоступен, это означает одно из следующего:
 
   + В Pod приложения не был внедрён кодовый модуль.
@@ -36,16 +36,16 @@ scraped: 2026-03-05T21:25:24.269087
 
 Следующие компоненты разворачиваются через Helm/манифесты в рамках базовой установки. Дополнительную информацию смотрите в соответствующих разделах:
 
-* [Dynatrace Operator](components/dynatrace-operator.md#operator "Components of Dynatrace Operator") управляет автоматическим развёртыванием, конфигурацией и жизненным циклом компонентов Dynatrace в среде Kubernetes.
-* [Веб-хук Dynatrace Operator](components/dynatrace-operator.md#webhook "Components of Dynatrace Operator") проверяет определения DynaKube, конвертирует определения со старыми версиями API и внедряет конфигурации в Pod-ы.
-* [CSI Driver Dynatrace Operator](components/dynatrace-operator.md#csidriver "Components of Dynatrace Operator") развёртывается как DaemonSet и предоставляет доступное для записи хранилище томов для бинарных файлов OneAgent, чтобы минимизировать использование сети и хранилища.
+* Dynatrace Operator управляет автоматическим развёртыванием, конфигурацией и жизненным циклом компонентов Dynatrace в среде Kubernetes.
+* Веб-хук Dynatrace Operator проверяет определения DynaKube, конвертирует определения со старыми версиями API и внедряет конфигурации в Pod-ы.
+* CSI Driver Dynatrace Operator развёртывается как DaemonSet и предоставляет доступное для записи хранилище томов для бинарных файлов OneAgent, чтобы минимизировать использование сети и хранилища.
 
 ### Компоненты, управляемые Operator
 
 Следующие компоненты развёртываются при применении DynaKube с полноуровневой наблюдаемостью:
 
-* [Dynatrace OneAgent](../../dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") собирает метрики хоста с узлов Kubernetes.
-* [Dynatrace ActiveGate](../../dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.") маршрутизирует данные наблюдаемости в кластер Dynatrace и отслеживает Kubernetes API.
+* Dynatrace OneAgent собирает метрики хоста с узлов Kubernetes.
+* Dynatrace ActiveGate маршрутизирует данные наблюдаемости в кластер Dynatrace и отслеживает Kubernetes API.
 * Кодовые модули Dynatrace внедряются в ваше приложение для обеспечения глубокого мониторинга и наблюдаемости.
 
 ![cloud-native](https://dt-cdn.net/images/screenshot-2024-01-31-at-2-40-02-pm-2352-4cba84df51.png)

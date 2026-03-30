@@ -19,12 +19,12 @@ Azure App Service provides many different hosting options for Windows, Linux, an
 The App Service integration with Dynatrace provides the following capabilities:
 
 * [Integration for OneAgent on Windows via an extension for easy deployment](azure-appservice/integrate-oneagent-on-azure-app-service.md#install "Install, configure, update, uninstall, and troubleshoot OneAgent for monitoring Azure App Service on Windows using an Azure site extension.")
-* [Integration for OneAgent on Linux and containers](azure-appservice/integrate-oneagent-on-web-app-for-containers.md "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")
+* Integration for OneAgent on Linux and containers
 * Automatic distributed tracing and monitoring for .NET/.NET Core, Java, Node.js, PHP, and IIS
 * Enhanced capturing of Azure App Service metadata, such as SKU or Website-Name
-* Capturing of platform-level metrics and [additional insights into your App-Service Plan](azure-appservice/monitor-app-service.md "Monitor Azure App Service (App Service Plan, Web App Deployment Slot) and view available metrics.") via the [Azure Monitor integration](../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
-* Capturing of logs via [log forwarding](set-up-log-forwarder-azure.md "Use Azure log forwarding to ingest Azure logs.")
+* Capturing of platform-level metrics and additional insights into your App-Service Plan and view available metrics.") via the Azure Monitor integration
+* Capturing of logs via log forwarding
 
 ## Related topics
 
-* [Serverless monitoring](../../../discover-dynatrace/get-started/serverless-monitoring.md "Serverless observability with Dynatrace")
+* Serverless monitoring

@@ -20,7 +20,7 @@ To execute this request, you need an access token with one of the following scop
 * `oneAgents.read`
 * `DataExport`
 
-To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see Tokens and authentication.
 
 ## Parameters
 
@@ -965,4 +965,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [OneAgent configuration on a host API](/managed/dynatrace-api/configuration-api/oneagent-configuration/oneagent-on-host "Manage the configuration of OneAgent instances on your hosts via the Dynatrace API.")
+* OneAgent configuration on a host API

@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:37:28.649050
 
 The **Findings** page, accessible by selecting the **Findings** tab in ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**, consolidates [vulnerability findings](../threat-observability/concepts.md#vuln-findings "Basic concepts related to Threat Observability") from Dynatrace and integrated external security tools into a single, actionable view. It helps reduce noise from multiple scanners (network, web app, cloud, container, SAST), providing developers and security teams with a holistic view of vulnerabilities across assets and layers of their environments.
 
-By default, the **Findings** page displays Dynatraceâgenerated results (thirdâparty and codeâlevel). To extend it with external findings, set up integrations via [OpenPipeline](../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline."). For the list of supported integrations and setup instructions, see [Security events ingest](../threat-observability/security-events-ingest.md "Ingest external security data into Grail.").
+By default, the **Findings** page displays Dynatraceâgenerated results (thirdâparty and codeâlevel). To extend it with external findings, set up integrations via OpenPipeline. For the list of supported integrations and setup instructions, see Security events ingest.
 
 ## Manage results
 
@@ -45,7 +45,7 @@ You have several options to filter and sort findings:
 
   Selecting one or multiple segments results in fewer findings.
 
-  For more information on segments and how they work, see [Segments](../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.").
+  For more information on segments and how they work, see Segments.
 * **Filter by expressions**: In the filter field, you can use complex filter expressions to select which information is to be displayed, such as:
 
   + Add multiple filters on the same filter key
@@ -107,7 +107,7 @@ Two findings are considered duplicates (same finding ID) if all of the following
 * `product.name`
 * `product.vendor`
 
-For details on these fields, see the [Dynatrace semantic dictionary](../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.").
+For details on these fields, see the Dynatrace semantic dictionary.
 
 To drill into an issue or specific affected object and observe the full historyâeven if it contains periodic identical findingsâturn off **Show unique findings** at the top of the table.
 

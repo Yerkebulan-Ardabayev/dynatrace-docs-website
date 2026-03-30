@@ -12,9 +12,9 @@ scraped: 2026-03-06T21:26:03.242201
 
 Log Monitoring Classic
 
-Для новейшей версии Dynatrace см. [Потоковая передача логов в Dynatrace с помощью Fluentd в Kubernetes](../../logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s.md "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.").
+Для новейшей версии Dynatrace см. Потоковая передача логов в Dynatrace с помощью Fluentd в Kubernetes.
 
-Рекомендуемый способ потоковой передачи логов из узлов и подов Kubernetes в Dynatrace описан в разделе [Log Monitoring в Kubernetes (Logs Classic)](log-monitoring-kubernetes.md "Learn how to monitor logs in Kubernetes.").
+Рекомендуемый способ потоковой передачи логов из узлов и подов Kubernetes в Dynatrace описан в разделе Log Monitoring в Kubernetes (Logs Classic).
 
 В качестве альтернативы вы можете использовать [плагин Dynatrace Fluentd](https://dt-url.net/gb23475) — модуль с открытым исходным кодом — для потоковой передачи логов.
 
@@ -25,7 +25,7 @@ Log Monitoring Classic
 ## Возможности
 
 * Поддерживает потоковую передачу логов в разные среды Dynatrace из одного кластера Kubernetes. Например, логи подов приложений можно отправлять в другую среду, отличную от среды логов узлов Kubernetes.
-* Поддерживает потоковую передачу логов для [интеграций только с приложениями](../../../ingest-from/setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes").
+* Поддерживает потоковую передачу логов для интеграций только с приложениями.
 * Может быть настроен для прямой потоковой передачи логов в Dynatrace.
 
 ## Ограничения
@@ -38,4 +38,4 @@ Log Monitoring Classic
 
 ## Связанные темы
 
-* [Kubernetes Classic](../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md "Monitor Kubernetes/OpenShift with Dynatrace.")
+* Kubernetes Classic

@@ -46,8 +46,8 @@ SDv2 provides:
 SDv2 behavior can be configured via:
 
 * The Dynatrace web UI, as described in the pages within this section.
-* The [Settings API](../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.").
+* The Settings API.
 
 ## Related topics
 
-* [Service Detection v1](service-detection-v1.md "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
+* Service Detection v1

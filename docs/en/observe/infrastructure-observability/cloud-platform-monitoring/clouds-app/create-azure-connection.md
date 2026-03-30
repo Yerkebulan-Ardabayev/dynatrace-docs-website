@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:24:55.181464
 * Published Aug 19, 2025
 * Preview
 
-If this is the first time you are creating a connection, first see the [onboarding instructions](../../../../ingest-from/microsoft-azure-services/create-an-azure-connection/azure-connection-app-settings.md "Onboard your Azure environments and create Azure connections via the Settings app.") and its prerequisites.
+If this is the first time you are creating a connection, first see the onboarding instructions and its prerequisites.
 
 If you have an existing classic connection and want to start the new cloud platform monitoring, delete the classic connection first and only then create a new cloud connection for the respective Azure subscription.
 

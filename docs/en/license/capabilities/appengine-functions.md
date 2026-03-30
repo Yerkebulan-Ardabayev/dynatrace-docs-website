@@ -32,7 +32,7 @@ AppEngine Functions work out-of-the-box: no external hosting is required, and th
 
 ## Related topics
 
-* [AppEngine](../../platform/appengine.md "Develop feature-rich Dynatrace apps for you and the world!")
+* AppEngine
 * [App functionsï»¿](https://developer.dynatrace.com/develop/functions/ "Basic concepts of app functions, which represent an app backend")
-* [License Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* License Dynatrace, the licensing model for all Dynatrace capabilities.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

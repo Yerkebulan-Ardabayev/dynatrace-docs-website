@@ -46,11 +46,11 @@ Generally, Dynatrace Hub lists any technology that Dynatrace officially supports
 
 Compared to other Dynatrace platform functionality, Dynatrace Apps are smaller, self-contained, and focused on specific use cases. But a Dynatrace App is not an isolated application: the Dynatrace platform implements an intent concept that allows interoperability between Dynatrace Apps.
 
-For more information, see [AppEngine](../platform/appengine.md "Develop feature-rich Dynatrace apps for you and the world!").
+For more information, see AppEngine.
 
 ### Extensions
 
-With [Extensions 2.0](../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") you can declaratively bring metrics into Dynatrace that feed platform analytics and monitoring capabilities. Dynatrace links your data in a meaningful way so you can explore it, build instrumentation, and set up alerting.
+With Extensions 2.0 you can declaratively bring metrics into Dynatrace that feed platform analytics and monitoring capabilities. Dynatrace links your data in a meaningful way so you can explore it, build instrumentation, and set up alerting.
 
 You can manage your extensions with the [Extensions appï»¿](https://www.dynatrace.com/hub/detail/extension-manager/).
 
@@ -69,7 +69,7 @@ Once you find an interesting listing, select the app icon to open the app overvi
 * **Product information**:  
   App overview, getting started, use cases, and links to related resources.
 * **Technical information**:  
-  All that you need to get your users started with the app, including required permissions and supported [intents](../analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+  All that you need to get your users started with the app, including required permissions and supported intents.
 * **Contents**:  
   All ready-made dashboards, notebooks, and workflow actions that are included with this app. You can start using them as soon as the app is installed.
 * **Release notes**
@@ -94,7 +94,7 @@ To install an app, open the app overview and select **Install**.
 
 The installation is automatic and takes a few seconds.
 
-After the installation, the app is available to all the users of your environment. Make sure you assign your potential app users to groups with the permissions listed in the **Technical information** tab of the app overview. For more information, see [Manage IAM policies](identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt.md "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
+After the installation, the app is available to all the users of your environment. Make sure you assign your potential app users to groups with the permissions listed in the **Technical information** tab of the app overview. For more information, see Manage IAM policies.
 
 If you don't have permission to install the app
 

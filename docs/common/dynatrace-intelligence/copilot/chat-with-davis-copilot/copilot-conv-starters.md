@@ -236,5 +236,5 @@ If you have any feedback, you can provide it directly in the chat window. For mo
 
 ## Related topics
 
-* [Get started with Dynatrace Intelligence generative AI](../copilot-getting-started.md "Learn how to set up Dynatrace Intelligence generative AI.")
-* [Dynatrace Intelligence generative AI FAQ](../copilot-faq.md "Learn about frequently asked questions and find your answers.")
+* Get started with Dynatrace Intelligence generative AI
+* Dynatrace Intelligence generative AI FAQ

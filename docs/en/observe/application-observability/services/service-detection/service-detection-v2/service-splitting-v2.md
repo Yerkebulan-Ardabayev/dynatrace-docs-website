@@ -12,7 +12,7 @@ scraped: 2026-03-04T21:38:13.805559
 * 2-min read
 * Updated on Nov 24, 2025
 
-Service Detection v2 (SDv2) lets you split your [detected services](service-detection-v2.md "Find out how to detect services based on OpenTelemetry resource attributes.") based on resource attributes.
+Service Detection v2 (SDv2) lets you split your detected services based on resource attributes.
 You can use the default Dynatrace detection rules and also define your own custom rules.
 These rules are applied globally to all detected services.
 
@@ -57,7 +57,7 @@ Service splitting rules are customized in ![Settings](https://dt-cdn.net/images/
 
    * **Rule name**: Required A user-defined name for the rule.
    * **Description**: Optional A human-readable description of the rule.
-   * **Matching condition**: Required A[DQL matcher](../../../../../platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.").
+   * **Matching condition**: Required ADQL matcher.
      If the matching condition applies, the rule is evaluated.
    * **Split service by resource attribute**: Optional Spans will be separated into services according to the resource attribute(s) defined here.
      Consists of one or more resource attributes specified without curly braces, e.g. `dt.entity.process_group` or `k8s.namespace.name`.
@@ -97,4 +97,4 @@ It's not possible to delete built-in rules, however you can deactivate built-in 
 
 ## Related topics
 
-* [Service Detection v2](../service-detection-v2.md "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.")
+* Service Detection v2

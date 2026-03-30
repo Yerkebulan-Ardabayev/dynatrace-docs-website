@@ -110,7 +110,7 @@ storage:files:read
 Запросы к логам работают на основе того же лицензирования, что и другие функции Log Management and Analytics.
 
 * Если в вашем тарифе **Retain** и **Query** являются отдельными позициями, вы потребляете лицензию только за объём запрошенных логов в байтах.
-  Подробнее см. в разделе [Calculate your consumption of Log Management & Analytics - Query (DPS)](../../license/capabilities/log-analytics/dps-log-query.md "Узнайте, как рассчитывается потребление ресурсов Log Management & Analytics - Query DPS.").
+  Подробнее см. в разделе Calculate your consumption of Log Management & Analytics - Query (DPS).
 * Если в вашем тарифе указано **Retain with Included Queries**, включённые запросы не тарифицируются.
   Подробнее см. в разделе [Log Analytics (DPS)](../../license/capabilities/log-analytics.md#log-retain-included-queries "Узнайте, как рассчитывается потребление Dynatrace Log Analytics в модели Dynatrace Platform Subscription.").
 

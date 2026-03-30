@@ -102,7 +102,7 @@ scraped: 2026-03-06T21:10:29.766809
 
 ## Связанные темы
 
-* [Мониторинг бессерверных вычислений](../discover-dynatrace/get-started/serverless-monitoring.md "Serverless observability with Dynatrace")
-* [Прием данных](../ingest-from.md "Learn how to install and configure ActiveGate and OneAgent on various platforms.")
-* [Мониторинг групп контейнеров](infrastructure-observability/container-platform-monitoring/container-groups.md "Overview on container groups monitoring")
-* [Правила мониторинга контейнеров](infrastructure-observability/container-platform-monitoring/container-monitoring-rules.md "Define, enable and disable container monitoring rules")
+* Мониторинг бессерверных вычислений
+* Прием данных
+* Мониторинг групп контейнеров
+* Правила мониторинга контейнеров

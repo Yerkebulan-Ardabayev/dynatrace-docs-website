@@ -4,10 +4,10 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/release
 updated: 2026-02-09
 ---
 
-[### List releases
+### List releases
 
-Get an overview of releases in your environment.](/managed/dynatrace-api/environment-api/releaseapi/get-releaseall "Fetch the list of releases via the Dynatrace Releases API.")
+Get an overview of releases in your environment.
 
 ## Related topics
 
-* [Release monitoring](/managed/deliver/release-monitoring "Detect versions of monitored applications and analyze the software product lifecycle of your releases.")
+* Release monitoring

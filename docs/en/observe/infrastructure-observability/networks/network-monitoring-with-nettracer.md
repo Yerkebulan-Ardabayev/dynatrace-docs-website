@@ -63,7 +63,7 @@ To enable NetTracer globally on all your Linux hosts
 1. Go to **Settings** > **Network & Discovery** > **NetTracer traffic**.
 2. Turn on **Enable NetTracer traffic network monitoring**.
 
-To ensure NetTracer works correctly, OneAgent must be installed in either Full-Stack or Infrastructure monitoring mode, as these modes enable the network monitoring feature. If OneAgent is installed in a limited mode (for example, Discovery monitoring mode), NetTracer may not function as intended. For more details, see [OneAgent monitoring modes](../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
+To ensure NetTracer works correctly, OneAgent must be installed in either Full-Stack or Infrastructure monitoring mode, as these modes enable the network monitoring feature. If OneAgent is installed in a limited mode (for example, Discovery monitoring mode), NetTracer may not function as intended. For more details, see OneAgent monitoring modes.
 
 ## Built-in metrics for NetTracer
 
@@ -112,7 +112,7 @@ Additional container dimensions are added depending on the deployment type.
 
 After it's collected, NetTracer data is available as metrics throughout Dynatrace.
 
-* **Data Explorer**: You can use the metrics in [Data Explorer](../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") to create charts and dashboards that display data that interests you.
+* **Data Explorer**: You can use the metrics in Data Explorer to create charts and dashboards that display data that interests you.
 * **Process group instance page**: Go to process group instance page and select **Networking** tab.
 
   ![Process group instance page - Networking details](https://dt-cdn.net/images/pgi-page-networking-details-2172-bcb6d64191.png)

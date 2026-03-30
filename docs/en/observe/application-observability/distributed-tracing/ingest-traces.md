@@ -57,7 +57,7 @@ Other setup options
 
 ## Related topics
 
-* [Dynatrace OneAgent](../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
-* [Get started with OpenTelemetry and Dynatrace](../../../ingest-from/opentelemetry/getting-started.md "How to get your OpenTelemetry data into Dynatrace.")
-* [Extend distributed tracing](../../../ingest-from/extend-dynatrace/extend-tracing.md "Learn how to extend trace observability in Dynatrace.")
-* [Adaptive Traffic Management for distributed tracing](../../../ingest-from/dynatrace-oneagent/adaptive-traffic-management.md "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.")
+* Dynatrace OneAgent
+* Get started with OpenTelemetry and Dynatrace
+* Extend distributed tracing
+* Adaptive Traffic Management for distributed tracing

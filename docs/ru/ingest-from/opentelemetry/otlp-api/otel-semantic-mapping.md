@@ -4,7 +4,7 @@ source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api/otel-s
 scraped: 2026-03-06T21:35:37.469462
 ---
 
-Dynatrace автоматически сопоставляет семантические соглашения OpenTelemetry со [Словарём семантики Dynatrace](../../../semantic-dictionary.md "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.").
+Dynatrace автоматически сопоставляет семантические соглашения OpenTelemetry со Словарём семантики Dynatrace.
 
 Это сопоставление обеспечивает единообразную интерпретацию данных во всём стеке наблюдаемости и позволяет приложениям, аналитике и функциям визуализации Dynatrace работать с инструментацией OpenTelemetry.
 

@@ -22,7 +22,7 @@ scraped: 2026-03-06T21:35:01.911530
 2. Выберите ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **New alert** > **Create your own custom alert** для создания нового оповещения. Для редактирования существующего пользовательского оповещения выберите любое пользовательское оповещение из списка.
 3. На вкладке **Simple** разверните **Set scope**.
 4. Необязательно: в **Segments** выберите один или несколько сегментов для фильтрации.
-5. В **Query** укажите [DQL-запрос](../../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.") для получения данных.
+5. В **Query** укажите DQL-запрос для получения данных.
 
    Мы рекомендуем использовать параметр `interval: 1m` для обеспечения надлежащего разрешения данных при анализе.
 6. Разверните **Define alert condition**.
@@ -58,7 +58,7 @@ scraped: 2026-03-06T21:35:01.911530
 5. Необязательно: выберите , затем выберите один или несколько сегментов для фильтрации.
 6. Выберите **Options** > **Analyze and alert**.
 7. Активируйте анализатор.
-8. Выберите необходимый анализатор и настройте его. Подробности см. в разделе [Конфигурация обнаружения аномалий](../anomaly-detection-configuration.md "How to set up an alert for missing measurements.").
+8. Выберите необходимый анализатор и настройте его. Подробности см. в разделе Конфигурация обнаружения аномалий.
 9. Выберите **Run analysis**.
 10. Когда вы будете удовлетворены результатом, выберите ![More actions](https://dt-cdn.net/images/dashboards-app-menu-kebab-c39eda426b.svg "More actions") > ![Open with](https://dt-cdn.net/images/open-with-003fc82dcd.svg "Open with") **Open with** и выберите **Anomaly Detection**.
     Это действие перенаправит вас обратно в ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
@@ -70,7 +70,7 @@ scraped: 2026-03-06T21:35:01.911530
 
 ## Преобразование конфигурации события метрики
 
-[События метрик](../metric-events.md "Learn about metric events in Dynatrace") расширяют возможности обнаружения аномалий, выходя за рамки стандартных сценариев использования и охватывая события на основе метрик. С помощью DQL вы можете расширить эти возможности ещё больше.
+События метрик расширяют возможности обнаружения аномалий, выходя за рамки стандартных сценариев использования и охватывая события на основе метрик. С помощью DQL вы можете расширить эти возможности ещё больше.
 
 Чтобы преобразовать событие метрики в конфигурацию пользовательского оповещения
 
@@ -89,8 +89,8 @@ scraped: 2026-03-06T21:35:01.911530
 
 ## Связанные темы
 
-* [Приложение Anomaly Detection](../anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.")
-* [Настройка расширенного пользовательского оповещения](../../../../common/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-an-advanced-ad.md "Learn how to create and edit advanced custom alerts in the Anomaly Detection app")
-* [Типы статусов Anomaly Detection](anomaly-detection-status-types.md "An explanation of Anomaly Detection status types")
+* Приложение Anomaly Detection
+* Настройка расширенного пользовательского оповещения
+* Типы статусов Anomaly Detection
 * [[Видео] Повышение безопасности с помощью Anomaly Detection](https://www.youtube.com/watch?v=WDZUus-VxCE)
 * [[Видео] Anomaly Detection и наблюдаемость данных](https://www.youtube.com/watch?v=HPQi63mQg3w)

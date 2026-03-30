@@ -16,4 +16,4 @@ You can send data from your Rust application to Dynatrace via OpenTelemetry. See
 
 * [OpenTelemetry supportï»¿](https://github.com/open-telemetry/opentelemetry-rust) for capturing traces.
 
-  + [Instrument your Rust application with OpenTelemetry](../../opentelemetry/walkthroughs/rust.md "Learn how to instrument your Rust application using OpenTelemetry and Dynatrace.")
+  + Instrument your Rust application with OpenTelemetry

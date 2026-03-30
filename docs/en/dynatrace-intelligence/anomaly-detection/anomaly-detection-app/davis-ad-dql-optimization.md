@@ -198,6 +198,6 @@ To optimize filtering and avoid including redundant fields, we recommend trying 
 
 ## Related topics
 
-* [Anomaly Detection app](../anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.")
-* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Anomaly Detection DQL writing guide](davis-ad-dql-best-practice.md "Best practices for creating Anomaly Detection custom alert DQL queries.")
+* Anomaly Detection app
+* Dynatrace Query Language
+* Anomaly Detection DQL writing guide

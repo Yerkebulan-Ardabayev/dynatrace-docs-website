@@ -23,17 +23,17 @@ Dynatrace Application Security delivers real-time protection and deep visibility
 
 Dynatrace provides the following integrated Application Security capabilities to help secure your applications. Select any to get started.
 
-If you're using the [Dynatrace classic licensing](../license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), contact a Dynatrace product expert via live chat to **activate Application Security** before you proceed.
+If you're using the Dynatrace classic licensing, contact a Dynatrace product expert via live chat to **activate Application Security** before you proceed.
 
-* [**Dynatrace Runtime Vulnerability Analytics (RVA)**](application-security/vulnerability-analytics.md "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."): Identify critical vulnerabilities instantly with automated risk and impact assessments, thanks to in-depth analysis of data access paths and production execution.
-* [**Dynatrace Runtime Application Protection (RAP)**](application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities."): Defend your applications in real time by detecting and blocking attacks through advanced code-level insights and transaction analysis.
-* [**Dynatrace Security Posture Management (SPM)**](application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."): Maintain robust security by assessing, prioritizing, and addressing misconfigurations and compliance violations efficiently.
+* **Dynatrace Runtime Vulnerability Analytics (RVA)**: Identify critical vulnerabilities instantly with automated risk and impact assessments, thanks to in-depth analysis of data access paths and production execution.
+* **Dynatrace Runtime Application Protection (RAP)**: Defend your applications in real time by detecting and blocking attacks through advanced code-level insights and transaction analysis.
+* **Dynatrace Security Posture Management (SPM)**: Maintain robust security by assessing, prioritizing, and addressing misconfigurations and compliance violations efficiently.
 
 ## Monitoring modes coverage
 
 The effectiveness and depth of Application Security insights depend on the deployed monitoring mode. This section explains how each mode impacts data collection and analysis.
 
-[**Dynatrace Security Posture Management (SPM)**](application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") works independently of monitoring modes. For details, see [FAQ](application-security/spm.md#monitoring "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+**Dynatrace Security Posture Management (SPM)** works independently of monitoring modes. For details, see [FAQ](application-security/spm.md#monitoring "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 
 ### Support overview
 
@@ -41,7 +41,7 @@ The effectiveness and depth of Application Security insights depend on the deplo
 | --- | --- | --- | --- |
 | [Third-party vulnerability detection](application-security/vulnerability-analytics.md#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") | Green background check mark | [limited](#tpv-infra) | [limited](#clv-infra) |
 | [Code-level vulnerability detection](application-security/vulnerability-analytics.md#clv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") | Green background check mark | [limited](#tpv-disco) | [limited](#clv-disco) |
-| [Runtime Application Protection](application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.") | Green background check mark | Green background check mark | Green background check mark |
+| Runtime Application Protection | Green background check mark | Green background check mark | Green background check mark |
 
 Public internet exposure
 
@@ -60,7 +60,7 @@ Full-Stack Monitoring mode provides complete application performance monitoring,
 * System metrics (CPU usage, memory usage, disk usage)
 * [Third-party vulnerability detection](application-security/vulnerability-analytics.md#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
 * [Code-level vulnerability detection](application-security/vulnerability-analytics.md#clv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
-* [Runtime Application Protection](application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
+* Runtime Application Protection
 
 #### Characteristics
 
@@ -92,8 +92,8 @@ Same capabilities as Full-Stack Monitoring mode.
 
 #### Consumption
 
-* If you're using the [Dynatrace Platform Subscription (DPS) licensing model](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."), see [Host monitoring (DPS): Infrastructure Monitoring](../license/capabilities/app-infra-observability/infrastructure-monitoring.md "Learn how your consumption of the Dynatrace Infrastructure Monitoring DPS capability is billed and charged.").
-* If you're using the [Dynatrace classic licensing](../license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), see [Application and Infrastructure Monitoring (Host Units)](../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
+* If you're using the Dynatrace Platform Subscription (DPS) licensing model, the licensing model for all Dynatrace capabilities."), see Host monitoring (DPS): Infrastructure Monitoring.
+* If you're using the Dynatrace classic licensing, see Application and Infrastructure Monitoring (Host Units).
 
 ### Discovery mode
 
@@ -102,7 +102,7 @@ Same capabilities as Full-Stack Monitoring mode.
 * System metrics (CPU usage, memory usage, disk usage)
 * [Third-party vulnerability detection](application-security/vulnerability-analytics.md#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
 * [Code-level vulnerability detection](application-security/vulnerability-analytics.md#clv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
-* [Runtime Application Protection](application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
+* Runtime Application Protection
 
 For Application Security to work in Discovery mode, after [enabling Discovery mode](../platform/oneagent/monitoring-modes/monitoring-modes.md#enable-discovery-mode "Find out more about the available monitoring modes when using OneAgent."), you also need to [enable code-module injection](../platform/oneagent/monitoring-modes/monitoring-modes.md#code-module-injection "Find out more about the available monitoring modes when using OneAgent.").
 
@@ -144,9 +144,9 @@ Same capabilities as Full-Stack Monitoring mode.
 
 #### Consumption
 
-Discovery mode is only available for the [Dynatrace Platform Subscription (DPS) licensing model](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+Discovery mode is only available for the Dynatrace Platform Subscription (DPS) licensing model, the licensing model for all Dynatrace capabilities.").
 
-For monitoring consumption information, see [Host monitoring (DPS): Foundation & Discovery](../license/capabilities/app-infra-observability/foundation-and-discovery.md "Learn how your consumption of the Dynatrace Foundation & Discovery DPS capability is billed and charged.").
+For monitoring consumption information, see Host monitoring (DPS): Foundation & Discovery.
 
 ## Further resources
 
@@ -230,7 +230,7 @@ FAQ
 * [Dynatrace DevSecOps Lifecycle Coverage with Snyk eliminates security coverage blind spotsï»¿](https://www.dynatrace.com/news/blog/dynatrace-and-snyk-to-unify-security-insights/)
 * [What is application security? And why it needs a new approachï»¿](https://www.dynatrace.com/news/blog/davis-security-advisor-extends-dynatrace-application-security/)
 
-[Application Security FAQ](faq.md "Frequently asked questions about Dynatrace Application Security.")
+Application Security FAQ
 
 For troubleshooting articles related to Application Security, visit [Dynatrace Communityï»¿](https://dt-url.net/dy122xtf).
 

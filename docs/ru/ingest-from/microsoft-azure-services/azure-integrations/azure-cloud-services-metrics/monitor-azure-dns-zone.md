@@ -19,7 +19,7 @@ Dynatrace получает метрики из Azure Metrics API для Azure DN
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. раздел [Включение мониторинга сервиса](../azure-monitoring-guide/azure-enable-service-monitoring.md "Enable Azure monitoring in Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. раздел Включение мониторинга сервиса.
 
 ## Просмотр метрик сервиса
 

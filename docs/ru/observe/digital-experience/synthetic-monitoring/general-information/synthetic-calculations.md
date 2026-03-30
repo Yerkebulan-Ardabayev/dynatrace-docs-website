@@ -30,26 +30,26 @@ Dynatrace использует определенные формулы для р
 
 ## Окна обслуживания
 
-Окна обслуживания могут быть исключены из расчета доступности для синтетических мониторов, отображаемой, например, в **Synthetic Classic**, на [страницах деталей синтетического монитора](../analysis-and-alerting/synthetic-details-for-browser-monitors.md "Analyze browser monitor and clickpath results on the Synthetic details page.") и в отчетах. Глобальная настройка позволяет всегда исключать окна обслуживания из расчетов доступности -- перейдите в **Settings** > **Web and mobile monitoring** > **Synthetic availability** для доступа к ней.
+Окна обслуживания могут быть исключены из расчета доступности для синтетических мониторов, отображаемой, например, в **Synthetic Classic**, на страницах деталей синтетического монитора и в отчетах. Глобальная настройка позволяет всегда исключать окна обслуживания из расчетов доступности -- перейдите в **Settings** > **Web and mobile monitoring** > **Synthetic availability** для доступа к ней.
 
 ![Расчет доступности](https://dt-cdn.net/images/maintenancewindowsavailability-901-6ba52f57f9.png)
 
-Сбои, возникающие в течение таких исключенных окон обслуживания, отображаются, например, в графиках и точках данных на странице [**Multidimensional analysis**](../analysis-and-alerting/multidimensional-analysis-for-browser-monitors.md "Learn how to analyze browser-monitor data points."). Все ресурсы с ошибками выделяются в [водопадных графиках](../analysis-and-alerting/waterfall-graphs.md "How to analyze page resource downloads for browser monitors."). Однако неудачные выполнения не включаются в расчеты доступности за периоды обслуживания.
+Сбои, возникающие в течение таких исключенных окон обслуживания, отображаются, например, в графиках и точках данных на странице **Multidimensional analysis**. Все ресурсы с ошибками выделяются в водопадных графиках. Однако неудачные выполнения не включаются в расчеты доступности за периоды обслуживания.
 
 Эта настройка также применяется к ретроактивным окнам обслуживания. То есть вы можете исключить ретроактивное окно обслуживания из расчетов доступности синтетического мониторинга за тот же период. Однако обратите внимание, что окна обслуживания не исключаются ретроактивно из отчетов, сгенерированных до создания окон обслуживания.
 
-Графики [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") и [Metrics API](../../../../dynatrace-api/environment-api/metric-v2.md "Retrieve metric information via Metrics v2 API.") предоставляют метрики доступности с возможностью включения или исключения окон обслуживания.
+Графики Data Explorer и Metrics API предоставляют метрики доступности с возможностью включения или исключения окон обслуживания.
 
 ## Повторные попытки
 
-Повторная попытка при ошибке для одностраничных мониторов браузера и путей кликов настраивается через [настройки монитора](../browser-monitors/configure-browser-monitors.md#outage-handling "Learn about configuring browser monitors and clickpaths.") и включена по умолчанию. Отброшенные выполнения игнорируются в расчетах доступности.
+Повторная попытка при ошибке для одностраничных мониторов браузера и путей кликов настраивается через настройки монитора и включена по умолчанию. Отброшенные выполнения игнорируются в расчетах доступности.
 
 * **Мониторы браузера:** автоматическая повторная попытка (первое неудачное выполнение игнорируется), когда опция включена в настройках монитора.
 * **HTTP-мониторы:** повторные попытки отсутствуют.
 
 ## Ключевые метрики производительности
 
-**Total duration** рассчитывается как сумма **User action duration** действий загрузки и XHR в мониторе. Значения других [ключевых метрик производительности](../../web-applications/analyze-and-use/work-with-key-performance-metrics.md "Learn how to use the right key performance metrics to optimize user experience data for each of your applications.") являются средними и рассчитываются отдельно для действий загрузки и действий XHR.
+**Total duration** рассчитывается как сумма **User action duration** действий загрузки и XHR в мониторе. Значения других ключевых метрик производительности являются средними и рассчитываются отдельно для действий загрузки и действий XHR.
 
 ## Проблемы производительности, разрешение и тайм-ауты
 
@@ -65,11 +65,11 @@ Dynatrace генерирует проблему производительнос
 
 ### Пороги производительности
 
-Пороги производительности для [мониторов браузера](types-of-synthetic-monitors.md "Learn about Dynatrace synthetic monitor types.") определяются как **Total duration** монитора или отдельных событий, которые, в свою очередь, могут включать несколько действий загрузки или XHR. Total duration -- это сумма User action duration составляющих действий. Если событие содержит только одно действие, Total duration равна User action duration.
+Пороги производительности для мониторов браузера определяются как **Total duration** монитора или отдельных событий, которые, в свою очередь, могут включать несколько действий загрузки или XHR. Total duration -- это сумма User action duration составляющих действий. Если событие содержит только одно действие, Total duration равна User action duration.
 
-Обратите внимание, что Total duration недоступна как метрика для отдельных действий загрузки или XHR при просмотре [Multidimensional analysis](../analysis-and-alerting/multidimensional-analysis-for-browser-monitors.md "Learn how to analyze browser-monitor data points.") монитора браузера или [водопадного графика](../analysis-and-alerting/waterfall-graphs.md "How to analyze page resource downloads for browser monitors.").
+Обратите внимание, что Total duration недоступна как метрика для отдельных действий загрузки или XHR при просмотре Multidimensional analysis монитора браузера или водопадного графика.
 
-Пороги производительности для [HTTP-мониторов](types-of-synthetic-monitors.md#http-monitor "Learn about Dynatrace synthetic monitor types.") определяются как **Response time** монитора или отдельных запросов.
+Пороги производительности для HTTP-мониторов определяются как **Response time** монитора или отдельных запросов.
 
 ## Проблемы доступности, разрешение и тайм-ауты
 
@@ -85,4 +85,4 @@ Dynatrace генерирует проблему производительнос
 
 ## Связанные темы
 
-* [Количество действий, потребляемых путями кликов браузера](../browser-monitors/number-of-actions-consumed-by-browser-clickpaths.md "Find out how many actions are consumed by a browser clickpath and how they differ from events.")
+* Количество действий, потребляемых путями кликов браузера

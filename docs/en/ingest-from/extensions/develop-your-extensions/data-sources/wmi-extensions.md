@@ -17,11 +17,11 @@ Dynatrace provides you with a framework that you can use to extend your observab
 We assume the following:
 
 * You possess sufficient Windows and WMI subject matter expertise to create a WMI extension.
-* You're familiar with [Extensions basic concepts](../../concepts.md "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](../extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework.").
+* You're familiar with Extensions basic concepts and the general structure of the extension YAML file.
 
 ## Prerequisites and support
 
-Learn the prerequisites and scope of the supported technologies. For limits applying to your extension, see [Extensions limits](../../concepts.md "Learn more about the concept of Dynatrace Extensions.").
+Learn the prerequisites and scope of the supported technologies. For limits applying to your extension, see Extensions limits.
 
 ### Supported Dynatrace versions
 

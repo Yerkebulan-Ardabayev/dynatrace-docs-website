@@ -9,9 +9,9 @@ scraped: 2026-03-05T21:27:02.504672
 
 * Устарело
 
-Этот API устарел. Используйте вместо него [Monitored entities API](../../entity-v2.md "Узнайте о Dynatrace Monitored entities API."). Дополнительную информацию о переходе на новый API можно найти в [руководстве по миграции](../../../basics/deprecation-migration-guides/topology-v1-to-entity-v2.md "Миграция вашей автоматизации на Monitored entities API.").
+Этот API устарел. Используйте вместо него Monitored entities API. Дополнительную информацию о переходе на новый API можно найти в руководстве по миграции.
 
-Получает параметры указанной [группы процессов](../../../../observe/infrastructure-observability/process-groups.md "Анализ групп процессов и настройка именования, обнаружения и мониторинга групп процессов.").
+Получает параметры указанной группы процессов.
 
 Запрос создаёт ответ в формате `application/json`.
 
@@ -24,7 +24,7 @@ scraped: 2026-03-05T21:27:02.504672
 
 Для выполнения этого запроса необходим токен доступа с областью видимости `DataExport`.
 
-Чтобы узнать, как его получить и использовать, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+Чтобы узнать, как его получить и использовать, см. Токены и аутентификация.
 
 ## Параметры
 
@@ -1914,4 +1914,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/process-grou
 
 ## Связанные темы
 
-* [Группы процессов](../../../../observe/infrastructure-observability/process-groups.md "Анализ групп процессов и настройка именования, обнаружения и мониторинга групп процессов.")
+* Группы процессов

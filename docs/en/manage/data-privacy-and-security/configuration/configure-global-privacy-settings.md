@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:23:36.668953
 * 5-min read
 * Updated on Feb 26, 2026
 
-Dynatrace allows you to granularly control what data you would like to capture. Depending on your use cases, you can configure Dynatrace to provide you with the right amount of [data from your monitored environments](../data-privacy/personal-data-captured-by-dynatrace.md "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data."). However, keep in mind that it's your responsibility to protect your customers' personal data while using Dynatrace.
+Dynatrace allows you to granularly control what data you would like to capture. Depending on your use cases, you can configure Dynatrace to provide you with the right amount of data from your monitored environments. However, keep in mind that it's your responsibility to protect your customers' personal data while using Dynatrace.
 
 We offer multiple masking layers either configured in the environment-wide settingsâwhich apply to your whole tenantâor more fine-grained configuration for the following monitored entities.
 
@@ -29,7 +29,7 @@ Unless otherwise stated, all settings on the **Data privacy** page apply to both
 
 Besides adjusting settings provided on the **Data privacy** page, you can also [mask logs captured by OneAgent](#log-masking), [restrict the view access to personal information](#restrict-view-access) as well as [mark some request attributes as confidential](#conf-attribute).
 
-Note that Dynatrace masks data according to our [three levels of data protection](../data-privacy/levels-of-data-protection.md "Learn how Dynatrace protects end-user information by applying situation-dependent levels of protection."): **at capture**, **at storage**, and **at display**. In the following sections, the data privacy settings are grouped by these levels of data protection.
+Note that Dynatrace masks data according to our three levels of data protection: **at capture**, **at storage**, and **at display**. In the following sections, the data privacy settings are grouped by these levels of data protection.
 
 ## Masking at capture
 
@@ -65,13 +65,13 @@ You can apply these settings to specific monitored process groups or globally to
 * Process group-specific Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic** > process group category > process group > **Settings** > **OneAgent-side masking**.
 * Environment-wide Go to **Settings** > **Preferences** > **Data privacy** > **OneAgent-side masking**.
 
-OneAgent-side masking settings do not affect the [Dynatrace RUM JavaScript](../../../observe/digital-experience/rum-concepts/applications.md#web "Learn about monitored applications in Real User Monitoring and the different application types supported by Dynatrace."). For web applications, use the [**Mask personal data in URIs** option](../../../observe/digital-experience/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr.md#mask-uris "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.") to control sensitive data point masking for URLs.
+OneAgent-side masking settings do not affect the Dynatrace RUM JavaScript. For web applications, use the **Mask personal data in URIs** option to control sensitive data point masking for URLs.
 
 To enable the benefit of multiple layers of protection, configure the masking at capture settings independently from the masking at storage and masking at display settings. Note that data points masked at capture are no longer available. Additionally applying the masking at storage settings creates a second protection layer that might be beneficial for various compliance frameworks.
 
 ### Log masking
 
-In Log Management and Analytics, you can benefit from [fully configurable masking rules](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking.md "Mask sensitive information in your log data using Log Management and Analytics.") for logs captured by OneAgent.
+In Log Management and Analytics, you can benefit from fully configurable masking rules for logs captured by OneAgent.
 
 ### End-user IP address masking
 
@@ -114,7 +114,7 @@ With user action name masking enabled, the user action names listed above appear
 * `keypress on TEXTAREA on page /contact.html`
 * `touch on DIV of page /list.jsf`
 
-To avoid capturing personal information for user actions in your mobile applications, check the information on [mobile user action masking](../../../observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile.md#user-action-masking "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.").
+To avoid capturing personal information for user actions in your mobile applications, check the information on mobile user action masking.
 
 ## Masking at storage
 
@@ -142,7 +142,7 @@ When data is masked at display, it's stored in its original form but is accessib
 
 ### Restricted view access to personal data
 
-Dynatrace automatically considers certain data points it captures as confidential and only displays them to users who have the **View sensitive request data** [permission](../../identity-access-management/permission-management/role-based-permissions.md "Role-based permissions"). All other users see that the data point exists, but the personal data is masked out with asterisks `*****`.
+Dynatrace automatically considers certain data points it captures as confidential and only displays them to users who have the **View sensitive request data** permission. All other users see that the data point exists, but the personal data is masked out with asterisks `*****`.
 
 If your organization captures personal user data such as email addresses, IP addresses, or passwords in the course of monitoring, you should restrict view access to this personal data so that only authorized users can view it. Also note that only users with the **View sensitive request data** permission can override data masking settings.
 
@@ -158,9 +158,9 @@ Note that the following data types are considered confidential and are masked at
 
 ### Confidential request attributes
 
-[Request attributes](../../../observe/application-observability/services/request-attributes.md "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") are key-value pairs of metadata that are filterable across all Dynatrace service and distributed traces views.
+Request attributes are key-value pairs of metadata that are filterable across all Dynatrace service and distributed traces views.
 
-Dynatrace allows you to decide whether a request attribute should be [marked as confidential](../../../observe/application-observability/services/request-attributes.md#confidential "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."). To manage request attributes, you must have the **Manage capturing of sensitive request data** [permission](../../identity-access-management/permission-management/role-based-permissions.md "Role-based permissions").
+Dynatrace allows you to decide whether a request attribute should be [marked as confidential](../../../observe/application-observability/services/request-attributes.md#confidential "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."). To manage request attributes, you must have the **Manage capturing of sensitive request data** permission.
 
 ## Opt-in mode
 
@@ -170,7 +170,7 @@ To access this setting, go to **Settings** > **Preferences** > **Data privacy** 
 
 To give your end users the ability to decide whether their activities should be tracked or not, enable opt-in mode.
 
-By default, RUM automatically creates [cookies](../data-privacy/cookies.md#dynatrace-rum-cookies "Learn about first-party cookie usage in Dynatrace."). When **Data-collection and opt-in mode** is turned on, neither OneAgent nor the RUM JavaScript sets cookies, and the RUM JavaScript doesn't capture any data. After an end user accepts your cookie policy, you can activate RUM for that user via the [`dtrum.enable()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enable) JavaScript API call. Using the [`dtrum.disable()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disable) API call, you can implement a dialog that allows end users to stop sending monitoring data to Dynatrace even after they've previously agreed to it and `dtrum.enable()` has already been called.
+By default, RUM automatically creates cookies. When **Data-collection and opt-in mode** is turned on, neither OneAgent nor the RUM JavaScript sets cookies, and the RUM JavaScript doesn't capture any data. After an end user accepts your cookie policy, you can activate RUM for that user via the [`dtrum.enable()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enable) JavaScript API call. Using the [`dtrum.disable()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disable) API call, you can implement a dialog that allows end users to stop sending monitoring data to Dynatrace even after they've previously agreed to it and `dtrum.enable()` has already been called.
 
 ## Do Not Track
 
@@ -199,4 +199,4 @@ To access this setting, go to **Settings** > **Preferences** > **Data privacy** 
 
 The **Use persistent cookies for user tracking** setting allows you to enable or disable the use of persistent cookies for identifying returning users.
 
-When turned on, the RUM JavaScript sets a persistent cookie in end-user browsers that indicates that the browser has been used previously to access your application. When turned off, RUM Classic is no longer able to associate sessions with the same user across browser restarts. Learn [how we store this cookie](../data-privacy/cookies.md#cookie-storage "Learn about first-party cookie usage in Dynatrace.").
+When turned on, the RUM JavaScript sets a persistent cookie in end-user browsers that indicates that the browser has been used previously to access your application. When turned off, RUM Classic is no longer able to associate sessions with the same user across browser restarts. Learn how we store this cookie.

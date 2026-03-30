@@ -26,7 +26,7 @@ When you use the `set` parameters, you need to restart OneAgent service to apply
 .\oneagentctl.exe --set-proxy=my-proxy.com --restart-service
 ```
 
-For more information, see [OneAgent configuration via command-line interface](../../../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+For more information, see OneAgent configuration via command-line interface.
 
 ## Stop OneAgent using the command line
 
@@ -40,4 +40,4 @@ To start OneAgent again, use the following command:
 
 `net start "Dynatrace OneAgent"`, where `Dynatrace OneAgent` is the service name for OneAgent.
 
-Learn more about [how Dynatrace interacts with your OS](../installation/oneagent-security-windows.md "Learn about Dynatrace OneAgent security and modifications to your Windows-based system").
+Learn more about how Dynatrace interacts with your OS.

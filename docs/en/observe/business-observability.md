@@ -48,25 +48,25 @@ Bring your data from Grail directly into your Microsoft Power BI reports and das
 
 ## Business Observability overview
 
-[### Concepts
+### Concepts
 
-Understand business events and business-grade data.](business-observability/bo-basic-concepts.md "Basic concepts of Dynatrace Business Observability.")[### Capture
+Understand business events and business-grade data.### Capture
 
-Find out how to capture business events.](business-observability/bo-events-capturing.md "Capture business events for Dynatrace Business Observability.")[### Ingest
+Find out how to capture business events.### Ingest
 
-Ingest business events via API.](business-observability/bo-api-ingest.md "Set up authentication for and ingest business events via API.")[### Processing
+Ingest business events via API.### Processing
 
-Find out how business event data is processed.](business-observability/bo-event-processing/bo-processing-classic-pipeline.md "Process business event data in Dynatrace via the classic pipeline.")[### Retention
+Find out how business event data is processed.### Retention
 
-Set retention periods for your data.](business-observability/bo-event-processing/bo-bucket-assignment.md "Assign a retention period to business event data in Dynatrace via the classic pipeline.")[### Analysis and examples
+Set retention periods for your data.### Analysis and examples
 
-Analyze and present business event data.](business-observability/bo-analysis.md "Analyze and present business event data.")[### Use case
+Analyze and present business event data.### Use case
 
-Walk through an end-to-end use case.](business-observability/end-to-end-example.md "How to capture and process business events.")
+Walk through an end-to-end use case.
 
 Existing Dynatrace users
 
-You need to [migrate to Grail](../analyze-explore-automate/log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma.md "Log Management and Analytics is the latest Dynatrace log monitoring solution. We encourage you to upgrade to this latest log monitoring offer.") before using business events.
+You need to migrate to Grail before using business events.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -76,4 +76,4 @@ Get better outcomes across your digital channels and business processes with pre
 
 ## Related topics
 
-* [Dynatrace Query Language](../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* Dynatrace Query Language

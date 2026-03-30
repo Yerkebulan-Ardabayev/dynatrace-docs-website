@@ -10,15 +10,15 @@ scraped: 2026-03-06T21:25:36.661384
 
 ## Режимы развёртывания
 
-[#### Мониторинг платформы Kubernetes
+#### Мониторинг платформы Kubernetes
 
 Подробное описание мониторинга платформы Kubernetes с помощью Dynatrace Operator.
 
-Мониторинг платформы Kubernetes](how-it-works/kubernetes-monitoring.md)[#### Наблюдаемость приложений
+Мониторинг платформы Kubernetes#### Наблюдаемость приложений
 
 Подробное описание наблюдаемости приложений с помощью Dynatrace Operator.
 
-Наблюдаемость приложений](how-it-works/application-monitoring.md)[#### Полностековая наблюдаемость
+Наблюдаемость приложений[#### Полностековая наблюдаемость
 
 Подробное описание полностековой наблюдаемости с помощью Dynatrace Operator.
 
@@ -30,16 +30,16 @@ scraped: 2026-03-06T21:25:36.661384
 
 Подробное описание классического полностекового мониторинга с помощью Dynatrace Operator.
 
-Классический полностековый мониторинг](how-it-works/other-deployment-modes/classic-fullstack.md)[#### Мониторинг хостов
+Классический полностековый мониторинг](how-it-works/other-deployment-modes/classic-fullstack.md)#### Мониторинг хостов
 
 Подробное описание мониторинга хостов с помощью Dynatrace Operator.
 
-Мониторинг хостов](how-it-works/other-deployment-modes/host-monitoring.md)
+Мониторинг хостов
 
 ## Компоненты
 
-[#### Dynatrace Operator
+#### Dynatrace Operator
 
 Компоненты Dynatrace Operator
 
-Dynatrace Operator](how-it-works/components/dynatrace-operator.md)
+Dynatrace Operator

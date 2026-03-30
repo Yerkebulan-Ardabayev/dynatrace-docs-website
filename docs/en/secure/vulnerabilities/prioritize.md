@@ -36,7 +36,7 @@ On the **Prioritization** page, in the filter field, you can filter by
 * The DSS score (select **Dynatrace Security Score** and then enter a score)
 * The risk level (select **Dynatrace Risk Level** and then select a severity)
 
-For details, see [Filter expressions](manage-results.md#expressions "Filter, format, and sort to find relevant vulnerability information.").
+For details, see Filter expressions.
 
 ### Get details about DSS calculation
 
@@ -64,7 +64,7 @@ Use filters to narrow down vulnerabilities based on Dynatrace Security Score ass
 1. On the **Prioritization** page, in the filter field, select **Dynatrace Assessment**.
 2. Select the options you're interested in.
 
-For details, see [Filter expressions](manage-results.md#expressions "Filter, format, and sort to find relevant vulnerability information.").
+For details, see Filter expressions.
 
 ### Review reachable data assets
 
@@ -112,12 +112,12 @@ To learn more about affected and related entities, see [Concepts: Affected and r
 
 Code-level vulnerabilities
 
-Prioritize vulnerabilities based on observed exploit activity to better understand exposure and response patterns. View how frequently a vulnerability has been targeted, what actions were taken in response, and key details from recent attempts to help guide your remediation efforts. Adjust [timeframe](manage-results.md#timeframe "Filter, format, and sort to find relevant vulnerability information.") and [segments](manage-results.md#segments "Filter, format, and sort to find relevant vulnerability information.") and open exploits in [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts.") for further insights.
+Prioritize vulnerabilities based on observed exploit activity to better understand exposure and response patterns. View how frequently a vulnerability has been targeted, what actions were taken in response, and key details from recent attempts to help guide your remediation efforts. Adjust timeframe and segments and open exploits in [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts.") for further insights.
 
 1. On the **Prioritization** page, select a vulnerability.
 2. In the side panel, go to **Exploit attempts**.
 
-To detect exploit attempts you need to [set up Runtime Application Protection](../application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.").
+To detect exploit attempts you need to set up Runtime Application Protection.
 
 ## Prioritize by vulnerability evolution
 
@@ -138,7 +138,7 @@ Leverage the [CISA KEV catalogï»¿](https://www.cisa.gov/known-exploited-vulne
 
 ### Filter by CISA KEV
 
-On the **Prioritization** page, use the [filter](manage-results.md#filter "Filter, format, and sort to find relevant vulnerability information.") field to
+On the **Prioritization** page, use the filter field to
 
 * Show whether a vulnerability appears in the CISA KEV catalog (`CISA KEV` > `CISA KEV - In catalog` > `Yes`/`No`)
 * View when a CISA KEV-listed vulnerability is due (`CISA KEV` > `CISA KEV - Due date`, then enter the target date, in `YYYY-MM-DD` format)
@@ -158,4 +158,4 @@ For GCP deployments, data may lag behind the CISA KEV catalog by approximately t
 
 Coverage of library vulnerabilities shows how well your environment's processes and hosts are monitored by Runtime Vulnerability Analytics (RVA). By reviewing coverage, you can identify monitoring gaps, understand which entities are most affected at runtime, and track exposure trends over time. This context helps you prioritize remediation where it matters most.
 
-For details, see [Assess coverage](assess-coverage.md "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
+For details, see Assess coverage.

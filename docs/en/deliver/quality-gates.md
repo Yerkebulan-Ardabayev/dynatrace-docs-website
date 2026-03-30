@@ -16,8 +16,8 @@ Business-critical services require a thorough validation before deploying to pro
 
 The flexibility of various Dynatrace tools can help you to optimize your delivery process. The main building blocks are:
 
-* [Site Reliability Guardian](site-reliability-guardian.md "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.")âA Dynatrace app that automates release validation to check a newly deployed version's service availability, performance, capacity, and security objectives.
-* [Workflows](../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")âA Dynatrace app in which a series of actions are assembled to build processes in a graphical representation. Those workflows can automatically be triggered by events in Dynatrace, either on a schedule or manually.
+* Site Reliability GuardianâA Dynatrace app that automates release validation to check a newly deployed version's service availability, performance, capacity, and security objectives.
+* WorkflowsâA Dynatrace app in which a series of actions are assembled to build processes in a graphical representation. Those workflows can automatically be triggered by events in Dynatrace, either on a schedule or manually.
 
 ## Introduction
 
@@ -41,7 +41,7 @@ The following steps use business events to implement the release validation use 
 
 1. Set up your CI/CD tool
 
-   Your Continous Integration (CI) or Continuous Delivery (CD), for example, Jenkins, can [send business events to Dynatrace](../observe/business-observability/bo-api-ingest.md "Set up authentication for and ingest business events via API."). These events can then trigger Site Reliability Guardian validations in a workflow.
+   Your Continous Integration (CI) or Continuous Delivery (CD), for example, Jenkins, can send business events to Dynatrace. These events can then trigger Site Reliability Guardian validations in a workflow.
 
    You can create a helper like in the example below for your pipeline to post business events to business events API.
 
@@ -234,12 +234,12 @@ The following steps use business events to implement the release validation use 
 
    ![Guardian example](https://dt-cdn.net/images/guardian-1077-6bdb4b505e.webp)
 
-   For more information, see [Create a Site Reliability guardian](site-reliability-guardian/create-srg.md "Create a guardian manually or from a predefined template.").
+   For more information, see Create a Site Reliability guardian.
 4. Create a workflow
 
    Now that you have all the data in place, you can create a workflow that will validate your test results using the [guardian workflow action](site-reliability-guardian.md#automation "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.").
 
-   * The workflow is triggered on your pipeline, sending the business event. For that, you need to use the [event trigger](../analyze-explore-automate/workflows/trigger.md#event-trigger "Introduction to workflow automation triggers for workflows."). For example, you can trigger the workflow with the following filter query
+   * The workflow is triggered on your pipeline, sending the business event. For that, you need to use the event trigger. For example, you can trigger the workflow with the following filter query
 
      ```
      ((event.type == "guardian.validation.triggered") and stage == "dev")
@@ -408,7 +408,7 @@ The following steps use business events to implement the release validation use 
 
    limit 1 ,"timezone": "Europe/Warsaw", "enablePreview": true
    ```
-6. If your pipeline is successful, you can now trigger another workflow sending a notification to your team member, who can approve the promotion. To do that, you can use one of [Workflows Connectors](../analyze-explore-automate/workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.") like Slack, Microsoft Teams, or Jira.
+6. If your pipeline is successful, you can now trigger another workflow sending a notification to your team member, who can approve the promotion. To do that, you can use one of Workflows Connectors like Slack, Microsoft Teams, or Jira.
 
    Here's an example of a successful Jenkins build performing the tests explained above.
 

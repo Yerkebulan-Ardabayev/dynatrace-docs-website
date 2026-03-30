@@ -10,7 +10,7 @@ scraped: 2026-03-04T21:32:31.513544
 * Последняя Dynatrace
 * 1 мин. чтения
 
-GitHub Connector ![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub") позволяет интегрировать вашу среду Dynatrace с репозиториями GitHub. С помощью этой интеграции можно автоматизировать работу с задачами и pull request'ами на основе данных мониторинга и событий в рамках специального [рабочего процесса](../../workflows.md "Автоматизация ИТ-процессов с помощью Dynatrace Workflows — реагирование на события, планирование задач и подключение сервисов.").
+GitHub Connector ![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub") позволяет интегрировать вашу среду Dynatrace с репозиториями GitHub. С помощью этой интеграции можно автоматизировать работу с задачами и pull request'ами на основе данных мониторинга и событий в рамках специального рабочего процесса.
 
 [![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub")
 
@@ -24,5 +24,5 @@ GitHub Connector ![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lx
 
 ## Связанные разделы
 
-* [Действия GitHub Connector](github/github-workflows-actions.md "Интеграция Workflows с сервисами GitHub для использования действий GitHub Connector.")
-* [Настройка GitHub Connector](github/github-workflows-setup.md "Узнайте, как настроить GitHub Connector.")
+* Действия GitHub Connector
+* Настройка GitHub Connector

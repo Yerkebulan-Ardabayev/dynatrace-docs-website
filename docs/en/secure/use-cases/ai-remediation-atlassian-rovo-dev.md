@@ -24,7 +24,7 @@ This lack of context creates alert fatigue and slows down remediation. Teams nee
 
 ## Solution
 
-Dynatrace integrates with Atlassian Rovo Dev via the Model Context Protocol (MCP), enriching the developer experience with runtime context and [Runtime Vulnerability Analytics (RVA)](../application-security/vulnerability-analytics.md "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") validation. This enables Rovo Dev to take targeted action directly from the IDE:
+Dynatrace integrates with Atlassian Rovo Dev via the Model Context Protocol (MCP), enriching the developer experience with runtime context and Runtime Vulnerability Analytics (RVA) validation. This enables Rovo Dev to take targeted action directly from the IDE:
 
 * Confirmed vulnerabilities are prioritized for remediation: Rovo Dev queries Dynatrace for runtime-validated vulnerabilities, ensuring developers focus on issues that actually impact production.
 * Intelligent ticket management: Rovo Dev creates Jira tickets for confirmed findings, automatically checking for duplicates before creation, and updates tickets as remediation progresses.
@@ -59,9 +59,9 @@ See below for the [Atlassian](#atlassian) and [Dynatrace](#dt) requirements.
 
 ### Dynatrace
 
-* Set up monitoring with [Dynatrace OneAgent](../../platform/oneagent.md "Learn the monitoring capabilities of OneAgent.") for the production services.
-* [Enable Runtime Vulnerability Analytics](../application-security/vulnerability-analytics.md "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
-* [Create a Dynatrace platform token](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.") with the following permissions:
+* Set up monitoring with Dynatrace OneAgent for the production services.
+* Enable Runtime Vulnerability Analytics.
+* Create a Dynatrace platform token with the following permissions:
 
   + `mcp-gateway:servers:invoke`
   + `mcp-gateway:servers:read`
@@ -201,7 +201,7 @@ This scenario uses [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f
 
 1. Dynatrace detects vulnerabilities via Runtime Vulnerability Analytics.
 2. A Dynatrace workflow runs on a configured schedule to identify new critical, runtime-confirmed vulnerabilities.
-3. The workflow uses [Davis CoPilot](../../dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows.md "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.") to summarize findings and automatically creates Jira tickets for confirmed vulnerabilities.
+3. The workflow uses Davis CoPilot to summarize findings and automatically creates Jira tickets for confirmed vulnerabilities.
 4. A developer receives the Jira ticket notification and opens the affected repository in their IDE.
 5. The developer loads the Jira ticket as context by selecting it in the Atlassian extension, providing full vulnerability details.
 6. If necessary, the developer can get additional observability context using the configured Dynatrace MCP server.
@@ -238,7 +238,7 @@ When a Jira ticket is assigned:
 
 ## Additional use cases
 
-The [Dynatrace MCP server](../../../common/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp.md "Learn about the Dynatrace MCP server and how you can connect to it.") provides additional tools that Rovo Dev can use, enabling additional use cases, such as:
+The Dynatrace MCP server provides additional tools that Rovo Dev can use, enabling additional use cases, such as:
 
 * **Incident response**: Query active problems from Dynatrace, get root cause analysis, and create incident tickets in Jira with full observability context.
 * **Performance optimization**: Retrieve slow transaction data, database query insights, and service dependencies to inform optimization efforts.
@@ -247,7 +247,7 @@ The [Dynatrace MCP server](../../../common/dynatrace-intelligence/dynatrace-inte
 
 ## Related topics
 
-* [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
-* [Runtime Vulnerability Analytics](../application-security/vulnerability-analytics.md "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
-* [Workflows](../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
-* [Dynatrace Intelligence (Preview) app](../../dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows.md "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.")
+* Dynatrace Query Language
+* Runtime Vulnerability Analytics
+* Workflows
+* Dynatrace Intelligence (Preview) app

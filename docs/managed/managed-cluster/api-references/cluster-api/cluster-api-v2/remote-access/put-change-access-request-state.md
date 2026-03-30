@@ -13,7 +13,7 @@ To execute this request, you need one of the following API-Token scopes:
 * **Cluster token management** (`ClusterTokenManagement`)
 * **Service Provider API** (`ServiceProviderAPI` )
 * Nodekeeper access for node management (`Nodekeeper`)  
-  To learn how to obtain and use it, see [Cluster API - Authentication](/managed/managed-cluster/api-references/cluster-api/basics/cluster-api-authentication "How to get authenticated to use the Dynatrace Cluster API.").
+  To learn how to obtain and use it, see Cluster API - Authentication.
 
 ## Endpoint
 

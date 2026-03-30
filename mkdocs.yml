@@ -1,5 +1,5 @@
 site_name: Dynatrace — Документация
-site_description: Документация Dynatrace с AI-помощником (Managed + SaaS)
+site_description: Документация Dynatrace Managed с AI-помощником
 site_author: Yerkebulan Ardabayev
 site_url: https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/
 
@@ -66,12 +66,10 @@ exclude_docs: |
 # НАВИГАЦИЯ — Оптимизированная информационная архитектура
 # Макс. глубина: 4 уровня | Единый язык заголовков (RU)
 #
-# СТРУКТУРА ПАПОК (без смешения Managed и SaaS):
+# СТРУКТУРА ПАПОК:
 #   docs/managed/       — Dynatrace Managed (EN)
-#   docs/managed-ru/    — Dynatrace Managed (RU перевод)
-#   docs/en/            — Dynatrace SaaS (EN) — БЕЗ managed/ подпапки
-#   docs/ru/            — Dynatrace SaaS (RU) — БЕЗ managed/ подпапки
-#   docs/common/        — Общий контент (Managed + SaaS)
+#   docs/ru/            — Dynatrace Managed (RU перевод)
+#   docs/en/            — Dynatrace (EN)
 # =============================================================================
 nav:
   - Главная: index.md
@@ -222,7 +220,6 @@ nav:
   # --- ЧТО НОВОГО ---
   - Что нового:
     - Все обновления: ru/whats-new.md
-    - SaaS: ru/whats-new/saas.md
     - Обновления OneAgent: ru/whats-new/oneagent.md
     - ActiveGate: ru/whats-new/activegate.md
     - Dynatrace Operator:

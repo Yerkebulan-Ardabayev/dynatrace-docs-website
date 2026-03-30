@@ -31,9 +31,9 @@ As explained in [Find the suitable instrumentation approach](../initial-setup.md
 
 ## Step 1 Deploy OneAgent
 
-After deploying OneAgent in full-stack monitoring mode on your application tiers, the RUM JavaScript is automatically injected into HTML pages. Restart the process after OneAgent deployment for the injection to become active. For installation details, see [Dynatrace OneAgent](../../../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.").
+After deploying OneAgent in full-stack monitoring mode on your application tiers, the RUM JavaScript is automatically injected into HTML pages. Restart the process after OneAgent deployment for the injection to become active. For installation details, see Dynatrace OneAgent.
 
-If OneAgent doesn't inject the RUM JavaScript, refer to [Configure automatic injection in the New RUM Experience](configure-auto-injection.md "Configure automatic injection of the RUM JavaScript into the pages of your frontends in the New RUM Experience.") for guidance.
+If OneAgent doesn't inject the RUM JavaScript, refer to Configure automatic injection in the New RUM Experience for guidance.
 
 By default, all captured RUM data is associated with the catch-all frontend **My web application**. We recommend keeping this name to make it easier to distinguish from other frontends.
 
@@ -63,7 +63,7 @@ All frontend detection rules are URL-based and consist of a pattern and a matche
 There may be a componentâsuch as a reverse proxy or load balancerâbetween the browser and the tier responsible for frontend detection that is either uninstrumented or uses a technology without RUM support. If this component rewrites the URL, the URL used for frontend detection differs from the one originally requested by the browser. In such cases, special considerations are required to ensure that your frontend detection rules take effect as expected.
 
 * If the component terminates HTTPS, you cannot use the `https` scheme in the pattern of a frontend detection rule.
-* If the component rewrites the host part of the URL, you can still use the original host in your frontend detection rules. However, you may need to set up host name determination for this to work. For details, see [Set up host name determination in the New RUM Experience](set-up-host-name-determination.md "Learn how to set up host name determination in the New RUM Experience.").
+* If the component rewrites the host part of the URL, you can still use the original host in your frontend detection rules. However, you may need to set up host name determination for this to work. For details, see Set up host name determination in the New RUM Experience.
 * If the component rewrites the URL path and removes part of it, you cannot use that removed part in your frontend detection rules.
 
 ## Step 4 Create a frontend and define frontend detection rules
@@ -80,8 +80,8 @@ To create an auto-injected frontend
 6. In the **Setup** > **Configure frontend detection rule** step, configure the matcher and the pattern for your frontend detection rule.
 7. Select **Save frontend detection rule**.
 8. Under **Select capability and settings**, check if **RUM** is enabled. If it isnât, select  **Override** and turn it on.
-9. If you want to capture [user interactions](../additional-configuration/user-interactions.md "Learn how to configure and customize user interaction capturing for web frontends.") such as clicks and scrolls, enable **User Interactions**.
-10. To ensure compliance with applicable data privacy regulations, configure the required settings under **End users' data privacy**. For more information about the available options, see [Configure data privacy settings for web frontends](../additional-configuration/data-privacy-web.md "Learn about the available settings that help you ensure your web frontends comply with data privacy regulations.").
+9. If you want to capture user interactions such as clicks and scrolls, enable **User Interactions**.
+10. To ensure compliance with applicable data privacy regulations, configure the required settings under **End users' data privacy**. For more information about the available options, see Configure data privacy settings for web frontends.
 11. Select **Next** > **Go to new frontend**.
 
 Youâll now see the detection rule for the frontend you just created. To add additional rules, select  **Add**.
@@ -108,17 +108,17 @@ When OneAgent injects the RUM JavaScript, it adds an ID for the detected fronten
 
 By default, OneAgent injects the [OneAgent JavaScript tag](snippet-formats.md#oneagent-js-tag "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience.") snippet format, which is recommended for most scenarios.
 
-The New RUM Experience provides snippet formats tailored to different requirements. For details on different formats and their configuration options, see [Select a snippet format in the New RUM Experience](snippet-formats.md "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience."). You can configure the snippet format as described in [Configure automatic injection in the New RUM Experience](configure-auto-injection.md#configure-snippet-format "Configure automatic injection of the RUM JavaScript into the pages of your frontends in the New RUM Experience.").
+The New RUM Experience provides snippet formats tailored to different requirements. For details on different formats and their configuration options, see Select a snippet format in the New RUM Experience. You can configure the snippet format as described in [Configure automatic injection in the New RUM Experience](configure-auto-injection.md#configure-snippet-format "Configure automatic injection of the RUM JavaScript into the pages of your frontends in the New RUM Experience.").
 
 ## Step 7 Verify your setup
 
 If your frontend is receiving traffic, the charts in [![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals**](../../experience-vitals.md "The Experience Vitals app provides an entry point for monitoring web and mobile frontends.") should begin showing data within ten minutes.
 
-If no data appears yet, your environment may require further configuration steps. The guide [Finalize the initial setup for your auto-injected frontend](finalize-initial-setup-auto-injection.md "Verify and complete the initial setup for your auto-injected frontend.") provides a series of checks to help you identify the configuration needed.
+If no data appears yet, your environment may require further configuration steps. The guide Finalize the initial setup for your auto-injected frontend provides a series of checks to help you identify the configuration needed.
 
 ## Related topics
 
-* [Set up host name determination in the New RUM Experience](set-up-host-name-determination.md "Learn how to set up host name determination in the New RUM Experience.")
-* [Configure automatic injection in the New RUM Experience](configure-auto-injection.md "Configure automatic injection of the RUM JavaScript into the pages of your frontends in the New RUM Experience.")
-* [Select a snippet format in the New RUM Experience](snippet-formats.md "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience.")
-* [Finalize the initial setup for your auto-injected frontend](finalize-initial-setup-auto-injection.md "Verify and complete the initial setup for your auto-injected frontend.")
+* Set up host name determination in the New RUM Experience
+* Configure automatic injection in the New RUM Experience
+* Select a snippet format in the New RUM Experience
+* Finalize the initial setup for your auto-injected frontend
