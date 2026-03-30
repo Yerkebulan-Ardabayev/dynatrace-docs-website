@@ -75,6 +75,46 @@ def extract_title(md_file: Path) -> str:
     return md_file.stem.replace("-", " ").replace("_", " ").title()
 
 
+def extract_summary(md_file: Path, max_lines: int = 10) -> str:
+    """
+    Extract a content summary from a markdown file.
+    Returns first meaningful paragraphs (skipping frontmatter, headings, lists markers).
+    Useful for release notes — captures what changed and why.
+    """
+    try:
+        content = md_file.read_text(encoding="utf-8")
+        # Skip frontmatter
+        if content.startswith("---"):
+            end = content.find("---", 3)
+            if end > 0:
+                content = content[end + 3:]
+
+        lines = []
+        for line in content.strip().split("\n"):
+            stripped = line.strip()
+            # Skip empty lines, breadcrumbs, images, HTML
+            if not stripped:
+                continue
+            if stripped.startswith(("![", "<", "---", "| ---", "|  |")):
+                continue
+            # Skip single-word nav breadcrumbs like "* Release notes"
+            if stripped.startswith("* ") and len(stripped) < 40:
+                continue
+            # Include headings (## Version...) and content
+            lines.append(stripped)
+            if len(lines) >= max_lines:
+                break
+
+        return "\n".join(lines) if lines else ""
+    except Exception:
+        return ""
+
+
+def is_release_note(rel_path: str) -> bool:
+    """Check if a file is a release note (whats-new section)."""
+    return rel_path.startswith("whats-new/") or "release-note" in rel_path.lower()
+
+
 def detect_section(rel_path: str) -> str:
     """Determine documentation section from file path."""
     parts = rel_path.split("/")
@@ -136,6 +176,13 @@ def detect_changes(source_dir: Path, target_dir: Path) -> dict:
             "ru_path": f"docs/ru/{rel}",
             "hash": current_hash,
         }
+
+        # For release notes, extract content summary
+        if is_release_note(rel):
+            summary = extract_summary(src_file, max_lines=15)
+            if summary:
+                article_info["summary"] = summary
+                article_info["is_release"] = True
 
         # Case 1: No Russian translation exists → NEW
         if not ru_file.exists():

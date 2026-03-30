@@ -211,8 +211,44 @@ jobs:
           print(chr(10).join(lines[:30]))
           " 2>/dev/null || echo "")
 
+              # Извлечь подробности релизов (whats-new)
+              RELEASE_DETAILS=$(python3 -c "
+          import json
+          r = json.load(open('changes_report.json'))
+          releases = []
+          for a in r.get('new_articles', []) + r.get('updated_articles', []):
+              if a.get('is_release') and a.get('summary'):
+                  releases.append(a)
+          if not releases:
+              exit(0)
+          lines = []
+          lines.append('')
+          lines.append('🚀 *Новые релизы — подробности:*')
+          lines.append('')
+          for rel in releases[:5]:
+              title = rel.get('title', rel['path'])
+              summary = rel['summary']
+              # Берём первые 500 символов описания
+              if len(summary) > 500:
+                  summary = summary[:500] + '...'
+              # Экранируем спецсимволы Markdown Telegram
+              for ch in ['_', '[', ']', '(', ')', '~', '\`', '>', '#', '+', '-', '=', '|', '{', '}', '.', '!']:
+                  summary = summary.replace(ch, '\\\\' + ch)
+                  title = title.replace(ch, '\\\\' + ch)
+              lines.append(f'📦 *{title}*')
+              lines.append(summary)
+              lines.append('')
+          if len(releases) > 5:
+              lines.append(f'...и ещё {len(releases)-5} релизов')
+          print(chr(10).join(lines[:60]))
+          " 2>/dev/null || echo "")
+
               if [ -n "$DETAILS" ]; then
                 MSG="${MSG}${NL}📋 *Что изменилось:*${NL}${DETAILS}${NL}"
+              fi
+
+              if [ -n "$RELEASE_DETAILS" ]; then
+                MSG="${MSG}${RELEASE_DETAILS}${NL}"
               fi
             fi
 
