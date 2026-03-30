@@ -180,7 +180,7 @@
 /* Sidebar — white bg, visible borders and text */
 [data-md-color-scheme="default"] .md-sidebar {
   background: var(--docflow-sidebar-bg);
-  border-right: 1px solid var(--docflow-border);
+  border-right: 1px solid var(--docflow-border) !important;
 }
 
 [data-md-color-scheme="default"] .md-nav__link {
@@ -424,7 +424,7 @@ body {
 
 .md-sidebar {
   background: var(--docflow-sidebar-bg);
-  border-right: 1px solid var(--docflow-border);
+  border-right: 1px solid var(--docflow-border) !important;
 }
 
 .md-sidebar--primary {
@@ -453,12 +453,27 @@ body {
   font-weight: 500;
 }
 
-/* Remove default Material theme vertical accent indicator on active nav items */
+/* Remove default Material theme vertical accent indicator on nav items */
 .md-nav__item--active > .md-nav__link,
 .md-nav__item--nested > .md-nav__link,
 .md-nav--primary .md-nav__link[data-md-state="blur"],
-.md-nav .md-nav__link--active {
+.md-nav .md-nav__link--active,
+.md-nav__link {
   border-left: none !important;
+  border-right: none !important;
+}
+
+/* Kill any Material theme sidebar indicator pseudo-elements */
+.md-sidebar::before,
+.md-sidebar::after,
+.md-sidebar__scrollwrap::before,
+.md-sidebar__scrollwrap::after,
+.md-sidebar__inner::before,
+.md-sidebar__inner::after,
+.md-nav--primary::before,
+.md-nav--primary::after {
+  display: none !important;
+  border: none !important;
 }
 
 /* Section headers — semibold like DocFlow parent items */
@@ -473,17 +488,28 @@ body {
   transition: transform 0.2s ease;
 }
 
-/* Sidebar scrollbar */
+/* Sidebar scrollbar — force non-accent colors */
+.md-sidebar,
+.md-sidebar__scrollwrap,
+.md-sidebar__inner,
+.md-nav--primary {
+  scrollbar-color: var(--docflow-border) transparent !important;
+  scrollbar-width: thin !important;
+}
+
+.md-sidebar ::-webkit-scrollbar,
 .md-sidebar__scrollwrap::-webkit-scrollbar {
-  width: 4px;
+  width: 4px !important;
 }
 
+.md-sidebar ::-webkit-scrollbar-track,
 .md-sidebar__scrollwrap::-webkit-scrollbar-track {
-  background: transparent;
+  background: transparent !important;
 }
 
+.md-sidebar ::-webkit-scrollbar-thumb,
 .md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
-  background: var(--docflow-border);
+  background: var(--docflow-border) !important;
   border-radius: 2px;
 }
 
