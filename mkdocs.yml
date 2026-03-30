@@ -57,6 +57,11 @@ plugins:
         - ru
         - en
 
+# Исключить из сборки (не является документацией Dynatrace)
+exclude_docs: |
+  notebooklm/
+  ai/notebooklm.md
+
 # =============================================================================
 # НАВИГАЦИЯ — Оптимизированная информационная архитектура
 # Макс. глубина: 4 уровня | Единый язык заголовков (RU)
@@ -140,7 +145,7 @@ nav:
       - Обзор RCA: ru/dynatrace-intelligence/root-cause-analysis.md
       - Концепции RCA: ru/dynatrace-intelligence/root-cause-analysis/concepts.md
       - Анализ событий: ru/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md
-    - Интеграции: ru/dynatrace-intelligence/dynatrace-intelligence-integrations.md
+    - Интеграции Davis AI: ru/dynatrace-intelligence/dynatrace-intelligence-integrations.md
     - Справочник:
       - AI модели: ru/dynatrace-intelligence/reference/ai-models.md
       - Лимиты: ru/dynatrace-intelligence/reference/davis-ai-limits.md
@@ -149,7 +154,7 @@ nav:
   - Анализ и автоматизация:
     - Дашборды и ноутбуки:
       - Дашборды: ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md
-      - API: ru/analyze-explore-automate/dashboards-and-notebooks/document-api.md
+      - Document API: ru/analyze-explore-automate/dashboards-and-notebooks/document-api.md
       - Версии документов: ru/analyze-explore-automate/dashboards-and-notebooks/document-version.md
       - Визуализации: ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md
       - Обзор данных: ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md
@@ -196,7 +201,7 @@ nav:
   # --- БЕЗОПАСНОСТЬ ---
   - Безопасность:
     - Наблюдаемость угроз: ru/secure/threat-observability.md
-    - Интеграция: ru/secure/threat-observability/security-events-ingest.md
+    - Приём событий безопасности: ru/secure/threat-observability/security-events-ingest.md
 
   # --- УПРАВЛЕНИЕ ---
   - Управление:

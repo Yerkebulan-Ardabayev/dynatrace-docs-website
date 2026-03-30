@@ -1,46 +1,33 @@
 ---
-title: Welcome to Dynatrace Documentation
-source: https://www.dynatrace.com/support/help/
-scraped: 2026-03-06T21:09:22.514660
+title: Документация Dynatrace Managed
+source: https://docs.dynatrace.com/managed
 ---
 
-# Welcome to Dynatrace Documentation
+# Документация Dynatrace Managed
 
+Изучите Dynatrace Managed и используйте ресурсы для улучшения наблюдаемости и безопасности вашей инфраструктуры.
 
-Learn about Dynatrace and explore resources to enhance your observability and security.
+### Начните работу с Dynatrace или узнайте, что нового
 
-![Dynatrace Documentation](https://dt-cdn.net/images/docs-hero-0423f9e141.svg "Dynatrace Documentation")
+* Впервые в Dynatrace? Узнайте, как [начать работу](../ru/getting-started.md "Узнайте о возможностях мониторинга Dynatrace, концепциях и моделях развёртывания.") всего за несколько шагов.
+* Уже используете Dynatrace? Узнайте, что нового для [SaaS](../ru/whats-new/saas.md "Примечания к выпуску Dynatrace SaaS"), [OneAgent](../ru/whats-new/oneagent.md "Примечания к выпуску OneAgent") или [ActiveGate](../ru/whats-new/activegate.md "Примечания к выпуску ActiveGate").
 
-### Get started with Dynatrace or discover whatâs new
+## Популярные страницы
 
-* New to Dynatrace? Learn how to [get started](../discover-dynatrace/get-started.md "Learn about Dynatrace monitoring capabilities, concepts, and deployment models and find out how to get started with SaaS and Managed deployments.") in just a few steps.
-* Already on board? Discover whatâs new for [SaaS](../whats-new/saas.md "Release notes for Dynatrace SaaS"), [OneAgent](../whats-new/oneagent.md "Release notes for Dynatrace OneAgent"), or [ActiveGate](../whats-new/activegate.md "Release notes for Dynatrace ActiveGate").
+* [Установка OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation.md "Установка и настройка OneAgent") — развёртывание агента мониторинга
+* [Настройка ActiveGate](../ru/ingest-from/dynatrace-activegate.md "Установка и настройка ActiveGate") — шлюз для расширенного мониторинга
+* [Dynatrace API](../ru/dynatrace-api.md "Обзор Dynatrace API") — программный доступ к данным
 
-![Dynatrace Signet](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
+## Обучение
 
-## Popular pages
+* [Университет Dynatrace](https://university.dynatrace.com) — курсы и сертификации, онлайн и очно
+* [Dynatrace Developer](https://developer.dynatrace.com) — создавайте приложения с минимальными усилиями
+* [Сообщество Dynatrace](https://community.dynatrace.com) — ответы на вопросы и общение с экспертами
 
-## Tutorials
+## Приложения Dynatrace
 
+Откройте для себя все [Приложения Dynatrace](../ru/discover-dynatrace/dynatrace-apps.md "Обзор приложений Dynatrace").
 
-## Documentation highlights
+## Остались вопросы?
 
-## Dynatrace apps
-
-Discover all [Dynatrace apps](../discover-dynatrace/dynatrace-apps.md "Browse Dynatrace Apps.").
-
-## Still have questions?
-
-[### Talk to our product experts
-
-Our Dynatrace product experts are here to help you with technical questions and provide in-depth assistance via chat.](https://support.dynatrace.com/)
-
-## Continue your learning journey
-
-[### Join Dynatrace University
-
-Game-changing education and resources, online and in-person](https://university.dynatrace.com)[### Dynatrace Developer
-
-Learn to create incredible apps with minimal effort](https://developer.dynatrace.com)[### Join Dynatrace Community
-
-Find the answers you are looking for and meet other users and Dynatrace experts.](https://community.dynatrace.com)
+[Обратитесь к экспертам Dynatrace](https://support.dynatrace.com/) — наши специалисты помогут с техническими вопросами через чат.
