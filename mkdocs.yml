@@ -31,11 +31,12 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
+    - navigation.expand
     - navigation.top
     - navigation.instant
     - navigation.path
     - navigation.indexes
+    - navigation.prune
     - search.suggest
     - search.highlight
     - search.share
@@ -254,3 +255,4 @@ extra:
       link: https://github.com/Yerkebulan-Ardabayev
 
 copyright: "\xA9 2026 Dynatrace Docs | Yerkebulan Ardabayev"
+                      
