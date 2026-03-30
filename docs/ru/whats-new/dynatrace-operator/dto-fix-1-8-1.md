@@ -4,44 +4,28 @@ source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-8-
 scraped: 2026-03-06T21:37:12.752343
 ---
 
-* Latest Dynatrace
-* Release notes
+**Дата выпуска:** 9 февраля 2026
 
-Дата выпуска: 9 февраля 2026 года
+Патч-релиз. Новые функции см. в примечаниях к версии 1.8.
 
-Данная страница содержит обзор патчей, включённых в Dynatrace Operator версии 1.8.1. Подробную информацию о новых функциях и других улучшениях см. в примечаниях к выпуску версии 1.8.
+## Исправления
 
-## Исправленные проблемы
+- **RBAC для ActiveGate в OperatorHub** — добавлены отсутствовавшие RBAC-ресурсы для CSV-установок. Изменен процесс сборки бандла для обхода ограничений CSV с агрегированными ролями.
+- **Мониторинг логов в GKE Autopilot** — исправлена ошибка валидации HostPath из-за суффикса тенанта для RKE.
 
-* Разрешения ActiveGate в маркетплейсе OperatorHub
+## Устаревание
 
-  Dynatrace Operator 1.8.1 теперь включает RBAC-ресурсы, которые ранее отсутствовали для установок на основе ClusterServiceVersion (CSV). Процесс сборки бандла Dynatrace Operator был изменён для преодоления ограничений CSV в отношении агрегированных ролей, которые вызывали данную проблему.
-
-* Список разрешённых адресов для мониторинга логов в GKE Autopilot
-
-  Исправлена проблема с мониторингом логов в GKE Autopilot, при которой суффикс тенанта, добавляемый к HostPath для поддержки RKE, приводил к ошибкам валидации.
-
-## Уведомления об удалении и устаревании
-
-* Репозиторий Helm, расположенный по адресу `dynatrace/helm-charts`, является устаревшим и в будущем выпуске прекратит получать обновления. Если вы всё ещё используете его,
-  обновите URL до `dynatrace/dynatrace-operator` или перейдите на подход с использованием реестра OCI. Обновите URL репозитория Helm следующими командами:
-
+- Helm-репозиторий `dynatrace/helm-charts` устарел. Обновите URL:
   ```
   helm repo remove dynatrace
-
-
   helm repo add dynatrace https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/main/config/helm/repos/stable
   ```
+- Поддерживайте версию DynaKube API в актуальном состоянии. См. [руководство по миграции](../../ingest-from/setup-on-k8s/guides/migration/dynakube.md#deprecation).
 
-* Во избежание возможных сбоев настоятельно рекомендуется поддерживать версию DynaKube API в актуальном состоянии. После того как версия будет признана устаревшей и удалена, обновления могут стать значительно более сложными и требовательными по времени.
+## Обновление с версии 1.7
 
-  + Подробнее о процессе устаревания версий DynaKube API можно узнать в [руководстве по миграции](../../ingest-from/setup-on-k8s/guides/migration/dynakube.md#deprecation "Перенесите ваш DynaKube CR на более новые версии apiVersion в соответствии с используемой версией Operator.").
-
-## Обновление с Dynatrace Operator версии 1.7
-
-* Указание образа в `.spec.templates.otelCollector.imageRef` теперь является обязательным при включённом получении телеметрии.
-* Устаревшие версии DynaKube API `v1beta1` и `v1beta2` были удалены из схемы CRD DynaKube.
-* Версия DynaKube API `v1beta3` больше не обслуживается и будет удалена в будущем выпуске Dynatrace Operator. См.: [Руководство по миграции версий DynaKube API](../../ingest-from/setup-on-k8s/guides/migration/dynakube.md#deprecation "Перенесите ваш DynaKube CR на более новые версии apiVersion в соответствии с используемой версией Operator.")
-* Обновление Dynatrace Operator может перезапустить ActiveGate, DaemonSet OneAgent (хостовый агент) и DaemonSet мониторинга логов.
-* Если вы осуществляете мониторинг Kubernetes через публичный Kubernetes API с использованием внутрикластерного ActiveGate, вам потребуется воссоздать bearer-токен, поскольку имя используемого ServiceAccount изменилось с `dynatrace-kubernetes-monitoring` на `dynatrace-activegate`. Следуйте инструкциям в разделе [Подключение к публичному Kubernetes API](../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring.md#connect "Мониторинг Kubernetes API с помощью Dynatrace").
-* В связи с вышеупомянутыми изменениями в объектах RBAC ActiveGate, установка `rbac.kspm.create: true` теперь требует `rbac.activeGate.create: true` и `rbac.kubernetesMonitoring.create: true`. **Обязательно скорректируйте значения Helm при необходимости перед обновлением.**
+- `.spec.templates.otelCollector.imageRef` теперь обязателен при включенном приеме телеметрии
+- Удалены DynaKube API `v1beta1` и `v1beta2`; `v1beta3` устарела
+- Обновление может перезапустить ActiveGate, OneAgent DaemonSet и LogMonitoring DaemonSet
+- При мониторинге через публичный K8s API — пересоздайте bearer-токен (ServiceAccount изменен на `dynatrace-activegate`)
+- `rbac.kspm.create: true` теперь требует `rbac.activeGate.create: true` и `rbac.kubernetesMonitoring.create: true`

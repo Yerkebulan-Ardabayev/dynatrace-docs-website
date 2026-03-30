@@ -1,31 +1,18 @@
 # Безопасность Dynatrace Managed
 
-Руководство по безопасности кластера.
-
 ## Аутентификация
 
-### Локальные пользователи
+- **Локальные пользователи**: CMC → Settings → Users
+- **LDAP/AD**:
+  ```yaml
+  ldap:
+    url: ldaps://ldap.example.com:636
+    base_dn: dc=example,dc=com
+    user_filter: (sAMAccountName={0})
+  ```
+- **SAML SSO**: настройте IdP (Okta, Azure AD), импортируйте метаданные в CMC, настройте маппинг групп
 
-Управление: **CMC → Settings → Users**
-
-### LDAP/Active Directory
-
-```yaml
-ldap:
-  url: ldaps://ldap.example.com:636
-  base_dn: dc=example,dc=com
-  user_filter: (sAMAccountName={0})
-```
-
-### SAML SSO
-
-1. Настройте Identity Provider (Okta, Azure AD)
-2. Импортируйте метаданные в CMC
-3. Настройте маппинг групп
-
-## Сетевая безопасность
-
-### Firewall порты
+## Firewall порты
 
 | Порт | Назначение |
 |------|------------|
@@ -35,21 +22,16 @@ ldap:
 | 9200 | Elasticsearch |
 | 7000-7199 | Cassandra |
 
-### TLS/SSL
+## TLS/SSL
 
 ```bash
-# Установка сертификата
 sudo /opt/dynatrace-managed/set-ssl.sh cert.pem key.pem
 ```
 
 ## Аудит
 
-Логи аудита: `/var/opt/dynatrace-managed/log/audit/`
+Логи: `/var/opt/dynatrace-managed/log/audit/`
 
-## Бест-практики
+## Рекомендации
 
-- ✅ Используйте сложные пароли
-- ✅ Включите 2FA
-- ✅ Ограничьте доступ к CMC
-- ✅ Регулярно обновляйте
-- ✅ Мониторьте логи аудита
+Сложные пароли, 2FA, ограничение доступа к CMC, регулярные обновления, мониторинг аудит-логов.

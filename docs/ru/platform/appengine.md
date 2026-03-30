@@ -4,35 +4,25 @@ source: https://www.dynatrace.com/docs/platform/appengine
 scraped: 2026-03-06T21:10:26.357484
 ---
 
-С появлением Dynatrace AppEngine вы можете создавать пользовательские приложения поверх всех данных наблюдаемости, собираемых Dynatrace.
+Dynatrace AppEngine позволяет создавать пользовательские приложения поверх данных наблюдаемости. Приложения автономны, ориентированы на конкретные сценарии и взаимодействуют через [intents](https://developer.dynatrace.com/develop/intents/).
 
-По сравнению с другими возможностями платформы Dynatrace, приложения Dynatrace меньше, автономны и ориентированы на конкретные сценарии использования. Но приложение Dynatrace не является изолированным: платформа Dynatrace реализует [концепцию намерений (intents)](https://developer.dynatrace.com/develop/intents/), которая обеспечивает взаимодействие между приложениями Dynatrace.
+## Преимущества
 
-## Почему AppEngine?
-
-Следующие аспекты делают AppEngine уникальным:
-
-* **Логика к данным:** С AppEngine вы приближаете логику к данным. Написание приложений на платформе Dynatrace позволяет использовать такие возможности, как Smartscape на Grail и Dynatrace Intelligence, для решения ваших пользовательских задач рядом с местом хранения данных.
-* **Безопасная и масштабируемая среда выполнения приложений:** AppEngine обеспечивает безопасность ваших данных, гарантируя, что логика и данные остаются в пределах границ безопасности, а все процессы выполняются в определённой области. Кроме того, AppEngine обеспечивает масштабирование вашего приложения в соответствии с вашими потребностями.
-* **Интеграция вашей среды:** AppEngine позволяет создавать любые интеграции со сторонними системами для решения всех ваших пользовательских задач.
-
-Приложения Dynatrace автономны и ориентированы на конкретные сценарии использования. Однако приложение Dynatrace не является изолированным. Оно взаимодействует с возможностями платформы Dynatrace через API, с другими приложениями через [намерения (intents)](https://developer.dynatrace.com/develop/intents/) или с общедоступными сторонними системами. Приложения Dynatrace также могут взаимодействовать с вашими локальными системами через EdgeConnect, который можно запускать в вашей корпоративной сети.
+* **Логика к данным** -- приложения работают рядом с Grail, Smartscape и Dynatrace Intelligence.
+* **Безопасная среда выполнения** -- данные и логика в пределах границ безопасности, автомасштабирование.
+* **Интеграция** -- подключение сторонних систем, локальных систем через EdgeConnect.
 
 ![Архитектура AppEngine](https://dt-cdn.net/images/architecture-diagram-2056-09a196c931.webp)
 
 ## Строительные блоки
 
-Пользовательский интерфейс приложения Dynatrace написан как одностраничное React-приложение и использует TypeScript для улучшения опыта разработки. Платформа Dynatrace предоставляет обширный набор инструментов, чтобы максимально упростить жизнь разработчику приложений:
+* [**Strato Design System**](https://developer.dynatrace.com/reference/design-system/) -- UI-компоненты
+* [**TypeScript SDK**](https://developer.dynatrace.com/reference/sdks/) -- взаимодействие с сервисами платформы
+* [**App functions**](https://developer.dynatrace.com/develop/functions/) -- серверная логика на TypeScript
+* [**App Toolkit**](https://developer.dynatrace.com/reference/app-toolkit/) -- создание, сборка и деплой приложений
 
-* [**Дизайн-система Strato**](https://developer.dynatrace.com/reference/design-system/) и токены дизайна предоставляют базовые и настраиваемые UI-компоненты.
-* [**TypeScript SDK**](https://developer.dynatrace.com/reference/sdks/) позволяют приложениям взаимодействовать с [сервисами платформы Dynatrace](https://developer.dynatrace.com/platform-services/) (запросы данных, сервис документов, сервис состояния и т. д.).
-* [**Функции приложений (app functions)**](https://developer.dynatrace.com/develop/functions/) в качестве бэкенда для вашего приложения, написанные на TypeScript и выполняемые в [среде выполнения Dynatrace JavaScript](https://developer.dynatrace.com/reference/javascript-runtime/).
-* [**Dynatrace app Toolkit**](https://developer.dynatrace.com/reference/app-toolkit/) позволяет легко создавать, собирать и развёртывать приложения и их функции.
-
-## Узнать больше
-
-Для ознакомления с обучающими материалами, практическими руководствами и техническими справочниками для разработчиков приложений Dynatrace перейдите на [Dynatrace Developer](https://dt-url.net/developers). Там есть материалы для любого уровня подготовки.
+Документация для разработчиков: [Dynatrace Developer](https://dt-url.net/developers)
 
 ## Связанные темы
 
-* [AppEngine позволяет организациям создавать пользовательские приложения для более глубокого анализа данных](https://www.dynatrace.com/news/blog/appengine-custom-apps-for-data-insights/)
+* [AppEngine: пользовательские приложения для анализа данных](https://www.dynatrace.com/news/blog/appengine-custom-apps-for-data-insights/)

@@ -3,14 +3,7 @@ title: Документация Dynatrace Managed
 source: https://docs.dynatrace.com/managed
 ---
 
-# Документация Dynatrace Managed
-
-Изучите Dynatrace Managed и используйте ресурсы для улучшения наблюдаемости и безопасности вашей инфраструктуры.
-
-### Начните работу с Dynatrace или узнайте, что нового
-
-* Впервые в Dynatrace? Узнайте, как начать работу всего за несколько шагов.
-* Уже используете Dynatrace? Узнайте, что нового для OneAgent или ActiveGate.
+# Dynatrace Managed
 
 ## Популярные страницы
 
@@ -20,14 +13,10 @@ source: https://docs.dynatrace.com/managed
 
 ## Обучение
 
-* [Университет Dynatrace](https://university.dynatrace.com) — курсы и сертификации, онлайн и очно
-* [Dynatrace Developer](https://developer.dynatrace.com) — создавайте приложения с минимальными усилиями
-* [Сообщество Dynatrace](https://community.dynatrace.com) — ответы на вопросы и общение с экспертами
+* [Университет Dynatrace](https://university.dynatrace.com) — курсы и сертификации
+* [Dynatrace Developer](https://developer.dynatrace.com) — создание приложений
+* [Сообщество Dynatrace](https://community.dynatrace.com) — вопросы и ответы
 
-## Приложения Dynatrace
+## Поддержка
 
-Откройте для себя все Приложения Dynatrace.
-
-## Остались вопросы?
-
-[Обратитесь к экспертам Dynatrace](https://support.dynatrace.com/) — наши специалисты помогут с техническими вопросами через чат.
+[Обратитесь к экспертам Dynatrace](https://support.dynatrace.com/)

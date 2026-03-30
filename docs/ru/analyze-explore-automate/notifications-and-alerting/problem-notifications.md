@@ -4,33 +4,30 @@ source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-an
 scraped: 2026-03-06T21:09:42.896584
 ---
 
-* Классический
-* 2-минутное чтение
+Dynatrace автоматически обнаруживает аномальное поведение системы и создает проблему, объединяющую инциденты с общей коренной причиной. Уведомления отправляются в сторонние системы только при обнаружении и окончательном решении проблемы (без спама).
 
-Dynatrace предоставляет полноценный мониторинг стека технологий для вашей полной ИТ-инфраструктуры и автоматически обнаруживает, если какая-либо часть вашего развертывания не соответствует необходимому качеству с точки зрения производительности или показателей ошибок. Когда Dynatrace обнаруживает такое необычное поведение системы, он создает одну проблему, содержащую все инциденты, которые имеют одну и ту же коренную причину.
+## Интеграции
 
-Dynatrace позволяет вам автоматически отправлять уведомления о проблемах в вашу предпочитаемую систему управления инцидентами или ChatOps. Открытые проблемы постоянно обновляются на основе эволюционирующего воздействия и коррелирующих событий. Чтобы избежать спама уведомлений, уведомления о проблемах отправляются в системы третьих лиц только тогда, когда проблемы обнаруживаются впервые и когда они окончательно решаются.
+### Управление инцидентами
 
-Управление инцидентами
+Системы для отслеживания инцидентов, эскалации и графиков дежурств.
 
-ChatOps
+[Jira](problem-notifications/jira-integration.md) | [Opsgenie](problem-notifications/opsgenie-integration.md) | [PagerDuty](problem-notifications/pagerduty-integration.md) | [Trello](problem-notifications/trello-integration.md) | [VictorOps](problem-notifications/victorops-integration.md) | [xMatters](problem-notifications/xmatters-integration.md)
 
-Управление корпоративными услугами
+### ChatOps
 
-Пользовательские интеграции
+Интеграции для командного обсуждения инцидентов.
 
-Эти системы помогают организациям управлять большим количеством инцидентов в нескольких командах. Системы управления инцидентами предлагают функции, такие как отслеживание уведомлений об инцидентах, определение уровней эскалации и графики дежурств. Обычно системы управления инцидентами предлагают широкий спектр каналов уведомлений, таких как колл-центры, пейджеры и мобильные уведомления. Dynatrace предлагает интеграции из коробки для основных систем управления инцидентами, таких как Opsgenie, VictorOps, PagerDuty, xMatters и Jira.
+[Microsoft Teams](problem-notifications/microsoft-teams-integration.md) | [Slack](problem-notifications/slack-integration.md)
 
-[Jira](problem-notifications/jira-integration.md) [Opsgenie](problem-notifications/opsgenie-integration.md) [PagerDuty](problem-notifications/pagerduty-integration.md) [Trello](problem-notifications/trello-integration.md) [VictorOps](problem-notifications/victorops-integration.md) [xMatters](problem-notifications/xmatters-integration.md)
+### Управление корпоративными услугами
 
-Сегодня системы чата широко используются командами DevOps для выявления входящих проблем, обсуждения последующих действий и архивации уроков, извлеченных из опыта. Dynatrace предлагает интеграции из коробки для популярных систем ChatOps, таких как Slack и Microsoft Teams.
-
-[Microsoft Teams](problem-notifications/microsoft-teams-integration.md) [Slack](problem-notifications/slack-integration.md)
-
-Системы управления корпоративными услугами широко используются крупными предприятиями для организации всех типов ИТ- и не-ИТ-услуг и ресурсов. Эти системы используются компаниями для организации своих ИТ-услуг в соответствии с глобальными стандартами, такими как ITIL (Библиотека инфраструктуры информационных технологий). Все инциденты, связанные с обслуживанием аппаратного и программного обеспечения, отслеживаются и запускают рабочие процессы. Dynatrace предлагает сертифицированную интеграцию с ServiceNow, самой популярной системой управления корпоративными услугами .
+Организация ИТ-услуг по стандартам ITIL.
 
 [ServiceNow](problem-notifications/servicenow-integration.md)
 
-Если Dynatrace еще не предлагает интеграцию из коробки для вашей конкретной системы, вы можете настроить интеграцию электронной почты или интеграцию вебхука.
+### Пользовательские интеграции
 
-[Электронная почта](problem-notifications/email-integration.md) [Вебхук](problem-notifications/webhook-integration.md)
+Если готовой интеграции нет, используйте:
+
+[Электронная почта](problem-notifications/email-integration.md) | [Вебхук](problem-notifications/webhook-integration.md)

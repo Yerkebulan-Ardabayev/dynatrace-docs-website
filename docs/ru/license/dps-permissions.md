@@ -6,15 +6,11 @@ scraped: 2026-03-06T21:22:20.349191
 
 # Разрешения DPS
 
+Разрешения Dynatrace структурированы на трех уровнях и являются кумулятивными.
 
-* Пояснение
-
-Разрешения Dynatrace структурированы на трёх уровнях:
-
-Разрешения являются кумулятивными и назначаются в разделе **Account Management** > **Identity & access management**.
-Подробнее см. в разделе Работа с политиками.
+Назначение: **Account Management** > **Identity & access management**. Подробнее — см. Работа с политиками.
 
 ## Связанные темы
 
-* Лицензирование Dynatrace, the licensing model for all Dynatrace capabilities.")
-* Account Management
+- Лицензирование Dynatrace
+- Account Management
