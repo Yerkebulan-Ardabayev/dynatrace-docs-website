@@ -62,9 +62,9 @@ scraped: 2026-03-06T21:18:17.162329
 1. Значение `DT_TENANT` — это ваш идентификатор среды Dynatrace.
 2. Для определения значений `DT_TENANTTOKEN` и `DT_CONNECTION_POINT` выполните API-запрос к эндпоинту Deployment API — GET connectivity information for OneAgent. Необходимые значения возвращаются в полях `tenantToken` и `communicationEndpoints`.
 
-   Вы можете отправить запрос на URL вашей среды (SaaS или Managed) или на URL Environment ActiveGate.
+   Вы можете отправить запрос на URL вашей среды (Managed) или на URL Environment ActiveGate.
 
-   * **Dynatrace SaaS**:
+   * **Dynatrace**:
 
      ```
      curl https://<your-environment-id>.live.dynatrace.com/api/v1/deployment/installer/agent/connectioninfo?Api-Token=<your_PaaS_token>

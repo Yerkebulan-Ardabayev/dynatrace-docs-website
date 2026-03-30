@@ -27,7 +27,7 @@ scraped: 2026-03-06T21:13:17.215643
 
 Предварительные условия
 
-* Среда Dynatrace SaaS на базе Grail и AppEngine.
+* Среда Dynatrace на базе Grail и AppEngine.
 * Наличие разрешений `storage:filter-segments:write` и `storage:filter-segments:read`. Сведения о настройке разрешений см. в разделе Permissions in Grail.
 
 Ключевые термины

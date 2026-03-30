@@ -65,7 +65,7 @@ scraped: 2026-03-06T21:18:11.880580
    Существует два типа ограничений памяти: мягкое и жёсткое. ECS требует, чтобы вы определили ограничение хотя бы для одного типа памяти. Мы рекомендуем использовать настройку по умолчанию (мягкое ограничение 256 МиБ), так как она менее ограничивающая, но вы можете скорректировать эту настройку по необходимости.
 7. В разделе **Environment variables** перейдите к **Add individually** и определите `ONEAGENT_INSTALLER_SCRIPT_URL` в зависимости от способа подключения к Dynatrace:
 
-   * Для Dynatrace SaaS: `https://<your-environment-id>.live.dynatrace.com/api/v1/deployment/installer/agent/unix/default/latest?arch=x86&flavor=default&Api-Token=<paas_token>`
+   * Для Dynatrace: `https://<your-environment-id>.live.dynatrace.com/api/v1/deployment/installer/agent/unix/default/latest?arch=x86&flavor=default&Api-Token=<paas_token>`
    * Для ActiveGate: `https://<your-active-gate-ip-or-hostname>:9999/e/<your-environment-id>/api/v1/deployment/installer/agent/unix/default/latest?arch=x86&flavor=default&Api-Token=<paas_token>`
 
    Если вы подключаетесь через ActiveGate, вы можете пропустить проверку сертификата, добавив ключ `ONEAGENT_INSTALLER_SKIP_CERT_CHECK` со значением `true`.

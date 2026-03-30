@@ -96,7 +96,7 @@ scraped: 2026-03-06T21:32:01.892064
 
 | **Параметр** | **Описание** | **Значение по умолчанию** |
 | --- | --- | --- |
-| `apiUrl` | Обязательный Для **Dynatrace SaaS**, где OneAgent может подключиться к интернету, замените `ENVIRONMENTID` в `https://ENVIRONMENTID.live.dynatrace.com/api`. Для **Environment ActiveGates** (SaaS или Managed) используйте: `https://YourActiveGateIP` или `FQDN:9999/e/<ENVIRONMENTID>/api`. |  |
+| `apiUrl` | Обязательный Для **Dynatrace**, где OneAgent может подключиться к интернету, замените `ENVIRONMENTID` в `https://ENVIRONMENTID.live.dynatrace.com/api`. Для **Environment ActiveGates** (Managed) используйте: `https://YourActiveGateIP` или `FQDN:9999/e/<ENVIRONMENTID>/api`. |  |
 | `useUnprivilegedMode` | Необязательный Установите `false`, если хотите пометить под как привилегированный. По умолчанию используются возможности Linux для пода OneAgent | `true` |
 | `tokens` | Необязательный Имя секрета с API- и PaaS-токенами. | Имя пользовательского ресурса (`.metadata.name`), если не задано |
 | `useImmutableImage` | Необязательный Установите `true`, если хотите загружать образ Docker OneAgent из вашей среды Dynatrace. Используйте вместе с `agentVersion`. | `false` |

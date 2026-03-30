@@ -36,7 +36,7 @@ scraped: 2026-03-06T21:09:55.153167
 
 ### Предварительные условия
 
-* Среда Dynatrace SaaS.
+* Среда Dynatrace.
 * Вы выполнили настройку агентного и генеративного ИИ Dynatrace Intelligence, описанную в разделе Начало работы с агентным и генеративным ИИ Dynatrace Intelligence.
 * В вашей среде включены предложения документов. Включение индексации документов является частью руководства [Включение агентного и генеративного ИИ Dynatrace Intelligence в вашей среде](copilot-getting-started.md#enable-davis-copilot "Узнайте, как настроить агентный и генеративный ИИ Dynatrace Intelligence.").
 * У вас есть разрешение `ALLOW davis-copilot:document-search:execute;`. Информацию о настройке разрешений см. в разделе Разрешения в Grail.

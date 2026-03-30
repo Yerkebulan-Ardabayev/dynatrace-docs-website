@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:33:07.529890
 
 |  |  |  |
 | --- | --- | --- |
-| GET | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/securityProblems/{id}/remediationItems` |
+| GET | Managed | `https://{your-environment-id}.live.dynatrace.com/api/v2/securityProblems/{id}/remediationItems` |
 | GET | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/securityProblems/{id}/remediationItems` |
 
 ## Аутентификация

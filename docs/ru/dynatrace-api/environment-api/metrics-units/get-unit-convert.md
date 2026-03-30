@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:35:45.467583
 
 |  |  |  |
 | --- | --- | --- |
-| GET | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/units/{unitId}/convert` |
+| GET | Managed | `https://{your-environment-id}.live.dynatrace.com/api/v2/units/{unitId}/convert` |
 | GET | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/units/{unitId}/convert` |
 
 ## Аутентификация

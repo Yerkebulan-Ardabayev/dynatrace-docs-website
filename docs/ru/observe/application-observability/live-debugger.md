@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:17:25.680314
 
 ## Предварительные требования
 
-* Среда Dynatrace SaaS с подпиской Dynatrace Platform Subscription (DPS), включающей Code Monitoring.")
+* Среда Dynatrace с подпиской Dynatrace Platform Subscription (DPS), включающей Code Monitoring.")
 * OneAgent версии 1.309+ с включёнными функциями OneAgent features: **Java Live-Debugger** и **Node.js Live-Debugger**
 * Режимы мониторинга: Full-Stack, Infrastructure или Discovery (с внедрением модуля кода контейнера)
 * [Модули кода](../../ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md#other-modules "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах."): Java и Node.js
@@ -123,7 +123,7 @@ ActiveGate не является строго необходимым для ра
 
 ##### Интеграция с локальными Git-серверами
 
-![Live Debugger](https://dt-cdn.net/images/live-debugger-256-b934a2bad5.png "Live Debugger") **Live Debugger** интегрируется напрямую с облачными версиями следующих Git-провайдеров как в локальном, так и в SaaS-варианте:
+![Live Debugger](https://dt-cdn.net/images/live-debugger-256-b934a2bad5.png "Live Debugger") **Live Debugger** интегрируется напрямую с облачными версиями следующих Git-провайдеров как в локальном, так и в облачном варианте:
 
 * GitHub
 * Bitbucket

@@ -30,14 +30,14 @@ scraped: 2026-03-06T21:12:43.905190
 
 Классические облачные подключения (AWS, Azure, GCP)
 
-* SaaS-среда Dynatrace на базе Grail и AppEngine, размещённая в любом регионе AWS или подходящем регионе Azure
+* среда Dynatrace на базе Grail и AppEngine, размещённая в любом регионе AWS или подходящем регионе Azure
 * Требуется лицензия DPS, the licensing model for all Dynatrace capabilities.") со следующими возможностями:
 
   + Metrics powered by Grail
   + Logs powered by Grail
   + Events powered by Grail
 
-* SaaS-среда Dynatrace на базе Grail и AppEngine
+* среда Dynatrace на базе Grail и AppEngine
 * Доступно для лицензии DPS, the licensing model for all Dynatrace capabilities.") и классической лицензии.
 
 См. [концепции](#concepts) для сравнения классических и новых облачных подключений.

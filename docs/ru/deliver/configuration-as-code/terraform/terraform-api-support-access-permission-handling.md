@@ -84,9 +84,9 @@ export DYNATRACE_CLIENT_SECRET=<YOUR_CLIENT_SECRET>
 
 Следующие блоки кода показывают, как определить переменные среды для URL-адреса вашей среды и токена API для Windows и Linux.
 
-Windows SaaS Classic Dynatrace
+Windows Classic Dynatrace
 
-Linux SaaS Classic Dynatrace
+Linux Classic Dynatrace
 
 ```
 set DYNATRACE_ENV_URL=https://<YOUR-DT-ENV-ID>.apps.dynatrace.com

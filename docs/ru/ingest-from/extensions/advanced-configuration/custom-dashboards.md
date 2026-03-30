@@ -101,7 +101,7 @@ scraped: 2026-03-03T21:22:34.358051
 1. Перейдите в ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** и откройте дашборд.
 2. В URL дашборда найдите параметр `id` (например, `id=d996b25e-593c-4213-8ad3-c87319a8830a`) и сохраните значение параметра.
 3. Используйте конечную точку Get a dashboard API для получения JSON-определения дашборда.
-   Выполните следующую команду для получения определения дашборда. В этом примере мы используем URL Dynatrace SaaS:
+   Выполните следующую команду для получения определения дашборда. В этом примере мы используем URL Dynatrace:
 
    ```
    curl -X GET "https://{env-id}.live.dynatrace.com/api/config/v1/dashboards/{dashboard-id}" \

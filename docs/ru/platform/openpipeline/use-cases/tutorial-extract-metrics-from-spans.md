@@ -28,7 +28,7 @@ scraped: 2026-03-06T21:15:57.758999
 
 Предварительные требования
 
-* Среда Dynatrace SaaS на базе Grail и AppEngine.
+* Среда Dynatrace на базе Grail и AppEngine.
 * Подписка Dynatrace Platform Subscription (DPS) с возможностями Traces powered by Grail (DPS).").
 * Разрешения OpenPipeline: `settings:objects:read` и `settings:objects:write`. Чтобы узнать, как настроить разрешения, см. Разрешения в Grail.
 * [Разрешения Distributed Tracing](../../../observe/application-observability/distributed-tracing/permissions.md#user-permissions-for-distributed-tracing "Управление разрешениями для Distributed Tracing powered by Grail.")

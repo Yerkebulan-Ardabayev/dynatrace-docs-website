@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:34:40.987848
 
 |  |  |  |
 | --- | --- | --- |
-| GET | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/settings/effectiveValues` |
+| GET | Managed | `https://{your-environment-id}.live.dynatrace.com/api/v2/settings/effectiveValues` |
 | GET | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/settings/effectiveValues` |
 
 ## Аутентификация

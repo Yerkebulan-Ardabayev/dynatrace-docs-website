@@ -14,7 +14,7 @@ scraped: 2026-02-06T16:31:13.607418
 
 |  |  |  |
 | --- | --- | --- |
-| PUT | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/config/v1/hosts/{id}/monitoring` |
+| PUT | Managed | `https://{your-environment-id}.live.dynatrace.com/api/config/v1/hosts/{id}/monitoring` |
 | PUT | Environment ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/config/v1/hosts/{id}/monitoring` |
 
 ## Аутентификация
@@ -199,7 +199,7 @@ scraped: 2026-02-06T16:31:13.607418
 
 |  |  |  |
 | --- | --- | --- |
-| POST | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/config/v1/hosts/{id}/monitoring/validator` |
+| POST | Managed | `https://{your-environment-id}.live.dynatrace.com/api/config/v1/hosts/{id}/monitoring/validator` |
 | POST | Environment ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/config/v1/hosts/{id}/monitoring/validator` |
 
 ### Аутентификация

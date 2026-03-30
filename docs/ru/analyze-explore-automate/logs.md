@@ -63,7 +63,7 @@ scraped: 2026-03-06T21:10:16.285435
 
 ## Доступность и предыдущие версии
 
-Log Management and Analytics — это новейшее предложение для работы с логами, доступное в Dynatrace SaaS с Grail.
+Log Management and Analytics — это новейшее предложение для работы с логами, доступное в Dynatrace с Grail.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

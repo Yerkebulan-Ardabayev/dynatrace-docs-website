@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:28:53.298305
 
 |  |  |  |
 | --- | --- | --- |
-| GET | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/rum/cookieNames` |
+| GET | Managed | `https://{your-environment-id}.live.dynatrace.com/api/v2/rum/cookieNames` |
 | GET | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/rum/cookieNames` |
 
 ## Аутентификация

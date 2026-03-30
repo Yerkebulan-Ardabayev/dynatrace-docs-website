@@ -25,7 +25,7 @@ scraped: 2026-03-06T21:10:05.194209
 
 Предварительные условия
 
-* Среда Dynatrace SaaS на основе Grail и AppEngine.
+* Среда Dynatrace на основе Grail и AppEngine.
 * Подписка Dynatrace Platform Subscription (DPS) с возможностями Трассировки на основе Grail (DPS).").
 * Разрешения `openpipeline:configurations:write` и `openpipeline:configurations:read`. Сведения о настройке разрешений см. в разделе Разрешения в Grail.
 

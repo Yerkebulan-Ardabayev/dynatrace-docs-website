@@ -3194,7 +3194,7 @@ chartsCards:
 mode: NORMAL
 
 
-target: BOTH # Use CLASSIC for Managed, PLATFORM for SaaS, or BOTH for both
+target: BOTH # Use CLASSIC for Managed, PLATFORM for Platform, or BOTH for both
 
 
 displayName: Traffic
@@ -3236,7 +3236,7 @@ metrics:
 - metricSelector: com.dynatrace.extension.network_device.if.bytes_in.count:splitBy("dt.entity.network:device)
 
 
-# dqlQuery is required for SaaS
+# dqlQuery is required for Platform
 
 
 dqlQuery: timeseries bytesIn=avg(com.dynatrace.extension.network_device.if.bytes_in.count),by:{`dt.entity.network:device`},filter:{`dt.entity.network:device`==$(entityId)}

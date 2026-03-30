@@ -634,7 +634,7 @@ Agent.Instance.ReportCrashWithException("CrashWithExceptionObj", exception);
 
 ### Отправка бизнес-события
 
-Dynatrace SaaS версии 1.253+
+Dynatrace версии 1.253+
 
 С помощью `sendBizEvent` вы можете отправлять бизнес-события. Это самостоятельные события, поскольку Dynatrace отправляет их отдельно от пользовательских действий или сессий.
 

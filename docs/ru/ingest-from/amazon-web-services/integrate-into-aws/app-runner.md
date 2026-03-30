@@ -45,7 +45,7 @@ scraped: 2026-02-06T16:23:23.536585
 
 * Замените `<your-environment-url>` на URL или IP-адрес вашей среды или вашего ActiveGate.
 
-  + Dynatrace SaaS {your-environment-id}.live.dynatrace.com[1](#fn-1-1-def)
+  + Dynatrace {your-environment-id}.live.dynatrace.com[1](#fn-1-1-def)
   + Dynatrace Managed {your-domain}/e/{your-environment-id}[1](#fn-1-1-def)
 
     1

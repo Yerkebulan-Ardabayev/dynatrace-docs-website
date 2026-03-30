@@ -146,7 +146,7 @@ Dynatrace Hub проверяет архив и структуру расшире
 
 ### Загрузка расширения через Dynatrace API
 
-Выполните следующую команду для загрузки пакета расширения в вашу среду. В этом примере используется URL Dynatrace SaaS:
+Выполните следующую команду для загрузки пакета расширения в вашу среду. В этом примере используется URL Dynatrace:
 
 ```
 curl -X POST "https://{env-id}.live.dynatrace.com/api/v2/extensions" \
@@ -219,7 +219,7 @@ curl -X POST "https://{env-id}.live.dynatrace.com/api/v2/extensions" \
 
 После загрузки расширения в вашу среду необходимо активировать конфигурацию среды. Этот шаг необходим, поскольку вы можете загрузить до 10 версий расширения, но использовать только одну версию одновременно. При активации расширения вы указываете, какую версию использовать.
 
-Выполните следующую команду для активации расширения в вашей среде. В этом примере используется URL Dynatrace SaaS.
+Выполните следующую команду для активации расширения в вашей среде. В этом примере используется URL Dynatrace.
 
 ```
 curl -X PUT "https://{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/environmentConfiguration" \
@@ -310,7 +310,7 @@ curl -X POST "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName>/moni
 * Найдите версию в файле `extension.yaml` внутри пакета расширения.
 * Выполните вызов API Получить версии расширения.
 
-Выполните следующую команду для активации новой версии. В этом примере используется URL Dynatrace SaaS.
+Выполните следующую команду для активации новой версии. В этом примере используется URL Dynatrace.
 
 ```
 curl -X PUT "https://{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/environmentConfiguration" \
@@ -349,7 +349,7 @@ curl -X PUT "https://{env-id}.live.dynatrace.com/api/v2/extensions/{extensionNam
 
 #### Удаление конфигурации среды через API
 
-Для удаления текущей активной конфигурации среды используйте DELETE конфигурации среды. В этом примере используется URL Dynatrace SaaS.
+Для удаления текущей активной конфигурации среды используйте DELETE конфигурации среды. В этом примере используется URL Dynatrace.
 
 ```
 curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/environmentConfiguration" \
@@ -375,7 +375,7 @@ curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/en
 
 #### Удаление версии расширения через API
 
-Для удаления версии расширения используйте DELETE версии расширения. В этом примере используется URL Dynatrace SaaS.
+Для удаления версии расширения используйте DELETE версии расширения. В этом примере используется URL Dynatrace.
 
 ```
 curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/{version}" \

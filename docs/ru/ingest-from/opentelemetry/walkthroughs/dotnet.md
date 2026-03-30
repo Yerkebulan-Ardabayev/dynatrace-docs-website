@@ -142,7 +142,7 @@ ASP.NET
 3. Добавьте эти поля в ваш класс запуска, где первые два содержат [данные доступа](#dynatrace-docs--otlp-export), если вы используете экспорт OTLP.
 
    ```
-   private static string DT_API_URL = ""; // TODO: Provide your SaaS/Managed URL here
+   private static string DT_API_URL = ""; // TODO: Provide your Managed URL here
 
 
    private static string DT_API_TOKEN = ""; // TODO: Provide the OpenTelemetry-scoped access token here
@@ -412,7 +412,7 @@ ASP.NET
 3. Добавьте эти поля в ваш класс запуска, где первые два содержат [данные доступа](#dynatrace-docs--otlp-export), если вы используете экспорт OTLP.
 
    ```
-   private static string DT_API_URL = ""; // TODO: Provide your SaaS/Managed URL here
+   private static string DT_API_URL = ""; // TODO: Provide your Managed URL here
 
 
    private static string DT_API_TOKEN = ""; // TODO: Provide the OpenTelemetry-scoped access token here

@@ -79,7 +79,7 @@ Kubernetes версии 1.20+
 
 * Замените `<your-environment-url>` на URL или IP-адрес вашей среды или вашего ActiveGate.
 
-  + Dynatrace SaaS {your-environment-id}.live.dynatrace.com[1](#fn-1-1-def)
+  + Dynatrace {your-environment-id}.live.dynatrace.com[1](#fn-1-1-def)
   + Dynatrace Managed {your-domain}/e/{your-environment-id}[1](#fn-1-1-def)
 
     1
@@ -248,7 +248,7 @@ ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
 
    * `DT_API_URL` — URL API вашей среды Dynatrace.
 
-     + Для SaaS: `https://<your-environment-id>.live.dynatrace.com/api`
+     + Для Dynatrace: `https://<your-environment-id>.live.dynatrace.com/api`
      + Для Managed: `https://<cluster>/e/<your-environment-id>/api`
      + Для ActiveGate: `https://<your-active-gate-IP-or-hostname>:9999/e/<your-environment-id>/api`.
    * `DT_ONEAGENT_OPTIONS` — вариант (допустимые значения: `default` или `musl` для образов Alpine) и технология (модуль кода).

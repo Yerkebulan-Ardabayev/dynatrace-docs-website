@@ -71,7 +71,7 @@ git push heroku master
 | --- | --- |
 | DT\_TENANT | Идентификатор вашей среды Dynatrace. **Примечание:** Подробности о том, как определить идентификатор среды, см. в разделе идентификатор среды. |
 | DT\_API\_TOKEN | PaaS-токен для интеграции вашей среды Dynatrace с Heroku. |
-| DT\_API\_URL | - Для Dynatrace SaaS, когда OneAgent может подключаться к интернету: `https://<your-environment-ID>.live.dynatrace.com/api` - Для Dynatrace Managed: `https://<your-managed-cluster-domain>/e/<your-environment-ID>/api` - Для ActiveGate среды (SaaS или Managed), используйте следующее для загрузки OneAgent, а также для маршрутизации трафика OneAgent через ActiveGate: `https://<your-ActiveGate-IP-or-FQDN>:9999/e/<your-environment-ID>/api` **Примечание:** Подробности о том, как определить идентификатор среды, см. в разделе идентификатор среды. |
+| DT\_API\_URL | - Для Dynatrace, когда OneAgent может подключаться к интернету: `https://<your-environment-ID>.live.dynatrace.com/api` - Для Dynatrace Managed: `https://<your-managed-cluster-domain>/e/<your-environment-ID>/api` - Для ActiveGate среды (Managed), используйте следующее для загрузки OneAgent, а также для маршрутизации трафика OneAgent через ActiveGate: `https://<your-ActiveGate-IP-or-FQDN>:9999/e/<your-environment-ID>/api` **Примечание:** Подробности о том, как определить идентификатор среды, см. в разделе идентификатор среды. |
 | DT\_DOWNLOAD\_URL | Необязательно. Прямой URL загрузки Dynatrace OneAgent. Если эта переменная среды установлена, билдпак загрузит OneAgent из этого расположения. |
 | SSL\_MODE | Необязательно. Установите значение `all`, если вы хотите принимать все самоподписанные SSL-сертификаты. |
 | DT\_TAGS | Не рекомендуется. Теги, которые вы хотите добавить к мониторируемым приложениям. |

@@ -41,7 +41,7 @@ scraped: 2026-03-06T21:24:58.481368
 
 Предварительные требования
 
-* Среда Dynatrace SaaS на основе Grail и AppEngine.
+* Среда Dynatrace на основе Grail и AppEngine.
 * У вас есть разрешение `storage:filter-segments:read`. Сведения о настройке разрешений см. в разделе Permissions in Grail.
 
 ## Фильтрация узлов Smartscape с помощью блоков включения данных

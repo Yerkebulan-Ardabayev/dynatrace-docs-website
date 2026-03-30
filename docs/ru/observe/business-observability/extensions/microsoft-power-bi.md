@@ -35,7 +35,7 @@ ALLOW storage:bizevents:read;
 
 ### Подключение к Dynatrace Grail из Microsoft Power BI Desktop
 
-Чтобы подключиться к экземпляру Dynatrace SaaS из Power Query Desktop, выполните следующие шаги.
+Чтобы подключиться к экземпляру Dynatrace из Power Query Desktop, выполните следующие шаги.
 
 1. Выберите **Dynatrace Grail DQL** в интерфейсе **Get Data**. Дополнительные сведения см. в разделе [Where to get data | Power Query](https://dt-url.net/x203wmh).
 2. Введите вашу среду Dynatrace. Эта среда должна быть последней версии Dynatrace с включённым Grail. DQL-запрос на данном этапе не является обязательным, но рекомендуется для более сложных запросов, выходящих за рамки встроенных запросов по умолчанию.

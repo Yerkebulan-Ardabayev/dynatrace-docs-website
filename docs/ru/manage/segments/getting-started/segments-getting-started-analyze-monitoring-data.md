@@ -39,7 +39,7 @@ scraped: 2026-03-06T21:11:02.038055
 
 Предварительные требования
 
-* Среда Dynatrace SaaS на базе Grail и AppEngine.
+* Среда Dynatrace на базе Grail и AppEngine.
 * У вас есть разрешение `storage:filter-segments:read`. Чтобы узнать, как настроить разрешения, см. Разрешения в Grail.
 
 ## Шаги

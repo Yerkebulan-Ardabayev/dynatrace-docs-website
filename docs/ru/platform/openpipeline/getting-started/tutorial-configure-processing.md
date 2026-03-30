@@ -26,7 +26,7 @@ scraped: 2026-03-06T21:15:50.770565
 
 Предварительные требования
 
-* Среда Dynatrace SaaS на базе Grail и AppEngine.
+* Среда Dynatrace на базе Grail и AppEngine.
 * Вы обладаете разрешениями `openpipeline:configurations:write` и `openpipeline:configurations:read`. Информацию о настройке разрешений см. в разделе Разрешения в Grail.
 * Если вы уже используете конвейер обработки логов, убедитесь, что условия сопоставления преобразованы в DQL.
 

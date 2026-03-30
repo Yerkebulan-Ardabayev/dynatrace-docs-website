@@ -10,7 +10,7 @@ scraped: 2026-03-04T21:39:09.965555
 
 |  |  |  |
 | --- | --- | --- |
-| GET | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/securityProblems/{id}/vulnerableFunctions` |
+| GET | Managed | `https://{your-environment-id}.live.dynatrace.com/api/v2/securityProblems/{id}/vulnerableFunctions` |
 | GET | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/securityProblems/{id}/vulnerableFunctions` |
 
 ## Аутентификация

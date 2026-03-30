@@ -32,7 +32,7 @@ Dynatrace использует атрибуты ресурсов для обна
 
 ## Конечные точки и точки входа
 
-**Конечные точки** представляют точку входа API сервиса. В Service Detection v2 конечные точки определяются через правила, сопоставляющие атрибуты спана. В Service Detection v1 конечные точки формируются автоматически и заменяют концепцию [ключевых запросов](#key-requests) в SaaS. Все конечные точки генерируют связанные метрики и отображаются в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](services-app.md "Maintain centralized control over service health, performance, and resources with the Services app.") для обеих версий обнаружения сервисов.
+**Конечные точки** представляют точку входа API сервиса. В Service Detection v2 конечные точки определяются через правила, сопоставляющие атрибуты спана. В Service Detection v1 конечные точки формируются автоматически и заменяют концепцию [ключевых запросов](#key-requests) . Все конечные точки генерируют связанные метрики и отображаются в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](services-app.md "Maintain centralized control over service health, performance, and resources with the Services app.") для обеих версий обнаружения сервисов.
 
 **Точки входа** (Service Detection v1) отмечают первый метод или операцию при вызове сервиса. Они служат отправной точкой для трассировки активности и используются в настройке обнаружения сбоев, определении пользовательских сервисов и анализе потока сервисов.
 

@@ -12,7 +12,7 @@ scraped: 2026-03-05T21:26:55.942296
 
 |  |  |  |
 | --- | --- | --- |
-| GET | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v1/entity/applications/{meIdentifier}/baseline` |
+| GET | Managed | `https://{your-environment-id}.live.dynatrace.com/api/v1/entity/applications/{meIdentifier}/baseline` |
 | GET | Environment ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v1/entity/applications/{meIdentifier}/baseline` |
 
 ## Аутентификация

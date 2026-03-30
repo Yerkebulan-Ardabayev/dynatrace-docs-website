@@ -19,7 +19,7 @@ scraped: 2026-03-05T21:40:14.975184
 
 ## Предварительные требования
 
-* Доступ к среде Dynatrace SaaS
+* Доступ к среде Dynatrace
 * Установленное приложение ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**
 
 Для сценария [Создание оповещения журнала на основе сводки данных журналов с помощью DQL](#create-log-custom-alert-with-dql) вам также потребуется:

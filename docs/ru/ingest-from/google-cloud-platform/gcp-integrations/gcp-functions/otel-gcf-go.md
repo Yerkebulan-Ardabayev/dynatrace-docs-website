@@ -65,11 +65,11 @@ go get go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp
 1. Откройте Dynatrace.
 2. Проверьте адресную строку вашего браузера. URL будет соответствовать одному из следующих шаблонов:
 
-   * **Dynatrace SaaS**: `https://{your-environment-id}.live.dynatrace.com/...`
+   * **Dynatrace**: `https://{your-environment-id}.live.dynatrace.com/...`
    * **Dynatrace Managed**: `https://{your-domain}/e/{your-environment-id}/...`
 3. Замените часть `...` на `api/v2/otlp`, чтобы получить URL, который потребуется для настройки экспортёра OpenTelemetry.
 
-   * **Dynatrace SaaS**: `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`
+   * **Dynatrace**: `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`
    * **Dynatrace Managed**: `https://{your-domain}/e/{your-environment-id}/api/v2/otlp`
 
 Чтобы создать токен аутентификации

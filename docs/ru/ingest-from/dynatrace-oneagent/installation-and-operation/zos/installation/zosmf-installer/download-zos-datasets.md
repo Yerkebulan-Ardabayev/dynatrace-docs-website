@@ -53,7 +53,7 @@ scraped: 2026-03-04T21:28:44.483728
 1. Сгенерируйте [токен доступа](../../../../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью **PaaS integration - Installer download** (`InstallerDownload`).
 2. Загрузите последнюю версию PAX-файла через Deployment API - Download latest OneAgent:
 
-   Ниже приведён пример команды `curl` для SaaS-среды, использующей Deployment API для загрузки последней версии PAX-файла:
+   Ниже приведён пример команды `curl` для среды Dynatrace, использующей Deployment API для загрузки последней версии PAX-файла:
 
    ```
    curl -X GET "https://<environment>.live.dynatrace.com/api/v1/deployment/installer/agent/zos/mainframe/latest" -H "accept: */*" -H "Authorization: Api-Token <accessToken>" --output dynatrace-zos.pax
@@ -68,7 +68,7 @@ scraped: 2026-03-04T21:28:44.483728
 1. Сгенерируйте [токен доступа](../../../../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью **PaaS integration - Installer download** (`InstallerDownload`).
 2. Получите список всех доступных версий PAX-файла через Deployment API - List available versions of OneAgent.
 
-   Ниже приведён пример команды `curl` для SaaS-среды, использующей Deployment API для получения списка всех доступных версий PAX-файла:
+   Ниже приведён пример команды `curl` для среды Dynatrace, использующей Deployment API для получения списка всех доступных версий PAX-файла:
 
    ```
    curl -X GET "https://<environment>.live.dynatrace.com/api/v1/deployment/installer/agent/versions/zos/mainframe" -H "accept: */*" -H "Authorization: Api-Token <accessToken>"
@@ -77,7 +77,7 @@ scraped: 2026-03-04T21:28:44.483728
    Замените `<environment>` на идентификатор вашей среды Dynatrace и `<accessToken>` на сгенерированный токен доступа.
 3. Загрузите конкретную версию PAX-файла через Deployment API - Download OneAgent of specific version:
 
-   Ниже приведён пример команды `curl` для SaaS-среды, использующей Deployment API для загрузки конкретной версии PAX-файла:
+   Ниже приведён пример команды `curl` для среды Dynatrace, использующей Deployment API для загрузки конкретной версии PAX-файла:
 
    ```
    curl -X GET "https://<environment>.live.dynatrace.com/api/v1/deployment/installer/agent/zos/mainframe/version/<version>" -H "accept: */*" -H "Authorization: Api-Token <accessToken>" --output dynatrace-zos.pax

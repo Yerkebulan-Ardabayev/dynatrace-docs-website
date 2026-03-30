@@ -46,7 +46,7 @@ scraped: 2026-02-06T16:28:34.508791
 #   ## For Dynatrace OneAgent you can leave this empty or set it to "http://127.0.0.1:14499/metrics/ingest" (default)
 
 
-#   ## For Dynatrace SaaS environments the URL scheme is "https://{your-environment-id}.live.dynatrace.com/api/v2/metrics/ingest"
+#   ## For Dynatrace environments the URL scheme is "https://{your-environment-id}.live.dynatrace.com/api/v2/metrics/ingest"
 
 
 #   ## For Dynatrace Managed environments the URL scheme is "https://{your-domain}/e/{your-environment-id}/api/v2/metrics/ingest"
@@ -130,7 +130,7 @@ prefix = "telegraf."
 4. Раскомментируйте строку `# api_token = ""` и добавьте ваш токен API, например `api_token = "abcdefjhij1234567890"`.
 5. Раскомментируйте строку `# url = ""` и добавьте конечную точку API метрик Dynatrace. Например:
 
-   * Dynatrace SaaS: `url = "https://{your-environment-id}.live.dynatrace.com/api/v2/metrics/ingest"`
+   * Dynatrace: `url = "https://{your-environment-id}.live.dynatrace.com/api/v2/metrics/ingest"`
    * Dynatrace Managed: `https://{your-domain}/e/{your-environment-id}/api/v2/metrics/ingest`
 6. Сохраните файл.
 
@@ -159,7 +159,7 @@ prefix = "telegraf."
 #   ## For Dynatrace OneAgent you can leave this empty or set it to "http://127.0.0.1:14499/metrics/ingest" (default)
 
 
-#   ## For Dynatrace SaaS environments the URL scheme is "https://{your-environment-id}.live.dynatrace.com/api/v2/metrics/ingest"
+#   ## For Dynatrace environments the URL scheme is "https://{your-environment-id}.live.dynatrace.com/api/v2/metrics/ingest"
 
 
 #   ## For Dynatrace Managed environments the URL scheme is "https://{your-domain}/e/{your-environment-id}/api/v2/metrics/ingest"

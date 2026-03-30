@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:38:03.339161
 
 |  |  |  |
 | --- | --- | --- |
-| PUT | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/securityProblems/{id}/remediationItems/{remediationItemId}/muteState` |
+| PUT | Managed | `https://{your-environment-id}.live.dynatrace.com/api/v2/securityProblems/{id}/remediationItems/{remediationItemId}/muteState` |
 | PUT | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/securityProblems/{id}/remediationItems/{remediationItemId}/muteState` |
 
 ## Аутентификация

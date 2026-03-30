@@ -17,7 +17,6 @@ scraped: 2026-03-06T21:13:03.640210
 
 | Тип развёртывания | Расположение среды мониторинга |
 | --- | --- |
-| Standard SaaS | В облаке Dynatrace |
 | On-premises | В вашем собственном центре обработки данных |
 | Dynatrace for Government | В облаке с авторизацией FedRAMP moderate |
 
@@ -27,7 +26,7 @@ scraped: 2026-03-06T21:13:03.640210
 
 Каждая среда, которую вы отслеживаете с помощью Dynatrace, идентифицируется уникальной строкой символов — идентификатором среды. API Dynatrace активно использует идентификаторы среды, чтобы обеспечить извлечение данных мониторинга из правильных сред Dynatrace и отправку соответствующих внешних событий в нужные среды.
 
-* В Dynatrace SaaS идентификатор вашей среды является первой частью URL-адреса вашей среды Dynatrace:
+* В Dynatrace идентификатор вашей среды является первой частью URL-адреса вашей среды Dynatrace:
 
   ```
   https://{your-environment-id}.live.dynatrace.com/
@@ -65,11 +64,10 @@ scraped: 2026-03-06T21:13:03.640210
 
 ### Настройка нескольких сред мониторинга
 
-Способ настройки различных сред мониторинга зависит от того, используете ли вы Dynatrace SaaS, Dynatrace Managed или Dynatrace for Government.
+Способ настройки различных сред мониторинга зависит от того, используете ли вы Dynatrace Managed или Dynatrace for Government.
 
 | Тип развёртывания | Как настроить различные среды мониторинга |
 | --- | --- |
-| SaaS | Свяжитесь с экспертом по продукту Dynatrace через живой чат в вашей среде Dynatrace; эксперт по продукту обеспечит вам необходимую помощь. |
 | Managed | Вы можете использовать Cluster Management Console. Для получения подробной информации см. [Managed - managed-monitoring-environment](https://docs.dynatrace.com/managed/shortlink/managed-monitoring-environment). |
 | Dynatrace for Government | Обратитесь к вашему представителю Dynatrace. |
 

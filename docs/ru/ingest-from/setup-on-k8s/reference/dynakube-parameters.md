@@ -44,7 +44,7 @@ Dynatrace Operator версии 1.8.0+
 
 | **Параметр** | **Описание** | **Значение по умолчанию** | **Тип данных** |
 | --- | --- | --- | --- |
-| `apiUrl` | `apiUrl` Dynatrace, включая путь `/api` в конце. - Для SaaS установите `YOUR_ENVIRONMENT_ID` как ID вашей среды. - Для Managed измените адрес `apiUrl`. Инструкции по определению ID среды и настройке адреса apiUrl см. в разделе ID среды | - | string |
+| `apiUrl` | `apiUrl` Dynatrace, включая путь `/api` в конце. - Для Dynatrace установите `YOUR_ENVIRONMENT_ID` как ID вашей среды. - Для Managed измените адрес `apiUrl`. Инструкции по определению ID среды и настройке адреса apiUrl см. в разделе ID среды | - | string |
 | `customPullSecret` | Определяет пользовательский pull secret, если вы используете частный реестр при загрузке образов из среды Dynatrace. Примечание: для функции загрузки образов узлов без CSI-драйвера необходимо вручную обеспечить доступность pull secrets в инжектированном поде. | - | string |
 | `dynatraceApiRequestThreshold` | Минимальный интервал в минутах между запросами к API Dynatrace. | 15 | integer |
 | `enableIstio` | При включении, если Istio установлен в среде Kubernetes, Dynatrace Operator создаст соответствующие объекты VirtualService и ServiceEntry для обеспечения доступа к кластеру Dynatrace из OneAgent или ActiveGate. Отключено по умолчанию. | - | boolean |

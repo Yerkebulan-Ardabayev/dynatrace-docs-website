@@ -101,7 +101,7 @@ scraped: 2026-03-06T21:30:37.921494
    const { MeterProvider, PeriodicExportingMetricReader, AggregationTemporality } = require('@opentelemetry/sdk-metrics');
 
 
-   const DT_API_URL = ''; // TODO: Укажите ваш URL SaaS/Managed здесь
+   const DT_API_URL = ''; // TODO: Укажите ваш URL Managed здесь
 
 
    const DT_API_TOKEN = ''; // TODO: Укажите токен доступа OpenTelemetry здесь

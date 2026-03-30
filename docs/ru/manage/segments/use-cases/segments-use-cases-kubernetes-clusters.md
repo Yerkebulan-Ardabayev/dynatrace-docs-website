@@ -24,7 +24,7 @@ scraped: 2026-03-06T21:13:18.908578
 
 Предварительные требования
 
-* Среда Dynatrace SaaS на базе Grail и AppEngine.
+* Среда Dynatrace на базе Grail и AppEngine.
 * У вас есть разрешения `storage:filter-segments:write` и `storage:filter-segments:read`. Чтобы узнать, как настроить разрешения, см. Разрешения в Grail.
 * У вас есть лицензия и настроен Kubernetes Platform Monitoring.
 

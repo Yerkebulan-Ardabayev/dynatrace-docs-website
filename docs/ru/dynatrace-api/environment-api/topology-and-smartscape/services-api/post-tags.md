@@ -14,7 +14,7 @@ scraped: 2026-03-05T21:27:10.445414
 
 |  |  |  |
 | --- | --- | --- |
-| POST | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v1/entity/services/{meIdentifier}` |
+| POST | Managed | `https://{your-environment-id}.live.dynatrace.com/api/v1/entity/services/{meIdentifier}` |
 | POST | Environment ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v1/entity/services/{meIdentifier}` |
 
 ## Аутентификация

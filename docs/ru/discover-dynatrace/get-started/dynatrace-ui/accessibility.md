@@ -20,7 +20,7 @@ Dynatrace работает совместно со сторонними пост
 
 ## Отчёт о соответствии требованиям доступности продукта
 
-* [Dynatrace SaaS 1.323](https://cdn.dm.dynatrace.com/assets/documents/legal/trust-center/2025-09-Dynatrace-VPAT-Accessibility-Conformance-Report-WCAG-Edition-VPAT-September-2025.pdf)
-* [Dynatrace SaaS 1.278](https://assets.dynatrace.com/en/docs/report/Dynatrace_VPAT2-4_WCAG_October_2023.pdf)
-* [Dynatrace SaaS 1.246](https://assets.dynatrace.com/en/docs/report/Dynatrace_VPAT2_4_WCAG_August_2022.pdf)
-* [Dynatrace SaaS 1.224](https://assets.dynatrace.com/en/docs/report/dynatrace-accessibility-conformance-report-wcag-2021-08.pdf)
+* [Dynatrace 1.323](https://cdn.dm.dynatrace.com/assets/documents/legal/trust-center/2025-09-Dynatrace-VPAT-Accessibility-Conformance-Report-WCAG-Edition-VPAT-September-2025.pdf)
+* [Dynatrace 1.278](https://assets.dynatrace.com/en/docs/report/Dynatrace_VPAT2-4_WCAG_October_2023.pdf)
+* [Dynatrace 1.246](https://assets.dynatrace.com/en/docs/report/Dynatrace_VPAT2_4_WCAG_August_2022.pdf)
+* [Dynatrace 1.224](https://assets.dynatrace.com/en/docs/report/dynatrace-accessibility-conformance-report-wcag-2021-08.pdf)

@@ -202,7 +202,7 @@ Dynatrace версии 1.230+
 
 Определите URL для вашей среды.
 
-* Для Dynatrace SaaS: `https://<your-environment-id>.live.dynatrace.com/`
+* Для Dynatrace: `https://<your-environment-id>.live.dynatrace.com/`
 * Для Dynatrace Managed: `https://<your-domain>/e/<your-environment-id>/`
 
 Чтобы определить `<your-environment-id>`, см. [идентификатор среды](https://dt-url.net/ej43qge).

@@ -10,7 +10,7 @@ scraped: 2026-03-06T21:35:54.405045
 
 |  |  |  |
 | --- | --- | --- |
-| POST | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/securityProblems/{id}/remediationItems/unmute` |
+| POST | Managed | `https://{your-environment-id}.live.dynatrace.com/api/v2/securityProblems/{id}/remediationItems/unmute` |
 | POST | Environment ActiveGateКластер ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/securityProblems/{id}/remediationItems/unmute` |
 
 ## Аутентификация

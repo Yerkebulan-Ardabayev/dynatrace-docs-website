@@ -40,7 +40,7 @@ scraped: 2026-03-04T21:35:27.635545
 
    В **Environment variables** определите `ONEAGENT_INSTALLER_SCRIPT_URL` в зависимости от способа подключения к Dynatrace:
 
-   * Для SaaS: `https://<your-environment-id>.live.dynatrace.com/api/v1/deployment/installer/agent/unix/default/latest?arch=x86&flavor=default&Api-Token=<pass_token>`
+   * Для Dynatrace: `https://<your-environment-id>.live.dynatrace.com/api/v1/deployment/installer/agent/unix/default/latest?arch=x86&flavor=default&Api-Token=<pass_token>`
    * Для Managed: `https://<your-domain>/e/<your-environment-id>/api/v1/deployment/installer/agent/unix/default/latest?arch=x86&flavor=default&Api-Token=<pass_token>`
    * Для ActiveGate: `https://<your-active-gate-ip-or-hostname>:9999/e/<your-environment-id>/api/v1/deployment/installer/agent/unix/default/latest?arch=x86&flavor=default&Api-Token=<paas_token>`
 

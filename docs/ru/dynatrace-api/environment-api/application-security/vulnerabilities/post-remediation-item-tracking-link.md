@@ -13,7 +13,7 @@ scraped: 2026-03-02T21:24:04.456847
 
 |  |  |  |
 | --- | --- | --- |
-| POST | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/securityProblems/{id}/remediationItems/trackingLinks` |
+| POST | Managed | `https://{your-environment-id}.live.dynatrace.com/api/v2/securityProblems/{id}/remediationItems/trackingLinks` |
 | POST | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/securityProblems/{id}/remediationItems/trackingLinks` |
 
 ## Аутентификация

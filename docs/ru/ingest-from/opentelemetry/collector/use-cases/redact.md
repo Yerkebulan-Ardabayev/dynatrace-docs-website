@@ -19,7 +19,7 @@ scraped: 2026-03-06T21:32:24.265515
   + [OpenTelemetry Contrib](../../collector.md#collector-contrib "Узнайте о Dynatrace OTel Collector.")
   + [Пользовательская версия через Builder](../../collector.md#collector-builder "Узнайте о Dynatrace OTel Collector.")
 * URL конечной точки Dynatrace API, на который должны экспортироваться данные
-* [Токен API](../../otlp-api.md#authentication-export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа (требуется только для SaaS и ActiveGate)
+* [Токен API](../../otlp-api.md#authentication-export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа (требуется для ActiveGate)
 
 Информацию о том, как настроить Collector с приведённой ниже конфигурацией, см. в разделах Развёртывание Collector и Конфигурация Collector.
 

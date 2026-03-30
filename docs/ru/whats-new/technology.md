@@ -550,15 +550,15 @@ scraped: 2026-03-06T21:12:54.357617
 * Red Hat Fuse on OpenShift 7.0+ (Java module). [Get started](https://www.dynatrace.com/hub/detail/red-hat-fuse/)
 * Red Hat Fuse Standalone 7.0+ (Java module). [Get started](https://www.dynatrace.com/hub/detail/red-hat-fuse/)
 
-## 1.246 SaaS/Managed
+## 1.246 Managed
 
-Начало развёртывания 25 июля 2022 г. для SaaS и 1 августа 2022 г. для Managed
+Начало развёртывания 25 июля 2022 г. для Dynatrace и 1 августа 2022 г. для Managed
 
 * DynamoDB client SDK for Node.js (AWS Lambda integration). [Get started](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability.md#nodejs-instrumentation "Включение и использование совместимости OpenTelemetry в AWS Lambda.")
 
-## 1.245 SaaS
+## 1.245
 
-Начало развёртывания 6 июля 2022 г. для SaaS
+Начало развёртывания 6 июля 2022 г. для Dynatrace
 
 * DynamoDB client SDK for .NET (AWS Lambda integration). [Get started](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration.md#dynamo-db "Трассировка AWS Lambda-функций с использованием среды выполнения .NET")
 
@@ -575,9 +575,9 @@ scraped: 2026-03-06T21:12:54.357617
 * Python consumption plan (Azure integration). Get started
 * [RabbitMQ](https://www.npmjs.com/package/amqplib) client 0.9 (Node.js module). [Get started](https://www.dynatrace.com/hub/detail/net-rabbitmq/#get-started)
 
-## 1.244 SaaS/Managed
+## 1.244 Managed
 
-Начало развёртывания 27 июня 2022 г. для SaaS и 5 июля 2022 г. для Managed
+Начало развёртывания 27 июня 2022 г. для Dynatrace и 5 июля 2022 г. для Managed
 
 * DynamoDB client SDK for Python (AWS Lambda integration). [Get started](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability.md#python-instrumentation "Включение и использование совместимости OpenTelemetry в AWS Lambda.")
 

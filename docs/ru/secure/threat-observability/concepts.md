@@ -45,7 +45,7 @@ Dynatrace принимает данные из сторонних источни
 Ниже приведены примеры использования данных в целях безопасности:
 
 * [Контекстно-зависимое реагирование на инциденты безопасности с помощью Dynatrace Automations и Tetragon](https://dt-url.net/he03pmt)
-* [Контроль безопасности SaaS с помощью AWS AppFabric и Dynatrace](https://dt-url.net/mj23pnk)
+* [Контроль безопасност с помощью AWS AppFabric и Dynatrace](https://dt-url.net/mj23pnk)
 * [Обнаружение эксплуатации VMware Aria Operations for Logs с помощью Dynatrace и DQL](https://dt-url.net/t203p6a)
 * [Поиск угроз на основе TTP с помощью Dynatrace Security Analytics и Falco Alerts для борьбы с шумом оповещений](https://dt-url.net/j903pdg)
 * [Лог-форензика: поиск вредоносной активности в мультиоблачных средах с помощью Dynatrace Grail](https://dt-url.net/dz03pqc)

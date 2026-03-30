@@ -139,7 +139,7 @@ URL должен заканчиваться на `/api/v2/otlp`.
    [{otlp_protocol, http_protobuf},
 
 
-   {otlp_traces_endpoint, "[URL]"}, %%TODO Replace [URL] to your SaaS/Managed URL as mentioned in the next step
+   {otlp_traces_endpoint, "[URL]"}, %%TODO Replace [URL] to your Managed URL as mentioned in the next step
 
 
    {otlp_headers, [{"Authorization", "Api-Token [TOKEN]"}]} %%TODO Replace [TOKEN] with your API Token as mentioned in the next step

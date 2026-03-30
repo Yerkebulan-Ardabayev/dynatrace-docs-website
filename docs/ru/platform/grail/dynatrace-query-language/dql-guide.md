@@ -157,7 +157,7 @@ fetch logs
 
 ## Приложение Learn DQL
 
-Вы можете изучить DQL на практике с помощью интерактивных руководств в приложении Learn DQL. Вы можете использовать это приложение, если вы являетесь клиентом с доступом к SaaS-среде Dynatrace или зарегистрированным участником Dynatrace Community. Вы также можете зарегистрироваться для получения бесплатной 15-дневной пробной версии, чтобы попробовать приложение. Чтобы узнать больше о приложении Learn DQL, посетите [Dynatrace Hub](https://www.dynatrace.com/hub/detail/learn-dql/?query=learn+dql&filter=all). Для доступа к приложению перейдите на [Discover Dynatrace](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.learndql/).
+Вы можете изучить DQL на практике с помощью интерактивных руководств в приложении Learn DQL. Вы можете использовать это приложение, если вы являетесь клиентом с доступом к среде Dynatrace Dynatrace или зарегистрированным участником Dynatrace Community. Вы также можете зарегистрироваться для получения бесплатной 15-дневной пробной версии, чтобы попробовать приложение. Чтобы узнать больше о приложении Learn DQL, посетите [Dynatrace Hub](https://www.dynatrace.com/hub/detail/learn-dql/?query=learn+dql&filter=all). Для доступа к приложению перейдите на [Discover Dynatrace](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.learndql/).
 
 ## Связанные темы
 

@@ -25,7 +25,7 @@ scraped: 2026-03-06T21:29:16.110902
 
 |  |  |  |
 | --- | --- | --- |
-| POST | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/entities/securityContext` |
+| POST | Managed | `https://{your-environment-id}.live.dynatrace.com/api/v2/entities/securityContext` |
 | POST | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/entities/securityContext` |
 
 ## Аутентификация
@@ -191,7 +191,7 @@ scraped: 2026-03-06T21:29:16.110902
 
 |  |  |  |
 | --- | --- | --- |
-| DELETE | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/entities/securityContext` |
+| DELETE | Managed | `https://{your-environment-id}.live.dynatrace.com/api/v2/entities/securityContext` |
 | DELETE | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/entities/securityContext` |
 
 ## Аутентификация

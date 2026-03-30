@@ -12,9 +12,9 @@ Dynatrace собирает метрики для множества предва
 
 * ActiveGate версии 1.197+
 
-* Для развёртываний Dynatrace SaaS требуется Environment ActiveGate или Multi-environment ActiveGate.
+* Для развёртываний Dynatrace требуется Environment ActiveGate или Multi-environment ActiveGate.
 
-Для доступа на основе ролей в развёртывании [SaaS](../cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") требуется Environment ActiveGate, установленный на хосте Amazon EC2.
+Для доступа на основе ролей в развёртывании [Dynatrace](../cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") требуется Environment ActiveGate, установленный на хосте Amazon EC2.
 
 * Dynatrace версии 1.201+
 * Обновлённая [политика мониторинга AWS](../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.

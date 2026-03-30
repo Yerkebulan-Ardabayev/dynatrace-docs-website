@@ -249,7 +249,7 @@ curl -X GET "$DT_TENANT_URL/api/v1/deployment/installer/agent/$OS_TYPE/paas/late
 
 Если у вас уже установлен OneAgent или вы используете Dynatrace Operator для Kubernetes, параметры подключения Dynatrace применяются автоматически, и наблюдаемость GraalVM Native Image активируется.
 
-Для активации наблюдаемости Dynatrace во время выполнения определите параметры подключения Dynatrace с помощью переменных окружения `DT_TENANT`, `DT_TENANTTOKEN` и `DT_CONNECTION_POINT`. Пример для Dynatrace SaaS:
+Для активации наблюдаемости Dynatrace во время выполнения определите параметры подключения Dynatrace с помощью переменных окружения `DT_TENANT`, `DT_TENANTTOKEN` и `DT_CONNECTION_POINT`. Пример для Dynatrace:
 
 ```
 export DT_TENANT=$DT_TENANT_ID

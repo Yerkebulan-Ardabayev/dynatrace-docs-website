@@ -21,7 +21,7 @@ scraped: 2026-03-06T21:12:25.224798
 
 ## Предварительные требования
 
-* Среда Dynatrace SaaS на базе Grail и AppEngine.
+* Среда Dynatrace на базе Grail и AppEngine.
 * Подписка Dynatrace Platform Subscription (DPS) с возможностями Traces powered by Grail (DPS).").
 * Разрешения `openpipeline:configurations:write` и `openpipeline:configurations:read`. Сведения о настройке разрешений см. в разделе Разрешения в Grail.
 

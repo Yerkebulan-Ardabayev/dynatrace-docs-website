@@ -492,7 +492,7 @@ scraped: 2026-03-05T21:35:44.907456
    fieldPath: status.hostIP
    ```
 2. Получите токен Dynatrace API с областью `logs.ingest` (Ingest Logs) для переменной среды `DT_INGEST_TOKEN`.
-3. Обновите переменные среды `K8S_CLUSTER_NAME`, `DT_INGEST_HOST` и `DT_INGEST_TOKEN` в файле `values.yaml`. Используйте одно и то же имя кластера, которое вы настроили в Dynatrace для `K8S_CLUSTER_NAME`, и укажите ваш конечный пункт SaaS или Managed в качестве `DT_INGEST_HOST`.
+3. Обновите переменные среды `K8S_CLUSTER_NAME`, `DT_INGEST_HOST` и `DT_INGEST_TOKEN` в файле `values.yaml`. Используйте одно и то же имя кластера, которое вы настроили в Dynatrace для `K8S_CLUSTER_NAME`, и укажите ваш конечный пункт Managed в качестве `DT_INGEST_HOST`.
 4. Необязательно. Адаптируйте раздел фильтра в файле `values.yaml`, чтобы нацелиться на определенные пространства имен или поды, как описано в разделе [Фильтр Fluent Bit](https://dt-url.net/m903n8q) для получения подробной информации.
 5. Необязательно. Обеспечьте удаление или маскировку любой конфиденциальной информации в журналах.
 6. Сохраните файл.

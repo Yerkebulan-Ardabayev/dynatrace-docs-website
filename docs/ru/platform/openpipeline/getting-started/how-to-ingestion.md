@@ -26,7 +26,7 @@ scraped: 2026-03-06T21:15:55.878660
 
 Предварительные требования
 
-* Среда Dynatrace SaaS на основе Grail и AppEngine.
+* Среда Dynatrace на основе Grail и AppEngine.
 * Лицензия Dynatrace — модели лицензирования для всех возможностей Dynatrace."), включающая обзор Events на основе Grail (DPS).
 
 ## Шаги

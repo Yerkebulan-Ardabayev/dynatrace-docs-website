@@ -11,7 +11,7 @@ scraped: 2026-03-05T21:32:40.132058
 
 |  |  |  |
 | --- | --- | --- |
-| GET | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/rum/javaScriptTag/{applicationId}` |
+| GET | Managed | `https://{your-environment-id}.live.dynatrace.com/api/v2/rum/javaScriptTag/{applicationId}` |
 | GET | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/rum/javaScriptTag/{applicationId}` |
 
 ## Аутентификация

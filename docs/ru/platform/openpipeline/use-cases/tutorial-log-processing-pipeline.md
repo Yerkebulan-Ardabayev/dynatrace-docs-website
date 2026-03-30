@@ -43,7 +43,7 @@ scraped: 2026-03-06T21:13:39.739379
 
 Предварительные условия
 
-* Среда Dynatrace SaaS на базе Grail и AppEngine.
+* Среда Dynatrace на базе Grail и AppEngine.
 * Либо лицензия Dynatrace — модели лицензирования для всех возможностей Dynatrace."), включающая возможности Log Analytics (DPS), либо DDU для Log Management and Analytics.
 
 ## Шаги
