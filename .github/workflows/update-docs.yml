@@ -106,8 +106,8 @@ jobs:
         if: steps.detect.outputs.total_changes != '0'
         run: |
           set -e
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "Yerkebulan Ardabayev"
+          git config user.email "yerkebulan.ardabayev@gmail.com"
           git add docs/en/ scripts/dynatrace-docs/
           if git diff --staged --quiet; then
             echo "committed=false" >> $GITHUB_OUTPUT
@@ -215,8 +215,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
           publish_branch: gh-pages
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          user_name: 'Yerkebulan Ardabayev'
+          user_email: 'yerkebulan.ardabayev@gmail.com'
           commit_message: 'deploy: sync English docs update'
 
       # ---------- Summary ----------
