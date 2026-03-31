@@ -63,3 +63,6 @@ scripts/.chrome_notebooklm/
 
 # Auto-generated content
 docs/notebooklm/
+
+# NotebookLM PDFs
+notebooklm-pdfs/
