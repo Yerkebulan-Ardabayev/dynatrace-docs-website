@@ -31,7 +31,10 @@
       flex-shrink: 0;
     }
 
-    /* Search Ctrl+K badge */
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
     .md-search__form::after {
       content: 'Ctrl+K';
       display: none;
@@ -41,11 +44,14 @@
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color);
       font-size: 10px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'JetBrains Mono', monospace;
       color: var(--md-default-fg-color--lighter);
-      margin-right: 0.5rem;
       white-space: nowrap;
       pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
     }
     @media (min-width: 60em) {
       .md-search__form::after {
@@ -53,12 +59,13 @@
       }
     }
 
-    /* Version selector in header */
-    .docflow-version-select {
+    /* Managed label — non-interactive indicator */
+    .docflow-managed-label {
       display: none;
       align-items: center;
+      gap: 0.375rem;
       margin-left: 0.5rem;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color--lighter);
@@ -66,28 +73,34 @@
       font-size: 0.75rem;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237e7c98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.4rem center;
-      padding-right: 1.5rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .docflow-managed-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--md-accent-fg-color);
+      flex-shrink: 0;
     }
     @media (min-width: 60em) {
-      .docflow-version-select {
+      .docflow-managed-label {
         display: flex;
       }
     }
-    .docflow-version-select:hover {
-      border-color: var(--md-primary-fg-color--light);
-      color: var(--md-default-fg-color);
-    }
-    .docflow-version-select:focus {
-      outline: none;
-      border-color: var(--md-primary-fg-color);
-      box-shadow: 0 0 0 3px var(--docflow-glow-primary);
+
+    /* Reading progress bar */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #14b8a6, #7c3aed);
+      z-index: 1001;
+      transition: width 0.05s linear;
+      pointer-events: none;
     }
   </style>
 {% endblock %}
@@ -103,25 +116,38 @@
 {% block scripts %}
   {{ super() }}
   <script>
-    // Inject version selector into header
-    document.addEventListener('DOMContentLoaded', function() {
-      var headerInner = document.querySelector('.md-header__inner');
-      if (headerInner) {
-        var select = document.createElement('select');
-        select.className = 'docflow-version-select';
-        select.innerHTML = '<option value="managed" selected>Managed</option><option value="saas">SaaS</option>';
-        select.setAttribute('aria-label', 'Version selector');
+    (function() {
+      // --- Reading progress bar (one-time setup) ---
+      var progressBar = document.createElement('div');
+      progressBar.className = 'reading-progress';
+      document.body.appendChild(progressBar);
 
-        // Insert before the search or at the end
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (docHeight > 0) {
+          var progress = (scrollTop / docHeight) * 100;
+          progressBar.style.width = Math.min(progress, 100) + '%';
+        }
+      });
+
+      // --- Managed label in header (one-time setup) ---
+      var headerInner = document.querySelector('.md-header__inner');
+      if (headerInner && !headerInner.querySelector('.docflow-managed-label')) {
+        var label = document.createElement('span');
+        label.className = 'docflow-managed-label';
+        label.textContent = 'Managed';
+        label.setAttribute('title', 'Документация включает разделы Dynatrace Managed');
+
         var searchContainer = headerInner.querySelector('.md-header__source');
         if (searchContainer) {
-          headerInner.insertBefore(select, searchContainer);
+          headerInner.insertBefore(label, searchContainer);
         } else {
-          headerInner.appendChild(select);
+          headerInner.appendChild(label);
         }
       }
 
-      // Keyboard shortcut Ctrl+K for search
+      // --- Keyboard shortcut Ctrl+K for search ---
       document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
           e.preventDefault();
@@ -136,6 +162,8 @@
           }
         }
       });
-    });
+
+      // TOC title renaming handled via CSS (see extra style block above)
+    })();
   </script>
 {% endblock %}

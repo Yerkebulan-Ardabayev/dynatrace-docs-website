@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
       
       
         <meta name="author" content="Yerkebulan Ardabayev">
@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -87,7 +87,10 @@
       flex-shrink: 0;
     }
 
-    /* Search Ctrl+K badge */
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
     .md-search__form::after {
       content: 'Ctrl+K';
       display: none;
@@ -97,11 +100,14 @@
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color);
       font-size: 10px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'JetBrains Mono', monospace;
       color: var(--md-default-fg-color--lighter);
-      margin-right: 0.5rem;
       white-space: nowrap;
       pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
     }
     @media (min-width: 60em) {
       .md-search__form::after {
@@ -109,12 +115,13 @@
       }
     }
 
-    /* Version selector in header */
-    .docflow-version-select {
+    /* Managed label — non-interactive indicator */
+    .docflow-managed-label {
       display: none;
       align-items: center;
+      gap: 0.375rem;
       margin-left: 0.5rem;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color--lighter);
@@ -122,28 +129,34 @@
       font-size: 0.75rem;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237e7c98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.4rem center;
-      padding-right: 1.5rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .docflow-managed-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--md-accent-fg-color);
+      flex-shrink: 0;
     }
     @media (min-width: 60em) {
-      .docflow-version-select {
+      .docflow-managed-label {
         display: flex;
       }
     }
-    .docflow-version-select:hover {
-      border-color: var(--md-primary-fg-color--light);
-      color: var(--md-default-fg-color);
-    }
-    .docflow-version-select:focus {
-      outline: none;
-      border-color: var(--md-primary-fg-color);
-      box-shadow: 0 0 0 3px var(--docflow-glow-primary);
+
+    /* Reading progress bar */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #14b8a6, #7c3aed);
+      z-index: 1001;
+      transition: width 0.05s linear;
+      pointer-events: none;
     }
   </style>
 
@@ -181,7 +194,7 @@
 
   
 
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
     <a href="../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -216,20 +229,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -303,375 +316,14 @@
     
   </nav>
   
-    
-      
-<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Главная
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Начало работы
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../managed/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Managed
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/platform/grail/dynatrace-grail/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Платформа
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/observe/infrastructure-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Наблюдаемость
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Dynatrace Intelligence
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Анализ и автоматизация
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/ingest-from/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Источники данных
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/deliver/configuration-as-code/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Deliver
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/secure/threat-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Безопасность
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/manage/hub/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Управление
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/dynatrace-api/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  API
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/whats-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Что нового
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../ai/groq/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  AI Помощник
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
 </header>
     
 
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -685,10 +337,8 @@
                     
 
 
-  
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -765,16 +415,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -796,7 +450,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -829,7 +483,7 @@
   <span class="md-ellipsis">
     
   
-    Начало работы
+    🚀 Быстрый старт
   
 
     
@@ -967,16 +621,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -998,7 +656,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1227,7 +885,7 @@
   <span class="md-ellipsis">
     
   
-    Лицензия
+    Лицензия Managed
   
 
     
@@ -1269,19 +927,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1327,20 +989,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/platform/grail/dynatrace-grail/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1354,78 +1017,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Grail
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/platform/grail/dynatrace-grail/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Что такое Grail
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/platform/grail/dynatrace-query-language/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Язык запросов DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1544,19 +1141,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1610,20 +1211,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/observe/infrastructure-observability/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1637,190 +1239,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Инфраструктура
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/infrastructure-observability/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Хосты и операции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Облачный мониторинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes Classic
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Базы данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1844,20 +1268,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/observe/application-observability/distributed-tracing/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1871,78 +1296,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Приложения
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/application-observability/distributed-tracing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Распределённая трассировка
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/application-observability/services/services-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Сервисы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1966,20 +1325,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/observe/digital-experience/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1993,78 +1353,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Цифровой опыт
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/digital-experience/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Синтетическое приложение
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2131,19 +1425,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2203,20 +1501,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2230,274 +1529,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Обнаружение аномалий
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Настройка чувствительности
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение Anomaly Detection
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфигурация
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Адаптивные пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Многомерный бейзлайн
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    События метрик
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Статические пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Оптимизация DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2527,20 +1564,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/dynatrace-intelligence/copilot/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2554,162 +1592,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Davis Copilot
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dynatrace Assist
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфиденциальность
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы на естественном языке
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2763,20 +1651,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2790,106 +1679,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Анализ первопричин
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Анализ событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2910,7 +1705,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграции
+    Интеграции Davis AI
   
 
     
@@ -2941,20 +1736,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2968,78 +1764,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Справочник
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AI модели
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лимиты
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3080,19 +1810,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -3144,20 +1878,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3171,162 +1906,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Дашборды и ноутбуки
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Дашборды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Версии документов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Визуализации
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3354,20 +1939,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/analyze-explore-automate/logs/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3381,134 +1967,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Логи
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/logs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Log Analytics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение журналов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Фильтры
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3681,19 +2145,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -3736,7 +2204,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
+    Обзор источников данных
   
 
     
@@ -3838,19 +2306,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -3898,20 +2370,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/deliver/configuration-as-code/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3925,194 +2398,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Configuration as Code
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/configuration-as-code/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
       
-        
+        <span class="md-nav__icon md-icon"></span>
       
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Monaco
+    </a>
   
 
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Monaco
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4136,150 +2427,21 @@
     
     
       
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Terraform
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Terraform
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CLI команды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
         
-      
         
       
     
-    
-    
-      
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
+  
+  
+    <a href="../../../ru/deliver/service-level-objectives/" class="md-nav__link">
       
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -4293,78 +2455,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    SLO
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/service-level-objectives/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/service-level-objectives/create-slo/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Создание SLO
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4388,20 +2484,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/deliver/site-reliability-guardian/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4415,78 +2512,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Site Reliability Guardian
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/site-reliability-guardian/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Структура событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4538,20 +2569,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/deliver/release-monitoring/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4565,78 +2597,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Мониторинг релизов
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/release-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Мониторинг релизов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4695,19 +2661,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -4778,7 +2748,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграция
+    Приём событий безопасности
   
 
     
@@ -4816,19 +2786,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
             
   
   
@@ -4910,20 +2884,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/license/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4937,190 +2912,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Лицензирование
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/license/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лицензия
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/license/capabilities/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Возможности DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/license/billing-reports/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Биллинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/license/budget-alerts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Бюджетные оповещения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/license/license-lifecycle/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Жизненный цикл
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/license/dps-permissions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Разрешения DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -5151,19 +2948,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
             
   
   
@@ -5272,23 +3073,33 @@
       
         
       
-    
-    
-    
+        
       
+        
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
         
           
-          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
             
   
   
@@ -5331,35 +3142,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/whats-new/saas/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SaaS
+    Все обновления
   
 
     
@@ -5387,7 +3170,7 @@
   <span class="md-ellipsis">
     
   
-    OneAgent
+    Обновления OneAgent
   
 
     
@@ -5416,6 +3199,225 @@
     
   
     ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../ru/whats-new/dynatrace-operator/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Operator
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../ru/whats-new/edgeconnect/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EdgeConnect
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../ru/whats-new/technology/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Технологии
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ru/whats-new/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Новые статьи
   
 
     
@@ -5483,6 +3485,301 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preview-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preview Terms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#join-a-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Join a preview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Join a preview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-extensions-on-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Extensions on Kubernetes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-retention-for-rum-synthetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended Retention for RUM &amp; Synthetic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-interactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Interactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dem-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DEM Query
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace-intelligence-agentic-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynatrace Intelligence Agentic workflows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forwarding-of-logs-to-cloud-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forwarding of Logs to Cloud Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensitive-data-scanner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensitive Data Scanner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-encryption-keys-byok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manage encryption keys (BYOK)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-ai-observability-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New AI Observability Experience
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-cloud-platform-monitoring-for-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Cloud Platform Monitoring for Azure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-cloud-platform-monitoring-for-google-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Cloud Platform Monitoring for Google Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lookup-data-in-grail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lookup data in Grail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sdv2-for-oneagent-on-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SDv2 for OneAgent on Kubernetes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compliance-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance Assistant
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completed-previews" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completed previews
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Completed previews">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-cloud-platform-monitoring-for-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Cloud Platform Monitoring for AWS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhanced-kubernetes-object-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enhanced Kubernetes Object Visibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ask-dynatrace-assist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ask Dynatrace Assist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-replay-mobile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session Replay Mobile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynatrace MCP Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-entities-in-smartscape-on-grail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core entities in Smartscape on Grail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-user-monitoring-on-grail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real User Monitoring on Grail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5508,7 +3805,6 @@
 
 
 <h1 id="preview-program">Preview program<a class="headerlink" href="#preview-program" title="Permanent link">&para;</a></h1>
-<h1 id="preview-program_1">Preview program<a class="headerlink" href="#preview-program_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
 <li>Updated on Feb 04, 2026</li>
@@ -5525,7 +3821,7 @@
 <p>If you do not accept the Preview Terms, you may not access any Preview.</p>
 </li>
 <li>
-<p>Agentic and Generative AI Previews: Dynatrace may send your prompts to the LLM providers in the regions published in <a href="/docs/dynatrace-intelligence/copilot/copilot-data-privacy#prompt-data" title="Learn about Dynatrace Intelligence generative AI data privacy and security policy.">Dynatrace Intelligence generative AI data privacy and security</a>. The prompts are not retained by the LLM providers, however, Dynatrace may store them in the United States in order to provide and monitor the Preview experience and quality. Your acceptance of the Preview Terms for Agentic and Generative AI Previews will apply to all future Agentic and Generative AI Previews that Dynatrace offers under the same terms (i.e. if you wish to participate in any future Agentic and Generative AI Previews that may be offered under these terms, you will not be required to again accept the terms).</p>
+<p>Agentic and Generative AI Previews: Dynatrace may send your prompts to the LLM providers in the regions published in <a href="../../dynatrace-intelligence/copilot/copilot-data-privacy/#prompt-data" title="Learn about Dynatrace Intelligence generative AI data privacy and security policy.">Dynatrace Intelligence generative AI data privacy and security</a>. The prompts are not retained by the LLM providers, however, Dynatrace may store them in the United States in order to provide and monitor the Preview experience and quality. Your acceptance of the Preview Terms for Agentic and Generative AI Previews will apply to all future Agentic and Generative AI Previews that Dynatrace offers under the same terms (i.e. if you wish to participate in any future Agentic and Generative AI Previews that may be offered under these terms, you will not be required to again accept the terms).</p>
 </li>
 </ul>
 <h2 id="join-a-preview">Join a preview<a class="headerlink" href="#join-a-preview" title="Permanent link">&para;</a></h2>
@@ -5539,17 +3835,17 @@
 <p>Dynatrace version 1.330+</p>
 <p>Available to DPS SaaS customers, extended retention lets you keep RUM and Synthetic data beyond the standard 35 days, up to 13 months.</p>
 <p>This enables new use cases such as long-term performance trending, seasonal analysis, and fraud detection, and helps meet audit-related data compliance requirements.</p>
-<p>Retained data can be queried in the core <a href="/docs/observe/digital-experience/new-rum-experience" title="Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance.">Digital Experience apps</a>, or via <a href="/docs/analyze-explore-automate/dashboards-and-notebooks" title="Dashboards and Notebooks">Dashboards and Notebooks</a>.</p>
-<p>For more information, see <a href="/docs/license/capabilities/digital-experience-monitoring-query-retain/retention-dem" title="Learn how your DEM-extended retention is consumed and billed before and after Preview.">Calculate your consumption of Digital Experience Monitoring (DEM) - Retain</a>.</p>
+<p>Retained data can be queried in the core Digital Experience apps, or via Dashboards and Notebooks.</p>
+<p>For more information, see Calculate your consumption of Digital Experience Monitoring (DEM) - Retain.</p>
 <p><a href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=o-PrcDBbXUOdZ3cW10yhkGaiGvQH3Q1Mssy-CUGlJ9dURExYSUozVkNSMExLUkk1RkVDTzZJNThDUi4u&amp;route=shorturl">Request access</a></p>
 <h3 id="user-interactions">User Interactions<a class="headerlink" href="#user-interactions" title="Permanent link">&para;</a></h3>
 <p>Dynatrace version 1.330+</p>
 <p>User Interactions introduces a new class of frontend RUM events such as clicks, taps, scrolls, drags, zooms, and other UI gestures, that were not captured in Classic RUM. These enable Dynatrace to collect unprecedented rich behavioural analytics while the feature is still being refined. Customers gain early visibility into use cases such as behavioral funnels, feature adoption, retention analysis, and deeper UX insights.</p>
-<p>For more information, see <a href="/docs/semantic-dictionary/model/rum/user-events/user-interactions">User Interactions documentation</a>.</p>
+<p>For more information, see User Interactions documentation.</p>
 <h3 id="dem-query">DEM Query<a class="headerlink" href="#dem-query" title="Permanent link">&para;</a></h3>
 <p>Dynatrace version 1.330+</p>
 <p>With the DEM Query Early Access program, customers can execute DEM-related DQL queries across Dashboards, Notebooks, Workflows, Custom Apps, SLOs, and the API that use DEM data without incurring query-based charges during the early access phase. Customers can explore and validate how RUM data on Grail behaves when queried at scale and consolidate their upcoming query-consumption patterns. An out-of-the-box dashboard will automatically be deployed to help customers track query usage.</p>
-<p>For more information, see <a href="/docs/license/capabilities/digital-experience-monitoring-query-retain/queries-dem" title="Learn how your consumption of the DEM-related DQL queries is consumed and billed before and after Early Access.">Digital Experience Monitoring (DEM) Query</a>.</p>
+<p>For more information, see Digital Experience Monitoring (DEM) Query.</p>
 <p><img alt="DQL" src="https://cdn.bfldr.com/B686QPH3/at/t9h436nzjqq6cww99sqs6z/DQL.svg?auto=webp&amp;width=72&amp;height=72" title="DQL" /></p>
 <h3 id="dynatrace-intelligence-agentic-workflows">Dynatrace Intelligence Agentic workflows<a class="headerlink" href="#dynatrace-intelligence-agentic-workflows" title="Permanent link">&para;</a></h3>
 <p>Dynatrace version 1.331+</p>
@@ -5558,10 +3854,10 @@
 <li>Embed prompts that interpret observability and security signals</li>
 <li>Summarize data findings and suggest remediation paths in plain language</li>
 <li>Chain our generative AI action with existing workflow actions to automate ticket creation and targeted notifications</li>
-<li>Explore our ready-made <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/agentic-workflows" title="Basic concepts of using agentic workflows to automate complex, data-driven tasks more flexibly by leveraging generative and agentic AI.">Agentic workflows</a></li>
+<li>Explore our ready-made Agentic workflows</li>
 <li>Optionally combine with Dynatrace Intelligence forecasting to support use cases such as proactive scaling based on demand</li>
 </ul>
-<p>For more information, see <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows" title="Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.">Dynatrace Intelligence (Preview) app</a>.</p>
+<p>For more information, see Dynatrace Intelligence (Preview) app.</p>
 <p><a href="https://forms.office.com/r/PmFzJkRkDr">Request access</a></p>
 <p>Latest Dynatrace <img alt="Dot" src="https://dt-cdn.net/images/dot-a32314f261.svg" title="Dot" /> Disclaimer: Using Dynatrace Intelligence (Preview) can result in consumption when querying data.</p>
 <h3 id="forwarding-of-logs-to-cloud-storage">Forwarding of Logs to Cloud Storage<a class="headerlink" href="#forwarding-of-logs-to-cloud-storage" title="Permanent link">&para;</a></h3>
@@ -5574,7 +3870,7 @@
 <li>Integrating logs with external tools, such as SIEM, directly from cloud storage, without the need for third party tools.</li>
 <li>Improved control, transparency, and cost efficiency through unified forwarding policies.</li>
 </ul>
-<p>This is available to Dynatrace SaaS customers on AWS or Azure with <a href="/docs/license/capabilities/log-analytics" title="Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.">Logs powered by Grail (DPS)</a> licensing capabilities.</p>
+<p>This is available to Dynatrace SaaS customers on AWS or Azure with Logs powered by Grail (DPS) licensing capabilities.</p>
 <p>Preview opens in February 2026.</p>
 <p><a href="https://forms.office.com/r/zVzTi99BZq">Request access</a></p>
 <p>Latest Dynatrace <img alt="Dot" src="https://dt-cdn.net/images/dot-a32314f261.svg" title="Dot" /> Forwarding is not charged during preview. Once the feature is generally available, it will incur license fees.</p>
@@ -5597,7 +3893,7 @@ Your self-managed key can be used to encrypt and decrypt certain data that is st
 This includes all Grail data, and documents such as notebooks, workflows and dashboards.</p>
 <p>This is currently available only for customers with Dynatrace SaaS hosted on AWS.</p>
 <p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=o-PrcDBbXUOdZ3cW10yhkGnvB715bWpPhAdgeewUnapUOUgxTk1UVEtETDRSWVRGVzZVRFlYT0xBNS4u">Request access</a></p>
-<p>For more information, see <a href="/docs/manage/account-management/settings/encryption-keys" title="Bring your own key to use an AWS encryption key with Dynatrace.">Manage AWS encryption keys</a>.</p>
+<p>For more information, see Manage AWS encryption keys.</p>
 <p>Latest Dynatrace</p>
 <h3 id="new-ai-observability-experience">New AI Observability Experience<a class="headerlink" href="#new-ai-observability-experience" title="Permanent link">&para;</a></h3>
 <p>Dynatrace version 1.326+</p>
@@ -5612,7 +3908,7 @@ This includes all Grail data, and documents such as notebooks, workflows and das
 <li>Ready-made dashboards for AWS, Azure, OpenAI, NVIDIA, Kong, model versioning, and A/B testing.</li>
 </ul>
 <p>The preview is available to customers with Latest Dynatrace and DPS licensing. No sign-up is required.</p>
-<p>For more information, see <a href="/docs/observe/dynatrace-for-ai-observability" title="Learn about AI and LLM observability, what AI observability is, how Dynatrace observes Generative AI (LLM) models and AI SaaS services, and much more.">AI and LLM Observability</a>.</p>
+<p>For more information, see AI and LLM Observability models and AI SaaS services, and much more.").</p>
 <p>Latest Dynatrace <img alt="Dot" src="https://dt-cdn.net/images/dot-a32314f261.svg" title="Dot" /> Consumes DPS commit and incurs code charges on your application.</p>
 <p><img alt="AI Observability" src="https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png" title="AI Observability" /></p>
 <h3 id="new-cloud-platform-monitoring-for-azure">New Cloud Platform Monitoring for Azure<a class="headerlink" href="#new-cloud-platform-monitoring-for-azure" title="Permanent link">&para;</a></h3>
@@ -5634,7 +3930,7 @@ All cloud platform data is linked with related resources, ensuring deeper insigh
 <h3 id="lookup-data-in-grail">Lookup data in Grail<a class="headerlink" href="#lookup-data-in-grail" title="Permanent link">&para;</a></h3>
 <p>Dynatrace version 1.320+</p>
 <p>Lookup data in Grail lets you enrich your observability data, such as logs, events, traces, or metrics, with lookup tables. You can upload your data as files in text-based formats such as CSV, JSONL, or XML, which are then parsed into a Grail-native format for seamless integration. With lookup data stored in Grail, you can use it in your DQL queries to add additional context to your observability data. The preview is available to customers of the latest Dynatrace with DPS licensing. No sign-up is required.</p>
-<p>For more information, see <a href="/docs/platform/grail/lookup-data" title="Learn about lookup data in Grail.">Lookup data in Grail</a>.</p>
+<p>For more information, see Lookup data in Grail.</p>
 <p><img alt="Grail" src="https://dt-cdn.net/images/grail-color-81fcaa6de3.svg" title="Grail" /></p>
 <h3 id="sdv2-for-oneagent-on-kubernetes">SDv2 for OneAgent on Kubernetes<a class="headerlink" href="#sdv2-for-oneagent-on-kubernetes" title="Permanent link">&para;</a></h3>
 <p>Dynatrace SaaS version 1.323+</p>
@@ -5645,16 +3941,16 @@ All cloud platform data is linked with related resources, ensuring deeper insigh
 <p><strong>Compliance Assistant</strong> <img alt="Compliance Assistant" src="https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png" title="Compliance Assistant" /> collects information from various sources and applications to maintain real-time visibility into the status of compliance across critical applications and systems.</p>
 <p>The first available compliance use case focuses on the Digital Operational Resilience Act (DORA).</p>
 <p>It leverages the Dynatrace platform's observability, security, and other capabilities, enhanced by hyper-modal Dynatrace Intelligence, to bolster its operational resilience and security posture.</p>
-<p>For more information, see <a href="/docs/analyze-explore-automate/compliance-and-resilience/compliance-assistant" title="Consolidate insights from the Dynatrace observability and security platform in a unified dashboard.">Compliance Assistant</a>.</p>
+<p>For more information, see Compliance Assistant.</p>
 <p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=o-PrcDBbXUOdZ3cW10yhkLrUfJvfCElMtf4A6-5Fzj9UNU1WRlg2MzgwTVlSRFJaQUdCOFJLVEZLQy4u">Request access</a></p>
 <p><img alt="Compliance Assistant" src="https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png" title="Compliance Assistant" /></p>
 <h2 id="completed-previews">Completed previews<a class="headerlink" href="#completed-previews" title="Permanent link">&para;</a></h2>
 <p>Learn about recently completed previews that are now generally available to all Dynatrace customers.</p>
 <h3 id="new-cloud-platform-monitoring-for-aws">New Cloud Platform Monitoring for AWS<a class="headerlink" href="#new-cloud-platform-monitoring-for-aws" title="Permanent link">&para;</a></h3>
 <p>Dynatrace version 1.320+</p>
-<p><a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">Dynatrace Platform Subscription (DPS)</a></p>
-<p><a href="/docs/ingest-from/amazon-web-services/aws-onboarding" title="Learn about our latest AWS Cloud Platform Monitoring.">The new Cloud Platform Monitoring for AWS</a> provides a foundation for comprehensive telemetry coverage across AWS services, and enhanced visibility into cloud topology.
-With this update, you can enrich telemetry signals using cloud tags, leverage a revamped <a href="/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app" title="Monitor all cloud platforms at once."><img alt="Clouds" src="https://dt-cdn.net/images/clouds-1025-170946931c.png" title="Clouds" /> <strong>Clouds</strong></a> for centralized monitoring, and take advantage of guided observability tools like ready-made dashboards and alert templates.</p>
+<p>Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")</p>
+<p>The new Cloud Platform Monitoring for AWS provides a foundation for comprehensive telemetry coverage across AWS services, and enhanced visibility into cloud topology.
+With this update, you can enrich telemetry signals using cloud tags, leverage a revamped <a href="../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" title="Monitor all cloud platforms at once."><img alt="Clouds" src="https://dt-cdn.net/images/clouds-1025-170946931c.png" title="Clouds" /> <strong>Clouds</strong></a> for centralized monitoring, and take advantage of guided observability tools like ready-made dashboards and alert templates.</p>
 <p>This preview also delivers richer topology data with detailed metadata, full resource configuration, and infrastructure relationships.</p>
 <p>This enables use cases such as resource inventory management and helps reduce cognitive load for SREs during troubleshooting.</p>
 <p>All cloud platform data is linked with related resources, ensuring deeper insights and better operational context.</p>
@@ -5670,19 +3966,19 @@ With this update, you can enrich telemetry signals using cloud tags, leverage a 
 <li>Ability to query YAMLs across all clusters and namespaces using Dynatrace Query Language (DQL) to instantly surface misconfigurations, missing references, or policy violations across your Kubernetes environment.</li>
 </ul>
 <p>The preview is available to customers of the latest Dynatrace with DPS licensing. No sign-up is required.</p>
-<p>For more information, see <a href="/docs/observe/infrastructure-observability/kubernetes-app/preview/enhanced-object-vis-preview" title="Accelerate root cause analysis with deeper Kubernetes object visibility.">Enhanced Kubernetes Object Visibility</a>.</p>
+<p>For more information, see Enhanced Kubernetes Object Visibility.</p>
 <p><img alt="Kubernetes (new)" src="https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp" title="Kubernetes (new)" /></p>
 <h3 id="segments">Segments<a class="headerlink" href="#segments" title="Permanent link">&para;</a></h3>
 <p>Segments help to logically structure and conveniently filter observability data in Grail. With segments, we allow upgrading from management zone filtering in classic Dynatrace, to data segmentation for cross-app filtering on the latest Dynatrace. To focus on the data that matters, you can use Segments to 'block out noise' and examine only a defined set of data.</p>
 <ul>
 <li>General availability: Dynatrace version 1.318+</li>
-<li>Get started: <a href="/docs/manage/segments" title="Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.">Segments</a></li>
+<li>Get started: Segments</li>
 </ul>
 <p><img alt="Segments" src="https://dt-cdn.net/images/segments-256-8e66310720.webp" title="Segments" /></p>
 <h3 id="ask-dynatrace-assist">Ask Dynatrace Assist<a class="headerlink" href="#ask-dynatrace-assist" title="Permanent link">&para;</a></h3>
 <ul>
 <li>General availability: Dynatrace version 1.308+</li>
-<li>Get started: <a href="/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot" title="Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.">Dynatrace Assist</a></li>
+<li>Get started: Dynatrace Assist</li>
 </ul>
 <p>Dynatrace Intelligence generative AI developed by Dynatrace allows you to explore data through natural language, helping with onboarding and boosting productivity. This Preview focuses on providing answers via a conversational interface to help, support, and onboarding questions based on our support resources.</p>
 <h3 id="session-replay-mobile">Session Replay Mobile<a class="headerlink" href="#session-replay-mobile" title="Permanent link">&para;</a></h3>
@@ -5690,18 +3986,18 @@ With this update, you can enrich telemetry signals using cloud tags, leverage a 
 <p><img alt="Session Replay" src="https://dt-cdn.net/images/session-replay-512-3b4b57b224.png" title="Session Replay" /></p>
 <h3 id="dynatrace-mcp-server">Dynatrace MCP Server<a class="headerlink" href="#dynatrace-mcp-server" title="Permanent link">&para;</a></h3>
 <p>The remote MCP Server allows third party AI agents to securely access and interact with Dynatrace. Once set up, users can utilize tools such as GitHub Copilot or Atlassian Rovo to obtain real-time insights from production environments, including logs, metrics, traces, and real-user data and all their dependencies.</p>
-<p>For more information, see <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp" title="Learn about the Dynatrace MCP server and how you can connect to it.">Dynatrace MCP Server</a>.</p>
+<p>For more information, see Dynatrace MCP Server.</p>
 <p><img alt="Dynatrace Remote MCP Server" src="https://dt-cdn.net/images/picture5-103-8cd29dfe7e.png" title="Dynatrace Remote MCP Server" /></p>
 <h3 id="core-entities-in-smartscape-on-grail">Core entities in Smartscape on Grail<a class="headerlink" href="#core-entities-in-smartscape-on-grail" title="Permanent link">&para;</a></h3>
 <p>Dynatrace version 1.327+</p>
 <p>This preview introduces the new Dynatrace core entities in Smartscape on Grail, including key types such as <strong>Hosts</strong>, <strong>Processes</strong>, and <strong>Services</strong>, along with the relationships between them.</p>
 <p>To participate in this preview, you must first join the <a href="#k8s-object-visibility">Enhanced Kubernetes Object Visibility Preview</a>. Once enabled, you'll be able to use DQL within <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> and <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> to explore and analyze Smartscape topology.</p>
 <p>Please note that this preview does not include any updates to <img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong> or <img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong>.</p>
-<p>For more information, see <a href="/docs/platform/grail/smartscape-on-grail" title="Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.">Smartscape on Grail</a>.</p>
+<p>For more information, see Smartscape on Grail.</p>
 <p><img alt="Smartscape" src="https://dt-cdn.net/images/smartscape-d5c4104cad.svg" title="Smartscape" /></p>
 <h3 id="real-user-monitoring-on-grail">Real User Monitoring on Grail<a class="headerlink" href="#real-user-monitoring-on-grail" title="Permanent link">&para;</a></h3>
 <p>With RUM on Grail, you will gain a better client-side visibility via our new event-based data model and use-case driven apps. This advancement is crucial for insightful and contextual analysis of modern frontends that are often page and view-based. You can access all of this data using new Digital Experience apps or query them using DQL in Notebooks and Dashboards.</p>
-<p>For more information, see <a href="/docs/observe/digital-experience/new-rum-experience" title="Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance.">New Real User Monitoring Experience</a>.</p>
+<p>For more information, see New Real User Monitoring Experience.</p>
 <p><img alt="Experience Vitals" src="https://dt-cdn.net/images/experience-vitals-256-9999590b55.png" title="Experience Vitals" /></p>
 
 
@@ -5782,7 +4078,7 @@ With this update, you can enrich telemetry signals using cloud tags, leverage a 
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.sections", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
   
@@ -5792,25 +4088,38 @@ With this update, you can enrich telemetry signals using cloud tags, leverage a 
       
     
   <script>
-    // Inject version selector into header
-    document.addEventListener('DOMContentLoaded', function() {
-      var headerInner = document.querySelector('.md-header__inner');
-      if (headerInner) {
-        var select = document.createElement('select');
-        select.className = 'docflow-version-select';
-        select.innerHTML = '<option value="managed" selected>Managed</option><option value="saas">SaaS</option>';
-        select.setAttribute('aria-label', 'Version selector');
+    (function() {
+      // --- Reading progress bar (one-time setup) ---
+      var progressBar = document.createElement('div');
+      progressBar.className = 'reading-progress';
+      document.body.appendChild(progressBar);
 
-        // Insert before the search or at the end
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (docHeight > 0) {
+          var progress = (scrollTop / docHeight) * 100;
+          progressBar.style.width = Math.min(progress, 100) + '%';
+        }
+      });
+
+      // --- Managed label in header (one-time setup) ---
+      var headerInner = document.querySelector('.md-header__inner');
+      if (headerInner && !headerInner.querySelector('.docflow-managed-label')) {
+        var label = document.createElement('span');
+        label.className = 'docflow-managed-label';
+        label.textContent = 'Managed';
+        label.setAttribute('title', 'Документация включает разделы Dynatrace Managed');
+
         var searchContainer = headerInner.querySelector('.md-header__source');
         if (searchContainer) {
-          headerInner.insertBefore(select, searchContainer);
+          headerInner.insertBefore(label, searchContainer);
         } else {
-          headerInner.appendChild(select);
+          headerInner.appendChild(label);
         }
       }
 
-      // Keyboard shortcut Ctrl+K for search
+      // --- Keyboard shortcut Ctrl+K for search ---
       document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
           e.preventDefault();
@@ -5825,7 +4134,9 @@ With this update, you can enrich telemetry signals using cloud tags, leverage a 
           }
         }
       });
-    });
+
+      // TOC title renaming handled via CSS (see extra style block above)
+    })();
   </script>
 
   </body>

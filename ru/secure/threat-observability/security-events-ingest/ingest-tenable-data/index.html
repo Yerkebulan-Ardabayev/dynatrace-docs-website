@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
       
       
         <meta name="author" content="Yerkebulan Ardabayev">
@@ -21,11 +21,11 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Ingest Tenable vulnerability findings, scan events, and audit logs - Dynatrace — Документация</title>
+        <title>Прием результатов уязвимостей, событий сканирования и журналов аудита Tenable - Dynatrace — Документация</title>
       
     
     
@@ -87,7 +87,10 @@
       flex-shrink: 0;
     }
 
-    /* Search Ctrl+K badge */
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
     .md-search__form::after {
       content: 'Ctrl+K';
       display: none;
@@ -97,11 +100,14 @@
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color);
       font-size: 10px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'JetBrains Mono', monospace;
       color: var(--md-default-fg-color--lighter);
-      margin-right: 0.5rem;
       white-space: nowrap;
       pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
     }
     @media (min-width: 60em) {
       .md-search__form::after {
@@ -109,12 +115,13 @@
       }
     }
 
-    /* Version selector in header */
-    .docflow-version-select {
+    /* Managed label — non-interactive indicator */
+    .docflow-managed-label {
       display: none;
       align-items: center;
+      gap: 0.375rem;
       margin-left: 0.5rem;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color--lighter);
@@ -122,28 +129,34 @@
       font-size: 0.75rem;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237e7c98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.4rem center;
-      padding-right: 1.5rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .docflow-managed-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--md-accent-fg-color);
+      flex-shrink: 0;
     }
     @media (min-width: 60em) {
-      .docflow-version-select {
+      .docflow-managed-label {
         display: flex;
       }
     }
-    .docflow-version-select:hover {
-      border-color: var(--md-primary-fg-color--light);
-      color: var(--md-default-fg-color);
-    }
-    .docflow-version-select:focus {
-      outline: none;
-      border-color: var(--md-primary-fg-color);
-      box-shadow: 0 0 0 3px var(--docflow-glow-primary);
+
+    /* Reading progress bar */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #14b8a6, #7c3aed);
+      z-index: 1001;
+      transition: width 0.05s linear;
+      pointer-events: none;
     }
   </style>
 
@@ -181,7 +194,7 @@
 
   
 
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
     <a href="../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -203,7 +216,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ingest Tenable vulnerability findings, scan events, and audit logs
+              Прием результатов уязвимостей, событий сканирования и журналов аудита Tenable
             
           </span>
         </div>
@@ -216,20 +229,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -303,375 +316,14 @@
     
   </nav>
   
-    
-      
-<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../.." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Главная
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Начало работы
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../../managed/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Managed
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../platform/grail/dynatrace-grail/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Платформа
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../observe/infrastructure-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Наблюдаемость
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Dynatrace Intelligence
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Анализ и автоматизация
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../ingest-from/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Источники данных
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../deliver/configuration-as-code/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Deliver
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Безопасность
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../manage/hub/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Управление
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../dynatrace-api/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  API
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../whats-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Что нового
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../../ai/groq/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  AI Помощник
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
 </header>
     
 
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -685,10 +337,8 @@
                     
 
 
-  
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -765,16 +415,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -796,7 +450,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -829,7 +483,7 @@
   <span class="md-ellipsis">
     
   
-    Начало работы
+    🚀 Быстрый старт
   
 
     
@@ -967,16 +621,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -998,7 +656,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1227,7 +885,7 @@
   <span class="md-ellipsis">
     
   
-    Лицензия
+    Лицензия Managed
   
 
     
@@ -1269,19 +927,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1327,20 +989,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../platform/grail/dynatrace-grail/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1354,78 +1017,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Grail
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../platform/grail/dynatrace-grail/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Что такое Grail
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../platform/grail/dynatrace-query-language/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Язык запросов DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1544,19 +1141,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1610,20 +1211,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../observe/infrastructure-observability/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1637,190 +1239,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Инфраструктура
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Хосты и операции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Облачный мониторинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes Classic
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Базы данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1844,20 +1268,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1871,78 +1296,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Приложения
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Распределённая трассировка
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/application-observability/services/services-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Сервисы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1966,20 +1325,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../observe/digital-experience/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1993,78 +1353,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Цифровой опыт
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/digital-experience/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Синтетическое приложение
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2131,19 +1425,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2203,20 +1501,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2230,274 +1529,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Обнаружение аномалий
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Настройка чувствительности
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение Anomaly Detection
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфигурация
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Адаптивные пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Многомерный бейзлайн
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    События метрик
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Статические пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Оптимизация DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2527,20 +1564,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/copilot/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2554,162 +1592,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Davis Copilot
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dynatrace Assist
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфиденциальность
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы на естественном языке
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2763,20 +1651,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2790,106 +1679,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Анализ первопричин
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Анализ событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2910,7 +1705,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграции
+    Интеграции Davis AI
   
 
     
@@ -2941,20 +1736,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2968,78 +1764,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Справочник
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AI модели
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лимиты
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3080,19 +1810,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -3144,20 +1878,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3171,162 +1906,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Дашборды и ноутбуки
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Дашборды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Версии документов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Визуализации
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3354,20 +1939,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../analyze-explore-automate/logs/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3381,134 +1967,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Логи
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/logs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Log Analytics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение журналов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Фильтры
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3681,19 +2145,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -3736,7 +2204,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
+    Обзор источников данных
   
 
     
@@ -3838,19 +2306,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -3898,20 +2370,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../deliver/configuration-as-code/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3925,194 +2398,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Configuration as Code
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
       
-        
+        <span class="md-nav__icon md-icon"></span>
       
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Monaco
+    </a>
   
 
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Monaco
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4136,150 +2427,21 @@
     
     
       
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Terraform
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Terraform
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CLI команды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
         
-      
         
       
     
-    
-    
-      
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
+  
+  
+    <a href="../../../../deliver/service-level-objectives/" class="md-nav__link">
       
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -4293,78 +2455,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    SLO
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/service-level-objectives/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/service-level-objectives/create-slo/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Создание SLO
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4388,20 +2484,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../deliver/site-reliability-guardian/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4415,78 +2512,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Site Reliability Guardian
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/site-reliability-guardian/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Структура событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4538,20 +2569,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../deliver/release-monitoring/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4565,78 +2597,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Мониторинг релизов
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/release-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Мониторинг релизов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4695,19 +2661,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -4778,7 +2748,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграция
+    Приём событий безопасности
   
 
     
@@ -4816,19 +2786,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
             
   
   
@@ -4910,20 +2884,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../license/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4937,190 +2912,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Лицензирование
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../license/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лицензия
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../license/capabilities/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Возможности DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../license/billing-reports/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Биллинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../license/budget-alerts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Бюджетные оповещения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../license/license-lifecycle/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Жизненный цикл
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../license/dps-permissions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Разрешения DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -5151,19 +2948,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
             
   
   
@@ -5272,23 +3073,33 @@
       
         
       
-    
-    
-    
+        
       
+        
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
         
           
-          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
             
   
   
@@ -5331,35 +3142,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../whats-new/saas/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SaaS
+    Все обновления
   
 
     
@@ -5387,7 +3170,7 @@
   <span class="md-ellipsis">
     
   
-    OneAgent
+    Обновления OneAgent
   
 
     
@@ -5416,6 +3199,225 @@
     
   
     ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/dynatrace-operator/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Operator
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/edgeconnect/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EdgeConnect
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/technology/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Технологии
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../whats-new/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Новые статьи
   
 
     
@@ -5483,6 +3485,358 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Начало работы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Начало работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Обзор
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сценарии использования
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Требования
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Требования">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tenable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Поддерживаемые продукты Tenable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tenable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Требования Tenable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Требования Dynatrace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Активация и настройка
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Подробности
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Подробности">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как это работает
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Визуализация
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Анализ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Анализ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Запрос логов по времени и действиям
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Запрос распределения уязвимостей по уровню риска
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Запрос топ-10 сканирований с наибольшим охватом хостов
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Автоматизация уведомлений
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Лицензирование и стоимость
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Наборы функций
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Часто задаваемые вопросы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Часто задаваемые вопросы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Почему моя конфигурация показывает ошибку?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Почему я вижу дублирующиеся события?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Почему некоторые события сканирования имеют одинаковое время начала и окончания?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Почему мои данные не принимаются?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tenable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Какие поля расширения добавляются поверх основных полей событий, принятых из Tenable?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tenable-dynatrace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Какие типы активов Tenable поддерживаются Dynatrace для контекстуализации во время выполнения?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Какие типы активов Tenable поддерживаются Dynatrace для контекстуализации во время выполнения?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tenable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как нормализуется оценка риска для результатов Tenable?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Исследуйте в Dynatrace Hub
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Связанные темы
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5508,13 +3862,11 @@
 
 
 <h1 id="tenable">Приём результатов анализа уязвимостей, событий сканирования и журналов аудита Tenable<a class="headerlink" href="#tenable" title="Permanent link">&para;</a></h1>
-<h1 id="tenable_1">Приём результатов анализа уязвимостей, событий сканирования и журналов аудита Tenable<a class="headerlink" href="#tenable_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
 <li>Расширение</li>
-<li>Обновлено 30 сентября 2025 г.</li>
 </ul>
-<p>Эта страница обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и действий, необходимых для миграции, см. в <a href="/docs/secure/threat-observability/migration" title="Ознакомьтесь с изменениями в новой таблице безопасности Grail и узнайте, как выполнить миграцию.">руководстве по миграции на таблицу безопасности Grail</a>.</p>
+<p>Эта страница обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и действий, необходимых для миграции, см. в руководстве по миграции на таблицу безопасности Grail.</p>
 <p>Приём результатов анализа уязвимостей, событий сканирования и журналов аудита Tenable в Dynatrace в качестве событий безопасности.</p>
 <h2 id="_1">Начало работы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">Обзор<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -5522,19 +3874,19 @@
 <h3 id="_3">Сценарии использования<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>С помощью принятых данных вы можете реализовать различные сценарии, такие как:</p>
 <ul>
-<li><a href="/docs/secure/use-cases/visualize-and-analyze-security-findings" title="Визуализация, приоритизация и анализ принятых результатов безопасности.">Визуализация и анализ результатов безопасности</a></li>
-<li><a href="/docs/secure/use-cases/discover-coverage-gaps-in-security-scans" title="Выявление слепых зон в жизненном цикле разработки программного обеспечения (SDLC).">Обнаружение пробелов в охвате результатов безопасности</a></li>
-<li><a href="/docs/secure/use-cases/automate-and-orchestrate-security-findings" title="Регулярная проверка критических результатов безопасности и автоматическое создание тикетов Jira или уведомлений Slack.">Автоматизация и оркестрация результатов безопасности</a></li>
+<li>Визуализация и анализ результатов безопасности</li>
+<li>Обнаружение пробелов в охвате результатов безопасности.")</li>
+<li>Автоматизация и оркестрация результатов безопасности</li>
 </ul>
 <h3 id="_4">Требования<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<h4 id="tenable_2">Поддерживаемые продукты Tenable<a class="headerlink" href="#tenable_2" title="Permanent link">&para;</a></h4>
+<h4 id="tenable_1">Поддерживаемые продукты Tenable<a class="headerlink" href="#tenable_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://dt-url.net/fy43w0l">Tenable Vulnerability Management</a> (для уязвимостей и событий сканирования)</li>
 <li><a href="https://dt-url.net/og63xed">Tenable Web App Scanning</a> (для уязвимостей и событий сканирования)</li>
 <li><a href="https://dt-url.net/c703wbm">Tenable One</a> (для журналов аудита)</li>
 </ul>
 <p>(скоро будут добавлены новые)</p>
-<h4 id="tenable_3">Требования Tenable<a class="headerlink" href="#tenable_3" title="Permanent link">&para;</a></h4>
+<h4 id="tenable_2">Требования Tenable<a class="headerlink" href="#tenable_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><a href="https://dt-url.net/77i3w5n">Сгенерируйте ключ доступа и секретный ключ API</a> со следующими ролями:</p>
@@ -5560,7 +3912,7 @@
 <p>Токены:</p>
 </li>
 <li>
-<p>Сгенерируйте токен доступа с областью <code>openpipeline.events_security</code> и сохраните его для дальнейшего использования. Подробности см. в <a href="/docs/dynatrace-api/basics/dynatrace-api-authentication" title="Узнайте, как пройти аутентификацию для использования Dynatrace API.">Dynatrace API — Токены и аутентификация</a>.</p>
+<p>Сгенерируйте токен доступа с областью <code>openpipeline.events_security</code> и сохраните его для дальнейшего использования. Подробности см. в Dynatrace API — Токены и аутентификация.</p>
 </li>
 </ul>
 <h2 id="_5">Активация и настройка<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
@@ -5568,35 +3920,32 @@
 <li>В Dynatrace найдите <strong>Tenable</strong> и выберите <strong>Install</strong>.</li>
 <li>Следуйте инструкциям на экране для настройки расширения.</li>
 <li>
-<p>Проверьте конфигурацию, выполнив следующие запросы в <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Анализ, визуализация и обмен данными наблюдаемости."><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong></a>:</p>
+<p>Проверьте конфигурацию, выполнив следующие запросы в <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks/" title="Анализ, визуализация и обмен данными наблюдаемости."><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong></a>:</p>
 </li>
 <li>
 <p>Для уязвимостей и сканирований активов:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>fetch security.events
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>| filter dt.system.bucket==&quot;default_securityevents&quot;
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>| filter dt.system.bucket==&quot;default_securityevents&quot;
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>| filter event.provider == &quot;Tenable&quot;
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>| filter event.provider == &quot;Tenable&quot;
 </code></pre></div>
    * Для журналов аудита:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>fetch logs
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>| filter log.source == &quot;Tenable&quot;
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>| filter log.source == &quot;Tenable&quot;
 </code></pre></div>
-4. После установки и успешной работы расширения вы можете получить к нему доступ и управлять им в Dynatrace через <img alt="Extensions" src="https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png" title="Extensions" /> <strong>Extensions</strong>. Подробности см. в <a href="/docs/ingest-from/extensions/concepts" title="Узнайте больше о концепции расширений Dynatrace.">О расширениях</a>.</p>
+4. После установки и успешной работы расширения вы можете получить к нему доступ и управлять им в Dynatrace через <img alt="Extensions" src="https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png" title="Extensions" /> <strong>Extensions</strong>. Подробности см. в О расширениях.</p>
 </li>
 </ol>
 <p>Теперь вы можете <a href="#visualize">визуализировать результаты</a>, <a href="#analyze">анализировать журналы аудита</a> и <a href="#automate">автоматизировать уведомления</a>.</p>
 <h2 id="_6">Подробности<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <h3 id="_7">Как это работает<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p><img alt="Как работает интеграция с Tenable" src="https://dt-cdn.net/images/2024-12-18-16-47-03-1173-dd965318f4.png" /></p>
-<p>Интеграция Dynatrace с Tenable — это <a href="/docs/ingest-from/extensions" title="Узнайте, как создавать и управлять расширениями Dynatrace.">расширение</a>, работающее на Dynatrace ActiveGate. После включения и настройки расширения Dynatrace Tenable:</p>
+<p>Интеграция Dynatrace с Tenable — это расширение, работающее на Dynatrace ActiveGate. После включения и настройки расширения Dynatrace Tenable:</p>
 <ol>
 <li>Оно периодически обращается к продуктам Tenable и получает новые результаты, сканирования и журналы аудита из <a href="#apis">API Tenable</a>.</li>
 </ol>
@@ -5626,32 +3975,30 @@
 <li><a href="https://dt-url.net/fi23xnz">Поиск сканирований</a></li>
 <li><a href="https://dt-url.net/c443xfn">Экспорт результатов</a></li>
 <li>Полученные данные принимаются в Dynatrace и сопоставляются с <a href="https://dt-url.net/z1c3xsm">семантическим словарём Dynatrace</a>.</li>
-<li>Данные хранятся в бакете <code>default_securityevents</code> (подробности см. в <a href="/docs/platform/grail/organize-data#built-in-grail-buckets" title="Информация о модели данных Grail, состоящей из бакетов, таблиц и представлений.">Встроенные бакеты Grail</a>).</li>
+<li>Данные хранятся в бакете <code>default_securityevents</code> (подробности см. в <a href="../../../../platform/grail/organize-data/#built-in-grail-buckets" title="Информация о модели данных Grail, состоящей из бакетов, таблиц и представлений.">Встроенные бакеты Grail</a>).</li>
 </ul>
 </li>
 </ul>
 <h3 id="_8">Визуализация<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Откройте <img alt="Extensions" src="https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png" title="Extensions" /> <strong>Extensions</strong> и перейдите к <strong>Tenable</strong>.</li>
-<li>В разделе <strong>Extension content</strong> выберите нужный <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards" title="Используйте готовые дашборды для визуализации данных.">готовый дашборд</a>.</li>
+<li>В разделе <strong>Extension content</strong> выберите нужный готовый дашборд.</li>
 <li>В фильтре <strong>Product</strong> выберите <strong>Tenable</strong>, чтобы просмотреть данные, предоставленные Tenable, такие как критические уязвимости и затронутые объекты.</li>
 </ol>
 <p><img alt="Фильтр по продукту Tenable" src="https://dt-cdn.net/images/2024-12-11-20-34-24-686-e8338d8bd3.png" /></p>
 <p>Пример результата:</p>
 <p><img alt="Дашборд с фильтром Tenable" src="https://dt-cdn.net/images/umsaywsjuo-4308-76ecd2e8b2.png" /></p>
 <h3 id="_9">Анализ<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>Откройте <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Анализ, визуализация и обмен данными наблюдаемости."><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong></a> или <a href="/docs/secure/investigations" title="Комбинация функций Grail для расследований на основе доказательств."><img alt="Investigations" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Investigations</strong></a> для <a href="/docs/platform/grail/dynatrace-query-language" title="Как использовать Dynatrace Query Language.">запроса</a> принятых данных, используя формат данных из <a href="https://dt-url.net/3q03pb0">семантического словаря</a>.</p>
+<p>Откройте <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks/" title="Анализ, визуализация и обмен данными наблюдаемости."><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong></a> или <a href="../../../investigations/" title="Комбинация функций Grail для расследований на основе доказательств."><img alt="Investigations" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Investigations</strong></a> для запроса принятых данных, используя формат данных из <a href="https://dt-url.net/3q03pb0">семантического словаря</a>.</p>
 <p>Примеры построения запросов приведены ниже.</p>
 <h4 id="_10">Запрос логов по времени и действиям<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>fetch logs
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>| filter log.source == &quot;Tenable&quot;
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>| filter log.source == &quot;Tenable&quot;
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>| makeTimeseries logs=countDistinctExact(id), by:{audit.action}, time:{toTimestamp(received)}, interval:{3h}
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>| makeTimeseries logs=countDistinctExact(id), by:{audit.action}, time:{toTimestamp(received)}, interval:{3h}
 </code></pre></div>
 <p>Пример результата:</p>
 <p><img alt="Логи по времени и действиям" src="https://dt-cdn.net/images/image-20241209-153005-1988-af39449c8c.png" /></p>
@@ -5659,44 +4006,34 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>fetch security.events
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>| filter dt.system.bucket==&quot;default_securityevents&quot;
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>| filter dt.system.bucket==&quot;default_securityevents&quot;
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>| filter event.type == &quot;VULNERABILITY_FINDING&quot;
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>| filter event.type == &quot;VULNERABILITY_FINDING&quot;
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>| filter event.provider == &quot;Tenable&quot;
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>| filter event.provider == &quot;Tenable&quot;
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>| dedup {object.id, vulnerability.id}, sort:{timestamp}
 <a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
 <a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>| dedup {object.id, vulnerability.id}, sort:{timestamp}
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>| summarize Vulnerabilities=countDistinctExact(vulnerability.id), by:{dt.security.risk.level}
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
 <a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>| fieldsAdd order=if(dt.security.risk.level==&quot;CRITICAL&quot;, 1, else:
 <a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>| summarize Vulnerabilities=countDistinctExact(vulnerability.id), by:{dt.security.risk.level}
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>if(dt.security.risk.level==&quot;HIGH&quot;, 2, else:
 <a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
 <a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>| fieldsAdd order=if(dt.security.risk.level==&quot;CRITICAL&quot;, 1, else:
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>if(dt.security.risk.level==&quot;MEDIUM&quot;, 3, else:
 <a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
 <a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>if(dt.security.risk.level==&quot;HIGH&quot;, 2, else:
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>if(dt.security.risk.level==&quot;LOW&quot;, 4, else:5))))
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
 <a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>if(dt.security.risk.level==&quot;MEDIUM&quot;, 3, else:
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>if(dt.security.risk.level==&quot;LOW&quot;, 4, else:5))))
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>
-<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>
-<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>| sort order asc
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>| sort order asc
 </code></pre></div>
 <p>Пример результата:</p>
 <p><img alt="Распределение уязвимостей по уровню риска" src="https://dt-cdn.net/images/2024-12-11-19-40-07-1277-3f2f43c90a.png" /></p>
@@ -5704,43 +4041,36 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>fetch security.events
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>| filter dt.system.bucket==&quot;default_securityevents&quot;
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>| filter dt.system.bucket==&quot;default_securityevents&quot;
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>| filter event.type == &quot;VULNERABILITY_SCAN&quot;
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>| filter event.type == &quot;VULNERABILITY_SCAN&quot;
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>| filter event.provider == &quot;Tenable&quot;
 <a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
 <a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>| filter event.provider == &quot;Tenable&quot;
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>| dedup {object.id, scan.id}
 <a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
 <a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>| dedup {object.id, scan.id}
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>| summarize Hosts=countDistinctExact(object.id), by:{scan.name}
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
 <a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>| sort Hosts desc
 <a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>| summarize Hosts=countDistinctExact(object.id), by:{scan.name}
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>| sort Hosts desc
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>| limit 10
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>| limit 10
 </code></pre></div>
 <p>Пример результата:</p>
 <p><img alt="Запрос топ-10 сканирований с наибольшим охватом хостов" src="https://dt-cdn.net/images/2024-12-11-19-42-02-1753-871fb9630c.png" /></p>
 <h3 id="_12">Автоматизация уведомлений<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Скачайте <a href="https://dt-url.net/od23qa1">пример рабочего процесса для Jira</a> или <a href="https://dt-url.net/ko43qsm">пример рабочего процесса для Slack</a>.</li>
-<li>Откройте <a href="/docs/analyze-explore-automate/workflows" title="Автоматизация IT-процессов с помощью Dynatrace Workflows."><img alt="Workflows" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Workflows" /> <strong>Workflows</strong></a>, выберите <img alt="Import" src="https://dt-cdn.net/images/dashboards-app-dashboards-page-import-6a06e645df.svg" title="Import" /> <strong>Upload</strong>, затем выберите скачанный файл.</li>
+<li>Откройте <a href="../../../../analyze-explore-automate/workflows/" title="Автоматизация IT-процессов с помощью Dynatrace Workflows."><img alt="Workflows" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Workflows" /> <strong>Workflows</strong></a>, выберите <img alt="Import" src="https://dt-cdn.net/images/dashboards-app-dashboards-page-import-6a06e645df.svg" title="Import" /> <strong>Upload</strong>, затем выберите скачанный файл.</li>
 <li>Настройте рабочий процесс под ваши потребности для создания уведомлений о критических результатах Tenable.</li>
 </ol>
 <h3 id="_13">Лицензирование и стоимость<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p>Информацию о тарификации см. в <a href="/docs/license/capabilities/events" title="Узнайте, как рассчитывается потребление событий Dynatrace на базе Grail в модели подписки Dynatrace Platform.">События на базе Grail</a>.</p>
+<p>Информацию о тарификации см. в События на базе Grail.</p>
 <h2 id="_14">Наборы функций<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
 <p>При активации расширения с помощью <a href="#monitoring-configuration">конфигурации мониторинга</a> вы можете ограничить мониторинг одним из наборов функций. Для корректной работы расширение должно собирать хотя бы одну метрику после активации.</p>
 <p>В сильно сегментированных сетях наборы функций могут отражать сегменты вашей среды. Затем, при создании конфигурации мониторинга, вы можете выбрать набор функций и соответствующую группу ActiveGate, которая может подключаться к конкретному сегменту.</p>
@@ -5752,7 +4082,7 @@
 <p>Если ваша конфигурация показывает указанное выше сообщение об ошибке, это просто означает, что ActiveGate всё ещё загружает расширение для кластера. Статус должен измениться через несколько минут.</p>
 <h3 id="_17">Почему я вижу дублирующиеся события?<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <p>Дублирующиеся события в расширении Tenable, скорее всего, связаны с тем, что первый приём запускается несколько раз. Когда конфигурация мониторинга назначается ActiveGate, первое выполнение запускает экспорт за более длительный временной период (настраивается в параметрах конфигурации мониторинга). Каждый раз при перезапуске расширения (из-за обновления, сброса ActiveGate, переключения на резерв и т.д.) первый приём запускается снова.</p>
-<p>Вы можете выполнить DQL-запрос и применить <a href="/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#dedup" title="Команды фильтрации и поиска DQL"><strong>dedup</strong></a> к событиям, используя поля <code>object.id</code>, <code>scan.id</code> и <code>finding.id</code>.</p>
+<p>Вы можете выполнить DQL-запрос и применить <strong>dedup</strong> к событиям, используя поля <code>object.id</code>, <code>scan.id</code> и <code>finding.id</code>.</p>
 <ul>
 <li>Для <code>VULNERABILITY_FINDING</code> уникальный идентификатор — <code>{object.id, finding.id}</code>.</li>
 <li>Для <code>VULNERABILITY_SCAN</code> уникальный идентификатор — <code>{object.id, scan.id}</code>.</li>
@@ -5761,20 +4091,16 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>fetch security.events
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>| filter dt.system.bucket==&quot;default_securityevents&quot;
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>| filter dt.system.bucket==&quot;default_securityevents&quot;
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>| filter event.type == &quot;VULNERABILITY_FINDING&quot;
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>| filter event.type == &quot;VULNERABILITY_FINDING&quot;
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>| filter event.provider == &quot;Tenable&quot;
 <a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
 <a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>| filter event.provider == &quot;Tenable&quot;
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>| dedup {object.id, finding.id}, sort:{timestamp}
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>| dedup {object.id, finding.id}, sort:{timestamp}
 </code></pre></div>
 <h3 id="_18">Почему некоторые события сканирования имеют одинаковое время начала и окончания?<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <p>При получении уязвимостей расширение Tenable пытается сопоставить данные с недавними выполнениями сканирования. Если сканирование, упомянутое в уязвимости Tenable, не может быть найдено (например, из-за отсутствия разрешений), расширение создаёт событие сканирования на основе этого результата. Такие события сканирования имеют одинаковое время начала и окончания — момент обнаружения уязвимости.</p>
@@ -5787,7 +4113,7 @@
 </ol>
 <p>Как извлечь архив поддержки</p>
 <ol>
-<li>Найдите идентификатор ActiveGate для ActiveGate, выполняющего конфигурацию, и извлеките архив поддержки. Подробности см. в <a href="/docs/ingest-from/dynatrace-activegate/activegate-diagnostics#collect-and-review-locally" title="Узнайте, как запустить диагностику ActiveGate">Диагностика ActiveGate: локальный сбор и анализ</a>.</li>
+<li>Найдите идентификатор ActiveGate для ActiveGate, выполняющего конфигурацию, и извлеките архив поддержки. Подробности см. в <a href="../../../../ingest-from/dynatrace-activegate/activegate-diagnostics/#collect-and-review-locally" title="Узнайте, как запустить диагностику ActiveGate">Диагностика ActiveGate: локальный сбор и анализ</a>.</li>
 <li>Распакуйте архив поддержки и найдите файл лога расширения по пути <code>COLLECTOR/&lt;id&gt;/remotepluginmodule/log/extensions/datasources/com.dynatrace.extension.tenable/python3.log</code>.</li>
 <li>Если информации по-прежнему недостаточно для устранения неполадок, включите флаг <code>Debug logs</code> в конфигурации мониторинга и обратитесь в службу поддержки Dynatrace.</li>
 </ol>
@@ -5800,7 +4126,7 @@
 <p><strong>Рекомендация</strong>: дважды проверьте учётные данные, настроенные в конфигурации мониторинга.
 * Недостаточные разрешения у пользователя API</p>
 <p><strong>Рекомендация</strong>: убедитесь, что пользователь API может вызывать <a href="#apis">API, используемые для получения данных</a>.</p>
-<h2 id="tenable_4">Какие поля расширения добавляются поверх основных полей событий, принятых из Tenable?<a class="headerlink" href="#tenable_4" title="Permanent link">&para;</a></h2>
+<h2 id="tenable_3">Какие поля расширения добавляются поверх основных полей событий, принятых из Tenable?<a class="headerlink" href="#tenable_3" title="Permanent link">&para;</a></h2>
 <p>Пространство имён <code>tenable</code> добавляется для извлечения нескольких специфических атрибутов Tenable для удобства пользователей поверх исходного JSON, который хранится в поле <code>event.original_content</code>.</p>
 <p><strong>Примеры</strong>:</p>
 <ul>
@@ -5817,9 +4143,9 @@
 <li><code>host.fqdn</code> — полное доменное имя хоста, определённое Tenable.</li>
 </ul>
 <p>Контекстуализация во время выполнения может быть выполнена по полю <code>host.ip</code>.</p>
-<h3 id="tenable_5">Как нормализуется оценка риска для результатов Tenable?<a class="headerlink" href="#tenable_5" title="Permanent link">&para;</a></h3>
+<h3 id="tenable_4">Как нормализуется оценка риска для результатов Tenable?<a class="headerlink" href="#tenable_4" title="Permanent link">&para;</a></h3>
 <p>Dynatrace нормализует степень серьёзности и оценки риска для всех результатов, принятых через текущую интеграцию. Это помогает приоритизировать результаты единообразно, независимо от их источника.
-Подробности о том, как работает нормализация, см. в <a href="/docs/secure/threat-observability/concepts#normalization" title="Основные концепции, связанные с наблюдаемостью угроз">Нормализация серьёзности и оценок</a>.</p>
+Подробности о том, как работает нормализация, см. в <a href="../../concepts/#normalization" title="Основные концепции, связанные с наблюдаемостью угроз">Нормализация серьёзности и оценок</a>.</p>
 <p>Уровни и оценки риска Dynatrace сопоставляются с исходной <a href="https://dt-url.net/j103w2v">серьёзностью Tenable</a>.</p>
 <p>Tenable использует оценку VPR. Однако уровни серьёзности устанавливаются на основе оценок CVSS (v2 или v3, в зависимости от <a href="https://dt-url.net/tg23we5">конфигурации</a>). Поэтому Dynatrace сопоставляет серьёзность с уровнем риска, а затем назначает соответствующую оценку риска.</p>
 <ul>
@@ -5857,9 +4183,9 @@
 <p>Приём результатов анализа уязвимостей, событий сканирования и журналов аудита Tenable.](https://www.dynatrace.com/hub/detail/tenable/)</p>
 <h2 id="_20">Связанные темы<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/platform/openpipeline" title="Масштабирование обработки данных платформы Dynatrace с помощью Dynatrace OpenPipeline.">OpenPipeline</a></li>
-<li><a href="/docs/platform/grail/dynatrace-query-language" title="Как использовать Dynatrace Query Language.">Dynatrace Query Language</a></li>
-<li><a href="/docs/semantic-dictionary/model/security-events" title="Ознакомьтесь с моделями семантического словаря, связанными с событиями безопасности.">События безопасности</a></li>
+<li>OpenPipeline</li>
+<li>Dynatrace Query Language</li>
+<li>События безопасности</li>
 </ul>
 
 
@@ -5940,7 +4266,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.sections", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
   
@@ -5950,25 +4276,38 @@
       
     
   <script>
-    // Inject version selector into header
-    document.addEventListener('DOMContentLoaded', function() {
-      var headerInner = document.querySelector('.md-header__inner');
-      if (headerInner) {
-        var select = document.createElement('select');
-        select.className = 'docflow-version-select';
-        select.innerHTML = '<option value="managed" selected>Managed</option><option value="saas">SaaS</option>';
-        select.setAttribute('aria-label', 'Version selector');
+    (function() {
+      // --- Reading progress bar (one-time setup) ---
+      var progressBar = document.createElement('div');
+      progressBar.className = 'reading-progress';
+      document.body.appendChild(progressBar);
 
-        // Insert before the search or at the end
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (docHeight > 0) {
+          var progress = (scrollTop / docHeight) * 100;
+          progressBar.style.width = Math.min(progress, 100) + '%';
+        }
+      });
+
+      // --- Managed label in header (one-time setup) ---
+      var headerInner = document.querySelector('.md-header__inner');
+      if (headerInner && !headerInner.querySelector('.docflow-managed-label')) {
+        var label = document.createElement('span');
+        label.className = 'docflow-managed-label';
+        label.textContent = 'Managed';
+        label.setAttribute('title', 'Документация включает разделы Dynatrace Managed');
+
         var searchContainer = headerInner.querySelector('.md-header__source');
         if (searchContainer) {
-          headerInner.insertBefore(select, searchContainer);
+          headerInner.insertBefore(label, searchContainer);
         } else {
-          headerInner.appendChild(select);
+          headerInner.appendChild(label);
         }
       }
 
-      // Keyboard shortcut Ctrl+K for search
+      // --- Keyboard shortcut Ctrl+K for search ---
       document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
           e.preventDefault();
@@ -5983,7 +4322,9 @@
           }
         }
       });
-    });
+
+      // TOC title renaming handled via CSS (see extra style block above)
+    })();
   </script>
 
   </body>

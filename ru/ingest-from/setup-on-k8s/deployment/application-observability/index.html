@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
       
       
         <meta name="author" content="Yerkebulan Ardabayev">
@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -87,7 +87,10 @@
       flex-shrink: 0;
     }
 
-    /* Search Ctrl+K badge */
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
     .md-search__form::after {
       content: 'Ctrl+K';
       display: none;
@@ -97,11 +100,14 @@
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color);
       font-size: 10px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'JetBrains Mono', monospace;
       color: var(--md-default-fg-color--lighter);
-      margin-right: 0.5rem;
       white-space: nowrap;
       pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
     }
     @media (min-width: 60em) {
       .md-search__form::after {
@@ -109,12 +115,13 @@
       }
     }
 
-    /* Version selector in header */
-    .docflow-version-select {
+    /* Managed label — non-interactive indicator */
+    .docflow-managed-label {
       display: none;
       align-items: center;
+      gap: 0.375rem;
       margin-left: 0.5rem;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color--lighter);
@@ -122,28 +129,34 @@
       font-size: 0.75rem;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237e7c98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.4rem center;
-      padding-right: 1.5rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .docflow-managed-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--md-accent-fg-color);
+      flex-shrink: 0;
     }
     @media (min-width: 60em) {
-      .docflow-version-select {
+      .docflow-managed-label {
         display: flex;
       }
     }
-    .docflow-version-select:hover {
-      border-color: var(--md-primary-fg-color--light);
-      color: var(--md-default-fg-color);
-    }
-    .docflow-version-select:focus {
-      outline: none;
-      border-color: var(--md-primary-fg-color);
-      box-shadow: 0 0 0 3px var(--docflow-glow-primary);
+
+    /* Reading progress bar */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #14b8a6, #7c3aed);
+      z-index: 1001;
+      transition: width 0.05s linear;
+      pointer-events: none;
     }
   </style>
 
@@ -166,7 +179,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kubernetes" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -181,7 +194,7 @@
 
   
 
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
     <a href="../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -216,20 +229,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -303,375 +316,14 @@
     
   </nav>
   
-    
-      
-<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../.." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Главная
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Начало работы
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../../managed/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Managed
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../platform/grail/dynatrace-grail/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Платформа
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../observe/infrastructure-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Наблюдаемость
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Dynatrace Intelligence
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Анализ и автоматизация
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Источники данных
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../deliver/configuration-as-code/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Deliver
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../secure/threat-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Безопасность
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../manage/hub/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Управление
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../dynatrace-api/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  API
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../whats-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Что нового
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../../ai/groq/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  AI Помощник
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
 </header>
     
 
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -685,10 +337,8 @@
                     
 
 
-  
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -765,16 +415,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -796,7 +450,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -829,7 +483,7 @@
   <span class="md-ellipsis">
     
   
-    Начало работы
+    🚀 Быстрый старт
   
 
     
@@ -967,16 +621,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -998,7 +656,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1227,7 +885,7 @@
   <span class="md-ellipsis">
     
   
-    Лицензия
+    Лицензия Managed
   
 
     
@@ -1269,19 +927,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1327,20 +989,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../platform/grail/dynatrace-grail/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1354,78 +1017,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Grail
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../platform/grail/dynatrace-grail/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Что такое Grail
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../platform/grail/dynatrace-query-language/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Язык запросов DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1544,19 +1141,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1610,20 +1211,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../observe/infrastructure-observability/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1637,190 +1239,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Инфраструктура
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Хосты и операции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Облачный мониторинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes Classic
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Базы данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1844,20 +1268,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1871,78 +1296,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Приложения
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Распределённая трассировка
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/application-observability/services/services-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Сервисы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1966,20 +1325,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../observe/digital-experience/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1993,78 +1353,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Цифровой опыт
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/digital-experience/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Синтетическое приложение
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2131,19 +1425,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2203,20 +1501,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2230,274 +1529,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Обнаружение аномалий
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Настройка чувствительности
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение Anomaly Detection
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфигурация
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Адаптивные пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Многомерный бейзлайн
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    События метрик
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Статические пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Оптимизация DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2527,20 +1564,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/copilot/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2554,162 +1592,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Davis Copilot
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dynatrace Assist
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфиденциальность
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы на естественном языке
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2763,20 +1651,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2790,106 +1679,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Анализ первопричин
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Анализ событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2910,7 +1705,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграции
+    Интеграции Davis AI
   
 
     
@@ -2941,20 +1736,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2968,78 +1764,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Справочник
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AI модели
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лимиты
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3080,19 +1810,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -3144,20 +1878,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3171,162 +1906,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Дашборды и ноутбуки
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Дашборды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Версии документов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Визуализации
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3354,20 +1939,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../analyze-explore-automate/logs/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3381,134 +1967,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Логи
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/logs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Log Analytics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение журналов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Фильтры
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3681,19 +2145,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -3736,7 +2204,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
+    Обзор источников данных
   
 
     
@@ -3838,19 +2306,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -3898,20 +2370,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../deliver/configuration-as-code/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3925,194 +2398,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Configuration as Code
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
       
-        
+        <span class="md-nav__icon md-icon"></span>
       
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Monaco
+    </a>
   
 
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Monaco
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4136,150 +2427,21 @@
     
     
       
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Terraform
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Terraform
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CLI команды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
         
-      
         
       
     
-    
-    
-      
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
+  
+  
+    <a href="../../../../deliver/service-level-objectives/" class="md-nav__link">
       
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -4293,78 +2455,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    SLO
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/service-level-objectives/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/service-level-objectives/create-slo/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Создание SLO
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4388,20 +2484,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../deliver/site-reliability-guardian/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4415,78 +2512,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Site Reliability Guardian
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/site-reliability-guardian/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Структура событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4538,20 +2569,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../deliver/release-monitoring/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4565,78 +2597,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Мониторинг релизов
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/release-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Мониторинг релизов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4695,19 +2661,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -4778,7 +2748,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграция
+    Приём событий безопасности
   
 
     
@@ -4816,19 +2786,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
             
   
   
@@ -4910,20 +2884,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../license/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4937,190 +2912,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Лицензирование
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../license/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лицензия
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../license/capabilities/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Возможности DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../license/billing-reports/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Биллинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../license/budget-alerts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Бюджетные оповещения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../license/license-lifecycle/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Жизненный цикл
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../license/dps-permissions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Разрешения DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -5151,19 +2948,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
             
   
   
@@ -5272,23 +3073,33 @@
       
         
       
-    
-    
-    
+        
       
+        
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
         
           
-          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
             
   
   
@@ -5331,35 +3142,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../whats-new/saas/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SaaS
+    Все обновления
   
 
     
@@ -5387,7 +3170,7 @@
   <span class="md-ellipsis">
     
   
-    OneAgent
+    Обновления OneAgent
   
 
     
@@ -5416,6 +3199,225 @@
     
   
     ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/dynatrace-operator/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Operator
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/edgeconnect/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EdgeConnect
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/technology/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Технологии
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../whats-new/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Новые статьи
   
 
     
@@ -5480,8 +3482,158 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сценарии использования
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Сценарии использования">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Перед началом работы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Настройка и конфигурация кластера
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Поддерживаемые версии
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Варианты установки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Helm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Манифест
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Лицензирование
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дополнительные материалы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Дополнительные материалы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Получение практических ответов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как это работает
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Связанные темы
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -5507,26 +3659,21 @@
 
 
 
-<h1 id="kubernetes">Начало работы с мониторингом платформы Kubernetes + наблюдаемость приложений<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h1>
-<h1 id="kubernetes_1">Начало работы с мониторингом платформы Kubernetes + наблюдаемость приложений<a class="headerlink" href="#kubernetes_1" title="Permanent link">&para;</a></h1>
-<ul>
-<li>Последняя версия Dynatrace</li>
-<li>Чтение: 7 мин</li>
-<li>Обновлено 09.12.2025</li>
-</ul>
+  <h1>Начало работы с мониторингом платформы Kubernetes + наблюдаемость приложений</h1>
+
 <p>На этой странице приведены инструкции по развёртыванию Dynatrace Operator для включения мониторинга платформы Kubernetes и наблюдаемости приложений. Эта конфигурация идеально подходит для мониторинга сред Kubernetes и контейнеризированных приложений.</p>
 <h2 id="_1">Сценарии использования<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/observe/infrastructure-observability/kubernetes-app/use-cases/cluster-health" title="Анализ и управление состоянием ваших кластеров Kubernetes с помощью Dynatrace.">Оценка и устранение неполадок в кластере и рабочих нагрузках Kubernetes</a></li>
-<li><a href="/docs/observe/infrastructure-observability/kubernetes-app/use-cases/resource-optimization" title="Эффективное использование ресурсов кластера путём определения рабочих нагрузок, которые не полностью используют выделенные ресурсы.">Оптимизация использования ресурсов рабочих нагрузок Kubernetes</a></li>
-<li><a href="/docs/observe/infrastructure-observability/kubernetes-app/use-cases/alert-use-case" title="Проактивное решение проблем Kubernetes с использованием встроенных механизмов оповещения.">Получение оповещений и событий для обнаружения аномалий кластера и реагирования на них</a></li>
-<li><a href="/docs/observe/infrastructure-observability/kubernetes-app" title="Мониторинг и оптимизация Kubernetes с Dynatrace. Получение информации и состояния кластеров и рабочих нагрузок в реальном времени.">Изучение метрик, событий и логов ваших подов и узлов в едином интерфейсе</a></li>
-<li><a href="/docs/observe/infrastructure-observability/kubernetes-app/use-cases/troubleshoot-health-problems" title="Выявление и устранение проблем со здоровьем рабочих нагрузок Kubernetes.">Устранение типичных проблем со здоровьем рабочих нагрузок Kubernetes</a></li>
-<li><a href="/docs/observe/application-observability/distributed-tracing/distributed-tracing-app" title="Откройте для себя возможности нового приложения для распределённой трассировки.">Автоматическая распределённая трассировка между контейнерами</a></li>
-<li><a href="/docs/observe/application-observability/services/services-app" title="Централизованный контроль здоровья, производительности и ресурсов сервисов с помощью приложения Services.">Инсайты на уровне кода и сервисов</a> в контейнерах приложений</li>
-<li><a href="/docs/observe/application-observability/profiling-and-optimization" title="Узнайте, как использовать диагностические инструменты Dynatrace для анализа сбоев, дампов памяти и многого другого.">Профилирование и анализ потоков</a></li>
+<li>Оценка и устранение неполадок в кластере и рабочих нагрузках Kubernetes</li>
+<li>Оптимизация использования ресурсов рабочих нагрузок Kubernetes</li>
+<li>Получение оповещений и событий для обнаружения аномалий кластера и реагирования на них</li>
+<li>Изучение метрик, событий и логов ваших подов и узлов в едином интерфейсе</li>
+<li>Устранение типичных проблем со здоровьем рабочих нагрузок Kubernetes</li>
+<li>Автоматическая распределённая трассировка между контейнерами</li>
+<li>Инсайты на уровне кода и сервисов в контейнерах приложений</li>
+<li>Профилирование и анализ потоков</li>
 </ul>
-<p>Если вы хотите получить полное представление о вашей среде Kubernetes, ознакомьтесь с <a href="/docs/ingest-from/setup-on-k8s/deployment" title="Развёртывание Dynatrace Operator в Kubernetes">обзором развёртывания</a>, чтобы узнать о <a href="/docs/ingest-from/setup-on-k8s/deployment/full-stack-observability" title="Развёртывание Dynatrace Operator в режиме cloud-native full-stack в Kubernetes">полной наблюдаемости Full-Stack</a>. Вы можете расширить наблюдаемость Kubernetes за счёт <a href="/docs/ingest-from/setup-on-k8s/deployment/k8s-log-monitoring" title="Управляйте логами Kubernetes с помощью Dynatrace.">аналитики логов</a>, <a href="/docs/observe/digital-experience" title="Оптимизация пользовательского опыта с помощью мониторинга цифрового опыта для обеспечения производительности и доступности приложений по всем каналам.">цифрового опыта</a> и <a href="/docs/secure/application-security" title="Доступ к функционалу безопасности приложений Dynatrace.">безопасности приложений</a>.</p>
+<p>Если вы хотите получить полное представление о вашей среде Kubernetes, ознакомьтесь с обзором развёртывания, чтобы узнать о полной наблюдаемости Full-Stack. Вы можете расширить наблюдаемость Kubernetes за счёт аналитики логов, цифрового опыта и безопасности приложений.</p>
 <p>Предварительные требования</p>
 <h3 id="_2">Перед началом работы<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>Перед установкой Dynatrace в кластере Kubernetes убедитесь, что выполнены следующие требования:</p>
@@ -5541,8 +3688,8 @@
 <li>Установка через Helm: используйте <a href="https://dt-url.net/n5036j1">Helm версии 3</a>.</li>
 </ul>
 <h3 id="_4">Поддерживаемые версии<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>См. поддерживаемые <a href="/docs/ingest-from/technology-support/support-model-and-issues" title="Как Dynatrace поддерживает версии Kubernetes и Red Hat OpenShift и известные проблемы">версии платформ</a> и <a href="/docs/ingest-from/setup-on-k8s/deployment/supported-technologies" title="Обзор различных конфигураций для всех основных дистрибутивов Kubernetes.">дистрибутивы</a> Kubernetes/OpenShift.</p>
-<p><a href="/docs/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/openshift-configuration" title="Настройка Dynatrace Operator в средах OpenShift.">Настройка SCC</a> требуется для OpenShift при развёртывании <code>cloudNativeFullStack</code> и <code>applicationMonitoring</code> с CSI-драйвером Dynatrace Operator.</p>
+<p>См. поддерживаемые версии платформ и дистрибутивы Kubernetes/OpenShift.</p>
+<p>Настройка SCC требуется для OpenShift при развёртывании <code>cloudNativeFullStack</code> и <code>applicationMonitoring</code> с CSI-драйвером Dynatrace Operator.</p>
 <p>Комбинация <code>hostMonitoring</code> и <code>applicationMonitoring</code> в кластере Kubernetes в одной среде не поддерживается.</p>
 <h2 id="_5">Варианты установки<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>Выберите <strong>один из методов установки</strong>, который лучше всего соответствует вашим потребностям.</p>
@@ -5564,161 +3711,126 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>--create-namespace \
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>--create-namespace \
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>--namespace dynatrace \
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>--namespace dynatrace \
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>--atomic
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>--atomic
 </code></pre></div>
 <p>Установка с дополнительной конфигурацией Helm-чарта</p>
 <p>Отредактируйте пример <a href="https://github.com/Dynatrace/dynatrace-operator/blob/v1.8.1/config/helm/chart/default/values.yaml"><code>values.yaml</code></a> из GitHub, а затем выполните команду установки, передав YAML-файл в качестве аргумента:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>--create-namespace \
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>--create-namespace \
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>--namespace dynatrace \
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>--namespace dynatrace \
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>--atomic \
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>--atomic \
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>-f values.yaml
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>-f values.yaml
 </code></pre></div>
 <p>Если <code>installCRD</code> установлен в <code>false</code>, необходимо создать определение пользовательского ресурса вручную перед началом установки через Helm:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.8.1/dynatrace-operator-crd.yaml
 </code></pre></div>
-<p>VMware Tanzu Kubernetes (TKGI) и IBM Kubernetes Service (IKS) требуют <a href="/docs/ingest-from/setup-on-k8s/deployment/supported-technologies" title="Обзор различных конфигураций для всех основных дистрибутивов Kubernetes.">дополнительной конфигурации</a>.
+<p>VMware Tanzu Kubernetes (TKGI) и IBM Kubernetes Service (IKS) требуют дополнительной конфигурации.
 2. Создайте секрет для токенов доступа</p>
-<p>Создайте секрет с именем <code>dynakube</code> для токена Dynatrace Operator и токена приёма данных, полученных в разделе <a href="/docs/ingest-from/setup-on-k8s/deployment/tokens-permissions" title="Настройка токенов и разрешений для мониторинга кластера Kubernetes">Необходимые токены и разрешения</a>.</p>
+<p>Создайте секрет с именем <code>dynakube</code> для токена Dynatrace Operator и токена приёма данных, полученных в разделе Необходимые токены и разрешения.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl -n dynatrace create secret generic dynakube --from-literal=&quot;apiToken=&lt;OPERATOR_TOKEN&gt;&quot; --from-literal=&quot;dataIngestToken=&lt;DATA_INGEST_TOKEN&gt;&quot;
 </code></pre></div>
 3. Создайте YAML-файл пользовательского ресурса DynaKube.</p>
 <p>Пример пользовательского ресурса DynaKube для мониторинга приложений</p>
-<p>Вы можете просмотреть <a href="/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters" title="Список доступных параметров для настройки Dynatrace Operator в Kubernetes.">доступные параметры</a> или <a href="/docs/ingest-from/setup-on-k8s/guides" title="Подробное описание вариантов установки и конфигурации для конкретных сценариев использования">руководства</a> и адаптировать пользовательский ресурс DynaKube в соответствии с вашими требованиями.</p>
+<p>Вы можете просмотреть доступные параметры или руководства и адаптировать пользовательский ресурс DynaKube в соответствии с вашими требованиями.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>apiVersion: dynatrace.com/v1beta5
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>kind: DynaKube
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>kind: DynaKube
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>metadata:
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>metadata:
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>name: dynakube
 <a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
 <a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>name: dynakube
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>namespace: dynatrace
 <a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
 <a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>namespace: dynatrace
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>annotations:
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
 <a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>feature.dynatrace.com/k8s-app-enabled: &quot;true&quot;
 <a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>annotations:
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>feature.dynatrace.com/injection-readonly-volume: &quot;true&quot;
 <a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
 <a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
-<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>feature.dynatrace.com/k8s-app-enabled: &quot;true&quot;
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>spec:
 <a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
 <a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
-<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
-<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>feature.dynatrace.com/injection-readonly-volume: &quot;true&quot;
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a># For detailed instructions on DynaKube parameters in the spec section, visit https://docs.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>
 <a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
-<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a># Dynatrace apiUrl including the /api path at the end.
 <a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>
-<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>spec:
-<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a># Replace &#39;ENVIRONMENTID&#39; with your environment ID.
 <a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>
 <a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>
-<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a># For detailed instructions on DynaKube parameters in the spec section, visit https://docs.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a># For instructions on how to determine the environment ID and how to configure the apiUrl address, see https://www.dynatrace.com/support/help/reference/dynatrace-concepts/environment-id/.
 <a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
 <a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>
-<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>
-<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a># Dynatrace apiUrl including the /api path at the end.
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>
 <a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>
-<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>metadataEnrichment:
 <a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>
-<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a># Replace &#39;ENVIRONMENTID&#39; with your environment ID.
-<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>enabled: true
 <a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>
 <a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>
-<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a># For instructions on how to determine the environment ID and how to configure the apiUrl address, see https://www.dynatrace.com/support/help/reference/dynatrace-concepts/environment-id/.
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>oneAgent:
 <a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>
 <a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>
-<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>
-<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>applicationMonitoring: {}
+<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>
 <a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>
-<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>
+<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>activeGate:
 <a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a>
-<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>metadataEnrichment:
-<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>
+<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>
+<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>capabilities:
 <a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a>
 <a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a>
-<a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a>enabled: true
+<a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a>- routing
 <a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a>
 <a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a>
-<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a>
-<a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a>oneAgent:
+<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a>- kubernetes-monitoring
+<a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a>
 <a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a>
-<a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a>
+<a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a>resources:
 <a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a>
-<a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a>applicationMonitoring: {}
-<a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a>
+<a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a>
+<a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a>requests:
 <a id="__codelineno-5-71" name="__codelineno-5-71" href="#__codelineno-5-71"></a>
 <a id="__codelineno-5-72" name="__codelineno-5-72" href="#__codelineno-5-72"></a>
-<a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a>activeGate:
+<a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a>cpu: 500m
 <a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a>
 <a id="__codelineno-5-75" name="__codelineno-5-75" href="#__codelineno-5-75"></a>
-<a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a>
-<a id="__codelineno-5-77" name="__codelineno-5-77" href="#__codelineno-5-77"></a>capabilities:
+<a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a>memory: 512Mi
+<a id="__codelineno-5-77" name="__codelineno-5-77" href="#__codelineno-5-77"></a>
 <a id="__codelineno-5-78" name="__codelineno-5-78" href="#__codelineno-5-78"></a>
-<a id="__codelineno-5-79" name="__codelineno-5-79" href="#__codelineno-5-79"></a>
+<a id="__codelineno-5-79" name="__codelineno-5-79" href="#__codelineno-5-79"></a>limits:
 <a id="__codelineno-5-80" name="__codelineno-5-80" href="#__codelineno-5-80"></a>
-<a id="__codelineno-5-81" name="__codelineno-5-81" href="#__codelineno-5-81"></a>- routing
-<a id="__codelineno-5-82" name="__codelineno-5-82" href="#__codelineno-5-82"></a>
+<a id="__codelineno-5-81" name="__codelineno-5-81" href="#__codelineno-5-81"></a>
+<a id="__codelineno-5-82" name="__codelineno-5-82" href="#__codelineno-5-82"></a>cpu: 1000m
 <a id="__codelineno-5-83" name="__codelineno-5-83" href="#__codelineno-5-83"></a>
 <a id="__codelineno-5-84" name="__codelineno-5-84" href="#__codelineno-5-84"></a>
-<a id="__codelineno-5-85" name="__codelineno-5-85" href="#__codelineno-5-85"></a>- kubernetes-monitoring
-<a id="__codelineno-5-86" name="__codelineno-5-86" href="#__codelineno-5-86"></a>
-<a id="__codelineno-5-87" name="__codelineno-5-87" href="#__codelineno-5-87"></a>
-<a id="__codelineno-5-88" name="__codelineno-5-88" href="#__codelineno-5-88"></a>
-<a id="__codelineno-5-89" name="__codelineno-5-89" href="#__codelineno-5-89"></a>resources:
-<a id="__codelineno-5-90" name="__codelineno-5-90" href="#__codelineno-5-90"></a>
-<a id="__codelineno-5-91" name="__codelineno-5-91" href="#__codelineno-5-91"></a>
-<a id="__codelineno-5-92" name="__codelineno-5-92" href="#__codelineno-5-92"></a>
-<a id="__codelineno-5-93" name="__codelineno-5-93" href="#__codelineno-5-93"></a>requests:
-<a id="__codelineno-5-94" name="__codelineno-5-94" href="#__codelineno-5-94"></a>
-<a id="__codelineno-5-95" name="__codelineno-5-95" href="#__codelineno-5-95"></a>
-<a id="__codelineno-5-96" name="__codelineno-5-96" href="#__codelineno-5-96"></a>
-<a id="__codelineno-5-97" name="__codelineno-5-97" href="#__codelineno-5-97"></a>cpu: 500m
-<a id="__codelineno-5-98" name="__codelineno-5-98" href="#__codelineno-5-98"></a>
-<a id="__codelineno-5-99" name="__codelineno-5-99" href="#__codelineno-5-99"></a>
-<a id="__codelineno-5-100" name="__codelineno-5-100" href="#__codelineno-5-100"></a>
-<a id="__codelineno-5-101" name="__codelineno-5-101" href="#__codelineno-5-101"></a>memory: 512Mi
-<a id="__codelineno-5-102" name="__codelineno-5-102" href="#__codelineno-5-102"></a>
-<a id="__codelineno-5-103" name="__codelineno-5-103" href="#__codelineno-5-103"></a>
-<a id="__codelineno-5-104" name="__codelineno-5-104" href="#__codelineno-5-104"></a>
-<a id="__codelineno-5-105" name="__codelineno-5-105" href="#__codelineno-5-105"></a>limits:
-<a id="__codelineno-5-106" name="__codelineno-5-106" href="#__codelineno-5-106"></a>
-<a id="__codelineno-5-107" name="__codelineno-5-107" href="#__codelineno-5-107"></a>
-<a id="__codelineno-5-108" name="__codelineno-5-108" href="#__codelineno-5-108"></a>
-<a id="__codelineno-5-109" name="__codelineno-5-109" href="#__codelineno-5-109"></a>cpu: 1000m
-<a id="__codelineno-5-110" name="__codelineno-5-110" href="#__codelineno-5-110"></a>
-<a id="__codelineno-5-111" name="__codelineno-5-111" href="#__codelineno-5-111"></a>
-<a id="__codelineno-5-112" name="__codelineno-5-112" href="#__codelineno-5-112"></a>
-<a id="__codelineno-5-113" name="__codelineno-5-113" href="#__codelineno-5-113"></a>memory: 1.5Gi
+<a id="__codelineno-5-85" name="__codelineno-5-85" href="#__codelineno-5-85"></a>memory: 1.5Gi
 </code></pre></div>
 4. Необязательно: мониторинг потенциально конфиденциальных данных</p>
 <p>Для мониторинга потенциально конфиденциальных данных, таких как Secrets (значения маскируются перед приёмом) и ConfigMaps, необходимо создать ClusterRole, разрешающую доступ к этим ресурсам. Добавьте следующий фрагмент в конец вашего YAML-файла пользовательского ресурса DynaKube.</p>
@@ -5726,70 +3838,54 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>---
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>apiVersion: rbac.authorization.k8s.io/v1
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>apiVersion: rbac.authorization.k8s.io/v1
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>kind: ClusterRole
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>kind: ClusterRole
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>metadata:
 <a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
 <a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>metadata:
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>labels:
 <a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
 <a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>labels:
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>rbac.dynatrace.com/aggregate-to-monitoring: &quot;true&quot;
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
 <a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>name: dynatrace-kubernetes-monitoring-sensitive
 <a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>rbac.dynatrace.com/aggregate-to-monitoring: &quot;true&quot;
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>rules:
 <a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>
 <a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
-<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>name: dynatrace-kubernetes-monitoring-sensitive
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>- apiGroups:
 <a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>
 <a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>
-<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>
-<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>rules:
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>- &quot;&quot;
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>
 <a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>
-<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>resources:
 <a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>
-<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>- apiGroups:
-<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>- configmaps
 <a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>
 <a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>
-<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>- &quot;&quot;
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>- secrets
 <a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>
 <a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>
-<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>
-<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a>resources:
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>verbs:
+<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a>
 <a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a>
-<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a>
+<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a>- list
 <a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a>
-<a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a>- configmaps
-<a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a>
+<a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a>
+<a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a>- watch
 <a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a>
 <a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a>
-<a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>- secrets
-<a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a>
-<a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a>
-<a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a>
-<a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a>verbs:
-<a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a>
-<a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a>
-<a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a>
-<a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a>- list
-<a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a>
-<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a>
-<a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a>
-<a id="__codelineno-6-61" name="__codelineno-6-61" href="#__codelineno-6-61"></a>- watch
-<a id="__codelineno-6-62" name="__codelineno-6-62" href="#__codelineno-6-62"></a>
-<a id="__codelineno-6-63" name="__codelineno-6-63" href="#__codelineno-6-63"></a>
-<a id="__codelineno-6-64" name="__codelineno-6-64" href="#__codelineno-6-64"></a>
-<a id="__codelineno-6-65" name="__codelineno-6-65" href="#__codelineno-6-65"></a>- get
+<a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>- get
 </code></pre></div>
-<p>Роль будет автоматически привязана к ClusterRole <code>dynatrace-kubernetes-monitoring</code> через правила агрегации. Для получения дополнительной информации об агрегации ClusterRole см. <a href="/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation" title="Как Dynatrace Operator использует агрегацию ClusterRole для управления разрешениями мониторинга Kubernetes.">документацию по агрегации ClusterRole</a>.
+<p>Роль будет автоматически привязана к ClusterRole <code>dynatrace-kubernetes-monitoring</code> через правила агрегации. Для получения дополнительной информации об агрегации ClusterRole см. документацию по агрегации ClusterRole.
 5. Примените пользовательский ресурс DynaKube</p>
 <p>Выполните приведённую ниже команду для применения пользовательского ресурса DynaKube, убедившись, что вы заменили <code>&lt;your-DynaKube-CR&gt;</code> на фактическое имя файла вашего пользовательского ресурса DynaKube. Валидационный вебхук предоставит полезные сообщения об ошибках, если возникнет проблема.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>kubectl apply -f &lt;your-DynaKube-CR&gt;.yaml
@@ -5799,47 +3895,37 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&gt; kubectl get dynakube -n dynatrace
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>NAME         APIURL                                          STATUS     AGE
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>NAME         APIURL                                          STATUS     AGE
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
 <a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>dynakube     https://&lt;ENVIRONMENTID&gt;.live.dynatrace.com/api  Running    45s
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>dynakube     https://&lt;ENVIRONMENTID&gt;.live.dynatrace.com/api  Running    45s
 </code></pre></div>
 <p>В конфигурации DynaKube по умолчанию с CSI-драйвером вы должны увидеть следующие поды:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&gt; kubectl get pods -n dynatrace
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>NAME                                  READY   STATUS    RESTARTS        AGE
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>NAME                                  READY   STATUS    RESTARTS        AGE
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>dynakube-activegate-0                 1/1     Running   0               50s
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>dynakube-activegate-0                 1/1     Running   0               50s
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>dynatrace-oneagent-csi-driver-qxfwx   4/4     Running   0               2m49s
 <a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
 <a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>dynatrace-oneagent-csi-driver-qxfwx   4/4     Running   0               2m49s
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>dynatrace-oneagent-csi-driver-xk5c4   4/4     Running   0               2m49s
 <a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
 <a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>dynatrace-oneagent-csi-driver-xk5c4   4/4     Running   0               2m49s
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>dynatrace-oneagent-csi-driver-mz6ch   4/4     Running   0               2m49s
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
 <a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>dynatrace-operator-7dc8dc7d8c-wmh4z   1/1     Running   0               2m59s
 <a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>dynatrace-oneagent-csi-driver-mz6ch   4/4     Running   0               2m49s
-<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>dynatrace-webhook-7bb6957fb5-l8fsq    1/1     Running   0               2m59s
 <a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>
 <a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>
-<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>dynatrace-operator-7dc8dc7d8c-wmh4z   1/1     Running   0               2m59s
-<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>
-<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>
-<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>
-<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>dynatrace-webhook-7bb6957fb5-l8fsq    1/1     Running   0               2m59s
-<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>
-<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>
-<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>
-<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>dynatrace-webhook-7bb6957fb5-rqnqk    1/1     Running   0               2m59s
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>dynatrace-webhook-7bb6957fb5-rqnqk    1/1     Running   0               2m59s
 </code></pre></div>
 <p>CSI-драйвер не является обязательным (см. шаг 2). При включении он развёртывается как DaemonSet, что приводит к созданию пода CSI-драйвера на каждом узле.</p>
 <h2 id="_6">Манифест<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
@@ -5856,130 +3942,102 @@
 <p>Без CSI-драйвера</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.8.1/kubernetes.yaml
 </code></pre></div>
-<p>VMware Tanzu Kubernetes (TKGI) и IBM Kubernetes Service (IKS) требуют <a href="/docs/ingest-from/setup-on-k8s/deployment/supported-technologies" title="Обзор различных конфигураций для всех основных дистрибутивов Kubernetes.">дополнительной конфигурации</a>.</p>
+<p>VMware Tanzu Kubernetes (TKGI) и IBM Kubernetes Service (IKS) требуют дополнительной конфигурации.</p>
 <p>Выполните следующую команду, чтобы увидеть, когда компоненты Dynatrace Operator завершат инициализацию:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>kubectl -n dynatrace wait pod --for=condition=ready --selector=app.kubernetes.io/name=dynatrace-operator,app.kubernetes.io/component=webhook --timeout=300s
 </code></pre></div>
 3. Создайте секрет для токенов доступа</p>
-<p>Создайте секрет с именем <code>dynakube</code> для токена Dynatrace Operator и токена приёма данных, полученных в разделе <a href="/docs/ingest-from/setup-on-k8s/deployment/tokens-permissions" title="Настройка токенов и разрешений для мониторинга кластера Kubernetes">Необходимые токены и разрешения</a>.</p>
+<p>Создайте секрет с именем <code>dynakube</code> для токена Dynatrace Operator и токена приёма данных, полученных в разделе Необходимые токены и разрешения.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>kubectl -n dynatrace create secret generic dynakube --from-literal=&quot;apiToken=&lt;OPERATOR_TOKEN&gt;&quot; --from-literal=&quot;dataIngestToken=&lt;DATA_INGEST_TOKEN&gt;&quot;
 </code></pre></div>
 4. Создайте YAML-файл пользовательского ресурса DynaKube.</p>
 <p>Пример пользовательского ресурса DynaKube для мониторинга приложений</p>
-<p>Вы можете просмотреть <a href="/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters" title="Список доступных параметров для настройки Dynatrace Operator в Kubernetes.">доступные параметры</a> или <a href="/docs/ingest-from/setup-on-k8s/guides" title="Подробное описание вариантов установки и конфигурации для конкретных сценариев использования">руководства</a> и адаптировать пользовательский ресурс DynaKube в соответствии с вашими требованиями.</p>
+<p>Вы можете просмотреть доступные параметры или руководства и адаптировать пользовательский ресурс DynaKube в соответствии с вашими требованиями.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>apiVersion: dynatrace.com/v1beta5
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>kind: DynaKube
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>kind: DynaKube
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
 <a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>metadata:
 <a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>metadata:
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>name: dynakube
 <a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
 <a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
-<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>name: dynakube
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>namespace: dynatrace
 <a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
 <a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>
-<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>
-<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>namespace: dynatrace
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>annotations:
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>
 <a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
-<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>feature.dynatrace.com/k8s-app-enabled: &quot;true&quot;
 <a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>
-<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>annotations:
-<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>feature.dynatrace.com/injection-readonly-volume: &quot;true&quot;
 <a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>
 <a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>
-<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>feature.dynatrace.com/k8s-app-enabled: &quot;true&quot;
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>spec:
 <a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>
 <a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>
-<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>
-<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>feature.dynatrace.com/injection-readonly-volume: &quot;true&quot;
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a># For detailed instructions on DynaKube parameters in the spec section, visit https://docs.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>
 <a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>
-<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a># Dynatrace apiUrl including the /api path at the end.
 <a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>
-<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a>spec:
-<a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a>
+<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a>
+<a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a># Replace &#39;ENVIRONMENTID&#39; with your environment ID.
 <a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a>
 <a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a>
-<a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a># For detailed instructions on DynaKube parameters in the spec section, visit https://docs.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
+<a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a># For instructions on how to determine the environment ID and how to configure the apiUrl address, see https://www.dynatrace.com/support/help/reference/dynatrace-concepts/environment-id/.
 <a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a>
 <a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a>
-<a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a>
-<a id="__codelineno-15-41" name="__codelineno-15-41" href="#__codelineno-15-41"></a># Dynatrace apiUrl including the /api path at the end.
+<a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a>apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
+<a id="__codelineno-15-41" name="__codelineno-15-41" href="#__codelineno-15-41"></a>
 <a id="__codelineno-15-42" name="__codelineno-15-42" href="#__codelineno-15-42"></a>
-<a id="__codelineno-15-43" name="__codelineno-15-43" href="#__codelineno-15-43"></a>
+<a id="__codelineno-15-43" name="__codelineno-15-43" href="#__codelineno-15-43"></a>metadataEnrichment:
 <a id="__codelineno-15-44" name="__codelineno-15-44" href="#__codelineno-15-44"></a>
-<a id="__codelineno-15-45" name="__codelineno-15-45" href="#__codelineno-15-45"></a># Replace &#39;ENVIRONMENTID&#39; with your environment ID.
-<a id="__codelineno-15-46" name="__codelineno-15-46" href="#__codelineno-15-46"></a>
+<a id="__codelineno-15-45" name="__codelineno-15-45" href="#__codelineno-15-45"></a>
+<a id="__codelineno-15-46" name="__codelineno-15-46" href="#__codelineno-15-46"></a>enabled: true
 <a id="__codelineno-15-47" name="__codelineno-15-47" href="#__codelineno-15-47"></a>
 <a id="__codelineno-15-48" name="__codelineno-15-48" href="#__codelineno-15-48"></a>
-<a id="__codelineno-15-49" name="__codelineno-15-49" href="#__codelineno-15-49"></a># For instructions on how to determine the environment ID and how to configure the apiUrl address, see https://www.dynatrace.com/support/help/reference/dynatrace-concepts/environment-id/.
+<a id="__codelineno-15-49" name="__codelineno-15-49" href="#__codelineno-15-49"></a>oneAgent:
 <a id="__codelineno-15-50" name="__codelineno-15-50" href="#__codelineno-15-50"></a>
 <a id="__codelineno-15-51" name="__codelineno-15-51" href="#__codelineno-15-51"></a>
-<a id="__codelineno-15-52" name="__codelineno-15-52" href="#__codelineno-15-52"></a>
-<a id="__codelineno-15-53" name="__codelineno-15-53" href="#__codelineno-15-53"></a>apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
+<a id="__codelineno-15-52" name="__codelineno-15-52" href="#__codelineno-15-52"></a>applicationMonitoring: {}
+<a id="__codelineno-15-53" name="__codelineno-15-53" href="#__codelineno-15-53"></a>
 <a id="__codelineno-15-54" name="__codelineno-15-54" href="#__codelineno-15-54"></a>
-<a id="__codelineno-15-55" name="__codelineno-15-55" href="#__codelineno-15-55"></a>
+<a id="__codelineno-15-55" name="__codelineno-15-55" href="#__codelineno-15-55"></a>activeGate:
 <a id="__codelineno-15-56" name="__codelineno-15-56" href="#__codelineno-15-56"></a>
-<a id="__codelineno-15-57" name="__codelineno-15-57" href="#__codelineno-15-57"></a>metadataEnrichment:
-<a id="__codelineno-15-58" name="__codelineno-15-58" href="#__codelineno-15-58"></a>
+<a id="__codelineno-15-57" name="__codelineno-15-57" href="#__codelineno-15-57"></a>
+<a id="__codelineno-15-58" name="__codelineno-15-58" href="#__codelineno-15-58"></a>capabilities:
 <a id="__codelineno-15-59" name="__codelineno-15-59" href="#__codelineno-15-59"></a>
 <a id="__codelineno-15-60" name="__codelineno-15-60" href="#__codelineno-15-60"></a>
-<a id="__codelineno-15-61" name="__codelineno-15-61" href="#__codelineno-15-61"></a>enabled: true
+<a id="__codelineno-15-61" name="__codelineno-15-61" href="#__codelineno-15-61"></a>- routing
 <a id="__codelineno-15-62" name="__codelineno-15-62" href="#__codelineno-15-62"></a>
 <a id="__codelineno-15-63" name="__codelineno-15-63" href="#__codelineno-15-63"></a>
-<a id="__codelineno-15-64" name="__codelineno-15-64" href="#__codelineno-15-64"></a>
-<a id="__codelineno-15-65" name="__codelineno-15-65" href="#__codelineno-15-65"></a>oneAgent:
+<a id="__codelineno-15-64" name="__codelineno-15-64" href="#__codelineno-15-64"></a>- kubernetes-monitoring
+<a id="__codelineno-15-65" name="__codelineno-15-65" href="#__codelineno-15-65"></a>
 <a id="__codelineno-15-66" name="__codelineno-15-66" href="#__codelineno-15-66"></a>
-<a id="__codelineno-15-67" name="__codelineno-15-67" href="#__codelineno-15-67"></a>
+<a id="__codelineno-15-67" name="__codelineno-15-67" href="#__codelineno-15-67"></a>resources:
 <a id="__codelineno-15-68" name="__codelineno-15-68" href="#__codelineno-15-68"></a>
-<a id="__codelineno-15-69" name="__codelineno-15-69" href="#__codelineno-15-69"></a>applicationMonitoring: {}
-<a id="__codelineno-15-70" name="__codelineno-15-70" href="#__codelineno-15-70"></a>
+<a id="__codelineno-15-69" name="__codelineno-15-69" href="#__codelineno-15-69"></a>
+<a id="__codelineno-15-70" name="__codelineno-15-70" href="#__codelineno-15-70"></a>requests:
 <a id="__codelineno-15-71" name="__codelineno-15-71" href="#__codelineno-15-71"></a>
 <a id="__codelineno-15-72" name="__codelineno-15-72" href="#__codelineno-15-72"></a>
-<a id="__codelineno-15-73" name="__codelineno-15-73" href="#__codelineno-15-73"></a>activeGate:
+<a id="__codelineno-15-73" name="__codelineno-15-73" href="#__codelineno-15-73"></a>cpu: 500m
 <a id="__codelineno-15-74" name="__codelineno-15-74" href="#__codelineno-15-74"></a>
 <a id="__codelineno-15-75" name="__codelineno-15-75" href="#__codelineno-15-75"></a>
-<a id="__codelineno-15-76" name="__codelineno-15-76" href="#__codelineno-15-76"></a>
-<a id="__codelineno-15-77" name="__codelineno-15-77" href="#__codelineno-15-77"></a>capabilities:
+<a id="__codelineno-15-76" name="__codelineno-15-76" href="#__codelineno-15-76"></a>memory: 512Mi
+<a id="__codelineno-15-77" name="__codelineno-15-77" href="#__codelineno-15-77"></a>
 <a id="__codelineno-15-78" name="__codelineno-15-78" href="#__codelineno-15-78"></a>
-<a id="__codelineno-15-79" name="__codelineno-15-79" href="#__codelineno-15-79"></a>
+<a id="__codelineno-15-79" name="__codelineno-15-79" href="#__codelineno-15-79"></a>limits:
 <a id="__codelineno-15-80" name="__codelineno-15-80" href="#__codelineno-15-80"></a>
-<a id="__codelineno-15-81" name="__codelineno-15-81" href="#__codelineno-15-81"></a>- routing
-<a id="__codelineno-15-82" name="__codelineno-15-82" href="#__codelineno-15-82"></a>
+<a id="__codelineno-15-81" name="__codelineno-15-81" href="#__codelineno-15-81"></a>
+<a id="__codelineno-15-82" name="__codelineno-15-82" href="#__codelineno-15-82"></a>cpu: 1000m
 <a id="__codelineno-15-83" name="__codelineno-15-83" href="#__codelineno-15-83"></a>
 <a id="__codelineno-15-84" name="__codelineno-15-84" href="#__codelineno-15-84"></a>
-<a id="__codelineno-15-85" name="__codelineno-15-85" href="#__codelineno-15-85"></a>- kubernetes-monitoring
-<a id="__codelineno-15-86" name="__codelineno-15-86" href="#__codelineno-15-86"></a>
-<a id="__codelineno-15-87" name="__codelineno-15-87" href="#__codelineno-15-87"></a>
-<a id="__codelineno-15-88" name="__codelineno-15-88" href="#__codelineno-15-88"></a>
-<a id="__codelineno-15-89" name="__codelineno-15-89" href="#__codelineno-15-89"></a>resources:
-<a id="__codelineno-15-90" name="__codelineno-15-90" href="#__codelineno-15-90"></a>
-<a id="__codelineno-15-91" name="__codelineno-15-91" href="#__codelineno-15-91"></a>
-<a id="__codelineno-15-92" name="__codelineno-15-92" href="#__codelineno-15-92"></a>
-<a id="__codelineno-15-93" name="__codelineno-15-93" href="#__codelineno-15-93"></a>requests:
-<a id="__codelineno-15-94" name="__codelineno-15-94" href="#__codelineno-15-94"></a>
-<a id="__codelineno-15-95" name="__codelineno-15-95" href="#__codelineno-15-95"></a>
-<a id="__codelineno-15-96" name="__codelineno-15-96" href="#__codelineno-15-96"></a>
-<a id="__codelineno-15-97" name="__codelineno-15-97" href="#__codelineno-15-97"></a>cpu: 500m
-<a id="__codelineno-15-98" name="__codelineno-15-98" href="#__codelineno-15-98"></a>
-<a id="__codelineno-15-99" name="__codelineno-15-99" href="#__codelineno-15-99"></a>
-<a id="__codelineno-15-100" name="__codelineno-15-100" href="#__codelineno-15-100"></a>
-<a id="__codelineno-15-101" name="__codelineno-15-101" href="#__codelineno-15-101"></a>memory: 512Mi
-<a id="__codelineno-15-102" name="__codelineno-15-102" href="#__codelineno-15-102"></a>
-<a id="__codelineno-15-103" name="__codelineno-15-103" href="#__codelineno-15-103"></a>
-<a id="__codelineno-15-104" name="__codelineno-15-104" href="#__codelineno-15-104"></a>
-<a id="__codelineno-15-105" name="__codelineno-15-105" href="#__codelineno-15-105"></a>limits:
-<a id="__codelineno-15-106" name="__codelineno-15-106" href="#__codelineno-15-106"></a>
-<a id="__codelineno-15-107" name="__codelineno-15-107" href="#__codelineno-15-107"></a>
-<a id="__codelineno-15-108" name="__codelineno-15-108" href="#__codelineno-15-108"></a>
-<a id="__codelineno-15-109" name="__codelineno-15-109" href="#__codelineno-15-109"></a>cpu: 1000m
-<a id="__codelineno-15-110" name="__codelineno-15-110" href="#__codelineno-15-110"></a>
-<a id="__codelineno-15-111" name="__codelineno-15-111" href="#__codelineno-15-111"></a>
-<a id="__codelineno-15-112" name="__codelineno-15-112" href="#__codelineno-15-112"></a>
-<a id="__codelineno-15-113" name="__codelineno-15-113" href="#__codelineno-15-113"></a>memory: 1.5Gi
+<a id="__codelineno-15-85" name="__codelineno-15-85" href="#__codelineno-15-85"></a>memory: 1.5Gi
 </code></pre></div>
 5. Необязательно: мониторинг потенциально конфиденциальных данных</p>
 <p>Для мониторинга потенциально конфиденциальных данных, таких как Secrets (значения маскируются перед приёмом) и ConfigMaps, необходимо создать ClusterRole, разрешающую доступ к этим ресурсам. Добавьте следующий фрагмент в конец вашего YAML-файла пользовательского ресурса DynaKube.</p>
@@ -5987,70 +4045,54 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>---
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>apiVersion: rbac.authorization.k8s.io/v1
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>apiVersion: rbac.authorization.k8s.io/v1
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
 <a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>kind: ClusterRole
 <a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>kind: ClusterRole
-<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>metadata:
 <a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>
 <a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
-<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>metadata:
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>labels:
 <a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
 <a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>
-<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>
-<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>labels:
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>rbac.dynatrace.com/aggregate-to-monitoring: &quot;true&quot;
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>
 <a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>
-<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>name: dynatrace-kubernetes-monitoring-sensitive
 <a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>
-<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>rbac.dynatrace.com/aggregate-to-monitoring: &quot;true&quot;
-<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>rules:
 <a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>
 <a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>
-<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>name: dynatrace-kubernetes-monitoring-sensitive
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>- apiGroups:
 <a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>
 <a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>
-<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>
-<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>rules:
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>- &quot;&quot;
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>
 <a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>
-<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a>
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a>resources:
 <a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a>
-<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>- apiGroups:
-<a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a>
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>
+<a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a>- configmaps
 <a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a>
 <a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a>
-<a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a>- &quot;&quot;
+<a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a>- secrets
 <a id="__codelineno-16-38" name="__codelineno-16-38" href="#__codelineno-16-38"></a>
 <a id="__codelineno-16-39" name="__codelineno-16-39" href="#__codelineno-16-39"></a>
-<a id="__codelineno-16-40" name="__codelineno-16-40" href="#__codelineno-16-40"></a>
-<a id="__codelineno-16-41" name="__codelineno-16-41" href="#__codelineno-16-41"></a>resources:
+<a id="__codelineno-16-40" name="__codelineno-16-40" href="#__codelineno-16-40"></a>verbs:
+<a id="__codelineno-16-41" name="__codelineno-16-41" href="#__codelineno-16-41"></a>
 <a id="__codelineno-16-42" name="__codelineno-16-42" href="#__codelineno-16-42"></a>
-<a id="__codelineno-16-43" name="__codelineno-16-43" href="#__codelineno-16-43"></a>
+<a id="__codelineno-16-43" name="__codelineno-16-43" href="#__codelineno-16-43"></a>- list
 <a id="__codelineno-16-44" name="__codelineno-16-44" href="#__codelineno-16-44"></a>
-<a id="__codelineno-16-45" name="__codelineno-16-45" href="#__codelineno-16-45"></a>- configmaps
-<a id="__codelineno-16-46" name="__codelineno-16-46" href="#__codelineno-16-46"></a>
+<a id="__codelineno-16-45" name="__codelineno-16-45" href="#__codelineno-16-45"></a>
+<a id="__codelineno-16-46" name="__codelineno-16-46" href="#__codelineno-16-46"></a>- watch
 <a id="__codelineno-16-47" name="__codelineno-16-47" href="#__codelineno-16-47"></a>
 <a id="__codelineno-16-48" name="__codelineno-16-48" href="#__codelineno-16-48"></a>
-<a id="__codelineno-16-49" name="__codelineno-16-49" href="#__codelineno-16-49"></a>- secrets
-<a id="__codelineno-16-50" name="__codelineno-16-50" href="#__codelineno-16-50"></a>
-<a id="__codelineno-16-51" name="__codelineno-16-51" href="#__codelineno-16-51"></a>
-<a id="__codelineno-16-52" name="__codelineno-16-52" href="#__codelineno-16-52"></a>
-<a id="__codelineno-16-53" name="__codelineno-16-53" href="#__codelineno-16-53"></a>verbs:
-<a id="__codelineno-16-54" name="__codelineno-16-54" href="#__codelineno-16-54"></a>
-<a id="__codelineno-16-55" name="__codelineno-16-55" href="#__codelineno-16-55"></a>
-<a id="__codelineno-16-56" name="__codelineno-16-56" href="#__codelineno-16-56"></a>
-<a id="__codelineno-16-57" name="__codelineno-16-57" href="#__codelineno-16-57"></a>- list
-<a id="__codelineno-16-58" name="__codelineno-16-58" href="#__codelineno-16-58"></a>
-<a id="__codelineno-16-59" name="__codelineno-16-59" href="#__codelineno-16-59"></a>
-<a id="__codelineno-16-60" name="__codelineno-16-60" href="#__codelineno-16-60"></a>
-<a id="__codelineno-16-61" name="__codelineno-16-61" href="#__codelineno-16-61"></a>- watch
-<a id="__codelineno-16-62" name="__codelineno-16-62" href="#__codelineno-16-62"></a>
-<a id="__codelineno-16-63" name="__codelineno-16-63" href="#__codelineno-16-63"></a>
-<a id="__codelineno-16-64" name="__codelineno-16-64" href="#__codelineno-16-64"></a>
-<a id="__codelineno-16-65" name="__codelineno-16-65" href="#__codelineno-16-65"></a>- get
+<a id="__codelineno-16-49" name="__codelineno-16-49" href="#__codelineno-16-49"></a>- get
 </code></pre></div>
-<p>Роль будет автоматически привязана к ClusterRole <code>dynatrace-kubernetes-monitoring</code> через правила агрегации. Для получения дополнительной информации об агрегации ClusterRole см. <a href="/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation" title="Как Dynatrace Operator использует агрегацию ClusterRole для управления разрешениями мониторинга Kubernetes.">документацию по агрегации ClusterRole</a>.
+<p>Роль будет автоматически привязана к ClusterRole <code>dynatrace-kubernetes-monitoring</code> через правила агрегации. Для получения дополнительной информации об агрегации ClusterRole см. документацию по агрегации ClusterRole.
 6. Примените пользовательский ресурс DynaKube</p>
 <p>Выполните приведённую ниже команду для применения пользовательского ресурса DynaKube, убедившись, что вы заменили <code>&lt;your-DynaKube-CR&gt;</code> на фактическое имя файла вашего пользовательского ресурса DynaKube. Валидационный вебхук предоставит полезные сообщения об ошибках, если возникнет проблема.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>kubectl apply -f &lt;your-DynaKube-CR&gt;.yaml
@@ -6060,47 +4102,37 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>&gt; kubectl get dynakube -n dynatrace
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
 <a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>NAME         APIURL                                          STATUS     AGE
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>NAME         APIURL                                          STATUS     AGE
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
 <a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
-<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
-<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
-<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>dynakube     https://&lt;ENVIRONMENTID&gt;.live.dynatrace.com/api  Running    45s
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>dynakube     https://&lt;ENVIRONMENTID&gt;.live.dynatrace.com/api  Running    45s
 </code></pre></div>
 <p>В конфигурации DynaKube по умолчанию с CSI-драйвером вы должны увидеть следующие поды:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>&gt; kubectl get pods -n dynatrace
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>NAME                                  READY   STATUS    RESTARTS        AGE
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>NAME                                  READY   STATUS    RESTARTS        AGE
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
 <a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>dynakube-activegate-0                 1/1     Running   0               50s
 <a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>dynakube-activegate-0                 1/1     Running   0               50s
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>dynatrace-oneagent-csi-driver-qxfwx   4/4     Running   0               2m49s
 <a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>
 <a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>
-<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>dynatrace-oneagent-csi-driver-qxfwx   4/4     Running   0               2m49s
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>dynatrace-oneagent-csi-driver-xk5c4   4/4     Running   0               2m49s
 <a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
 <a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>
-<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>
-<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>dynatrace-oneagent-csi-driver-xk5c4   4/4     Running   0               2m49s
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>dynatrace-oneagent-csi-driver-mz6ch   4/4     Running   0               2m49s
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>
 <a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>
-<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>dynatrace-operator-7dc8dc7d8c-wmh4z   1/1     Running   0               2m59s
 <a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>
-<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>dynatrace-oneagent-csi-driver-mz6ch   4/4     Running   0               2m49s
-<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>
+<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>dynatrace-webhook-7bb6957fb5-l8fsq    1/1     Running   0               2m59s
 <a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>
 <a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>
-<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>dynatrace-operator-7dc8dc7d8c-wmh4z   1/1     Running   0               2m59s
-<a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>
-<a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a>
-<a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>
-<a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a>dynatrace-webhook-7bb6957fb5-l8fsq    1/1     Running   0               2m59s
-<a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>
-<a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a>
-<a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a>
-<a id="__codelineno-19-33" name="__codelineno-19-33" href="#__codelineno-19-33"></a>dynatrace-webhook-7bb6957fb5-rqnqk    1/1     Running   0               2m59s
+<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>dynatrace-webhook-7bb6957fb5-rqnqk    1/1     Running   0               2m59s
 </code></pre></div>
 <p>CSI-драйвер не является обязательным (см. шаг 2). При включении он развёртывается как DaemonSet, что приводит к созданию пода CSI-драйвера на каждом узле.</p>
 <ol>
@@ -6118,125 +4150,97 @@
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>oc -n dynatrace wait pod --for=condition=ready --selector=app.kubernetes.io/name=dynatrace-operator,app.kubernetes.io/component=webhook --timeout=300s
 </code></pre></div>
 3. Создайте секрет для токенов доступа</p>
-<p>Создайте секрет с именем <code>dynakube</code> для токена Dynatrace Operator и токена приёма данных, полученных в разделе <a href="/docs/ingest-from/setup-on-k8s/deployment/tokens-permissions" title="Настройка токенов и разрешений для мониторинга кластера Kubernetes">Необходимые токены и разрешения</a>.</p>
+<p>Создайте секрет с именем <code>dynakube</code> для токена Dynatrace Operator и токена приёма данных, полученных в разделе Необходимые токены и разрешения.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>oc -n dynatrace create secret generic dynakube --from-literal=&quot;apiToken=&lt;OPERATOR_TOKEN&gt;&quot; --from-literal=&quot;dataIngestToken=&lt;DATA_INGEST_TOKEN&gt;&quot;
 </code></pre></div>
 4. Создайте YAML-файл пользовательского ресурса DynaKube.</p>
 <p>Пример пользовательского ресурса DynaKube для мониторинга приложений</p>
-<p>Вы можете просмотреть <a href="/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters" title="Список доступных параметров для настройки Dynatrace Operator в Kubernetes.">доступные параметры</a> или <a href="/docs/ingest-from/setup-on-k8s/guides" title="Подробное описание вариантов установки и конфигурации для конкретных сценариев использования">руководства</a> и адаптировать пользовательский ресурс DynaKube в соответствии с вашими требованиями.</p>
+<p>Вы можете просмотреть доступные параметры или руководства и адаптировать пользовательский ресурс DynaKube в соответствии с вашими требованиями.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>apiVersion: dynatrace.com/v1beta5
 <a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
 <a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
-<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
-<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>kind: DynaKube
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>kind: DynaKube
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>
 <a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
-<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>metadata:
 <a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>
-<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>metadata:
-<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>name: dynakube
 <a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>
 <a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>
-<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>name: dynakube
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>namespace: dynatrace
 <a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>
 <a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>
-<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>
-<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>namespace: dynatrace
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>annotations:
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>
 <a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>
-<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>
+<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>feature.dynatrace.com/k8s-app-enabled: &quot;true&quot;
 <a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a>
-<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a>annotations:
-<a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a>
+<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a>
+<a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a>feature.dynatrace.com/injection-readonly-volume: &quot;true&quot;
 <a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a>
 <a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a>
-<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a>feature.dynatrace.com/k8s-app-enabled: &quot;true&quot;
+<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a>spec:
 <a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a>
 <a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a>
-<a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a>
-<a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a>feature.dynatrace.com/injection-readonly-volume: &quot;true&quot;
+<a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a># For detailed instructions on DynaKube parameters in the spec section, visit https://docs.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
+<a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a>
 <a id="__codelineno-25-30" name="__codelineno-25-30" href="#__codelineno-25-30"></a>
-<a id="__codelineno-25-31" name="__codelineno-25-31" href="#__codelineno-25-31"></a>
+<a id="__codelineno-25-31" name="__codelineno-25-31" href="#__codelineno-25-31"></a># Dynatrace apiUrl including the /api path at the end.
 <a id="__codelineno-25-32" name="__codelineno-25-32" href="#__codelineno-25-32"></a>
-<a id="__codelineno-25-33" name="__codelineno-25-33" href="#__codelineno-25-33"></a>spec:
-<a id="__codelineno-25-34" name="__codelineno-25-34" href="#__codelineno-25-34"></a>
+<a id="__codelineno-25-33" name="__codelineno-25-33" href="#__codelineno-25-33"></a>
+<a id="__codelineno-25-34" name="__codelineno-25-34" href="#__codelineno-25-34"></a># Replace &#39;ENVIRONMENTID&#39; with your environment ID.
 <a id="__codelineno-25-35" name="__codelineno-25-35" href="#__codelineno-25-35"></a>
 <a id="__codelineno-25-36" name="__codelineno-25-36" href="#__codelineno-25-36"></a>
-<a id="__codelineno-25-37" name="__codelineno-25-37" href="#__codelineno-25-37"></a># For detailed instructions on DynaKube parameters in the spec section, visit https://docs.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
+<a id="__codelineno-25-37" name="__codelineno-25-37" href="#__codelineno-25-37"></a># For instructions on how to determine the environment ID and how to configure the apiUrl address, see https://www.dynatrace.com/support/help/reference/dynatrace-concepts/environment-id/.
 <a id="__codelineno-25-38" name="__codelineno-25-38" href="#__codelineno-25-38"></a>
 <a id="__codelineno-25-39" name="__codelineno-25-39" href="#__codelineno-25-39"></a>
-<a id="__codelineno-25-40" name="__codelineno-25-40" href="#__codelineno-25-40"></a>
-<a id="__codelineno-25-41" name="__codelineno-25-41" href="#__codelineno-25-41"></a># Dynatrace apiUrl including the /api path at the end.
+<a id="__codelineno-25-40" name="__codelineno-25-40" href="#__codelineno-25-40"></a>apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
+<a id="__codelineno-25-41" name="__codelineno-25-41" href="#__codelineno-25-41"></a>
 <a id="__codelineno-25-42" name="__codelineno-25-42" href="#__codelineno-25-42"></a>
-<a id="__codelineno-25-43" name="__codelineno-25-43" href="#__codelineno-25-43"></a>
+<a id="__codelineno-25-43" name="__codelineno-25-43" href="#__codelineno-25-43"></a>metadataEnrichment:
 <a id="__codelineno-25-44" name="__codelineno-25-44" href="#__codelineno-25-44"></a>
-<a id="__codelineno-25-45" name="__codelineno-25-45" href="#__codelineno-25-45"></a># Replace &#39;ENVIRONMENTID&#39; with your environment ID.
-<a id="__codelineno-25-46" name="__codelineno-25-46" href="#__codelineno-25-46"></a>
+<a id="__codelineno-25-45" name="__codelineno-25-45" href="#__codelineno-25-45"></a>
+<a id="__codelineno-25-46" name="__codelineno-25-46" href="#__codelineno-25-46"></a>enabled: true
 <a id="__codelineno-25-47" name="__codelineno-25-47" href="#__codelineno-25-47"></a>
 <a id="__codelineno-25-48" name="__codelineno-25-48" href="#__codelineno-25-48"></a>
-<a id="__codelineno-25-49" name="__codelineno-25-49" href="#__codelineno-25-49"></a># For instructions on how to determine the environment ID and how to configure the apiUrl address, see https://www.dynatrace.com/support/help/reference/dynatrace-concepts/environment-id/.
+<a id="__codelineno-25-49" name="__codelineno-25-49" href="#__codelineno-25-49"></a>oneAgent:
 <a id="__codelineno-25-50" name="__codelineno-25-50" href="#__codelineno-25-50"></a>
 <a id="__codelineno-25-51" name="__codelineno-25-51" href="#__codelineno-25-51"></a>
-<a id="__codelineno-25-52" name="__codelineno-25-52" href="#__codelineno-25-52"></a>
-<a id="__codelineno-25-53" name="__codelineno-25-53" href="#__codelineno-25-53"></a>apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
+<a id="__codelineno-25-52" name="__codelineno-25-52" href="#__codelineno-25-52"></a>applicationMonitoring: {}
+<a id="__codelineno-25-53" name="__codelineno-25-53" href="#__codelineno-25-53"></a>
 <a id="__codelineno-25-54" name="__codelineno-25-54" href="#__codelineno-25-54"></a>
-<a id="__codelineno-25-55" name="__codelineno-25-55" href="#__codelineno-25-55"></a>
+<a id="__codelineno-25-55" name="__codelineno-25-55" href="#__codelineno-25-55"></a>activeGate:
 <a id="__codelineno-25-56" name="__codelineno-25-56" href="#__codelineno-25-56"></a>
-<a id="__codelineno-25-57" name="__codelineno-25-57" href="#__codelineno-25-57"></a>metadataEnrichment:
-<a id="__codelineno-25-58" name="__codelineno-25-58" href="#__codelineno-25-58"></a>
+<a id="__codelineno-25-57" name="__codelineno-25-57" href="#__codelineno-25-57"></a>
+<a id="__codelineno-25-58" name="__codelineno-25-58" href="#__codelineno-25-58"></a>capabilities:
 <a id="__codelineno-25-59" name="__codelineno-25-59" href="#__codelineno-25-59"></a>
 <a id="__codelineno-25-60" name="__codelineno-25-60" href="#__codelineno-25-60"></a>
-<a id="__codelineno-25-61" name="__codelineno-25-61" href="#__codelineno-25-61"></a>enabled: true
+<a id="__codelineno-25-61" name="__codelineno-25-61" href="#__codelineno-25-61"></a>- routing
 <a id="__codelineno-25-62" name="__codelineno-25-62" href="#__codelineno-25-62"></a>
 <a id="__codelineno-25-63" name="__codelineno-25-63" href="#__codelineno-25-63"></a>
-<a id="__codelineno-25-64" name="__codelineno-25-64" href="#__codelineno-25-64"></a>
-<a id="__codelineno-25-65" name="__codelineno-25-65" href="#__codelineno-25-65"></a>oneAgent:
+<a id="__codelineno-25-64" name="__codelineno-25-64" href="#__codelineno-25-64"></a>- kubernetes-monitoring
+<a id="__codelineno-25-65" name="__codelineno-25-65" href="#__codelineno-25-65"></a>
 <a id="__codelineno-25-66" name="__codelineno-25-66" href="#__codelineno-25-66"></a>
-<a id="__codelineno-25-67" name="__codelineno-25-67" href="#__codelineno-25-67"></a>
+<a id="__codelineno-25-67" name="__codelineno-25-67" href="#__codelineno-25-67"></a>resources:
 <a id="__codelineno-25-68" name="__codelineno-25-68" href="#__codelineno-25-68"></a>
-<a id="__codelineno-25-69" name="__codelineno-25-69" href="#__codelineno-25-69"></a>applicationMonitoring: {}
-<a id="__codelineno-25-70" name="__codelineno-25-70" href="#__codelineno-25-70"></a>
+<a id="__codelineno-25-69" name="__codelineno-25-69" href="#__codelineno-25-69"></a>
+<a id="__codelineno-25-70" name="__codelineno-25-70" href="#__codelineno-25-70"></a>requests:
 <a id="__codelineno-25-71" name="__codelineno-25-71" href="#__codelineno-25-71"></a>
 <a id="__codelineno-25-72" name="__codelineno-25-72" href="#__codelineno-25-72"></a>
-<a id="__codelineno-25-73" name="__codelineno-25-73" href="#__codelineno-25-73"></a>activeGate:
+<a id="__codelineno-25-73" name="__codelineno-25-73" href="#__codelineno-25-73"></a>cpu: 500m
 <a id="__codelineno-25-74" name="__codelineno-25-74" href="#__codelineno-25-74"></a>
 <a id="__codelineno-25-75" name="__codelineno-25-75" href="#__codelineno-25-75"></a>
-<a id="__codelineno-25-76" name="__codelineno-25-76" href="#__codelineno-25-76"></a>
-<a id="__codelineno-25-77" name="__codelineno-25-77" href="#__codelineno-25-77"></a>capabilities:
+<a id="__codelineno-25-76" name="__codelineno-25-76" href="#__codelineno-25-76"></a>memory: 512Mi
+<a id="__codelineno-25-77" name="__codelineno-25-77" href="#__codelineno-25-77"></a>
 <a id="__codelineno-25-78" name="__codelineno-25-78" href="#__codelineno-25-78"></a>
-<a id="__codelineno-25-79" name="__codelineno-25-79" href="#__codelineno-25-79"></a>
+<a id="__codelineno-25-79" name="__codelineno-25-79" href="#__codelineno-25-79"></a>limits:
 <a id="__codelineno-25-80" name="__codelineno-25-80" href="#__codelineno-25-80"></a>
-<a id="__codelineno-25-81" name="__codelineno-25-81" href="#__codelineno-25-81"></a>- routing
-<a id="__codelineno-25-82" name="__codelineno-25-82" href="#__codelineno-25-82"></a>
+<a id="__codelineno-25-81" name="__codelineno-25-81" href="#__codelineno-25-81"></a>
+<a id="__codelineno-25-82" name="__codelineno-25-82" href="#__codelineno-25-82"></a>cpu: 1000m
 <a id="__codelineno-25-83" name="__codelineno-25-83" href="#__codelineno-25-83"></a>
 <a id="__codelineno-25-84" name="__codelineno-25-84" href="#__codelineno-25-84"></a>
-<a id="__codelineno-25-85" name="__codelineno-25-85" href="#__codelineno-25-85"></a>- kubernetes-monitoring
-<a id="__codelineno-25-86" name="__codelineno-25-86" href="#__codelineno-25-86"></a>
-<a id="__codelineno-25-87" name="__codelineno-25-87" href="#__codelineno-25-87"></a>
-<a id="__codelineno-25-88" name="__codelineno-25-88" href="#__codelineno-25-88"></a>
-<a id="__codelineno-25-89" name="__codelineno-25-89" href="#__codelineno-25-89"></a>resources:
-<a id="__codelineno-25-90" name="__codelineno-25-90" href="#__codelineno-25-90"></a>
-<a id="__codelineno-25-91" name="__codelineno-25-91" href="#__codelineno-25-91"></a>
-<a id="__codelineno-25-92" name="__codelineno-25-92" href="#__codelineno-25-92"></a>
-<a id="__codelineno-25-93" name="__codelineno-25-93" href="#__codelineno-25-93"></a>requests:
-<a id="__codelineno-25-94" name="__codelineno-25-94" href="#__codelineno-25-94"></a>
-<a id="__codelineno-25-95" name="__codelineno-25-95" href="#__codelineno-25-95"></a>
-<a id="__codelineno-25-96" name="__codelineno-25-96" href="#__codelineno-25-96"></a>
-<a id="__codelineno-25-97" name="__codelineno-25-97" href="#__codelineno-25-97"></a>cpu: 500m
-<a id="__codelineno-25-98" name="__codelineno-25-98" href="#__codelineno-25-98"></a>
-<a id="__codelineno-25-99" name="__codelineno-25-99" href="#__codelineno-25-99"></a>
-<a id="__codelineno-25-100" name="__codelineno-25-100" href="#__codelineno-25-100"></a>
-<a id="__codelineno-25-101" name="__codelineno-25-101" href="#__codelineno-25-101"></a>memory: 512Mi
-<a id="__codelineno-25-102" name="__codelineno-25-102" href="#__codelineno-25-102"></a>
-<a id="__codelineno-25-103" name="__codelineno-25-103" href="#__codelineno-25-103"></a>
-<a id="__codelineno-25-104" name="__codelineno-25-104" href="#__codelineno-25-104"></a>
-<a id="__codelineno-25-105" name="__codelineno-25-105" href="#__codelineno-25-105"></a>limits:
-<a id="__codelineno-25-106" name="__codelineno-25-106" href="#__codelineno-25-106"></a>
-<a id="__codelineno-25-107" name="__codelineno-25-107" href="#__codelineno-25-107"></a>
-<a id="__codelineno-25-108" name="__codelineno-25-108" href="#__codelineno-25-108"></a>
-<a id="__codelineno-25-109" name="__codelineno-25-109" href="#__codelineno-25-109"></a>cpu: 1000m
-<a id="__codelineno-25-110" name="__codelineno-25-110" href="#__codelineno-25-110"></a>
-<a id="__codelineno-25-111" name="__codelineno-25-111" href="#__codelineno-25-111"></a>
-<a id="__codelineno-25-112" name="__codelineno-25-112" href="#__codelineno-25-112"></a>
-<a id="__codelineno-25-113" name="__codelineno-25-113" href="#__codelineno-25-113"></a>memory: 1.5Gi
+<a id="__codelineno-25-85" name="__codelineno-25-85" href="#__codelineno-25-85"></a>memory: 1.5Gi
 </code></pre></div>
 5. Необязательно: мониторинг потенциально конфиденциальных данных</p>
 <p>Для мониторинга потенциально конфиденциальных данных, таких как Secrets (значения маскируются перед приёмом) и ConfigMaps, необходимо создать ClusterRole, разрешающую доступ к этим ресурсам. Добавьте следующий фрагмент в конец вашего YAML-файла пользовательского ресурса DynaKube.</p>
@@ -6244,70 +4248,54 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>---
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
-<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
-<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>apiVersion: rbac.authorization.k8s.io/v1
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>apiVersion: rbac.authorization.k8s.io/v1
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>
 <a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
-<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>kind: ClusterRole
 <a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>
-<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>kind: ClusterRole
-<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>metadata:
 <a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>
 <a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>
-<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>metadata:
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>labels:
 <a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>
 <a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>
-<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>
-<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a>labels:
+<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>rbac.dynatrace.com/aggregate-to-monitoring: &quot;true&quot;
+<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a>
 <a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a>
-<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>
+<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>name: dynatrace-kubernetes-monitoring-sensitive
 <a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a>
-<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a>rbac.dynatrace.com/aggregate-to-monitoring: &quot;true&quot;
-<a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a>
+<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a>
+<a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a>rules:
 <a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a>
 <a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a>
-<a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a>name: dynatrace-kubernetes-monitoring-sensitive
+<a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a>- apiGroups:
 <a id="__codelineno-26-26" name="__codelineno-26-26" href="#__codelineno-26-26"></a>
 <a id="__codelineno-26-27" name="__codelineno-26-27" href="#__codelineno-26-27"></a>
-<a id="__codelineno-26-28" name="__codelineno-26-28" href="#__codelineno-26-28"></a>
-<a id="__codelineno-26-29" name="__codelineno-26-29" href="#__codelineno-26-29"></a>rules:
+<a id="__codelineno-26-28" name="__codelineno-26-28" href="#__codelineno-26-28"></a>- &quot;&quot;
+<a id="__codelineno-26-29" name="__codelineno-26-29" href="#__codelineno-26-29"></a>
 <a id="__codelineno-26-30" name="__codelineno-26-30" href="#__codelineno-26-30"></a>
-<a id="__codelineno-26-31" name="__codelineno-26-31" href="#__codelineno-26-31"></a>
+<a id="__codelineno-26-31" name="__codelineno-26-31" href="#__codelineno-26-31"></a>resources:
 <a id="__codelineno-26-32" name="__codelineno-26-32" href="#__codelineno-26-32"></a>
-<a id="__codelineno-26-33" name="__codelineno-26-33" href="#__codelineno-26-33"></a>- apiGroups:
-<a id="__codelineno-26-34" name="__codelineno-26-34" href="#__codelineno-26-34"></a>
+<a id="__codelineno-26-33" name="__codelineno-26-33" href="#__codelineno-26-33"></a>
+<a id="__codelineno-26-34" name="__codelineno-26-34" href="#__codelineno-26-34"></a>- configmaps
 <a id="__codelineno-26-35" name="__codelineno-26-35" href="#__codelineno-26-35"></a>
 <a id="__codelineno-26-36" name="__codelineno-26-36" href="#__codelineno-26-36"></a>
-<a id="__codelineno-26-37" name="__codelineno-26-37" href="#__codelineno-26-37"></a>- &quot;&quot;
+<a id="__codelineno-26-37" name="__codelineno-26-37" href="#__codelineno-26-37"></a>- secrets
 <a id="__codelineno-26-38" name="__codelineno-26-38" href="#__codelineno-26-38"></a>
 <a id="__codelineno-26-39" name="__codelineno-26-39" href="#__codelineno-26-39"></a>
-<a id="__codelineno-26-40" name="__codelineno-26-40" href="#__codelineno-26-40"></a>
-<a id="__codelineno-26-41" name="__codelineno-26-41" href="#__codelineno-26-41"></a>resources:
+<a id="__codelineno-26-40" name="__codelineno-26-40" href="#__codelineno-26-40"></a>verbs:
+<a id="__codelineno-26-41" name="__codelineno-26-41" href="#__codelineno-26-41"></a>
 <a id="__codelineno-26-42" name="__codelineno-26-42" href="#__codelineno-26-42"></a>
-<a id="__codelineno-26-43" name="__codelineno-26-43" href="#__codelineno-26-43"></a>
+<a id="__codelineno-26-43" name="__codelineno-26-43" href="#__codelineno-26-43"></a>- list
 <a id="__codelineno-26-44" name="__codelineno-26-44" href="#__codelineno-26-44"></a>
-<a id="__codelineno-26-45" name="__codelineno-26-45" href="#__codelineno-26-45"></a>- configmaps
-<a id="__codelineno-26-46" name="__codelineno-26-46" href="#__codelineno-26-46"></a>
+<a id="__codelineno-26-45" name="__codelineno-26-45" href="#__codelineno-26-45"></a>
+<a id="__codelineno-26-46" name="__codelineno-26-46" href="#__codelineno-26-46"></a>- watch
 <a id="__codelineno-26-47" name="__codelineno-26-47" href="#__codelineno-26-47"></a>
 <a id="__codelineno-26-48" name="__codelineno-26-48" href="#__codelineno-26-48"></a>
-<a id="__codelineno-26-49" name="__codelineno-26-49" href="#__codelineno-26-49"></a>- secrets
-<a id="__codelineno-26-50" name="__codelineno-26-50" href="#__codelineno-26-50"></a>
-<a id="__codelineno-26-51" name="__codelineno-26-51" href="#__codelineno-26-51"></a>
-<a id="__codelineno-26-52" name="__codelineno-26-52" href="#__codelineno-26-52"></a>
-<a id="__codelineno-26-53" name="__codelineno-26-53" href="#__codelineno-26-53"></a>verbs:
-<a id="__codelineno-26-54" name="__codelineno-26-54" href="#__codelineno-26-54"></a>
-<a id="__codelineno-26-55" name="__codelineno-26-55" href="#__codelineno-26-55"></a>
-<a id="__codelineno-26-56" name="__codelineno-26-56" href="#__codelineno-26-56"></a>
-<a id="__codelineno-26-57" name="__codelineno-26-57" href="#__codelineno-26-57"></a>- list
-<a id="__codelineno-26-58" name="__codelineno-26-58" href="#__codelineno-26-58"></a>
-<a id="__codelineno-26-59" name="__codelineno-26-59" href="#__codelineno-26-59"></a>
-<a id="__codelineno-26-60" name="__codelineno-26-60" href="#__codelineno-26-60"></a>
-<a id="__codelineno-26-61" name="__codelineno-26-61" href="#__codelineno-26-61"></a>- watch
-<a id="__codelineno-26-62" name="__codelineno-26-62" href="#__codelineno-26-62"></a>
-<a id="__codelineno-26-63" name="__codelineno-26-63" href="#__codelineno-26-63"></a>
-<a id="__codelineno-26-64" name="__codelineno-26-64" href="#__codelineno-26-64"></a>
-<a id="__codelineno-26-65" name="__codelineno-26-65" href="#__codelineno-26-65"></a>- get
+<a id="__codelineno-26-49" name="__codelineno-26-49" href="#__codelineno-26-49"></a>- get
 </code></pre></div>
-<p>Роль будет автоматически привязана к ClusterRole <code>dynatrace-kubernetes-monitoring</code> через правила агрегации. Для получения дополнительной информации об агрегации ClusterRole см. <a href="/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation" title="Как Dynatrace Operator использует агрегацию ClusterRole для управления разрешениями мониторинга Kubernetes.">документацию по агрегации ClusterRole</a>.
+<p>Роль будет автоматически привязана к ClusterRole <code>dynatrace-kubernetes-monitoring</code> через правила агрегации. Для получения дополнительной информации об агрегации ClusterRole см. документацию по агрегации ClusterRole.
 6. Примените пользовательский ресурс DynaKube
    Выполните приведённую ниже команду для применения пользовательского ресурса DynaKube, убедившись, что вы заменили <code>&lt;your-DynaKube-CR&gt;</code> на фактическое имя файла вашего пользовательского ресурса DynaKube. Валидационный вебхук предоставит полезные сообщения об ошибках, если возникнет проблема.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>oc apply -f &lt;your-DynaKube-CR&gt;.yaml
@@ -6317,66 +4305,56 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>&gt; oc get dynakube -n dynatrace
 <a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
 <a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
-<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
-<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>NAME         APIURL                                          STATUS     AGE
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>NAME         APIURL                                          STATUS     AGE
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>
 <a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
-<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>
-<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>
-<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>dynakube     https://&lt;ENVIRONMENTID&gt;.live.dynatrace.com/api  Running    45s
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>dynakube     https://&lt;ENVIRONMENTID&gt;.live.dynatrace.com/api  Running    45s
 </code></pre></div>
 <p>В конфигурации DynaKube по умолчанию с CSI-драйвером вы должны увидеть следующие поды:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>&gt; oc get pods -n dynatrace
 <a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
 <a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
-<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
-<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>NAME                                  READY   STATUS    RESTARTS        AGE
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>NAME                                  READY   STATUS    RESTARTS        AGE
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>
 <a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
-<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>dynakube-activegate-0                 1/1     Running   0               50s
 <a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
-<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>dynakube-activegate-0                 1/1     Running   0               50s
-<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>dynatrace-oneagent-csi-driver-qxfwx   4/4     Running   0               2m49s
 <a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>
 <a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>
-<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a>dynatrace-oneagent-csi-driver-qxfwx   4/4     Running   0               2m49s
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a>dynatrace-oneagent-csi-driver-xk5c4   4/4     Running   0               2m49s
 <a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a>
 <a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a>
-<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a>
-<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a>dynatrace-oneagent-csi-driver-xk5c4   4/4     Running   0               2m49s
+<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a>dynatrace-oneagent-csi-driver-mz6ch   4/4     Running   0               2m49s
+<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a>
 <a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a>
-<a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a>
+<a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a>dynatrace-operator-7dc8dc7d8c-wmh4z   1/1     Running   0               2m59s
 <a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a>
-<a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a>dynatrace-oneagent-csi-driver-mz6ch   4/4     Running   0               2m49s
-<a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a>
+<a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a>
+<a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a>dynatrace-webhook-7bb6957fb5-l8fsq    1/1     Running   0               2m59s
 <a id="__codelineno-29-23" name="__codelineno-29-23" href="#__codelineno-29-23"></a>
 <a id="__codelineno-29-24" name="__codelineno-29-24" href="#__codelineno-29-24"></a>
-<a id="__codelineno-29-25" name="__codelineno-29-25" href="#__codelineno-29-25"></a>dynatrace-operator-7dc8dc7d8c-wmh4z   1/1     Running   0               2m59s
-<a id="__codelineno-29-26" name="__codelineno-29-26" href="#__codelineno-29-26"></a>
-<a id="__codelineno-29-27" name="__codelineno-29-27" href="#__codelineno-29-27"></a>
-<a id="__codelineno-29-28" name="__codelineno-29-28" href="#__codelineno-29-28"></a>
-<a id="__codelineno-29-29" name="__codelineno-29-29" href="#__codelineno-29-29"></a>dynatrace-webhook-7bb6957fb5-l8fsq    1/1     Running   0               2m59s
-<a id="__codelineno-29-30" name="__codelineno-29-30" href="#__codelineno-29-30"></a>
-<a id="__codelineno-29-31" name="__codelineno-29-31" href="#__codelineno-29-31"></a>
-<a id="__codelineno-29-32" name="__codelineno-29-32" href="#__codelineno-29-32"></a>
-<a id="__codelineno-29-33" name="__codelineno-29-33" href="#__codelineno-29-33"></a>dynatrace-webhook-7bb6957fb5-rqnqk    1/1     Running   0               2m59s
+<a id="__codelineno-29-25" name="__codelineno-29-25" href="#__codelineno-29-25"></a>dynatrace-webhook-7bb6957fb5-rqnqk    1/1     Running   0               2m59s
 </code></pre></div>
 <p>CSI-драйвер не является обязательным (см. шаг 2). При включении он развёртывается как DaemonSet, что приводит к созданию пода CSI-драйвера на каждом узле.</p>
 <h2 id="_7">Лицензирование<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>Мониторинг платформы Kubernetes + наблюдаемость приложений требует <a href="/docs/license" title="О подписке Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.">подписку Dynatrace Platform Subscription (DPS)</a>. Мониторинг платформы Kubernetes лицензируется по количеству подов в час (<a href="/docs/license/capabilities/container-monitoring/kubernetes-platform-monitoring" title="Узнайте, как рассчитывается потребление возможности мониторинга платформы Kubernetes DPS.">под-часы</a>), а наблюдаемость приложений — по сумме памяти контейнеров (<a href="/docs/license/capabilities/app-infra-observability/full-stack-monitoring#gib-hour" title="Узнайте, как рассчитывается потребление возможности Full-Stack Monitoring DPS.">ГиБ-часы</a>).</p>
+<p>Мониторинг платформы Kubernetes + наблюдаемость приложений требует подписку Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace."). Мониторинг платформы Kubernetes лицензируется по количеству подов в час (под-часы), а наблюдаемость приложений — по сумме памяти контейнеров (<a href="../../../../license/capabilities/app-infra-observability/full-stack-monitoring/#gib-hour" title="Узнайте, как рассчитывается потребление возможности Full-Stack Monitoring DPS.">ГиБ-часы</a>).</p>
 <h2 id="_8">Дополнительные материалы<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>После успешной установки Dynatrace Operator следующие ресурсы могут быть полезны для дальнейшего изучения и устранения неполадок.</p>
-<p>[### Получение практических ответов</p>
-<p>Начните анализировать свои кластеры Kubernetes и контейнеризированные приложения с Dynatrace и получайте практические ответы.](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Мониторинг Kubernetes/OpenShift с Dynatrace.")[### Руководства</p>
-<p>Узнайте, как настроить Dynatrace Operator для поддержки конкретных сценариев использования.](/docs/ingest-from/setup-on-k8s/guides "Подробное описание вариантов установки и конфигурации для конкретных сценариев использования")[### Устранение неполадок</p>
-<p>Устранение проблем, которые могут возникнуть при работе с Dynatrace Operator и его различными компонентами.](/docs/ingest-from/setup-on-k8s/deployment/troubleshooting "Эта страница поможет вам решить проблемы, которые могут возникнуть при работе с Dynatrace Operator и его различными компонентами.")</p>
-<p>[### Как это работает</p>
-<p>Хотите узнать больше о компонентах Dynatrace в вашем кластере Kubernetes?](/docs/ingest-from/setup-on-k8s/how-it-works "Подробное описание работы развёртывания в Kubernetes.")[### Справочник</p>
-<p>Справочник по API и параметры конфигурации для всех компонентов Dynatrace в вашем кластере Kubernetes.](/docs/ingest-from/setup-on-k8s/reference "Справочная страница с параметрами конфигурации для каждого компонента Dynatrace")[### Примечания к выпуску Dynatrace Operator</p>
-<p>Примечания к выпуску Dynatrace Operator.](/docs/whats-new/dynatrace-operator "Примечания к выпуску Dynatrace Operator")[### Обновление или удаление</p>
-<p>На этой странице приведены подробные инструкции по обновлению и удалению Dynatrace Operator.](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator "Процедуры обновления и удаления Dynatrace Operator")[### Руководство по размеру Dynatrace ActiveGate</p>
-<p>Руководство по выбору размера для компонентов Dynatrace ActiveGate](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Установка лимитов ресурсов для Dynatrace ActiveGate")</p>
-<h2 id="_9">Связанные темы<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="_9">Получение практических ответов<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>Начните анализировать свои кластеры Kubernetes и контейнеризированные приложения с Dynatrace и получайте практические ответы.### Руководства</p>
+<p>Узнайте, как настроить Dynatrace Operator для поддержки конкретных сценариев использования.### Устранение неполадок</p>
+<p>Устранение проблем, которые могут возникнуть при работе с Dynatrace Operator и его различными компонентами.</p>
+<h3 id="_10">Как это работает<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>Хотите узнать больше о компонентах Dynatrace в вашем кластере Kubernetes?### Справочник</p>
+<p>Справочник по API и параметры конфигурации для всех компонентов Dynatrace в вашем кластере Kubernetes.### Примечания к выпуску Dynatrace Operator</p>
+<p>Примечания к выпуску Dynatrace Operator.### Обновление или удаление</p>
+<p>На этой странице приведены подробные инструкции по обновлению и удалению Dynatrace Operator.### Руководство по размеру Dynatrace ActiveGate</p>
+<p>Руководство по выбору размера для компонентов Dynatrace ActiveGate</p>
+<h2 id="_11">Связанные темы<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring" title="Мониторинг Kubernetes/OpenShift с Dynatrace.">Kubernetes Classic</a></li>
+<li>Kubernetes Classic</li>
 </ul>
 
 
@@ -6457,7 +4435,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.sections", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
   
@@ -6467,25 +4445,38 @@
       
     
   <script>
-    // Inject version selector into header
-    document.addEventListener('DOMContentLoaded', function() {
-      var headerInner = document.querySelector('.md-header__inner');
-      if (headerInner) {
-        var select = document.createElement('select');
-        select.className = 'docflow-version-select';
-        select.innerHTML = '<option value="managed" selected>Managed</option><option value="saas">SaaS</option>';
-        select.setAttribute('aria-label', 'Version selector');
+    (function() {
+      // --- Reading progress bar (one-time setup) ---
+      var progressBar = document.createElement('div');
+      progressBar.className = 'reading-progress';
+      document.body.appendChild(progressBar);
 
-        // Insert before the search or at the end
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (docHeight > 0) {
+          var progress = (scrollTop / docHeight) * 100;
+          progressBar.style.width = Math.min(progress, 100) + '%';
+        }
+      });
+
+      // --- Managed label in header (one-time setup) ---
+      var headerInner = document.querySelector('.md-header__inner');
+      if (headerInner && !headerInner.querySelector('.docflow-managed-label')) {
+        var label = document.createElement('span');
+        label.className = 'docflow-managed-label';
+        label.textContent = 'Managed';
+        label.setAttribute('title', 'Документация включает разделы Dynatrace Managed');
+
         var searchContainer = headerInner.querySelector('.md-header__source');
         if (searchContainer) {
-          headerInner.insertBefore(select, searchContainer);
+          headerInner.insertBefore(label, searchContainer);
         } else {
-          headerInner.appendChild(select);
+          headerInner.appendChild(label);
         }
       }
 
-      // Keyboard shortcut Ctrl+K for search
+      // --- Keyboard shortcut Ctrl+K for search ---
       document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
           e.preventDefault();
@@ -6500,7 +4491,9 @@
           }
         }
       });
-    });
+
+      // TOC title renaming handled via CSS (see extra style block above)
+    })();
   </script>
 
   </body>

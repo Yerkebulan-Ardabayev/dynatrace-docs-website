@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
       
       
         <meta name="author" content="Yerkebulan Ardabayev">
@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -87,7 +87,10 @@
       flex-shrink: 0;
     }
 
-    /* Search Ctrl+K badge */
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
     .md-search__form::after {
       content: 'Ctrl+K';
       display: none;
@@ -97,11 +100,14 @@
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color);
       font-size: 10px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'JetBrains Mono', monospace;
       color: var(--md-default-fg-color--lighter);
-      margin-right: 0.5rem;
       white-space: nowrap;
       pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
     }
     @media (min-width: 60em) {
       .md-search__form::after {
@@ -109,12 +115,13 @@
       }
     }
 
-    /* Version selector in header */
-    .docflow-version-select {
+    /* Managed label — non-interactive indicator */
+    .docflow-managed-label {
       display: none;
       align-items: center;
+      gap: 0.375rem;
       margin-left: 0.5rem;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color--lighter);
@@ -122,28 +129,34 @@
       font-size: 0.75rem;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237e7c98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.4rem center;
-      padding-right: 1.5rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .docflow-managed-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--md-accent-fg-color);
+      flex-shrink: 0;
     }
     @media (min-width: 60em) {
-      .docflow-version-select {
+      .docflow-managed-label {
         display: flex;
       }
     }
-    .docflow-version-select:hover {
-      border-color: var(--md-primary-fg-color--light);
-      color: var(--md-default-fg-color);
-    }
-    .docflow-version-select:focus {
-      outline: none;
-      border-color: var(--md-primary-fg-color);
-      box-shadow: 0 0 0 3px var(--docflow-glow-primary);
+
+    /* Reading progress bar */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #14b8a6, #7c3aed);
+      z-index: 1001;
+      transition: width 0.05s linear;
+      pointer-events: none;
     }
   </style>
 
@@ -181,7 +194,7 @@
 
   
 
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
     <a href="../../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -216,20 +229,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -303,375 +316,14 @@
     
   </nav>
   
-    
-      
-<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../../.." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Главная
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../../../ru/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Начало работы
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../../../managed/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Managed
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../../../ru/platform/grail/dynatrace-grail/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Платформа
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../../../ru/observe/infrastructure-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Наблюдаемость
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../../../ru/dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Dynatrace Intelligence
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Анализ и автоматизация
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../../../ru/ingest-from/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Источники данных
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../../../ru/deliver/configuration-as-code/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Deliver
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../../../ru/secure/threat-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Безопасность
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../../../ru/manage/hub/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Управление
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../../../ru/dynatrace-api/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  API
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../../../ru/whats-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Что нового
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../../../ai/groq/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  AI Помощник
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
 </header>
     
 
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -685,10 +337,8 @@
                     
 
 
-  
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -765,16 +415,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -796,7 +450,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -829,7 +483,7 @@
   <span class="md-ellipsis">
     
   
-    Начало работы
+    🚀 Быстрый старт
   
 
     
@@ -967,16 +621,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -998,7 +656,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1227,7 +885,7 @@
   <span class="md-ellipsis">
     
   
-    Лицензия
+    Лицензия Managed
   
 
     
@@ -1269,19 +927,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1327,20 +989,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../../../ru/platform/grail/dynatrace-grail/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1354,78 +1017,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Grail
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/platform/grail/dynatrace-grail/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Что такое Grail
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/platform/grail/dynatrace-query-language/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Язык запросов DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1544,19 +1141,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1610,20 +1211,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../../../ru/observe/infrastructure-observability/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1637,190 +1239,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Инфраструктура
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/observe/infrastructure-observability/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Хосты и операции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Облачный мониторинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes Classic
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Базы данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1844,20 +1268,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../../../ru/observe/application-observability/distributed-tracing/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1871,78 +1296,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Приложения
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/observe/application-observability/distributed-tracing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Распределённая трассировка
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/observe/application-observability/services/services-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Сервисы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1966,20 +1325,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../../../ru/observe/digital-experience/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1993,78 +1353,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Цифровой опыт
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/observe/digital-experience/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Синтетическое приложение
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2131,19 +1425,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2203,20 +1501,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../../../ru/dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2230,274 +1529,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Обнаружение аномалий
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Настройка чувствительности
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение Anomaly Detection
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфигурация
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Адаптивные пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Многомерный бейзлайн
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    События метрик
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Статические пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Оптимизация DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2527,20 +1564,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../../../ru/dynatrace-intelligence/copilot/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2554,162 +1592,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Davis Copilot
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dynatrace Assist
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфиденциальность
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы на естественном языке
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2763,20 +1651,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../../../ru/dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2790,106 +1679,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Анализ первопричин
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Анализ событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2910,7 +1705,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграции
+    Интеграции Davis AI
   
 
     
@@ -2941,20 +1736,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../../../ru/dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2968,78 +1764,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Справочник
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AI модели
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лимиты
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3080,19 +1810,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -3144,20 +1878,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3171,162 +1906,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Дашборды и ноутбуки
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Дашборды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Версии документов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Визуализации
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3354,20 +1939,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../../../ru/analyze-explore-automate/logs/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3381,134 +1967,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Логи
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/analyze-explore-automate/logs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Log Analytics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение журналов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Фильтры
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3681,19 +2145,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -3736,7 +2204,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
+    Обзор источников данных
   
 
     
@@ -3838,19 +2306,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -3898,20 +2370,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../../../ru/deliver/configuration-as-code/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3925,194 +2398,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Configuration as Code
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/deliver/configuration-as-code/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
       
-        
+        <span class="md-nav__icon md-icon"></span>
       
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Monaco
+    </a>
   
 
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Monaco
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4136,150 +2427,21 @@
     
     
       
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Terraform
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Terraform
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CLI команды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
         
-      
         
       
     
-    
-    
-      
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
+  
+  
+    <a href="../../../../../../ru/deliver/service-level-objectives/" class="md-nav__link">
       
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -4293,78 +2455,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    SLO
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/deliver/service-level-objectives/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/deliver/service-level-objectives/create-slo/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Создание SLO
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4388,20 +2484,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../../../ru/deliver/site-reliability-guardian/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4415,78 +2512,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Site Reliability Guardian
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/deliver/site-reliability-guardian/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Структура событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4538,20 +2569,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../../../ru/deliver/release-monitoring/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4565,78 +2597,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Мониторинг релизов
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/deliver/release-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Мониторинг релизов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4695,19 +2661,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -4778,7 +2748,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграция
+    Приём событий безопасности
   
 
     
@@ -4816,19 +2786,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
             
   
   
@@ -4910,20 +2884,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../../../ru/license/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4937,190 +2912,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Лицензирование
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/license/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лицензия
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/license/capabilities/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Возможности DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/license/billing-reports/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Биллинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/license/budget-alerts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Бюджетные оповещения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/license/license-lifecycle/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Жизненный цикл
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/license/dps-permissions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Разрешения DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -5151,19 +2948,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
             
   
   
@@ -5272,23 +3073,33 @@
       
         
       
-    
-    
-    
+        
       
+        
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
         
           
-          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
             
   
   
@@ -5331,35 +3142,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../../ru/whats-new/saas/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SaaS
+    Все обновления
   
 
     
@@ -5387,7 +3170,7 @@
   <span class="md-ellipsis">
     
   
-    OneAgent
+    Обновления OneAgent
   
 
     
@@ -5416,6 +3199,225 @@
     
   
     ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../ru/whats-new/dynatrace-operator/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Operator
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../ru/whats-new/edgeconnect/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EdgeConnect
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../ru/whats-new/technology/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Технологии
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ru/whats-new/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Новые статьи
   
 
     
@@ -5483,6 +3485,214 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#azure-key-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Key Vault
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Key Vault">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-synchronized-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set up synchronized credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-key-vault-synchronization-monitors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Key Vault synchronization monitors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hashicorp-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HashiCorp Vault
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HashiCorp Vault">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-synchronized-credentials_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set up synchronized credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashicorp-vault-approle-synchronization-monitors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HashiCorp Vault AppRole synchronization monitors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashicorp-vault-tls-certificate-synchronization-monitors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HashiCorp Vault TLS certificate synchronization monitors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cyberark-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CyberArk Vault
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CyberArk Vault">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-synchronized-credentials_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set up synchronized credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cyberark-vault-synchronization-monitors-username-password-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CyberArk Vault synchronization monitors (username-password authentication)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cyberark-vault-synchronization-monitors-host-based-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CyberArk Vault synchronization monitors (host-based authentication)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-and-caveats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best practices and caveats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best practices and caveats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-or-delete-synchronized-and-companion-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit or delete synchronized and companion credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5508,22 +3718,21 @@
 
 
 <h1 id="external-vault-integration">External vault integration<a class="headerlink" href="#external-vault-integration" title="Permanent link">&para;</a></h1>
-<h1 id="external-vault-integration_1">External vault integration<a class="headerlink" href="#external-vault-integration_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Classic</li>
 <li>How-to guide</li>
 <li>22-min read</li>
 <li>Updated on Jan 17, 2024</li>
 </ul>
-<p>Synthetic Monitoring <a href="/docs/manage/credential-vault#uid-password" title="Store and manage credentials in the credential vault.">username-password</a> and <a href="/docs/manage/credential-vault#token" title="Store and manage credentials in the credential vault.">token</a> credentials in the Dynatrace <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a> can be synchronized with an external vaultâ<a href="#azure-key-vault">Azure Key Vault</a>, <a href="#hashicorp">HashiCorp Vault</a>, or <a href="#cyberark">CyberArk Vault</a> (username-password credentials only). Synchronized credentials contain the keys of external key-value pairs that hold the required values.</p>
-<p>When you set up synchronized credentials in the credential vault, Dynatrace automatically creates <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic" title="Learn how to set up an HTTP monitor to check the performance and availability of your site.">HTTP monitors</a> specifically for the purpose of synchronization. You can also use the <code>api.saveCredential()</code> or <code>api.saveToken()</code> methods in <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">pre-and post-execution scripts</a> to create your own synchronization monitors.</p>
-<p>Autocreated synchronization monitors are named with the credential ID of the synchronized credential and are executed hourly by default from the Amazon US East (N. Virginia) <a href="/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations" title="Learn about all currently available public Synthetic Monitoring locations.">public Synthetic location</a>. Note that the request and response bodies and headers of synchronization monitors are automatically hidden from execution details (<strong>Analyze execution details</strong>).</p>
+<p>Synthetic Monitoring <a href="../../../../../../common/manage/credential-vault/#uid-password" title="Store and manage credentials in the credential vault.">username-password</a> and <a href="../../../../../../common/manage/credential-vault/#token" title="Store and manage credentials in the credential vault.">token</a> credentials in the Dynatrace credential vault can be synchronized with an external vaultâ<a href="#azure-key-vault">Azure Key Vault</a>, <a href="#hashicorp">HashiCorp Vault</a>, or <a href="#cyberark">CyberArk Vault</a> (username-password credentials only). Synchronized credentials contain the keys of external key-value pairs that hold the required values.</p>
+<p>When you set up synchronized credentials in the credential vault, Dynatrace automatically creates HTTP monitors specifically for the purpose of synchronization. You can also use the <code>api.saveCredential()</code> or <code>api.saveToken()</code> methods in pre-and post-execution scripts to create your own synchronization monitors.</p>
+<p>Autocreated synchronization monitors are named with the credential ID of the synchronized credential and are executed hourly by default from the Amazon US East (N. Virginia) public Synthetic location. Note that the request and response bodies and headers of synchronization monitors are automatically hidden from execution details (<strong>Analyze execution details</strong>).</p>
 <p>Other synthetic monitors can call and use these synchronized credentials for testing API endpoints and websites. The monitors that call these credentials use the synchronized values obtained from the external vaults. Synchronization frequency determines how often these credentials are rotated within the synthetic monitors that call them.</p>
 <p>Synchronization process reads the credentials from external vault and saves a copy within the Dynatrace vault.</p>
 <h2 id="azure-key-vault">Azure Key Vault<a class="headerlink" href="#azure-key-vault" title="Permanent link">&para;</a></h2>
 <p>Username-password or token credentials for use in synthetic monitors can be synchronized with Azure Key Vault key-value pairs containing the username, password, or token value.</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
-<p>Before setting up credentials synchronized with Azure Key Vault, you need to define the required <strong>client (application) ID</strong> and <strong>client secret</strong> as <a href="/docs/manage/credential-vault#token" title="Store and manage credentials in the credential vault.">token credentials</a> stored in the Dynatrace <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a>. We recommend naming such prerequisite tokens so that they're easily identifiable as companion credentials for synchronization. If your vault doesn't contain any tokens that you have access to, you'll see a warning.</p>
+<p>Before setting up credentials synchronized with Azure Key Vault, you need to define the required <strong>client (application) ID</strong> and <strong>client secret</strong> as <a href="../../../../../../common/manage/credential-vault/#token" title="Store and manage credentials in the credential vault.">token credentials</a> stored in the Dynatrace credential vault. We recommend naming such prerequisite tokens so that they're easily identifiable as companion credentials for synchronization. If your vault doesn't contain any tokens that you have access to, you'll see a warning.</p>
 <h3 id="set-up-synchronized-credentials">Set up synchronized credentials<a class="headerlink" href="#set-up-synchronized-credentials" title="Permanent link">&para;</a></h3>
 <ol>
 <li>In the credential vault, create a <strong>User and password</strong> or <strong>Token</strong> credential. You can also overwrite an existing credential.</li>
@@ -5547,13 +3756,13 @@
 </li>
 <li>Select a <strong>Location for synchronization</strong>âyou can select any public or private Synthetic location for <a href="#azure-monitor">synchronization monitor</a> execution. You can search for a location by entering the location name in the field.</li>
 <li>Optional Provide a <strong>Description</strong> for the credential.</li>
-<li>Credentials are set to <strong>Owner access only</strong> by default. (Read more about <a href="/docs/manage/credential-vault#owner-shared-public" title="Store and manage credentials in the credential vault.">credential ownership</a>.)</li>
+<li>Credentials are set to <strong>Owner access only</strong> by default. (Read more about <a href="../../../../../../common/manage/credential-vault/#owner-shared-public" title="Store and manage credentials in the credential vault.">credential ownership</a>.)</li>
 <li><strong>Save</strong> your credential.</li>
 </ul>
 <p>See also <a href="#best-practices">Best practices</a> and what happens when you <a href="#edit-delete-credential">edit or delete synchronized and companion credentials</a>.</p>
 <p><img alt="Set up Azure synchronization - token" src="https://dt-cdn.net/images/cv-azure-token-1113-f0f69b54d9.webp" /></p>
 <h3 id="azure-key-vault-synchronization-monitors">Azure Key Vault synchronization monitors<a class="headerlink" href="#azure-key-vault-synchronization-monitors" title="Permanent link">&para;</a></h3>
-<p>When you have <a href="#azure-set-up">set up your synchronized username-password or token credential</a>, Dynatrace automatically creates and executes an <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic" title="Learn how to set up an HTTP monitor to check the performance and availability of your site.">HTTP monitor</a> that synchronizes the credential with Azure Key Vault. This monitor is automatically associated with the synchronized username-password or token credential.</p>
+<p>When you have <a href="#azure-set-up">set up your synchronized username-password or token credential</a>, Dynatrace automatically creates and executes an HTTP monitor that synchronizes the credential with Azure Key Vault. This monitor is automatically associated with the synchronized username-password or token credential.</p>
 <p>See also <a href="#best-practices">Best practices</a> and what happens when you <a href="#edit-delete-credential">edit or delete synchronization credentials</a>.</p>
 <p>Username-password credentials</p>
 <p>Token credentials</p>
@@ -5566,9 +3775,9 @@
 <li>
 <p>The request URL references the tenant ID as an attribute of the <a href="#azure-set-up">synchronized credential</a> defined above; the tenant ID is not displayed.</p>
 <p><img alt="Azure KV request 1 URL" src="https://dt-cdn.net/images/cvazurerequest1url-1446-eed3251a4d.png" />
-   * The client ID and client secret, referenced as attributes of the synchronized credential, are passed as key-value pairs in the <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#request-body" title="Learn about configuring HTTP monitors.">request body</a>; the client ID and client secret are not displayed.</p>
+   * The client ID and client secret, referenced as attributes of the synchronized credential, are passed as key-value pairs in the request body; the client ID and client secret are not displayed.</p>
 <p><img alt="Azure KV request 1 request body" src="https://dt-cdn.net/images/cvazurerequest1requestbody-984-7631f538d2.png" />
-   * A client token is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the token in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>.</p>
+   * A client token is returned in the response body. A post-execution script saves the token in a global variable.</p>
 <p><img alt="Azure KV request 1 post script" src="https://dt-cdn.net/images/cvazurerequest1postscript-962-26b361836f.png" />
 2. The second request (GET) fetches the username value.
    Request configuration details</p>
@@ -5576,9 +3785,9 @@
 <li>
 <p>The request URL references the vault URL as an attribute of the <a href="#azure-set-up">synchronized credential</a> defined above; the vault URL is not displayed. The request URL also references the key mapped to the username value in Azure Key Vault.</p>
 <p><img alt="Azure KV request 2 URL" src="https://dt-cdn.net/images/cvazurerequest2url-1775-b114ec0406.png" />
-   * The <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">Authorization header</a> contains the access token retrieved in the first request.</p>
+   * The Authorization header contains the access token retrieved in the first request.</p>
 <p><img alt="Azure KV request 2 request header" src="https://dt-cdn.net/images/cvazurerequest2authheader-964-9fb3850f7d.png" />
-   * The username value is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the value in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>.</p>
+   * The username value is returned in the response body. A post-execution script saves the value in a global variable.</p>
 <p><img alt="Azure KV request 2 post script" src="https://dt-cdn.net/images/cvazurerequest2postscript-962-8bccc9e09c.png" />
 3. The third request (GET) fetches the password value. It also uses <code>api.saveCredential()</code> in a post-execution script to write the fetched values to the <a href="#azure-set-up">synchronized username-password credential</a> defined above.
    Request configuration details</p>
@@ -5586,8 +3795,8 @@
 <li>
 <p>The request URL references the vault URL as an attribute of the <a href="#azure-set-up">synchronized credential</a>; the vault URL is not displayed. The request URL also references the key mapped to the password value in Azure Key Vault.</p>
 <p><img alt="Azure KV request 3 URL" src="https://dt-cdn.net/images/cvazurerequest3url-1777-8a113269d0.png" />
-   * The <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">Authorization header</a> contains the access token retrieved in the first request.
-   * The password value is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the value in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>. It also uses <code>api.saveCredential()</code> to write the retrieved values to the synchronized username-password credential.</p>
+   * The Authorization header contains the access token retrieved in the first request.
+   * The password value is returned in the response body. A post-execution script saves the value in a global variable. It also uses <code>api.saveCredential()</code> to write the retrieved values to the synchronized username-password credential.</p>
 <p><img alt="Azure KV request 3 post script" src="https://dt-cdn.net/images/cvazurerequest3postscript-962-b44c6bda2a.png" /></p>
 </li>
 </ol>
@@ -5600,9 +3809,9 @@
 <li>
 <p>The request URL references the tenant ID, which is stored as an attribute of the <a href="#azure-set-up">synchronized credential</a> defined above; the tenant ID is not displayed.</p>
 <p><img alt="Azure KV request 1 URL" src="https://dt-cdn.net/images/cv-azure-token-request1-url-1446-9fd964d06c.png" />
-   * The client ID and client secret, referenced as attributes of the synchronized credential, are passed as key-value pairs in the <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#request-body" title="Learn about configuring HTTP monitors.">request body</a>; the client ID and client secret are not displayed.</p>
+   * The client ID and client secret, referenced as attributes of the synchronized credential, are passed as key-value pairs in the request body; the client ID and client secret are not displayed.</p>
 <p><img alt="Azure KV request 1 request body" src="https://dt-cdn.net/images/cvazurerequest1requestbody-984-7631f538d2.png" />
-   * A client token is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the token in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>.</p>
+   * A client token is returned in the response body. A post-execution script saves the token in a global variable.</p>
 <p><img alt="Azure KV request 1 post script" src="https://dt-cdn.net/images/cvazurerequest1postscript-962-26b361836f.png" />
 2. The second request (GET) fetches the token value.
    Request configuration details</p>
@@ -5610,9 +3819,9 @@
 <li>
 <p>The request URL references the vault URL as an attribute of the <a href="#azure-set-up">synchronized credential</a> defined above; the vault URL is not displayed. The request URL also references the key mapped to the token value in Azure Key Vault.</p>
 <p><img alt="Azure KV request 2 URL" src="https://dt-cdn.net/images/cv-azure-token-request2-url-1770-f949f51173.png" />
-   * The <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">Authorization header</a> contains the access token retrieved in the first request.</p>
+   * The Authorization header contains the access token retrieved in the first request.</p>
 <p><img alt="Azure KV request 2 request header" src="https://dt-cdn.net/images/cvazurerequest2authheader-964-9fb3850f7d.png" />
-   * The token value is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the value in a variable. It also uses <code>api.saveToken()</code> in a post-execution script to write the retrieved value to the synchronized token credential.</p>
+   * The token value is returned in the response body. A post-execution script saves the value in a variable. It also uses <code>api.saveToken()</code> in a post-execution script to write the retrieved value to the synchronized token credential.</p>
 <p><img alt="Azure KV request 2 post script" src="https://dt-cdn.net/images/cv-azure-token-request2-post-script-961-337899fa61.png" /></p>
 </li>
 </ol>
@@ -5620,8 +3829,8 @@
 <p><a href="#hashicorp-set-up">Username-password or token credentials</a> for use in synthetic monitors can be synchronized with HashiCorp Vault key-value pairs containing the username, password, or token value. You can use either <strong><a href="#app-role">AppRole-based</a> or <a href="#certificate">certificate authentication</a></strong>.</p>
 <h3 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Before using <a href="#app-role">AppRole-based authentication</a>, you need to define the required <strong>secret ID</strong> as a <a href="/docs/manage/credential-vault#token" title="Store and manage credentials in the credential vault.">token credential</a> stored in the Dynatrace <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a>; do not reuse other tokens as the secret ID. If your vault doesn't contain any tokens you have access to, you'll see a warning.</li>
-<li>Before using <a href="#certificate">certificate authentication</a>, you need to store the required <strong>TLS <a href="/docs/manage/credential-vault#certificate" title="Store and manage credentials in the credential vault.">certificate</a></strong> in the Dynatrace <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a>. If your vault doesn't contain any certificates you have access to, you'll see a warning.</li>
+<li>Before using <a href="#app-role">AppRole-based authentication</a>, you need to define the required <strong>secret ID</strong> as a <a href="../../../../../../common/manage/credential-vault/#token" title="Store and manage credentials in the credential vault.">token credential</a> stored in the Dynatrace credential vault; do not reuse other tokens as the secret ID. If your vault doesn't contain any tokens you have access to, you'll see a warning.</li>
+<li>Before using <a href="#certificate">certificate authentication</a>, you need to store the required <strong>TLS <a href="../../../../../../common/manage/credential-vault/#certificate" title="Store and manage credentials in the credential vault.">certificate</a></strong> in the Dynatrace credential vault. If your vault doesn't contain any certificates you have access to, you'll see a warning.</li>
 </ul>
 <p>We recommend naming such prerequisite tokens and certificates so that they're easily identifiable as companion credentials for synchronization.</p>
 <h3 id="set-up-synchronized-credentials_1">Set up synchronized credentials<a class="headerlink" href="#set-up-synchronized-credentials_1" title="Permanent link">&para;</a></h3>
@@ -5663,10 +3872,10 @@
 <p><img alt="Set up HashiCorp certificate synchronization - UID" src="https://dt-cdn.net/images/cv-hashicorp-certificate-uid-1113-8b177811b5.webp" />
 9. Select a <strong>Location for synchronization</strong>âyou can select any public or private Synthetic location for synchronization monitor execution. You can search for a location by entering the location name in the field.
 10. Optional Provide a <strong>Description</strong>.
-11. Credentials are set to <strong>Owner access only</strong> by default. (Read more about <a href="/docs/manage/credential-vault#owner-shared-public" title="Store and manage credentials in the credential vault.">credential ownership</a>.)
+11. Credentials are set to <strong>Owner access only</strong> by default. (Read more about <a href="../../../../../../common/manage/credential-vault/#owner-shared-public" title="Store and manage credentials in the credential vault.">credential ownership</a>.)
 12. <strong>Save</strong> your credential.</p>
 <p>See also <a href="#best-practices">Best practices</a> and what happens when you <a href="#edit-delete-credential">edit or delete synchronized and companion credentials</a>.</p>
-<p>When you have set up your synchronized credential, Dynatrace automatically creates and executes an <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic" title="Learn how to set up an HTTP monitor to check the performance and availability of your site.">HTTP monitor</a> that synchronizes the credential with HashiCorp Vault.</p>
+<p>When you have set up your synchronized credential, Dynatrace automatically creates and executes an HTTP monitor that synchronizes the credential with HashiCorp Vault.</p>
 <h3 id="hashicorp-vault-approle-synchronization-monitors">HashiCorp Vault AppRole synchronization monitors<a class="headerlink" href="#hashicorp-vault-approle-synchronization-monitors" title="Permanent link">&para;</a></h3>
 <p>The autocreated HTTP monitor contains two requests and is automatically associated with the <a href="#hashicorp-set-up">synchronized credential</a> defined above.</p>
 <p>Username-password credentials</p>
@@ -5679,11 +3888,11 @@
 <li>
 <p>The request URL references the vault URL as an attribute of the <a href="#hashicorp-set-up">synchronized credential</a>; the vault URL is not displayed. The request URL also contains the authentication method <code>approle</code>.</p>
 <p><img alt="HashiCorp AppRole request 1 URL" src="https://dt-cdn.net/images/cvhashiapprolerequest1url-1447-20b5ca2512.png" />
-   * The vault namespace, referenced as an attribute of the synchronized credential, is passed as a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">request header</a>; the vault namespace is not displayed.</p>
+   * The vault namespace, referenced as an attribute of the synchronized credential, is passed as a request header; the vault namespace is not displayed.</p>
 <p><img alt="HashiCorp AppRole request 1 header" src="https://dt-cdn.net/images/cvhashiapprolerequest1requestheader-964-7efd88a7af.png" />
-   * The role ID and secret ID, referenced as attributes of the synchronized credential, are passed as key-value pairs in the <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#request-body" title="Learn about configuring HTTP monitors.">request body</a>; the role ID and secret ID are not displayed.</p>
+   * The role ID and secret ID, referenced as attributes of the synchronized credential, are passed as key-value pairs in the request body; the role ID and secret ID are not displayed.</p>
 <p><img alt="HashiCorp AppRole request 1 body" src="https://dt-cdn.net/images/cvhashiapprolerequest1requestbody-966-5eb6ad4427.png" />
-   * A client token is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the token in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>.</p>
+   * A client token is returned in the response body. A post-execution script saves the token in a global variable.</p>
 <p><img alt="HashiCorp AppRole request 1 post script" src="https://dt-cdn.net/images/cvhashiapprolerequest1postscript-964-48e414d846.png" />
 2. The second request (GET) fetches the username and password values. It also uses <code>api.saveCredential()</code> in s post-execution script to write the fetched values to the <a href="#hashicorp-set-up">synchronized username-password credential</a> defined above.
    Request configuration details</p>
@@ -5691,9 +3900,9 @@
 <li>
 <p>The request URL references the vault URL and the path to credentials as attributes of the synchronized credential; the vault URL and path to credentials are not displayed.</p>
 <p><img alt="HashiCorp AppRole request 2 URL" src="https://dt-cdn.net/images/cvhashiapprolerequest2url-1777-d33a680540.png" />
-   * A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">request header</a> contains the client token retrieved in the first request. The vault namespace (not displayed, but referenced as an attribute of the synchronized credential) is also passed as a request header.</p>
+   * A request header contains the client token retrieved in the first request. The vault namespace (not displayed, but referenced as an attribute of the synchronized credential) is also passed as a request header.</p>
 <p><img alt="HashiCorp AppRole request 2 headers" src="https://dt-cdn.net/images/cvhashiapprolerequest2requestheader-964-739c560649.png" />
-   * The username and password values are returned in the JSON response. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the values in <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variables</a>. It also uses <code>api.saveCredential()</code> to write the retrieved values to the synchronized username-password credential.</p>
+   * The username and password values are returned in the JSON response. A post-execution script saves the values in global variables. It also uses <code>api.saveCredential()</code> to write the retrieved values to the synchronized username-password credential.</p>
 <p><img alt="HashiCorp AppRole request 2 post script" src="https://dt-cdn.net/images/cvhashiapprolerequest2postscript-964-828da84802.png" /></p>
 </li>
 <li>
@@ -5703,11 +3912,11 @@
 <li>
 <p>The request URL references the vault URL as an attribute of the <a href="#hashicorp-set-up">synchronized credential</a>; the vault URL is not displayed. The request URL also contains the authentication method <code>approle</code>.</p>
 <p><img alt="HashiCorp AppRole request 1 URL" src="https://dt-cdn.net/images/cvhashiapprolerequest1url-1447-20b5ca2512.png" />
-   * The vault namespace, referenced as an attribute of the synchronized credential, is passed as a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">request header</a>; the vault namespace is not displayed.</p>
+   * The vault namespace, referenced as an attribute of the synchronized credential, is passed as a request header; the vault namespace is not displayed.</p>
 <p><img alt="HashiCorp AppRole request 1 header" src="https://dt-cdn.net/images/cvhashiapprolerequest1requestheader-964-7efd88a7af.png" />
-   * The role ID and secret ID, referenced as attributes of the synchronized credential, are passed as key-value pairs in the <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#request-body" title="Learn about configuring HTTP monitors.">request body</a>; the role ID and secret ID are not displayed.</p>
+   * The role ID and secret ID, referenced as attributes of the synchronized credential, are passed as key-value pairs in the request body; the role ID and secret ID are not displayed.</p>
 <p><img alt="HashiCorp AppRole request 1 body" src="https://dt-cdn.net/images/cvhashiapprolerequest1requestbody-966-5eb6ad4427.png" />
-   * A client token is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the token in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>.</p>
+   * A client token is returned in the response body. A post-execution script saves the token in a global variable.</p>
 <p><img alt="HashiCorp AppRole request 1 post script" src="https://dt-cdn.net/images/cvhashiapprolerequest1postscript-964-48e414d846.png" />
 2. The second request (GET) fetches the token value. It also uses <code>api.saveToken()</code> in a post-execution script to write the fetched values to the <a href="#hashicorp-set-up">synchronized token credential</a> defined above.
    Request configuration details</p>
@@ -5715,9 +3924,9 @@
 <li>
 <p>The request URL references the vault URL and the path to the credentials as attributes of the synchronized credential; the vault URL and path to credentials are not displayed.</p>
 <p><img alt="HashiCorp AppRole request 2 URL" src="https://dt-cdn.net/images/cvhashiapprolerequest2url-1777-d33a680540.png" />
-   * A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">request header</a> contains the client token retrieved in the first request. The vault namespace (not displayed, but referenced as an attribute of the synchronized credential) is also passed as a request header.</p>
+   * A request header contains the client token retrieved in the first request. The vault namespace (not displayed, but referenced as an attribute of the synchronized credential) is also passed as a request header.</p>
 <p><img alt="HashiCorp AppRole request 2 headers" src="https://dt-cdn.net/images/cvhashiapprolerequest2requestheader-964-739c560649.png" />
-   * The token value is returned in the JSON response. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the value in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>. It also uses <code>api.saveToken()</code> to write the retrieved value to the synchronized token credential.</p>
+   * The token value is returned in the JSON response. A post-execution script saves the value in a global variable. It also uses <code>api.saveToken()</code> to write the retrieved value to the synchronized token credential.</p>
 <p><img alt="HashiCorp AppRole request 2 post-script to save token" src="https://dt-cdn.net/images/cv-hashi-approle-request2-postscript-savetoken-936-a139146cec.png" /></p>
 </li>
 </ol>
@@ -5735,7 +3944,7 @@
 <p><img alt="HashiCorp certificate request 1 URL" src="https://dt-cdn.net/images/cvhashicertificaterequest1url-1448-630ba53192.png" />
    * The request uses the TLS certificate for authentication.</p>
 <p><img alt="HashiCorp certificate request 1 certificate" src="https://dt-cdn.net/images/cvhashicertificaterequest1cert-964-996d51d92a.png" />
-   * A client token is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the token in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>.</p>
+   * A client token is returned in the response body. A post-execution script saves the token in a global variable.</p>
 <p><img alt="HashiCorp certificate request 1 post script" src="https://dt-cdn.net/images/cvhashiapprolerequest1postscript-964-48e414d846.png" />
 2. The second request (GET) fetches the username and password values. It also uses <code>api.saveCredential()</code> in a post-execution script to write the fetched values to the <a href="#hashicorp-set-up">synchronized username-password credential</a> defined above.
    Request configuration details</p>
@@ -5743,9 +3952,9 @@
 <li>
 <p>The request URL references the vault URL and the path to credentials as attributes of the synchronized credential; the vault URL and path to credentials are not displayed.</p>
 <p><img alt="HashiCorp AppRole request 2 URL" src="https://dt-cdn.net/images/cvhashiapprolerequest2url-1777-d33a680540.png" />
-   * A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">request header</a> contains the client token retrieved in the first request.</p>
+   * A request header contains the client token retrieved in the first request.</p>
 <p><img alt="HashiCorp certificate request 2 header" src="https://dt-cdn.net/images/cvhashicertificaterequest2requestheader-964-230e35242e.png" />
-   * The username and password values are returned in the JSON response. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the values in <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variables</a>. It also uses <code>api.saveCredential()</code> to write the retrieved values to the synchronized username-password credential.</p>
+   * The username and password values are returned in the JSON response. A post-execution script saves the values in global variables. It also uses <code>api.saveCredential()</code> to write the retrieved values to the synchronized username-password credential.</p>
 <p><img alt="HashiCorp certificate request 2 post script" src="https://dt-cdn.net/images/cvhashiapprolerequest2postscript-964-828da84802.png" /></p>
 </li>
 <li>
@@ -5757,7 +3966,7 @@
 <p><img alt="HashiCorp certificate request 1 URL" src="https://dt-cdn.net/images/cvhashicertificaterequest1url-1448-630ba53192.png" />
    * The request uses the TLS certificate for authentication.</p>
 <p><img alt="HashiCorp certificate request 1 certificate" src="https://dt-cdn.net/images/cvhashicertificaterequest1cert-964-996d51d92a.png" />
-   * A client token is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the token in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>.</p>
+   * A client token is returned in the response body. A post-execution script saves the token in a global variable.</p>
 <p><img alt="HashiCorp certificate request 1 post script" src="https://dt-cdn.net/images/cvhashiapprolerequest1postscript-964-48e414d846.png" />
 2. The second request (GET) fetches the token value. It also uses <code>api.saveToken()</code> in a post-execution script to write the fetched value to the <a href="#hashicorp-set-up">synchronized token credential</a> defined above.
    Request configuration details</p>
@@ -5765,9 +3974,9 @@
 <li>
 <p>The request URL references the vault URL and the path to the credentials as attributes of the synchronized credential; the vault URL and path to credentials are not displayed.</p>
 <p><img alt="HashiCorp AppRole request 2 URL" src="https://dt-cdn.net/images/cvhashiapprolerequest2url-1777-d33a680540.png" />
-   * A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">request header</a> contains the client token retrieved in the first request.</p>
+   * A request header contains the client token retrieved in the first request.</p>
 <p><img alt="HashiCorp certificate request 2 header" src="https://dt-cdn.net/images/cvhashicertificaterequest2requestheader-964-230e35242e.png" />
-   * The token value is returned in the JSON response. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the value in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>. It also uses <code>api.saveToken()</code> to write the retrieved value to the synchronized token credential.</p>
+   * The token value is returned in the JSON response. A post-execution script saves the value in a global variable. It also uses <code>api.saveToken()</code> to write the retrieved value to the synchronized token credential.</p>
 <p><img alt="HashiCorp certificate request 2 post-script to save token" src="https://dt-cdn.net/images/cv-hashi-approle-request2-postscript-savetoken-936-a139146cec.png" /></p>
 </li>
 </ol>
@@ -5775,8 +3984,8 @@
 <p>Username-password credentials for use in synthetic monitors can be synchronized with CyberArk Vault key-value pairs containing the username or password. You can use either <a href="#cyberark-monitor-uid-authentication">username and password</a> or <a href="#cyberark-monitor-allowed-machines">host-based authentication</a> to CyberArk Vault. Host-based authentication allows you to predefine hosts (<strong>Allowed Machines</strong>) in CyberArk Vault that are allowed to access credentials. These hosts are the <a href="#cyberark-set-up">public or private Synthetic locations you select</a> for synchronization monitor execution and are defined by hostname or IP address. Host-based authentication enables synchronization monitors to bypass fetching an access token from CyberArk Vault.</p>
 <h3 id="prerequisites_2">Prerequisites<a class="headerlink" href="#prerequisites_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Before using <a href="#cyberark-monitor-uid-authentication">username and password authentication</a>, you need to define authentication credentials for CyberArk Vaultâa <a href="/docs/manage/credential-vault#uid-password" title="Store and manage credentials in the credential vault.">username-password pair</a> and, optionally, a <a href="/docs/manage/credential-vault#certificate" title="Store and manage credentials in the credential vault.">certificate credential</a> stored in the Dynatrace <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a>. We recommend naming such prerequisite credentials so that they're easily identifiable as companion credentials for synchronization.</li>
-<li>Before using <a href="#cyberark-monitor-allowed-machines">host-based authentication</a>, you need to define <strong>Allowed Machines</strong> by hostname or IP address in CyberArk Vault Application Details. These are the hosts that are allowed to access the synchronized credentials in CyberArk Vault and are the public or private Synthetic locations you select for synchronization monitor execution. Note that when defining allowed machines in CyberArk Vault, the application ID must be the same as provided when <a href="#cyberak-set-up">you set up a synchronized credential in Dynatrace</a>. Optionally, you can also define a <a href="/docs/manage/credential-vault#certificate" title="Store and manage credentials in the credential vault.">certificate credential</a> stored in the Dynatrace <a href="/docs/manage/credential-vault" title="Store and manage credentials in the credential vault.">credential vault</a> for authentication to CyberArk Vault. If your vault doesn't contain any certificates you have access to, you'll see a warning.</li>
+<li>Before using <a href="#cyberark-monitor-uid-authentication">username and password authentication</a>, you need to define authentication credentials for CyberArk Vaultâa <a href="../../../../../../common/manage/credential-vault/#uid-password" title="Store and manage credentials in the credential vault.">username-password pair</a> and, optionally, a <a href="../../../../../../common/manage/credential-vault/#certificate" title="Store and manage credentials in the credential vault.">certificate credential</a> stored in the Dynatrace credential vault. We recommend naming such prerequisite credentials so that they're easily identifiable as companion credentials for synchronization.</li>
+<li>Before using <a href="#cyberark-monitor-allowed-machines">host-based authentication</a>, you need to define <strong>Allowed Machines</strong> by hostname or IP address in CyberArk Vault Application Details. These are the hosts that are allowed to access the synchronized credentials in CyberArk Vault and are the public or private Synthetic locations you select for synchronization monitor execution. Note that when defining allowed machines in CyberArk Vault, the application ID must be the same as provided when <a href="#cyberak-set-up">you set up a synchronized credential in Dynatrace</a>. Optionally, you can also define a <a href="../../../../../../common/manage/credential-vault/#certificate" title="Store and manage credentials in the credential vault.">certificate credential</a> stored in the Dynatrace credential vault for authentication to CyberArk Vault. If your vault doesn't contain any certificates you have access to, you'll see a warning.</li>
 </ul>
 <p>We recommend naming any prerequisite credentials so that they're easily identifiable as companion credentials for synchronization.</p>
 <h3 id="set-up-synchronized-credentials_2">Set up synchronized credentials<a class="headerlink" href="#set-up-synchronized-credentials_2" title="Permanent link">&para;</a></h3>
@@ -5812,11 +4021,11 @@
 <li><strong>Folder name</strong> OptionalâThe name of the folder where the credentials are stored in CyberArk Vault; the default folder name is <code>Root</code>.</li>
 <li>Select a <strong>Location for synchronization</strong>âyou can select any public or private Synthetic location for synchronization monitor execution. You can search for a location by entering the location name in the field.</li>
 <li>Optional Provide a <strong>Description</strong> for the credential.</li>
-<li>Credentials are set to <strong>Owner access only</strong> by default. (Read more about <a href="/docs/manage/credential-vault#owner-shared-public" title="Store and manage credentials in the credential vault.">credential ownership</a>.)</li>
+<li>Credentials are set to <strong>Owner access only</strong> by default. (Read more about <a href="../../../../../../common/manage/credential-vault/#owner-shared-public" title="Store and manage credentials in the credential vault.">credential ownership</a>.)</li>
 <li><strong>Save</strong> your credential.</li>
 </ul>
 <p>See also <a href="#best-practices">Best practices</a> and what happens when you <a href="#edit-delete-credential">edit or delete synchronized and companion credentials</a>.</p>
-<p>When you have set up your synchronized credential, Dynatrace automatically creates and executes an <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic" title="Learn how to set up an HTTP monitor to check the performance and availability of your site.">HTTP monitor</a> that synchronizes the credential with CyberArk Vault.</p>
+<p>When you have set up your synchronized credential, Dynatrace automatically creates and executes an HTTP monitor that synchronizes the credential with CyberArk Vault.</p>
 <h3 id="cyberark-vault-synchronization-monitors-username-password-authentication">CyberArk Vault synchronization monitors (username-password authentication)<a class="headerlink" href="#cyberark-vault-synchronization-monitors-username-password-authentication" title="Permanent link">&para;</a></h3>
 <p>The autocreated HTTP monitor contains two requests and is automatically associated with the <a href="#cyberark-set-up">synchronized credential</a> defined above.</p>
 <ol>
@@ -5827,11 +4036,11 @@
 <li>
 <p>The request URL references the <strong>Central Credential Provider URL</strong> as an attribute of the <a href="#cyberark-set-up">synchronized credential</a> defined above; the central credential provider URL is not displayed.</p>
 <p><img alt="CyberArk Vault request 1 URL" src="https://dt-cdn.net/images/cv-cyberark-request1-url-1445-f352bc0566.png" />
-   * The <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#request-body" title="Learn about configuring HTTP monitors.">request body</a> references the username-password credential selected for CyberArk Vault authentication (<strong>Username and password for Central Credential Provider</strong>); the authentication username and password are not displayed.</p>
+   * The request body references the username-password credential selected for CyberArk Vault authentication (<strong>Username and password for Central Credential Provider</strong>); the authentication username and password are not displayed.</p>
 <p><img alt="CyberArk Vault request 1 request body" src="https://dt-cdn.net/images/cv-cyberark-request1-request-body-1409-efb85f9433.png" />
    * Additionally, the first request contains any authentication certificate specified in <strong>Certificate used for authentication to CyberArk</strong>.</p>
 <p><img alt="CyberArk Vault request 1 certificate" src="https://dt-cdn.net/images/cv-cyberark-request1-certificate-962-8b7934f165.png" />
-   * A token is returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the token in a <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variable</a>.</p>
+   * A token is returned in the response body. A post-execution script saves the token in a global variable.</p>
 <p><img alt="CyberArk Vault request 1 post script" src="https://dt-cdn.net/images/cv-cyberark-request1-post-script-962-04c94bf083.png" />
 2. The second request (GET) fetches the username and password values from CyberArk Vault. It also uses <code>api.saveCredential()</code> in a post-execution script to write the fetched values to the <a href="#cyberark-set-up">synchronized username-password credential</a> defined above.
    Request configuration details</p>
@@ -5839,9 +4048,9 @@
 <li>
 <p>The request URL references the <strong>Central Credential Provider URL</strong> as an attribute of the synchronized credential; the central credential provider URL is not displayed. The request URL also references (but doesn't display) the <strong>Application ID</strong>, <strong>Safe name</strong>, <strong>Account name</strong>, and <strong>Folder name</strong>.</p>
 <p><img alt="CyberArk Vault request 2 URL" src="https://dt-cdn.net/images/cv-cyberark-request2-url-1879-7911c0b652.png" />
-   * The second request also contains any authentication certificate and the access token retrieved in the first request in the <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers" title="Learn about configuring HTTP monitors.">Authorization header</a>.</p>
+   * The second request also contains any authentication certificate and the access token retrieved in the first request in the Authorization header.</p>
 <p><img alt="CyberArk Vault request 2 token and certificate" src="https://dt-cdn.net/images/cv-cyberark-request2-certificate-auth-header-1269-b10aa9737b.png" />
-   * The username and password values are returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the values in <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variables</a>. It also uses <code>api.saveCredential()</code> to write the retrieved values to the synchronized username-password credential.</p>
+   * The username and password values are returned in the response body. A post-execution script saves the values in global variables. It also uses <code>api.saveCredential()</code> to write the retrieved values to the synchronized username-password credential.</p>
 <p><img alt="CyberArk Vault request 2 post script" src="https://dt-cdn.net/images/cv-cyberark-request2-post-script-999-5b4607154b.png" /></p>
 </li>
 </ol>
@@ -5857,19 +4066,19 @@
 </ul>
 <p><img alt="CyberArk Vault allowed machines authentication certificate" src="https://dt-cdn.net/images/cv-cyberark-allowed-machines-certificate-1415-568a21181f.jpg" /></p>
 <ul>
-<li>The username and password values are returned in the response body. A <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic" title="Learn how to apply pre and post scripts to your requests">post-execution script</a> saves the values in <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables" title="Learn how to apply pre and post scripts to your requests">global variables</a>. It also uses <code>api.saveCredential()</code> to write the retrieved values to the synchronized username-password credential.</li>
+<li>The username and password values are returned in the response body. A post-execution script saves the values in global variables. It also uses <code>api.saveCredential()</code> to write the retrieved values to the synchronized username-password credential.</li>
 </ul>
 <p><img alt="CyberArk Vault allowed machines post script" src="https://dt-cdn.net/images/cv-cyberark-allowed-machines-post-script-1415-5e3ea56704.jpg" /></p>
 <h2 id="best-practices-and-caveats">Best practices and caveats<a class="headerlink" href="#best-practices-and-caveats" title="Permanent link">&para;</a></h2>
-<p>If creating a synchronization monitor manually, be sure to select <strong>Do not store and display request and response bodies and header values in execution details</strong> in any requests that fetch client tokens or credential values from external vaults. Failing to do so will expose the sensitive information when you <strong>Analyze execution details</strong> in <a href="/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic" title="Learn about the Synthetic details page for HTTP monitors.">HTTP monitor details</a>.</p>
+<p>If creating a synchronization monitor manually, be sure to select <strong>Do not store and display request and response bodies and header values in execution details</strong> in any requests that fetch client tokens or credential values from external vaults. Failing to do so will expose the sensitive information when you <strong>Analyze execution details</strong> in HTTP monitor details.</p>
 <ul>
 <li>
-<p>Automatically created synchronization monitors may be edited. To edit an autocreated synchronization monitor, you must have <a href="/docs/manage/credential-vault#owner-shared-public" title="Store and manage credentials in the credential vault.">access to the credentials</a> referenced in the monitor. You might need to make edits if the external vault vendor makes changes. For example, you might need to edit request URLs if Microsoft changes the API version for fetching client tokens from Azure Key Vault.</p>
+<p>Automatically created synchronization monitors may be edited. To edit an autocreated synchronization monitor, you must have <a href="../../../../../../common/manage/credential-vault/#owner-shared-public" title="Store and manage credentials in the credential vault.">access to the credentials</a> referenced in the monitor. You might need to make edits if the external vault vendor makes changes. For example, you might need to edit request URLs if Microsoft changes the API version for fetching client tokens from Azure Key Vault.</p>
 </li>
 <li>
 <p>In general, however, we recommend that you limit your changes to execution frequency or locations.</p>
 </li>
-<li>When changing location, be careful not to pick <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location" title="Learn how to create a private location for synthetic monitoring.">private Synthetic locations</a> that don't have external network access.</li>
+<li>When changing location, be careful not to pick private Synthetic locations that don't have external network access.</li>
 <li>When changing location to a private Synthetic location, ensure that the proxy configuration isn't blocking access to required resources.</li>
 <li>We recommend editing the default names of synchronized credentials, companion credentials (for example, TLS certificates for HashiCorp Vault), and synchronization monitors for easy identification.</li>
 <li>We do not recommend reusing companion credentials (for example, for the HashiCorp secret ID token) required for synchronization monitors in other synthetic monitors for testing purposes.</li>
@@ -5877,12 +4086,12 @@
 <h3 id="edit-or-delete-synchronized-and-companion-credentials">Edit or delete synchronized and companion credentials<a class="headerlink" href="#edit-or-delete-synchronized-and-companion-credentials" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Once created, synchronized credentials are no longer editable by anyone; they can only be <a href="/docs/manage/credential-vault#overwrite-credential" title="Store and manage credentials in the credential vault.">overwritten</a>. In order to overwrite a synchronized credential, you need to provide new synchronization details; do not provide actual username, password, or token values.</p>
+<p>Once created, synchronized credentials are no longer editable by anyone; they can only be <a href="../../../../../../common/manage/credential-vault/#overwrite-credential" title="Store and manage credentials in the credential vault.">overwritten</a>. In order to overwrite a synchronized credential, you need to provide new synchronization details; do not provide actual username, password, or token values.</p>
 </li>
 <li>
 <p>When you overwrite a synchronized credential, Dynatrace-created synchronization monitors are automatically updated.</p>
 </li>
-<li>Be sure to maintain the same <a href="/docs/manage/credential-vault#owner-shared-public" title="Store and manage credentials in the credential vault.">ownership</a> for all credentials within a synchronization monitor (that is, the synchronized credential and companion credentials).</li>
+<li>Be sure to maintain the same <a href="../../../../../../common/manage/credential-vault/#owner-shared-public" title="Store and manage credentials in the credential vault.">ownership</a> for all credentials within a synchronization monitor (that is, the synchronized credential and companion credentials).</li>
 <li>You cannot delete companion credentials referenced by a synchronization monitor unless you disable or delete the synchronization monitor.</li>
 <li>
 <p>If you delete a synchronized credential, its autocreated synchronization monitor is deleted as well.</p>
@@ -5971,7 +4180,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.sections", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
   
@@ -5981,25 +4190,38 @@
       
     
   <script>
-    // Inject version selector into header
-    document.addEventListener('DOMContentLoaded', function() {
-      var headerInner = document.querySelector('.md-header__inner');
-      if (headerInner) {
-        var select = document.createElement('select');
-        select.className = 'docflow-version-select';
-        select.innerHTML = '<option value="managed" selected>Managed</option><option value="saas">SaaS</option>';
-        select.setAttribute('aria-label', 'Version selector');
+    (function() {
+      // --- Reading progress bar (one-time setup) ---
+      var progressBar = document.createElement('div');
+      progressBar.className = 'reading-progress';
+      document.body.appendChild(progressBar);
 
-        // Insert before the search or at the end
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (docHeight > 0) {
+          var progress = (scrollTop / docHeight) * 100;
+          progressBar.style.width = Math.min(progress, 100) + '%';
+        }
+      });
+
+      // --- Managed label in header (one-time setup) ---
+      var headerInner = document.querySelector('.md-header__inner');
+      if (headerInner && !headerInner.querySelector('.docflow-managed-label')) {
+        var label = document.createElement('span');
+        label.className = 'docflow-managed-label';
+        label.textContent = 'Managed';
+        label.setAttribute('title', 'Документация включает разделы Dynatrace Managed');
+
         var searchContainer = headerInner.querySelector('.md-header__source');
         if (searchContainer) {
-          headerInner.insertBefore(select, searchContainer);
+          headerInner.insertBefore(label, searchContainer);
         } else {
-          headerInner.appendChild(select);
+          headerInner.appendChild(label);
         }
       }
 
-      // Keyboard shortcut Ctrl+K for search
+      // --- Keyboard shortcut Ctrl+K for search ---
       document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
           e.preventDefault();
@@ -6014,7 +4236,9 @@
           }
         }
       });
-    });
+
+      // TOC title renaming handled via CSS (see extra style block above)
+    })();
   </script>
 
   </body>

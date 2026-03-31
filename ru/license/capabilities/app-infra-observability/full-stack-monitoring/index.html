@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
       
       
         <meta name="author" content="Yerkebulan Ardabayev">
@@ -21,11 +21,11 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Calculate your consumption of Full-Stack Monitoring (DPS) - Dynatrace — Документация</title>
+        <title>Расчёт потребления Full-Stack Monitoring (DPS) - Dynatrace — Документация</title>
       
     
     
@@ -87,7 +87,10 @@
       flex-shrink: 0;
     }
 
-    /* Search Ctrl+K badge */
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
     .md-search__form::after {
       content: 'Ctrl+K';
       display: none;
@@ -97,11 +100,14 @@
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color);
       font-size: 10px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'JetBrains Mono', monospace;
       color: var(--md-default-fg-color--lighter);
-      margin-right: 0.5rem;
       white-space: nowrap;
       pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
     }
     @media (min-width: 60em) {
       .md-search__form::after {
@@ -109,12 +115,13 @@
       }
     }
 
-    /* Version selector in header */
-    .docflow-version-select {
+    /* Managed label — non-interactive indicator */
+    .docflow-managed-label {
       display: none;
       align-items: center;
+      gap: 0.375rem;
       margin-left: 0.5rem;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color--lighter);
@@ -122,28 +129,34 @@
       font-size: 0.75rem;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237e7c98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.4rem center;
-      padding-right: 1.5rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .docflow-managed-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--md-accent-fg-color);
+      flex-shrink: 0;
     }
     @media (min-width: 60em) {
-      .docflow-version-select {
+      .docflow-managed-label {
         display: flex;
       }
     }
-    .docflow-version-select:hover {
-      border-color: var(--md-primary-fg-color--light);
-      color: var(--md-default-fg-color);
-    }
-    .docflow-version-select:focus {
-      outline: none;
-      border-color: var(--md-primary-fg-color);
-      box-shadow: 0 0 0 3px var(--docflow-glow-primary);
+
+    /* Reading progress bar */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #14b8a6, #7c3aed);
+      z-index: 1001;
+      transition: width 0.05s linear;
+      pointer-events: none;
     }
   </style>
 
@@ -166,7 +179,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#calculate-your-consumption-of-full-stack-monitoring-dps" class="md-skip">
+        <a href="#-" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -181,7 +194,7 @@
 
   
 
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
     <a href="../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -203,7 +216,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Calculate your consumption of Full-Stack Monitoring (DPS)
+              Расчёт потребления Full-Stack Monitoring (DPS)
             
           </span>
         </div>
@@ -216,20 +229,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -303,375 +316,14 @@
     
   </nav>
   
-    
-      
-<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../.." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Главная
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Начало работы
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../../managed/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Managed
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../platform/grail/dynatrace-grail/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Платформа
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../observe/infrastructure-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Наблюдаемость
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Dynatrace Intelligence
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Анализ и автоматизация
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../ingest-from/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Источники данных
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../deliver/configuration-as-code/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Deliver
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../secure/threat-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Безопасность
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../manage/hub/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Управление
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../dynatrace-api/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  API
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../whats-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Что нового
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../../ai/groq/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  AI Помощник
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
 </header>
     
 
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -685,10 +337,8 @@
                     
 
 
-  
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -765,16 +415,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -796,7 +450,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -829,7 +483,7 @@
   <span class="md-ellipsis">
     
   
-    Начало работы
+    🚀 Быстрый старт
   
 
     
@@ -967,16 +621,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -998,7 +656,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1227,7 +885,7 @@
   <span class="md-ellipsis">
     
   
-    Лицензия
+    Лицензия Managed
   
 
     
@@ -1269,19 +927,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1327,20 +989,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../platform/grail/dynatrace-grail/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1354,78 +1017,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Grail
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../platform/grail/dynatrace-grail/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Что такое Grail
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../platform/grail/dynatrace-query-language/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Язык запросов DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1544,19 +1141,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1610,20 +1211,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../observe/infrastructure-observability/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1637,190 +1239,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Инфраструктура
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Хосты и операции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Облачный мониторинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes Classic
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Базы данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1844,20 +1268,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1871,78 +1296,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Приложения
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Распределённая трассировка
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/application-observability/services/services-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Сервисы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1966,20 +1325,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../observe/digital-experience/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1993,78 +1353,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Цифровой опыт
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/digital-experience/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Синтетическое приложение
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2131,19 +1425,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2203,20 +1501,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2230,274 +1529,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Обнаружение аномалий
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Настройка чувствительности
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение Anomaly Detection
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфигурация
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Адаптивные пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Многомерный бейзлайн
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    События метрик
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Статические пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Оптимизация DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2527,20 +1564,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/copilot/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2554,162 +1592,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Davis Copilot
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dynatrace Assist
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфиденциальность
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы на естественном языке
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2763,20 +1651,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2790,106 +1679,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Анализ первопричин
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Анализ событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2910,7 +1705,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграции
+    Интеграции Davis AI
   
 
     
@@ -2941,20 +1736,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2968,78 +1764,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Справочник
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AI модели
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лимиты
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3080,19 +1810,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -3144,20 +1878,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3171,162 +1906,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Дашборды и ноутбуки
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Дашборды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Версии документов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Визуализации
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3354,20 +1939,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../analyze-explore-automate/logs/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3381,134 +1967,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Логи
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/logs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Log Analytics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение журналов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Фильтры
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3681,19 +2145,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -3736,7 +2204,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
+    Обзор источников данных
   
 
     
@@ -3838,19 +2306,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -3898,20 +2370,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../deliver/configuration-as-code/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3925,194 +2398,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Configuration as Code
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
       
-        
+        <span class="md-nav__icon md-icon"></span>
       
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Monaco
+    </a>
   
 
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Monaco
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4136,150 +2427,21 @@
     
     
       
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Terraform
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Terraform
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CLI команды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
         
-      
         
       
     
-    
-    
-      
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
+  
+  
+    <a href="../../../../deliver/service-level-objectives/" class="md-nav__link">
       
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -4293,78 +2455,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    SLO
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/service-level-objectives/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/service-level-objectives/create-slo/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Создание SLO
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4388,20 +2484,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../deliver/site-reliability-guardian/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4415,78 +2512,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Site Reliability Guardian
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/site-reliability-guardian/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Структура событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4538,20 +2569,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../../deliver/release-monitoring/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4565,78 +2597,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Мониторинг релизов
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/release-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Мониторинг релизов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4695,19 +2661,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -4778,7 +2748,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграция
+    Приём событий безопасности
   
 
     
@@ -4816,19 +2786,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
             
   
   
@@ -4910,20 +2884,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4937,190 +2912,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Лицензирование
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лицензия
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Возможности DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../billing-reports/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Биллинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../budget-alerts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Бюджетные оповещения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license-lifecycle/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Жизненный цикл
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dps-permissions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Разрешения DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -5151,19 +2948,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
             
   
   
@@ -5272,23 +3073,33 @@
       
         
       
-    
-    
-    
+        
       
+        
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
         
           
-          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
             
   
   
@@ -5331,35 +3142,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../whats-new/saas/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SaaS
+    Все обновления
   
 
     
@@ -5387,7 +3170,7 @@
   <span class="md-ellipsis">
     
   
-    OneAgent
+    Обновления OneAgent
   
 
     
@@ -5416,6 +3199,225 @@
     
   
     ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/dynatrace-operator/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Operator
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/edgeconnect/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EdgeConnect
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/technology/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Технологии
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../whats-new/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Новые статьи
   
 
     
@@ -5480,8 +3482,253 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ГиБ-часы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ГиБ-часы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Гранулярность тарификации для потребления ГиБ-часов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Расчёт ГиБ-часов для физических хостов и виртуальных машин (ВМ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-application-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Расчёт ГиБ-часов для мониторинга контейнеров application-only
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Расчёт ГиБ-часов для мониторинга контейнеров application-only">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Расчёты объёма памяти
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Метрики
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Метрики">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример расчёта включённых точек данных метрик
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-stack-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как потребляются точки данных метрик в режиме Full-Stack Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Распределённые трассировки
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Распределённые трассировки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример расчёта пикового объёма трассировок/минуту
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Включённое и расширенное хранение трассировок
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-stack-monitoring_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Расширенный приём трассировок для Full-Stack Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Профилирование CPU, памяти и потоков
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Поддерживаемые варианты развёртывания
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Детали потребления: Full-Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Детали потребления: Full-Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-full-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Мониторинг потребления ГиБ-часов памяти для хостов с Full-Stack мониторингом
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-full-stack_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Мониторинг потребления ГиБ-часов памяти для контейнеров с Full-Stack мониторингом
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-stack_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Мониторинг потребления метрик для хостов с Full-Stack мониторингом
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Связанные темы
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -5507,134 +3754,132 @@
 
 
 
-<h1 id="calculate-your-consumption-of-full-stack-monitoring-dps">Calculate your consumption of Full-Stack Monitoring (DPS)<a class="headerlink" href="#calculate-your-consumption-of-full-stack-monitoring-dps" title="Permanent link">&para;</a></h1>
-<h1 id="calculate-your-consumption-of-full-stack-monitoring-dps_1">Calculate your consumption of Full-Stack Monitoring (DPS)<a class="headerlink" href="#calculate-your-consumption-of-full-stack-monitoring-dps_1" title="Permanent link">&para;</a></h1>
+  <h1>Расчёт потребления Full-Stack Monitoring (DPS)</h1>
+
 <ul>
-<li>Latest Dynatrace</li>
-<li>Explanation</li>
-<li>5-min read</li>
-<li>Updated on Jan 26, 2026</li>
+<li>Актуальная версия Dynatrace</li>
+<li>Пояснение</li>
 </ul>
-<p>Full-Stack Monitoring for hosts and containers offers comprehensive application performance monitoring.
-Application performance monitoring includes: distributed tracing, code-level visibility, CPU profiling, memory profiling, and deep process monitoring for hosts and containers.</p>
+<p>Full-Stack Monitoring для хостов и контейнеров предлагает комплексный мониторинг производительности приложений.
+Мониторинг производительности приложений включает: распределённую трассировку, видимость на уровне кода, профилирование CPU, профилирование памяти и глубокий мониторинг процессов для хостов и контейнеров.</p>
 <ul>
 <li>
-<p>Host-based Full-Stack Monitoring:</p>
+<p>Full-Stack Monitoring на основе хостов:</p>
 </li>
 <li>
-<p>Consumption is based on host memory, see <a href="#gib-hour">GiB-hours</a>.</p>
+<p>Потребление основано на памяти хоста, см. <a href="#gib-hour">ГиБ-часы</a>.</p>
 </li>
 <li>
-<p>Additionally offers all features of <a href="/docs/license/capabilities/app-infra-observability/infrastructure-monitoring" title="Learn how your consumption of the Dynatrace Infrastructure Monitoring DPS capability is billed and charged.">Infrastructure Monitoring</a>.</p>
+<p>Дополнительно предлагает все функции Infrastructure Monitoring.</p>
 </li>
 <li>
-<p>Additionally offers all features of <a href="/docs/license/capabilities/container-monitoring#kubernetes-monitoring" title="Learn about the different container monitoring modes that are available with a Dynatrace Platform Subscription (DPS) license.">Kubernetes Platform Monitoring</a><a href="#fn-1-1-def">1</a> <a href="#fn-1-2-def">2</a>.</p>
+<p>Дополнительно предлагает все функции Kubernetes Platform Monitoring.")<a href="#fn-1-1-def">1</a> <a href="#fn-1-2-def">2</a>.</p>
 </li>
 <li>
-<p>Dynatrace Extensions can be enabled on hosts with host-based Full-Stack Monitoring and may consume <a href="#full-stack-metrics">Full-Stack custom metric data points</a> and <a href="/docs/license/capabilities/log-analytics" title="Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.">Log Analytics</a>.</p>
+<p>Расширения Dynatrace Extensions могут быть включены на хостах с Full-Stack Monitoring на основе хостов и могут потреблять <a href="#full-stack-metrics">пользовательские точки данных метрик Full-Stack</a> и Log Analytics.</p>
 </li>
-<li>Container-based application-only Full-Stack Monitoring: Consumption is based on container memory, see <a href="#app-only-gib-hour">GiB-hour calculation for application-only container monitoring</a><a href="#fn-1-3-def">3</a>.</li>
+<li>Full-Stack Monitoring на основе контейнеров (application-only): Потребление основано на памяти контейнера, см. <a href="#app-only-gib-hour">Расчёт ГиБ-часов для мониторинга контейнеров application-only</a><a href="#fn-1-3-def">3</a>.</li>
 </ul>
-<p>To learn more about supported platforms, see <a href="/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix" title="Learn which capabilities are supported by OneAgent on different operating systems and platforms.">OneAgent platform and capability support matrix</a>.</p>
+<p>Чтобы узнать больше о поддерживаемых платформах, см. Матрица поддержки платформ и возможностей OneAgent.</p>
 <p>1</p>
-<p>Host-based Full-Stack monitoring includes Kubernetes Platform Monitoring for all pods running on Full-Stack monitored hosts.
-Pods running on non-Full-Stack monitored hosts and pods stuck in Pending are not included in host-based Full-Stack monitoring.
-These two types of pods are charged per pod-hour as described in <a href="/docs/license/capabilities/container-monitoring/kubernetes-platform-monitoring#how-consumption-is-calculated-pod-hour" title="Learn how your consumption of the Dynatrace Kubernetes Platform Monitoring DPS capability is billed and charged.">Kubernetes Platform Monitoring</a>.</p>
+<p>Full-Stack Monitoring на основе хостов включает Kubernetes Platform Monitoring для всех подов, работающих на хостах с Full-Stack мониторингом.
+Поды, работающие на хостах без Full-Stack мониторинга, и поды в состоянии Pending не включены в Full-Stack Monitoring на основе хостов.
+Эти два типа подов тарифицируются за под-час, как описано в <a href="../../container-monitoring/kubernetes-platform-monitoring/#how-consumption-is-calculated-pod-hour" title="Узнайте, как рассчитывается потребление возможности Dynatrace Kubernetes Platform Monitoring DPS.">Kubernetes Platform Monitoring</a>.</p>
 <p>2</p>
-<p>For Kubernetes Platform Monitoring to be included with host-based Full-Stack monitoring, you must have OneAgent version 1.301+.
-If you have OneAgent version 1.300 or earlier, Kubernetes Platform Monitoring will still be available, but pod-hour charges will apply as described in <a href="/docs/license/capabilities/container-monitoring/kubernetes-platform-monitoring#how-consumption-is-calculated-pod-hour" title="Learn how your consumption of the Dynatrace Kubernetes Platform Monitoring DPS capability is billed and charged.">Kubernetes Platform Monitoring</a>.</p>
+<p>Для включения Kubernetes Platform Monitoring в Full-Stack Monitoring на основе хостов необходим OneAgent версии 1.301+.
+Если у вас OneAgent версии 1.300 или более ранней, Kubernetes Platform Monitoring будет по-прежнему доступен, но будут применяться тарифы за под-час, как описано в <a href="../../container-monitoring/kubernetes-platform-monitoring/#how-consumption-is-calculated-pod-hour" title="Узнайте, как рассчитывается потребление возможности Dynatrace Kubernetes Platform Monitoring DPS.">Kubernetes Platform Monitoring</a>.</p>
 <p>3</p>
-<p>Container-based application-only Full-Stack Monitoring does not include Infrastructure Monitoring or Kubernetes Platform Monitoring.</p>
-<h2 id="gib-hours">GiB-hours<a class="headerlink" href="#gib-hours" title="Permanent link">&para;</a></h2>
-<p>Dynatrace uses GiB-hours (referred to as "memory-gibibyte-hours" in your rate card) as the unit of measure for calculating your organization's consumption of host monitoring in Full-Stack Monitoring mode.
-The more memory that a host has, and the longer that the host is monitored, the higher the number of GiB-hours that the host consumes.</p>
-<p>The advantage of the GiB-hour approach to monitoring consumption is its simplicity and transparency.
-Technology-specific factors (for example, the number of JVMs or the number of microservices hosted on a server) don't affect consumption.
-It doesn't matter if a host runs Kubernetes or other containerized applications, .NET-based applications, Java-based applications, or something else.
-You can have 10 or 1,000 JVMs; such factors don't affect an environment's monitoring consumption.</p>
-<h3 id="billing-granularity-for-gib-hour-consumption">Billing granularity for GiB-hour consumption<a class="headerlink" href="#billing-granularity-for-gib-hour-consumption" title="Permanent link">&para;</a></h3>
-<p>Dynatrace is built for dynamic cloud-native environments where hosts and services are rapidly spun up and destroyed.
-Therefore, billing granularity for GiB-hour consumption is calculated in 15-minute intervals.
-When a host or container is monitored for fewer than 15 minutes in an interval, GiB-hour consumption is rounded up to 15 minutes before consumption is calculated.</p>
-<h3 id="gib-hour-calculation-for-physical-hosts-and-virtual-machines-vms">GiB-hour calculation for physical hosts and virtual machines (VMs)<a class="headerlink" href="#gib-hour-calculation-for-physical-hosts-and-virtual-machines-vms" title="Permanent link">&para;</a></h3>
-<p>Each installed instance of Dynatrace OneAgent running on an operating system instance (deployed on, for example, a physical or virtual machine) in Full-Stack Monitoring mode consumes GiB-hours based on the monitored host's physical or virtual RAM, calculated in 15-minute intervals (see the diagram example below).</p>
-<p>The RAM of each VM or host is rounded up to the next multiple of 0.25 GiB (which equates to 256 MiB) before monitoring consumption is calculated.
-A 4 GiB minimum is applied to GiB-hour consumption for physical and virtual hosts.
-For example, a host with 8.3 GiB memory is counted as an 8.5 GiB host, being the next multiple of 0.25 GiB, while a host with 2 GiB memory is counted as a 4 GiB host (no rounding needed, but application of the 4 GiB minimum).</p>
-<h3 id="gib-hour-calculation-for-application-only-container-monitoring">GiB-hour calculation for application-only container monitoring<a class="headerlink" href="#gib-hour-calculation-for-application-only-container-monitoring" title="Permanent link">&para;</a></h3>
-<p>In cloud-native environments, services and hosts are often short-lived.
-Therefore, calculating monitoring consumption in 15-minute time intervals, rather than full hours, better reflects actual usage.
-Containers, which are an essential mechanism in cloud-native environments, typically use less memory than hosts.
-Therefore, the minimum memory threshold for containers is 256 MiB, rather than 4 GiB, the minimum memory threshold for hosts.</p>
-<p>The same rounding as for hosts, to the next multiple of 0.25 GiB, also applies to containers.
-For example, a container with 780 MiB memory is counted as a 1 GiB container (780 MiB, which equals 0.78 GiB, being rounded up to the next multiple of 0.25 GiB).</p>
-<p>The figure below illustrates how memory is counted for GiB-hour consumption calculations at 15-minute intervals.
-Each interval is divided by four in order to reach the GiB-hour consumption unit of measure.</p>
-<p><img alt="Full-Stack consumption" src="https://dt-cdn.net/images/fullstack-monitoring-consumption-5584-2d3c737d8b.jpg" /></p>
-<h4 id="memory-size-calculations">Memory-size calculations<a class="headerlink" href="#memory-size-calculations" title="Permanent link">&para;</a></h4>
-<p>Memory-size calculations for containers monitored in an application-only approach are based on either:</p>
+<p>Full-Stack Monitoring на основе контейнеров (application-only) не включает Infrastructure Monitoring или Kubernetes Platform Monitoring.</p>
+<h2 id="-">ГиБ-часы<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
+<p>Dynatrace использует ГиБ-часы (упоминаемые как «memory-gibibyte-hours» в вашем тарифном плане) в качестве единицы измерения для расчёта потребления мониторинга хостов вашей организацией в режиме Full-Stack Monitoring.
+Чем больше памяти у хоста и чем дольше хост отслеживается, тем выше количество ГиБ-часов, потребляемых хостом.</p>
+<p>Преимущество подхода ГиБ-часов к потреблению мониторинга — его простота и прозрачность.
+Технологически-специфические факторы (например, количество JVM или количество микросервисов, размещённых на сервере) не влияют на потребление.
+Не имеет значения, работает ли хост под управлением Kubernetes или других контейнеризованных приложений, приложений на основе .NET, Java или чего-то другого.
+У вас может быть 10 или 1000 JVM; такие факторы не влияют на потребление мониторинга среды.</p>
+<h3 id="-_1">Гранулярность тарификации для потребления ГиБ-часов<a class="headerlink" href="#-_1" title="Permanent link">&para;</a></h3>
+<p>Dynatrace создан для динамических облачных сред, где хосты и сервисы быстро создаются и уничтожаются.
+Поэтому гранулярность тарификации для потребления ГиБ-часов рассчитывается 15-минутными интервалами.
+Когда хост или контейнер отслеживается менее 15 минут в интервале, потребление ГиБ-часов округляется до 15 минут перед расчётом потребления.</p>
+<h3 id="-_2">Расчёт ГиБ-часов для физических хостов и виртуальных машин (ВМ)<a class="headerlink" href="#-_2" title="Permanent link">&para;</a></h3>
+<p>Каждый установленный экземпляр Dynatrace OneAgent, работающий на экземпляре операционной системы (развёрнутый, например, на физической или виртуальной машине) в режиме Full-Stack Monitoring, потребляет ГиБ-часы на основе физической или виртуальной оперативной памяти отслеживаемого хоста, рассчитанные 15-минутными интервалами (см. пример диаграммы ниже).</p>
+<p>Оперативная память каждой ВМ или хоста округляется до следующего кратного 0,25 ГиБ (что равно 256 МиБ) перед расчётом потребления мониторинга.
+К потреблению ГиБ-часов для физических и виртуальных хостов применяется минимум 4 ГиБ.
+Например, хост с 8,3 ГиБ памяти считается как хост с 8,5 ГиБ, что является следующим кратным 0,25 ГиБ, а хост с 2 ГиБ памяти считается как хост с 4 ГиБ (округление не требуется, но применяется минимум 4 ГиБ).</p>
+<h3 id="-application-only">Расчёт ГиБ-часов для мониторинга контейнеров application-only<a class="headerlink" href="#-application-only" title="Permanent link">&para;</a></h3>
+<p>В облачных средах сервисы и хосты часто являются кратковременными.
+Поэтому расчёт потребления мониторинга 15-минутными интервалами, а не полными часами, лучше отражает фактическое использование.
+Контейнеры, являющиеся важным механизмом в облачных средах, обычно используют меньше памяти, чем хосты.
+Поэтому минимальный порог памяти для контейнеров составляет 256 МиБ, а не 4 ГиБ — минимальный порог памяти для хостов.</p>
+<p>Такое же округление, как и для хостов, до следующего кратного 0,25 ГиБ, также применяется к контейнерам.
+Например, контейнер с 780 МиБ памяти считается как контейнер с 1 ГиБ (780 МиБ, что равно 0,78 ГиБ, округляется до следующего кратного 0,25 ГиБ).</p>
+<p>На рисунке ниже показано, как память учитывается при расчётах потребления ГиБ-часов с 15-минутными интервалами.
+Каждый интервал делится на четыре для получения единицы измерения потребления ГиБ-часов.</p>
+<p><img alt="Потребление Full-Stack" src="https://dt-cdn.net/images/fullstack-monitoring-consumption-5584-2d3c737d8b.jpg" /></p>
+<h4 id="_1">Расчёты объёма памяти<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>Расчёты объёма памяти для контейнеров, отслеживаемых в режиме application-only, основаны на одном из следующих параметров:</p>
 <ul>
 <li>
-<p>The container's used memory.</p>
+<p>Используемая память контейнера.</p>
 </li>
 <li>
-<p>OneAgent version 1.275+ (for Kubernetes containers)</p>
+<p>OneAgent версии 1.275+ (для контейнеров Kubernetes)</p>
 </li>
-<li>OneAgent version 1.297+ (for serverless containers)</li>
+<li>OneAgent версии 1.297+ (для бессерверных контейнеров)</li>
 <li>
-<p>Container-defined memory limits.
-  If no memory limit is set, the memory of the underlying virtual machine is used instead.</p>
+<p>Определённые контейнером лимиты памяти.
+  Если лимит памяти не установлен, вместо него используется память базовой виртуальной машины.</p>
 </li>
 <li>
-<p>OneAgent version &lt;1.275 (for Kubernetes containers)</p>
+<p>OneAgent версии &lt;1.275 (для контейнеров Kubernetes)</p>
 </li>
-<li>OneAgent version &lt;1.297 (for serverless containers)</li>
+<li>OneAgent версии &lt;1.297 (для бессерверных контейнеров)</li>
 </ul>
-<p><a href="/docs/observe/infrastructure-observability/process-groups/configuration/cloud-app-and-workload-detection#automatic-container-detection" title="Detect cloud applications and workloads, and define rules to merge similar Kubernetes workloads into process groups.">Automatic container detection</a> needs to be enabled for existing tenants.</p>
-<p>Certain monitoring scenarios have their own calculations for GiB-hour consumption, as described in the table below.</p>
+<p>Для существующих тенантов необходимо включить автоматическое обнаружение контейнеров.</p>
+<p>Определённые сценарии мониторинга имеют собственные расчёты потребления ГиБ-часов, как описано в таблице ниже.</p>
 <table>
 <thead>
 <tr>
-<th>Scenario</th>
-<th>Description</th>
+<th>Сценарий</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Azure App Services (running on the App Service (dedicated) plan for Windows)</td>
-<td>Consumption is based on the number and memory of the plan's instances. It does not matter how many applications run on the instances.  The minimum billed memory is 256 MiB (instead of 4 GiB).</td>
+<td>Azure App Services (работающие на плане App Service (dedicated) для Windows)</td>
+<td>Потребление основано на количестве и памяти экземпляров плана. Не имеет значения, сколько приложений работает на экземплярах.  Минимальная тарифицируемая память составляет 256 МиБ (вместо 4 ГиБ).</td>
 </tr>
 <tr>
-<td>Azure App Service (running on Linux OS or Linux containers) OneAgent version 1.297+</td>
-<td>If automatic container detection is enabled: consumption is based on the used memory of the container.  If automatic container detection is not enabled: consumption is based on the memory of the plan's instance, multiplied by the number of running containers.</td>
+<td>Azure App Service (работающий на Linux OS или контейнерах Linux) OneAgent версии 1.297+</td>
+<td>Если автоматическое обнаружение контейнеров включено: потребление основано на используемой памяти контейнера.  Если автоматическое обнаружение контейнеров не включено: потребление основано на памяти экземпляра плана, умноженной на количество работающих контейнеров.</td>
 </tr>
 <tr>
-<td>Azure App Service (running on Linux OS or Linux containers) OneAgent version &lt;1.297</td>
-<td>Consumption is based on the memory of the plan's instance, multiplied by the number of running containers, regardless if automatic container detection is enabled or not.</td>
+<td>Azure App Service (работающий на Linux OS или контейнерах Linux) OneAgent версии &lt;1.297</td>
+<td>Потребление основано на памяти экземпляра плана, умноженной на количество работающих контейнеров, независимо от того, включено ли автоматическое обнаружение контейнеров или нет.</td>
 </tr>
 <tr>
 <td>Oracle Solaris Zones</td>
-<td>Solaris Zones are counted as hosts.</td>
+<td>Solaris Zones считаются как хосты.</td>
 </tr>
 <tr>
-<td>Monitored containers that are not detected as containers</td>
-<td>These containers are counted as hosts.</td>
+<td>Отслеживаемые контейнеры, не обнаруженные как контейнеры</td>
+<td>Эти контейнеры считаются как хосты.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h2>
-<p>This section assumes that you have followed the Dynatrace-recommended deployment options, especially regarding telemetry enrichment.
-If you implement a custom deployment, the charging of included metrics may still work as describedâbut this is not guaranteed by Dynatrace.</p>
-<p>For more information, see <a href="#deployment-options">Supported deployment options</a>.</p>
-<p>Full-Stack Monitoring includes all Infrastructure Monitoring metrics, application performance monitoring metrics, and <a href="/docs/license/capabilities/metrics/dps-metrics-ingest#billable-and-non-billable-metrics" title="Learn how your consumption of the Metrics - Ingest &amp; Process DPS capability is billed and charged.">other built-in metrics</a>.
-These metrics are included and never produce any charge.</p>
-<p>Full-Stack Monitoring also includes a defined amount of custom metric data points.
-Every contributing GiB of host or application memory adds 900 custom metric data points in each 15-minute interval.
-Included metric data points that are not consumed within the 15-minute interval in which they are granted do not roll over to subsequent intervals.
-Your environment's included metric data points are applied automatically to metrics that originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.</p>
-<p>All metric keys starting with <code>dt.service.*</code> are for <a href="/docs/observe/application-observability/services" title="Learn how to monitor and analyze your services, define and use request attributes, and more.">service monitoring</a> and consume included Full-Stack metric data points if the span data itself originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.
-If the span data originates at any other source, these metrics are charged as <a href="/docs/license/capabilities/metrics" title="Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.">Metrics powered by Grail</a>.
-Such metric keys include, for example:</p>
+<h2 id="_2">Метрики<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>В этом разделе предполагается, что вы следовали рекомендованным Dynatrace вариантам развёртывания, особенно в отношении обогащения телеметрии.
+Если вы реализуете пользовательское развёртывание, тарификация включённых метрик может по-прежнему работать как описано, но это не гарантируется Dynatrace.</p>
+<p>Для получения дополнительной информации см. <a href="#deployment-options">Поддерживаемые варианты развёртывания</a>.</p>
+<p>Full-Stack Monitoring включает все метрики Infrastructure Monitoring, метрики мониторинга производительности приложений и другие встроенные метрики.
+Эти метрики включены и никогда не создают дополнительных расходов.</p>
+<p>Full-Stack Monitoring также включает определённый объём пользовательских точек данных метрик.
+Каждый вносящий вклад ГиБ памяти хоста или приложения добавляет 900 пользовательских точек данных метрик в каждом 15-минутном интервале.
+Включённые точки данных метрик, не использованные в 15-минутном интервале, в котором они были предоставлены, не переносятся на последующие интервалы.
+Включённые точки данных метрик вашей среды автоматически применяются к метрикам, которые исходят от хостов и контейнеров, отслеживаемых OneAgent в режиме Full-Stack Monitoring.</p>
+<p>Все ключи метрик, начинающиеся с <code>dt.service.*</code>, предназначены для мониторинга сервисов и потребляют включённые точки данных метрик Full-Stack, если данные спанов исходят от хостов и контейнеров, отслеживаемых OneAgent в режиме Full-Stack Monitoring.
+Если данные спанов исходят из другого источника, эти метрики тарифицируются как Metrics powered by Grail.
+Такие ключи метрик включают, например:</p>
 <ul>
 <li><code>dt.service.request.count</code></li>
 <li><code>dt.service.request.failure_count</code></li>
@@ -5647,219 +3892,219 @@ Such metric keys include, for example:</p>
 <li><code>dt.service.messaging.publish.count</code></li>
 <li><code>dt.service.messaging.receive.count</code></li>
 </ul>
-<p>Metric data points that exceed your included volume are charged as:</p>
+<p>Точки данных метрик, превышающие ваш включённый объём, тарифицируются как:</p>
 <ul>
-<li>If Metrics powered by Grail exists on your rate card, these are charged as <a href="/docs/license/capabilities/metrics" title="Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.">Metrics powered by Grail</a>.</li>
-<li>If Metrics powered by Grail does not exist on your rate card, these are charged as <a href="/docs/license/capabilities/platform-extensions/custom-metrics-classic" title="Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.">Custom Metrics Classic</a>.</li>
+<li>Если Metrics powered by Grail есть в вашем тарифном плане, они тарифицируются как Metrics powered by Grail.</li>
+<li>Если Metrics powered by Grail нет в вашем тарифном плане, они тарифицируются как Custom Metrics Classic.</li>
 </ul>
-<p>Your environment's included metric data points are applied automatically to metrics that originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.
-This applies to custom metrics as described in the table below.</p>
+<p>Включённые точки данных метрик вашей среды автоматически применяются к метрикам, которые исходят от хостов и контейнеров, отслеживаемых OneAgent в режиме Full-Stack Monitoring.
+Это применяется к пользовательским метрикам, как описано в таблице ниже.</p>
 <p>1</p>
-<p>Metric data points originating from Application Observability are included only if <a href="/docs/license/capabilities/metrics" title="Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.">Metrics powered by Grail overview (DPS)</a> exists on your rate card.</p>
+<p>Точки данных метрик, исходящие от Application Observability, включены только если Обзор Metrics powered by Grail (DPS) есть в вашем тарифном плане.</p>
 <p>2</p>
-<p>Metric data points sent via the Dynatrace Collector are included only if <a href="/docs/license/capabilities/metrics" title="Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.">Metrics powered by Grail overview (DPS)</a> exists on your rate card.</p>
+<p>Точки данных метрик, отправленные через Dynatrace Collector, включены только если Обзор Metrics powered by Grail (DPS) есть в вашем тарифном плане.</p>
 <p>3</p>
-<p>Metric data points sent via the OpenTelemetry Collector are included only if <a href="/docs/license/capabilities/metrics" title="Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.">Metrics powered by Grail overview (DPS)</a> exists on your rate card and the OpenTelemetry Collector has been configured as described in <a href="/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich" title="Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.">Enrich OTLP requests with Kubernetes data</a>.</p>
-<h3 id="included-metric-data-point-calculation-example">Included metric data point calculation example<a class="headerlink" href="#included-metric-data-point-calculation-example" title="Permanent link">&para;</a></h3>
-<p>Considering the example shown in Figure 1, here are the calculations for the included metric data point volumes for each of the four 15-minute intervals, assuming a volume of 900 included metric data points for each 15-minute interval.</p>
+<p>Точки данных метрик, отправленные через OpenTelemetry Collector, включены только если Обзор Metrics powered by Grail (DPS) есть в вашем тарифном плане и OpenTelemetry Collector настроен, как описано в Обогащение OTLP-запросов данными Kubernetes.</p>
+<h3 id="_3">Пример расчёта включённых точек данных метрик<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Рассматривая пример, показанный на рисунке 1, ниже приведены расчёты включённых объёмов точек данных метрик для каждого из четырёх 15-минутных интервалов, при условии объёма в 900 включённых точек данных метрик для каждого 15-минутного интервала.</p>
 <ul>
-<li>First 15-minute interval: <code>900 (included metric data points) Ã 13.5 (GiB memory) = 12,150 included metric data points</code></li>
-<li>Second 15-minute interval: <code>900 (included metric data points) Ã 9.5 (GiB memory) = 8,550 included metric data points</code></li>
-<li>Third 15-minute interval: <code>900 (included metric data points) Ã 8.75 (GiB memory) = 7,875 included metric data points</code></li>
-<li>Fourth 15-minute interval: <code>900 (included metric data points) Ã 0.25 (GiB memory) = 225 included metric data points</code></li>
+<li>Первый 15-минутный интервал: <code>900 (включённых точек данных метрик) x 13,5 (ГиБ памяти) = 12 150 включённых точек данных метрик</code></li>
+<li>Второй 15-минутный интервал: <code>900 (включённых точек данных метрик) x 9,5 (ГиБ памяти) = 8 550 включённых точек данных метрик</code></li>
+<li>Третий 15-минутный интервал: <code>900 (включённых точек данных метрик) x 8,75 (ГиБ памяти) = 7 875 включённых точек данных метрик</code></li>
+<li>Четвёртый 15-минутный интервал: <code>900 (включённых точек данных метрик) x 0,25 (ГиБ памяти) = 225 включённых точек данных метрик</code></li>
 </ul>
-<h3 id="how-metric-data-points-are-consumed-in-full-stack-monitoring-mode">How metric data points are consumed in Full-Stack Monitoring mode<a class="headerlink" href="#how-metric-data-points-are-consumed-in-full-stack-monitoring-mode" title="Permanent link">&para;</a></h3>
-<p>Metric data point consumption takes many forms.
-An equal number of data points can be consumed:</p>
+<h3 id="full-stack-monitoring">Как потребляются точки данных метрик в режиме Full-Stack Monitoring<a class="headerlink" href="#full-stack-monitoring" title="Permanent link">&para;</a></h3>
+<p>Потребление точек данных метрик принимает различные формы.
+Одинаковое количество точек данных может быть потреблено:</p>
 <ul>
-<li>By a few high-resolution metrics or numerous low-resolution metrics.</li>
-<li>Equally across multiple 15-minute intervals or all at once in a single minute.</li>
-<li>By all monitored hosts, a subset of all Full-Stack monitored hosts, or a single host.</li>
+<li>Несколькими метриками с высоким разрешением или множеством метрик с низким разрешением.</li>
+<li>Равномерно распределённо по нескольким 15-минутным интервалам или сразу в течение одной минуты.</li>
+<li>Всеми отслеживаемыми хостами, подмножеством всех хостов с Full-Stack мониторингом или одним хостом.</li>
 </ul>
-<h2 id="distributed-traces">Distributed traces<a class="headerlink" href="#distributed-traces" title="Permanent link">&para;</a></h2>
-<p>Full-Stack Monitoring includes a defined amount of trace data volume.
-Every contributing GiB of host or application memory adds 200 KiB of trace data per minute, for a total of 3000 KiB of trace data in each 15-minute interval of the <a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">Monitoring environment</a>.
-This volume addresses the majority of customer use cases.
-If necessary, customers can explicitly <a href="#extend-trace-ingest">extend the trace ingest</a>.</p>
-<p>Included trace data volume that is not consumed within the 15-minute interval in which it is granted does not roll over to subsequent intervals.</p>
-<p>Environments that have less then 320 memory GiB contributing to the included trace volume will receive a fixed minimum peak volume of 64,000 KiB/minute, which is equivalent to 937.5 MiB in a single 15-minute interval.</p>
-<p>Full-Stack Monitoring trace data comes from two sources and takes one of two forms.</p>
+<h2 id="_4">Распределённые трассировки<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Full-Stack Monitoring включает определённый объём данных трассировок.
+Каждый вносящий вклад ГиБ памяти хоста или приложения добавляет 200 КиБ данных трассировок в минуту, что составляет в общей сложности 3000 КиБ данных трассировок в каждом 15-минутном интервале Среды мониторинга.
+Этот объём покрывает большинство сценариев использования клиентов.
+При необходимости клиенты могут явно <a href="#extend-trace-ingest">расширить объём приёма трассировок</a>.</p>
+<p>Включённый объём данных трассировок, не использованный в 15-минутном интервале, в котором он был предоставлен, не переносится на последующие интервалы.</p>
+<p>Среды, имеющие менее 320 ГиБ памяти, вносящей вклад во включённый объём трассировок, получат фиксированный минимальный пиковый объём 64 000 КиБ/минуту, что эквивалентно 937,5 МиБ в одном 15-минутном интервале.</p>
+<p>Данные трассировок Full-Stack Monitoring поступают из двух источников и принимают одну из двух форм.</p>
 <ul>
-<li>Trace data from the Dynatrace OneAgent: OneAgent automatically manages the volume of captured trace data via <a href="/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management#dps" title="Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.">Adaptive Traffic Management</a>.
-  It automatically and continuously adjusts the sampling rate in an intelligent way and keeps the ingested trace data volume roughly within your included trace-data volume, which prevents any unexpected costs.</li>
-<li>The second data source is trace data sent via the <a href="/docs/ingest-from/opentelemetry/otlp-api" title="Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.">OneAgent Trace API</a> or, more generally, OpenTelemetry traces that originate at a Full-Stack Monitoring host or application and are sent via the OTLP API.
-  Trace data sent this way may be sampled by an OpenTelemetry agent, the SDK, or Collector at a fixed rate.
-  These mechanisms are not controlled by Dynatrace or by <a href="/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management#dps" title="Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.">Adaptive Traffic Management</a>.
-  This means this trace data is not automatically kept below the included trace data volume.
-  OpenTelemetry traces that are sent this way count against the included trace data volume (200 KiB of trace data per minute), and any trace data that exceeds the include trace data volume is charged as <a href="/docs/license/capabilities/traces#trace-ingest-usage" title="Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.">Traces - Ingest &amp; Process</a>.</li>
+<li>Данные трассировок от Dynatrace OneAgent: OneAgent автоматически управляет объёмом захваченных данных трассировок через <a href="../../../../ingest-from/dynatrace-oneagent/adaptive-traffic-management/#dps" title="Dynatrace Adaptive Traffic Management обеспечивает динамическую выборку для того, чтобы объём захваченных трассировок оставался в пределах включённого объёма трассировок Full-Stack Monitoring.">Adaptive Traffic Management</a>.
+  Он автоматически и непрерывно интеллектуально корректирует частоту выборки и поддерживает объём принимаемых данных трассировок примерно в пределах включённого объёма данных трассировок, что предотвращает непредвиденные расходы.</li>
+<li>Второй источник данных — данные трассировок, отправленные через OneAgent Trace API или, в более общем смысле, трассировки OpenTelemetry, исходящие от хоста или приложения с Full-Stack Monitoring и отправленные через OTLP API.
+  Данные трассировок, отправленные таким образом, могут быть сэмплированы агентом OpenTelemetry, SDK или Collector с фиксированной частотой.
+  Эти механизмы не контролируются Dynatrace или <a href="../../../../ingest-from/dynatrace-oneagent/adaptive-traffic-management/#dps" title="Dynatrace Adaptive Traffic Management обеспечивает динамическую выборку для того, чтобы объём захваченных трассировок оставался в пределах включённого объёма трассировок Full-Stack Monitoring.">Adaptive Traffic Management</a>.
+  Это означает, что данные трассировок не удерживаются автоматически ниже включённого объёма данных трассировок.
+  Трассировки OpenTelemetry, отправленные таким образом, учитываются в рамках включённого объёма данных трассировок (200 КиБ данных трассировок в минуту), и любые данные трассировок, превышающие включённый объём, тарифицируются как <a href="../../traces/#trace-ingest-usage" title="Узнайте, как рассчитывается потребление Dynatrace Traces powered by Grail с использованием модели Dynatrace Platform Subscription (DPS).">Traces - Ingest &amp; Process</a>.</li>
 </ul>
-<p>Note that traces sent via the Custom Trace API and not coming from a Full-Stack Monitoring host or application are always charged as <a href="/docs/license/capabilities/traces#trace-ingest-usage" title="Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.">Traces - Ingest &amp; Process</a>.</p>
-<p>For OpenTelemetry traces, this section assumes that you have followed the Dynatrace-recommended deployment options, especially regarding telemetry enrichment.
-  If you implement a custom deployment, the charging of included traces from OpenTelemetry sources may still work as describedâbut this is not guaranteed by Dynatrace.</p>
-<p>For more information, see <a href="#deployment-options">Supported deployment options</a>.</p>
-<p>What about the included trace volume in DPS prior to Traces powered by Grail</p>
-<p>While the uncompressed amount of spans and traces has not changed, the way Dynatrace measures this has changed with the release of Traces powered by Grail.
-Due to this the stated included trace volume and the stated peak trace volume for DPS subscriptions prior the enablement of traces powered by Grail is different.</p>
-<p>For non-Grail enabled DPS:</p>
+<p>Обратите внимание, что трассировки, отправленные через Custom Trace API и не исходящие от хоста или приложения с Full-Stack Monitoring, всегда тарифицируются как <a href="../../traces/#trace-ingest-usage" title="Узнайте, как рассчитывается потребление Dynatrace Traces powered by Grail с использованием модели Dynatrace Platform Subscription (DPS).">Traces - Ingest &amp; Process</a>.</p>
+<p>Для трассировок OpenTelemetry в этом разделе предполагается, что вы следовали рекомендованным Dynatrace вариантам развёртывания, особенно в отношении обогащения телеметрии.
+  Если вы реализуете пользовательское развёртывание, тарификация включённых трассировок из источников OpenTelemetry может по-прежнему работать как описано, но это не гарантируется Dynatrace.</p>
+<p>Для получения дополнительной информации см. <a href="#deployment-options">Поддерживаемые варианты развёртывания</a>.</p>
+<p>Что насчёт включённого объёма трассировок в DPS до Traces powered by Grail</p>
+<p>Хотя несжатое количество спанов и трассировок не изменилось, способ их измерения Dynatrace изменился с выпуском Traces powered by Grail.
+В связи с этим указанный включённый объём трассировок и указанный пиковый объём трассировок для подписок DPS до активации Traces powered by Grail отличаются.</p>
+<p>Для DPS без включённого Grail:</p>
 <ul>
-<li>Every contributing GiB of host or application memory adds a peak trace volume of 45 KiB/min.</li>
-<li>Each environment has a minimum trace peak volume of 14 MiB/min.</li>
+<li>Каждый вносящий вклад ГиБ памяти хоста или приложения добавляет пиковый объём трассировок 45 КиБ/мин.</li>
+<li>Каждая среда имеет минимальный пиковый объём трассировок 14 МиБ/мин.</li>
 </ul>
-<h3 id="peak-trace-volumeminute-calculation-example">Peak trace volume/minute calculation example<a class="headerlink" href="#peak-trace-volumeminute-calculation-example" title="Permanent link">&para;</a></h3>
+<h3 id="_5">Пример расчёта пикового объёма трассировок/минуту<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ul>
-<li>First 15-minute interval: <code>200 KiB (peak trace volume) Ã 1350 (GiB memory) = 263.67 MiB/minute</code></li>
-<li>Second 15-minute interval: <code>200 KiB (peak trace volume) Ã 950 (GiB memory) = 185.55 MiB/minute</code></li>
-<li>Third 15-minute interval: <code>200 KiB (peak trace volume) Ã 875 (GiB memory) = 170.9 MiB/minute</code></li>
-<li>Fourth 15-minute interval: <code>200 KiB (peak trace volume) Ã 25 (GiB memory) = 58.6 MiB/minute</code></li>
+<li>Первый 15-минутный интервал: <code>200 КиБ (пиковый объём трассировок) x 1350 (ГиБ памяти) = 263,67 МиБ/минуту</code></li>
+<li>Второй 15-минутный интервал: <code>200 КиБ (пиковый объём трассировок) x 950 (ГиБ памяти) = 185,55 МиБ/минуту</code></li>
+<li>Третий 15-минутный интервал: <code>200 КиБ (пиковый объём трассировок) x 875 (ГиБ памяти) = 170,9 МиБ/минуту</code></li>
+<li>Четвёртый 15-минутный интервал: <code>200 КиБ (пиковый объём трассировок) x 25 (ГиБ памяти) = 58,6 МиБ/минуту</code></li>
 </ul>
-<p>(In the fourth 15-minute interval the actually ingested amount would be below the minimum trace volume, hence the actual applied limit is equal to this minimum.)</p>
-<h3 id="included-and-extended-trace-retention">Included and extended Trace retention<a class="headerlink" href="#included-and-extended-trace-retention" title="Permanent link">&para;</a></h3>
-<p>Dynatrace <a href="/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#purepath" title="Check retention times for various data types.">retains all traces</a> ingested from your environment for 10 days.</p>
-<p>Dynatrace provides the ability to extend trace retention on a selective basis for up to 10 years, regardless of the ingest method or volume.
-This is achieved by <a href="/docs/platform/grail/organize-data" title="Insights on the Grail data model consisting of buckets, tables, and views.">creating custom buckets</a> in Grail.
-The first 10 days of retention are always included.
-Any trace data retained longer than 10 days is charged on a per-gibibyte basis as <a href="/docs/license/capabilities/traces#trace-retain-usage" title="Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.">Traces - Retain</a>.</p>
-<h3 id="extended-trace-ingest-for-full-stack-monitoring">Extended Trace ingest for Full-Stack Monitoring<a class="headerlink" href="#extended-trace-ingest-for-full-stack-monitoring" title="Permanent link">&para;</a></h3>
-<p>Full-Stack Monitoring includes a defined amount of trace data volume.
-Every contributing GiB of host or application memory adds 200 KiB of trace data per minute, for a total of 3000 KiB of trace data in each 15-minute interval of the <a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">Monitoring environment</a>.</p>
-<p>Dynatrace provides the ability to extend the amount of trace data ingested with OneAgent.
-To do this you can request an increased Trace ingest limit beyond the 200 KiB of trace data included per memory-gibibyte.
-Adaptive Traffic Management keeps your trace ingestion within the requested volume, which prevents any unexpected costs.
-(For an explanation of Adaptive Traffic Management, see <a href="#full-stack-traces">Distributed traces</a>).
-The trace data ingested that exceeds the included volume of 3000 KiB in a given 15-minute interval is charged as <a href="/docs/license/capabilities/traces#trace-ingest-usage" title="Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.">Traces - Ingest &amp; Process</a>.</p>
-<p>The <strong>Full-Stack Adaptive Traffic Management and trace capture</strong> dashboard contains a calculator that helps you estimate how much data this will be based on your desired trace ingest volume.
-To request Extended trace ingest for Full-Stack Monitoring, Please contact a Dynatrace product expert via live chat within your environment.</p>
-<p>For example, your current trace capture rate is 100% most of times, but drops to 50% during peak times for 2 hours a day.
-You can request a 2x Trace ingest volume limit, which would raise it to 400 KiB per contributing gibibyte in each 15-minute interval.
-For those 2 hours per day you now ingest twice the amount of trace volume.
-As a result your trace capture rate is now at 100% also during peak hours.
-It does not charge anything for the 22 hours a day that you are already at 100% before the change.
-During the 2 peak hours per day though about half the trace ingest volume will be charged as <a href="/docs/license/capabilities/traces#trace-ingest-usage" title="Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.">Traces - Ingest &amp; Process</a>.</p>
-<h3 id="cpu-memory-and-thread-profiling">CPU, memory, and thread profiling<a class="headerlink" href="#cpu-memory-and-thread-profiling" title="Permanent link">&para;</a></h3>
-<p>Full-Stack Monitoring includes <a href="/docs/observe/application-observability/profiling-and-optimization/cpu-profiling" title="Learn how you can use Dynatrace to perform enhanced code analysis.">CPU</a>, <a href="/docs/observe/application-observability/profiling-and-optimization/memory-profiling" title="Analyze memory allocation with Dynatrace.">memory</a>, and thread profiling for technologies like Java, .NET, Go, Node.js, and PHP.
-OneAgent uses an intelligent patented mechanism to manage the volume of profiling data.
-Dynatrace <a href="/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#purepath" title="Check retention times for various data types.">retains the total amount of ingested profiling data</a> from your environment for 10 days.</p>
-<h2 id="supported-deployment-options">Supported deployment options<a class="headerlink" href="#supported-deployment-options" title="Permanent link">&para;</a></h2>
-<p>To ensure that your OpenTelemetry traces and custom metrics benefit from the included trace and metric volumes, you need to enable telemetry enrichment according to the Dynatrace-recommended deployment options.</p>
-<p>Automatic telemetry enrichment is enabled for:</p>
+<p>(В четвёртом 15-минутном интервале фактический объём приёма был бы ниже минимального объёма трассировок, поэтому фактически применяемый лимит равен этому минимуму.)</p>
+<h3 id="_6">Включённое и расширенное хранение трассировок<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Dynatrace <a href="../../../../manage/data-privacy-and-security/data-privacy/data-retention-periods/#purepath" title="Проверьте сроки хранения различных типов данных.">хранит все трассировки</a>, принятые из вашей среды, в течение 10 дней.</p>
+<p>Dynatrace предоставляет возможность расширить хранение трассировок на выборочной основе до 10 лет, независимо от метода приёма или объёма.
+Это достигается путём создания пользовательских бакетов в Grail.
+Первые 10 дней хранения всегда включены.
+Любые данные трассировок, хранящиеся дольше 10 дней, тарифицируются за гибибайт как <a href="../../traces/#trace-retain-usage" title="Узнайте, как рассчитывается потребление Dynatrace Traces powered by Grail с использованием модели Dynatrace Platform Subscription (DPS).">Traces - Retain</a>.</p>
+<h3 id="full-stack-monitoring_1">Расширенный приём трассировок для Full-Stack Monitoring<a class="headerlink" href="#full-stack-monitoring_1" title="Permanent link">&para;</a></h3>
+<p>Full-Stack Monitoring включает определённый объём данных трассировок.
+Каждый вносящий вклад ГиБ памяти хоста или приложения добавляет 200 КиБ данных трассировок в минуту, что составляет в общей сложности 3000 КиБ данных трассировок в каждом 15-минутном интервале Среды мониторинга.</p>
+<p>Dynatrace предоставляет возможность расширить объём данных трассировок, принимаемых с помощью OneAgent.
+Для этого вы можете запросить увеличенный лимит приёма трассировок сверх 200 КиБ данных трассировок, включённых на гибибайт памяти.
+Adaptive Traffic Management поддерживает приём трассировок в рамках запрошенного объёма, что предотвращает непредвиденные расходы.
+(Объяснение Adaptive Traffic Management см. в <a href="#full-stack-traces">Распределённые трассировки</a>).
+Данные трассировок, принятые сверх включённого объёма в 3000 КиБ в данном 15-минутном интервале, тарифицируются как <a href="../../traces/#trace-ingest-usage" title="Узнайте, как рассчитывается потребление Dynatrace Traces powered by Grail с использованием модели Dynatrace Platform Subscription (DPS).">Traces - Ingest &amp; Process</a>.</p>
+<p>Дашборд <strong>Full-Stack Adaptive Traffic Management and trace capture</strong> содержит калькулятор, который поможет вам оценить объём данных на основе желаемого объёма приёма трассировок.
+Чтобы запросить расширенный приём трассировок для Full-Stack Monitoring, обратитесь к эксперту по продуктам Dynatrace через чат в вашей среде.</p>
+<p>Например, ваша текущая частота захвата трассировок составляет 100% большую часть времени, но снижается до 50% в пиковые часы на 2 часа в день.
+Вы можете запросить 2-кратный лимит объёма приёма трассировок, что повысит его до 400 КиБ на вносящий вклад гибибайт в каждом 15-минутном интервале.
+В течение этих 2 часов в день вы теперь принимаете вдвое больший объём трассировок.
+В результате ваша частота захвата трассировок теперь составляет 100% также в пиковые часы.
+Плата не взимается за 22 часа в день, когда вы уже находились на 100% до изменения.
+Однако в течение 2 пиковых часов в день примерно половина объёма приёма трассировок будет тарифицироваться как <a href="../../traces/#trace-ingest-usage" title="Узнайте, как рассчитывается потребление Dynatrace Traces powered by Grail с использованием модели Dynatrace Platform Subscription (DPS).">Traces - Ingest &amp; Process</a>.</p>
+<h3 id="cpu">Профилирование CPU, памяти и потоков<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h3>
+<p>Full-Stack Monitoring включает профилирование CPU, памяти и потоков для таких технологий, как Java, .NET, Go, Node.js и PHP.
+OneAgent использует интеллектуальный запатентованный механизм для управления объёмом данных профилирования.
+Dynatrace <a href="../../../../manage/data-privacy-and-security/data-privacy/data-retention-periods/#purepath" title="Проверьте сроки хранения различных типов данных.">хранит общий объём принятых данных профилирования</a> из вашей среды в течение 10 дней.</p>
+<h2 id="_7">Поддерживаемые варианты развёртывания<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>Чтобы ваши трассировки OpenTelemetry и пользовательские метрики использовали включённые объёмы трассировок и метрик, необходимо включить обогащение телеметрии в соответствии с рекомендованными Dynatrace вариантами развёртывания.</p>
+<p>Автоматическое обогащение телеметрии включено для:</p>
 <ul>
 <li>
-<p>Custom metrics and OpenTelemetry spans that originate from any:</p>
+<p>Пользовательских метрик и спанов OpenTelemetry, исходящих от любого:</p>
 </li>
 <li>
-<p>Full-Stack monitored host or container, when you use OneAgent or follow the steps described in <a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.">Enrich ingested data with Dynatrace-specific fields</a>.</p>
+<p>Хоста или контейнера с Full-Stack мониторингом, при использовании OneAgent или выполнении шагов, описанных в Обогащение принимаемых данных полями, специфичными для Dynatrace.</p>
 </li>
-<li>Full-Stack monitored Kubernetes container, when you use Dynatrace Operator and <a href="/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment" title="Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.">metadata enrichment is enabled</a>.</li>
-<li>Cloud-native Full-Stack monitored Kubernetes node, when you use Dynatrace Operator and <a href="/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment" title="Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.">metadata enrichment is enabled</a>.
-    This includes any containers running on the monitored Kubernetes node.</li>
+<li>Контейнера Kubernetes с Full-Stack мониторингом, при использовании Dynatrace Operator с включённым обогащением метаданных.</li>
+<li>Ноды Kubernetes с Cloud-native Full-Stack мониторингом, при использовании Dynatrace Operator с включённым обогащением метаданных.
+    Это включает все контейнеры, работающие на отслеживаемой ноде Kubernetes.</li>
 <li>
-<p>Custom metrics that are sent from any Full-Stack monitored host via the OneAgent local metric API. For more information, see <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api" title="Use the Dynatrace API to retrieve the metrics of monitored entities.">OneAgent metric API</a>.</p>
+<p>Пользовательских метрик, отправленных с любого хоста с Full-Stack мониторингом через локальный API метрик OneAgent. Для получения дополнительной информации см. OneAgent metric API.</p>
 </li>
 <li>
-<p>OpenTelemetry traces that are sent from any Full-Stack monitored host via the OneAgent local trace API. For more information, see <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel#send-opentelemetry-traces-to-the-otlp-endpoint-exposed-by-oneagent" title="Learn how to send OpenTelemetry data to a Dynatrace OneAgent.">Send OpenTelemetry traces to the OTLP endpoint exposed by OneAgent</a>.</p>
+<p>Трассировок OpenTelemetry, отправленных с любого хоста с Full-Stack мониторингом через локальный API трассировок OneAgent. Для получения дополнительной информации см. <a href="../../../../ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel/#send-opentelemetry-traces-to-the-otlp-endpoint-exposed-by-oneagent" title="Узнайте, как отправлять данные OpenTelemetry в Dynatrace OneAgent.">Отправка трассировок OpenTelemetry на конечную точку OTLP, предоставляемую OneAgent</a>.</p>
 </li>
 </ul>
-<p>If you implement a custom deployment, the charging of traces and metrics may still work as describedâbut this is not guaranteed by Dynatrace.</p>
-<h2 id="consumption-details-full-stack">Consumption details: Full-Stack<a class="headerlink" href="#consumption-details-full-stack" title="Permanent link">&para;</a></h2>
-<p>Dynatrace provides built-in usage metrics that help you understand and analyze your organization's consumption of Full-Stack Monitoring.
-To use these metrics, in <img alt="Data Explorer" src="https://dt-cdn.net/images/data-explorer-512-743267b1fc.png" title="Data Explorer" /> <strong>Data Explorer</strong>, enter <code>DPS</code> in the <strong>Search</strong> field.
-These metrics are also available via the Environment API and in Account Management (<strong>Usage summary</strong> &gt; <strong>Full-Stack Monitoring</strong> &gt; <strong>Actions</strong> &gt; <strong>View details</strong>).</p>
-<p>Here are the metrics you can use to monitor the consumption of Dynatrace Full-Stack Monitoring.</p>
+<p>Если вы реализуете пользовательское развёртывание, тарификация трассировок и метрик может по-прежнему работать как описано, но это не гарантируется Dynatrace.</p>
+<h2 id="full-stack">Детали потребления: Full-Stack<a class="headerlink" href="#full-stack" title="Permanent link">&para;</a></h2>
+<p>Dynatrace предоставляет встроенные метрики использования, которые помогают вам понять и проанализировать потребление Full-Stack Monitoring вашей организацией.
+Для использования этих метрик в <img alt="Data Explorer" src="https://dt-cdn.net/images/data-explorer-512-743267b1fc.png" title="Data Explorer" /> <strong>Data Explorer</strong> введите <code>DPS</code> в поле <strong>Search</strong>.
+Эти метрики также доступны через Environment API и в Account Management (<strong>Usage summary</strong> &gt; <strong>Full-Stack Monitoring</strong> &gt; <strong>Actions</strong> &gt; <strong>View details</strong>).</p>
+<p>Ниже приведены метрики, которые вы можете использовать для мониторинга потребления Dynatrace Full-Stack Monitoring.</p>
 <p>(DPS) Full-Stack Monitoring billing usage
-:   Key: <code>builtin:billing.full_stack_monitoring.usage</code></p>
-<div class="highlight"><pre><span></span><code>Dimension: count
+:   Ключ: <code>builtin:billing.full_stack_monitoring.usage</code></p>
+<div class="highlight"><pre><span></span><code>Измерение: count
 
-Resolution: 15 min
+Разрешение: 15 мин
 
-Description: Total GiB memory of all hosts monitored in Full-Stack Monitoring mode counted in 15-min intervals.
+Описание: Общая память ГиБ всех хостов, отслеживаемых в режиме Full-Stack Monitoring, подсчитанная 15-минутными интервалами.
 </code></pre></div>
 <p>(DPS) Full-Stack Monitoring billing usage per host
-:   Key: <code>builtin:billing.full_stack_monitoring.usage_per_host</code></p>
-<div class="highlight"><pre><span></span><code>Dimension: Host (`dt.entity.host`)
+:   Ключ: <code>builtin:billing.full_stack_monitoring.usage_per_host</code></p>
+<div class="highlight"><pre><span></span><code>Измерение: Host (`dt.entity.host`)
 
-Resolution: 15 min
+Разрешение: 15 мин
 
-Description: GiB memory per host monitored in Full-Stack Monitoring mode counted in 15-min intervals.
+Описание: Память ГиБ на хост, отслеживаемый в режиме Full-Stack Monitoring, подсчитанная 15-минутными интервалами.
 </code></pre></div>
 <p>(DPS) Full-stack usage by container type
-:   Key: <code>builtin:billing.full_stack_monitoring.usage_per_container</code></p>
-<div class="highlight"><pre><span></span><code>Dimension: application\_only\_type; k8s.cluster.uid; k8s.namespace.name
+:   Ключ: <code>builtin:billing.full_stack_monitoring.usage_per_container</code></p>
+<div class="highlight"><pre><span></span><code>Измерение: application\_only\_type; k8s.cluster.uid; k8s.namespace.name
 
-Resolution: 15 min
+Разрешение: 15 мин
 
-Description: GiB memory per container monitored in Full-Stack application-only Monitoring mode counted in 15-min intervals.
+Описание: Память ГиБ на контейнер, отслеживаемый в режиме Full-Stack application-only Monitoring, подсчитанная 15-минутными интервалами.
 </code></pre></div>
 <p>(DPS) Total metric data points reported by Full-Stack monitored hosts
-:   Key: <code>builtin:billing.full_stack_monitoring.metric_data_points.ingested</code></p>
-<div class="highlight"><pre><span></span><code>Dimension: Count
+:   Ключ: <code>builtin:billing.full_stack_monitoring.metric_data_points.ingested</code></p>
+<div class="highlight"><pre><span></span><code>Измерение: Count
 
-Resolution: 15 min
+Разрешение: 15 мин
 
-Description: Number of reported metric data points aggregated over all Full-Stack monitored hosts.
+Описание: Количество зарегистрированных точек данных метрик, агрегированных по всем хостам с Full-Stack мониторингом.
 </code></pre></div>
 <p>(DPS) Metric data points reported and split by Full-Stack monitored hosts
-:   Key: <code>builtin:billing.full_stack_monitoring.metric_data_points.ingested_by_host</code></p>
-<div class="highlight"><pre><span></span><code>Dimension: Host (`dt.entity.host`)
+:   Ключ: <code>builtin:billing.full_stack_monitoring.metric_data_points.ingested_by_host</code></p>
+<div class="highlight"><pre><span></span><code>Измерение: Host (`dt.entity.host`)
 
-Resolution: 15 min
+Разрешение: 15 мин
 
-Description: Number of reported metric data points split by Full-Stack monitored hosts.
+Описание: Количество зарегистрированных точек данных метрик в разрезе хостов с Full-Stack мониторингом.
 </code></pre></div>
 <p>(DPS) Available included metric data points for Full-Stack monitored hosts
-:   Key: <code>builtin:billing.full_stack_monitoring.metric_data_points.included</code></p>
-<div class="highlight"><pre><span></span><code>Dimension: Count
+:   Ключ: <code>builtin:billing.full_stack_monitoring.metric_data_points.included</code></p>
+<div class="highlight"><pre><span></span><code>Измерение: Count
 
-Resolution: 15 min
+Разрешение: 15 мин
 
-Description: Total number of included metric data points that can be deducted from the consumed metric data points reported by Full-Stack monitored hosts.
+Описание: Общее количество включённых точек данных метрик, которые могут быть вычтены из потреблённых точек данных метрик, зарегистрированных хостами с Full-Stack мониторингом.
 </code></pre></div>
 <p>(DPS) Used included metric data points for Full-Stack monitored hosts
-:   Key: <code>builtin:billing.full_stack_monitoring.metric_data_points.included_used</code></p>
-<div class="highlight"><pre><span></span><code>Dimension: Count
+:   Ключ: <code>builtin:billing.full_stack_monitoring.metric_data_points.included_used</code></p>
+<div class="highlight"><pre><span></span><code>Измерение: Count
 
-Resolution: 15 min
+Разрешение: 15 мин
 
-Description: Number of consumed included metric data points for Full-Stack monitored hosts.
+Описание: Количество потреблённых включённых точек данных метрик для хостов с Full-Stack мониторингом.
 </code></pre></div>
-<h3 id="monitor-memory-gib-hour-consumption-for-full-stack-monitored-hosts">Monitor memory-GiB-hour consumption for Full-Stack monitored hosts<a class="headerlink" href="#monitor-memory-gib-hour-consumption-for-full-stack-monitored-hosts" title="Permanent link">&para;</a></h3>
-<p>You can monitor the total memory-GiB-hour consumption aggregated across all Full-Stack monitored hosts for different intervals (15 min, hour, day, or week) for any selected timeframe using the "(DPS) Full-Stack Monitoring billing usage" metric.
-The example below shows memory GiB monitored in 1-hour intervals.
-Between 11:00 and 14:00, 523 memory-GiB were monitored each 1 hour.
-This results in 523 memory-GiB-hours consumed.</p>
+<h3 id="-full-stack">Мониторинг потребления ГиБ-часов памяти для хостов с Full-Stack мониторингом<a class="headerlink" href="#-full-stack" title="Permanent link">&para;</a></h3>
+<p>Вы можете отслеживать общее потребление ГиБ-часов памяти, агрегированное по всем хостам с Full-Stack мониторингом, для различных интервалов (15 мин, час, день или неделя) за любой выбранный период времени с помощью метрики «(DPS) Full-Stack Monitoring billing usage».
+Пример ниже показывает ГиБ памяти, отслеживаемые 1-часовыми интервалами.
+Между 11:00 и 14:00 каждый час отслеживалось 523 ГиБ памяти.
+Это приводит к потреблению 523 ГиБ-часов памяти.</p>
 <p><img alt="Full-Stack Monitoring (DPS)" src="https://dt-cdn.net/images/image001-1183-79f381ccb1.png" /></p>
-<p>You can break down the total memory-GiB-hour consumption using the "(DPS) Full-Stack Monitoring billing usage per host" metric.
-The example below shows the list of all hosts that contributed to the 523 memory-GiB-hour consumption between 13:00 and 14:00.
-The respective number of memory-GiB-hours per host is displayed as well.</p>
+<p>Вы можете детализировать общее потребление ГиБ-часов памяти с помощью метрики «(DPS) Full-Stack Monitoring billing usage per host».
+Пример ниже показывает список всех хостов, которые внесли вклад в потребление 523 ГиБ-часов памяти между 13:00 и 14:00.
+Соответствующее количество ГиБ-часов памяти на хост также отображается.</p>
 <p><img alt="Full-Stack Monitoring (DPS)" src="https://dt-cdn.net/images/image004-905-f0e44ad601.png" /></p>
-<h3 id="monitor-memory-gib-hour-consumption-for-full-stack-monitored-containers">Monitor memory-GiB-hour consumption for Full-Stack monitored containers<a class="headerlink" href="#monitor-memory-gib-hour-consumption-for-full-stack-monitored-containers" title="Permanent link">&para;</a></h3>
-<p>Platform and cluster owners can monitor their Kubernetes clusters using <a href="/docs/license/capabilities/container-monitoring" title="Learn about the different container monitoring modes that are available with a Dynatrace Platform Subscription (DPS) license.">Kubernetes Platform Monitoring</a>.
-Application owners can leverage container-based Full-Stack Monitoring to monitor applications running within Kubernetes clusters.</p>
-<p>To get consumption insights for monitored Kubernetes clusters or namespaces, you can query memory-GiB-hour consumption by leveraging the "(DPS) Full-Stack Monitoring billing usage per container" metric, as shown in the following query:</p>
+<h3 id="-full-stack_1">Мониторинг потребления ГиБ-часов памяти для контейнеров с Full-Stack мониторингом<a class="headerlink" href="#-full-stack_1" title="Permanent link">&para;</a></h3>
+<p>Владельцы платформ и кластеров могут отслеживать свои кластеры Kubernetes с помощью Kubernetes Platform Monitoring.").
+Владельцы приложений могут использовать Full-Stack Monitoring на основе контейнеров для мониторинга приложений, работающих в кластерах Kubernetes.</p>
+<p>Для получения информации о потреблении отслеживаемых кластеров или пространств имён Kubernetes вы можете запросить потребление ГиБ-часов памяти, используя метрику «(DPS) Full-Stack Monitoring billing usage per container», как показано в следующем запросе:</p>
 <p><code>builtin:billing.full_stack_monitoring.usage_per_container:filter(eq("application_only_type","kubernetes")):splitBy()</code></p>
-<p>In the example below, 1.58 TiB of memory was consumed by the Kubernetes cluster within the past 30 days.</p>
+<p>В примере ниже 1,58 ТиБ памяти было потреблено кластером Kubernetes за последние 30 дней.</p>
 <p><img alt="Kubernetes Platform Monitoring" src="https://dt-cdn.net/images/billing-full-stack-monitoring-usage-per-container-1025-3019577b21.png" /></p>
-<p>Of course, you can filter your analysis for deeper insights (for example, add a split for Kubernetes namespaces).</p>
+<p>Конечно, вы можете фильтровать анализ для более глубоких выводов (например, добавить разбивку по пространствам имён Kubernetes).</p>
 <p><img alt="Kubernetes Platform Monitoring" src="https://dt-cdn.net/images/billing-full-stack-monitoring-usage-per-container-by-namespace-1023-c5e1c10583.png" /></p>
-<h3 id="monitor-metric-consumption-for-full-stack-monitored-hosts">Monitor metric consumption for Full-Stack monitored hosts<a class="headerlink" href="#monitor-metric-consumption-for-full-stack-monitored-hosts" title="Permanent link">&para;</a></h3>
-<p>To monitor your metrics budget for the whole pool of metric data points in your environment, you can track available included metric data points against total reported metrics data points using these two metrics: "(DPS) Available included metric data points for Full-Stack monitored hosts" and "(DPS) Total metric data points reported by Full-Stack monitored hosts".
-The example below shows data for a full day.
-At no time was the number of included metrics for this environment's metric pool (purple line) overspent.</p>
+<h3 id="full-stack_1">Мониторинг потребления метрик для хостов с Full-Stack мониторингом<a class="headerlink" href="#full-stack_1" title="Permanent link">&para;</a></h3>
+<p>Для мониторинга бюджета метрик для всего пула точек данных метрик в вашей среде вы можете отслеживать доступные включённые точки данных метрик в сравнении с общим количеством зарегистрированных точек данных метрик, используя две метрики: «(DPS) Available included metric data points for Full-Stack monitored hosts» и «(DPS) Total metric data points reported by Full-Stack monitored hosts».
+Пример ниже показывает данные за полный день.
+Ни в один момент времени количество включённых метрик для пула метрик этой среды (фиолетовая линия) не было перерасходовано.</p>
 <p><img alt="Full-Stack Monitoring (DPS)" src="https://dt-cdn.net/images/image005-1212-35369921df.png" /></p>
-<p>In cases where the number of included metrics for an environment's metric pool are overspent, the following analysis can help you to identify the hosts that are contributing to the overspending.
-Use the metric "(DPS) Metric data points reported and split by Full-Stack monitored hosts" for this analysis.</p>
-<p>The example below shows that between 10:45 and 11:00, each of the first 3 hosts in the list reported far more than 2,000 metric data points.
-In the same period, each of these 3 hosts shows a memory-GiB-hour consumption of 2 GiB.
-Dynatrace offers 900 included custom metric data points for each GiB of host memory, calculated at 15-minute intervals.
-This means that the first 3 hosts contribute 1,800 (2*900) metric data points to the environment's pool of available data points.
-However these hosts consumed more data points than they contributed during the same time period.</p>
+<p>В случаях, когда количество включённых метрик для пула метрик среды перерасходовано, следующий анализ может помочь вам определить хосты, которые вносят вклад в перерасход.
+Используйте метрику «(DPS) Metric data points reported and split by Full-Stack monitored hosts» для этого анализа.</p>
+<p>Пример ниже показывает, что между 10:45 и 11:00 каждый из первых 3 хостов в списке зарегистрировал значительно более 2000 точек данных метрик.
+В тот же период каждый из этих 3 хостов показывает потребление ГиБ-часов памяти в 2 ГиБ.
+Dynatrace предлагает 900 включённых пользовательских точек данных метрик для каждого ГиБ памяти хоста, рассчитанных 15-минутными интервалами.
+Это означает, что первые 3 хоста вносят 1800 (2*900) точек данных метрик в пул доступных точек данных среды.
+Однако эти хосты потребили больше точек данных, чем они внесли за тот же период времени.</p>
 <p><img alt="Full-Stack Monitoring (DPS)" src="https://dt-cdn.net/images/image008-905-929928d644.png" /></p>
-<p>When using the metric "(DPS) Total metric data points billed for Full-Stack monitored hosts" from Custom Metrics Classic you can see that no overspending occurred for this environment's Full-Stack Monitoring metric pool between 10:45 and 11:00 because no metric data points were billed.</p>
+<p>При использовании метрики «(DPS) Total metric data points billed for Full-Stack monitored hosts» из Custom Metrics Classic видно, что перерасхода для пула метрик Full-Stack Monitoring этой среды между 10:45 и 11:00 не произошло, поскольку ни одна точка данных метрик не была тарифицирована.</p>
 <p><img alt="Full-Stack Monitoring (DPS)" src="https://dt-cdn.net/images/image009-1210-914bc4742c.png" /></p>
-<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<h2 id="_8">Связанные темы<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/ingest-from/dynatrace-oneagent" title="Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.">Dynatrace OneAgent</a></li>
-<li><a href="/docs/license/capabilities/app-infra-observability" title="Learn about the different Application &amp; Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.">Application &amp; Infrastructure Observability overview (DPS)</a></li>
-<li><a href="https://www.dynatrace.com/pricing/">Dynatrace pricingï»¿</a></li>
+<li>Dynatrace OneAgent</li>
+<li>Обзор Application &amp; Infrastructure Observability (DPS).")</li>
+<li><a href="https://www.dynatrace.com/pricing/">Ценообразование Dynatrace</a></li>
 </ul>
 
 
@@ -5940,7 +4185,7 @@ However these hosts consumed more data points than they contributed during the s
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.sections", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
   
@@ -5950,25 +4195,38 @@ However these hosts consumed more data points than they contributed during the s
       
     
   <script>
-    // Inject version selector into header
-    document.addEventListener('DOMContentLoaded', function() {
-      var headerInner = document.querySelector('.md-header__inner');
-      if (headerInner) {
-        var select = document.createElement('select');
-        select.className = 'docflow-version-select';
-        select.innerHTML = '<option value="managed" selected>Managed</option><option value="saas">SaaS</option>';
-        select.setAttribute('aria-label', 'Version selector');
+    (function() {
+      // --- Reading progress bar (one-time setup) ---
+      var progressBar = document.createElement('div');
+      progressBar.className = 'reading-progress';
+      document.body.appendChild(progressBar);
 
-        // Insert before the search or at the end
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (docHeight > 0) {
+          var progress = (scrollTop / docHeight) * 100;
+          progressBar.style.width = Math.min(progress, 100) + '%';
+        }
+      });
+
+      // --- Managed label in header (one-time setup) ---
+      var headerInner = document.querySelector('.md-header__inner');
+      if (headerInner && !headerInner.querySelector('.docflow-managed-label')) {
+        var label = document.createElement('span');
+        label.className = 'docflow-managed-label';
+        label.textContent = 'Managed';
+        label.setAttribute('title', 'Документация включает разделы Dynatrace Managed');
+
         var searchContainer = headerInner.querySelector('.md-header__source');
         if (searchContainer) {
-          headerInner.insertBefore(select, searchContainer);
+          headerInner.insertBefore(label, searchContainer);
         } else {
-          headerInner.appendChild(select);
+          headerInner.appendChild(label);
         }
       }
 
-      // Keyboard shortcut Ctrl+K for search
+      // --- Keyboard shortcut Ctrl+K for search ---
       document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
           e.preventDefault();
@@ -5983,7 +4241,9 @@ However these hosts consumed more data points than they contributed during the s
           }
         }
       });
-    });
+
+      // TOC title renaming handled via CSS (see extra style block above)
+    })();
   </script>
 
   </body>

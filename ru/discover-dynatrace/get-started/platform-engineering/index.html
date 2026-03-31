@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
       
       
         <meta name="author" content="Yerkebulan Ardabayev">
@@ -21,11 +21,11 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Platform Engineering - Dynatrace — Документация</title>
+        <title>Платформенная инженерия - Dynatrace — Документация</title>
       
     
     
@@ -87,7 +87,10 @@
       flex-shrink: 0;
     }
 
-    /* Search Ctrl+K badge */
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
     .md-search__form::after {
       content: 'Ctrl+K';
       display: none;
@@ -97,11 +100,14 @@
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color);
       font-size: 10px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'JetBrains Mono', monospace;
       color: var(--md-default-fg-color--lighter);
-      margin-right: 0.5rem;
       white-space: nowrap;
       pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
     }
     @media (min-width: 60em) {
       .md-search__form::after {
@@ -109,12 +115,13 @@
       }
     }
 
-    /* Version selector in header */
-    .docflow-version-select {
+    /* Managed label — non-interactive indicator */
+    .docflow-managed-label {
       display: none;
       align-items: center;
+      gap: 0.375rem;
       margin-left: 0.5rem;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color--lighter);
@@ -122,28 +129,34 @@
       font-size: 0.75rem;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237e7c98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.4rem center;
-      padding-right: 1.5rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .docflow-managed-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--md-accent-fg-color);
+      flex-shrink: 0;
     }
     @media (min-width: 60em) {
-      .docflow-version-select {
+      .docflow-managed-label {
         display: flex;
       }
     }
-    .docflow-version-select:hover {
-      border-color: var(--md-primary-fg-color--light);
-      color: var(--md-default-fg-color);
-    }
-    .docflow-version-select:focus {
-      outline: none;
-      border-color: var(--md-primary-fg-color);
-      box-shadow: 0 0 0 3px var(--docflow-glow-primary);
+
+    /* Reading progress bar */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #14b8a6, #7c3aed);
+      z-index: 1001;
+      transition: width 0.05s linear;
+      pointer-events: none;
     }
   </style>
 
@@ -166,7 +179,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#platform-engineering" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -181,7 +194,7 @@
 
   
 
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
     <a href="../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -203,7 +216,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Platform Engineering
+              Платформенная инженерия
             
           </span>
         </div>
@@ -216,20 +229,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -303,375 +316,14 @@
     
   </nav>
   
-    
-      
-<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Главная
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Начало работы
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../managed/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Managed
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../platform/grail/dynatrace-grail/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Платформа
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../observe/infrastructure-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Наблюдаемость
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Dynatrace Intelligence
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Анализ и автоматизация
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ingest-from/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Источники данных
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../deliver/configuration-as-code/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Deliver
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../secure/threat-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Безопасность
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../manage/hub/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Управление
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../dynatrace-api/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  API
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../whats-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Что нового
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../ai/groq/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  AI Помощник
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
 </header>
     
 
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -685,10 +337,8 @@
                     
 
 
-  
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -765,16 +415,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -796,7 +450,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -829,7 +483,7 @@
   <span class="md-ellipsis">
     
   
-    Начало работы
+    🚀 Быстрый старт
   
 
     
@@ -967,16 +621,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -998,7 +656,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1227,7 +885,7 @@
   <span class="md-ellipsis">
     
   
-    Лицензия
+    Лицензия Managed
   
 
     
@@ -1269,19 +927,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1327,20 +989,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../platform/grail/dynatrace-grail/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1354,78 +1017,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Grail
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../platform/grail/dynatrace-grail/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Что такое Grail
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../platform/grail/dynatrace-query-language/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Язык запросов DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1544,19 +1141,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1610,20 +1211,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../observe/infrastructure-observability/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1637,190 +1239,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Инфраструктура
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Хосты и операции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Облачный мониторинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes Classic
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Базы данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1844,20 +1268,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1871,78 +1296,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Приложения
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Распределённая трассировка
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/application-observability/services/services-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Сервисы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1966,20 +1325,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../observe/digital-experience/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1993,78 +1353,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Цифровой опыт
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/digital-experience/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Синтетическое приложение
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2131,19 +1425,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2203,20 +1501,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2230,274 +1529,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Обнаружение аномалий
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Настройка чувствительности
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение Anomaly Detection
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфигурация
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Адаптивные пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Многомерный бейзлайн
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    События метрик
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Статические пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Оптимизация DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2527,20 +1564,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../dynatrace-intelligence/copilot/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2554,162 +1592,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Davis Copilot
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dynatrace Assist
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфиденциальность
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы на естественном языке
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2763,20 +1651,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2790,106 +1679,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Анализ первопричин
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Анализ событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2910,7 +1705,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграции
+    Интеграции Davis AI
   
 
     
@@ -2941,20 +1736,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2968,78 +1764,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Справочник
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AI модели
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лимиты
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3080,19 +1810,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -3144,20 +1878,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3171,162 +1906,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Дашборды и ноутбуки
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Дашборды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Версии документов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Визуализации
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3354,20 +1939,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../analyze-explore-automate/logs/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3381,134 +1967,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Логи
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/logs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Log Analytics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение журналов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Фильтры
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3681,19 +2145,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -3736,7 +2204,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
+    Обзор источников данных
   
 
     
@@ -3838,19 +2306,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -3898,20 +2370,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../deliver/configuration-as-code/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3925,194 +2398,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Configuration as Code
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
       
-        
+        <span class="md-nav__icon md-icon"></span>
       
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Monaco
+    </a>
   
 
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Monaco
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4136,150 +2427,21 @@
     
     
       
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Terraform
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Terraform
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CLI команды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
         
-      
         
       
     
-    
-    
-      
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
+  
+  
+    <a href="../../../deliver/service-level-objectives/" class="md-nav__link">
       
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -4293,78 +2455,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    SLO
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/service-level-objectives/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/service-level-objectives/create-slo/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Создание SLO
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4388,20 +2484,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../deliver/site-reliability-guardian/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4415,78 +2512,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Site Reliability Guardian
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/site-reliability-guardian/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Структура событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4538,20 +2569,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../deliver/release-monitoring/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4565,78 +2597,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Мониторинг релизов
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/release-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Мониторинг релизов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4695,19 +2661,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -4778,7 +2748,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграция
+    Приём событий безопасности
   
 
     
@@ -4816,19 +2786,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
             
   
   
@@ -4910,20 +2884,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../license/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4937,190 +2912,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Лицензирование
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лицензия
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/capabilities/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Возможности DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/billing-reports/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Биллинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/budget-alerts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Бюджетные оповещения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/license-lifecycle/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Жизненный цикл
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/dps-permissions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Разрешения DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -5151,19 +2948,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
             
   
   
@@ -5272,23 +3073,33 @@
       
         
       
-    
-    
-    
+        
       
+        
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
         
           
-          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
             
   
   
@@ -5331,35 +3142,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../whats-new/saas/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SaaS
+    Все обновления
   
 
     
@@ -5387,7 +3170,7 @@
   <span class="md-ellipsis">
     
   
-    OneAgent
+    Обновления OneAgent
   
 
     
@@ -5416,6 +3199,225 @@
     
   
     ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../whats-new/dynatrace-operator/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Operator
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../whats-new/edgeconnect/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EdgeConnect
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../whats-new/technology/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Технологии
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Новые статьи
   
 
     
@@ -5480,8 +3482,764 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что такое платформенная инженерия?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Эффективные IDP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Относитесь к платформе как к продукту
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Относитесь к платформе как к продукту">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Взгляд на IDP через призму управления продуктом
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Развитие DevOps с помощью платформенной инженерии
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Развитие DevOps с помощью платформенной инженерии">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Облачно-нативные платформы требуют нового подхода к наблюдаемости
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Внедрение
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Преимущества
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Преимущества">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ускорение разработки и поддержка продуктивности разработчиков
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Улучшение опыта разработчиков
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Оптимизация ресурсов и снижение затрат
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Стандартизация технологического стека для минимизации рисков и повышения управляемости
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#back" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Минимально жизнеспособная платформа: стек BACK + наблюдаемость
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основные принципы наблюдаемости и безопасности платформы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Основные принципы наблюдаемости и безопасности платформы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Базовая наблюдаемость платформы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Базовая наблюдаемость платформы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Некоторые аспекты базовой наблюдаемости платформы
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Информация о релизах
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Эффективность конвейера
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Информация о владении
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Наблюдаемость ИИ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сценарии использования платформенной инженерии
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Сценарии использования платформенной инженерии">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разработка
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Разработка">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Наблюдаемость тестового конвейера Наблюдаемость тестового конвейера
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Непрерывная валидация тестирования Непрерывная валидация тестирования
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разработка на основе наблюдаемости Разработка на основе наблюдаемости
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Выпуск
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Выпуск">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Непрерывная валидация тестирования Валидация релиза
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Прогрессивная доставка Прогрессивная доставка
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Наблюдаемость конвейера Наблюдаемость конвейера
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Эксплуатация
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Эксплуатация">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Оптимизация облачных затрат на основе данных Оптимизация облачных затрат
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Наблюдаемость ИИ Наблюдаемость генеративного ИИ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Наблюдаемость инфраструктуры Наблюдаемость инфраструктуры
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Мониторинг Kubernetes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Прогнозирование
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Прогнозирование">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Прогнозные операции Прогнозные операции Kubernetes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Прогнозирование в аналитике данных Прогнозирование в аналитике данных
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Прогнозирование в рабочих процессах Прогнозирование в автоматизации рабочих процессов
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Предотвращение
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Предотвращение">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Предотвращение ошибок Предотвращение ошибок, видимых пользователям
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Единая защита от уязвимостей Единая защита от уязвимостей
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Непрерывный мониторинг состояния безопасности Непрерывный мониторинг состояния безопасности
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Решение
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Решение">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Автоматическая маршрутизация инцидентов Сортировка инцидентов и реагирование
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Влияние на бизнес Решение критического влияния на бизнес
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Оповещение по бюджету ошибок Оповещение по бюджету ошибок
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Защита
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Защита">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#soc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Снижение шума оповещений безопасности Снижение шума центра управления безопасностью (SOC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Безопасность как сервис Автоматизация результатов проверки безопасности в масштабе
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Непрерывный мониторинг состояния безопасности Контекстуализированное обнаружение угроз и реагирование на инциденты
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Улучшение
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Улучшение">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Постоянное профилирование приложений Постоянное профилирование приложений
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Улучшение утилизации Kubernetes Улучшение утилизации Kubernetes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Бизнес-согласованность Бизнес-согласованность
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Измерение успеха платформы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Измерение успеха платформы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Управляемость и единообразие в масштабе
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Метрики DORA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Опыт разработчиков
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynatrace-opentelemetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynatrace и OpenTelemetry
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Действуйте!
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -5507,397 +4265,389 @@
 
 
 
-<h1 id="platform-engineering">Platform Engineering<a class="headerlink" href="#platform-engineering" title="Permanent link">&para;</a></h1>
-<h1 id="platform-engineering_1">Platform Engineering<a class="headerlink" href="#platform-engineering_1" title="Permanent link">&para;</a></h1>
+  <h1>Платформенная инженерия</h1>
+
 <ul>
 <li>Latest Dynatrace</li>
-<li>24-min read</li>
-<li>Published Jan 18, 2024</li>
+<li>24 мин. чтения</li>
 </ul>
-<p>Gartner<a href="#fn-1-1-def">1</a> predicts that by 2026, 80% of large software engineering organizations will establish platform engineering teams as internal providers of reusable services, components, and tools for application delivery, up from 45% in 2022.</p>
-<h2 id="what-is-platform-engineering">What is platform engineering?<a class="headerlink" href="#what-is-platform-engineering" title="Permanent link">&para;</a></h2>
-<p>Platform engineering is a modern, core engineering discipline that has emerged to accelerate the development and deployment of software that is resilient and effective at scale.</p>
-<p>The goal is to operationalize DevSecOps and SRE practices by providing an internal self-service platform with development workspace templates to reduce the cognitive load on engineering teams and provide fast development feedback cycles out of the box.</p>
-<p>An internal developer platform (IDP) encompasses a set of tools, services, and infrastructure that enables developers to build, test, and deploy software applications. These platforms are tailored specifically to an organization's needs, demands, and goals.</p>
-<p>Through the development, deployment, and maintenance of these IDPs, platform engineering teams deliver:</p>
+<p>Gartner<a href="#fn-1-1-def">1</a> прогнозирует, что к 2026 году 80% крупных организаций по разработке программного обеспечения создадут команды платформенной инженерии в качестве внутренних поставщиков переиспользуемых сервисов, компонентов и инструментов для доставки приложений — по сравнению с 45% в 2022 году.</p>
+<h2 id="_1">Что такое платформенная инженерия?<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Платформенная инженерия — это современная, ключевая инженерная дисциплина, появившаяся для ускорения разработки и развёртывания программного обеспечения, устойчивого и эффективного в масштабе.</p>
+<p>Цель состоит в том, чтобы операционализировать практики DevSecOps и SRE, предоставив внутреннюю платформу самообслуживания с шаблонами рабочих пространств для разработки, чтобы снизить когнитивную нагрузку на инженерные команды и обеспечить быстрые циклы обратной связи при разработке «из коробки».</p>
+<p>Внутренняя платформа разработчика (IDP) охватывает набор инструментов, сервисов и инфраструктуры, которые позволяют разработчикам создавать, тестировать и развёртывать программные приложения. Эти платформы специально адаптированы к потребностям, требованиям и целям организации.</p>
+<p>Благодаря разработке, развёртыванию и поддержке этих IDP, команды платформенной инженерии обеспечивают:</p>
 <ul>
-<li>Increased innovation and development speed</li>
-<li>Better developer experience</li>
-<li>Higher developer productivity</li>
-<li>Reduced infrastructure costs</li>
-<li>And more</li>
+<li>Повышение скорости инноваций и разработки</li>
+<li>Улучшение опыта разработчиков</li>
+<li>Повышение продуктивности разработчиков</li>
+<li>Снижение затрат на инфраструктуру</li>
+<li>И многое другое</li>
 </ul>
-<p>IDPs allow teams to shift more of their time and effort to delivering best-in-class products to their end customers.</p>
-<h2 id="effective-idps">Effective IDPs<a class="headerlink" href="#effective-idps" title="Permanent link">&para;</a></h2>
-<p>The majority of IDPs are containerized and built on top of Kubernetes-centric infrastructure with a core set of technologies. The diagram below maps out what a basic IDP should include.</p>
-<p>Features of a strong and effective IDP:</p>
-<p>Crucial capabilities of an IDP are provided as self-service to development teams. Some of these self-service capabilities might include:</p>
+<p>IDP позволяют командам переключить больше времени и усилий на создание лучших продуктов для конечных клиентов.</p>
+<h2 id="idp">Эффективные IDP<a class="headerlink" href="#idp" title="Permanent link">&para;</a></h2>
+<p>Большинство IDP контейнеризированы и построены поверх Kubernetes-ориентированной инфраструктуры с базовым набором технологий. Диаграмма ниже показывает, что должна включать базовая IDP.</p>
+<p>Характеристики сильной и эффективной IDP:</p>
+<p>Ключевые возможности IDP предоставляются командам разработки в режиме самообслуживания. Некоторые из этих возможностей самообслуживания могут включать:</p>
 <ul>
-<li>Platform services (service mesh, data storage, security vaults, policy agents)</li>
-<li>Delivery services (continuous integration, continuous delivery, Git, GitOps)</li>
-<li>Observability services for monitoring, automation, and security</li>
-<li>Templates for development workspaces including all the above</li>
+<li>Платформенные сервисы (service mesh, хранение данных, хранилища секретов, агенты политик)</li>
+<li>Сервисы доставки (непрерывная интеграция, непрерывная доставка, Git, GitOps)</li>
+<li>Сервисы наблюдаемости для мониторинга, автоматизации и безопасности</li>
+<li>Шаблоны для рабочих пространств разработки, включающие всё вышеперечисленное</li>
 </ul>
-<p>Platform engineering also offers the ability to:</p>
+<p>Платформенная инженерия также предоставляет возможность:</p>
 <ul>
-<li>Automate key workflows like validation</li>
-<li>Achieve optimal performance and security</li>
-<li>Ensure the platform is working as expected and resources are being used in an optimal manner</li>
+<li>Автоматизировать ключевые рабочие процессы, такие как валидация</li>
+<li>Достигать оптимальной производительности и безопасности</li>
+<li>Обеспечивать работу платформы в соответствии с ожиданиями и оптимальное использование ресурсов</li>
 </ul>
 <p><img alt="Platform Engineering" src="https://dt-cdn.net/images/image001-1268-955bdd4f04.webp" /></p>
-<p>Source: <a href="https://tag-app-delivery.cncf.io/whitepapers/platforms/#capabilities-of-platforms">https://tag-app-delivery.cncf.io/whitepapers/platforms/ï»¿</a></p>
-<h2 id="treat-your-platform-as-a-product">Treat your platform as a product<a class="headerlink" href="#treat-your-platform-as-a-product" title="Permanent link">&para;</a></h2>
-<p>A key aspect of platform engineering is approaching your platform with a product management mentality. Every aspect should be meticulously designed and optimized for the benefit of the user: the developer.</p>
-<h3 id="looking-at-an-idp-with-a-product-management-lens">Looking at an IDP with a product management lens<a class="headerlink" href="#looking-at-an-idp-with-a-product-management-lens" title="Permanent link">&para;</a></h3>
+<p>Источник: <a href="https://tag-app-delivery.cncf.io/whitepapers/platforms/#capabilities-of-platforms">https://tag-app-delivery.cncf.io/whitepapers/platforms/</a></p>
+<h2 id="_2">Относитесь к платформе как к продукту<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Ключевой аспект платформенной инженерии — подход к платформе с менталитетом управления продуктом. Каждый аспект должен быть тщательно продуман и оптимизирован для пользы пользователя: разработчика.</p>
+<h3 id="idp_1">Взгляд на IDP через призму управления продуктом<a class="headerlink" href="#idp_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>The product</strong>: An internal development platform (IDP) built to provide self-service for infrastructure, services, and support for the development teams as they build, test, and deploy applications at scale</li>
-<li><strong>The customer</strong>: Development teams who want to accelerate the production of high-quality, resilient apps â with low effort for onboarding for new applications and new developers</li>
+<li><strong>Продукт</strong>: Внутренняя платформа разработки (IDP), созданная для предоставления самообслуживания в области инфраструктуры, сервисов и поддержки командам разработки при создании, тестировании и развёртывании приложений в масштабе</li>
+<li><strong>Клиент</strong>: Команды разработки, которые хотят ускорить создание высококачественных, устойчивых приложений — с минимальными усилиями по подключению новых приложений и новых разработчиков</li>
 </ul>
-<h2 id="maturing-devops-with-platform-engineering">Maturing DevOps with platform engineering<a class="headerlink" href="#maturing-devops-with-platform-engineering" title="Permanent link">&para;</a></h2>
-<p><strong>You build it, you run it doesnât scale anymore.</strong></p>
-<p>DevOps alone doesnât meet the demands of cloud-native software development. Platform engineering is DevOps applied at cloud-native scale.</p>
-<p>Effective DevOps supports cross-functional cooperation and boosts efficiency. Platform engineering builds on traditional DevOps practices but goes a step further.</p>
-<p>By providing a framework and techstack to apply DevOps principles at scale with Kubernetes-centric infrastructure, platform engineering allows organizations to realize many of the benefits DevOps promised to deliver.</p>
-<p>In practice, maturing DevOps into platform engineering involves providing centrally maintained development tooling, templates for CI/CD toolchains, processes, and application lifecycle orchestration solutions via a unified platform that development teams can use for greater efficiency. It enables a frictionless developer experience with minimum overhead, reducing cognitive load and providing fast feedback out of the box.</p>
-<p>Platform engineeringâs standardized processes and technologies across development and operations teams lead to significant gains in developer productivity and improvements in developer experience.</p>
-<p>Additionally, the platform engineering approach allows organizations to take advantage of economies of scale, consolidating sprawling tech stacks to:</p>
+<h2 id="devops">Развитие DevOps с помощью платформенной инженерии<a class="headerlink" href="#devops" title="Permanent link">&para;</a></h2>
+<p><strong>Принцип «ты создал — ты и поддерживаешь» больше не масштабируется.</strong></p>
+<p>DevOps сам по себе не соответствует требованиям облачно-нативной разработки программного обеспечения. Платформенная инженерия — это DevOps, применённый в облачно-нативном масштабе.</p>
+<p>Эффективный DevOps поддерживает кросс-функциональное сотрудничество и повышает эффективность. Платформенная инженерия строится на традиционных практиках DevOps, но идёт на шаг дальше.</p>
+<p>Предоставляя фреймворк и технологический стек для применения принципов DevOps в масштабе с Kubernetes-ориентированной инфраструктурой, платформенная инженерия позволяет организациям реализовать многие преимущества, которые DevOps обещал предоставить.</p>
+<p>На практике развитие DevOps в платформенную инженерию предполагает предоставление централизованно поддерживаемых инструментов разработки, шаблонов для CI/CD-конвейеров, процессов и решений по оркестрации жизненного цикла приложений через единую платформу, которую команды разработки могут использовать для повышения эффективности. Это обеспечивает бесшовный опыт разработчика с минимальными накладными расходами, снижая когнитивную нагрузку и предоставляя быструю обратную связь «из коробки».</p>
+<p>Стандартизированные процессы и технологии платформенной инженерии, охватывающие команды разработки и эксплуатации, приводят к значительному повышению продуктивности разработчиков и улучшению опыта разработчиков.</p>
+<p>Кроме того, подход платформенной инженерии позволяет организациям воспользоваться преимуществами экономии от масштаба, консолидируя разрастающиеся технологические стеки для:</p>
 <ul>
-<li>Manage cost</li>
-<li>Optimize resource usage</li>
-<li>Improve governance</li>
+<li>Управления затратами</li>
+<li>Оптимизации использования ресурсов</li>
+<li>Улучшения управления (governance)</li>
 </ul>
-<h3 id="cloud-native-platforms-require-a-new-approach-to-observability">Cloud-native platforms require a new approach to observability<a class="headerlink" href="#cloud-native-platforms-require-a-new-approach-to-observability" title="Permanent link">&para;</a></h3>
-<p>To be broadly adopted by internal development teams and deliver on its promise of unlocking DevSecOps at scale, a Kubernetes-centric IDP requires other services and components to tackle challenges related to:</p>
+<h3 id="-">Облачно-нативные платформы требуют нового подхода к наблюдаемости<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
+<p>Чтобы быть широко принятой внутренними командами разработки и выполнить обещание разблокировать DevSecOps в масштабе, Kubernetes-ориентированная IDP требует других сервисов и компонентов для решения задач, связанных с:</p>
 <ul>
-<li>Visibility</li>
-<li>Resource utilization</li>
-<li>Security</li>
-<li>Orchestration</li>
-<li>Collaboration</li>
+<li>Видимостью</li>
+<li>Использованием ресурсов</li>
+<li>Безопасностью</li>
+<li>Оркестрацией</li>
+<li>Совместной работой</li>
 </ul>
-<p>Top engineering teams unlock faster deployments and fewer errors by empowering developers to manage their own deployments. Enabling self-service requires developers to be able to debug code quickly, which isnât easy in complex environments. Observability makes all the difference.</p>
-<p>Observability isnât just about the user-facing application. Effective platform engineeringâas DevOps at cloud-native scaleâenables self-service for developers or development teams, and that self-service often requires automation in the background. To provide guard rails and make the system governable, it must be observable.</p>
-<p>When implemented properly, platform engineering brings end-to-end observability to the full software development lifecycle, from development to release, to operation, and eventually to retirement.</p>
-<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
-<p>Fortunately, organizations donât have to replace every tool, vendor, and practice to implement platform engineering. DevOps and cloud-native processes often continue managing systems and pipelines and working on automation and self-service.</p>
-<h3 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">&para;</a></h3>
-<h4 id="accelerate-development-and-support-developer-productivity">Accelerate development and support developer productivity<a class="headerlink" href="#accelerate-development-and-support-developer-productivity" title="Permanent link">&para;</a></h4>
-<p>More than two-thirds of all organizations (68%) implementing platform engineering have already realized an increase in development velocity.</p>
-<p>Organizations with platform engineering teams see various benefits to their speed and efficiency. They report a variety of benefits, notably:</p>
+<p>Лучшие инженерные команды ускоряют развёртывания и сокращают количество ошибок, предоставляя разработчикам возможность самостоятельно управлять развёртываниями. Обеспечение самообслуживания требует от разработчиков возможности быстро отлаживать код, что непросто в сложных средах. Наблюдаемость меняет всё.</p>
+<p>Наблюдаемость — это не только пользовательское приложение. Эффективная платформенная инженерия — как DevOps в облачно-нативном масштабе — обеспечивает самообслуживание для разработчиков или команд разработки, и это самообслуживание часто требует автоматизации в фоновом режиме. Для обеспечения ограничений и управляемости системы она должна быть наблюдаемой.</p>
+<p>При правильной реализации платформенная инженерия обеспечивает сквозную наблюдаемость всего жизненного цикла разработки программного обеспечения — от разработки до выпуска, эксплуатации и, в конечном итоге, вывода из эксплуатации.</p>
+<h3 id="_3">Внедрение<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>К счастью, организациям не нужно заменять каждый инструмент, поставщика и практику для внедрения платформенной инженерии. Процессы DevOps и облачно-нативные процессы часто продолжают управлять системами и конвейерами, работать над автоматизацией и самообслуживанием.</p>
+<h3 id="_4">Преимущества<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h4 id="_5">Ускорение разработки и поддержка продуктивности разработчиков<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>Более двух третей всех организаций (68%), внедряющих платформенную инженерию, уже добились увеличения скорости разработки.</p>
+<p>Организации с командами платформенной инженерии отмечают различные преимущества в скорости и эффективности. Они сообщают о различных выгодах, в частности:</p>
 <ol>
-<li>Improved system reliability</li>
-<li>Improved efficiency and productivity of work</li>
-<li>Faster delivery time</li>
+<li>Улучшение надёжности систем</li>
+<li>Повышение эффективности и продуктивности работы</li>
+<li>Сокращение времени доставки</li>
 </ol>
-<h4 id="improve-developer-experience">Improve developer experience<a class="headerlink" href="#improve-developer-experience" title="Permanent link">&para;</a></h4>
-<p>A best-in-class developer experience gives your organization a strategic
-advantage.</p>
+<h4 id="_6">Улучшение опыта разработчиков<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>Лучший в своём классе опыт разработчиков даёт вашей организации стратегическое преимущество.</p>
 <ul>
-<li>Reduces the cognitive load of the developer</li>
-<li>Reduces overall burden on the operations team</li>
-<li>Improves quality of services from internal IT operations resources, processes, and practices</li>
-<li>Provides a more efficient path for product delivery</li>
-<li>Provides fast feedback cycles to developers</li>
+<li>Снижает когнитивную нагрузку на разработчика</li>
+<li>Снижает общую нагрузку на команду эксплуатации</li>
+<li>Улучшает качество сервисов от внутренних ИТ-ресурсов, процессов и практик</li>
+<li>Обеспечивает более эффективный путь для доставки продукта</li>
+<li>Предоставляет быстрые циклы обратной связи для разработчиков</li>
 </ul>
-<h4 id="optimize-resources-and-mitigate-cost">Optimize resources and mitigate cost<a class="headerlink" href="#optimize-resources-and-mitigate-cost" title="Permanent link">&para;</a></h4>
-<p>With a shared pool of resources for all projects, standardized practices, and the power of AI, platform engineering optimizes resource usage, leverages economies of scales, and mitigates cost.</p>
-<h4 id="standardize-tech-stack-to-minimize-risk-and-increase-governance">Standardize tech stack to minimize risk and increase governance<a class="headerlink" href="#standardize-tech-stack-to-minimize-risk-and-increase-governance" title="Permanent link">&para;</a></h4>
-<p>Effective platform engineering enables teams to keep complexity low, standardize delivery, and still allow for autonomy and freedom.</p>
+<h4 id="_7">Оптимизация ресурсов и снижение затрат<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>С общим пулом ресурсов для всех проектов, стандартизированными практиками и силой ИИ, платформенная инженерия оптимизирует использование ресурсов, использует преимущества экономии от масштаба и снижает затраты.</p>
+<h4 id="_8">Стандартизация технологического стека для минимизации рисков и повышения управляемости<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>Эффективная платформенная инженерия позволяет командам поддерживать низкий уровень сложности, стандартизировать доставку и при этом обеспечивать автономию и свободу.</p>
 <ul>
-<li>Security and compliance are built in by design of the platform components and services.</li>
-<li>Golden Path templates standardize delivery â providing governance.</li>
-<li>Identification and remediation of issues or misconfigurations across templatized and standardized services becomes quick and easy.</li>
+<li>Безопасность и соответствие требованиям встроены в дизайн компонентов и сервисов платформы.</li>
+<li>Шаблоны Golden Path стандартизируют доставку — обеспечивая управляемость.</li>
+<li>Выявление и устранение проблем или неправильных конфигураций в стандартизированных сервисах на основе шаблонов становится быстрым и лёгким.</li>
 </ul>
-<h2 id="the-minimum-viable-platform-back-stack-observability">The minimum viable platform: BACK stack + observability<a class="headerlink" href="#the-minimum-viable-platform-back-stack-observability" title="Permanent link">&para;</a></h2>
-<p>If you were to start from scratch, only with a Git and CI tool in place, a simple beginning could be to work with the BACK stack:</p>
+<h2 id="back">Минимально жизнеспособная платформа: стек BACK + наблюдаемость<a class="headerlink" href="#back" title="Permanent link">&para;</a></h2>
+<p>Если бы вы начинали с нуля, имея только инструменты Git и CI, простым началом мог бы стать стек BACK:</p>
 <p>Backstage
-:   <a href="https://backstage.io/">Graphical user interface (web portal)ï»¿</a></p>
+:   <a href="https://backstage.io/">Графический пользовательский интерфейс (веб-портал)</a></p>
 <p>Argo
-:   <a href="https://argo-cd.readthedocs.io/en/stable/">Delivery of artifactsï»¿</a></p>
+:   <a href="https://argo-cd.readthedocs.io/en/stable/">Доставка артефактов</a></p>
 <p>Crossplane
-:   <a href="https://www.crossplane.io/">APIs and CLIs for configuration automationï»¿</a></p>
+:   <a href="https://www.crossplane.io/">API и CLI для автоматизации конфигурации</a></p>
 <p>Kyverno
-:   <a href="https://kyverno.io/">Scan artifacts and enforce policiesï»¿</a></p>
-<p>The BACK stack includes the artifact delivery and security as well as the configuration and developer portal, but thatâs not all it takes. Observing the workloads is equally important and must be included in a minimum viable platform.</p>
-<p>To feed the observability and security data back to the developers, we offer a <a href="/docs/deliver/backstage-integration" title="Learn how to integrate Dynatrace into Backstage">Backstage integration</a> with Kubernetes support by default and customizable queries.</p>
-<p>OpenTelemetry offers open-source observability, and Dynatrace can be used for observability either out of the box with our proprietary OneAgent or by easily ingesting and using the data provided through OpenTelemetry.</p>
-<h2 id="core-platform-observability-and-security-principles">Core platform observability and security principles<a class="headerlink" href="#core-platform-observability-and-security-principles" title="Permanent link">&para;</a></h2>
-<p>Kubernetes is a good starting point for building a platform, allowing platform engineering teams to provide self-service capabilities and features to their DevSecOps teams. However, it also introduces complexity to the cloud environment.</p>
-<p>Organizations need the automatic answers and insights that observability and security analytics provide to manage and overcome the complexity introduced by todayâs business needs and complex multi-cloud-native environments.</p>
-<p>Follow these core principles when building your Internal Developer Platform (IDP) to manage an application or service throughout its Software Development Lifecycle (SDLC).</p>
-<h3 id="1-core-platform-observability">1. Core platform observability<a class="headerlink" href="#1-core-platform-observability" title="Permanent link">&para;</a></h3>
-<p>A critical first step in achieving actionable platform insights is
-ensuring monitoring of the artifact (service or application) as well as
-the full software development lifecycle and the underlying IDP:</p>
+:   <a href="https://kyverno.io/">Сканирование артефактов и применение политик</a></p>
+<p>Стек BACK включает доставку артефактов и безопасность, а также конфигурацию и портал разработчика, но этого недостаточно. Наблюдение за рабочими нагрузками не менее важно и должно быть включено в минимально жизнеспособную платформу.</p>
+<p>Для обратной передачи данных наблюдаемости и безопасности разработчикам мы предлагаем интеграцию с Backstage с поддержкой Kubernetes по умолчанию и настраиваемыми запросами.</p>
+<p>OpenTelemetry предоставляет наблюдаемость с открытым исходным кодом, а Dynatrace может использоваться для наблюдаемости либо «из коробки» с нашим проприетарным OneAgent, либо путём простого приёма и использования данных, предоставленных через OpenTelemetry.</p>
+<h2 id="_9">Основные принципы наблюдаемости и безопасности платформы<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>Kubernetes — хорошая отправная точка для построения платформы, позволяющая командам платформенной инженерии предоставлять возможности и функции самообслуживания своим командам DevSecOps. Однако он также вносит сложность в облачную среду.</p>
+<p>Организациям необходимы автоматические ответы и аналитика, которые обеспечивают наблюдаемость и аналитика безопасности, для управления и преодоления сложности, привносимой современными бизнес-потребностями и сложными мультиоблачными средами.</p>
+<p>Следуйте этим основным принципам при построении вашей внутренней платформы разработчика (IDP) для управления приложением или сервисом на протяжении всего жизненного цикла разработки программного обеспечения (SDLC).</p>
+<h3 id="1">1. Базовая наблюдаемость платформы<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>Критически важный первый шаг в получении полезных аналитических данных о платформе — обеспечение мониторинга артефакта (сервиса или приложения), а также всего жизненного цикла разработки ПО и базовой IDP:</p>
 <ul>
-<li><strong>Artifact</strong>: How does my product behave in various environments (staging, testing, production)?</li>
-<li><strong>Platform Toolstack</strong>: What is the health and utilization of the tools in use (e.g. BACK stack)?</li>
+<li><strong>Артефакт</strong>: Как ведёт себя мой продукт в различных средах (staging, тестирование, production)?</li>
+<li><strong>Технологический стек платформы</strong>: Каково состояние и утилизация используемых инструментов (например, стека BACK)?</li>
 </ul>
-<p>Treating (critical) platform services like any other business-critical service allows for easy and effective incident triage, issue resolution, and improved developer experience.</p>
-<h4 id="some-aspects-of-core-platform-observability">Some aspects of core platform observability<a class="headerlink" href="#some-aspects-of-core-platform-observability" title="Permanent link">&para;</a></h4>
+<p>Отношение к (критически важным) платформенным сервисам как к любому другому бизнес-критичному сервису позволяет легко и эффективно проводить сортировку инцидентов, решение проблем и улучшать опыт разработчиков.</p>
+<h4 id="_10">Некоторые аспекты базовой наблюдаемости платформы<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>Ensuring resiliency, availability, and security</strong> by applying the same practices to all platform services</li>
-<li><strong>Optimizing usage, performance, and licensing</strong> to positively impact the application lifecycle and reduce cost</li>
-<li><strong>Detecting misconfiguration or misuse</strong> by discovering upcoming problems and issues, used to educate users.</li>
+<li><strong>Обеспечение отказоустойчивости, доступности и безопасности</strong> путём применения одинаковых практик ко всем платформенным сервисам</li>
+<li><strong>Оптимизация использования, производительности и лицензирования</strong> для положительного влияния на жизненный цикл приложения и снижения затрат</li>
+<li><strong>Обнаружение неправильной конфигурации или неправильного использования</strong> путём выявления предстоящих проблем, используемых для обучения пользователей.</li>
 </ul>
-<h3 id="2-release-information">2. Release information<a class="headerlink" href="#2-release-information" title="Permanent link">&para;</a></h3>
-<p>Attaching the current version and stage information to services allows for easy triaging and resolution of issues. This can be done by promoting the version and stage information to Kubernetes containers as environment variables or annotations.</p>
-<h3 id="3-pipeline-efficiency">3. Pipeline efficiency<a class="headerlink" href="#3-pipeline-efficiency" title="Permanent link">&para;</a></h3>
-<p>While the platform tool stack monitoring outlined in the previous paragraph covers the health of the IDP, it does not yet cover the efficiency of the pipeline. This is where logs, events, and telemetry data from pipeline or workflow executions come in.</p>
-<p>By analyzing pipeline or workflow logs, events, and traces, itâs possible to create metrics (for example, DORA metrics) that can be used for benchmarking and deciding where to invest time or resources for improvement.</p>
-<p>Most used tools in a cloud-native environment already emit events or telemetry data, but this area currently lacks dedicated standards and semantic conventions.</p>
-<h3 id="4-ownership-information">4. Ownership information<a class="headerlink" href="#4-ownership-information" title="Permanent link">&para;</a></h3>
-<p>When looking at artifacts, responsibility is a critical piece of information. Who is responsible for an application or service in production, and who owns security?</p>
-<p>This was often maintained in CMDBs, Excel sheets, or active directories. However, it's wise to manage this information proactively and automatically in cloud-native environments with constant updates and changes.</p>
-<p>One way to do this is through Kubernetes labels and annotations, ensuring out-of-the-box availability of this critical information across the lifecycle.</p>
-<h3 id="5-ai-observability">5. AI Observability<a class="headerlink" href="#5-ai-observability" title="Permanent link">&para;</a></h3>
-<p>With the rise of generative AI in DevOps Portals and IDP tools, providing observability for these systems is growing to efficiently drive the experience they provide while keeping costs in check.</p>
-<h2 id="platform-engineering-use-cases">Platform Engineering use cases<a class="headerlink" href="#platform-engineering-use-cases" title="Permanent link">&para;</a></h2>
-<p>With effective platform engineering, everything is available in self-service through Golden Paths (templates). Self-service provides autonomy for rapid, secure innovation while maintaining guard rails for consistency and enabling governance.</p>
-<p>We have categorized use cases with a product-lifecycle-centric view, rather than a platform-centric view, to emphasize the ease of adoption of use cases for platform engineering teams and cases in which no formal platform engineering team has been established.</p>
-<p><strong>Develop - Release - Operate - Predict - Prevent - Resolve - Protect - Improve</strong></p>
-<p>All of the following use cases are available to the platform engineering team to make their work observable and easier, or for the platform engineering team to provide automation and self-service capabilities to their usersâthe development teams.</p>
-<h3 id="develop">Develop<a class="headerlink" href="#develop" title="Permanent link">&para;</a></h3>
-<p>This category contains all activities around planning, developing, building, and testing services and applications on an Internal Developer Platform (IDP) provided by a platform engineering team.</p>
-<h4 id="test-pipeline-observability-test-pipeline-observability">Test pipeline observability Test pipeline observability<a class="headerlink" href="#test-pipeline-observability-test-pipeline-observability" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   From millions of test events to a single source of truth.</p>
-<p>Provide observability into test results automatically across different used tools and ensure all test results are available in a single source of truth.</p>
+<h3 id="2">2. Информация о релизах<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>Привязка текущей версии и информации об этапе к сервисам позволяет легко проводить сортировку и решение проблем. Это можно сделать путём передачи информации о версии и этапе в контейнеры Kubernetes как переменных окружения или аннотаций.</p>
+<h3 id="3">3. Эффективность конвейера<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>Хотя мониторинг технологического стека платформы, описанный в предыдущем разделе, охватывает состояние IDP, он ещё не охватывает эффективность конвейера. Здесь на помощь приходят логи, события и данные телеметрии из выполнений конвейеров или рабочих процессов.</p>
+<p>Анализируя логи, события и трассировки конвейеров или рабочих процессов, можно создавать метрики (например, метрики DORA), которые могут использоваться для бенчмаркинга и принятия решений о том, куда инвестировать время или ресурсы для улучшения.</p>
+<p>Большинство используемых инструментов в облачно-нативных средах уже генерируют события или данные телеметрии, но в этой области в настоящее время отсутствуют специализированные стандарты и семантические конвенции.</p>
+<h3 id="4">4. Информация о владении<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>При рассмотрении артефактов ответственность является критически важной информацией. Кто отвечает за приложение или сервис в production, и кто владеет безопасностью?</p>
+<p>Раньше это часто поддерживалось в CMDB, таблицах Excel или Active Directory. Однако разумно управлять этой информацией проактивно и автоматически в облачно-нативных средах с постоянными обновлениями и изменениями.</p>
+<p>Один из способов сделать это — через метки и аннотации Kubernetes, обеспечивая доступность этой критически важной информации «из коробки» на протяжении всего жизненного цикла.</p>
+<h3 id="5">5. Наблюдаемость ИИ<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>С ростом использования генеративного ИИ в порталах DevOps и инструментах IDP, обеспечение наблюдаемости этих систем становится всё более важным для эффективного управления предоставляемым ими опытом при контроле затрат.</p>
+<h2 id="_11">Сценарии использования платформенной инженерии<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>При эффективной платформенной инженерии всё доступно в режиме самообслуживания через Golden Paths (шаблоны). Самообслуживание обеспечивает автономию для быстрых, безопасных инноваций при сохранении ограничений для единообразия и управляемости.</p>
+<p>Мы категоризировали сценарии использования с точки зрения жизненного цикла продукта, а не с точки зрения платформы, чтобы подчеркнуть лёгкость принятия сценариев использования командами платформенной инженерии и случаи, когда формальная команда платформенной инженерии ещё не создана.</p>
+<p><strong>Разработка - Выпуск - Эксплуатация - Прогнозирование - Предотвращение - Решение - Защита - Улучшение</strong></p>
+<p>Все следующие сценарии использования доступны команде платформенной инженерии для обеспечения наблюдаемости и упрощения работы, или для предоставления автоматизации и возможностей самообслуживания пользователям — командам разработки.</p>
+<h3 id="_12">Разработка<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>Эта категория содержит все действия, связанные с планированием, разработкой, сборкой и тестированием сервисов и приложений на внутренней платформе разработчика (IDP), предоставленной командой платформенной инженерии.</p>
+<h4 id="_13">Наблюдаемость тестового конвейера Наблюдаемость тестового конвейера<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   От миллионов тестовых событий к единому источнику истины.</p>
+<p>Обеспечение наблюдаемости результатов тестирования автоматически по различным используемым инструментам и обеспечение доступности всех результатов тестирования в едином источнике истины.</p>
 <ul>
-<li>Increase efficiency and insights through test observability</li>
-<li>Ingest test events and metadata into a single unified observability platform</li>
-<li>Visualize test results and KPIs in one central view or dashboard</li>
-<li>Identify long lasting tests to easily optimize for faster test feedback</li>
+<li>Повышение эффективности и аналитики через наблюдаемость тестирования</li>
+<li>Приём тестовых событий и метаданных в единую унифицированную платформу наблюдаемости</li>
+<li>Визуализация результатов тестирования и KPI в одном центральном представлении или дашборде</li>
+<li>Определение долго выполняющихся тестов для простой оптимизации и ускорения обратной связи по тестированию</li>
 </ul>
-<p>Try it yourself: <a href="/docs/deliver/test-pipeline-observability" title="Utilize Dynatrace to observe and analyze test pipelines effectively">Test pipeline observability</a>.</p>
-<h4 id="continuous-testing-validation-continuous-testing-validation">Continuous testing validation Continuous testing validation<a class="headerlink" href="#continuous-testing-validation-continuous-testing-validation" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   120X reduction in evaluation times from days to minutes.</p>
-<p>Testing is often highly automated already, but teams still frequently test in siloes.</p>
-<p>To ensure high quality customer experience automatically and proactively:</p>
+<p>Попробуйте сами: Наблюдаемость тестового конвейера.</p>
+<h4 id="_14">Непрерывная валидация тестирования Непрерывная валидация тестирования<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   120-кратное сокращение времени оценки с дней до минут.</p>
+<p>Тестирование часто уже высоко автоматизировано, но команды всё ещё часто тестируют в изоляции.</p>
+<p>Для автоматического и проактивного обеспечения высокого качества клиентского опыта:</p>
 <ul>
-<li>Combine, continuously evaluate, and baseline test results from testing tools</li>
-<li>Incorporate SLOs, security findings and synthetic tests</li>
-<li>Reduce the number of manual operations by engineers to verify quality of new release</li>
-<li>Easily integrate CI/CD delivery pipeline with tools like Dynatrace Synthetic Monitoring to ensure that new releases where all critical user journeys work as expected</li>
+<li>Объединяйте, непрерывно оценивайте и создавайте базовые линии результатов тестирования от инструментов тестирования</li>
+<li>Включайте SLO, результаты проверки безопасности и синтетические тесты</li>
+<li>Сокращайте количество ручных операций инженеров для проверки качества нового релиза</li>
+<li>Легко интегрируйте CI/CD-конвейер доставки с такими инструментами, как Dynatrace Synthetic Monitoring, чтобы гарантировать, что в новых релизах все критические пользовательские сценарии работают как ожидается</li>
 </ul>
-<h4 id="observability-driven-development-observability-driven-development">Observability-driven development Observability-driven development<a class="headerlink" href="#observability-driven-development-observability-driven-development" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Mean Time to Observability reduction from hours to seconds.</p>
-<p>In the previous section, we outlined the importance of covering ownership and release information early in the lifecycle by extending the provided metadata to include observability and security rules, SLOs, and even automation and remediation steps.</p>
-<p>Standardizing these based on technology, team, or criticality of service enables the use of simple as-code templates as Golden Paths, ensuring consistency and governance across the lifecycle.</p>
-<p>Standardizing across teams can:</p>
+<h4 id="_15">Разработка на основе наблюдаемости Разработка на основе наблюдаемости<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Сокращение среднего времени до наблюдаемости с часов до секунд.</p>
+<p>В предыдущем разделе мы описали важность охвата информации о владении и релизах на раннем этапе жизненного цикла путём расширения предоставляемых метаданных для включения правил наблюдаемости и безопасности, SLO и даже шагов автоматизации и устранения.</p>
+<p>Стандартизация этих элементов на основе технологии, команды или критичности сервиса позволяет использовать простые шаблоны as-code в качестве Golden Paths, обеспечивая единообразие и управляемость на протяжении всего жизненного цикла.</p>
+<p>Стандартизация между командами может:</p>
 <ul>
-<li>Bring observability and transparency to development teams out-of-the-box</li>
-<li>Provide real-time insights into what's happening</li>
-<li>Conduct observability and reliability checks at an early stage to enable faster reaction to potential issues before they reach production</li>
-<li>Increase accountability of application teams and empower them to get early insights in their implementations</li>
-<li>Provide autonomy while having consistent rules for the same criticality of service</li>
+<li>Обеспечить наблюдаемость и прозрачность для команд разработки «из коробки»</li>
+<li>Предоставить аналитику в реальном времени о происходящем</li>
+<li>Проводить проверки наблюдаемости и надёжности на ранней стадии для ускорения реакции на потенциальные проблемы до их попадания в production</li>
+<li>Повысить ответственность команд приложений и дать им возможность получать ранние данные о своих реализациях</li>
+<li>Обеспечить автономию при наличии единых правил для сервисов одного уровня критичности</li>
 </ul>
-<h3 id="release">Release<a class="headerlink" href="#release" title="Permanent link">&para;</a></h3>
-<p>This category contains all activities around releasing and deploying in environments along the Software Development Lifecycle (SDLC).</p>
-<h4 id="continuous-testing-validation-release-validation">Continuous testing validation Release validation<a class="headerlink" href="#continuous-testing-validation-release-validation" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Reduce change failure rate and reduce production deployment lead time by up to 99%</p>
-<p>Automatically validate new releases â taking downstream and upstream dependencies into account â based on baselining, observability data, SLOs, and security information. Use the results to drive meaningful follow-up actions. Providing release validation templates as part of every delivery process enables fast feedback regarding any negative side-effects of a new version. Faster feedback leads to better developer experience, higher release quality, and higher innovation pace.</p>
-<p>Try it yourself: <a href="/docs/deliver/quality-gates" title="Validate the releases of your business-critical services">Release validation</a>.</p>
-<h4 id="progressive-delivery-progressive-delivery">Progressive delivery Progressive delivery<a class="headerlink" href="#progressive-delivery-progressive-delivery" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   90-99% reduced problem exposure with progressive delivery.</p>
-<p>Releasing updates and new versions of an application or service in a gradual and controlled manner can help teams provide fast, secure, and high-quality services without disrupting business.</p>
-<p>Based on the observability data, including SLO trends and synthetic checks, an automated progressive delivery release like canary or blue/green can be established.</p>
+<h3 id="_16">Выпуск<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>Эта категория содержит все действия, связанные с выпуском и развёртыванием в средах на протяжении жизненного цикла разработки ПО (SDLC).</p>
+<h4 id="_17">Непрерывная валидация тестирования Валидация релиза<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Снижение доли неудачных изменений и сокращение времени развёртывания в production до 99%</p>
+<p>Автоматическая валидация новых релизов — с учётом нисходящих и восходящих зависимостей — на основе базовых линий, данных наблюдаемости, SLO и информации о безопасности. Использование результатов для выполнения осмысленных последующих действий. Предоставление шаблонов валидации релиза как части каждого процесса доставки обеспечивает быструю обратную связь о любых негативных побочных эффектах новой версии. Более быстрая обратная связь ведёт к лучшему опыту разработчика, более высокому качеству релизов и более высокому темпу инноваций.</p>
+<p>Попробуйте сами: Валидация релиза.</p>
+<h4 id="_18">Прогрессивная доставка Прогрессивная доставка<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   90–99% снижение воздействия проблем при прогрессивной доставке.</p>
+<p>Выпуск обновлений и новых версий приложения или сервиса постепенно и контролируемо может помочь командам предоставлять быстрые, безопасные и качественные сервисы без нарушения бизнес-процессов.</p>
+<p>На основе данных наблюдаемости, включая тренды SLO и синтетические проверки, может быть реализован автоматизированный прогрессивный выпуск, такой как canary или blue/green.</p>
 <ul>
-<li>Automated workflow execution to control the software delivery</li>
-<li>Direct Kubernetes interactions to apply configuration changes</li>
-<li>Governance for the delivery process by leveraging events</li>
-<li>Targeted notifications to inform the team in charge of the delivery process</li>
+<li>Автоматическое выполнение рабочих процессов для управления доставкой ПО</li>
+<li>Прямые взаимодействия с Kubernetes для применения изменений конфигурации</li>
+<li>Управление процессом доставки с использованием событий</li>
+<li>Целевые уведомления для информирования ответственной команды о процессе доставки</li>
 </ul>
-<h4 id="pipeline-observability-pipeline-observability">Pipeline observability Pipeline observability<a class="headerlink" href="#pipeline-observability-pipeline-observability" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   100% real-time standardized coverage of your software lifecycle health.</p>
-<p>People often say, you canât manage what you canât measure. The statement holds true for the software development lifecycle as well. To calculate critical metrics, such as lead time for change, it's
-important to take note of the pipeline telemetry data.</p>
-<p>Using pipeline observability, the data (for example failed builds, lead time) can be calculated and acted upon automatically. With automated data, these metricsâlike the DORA metrics lead time for change, deployment frequency, change failure rate, and mean time to resolveâare readily available in several dimensions, including application/service, platform service/pipeline, and technology and
-ownership.</p>
-<p>In addition to metrics, logs and traces of pipeline runs can help debug erroneous pipelines or identify time-consuming hotspots that can be optimized for more efficient pipelines.</p>
-<h3 id="operate">Operate<a class="headerlink" href="#operate" title="Permanent link">&para;</a></h3>
-<p>This category contains activities around monitoring and operating services and applications in production environments.</p>
-<h4 id="data-driven-cloud-tuning-cloud-cost-optimization">Data-driven cloud tuning Cloud cost optimization<a class="headerlink" href="#data-driven-cloud-tuning-cloud-cost-optimization" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Reduce cross-zone network traffic by up to 55%.</p>
-<p>By combining network data with infrastructure and billing information, top cost contributors can be identified and analyzed, leading to improvements by pinpointed adoption of network compression or other hyperscaler tools.</p>
-<p>Try it yourself: <a href="/docs/observe/infrastructure-observability/cloud-platform-monitoring/use-cases/cloud-costs" title="Manage your cloud deployment using Grail and your cloud vendor-provided data in context.">Data-driven cloud tuning</a>.</p>
-<h4 id="ai-observability-generative-ai-observability">AI Observability Generative AI observability<a class="headerlink" href="#ai-observability-generative-ai-observability" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Increase reliability while keeping costs from surging.</p>
-<p>With the rise of generative AI in DevOps Portals and IDP tools, tracking usage and consumption is becoming increasingly important, allowing streamlined access and managing cost effectively.</p>
-<p>Using observability data further allows the proper sizing and configuration of generative AI tools, increasing experience and productivity for development teams.</p>
-<p>Try it yourself:</p>
+<h4 id="_19">Наблюдаемость конвейера Наблюдаемость конвейера<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   100% покрытие в реальном времени стандартизированного мониторинга состояния жизненного цикла ПО.</p>
+<p>Часто говорят, что нельзя управлять тем, что нельзя измерить. Это утверждение справедливо и для жизненного цикла разработки ПО. Для расчёта критических метрик, таких как время от внесения изменения до развёртывания, важно учитывать данные телеметрии конвейера.</p>
+<p>Используя наблюдаемость конвейера, данные (например, неудачные сборки, время до развёртывания) могут быть рассчитаны и автоматически обработаны. С автоматизированными данными такие метрики — как метрики DORA: время до развёртывания изменений, частота развёртываний, доля неудачных изменений и среднее время восстановления — легко доступны в нескольких измерениях, включая приложение/сервис, платформенный сервис/конвейер, а также технологию и владение.</p>
+<p>Помимо метрик, логи и трассировки выполнений конвейера помогают отлаживать ошибочные конвейеры или определять затратные по времени узкие места, которые можно оптимизировать для более эффективных конвейеров.</p>
+<h3 id="_20">Эксплуатация<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p>Эта категория содержит действия, связанные с мониторингом и эксплуатацией сервисов и приложений в production-средах.</p>
+<h4 id="_21">Оптимизация облачных затрат на основе данных Оптимизация облачных затрат<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Снижение межзонального сетевого трафика до 55%.</p>
+<p>Объединяя сетевые данные с информацией об инфраструктуре и биллинге, можно определить и проанализировать основных контрибьюторов затрат, что приводит к улучшениям через точечное применение сжатия сети или других инструментов гиперскейлера.</p>
+<p>Попробуйте сами: Оптимизация облачных затрат на основе данных.</p>
+<h4 id="_22">Наблюдаемость ИИ Наблюдаемость генеративного ИИ<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Повышение надёжности при контроле роста затрат.</p>
+<p>С ростом использования генеративного ИИ в порталах DevOps и инструментах IDP, отслеживание использования и потребления становится всё более важным, обеспечивая упорядоченный доступ и эффективное управление затратами.</p>
+<p>Использование данных наблюдаемости дополнительно позволяет правильно масштабировать и настраивать инструменты генеративного ИИ, повышая опыт и продуктивность для команд разработки.</p>
+<p>Попробуйте сами:</p>
 <ul>
-<li><a href="/docs/observe/dynatrace-for-ai-observability" title="Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more.">AI and LLM Observability</a></li>
+<li>Наблюдаемость ИИ и LLM models and AI services, and much more.")</li>
 </ul>
-<h4 id="infrastructure-observability-observability-for-infrastructure">Infrastructure observability Observability for infrastructure<a class="headerlink" href="#infrastructure-observability-observability-for-infrastructure" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   30% reduced MTTR by breaking down data silos.</p>
-<p>For IT operations teams, the central challenge in ensuring the health of the IT infrastructure lies in the daunting task of pinpointing the exact root cause of issues.</p>
-<p>By applying Golden Paths and as-code templates, users can quickly trace performance issues to their source by "following the red" to the problematic infrastructure entity. This approach allows an immediate understanding of how entities such as hosts, processes, and their associated relationships contribute to the identified issue.</p>
-<h4 id="kubernetes-monitoring">Kubernetes monitoring<a class="headerlink" href="#kubernetes-monitoring" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Manage your platform with 30+ out-of-the-box health alerts.</p>
-<p>Establishing scalable cluster lifecycle management within a diverse multi-cluster environment featuring various distributions requires a centralized repository with a single source of truth.</p>
-<p>This centralized view:</p>
+<h4 id="_23">Наблюдаемость инфраструктуры Наблюдаемость инфраструктуры<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   30% сокращение MTTR благодаря устранению информационных изоляций.</p>
+<p>Для команд ИТ-операций центральная задача в обеспечении состояния ИТ-инфраструктуры заключается в сложной задаче точного определения первопричины проблем.</p>
+<p>Применяя Golden Paths и шаблоны as-code, пользователи могут быстро отследить проблемы производительности до их источника, «следуя за красным» к проблемной сущности инфраструктуры. Этот подход позволяет немедленно понять, как сущности, такие как хосты, процессы и их связанные отношения, способствуют выявленной проблеме.</p>
+<h4 id="kubernetes">Мониторинг Kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Управление платформой с 30+ готовыми оповещениями о состоянии.</p>
+<p>Создание масштабируемого управления жизненным циклом кластеров в разнообразной мультикластерной среде с различными дистрибутивами требует централизованного репозитория с единым источником истины.</p>
+<p>Это централизованное представление:</p>
 <ul>
-<li>Serves as the hub for ingesting, visualizing, and analyzing telemetry data from different layers of the Kubernetes stack</li>
-<li>Enables the execution of configuration actions based on observability insights, such as resource consumption and performance management across all clusters</li>
-<li>Offers extended centralized monitoring and alerting capabilities, particularly for node failure incidents</li>
+<li>Служит центром для приёма, визуализации и анализа данных телеметрии от различных уровней стека Kubernetes</li>
+<li>Позволяет выполнять действия по конфигурации на основе аналитики наблюдаемости, таких как управление потреблением ресурсов и производительностью по всем кластерам</li>
+<li>Предлагает расширенные возможности централизованного мониторинга и оповещений, особенно для инцидентов отказа узлов</li>
 </ul>
-<h3 id="predict">Predict<a class="headerlink" href="#predict" title="Permanent link">&para;</a></h3>
-<p>Many incidents that used to result in wake-up calls for people on standby can now be addressed before they become major issues by using predictive AI and forecasting.</p>
-<h4 id="predictive-operations-predictive-kubernetes-operations">Predictive operations Predictive Kubernetes operations<a class="headerlink" href="#predictive-operations-predictive-kubernetes-operations" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Reduce overprovisioning and storage needs by up to 75%.</p>
-<p>Within cloud-native environments, resizing disks can happen frequently. Predictive AI for forecasting enables automatic and timely resizing of disks, avoiding system outages while keeping costs low.</p>
-<p>Try it yourself: <a href="/docs/observe/infrastructure-observability/kubernetes-app/use-cases/predictive-operations" title="Proactively manage disk space within Kubernetes environments">Predictive Kubernetes operations</a>.</p>
-<h4 id="forecasting-in-data-analytics-forecasting-in-data-analytics">Forecasting in data analytics Forecasting in data analytics<a class="headerlink" href="#forecasting-in-data-analytics-forecasting-in-data-analytics" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Zero disk-resize related after-hour alerts for SREs.</p>
-<p>Anticipatory management of cloud resources within highly dynamic IT systems is a critical success factor for modern companies. Operators must closely observe business-critical resources such as storage, CPU, and memory to avoid resource-driven outages.</p>
-<h4 id="forecasting-in-workflows-forecasting-in-workflow-automation">Forecasting in workflows Forecasting in workflow automation<a class="headerlink" href="#forecasting-in-workflows-forecasting-in-workflow-automation" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Reduce up to 100% of recurring manual efforts with prediction-driven automation.</p>
-<p>Predictive AI in workflow automation makes it possible to proactively raise tickets and act automatically before problems arise.</p>
-<p>Try it yourself: <a href="/docs/dynatrace-intelligence/use-cases/davis-for-workflows" title="Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.">AI in Workflows - Predictive maintenance of cloud disks</a>.</p>
-<h3 id="prevent">Prevent<a class="headerlink" href="#prevent" title="Permanent link">&para;</a></h3>
-<p>Even when AI canât predict issues, it can often prevent them using observability and security data.</p>
-<h4 id="bug-prevention-preventing-customer-facing-bugs">Bug prevention Preventing customer-facing bugs<a class="headerlink" href="#bug-prevention-preventing-customer-facing-bugs" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Reduce end-user-facing bugs by up to 36%.</p>
-<p>Ingesting and automatically analyzing application log data from production makes it easy to issue tickets with context and create and assign work to the respective development teams, allowing them to act and resolve bugs before end-users encounter them.</p>
-<p>Try it yourself: <a href="/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-resolve-dependencies" title="Explore a Log Management and Analytics use case for resolving team dependencies.">Automated bug triaging and ticketing</a>.</p>
-<h4 id="unified-exposure-protection-unified-exposure-protection">Unified exposure protection Unified exposure protection<a class="headerlink" href="#unified-exposure-protection-unified-exposure-protection" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Cut risk remediation from 96 hours to 4 hours â 95% faster.</p>
-<p>Observability and security are converging to facilitate prioritization and risk assessment of security findings, resolving the most common frustration with existing tools, specifically during the software development stages. Combining this with automation leads to effective engagements with the teams who need to act on those security findings.</p>
-<h4 id="continuous-security-posture-awareness-continuous-security-posture-awareness">Continuous security posture awareness Continuous security posture awareness<a class="headerlink" href="#continuous-security-posture-awareness-continuous-security-posture-awareness" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Instant live security reports.</p>
-<p>Get a unified and prioritized view of different exposures across your different application tiers and your production and pre-production environments.</p>
+<h3 id="_24">Прогнозирование<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p>Многие инциденты, которые раньше приводили к ночным звонкам дежурным, теперь могут быть решены до того, как они станут серьёзными проблемами, с помощью прогнозного ИИ и прогнозирования.</p>
+<h4 id="kubernetes_1">Прогнозные операции Прогнозные операции Kubernetes<a class="headerlink" href="#kubernetes_1" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Сокращение избыточного выделения ресурсов и потребностей в хранилище до 75%.</p>
+<p>В облачно-нативных средах изменение размера дисков может происходить часто. Прогнозный ИИ для прогнозирования обеспечивает автоматическое и своевременное изменение размера дисков, предотвращая сбои системы при контроле затрат.</p>
+<p>Попробуйте сами: Прогнозные операции Kubernetes.</p>
+<h4 id="_25">Прогнозирование в аналитике данных Прогнозирование в аналитике данных<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Ноль оповещений, связанных с изменением размера дисков, в нерабочее время для SRE.</p>
+<p>Упреждающее управление облачными ресурсами в высокодинамичных ИТ-системах является критическим фактором успеха для современных компаний. Операторы должны внимательно наблюдать за бизнес-критичными ресурсами, такими как хранилище, CPU и память, чтобы избежать сбоев, вызванных нехваткой ресурсов.</p>
+<h4 id="_26">Прогнозирование в рабочих процессах Прогнозирование в автоматизации рабочих процессов<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Сокращение до 100% повторяющихся ручных операций с помощью автоматизации на основе прогнозирования.</p>
+<p>Прогнозный ИИ в автоматизации рабочих процессов позволяет проактивно создавать тикеты и действовать автоматически до возникновения проблем.</p>
+<p>Попробуйте сами: ИИ в Workflows — Прогнозное обслуживание облачных дисков.</p>
+<h3 id="_27">Предотвращение<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<p>Даже когда ИИ не может предсказать проблемы, он часто может предотвратить их, используя данные наблюдаемости и безопасности.</p>
+<h4 id="_28">Предотвращение ошибок Предотвращение ошибок, видимых пользователям<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Сокращение ошибок, видимых конечным пользователям, до 36%.</p>
+<p>Приём и автоматический анализ данных журналов приложений из production упрощает создание тикетов с контекстом и назначение работы соответствующим командам разработки, позволяя им действовать и устранять ошибки до того, как конечные пользователи столкнутся с ними.</p>
+<p>Попробуйте сами: Автоматизированная сортировка ошибок и создание тикетов.</p>
+<h4 id="_29">Единая защита от уязвимостей Единая защита от уязвимостей<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Сокращение времени устранения рисков с 96 часов до 4 часов — на 95% быстрее.</p>
+<p>Наблюдаемость и безопасность сближаются для облегчения приоритизации и оценки рисков результатов проверки безопасности, решая наиболее распространённое разочарование существующими инструментами, особенно на этапах разработки ПО. Объединение этого с автоматизацией приводит к эффективному взаимодействию с командами, которым необходимо действовать по результатам проверки безопасности.</p>
+<h4 id="_30">Непрерывный мониторинг состояния безопасности Непрерывный мониторинг состояния безопасности<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Мгновенные отчёты о безопасности в реальном времени.</p>
+<p>Получите унифицированное и приоритизированное представление различных уязвимостей по различным уровням приложений и средам production и pre-production.</p>
 <ul>
-<li>Prioritize vulnerabilities with a custom risk specific to your organization</li>
-<li>Learn what remediation activities prioritize for impactâand let automation handle it</li>
-<li>Learn the details of a vulnerability, such as which entities are impacted and whether thereâs any link to databases.</li>
+<li>Приоритизируйте уязвимости с учётом пользовательского риска, специфичного для вашей организации</li>
+<li>Узнайте, какие действия по устранению приоритизировать для максимального эффекта — и позвольте автоматизации справиться с этим</li>
+<li>Изучите детали уязвимости, такие как какие сущности затронуты и есть ли связь с базами данных.</li>
 </ul>
-<h3 id="resolve">Resolve<a class="headerlink" href="#resolve" title="Permanent link">&para;</a></h3>
-<p>Once an incident occurs, it's important to take the right steps immediately. Sometimes, the first step is to inform the right team with the required information. At other times, issues can be remediated and resolved automatically.</p>
-<h4 id="incident-auto-routing-incident-triaging-and-response">Incident auto-routing Incident triaging and response<a class="headerlink" href="#incident-auto-routing-incident-triaging-and-response" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Improve MTTR by up to 99%.</p>
-<p>Using observability and security data combined with context and further metadata (such as ownership information), it becomes easy to automatically triage issues as they arise and follow through with the
-proper response.</p>
-<p>The proper response could be any automated action available, such as informing stakeholders through communication tools, opening incident tickets, triggering configuration management tools, or remediating directly by executing Kubernetes jobs or creating pull requests.</p>
-<h4 id="business-impact-resolving-critical-business-impact">Business impact Resolving critical business impact<a class="headerlink" href="#business-impact-resolving-critical-business-impact" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Linking IT alerts to business impact provides prioritization.</p>
-<p>Combining IDP observability data with the impact an IDP has on business transactions and footprints allows organizations to prioritize based on the highest-impact issues first.</p>
-<h4 id="error-budget-alerting-error-budget-alerting">Error budget alerting Error budget alerting<a class="headerlink" href="#error-budget-alerting-error-budget-alerting" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Increase triaging efficiency by 90%.</p>
-<p>If you have 99 problems, how do you prioritize?</p>
-<p>An easy way to focus on the right problems is to look at those actively impacting Service-Level Objectives (SLOs). If the number of issues in an environment still calls for further prioritization, automatically triage and inform stakeholders easily by alerting them on the SLO error budget burn rate (how fast the SLO error budget is consumed).</p>
-<h3 id="protect">Protect<a class="headerlink" href="#protect" title="Permanent link">&para;</a></h3>
-<p>All environments, infrastructures, and applications must be protected â with the right measures. Organizations can protect their assets more easily with a consistent Internal Developer Platform (IDP), providing governance and security.</p>
-<h4 id="security-alert-noise-reduction-security-operations-center-soc-noise-reduction">Security alert noise reduction Security Operations Center (SOC) noise reduction<a class="headerlink" href="#security-alert-noise-reduction-security-operations-center-soc-noise-reduction" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Reduce security event storms by 99%</p>
-<p>Avoiding fatigue due to the myriad of security events emitted by hyperscaler tools every single day by deduplication and consolidation combined with automatic ticket creation and assignment based on development and security ownership.</p>
-<p>Try it yourself: <a href="/docs/secure/use-cases/notification-automation" title="Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.">CSPM Notification Automation</a>.</p>
-<h4 id="security-as-a-service-automate-security-findings-at-scale">Security as a service Automate security findings at scale<a class="headerlink" href="#security-as-a-service-automate-security-findings-at-scale" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Strive towards zero false positives.</p>
-<p>Understand the threat posed by your code, third party, and open-source libraries and block malicious requests attempting to exploit code weaknesses in these.</p>
+<h3 id="_31">Решение<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
+<p>Когда инцидент происходит, важно немедленно предпринять правильные шаги. Иногда первый шаг — информировать правильную команду с необходимой информацией. В других случаях проблемы могут быть устранены и решены автоматически.</p>
+<h4 id="_32">Автоматическая маршрутизация инцидентов Сортировка инцидентов и реагирование<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Улучшение MTTR до 99%.</p>
+<p>Используя данные наблюдаемости и безопасности в сочетании с контекстом и дополнительными метаданными (такими как информация о владении), становится легко автоматически сортировать проблемы по мере их возникновения и выполнять надлежащую реакцию.</p>
+<p>Надлежащей реакцией может быть любое доступное автоматизированное действие, такое как информирование заинтересованных сторон через коммуникационные инструменты, открытие тикетов инцидентов, запуск инструментов управления конфигурацией или прямое устранение путём выполнения задач Kubernetes или создания pull-запросов.</p>
+<h4 id="_33">Влияние на бизнес Решение критического влияния на бизнес<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Связывание ИТ-оповещений с влиянием на бизнес обеспечивает приоритизацию.</p>
+<p>Объединение данных наблюдаемости IDP с влиянием, которое IDP оказывает на бизнес-транзакции и бизнес-процессы, позволяет организациям приоритизировать на основе наиболее значимых проблем.</p>
+<h4 id="_34">Оповещение по бюджету ошибок Оповещение по бюджету ошибок<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Повышение эффективности сортировки на 90%.</p>
+<p>Если у вас 99 проблем, как расставить приоритеты?</p>
+<p>Простой способ сосредоточиться на правильных проблемах — обратить внимание на те, которые активно влияют на целевые уровни обслуживания (SLO). Если количество проблем в среде всё ещё требует дополнительной приоритизации, автоматически сортируйте и информируйте заинтересованных лиц, оповещая их о скорости потребления бюджета ошибок SLO (как быстро расходуется бюджет ошибок SLO).</p>
+<h3 id="_35">Защита<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h3>
+<p>Все среды, инфраструктуры и приложения должны быть защищены — с правильными мерами. Организации могут защитить свои активы проще с помощью единой внутренней платформы разработчика (IDP), обеспечивающей управляемость и безопасность.</p>
+<h4 id="soc">Снижение шума оповещений безопасности Снижение шума центра управления безопасностью (SOC)<a class="headerlink" href="#soc" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Снижение штормов событий безопасности на 99%</p>
+<p>Предотвращение усталости от множества событий безопасности, генерируемых инструментами гиперскейлеров каждый день, путём дедупликации и консолидации в сочетании с автоматическим созданием и назначением тикетов на основе владения разработкой и безопасностью.</p>
+<p>Попробуйте сами: Автоматизация уведомлений CSPM.</p>
+<h4 id="_36">Безопасность как сервис Автоматизация результатов проверки безопасности в масштабе<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Стремление к нулю ложных срабатываний.</p>
+<p>Понимание угроз, исходящих от вашего кода, сторонних и открытых библиотек, и блокирование вредоносных запросов, пытающихся использовать слабости кода.</p>
 <ul>
-<li>Precisely detect &amp; block attacks</li>
-<li>While applications keep serving their users</li>
-<li>Integrated with OneAgent &amp; available at the flip of a switch</li>
+<li>Точное обнаружение и блокирование атак</li>
+<li>При продолжении обслуживания пользователей приложением</li>
+<li>Интеграция с OneAgent и доступность одним переключением</li>
 </ul>
-<h4 id="continuous-security-posture-awareness-contextualized-threat-detection-and-incident-response">Continuous security posture awareness Contextualized threat detection and incident response<a class="headerlink" href="#continuous-security-posture-awareness-contextualized-threat-detection-and-incident-response" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   From threat hypothesis to tangible evidence in minutes.</p>
-<p>Today, security takes everyone in your organization, and all your data is relevant for security. That's why it needs to be easy to ingest any data and have it available for manual detailed security analytics. At the pace of cybersecurity attacks today, there is no way around automation. By the time your valuable security analysts get in front of an incident or investigate a malicious pattern - you want to ensure it's worth their time. With data contextualization, workflow actions, and dedicated security analytics apps, you have all the tools to be proactive about security. Finding whether you have a bad actor in your system, what they are up to, and preventing them from being successful â with the merge of observability and security, it's easy to understand how to elevate your analysts by leveling up the security incident first, fully contextualizing the incident, and prioritizing based on
-importance.</p>
+<h4 id="_37">Непрерывный мониторинг состояния безопасности Контекстуализированное обнаружение угроз и реагирование на инциденты<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   От гипотезы об угрозе до реальных доказательств за минуты.</p>
+<p>Сегодня безопасность требует участия всех в организации, и все ваши данные имеют значение для безопасности. Поэтому должна быть возможность легко принимать любые данные и иметь их доступными для ручной детальной аналитики безопасности. При современном темпе кибератак без автоматизации не обойтись. К тому времени, когда ваши ценные аналитики безопасности приступят к инциденту или расследованию вредоносного паттерна, вы хотите убедиться, что это стоит их времени. С контекстуализацией данных, действиями рабочих процессов и специализированными приложениями аналитики безопасности у вас есть все инструменты для проактивного подхода к безопасности. Определение наличия злоумышленника в системе, его действий и предотвращение успеха — с объединением наблюдаемости и безопасности легко понять, как повысить уровень аналитиков, сначала полностью контекстуализируя инцидент безопасности и приоритизируя на основе важности.</p>
 <ul>
-<li>Stop attackers in their tracks</li>
-<li>Leverage observability and security data in context to see every detail of your environment</li>
-<li>All the data is consolidated at your fingertips</li>
-<li>Automation actions easily combined into a workflow elevate your analysts whenever they need to look at an incident</li>
+<li>Остановите злоумышленников на месте</li>
+<li>Используйте данные наблюдаемости и безопасности в контексте для просмотра каждой детали вашей среды</li>
+<li>Все данные консолидированы и доступны</li>
+<li>Действия автоматизации, легко объединяемые в рабочий процесс, поддерживают ваших аналитиков при работе с инцидентом</li>
 </ul>
-<h3 id="improve">Improve<a class="headerlink" href="#improve" title="Permanent link">&para;</a></h3>
-<p>Continuous improvement of resources drives business. These improvements can range from cost- to time-savings to always ensuring best-in-class customer experiences.</p>
-<h4 id="always-on-app-profiling-always-on-app-profiling">Always-on app profiling Always-on app profiling<a class="headerlink" href="#always-on-app-profiling-always-on-app-profiling" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   5x faster performance bottleneck issue resolution</p>
-<p>With observability data around CPU, thread, and memory usage, it's easy to quickly identify the biggest performance bottlenecks and flag them for improvement. Such bottlenecks could manifest themselves as inefficient string operations leading to high memory allocation and pressure on the garbage collector, which can, in turn, lead to scalability and performance issues.</p>
-<p>Try it yourself: <a href="/docs/observe/application-observability/services/always-on-app-profiling" title="Optimize your code and find performance problems">Always-on app profiling</a>.</p>
-<h4 id="kubernetes-utilization-improvement-kubernetes-utilization-improvement">Kubernetes utilization improvement Kubernetes utilization improvement<a class="headerlink" href="#kubernetes-utilization-improvement-kubernetes-utilization-improvement" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Automated K8s utilization improvement reduces spend up to 25%.</p>
-<p>Continuously update and improve k8s requests and limits automatically, reducing cognitive load on developers and providing peace of mind for platform engineers.</p>
-<p>By analyzing Kubernetes metrics and SLOs for resource allocation and utilization, it's possible to set environment configuration avoiding any misalignment.</p>
-<h4 id="business-alignment-business-alignment">Business alignment Business alignment<a class="headerlink" href="#business-alignment-business-alignment" title="Permanent link">&para;</a></h4>
-<p>Goal
-:   Bring in context to your business processes and accelerate collaboration.</p>
-<p>It's critical to align platform engineering initiatives and work with the primary value stream. Aligning initiatives to assets allows for easier prioritization of improvement work and communication with the line of business.</p>
-<h2 id="measuring-platform-success">Measuring platform success<a class="headerlink" href="#measuring-platform-success" title="Permanent link">&para;</a></h2>
-<h3 id="governance-and-consistency-at-scale">Governance and consistency at scale<a class="headerlink" href="#governance-and-consistency-at-scale" title="Permanent link">&para;</a></h3>
-<p>Golden Paths guide developers, saving time and reducing risks. But they're not one-size-fits-all â flexibility exists for individual customization and exploration.</p>
-<p>The result? A platform that scales effortlessly, where standardized efficiency works with developer autonomy to offer governance and consistency.</p>
-<p>Applying product management principles and observability to the IDP makes it possible to provide meaningful insights into platform infrastructure, tools, and services. Golden Paths adoption and efficiency regarding feedback for developers.</p>
-<h3 id="dora-metrics">DORA metrics<a class="headerlink" href="#dora-metrics" title="Permanent link">&para;</a></h3>
-<p>Googleâs DevOps Research and Assessment (DORA) team established the DORA metrics to provide key metrics on the performance of a software development team.</p>
-<p>The established four keys include:</p>
-<p>Deployment frequency
-:   Measures how often a team successfully releases to production</p>
-<p>Lead time for change
-:   Measures the time it takes for committed code to get into production.</p>
-<p>Change failure rate
-:   Measures the percentage of deployments that result in a failure in production that requires a bug fix or roll-back.</p>
-<p>Mean time to restore service (MTTR)
-:   Measures how long it takes an organization to recover from a failure in production.</p>
-<p>The DORA team extended these metrics by adding a fifth one in 2021:</p>
-<p>Reliability
-:   Representing availability, latency, performance, and scalability</p>
-<p>Benchmarking in real-time and across dimensions (such as technologies and teams) provides crucial benefits or a platform engineering team.</p>
-<h3 id="developer-experience">Developer experience<a class="headerlink" href="#developer-experience" title="Permanent link">&para;</a></h3>
-<p>Platform engineering is ultimately about driving developer productivity. But how do you define and measure developer productivity and satisfaction? It canât be reduced to a single metric, but the SPACE framework captures critical dimensions of developer productivity:</p>
+<h3 id="_38">Улучшение<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h3>
+<p>Непрерывное улучшение ресурсов движет бизнес. Эти улучшения могут варьироваться от экономии затрат и времени до постоянного обеспечения лучшего клиентского опыта.</p>
+<h4 id="_39">Постоянное профилирование приложений Постоянное профилирование приложений<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   5-кратное ускорение решения проблем с узкими местами производительности</p>
+<p>С данными наблюдаемости о CPU, потоках и использовании памяти легко быстро определить крупнейшие узкие места производительности и отметить их для улучшения. Такие узкие места могут проявляться как неэффективные строковые операции, приводящие к высокому выделению памяти и нагрузке на сборщик мусора, что, в свою очередь, может привести к проблемам масштабируемости и производительности.</p>
+<p>Попробуйте сами: Постоянное профилирование приложений.</p>
+<h4 id="kubernetes-kubernetes">Улучшение утилизации Kubernetes Улучшение утилизации Kubernetes<a class="headerlink" href="#kubernetes-kubernetes" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Автоматизированное улучшение утилизации K8s снижает расходы до 25%.</p>
+<p>Непрерывное автоматическое обновление и улучшение запросов и лимитов K8s, снижающее когнитивную нагрузку на разработчиков и обеспечивающее спокойствие для платформенных инженеров.</p>
+<p>Анализируя метрики Kubernetes и SLO по распределению и использованию ресурсов, можно настроить конфигурацию среды, избегая любых несоответствий.</p>
+<h4 id="-_1">Бизнес-согласованность Бизнес-согласованность<a class="headerlink" href="#-_1" title="Permanent link">&para;</a></h4>
+<p>Цель
+:   Привнесение контекста в ваши бизнес-процессы и ускорение совместной работы.</p>
+<p>Критически важно согласовать инициативы платформенной инженерии и работу с основным потоком создания ценности. Привязка инициатив к активам позволяет упростить приоритизацию работы по улучшению и коммуникацию с бизнес-подразделениями.</p>
+<h2 id="_40">Измерение успеха платформы<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h2>
+<h3 id="_41">Управляемость и единообразие в масштабе<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h3>
+<p>Golden Paths направляют разработчиков, экономя время и снижая риски. Но они не универсальны — существует гибкость для индивидуальной настройки и экспериментирования.</p>
+<p>Результат? Платформа, которая легко масштабируется, где стандартизированная эффективность сочетается с автономией разработчиков, обеспечивая управляемость и единообразие.</p>
+<p>Применение принципов управления продуктом и наблюдаемости к IDP позволяет предоставлять значимые данные об инфраструктуре, инструментах и сервисах платформы. Принятие и эффективность Golden Paths относительно обратной связи для разработчиков.</p>
+<h3 id="dora">Метрики DORA<a class="headerlink" href="#dora" title="Permanent link">&para;</a></h3>
+<p>Команда DevOps Research and Assessment (DORA) Google создала метрики DORA для предоставления ключевых метрик производительности команды разработки ПО.</p>
+<p>Установленные четыре ключевых метрики включают:</p>
+<p>Частота развёртываний
+:   Измеряет, как часто команда успешно выпускает в production</p>
+<p>Время до развёртывания изменений
+:   Измеряет время, необходимое для того, чтобы зафиксированный код попал в production.</p>
+<p>Доля неудачных изменений
+:   Измеряет процент развёртываний, приводящих к сбою в production, требующему исправления ошибки или отката.</p>
+<p>Среднее время восстановления сервиса (MTTR)
+:   Измеряет, сколько времени требуется организации для восстановления после сбоя в production.</p>
+<p>Команда DORA расширила эти метрики, добавив пятую в 2021 году:</p>
+<p>Надёжность
+:   Представляющая доступность, задержку, производительность и масштабируемость</p>
+<p>Бенчмаркинг в реальном времени и по различным измерениям (таким как технологии и команды) предоставляет критически важные преимущества для команды платформенной инженерии.</p>
+<h3 id="_42">Опыт разработчиков<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h3>
+<p>Платформенная инженерия в конечном счёте направлена на повышение продуктивности разработчиков. Но как определить и измерить продуктивность и удовлетворённость разработчиков? Это нельзя свести к одной метрике, но фреймворк SPACE охватывает критические измерения продуктивности разработчиков:</p>
 <ul>
-<li>Satisfaction</li>
-<li>Performance</li>
-<li>Activity</li>
-<li>Communication and collaboration</li>
-<li>Efficiency and flow</li>
+<li>Удовлетворённость</li>
+<li>Производительность</li>
+<li>Активность</li>
+<li>Коммуникация и сотрудничество</li>
+<li>Эффективность и поток</li>
 </ul>
-<p>The SPACE framework doesn't provide a ready-to-use list of metrics like the DORA metrics, but instead guides in providing categories to consider.</p>
-<h2 id="dynatrace-and-opentelemetry">Dynatrace and OpenTelemetry<a class="headerlink" href="#dynatrace-and-opentelemetry" title="Permanent link">&para;</a></h2>
-<p><a href="/docs/ingest-from/opentelemetry" title="Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.">OpenTelemetry</a> (also referred to as OTel) is an open-source observability framework made up of a collection of tools, APIs, and SDKs.</p>
+<p>Фреймворк SPACE не предоставляет готовый список метрик, как метрики DORA, но направляет в предоставлении категорий для рассмотрения.</p>
+<h2 id="dynatrace-opentelemetry">Dynatrace и OpenTelemetry<a class="headerlink" href="#dynatrace-opentelemetry" title="Permanent link">&para;</a></h2>
+<p>OpenTelemetry into Dynatrace.") (также называемый OTel) — это фреймворк наблюдаемости с открытым исходным кодом, состоящий из набора инструментов, API и SDK.</p>
 <ul>
-<li>OTel enables IT teams to instrument, generate, collect, and export telemetry data for analysis and understanding software performance and behavior.</li>
+<li>OTel позволяет ИТ-командам инструментировать, генерировать, собирать и экспортировать данные телеметрии для анализа и понимания производительности и поведения программного обеспечения.</li>
 </ul>
-<p>As a Cloud Native Computing Foundation (CNCF) incubating project, OTel aims to provide unified sets of vendor-agnostic libraries and APIs, mainly for collecting data and transferring it somewhere.
-* Dynatrace, which is committed to making observability seamless for technical teams, is the only observability solution that combines high-fidelity distributed tracing, code-level visibility, and advanced diagnostics across cloud-native architectures. Data plus context are critical to supercharging observability.</p>
-<p>By integrating OTel data seamlessly, Dynatraceâs distributed tracing technology automatically picks up OTel data and provides the instrumentation for all the essential frameworks beyond the scope of OTel.</p>
+<p>Как проект CNCF (Cloud Native Computing Foundation) на стадии инкубации, OTel стремится предоставить унифицированные наборы вендор-независимых библиотек и API, главным образом для сбора данных и их передачи.
+* Dynatrace, стремящаяся сделать наблюдаемость бесшовной для технических команд, является единственным решением для наблюдаемости, объединяющим высокоточную распределённую трассировку, видимость на уровне кода и продвинутую диагностику в облачно-нативных архитектурах. Данные плюс контекст критически важны для усиления наблюдаемости.</p>
+<p>Бесшовно интегрируя данные OTel, технология распределённой трассировки Dynatrace автоматически подхватывает данные OTel и обеспечивает инструментацию для всех ключевых фреймворков за пределами области охвата OTel.</p>
 <p><img alt="Platform Engineering" src="https://dt-cdn.net/images/image003-960-07f1ef33d5.png" /></p>
-<h2 id="take-action">Take action!<a class="headerlink" href="#take-action" title="Permanent link">&para;</a></h2>
-<p>Implementing DevOps and platform engineering is not optional for organizations serious about transforming their ability to deliver value in the cloud. These practices are crucial, not just beneficial, for boosting productivity and achieving success in today's tech landscape.</p>
-<p>Dynatraceâs purpose-built solution for platform engineering reduces complexity through automated workflows, including auto-scaling, deployment validation, and anomaly remediation.</p>
-<p>By leveraging the power of the Dynatrace platform and the new Kubernetes experience, platform engineers are empowered to implement the following best practices, enabling their development teams to deliver best-in-class applications and services to their customers.</p>
-<p>Centralize and standardize
-:   The ability to effectively manage multi-cluster infrastructure is critical to consistent and scalable service delivery.</p>
-<p>Provide self-service platform services with dedicated UI
-:   for development teams to improve developer experience and increase speed of delivery.</p>
-<p>Automation, automation, automation
-:   Adoption of GitOps practices enables platform provisioning at scale.</p>
-<p>Context
-:   Get access to not just data, but answers â reaching the right stakeholders at the right time.</p>
+<h2 id="_43">Действуйте!<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h2>
+<p>Внедрение DevOps и платформенной инженерии не является опциональным для организаций, серьёзно настроенных на трансформацию своей способности доставлять ценность в облаке. Эти практики критически важны, а не просто полезны, для повышения продуктивности и достижения успеха в современном технологическом ландшафте.</p>
+<p>Целенаправленное решение Dynatrace для платформенной инженерии снижает сложность через автоматизированные рабочие процессы, включая автомасштабирование, валидацию развёртываний и устранение аномалий.</p>
+<p>Используя возможности платформы Dynatrace и нового опыта работы с Kubernetes, платформенные инженеры получают возможность внедрять следующие лучшие практики, позволяя командам разработки доставлять лучшие приложения и сервисы своим клиентам.</p>
+<p>Централизация и стандартизация
+:   Способность эффективно управлять мультикластерной инфраструктурой критически важна для единообразной и масштабируемой доставки сервисов.</p>
+<p>Предоставление платформенных сервисов самообслуживания с выделенным UI
+:   для команд разработки для улучшения опыта разработчиков и увеличения скорости доставки.</p>
+<p>Автоматизация, автоматизация, автоматизация
+:   Применение практик GitOps обеспечивает провижининг платформы в масштабе.</p>
+<p>Контекст
+:   Получите доступ не только к данным, но и к ответам — обращаясь к нужным заинтересованным сторонам в нужное время.</p>
 <p>1</p>
 <p>Gartner, Top Strategic Technology Trends for 2024, Bart Willemsen, Gary Olliffe, and Arun Chandrasekaran, 16 October 2023. GARTNER is a registered trademark and service mark of Gartner, Inc. and/or its affiliates in the U.S. and internationally and is used herein with permission. All rights reserved.</p>
 
@@ -5979,7 +4729,7 @@ importance.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.sections", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
   
@@ -5989,25 +4739,38 @@ importance.</p>
       
     
   <script>
-    // Inject version selector into header
-    document.addEventListener('DOMContentLoaded', function() {
-      var headerInner = document.querySelector('.md-header__inner');
-      if (headerInner) {
-        var select = document.createElement('select');
-        select.className = 'docflow-version-select';
-        select.innerHTML = '<option value="managed" selected>Managed</option><option value="saas">SaaS</option>';
-        select.setAttribute('aria-label', 'Version selector');
+    (function() {
+      // --- Reading progress bar (one-time setup) ---
+      var progressBar = document.createElement('div');
+      progressBar.className = 'reading-progress';
+      document.body.appendChild(progressBar);
 
-        // Insert before the search or at the end
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (docHeight > 0) {
+          var progress = (scrollTop / docHeight) * 100;
+          progressBar.style.width = Math.min(progress, 100) + '%';
+        }
+      });
+
+      // --- Managed label in header (one-time setup) ---
+      var headerInner = document.querySelector('.md-header__inner');
+      if (headerInner && !headerInner.querySelector('.docflow-managed-label')) {
+        var label = document.createElement('span');
+        label.className = 'docflow-managed-label';
+        label.textContent = 'Managed';
+        label.setAttribute('title', 'Документация включает разделы Dynatrace Managed');
+
         var searchContainer = headerInner.querySelector('.md-header__source');
         if (searchContainer) {
-          headerInner.insertBefore(select, searchContainer);
+          headerInner.insertBefore(label, searchContainer);
         } else {
-          headerInner.appendChild(select);
+          headerInner.appendChild(label);
         }
       }
 
-      // Keyboard shortcut Ctrl+K for search
+      // --- Keyboard shortcut Ctrl+K for search ---
       document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
           e.preventDefault();
@@ -6022,7 +4785,9 @@ importance.</p>
           }
         }
       });
-    });
+
+      // TOC title renaming handled via CSS (see extra style block above)
+    })();
   </script>
 
   </body>

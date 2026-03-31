@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
       
       
         <meta name="author" content="Yerkebulan Ardabayev">
@@ -21,11 +21,11 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Трассировки - Dynatrace — Документация</title>
+        <title>Трейсы - Dynatrace — Документация</title>
       
     
     
@@ -87,7 +87,10 @@
       flex-shrink: 0;
     }
 
-    /* Search Ctrl+K badge */
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
     .md-search__form::after {
       content: 'Ctrl+K';
       display: none;
@@ -97,11 +100,14 @@
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color);
       font-size: 10px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'JetBrains Mono', monospace;
       color: var(--md-default-fg-color--lighter);
-      margin-right: 0.5rem;
       white-space: nowrap;
       pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
     }
     @media (min-width: 60em) {
       .md-search__form::after {
@@ -109,12 +115,13 @@
       }
     }
 
-    /* Version selector in header */
-    .docflow-version-select {
+    /* Managed label — non-interactive indicator */
+    .docflow-managed-label {
       display: none;
       align-items: center;
+      gap: 0.375rem;
       margin-left: 0.5rem;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color--lighter);
@@ -122,28 +129,34 @@
       font-size: 0.75rem;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237e7c98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.4rem center;
-      padding-right: 1.5rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .docflow-managed-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--md-accent-fg-color);
+      flex-shrink: 0;
     }
     @media (min-width: 60em) {
-      .docflow-version-select {
+      .docflow-managed-label {
         display: flex;
       }
     }
-    .docflow-version-select:hover {
-      border-color: var(--md-primary-fg-color--light);
-      color: var(--md-default-fg-color);
-    }
-    .docflow-version-select:focus {
-      outline: none;
-      border-color: var(--md-primary-fg-color);
-      box-shadow: 0 0 0 3px var(--docflow-glow-primary);
+
+    /* Reading progress bar */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #14b8a6, #7c3aed);
+      z-index: 1001;
+      transition: width 0.05s linear;
+      pointer-events: none;
     }
   </style>
 
@@ -166,7 +179,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#cics-transaction-gateway" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -181,7 +194,7 @@
 
   
 
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
     <a href="../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -203,7 +216,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Трассировки
+              Трейсы
             
           </span>
         </div>
@@ -216,20 +229,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -303,375 +316,14 @@
     
   </nav>
   
-    
-      
-<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Главная
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Начало работы
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../managed/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Managed
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../platform/grail/dynatrace-grail/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Платформа
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../observe/infrastructure-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Наблюдаемость
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Dynatrace Intelligence
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Анализ и автоматизация
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ingest-from/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Источники данных
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../deliver/configuration-as-code/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Deliver
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../secure/threat-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Безопасность
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../manage/hub/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Управление
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../dynatrace-api/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  API
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../whats-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Что нового
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../ai/groq/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  AI Помощник
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
 </header>
     
 
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -685,10 +337,8 @@
                     
 
 
-  
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -765,16 +415,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -796,7 +450,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -829,7 +483,7 @@
   <span class="md-ellipsis">
     
   
-    Начало работы
+    🚀 Быстрый старт
   
 
     
@@ -967,16 +621,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -998,7 +656,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1227,7 +885,7 @@
   <span class="md-ellipsis">
     
   
-    Лицензия
+    Лицензия Managed
   
 
     
@@ -1269,19 +927,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1327,20 +989,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../platform/grail/dynatrace-grail/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1354,78 +1017,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Grail
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../platform/grail/dynatrace-grail/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Что такое Grail
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../platform/grail/dynatrace-query-language/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Язык запросов DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1544,19 +1141,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1610,20 +1211,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../observe/infrastructure-observability/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1637,190 +1239,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Инфраструктура
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Хосты и операции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Облачный мониторинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes Classic
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Базы данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1844,20 +1268,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1871,78 +1296,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Приложения
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Распределённая трассировка
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/application-observability/services/services-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Сервисы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1966,20 +1325,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../observe/digital-experience/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1993,78 +1353,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Цифровой опыт
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/digital-experience/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Синтетическое приложение
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2131,19 +1425,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2203,20 +1501,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2230,274 +1529,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Обнаружение аномалий
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Настройка чувствительности
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение Anomaly Detection
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфигурация
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Адаптивные пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Многомерный бейзлайн
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    События метрик
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Статические пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Оптимизация DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2527,20 +1564,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../dynatrace-intelligence/copilot/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2554,162 +1592,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Davis Copilot
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dynatrace Assist
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфиденциальность
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы на естественном языке
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2763,20 +1651,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2790,106 +1679,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Анализ первопричин
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Анализ событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2910,7 +1705,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграции
+    Интеграции Davis AI
   
 
     
@@ -2941,20 +1736,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2968,78 +1764,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Справочник
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AI модели
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лимиты
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3080,19 +1810,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -3144,20 +1878,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3171,162 +1906,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Дашборды и ноутбуки
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Дашборды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Версии документов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Визуализации
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3354,20 +1939,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../analyze-explore-automate/logs/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3381,134 +1967,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Логи
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/logs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Log Analytics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение журналов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Фильтры
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3681,19 +2145,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -3736,7 +2204,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
+    Обзор источников данных
   
 
     
@@ -3838,19 +2306,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -3898,20 +2370,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../deliver/configuration-as-code/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3925,194 +2398,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Configuration as Code
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
       
-        
+        <span class="md-nav__icon md-icon"></span>
       
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Monaco
+    </a>
   
 
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Monaco
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4136,150 +2427,21 @@
     
     
       
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Terraform
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Terraform
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CLI команды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
         
-      
         
       
     
-    
-    
-      
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
+  
+  
+    <a href="../../../deliver/service-level-objectives/" class="md-nav__link">
       
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -4293,78 +2455,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    SLO
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/service-level-objectives/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/service-level-objectives/create-slo/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Создание SLO
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4388,20 +2484,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../deliver/site-reliability-guardian/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4415,78 +2512,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Site Reliability Guardian
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/site-reliability-guardian/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Структура событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4538,20 +2569,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../deliver/release-monitoring/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4565,78 +2597,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Мониторинг релизов
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/release-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Мониторинг релизов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4695,19 +2661,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -4778,7 +2748,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграция
+    Приём событий безопасности
   
 
     
@@ -4816,19 +2786,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
             
   
   
@@ -4910,20 +2884,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../license/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4937,190 +2912,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Лицензирование
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лицензия
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/capabilities/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Возможности DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/billing-reports/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Биллинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/budget-alerts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Бюджетные оповещения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/license-lifecycle/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Жизненный цикл
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/dps-permissions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Разрешения DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -5151,19 +2948,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
             
   
   
@@ -5272,23 +3073,33 @@
       
         
       
-    
-    
-    
+        
       
+        
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
         
           
-          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
             
   
   
@@ -5331,35 +3142,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../whats-new/saas/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SaaS
+    Все обновления
   
 
     
@@ -5387,7 +3170,7 @@
   <span class="md-ellipsis">
     
   
-    OneAgent
+    Обновления OneAgent
   
 
     
@@ -5416,6 +3199,225 @@
     
   
     ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../whats-new/dynatrace-operator/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Operator
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../whats-new/edgeconnect/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EdgeConnect
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../whats-new/technology/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Технологии
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Новые статьи
   
 
     
@@ -5480,8 +3482,1026 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cics-transaction-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Спаны CICS Transaction Gateway
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Спаны CICS Transaction Gateway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Запрос
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ответ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пользовательские сервисы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Спаны клиента базы данных
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Спаны клиента базы данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Поля для базы данных DL/I
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynatrace-rum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ссылки Dynatrace RUM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ссылки Dynatrace RUM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tracestate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        По tracestate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-timing-cookie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        По server-timing и cookie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Только по server-timing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cookie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        По cookie
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynatrace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        События спанов Dynatrace
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="События спанов Dynatrace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Общие
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Исключения
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Оценка флагов функций
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Бизнес-события
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynatrace_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ссылки спанов Dynatrace
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ссылки спанов Dynatrace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#span-trace-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        По Span и Trace Id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-link-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        По Custom Link Id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace-link-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        По Dynatrace Link Id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#foreign-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        По Foreign Link
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        По заголовкам ответа
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynatrace_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Спан Dynatrace
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Спан Dynatrace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Иерархические атрибуты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Атрибуты времени
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Атрибуты агрегации
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Атрибуты выборки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Атрибуты кода
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        События
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="События">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Исключения events
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ссылки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ссылка RUM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Обнаружение ошибок
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Атрибуты сервера и клиента
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Атрибуты сервера и клиента">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Атрибуты сервера
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Атрибуты сервера">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serveraddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        server.address
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Атрибуты клиента
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Атрибуты поддержки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Транзакции
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Транзакции">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сервисная сетка
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Атрибуты запросов
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Размер спана
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Статус
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Статус">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Причины статуса ошибки
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дополнительные атрибуты
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Спаны ESB
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Спаны ESB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Атрибуты
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результат обнаружения ошибок
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Результат обнаружения ошибок">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Поля
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Функция как сервис (FaaS)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Функция как сервис (FaaS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Общие атрибуты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Входящие вызовы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Исходящие вызовы
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Спаны генеративного ИИ (GenAI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Спаны HTTP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Спаны HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Общие поля
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP-клиент
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP-сервер
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Спаны обмена сообщениями
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Спаны обмена сообщениями">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Общие атрибуты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Назначение сообщения
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#akka" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Обмен сообщениями Akka
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Обмен сообщениями Akka">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#akka_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Производитель Akka
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#akka_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потребитель Akka
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kafka" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Обмен сообщениями Kafka
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Обмен сообщениями Kafka">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kafka_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Производитель Kafka
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kafka_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потребитель Kafka
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Спаны RPC
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Спаны RPC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Общие поля
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpc-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RPC-сервер
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gRPC
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="gRPC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grpc_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Атрибуты gRPC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rmi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RMI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RMI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rmi_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Поля RMI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zos-connect-ee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Спаны z/OS Connect EE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Спаны z/OS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Спаны z/OS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Общие атрибуты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Общие атрибуты CICS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cics-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CICS-клиент
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cics-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CICS-сервер
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -5507,29 +4527,24 @@
 
 
 
-<h1 id="_1">Трассировки<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h1 id="_2">Трассировки<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
-<ul>
-<li>Latest Dynatrace</li>
-<li>Reference</li>
-<li>Published Feb 23, 2026</li>
-</ul>
-<p>Распределённые трассировки используются для захвата транзакций, проходящих через систему. Трассировки
-состоят из спанов, которые представляют собой единицы работы в рамках распределённой трассировки.</p>
+  <h1>Трейсы</h1>
+
+<p>Распределённые трейсы используются для отслеживания транзакций, проходящих через систему. Трейсы состоят
+из спанов, которые представляют единицы работы в рамках распределённого трейса.</p>
 <h2 id="cics-transaction-gateway">Спаны CICS Transaction Gateway<a class="headerlink" href="#cics-transaction-gateway" title="Permanent link">&para;</a></h2>
 <p>Семантические соглашения для спанов запросов и ответов CTG, захваченных на сервере или клиенте CTG.
-<code>span.kind</code> равен <code>client</code> для спанов, захваченных на клиенте CTG, и <code>server</code> для спанов, захваченных на сервере CTG. Это применяется как к запросам, так и к ответам.</p>
+<code>span.kind</code> имеет значение <code>client</code> для спанов, захваченных на клиенте CTG, и <code>server</code> для спанов, захваченных на сервере CTG. Это относится как к запросу, так и к ответу.</p>
 <p>CTG поддерживает различные типы запросов, такие как ECI, ESI или EPI. Тип вызова и коды ответов имеют различную семантику в зависимости от типа запроса.
 Кроме того, некоторые поля заполняются только для определённых типов запросов.</p>
-<h3 id="_3">Запрос<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_1">Запрос<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>Спаны запросов имеют атрибуты, соответствующие следующей таблице:</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -5578,7 +4593,7 @@
 <tr>
 <td><code>ctg.request.server_id</code></td>
 <td>string</td>
-<td>experimental ID of the server. Not set for all request types.</td>
+<td>experimental ID of the server. Устанавливается не для всех типов запросов.</td>
 <td><code>IPICTEST</code></td>
 </tr>
 <tr>
@@ -5602,7 +4617,7 @@
 <tr>
 <td><code>network.transport</code></td>
 <td>string</td>
-<td>stable <a href="https://osi-model.com/transport-layer/">OSI Transport Layerï»¿</a> or <a href="https://en.wikipedia.org/wiki/Inter-process_communication">Inter-process Communication methodï»¿</a></td>
+<td>stable <a href="https://osi-model.com/transport-layer/">OSI Transport Layer</a> or <a href="https://en.wikipedia.org/wiki/Inter-process_communication">Inter-process Communication method</a></td>
 <td><code>tcp</code>; <code>udp</code></td>
 </tr>
 <tr>
@@ -5632,17 +4647,17 @@
 </tbody>
 </table>
 <p>1</p>
-<p><a href="https://www.ibm.com/docs/api/v1/content/SSZHFX_9.3.0/basejavadoc/constant-values.html">https://www.ibm.com/docs/api/v1/content/SSZHFX_9.3.0/basejavadoc/constant-values.htmlï»¿</a></p>
+<p><a href="https://www.ibm.com/docs/api/v1/content/SSZHFX_9.3.0/basejavadoc/constant-values.html">https://www.ibm.com/docs/api/v1/content/SSZHFX_9.3.0/basejavadoc/constant-values.html</a></p>
 <p>2</p>
-<p><a href="https://www.ibm.com/docs/api/v1/content/SSZHFX_9.3.0/basejavadoc/constant-values.html">https://www.ibm.com/docs/api/v1/content/SSZHFX_9.3.0/basejavadoc/constant-values.htmlï»¿</a></p>
+<p><a href="https://www.ibm.com/docs/api/v1/content/SSZHFX_9.3.0/basejavadoc/constant-values.html">https://www.ibm.com/docs/api/v1/content/SSZHFX_9.3.0/basejavadoc/constant-values.html</a></p>
 <p>3</p>
 <p>Значения определены в исходном коде IBM CTG API.</p>
-<p><code>ctg.request.type</code> MUST be one of the following:</p>
+<p><code>ctg.request.type</code> ДОЛЖНО быть одним из следующих:</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -5677,21 +4692,21 @@
 </tbody>
 </table>
 <p>1</p>
-<p><a href="https://www.ibm.com/docs/en/cics-tg-multi/8.1?topic=classes-gatewayrequest">https://www.ibm.com/docs/en/cics-tg-multi/8.1?topic=classes-gatewayrequestï»¿</a></p>
+<p><a href="https://www.ibm.com/docs/en/cics-tg-multi/8.1?topic=classes-gatewayrequest">https://www.ibm.com/docs/en/cics-tg-multi/8.1?topic=classes-gatewayrequest</a></p>
 <p>2</p>
-<p><a href="https://www.ibm.com/docs/en/cics-tg-zos/9.1.0?topic=applications-external-call-interface-eci">https://www.ibm.com/docs/en/cics-tg-zos/9.1.0?topic=applications-external-call-interface-eciï»¿</a></p>
+<p><a href="https://www.ibm.com/docs/en/cics-tg-zos/9.1.0?topic=applications-external-call-interface-eci">https://www.ibm.com/docs/en/cics-tg-zos/9.1.0?topic=applications-external-call-interface-eci</a></p>
 <p>3</p>
-<p><a href="https://www.ibm.com/docs/en/cics-tg-multi/8.1?topic=guide-external-presentation-interface-epi">https://www.ibm.com/docs/en/cics-tg-multi/8.1?topic=guide-external-presentation-interface-epiï»¿</a></p>
+<p><a href="https://www.ibm.com/docs/en/cics-tg-multi/8.1?topic=guide-external-presentation-interface-epi">https://www.ibm.com/docs/en/cics-tg-multi/8.1?topic=guide-external-presentation-interface-epi</a></p>
 <p>4</p>
-<p><a href="https://www.ibm.com/docs/en/cics-tg-zos/9.3.0?topic=applications-external-security-interface-esi">https://www.ibm.com/docs/en/cics-tg-zos/9.3.0?topic=applications-external-security-interface-esiï»¿</a></p>
+<p><a href="https://www.ibm.com/docs/en/cics-tg-zos/9.3.0?topic=applications-external-security-interface-esi">https://www.ibm.com/docs/en/cics-tg-zos/9.3.0?topic=applications-external-security-interface-esi</a></p>
 <p>5</p>
-<p><a href="https://www.ibm.com/docs/en/cics-tg-zos/9.3.0?topic=applications-creating-cics-request-exit">https://www.ibm.com/docs/en/cics-tg-zos/9.3.0?topic=applications-creating-cics-request-exitï»¿</a></p>
-<p><code>network.transport</code> has the following list of well-known values. If one of them applies, then the respective value MUST be used, otherwise a custom value MAY be used.</p>
+<p><a href="https://www.ibm.com/docs/en/cics-tg-zos/9.3.0?topic=applications-creating-cics-request-exit">https://www.ibm.com/docs/en/cics-tg-zos/9.3.0?topic=applications-creating-cics-request-exit</a></p>
+<p><code>network.transport</code> имеет следующий список известных значений. Если одно из них применимо, то ДОЛЖНО использоваться соответствующее значение, в противном случае МОЖЕТ использоваться пользовательское значение.</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -5722,16 +4737,16 @@
 </tbody>
 </table>
 <p>1</p>
-<p>Указывает на то, что используется только внутрипроцессное взаимодействие без «реального» сетевого протокола в случаях, когда сетевые атрибуты обычно ожидаются. Как правило, все остальные сетевые атрибуты можно опустить.</p>
-<h3 id="_4">Ответ<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>Указывает, что используется только внутрипроцессная коммуникация без «реального» сетевого протокола в случаях, когда обычно ожидаются сетевые атрибуты. Как правило, все остальные сетевые атрибуты могут быть опущены.</p>
+<h3 id="_2">Ответ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>Спаны ответов имеют атрибуты, соответствующие следующей таблице:</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -5750,13 +4765,13 @@
 </tbody>
 </table>
 <p>1</p>
-<p><a href="https://www.ibm.com/docs/api/v1/content/SSZHFX_9.3.0/basejavadoc/constant-values.html">https://www.ibm.com/docs/api/v1/content/SSZHFX_9.3.0/basejavadoc/constant-values.htmlï»¿</a></p>
-<p><code>ctg.request.type</code> MUST be one of the following:</p>
+<p><a href="https://www.ibm.com/docs/api/v1/content/SSZHFX_9.3.0/basejavadoc/constant-values.html">https://www.ibm.com/docs/api/v1/content/SSZHFX_9.3.0/basejavadoc/constant-values.html</a></p>
+<p><code>ctg.request.type</code> ДОЛЖНО быть одним из следующих:</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -5791,24 +4806,24 @@
 </tbody>
 </table>
 <p>1</p>
-<p><a href="https://www.ibm.com/docs/en/cics-tg-multi/8.1?topic=classes-gatewayrequest">https://www.ibm.com/docs/en/cics-tg-multi/8.1?topic=classes-gatewayrequestï»¿</a></p>
+<p><a href="https://www.ibm.com/docs/en/cics-tg-multi/8.1?topic=classes-gatewayrequest">https://www.ibm.com/docs/en/cics-tg-multi/8.1?topic=classes-gatewayrequest</a></p>
 <p>2</p>
-<p><a href="https://www.ibm.com/docs/en/cics-tg-zos/9.1.0?topic=applications-external-call-interface-eci">https://www.ibm.com/docs/en/cics-tg-zos/9.1.0?topic=applications-external-call-interface-eciï»¿</a></p>
+<p><a href="https://www.ibm.com/docs/en/cics-tg-zos/9.1.0?topic=applications-external-call-interface-eci">https://www.ibm.com/docs/en/cics-tg-zos/9.1.0?topic=applications-external-call-interface-eci</a></p>
 <p>3</p>
-<p><a href="https://www.ibm.com/docs/en/cics-tg-multi/8.1?topic=guide-external-presentation-interface-epi">https://www.ibm.com/docs/en/cics-tg-multi/8.1?topic=guide-external-presentation-interface-epiï»¿</a></p>
+<p><a href="https://www.ibm.com/docs/en/cics-tg-multi/8.1?topic=guide-external-presentation-interface-epi">https://www.ibm.com/docs/en/cics-tg-multi/8.1?topic=guide-external-presentation-interface-epi</a></p>
 <p>4</p>
-<p><a href="https://www.ibm.com/docs/en/cics-tg-zos/9.3.0?topic=applications-external-security-interface-esi">https://www.ibm.com/docs/en/cics-tg-zos/9.3.0?topic=applications-external-security-interface-esiï»¿</a></p>
+<p><a href="https://www.ibm.com/docs/en/cics-tg-zos/9.3.0?topic=applications-external-security-interface-esi">https://www.ibm.com/docs/en/cics-tg-zos/9.3.0?topic=applications-external-security-interface-esi</a></p>
 <p>5</p>
-<p><a href="https://www.ibm.com/docs/en/cics-tg-zos/9.3.0?topic=applications-creating-cics-request-exit">https://www.ibm.com/docs/en/cics-tg-zos/9.3.0?topic=applications-creating-cics-request-exitï»¿</a></p>
-<h2 id="_5">Пользовательские сервисы<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>Спаны пользовательских сервисов представляют точки входа в сервис или точки входа к конкретным компонентам внутри более крупного приложения. Кодовые модули OneAgent могут создавать спаны пользовательских сервисов с помощью правил автоматической инструментации или напрямую через API OneAgent SDK.</p>
+<p><a href="https://www.ibm.com/docs/en/cics-tg-zos/9.3.0?topic=applications-creating-cics-request-exit">https://www.ibm.com/docs/en/cics-tg-zos/9.3.0?topic=applications-creating-cics-request-exit</a></p>
+<h2 id="_3">Пользовательские сервисы<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Спаны пользовательских сервисов представляют точки входа в сервис или в определённые компоненты внутри более крупного приложения. Кодовые модули OneAgent могут создавать спаны пользовательских сервисов через правила автоматической инструментации или напрямую через API OneAgent SDK.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -5832,19 +4847,19 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_6">Спаны клиента базы данных<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>Семантические соглашения для спанов клиента базы данных. <code>span.kind</code> для спанов клиента базы данных равен <code>client</code>.</p>
-<p>Спан, представляющий операцию клиента базы данных, может включать саму операцию и последующую обработку результатов (например, выборку из результирующего набора SQL, операции с курсором MongoDB и т. п.).
+<h2 id="_4">Спаны клиента базы данных<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Семантические соглашения для спанов клиента базы данных. The <code>span.kind</code> for database client spans is <code>client</code>.</p>
+<p>A span representing a database client operation might include the operation itself and the following result processing (for example, fetch from SQL result set, MongoDB cursor operations, etc.).
 Кроме того, несколько похожих операций с базой данных могут быть агрегированы в один спан для повышения эффективности.</p>
 <p>Атрибуты <code>aggregation</code> предоставляют информацию о том, сколько операций с базой данных было агрегировано.</p>
 <p>Атрибуты <code>db.result.*</code> представляют детали обработки результатов.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -5863,7 +4878,7 @@
 <tr>
 <td><code>db.cosmosdb.request_charge</code></td>
 <td>double</td>
-<td>experimental The cost of the request in <a href="https://learn.microsoft.com/en-us/azure/cosmos-db/request-units">Azure Cosmos DB request units (RU)ï»¿</a>.</td>
+<td>experimental The cost of the request in <a href="https://learn.microsoft.com/en-us/azure/cosmos-db/request-units">Azure Cosmos DB request units (RU)</a>.</td>
 <td><code>4.95</code>; <code>2.0</code></td>
 </tr>
 <tr>
@@ -5941,7 +4956,7 @@
 <tr>
 <td><code>network.transport</code></td>
 <td>string</td>
-<td>stable <a href="https://osi-model.com/transport-layer/">OSI Transport Layerï»¿</a> or <a href="https://en.wikipedia.org/wiki/Inter-process_communication">Inter-process Communication methodï»¿</a></td>
+<td>stable <a href="https://osi-model.com/transport-layer/">OSI Transport Layer</a> or <a href="https://en.wikipedia.org/wiki/Inter-process_communication">Inter-process Communication method</a></td>
 <td><code>tcp</code>; <code>udp</code></td>
 </tr>
 <tr>
@@ -5968,12 +4983,12 @@
 <p>В зависимости от данных, предоставленных при приёме, этот атрибут может быть получен, например, путём разбора <code>db.query.text</code>. Разбор может завершиться неудачей, или результат может быть неточным.</p>
 <p>2</p>
 <p>Значение может быть очищено для исключения конфиденциальной информации.</p>
-<p><code>db.system</code> has the following list of well-known values. If one of them applies, then the respective value MUST be used, otherwise a custom value MAY be used.</p>
+<p><code>db.system</code> имеет следующий список известных значений. Если одно из них применимо, то ДОЛЖНО использоваться соответствующее значение, в противном случае МОЖЕТ использоваться пользовательское значение.</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -6211,12 +5226,12 @@
 </tr>
 </tbody>
 </table>
-<p><code>network.transport</code> has the following list of well-known values. If one of them applies, then the respective value MUST be used, otherwise a custom value MAY be used.</p>
+<p><code>network.transport</code> имеет следующий список известных значений. Если одно из них применимо, то ДОЛЖНО использоваться соответствующее значение, в противном случае МОЖЕТ использоваться пользовательское значение.</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -6247,15 +5262,15 @@
 </tbody>
 </table>
 <p>1</p>
-<p>Указывает на то, что используется только внутрипроцессное взаимодействие без «реального» сетевого протокола в случаях, когда сетевые атрибуты обычно ожидаются. Как правило, все остальные сетевые атрибуты можно опустить.</p>
+<p>Указывает, что используется только внутрипроцессная коммуникация без «реального» сетевого протокола в случаях, когда обычно ожидаются сетевые атрибуты. Как правило, все остальные сетевые атрибуты могут быть опущены.</p>
 <h3 id="dli">Поля для базы данных DL/I<a class="headerlink" href="#dli" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6303,12 +5318,12 @@
 </tr>
 </tbody>
 </table>
-<p><code>db.dli.pcb_type</code> MUST be one of the following:</p>
+<p><code>db.dli.pcb_type</code> ДОЛЖНО быть одним из следующих:</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -6327,18 +5342,18 @@
 </tbody>
 </table>
 <h2 id="dynatrace-rum">Ссылки Dynatrace RUM<a class="headerlink" href="#dynatrace-rum" title="Permanent link">&para;</a></h2>
-<p>Семантические соглашения для RUM-ссылки на спанах Dynatrace. RUM-ссылка предоставляет информацию о связи бэкенда с фронтендом от трассировок к Dynatrace RUM.
-В отличие от ссылок на спаны, которые ссылаются на другие спаны, RUM-ссылка связывает спан с пользовательским событием и/или пользовательской сессией.</p>
+<p>Семантические соглашения для ссылок RUM на спанах Dynatrace. A RUM link provides backend to frontend linking information from traces to Dynatrace RUM.
+Unlike span links which reference other spans, the RUM link connects a span to a user event and/or user session.</p>
 <h3 id="tracestate">По tracestate<a class="headerlink" href="#tracestate" title="Permanent link">&para;</a></h3>
-<p>Информация RUM-ссылки для корреляции спана с пользовательским событием и пользовательской сессией.</p>
-<p>Этот механизм работает как с инструментацией OneAgent, так и с OpenTelemetry, и устанавливается, когда Dynatrace RUM инициирует распределённую трассировку с использованием заголовков W3C Trace Context.</p>
+<p>RUM link information for a span-to-user-event and span-to-user-session correlation.</p>
+<p>This mechanism works with both OneAgent and OpenTelemetry instrumentation and is established when the Dynatrace RUM initiates a distributed trace using W3C Trace Context headers.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6363,15 +5378,15 @@
 </tbody>
 </table>
 <h3 id="server-timing-cookie">По server-timing и cookie<a class="headerlink" href="#server-timing-cookie" title="Permanent link">&para;</a></h3>
-<p>Информация RUM-ссылки для корреляции спана с пользовательским событием и пользовательской сессией.</p>
-<p>Этот механизм требует инструментации OneAgent и устанавливается через HTTP-заголовок ответа <code>server-timing</code> и контекст сессии из HTTP-cookie.</p>
+<p>RUM link information for a span-to-user-event and span-to-user-session correlation.</p>
+<p>This mechanism requires OneAgent instrumentation and is established through <code>server-timing</code> HTTP response header and session context from HTTP cookies.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6396,15 +5411,15 @@
 </tbody>
 </table>
 <h3 id="server-timing">Только по server-timing<a class="headerlink" href="#server-timing" title="Permanent link">&para;</a></h3>
-<p>Информация RUM-ссылки для корреляции спана с пользовательским событием.</p>
-<p>Этот механизм требует инструментации OneAgent и устанавливается через HTTP-заголовок ответа <code>server-timing</code>.</p>
+<p>RUM link information for a span-to-user-event correlation.</p>
+<p>This mechanism requires OneAgent instrumentation and is established through <code>server-timing</code> HTTP response header.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6417,15 +5432,15 @@
 </tbody>
 </table>
 <h3 id="cookie">По cookie<a class="headerlink" href="#cookie" title="Permanent link">&para;</a></h3>
-<p>Информация RUM-ссылки для корреляции спана с пользовательской сессией.</p>
-<p>Этот механизм требует инструментации OneAgent и устанавливается через контекст сессии, захваченный из HTTP-cookie.</p>
+<p>RUM link information for a span-to-user-session correlation.</p>
+<p>This mechanism requires OneAgent instrumentation and is established through session context captured from HTTP cookies.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6444,16 +5459,16 @@
 </tbody>
 </table>
 <h2 id="dynatrace">События спанов Dynatrace<a class="headerlink" href="#dynatrace" title="Permanent link">&para;</a></h2>
-<p>Семантические соглашения для событий спанов на спанах Dynatrace.</p>
-<h3 id="_7">Общее<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>В целом, событие спана не обязано следовать специфическим семантикам, но, как правило, события спанов имеют следующие общие атрибуты.</p>
+<p>Семантические соглашения для событий спанов Dynatrace.</p>
+<h3 id="_5">Общие<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>In general, a span event does not need to follow specific semantics, but typically, span events have the following common attributes.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6478,21 +5493,21 @@
 <tr>
 <td><code>timestamp</code></td>
 <td>timestamp</td>
-<td>stable The time (UNIX Epoch time in nanoseconds) when the event originated, typically when the source created it. If no original timestamp is available, it will be populated at ingest time and required for all events. In the case of a correlated event (for example, ITIL events), this time could be different from the event.start time, as this time represents the actual timestamp when the "update" for the event was created.</td>
+<td>stable The time (UNIX Epoch time in nanoseconds) when the event originated, typically when the source created it. If no original timestamp is available, it will be populated at ingest time and required для всех events. In the case of a correlated event (for example, ITIL events), this time could be different from the event.start time, as this time represents the actual timestamp when the "update" for the event was created.</td>
 <td><code>1649822520123123123</code></td>
 </tr>
 </tbody>
 </table>
-<p>Помимо общих атрибутов, для событий спанов разрешены любые произвольные атрибуты.</p>
-<h3 id="_8">Исключение<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>Если во время спана возникают и фиксируются исключения, они доступны как события спана. События исключений имеют <code>span_event.name</code>, установленный в <code>exception</code>. Помимо следующих атрибутов, специфичных для события исключения, применяются все семантики из общего раздела.</p>
+<p>Помимо общих атрибутов, для событий спанов допускаются любые произвольные атрибуты.</p>
+<h3 id="_6">Исключения<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>If exceptions happen and are captured during a span, they're available as span events. Exceptions events have the <code>span_event.name</code> set to <code>exception</code>. Besides the following exception event-specific attributes, all semantics of the common section apply.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6546,15 +5561,15 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_9">Оценка флага функциональности<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>Оценка флага ДОЛЖНА быть записана как событие на спане, во время которого она произошла. События флагов функциональности имеют <code>span_event.name</code>, установленный в <code>feature_flag.evaluation</code>.</p>
+<h3 id="_7">Оценка флагов функций<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>A flag evaluation SHOULD be recorded as an event on the span during which it occurred. Feature flag events have the <code>span_event.name</code> set to <code>feature_flag.evaluation</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6591,7 +5606,7 @@
 <tr>
 <td><code>feature_flag.set.id</code></td>
 <td>string</td>
-<td>experimental The identifier of the <a href="https://openfeature.dev/specification/glossary/#flag-set">flag setï»¿</a> to that the feature flag belongs.</td>
+<td>experimental The identifier of the <a href="https://openfeature.dev/specification/glossary/#flag-set">flag set</a> to that the feature flag belongs.</td>
 <td><code>proj-1</code>; <code>ab98sgs</code>; <code>service1/dev</code></td>
 </tr>
 <tr>
@@ -6609,17 +5624,19 @@
 </tbody>
 </table>
 <p>1</p>
-<p>Семантический идентификатор, обычно называемый вариантом, предоставляет способ ссылаться на значение, не включая само значение. Это может обеспечить дополнительный контекст для понимания смысла значения.
-Например, вариант <code>red</code> может использоваться для значения <code>#c05543</code>.</p>
+<p>A semantic identifier, commonly referred to as a variant, provides a means
+for referring to a value without including the value itself. This can
+provide additional context for understanding the meaning behind a value.
+For example, the variant <code>red</code> maybe be used for the value <code>#c05543</code>.</p>
 <h3 id="-">Бизнес-события<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
-<p>Если спан связан с бизнес-событием, идентификаторы бизнес-событий доступны как события спана. События спанов имеют <code>span_event.name</code>, установленный в <code>bizevent</code>.</p>
+<p>If a span is related to a business event, the IDs of the business events are available as span events. The span events have the <code>span_event.name</code> set to <code>bizevent</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6639,15 +5656,15 @@
 </table>
 <h2 id="dynatrace_1">Ссылки спанов Dynatrace<a class="headerlink" href="#dynatrace_1" title="Permanent link">&para;</a></h2>
 <p>Семантические соглашения для известных ссылок спанов.</p>
-<h3 id="_10">По идентификатору спана и трассировки<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p>Ссылка на спан по <code>span.id</code> и <code>trace.id</code> ссылается на целевой спан в другой трассировке.</p>
+<h3 id="span-trace-id">По Span и Trace Id<a class="headerlink" href="#span-trace-id" title="Permanent link">&para;</a></h3>
+<p>A span link by <code>span.id</code> and <code>trace.id</code> references to a target span on a different trace.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6689,17 +5706,17 @@
 </tr>
 </tbody>
 </table>
-<p>Помимо перечисленных выше атрибутов, на обобщённой ссылке спана разрешены любые другие произвольные атрибуты.</p>
-<h3 id="_11">По идентификатору пользовательской ссылки<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>Ссылка на спан по <code>dt.tracing.custom_link.id</code> ссылается на другой спан со ссылкой спана на тот же <code>dt.tracing.custom_link.id</code>. Эта ссылка спана используется для технологий, в которых полное распространение контекста с идентификатором спана и трассировки невозможно, и между уровнями может передаваться лишь ограниченное количество информации.</p>
-<p><code>dt.tracing.link.direction</code> определяет иерархию между двумя спанами, имеющими ссылки спанов с одинаковым <code>dt.tracing.custom_link.id</code>.</p>
+<p>Помимо перечисленных выше атрибутов, на общей ссылке спана допускаются любые другие атрибуты.</p>
+<h3 id="custom-link-id">По Custom Link Id<a class="headerlink" href="#custom-link-id" title="Permanent link">&para;</a></h3>
+<p>Связь спанов по <code>dt.tracing.custom_link.id</code> ссылается на другой спан со связью, имеющей тот же <code>dt.tracing.custom_link.id</code>. Эта связь используется для технологий, где полное распространение контекста с идентификаторами спана и трейса невозможно, и между уровнями может быть передано лишь ограниченное количество информации.</p>
+<p><code>dt.tracing.link.direction</code> определяет иерархию между двумя спанами, имеющими связи с одинаковым <code>dt.tracing.custom_link.id</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6747,16 +5764,16 @@
 </tr>
 </tbody>
 </table>
-<h3 id="dynatrace_2">По идентификатору ссылки Dynatrace<a class="headerlink" href="#dynatrace_2" title="Permanent link">&para;</a></h3>
-<p>Ссылка Dynatrace предоставляет дополнительные сведения о времени родительского и дочернего элементов в дополнение к <code>span.parent_id</code>.
-Эти данные являются необязательными и предоставляются не всеми источниками данных спанов.</p>
+<h3 id="dynatrace-link-id">По Dynatrace Link Id<a class="headerlink" href="#dynatrace-link-id" title="Permanent link">&para;</a></h3>
+<p>A Dynatrace link provides additional details regarding the parent and child timing on top of <code>span.parent_id</code>.
+This data is optional and not provided by all span data sources.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6786,16 +5803,16 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_12">По внешней ссылке<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<p>Ссылка спана по <code>dt.tracing.foreign_link</code> ссылается на вышестоящую транзакцию. Это может быть ссылка между средами или ссылка между продуктами на распределённую трассировку в устаревшем продукте AppMon.
-В зависимости от того, была ли информация о ссылке получена в двоичном или текстовом виде, будет установлено либо <code>dt.tracing.foreign_link.bytes</code>, либо <code>dt.tracing.foreign_link.text</code> соответственно.</p>
+<h3 id="foreign-link">По Foreign Link<a class="headerlink" href="#foreign-link" title="Permanent link">&para;</a></h3>
+<p>A span link by <code>dt.tracing.foreign_link</code> refers to an upstream transaction. This could be a cross-environment link or a cross-product link to a distributed trace in the legacy AppMon product.
+Depending on whether the link information was received in binary or text, either <code>dt.tracing.foreign_link.bytes</code> or <code>dt.tracing.foreign_link.text</code> will be set, respectively.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6813,15 +5830,15 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_13">По заголовкам ответа<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p>Ссылка спана по <code>dt.tracing.response.headers</code> ссылается на нижестоящую транзакцию. Это может быть ссылка между средами.</p>
+<h3 id="_8">По заголовкам ответа<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>A span link by <code>dt.tracing.response.headers</code> refers to a downstream transaction. This could be a cross-environment link.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6833,17 +5850,17 @@
 </tr>
 </tbody>
 </table>
-<h2 id="dynatrace_3">Спан Dynatrace<a class="headerlink" href="#dynatrace_3" title="Permanent link">&para;</a></h2>
-<p>Семантические соглашения для спана Dynatrace и поля, которые пользователь может ожидать.</p>
-<h3 id="_14">Иерархические атрибуты<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<h2 id="dynatrace_2">Спан Dynatrace<a class="headerlink" href="#dynatrace_2" title="Permanent link">&para;</a></h2>
+<p>Семантические соглашения для спана Dynatrace и поля, которые может ожидать пользователь.</p>
+<h3 id="_9">Иерархические атрибуты<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>Следующие иерархические атрибуты являются обязательными.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6885,16 +5902,16 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_15">Атрибуты времени<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<h3 id="_10">Атрибуты времени<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>Атрибуты <code>start_time</code>, <code>end_time</code> и <code>duration</code> являются обязательными для всех спанов.
 Атрибуты в пространстве имён <code>span.timing</code> являются необязательными и представляют измерения, предоставленные OneAgent.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6930,16 +5947,16 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_16">Атрибуты агрегирования<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
-<p>OneAgent может агрегировать спаны с одним родительским спаном в единый. Агрегированный спан содержит атрибуты, указывающие на то, что агрегирование произошло, и позволяющие восстановить детали.</p>
-<p>Для агрегированных спанов <code>start_time</code> содержит наименьшее значение <code>start_time</code>, а <code>end_time</code> — наибольшее значение <code>end_time</code> среди всех агрегированных спанов. Как и для неагрегированных спанов, <code>duration</code> — это разница между <code>start_time</code> и <code>end_time</code>, которая может отличаться от <code>aggregation.duration_sum</code>, поскольку агрегированные спаны могли выполняться параллельно или между ними были промежутки.</p>
+<h3 id="_11">Атрибуты агрегации<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>OneAgent может агрегировать спаны с одним и тем же родительским спаном в один. Агрегированный спан содержит атрибуты, указывающие на факт агрегации и позволяющие восстановить детали.</p>
+<p>Для агрегированных спанов <code>start_time</code> содержит самое раннее <code>start_time</code>, а <code>end_time</code> — самое позднее <code>end_time</code> из всех агрегированных спанов. Как и для неагрегированных спанов, <code>duration</code> — это разница между <code>start_time</code> и <code>end_time</code>, которая может отличаться от <code>aggregation.duration_sum</code>, поскольку агрегированные спаны выполнялись параллельно или между ними были промежутки.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -6970,7 +5987,7 @@
 <tr>
 <td><code>aggregation.duration_sum</code></td>
 <td>duration</td>
-<td>stable The duration sum in nanoseconds for all aggregated spans.</td>
+<td>stable The duration sum in nanoseconds для всех aggregated spans.</td>
 <td><code>123</code></td>
 </tr>
 <tr>
@@ -6987,15 +6004,15 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_17">Атрибуты выборки<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
-<p>Если спан не представляет один отдельный спан, он может иметь атрибуты для поддержки экстраполяции его значений.</p>
+<h3 id="_12">Атрибуты выборки<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>If the span does not represent a single span, it can have attributes to support extrapolation of its values.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7025,23 +6042,23 @@
 </tr>
 </tbody>
 </table>
-<p>В настоящее время выборка может происходить на двух этапах обработки данных. Независимо от того, где происходит выборка, спан имеет <code>sampling.threshold</code> для вычисления общей (эффективной) частоты дискретизации. Атрибуты поддерживаемости помогают понять выборку на разных этапах.</p>
+<p>Currently sampling can happen two stages in the data processing. Independend where sampling happens the span has the <code>sampling.threshold</code> for calculation of the combined (effective) sample rate. Supportability attributes help the understand the sampling on the different stages.</p>
 <ul>
-<li>OneAgent: если в OneAgent включено адаптивное управление трафиком (ATM), агент выполняет выборку PurePaths и атрибут <code>supportability.atm_sampling_ratio</code> добавляется ко всем затронутым спанам.</li>
-<li>Кластер Dynatrace: если кластер Dynatrace перегружен, он запускает адаптивное снижение нагрузки (ALR) и выполняет выборку PurePaths. Атрибут <code>supportability.alr_sampling_ratio</code> добавляется ко всем затронутым спанам.</li>
+<li>OneAgent: if the OneAgent has enabled adaptive traffic management (ATM), the agent samples PurePaths and the attribute <code>supportability.atm_sampling_ratio</code> is added to all effected spans.</li>
+<li>Dynatrace Cluster: if the Dynatrace cluster is overloaded, it starts adaptive load reduction (ALR) and samples PurePaths. The attribute <code>supportability.alr_sampling_ratio</code> is added to all effected spans.</li>
 </ul>
-<p>Например, если OneAgent выполняет выборку с вероятностью 25%, спаны будут содержать атрибуты <code>sampling.threshold=54043195528445952</code> и <code>supportability.atm_sampling_ratio=4</code>.</p>
-<p>Подробности об адаптивном управлении трафиком для распределённой трассировки можно найти в <a href="/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management" title="Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.">документации</a>.</p>
-<h3 id="_18">Атрибуты кода<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
-<p>Когда спан логически представляет выполнение функции, он будет иметь атрибуты <code>code.*</code>, описывающие эту функцию.</p>
-<p>Атрибуты <code>invoked.code.*</code> описывают функцию, в которой был запущен спан, но не обязательно завершён. Как правило, это функция, которая была инструментирована для запуска спана. Эти атрибуты заполняются только в случае несовпадения с <code>code.*</code>.</p>
+<p>If for example OneAgents samples with a probability of 25% the spans would contain the attributes <code>sampling.threshold=54043195528445952</code> and <code>supportability.atm_sampling_ratio=4</code>.</p>
+<p>Details about adaptive traffic management for distributed tracing can be found in the documentation.</p>
+<h3 id="_13">Атрибуты кода<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>When a span logically represents the execution of a function, it will have <code>code.*</code> attributes, describing that function.</p>
+<p><code>invoked.code.*</code> attributes describe the function in which a span has been started, but not necessarily ended. It often represents the function that has been instrumented in order to start a span. These attributes are only populated, if they mismatch with <code>code.*</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7095,14 +6112,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_19">События<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<h3 id="_14">События<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7121,15 +6138,15 @@
 </tbody>
 </table>
 <p>События спанов имеют собственную семантику, определённую здесь.</p>
-<h4 id="_20">События исключений<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
-<p>Если выход из спана произошёл через исключение или спан содержит другие события исключений, для ссылки на правильное исключение в списке <code>span.events</code> доступны следующие поля.</p>
+<h4 id="events">Исключения events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h4>
+<p>If the span was exited by an exception or contains other exception events, the following fields are available to provide a reference to the correct exception in the list of the <code>span.events</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7147,14 +6164,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_21">Ссылки<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<h3 id="_15">Ссылки<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7173,14 +6190,14 @@
 </tbody>
 </table>
 <p>Ссылки спанов имеют собственную семантику, определённую здесь.</p>
-<h3 id="rum-">RUM-ссылка<a class="headerlink" href="#rum-" title="Permanent link">&para;</a></h3>
+<h3 id="rum">Ссылка RUM<a class="headerlink" href="#rum" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7192,19 +6209,19 @@
 </tr>
 </tbody>
 </table>
-<p>RUM-ссылка имеет собственную семантику, определённую здесь.</p>
-<h3 id="_22">Обнаружение сбоев<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
-<p>Поля, которые можно ожидать при обнаружении сбоев на спане Dynatrace.
-Обнаружение сбоев применяется к спанам, представляющим запросы к конечным точкам и входящим прокси сервисной сети Istio.
-Запрос считается неудачным, если обнаружена хотя бы одна причина сбоя и не совпадает ни одно правило принудительного успеха. Объединённый результат (сбой или успех) сохраняется в атрибуте <code>request.is_failed</code> (см. также Запрос).
-Чтобы изменить поведение обнаружения сбоев, измените его конфигурацию.</p>
+<p>Ссылка RUM имеет собственную семантику, определённую здесь.</p>
+<h3 id="_16">Обнаружение ошибок<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>Fields that can be expected for a failure detection on a Dynatrace span.
+Failure detection will be applied to spans that represent requests on endpoints and incoming Istio services mesh proxies.
+A request is considered failed if at least one failure reason is detected and no success forcing rule matches. The combined result (failure or success) will be stored in the attribute <code>request.is_failed</code> (see also Request).
+To modify failure detection behavior, modify its configuration.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7252,12 +6269,12 @@
 </tr>
 </tbody>
 </table>
-<p><code>dt.failure_detection.verdict</code> MUST be one of the following:</p>
+<p><code>dt.failure_detection.verdict</code> ДОЛЖНО быть одним из следующих:</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -7271,20 +6288,20 @@
 </tr>
 </tbody>
 </table>
-<p>Обнаружение сбоев имеет собственную семантику, определённую здесь.</p>
-<h3 id="_23">Атрибуты сервера и клиента<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
-<p>Эти атрибуты могут использоваться для описания клиента и сервера при сетевом взаимодействии на основе соединений, где одна сторона (клиент) инициирует соединение.
-Это охватывает все сетевые взаимодействия TCP, поскольку TCP основан на соединениях и одна сторона инициирует соединение (исключение сделано для однорангового взаимодействия через TCP, где «пользовательская» поверхность протокола/API не раскрывает чёткого понятия клиента и сервера).
-Это также охватывает сетевые взаимодействия UDP, где одна сторона инициирует взаимодействие, например QUIC (HTTP/3) и DNS.</p>
-<p>В идеальной ситуации, без учёта прокси, нескольких IP-адресов или имён хостов, атрибуты <code>server.*</code> одинаковы как на клиентском, так и на серверном спане.</p>
-<h4 id="_24">Атрибуты сервера<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h4>
+<p>Обнаружение ошибок имеет собственную семантику, определённую здесь.</p>
+<h3 id="_17">Атрибуты сервера и клиента<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>These attributes may be used to describe the client and server in a connection-based network interaction where there is one side (the client) that initiates the connection.
+This covers all TCP network interactions since TCP is connection-based and one side initiates the connection (an exception is made for peer-to-peer communication over TCP where the "user-facing" surface of the protocol / API does not expose a clear notion of client and server).
+This also covers UDP network interactions where one side initiates the interaction, e.g. QUIC (HTTP/3) and DNS.</p>
+<p>In an ideal situation, not accounting for proxies, multiple IP addresses or host names, the <code>server.*</code> attributes are the same on the client and server span.</p>
+<h4 id="_18">Атрибуты сервера<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7309,19 +6326,19 @@
 </tbody>
 </table>
 <h5 id="serveraddress"><code>server.address</code><a class="headerlink" href="#serveraddress" title="Permanent link">&para;</a></h5>
-<p>Для IP-связи имя должно быть DNS-именем хоста службы. На стороне клиента оно соответствует имени удалённой службы, на стороне сервера представляет имя локальной службы, видимое клиентами извне.</p>
-<p>При подключении к URL <code>https://example.com/foo</code>, <code>server.address</code> соответствует <code>"example.com"</code> как на стороне клиента, так и на стороне сервера.</p>
-<p>На стороне клиента, как правило, передаётся в форме URL, строки подключения, имени хоста и т. д. Иногда имя хоста доступно только в виде строки, которая может содержать DNS-имя или IP-адрес.</p>
-<p>Если <code>network.transport</code> равен <code>pipe</code>, абсолютный путь к файлу, представляющему его, используется как <code>server.address</code>.</p>
-<p>Для Unix domain socket атрибут <code>server.address</code> представляет адрес удалённой конечной точки на стороне клиента и адрес локальной конечной точки на стороне сервера.</p>
-<h4 id="_25">Атрибуты клиента<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
+<p>For IP-based communication, the name should be a DNS host name of the service. On client side it matches remote service name, on server side, it represents local service name as seen externally on clients.</p>
+<p>When connecting to a URL <code>https://example.com/foo</code>, <code>server.address</code> matches <code>"example.com"</code> on both client and server side.</p>
+<p>On client side, it's usually passed in form of a URL, connection string, host name, etc. Sometimes host name is only available as a string which may contain DNS name or IP address.</p>
+<p>If <code>network.transport</code> is <code>pipe</code>, the absolute path to the file representing it is used as <code>server.address</code>.</p>
+<p>For Unix domain socket, <code>server.address</code> attribute represents the remote endpoint address on client side and local endpoint address on server side.</p>
+<h4 id="_19">Атрибуты клиента<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7363,15 +6380,15 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_26">Атрибуты поддерживаемости<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
-<p>Атрибуты поддерживаемости помогают понять характеристики спана.</p>
+<h3 id="_20">Атрибуты поддержки<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p>Атрибуты поддержки помогают понять характеристики спана.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7401,16 +6418,16 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_27">Транзакции<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
-<p>Транзакции предоставляют унифицированную семантическую модель для всех типов транзакций сервиса. Транзакция представляет собой дискретную единицу входящей работы внутри сервиса: запрос к конечной точке, обработку сообщения или вызов FaaS.
-Один корневой спан транзакции может одновременно иметь несколько установленных атрибутов типа. Например, Lambda, запущенная через HTTP, имеет и <code>transaction.is_faas_invocation = true</code>, и <code>transaction.is_endpoint_request = true</code>.</p>
+<h3 id="_21">Транзакции<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<p>Transactions provide a unified semantic model across all service transaction types. A transaction represents a discrete unit of inbound work within a serviceâan endpoint request, message processing, or FaaS invocation.
+A single transaction root span can have multiple type attributes set simultaneously. For example, an HTTP-triggered Lambda has both <code>transaction.is_faas_invocation = true</code> and <code>transaction.is_endpoint_request = true</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7446,16 +6463,16 @@
 </tr>
 </tbody>
 </table>
-<h4 id="_28">Сервисная сеть<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h4>
-<p>Спаны сервисной сети представляют запросы, проксируемые через уровень сервисной сети (например, Istio Envoy).
-Они не представляют транзакции сервиса (<code>transaction.is_root_span</code> не установлен).</p>
+<h4 id="_22">Сервисная сетка<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
+<p>Service mesh spans represent requests proxied through a service mesh layer (e.g., Istio Envoy).
+They do not represent service transactions (<code>transaction.is_root_span</code> is not set).</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7473,21 +6490,21 @@
 </tr>
 </tbody>
 </table>
-<h4 id="_29">Атрибуты запроса<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h4>
-<p>Атрибуты запроса позволяют обогащать спаны, собранные OneAgent, данными глубокого анализа, которые по умолчанию не фиксируются в данных трассировки.
-Они моделируются как:</p>
+<h4 id="_23">Атрибуты запросов<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
+<p>Атрибуты запросов позволяют обогащать спаны, собранные OneAgent, данными глубокого анализа, которые по умолчанию не захватываются в данных трейсов.
+Они моделируются следующим образом:</p>
 <ul>
-<li>Захваченные атрибуты, представляющие необработанное значение, сообщённое OneAgent.</li>
-<li>Атрибуты запроса, представляющие нормализованное значение для полного запроса.</li>
+<li>Захваченные атрибуты (captured attributes), представляющие необработанное значение, полученное от OneAgent.</li>
+<li>Атрибуты запросов (request attributes), представляющие нормализованное значение вдоль полного запроса.</li>
 </ul>
-<p>Имена атрибутов запроса и захваченных атрибутов составляются из префиксов "captured_attribute" и "request_attribute" и имени, заданного пользователем в конфигурации:</p>
+<p>Имена атрибутов запросов и захваченных атрибутов состоят из префиксов "captured_attribute" и "request_attribute" и имени, заданного пользователем в конфигурации:</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7505,15 +6522,15 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_30">Размер спана<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
-<p>Вычисленные размеры спана в байтах. <code>dt.ingest.size</code> вычисляется при получении спана, а <code>dt.retain.size</code> — до сохранения спана.</p>
+<h3 id="_24">Размер спана<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p>Рассчитанные размеры спана в байтах. <code>dt.ingest.size</code> рассчитывается при приёме спана, а <code>dt.retain.size</code> — перед его сохранением.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7531,15 +6548,15 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_31">Статус<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
-<p>Спан содержит статус, состоящий из кода и необязательного описательного сообщения. Статус особенно важен, если в коде приложения имеется известная ошибка, например исключение, в этом случае статус спана может быть установлен в <code>error</code>. Статус спана присутствует только в том случае, если он явно установлен в <code>error</code> или <code>ok</code>.</p>
+<h3 id="_25">Статус<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<p>Спан содержит статус, состоящий из кода и необязательного описательного сообщения. Статус особенно важен при наличии известной ошибки в коде приложения, например исключения, в этом случае статус спана может быть установлен в <code>error</code>. Статус спана присутствует только если он явно установлен в <code>error</code> или <code>ok</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7557,40 +6574,40 @@
 </tr>
 </tbody>
 </table>
-<h4 id="_32">Причины статуса ошибки<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h4>
-<p>Следующие причины приводят к установке <code>span.status_code</code> в <code>error</code>:</p>
+<h4 id="_26">Причины статуса ошибки<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
+<p>Следующие причины приводят к установке <code>span.status_code</code> в значение <code>error</code>:</p>
 <ul>
-<li>Если выход из спана произошёл через исключение, т. е. атрибут <code>span.is_exit_by_exception</code> установлен в <code>true</code>.</li>
+<li>Если спан был завершён исключением, т.е. атрибут <code>span.is_exit_by_exception</code> установлен в <code>true</code>.</li>
 <li>
 <p>Спаны HTTP:</p>
 </li>
 <li>
-<p>Общее: для значений <code>http.response.status_code</code> в диапазоне <code>5xx</code>.</p>
+<p>Общее: для <code>http.response.status_code</code> значений в диапазоне <code>5xx</code>.</p>
 </li>
-<li>Если <code>span.kind</code> равен <code>client</code>: для значений <code>http.response.status_code</code> в диапазоне <code>4xx</code>.</li>
+<li>If <code>span.kind</code> is <code>client</code>: for <code>http.response.status_code</code> значений в диапазоне <code>4xx</code>.</li>
 <li>
 <p>Спаны gRPC:</p>
 </li>
 <li>
-<p>Если <code>span.kind</code> равен <code>client</code>: для всех значений <code>rpc.grpc.status_code</code> кроме <code>OK (0)</code>.</p>
+<p>If <code>span.kind</code> is <code>client</code>: для всех <code>rpc.grpc.status_code</code> значений, кроме <code>OK (0)</code>.</p>
 </li>
-<li>Если <code>span.kind</code> равен <code>server</code>: для значений <code>rpc.grpc.status_code</code> <code>UNKNOWN (2)</code>, <code>DEADLINE_EXCEEDED (4)</code>, <code>UNIMPLEMENTED (12)</code>, <code>INTERNAL (13)</code>, <code>UNAVAILABLE (14)</code>, <code>DATA_LOSS (15)</code>.</li>
+<li>If <code>span.kind</code> is <code>server</code>: for <code>rpc.grpc.status_code</code> values <code>UNKNOWN (2)</code>, <code>DEADLINE_EXCEEDED (4)</code>, <code>UNIMPLEMENTED (12)</code>, <code>INTERNAL (13)</code>, <code>UNAVAILABLE (14)</code>, <code>DATA_LOSS (15)</code>.</li>
 </ul>
-<h3 id="_33">Дополнительные атрибуты<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
-<p>Помимо перечисленных выше атрибутов, на спане разрешены любые другие произвольные атрибуты.</p>
+<h3 id="_27">Дополнительные атрибуты<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<p>Помимо перечисленных выше атрибутов, на спане допускаются любые другие атрибуты.</p>
 <h2 id="esb">Спаны ESB<a class="headerlink" href="#esb" title="Permanent link">&para;</a></h2>
-<p>Семантические соглашения для спанов ESB (Enterprise Service Bus). Спан ESB содержит информацию о среде, в которой создаётся спан. Эти метаданные включают, например, рабочий процесс, в котором размещён спан, и приложение или библиотеку, которой принадлежит рабочий процесс.</p>
-<h3 id="_34">Атрибуты<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
-<p>Имя <code>workflow</code> является обязательной информацией и в наибольшей степени способствует идентификации источника спана.
-<code>application</code> и <code>library</code> обеспечивают высокоуровневое представление о том, к какому развёртыванию принадлежит спан.
-Также стоит отметить, что <code>application</code> и <code>library</code> обычно рассматриваются как взаимоисключающие, хотя это никак не принудительно."</p>
+<p>Семантические соглашения для спанов ESB (Enterprise Service Bus). Спан ESB содержит информацию о среде, в которой создаётся спан. Эти метаданные включают, например, рабочий процесс (workflow), в который помещён спан, и приложение или библиотеку, к которым принадлежит рабочий процесс.</p>
+<h3 id="_28">Атрибуты<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<p>Имя <code>workflow</code> является обязательной информацией и вносит наибольший вклад в определение происхождения спана.
+<code>application</code> и <code>library</code> предоставляют общее представление о том, к какому развёртыванию относится спан.
+Также стоит отметить, что <code>application</code> и <code>library</code> обычно рассматриваются как взаимоисключающие, хотя это никак не регламентируется.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7626,21 +6643,21 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_35">Результат обнаружения сбоев<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h2>
-<p>Запись, содержащая поля, которые можно ожидать для результата обнаружения сбоев. Эти результаты являются частью (в виде массива записей) набора полей, используемых функцией обнаружения сбоев, и ссылаются на них через <code>failure_detection.results</code>.
-Эта запись относится к обнаружению сбоев v1 и v2.</p>
+<h2 id="_29">Результат обнаружения ошибок<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h2>
+<p>Запись, содержащая поля, ожидаемые для результата обнаружения ошибок. Эти результаты являются частью (в виде массива записей) набора полей, используемых функцией обнаружения ошибок, и ссылаются через <code>failure_detection.results</code>.
+Эта запись относится к failure detection v1 и v2.</p>
 <ul>
-<li>Обнаружение сбоев v1 будет производить только один результат в массиве.</li>
-<li>Обнаружение сбоев v2 может производить несколько причин сбоев. Каждое совпавшее правило набора правил обнаружения сбоев будет производить один результат.</li>
+<li>Failure detection v1 выдаёт только один результат в массиве.</li>
+<li>Failure detection v2 может выдавать несколько причин сбоя. Каждое совпавшее правило набора правил обнаружения ошибок создаёт один результат.</li>
 </ul>
-<h3 id="_36">Поля<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h3>
+<h3 id="_30">Поля<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7676,12 +6693,12 @@
 </tr>
 </tbody>
 </table>
-<p><code>reason</code> MUST be one of the following:</p>
+<p><code>reason</code> ДОЛЖНО быть одним из следующих:</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -7711,12 +6728,12 @@
 </tr>
 </tbody>
 </table>
-<p><code>verdict</code> MUST be one of the following:</p>
+<p><code>verdict</code> ДОЛЖНО быть одним из следующих:</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -7730,17 +6747,17 @@
 </tr>
 </tbody>
 </table>
-<h2 id="faas">Функция как услуга (FaaS)<a class="headerlink" href="#faas" title="Permanent link">&para;</a></h2>
-<p>Поля, которые можно ожидать от бессерверных функций или функций как услуги (FaaS) на различных облачных платформах.
-Существуют общие атрибуты и атрибуты, специфичные для входящих вызовов FaaS (на стороне сервера) и исходящих вызовов (функция FaaS как клиент, выполняющий вызовы).</p>
-<h3 id="_37">Общие атрибуты<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h3>
+<h2 id="faas">Функция как сервис (FaaS)<a class="headerlink" href="#faas" title="Permanent link">&para;</a></h2>
+<p>Fields that can be expected from serverless functions or Function as a Service (FaaS) on various cloud platforms.
+There are general attributes and attributes specific to incoming FaaS invocations (server side) and outgoing invocations (FaaS function as client calling out).</p>
+<h3 id="_31">Общие атрибуты<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7863,20 +6880,20 @@
 <p>1</p>
 <p>Префикс сервиса соответствует указанному в <code>cloud.provider</code>.</p>
 <p>2</p>
-<p>Это имя функции, настроенной/развёрнутой на платформе FaaS, и обычно оно отличается от имени функции обратного вызова
+<p>Это имя функции, как оно настроено/развёрнуто на платформе FaaS, и обычно отличается от имени функции обратного вызова
 (которое может храниться в атрибутах спана <code>code.namespace</code>/<code>code.function</code>).</p>
 <p>3</p>
 <p>Значение поля зависит от облачного провайдера. Это поле не устанавливается для Azure.</p>
-<h3 id="_38">Входящие вызовы<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h3>
-<p>В этом разделе описываются входящие вызовы FaaS, о которых сообщает сам экземпляр FaaS.
-Для входящих спанов FaaS <code>span.kind</code> равен либо <code>server</code>, либо <code>consumer</code>.</p>
+<h3 id="_32">Входящие вызовы<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
+<p>Этот раздел описывает входящие вызовы FaaS, как они сообщаются самим экземпляром FaaS.
+Для входящих спанов FaaS <code>span.kind</code> имеет значение <code>server</code> или <code>consumer</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7889,7 +6906,7 @@
 <tr>
 <td><code>aws.xray.trace_id</code></td>
 <td>string</td>
-<td>experimental Contains the <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">AWS X-Rayï»¿</a> trace id (e.g., value of the <code>x-amzn-trace-id</code> HTTP header, <code>_X_AMZN_TRACE_ID</code> environment variable on AWS lambda)</td>
+<td>experimental Contains the <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">AWS X-Ray</a> trace id (e.g., value of the <code>x-amzn-trace-id</code> HTTP header, <code>_X_AMZN_TRACE_ID</code> environment variable on AWS lambda)</td>
 <td><code>Root=1-63441c4a-abcdef012345678912345678</code>; <code>Self=1-63441c4a-12456789abcdef012345678;Root=1-67891233-abcdef012345678912345678</code></td>
 </tr>
 <tr>
@@ -7949,23 +6966,23 @@
 </tbody>
 </table>
 <p>1</p>
-<p>Применимо только для триггера <code>faas.trigger=datasource</code></p>
+<p>Актуально только для триггера <code>faas.trigger=datasource</code></p>
 <p>2</p>
-<p>Применимо только для триггера <code>faas.trigger=datasource</code></p>
+<p>Актуально только для триггера <code>faas.trigger=datasource</code></p>
 <p>3</p>
-<p>Применимо только для триггера <code>faas.trigger=datasource</code></p>
+<p>Актуально только для триггера <code>faas.trigger=datasource</code></p>
 <p>4</p>
-<p>Значение этого атрибута специфично для сервиса, сгенерировавшего событие.</p>
-<h3 id="_39">Исходящие вызовы<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h3>
-<p>В этом разделе описываются исходящие вызовы FaaS, о которых сообщает клиент, вызывающий экземпляр FaaS.
-Для исходящих спанов FaaS <code>span.kind</code> равен либо <code>client</code>, либо <code>producer</code>.</p>
+<p>Значение этого атрибута зависит от сервиса, сгенерировавшего событие.</p>
+<h3 id="_33">Исходящие вызовы<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<p>Этот раздел описывает исходящие вызовы FaaS, как они сообщаются клиентом, вызывающим экземпляр FaaS.
+Для исходящих спанов FaaS <code>span.kind</code> имеет значение <code>client</code> или <code>producer</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -7978,7 +6995,7 @@
 <tr>
 <td><code>aws.xray.trace_id</code></td>
 <td>string</td>
-<td>experimental Contains the <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">AWS X-Rayï»¿</a> trace id (e.g., value of the <code>x-amzn-trace-id</code> HTTP header, <code>_X_AMZN_TRACE_ID</code> environment variable on AWS lambda)</td>
+<td>experimental Contains the <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">AWS X-Ray</a> trace id (e.g., value of the <code>x-amzn-trace-id</code> HTTP header, <code>_X_AMZN_TRACE_ID</code> environment variable on AWS lambda)</td>
 <td><code>Root=1-63441c4a-abcdef012345678912345678</code>; <code>Self=1-63441c4a-12456789abcdef012345678;Root=1-67891233-abcdef012345678912345678</code></td>
 </tr>
 <tr>
@@ -8002,16 +7019,16 @@
 </tbody>
 </table>
 <p>1</p>
-<p>Будет равно атрибуту ресурса <code>cloud.region</code> вызываемой функции.</p>
+<p>Будет равно значению атрибута ресурса <code>cloud.region</code> вызываемой функции.</p>
 <h2 id="genai">Спаны генеративного ИИ (GenAI)<a class="headerlink" href="#genai" title="Permanent link">&para;</a></h2>
 <p>Семантические соглашения для спанов, связанных с приложениями GenAI.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -8233,12 +7250,12 @@
 </tr>
 </tbody>
 </table>
-<p><code>gen_ai.operation.kind</code> has the following list of well-known values. If one of them applies, then the respective value MUST be used, otherwise a custom value MAY be used.</p>
+<p><code>gen_ai.operation.kind</code> имеет следующий список известных значений. Если одно из них применимо, то ДОЛЖНО использоваться соответствующее значение, в противном случае МОЖЕТ использоваться пользовательское значение.</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -8264,12 +7281,12 @@
 </tr>
 </tbody>
 </table>
-<p><code>gen_ai.operation.name</code> has the following list of well-known values. If one of them applies, then the respective value MUST be used, otherwise a custom value MAY be used.</p>
+<p><code>gen_ai.operation.name</code> имеет следующий список известных значений. Если одно из них применимо, то ДОЛЖНО использоваться соответствующее значение, в противном случае МОЖЕТ использоваться пользовательское значение.</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -8287,12 +7304,12 @@
 </tr>
 </tbody>
 </table>
-<p><code>gen_ai.prompt_caching</code> has the following list of well-known values. If one of them applies, then the respective value MUST be used, otherwise a custom value MAY be used.</p>
+<p><code>gen_ai.prompt_caching</code> имеет следующий список известных значений. Если одно из них применимо, то ДОЛЖНО использоваться соответствующее значение, в противном случае МОЖЕТ использоваться пользовательское значение.</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -8306,12 +7323,12 @@
 </tr>
 </tbody>
 </table>
-<p><code>gen_ai.provider.name</code> has the following list of well-known values. If one of them applies, then the respective value MUST be used, otherwise a custom value MAY be used.</p>
+<p><code>gen_ai.provider.name</code> имеет следующий список известных значений. Если одно из них применимо, то ДОЛЖНО использоваться соответствующее значение, в противном случае МОЖЕТ использоваться пользовательское значение.</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -8326,24 +7343,24 @@
 </tbody>
 </table>
 <h2 id="http">Спаны HTTP<a class="headerlink" href="#http" title="Permanent link">&para;</a></h2>
-<p>Семантические соглашения для спанов клиента и сервера HTTP.
+<p>Семантические соглашения для спанов HTTP-клиента и HTTP-сервера.
 Они могут использоваться для схем HTTP и HTTPS и различных версий HTTP, таких как 1.1, 2 и SPDY.</p>
-<h3 id="_40">Общие поля<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h3>
-<p>Общие поля, перечисленные в этом разделе, применяются как к клиентам, так и к серверам HTTP, в дополнение к специфическим полям, перечисленным в разделах <a href="#http-client">HTTP client</a> и <a href="#http-server">HTTP server</a> ниже.</p>
+<h3 id="_34">Общие поля<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
+<p>Общие поля, перечисленные в этом разделе, применяются как к HTTP-клиентам, так и к серверам, в дополнение к конкретным полям, перечисленным в разделах <a href="#http-client">HTTP-клиент</a> и <a href="#http-server">HTTP-сервер</a> ниже.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>http.request.body.size</code></td>
 <td>long</td>
-<td>stable The size of the request payload body in bytes. This is the number of bytes transferred excluding headers and is often, but not always, present as the <a href="https://www.rfc-editor.org/rfc/rfc9110.html#field.content-length">Content-Lengthï»¿</a> header. For requests using transport encoding, this should be the compressed size.</td>
+<td>stable The size of the request payload body in bytes. This is the number of bytes transferred excluding headers and is often, but not always, present as the <a href="https://www.rfc-editor.org/rfc/rfc9110.html#field.content-length">Content-Length</a> header. For requests using transport encoding, this should be the compressed size.</td>
 <td><code>3495</code></td>
 </tr>
 <tr>
@@ -8361,7 +7378,7 @@
 <tr>
 <td><code>http.response.body.size</code></td>
 <td>long</td>
-<td>stable The size of the response payload body in bytes. This is the number of bytes transferred excluding headers and is often, but not always, present as the <a href="https://www.rfc-editor.org/rfc/rfc9110.html#field.content-length">Content-Lengthï»¿</a> header. For requests using transport encoding, this should be the compressed size.</td>
+<td>stable The size of the response payload body in bytes. This is the number of bytes transferred excluding headers and is often, but not always, present as the <a href="https://www.rfc-editor.org/rfc/rfc9110.html#field.content-length">Content-Length</a> header. For requests using transport encoding, this should be the compressed size.</td>
 <td><code>3495</code></td>
 </tr>
 <tr>
@@ -8373,13 +7390,13 @@
 <tr>
 <td><code>http.response.status_code</code></td>
 <td>long</td>
-<td>stable <a href="https://tools.ietf.org/html/rfc7231#section-6">HTTP response status codeï»¿</a>.</td>
+<td>stable <a href="https://tools.ietf.org/html/rfc7231#section-6">HTTP response status code</a>.</td>
 <td><code>200</code></td>
 </tr>
 <tr>
 <td><code>network.protocol.name</code></td>
 <td>string</td>
-<td>stable <a href="https://osi-model.com/application-layer/">OSI Application Layerï»¿</a> or non-OSI equivalent.</td>
+<td>stable <a href="https://osi-model.com/application-layer/">OSI Application Layer</a> or non-OSI equivalent.</td>
 <td><code>amqp</code>; <code>http</code>; <code>mqtt</code></td>
 </tr>
 <tr>
@@ -8392,27 +7409,27 @@
 </table>
 <h3 id="http-">HTTP-клиент<a class="headerlink" href="#http-" title="Permanent link">&para;</a></h3>
 <p>Этот тип спана представляет исходящий HTTP-запрос.</p>
-<p>Для спана HTTP-клиента <code>span.kind</code> равен <code>client</code>.</p>
+<p>Для спана HTTP-клиента <code>span.kind</code> имеет значение <code>client</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>server.address</code></td>
 <td>string</td>
-<td>stable Host identifier of the <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-uri-origin">"URI origin"ï»¿</a> HTTP request is sent to.</td>
+<td>stable Host identifier of the <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-uri-origin">"URI origin"</a> HTTP request is sent to.</td>
 <td><code>example.com</code></td>
 </tr>
 <tr>
 <td><code>server.port</code></td>
 <td>long</td>
-<td>stable Port identifier of the <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-uri-origin">"URI origin"ï»¿</a> HTTP request is sent to.</td>
+<td>stable Port identifier of the <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-uri-origin">"URI origin"</a> HTTP request is sent to.</td>
 <td><code>65123</code>; <code>80</code></td>
 </tr>
 <tr>
@@ -8459,10 +7476,10 @@
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -8510,15 +7527,15 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_41">Спаны обмена сообщениями<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h2>
-<h3 id="_42">Общие атрибуты<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h3>
+<h2 id="_35">Спаны обмена сообщениями<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h2>
+<h3 id="_36">Общие атрибуты<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -8591,13 +7608,13 @@
 <tr>
 <td><code>network.protocol.name</code></td>
 <td>string</td>
-<td>stable <a href="https://osi-model.com/application-layer/">OSI Application Layerï»¿</a> or non-OSI equivalent.</td>
+<td>stable <a href="https://osi-model.com/application-layer/">OSI Application Layer</a> or non-OSI equivalent.</td>
 <td><code>amqp</code>; <code>http</code>; <code>mqtt</code></td>
 </tr>
 <tr>
 <td><code>network.transport</code></td>
 <td>string</td>
-<td>stable <a href="https://osi-model.com/transport-layer/">OSI Transport Layerï»¿</a> or <a href="https://en.wikipedia.org/wiki/Inter-process_communication">Inter-process Communication methodï»¿</a> <a href="#fn-12-1-def">1</a></td>
+<td>stable <a href="https://osi-model.com/transport-layer/">OSI Transport Layer</a> or <a href="https://en.wikipedia.org/wiki/Inter-process_communication">Inter-process Communication method</a> <a href="#fn-12-1-def">1</a></td>
 <td><code>inproc</code></td>
 </tr>
 <tr>
@@ -8621,15 +7638,15 @@
 </tbody>
 </table>
 <p>1</p>
-<p>Необходимо только когда атрибуты <code>server.*</code> не применяются.</p>
+<p>Необходимо только когда атрибуты <code>server.*</code> не применимы.</p>
 <p>2</p>
-<p>Это должен быть IP-адрес/имя хоста брокера (или другого однорангового узла сетевого уровня), которому отправляется/от которого получается это конкретное сообщение.</p>
-<p><code>messaging.operation.type</code> has the following list of well-known values. If one of them applies, then the respective value MUST be used, otherwise a custom value MAY be used.</p>
+<p>Это должен быть IP-адрес/имя хоста брокера (или другого сетевого узла), которому отправляется или от которого получается данное сообщение.</p>
+<p><code>messaging.operation.type</code> имеет следующий список известных значений. Если одно из них применимо, то ДОЛЖНО использоваться соответствующее значение, в противном случае МОЖЕТ использоваться пользовательское значение.</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -8651,12 +7668,12 @@
 </tr>
 </tbody>
 </table>
-<p><code>messaging.system</code> has the following list of well-known values. If one of them applies, then the respective value MUST be used, otherwise a custom value MAY be used.</p>
+<p><code>messaging.system</code> имеет следующий список известных значений. Если одно из них применимо, то ДОЛЖНО использоваться соответствующее значение, в противном случае МОЖЕТ использоваться пользовательское значение.</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -8742,12 +7759,12 @@
 </tr>
 </tbody>
 </table>
-<p><code>network.transport</code> has the following list of well-known values. If one of them applies, then the respective value MUST be used, otherwise a custom value MAY be used.</p>
+<p><code>network.transport</code> имеет следующий список известных значений. Если одно из них применимо, то ДОЛЖНО использоваться соответствующее значение, в противном случае МОЖЕТ использоваться пользовательское значение.</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -8778,17 +7795,17 @@
 </tbody>
 </table>
 <p>1</p>
-<p>Указывает на то, что используется только внутрипроцессное взаимодействие без «реального» сетевого протокола в случаях, когда сетевые атрибуты обычно ожидаются. Как правило, все остальные сетевые атрибуты можно опустить.</p>
-<h3 id="_43">Назначение сообщений<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h3>
-<p>Назначение представляет собой компонент в системе обмена сообщениями, куда отправляются и откуда потребляются сообщения. Назначение обычно однозначно идентифицируется его именем в экземпляре системы обмена сообщениями. Примерами имени назначения могут быть URL или любой другой идентификатор конкретной очереди, темы или другой сущности в брокере.
-Для спанов производителя и потребителя сообщений будут определены следующие атрибуты назначения:</p>
+<p>Указывает, что используется только внутрипроцессная коммуникация без «реального» сетевого протокола в случаях, когда обычно ожидаются сетевые атрибуты. Как правило, все остальные сетевые атрибуты могут быть опущены.</p>
+<h3 id="_37">Назначение сообщения<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h3>
+<p>Назначение представляет собой компонент системы обмена сообщениями, куда отправляются и откуда потребляются сообщения. Назначение обычно однозначно идентифицируется своим именем в экземпляре системы обмена сообщениями. Примерами имени назначения могут быть URL или любой другой идентификатор конкретной очереди, темы или другой сущности внутри брокера.
+Спаны производителей и потребителей сообщений будут иметь следующие атрибуты назначения:</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -8815,17 +7832,17 @@
 <p>1</p>
 <p>Имя менеджера однозначно идентифицирует брокер.</p>
 <p>2</p>
-<p>Имя назначения однозначно идентифицирует конкретную очередь, тему или другую сущность в брокере.</p>
+<p>Имя назначения однозначно идентифицирует конкретную очередь, тему или другую сущность внутри брокера.</p>
 <h3 id="akka">Обмен сообщениями Akka<a class="headerlink" href="#akka" title="Permanent link">&para;</a></h3>
 <h4 id="akka_1">Производитель Akka<a class="headerlink" href="#akka_1" title="Permanent link">&para;</a></h4>
-<p>Сторона отправителя через <code>ActorRef.tell()</code> или <code>ActorSelection.tell()</code> представлена спаном с <code>span.kind</code>, установленным в <code>producer</code>.</p>
+<p>Сторона отправителя через <code>ActorRef.tell()</code> или <code>ActorSelection.tell()</code> представлена спаном, где <code>span.kind</code> установлен в <code>producer</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -8874,21 +7891,21 @@
 </tbody>
 </table>
 <h4 id="akka_2">Потребитель Akka<a class="headerlink" href="#akka_2" title="Permanent link">&para;</a></h4>
-<p>Сторона получателя через <code>ActorCell.invoke()</code> (<code>inproc</code>) или <code>Actor.receive()</code> (<code>tcp</code>) представлена спаном с <code>span.kind</code>, установленным в <code>consumer</code>.</p>
+<p>Сторона получателя через <code>ActorCell.invoke()</code> (<code>inproc</code>) или <code>Actor.receive()</code> (<code>tcp</code>) представлена спаном, где <code>span.kind</code> установлен в <code>consumer</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>messaging.akka.actor.kind</code></td>
 <td>string</td>
-<td>experimental Name of the top-level actor. See <a href="https://doc.akka.io/docs/akka/2.5/guide/tutorial_1.html#the-akka-actor-hierarchy">The Akka actor hierarchyï»¿</a> <a href="#fn-15-1-def">1</a></td>
+<td>experimental Name of the top-level actor. See <a href="https://doc.akka.io/docs/akka/2.5/guide/tutorial_1.html#the-akka-actor-hierarchy">The Akka actor hierarchy</a> <a href="#fn-15-1-def">1</a></td>
 <td><code>system</code>; <code>user</code></td>
 </tr>
 <tr>
@@ -8953,12 +7970,12 @@
 <p>Недоступно при <code>network.transport</code> = <code>inproc</code></p>
 <p>6</p>
 <p>Недоступно при <code>network.transport</code> = <code>inproc</code></p>
-<p><code>network.transport</code> has the following list of well-known values. If one of them applies, then the respective value MUST be used, otherwise a custom value MAY be used.</p>
+<p><code>network.transport</code> имеет следующий список известных значений. Если одно из них применимо, то ДОЛЖНО использоваться соответствующее значение, в противном случае МОЖЕТ использоваться пользовательское значение.</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -8989,17 +8006,17 @@
 </tbody>
 </table>
 <p>1</p>
-<p>Указывает на то, что используется только внутрипроцессное взаимодействие без «реального» сетевого протокола в случаях, когда сетевые атрибуты обычно ожидаются. Как правило, все остальные сетевые атрибуты можно опустить.</p>
+<p>Указывает, что используется только внутрипроцессная коммуникация без «реального» сетевого протокола в случаях, когда обычно ожидаются сетевые атрибуты. Как правило, все остальные сетевые атрибуты могут быть опущены.</p>
 <h3 id="kafka">Обмен сообщениями Kafka<a class="headerlink" href="#kafka" title="Permanent link">&para;</a></h3>
-<p>Это соглашение расширяет семантическое соглашение по умолчанию для систем обмена сообщениями.</p>
+<p>Это соглашение расширяет стандартное семантическое соглашение для систем обмена сообщениями.</p>
 <h4 id="kafka_1">Производитель Kafka<a class="headerlink" href="#kafka_1" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -9030,15 +8047,15 @@
 </tbody>
 </table>
 <p>1</p>
-<p>Если сообщение является тумбстоуном, значение равно <code>true</code>. При отсутствии значение считается равным <code>false</code>.</p>
+<p>Если сообщение является tombstone, значение равно <code>true</code>. При отсутствии предполагается значение <code>false</code>.</p>
 <h4 id="kafka_2">Потребитель Kafka<a class="headerlink" href="#kafka_2" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -9075,21 +8092,21 @@
 </tbody>
 </table>
 <p>1</p>
-<p>Kafka <a href="https://docs.confluent.io/platform/current/clients/consumer.html">идентификатор группы потребителейï»¿</a></p>
+<p>Kafka <a href="https://docs.confluent.io/platform/current/clients/consumer.html">consumer group ID</a></p>
 <p>2</p>
-<p>Если сообщение является тумбстоуном, значение равно <code>true</code>. При отсутствии значение считается равным <code>false</code>.</p>
+<p>Если сообщение является tombstone, значение равно <code>true</code>. При отсутствии предполагается значение <code>false</code>.</p>
 <h2 id="rpc">Спаны RPC<a class="headerlink" href="#rpc" title="Permanent link">&para;</a></h2>
-<p>Поля, описывающие удалённые вызовы процедур (также называемые «удалёнными вызовами методов» / «RMI») с помощью спанов.</p>
-<p>Удалённый вызов процедуры описывается двумя отдельными спанами: одним на стороне клиента и одним на стороне сервера.</p>
+<p>Поля, описывающие удалённые вызовы процедур (также называемые «удалённым вызовом методов» / «RMI»), с помощью спанов.</p>
+<p>Удалённый вызов процедуры описывается двумя отдельными спанами: один на стороне клиента и один на стороне сервера.</p>
 <p>Для исходящих запросов <code>SpanKind</code> ДОЛЖЕН быть установлен в <code>client</code>, а для входящих — в <code>server</code>.</p>
-<h3 id="_44">Общие поля<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h3>
+<h3 id="_38">Общие поля<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -9144,19 +8161,19 @@
 </tbody>
 </table>
 <p>1</p>
-<p>Это логическое имя метода с точки зрения интерфейса RPC, которое может отличаться от имени любого реализующего метода/функции. Атрибут <code>code.function</code> может использоваться для хранения последнего (например, метода, выполняющего вызов на стороне сервера, метода клиентской заглушки RPC на стороне клиента).</p>
+<p>Это логическое имя метода с точки зрения интерфейса RPC, которое может отличаться от имени любого метода/функции реализации. Атрибут <code>code.function</code> может использоваться для хранения последнего (например, метод, выполняющий вызов на стороне сервера, метод клиентской заглушки RPC на стороне клиента).</p>
 <p>2</p>
-<p>Это логическое имя сервиса с точки зрения интерфейса RPC, которое может отличаться от имени любого реализующего класса. Атрибут <code>code.namespace</code> может использоваться для хранения последнего (несмотря на название атрибута, он может включать имя класса, например класс с методом, фактически выполняющим вызов на стороне сервера, класс клиентской заглушки RPC на стороне клиента).</p>
+<p>Это логическое имя сервиса с точки зрения интерфейса RPC, которое может отличаться от имени любого класса реализации. Атрибут <code>code.namespace</code> может использоваться для хранения последнего (несмотря на название атрибута, оно может включать имя класса, например, класс с методом, фактически выполняющим вызов на стороне сервера, класс клиентской заглушки RPC на стороне клиента).</p>
 <h3 id="rpc-">RPC-сервер<a class="headerlink" href="#rpc-" title="Permanent link">&para;</a></h3>
 <p>Этот тип спана представляет входящий RPC-запрос.</p>
-<p>Для спана RPC-сервера <code>SpanKind</code> равен <code>Server</code>.</p>
+<p>Для спана RPC-сервера <code>SpanKind</code> имеет значение <code>Server</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -9187,7 +8204,7 @@
 <tr>
 <td><code>network.transport</code></td>
 <td>string</td>
-<td>stable <a href="https://osi-model.com/transport-layer/">OSI Transport Layerï»¿</a> or <a href="https://en.wikipedia.org/wiki/Inter-process_communication">Inter-process Communication methodï»¿</a></td>
+<td>stable <a href="https://osi-model.com/transport-layer/">OSI Transport Layer</a> or <a href="https://en.wikipedia.org/wiki/Inter-process_communication">Inter-process Communication method</a></td>
 <td><code>tcp</code>; <code>udp</code></td>
 </tr>
 </tbody>
@@ -9203,22 +8220,22 @@
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>rpc.grpc.status_code</code></td>
 <td>long</td>
-<td>experimental The <a href="https://github.com/grpc/grpc/blob/master/doc/statuscodes.md">numeric status codeï»¿</a> of the gRPC request.</td>
+<td>experimental The <a href="https://github.com/grpc/grpc/blob/master/doc/statuscodes.md">numeric status code</a> of the gRPC request.</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<p><a href="https://grpc.io/">gRPCï»¿</a></p>
+<p><a href="https://grpc.io/">gRPC</a></p>
 <h3 id="rmi">RMI<a class="headerlink" href="#rmi" title="Permanent link">&para;</a></h3>
 <p>Дополнительные соглашения для удалённых вызовов процедур через RMI.</p>
 <p><code>rpc.framework</code> и <code>rpc.protocol</code> ДОЛЖНЫ быть установлены в <code>"java-rmi"</code>.</p>
@@ -9226,10 +8243,10 @@
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -9241,17 +8258,17 @@
 </tr>
 </tbody>
 </table>
-<p><a href="https://docs.oracle.com/javase/tutorial/rmi/">RMIï»¿</a></p>
+<p><a href="https://docs.oracle.com/javase/tutorial/rmi/">RMI</a></p>
 <h2 id="zos-connect-ee">Спаны z/OS Connect EE<a class="headerlink" href="#zos-connect-ee" title="Permanent link">&para;</a></h2>
-<p>z/OS Connect EE (Enterprise Edition) — это продукт IBM, предоставляющий приложения и данные в подсистемах z/OS, таких как CICS, IMS или MQ, через RESTful API.
-Реализация z/OS Connect EE (v3.0) построена на базе WebSphere Application Server для профиля z/OS Liberty.</p>
+<p>z/OS Connect EE (Enterprise Edition) — это продукт IBM, который предоставляет доступ к приложениям и данным в подсистемах z/OS, таких как CICS, IMS или MQ, через RESTful API.
+Реализация z/OS Connect EE (v3.0) построена на WebSphere Application Server для профиля z/OS Liberty.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -9354,19 +8371,19 @@
 </tbody>
 </table>
 <p>1</p>
-<p>Применимо только если zosconnect.sor.type равно CICS</p>
+<p>Применимо только если zosconnect.sor.type равен CICS</p>
 <p>2</p>
-<p>See <a href="https://www.ibm.com/docs/en/zos-connect/zosconnect/3.0?topic=spi-datarequesttype">https://www.ibm.com/docs/en/zos-connect/zosconnect/3.0?topic=spi-datarequesttypeï»¿</a></p>
+<p>See <a href="https://www.ibm.com/docs/en/zos-connect/zosconnect/3.0?topic=spi-datarequesttype">https://www.ibm.com/docs/en/zos-connect/zosconnect/3.0?topic=spi-datarequesttype</a></p>
 <p>3</p>
-<p>See <a href="https://www.ibm.com/docs/en/zos-connect/zosconnect/3.0?topic=spi-data#SOR_IDENTIFIER">https://www.ibm.com/docs/en/zos-connect/zosconnect/3.0?topic=spi-data#SOR_IDENTIFIERï»¿</a></p>
+<p>See <a href="https://www.ibm.com/docs/en/zos-connect/zosconnect/3.0?topic=spi-data#SOR_IDENTIFIER">https://www.ibm.com/docs/en/zos-connect/zosconnect/3.0?topic=spi-data#SOR_IDENTIFIER</a></p>
 <p>4</p>
-<p>See <a href="https://www.ibm.com/docs/en/zos-connect/zosconnect/3.0?topic=spi-data#SOR_RESOURCE">https://www.ibm.com/docs/en/zos-connect/zosconnect/3.0?topic=spi-data#SOR_RESOURCEï»¿</a></p>
-<p><code>zosconnect.request.type</code> MUST be one of the following:</p>
+<p>See <a href="https://www.ibm.com/docs/en/zos-connect/zosconnect/3.0?topic=spi-data#SOR_RESOURCE">https://www.ibm.com/docs/en/zos-connect/zosconnect/3.0?topic=spi-data#SOR_RESOURCE</a></p>
+<p><code>zosconnect.request.type</code> ДОЛЖНО быть одним из следующих:</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -9388,12 +8405,12 @@
 </tr>
 </tbody>
 </table>
-<p><code>zosconnect.sor.type</code> MUST be one of the following:</p>
+<p><code>zosconnect.sor.type</code> ДОЛЖНО быть одним из следующих:</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
-<th>Description</th>
+<th>Значение</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
@@ -9420,17 +8437,17 @@
 </tbody>
 </table>
 <h2 id="zos">Спаны z/OS<a class="headerlink" href="#zos" title="Permanent link">&para;</a></h2>
-<p>Семантические соглашения для спанов клиента и сервера z/OS. Они могут применяться для схем CICS и IMS.</p>
-<h3 id="_45">Общие атрибуты<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h3>
-<p>Общие атрибуты, перечисленные в этом разделе, применяются как к клиентам, так и к серверам CICS и IMS, в дополнение к
-специфическим атрибутам, перечисленным в разделах <a href="#cics-common">CICS common</a>, <a href="#cics-client">CICS client</a> и <a href="#cics-server">CICS server</a> ниже.</p>
+<p>Семантические соглашения для спанов клиента и сервера z/OS. Их можно использовать для схем CICS и IMS.</p>
+<h3 id="_39">Общие атрибуты<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h3>
+<p>Общие атрибуты, перечисленные в этом разделе, применяются как к клиентам и серверам CICS, так и IMS, в дополнение к
+конкретным атрибутам, перечисленным в разделах <a href="#cics-common">Общие атрибуты CICS</a>, <a href="#cics-client">CICS-клиент</a> и <a href="#cics-server">CICS-сервер</a> ниже.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -9454,14 +8471,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cics">Общее для CICS<a class="headerlink" href="#cics" title="Permanent link">&para;</a></h3>
+<h3 id="cics">Общие атрибуты CICS<a class="headerlink" href="#cics" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -9479,16 +8496,16 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cics_1">Клиент CICS<a class="headerlink" href="#cics_1" title="Permanent link">&para;</a></h3>
+<h3 id="cics-">CICS-клиент<a class="headerlink" href="#cics-" title="Permanent link">&para;</a></h3>
 <p>Этот тип спана представляет исходящий CICS-запрос.</p>
-<p>Для спана клиента CICS <code>span.kind</code> равен <code>client</code>.</p>
+<p>Для спана CICS-клиента <code>span.kind</code> имеет значение <code>client</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -9506,16 +8523,16 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cics_2">Сервер CICS<a class="headerlink" href="#cics_2" title="Permanent link">&para;</a></h3>
+<h3 id="cics-_1">CICS-сервер<a class="headerlink" href="#cics-_1" title="Permanent link">&para;</a></h3>
 <p>Этот тип спана представляет входящий CICS-запрос.</p>
-<p>Для спана сервера CICS <code>span.kind</code> ДОЛЖЕН быть <code>server</code>.</p>
+<p>Для спана CICS-сервера <code>span.kind</code> ДОЛЖЕН быть <code>server</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Examples</th>
+<th>Атрибут</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Примеры</th>
 </tr>
 </thead>
 <tbody>
@@ -9612,7 +8629,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.sections", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
   
@@ -9622,25 +8639,38 @@
       
     
   <script>
-    // Inject version selector into header
-    document.addEventListener('DOMContentLoaded', function() {
-      var headerInner = document.querySelector('.md-header__inner');
-      if (headerInner) {
-        var select = document.createElement('select');
-        select.className = 'docflow-version-select';
-        select.innerHTML = '<option value="managed" selected>Managed</option><option value="saas">SaaS</option>';
-        select.setAttribute('aria-label', 'Version selector');
+    (function() {
+      // --- Reading progress bar (one-time setup) ---
+      var progressBar = document.createElement('div');
+      progressBar.className = 'reading-progress';
+      document.body.appendChild(progressBar);
 
-        // Insert before the search or at the end
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (docHeight > 0) {
+          var progress = (scrollTop / docHeight) * 100;
+          progressBar.style.width = Math.min(progress, 100) + '%';
+        }
+      });
+
+      // --- Managed label in header (one-time setup) ---
+      var headerInner = document.querySelector('.md-header__inner');
+      if (headerInner && !headerInner.querySelector('.docflow-managed-label')) {
+        var label = document.createElement('span');
+        label.className = 'docflow-managed-label';
+        label.textContent = 'Managed';
+        label.setAttribute('title', 'Документация включает разделы Dynatrace Managed');
+
         var searchContainer = headerInner.querySelector('.md-header__source');
         if (searchContainer) {
-          headerInner.insertBefore(select, searchContainer);
+          headerInner.insertBefore(label, searchContainer);
         } else {
-          headerInner.appendChild(select);
+          headerInner.appendChild(label);
         }
       }
 
-      // Keyboard shortcut Ctrl+K for search
+      // --- Keyboard shortcut Ctrl+K for search ---
       document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
           e.preventDefault();
@@ -9655,7 +8685,9 @@
           }
         }
       });
-    });
+
+      // TOC title renaming handled via CSS (see extra style block above)
+    })();
   </script>
 
   </body>

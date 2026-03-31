@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
       
       
         <meta name="author" content="Yerkebulan Ardabayev">
@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -87,7 +87,10 @@
       flex-shrink: 0;
     }
 
-    /* Search Ctrl+K badge */
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
     .md-search__form::after {
       content: 'Ctrl+K';
       display: none;
@@ -97,11 +100,14 @@
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color);
       font-size: 10px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'JetBrains Mono', monospace;
       color: var(--md-default-fg-color--lighter);
-      margin-right: 0.5rem;
       white-space: nowrap;
       pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
     }
     @media (min-width: 60em) {
       .md-search__form::after {
@@ -109,12 +115,13 @@
       }
     }
 
-    /* Version selector in header */
-    .docflow-version-select {
+    /* Managed label — non-interactive indicator */
+    .docflow-managed-label {
       display: none;
       align-items: center;
+      gap: 0.375rem;
       margin-left: 0.5rem;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color--lighter);
@@ -122,28 +129,34 @@
       font-size: 0.75rem;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237e7c98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.4rem center;
-      padding-right: 1.5rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .docflow-managed-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--md-accent-fg-color);
+      flex-shrink: 0;
     }
     @media (min-width: 60em) {
-      .docflow-version-select {
+      .docflow-managed-label {
         display: flex;
       }
     }
-    .docflow-version-select:hover {
-      border-color: var(--md-primary-fg-color--light);
-      color: var(--md-default-fg-color);
-    }
-    .docflow-version-select:focus {
-      outline: none;
-      border-color: var(--md-primary-fg-color);
-      box-shadow: 0 0 0 3px var(--docflow-glow-primary);
+
+    /* Reading progress bar */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #14b8a6, #7c3aed);
+      z-index: 1001;
+      transition: width 0.05s linear;
+      pointer-events: none;
     }
   </style>
 
@@ -181,7 +194,7 @@
 
   
 
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
     <a href="../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -216,20 +229,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -303,375 +316,14 @@
     
   </nav>
   
-    
-      
-<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Главная
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Начало работы
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../managed/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Managed
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../platform/grail/dynatrace-grail/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Платформа
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../observe/infrastructure-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Наблюдаемость
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Dynatrace Intelligence
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Анализ и автоматизация
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Источники данных
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../deliver/configuration-as-code/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Deliver
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../secure/threat-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Безопасность
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../manage/hub/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Управление
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../dynatrace-api/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  API
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../whats-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Что нового
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../ai/groq/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  AI Помощник
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
 </header>
     
 
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -685,10 +337,8 @@
                     
 
 
-  
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -765,16 +415,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -796,7 +450,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -829,7 +483,7 @@
   <span class="md-ellipsis">
     
   
-    Начало работы
+    🚀 Быстрый старт
   
 
     
@@ -967,16 +621,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -998,7 +656,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1227,7 +885,7 @@
   <span class="md-ellipsis">
     
   
-    Лицензия
+    Лицензия Managed
   
 
     
@@ -1269,19 +927,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1327,20 +989,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../platform/grail/dynatrace-grail/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1354,78 +1017,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Grail
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../platform/grail/dynatrace-grail/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Что такое Grail
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../platform/grail/dynatrace-query-language/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Язык запросов DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1544,19 +1141,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1610,20 +1211,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../observe/infrastructure-observability/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1637,190 +1239,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Инфраструктура
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/infrastructure-observability/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Хосты и операции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Облачный мониторинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes Classic
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Базы данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1844,20 +1268,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../observe/application-observability/distributed-tracing/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1871,78 +1296,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Приложения
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/application-observability/distributed-tracing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Распределённая трассировка
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/application-observability/services/services-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Сервисы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1966,20 +1325,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../observe/digital-experience/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1993,78 +1353,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Цифровой опыт
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/digital-experience/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Синтетическое приложение
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2131,19 +1425,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2203,20 +1501,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2230,274 +1529,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Обнаружение аномалий
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Настройка чувствительности
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение Anomaly Detection
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфигурация
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Адаптивные пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Многомерный бейзлайн
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    События метрик
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Статические пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Оптимизация DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2527,20 +1564,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../dynatrace-intelligence/copilot/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2554,162 +1592,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Davis Copilot
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dynatrace Assist
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфиденциальность
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы на естественном языке
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2763,20 +1651,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2790,106 +1679,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Анализ первопричин
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Анализ событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2910,7 +1705,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграции
+    Интеграции Davis AI
   
 
     
@@ -2941,20 +1736,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2968,78 +1764,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Справочник
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AI модели
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лимиты
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3080,19 +1810,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -3144,20 +1878,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3171,162 +1906,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Дашборды и ноутбуки
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Дашборды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Версии документов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Визуализации
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3354,20 +1939,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../analyze-explore-automate/logs/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3381,134 +1967,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Логи
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/logs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Log Analytics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение журналов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Фильтры
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3681,19 +2145,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -3736,7 +2204,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
+    Обзор источников данных
   
 
     
@@ -3838,19 +2306,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -3898,20 +2370,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../deliver/configuration-as-code/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3925,194 +2398,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Configuration as Code
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/configuration-as-code/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
       
-        
+        <span class="md-nav__icon md-icon"></span>
       
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Monaco
+    </a>
   
 
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Monaco
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4136,150 +2427,21 @@
     
     
       
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Terraform
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Terraform
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CLI команды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
         
-      
         
       
     
-    
-    
-      
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
+  
+  
+    <a href="../../deliver/service-level-objectives/" class="md-nav__link">
       
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -4293,78 +2455,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    SLO
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/service-level-objectives/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/service-level-objectives/create-slo/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Создание SLO
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4388,20 +2484,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../deliver/site-reliability-guardian/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4415,78 +2512,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Site Reliability Guardian
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/site-reliability-guardian/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Структура событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4538,20 +2569,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../deliver/release-monitoring/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4565,78 +2597,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Мониторинг релизов
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/release-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Мониторинг релизов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4695,19 +2661,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -4778,7 +2748,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграция
+    Приём событий безопасности
   
 
     
@@ -4816,19 +2786,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
             
   
   
@@ -4910,20 +2884,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../license/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4937,190 +2912,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Лицензирование
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../license/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лицензия
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../license/capabilities/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Возможности DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../license/billing-reports/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Биллинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../license/budget-alerts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Бюджетные оповещения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../license/license-lifecycle/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Жизненный цикл
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../license/dps-permissions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Разрешения DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -5151,19 +2948,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
             
   
   
@@ -5272,23 +3073,33 @@
       
         
       
-    
-    
-    
+        
       
+        
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
         
           
-          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
             
   
   
@@ -5331,35 +3142,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../whats-new/saas/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SaaS
+    Все обновления
   
 
     
@@ -5387,7 +3170,7 @@
   <span class="md-ellipsis">
     
   
-    OneAgent
+    Обновления OneAgent
   
 
     
@@ -5416,6 +3199,225 @@
     
   
     ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../whats-new/dynatrace-operator/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Operator
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../whats-new/edgeconnect/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EdgeConnect
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../whats-new/technology/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Технологии
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../whats-new/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Новые статьи
   
 
     
@@ -5480,8 +3482,639 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#edgeconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Настройка EdgeConnect
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Настройка EdgeConnect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Права пользователей
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Права пользователей">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edgeconnect_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Чтение конфигураций EdgeConnect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edgeconnect_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Создание новой конфигурации EdgeConnect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edgeconnect_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Обновление конфигурации EdgeConnect:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oauth-edgeconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ротация секрета клиента OAuth для EdgeConnect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edgeconnect_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Удаление EdgeConnect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edgeconnect_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Создание новой конфигурации EdgeConnect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edgeconnect_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Развертывание EdgeConnect
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Развертывание EdgeConnect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаг 1: Обеспечение связности
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Шаг 1: Обеспечение связности">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Связность с Dynatrace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Связность в вашей сети
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-edgeconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаг 2: Настройка образа EdgeConnect
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Шаг 2: Настройка образа EdgeConnect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание полей
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Описание полей">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Секреты
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-edgeconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаг 3: Получение образа контейнера EdgeConnect
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Шаг 3: Получение образа контейнера EdgeConnect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edgeconnect_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Проверка образа контейнера EdgeConnect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаг 4: Запуск контейнера
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Шаг 4: Запуск контейнера">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tls-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пользовательские TLS-сертификаты
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Пользовательские TLS-сертификаты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Устранение неполадок
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Секреты
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаг 5: Проверка соединения
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edgeconnect-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Запуск EdgeConnect в Kubernetes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Запуск EdgeConnect в Kubernetes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edgeconnect-kubernetes-dynatrace-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Запуск EdgeConnect в Kubernetes без использования Dynatrace Operator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаг 1: Обеспечение связности
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-edgeconnect_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаг 2: Настройка развертывания EdgeConnect
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Шаг 2: Настройка развертывания EdgeConnect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edgeconnect-kubernetes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Настройка EdgeConnect в Kubernetes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Настройка EdgeConnect в Kubernetes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Переменные окружения
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Смонтированные файлы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edgeconnectyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Монтирование edgeConnect.yaml
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаг 3: Применение развертывания
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаг 4: Проверка соединения
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edgeconnect_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Использование нескольких конфигураций и экземпляров EdgeConnect
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Использование нескольких конфигураций и экземпляров EdgeConnect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблоны хостов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Шаблоны хостов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тестирование конфигураций
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сопоставление хостов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Сопоставление хостов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сопоставление хостов в настройках
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Сопоставление хостов в настройках">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Системные требования
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Безопасность
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Безопасность">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edgeconnect_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что делает EdgeConnect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что следует сделать
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ограничения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ограничения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тайм-аут запроса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ограничение размера полезной нагрузки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ограничение параллельных запросов
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -5507,49 +4140,43 @@
 
 
 
-<h1 id="edgeconnect">Настройка и развертывание EdgeConnect<a class="headerlink" href="#edgeconnect" title="Permanent link">&para;</a></h1>
-<h1 id="edgeconnect_1">Настройка и развертывание EdgeConnect<a class="headerlink" href="#edgeconnect_1" title="Permanent link">&para;</a></h1>
-<ul>
-<li>Последняя версия Dynatrace</li>
-<li>Практическое руководство</li>
-<li>Чтение: 24 мин</li>
-<li>Обновлено 16 октября 2025 г.</li>
-</ul>
+  <h1>Настройка и развертывание EdgeConnect</h1>
+
 <p>Используйте EdgeConnect, чтобы приложения и рабочие процессы безопасно взаимодействовали с вашими системами. EdgeConnect доступен как контейнер Docker и может работать в любой среде выполнения контейнеров.</p>
 <p>На следующей схеме стрелки указывают направление инициации соединения. EdgeConnect подключается к AppEngine и выполняет определенное пользователем подмножество HTTP(S)-запросов внутри нужной сети от имени среды выполнения Dynatrace.</p>
 <p><img alt="Схема подключения EdgeConnect" src="https://dt-cdn.net/images/edgeconnect-security-801-2e3e1a781e.webp" /></p>
 <p>EdgeConnect также может работать за HTTP-прокси:</p>
 <p><img alt="EdgeConnect за прокси" src="https://dt-cdn.net/images/edgeconnect-proxy-1000-f43df1adec.webp" /></p>
-<h2 id="edgeconnect_2">Настройка EdgeConnect<a class="headerlink" href="#edgeconnect_2" title="Permanent link">&para;</a></h2>
+<h2 id="edgeconnect">Настройка EdgeConnect<a class="headerlink" href="#edgeconnect" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Перейдите в <strong>Settings</strong> &gt; <strong>General</strong> &gt; <strong>External Requests</strong> &gt; <strong>EdgeConnect</strong>.</li>
 <li>Выберите <strong>New EdgeConnect</strong>.</li>
 <li>Введите <strong>Имя</strong> и <strong>Шаблоны хостов</strong>.</li>
 </ol>
 <h3 id="_1">Права пользователей<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>Обычному пользователю платформы предоставляется доступ только для чтения к конфигурациям EdgeConnect через разрешение <code>app-engine:edge-connects:read</code>, привязанное к <a href="/docs/manage/identity-access-management/permission-management/default-policies#access" title="Справочник политик по умолчанию Dynatrace">политикам по умолчанию</a> Standard и Pro.</p>
+<p>Обычному пользователю платформы предоставляется доступ только для чтения к конфигурациям EdgeConnect через разрешение <code>app-engine:edge-connects:read</code>, привязанное к политикам по умолчанию Standard и Pro.</p>
 <p>Если вы хотите настроить EdgeConnect для подключения к вашей среде, ваш пользователь должен принадлежать к группе, привязанной к политике с определенными разрешениями IAM.</p>
-<p><a href="/docs/manage/identity-access-management/permission-management/default-policies#access" title="Справочник политик по умолчанию Dynatrace">Политика по умолчанию</a> Admin уже содержит необходимые области видимости, поэтому пользователь-администратор может полностью управлять конфигурациями EdgeConnect по умолчанию.</p>
+<p>Политика по умолчанию Admin уже содержит необходимые области видимости, поэтому пользователь-администратор может полностью управлять конфигурациями EdgeConnect по умолчанию.</p>
 <p>Если вам нужно создать собственную политику для пользователей-администраторов, необходимо включить в нее следующие разрешения.</p>
-<h4 id="edgeconnect_3">Чтение конфигураций EdgeConnect<a class="headerlink" href="#edgeconnect_3" title="Permanent link">&para;</a></h4>
+<h4 id="edgeconnect_1">Чтение конфигураций EdgeConnect<a class="headerlink" href="#edgeconnect_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ALLOW app-engine:edge-connects:read;
 </code></pre></div>
-<h4 id="edgeconnect_4">Создание новой конфигурации EdgeConnect<a class="headerlink" href="#edgeconnect_4" title="Permanent link">&para;</a></h4>
+<h4 id="edgeconnect_2">Создание новой конфигурации EdgeConnect<a class="headerlink" href="#edgeconnect_2" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ALLOW app-engine:edge-connects:write, oauth2:clients:manage WHERE oauth2:scopes = &quot;app-engine:edge-connects:connect&quot;;
 </code></pre></div>
 <p>Для создания клиента OAuth для нового EdgeConnect необходимо разрешение на управление клиентами OAuth.</p>
-<h4 id="edgeconnect_5">Обновление конфигурации EdgeConnect:<a class="headerlink" href="#edgeconnect_5" title="Permanent link">&para;</a></h4>
+<h4 id="edgeconnect_3">Обновление конфигурации EdgeConnect:<a class="headerlink" href="#edgeconnect_3" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ALLOW app-engine:edge-connects:write;
 </code></pre></div>
 <h4 id="oauth-edgeconnect">Ротация секрета клиента OAuth для EdgeConnect<a class="headerlink" href="#oauth-edgeconnect" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ALLOW oauth2:clients:manage where oauth2:scopes=&quot;app-engine:edge-connects:connect&quot;;
 </code></pre></div>
-<h4 id="edgeconnect_6">Удаление EdgeConnect<a class="headerlink" href="#edgeconnect_6" title="Permanent link">&para;</a></h4>
+<h4 id="edgeconnect_4">Удаление EdgeConnect<a class="headerlink" href="#edgeconnect_4" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ALLOW app-engine:edge-connects:delete, oauth2:clients:manage WHERE oauth2:scopes = &quot;app-engine:edge-connects:connect&quot;;
 </code></pre></div>
 <p>Для удаления клиента OAuth для EdgeConnect необходимо разрешение на управление клиентами OAuth.</p>
-<p>Для настройки политик и членства в группах пользователей перейдите в <a href="https://myaccount.dynatrace.com/"><strong>Account Management</strong></a> &gt; <strong>Identity &amp; access management</strong> и выберите <strong>People</strong>, <strong>Groups</strong> или <strong>Policies</strong>. Подробнее см. <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt" title="Создание, редактирование, копирование и удаление политик IAM для управления разрешениями пользователей Dynatrace.">Управление политиками IAM</a>.</p>
-<h3 id="edgeconnect_7">Создание новой конфигурации EdgeConnect<a class="headerlink" href="#edgeconnect_7" title="Permanent link">&para;</a></h3>
+<p>Для настройки политик и членства в группах пользователей перейдите в <a href="https://myaccount.dynatrace.com/"><strong>Account Management</strong></a> &gt; <strong>Identity &amp; access management</strong> и выберите <strong>People</strong>, <strong>Groups</strong> или <strong>Policies</strong>. Подробнее см. Управление политиками IAM.</p>
+<h3 id="edgeconnect_5">Создание новой конфигурации EdgeConnect<a class="headerlink" href="#edgeconnect_5" title="Permanent link">&para;</a></h3>
 <p>Перед <a href="#deploy">развертыванием EdgeConnect</a> в вашей сети необходимо сопоставить определенные шаблоны хостов HTTP-запросов с конкретными экземплярами EdgeConnect.</p>
 <ol>
 <li>Перейдите в <strong>Settings</strong> &gt; <strong>General</strong> &gt; <strong>External Requests</strong> &gt; <strong>EdgeConnect</strong>.</li>
@@ -5571,7 +4198,7 @@
 <p>Любой HTTP-запрос (из функций вашего приложения, рабочих процессов или специальных функций), соответствующий определенному шаблону хоста, обрабатывается экземпляром EdgeConnect, указанным в этой конфигурации.</p>
 <p>Например, при шаблоне хоста <code>staging.myapp.org</code> в его конфигурации среда выполнения Dynatrace направит HTTP-запрос с URL <code>https://staging.myapp.org/test.html</code> на этот EdgeConnect.</p>
 <p>Теперь вы готовы развернуть соответствующий EdgeConnect в вашей сети.</p>
-<h2 id="edgeconnect_8">Развертывание EdgeConnect<a class="headerlink" href="#edgeconnect_8" title="Permanent link">&para;</a></h2>
+<h2 id="edgeconnect_6">Развертывание EdgeConnect<a class="headerlink" href="#edgeconnect_6" title="Permanent link">&para;</a></h2>
 <p>[<img alt="Шаг 1" src="https://dt-cdn.net/images/step-1-086e22066c.svg" title="Шаг 1" /></p>
 <p><strong>Обеспечение связности</strong>](#connectivity)[<img alt="Шаг 2" src="https://dt-cdn.net/images/step-2-1a1384627e.svg" title="Шаг 2" /></p>
 <p><strong>Настройка образа EdgeConnect</strong>](#config)[<img alt="Шаг 3" src="https://dt-cdn.net/images/step-3-350cf6c19a.svg" title="Шаг 3" /></p>
@@ -5598,132 +4225,100 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>name: my-corporate-network
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>api_endpoint_host: abc12345.apps.dynatrace.com
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>api_endpoint_host: abc12345.apps.dynatrace.com
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>oauth:
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>oauth:
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>endpoint: https://sso.dynatrace.com/sso/oauth2/token
 <a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
 <a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>endpoint: https://sso.dynatrace.com/sso/oauth2/token
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>client_id: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;
 <a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
 <a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>client_id: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>client_secret: *******
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
 <a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>resource: urn:dtenvironment:abc12345
 <a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>client_secret: *******
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>restrict_hosts_to:
 <a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
 <a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
-<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>resource: urn:dtenvironment:abc12345
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>- &quot;internal.example.org&quot;
 <a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
 <a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
-<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
-<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>restrict_hosts_to:
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>- &quot;*.example.com&quot;
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>
 <a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
-<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>certificate_paths:
 <a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>
-<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>- &quot;internal.example.org&quot;
-<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>- &quot;/path/to/some/certificate.cer&quot;
 <a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>
 <a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>
-<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>- &quot;*.example.com&quot;
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>- &quot;/path/to/another/certificate.pem&quot;
 <a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
 <a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>
-<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>
-<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>certificate_paths:
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>proxy:
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>
 <a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>
-<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>server: proxy.example.org
 <a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>
-<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>- &quot;/path/to/some/certificate.cer&quot;
-<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>port: 8037
 <a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>
 <a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>
-<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>- &quot;/path/to/another/certificate.pem&quot;
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>exceptions:
 <a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>
 <a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>
-<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>
-<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>proxy:
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>- &quot;*.foo.com&quot;
+<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>
 <a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>
-<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>
+<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>- &quot;noproxy.example.org&quot;
 <a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a>
-<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>server: proxy.example.org
-<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>
+<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>
+<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>auth:
 <a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a>
 <a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a>
-<a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a>port: 8037
+<a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a>user: &quot;proxy-user&quot;
 <a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a>
 <a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a>
-<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a>
-<a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a>exceptions:
+<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a>password: &quot;*******&quot;
+<a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a>
 <a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a>
-<a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a>
+<a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a>secrets:
 <a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a>
-<a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a>- &quot;*.foo.com&quot;
-<a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a>
+<a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a>
+<a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a>- name: My secret
 <a id="__codelineno-5-71" name="__codelineno-5-71" href="#__codelineno-5-71"></a>
 <a id="__codelineno-5-72" name="__codelineno-5-72" href="#__codelineno-5-72"></a>
-<a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a>- &quot;noproxy.example.org&quot;
+<a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.some-token-secret
 <a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a>
 <a id="__codelineno-5-75" name="__codelineno-5-75" href="#__codelineno-5-75"></a>
-<a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a>
-<a id="__codelineno-5-77" name="__codelineno-5-77" href="#__codelineno-5-77"></a>auth:
+<a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a>from_env: MY_SECRET
+<a id="__codelineno-5-77" name="__codelineno-5-77" href="#__codelineno-5-77"></a>
 <a id="__codelineno-5-78" name="__codelineno-5-78" href="#__codelineno-5-78"></a>
-<a id="__codelineno-5-79" name="__codelineno-5-79" href="#__codelineno-5-79"></a>
+<a id="__codelineno-5-79" name="__codelineno-5-79" href="#__codelineno-5-79"></a>restrict_hosts_to:
 <a id="__codelineno-5-80" name="__codelineno-5-80" href="#__codelineno-5-80"></a>
-<a id="__codelineno-5-81" name="__codelineno-5-81" href="#__codelineno-5-81"></a>user: &quot;proxy-user&quot;
-<a id="__codelineno-5-82" name="__codelineno-5-82" href="#__codelineno-5-82"></a>
+<a id="__codelineno-5-81" name="__codelineno-5-81" href="#__codelineno-5-81"></a>
+<a id="__codelineno-5-82" name="__codelineno-5-82" href="#__codelineno-5-82"></a>- dynatrace.com
 <a id="__codelineno-5-83" name="__codelineno-5-83" href="#__codelineno-5-83"></a>
 <a id="__codelineno-5-84" name="__codelineno-5-84" href="#__codelineno-5-84"></a>
-<a id="__codelineno-5-85" name="__codelineno-5-85" href="#__codelineno-5-85"></a>password: &quot;*******&quot;
+<a id="__codelineno-5-85" name="__codelineno-5-85" href="#__codelineno-5-85"></a>- name: My other secret
 <a id="__codelineno-5-86" name="__codelineno-5-86" href="#__codelineno-5-86"></a>
 <a id="__codelineno-5-87" name="__codelineno-5-87" href="#__codelineno-5-87"></a>
-<a id="__codelineno-5-88" name="__codelineno-5-88" href="#__codelineno-5-88"></a>
-<a id="__codelineno-5-89" name="__codelineno-5-89" href="#__codelineno-5-89"></a>secrets:
+<a id="__codelineno-5-88" name="__codelineno-5-88" href="#__codelineno-5-88"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.another-token-secret
+<a id="__codelineno-5-89" name="__codelineno-5-89" href="#__codelineno-5-89"></a>
 <a id="__codelineno-5-90" name="__codelineno-5-90" href="#__codelineno-5-90"></a>
-<a id="__codelineno-5-91" name="__codelineno-5-91" href="#__codelineno-5-91"></a>
+<a id="__codelineno-5-91" name="__codelineno-5-91" href="#__codelineno-5-91"></a>from_file: /path/to/my/other/secret
 <a id="__codelineno-5-92" name="__codelineno-5-92" href="#__codelineno-5-92"></a>
-<a id="__codelineno-5-93" name="__codelineno-5-93" href="#__codelineno-5-93"></a>- name: My secret
-<a id="__codelineno-5-94" name="__codelineno-5-94" href="#__codelineno-5-94"></a>
+<a id="__codelineno-5-93" name="__codelineno-5-93" href="#__codelineno-5-93"></a>
+<a id="__codelineno-5-94" name="__codelineno-5-94" href="#__codelineno-5-94"></a>restrict_hosts_to:
 <a id="__codelineno-5-95" name="__codelineno-5-95" href="#__codelineno-5-95"></a>
 <a id="__codelineno-5-96" name="__codelineno-5-96" href="#__codelineno-5-96"></a>
-<a id="__codelineno-5-97" name="__codelineno-5-97" href="#__codelineno-5-97"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.some-token-secret
-<a id="__codelineno-5-98" name="__codelineno-5-98" href="#__codelineno-5-98"></a>
-<a id="__codelineno-5-99" name="__codelineno-5-99" href="#__codelineno-5-99"></a>
-<a id="__codelineno-5-100" name="__codelineno-5-100" href="#__codelineno-5-100"></a>
-<a id="__codelineno-5-101" name="__codelineno-5-101" href="#__codelineno-5-101"></a>from_env: MY_SECRET
-<a id="__codelineno-5-102" name="__codelineno-5-102" href="#__codelineno-5-102"></a>
-<a id="__codelineno-5-103" name="__codelineno-5-103" href="#__codelineno-5-103"></a>
-<a id="__codelineno-5-104" name="__codelineno-5-104" href="#__codelineno-5-104"></a>
-<a id="__codelineno-5-105" name="__codelineno-5-105" href="#__codelineno-5-105"></a>restrict_hosts_to:
-<a id="__codelineno-5-106" name="__codelineno-5-106" href="#__codelineno-5-106"></a>
-<a id="__codelineno-5-107" name="__codelineno-5-107" href="#__codelineno-5-107"></a>
-<a id="__codelineno-5-108" name="__codelineno-5-108" href="#__codelineno-5-108"></a>
-<a id="__codelineno-5-109" name="__codelineno-5-109" href="#__codelineno-5-109"></a>- dynatrace.com
-<a id="__codelineno-5-110" name="__codelineno-5-110" href="#__codelineno-5-110"></a>
-<a id="__codelineno-5-111" name="__codelineno-5-111" href="#__codelineno-5-111"></a>
-<a id="__codelineno-5-112" name="__codelineno-5-112" href="#__codelineno-5-112"></a>
-<a id="__codelineno-5-113" name="__codelineno-5-113" href="#__codelineno-5-113"></a>- name: My other secret
-<a id="__codelineno-5-114" name="__codelineno-5-114" href="#__codelineno-5-114"></a>
-<a id="__codelineno-5-115" name="__codelineno-5-115" href="#__codelineno-5-115"></a>
-<a id="__codelineno-5-116" name="__codelineno-5-116" href="#__codelineno-5-116"></a>
-<a id="__codelineno-5-117" name="__codelineno-5-117" href="#__codelineno-5-117"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.another-token-secret
-<a id="__codelineno-5-118" name="__codelineno-5-118" href="#__codelineno-5-118"></a>
-<a id="__codelineno-5-119" name="__codelineno-5-119" href="#__codelineno-5-119"></a>
-<a id="__codelineno-5-120" name="__codelineno-5-120" href="#__codelineno-5-120"></a>
-<a id="__codelineno-5-121" name="__codelineno-5-121" href="#__codelineno-5-121"></a>from_file: /path/to/my/other/secret
-<a id="__codelineno-5-122" name="__codelineno-5-122" href="#__codelineno-5-122"></a>
-<a id="__codelineno-5-123" name="__codelineno-5-123" href="#__codelineno-5-123"></a>
-<a id="__codelineno-5-124" name="__codelineno-5-124" href="#__codelineno-5-124"></a>
-<a id="__codelineno-5-125" name="__codelineno-5-125" href="#__codelineno-5-125"></a>restrict_hosts_to:
-<a id="__codelineno-5-126" name="__codelineno-5-126" href="#__codelineno-5-126"></a>
-<a id="__codelineno-5-127" name="__codelineno-5-127" href="#__codelineno-5-127"></a>
-<a id="__codelineno-5-128" name="__codelineno-5-128" href="#__codelineno-5-128"></a>
-<a id="__codelineno-5-129" name="__codelineno-5-129" href="#__codelineno-5-129"></a>- internal.example.com
+<a id="__codelineno-5-97" name="__codelineno-5-97" href="#__codelineno-5-97"></a>- internal.example.com
 </code></pre></div>
 <p>Вы можете переопределить определенные значения конфигурации через переменные окружения.
 Имена переменных окружения для каждого поля см. в таблице ниже.</p>
@@ -5737,13 +4332,13 @@
 EdgeConnect затем безопасно заменяет вхождения этих токенов на реальные значения секретов, которые вы настраиваете в файле <code>edgeConnect.yaml</code>.</p>
 <p>В этом разделе описано, как настроить такие секреты.
 EdgeConnect может читать секреты из двух источников: из переменных окружения или из файлов, смонтированных в контейнер EdgeConnect.</p>
-<p>Если вы запускаете <a href="#kubernetes">EdgeConnect в Kubernetes через Dynatrace Operator</a>, указанные выше поля настраиваются с помощью параметров пользовательского ресурса Kubernetes, как описано в <a href="/docs/ingest-from/setup-on-k8s/reference/edgeconnect-parameters" title="Список параметров конфигурации для EdgeConnect.">Параметры EdgeConnect для Dynatrace Operator</a>.</p>
+<p>Если вы запускаете <a href="#kubernetes">EdgeConnect в Kubernetes через Dynatrace Operator</a>, указанные выше поля настраиваются с помощью параметров пользовательского ресурса Kubernetes, как описано в Параметры EdgeConnect для Dynatrace Operator.</p>
 <h3 id="3-edgeconnect">Шаг 3: Получение образа контейнера EdgeConnect<a class="headerlink" href="#3-edgeconnect" title="Permanent link">&para;</a></h3>
 <p>Для запуска контейнера EdgeConnect сначала необходимо получить образ.</p>
-<h4 id="edgeconnect_9">Проверка образа контейнера EdgeConnect<a class="headerlink" href="#edgeconnect_9" title="Permanent link">&para;</a></h4>
+<h4 id="edgeconnect_7">Проверка образа контейнера EdgeConnect<a class="headerlink" href="#edgeconnect_7" title="Permanent link">&para;</a></h4>
 <p>Dynatrace предоставляет подписанные образы контейнеров для обеспечения подлинности и целостности, а также спецификацию состава программного обеспечения (SBOM), которая перечисляет все включенные программные компоненты.
 Проверка подписей и анализ SBOM позволяет эффективно управлять уязвимостями и снижать риски.
-Подробнее о проверке см. <a href="/docs/ingest-from/setup-on-k8s/guides/container-registries/verify-image-signature#sbom-attestation-verification" title="Проверка подписей образов Dynatrace">Проверка аттестации спецификации состава программного обеспечения (SBOM)</a>.</p>
+Подробнее о проверке см. Проверка аттестации спецификации состава программного обеспечения (SBOM).</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker pull dynatrace/edgeconnect:latest
 </code></pre></div>
 <p>Рекомендуется всегда использовать (и регулярно обновлять до) последнюю доступную версию EdgeConnect.</p>
@@ -5751,8 +4346,7 @@ EdgeConnect может читать секреты из двух источни�
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Status: Downloaded image for dynatrace/edgeconnect:latest
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>docker.io/dynatrace/edgeconnect:latest
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>docker.io/dynatrace/edgeconnect:latest
 </code></pre></div>
 <h3 id="4">Шаг 4: Запуск контейнера<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <ol>
@@ -5762,16 +4356,13 @@ EdgeConnect может читать секреты из двух источни�
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker run \
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>--mount type=bind,src=${PWD}/edgeConnect.yaml,dst=/edgeConnect.yaml \
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>--mount type=bind,src=${PWD}/edgeConnect.yaml,dst=/edgeConnect.yaml \
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
 <a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>-d --restart always \
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>-d --restart always \
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>dynatrace/edgeconnect \
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>dynatrace/edgeconnect \
 </code></pre></div>
 <p>Настройка расположения конфигурационного файла <code>edgeConnect.yaml</code></p>
 <p>Вы можете настроить расположение, из которого загружается конфигурационный файл, через переменную окружения <code>EDGE_CONNECT_CONFIG_PATH</code>.</p>
@@ -5787,27 +4378,22 @@ EdgeConnect может читать секреты из двух источни�
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>certificate_paths:
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>- &quot;/etc/edge_connect_certs/certificate.pem&quot;
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>- &quot;/etc/edge_connect_certs/certificate.pem&quot;
 </code></pre></div>
 2. Смонтируйте пользовательский сертификат в контейнер EdgeConnect. Для этого можно использовать параметр <code>-v</code> при запуске контейнера. Например:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker run \
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>--mount type=bind,src=${PWD}/edgeConnect.yaml,dst=/edgeConnect.yaml \
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>--mount type=bind,src=${PWD}/edgeConnect.yaml,dst=/edgeConnect.yaml \
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
 <a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>-d --restart always \
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>-d --restart always \
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>-v /host/path/to/certificate.pem:/etc/edge_connect_certs/certificate.pem
 <a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
 <a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>-v /host/path/to/certificate.pem:/etc/edge_connect_certs/certificate.pem
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
-<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>dynatrace/edgeconnect \
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>dynatrace/edgeconnect \
 </code></pre></div>
 <p>Где,</p>
 <ul>
@@ -5826,67 +4412,52 @@ EdgeConnect может читать секреты из двух источни�
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>secrets:
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>- name: My secret
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>- name: My secret
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
 <a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.some-token-secret
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.some-token-secret
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>from_env: MY_SECRET
 <a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
 <a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
-<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>from_env: MY_SECRET
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>restrict_hosts_to:
 <a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
 <a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
-<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
-<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>restrict_hosts_to:
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>- dynatrace.com
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>
 <a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>
-<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>- name: My other secret
 <a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>
-<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>- dynatrace.com
-<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.another-token-secret
 <a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>
 <a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>
-<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>- name: My other secret
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>from_file: /path/to/my/other/secret
 <a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>
 <a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>
-<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>
-<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.another-token-secret
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>restrict_hosts_to:
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>
 <a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>
-<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>
-<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>
-<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a>from_file: /path/to/my/other/secret
-<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a>
-<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a>
-<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>
-<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a>restrict_hosts_to:
-<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a>
-<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a>
-<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a>
-<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a>- internal.example.com
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>- internal.example.com
 </code></pre></div>
 2. Предоставьте значения для секретных переменных окружения и секретных файлов в контейнер EdgeConnect. Для этого можно использовать параметр <code>-e</code> для настройки значений переменных окружения, передаваемых контейнеру, и параметр <code>-v</code> для монтирования секретных файлов. Например:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker run \
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>--mount type=bind,src=${PWD}/edgeConnect.yaml,dst=/edgeConnect.yaml \
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>--mount type=bind,src=${PWD}/edgeConnect.yaml,dst=/edgeConnect.yaml \
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>-d --restart always \
 <a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>-d --restart always \
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>-e MY_SECRET=******* \
 <a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
 <a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>-e MY_SECRET=******* \
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>-v /host/path/to/my/other/secret:/container/path/to/mounted/secret
 <a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
 <a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>-v /host/path/to/my/other/secret:/container/path/to/mounted/secret
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>
-<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>dynatrace/edgeconnect \
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>dynatrace/edgeconnect \
 </code></pre></div>
 <p>Где,</p>
 <ul>
@@ -5912,8 +4483,8 @@ EdgeConnect может читать секреты из двух источни�
 <h2 id="edgeconnect-kubernetes">Запуск EdgeConnect в Kubernetes<a class="headerlink" href="#edgeconnect-kubernetes" title="Permanent link">&para;</a></h2>
 <p>Dynatrace Operator обеспечивает специальную поддержку для запуска EdgeConnect через пользовательский ресурс EdgeConnect. Существует три сценария развертывания:</p>
 <ul>
-<li>Используйте Dynatrace Operator только для развертывания EdgeConnect, как описано в <a href="/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/edgeconnect/edge-connect" title="Развертывание и настройка EdgeConnect в Kubernetes с помощью Dynatrace.">Настройка EdgeConnect</a>. Вы по-прежнему создаете конфигурацию EdgeConnect в приложении и следуете инструкциям в <strong>Actions</strong> &gt; <strong>Deploy EdgeConnect</strong> &gt; <strong>Deploy via Dynatrace Operator</strong>.</li>
-<li>Позвольте Dynatrace Operator создать конфигурацию EdgeConnect, как описано в <a href="/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/edgeconnect/edge-connect-provision" title="Подготовка EdgeConnect для среды Dynatrace.">Подготовка EdgeConnect для среды Dynatrace</a>, чтобы Operator полностью управлял жизненным циклом EdgeConnect. Operator создаст конфигурацию самостоятельно, а шаблоны хостов EdgeConnect указываются в пользовательском ресурсе EdgeConnect. Эти конфигурации нельзя редактировать в приложении.</li>
+<li>Используйте Dynatrace Operator только для развертывания EdgeConnect, как описано в Настройка EdgeConnect. Вы по-прежнему создаете конфигурацию EdgeConnect в приложении и следуете инструкциям в <strong>Actions</strong> &gt; <strong>Deploy EdgeConnect</strong> &gt; <strong>Deploy via Dynatrace Operator</strong>.</li>
+<li>Позвольте Dynatrace Operator создать конфигурацию EdgeConnect, как описано в Подготовка EdgeConnect для среды Dynatrace, чтобы Operator полностью управлял жизненным циклом EdgeConnect. Operator создаст конфигурацию самостоятельно, а шаблоны хостов EdgeConnect указываются в пользовательском ресурсе EdgeConnect. Эти конфигурации нельзя редактировать в приложении.</li>
 <li>Настройте EdgeConnect без Dynatrace Operator, как описано в &lt;#no-operator&gt;.</li>
 </ul>
 <h3 id="edgeconnect-kubernetes-dynatrace-operator">Запуск EdgeConnect в Kubernetes без использования Dynatrace Operator<a class="headerlink" href="#edgeconnect-kubernetes-dynatrace-operator" title="Permanent link">&para;</a></h3>
@@ -5931,328 +4502,247 @@ EdgeConnect может читать секреты из двух источни�
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>apiVersion: v1
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>kind: Secret
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>kind: Secret
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
 <a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>metadata:
 <a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>metadata:
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>name: edge-connect-oauth
 <a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
 <a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>name: edge-connect-oauth
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>namespace: dynatrace
 <a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
 <a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
-<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
-<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>namespace: dynatrace
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>stringData:
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>
 <a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>
-<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>oauth-client-id: &lt;oauth.client_id from edgeConnect.yaml&gt;
 <a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>
-<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>stringData:
-<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>oauth-client-secret: &lt;oauth.client_secret from edgeConnect.yaml&gt;
 <a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>
 <a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>
-<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>oauth-client-id: &lt;oauth.client_id from edgeConnect.yaml&gt;
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>---
 <a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>
 <a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>
-<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>
-<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>oauth-client-secret: &lt;oauth.client_secret from edgeConnect.yaml&gt;
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>apiVersion: v1
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>
 <a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>
-<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>kind: Secret
 <a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>
-<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>---
-<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>
+<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>metadata:
 <a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a>
 <a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a>
-<a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a>apiVersion: v1
+<a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a>name: edge-connect-config
 <a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a>
 <a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a>
-<a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a>
-<a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a>kind: Secret
+<a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a>namespace: dynatrace
+<a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a>
 <a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a>
-<a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a>
+<a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a>stringData:
 <a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a>
-<a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a>metadata:
-<a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a>
+<a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a>
+<a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a>edge-connect-config-file: |
 <a id="__codelineno-13-47" name="__codelineno-13-47" href="#__codelineno-13-47"></a>
 <a id="__codelineno-13-48" name="__codelineno-13-48" href="#__codelineno-13-48"></a>
-<a id="__codelineno-13-49" name="__codelineno-13-49" href="#__codelineno-13-49"></a>name: edge-connect-config
+<a id="__codelineno-13-49" name="__codelineno-13-49" href="#__codelineno-13-49"></a>certificate_paths:
 <a id="__codelineno-13-50" name="__codelineno-13-50" href="#__codelineno-13-50"></a>
 <a id="__codelineno-13-51" name="__codelineno-13-51" href="#__codelineno-13-51"></a>
-<a id="__codelineno-13-52" name="__codelineno-13-52" href="#__codelineno-13-52"></a>
-<a id="__codelineno-13-53" name="__codelineno-13-53" href="#__codelineno-13-53"></a>namespace: dynatrace
+<a id="__codelineno-13-52" name="__codelineno-13-52" href="#__codelineno-13-52"></a>- &quot;/etc/edge_connect_certs/some_certificate.cer&quot;
+<a id="__codelineno-13-53" name="__codelineno-13-53" href="#__codelineno-13-53"></a>
 <a id="__codelineno-13-54" name="__codelineno-13-54" href="#__codelineno-13-54"></a>
-<a id="__codelineno-13-55" name="__codelineno-13-55" href="#__codelineno-13-55"></a>
+<a id="__codelineno-13-55" name="__codelineno-13-55" href="#__codelineno-13-55"></a>- &quot;/etc/edge_connect_certs/another_certificate.pem&quot;
 <a id="__codelineno-13-56" name="__codelineno-13-56" href="#__codelineno-13-56"></a>
-<a id="__codelineno-13-57" name="__codelineno-13-57" href="#__codelineno-13-57"></a>stringData:
-<a id="__codelineno-13-58" name="__codelineno-13-58" href="#__codelineno-13-58"></a>
+<a id="__codelineno-13-57" name="__codelineno-13-57" href="#__codelineno-13-57"></a>
+<a id="__codelineno-13-58" name="__codelineno-13-58" href="#__codelineno-13-58"></a>secrets:
 <a id="__codelineno-13-59" name="__codelineno-13-59" href="#__codelineno-13-59"></a>
 <a id="__codelineno-13-60" name="__codelineno-13-60" href="#__codelineno-13-60"></a>
-<a id="__codelineno-13-61" name="__codelineno-13-61" href="#__codelineno-13-61"></a>edge-connect-config-file: |
+<a id="__codelineno-13-61" name="__codelineno-13-61" href="#__codelineno-13-61"></a>- name: My secret
 <a id="__codelineno-13-62" name="__codelineno-13-62" href="#__codelineno-13-62"></a>
 <a id="__codelineno-13-63" name="__codelineno-13-63" href="#__codelineno-13-63"></a>
-<a id="__codelineno-13-64" name="__codelineno-13-64" href="#__codelineno-13-64"></a>
-<a id="__codelineno-13-65" name="__codelineno-13-65" href="#__codelineno-13-65"></a>certificate_paths:
+<a id="__codelineno-13-64" name="__codelineno-13-64" href="#__codelineno-13-64"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.some-token-secret
+<a id="__codelineno-13-65" name="__codelineno-13-65" href="#__codelineno-13-65"></a>
 <a id="__codelineno-13-66" name="__codelineno-13-66" href="#__codelineno-13-66"></a>
-<a id="__codelineno-13-67" name="__codelineno-13-67" href="#__codelineno-13-67"></a>
+<a id="__codelineno-13-67" name="__codelineno-13-67" href="#__codelineno-13-67"></a>from_env: MY_SECRET
 <a id="__codelineno-13-68" name="__codelineno-13-68" href="#__codelineno-13-68"></a>
-<a id="__codelineno-13-69" name="__codelineno-13-69" href="#__codelineno-13-69"></a>- &quot;/etc/edge_connect_certs/some_certificate.cer&quot;
-<a id="__codelineno-13-70" name="__codelineno-13-70" href="#__codelineno-13-70"></a>
+<a id="__codelineno-13-69" name="__codelineno-13-69" href="#__codelineno-13-69"></a>
+<a id="__codelineno-13-70" name="__codelineno-13-70" href="#__codelineno-13-70"></a>restrict_hosts_to:
 <a id="__codelineno-13-71" name="__codelineno-13-71" href="#__codelineno-13-71"></a>
 <a id="__codelineno-13-72" name="__codelineno-13-72" href="#__codelineno-13-72"></a>
-<a id="__codelineno-13-73" name="__codelineno-13-73" href="#__codelineno-13-73"></a>- &quot;/etc/edge_connect_certs/another_certificate.pem&quot;
+<a id="__codelineno-13-73" name="__codelineno-13-73" href="#__codelineno-13-73"></a>- dynatrace.com
 <a id="__codelineno-13-74" name="__codelineno-13-74" href="#__codelineno-13-74"></a>
 <a id="__codelineno-13-75" name="__codelineno-13-75" href="#__codelineno-13-75"></a>
-<a id="__codelineno-13-76" name="__codelineno-13-76" href="#__codelineno-13-76"></a>
-<a id="__codelineno-13-77" name="__codelineno-13-77" href="#__codelineno-13-77"></a>secrets:
+<a id="__codelineno-13-76" name="__codelineno-13-76" href="#__codelineno-13-76"></a>- name: My other secret
+<a id="__codelineno-13-77" name="__codelineno-13-77" href="#__codelineno-13-77"></a>
 <a id="__codelineno-13-78" name="__codelineno-13-78" href="#__codelineno-13-78"></a>
-<a id="__codelineno-13-79" name="__codelineno-13-79" href="#__codelineno-13-79"></a>
+<a id="__codelineno-13-79" name="__codelineno-13-79" href="#__codelineno-13-79"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.another-token-secret
 <a id="__codelineno-13-80" name="__codelineno-13-80" href="#__codelineno-13-80"></a>
-<a id="__codelineno-13-81" name="__codelineno-13-81" href="#__codelineno-13-81"></a>- name: My secret
-<a id="__codelineno-13-82" name="__codelineno-13-82" href="#__codelineno-13-82"></a>
+<a id="__codelineno-13-81" name="__codelineno-13-81" href="#__codelineno-13-81"></a>
+<a id="__codelineno-13-82" name="__codelineno-13-82" href="#__codelineno-13-82"></a>from_file: /path/to/my/other/secret
 <a id="__codelineno-13-83" name="__codelineno-13-83" href="#__codelineno-13-83"></a>
 <a id="__codelineno-13-84" name="__codelineno-13-84" href="#__codelineno-13-84"></a>
-<a id="__codelineno-13-85" name="__codelineno-13-85" href="#__codelineno-13-85"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.some-token-secret
+<a id="__codelineno-13-85" name="__codelineno-13-85" href="#__codelineno-13-85"></a>restrict_hosts_to:
 <a id="__codelineno-13-86" name="__codelineno-13-86" href="#__codelineno-13-86"></a>
 <a id="__codelineno-13-87" name="__codelineno-13-87" href="#__codelineno-13-87"></a>
-<a id="__codelineno-13-88" name="__codelineno-13-88" href="#__codelineno-13-88"></a>
-<a id="__codelineno-13-89" name="__codelineno-13-89" href="#__codelineno-13-89"></a>from_env: MY_SECRET
+<a id="__codelineno-13-88" name="__codelineno-13-88" href="#__codelineno-13-88"></a>- internal.example.com
+<a id="__codelineno-13-89" name="__codelineno-13-89" href="#__codelineno-13-89"></a>
 <a id="__codelineno-13-90" name="__codelineno-13-90" href="#__codelineno-13-90"></a>
-<a id="__codelineno-13-91" name="__codelineno-13-91" href="#__codelineno-13-91"></a>
+<a id="__codelineno-13-91" name="__codelineno-13-91" href="#__codelineno-13-91"></a>---
 <a id="__codelineno-13-92" name="__codelineno-13-92" href="#__codelineno-13-92"></a>
-<a id="__codelineno-13-93" name="__codelineno-13-93" href="#__codelineno-13-93"></a>restrict_hosts_to:
-<a id="__codelineno-13-94" name="__codelineno-13-94" href="#__codelineno-13-94"></a>
+<a id="__codelineno-13-93" name="__codelineno-13-93" href="#__codelineno-13-93"></a>
+<a id="__codelineno-13-94" name="__codelineno-13-94" href="#__codelineno-13-94"></a>apiVersion: apps/v1
 <a id="__codelineno-13-95" name="__codelineno-13-95" href="#__codelineno-13-95"></a>
 <a id="__codelineno-13-96" name="__codelineno-13-96" href="#__codelineno-13-96"></a>
-<a id="__codelineno-13-97" name="__codelineno-13-97" href="#__codelineno-13-97"></a>- dynatrace.com
+<a id="__codelineno-13-97" name="__codelineno-13-97" href="#__codelineno-13-97"></a>kind: Deployment
 <a id="__codelineno-13-98" name="__codelineno-13-98" href="#__codelineno-13-98"></a>
 <a id="__codelineno-13-99" name="__codelineno-13-99" href="#__codelineno-13-99"></a>
-<a id="__codelineno-13-100" name="__codelineno-13-100" href="#__codelineno-13-100"></a>
-<a id="__codelineno-13-101" name="__codelineno-13-101" href="#__codelineno-13-101"></a>- name: My other secret
+<a id="__codelineno-13-100" name="__codelineno-13-100" href="#__codelineno-13-100"></a>metadata:
+<a id="__codelineno-13-101" name="__codelineno-13-101" href="#__codelineno-13-101"></a>
 <a id="__codelineno-13-102" name="__codelineno-13-102" href="#__codelineno-13-102"></a>
-<a id="__codelineno-13-103" name="__codelineno-13-103" href="#__codelineno-13-103"></a>
+<a id="__codelineno-13-103" name="__codelineno-13-103" href="#__codelineno-13-103"></a>name: example-edge-connect
 <a id="__codelineno-13-104" name="__codelineno-13-104" href="#__codelineno-13-104"></a>
-<a id="__codelineno-13-105" name="__codelineno-13-105" href="#__codelineno-13-105"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.another-token-secret
-<a id="__codelineno-13-106" name="__codelineno-13-106" href="#__codelineno-13-106"></a>
+<a id="__codelineno-13-105" name="__codelineno-13-105" href="#__codelineno-13-105"></a>
+<a id="__codelineno-13-106" name="__codelineno-13-106" href="#__codelineno-13-106"></a>namespace: dynatrace
 <a id="__codelineno-13-107" name="__codelineno-13-107" href="#__codelineno-13-107"></a>
 <a id="__codelineno-13-108" name="__codelineno-13-108" href="#__codelineno-13-108"></a>
-<a id="__codelineno-13-109" name="__codelineno-13-109" href="#__codelineno-13-109"></a>from_file: /path/to/my/other/secret
+<a id="__codelineno-13-109" name="__codelineno-13-109" href="#__codelineno-13-109"></a>spec:
 <a id="__codelineno-13-110" name="__codelineno-13-110" href="#__codelineno-13-110"></a>
 <a id="__codelineno-13-111" name="__codelineno-13-111" href="#__codelineno-13-111"></a>
-<a id="__codelineno-13-112" name="__codelineno-13-112" href="#__codelineno-13-112"></a>
-<a id="__codelineno-13-113" name="__codelineno-13-113" href="#__codelineno-13-113"></a>restrict_hosts_to:
+<a id="__codelineno-13-112" name="__codelineno-13-112" href="#__codelineno-13-112"></a>replicas: 1
+<a id="__codelineno-13-113" name="__codelineno-13-113" href="#__codelineno-13-113"></a>
 <a id="__codelineno-13-114" name="__codelineno-13-114" href="#__codelineno-13-114"></a>
-<a id="__codelineno-13-115" name="__codelineno-13-115" href="#__codelineno-13-115"></a>
+<a id="__codelineno-13-115" name="__codelineno-13-115" href="#__codelineno-13-115"></a>selector:
 <a id="__codelineno-13-116" name="__codelineno-13-116" href="#__codelineno-13-116"></a>
-<a id="__codelineno-13-117" name="__codelineno-13-117" href="#__codelineno-13-117"></a>- internal.example.com
-<a id="__codelineno-13-118" name="__codelineno-13-118" href="#__codelineno-13-118"></a>
+<a id="__codelineno-13-117" name="__codelineno-13-117" href="#__codelineno-13-117"></a>
+<a id="__codelineno-13-118" name="__codelineno-13-118" href="#__codelineno-13-118"></a>matchLabels:
 <a id="__codelineno-13-119" name="__codelineno-13-119" href="#__codelineno-13-119"></a>
 <a id="__codelineno-13-120" name="__codelineno-13-120" href="#__codelineno-13-120"></a>
-<a id="__codelineno-13-121" name="__codelineno-13-121" href="#__codelineno-13-121"></a>---
+<a id="__codelineno-13-121" name="__codelineno-13-121" href="#__codelineno-13-121"></a>app: edge-connect
 <a id="__codelineno-13-122" name="__codelineno-13-122" href="#__codelineno-13-122"></a>
 <a id="__codelineno-13-123" name="__codelineno-13-123" href="#__codelineno-13-123"></a>
-<a id="__codelineno-13-124" name="__codelineno-13-124" href="#__codelineno-13-124"></a>
-<a id="__codelineno-13-125" name="__codelineno-13-125" href="#__codelineno-13-125"></a>apiVersion: apps/v1
+<a id="__codelineno-13-124" name="__codelineno-13-124" href="#__codelineno-13-124"></a>template:
+<a id="__codelineno-13-125" name="__codelineno-13-125" href="#__codelineno-13-125"></a>
 <a id="__codelineno-13-126" name="__codelineno-13-126" href="#__codelineno-13-126"></a>
-<a id="__codelineno-13-127" name="__codelineno-13-127" href="#__codelineno-13-127"></a>
+<a id="__codelineno-13-127" name="__codelineno-13-127" href="#__codelineno-13-127"></a>metadata:
 <a id="__codelineno-13-128" name="__codelineno-13-128" href="#__codelineno-13-128"></a>
-<a id="__codelineno-13-129" name="__codelineno-13-129" href="#__codelineno-13-129"></a>kind: Deployment
-<a id="__codelineno-13-130" name="__codelineno-13-130" href="#__codelineno-13-130"></a>
+<a id="__codelineno-13-129" name="__codelineno-13-129" href="#__codelineno-13-129"></a>
+<a id="__codelineno-13-130" name="__codelineno-13-130" href="#__codelineno-13-130"></a>labels:
 <a id="__codelineno-13-131" name="__codelineno-13-131" href="#__codelineno-13-131"></a>
 <a id="__codelineno-13-132" name="__codelineno-13-132" href="#__codelineno-13-132"></a>
-<a id="__codelineno-13-133" name="__codelineno-13-133" href="#__codelineno-13-133"></a>metadata:
+<a id="__codelineno-13-133" name="__codelineno-13-133" href="#__codelineno-13-133"></a>app: edge-connect
 <a id="__codelineno-13-134" name="__codelineno-13-134" href="#__codelineno-13-134"></a>
 <a id="__codelineno-13-135" name="__codelineno-13-135" href="#__codelineno-13-135"></a>
-<a id="__codelineno-13-136" name="__codelineno-13-136" href="#__codelineno-13-136"></a>
-<a id="__codelineno-13-137" name="__codelineno-13-137" href="#__codelineno-13-137"></a>name: example-edge-connect
+<a id="__codelineno-13-136" name="__codelineno-13-136" href="#__codelineno-13-136"></a>spec:
+<a id="__codelineno-13-137" name="__codelineno-13-137" href="#__codelineno-13-137"></a>
 <a id="__codelineno-13-138" name="__codelineno-13-138" href="#__codelineno-13-138"></a>
-<a id="__codelineno-13-139" name="__codelineno-13-139" href="#__codelineno-13-139"></a>
+<a id="__codelineno-13-139" name="__codelineno-13-139" href="#__codelineno-13-139"></a>containers:
 <a id="__codelineno-13-140" name="__codelineno-13-140" href="#__codelineno-13-140"></a>
-<a id="__codelineno-13-141" name="__codelineno-13-141" href="#__codelineno-13-141"></a>namespace: dynatrace
-<a id="__codelineno-13-142" name="__codelineno-13-142" href="#__codelineno-13-142"></a>
+<a id="__codelineno-13-141" name="__codelineno-13-141" href="#__codelineno-13-141"></a>
+<a id="__codelineno-13-142" name="__codelineno-13-142" href="#__codelineno-13-142"></a>- name: edge-connect
 <a id="__codelineno-13-143" name="__codelineno-13-143" href="#__codelineno-13-143"></a>
 <a id="__codelineno-13-144" name="__codelineno-13-144" href="#__codelineno-13-144"></a>
-<a id="__codelineno-13-145" name="__codelineno-13-145" href="#__codelineno-13-145"></a>spec:
+<a id="__codelineno-13-145" name="__codelineno-13-145" href="#__codelineno-13-145"></a>image: dynatrace/edgeconnect:latest
 <a id="__codelineno-13-146" name="__codelineno-13-146" href="#__codelineno-13-146"></a>
 <a id="__codelineno-13-147" name="__codelineno-13-147" href="#__codelineno-13-147"></a>
-<a id="__codelineno-13-148" name="__codelineno-13-148" href="#__codelineno-13-148"></a>
-<a id="__codelineno-13-149" name="__codelineno-13-149" href="#__codelineno-13-149"></a>replicas: 1
+<a id="__codelineno-13-148" name="__codelineno-13-148" href="#__codelineno-13-148"></a>imagePullPolicy: IfNotPresent
+<a id="__codelineno-13-149" name="__codelineno-13-149" href="#__codelineno-13-149"></a>
 <a id="__codelineno-13-150" name="__codelineno-13-150" href="#__codelineno-13-150"></a>
-<a id="__codelineno-13-151" name="__codelineno-13-151" href="#__codelineno-13-151"></a>
+<a id="__codelineno-13-151" name="__codelineno-13-151" href="#__codelineno-13-151"></a>env:
 <a id="__codelineno-13-152" name="__codelineno-13-152" href="#__codelineno-13-152"></a>
-<a id="__codelineno-13-153" name="__codelineno-13-153" href="#__codelineno-13-153"></a>selector:
-<a id="__codelineno-13-154" name="__codelineno-13-154" href="#__codelineno-13-154"></a>
+<a id="__codelineno-13-153" name="__codelineno-13-153" href="#__codelineno-13-153"></a>
+<a id="__codelineno-13-154" name="__codelineno-13-154" href="#__codelineno-13-154"></a>- name: EDGE_CONNECT_NAME
 <a id="__codelineno-13-155" name="__codelineno-13-155" href="#__codelineno-13-155"></a>
 <a id="__codelineno-13-156" name="__codelineno-13-156" href="#__codelineno-13-156"></a>
-<a id="__codelineno-13-157" name="__codelineno-13-157" href="#__codelineno-13-157"></a>matchLabels:
+<a id="__codelineno-13-157" name="__codelineno-13-157" href="#__codelineno-13-157"></a>value: &lt;name from edgeConnect.yaml&gt;
 <a id="__codelineno-13-158" name="__codelineno-13-158" href="#__codelineno-13-158"></a>
 <a id="__codelineno-13-159" name="__codelineno-13-159" href="#__codelineno-13-159"></a>
-<a id="__codelineno-13-160" name="__codelineno-13-160" href="#__codelineno-13-160"></a>
-<a id="__codelineno-13-161" name="__codelineno-13-161" href="#__codelineno-13-161"></a>app: edge-connect
+<a id="__codelineno-13-160" name="__codelineno-13-160" href="#__codelineno-13-160"></a>- name: EDGE_CONNECT_API_ENDPOINT_HOST
+<a id="__codelineno-13-161" name="__codelineno-13-161" href="#__codelineno-13-161"></a>
 <a id="__codelineno-13-162" name="__codelineno-13-162" href="#__codelineno-13-162"></a>
-<a id="__codelineno-13-163" name="__codelineno-13-163" href="#__codelineno-13-163"></a>
+<a id="__codelineno-13-163" name="__codelineno-13-163" href="#__codelineno-13-163"></a>value: &lt;api_endpoint_host from edgeConnect.yaml&gt;
 <a id="__codelineno-13-164" name="__codelineno-13-164" href="#__codelineno-13-164"></a>
-<a id="__codelineno-13-165" name="__codelineno-13-165" href="#__codelineno-13-165"></a>template:
-<a id="__codelineno-13-166" name="__codelineno-13-166" href="#__codelineno-13-166"></a>
+<a id="__codelineno-13-165" name="__codelineno-13-165" href="#__codelineno-13-165"></a>
+<a id="__codelineno-13-166" name="__codelineno-13-166" href="#__codelineno-13-166"></a>- name: EDGE_CONNECT_OAUTH__ENDPOINT
 <a id="__codelineno-13-167" name="__codelineno-13-167" href="#__codelineno-13-167"></a>
 <a id="__codelineno-13-168" name="__codelineno-13-168" href="#__codelineno-13-168"></a>
-<a id="__codelineno-13-169" name="__codelineno-13-169" href="#__codelineno-13-169"></a>metadata:
+<a id="__codelineno-13-169" name="__codelineno-13-169" href="#__codelineno-13-169"></a>value: &lt;oauth.endpoint from edgeConnect.yaml&gt;
 <a id="__codelineno-13-170" name="__codelineno-13-170" href="#__codelineno-13-170"></a>
 <a id="__codelineno-13-171" name="__codelineno-13-171" href="#__codelineno-13-171"></a>
-<a id="__codelineno-13-172" name="__codelineno-13-172" href="#__codelineno-13-172"></a>
-<a id="__codelineno-13-173" name="__codelineno-13-173" href="#__codelineno-13-173"></a>labels:
+<a id="__codelineno-13-172" name="__codelineno-13-172" href="#__codelineno-13-172"></a>- name: EDGE_CONNECT_OAUTH__RESOURCE
+<a id="__codelineno-13-173" name="__codelineno-13-173" href="#__codelineno-13-173"></a>
 <a id="__codelineno-13-174" name="__codelineno-13-174" href="#__codelineno-13-174"></a>
-<a id="__codelineno-13-175" name="__codelineno-13-175" href="#__codelineno-13-175"></a>
+<a id="__codelineno-13-175" name="__codelineno-13-175" href="#__codelineno-13-175"></a>value: &lt;oauth.resource from edgeConnect.yaml&gt;
 <a id="__codelineno-13-176" name="__codelineno-13-176" href="#__codelineno-13-176"></a>
-<a id="__codelineno-13-177" name="__codelineno-13-177" href="#__codelineno-13-177"></a>app: edge-connect
-<a id="__codelineno-13-178" name="__codelineno-13-178" href="#__codelineno-13-178"></a>
+<a id="__codelineno-13-177" name="__codelineno-13-177" href="#__codelineno-13-177"></a>
+<a id="__codelineno-13-178" name="__codelineno-13-178" href="#__codelineno-13-178"></a>volumeMounts:
 <a id="__codelineno-13-179" name="__codelineno-13-179" href="#__codelineno-13-179"></a>
 <a id="__codelineno-13-180" name="__codelineno-13-180" href="#__codelineno-13-180"></a>
-<a id="__codelineno-13-181" name="__codelineno-13-181" href="#__codelineno-13-181"></a>spec:
+<a id="__codelineno-13-181" name="__codelineno-13-181" href="#__codelineno-13-181"></a>- name: secrets
 <a id="__codelineno-13-182" name="__codelineno-13-182" href="#__codelineno-13-182"></a>
 <a id="__codelineno-13-183" name="__codelineno-13-183" href="#__codelineno-13-183"></a>
-<a id="__codelineno-13-184" name="__codelineno-13-184" href="#__codelineno-13-184"></a>
-<a id="__codelineno-13-185" name="__codelineno-13-185" href="#__codelineno-13-185"></a>containers:
+<a id="__codelineno-13-184" name="__codelineno-13-184" href="#__codelineno-13-184"></a>mountPath: &quot;/etc/edge_connect&quot;
+<a id="__codelineno-13-185" name="__codelineno-13-185" href="#__codelineno-13-185"></a>
 <a id="__codelineno-13-186" name="__codelineno-13-186" href="#__codelineno-13-186"></a>
-<a id="__codelineno-13-187" name="__codelineno-13-187" href="#__codelineno-13-187"></a>
+<a id="__codelineno-13-187" name="__codelineno-13-187" href="#__codelineno-13-187"></a>readOnly: true
 <a id="__codelineno-13-188" name="__codelineno-13-188" href="#__codelineno-13-188"></a>
-<a id="__codelineno-13-189" name="__codelineno-13-189" href="#__codelineno-13-189"></a>- name: edge-connect
-<a id="__codelineno-13-190" name="__codelineno-13-190" href="#__codelineno-13-190"></a>
+<a id="__codelineno-13-189" name="__codelineno-13-189" href="#__codelineno-13-189"></a>
+<a id="__codelineno-13-190" name="__codelineno-13-190" href="#__codelineno-13-190"></a>- name: config
 <a id="__codelineno-13-191" name="__codelineno-13-191" href="#__codelineno-13-191"></a>
 <a id="__codelineno-13-192" name="__codelineno-13-192" href="#__codelineno-13-192"></a>
-<a id="__codelineno-13-193" name="__codelineno-13-193" href="#__codelineno-13-193"></a>image: dynatrace/edgeconnect:latest
+<a id="__codelineno-13-193" name="__codelineno-13-193" href="#__codelineno-13-193"></a>mountPath: &quot;/edgeConnect.yaml&quot;
 <a id="__codelineno-13-194" name="__codelineno-13-194" href="#__codelineno-13-194"></a>
 <a id="__codelineno-13-195" name="__codelineno-13-195" href="#__codelineno-13-195"></a>
-<a id="__codelineno-13-196" name="__codelineno-13-196" href="#__codelineno-13-196"></a>
-<a id="__codelineno-13-197" name="__codelineno-13-197" href="#__codelineno-13-197"></a>imagePullPolicy: IfNotPresent
+<a id="__codelineno-13-196" name="__codelineno-13-196" href="#__codelineno-13-196"></a>subPath: &quot;edgeConnect.yaml&quot;
+<a id="__codelineno-13-197" name="__codelineno-13-197" href="#__codelineno-13-197"></a>
 <a id="__codelineno-13-198" name="__codelineno-13-198" href="#__codelineno-13-198"></a>
-<a id="__codelineno-13-199" name="__codelineno-13-199" href="#__codelineno-13-199"></a>
+<a id="__codelineno-13-199" name="__codelineno-13-199" href="#__codelineno-13-199"></a>readOnly: true
 <a id="__codelineno-13-200" name="__codelineno-13-200" href="#__codelineno-13-200"></a>
-<a id="__codelineno-13-201" name="__codelineno-13-201" href="#__codelineno-13-201"></a>env:
-<a id="__codelineno-13-202" name="__codelineno-13-202" href="#__codelineno-13-202"></a>
+<a id="__codelineno-13-201" name="__codelineno-13-201" href="#__codelineno-13-201"></a>
+<a id="__codelineno-13-202" name="__codelineno-13-202" href="#__codelineno-13-202"></a>volumes:
 <a id="__codelineno-13-203" name="__codelineno-13-203" href="#__codelineno-13-203"></a>
 <a id="__codelineno-13-204" name="__codelineno-13-204" href="#__codelineno-13-204"></a>
-<a id="__codelineno-13-205" name="__codelineno-13-205" href="#__codelineno-13-205"></a>- name: EDGE_CONNECT_NAME
+<a id="__codelineno-13-205" name="__codelineno-13-205" href="#__codelineno-13-205"></a>- name: secrets
 <a id="__codelineno-13-206" name="__codelineno-13-206" href="#__codelineno-13-206"></a>
 <a id="__codelineno-13-207" name="__codelineno-13-207" href="#__codelineno-13-207"></a>
-<a id="__codelineno-13-208" name="__codelineno-13-208" href="#__codelineno-13-208"></a>
-<a id="__codelineno-13-209" name="__codelineno-13-209" href="#__codelineno-13-209"></a>value: &lt;name from edgeConnect.yaml&gt;
+<a id="__codelineno-13-208" name="__codelineno-13-208" href="#__codelineno-13-208"></a>secret:
+<a id="__codelineno-13-209" name="__codelineno-13-209" href="#__codelineno-13-209"></a>
 <a id="__codelineno-13-210" name="__codelineno-13-210" href="#__codelineno-13-210"></a>
-<a id="__codelineno-13-211" name="__codelineno-13-211" href="#__codelineno-13-211"></a>
+<a id="__codelineno-13-211" name="__codelineno-13-211" href="#__codelineno-13-211"></a>secretName: edge-connect-oauth
 <a id="__codelineno-13-212" name="__codelineno-13-212" href="#__codelineno-13-212"></a>
-<a id="__codelineno-13-213" name="__codelineno-13-213" href="#__codelineno-13-213"></a>- name: EDGE_CONNECT_API_ENDPOINT_HOST
-<a id="__codelineno-13-214" name="__codelineno-13-214" href="#__codelineno-13-214"></a>
+<a id="__codelineno-13-213" name="__codelineno-13-213" href="#__codelineno-13-213"></a>
+<a id="__codelineno-13-214" name="__codelineno-13-214" href="#__codelineno-13-214"></a>items:
 <a id="__codelineno-13-215" name="__codelineno-13-215" href="#__codelineno-13-215"></a>
 <a id="__codelineno-13-216" name="__codelineno-13-216" href="#__codelineno-13-216"></a>
-<a id="__codelineno-13-217" name="__codelineno-13-217" href="#__codelineno-13-217"></a>value: &lt;api_endpoint_host from edgeConnect.yaml&gt;
+<a id="__codelineno-13-217" name="__codelineno-13-217" href="#__codelineno-13-217"></a>- key: oauth-client-id
 <a id="__codelineno-13-218" name="__codelineno-13-218" href="#__codelineno-13-218"></a>
 <a id="__codelineno-13-219" name="__codelineno-13-219" href="#__codelineno-13-219"></a>
-<a id="__codelineno-13-220" name="__codelineno-13-220" href="#__codelineno-13-220"></a>
-<a id="__codelineno-13-221" name="__codelineno-13-221" href="#__codelineno-13-221"></a>- name: EDGE_CONNECT_OAUTH__ENDPOINT
+<a id="__codelineno-13-220" name="__codelineno-13-220" href="#__codelineno-13-220"></a>path: oauth/client_id
+<a id="__codelineno-13-221" name="__codelineno-13-221" href="#__codelineno-13-221"></a>
 <a id="__codelineno-13-222" name="__codelineno-13-222" href="#__codelineno-13-222"></a>
-<a id="__codelineno-13-223" name="__codelineno-13-223" href="#__codelineno-13-223"></a>
+<a id="__codelineno-13-223" name="__codelineno-13-223" href="#__codelineno-13-223"></a>- key: oauth-client-secret
 <a id="__codelineno-13-224" name="__codelineno-13-224" href="#__codelineno-13-224"></a>
-<a id="__codelineno-13-225" name="__codelineno-13-225" href="#__codelineno-13-225"></a>value: &lt;oauth.endpoint from edgeConnect.yaml&gt;
-<a id="__codelineno-13-226" name="__codelineno-13-226" href="#__codelineno-13-226"></a>
+<a id="__codelineno-13-225" name="__codelineno-13-225" href="#__codelineno-13-225"></a>
+<a id="__codelineno-13-226" name="__codelineno-13-226" href="#__codelineno-13-226"></a>path: oauth/client_secret
 <a id="__codelineno-13-227" name="__codelineno-13-227" href="#__codelineno-13-227"></a>
 <a id="__codelineno-13-228" name="__codelineno-13-228" href="#__codelineno-13-228"></a>
-<a id="__codelineno-13-229" name="__codelineno-13-229" href="#__codelineno-13-229"></a>- name: EDGE_CONNECT_OAUTH__RESOURCE
+<a id="__codelineno-13-229" name="__codelineno-13-229" href="#__codelineno-13-229"></a>- name: config
 <a id="__codelineno-13-230" name="__codelineno-13-230" href="#__codelineno-13-230"></a>
 <a id="__codelineno-13-231" name="__codelineno-13-231" href="#__codelineno-13-231"></a>
-<a id="__codelineno-13-232" name="__codelineno-13-232" href="#__codelineno-13-232"></a>
-<a id="__codelineno-13-233" name="__codelineno-13-233" href="#__codelineno-13-233"></a>value: &lt;oauth.resource from edgeConnect.yaml&gt;
+<a id="__codelineno-13-232" name="__codelineno-13-232" href="#__codelineno-13-232"></a>secret:
+<a id="__codelineno-13-233" name="__codelineno-13-233" href="#__codelineno-13-233"></a>
 <a id="__codelineno-13-234" name="__codelineno-13-234" href="#__codelineno-13-234"></a>
-<a id="__codelineno-13-235" name="__codelineno-13-235" href="#__codelineno-13-235"></a>
+<a id="__codelineno-13-235" name="__codelineno-13-235" href="#__codelineno-13-235"></a>secretName: edge-connect-config
 <a id="__codelineno-13-236" name="__codelineno-13-236" href="#__codelineno-13-236"></a>
-<a id="__codelineno-13-237" name="__codelineno-13-237" href="#__codelineno-13-237"></a>volumeMounts:
-<a id="__codelineno-13-238" name="__codelineno-13-238" href="#__codelineno-13-238"></a>
+<a id="__codelineno-13-237" name="__codelineno-13-237" href="#__codelineno-13-237"></a>
+<a id="__codelineno-13-238" name="__codelineno-13-238" href="#__codelineno-13-238"></a>items:
 <a id="__codelineno-13-239" name="__codelineno-13-239" href="#__codelineno-13-239"></a>
 <a id="__codelineno-13-240" name="__codelineno-13-240" href="#__codelineno-13-240"></a>
-<a id="__codelineno-13-241" name="__codelineno-13-241" href="#__codelineno-13-241"></a>- name: secrets
+<a id="__codelineno-13-241" name="__codelineno-13-241" href="#__codelineno-13-241"></a>- key: edge-connect-config-file
 <a id="__codelineno-13-242" name="__codelineno-13-242" href="#__codelineno-13-242"></a>
 <a id="__codelineno-13-243" name="__codelineno-13-243" href="#__codelineno-13-243"></a>
-<a id="__codelineno-13-244" name="__codelineno-13-244" href="#__codelineno-13-244"></a>
-<a id="__codelineno-13-245" name="__codelineno-13-245" href="#__codelineno-13-245"></a>mountPath: &quot;/etc/edge_connect&quot;
-<a id="__codelineno-13-246" name="__codelineno-13-246" href="#__codelineno-13-246"></a>
-<a id="__codelineno-13-247" name="__codelineno-13-247" href="#__codelineno-13-247"></a>
-<a id="__codelineno-13-248" name="__codelineno-13-248" href="#__codelineno-13-248"></a>
-<a id="__codelineno-13-249" name="__codelineno-13-249" href="#__codelineno-13-249"></a>readOnly: true
-<a id="__codelineno-13-250" name="__codelineno-13-250" href="#__codelineno-13-250"></a>
-<a id="__codelineno-13-251" name="__codelineno-13-251" href="#__codelineno-13-251"></a>
-<a id="__codelineno-13-252" name="__codelineno-13-252" href="#__codelineno-13-252"></a>
-<a id="__codelineno-13-253" name="__codelineno-13-253" href="#__codelineno-13-253"></a>- name: config
-<a id="__codelineno-13-254" name="__codelineno-13-254" href="#__codelineno-13-254"></a>
-<a id="__codelineno-13-255" name="__codelineno-13-255" href="#__codelineno-13-255"></a>
-<a id="__codelineno-13-256" name="__codelineno-13-256" href="#__codelineno-13-256"></a>
-<a id="__codelineno-13-257" name="__codelineno-13-257" href="#__codelineno-13-257"></a>mountPath: &quot;/edgeConnect.yaml&quot;
-<a id="__codelineno-13-258" name="__codelineno-13-258" href="#__codelineno-13-258"></a>
-<a id="__codelineno-13-259" name="__codelineno-13-259" href="#__codelineno-13-259"></a>
-<a id="__codelineno-13-260" name="__codelineno-13-260" href="#__codelineno-13-260"></a>
-<a id="__codelineno-13-261" name="__codelineno-13-261" href="#__codelineno-13-261"></a>subPath: &quot;edgeConnect.yaml&quot;
-<a id="__codelineno-13-262" name="__codelineno-13-262" href="#__codelineno-13-262"></a>
-<a id="__codelineno-13-263" name="__codelineno-13-263" href="#__codelineno-13-263"></a>
-<a id="__codelineno-13-264" name="__codelineno-13-264" href="#__codelineno-13-264"></a>
-<a id="__codelineno-13-265" name="__codelineno-13-265" href="#__codelineno-13-265"></a>readOnly: true
-<a id="__codelineno-13-266" name="__codelineno-13-266" href="#__codelineno-13-266"></a>
-<a id="__codelineno-13-267" name="__codelineno-13-267" href="#__codelineno-13-267"></a>
-<a id="__codelineno-13-268" name="__codelineno-13-268" href="#__codelineno-13-268"></a>
-<a id="__codelineno-13-269" name="__codelineno-13-269" href="#__codelineno-13-269"></a>volumes:
-<a id="__codelineno-13-270" name="__codelineno-13-270" href="#__codelineno-13-270"></a>
-<a id="__codelineno-13-271" name="__codelineno-13-271" href="#__codelineno-13-271"></a>
-<a id="__codelineno-13-272" name="__codelineno-13-272" href="#__codelineno-13-272"></a>
-<a id="__codelineno-13-273" name="__codelineno-13-273" href="#__codelineno-13-273"></a>- name: secrets
-<a id="__codelineno-13-274" name="__codelineno-13-274" href="#__codelineno-13-274"></a>
-<a id="__codelineno-13-275" name="__codelineno-13-275" href="#__codelineno-13-275"></a>
-<a id="__codelineno-13-276" name="__codelineno-13-276" href="#__codelineno-13-276"></a>
-<a id="__codelineno-13-277" name="__codelineno-13-277" href="#__codelineno-13-277"></a>secret:
-<a id="__codelineno-13-278" name="__codelineno-13-278" href="#__codelineno-13-278"></a>
-<a id="__codelineno-13-279" name="__codelineno-13-279" href="#__codelineno-13-279"></a>
-<a id="__codelineno-13-280" name="__codelineno-13-280" href="#__codelineno-13-280"></a>
-<a id="__codelineno-13-281" name="__codelineno-13-281" href="#__codelineno-13-281"></a>secretName: edge-connect-oauth
-<a id="__codelineno-13-282" name="__codelineno-13-282" href="#__codelineno-13-282"></a>
-<a id="__codelineno-13-283" name="__codelineno-13-283" href="#__codelineno-13-283"></a>
-<a id="__codelineno-13-284" name="__codelineno-13-284" href="#__codelineno-13-284"></a>
-<a id="__codelineno-13-285" name="__codelineno-13-285" href="#__codelineno-13-285"></a>items:
-<a id="__codelineno-13-286" name="__codelineno-13-286" href="#__codelineno-13-286"></a>
-<a id="__codelineno-13-287" name="__codelineno-13-287" href="#__codelineno-13-287"></a>
-<a id="__codelineno-13-288" name="__codelineno-13-288" href="#__codelineno-13-288"></a>
-<a id="__codelineno-13-289" name="__codelineno-13-289" href="#__codelineno-13-289"></a>- key: oauth-client-id
-<a id="__codelineno-13-290" name="__codelineno-13-290" href="#__codelineno-13-290"></a>
-<a id="__codelineno-13-291" name="__codelineno-13-291" href="#__codelineno-13-291"></a>
-<a id="__codelineno-13-292" name="__codelineno-13-292" href="#__codelineno-13-292"></a>
-<a id="__codelineno-13-293" name="__codelineno-13-293" href="#__codelineno-13-293"></a>path: oauth/client_id
-<a id="__codelineno-13-294" name="__codelineno-13-294" href="#__codelineno-13-294"></a>
-<a id="__codelineno-13-295" name="__codelineno-13-295" href="#__codelineno-13-295"></a>
-<a id="__codelineno-13-296" name="__codelineno-13-296" href="#__codelineno-13-296"></a>
-<a id="__codelineno-13-297" name="__codelineno-13-297" href="#__codelineno-13-297"></a>- key: oauth-client-secret
-<a id="__codelineno-13-298" name="__codelineno-13-298" href="#__codelineno-13-298"></a>
-<a id="__codelineno-13-299" name="__codelineno-13-299" href="#__codelineno-13-299"></a>
-<a id="__codelineno-13-300" name="__codelineno-13-300" href="#__codelineno-13-300"></a>
-<a id="__codelineno-13-301" name="__codelineno-13-301" href="#__codelineno-13-301"></a>path: oauth/client_secret
-<a id="__codelineno-13-302" name="__codelineno-13-302" href="#__codelineno-13-302"></a>
-<a id="__codelineno-13-303" name="__codelineno-13-303" href="#__codelineno-13-303"></a>
-<a id="__codelineno-13-304" name="__codelineno-13-304" href="#__codelineno-13-304"></a>
-<a id="__codelineno-13-305" name="__codelineno-13-305" href="#__codelineno-13-305"></a>- name: config
-<a id="__codelineno-13-306" name="__codelineno-13-306" href="#__codelineno-13-306"></a>
-<a id="__codelineno-13-307" name="__codelineno-13-307" href="#__codelineno-13-307"></a>
-<a id="__codelineno-13-308" name="__codelineno-13-308" href="#__codelineno-13-308"></a>
-<a id="__codelineno-13-309" name="__codelineno-13-309" href="#__codelineno-13-309"></a>secret:
-<a id="__codelineno-13-310" name="__codelineno-13-310" href="#__codelineno-13-310"></a>
-<a id="__codelineno-13-311" name="__codelineno-13-311" href="#__codelineno-13-311"></a>
-<a id="__codelineno-13-312" name="__codelineno-13-312" href="#__codelineno-13-312"></a>
-<a id="__codelineno-13-313" name="__codelineno-13-313" href="#__codelineno-13-313"></a>secretName: edge-connect-config
-<a id="__codelineno-13-314" name="__codelineno-13-314" href="#__codelineno-13-314"></a>
-<a id="__codelineno-13-315" name="__codelineno-13-315" href="#__codelineno-13-315"></a>
-<a id="__codelineno-13-316" name="__codelineno-13-316" href="#__codelineno-13-316"></a>
-<a id="__codelineno-13-317" name="__codelineno-13-317" href="#__codelineno-13-317"></a>items:
-<a id="__codelineno-13-318" name="__codelineno-13-318" href="#__codelineno-13-318"></a>
-<a id="__codelineno-13-319" name="__codelineno-13-319" href="#__codelineno-13-319"></a>
-<a id="__codelineno-13-320" name="__codelineno-13-320" href="#__codelineno-13-320"></a>
-<a id="__codelineno-13-321" name="__codelineno-13-321" href="#__codelineno-13-321"></a>- key: edge-connect-config-file
-<a id="__codelineno-13-322" name="__codelineno-13-322" href="#__codelineno-13-322"></a>
-<a id="__codelineno-13-323" name="__codelineno-13-323" href="#__codelineno-13-323"></a>
-<a id="__codelineno-13-324" name="__codelineno-13-324" href="#__codelineno-13-324"></a>
-<a id="__codelineno-13-325" name="__codelineno-13-325" href="#__codelineno-13-325"></a>path: edgeConnect.yaml
+<a id="__codelineno-13-244" name="__codelineno-13-244" href="#__codelineno-13-244"></a>path: edgeConnect.yaml
 </code></pre></div>
 <h4 id="edgeconnect-kubernetes_1">Настройка EdgeConnect в Kubernetes<a class="headerlink" href="#edgeconnect-kubernetes_1" title="Permanent link">&para;</a></h4>
 <p>Существует три способа настройки EdgeConnect в Kubernetes.
@@ -6293,7 +4783,7 @@ EdgeConnect может читать секреты из двух источни�
 <p>Отныне любой HTTP-запрос, происходящий в рамках функции приложения, специальной функции или действия рабочего процесса, соответствующий шаблону хоста, будет прозрачно выполняться EdgeConnect вместо среды выполнения Dynatrace напрямую.</p>
 </li>
 </ol>
-<h2 id="edgeconnect_10">Использование нескольких конфигураций и экземпляров EdgeConnect<a class="headerlink" href="#edgeconnect_10" title="Permanent link">&para;</a></h2>
+<h2 id="edgeconnect_8">Использование нескольких конфигураций и экземпляров EdgeConnect<a class="headerlink" href="#edgeconnect_8" title="Permanent link">&para;</a></h2>
 <p>Вы можете создать несколько конфигураций EdgeConnect в вашей среде, каждую со своей конфигурацией шаблонов хостов, как описано в разделе <a href="#createconfiguration">Создание новой конфигурации EdgeConnect</a>. Для каждой конфигурации EdgeConnect вы можете <a href="#deploy">развернуть</a> несколько экземпляров для распределения нагрузки запросов EdgeConnect между несколькими экземплярами для балансировки нагрузки. В этом случае соответствующие запросы будут распределяться между экземплярами EdgeConnect, имеющими свободную емкость.</p>
 <h3 id="_9">Шаблоны хостов<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>Обратите внимание, что один шаблон хоста может использоваться только в одной конфигурации EdgeConnect, а не совместно между конфигурациями EdgeConnect. Например, при наличии конфигурации EdgeConnect с именем <code>staging</code>, содержащей <code>staging.myapp.org</code> в качестве шаблона хоста, вы не можете использовать тот же шаблон хоста в конфигурации EdgeConnect с именем <code>myapp</code>.</p>
@@ -6329,7 +4819,7 @@ EdgeConnect может читать секреты из двух источни�
 <p>В этом примере конфигурация EdgeConnect <code>k8-api-dev</code> определяет шаблон хоста <code>kubernetes-api-dev-cluster</code> и настраивает сопоставление хоста <code>kubernetes-api-dev-cluster</code> на <code>kubernetes.default.svc.cluster.local</code>.</p>
 <p>Запрос к <code>https://kubernetes-api-dev-cluster/api/v1/pods</code> в среде выполнения Dynatrace JavaScript будет перенаправлен на экземпляры EdgeConnect с конфигурацией <code>k8-api-dev</code>. Однако хост запроса будет перезаписан, так что подключенный экземпляр EdgeConnect фактически выполнит запрос к <code>https://kubernetes.default.svc.cluster.local/api/v1/pods</code>.</p>
 <p>Вы развертываете контейнеры EdgeConnect для этой конфигурации в кластере Kubernetes <code>dev</code> и можете надежно управлять этим кластером через HTTPS-запросы из среды выполнения Dynatrace. Одновременно у вас есть продуктовый кластер Kubernetes, которым вы хотите управлять аналогичным образом. Поэтому вы создаете другую конфигурацию EdgeConnect <code>k8-api-production</code> с шаблоном хоста <code>kubernetes-api-production-cluster</code> и сопоставлением хоста <code>kubernetes-api-production-cluster</code> на <code>kubernetes.default.svc.cluster.local</code> и развертываете ее экземпляры в продуктовом кластере Kubernetes. В результате вы можете обращаться к API Kubernetes нужного кластера, выполняя запрос к <code>https://kubernetes-api-dev-cluster/api/v1/pods</code> или <code>https://kubernetes-api-production-cluster/api/v1/pods</code>.</p>
-<p>Подробнее об этом примере см. <a href="/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/edgeconnect/kubernetes-automation/edge-connect-kubernetes-automation-manual-setup" title="Ручная настройка EdgeConnect для Kubernetes Connector для использования широкого спектра действий Kubernetes Connector в ваших рабочих процессах.">Ручная настройка EdgeConnect для Kubernetes Connector</a>.</p>
+<p>Подробнее об этом примере см. Ручная настройка EdgeConnect для Kubernetes Connector.</p>
 <h2 id="_13">Системные требования<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
 <p>Для типичного развертывания EdgeConnect рекомендуется 1 ГБ памяти и 1 процессор. Требования к памяти могут варьироваться в зависимости от размера полезной нагрузки обрабатываемых запросов.
 EdgeConnect требует следующей сетевой связности.</p>
@@ -6340,7 +4830,7 @@ EdgeConnect требует следующей сетевой связности.
 </ul>
 <h2 id="_14">Безопасность<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
 <p>Требования и рекомендации по конфигурации безопасности EdgeConnect основаны на принципе "минимальных привилегий".</p>
-<h3 id="edgeconnect_11">Что делает EdgeConnect<a class="headerlink" href="#edgeconnect_11" title="Permanent link">&para;</a></h3>
+<h3 id="edgeconnect_9">Что делает EdgeConnect<a class="headerlink" href="#edgeconnect_9" title="Permanent link">&para;</a></h3>
 <ul>
 <li>EdgeConnect устанавливает безопасное WebSocket-соединение (WSS/443) с AppEngine и, таким образом, не требует никакого входящего соединения. Для этого EdgeConnect должен иметь возможность создать исходящее соединение WSS/443 к вашей среде Dynatrace.</li>
 <li>EdgeConnect работает в контексте среды и прозрачно выполняет все HTTP(S)-запросы в AppEngine, соответствующие определенным шаблонам хостов. Любой пользователь с соответствующими разрешениями для запуска функции приложения, специального JavaScript или рабочего процесса в среде может отправлять HTTP(S)-запросы на соответствующие хосты.</li>
@@ -6438,7 +4928,7 @@ EdgeConnect требует следующей сетевой связности.
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.sections", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
   
@@ -6448,25 +4938,38 @@ EdgeConnect требует следующей сетевой связности.
       
     
   <script>
-    // Inject version selector into header
-    document.addEventListener('DOMContentLoaded', function() {
-      var headerInner = document.querySelector('.md-header__inner');
-      if (headerInner) {
-        var select = document.createElement('select');
-        select.className = 'docflow-version-select';
-        select.innerHTML = '<option value="managed" selected>Managed</option><option value="saas">SaaS</option>';
-        select.setAttribute('aria-label', 'Version selector');
+    (function() {
+      // --- Reading progress bar (one-time setup) ---
+      var progressBar = document.createElement('div');
+      progressBar.className = 'reading-progress';
+      document.body.appendChild(progressBar);
 
-        // Insert before the search or at the end
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (docHeight > 0) {
+          var progress = (scrollTop / docHeight) * 100;
+          progressBar.style.width = Math.min(progress, 100) + '%';
+        }
+      });
+
+      // --- Managed label in header (one-time setup) ---
+      var headerInner = document.querySelector('.md-header__inner');
+      if (headerInner && !headerInner.querySelector('.docflow-managed-label')) {
+        var label = document.createElement('span');
+        label.className = 'docflow-managed-label';
+        label.textContent = 'Managed';
+        label.setAttribute('title', 'Документация включает разделы Dynatrace Managed');
+
         var searchContainer = headerInner.querySelector('.md-header__source');
         if (searchContainer) {
-          headerInner.insertBefore(select, searchContainer);
+          headerInner.insertBefore(label, searchContainer);
         } else {
-          headerInner.appendChild(select);
+          headerInner.appendChild(label);
         }
       }
 
-      // Keyboard shortcut Ctrl+K for search
+      // --- Keyboard shortcut Ctrl+K for search ---
       document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
           e.preventDefault();
@@ -6481,7 +4984,9 @@ EdgeConnect требует следующей сетевой связности.
           }
         }
       });
-    });
+
+      // TOC title renaming handled via CSS (see extra style block above)
+    })();
   </script>
 
   </body>

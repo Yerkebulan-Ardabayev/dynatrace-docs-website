@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
       
       
         <meta name="author" content="Yerkebulan Ardabayev">
@@ -25,11 +25,11 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Dashboards - Dynatrace — Документация</title>
+        <title>Панели управления - Dynatrace — Документация</title>
       
     
     
@@ -91,7 +91,10 @@
       flex-shrink: 0;
     }
 
-    /* Search Ctrl+K badge */
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
     .md-search__form::after {
       content: 'Ctrl+K';
       display: none;
@@ -101,11 +104,14 @@
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color);
       font-size: 10px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'JetBrains Mono', monospace;
       color: var(--md-default-fg-color--lighter);
-      margin-right: 0.5rem;
       white-space: nowrap;
       pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
     }
     @media (min-width: 60em) {
       .md-search__form::after {
@@ -113,12 +119,13 @@
       }
     }
 
-    /* Version selector in header */
-    .docflow-version-select {
+    /* Managed label — non-interactive indicator */
+    .docflow-managed-label {
       display: none;
       align-items: center;
+      gap: 0.375rem;
       margin-left: 0.5rem;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color--lighter);
@@ -126,28 +133,34 @@
       font-size: 0.75rem;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237e7c98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.4rem center;
-      padding-right: 1.5rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .docflow-managed-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--md-accent-fg-color);
+      flex-shrink: 0;
     }
     @media (min-width: 60em) {
-      .docflow-version-select {
+      .docflow-managed-label {
         display: flex;
       }
     }
-    .docflow-version-select:hover {
-      border-color: var(--md-primary-fg-color--light);
-      color: var(--md-default-fg-color);
-    }
-    .docflow-version-select:focus {
-      outline: none;
-      border-color: var(--md-primary-fg-color);
-      box-shadow: 0 0 0 3px var(--docflow-glow-primary);
+
+    /* Reading progress bar */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #14b8a6, #7c3aed);
+      z-index: 1001;
+      transition: width 0.05s linear;
+      pointer-events: none;
     }
   </style>
 
@@ -185,7 +198,7 @@
 
   
 
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
     <a href="../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -207,7 +220,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dashboards
+              Панели управления
             
           </span>
         </div>
@@ -220,20 +233,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -307,379 +320,14 @@
     
   </nav>
   
-    
-      
-<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Главная
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Начало работы
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../managed/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Managed
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../platform/grail/dynatrace-grail/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Платформа
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../observe/infrastructure-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Наблюдаемость
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Dynatrace Intelligence
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-    
-  
-  
-    
-    
-      
-  
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Анализ и автоматизация
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ingest-from/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Источники данных
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../deliver/configuration-as-code/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Deliver
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../secure/threat-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Безопасность
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../manage/hub/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Управление
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../dynatrace-api/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  API
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../whats-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Что нового
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../ai/groq/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  AI Помощник
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
 </header>
     
 
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -693,10 +341,8 @@
                     
 
 
-  
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -773,16 +419,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -804,7 +454,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -837,7 +487,7 @@
   <span class="md-ellipsis">
     
   
-    Начало работы
+    🚀 Быстрый старт
   
 
     
@@ -975,16 +625,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1006,7 +660,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1235,7 +889,7 @@
   <span class="md-ellipsis">
     
   
-    Лицензия
+    Лицензия Managed
   
 
     
@@ -1277,19 +931,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1335,20 +993,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../platform/grail/dynatrace-grail/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1362,78 +1021,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Grail
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../platform/grail/dynatrace-grail/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Что такое Grail
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../platform/grail/dynatrace-query-language/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Язык запросов DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1552,19 +1145,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1618,20 +1215,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../observe/infrastructure-observability/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1645,190 +1243,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Инфраструктура
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Хосты и операции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Облачный мониторинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes Classic
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Базы данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1852,20 +1272,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1879,78 +1300,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Приложения
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Распределённая трассировка
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/application-observability/services/services-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Сервисы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1974,20 +1329,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../observe/digital-experience/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2001,78 +1357,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Цифровой опыт
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/digital-experience/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Синтетическое приложение
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2139,19 +1429,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2211,20 +1505,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2238,274 +1533,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Обнаружение аномалий
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Настройка чувствительности
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение Anomaly Detection
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфигурация
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Адаптивные пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Многомерный бейзлайн
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    События метрик
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Статические пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Оптимизация DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2535,20 +1568,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../dynatrace-intelligence/copilot/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2562,162 +1596,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Davis Copilot
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dynatrace Assist
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфиденциальность
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы на естественном языке
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2771,20 +1655,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2798,106 +1683,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Анализ первопричин
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Анализ событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2918,7 +1709,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграции
+    Интеграции Davis AI
   
 
     
@@ -2949,20 +1740,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2976,78 +1768,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Справочник
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AI модели
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лимиты
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3093,10 +1819,9 @@
         
         
       
-      
-        
-      
     
+    
+      
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
@@ -3159,22 +1884,18 @@
     
     
       
-      
-        
-          
-          
-        
-      
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
             
   
   
@@ -3219,6 +1940,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -3235,6 +1974,213 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разрешения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Плитки дашборда
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сценарии использования
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Горячие клавиши
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Список дашбордов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Взаимодействие с дашбордом
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Взаимодействие с дашбордом">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Отображение и навигация
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Обновление
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Редактирование "только для чтения"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Временной интервал
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сегменты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Настройки дашборда
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Запуск кода
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Скачивание результата
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Управление дашбордами
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Управление дашбордами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API: лучшие практики
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3255,7 +2201,7 @@
   <span class="md-ellipsis">
     
   
-    API
+    Document API
   
 
     
@@ -3382,23 +2328,21 @@
     
     
       
+    
+    
       
         
-          
-          
         
       
     
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
-            
+  
+  
+  
+    <a href="../../logs/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3412,134 +2356,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Логи
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../logs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Log Analytics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../logs/lma-logs-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение журналов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../logs/lma-logs-app/facets/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Фильтры
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../logs/lma-logs-app/query-and-filter/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3712,19 +2534,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -3767,7 +2593,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
+    Обзор источников данных
   
 
     
@@ -3869,19 +2695,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -3929,20 +2759,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../deliver/configuration-as-code/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3956,194 +2787,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Configuration as Code
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
       
-        
+        <span class="md-nav__icon md-icon"></span>
       
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Monaco
+    </a>
   
 
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Monaco
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4167,150 +2816,21 @@
     
     
       
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Terraform
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Terraform
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CLI команды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
         
-      
         
       
     
-    
-    
-      
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
+  
+  
+    <a href="../../../deliver/service-level-objectives/" class="md-nav__link">
       
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -4324,78 +2844,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    SLO
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/service-level-objectives/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/service-level-objectives/create-slo/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Создание SLO
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4419,20 +2873,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../deliver/site-reliability-guardian/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4446,78 +2901,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Site Reliability Guardian
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/site-reliability-guardian/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Структура событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4569,20 +2958,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../deliver/release-monitoring/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4596,78 +2986,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Мониторинг релизов
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/release-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Мониторинг релизов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4726,19 +3050,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -4809,7 +3137,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграция
+    Приём событий безопасности
   
 
     
@@ -4847,19 +3175,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
             
   
   
@@ -4941,20 +3273,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../license/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4968,190 +3301,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Лицензирование
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лицензия
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/capabilities/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Возможности DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/billing-reports/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Биллинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/budget-alerts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Бюджетные оповещения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/license-lifecycle/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Жизненный цикл
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../license/dps-permissions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Разрешения DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -5182,19 +3337,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
             
   
   
@@ -5303,23 +3462,33 @@
       
         
       
-    
-    
-    
+        
       
+        
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
         
           
-          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
             
   
   
@@ -5362,35 +3531,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../whats-new/saas/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SaaS
+    Все обновления
   
 
     
@@ -5418,7 +3559,7 @@
   <span class="md-ellipsis">
     
   
-    OneAgent
+    Обновления OneAgent
   
 
     
@@ -5447,6 +3588,225 @@
     
   
     ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../whats-new/dynatrace-operator/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Operator
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../whats-new/edgeconnect/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EdgeConnect
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../whats-new/technology/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Технологии
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Новые статьи
   
 
     
@@ -5513,6 +3873,202 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разрешения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Плитки дашборда
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сценарии использования
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Горячие клавиши
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Список дашбордов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Взаимодействие с дашбордом
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Взаимодействие с дашбордом">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Отображение и навигация
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Обновление
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Редактирование "только для чтения"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Временной интервал
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сегменты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Настройки дашборда
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Запуск кода
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Скачивание результата
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Управление дашбордами
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Управление дашбордами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API: лучшие практики
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -5605,88 +4161,62 @@
 
 
 <h1 id="dashboards">Dashboards<a class="headerlink" href="#dashboards" title="Permanent link">&para;</a></h1>
-<h1 id="dashboards_1">Dashboards<a class="headerlink" href="#dashboards_1" title="Permanent link">&para;</a></h1>
-<ul>
-<li>Последняя версия Dynatrace</li>
-<li>Приложение</li>
-<li>Чтение: 10 мин</li>
-<li>Обновлено 28 янв. 2026</li>
-</ul>
-<p>Предварительные требования</p>
 <h3 id="_1">Разрешения<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>В следующей таблице описаны необходимые разрешения.</p>
-<p>app-engine:functions:run</p>
-<p>Позволяет пользователю запускать функции</p>
-<p>app-engine:apps:run</p>
-<p>Позволяет пользователю запускать функции</p>
-<p>app-engine:edge-connects:read</p>
-<p>Позволяет пользователю читать конфигурацию EdgeConnect через функции</p>
-<p>document:environment-shares:read</p>
-<p>Позволяет пользователю получать доступ к общим дашбордам</p>
-<p>document:direct-shares:read</p>
-<p>Позволяет пользователю получать доступ к общим дашбордам</p>
-<p>state:user-app-states:write</p>
-<p>Позволяет приложению сохранять настройки отображения, такие как выбранный временной интервал или значения переменных</p>
-<p>state:user-app-states:read</p>
-<p>Позволяет приложению читать настройки отображения, такие как выбранный временной интервал или значения переменных</p>
-<p>state:user-app-states:delete</p>
-<p>Позволяет приложению удалять настройки отображения, такие как выбранный временной интервал или значения переменных</p>
-<p>davis:analyzers:read</p>
-<p>Позволяет пользователю читать конфигурацию анализаторов Davis</p>
-<p>davis:analyzers:execute</p>
-<p>Позволяет пользователю запускать анализаторы Davis</p>
-<p>Начало работы</p>
-<p>Основные понятия</p>
-<p>Сценарии использования</p>
-<p>С помощью <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> вы можете создавать мощные документы на основе данных для пользовательской аналитики.</p>
-<p><img alt="Получайте аналитику в реальном времени, преобразуя сложные данные в динамические интерактивные дашборды." src="https://dt-cdn.net/hub/00_General.png" /><img alt="Начните быстро с помощью наших готовых дашбордов, разработанных для ваших повседневных задач." src="https://dt-cdn.net/hub/01_Ready_made.png" /><img alt="Создавайте дашборды без усилий всего за несколько кликов." src="https://dt-cdn.net/hub/02_Explore.png" /><img alt="Настраивайте любую визуализацию с лёгкостью." src="https://dt-cdn.net/hub/03_Customize.png" /><img alt="Используйте динамические и интерактивные дашборды с гибкой фильтрацией переменных." src="https://dt-cdn.net/hub/04_Variables.png" /><img alt="Делитесь своими результатами с другими за считанные секунды." src="https://dt-cdn.net/hub/05_Share.png" /></p>
-<p>1 из 6 Получайте аналитику в реальном времени, преобразуя сложные данные в динамические интерактивные дашборды.</p>
+<table>
+<thead>
+<tr>
+<th>Разрешение</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>app-engine:functions:run</td>
+<td>Запуск функций</td>
+</tr>
+<tr>
+<td>app-engine:apps:run</td>
+<td>Запуск приложений</td>
+</tr>
+<tr>
+<td>app-engine:edge-connects:read</td>
+<td>Чтение конфигурации EdgeConnect</td>
+</tr>
+<tr>
+<td>document:environment-shares:read</td>
+<td>Доступ к общим дашбордам</td>
+</tr>
+<tr>
+<td>document:direct-shares:read</td>
+<td>Доступ к общим дашбордам</td>
+</tr>
+<tr>
+<td>state:user-app-states:write/read/delete</td>
+<td>Настройки отображения (временной интервал, переменные)</td>
+</tr>
+<tr>
+<td>davis:analyzers:read/execute</td>
+<td>Чтение и запуск анализаторов Davis</td>
+</tr>
+</tbody>
+</table>
 <h2 id="_2">Плитки дашборда<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>В <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> дашборд может состоять из нескольких плиток:</p>
 <ul>
-<li><a href="#explore">Explore</a>: исследуйте данные, такие как логи, метрики и бизнес-события, с помощью нашего интерфейса «укажи и щёлкни».</li>
-<li><a href="#query">Запрос</a>: отображает данные, полученные через Grail.</li>
-<li><a href="#code">Код</a>: отображает данные, возвращённые кодом, выполненным через функции Dynatrace.</li>
-<li><a href="#markdown">Markdown</a>: статический контент, редактируемый в формате Markdown.</li>
+<li><strong>Explore</strong> -- исследование данных (логи, метрики, бизнес-события) через интерфейс "укажи и щелкни". Подробнее: <a href="../explore-data/">Исследование данных</a>.</li>
+<li><strong>Запрос</strong> -- DQL-запросы к Grail. Используйте <strong>Ctrl</strong>+<strong>Space</strong> для автодополнения. Временной интервал управляется через выпадающий список.</li>
+<li><strong>Код</strong> -- получение данных через функции Dynatrace.</li>
+<li><strong>Markdown</strong> -- статический контент с форматированием, ссылками и изображениями. Синтаксис ссылок: <code>[label](address)</code>.</li>
 </ul>
-<h3 id="explore">Плитка Explore<a class="headerlink" href="#explore" title="Permanent link">&para;</a></h3>
-<p>Вы можете использовать возможности Explore для исследования логов, метрик, бизнес-событий и многого другого с помощью нашего интерфейса «укажи и щёлкни». Без знания DQL или программирования вы можете создавать и начинать использовать плитки дашборда за считанные минуты.</p>
-<p>Для получения дополнительной информации у нас есть отдельная страница <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data" title="Explore your data with our point-and-click interface.">Исследование данных</a>, которая показывает, как создавать плитки Explore.</p>
-<h3 id="_3">Плитка запроса<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>Плитки запросов позволяют легко запрашивать данные из Grail и <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations" title="Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.">визуализировать</a> результаты различными способами.</p>
-<p>Плитка запроса состоит из поля ввода запроса, в котором вы можете написать DQL-запрос. В поле ввода запроса используйте <strong>Ctrl</strong>+<strong>Space</strong> для вызова автодополнения в любой момент.</p>
-<p>Вы можете управлять временным интервалом запроса через выпадающий список временных интервалов. Если временной интервал определён в самом запросе, выпадающий список отключается.</p>
-<h3 id="_4">Плитка кода<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>Раздел кода позволяет получать данные для вашего дашборда с помощью функций Dynatrace.</p>
-<h3 id="markdown">Плитка Markdown<a class="headerlink" href="#markdown" title="Permanent link">&para;</a></h3>
-<p>Раздел Markdown может быть чем угодно — от небольшой заметки о чём-то на дашборде до целой страницы форматированной информации со ссылками и изображениями.</p>
+<h2 id="_3">Сценарии использования<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Легко редактировать</li>
-<li>Привлекательный внешний вид</li>
+<li>Готовые дашборды для мониторинга в реальном времени</li>
+<li>Создание пользовательских дашбордов через редактор или Davis CoPilot</li>
+<li>Интеграция с другими приложениями Dynatrace</li>
+<li>Davis AI для обнаружения аномалий и прогнозирования</li>
+<li>Поиск и комбинирование данных с внешними источниками</li>
+<li>Фильтры переменных для мониторинга различных ресурсов</li>
 </ul>
-<p>Чтобы вставить запросы с вашего дашборда с автодополнением, используйте <strong>Ctrl</strong>+<strong>Space</strong>.</p>
-<p>Вы можете добавлять ссылки на другие места в вашем дашборде и за его пределами.</p>
-<p>Синтаксис ссылок Markdown</p>
-<p>Ссылка в Markdown — это метка и адрес в формате <code>[label](address)</code>, где:</p>
-<ul>
-<li><code>label</code> — произвольный текст, отображаемый на ссылке в вашей плитке или разделе Markdown</li>
-<li><code>address</code> указывает, что открывать при переходе по ссылке, например, веб-сайт или приложение Dynatrace</li>
-</ul>
-<h2 id="_5">Сценарии использования<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>Dashboards позволяет вам:</p>
-<ul>
-<li>Использовать готовые дашборды для мониторинга состояния вашей системы в реальном времени.</li>
-<li>Создавать пользовательские дашборды без усилий с помощью удобного редактора или Davis CoPilot.</li>
-<li>Детально анализировать данные благодаря бесшовной интеграции с другими приложениями Dynatrace.</li>
-<li>Использовать возможности Davis AI для обнаружения аномалий и прогнозирования непосредственно на ваших графиках.</li>
-<li>Искать любые типы данных по всей платформе и комбинировать их даже с внешними данными в одном представлении.</li>
-<li>Настраивать фильтры переменных для мониторинга различных ресурсов в рамках одного дашборда.</li>
-</ul>
-<p>Эти процедуры описывают основы использования <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> и помогут вам начать настройку и создание собственных дашбордов.</p>
-<h2 id="_6">Использование дашбордов<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<h3 id="_7">Горячие клавиши<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>Горячие клавиши помогают работать быстрее в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</p>
-<p>Чтобы вывести список горячих клавиш, в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> откройте меню  и выберите  <strong>Keyboard shortcuts</strong> или используйте горячую клавишу <strong>Shift</strong>+<strong>?</strong></p>
+<h2 id="_4">Горячие клавиши<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -5696,1040 +4226,107 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Общие</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>Множественный выбор плиток</td>
-<td>Выберите плитку, нажмите <strong>Space</strong>, чтобы получить двойную рамку вокруг плитки, используйте клавиши-стрелки для перехода к другой плитке, затем снова нажмите <strong>Space</strong> для выбора нескольких плиток</td>
-</tr>
-<tr>
 <td>Выбрать все плитки</td>
 <td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>A</strong></td>
 </tr>
 <tr>
-<td>Удалить выбранные плитки</td>
+<td>Удалить выбранные</td>
 <td><strong>Del</strong></td>
 </tr>
 <tr>
-<td>Копировать выбранные плитки в буфер обмена</td>
-<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>C</strong></td>
-</tr>
-<tr>
-<td>Вставить плитки из буфера обмена</td>
-<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>V</strong></td>
+<td>Копировать/Вставить</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>C</strong>/<strong>V</strong></td>
 </tr>
 <tr>
 <td>Добавить плитку</td>
 <td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Shift</strong>+<strong>Enter</strong></td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Плитки кода</strong></td>
-<td></td>
-</tr>
-<tr>
 <td>Добавить код</td>
 <td><strong>Shift</strong>+<strong>C</strong></td>
-</tr>
-<tr>
-<td>Выполнить код</td>
-<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Enter</strong></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Плитки данных</strong></td>
-<td></td>
 </tr>
 <tr>
 <td>Добавить запрос</td>
 <td><strong>Shift</strong>+<strong>D</strong></td>
 </tr>
 <tr>
-<td>Выполнить запрос</td>
-<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Enter</strong></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Плитки Markdown</strong></td>
-<td></td>
-</tr>
-<tr>
 <td>Добавить Markdown</td>
 <td><strong>Shift</strong>+<strong>M</strong></td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Плитки целей уровня обслуживания</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>Добавить цель уровня обслуживания</td>
+<td>Добавить SLO</td>
 <td><strong>Shift</strong>+<strong>S</strong></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Переменные</strong></td>
-<td></td>
 </tr>
 <tr>
 <td>Добавить переменную</td>
 <td><strong>Shift</strong>+<strong>V</strong></td>
 </tr>
+<tr>
+<td>Выполнить запрос/код</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Enter</strong></td>
+</tr>
+<tr>
+<td>Показать горячие клавиши</td>
+<td><strong>Shift</strong>+<strong>?</strong></td>
+</tr>
 </tbody>
 </table>
-<h3 id="_8">Список дашбордов<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<h4 id="_9">Список всех дашбордов<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
-<p>Чтобы вывести список дашбордов</p>
-<ol>
-<li>Перейдите в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
-<li>На панели <strong>Dashboards</strong> в разделе <strong>Last opened by you</strong> перечислены недавно открытые дашборды.</li>
-<li>Наведите курсор на название дашборда и выберите  для отображения меню доступных команд для этого дашборда. В этом примере мы отобразим меню для дашборда с названием <code>my dashboard 3</code>.</li>
-</ol>
-<p><img alt="Dashboards: Last opened by you: контекстное меню дашборда" src="https://dt-cdn.net/images/dashboards-last-opened-by-you-dashboard-specific-menu-269-08e78a134c.png" /></p>
-<p>Команды, которые вы видите в меню, зависят от ваших разрешений для данного дашборда. Например, вы не можете переименовать чужой дашборд, если владелец не предоставил вам права на редактирование. (Но вы <em>можете</em> сделать копию общего дашборда и редактировать свою копию.)</p>
+<h2 id="_5">Список дашбордов<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Rename</strong> позволяет редактировать название дашборда</li>
-<li><strong>Duplicate</strong> создаёт копию дашборда</li>
-<li><strong>Download</strong> сохраняет дашборд в JSON-файл, который можно импортировать</li>
-<li><strong>Change owner</strong> передаёт владение дашбордом новому владельцу</li>
-<li><strong>Move to trash</strong> перемещает дашборд в корзину</li>
+<li><strong>Last opened by you</strong> -- недавние дашборды. Контекстное меню: Rename, Duplicate, Download, Change owner, Move to trash.</li>
+<li><strong>All dashboards</strong> -- таблица всех доступных дашбордов. Фильтры: Owned by anyone/me, Shared with me, Ready-made.</li>
+<li>Готовые дашборды -- только для чтения, созданы Dynatrace как примеры.</li>
 </ul>
-<p>Значок  после названия дашборда означает, что кто-то поделился этим дашбордом с вами.
-4. Чтобы отобразить таблицу всех дашбордов, к которым у вас есть доступ — ваших собственных дашбордов и всех дашбордов, которыми с вами поделились — выберите  <strong>All dashboards</strong>.</p>
+<h2 id="_6">Взаимодействие с дашбордом<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">Отображение и навигация<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>Откройте дашборд выбрав его название. Плитки можно развернуть (<strong>Maximize</strong>) и свернуть (<strong>Minimize</strong>).</p>
+<h3 id="_8">Обновление<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Чтобы отсортировать таблицу, выберите заголовок <strong>Name</strong>, <strong>Created</strong> или <strong>Last modified</strong>.</li>
-<li>
-<p>Чтобы отфильтровать таблицу:</p>
+<li>Ручное: нажмите кнопку обновления.</li>
+<li>Автоматическое: выберите частоту обновления (сохраняется между сеансами).</li>
+</ul>
+<h3 id="_9">Редактирование "только для чтения"<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>Дашборды без прав на запись можно редактировать в текущем сеансе, затем <strong>Save as new</strong> или <strong>Discard changes</strong>.</p>
+<h3 id="_10">Временной интервал<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Вы можете ввести строку поиска в строке фильтра  в верхней части таблицы.</li>
-<li>Вы можете выбрать <strong>Owned by anyone</strong>, <strong>Owned by me</strong> или <strong>Shared with me</strong> в списке в верхней части таблицы.</li>
-<li>Чтобы создать новый дашборд, выберите  <strong>Dashboard</strong> в верхнем левом углу.</li>
-<li>Чтобы загрузить дашборд, выберите  <strong>Upload</strong> в верхнем левом углу.</li>
-<li>Чтобы удалить дашборд, выберите  <strong>Move to trash</strong>. Если значка  нет для дашборда, это означает, что у вас есть разрешение на просмотр этого общего дашборда, но не на его удаление.</li>
-<li>
-<p>Чтобы вывести список удалённых дашбордов, выберите вкладку <strong>Deleted</strong> на странице <strong>Dashboards</strong>.</p>
-</li>
-<li>
-<p>Чтобы восстановить удалённый дашборд, выберите  <strong>Restore</strong>.</p>
-</li>
-<li>Чтобы окончательно удалить дашборд, выберите  <strong>Delete permanently</strong>.</li>
+<li>По умолчанию: <strong>Last 2 hours</strong>.</li>
+<li>Глобальный интервал: селектор в правом верхнем углу (стандартный или пользовательский).</li>
+<li>Интервал дашборда по умолчанию: <strong>Settings</strong> &gt; <strong>Custom timeframe</strong>.</li>
+<li>Интервал плитки: переопределяет глобальный. Включите <strong>Custom timeframe</strong> в панели редактирования плитки.</li>
+<li>DQL-интервал: <code>fetch [recordtype], from:now() - 2h</code> отключает интерфейсную настройку.</li>
 </ul>
-</li>
-</ul>
-<h4 id="_10">Список моих дашбордов<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
-<p>Чтобы вывести список всех ваших дашбордов</p>
-<ol>
-<li>Перейдите в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
-<li>На панели <strong>Dashboards</strong> выберите  <strong>All dashboards</strong>.</li>
-<li>В верхней части таблицы <strong>Dashboards</strong> выберите <strong>Owned by me</strong>.</li>
-</ol>
-<h4 id="_11">Список дашбордов, доступных мне<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
-<p>Чтобы вывести список всех дашбордов, которыми с вами поделились</p>
-<ol>
-<li>Перейдите в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
-<li>На панели <strong>Dashboards</strong> выберите  <strong>All dashboards</strong>.</li>
-<li>В верхней части таблицы <strong>Dashboards</strong> выберите <strong>Shared with me</strong>.</li>
-</ol>
-<h4 id="_12">Список готовых дашбордов<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
-<p>Чтобы вывести список всех готовых дашбордов</p>
-<ol>
-<li>Перейдите в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
-<li>На панели <strong>Dashboards</strong> выберите  <strong>Ready-made dashboards</strong>.</li>
-</ol>
-<p>Также вы можете выбрать  <strong>All dashboards</strong> и затем изменить фильтр в верхней части таблицы с <strong>All dashboards</strong> на <strong>Ready-made</strong>.</p>
-<p>Особенности готовых документов</p>
+<h3 id="_11">Сегменты<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>Фильтрация данных на уровне дашборда или плитки. Плитка переопределяет дашборд.</p>
 <ul>
-<li>Созданы и автоматически распространены Dynatrace в качестве примеров и шаблонов.</li>
-<li>Только для чтения: вы можете редактировать их в рамках текущего сеанса и сохранить копию с вашими изменениями, но не можете сохранить изменения в оригинальном документе.</li>
-<li>Значок  в таблице документов указывает на то, что это готовый документ.</li>
+<li><strong>Сегменты</strong> -- повторно используемые фильтры (K8s кластеры, пространства имен). Автоматически применяются поверх запросов.</li>
+<li><strong>Переменные</strong> -- полный контроль над запросом: оператор (equals, contains, startsWith, endsWith), логика (AND, OR), взаимозависимость фильтров.</li>
 </ul>
-<h3 id="_13">Отображение дашборда<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p>Чтобы отобразить дашборд</p>
-<ol>
-<li>Перейдите в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
-<li>Выберите название дашборда. В этом примере мы откроем <code>my dashboard 2</code>.</li>
-</ol>
-<p><img alt="Открытие дашборда" src="https://dt-cdn.net/images/open-my-dashboard-2-264-194755db23.png" /></p>
-<h3 id="_14">Взаимодействие с плиткой<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
-<p>Если вы видите на дашборде что-то, что хотите рассмотреть подробнее, вы можете развернуть плитку на весь экран, а затем свернуть её обратно.</p>
-<p>При развёртывании плитки она временно увеличивается до максимального размера экрана, чтобы вы могли видеть детали выбранной плитки.</p>
-<p>Чтобы развернуть плитку</p>
-<ol>
-<li>Наведите курсор на плитку, чтобы отобразить команды плитки.</li>
-<li>Выберите  <strong>Maximize</strong>.</li>
-</ol>
-<p>Чтобы вернуться к обычному виду дашборда, выберите <strong>Minimize</strong> в правом верхнем углу.</p>
-<h3 id="_15">Обновление дашборда<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
-<p>При первом открытии дашборда частота обновления установлена в <code>Off</code> (без автоматического обновления).</p>
-<h4 id="_16">Обновление вручную<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
-<p>Чтобы обновить текущий дашборд вручную, в правом верхнем углу дашборда выберите  (в паре  ).</p>
-<h4 id="_17">Автоматическое обновление<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
-<p>Чтобы обновлять текущий дашборд автоматически, в правом верхнем углу дашборда выберите  (в паре  ) и выберите частоту обновления.</p>
+<p>Уровень дашборда: откройте селектор сегментов вверху, выберите сегменты, нажмите <strong>Apply</strong>.
+Уровень плитки: редактирование плитки &gt; <strong>Custom segments</strong>.</p>
+<h3 id="_12">Настройки дашборда<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p><strong>Settings</strong> в правом верхнем углу: Custom timeframe, Default segment, Variables.</p>
+<h3 id="_13">Запуск кода<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>При открытии чужого дашборда с кодом требуется просмотр: <strong>Review all code</strong> &gt; <strong>Accept and run</strong> (разово или <strong>Always trust code in this document</strong>).</p>
+<h3 id="_14">Скачивание результата<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>Меню плитки &gt; <strong>Download result</strong>: CSV, CSV (raw), JSON.</p>
+<h2 id="_15">Управление дашбордами<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>Off</code> отключает автоматическое обновление</li>
-<li>Другие параметры обновляют дашборд с указанным интервалом</li>
+<li><strong>Dock</strong>: меню дашборда &gt; <strong>Add to dock</strong> для быстрого доступа.</li>
+<li><strong>Переименование</strong>: наведите на название &gt; <strong>Rename</strong>.</li>
+<li><strong>Дублирование</strong>: меню &gt; <strong>Make a copy</strong> или <strong>Duplicate</strong>.</li>
+<li><strong>Совместный доступ</strong>: Access for all (view-only), Share access (список пользователей/групп), Share links. Подробнее: Совместный доступ к документам.</li>
+<li><strong>Версии</strong>: автоматическое сохранение, до 50 версий, 30 дней. Меню <img alt="History" src="https://dt-cdn.net/images/history-icon-dc67cc1e2c.svg" title="History" />: Preview, Restore, Make a copy, Download, Delete.</li>
+<li><strong>Смена владельца</strong>: меню &gt; <strong>Change owner</strong>. Вы немедленно теряете доступ.</li>
+<li><strong>Скачивание</strong>: меню &gt; <strong>Download</strong> (JSON).</li>
+<li><strong>Загрузка</strong>: панель Dashboards &gt; <strong>Upload</strong> (JSON).</li>
+<li><strong>Удаление</strong>: <strong>All dashboards</strong> &gt; <strong>Move to trash</strong>.</li>
 </ul>
-<p>Если вы измените частоту обновления, она будет сохранена при следующем открытии дашборда.</p>
-<p>Частое обновление может поддерживать данные в актуальном состоянии, но для сложного дашборда пересчёт при каждом обновлении может занять некоторое время. Выберите частоту обновления, которая соответствует вашим потребностям и сложности дашборда.</p>
-<h3 id="_18">Редактирование дашбордов «только для чтения»<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
-<p>Когда вы открываете документ (дашборд или блокнот), для которого у вас нет прав на запись, вы всё равно можете редактировать документ в рамках текущего сеанса. После завершения у вас есть два варианта:</p>
+<h3 id="api">API: лучшие практики<a class="headerlink" href="#api" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Сохранить изменения в новом документе</li>
-<li>Отменить изменения</li>
+<li>Создайте дашборд в UI, затем скачайте конфигурацию.</li>
+<li>Проверяйте изменения через Upload.</li>
+<li>Избегайте пустых вертикальных пространств в макете.</li>
 </ul>
-<p>Пример:</p>
-<ol>
-<li>Перейдите в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>, откройте список готовых дашбордов и выберите дашборд <strong>Getting started</strong>.</li>
-</ol>
-<p>В верхнем левом углу рядом с названием документа отображается надпись  <strong>Ready-made</strong>.
-2. Выберите плитку с круговой диаграммой, затем выберите  <strong>Edit</strong>.
-3. Измените визуализацию с Pie на Donut.</p>
-<p>Теперь вам предлагаются две кнопки: <strong>Save as new</strong> и <strong>Discard changes</strong>.
-4. Используйте обновлённый дашборд по мере необходимости. У вас есть полный доступ к редактированию в рамках этого сеанса.
-5. Когда закончите, выберите, что делать с вашими изменениями:</p>
-<ul>
-<li><strong>Save as new</strong> — сохраняет ваши изменения в новой копии отредактированного дашборда.</li>
-<li><strong>Discard changes</strong> — отменяет ваши изменения и возвращает вас к нередактированному дашборду «только для чтения».</li>
-</ul>
-<h3 id="_19">Выбор временного интервала<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
-<p>Чтобы просмотреть или изменить настройки, применяемые ко всему дашборду</p>
-<ol>
-<li>Отобразите дашборд.</li>
-<li>В правом верхнем углу дашборда выберите  <strong>Settings</strong>.</li>
-</ol>
-<p>Отобразится панель <strong>Settings</strong>.
-3. Просмотрите или измените настройки по мере необходимости.</p>
-<p>Пользовательский временной интервал</p>
-<p>Чтобы установить временной интервал по умолчанию для дашборда</p>
-<ol>
-<li>Отобразите дашборд.</li>
-<li>В правом верхнем углу дашборда выберите  <strong>Settings</strong>.</li>
-<li>Включите <strong>Custom timeframe</strong>.</li>
-<li>
-<p>Выберите временной интервал по умолчанию для выбранного дашборда.</p>
-<p>Изменение этого параметра не приводит к немедленному обновлению временного интервала текущего дашборда. Изменение применяется только к новому сеансу работы с дашбордом (для другого пользователя или для того же пользователя при повторном открытии дашборда).</p>
-</li>
-</ol>
-<p>Подробнее о временных интервалах дашборда см. в разделе <a href="#dashboard-timeframe">Выбор временного интервала</a>.</p>
-<p>Сегмент по умолчанию</p>
-<p>Чтобы просмотреть или изменить сегмент дашборда по умолчанию</p>
-<ol>
-<li>Отобразите дашборд.</li>
-<li>В правом верхнем углу дашборда выберите  <strong>Settings</strong>.</li>
-<li>Включите <strong>Default segment</strong>.</li>
-<li>
-<p>Выберите сегмент по умолчанию для выбранного дашборда.</p>
-<p>Изменение этого параметра не приводит к немедленному обновлению сегмента текущего дашборда. Изменение применяется только к новому сеансу работы с дашбордом (для другого пользователя или для того же пользователя при повторном открытии дашборда).</p>
-</li>
-</ol>
-<p>Подробнее о сегментах дашборда см. в разделе <a href="#segment">Выбор сегментов</a>.</p>
-<p>{$} Переменные</p>
-<p>Чтобы просмотреть или изменить переменные дашборда</p>
-<ol>
-<li>Отобразите дашборд.</li>
-<li>
-<p>В правом верхнем углу дашборда выберите  <strong>Settings</strong>.</p>
-<p>Отобразится панель <strong>Settings</strong>.
-   3. Выберите <strong>Variables</strong>.</p>
-</li>
-</ol>
-<p>Подробнее о переменных дашборда см. в разделе <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable" title="Add variables to your Dynatrace dashboards.">Добавление переменной в дашборд</a>.</p>
-<p>Временной интервал описывает <em>когда</em> были получены данные, отображаемые на дашборде.</p>
-<ul>
-<li>При первом открытии дашборда применяется стандартный глобальный временной интервал (<strong>Last 2 hours</strong>).</li>
-<li>Если вы измените глобальный временной интервал для вашего дашборда, этот интервал будет применён при следующем открытии дашборда. Однако существуют исключения, описанные ниже.</li>
-<li>Вы можете <a href="#timeframe-dashboard">установить временной интервал по умолчанию для конкретного дашборда</a>, который будет применяться при каждом последующем открытии дашборда.</li>
-<li>Вы можете <a href="#timeframe-tile">установить временной интервал для конкретной плитки</a>. Этот параметр переопределяет глобальный временной интервал.</li>
-<li>Когда вы открываете дашборд по ссылке, если в ссылке указан временной интервал, применяется интервал из ссылки, а временной интервал дашборда по умолчанию игнорируется.</li>
-</ul>
-<h4 id="_20">Изменение глобального временного интервала<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
-<p>Чтобы изменить глобальный временной интервал</p>
-<ol>
-<li>В правом верхнем углу дашборда откройте селектор временного интервала (по умолчанию <strong>Last 2 hours</strong> ).</li>
-<li>
-<p>Выберите новый временной интервал.</p>
-</li>
-<li>
-<p>Чтобы выбрать стандартный временной интервал, выберите один из стандартных <strong>Relative timeframes</strong></p>
-</li>
-<li>
-<p>Чтобы определить пользовательский временной интервал, задайте интервал на панели <strong>Custom timeframe</strong> и выберите <strong>Apply</strong>.</p>
-<ul>
-<li>Используйте кнопки календаря <img alt="Calendar" src="https://dt-cdn.net/images/dashboards-app-dashboard-timeframe-calendar-b05d935595.svg" title="Calendar" /> для выбора дат</li>
-<li>Измените настройки <strong>From</strong> и <strong>To</strong> для точной настройки диапазона</li>
-</ul>
-</li>
-</ol>
-<p>При изменении глобального временного интервала:</p>
-<ul>
-<li>Новый временной интервал отображается в правом верхнем углу дашборда.</li>
-<li>Содержимое дашборда пересчитывается и отображается в соответствии с новым временным интервалом. Это переопределяет временной интервал дашборда по умолчанию.</li>
-<li>Это не влияет на переопределения временного интервала для отдельных плиток. Временные интервалы плиток имеют приоритет над любыми глобальными настройками.</li>
-</ul>
-<h4 id="_21">Временной интервал дашборда по умолчанию<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
-<p>Чтобы установить временной интервал по умолчанию для дашборда</p>
-<ol>
-<li>Отобразите дашборд.</li>
-<li>В правом верхнем углу дашборда выберите  <strong>Settings</strong>.</li>
-<li>Включите <strong>Custom timeframe</strong>.</li>
-<li>Выберите временной интервал по умолчанию для выбранного дашборда.</li>
-</ol>
-<p>Изменение этого параметра не приводит к немедленному обновлению временного интервала текущего дашборда. Изменение применяется только к новому сеансу работы с дашбордом (для другого пользователя или для того же пользователя при повторном открытии дашборда).</p>
-<h4 id="_22">Переопределение временного интервала для конкретной плитки<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
-<p>Чтобы указать пользовательский временной интервал в плитке дашборда</p>
-<ol>
-<li>Отредактируйте плитку.</li>
-<li>В панели редактирования включите <strong>Custom timeframe</strong>.</li>
-<li>Выберите временной интервал для применения к выбранной плитке.</li>
-</ol>
-<p>Этот временной интервал переопределяет временной интервал дашборда, установленный в правом верхнем углу. С помощью этого метода дашборд может иметь несколько плиток, каждая со своим собственным временным интервалом.</p>
-<p>Вы также можете указать пользовательский временной интервал в DQL-запросе плитки данных. Если вы используете этот метод (с временным интервалом, указанным в запросе), указанная выше настройка интерфейса отключается и используется временной интервал из запроса.</p>
-<p>Пример указания временного интервала в DQL:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>fetch [recordtype], from:now() - 2h
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>| ....
-</code></pre></div>
-<p>Подробнее об указании временного интервала в DQL см. раздел <a href="/docs/platform/grail/dynatrace-query-language/dql-guide#specifytimeframe" title="Find out how DQL works and what are DQL key concepts.">Указание временного интервала</a> в документации DQL.</p>
-<h3 id="_23">Выбор сегментов<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
-<p>Для фильтрации данных вы можете указать сегменты на двух уровнях: дашборда и плитки. Выбор сегментов на уровне плитки переопределяет выбор сегментов на уровне дашборда.</p>
-<p>Следует использовать сегменты или переменные?</p>
-<h4 id="_24">Сегменты<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h4>
-<p>Используйте сегменты, когда хотите повторно использовать их в разных дашбордах. Например, используйте сегменты для регулярных фильтров, таких как кластеры Kubernetes, пространства имён, рабочие нагрузки или поды. Сегменты автоматически применяются поверх запросов ваших плиток/разделов, поэтому вам не нужно ссылаться на них в запросах.</p>
-<h4 id="_25">Переменные<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
-<p>Если вам нужен больший контроль над применением фильтра, вы можете использовать переменные.</p>
-<ul>
-<li>Переменные позволяют полностью контролировать базовый запрос или раздел Explore, определяя, где и как они применяются. Например, вы можете указать, как они связаны с другими применёнными фильтрами (<strong>AND</strong>, <strong>OR</strong>), и можете контролировать, какой оператор используется для вашего фильтра (например, <code>equals</code>, <code>contains</code>, <code>startsWith</code> и <code>endsWith</code>).</li>
-<li>
-<p>Кроме того, используйте переменные, когда вам нужен детальный контроль над взаимозависимостью фильтров.</p>
-</li>
-<li>
-<p>Подробнее о сегментах см. <a href="/docs/manage/segments" title="Use segments to logically structure and conveniently filter observability data across apps.">Сегменты</a></p>
-</li>
-<li>Для сценария использования сегментов в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> см. <a href="/docs/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data" title="Learn how to analyze monitoring data more efficiently by using segments in Dashboards.">Анализ данных мониторинга с помощью сегментов</a></li>
-</ul>
-<h4 id="_26">Сегменты на уровне дашборда<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
-<p>Чтобы выбрать сегменты на уровне дашборда</p>
-<ol>
-<li>Отобразите дашборд.</li>
-<li>Откройте селектор сегментов  в верхней части дашборда и в поле <strong>Filter by segments</strong> выберите сегмент.
-   Если сегмент требует дополнительного выбора значения, выберите его сейчас.</li>
-<li>Чтобы добавить ещё один сегмент, выберите  <strong>Segment</strong>. Повторите этот шаг для каждого сегмента, который хотите добавить.</li>
-<li>
-<p>Выберите <strong>Apply</strong>, чтобы применить выбор и отфильтровать данные на дашборде.</p>
-</li>
-<li>
-<p>Селектор сегментов  теперь отображает название выбранного сегмента или, если выбрано несколько сегментов, количество выбранных сегментов.</p>
-</li>
-<li>Чтобы изменить выбор сегментов, снова выберите , внесите изменения и выберите <strong>Apply</strong>.</li>
-<li>Для управления сегментами в целом (просмотр, создание, редактирование, удаление) выберите  и затем перейдите по ссылке <strong>Manage segments</strong>.</li>
-</ol>
-<h4 id="_27">Сегменты на уровне плитки<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h4>
-<p>Чтобы выбрать сегменты на уровне плитки</p>
-<ol>
-<li>Отобразите дашборд.</li>
-<li>Выберите плитку, затем выберите  в элементах управления плиткой для её редактирования.</li>
-<li>В панели редактирования включите <strong>Custom segments</strong>.</li>
-<li>В списке <strong>Custom segments</strong> выберите сегмент.
-   Если сегмент требует дополнительного выбора значения, выберите его сейчас.</li>
-<li>Чтобы добавить ещё один сегмент, выберите  <strong>Segment</strong>. Повторите этот шаг для каждого сегмента, который хотите добавить для выбранной плитки.</li>
-<li>
-<p>Выберите <strong>Apply</strong>, чтобы применить выбор и отфильтровать данные на плитке.</p>
-</li>
-<li>
-<p>Селектор сегментов  теперь отображает название выбранного сегмента или, если выбрано несколько сегментов, количество выбранных сегментов.</p>
-</li>
-<li>Чтобы изменить выбор сегментов, снова выберите , внесите изменения и выберите <strong>Apply</strong>.</li>
-<li>Для управления сегментами в целом (просмотр, создание, редактирование, удаление) выберите  и затем перейдите по ссылке <strong>Manage segments</strong>.</li>
-</ol>
-<h3 id="_28">Настройки дашборда<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
-<p>Чтобы просмотреть или изменить настройки, применяемые ко всему дашборду</p>
-<ol>
-<li>Отобразите дашборд.</li>
-<li>В правом верхнем углу дашборда выберите  <strong>Settings</strong>.</li>
-</ol>
-<p>Отобразится панель <strong>Settings</strong>.
-3. Просмотрите или измените настройки по мере необходимости.</p>
-<p>Пользовательский временной интервал</p>
-<p>Чтобы установить временной интервал по умолчанию для дашборда</p>
-<ol>
-<li>Отобразите дашборд.</li>
-<li>В правом верхнем углу дашборда выберите  <strong>Settings</strong>.</li>
-<li>Включите <strong>Custom timeframe</strong>.</li>
-<li>
-<p>Выберите временной интервал по умолчанию для выбранного дашборда.</p>
-<p>Изменение этого параметра не приводит к немедленному обновлению временного интервала текущего дашборда. Изменение применяется только к новому сеансу работы с дашбордом (для другого пользователя или для того же пользователя при повторном открытии дашборда).</p>
-</li>
-</ol>
-<p>Подробнее о временных интервалах дашборда см. в разделе <a href="#dashboard-timeframe">Выбор временного интервала</a>.</p>
-<p>Сегмент по умолчанию</p>
-<p>Чтобы просмотреть или изменить сегмент дашборда по умолчанию</p>
-<ol>
-<li>Отобразите дашборд.</li>
-<li>В правом верхнем углу дашборда выберите  <strong>Settings</strong>.</li>
-<li>Включите <strong>Default segment</strong>.</li>
-<li>
-<p>Выберите сегмент по умолчанию для выбранного дашборда.</p>
-<p>Изменение этого параметра не приводит к немедленному обновлению сегмента текущего дашборда. Изменение применяется только к новому сеансу работы с дашбордом (для другого пользователя или для того же пользователя при повторном открытии дашборда).</p>
-</li>
-</ol>
-<p>Подробнее о сегментах дашборда см. в разделе <a href="#segment">Выбор сегментов</a>.</p>
-<p>{$} Переменные</p>
-<p>Чтобы просмотреть или изменить переменные дашборда</p>
-<ol>
-<li>Отобразите дашборд.</li>
-<li>
-<p>В правом верхнем углу дашборда выберите  <strong>Settings</strong>.</p>
-<p>Отобразится панель <strong>Settings</strong>.
-   3. Выберите <strong>Variables</strong>.</p>
-</li>
-</ol>
-<p>Подробнее о переменных дашборда см. в разделе <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable" title="Add variables to your Dynatrace dashboards.">Добавление переменной в дашборд</a>.</p>
-<h3 id="_29">Запуск плитки с кодом<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
-<p>При открытии документа другого пользователя вы можете увидеть следующее сообщение:</p>
-<p><code>This dashboard contains custom code. It is read-only until you review the code and select "Accept and run".</code></p>
-<p>Когда вы запускаете плитку или раздел с кодом, написанным другим человеком, Dynatrace выполняет JavaScript этого человека, используя вашу учётную запись и ваши разрешения. Это мощная функция, но её необходимо использовать правильно и ответственно. JavaScript-код может получать доступ к внешним API от вашего имени (используя вашу учётную запись и разрешения).</p>
-<p>Чтобы просмотреть код</p>
-<ol>
-<li>Выберите <strong>Review all code</strong>.</li>
-</ol>
-<p>На странице <strong>Review code</strong> код каждой плитки отображается в отдельном блоке.
-2. Просмотрите код и решите, хотите ли вы его запустить.</p>
-<p>Если вы хотите запустить код, вы можете одобрить его только на этот раз или на постоянной основе.</p>
-<ul>
-<li>Чтобы запустить код только в этот раз, выберите <strong>Accept and run</strong>. При следующем открытии этого документа вам снова будет предложено просмотреть код перед запуском.</li>
-<li>Чтобы навсегда одобрить код в этом документе, выберите <strong>Always trust code in this document</strong>, а затем выберите <strong>Accept and run</strong>.</li>
-</ul>
-<h3 id="_30">Скачивание результата<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
-<p>Чтобы скачать (экспортировать) результат текущей плитки дашборда или раздела блокнота в локальный файл</p>
-<ol>
-<li>Выберите плитку или раздел.</li>
-<li>На панели команд откройте меню  и выберите  <strong>Download result</strong> &gt; [формат].</li>
-</ol>
-<p>Доступные форматы зависят от визуализации.</p>
-<ul>
-<li><strong>CSV</strong>: результат скачивается в локальный файл со значениями, разделёнными запятыми (*.csv). Этот вариант включает форматирование таблицы, такое как видимые столбцы и форматирование единиц.</li>
-<li><strong>CSV (raw)</strong>: результат скачивается в локальный файл со значениями, разделёнными запятыми (*.csv). Этот вариант включает полные неформатированные данные.</li>
-<li><strong>JSON</strong>: результат скачивается в локальный JSON-файл (*.json).</li>
-</ul>
-<p>Некоторые визуализации не предоставляют возможности скачивания результата.</p>
-<h4 id="csv-excel">Возможная проблема при импорте CSV в Excel<a class="headerlink" href="#csv-excel" title="Permanent link">&para;</a></h4>
-<p>При экспорте результатов в CSV-файл — будь то <strong>CSV</strong> или <strong>CSV (raw)</strong> — с переносами строк в любом столбце/поле результата и последующем открытии файла в Microsoft Excel или попытке преобразования файла в таблицу с помощью функции Excel <strong>Data</strong> &gt; <strong>Text to Columns</strong> вы можете столкнуться с проблемой, когда переносы строк некорректно отображаются в Excel. Это вызвано ограничением Excel.</p>
-<p>Чтобы избежать этой проблемы, используйте функцию Excel <strong>Data</strong> &gt; <strong>From Text/CSV</strong>.</p>
-<h2 id="_31">Управление дашбордами<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h2>
-<h3 id="dock">Добавление дашборда в Dock<a class="headerlink" href="#dock" title="Permanent link">&para;</a></h3>
-<p>Чтобы добавить дашборд в Dock для быстрого доступа</p>
-<ol>
-<li>Отобразите дашборд.</li>
-<li>Откройте меню  рядом с названием дашборда (в верхнем левом углу дашборда).</li>
-<li>Выберите  <strong>Add to dock</strong>.</li>
-</ol>
-<p>Если вы измените название дашборда, оно автоматически обновится в Dock.</p>
-<p>Чтобы удалить дашборд из Dock</p>
-<ol>
-<li>Наведите курсор на название дашборда в Dock.</li>
-<li>Выберите  <strong>Unpin from dock</strong>.</li>
-</ol>
-<h3 id="_32">Переименование дашборда<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
-<p>Чтобы переименовать дашборд из панели <strong>Dashboards</strong></p>
-<ol>
-<li>Перейдите в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
-</ol>
-<p>В разделе <strong>Last opened by you</strong> перечислены ваши недавно открытые дашборды.
-2. Наведите курсор на название дашборда, который хотите переименовать, и выберите  &gt;  <strong>Rename</strong>. Если опция переименования недоступна, у вас нет прав на редактирование этого дашборда.</p>
-<h3 id="_33">Дублирование дашборда<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
-<p>Чтобы дублировать дашборд из панели <strong>Dashboards</strong></p>
-<ol>
-<li>Перейдите в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
-</ol>
-<p>В разделе <strong>Last opened by you</strong> перечислены ваши недавно открытые дашборды.
-2. Наведите курсор на название дашборда, который хотите дублировать, и выберите  &gt;  <strong>Make a copy</strong>.</p>
-<p>Чтобы создать копию текущего дашборда</p>
-<ol>
-<li>В верхней части дашборда откройте меню дашборда  рядом с названием дашборда.</li>
-<li>Выберите  <strong>Duplicate</strong> из меню.</li>
-</ol>
-<p>Копия создаётся с названием <strong>Copy of</strong> + название текущего дашборда. Копия теперь отображается на панели <strong>Dashboards</strong>.</p>
-<h3 id="_34">Предоставление доступа к дашборду<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
-<p>Если вы являетесь владельцем дашборда или блокнота, вы можете поделиться им.</p>
-<p>Существует три способа поделиться документом с другими пользователями Dynatrace в вашей компании:</p>
-<ul>
-<li><strong>Access for all (view-only)</strong>: предоставление доступа «только для просмотра» всем пользователям в вашем окружении Dynatrace.</li>
-<li><strong>Share access</strong>: создание и поддержание списка пользователей и групп пользователей с доступом к документу.</li>
-<li><strong>Share links</strong>: создание ссылок (URL), указывающих на ваш документ, и их распространение через каналы по вашему выбору (например, по электронной почте).</li>
-</ul>
-<p>Эти методы не являются взаимоисключающими. Например, вы можете вести целевой список пользователей для постоянного доступа к документу (возможно, все в определённой группе регулярно редактируют документ) и создавать и распространять ссылки «только для просмотра» для более широкой аудитории по мере необходимости.</p>
-<p>В любом случае вы контролируете, могут ли люди редактировать документ или только просматривать его.</p>
-<p>Подробнее о совместном доступе к документам см. <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/share" title="Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.">Совместный доступ к документам</a>.</p>
-<h3 id="_35">Управление версиями дашборда<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h3>
-<p>Версии дашборда сохраняются автоматически.</p>
-<ul>
-<li>Вы можете получить доступ к 50 последним версиям вашего дашборда.</li>
-<li>Каждая версия дашборда доступна в течение 30 дней.</li>
-</ul>
-<p>Чтобы просмотреть версии дашборда и управлять ими</p>
-<ol>
-<li>Отобразите ваш дашборд.</li>
-<li>В правом верхнем углу дашборда выберите <img alt="History" src="https://dt-cdn.net/images/history-icon-dc67cc1e2c.svg" title="History" />.</li>
-</ol>
-<p>Отобразится меню с последними версиями текущего дашборда.</p>
-<ul>
-<li>Дата</li>
-<li>Время</li>
-<li>Имя автора версии</li>
-<li>
-<p>Для каждой записи версии в меню <strong>Versions</strong> вы можете выбрать действия, специфичные для версии.</p>
-</li>
-<li>
-<p><img alt="Preview" src="https://dt-cdn.net/images/icon-preview-1-138a2e67eb.svg" title="Preview" /> <strong>Preview</strong> отображает предварительный просмотр выбранной версии.</p>
-</li>
-<li><strong>Restore</strong> переключает ваш дашборд на выбранную версию.</li>
-<li><strong>Make a copy</strong> создаёт новый дашборд из выбранной версии и отображает новый дашборд. Оригинальный дашборд остаётся без изменений.</li>
-<li><strong>Download</strong> сохраняет JSON-файл выбранной версии дашборда на ваш локальный компьютер.</li>
-<li><strong>Preview in new tab</strong> отображает предварительный просмотр выбранной версии на новой вкладке браузера.</li>
-<li><strong>Delete this version</strong> удаляет выбранную версию.</li>
-<li>Чтобы вывести список всех версий дашборда и управлять ими в отдельном окне, перейдите в нижнюю часть меню <strong>Versions</strong> и выберите <strong>Show all</strong>.</li>
-</ul>
-<p>Подробнее см. <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/document-version" title="View and manage versions of documents created in Dynatrace Notebooks and Dashboards.">Управление версиями документов</a>.</p>
-<h3 id="_36">Изменение владельца дашборда<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h3>
-<p>Когда вы создаёте документ (дашборд или блокнот), вы являетесь его владельцем. Чтобы передать право собственности на документ другому пользователю Dynatrace</p>
-<ol>
-<li>Откройте меню документа  и выберите  <strong>Change owner</strong>.</li>
-<li>Найдите и выберите нового владельца, затем выберите <strong>Change owner</strong>.</li>
-</ol>
-<p>При смене владельца документа вы немедленно теряете доступ к документу.</p>
-<ul>
-<li>Убедитесь, что вы готовы передать право собственности, прежде чем выбирать эту команду.</li>
-<li>Вы можете восстановить доступ к документу только в том случае, если новый владелец предоставит вам разрешение.</li>
-<li>После завершения передачи новый владелец получит электронное письмо о передаче права собственности на документ.</li>
-</ul>
-<h3 id="_37">Скачивание дашборда<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h3>
-<p>Чтобы скачать (экспортировать) текущий отображаемый дашборд в формате JSON</p>
-<ol>
-<li>В верхней части дашборда откройте меню  справа от названия дашборда.</li>
-<li>Выберите  <strong>Download</strong> из меню.</li>
-</ol>
-<p>Определение текущего дашборда скачивается в локальный JSON-файл.</p>
-<p>Чтобы скачать (экспортировать) дашборд из боковой панели <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong></p>
-<ol>
-<li>Перейдите в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
-<li>В разделе <strong>Last opened by you</strong> наведите курсор на название дашборда, который хотите экспортировать, и выберите  <strong>Download</strong> из меню . Дашборд скачивается в локальный JSON-файл, который можно загрузить.</li>
-</ol>
-<p>Если ваш дашборд не указан в <strong>Last opened by you</strong>, выберите  <strong>All dashboards</strong>, чтобы отобразить таблицу всех дашбордов, к которым вы можете получить доступ (ваших дашбордов или дашбордов, которыми с вами поделились). Оттуда вы можете найти дашборд и выбрать  <strong>Download</strong> из меню .</p>
-<h3 id="_38">Загрузка дашборда<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h3>
-<p>Чтобы загрузить (импортировать) JSON-определение дашборда из боковой панели <strong>Dashboards</strong></p>
-<ol>
-<li>Перейдите в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
-<li>На панели <strong>Dashboards</strong> слева выберите  <strong>Upload</strong>.</li>
-<li>Найдите и откройте файл JSON-определения дашборда.</li>
-</ol>
-<p>Чтобы загрузить (импортировать) JSON-определение дашборда из таблицы <strong>Dashboards</strong></p>
-<ol>
-<li>Перейдите в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
-<li>На панели <strong>Dashboards</strong> слева выберите  <strong>All dashboards</strong>.</li>
-</ol>
-<p>Таблица <strong>Dashboards</strong> отображает все дашборды с колонками <strong>Name</strong> и <strong>Last modified</strong>.
-3. В верхнем левом углу страницы выберите  <strong>Upload</strong>.
-4. Найдите и откройте файл JSON-определения дашборда.</p>
-<p>Загруженный дашборд:</p>
-<ul>
-<li>Открывается в Dynatrace.</li>
-</ul>
-<p>Если при загрузке дашборда вы видите сообщение о запуске пользовательского кода, см. <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code#run-code-warnings" title="Add code to your Dynatrace dashboards.">Предупреждения о запуске кода</a> для получения дополнительной информации.
-* Добавляется в ваш список <strong>Last opened by you</strong>.
-* Добавляется на страницу <strong>Dashboards</strong> с датой и временем загрузки в поле <strong>Last modified</strong>.</p>
-<h3 id="_39">Удаление дашборда<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h3>
-<p>Чтобы удалить любой дашборд на странице <strong>Dashboards</strong></p>
-<ol>
-<li>Перейдите в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
-<li>На панели <strong>Dashboards</strong> слева выберите  <strong>All dashboards</strong>.</li>
-</ol>
-<p>Таблица отображает все дашборды с колонками <strong>Name</strong> и <strong>Last modified</strong>.
-3. На странице <strong>Dashboards</strong> выберите  <strong>Move to trash</strong> для дашборда, который хотите удалить.</p>
-<h3 id="api">Дашборды через API: лучшие практики<a class="headerlink" href="#api" title="Permanent link">&para;</a></h3>
-<p>При создании дашбордов или управлении ими через API эти лучшие практики могут упростить вашу работу.</p>
-<ul>
-<li>Для хорошего старта создайте дашборд в приложении <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>, а затем <a href="#dashboards-download">скачайте</a> файл конфигурации дашборда.</li>
-<li>Чтобы проверить изменения, сделанные через API, <a href="#dashboards-upload">загрузите</a> файл в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>. Всё ли выглядит так, как ожидалось?</li>
-<li>Будьте осторожны с изменениями макета, так как пустые вертикальные пространства приводят к автоматическому сдвигу плиток вверх при загрузке документа и появлению кнопки <strong>Discard changes</strong>.</li>
-<li>Для детального изучения изменений выберите <strong>Save as new</strong>, чтобы скачать документ и сравнить его с оригинальной версией.</li>
-<li>Не устанавливайте свойство <code>version</code> конфигурации в произвольное значение. Это внутреннее свойство, необходимое для целей миграции.</li>
-</ul>
-<h2 id="_40">Создание и редактирование дашбордов<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h2>
-<h3 id="_41">Создание дашборда<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h3>
-<p>Самый быстрый и простой способ исследовать ваши данные — это наши новые плитки и разделы <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data" title="Explore your data with our point-and-click interface.">Explore</a>. За несколько секунд вы можете найти и проанализировать ваши логи, метрики или бизнес-события. DQL не требуется!</p>
-<p>Чтобы создать новый дашборд</p>
-<ol>
-<li>Перейдите в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
-<li>Выберите  <strong>Dashboard</strong>.</li>
-</ol>
-<p>После создания пустого дашборда вам нужно добавить в него плитки.</p>
-<ul>
-<li>Запрос данных из Grail</li>
-<li>Добавление кода</li>
-<li>Добавление Markdown</li>
-<li>Добавление переменной</li>
-<li>Добавление сниппета</li>
-</ul>
-<h3 id="grail">Запрос данных из Grail<a class="headerlink" href="#grail" title="Permanent link">&para;</a></h3>
-<p>Чтобы выполнить запрос к Grail</p>
-<ol>
-<li>В правом верхнем углу дашборда выберите  <strong>Add</strong> &gt;  <strong>DQL</strong>.</li>
-</ol>
-<p>Горячая клавиша: <strong>Shift</strong>+<strong>D</strong></p>
-<p><img alt="Dashboards: кнопка добавления плитки (плюс)" src="https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png" /></p>
-<p>Справа откроется боковая панель конфигурации с двумя вкладками:</p>
-<ul>
-<li><strong>Data</strong></li>
-<li><strong>Visual</strong></li>
-<li>На вкладке <strong>Data</strong> используйте <a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language (DQL)</a> для определения вашего запроса.</li>
-<li>Выберите <strong>Run</strong> для выполнения запроса.</li>
-<li>
-<p>На вкладке <strong>Visual</strong> выберите формат <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations" title="Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.">визуализации</a> для ваших результатов.</p>
-</li>
-<li>
-<p>означает, что тип визуализации недоступен для вашего запроса.</p>
-</li>
-<li>Под селектором <strong>Visualization</strong> разверните разделы настроек для корректировки параметров визуализации по мере необходимости.</li>
-<li>Закройте боковую панель, когда закончите.</li>
-</ul>
-<p>Если вы захотите вернуться к этим настройкам, выберите вашу плитку для их отображения.</p>
-<p>Подробнее см. <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data" title="Add data to your Dynatrace dashboards.">Добавление данных в дашборд</a>.</p>
-<h3 id="_42">Добавление кода<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h3>
-<p>Чтобы добавить код в дашборд</p>
-<ol>
-<li>В правом верхнем углу дашборда выберите  <strong>Add</strong> &gt;  <strong>Code</strong>.</li>
-</ol>
-<p>Горячая клавиша: <strong>Shift</strong>+<strong>C</strong></p>
-<p><img alt="Dashboards: кнопка добавления плитки (плюс)" src="https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png" /></p>
-<p>На дашборд добавляется пустая плитка, и справа открывается боковая панель <strong>Options</strong>.
-2. Необязательно: в поле <strong>Tile title</strong> введите заголовок для отображения в верхней части плитки.
-3. В пронумерованном поле <strong>Code</strong> введите пользовательский JavaScript для получения внешних данных из любого доступного API. Используйте <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">Fetch API</a> для получения данных из внешних API.</p>
-<p>Чтобы ваши запросы не блокировались, попросите администратора разрешить ваши внешние источники данных, добавив их в <strong>External requests</strong>.</p>
-<p>Внешние запросы обеспечивают исходящие сетевые подключения из вашего окружения Dynatrace к внешним сервисам. Они позволяют контролировать доступ к публичным конечным точкам из AppEngine с помощью функций приложений и функций в Dashboards, Notebooks и Automations.</p>
-<ol>
-<li>Перейдите в <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt;  <strong>General</strong> &gt; <strong>External requests</strong>.</li>
-<li>Выберите  <strong>New host pattern</strong>.</li>
-<li>Добавьте доменные имена.</li>
-<li>Выберите <strong>Add</strong>.</li>
-</ol>
-<p>Таким образом, вы можете детально контролировать веб-сервисы, к которым могут подключаться ваши функции.</p>
-<p>Не включайте префикс адреса. Например, если адрес <code>https://some.service.org</code>, просто добавьте <code>some.service.org</code>.</p>
-<p>Подробнее см. <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code" title="Add code to your Dynatrace dashboards.">Добавление кода в дашборд</a>.</p>
-<h3 id="markdown_1">Добавление Markdown<a class="headerlink" href="#markdown_1" title="Permanent link">&para;</a></h3>
-<p>Чтобы добавить плитку Markdown в дашборд</p>
-<ol>
-<li>В правом верхнем углу дашборда откройте меню  <strong>Add</strong> и выберите  <strong>Add markdown</strong>.</li>
-</ol>
-<p>Горячая клавиша: <strong>Shift</strong>+<strong>M</strong></p>
-<p><img alt="Dashboards: кнопка добавления плитки (плюс)" src="https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png" /></p>
-<p>Справа откроется боковая панель <strong>Options</strong>.
-2. На боковой панели <strong>Options</strong> введите ваш текст.</p>
-<ul>
-<li>Используйте Markdown для форматирования текста и добавления ссылок и изображений.</li>
-<li>Плитка обновляется по мере редактирования.</li>
-<li>Во время редактирования текста нажмите Ctrl+Space, чтобы увидеть доступные варианты.</li>
-<li>Закройте боковую панель <strong>Options</strong>, когда закончите.</li>
-</ul>
-<p>Подробнее см. <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown" title="Add Markdown-formatted annotations to your Dynatrace dashboards.">Добавление Markdown в дашборд</a>.</p>
-<h3 id="_43">Добавление переменной<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h3>
-<p>Используйте переменные для фильтрации дашбордов, в качестве значений переменных в плитках с кодом и в качестве заполнителей в заголовках плиток и тексте плиток Markdown.</p>
-<p>Чтобы добавить переменную в дашборд</p>
-<ol>
-<li>В заголовке дашборда откройте меню  и выберите  <strong>Variables</strong>.
-   Горячая клавиша: <strong>Shift</strong>+<strong>V</strong></li>
-</ol>
-<p>Горячая клавиша: <strong>Shift</strong>+<strong>V</strong></p>
-<p><img alt="Dashboards: кнопка добавления плитки (плюс)" src="https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png" /></p>
-<p>Отобразится панель <strong>Variable</strong>.
-2. Определите переменную.</p>
-<ul>
-<li>
-<p><strong>Name</strong>: имя переменной.</p>
-<ul>
-<li>Допускаются только буквенно-цифровые значения</li>
-<li>Не начинайте имя переменной с <code>dt_</code></li>
-<li>
-<p><strong>Type</strong>: может быть одним из следующих:</p>
-</li>
-<li>
-<p><strong>DQL</strong>: значение возвращается из запроса, который вы вводите при определении переменной.</p>
-</li>
-<li>
-<p>Выберите <strong>Run</strong> для тестирования запроса.</p>
-</li>
-<li><strong>Code</strong>: значение возвращается из кода, который вы вводите при определении переменной.</li>
-<li>
-<p><strong>List</strong>: список значений, разделённых запятыми (CSV).</p>
-</li>
-<li>
-<p>Чтобы определить возможные значения, введите их (через запятую) в поле под <strong>Data</strong>.</p>
-</li>
-<li>Чтобы определить значение по умолчанию, выберите его из списка <strong>Default value</strong>.</li>
-<li>Чтобы разрешить выбор нескольких значений одновременно, включите <strong>Multi-select</strong>.</li>
-<li><strong>Free Text</strong>: свободный текст. Вы можете ввести <strong>Default value</strong>.
-   Ваши изменения сохраняются автоматически.</li>
-<li>Установите <strong>Display settings</strong>.</li>
-</ul>
-</li>
-<li>
-<p>Если выпадающий список переменной должен отображаться на дашборде, включите <strong>Display as filter on dashboard</strong>.
-     Отключите его, если хотите скрыть переменную, например, когда она используется как статическое значение в плитках, но не должна отображаться пользователю дашборда.</p>
-</li>
-<li>Если пользователи должны иметь возможность выбирать несколько значений одновременно в выпадающем списке переменной, включите <strong>Multi-select</strong>.
-     Отключите его, если хотите использовать только одиночные значения выпадающего списка переменной.</li>
-<li>Выберите <strong>Default value</strong> для выпадающего списка переменной. Если вы ничего не вводите в это поле, выбирается первое доступное значение.</li>
-<li>Когда закончите, выберите <strong>&lt; Variable</strong> вверху, чтобы перейти к панели <strong>Variables</strong>, или выберите  для закрытия панели <strong>Variables</strong>.</li>
-</ul>
-<p>Переменные в дашбордах могут быть определены с зависимостью от других переменных.</p>
-<ul>
-<li>Значение переменной пересчитывается, если её определение ссылается на другую переменную и значение другой переменной изменяется.</li>
-</ul>
-<p>Например, если значение переменной A изменяется, значение любой переменной, определение которой ссылается на переменную A, пересчитывается.
-* Циклические зависимости не допускаются.</p>
-<p>Например, если значение переменной A зависит от значения переменной B, значение переменной B не может зависеть от значения переменной A.</p>
-<p>Подробнее см. <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable" title="Add variables to your Dynatrace dashboards.">Добавление переменной в дашборд</a>.</p>
-<h3 id="_44">Добавление сниппета<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h3>
-<p>Чтобы начать работу на основе сниппета</p>
-<ol>
-<li>В правом верхнем углу дашборда выберите  <strong>Add</strong>, чтобы открыть меню <strong>Add</strong>.</li>
-</ol>
-<p>Горячая клавиша: <strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Shift</strong>+<strong>Enter</strong></p>
-<p><img alt="Dashboards: кнопка добавления плитки (плюс)" src="https://dt-cdn.net/images/updated-dashboards-add-tile-button-481-c21ba8f200.png" />
-2. Прокрутите вниз до раздела <strong>Start with a snippet</strong> и выберите один из сниппетов. В этом примере мы выбираем сниппет  <strong>Fetch logs</strong>, который отображается на панели предварительного просмотра.</p>
-<p><img alt="Пример: выбор сниппета &quot;Fetch logs&quot;." src="https://dt-cdn.net/images/add-snippet-menu-example-fetch-logs-754-d4435c09eb.png" />
-3. После выбора сниппета панель редактирования отображает добавленный вами сниппет.</p>
-<p><img alt="Пример: сниппет &quot;Fetch logs&quot; добавлен." src="https://dt-cdn.net/images/add-snippet-menu-example-fetch-logs-result-1436-77cc9fa8f1.png" />
-4. Отредактируйте запрос или код (в зависимости от типа выбранного сниппета) и настройки визуализации по мере необходимости.
-5. Выберите <strong>Run</strong> для просмотра результатов.
-6. Закройте боковую панель, когда закончите.</p>
-<p>Подробнее см. <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet" title="Start with a snippet">Добавление сниппета в дашборд</a>.</p>
-<h3 id="_45">Анализ данных с помощью ИИ<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h3>
-<p>Чтобы проанализировать данные с помощью анализаторов данных Dynatrace Intelligence</p>
-<ol>
-<li>Исследуйте временной ряд.</li>
-</ol>
-<p>Пример</p>
-<p>В вашем документе (дашборде или блокноте)</p>
-<ol>
-<li>
-<p>Выберите , чтобы добавить новый раздел или плитку, затем выберите <strong>Metrics</strong> для исследования метрик.</p>
-<p><img alt="Пример: выбор Add &gt; Metrics" src="https://dt-cdn.net/images/example-select-explore-metrics-637-025cadac69.png" />
-   2. В поле <strong>Select metric</strong> выберите <strong>Infrastructure</strong> &gt; <strong>CPU</strong> &gt; <strong>CPU usage %</strong>.</p>
-<p><img alt="Пример: выбор метрики &quot;CPU usage %&quot;" src="https://dt-cdn.net/images/example-select-metric-cpu-usage-percent-771-a672aa20e2.png" />
-   3. Установите <strong>Split by</strong> в значение <code>host.name</code>.</p>
-<p><img alt="Пример: установка &quot;Split by&quot; в host.name" src="https://dt-cdn.net/images/example-select-host-name-743-5bd89ea6a3.png" />
-   4. Установите <strong>Limit</strong> на максимальное количество рядов для анализа. Анализатор данных Dynatrace Intelligence в настоящее время поддерживает анализ до 1000 рядов.</p>
-</li>
-</ol>
-<p>Вы должны получить что-то вроде этого:</p>
-<p><img alt="Пример: завершённый запрос" src="https://dt-cdn.net/images/example-complete-query-737-dfa24f730d.png" />
-2. Выполните запрос.
-3. На панели параметров справа прокрутите вниз и разверните  <strong>Davis AI</strong>.</p>
-<p>Показать</p>
-<p><img alt="Пример выбора настроек анализа и оповещений в приложении Dashboards." src="https://dt-cdn.net/images/dashboards-select-analyze-and-alert-settings-746-7155ef9415.png" /></p>
-<p><img alt="Начальная панель настроек анализа и оповещений в приложении Dashboards." src="https://dt-cdn.net/images/dashboards-analyze-and-alert-details-746-8d503491c8.png" />
-4. На панели <strong>Davis AI</strong> установите <strong>Analyzers</strong> на анализатор, который хотите использовать, и настройте его.</p>
-<ul>
-<li>Обзор обнаружения аномалий см. в разделе <a href="/docs/dynatrace-intelligence/anomaly-detection" title="How Dynatrace detects anomalies in your environment.">Обнаружение аномалий</a></li>
-<li>
-<p>Подробнее о настройках обнаружения аномалий см. <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer" title="How to set up an alert for missing measurements.">Конфигурация обнаружения аномалий</a></p>
-</li>
-<li>
-<p>Подробнее о настройках анализатора прогнозов см. <a href="/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis" title="Learn how Dynatrace Intelligence predictive AI generates forecasts.">Прогнозный ИИ-анализ Dynatrace Intelligence</a></p>
-</li>
-</ul>
-<p>Обнаружение аномалий: автоадаптивное пороговое обнаружение аномалий</p>
-<ul>
-<li><strong>Number of signal fluctuations</strong> — сколько раз флуктуация сигнала добавляется к базовой линии для формирования фактического порога оповещения.</li>
-<li><strong>Alert condition</strong> — ваш выбор зависит от того, хотите ли вы получать уведомления, когда метрика выше, ниже или за пределами (выше или ниже) нормального диапазона.</li>
-</ul>
-<p>Подробнее см. <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer" title="How to set up an alert for missing measurements.">Конфигурация обнаружения аномалий</a>.</p>
-<p>Обнаружение аномалий: сезонное базовое обнаружение аномалий</p>
-<ul>
-<li><strong>Tolerance</strong> — чем выше допуск, тем шире полоса доверия, что приводит к меньшему количеству срабатываний.</li>
-<li><strong>Alert condition</strong> — ваш выбор зависит от того, хотите ли вы получать уведомления, когда метрика выше, ниже или за пределами (выше или ниже) нормального диапазона.</li>
-</ul>
-<p>Подробнее см. <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer" title="How to set up an alert for missing measurements.">Конфигурация обнаружения аномалий</a>.</p>
-<p>Обнаружение аномалий: обнаружение аномалий по статическому порогу</p>
-<ul>
-<li><strong>Threshold</strong> — жёсткий предел, который метрика не должна нарушать.</li>
-<li><strong>Unit</strong> — единица измерения значения.</li>
-<li><strong>Alert condition</strong> — ваш выбор зависит от того, хотите ли вы получать уведомления, когда метрика выше или ниже порогового значения.</li>
-<li><strong>Suggest threshold</strong> — Davis AI может помочь вам найти подходящий порог на основе исторических данных.</li>
-</ul>
-<p>Подробнее см. <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer" title="How to set up an alert for missing measurements.">Конфигурация обнаружения аномалий</a>.</p>
-<p>Прогнозирование: Прогноз</p>
-<ul>
-<li><strong>Data points to predict</strong> — общее количество шагов, на которое прогнозируется временной ряд. Большее количество шагов обычно приводит к менее надёжным прогнозам и более длительному времени работы анализатора.</li>
-<li><strong>Forecast offset</strong> — смещение начала прогноза. Например, если смещение установлено в <code>2</code>, последние две точки данных игнорируются, и для них также возвращается прогноз.</li>
-</ul>
-<p>Подробнее см. <a href="/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis" title="Learn how Dynatrace Intelligence predictive AI generates forecasts.">Прогнозный ИИ-анализ Dynatrace Intelligence</a>.</p>
-<p>Расширенные настройки (для обнаружения аномалий)</p>
-<p>Вы можете использовать значения по умолчанию или включить <strong>Show advanced properties</strong> для тонкой настройки этих параметров.</p>
-<ul>
-<li><strong>Alert on missing data</strong> — оповещение при отсутствии данных в скользящем окне.</li>
-<li><strong>Violating samples</strong> — количество образцов в скользящем окне, которые должны нарушить порог для срабатывания события.</li>
-<li><strong>Sliding window</strong> — количество образцов, формирующих скользящее окно.</li>
-<li><strong>Dealerting samples</strong> — количество образцов в скользящем окне, которые должны вернуться к норме для закрытия события.</li>
-<li>По умолчанию анализатор не включён. Чтобы включить его, включите переключатель в верхней части панели редактирования (переключите с <strong>AI data analysis is not active</strong> на <strong>AI data analysis is active</strong>).</li>
-<li>Чтобы просмотреть результаты, выберите визуализацию <strong>Davis AI analysis</strong> и разверните раздел <strong>Davis AI analysis chart</strong> для просмотра или изменения настроек визуализации:</li>
-</ul>
-<p>Показать</p>
-<p><img alt="Пример выбора визуализации &quot;AI analysis&quot; и отображения настроек визуализации в приложении Notebooks." src="https://dt-cdn.net/images/notebooks-ai-analysis-visualizations-757-4cf3f48b3c.png" /></p>
-<p>Визуализация <strong>Davis AI analysis</strong> имеет два раздела: график и визуализация. Вы можете использовать настройку <strong>Visible sections</strong> для отображения одного или обоих разделов.</p>
-<ul>
-<li><strong>All</strong> — показать график и таблицу. График отражает ваш выбор в таблице.</li>
-<li><strong>Table</strong> — показать только таблицу. Вы можете сортировать столбцы, отображающие значок сортировки  в заголовке. Выберите заголовок столбца для переключения порядка сортировки вверх  или вниз .</li>
-<li><strong>Chart</strong> — показать только график. Используйте таблицу для выбора записей, которые хотите отобразить на графике.</li>
-</ul>
-<h4 id="cpu">Пример: аномальное использование CPU в процентах<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h4>
-<p>Чтобы обнаружить, когда использование CPU превышает 70 процентов, в вашем документе (дашборде или блокноте)</p>
-<ol>
-<li>Выберите , чтобы добавить новый раздел или плитку, затем выберите <strong>Metrics</strong> для исследования метрик.</li>
-</ol>
-<p>Показать</p>
-<p><img alt="Пример: выбор Add &gt; Metrics" src="https://dt-cdn.net/images/example-select-explore-metrics-637-025cadac69.png" />
-2. В поле <strong>Select metric</strong> выберите <strong>Infrastructure</strong> &gt; <strong>CPU</strong> &gt; <strong>CPU usage %</strong>.</p>
-<p>Показать</p>
-<p><img alt="Пример: выбор метрики &quot;CPU usage %&quot;" src="https://dt-cdn.net/images/example-select-metric-cpu-usage-percent-771-a672aa20e2.png" />
-3. Установите <strong>Split by</strong> в значение <code>host.name</code>.</p>
-<p>Показать</p>
-<p><img alt="Пример: установка &quot;Split by&quot; в host.name" src="https://dt-cdn.net/images/example-select-host-name-743-5bd89ea6a3.png" />
-4. Установите <strong>Limit</strong> на максимальное количество рядов для анализа. Анализатор Davis в настоящее время поддерживает анализ до 1000 рядов.</p>
-<p>Показать</p>
-<p><img alt="Пример: завершённый запрос" src="https://dt-cdn.net/images/example-complete-query-737-dfa24f730d.png" />
-5. Выберите <strong>Run</strong>.
-6. На панели редактирования разверните  <strong>Davis AI</strong>.</p>
-<p>Показать</p>
-<p><img alt="Пример выбора настроек анализа и оповещений в приложении Dashboards." src="https://dt-cdn.net/images/dashboards-select-analyze-and-alert-settings-746-7155ef9415.png" /></p>
-<p><img alt="Начальная панель настроек анализа и оповещений в приложении Dashboards." src="https://dt-cdn.net/images/dashboards-analyze-and-alert-details-746-8d503491c8.png" />
-7. В списке <strong>Analyzers</strong> выберите <strong>Static threshold anomaly detection</strong>.</p>
-<p>Показать</p>
-<p><img alt="Выбор анализатора &quot;Static threshold anomaly detection&quot; в настройках анализа и оповещений приложения Dashboards." src="https://dt-cdn.net/images/dashboards-analyze-and-alert-select-static-threshold-anomaly-detection-752-45026264f0.png" />
-8. Установите <strong>Threshold</strong> в значение <code>70</code> (введите значение) и <strong>Alert condition</strong> в <strong>Alert if metric is above</strong> (по умолчанию).</p>
-<p>Показать</p>
-<p><img alt="Настройка параметров анализатора &quot;Static threshold anomaly detection&quot; в приложении Dashboards." src="https://dt-cdn.net/images/dashboards-static-threshold-anomaly-detection-settings-748-4d20c8220e.png" />
-9. Активируйте анализатор: в верхней части панели редактирования переключите с <strong>AI data analysis is not active</strong> на <strong>AI data analysis is active</strong>.
-10. Чтобы просмотреть результаты, выберите визуализацию <strong>Davis AI analysis</strong>. Разверните раздел <strong>Davis AI analysis chart</strong> для просмотра настроек визуализации.</p>
-<div class="highlight"><pre><span></span><code>Показать
-
-![Пример выбора визуализации &quot;AI analysis&quot; и отображения настроек визуализации в приложении Notebooks.](https://dt-cdn.net/images/notebooks-ai-analysis-visualizations-757-4cf3f48b3c.png)
-</code></pre></div>
-<ol>
-<li>В разделе <strong>Davis AI analysis chart</strong> установите <strong>Visible sections</strong> в <strong>All</strong>.</li>
-<li>
-<p>Просмотрите результаты.</p>
-<p>В этом примере мы выбрали хосты, превысившие порог.</p>
-<ul>
-<li>На графике отображается линия для выбранной метрики (<code>CPU usage %</code>) для каждого выбранного хоста.</li>
-<li>Красная полоса в верхней части визуализации указывает, где порог для этой метрики был превышен.</li>
-<li>В таблице под графиком выбраны эти хосты.</li>
-</ul>
-<p><img alt="Пример результатов анализатора с визуализацией &quot;AI analysis&quot; в приложении Notebooks." src="https://dt-cdn.net/images/notebooks-ai-analysis-chart-1920-5ac0e1f854.png" /></p>
-</li>
-</ol>
-<h3 id="_46">Изменение значений переменных<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h3>
-<p>Если дашборд имеет одну или несколько переменных, они перечислены по имени в верхнем левом углу дашборда, под названием дашборда. При изменении значений переменных содержимое дашборда пересчитывается и отображается в соответствии с новыми значениями.</p>
-<p>Чтобы изменить значение переменной</p>
-<ol>
-<li>В верхнем левом углу дашборда найдите имя переменной.</li>
-<li>
-<p>Используйте меню или поле ввода под именем переменной для изменения значения.</p>
-</li>
-<li>
-<p>Если переменная допускает только один выбор (значение) одновременно, выберите значение, которое хотите применить к дашборду.</p>
-</li>
-<li>Если переменная допускает множественный выбор (значений) одновременно, установите флажок для каждого значения, которое хотите применить к дашборду. В названии меню этой переменной отображается количество выбранных значений.</li>
-<li>Для переменной Free Text вы можете отредактировать текст в поле под именем переменной.</li>
-</ol>
-<h3 id="_47">Копирование в другой документ<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h3>
-<p>Вы можете скопировать плитку дашборда в другой документ (например, в другой дашборд или блокнот).</p>
-<p>Например, простой способ начать новый блокнот — скопировать многоразовые плитки из существующих дашбордов в новый блокнот и затем отредактировать скопированные разделы как часть нового блокнота.</p>
-<p>Чтобы скопировать плитку дашборда в блокнот (как раздел блокнота)</p>
-<ol>
-<li>На дашборде выберите плитку, которую хотите скопировать в блокнот.</li>
-<li>Откройте меню  и выберите <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Add to notebook</strong>.</li>
-<li>
-<p>В окне <strong>Select destination</strong>:</p>
-</li>
-<li>
-<p>Если вы хотите создать новый блокнот с выбранной плиткой дашборда в качестве раздела, выберите <strong>New notebook</strong>.</p>
-</li>
-<li>Если вы хотите добавить выбранную плитку дашборда как ещё один раздел в существующий блокнот, выберите существующий блокнот из списка, а затем выберите <strong>Confirm</strong>.</li>
-</ol>
-<p>Блокнот откроется с выбранной плиткой, скопированной в него в качестве раздела.</p>
-<p>Чтобы скопировать плитку дашборда в другое приложение (не <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>), откройте меню  и выберите  <strong>Open with</strong>, затем выберите целевое приложение.</p>
-<p>Подробнее см. <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation" title="Drill down from Dashboards and Notebooks using links based on intents or URLs.">Детализация и навигация</a>.</p>
-<h3 id="_48">Редактирование плитки<a class="headerlink" href="#_48" title="Permanent link">&para;</a></h3>
-<p>Чтобы отредактировать плитку</p>
-<ol>
-<li>Выберите плитку, чтобы отобразить команды плитки.</li>
-<li>Выберите  <strong>Edit</strong>.</li>
-</ol>
-<p>Справа откроется панель <strong>Options</strong> с конфигурацией плитки или раздела.
-3. Выберите и перетащите элемент управления расширением влево или вправо для изменения размера панели <strong>Options</strong> для лучшего просмотра кода.</p>
-<p><img alt="Изменение размера панели параметров" src="https://dt-cdn.net/images/options-panel-resize-155-a8c92d2683.png" /></p>
-<h3 id="_49">Добавление или редактирование заголовка плитки<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h3>
-<p>Вы можете добавить заголовок к любой плитке дашборда (кроме плитки Markdown).</p>
-<p>Независимо от настройки заголовка, панель заголовка автоматически создаётся при необходимости для отображения индикаторов плитки, таких как предупреждение или индикатор пользовательского временного интервала.</p>
-<ol>
-<li>
-<p>Выберите плитку и отредактируйте  её.</p>
-</li>
-<li>
-<p>Заголовок отображается в поле в верхней части панели редактирования плитки.</p>
-</li>
-<li>Если у плитки нет заголовка, в поле отображается <code>Untitled tile</code>.</li>
-<li>Отредактируйте заголовок. Ваши изменения отображаются по мере ввода.</li>
-</ol>
-<p>Заголовок может включать эмодзи и переменные.</p>
-<p><strong>Пример:</strong></p>
-<ol>
-<li>В вашем дашборде определите <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable" title="Add variables to your Dynatrace dashboards.">переменные</a> с именами <code>Status</code> и <code>Emoji</code>.</li>
-<li>Установите заголовок <code>Current $Emoji status is $Status</code>.</li>
-<li>Установите переменную <code>Status</code> в значение <code>Good</code>.</li>
-<li>Установите переменную <code>Emoji</code> в значение эмодзи.</li>
-</ol>
-<p>Заголовок будет отображаться как <code>Current [эмодзи] status is Good</code> и будет автоматически обновляться при изменении значений переменных.</p>
-<p>Чтобы удалить заголовок плитки, выберите плитку, отредактируйте  её и очистите поле заголовка.</p>
-<h3 id="_50">Настройка визуализации плитки<a class="headerlink" href="#_50" title="Permanent link">&para;</a></h3>
-<p>Каждая визуализация имеет свои собственные настройки.</p>
-<p>Для редактирования визуализации плитки см. <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations" title="Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.">инструкции по визуализации</a>.</p>
-<h2 id="_51">Макет<a class="headerlink" href="#_51" title="Permanent link">&para;</a></h2>
-<h3 id="_52">Изменение размера плитки<a class="headerlink" href="#_52" title="Permanent link">&para;</a></h3>
-<p>Чтобы изменить размер плитки</p>
-<ol>
-<li>Наведите курсор на плитку.</li>
-<li>Выберите и перетащите  в правом нижнем углу плитки для изменения размеров плитки.</li>
-</ol>
-<p>Для помощи в выборе конкретного размера размер плитки отображается на панели команд плитки.</p>
-<h3 id="_53">Перемещение плитки<a class="headerlink" href="#_53" title="Permanent link">&para;</a></h3>
-<p>Вы можете перемещать одну плитку за раз или выбрать и переместить несколько плиток одновременно.</p>
-<p>Чтобы переместить плитку, перетащите её на новую позицию.</p>
-<ul>
-<li>Если у плитки есть заголовок, выберите и перетащите  панель заголовка для перемещения плитки.</li>
-<li>Если у плитки нет заголовка, выберите плитку для отображения команд плитки, затем выберите и перетащите  на панели команд плитки для перетаскивания выбранной плитки на новое место.</li>
-</ul>
-<p>Для помощи в выравнивании плиток при перемещении отображается фоновая сетка.</p>
-<p>Чтобы переместить несколько плиток одновременно</p>
-<ol>
-<li>Выберите одну плитку.</li>
-<li>
-<p>Ctrl-щелчком выберите дополнительные плитки, которые хотите переместить.</p>
-</li>
-<li>
-<p>Каждая выбранная плитка подсвечивается.</p>
-</li>
-<li>Общее количество выбранных плиток отображается на панели команд плитки.</li>
-<li>Выберите и перетащите  <strong>Move</strong> для перетаскивания всех выбранных плиток на новое место.</li>
-</ol>
-<h3 id="_54">Копирование и вставка плитки<a class="headerlink" href="#_54" title="Permanent link">&para;</a></h3>
-<p>Вы можете копировать и вставлять плитки на тот же дашборд или другой дашборд.</p>
-<p>Чтобы скопировать и вставить одну плитку</p>
-<ol>
-<li>Выберите плитку, чтобы отобразить команды плитки.</li>
-<li>На панели команд плитки выберите  <strong>Copy to clipboard</strong>.</li>
-</ol>
-<p>Выбранная плитка скопирована в буфер обмена.
-3. Вставьте плитку (Ctrl-V).</p>
-<ul>
-<li>Вы можете вставить скопированную плитку на текущий дашборд — в этом случае это эквивалент  <strong>Duplicate</strong>.</li>
-<li>Вы можете переключиться на другой дашборд и вставить скопированную плитку там.</li>
-</ul>
-<p>Чтобы скопировать и вставить несколько плиток одновременно</p>
-<ol>
-<li>Щёлкните на одной плитке, чтобы выбрать её.</li>
-<li>
-<p>Ctrl-щелчком выберите дополнительные плитки, которые хотите скопировать и вставить.</p>
-</li>
-<li>
-<p>Каждая выбранная плитка подсвечивается.</p>
-</li>
-<li>Общее количество выбранных плиток отображается на панели команд плитки.</li>
-<li>На панели команд плитки выберите  <strong>Copy to clipboard</strong>.</li>
-</ol>
-<p>Выбранные плитки скопированы в буфер обмена.
-4. Вставьте плитки (Ctrl-V) на тот же дашборд или переключитесь на другой дашборд и вставьте их там.</p>
-<h3 id="_55">Дублирование плитки<a class="headerlink" href="#_55" title="Permanent link">&para;</a></h3>
-<p>Вы можете дублировать одну плитку за раз или дублировать несколько плиток одновременно.</p>
-<p>Чтобы дублировать одну плитку</p>
-<ol>
-<li>Выберите плитку, чтобы отобразить команды плитки.</li>
-<li>Выберите  <strong>Duplicate</strong>.</li>
-</ol>
-<p>Копия плитки создаётся на текущем дашборде.</p>
-<p>Чтобы дублировать несколько плиток одновременно</p>
-<ol>
-<li>Щёлкните на одной плитке, чтобы выбрать её.</li>
-<li>
-<p>Ctrl-щелчком выберите дополнительные плитки, которые хотите дублировать.</p>
-</li>
-<li>
-<p>Каждая выбранная плитка подсвечивается.</p>
-</li>
-<li>Общее количество выбранных плиток отображается на панели команд плитки.</li>
-<li>На панели команд плитки выберите  <strong>Duplicate</strong>.</li>
-</ol>
-<p>Выбранные плитки дублируются на текущем дашборде.</p>
-<h3 id="_56">Разделение пространства плитки для вставки новой плитки<a class="headerlink" href="#_56" title="Permanent link">&para;</a></h3>
-<p>При настройке макета дашборда вы можете разделить пространство, которое плитка занимает на сетке, и вставить вторую плитку рядом с первой в том же пространстве.</p>
-<ul>
-<li>Первая плитка не меняется, за исключением того, что теперь занимает половину ширины или высоты, которую использовала до разделения.</li>
-<li>Вторая (новая) плитка использует другую половину этого пространства.</li>
-<li>Эта функция доступна только при выборе одной плитки, достаточно большой для разделения. Она недоступна при выборе нескольких плиток или если размер выбранной плитки слишком мал для разделения.</li>
-</ul>
-<p>Например, давайте выберем плитку и добавим другую плитку справа от неё, чтобы две плитки делили пространство, изначально занимаемое первой плиткой.</p>
-<ol>
-<li>Выберите плитку.</li>
-<li>Наведите курсор на плитку, чтобы увидеть элементы управления разделением  — слева, справа и снизу — указывающие, где вы разделяете пространство и вставляете новую плитку.</li>
-</ol>
-<p><img alt="Разделение плитки дашборда для вставки другой плитки в то же пространство" src="https://dt-cdn.net/images/split-tiles-01-1515-c796df2c96.png" />
-3. В этом примере выберите элемент управления  справа. Откроется меню, аналогичное меню , которое вы обычно используете для добавления плитки на дашборд.
-4. Выберите тип плитки, которую хотите добавить.
-5. Отредактируйте определение новой плитки и закройте панель редактирования, чтобы увидеть изменённый макет.</p>
-<ul>
-<li>Оригинальная плитка не изменена, за исключением того, что теперь занимает только левую половину ранее используемого пространства.</li>
-<li>Новая плитка использует правую половину этого пространства.</li>
-<li>Вы всё ещё можете вручную настроить размеры и положение плиток.</li>
-</ul>
-<h3 id="_57">Удаление плитки<a class="headerlink" href="#_57" title="Permanent link">&para;</a></h3>
-<p>Вы можете удалить одну плитку за раз или выбрать и удалить несколько плиток одновременно.</p>
-<p>Чтобы удалить одну плитку</p>
-<ol>
-<li>Выберите плитку, чтобы отобразить команды плитки.</li>
-<li>На панели команд плитки выберите  <strong>More actions</strong> &gt;  <strong>Delete</strong>.</li>
-<li>В сообщении <strong>Are you sure you want to delete this tile?</strong> выберите <strong>Cancel</strong> или <strong>Delete</strong>.</li>
-</ol>
-<p>Чтобы удалить несколько плиток одновременно</p>
-<ol>
-<li>Щёлкните на одной плитке, чтобы выбрать её.</li>
-<li>
-<p>Ctrl-щелчком выберите дополнительные плитки, которые хотите удалить.</p>
-</li>
-<li>
-<p>Каждая выбранная плитка подсвечивается.</p>
-</li>
-<li>Общее количество выбранных плиток отображается на панели команд плитки.</li>
-<li>На панели команд плитки выберите  <strong>Delete</strong>.</li>
-<li>В сообщении <strong>Are you sure you want to delete this tile?</strong> выберите <strong>Cancel</strong> или <strong>Delete</strong>.</li>
-</ol>
 
 
 
@@ -6809,7 +4406,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.sections", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
   
@@ -6819,25 +4416,38 @@
       
     
   <script>
-    // Inject version selector into header
-    document.addEventListener('DOMContentLoaded', function() {
-      var headerInner = document.querySelector('.md-header__inner');
-      if (headerInner) {
-        var select = document.createElement('select');
-        select.className = 'docflow-version-select';
-        select.innerHTML = '<option value="managed" selected>Managed</option><option value="saas">SaaS</option>';
-        select.setAttribute('aria-label', 'Version selector');
+    (function() {
+      // --- Reading progress bar (one-time setup) ---
+      var progressBar = document.createElement('div');
+      progressBar.className = 'reading-progress';
+      document.body.appendChild(progressBar);
 
-        // Insert before the search or at the end
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (docHeight > 0) {
+          var progress = (scrollTop / docHeight) * 100;
+          progressBar.style.width = Math.min(progress, 100) + '%';
+        }
+      });
+
+      // --- Managed label in header (one-time setup) ---
+      var headerInner = document.querySelector('.md-header__inner');
+      if (headerInner && !headerInner.querySelector('.docflow-managed-label')) {
+        var label = document.createElement('span');
+        label.className = 'docflow-managed-label';
+        label.textContent = 'Managed';
+        label.setAttribute('title', 'Документация включает разделы Dynatrace Managed');
+
         var searchContainer = headerInner.querySelector('.md-header__source');
         if (searchContainer) {
-          headerInner.insertBefore(select, searchContainer);
+          headerInner.insertBefore(label, searchContainer);
         } else {
-          headerInner.appendChild(select);
+          headerInner.appendChild(label);
         }
       }
 
-      // Keyboard shortcut Ctrl+K for search
+      // --- Keyboard shortcut Ctrl+K for search ---
       document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
           e.preventDefault();
@@ -6852,7 +4462,9 @@
           }
         }
       });
-    });
+
+      // TOC title renaming handled via CSS (see extra style block above)
+    })();
   </script>
 
   </body>

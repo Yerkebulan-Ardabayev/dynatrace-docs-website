@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
       
       
         <meta name="author" content="Yerkebulan Ardabayev">
@@ -15,13 +15,17 @@
         <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/ru/whats-new/technology/">
       
       
+        <link rel="prev" href="../edgeconnect/edgeconnect-release-notes-1-330-2/">
+      
+      
+        <link rel="next" href="end-of-life-announcements/">
       
       
         
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -87,7 +91,10 @@
       flex-shrink: 0;
     }
 
-    /* Search Ctrl+K badge */
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
     .md-search__form::after {
       content: 'Ctrl+K';
       display: none;
@@ -97,11 +104,14 @@
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color);
       font-size: 10px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'JetBrains Mono', monospace;
       color: var(--md-default-fg-color--lighter);
-      margin-right: 0.5rem;
       white-space: nowrap;
       pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
     }
     @media (min-width: 60em) {
       .md-search__form::after {
@@ -109,12 +119,13 @@
       }
     }
 
-    /* Version selector in header */
-    .docflow-version-select {
+    /* Managed label — non-interactive indicator */
+    .docflow-managed-label {
       display: none;
       align-items: center;
+      gap: 0.375rem;
       margin-left: 0.5rem;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color--lighter);
@@ -122,28 +133,34 @@
       font-size: 0.75rem;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237e7c98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.4rem center;
-      padding-right: 1.5rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .docflow-managed-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--md-accent-fg-color);
+      flex-shrink: 0;
     }
     @media (min-width: 60em) {
-      .docflow-version-select {
+      .docflow-managed-label {
         display: flex;
       }
     }
-    .docflow-version-select:hover {
-      border-color: var(--md-primary-fg-color--light);
-      color: var(--md-default-fg-color);
-    }
-    .docflow-version-select:focus {
-      outline: none;
-      border-color: var(--md-primary-fg-color);
-      box-shadow: 0 0 0 3px var(--docflow-glow-primary);
+
+    /* Reading progress bar */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #14b8a6, #7c3aed);
+      z-index: 1001;
+      transition: width 0.05s linear;
+      pointer-events: none;
     }
   </style>
 
@@ -166,7 +183,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#1331-oneagent-10-2026" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -181,7 +198,7 @@
 
   
 
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
     <a href="../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -216,20 +233,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -303,375 +320,14 @@
     
   </nav>
   
-    
-      
-<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Главная
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Начало работы
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../managed/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Managed
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../platform/grail/dynatrace-grail/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Платформа
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../observe/infrastructure-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Наблюдаемость
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Dynatrace Intelligence
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Анализ и автоматизация
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../ingest-from/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Источники данных
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../deliver/configuration-as-code/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Deliver
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../secure/threat-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Безопасность
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../manage/hub/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Управление
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../dynatrace-api/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  API
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Что нового
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../ai/groq/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  AI Помощник
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
 </header>
     
 
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -685,10 +341,8 @@
                     
 
 
-  
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -765,16 +419,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -796,7 +454,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -829,7 +487,7 @@
   <span class="md-ellipsis">
     
   
-    Начало работы
+    🚀 Быстрый старт
   
 
     
@@ -967,16 +625,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -998,7 +660,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1227,7 +889,7 @@
   <span class="md-ellipsis">
     
   
-    Лицензия
+    Лицензия Managed
   
 
     
@@ -1269,19 +931,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1327,20 +993,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../platform/grail/dynatrace-grail/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1354,78 +1021,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Grail
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../platform/grail/dynatrace-grail/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Что такое Grail
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../platform/grail/dynatrace-query-language/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Язык запросов DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1544,19 +1145,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1610,20 +1215,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../observe/infrastructure-observability/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1637,190 +1243,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Инфраструктура
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/infrastructure-observability/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Хосты и операции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Облачный мониторинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes Classic
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Базы данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1844,20 +1272,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../observe/application-observability/distributed-tracing/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1871,78 +1300,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Приложения
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/application-observability/distributed-tracing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Распределённая трассировка
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/application-observability/services/services-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Сервисы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1966,20 +1329,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../observe/digital-experience/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1993,78 +1357,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Цифровой опыт
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/digital-experience/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Синтетическое приложение
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2131,19 +1429,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2203,20 +1505,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2230,274 +1533,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Обнаружение аномалий
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Настройка чувствительности
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение Anomaly Detection
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфигурация
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Адаптивные пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Многомерный бейзлайн
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    События метрик
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Статические пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Оптимизация DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2527,20 +1568,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../dynatrace-intelligence/copilot/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2554,162 +1596,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Davis Copilot
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dynatrace Assist
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфиденциальность
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы на естественном языке
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2763,20 +1655,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2790,106 +1683,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Анализ первопричин
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Анализ событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2910,7 +1709,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграции
+    Интеграции Davis AI
   
 
     
@@ -2941,20 +1740,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2968,78 +1768,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Справочник
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AI модели
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лимиты
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3080,19 +1814,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -3144,20 +1882,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3171,162 +1910,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Дашборды и ноутбуки
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Дашборды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Версии документов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Визуализации
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3354,20 +1943,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../analyze-explore-automate/logs/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3381,134 +1971,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Логи
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/logs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Log Analytics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение журналов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Фильтры
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3681,19 +2149,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -3736,7 +2208,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
+    Обзор источников данных
   
 
     
@@ -3838,19 +2310,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -3898,20 +2374,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../deliver/configuration-as-code/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3925,194 +2402,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Configuration as Code
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/configuration-as-code/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
       
-        
+        <span class="md-nav__icon md-icon"></span>
       
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Monaco
+    </a>
   
 
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Monaco
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4136,150 +2431,21 @@
     
     
       
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Terraform
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Terraform
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CLI команды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
         
-      
         
       
     
-    
-    
-      
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
+  
+  
+    <a href="../../deliver/service-level-objectives/" class="md-nav__link">
       
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -4293,78 +2459,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    SLO
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/service-level-objectives/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/service-level-objectives/create-slo/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Создание SLO
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4388,20 +2488,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../deliver/site-reliability-guardian/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4415,78 +2516,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Site Reliability Guardian
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/site-reliability-guardian/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Структура событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4538,20 +2573,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../deliver/release-monitoring/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4565,78 +2601,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Мониторинг релизов
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/release-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Мониторинг релизов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4695,19 +2665,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -4778,7 +2752,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграция
+    Приём событий безопасности
   
 
     
@@ -4816,19 +2790,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
             
   
   
@@ -4910,20 +2888,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../license/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4937,190 +2916,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Лицензирование
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../license/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лицензия
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../license/capabilities/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Возможности DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../license/billing-reports/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Биллинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../license/budget-alerts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Бюджетные оповещения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../license/license-lifecycle/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Жизненный цикл
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../license/dps-permissions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Разрешения DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -5151,19 +2952,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
             
   
   
@@ -5259,8 +3064,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -5272,23 +3079,31 @@
       
         
       
-    
-    
-    
+        
       
+        
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
         
           
-          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
             
   
   
@@ -5306,7 +3121,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             
@@ -5331,35 +3146,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../saas/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SaaS
+    Все обновления
   
 
     
@@ -5387,7 +3174,7 @@
   <span class="md-ellipsis">
     
   
-    OneAgent
+    Обновления OneAgent
   
 
     
@@ -5416,6 +3203,989 @@
     
   
     ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../dynatrace-operator/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Operator
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../edgeconnect/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EdgeConnect
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13_6" id="__nav_13_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Технологии
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Технологии
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Новые технологии
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Новые технологии
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1331-oneagent-10-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.331 OneAgent (10 февраля 2026)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1329-oneagent-7-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.329 OneAgent (7 января 2026)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1327-oneagent-18-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.327 OneAgent (18 ноября 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1325-oneagent-21-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.325 OneAgent (21 октября 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1323-oneagent-23-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.323 OneAgent (23 сентября 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1321-oneagent-10-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.321 OneAgent (10 сентября 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1319-oneagent-29-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.319 OneAgent (29 июля 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1317-oneagent-1-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.317 OneAgent (1 июля 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1315-oneagent-3-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.315 OneAgent (3 июня 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1313-oneagent-6-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.313 OneAgent (6 мая 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1311-oneagent-8-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.311 OneAgent (8 апреля 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1309-oneagent-11-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.309 OneAgent (11 марта 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1307-oneagent-11-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.307 OneAgent (11 февраля 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1305-oneagent-14-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.305 OneAgent (14 января 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1303-oneagent-5-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.303 OneAgent (5 ноября 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1301-oneagent-4-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.301 OneAgent (4 ноября 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1299-oneagent-9-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.299 OneAgent (9 сентября 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1297-oneagent-13-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.297 OneAgent (13 августа 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1295-oneagent-16-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.295 OneAgent (16 июля 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-operator-120-24-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes Operator 1.2.0 (24 июня 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1293-oneagent-18-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.293 OneAgent (18 июня 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1291-oneagent-21-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.291 OneAgent (21 мая 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1289-oneagent-22-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.289 OneAgent (22 апреля 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1287-oneagent-26-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.287 OneAgent (26 марта 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1285-oneagent-27-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.285 OneAgent (27 февраля 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1283-oneagent-30-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.283 OneAgent (30 января 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1281-oneagent-9-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.281 OneAgent (9 января 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1279-oneagent-20-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.279 OneAgent (20 ноября 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1277-oneagent-26-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.277 OneAgent (26 октября 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1275-oneagent-4-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.275 OneAgent (4 октября 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1273-oneagent-5-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.273 OneAgent (5 сентября 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1271-oneagent-7-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.271 OneAgent (7 августа 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Расширения платформы (июль 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1267-oneagent-7-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.267 OneAgent (7 июня 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2023_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Расширения платформы (май 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1265-oneagent-12-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.265 OneAgent (12 мая 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1263-oneagent-17-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.263 OneAgent (17 апреля 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1261-oneagent-14-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.261 OneAgent (14 марта 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1259-oneagent-20-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.259 OneAgent (20 февраля 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1257-oneagent-24-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.257 OneAgent (24 января 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1255-oneagent-12-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.255 OneAgent (12 декабря 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1253-oneagent-14-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.253 OneAgent (14 ноября 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1251-oneagent-14-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.251 OneAgent (14 октября 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1249-oneagent-15-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.249 OneAgent (15 сентября 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1247-oneagent-25-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.247 OneAgent (25 августа 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1246-managed-25-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.246 Managed (25 июля 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1245-6-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.245 (6 июля 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1245-oneagent-19-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.245 OneAgent (19 июля 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1244-managed-27-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.244 Managed (27 июня 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1243-oneagent-29-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.243 OneAgent (29 июня 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1241-oneagent-8-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.241 OneAgent (8 июня 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1239-oneagent-27-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.239 OneAgent (27 апреля 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1237-oneagent-1-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.237 OneAgent (1 апреля 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1235-oneagent-7-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.235 OneAgent (7 марта 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1233-oneagent-7-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.233 OneAgent (7 февраля 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1231-oneagent-10-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.231 OneAgent (10 января 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1229-oneagent-22-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.229 OneAgent (22 ноября 2021)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="end-of-life-announcements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Окончание жизненного цикла
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="end-of-support-news/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Окончание поддержки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Новые статьи
   
 
     
@@ -5480,8 +4250,641 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1331-oneagent-10-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.331 OneAgent (10 февраля 2026)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1329-oneagent-7-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.329 OneAgent (7 января 2026)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1327-oneagent-18-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.327 OneAgent (18 ноября 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1325-oneagent-21-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.325 OneAgent (21 октября 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1323-oneagent-23-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.323 OneAgent (23 сентября 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1321-oneagent-10-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.321 OneAgent (10 сентября 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1319-oneagent-29-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.319 OneAgent (29 июля 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1317-oneagent-1-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.317 OneAgent (1 июля 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1315-oneagent-3-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.315 OneAgent (3 июня 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1313-oneagent-6-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.313 OneAgent (6 мая 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1311-oneagent-8-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.311 OneAgent (8 апреля 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1309-oneagent-11-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.309 OneAgent (11 марта 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1307-oneagent-11-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.307 OneAgent (11 февраля 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1305-oneagent-14-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.305 OneAgent (14 января 2025)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1303-oneagent-5-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.303 OneAgent (5 ноября 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1301-oneagent-4-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.301 OneAgent (4 ноября 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1299-oneagent-9-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.299 OneAgent (9 сентября 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1297-oneagent-13-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.297 OneAgent (13 августа 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1295-oneagent-16-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.295 OneAgent (16 июля 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-operator-120-24-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes Operator 1.2.0 (24 июня 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1293-oneagent-18-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.293 OneAgent (18 июня 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1291-oneagent-21-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.291 OneAgent (21 мая 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1289-oneagent-22-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.289 OneAgent (22 апреля 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1287-oneagent-26-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.287 OneAgent (26 марта 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1285-oneagent-27-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.285 OneAgent (27 февраля 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1283-oneagent-30-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.283 OneAgent (30 января 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1281-oneagent-9-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.281 OneAgent (9 января 2024)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1279-oneagent-20-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.279 OneAgent (20 ноября 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1277-oneagent-26-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.277 OneAgent (26 октября 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1275-oneagent-4-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.275 OneAgent (4 октября 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1273-oneagent-5-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.273 OneAgent (5 сентября 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1271-oneagent-7-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.271 OneAgent (7 августа 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Расширения платформы (июль 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1267-oneagent-7-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.267 OneAgent (7 июня 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2023_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Расширения платформы (май 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1265-oneagent-12-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.265 OneAgent (12 мая 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1263-oneagent-17-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.263 OneAgent (17 апреля 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1261-oneagent-14-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.261 OneAgent (14 марта 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1259-oneagent-20-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.259 OneAgent (20 февраля 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1257-oneagent-24-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.257 OneAgent (24 января 2023)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1255-oneagent-12-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.255 OneAgent (12 декабря 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1253-oneagent-14-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.253 OneAgent (14 ноября 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1251-oneagent-14-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.251 OneAgent (14 октября 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1249-oneagent-15-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.249 OneAgent (15 сентября 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1247-oneagent-25-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.247 OneAgent (25 августа 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1246-managed-25-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.246 Managed (25 июля 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1245-6-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.245 (6 июля 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1245-oneagent-19-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.245 OneAgent (19 июля 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1244-managed-27-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.244 Managed (27 июня 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1243-oneagent-29-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.243 OneAgent (29 июня 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1241-oneagent-8-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.241 OneAgent (8 июня 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1239-oneagent-27-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.239 OneAgent (27 апреля 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1237-oneagent-1-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.237 OneAgent (1 апреля 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1235-oneagent-7-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.235 OneAgent (7 марта 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1233-oneagent-7-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.233 OneAgent (7 февраля 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1231-oneagent-10-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.231 OneAgent (10 января 2022)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1229-oneagent-22-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.229 OneAgent (22 ноября 2021)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -5499,6 +4902,64 @@
   
 
 
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Что нового
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Технологии
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
@@ -5507,634 +4968,312 @@
 
 
 
-<h1 id="_1">Поддержка новых технологий<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h1 id="_2">Поддержка новых технологий<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+  <h1>Новые технологии</h1>
+
+<p>Новые технологии для мониторинга с Dynatrace. Может потребовать активации через функции OneAgent.</p>
+<p>Дорожная карта: <a href="https://community.dynatrace.com/t5/Feedback-channel/Dynatrace-technology-support-roadmap/td-p/183451">Dynatrace Community</a></p>
+<h2 id="1331-oneagent-10-2026">1.331 OneAgent (10 февраля 2026)<a class="headerlink" href="#1331-oneagent-10-2026" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Последняя версия Dynatrace</li>
-<li>Справочник</li>
-<li>Опубликовано 13 июля 2022 г.</li>
+<li>NGINX 1.29.4</li>
+<li>Go FIPS v1.25.3</li>
+<li>gRPC 1.78 (Go)</li>
+<li>Undici HTTP client (Node.js)</li>
+<li>Amazon SNS v1.15-1.38 (Go)</li>
 </ul>
-<p>Откройте для себя новые технологии, которые можно отслеживать с помощью Dynatrace, и узнайте, как начать работу. Включены операционные системы и кодовые модули OneAgent, мейнфреймы, интеграции с serverless и расширения платформы.</p>
-<p>Поддержка новых технологий может потребовать подключения через <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-features" title="Управляйте функциями OneAgent глобально и для каждой группы процессов.">функции OneAgent</a>.</p>
-<p><a href="https://community.dynatrace.com/t5/Feedback-channel/Dynatrace-technology-support-roadmap/td-p/183451">Дорожная карта поддержки технологий</a> доступна в сообществе Dynatrace.</p>
-<p>Схема версий поддержки технологий</p>
-<p>Определение схемы версий поддержки технологий с примерами:</p>
+<h2 id="1329-oneagent-7-2026">1.329 OneAgent (7 января 2026)<a class="headerlink" href="#1329-oneagent-7-2026" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p><strong>Поддерживается основная версия 5</strong></p>
-</li>
-<li>
-<p>Поддерживается основная версия 5, включая все её дополнительные версии, такие как 5.1 и 5.2</p>
-</li>
-<li>Другие основные версии не поддерживаются, такие как 6 и 7</li>
-<li>
-<p><strong>Поддерживается дополнительная версия 5.1</strong></p>
-</li>
-<li>
-<p>Поддерживается дополнительная версия 5.1, включая все её патч-версии, такие как 5.1.1 и 5.1.2</p>
-</li>
-<li>Другие дополнительные версии не поддерживаются, такие как 5.2 и 5.3</li>
-<li>
-<p><strong>Поддерживается патч-версия 5.1.1</strong></p>
-</li>
-<li>
-<p>Поддерживается патч-версия 5.1.1</p>
-</li>
-<li>Другие патч-версии не поддерживаются, такие как 5.1.2 и 5.1.3</li>
-<li>
-<p><strong>Поддерживается диапазон версий 5.1–5.3</strong></p>
-</li>
-<li>
-<p>Поддерживаются дополнительные версии 5.1, 5.2 и 5.3, включая все их патч-версии, такие как 5.1.1, 5.2.1 и 5.3.1</p>
-</li>
-<li>Другие дополнительные версии не поддерживаются, такие как 5.0 и 5.4</li>
-<li>
-<p><strong>Требуемая минимальная версия 5+</strong></p>
-</li>
-<li>
-<p>Поддерживаются все основные, дополнительные и патч-версии начиная с версии 5, такие как 5, 5.1, 5.1.1 и 6</p>
-</li>
+<li>Node.js 24</li>
+<li>PHP 8.5 Zend Engine 4.5</li>
+<li>NGINX v1.29.3</li>
+<li>gRPC v1.26+ (Python), Pymongo v3.10+, MySQLClient v2.0+, HTTPX v0.20.0+ (Python)</li>
+<li>Jedis Redis v6-7 (Java)</li>
+<li>IBM z17, z/OS 3.2, IBM MQ 9.4, CICS TS 6.3</li>
 </ul>
-<h2 id="1331-oneagent">1.331 OneAgent<a class="headerlink" href="#1331-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 10 февраля 2026 г. для OneAgent</p>
-<ul>
-<li>NGINX 1.29.4 (модуль NGINX)</li>
-<li>Go toolchain с FIPS v1.25.3 (openssl-fips)</li>
-<li>gRPC 1.78 (модуль Go)</li>
-<li>Undici HTTP client (модуль Node.js)</li>
-<li>Amazon SNS v1.15–1.38 для Go</li>
-</ul>
-<h2 id="1329-oneagent">1.329 OneAgent<a class="headerlink" href="#1329-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 7 января 2026 г. для OneAgent</p>
-<ul>
-<li>Node.js 24 (модуль Node.js)</li>
-<li>PHP 8.5 Zend Engine 4.5 (модуль PHP)</li>
-<li>NGINX v1.29.3 (модуль NGINX)</li>
-<li>gRPC v1.26+ (модуль Python)</li>
-<li>Pymongo v3.10+ (модуль Python)</li>
-<li>MySQLClient v2.0+ (модуль Python)</li>
-<li>HTTPX v0.20.0+ (модуль Python)</li>
-<li>Jedis Redis v6-7 (модуль Java)</li>
-<li>IBM z17</li>
-<li>z/OS 3.2 (модуль OS)</li>
-<li>IBM MQ 9.4 (модуль MQ)</li>
-<li>IBM CICS Transaction Server 6.3 (модуль CICS)</li>
-</ul>
-<h2 id="1327-oneagent">1.327 OneAgent<a class="headerlink" href="#1327-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 18 ноября 2025 г. для OneAgent</p>
+<h2 id="1327-oneagent-18-2025">1.327 OneAgent (18 ноября 2025)<a class="headerlink" href="#1327-oneagent-18-2025" title="Permanent link">&para;</a></h2>
 <ul>
 <li>NGINX v1.29.2</li>
-<li>Oracle Linux 10.0 (модуль zRemote)</li>
-<li>Rocky Linux 10.0 (модуль zRemote)</li>
-<li>Amazon AWS Lambda SDK v3.5.0+ (.NET Framework, .NET и .NET Core)</li>
-<li>Amazon AWS SDK v1.13.0–1.39.0 (Go)</li>
-<li>Amazon DynamoDB v3.5.0+ (.NET Framework, .NET и .NET Core)</li>
-<li>Amazon SNS v3.5.0+ (.NET Framework, .NET и .NET Core)</li>
-<li>Confluent Golang 2.12 Client (модуль Go). Функции OneAgent: Go Kafka Consumer; Go Kafka Producer</li>
-<li>Jakarta EE 9 (модуль Java z/OS)</li>
+<li>Oracle Linux 10.0, Rocky Linux 10.0 (zRemote)</li>
+<li>Amazon AWS Lambda SDK v3.5.0+ (.NET), AWS SDK v1.13.0-1.39.0 (Go)</li>
+<li>Amazon DynamoDB v3.5.0+, SNS v3.5.0+ (.NET)</li>
+<li>Confluent Golang 2.12 (Go Kafka)</li>
+<li>Jakarta EE 9 (Java z/OS)</li>
 </ul>
-<h2 id="1325-oneagent">1.325 OneAgent<a class="headerlink" href="#1325-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 21 октября 2025 г. для OneAgent</p>
+<h2 id="1325-oneagent-21-2025">1.325 OneAgent (21 октября 2025)<a class="headerlink" href="#1325-oneagent-21-2025" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Go v1.25 (модуль Go)</li>
-<li>Go toolchain с FIPS v1.24.6 (openssl-fips)</li>
+<li>Go v1.25, Go FIPS v1.24.6</li>
 <li>NGINX v1.29.1</li>
-<li>Amazon Event Bridge v3.5.0+ (.NET Framework, .NET и .NET Core)</li>
-<li>Amazon Kinesis v3.5.0+ (.NET Framework, .NET и .NET Core)</li>
-<li>Python-Kafka v2.0.2+ (модуль Python)</li>
+<li>Amazon Event Bridge, Kinesis v3.5.0+ (.NET)</li>
+<li>Python-Kafka v2.0.2+</li>
 </ul>
-<h2 id="1323-oneagent">1.323 OneAgent<a class="headerlink" href="#1323-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 23 сентября 2025 г. для OneAgent</p>
+<h2 id="1323-oneagent-23-2025">1.323 OneAgent (23 сентября 2025)<a class="headerlink" href="#1323-oneagent-23-2025" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Go toolchain с FIPS v1.23.9 и 1.24.4 (openssl-fips)</li>
-<li>Amazon Kinesis v2 для Java</li>
-<li>Python-Kafka v1.4+ (модуль Python)</li>
-<li>SUSE Linux Enterprise Server 15.7 (модуль OS)</li>
-<li>Windows Desktop 11 24H2 (модуль OS)</li>
+<li>Go FIPS v1.23.9 и 1.24.4</li>
+<li>Amazon Kinesis v2 (Java)</li>
+<li>Python-Kafka v1.4+</li>
+<li>SUSE Linux 15.7, Windows Desktop 11 24H2</li>
 <li>.NET OneAgent SDK V2</li>
-<li>WebSphere Liberty 24 (модуль Java z/OS)</li>
-<li>WebSphere Liberty 25 (модуль Java z/OS)</li>
-<li>RabbitMQ Client v4 и v5 (модуль Java)</li>
-<li>IBM Semeru 21 LTS (модуль Java)</li>
-<li>IBM IMS 15.6 (модуль IMS)</li>
+<li>WebSphere Liberty 24, 25 (z/OS Java)</li>
+<li>RabbitMQ Client v4, v5 (Java)</li>
+<li>IBM Semeru 21 LTS, IBM IMS 15.6</li>
 </ul>
-<h2 id="1321-oneagent">1.321 OneAgent<a class="headerlink" href="#1321-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 10 сентября 2025 г. для OneAgent</p>
+<h2 id="1321-oneagent-10-2025">1.321 OneAgent (10 сентября 2025)<a class="headerlink" href="#1321-oneagent-10-2025" title="Permanent link">&para;</a></h2>
 <ul>
-<li>NGINX 1.29.0 (модуль NGINX)</li>
-<li>Amazon S3 v2 для Java</li>
-<li>Confluent Golang 2.11 Client (модуль Go). Функции OneAgent: Go Kafka Consumer; Go Kafka Producer</li>
-<li>RabbitMQ Client v7.x+ (.NET Framework)</li>
-<li>RabbitMQ Client v7.x+ (.NET и .NET Core)</li>
-<li>MassTransit v8.3.2+ (.NET framework)</li>
-<li>MassTransit v8.3.2+ (.NET и .NET Core)</li>
-<li>Red Hat Enterprise Linux 10.0 (модуль zRemote)</li>
-<li>IBM Semeru 17 LTS (модуль Java)</li>
+<li>NGINX 1.29.0</li>
+<li>Amazon S3 v2 (Java)</li>
+<li>Confluent Golang 2.11 (Go Kafka)</li>
+<li>RabbitMQ Client v7.x+ (.NET), MassTransit v8.3.2+ (.NET)</li>
+<li>RHEL 10.0 (zRemote), IBM Semeru 17 LTS</li>
 </ul>
-<h2 id="1319-oneagent">1.319 OneAgent<a class="headerlink" href="#1319-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 29 июля 2025 г. для OneAgent</p>
+<h2 id="1319-oneagent-29-2025">1.319 OneAgent (29 июля 2025)<a class="headerlink" href="#1319-oneagent-29-2025" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Amazon Event Bridge v1.11+ для Python</li>
-<li>Amazon SNS v1.11+ для Python</li>
-<li>Amazon Kinesis v2-3 для Node.js</li>
-<li>AWS SDK v1-2 для Java</li>
+<li>Amazon Event Bridge, SNS v1.11+ (Python)</li>
+<li>Amazon Kinesis v2-3 (Node.js)</li>
+<li>AWS SDK v1-2 (Java)</li>
 </ul>
-<h2 id="1317-oneagent">1.317 OneAgent<a class="headerlink" href="#1317-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 1 июля 2025 г. для OneAgent</p>
+<h2 id="1317-oneagent-1-2025">1.317 OneAgent (1 июля 2025)<a class="headerlink" href="#1317-oneagent-1-2025" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Amazon SQS 1.11+ для Python</li>
-<li>Amazon S3 1.11+ для Python</li>
-<li>Amazon Kinesis 1.11+ для Python</li>
-<li>Amazon DynamoDB 1.11+ для Python</li>
-<li>Amazon S3 v2-3 для Node.js</li>
-<li>Go 5.0–5.7 (PostgreSQL (jackc/pgx))</li>
-<li>Redis Cluster 3.1.6–6.2.0 (модуль PHP)</li>
+<li>Amazon SQS, S3, Kinesis, DynamoDB v1.11+ (Python)</li>
+<li>Amazon S3 v2-3 (Node.js)</li>
+<li>Go PostgreSQL (jackc/pgx) 5.0-5.7</li>
+<li>Redis Cluster 3.1.6-6.2.0 (PHP)</li>
 </ul>
-<h2 id="1315-oneagent">1.315 OneAgent<a class="headerlink" href="#1315-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 3 июня 2025 г. для OneAgent</p>
+<h2 id="1315-oneagent-3-2025">1.315 OneAgent (3 июня 2025)<a class="headerlink" href="#1315-oneagent-3-2025" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Go toolchain с FIPS 1.23.6 (openssl-fips)</li>
-<li>NGINX 1.28.0 (модуль NGINX)</li>
-<li>IBM AIX 7.3 TL3 (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix" title="Узнайте, как установить OneAgent на AIX.">Начало работы</a></li>
-<li>Redis-Py 3.4+ (модуль Python). Функция OneAgent: Python Redis</li>
-<li>Confluent Golang 2.10 Client (модуль Go). Функции OneAgent: Go Kafka Consumer; Go Kafka Producer</li>
-<li>Amazon SNS v1-2 для Java. Функция OneAgent: Java Amazon SNS</li>
-<li>Amazon AWS SDK v2-3 для Node.js</li>
-<li>Amazon AWS SDK v1.11+ для Python</li>
-<li>Amazon Event Bridge v2-3 для Node.js</li>
-<li>Amazon Event Bridge v1-2 для Java</li>
-<li>Amazon SNS v1-2 для Java</li>
-<li>Amazon DynamoDB v2-3 для Node.js</li>
-<li>Amazon DynamoDB v1 и v3 для Java</li>
+<li>Go FIPS 1.23.6, NGINX 1.28.0</li>
+<li>IBM AIX 7.3 TL3</li>
+<li>Redis-Py 3.4+ (Python)</li>
+<li>Confluent Golang 2.10 (Go Kafka)</li>
+<li>Amazon SNS v1-2 (Java), AWS SDK v2-3 (Node.js), v1.11+ (Python)</li>
+<li>Amazon Event Bridge v2-3 (Node.js), v1-2 (Java)</li>
+<li>Amazon DynamoDB v2-3 (Node.js), v1 &amp; v3 (Java)</li>
 </ul>
-<h2 id="1313-oneagent">1.313 OneAgent<a class="headerlink" href="#1313-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 6 мая 2025 г. для OneAgent</p>
+<h2 id="1313-oneagent-6-2025">1.313 OneAgent (6 мая 2025)<a class="headerlink" href="#1313-oneagent-6-2025" title="Permanent link">&para;</a></h2>
 <ul>
-<li>NGINX 1.27.5 (модуль NGINX)</li>
-<li>NGINX Plus R34 (модуль NGINX)</li>
-<li>IBM App Connect Enterprise 13.0.2.0+ (модуль ACE)</li>
-<li>JBoss EAP (Application Server, Remoting, RMI-IIOP) v8 (модуль Java)</li>
+<li>NGINX 1.27.5, NGINX Plus R34</li>
+<li>IBM ACE 13.0.2.0+, JBoss EAP v8</li>
 <li>Azure Linux 3</li>
-<li>Amazon SQS v2-3 для Node.js</li>
-<li>Amazon SNS v2-3 для Node.js</li>
-<li>Python-Oracledb 1.0.1+ (модуль Python). Функция OneAgent: Python Oracledb</li>
-<li>AIOHTTP 3.0+ (модуль Python). Функция OneAgent: Python Aiohttp</li>
+<li>Amazon SQS, SNS v2-3 (Node.js)</li>
+<li>Python-Oracledb 1.0.1+, AIOHTTP 3.0+</li>
 </ul>
-<h2 id="1311-oneagent">1.311 OneAgent<a class="headerlink" href="#1311-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 8 апреля 2025 г. для OneAgent</p>
+<h2 id="1311-oneagent-8-2025">1.311 OneAgent (8 апреля 2025)<a class="headerlink" href="#1311-oneagent-8-2025" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Windows Desktop 11 23H2 (модуль OS)</li>
-<li>Go 1.24 (модуль Go)</li>
-<li>Confluent Golang 1.9–2.8 Client (модуль Go). Функции OneAgent: Go Kafka Consumer; Go Kafka Producer</li>
+<li>Windows Desktop 11 23H2</li>
+<li>Go 1.24</li>
+<li>Confluent Golang 1.9-2.8 (Go Kafka)</li>
 </ul>
-<h2 id="1309-oneagent">1.309 OneAgent<a class="headerlink" href="#1309-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 11 марта 2025 г. для OneAgent</p>
+<h2 id="1309-oneagent-11-2025">1.309 OneAgent (11 марта 2025)<a class="headerlink" href="#1309-oneagent-11-2025" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Windows Server 2025 (модуль OS)</li>
-<li>gRPC 1.69-1.73 (модуль Go)</li>
-<li>MongoDB 1.3–1.13 (модуль Go). Функция OneAgent: Go MongoDB</li>
-<li>Go toolchain с FIPS 1.22.9 (openssl-fips)</li>
-<li>NGINX 1.26.3 (модуль NGINX)</li>
-<li>NGINX 1.27.4 (модуль NGINX)</li>
-<li>Oracle HotSpot VM 24 (модуль Java)</li>
-<li>OpenJDK 24 (модуль Java)</li>
-<li>SAP JVM 24 (модуль Java)</li>
-<li>Amazon Corretto 24 (модуль Java)</li>
-<li>Azul Platform Core (Zulu) 24 (модуль Java)</li>
-<li>Bellsoft Liberica 24 (модуль Java)</li>
-<li>Eclipse Temurin (a.k.a. 'Adoptium') 24 (модуль Java)</li>
-<li>Cpython 3.8–3.13 (модуль Python)</li>
-<li>Flask 1.1.2+ (модуль Python). Функция OneAgent: Python Celery</li>
-<li>Django 1.8+ (модуль Python). Функция OneAgent: Python Django</li>
-<li>Tornado 6.0+ (модуль Python). Функция OneAgent: Python Tornado</li>
-<li>FastAPI 0.44+ (модуль Python). Функция OneAgent: Python FastAPI</li>
-<li>Starlette 0.12+ (модуль Python). Функция OneAgent: Python Starlette</li>
-<li>Requests 2 (модуль Python). Функция OneAgent: Python Requests</li>
-<li>urllib3 2.0+ (модуль Python). Функция OneAgent: Python urllib3</li>
-<li>Celery 5.3+ (модуль Python). Функция OneAgent: Python Celery</li>
-<li>SQL Alchemy 1.1+ (модуль Python). Функция OneAgent: Python SQLAlchemy</li>
-<li>psycopg2 2.8.4+ (модуль Python). Функция OneAgent: Python psycopg2</li>
-<li>Opentelemetry-python 1.1+ (модуль Python)</li>
-<li>Python standard library: asyncio (модуль Python)</li>
-<li>Python standard library: concurrent.futures (модуль Python). Функция OneAgent: Python concurrent.futures thread, Python concurrent.futures process</li>
-<li>Python standard library: threading (модуль Python). Функция OneAgent: Python threading</li>
-<li>Python standard library: subprocess (модуль Python). Функция OneAgent: Python subprocess</li>
-<li>Python standard library: queue (модуль Python). Функция OneAgent: Python queue</li>
-<li>Alpine Linux (musl libc) на ARM64 для контейнеров (модули Java, Node.js, Python и Apache)</li>
+<li>Windows Server 2025</li>
+<li>gRPC 1.69-1.73 (Go), MongoDB 1.3-1.13 (Go)</li>
+<li>Go FIPS 1.22.9, NGINX 1.26.3, 1.27.4</li>
+<li>Java 24 (Oracle, OpenJDK, SAP, Corretto, Zulu, Liberica, Temurin)</li>
+<li>CPython 3.8-3.13 + множество Python-фреймворков (Flask, Django, Tornado, FastAPI, Starlette, Requests, urllib3, Celery, SQLAlchemy, psycopg2, asyncio и др.)</li>
+<li>Alpine Linux (musl) ARM64 для контейнеров</li>
 </ul>
-<h2 id="1307-oneagent">1.307 OneAgent<a class="headerlink" href="#1307-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 11 февраля 2025 г. для OneAgent</p>
+<h2 id="1307-oneagent-11-2025">1.307 OneAgent (11 февраля 2025)<a class="headerlink" href="#1307-oneagent-11-2025" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Windows Server 2012 R2 (модуль OS)</li>
-<li>Поддержка трассировки MassTransit.RabbitMQ для .NET (min v7.+)</li>
-<li>Alpine Linux (musl libc) для контейнеров 3.18, 3.19 (модуль NGINX)</li>
-<li>Go toolchain с FIPS 1.22.7 (openssl-fips)</li>
-<li>PHP 8.4 (модуль PHP). <a href="https://www.dynatrace.com/hub/detail/php/">Начало работы</a></li>
+<li>Windows Server 2012 R2, MassTransit.RabbitMQ (.NET v7+)</li>
+<li>Alpine Linux (musl) ARM64 (NGINX), Go FIPS 1.22.7, PHP 8.4</li>
 </ul>
-<h2 id="1305-oneagent">1.305 OneAgent<a class="headerlink" href="#1305-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 14 января 2025 г. для OneAgent</p>
+<h2 id="1305-oneagent-14-2025">1.305 OneAgent (14 января 2025)<a class="headerlink" href="#1305-oneagent-14-2025" title="Permanent link">&para;</a></h2>
 <ul>
-<li>.NET 9 (модуль .NET)</li>
-<li>Go toolchain с FIPS 1.21.13 (openssl-fips)</li>
-<li>Node.js 23 (модуль Node.js)</li>
-<li>NGINX 1.27.2 (модуль NGINX)</li>
-<li>NGINX Plus R33</li>
-<li>Red Hat Enterprise Linux 9.5 (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux" title="Узнайте, как установить OneAgent на Linux.">Начало работы</a></li>
-<li>Oracle Linux 9.5 (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux" title="Узнайте, как установить OneAgent на Linux.">Начало работы</a></li>
-<li>Rocky Linux 9.5 (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux" title="Узнайте, как установить OneAgent на Linux.">Начало работы</a></li>
+<li>.NET 9, Go FIPS 1.21.13, Node.js 23</li>
+<li>NGINX 1.27.2, NGINX Plus R33</li>
+<li>RHEL 9.5, Oracle Linux 9.5, Rocky Linux 9.5</li>
 </ul>
-<h2 id="1303-oneagent">1.303 OneAgent<a class="headerlink" href="#1303-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 5 ноября 2024 г. для OneAgent</p>
+<h2 id="1303-oneagent-5-2024">1.303 OneAgent (5 ноября 2024)<a class="headerlink" href="#1303-oneagent-5-2024" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Go 1.23.2, 1.22.8 (модуль Go)</li>
-<li>Обнаружение файловой системы Veritas (агент OS)</li>
+<li>Go 1.23.2, 1.22.8</li>
+<li>Veritas File System detection</li>
 </ul>
-<h2 id="1301-oneagent">1.301 OneAgent<a class="headerlink" href="#1301-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 4 ноября 2024 г. для OneAgent</p>
+<h2 id="1301-oneagent-4-2024">1.301 OneAgent (4 ноября 2024)<a class="headerlink" href="#1301-oneagent-4-2024" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Go 1.23 (модуль Go)</li>
+<li>Go 1.23</li>
 </ul>
-<h2 id="1299-oneagent">1.299 OneAgent<a class="headerlink" href="#1299-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 9 сентября 2024 г. для OneAgent</p>
+<h2 id="1299-oneagent-9-2024">1.299 OneAgent (9 сентября 2024)<a class="headerlink" href="#1299-oneagent-9-2024" title="Permanent link">&para;</a></h2>
 <ul>
-<li>IBM CICS Transaction Server 6.2 (модуль CICS)</li>
-<li>Go toolchain с FIPS 1.21.10–1.21.11 (openssl-fips)</li>
-<li>Oracle HotSpot VM 23 (модуль Java)</li>
-<li>OpenJDK 23 (модуль Java)</li>
-<li>SAP JVM 23 (модуль Java)</li>
-<li>Amazon Corretto 23 (модуль Java)</li>
-<li>Azul Platform Core (Zulu) 23 (модуль Java)</li>
-<li>Bellsoft Liberica 23 (модуль Java)</li>
-<li>Eclipse Temurin (a.k.a. 'Adoptium') 23 (модуль Java)</li>
-<li>Kafka (IBM/sarama) 1.40+ (модуль Go)</li>
-<li>Kafka (Shopify/sarama) 1.18–1.39 (модуль Go)</li>
-<li>SUSE Linux Enterprise Server 15.6 (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux" title="Узнайте, как загрузить и установить Dynatrace OneAgent на Linux.">Начало работы</a></li>
-<li>Fedora 39, 40 (модуль OS)</li>
-<li>openSUSE 15.6 (модуль OS)</li>
-<li>Ubuntu 24.04 (модуль OS)</li>
+<li>IBM CICS TS 6.2, Go FIPS 1.21.10-1.21.11</li>
+<li>Java 23 (Oracle, OpenJDK, SAP, Corretto, Zulu, Liberica, Temurin)</li>
+<li>Kafka (IBM/sarama) 1.40+, (Shopify/sarama) 1.18-1.39</li>
+<li>SUSE 15.6, Fedora 39/40, openSUSE 15.6, Ubuntu 24.04</li>
 </ul>
-<h2 id="1297-oneagent">1.297 OneAgent<a class="headerlink" href="#1297-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 13 августа 2024 г. для OneAgent</p>
+<h2 id="1297-oneagent-13-2024">1.297 OneAgent (13 августа 2024)<a class="headerlink" href="#1297-oneagent-13-2024" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Обогащение журналов доступа Apache Tomcat (модуль Java). Функция OneAgent: Java - Обогащение контекстом трассировки/спана для неструктурированных журналов доступа Apache Tomcat</li>
-<li>Мониторинг журналов для регионов IBM CICS и подсистем IBM IMS. <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs" title="Мониторинг журналов z/OS с помощью Dynatrace.">Начало работы</a></li>
-<li>NGINX 1.26.1, 1.27 (модуль NGINX)</li>
+<li>Apache Tomcat access log enrichment</li>
+<li>Логи для IBM CICS/IMS</li>
+<li>NGINX 1.26.1, 1.27</li>
 </ul>
-<h2 id="1295-oneagent">1.295 OneAgent<a class="headerlink" href="#1295-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 16 июля 2024 г. для OneAgent</p>
+<h2 id="1295-oneagent-16-2024">1.295 OneAgent (16 июля 2024)<a class="headerlink" href="#1295-oneagent-16-2024" title="Permanent link">&para;</a></h2>
 <ul>
-<li>GraalVM Native Image для проектов Maven и Gradle (модуль Java Native Image). <a href="/docs/ingest-from/technology-support/application-software/java/graalvm-native-image" title="Установка, настройка и управление модулем Dynatrace GraalVM Native Image.">Начало работы</a></li>
-<li>Go toolchain с FIPS (openssl-fips) (модуль Go). Функция OneAgent: Go FIPS</li>
-<li>RxJava 3 (модуль Java). Функция OneAgent: Java RxJava v3+ tracing</li>
+<li>GraalVM Native Image (Maven/Gradle)</li>
+<li>Go FIPS, RxJava 3</li>
 </ul>
-<h2 id="kubernetes-operator-120">Kubernetes Operator 1.2.0<a class="headerlink" href="#kubernetes-operator-120" title="Permanent link">&para;</a></h2>
-<p>Выпущено 24 июня 2024 г.</p>
+<h2 id="kubernetes-operator-120-24-2024">Kubernetes Operator 1.2.0 (24 июня 2024)<a class="headerlink" href="#kubernetes-operator-120-24-2024" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Полная поддержка наблюдаемости OpenShift на архитектуре s390x. <a href="/docs/ingest-from/setup-on-k8s/deployment" title="Развёртывание Dynatrace Operator на Kubernetes">Начало работы с Full-Stack observability</a></li>
+<li>OpenShift s390x full-stack observability</li>
 </ul>
-<h2 id="1293-oneagent">1.293 OneAgent<a class="headerlink" href="#1293-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 18 июня 2024 г. для OneAgent</p>
+<h2 id="1293-oneagent-18-2024">1.293 OneAgent (18 июня 2024)<a class="headerlink" href="#1293-oneagent-18-2024" title="Permanent link">&para;</a></h2>
 <ul>
-<li>IBM CICS outgoing HTTP (модуль CICS). Функция OneAgent: CICS HTTP</li>
-<li>log4js (модуль Node.js)</li>
-<li>NGINX 1.25.5, 1.26.0 (модуль NGINX)</li>
-<li>NGINX Plus R32 (модуль NGINX)</li>
-<li>Software AG WebMethods Integration Server 10.7, 10.11, 10.15 (модуль Java)</li>
+<li>IBM CICS HTTP, log4js (Node.js), NGINX 1.25.5/1.26.0, Plus R32</li>
+<li>WebMethods Integration Server 10.7/10.11/10.15</li>
 </ul>
-<h2 id="1291-oneagent">1.291 OneAgent<a class="headerlink" href="#1291-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 21 мая 2024 г. для OneAgent</p>
+<h2 id="1291-oneagent-21-2024">1.291 OneAgent (21 мая 2024)<a class="headerlink" href="#1291-oneagent-21-2024" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Azure Messaging Service Bus 7+ (модуль .NET)</li>
-<li>Bunyan 1+ log enrichment (модуль Node.js)</li>
+<li>Azure Service Bus 7+ (.NET), Bunyan 1+ (Node.js)</li>
 </ul>
-<h2 id="1289-oneagent">1.289 OneAgent<a class="headerlink" href="#1289-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 22 апреля 2024 г. для OneAgent</p>
+<h2 id="1289-oneagent-22-2024">1.289 OneAgent (22 апреля 2024)<a class="headerlink" href="#1289-oneagent-22-2024" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Входящие сообщения Amazon SQS (модуль Java). Функция OneAgent: Java Amazon SQS</li>
-<li>Kafka Batch Listener (модуль Java). Функция OneAgent: Java Spring Kafka Batch Listener</li>
-<li>NGINX 1.25.4 (модуль NGINX)</li>
-<li>redis-py (интеграция AWS Lambda). <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension" title="Мониторинг Lambda-функций, написанных на Python, Node.js и Java.">Начало работы</a></li>
+<li>Amazon SQS (Java), Kafka Batch Listener, NGINX 1.25.4, redis-py (Lambda)</li>
 </ul>
-<h2 id="1287-oneagent">1.287 OneAgent<a class="headerlink" href="#1287-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 26 марта 2024 г. для OneAgent</p>
+<h2 id="1287-oneagent-26-2024">1.287 OneAgent (26 марта 2024)<a class="headerlink" href="#1287-oneagent-26-2024" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Аналитика журналов на Linux s390x (модуль Log). <a href="https://www.dynatrace.com/news/blog/enable-full-observability-for-linux-on-ibm-z-mainframe-now-with-logs/">Объявление</a></li>
-<li>Распространение W3C Trace Context для заголовков KafkaJS (модуль Node.js). Функция OneAgent: Отправка заголовков W3C Trace Context Kafka</li>
+<li>Логи на Linux s390x, W3C Trace Context для KafkaJS</li>
 </ul>
-<h2 id="1285-oneagent">1.285 OneAgent<a class="headerlink" href="#1285-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 27 февраля 2024 г. для OneAgent</p>
+<h2 id="1285-oneagent-27-2024">1.285 OneAgent (27 февраля 2024)<a class="headerlink" href="#1285-oneagent-27-2024" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Alpine Linux (musl libc) для контейнеров 3.18, 3.19</li>
-<li>WebSphere Liberty 22, 23 (модуль Java z/OS)</li>
+<li>Alpine Linux (musl) 3.18/3.19, WebSphere Liberty 22/23 (z/OS)</li>
 </ul>
-<h2 id="1283-oneagent">1.283 OneAgent<a class="headerlink" href="#1283-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 30 января 2024 г. для OneAgent</p>
+<h2 id="1283-oneagent-30-2024">1.283 OneAgent (30 января 2024)<a class="headerlink" href="#1283-oneagent-30-2024" title="Permanent link">&para;</a></h2>
 <ul>
-<li>MongoDB 1.3–1.13 (модуль Go). Функция OneAgent: Go MongoDB</li>
-<li>OpenResty 25.3.1 (модуль NGINX)</li>
-<li>z/OS 3.1 (модуль zDC)</li>
+<li>MongoDB 1.3-1.13 (Go), OpenResty 25.3.1, z/OS 3.1</li>
 </ul>
-<h2 id="1281-oneagent">1.281 OneAgent<a class="headerlink" href="#1281-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 9 января 2024 г. для OneAgent</p>
+<h2 id="1281-oneagent-9-2024">1.281 OneAgent (9 января 2024)<a class="headerlink" href="#1281-oneagent-9-2024" title="Permanent link">&para;</a></h2>
 <ul>
-<li>NGINX Plus R31 (модуль NGINX)</li>
-<li>Node.js 21 (модуль Node.js)</li>
-<li>Node.js 14, 16, 18, 20, 21 на Linux s390x (модуль Node.js)</li>
-<li>OpenTelemetry 1.0.0 (модуль PHP)</li>
+<li>NGINX Plus R31, Node.js 21 (+ s390x), OpenTelemetry 1.0.0 (PHP)</li>
 </ul>
-<h2 id="1279-oneagent">1.279 OneAgent<a class="headerlink" href="#1279-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 20 ноября 2023 г. для OneAgent</p>
+<h2 id="1279-oneagent-20-2023">1.279 OneAgent (20 ноября 2023)<a class="headerlink" href="#1279-oneagent-20-2023" title="Permanent link">&para;</a></h2>
 <ul>
-<li>JMS 3.0 (модуль Java)</li>
-<li>Spring Webflux 6 (модуль Java)</li>
-<li>Spring WebFlux WebClient 6 (модуль Java)</li>
+<li>JMS 3.0, Spring Webflux 6, WebClient 6</li>
 </ul>
-<h2 id="1277-oneagent">1.277 OneAgent<a class="headerlink" href="#1277-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 26 октября 2023 г. для OneAgent</p>
+<h2 id="1277-oneagent-26-2023">1.277 OneAgent (26 октября 2023)<a class="headerlink" href="#1277-oneagent-26-2023" title="Permanent link">&para;</a></h2>
 <ul>
-<li>.NET 8 (модуль .NET)</li>
-<li>Azure Cosmos DB 3.18+ (модуль .NET). Функция OneAgent: .NET Azure Cosmos DB</li>
-<li>IBM App Connect Enterprise CICSRequest node (модуль ACE)</li>
-<li>Jetty HTTP client 12 (модуль Java)</li>
-<li>Jedis Redi 5 (модуль Java)</li>
-<li>Go 1.21 (модуль Go)</li>
-<li>NGINX 1.25.2, 1.25.3 (модуль NGINX)</li>
-<li>Ubuntu 23.04 (модуль OS)</li>
+<li>.NET 8, Azure Cosmos DB 3.18+, IBM ACE CICSRequest, Jetty HTTP 12</li>
+<li>Jedis Redis 5, Go 1.21, NGINX 1.25.2/1.25.3, Ubuntu 23.04</li>
 </ul>
-<h2 id="1275-oneagent">1.275 OneAgent<a class="headerlink" href="#1275-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 4 октября 2023 г. для OneAgent</p>
+<h2 id="1275-oneagent-4-2023">1.275 OneAgent (4 октября 2023)<a class="headerlink" href="#1275-oneagent-4-2023" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Amazon SNS для .NET (интеграция AWS Lambda). <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration#sqs-sns-out" title="Трассировка AWS Lambda-функций с использованием среды выполнения .NET">Начало работы</a></li>
-<li>Amazon SQS для .NET (интеграция AWS Lambda). <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration#sqs-sns-out" title="Трассировка AWS Lambda-функций с использованием среды выполнения .NET">Начало работы</a></li>
-<li>OpenJDK 21 LTS (модуль Java)</li>
-<li>Rancher Kubernetes Engine 2 (модуль OS)</li>
+<li>Amazon SNS/SQS (.NET Lambda), OpenJDK 21 LTS, RKE2</li>
 </ul>
-<h2 id="1273-oneagent">1.273 OneAgent<a class="headerlink" href="#1273-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 5 сентября 2023 г. для OneAgent</p>
+<h2 id="1273-oneagent-5-2023">1.273 OneAgent (5 сентября 2023)<a class="headerlink" href="#1273-oneagent-5-2023" title="Permanent link">&para;</a></h2>
 <ul>
-<li>.NET (интеграция GCP). <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet" title="Мониторинг Google Cloud Functions с OpenTelemetry для .NET и Dynatrace.">Начало работы</a></li>
-<li>go-redis 7, 8, 9 (модуль Go). Функция OneAgent: Go Redis (go-redis/redis)</li>
-<li>Java ForkJoin (модуль Java). Функция OneAgent: Java/Scala ForkJoinPool</li>
-<li>JBoss LogManager 1.1+, 2, 3 (модуль Java)</li>
+<li>.NET (GCP), go-redis 7/8/9, Java ForkJoin, JBoss LogManager</li>
 </ul>
-<h2 id="1271-oneagent">1.271 OneAgent<a class="headerlink" href="#1271-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 7 августа 2023 г. для OneAgent</p>
+<h2 id="1271-oneagent-7-2023">1.271 OneAgent (7 августа 2023)<a class="headerlink" href="#1271-oneagent-7-2023" title="Permanent link">&para;</a></h2>
 <ul>
-<li>AlmaLinux 9.0, 9.1, 9.2 (модуль OS)</li>
-<li>Amazon SNS для Java (интеграция AWS Lambda). <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java" title="Подключение расширения Dynatrace AWS Lambda к Java API OpenTelemetry.">Начало работы</a></li>
-<li>Amazon SQS для Java (интеграция AWS Lambda). <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java" title="Подключение расширения Dynatrace AWS Lambda к Java API OpenTelemetry.">Начало работы</a></li>
-<li>Fedora 37, 38 (модуль OS)</li>
-<li>NGINX 1.25.0, 1.25.1 (модуль NGINX)</li>
-<li>NGINX Plus R30 (модуль NGINX)</li>
-<li>Node.js 20 (модуль Node.js)</li>
-<li>openSUSE 15.5 (модуль OS)</li>
-<li>OpenTelemetry agent 1.27, 1.28 (модуль Java)</li>
+<li>AlmaLinux 9.x, Amazon SNS/SQS (Java Lambda), Fedora 37/38</li>
+<li>NGINX 1.25.0/1.25.1, Plus R30, Node.js 20, openSUSE 15.5, OTel agent 1.27/1.28</li>
 </ul>
-<h2 id="_3">Расширения платформы<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>Выпущено в июле 2023 г. в Dynatrace Hub</p>
+<h2 id="2023">Расширения платформы (июль 2023)<a class="headerlink" href="#2023" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Apache Cassandra (источник данных JMX). <a href="https://www.dynatrace.com/hub/detail/cassandra/">Начало работы</a></li>
-<li>HornetQ (источник данных JMX). <a href="https://www.dynatrace.com/hub/detail/hornetq-1/">Начало работы</a></li>
+<li>Apache Cassandra (JMX), HornetQ (JMX)</li>
 </ul>
-<h2 id="1267-oneagent">1.267 OneAgent<a class="headerlink" href="#1267-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 7 июня 2023 г. для OneAgent</p>
+<h2 id="1267-oneagent-7-2023">1.267 OneAgent (7 июня 2023)<a class="headerlink" href="#1267-oneagent-7-2023" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Akka HTTP server 10.2, 10.4, 10.5 (модуль Java)</li>
+<li>Akka HTTP server 10.2/10.4/10.5</li>
 </ul>
-<h2 id="_4">Расширения платформы<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>Выпущено в мае 2023 г. в Dynatrace Hub</p>
+<h2 id="2023_1">Расширения платформы (май 2023)<a class="headerlink" href="#2023_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Процессы .NET (источник данных WMI). <a href="https://www.dynatrace.com/hub/detail/net/#get-started">Начало работы</a></li>
-<li>Apache ActiveMQ Classic (источник данных JMX). <a href="https://www.dynatrace.com/hub/detail/activemq/#get-started">Начало работы</a>. Функция OneAgent: Java Metric Extensions 2.0 (JMX)</li>
-<li>Apache Kafka (источник данных JMX). <a href="https://www.dynatrace.com/hub/detail/net/#get-started">Начало работы</a>. Функция OneAgent: Java Metric Extensions 2.0 (JMX)</li>
-<li>IBM MQ. <a href="https://www.dynatrace.com/hub/detail/ibm-mq-local/#get-started">Начало работы</a></li>
-<li>TIBCO EMS. <a href="https://www.dynatrace.com/hub/detail/tibco-ems-1/#get-started">Начало работы</a></li>
+<li>.NET processes (WMI), ActiveMQ Classic, Apache Kafka (JMX), IBM MQ, TIBCO EMS</li>
 </ul>
-<h2 id="1265-oneagent">1.265 OneAgent<a class="headerlink" href="#1265-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 12 мая 2023 г. для OneAgent</p>
+<h2 id="1265-oneagent-12-2023">1.265 OneAgent (12 мая 2023)<a class="headerlink" href="#1265-oneagent-12-2023" title="Permanent link">&para;</a></h2>
 <ul>
-<li>CBL-Mariner 2 (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux" title="Узнайте, как установить OneAgent на Linux.">Начало работы</a></li>
-<li>DataStax client для Apache Cassandra 4 (модуль Java)</li>
-<li>Fujitsu Interstage 13 (модуль Java)</li>
-<li>Jakarta RESTful Web Services 2.1+ (модуль Java). Функция OneAgent: Java Servlet 5.0</li>
-<li>Lettuce 5.1.0–5.3, 6.0.3–6.1.6, 6.1.8–6.2 (модуль Java). <a href="https://www.dynatrace.com/hub/detail/redis/#get-started">Начало работы</a>. Функция OneAgent: Java Lettuce Redis client</li>
-<li>Netty, User action to distributed trace correlation (RUM JavaScript и модуль Java). Функция OneAgent: Netty Real User Monitoring (RUM) to distributed trace correlation</li>
-<li>OpenTelemetry agent 1.24, 1.25 (модуль Java)</li>
-<li>Spring Data Redis 2.1+ (модуль Java). <a href="https://www.dynatrace.com/hub/detail/redis/#get-started">Начало работы</a>. Функция OneAgent: Java Lettuce Redis client</li>
-<li>NGINX 1.23.4, 1.24.0 (модуль NGINX)</li>
+<li>CBL-Mariner 2, DataStax Cassandra 4, Fujitsu Interstage 13</li>
+<li>Jakarta RESTful WS 2.1+, Lettuce Redis, Netty RUM, OTel agent 1.24/1.25</li>
+<li>Spring Data Redis 2.1+, NGINX 1.23.4/1.24.0</li>
 </ul>
-<h2 id="1263-oneagent">1.263 OneAgent<a class="headerlink" href="#1263-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 17 апреля 2023 г. для OneAgent</p>
+<h2 id="1263-oneagent-17-2023">1.263 OneAgent (17 апреля 2023)<a class="headerlink" href="#1263-oneagent-17-2023" title="Permanent link">&para;</a></h2>
 <ul>
-<li>.NET 7 (модуль .NET)</li>
-<li>Amazon Corretto 20 (модуль Java)</li>
-<li>Azul Platform Core (Zulu) 20 (модуль Java)</li>
-<li>Bellsoft Liberica 20 (модуль Java)</li>
-<li>Eclipse Temurin (a.k.a. 'Adoptium') 20 (модуль Java)</li>
-<li>Flatcar Container Linux 3033 LTS (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux" title="Узнайте, как установить OneAgent на Linux.">Начало работы</a></li>
-<li>Go 1.20 (модуль Go)</li>
-<li>IBM IMS terminal transactions (модуль IMS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring#ims-terminal-transactions" title="Настройка мониторинга CICS и IMS на z/OS.">Начало работы</a>. Функция OneAgent: z/OS IMS terminal transaction sensor</li>
-<li>log4net 2.0.6+ (модуль .NET). Функция OneAgent: .NET - Обогащение контекстом трассировки/спана Framework log4net</li>
-<li>OpenJDK 20 (модуль Java)</li>
-<li>OpenTelemetry 1.11.1–1.14 (модуль Go)</li>
-<li>OpenTelemetry agent 1.23 (модуль Java)</li>
-<li>Oracle HotSpot VM 20 (модуль Java)</li>
-<li>SAP JVM 20 (модуль Java)</li>
+<li>.NET 7, Java 20 (все JVM), Flatcar Container Linux 3033</li>
+<li>Go 1.20, IBM IMS terminal, log4net 2.0.6+, OTel 1.11.1-1.14, OTel agent 1.23</li>
 </ul>
-<h2 id="1261-oneagent">1.261 OneAgent<a class="headerlink" href="#1261-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 14 марта 2023 г. для OneAgent</p>
+<h2 id="1261-oneagent-14-2023">1.261 OneAgent (14 марта 2023)<a class="headerlink" href="#1261-oneagent-14-2023" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Spring Web Services 4 (модуль Java). Функция OneAgent: Java Servlet 5.0</li>
+<li>Spring Web Services 4</li>
 </ul>
-<h2 id="1259-oneagent">1.259 OneAgent<a class="headerlink" href="#1259-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 20 февраля 2023 г. для OneAgent</p>
+<h2 id="1259-oneagent-20-2023">1.259 OneAgent (20 февраля 2023)<a class="headerlink" href="#1259-oneagent-20-2023" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Apache Tomcat 10 (модуль Java). <a href="https://www.dynatrace.com/hub/detail/apache-tomcat/#get-started">Начало работы</a>, Функция OneAgent: Java Servlet 5.0</li>
-<li>Cassandra client (gocql/gocql) 1.0–1.3 (модуль Go). <a href="https://www.dynatrace.com/hub/detail/cassandra/#get-started">Начало работы</a>, Функция OneAgent: Go CQL (gocql/gocql)</li>
-<li>IBM CICS file access methods VSAM и BDAM (модуль IBM CICS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-cics-file-access" title="Мониторинг доступа к файлам CICS.">Начало работы</a>, Функция OneAgent: z/OS CICS file monitoring sensor</li>
-<li>IBM IMS <a href="https://www.ibm.com/docs/en/ims/15.1.0?topic=bmps-batch-message-processing-transaction-oriented">transaction-oriented BMPs</a> (модуль IBM IMS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims#bmp-tracing" title="Установка модуля Dynatrace IMS.">Начало работы</a></li>
-<li>Jakarta Servlet 5, 6 (модуль Java). <a href="https://www.dynatrace.com/hub/detail/jakarta-servlet/#get-started">Начало работы</a>, Функция OneAgent: Java Servlet 5.0</li>
-<li>Jersey 3 (модуль Java). Функция OneAgent: Java Servlet 5.0</li>
-<li>Jetty HTTP server 11 (модуль Java). <a href="https://www.dynatrace.com/hub/detail/eclipse-jetty/#get-started">Начало работы</a>, Функция OneAgent: Java Servlet 5.0</li>
-<li>NGINX 1.23.3 (модуль NGINX)</li>
-<li>RabbitMQ client (php-amqplib) 2.7+ (модуль PHP). <a href="https://www.dynatrace.com/hub/detail/net-rabbitmq/#get-started">Начало работы</a>, Функция OneAgent: PHP RabbitMQ</li>
-<li>Undertow 2.3+ (модуль Java). Функция OneAgent: Java Servlet 5.0</li>
-<li>WildFly 27 (модуль Java). Функция OneAgent: Java Servlet 5.0</li>
+<li>Tomcat 10, Cassandra gocql 1.0-1.3, IBM CICS VSAM/BDAM, IBM IMS BMP</li>
+<li>Jakarta Servlet 5/6, Jersey 3, Jetty 11, NGINX 1.23.3, RabbitMQ (PHP) 2.7+, Undertow 2.3+, WildFly 27</li>
 </ul>
-<h2 id="1257-oneagent">1.257 OneAgent<a class="headerlink" href="#1257-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 24 января 2023 г. для OneAgent</p>
+<h2 id="1257-oneagent-24-2023">1.257 OneAgent (24 января 2023)<a class="headerlink" href="#1257-oneagent-24-2023" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Amazon SNS для Python (интеграция AWS Lambda). <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#python-sqs-sns" title="Включение и использование взаимодействия OpenTelemetry в AWS Lambda.">Начало работы</a></li>
-<li>Amazon SNS для Node.js (интеграция AWS Lambda). <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#nodejs-sqs-sns" title="Включение и использование взаимодействия OpenTelemetry в AWS Lambda.">Начало работы</a></li>
-<li>Apache HttpClient 5.2 (модуль Java)</li>
-<li>Google Cloud Run managed execution environment generation 1, 2 (модуль Java). <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun" title="Мониторинг Java-приложений, развёрнутых на Google Cloud Run managed.">Начало работы</a></li>
-<li>IBM App Connect Enterprise Callable nodes (модуль IBM IIB/ACE)</li>
-<li>IBM CICS Transaction Server JSON requests (модуль IBM CICS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics#web-services" title="Установка модуля Dynatrace CICS.">Начало работы</a></li>
-<li>Node.js 19 (модуль Node.js)</li>
-<li>SUSE Linux Enterprise Server 15.4 (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux" title="Узнайте, как загрузить и установить Dynatrace OneAgent на Linux.">Начало работы</a></li>
+<li>Amazon SNS (Python/Node.js Lambda), Apache HttpClient 5.2</li>
+<li>Google Cloud Run gen1/gen2, IBM ACE Callable, IBM CICS JSON, Node.js 19, SUSE 15.4</li>
 </ul>
-<h2 id="1255-oneagent">1.255 OneAgent<a class="headerlink" href="#1255-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 12 декабря 2022 г. для OneAgent</p>
+<h2 id="1255-oneagent-12-2022">1.255 OneAgent (12 декабря 2022)<a class="headerlink" href="#1255-oneagent-12-2022" title="Permanent link">&para;</a></h2>
 <ul>
-<li>GraphQL 15+ (модуль Node.js). <a href="https://www.dynatrace.com/hub/detail/graphql/#get-started">Начало работы</a></li>
-<li>Microsoft SQL Server (denisenkom/go-mssqldb) 0.11.0-0.12.3 (модуль Go). <a href="https://www.dynatrace.com/hub/detail/microsoft-sql-server-2/#get-started">Начало работы</a></li>
-<li>Microsoft SQL Server (microsoft/go-mssqldb) 0.11.0-0.17.0 (модуль Go). <a href="https://www.dynatrace.com/hub/detail/microsoft-sql-server-2/#get-started">Начало работы</a></li>
+<li>GraphQL 15+ (Node.js), MS SQL Server (Go denisenkom/microsoft) 0.11+</li>
 </ul>
-<h2 id="1253-oneagent">1.253 OneAgent<a class="headerlink" href="#1253-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 14 ноября 2022 г. для OneAgent</p>
+<h2 id="1253-oneagent-14-2022">1.253 OneAgent (14 ноября 2022)<a class="headerlink" href="#1253-oneagent-14-2022" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Amazon SQS для Node.js (интеграция AWS Lambda). <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability" title="Включение и использование взаимодействия OpenTelemetry в AWS Lambda.">Начало работы</a></li>
-<li>Amazon SQS для Python (интеграция AWS Lambda). <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability" title="Включение и использование взаимодействия OpenTelemetry в AWS Lambda.">Начало работы</a></li>
-<li>PostgreSQL (jackc/pgx) 4.7–4.17 (модуль Go). <a href="https://www.dynatrace.com/hub/detail/postgresql/#get-started">Начало работы</a></li>
-<li>SQLite3 5.1+ (модуль Node.js)</li>
+<li>Amazon SQS (Node.js/Python Lambda), PostgreSQL pgx 4.7-4.17 (Go), SQLite3 5.1+ (Node.js)</li>
 </ul>
-<h2 id="1251-oneagent">1.251 OneAgent<a class="headerlink" href="#1251-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 14 октября 2022 г. для OneAgent</p>
+<h2 id="1251-oneagent-14-2022">1.251 OneAgent (14 октября 2022)<a class="headerlink" href="#1251-oneagent-14-2022" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Akka Http client 10.0, 10.2 (модуль Java)</li>
-<li>Amazon Corretto 19 (модуль Java)</li>
-<li>Apache HttpCore 5.x (модуль Java)</li>
-<li>Azul Platform Core (Zulu) 19 (модуль Java)</li>
-<li>Bellsoft Liberica 19 (модуль Java)</li>
-<li>Eclipse Temurin (a.k.a. 'Adoptium') 19 (модуль Java)</li>
-<li>Go 1.16+ (интеграция GCP). <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go" title="Инструментирование Google Cloud Functions в Go с OpenTelemetry.">Начало работы</a></li>
-<li>IBM z/OS Connect EE MQ service provider (модуль Java z/OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java" title="Настройка мониторинга Java на z/OS.">Начало работы</a></li>
-<li>Jetty HTTP server 10 (модуль Java)</li>
-<li>Oracle HotSpot VM 19 (модуль Java)</li>
-<li>OpenJDK 19 (модуль Java)</li>
-<li>OpenTelemetry 0.0.12, 0.0.13, 0.0.14, 0.0.15 (модуль PHP)</li>
-<li>OpenTelemetry agent 1.17.x–1.19.x (модуль Java)</li>
-<li>Node.js 16 (интеграция AWS Lambda)</li>
-<li>SAP JVM 19 (модуль Java)</li>
+<li>Akka Http client 10.0/10.2, Java 19 (все JVM), Apache HttpCore 5.x</li>
+<li>Go 1.16+ (GCP), IBM z/OS Connect EE MQ, Jetty 10, OTel PHP/Java, Node.js 16 (Lambda)</li>
 </ul>
-<h2 id="1249-oneagent">1.249 OneAgent<a class="headerlink" href="#1249-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 15 сентября 2022 г. для OneAgent</p>
+<h2 id="1249-oneagent-15-2022">1.249 OneAgent (15 сентября 2022)<a class="headerlink" href="#1249-oneagent-15-2022" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Amazon Linux 2022 (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux" title="Узнайте, как установить OneAgent на Linux.">Начало работы</a></li>
-<li>Go 1.19 (модуль Go). <a href="/docs/ingest-from/technology-support/application-software/go" title="Обзор поддержки Go в Dynatrace.">Начало работы</a></li>
-<li>OpenTelemetry 1.8, 1.9 (модуль Go). <a href="/docs/ingest-from/technology-support/application-software/go" title="Обзор поддержки Go в Dynatrace.">Начало работы</a></li>
-<li>Rocky Linux 9 (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux" title="Узнайте, как установить OneAgent на Linux.">Начало работы</a></li>
+<li>Amazon Linux 2022, Go 1.19, OTel 1.8/1.9 (Go), Rocky Linux 9</li>
 </ul>
-<h2 id="1247-oneagent">1.247 OneAgent<a class="headerlink" href="#1247-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 25 августа 2022 г. для OneAgent</p>
+<h2 id="1247-oneagent-25-2022">1.247 OneAgent (25 августа 2022)<a class="headerlink" href="#1247-oneagent-25-2022" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Apache Camel 2.21+ (модуль Java). <a href="https://www.dynatrace.com/hub/detail/apache-camel/">Начало работы</a></li>
-<li>IBM Semeru для z/OS 11 (модуль Java z/OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java" title="Настройка мониторинга Java на z/OS.">Начало работы</a></li>
-<li>JMX 1.0+ (модуль Java z/OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics" title="Настройка мониторинга JMX-метрик для Java-приложений на z/OS.">Начало работы</a></li>
-<li>Monolog 3.0 (модуль PHP)</li>
-<li>Python (интеграция GCP). <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-python" title="Мониторинг Google Cloud Functions с OpenTelemetry для Python и Dynatrace.">Начало работы</a></li>
-<li>Red Hat Fuse на OpenShift 7.0+ (модуль Java). <a href="https://www.dynatrace.com/hub/detail/red-hat-fuse/">Начало работы</a></li>
-<li>Red Hat Fuse Standalone 7.0+ (модуль Java). <a href="https://www.dynatrace.com/hub/detail/red-hat-fuse/">Начало работы</a></li>
+<li>Apache Camel 2.21+, IBM Semeru z/OS 11, JMX 1.0+ (z/OS), Monolog 3.0</li>
+<li>Python (GCP), Red Hat Fuse 7.0+</li>
 </ul>
-<h2 id="1246-saasmanaged">1.246 SaaS/Managed<a class="headerlink" href="#1246-saasmanaged" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 25 июля 2022 г. для SaaS и 1 августа 2022 г. для Managed</p>
+<h2 id="1246-managed-25-2022">1.246 Managed (25 июля 2022)<a class="headerlink" href="#1246-managed-25-2022" title="Permanent link">&para;</a></h2>
 <ul>
-<li>DynamoDB client SDK для Node.js (интеграция AWS Lambda). <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#nodejs-instrumentation" title="Включение и использование взаимодействия OpenTelemetry в AWS Lambda.">Начало работы</a></li>
+<li>DynamoDB SDK (Node.js Lambda)</li>
 </ul>
-<h2 id="1245-saas">1.245 SaaS<a class="headerlink" href="#1245-saas" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 6 июля 2022 г. для SaaS</p>
+<h2 id="1245-6-2022">1.245 (6 июля 2022)<a class="headerlink" href="#1245-6-2022" title="Permanent link">&para;</a></h2>
 <ul>
-<li>DynamoDB client SDK для .NET (интеграция AWS Lambda). <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration#dynamo-db" title="Трассировка AWS Lambda-функций с использованием среды выполнения .NET">Начало работы</a></li>
+<li>DynamoDB SDK (.NET Lambda)</li>
 </ul>
-<h2 id="1245-oneagent">1.245 OneAgent<a class="headerlink" href="#1245-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 19 июля 2022 г. для OneAgent</p>
+<h2 id="1245-oneagent-19-2022">1.245 OneAgent (19 июля 2022)<a class="headerlink" href="#1245-oneagent-19-2022" title="Permanent link">&para;</a></h2>
 <ul>
-<li>AlmaLinux 8.6+ (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux" title="Узнайте, как установить OneAgent на Linux.">Начало работы</a></li>
-<li>Fedora 35, 36 (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux" title="Узнайте, как установить OneAgent на Linux.">Начало работы</a></li>
-<li>IBM CICS Transaction Server 6.1 (модуль CICS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics" title="Установка модуля Dynatrace CICS.">Начало работы</a></li>
-<li>IBM Virtual I/O Server (AIX) 3.1 (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix#vios-installation" title="Узнайте, как загрузить и установить Dynatrace OneAgent на AIX.">Начало работы</a></li>
-<li>Kong API Gateway (модуль NGINX). <a href="/docs/ingest-from/technology-support/application-software/nginx/manual-runtime-instrumentation#howto" title="Узнайте, как принудительно инструментировать NGINX во время выполнения.">Начало работы</a></li>
-<li>OpenTelemetry 0.0.10, 0.0.11 (модуль PHP)</li>
-<li>Python consumption plan (интеграция Azure). <a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-python" title="Мониторинг Azure Functions с OpenTelemetry для Python и Dynatrace.">Начало работы</a></li>
-<li><a href="https://www.npmjs.com/package/amqplib">RabbitMQ</a> client 0.9 (модуль Node.js). <a href="https://www.dynatrace.com/hub/detail/net-rabbitmq/#get-started">Начало работы</a></li>
+<li>AlmaLinux 8.6+, Fedora 35/36, IBM CICS TS 6.1, IBM VIOS 3.1</li>
+<li>Kong API Gateway, OTel PHP 0.0.10/0.0.11, Python (Azure), RabbitMQ 0.9 (Node.js)</li>
 </ul>
-<h2 id="1244-saasmanaged">1.244 SaaS/Managed<a class="headerlink" href="#1244-saasmanaged" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 27 июня 2022 г. для SaaS и 5 июля 2022 г. для Managed</p>
+<h2 id="1244-managed-27-2022">1.244 Managed (27 июня 2022)<a class="headerlink" href="#1244-managed-27-2022" title="Permanent link">&para;</a></h2>
 <ul>
-<li>DynamoDB client SDK для Python (интеграция AWS Lambda). <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#python-instrumentation" title="Включение и использование взаимодействия OpenTelemetry в AWS Lambda.">Начало работы</a></li>
+<li>DynamoDB SDK (Python Lambda)</li>
 </ul>
-<h2 id="1243-oneagent">1.243 OneAgent<a class="headerlink" href="#1243-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 29 июня 2022 г. для OneAgent</p>
+<h2 id="1243-oneagent-29-2022">1.243 OneAgent (29 июня 2022)<a class="headerlink" href="#1243-oneagent-29-2022" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Apache Log4j2 2.17.2–2.18 (модуль Java)</li>
-<li>JDBC 3, 4 (модуль Java z/OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java#jdbc" title="Настройка мониторинга Java на z/OS.">Начало работы</a></li>
-<li>Node.js 18 (модуль Node.js)</li>
-<li>Node.js consumption plan (интеграция Azure). <a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs" title="Мониторинг Azure Functions с OpenTelemetry для Node.js и Dynatrace.">Начало работы</a></li>
-<li>Microsoft OpenJDK 11 LTS, 17 LTS (модуль Java)</li>
-<li><a href="https://www.npmjs.com/package/oracledb">oracledb</a> 5 (модуль Node.js). <a href="https://www.dynatrace.com/hub/detail/oracle-database/">Начало работы</a></li>
-<li>Red Hat Enterprise Linux 9 (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux" title="Узнайте, как установить OneAgent на Linux.">Начало работы</a></li>
-<li>Ubuntu 22.04 LTS (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux" title="Узнайте, как установить OneAgent на Linux.">Начало работы</a></li>
+<li>Log4j2 2.17.2-2.18, JDBC 3/4 (z/OS), Node.js 18</li>
+<li>Microsoft OpenJDK 11/17, oracledb 5 (Node.js), RHEL 9, Ubuntu 22.04</li>
 </ul>
-<h2 id="1241-oneagent">1.241 OneAgent<a class="headerlink" href="#1241-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 8 июня 2022 г. для OneAgent</p>
+<h2 id="1241-oneagent-8-2022">1.241 OneAgent (8 июня 2022)<a class="headerlink" href="#1241-oneagent-8-2022" title="Permanent link">&para;</a></h2>
 <ul>
-<li>.NET / .NET Core (интеграция AWS Lambda). <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration" title="Трассировка AWS Lambda-функций с использованием среды выполнения .NET">Начало работы</a></li>
-<li>.NET / .NET Core consumption plan (интеграция Azure). <a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet" title="Мониторинг Azure Functions с OpenTelemetry для .NET и Dynatrace.">Начало работы</a></li>
-<li>Apache HttpClient 5.x (модуль Java)</li>
-<li>Azul Platform Core (Zulu) 18 (модуль Java)</li>
-<li>Bellsoft Liberica 18 (модуль Java)</li>
-<li>JMS 1.1 (модуль Java z/OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java" title="Настройка мониторинга Java на z/OS.">Начало работы</a></li>
-<li>Node.js (интеграция GCP). <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs" title="Мониторинг Google Cloud Functions с OpenTelemetry для Node.js и Dynatrace.">Начало работы</a></li>
-<li>OpenJDK 18 (модуль Java)</li>
-<li>OpenTelemetry 0.0.9 (модуль PHP)</li>
-<li>Oracle HotSpot VM 18 (модуль Java)</li>
-<li>Rocky Linux 8 (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux" title="Узнайте, как установить OneAgent на Linux.">Начало работы</a></li>
-<li>SAP JVM 18 (модуль Java)</li>
+<li>.NET (Lambda/Azure), Apache HttpClient 5.x, Java 18 (все JVM)</li>
+<li>JMS 1.1 (z/OS), Node.js (GCP), OTel PHP 0.0.9, Rocky Linux 8</li>
 </ul>
-<h2 id="1239-oneagent">1.239 OneAgent<a class="headerlink" href="#1239-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 27 апреля 2022 г. для OneAgent</p>
+<h2 id="1239-oneagent-27-2022">1.239 OneAgent (27 апреля 2022)<a class="headerlink" href="#1239-oneagent-27-2022" title="Permanent link">&para;</a></h2>
 <ul>
-<li>CentOS Stream 9 (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux" title="Узнайте, как установить OneAgent на Linux.">Начало работы</a></li>
-<li>Go 18 (модуль Go)</li>
-<li>IBM AIX 7.3 TL0 (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix" title="Узнайте, как установить OneAgent на AIX.">Начало работы</a></li>
-<li>Kestrel (ASP.NET Core applications), Real User Monitoring (RUM JavaScript и модуль .NET)</li>
-<li>Ubuntu 21.10 (модуль OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux" title="Узнайте, как установить OneAgent на Linux.">Начало работы</a></li>
+<li>CentOS Stream 9, Go 18, IBM AIX 7.3, Kestrel RUM, Ubuntu 21.10</li>
 </ul>
-<h2 id="1237-oneagent">1.237 OneAgent<a class="headerlink" href="#1237-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 1 апреля 2022 г. для OneAgent</p>
+<h2 id="1237-oneagent-1-2022">1.237 OneAgent (1 апреля 2022)<a class="headerlink" href="#1237-oneagent-1-2022" title="Permanent link">&para;</a></h2>
 <ul>
-<li>IBM App Connect Enterprise 12.0.3.0+ (модуль ACE)</li>
-<li>Apache HTTP Server 2.2, 2.4 на Linux ARM64 (модуль Apache HTTP)</li>
-<li>PHP 7.1, 7.2, 7.3, 7.4, 8.0, 8.1 на Linux ARM64 (модуль PHP). <a href="https://www.dynatrace.com/hub/detail/php/">Начало работы</a></li>
+<li>IBM ACE 12.0.3.0+, Apache HTTP 2.2/2.4 ARM64, PHP 7.1-8.1 ARM64</li>
 </ul>
-<h2 id="1235-oneagent">1.235 OneAgent<a class="headerlink" href="#1235-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 7 марта 2022 г. для OneAgent</p>
+<h2 id="1235-oneagent-7-2022">1.235 OneAgent (7 марта 2022)<a class="headerlink" href="#1235-oneagent-7-2022" title="Permanent link">&para;</a></h2>
 <ul>
-<li>.NET / .NET Core 5.0, 6.0 на Linux ARM64 (модуль .NET). <a href="https://www.dynatrace.com/hub/detail/net/">Начало работы</a></li>
-<li>IBM App Connect Enterprise JavaCompute node (модуль ACE)</li>
-<li>IBM CICS terminal transactions (модуль CICS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring#transaction-start-filters" title="Настройка мониторинга CICS и IMS на z/OS.">Начало работы</a></li>
-<li>IBM z/OS Connect EE IMS service provider (модуль Java z/OS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java" title="Настройка мониторинга Java на z/OS.">Начало работы</a></li>
-<li>TIBCO ActiveMatrix BusinessWorks 6.6–6.8 (модуль Java)</li>
+<li>.NET 5.0/6.0 ARM64, IBM ACE JavaCompute, IBM CICS terminal, z/OS Connect IMS</li>
+<li>TIBCO ActiveMatrix BW 6.6-6.8</li>
 </ul>
-<h2 id="1233-oneagent">1.233 OneAgent<a class="headerlink" href="#1233-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 7 февраля 2022 г. для OneAgent</p>
+<h2 id="1233-oneagent-7-2022">1.233 OneAgent (7 февраля 2022)<a class="headerlink" href="#1233-oneagent-7-2022" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Go 17 (модуль Go)</li>
-<li>IBM IMS Fast Path (модуль IMS). <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims" title="Установка модуля Dynatrace IMS.">Начало работы</a></li>
-<li>Jedis Redis 4 (модуль Java)</li>
-<li>reactor-core 3 (модуль Java). <a href="https://www.dynatrace.com/hub/detail/reactor-core/">Начало работы</a></li>
+<li>Go 17, IBM IMS Fast Path, Jedis Redis 4, reactor-core 3</li>
 </ul>
-<h2 id="1231-oneagent">1.231 OneAgent<a class="headerlink" href="#1231-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 10 января 2022 г. для OneAgent</p>
+<h2 id="1231-oneagent-10-2022">1.231 OneAgent (10 января 2022)<a class="headerlink" href="#1231-oneagent-10-2022" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Apache Log4J2 2.7–2.12 (модуль Java)</li>
-<li>Logrus 1.7.1–1.9 (модуль Go)</li>
-<li>Zap 1.10–1.21 (модуль Go)</li>
-<li>Windows Server 2022 (модуль OS)</li>
+<li>Log4J2 2.7-2.12, Logrus 1.7.1-1.9, Zap 1.10-1.21, Windows Server 2022</li>
 </ul>
-<h2 id="1229-oneagent">1.229 OneAgent<a class="headerlink" href="#1229-oneagent" title="Permanent link">&para;</a></h2>
-<p>Развёртывание начинается 22 ноября 2021 г. для OneAgent</p>
+<h2 id="1229-oneagent-22-2021">1.229 OneAgent (22 ноября 2021)<a class="headerlink" href="#1229-oneagent-22-2021" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Apache Kafka Streams API (модуль Java). <a href="https://www.dynatrace.com/hub/detail/apache-kafka/">Начало работы</a></li>
-<li>Apache Log4J2 2.13.0, 2.13.1, 2.13.3, 2.14.x–2.17.1 (модуль Java)</li>
-<li>Bellsoft Liberica 8 LTS, 11 LTS, 16, 17 LTS (модуль Java)</li>
-<li>Eclipse Temurin (a.k.a. 'Adoptium') 8 LTS, 11 LTS, 16, 17 LTS (модуль Java)</li>
-<li>IBM Semeru 8 LTS, 11 LTS, 16, 17 LTS (модуль Java)</li>
-<li>java.util.logging (модуль Java)</li>
-<li>Logback (QOS) 1 (модуль Java)</li>
-<li>OpenTelemetry 1.0–1.7 (модуль Go)</li>
-<li>Spring Cloud Stream (модуль Java). <a href="https://www.dynatrace.com/hub/detail/apache-kafka/">Начало работы</a></li>
-<li>winston 3 (модуль Node.js)</li>
+<li>Kafka Streams, Log4J2 2.13-2.17.1, Bellsoft/Temurin/Semeru 8-17 LTS</li>
+<li>java.util.logging, Logback 1, OTel 1.0-1.7 (Go), Spring Cloud Stream, winston 3</li>
 </ul>
 
 
@@ -6215,7 +5354,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.sections", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
   
@@ -6225,25 +5364,38 @@
       
     
   <script>
-    // Inject version selector into header
-    document.addEventListener('DOMContentLoaded', function() {
-      var headerInner = document.querySelector('.md-header__inner');
-      if (headerInner) {
-        var select = document.createElement('select');
-        select.className = 'docflow-version-select';
-        select.innerHTML = '<option value="managed" selected>Managed</option><option value="saas">SaaS</option>';
-        select.setAttribute('aria-label', 'Version selector');
+    (function() {
+      // --- Reading progress bar (one-time setup) ---
+      var progressBar = document.createElement('div');
+      progressBar.className = 'reading-progress';
+      document.body.appendChild(progressBar);
 
-        // Insert before the search or at the end
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (docHeight > 0) {
+          var progress = (scrollTop / docHeight) * 100;
+          progressBar.style.width = Math.min(progress, 100) + '%';
+        }
+      });
+
+      // --- Managed label in header (one-time setup) ---
+      var headerInner = document.querySelector('.md-header__inner');
+      if (headerInner && !headerInner.querySelector('.docflow-managed-label')) {
+        var label = document.createElement('span');
+        label.className = 'docflow-managed-label';
+        label.textContent = 'Managed';
+        label.setAttribute('title', 'Документация включает разделы Dynatrace Managed');
+
         var searchContainer = headerInner.querySelector('.md-header__source');
         if (searchContainer) {
-          headerInner.insertBefore(select, searchContainer);
+          headerInner.insertBefore(label, searchContainer);
         } else {
-          headerInner.appendChild(select);
+          headerInner.appendChild(label);
         }
       }
 
-      // Keyboard shortcut Ctrl+K for search
+      // --- Keyboard shortcut Ctrl+K for search ---
       document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
           e.preventDefault();
@@ -6258,7 +5410,9 @@
           }
         }
       });
-    });
+
+      // TOC title renaming handled via CSS (see extra style block above)
+    })();
   </script>
 
   </body>

@@ -180,7 +180,7 @@
 /* Sidebar — white bg, visible borders and text */
 [data-md-color-scheme="default"] .md-sidebar {
   background: var(--docflow-sidebar-bg);
-  border-right: 1px solid var(--docflow-border);
+  border-right: 1px solid var(--docflow-border) !important;
 }
 
 [data-md-color-scheme="default"] .md-nav__link {
@@ -424,7 +424,7 @@ body {
 
 .md-sidebar {
   background: var(--docflow-sidebar-bg);
-  border-right: 1px solid var(--docflow-border);
+  border-right: 1px solid var(--docflow-border) !important;
 }
 
 .md-sidebar--primary {
@@ -453,6 +453,29 @@ body {
   font-weight: 500;
 }
 
+/* Remove default Material theme vertical accent indicator on nav items */
+.md-nav__item--active > .md-nav__link,
+.md-nav__item--nested > .md-nav__link,
+.md-nav--primary .md-nav__link[data-md-state="blur"],
+.md-nav .md-nav__link--active,
+.md-nav__link {
+  border-left: none !important;
+  border-right: none !important;
+}
+
+/* Kill any Material theme sidebar indicator pseudo-elements */
+.md-sidebar::before,
+.md-sidebar::after,
+.md-sidebar__scrollwrap::before,
+.md-sidebar__scrollwrap::after,
+.md-sidebar__inner::before,
+.md-sidebar__inner::after,
+.md-nav--primary::before,
+.md-nav--primary::after {
+  display: none !important;
+  border: none !important;
+}
+
 /* Section headers — semibold like DocFlow parent items */
 .md-nav__item--nested > .md-nav__link {
   font-weight: 600;
@@ -465,17 +488,32 @@ body {
   transition: transform 0.2s ease;
 }
 
-/* Sidebar scrollbar */
+/* Sidebar scrollbar — force non-accent colors (override Material theme hover/focus accent) */
+.md-sidebar,
+.md-sidebar__scrollwrap,
+.md-sidebar__inner,
+.md-nav--primary,
+.md-sidebar__scrollwrap:hover,
+.md-sidebar__scrollwrap:focus-within {
+  scrollbar-color: var(--docflow-border) transparent !important;
+  scrollbar-width: thin !important;
+}
+
+.md-sidebar ::-webkit-scrollbar,
 .md-sidebar__scrollwrap::-webkit-scrollbar {
-  width: 4px;
+  width: 4px !important;
 }
 
+.md-sidebar ::-webkit-scrollbar-track,
 .md-sidebar__scrollwrap::-webkit-scrollbar-track {
-  background: transparent;
+  background: transparent !important;
 }
 
-.md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
-  background: var(--docflow-border);
+.md-sidebar ::-webkit-scrollbar-thumb,
+.md-sidebar__scrollwrap::-webkit-scrollbar-thumb,
+.md-sidebar__scrollwrap:hover::-webkit-scrollbar-thumb,
+.md-sidebar__scrollwrap:focus-within::-webkit-scrollbar-thumb {
+  background: var(--docflow-border) !important;
   border-radius: 2px;
 }
 
@@ -1056,12 +1094,13 @@ body {
 
 /* Chat header */
 .chat-header {
-  padding: 0.875rem 1rem;
+  padding: 0.75rem 1rem;
   background: var(--docflow-gradient);
   color: white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 0;
   align-items: center;
 }
 
@@ -1069,7 +1108,16 @@ body {
   margin: 0;
   font-size: 0.875rem;
   font-weight: 600;
-  width: calc(100% - 30px);
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.chat-header span {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  font-size: 0.7rem !important;
+  opacity: 0.75 !important;
+  margin-top: 2px;
 }
 
 #chat-close {
@@ -1108,6 +1156,18 @@ body {
   font-size: 0.8125rem;
 }
 
+.message p {
+  margin: 0.3em 0;
+}
+
+.message p:first-child {
+  margin-top: 0;
+}
+
+.message p:last-child {
+  margin-bottom: 0;
+}
+
 .user-message {
   align-self: flex-end;
   background: var(--md-primary-fg-color);
@@ -1142,16 +1202,44 @@ body {
 }
 
 /* Error state */
-.error {
-  background: #7f1d1d !important;
+.message.error {
+  background: rgba(127, 29, 29, 0.85) !important;
   color: #fca5a5 !important;
-  border: 1px solid #dc2626;
+  border: 1px solid rgba(220, 38, 38, 0.5);
+  max-width: 95%;
 }
 
-[data-md-color-scheme="default"] .error {
+.message.error p {
+  margin: 0.25em 0;
+  word-break: break-word;
+}
+
+.message.error code {
+  background: rgba(0, 0, 0, 0.3) !important;
+  color: #fbbf24 !important;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.8em;
+}
+
+.message.error a {
+  color: #93c5fd !important;
+  text-decoration: underline;
+}
+
+[data-md-color-scheme="default"] .message.error {
   background: #fef2f2 !important;
-  color: #dc2626 !important;
+  color: #991b1b !important;
   border: 1px solid #fecaca;
+}
+
+[data-md-color-scheme="default"] .message.error code {
+  background: rgba(220, 38, 38, 0.08) !important;
+  color: #dc2626 !important;
+}
+
+[data-md-color-scheme="default"] .message.error a {
+  color: #2563eb !important;
 }
 
 /* Chat input */
@@ -1335,4 +1423,193 @@ body {
 .md-typeset .footnote {
   font-size: 0.8125rem;
   color: var(--md-default-fg-color--lighter);
+}
+
+/* ==========================================================================
+   24. UX AUDIT FIXES — Active nav indicator, TOC, lists, progress bar
+   ========================================================================== */
+
+/* --- Fix #4: Active nav item — left accent bar + stronger highlight --- */
+.md-nav__item--active > .md-nav__link {
+  position: relative;
+  border-left: 3px solid var(--md-accent-fg-color) !important;
+  background: var(--md-accent-fg-color--transparent);
+  color: var(--md-accent-fg-color);
+  font-weight: 600;
+  padding-left: calc(0.75rem - 3px);
+}
+
+/* Active link in TOC sidebar */
+.md-sidebar--secondary .md-nav__link--active {
+  border-left-color: var(--md-accent-fg-color) !important;
+  border-left-width: 2px !important;
+  border-left-style: solid !important;
+  font-weight: 600;
+}
+
+/* --- Fix #3: TOC title — replace "Содержание" with "На этой странице" --- */
+.md-sidebar--secondary .md-nav__title {
+  font-size: 0 !important;
+  line-height: 0 !important;
+  overflow: hidden;
+}
+
+.md-sidebar--secondary .md-nav__title::before {
+  content: 'На этой странице';
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--md-default-fg-color--lighter);
+  display: block;
+  line-height: 1.6;
+  padding-top: 2rem;
+}
+
+.md-sidebar--secondary .md-nav__title .md-nav__icon {
+  display: none;
+}
+
+/* --- Fix #6: Managed section separator in left nav --- */
+.md-nav--primary > .md-nav__list > li:nth-child(3) {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--docflow-border);
+}
+
+/* Managed section label style */
+.md-nav--primary > .md-nav__list > li:nth-child(3) > .md-nav__link,
+.md-nav--primary > .md-nav__list > li:nth-child(3) > label {
+  position: relative;
+}
+
+/* --- Fix #8: Code blocks — enhanced border in dark theme --- */
+[data-md-color-scheme="slate"] .md-typeset pre {
+  border: 1px solid rgba(55, 65, 81, 0.6);
+  background: var(--md-code-bg-color);
+}
+
+[data-md-color-scheme="slate"] .md-typeset pre > code {
+  background: var(--md-code-bg-color);
+}
+
+/* --- Fix #10: Search Ctrl+K badge — inside input as ghost text --- */
+.md-search__form {
+  position: relative;
+}
+
+.md-search__form::after {
+  position: absolute !important;
+  right: 0.5rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+/* --- Fix #11: Reading progress bar --- */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--docflow-gradient);
+  z-index: 1001;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+/* --- Fix #12a: Ordered lists — step indicators --- */
+.md-typeset ol:not(.md-nav__list) {
+  counter-reset: step-counter;
+  list-style: none;
+  padding-left: 0;
+}
+
+.md-typeset ol:not(.md-nav__list) > li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1em;
+}
+
+.md-typeset ol:not(.md-nav__list) > li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--md-accent-fg-color--transparent);
+  border: 1.5px solid var(--md-accent-fg-color);
+  color: var(--md-accent-fg-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Nested ordered lists — revert to standard */
+.md-typeset ol:not(.md-nav__list) ol {
+  list-style: lower-alpha;
+  padding-left: 1.5rem;
+  counter-reset: none;
+}
+
+.md-typeset ol:not(.md-nav__list) ol > li {
+  padding-left: 0;
+  counter-increment: none;
+}
+
+.md-typeset ol:not(.md-nav__list) ol > li::before {
+  display: none;
+}
+
+/* --- Fix #12b: Unordered lists — accent-colored markers --- */
+.md-typeset ul:not(.md-nav__list):not(.grid):not(.tabbed-labels):not([hidden]) {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.md-typeset ul:not(.md-nav__list):not(.grid):not(.tabbed-labels):not([hidden]) > li {
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.md-typeset ul:not(.md-nav__list):not(.grid):not(.tabbed-labels):not([hidden]) > li::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--md-accent-fg-color);
+  opacity: 0.7;
+}
+
+/* --- Fix #14: Hide GitHub repo stats (stars/forks) --- */
+.md-source__facts {
+  display: none !important;
+}
+
+/* --- Fix #7: Managed version badge — clear non-interactive label --- */
+.docflow-version-select {
+  pointer-events: none !important;
+  cursor: default !important;
+  user-select: none;
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   25. RESPONSIVE — TOC collapse on small screens
+   ========================================================================== */
+
+@media (max-width: 1279px) {
+  .md-sidebar--secondary {
+    display: none;
+  }
 }

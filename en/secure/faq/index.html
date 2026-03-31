@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
       
       
         <meta name="author" content="Yerkebulan Ardabayev">
@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -87,7 +87,10 @@
       flex-shrink: 0;
     }
 
-    /* Search Ctrl+K badge */
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
     .md-search__form::after {
       content: 'Ctrl+K';
       display: none;
@@ -97,11 +100,14 @@
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color);
       font-size: 10px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'JetBrains Mono', monospace;
       color: var(--md-default-fg-color--lighter);
-      margin-right: 0.5rem;
       white-space: nowrap;
       pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
     }
     @media (min-width: 60em) {
       .md-search__form::after {
@@ -109,12 +115,13 @@
       }
     }
 
-    /* Version selector in header */
-    .docflow-version-select {
+    /* Managed label — non-interactive indicator */
+    .docflow-managed-label {
       display: none;
       align-items: center;
+      gap: 0.375rem;
       margin-left: 0.5rem;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--docflow-border);
       background: var(--md-default-bg-color--lighter);
@@ -122,28 +129,34 @@
       font-size: 0.75rem;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237e7c98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.4rem center;
-      padding-right: 1.5rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .docflow-managed-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--md-accent-fg-color);
+      flex-shrink: 0;
     }
     @media (min-width: 60em) {
-      .docflow-version-select {
+      .docflow-managed-label {
         display: flex;
       }
     }
-    .docflow-version-select:hover {
-      border-color: var(--md-primary-fg-color--light);
-      color: var(--md-default-fg-color);
-    }
-    .docflow-version-select:focus {
-      outline: none;
-      border-color: var(--md-primary-fg-color);
-      box-shadow: 0 0 0 3px var(--docflow-glow-primary);
+
+    /* Reading progress bar */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #14b8a6, #7c3aed);
+      z-index: 1001;
+      transition: width 0.05s linear;
+      pointer-events: none;
     }
   </style>
 
@@ -181,7 +194,7 @@
 
   
 
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
     <a href="../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -216,20 +229,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -303,375 +316,14 @@
     
   </nav>
   
-    
-      
-<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Главная
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Начало работы
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../managed/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Managed
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/platform/grail/dynatrace-grail/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Платформа
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/observe/infrastructure-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Наблюдаемость
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Dynatrace Intelligence
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Анализ и автоматизация
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/ingest-from/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Источники данных
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/deliver/configuration-as-code/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Deliver
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/secure/threat-observability/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Безопасность
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/manage/hub/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Управление
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/dynatrace-api/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  API
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ru/whats-new/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Что нового
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../ai/groq/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  AI Помощник
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
 </header>
     
 
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -685,10 +337,8 @@
                     
 
 
-  
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -765,16 +415,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -796,7 +450,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -829,7 +483,7 @@
   <span class="md-ellipsis">
     
   
-    Начало работы
+    🚀 Быстрый старт
   
 
     
@@ -967,16 +621,20 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -998,7 +656,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1227,7 +885,7 @@
   <span class="md-ellipsis">
     
   
-    Лицензия
+    Лицензия Managed
   
 
     
@@ -1269,19 +927,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1327,20 +989,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/platform/grail/dynatrace-grail/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1354,78 +1017,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Grail
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/platform/grail/dynatrace-grail/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Что такое Grail
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/platform/grail/dynatrace-query-language/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Язык запросов DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1544,19 +1141,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1610,20 +1211,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/observe/infrastructure-observability/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1637,190 +1239,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Инфраструктура
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/infrastructure-observability/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Хосты и операции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Облачный мониторинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes Classic
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Базы данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1844,20 +1268,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/observe/application-observability/distributed-tracing/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1871,78 +1296,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Приложения
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/application-observability/distributed-tracing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Распределённая трассировка
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/application-observability/services/services-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Сервисы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1966,20 +1325,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/observe/digital-experience/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -1993,78 +1353,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Цифровой опыт
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/digital-experience/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Синтетическое приложение
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2131,19 +1425,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2203,20 +1501,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2230,274 +1529,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Обнаружение аномалий
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Настройка чувствительности
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение Anomaly Detection
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфигурация
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Адаптивные пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Многомерный бейзлайн
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    События метрик
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Статические пороги
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Оптимизация DQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2527,20 +1564,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/dynatrace-intelligence/copilot/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2554,162 +1592,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Davis Copilot
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dynatrace Assist
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Конфиденциальность
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы на естественном языке
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2763,20 +1651,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2790,106 +1679,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Анализ первопричин
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Анализ событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2910,7 +1705,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграции
+    Интеграции Davis AI
   
 
     
@@ -2941,20 +1736,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -2968,78 +1764,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Справочник
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AI модели
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лимиты
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3080,19 +1810,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -3144,20 +1878,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3171,162 +1906,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Дашборды и ноутбуки
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Дашборды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Версии документов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Визуализации
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор данных
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3354,20 +1939,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/analyze-explore-automate/logs/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3381,134 +1967,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Логи
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/logs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Log Analytics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Приложение журналов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Фильтры
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Запросы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -3681,19 +2145,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -3736,7 +2204,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
+    Обзор источников данных
   
 
     
@@ -3838,19 +2306,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -3898,20 +2370,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/deliver/configuration-as-code/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -3925,194 +2398,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Configuration as Code
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/configuration-as-code/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
       
-        
+        <span class="md-nav__icon md-icon"></span>
       
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Monaco
+    </a>
   
 
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Monaco
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Концепции
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Начало работы
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4136,150 +2427,21 @@
     
     
       
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Terraform
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_1_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Terraform
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API и разрешения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CLI команды
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
         
-      
         
       
     
-    
-    
-      
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
+  
+  
+    <a href="../../../ru/deliver/service-level-objectives/" class="md-nav__link">
       
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -4293,78 +2455,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    SLO
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/service-level-objectives/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/service-level-objectives/create-slo/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Создание SLO
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4388,20 +2484,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/deliver/site-reliability-guardian/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4415,78 +2512,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Site Reliability Guardian
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/site-reliability-guardian/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Структура событий
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4538,20 +2569,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/deliver/release-monitoring/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4565,78 +2597,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Мониторинг релизов
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/release-monitoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Мониторинг релизов
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -4695,19 +2661,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -4778,7 +2748,7 @@
   <span class="md-ellipsis">
     
   
-    Интеграция
+    Приём событий безопасности
   
 
     
@@ -4816,19 +2786,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
             
   
   
@@ -4910,20 +2884,21 @@
     
     
       
+    
+    
       
+        
         
       
     
-    
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../../ru/license/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -4937,190 +2912,12 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Лицензирование
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/license/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Лицензия
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/license/capabilities/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Возможности DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/license/billing-reports/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Биллинг
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/license/budget-alerts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Бюджетные оповещения
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/license/license-lifecycle/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Жизненный цикл
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/license/dps-permissions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Разрешения DPS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -5151,19 +2948,23 @@
     
     
       
-      
+        
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
             
   
   
@@ -5272,23 +3073,33 @@
       
         
       
-    
-    
-    
+        
       
+        
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
         
           
-          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
             
   
   
@@ -5331,35 +3142,7 @@
   <span class="md-ellipsis">
     
   
-    Обзор
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ru/whats-new/saas/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SaaS
+    Все обновления
   
 
     
@@ -5387,7 +3170,7 @@
   <span class="md-ellipsis">
     
   
-    OneAgent
+    Обновления OneAgent
   
 
     
@@ -5416,6 +3199,225 @@
     
   
     ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../ru/whats-new/dynatrace-operator/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Operator
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../ru/whats-new/edgeconnect/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EdgeConnect
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../ru/whats-new/technology/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Технологии
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ru/whats-new/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Новые статьи
   
 
     
@@ -5483,6 +3485,926 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#detection-and-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detection and monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detection and monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-detect-security-risks-in-my-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I detect security risks in my applications?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-difference-between-the-classic-monitoring-rules-and-the-new-monitoring-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's the difference between the classic monitoring rules and the new monitoring rules?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-rva-and-rap-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do RVA and RAP work?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-impact-of-enabling-application-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's the impact of enabling Application Security?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-disable-security-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I disable security monitoring?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-manually-start-a-security-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can I manually start a security scan?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restrict-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restrict permissions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Restrict permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-give-someone-view-only-access-to-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I give someone view-only access to vulnerabilities?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resolution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#does-dynatrace-remediate-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Does Dynatrace remediate vulnerabilities?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-fix-detected-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I fix detected vulnerabilities?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-is-a-vulnerability-marked-as-resolved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When is a vulnerability marked as resolved?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-my-vulnerability-still-open-if-theres-no-affected-process-group-anymore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is my vulnerability still open if there's no affected process group anymore?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-a-vulnerability-be-resolved-while-there-are-still-affected-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can a vulnerability be resolved while there are still affected entities?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-are-some-vulnerabilities-resolved-without-any-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why are some vulnerabilities resolved without any mitigation?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-do-some-vulnerabilities-keep-being-resolved-and-reopened" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do some vulnerabilities keep being resolved and reopened?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-do-resolved-vulnerabilities-show-up-in-every-management-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do resolved vulnerabilities show up in every management zone?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-am-i-getting-zero-resolved-process-groups-for-resolved-vulnerabilities-in-my-management-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why am I getting zero resolved process groups for resolved vulnerabilities in my management zone?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restart-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restart required
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Restart required">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is-restart-required-after-enabling-or-disabling-an-application-security-feature-or-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Is restart required after enabling or disabling an Application Security feature or functionality?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-there-a-restart-required-notification-on-some-application-security-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is there a "Restart required" notification on some Application Security pages?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notifications-and-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notifications and reporting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notifications and reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-get-notifications-for-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I get notifications for vulnerabilities?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-get-notifications-for-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I get notifications for attacks?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-create-reports-and-share-them-with-others" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I create reports and share them with others?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-stop-receiving-notifications-for-an-irrelevant-vulnerability-or-entity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I stop receiving notifications for an irrelevant vulnerability or entity?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-do-we-keep-receiving-notifications-for-the-same-vulnerability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do we keep receiving notifications for the same vulnerability?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-fetch-fix-recommendation-information-for-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I fetch fix recommendation information for vulnerabilities?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coverage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coverage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-gain-insights-into-my-environments-runtime-vulnerability-analytics-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I gain insights into my environment's Runtime Vulnerability Analytics coverage?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-do-i-see-a-vulnerability-on-one-host-but-not-on-another" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do I see a vulnerability on one host but not on another?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limit-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limit monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limit monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-exclude-specific-entities-from-being-monitored-by-runtime-vulnerability-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I exclude specific entities from being monitored by Runtime Vulnerability Analytics?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-can-i-find-examples-of-monitoring-rule-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where can I find examples of monitoring rule configurations?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-limit-runtime-vulnerability-analytics-monitoring-to-a-specific-management-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I limit Runtime Vulnerability Analytics monitoring to a specific management zone?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-enable-runtime-vulnerability-analytics-only-for-specific-hosts-or-kubernetes-namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I enable Runtime Vulnerability Analytics only for specific hosts or Kubernetes namespaces?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Change status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-a-vulnerability-is-muted-are-the-affected-entities-muted-as-well" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If a vulnerability is muted, are the affected entities muted as well?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Status updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-does-last-update-on-vulnerabilities-list-pages-refer-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What does "last update" on vulnerabilities list pages refer to?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What does &#34;last update&#34; on vulnerabilities list pages refer to?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-status-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are status changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#different-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Different values
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Different values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-are-there-different-values-on-the-vulnerabilities-page-versus-data-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why are there different values on the vulnerabilities page versus Data Explorer?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-are-there-different-values-on-the-third-party-vulnerabilities-and-vulnerability-details-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why are there different values on the Third-party vulnerabilities and vulnerability details pages?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why are there different values on the Third-party vulnerabilities and vulnerability details pages?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#different-number-of-affected-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Different number of affected entities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#different-risk-factors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Different risk factors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-my-vulnerability-have-a-different-risk-assessment-and-dss-than-its-affected-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why does my vulnerability have a different risk assessment and DSS than its affected entities?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-am-i-seeing-different-vulnerabilities-in-production-vs-non-production-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why am I seeing different vulnerabilities in production vs non-production environment?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-the-number-of-vulnerabilities-differ-between-the-classic-apps-and-the-vulnerabilities-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why does the number of vulnerabilities differ between the classic apps and the Vulnerabilities app?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-internet-exposure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public internet exposure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Public internet exposure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-is-public-internet-exposure-determined" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How is public internet exposure determined?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerable-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vulnerable libraries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vulnerable libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#does-dynatrace-detect-vulnerable-libraries-that-arent-in-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Does Dynatrace detect vulnerable libraries that aren't in use?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-can-i-see-the-origin-of-a-vulnerable-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where can I see the origin of a vulnerable library?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerable-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vulnerable functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vulnerable functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-are-vulnerable-functions-determined" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How are vulnerable functions determined?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-there-no-information-on-vulnerable-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is there no information on vulnerable functions?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-there-no-data-available-for-vulnerable-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is there no data available for vulnerable functions?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why is there no data available for vulnerable functions?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-know-which-processes-to-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I know which processes to restart?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-my-process-still-need-to-be-restarted-after-i-already-restarted-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why does my process still need to be restarted after I already restarted it?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-know-if-information-about-vulnerable-functions-is-outdated-and-what-can-i-do-about-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I know if information about vulnerable functions is outdated and what can I do about it?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snyk-feed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Snyk feed
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Snyk feed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-is-the-snyk-link-missing-for-some-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is the Snyk link missing for some vulnerabilities?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attack-blocking-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attack blocking mechanism
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attack blocking mechanism">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-does-dynatrace-actually-block-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How does Dynatrace actually block attacks?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-is-an-attackers-ip-determined" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How is an attacker's IP determined?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-retention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data retention
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data retention">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-data-retention-period-for-vulnerabilities-events-and-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's the data retention period for vulnerabilities, events, and attacks?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consumption
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Consumption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-check-how-much-my-hosts-consume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I check how much my hosts consume?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-application-security-still-showing-usage-even-though-i-disabled-rva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is Application Security still showing usage even though I disabled RVA?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5508,7 +4430,6 @@
 
 
 <h1 id="application-security-faq">Application Security FAQ<a class="headerlink" href="#application-security-faq" title="Permanent link">&para;</a></h1>
-<h1 id="application-security-faq_1">Application Security FAQ<a class="headerlink" href="#application-security-faq_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
 <li>Troubleshooting</li>
@@ -5521,29 +4442,29 @@
 <p>Latest Dynatrace</p>
 <p>You can detect, analyze, and understand security risks in your applications using several Dynatrace security apps:</p>
 <ul>
-<li>Identify, prioritize, and monitor vulnerabilities in thirdâparty libraries, application runtimes, and custom code across production and preâproduction environments with <a href="/docs/secure/vulnerabilities" title="Prioritize and efficiently manage vulnerabilities in your monitored environments."><img alt="Vulnerabilities" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Vulnerabilities" /> <strong>Vulnerabilities</strong></a>.</li>
-<li>Investigate, triage, and take action on realâtime detection findings and alerts affecting your applications with <a href="/docs/secure/threats-and-exploits" title="Understand, triage, and investigate detection findings and alerts."><img alt="Threats &amp; Exploits" src="https://dt-cdn.net/images/attacks-512-b922840b12.png" title="Threats &amp; Exploits" /> <strong>Threats &amp; Exploits</strong></a>.</li>
-<li>Explore securityârelated data, run DQL queries, extract fields, and perform deeper investigations across logs, metrics, and traces with <a href="/docs/secure/investigations" title="Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."><img alt="Investigations" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Investigations</strong></a>.</li>
+<li>Identify, prioritize, and monitor vulnerabilities in thirdâparty libraries, application runtimes, and custom code across production and preâproduction environments with <a href="../vulnerabilities/" title="Prioritize and efficiently manage vulnerabilities in your monitored environments."><img alt="Vulnerabilities" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Vulnerabilities" /> <strong>Vulnerabilities</strong></a>.</li>
+<li>Investigate, triage, and take action on realâtime detection findings and alerts affecting your applications with <a href="../threats-and-exploits/" title="Understand, triage, and investigate detection findings and alerts."><img alt="Threats &amp; Exploits" src="https://dt-cdn.net/images/attacks-512-b922840b12.png" title="Threats &amp; Exploits" /> <strong>Threats &amp; Exploits</strong></a>.</li>
+<li>Explore securityârelated data, run DQL queries, extract fields, and perform deeper investigations across logs, metrics, and traces with <a href="../investigations/" title="Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."><img alt="Investigations" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Investigations</strong></a>.</li>
 </ul>
 <p>deprecated</p>
 <ul>
-<li>To detect and monitor third-party vulnerabilities, <a href="/docs/secure/application-security/vulnerability-analytics#tpv-detection" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">enable third-party vulnerability detection</a>, then go to <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities" title="Monitor the security issues of your third-party libraries."><img alt="Third Party Vulnerabilities" src="https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png" title="Third Party Vulnerabilities" /> <strong>Third-Party Vulnerabilities</strong></a>.</li>
-<li>For a unified view of third-party and code-level vulnerabilities and information about host coverage, <a href="/docs/secure/application-security/vulnerability-analytics" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">enable Runtime Vulnerability Analytics</a>, then go to <a href="/docs/secure/application-security/vulnerability-analytics/application-security-overview" title="Get an overview of the security issues of your third-party libraries."><img alt="Security Overview" src="https://dt-cdn.net/images/security-overview-512-a310b17025.png" title="Security Overview" /> <strong>Security Overview</strong></a>.</li>
+<li>To detect and monitor third-party vulnerabilities, <a href="../application-security/vulnerability-analytics/#tpv-detection" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">enable third-party vulnerability detection</a>, then go to <a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities/" title="Monitor the security issues of your third-party libraries."><img alt="Third Party Vulnerabilities" src="https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png" title="Third Party Vulnerabilities" /> <strong>Third-Party Vulnerabilities</strong></a>.</li>
+<li>For a unified view of third-party and code-level vulnerabilities and information about host coverage, enable Runtime Vulnerability Analytics, then go to <a href="../application-security/vulnerability-analytics/application-security-overview/" title="Get an overview of the security issues of your third-party libraries."><img alt="Security Overview" src="https://dt-cdn.net/images/security-overview-512-a310b17025.png" title="Security Overview" /> <strong>Security Overview</strong></a>.</li>
 </ul>
 <h3 id="whats-the-difference-between-the-classic-monitoring-rules-and-the-new-monitoring-rules">What's the difference between the classic monitoring rules and the new monitoring rules?<a class="headerlink" href="#whats-the-difference-between-the-classic-monitoring-rules-and-the-new-monitoring-rules" title="Permanent link">&para;</a></h3>
-<p>The <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#new" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">new monitoring rules</a> let you include or exclude processes, Kubernetes nodes, and hosts based on resource attributes and Kubernetes labels. This approach is more flexible and precise, works well in dynamic and cloudânative environments, and supports previews so you can verify which entities match before enabling the rules. These rules are recommended and are the default for newer environments.</p>
-<p>The <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#classic" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">classic monitoring rules</a> rely on process group tags, host tags, and management zones. They offer less granularity, depend on correct tagging, and don't provide the same level of preview or control. Classic rules still work but are scheduled for deprecation and can't be used at the same time as the new rules.</p>
+<p>The <a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv/#new" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">new monitoring rules</a> let you include or exclude processes, Kubernetes nodes, and hosts based on resource attributes and Kubernetes labels. This approach is more flexible and precise, works well in dynamic and cloudânative environments, and supports previews so you can verify which entities match before enabling the rules. These rules are recommended and are the default for newer environments.</p>
+<p>The <a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv/#classic" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">classic monitoring rules</a> rely on process group tags, host tags, and management zones. They offer less granularity, depend on correct tagging, and don't provide the same level of preview or control. Classic rules still work but are scheduled for deprecation and can't be used at the same time as the new rules.</p>
 <h3 id="how-do-rva-and-rap-work">How do RVA and RAP work?<a class="headerlink" href="#how-do-rva-and-rap-work" title="Permanent link">&para;</a></h3>
 <ul>
-<li>To learn about the Runtime Vulnerability Analytics (RVA) mechanism, see <a href="/docs/secure/application-security/vulnerability-analytics#mechanism" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">How RVA works</a>.</li>
-<li>To learn more about the Runtime Application Protection (RAP) mechanism, see <a href="/docs/secure/application-security/application-protection#mechanism" title="Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.">How RAP works</a>.</li>
+<li>To learn about the Runtime Vulnerability Analytics (RVA) mechanism, see <a href="../application-security/vulnerability-analytics/#mechanism" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">How RVA works</a>.</li>
+<li>To learn more about the Runtime Application Protection (RAP) mechanism, see <a href="../application-security/application-protection/#mechanism" title="Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.">How RAP works</a>.</li>
 </ul>
 <h3 id="whats-the-impact-of-enabling-application-security">What's the impact of enabling Application Security?<a class="headerlink" href="#whats-the-impact-of-enabling-application-security" title="Permanent link">&para;</a></h3>
 <p><strong><em>What should I consider before enabling Application Security? Can it impact anything?</em></strong></p>
 <p>When you enable Application Security (Runtime Vulnerability Analytics or Runtime Application Protection), keep the following in mind:</p>
 <ul>
 <li><strong>Consumption</strong>:<br />
-<strong>Runtime Vulnerability Analytics and Runtime Application Protection</strong> consume <a href="/docs/license/capabilities/application-security" title="Learn how Dynatrace Application Security monitoring consumption is calculated using the Dynatrace Platform Subscription model.">GiB-hours</a> if you're using the <a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">Dynatrace Platform Subscription (DPS) licensing model</a>, or <a href="/docs/license/monitoring-consumption-classic/application-security-units" title="Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.">Application Security units (ASUs)</a> if you're using the <a href="/docs/license/monitoring-consumption-classic" title="Understand how Dynatrace monitoring consumption is calculated for classic licensing.">Dynatrace classic licensing</a>.</li>
+<strong>Runtime Vulnerability Analytics and Runtime Application Protection</strong> consume GiB-hours if you're using the Dynatrace Platform Subscription (DPS) licensing model, the licensing model for all Dynatrace capabilities."), or Application Security units (ASUs) if you're using the Dynatrace classic licensing.</li>
 <li>
 <p><strong>Network bandwidth usage</strong>:</p>
 </li>
@@ -5576,37 +4497,37 @@
 <h2 id="restrict-permissions">Restrict permissions<a class="headerlink" href="#restrict-permissions" title="Permanent link">&para;</a></h2>
 <h3 id="how-can-i-give-someone-view-only-access-to-vulnerabilities">How can I give someone view-only access to vulnerabilities?<a class="headerlink" href="#how-can-i-give-someone-view-only-access-to-vulnerabilities" title="Permanent link">&para;</a></h3>
 <p>Content below refers to the classic <img alt="Third Party Vulnerabilities" src="https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png" title="Third Party Vulnerabilities" /> <strong>Third-Party Vulnerabilities</strong>, which is deprecated.</p>
-<p>To restrict specific users to view-only access, so they can view but not manage vulnerabilities, see <a href="/docs/secure/application-security/vulnerability-analytics#restrict-permissions" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">Customize access</a>.</p>
+<p>To restrict specific users to view-only access, so they can view but not manage vulnerabilities, see <a href="../application-security/vulnerability-analytics/#restrict-permissions" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">Customize access</a>.</p>
 <h2 id="resolution">Resolution<a class="headerlink" href="#resolution" title="Permanent link">&para;</a></h2>
 <h3 id="does-dynatrace-remediate-vulnerabilities">Does Dynatrace remediate vulnerabilities?<a class="headerlink" href="#does-dynatrace-remediate-vulnerabilities" title="Permanent link">&para;</a></h3>
 <p><strong><em>Will Dynatrace fix vulnerabilities or do I need to take any action to fix them?</em></strong></p>
 <p>Dynatrace does not remediate vulnerabilities. It identifies and monitors vulnerabilities in applications in your production and pre-production environments, and it helps you determine the root cause by providing rich context and information that helps you take the appropriate actions. For more information about capabilities, see</p>
 <ul>
-<li><a href="/docs/secure/application-security/vulnerability-analytics" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">Runtime Vulnerability Analytics: Capabilities</a></li>
-<li>Latest Dynatrace <a href="/docs/secure/vulnerabilities" title="Prioritize and efficiently manage vulnerabilities in your monitored environments."><img alt="Vulnerabilities" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Vulnerabilities" /> <strong>Vulnerabilities</strong></a></li>
+<li>Runtime Vulnerability Analytics: Capabilities</li>
+<li>Latest Dynatrace <a href="../vulnerabilities/" title="Prioritize and efficiently manage vulnerabilities in your monitored environments."><img alt="Vulnerabilities" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Vulnerabilities" /> <strong>Vulnerabilities</strong></a></li>
 </ul>
 <p>Once the root cause is gone, the vulnerability is automatically resolved. For more information about vulnerability resolution, see:</p>
 <ul>
-<li><a href="/docs/secure/application-security/vulnerability-analytics/vulnerability-evaluation#tpv-resolution" title="Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.">Third-party vulnerabilities: Resolution</a></li>
-<li><a href="/docs/secure/application-security/vulnerability-analytics/vulnerability-evaluation#clv-resolution" title="Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.">Code-level vulnerabilities: Resolution</a></li>
+<li>Third-party vulnerabilities: Resolution</li>
+<li>Code-level vulnerabilities: Resolution</li>
 </ul>
 <h3 id="how-do-i-fix-detected-vulnerabilities">How do I fix detected vulnerabilities?<a class="headerlink" href="#how-do-i-fix-detected-vulnerabilities" title="Permanent link">&para;</a></h3>
 <p>The rich and precise context and details provided on the vulnerabilities pages help you identify and understand vulnerabilities, prioritize them by risk, and automatically monitor and alert on newly discovered vulnerabilities. Based on this information, you can determine what actions are needed to fix the vulnerabilities.</p>
 <p>For example:</p>
 <p>Latest Dynatrace</p>
-<p>In <a href="/docs/secure/vulnerabilities" title="Prioritize and efficiently manage vulnerabilities in your monitored environments."><img alt="Vulnerabilities" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Vulnerabilities" /> <strong>Vulnerabilities</strong></a>, you can:</p>
+<p>In <a href="../vulnerabilities/" title="Prioritize and efficiently manage vulnerabilities in your monitored environments."><img alt="Vulnerabilities" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Vulnerabilities" /> <strong>Vulnerabilities</strong></a>, you can:</p>
 <ul>
-<li><a href="/docs/secure/vulnerabilities/address-remediation#snyk" title="Address remediation and optimize remediation activities.">Apply fix recommendations from Snyk</a></li>
-<li><a href="/docs/secure/vulnerabilities/address-remediation#dsa" title="Address remediation and optimize remediation activities.">Apply DSA fixes</a></li>
-<li><a href="/docs/secure/vulnerabilities/address-remediation#remediation-tracking" title="Address remediation and optimize remediation activities.">Connect affected entities to your ticketing system and track the remediation progress</a></li>
-<li><a href="/docs/secure/vulnerabilities/address-remediation#source" title="Address remediation and optimize remediation activities.">Drill down into the source of vulnerabilities</a></li>
-<li><a href="/docs/secure/vulnerabilities/address-remediation#mute-entities" title="Address remediation and optimize remediation activities.">Change the mute status of affected entities</a></li>
+<li><a href="../vulnerabilities/address-remediation/#snyk" title="Address remediation and optimize remediation activities.">Apply fix recommendations from Snyk</a></li>
+<li><a href="../vulnerabilities/address-remediation/#dsa" title="Address remediation and optimize remediation activities.">Apply DSA fixes</a></li>
+<li><a href="../vulnerabilities/address-remediation/#remediation-tracking" title="Address remediation and optimize remediation activities.">Connect affected entities to your ticketing system and track the remediation progress</a></li>
+<li><a href="../vulnerabilities/address-remediation/#source" title="Address remediation and optimize remediation activities.">Drill down into the source of vulnerabilities</a></li>
+<li><a href="../vulnerabilities/address-remediation/#mute-entities" title="Address remediation and optimize remediation activities.">Change the mute status of affected entities</a></li>
 </ul>
 <p>deprecated</p>
-<p>In <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities" title="Monitor the security issues of your third-party libraries."><img alt="Third Party Vulnerabilities" src="https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png" title="Third Party Vulnerabilities" /> <strong>Third-Party Vulnerabilities</strong></a>, you can:</p>
+<p>In <a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities/" title="Monitor the security issues of your third-party libraries."><img alt="Third Party Vulnerabilities" src="https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png" title="Third Party Vulnerabilities" /> <strong>Third-Party Vulnerabilities</strong></a>, you can:</p>
 <ul>
-<li>Use the recommended <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor" title="Get recommendations for security fixes from Davis Security Advisor.">DSA fixes</a> to upgrade to a non-vulnerable version of the vulnerable component</li>
-<li><a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking" title="Track the remediation progress of vulnerabilities.">Set up tracking links for affected entities and follow up with their remediation progress</a></li>
+<li>Use the recommended DSA fixes to upgrade to a non-vulnerable version of the vulnerable component</li>
+<li>Set up tracking links for affected entities and follow up with their remediation progress</li>
 </ul>
 <h3 id="when-is-a-vulnerability-marked-as-resolved">When is a vulnerability marked as resolved?<a class="headerlink" href="#when-is-a-vulnerability-marked-as-resolved" title="Permanent link">&para;</a></h3>
 <p><strong><em>I removed the vulnerable component, but the vulnerability still shows as open. When does it get resolved?</em></strong></p>
@@ -5625,8 +4546,8 @@
 <p><strong><em>After enabling Runtime Vulnerability Analytics, 19 critical vulnerabilities were found. Now they are down to three without any mitigation from our side. Why are some vulnerabilities resolved without any mitigation?</em></strong></p>
 <p>A vulnerability is resolved automatically if the root cause is no longer present. To learn more, see</p>
 <ul>
-<li><a href="/docs/secure/application-security/vulnerability-analytics/vulnerability-evaluation#tpv-resolution" title="Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.">Third-party vulnerability resolution</a></li>
-<li><a href="/docs/secure/application-security/vulnerability-analytics/vulnerability-evaluation#clv-resolution" title="Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.">Code-level vulnerability resolution</a></li>
+<li>Third-party vulnerability resolution</li>
+<li>Code-level vulnerability resolution</li>
 </ul>
 <h3 id="why-do-some-vulnerabilities-keep-being-resolved-and-reopened">Why do some vulnerabilities keep being resolved and reopened?<a class="headerlink" href="#why-do-some-vulnerabilities-keep-being-resolved-and-reopened" title="Permanent link">&para;</a></h3>
 <p>A vulnerability keeps being resolved and reopened when a process using the vulnerable library isn't running all the time:</p>
@@ -5634,11 +4555,11 @@
 <li>When the process is terminated, the vulnerability is resolved.</li>
 <li>When the process is restarted, the vulnerability is reopened.</li>
 </ul>
-<p>For details about the reasons why vulnerabilities are resolved and reopened, see <a href="/docs/secure/application-security/vulnerability-analytics/vulnerability-evaluation#tpv-resolution" title="Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.">Resolution</a>.</p>
+<p>For details about the reasons why vulnerabilities are resolved and reopened, see Resolution.</p>
 <p>To determine which processes are affected, see:</p>
 <ul>
-<li>Latest Dynatrace <a href="/docs/secure/vulnerabilities/prioritize#affected-related" title="Prioritize third-party, code-level, and runtime vulnerabilities.">What is at risk (affected and related entities)</a></li>
-<li>deprecated <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#process" title="Track the remediation progress of vulnerabilities.">Remediation tracking for processes</a>.</li>
+<li>Latest Dynatrace <a href="../vulnerabilities/prioritize/#affected-related" title="Prioritize third-party, code-level, and runtime vulnerabilities.">What is at risk (affected and related entities)</a></li>
+<li>deprecated <a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking/#process" title="Track the remediation progress of vulnerabilities.">Remediation tracking for processes</a>.</li>
 </ul>
 <h3 id="why-do-resolved-vulnerabilities-show-up-in-every-management-zone">Why do resolved vulnerabilities show up in every management zone?<a class="headerlink" href="#why-do-resolved-vulnerabilities-show-up-in-every-management-zone" title="Permanent link">&para;</a></h3>
 <p>Content below refers to the classic <img alt="Third Party Vulnerabilities" src="https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png" title="Third Party Vulnerabilities" /> <strong>Third-Party Vulnerabilities</strong> app, which is deprecated.</p>
@@ -5656,28 +4577,28 @@
 <p><strong>Third-party vulnerabilities</strong>: An application process restart is required in the following case:</p>
 </li>
 <li>
-<p>In <a href="/docs/platform/oneagent/monitoring-modes/monitoring-modes#discovery" title="Find out more about the available monitoring modes when using OneAgent."><strong>Discovery mode</strong></a>, after you <a href="/docs/platform/oneagent/monitoring-modes/monitoring-modes#code-module-injection" title="Find out more about the available monitoring modes when using OneAgent.">enable code-module injection</a></p>
+<p>In <a href="../../platform/oneagent/monitoring-modes/monitoring-modes/#discovery" title="Find out more about the available monitoring modes when using OneAgent."><strong>Discovery mode</strong></a>, after you <a href="../../platform/oneagent/monitoring-modes/monitoring-modes/#code-module-injection" title="Find out more about the available monitoring modes when using OneAgent.">enable code-module injection</a></p>
 </li>
 <li>
 <p><strong>Code-level vulnerabilities</strong>: An application process restart is required in the following cases:</p>
 </li>
 <li>
-<p>After each step in <a href="/docs/secure/application-security/vulnerability-analytics#clv-detection" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">Enable code-level vulnerability detection</a>:</p>
+<p>After each step in <a href="../application-security/vulnerability-analytics/#clv-detection" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">Enable code-level vulnerability detection</a>:</p>
 <ul>
 <li>Enable Code-level Vulnerability Analytics</li>
 <li>Configure the global code-level vulnerability detection control per technology</li>
 <li>Enable OneAgent monitoring</li>
-<li>After you enable a <a href="/docs/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/define-monitoring-rules-clv" title="Define rules based on specific process groups">monitoring rule</a></li>
+<li>After you enable a monitoring rule</li>
 <li><strong>Attacks</strong>: An application process restart is required in the following cases:</li>
 </ul>
 </li>
 <li>
-<p>After each step in <a href="/docs/secure/application-security/application-protection#start" title="Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.">Get started with Runtime Application Protection</a>:</p>
+<p>After each step in <a href="../application-security/application-protection/#start" title="Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.">Get started with Runtime Application Protection</a>:</p>
 <ul>
 <li>Enable Runtime Application Protection</li>
 <li>Define the global attack control per technology</li>
 <li>Enable OneAgent monitoring</li>
-<li>After you enable a <a href="/docs/secure/application-security/application-protection/application-protection-rules" title="Create, modify, and delete rules for specific attacks.">monitoring rule</a></li>
+<li>After you enable a monitoring rule</li>
 </ul>
 </li>
 </ul>
@@ -5688,12 +4609,12 @@
 <h2 id="notifications-and-reporting">Notifications and reporting<a class="headerlink" href="#notifications-and-reporting" title="Permanent link">&para;</a></h2>
 <h3 id="how-can-i-get-notifications-for-vulnerabilities">How can I get notifications for vulnerabilities?<a class="headerlink" href="#how-can-i-get-notifications-for-vulnerabilities" title="Permanent link">&para;</a></h3>
 <p>Latest Dynatrace</p>
-<p>You can <a href="/docs/analyze-explore-automate/workflows/simple-workflow" title="Build and run a simple workflow.">set up a workflow</a> to configure Dynatrace to send notifications for <a href="/docs/secure/vulnerabilities" title="Prioritize and efficiently manage vulnerabilities in your monitored environments.">vulnerabilities and vulnerability findings</a> through your preferred <a href="/docs/analyze-explore-automate/workflows/actions" title="Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.">channels</a>. The configuration options give you fineâgrained control over when and how the notifications are triggered.</p>
+<p>You can set up a workflow to configure Dynatrace to send notifications for vulnerabilities and vulnerability findings through your preferred channels. The configuration options give you fineâgrained control over when and how the notifications are triggered.</p>
 <ul>
-<li>For examples of how to configure a workflow, see <a href="/docs/analyze-explore-automate/workflows/use-cases" title="Explore common Workflows use cases in Dynatrace deployments.">Workflows use cases</a>.</li>
+<li>For examples of how to configure a workflow, see Workflows use cases.</li>
 </ul>
 <p>deprecated</p>
-<p>You can <a href="/docs/secure/application-security/vulnerability-analytics/security-notifications-rva" title="Integrate security notifications for vulnerabilities with Dynatrace.">set up notifications</a> through your preferred channels.</p>
+<p>You can set up notifications through your preferred channels.</p>
 <ul>
 <li>
 <p>For example, you can trigger alerts</p>
@@ -5705,117 +4626,112 @@
 </ul>
 <h3 id="how-can-i-get-notifications-for-attacks">How can I get notifications for attacks?<a class="headerlink" href="#how-can-i-get-notifications-for-attacks" title="Permanent link">&para;</a></h3>
 <p>Latest Dynatrace</p>
-<p>You can <a href="/docs/analyze-explore-automate/workflows/simple-workflow" title="Build and run a simple workflow.">set up a workflow</a> to configure Dynatrace to send notifications for <a href="/docs/secure/threats-and-exploits" title="Understand, triage, and investigate detection findings and alerts.">detection findings</a> through your preferred <a href="/docs/analyze-explore-automate/workflows/actions" title="Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.">channels</a>. The configuration options give you fineâgrained control over when and how the notifications are triggered.</p>
+<p>You can set up a workflow to configure Dynatrace to send notifications for detection findings through your preferred channels. The configuration options give you fineâgrained control over when and how the notifications are triggered.</p>
 <ul>
-<li>For examples of how to configure a workflow, see <a href="/docs/analyze-explore-automate/workflows/use-cases" title="Explore common Workflows use cases in Dynatrace deployments.">Workflows use cases</a>.</li>
+<li>For examples of how to configure a workflow, see Workflows use cases.</li>
 </ul>
 <h3 id="how-can-i-create-reports-and-share-them-with-others">How can I create reports and share them with others?<a class="headerlink" href="#how-can-i-create-reports-and-share-them-with-others" title="Permanent link">&para;</a></h3>
 <p>Latest Dynatrace</p>
 <ul>
 <li>
-<p>In <a href="/docs/secure/vulnerabilities" title="Prioritize and efficiently manage vulnerabilities in your monitored environments."><img alt="Vulnerabilities" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Vulnerabilities" /> <strong>Vulnerabilities</strong></a>, you can:</p>
+<p>In <a href="../vulnerabilities/" title="Prioritize and efficiently manage vulnerabilities in your monitored environments."><img alt="Vulnerabilities" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Vulnerabilities" /> <strong>Vulnerabilities</strong></a>, you can:</p>
 </li>
 <li>
-<p><a href="/docs/secure/vulnerabilities/collaborate-with-apps#dwld" title="Navigate between Dynatrace apps, share vulnerability data externally, and automate remediation workflows.">Download the vulnerability data as a CSV file</a></p>
+<p><a href="../vulnerabilities/collaborate-with-apps/#dwld" title="Navigate between Dynatrace apps, share vulnerability data externally, and automate remediation workflows.">Download the vulnerability data as a CSV file</a></p>
 </li>
-<li><a href="/docs/secure/vulnerabilities/explore-findings#collaborate" title="View, filter, and analyze vulnerability findings from Dynatrace and external security tools.">Download the vulnerability finding data as a CSV file</a></li>
-<li>In <a href="/docs/secure/threats-and-exploits" title="Understand, triage, and investigate detection findings and alerts."><img alt="Threats &amp; Exploits" src="https://dt-cdn.net/images/attacks-512-b922840b12.png" title="Threats &amp; Exploits" /> <strong>Threats &amp; Exploits</strong></a>, you can <a href="/docs/secure/threats-and-exploits/collaborate-with-apps#download" title="Interact with other apps for further insights and share results with stakeholders.">download the detection finding data as a CSV file</a>.</li>
+<li><a href="../vulnerabilities/explore-findings/#collaborate" title="View, filter, and analyze vulnerability findings from Dynatrace and external security tools.">Download the vulnerability finding data as a CSV file</a></li>
+<li>In <a href="../threats-and-exploits/" title="Understand, triage, and investigate detection findings and alerts."><img alt="Threats &amp; Exploits" src="https://dt-cdn.net/images/attacks-512-b922840b12.png" title="Threats &amp; Exploits" /> <strong>Threats &amp; Exploits</strong></a>, you can download the detection finding data as a CSV file.</li>
 <li>
-<p>In <a href="/docs/secure/investigations" title="Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."><img alt="Investigations" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Investigations</strong></a> or <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong></a>, you can generate reports for <a href="/docs/secure/threat-observability/concepts#security-events" title="Basic concepts related to Threat Observability">security events</a> with <a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language (DQL)</a>, and then create <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">dashboards</a> based on the results.</p>
+<p>In <a href="../investigations/" title="Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."><img alt="Investigations" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Investigations</strong></a> or <a href="../../analyze-explore-automate/dashboards-and-notebooks/notebooks/" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong></a>, you can generate reports for <a href="../threat-observability/concepts/#security-events" title="Basic concepts related to Threat Observability">security events</a> with Dynatrace Query Language (DQL), and then create dashboards based on the results.</p>
 </li>
 <li>
-<p>For commonly used queries, see <a href="/docs/secure/threat-observability/dql-examples#vulnerabilities-per-application" title="DQL examples for security data powered by Grail.">DQL examples for security data</a>.</p>
+<p>For commonly used queries, see <a href="../threat-observability/dql-examples/#vulnerabilities-per-application" title="DQL examples for security data powered by Grail.">DQL examples for security data</a>.</p>
 </li>
-<li>For a complete list of queryable fields, including descriptions and examples, see <a href="/docs/semantic-dictionary/model/security-events" title="Get to know the Semantic Dictionary models related to security events.">Dynatrace Semantic Dictionary: Security events</a>.</li>
+<li>For a complete list of queryable fields, including descriptions and examples, see Dynatrace Semantic Dictionary: Security events.</li>
 </ul>
 <p>deprecated</p>
 <ul>
-<li>With the Dynatrace API, you can chart <a href="/docs/secure/application-security/vulnerability-analytics/app-sec-metrics" title="View available Application Security metrics for Dynatrace Runtime Vulnerability Analytics.">Application Security metrics</a> and <a href="/docs/analyze-explore-automate/dashboards-classic/metrics-browser#pin" title="Browse metrics with the Dynatrace metrics browser.">pin them to your dashboard</a>. For example, you can retrieve <a href="/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerabilities" title="View the list of vulnerabilities via Dynatrace API.">all security problems detected in your applications</a> or the <a href="/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerable-functions" title="View the vulnerable functions of a vulnerability via Dynatrace API.">vulnerable functions of a security problem</a>.</li>
-<li>With <a href="/docs/analyze-explore-automate/explorer" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a>, you can <a href="/docs/analyze-explore-automate/explorer#share" title="Query for metrics and transform results to gain desired insights.">share your metric results</a> and <a href="/docs/analyze-explore-automate/explorer#csv" title="Query for metrics and transform results to gain desired insights.">export them to a CSV file</a>.</li>
+<li>With the Dynatrace API, you can chart Application Security metrics and <a href="../../analyze-explore-automate/dashboards-classic/metrics-browser/#pin" title="Browse metrics with the Dynatrace metrics browser.">pin them to your dashboard</a>. For example, you can retrieve all security problems detected in your applications or the vulnerable functions of a security problem.</li>
+<li>With Data Explorer, you can <a href="../../analyze-explore-automate/explorer/#share" title="Query for metrics and transform results to gain desired insights.">share your metric results</a> and <a href="../../analyze-explore-automate/explorer/#csv" title="Query for metrics and transform results to gain desired insights.">export them to a CSV file</a>.</li>
 </ul>
 <h3 id="how-can-i-stop-receiving-notifications-for-an-irrelevant-vulnerability-or-entity">How can I stop receiving notifications for an irrelevant vulnerability or entity?<a class="headerlink" href="#how-can-i-stop-receiving-notifications-for-an-irrelevant-vulnerability-or-entity" title="Permanent link">&para;</a></h3>
 <p>If you think a vulnerability or an entity isn't relevant or is a false positive, you can:</p>
 <p>Latest Dynatrace</p>
-<p>Mute (silence) all its affected entities. This sets the vulnerability status to <code>Muted</code>. For instructions, see <a href="/docs/secure/vulnerabilities/address-remediation#mute-entities" title="Address remediation and optimize remediation activities.">Change the affected entity status</a>.</p>
+<p>Mute (silence) all its affected entities. This sets the vulnerability status to <code>Muted</code>. For instructions, see <a href="../vulnerabilities/address-remediation/#mute-entities" title="Address remediation and optimize remediation activities.">Change the affected entity status</a>.</p>
 <p>deprecated</p>
 <ul>
-<li>Mute (silence) the vulnerability. For details, see <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/filter-third-party-vulnerabilities#mute" title="Organize third-party vulnerabilities for easy management and to prioritize issues.">Change the third-party vulnerability status</a>.</li>
-<li>Mute (silence) the entity. For details, see <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#status-pg" title="Track the remediation progress of vulnerabilities.">Change vulnerability status of process groups</a> and <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#status-node" title="Track the remediation progress of vulnerabilities.">Change vulnerability status of nodes</a>.</li>
+<li>Mute (silence) the vulnerability. For details, see <a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/filter-third-party-vulnerabilities/#mute" title="Organize third-party vulnerabilities for easy management and to prioritize issues.">Change the third-party vulnerability status</a>.</li>
+<li>Mute (silence) the entity. For details, see <a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking/#status-pg" title="Track the remediation progress of vulnerabilities.">Change vulnerability status of process groups</a> and <a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking/#status-node" title="Track the remediation progress of vulnerabilities.">Change vulnerability status of nodes</a>.</li>
 </ul>
 <h3 id="why-do-we-keep-receiving-notifications-for-the-same-vulnerability">Why do we keep receiving notifications for the same vulnerability?<a class="headerlink" href="#why-do-we-keep-receiving-notifications-for-the-same-vulnerability" title="Permanent link">&para;</a></h3>
 <p><strong><em>Every day we receive notifications for the same vulnerability ID, with the same process group, entity name, and entity link. We have other vulnerabilities detected, but no extra notifications are sent. Why do we keep receiving notifications for the same vulnerability?</em></strong></p>
 <p>A process that does not run all the time might be using a vulnerable library. For details, see <a href="#reopen">Why do some vulnerabilities keep being resolved and reopened?</a>.
 To stop receiving notifications for this vulnerability, you can:</p>
 <ul>
-<li>Exclude the respective process from Application Security monitoring by setting up a <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">third-party monitoring rule</a>/<a href="/docs/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/define-monitoring-rules-clv" title="Define rules based on specific process groups">code-level monitoring rule</a>.</li>
-<li>Latest Dynatrace Mute (silence) all the vulnerability's affected entities. This sets the vulnerability status to <code>Muted</code>. For instructions, see <a href="/docs/secure/vulnerabilities/address-remediation#mute-entities" title="Address remediation and optimize remediation activities.">Change the affected entity status</a>.</li>
-<li>deprecated Mute (silence) the vulnerability. For details, see <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/filter-third-party-vulnerabilities#mute" title="Organize third-party vulnerabilities for easy management and to prioritize issues.">Change the third-party vulnerability status</a>.</li>
+<li>Exclude the respective process from Application Security monitoring by setting up a third-party monitoring rule/code-level monitoring rule.</li>
+<li>Latest Dynatrace Mute (silence) all the vulnerability's affected entities. This sets the vulnerability status to <code>Muted</code>. For instructions, see <a href="../vulnerabilities/address-remediation/#mute-entities" title="Address remediation and optimize remediation activities.">Change the affected entity status</a>.</li>
+<li>deprecated Mute (silence) the vulnerability. For details, see <a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/filter-third-party-vulnerabilities/#mute" title="Organize third-party vulnerabilities for easy management and to prioritize issues.">Change the third-party vulnerability status</a>.</li>
 </ul>
 <h3 id="how-can-i-fetch-fix-recommendation-information-for-vulnerabilities">How can I fetch fix recommendation information for vulnerabilities?<a class="headerlink" href="#how-can-i-fetch-fix-recommendation-information-for-vulnerabilities" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Latest Dynatrace To retrieve remediation guidance for vulnerabilities, use <a href="/docs/secure/investigations" title="Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."><img alt="Investigations" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Investigations</strong></a> or <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong></a> to run a <a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">DQL</a> query that includes the <code>vulnerability.remediation.description</code> field. Example:</li>
+<li>Latest Dynatrace To retrieve remediation guidance for vulnerabilities, use <a href="../investigations/" title="Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."><img alt="Investigations" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Investigations</strong></a> or <a href="../../analyze-explore-automate/dashboards-and-notebooks/notebooks/" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong></a> to run a DQL query that includes the <code>vulnerability.remediation.description</code> field. Example:</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>fetch security.events
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>| filter event.type == &quot;VULNERABILITY_STATE_REPORT_EVENT&quot;
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>| filter event.type == &quot;VULNERABILITY_STATE_REPORT_EVENT&quot;
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>| filter event.level == &quot;ENTITY&quot;
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>| filter event.level == &quot;ENTITY&quot;
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>| fields vulnerability.risk.level, vulnerability.title, vulnerability.remediation.description
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>| fields vulnerability.risk.level, vulnerability.title, vulnerability.remediation.description
 </code></pre></div>
-<p>For a complete list of queryable fields, including descriptions and examples, see <a href="/docs/semantic-dictionary/model/security-events" title="Get to know the Semantic Dictionary models related to security events.">Dynatrace Semantic Dictionary: Security events</a>.
+<p>For a complete list of queryable fields, including descriptions and examples, see Dynatrace Semantic Dictionary: Security events.
 * deprecated To retrieve remediation guidance for a specific vulnerability, call the Dynatrace API endpoint for an individual vulnerability. Provide the vulnerability ID and request the <code>recommendationDescription</code> property in response.</p>
-<p>For details, see <a href="/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerability-details" title="View details of a vulnerability via Dynatrace API.">Vulnerabilities API - GET vulnerability details</a>.</p>
+<p>For details, see Vulnerabilities API - GET vulnerability details.</p>
 <h2 id="coverage">Coverage<a class="headerlink" href="#coverage" title="Permanent link">&para;</a></h2>
 <h3 id="how-can-i-gain-insights-into-my-environments-runtime-vulnerability-analytics-coverage">How can I gain insights into my environment's Runtime Vulnerability Analytics coverage?<a class="headerlink" href="#how-can-i-gain-insights-into-my-environments-runtime-vulnerability-analytics-coverage" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Latest Dynatrace Evaluate your environment's Runtime Vulnerability Analytics process and host coverage with the ready-made <a href="/docs/secure/vulnerabilities/assess-coverage" title="Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard."><strong>Vulnerability coverage</strong> dashboard</a>.</li>
-<li>deprecated Go to <img alt="Security Overview" src="https://dt-cdn.net/images/security-overview-512-a310b17025.png" title="Security Overview" /> <strong>Security Overview</strong>. In the <strong>Host coverage</strong> section, select <strong>Monitored hosts</strong> to go to the <strong>Hosts</strong> page filtered by monitored hosts. For details, see <a href="/docs/secure/application-security/vulnerability-analytics/application-security-overview#host-coverage" title="Get an overview of the security issues of your third-party libraries.">Application Security overview: Host coverage</a>.</li>
+<li>Latest Dynatrace Evaluate your environment's Runtime Vulnerability Analytics process and host coverage with the ready-made <strong>Vulnerability coverage</strong> dashboard.</li>
+<li>deprecated Go to <img alt="Security Overview" src="https://dt-cdn.net/images/security-overview-512-a310b17025.png" title="Security Overview" /> <strong>Security Overview</strong>. In the <strong>Host coverage</strong> section, select <strong>Monitored hosts</strong> to go to the <strong>Hosts</strong> page filtered by monitored hosts. For details, see <a href="../application-security/vulnerability-analytics/application-security-overview/#host-coverage" title="Get an overview of the security issues of your third-party libraries.">Application Security overview: Host coverage</a>.</li>
 </ul>
 <h3 id="why-do-i-see-a-vulnerability-on-one-host-but-not-on-another">Why do I see a vulnerability on one host but not on another?<a class="headerlink" href="#why-do-i-see-a-vulnerability-on-one-host-but-not-on-another" title="Permanent link">&para;</a></h3>
 <p>Vulnerability detection depends on the data Dynatrace receives from each host. If a host is missing required instrumentation or configuration, Dynatrace may not be able to detect or confirm a vulnerability on that host. Common causes include missing OneAgent injection, autoâinjection disabled, outdated OneAgent versions, or unsupported runtimes.</p>
-<p>Latest Dynatrace To identify hosts with missing or disabled autoâinjection, you can run a DQL query in <a href="/docs/secure/investigations" title="Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."><img alt="Investigations" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Investigations</strong></a> or <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong></a>, for example:</p>
+<p>Latest Dynatrace To identify hosts with missing or disabled autoâinjection, you can run a DQL query in <a href="../investigations/" title="Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."><img alt="Investigations" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Investigations</strong></a> or <a href="../../analyze-explore-automate/dashboards-and-notebooks/notebooks/" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong></a>, for example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>fetch dt.entity.host
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>| fieldsAdd autoInjection
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>| fieldsAdd autoInjection
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>| fieldsAdd entity.name
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>| fieldsAdd entity.name
 </code></pre></div>
 <h2 id="limit-monitoring">Limit monitoring<a class="headerlink" href="#limit-monitoring" title="Permanent link">&para;</a></h2>
 <h3 id="how-can-i-exclude-specific-entities-from-being-monitored-by-runtime-vulnerability-analytics">How can I exclude specific entities from being monitored by Runtime Vulnerability Analytics?<a class="headerlink" href="#how-can-i-exclude-specific-entities-from-being-monitored-by-runtime-vulnerability-analytics" title="Permanent link">&para;</a></h3>
 <p>You can:</p>
 <ul>
-<li><a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">Create monitoring rules for third-party vulnerabilities</a></li>
-<li><a href="/docs/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/define-monitoring-rules-clv" title="Define rules based on specific process groups">Create monitoring rules for code-level vulnerabilities</a></li>
+<li>Create monitoring rules for third-party vulnerabilities</li>
+<li>Create monitoring rules for code-level vulnerabilities</li>
 </ul>
 <p>Your custom rules override the global third-party vulnerability detection control setting. Any entity that doesn't match one of your rules will follow the global thirdâparty vulnerability detection setting.</p>
 <h3 id="where-can-i-find-examples-of-monitoring-rule-configurations">Where can I find examples of monitoring rule configurations?<a class="headerlink" href="#where-can-i-find-examples-of-monitoring-rule-configurations" title="Permanent link">&para;</a></h3>
-<p>If you need guidance for setting up monitoring rules in common scenarios such as monitoring only specific hosts, processes, Kubernetes namespaces, Kubernetes nodes, or excluding certain processes, you can refer to <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#usecases" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">Use cases for new monitoring rules</a>. It provides practical examples that show how to configure rules for a variety of environments and requirements.</p>
+<p>If you need guidance for setting up monitoring rules in common scenarios such as monitoring only specific hosts, processes, Kubernetes namespaces, Kubernetes nodes, or excluding certain processes, you can refer to <a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv/#usecases" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">Use cases for new monitoring rules</a>. It provides practical examples that show how to configure rules for a variety of environments and requirements.</p>
 <h3 id="how-can-i-limit-runtime-vulnerability-analytics-monitoring-to-a-specific-management-zone">How can I limit Runtime Vulnerability Analytics monitoring to a specific management zone?<a class="headerlink" href="#how-can-i-limit-runtime-vulnerability-analytics-monitoring-to-a-specific-management-zone" title="Permanent link">&para;</a></h3>
 <p>Content below refers to the classic <img alt="Third Party Vulnerabilities" src="https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png" title="Third Party Vulnerabilities" /> <strong>Third-Party Vulnerabilities</strong> app, which is deprecated.</p>
-<p><a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">Create a monitoring rule</a> that says <code>Do not monitor</code> if the management zone does not equal <code>&lt;your-management-zone&gt;</code>. After you add, edit, or remove a rule, allow up to 15 minutes for your changes to take effect.</p>
+<p>Create a monitoring rule that says <code>Do not monitor</code> if the management zone does not equal <code>&lt;your-management-zone&gt;</code>. After you add, edit, or remove a rule, allow up to 15 minutes for your changes to take effect.</p>
 <h3 id="how-can-i-enable-runtime-vulnerability-analytics-only-for-specific-hosts-or-kubernetes-namespaces">How can I enable Runtime Vulnerability Analytics only for specific hosts or Kubernetes namespaces?<a class="headerlink" href="#how-can-i-enable-runtime-vulnerability-analytics-only-for-specific-hosts-or-kubernetes-namespaces" title="Permanent link">&para;</a></h3>
 <p>To enable Runtime Vulnerability Analytics only for selected parts of your environment, create monitoring rules that apply to the specific hosts or Kubernetes namespaces you want to monitor.</p>
 <p>You can follow these example use cases:</p>
 <ul>
-<li><a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#monitor-processes-specific-host" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">Monitor only the processes on specific hosts</a></li>
-<li><a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#processes-specific-namespace" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">Monitor only processes running in a specific Kubernetes namespace</a></li>
+<li><a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv/#monitor-processes-specific-host" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">Monitor only the processes on specific hosts</a></li>
+<li><a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv/#processes-specific-namespace" title="Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.">Monitor only processes running in a specific Kubernetes namespace</a></li>
 </ul>
 <p>These examples show how to disable global monitoring and then create resourceâattribute monitoring rules that selectively enable monitoring for the entities you choose.</p>
 <h2 id="change-status">Change status<a class="headerlink" href="#change-status" title="Permanent link">&para;</a></h2>
 <h3 id="if-a-vulnerability-is-muted-are-the-affected-entities-muted-as-well">If a vulnerability is muted, are the affected entities muted as well?<a class="headerlink" href="#if-a-vulnerability-is-muted-are-the-affected-entities-muted-as-well" title="Permanent link">&para;</a></h3>
 <p>No. The <code>MUTE</code> state does not automatically transfer to its affected entities; there is no interdependence between the two when assessing this state.</p>
-<p>Latest Dynatrace In <a href="/docs/secure/vulnerabilities" title="Prioritize and efficiently manage vulnerabilities in your monitored environments."><img alt="Vulnerabilities" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Vulnerabilities" /> <strong>Vulnerabilities</strong></a>, a vulnerability is only muted if all its affected entities are muted. For details, see <a href="/docs/secure/vulnerabilities/address-remediation#mute-entities" title="Address remediation and optimize remediation activities.">Change the mute status of affected entities</a>.</p>
+<p>Latest Dynatrace In <a href="../vulnerabilities/" title="Prioritize and efficiently manage vulnerabilities in your monitored environments."><img alt="Vulnerabilities" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Vulnerabilities" /> <strong>Vulnerabilities</strong></a>, a vulnerability is only muted if all its affected entities are muted. For details, see <a href="../vulnerabilities/address-remediation/#mute-entities" title="Address remediation and optimize remediation activities.">Change the mute status of affected entities</a>.</p>
 <h2 id="status-updates">Status updates<a class="headerlink" href="#status-updates" title="Permanent link">&para;</a></h2>
 <h3 id="what-does-last-update-on-vulnerabilities-list-pages-refer-to">What does "last update" on vulnerabilities list pages refer to?<a class="headerlink" href="#what-does-last-update-on-vulnerabilities-list-pages-refer-to" title="Permanent link">&para;</a></h3>
 <p>Content below refers to the classic <img alt="Third Party Vulnerabilities" src="https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png" title="Third Party Vulnerabilities" /> <strong>Third-Party Vulnerabilities</strong> app, which is deprecated.</p>
@@ -5848,7 +4764,7 @@ To stop receiving notifications for this vulnerability, you can:</p>
 <h3 id="why-are-there-different-values-on-the-vulnerabilities-page-versus-data-explorer">Why are there different values on the vulnerabilities page versus Data Explorer?<a class="headerlink" href="#why-are-there-different-values-on-the-vulnerabilities-page-versus-data-explorer" title="Permanent link">&para;</a></h3>
 <p>Content below refers to the classic <img alt="Third Party Vulnerabilities" src="https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png" title="Third Party Vulnerabilities" /> <strong>Third-Party Vulnerabilities</strong> app, which is deprecated.</p>
 <p><strong><em>In <img alt="Third Party Vulnerabilities" src="https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png" title="Third Party Vulnerabilities" /> </em>*Third-Party Vulnerabilities</strong>, on the <strong>Third-party vulnerabilities</strong> list page, when I filter for resolved vulnerabilities over the last seven days, I get <code>3</code> vulnerabilities. When I use the metric query (<code>builtin:security.securityProblem.resolved.new.global</code>) in Data Explorer, I get <code>25</code>. Why are there different values on the vulnerabilities page versus Data Explorer?***</p>
-<p>The vulnerability list shows the current state (the total count of vulnerabilities that are currently resolved), while using the metric query in <a href="/docs/analyze-explore-automate/explorer" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a> shows the change over time.</p>
+<p>The vulnerability list shows the current state (the total count of vulnerabilities that are currently resolved), while using the metric query in Data Explorer shows the change over time.</p>
 <p>For example, if two vulnerabilities are open and resolved several times over a period of time, the Data Explorer chart shows only one spike (which is the maximum over the given timeframe) while the vulnerabilities page shows two (because there are currently two resolved vulnerabilities).</p>
 <p>To find out how many vulnerabilities were resolved in the given timeframe using the metric query</p>
 <ol>
@@ -5888,7 +4804,7 @@ To stop receiving notifications for this vulnerability, you can:</p>
 For the <strong>Vulnerability details</strong> section on the vulnerability details page, current data is considered.</p>
 <h3 id="why-does-my-vulnerability-have-a-different-risk-assessment-and-dss-than-its-affected-entities">Why does my vulnerability have a different risk assessment and DSS than its affected entities?<a class="headerlink" href="#why-does-my-vulnerability-have-a-different-risk-assessment-and-dss-than-its-affected-entities" title="Permanent link">&para;</a></h3>
 <p>A vulnerability is an aggregation of all its affected entities in your environment; therefore, it can have different values (risk assessment and DSS) than its affected entities. For example, the risk score of an affected entity might be <code>8.0</code>, while the score of the aggregated vulnerability is <code>9.0</code>. At the same time, if at least one affected entity is exposed to the internet, the aggregated vulnerability is also exposed to the internet.</p>
-<p>Latest Dynatrace In <a href="/docs/secure/vulnerabilities" title="Prioritize and efficiently manage vulnerabilities in your monitored environments."><img alt="Vulnerabilities" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Vulnerabilities" /> <strong>Vulnerabilities</strong></a>, the DSS score is the maximum DSS score of the affected entities. For details, see <a href="/docs/secure/vulnerabilities/concepts#differences" title="Concepts that are specific to the Dynatrace Vulnerabilities app.">Calculation differences</a>.</p>
+<p>Latest Dynatrace In <a href="../vulnerabilities/" title="Prioritize and efficiently manage vulnerabilities in your monitored environments."><img alt="Vulnerabilities" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Vulnerabilities" /> <strong>Vulnerabilities</strong></a>, the DSS score is the maximum DSS score of the affected entities. For details, see <a href="../vulnerabilities/concepts/#differences" title="Concepts that are specific to the Dynatrace Vulnerabilities app.">Calculation differences</a>.</p>
 <h3 id="why-am-i-seeing-different-vulnerabilities-in-production-vs-non-production-environment">Why am I seeing different vulnerabilities in production vs non-production environment?<a class="headerlink" href="#why-am-i-seeing-different-vulnerabilities-in-production-vs-non-production-environment" title="Permanent link">&para;</a></h3>
 <p>You have the same vulnerabilities in two environments only if all of the following are the same in both environments:</p>
 <ul>
@@ -5928,7 +4844,7 @@ For the <strong>Vulnerability details</strong> section on the vulnerability deta
 <p>Note that to display the origin of .NET software components, the minimum OneAgent version required is OneAgent version 1.301+.</p>
 <p>Example:</p>
 <p><img alt="load-origins-pg" src="https://dt-cdn.net/images/2023-08-21-15-09-46-1812-3f3a0b8200.png" /></p>
-<p>For information on how to navigate there, see <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking" title="Track the remediation progress of vulnerabilities.">Remediation tracking</a>.</p>
+<p>For information on how to navigate there, see Remediation tracking.</p>
 <h2 id="vulnerable-functions">Vulnerable functions<a class="headerlink" href="#vulnerable-functions" title="Permanent link">&para;</a></h2>
 <h3 id="how-are-vulnerable-functions-determined">How are vulnerable functions determined?<a class="headerlink" href="#how-are-vulnerable-functions-determined" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5943,18 +4859,18 @@ For the <strong>Vulnerability details</strong> section on the vulnerability deta
 </ul>
 <h3 id="why-is-there-no-data-available-for-vulnerable-functions">Why is there no data available for vulnerable functions?<a class="headerlink" href="#why-is-there-no-data-available-for-vulnerable-functions" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Once you <a href="/docs/secure/application-security/vulnerability-analytics#enable-tpva" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">enable Third-party Vulnerability Analytics</a>, it will take some time (one hour at the most) until data about vulnerable functions is displayed.</li>
-<li>OneAgent monitoring for Java vulnerable functions is disabled. To enable it, see <a href="/docs/secure/application-security/vulnerability-analytics#vulnerable-function" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">Enable OneAgent monitoring for Java vulnerable functions</a>.</li>
+<li>Once you <a href="../application-security/vulnerability-analytics/#enable-tpva" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">enable Third-party Vulnerability Analytics</a>, it will take some time (one hour at the most) until data about vulnerable functions is displayed.</li>
+<li>OneAgent monitoring for Java vulnerable functions is disabled. To enable it, see <a href="../application-security/vulnerability-analytics/#vulnerable-function" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">Enable OneAgent monitoring for Java vulnerable functions</a>.</li>
 </ul>
-<p>The OneAgent feature must be enabled for all processes affected by the vulnerability. For instructions on how to enable OneAgent monitoring, see <a href="/docs/secure/application-security/vulnerability-analytics#vulnerable-function" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">Enable OneAgent monitoring for Java vulnerable functions</a>.
+<p>The OneAgent feature must be enabled for all processes affected by the vulnerability. For instructions on how to enable OneAgent monitoring, see <a href="../application-security/vulnerability-analytics/#vulnerable-function" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">Enable OneAgent monitoring for Java vulnerable functions</a>.
 * No vulnerable functions of the vulnerability are contained in the release version of the third-party libraries (software components) in use.
 * No vulnerable functions are provided by the Snyk feed.
-* deprecated You need to restart the processes affected by the vulnerability for updated information. For details, see <a href="/docs/secure/faq#outdated-vulnerable-functions" title="Frequently asked questions about Dynatrace Application Security.">FAQ: How can I know if information about vulnerable functions is outdated and what can I do about it?</a>.</p>
+* deprecated You need to restart the processes affected by the vulnerability for updated information. For details, see <a href="./#outdated-vulnerable-functions" title="Frequently asked questions about Dynatrace Application Security.">FAQ: How can I know if information about vulnerable functions is outdated and what can I do about it?</a>.</p>
 <h4 id="how-do-i-know-which-processes-to-restart">How do I know which processes to restart?<a class="headerlink" href="#how-do-i-know-which-processes-to-restart" title="Permanent link">&para;</a></h4>
 <p>Content below refers to the classic <img alt="Third Party Vulnerabilities" src="https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png" title="Third Party Vulnerabilities" /> <strong>Third-Party Vulnerabilities</strong> app, which is deprecated.</p>
 <p>If you see the <strong>Restart required</strong> notification on the details page of a vulnerability, follow the steps below to determine which processes you need to restart:</p>
 <ol>
-<li>On the <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities#pg" title="Monitor the security issues of your third-party libraries."><strong>Process group overview</strong></a> card, select <strong>View all process groups</strong>.</li>
+<li>On the <a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities/#pg" title="Monitor the security issues of your third-party libraries."><strong>Process group overview</strong></a> card, select <strong>View all process groups</strong>.</li>
 <li>Filter by <code>Vulnerable functions: Restart required</code>.</li>
 <li>For each of the resulting process groups, select <strong>Details</strong>, then select the link provided in the <strong>Restart required</strong> notification to navigate to the list of processes that require a restart.</li>
 </ol>
@@ -5962,7 +4878,7 @@ For the <strong>Vulnerability details</strong> section on the vulnerability deta
 <p>Example result:</p>
 <p><img alt="Filter by Vulnerable functions: Restart required" src="https://dt-cdn.net/images/2023-12-18-13-07-00-1594-7f9f9381c3.png" /></p>
 <p>After a process restart, it takes about a minute for the updated information to be displayed.</p>
-<p>This feature only works if <a href="/docs/secure/application-security/vulnerability-analytics#vulnerable-function" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">OneAgent monitoring for Java vulnerable functions is enabled</a>.</p>
+<p>This feature only works if <a href="../application-security/vulnerability-analytics/#vulnerable-function" title="Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.">OneAgent monitoring for Java vulnerable functions is enabled</a>.</p>
 <h4 id="why-does-my-process-still-need-to-be-restarted-after-i-already-restarted-it">Why does my process still need to be restarted after I already restarted it?<a class="headerlink" href="#why-does-my-process-still-need-to-be-restarted-after-i-already-restarted-it" title="Permanent link">&para;</a></h4>
 <p>Content below refers to the classic <img alt="Third Party Vulnerabilities" src="https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png" title="Third Party Vulnerabilities" /> <strong>Third-Party Vulnerabilities</strong> app, which is deprecated.</p>
 <p>If you followed the <a href="#which-process-to-restart">instructions</a> to identify the process and restarted it, and the process still requires a restart (the same <strong>Restart required</strong> notification shows up, and the information about vulnerable functions is unchanged), this can happen in Kubernetes deployments if there's no persistent storage.</p>
@@ -5973,18 +4889,18 @@ For the <strong>Vulnerability details</strong> section on the vulnerability deta
 <p>If new information about a vulnerability's vulnerable functions is available, a process restart is required so that OneAgent can pick up and use the new data.
 In this case, a <strong>Restart required</strong> notification or symbol is displayed on</p>
 <ul>
-<li>A vulnerability's details page (in <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities#vulnerability-details" title="Monitor the security issues of your third-party libraries."><strong>Vulnerability details</strong></a> &gt; <strong>Vulnerable functions</strong>)</li>
+<li>A vulnerability's details page (in <a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities/#vulnerability-details" title="Monitor the security issues of your third-party libraries."><strong>Vulnerability details</strong></a> &gt; <strong>Vulnerable functions</strong>)</li>
 </ul>
 <p><img alt="Restart required on a vulnerability details page" src="https://dt-cdn.net/images/2023-12-18-12-45-12-776-d39b330fe4.png" />
-* The <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#pg" title="Track the remediation progress of vulnerabilities.">process groups overview related to a vulnerability</a> (in <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#details" title="Track the remediation progress of vulnerabilities."><strong>Details</strong></a> &gt; <strong>Risk assessment</strong>)</p>
+* The <a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking/#pg" title="Track the remediation progress of vulnerabilities.">process groups overview related to a vulnerability</a> (in <a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking/#details" title="Track the remediation progress of vulnerabilities."><strong>Details</strong></a> &gt; <strong>Risk assessment</strong>)</p>
 <p><img alt="Restart required on the process groups overview related to a vulnerability" src="https://dt-cdn.net/images/2023-12-18-12-41-00-1597-34af91fcf3.png" />
-* The <a href="/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking#process" title="Track the remediation progress of vulnerabilities.">process list related to a vulnerability</a> (in <strong>Vulnerable functions</strong> and <strong>Details</strong>).</p>
+* The <a href="../application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking/#process" title="Track the remediation progress of vulnerabilities.">process list related to a vulnerability</a> (in <strong>Vulnerable functions</strong> and <strong>Details</strong>).</p>
 <p><img alt="Restart required on the process list related to a vulnerability" src="https://dt-cdn.net/images/2023-12-18-12-37-41-1570-47da22adc2.png" /></p>
 <h2 id="snyk-feed">Snyk feed<a class="headerlink" href="#snyk-feed" title="Permanent link">&para;</a></h2>
 <h3 id="why-is-the-snyk-link-missing-for-some-vulnerabilities">Why is the Snyk link missing for some vulnerabilities?<a class="headerlink" href="#why-is-the-snyk-link-missing-for-some-vulnerabilities" title="Permanent link">&para;</a></h3>
 <p><strong><em>Why don't some vulnerabilities contain a link to Snyk, even though I can find the same CVE in Snyk?</em></strong></p>
 <p>To fetch data about vulnerabilities, Dynatrace Application Security uses either <a href="https://snyk.io">Snykï»¿</a> or <a href="https://nvd.nist.gov/vuln">NVDï»¿</a>, depending on the vulnerable component.</p>
-<p>A vulnerability with a CVE that is listed in Snyk but that doesn't have any Snyk-related information in Dynatrace is using the NVD feed. For more information, see <a href="/docs/secure/application-security/vulnerability-analytics/vulnerability-evaluation#vulnerability-feeds" title="Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.">Third-party vulnerability feeds</a>.</p>
+<p>A vulnerability with a CVE that is listed in Snyk but that doesn't have any Snyk-related information in Dynatrace is using the NVD feed. For more information, see Third-party vulnerability feeds.</p>
 <h2 id="attack-blocking-mechanism">Attack blocking mechanism<a class="headerlink" href="#attack-blocking-mechanism" title="Permanent link">&para;</a></h2>
 <h3 id="how-does-dynatrace-actually-block-attacks">How does Dynatrace actually block attacks?<a class="headerlink" href="#how-does-dynatrace-actually-block-attacks" title="Permanent link">&para;</a></h3>
 <p>Selecting <code>Block attack</code> for an attack doesn't automatically block the respective attack; it takes you to the Settings page where you can create a monitoring rule to block that attack in the future. Dynatrace is configured to block future exploit situations, not the current ones.
@@ -5997,7 +4913,7 @@ Dynatrace detects when a user-supplied attack payload finds its way to a line of
 <li>Doing a HTTP request (SSRF)</li>
 </ul>
 <p>The vulnerability is identified with or without an attack. If the data sent by the client includes characteristics of an attack that reaches this line of code, it's deemed an exploit, and Dynatrace alerts or blocks it.</p>
-<p>To learn more about the Runtime Application Protection mechanism, see <a href="/docs/secure/application-security/application-protection#mechanism" title="Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.">How it works</a>.</p>
+<p>To learn more about the Runtime Application Protection mechanism, see <a href="../application-security/application-protection/#mechanism" title="Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.">How it works</a>.</p>
 <h3 id="how-is-an-attackers-ip-determined">How is an attacker's IP determined?<a class="headerlink" href="#how-is-an-attackers-ip-determined" title="Permanent link">&para;</a></h3>
 <p>In Runtime Application Protection, to determine an attacker's IP, Dynatrace verifies</p>
 <ul>
@@ -6008,28 +4924,28 @@ Dynatrace detects when a user-supplied attack payload finds its way to a line of
 <p>The client IP of the socket connection (if the HTTP headers mentioned above aren't available).</p>
 </li>
 </ul>
-<p>For details, see <a href="/docs/secure/threats-and-exploits#client-ip-address" title="Understand, triage, and investigate detection findings and alerts.">Client IP address detection</a>.</p>
+<p>For details, see <a href="../threats-and-exploits/#client-ip-address" title="Understand, triage, and investigate detection findings and alerts.">Client IP address detection</a>.</p>
 <h2 id="data-retention">Data retention<a class="headerlink" href="#data-retention" title="Permanent link">&para;</a></h2>
 <h3 id="whats-the-data-retention-period-for-vulnerabilities-events-and-attacks">What's the data retention period for vulnerabilities, events, and attacks?<a class="headerlink" href="#whats-the-data-retention-period-for-vulnerabilities-events-and-attacks" title="Permanent link">&para;</a></h3>
-<p>For information about how security-related data is stored in Dynatrace, see <a href="/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods" title="Check retention times for various data types.">Data retention periods</a>.</p>
+<p>For information about how security-related data is stored in Dynatrace, see Data retention periods.</p>
 <h2 id="consumption">Consumption<a class="headerlink" href="#consumption" title="Permanent link">&para;</a></h2>
 <h3 id="how-can-i-check-how-much-my-hosts-consume">How can I check how much my hosts consume?<a class="headerlink" href="#how-can-i-check-how-much-my-hosts-consume" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>If you're using <a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">Dynatrace Platform Subscription</a>, see:</p>
+<p>If you're using Dynatrace Platform Subscription, the licensing model for all Dynatrace capabilities."), see:</p>
 </li>
 <li>
-<p><a href="/docs/license/capabilities/application-security/runtime-vulnerability-analytics" title="Learn how your consumption of the Dynatrace Runtime Vulnerability Analytics (RVA) DPS capability is billed and charged.">Calculate your consumption of Runtime Vulnerability Analytics</a></p>
+<p>Calculate your consumption of Runtime Vulnerability Analytics DPS capability is billed and charged.")</p>
 </li>
-<li><a href="/docs/license/capabilities/application-security/runtime-application-protection" title="Learn how how your consumption of the Runtime Application Protection (RAP) DPS capability is billed and charged.">Calculate your consumption of Runtime Application Protection</a></li>
-<li><a href="/docs/license/capabilities/application-security/security-posture-management" title="Learn how your consumption of the Dynatrace Security Posture Management (SPM) DPS capability is billed and charged.">Calculate your consumption of Security Posture Management</a></li>
-<li>If you're using <a href="/docs/license/monitoring-consumption-classic" title="Understand how Dynatrace monitoring consumption is calculated for classic licensing.">Dynatrace classic licensing</a>, see <a href="/docs/license/monitoring-consumption-classic/application-security-units#how-capabilities-affect-monitoring-consumption" title="Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.">How capabilities affect monitoring consumption</a>.</li>
+<li>Calculate your consumption of Runtime Application Protection DPS capability is billed and charged.")</li>
+<li>Calculate your consumption of Security Posture Management DPS capability is billed and charged.")</li>
+<li>If you're using Dynatrace classic licensing, see How capabilities affect monitoring consumption.</li>
 </ul>
 <p>deprecated To see which hosts consume DPS/ASUs, in <img alt="Security Overview" src="https://dt-cdn.net/images/security-overview-512-a310b17025.png" title="Security Overview" /> <strong>Security Overview</strong>, go to the <strong>Host coverage</strong> section for third-party and code-level vulnerabilities and select <strong>Monitored hosts</strong>. The resulting list of hosts are the hosts in your environment which consume DPS/ASUs.
-For more information, see <a href="/docs/secure/application-security/vulnerability-analytics/application-security-overview#host-coverage" title="Get an overview of the security issues of your third-party libraries.">Host coverage</a>.</p>
+For more information, see <a href="../application-security/vulnerability-analytics/application-security-overview/#host-coverage" title="Get an overview of the security issues of your third-party libraries.">Host coverage</a>.</p>
 <h3 id="why-is-application-security-still-showing-usage-even-though-i-disabled-rva">Why is Application Security still showing usage even though I disabled RVA?<a class="headerlink" href="#why-is-application-security-still-showing-usage-even-though-i-disabled-rva" title="Permanent link">&para;</a></h3>
 <p><strong><em>I disabled Thirdâparty and Codeâlevel Vulnerability Analytics. My host shows 'Not analyzed', yet usage is still appearing in my subscription. Why?</em></strong></p>
-<p>This behavior applies to both <a href="/docs/license/monitoring-consumption-classic/application-security-units#how-capabilities-affect-monitoring-consumption" title="Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.">Dynatrace classic licensing (ASU)</a> and <a href="/docs/license/capabilities/application-security/runtime-application-protection" title="Learn how how your consumption of the Runtime Application Protection (RAP) DPS capability is billed and charged.">Dynatrace Platform Subscription (DPS)</a>.</p>
+<p>This behavior applies to both Dynatrace classic licensing (ASU) and Dynatrace Platform Subscription (DPS) DPS capability is billed and charged.").</p>
 <p>Check whether Runtime Application Protection (RAP) is enabled. RAP depends on Runtime Vulnerability Assessment (RVA) to determine which vulnerability an attack attempts to exploit. Because RAP cannot operate without RVA, any host with RAP enabled will always consume ASUs/DPS for both RAP and RVAâeven if the global switches for thirdâparty or codeâlevel vulnerability detection are turned off.</p>
 
 
@@ -6110,7 +5026,7 @@ For more information, see <a href="/docs/secure/application-security/vulnerabili
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.sections", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
   
@@ -6120,25 +5036,38 @@ For more information, see <a href="/docs/secure/application-security/vulnerabili
       
     
   <script>
-    // Inject version selector into header
-    document.addEventListener('DOMContentLoaded', function() {
-      var headerInner = document.querySelector('.md-header__inner');
-      if (headerInner) {
-        var select = document.createElement('select');
-        select.className = 'docflow-version-select';
-        select.innerHTML = '<option value="managed" selected>Managed</option><option value="saas">SaaS</option>';
-        select.setAttribute('aria-label', 'Version selector');
+    (function() {
+      // --- Reading progress bar (one-time setup) ---
+      var progressBar = document.createElement('div');
+      progressBar.className = 'reading-progress';
+      document.body.appendChild(progressBar);
 
-        // Insert before the search or at the end
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (docHeight > 0) {
+          var progress = (scrollTop / docHeight) * 100;
+          progressBar.style.width = Math.min(progress, 100) + '%';
+        }
+      });
+
+      // --- Managed label in header (one-time setup) ---
+      var headerInner = document.querySelector('.md-header__inner');
+      if (headerInner && !headerInner.querySelector('.docflow-managed-label')) {
+        var label = document.createElement('span');
+        label.className = 'docflow-managed-label';
+        label.textContent = 'Managed';
+        label.setAttribute('title', 'Документация включает разделы Dynatrace Managed');
+
         var searchContainer = headerInner.querySelector('.md-header__source');
         if (searchContainer) {
-          headerInner.insertBefore(select, searchContainer);
+          headerInner.insertBefore(label, searchContainer);
         } else {
-          headerInner.appendChild(select);
+          headerInner.appendChild(label);
         }
       }
 
-      // Keyboard shortcut Ctrl+K for search
+      // --- Keyboard shortcut Ctrl+K for search ---
       document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
           e.preventDefault();
@@ -6153,7 +5082,9 @@ For more information, see <a href="/docs/secure/application-security/vulnerabili
           }
         }
       });
-    });
+
+      // TOC title renaming handled via CSS (see extra style block above)
+    })();
   </script>
 
   </body>
