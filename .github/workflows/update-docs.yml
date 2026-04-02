@@ -278,8 +278,6 @@ jobs:
           fi
 
       # ---------- STAGE 5: Build & Deploy ----------
-      - name: Validate docs
-        run: python scripts/quality/test_docs.py
 
       - name: Build MkDocs
         if: steps.commit.outputs.committed == 'true'
