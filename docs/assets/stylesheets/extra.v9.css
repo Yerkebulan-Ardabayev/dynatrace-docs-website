@@ -1813,6 +1813,19 @@ html {
   display: none !important;
 }
 
+/* ==========================================================================
+   ДУБЛИ на active leaf-страницах (включая Главную)
+   Material генерит для активной страницы сразу и <label for="__toc"> (тогл
+   TOC), и <a href="./"> — оба с одним и тем же заголовком. На мобилке label
+   был бы тогглом для TOC, но md-nav--secondary выше уже display:none, так
+   что label бесполезен. Скрываем его везде, чтобы устранить дубль типа
+   «Главная / Главная», «Что такое Dynatrace / Что такое Dynatrace».
+   ========================================================================== */
+.md-nav__item--active > label.md-nav__link[for="__toc"],
+.md-nav__item--active > input.md-nav__toggle#__toc {
+  display: none !important;
+}
+
 /* Убираем padding-left у вложенного <nav> если label скрыт (уровень визуально становится родителем) */
 .md-nav__item--active.md-nav__item--nested:has(> nav .md-nav__link--active) > nav.md-nav {
   padding-left: 0 !important;
