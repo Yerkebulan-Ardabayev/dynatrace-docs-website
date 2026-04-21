@@ -30,9 +30,12 @@ theme:
 
   features:
     # --- Single-source navigation: left sidebar only, collapsible ---
-    # (убран navigation.indexes — он дублировал index-страницу как первый
-    # дочерний пункт раздела: «Обнаружение аномалий» → «Обзор Anomaly Detection»
-    # показывался дважды в sidebar)
+    # navigation.indexes ВЕРНУТЬ: без него Material для паттерна
+    #   secure/threat-observability.md + secure/threat-observability/…
+    # показывает «Наблюдаемость угроз» ДВАЖДЫ — как label секции и как первую
+    # ссылку. С navigation.indexes = страница становится кликабельным заголовком
+    # секции, дубль исчезает.
+    - navigation.indexes
     - navigation.prune
     - navigation.path
     - navigation.tracking
@@ -277,7 +280,7 @@ markdown_extensions:
   - tables
 
 extra_css:
-  - assets/stylesheets/extra.v5.css
+  - assets/stylesheets/extra.v6.css
 
 extra_javascript:
   - assets/javascripts/groq-chat.js
