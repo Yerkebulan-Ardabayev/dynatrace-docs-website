@@ -282,7 +282,7 @@ markdown_extensions:
   - tables
 
 extra_css:
-  - assets/stylesheets/extra.v10.css
+  - assets/stylesheets/extra.v11.css
 
 extra_javascript:
   - assets/javascripts/groq-chat.js
