@@ -358,16 +358,19 @@ body {
 }
 
 /* ==========================================================================
-   4. HEADER — Frosted glass (DocFlow: fixed, backdrop-blur-xl)
+   4. HEADER — Solid, clean (no backdrop-filter — content was bleeding through)
    ========================================================================== */
 
 .md-header {
-  background: rgba(21, 19, 31, 0.82) !important;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: var(--docflow-sidebar-bg) !important;
   border-bottom: 1px solid var(--docflow-border);
   box-shadow: none !important;
   height: var(--docflow-header-height);
+  z-index: 100;
+}
+
+[data-md-color-scheme="default"] .md-header {
+  background: #ffffff !important;
 }
 
 .md-header__inner {
@@ -390,77 +393,12 @@ body {
 }
 
 /* ==========================================================================
-   5. NAVIGATION TABS — Sticky top bar (Vercel/Stripe-style)
-   Frosted glass, active = underline + accent color, hover = soft bg
+   5. NAVIGATION TABS — DISABLED (single-source nav: sidebar only)
+   Kept as no-op in case any DOM still references these classes.
    ========================================================================== */
 
 .md-tabs {
-  background: rgba(21, 19, 31, 0.78) !important;
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border-bottom: 1px solid var(--docflow-border);
-  height: 44px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.md-tabs::-webkit-scrollbar {
-  display: none;
-}
-
-[data-md-color-scheme="default"] .md-tabs {
-  background: rgba(255, 255, 255, 0.85) !important;
-}
-
-.md-tabs__list {
-  gap: 0.125rem;
-  padding: 0 0.5rem;
-  contain: inline-size;
-}
-
-.md-tabs__item {
-  height: 44px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-}
-
-.md-tabs__link {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--md-default-fg-color--lighter);
-  transition: color 0.18s ease, background 0.18s ease;
-  padding: 0.5rem 0.875rem;
-  margin: 0 0.0625rem;
-  border-radius: var(--docflow-radius-md);
-  opacity: 1;
-  position: relative;
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  height: 32px;
-}
-
-.md-tabs__link:hover {
-  color: var(--md-default-fg-color);
-  background: var(--docflow-surface-hover);
-}
-
-.md-tabs__link--active {
-  color: var(--md-accent-fg-color);
-  background: transparent;
-  font-weight: 600;
-}
-
-.md-tabs__link--active::after {
-  content: '';
-  position: absolute;
-  left: 0.5rem;
-  right: 0.5rem;
-  bottom: -7px;
-  height: 2px;
-  background: var(--md-accent-fg-color);
-  border-radius: 2px 2px 0 0;
+  display: none !important;
 }
 
 /* ==========================================================================
@@ -472,6 +410,7 @@ body {
   background: var(--docflow-sidebar-bg);
   border-right: 1px solid var(--docflow-border) !important;
   padding-top: 0.5rem;
+  z-index: 50;
 }
 
 .md-sidebar--primary {
@@ -482,9 +421,9 @@ body {
   margin: 0 !important;
 }
 
-/* Nav container — comfortable horizontal padding */
+/* Nav container — comfortable padding, extra bottom so footer never overlaps */
 .md-nav--primary > .md-nav__list {
-  padding: 0.5rem 0.5rem 2rem;
+  padding: 0.5rem 0.5rem 4rem;
 }
 
 /* All nav links — uniform comfortable spacing */
@@ -515,32 +454,16 @@ body {
   font-weight: 600;
 }
 
-/* Section headers (top-level groups in left sidebar with sections feature) */
-.md-nav--primary > .md-nav__list > .md-nav__item--section > .md-nav__link,
-.md-nav--primary > .md-nav__list > .md-nav__item--section > label.md-nav__link {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: var(--md-default-fg-color--lighter);
-  margin: 1.25rem 0 0.25rem;
-  padding: 0 0.75rem;
-  pointer-events: none;
-  cursor: default;
+/* Top-level collapsible groups — bold, comfortable spacing */
+.md-nav--primary > .md-nav__list > .md-nav__item--nested > .md-nav__link,
+.md-nav--primary > .md-nav__list > .md-nav__item--nested > label.md-nav__link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+  margin-top: 0.125rem;
 }
 
-/* First section header — no extra top margin */
-.md-nav--primary > .md-nav__list > .md-nav__item--section:first-child > .md-nav__link,
-.md-nav--primary > .md-nav__list > .md-nav__item--section:first-child > label.md-nav__link {
-  margin-top: 0.5rem;
-}
-
-/* Hide Material's section-icon (back chevron) since sections are flat */
-.md-nav--primary > .md-nav__list > .md-nav__item--section > .md-nav__link > .md-nav__icon {
-  display: none;
-}
-
-/* Nested (collapsible) items — bolder than leaves, with chevron */
+/* Nested (collapsible) items — slightly bolder, with chevron */
 .md-nav__item--nested > .md-nav__link {
   font-weight: 500;
   color: var(--md-default-fg-color);
@@ -579,15 +502,22 @@ body {
   border: none !important;
 }
 
-/* Hide redundant tabs-mode top-level title in left sidebar
-   (the section label appears at top of sidebar with navigation.tabs+sections —
-   it's already shown as the active tab, so we hide it here) */
+/* Sidebar top title — visible, subtle (it's "Dynatrace — Документация") */
 .md-sidebar--primary .md-nav--primary > .md-nav__title {
-  display: none !important;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--md-default-fg-color--lighter);
+  padding: 0.75rem 1rem 0.5rem;
+  background: transparent;
+  box-shadow: none;
+  border-bottom: 1px solid var(--docflow-border);
+  margin-bottom: 0.5rem;
 }
 
 /* Indented nested levels — subtle vertical guide line */
-.md-nav__item--nested > .md-nav {
+.md-nav__item--nested > nav.md-nav {
   padding-left: 0.75rem;
   margin-left: 0.5rem;
   border-left: 1px solid var(--docflow-border);
@@ -1062,6 +992,8 @@ body {
 .md-footer {
   border-top: 1px solid var(--docflow-border);
   background: var(--md-footer-bg-color);
+  position: relative;
+  z-index: 10;
 }
 
 .md-footer-nav__link {
