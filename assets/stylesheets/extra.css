@@ -304,33 +304,48 @@ body {
   color: var(--md-typeset-color);
 }
 
-/* --- Headings --- */
+/* --- Headings — чёткая иерархия, как у Stripe/Vercel docs --- */
 .md-typeset h1 {
   font-weight: 700;
-  font-size: 1.875em;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.25em;
-  line-height: 1.25;
+  font-size: 2.125em;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.5em;
+  line-height: 1.2;
+  color: var(--md-default-fg-color);
 }
 
 .md-typeset h2 {
-  font-weight: 600;
-  font-size: 1.25em;
-  letter-spacing: -0.01em;
-  margin-top: 2.5em;
-  padding-bottom: 0.4em;
-  border-bottom: 1px solid var(--docflow-border);
+  font-weight: 700 !important;
+  font-size: 1.5em !important;
+  letter-spacing: -0.015em;
+  margin-top: 2.5em !important;
+  margin-bottom: 0.75em !important;
+  padding-bottom: 0.5em !important;
+  border-bottom: 1px solid var(--docflow-border) !important;
+  color: var(--md-default-fg-color);
+  line-height: 1.3;
 }
 
 .md-typeset h3 {
-  font-weight: 500;
-  font-size: 1.125em;
-  margin-top: 1.5em;
+  font-weight: 600 !important;
+  font-size: 1.2em !important;
+  margin-top: 1.75em !important;
+  margin-bottom: 0.5em !important;
+  color: var(--md-default-fg-color);
+  line-height: 1.35;
 }
 
 .md-typeset h4 {
-  font-weight: 500;
-  font-size: 1em;
+  font-weight: 600 !important;
+  font-size: 1em !important;
+  margin-top: 1.5em !important;
+  color: var(--md-default-fg-color);
+}
+
+/* First heading after h1 subtitle should have more breathing room */
+.md-typeset h1 + h2,
+.md-typeset h1 + p + h2 {
+  margin-top: 1.5em !important;
 }
 
 /* First paragraph after h1 — subtitle style like DocFlow */
@@ -431,30 +446,35 @@ body {
 }
 
 /* All nav links — uniform comfortable spacing, text wraps naturally */
-.md-nav__link {
-  font-size: 0.8125rem;
+.md-nav .md-nav__link {
+  font-size: 0.8125rem !important;
   font-weight: 400;
   border-radius: var(--docflow-radius-md);
   padding: 0.4rem 0.75rem;
   margin: 1px 0;
-  line-height: 1.4;
+  line-height: 1.4 !important;
   transition: background 0.15s ease, color 0.15s ease;
   color: var(--md-default-fg-color--light);
-  display: flex;
-  align-items: flex-start;
+  display: flex !important;
+  align-items: flex-start !important;
   gap: 0.5rem;
-  white-space: normal;       /* текст переносится, не обрезается ellipsis */
-  overflow-wrap: anywhere;
-  word-break: normal;
-  min-width: 0;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  min-width: 0 !important;
+  text-overflow: clip !important;
+  overflow: visible !important;
 }
 
 /* Ellipsis inside nav links — пусть переносится, а не обрезается */
-.md-nav__link .md-ellipsis {
-  white-space: normal;
-  overflow: visible;
-  text-overflow: clip;
-  line-height: 1.4;
+.md-nav .md-nav__link .md-ellipsis,
+.md-nav .md-ellipsis {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  line-height: 1.4 !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
 }
 
 .md-nav__link:hover {
@@ -472,11 +492,27 @@ body {
 
 /* Top-level collapsible groups — bold, comfortable spacing */
 .md-nav--primary > .md-nav__list > .md-nav__item--nested > .md-nav__link,
-.md-nav--primary > .md-nav__list > .md-nav__item--nested > label.md-nav__link {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--md-default-fg-color);
-  margin-top: 0.125rem;
+.md-nav--primary > .md-nav__list > .md-nav__item--nested > label.md-nav__link,
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  color: var(--md-default-fg-color) !important;
+  padding: 0.55rem 0.75rem !important;
+  margin: 0.125rem 0 !important;
+}
+
+/* Второй уровень — чуть меньше и легче */
+.md-nav--primary > .md-nav__list > .md-nav__item > nav.md-nav > .md-nav__list > .md-nav__item > .md-nav__link,
+.md-nav--primary > .md-nav__list > .md-nav__item > nav.md-nav > .md-nav__list > .md-nav__item > label.md-nav__link {
+  font-size: 0.8125rem !important;
+  font-weight: 500 !important;
+  padding: 0.375rem 0.75rem !important;
+}
+
+/* Третий уровень (leaf-страницы) — обычный вес */
+.md-nav--primary nav.md-nav nav.md-nav .md-nav__link {
+  font-weight: 400 !important;
+  font-size: 0.8125rem !important;
 }
 
 /* Nested (collapsible) items — slightly bolder, with chevron */
@@ -518,9 +554,18 @@ body {
   border: none !important;
 }
 
-/* Sidebar top title — hide полностью (дублирует логотип в header) */
-.md-sidebar--primary .md-nav--primary > .md-nav__title {
+/* Sidebar top title — hide полностью (дублирует логотип в header).
+   Максимальная специфичность + !important, чтобы точно победить Material. */
+.md-sidebar--primary .md-nav__title,
+.md-sidebar--primary .md-nav--primary > .md-nav__title,
+.md-sidebar--primary nav.md-nav--primary > .md-nav__title,
+.md-sidebar--primary label.md-nav__title {
   display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
 }
 
 /* Indented nested levels — subtle vertical guide line */
