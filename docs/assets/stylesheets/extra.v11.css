@@ -1506,6 +1506,16 @@ nav.md-nav .md-nav__link--active {
   border-radius: var(--docflow-radius-sm);
 }
 
+/* Chevron-toggle labels (раскрытие nested секций в sidebar) — НЕ рисуем
+   focus-ring. Они decorative (иконка ≡/⌄), рядом есть <a> с тем же tabindex,
+   который корректно индицирует focus. Иначе click по chevron оставляет
+   teal «кавычки» вокруг иконки, юзер воспринимает как баг. */
+.md-nav__link[for^="__nav"],
+.md-nav__link[for^="__nav"]:focus,
+.md-nav__link[for^="__nav"]:focus-visible {
+  outline: none !important;
+}
+
 /* ==========================================================================
    22. SMOOTH TRANSITIONS — Global interactive elements
    ========================================================================== */
