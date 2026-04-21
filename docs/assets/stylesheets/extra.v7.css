@@ -447,17 +447,42 @@ body {
   margin: 0 !important;
 }
 
-/* Main content area — минимальная высота, чтобы footer не лез в зону sidebar
-   на коротких страницах. !important чтобы перебить Material defaults. */
-.md-main,
-.md-main__inner {
+/* Footer overlap fix — самый надёжный способ:
+   flex layout на container + явный height на sidebar, чтобы он не вылазил
+   за пределы viewport и не наезжал на footer. */
+.md-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.md-main {
+  flex: 1 0 auto;
   min-height: calc(100vh - var(--docflow-header-height)) !important;
 }
 
-/* Ensure main inner is flex and grows — sidebar наследует высоту */
 .md-main__inner {
   display: flex;
   align-items: stretch;
+  min-height: calc(100vh - var(--docflow-header-height) - 4rem) !important;
+}
+
+/* Sidebar — явное ограничение высоты = viewport минус header.
+   Без этого Material на коротких страницах тянет sidebar за main в footer. */
+.md-sidebar--primary {
+  height: calc(100vh - var(--docflow-header-height)) !important;
+  max-height: calc(100vh - var(--docflow-header-height)) !important;
+  top: var(--docflow-header-height) !important;
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap {
+  max-height: 100% !important;
+  overflow-y: auto !important;
+}
+
+/* Footer держится внизу */
+.md-footer {
+  flex: 0 0 auto;
 }
 
 /* Nav container — comfortable padding */
@@ -1738,11 +1763,51 @@ html {
 
 @media (min-width: 76.25em) {
   .md-content {
-    max-width: 56rem;
+    max-width: 68rem;       /* +12rem: освободилось от правого TOC */
   }
   .md-content__inner {
-    padding: 1.75rem 2.5rem 4rem;
+    padding: 2rem 3rem 4rem;
   }
+}
+
+/* ==========================================================================
+   toc.integrate — TOC встроен в левый sidebar под активной страницей.
+   Правый sidebar (secondary) полностью скрыт — 2 колонки вместо 3.
+   ========================================================================== */
+
+/* Убираем правый sidebar совсем */
+.md-sidebar--secondary {
+  display: none !important;
+}
+
+/* Встроенный TOC в левом sidebar (появляется под активной страницей) */
+.md-nav--secondary {
+  border-left: 1px solid var(--docflow-border);
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.md-nav--secondary .md-nav__link {
+  font-size: 0.75rem !important;
+  font-weight: 400 !important;
+  color: var(--md-default-fg-color--lighter) !important;
+  padding: 0.2rem 0.5rem !important;
+  line-height: 1.3 !important;
+}
+
+.md-nav--secondary .md-nav__link:hover {
+  color: var(--md-accent-fg-color) !important;
+}
+
+.md-nav--secondary .md-nav__link--active {
+  color: var(--md-accent-fg-color) !important;
+  font-weight: 500 !important;
+}
+
+.md-nav--secondary .md-nav__title {
+  display: none !important;
 }
 
 /* Sticky tabs need to align with header — fix top offset */

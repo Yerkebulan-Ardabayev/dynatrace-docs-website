@@ -42,6 +42,10 @@ theme:
     - navigation.top
     - navigation.instant
     - navigation.instant.progress
+    # --- TOC встроен в sidebar под активной страницей (2 колонки вместо 3) ---
+    # Stripe/Vercel/Tailwind-style — убирает правый TOC, его контент уходит
+    # в левый sidebar. Юзер: «убери три столбца одно и то же».
+    - toc.integrate
     # --- Search ---
     - search.suggest
     - search.highlight
@@ -280,7 +284,7 @@ markdown_extensions:
   - tables
 
 extra_css:
-  - assets/stylesheets/extra.v6.css
+  - assets/stylesheets/extra.v7.css
 
 extra_javascript:
   - assets/javascripts/groq-chat.js
