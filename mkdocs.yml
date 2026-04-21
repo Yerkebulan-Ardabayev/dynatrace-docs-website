@@ -29,11 +29,7 @@ theme:
         name: Переключить на тёмную тему
 
   features:
-    # --- Top-level navigation as sticky tabs (current best practice) ---
-    - navigation.tabs
-    - navigation.tabs.sticky
-    # --- Collapsible left sidebar — sections collapsed by default ---
-    - navigation.sections
+    # --- Single-source navigation: left sidebar only, collapsible ---
     - navigation.indexes
     - navigation.prune
     - navigation.path
@@ -41,8 +37,6 @@ theme:
     - navigation.top
     - navigation.instant
     - navigation.instant.progress
-    # --- Header behavior ---
-    - header.autohide
     # --- Search ---
     - search.suggest
     - search.highlight
@@ -52,7 +46,6 @@ theme:
     - content.code.annotate
     - content.tabs.link
     - content.tooltips
-    - content.action.edit
     # --- TOC ---
     - toc.follow
 
