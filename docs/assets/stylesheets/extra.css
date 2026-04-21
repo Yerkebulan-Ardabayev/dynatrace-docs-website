@@ -67,7 +67,7 @@
   --docflow-danger:                 #ef4444;
 
   /* --- Layout --- */
-  --docflow-nav-width:              280px;
+  --docflow-nav-width:              18rem;  /* 288px */
   --docflow-toc-width:              240px;
   --docflow-header-height:          56px;
   --docflow-radius:                 0.5rem;   /* 8px */
@@ -366,7 +366,6 @@ body {
   border-bottom: 1px solid var(--docflow-border);
   box-shadow: none !important;
   height: var(--docflow-header-height);
-  z-index: 100;
 }
 
 [data-md-color-scheme="default"] .md-header {
@@ -410,23 +409,28 @@ body {
   background: var(--docflow-sidebar-bg);
   border-right: 1px solid var(--docflow-border) !important;
   padding-top: 0.5rem;
-  z-index: 50;
 }
 
 .md-sidebar--primary {
-  width: var(--docflow-nav-width);
+  width: 18rem; /* 288px — комфортно для русских названий */
 }
 
 .md-sidebar__scrollwrap {
   margin: 0 !important;
 }
 
-/* Nav container — comfortable padding, extra bottom so footer never overlaps */
-.md-nav--primary > .md-nav__list {
-  padding: 0.5rem 0.5rem 4rem;
+/* Main content area — минимальная высота, чтобы footer не лез в зону sidebar
+   на коротких страницах. Это единственный надёжный способ избежать overlap. */
+.md-main {
+  min-height: calc(100vh - var(--docflow-header-height));
 }
 
-/* All nav links — uniform comfortable spacing */
+/* Nav container — comfortable padding */
+.md-nav--primary > .md-nav__list {
+  padding: 0.5rem 0.5rem 2rem;
+}
+
+/* All nav links — uniform comfortable spacing, text wraps naturally */
 .md-nav__link {
   font-size: 0.8125rem;
   font-weight: 400;
@@ -437,8 +441,20 @@ body {
   transition: background 0.15s ease, color 0.15s ease;
   color: var(--md-default-fg-color--light);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
+  white-space: normal;       /* текст переносится, не обрезается ellipsis */
+  overflow-wrap: anywhere;
+  word-break: normal;
+  min-width: 0;
+}
+
+/* Ellipsis inside nav links — пусть переносится, а не обрезается */
+.md-nav__link .md-ellipsis {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.4;
 }
 
 .md-nav__link:hover {
@@ -502,18 +518,9 @@ body {
   border: none !important;
 }
 
-/* Sidebar top title — visible, subtle (it's "Dynatrace — Документация") */
+/* Sidebar top title — hide полностью (дублирует логотип в header) */
 .md-sidebar--primary .md-nav--primary > .md-nav__title {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--md-default-fg-color--lighter);
-  padding: 0.75rem 1rem 0.5rem;
-  background: transparent;
-  box-shadow: none;
-  border-bottom: 1px solid var(--docflow-border);
-  margin-bottom: 0.5rem;
+  display: none !important;
 }
 
 /* Indented nested levels — subtle vertical guide line */
@@ -992,8 +999,6 @@ body {
 .md-footer {
   border-top: 1px solid var(--docflow-border);
   background: var(--md-footer-bg-color);
-  position: relative;
-  z-index: 10;
 }
 
 .md-footer-nav__link {
