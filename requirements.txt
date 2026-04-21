@@ -13,6 +13,10 @@ markdownify>=0.11.0
 flask>=3.0.0
 python-dotenv>=1.0.0
 
+# PDF generation
+markdown>=3.5.0
+weasyprint>=60.0
+
 # Utilities
 tqdm>=4.66.0
 schedule>=1.2.0

@@ -66,3 +66,11 @@ docs/notebooklm/
 
 # NotebookLM PDFs
 notebooklm-pdfs/
+
+# Generated PDF docs (build output, ~100MB)
+pdf-docs/
+
+# Auto-pipeline artifacts
+scripts/.change_tracking/
+changes_report.json
+changes_report.md
