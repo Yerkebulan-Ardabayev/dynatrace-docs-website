@@ -1,0 +1,3748 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Walkthrough-гайд: архитектура, компоненты, интерфейс, ключевые объекты, Problems, дашборды">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/ru/training/day1-introduction/">
+      
+      
+        <link rel="prev" href="../../whats-new/documentation/">
+      
+      
+        <link rel="next" href="../../../ai/groq/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>День 1 — Введение в систему Dynatrace - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-dynatrace" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              День 1 — Введение в систему Dynatrace
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Начало работы
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../managed/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../platform/grail/dynatrace-grail/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Платформа
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../observe/infrastructure-observability/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Наблюдаемость
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Dynatrace Intelligence
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Анализ и автоматизация
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ingest-from/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Источники данных
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../deliver/configuration-as-code/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Deliver
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../secure/threat-observability/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Безопасность
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../manage/hub/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Управление
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dynatrace-api/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../whats-new/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Что нового
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Обучение
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI Помощник
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../managed/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../platform/grail/dynatrace-grail/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../observe/infrastructure-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ и автоматизация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../ingest-from/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../deliver/configuration-as-code/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../secure/threat-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../manage/hub/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Обучение
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    День 1 — Введение в Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    День 1 — Введение в Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-dynatrace_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Архитектура Dynatrace
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Архитектура Dynatrace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Три уровня архитектуры
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-oneagent-activegate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Компоненты системы: OneAgent, ActiveGate, серверная часть
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Компоненты системы: OneAgent, ActiveGate, серверная часть">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oneagent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OneAgent — подробнее
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activegate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ActiveGate — подробнее
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Серверная часть Managed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-oneagent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Принцип работы и возможности OneAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Принцип работы и возможности OneAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oneagent_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как OneAgent обнаруживает всё автоматически
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oneagent_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что OneAgent НЕ делает
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-digital-experience-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Цифровой опыт (Digital Experience Monitoring)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Цифровой опыт (Digital Experience Monitoring)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что такое DEM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Два подхода в Dynatrace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ключевые метрики DEM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Обзор интерфейса и навигации
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Обзор интерфейса и навигации">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Левая навигационная панель
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Верхняя панель
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-smartscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Топология Smartscape
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Топология Smartscape">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smartscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что такое Smartscape
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Горизонтальные слои
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вертикальные связи
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Зачем это нужно
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Хосты, процессы, сервисы, приложения — обзор ключевых объектов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Хосты, процессы, сервисы, приложения — обзор ключевых объектов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host (Хост)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process Group (Группа процессов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service (Сервис)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application (Приложение)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-data-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Встроенные метрики и Data Explorer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Встроенные метрики и Data Explorer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#built-in-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Встроенные метрики (Built-in Metrics)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Работа в Data Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics Browser
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Построение базовых линий и работа с порогами
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Построение базовых линий и работа с порогами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что такое Baseline (базовая линия)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типы порогов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Настройка чувствительности
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Функционал Problems: автоматическая детекция инцидентов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Функционал Problems: автоматическая детекция инцидентов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#davis-ai-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как Davis AI создаёт Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Анатомия Problem-карточки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impact-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impact Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traditional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Почему это лучше traditional мониторинга
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Системные и пользовательские дашборды
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Системные и пользовательские дашборды">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Системные дашборды (Preset)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Создание пользовательского дашборда
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типы тайлов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#management-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Management Zones на дашбордах
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeframe
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Итоги Дня 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-dynatrace_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Архитектура Dynatrace
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Архитектура Dynatrace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Три уровня архитектуры
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-oneagent-activegate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Компоненты системы: OneAgent, ActiveGate, серверная часть
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Компоненты системы: OneAgent, ActiveGate, серверная часть">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oneagent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OneAgent — подробнее
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activegate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ActiveGate — подробнее
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Серверная часть Managed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-oneagent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Принцип работы и возможности OneAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Принцип работы и возможности OneAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oneagent_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как OneAgent обнаруживает всё автоматически
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oneagent_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что OneAgent НЕ делает
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-digital-experience-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Цифровой опыт (Digital Experience Monitoring)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Цифровой опыт (Digital Experience Monitoring)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что такое DEM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Два подхода в Dynatrace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ключевые метрики DEM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Обзор интерфейса и навигации
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Обзор интерфейса и навигации">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Левая навигационная панель
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Верхняя панель
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-smartscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Топология Smartscape
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Топология Smartscape">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smartscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что такое Smartscape
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Горизонтальные слои
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вертикальные связи
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Зачем это нужно
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Хосты, процессы, сервисы, приложения — обзор ключевых объектов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Хосты, процессы, сервисы, приложения — обзор ключевых объектов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host (Хост)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process Group (Группа процессов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service (Сервис)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application (Приложение)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-data-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Встроенные метрики и Data Explorer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Встроенные метрики и Data Explorer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#built-in-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Встроенные метрики (Built-in Metrics)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Работа в Data Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics Browser
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Построение базовых линий и работа с порогами
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Построение базовых линий и работа с порогами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что такое Baseline (базовая линия)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типы порогов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Настройка чувствительности
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Функционал Problems: автоматическая детекция инцидентов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Функционал Problems: автоматическая детекция инцидентов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#davis-ai-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как Davis AI создаёт Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Анатомия Problem-карточки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impact-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impact Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traditional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Почему это лучше traditional мониторинга
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Системные и пользовательские дашборды
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Системные и пользовательские дашборды">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Системные дашборды (Preset)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Создание пользовательского дашборда
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типы тайлов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#management-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Management Zones на дашбордах
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeframe
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Итоги Дня 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Обучение
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="1-dynatrace">День 1 — Введение в систему Dynatrace<a class="headerlink" href="#1-dynatrace" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Формат</strong>: ты сидишь перед открытым Dynatrace Managed environment и рассказываешь коллегам, показывая всё live. Ниже — полный скрипт: что говорить, куда кликать, что объяснять. Всё из головы, никаких слайдов.</p>
+</blockquote>
+<hr />
+<h2 id="1-dynatrace_1">1. Архитектура Dynatrace<a class="headerlink" href="#1-dynatrace_1" title="Permanent link">&para;</a></h2>
+<details class="tip" open="open">
+<summary>Что говорить, открыв главную страницу</summary>
+<p>Итак, перед нами Dynatrace Managed — это on-premise вариант платформы. The point is, что вся архитектура здесь трёхуровневая, и это important понимать с самого начала.</p>
+</details>
+<h3 id="_1">Три уровня архитектуры<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p><strong>Уровень 1 — OneAgent (на каждом хосте)</strong></p>
+<p>OneAgent — это lightweight-агент, который устанавливается на каждый хост, будь то bare-metal сервер, VM или контейнер. Его job — собирать все данные: метрики CPU/RAM/disk/network, трейсы запросов внутри процессов, логи. Actually, OneAgent делает deep code-level instrumentation — он инжектится в runtime процессов (Java, .NET, Node.js, Go, PHP, Python и т.д.) и перехватывает вызовы на уровне байткода или native-хуков.</p>
+<p>Что это значит на практике? Тебе не нужно менять ни строчки кода в приложении. Поставил агент — и через пару минут Dynatrace уже видит все сервисы, все зависимости, все запросы.</p>
+<p><strong>Уровень 2 — ActiveGate (промежуточный шлюз)</strong></p>
+<p>ActiveGate — это proxy и router между OneAgent-ами и серверной частью. By the way, у него несколько ролей:</p>
+<ul>
+<li><strong>Communication gateway</strong> — сжимает и маршрутизирует трафик от агентов к серверу. Если у тебя 500 хостов, ты не хочешь, чтобы все 500 били напрямую в кластер — ActiveGate агрегирует это.</li>
+<li><strong>Monitoring extensions</strong> — запускает плагины для мониторинга того, куда OneAgent не ставится: сетевые устройства (SNMP), базы данных через JDBC, облачные API (AWS CloudWatch, Azure Monitor, GCP).</li>
+<li><strong>Synthetic monitoring</strong> — если нужно запускать синтетические браузерные тесты из твоей сети, это делает ActiveGate с модулем Synthetic.</li>
+</ul>
+<p>В Managed-версии ActiveGate also выполняет роль Cluster ActiveGate — он маршрутизирует трафик внутрь кластера.</p>
+<p><strong>Уровень 3 — Серверная часть (Managed Cluster)</strong></p>
+<p>В случае Dynatrace Managed серверная часть — это кластер нод, которые ты разворачиваешь on-premise. Каждая нода содержит:</p>
+<ul>
+<li><strong>Server</strong> — обработка данных, аналитика Davis AI, хранение</li>
+<li><strong>Cassandra</strong> — долговременное хранилище метрик и конфигураций (Cassandra Hypercube в SaaS)</li>
+<li><strong>Elasticsearch</strong> — индексация для поиска и логов</li>
+</ul>
+<p>Minimum — одна нода, для production рекомендуется три ноды (high availability). Anyway, вся эта архитектура работает so, что данные от OneAgent проходят через ActiveGate, попадают на сервер, и Davis AI в real-time анализирует все аномалии.</p>
+<details class="note" open="open">
+<summary>Где это видно в интерфейсе</summary>
+<p>Зайди в <strong>Manage → Deployment Status</strong> — здесь показаны все подключённые OneAgent-ы, их версии, статус связи. А <strong>Manage → OneAgent Health</strong> покажет, если какой-то агент нездоров.</p>
+</details>
+<hr />
+<h2 id="2-oneagent-activegate">2. Компоненты системы: OneAgent, ActiveGate, серверная часть<a class="headerlink" href="#2-oneagent-activegate" title="Permanent link">&para;</a></h2>
+<details class="tip" open="open">
+<summary>Показывай: Manage → Deploy Dynatrace</summary>
+<p>Кликаем слева в меню <strong>Manage → Deploy Dynatrace</strong>. Вот эта страница — entry point для установки компонентов.</p>
+</details>
+<h3 id="oneagent">OneAgent — подробнее<a class="headerlink" href="#oneagent" title="Permanent link">&para;</a></h3>
+<p>OneAgent работает как один процесс на хосте. No worries — он потребляет мало ресурсов (typically 1-2% CPU, ~100-300 МБ RAM). Вот что он делает:</p>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Auto-discovery</strong></td>
+<td>Находит все процессы, сервисы, контейнеры на хосте</td>
+</tr>
+<tr>
+<td><strong>Code-level tracing</strong></td>
+<td>Инструментирует bytecode Java, .NET CLR, Node.js V8 и т.д.</td>
+</tr>
+<tr>
+<td><strong>Full-stack metrics</strong></td>
+<td>CPU, Memory, Disk I/O, Network — на уровне хоста и процесса</td>
+</tr>
+<tr>
+<td><strong>Log collection</strong></td>
+<td>Собирает логи процессов и системные логи</td>
+</tr>
+<tr>
+<td><strong>Network monitoring</strong></td>
+<td>Видит TCP/UDP connections, latency между процессами</td>
+</tr>
+</tbody>
+</table>
+<p>Установка — буквально одна команда:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Linux</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>wget<span class="w"> </span>-O<span class="w"> </span>Dynatrace-OneAgent.sh<span class="w"> </span><span class="s2">&quot;https://&lt;your-managed&gt;/api/v1/deployment/installer/agent/unix/default/latest?Api-Token=&lt;TOKEN&gt;&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>sudo<span class="w"> </span>/bin/sh<span class="w"> </span>Dynatrace-OneAgent.sh
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Windows</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Invoke-WebRequest<span class="w"> </span>-Uri<span class="w"> </span><span class="s2">&quot;https://&lt;your-managed&gt;/api/v1/deployment/installer/agent/windows/default/latest?Api-Token=&lt;TOKEN&gt;&quot;</span><span class="w"> </span>-OutFile<span class="w"> </span>Dynatrace-OneAgent.exe
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>.<span class="se">\D</span>ynatrace-OneAgent.exe
+</code></pre></div>
+<p>After installation, агент автоматически стартует, коннектится к серверу через ActiveGate (или напрямую) и начинает discovery.</p>
+<h3 id="activegate">ActiveGate — подробнее<a class="headerlink" href="#activegate" title="Permanent link">&para;</a></h3>
+<p>ActiveGate ставится separately. В Managed-среде у тебя уже есть встроенный Cluster ActiveGate, но для Production-окружений рекомендуется ставить Environment ActiveGate separately — для routing трафика, extensions, synthetic.</p>
+<h3 id="managed">Серверная часть Managed<a class="headerlink" href="#managed" title="Permanent link">&para;</a></h3>
+<p>The point is — в Managed всё у тебя: данные не уходят наружу. Кластер управляется через <strong>Cluster Management Console (CMC)</strong> — это отдельный web UI для администрирования нод, лицензий, обновлений.</p>
+<hr />
+<h2 id="3-oneagent">3. Принцип работы и возможности OneAgent<a class="headerlink" href="#3-oneagent" title="Permanent link">&para;</a></h2>
+<details class="tip" open="open">
+<summary>Показывай: Manage → Deployment Status → OneAgent</summary>
+<p>Вот здесь мы видим список всех хостов с установленным OneAgent, их версии, статус обновления.</p>
+</details>
+<h3 id="oneagent_1">Как OneAgent обнаруживает всё автоматически<a class="headerlink" href="#oneagent_1" title="Permanent link">&para;</a></h3>
+<p>Процесс такой:</p>
+<ol>
+<li>
+<p><strong>Process detection</strong> — OneAgent сканирует запущенные процессы на хосте. Для каждого определяет technology (Java, .NET, Apache, nginx, Node.js, Go...) по сигнатурам бинарников и аргументам запуска.</p>
+</li>
+<li>
+<p><strong>Process Group formation</strong> — одинаковые процессы (например, три инстанса одного Java-сервиса) объединяются в Process Group. Это logical grouping — чтобы не смотреть на каждый PID отдельно.</p>
+</li>
+<li>
+<p><strong>Service detection</strong> — OneAgent находит entry points в коде (HTTP listeners, message queue consumers, database calls) и создаёт объект Service. Один Process Group может содержать несколько сервисов.</p>
+</li>
+<li>
+<p><strong>Application mapping</strong> — если процесс обслуживает web-запросы, OneAgent инжектит JavaScript-тег в HTML-ответы (RUM injection). Это даёт end-to-end visibility от браузера пользователя до backend.</p>
+</li>
+<li>
+<p><strong>Topology building</strong> — все связи (кто кого вызывает) автоматически строятся в Smartscape на основе реальных network connections и code-level traces.</p>
+</li>
+</ol>
+<h3 id="oneagent_2">Что OneAgent НЕ делает<a class="headerlink" href="#oneagent_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Не меняет код приложения (zero-code approach)</li>
+<li>Не требует рестарта приложения в большинстве случаев (кроме .NET на Windows)</li>
+<li>Не шлёт данные за пределы твоей сети (в Managed-версии everything stays on-premise)</li>
+</ul>
+<hr />
+<h2 id="4-digital-experience-monitoring">4. Цифровой опыт (Digital Experience Monitoring)<a class="headerlink" href="#4-digital-experience-monitoring" title="Permanent link">&para;</a></h2>
+<details class="tip" open="open">
+<summary>Показывай: левое меню → Digital Experience → Web</summary>
+<p>Открываем раздел <strong>Digital Experience → Web</strong>. Здесь мы видим список веб-приложений, которые Dynatrace мониторит с точки зрения реального пользователя.</p>
+</details>
+<h3 id="dem">Что такое DEM<a class="headerlink" href="#dem" title="Permanent link">&para;</a></h3>
+<p>Digital Experience Monitoring — это approach к мониторингу, где ты смотришь на систему глазами пользователя. Not just "сервер отвечает за 200мс", а "пользователь в Алматы открыл страницу и увидел её через 3.2 секунды, при этом First Contentful Paint был 1.1с".</p>
+<h3 id="dynatrace">Два подхода в Dynatrace<a class="headerlink" href="#dynatrace" title="Permanent link">&para;</a></h3>
+<p><strong>Real User Monitoring (RUM)</strong> — мониторинг реальных пользователей. OneAgent инжектит JavaScript-сниппет в HTML-страницы. Этот сниппет (called "RUM agent") собирает:</p>
+<ul>
+<li>Page load timings (W3C Navigation Timing API)</li>
+<li>XHR/Fetch calls — AJAX-запросы</li>
+<li>JavaScript errors</li>
+<li>User actions — клики, ввод текста, скролл</li>
+<li>Session data — вся цепочка действий пользователя</li>
+</ul>
+<p><strong>Synthetic Monitoring</strong> — ты создаёшь скрипты, которые эмулируют поведение пользователя (открой URL, кликни кнопку, проверь что страница загрузилась). Эти скрипты запускаются по расписанию с ActiveGate. Useful для:</p>
+<ul>
+<li>Мониторинг доступности 24/7 (даже когда реальных пользователей нет)</li>
+<li>SLA-мониторинг</li>
+<li>Проверка critical user journeys</li>
+</ul>
+<h3 id="dem_1">Ключевые метрики DEM<a class="headerlink" href="#dem_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Метрика</th>
+<th>Что значит</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Apdex</strong></td>
+<td>Application Performance Index: 0-1, где 1 = все довольны. Считается на основе порогов response time</td>
+</tr>
+<tr>
+<td><strong>Visually Complete</strong></td>
+<td>Когда пользователь видит полностью отрисованную страницу</td>
+</tr>
+<tr>
+<td><strong>Speed Index</strong></td>
+<td>Как быстро контент появляется в viewport</td>
+</tr>
+<tr>
+<td><strong>First Input Delay</strong></td>
+<td>Задержка от первого клика до реакции</td>
+</tr>
+<tr>
+<td><strong>Load Event End</strong></td>
+<td>Когда браузерный load event завершился</td>
+</tr>
+<tr>
+<td><strong>Actions per minute</strong></td>
+<td>Интенсивность взаимодействий пользователей</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5">5. Обзор интерфейса и навигации<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<details class="tip" open="open">
+<summary>Показывай: главный экран, левое меню</summary>
+<p>Ок, давайте пройдёмся по интерфейсу. Смотрите на левую панель — это основная навигация. Пойдём сверху вниз.</p>
+</details>
+<h3 id="_2">Левая навигационная панель<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Вот все секции, which you can see прямо сейчас:</p>
+<p><strong>Favorites</strong> — здесь пины, которые ты добавил для быстрого доступа. По дефолту: Dashboards, Deploy Dynatrace, Problems.</p>
+<p><strong>Observe and explore</strong> — основной раздел для ежедневной работы:</p>
+<ul>
+<li><strong>Dashboards</strong> — пользовательские и системные дашборды</li>
+<li><strong>Data Explorer</strong> — построение кастомных графиков по любым метрикам</li>
+<li><strong>Metrics</strong> — каталог всех метрик в системе (built-in + custom)</li>
+<li><strong>Logs</strong> — централизованный просмотр логов</li>
+<li><strong>Problems</strong> — автоматически детектированные инциденты (Davis AI)</li>
+<li><strong>Smartscape Topology</strong> — визуальная карта зависимостей</li>
+<li><strong>Reports</strong> — сгенерированные отчёты</li>
+</ul>
+<p><strong>Infrastructure Observability</strong> — всё про инфраструктуру:</p>
+<ul>
+<li><strong>Hosts</strong> — серверы, VM-ки с метриками OS</li>
+<li><strong>Technologies &amp; Processes</strong> — процессы сгруппированные по технологии</li>
+<li><strong>Kubernetes</strong> — кластеры, ноды, поды, ворклоады</li>
+<li><strong>Containers</strong> — контейнеры Docker/containerd</li>
+<li><strong>Cloud providers</strong> — AWS, Azure, GCP, VMware</li>
+<li><strong>Extensions</strong> — мониторинг через плагины (SNMP, JMX, SQL и т.д.)</li>
+</ul>
+<p><strong>Application Observability</strong> — backend и traces:</p>
+<ul>
+<li><strong>Services</strong> — все обнаруженные сервисы</li>
+<li><strong>Frontend</strong> — web/mobile фронтенды</li>
+<li><strong>Distributed Traces</strong> — сквозные трейсы запросов</li>
+<li><strong>Database Services</strong> — база данных как сервис</li>
+<li><strong>Synthetic</strong> — синтетические мониторы</li>
+</ul>
+<p><strong>Application Security</strong> — уязвимости и атаки</p>
+<p><strong>Digital Experience</strong> — пользовательский опыт (RUM и Synthetic)</p>
+<p><strong>Business Analytics</strong> — бизнес-события и пользовательские сессии</p>
+<p><strong>Manage</strong> — администрирование:</p>
+<ul>
+<li><strong>Dynatrace Hub</strong> — маркетплейс расширений</li>
+<li><strong>Deploy Dynatrace</strong> — установка агентов</li>
+<li><strong>Settings</strong> — все настройки</li>
+</ul>
+<h3 id="_3">Верхняя панель<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Search bar</strong> (Ctrl+Shift+F) — глобальный поиск по entities, metrics, settings</li>
+<li><strong>Time selector</strong> — выбор временного диапазона (дефолт: Last 2 hours)</li>
+<li><strong>Management zone filter</strong> — фильтрация по зонам управления (сегментация данных)</li>
+<li><strong>Problems indicator</strong> — красный badge с количеством активных проблем</li>
+</ul>
+<details class="example" open="open">
+<summary>Live demo: покажи поиск</summary>
+<p>Нажми Ctrl+Shift+F или кликни на строку поиска. Начни набирать имя хоста или сервиса — Dynatrace ищет по всем entities в real-time. Это самый быстрый способ навигации.</p>
+</details>
+<hr />
+<h2 id="6-smartscape">6. Топология Smartscape<a class="headerlink" href="#6-smartscape" title="Permanent link">&para;</a></h2>
+<details class="tip" open="open">
+<summary>Показывай: Observe and explore → Smartscape Topology</summary>
+<p>Кликаем <strong>Smartscape Topology</strong> в левом меню. Вот она — визуальная карта всей нашей среды.</p>
+</details>
+<h3 id="smartscape">Что такое Smartscape<a class="headerlink" href="#smartscape" title="Permanent link">&para;</a></h3>
+<p>Smartscape — это real-time topology map всей среды. Think of it как Google Maps, но для IT-инфраструктуры. Dynatrace строит её автоматически на основе данных от OneAgent — никакой ручной конфигурации.</p>
+<h3 id="_4">Горизонтальные слои<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>Smartscape организован по слоям (tiers), снизу вверх:</p>
+<table>
+<thead>
+<tr>
+<th>Слой</th>
+<th>Что содержит</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Centers</strong></td>
+<td>Дата-центры, облачные зоны</td>
+<td>AWS eu-west-1, On-prem DC1</td>
+</tr>
+<tr>
+<td><strong>Hosts</strong></td>
+<td>Серверы, VM</td>
+<td>linux-prod-01, win-app-02</td>
+</tr>
+<tr>
+<td><strong>Process Groups</strong></td>
+<td>Группы процессов</td>
+<td>java-easytravel-backend (x3)</td>
+</tr>
+<tr>
+<td><strong>Services</strong></td>
+<td>Логические сервисы</td>
+<td>BookingService, PaymentGateway</td>
+</tr>
+<tr>
+<td><strong>Applications</strong></td>
+<td>Web-приложения (frontend)</td>
+<td>EasyTravel Angular</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">Вертикальные связи<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Каждый уровень связан с соседним:</p>
+<ul>
+<li>Application <strong>вызывает</strong> → Service</li>
+<li>Service <strong>выполняется в</strong> → Process Group</li>
+<li>Process Group <strong>работает на</strong> → Host</li>
+<li>Host <strong>расположен в</strong> → Data Center</li>
+</ul>
+<p>Эти связи — не configuration, а <strong>реальные discovered dependencies</strong>. Если BookingService вызывает PaymentService, ты увидишь стрелку между ними. Если ProcessGroup работает на трёх хостах — увидишь три линии вниз.</p>
+<h3 id="_6">Зачем это нужно<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Impact analysis</strong> — если хост деградирует, ты сразу видишь, какие процессы, сервисы и приложения затронуты</li>
+<li><strong>Root cause analysis</strong> — от проблемы на уровне приложения проваливаешься вниз до конкретного хоста</li>
+<li><strong>Change tracking</strong> — Smartscape показывает, когда появились новые сервисы или изменились зависимости</li>
+</ol>
+<details class="example" open="open">
+<summary>Live demo: кликни на любой узел</summary>
+<p>Кликни на любой сервис или хост в Smartscape. Откроется карточка с деталями — и ты можешь drill down в метрики этого entity.</p>
+</details>
+<hr />
+<h2 id="7">7. Хосты, процессы, сервисы, приложения — обзор ключевых объектов<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<details class="tip" open="open">
+<summary>Показывай: Infrastructure → Hosts</summary>
+<p>Открываем <strong>Infrastructure Observability → Hosts</strong>. Это список всех хостов, на которых стоит OneAgent.</p>
+</details>
+<h3 id="host">Host (Хост)<a class="headerlink" href="#host" title="Permanent link">&para;</a></h3>
+<p>Хост — это физический или виртуальный сервер. Каждый хост в Dynatrace — это entity с уникальным ID. Что ты видишь на странице хоста:</p>
+<ul>
+<li><strong>CPU usage</strong> — загрузка процессора (total и per-core)</li>
+<li><strong>Memory usage</strong> — использование оперативной памяти</li>
+<li><strong>Disk I/O</strong> — чтение/запись на диски</li>
+<li><strong>Network</strong> — входящий/исходящий трафик</li>
+<li><strong>Running processes</strong> — все запущенные процессы с группировкой</li>
+<li><strong>Problems</strong> — активные проблемы, связанные с этим хостом</li>
+<li><strong>Properties</strong> — OS version, IP, cloud provider metadata, tags</li>
+</ul>
+<details class="example" open="open">
+<summary>Live demo: кликни на любой хост</summary>
+<p>Выбери хост из списка. Обрати внимание: справа сразу видны Technology overview (какие технологии запущены) и связанные entities.</p>
+</details>
+<h3 id="process-group">Process Group (Группа процессов)<a class="headerlink" href="#process-group" title="Permanent link">&para;</a></h3>
+<details class="tip" open="open">
+<summary>Показывай: Infrastructure → Technologies &amp; Processes</summary>
+<p>Переходим в <strong>Technologies &amp; Processes</strong>. Здесь процессы сгруппированы по технологии: Java, .NET, Node.js, Apache, nginx...</p>
+</details>
+<p>Process Group — это логическое объединение одинаковых процессов. Например, если у тебя 3 инстанса Java-приложения на разных хостах, Dynatrace объединяет их в один Process Group. Это удобно — ты видишь метрики агрегированно по группе, а не ковыряешься по каждому PID.</p>
+<p>На странице Process Group видны:</p>
+<ul>
+<li>Resource consumption (CPU, Memory)</li>
+<li>Suspension &amp; IO wait time</li>
+<li>Связанные Services</li>
+<li>Хосты, на которых запущены инстансы</li>
+</ul>
+<h3 id="service">Service (Сервис)<a class="headerlink" href="#service" title="Permanent link">&para;</a></h3>
+<details class="tip" open="open">
+<summary>Показывай: Application Observability → Services</summary>
+<p>Открываем <strong>Application Observability → Services</strong>. Вот список всех automatically detected сервисов.</p>
+</details>
+<p>Service — это the most important entity в Dynatrace для APM. Сервис — это логический endpoint, который обрабатывает запросы. Dynatrace автоматически создаёт сервис, когда обнаруживает:</p>
+<ul>
+<li>HTTP/HTTPS listener</li>
+<li>Message queue consumer (Kafka, RabbitMQ, JMS)</li>
+<li>Database query handler</li>
+<li>RPC/gRPC endpoint</li>
+<li>Custom SDK entry points</li>
+</ul>
+<p>На странице сервиса ты видишь:</p>
+<ul>
+<li><strong>Response time</strong> — среднее, медиана, перцентили (P90, P95, P99)</li>
+<li><strong>Throughput</strong> — requests per minute</li>
+<li><strong>Failure rate</strong> — процент ошибок</li>
+<li><strong>Service flow</strong> — visual map: кто вызывает этот сервис и кого вызывает он</li>
+<li><strong>Top requests</strong> — самые частые/медленные запросы</li>
+<li><strong>Backtrace</strong> — кто вызывает этот сервис</li>
+<li><strong>Database statements</strong> — какие SQL-запросы выполняются</li>
+</ul>
+<h3 id="application">Application (Приложение)<a class="headerlink" href="#application" title="Permanent link">&para;</a></h3>
+<details class="tip" open="open">
+<summary>Показывай: Digital Experience → Web</summary>
+<p>Переходим в <strong>Digital Experience → Web</strong>. Это frontend applications — то, что видит конечный пользователь.</p>
+</details>
+<p>Application в Dynatrace — это web или mobile приложение, которое мониторится через RUM (Real User Monitoring). OneAgent inject-ит JavaScript snippet в HTML-ответы сервера, и этот snippet собирает данные о real user experience.</p>
+<p>На странице приложения:</p>
+<ul>
+<li><strong>Apdex score</strong> — satisfaction index</li>
+<li><strong>User actions</strong> — загрузки страниц, XHR, клики</li>
+<li><strong>JavaScript errors</strong> — ошибки на стороне клиента</li>
+<li><strong>Sessions</strong> — количество пользовательских сессий</li>
+<li><strong>Geographic distribution</strong> — откуда приходят пользователи</li>
+<li><strong>Top pages / User actions</strong> — самые популярные действия</li>
+</ul>
+<hr />
+<h2 id="8-data-explorer">8. Встроенные метрики и Data Explorer<a class="headerlink" href="#8-data-explorer" title="Permanent link">&para;</a></h2>
+<details class="tip" open="open">
+<summary>Показывай: Observe and explore → Data Explorer</summary>
+<p>Открываем <strong>Data Explorer</strong>. Это наш main tool для ad-hoc анализа метрик.</p>
+</details>
+<h3 id="built-in-metrics">Встроенные метрики (Built-in Metrics)<a class="headerlink" href="#built-in-metrics" title="Permanent link">&para;</a></h3>
+<p>Dynatrace out-of-the-box собирает тысячи метрик. The main categories:</p>
+<table>
+<thead>
+<tr>
+<th>Категория</th>
+<th>Примеры метрик</th>
+<th>Prefix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Host</strong></td>
+<td>CPU usage, Memory used, Disk read/write bytes</td>
+<td><code>builtin:host.*</code></td>
+</tr>
+<tr>
+<td><strong>Process</strong></td>
+<td>CPU time, Memory RSS, Suspension time</td>
+<td><code>builtin:tech.*</code></td>
+</tr>
+<tr>
+<td><strong>Service</strong></td>
+<td>Response time, Throughput, Failure rate</td>
+<td><code>builtin:service.*</code></td>
+</tr>
+<tr>
+<td><strong>Application</strong></td>
+<td>Action duration, JavaScript errors, Apdex</td>
+<td><code>builtin:apps.*</code></td>
+</tr>
+<tr>
+<td><strong>Synthetic</strong></td>
+<td>Availability, Response time, Step duration</td>
+<td><code>builtin:synthetic.*</code></td>
+</tr>
+<tr>
+<td><strong>Network</strong></td>
+<td>Retransmissions, Connectivity, Round-trip time</td>
+<td><code>builtin:host.net.*</code></td>
+</tr>
+<tr>
+<td><strong>Kubernetes</strong></td>
+<td>Pod CPU, Node memory, Container restarts</td>
+<td><code>builtin:cloud.kubernetes.*</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-explorer">Работа в Data Explorer<a class="headerlink" href="#data-explorer" title="Permanent link">&para;</a></h3>
+<p>Data Explorer — это visual query builder для метрик. Вот как он работает:</p>
+<ol>
+<li>
+<p><strong>Выбор метрики</strong> — начни набирать имя (например, <code>cpu</code>) и увидишь все подходящие метрики. Можно фильтровать по категориям.</p>
+</li>
+<li>
+<p><strong>Пространственная агрегация (Space aggregation)</strong> — как агрегировать по dimensions. Если метрика <code>host.cpu.usage</code> имеет dimension <code>host</code>, ты выбираешь: Average, Max, Min, Sum, Count. По дефолту — Auto.</p>
+</li>
+<li>
+<p><strong>Split by</strong> — разбить по измерению. Например, <code>host.cpu.usage</code> split by <code>dt.entity.host</code> покажет линию для каждого хоста.</p>
+</li>
+<li>
+<p><strong>Filter</strong> — фильтрация. Можно по тегам, management zones, конкретным entities.</p>
+</li>
+<li>
+<p><strong>Visualization</strong> — выбор типа графика: Line, Bar, Area, Single Value, Table, Heatmap, Honeycomb, Pie, Top list.</p>
+</li>
+<li>
+<p><strong>Pin to Dashboard</strong> — любой построенный график можно одним кликом закрепить на дашборд.</p>
+</li>
+</ol>
+<details class="example" open="open">
+<summary>Live demo: построй график CPU</summary>
+<p>В Data Explorer набери <code>builtin:host.cpu.usage</code>, выбери Split by → Host, визуализация → Graph. Вот — загрузка CPU по каждому хосту за последние 2 часа. Теперь поменяй timeframe на Last 24 hours — видишь daily pattern?</p>
+</details>
+<h3 id="metrics-browser">Metrics Browser<a class="headerlink" href="#metrics-browser" title="Permanent link">&para;</a></h3>
+<details class="tip" open="open">
+<summary>Показывай: Observe and explore → Metrics</summary>
+<p>Отдельно есть <strong>Metrics</strong> — это каталог (browser) всех доступных метрик. Можно искать, фильтровать по source, смотреть описание и dimensions каждой метрики. Useful когда ты не знаешь exact metric name.</p>
+</details>
+<hr />
+<h2 id="9">9. Построение базовых линий и работа с порогами<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<details class="tip" open="open">
+<summary>Объясняй теорию, потом покажи: Settings → Anomaly Detection</summary>
+<p>Это одна из самых powerful фич Dynatrace. The point is — тебе не нужно вручную задавать пороги для alert-ов. Davis AI делает это автоматически.</p>
+</details>
+<h3 id="baseline">Что такое Baseline (базовая линия)<a class="headerlink" href="#baseline" title="Permanent link">&para;</a></h3>
+<p>Dynatrace применяет <strong>automated multidimensional baselining</strong>. Это значит:</p>
+<ul>
+<li>Для каждого сервиса, для каждого хоста, для каждой метрики Dynatrace автоматически строит "нормальный" паттерн поведения</li>
+<li>Baseline учитывает <strong>время суток</strong>, <strong>день недели</strong>, <strong>сезонность</strong></li>
+<li>Например, если твой сервис обычно отвечает за 50мс утром и за 120мс в пик-часы — это два разных baseline</li>
+</ul>
+<p>Davis AI использует AI-алгоритмы для определения нормального коридора значений. Если значение выходит за границы — создаётся аномалия.</p>
+<h3 id="_7">Типы порогов<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><strong>Auto-adaptive thresholds (адаптивные пороги)</strong> — дефолтный режим. Dynatrace сам считает upper и lower bounds на основе исторических данных. No configuration needed.</p>
+<p><strong>Static thresholds (статические пороги)</strong> — ты задаёшь конкретное значение. Например: "алерт если CPU &gt; 90%". Это classic monitoring approach, иногда нужен для compliance.</p>
+<p><strong>Metric events</strong> — кастомные правила алертинга на основе метрик с DQL-запросами и complex conditions. Это для advanced use cases.</p>
+<h3 id="_8">Настройка чувствительности<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<details class="tip" open="open">
+<summary>Показывай: Settings → Anomaly detection</summary>
+<p>В Settings можно настроить sensitivity для каждого типа entity: Services, Infrastructure, Applications, Databases и т.д.</p>
+</details>
+<p>Для каждого типа entity (сервисы, хосты, приложения) ты можешь:</p>
+<ul>
+<li>Повысить или понизить чувствительность (slider: Low → Medium → High)</li>
+<li>Отключить определённые типы аномалий</li>
+<li>Задать minimum absolute threshold (чтобы не алертить на noise)</li>
+</ul>
+<p>Actually, для начала рекомендую оставить всё по дефолту — Davis AI surprisingly хорошо работает out of the box.</p>
+<hr />
+<h2 id="10-problems">10. Функционал Problems: автоматическая детекция инцидентов<a class="headerlink" href="#10-problems" title="Permanent link">&para;</a></h2>
+<details class="tip" open="open">
+<summary>Показывай: Observe and explore → Problems</summary>
+<p>Открываем <strong>Problems</strong>. Это центральное место для работы с инцидентами.</p>
+</details>
+<h3 id="davis-ai-problem">Как Davis AI создаёт Problem<a class="headerlink" href="#davis-ai-problem" title="Permanent link">&para;</a></h3>
+<p>Процесс detection работает так:</p>
+<ol>
+<li><strong>Anomaly detected</strong> — Davis видит, что метрика вышла за baseline (например, response time сервиса вырос в 5 раз)</li>
+<li><strong>Event created</strong> — создаётся событие аномалии</li>
+<li><strong>Correlation</strong> — Davis ищет другие аномалии, которые happened в то же время и topologically связаны через Smartscape</li>
+<li><strong>Problem created</strong> — все связанные аномалии объединяются в один Problem</li>
+<li><strong>Root cause identified</strong> — Davis определяет первопричину, "проваливаясь" по Smartscape вниз от пользователя к инфраструктуре</li>
+</ol>
+<h3 id="problem-">Анатомия Problem-карточки<a class="headerlink" href="#problem-" title="Permanent link">&para;</a></h3>
+<p>Когда ты открываешь Problem, ты видишь:</p>
+<ul>
+<li><strong>Title</strong> — автоматически сгенерированное описание (например: "Response time degradation on BookingService")</li>
+<li><strong>Status</strong> — Open / Resolved</li>
+<li><strong>Duration</strong> — как долго длится проблема</li>
+<li><strong>Impact</strong> — что затронуто: приложения, сервисы, инфраструктура. Visual impact level: Application, Service, Infrastructure, Environment</li>
+<li><strong>Root cause</strong> — highlighted entity, который Davis определил как причину</li>
+<li><strong>Affected entities</strong> — все затронутые entities с drill-down ссылками</li>
+<li><strong>Events timeline</strong> — хронология всех связанных аномалий на timeline</li>
+</ul>
+<h3 id="impact-level">Impact Level<a class="headerlink" href="#impact-level" title="Permanent link">&para;</a></h3>
+<p>Davis классифицирует problems по уровню impact:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Application</strong></td>
+<td>Проблема влияет на пользователей (видна на уровне приложения)</td>
+</tr>
+<tr>
+<td><strong>Service</strong></td>
+<td>Проблема на уровне backend-сервисов</td>
+</tr>
+<tr>
+<td><strong>Infrastructure</strong></td>
+<td>Проблема на уровне хостов/процессов</td>
+</tr>
+<tr>
+<td><strong>Environment</strong></td>
+<td>Глобальная проблема среды</td>
+</tr>
+</tbody>
+</table>
+<h3 id="traditional">Почему это лучше traditional мониторинга<a class="headerlink" href="#traditional" title="Permanent link">&para;</a></h3>
+<p>В classical мониторинге: у тебя 50 alert-ов, и ты сидишь, разбираешься — это одна проблема или 50 разных? Davis AI автоматически коррелирует все события и создаёт <strong>один Problem</strong> с root cause. Это принципиально другой approach — от alert storm к intelligent incident management.</p>
+<details class="example" open="open">
+<summary>Live demo: открой любой Problem</summary>
+<p>Кликни на любой Problem в списке. Смотри на Root cause section — Davis показывает, какой именно entity является причиной. Потом посмотри на Affected entities — это всё, что was impacted. Обрати внимание на timeline — видишь, как аномалии развивались во времени?</p>
+</details>
+<hr />
+<h2 id="11">11. Системные и пользовательские дашборды<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<details class="tip" open="open">
+<summary>Показывай: Observe and explore → Dashboards</summary>
+<p>Открываем <strong>Dashboards</strong>. Здесь ты видишь список всех дашбордов — и preset (системные), и custom (твои).</p>
+</details>
+<h3 id="preset">Системные дашборды (Preset)<a class="headerlink" href="#preset" title="Permanent link">&para;</a></h3>
+<p>Dynatrace идёт с набором ready-made дашбордов. Они помечены как "Preset" и содержат best-practice визуализации:</p>
+<ul>
+<li><strong>Kubernetes workload overview</strong> — обзор K8s ворклоадов (CPU, Memory, Pod status)</li>
+<li><strong>Real User Monitoring</strong> — обзор пользовательского опыта</li>
+<li><strong>Application Overview</strong> — состояние приложений</li>
+<li>и другие</li>
+</ul>
+<p>Preset-дашборды нельзя редактировать напрямую, но можно <strong>Clone</strong> и кастомизировать копию.</p>
+<h3 id="_9">Создание пользовательского дашборда<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>Для создания нового дашборда:</p>
+<ol>
+<li>Нажми <strong>Create dashboard</strong></li>
+<li>Дай имя</li>
+<li>Добавляй тайлы (tiles) из палитры справа</li>
+</ol>
+<h3 id="_10">Типы тайлов<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>Вот основные tiles, которые ты можешь добавить:</p>
+<p><strong>Data tiles (визуализация данных):</strong></p>
+<ul>
+<li>Graph, Pie, Top list, Single value, Table</li>
+<li>Stacked column, Stacked area, Heatmap, Honeycomb</li>
+</ul>
+<p><strong>Infrastructure tiles:</strong></p>
+<ul>
+<li>Host health, Network metrics, Database health</li>
+</ul>
+<p><strong>Application tiles:</strong></p>
+<ul>
+<li>Service health, Application health, User behavior, World map</li>
+</ul>
+<p><strong>Monitoring tiles:</strong></p>
+<ul>
+<li>Problems — отображает текущие проблемы</li>
+<li>Smartscape — мини-карта топологии</li>
+<li>SLO — статус Service Level Objectives</li>
+</ul>
+<p><strong>Content tiles:</strong></p>
+<ul>
+<li>Markdown — текст, ссылки, форматирование</li>
+<li>Header — заголовок секции</li>
+<li>Image — вставка изображения</li>
+</ul>
+<h3 id="management-zones">Management Zones на дашбордах<a class="headerlink" href="#management-zones" title="Permanent link">&para;</a></h3>
+<p>Important concept — Management Zones. Это способ сегментации данных. Например:</p>
+<ul>
+<li>Management Zone "Production" — только production хосты и сервисы</li>
+<li>Management Zone "Frontend Team" — только фронтенд-приложения и их backend</li>
+</ul>
+<p>Дашборд можно фильтровать по Management Zone — и все тайлы автоматически покажут только данные из этой зоны. Это makes sense для мульти-тимных окружений.</p>
+<h3 id="timeframe">Timeframe<a class="headerlink" href="#timeframe" title="Permanent link">&para;</a></h3>
+<p>Сверху на дашборде — time selector. Можно выбрать:</p>
+<ul>
+<li>Presets: Last 30 min, 1h, 2h, 6h, 24h, 7d, 30d</li>
+<li>Custom: точный диапазон дат</li>
+<li>Relative expressions: <code>-2h</code>, <code>-7d to now</code>, <code>yesterday</code></li>
+<li>Business hours: <code>-1d/d+9h00m to -1d/d+17h00m</code></li>
+</ul>
+<p>Каждый тайл может also иметь свой собственный timeframe (override дашбордного).</p>
+<details class="example" open="open">
+<summary>Live demo: клонируй Preset дашборд</summary>
+<p>Найди Preset-дашборд (например, Kubernetes workload overview). Нажми кнопку <strong>Clone</strong>. Теперь у тебя есть своя копия — можешь редактировать, добавлять тайлы, менять layout. Try to add a Markdown tile с описанием.</p>
+</details>
+<hr />
+<h2 id="1">Итоги Дня 1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>Сегодня мы прошли фундамент:</p>
+<table>
+<thead>
+<tr>
+<th>Тема</th>
+<th>Key takeaway</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Архитектура</td>
+<td>Три уровня: OneAgent → ActiveGate → Server</td>
+</tr>
+<tr>
+<td>OneAgent</td>
+<td>Zero-code, auto-discovery, full-stack из коробки</td>
+</tr>
+<tr>
+<td>DEM</td>
+<td>Мониторинг глазами пользователя: RUM + Synthetic</td>
+</tr>
+<tr>
+<td>Навигация</td>
+<td>Левое меню — основная навигация, Search — быстрый доступ</td>
+</tr>
+<tr>
+<td>Smartscape</td>
+<td>Автоматическая topology map, 5 слоёв от DC до Application</td>
+</tr>
+<tr>
+<td>Ключевые объекты</td>
+<td>Host → Process Group → Service → Application</td>
+</tr>
+<tr>
+<td>Метрики и Data Explorer</td>
+<td>Thousands built-in метрик, visual query builder</td>
+</tr>
+<tr>
+<td>Baselines</td>
+<td>Автоматические baseline-ы, Davis AI определяет "нормально"</td>
+</tr>
+<tr>
+<td>Problems</td>
+<td>AI-driven incident detection, автокорреляция, root cause</td>
+</tr>
+<tr>
+<td>Дашборды</td>
+<td>Preset + custom, tiles, Management Zones, time selectors</td>
+</tr>
+</tbody>
+</table>
+<details class="success" open="open">
+<summary>Next step</summary>
+<p>Завтра (День 2) мы нырнём глубже в <strong>инфраструктурный мониторинг</strong>: CPU/RAM/IO на уровне хостов, Kubernetes, контейнеры, базы данных. А пока — покликайте по интерфейсу, попробуйте открыть разные entities, построить графики в Data Explorer.</p>
+</details>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "navigation.instant", "navigation.instant.progress", "header.autohide", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>
