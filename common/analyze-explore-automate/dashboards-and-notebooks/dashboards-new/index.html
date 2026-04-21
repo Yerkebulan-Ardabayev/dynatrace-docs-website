@@ -51,7 +51,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.v7.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.v8.css">
     
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -294,9 +294,7 @@
 
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Навигация" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -1181,6 +1179,813 @@
                 </div>
               </div>
             
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permissions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboard-tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard tiles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dashboard tiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explore-tile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore tile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-tile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query tile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-tile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code tile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markdown-tile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Markdown tile
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use dashboards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use shortcuts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List dashboards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="List dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-all-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List all dashboards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-my-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List my dashboards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-dashboards-shared-with-me" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List dashboards shared with me
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-ready-made-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List ready-made dashboards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display a dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interact-with-a-tile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interact with a tile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refresh-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refresh a dashboard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Refresh a dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-refresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual refresh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-refresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic refresh
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-read-only-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit read-only dashboards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-the-timeframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Select the timeframe
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Select the timeframe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-global-timeframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change global timeframe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-dashboard-timeframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default dashboard timeframe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tile-specific-timeframe-override" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tile-specific timeframe override
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Select segments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Select segments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard-level-segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard-level segments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tile-level-segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tile-level segments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-a-code-tile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run a code tile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download result
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Download result">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#possible-issue-with-importing-csv-into-excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Possible issue with importing CSV into Excel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manage-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manage dashboards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manage dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-dashboard-to-dock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add dashboard to Dock
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rename-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rename a dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duplicate a dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#share-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Share a dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-dashboard-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manage dashboard versions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-dashboard-owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change dashboard owner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download a dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload a dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delete a dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboards-via-api-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboards via API: best practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-and-edit-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create and edit dashboards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create and edit dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-grail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query Grail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add markdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add variable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-snippet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add snippet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyze-data-with-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analyze data with AI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analyze data with AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-anomalous-cpu-usage-percent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: anomalous CPU usage percent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-variable-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change variable values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-to-another-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copy to another document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-a-tile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit a tile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-or-edit-a-tile-title" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add or edit a tile title
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-a-tile-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure a tile visualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resize-a-tile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resize a tile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move-a-tile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Move a tile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-and-paste-a-tile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copy and paste a tile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-a-tile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duplicate a tile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split-tile-space-to-insert-new-tile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Split tile space to insert new tile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-tile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delete a tile
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
             
           
           
@@ -2475,13 +3280,11 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
-    
     
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "navigation.instant", "navigation.instant.progress", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
   

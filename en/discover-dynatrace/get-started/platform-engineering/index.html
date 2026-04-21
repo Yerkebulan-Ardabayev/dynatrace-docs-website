@@ -51,7 +51,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.v7.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.v8.css">
     
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -294,9 +294,7 @@
 
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Навигация" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
       
@@ -1182,6 +1180,782 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-platform-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is platform engineering?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#effective-idps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effective IDPs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#treat-your-platform-as-a-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Treat your platform as a product
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Treat your platform as a product">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#looking-at-an-idp-with-a-product-management-lens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Looking at an IDP with a product management lens
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maturing-devops-with-platform-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturing DevOps with platform engineering
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maturing DevOps with platform engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cloud-native-platforms-require-a-new-approach-to-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud-native platforms require a new approach to observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Benefits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accelerate-development-and-support-developer-productivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accelerate development and support developer productivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improve-developer-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improve developer experience
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimize-resources-and-mitigate-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimize resources and mitigate cost
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standardize-tech-stack-to-minimize-risk-and-increase-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standardize tech stack to minimize risk and increase governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-minimum-viable-platform-back-stack-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The minimum viable platform: BACK stack + observability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-platform-observability-and-security-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core platform observability and security principles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core platform observability and security principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-core-platform-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Core platform observability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Core platform observability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-aspects-of-core-platform-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Some aspects of core platform observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-release-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Release information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pipeline-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Pipeline efficiency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ownership-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Ownership information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ai-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. AI Observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-engineering-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform Engineering use cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform Engineering use cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#develop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Develop
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Develop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-pipeline-observability-test-pipeline-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test pipeline observability Test pipeline observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-testing-validation-continuous-testing-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuous testing validation Continuous testing validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observability-driven-development-observability-driven-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability-driven development Observability-driven development
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Release">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#continuous-testing-validation-release-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuous testing validation Release validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progressive-delivery-progressive-delivery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Progressive delivery Progressive delivery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-observability-pipeline-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline observability Pipeline observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-driven-cloud-tuning-cloud-cost-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data-driven cloud tuning Cloud cost optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-observability-generative-ai-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Observability Generative AI observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-observability-observability-for-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure observability Observability for infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predict
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Predict">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#predictive-operations-predictive-kubernetes-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predictive operations Predictive Kubernetes operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forecasting-in-data-analytics-forecasting-in-data-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forecasting in data analytics Forecasting in data analytics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forecasting-in-workflows-forecasting-in-workflow-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forecasting in workflows Forecasting in workflow automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prevent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prevent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-prevention-preventing-customer-facing-bugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug prevention Preventing customer-facing bugs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unified-exposure-protection-unified-exposure-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unified exposure protection Unified exposure protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-security-posture-awareness-continuous-security-posture-awareness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuous security posture awareness Continuous security posture awareness
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolve
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resolve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#incident-auto-routing-incident-triaging-and-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incident auto-routing Incident triaging and response
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-impact-resolving-critical-business-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business impact Resolving critical business impact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-budget-alerting-error-budget-alerting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error budget alerting Error budget alerting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protect
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-alert-noise-reduction-security-operations-center-soc-noise-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security alert noise reduction Security Operations Center (SOC) noise reduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-as-a-service-automate-security-findings-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security as a service Automate security findings at scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-security-posture-awareness-contextualized-threat-detection-and-incident-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuous security posture awareness Contextualized threat detection and incident response
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improve
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Improve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#always-on-app-profiling-always-on-app-profiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Always-on app profiling Always-on app profiling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-utilization-improvement-kubernetes-utilization-improvement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes utilization improvement Kubernetes utilization improvement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-alignment-business-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business alignment Business alignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measuring-platform-success" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measuring platform success
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measuring platform success">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#governance-and-consistency-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governance and consistency at scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dora-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DORA metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Developer experience
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynatrace-and-opentelemetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynatrace and OpenTelemetry
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#take-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Take action!
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           
             <div class="md-content" data-md-component="content">
@@ -1670,13 +2444,11 @@ importance.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
-    
     
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "navigation.instant", "navigation.instant.progress", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
   
