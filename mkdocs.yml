@@ -29,18 +29,31 @@ theme:
         name: Переключить на тёмную тему
 
   features:
-    - navigation.expand
-    - navigation.top
-    - navigation.instant
-    - navigation.path
+    # --- Top-level navigation as sticky tabs (current best practice) ---
+    - navigation.tabs
+    - navigation.tabs.sticky
+    # --- Collapsible left sidebar — sections collapsed by default ---
+    - navigation.sections
     - navigation.indexes
     - navigation.prune
-    - navigation.sections
+    - navigation.path
+    - navigation.tracking
+    - navigation.top
+    - navigation.instant
+    - navigation.instant.progress
+    # --- Header behavior ---
+    - header.autohide
+    # --- Search ---
     - search.suggest
     - search.highlight
     - search.share
+    # --- Code & content ---
     - content.code.copy
     - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    - content.action.edit
+    # --- TOC ---
     - toc.follow
 
   icon:
@@ -242,6 +255,10 @@ nav:
       - Окончание жизненного цикла: ru/whats-new/technology/end-of-life-announcements.md
       - Окончание поддержки: ru/whats-new/technology/end-of-support-news.md
     - Новые статьи: ru/whats-new/documentation.md
+
+  # --- ОБУЧЕНИЕ JUSAN ---
+  - Обучение:
+    - "День 1 — Введение в Dynatrace": ru/training/day1-introduction.md
 
   # --- AI ПОМОЩНИК ---
   - AI Помощник: ai/groq.md
