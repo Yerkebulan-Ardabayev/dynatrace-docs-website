@@ -1,0 +1,1877 @@
+/* ==========================================================================
+   DocFlow Design System v2 — Dynatrace Documentation
+   Full alignment with DocFlow (React + Tailwind) reference implementation
+   Dark-first theme | Purple primary | Teal accent | Frosted-glass header
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ==========================================================================
+   1. DESIGN TOKENS — DARK THEME (default)
+   Mapped from DocFlow HSL tokens → hex for MkDocs Material compatibility
+   ========================================================================== */
+
+:root,
+[data-md-color-scheme="slate"] {
+  /* --- Brand --- */
+  --md-primary-fg-color:            #7c3aed;  /* hsl(262, 52%, 47%) */
+  --md-primary-fg-color--light:     #8b5cf6;  /* lighter purple */
+  --md-primary-fg-color--dark:      #6d28d9;  /* darker purple */
+  --md-accent-fg-color:             #14b8a6;  /* hsl(167, 72%, 48%) */
+  --md-accent-fg-color--transparent:rgba(20, 184, 166, 0.1);
+
+  /* --- Backgrounds (from DocFlow HSL) --- */
+  --md-default-bg-color:            #15131f;  /* hsl(250, 15%, 8%) — main background */
+  --md-default-bg-color--light:     #1c1a28;  /* hsl(250, 14%, 11%) — card */
+  --md-default-bg-color--lighter:   #242236;  /* hsl(250, 14%, 15%) — secondary */
+  --md-default-bg-color--lightest:  #2d2b41;  /* hsl(250, 12%, 18%) — border fallback */
+
+  /* --- Text --- */
+  --md-default-fg-color:            #e1e0ec;  /* hsl(220, 20%, 90%) — primary text */
+  --md-default-fg-color--light:     #b3b0cc;  /* hsl(220, 20%, 85%) — secondary text */
+  --md-default-fg-color--lighter:   #7e7c98;  /* hsl(220, 10%, 55%) — muted text */
+  --md-default-fg-color--lightest:  #2d2b41;  /* hsl(250, 12%, 18%) — faintest */
+
+  /* --- Code --- */
+  --md-code-bg-color:               #110f1c;  /* hsl(250, 16%, 6%) — code-bg */
+  --md-code-fg-color:               #e1e0ec;
+  --md-code-hl-color:               rgba(124, 58, 237, 0.12);
+
+  /* --- Typeset --- */
+  --md-typeset-color:               #e1e0ec;
+  --md-typeset-a-color:             #14b8a6;
+
+  /* --- Footer --- */
+  --md-footer-bg-color:             #110f1c;
+  --md-footer-bg-color--dark:       #0c0a16;
+  --md-footer-fg-color:             #b3b0cc;
+  --md-footer-fg-color--light:      #7e7c98;
+  --md-footer-fg-color--lighter:    #2d2b41;
+
+  /* --- DocFlow Surfaces --- */
+  --docflow-surface-hover:          #23213a;  /* hsl(250, 14%, 16%) */
+  --docflow-surface-active:         #2f2650;  /* hsl(262, 30%, 18%) */
+  --docflow-border:                 #2d2b41;  /* hsl(250, 12%, 18%) */
+  --docflow-sidebar-bg:             #110f1c;  /* hsl(250, 16%, 6%) */
+  --docflow-card-bg:                #1c1a28;  /* hsl(250, 14%, 11%) */
+
+  /* --- Gradient & Glow --- */
+  --docflow-gradient:               linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+  --docflow-glow-primary:           rgba(124, 58, 237, 0.3);
+  --docflow-glow-accent:            rgba(20, 184, 166, 0.3);
+
+  /* --- Semantic Colors --- */
+  --docflow-info:                   #3b82f6;
+  --docflow-success:                #14b8a6;
+  --docflow-warning:                #f59e0b;
+  --docflow-danger:                 #ef4444;
+
+  /* --- Layout --- */
+  --docflow-nav-width:              18rem;  /* 288px */
+  --docflow-toc-width:              240px;
+  --docflow-header-height:          56px;
+  --docflow-radius:                 0.5rem;   /* 8px */
+  --docflow-radius-md:              0.375rem; /* 6px */
+  --docflow-radius-sm:              0.25rem;  /* 4px */
+}
+
+/* ==========================================================================
+   2. DESIGN TOKENS — LIGHT THEME
+   ========================================================================== */
+
+[data-md-color-scheme="default"] {
+  /* Brand — same primary, darker accent for contrast */
+  --md-primary-fg-color:            #7c3aed;
+  --md-primary-fg-color--light:     #8b5cf6;
+  --md-primary-fg-color--dark:      #6d28d9;
+  --md-accent-fg-color:             #0d9e7e;  /* hsl(167, 72%, 38%) */
+  --md-accent-fg-color--transparent:rgba(13, 158, 126, 0.1);
+
+  /* Backgrounds */
+  --md-default-bg-color:            #fafafa;  /* hsl(0, 0%, 98%) */
+  --md-default-bg-color--light:     #ffffff;  /* card */
+  --md-default-bg-color--lighter:   #f0f0f2;  /* secondary */
+  --md-default-bg-color--lightest:  #e0e0e5;  /* border fallback */
+
+  /* Text */
+  --md-default-fg-color:            #1f1f2e;  /* hsl(240, 10%, 15%) */
+  --md-default-fg-color--light:     #3d3d52;  /* hsl(240, 6%, 25%) */
+  --md-default-fg-color--lighter:   #6b6b80;  /* hsl(240, 4%, 46%) */
+  --md-default-fg-color--lightest:  #c0c0cc;
+
+  /* Code */
+  --md-code-bg-color:               #f3f2f6;  /* hsl(240, 5%, 95%) */
+
+  /* Typeset */
+  --md-typeset-a-color:             #0d9e7e;
+
+  /* Footer */
+  --md-footer-bg-color:             #f0f0f2;
+  --md-footer-bg-color--dark:       #e8e8ec;
+
+  /* Surfaces */
+  --docflow-surface-hover:          #eaeaf0;  /* hsl(240, 5%, 92%) */
+  --docflow-surface-active:         #eeecf5;  /* hsl(262, 20%, 94%) */
+  --docflow-border:                 #dddde5;  /* hsl(240, 6%, 88%) */
+  --docflow-sidebar-bg:             #ffffff;
+  --docflow-card-bg:                #ffffff;
+
+  /* Gradient & Glow */
+  --docflow-gradient:               linear-gradient(135deg, #0d9e7e 0%, #7c3aed 100%);
+  --docflow-glow-primary:           rgba(124, 58, 237, 0.15);
+  --docflow-glow-accent:            rgba(13, 158, 126, 0.15);
+
+  /* Footer light */
+  --md-footer-fg-color:             #3d3d52;
+  --md-footer-fg-color--light:      #6b6b80;
+  --md-footer-fg-color--lighter:    #c0c0cc;
+
+  /* Code */
+  --md-code-fg-color:               #1f1f2e;
+  --md-code-hl-color:               rgba(124, 58, 237, 0.08);
+
+  /* Typeset */
+  --md-typeset-color:               #1f1f2e;
+}
+
+/* ==========================================================================
+   2b. LIGHT THEME — Component-level overrides
+   ========================================================================== */
+
+/* Header — frosted white glass */
+[data-md-color-scheme="default"] .md-header {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--docflow-border);
+}
+
+/* Header text/icons visible on white */
+[data-md-color-scheme="default"] .md-header__topic .md-ellipsis {
+  color: #1f1f2e;
+}
+
+[data-md-color-scheme="default"] .md-header .md-icon {
+  color: #3d3d52;
+}
+
+/* Nav tabs — explicit dark text on white, no opacity trick */
+[data-md-color-scheme="default"] .md-tabs {
+  background: transparent !important;
+  border-bottom: 1px solid var(--docflow-border);
+}
+
+[data-md-color-scheme="default"] .md-tabs__link {
+  color: #6b6b80;
+  opacity: 1;
+}
+
+[data-md-color-scheme="default"] .md-tabs__link:hover {
+  color: #1f1f2e;
+  background: var(--docflow-surface-hover);
+}
+
+[data-md-color-scheme="default"] .md-tabs__link--active {
+  color: #1f1f2e;
+  background: var(--docflow-surface-active);
+  font-weight: 600;
+}
+
+/* Sidebar — white bg, visible borders and text */
+[data-md-color-scheme="default"] .md-sidebar {
+  background: var(--docflow-sidebar-bg);
+  border-right: 1px solid var(--docflow-border) !important;
+}
+
+[data-md-color-scheme="default"] .md-nav__link {
+  color: #3d3d52;
+}
+
+[data-md-color-scheme="default"] .md-nav__link:hover {
+  color: #1f1f2e;
+  background: var(--docflow-surface-hover);
+}
+
+[data-md-color-scheme="default"] .md-nav__item--active > .md-nav__link {
+  color: var(--md-accent-fg-color);
+  background: var(--docflow-surface-active);
+}
+
+[data-md-color-scheme="default"] .md-nav__item--nested > .md-nav__link {
+  color: #1f1f2e;
+}
+
+/* Search — light bg with visible border */
+[data-md-color-scheme="default"] .md-search__form {
+  background: #ffffff !important;
+  border: 1px solid var(--docflow-border) !important;
+}
+
+[data-md-color-scheme="default"] .md-search__input {
+  color: #1f1f2e;
+}
+
+[data-md-color-scheme="default"] .md-search__input::placeholder {
+  color: #6b6b80;
+}
+
+/* Cards — white bg, visible border on light */
+[data-md-color-scheme="default"] .grid.cards > ul > li {
+  background: #ffffff;
+  border: 1px solid var(--docflow-border);
+}
+
+[data-md-color-scheme="default"] .grid.cards > ul > li:hover {
+  border-color: var(--md-primary-fg-color--light);
+  box-shadow: 0 0 20px -5px var(--docflow-glow-primary);
+}
+
+/* Code blocks — light code bg */
+[data-md-color-scheme="default"] .md-typeset code {
+  background: var(--md-code-bg-color);
+  color: #7c3aed;
+  border: 1px solid var(--docflow-border);
+}
+
+[data-md-color-scheme="default"] .md-typeset pre > code {
+  color: #1f1f2e;
+  border: none;
+}
+
+/* Admonitions — slightly more visible borders on light */
+[data-md-color-scheme="default"] .md-typeset .admonition,
+[data-md-color-scheme="default"] .md-typeset details {
+  background: #ffffff;
+}
+
+/* Tables — white bg headers on light */
+[data-md-color-scheme="default"] .md-typeset table:not([class]) th {
+  background: #f0f0f2;
+  color: #3d3d52;
+}
+
+/* TOC — visible text on light */
+[data-md-color-scheme="default"] .md-sidebar--secondary .md-nav__link {
+  color: #6b6b80;
+}
+
+[data-md-color-scheme="default"] .md-sidebar--secondary .md-nav__link:hover,
+[data-md-color-scheme="default"] .md-sidebar--secondary .md-nav__link--active {
+  color: var(--md-accent-fg-color);
+}
+
+/* Footer — light bg */
+[data-md-color-scheme="default"] .md-footer {
+  background: #f0f0f2;
+  border-top: 1px solid var(--docflow-border);
+}
+
+[data-md-color-scheme="default"] .md-footer-meta {
+  background: #e8e8ec;
+}
+
+/* Selection — lighter purple on light theme */
+[data-md-color-scheme="default"] ::selection {
+  background: rgba(124, 58, 237, 0.15);
+}
+
+/* Tabbed — light headers */
+[data-md-color-scheme="default"] .md-typeset .tabbed-labels {
+  background: #f0f0f2;
+}
+
+[data-md-color-scheme="default"] .md-typeset .tabbed-labels > label {
+  color: #6b6b80;
+}
+
+[data-md-color-scheme="default"] .md-typeset .tabbed-labels > label:hover {
+  color: #1f1f2e;
+}
+
+/* ==========================================================================
+   3. GLOBAL RESET & TYPOGRAPHY
+   ========================================================================== */
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.md-typeset {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--md-typeset-color);
+}
+
+/* --- Headings — чёткая иерархия, как у Stripe/Vercel docs --- */
+.md-typeset h1 {
+  font-weight: 700;
+  font-size: 2.125em;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.5em;
+  line-height: 1.2;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset h2 {
+  font-weight: 700 !important;
+  font-size: 1.5em !important;
+  letter-spacing: -0.015em;
+  margin-top: 2.5em !important;
+  margin-bottom: 0.75em !important;
+  padding-bottom: 0.5em !important;
+  border-bottom: 1px solid var(--docflow-border) !important;
+  color: var(--md-default-fg-color);
+  line-height: 1.3;
+}
+
+.md-typeset h3 {
+  font-weight: 600 !important;
+  font-size: 1.2em !important;
+  margin-top: 1.75em !important;
+  margin-bottom: 0.5em !important;
+  color: var(--md-default-fg-color);
+  line-height: 1.35;
+}
+
+.md-typeset h4 {
+  font-weight: 600 !important;
+  font-size: 1em !important;
+  margin-top: 1.5em !important;
+  color: var(--md-default-fg-color);
+}
+
+/* First heading after h1 subtitle should have more breathing room */
+.md-typeset h1 + h2,
+.md-typeset h1 + p + h2 {
+  margin-top: 1.5em !important;
+}
+
+/* First paragraph after h1 — subtitle style like DocFlow */
+.md-typeset h1 + p {
+  color: var(--md-default-fg-color--lighter);
+  font-size: 1.05em;
+  margin-bottom: 2em;
+}
+
+/* --- Links — обычный вес (не bold), подчёркивание на hover --- */
+.md-typeset a {
+  color: var(--md-accent-fg-color);
+  text-decoration: none;
+  font-weight: inherit;       /* не делаем ссылки bold в ul/ol */
+  transition: color 0.15s ease, border-color 0.15s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.md-typeset a:hover {
+  color: var(--md-accent-fg-color);
+  border-bottom-color: var(--md-accent-fg-color);
+  text-decoration: none;
+}
+
+/* Ссылки в списках контента — нормальный вес, не bold (Material по умолчанию
+   наследует font-weight от li). Убираем жирность, ссылки выглядят как текст
+   с цветом и underline на hover, а не как кнопки. */
+.md-typeset ul li > a,
+.md-typeset ol li > a,
+.md-typeset p > a {
+  font-weight: normal !important;
+}
+
+/* --- Selection --- */
+::selection {
+  background: rgba(124, 58, 237, 0.25);
+  color: inherit;
+}
+
+/* ==========================================================================
+   4. HEADER — Solid, clean (no backdrop-filter — content was bleeding through)
+   ========================================================================== */
+
+.md-header {
+  background: var(--docflow-sidebar-bg) !important;
+  border-bottom: 1px solid var(--docflow-border);
+  box-shadow: none !important;
+  height: var(--docflow-header-height);
+}
+
+[data-md-color-scheme="default"] .md-header {
+  background: #ffffff !important;
+}
+
+.md-header__inner {
+  height: var(--docflow-header-height);
+}
+
+/* Logo — gradient text like DocFlow DT badge */
+.md-header__topic:first-child .md-ellipsis {
+  background: var(--docflow-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.md-header__title {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   5. NAVIGATION TABS — DISABLED (single-source nav: sidebar only)
+   Kept as no-op in case any DOM still references these classes.
+   ========================================================================== */
+
+.md-tabs {
+  display: none !important;
+}
+
+/* ==========================================================================
+   6. SIDEBAR — Stripe/Vercel-style left navigation
+   Wider columns, clear section headers, collapsible groups
+   ========================================================================== */
+
+.md-sidebar {
+  background: var(--docflow-sidebar-bg);
+  border-right: 1px solid var(--docflow-border) !important;
+  padding-top: 0.5rem;
+}
+
+.md-sidebar--primary {
+  width: 18rem; /* 288px — комфортно для русских названий */
+}
+
+.md-sidebar__scrollwrap {
+  margin: 0 !important;
+}
+
+/* Main content area — минимальная высота, чтобы footer не лез в зону sidebar
+   на коротких страницах. !important чтобы перебить Material defaults. */
+.md-main,
+.md-main__inner {
+  min-height: calc(100vh - var(--docflow-header-height)) !important;
+}
+
+/* Ensure main inner is flex and grows — sidebar наследует высоту */
+.md-main__inner {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Nav container — comfortable padding */
+.md-nav--primary > .md-nav__list {
+  padding: 0.5rem 0.5rem 2rem;
+}
+
+/* All nav links — uniform comfortable spacing, text wraps naturally */
+.md-nav .md-nav__link {
+  font-size: 0.8125rem !important;
+  font-weight: 400;
+  border-radius: var(--docflow-radius-md);
+  padding: 0.4rem 0.75rem;
+  margin: 1px 0;
+  line-height: 1.4 !important;
+  transition: background 0.15s ease, color 0.15s ease;
+  color: var(--md-default-fg-color--light);
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.5rem;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  min-width: 0 !important;
+  text-overflow: clip !important;
+  overflow: visible !important;
+}
+
+/* Ellipsis inside nav links — пусть переносится, а не обрезается */
+.md-nav .md-nav__link .md-ellipsis,
+.md-nav .md-ellipsis {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  line-height: 1.4 !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.md-nav__link:hover {
+  background: var(--docflow-surface-hover);
+  color: var(--md-default-fg-color);
+}
+
+/* Active page — subtle accent text + thin left border, NO heavy bg
+   (Раньше был var(--docflow-surface-active) — выглядело как кнопка.
+   Для вложенных групп теперь вообще не меняем bg, только текст.) */
+.md-nav__item .md-nav__link--active,
+.md-nav__item--active > .md-nav__link {
+  background: transparent !important;
+  color: var(--md-accent-fg-color) !important;
+  font-weight: 600 !important;
+}
+
+/* Active leaf page (текущая страница) — тонкая teal-полоска слева, без fill */
+.md-nav__link--active,
+nav.md-nav .md-nav__link--active {
+  background: transparent !important;
+  color: var(--md-accent-fg-color) !important;
+  font-weight: 600 !important;
+  position: relative;
+}
+
+.md-nav__link--active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  width: 2px;
+  background: var(--md-accent-fg-color);
+  border-radius: 0 2px 2px 0;
+}
+
+/* Top-level collapsible groups — bold, comfortable spacing */
+.md-nav--primary > .md-nav__list > .md-nav__item--nested > .md-nav__link,
+.md-nav--primary > .md-nav__list > .md-nav__item--nested > label.md-nav__link,
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  color: var(--md-default-fg-color) !important;
+  padding: 0.55rem 0.75rem !important;
+  margin: 0.125rem 0 !important;
+}
+
+/* Второй уровень — чуть меньше и легче */
+.md-nav--primary > .md-nav__list > .md-nav__item > nav.md-nav > .md-nav__list > .md-nav__item > .md-nav__link,
+.md-nav--primary > .md-nav__list > .md-nav__item > nav.md-nav > .md-nav__list > .md-nav__item > label.md-nav__link {
+  font-size: 0.8125rem !important;
+  font-weight: 500 !important;
+  padding: 0.375rem 0.75rem !important;
+}
+
+/* Третий уровень (leaf-страницы) — обычный вес */
+.md-nav--primary nav.md-nav nav.md-nav .md-nav__link {
+  font-weight: 400 !important;
+  font-size: 0.8125rem !important;
+}
+
+/* Nested (collapsible) items — slightly bolder, with chevron */
+.md-nav__item--nested > .md-nav__link {
+  font-weight: 500;
+  color: var(--md-default-fg-color);
+}
+
+/* Chevron rotation for expanded sections */
+.md-nav__icon {
+  transition: transform 0.2s ease;
+}
+
+.md-nav__toggle:checked ~ .md-nav__link .md-nav__icon,
+.md-nav__item--nested > .md-nav__link[for] .md-nav__icon {
+  transition: transform 0.2s ease;
+}
+
+/* Remove all default Material vertical indicator borders on nav items */
+.md-nav__item--active > .md-nav__link,
+.md-nav__item--nested > .md-nav__link,
+.md-nav--primary .md-nav__link[data-md-state="blur"],
+.md-nav .md-nav__link--active,
+.md-nav__link {
+  border-left: none !important;
+  border-right: none !important;
+}
+
+/* Kill any Material theme sidebar indicator pseudo-elements */
+.md-sidebar::before,
+.md-sidebar::after,
+.md-sidebar__scrollwrap::before,
+.md-sidebar__scrollwrap::after,
+.md-sidebar__inner::before,
+.md-sidebar__inner::after,
+.md-nav--primary::before,
+.md-nav--primary::after {
+  display: none !important;
+  border: none !important;
+}
+
+/* Sidebar top title — hide полностью (дублирует логотип в header).
+   Максимальная специфичность + !important, чтобы точно победить Material. */
+.md-sidebar--primary .md-nav__title,
+.md-sidebar--primary .md-nav--primary > .md-nav__title,
+.md-sidebar--primary nav.md-nav--primary > .md-nav__title,
+.md-sidebar--primary label.md-nav__title {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Indented nested levels — subtle vertical guide line */
+.md-nav__item--nested > nav.md-nav {
+  padding-left: 0.75rem;
+  margin-left: 0.5rem;
+  border-left: 1px solid var(--docflow-border);
+}
+
+/* Sidebar scrollbar — force non-accent colors (override Material theme hover/focus accent) */
+.md-sidebar,
+.md-sidebar__scrollwrap,
+.md-sidebar__inner,
+.md-nav--primary,
+.md-sidebar__scrollwrap:hover,
+.md-sidebar__scrollwrap:focus-within {
+  scrollbar-color: var(--docflow-border) transparent !important;
+  scrollbar-width: thin !important;
+}
+
+.md-sidebar ::-webkit-scrollbar,
+.md-sidebar__scrollwrap::-webkit-scrollbar {
+  width: 4px !important;
+}
+
+.md-sidebar ::-webkit-scrollbar-track,
+.md-sidebar__scrollwrap::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.md-sidebar ::-webkit-scrollbar-thumb,
+.md-sidebar__scrollwrap::-webkit-scrollbar-thumb,
+.md-sidebar__scrollwrap:hover::-webkit-scrollbar-thumb,
+.md-sidebar__scrollwrap:focus-within::-webkit-scrollbar-thumb {
+  background: var(--docflow-border) !important;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   7. SEARCH — Glow on focus (DocFlow: rounded-lg, border, glow-primary)
+   ========================================================================== */
+
+.md-search__form {
+  border-radius: var(--docflow-radius) !important;
+  border: 1px solid var(--docflow-border) !important;
+  background: var(--md-default-bg-color--lighter) !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.md-search__form:focus-within {
+  border-color: var(--md-primary-fg-color) !important;
+  box-shadow: 0 0 0 3px var(--docflow-glow-primary);
+}
+
+.md-search__input {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+}
+
+.md-search__input::placeholder {
+  color: var(--md-default-fg-color--lighter);
+}
+
+/* Search results */
+.md-search-result .md-search-result__link {
+  border-radius: var(--docflow-radius-md);
+  transition: background 0.15s ease;
+}
+
+.md-search-result .md-search-result__link:hover {
+  background: var(--docflow-surface-hover);
+}
+
+/* ==========================================================================
+   8. BREADCRUMBS (navigation.path)
+   DocFlow: text-sm text-muted-foreground, hover:text-accent
+   ========================================================================== */
+
+.md-path {
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.md-path__link {
+  color: var(--md-default-fg-color--lighter);
+  transition: color 0.15s ease;
+}
+
+.md-path__link:hover {
+  color: var(--md-accent-fg-color);
+}
+
+.md-path__separator {
+  color: var(--md-default-fg-color--lightest);
+  margin: 0 0.25rem;
+}
+
+/* ==========================================================================
+   9. CONTENT AREA
+   DocFlow: max-w-3xl, px-6 lg:px-12, py-8
+   ========================================================================== */
+
+.md-content {
+  max-width: 100%;
+}
+
+.md-content__inner {
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+@media (min-width: 76.25em) {
+  .md-content__inner {
+    padding: 2rem 3rem;
+  }
+}
+
+/* ==========================================================================
+   10. CODE — Dark terminal style
+   DocFlow: bg-code-bg, font-mono, rounded-lg, border, header bar
+   ========================================================================== */
+
+/* Inline code */
+.md-typeset code {
+  background: var(--md-code-bg-color);
+  color: var(--md-accent-fg-color);
+  border-radius: var(--docflow-radius-sm);
+  padding: 0.1em 0.4em;
+  font-size: 0.85em;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  border: 1px solid var(--docflow-border);
+}
+
+/* Code blocks */
+.md-typeset pre {
+  border-radius: var(--docflow-radius);
+  border: 1px solid var(--docflow-border);
+  overflow: hidden;
+  margin: 1.5em 0;
+}
+
+.md-typeset pre > code {
+  border: none;
+  color: var(--md-code-fg-color);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  padding: 1rem;
+  background: var(--md-code-bg-color);
+}
+
+/* Code block header (filename / language label) */
+.highlight .filename,
+.md-typeset .highlight > .filename {
+  background: var(--md-code-bg-color);
+  border-bottom: 1px solid var(--docflow-border);
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--md-default-fg-color--lighter);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Copy button */
+.md-clipboard {
+  color: var(--md-default-fg-color--lighter) !important;
+  transition: color 0.15s ease;
+}
+
+.md-clipboard:hover {
+  color: var(--md-accent-fg-color) !important;
+}
+
+/* Code highlight line */
+.md-typeset .highlight .hll {
+  background: var(--md-code-hl-color);
+}
+
+/* Syntax highlighting — DocFlow-aligned palette */
+.highlight .c,
+.highlight .c1,
+.highlight .cm { color: #6b6b80; }           /* comments — muted */
+.highlight .k,
+.highlight .kd,
+.highlight .kn { color: #c084fc; }           /* keywords — light purple */
+.highlight .s,
+.highlight .s1,
+.highlight .s2 { color: #34d399; }           /* strings — green */
+.highlight .nf,
+.highlight .nb { color: #60a5fa; }           /* functions — blue */
+.highlight .mi,
+.highlight .mf { color: #fbbf24; }           /* numbers — amber */
+.highlight .o,
+.highlight .p  { color: var(--md-code-fg-color); }  /* operators */
+
+/* ==========================================================================
+   11. ADMONITIONS — Clean with left accent bar
+   DocFlow: rounded-lg, border + colored border-left-3px, icon, bg opacity 5%
+   ========================================================================== */
+
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid var(--docflow-border);
+  border-radius: var(--docflow-radius);
+  background: var(--docflow-card-bg);
+  box-shadow: none;
+  border-left: 3px solid;
+  overflow: hidden;
+  margin: 1.5em 0;
+  font-size: 0.875rem;
+}
+
+.md-typeset .admonition-title,
+.md-typeset details summary {
+  background: transparent !important;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  border-bottom: none;
+  padding: 0.75rem 1rem;
+}
+
+.md-typeset .admonition-title::before,
+.md-typeset details summary::before {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Note — primary purple */
+.md-typeset .note,
+.md-typeset .abstract,
+.md-typeset .summary {
+  border-left-color: var(--md-primary-fg-color);
+  border-color: rgba(124, 58, 237, 0.2);
+  background: rgba(124, 58, 237, 0.04);
+}
+
+/* Tip / Success — accent teal */
+.md-typeset .tip,
+.md-typeset .success,
+.md-typeset .check,
+.md-typeset .done {
+  border-left-color: var(--md-accent-fg-color);
+  border-color: rgba(20, 184, 166, 0.2);
+  background: rgba(20, 184, 166, 0.04);
+}
+
+/* Warning / Caution — amber */
+.md-typeset .warning,
+.md-typeset .caution,
+.md-typeset .attention {
+  border-left-color: var(--docflow-warning);
+  border-color: rgba(245, 158, 11, 0.2);
+  background: rgba(245, 158, 11, 0.04);
+}
+
+/* Danger / Error / Bug — red */
+.md-typeset .danger,
+.md-typeset .error,
+.md-typeset .bug,
+.md-typeset .failure,
+.md-typeset .fail {
+  border-left-color: var(--docflow-danger);
+  border-color: rgba(239, 68, 68, 0.2);
+  background: rgba(239, 68, 68, 0.04);
+}
+
+/* Info — blue */
+.md-typeset .info,
+.md-typeset .todo {
+  border-left-color: var(--docflow-info);
+  border-color: rgba(59, 130, 246, 0.2);
+  background: rgba(59, 130, 246, 0.04);
+}
+
+/* Question — purple light */
+.md-typeset .question,
+.md-typeset .help,
+.md-typeset .faq {
+  border-left-color: var(--md-primary-fg-color--light);
+  border-color: rgba(139, 92, 246, 0.2);
+  background: rgba(139, 92, 246, 0.04);
+}
+
+/* Example / Quote */
+.md-typeset .example,
+.md-typeset .quote,
+.md-typeset .cite {
+  border-left-color: var(--md-default-fg-color--lighter);
+  border-color: var(--docflow-border);
+  background: var(--docflow-card-bg);
+}
+
+/* ==========================================================================
+   12. TABLES — Rounded, hover rows, secondary header
+   DocFlow: rounded-lg, bg-secondary header, divide-y, hover:bg-surface-hover
+   ========================================================================== */
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--docflow-border);
+  border-radius: var(--docflow-radius);
+  overflow: hidden;
+  font-size: 0.8125rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 1.5em 0;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--md-default-bg-color--lighter);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  color: var(--md-default-fg-color--lighter);
+  border-bottom: 1px solid var(--docflow-border);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.md-typeset table:not([class]) td {
+  border-bottom: 1px solid var(--docflow-border);
+  padding: 0.75rem 1rem;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset table:not([class]) tr:last-child td {
+  border-bottom: none;
+}
+
+.md-typeset table:not([class]) tbody tr {
+  transition: background 0.15s ease;
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background: var(--docflow-surface-hover);
+}
+
+/* ==========================================================================
+   13. TABS — DocFlow: active = accent border-bottom-2, bg-secondary header
+   ========================================================================== */
+
+.md-typeset .tabbed-set {
+  border: 1px solid var(--docflow-border);
+  border-radius: var(--docflow-radius);
+  overflow: hidden;
+  margin: 1.5em 0;
+}
+
+.md-typeset .tabbed-labels {
+  background: var(--md-default-bg-color--lighter);
+  border-bottom: 1px solid var(--docflow-border);
+}
+
+.md-typeset .tabbed-labels > label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0;
+  color: var(--md-default-fg-color--lighter);
+  transition: color 0.15s ease, background 0.15s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.md-typeset .tabbed-labels > label:hover {
+  color: var(--md-default-fg-color);
+  background: var(--docflow-surface-hover);
+}
+
+/* Active tab indicator */
+.md-typeset .tabbed-labels > label.tabbed--active,
+.md-typeset [id^="__tabbed_"]:checked + label {
+  color: var(--md-accent-fg-color);
+  font-weight: 500;
+  border-bottom-color: var(--md-accent-fg-color);
+}
+
+/* Tab content */
+.md-typeset .tabbed-content {
+  padding: 0;
+}
+
+/* ==========================================================================
+   14. GRID CARDS — DocFlow card style
+   Hover: border-color change, shadow glow, translateY(-2px)
+   ========================================================================== */
+
+.grid.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.grid.cards > ul {
+  display: contents;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grid.cards > ul > li {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--docflow-card-bg);
+  border: 1px solid var(--docflow-border);
+  border-radius: var(--docflow-radius);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  list-style: none;
+}
+
+.grid.cards > ul > li:hover {
+  border-color: var(--md-primary-fg-color--light);
+  box-shadow: 0 0 20px -5px var(--docflow-glow-primary);
+  transform: translateY(-2px);
+}
+
+.grid.cards > ul > li p:first-of-type {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+}
+
+.grid.cards > ul > li hr {
+  border-color: var(--docflow-border);
+  margin: 0.75em 0;
+}
+
+/* ==========================================================================
+   15. TABLE OF CONTENTS (Right sidebar)
+   DocFlow: w-240, text-sm, active = accent + left border
+   ========================================================================== */
+
+.md-sidebar--secondary {
+  width: var(--docflow-toc-width);
+}
+
+/* TOC title */
+.md-sidebar--secondary .md-nav__title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--md-default-fg-color--lighter);
+  padding-top: 2rem;
+}
+
+/* TOC links */
+.md-sidebar--secondary .md-nav__link {
+  font-size: 0.8125rem;
+  color: var(--md-default-fg-color--lighter);
+  padding: 0.25rem 0.75rem;
+  margin: 0;
+  border-left: 2px solid transparent;
+  border-radius: 0;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.md-sidebar--secondary .md-nav__link:hover {
+  color: var(--md-accent-fg-color);
+  background: transparent;
+}
+
+.md-sidebar--secondary .md-nav__link--active {
+  color: var(--md-accent-fg-color);
+  font-weight: 500;
+  border-left-color: var(--md-accent-fg-color);
+  background: transparent;
+}
+
+/* ==========================================================================
+   16. FOOTER & FOOTER NAV
+   DocFlow: border-top, prev/next links with hover:text-accent
+   ========================================================================== */
+
+.md-footer {
+  border-top: 1px solid var(--docflow-border);
+  background: var(--md-footer-bg-color);
+}
+
+.md-footer-nav__link {
+  transition: color 0.15s ease;
+}
+
+.md-footer-nav__link:hover {
+  color: var(--md-accent-fg-color);
+}
+
+.md-footer-meta {
+  background: var(--md-footer-bg-color--dark);
+}
+
+/* ==========================================================================
+   17. SCROLLBAR — Custom thin scrollbar
+   DocFlow: 6px, transparent track, border-color thumb
+   ========================================================================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--docflow-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-default-fg-color--lighter);
+}
+
+/* ==========================================================================
+   18. HOMEPAGE HERO
+   Gradient text, centered layout
+   ========================================================================== */
+
+.md-typeset .hero-section {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
+.md-typeset .hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: var(--docflow-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-bottom: none;
+  margin-bottom: 0.5rem;
+}
+
+.md-typeset .hero-section p {
+  font-size: 1.125rem;
+  color: var(--md-default-fg-color--light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   19. GROQ CHAT WIDGET — DocFlow AI Chat
+   Gradient FAB, slide-up panel, message bubbles
+   ========================================================================== */
+
+#groq-chat-widget {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+/* FAB button */
+.chat-toggle {
+  width: 56px;
+  height: 56px;
+  border-radius: 1rem;
+  background: var(--docflow-gradient);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px var(--docflow-glow-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.chat-toggle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px var(--docflow-glow-accent);
+}
+
+.chat-toggle svg {
+  width: 22px;
+  height: 22px;
+}
+
+.chat-toggle span {
+  font-size: 9px;
+  margin-top: 2px;
+  font-weight: 700;
+}
+
+/* Chat container */
+.chat-container {
+  position: absolute;
+  bottom: 68px;
+  right: 0;
+  width: 390px;
+  height: 500px;
+  background: var(--md-default-bg-color);
+  border-radius: 1rem;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--docflow-border);
+  overflow: hidden;
+  animation: docflow-chat-slide-up 0.3s ease-out;
+}
+
+@keyframes docflow-chat-slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Chat header */
+.chat-header {
+  padding: 0.75rem 1rem;
+  background: var(--docflow-gradient);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 0;
+  align-items: center;
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.chat-header span {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  font-size: 0.7rem !important;
+  opacity: 0.75 !important;
+  margin-top: 2px;
+}
+
+#chat-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.375rem;
+  cursor: pointer;
+  padding: 0;
+  width: 26px;
+  height: 26px;
+  line-height: 1;
+  border-radius: var(--docflow-radius-md);
+  transition: background 0.15s ease;
+}
+
+#chat-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Messages area */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.message {
+  max-width: 88%;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.75rem;
+  line-height: 1.5;
+  font-size: 0.8125rem;
+}
+
+.message p {
+  margin: 0.3em 0;
+}
+
+.message p:first-child {
+  margin-top: 0;
+}
+
+.message p:last-child {
+  margin-bottom: 0;
+}
+
+.user-message {
+  align-self: flex-end;
+  background: var(--md-primary-fg-color);
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background: var(--md-default-bg-color--lighter);
+  color: var(--md-default-fg-color);
+  border-bottom-left-radius: 0.25rem;
+}
+
+.bot-message code {
+  background: var(--md-code-bg-color);
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--docflow-radius-sm);
+  font-size: 0.75rem;
+  color: var(--md-accent-fg-color);
+}
+
+/* Loading animation */
+.loading {
+  animation: docflow-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes docflow-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.4; }
+}
+
+/* Error state */
+.message.error {
+  background: rgba(127, 29, 29, 0.85) !important;
+  color: #fca5a5 !important;
+  border: 1px solid rgba(220, 38, 38, 0.5);
+  max-width: 95%;
+}
+
+.message.error p {
+  margin: 0.25em 0;
+  word-break: break-word;
+}
+
+.message.error code {
+  background: rgba(0, 0, 0, 0.3) !important;
+  color: #fbbf24 !important;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.8em;
+}
+
+.message.error a {
+  color: #93c5fd !important;
+  text-decoration: underline;
+}
+
+[data-md-color-scheme="default"] .message.error {
+  background: #fef2f2 !important;
+  color: #991b1b !important;
+  border: 1px solid #fecaca;
+}
+
+[data-md-color-scheme="default"] .message.error code {
+  background: rgba(220, 38, 38, 0.08) !important;
+  color: #dc2626 !important;
+}
+
+[data-md-color-scheme="default"] .message.error a {
+  color: #2563eb !important;
+}
+
+/* Chat input */
+.chat-input-container {
+  padding: 0.75rem;
+  border-top: 1px solid var(--docflow-border);
+  display: flex;
+  gap: 0.5rem;
+}
+
+#chat-input {
+  flex: 1;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--docflow-border);
+  border-radius: var(--docflow-radius);
+  background: var(--md-default-bg-color--light);
+  color: var(--md-default-fg-color);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  resize: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#chat-input:focus {
+  outline: none;
+  border-color: var(--md-accent-fg-color);
+  box-shadow: 0 0 0 3px var(--docflow-glow-accent);
+}
+
+#chat-send {
+  padding: 0.625rem 1rem;
+  background: var(--docflow-gradient);
+  color: white;
+  border: none;
+  border-radius: var(--docflow-radius);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#chat-send:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--docflow-glow-accent);
+}
+
+/* Chat messages scrollbar */
+.chat-messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: var(--docflow-border);
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   20. RESPONSIVE — Mobile & Tablet
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .chat-container {
+    width: calc(100vw - 24px);
+    height: 420px;
+    right: 2px;
+  }
+
+  #groq-chat-widget {
+    right: 10px;
+    bottom: 12px;
+  }
+
+  .chat-toggle {
+    width: 48px;
+    height: 48px;
+    border-radius: 0.875rem;
+  }
+
+  .md-typeset h1 {
+    font-size: 1.5em;
+  }
+
+  .md-typeset .hero-section h1 {
+    font-size: 1.75rem;
+  }
+
+  .md-content__inner {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ==========================================================================
+   21. ACCESSIBILITY — Reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--md-primary-fg-color);
+  outline-offset: 2px;
+  border-radius: var(--docflow-radius-sm);
+}
+
+/* ==========================================================================
+   22. SMOOTH TRANSITIONS — Global interactive elements
+   ========================================================================== */
+
+.md-nav__link,
+.md-tabs__link,
+.md-typeset a,
+.md-search__form,
+.grid.cards > ul > li,
+.md-footer-nav__link {
+  transition: all 0.2s ease;
+}
+
+/* ==========================================================================
+   23. MISC FIXES — Material theme overrides
+   ========================================================================== */
+
+/* Remove default Material shadows */
+.md-typeset .admonition {
+  box-shadow: none;
+}
+
+/* Back to top button */
+.md-top {
+  background: var(--md-primary-fg-color);
+  color: white;
+  border-radius: var(--docflow-radius);
+  box-shadow: 0 4px 12px var(--docflow-glow-primary);
+}
+
+.md-top:hover {
+  background: var(--md-primary-fg-color--light);
+}
+
+/* Tag/label styling */
+.md-typeset .md-tag {
+  background: var(--md-default-bg-color--lighter);
+  border: 1px solid var(--docflow-border);
+  border-radius: var(--docflow-radius-sm);
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+}
+
+/* Horizontal rules */
+.md-typeset hr {
+  border-color: var(--docflow-border);
+}
+
+/* Blockquotes */
+.md-typeset blockquote {
+  border-left: 3px solid var(--docflow-border);
+  color: var(--md-default-fg-color--light);
+  padding: 0.5em 1em;
+  margin: 1.5em 0;
+}
+
+/* Definition lists */
+.md-typeset dt {
+  font-weight: 600;
+}
+
+/* Images */
+.md-typeset img {
+  border-radius: var(--docflow-radius);
+  border: 1px solid var(--docflow-border);
+}
+
+/* Footnotes */
+.md-typeset .footnote {
+  font-size: 0.8125rem;
+  color: var(--md-default-fg-color--lighter);
+}
+
+/* ==========================================================================
+   24. UX AUDIT FIXES — Active nav indicator, TOC, lists, progress bar
+   ========================================================================== */
+
+/* --- Fix #4: Active nav item — left accent bar + stronger highlight --- */
+.md-nav__item--active > .md-nav__link {
+  position: relative;
+  border-left: 3px solid var(--md-accent-fg-color) !important;
+  background: var(--md-accent-fg-color--transparent);
+  color: var(--md-accent-fg-color);
+  font-weight: 600;
+  padding-left: calc(0.75rem - 3px);
+}
+
+/* Active link in TOC sidebar */
+.md-sidebar--secondary .md-nav__link--active {
+  border-left-color: var(--md-accent-fg-color) !important;
+  border-left-width: 2px !important;
+  border-left-style: solid !important;
+  font-weight: 600;
+}
+
+/* --- Fix #3: TOC title — replace "Содержание" with "На этой странице" --- */
+.md-sidebar--secondary .md-nav__title {
+  font-size: 0 !important;
+  line-height: 0 !important;
+  overflow: hidden;
+}
+
+.md-sidebar--secondary .md-nav__title::before {
+  content: 'На этой странице';
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--md-default-fg-color--lighter);
+  display: block;
+  line-height: 1.6;
+  padding-top: 2rem;
+}
+
+.md-sidebar--secondary .md-nav__title .md-nav__icon {
+  display: none;
+}
+
+/* --- Fix #8: Code blocks — enhanced border in dark theme --- */
+[data-md-color-scheme="slate"] .md-typeset pre {
+  border: 1px solid rgba(55, 65, 81, 0.6);
+  background: var(--md-code-bg-color);
+}
+
+[data-md-color-scheme="slate"] .md-typeset pre > code {
+  background: var(--md-code-bg-color);
+}
+
+/* --- Fix #10: Search Ctrl+K badge — inside input as ghost text --- */
+.md-search__form {
+  position: relative;
+}
+
+.md-search__form::after {
+  position: absolute !important;
+  right: 0.5rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+/* --- Reading progress bar — REMOVED (was visually distracting) ---
+   We rely on Material's built-in instant.progress bar instead.
+   Keeping the class neutralized in case any old DOM still references it. */
+.reading-progress {
+  display: none !important;
+}
+
+/* --- Fix #12a: Ordered lists — step indicators --- */
+.md-typeset ol:not(.md-nav__list) {
+  counter-reset: step-counter;
+  list-style: none;
+  padding-left: 0;
+}
+
+.md-typeset ol:not(.md-nav__list) > li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1em;
+}
+
+.md-typeset ol:not(.md-nav__list) > li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--md-accent-fg-color--transparent);
+  border: 1.5px solid var(--md-accent-fg-color);
+  color: var(--md-accent-fg-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Nested ordered lists — revert to standard */
+.md-typeset ol:not(.md-nav__list) ol {
+  list-style: lower-alpha;
+  padding-left: 1.5rem;
+  counter-reset: none;
+}
+
+.md-typeset ol:not(.md-nav__list) ol > li {
+  padding-left: 0;
+  counter-increment: none;
+}
+
+.md-typeset ol:not(.md-nav__list) ol > li::before {
+  display: none;
+}
+
+/* --- Fix #12b: Unordered lists — accent-colored markers --- */
+.md-typeset ul:not(.md-nav__list):not(.grid):not(.tabbed-labels):not([hidden]) {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.md-typeset ul:not(.md-nav__list):not(.grid):not(.tabbed-labels):not([hidden]) > li {
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.md-typeset ul:not(.md-nav__list):not(.grid):not(.tabbed-labels):not([hidden]) > li::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--md-accent-fg-color);
+  opacity: 0.7;
+}
+
+/* --- Fix #14: Hide GitHub repo stats (stars/forks) --- */
+.md-source__facts {
+  display: none !important;
+}
+
+/* Hide repo info on small screens to declutter header */
+@media (max-width: 60em) {
+  .md-header__source {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   25. RESPONSIVE — TOC collapse on small screens
+   ========================================================================== */
+
+@media (max-width: 1279px) {
+  .md-sidebar--secondary {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   26. UX POLISH — Smooth scroll, content width, sticky tabs offset
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimal reading width — wider than default but not too wide */
+.md-grid {
+  max-width: 1440px;
+}
+
+@media (min-width: 76.25em) {
+  .md-content {
+    max-width: 56rem;
+  }
+  .md-content__inner {
+    padding: 1.75rem 2.5rem 4rem;
+  }
+}
+
+/* Sticky tabs need to align with header — fix top offset */
+.md-tabs[data-md-state="hidden"] {
+  transform: translateY(-100%);
+}
+
+/* Header autohide — smooth transition */
+.md-header[hidden] {
+  transform: translateY(-100%);
+}
+.md-header {
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+/* Material's built-in instant.progress bar — recolor to gradient */
+.md-progress {
+  background: var(--docflow-gradient) !important;
+}
+
+/* H1 — prevent border-bottom on hero sections */
+.md-typeset h1 {
+  border-bottom: none;
+}
+
+/* H2 — softer divider */
+.md-typeset h2 {
+  border-bottom-color: var(--docflow-border);
+  padding-bottom: 0.35em;
+  margin-top: 2em;
+}
+
+/* Anchor link icons (toc.permalink) — invisible until hover */
+.md-typeset .headerlink {
+  color: var(--md-default-fg-color--lightest);
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease;
+  margin-left: 0.4em;
+  font-size: 0.85em;
+}
+
+.md-typeset h1:hover .headerlink,
+.md-typeset h2:hover .headerlink,
+.md-typeset h3:hover .headerlink,
+.md-typeset h4:hover .headerlink,
+.md-typeset h5:hover .headerlink,
+.md-typeset h6:hover .headerlink {
+  opacity: 1;
+  color: var(--md-accent-fg-color);
+}
+
+/* Wider TOC for breathing room */
+.md-sidebar--secondary {
+  width: 16rem;
+}
+
+/* TOC active link — accent left border looks crisp */
+.md-sidebar--secondary .md-nav__link--active {
+  background: rgba(20, 184, 166, 0.06);
+  border-radius: 0 var(--docflow-radius-md) var(--docflow-radius-md) 0;
+}
+
+/* Footer prev/next — bigger hit targets, card style */
+.md-footer__inner.md-grid {
+  padding: 1.25rem;
+}
+
+.md-footer__link {
+  padding: 1rem 1.25rem;
+  border-radius: var(--docflow-radius);
+  border: 1px solid var(--docflow-border);
+  background: var(--docflow-card-bg);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  margin: 0.25rem;
+}
+
+.md-footer__link:hover {
+  border-color: var(--md-primary-fg-color--light);
+  background: var(--docflow-surface-hover);
+  transform: translateY(-1px);
+}
+
+/* Skip the "Make a copy of this page editable" link if present, declutter */
+.md-content__button[title*="редакт"],
+.md-content__button[title*="Edit"] {
+  opacity: 0.6;
+  transition: opacity 0.15s ease;
+}
+
+.md-content__button[title*="редакт"]:hover,
+.md-content__button[title*="Edit"]:hover {
+  opacity: 1;
+}
+
+/* Tooltips (content.tooltips feature) */
+.md-tooltip {
+  background: var(--md-default-bg-color--lighter);
+  border: 1px solid var(--docflow-border);
+  border-radius: var(--docflow-radius-md);
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Search results — better spacing */
+.md-search-result__article {
+  padding: 0.5rem 1rem;
+}
+
+.md-search-result__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.md-search-result__teaser {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+}
+
+/* No-result state */
+.md-search-result__meta {
+  background: transparent;
+  color: var(--md-default-fg-color--lighter);
+  font-size: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+
+/* Scroll-margin so anchored headings clear sticky header+tabs */
+.md-typeset :is(h1,h2,h3,h4,h5,h6)[id] {
+  scroll-margin-top: calc(var(--docflow-header-height) + 56px);
+}
