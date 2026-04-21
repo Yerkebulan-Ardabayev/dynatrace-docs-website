@@ -1771,26 +1771,53 @@ html {
 }
 
 /* ==========================================================================
-   Правый sidebar (TOC) — компактный, ненавязчивый
+   Правый sidebar (TOC) — УБРАН совсем (юзер: «три столбца одно и то же»)
+   Контент использует всё освободившееся место.
    ========================================================================== */
 
 .md-sidebar--secondary {
-  width: 14rem;
-  padding-left: 1rem;
-  border-left: 1px solid var(--docflow-border);
+  display: none !important;
 }
 
-@media (max-width: 76.1875em) {
-  .md-sidebar--secondary {
-    display: none;
-  }
-}
-
-/* Чистим старые стили секционного встроенного TOC (toc.integrate убран) */
 .md-nav--secondary {
-  border-left: none !important;
-  margin-left: 0 !important;
+  display: none !important;
+}
+
+/* ==========================================================================
+   ФУТЕР — УБРАН (юзер: «футер снова мешает убери его»)
+   ========================================================================== */
+
+.md-footer {
+  display: none !important;
+}
+
+/* ==========================================================================
+   ДУБЛИ в sidebar — HACK через :has()
+   Для паттерна `X.md` + папка `X/` Material генерит псевдо-вложенность:
+   <li nested active>
+     <label>AI Помощник</label>          <- скрываем
+     <nav>
+       <li active><a>AI Помощник</a></li> <- оставляем
+     </nav>
+   </li>
+   Скрываем label у активной nested-секции, если внутри есть активная ссылка.
+   :has() поддержан в Chrome 105+, Safari 15.4+, Firefox 121+.
+   ========================================================================== */
+
+.md-nav__item--active.md-nav__item--nested:has(> nav .md-nav__link--active) > label.md-nav__link,
+.md-nav__item--active.md-nav__item--nested:has(> nav .md-nav__link--active) > .md-nav__link[for] {
+  display: none !important;
+}
+
+.md-nav__item--active.md-nav__item--nested:has(> nav .md-nav__link--active) > input.md-nav__toggle {
+  display: none !important;
+}
+
+/* Убираем padding-left у вложенного <nav> если label скрыт (уровень визуально становится родителем) */
+.md-nav__item--active.md-nav__item--nested:has(> nav .md-nav__link--active) > nav.md-nav {
   padding-left: 0 !important;
+  margin-left: 0 !important;
+  border-left: none !important;
 }
 
 /* Sticky tabs need to align with header — fix top offset */
