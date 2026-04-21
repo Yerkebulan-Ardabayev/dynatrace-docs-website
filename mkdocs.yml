@@ -40,12 +40,10 @@ theme:
     - navigation.path
     - navigation.tracking
     - navigation.top
-    - navigation.instant
-    - navigation.instant.progress
-    # --- TOC встроен в sidebar под активной страницей (2 колонки вместо 3) ---
-    # Stripe/Vercel/Tailwind-style — убирает правый TOC, его контент уходит
-    # в левый sidebar. Юзер: «убери три столбца одно и то же».
-    - toc.integrate
+    # navigation.instant УБРАН — вызывал «прыжки» при кликах на ссылки
+    # (сохранял scroll position с предыдущей страницы → визуальный jump).
+    # toc.integrate УБРАН — создавал визуальные дубли:
+    # пункт «Главная» + TOC текущей страницы под ним выглядели как два «Главная».
     # --- Search ---
     - search.suggest
     - search.highlight
@@ -284,7 +282,7 @@ markdown_extensions:
   - tables
 
 extra_css:
-  - assets/stylesheets/extra.v7.css
+  - assets/stylesheets/extra.v8.css
 
 extra_javascript:
   - assets/javascripts/groq-chat.js

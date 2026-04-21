@@ -1771,43 +1771,26 @@ html {
 }
 
 /* ==========================================================================
-   toc.integrate — TOC встроен в левый sidebar под активной страницей.
-   Правый sidebar (secondary) полностью скрыт — 2 колонки вместо 3.
+   Правый sidebar (TOC) — компактный, ненавязчивый
    ========================================================================== */
 
-/* Убираем правый sidebar совсем */
 .md-sidebar--secondary {
-  display: none !important;
-}
-
-/* Встроенный TOC в левом sidebar (появляется под активной страницей) */
-.md-nav--secondary {
+  width: 14rem;
+  padding-left: 1rem;
   border-left: 1px solid var(--docflow-border);
-  margin-left: 0.5rem;
-  padding-left: 0.5rem;
-  margin-top: 0.25rem;
-  margin-bottom: 0.5rem;
 }
 
-.md-nav--secondary .md-nav__link {
-  font-size: 0.75rem !important;
-  font-weight: 400 !important;
-  color: var(--md-default-fg-color--lighter) !important;
-  padding: 0.2rem 0.5rem !important;
-  line-height: 1.3 !important;
+@media (max-width: 76.1875em) {
+  .md-sidebar--secondary {
+    display: none;
+  }
 }
 
-.md-nav--secondary .md-nav__link:hover {
-  color: var(--md-accent-fg-color) !important;
-}
-
-.md-nav--secondary .md-nav__link--active {
-  color: var(--md-accent-fg-color) !important;
-  font-weight: 500 !important;
-}
-
-.md-nav--secondary .md-nav__title {
-  display: none !important;
+/* Чистим старые стили секционного встроенного TOC (toc.integrate убран) */
+.md-nav--secondary {
+  border-left: none !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
 }
 
 /* Sticky tabs need to align with header — fix top offset */
