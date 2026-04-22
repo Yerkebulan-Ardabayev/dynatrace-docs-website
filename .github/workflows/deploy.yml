@@ -58,6 +58,21 @@ jobs:
           pip install --upgrade pip
           pip install mkdocs-material>=9.5.0 pymdown-extensions>=10.7
 
+      - name: Inject AI keys from GitHub Secrets
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          python - <<'PY'
+          import json, os
+          p = 'docs/assets/ai-config.json'
+          c = json.load(open(p, encoding='utf-8'))
+          c['gemini_api_key'] = os.environ.get('GEMINI_API_KEY', '')
+          c['groq_api_key']   = os.environ.get('GROQ_API_KEY', '')
+          json.dump(c, open(p, 'w', encoding='utf-8'), indent=2, ensure_ascii=False)
+          print(f"Injected keys → {p} (gemini={bool(c['gemini_api_key'])}, groq={bool(c['groq_api_key'])})")
+          PY
+
       - name: Build site
         run: mkdocs build
 

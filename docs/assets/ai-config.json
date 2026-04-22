@@ -1,8 +1,7 @@
 {
-  "_comment": "AI Chat configuration for GitHub Pages. Gemini Flash — free tier, fast responses.",
-  "_setup_worker": "For production: deploy Cloudflare Worker to hide API key. FREE: 100K req/day.",
-  "_setup_direct": "Current: direct Gemini API (key is public in this file — use Worker for production).",
+  "_comment": "Public config shipped to GitHub Pages. Keys MUST be empty in this file — they are injected at CI build time from GitHub Secrets.",
+  "_local_dev": "For local testing: create ai-config.local.json (gitignored) next to this file with real keys. groq-chat.js loads .local.json first.",
   "worker_url": "",
-  "gemini_api_key": "AIzaSyCuoQeGivp0sQMYEMDAtnl5DeB4yICE-7s",
+  "gemini_api_key": "",
   "groq_api_key": ""
 }

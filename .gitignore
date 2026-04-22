@@ -40,6 +40,9 @@ Thumbs.db
 .env.local
 *.key
 *_key.txt
+# AI chat local config with real keys — NEVER committed; production uses GitHub Secret at build time
+docs/assets/ai-config.local.json
+docs/assets/ai-config.json.bak
 
 # Scraped docs (temporary)
 scripts/dynatrace-docs/
