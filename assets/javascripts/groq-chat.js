@@ -67,11 +67,22 @@ async function detectMode() {
         }
     } catch (e) { /* proxy not available */ }
 
-    // 2. Try loading config (may contain worker_url or direct key)
+    // 2. Try loading config — prefer ai-config.local.json (dev only, gitignored), fallback to ai-config.json (prod, injected by CI)
+    let config = null;
     try {
-        const resp = await fetch(ASSETS_BASE_URL + 'ai-config.json', { signal: AbortSignal.timeout(2000) });
-        if (resp.ok) {
-            const config = await resp.json();
+        const localResp = await fetch(ASSETS_BASE_URL + 'ai-config.local.json', { signal: AbortSignal.timeout(1500) });
+        if (localResp.ok) {
+            config = await localResp.json();
+            console.log('[AI Chat] Using local dev config');
+        }
+    } catch (e) { /* no local config */ }
+
+    try {
+        if (!config) {
+            const resp = await fetch(ASSETS_BASE_URL + 'ai-config.json', { signal: AbortSignal.timeout(2000) });
+            if (resp.ok) config = await resp.json();
+        }
+        if (config) {
 
             // 2a. Cloudflare Worker URL (FREE, secure — API key hidden on edge server)
             if (config.worker_url) {
