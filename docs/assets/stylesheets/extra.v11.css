@@ -177,10 +177,12 @@
   font-weight: 600;
 }
 
-/* Sidebar — white bg, visible borders and text */
+/* Sidebar — visibly separated from body (#fafafa). White bg needs a
+   darker border or subtle shadow, otherwise sidebar visually merges with content. */
 [data-md-color-scheme="default"] .md-sidebar {
   background: var(--docflow-sidebar-bg);
-  border-right: 1px solid var(--docflow-border) !important;
+  border-right: 1px solid #c5c5d0 !important;
+  box-shadow: 1px 0 0 rgba(0, 0, 0, 0.02);
 }
 
 [data-md-color-scheme="default"] .md-nav__link {
