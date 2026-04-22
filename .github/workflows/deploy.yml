@@ -73,6 +73,13 @@ jobs:
           print(f"Injected keys → {p} (gemini={bool(c['gemini_api_key'])}, groq={bool(c['groq_api_key'])})")
           PY
 
+      - name: Cache-bust CSS with git SHA
+        run: |
+          SHA=$(git rev-parse --short HEAD)
+          sed -i "s|\(assets/stylesheets/extra\.v[0-9][0-9]*\.css\)|\1?sha=${SHA}|g" mkdocs.yml
+          echo "CSS cache-busted with SHA=${SHA}"
+          grep "extra\.v" mkdocs.yml
+
       - name: Build site
         run: mkdocs build
 
