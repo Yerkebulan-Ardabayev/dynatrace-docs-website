@@ -259,9 +259,9 @@ jobs:
               --title "📝 Перевод: $TOTAL статей требуют перевода ($DATE)" \
               --body "$BODY"
 
-      # ---------- STAGE 7: Telegram notification (ALWAYS sends) ----------
-      - name: Send Telegram notification
-        if: always()
+      # ---------- STAGE 7: Telegram success notification (ONLY when real updates) ----------
+      - name: Send Telegram notification (updates)
+        if: steps.detect.outputs.total_changes != '0' && steps.detect.outputs.total_changes != ''
         env:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
@@ -275,20 +275,18 @@ jobs:
           SITE_URL="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/"
           NL=$'\n'
 
-          if [ "$TOTAL" -gt 0 ] 2>/dev/null; then
-            # --- Есть обновления: подробное сообщение ---
-            MSG="📝 *Dynatrace Docs — Обновления*${NL}"
-            MSG="${MSG}${NL}📊 Обнаружено *${TOTAL}* изменений:${NL}"
-            MSG="${MSG}  • Новых статей: *${NEW}*${NL}"
-            MSG="${MSG}  • Обновлённых: *${UPDATED}*${NL}"
+          MSG="📝 *Dynatrace Docs — Обновления*${NL}"
+          MSG="${MSG}${NL}📊 Обнаружено *${TOTAL}* изменений:${NL}"
+          MSG="${MSG}  • Новых статей: *${NEW}*${NL}"
+          MSG="${MSG}  • Обновлённых: *${UPDATED}*${NL}"
 
-            if [ "$TRANSLATED" -gt 0 ] 2>/dev/null; then
-              MSG="${MSG}${NL}✅ Автоперевод: *${TRANSLATED}* статей переведены${NL}"
-            fi
+          if [ "$TRANSLATED" -gt 0 ] 2>/dev/null; then
+            MSG="${MSG}${NL}✅ Автоперевод: *${TRANSLATED}* статей переведены${NL}"
+          fi
 
-            # Добавить описание изменений из отчёта
-            if [ -f changes_report.json ]; then
-              DETAILS=$(python3 -c "
+          # Добавить описание изменений из отчёта
+          if [ -f changes_report.json ]; then
+            DETAILS=$(python3 -c "
           import json
           r = json.load(open('changes_report.json'))
           sections = {}
@@ -306,8 +304,8 @@ jobs:
           print(chr(10).join(lines[:30]))
           " 2>/dev/null || echo "")
 
-              # Извлечь подробности релизов (whats-new)
-              RELEASE_DETAILS=$(python3 -c "
+            # Извлечь подробности релизов (whats-new)
+            RELEASE_DETAILS=$(python3 -c "
           import json
           r = json.load(open('changes_report.json'))
           releases = []
@@ -336,25 +334,18 @@ jobs:
           print(chr(10).join(lines[:60]))
           " 2>/dev/null || echo "")
 
-              if [ -n "$DETAILS" ]; then
-                MSG="${MSG}${NL}📋 *Что изменилось:*${NL}${DETAILS}${NL}"
-              fi
-
-              if [ -n "$RELEASE_DETAILS" ]; then
-                MSG="${MSG}${RELEASE_DETAILS}${NL}"
-              fi
+            if [ -n "$DETAILS" ]; then
+              MSG="${MSG}${NL}📋 *Что изменилось:*${NL}${DETAILS}${NL}"
             fi
 
-            MSG="${MSG}${NL}🕐 Синхронизация: ${DATE}${NL}"
-            MSG="${MSG}🔗 [Открыть Issues](${REPO_URL}/issues?q=label%3Atranslation+is%3Aopen)${NL}"
-            MSG="${MSG}🌐 [Сайт](${SITE_URL})"
-          else
-            # --- Нет обновлений: краткое сообщение ---
-            MSG="✅ *Dynatrace Docs — Синхронизация*${NL}${NL}"
-            MSG="${MSG}Проверка выполнена ${DATE}.${NL}"
-            MSG="${MSG}Изменений не обнаружено — все переводы актуальны.${NL}${NL}"
-            MSG="${MSG}🌐 [Сайт](${SITE_URL})"
+            if [ -n "$RELEASE_DETAILS" ]; then
+              MSG="${MSG}${RELEASE_DETAILS}${NL}"
+            fi
           fi
+
+          MSG="${MSG}${NL}🕐 Синхронизация: ${DATE}${NL}"
+          MSG="${MSG}🔗 [Открыть Issues](${REPO_URL}/issues?q=label%3Atranslation+is%3Aopen)${NL}"
+          MSG="${MSG}🌐 [Сайт](${SITE_URL})"
 
           # Send via Telegram Bot API
           if [ -n "$TG_BOT_TOKEN" ] && [ -n "$TG_CHAT_ID" ]; then
@@ -368,6 +359,51 @@ jobs:
               || echo "WARNING: Telegram notification failed (non-blocking)"
           else
             echo "WARNING: TG_BOT_TOKEN or TG_CHAT_ID not set, skipping Telegram notification"
+          fi
+
+      # ---------- STAGE 7b: Telegram failure notification (only on error) ----------
+      - name: Send Telegram notification (failure)
+        if: failure()
+        env:
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          DATE=$(date +%Y-%m-%d\ %H:%M)
+          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          NL=$'\n'
+
+          # Определяем какой шаг упал
+          REASON="неизвестный шаг pipeline"
+          if [ "${{ steps.scrape.outcome }}" = "failure" ]; then
+            REASON="Scrape — docs.dynatrace.com не ответил / scraper упал / timeout"
+          elif [ "${{ steps.detect.outcome }}" = "failure" ]; then
+            REASON="Detect changes — сравнение хэшей упало (повреждён registry / нет файлов)"
+          elif [ "${{ steps.translate.outcome }}" = "failure" ]; then
+            REASON="Auto-translate — Gemini/Groq/OpenRouter API (ключ невалид / квота / сеть)"
+          elif [ "${{ steps.pdf.outcome }}" = "failure" ]; then
+            REASON="PDF generation — weasyprint / markdown конвертация"
+          elif [ "${{ steps.commit.outcome }}" = "failure" ]; then
+            REASON="Git commit/push — конфликт в main / нет прав / rebase не удался"
+          elif [ "${{ steps.build.outcome }}" = "failure" ]; then
+            REASON="MkDocs build — сломан YAML / битые ссылки / невалидный config"
+          elif [ "${{ steps.deploy.outcome }}" = "failure" ]; then
+            REASON="Deploy GitHub Pages — peaceiris/actions-gh-pages упал (права / gh-pages branch)"
+          fi
+
+          MSG="🚨 *Dynatrace Docs — ОШИБКА pipeline*${NL}${NL}"
+          MSG="${MSG}❌ *Упавший шаг:* ${REASON}${NL}${NL}"
+          MSG="${MSG}📅 ${DATE}${NL}"
+          MSG="${MSG}🔗 [Открыть лог запуска](${RUN_URL})"
+
+          if [ -n "$TG_BOT_TOKEN" ] && [ -n "$TG_CHAT_ID" ]; then
+            curl -s -X POST "https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage" \
+              -d chat_id="${TG_CHAT_ID}" \
+              -d text="${MSG}" \
+              -d parse_mode="Markdown" \
+              -d disable_web_page_preview="true" \
+              --connect-timeout 10 \
+              --max-time 15 \
+              || echo "WARNING: Failure notification failed to send"
           fi
 
       # ---------- STAGE 8: Build & Deploy ----------
@@ -396,10 +432,12 @@ jobs:
           grep "extra\.v" mkdocs.yml
 
       - name: Build MkDocs
+        id: build
         if: steps.commit.outputs.committed == 'true'
         run: mkdocs build
 
       - name: Deploy to GitHub Pages
+        id: deploy
         if: steps.commit.outputs.committed == 'true'
         uses: peaceiris/actions-gh-pages@v4
         with:

@@ -199,36 +199,14 @@ def stage_git_push(translated_count: int):
         log("  No changes to commit")
 
 
-def stage_telegram(report: dict, translated_count: int):
-    """Stage 6: Send Telegram notification."""
-    log("STAGE 6: Sending Telegram notification...")
+def _send_telegram(msg: str) -> None:
+    """Low-level Telegram send. Silent on missing tokens."""
     import requests
-
     token = os.environ.get("TG_BOT_TOKEN", "")
     chat_id = os.environ.get("TG_CHAT_ID", "")
-
     if not token or not chat_id:
         log("  WARNING: TG_BOT_TOKEN or TG_CHAT_ID not set")
         return
-
-    total = report.get("total_changes", 0)
-    new = report.get("new_count", 0)
-    updated = report.get("updated_count", 0)
-    date = datetime.now().strftime("%Y-%m-%d %H:%M")
-    site = "https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/"
-
-    if total > 0:
-        msg = f"📝 *Dynatrace Docs — Обновления*\n"
-        msg += f"\n📊 Обнаружено *{total}* изменений:\n"
-        msg += f"  • Новых: *{new}*\n"
-        msg += f"  • Обновлённых: *{updated}*\n"
-        if translated_count > 0:
-            msg += f"\n✅ Переведено: *{translated_count}* (Claude Code)\n"
-        msg += f"\n🕐 {date}\n🌐 [Сайт]({site})"
-    else:
-        msg = f"✅ *Dynatrace Docs*\n\n"
-        msg += f"Проверка {date} — изменений нет.\n🌐 [Сайт]({site})"
-
     try:
         resp = requests.post(
             f"https://api.telegram.org/bot{token}/sendMessage",
@@ -245,6 +223,46 @@ def stage_telegram(report: dict, translated_count: int):
         log(f"  Telegram ERROR: {e}")
 
 
+def stage_telegram(report: dict, translated_count: int):
+    """Stage 6: Send Telegram notification — ONLY when real updates exist."""
+    total = report.get("total_changes", 0)
+    if total <= 0:
+        log("STAGE 6: No updates — Telegram skipped")
+        return
+
+    log("STAGE 6: Sending Telegram notification...")
+    new = report.get("new_count", 0)
+    updated = report.get("updated_count", 0)
+    date = datetime.now().strftime("%Y-%m-%d %H:%M")
+    site = "https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/"
+
+    msg = f"📝 *Dynatrace Docs — Обновления*\n"
+    msg += f"\n📊 Обнаружено *{total}* изменений:\n"
+    msg += f"  • Новых: *{new}*\n"
+    msg += f"  • Обновлённых: *{updated}*\n"
+    if translated_count > 0:
+        msg += f"\n✅ Переведено: *{translated_count}* (Claude Code)\n"
+    msg += f"\n🕐 {date}\n🌐 [Сайт]({site})"
+    _send_telegram(msg)
+
+
+def stage_telegram_failure(stage_name: str, error: BaseException):
+    """Send Telegram notification on pipeline failure."""
+    date = datetime.now().strftime("%Y-%m-%d %H:%M")
+    err_text = f"{type(error).__name__}: {error}"
+    if len(err_text) > 400:
+        err_text = err_text[:400] + "..."
+    # Escape markdown special chars that would break message
+    for ch in ["_", "*", "[", "]", "`"]:
+        err_text = err_text.replace(ch, "\\" + ch)
+    msg = f"🚨 *Dynatrace Docs — ОШИБКА pipeline*\n\n"
+    msg += f"❌ *Упавший шаг:* {stage_name}\n\n"
+    msg += f"📝 `{err_text}`\n\n"
+    msg += f"📅 {date}\n"
+    msg += f"💻 Источник: Windows Task Scheduler (локально)"
+    _send_telegram(msg)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Full auto-pipeline")
     parser.add_argument("--max-translate", type=int, default=20)
@@ -259,34 +277,44 @@ def main():
     log(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     log("=" * 60)
 
-    # 1. Detect
-    report = stage_detect()
-    total = report.get("total_changes", 0)
+    current_stage = "unknown"
+    try:
+        current_stage = "Detect changes (scrape/hash)"
+        report = stage_detect()
+        total = report.get("total_changes", 0)
 
-    # 2. Translate
-    translated = 0
-    if total > 0 and not args.skip_translate:
-        translated = stage_translate_claude(report, args.max_translate)
+        translated = 0
+        if total > 0 and not args.skip_translate:
+            current_stage = "Translate via Claude Code CLI"
+            translated = stage_translate_claude(report, args.max_translate)
 
-    # 3. PDF
-    if translated > 0:
-        stage_pdf(translated)
+        if translated > 0:
+            current_stage = "PDF generation (weasyprint)"
+            stage_pdf(translated)
 
-    # 4. Obsidian
-    if translated > 0 and not args.skip_obsidian:
-        stage_obsidian()
+        if translated > 0 and not args.skip_obsidian:
+            current_stage = "Obsidian sync"
+            stage_obsidian()
 
-    # 5. Git push
-    if not args.skip_push:
-        stage_git_push(translated)
+        if not args.skip_push:
+            current_stage = "Git commit/push"
+            stage_git_push(translated)
 
-    # 6. Telegram
-    stage_telegram(report, translated)
+        current_stage = "Telegram notification"
+        stage_telegram(report, translated)
 
-    elapsed = time.time() - start
-    log("")
-    log(f"DONE in {int(elapsed//60)}m {int(elapsed%60)}s")
-    log(f"Changes: {total}, Translated: {translated}")
+        elapsed = time.time() - start
+        log("")
+        log(f"DONE in {int(elapsed//60)}m {int(elapsed%60)}s")
+        log(f"Changes: {total}, Translated: {translated}")
+    except BaseException as exc:
+        log(f"PIPELINE FAILED at stage: {current_stage}")
+        log(f"Error: {type(exc).__name__}: {exc}")
+        try:
+            stage_telegram_failure(current_stage, exc)
+        except Exception as notify_exc:
+            log(f"Failure notification itself failed: {notify_exc}")
+        raise
 
 
 if __name__ == "__main__":
