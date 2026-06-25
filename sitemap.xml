@@ -8173,6 +8173,70 @@
          <lastmod>2026-06-25</lastmod>
     </url>
     <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-arc-enabled-servers/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-servicefabric/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-spring/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-vm/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-vmss/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-aks/monitor-azure-kubernetes-service/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-azure-app-service/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/monitor-app-service/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/monitor-azure-app-service-builtin/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/monitor-azure-app-service-environment/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight/</loc>
          <lastmod>2026-06-25</lastmod>
     </url>
@@ -8182,6 +8246,74 @@
     </url>
     <url>
          <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-managed-instance/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/monitor-func-service-builtin/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-python/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-migration-guide/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/default-azure-metrics/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/limit-api-calls-to-azure/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/set-up-metric-events-for-alerting/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/set-up-monitoring-with-azure-alerts/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-spring/monitor-azure-spring-apps/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-vm/monitor-azure-virtual-machines-builtin/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-integrations/azure-vm/monitor-azure-virtual-machines-classic/</loc>
+         <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration/</loc>
          <lastmod>2026-06-25</lastmod>
     </url>
     <url>
